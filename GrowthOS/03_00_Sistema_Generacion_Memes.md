@@ -52,7 +52,37 @@ El ciclo de vida de un meme sigue los siguientes pasos:
 
 ---
 
-## 3. Integración con la Máquina de Estados
+## 3. Automatización Programada
+
+El sistema cuenta con una tarea programada en Manus que se ejecuta **diariamente a las 9:00 AM (America/Matamoros)**:
+
+> **Revisión diaria de memes en Drive**
+> 1. Revisa la carpeta `Meme_Proposals` en Google Drive
+> 2. Lista todas las imágenes nuevas encontradas
+> 3. Ejecuta `usm_meme_generator.py` para adaptar cada imagen al canon con Gemini 2.5 Flash Image
+> 4. Sube las imágenes generadas a `Generated_By_Gemini` (Drive) y `gallery/Generated/` (GitHub)
+> 5. Registra metadatos de cada meme procesado
+> 6. Reporta resumen al usuario
+
+**Nota:** La tarea se ejecuta en modo `ask_user`, lo que significa que se dispara pero requiere confirmación para procesar. Esto previene costos innecesarios si la carpeta tiene imágenes que no deseas procesar.
+
+---
+
+## 4. Análisis de Costos
+
+El costo real del sistema es la API de Gemini, ya que el almacenamiento en Drive y GitHub es gratuito.
+
+| Concepto | Costo |
+| :--- | :--- |
+| Costo por meme (lectura + descripción + generación) | ~$0.008 USD |
+| Costo mensual (150 memes) | ~$1.20 USD |
+| Costo anual (1,800 memes) | ~$14.40 USD |
+| Almacenamiento Drive | Gratis (5.1 TB disponibles) |
+| Almacenamiento GitHub | Gratis (1 GB por repo) |
+
+---
+
+## 5. Integración con la Máquina de Estados
 
 Los memes se integran en la arquitectura del calendario escalable con las siguientes consideraciones:
 
