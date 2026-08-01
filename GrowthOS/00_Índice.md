@@ -21,6 +21,7 @@
 | [Production Queue](01_04_Production_Queue.md) | Contenido que requiere producción nueva. | Active |
 | [Approval Queue](01_05_Approval_Queue.md) | Contenido pendiente de revisión/aprobación. | Active |
 | [Guía de Automatización con Make](02_00_Guia_Automatizacion_Make.md) | Estructura de campos, flujos y reglas para Make. | Active |
+| [Sistema de Generación de Memes](03_00_Sistema_Generacion_Memes.md) | Flujo de ingesta (Drive), adaptación (Gemini) y archivo visual (GitHub). | Active |
 | [Canon Contradictions Report](Canon_Contradictions_Report.md) | Contradicciones activas que bloquean producción. | Active |
 | [Inventario de Contenido](Content_Inventory.csv) | CSV maestro con metadatos de las 25 piezas existentes. | Active |
 
