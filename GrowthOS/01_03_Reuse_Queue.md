@@ -46,9 +46,17 @@ El siguiente contenido ha sido identificado como reutilizable (`Es_Reutilizable 
 
 ---
 
-## Reglas de Reutilización
+## Reglas de Reutilización y Estrategia
 
-1. **Regla de Antigüedad (30 días):** Ninguna pieza puede ser reutilizada si han pasado menos de 30 días desde su `Fecha_Ultima_Publicacion`.
-2. **Validación de Formato:** Si un formato (ej. Foto de Tarot) demostró alta viralidad histórica, debe ser reutilizado con ligeras variaciones antes de probar formatos nuevos (siempre respetando la regla de 30 días).
+1. **No reutilizar por existir:** Nunca reutilices contenido únicamente porque existe. Antes de recomendar una reutilización debes verificar:
+   - Tiempo desde la última publicación.
+   - Temporada del contenido.
+   - Contexto actual.
+   - Rendimiento histórico.
+   - Saturación del personaje.
+   - Saturación del formato.
+   - Objetivos actuales del Growth OS.
+
+2. **Regla de Antigüedad (30 días):** Ninguna pieza puede ser reutilizada si han pasado menos de 30 días desde su `Fecha_Ultima_Publicacion`.
 3. **Bloqueo Canon:** Ninguna pieza en esta cola puede ser reutilizada si su campo `Bloqueado_Canon` es `Sí`.
 4. **Automatización Make:** El flujo de Make `Flujo de Generación de Calendario` debe filtrar automáticamente esta cola (`Es_Reutilizable == Sí` Y `Dias_Desde_Publicacion` >= 30) para llenar los días vacíos del calendario semanal.

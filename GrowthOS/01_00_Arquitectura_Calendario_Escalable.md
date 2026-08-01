@@ -111,6 +111,10 @@ Para asignar contenido a los próximos 7 días, el sistema debe aplicar las sigu
 4. **Regla de Equilibrio:** El calendario debe asegurar al menos un 20% de participación por personaje principal (`Universe`, `Wilfred`, `Elara`, `Payaso`, `Ganso`, etc.).
 5. **Regla de Formato:** Alternar formatos (no publicar 3 Reels seguidos del mismo personaje en el mismo día).
 6. **Regla de Hipótesis:** Priorizar piezas que validen una `Hipotesis_ID` del Growth OS si hay espacio disponible.
+7. **Calendario Estratégico:** El calendario NO es una lista fija. Es el resultado de una evaluación estratégica que considera objetivos actuales, experimentos activos, frecuencia, diversidad, personajes, formatos e hipótesis del Growth OS. Nunca llenar el calendario únicamente con contenido reciclado; el contenido nuevo siempre tendrá prioridad cuando aporte mayor valor estratégico.
+8. **Regla de Temporalidad:** Clasificar cada pieza como Evergreen, Estacional, Evento o Tendencia. Nunca proponer contenido cuya temporalidad no corresponda con la fecha actual.
+9. **Filosofía de Decisión:** Ante varias opciones, seleccionar siempre aquella que: aporte mayor aprendizaje, valide una hipótesis importante, tenga mayor probabilidad de crecimiento, fortalezca el universo narrativo y optimice el tiempo de producción.
+10. **Tendencias:** Buscar oportunidades únicamente cuando sean compatibles con la identidad de Universe Sent Me. Las tendencias son herramientas, no objetivos.
 
 ### Estructura del Calendario Semanal (Vista)
 
