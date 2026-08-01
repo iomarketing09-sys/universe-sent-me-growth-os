@@ -17,7 +17,7 @@ El viernes es un día frío según los datos históricos, por lo que priorizamos
 | Horario | Formato | Plataforma | Contenido (Fuente) | Personaje | Notas / Cascada |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **10:30 AM** | Foto (Meme) | FB + IG | `260547.png` — *"si lees esto tu..."* (Absurdo) | Universe | Reutilizado (Costo 0) |
-| **4:00 PM** | Foto (Meme) | FB | `260555.png` — *"FELIZ DIA DE..."* (Absurdo) | Universe | Reutilizado (Costo 0) |
+| **4:00 PM** | Foto (Meme) | FB | `260568.png` — *"Harry Potter y el misterio de..."* (Absurdo) | Universe | Reutilizado (Costo 0) |
 | **7:00 PM** | Reel (Video) | FB + IG + TT + YT | Pendiente de aprobación | Universe / Wilfred | *Regla de cascada: 4 plataformas* |
 | **9:00 PM** | Foto (Meme) | FB + IG | `260529.png` — *"CRAWWWWWWW"* (Absurdo) | Mixto | Reutilizado (Costo 0) |
 
@@ -33,6 +33,19 @@ El sábado combina la frecuencia matutina/vespertina con el cierre de fin de sem
 | **4:00 PM** | Foto (Meme) | FB + IG | `260542.png` — *"Si está cool ser adulto, pero tampoco..."* (Relatable) | Universe | Reutilizado (Costo 0) |
 | **7:00 PM** | Foto (Meme Nuevo) | FB + IG | `Dormir_es_para_debiles_2K.jpeg` — *"Dormir es para debiles... yo soy el debil, Buenas Noches."* | Universe | **Nuevo (Generado en Flow)** |
 | **9:00 PM** | Reel (Video) | FB + IG + TT + YT | Pendiente de aprobación | Wilfred | *Regla de cascada: 4 plataformas* |
+
+---
+
+---
+
+## Regla de Selección: Filtrado Evergreen
+
+Al seleccionar memes de la Reuse Queue para reutilización, se aplica el siguiente filtro:
+
+1. **Excluir contenido temporal:** Memes con referencias a fechas, temporadas o eventos específicos (Día de las madres, Navidad, Halloween, cumpleaños, etc.).
+2. **Excluir contenido con referencias a personas reales:** Nombres propios que no sean personajes del canon.
+3. **Excluir contenido ya publicado recientemente:** Ningún meme se republica antes de 30 días.
+4. **Priorizar temas universales:** Relatable, Absurdo y Sarcástico son los más seguros para reutilización por ser atemporales.
 
 ---
 
