@@ -1,34 +1,60 @@
-# Top Posts de Mayo 2026 — Meta Business Suite
+# Top Memes Virales de Mayo 2026 — Facebook (Datos Reales)
 
-Fuente: Captura de pantalla de Meta Business Suite
+Fuente: Captura de pantalla de Meta Business Suite (Facebook, no Reels)
 Fecha de extracción: 1 de agosto 2026
 
-## Top 10 Posts por Alcance
+## Top Memes por Alcance (Facebook)
 
-| # | Título/Caption | Tipo | Fecha | Alcance | Espectadores | Visualizaciones | Seguidores |
-|---|---|---|---|---|---|---|---|
-| 1 | "Esta publicación no tiene texto" | Foto (Pub. cruzada) | Mar 19 may, 13:42 | **5,226** | 5,010 | 7,024 | 0 |
-| 2 | #UniverseSentMe #NoMeArrepi... | Reel | Dom 3 may, 13:52 | **898** | 881 | 1,053 | 0 |
-| 3 | "Esa gente que me cae mal y no me h..." | Reel | Sáb 23 may, 11:30 | **670** | 681 | 842 | 0 |
-| 4 | "Me has dado muchos besos.." | Reel | Jue 7 may, 11:17 | **575** | 543 | 675 | 0 |
-| 5 | "Me salio en TikTok" | Foto | Sáb 30 may, 19:13 | **435** | 439 | 869 | 0 |
-| 6 | "voy a salir..." | Reel | Mié 6 may, 13:13 | **412** | 409 | 488 | 0 |
-| 7 | #UniverseSentMe #vidareal | Reel | Lun 4 may, 10:52 | **359** | 336 | 437 | 0 |
-| 8 | "Se te nota..." | Reel (Pub. cruzada) | Dom 31 may, 22:35 | **327** | 315 | 560 | 0 |
-| 9 | "Tu reel" | Reel | Sáb 2 may, 22:57 | **325** | 315 | 616 | 0 |
-| 10 | "Acaricia mi alma... #UniverseSentMe..." | Reel | Dom 31 may, 14:06 | **290** | 276 | 332 | 0 |
+| # | Descripción visual | Texto/Caption | Fecha | Alcance | Likes | Compartidos |
+|---|---|---|---|---|---|---|
+| **1** | Carrusel: "Los cambios de tema que tengo en una sola conversación" (múltiples personajes/escenas) | Lun 4 may, 11:24 | **242,400** | **1,700** | **1,300** |
+| **2** | Carrusel: "La mente del wey que lee de todo de manera indiscriminada" (biblioteca mística con T-Rex y libros) | Dom 17 may, 12:31 | **176,800** | **2,900** | **848** |
+| **3** | Escena: "Pásame tu pack" (personajes en cama flotante, universo) | Lun 4 may, 19:41 | **159,000** | **1,700** | **253** |
+| **4** | Meme: "No olvides las 3 vrg" (3 gatos: ser la vrg, andar bien vrg, y que te valga vrg) + #UniverseSentMe #HumorAcido | Sáb 16 may, 10:36 | **138,700** | **1,500** | **755** |
+| **5** | Carrusel: "Ronroneo para el amigo" / "Navajazo para el enemigo" (gato con lentes) | Jue 14 may, 13:04 | **110,900** | **786** | **457** |
+| **6** | Carrusel: "Amor ya estoy lleno" + "Brut Bruce Bruce" (chica con flores en el pelo + hombre celebrando) | Sáb 16 may, 21:00 | **71,100** | **30** | **1** |
+| **7** | Meme: "Adivina kien anda bien caliente" / "El planeta invésil, cuídalo" (gato azul en nube) | Lun 4 may, 13:48 | **31,700** | **414** | **318** |
+| **8** | Reel texto: "its so easy to fall..." (nubes, pregunta retórica) | Sáb 2 may, 11:47 | **1,100** | **7** | **1** |
+| **9** | Reel texto: #UniverseSentMe #NoMeArrepiento (nubes, frase filosófica) | Dom 3 may, 13:52 | **1,100** | **6** | **1** |
+| **10** | Reel texto: "Esa gente que me cae mal..." (nubes grises) | Sáb 23 may, 11:30 | **842** | **17** | **2** |
+| **11** | Reel texto: "Me has dado muchos besos.." (naturaleza, piedras) | Jue 7 may, 11:17 | **675** | **9** | **4** |
+| **12** | Reel texto: "¿Por qué las voces de mi cabeza..." (carretera) | Sáb 2 may, 17:00 | **799** | **16** | **1** |
 
 ## Hallazgos clave
 
-1. **El post #1 con 5,226 alcance fue una FOTO sin texto** publicada el martes 19 de mayo a las 13:42. Es el outlier absoluto — 6x más alcance que el segundo.
-2. **Los Reels dominan el top 10** — 9 de 10 son Reels. Solo 1 foto.
-3. **Las fotos de memes tradicionales (con texto)** tienen mucho menos alcance que los Reels.
-4. **Domingo y Lunes** son los días con más alcance (posts 1, 2, 7, 8, 10).
-5. **La hora 13:00-14:00** (almuerzo) generó el mayor alcance del mes.
+1. **Los memes virales SON los memes de imágenes** (carruseles y memes visuales), NO los Reels. Los Reels tienen alcance de 1K o menos. Los memes visuales llegan a 242K.
 
-## Implicaciones para Reuse Queue
+2. **El post #1 es un carrusel multi-escena** — 242K alcance, 1.7K likes, 1.3K compartidos. Este es el formato ganador.
 
-- Priorizar republicación de Reels sobre fotos de memes estáticos
-- El post #1 (foto sin texto) sugiere que las imágenes del universo sin caption funcionan bien
-- Domingo y Lunes siguen siendo los días fuertes (confirmado por datos anteriores)
-- Reels con caption emocional/relatable funcionan mejor que memes con texto largo
+3. **El meme "3 vrg" (gatos con lentes)** tiene 138K alcance y 1.5K likes — este formato de "gato con lentes en múltiples escenarios" es el más consistente.
+
+4. **Lunes y Domingo confirman los días fuertes:**
+   - Post #1: Lunes 4 may, 242K alcance
+   - Post #2: Domingo 17 may, 176K alcance
+   - Post #3: Lunes 4 may, 159K alcance
+   - Post #7: Lunes 4 may, 31K alcance
+
+5. **El gato con lentes (Universe) es el personaje más viral:**
+   - Post #1: Carrusel con múltiples personajes (incluye Universe)
+   - Post #4: "3 vrg" (gato con lentes) — 138K alcance
+   - Post #5: Carrusel "Ronroneo/Navajazo" (gato con lentes) — 110K alcance
+   - Post #7: "Adivina kien anda bien caliente" (gato azul) — 31K alcance
+
+6. **Los Reels de texto sobre nubes/gris NO funcionaron** (1K o menos alcance) — están completamente fuera de la liga comparados con los memes visuales.
+
+## Implicaciones CRÍTICAS para Reuse Queue
+
+- **PRIORIDAD MÁXIMA:** Carruseles multi-escena (formato post #1 y #3)
+- **PRIORIDAD ALTA:** Memes de gato con lentes en múltiples escenarios (formato post #4 y #5)
+- **PRIORIDAD MEDIA:** Memes de un solo panel con texto humorístico (formato post #7)
+- **EVITAR:** Reels de texto sobre nubes/gris (alcance de 1K, no son contenido de Universe)
+- **Días óptimos:** Lunes y Domingo para republicar
+- **Horario óptimo:** 10:30-13:00 y 19:00-21:00
+
+## Top posts a priorizar en Reuse Queue
+
+1. Carrusel "Los cambios de tema que tengo en una sola conversación" — 242K alcance
+2. Carrusel "La mente del wey que lee de todo..." — 176K alcance
+3. Escena "Pásame tu pack" — 159K alcance
+4. Meme "No olvides las 3 vrg" — 138K alcance
+5. Carrusel "Ronroneo para el amigo / Navajazo para el enemigo" — 110K alcance
