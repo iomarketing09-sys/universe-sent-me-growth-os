@@ -3,14 +3,36 @@
 **Propósito:** Lista del contenido con mayor potencial para ser reutilizado durante las próximas semanas, priorizando formatos de bajo costo y alta viralidad.
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-07-31
+**Última actualización:** 2026-08-01
 **Versión:** 1.0
 **Autor:** Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_02_Content_Backlog.md`
 
 ---
 
-## Contenido Prioritario para Reutilización
+## Ingreso masivo: Mayo 2026
+
+El 1 de agosto de 2026 se procesaron 168 memes publicados en mayo. De estos, 111 fueron clasificados automáticamente y se han registrado en `Operations/Memories/Reuse_Queue_Mayo_2026.csv`.
+
+**Resumen de Mayo 2026:**
+- **Total procesados:** 168
+- **Clasificados:** 111
+- **Personaje principal:** Universe (53), Wilfred (16), Elara (12), Mixto (12).
+- **Temas principales:** Relatable (52), Absurdo (17), Sarcástico (16).
+
+### Tabla de Contenido Prioritario (Top 5)
+
+| ID_Pieza | Título | Personaje Principal | Formato | Potencial de Reutilización | Acción Requerida |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| MAYO-001 | Top 10 Memes Universe (Relatable) | @char_USM_universe | Foto / Carrusel | **Muy Alto** | Seleccionar los 10 memes de Universe con mayor engagement del CSV para republicar. |
+| MAYO-002 | Top 5 Memes Wilfred (Absurdo/Sarcástico) | @char_USM_wilfred | Foto / Reel | **Alto** | Seleccionar los 5 mejores memes de Wilfred para Reels o imágenes. |
+| MAYO-003 | Compilación Memes Elara (Emocional/Reflexivo) | @char_USM_elara | Foto / Carrusel | **Alto** | Crear un carrusel con los memes emocionales de Elara. |
+| CNT-006 | Tarot de Universe (contenido evergreen) | @char_USM_universe | Foto / Carrusel / Reel | **Muy Alto** | Reciclar las imágenes/cartas más virales de Facebook para crear nuevos Reels o Carruseles. |
+| CNT-024 | Frase del día — personaje + principio filosófico | Rotativo | Foto / Historia | **Muy Alto** | Crear plantillas base para asignar frases de los 9 Principios a los personajes del Primer Círculo. |
+
+---
+
+## Contenido Prioritario para Reutilización (Histórico)
 
 El siguiente contenido ha sido identificado como reutilizable (`Es_Reutilizable == Sí`) y debe ser considerado primero para llenar los espacios del calendario antes de producir piezas nuevas. **Nota:** Bajo la política del Growth OS, solo se pueden reutilizar piezas que hayan cumplido al menos 30 días desde su última publicación.
 
