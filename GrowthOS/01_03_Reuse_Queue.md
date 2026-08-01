@@ -57,6 +57,12 @@ El siguiente contenido ha sido identificado como reutilizable (`Es_Reutilizable 
    - Saturación del formato.
    - Objetivos actuales del Growth OS.
 
+**Criterios Específicos para Reels:**
+- **Prioridad Alta:** Reels con alto alcance a no-seguidores (>90%) y buen tiempo de reproducción (>7 segundos).
+- **Personajes Clave:** Fantasma y Universe (gato con lentes) en situaciones visualmente ricas.
+- **Duración Óptima:** Idealmente entre 7 y 12 segundos, con gancho visual más fuerte en los primeros 3 segundos.
+- **Evitar:** Reels de texto genérico o con baja retención.
+
 2. **Regla de Antigüedad (30 días):** Ninguna pieza puede ser reutilizada si han pasado menos de 30 días desde su `Fecha_Ultima_Publicacion`.
 3. **Bloqueo Canon:** Ninguna pieza en esta cola puede ser reutilizada si su campo `Bloqueado_Canon` es `Sí`.
 4. **Automatización Make:** El flujo de Make `Flujo de Generación de Calendario` debe filtrar automáticamente esta cola (`Es_Reutilizable == Sí` Y `Dias_Desde_Publicacion` >= 30) para llenar los días vacíos del calendario semanal.
