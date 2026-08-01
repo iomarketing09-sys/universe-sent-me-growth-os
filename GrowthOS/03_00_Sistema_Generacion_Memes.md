@@ -32,11 +32,13 @@ El ciclo de vida de un meme sigue estos pasos:
 
 1.  **Propuesta:** Fernando sube una imagen de referencia a la carpeta `Proposed` en Drive.
 2.  **Revisión y Aprobación:** Fernando revisa los memes propuestos en Drive.
-3.  **Procesamiento (Manus):**
-    -   Manus detecta la imagen aprobada en Drive.
-    -   Se ejecuta el script `usm_meme_generator.py` utilizando el modelo `gemini-2.5-flash-image`.
-    -   El prompt utiliza las reglas de diseño del canon (leídas de `Integracion_Growth_OS.md`).
-4.  **Sincronización:** Manus sube la imagen generada a `Generated_By_Gemini` y registra los metadatos en `Processed_Log`.
+3. **Procesamiento y Clasificación (Manus):**
+    -   Manus detecta la imagen en la carpeta `Proposed` de Drive.
+    -   Se utiliza Vision (Gemini) para clasificar el meme (personaje, tema, texto, emoción).
+    -   Manus registra los metadatos en `Processed_Log` (JSON) y en el inventario local.
+4. **Generación Final (Flow / Nano Banana):**
+    -   Para garantizar la máxima consistencia visual de los personajes (Canon Guarding), el usuario realiza la generación final en **Flow** utilizando los modelos **Nano Banana 2** o **Nano Banana Pro**.
+    -   Manus actúa como el gestor de metadatos y estratega de programación, sugiriendo los mejores slots en el calendario.
 5.  **Ingreso al Growth OS:** La pieza se registra en la base de datos central (Google Sheets) con estado `Idea` o `Pendiente de Producción`.
 
 ---
