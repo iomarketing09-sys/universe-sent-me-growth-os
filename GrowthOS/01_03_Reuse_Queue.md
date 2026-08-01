@@ -12,7 +12,7 @@
 
 ## Contenido Prioritario para Reutilización
 
-El siguiente contenido ha sido identificado como reutilizable (`Es_Reutilizable == Sí`) y debe ser considerado primero para llenar los espacios del calendario antes de producir piezas nuevas.
+El siguiente contenido ha sido identificado como reutilizable (`Es_Reutilizable == Sí`) y debe ser considerado primero para llenar los espacios del calendario antes de producir piezas nuevas. **Nota:** Bajo la política del Growth OS, solo se pueden reutilizar piezas que hayan cumplido al menos 30 días desde su última publicación.
 
 | ID_Pieza | Título | Personaje Principal | Formato | Potencial de Reutilización | Acción Requerida |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -26,6 +26,7 @@ El siguiente contenido ha sido identificado como reutilizable (`Es_Reutilizable 
 
 ## Reglas de Reutilización
 
-1. **Validación de Formato:** Si un formato (ej. Foto de Tarot) demostró alta viralidad histórica, debe ser reutilizado con ligeras variaciones antes de probar formatos nuevos.
-2. **Bloqueo Canon:** Ninguna pieza en esta cola puede ser reutilizada si su campo `Bloqueado_Canon` es `Sí`.
-3. **Automatización Make:** El flujo de Make `Flujo de Generación de Calendario` debe filtrar automáticamente esta cola (`Es_Reutilizable == Sí`) para llenar los días vacíos del calendario semanal.
+1. **Regla de Antigüedad (30 días):** Ninguna pieza puede ser reutilizada si han pasado menos de 30 días desde su `Fecha_Ultima_Publicacion`.
+2. **Validación de Formato:** Si un formato (ej. Foto de Tarot) demostró alta viralidad histórica, debe ser reutilizado con ligeras variaciones antes de probar formatos nuevos (siempre respetando la regla de 30 días).
+3. **Bloqueo Canon:** Ninguna pieza en esta cola puede ser reutilizada si su campo `Bloqueado_Canon` es `Sí`.
+4. **Automatización Make:** El flujo de Make `Flujo de Generación de Calendario` debe filtrar automáticamente esta cola (`Es_Reutilizable == Sí` Y `Dias_Desde_Publicacion` >= 30) para llenar los días vacíos del calendario semanal.

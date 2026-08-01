@@ -13,7 +13,7 @@ Este repositorio es **independiente** de `iomarketing09-sys/universe-sent-me-1` 
 
 El puente entre ambos es `GrowthOS/Integracion_Growth_OS.md`, que mantiene un caché fechado de las reglas de canon relevantes (con commit de referencia del repo de Biblia) para que Manus pueda generar hooks y programar contenido sin necesitar acceso directo al repo de canon.
 
-Las reglas completas de gobernanza — roles, permisos, flujo de trabajo, checklist previo a publicación — viven en `Studio/Studio_Governance.md` dentro del repo de canon.
+Las reglas completas de gobernanza — roles, permisos, flujo de trabajo, checklist previo a publicación, revisiones diarias y semanales con Claude — viven en `Studio_Governance.md` dentro de este mismo repositorio.
 
 ## Estructura
 
@@ -31,6 +31,8 @@ GrowthOS/
 ├── Integracion_Growth_OS.md                  # documento puente con el canon
 ├── Canon_Contradictions_Report.md
 └── USM_Growth_OS.xlsx
+
+Studio_Governance.md                          # governance, roles, permisos, revisiones
 ```
 
 ## Regla de bloqueo (no negociable)

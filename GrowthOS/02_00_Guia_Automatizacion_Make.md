@@ -35,6 +35,8 @@ Para que Make pueda leer y escribir sin errores, la base de datos debe tener exa
 | `Dificultad_Produccion` | Texto (Select) | `Muy_Baja`, `Baja`, `Media`, `Alta`. |
 | `Es_Reutilizable` | Casilla (Checkbox) | `Sí` / `No`. |
 | `Bloqueado_Canon` | Casilla (Checkbox) | `Sí` / `No`. |
+| `Fecha_Ultima_Publicacion` | Fecha | Formato `YYYY-MM-DD` o vacío. |
+| `Dias_Desde_Publicacion` | Número | Entero calculado automáticamente por Make. |
 | `Notas_Canon` | Texto | Justificación del bloqueo (opcional). |
 
 ### Hoja 2: `HypothesisBank`
@@ -83,7 +85,7 @@ Make debe disparar flujos basándose en cambios en el campo `Estado`. Para evita
 **Propósito:** Crear el borrador del calendario sin intervención manual.
 **Trigger:** `Scheduled` (Cada domingo a las 23:00).
 **Acciones:**
-1. `Search Rows` en `Content_Database` donde `Estado` == `Aprobado` Y `Es_Reutilizable` == `Sí`.
+1. `Search Rows` en `Content_Database` donde `Estado` == `Aprobado` Y `Es_Reutilizable` == `Sí` Y `Dias_Desde_Publicacion` >= 30.
 2. `Search Rows` donde `Estado` == `Aprobado` Y `Es_Reutilizable` == `No`.
 3. Combinar ambas listas priorizando las reutilizables.
 4. Aplicar reglas de equilibrio (filtrar por `Personaje_Principal` para asegurar variedad).

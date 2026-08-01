@@ -45,6 +45,8 @@ Para escalar a 1,000+ piezas, cada idea debe existir como una fila independiente
 | `Dificultad_Produccion` | Esfuerzo estimado | Enum: `Muy_Baja`, `Baja`, `Media`, `Alta` |
 | `Es_Reutilizable` | Flag para reciclar contenido | `Sí` / `No` |
 | `Bloqueado_Canon` | ¿Tiene contradicciones de canon? | `Sí` / `No` |
+| `Fecha_Ultima_Publicacion` | Fecha de la última vez que se publicó | `YYYY-MM-DD` o vacío |
+| `Dias_Desde_Publicacion` | Días transcurridos desde la última publicación | Entero (calculado)
 
 ---
 
@@ -105,7 +107,7 @@ Para asignar contenido a los próximos 7 días, el sistema debe aplicar las sigu
 
 1. **Regla de Bloqueo Canon:** Ninguna pieza con `Bloqueado_Canon == Sí` puede entrar al calendario.
 2. **Regla de Aprobación:** Solo piezas con `Estado == Aprobado` pueden ser `Programadas`.
-3. **Regla de Reutilización:** Si existe contenido con `Estado == Reutilizado` y `Dificultad_Produccion == Muy_Baja`, priorizar su publicación.
+3. **Regla de Reutilización (30 días):** Si existe contenido con `Estado == Reutilizado` y `Dificultad_Produccion == Muy_Baja`, priorizar su publicación **solo si han pasado al menos 30 días** desde su `Fecha_Ultima_Publicacion`.
 4. **Regla de Equilibrio:** El calendario debe asegurar al menos un 20% de participación por personaje principal (`Universe`, `Wilfred`, `Elara`, `Payaso`, `Ganso`, etc.).
 5. **Regla de Formato:** Alternar formatos (no publicar 3 Reels seguidos del mismo personaje en el mismo día).
 6. **Regla de Hipótesis:** Priorizar piezas que validen una `Hipotesis_ID` del Growth OS si hay espacio disponible.
