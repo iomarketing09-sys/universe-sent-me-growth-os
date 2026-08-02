@@ -16,16 +16,19 @@ El storyboard utiliza un estilo de historieta/cómic para definir los momentos c
 ## 2. Storyboard (Imagen)
 ![Storyboard Showreel](showreel_storyboard.png)
 
-## 3. Desglose de Paneles
+## 3. Guion de Montaje ("The Intention Cut")
 
-| Panel | Personaje / Escena | Descripción Narrativa | Tono Visual |
+Este showreel se basa en la **sincronización sensorial** y el ritmo, eliminando la necesidad de explicaciones verbales.
+
+| Tiempo | Escena | Audio | Visual |
 | :--- | :--- | :--- | :--- |
-| **1** | Universe (Gato) | Close-up cinematográfico. Establece la identidad de marca inmediata. | Alta fidelidad, iluminación suave. |
-| **2** | Wilfred (Gnomo) | Guardián en el bosque. Muestra la calidad de los entornos generados. | Bosque místico, niebla, detalle en texturas. |
-| **3** | Fantasma | Caminando gatos en el Mar de Nubes. El activo visual más potente para adquisición. | Onírico, surrealista, paleta fría. |
-| **4** | Elara y Kiri | Lectura de cartas y hada volando. Muestra efectos de partículas y magia. | Místico, cálido, dinámico. |
-| **5** | Universe & Wilfred | Split screen. Contraste entre el tarot y el humor seco. | Dualidad, ritmo rápido. |
-| **6** | Cierre | Logotipo "Universe Sent Me" + "Why I Want It". | Tipografía bold, estética de estudio. |
+| **00-02s** | Intro | Respiración profunda en negro. | Negro absoluto. |
+| **02-05s** | Universe | Inicio de música rítmica. | Universe aparece (Corte seco). |
+| **05-08s** | Wilfred | Ritmo constante. | Wilfred caminando entre árboles (Corte). |
+| **08-11s** | Fantasma | Aumento de intensidad. | Fantasma con los gatos (Corte). |
+| **11-20s** | Personajes | Cortes rápidos (1-2s). | Elara, Kiri, Silvio en acción. |
+| **20-30s** | Mundo USM | Clímax visual. | Paisajes, luces, neblina, cámara en movimiento. |
+| **30-35s** | Outro | Silencio o nota sostenida. | **Universe Sent Me** <br> *"Stories born with AI. Made with intention."* |
 
 ## 4. Próximos Pasos
 1. **Selección de Clips:** Identificar los fragmentos de video exactos que corresponden a estos paneles.

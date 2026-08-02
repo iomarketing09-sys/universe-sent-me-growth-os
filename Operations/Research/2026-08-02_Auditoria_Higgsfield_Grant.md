@@ -11,9 +11,9 @@
 ---
 
 ## 1. Resumen Ejecutivo
-Tras analizar la producción generada desde la obtención del certificado (28 de julio de 2026) y contrastarla con los requisitos oficiales de Higgsfield, se concluye que la estrategia con mayor probabilidad de éxito es la creación de un **Showreel de 30-45 segundos**. 
+Tras analizar la producción generada desde la obtención del certificado (28 de julio de 2026) y contrastarla con los requisitos oficiales de Higgsfield, se concluye que la estrategia ganadora es un **Showreel Atmosférico de 35 segundos**.
 
-Aunque existen piezas individuales con alto rendimiento (como el Reel de Universe del 30 de julio), el jurado de Higgsfield busca "el ojo del cineasta" y la capacidad de construir mundos. Un showreel permite combinar el humor viral de Universe, la profundidad cinematográfica de Wilfred y la estética atmosférica del Fantasma, presentando a "Universe Sent Me" no solo como un canal de memes, sino como un **estudio de narrativa transmedia impulsado por IA**.
+Esta pieza no buscará explicar el proyecto, sino sumergir al jurado en su "vibe" mediante un montaje rítmico y minimalista. La propuesta se centra en la **intencionalidad narrativa**, utilizando el tagline: *"Stories born with AI. Made with intention."* para posicionar a Universe Sent Me como un estudio que domina la herramienta, no que depende de ella.
 
 ---
 
@@ -76,12 +76,16 @@ Aunque existen piezas individuales con alto rendimiento (como el Reel de Univers
 *   **Ritmo:** *Fast-Slow-Fast* (Impacto, Respiración, Cierre).
 *   **Música:** Base folk-orquestal (identidad de USM) con cortes rítmicos para transiciones.
 
-### Orden de Escenas (Ver Storyboard para referencia visual):
-1.  **00-03s (El Gancho):** Close-up de Universe con lentes, transición rápida a Wilfred en el bosque (Mirada a cámara).
-2.  **03-10s (El Mundo):** Paisajes rápidos (Mar de Nubes, El Bosque) intercalados con el Fantasma paseando gatos.
-3.  **10-20s (La Magia):** Elara tirando cartas, efectos de partículas, Kiri (Hada) en movimiento.
-4.  **20-30s (El Conflicto/Humor):** Universe en situación absurda (Tarotista), Wilfred con su humor seco.
-5.  **30-35s (Cierre):** Logotipo "Universe Sent Me" + Texto: "Why I Want It".
+### Guion Estratégico (35 Segundos - "The Intention Cut"):
+1.  **00-02s:** Negro absoluto. Sonido de respiración profunda (intimidad inmediata).
+2.  **02-05s:** Aparición de Universe (Corte seco).
+3.  **05-08s:** Wilfred caminando entre los árboles (Corte).
+4.  **08-11s:** El Fantasma con los gatos (Corte).
+5.  **11-20s:** Ráfaga rítmica de personajes: Elara, Kiri, Silvio.
+6.  **20-30s:** Paisajes, luces, neblina, movimientos de cámara dinámicos. Sincronización total con la música.
+7.  **30-35s:** Pantalla final:
+    *   **Universe Sent Me**
+    *   *"Stories born with AI. Made with intention."*
 
 ---
 
