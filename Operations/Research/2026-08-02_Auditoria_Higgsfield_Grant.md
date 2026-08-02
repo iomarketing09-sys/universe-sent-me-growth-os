@@ -71,11 +71,12 @@ Aunque existen piezas individuales con alto rendimiento (como el Reel de Univers
 
 ## 5. Blueprint del Showreel Recomendado (Estructura)
 
+*   **Documento Visual:** [Showreel Storyboard Blueprint](../Production/Showreel_Storyboard_Blueprint.md)
 *   **Duración Ideal:** 35 segundos.
 *   **Ritmo:** *Fast-Slow-Fast* (Impacto, Respiración, Cierre).
 *   **Música:** Base folk-orquestal (identidad de USM) con cortes rítmicos para transiciones.
 
-### Orden de Escenas:
+### Orden de Escenas (Ver Storyboard para referencia visual):
 1.  **00-03s (El Gancho):** Close-up de Universe con lentes, transición rápida a Wilfred en el bosque (Mirada a cámara).
 2.  **03-10s (El Mundo):** Paisajes rápidos (Mar de Nubes, El Bosque) intercalados con el Fantasma paseando gatos.
 3.  **10-20s (La Magia):** Elara tirando cartas, efectos de partículas, Kiri (Hada) en movimiento.
