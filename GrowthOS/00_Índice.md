@@ -24,6 +24,7 @@
 | [Sistema de Generación de Memes](03_00_Sistema_Generacion_Memes.md) | Flujo de ingesta (Drive), adaptación (Gemini) y archivo visual (GitHub). | Active |
 | [Canon Contradictions Report](Canon_Contradictions_Report.md) | Contradicciones activas que bloquean producción. | Active |
 | [Inventario de Contenido](Content_Inventory.csv) | CSV maestro con metadatos de las 25 piezas existentes. | Active |
+| [Auditoría Higgsfield Grant](../Operations/Research/2026-08-02_Auditoria_Higgsfield_Grant.md) | Análisis estratégico para la candidatura del Filmmaker Grant. | Review |
 
 ---
 
