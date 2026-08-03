@@ -29,11 +29,13 @@
 | CNT-001 | Mi gato: tarotista (meme-to-reel) | @char_USM_universe | Reel (~9s) | Reutilizable (pendiente revisión) | Sí (continuidad) |
 | CNT-007 | Wilfred — sabiduría del bosque | @char_USM_wilfred | Foto / Reel / Frase | Idea | No |
 | CNT-008 | Elara — cartas mágicas y astrología | @char_USM_elara | Foto / Reel / Carrusel | Idea | No |
-| CNT-015 | Fantasma — contenido contemplativo | @char_USM_fantasma | Reel / Foto / Frase | Idea | Sí (inmovilidad) |
+| CNT-015 | Fantasma — contenido contemplativo | @char_USM_fantasma | Reel / Foto / Frase | Idea | No* |
 | CNT-021 | Behind the scenes — pipeline de producción IA | N/A (meta) | Reel / Carrusel | Idea | No |
 | CNT-004 | La Búsqueda del Frasco Olvidado (mini-historia) | @char_USM_universe | Carruseles + Reels | Bloqueado | Sí (5 contradicciones) |
 | CNT-005 | HB-001: Wilfred existencial vs humorístico | @char_USM_wilfred | Reel (2 variantes) | Pendiente de aprobación | Sí (Fernando) |
 | CNT-025 | Experimentos Growth OS — tests A/B | Variable | Reel (parejas) | Pendiente de aprobación | Sí (Fernando) |
+
+\* **CNT-015 (2026-08-02, corrección de Claude):** estaba marcado "Sí (inmovilidad)" por una lectura incorrecta del canon del Fantasma, propagada en varios documentos de Growth OS. El canon real no dice que sea físicamente inmóvil — dice que está emocionalmente congelado en un instante no resuelto, y que se aferra por lógica de supervivencia interna (`02 Personajes/Segundo Círculo/Fantasma/01 Territorio emocional.md`, `03 Reglas de diseño.md`). No hay bloqueo de canon para contenido contemplativo con este personaje; sí sigue aplicando la regla general de no mostrar su máscara cayendo por completo ni una resolución dramática y visible de su identidad dentro de una misma pieza.
 
 ### Prioridad Baja (Ideas en Desarrollo / Personajes Secundarios)
 

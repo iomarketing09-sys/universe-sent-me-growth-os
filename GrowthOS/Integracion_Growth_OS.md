@@ -38,7 +38,7 @@
 | Evan | `@char_USM_evan` | *(Pendiente: consultar ficha)* | `02 Personajes/Segundo Círculo/Evan/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
 | Chica del Suéter | `@char_USM_chica_sweater` | *(Pendiente: consultar ficha)* | `02 Personajes/Segundo Círculo/Chica del Suéter/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
 | Chico de los Pantalones | `@char_USM_chico_pantalones` | *(Pendiente: consultar ficha)* | `02 Personajes/Segundo Círculo/Chico de los Pantalones/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
-| Fantasma | `@char_USM_fantasma` | No puede seguir adelante en absoluto. Atrapado en un instante. No puede intervenir activamente para "salvar el día". | `02 Personajes/Segundo Círculo/Fantasma/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
+| Fantasma | `@char_USM_fantasma` | Congelado emocionalmente en un instante que nunca cerró — no es incapacidad física. Se aferra por lógica de supervivencia interna, no por nostalgia (ver Territorio Emocional). Restricción real: no puede resolver esa identidad ni "salvar el día" de forma heroica y dramáticamente visible dentro de una misma pieza. *(Corregido 2026-08-02 por Claude — la nota original describía inmovilidad física, que no existe en canon.)* | `02 Personajes/Segundo Círculo/Fantasma/01 Territorio emocional.md`, `03 Reglas de diseño.md` | 2026-08-02 (corrección) |
 
 ### 1.3 Lugares
 
@@ -55,7 +55,7 @@
 | :--- | :--- | :--- | :--- |
 | Profundidad después del humor | La profundidad nunca debe aparecer antes que el humor. | `01 ADN/01.04 Anti-tono.md` | 2026-07-31 (commit `939752c`) |
 | Sin moralización explícita | Una historia no puede existir para ilustrar una lección. Ningún personaje puede diagnosticar a otro. La lección debe sentirse sin nombrarse. | `07 Historias/00 Estándar de Historias.md` | 2026-07-31 (commit `939752c`) |
-| Fantasma inmovilizado | El Fantasma no puede avanzar ni intervenir activamente en la trama. Está atrapado en un instante. | `02 Personajes/Segundo Círculo/Fantasma/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
+| Fantasma congelado emocionalmente | El Fantasma no puede resolver ni superar de forma dramática y visible su identidad congelada dentro de una misma pieza. No tiene restricción de movilidad física ni de acción. *(Corregido 2026-08-02 por Claude — "Fantasma inmovilizado" describía incapacidad física, que no existe en canon.)* | `02 Personajes/Segundo Círculo/Fantasma/01 Territorio emocional.md`, `03 Reglas de diseño.md` | 2026-08-02 (corrección) |
 | Universe limitado | Universe conoce el mecanismo pero nunca entiende completamente el propósito. No es orquestador de conflictos. | `02 Personajes/Primer Círculo/Universe/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
 
 ---

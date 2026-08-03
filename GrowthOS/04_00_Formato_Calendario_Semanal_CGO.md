@@ -114,7 +114,7 @@ Para que este formato funcione a escala, se deben aplicar estas reglas al llenar
 2.  **Regla de la Carpeta Drive (Prioridad 2):** Los slots de "Memes Nuevos" (4 a 6 por semana) deben llenarse exclusivamente con las piezas generadas por Manus/Gemini en la carpeta `Generated_By_Gemini`.
 3.  **Regla de Cascada de Video (Prioridad 3):** Todo Reel aprobado para Instagram o Facebook **debe** ser republicado automáticamente en TikTok y YouTube Shorts para maximizar el alcance orgánico sin costo de producción.
 4.  **Regla de Aprobación:** El Lore y los Reels experimentales requieren aprobación explícita de Fernando antes de pasar al estado `Programado`.
-5.  **Regla de Canon:** Nunca se asignará un personaje a un formato que contradiga sus reglas de diseño (ej. El Fantasma nunca en un Reel dinámico, Wilfred nunca moralizando).
+5.  **Regla de Canon:** Nunca se asignará un personaje a un formato que contradiga sus reglas de diseño (ej. el Fantasma nunca superando su apego de forma dramática y visible en una sola pieza, Wilfred nunca moralizando). *(Corrección 2026-08-02: el ejemplo original decía "el Fantasma nunca en un Reel dinámico" — el Fantasma no tiene restricción de movilidad física en canon; sí tiene restricción de no resolver su identidad congelada de forma visible y permanente dentro de un mismo episodio.)*
 
 ---
 

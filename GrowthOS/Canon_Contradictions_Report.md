@@ -20,11 +20,12 @@ Se han identificado **5 contradicciones de canon** en la mini-historia "La Búsq
 | Campo | Valor |
 | :--- | :--- |
 | **Personaje** | Fantasma (`@char_USM_fantasma`) |
-| **Lo que dice el canon** | El Fantasma no puede seguir adelante en absoluto. Está atrapado en un instante. No puede intervenir activamente en la trama. |
+| **Lo que dice el canon (corregido 2026-08-02)** | El Fantasma está emocionalmente congelado en un instante que nunca cerró — esto no es incapacidad física ni prohibición de actuar. Se aferra por una lógica de supervivencia interna (creer que soltar sería dejar de existir), tan válida como el control del Ganso o la sabiduría de Wilfred. La restricción real es que su identidad congelada no puede resolverse ni superarse de forma heroica, dramática y visible dentro de un mismo episodio. |
+| **Nota de lectura original (incorrecta)** | La versión anterior de este reporte decía "El Fantasma no puede seguir adelante en absoluto... no puede intervenir activamente en la trama" — eso trataba una condición emocional/identitaria como si fuera una restricción de movilidad física. Esa lectura no está respaldada por el canon real y ya se había propagado a varios documentos de Growth OS (corregidos en el mismo commit que esta nota). |
 | **Lo que hace la historia** | El Fantasma interviene activamente para detener el caos y "salvar el día". |
-| **Fuente canon** | `02 Personajes/Segundo Círculo/Fantasma/03 Reglas de diseño.md` (commit `cf2ac53`) |
-| **Tipo de error** | Contradicción directa con regla de diseño cerrada |
-| **Corrección necesaria** | Reescribir el capítulo 7 para que el Fantasma permanezca inmovilizado. La resolución del conflicto debe venir de otro personaje o mecanismo narrativo. |
+| **Fuente canon** | `02 Personajes/Segundo Círculo/Fantasma/01 Territorio emocional.md`, `03 Reglas de diseño.md` (commit `cf2ac53`) |
+| **Tipo de error** | Pendiente de reconfirmar — la actúación física del Fantasma en sí no es el problema. El punto real a verificar es si el capítulo presenta su identidad congelada como resuelta o superada de forma dramática y visible ("salva el día" como resolución heroica de su propio arco), lo cual sí violaría Principio 3 (el cambio es invisible) y el Estándar de Historias (ninguna máscara cae por completo). Claude no tiene el texto completo del Capítulo 7 en este momento — este campo queda abierto hasta relectura directa del capítulo. |
+| **Corrección necesaria** | Releer el Capítulo 7 bajo la lectura corregida antes de decidir si reescribirlo. Si el Fantasma solo actúa físicamente sin que eso implique resolver o superar su identidad congelada, no hay contradicción. Si "salva el día" se presenta como una resolución dramática de su arco interno, sí requiere reescritura — pero el motivo sería ese, no una imposibilidad de movimiento. |
 
 ---
 
@@ -84,7 +85,7 @@ Se han identificado **5 contradicciones de canon** en la mini-historia "La Búsq
 
 | Capítulo | Estado | Acción requerida |
 | :--- | :--- | :--- |
-| Capítulo 7 | **BLOQUEADO** | Reescribir — Fantasma no puede intervenir activamente |
+| Capítulo 7 | **BLOQUEADO — pendiente relectura** | Motivo original corregido (no era incapacidad física). Releer el capítulo bajo la lectura correcta: el problema, si existe, es una resolución dramática y visible del arco del Fantasma dentro del mismo episodio, no que actúe físicamente. Mantiene bloqueo hasta esa relectura. |
 | Capítulo 8 | **BLOQUEADO** | Reescribir — Eliminar moralización explícita |
 | Capítulo 10 | **BLOQUEADO** | Reescribir — Universe no puede ser omnisciente |
 | Elara / Tarot | **BLOQUEADO** | Reescribir — Asignar ángulo distinto a Elara |
