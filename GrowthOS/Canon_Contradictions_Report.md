@@ -81,15 +81,46 @@ Se han identificado **5 contradicciones de canon** en la mini-historia "La Búsq
 
 ---
 
+## Contradicción — "Maeve" / MaeveUSM (personaje no existente en canon)
+
+**Fecha de detección:** 2026-08-03 (Claude, extracción de datos Windsor.ai)
+
+| Campo | Valor |
+| :--- | :--- |
+| **Personaje involucrado** | "Maeve" / "MaeveUSM" |
+| **Lo que dice el canon** | No existe ningún personaje llamado Maeve en la Biblia. El Primer Círculo son 5 personajes y el Segundo Círculo otros 5. "Maeve" no corresponde a ninguno. |
+| **Lo que hizo Manus** | Publicó 2026-08-02 en FB e IG con hashtag `#MaeveUSM` asociando el nombre al Fantasma. Ya publicado — 572 impresiones FB. |
+| **Tipo de error** | Personaje inventado publicado con hashtag de marca USM. |
+| **Acción requerida — Fernando decide:** | (a) "Maeve" es nombre aprobado para un personaje existente → registrar en Biblia; (b) fue error → no repetir. Ninguna pieza futura puede usar `#MaeveUSM` hasta resolución. |
+
+---
+
+## Contradicción — "Kiri" / KiriUSM y "#LoresUSM" (nombres no aprobados)
+
+**Fecha de detección:** 2026-08-03 (Claude, extracción de datos Windsor.ai)
+
+| Campo | Valor |
+| :--- | :--- |
+| **Personaje involucrado** | "Kiri" usado como nombre de El Hada |
+| **Lo que dice el canon** | El personaje se llama "El Hada" en toda la documentación. No hay nombre propio aprobado. Fuente: `02 Personajes/Segundo Círculo/Hada/00 Resumen.md`. |
+| **Lo que hizo Manus** | Publicó posts 2026-07-31 y 2026-08-03 con `#KiriUSM` y el nombre "Kiri" en copy. El post del 31 Jul obtuvo 24,480 impresiones en FB — la audiencia ya conoce ese nombre. También usó `#LoresUSM`, que no corresponde a ningún personaje, lugar ni concepto en el canon. |
+| **Tipo de error** | Mismo patrón que "Silvio" para el Payaso: nombre no aprobado con hashtag de marca. "LoresUSM" no tiene entrada canónica. |
+| **Acción requerida — Fernando decide:** | (a) "Kiri" es el nombre aprobado para El Hada → registrar en Biblia; (b) error → volver a "El Hada". Sobre `#LoresUSM`: si es concepto nuevo necesita entrada canónica antes de usarse de nuevo. Ninguna pieza futura puede usar `#KiriUSM` ni `#LoresUSM` hasta resolución. |
+
+---
+
 ## Estado de Bloqueo
 
-| Capítulo | Estado | Acción requerida |
+| Ítem | Estado | Acción requerida |
 | :--- | :--- | :--- |
-| Capítulo 7 | **BLOQUEADO — pendiente relectura** | Motivo original corregido (no era incapacidad física). Releer el capítulo bajo la lectura correcta: el problema, si existe, es una resolución dramática y visible del arco del Fantasma dentro del mismo episodio, no que actúe físicamente. Mantiene bloqueo hasta esa relectura. |
+| Capítulo 7 | **BLOQUEADO — pendiente relectura** | Motivo original corregido. Releer bajo lectura correcta del Fantasma antes de desbloquear. |
 | Capítulo 8 | **BLOQUEADO** | Reescribir — Eliminar moralización explícita |
 | Capítulo 10 | **BLOQUEADO** | Reescribir — Universe no puede ser omnisciente |
 | Elara / Tarot | **BLOQUEADO** | Reescribir — Asignar ángulo distinto a Elara |
-| "Silvio" | **BLOQUEADO** | Esperar confirmación de Fernando |
+| "Silvio" (Payaso) | **BLOQUEADO** | Esperar confirmación de Fernando |
+| **"Maeve" / MaeveUSM** | **BLOQUEADO** | Esperar decisión de Fernando (ver sección arriba) |
+| **"Kiri" / KiriUSM** | **BLOQUEADO** | Esperar decisión de Fernando (ver sección arriba) |
+| **"LoresUSM"** | **BLOQUEADO** | Esperar decisión de Fernando (ver sección arriba) |
 
 ---
 
