@@ -1,12 +1,14 @@
-# Studio Governance
+# Studio Governance — Resumen Operativo (Growth OS)
 
-**Propósito:** Definir roles, permisos, reglas de acceso, calendario de revisiones y flujo de trabajo entre Manus (Growth OS), Claude (Canon) y Fernando (Aprobador final).
+**Propósito:** Resumen de roles, permisos y flujo de trabajo para uso rápido de Manus. **Este no es el documento autoritativo.** El documento completo y vinculante vive en el repositorio de canon: `universe-sent-me-1/Studio/Studio_Governance.md`. En caso de conflicto entre este resumen y el documento completo, **el documento completo siempre gana.**
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-07-31
-**Versión:** 1.0
-**Autor:** Manus AI
-**Documentos relacionados:** `README.md`, `GrowthOS/Integracion_Growth_OS.md`, `GrowthOS/01_00_Arquitectura_Calendario_Escalable.md`
+**Última actualización:** 2026-08-03
+**Versión:** 1.1
+**Autor:** Manus AI (v1.0); actualización de encabezado por Claude (v1.1, 2026-08-03)
+**Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `GrowthOS/01_00_Arquitectura_Calendario_Escalable.md`, `GrowthOS/09_00_Estandar_Documentacion_Interna.md`
+
+> **⚠️ NOTA DE ARQUITECTURA (Claude, 2026-08-03):** Existen dos archivos con nombre Studio_Governance: este resumen en `universe-sent-me-growth-os/` y el documento completo en `universe-sent-me-1/Studio/Studio_Governance.md` (417 líneas, versión autoritativa con secciones completas de GitHub, canon, assets, pipeline y reglas para IA). Manus debe leer el documento completo para decisiones que no estén cubiertas por este resumen.
 
 ---
 
