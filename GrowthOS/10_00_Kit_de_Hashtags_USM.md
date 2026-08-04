@@ -26,12 +26,12 @@
 | Wilfred | `#WilfredUSM` | Nombre propio, canon desde origen |
 | Elara | `#ElaraUSM` | Nombre propio, canon desde origen |
 | El Ganso | `#GansoUSM` | Identificador estructural (sin nombre propio) |
-| El Payaso | `#PayasoUSM` | Identificador estructural. **"Silvio" NO está aprobado — no usar `#SilvioUSM`.** |
+| El Payaso | `#SilvioUSM` | Nombre propio confirmado 2026-08-03 (commit `8e9fe9a`), diseño corregido y aprobado |
+| Chica del Suéter | `#MaeveUSM` | Nombre propio confirmado 2026-08-03. `#MaeveUSM` y `#FantasmaUSM` pueden co-existir en la misma pieza cuando ambos personajes aparecen juntos (ej. "Ghost of You") |
 | El Hada | `#KiriUSM` | Nombre propio confirmado 2026-08-03 (commit `f7bebca`) |
 | El Fantasma | `#FantasmaUSM` | Identificador estructural (sin nombre propio todavía) |
 | Evan | `#EvanUSM` | Nombre propio, canon desde origen |
-| Chica del Suéter | `#ChicaDelSueterUSM` | Identificador estructural (sin nombre propio todavía) |
-| Chico de los Pantalones | `#ChicoDeLosPantalonesUSM` | Identificador estructural (sin nombre propio todavía) |
+| Chico de los Pantalones | `#ChicoDeLosPantalonesUSM` | Identificador estructural (sin nombre propio todavía — carpeta "Kael_Aeris" en Drive pendiente de confirmación final) |
 
 *Pendiente: cuando Fernando entregue la carpeta con personajes/props/lugares aprobados, revisar si alguno de los identificadores estructurales de arriba recibe nombre propio (como pasó con Kiri) y actualizar esta tabla.*
 

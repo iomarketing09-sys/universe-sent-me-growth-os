@@ -68,7 +68,7 @@ Se han identificado **5 contradicciones de canon** en la mini-historia "La Búsq
 
 ---
 
-### Contradicción #5 — Nombre "Silvio" no existe en canon
+### Contradicción #5 — Nombre "Silvio" — ✅ RESUELTO (2026-08-03)
 
 | Campo | Valor |
 | :--- | :--- |
@@ -77,21 +77,19 @@ Se han identificado **5 contradicciones de canon** en la mini-historia "La Búsq
 | **Lo que hace la historia** | Usa el nombre "Silvio" para el Payaso sin confirmación previa. |
 | **Fuente canon** | `02 Personajes/Primer Círculo/Payaso/00 Resumen.md` (commit `cf2ac53`) |
 | **Tipo de error** | Identificador no aprobado |
-| **Corrección necesaria** | No usar "Silvio" hasta que Fernando confirme explícitamente el nombre. Usar "Payaso" como identificador hasta nueva orden. |
+| **Resolución de Fernando (2026-08-03)** | Silvio es el nombre confirmado para El Payaso, junto con un diseño corregido (se detectó que el reference sheet original usaba el arquetipo del "payaso triste" clásico, contradiciendo la regla de diseño; el diseño corregido ya fue aprobado y registrado en canon, commit `8e9fe9a`). `#SilvioUSM` queda autorizado. |
+| **Estado** | ✅ RESUELTO — Desbloqueado. |
 
 ---
 
-## Contradicción — "Maeve" / MaeveUSM (personaje no existente en canon)
-
-**Fecha de detección:** 2026-08-03 (Claude, extracción de datos Windsor.ai)
+## "Maeve" / MaeveUSM — ✅ RESUELTO, no era una contradicción (2026-08-03)
 
 | Campo | Valor |
 | :--- | :--- |
-| **Personaje involucrado** | "Maeve" / "MaeveUSM" |
-| **Lo que dice el canon** | No existe ningún personaje llamado Maeve en la Biblia. El Primer Círculo son 5 personajes y el Segundo Círculo otros 5. "Maeve" no corresponde a ninguno. |
-| **Lo que hizo Manus** | Publicó 2026-08-02 en FB e IG con hashtag `#MaeveUSM` asociando el nombre al Fantasma. Ya publicado — 572 impresiones FB. |
-| **Tipo de error** | Personaje inventado publicado con hashtag de marca USM. |
-| **Acción requerida — Fernando decide:** | (a) "Maeve" es nombre aprobado para un personaje existente → registrar en Biblia; (b) fue error → no repetir. Ninguna pieza futura puede usar `#MaeveUSM` hasta resolución. |
+| **Personaje involucrado** | "Maeve" |
+| **Resolución de Fernando** | Maeve es el nombre confirmado de la Chica del Suéter (carpeta `PERSONAJES/Maeve (la chica del suéter)/` en Drive, ya revisada por Claude). El post del 2026-08-02 con `#MaeveUSM` y `#FantasmaUSM` **no era un error de identidad** — la pieza muestra a Maeve abrazando al Fantasma; ambos hashtags son correctos porque ambos personajes aparecen en la escena. Claude marcó esto como contradicción por error de lectura propia; queda corregido aquí. |
+| **Pendiente** | Registrar "Maeve" formalmente en la Biblia (`02 Personajes/Segundo Círculo/Chica del Suéter/`), mismo tratamiento que Kiri y Silvio. Autónéticamente aprobado por Fernando, pendiente solo del commit de canon. |
+| **Estado** | Sin bloqueo. `#MaeveUSM` y `#FantasmaUSM` pueden co-existir en una misma pieza cuando ambos personajes aparecen juntos. |
 
 ---
 
@@ -114,8 +112,8 @@ Se han identificado **5 contradicciones de canon** en la mini-historia "La Búsq
 | Capítulo 8 | **BLOQUEADO** | Reescribir — Eliminar moralización explícita |
 | Capítulo 10 | **BLOQUEADO** | Reescribir — Universe no puede ser omnisciente |
 | Elara / Tarot | **BLOQUEADO** | Reescribir — Asignar ángulo distinto a Elara |
-| "Silvio" (Payaso) | **BLOQUEADO** | Esperar confirmación de Fernando |
-| **"Maeve" / MaeveUSM** | **BLOQUEADO** | Esperar decisión de Fernando (ver sección arriba) |
+| ~~"Silvio" (Payaso)~~ | **✅ RESUELTO** | Registrado en canon (commit `8e9fe9a`), diseño corregido y aprobado. Desbloqueado. |
+| ~~"Maeve" / MaeveUSM~~ | **✅ RESUELTO** | No era contradicción — error de lectura de Claude, corregido. Pendiente solo el commit formal de canon. |
 | ~~"Kiri" / KiriUSM~~ | **✅ RESUELTO** | Registrado en canon (commit `f7bebca`). Desbloqueado. |
 | ~~"LoresUSM"~~ | **✅ RESUELTO** | Era typo, no elemento de canon. Ver kit de hashtags. |
 
