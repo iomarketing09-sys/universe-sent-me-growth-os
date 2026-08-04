@@ -95,17 +95,14 @@ Se han identificado **5 contradicciones de canon** en la mini-historia "La Búsq
 
 ---
 
-## Contradicción — "Kiri" / KiriUSM y "#LoresUSM" (nombres no aprobados)
-
-**Fecha de detección:** 2026-08-03 (Claude, extracción de datos Windsor.ai)
+## Contradicción — "Kiri" / KiriUSM y "#LoresUSM" — ✅ RESUELTO (2026-08-03)
 
 | Campo | Valor |
 | :--- | :--- |
-| **Personaje involucrado** | "Kiri" usado como nombre de El Hada |
-| **Lo que dice el canon** | El personaje se llama "El Hada" en toda la documentación. No hay nombre propio aprobado. Fuente: `02 Personajes/Segundo Círculo/Hada/00 Resumen.md`. |
-| **Lo que hizo Manus** | Publicó posts 2026-07-31 y 2026-08-03 con `#KiriUSM` y el nombre "Kiri" en copy. El post del 31 Jul obtuvo 24,480 impresiones en FB — la audiencia ya conoce ese nombre. También usó `#LoresUSM`, que no corresponde a ningún personaje, lugar ni concepto en el canon. |
-| **Tipo de error** | Mismo patrón que "Silvio" para el Payaso: nombre no aprobado con hashtag de marca. "LoresUSM" no tiene entrada canónica. |
-| **Acción requerida — Fernando decide:** | (a) "Kiri" es el nombre aprobado para El Hada → registrar en Biblia; (b) error → volver a "El Hada". Sobre `#LoresUSM`: si es concepto nuevo necesita entrada canónica antes de usarse de nuevo. Ninguna pieza futura puede usar `#KiriUSM` ni `#LoresUSM` hasta resolución. |
+| **Personaje involucrado** | "Kiri", nombre de El Hada |
+| **Resolución de Fernando** | Kiri es el nombre que Fernando le asignó a El Hada. **Confirmado y ya registrado en canon**: `Universe Sent Me - Biblia/02 Personajes/Segundo Círculo/Hada/00 Resumen.md` (commit `f7bebca`, v1.1, 2026-08-03). `#KiriUSM` queda autorizado para uso en Growth OS. |
+| **Sobre "#LoresUSM"** | Fue un typo — una "s" de más. No es un elemento de canon; Fernando está implementando un kit de hashtags de marca con firma `USM` (ver `10_00_Kit_de_Hashtags_USM.md`). Corregir a `#LoreUSM` si se usa como categoría temática, o retirar el hashtag si no corresponde a esta pieza. |
+| **Estado** | Desbloqueado. |
 
 ---
 
@@ -119,8 +116,8 @@ Se han identificado **5 contradicciones de canon** en la mini-historia "La Búsq
 | Elara / Tarot | **BLOQUEADO** | Reescribir — Asignar ángulo distinto a Elara |
 | "Silvio" (Payaso) | **BLOQUEADO** | Esperar confirmación de Fernando |
 | **"Maeve" / MaeveUSM** | **BLOQUEADO** | Esperar decisión de Fernando (ver sección arriba) |
-| **"Kiri" / KiriUSM** | **BLOQUEADO** | Esperar decisión de Fernando (ver sección arriba) |
-| **"LoresUSM"** | **BLOQUEADO** | Esperar decisión de Fernando (ver sección arriba) |
+| ~~"Kiri" / KiriUSM~~ | **✅ RESUELTO** | Registrado en canon (commit `f7bebca`). Desbloqueado. |
+| ~~"LoresUSM"~~ | **✅ RESUELTO** | Era typo, no elemento de canon. Ver kit de hashtags. |
 
 ---
 

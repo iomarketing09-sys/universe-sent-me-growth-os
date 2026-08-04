@@ -86,7 +86,7 @@ Ante varias opciones, selecciona siempre aquella que:
 **Origen:** observación registrada durante la redacción de copy para "El Bucle del Fantasma" (`CNT` pendiente de asignar — ver nota en Content Backlog). No validada todavía con datos — tratar como hipótesis de trabajo, no como regla cerrada.
 
 - **Facebook:** el copy en sí pesa más que los hashtags para alcance orgánico en esta plataforma. Los hashtags pueden incluirse sin que afecten negativamente, pero no son la palanca principal aquí — priorizar gancho de copy y CTA nativo (ej. "etiquétalo").
-- **Instagram:** los hashtags sí ayudan a descubrimiento. Mezcla recomendada por pieza: 2 de marca (`#UniverseSentMe`, `#[Personaje]`) + 3-4 de nicho de humor (`#MemesEnEspañol`, `#HumorRelatable`, etc.) + 1 hashtag accionable/de formato propio (ej. `#CuandoLeExplicas`).
+- **Instagram:** los hashtags sí ayudan a descubrimiento. Mezcla recomendada por pieza: 2 de marca (`#UniverseSentMe`, `#[Personaje]USM`) + 3-4 de nicho de humor (`#MemesEnEspañol`, `#HumorRelatable`, etc.) + 1 hashtag accionable/de formato propio (ej. `#CuandoLeExplicas`). *(Roster oficial de hashtags de marca: ver `10_00_Kit_de_Hashtags_USM.md`, creado 2026-08-03.)*
 - **Hipótesis abierta:** un hashtag de formato propio derivado del texto en pantalla (ej. `#CuandoLeExplicas`) podría convertirse en mini-formato recurrente si el engagement lo valida a través de varias piezas. Revisar en el próximo ciclo de Aprendizaje Post-Publicación (Sección 3) si se repite y con qué resultado.
 - **CTA "etiquétalo":** usado como gancho de engagement nativo en el copy de Facebook/Instagram de esta pieza — monitorear si mueve comentarios/shares de forma medible antes de adoptarlo como default en el Sistema de Generación de Memes (`03_00`).
 

@@ -34,7 +34,7 @@
 
 | Personaje | ID Canon | Nota | Fuente | Última sincronización |
 | :--- | :--- | :--- | :--- | :--- |
-| Hada (Kiri) | `@char_USM_hada` | *(Pendiente: consultar ficha)* | `02 Personajes/Segundo Círculo/Hada/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
+| Hada (Kiri) | `@char_USM_hada` | Nombre propio confirmado por Fernando (2026-08-03): Kiri. Su territorio emocional es el asombro genuino — la primera vez que una emoción aparece antes del mecanismo para esconderla. Puede tocar la grieta de Wilfred con preguntas simples que la ironía no puede esquivar. | `02 Personajes/Segundo Círculo/Hada/00 Resumen.md`, `01 Territorio emocional.md`, `03 Reglas de diseño.md` | 2026-08-03 (commit `f7bebca`) |
 | Evan | `@char_USM_evan` | *(Pendiente: consultar ficha)* | `02 Personajes/Segundo Círculo/Evan/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
 | Chica del Suéter | `@char_USM_chica_sweater` | *(Pendiente: consultar ficha)* | `02 Personajes/Segundo Círculo/Chica del Suéter/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
 | Chico de los Pantalones | `@char_USM_chico_pantalones` | *(Pendiente: consultar ficha)* | `02 Personajes/Segundo Círculo/Chico de los Pantalones/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
