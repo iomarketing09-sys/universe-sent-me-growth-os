@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-04
 **Última actualización:** 2026-08-04
-**Versión:** 1.0
+**Versión:** 1.1
 **Autor:** Manus (Chief Growth Officer)
 **Documentos relacionados:** `mayo_2026_top_posts_metaBS.md`, `08_00_Metricas_Baseline_Plataformas.md`, `reuse_queue_mayo_2026.csv`
 
@@ -40,19 +40,21 @@ Se ha introducido contenido que expande el lore del universo, destacando la intr
 
 ## 3. Seguimiento de Top Memes de Mayo (Republicaciones)
 
-De los 5 memes virales identificados en el reporte de mayo, **2 han sido ya republicados** en el ciclo actual.
+Se ha verificado que **4 de los top memes de mayo** han sido ya republicados en el ciclo actual.
 
-| # Mayo | Concepto Original | Estado en Agosto | Fecha Republicación | Rendimiento Actual |
-|---|---|---|---|---|
-| **#4** | "No olvides las 3 vrg" | **Republicado** | 03 Ago | **26,201 alcance** / 713 reactions |
-| **#5** | "Ronroneo / Navajazo" | **Republicado** | 04 Ago | 239 alcance (en curso) |
-| **#1** | "Cambios de tema" | Pendiente | - | N/A |
-| **#2** | "La mente del wey..." | Pendiente | - | N/A |
-| **#3** | "Pásame tu pack" | Pendiente | - | N/A |
+| # Mayo | Concepto Original | Estado en Agosto | Fecha Republicación | Rendimiento Actual | Caption Actual |
+|---|---|---|---|---|---|
+| **#1** | "Cambios de tema" | **Republicado** | 21 Jul | **175,565 alcance** | "🥴🤯 escucho borroso...." |
+| **#4** | "No olvides las 3 vrg" | **Republicado** | 03 Ago | **26,201 alcance** | "𝑳𝒖𝒏𝒆𝒔 𝒅𝒆 𝒆𝒏𝒇𝒐𝒒𝒖𝒆..." |
+| **#5** | "Ronroneo / Navajazo" | **Republicado** | 04 Ago | 239 alcance | "Ronroneo para el amigo..." |
+| **#7** | "Adivina kien anda caliente" | **Republicado** | 18 Jul | - | "😐" |
+| **#2** | "La mente del wey..." | Pendiente | - | N/A | - |
+| **#3** | "Pásame tu pack" | Pendiente | - | N/A | - |
 
 ### Notas sobre la republicación:
-- El meme **"3 vrg"** (Top #4 de Mayo) mantiene una tracción sólida, logrando superar las 26K impresiones en sus primeras 24 horas, confirmando su estatus de activo evergreen.
-- Se recomienda programar la republicación de los Top #1 y #2 de Mayo para la próxima semana (Lunes/Domingo) según los hallazgos de días fuertes.
+- El **Top #1 de Mayo** ("Cambios de tema") fue republicado con un copy minimalista ("🥴🤯 escucho borroso....") y se convirtió en el post de mayor alcance del periodo actual (175K), validando la estrategia de captions cortos.
+- El meme **"3 vrg"** (Top #4 de Mayo) mantiene una tracción sólida, logrando superar las 26K impresiones en sus primeras 24 horas.
+- Se recomienda programar la republicación del Top #2 de Mayo ("La mente del wey...") para el próximo ciclo.
 
 ---
 
@@ -67,5 +69,5 @@ De los 5 memes virales identificados en el reporte de mayo, **2 han sido ya repu
 ## 5. Próximos Pasos
 
 - [ ] Actualizar `reuse_queue_mayo_2026.csv` marcando los ya publicados.
-- [ ] Programar Top #1 de Mayo ("Cambios de tema") para el próximo Domingo 9 de Agosto.
+- [ ] Programar Top #2 de Mayo ("La mente del wey...") para la próxima semana.
 - [ ] Monitorear el desempeño del Ganso para validar si el humor absurdo resuena en la audiencia de Facebook.
