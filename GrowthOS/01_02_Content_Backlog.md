@@ -3,8 +3,8 @@
 **Propósito:** Lista maestra de todo el contenido pendiente ordenado por prioridad estratégica.
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-07-31
-**Versión:** 1.0
+**Última actualización:** 2026-08-05
+**Versión:** 1.1
 **Autor:** Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_01_Calendario_Semanal.md`
 
@@ -18,7 +18,7 @@
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | CNT-006 | Tarot de Universe (contenido evergreen) | @char_USM_universe | Foto / Carrusel / Reel | Reutilizable | No |
 | CNT-002 | Wilfred reseña su propio peluche | @char_USM_wilfred | Reel (~14s) | **Publicado** (FB, 30-Jul 9:16 AM) | No |
-| CNT-023 | Sección recurrente '¿Qué me llegó?' | Rotativo | Reel recurrente | Pendiente de producción | No |
+| CNT-023 | Sección recurrente '¿Qué me llegó?' (Mercado Libre) | Rotativo | Reel recurrente | Producción Activa | No |
 | CNT-024 | Frase del día — personaje + principio filosófico | Rotativo | Foto / Historia | Idea | No |
 | CNT-003 | Trailer 001 — Universe Sent Me | @char_USM_universe | Trailer (~32s) | Pendiente de producción | No |
 

@@ -3,8 +3,8 @@
 **Propósito:** Punto de entrada a toda la documentación operativa del Growth OS (calendario editorial, colas, automatizaciones, governance).
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-07-31
-**Versión:** 1.1
+**Última actualización:** 2026-08-05
+**Versión:** 1.2
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -30,6 +30,7 @@
 | [Métricas Baseline — FB & IG](08_00_Metricas_Baseline_Plataformas.md) | Datos reales de Windsor.ai: top 10 FB, tabla Reels, tabla IG, insights de canal. Actualizar cada domingo. | Active |
 | [Estándar de Documentación Interna](09_00_Estandar_Documentacion_Interna.md) | Reglas permanentes para que Manus cree y actualice documentos en este repositorio. | Active |
 | [Kit de Hashtags USM](10_00_Kit_de_Hashtags_USM.md) | Roster fijo de hashtags de marca (personaje, lugar, concepto) con firma USM. Evita typos y nombres no aprobados. | Active |
+| [Estrategia Monetización Mercado Libre](11_00_Estrategia_Monetizacion_MercadoLibre.md) | Marco operativo para capitalizar la afiliación de Mercado Libre. | Active |
 
 ---
 
