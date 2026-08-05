@@ -4,8 +4,8 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-05
-**Versión:** 1.0
-**Autor:** Manus AI (CGO)
+**Versión:** 1.1
+**Autor:** Manus AI (CGO); entrada [1.1.1] añadida por Claude
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
 ---
@@ -20,6 +20,23 @@
 ### Actualizado
 - **Calendario Editorial:** Añadido calendario oficial 4-9 de agosto validado por Fernando.
 - **Reportes de Análisis:** Actualización de reportes de agosto con datos de Top Memes y métricas de Facebook.
+
+---
+
+## [1.1.1] — Corrección y contexto de canon faltante (Claude, 2026-08-05)
+
+### Corregido
+- Fecha real de desbloqueo de Silvio y Kiri: **2026-08-03**, no 08-04. Ver commits `f7bebca` y `8e9fe9a` en el repositorio de canon (`universe-sent-me-1`).
+
+### Añadido — hitos de canon no reflejados antes en este changelog
+Este changelog vive en Growth OS, pero varios de los hitos de esta semana ocurrieron en el repositorio de canon (`universe-sent-me-1`), donde Manus tiene solo lectura. Se registran aquí para que ningún agente tenga que adivinarlos:
+
+- **Silvio (El Payaso):** su primer reference sheet usaba el arquetipo del "payaso triste" clásico (lágrimas pintadas, mueca de tristeza), lo cual contradecía la regla de diseño ya cerrada. Fernando aprobó un diseño corregido (sonrisa cómplice, ceja levantada) — **ese es el único diseño válido para producción.** Corolario visual documentado en `02 Personajes/Primer Círculo/Payaso/03 Reglas de diseño.md` (canon, commit `8e9fe9a`).
+- **Kiri (El Hada):** además del nombre, se confirmó una varita como objeto personal (canon, `00 Resumen.md` de Hada, commit `990a69c`). Su función narrativa todavía no se ha desarrollado.
+- **Dos lugares nuevos, ambos en estado PROPUESTA (no CANON todavía):**
+  - `La Hoguera.md` — punto de encuentro cercano a la ciudad, de escala íntima a grupal, posible entrada al Bosque.
+  - `La Ciudad.md` — ficha deliberadamente incompleta. Confirmado: dirección visual (arquitectura arena/terracota) y una criatura gigante en el cielo, sin historia todavía, vista con naturalidad, sin interacción de ningún personaje — es una restricción narrativa activa, no un vacío a llenar.
+- **Maeve (Chica del Suéter):** su diseño está confirmado y aprobado (carpeta Drive revisada), pero **todavía no tiene commit formal en el repo de canon** — a diferencia de Kiri y Silvio, que ya están cerrados. Tratar como "aprobado por Fernando, pendiente de registro en Biblia" hasta nuevo aviso.
 
 ---
 
@@ -57,3 +74,4 @@ Al iniciar una nueva sesión o tarea, los agentes deben:
 1. Leer `00_01_Changelog_GrowthOS.md` para identificar cambios desde su última interacción.
 2. Verificar el `00_Índice.md` para ubicar nuevos documentos mencionados en el changelog.
 3. No proponer cambios que contradigan hitos marcados como "Active" o "Canon" en este registro.
+4. Recordar que este changelog vive en Growth OS, pero puede registrar hitos ocurridos en el repositorio de canon (`universe-sent-me-1`) cuando afectan la producción — Manus tiene acceso de solo lectura ahí y debe confiar en lo que Claude/Fernando documenten aquí sobre ese repositorio, sin asumir que un silencio significa que no hubo cambios.
