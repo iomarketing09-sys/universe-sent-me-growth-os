@@ -3,8 +3,8 @@
 **Propósito:** Registro de métricas reales extraídas de Windsor.ai. Fuente de verdad para comparaciones de rendimiento, calibración de hipótesis y decisiones de canal. No es un resumen de sesión — es un documento vivo que debe actualizarse con cada ciclo de análisis.
 **Estado:** Active
 **Fecha de creación:** 2026-08-03
-**Última actualización:** 2026-08-03
-**Versión:** 1.0
+**Última actualización:** 2026-08-05
+7	**Versión:** 1.1
 **Autor:** Claude (Guardián de Canon, extracción directa vía Windsor.ai MCP)
 **Documentos relacionados:** `07_00_Registro_Maestro_Reels.md`, `06_00_Reglas_Aprendizaje_Tendencias.md`, `01_00_Arquitectura_Calendario_Escalable.md`
 
@@ -96,7 +96,20 @@
 
 ---
 
-## 6. Próxima Actualización
+## 6. Métricas de Monetización (Mercado Libre)
+
+| Métrica | Meta (Q3 2026) | Estado Actual | Fuente |
+|---|---|---|---|
+| Clics en Afiliado (Mensual) | 5,000 | 0 | ML Dashboard / Bitly |
+| Tasa de Conversión (CR) | 1.5% | 0% | ML Dashboard |
+| Ingresos Afiliados | $500 USD | $0 | ML Dashboard |
+| Vistas en ML Clips | 10,000 | 0 | ML App |
+
+**Nota operativa:** Estas métricas se integrarán en el reporte semanal a partir de la primera publicación del formato "¿Qué me llegó?".
+
+---
+
+## 7. Próxima Actualización
 
 Este documento debe actualizarse:
 - Cada domingo (ciclo semanal de análisis)
