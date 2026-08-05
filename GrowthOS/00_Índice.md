@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-05
-**Versión:** 1.2
+7	**Versión:** 1.3
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -14,6 +14,7 @@
 
 | Documento | Propósito | Estado |
 | :--- | :--- | :--- |
+| [Changelog del Growth OS](00_01_Changelog_GrowthOS.md) | Registro de hitos, integraciones y cambios de versión. | Active |
 | [Arquitectura del Calendario Escalable](01_00_Arquitectura_Calendario_Escalable.md) | Define metadatos, estados y reglas de negocio. | Active |
 | [Calendario Editorial Semanal (W01)](01_01_Calendario_Semanal.md) | Tablero operativo de los próximos 7 días. | Active |
 | [Formato del Calendario Semanal (CGO v3.0)](04_00_Formato_Calendario_Semanal_CGO.md) | Plantilla oficial por día de la semana, validada con datos de mayo 2026. | Active |
