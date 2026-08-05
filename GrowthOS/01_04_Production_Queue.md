@@ -14,8 +14,8 @@
 
 | ID_Pieza | Título | Personaje Principal | Formato | Dificultad | Estado Actual | Dependencias / Notas |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| CNT-002 | Wilfred reseña su propio peluche | @char_USM_wilfred | Reel (~14s) | Media | Pendiente de producción | 4 shots. Contraste de estilos (cel-shaded vs fotorrealista). |
-| CNT-023 | Sección recurrente '¿Qué me llegó?' | Rotativo | Reel recurrente | Baja | Pendiente de producción | Formato repetible. Episodio 1 = CNT-002. Requiere productos de afiliación. |
+| CNT-002 | Wilfred reseña su propio peluche | @char_USM_wilfred | Reel (~14s) | Media | **Publicado** (FB, 30-Jul 9:16 AM) | 4 shots. Contraste de estilos (cel-shaded vs fotorrealista). |
+| CNT-023 | Sección recurrente '¿Qué me llegó?' | Rotativo | Reel recurrente | Baja | Pendiente de producción (Episodio 2) | Formato repetible. Episodio 1 = CNT-002 (ya publicado 30-Jul). Requiere productos de afiliación. |
 | CNT-003 | Trailer 001 — Universe Sent Me | @char_USM_universe | Trailer (~32s) | Alta | Pendiente de producción | 5 shots. Requiere música folk-orquestal y edición final. |
 | CNT-008 | Elara — cartas mágicas y astrología | @char_USM_elara | Foto / Reel / Carrusel | Media | Idea | Requiere aprobación de identidad visual diferenciada (no tarot). |
 | CNT-015 | Fantasma — contenido contemplativo | @char_USM_fantasma | Reel / Foto / Frase | Media | Idea | Ficha visual aprobada. No es físicamente inmóvil — es identidad congelada en un instante no resuelto (lógica de supervivencia interna, canon). Evitar que su máscara caiga por completo o que resuelva su identidad de forma dramática y visible en la pieza. |

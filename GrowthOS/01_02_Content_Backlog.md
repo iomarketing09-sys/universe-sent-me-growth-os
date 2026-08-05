@@ -17,7 +17,7 @@
 | ID_Pieza | Título | Personaje Principal | Formato | Estado Actual | Bloqueado Canon |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | CNT-006 | Tarot de Universe (contenido evergreen) | @char_USM_universe | Foto / Carrusel / Reel | Reutilizable | No |
-| CNT-002 | Wilfred reseña su propio peluche | @char_USM_wilfred | Reel (~14s) | Pendiente de producción | No |
+| CNT-002 | Wilfred reseña su propio peluche | @char_USM_wilfred | Reel (~14s) | **Publicado** (FB, 30-Jul 9:16 AM) | No |
 | CNT-023 | Sección recurrente '¿Qué me llegó?' | Rotativo | Reel recurrente | Pendiente de producción | No |
 | CNT-024 | Frase del día — personaje + principio filosófico | Rotativo | Foto / Historia | Idea | No |
 | CNT-003 | Trailer 001 — Universe Sent Me | @char_USM_universe | Trailer (~32s) | Pendiente de producción | No |

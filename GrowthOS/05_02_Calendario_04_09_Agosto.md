@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-04
 **Última actualización:** 2026-08-04
-**Versión:** 1.0
+**Versión:** 1.1
 **Autor:** Claude (a solicitud de Fernando)
 **Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `01_02_Content_Backlog.md`, `01_03_Reuse_Queue.md`, `08_00_Metricas_Baseline_Plataformas.md`, `10_00_Kit_de_Hashtags_USM.md`
 
@@ -31,7 +31,7 @@ No hay Reel listo para cascada hoy (TikTok/YT sin publicación) — el slot de l
 | **10:30 AM** | FB + IG | Carrusel | Wilfred | Top memes de Wilfred (mayo) — 4-5 piezas | Reuse Queue (MAYO-002) |
 | **4:00 PM** | FB | Foto (Meme) | Universe | `260602.png` — "Espero que mi futuro..." | Reuse Queue |
 | **7:00 PM** | FB + IG | Foto (Meme nuevo) | **Silvio** | **Debut público del diseño corregido de Silvio.** Buen momento para presentarlo — ya está aprobado en canon (commit `8e9fe9a`). Necesita texto/meme nuevo aplicado sobre el sheet aprobado. | Nuevo — pendiente de producción |
-| **9:00 PM** | FB + IG + TT + YT | **Reel (~9-15s)** | Wilfred | **CNT-002 — Wilfred reseña su propio peluche.** Ya está en Prioridad Alta del backlog, "pendiente de producción". Este es el momento de producirlo. | Backlog CNT-002 |
+| **9:00 PM** | FB | Foto (Meme) | Universe | `260509.png` — "Pensamientos con groserías..." *(Corrección 2026-08-04: CNT-002 ya se publicó el 30-Jul, no se produce de nuevo — este slot vuelve a meme reutilizado)* | Reuse Queue |
 
 **Hashtags del Reel:** `#UniverseSentMe #WilfredUSM #QueMeLlegoUSM`
 
@@ -76,10 +76,10 @@ No hay Reel listo para cascada hoy (TikTok/YT sin publicación) — el slot de l
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **10:30 AM** | FB + IG | Carrusel | Multichar | Recopilación semanal — mejores momentos de la semana o continuación de "Barajas USM" si quedan personajes sin carta | Nuevo |
 | **4:00 PM** | FB | Foto (Meme) | Elara | `260629.png` — "Uno solo le..." | Reuse Queue |
-| **7:00 PM** | FB + IG | Foto (Meme) | Wilfred | `260583.png` — "Te mereces lo mejor del mundo..." | Reuse Queue |
-| **9:00 PM** | FB | Foto (Meme) | Universe | `260641.png` — "Hay gente que no te puede..." | Reuse Queue |
+| **7:00 PM** | FB + IG + TT + YT | **Reel de cierre (~15-20s)** | A definir | Cierre de semana con video, mismo tratamiento que el domingo 2 de agosto (decisión de Fernando, 2026-08-04 — desviación intencional del template oficial de `04_00`). Elegir personaje según qué pieza tuvo mejor desempeño esta semana. | Decisión de Fernando |
+| **9:00 PM** | FB | Foto (Meme) | Universe | `260530.png` — "Buenos días, legión..." *(o cualquier meme ligero de cierre)* | Reuse Queue |
 
-**Nota:** la plantilla oficial de domingo (`04_00`) no incluye Reel. Si quieres probar uno de cierre de semana (como se hizo el domingo 2 de agosto), sería una desviación intencional del template — avísame y lo agrego.
+**Nota:** confirmado por Fernando (2026-08-04) — domingo cierra con Reel, como el 2 de agosto. Esto actualiza el template oficial de `04_00` solo para esta semana; si se repite, vale la pena volverlo regla permanente del template de domingo.
 
 ---
 
@@ -87,16 +87,19 @@ No hay Reel listo para cascada hoy (TikTok/YT sin publicación) — el slot de l
 
 | Pieza | Día | Prioridad | Estado |
 | :--- | :--- | :--- | :--- |
-| CNT-002 — Wilfred reseña su peluche | Miércoles | Alta | Producir esta semana |
 | Debut meme de Silvio | Miércoles | Alta | Producir esta semana |
 | CNT-018 — Carrusel Fantasma/Mar de Nubes | Jueves | Media | Producir esta semana |
-| CNT-023 — "¿Qué me llegó?" | Viernes | Alta | Producir esta semana (o mover a foto si no da tiempo) |
-| Debut meme de Maeve | Sábado | Media | Producir esta semana |
+| CNT-023 — "¿Qué me llegó?", Episodio 2 | Viernes | Alta | Producir esta semana (o mover a foto si no da tiempo) |
+| Debut meme de Maeve | Sábado | Media | Producir esta semana — **confirmado por Fernando** |
 | Reel de Fantasma (test de hipótesis) | Sábado | Media | Producir esta semana |
 | Carrusel de cierre semanal | Domingo | Baja | Puede ser recopilación simple, bajo costo |
+| **Reel de cierre semanal** | **Domingo** | **Alta** | **Confirmado por Fernando (2026-08-04)** — elegir personaje según desempeño de la semana |
 
-## Pendiente de tu confirmación
+*(Corrección 2026-08-04: se retiró "CNT-002 — Wilfred reseña su peluche" de esta tabla — ya estaba publicado desde el 30 de julio, no era pendiente de producción. Corregido también en `01_02_Content_Backlog.md` y `01_04_Production_Queue.md`.)*
 
-1. Domingo sin Reel (siguiendo template oficial) — ¿lo dejamos así o probamos uno de cierre como el 2 de agosto?
-2. Debut de Maeve en solitario el sábado — ¿ok, o prefieres que su primera aparición individual sea en otro contexto?
+## Decisiones confirmadas por Fernando (2026-08-04)
+
+1. ~~Domingo sin Reel~~ → **Domingo cierra con Reel**, mismo tratamiento que el 2 de agosto.
+2. **Debut de Maeve en solitario el sábado** → aprobado, se mantiene como estaba propuesto.
+3. Ninguna pieza de Reuse Queue fue verificada visualmente por Claude — Manus debe confirmar antes de programar.
 3. Ninguna de las piezas de Reuse Queue fue verificada visualmente por Claude (solo el texto truncado del CSV) — Manus debe confirmar antes de programar.
