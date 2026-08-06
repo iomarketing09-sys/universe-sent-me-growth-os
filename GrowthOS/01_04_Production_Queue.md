@@ -18,7 +18,7 @@
 | CNT-023 | Sección recurrente '¿Qué me llegó?' | Rotativo | Reel recurrente | Baja | Pendiente de producción (Episodio 2) | Formato repetible. Episodio 1 = CNT-002 (ya publicado 30-Jul). Requiere productos de afiliación. |
 | CNT-003 | Trailer 001 — Universe Sent Me | @char_USM_universe | Trailer (~32s) | Alta | Pendiente de producción | 5 shots. Requiere música folk-orquestal y edición final. |
 | CNT-008 | Elara — cartas mágicas y astrología | @char_USM_elara | Foto / Reel / Carrusel | Media | Idea | Requiere aprobación de identidad visual diferenciada (no tarot). |
-| CNT-015 | Fantasma — contenido contemplativo | @char_USM_fantasma | Reel / Foto / Frase | Media | Idea | Ficha visual aprobada. No es físicamente inmóvil — es identidad congelada en un instante no resuelto (lógica de supervivencia interna, canon). Evitar que su máscara caiga por completo o que resuelva su identidad de forma dramática y visible en la pieza. |
+| CNT-015 | Fantasma — contenido contemplativo | @char_USM_fantasma | Reel / Foto / Frase | Media | **Publicado** (5 Ago 2026) | 4 shots en Flow. Cascada: FB, IG, TT, YT. Audio + copy + hashtags en `Operations/Production/CNT015_Copy_Hashtags_Audio.md`. Pendiente de métricas post-publicación. |
 | CNT-004 | La Búsqueda del Frasco Olvidado | @char_USM_universe | Carruseles + Reels | Alta | Bloqueado | **Bloqueado por 5 contradicciones de canon.** Requiere reescritura. |
 | CNT-005 | HB-001: Wilfred existencial vs humorístico | @char_USM_wilfred | Reel (2 variantes) | Media | Pendiente de aprobación | Experimento Growth OS. Requiere aprobación de Fernando. |
 | CNT-025 | Experimentos Growth OS — tests A/B | Variable | Reel (parejas) | Media-Alta | Pendiente de aprobación | Requiere aprobación de Fernando. |

@@ -29,7 +29,7 @@
 | CNT-001 | Mi gato: tarotista (meme-to-reel) | @char_USM_universe | Reel (~9s) | Reutilizable (pendiente revisión) | Sí (continuidad) |
 | CNT-007 | Wilfred — sabiduría del bosque | @char_USM_wilfred | Foto / Reel / Frase | Idea | No |
 | CNT-008 | Elara — cartas mágicas y astrología | @char_USM_elara | Foto / Reel / Carrusel | Idea | No |
-| CNT-015 | Fantasma — contenido contemplativo | @char_USM_fantasma | Reel / Foto / Frase | Idea | No* |
+| CNT-015 | Fantasma — contenido contemplativo | @char_USM_fantasma | Reel / Foto / Frase | **Publicado** (5 Ago, cascada FB/IG/TT/YT) | No* |
 | CNT-021 | Behind the scenes — pipeline de producción IA | N/A (meta) | Reel / Carrusel | Idea | No |
 | CNT-004 | La Búsqueda del Frasco Olvidado (mini-historia) | @char_USM_universe | Carruseles + Reels | Bloqueado | Sí (5 contradicciones) |
 | CNT-005 | HB-001: Wilfred existencial vs humorístico | @char_USM_wilfred | Reel (2 variantes) | Pendiente de aprobación | Sí (Fernando) |

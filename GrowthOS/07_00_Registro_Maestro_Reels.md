@@ -3,7 +3,7 @@
 **Propósito:** Mantener un inventario actualizado de todos los Reels publicados para evitar repeticiones, monitorear el cumplimiento de la Regla de Cascada y facilitar el análisis de rendimiento.
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
-**Última actualización:** 2026-08-01
+**Última actualización:** 2026-08-05
 **Versión:** 1.1
 **Autor:** Manus AI (CGO)
 **Documentos relacionados:** `05_00_Calendario_01_02_Ago.md`, `Operations/Memories/deep_dive_reels_comparativo.md`
@@ -14,6 +14,7 @@
 
 | Fecha Publicación | Título / Concepto | Personaje Principal | Plataforma | Visualizaciones | % No Seguidores | Interacciones (L/C/G/S) | Seguidores Obtenidos | Score de Eficacia (0-10) |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **2026-08-05** | El instante suspendido (Fantasma contemplativo) | Fantasma | FB, IG, TT, YT | *(Pendiente)* | *(Pendiente)* | *(Pendiente)* | *(Pendiente)* | *(Pendiente)* |
 | **2026-08-01** | Wilfred: Muros vemos, Inbox no sabemos | Wilfred | FB, IG, TT, YT | *(Pendiente)* | *(Pendiente)* | *(Pendiente)* | *(Pendiente)* | *(Pendiente)* |
 | **2026-07-30** | Mi gato sabe hacer de todo... | Universe | IG | 114 | 95.6% | 5 (3/0/0/2) | 1 | **8.5** (Alto % No Seguidores, 1 seguidor) |
 | **2026-07-30** | Mi gato sabe hacer de todo... | Universe | FB | 1025 | N/A | 21 (19/2/N/A/N/A) | N/A | **7.0** (Buenas vistas en FB) |
@@ -47,4 +48,4 @@ Se ha detectado que varios Reels recientes solo se publicaron en Instagram. Seg�
 | CNT-002 | Wilfred reseña su propio peluche | Wilfred | Pendiente de producción (Flow). |
 | CNT-003 | Trailer 001 — Universe Sent Me | Universe | Pendiente de producción (Flow). |
 | Nuevo | Propuesta 2: Idealización | Wilfred/Elara | Generando en Flow (Sábado 1 Ago). |
-| Nuevo | Propuesta 3: Ghost of You | Fantasma | Generando en Flow (Sábado 1 Ago). |
+| CNT-015 | El instante suspendido (Fantasma contemplativo) | Fantasma | **Publicado** en cascada (5 Ago, 7:00-7:30 PM). Audio: por definir. Hook: "vitamina B (besos)" en copy. |
