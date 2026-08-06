@@ -3,7 +3,7 @@
 **Propósito:** Lista maestra de todo el contenido pendiente ordenado por prioridad estratégica.
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-05
+**Última actualización:** 2026-08-06
 **Versión:** 1.1
 **Autor:** Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_01_Calendario_Semanal.md`
@@ -49,7 +49,7 @@
 | CNT-014 | Chico de los Pantalones — contenido | @char_USM_chico_pantalones | Reel / Foto | Idea | No |
 | CNT-016 | Filosofía — Principios como contenido | Variable | Foto / Carrusel / Frase / Reel | Idea | No |
 | CNT-017 | El Bosque — contenido ambiental | @char_USM_wilfred | Foto / Reel | Idea | No |
-| CNT-018 | Mar de Nubes — contenido contemplativo | @char_USM_fantasma | Reel / Foto | Idea | No |
+| CNT-018 | Mar de Nubes — contenido contemplativo | @char_USM_fantasma | Carrusel | **Aprobado** (6 Ago, publicación 7:00 PM) | No |
 | CNT-019 | La Plaza del Mercado — contenido de interacción | Variable | Reel / Carrusel | Idea | No |
 | CNT-020 | Jardines Eternos — contenido visual | Variable | Reel / Foto | Idea | No |
 | CNT-022 | Cosmogonía — contenido narrativo visual | Variable | Reel / Carrusel | Idea | Parcial |

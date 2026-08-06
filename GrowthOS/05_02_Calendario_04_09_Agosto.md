@@ -3,8 +3,8 @@
 **Propósito:** Calendario operativo de la semana, aplicando la plantilla ya aprobada en `04_00_Formato_Calendario_Semanal_CGO.md` (Lunes–Domingo), la Reuse Queue de mayo, y el Kit de Hashtags USM. Declarado por Fernando como calendario oficial para el resto de la semana (2026-08-03).
 **Estado:** Active
 **Fecha de creación:** 2026-08-04
-**Última actualización:** 2026-08-04
-**Versión:** 1.1
+**Última actualización:** 2026-08-06
+**Versión:** 1.2
 **Autor:** Claude (a solicitud de Fernando)
 **Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `01_02_Content_Backlog.md`, `01_03_Reuse_Queue.md`, `08_00_Metricas_Baseline_Plataformas.md`, `10_00_Kit_de_Hashtags_USM.md`
 
@@ -37,14 +37,16 @@ No hay Reel listo para cascada hoy (TikTok/YT sin publicación) — el slot de l
 
 ---
 
-## Jueves 6 de Agosto
+## Jueves 6 de Agosto ✅ (día completo — todas las publicaciones programadas)
 
-| Horario | Plataforma | Formato | Personaje | Contenido | Fuente |
+**Estado:** Todas las publicaciones del día están programadas. CNT-018 (Mar de Nubes, carrusel) aprobado por Fernando el 6 de agosto.
+
+| Horario | Plataforma | Formato | Personaje | Contenido | Estado |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **10:30 AM** | FB | Foto (Meme) | Elara | `260505.png` — "No todo lo que te duele te rompe, algunas cosas te despiertan." | Reuse Queue |
-| **4:00 PM** | FB + IG | Foto (Meme) | Kiri | `260654.png` — "Visualizando en el espejo..." | Reuse Queue |
-| **7:00 PM** | FB + IG | Carrusel (Lore) | Fantasma | Activación de Lore — Fantasma + Mar de Nubes (CNT-018, sin bloqueo canon). No es Reel, no cascada a TT/YT. | Backlog CNT-018 |
-| **9:00 PM** | FB + IG | Foto (Meme) | Fantasma | `260624.png` — "Desde que decidí no..." *(o meme nuevo si hay producción disponible)* | Reuse Queue |
+| **10:30 AM** | FB | Foto (Meme) | Elara | `260505.png` — "No todo lo que te duele te rompe, algunas cosas te despiertan." | Programado (Reuse Queue) |
+| **4:00 PM** | FB + IG | Foto (Meme) | Kiri | `260654.png` — "Visualizando en el espejo..." | Programado (Reuse Queue) |
+| **7:00 PM** | FB + IG | Carrusel (Lore) | Fantasma | CNT-018 — Mar de Nubes, carrusel contemplativo (4 slides). Copy y hashtags aprobados. No es Reel, no cascada a TT/YT. | **Aprobado** — ref: `Operations/Production/CNT018_Mar_de_Nubes_Carrusel.md` |
+| **9:00 PM** | FB + IG | Foto (Meme) | Fantasma | `260624.png` — "Desde que decidí no..." | Programado (Reuse Queue) |
 
 ---
 
@@ -88,7 +90,7 @@ No hay Reel listo para cascada hoy (TikTok/YT sin publicación) — el slot de l
 | Pieza | Día | Prioridad | Estado |
 | :--- | :--- | :--- | :--- |
 | Debut meme de Silvio | Miércoles | Alta | Producir esta semana |
-| CNT-018 — Carrusel Fantasma/Mar de Nubes | Jueves | Media | Producir esta semana |
+| CNT-018 — Carrusel Fantasma/Mar de Nubes | Jueves | Media | **Aprobado** (6 Ago) — publicación programada 7:00 PM |
 | CNT-023 — "¿Qué me llegó?", Episodio 2 | Viernes | Alta | Producir esta semana (o mover a foto si no da tiempo) |
 | Debut meme de Maeve | Sábado | Media | Producir esta semana — **confirmado por Fernando** |
 | Reel de Fantasma (test de hipótesis) | Sábado | Media | Producir esta semana |
