@@ -10,6 +10,12 @@
 
 ---
 
+## [1.2.1] — 2026-08-06
+### Corregido
+- **Actualización de Tendencias:** El catálogo de productos (`12_00_Catalogo_Productos_MercadoLibre.md`) se basaba en datos de tendencias de enero 2026. Se ha actualizado la referencia para reflejar las tendencias actuales de Q3 2026 (agosto), validando que la mayoría de los productos seleccionados (como el Proyector LED Galaxia) siguen siendo virales y pertinentes para la temporada.
+
+---
+
 ## [1.2.0] — 2026-08-05
 ### Añadido
 - **Integración de Monetización:** Creación de la estrategia de Mercado Libre Afiliados (`11_00_Estrategia_Monetizacion_MercadoLibre.md`).

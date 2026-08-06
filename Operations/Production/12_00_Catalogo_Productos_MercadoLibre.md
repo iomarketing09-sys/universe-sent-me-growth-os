@@ -3,8 +3,8 @@
 **Propósito:** Registro de los primeros 10 productos seleccionados para campañas de afiliación en Mercado Libre, filtrados por su potencial narrativo con los personajes de Universe Sent Me y su alto rendimiento viral en redes sociales.
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
-**Última actualización:** 2026-08-05
-**Versión:** 1.0
+**Última actualización:** 2026-08-06
+**Versión:** 1.1
 **Autor:** Manus AI (CGO)
 **Documentos relacionados:** `GrowthOS/11_00_Estrategia_Monetizacion_MercadoLibre.md`, `Operations/Production/ML_Reel_01_Storyboard_Blueprint.md`
 
@@ -14,7 +14,7 @@
 1. **Potencial Visual (Storytelling):** El producto debe permitir crear un "gancho" visual fuerte (ej. cambio de iluminación, humo, efectos LED).
 2. **Alineación Narrativa:** Debe tener sentido dentro de la lógica de los personajes (ej. Wilfred y la naturaleza vs. tecnología, Elara y la mística).
 3. **Ticket Promedio:** Rango de $150 a $600 MXN para maximizar la conversión impulsiva desde redes sociales.
-4. **Demanda ML:** Categorías confirmadas como tendencia en Mercado Libre México 2026 [1].
+4. **Demanda ML:** Categorías confirmadas como tendencia en Mercado Libre México para el Q3 2026, priorizando productos con alta viralidad en TikTok/Instagram durante el verano/otoño [1] [2].
 
 ---
 
@@ -43,4 +43,5 @@
 ---
 
 ### Referencias
-[1] UpSeller. "Productos más vendidos en Mercado Libre México - Ranking 2026". https://www.upseller.com/es/blog-article-535
+[1] Mercado Libre Tendencias. "Tendencias de búsqueda en Mercado Libre - Última semana". https://tendencias.mercadolibre.com.mx/
+[2] PhaseV. "Top 10 Trending Products to Sell in 2026". https://phasev.com/blog/popular-trending-products-to-sell/
