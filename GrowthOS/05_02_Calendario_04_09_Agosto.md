@@ -3,8 +3,8 @@
 **Propósito:** Calendario operativo de la semana, aplicando la plantilla ya aprobada en `04_00_Formato_Calendario_Semanal_CGO.md` (Lunes–Domingo), la Reuse Queue de mayo, y el Kit de Hashtags USM. Declarado por Fernando como calendario oficial para el resto de la semana (2026-08-03).
 **Estado:** Active
 **Fecha de creación:** 2026-08-04
-**Última actualización:** 2026-08-06
-**Versión:** 1.2
+**Última actualización:** 2026-08-07
+**Versión:** 1.3
 **Autor:** Claude (a solicitud de Fernando)
 **Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `01_02_Content_Backlog.md`, `01_03_Reuse_Queue.md`, `08_00_Metricas_Baseline_Plataformas.md`, `10_00_Kit_de_Hashtags_USM.md`
 
@@ -52,10 +52,14 @@ No hay Reel listo para cascada hoy (TikTok/YT sin publicación) — el slot de l
 
 ## Viernes 7 de Agosto (Día de Menor Rendimiento — ~15K vistas prom., contenido ligero)
 
+*Corrección de slots 2026-08-07 (Fernando): el slot de 10:30 AM pasa a las **10:00 AM** (libera las 11:00 AM para CNT-024 Wilfred) y el de 4:30 PM pasa a las **4:00 PM** (libera las 5:00 PM para CNT-024 Maeve + Kael).*
+
 | Horario | Plataforma | Formato | Personaje | Contenido | Fuente |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **10:30 AM** | FB + IG | Foto (Meme ligero) | Universe | `260530.png` — "Buenos días, legión..." | Reuse Queue |
+| **10:00 AM** | FB + IG | Foto (Meme ligero) | Universe | `260530.png` — "Buenos días, legión..." | Reuse Queue |
+| **11:00 AM** | FB + IG | Foto (Frase) | **Wilfred** | **CNT-024 (W4)** — "El café no te va a salvar. Pero te va a acompañar hasta que te rindas. Buenos días." — ref: `Operations/Production/CNT024_Frases_Wilfred_Manana_HumorAcido.md` | Nuevo |
 | **4:00 PM** | FB | Foto (Meme) | Wilfred | `260648.png` — "Yo: ¿Es...?" | Reuse Queue |
+| **5:00 PM** | FB + IG | Foto (Frase) | **Maeve + Kael** | **CNT-024 (M1)** — Maeve y el Chico de los Pantalones abrazados, frase agresiva y mimosa: "Ella dice que lo odia con toda su alma. Él le trae café. Se abrazan. Nadie entiende nada. Así los quiero." — ref: `Operations/Production/CNT024_Ajuste_Slots_Abr_7_Wilfred_1100_MaeveKael_1700.md` | Nuevo — requiere producir la imagen (no existe en assets) |
 | **7:00 PM** | FB + IG + TT + YT | **Reel (~14s)** | Rotativo | **CNT-023 — "¿Qué me llegó?" (formato recurrente).** Prioridad Alta en backlog, bajo costo de producción una vez armado el formato base. Si no está listo para el viernes, mover a foto reutilizada — no forzar un Reel sin producción real. | Backlog CNT-023 |
 | **9:00 PM** | FB + IG | Foto (Meme) | Elara | `260610.png` — "Ahorita no corazón..." | Reuse Queue |
 
@@ -93,6 +97,7 @@ No hay Reel listo para cascada hoy (TikTok/YT sin publicación) — el slot de l
 | CNT-018 — Carrusel Fantasma/Mar de Nubes | Jueves | Media | **Aprobado** (6 Ago) — publicación programada 7:00 PM |
 | CNT-023 — "¿Qué me llegó?", Episodio 2 | Viernes | Alta | Producir esta semana (o mover a foto si no da tiempo) |
 | Debut meme de Maeve | Sábado | Media | Producir esta semana — **confirmado por Fernando** |
+| Imagen Maeve + Kael abrazados (CNT-024 M1, viernes 5:00 PM) | Viernes | Media | Producir antes del viernes — requiere imagen nueva de ambos personajes; nombre "Kael" pendiente de confirmación final (usar `#ChicoDeLosPantalonesUSM` hasta entonces) |
 | Reel de Fantasma (test de hipótesis) | Sábado | Media | Producir esta semana |
 | Carrusel de cierre semanal | Domingo | Baja | Puede ser recopilación simple, bajo costo |
 | **Reel de cierre semanal** | **Domingo** | **Alta** | **Confirmado por Fernando (2026-08-04)** — elegir personaje según desempeño de la semana |
