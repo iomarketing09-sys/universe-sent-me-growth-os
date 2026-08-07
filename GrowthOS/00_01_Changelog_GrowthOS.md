@@ -10,6 +10,12 @@
 
 ---
 
+## [1.2.2] — 2026-08-07
+### Corregido
+- **Reestructuración del Catálogo de Productos:** `12_00_Catalogo_Productos_MercadoLibre.md` pasa a versión 2.0 con enfoque "Historia → Personaje → Producto" en lugar de "Personaje → Producto". Se eliminaron productos genéricos (audífonos, organizadores, cámara WiFi) que no conectan con la identidad de la página. Se reemplazaron las tiras LED RGB de Silvio por productos de caos visual (máquina de humo, bola disco, máscara LED, máquina de burbujas). Se agregaron pools de productos por personaje (Wilfred, Elara, Universe, Fantasma, Kiri, Silvio).
+
+---
+
 ## [1.2.1] — 2026-08-06
 ### Corregido
 - **Actualización de Tendencias:** El catálogo de productos (`12_00_Catalogo_Productos_MercadoLibre.md`) se basaba en datos de tendencias de enero 2026. Se ha actualizado la referencia para reflejar las tendencias actuales de Q3 2026 (agosto), validando que la mayoría de los productos seleccionados (como el Proyector LED Galaxia) siguen siendo virales y pertinentes para la temporada.

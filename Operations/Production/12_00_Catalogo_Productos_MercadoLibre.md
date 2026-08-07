@@ -1,44 +1,195 @@
 # Catálogo de Productos: Mercado Libre Afiliados (Story-Commerce)
 
-**Propósito:** Registro de los primeros 10 productos seleccionados para campañas de afiliación en Mercado Libre, filtrados por su potencial narrativo con los personajes de Universe Sent Me y su alto rendimiento viral en redes sociales.
+**Propósito:** Catálogo de productos para campañas de afiliación en Mercado Libre, estructurado por historia narrativa. Cada producto se selecciona primero por el potencial de generar una historia entretenida, y solo después se vincula a un personaje y a un producto comercial.
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
-**Última actualización:** 2026-08-06
-**Versión:** 1.1
+**Última actualización:** 2026-08-07
+**Versión:** 2.0
 **Autor:** Manus AI (CGO)
 **Documentos relacionados:** `GrowthOS/11_00_Estrategia_Monetizacion_MercadoLibre.md`, `Operations/Production/ML_Reel_01_Storyboard_Blueprint.md`
 
 ---
 
-## Criterios de Selección (Filtro USM)
-1. **Potencial Visual (Storytelling):** El producto debe permitir crear un "gancho" visual fuerte (ej. cambio de iluminación, humo, efectos LED).
-2. **Alineación Narrativa:** Debe tener sentido dentro de la lógica de los personajes (ej. Wilfred y la naturaleza vs. tecnología, Elara y la mística).
-3. **Ticket Promedio:** Rango de $150 a $600 MXN para maximizar la conversión impulsiva desde redes sociales.
-4. **Demanda ML:** Categorías confirmadas como tendencia en Mercado Libre México para el Q3 2026, priorizando productos con alta viralidad en TikTok/Instagram durante el verano/otoño [1] [2].
+## Principio Editorial (Filosofía del Catálogo)
+
+> **La gente no entra a Facebook para comprar un humidificador. Entra para entretenerse.**
+
+El catálogo sigue la estructura **"Historia → Personaje → Producto"**. Primero se diseña la historia, luego se elige el personaje que mejor la cuenta, y finalmente el producto aparece de forma natural como parte de esa historia. Si el producto se siente como un anuncio disfrazado, el alcance orgánico cae. El objetivo es que el anuncio desaparezca dentro de la narrativa.
 
 ---
 
-## Los 10 Productos Seleccionados
+## Criterios de Selección (Filtro USM)
 
-| ID | Producto | Categoría | Precio Aprox. (MXN) | Personaje Asignado | Ángulo Narrativo (Story-Commerce) |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **ML-001** | **Proyector LED Galaxia / Aurora** | Iluminación | $150 - $300 | **Wilfred** | El sabio del bosque descubriendo la tecnología humana para "disociar de problemas existenciales". (Producto seleccionado para CNT-023 / Reel 01). |
-| **ML-002** | **Humidificador LED (Simulación de Llama)** | Hogar | $350 - $500 | **Elara** | La lectora de energías evaluando la "vibración" del humo y el fuego artificial. Ideal para ASMR visual. |
-| **ML-003** | **Lámpara Luna 3D Decorativa** | Decoración | $400 - $600 | **Universe** | El gato filósofo analizando por qué los humanos necesitan una réplica de la luna en su habitación. |
-| **ML-004** | **Lámpara de Pared Resina (Hada / Bosque)** | Decoración | $300 - $450 | **Kiri (Hada)** | Activación de personaje. Kiri encontrando un "portal" o artefacto de su misma especie. |
-| **ML-005** | **Tiras LED RGB (Control Remoto)** | Iluminación | $150 - $250 | **Silvio (Payaso)** | Caos controlado: Silvio instalando luces de colores saturados y creando un ambiente absurdo. |
-| **ML-006** | **Difusor de Aromas / Aceites** | Bienestar | $200 - $400 | **Elara** | "Unboxing" místico. Elara abre el paquete usando sus cartas para adivinar qué olor vendrá. |
-| **ML-007** | **Audífonos Bluetooth Inalámbricos** | Tecnología | $250 - $500 | **Wilfred** | Wilfred probando la cancelación de ruido para "aislarse del ruido del mundo moderno" en su bosque. |
-| **ML-008** | **Letrero de Neón LED (Frase corta)** | Decoración | $300 - $500 | **Fantasma** | El Fantasma sosteniendo un neón que proyecta una frase irónica sobre la vida. |
-| **ML-009** | **Organizadores de Escritorio Minimalistas** | Oficina | $200 - $350 | **Universe** | El gato organizando su territorio de forma exagerada con productos de ML. |
-| **ML-010** | **Cámara de Seguridad Mini / WiFi** | Seguridad | $400 - $700 | **Universe / Wilfred** | Wilfred instalando cámaras para "vigilar las invasiones de los humanos a su bosque". |
+1. **Historia Primero:** ¿La pieza genera una historia que alguien querría ver/compartir aunque no existiera el producto?
+2. **Personaje Natural:** ¿El producto se siente como algo que ese personaje usaría, encontraría o cuestionaría en su mundo?
+3. **Potencial Visual:** ¿El producto permite un "gancho" visual fuerte (movimiento, iluminación, humo, efecto)?
+4. **Ticket Impulsivo:** Rango de $150 a $700 MXN para maximizar la conversión desde redes sociales.
+5. **Demanda ML:** Categoría con tendencia vigente en Mercado Libre México para Q3 2026 [1] [2].
+
+---
+
+## Catálogo por Historia (v2.0)
+
+### 🌌 Historia: "El Cielo Encerrado en una Caja"
+| Campo | Detalle |
+| :--- | :--- |
+| **Historia** | Un ser del bosque descubre que los humanos encontraron la forma de meter el universo dentro de una caja pequeña. Lo enciende y su rincón del bosque se llena de estrellas. |
+| **Personaje** | Wilfred |
+| **Producto** | Proyector LED Galaxia / Aurora |
+| **Categoría** | Iluminación |
+| **Precio Aprox.** | $150 - $300 MXN |
+| **Viralidad** | ⭐⭐⭐⭐⭐ — Trending en TikTok/Instagram México Q3 2026 |
+| **Variaciones de historia** | Universe acostado viendo "una luna falsa" / Fantasma usándolo para dormir / Wilfred analizando por qué los humanos no salen a ver el cielo real si ya tienen una copia |
+| **Status** | ✅ APROBADO — Producto seleccionado para CNT-023 / Reel 01 |
+
+### 🌕 Historia: "La Luna que Nadie Mira"
+| Campo | Detalle |
+| :--- | :--- |
+| **Historia** | Los humanos gastaron dinero en hacer una réplica exacta de la luna para tenerla en su habitación. Y aun así, siguen sin salir a ver la original. |
+| **Personaje** | Universe |
+| **Producto** | Lámpara Luna 3D Decorativa |
+| **Categoría** | Decoración |
+| **Precio Aprox.** | $400 - $600 MXN |
+| **Viralidad** | ⭐⭐⭐⭐⭐ — Decoración hogar trending |
+| **Status** | ✅ APROBADO |
+
+### 🌫️ Historia: "El Fuego que No Quema"
+| Campo | Detalle |
+| :--- | :--- |
+| **Historia** | Una lectora de energías evalúa la "vibración" de un fuego artificial que produce humo pero nunca consume. Es ASMR visual puro. |
+| **Personaje** | Elara |
+| **Producto** | Humidificador LED (Simulación de Llama) |
+| **Categoría** | Hogar / Bienestar |
+| **Precio Aprox.** | $350 - $500 MXN |
+| **Viralidad** | ⭐⭐⭐⭐ — El humo genera movimiento, profundidad y ASMR |
+| **Status** | ✅ APROBADO |
+
+### 🔮 Historia: "Adivinanza Sensorial"
+| Campo | Detalle |
+| :--- | :--- |
+| **Historia** | Elara usa sus cartas para predecir qué olor va a salir del paquete antes de abrirlo. El resultado es absurdamente preciso. |
+| **Personaje** | Elara |
+| **Producto** | Difusor de Aromas / Aceites Esenciales |
+| **Categoría** | Bienestar |
+| **Precio Aprox.** | $200 - $400 MXN |
+| **Viralidad** | ⭐⭐⭐⭐ — No parece publicidad, encaja natural con Elara |
+| **Status** | ✅ APROBADO |
+
+### 💀 Historia: "La Frase que No Pude Decir en Vida"
+| Campo | Detalle |
+| :--- | :--- |
+| **Historia** | Un fantasma encuentra un letrero de neón con una frase irónica sobre la vida. Es exactamente lo que él diría si pudiera hablar. Lo sostiene flotando mientras la luz lo ilumina. |
+| **Personaje** | Fantasma |
+| **Producto** | Letrero de Neón LED (Frase corta) |
+| **Categoría** | Decoración |
+| **Precio Aprox.** | $300 - $500 MXN |
+| **Viralidad** | ⭐⭐⭐⭐ — Decoración personalizable trending |
+| **Status** | ✅ APROBADO |
+
+### 🤡 Historia: "El Caos se Instala"
+| Campo | Detalle |
+| :--- | :--- |
+| **Historia** | Silvio recibe una mini máquina de humo y decide que es hora de transformar el bosque en una rave. Luz estroboscópica, bola disco, burbujas por todos lados. Wilfred no está contento. |
+| **Personaje** | Silvio |
+| **Producto** | Mini Máquina de Humo / Bola Disco / Máquina de Burbujas |
+| **Categoría** | Fiesta / Iluminación |
+| **Precio Aprox.** | $200 - $400 MXN |
+| **Viralidad** | ⭐⭐⭐⭐⭐ — Caos visual máximo, perfecto para Silvio |
+| **Status** | ✅ APROBADO (reemplaza las Tiras LED RGB) |
+
+---
+
+## Catálogo por Personaje (Pool de Productos)
+
+### 🌲 Wilfred — El Guardián del Bosque
+*Ángulo: Tecnología humana vs. naturaleza. Wilfred analiza con humor seco por qué los humanos necesitan cada cosa.*
+
+| Producto | Precio Aprox. | Potencial de Historia |
+| :--- | :--- | :--- |
+| Proyector LED Galaxia / Aurora | $150 - $300 | ⭐⭐⭐⭐⭐ "Meten el cielo en una caja" |
+| Telescopio Pequeño | $300 - $500 | ⭐⭐⭐⭐⭐ "Por fin pueden ver el cielo real desde su ventana" |
+| Binoculares | $250 - $400 | ⭐⭐⭐⭐ "Observando humanos a distancia sin ser observado" |
+| Taza Esmaltada Vintage | $100 - $200 | ⭐⭐⭐⭐ "El único objeto humano que no necesita electricidad" |
+| Lámpara de Camping | $150 - $300 | ⭐⭐⭐⭐ "Fuego portátil. Ingenioso." |
+| Manta Suave | $300 - $500 | ⭐⭐⭐⭐ "Los humanos también necesitan refugio del frío. Sorprendente." |
+| Fogata LED | $200 - $350 | ⭐⭐⭐⭐ "Fuego que no quema ni necesita leña. Aceptable." |
+
+### 🔮 Elara — La Lectora de Energías
+*Ángulo: Lo místico se mezcla con lo cotidiano. Elara usa productos como herramientas de "lectura" o ritual moderno.*
+
+| Producto | Precio Aprox. | Potencial de Historia |
+| :--- | :--- | :--- |
+| Humidificador LED (Simulación de Llama) | $350 - $500 | ⭐⭐⭐⭐⭐ "Fuego que no consume. Energía pura." |
+| Difusor de Aromas / Aceites | $200 - $400 | ⭐⭐⭐⭐⭐ Adivina el aroma con sus cartas |
+| Velas LED | $150 - $250 | ⭐⭐⭐⭐ "Fuego sin riesgo. Para rituales seguros." |
+| Reloj de Arena | $200 - $350 | ⭐⭐⭐⭐ "El tiempo medido visualmente. Poesía mecánica." |
+| Cristales Decorativos | $250 - $450 | ⭐⭐⭐⭐⭐ "Los humanos también sienten la vibración de las piedras" |
+| Lámpara de Sal | $300 - $450 | ⭐⭐⭐⭐⭐ "Una piedra que emite luz cálida. Perfecta para meditar." |
+| Cuencos Tibetanos Decorativos | $400 - $600 | ⭐⭐⭐⭐ "Sonido y estética. Doble energía." |
+| Arena Cinética | $100 - $200 | ⭐⭐⭐⭐ ASMR + manipulación táctil |
+
+### 🐱 Universe — El Gato Filósofo
+*Ángulo: Humor cotidiano. "Los humanos inventaron esto y es ridículo pero lo adoro." Universe es el mejor personaje para humor de observación.*
+
+| Producto | Precio Aprox. | Potencial de Historia |
+| :--- | :--- | :--- |
+| Soporte para Celular | $100 - $200 | ⭐⭐⭐⭐⭐ "Los humanos no pueden sostener su propio objeto sin ayuda" |
+| Lámparas Raras / Creativas | $200 - $400 | ⭐⭐⭐⭐⭐ "Iluminación con forma de..." (sorpresa visual) |
+| Gadgets Inútiles pero Divertidos | $150 - $300 | ⭐⭐⭐⭐⭐ "Funciona. Para nada. Brillante." |
+| Mini Impresora Térmica | $400 - $600 | ⭐⭐⭐⭐ "Imprimir instantáneas de pensamientos inútiles" |
+| Teclado Mecánico | $500 - $700 | ⭐⭐⭐⭐ "El sonido de escribir importa más que lo que se escribe" |
+| Mouse Ergonómico | $300 - $500 | ⭐⭐⭐⭐ "Los humanos diseñaron la curva de su propia incomodidad" |
+| Escritorio Minimalista / Organizador Creativo | $200 - $350 | ⭐⭐⭐ "Solo si el organizador tiene una forma absurda" |
+
+### 👻 Fantasma — El Contemplativo
+*Ángulo: Cozy, melancólico, tranquilo. Productos que crean ambiente para el aislamiento emocional.*
+
+| Producto | Precio Aprox. | Potencial de Historia |
+| :--- | :--- | :--- |
+| Proyector LED Galaxia / Aurora | $150 - $300 | ⭐⭐⭐⭐⭐ "Para dormir viendo el cielo sin salir" |
+| Mantas | $300 - $500 | ⭐⭐⭐⭐⭐ "El fantasma que no siente frío, usa manta igual" |
+| Lámparas Cálidas / Ámbar | $200 - $400 | ⭐⭐⭐⭐ "Luz que no molesta a los que ya se fueron" |
+| Tazas Enormes | $150 - $300 | ⭐⭐⭐⭐ "Más superficie para contemplar" |
+| Cojines Estéticos | $200 - $350 | ⭐⭐⭐⭐ "El fantasma tiene un rincón favorito" |
+| Neones con Frases | $300 - $500 | ⭐⭐⭐⭐⭐ "La frase que no pudo decir en vida" |
+
+### 🧚 Kiri — El Hada
+*Ángulo: Magia, luz, naturaleza. Kiri interactúa con objetos que parecen "encantados" o conectados a su especie.*
+
+| Producto | Precio Aprox. | Potencial de Historia |
+| :--- | :--- | :--- |
+| Lámpara de Pared Resina (Hada / Bosque) | $300 - $450 | ⭐⭐⭐⭐⭐ "Un artefacto de mi especie en el mundo humano" |
+| Tiras LED (suaves, no caóticas) | $150 - $250 | ⭐⭐⭐⭐ "Luces de hada reales" |
+| Humidificador (nube/niebla) | $300 - $450 | ⭐⭐⭐⭐ "Niebla mágica para hacer mi propio bosque" |
+
+### 🤡 Silvio — El Caos
+*Ángulo: Absurdo visual máximo. Silvio no usa productos correctamente. Los productos deben permitir caos.*
+
+| Producto | Precio Aprox. | Potencial de Historia |
+| :--- | :--- | :--- |
+| Mini Máquina de Humo | $200 - $350 | ⭐⭐⭐⭐⭐ "El bosque se convierte en discoteca" |
+| Bola Disco / Mini Proyector de Fiesta | $150 - $300 | ⭐⭐⭐⭐⭐ Caos de luces giratorias |
+| Máquina de Burbujas | $100 - $200 | ⭐⭐⭐⭐⭐ Burbujas por todos lados mientras Wilfred observa |
+| Luz Estroboscópica | $100 - $200 | ⭐⭐⭐⭐ Parpadeo + movimiento absurdo |
+| Máscara LED | $250 - $400 | ⭐⭐⭐⭐⭐ "Silvio finalmente tiene una cara que le pertenece" |
+
+---
+
+## Productos Eliminados (v1.0 → v2.0)
+
+| Producto | Razón de Eliminación |
+| :--- | :--- |
+| ❌ Audífonos Bluetooth | Saturation: miles de afiliados vendiendo audífonos. Sin ventaja competitiva ni ángulo narrativo único. |
+| ❌ Organizadores de Escritorio (genéricos) | Poco visuales. No generan curiosidad ni historia. |
+| ❌ Cámara de Seguridad WiFi | No conecta con la identidad de la página. Facebook muestra menos interés en productos "genéricos" de afiliados. |
+| ❌ Tiras LED RGB (versión anterior de Silvio) | Se reemplaza por productos que hacen que Silvio cobre vida como personaje. |
 
 ---
 
 ## Próximos Pasos Operativos
-1. **Generación de Links:** Ingresar al dashboard de Mercado Libre Afiliados para generar los `Deep Links` correspondientes a cada ID.
-2. **Creación de Colecciones:** Armar las primeras "Colecciones ML" organizadas por personaje (ej: "Favoritos de Wilfred").
-3. **Producción:** Iniciar con ML-001 (Proyector Galaxia) ya que cuenta con el blueprint aprobado en `ML_Reel_01_Storyboard_Blueprint.md`.
+1. **Generación de Links:** Ingresar al dashboard de Mercado Libre Afiliados para generar los `Deep Links` de los productos aprobados.
+2. **Prioridad de Producción:** Iniciar con el Proyector LED Galaxia (CNT-023 / Reel 01) ya que cuenta con blueprint aprobado.
+3. **Siguiente Reel:** Lámpara Luna 3D con Universe (historia "La Luna que Nadie Mira").
 
 ---
 
