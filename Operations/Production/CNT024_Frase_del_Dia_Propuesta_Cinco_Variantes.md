@@ -6,7 +6,7 @@
 **Última actualización:** 2026-08-07
 **Versión:** 1.0
 **Autor:** Manus AI (CGO)
-**Documentos relacionados:** `GrowthOS/01_02_Content_Backlog.md`, `GrowthOS/01_03_Reuse_Queue.md`, `GrowthOS/10_00_Kit_de_Hashtags_USM.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/Canon_Contradictions_Report.md`, `Operations/Research/CNT024_Analisis_Comparativo_Propuestas_vs_28Dias.md`
+**Documentos relacionados:** `GrowthOS/01_02_Content_Backlog.md`, `GrowthOS/01_03_Reuse_Queue.md`, `GrowthOS/10_00_Kit_de_Hashtags_USM.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/Canon_Contradictions_Report.md`, `Operations/Production/CNT024_Frases_Viral_Elara_Evan_Pareja.md`, `Operations/Research/CNT024_Analisis_Comparativo_Propuestas_vs_28Dias.md`
 
 ---
 
