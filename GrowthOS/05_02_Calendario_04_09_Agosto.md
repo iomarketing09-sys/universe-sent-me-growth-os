@@ -58,7 +58,7 @@ No hay Reel listo para cascada hoy (TikTok/YT sin publicación) — el slot de l
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **10:00 AM** | FB + IG | Foto (Meme ligero) | Universe | `260530.png` — "Buenos días, legión..." | Reuse Queue |
 | **11:00 AM** | FB + IG | Foto (Frase) | **Wilfred** | **CNT-024 (W4)** — "El café no te va a salvar. Pero te va a acompañar hasta que te rindas. Buenos días." — ref: `Operations/Production/CNT024_Frases_Wilfred_Manana_HumorAcido.md` | Nuevo |
-| **4:00 PM** | FB | Foto (Meme) | Wilfred | `260648.png` — "Yo: ¿Es...?" | Reuse Queue |
+| **4:00 PM** | FB | Foto (Meme) | Universe | `260648.png` — "Yo: ¿Es...?" | Reuse Queue |
 | **5:00 PM** | FB + IG | Foto (Frase) | **Maeve + Kael** | **CNT-024 (M1)** — Maeve y el Chico de los Pantalones abrazados, frase agresiva y mimosa: "Ella dice que lo odia con toda su alma. Él le trae café. Se abrazan. Nadie entiende nada. Así los quiero." — ref: `Operations/Production/CNT024_Ajuste_Slots_Abr_7_Wilfred_1100_MaeveKael_1700.md` | Nuevo — requiere producir la imagen (no existe en assets) |
 | **7:00 PM** | FB + IG + TT + YT | **Reel (~14s)** | Rotativo | **CNT-023 — "¿Qué me llegó?" (formato recurrente).** Prioridad Alta en backlog, bajo costo de producción una vez armado el formato base. Si no está listo para el viernes, mover a foto reutilizada — no forzar un Reel sin producción real. | Backlog CNT-023 |
 | **9:00 PM** | FB + IG | Foto (Meme) | Elara | `260610.png` — "Ahorita no corazón..." | Reuse Queue |
