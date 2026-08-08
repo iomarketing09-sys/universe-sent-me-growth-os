@@ -28,6 +28,7 @@
 | [Canon Contradictions Report](Canon_Contradictions_Report.md) | Contradicciones activas que bloquean producción. | Active |
 | [Inventario de Contenido](Content_Inventory.csv) | CSV maestro con metadatos de las 25 piezas existentes. | Active |
 | [Auditoría Higgsfield Grant](../Operations/Research/2026-08-02_Auditoria_Higgsfield_Grant.md) | Análisis estratégico para la candidatura del Filmmaker Grant. | Review |
+| [Reporte Mensual Junio-Julio 2026](../Operations/Research/2026-08-08_Reporte_Mensual_Junio_Julio_2026.md) | Cierra el vacío de datos entre mayo y el análisis de 28 días de agosto. 61 días vía Windsor.ai, top días y posts por mes. | Active |
 | [Métricas Baseline — FB & IG](08_00_Metricas_Baseline_Plataformas.md) | Datos reales de Windsor.ai: top 10 FB, tabla Reels, tabla IG, insights de canal. Actualizar cada domingo. | Active |
 | [Estándar de Documentación Interna](09_00_Estandar_Documentacion_Interna.md) | Reglas permanentes para que Manus cree y actualice documentos en este repositorio. | Active |
 | [Kit de Hashtags USM](10_00_Kit_de_Hashtags_USM.md) | Roster fijo de hashtags de marca (personaje, lugar, concepto) con firma USM. Evita typos y nombres no aprobados. | Active |

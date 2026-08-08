@@ -4,9 +4,15 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-08
-**Versión:** 1.3
-**Autor:** Manus AI (CGO); entrada [1.1.1] añadida por Claude
+**Versión:** 1.4
+**Autor:** Manus AI (CGO); entradas [1.1.1] y [1.2.4] añadidas por Claude
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.4] — 2026-08-08 (Claude)
+### Añadido
+- **Reporte mensual Junio-Julio 2026:** `../Operations/Research/2026-08-08_Reporte_Mensual_Junio_Julio_2026.md`. Cierra el vacío de datos entre el reporte de mayo (`mayo_2026_top_posts_metaBS.md`) y el análisis de 28 días de agosto (`agosto_2026_analisis_28_dias.md`). 61 días cubiertos vía Windsor.ai (`facebook_organic`), métrica de reacciones+comentarios+shares (misma metodología que el ciclo diario de agosto, ya que alcance/impresiones está deprecado). Julio creció +269% en interacciones totales vs. junio. Confirma con datos propios tres posts ya listados por alcance en `08_00_Metricas_Baseline_Plataformas.md` (21 jul, 28 jul, 24 jul), subiendo la confianza del patrón minimalista de "hipótesis reciente" a "tendencia de 3 meses".
 
 ---
 
