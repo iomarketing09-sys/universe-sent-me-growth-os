@@ -3,11 +3,19 @@
 **Propósito:** Registro centralizado de hitos, integraciones, cambios estratégicos y actualizaciones de arquitectura. Este documento permite a los agentes (Manus, Claude, etc.) sincronizar contexto rápidamente sin re-leer todo el repositorio.
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
-**Última actualización:** 2026-08-05
-**Versión:** 1.1
+**Última actualización:** 2026-08-08
+**Versión:** 1.3
 **Autor:** Manus AI (CGO); entrada [1.1.1] añadida por Claude
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
+---
+
+## [1.2.3] — 2026-08-08
+### Añadido
+- **Ciclo diario de métricas 24h (Manus CGO, rutina programada):** primer ciclo automatizado registrado en `../Operations/Research/2026-08-08_Ciclo_Diario_Metricas_24h.md`. 6 posts FB en 24h (128 interacciones, 23 shares). Post top: Fantasma minimalista 👻 (42 reacciones, 11 shares). Hipótesis nuevas H11-H14 registradas en el Sheet "USM Growth OS".
+### Corregido
+- **Limitación de API:** las métricas de alcance/impresiones (`post_impressions`, `page_impressions`, etc.) están deprecadas en Graph API v21.0 para la página; el ciclo usa conteos de objeto (`reactions.summary`, `comments.summary`, `shares`) como workaround validado y propone `shares/interacciones ≥ 0.25` como proxy provisional de viralidad.
+- **Instagram:** la vinculación del conector se cambió de @firmabordados a @universe_sent_me_0326; el conector aún reporta "not connected" y requiere re-autorización en la interfaz de Manus.
 ---
 
 ## [1.2.2] — 2026-08-07
