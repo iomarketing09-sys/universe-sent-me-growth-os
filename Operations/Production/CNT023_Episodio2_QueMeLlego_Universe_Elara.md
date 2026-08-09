@@ -1,24 +1,70 @@
 # CNT-023 Episodio 2: "¿Qué me llegó?" — Universe le entrega el paquete a Elara
 
-**Propósito:** Proponer el Episodio 2 del formato recurrente de afiliación "¿Qué me llegó?" (Mercado Libre), aplicando la skill `usm-content-proposer` (score mínimo 8.5/10). Incorpora la idea de Fernando: **Universe como mensajero del paquete** que se lo entrega a Elara, quien hace la "recepción ritual". También consolida el formato de la sección con la nueva lista de productos del catálogo v2.0.
-**Estado:** Draft (pendiente de aprobación de Fernando)
+**Propósito:** Documentar el Episodio 2 del formato recurrente de afiliación "¿Qué me llegó?" (Mercado Libre), objetivo de monetización directa. Versión final producida por Fernando: producto y guion cambiados respecto a la propuesta original de Manus (difusor de aromas → **Lámpara Luna 3D Decorativa**), storyboard de 9 escenas ya generado.
+**Estado:** Producción completa — **bloqueado para publicación hasta confirmar link de afiliado**
 **Fecha de creación:** 2026-08-07
-**Última actualización:** 2026-08-07
-**Versión:** 1.0
-**Autor:** Manus AI (CGO)
-**Documentos relacionados:** `Operations/Production/ML_Reel_01_Storyboard_Blueprint.md`, `Operations/Production/12_00_Catalogo_Productos_MercadoLibre.md`, `GrowthOS/11_00_Estrategia_Monetizacion_MercadoLibre.md`, `Operations/Production/CNT024_Frases_Viral_Elara_Evan_Pareja.md`
+**Última actualización:** 2026-08-08
+**Versión:** 2.0
+**Autor:** Manus AI (CGO) — v1.0 original; Fernando — guion y producto final; Claude — registro v2.0
+**Documentos relacionados:** `Operations/Production/ML_Reel_01_Storyboard_Blueprint.md`, `Operations/Production/12_00_Catalogo_Productos_MercadoLibre.md`, `GrowthOS/11_00_Estrategia_Monetizacion_MercadoLibre.md`, `GrowthOS/01_02_Content_Backlog.md`
 
 ---
 
-## 1. Por qué la idea de Fernando es buena (y por qué hay que cuidarla)
+## ⚠️ Bloqueante de monetización (pendiente de Fernando)
 
-La idea de **Universe entrega → Elara recibe** tiene tres ventajas que ninguna entrega directa del paquete puede igualar. Primera: convierte un formato de un solo personaje en un **encuentro entre dos personajes del Primer Círculo**, y los datos de mayo demuestran que los territorios de interacción entre personajes (amor, nostalgia, entrega) son los de mayor alcance del estudio (110K-159K). Segunda: le da a la sección una **mecánica de formato reconocible** — "el Universe manda, alguien recibe" — que se vuelve repetible con cualquier personaje receptor (próximo episodio: Wilfred, luego el Fantasma), creando una franquicia en vez de piezas sueltas. Tercera: reproduce dentro del lore la lógica real del programa de afiliados (el universo te manda cosas por internet), que es exactamente el giro moderno que el análisis de 28 días premia como driver #3 (el post astral de Universe tuvo el ER más alto, 3.31%).
+Este Reel existe específicamente para el objetivo de **monetización vía afiliación Mercado Libre** (`11_00_Estrategia_Monetizacion_MercadoLibre.md`, Funnel A). No debe publicarse hasta confirmar:
+
+1. **Link de afiliado real** de la Lámpara Luna 3D Decorativa mostrada en el storyboard (no hay ninguno registrado todavía en `12_00_Catalogo_Productos_MercadoLibre.md` — ese documento solo tiene precio de referencia $400-$600 MXN y status conceptual "Aprobado").
+2. **Automatización de Make activa** con la palabra clave `LUNA` → DM con el link. El blueprint del Episodio 1 documentó esta misma automatización como pendiente de configurar; no hay confirmación registrada de que ya esté operativa.
+
+Sin estos dos puntos, el CTA del reel ("Comenta LUNA y te mandamos el link") no tiene qué entregar.
+
+---
+
+## 0. Storyboard final (Fernando, 9 escenas — reemplaza el guion timeline v1.0)
+
+| # | Escena |
+|---|---|
+| 1 | Universe camina por la banqueta con bolsa de Mercado Libre |
+| 2 | Close-up de Universe con la caja de Mercado Libre |
+| 3 | Elara abre la puerta, sorprendida — Universe ya sentado en el tapete de bienvenida |
+| 4 | Universe entrega la caja a Elara en el porche |
+| 5 | Elara abre la cinta de la caja, Universe observando |
+| 6 | Elara abre la caja, luz saliendo — gesto de asombro |
+| 7 | Close-up de manos sosteniendo la lámpara luna |
+| 8 | Elara sostiene la lámpara encendida, saliendo de la caja |
+| 9 | Elara sostiene la lámpara encendida junto a Universe, atardecer de fondo |
+
+**Diferencia clave vs. la propuesta original de Manus:** Universe no solo entrega y se retira — **se queda a observar toda la escena**, incluyendo el remate final junto a Elara en el atardecer (escena 9). Esto no rompe canon (Universe puede acompañar sin conocer el contenido del paquete), y refuerza el ángulo de vínculo entre personajes del Primer Círculo que ya demostró mejor rendimiento en los datos de mayo (110K-159K de alcance en territorios de interacción entre personajes).
+
+**Producto:** Lámpara Luna 3D Decorativa (catálogo v2.0, $400-$600 MXN, ⭐⭐⭐⭐⭐ viralidad — nota: en el catálogo original esta historia estaba asignada a Universe en solitario ["La Luna que Nadie Mira"], no a la mecánica de entrega a Elara; esta es una variación de historia sobre el mismo producto aprobado).
+**Palabra clave de comentario:** `LUNA`
+
+## 1. Copy final (FB + IG)
+
+> Universe no sabe qué trae en la caja. Nunca sabe. 🌙📦
+> Pero sí sabe quedarse a ver la cara que pone Elara cuando la abre.
+>
+> 👇 Comenta **"LUNA"** y te mandamos el link directo a la lámpara que le llegó a ella.
+>
+> #UniverseSentMe #QueMeLlegoUSM #UniverseUSM #ElaraUSM
+
+**Comentario fijado (para trigger de Make):**
+> Comenta **LUNA** y te mando el link 🌙✨
+
+---
+
+## 2. Por qué la idea de Fernando es buena (contenido original de Manus, sigue vigente)
+
+La idea de **Universe entrega → Elara recibe** tiene tres ventajas que ninguna entrega directa del paquete puede igualar. Primera: convierte un formato de un solo personaje en un **encuentro entre dos personajes del Primer Círculo**, y los datos de mayo demuestran que los territorios de interacción entre personajes (amor, nostalgia, entrega) son los de mayor alcance del estudio (110K-159K). Segunda: le da a la sección una **mecánica de formato reconocible** — "el Universe manda, alguien recibe" — que se vuelve repetible con cualquier personaje receptor, creando una franquicia en vez de piezas sueltas. Tercera: reproduce dentro del lore la lógica real del programa de afiliados (el universo te manda cosas por internet), que es exactamente el giro moderno que el análisis de 28 días premia como driver #3 (el post astral de Universe tuvo el ER más alto, 3.31%).
 
 El único riesgo de canon: **Universe no debe saber qué hay dentro del paquete ni qué propósito tiene**. Canon vigente: conoce el mecanismo, no el propósito. La solución está en el guion: Universe entrega sin abrir y sin explicar; la curiosidad y el ritual los pone Elara. Así ambos quedan dentro de su canon y el producto sigue siendo descubierto por el receptor.
 
-## 2. Guion Episodio 2 — "La Caja que el Universo no Abre"
+## 3. Guion original propuesto por Manus — SUPERSEDIDO por el storyboard de la Sección 0
 
-**Producto:** Difusor de Aromas / Aceites Esenciales (catálogo v2.0, $200-$400 MXN,⭐⭐⭐⭐⭐ "No parece publicidad, encaja natural con Elara").
+> **Nota:** esta sección queda solo por trazabilidad. Fernando cambió el producto (difusor → Lámpara Luna 3D) y reescribió el guion como storyboard de 9 escenas (ver Sección 0). El copy y la palabra clave vigentes son los de la Sección 1, no los de aquí abajo.
+
+**Producto (histórico, ya no vigente):** Difusor de Aromas / Aceites Esenciales (catálogo v2.0, $200-$400 MXN,⭐⭐⭐⭐⭐ "No parece publicidad, encaja natural con Elara").
 **Slot sugerido:** Viernes 7 de agosto, 7:00 PM (el slot reservado a CNT-023 en el calendario v1.3).
 **Duración:** 15-20 segundos, Reel vertical.
 
@@ -29,7 +75,7 @@ El único riesgo de canon: **Universe no debe saber qué hay dentro del paquete 
 | 08-14s | El ritual | Elara huele el exterior del paquete (aún cerrado) y sonríe antes de abrir. "Adivinanza sensorial": las cartas ya le habían dicho el aroma. Lo abre: humo de difusión saliendo. | **Elara (voz IA):** "Las cartas dijeron bergamota hace tres días. El universo siempre confirma, solo que a veces por Mercado Libre." |
 | 14-18s | Uso + CTA | Elara enciende el difusor junto al fuego, niebla aromática subiendo. Universe dormita al lado. | **Texto en pantalla:** "¿Quieres oler lo que Elara recibió? Link en el primer comentario." |
 
-**Copy listo (FB + IG):**
+**Copy original (histórico, ya no vigente — reemplazado por el de la Sección 1):**
 > Hay cosas que el universo manda por correo. Literalmente. 📦🌙
 > Universe no abre los paquetes. Para eso está Elara.
 >
@@ -37,39 +83,40 @@ El único riesgo de canon: **Universe no debe saber qué hay dentro del paquete 
 >
 > #UniverseSentMe #QueMeLlegoUSM #UniverseUSM #ElaraUSM
 
-## 3. Scoring de la skill (ejecutado, no estimado)
+## 4. Scoring de la skill (ejecutado sobre la propuesta original de Manus; no re-ejecutado sobre el storyboard final de Fernando)
 
 | Criterio | Score | Justificación |
 | :--- | :--- | :--- |
 | relatable | 9 | "El universo me manda cosas raras" + la caja misteriosa de e-commerce es experiencia universal; el lector vive el mismo "llegó un paquete que no esperaba" |
 | humor_or_emotion | 9 | Doble registro: ternura de la entrega (territorio validado de mayo) + humor del gato repartidor inútilmente enigmático |
-| share_hook | 8 | Remate "El universo siempre confirma, solo que a veces por Mercado Libre" — punchline compartible; el formato "ella dice/él dice" implícito en la entrega |
+| share_hook | 8 | Remate compartible; el formato "ella dice/él dice" implícito en la entrega |
 | modern_twist | 10 | El e-commerce dentro del lore mágico es el driver #3 en su forma más pura (la versión "notificación" de Elara ya validada a 3.31% ER en el post astral de Universe) |
 | character_voice | 9 | Universe sin omnisciencia respetado (no sabe qué trae); Elara sin tarot (cartas de energía, no adivinación de futuros) |
 | slot_fits | 10 | Viernes 7:00 PM, slot ya reservado a CNT-023 en el calendario v1.3 |
 | format_ok | true | Reel de producto con gancho visual y narrativa (la prohibición es solo para Reels de TEXTO, formato muerto) |
 | canon_safe | true | Sin moralización, sin CTA didáctico, ambos personajes dentro de canon |
 
-**SCORE: 9.05/10 — PASS** ✅
+**SCORE (propuesta original): 9.05/10 — PASS** ✅ — no recalculado sobre el storyboard final; los mismos criterios aplican favorablemente (mismo mensajero/receptora, mismo respeto a canon, mismo territorio de interacción validado), pero queda como nota abierta si Fernando quiere el score formal de la versión de 9 escenas.
 
-## 4. Formato de franquicia para la sección
-
-El Episodio 2 consolida la mecánica de la sección como fórmula de 4 movimientos, y abre la lista de receptores según el catálogo v2.0:
+## 5. Formato de franquicia para la sección
 
 | Episodio | Mensajero | Receptor | Producto (catálogo v2.0) | Historia |
 | :--- | :--- | :--- | :--- | :--- |
 | 1 | — (ya publicado) | Wilfred | Proyector LED Galaxia | "El cielo encerrado en una caja" |
-| **2** | **Universe** | **Elara** | **Difusor de Aromas** | **"La Caja que el Universo no Abre"** |
-| 3 | Universe | Wilfred | Lámpara Luna 3D | "La luna que nadie mira" (segundo Reel ya previsto por el catálogo) |
+| **2** | **Universe** | **Elara** | **Lámpara Luna 3D Decorativa** | **Storyboard de 9 escenas (Fernando) — CTA "LUNA"** |
+| 3 | Universe | Wilfred | *(pendiente — la Lámpara Luna ya se usó en Ep. 2; el catálogo debe asignar un producto distinto a este slot)* | — |
 | 4 | Universe | Fantasma | Letrero de Neón LED | "La frase que no pudo decir en vida" |
 | 5 | Universe | Kiri | Lámpara de Pared Resina (hada) | "Un artefacto de mi especie" |
 
-La regla fija de la franquicia: **el mensajero nunca sabe qué hay dentro** (canon de Universe) y **cada receptor descubre el producto con su propia voz** (humor seco de Wilfred, ritual de Elara, melancolía de Fantasma). Así cada episodio es la misma mecánica pero con emoción distinta, evitando la fatiga de formato que mata las series recurrentes. La operativa de comentarios (Make, palabra clave → DM con deep link) se reutiliza del Blueprint del Episodio 1 cambiando la palabra clave ("AROMA").
+La regla fija de la franquicia: **el mensajero nunca sabe qué hay dentro** (canon de Universe) y **cada receptor descubre el producto con su propia voz** (humor seco de Wilfred, ritual de Elara, melancolía de Fantasma). La operativa de comentarios (Make, palabra clave → DM con deep link) se reutiliza del Blueprint del Episodio 1, cambiando la palabra clave a `LUNA` para este episodio.
 
-## 5. Decisiones pendientes de Fernando
+## 6. Decisiones pendientes de Fernando
 
-Primera: confirmar que el slot del viernes 7 de agosto a las 7:00 PM se usa para este episodio o se mueve a otro día (el catálogo prevé la Lámpara Luna con Universe como siguiente Reel; aquí propongo alternar con Elara primero para validar el formato de dos personajes). Segunda: confirmar la palabra clave del comentario del Episodio 2 ("AROMA") antes de activar el flujo de Make. Tercera: si se aprueba, el calendario v1.3 se actualiza y este documento pasa a estado Aprobado junto con el blueprint.
+1. **Link de afiliado real de la Lámpara Luna** (bloqueante — ver aviso al inicio del documento).
+2. **Confirmar que la automatización de Make ya está activa** con la palabra clave `LUNA`.
+3. **Producto de reemplazo para el Episodio 3** (Wilfred), ya que la Lámpara Luna se usó adelantada en el Episodio 2.
+4. Slot de publicación: ¿se mantiene el viernes 7:00 PM ya reservado a CNT-023, o cambia por ser una pieza distinta a la calendarizada?
 
 ---
 
-*Nota de coherencia: si se aprueba, actualizar `GrowthOS/05_02_Calendario_04_09_Agosto.md` (fila CNT-023 del viernes), `GrowthOS/01_02_Content_Backlog.md` (estado de CNT-023) y añadir la tabla de franquicia de la Sección 4 a `Operations/Production/12_00_Catalogo_Productos_MercadoLibre.md` como mecánica de rotación de productos.*
+*Nota de coherencia: una vez resuelto el bloqueante de link de afiliado, actualizar `GrowthOS/05_02_Calendario_04_09_Agosto.md` (fila CNT-023), `GrowthOS/01_02_Content_Backlog.md` (estado de CNT-023) y `Operations/Production/12_00_Catalogo_Productos_MercadoLibre.md` (marcar Lámpara Luna 3D como "usada — Episodio 2" en vez de "Aprobado" genérico, y resolver el producto pendiente del Episodio 3).*
