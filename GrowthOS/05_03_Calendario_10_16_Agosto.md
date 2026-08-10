@@ -55,24 +55,28 @@ Se analizaron 99 posts individuales de Facebook Orgánico (Windsor.ai, connector
 
 | Día | 10:00 AM | 3:00 PM | 6:00 PM | Reel diario |
 |---|---|---|---|---|
-| **Lun 10** | 2608025 — Maeve+Kael — "Casi nos dejamos y lo que teníamos era hambre" | 2608020 — Universe — "Qué gano con mentirte" | **Reuse:** "🥴🤯 escucho borroso..." (21 jul) | TBD |
+| **Lun 10** | 2608025 — Maeve+Kael — "Casi nos dejamos y lo que teníamos era hambre" | 2608020 — Universe — "Qué gano con mentirte" | **Reuse (mayo):** Carrusel "Los cambios de tema que tengo en una sola conversación" (4 may, 242,400 alcance) | TBD |
 | **Mar 11** | 2608022 — Evan — "Buscaba algo rico pero no te encontré" | 2608017 — Elara — "Miedo a crecer" | 2608012 — Kiri — "Súper 🍑" | TBD |
-| **Mié 12** | 2608024 — Silvio — "Dejaron de buscar a la más bonita" | 2608021 — Kael — "Tus únicas amigas son estas" | **Reuse:** "No es desinterés..." — Fantasma (28 jul) | TBD |
+| **Mié 12** | 2608024 — Silvio — "Dejaron de buscar a la más bonita" | 2608021 — Kael — "Tus únicas amigas son estas" | **Reuse (mayo):** Escena "Pásame tu pack" (4 may, 159,000 alcance) | TBD |
 | **Jue 13** | 2608023 — Evan+Kiri — "Qué quieres desayunar" | 2608019 — Maeve — "Te extraño bruja" | 2608014 — Silvio — "Me hubiera encantado ser pobre" | TBD |
-| **Vie 14** | 2608016 — Maeve — "Perdón por dormir tanto" | 2608018 — Maeve+Kael — "Lo hice porque si alguien te hace bien" | **Reuse:** "😭🫣 #humoracido #memesUSM" (28 jul) | TBD |
-| **Sáb 15** | 2608015 — Universe+Kael — "La asfixiante realidad" | 2608013 — Evan — "De tanto decir soy ese" | **Reuse:** "🫣🫣 #astrologia #retrogrado" (24 jul) — mejor ratio del período (3.31%) | TBD |
+| **Vie 14** | 2608016 — Maeve — "Perdón por dormir tanto" | 2608018 — Maeve+Kael — "Lo hice porque si alguien te hace bien" | **Reuse (mayo):** Meme "No olvides las 3 vrg" (16 may, 138,700 alcance) | TBD |
+| **Sáb 15** | 2608015 — Universe+Kael — "La asfixiante realidad" | 2608013 — Evan — "De tanto decir soy ese" | **Reuse (mayo):** Carrusel "Ronroneo para el amigo / Navajazo para el enemigo" (14 may, 110,900 alcance) | TBD |
 | **Dom 16** | Espacio libre (contenido nuevo de la semana) | Espacio libre | Espacio libre | TBD |
 
 ## 5. Justificación de los 4 posts de reuse elegidos
 
-Los 4 se tomaron de `08_00_Metricas_Baseline_Plataformas.md` (top 6 de FB por engagement, periodo julio), filtrando por **no haber sido republicados** en el calendario de la semana del 4-8 de agosto (verificado contra el rendimiento real de esa semana ya registrado). Los 2 descartados de ese top 6 ("Si estás leyendo esto...", "Abrazos que curan el alma") quedan disponibles para una futura ronda de reuse.
+**Corrección (2026-08-10):** la primera versión de este documento tomó los 4 reuse del baseline de julio (`08_00_Metricas_Baseline_Plataformas.md`) por error. Fernando aclaró que el reuse debe salir específicamente del inventario de mayo ya procesado (`Operations/Memories/mayo_2026_top_posts_metaBS.md`, 12 posts con datos reales de Meta Business Suite, y su índice asociado `01_03_Reuse_Queue.md`). Esta sección queda corregida con la fuente correcta.
 
-| Reuse | Fecha original | Impresiones | Engagement | Ratio | Razón de elección |
+Los 4 se tomaron del ranking de alcance real de mayo, siguiendo las prioridades que el propio reporte declara ("PRIORIDAD MÁXIMA: carruseles multi-escena", "PRIORIDAD ALTA: memes de gato con lentes en múltiples escenarios"), y verificando que **no se hayan republicado ya en el ciclo reciente** — el post #6 del ranking ("Amor ya estoy lleno" + "Bruce Bruce Bruce") se excluyó por ya haber aparecido en el calendario de la semana del 4-8 de agosto.
+
+| Reuse (mayo) | Fecha original | Alcance | Likes | Compartidos | Razón de elección |
 |---|---|---|---|---|---|
-| "🥴🤯 escucho borroso..." | 21 Jul | 175,565 | 3,912 | 2.23% | Top absoluto del período; arranque de semana |
-| "No es desinterés..." (Fantasma) | 28 Jul | 173,925 | 3,719 | 2.14% | Segundo mejor; varía personaje (Fantasma) |
-| "😭🫣 #humoracido" | 28 Jul | 138,492 | 2,983 | 2.15% | Tercero; formato minimalista puro |
-| "🫣🫣 #astrologia #retrogrado" | 24 Jul | 90,723 | 3,002 | **3.31%** | Mejor ratio engagement/impresión de todo el baseline; reservado al día de mejor rendimiento histórico (sábado) |
+| Carrusel "Los cambios de tema..." | Lun 4 may | **242,400** | 1,700 | 1,300 | #1 histórico del proyecto; prioridad máxima declarada; lunes es día óptimo confirmado en el propio reporte |
+| Escena "Pásame tu pack" | Lun 4 may | **159,000** | 1,700 | 253 | #3 histórico; formato de escena con personajes |
+| Meme "No olvides las 3 vrg" | Sáb 16 may | **138,700** | 1,500 | 755 | #4 histórico; formato "gato con lentes en escenario", prioridad alta declarada |
+| Carrusel "Ronroneo/Navajazo" | Jue 14 may | **110,900** | 786 | 457 | #5 histórico; mismo formato de gato con lentes; reservado al día de mejor rendimiento reciente (sábado) |
+
+Quedan disponibles para una futura ronda, sin usar todavía: #2 "La mente del wey que lee de todo..." (176,800 alcance) y #7 "Adivina kien anda bien caliente" (31,700 alcance).
 
 ## 6. Balance de personajes (14 piezas nuevas)
 
