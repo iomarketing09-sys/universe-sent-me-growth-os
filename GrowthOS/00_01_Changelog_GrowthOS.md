@@ -3,10 +3,19 @@
 **Propósito:** Registro centralizado de hitos, integraciones, cambios estratégicos y actualizaciones de arquitectura. Este documento permite a los agentes (Manus, Claude, etc.) sincronizar contexto rápidamente sin re-leer todo el repositorio.
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
-**Última actualización:** 2026-08-08
-**Versión:** 1.4
-**Autor:** Manus AI (CGO); entradas [1.1.1] y [1.2.4] añadidas por Claude
+**Última actualización:** 2026-08-10
+**Versión:** 1.5
+**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4], [1.2.5] añadidas por Claude
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.5] — 2026-08-10 (Claude)
+### Añadido
+- **Calendario 10-16 agosto:** `05_03_Calendario_10_16_Agosto.md`. Cambio de estrategia por instrucción de Fernando: reduce proporción de reuse a máximo 1 pieza/día (solo "top" ya validados por datos), prioriza 14 piezas nuevas de personajes del elenco extendido (Maeve, Kael, Silvio, Evan, Kiri, Elara, Universe). Horarios elegidos por análisis de mediana horaria/diaria sobre 99 posts reales (Windsor.ai, julio), no por suposición. Reels diarios quedan como TBD — Fernando define contenido día a día.
+### Nota
+- Fernando indicó que varias de las 14 piezas nuevas no pasaron revisión formal de canon y pidió posponer esa revisión a sesión dedicada — documentado explícitamente en el nuevo calendario, sección 8 (pendientes). También mencionó estar considerando invertir el flujo canon→contenido (que los datos de rendimiento de memes informen la Biblia); queda registrado como dirección en discusión, no como cambio de proceso implementado.
+- `05_02_Calendario_04_09_Agosto.md` marcado como Superseded en el índice (semana ya cerrada).
 
 ---
 

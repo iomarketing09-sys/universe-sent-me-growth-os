@@ -18,7 +18,8 @@
 | [Arquitectura del Calendario Escalable](01_00_Arquitectura_Calendario_Escalable.md) | Define metadatos, estados y reglas de negocio. | Active |
 | [Calendario Editorial Semanal (W01)](01_01_Calendario_Semanal.md) | Tablero operativo de los próximos 7 días. | Active |
 | [Formato del Calendario Semanal (CGO v3.0)](04_00_Formato_Calendario_Semanal_CGO.md) | Plantilla oficial por día de la semana, validada con datos de mayo 2026. | Active |
-| [Calendario Oficial 4–9 de Agosto](05_02_Calendario_04_09_Agosto.md) | Calendario de la semana en curso, aplicando la plantilla CGO v3.0. Declarado oficial por Fernando (2026-08-03). | Active |
+| [Calendario Oficial 4–9 de Agosto](05_02_Calendario_04_09_Agosto.md) | Calendario de la semana 4-9 agosto, aplicando la plantilla CGO v3.0. Declarado oficial por Fernando (2026-08-03). | Superseded |
+| [Calendario 10–16 de Agosto](05_03_Calendario_10_16_Agosto.md) | Nueva semana: menos reuse (solo piezas top validadas), más contenido nuevo, horarios basados en datos reales de mediana horaria/diaria. | Active |
 | [Content Backlog](01_02_Content_Backlog.md) | Lista maestra ordenada por prioridad. | Active |
 | [Reuse Queue](01_03_Reuse_Queue.md) | Contenido con potencial de reutilización (regla 30 días). | Active |
 | [Production Queue](01_04_Production_Queue.md) | Contenido que requiere producción nueva. | Active |
