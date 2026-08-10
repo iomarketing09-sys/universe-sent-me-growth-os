@@ -86,8 +86,22 @@ Este registro queda como pendiente de implementación — no se generó ningún 
 - Las Reglas de Diseño ya cerradas de cada personaje siguen siendo CANON y siguen rigiendo toda narrativa formal (historias, episodios, guiones de Reels con arco).
 - El pipeline técnico de producción de memes (`03_00_Sistema_Generacion_Memes.md`) sigue igual — este documento no toca cómo se generan o procesan las imágenes, solo qué reglas de contenido aplican una vez producidas.
 
-## 7. Pendientes
+## 8. Canal externo — grupos de Facebook (distinto de Capa 1)
+
+Fernando distribuye contenido regularmente en grupos de Facebook ajenos a la página (no le pertenecen), donde se ha ganado espacio para publicar tras un período de aprobación previa del grupo. El principal es **"Polvo de estrellas"**, con publicación regular; hay otros grupos con más restricciones donde también publica, pero con menor prioridad de tracking por ahora.
+
+**Por qué esto NO es lo mismo que la Capa 1 (memes en la página propia):**
+
+- El nivel de explicitud en estos grupos puede ser mayor que en la página (ejemplo confirmado: contenido con desnudos estilizados y texto directo, con buen desempeño — 4.4K likes, 143 comentarios, 1.4K shares en un post; otro llegó a 400K vistas y mil shares). Ese límite lo fija el grupo anfitrión, no Universe Sent Me — no debe leerse como "hasta dónde puede llegar la marca propia" ni usarse como evidencia directa para promoción de canon (sección 4), aunque sí es señal real de qué tan fuerte es el contenido cuando compite sin la ventaja de audiencia propia cautiva.
+- Es territorio de otra página/comunidad, con sus propias reglas y cola de aprobación — no bajo control operativo de Fernando.
+
+**Riesgo operativo identificado:** las aprobaciones de estos grupos externos no son inmediatas y a veces se acumulan; ya ocurrió que ~5 publicaciones represadas se aprobaron el mismo día, y ese aluvión de publicaciones externas coincidiendo en fecha impactó negativamente el rendimiento de la página propia ese día (competencia por atención de la misma red de contactos/algoritmo, o dilución de foco). No hay control directo sobre cuándo se libera la cola de aprobación del grupo externo.
+
+**Tratamiento en Growth OS:** Polvo de estrellas queda como el único canal externo a trackear por ahora (los demás grupos, con más restricciones, quedan fuera de tracking por decisión de Fernando). Su rendimiento se registra por separado de las métricas de la página — nunca sumado ni promediado junto con Facebook Orgánico propio — y no alimenta directamente el mecanismo de promoción a canon de la sección 4, salvo que Fernando decida explícitamente lo contrario para un caso puntual.
+
+## 9. Pendientes
 
 1. Implementar el primer registro cualitativo real de comunidad cuando Fernando tenga comentarios concretos a mano (sección 5).
 2. Revisar retroactivamente los memes de mayo-agosto ya publicados en busca de patrones que ya cumplan el umbral de la sección 4.1, como primera aplicación práctica del sistema (sesión dedicada, ya mencionada en conversaciones anteriores).
 3. Confirmar con Fernando si el "Canon_Contradictions_Report.md" debe actualizarse con una nota que aclare explícitamente que su alcance es solo narrativa seria, para evitar que una futura sesión lo aplique por error a un meme suelto.
+4. Definir si conviene registrar en el calendario editorial las fechas en que Fernando publica en Polvo de estrellas, para poder correlacionar caídas de rendimiento de la página propia con posibles aluviones de aprobación del grupo externo (sección 8) — por ahora es una observación puntual, no un patrón confirmado con datos suficientes.
