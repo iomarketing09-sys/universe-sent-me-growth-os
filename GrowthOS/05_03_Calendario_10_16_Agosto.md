@@ -1,6 +1,6 @@
 ---
 estado: Aprobado
-version: "1.0"
+version: "1.2"
 ultima_revision: 2026-08-10
 dependencias:
   - GrowthOS/01_00_Arquitectura_Calendario_Escalable.md
@@ -94,6 +94,36 @@ Quedan disponibles para una futura ronda, sin usar todavía: #2 "La mente del we
 | Kiri | 1 |
 
 Distribución natural sin sobrecarga de ningún personaje individual — no requirió ajuste manual.
+
+## 6.1 Copys y hashtags — 14 piezas nuevas
+
+| ID | Personaje | Copy | Hashtags |
+|---|---|---|---|
+| 2608025 | Maeve+Kael | "Casi nos dejamos y lo que teníamos era hambre" 🍗😂 | `#UniverseSentMe #MaeveUSM #KaelUSM #humor #relatable` |
+| 2608024 | Silvio | "Los hombres han dejado de buscar a la más bonita, y empezaron a buscar a la menos usada." 🤡 | `#UniverseSentMe #SilvioUSM #humor #memes` |
+| 2608023 | Evan+Kiri | "Qué quieres desayunar?" "A ti" 😳 | `#UniverseSentMe #EvanUSM #KiriUSM #relatable` |
+| 2608022 | Evan | Estaba buscando algo rico para acompañar el café, pero no te encontré ☕ | `#UniverseSentMe #EvanUSM #relatable #humor` |
+| 2608021 | Kael | "Tus únicas amigas son estas" 😐 | `#UniverseSentMe #KaelUSM #humor #memes` |
+| 2608020 | Universe | Me encanta decir "qué gano yo con mentirte" después de una mentira bien pasada de pincel 😹 | `#UniverseSentMe #UniverseUSM #humor #memes` |
+| 2608019 | Maeve | Te extraño bruja 🧙‍♀️😢 | `#UniverseSentMe #MaeveUSM #relatable #humor` |
+| 2608018 | Maeve+Kael | Lo hice porque si alguien te hace bien, se lo tienes que decir 🥹 | `#UniverseSentMe #MaeveUSM #KaelUSM #MomentosUSM` |
+| 2608017 | Elara | Extraño cuando mi mayor miedo era la oscuridad 🔦 | `#UniverseSentMe #ElaraUSM #relatable` |
+| 2608016 | Maeve | Perdón por dormir tanto, si no te puedo ver te tengo que soñar 😴 | `#UniverseSentMe #MaeveUSM #relatable` |
+| 2608015 | Universe+Kael | La asfixiante realidad 😤🐈 | `#UniverseSentMe #UniverseUSM #KaelUSM #humor` |
+| 2608014 | Silvio | En otra vida me hubiera encantado ser pobre (pero me tocó en esta) 🤡 | `#UniverseSentMe #SilvioUSM #humor` |
+| 2608013 | Evan | De tanto decir "soy ese", ya no sé quién soy (soy ese) 😩 | `#UniverseSentMe #EvanUSM #relatable #humor` |
+| 2608012 | Kiri | Cuando ella sabe que tiene un súper 🍑 y voltea a ver cómo lo disfrutas 😏 | `#UniverseSentMe #KiriUSM #humor #memes` |
+
+**Nota:** 2608012 tiene un typo visible en la imagen ("qlho" en vez de "culo") — ver pendiente #2 en la sección 8. El copy de arriba usa la versión corregida; ajustar la imagen antes de publicar si es posible.
+
+## 6.2 Copys — reuse de mayo
+
+| Reuse | Copy sugerido | Hashtags |
+|---|---|---|
+| Carrusel "Los cambios de tema..." | Todos tenemos ese personaje interno que cambia de tema sin avisar 😅 | `#UniverseSentMe #MomentosUSM #relatable #humor` |
+| Escena "Pásame tu pack" | Cuando el "buenas noches" se convierte en otra cosa 👀 | `#UniverseSentMe #MomentosUSM #relatable` |
+| Meme "No olvides las 3 vrg" | Las 3 reglas que nadie te enseña pero todos aprendemos 😹 | `#UniverseSentMe #HumorAcido #memes #relatable` |
+| Carrusel "Ronroneo/Navajazo" | Con el amigo, ronroneo. Con el enemigo, navajazo. 😼🔪 | `#UniverseSentMe #UniverseUSM #humor #memes` |
 
 ## 7. Cambio de estrategia registrado
 
