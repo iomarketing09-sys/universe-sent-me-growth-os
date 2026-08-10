@@ -4,9 +4,18 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-10
-**Versión:** 1.5
-**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4], [1.2.5] añadidas por Claude
+**Versión:** 1.6
+**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4], [1.2.5], [1.2.6] añadidas por Claude
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.6] — 2026-08-10 (Claude)
+### Añadido
+- **Sistema de Dos Capas:** `12_00_Sistema_Dos_Capas_Contenido_Canon.md`. Formaliza dirección estratégica de Fernando: separa la capa de memes/reels (libre, orientada a algoritmo y audiencia amplia no-seguidora) de la capa de canon (Biblia, decisiones permanentes). Margen amplio confirmado para todos los personajes sin distinción de círculo — los memes son proceso de descubrimiento tanto para elenco nuevo como establecido. Define 3 límites duros que aplican incluso en capa libre (identidad física fija, vínculos que comprometan narrativa futura, Gramática Emocional Invisible). Formaliza mecanismo de promoción deliberada meme→canon: Claude alerta cuando un patrón cruza umbral (3+ piezas/30 días con rendimiento consistente), Fernando decide, nunca automático.
+### Nota
+- Documenta explícitamente que `Canon_Contradictions_Report.md` aplica solo a narrativa seria (historias/episodios), nunca a memes sueltos — 3 de sus 5 contradicciones históricas resultaron ser falta de registro formal de nombres (Silvio/Maeve/Kiri), no errores de contenido, evidencia que motivó esta separación.
+- Sección 5 deja abierto un futuro registro cualitativo de insights de comunidad (comentarios con historias personales/puntos de vista) — pendiente de primer uso real, sin ejemplo generado en esta sesión.
 
 ---
 
