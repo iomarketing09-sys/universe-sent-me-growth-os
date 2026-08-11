@@ -4,7 +4,7 @@
 **Estado:** Aprobado
 **Fecha de creación:** 2026-08-10
 **Última actualización:** 2026-08-10
-**Versión:** 1.0
+**Versión:** 1.2
 **Autor:** Claude, formalizando dirección estratégica de Fernando
 **Documentos relacionados:** `03_00_Sistema_Generacion_Memes.md` (pipeline técnico de producción), `Canon_Contradictions_Report.md` (histórico de fricciones que motivaron este sistema), `Operations/Memories/mayo_2026_top_posts_metaBS.md` (evidencia original que originó esta discusión)
 
@@ -71,6 +71,12 @@ Claude no escribe la ficha de canon ni la propone redactada de antemano — solo
 ### 4.4 Qué pasa si Fernando decide NO promoverlo
 
 Se queda como recurso libre de Capa 1 — se puede seguir usando en memes indefinidamente sin que eso implique una obligación futura de mantenerlo. Claude no vuelve a alertar sobre el mismo patrón exacto salvo que Fernando lo pida, para no generar ruido repetido.
+
+### 4.5 Log de promociones
+
+| Fecha | Personaje | Patrón promovido | Evidencia | Commit canon |
+|---|---|---|---|---|
+| 2026-08-10 | Universe | Registro sarcástico/cortante en formato meme corto (adicional a su curiosidad/observación ya cerrada) | 3+ piezas jun-ago 2026 con rendimiento consistentemente alto ("No me importa lo que tú pienses...", "😒", entre otras) | `universe-sent-me-1@e8b6f22` |
 
 ## 5. Registro cualitativo de comunidad (nueva pieza de datos, no capturada antes)
 

@@ -4,9 +4,19 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-10
-**Versión:** 1.6
-**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4], [1.2.5], [1.2.6] añadidas por Claude
+**Versión:** 1.7
+**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4], [1.2.5], [1.2.6], [1.2.7] añadidas por Claude
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.7] — 2026-08-10 (Claude)
+### Añadido
+- **Primera promoción real meme→canon** bajo el sistema de dos capas (`12_00_Sistema_Dos_Capas_Contenido_Canon.md`, sección 4). Personaje: Universe. Patrón: registro sarcástico/cortante en formato meme corto, detectado en 3+ piezas de junio-agosto 2026 con rendimiento consistentemente alto (imágenes de junio revisadas visualmente por Fernando en esta sesión, más el post "😒" de agosto ya documentado en el reporte mensual junio-julio).
+- Claude alertó el patrón (mecanismo de la sección 4.2); Fernando confirmó la promoción y especificó que es un registro adicional, no un reemplazo del Universe observador/curioso ya cerrado en canon, y que debía vivir como nota dentro de la ficha ya existente, no como documento nuevo.
+- Cambio aplicado en el repo `universe-sent-me-1`: `02 Personajes/Primer Círculo/Universe/03 Reglas de diseño.md`, v1.3→v1.4, commit `e8b6f22`. Nueva sección "Registro sarcástico (formato meme)", anclada explícitamente al Anti-tono ya cerrado (autoafirmación despreocupada, nunca desprecio a otros — "se ríe con, no de").
+### Nota
+- Durante la revisión de junio, Fernando compartió también contenido publicado en un grupo externo de Facebook ("Polvo de estrellas") con nivel de explicitud mayor al de la página propia — se documentó por separado en la sección 8 del mismo sistema de dos capas (ver [1.2.6.1] más abajo si aplica, o revisar historial de commits de esa fecha), sin mezclarse con esta promoción de canon.
 
 ---
 
