@@ -3,10 +3,16 @@
 **Propósito:** Registro centralizado de hitos, integraciones, cambios estratégicos y actualizaciones de arquitectura. Este documento permite a los agentes (Manus, Claude, etc.) sincronizar contexto rápidamente sin re-leer todo el repositorio.
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
-**Última actualización:** 2026-08-10
-**Versión:** 1.8
-**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4], [1.2.5], [1.2.6], [1.2.7], [1.2.8] añadidas por Claude
+**Última actualización:** 2026-08-12
+**Versión:** 1.9
+**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4], [1.2.5], [1.2.6], [1.2.7], [1.2.8] añadidas por Claude; [1.2.9] añadida por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.9] — 2026-08-12 (Manus)
+### Añadido
+- **CNT-026 — Banco de memes fin de semana 16–17 de agosto:** 5 propuestas (Fantasma "El que más aguanta el grupo" 9.15, Pareja Kael+Maeve 9.05, Universe "Señales del fin de semana" 8.95, Wilfred "Fin de semana no es descanso" 8.75, Fantasma minimalista 🫥 8.60), todas con score ≥ 8.5 verificado por `scripts/score_proposal.py`. Registradas en `../Operations/Production/CNT026_Memes_FinDeSemana_16_17_Ago.md`. Nota: el ID original CNT-025 ya estaba asignado a los Experimentos Growth OS (tests A/B), por lo que este banco tomó el siguiente ID libre. Explota las hipótesis H11 (minimalismo = shares), H13 (ácido = shares desproporcionados) y H14 (pareja = shares etiquetables) del ciclo diario del 8 de agosto. Tras las promociones de canon de junio ([1.2.8]), el changelog del banco registra a "Kael+Maeve" como pareja — se actualizará la pieza M3 de CNT-026 para usar `#KaelUSM` en lugar de `#ChicoDeLosPantalonesUSM` (actualización pendiente, ver documento CNT026).
 
 ---
 
@@ -62,6 +68,12 @@
 ### Corregido
 - **Limitación de API:** las métricas de alcance/impresiones (`post_impressions`, `page_impressions`, etc.) están deprecadas en Graph API v21.0 para la página; el ciclo usa conteos de objeto (`reactions.summary`, `comments.summary`, `shares`) como workaround validado y propone `shares/interacciones ≥ 0.25` como proxy provisional de viralidad.
 - **Instagram:** la vinculación del conector se cambió de @firmabordados a @universe_sent_me_0326; el conector aún reporta "not connected" y requiere re-autorización en la interfaz de Manus.
+---
+
+## [1.2.4] — 2026-08-09
+### Añadido
+- **CNT-026 — Banco de memes fin de semana 16–17 de agosto:** 5 propuestas (Fantasma "El que más aguanta el grupo" 9.15, Pareja Maeve 9.05, Universe "Señales del fin de semana" 8.95, Wilfred "Fin de semana no es descanso" 8.75, Fantasma minimalista 🫥 8.60), todas con score ≥ 8.5 verificado por `scripts/score_proposal.py`. Registradas en `../Operations/Production/CNT026_Memes_FinDeSemana_16_17_Ago.md`. El ID original CNT-025 ya estaba asignado a los Experimentos Growth OS (tests A/B), por lo que este banco tomó el siguiente ID libre. Explota las hipótesis H11 (minimalismo = shares), H13 (ácido = shares desproporcionados) y H14 (pareja = shares etiquetables) del ciclo diario del 8 de agosto.
+
 ---
 
 ## [1.2.2] — 2026-08-07
