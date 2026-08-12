@@ -4,9 +4,21 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-10
-**Versión:** 1.7
-**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4], [1.2.5], [1.2.6], [1.2.7] añadidas por Claude
+**Versión:** 1.8
+**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4], [1.2.5], [1.2.6], [1.2.7], [1.2.8] añadidas por Claude
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.8] — 2026-08-10 (Claude)
+### Añadido
+- **Segunda ronda de promociones meme→canon**, a partir de análisis visual de junio 2026 (screenshots de Meta Business Suite provistos por Fernando, no solo datos de Windsor.ai):
+  1. **Universe (ampliación):** el registro sarcástico ya promovido ([1.2.7]) se confirma también en formato cinemático/composición elaborada, no solo minimalista. Evidencia: "yo Aura Fuerte" con 110,510 visualizaciones — el pico más alto registrado en todo el análisis de junio. Commit `universe-sent-me-1@b52ea42`.
+  2. **Kael y Maeve:** primera creación formal de canon para ambos (nombres ya aprobados por Fernando en sesiones previas, sin ficha hasta ahora). Ubicados en Segundo Círculo — máscara todavía en formación, evidenciado por su contenido de fricción cotidiana resuelta en humor/ternura, no una dinámica ya consolidada. Se confirma también su relación de pareja establecida (novios), con evidencia de rendimiento fuerte y repetido en junio 2026. Commit `universe-sent-me-1@a994354`.
+- Log de promociones (`12_00...`, sección 4.5) actualizado con las 3 entradas nuevas; versión del documento subida a 1.3.
+### Nota
+- Esta ronda usó una fuente de evidencia distinta a la primera: capturas reales de Meta Business Suite (visualizaciones, interacción, % seguidores vs. no seguidores, edad/sexo de audiencia) en vez de solo datos agregados de Windsor.ai — mucho más rica para detectar patrones por personaje específico, ya que incluye la imagen real de cada post.
+- Confirma con fuerza estadística la tesis de Fernando sobre las dos capas: todas las piezas de alto rendimiento de este lote tienen % de seguidores entre 0.2% y 3.3% — este contenido opera casi enteramente sobre la órbita de no-seguidores vía algoritmo, no sobre fidelización.
 
 ---
 

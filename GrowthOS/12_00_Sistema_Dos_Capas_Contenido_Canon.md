@@ -4,7 +4,7 @@
 **Estado:** Aprobado
 **Fecha de creación:** 2026-08-10
 **Última actualización:** 2026-08-10
-**Versión:** 1.2
+**Versión:** 1.3
 **Autor:** Claude, formalizando dirección estratégica de Fernando
 **Documentos relacionados:** `03_00_Sistema_Generacion_Memes.md` (pipeline técnico de producción), `Canon_Contradictions_Report.md` (histórico de fricciones que motivaron este sistema), `Operations/Memories/mayo_2026_top_posts_metaBS.md` (evidencia original que originó esta discusión)
 
@@ -77,6 +77,8 @@ Se queda como recurso libre de Capa 1 — se puede seguir usando en memes indefi
 | Fecha | Personaje | Patrón promovido | Evidencia | Commit canon |
 |---|---|---|---|---|
 | 2026-08-10 | Universe | Registro sarcástico/cortante en formato meme corto (adicional a su curiosidad/observación ya cerrada) | 3+ piezas jun-ago 2026 con rendimiento consistentemente alto ("No me importa lo que tú pienses...", "😒", entre otras) | `universe-sent-me-1@e8b6f22` |
+| 2026-08-10 | Universe (ampliación) | Mismo registro sarcástico confirmado también en formato cinemático/composición elaborada, no solo minimalista | "yo Aura Fuerte" (110,510 visualizaciones, pico más alto de junio), "No todos los ex son malos...", "sexo increíblemente apasionado O comunicación saludable" | `universe-sent-me-1@b52ea42` |
+| 2026-08-10 | Kael + Maeve | Creación de canon (personajes nuevos, Segundo Círculo) + relación de pareja establecida | 3+ piezas jun 2026 con fricción cotidiana resuelta en humor/ternura ("casi nos dejamos y lo que teníamos era hambre", "lo hice porque si alguien te hace bien..."), hasta 110,510 visualizaciones en una pieza relacionada de Universe del mismo lote de evidencia | `universe-sent-me-1@a994354` |
 
 ## 5. Registro cualitativo de comunidad (nueva pieza de datos, no capturada antes)
 
