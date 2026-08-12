@@ -57,11 +57,17 @@ Se analizaron 99 posts individuales de Facebook Orgánico (Windsor.ai, connector
 |---|---|---|---|---|---|
 | **Lun 10** | 2608022 — Evan — "Buscaba algo rico pero no te encontré" | 2608020 — Universe — "Qué gano con mentirte" | **Reuse (mayo):** 260595 - Universe - Imaginate odiarme y yo buscando como cagar | TBD |
 | **Mar 11** | 2608014 — Silvio — "Me hubiera encantado ser pobre" | 2608025 — Maeve+Kael — "Casi nos dejamos y lo que teníamos era hambre" | 2608019 — Maeve — "Te extraño bruja" | assets trailer universe - reel a las 2:00pm | 2608021 — Kael — "Tus únicas amigas son estas" |
-| **Mié 12** | 2608024 — Silvio — "Dejaron de buscar a la más bonita" |  | **Reuse (mayo):** Escena "Pásame tu pack" (4 may, 159,000 alcance) | TBD |
-| **Jue 13** | 2608023 — Evan+Kiri — "Qué quieres desayunar" | 2608017 — Elara — "Miedo a crecer" | | TBD |
+| **Mié 12** | 2608023 — Evan+Kiri — "Qué quieres desayunar" | 2608024 — Silvio — "Dejaron de buscar a la más bonita" | **Reuse (mayo):** 260523- texto sobre nubes - un mundo nace cuando dos se ghostean | TBD |
+| **Jue 13** |  | 2608017 — Elara — "Miedo a crecer" | | TBD |
 | **Vie 14** | 2608016 — Maeve — "Perdón por dormir tanto" | 2608018 — Maeve+Kael — "Lo hice porque si alguien te hace bien" | **Reuse (mayo):** Meme "No olvides las 3 vrg" (16 may, 138,700 alcance) | TBD |
 | **Sáb 15** | 2608015 — Universe+Kael — "La asfixiante realidad" | 2608013 — Evan — "De tanto decir soy ese" | **Reuse (mayo):** Carrusel "Ronroneo para el amigo / Navajazo para el enemigo" (14 may, 110,900 alcance) | TBD |
 | **Dom 16** | Espacio libre (contenido nuevo de la semana) | Espacio libre | Espacio libre | TBD |
+
+
+
+
+
+
 
 ## 5. Justificación de los 4 posts de reuse elegidos
 
