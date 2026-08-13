@@ -4,9 +4,18 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-12
-**Versión:** 1.9
-**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4], [1.2.5], [1.2.6], [1.2.7], [1.2.8] añadidas por Claude; [1.2.9] añadida por Manus
+**Versión:** 1.10
+**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8] añadidas por Claude; [1.2.9] añadida por Manus; [1.2.10] añadida por Claude
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.10] — 2026-08-12 (Claude)
+### Añadido
+- **`13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`.** Fernando confirmó nuevos permisos de Meta API aprobados (`pages_manage_posts`, `instagram_content_publish`, `pages_read_engagement`, `read_audience_network_insights`, entre otros) que habilitan publicación automatizada real, no solo lectura. Reveló además que ya tiene un pipeline propio funcional (script en PyCharm, usando Gemini, publicando vía Meta Graph API) que consume un spreadsheet de 8 columnas (`Fecha_Programada`, `Hora`, `Marca`, `Categoria`, `Archivo`, `Ruta_Completa`, `Caption`, `Estado`) — Facebook integrado y en uso real; Instagram pendiente de integrar, sin columna de plataforma todavía. El pipeline es **multi-marca** (ejemplos vistos de otro proyecto de Fernando, "Quirelli"/"Flexi", no de USM). `Archivo` (solo filename) y `Ruta_Completa` (ruta local absoluta en Drive sincronizado) son columnas separadas.
+### Nota
+- Documento deja explícito que, de ahora en más, cualquier calendario "listo para publicar" debe ser exportable a esta estructura de 8 columnas, no solo entregarse como tabla markdown de planeación — y que los nombres de archivo usados en cualquier calendario deben coincidir exactamente con los nombres reales en la carpeta local de Fernando.
+- Quedan 5 puntos pendientes de definición explícitos en la sección 4 del documento (valor de `Marca` para USM, valores de `Estado`, mapeo de `Categoria` para contenido de memes/reels vs. e-commerce, manejo multi-plataforma, validación pre-publicación) — no se resolvieron en esta sesión, solo se registró lo confirmado.
 
 ---
 
