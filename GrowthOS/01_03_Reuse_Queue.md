@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-14
-**Versión:** 1.1
+**Versión:** 1.2
 **Autor:** Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_02_Content_Backlog.md`
 
@@ -45,6 +45,12 @@ El siguiente contenido ha sido identificado como reutilizable (`Es_Reutilizable 
 | CNT-016 | Filosofía — Principios como contenido | Variable | Foto / Carrusel / Frase / Reel | **Alto** | Adaptar los 9 principios filosóficos a formatos visuales simples. |
 
 ---
+
+## Ranking de rendimiento de mayo — 2026-08-14
+
+La selección de reuse de mayo debe usar el cruce reproducible entre Drive y Meta documentado en [`Operations/Research/2026-08-14_Revision_Reuse_Mayo_Junio.md`](../Operations/Research/2026-08-14_Revision_Reuse_Mayo_Junio.md). El ranking completo de 123 assets con coincidencia histórica está en [`Operations/Research/2026-08-14_Reuse_Mayo_Ranking.csv`](../Operations/Research/2026-08-14_Reuse_Mayo_Ranking.csv), y el cruce bruto de 205 publicaciones está en [`Operations/Research/2026-08-14_Reuse_Mayo_Meta_Cruce_Datos.csv`](../Operations/Research/2026-08-14_Reuse_Mayo_Meta_Cruce_Datos.csv).
+
+Para la prueba de dos semanas, seleccionar primero 28 piezas desde la raíz operativa de `05 Mayo`, priorizando `Confirmed_Image_Likely`, máximo y mediana de interacciones, shares, diversidad de personajes y ausencia de bloqueos de canon. Los assets sin coincidencia visual confirmada deben permanecer como `Sin_Historial_Visual_Confirmado` hasta revisión manual. Las carpetas de piezas reutilizadas en julio y agosto quedan fuera de la selección actual por la regla de antigüedad.
 
 ## Reglas de Reutilización y Estrategia
 

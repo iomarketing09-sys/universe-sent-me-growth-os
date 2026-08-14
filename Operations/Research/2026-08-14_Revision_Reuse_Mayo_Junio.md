@@ -5,7 +5,7 @@
 **Estado:** Review  
 **Fecha de creación:** 2026-08-14  
 **Última actualización:** 2026-08-14  
-**Versión:** 1.2
+**Versión:** 1.3
 **Autor:** Manus AI  
 **Documentos relacionados:** [`GrowthOS/01_03_Reuse_Queue.md`](../../GrowthOS/01_03_Reuse_Queue.md), [`Operations/Research/2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md`](2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md), [`GrowthOS/05_02_Calendario_04_09_Agosto.md`](../../GrowthOS/05_02_Calendario_04_09_Agosto.md), [`GrowthOS/05_03_Calendario_10_16_Agosto.md`](../../GrowthOS/05_03_Calendario_10_16_Agosto.md)
 
@@ -55,13 +55,38 @@ La recomendación actualizada es **usar la raíz de mayo como fuente principal d
 
 Las piezas ya reutilizadas en julio y agosto quedaron físicamente separadas por Fernando y no forman parte de la raíz candidata. En particular, la carpeta `Reutilizado Agosto` contiene 21 imágenes y `Reutilizado Juilo (menos de 30 dias)` contiene 7 imágenes. La muestra visual anterior queda reemplazada por esta clasificación estructural de Drive.
 
-## 6. Límites de esta revisión
+## 6. Cruce con publicaciones de Meta
 
-La revisión actual confirma la estructura de Drive, los nombres con referencias y personajes, los tipos de archivo y la clasificación operativa realizada por Fernando. No existe un registro individual de la fecha original de publicación en mayo; por eso el inventario usa `Unknown_May_2026` y conserva la confirmación de la regla de 30 días como una declaración operativa del usuario. Antes de programar cada pieza se debe registrar su nuevo `ID_Meta`, fecha de publicación y resultado de métricas.
+Se extrajo el historial de Facebook del 1 al 31 de mayo de 2026 y se obtuvieron **205 publicaciones**. El cruce se realizó comparando los adjuntos de imagen de Meta con los 131 archivos de imagen de la raíz de mayo mediante hashes perceptuales, conservando además el ID de publicación, fecha, permalink, reacciones, comentarios y shares.
+
+| Resultado del cruce | Cantidad |
+|---|---:|
+| Publicaciones de Meta de mayo | 205 |
+| Publicaciones con adjunto de imagen descargable | 202 |
+| Coincidencias de imagen confirmadas automáticamente | 135 publicaciones |
+| Coincidencias confirmadas únicas | 123 assets |
+| Publicaciones con coincidencia que requieren revisión | 67 publicaciones |
+| Assets raíz de mayo sin coincidencia confirmada | 8 imágenes |
+| Assets con más de una publicación histórica | 11 |
+
+Las coincidencias confirmadas no significan que el meme deba reutilizarse automáticamente. Significan que ahora conocemos su rendimiento histórico individual. En los casos publicados más de una vez se conserva el máximo y la mediana de interacciones para evitar que un único resultado distorsione la selección.
+
+El ranking inicial identifica 28 candidatos para la prueba, priorizados por máximo de interacciones, mediana, shares, diversidad y revisión de canon. Los primeros candidatos por interacciones fueron `260633 - Universe.png` con 14, `260642 - Universe+Wilfred.png` con 12, `260528 - Universe.png` con máximo 11 y mediana 8.5, `260644 - Universe.png` con 10, `260515 - Universe.png` con 10 y `260560 - Fantasma.png` con máximo 10 y mediana 5.5.
+
+Los ocho assets sin coincidencia confirmada son `260514 - Que feo fingir que estas bien.png`, `260539 - Evan+Kiri.png`, `260563.png`, `260583 - Universe.png`, `260663 - Kiri.png`, `260673 - Universe.png`, `humor4.16.png` y `Universe - Existencial 260507.png`. No deben clasificarse como malos; simplemente quedan como `Sin_Historial_Visual_Confirmado` hasta una revisión manual o una coincidencia adicional.
+
+El cruce es una mejora importante frente a la ausencia anterior de fechas y métricas, pero el hash perceptual puede producir coincidencias `Review_Image` en piezas visualmente parecidas. Para la prueba se deben usar primero las coincidencias `Confirmed_Image_Likely` y revisar manualmente cualquier candidato marcado como revisión antes de programarlo.
+
+## 7. Límites de esta revisión
+
+La revisión actual confirma la estructura de Drive, los nombres con referencias y personajes, los tipos de archivo y la clasificación operativa realizada por Fernando. El cruce con Meta recupera fechas y rendimiento para 123 assets, pero no elimina la ausencia de un registro editorial original de mayo: la fecha histórica se obtiene de la publicación encontrada en Meta, no de una ficha de producción. Para los ocho assets sin match se mantiene `Unknown_May_2026`. Antes de programar cada pieza se debe registrar su nuevo `ID_Meta`, fecha de publicación y resultado de métricas.
 
 No se eliminó, movió ni modificó ningún archivo de Drive. La recomendación de descartar significa **excluir temporalmente de la prueba**, no borrar del archivo.
 
 ### Referencias
+
+[5]: 2026-08-14_Reuse_Mayo_Meta_Cruce_Datos.csv — Cruce de 205 publicaciones de mayo con adjuntos y candidatos de Drive.
+[6]: 2026-08-14_Reuse_Mayo_Ranking.csv — Ranking reproducible de 123 assets con rendimiento histórico.
 
 [1]: ../../GrowthOS/01_03_Reuse_Queue.md — Reglas de antigüedad, canon y prioridades de reuse.
 [2]: 2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md — Protocolo de la prueba y necesidad de 28 piezas reuse.
