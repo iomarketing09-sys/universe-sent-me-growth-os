@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.22
+**Versión:** 1.23
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -26,6 +26,16 @@
 - Se registraron los permisos efectivos y las cuentas vinculadas en `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`.
 
 ---
+
+---
+
+## [1.2.23] — 2026-08-14 (Manus)
+### Añadido
+- **Diseño de prueba de calendario de dos semanas:** se creó `Operations/Research/2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md` para probar frecuencia, tipo de contenido y franjas horarias sin alterar aún el calendario vigente.
+- La matriz base propone cinco publicaciones de Facebook por día: 10:00, 11:00, 13:30, 16:00 y 17:00 de lunes a sábado; los domingos cambia a 10:00, 11:00, 13:30, 19:00 y 22:00 para probar la hipótesis de tráfico nocturno dominical.
+- La mezcla experimental propuesta es 80% contenido nuevo y 20% `Reuse_Top`, con Reels y carruseles fuera del cálculo principal.
+- La producción documentada todavía no garantiza 56 piezas nuevas para 14 días; el protocolo incluye una variante de cuatro publicaciones diarias si Fernando no confirma capacidad suficiente.
+- El calendario `05_03_Calendario_10_16_Agosto.md` no fue modificado.
 
 ---
 
