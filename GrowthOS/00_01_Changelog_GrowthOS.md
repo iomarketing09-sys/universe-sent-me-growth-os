@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.18
+**Versión:** 1.19
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -26,6 +26,16 @@
 - Se registraron los permisos efectivos y las cuentas vinculadas en `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`.
 
 ---
+
+---
+
+## [1.2.19] — 2026-08-14 (Manus)
+### Añadido
+- **Auditoría del Growth OS:** se creó `Operations/Research/2026-08-14_Auditoria_Growth_OS.md` para evaluar la programación modificada, el estado de Make e Instagram, la trazabilidad hacia el pipeline CSV y el ciclo de aprendizaje post-publicación.
+- Dictamen provisional: el sistema funciona parcialmente, pero no está validado de extremo a extremo. Make responde a nivel de identidad; Instagram está seleccionado como `@universe_sent_me_0326` pero el conector aparece no conectado; no se verificaron escenarios individuales ni ejecuciones; el `ExperimentLog` continúa vacío.
+- Se documentaron inconsistencias de versión y slots en `05_03_Calendario_10_16_Agosto.md`, además de la falta de exportación CSV y correspondencia entre IDs `CNT-####` y códigos `260####`.
+### Nota
+- El calendario no fue modificado durante la auditoría. La revisión y corrección del calendario queda separada para una sesión posterior, después de validar integraciones y trazabilidad de publicación.
 
 ---
 
