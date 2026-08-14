@@ -4,8 +4,8 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.12
-**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12] añadidas por Manus
+**Versión:** 1.13
+**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
 ---
@@ -25,9 +25,15 @@
 
 ---
 
+## [1.2.13] — 2026-08-14 (Manus)
+### Cambiado
+- **CNT-028 v2.0 — corrección de identidad visual:** Fernando rechazó la v1 del banco de memes adaptados por alterar los rasgos físicos y el estilo de animación de los personajes. Se regeneraron las 5 imágenes usando exclusivamente los assets oficiales del proyecto como referencia: Fantasma (sábana blanca con gafas oscuras, asset 8), Universe (gato blanco con gafas steampunk doradas con engranajes, asset 3), Silvio (pelo morado, nariz roja, golilla, sonrisa cómplice + ceja levantada, asset 7) y Wilfred (asset 4). M2 (Kael+Maeve) se mantiene como diseño pendiente de validación: estos personajes no tienen asset oficial en el proyecto. Consecuencia de sistema: **regla dura nº 5 añadida al `03_00`** — identidad física y estilo de animación no negociables; para personajes sin asset oficial, validación explícita de Fernando antes de publicar. CNT028 sube a v2.0 y `03_00` a v2.2.
+
+---
+
 ## [1.2.12] — 2026-08-14 (Manus)
 ### Añadido
-- **CNT-028 — Banco de 5 memes adaptados de Drive (modo "adaptado"):** a solicitud de Fernando, se seleccionaron 5 memes con frase en español de la carpeta Drive Ideas-Memes y se recrearon con personajes y escenarios USM: M1 Fantasma "¿Qué vendrá primero mi boda o Jesús?", M2 Kael+Maeve "Tu soltera y yo soltero... (Que nadie nos soporta)", M3 Silvio "Mira, te llama tu mamá, corre", M4 Wilfred "Y que estabas haciendo que no respondías / Yo:... Ver más", M5 Universe "Lo bueno del amor es que / si eres un buen observador / lo verás en todos lados". Reglas aplicadas: frase original intacta palabra por palabra (verificada), marca "UniverseSentMe" discreta en imagen, y **modo adaptado** formalizado en `03_00` como segundo modo de producción junto al modo estándar (frase en copy). Se descartaron 3 referencias de Drive: WhatsApp con insultos (tonalidad incompatible con "ácido ≠ insulto"), axolotl con vulgaridad y autoría ajena identificada (riesgo de reporte/crédito), y memes sin frase en español. Registro de descarte documentado en CNT028 para trazabilidad.
+- **CNT-028 — Banco de 5 memes adaptados de Drive (modo "adaptado") (v1.0):** a solicitud de Fernando, se seleccionaron 5 memes con frase en español de la carpeta Drive Ideas-Memes y se recrearon con personajes y escenarios USM: M1 Fantasma "¿Qué vendrá primero mi boda o Jesús?", M2 Kael+Maeve "Tu soltera y yo soltero... (Que nadie nos soporta)", M3 Silvio "Mira, te llama tu mamá, corre", M4 Wilfred "Y que estabas haciendo que no respondías / Yo:... Ver más", M5 Universe "Lo bueno del amor es que / si eres un buen observador / lo verás en todos lados". Reglas aplicadas: frase original intacta palabra por palabra (verificada), marca "UniverseSentMe" discreta en imagen, y **modo adaptado** formalizado en `03_00` como segundo modo de producción junto al modo estándar (frase en copy). Se descartaron 3 referencias de Drive: WhatsApp con insultos (tonalidad incompatible con "ácido ≠ insulto"), axolotl con vulgaridad y autoría ajena identificada (riesgo de reporte/crédito), y memes sin frase en español. Registro de descarte documentado en CNT028 para trazabilidad.
 
 ---
 
