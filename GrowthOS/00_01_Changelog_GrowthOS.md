@@ -3,9 +3,9 @@
 **Propósito:** Registro centralizado de hitos, integraciones, cambios estratégicos y actualizaciones de arquitectura. Este documento permite a los agentes (Manus, Claude, etc.) sincronizar contexto rápidamente sin re-leer todo el repositorio.
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
-**Última actualización:** 2026-08-12
-**Versión:** 1.10
-**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8] añadidas por Claude; [1.2.9] añadida por Manus; [1.2.10] añadida por Claude
+**Última actualización:** 2026-08-14
+**Versión:** 1.11
+**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
 ---
@@ -16,6 +16,12 @@
 ### Nota
 - Documento deja explícito que, de ahora en más, cualquier calendario "listo para publicar" debe ser exportable a esta estructura de 8 columnas, no solo entregarse como tabla markdown de planeación — y que los nombres de archivo usados en cualquier calendario deben coincidir exactamente con los nombres reales en la carpeta local de Fernando.
 - Quedan 5 puntos pendientes de definición explícitos en la sección 4 del documento (valor de `Marca` para USM, valores de `Estado`, mapeo de `Categoria` para contenido de memes/reels vs. e-commerce, manejo multi-plataforma, validación pre-publicación) — no se resolvieron en esta sesión, solo se registró lo confirmado.
+
+---
+
+## [1.2.11] — 2026-08-14 (Manus)
+### Añadido
+- **CNT-027 — Meme Fantasma "Ghosting eterno":** propuesta derivada de la revisión de la carpeta de Google Drive "Universe Sent Me > Ideas > Memes" (solicitada por Fernando). De las ~19 semillas de referencia se identificaron 4 patrones (espera eterna resignada, autodesprecio con punchline seco, ternura interactiva, agotamiento social); la propuesta combina los dos primeros con el Fantasma y un giro moderno (mensajes sin leer/ghosting). Copy: "Hace 400 años que no me contestan un mensaje. Ahora le dicen ghosting. Yo solo lo llamaba martes." Score **9.10/10 PASS** verificado por `scripts/score_proposal.py`. Slot sugerido 4:00–5:00 PM, base visual del asset 2K existente del proyecto. Canon-safe: el arco del Fantasma no se resuelve.
 
 ---
 

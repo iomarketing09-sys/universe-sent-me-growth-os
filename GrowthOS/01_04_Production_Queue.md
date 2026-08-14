@@ -3,8 +3,8 @@
 **Propósito:** Lista de contenido que requiere producción nueva (generación de assets, edición, redacción de guiones) antes de poder ser programado.
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-09
-**Versión:** 1.1
+**Última actualización:** 2026-08-14
+**Versión:** 1.2
 **Autor:** Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_02_Content_Backlog.md`
 
@@ -23,6 +23,7 @@
 | CNT-005 | HB-001: Wilfred existencial vs humorístico | @char_USM_wilfred | Reel (2 variantes) | Media | Pendiente de aprobación | Experimento Growth OS. Requiere aprobación de Fernando. |
 | CNT-026 | Banco de memes fin de semana 16–17 de agosto (Fantasma, Wilfred, Universe, Pareja, minimalista) | Multichar | Foto (frase en copy) | Baja | **Propuestas listas** — Draft, pendientes de aprobación de Fernando | 5 propuestas con score ≥ 8.5 (`Operations/Production/CNT026_Memes_FinDeSemana_16_17_Ago.md`). M1/M2/M4/M5 usan bases 2K existentes del proyecto; M3 requiere imagen nueva de Maeve + Chico de los Pantalones (alternativa M3-B solo Maeve incluida). Generación final en Flow (Nano Banana 2/Pro). |
 | CNT-025 | Experimentos Growth OS — tests A/B | Variable | Reel (parejas) | Media-Alta | Pendiente de aprobación | Requiere aprobación de Fernando. |
+| CNT-027 | Meme Fantasma "Ghosting eterno" (derivado de Drive Ideas-Memes) | @char_USM_fantasma | Foto (frase en copy) | Baja | **Propuesta lista** — Draft, pendiente de aprobación de Fernando | Score 9.10/10 (`Operations/Production/CNT027_Meme_Fantasma_Ghosting_DriveIdeas.md`). Base visual: asset 2K existente del proyecto (Fantasma levitando sobre el bosque); solo requiere copy en publicación. Slot sugerido 4:00–5:00 PM.
 
 ---
 

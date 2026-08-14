@@ -3,8 +3,8 @@
 **Propósito:** Lista de contenido que únicamente espera revisión de Claude (validación de canon) o aprobación de Fernando (revisión narrativa/estratégica) antes de poder ser programado.
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-09
-**Versión:** 1.1
+**Última actualización:** 2026-08-14
+**Versión:** 1.2
 **Autor:** Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_02_Content_Backlog.md`
 
@@ -28,6 +28,7 @@ Este es el cuello de botella operativo del calendario. Ninguna pieza en esta col
 | CNT-005 | HB-001: Wilfred existencial vs humorístico | @char_USM_wilfred | Validación de hipótesis Growth OS | Fernando debe aprobar el diseño del experimento A/B antes de la producción. |
 | CNT-025 | Experimentos Growth OS — tests A/B | Variable | Validación de hipótesis Growth OS | Fernando debe aprobar el diseño de los tests A/B. |
 | CNT-026 | Banco de memes fin de semana 16–17 de agosto (5 piezas) | Multichar | 5 propuestas con score ≥ 8.5 (`scripts/score_proposal.py`) listas para producir | Fernando debe aprobar las 5 propuestas (o elegir subconjunto) antes de producir las imágenes en Flow. |
+| CNT-027 | Meme Fantasma "Ghosting eterno" (derivado de Drive Ideas-Memes) | @char_USM_fantasma | Propuesta con score 9.10/10 (`scripts/score_proposal.py`), base visual con asset 2K existente | Fernando debe aprobar la propuesta (copy + slot) antes de la publicación. |
 
 ---
 
