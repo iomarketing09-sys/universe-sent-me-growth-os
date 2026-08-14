@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.21
+**Versión:** 1.22
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -26,6 +26,15 @@
 - Se registraron los permisos efectivos y las cuentas vinculadas en `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`.
 
 ---
+
+---
+
+## [1.2.22] — 2026-08-14 (Manus)
+### Añadido
+- **Comparativo junio–julio–agosto:** se creó `Operations/Research/2026-08-14_Comparativo_Desempeno_Junio_Julio_Agosto.md` y el snapshot de 508 publicaciones extraídas mediante Graph API.
+- El análisis de los primeros 14 días muestra 9.50 publicaciones/día en junio, 6.71 en julio y 4.57 en agosto. Agosto cae frente a julio en interacciones totales por día y mediana por publicación, pero permanece por encima de junio por publicación.
+- Se registraron `HB-004` sobre saturación de reuse y `HB-005` sobre superficie de descubrimiento/frecuencia. Ambas quedan `En prueba`; no se modificó el calendario.
+- La teoría de que los huecos de publicación reducen oportunidades de descubrimiento es plausible, pero todavía no se prueba el mecanismo algorítmico ni la contribución incremental de cada post.
 
 ---
 
