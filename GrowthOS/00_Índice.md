@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-14
-**Versión:** 1.9
+**Versión:** 2.0
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -40,6 +40,7 @@
 | [Ciclo de Aprendizaje de Horarios — 14 de agosto](../Operations/Research/2026-08-14_Ciclo_Aprendizaje_Horarios.md) | Reconstruye la hipótesis y la evidencia detrás del cambio de horarios. | Review |
 | [Comparativo Junio–Julio–Agosto — 14 de agosto](../Operations/Research/2026-08-14_Comparativo_Desempeno_Junio_Julio_Agosto.md) | Determina si la caída de agosto proviene de frecuencia, reuse, horarios o mezcla editorial. | Review |
 | [Diseño de Prueba de Calendario — 2 semanas](../Operations/Research/2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md) | Protocolo para controlar frecuencia, contenido nuevo/reuse y franjas horarias. | Review |
+| [Revisión de Reuse — Mayo frente a Junio](../Operations/Research/2026-08-14_Revision_Reuse_Mayo_Junio.md) | Inventario de Drive, elegibilidad de mayo y reserva Top de junio. | Review |
 
 ---
 

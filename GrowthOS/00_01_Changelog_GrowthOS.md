@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.24
+**Versión:** 1.25
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -26,6 +26,15 @@
 - Se registraron los permisos efectivos y las cuentas vinculadas en `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`.
 
 ---
+
+---
+
+## [1.2.25] — 2026-08-14 (Manus)
+### Añadido
+- **Revisión de reuse mayo-junio:** se creó `Operations/Research/2026-08-14_Revision_Reuse_Mayo_Junio.md` y su catálogo de datos. Se identificaron 167 imágenes en la carpeta `05 Mayo` y 197 en `06 Junio`, incluyendo una subcarpeta `Top` con 8 piezas curadas.
+- Se recomienda pasar parcialmente a junio para aprovechar el conjunto `Top` y piezas más recientes, mientras se conserva mayo como reserva secundaria filtrada por rendimiento y saturación.
+- Mayo no cubre por sí solo la necesidad de 28 piezas reuse top para la prueba de dos semanas con un nivel de confianza alto; la combinación de las 12 prioridades de mayo y los 8 top de junio ofrece una base inicial de 20 candidatos.
+- No se eliminó ni modificó ningún archivo en Drive; la recomendación de descarte es únicamente para la exclusión temporal de la prueba.
 
 ---
 
