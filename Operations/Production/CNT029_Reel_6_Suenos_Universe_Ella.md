@@ -5,8 +5,8 @@
 | **Propósito** | Registro del reel de 6 imágenes con composición idéntica (Universe sentado en una nube con globo de pensamiento sobre el cielo pastel) en la que solo cambia el sueño dentro del globo; la frase del reel "Pausa para ver qué piensa de ti" va como texto superpuesto en el video, no en las imágenes |
 | **Estado** | Draft (pendiente de aprobación de Fernando) |
 | **Fecha de creación** | 2026-08-14 |
-| **Última actualización** | 2026-08-14 (v2.0: añadidos cuadros pícaros F7–F9) |
-| **Versión** | 2.0 |
+| **Última actualización** | 2026-08-14 (v2.1: sección de portadas y hooks añadida) |
+| **Versión** | 2.1 |
 | **Autor** | Manus AI (CGO) |
 | **ID** | CNT-029 |
 | **Documentos relacionados** | `GrowthOS/03_00_Sistema_Generacion_Memes.md`, `GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md`, `Operations/Production/CNT028_Memes_Adaptados_Drive_Frase_Intacta.md` |
@@ -32,6 +32,10 @@ La imagen base fue creada por Fernando (13-ago-2026) y sirve de plantilla: Unive
 **Nota de tono (v2.0):** a solicitud de Fernando se añadieron 3 cuadros "pícaros" (F7–F9) como extensión del reel original de 6 cuadros, quedando el banco con 9 cuadros en total. Se mantuvieron deliberadamente en clave de comedia romántica con estética tierna: nada explícito, sin desnudez ni contenido sexual — la línea de USM es "ácido y pícaro, nunca explícito". Este equilibrio permite el doble sentido que genera comentarios y shares, sin riesgo de restricción de alcance en Meta/TikTok ni de la línea editorial del proyecto. Recomendar usar los cuadros pícaros en posiciones intermedias del reel (nunca como thumbnail ni como primer cuadro), para que el video entre con la versión tierna y el giro pícaro sea la sorpresa.
 
 Todas las imágenes respetan la identidad física canónica de Universe (gato blanco con gafas steampunk doradas de engranajes, asset oficial 3) y el mismo estilo de animación 2D cartoon pastel de la imagen base. Cada imagen lleva la marca "UniverseSentMe" discreta.
+
+## 2b. Portadas y hooks de texto (v2.1)
+
+Cuatro conceptos de portada (P1 close-up de Universe con cara de secreto; P2 globo de pensamiento borroso con "⬇ PAUSA PARA LEER ⬇"; P3 split "lo que piensas tú vs. lo que piensa él"; P4 portada "glitch" con el sueño censurado) y cinco hooks (H1 directo de pausa; H2 POV secreto; H3 reto "90% no pausará"; H4 pregunta abierta con promesa; H5 "los pensamientos se ponen intensos a partir del frame 5 👀"). Recomendados: P2 o P4 de portada y H5 o H3 de hook. Copy sugerido con CTA de etiquetar y hashtag de formato emergente `#PausaParaVerQuePiensa`. Detalle completo en `/home/ubuntu/portada_hook_reel_suenos.md` (entregable) y métricas a registrar: watch-time, retención al segundo 5 (>60% umbral), replays y comentarios que mencionen la pausa.
 
 ## 3. Guion sugerido del reel (v2.0 — corregido por Fernando)
 
