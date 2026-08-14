@@ -27,6 +27,10 @@ Agosto está incompleto: la extracción cubre del 1 al 14 de agosto. Por eso se 
 
 ## 3. Comparación de los primeros 14 días
 
+![Comparación de frecuencia, interacciones y rendimiento típico entre junio, julio y agosto](2026-08-14_Comparativo_Junio_Julio_Agosto.png)
+
+*Figura 1. Comparación basada en los primeros 14 días de cada mes. Agosto está medido del 1 al 14.*
+
 | Periodo | Publicaciones | Publicaciones/día promedio | Interacciones totales | Interacciones/día promedio | Mediana de interacciones por publicación | Shares / interacciones |
 |---|---:|---:|---:|---:|---:|---:|
 | Junio 1–14 | 133 | 9.50 | 6,865 | 490.36 | 7 | 20.48% |
