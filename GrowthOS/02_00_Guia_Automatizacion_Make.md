@@ -1,14 +1,16 @@
 # Guía de Automatización con Make (Growth OS)
 
 **Propósito:** Documentar la estructura de campos, flujos y reglas de negocio necesarias para implementar el sistema de calendario en Make y escalar a 1,000+ piezas.
-**Estado:** Active
+**Estado:** Archived
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-07-31
-**Versión:** 1.0
+**Última actualización:** 2026-08-14
+**Versión:** 1.1
 **Autor:** Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `GrowthOS/Integracion_Growth_OS.md`
 
 ---
+
+> **Aviso de estado (2026-08-14):** Make queda retirado de la estrategia operativa de Universe Sent Me. Este documento se conserva como referencia histórica de la arquitectura propuesta, pero no debe usarse para programar, publicar, bloquear canon ni analizar publicaciones. El flujo vigente utiliza la API de Graph de Meta y ejecución directa de Manus. La programación y publicación requieren validación previa de cada pieza y confirmación explícita de Fernando cuando corresponda.
 
 ## 1. Estructura de la Base de Datos (Google Sheets / Airtable)
 

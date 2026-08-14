@@ -4,7 +4,7 @@
 **Estado:** Review
 **Fecha de creación:** 2026-08-14
 **Última actualización:** 2026-08-14
-**Versión:** 1.0
+**Versión:** 1.1
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/05_03_Calendario_10_16_Agosto.md`, `GrowthOS/01_00_Arquitectura_Calendario_Escalable.md`, `GrowthOS/Integracion_Growth_OS.md`, `GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/00_Índice.md`, `GrowthOS/00_01_Changelog_GrowthOS.md`
 
@@ -101,6 +101,16 @@ El siguiente trabajo recomendado es validar primero las integraciones y la traza
 7. `GrowthOS/05_02_Calendario_04_09_Agosto.md` — evidencia documental de programación manual y controles pendientes de verificación.
 8. `GrowthOS/00_Índice.md` — flujo de trabajo y reglas operativas del Growth OS.
 
+## 6. Addendum — Validación Graph API y decisión sobre Make (2026-08-14)
+
+Fernando confirmó que Make queda retirado de la estrategia operativa y que Manus gestionará las publicaciones mediante la API de Graph de Meta. Se actualizó la arquitectura para que Make sea histórico y la ruta vigente sea Manus + Graph API.
+
+El token temporal actualizado fue validado sin ejecutar operaciones de escritura. El token de usuario respondió HTTP 200 para identidad y permisos; sus permisos efectivos incluyeron `pages_show_list`, `instagram_basic`, `instagram_content_publish`, `pages_read_engagement`, `pages_read_user_content`, `pages_manage_posts`, `pages_manage_engagement`, `read_audience_network_insights` y `public_profile`. Desde `/me/accounts`, Manus derivó en memoria el Page Access Token de Universe Sent Me sin exponerlo, y con ese token se validaron la identidad de la Página, el feed de la Página y el endpoint de publicaciones programadas, todos con HTTP 200.
+
+La cuenta profesional vinculada `@universe_sent_me_0326` también respondió correctamente: identidad HTTP 200 y lectura de media HTTP 200. No se creó ningún contenedor, no se subió ningún asset y no se publicó contenido. El token es temporal; cuando expire, la lectura, programación y publicación quedarán bloqueadas hasta reemplazarlo.
+
+El resultado cambia el dictamen de integración: **Graph API es técnicamente utilizable para el flujo operativo**, pero la primera publicación real todavía requiere una prueba explícita con un asset aprobado. Facebook dispone de programación nativa mediante Page Feed; Instagram requiere el flujo de Content Publishing y media accesible públicamente, por lo que Manus debe controlar la ejecución en el horario planificado.
+
 ## Registro de pruebas de esta auditoría
 
 | Prueba | Resultado | Fecha |
@@ -112,3 +122,8 @@ El siguiente trabajo recomendado es validar primero las integraciones y la traza
 | Selección de cuenta Instagram | Correcta; `@universe_sent_me_0326` | 2026-08-14 |
 | Lectura de cuenta Instagram | Fallida; conector no conectado | 2026-08-14 |
 | Publicación o escritura en redes | No ejecutada | 2026-08-14 |
+| Token temporal — identidad de usuario | HTTP 200 | 2026-08-14 |
+| Token temporal — permisos efectivos | HTTP 200; permisos de páginas e Instagram concedidos | 2026-08-14 |
+| Page Access Token derivado en memoria | Identidad de Página, feed y scheduled posts HTTP 200 | 2026-08-14 |
+| Instagram `@universe_sent_me_0326` | Identidad y media HTTP 200 | 2026-08-14 |
+| Decisión sobre Make | Retirado de la estrategia; guía archivada | 2026-08-14 |

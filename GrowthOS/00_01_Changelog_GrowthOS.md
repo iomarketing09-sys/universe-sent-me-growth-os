@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.19
+**Versión:** 1.20
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -26,6 +26,14 @@
 - Se registraron los permisos efectivos y las cuentas vinculadas en `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`.
 
 ---
+
+---
+
+## [1.2.20] — 2026-08-14 (Manus)
+### Cambiado
+- **Make retirado de la estrategia operativa:** la guía `02_00_Guia_Automatizacion_Make.md` pasa a `Archived`. La arquitectura, el documento puente, el índice, la cola de reuse y la cola de producción fueron actualizados para que Manus gestione la validación, programación, publicación y aprendizaje mediante Graph API de Meta.
+- **Graph API validada con token temporal:** el token de usuario respondió HTTP 200 para identidad y permisos; Manus derivó en memoria el Page Access Token de Universe Sent Me y verificó identidad de Página, feed, publicaciones programadas, identidad de Instagram `@universe_sent_me_0326` y lectura de media, todos con HTTP 200.
+- No se ejecutaron operaciones de escritura. La primera publicación real queda pendiente de una prueba explícita con un asset aprobado. Los tokens temporales deben renovarse cuando expiren.
 
 ---
 

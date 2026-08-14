@@ -1,10 +1,10 @@
 # Arquitectura del Calendario Escalable (1,000+ piezas)
 
-**Propósito:** Definir la arquitectura de metadatos y flujos operativos para gestionar más de 1,000 piezas de contenido, permitiendo filtrado, priorización y automatización con Make.
+**Propósito:** Definir la arquitectura de metadatos y flujos operativos para gestionar más de 1,000 piezas de contenido, permitiendo filtrado, priorización y publicación controlada mediante Manus y la API de Graph de Meta.
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-07-31
-**Versión:** 1.0
+**Última actualización:** 2026-08-14
+**Versión:** 1.1
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`; `Universe Sent Me - Biblia/07 Historias/00 Estándar de Historias.md` (repositorio separado, solo lectura: `iomarketing09-sys/universe-sent-me-1`)
 
@@ -12,13 +12,13 @@
 
 ## 1. Sistema de Metadatos Estandarizado
 
-Para escalar a 1,000+ piezas, cada idea debe existir como una fila independiente en un sistema relacional (Google Sheets / Airtable / Base de datos) que alimente a Make. El estándar de historias de la Biblia (`07 Historias/00 Estándar de Historias.md`) provee la base narrativa, pero el Growth OS requiere metadatos operativos.
+Para escalar a 1,000+ piezas, cada idea debe existir como una fila independiente en un sistema relacional o inventario estructurado. La ejecución vigente no depende de Make: Manus lee la fuente aprobada, valida los bloqueos y utiliza la API de Graph de Meta para programar o publicar en Facebook e Instagram. El estándar de historias de la Biblia (`07 Historias/00 Estándar de Historias.md`) provee la base narrativa, pero el Growth OS requiere metadatos operativos.
 
 ### Campos Obligatorios (ID Únicos)
 
-| Campo | Descripción | Formato Requerido | Valor para Make |
+| Campo | Descripción | Formato Requerido | Uso operativo |
 | :--- | :--- | :--- | :--- |
-| `ID_Pieza` | Identificador único autoincremental | `CNT-####` (Ej: `CNT-001`) | ID principal para API/Make |
+| `ID_Pieza` | Identificador único autoincremental | `CNT-####` (Ej: `CNT-001`) | ID principal para Graph API y trazabilidad |
 | `Fecha_Creacion` | Fecha de registro de la idea | `YYYY-MM-DD` | Timestamp |
 | `Ultima_Modificacion` | Fecha de última actualización | `YYYY-MM-DD` | Timestamp para sincronización |
 | `Estado` | Etapa del flujo operativo | Enum (ver sección 2) | Disparador de flujos (Triggers) |
@@ -46,13 +46,15 @@ Para escalar a 1,000+ piezas, cada idea debe existir como una fila independiente
 | `Es_Reutilizable` | Flag para reciclar contenido | `Sí` / `No` |
 | `Bloqueado_Canon` | ¿Tiene contradicciones de canon? | `Sí` / `No` |
 | `Fecha_Ultima_Publicacion` | Fecha de la última vez que se publicó | `YYYY-MM-DD` o vacío |
-| `Dias_Desde_Publicacion` | Días transcurridos desde la última publicación | Entero (calculado)
+| `Dias_Desde_Publicacion` | Días transcurridos desde la última publicación | Entero (calculado) |
+
+> **Nota operativa:** La fuente puede ser un calendario Markdown, CSV o inventario estructurado. Antes de programar, Manus debe convertir cada fila aprobada a una orden de publicación con fecha, hora, plataforma, asset público o ruta confirmada, caption, estado e identificador de trazabilidad.
 
 ---
 
 ## 2. Máquina de Estados Operativos
 
-Este sistema reemplaza el flujo lineal original por una máquina de estados finita optimizada para automatización (Make). Make puede escuchar cambios en el campo `Estado` y disparar flujos específicos.
+Este sistema reemplaza el flujo lineal original por una máquina de estados finita que Manus ejecuta mediante validaciones explícitas y llamadas controladas a la API de Graph de Meta. No se asume que un cambio de estado publique automáticamente: la publicación requiere que la pieza esté aprobada, que el asset sea accesible y que la llamada sea confirmada cuando implique escritura.
 
 ### Diagrama de Flujo
 
@@ -79,9 +81,11 @@ graph TD
     style H fill:#f9f,stroke:#333,stroke-width:2px
 ```
 
-### Transiciones Permitidas para Make
+### Transiciones Permitidas para Manus y Graph API
 
-Para evitar errores en las automatizaciones, Make solo debe permitir las siguientes transiciones de estado:
+> La guía histórica de Make queda archivada; las transiciones se ejecutan mediante validación explícita de Manus y registro de resultados de Meta.
+
+Para evitar errores en la ejecución, Manus solo debe permitir las siguientes transiciones de estado y registrar el resultado de cada llamada a Meta:
 
 1. `Idea` → `Pendiente de Producción`
 2. `Pendiente de Producción` → `En Producción` (o `Reutilizado`)
@@ -127,11 +131,27 @@ El calendario de 7 días debe proyectar los siguientes campos para la operación
 
 ---
 
-## 4. Integración con Make (Automatización)
+## 4. Integración vigente con Manus y Graph API
 
-Para que este sistema sea escalable y sin fricción, Make se conectará directamente a la base de datos (Google Sheets / Airtable) usando la estructura de metadatos anterior.
+Para que este sistema sea escalable y trazable, Manus leerá la fuente editorial aprobada usando la estructura de metadatos anterior, validará canon, assets, fecha y plataforma, y ejecutará Graph API de Meta. La guía histórica de Make queda archivada en `02_00_Guia_Automatizacion_Make.md` y ya no forma parte de este flujo.
 
-### Flujos Recomendados de Make
+### Flujo vigente de publicación
+
+1. **Validación y preparación:**
+   - *Trigger:* Solicitud explícita de Fernando o revisión programada por Manus.
+   - *Acción:* Validar `Estado == Aprobado`, `Bloqueado_Canon == No`, asset disponible, caption, plataforma y fecha/hora.
+
+2. **Programación o publicación mediante Graph API:**
+   - *Trigger:* Orden de publicación aprobada.
+   - *Acción Facebook:* usar el endpoint de Page Feed con `published=false` y `scheduled_publish_time` cuando la fecha esté dentro de la ventana permitida por Meta.
+   - *Acción Instagram:* crear el contenedor de media y publicarlo mediante los endpoints de Instagram Content Publishing; cuando no exista programación nativa equivalente, Manus ejecutará la llamada en el momento planificado.
+   - *Acción:* registrar ID devuelto, timestamp, permalink o error y actualizar el estado de la pieza.
+
+3. **Registro post-publicación:**
+   - *Trigger:* Publicación confirmada o revisión de métricas.
+   - *Acción:* consultar métricas disponibles, actualizar `ExperimentLog` y el `HypothesisBank`, y documentar cualquier error o aprendizaje.
+
+### Flujos históricos de Make (no operativos)
 
 1. **Flujo de Notificación de Aprobación:**
    - *Trigger:* Fila modificada donde `Estado` cambia de `Pendiente Aprobación Fernando` a `Aprobado`.

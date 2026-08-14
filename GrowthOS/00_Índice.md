@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-14
-**Versión:** 1.5
+**Versión:** 1.6
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -24,7 +24,7 @@
 | [Reuse Queue](01_03_Reuse_Queue.md) | Contenido con potencial de reutilización (regla 30 días). | Active |
 | [Production Queue](01_04_Production_Queue.md) | Contenido que requiere producción nueva. | Active |
 | [Approval Queue](01_05_Approval_Queue.md) | Contenido pendiente de revisión/aprobación. | Active |
-| [Guía de Automatización con Make](02_00_Guia_Automatizacion_Make.md) | Estructura de campos, flujos y reglas para Make. | Active |
+| [Guía histórica de Automatización con Make](02_00_Guia_Automatizacion_Make.md) | Referencia archivada de una arquitectura no operativa. | Archived |
 | [Sistema de Generación de Memes](03_00_Sistema_Generacion_Memes.md) | Flujo de ingesta (Drive), adaptación (Gemini) y archivo visual (GitHub). | Active |
 | [Canon Contradictions Report](Canon_Contradictions_Report.md) | Contradicciones activas que bloquean producción. | Active |
 | [Inventario de Contenido](Content_Inventory.csv) | CSV maestro con metadatos de las 25 piezas existentes. | Active |
@@ -42,11 +42,11 @@
 
 ## Flujo de Trabajo Semanal
 
-1. **Domingo:** Make genera el borrador del calendario semanal (`Flujo 2`) a partir de las colas de `Aprobado` y `Reutilizado`. Claude revisa el caché de canon y Manus actualiza `Integracion_Growth_OS.md` si hay cambios.
+1. **Domingo:** Manus prepara el borrador del calendario semanal a partir de las colas de `Aprobado` y `Reutilizado`. Claude revisa el caché de canon y Manus actualiza `Integracion_Growth_OS.md` si hay cambios.
 2. **Lunes:** Fernando revisa y aprueba el calendario semanal. Comienza la producción de la `Production Queue`.
-3. **Martes a Viernes:** Producción activa. **Revisión diaria** con Claude para validar contenido nuevo.
-4. **Sábado:** Última publicación de la semana.
-5. **Domingo siguiente:** Make ejecuta el `Flujo 4` (Análisis automático) para recopilar métricas de las piezas publicadas y actualizar el `HypothesisBank`.
+3. **Martes a Viernes:** Manus valida assets, copys, estados y horarios; Fernando confirma las órdenes de publicación cuando corresponda.
+4. **Sábado:** Última publicación de la semana y verificación de IDs devueltos por Meta.
+5. **Domingo siguiente:** Manus consulta métricas disponibles mediante Graph API, actualiza el `HypothesisBank` y registra aprendizajes. Make no participa en este flujo.
 
 ---
 

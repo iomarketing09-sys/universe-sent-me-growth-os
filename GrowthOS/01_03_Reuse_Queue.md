@@ -3,8 +3,8 @@
 **Propósito:** Lista del contenido con mayor potencial para ser reutilizado durante las próximas semanas, priorizando formatos de bajo costo y alta viralidad.
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-01
-**Versión:** 1.0
+**Última actualización:** 2026-08-14
+**Versión:** 1.1
 **Autor:** Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_02_Content_Backlog.md`
 
@@ -65,4 +65,4 @@ El siguiente contenido ha sido identificado como reutilizable (`Es_Reutilizable 
 
 2. **Regla de Antigüedad (30 días):** Ninguna pieza puede ser reutilizada si han pasado menos de 30 días desde su `Fecha_Ultima_Publicacion`.
 3. **Bloqueo Canon:** Ninguna pieza en esta cola puede ser reutilizada si su campo `Bloqueado_Canon` es `Sí`.
-4. **Automatización Make:** El flujo de Make `Flujo de Generación de Calendario` debe filtrar automáticamente esta cola (`Es_Reutilizable == Sí` Y `Dias_Desde_Publicacion` >= 30) para llenar los días vacíos del calendario semanal.
+4. **Validación directa de Manus:** Manus debe filtrar esta cola (`Es_Reutilizable == Sí` Y `Dias_Desde_Publicacion` >= 30) antes de llenar los días vacíos del calendario semanal. La selección no publica automáticamente: cada pieza debe conservar aprobación, bloqueo de canon y trazabilidad.

@@ -28,12 +28,12 @@
 
 ---
 
-## Pipeline de Producción (Manus / Make)
+## Pipeline de Producción (Manus / Graph API)
 
-Para escalar la producción, el flujo debe seguir estos pasos:
+Para escalar la producción, el flujo vigente debe seguir estos pasos:
 
 1. **Selección:** Se toma la pieza de mayor prioridad de esta cola.
 2. **Generación (Manus/Flow/Higgsfield):** Se generan los assets visuales (shots, imágenes).
 3. **Revisión Canon (Claude/Manus):** Se verifica que no existan contradicciones con las reglas de diseño.
 4. **Aprobación (Fernando):** Se aprueba el asset final.
-5. **Transición:** El estado cambia a `Aprobado` y la pieza pasa a la cola de `Programado`.
+5. **Transición:** El estado cambia a `Aprobado`; Manus prepara la orden de publicación, valida plataforma, asset, copy y horario, y utiliza Graph API de Meta cuando Fernando autoriza la ejecución.

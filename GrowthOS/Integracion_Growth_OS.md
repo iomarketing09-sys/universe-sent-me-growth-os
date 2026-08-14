@@ -6,9 +6,9 @@
 
 | Campo | Valor |
 | :--- | :--- |
-| **Última sincronización** | 2026-07-31 |
+| **Última sincronización** | 2026-08-14 |
 | **Fuente de canon** | Repo GitHub: `iomarketing09-sys/universe-sent-me-1` (commit `939752c`) |
-| **Estado del documento** | v2.0 — Arquitectura escalable implementada |
+| **Estado del documento** | v2.1 — Graph API de Meta como ruta operativa; Make archivado |
 | **Propietario** | Manus (Manus AI) |
 | **Guardián de Canon** | Claude (vía repo GitHub) |
 | **Aprobador final** | Fernando |
@@ -64,9 +64,9 @@
 
 > **Bloqueo operativo:** Ningún contenido puede publicarse automáticamente mientras `Estado` ≠ "Aprobado".
 > El cambio a "Aprobado" solo puede ser realizado por Fernando o Claude.
-> Ninguna automatización de Make puede disparar publicación con estado ≠ "Aprobado".
+> Manus no puede ejecutar una publicación con estado ≠ "Aprobado" ni con `Bloqueado_Canon == Sí`.
 
-> **v2.0:** La arquitectura del calendario ha sido reemplazada por el sistema escalable documentado en `GrowthOS/01_00_Arquitectura_Calendario_Escalable.md`. El calendario semanal operativo vive en `GrowthOS/01_01_Calendario_Semanal.md`. La base de datos real (Google Sheets / Airtable) mantiene la copia funcional con los mismos campos y estados.
+> **v2.1:** La arquitectura del calendario sigue documentada en `GrowthOS/01_00_Arquitectura_Calendario_Escalable.md`, pero Make queda retirado de la estrategia operativa. El calendario semanal operativo vive en `GrowthOS/01_01_Calendario_Semanal.md`; Manus valida cada orden y utiliza la API de Graph de Meta para programar o publicar. La guía histórica de Make se conserva archivada en `GrowthOS/02_00_Guia_Automatizacion_Make.md`.
 
 | Semana | Día | Fecha | Plataforma | Formato | Personaje/Lugar | Hook/Título | Brief | ID Canon consultado | Estado Canon | Responsable aprobación | Fecha aprobación |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -80,7 +80,7 @@
 
 **Regla de bloqueo:**
 - El campo `Estado` acepta solo estos valores: `Idea`, `Pendiente de Producción`, `En Producción`, `Pendiente Revisión Claude`, `Pendiente Aprobación Fernando`, `Aprobado`, `Programado`, `Publicado`, `En Análisis`, `Reutilizado`, `Archivado`, `Rechazado / Requiere Reescritura`.
-- Cuando el estado es `Aprobado`, el contenido pasa a la cola de programación de Make.
+- Cuando el estado es `Aprobado`, el contenido pasa a la cola de programación de Manus, que prepara la orden para Graph API de Meta.
 - Cuando el estado es cualquier otro valor, **el Story Scheduler y cualquier automatización de publicación están bloqueados para esa fila**.
 - El campo `Bloqueado_Canon` (checkbox) bloquea forzosamente cualquier transición hacia `Programado` o `Publicado`.
 
@@ -109,10 +109,11 @@
 
 El sistema se compone de:
 
-1. **Base de datos central** (Google Sheets / Airtable): contiene todas las piezas con los 17 campos obligatorios definidos en la arquitectura.
-2. **5 colas operativas** (vistas filtradas de la base de datos): `Backlog`, `Reuse Queue`, `Production Queue`, `Approval Queue`, `Calendario Semanal`.
-3. **4 flujos de Make** (automatizaciones): Notificación de Aprobación, Generación Semanal, Bloqueo Canon, Análisis Automático.
+1. **Fuente editorial central** (inventario estructurado, CSV o calendario Markdown): contiene las piezas y sus metadatos operativos.
+2. **5 colas operativas** (vistas filtradas de la fuente): `Backlog`, `Reuse Queue`, `Production Queue`, `Approval Queue`, `Calendario Semanal`.
+3. **Flujo directo Manus + Graph API:** Manus valida estado, canon, asset, copy, plataforma y fecha; después crea la orden de publicación en Facebook o Instagram y registra el resultado.
 4. **Máquina de estados** (11 estados, 11 transiciones válidas): controla el flujo de cada pieza desde la idea hasta el archivo.
+5. **Registro post-publicación:** Manus consulta métricas disponibles y actualiza el `HypothesisBank` y el `ExperimentLog`.
 
 ---
 
@@ -131,7 +132,7 @@ El sistema se compone de:
 1. Este documento NO vive en el repo de GitHub. Vive en Google Drive, carpeta del Growth OS.
 2. El repo de GitHub (`iomarketing09-sys/universe-sent-me-1`) es la **única fuente de verdad** del canon. Este documento es un caché consultivo.
 3. Cada regla aquí debe llevar fecha de sincronización y commit de referencia.
-4. El campo `Estado` en el Calendario Editorial es un **bloqueo operativo**, no una etiqueta. Ninguna automatización puede publicarlo si no dice literalmente "Aprobado".
+4. El campo `Estado` en el Calendario Editorial es un **bloqueo operativo**, no una etiqueta. Manus no puede publicarlo si no dice literalmente "Aprobado".
 5. El cambio de estado a "Aprobado" solo lo puede hacer Fernando o Claude. Nunca Manus, nunca una regla automática.
 6. Antes de cada sesión de trabajo, Manus debe verificar si el commit de referencia sigue siendo el HEAD del repo. Si no, debe marcar las reglas como desactualizadas.
 7. **Nueva (v2.0):** La arquitectura completa del calendario vive en `GrowthOS/` del repositorio. Este documento mantiene la vista condensada del Calendario Editorial y el HypothesisBank.
