@@ -28,7 +28,7 @@ Transformaremos el unboxing tradicional en una pieza de **Story-Commerce** utili
 
 ### A. Facebook Reels (Canal Principal)
 - **Gancho:** El paquete de Mercado Libre apareciendo en un entorno fantástico.
-- **CTA:** "Link en el primer comentario" o "Escribe INFO para enviarte el link" (Automatizado con Make).
+- **CTA:** "Link en el primer comentario" o "Escribe INFO para enviarte el link". La gestión se realizará mediante el flujo de Manus y Meta Graph API cuando los permisos lo permitan; Make queda fuera de la estrategia.
 - **Monetización:** Comisión por venta + Bonos por visualizaciones (si aplica).
 
 ### B. Mercado Libre Clips

@@ -118,4 +118,4 @@ Para que este formato funcione a escala, se deben aplicar estas reglas al llenar
 
 ---
 
-**Nota de CGO:** Esta estructura está lista para ser convertida en un flujo automatizado de Make que, cada domingo a las 23:00, genere el borrador de la siguiente semana filtrando automáticamente la `Reuse Queue` y el `Content Backlog` basado en estas cuotas.
+**Nota de CGO (actualizada 2026-08-14):** Esta estructura será utilizada por Manus para generar y validar el borrador de la siguiente semana, filtrando la `Reuse Queue` y el `Content Backlog` según estas cuotas. La programación y publicación se ejecutan mediante el flujo directo de Graph API de Meta; Make queda archivado y fuera de la estrategia operativa.
