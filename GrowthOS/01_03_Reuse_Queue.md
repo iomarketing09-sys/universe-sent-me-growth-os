@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-14
-**Versión:** 1.3
+**Versión:** 1.4
 **Autor:** Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_02_Content_Backlog.md`
 
@@ -54,20 +54,20 @@ Para la prueba de dos semanas, seleccionar primero 28 piezas desde la raíz oper
 
 ## Assets manuales sin historial visual confirmado — 2026-08-14
 
-La revisión manual de los ocho assets sin coincidencia visual añadió dos candidatos directos a la cola experimental:
+La revisión manual de los ocho assets sin coincidencia visual fue aprobada por Fernando. Las ocho piezas quedan integradas como candidatas `Approved_User_Context`:
 
 | Asset | Estado | Uso recomendado |
 |---|---|---|
-| `260583 - Universe.png` | `Manual_Approved_Candidate` | Reuse Top; humor afectivo de Universe |
-| `260673 - Universe.png` | `Manual_Approved_Candidate` | Reuse Top; humor absurdo de Universe |
-| `260514 - Que feo fingir que estas bien.png` | `Pending_Copy_Review` | No programar hasta corregir/confirmar `agarrarte las TAs` |
-| `260539 - Evan+Kiri.png` | `Pending_Tone_Review` | Requiere aprobación por copy sexualizado |
-| `260563.png` | `Pending_Canon_Review` | Confirmar personaje y canon |
-| `260663 - Kiri.png` | `Pending_Copy_Review` | Confirmar punchline y evitar repetición de Kiri |
-| `Universe - Existencial 260507.png` | `Pending_Tone_Review` | Validar territorio romántico |
-| `humor4.16.png` | `Excluded_Brand_Safety` | No usar en la prueba |
+| `260514 - Que feo fingir que estas bien.png` | `Approved_User_Context` | Mantener el contexto emocional; revisar solo el copy ambiguo si se desea corregirlo |
+| `260539 - Evan+Kiri.png` | `Approved_User_Context` | Mantener el contexto sexualizado y el formato de dos paneles |
+| `260563.png` | `Approved_User_Context` | Mantener contexto; ajustar personaje solo si lo exige el canon |
+| `260583 - Universe.png` | `Approved_User_Context` | Reuse Top; humor afectivo de Universe |
+| `260663 - Kiri.png` | `Approved_User_Context` | Mantener contexto; revisar solo el punchline técnico |
+| `260673 - Universe.png` | `Approved_User_Context` | Reuse Top; humor absurdo de Universe |
+| `humor4.16.png` | `Approved_User_Context` | Mantener el contexto sexualizado; personaje modificable solo por canon |
+| `Universe - Existencial 260507.png` | `Approved_User_Context` | Mantener contexto romántico; confirmar personaje si es necesario |
 
-La clasificación completa está en [`Operations/Research/2026-08-14_Reuse_Mayo_Unmatched_Review.csv`](../Operations/Research/2026-08-14_Reuse_Mayo_Unmatched_Review.csv). Las dos piezas aprobadas deben mantener separación de personaje dentro de la matriz 3:2 y no publicarse en slots consecutivos de Universe.
+El doble sentido y la sexualización son atributos editoriales válidos para esta línea y no motivos automáticos de descarte. Los cambios de personaje solo se proponen por contradicción de canon o coherencia del personaje, no para eliminar el contexto. La clasificación completa está en [`Operations/Research/2026-08-14_Reuse_Mayo_Unmatched_Review.csv`](../Operations/Research/2026-08-14_Reuse_Mayo_Unmatched_Review.csv).
 
 ## Reglas de Reutilización y Estrategia
 

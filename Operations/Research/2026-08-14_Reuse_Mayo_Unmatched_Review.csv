@@ -1,9 +1,9 @@
 filename,classification,reason,required_action,eligible_for_current_test
-260514 - Que feo fingir que estas bien.png,Apto_con_revision,"Copy legible y relatable; 'agarrarte las TAs' parece error o abreviación ambigua.","Corregir o confirmar copy antes de publicar",Pending
-260539 - Evan+Kiri.png,Apto_con_revision,"Buena pieza de dos paneles y aporta diversidad; copy sexualizado/coloquial.","Revisión de tono y aprobación editorial",Pending
-260563.png,Apto_con_revision,"Escena contemplativa y legible; falta confirmar personaje/canon asociado.","Confirmar personaje y canon",Pending
-260583 - Universe.png,Apto,"Universe reconocible, humor afectivo y copy legible.","Registrar en Reuse Queue y mantener separación de personaje",Yes
-260663 - Kiri.png,Apto_con_revision,"Buena variedad visual con cuatro Kiri; punchline depende del contexto.","Confirmar que el copy está completo y revisar repetición de Kiri",Pending
-260673 - Universe.png,Apto,"Humor absurdo simple, legible y alineado con Universe.","Registrar en Reuse Queue y separar de 260583",Yes
-humor4.16.png,No_recomendable,"Doble sentido sexual explícito y riesgo de brand safety.","Excluir de la prueba; conservar como archivo",No
-Universe - Existencial 260507.png,Apto_con_revision,"Frase romántica legible; tono distinto al meme y requiere revisión de canon/territorio.","Confirmar tono y personaje antes de usar",Pending
+260514 - Que feo fingir que estas bien.png,Approved_User_Context,"Copy emocional aprobado por Fernando; conserva el contexto y requiere solo confirmar/corregir la frase ambigua si se considera error de producción.","Mantener contexto; revisión técnica de copy opcional",Yes
+260539 - Evan+Kiri.png,Approved_User_Context,"Formato de dos paneles y contexto sexualizado/coloquial aprobados por Fernando.","Mantener contexto sexualizado; cambiar personaje solo si lo exige el canon",Yes
+260563.png,Approved_User_Context,"Escena contemplativa y copy aprobados para reuse; el contexto no se descarta por no tener match histórico.","Confirmar personaje solo si se necesita para canon",Yes
+260583 - Universe.png,Approved_User_Context,"Universe reconocible, humor afectivo y copy legible.","Registrar en Reuse Queue y mantener contexto",Yes
+260663 - Kiri.png,Approved_User_Context,"Formato repetitivo de Kiri y contexto aprobados por Fernando.","Mantener contexto; revisar solo si el copy está incompleto",Yes
+260673 - Universe.png,Approved_User_Context,"Humor absurdo simple, legible y alineado con Universe.","Registrar en Reuse Queue y mantener contexto",Yes
+humor4.16.png,Approved_User_Context,"Doble sentido sexual explícito aprobado por Fernando; no es motivo de descarte.","Mantener contexto sexualizado; cambiar personaje solo si lo exige el canon",Yes
+Universe - Existencial 260507.png,Approved_User_Context,"Frase romántica y tono aprobados para reuse.","Mantener contexto; confirmar personaje solo si se necesita para canon",Yes

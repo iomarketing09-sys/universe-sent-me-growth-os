@@ -5,7 +5,7 @@
 **Estado:** Review  
 **Fecha de creación:** 2026-08-14  
 **Última actualización:** 2026-08-14  
-**Versión:** 1.4
+**Versión:** 1.5
 **Autor:** Manus AI  
 **Documentos relacionados:** [`GrowthOS/01_03_Reuse_Queue.md`](../../GrowthOS/01_03_Reuse_Queue.md), [`Operations/Research/2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md`](2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md), [`GrowthOS/05_02_Calendario_04_09_Agosto.md`](../../GrowthOS/05_02_Calendario_04_09_Agosto.md), [`GrowthOS/05_03_Calendario_10_16_Agosto.md`](../../GrowthOS/05_03_Calendario_10_16_Agosto.md)
 
@@ -79,13 +79,11 @@ El cruce es una mejora importante frente a la ausencia anterior de fechas y mét
 
 ## 7. Revisión manual de los ocho assets sin match
 
-La revisión visual manual no encontró razones para descartar toda la reserva. Dos piezas pueden integrarse directamente como candidatas de la cola: `260583 - Universe.png`, por su humor afectivo y legibilidad, y `260673 - Universe.png`, por su humor absurdo y alineación con Universe.
+La revisión visual manual fue completada y Fernando aprobó las ocho piezas para integrarlas a la reutilización. El doble sentido y la sexualización se consideran atributos editoriales válidos para esta línea de contenido, no motivos automáticos de descarte.
 
-Cinco piezas quedan como `Apto_con_revision`: `260514 - Que feo fingir que estas bien.png` requiere corregir o confirmar la frase ambigua `agarrarte las TAs`; `260539 - Evan+Kiri.png` requiere aprobación por el copy sexualizado/coloquial; `260563.png` necesita confirmar personaje y canon; `260663 - Kiri.png` necesita comprobar que el punchline esté completo; y `Universe - Existencial 260507.png` requiere validar su tono romántico y territorio editorial.
+Las ocho piezas quedan como `Approved_User_Context`. Esto incluye `260539 - Evan+Kiri.png` y `humor4.16.png`, cuyos contextos sexualizados deben conservarse. Los cambios de personaje solo se propondrán si son necesarios para resolver una contradicción de canon o una incompatibilidad con el personaje asignado; no se cambiará el contexto sexualizado por defecto.
 
-`humor4.16.png` queda como `No_recomendable` para la prueba por su doble sentido sexual explícito y riesgo de brand safety. Se conserva como archivo histórico, pero no se integra en la Reuse Queue experimental.
-
-El detalle de clasificación está en [`2026-08-14_Reuse_Mayo_Unmatched_Review.csv`](2026-08-14_Reuse_Mayo_Unmatched_Review.csv).
+El detalle de clasificación está en [`2026-08-14_Reuse_Mayo_Unmatched_Review.csv`](2026-08-14_Reuse_Mayo_Unmatched_Review.csv). Las revisiones restantes son técnicas: confirmar copy ambiguo, personaje y canon cuando corresponda, sin bloquear automáticamente la elegibilidad para la prueba.
 
 ## 8. Límites de esta revisión
 

@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.28
+**Versión:** 1.29
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -26,6 +26,15 @@
 - Se registraron los permisos efectivos y las cuentas vinculadas en `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`.
 
 ---
+
+---
+
+## [1.2.29] — 2026-08-14 (Manus)
+### Cambiado
+- Fernando aprobó las ocho piezas sin match visual confirmado para integrarlas a la reutilización.
+- El doble sentido y la sexualización quedan definidos como atributos editoriales válidos, no como motivos automáticos de descarte.
+- Los cambios de personaje solo se propondrán por contradicción de canon o coherencia del personaje; no se eliminará el contexto sexualizado por defecto.
+- La clasificación `Approved_User_Context` queda registrada en `Operations/Research/2026-08-14_Reuse_Mayo_Unmatched_Review.csv`.
 
 ---
 
