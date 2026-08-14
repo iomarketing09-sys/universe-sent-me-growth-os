@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-14
-**Versión:** 1.2
+**Versión:** 1.3
 **Autor:** Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_02_Content_Backlog.md`
 
@@ -51,6 +51,23 @@ El siguiente contenido ha sido identificado como reutilizable (`Es_Reutilizable 
 La selección de reuse de mayo debe usar el cruce reproducible entre Drive y Meta documentado en [`Operations/Research/2026-08-14_Revision_Reuse_Mayo_Junio.md`](../Operations/Research/2026-08-14_Revision_Reuse_Mayo_Junio.md). El ranking completo de 123 assets con coincidencia histórica está en [`Operations/Research/2026-08-14_Reuse_Mayo_Ranking.csv`](../Operations/Research/2026-08-14_Reuse_Mayo_Ranking.csv), y el cruce bruto de 205 publicaciones está en [`Operations/Research/2026-08-14_Reuse_Mayo_Meta_Cruce_Datos.csv`](../Operations/Research/2026-08-14_Reuse_Mayo_Meta_Cruce_Datos.csv).
 
 Para la prueba de dos semanas, seleccionar primero 28 piezas desde la raíz operativa de `05 Mayo`, priorizando `Confirmed_Image_Likely`, máximo y mediana de interacciones, shares, diversidad de personajes y ausencia de bloqueos de canon. Los assets sin coincidencia visual confirmada deben permanecer como `Sin_Historial_Visual_Confirmado` hasta revisión manual. Las carpetas de piezas reutilizadas en julio y agosto quedan fuera de la selección actual por la regla de antigüedad.
+
+## Assets manuales sin historial visual confirmado — 2026-08-14
+
+La revisión manual de los ocho assets sin coincidencia visual añadió dos candidatos directos a la cola experimental:
+
+| Asset | Estado | Uso recomendado |
+|---|---|---|
+| `260583 - Universe.png` | `Manual_Approved_Candidate` | Reuse Top; humor afectivo de Universe |
+| `260673 - Universe.png` | `Manual_Approved_Candidate` | Reuse Top; humor absurdo de Universe |
+| `260514 - Que feo fingir que estas bien.png` | `Pending_Copy_Review` | No programar hasta corregir/confirmar `agarrarte las TAs` |
+| `260539 - Evan+Kiri.png` | `Pending_Tone_Review` | Requiere aprobación por copy sexualizado |
+| `260563.png` | `Pending_Canon_Review` | Confirmar personaje y canon |
+| `260663 - Kiri.png` | `Pending_Copy_Review` | Confirmar punchline y evitar repetición de Kiri |
+| `Universe - Existencial 260507.png` | `Pending_Tone_Review` | Validar territorio romántico |
+| `humor4.16.png` | `Excluded_Brand_Safety` | No usar en la prueba |
+
+La clasificación completa está en [`Operations/Research/2026-08-14_Reuse_Mayo_Unmatched_Review.csv`](../Operations/Research/2026-08-14_Reuse_Mayo_Unmatched_Review.csv). Las dos piezas aprobadas deben mantener separación de personaje dentro de la matriz 3:2 y no publicarse en slots consecutivos de Universe.
 
 ## Reglas de Reutilización y Estrategia
 
