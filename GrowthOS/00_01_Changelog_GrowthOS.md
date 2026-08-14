@@ -4,8 +4,8 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.14
-**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14] añadidas por Manus
+**Versión:** 1.15
+**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
 ---
@@ -22,6 +22,12 @@
 ## [1.2.11] — 2026-08-14 (Manus)
 ### Añadido
 - **CNT-027 — Meme Fantasma "Ghosting eterno":** propuesta derivada de la revisión de la carpeta de Google Drive "Universe Sent Me > Ideas > Memes" (solicitada por Fernando). De las ~19 semillas de referencia se identificaron 4 patrones (espera eterna resignada, autodesprecio con punchline seco, ternura interactiva, agotamiento social); la propuesta combina los dos primeros con el Fantasma y un giro moderno (mensajes sin leer/ghosting). Copy: "Hace 400 años que no me contestan un mensaje. Ahora le dicen ghosting. Yo solo lo llamaba martes." Score **9.10/10 PASS** verificado por `scripts/score_proposal.py`. Slot sugerido 4:00–5:00 PM, base visual del asset 2K existente del proyecto. Canon-safe: el arco del Fantasma no se resuelve.
+
+---
+
+## [1.2.15] — 2026-08-14 (Manus)
+### Añadido
+- **CNT-030 — Música del reel CNT-029:** pista original de IA generada para el reel de los sueños de Universe (92 BPM, Do mayor, instrumental; corte de 20 s con fade y arco tierno→cómico→remate que replica la estructura del reel). Se documentó además el benchmark de audios en tendencia de agosto-2026 (Sweetly de jkl — 26K posts, apto business — como referencia principal; alternativas In & Out, Sometimes, Summer Vibes; August de Taylor Swift descartado por cuenta business). Hipótesis experimental registrada: trending da +alcance inicial; audio propio da libertad editorial y cero riesgo de copyright. Assets en archivos compartidos: `14_Musica_Reel_suenos_pista_original.mp3` y `15_Musica_Reel_suenos_corte_20s.mp3`.
 
 ---
 
