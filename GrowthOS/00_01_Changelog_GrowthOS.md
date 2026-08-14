@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.32
+**Versión:** 1.33
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -26,6 +26,14 @@
 - Se registraron los permisos efectivos y las cuentas vinculadas en `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`.
 
 ---
+
+---
+
+## [1.2.33] — 2026-08-14 (Manus)
+### Cambiado
+- `260528 - Universe.png` se movió al domingo 30 de agosto a las 22:00.
+- Se separaron los reuse consecutivos de los días 27 y 28 de agosto sin cambiar la mezcla 28/40.
+- La revisión histórica de 508 publicaciones confirma una señal fuerte a favor de probar copys mínimos —uno o dos emojis—, pero también se registraron frases cortas y variantes conversacionales. La evidencia queda documentada en `Operations/Research/2026-08-14_Analisis_Copys_Rendimiento.md`.
 
 ---
 
