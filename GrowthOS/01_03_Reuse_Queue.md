@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-14
-**Versión:** 1.4
+**Versión:** 1.5
 **Autor:** Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_02_Content_Backlog.md`
 
@@ -68,6 +68,23 @@ La revisión manual de los ocho assets sin coincidencia visual fue aprobada por 
 | `Universe - Existencial 260507.png` | `Approved_User_Context` | Mantener contexto romántico; confirmar personaje si es necesario |
 
 El doble sentido y la sexualización son atributos editoriales válidos para esta línea y no motivos automáticos de descarte. Los cambios de personaje solo se proponen por contradicción de canon o coherencia del personaje, no para eliminar el contexto. La clasificación completa está en [`Operations/Research/2026-08-14_Reuse_Mayo_Unmatched_Review.csv`](../Operations/Research/2026-08-14_Reuse_Mayo_Unmatched_Review.csv).
+
+## Flujo de archivado mensual en Google Drive — 2026-08-14
+
+La carpeta `My Drive/Universe sent me/USM/Humor existencial` funciona como **entrada operativa de memes nuevos**. Un meme permanece en la raíz mientras está pendiente de selección, aprobación, programación o publicación.
+
+Después de publicar una pieza, Manus debe conservar su nombre y referencia, registrar el `ID_Meta`, la fecha y hora real de publicación, la plataforma, el estado y las métricas iniciales; después debe mover el archivo a la carpeta mensual correspondiente, por ejemplo `Humor existencial/08 Agosto`.
+
+La raíz representa contenido pendiente. Las carpetas mensuales representan historial de publicación. Las carpetas mensuales no deben usarse como evidencia suficiente de rendimiento: el registro de Meta y el ranking de publicaciones tienen prioridad para recuperar fecha, interacciones y elegibilidad de reuse.
+
+| Estado | Ubicación esperada | Acción |
+|---|---|---|
+| Nuevo / pendiente | `Humor existencial/` | Revisar, clasificar y asignar al calendario |
+| Programado pero no publicado | `Humor existencial/` | Mantener hasta confirmar publicación real |
+| Publicado | `Humor existencial/[Mes]` | Mover después de confirmar el ID de Meta |
+| Reutilizado posteriormente | Carpeta del mes de la nueva publicación | Registrar nueva fecha, ID y métricas; no sobrescribir el historial anterior |
+
+El movimiento mensual es un paso posterior a la confirmación de publicación, no una acción previa de planificación. Si una publicación falla, el archivo permanece en la raíz con estado `Error` o `Pendiente_Reintento`.
 
 ## Reglas de Reutilización y Estrategia
 

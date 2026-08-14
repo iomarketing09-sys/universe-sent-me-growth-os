@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.29
+**Versión:** 1.30
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -26,6 +26,14 @@
 - Se registraron los permisos efectivos y las cuentas vinculadas en `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`.
 
 ---
+
+---
+
+## [1.2.30] — 2026-08-14 (Manus)
+### Añadido
+- **Archivado mensual de memes:** `My Drive/Universe sent me/USM/Humor existencial` queda definido como entrada operativa de memes nuevos. Después de confirmar una publicación real mediante el `ID_Meta`, el archivo se mueve a `Humor existencial/[Mes]` conservando su nombre y referencia.
+- Los archivos programados pero no publicados permanecen en la raíz. Las carpetas mensuales representan historial organizado, mientras que las fechas y métricas oficiales siguen viniendo de Meta.
+- La regla quedó documentada en `GrowthOS/01_03_Reuse_Queue.md` y `GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`.
 
 ---
 

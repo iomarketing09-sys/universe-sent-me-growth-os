@@ -1,6 +1,6 @@
 ---
 estado: Active
-version: "1.4"
+version: "1.5"
 ultima_revision: 2026-08-14
 dependencias:
   - GrowthOS/01_00_Arquitectura_Calendario_Escalable.md
@@ -12,7 +12,7 @@ dependencias:
 **Estado:** Active
 **Fecha de creación:** 2026-08-12
 **Última actualización:** 2026-08-14
-**Versión:** 1.4
+**Versión:** 1.5
 **Autor:** Claude, documentando información provista por Fernando; actualización de Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `05_03_Calendario_10_16_Agosto.md` (y calendarios futuros), `GrowthOS/00_01_Changelog_GrowthOS.md`, `GrowthOS/00_Índice.md`
 
@@ -59,13 +59,21 @@ Fernando ya tiene un **script funcional en PyCharm, usando la API de Gemini, que
 - **Token:** se usan tokens temporales. El token almacenado en el conector es un token de usuario; Manus deriva en memoria el Page Access Token de Universe Sent Me para llamadas de Página. Si el token expira, la programación y lectura quedan bloqueadas hasta reemplazarlo.
 - **Ruta de imagen:** el archivo usa **dos columnas separadas** — `Archivo` (solo filename) y `Ruta_Completa` (ruta local absoluta). Un calendario de Growth OS que quiera ser exportable a este formato necesita poder producir ambas, y la ruta completa depende de la carpeta real donde Fernando tiene cada asset (que varía por mes/proyecto, como ya se vio con las carpetas `05 Mayo`, `flexi/Quirelli`, etc.).
 
-## 3. Implicación directa para Growth OS
+## 3. Archivado posterior a la publicación
+
+La carpeta `My Drive/Universe sent me/USM/Humor existencial` es la entrada de memes nuevos. El archivo permanece en la raíz durante la preparación, aprobación y programación. Después de confirmar la publicación real mediante el ID de Meta, Manus registra `ID_Meta`, fecha y hora, plataforma, estado y métricas iniciales, y mueve el archivo a `Humor existencial/[Mes]`, conservando exactamente su nombre y número de referencia.
+
+Si la publicación falla o queda pendiente, el archivo no se mueve: permanece en la raíz con el estado correspondiente. Si una pieza se reutiliza en otro mes, se registra una nueva fila de publicación y el archivo se mueve a la carpeta del mes de la nueva publicación sin eliminar el historial anterior.
+
+Este archivado organiza disponibilidad y trazabilidad, pero no sustituye el registro de Meta. Para decidir reuse, la fuente prioritaria sigue siendo el historial real de publicaciones y métricas, no únicamente la ubicación del archivo.
+
+## 4. Implicación directa para Growth OS
 
 **A partir de este documento, cualquier calendario que se entregue como "listo para publicar" (no solo como tabla de planeación) debe poder exportarse a esta estructura de 8 columnas** — no basta con la tabla en markdown que se ha usado hasta ahora en los calendarios semanales (`05_02`, `05_03`, etc.). La tabla markdown sigue siendo útil para revisión y aprobación entre Fernando y Claude/Manus, pero el entregable final operativo es este formato.
 
 **Regla práctica:** el valor de `Archivo` usado en cualquier calendario (ej. al referenciar un post de reuse por su código `260579.png`) debe coincidir exactamente con el nombre real del archivo tal como existe en la carpeta local de Fernando — nunca inventar o asumir un nombre distinto. La `Ruta_Completa` correspondiente debe confirmarse con Fernando o inferirse de la convención de carpetas ya vista (`Universe sent me/USM/Humor existencial/[Mes]/`), nunca asumirse a ciegas. Cuando el archivo no se ha visto directamente (solo se conoce su descripción), el CSV no debe generarse hasta confirmar el nombre exacto con Fernando.
 
-## 4. Custom API de Meta configurada en Manus
+## 5. Custom API de Meta configurada en Manus
 
 El 2026-08-14 se creó y activó el conector **Universe Sent Me Meta API**, una Custom API REST para Facebook e Instagram de Universe Sent Me. El valor entregado para el conector se comporta como un **Facebook User Access Token**: `GET /me` devuelve `Fernando Gdlr`, y `/me/accounts` permite obtener el Page Access Token de Universe Sent Me. Aunque la variable configurada se llama `META_PAGE_ACCESS_TOKEN`, su valor actual es el token de usuario; no debe asumirse que sirve directamente para todas las operaciones de la página. El secreto se almacena en el entorno seguro de Manus; no forma parte de este repositorio ni debe copiarse a documentos, commits, capturas o mensajes públicos.
 
@@ -98,7 +106,7 @@ El 2026-08-14 se creó y activó el conector **Universe Sent Me Meta API**, una 
 
 El token debe rotarse si se sospecha exposición, si cambia el administrador o si Meta lo invalida. Al actualizarlo, debe modificarse únicamente la credencial almacenada en el conector; este documento debe conservar solo el nombre de la variable y no el valor secreto. Los endpoints y campos no deben asumirse: deben comprobarse en la documentación oficial de [Graph API][1] y [Pages API][2], especialmente porque Meta puede retirar o cambiar métricas y permisos por versión.
 
-## 5. Pendientes de definición (no resueltos en esta sesión)
+## 6. Pendientes de definición (no resueltos en esta sesión)
 
 1. **Valor exacto de `Marca` para Universe Sent Me** — no confirmado; los ejemplos vistos son de otro proyecto de Fernando (Quirelli/Flexi).
 2. **Valores posibles de `Estado`** más allá de `BORRADOR` (¿aprobado, publicado, error?) — no confirmado.
@@ -106,7 +114,7 @@ El token debe rotarse si se sospecha exposición, si cambia el administrador o s
 4. **Multi-plataforma:** cómo se resolverá la publicación en Instagram una vez integrada — columna nueva, o pipeline separado. Fernando mencionó estar abierto a cambiar el formato de CSV a Markdown; no se definió si eso reemplazaría esta estructura o coexistiría con ella.
 5. **Validación pre-publicación:** no se definió si el pipeline de Fernando valida que el archivo exista en `Ruta_Completa` antes de intentar publicar, o si eso quedaría como responsabilidad de quien arma el calendario.
 
-## 6. Qué NO cambia por ahora
+## 7. Qué NO cambia por ahora
 
 - El proceso de armar el calendario (elegir personaje, horario, copy, hashtags, reuse vs. nuevo) sigue siendo el mismo ya documentado en `01_00_Arquitectura_Calendario_Escalable.md` y aplicado en los calendarios semanales.
 - Este documento no reemplaza ni automatiza nada todavía — solo dejar registrado el pipeline real de Fernando para que futuros calendarios se diseñen ya pensando en ser exportables a este formato, en vez de descubrir la incompatibilidad después.

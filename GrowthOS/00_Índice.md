@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-14
-**Versión:** 2.1
+**Versión:** 2.2
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -42,6 +42,7 @@
 | [Diseño de Prueba de Calendario — 2 semanas](../Operations/Research/2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md) | Protocolo para controlar frecuencia, contenido nuevo/reuse y franjas horarias. | Review |
 | [Revisión de Reuse — Mayo frente a Junio](../Operations/Research/2026-08-14_Revision_Reuse_Mayo_Junio.md) | Inventario de Drive, elegibilidad de mayo y reserva Top de junio. | Review |
 | [Ranking Reuse Mayo — rendimiento Meta](../Operations/Research/2026-08-14_Reuse_Mayo_Ranking.csv) | Ranking individual de 123 assets cruzados con 205 publicaciones de mayo. | Active |
+| [Pipeline de publicación y archivado mensual](13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md) | Estándar CSV, publicación por Graph API y movimiento de assets publicados a la carpeta mensual. | Active |
 
 ---
 
