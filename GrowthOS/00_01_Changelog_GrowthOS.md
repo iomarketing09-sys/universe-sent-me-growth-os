@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.23
+**Versión:** 1.24
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -26,6 +26,14 @@
 - Se registraron los permisos efectivos y las cuentas vinculadas en `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`.
 
 ---
+
+---
+
+## [1.2.24] — 2026-08-14 (Manus)
+### Cambiado
+- **Prueba de calendario actualizada por decisión de Fernando:** lunes a viernes mantiene 10:00, 11:00, 13:30, 16:00 y 17:00; sábado elimina 16:00 y mueve 17:00 a 19:00; domingo mueve 11:00 a 16:00 y conserva 19:00 y 22:00 como franjas nocturnas.
+- **Mezcla experimental actualizada:** dos piezas reuse por cada tres piezas nuevas en días de cinco slots. El sábado, con cuatro slots, se asignan dos nuevas y dos reuse. El total de la prueba queda en 68 publicaciones: 40 nuevas y 28 reuse top.
+- El calendario operativo `05_03_Calendario_10_16_Agosto.md` todavía no fue modificado; solo se actualizó el protocolo de prueba.
 
 ---
 
