@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-14
-**Versión:** 2.2
+**Versión:** 2.3
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -40,6 +40,7 @@
 | [Ciclo de Aprendizaje de Horarios — 14 de agosto](../Operations/Research/2026-08-14_Ciclo_Aprendizaje_Horarios.md) | Reconstruye la hipótesis y la evidencia detrás del cambio de horarios. | Review |
 | [Comparativo Junio–Julio–Agosto — 14 de agosto](../Operations/Research/2026-08-14_Comparativo_Desempeno_Junio_Julio_Agosto.md) | Determina si la caída de agosto proviene de frecuencia, reuse, horarios o mezcla editorial. | Review |
 | [Diseño de Prueba de Calendario — 2 semanas](../Operations/Research/2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md) | Protocolo para controlar frecuencia, contenido nuevo/reuse y franjas horarias. | Review |
+| [Propuesta de Calendario Experimental — 17–30 agosto](../Operations/Research/2026-08-14_Propuesta_Calendario_17_30_Agosto.md) | Borrador de 68 slots con 36 reuse aprobados y 32 espacios vacíos para memes nuevos. | Draft |
 | [Revisión de Reuse — Mayo frente a Junio](../Operations/Research/2026-08-14_Revision_Reuse_Mayo_Junio.md) | Inventario de Drive, elegibilidad de mayo y reserva Top de junio. | Review |
 | [Ranking Reuse Mayo — rendimiento Meta](../Operations/Research/2026-08-14_Reuse_Mayo_Ranking.csv) | Ranking individual de 123 assets cruzados con 205 publicaciones de mayo. | Active |
 | [Pipeline de publicación y archivado mensual](13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md) | Estándar CSV, publicación por Graph API y movimiento de assets publicados a la carpeta mensual. | Active |
