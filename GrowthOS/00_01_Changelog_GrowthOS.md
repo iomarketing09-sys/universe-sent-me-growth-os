@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.17
+**Versión:** 1.18
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -16,6 +16,16 @@
 ### Nota
 - La integración permite consultar identidad, publicaciones e insights, y preparar operaciones de publicación; cualquier escritura debe ejecutarse solo después de una solicitud explícita y confirmación previa de Fernando.
 - Se actualizó `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md` y la entrada correspondiente en `00_Índice.md`.
+
+---
+
+## [1.2.18] — 2026-08-14 (Manus)
+### Añadido
+- **Diagnóstico de permisos Meta:** el token efectivo devuelve `pages_manage_engagement`, `pages_read_engagement` y la tarea `MODERATE` para la página Universe Sent Me; se verificó lectura de comentarios de Facebook con HTTP 200 usando el Page Access Token derivado desde el token de usuario.
+- La cuenta profesional de Instagram `17841462696378190` está vinculada a la página `1036844829507460`, pero el permiso `instagram_manage_comments` no está concedido. Por ello, la respuesta automatizada a comentarios de Instagram queda bloqueada hasta solicitar y reautorizar ese permiso.
+- Se registraron los permisos efectivos y las cuentas vinculadas en `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`.
+
+---
 
 ---
 

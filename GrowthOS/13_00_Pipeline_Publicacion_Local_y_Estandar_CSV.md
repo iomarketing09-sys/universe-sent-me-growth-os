@@ -1,6 +1,6 @@
 ---
 estado: Active
-version: "1.2"
+version: "1.3"
 ultima_revision: 2026-08-14
 dependencias:
   - GrowthOS/01_00_Arquitectura_Calendario_Escalable.md
@@ -12,7 +12,7 @@ dependencias:
 **Estado:** Active
 **Fecha de creación:** 2026-08-12
 **Última actualización:** 2026-08-14
-**Versión:** 1.2
+**Versión:** 1.3
 **Autor:** Claude, documentando información provista por Fernando; actualización de Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `05_03_Calendario_10_16_Agosto.md` (y calendarios futuros), `GrowthOS/00_01_Changelog_GrowthOS.md`, `GrowthOS/00_Índice.md`
 
@@ -64,7 +64,7 @@ Fernando ya tiene un **script funcional en PyCharm, usando la API de Gemini, que
 
 ## 4. Custom API de Meta configurada en Manus
 
-El 2026-08-14 se creó y activó el conector **Universe Sent Me Meta API**, una Custom API REST para la página de Facebook de Universe Sent Me. El conector utiliza el entorno seguro de Manus para almacenar el secreto como `META_PAGE_ACCESS_TOKEN`; el token no forma parte de este repositorio ni debe copiarse a documentos, commits, capturas o mensajes públicos.
+El 2026-08-14 se creó y activó el conector **Universe Sent Me Meta API**, una Custom API REST para Facebook e Instagram de Universe Sent Me. El valor entregado para el conector se comporta como un **Facebook User Access Token**: `GET /me` devuelve `Fernando Gdlr`, y `/me/accounts` permite obtener el Page Access Token de Universe Sent Me. Aunque la variable configurada se llama `META_PAGE_ACCESS_TOKEN`, su valor actual es el token de usuario; no debe asumirse que sirve directamente para todas las operaciones de la página. El secreto se almacena en el entorno seguro de Manus; no forma parte de este repositorio ni debe copiarse a documentos, commits, capturas o mensajes públicos.
 
 | Elemento | Configuración |
 |---|---|
@@ -75,8 +75,21 @@ El 2026-08-14 se creó y activó el conector **Universe Sent Me Meta API**, una 
 | Verificación realizada | `GET /me?fields=id,name` |
 | Resultado de verificación | HTTP 200; identidad devuelta: `Fernando Gdlr`, ID `2920605591459033` |
 | Operaciones previstas | Identidad de página, publicaciones, insights y publicación en feed únicamente con solicitud explícita y confirmación previa |
+| Página Universe Sent Me | ID `1036844829507460`; tareas: `MODERATE`, `CREATE_CONTENT`, `MESSAGING`, `ANALYZE`, entre otras |
+| Instagram vinculado | Cuenta profesional ID `17841462696378190` |
+| Permisos efectivos concedidos | `pages_show_list`, `business_management`, `instagram_basic`, `instagram_content_publish`, `pages_read_engagement`, `pages_read_user_content`, `pages_manage_posts`, `pages_manage_engagement`, `read_audience_network_insights`, `public_profile` |
+| Permiso ausente para comentarios de Instagram | `instagram_manage_comments` |
+| Prueba de lectura Facebook | HTTP 200 con comentarios de una publicación de Universe Sent Me |
+| Prueba de lectura Instagram | HTTP 200 en el medio consultado; no había comentarios devueltos |
+
 
 > La creación del conector quedó confirmada por el usuario. La verificación posterior respondió correctamente con HTTP 200. La Custom API no autoriza por sí sola ninguna publicación: cualquier operación de escritura debe solicitarse expresamente y confirmarse antes de ejecutarse.
+
+### Comentarios: diagnóstico operativo
+
+**Facebook:** el conjunto actual es suficiente para el flujo principal de moderación y respuesta a comentarios de la página: `pages_manage_engagement` está concedido, la página devuelve la tarea `MODERATE` y se verificó con HTTP 200 la lectura de comentarios usando el Page Access Token derivado desde `/me/accounts`. La documentación actual de Meta también menciona `pages_read_engagement` y, según el flujo, `pages_read_user_engagement`; si una operación concreta devuelve un error de permisos sobre contenido generado por usuarios, habrá que revisar esa diferencia porque el token actual muestra `pages_read_user_content`, no `pages_read_user_engagement`.
+
+**Instagram:** la cuenta profesional está vinculada y `instagram_basic` está concedido, pero falta **`instagram_manage_comments`**, que Meta exige para leer, gestionar y responder comentarios mediante la API de Instagram con Facebook Login. Por tanto, **todavía no debemos automatizar respuestas en Instagram**. Para habilitarlo, hay que solicitar/conceder `instagram_manage_comments` en la aplicación de Meta y volver a generar o reautorizar el token con ese permiso. La respuesta documentada por Meta usa `POST /<IG_COMMENT_ID>/replies` para responder a un comentario, con `instagram_basic`, `instagram_manage_comments` y `pages_read_engagement`.
 
 ### Seguridad y mantenimiento
 
@@ -101,3 +114,7 @@ El token debe rotarse si se sospecha exposición, si cambia el administrador o s
 
 [1]: https://developers.facebook.com/docs/graph-api/get-started/ "Meta for Developers — Get Started with Graph API"
 [2]: https://developers.facebook.com/documentation/pages-api "Meta for Developers — Pages API"
+[3]: https://developers.facebook.com/documentation/pages-api/comments-mentions "Meta for Developers — Comments and @mentions"
+[4]: https://developers.facebook.com/documentation/instagram-platform/comment-moderation "Meta for Developers — Instagram Comment Moderation"
+[5]: https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-media/comments "Meta for Developers — Instagram Media Comments"
+[6]: https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-comment/replies "Meta for Developers — IG Comment Replies"
