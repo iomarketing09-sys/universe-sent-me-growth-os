@@ -4,8 +4,8 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.13
-**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13] añadidas por Manus
+**Versión:** 1.14
+**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
 ---
@@ -22,6 +22,12 @@
 ## [1.2.11] — 2026-08-14 (Manus)
 ### Añadido
 - **CNT-027 — Meme Fantasma "Ghosting eterno":** propuesta derivada de la revisión de la carpeta de Google Drive "Universe Sent Me > Ideas > Memes" (solicitada por Fernando). De las ~19 semillas de referencia se identificaron 4 patrones (espera eterna resignada, autodesprecio con punchline seco, ternura interactiva, agotamiento social); la propuesta combina los dos primeros con el Fantasma y un giro moderno (mensajes sin leer/ghosting). Copy: "Hace 400 años que no me contestan un mensaje. Ahora le dicen ghosting. Yo solo lo llamaba martes." Score **9.10/10 PASS** verificado por `scripts/score_proposal.py`. Slot sugerido 4:00–5:00 PM, base visual del asset 2K existente del proyecto. Canon-safe: el arco del Fantasma no se resuelve.
+
+---
+
+## [1.2.14] — 2026-08-14 (Manus)
+### Añadido
+- **CNT-029 — Reel "Pausa para ver qué piensa de ti":** a solicitud de Fernando, se generaron 5 imágenes para completar su reel de 6 cuadros (su imagen base + las 5 generadas), con composición idéntica —Universe en la nube con globo de pensamiento sobre el cielo pastel— donde solo cambia el sueño dentro del globo: falda (base de Fernando), piernas, pecho, cena romántica, lluvia con cacao y atardecer con lentes oscuros (cierre cómico). La frase del reel va como superposición de video, no incrustada en las imágenes. Rasgos de Universe respetados (gafas steampunk, asset 3) y estilo de animación idéntico al de la base. La figura femenina es genérica (Capa 1, sin vínculo canon fijado); si se la identifique con un personaje nombrado requiere validación explícita dado que Maeve/Kael aún no tienen asset oficial. Assets: `06_Reel_...` a `10_Reel_...` en archivos compartidos del proyecto.
 
 ---
 
