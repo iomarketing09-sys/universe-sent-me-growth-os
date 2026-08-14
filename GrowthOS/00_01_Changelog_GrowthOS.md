@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.20
+**Versión:** 1.21
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -26,6 +26,15 @@
 - Se registraron los permisos efectivos y las cuentas vinculadas en `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`.
 
 ---
+
+---
+
+## [1.2.21] — 2026-08-14 (Manus)
+### Añadido
+- **Ciclo de aprendizaje de horarios:** se creó `Operations/Research/2026-08-14_Ciclo_Aprendizaje_Horarios.md` y su snapshot `2026-08-14_Ciclo_Aprendizaje_Horarios_Datos.csv` para reconstruir la razón del cambio de horarios del 10–16 de agosto.
+- Se registró `HB-003` en `Integracion_Growth_OS.md`: la ampliación de franjas puede mejorar la interacción típica, pero queda `En prueba` porque el cambio de horarios ocurrió junto con cambios de contenido, personajes, días y proporción de reuse.
+- La comparación inicial de Facebook, en zona horaria `America/Mexico_City`, muestra mediana de 26 interacciones en 33 publicaciones del 4–9 de agosto frente a 37 en 17 publicaciones del 10–14 de agosto. La señal es preliminar y no cierra causalidad.
+- El calendario `05_03_Calendario_10_16_Agosto.md` no fue modificado.
 
 ---
 

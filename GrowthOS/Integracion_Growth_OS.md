@@ -8,7 +8,7 @@
 | :--- | :--- |
 | **Última sincronización** | 2026-08-14 |
 | **Fuente de canon** | Repo GitHub: `iomarketing09-sys/universe-sent-me-1` (commit `939752c`) |
-| **Estado del documento** | v2.1 — Graph API de Meta como ruta operativa; Make archivado |
+| **Estado del documento** | v2.2 — Graph API de Meta como ruta operativa; Make archivado; HB-003 en prueba |
 | **Propietario** | Manus (Manus AI) |
 | **Guardián de Canon** | Claude (vía repo GitHub) |
 | **Aprobador final** | Fernando |
@@ -92,6 +92,7 @@
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | HB-001 | Los videos de Wilfred con tono existencial retienen más que los de tono puramente humorístico | `@char_USM_wilfred` | Tono (existencial vs humorístico) | Reel | Retención % | Pendiente de aprobación | 2026-07-31 | — | — | Test A/B con 2 variantes. Pieza asociada: CNT-025. |
 | HB-002 | El contenido de tarot de Universe mantiene alta viralidad en formato Reel (transición Facebook → Instagram) | `@char_USM_universe` | Formato (Foto vs Reel) | Reel | Vistas / Interacciones | Pendiente | 2026-07-31 | — | — | Pieza asociada: CNT-001. |
+| HB-003 | La distribución de horarios ampliada —mañana, tarde y noche— mejora la interacción típica frente a la programación concentrada en pocas franjas, controlando por tipo de contenido y personaje | Facebook Page | Hora local y día de publicación | Foto/meme | Mediana de interacciones por publicación; shares/interacciones como señal secundaria | En prueba | 2026-08-14 | — | Señal preliminar: mediana 37 en 17 publicaciones del 10–14 ago frente a 26 en 33 publicaciones del 4–9 ago; no es concluyente por confusión de contenido, día y tamaño de muestra. | Asociada al ciclo `Operations/Research/2026-08-14_Ciclo_Aprendizaje_Horarios.md`. |
 
 ---
 

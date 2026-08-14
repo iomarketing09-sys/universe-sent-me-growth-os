@@ -6,7 +6,7 @@
 **Última actualización:** 2026-08-14
 **Versión:** 1.1
 **Autor:** Manus AI
-**Documentos relacionados:** `GrowthOS/05_03_Calendario_10_16_Agosto.md`, `GrowthOS/01_00_Arquitectura_Calendario_Escalable.md`, `GrowthOS/Integracion_Growth_OS.md`, `GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/00_Índice.md`, `GrowthOS/00_01_Changelog_GrowthOS.md`
+**Documentos relacionados:** `GrowthOS/05_03_Calendario_10_16_Agosto.md`, `GrowthOS/01_00_Arquitectura_Calendario_Escalable.md`, `GrowthOS/Integracion_Growth_OS.md`, `GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/00_Índice.md`, `GrowthOS/00_01_Changelog_GrowthOS.md`, `Operations/Research/2026-08-14_Ciclo_Aprendizaje_Horarios.md`
 
 ---
 
