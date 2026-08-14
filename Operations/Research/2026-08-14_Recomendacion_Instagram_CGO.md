@@ -1,0 +1,61 @@
+# Recomendación CGO — distribución de memes en Instagram
+
+**Propósito:** Definir si Universe Sent Me debe publicar memes estáticos en Instagram, qué piezas deben probarse primero y cómo separar evidencia de Facebook de evidencia propia de Instagram.  
+**Estado:** Review  
+**Fecha de creación:** 2026-08-14  
+**Última actualización:** 2026-08-14  
+**Versión:** 1.0  
+**Autor:** Manus AI  
+**Documentos relacionados:** [`GrowthOS/08_00_Metricas_Baseline_Plataformas.md`](../../GrowthOS/08_00_Metricas_Baseline_Plataformas.md), [`Operations/Research/2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md`](2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md), [`Operations/Research/2026-08-14_Analisis_Copys_Rendimiento.md`](2026-08-14_Analisis_Copys_Rendimiento.md), [`GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md`](../../GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md)
+
+## Dictamen ejecutivo
+
+**Sí recomiendo publicar una selección de memes estáticos en Instagram, pero no recomiendo duplicar automáticamente todo el calendario de Facebook.** La razón es que los datos disponibles muestran dos comportamientos distintos: Facebook funciona actualmente como motor de distribución de imágenes estáticas, mientras que Instagram tiene poco alcance absoluto y responde relativamente mejor a Reels que a imágenes. En la línea base registrada el 3 de agosto, Instagram mostraba entre 50 y 242 personas de alcance por pieza; el mejor Reel obtuvo 242 de alcance y 343 vistas, mientras que una imagen obtuvo solo 3 de alcance y 8 vistas. Esto no prueba que los memes estáticos no funcionen en Instagram: la muestra de imágenes es demasiado pequeña y el conector actual aparece desconectado, por lo que falta una prueba controlada reciente.
+
+La recomendación, por tanto, es **mantener Facebook como superficie primaria y usar Instagram como laboratorio de descubrimiento**, con una cuota limitada de imágenes de alto potencial visual. No conviene desviar la producción de Facebook ni medir el éxito de Instagram con los mismos umbrales absolutos durante esta fase.
+
+## Qué memes probaría primero
+
+| Prioridad | Asset | Motivo CGO | Caption sugerido | Riesgo / condición |
+|---|---|---|---|---|
+| 1 | `260560 - Fantasma.png` | Fantasma ya tiene tracción en Facebook; el visual vertical es simple, legible y relatable. | `Esperando octubre… 👻 #UniverseSentMe` | Prueba orgánica; no asumir transferencia automática. |
+| 2 | `260625.png` | Tiene composición vertical y un remate de humor ácido que se entiende sin contexto adicional. | `El cambio da miedo… quedarse igual también. 😮‍💨 #UniverseSentMe` | Revisar que el texto sea legible en preview. |
+| 3 | `260528 - Universe.png` | Es una pieza vertical, nocturna y muy clara; puede probarse en domingo o noche. | `Ya duérmete… 🌙 #UniverseSentMe` | Solo horario nocturno; no usar como “buenos días”. |
+| 4 | `260539 - Evan+Kiri.png` | Tiene fuerte capacidad de detener el scroll por el doble sentido y la reacción de Kiri. | `🫣 #UniverseSentMe` | Prueba orgánica, sin promoción pagada; revisar elegibilidad y distribución. |
+| 5 | `humor4.16.png` | Es la pieza con mayor potencial de scroll-stop por el contexto sexualizado explícito. | `🫣🫣 #UniverseSentMe` | **Reserva de prueba**, no primera publicación. Puede recibir distribución limitada o quedar fuera de recomendaciones; nunca usar como base única de la estrategia. |
+| 6 | `260614 - Universe.png` | Tiene formato vertical y una idea relatable, pero requiere leer más texto. | `Analizando mi propio caos. 🧐 #UniverseSentMe` | Secundario; probar después de las piezas 1–3. |
+
+Las piezas `260539` y `humor4.16` no deben descartarse por su contexto sexualizado, porque el Growth OS ya define el doble sentido y la sexualización como atributos editoriales válidos de la capa libre de memes. Sin embargo, **validez editorial no equivale a distribución garantizada**: Instagram puede limitar la recomendación de contenido sexualmente sugerente aunque no exista desnudez explícita. Por eso deben tratarse como una hipótesis de distribución, no como la nueva línea editorial dominante.
+
+## Qué no recomiendo hacer
+
+No recomiendo publicar los 68 slots de Facebook también en Instagram. Eso duplicaría volumen sin evidencia de que el canal tenga capacidad de distribuirlo y dificultaría saber si el crecimiento proviene del formato, el personaje, el copy o la frecuencia. Tampoco recomiendo convertir todos los memes en Reels solo para “adaptarlos” a Instagram: la línea base muestra que los Reels tienen mejor desempeño relativo en Instagram, pero el alcance absoluto sigue siendo pequeño, y producir una versión de video de cada meme aumentaría el costo sin resolver el problema de distribución.
+
+Tampoco recomiendo usar una pieza sexualizada como contenido de buenos días, publicarla junto a otra pieza sexualizada o impulsarla con pauta. El test debe ser orgánico, aislado y medido por alcance, vistas, interacciones, shares, visitas al perfil y follows.
+
+## Diseño de prueba recomendado
+
+Durante los primeros 14 días, Instagram debería recibir **una imagen estática seleccionada por cada dos o tres días**, además de los Reels que ya estén producidos. El calendario de Facebook permanece intacto. Las imágenes seleccionadas no se contabilizan dentro de la proporción 3:2 del experimento principal de Facebook; funcionan como una capa de distribución secundaria.
+
+| Variable | Regla inicial |
+|---|---|
+| Volumen | 5–6 imágenes en 14 días, más Reels ya disponibles |
+| Copy | Emoji mínimo o frase corta; no repetir el texto visual |
+| Formato | Imagen vertical legible; evitar piezas con texto diminuto |
+| Horarios | Mantener una ventana comparable, preferentemente 13:30–19:00; `260528` solo por la noche |
+| Sexualizado | Máximo 1–2 pruebas en el periodo, separadas por varios días |
+| Promoción pagada | No usar durante la prueba |
+| Métricas | Alcance, vistas, interacciones, shares, visitas al perfil y follows |
+| Criterio de avance | Repetir formato/personaje solo si supera claramente la mediana de IG del periodo y no presenta limitación de distribución |
+
+## Decisión operativa
+
+La decisión CGO es **cross-post selectivo, no cross-post masivo**. La primera tanda debería usar `260560`, `260625` y `260528`. Después, si la cuenta no presenta restricciones, se puede probar `260539`; `humor4.16` queda como reserva para una prueba controlada, porque su potencial de interacción es alto pero también lo es el riesgo de distribución limitada. El resto de los reuse debe permanecer Facebook-first hasta disponer de métricas propias de Instagram.
+
+La ejecución real queda bloqueada hasta reconectar el conector de Instagram. No se realizó ninguna publicación en esta tarea.
+
+## Referencias internas
+
+[1]: ../../GrowthOS/08_00_Metricas_Baseline_Plataformas.md — Línea base de métricas de Facebook e Instagram, extraída de Windsor.ai el 3 de agosto de 2026.  
+[2]: 2026-08-14_Analisis_Copys_Rendimiento.md — Análisis histórico de copys mínimos y emojis.  
+[3]: 2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md — Programación operativa con captions y decisiones de distribución.  

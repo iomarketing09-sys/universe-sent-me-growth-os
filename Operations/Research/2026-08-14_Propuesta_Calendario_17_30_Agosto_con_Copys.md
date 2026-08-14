@@ -1,0 +1,88 @@
+# Propuesta de calendario experimental con copys — 17–30 de agosto de 2026
+
+**Propósito:** Programación operativa con caption propuesto por slot y criterio de distribución en Instagram.
+**Estado:** Draft
+**Fecha de creación:** 2026-08-14
+**Última actualización:** 2026-08-14
+**Versión:** 1.4
+**Autor:** Manus AI
+**Documentos relacionados:** [`2026-08-14_Propuesta_Calendario_17_30_Agosto.md`](2026-08-14_Propuesta_Calendario_17_30_Agosto.md), [`2026-08-14_Analisis_Copys_Rendimiento.md`](2026-08-14_Analisis_Copys_Rendimiento.md), [`2026-08-14_Recomendacion_Instagram_CGO.md`](2026-08-14_Recomendacion_Instagram_CGO.md)
+
+## Regla de copy
+
+Cuando el texto visual contiene el remate, el caption no lo explica: usa un emoji o una frase corta. Los memes nuevos conservan un placeholder hasta que exista la imagen final; no se inventa un caption definitivo antes de revisar el visual.
+
+## Calendario con captions
+
+| Fecha | Día | Hora | Tipo | Archivo / estado | Caption propuesto | Tipo de copy | Instagram | Motivo |
+|---|---|---:|---|---|---|---|---|---|
+| 2026-08-17 | Lunes | 10:00 | Reuse_Top | `260633 - Universe.png` | 😮‍💨 #UniverseSentMe | Emoji_Minimo | FB + IG selectivo | Universe; top-ranked reuse; test image on IG only if account is connected. |
+| 2026-08-17 | Lunes | 11:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-17 | Lunes | 13:30 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-17 | Lunes | 16:00 | Reuse_Top | `260642 - Universe+Wilfred.png` | 😶‍🌫️ #UniverseSentMe | Emoji_Minimo | FB | Cross-post only after first IG test is measured. |
+| 2026-08-17 | Lunes | 17:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-18 | Martes | 10:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-18 | Martes | 11:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-18 | Martes | 13:30 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-18 | Martes | 16:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-18 | Martes | 17:00 | Reuse_Top | `260644 - Universe.png` | 😒 #UniverseSentMe | Emoji_Minimo | FB + IG selectivo | Clean reaction format; suitable for a small IG image test. |
+| 2026-08-19 | Miércoles | 10:00 | Reuse_Top | `260515 - Universe.png` | 🫠 #UniverseSentMe | Emoji_Minimo | FB + IG selectivo | Relatable Universe piece; candidate for image test. |
+| 2026-08-19 | Miércoles | 11:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-19 | Miércoles | 13:30 | Reuse_Top | `260560 - Fantasma.png` | Esperando octubre… 👻 #UniverseSentMe | Frase_Corta | FB + IG prioritario | Fantasma has documented traction; strongest IG image candidate. |
+| 2026-08-19 | Miércoles | 16:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-19 | Miércoles | 17:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-20 | Jueves | 10:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-20 | Jueves | 11:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-20 | Jueves | 13:30 | Reuse_Top | `260659 - Universe.png` | 🤨 #UniverseSentMe | Emoji_Minimo | FB | Keep as Facebook-first until IG baseline improves. |
+| 2026-08-20 | Jueves | 16:00 | Reuse_Top | `260508 - Universe.jpg` | 🫣 #UniverseSentMe | Emoji_Minimo | FB + IG selectivo | Short, legible, low-copy visual. |
+| 2026-08-20 | Jueves | 17:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-21 | Viernes | 10:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-21 | Viernes | 11:00 | Reuse_Top | `260635 - Universe.png` | 🙂‍↔️ #UniverseSentMe | Emoji_Minimo | FB + IG selectivo | Reaction-led visual; suitable for controlled image test. |
+| 2026-08-21 | Viernes | 13:30 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-21 | Viernes | 16:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-21 | Viernes | 17:00 | Reuse_Top | `260614 - Universe.png` | Analizando mi propio caos. 🧐 #UniverseSentMe | Frase_Corta | IG secundario | Readable but text-heavy; test only after priority candidates. |
+| 2026-08-22 | Sábado | 10:00 | Reuse_Top | `260589.png` | 😌 #UniverseSentMe | Emoji_Minimo | FB | Neutral candidate; do not spend IG testing capacity first. |
+| 2026-08-22 | Sábado | 11:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-22 | Sábado | 13:30 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-22 | Sábado | 19:00 | Reuse_Top | `260510 - Universe.png` | 🌙 #UniverseSentMe | Emoji_Minimo | FB + IG selectivo | Night-context piece; possible Sunday/evening IG test. |
+| 2026-08-23 | Domingo | 10:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-23 | Domingo | 13:30 | Reuse_Top | `Universe - Existencial 260508.png` | 💔 #UniverseSentMe | Emoji_Minimo | FB | Keep Facebook-first; emotional context is not enough evidence for IG. |
+| 2026-08-23 | Domingo | 16:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-23 | Domingo | 19:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-23 | Domingo | 22:00 | Reuse_Top | `260625.png` | El cambio da miedo… quedarse igual también. 😮‍💨 #UniverseSentMe | Frase_Corta | IG prioritario | Strong vertical composition and acidic relatable line. |
+| 2026-08-24 | Lunes | 10:00 | Reuse_Top | `260518 - Kael.png` | 😏 #UniverseSentMe | Emoji_Minimo | FB | Character-specific; no IG evidence yet. |
+| 2026-08-24 | Lunes | 11:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-24 | Lunes | 13:30 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-24 | Lunes | 16:00 | Reuse_Top | `260607 - Universe.png` | 🫠 #UniverseSentMe | Emoji_Minimo | FB | Facebook-first until connector is restored. |
+| 2026-08-24 | Lunes | 17:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-25 | Martes | 10:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-25 | Martes | 11:00 | Reuse_Top | `Universe - Existencial 622.png` | 😵‍💫 #UniverseSentMe | Emoji_Minimo | FB | Facebook-first. |
+| 2026-08-25 | Martes | 13:30 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-25 | Martes | 16:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-25 | Martes | 17:00 | Reuse_Top | `260613 - Wilfred.png` | Wilfred sabe. 🌲 #UniverseSentMe | Frase_Corta | FB + IG selectivo | Character-led image; test only if visual is immediately legible. |
+| 2026-08-26 | Miércoles | 10:00 | Reuse_Top | `260620 - Fantasma.png` | 👻 #UniverseSentMe | Emoji_Minimo | FB + IG selectivo | Fantasma is a priority character for discovery. |
+| 2026-08-26 | Miércoles | 11:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-26 | Miércoles | 13:30 | Reuse_Top | `260540 - Elara.png` | 🔮 #UniverseSentMe | Emoji_Minimo | FB | No IG priority without stronger visual evidence. |
+| 2026-08-26 | Miércoles | 16:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-26 | Miércoles | 17:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-27 | Jueves | 10:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-27 | Jueves | 11:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-27 | Jueves | 13:30 | Reuse_Top | `260573 - Universe.png` | 😐 #UniverseSentMe | Emoji_Minimo | FB | Facebook-first. |
+| 2026-08-27 | Jueves | 16:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-27 | Jueves | 17:00 | Reuse_Top | `260542 - Universe.png` | 🫣 #UniverseSentMe | Emoji_Minimo | FB | Facebook-first. |
+| 2026-08-28 | Viernes | 10:00 | Reuse_Top | `260527 - Universe.png` | 😮‍💨 #UniverseSentMe | Emoji_Minimo | FB | Facebook-first. |
+| 2026-08-28 | Viernes | 11:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-28 | Viernes | 13:30 | Reuse_Top | `260590 - Maeve.png` | 😶 #UniverseSentMe | Emoji_Minimo | FB | Facebook-first; no IG priority. |
+| 2026-08-28 | Viernes | 16:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-28 | Viernes | 17:00 | Reuse_Top | `260543 - Evan.png` | 😬 #UniverseSentMe | Emoji_Minimo | FB | Facebook-first. |
+| 2026-08-29 | Sábado | 10:00 | Reuse_Top | `741 - Elara+Maeve.png` | 👀 #UniverseSentMe | Emoji_Minimo | FB | Facebook-first; verify character context before IG. |
+| 2026-08-29 | Sábado | 11:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-29 | Sábado | 13:30 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-29 | Sábado | 19:00 | Reuse_Top | `260559 - Universe.png` | 🫠 #UniverseSentMe | Emoji_Minimo | FB | Facebook-first. |
+| 2026-08-30 | Domingo | 10:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-30 | Domingo | 13:30 | Reuse_Top | `260650 - Universe.png` | 🫣 #UniverseSentMe | Emoji_Minimo | FB | Facebook-first. |
+| 2026-08-30 | Domingo | 16:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-30 | Domingo | 19:00 | Nueva | `PENDIENTE_GENERAR` | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial. |
+| 2026-08-30 | Domingo | 22:00 | Reuse_Top | `260528 - Universe.png` | Ya duérmete… 🌙 #UniverseSentMe | Frase_Corta | IG prioritario | Night-context image; schedule only in evening, never as morning content. |
+
+El archivo CSV operativo ampliado es `2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.csv`. La publicación en Instagram queda condicionada a reconectar el conector y a revisar el asset final; esta propuesta no publica automáticamente.

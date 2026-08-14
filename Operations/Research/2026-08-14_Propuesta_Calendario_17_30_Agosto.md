@@ -29,7 +29,7 @@
 | 2026-08-17 | Lunes | 16:00 | Reuse_Top | `260642 - Universe+Wilfred.png` | historial mayo; revisar contexto antes de programar |
 | 2026-08-17 | Lunes | 17:00 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; no rellenar con reuse improvisado |
 | 2026-08-18 | Martes | 10:00 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; no rellenar con reuse improvisado |
-| 2026-08-18 | Martes | 11:00 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; el reuse manual queda en reserva para una futura rotación |
+| 2026-08-18 | Martes | 11:00 | Reuse_Top | `260528 - Universe.png` | historial mayo; revisar contexto antes de programar |
 | 2026-08-18 | Martes | 13:30 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; no rellenar con reuse improvisado |
 | 2026-08-18 | Martes | 16:00 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; no rellenar con reuse improvisado |
 | 2026-08-18 | Martes | 17:00 | Reuse_Top | `260644 - Universe.png` | historial mayo; revisar contexto antes de programar |
@@ -75,13 +75,13 @@
 | 2026-08-27 | Jueves | 10:00 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; no rellenar con reuse improvisado |
 | 2026-08-27 | Jueves | 11:00 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; no rellenar con reuse improvisado |
 | 2026-08-27 | Jueves | 13:30 | Reuse_Top | `260573 - Universe.png` | historial mayo; revisar contexto antes de programar |
-| 2026-08-27 | Jueves | 16:00 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; no rellenar con reuse improvisado |
-| 2026-08-27 | Jueves | 17:00 | Reuse_Top | `260542 - Universe.png` | historial mayo; revisar contexto antes de programar |
+| 2026-08-27 | Jueves | 16:00 | Reuse_Top | `260542 - Universe.png` | historial mayo; revisar contexto antes de programar |
+| 2026-08-27 | Jueves | 17:00 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; no rellenar con reuse improvisado |
 | 2026-08-28 | Viernes | 10:00 | Reuse_Top | `260527 - Universe.png` | historial mayo; revisar contexto antes de programar |
-| 2026-08-28 | Viernes | 11:00 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; el reuse manual queda en reserva para una futura rotación |
+| 2026-08-28 | Viernes | 11:00 | Reuse_Top | `260543 - Evan.png` | historial mayo; revisar contexto antes de programar |
 | 2026-08-28 | Viernes | 13:30 | Reuse_Top | `260590 - Maeve.png` | historial mayo; revisar contexto antes de programar |
 | 2026-08-28 | Viernes | 16:00 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; el reuse manual queda en reserva para una futura rotación |
-| 2026-08-28 | Viernes | 17:00 | Reuse_Top | `260543 - Evan.png` | historial mayo; revisar contexto antes de programar |
+| 2026-08-28 | Viernes | 17:00 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; el reuse manual queda en reserva para una futura rotación |
 | 2026-08-29 | Sábado | 10:00 | Reuse_Top | `741 - Elara+Maeve.png` | historial mayo; revisar contexto antes de programar |
 | 2026-08-29 | Sábado | 11:00 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; el reuse manual queda en reserva para una futura rotación |
 | 2026-08-29 | Sábado | 13:30 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; el reuse manual queda en reserva para una futura rotación |
@@ -90,7 +90,7 @@
 | 2026-08-30 | Domingo | 13:30 | Reuse_Top | `260650 - Universe.png` | historial mayo; revisar contexto antes de programar |
 | 2026-08-30 | Domingo | 16:00 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; el reuse manual queda en reserva para una futura rotación |
 | 2026-08-30 | Domingo | 19:00 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; el reuse manual queda en reserva para una futura rotación |
-| 2026-08-30 | Domingo | 22:00 | Reuse_Top | `260528 - Universe.png` | historial mayo; revisar contexto antes de programar |
+| 2026-08-30 | Domingo | 22:00 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; el reuse manual queda en reserva para una futura rotación |
 
 ## Control editorial
 

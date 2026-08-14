@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-14
-**Versión:** 2.5
+**Versión:** 2.6
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -42,6 +42,8 @@
 | [Diseño de Prueba de Calendario — 2 semanas](../Operations/Research/2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md) | Protocolo para controlar frecuencia, contenido nuevo/reuse y franjas horarias. | Review |
 | [Propuesta de Calendario Experimental — 17–30 agosto](../Operations/Research/2026-08-14_Propuesta_Calendario_17_30_Agosto.md) | Borrador de 68 slots con 28 reuse y 40 espacios vacíos para memes nuevos. | Draft |
 | [Análisis de Copys y Rendimiento — 14 de agosto](../Operations/Research/2026-08-14_Analisis_Copys_Rendimiento.md) | Evidencia histórica sobre emojis, copy mínimo, frases cortas y copy conversacional. | Review |
+| [Calendario Experimental con Copys — 17–30 agosto](../Operations/Research/2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md) | Versión operativa de 68 slots con caption propuesto y criterio de distribución en Instagram. | Draft |
+| [Recomendación Instagram — CGO](../Operations/Research/2026-08-14_Recomendacion_Instagram_CGO.md) | Dictamen sobre cross-post selectivo, memes candidatos y prueba orgánica en Instagram. | Review |
 | [Revisión de Reuse — Mayo frente a Junio](../Operations/Research/2026-08-14_Revision_Reuse_Mayo_Junio.md) | Inventario de Drive, elegibilidad de mayo y reserva Top de junio. | Review |
 | [Ranking Reuse Mayo — rendimiento Meta](../Operations/Research/2026-08-14_Reuse_Mayo_Ranking.csv) | Ranking individual de 123 assets cruzados con 205 publicaciones de mayo. | Active |
 | [Pipeline de publicación y archivado mensual](13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md) | Estándar CSV, publicación por Graph API y movimiento de assets publicados a la carpeta mensual. | Active |
