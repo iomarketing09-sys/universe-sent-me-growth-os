@@ -4,8 +4,8 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.15
-**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15] añadidas por Manus
+**Versión:** 1.16
+**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
 ---
@@ -28,6 +28,12 @@
 ## [1.2.15] — 2026-08-14 (Manus)
 ### Añadido
 - **CNT-030 — Música del reel CNT-029:** pista original de IA generada para el reel de los sueños de Universe (92 BPM, Do mayor, instrumental; corte de 20 s con fade y arco tierno→cómico→remate que replica la estructura del reel). Se documentó además el benchmark de audios en tendencia de agosto-2026 (Sweetly de jkl — 26K posts, apto business — como referencia principal; alternativas In & Out, Sometimes, Summer Vibes; August de Taylor Swift descartado por cuenta business). Hipótesis experimental registrada: trending da +alcance inicial; audio propio da libertad editorial y cero riesgo de copyright. Assets en archivos compartidos: `14_Musica_Reel_suenos_pista_original.mp3` y `15_Musica_Reel_suenos_corte_20s.mp3`.
+
+---
+
+## [1.2.16] — 2026-08-14 (Manus)
+### Cambiado
+- **CNT-030 v2.0 — corrección de concepto del reel:** Fernando aclaró la dirección real: el reel es un **scroll ultra rápido (~0.5–1 s por cuadro) con gancho de pausa** (el texto de cada sueño no alcanza a leerse y eso obliga a pausar el video), con audio de **rock con actitud estilo Måneskin**, no un montaje tierno lento. CNT-030 se reescribió completo (montaje, referencias de audio: versiones trending de Måneskin en la app, Bed On Fire — G Flip, Beat It, She Wolf — Shakira; registro de que no se genera audio por IA sin petición explícita; la pista v1.0 pasa a fallback). El guion de CNT-029 se reemplazó (sección 3b conserva el guion v1.0 como histórico). Lección de proceso: validar el concepto de montaje (ritmo + gancho + rol del audio) con Fernando antes de producir audio/montaje.
 
 ---
 

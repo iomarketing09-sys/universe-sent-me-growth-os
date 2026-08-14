@@ -33,7 +33,11 @@ La imagen base fue creada por Fernando (13-ago-2026) y sirve de plantilla: Unive
 
 Todas las imágenes respetan la identidad física canónica de Universe (gato blanco con gafas steampunk doradas de engranajes, asset oficial 3) y el mismo estilo de animación 2D cartoon pastel de la imagen base. Cada imagen lleva la marca "UniverseSentMe" discreta.
 
-## 3. Guion sugerido del reel
+## 3. Guion sugerido del reel (v2.0 — corregido por Fernando)
+
+El formato final es **scroll ultra rápido con gancho de pausa**: cada imagen dura ~0.5–1 s (el texto de cada sueño apenas es legible al vuelo), lo que obliga al espectador a pausar el video para leer los pensamientos — mecánica de watch-time que premia el algoritmo. Montaje: texto superpuesto "Pausa para ver qué piensa de ti ✨" solo en el primer instante, imágenes en secuencia rápida de tiernas a pícaras/irónicas, cierre con el cuadro de remate cómico, audio trending estilo Måneskin (rock con actitud) que contrasta con la ternura visual. Duración total objetivo: ~6–9 s en loop. Detalle técnico y referencias de audio en `CNT030_Musica_Reel_Suenos_Universe.md` (v2.0).
+
+## 3b. Guion original sugerido (v1.0 — reemplazado)
 
 Duración por cuadro: 1.5–2 segundos, 6 cuadros ≈ 10–12 segundos (formato corto con alta probabilidad de re-watch). Audio sugerido: canción de piano/lo-fi tierna o un trending de romance. Texto superpuesto en el primer cuadro: **"Pausa para ver qué piensa de ti"**; en los siguientes cuadros puede añadirse un emoji sutil (🧎 💤 🎂 ☔ 🕶️) pero nunca otra frase, para que el texto único del reel sea el gancho.
 
