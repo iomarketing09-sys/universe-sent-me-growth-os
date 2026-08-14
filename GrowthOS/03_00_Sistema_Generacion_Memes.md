@@ -3,8 +3,8 @@
 **Propósito:** Documentar el flujo de trabajo para la ingesta, aprobación y adaptación de memes en el universo de Universe Sent Me.
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
-**Última actualización:** 2026-08-01
-**Versión:** 2.0
+**Última actualización:** 2026-08-14
+**Versión:** 2.1
 **Autor:** Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_03_Reuse_Queue.md`, `Integracion_Growth_OS.md`
 
@@ -71,7 +71,20 @@ El costo real del sistema es la API de Gemini, ya que el almacenamiento en Drive
 
 ---
 
-## 5. Integración con la Máquina de Estados
+## 5. Modos de Producción de Memes
+
+Existen dos modos de producción, ambos válidos dentro del Sistema de Dos Capas (`12_00`). La elección depende de si el chiste de la referencia vive en la frase incrustada o fuera de la imagen.
+
+| Modo | Descripción | Cuándo usarlo | Regla de marca |
+| :--- | :--- | :--- | :--- |
+| **Estándar (frase en copy)** | Foto estática sin texto incrustado; la frase va en el copy de la publicación | El chiste funciona con el personaje observando/viviendo la situación; formato con mayor evidencia de ER en USM | Sin marca en imagen; hashtags oficiales en copy |
+| **Adaptado (frase intacta)** | Recreación de un meme viral externo con el personaje USM y la frase original en español **palabra por palabra** incrustada en la imagen | La referencia externa tiene un chiste cuya fórmula completa (texto + composición) es la pieza; solo referencias de autoría abierta sin crédito identificable | Marca "UniverseSentMe" en letra fina blanca, baja opacidad, integrada en la textura de la escena |
+
+**Reglas duras del modo Adaptado:** (1) la frase original nunca se traduce, parafrasea ni acorta — se verifica palabra por palabra antes de aprobar; (2) se descartan referencias con insultos graves o vulgaridad (incompatibles con la línea "ácido ≠ insulto"), con autoría ajena identificada con crédito explícito (riesgo de reporte o conflicto de crédito), y sin frase en español cuando el formato exige frase; (3) el personaje elegido debe calzar con la escena emocional de la referencia, no forzarse; (4) las piezas adaptadas siguen siendo Capa 1 (memes libres) y el mecanismo de promoción a canon del documento `12_00` aplica normalmente. Ejemplos del primer banco adaptado: `Operations/Production/CNT028_Memes_Adaptados_Drive_Frase_Intacta.md`.
+
+---
+
+## 6. Integración con la Máquina de Estados
 
 Los memes se integran en la arquitectura del calendario escalable con las siguientes consideraciones:
 
@@ -83,9 +96,10 @@ Los memes ya publicados (como el archivo de mayo) entran directamente en la `Reu
 
 ---
 
-## 6. Documentación Relacionada
+## 7. Documentación Relacionada
 
 -   **Guía de Automatización Make:** `GrowthOS/02_00_Guia_Automatizacion_Make.md`
 -   **Cola de Reutilización:** `GrowthOS/01_03_Reuse_Queue.md`
 -   **Script de Generación:** `usm_meme_generator.py` (en el entorno de Manus)
 -   **Script de Procesamiento Drive:** `usm_meme_drive_processor.py` (en el entorno de Manus)
+-   **Banco de memes adaptados (modo Adaptado):** `../Operations/Production/CNT028_Memes_Adaptados_Drive_Frase_Intacta.md`

@@ -4,8 +4,8 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.11
-**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11] añadidas por Manus
+**Versión:** 1.12
+**Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
 ---
@@ -22,6 +22,12 @@
 ## [1.2.11] — 2026-08-14 (Manus)
 ### Añadido
 - **CNT-027 — Meme Fantasma "Ghosting eterno":** propuesta derivada de la revisión de la carpeta de Google Drive "Universe Sent Me > Ideas > Memes" (solicitada por Fernando). De las ~19 semillas de referencia se identificaron 4 patrones (espera eterna resignada, autodesprecio con punchline seco, ternura interactiva, agotamiento social); la propuesta combina los dos primeros con el Fantasma y un giro moderno (mensajes sin leer/ghosting). Copy: "Hace 400 años que no me contestan un mensaje. Ahora le dicen ghosting. Yo solo lo llamaba martes." Score **9.10/10 PASS** verificado por `scripts/score_proposal.py`. Slot sugerido 4:00–5:00 PM, base visual del asset 2K existente del proyecto. Canon-safe: el arco del Fantasma no se resuelve.
+
+---
+
+## [1.2.12] — 2026-08-14 (Manus)
+### Añadido
+- **CNT-028 — Banco de 5 memes adaptados de Drive (modo "adaptado"):** a solicitud de Fernando, se seleccionaron 5 memes con frase en español de la carpeta Drive Ideas-Memes y se recrearon con personajes y escenarios USM: M1 Fantasma "¿Qué vendrá primero mi boda o Jesús?", M2 Kael+Maeve "Tu soltera y yo soltero... (Que nadie nos soporta)", M3 Silvio "Mira, te llama tu mamá, corre", M4 Wilfred "Y que estabas haciendo que no respondías / Yo:... Ver más", M5 Universe "Lo bueno del amor es que / si eres un buen observador / lo verás en todos lados". Reglas aplicadas: frase original intacta palabra por palabra (verificada), marca "UniverseSentMe" discreta en imagen, y **modo adaptado** formalizado en `03_00` como segundo modo de producción junto al modo estándar (frase en copy). Se descartaron 3 referencias de Drive: WhatsApp con insultos (tonalidad incompatible con "ácido ≠ insulto"), axolotl con vulgaridad y autoría ajena identificada (riesgo de reporte/crédito), y memes sin frase en español. Registro de descarte documentado en CNT028 para trazabilidad.
 
 ---
 
