@@ -55,7 +55,7 @@ Se analizaron 99 posts individuales de Facebook Orgánico (Windsor.ai, connector
 
 | Día | 10:00 AM | 1:00 PM | 3:00 PM | 6:00 PM | Reel diario | 10:00 PM |
 |---|---|---|---|---|---|---|
-| **Lun 10** | 2608022 — Evan — "Buscaba algo rico pero no te encontré" |  | 2608020 — Universe — "Qué gano con mentirte" | **Reuse (mayo):** 260595 - Universe - Imaginate odiarme y yo buscando como cagar | TBD |
+| **Lun 10** | 2608022 — Evan — "Buscaba algo rico pero no te encontré" |  | 2608020 — Universe — "Qué gano con mentirte" | **Reuse (mayo):** 260595 - Universe - Imaginate odiarme y yo buscando como cagar | TBD |  |
 | **Mar 11** | 2608014 — Silvio — "Me hubiera encantado ser pobre" |  | 2608025 — Maeve+Kael — "Casi nos dejamos y lo que teníamos era hambre" | 2608019 — Maeve — "Te extraño bruja" | assets trailer universe - reel a las 2:00pm | 2608021 — Kael — "Tus únicas amigas son estas" |
 | **Mié 12** | 2608023 — Evan+Kiri — "Qué quieres desayunar" |  | 2608024 — Silvio — "Dejaron de buscar a la más bonita" | **Reuse (mayo):** 260523- texto sobre nubes - un mundo nace cuando dos se ghostean | TBD |
 | **Jue 13** | 2608016 — Maeve — "Perdón por dormir tanto" | 2608013 — Evan — "De tanto decir soy ese" | 2608017 — Elara — "Miedo a crecer" | | TBD |
