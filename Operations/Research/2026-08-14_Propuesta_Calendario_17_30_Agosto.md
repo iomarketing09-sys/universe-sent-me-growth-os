@@ -1,20 +1,21 @@
 # Propuesta de calendario experimental — 17–30 de agosto de 2026
 
-**Fecha de creación:** 2026-08-14  
-**Última actualización:** 2026-08-14  
-**Autor:** Manus AI  
+**Fecha de creación:** 2026-08-14
+**Última actualización:** 2026-08-14
+**Autor:** Manus AI
 **Documentos relacionados:** [`Operations/Research/2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md`](2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md), [`GrowthOS/01_03_Reuse_Queue.md`](../../GrowthOS/01_03_Reuse_Queue.md), [`GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`](../../GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md), [`GrowthOS/05_03_Calendario_10_16_Agosto.md`](../../GrowthOS/05_03_Calendario_10_16_Agosto.md)
 
-**Estado:** Draft  
-**Propósito:** Proponer 14 días con todos los reuse aprobados disponibles y dejar visibles los slots de contenido nuevo aún por generar.  
-**Versión:** 1.1  
+**Estado:** Draft
+**Propósito:** Proponer 14 días con exactamente 28 reuse del ranking principal y 40 espacios vacíos para memes nuevos.
+**Versión:** 1.2
 
 ## Resumen
 
 - Slots totales: 68
-- Reuse incluidos: 36
-- Slots nuevos pendientes: 32
+- Reuse incluidos en la prueba: 28
+- Slots nuevos pendientes: 40
 - Exclusión estacional: no se incluyeron memes del Día de la Madre.
+- Los ocho assets aprobados manualmente quedan en reserva y no se usan en esta primera prueba.
 - Los slots `PENDIENTE_GENERAR` deben permanecer vacíos hasta generar y aprobar el meme nuevo.
 
 ## Calendario
@@ -78,20 +79,20 @@
 | 2026-08-28 | Viernes | 10:00 | Reuse_Top | `260527 - Universe.png` | historial mayo; revisar contexto antes de programar |
 | 2026-08-28 | Viernes | 11:00 | Reuse_Top | `260543 - Evan.png` | historial mayo; revisar contexto antes de programar |
 | 2026-08-28 | Viernes | 13:30 | Reuse_Top | `260590 - Maeve.png` | historial mayo; revisar contexto antes de programar |
-| 2026-08-28 | Viernes | 16:00 | Reuse_Top | `260673 - Universe.png` | humor absurdo; flexible |
-| 2026-08-28 | Viernes | 17:00 | Reuse_Top | `Universe - Existencial 260507.png` | frase romántica; preferir tarde/noche |
+| 2026-08-28 | Viernes | 16:00 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; el reuse manual queda en reserva para una futura rotación |
+| 2026-08-28 | Viernes | 17:00 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; el reuse manual queda en reserva para una futura rotación |
 | 2026-08-29 | Sábado | 10:00 | Reuse_Top | `741 - Elara+Maeve.png` | historial mayo; revisar contexto antes de programar |
-| 2026-08-29 | Sábado | 11:00 | Reuse_Top | `260663 - Kiri.png` | historial mayo; revisar contexto antes de programar |
-| 2026-08-29 | Sábado | 13:30 | Reuse_Top | `260583 - Universe.png` | humor afectivo; flexible |
+| 2026-08-29 | Sábado | 11:00 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; el reuse manual queda en reserva para una futura rotación |
+| 2026-08-29 | Sábado | 13:30 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; el reuse manual queda en reserva para una futura rotación |
 | 2026-08-29 | Sábado | 19:00 | Reuse_Top | `260559 - Universe.png` | historial mayo; revisar contexto antes de programar |
-| 2026-08-30 | Domingo | 10:00 | Reuse_Top | `260563.png` | historial mayo; revisar contexto antes de programar |
+| 2026-08-30 | Domingo | 10:00 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; el reuse manual queda en reserva para una futura rotación |
 | 2026-08-30 | Domingo | 13:30 | Reuse_Top | `260650 - Universe.png` | historial mayo; revisar contexto antes de programar |
-| 2026-08-30 | Domingo | 16:00 | Reuse_Top | `260514 - Que feo fingir que estas bien.png` | frase emocional; flexible |
-| 2026-08-30 | Domingo | 19:00 | Reuse_Top | `260539 - Evan+Kiri.png` | contexto romántico/sexualizado; preferir tarde/noche |
-| 2026-08-30 | Domingo | 22:00 | Reuse_Top | `humor4.16.png` | contexto sexualizado; preferir 22:00 |
+| 2026-08-30 | Domingo | 16:00 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; el reuse manual queda en reserva para una futura rotación |
+| 2026-08-30 | Domingo | 19:00 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; el reuse manual queda en reserva para una futura rotación |
+| 2026-08-30 | Domingo | 22:00 | Nueva | ``PENDIENTE_GENERAR`` | Dejar vacío hasta generar y aprobar meme nuevo; el reuse manual queda en reserva para una futura rotación |
 
 ## Control editorial
 
-Los 36 reuse aprobados se incluyen en la propuesta. Se excluyeron piezas del Día de la Madre. Las piezas con tono romántico o sexualizado se colocaron en la tarde/noche cuando fue posible; no se asignaron como buenos días. Los 32 slots `PENDIENTE_GENERAR` se dejan vacíos y no deben rellenarse con reuse improvisado.
+La prueba conserva exactamente la mezcla aprobada de 28 reuse y 40 memes nuevos. Los reuse incluidos son los 28 candidatos principales del ranking histórico; los ocho assets aprobados manualmente permanecen en la Reuse Queue como reserva para una rotación posterior.
 
-La propuesta no mueve archivos de Drive ni publica contenido. Después de confirmar cada publicación mediante `ID_Meta`, el asset deberá moverse a la carpeta mensual correspondiente. La mezcla queda temporalmente en 36 reuse y 32 slots nuevos porque la instrucción actual fue incluir todos los reuse aprobados; antes de ejecutar, esta diferencia frente al protocolo 40/28 debe quedar aprobada explícitamente.
+Se excluyeron piezas del Día de la Madre. Las piezas con contexto romántico, nocturno o sexualizado no se asignaron como contenido de buenos días. La propuesta no mueve archivos de Drive ni publica contenido.

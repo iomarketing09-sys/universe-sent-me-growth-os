@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.31
+**Versión:** 1.32
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -29,12 +29,20 @@
 
 ---
 
+## [1.2.32] — 2026-08-14 (Manus)
+### Corregido
+- Se corrigió la propuesta de calendario experimental después de detectar que se habían incluido 36 reuse en lugar de los 28 definidos por la proporción aprobada.
+- La versión vigente conserva exactamente **28 reuse y 40 espacios para memes nuevos** en 68 slots.
+- Los ocho assets aprobados manualmente quedan en la Reuse Queue como reserva y no se usan en esta primera prueba.
+
+---
+
 ## [1.2.31] — 2026-08-14 (Manus)
 ### Añadido
 - **Propuesta de calendario experimental 17–30 de agosto:** se creó `Operations/Research/2026-08-14_Propuesta_Calendario_17_30_Agosto.md` y su CSV operativo.
-- La propuesta contiene 68 slots: 36 reuse aprobados, incluidos los ocho assets confirmados manualmente, y 32 espacios vacíos para memes nuevos que Fernando debe generar.
+- La propuesta contiene 68 slots: 28 reuse del ranking principal y 40 espacios vacíos para memes nuevos que Fernando debe generar. Los ocho assets aprobados manualmente quedan como reserva.
 - Se excluyeron los memes del Día de la Madre y se revisaron los slots para no colocar piezas de contexto romántico, nocturno o sexualizado como contenido de buenos días.
-- El borrador no modifica el calendario histórico ni publica/mueve assets de Drive. Antes de ejecutar debe aprobarse la diferencia temporal entre la mezcla protocolaria 40/28 y la instrucción actual de incluir todos los reuse disponibles.
+- El borrador no modifica el calendario histórico ni publica/mueve assets de Drive. La propuesta conserva la mezcla protocolaria 40/28; no modifica la proporción experimental aprobada.
 
 ---
 
