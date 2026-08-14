@@ -4,9 +4,18 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.16
+**Versión:** 1.17
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.17] — 2026-08-14 (Manus)
+### Añadido
+- **Custom API de Meta para Universe Sent Me:** se creó y activó el conector `Universe Sent Me Meta API` con almacenamiento seguro del Page Access Token como `META_PAGE_ACCESS_TOKEN`. La verificación `GET /me?fields=id,name` respondió HTTP 200 e identificó la página como `Fernando Gdlr` (ID `2920605591459033`). El token no se documenta ni se sube al repositorio.
+### Nota
+- La integración permite consultar identidad, publicaciones e insights, y preparar operaciones de publicación; cualquier escritura debe ejecutarse solo después de una solicitud explícita y confirmación previa de Fernando.
+- Se actualizó `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md` y la entrada correspondiente en `00_Índice.md`.
 
 ---
 

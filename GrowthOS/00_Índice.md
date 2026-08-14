@@ -3,8 +3,8 @@
 **Propósito:** Punto de entrada a toda la documentación operativa del Growth OS (calendario editorial, colas, automatizaciones, governance).
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-05
-7	**Versión:** 1.3
+**Última actualización:** 2026-08-14
+**Versión:** 1.4
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -35,7 +35,7 @@
 | [Kit de Hashtags USM](10_00_Kit_de_Hashtags_USM.md) | Roster fijo de hashtags de marca (personaje, lugar, concepto) con firma USM. Evita typos y nombres no aprobados. | Active |
 | [Estrategia Monetización Mercado Libre](11_00_Estrategia_Monetizacion_MercadoLibre.md) | Marco operativo para capitalizar la afiliación de Mercado Libre. | Active |
 | [Sistema de Dos Capas: Contenido vs. Canon](12_00_Sistema_Dos_Capas_Contenido_Canon.md) | Separa la capa libre de memes/reels (algoritmo, exploración) de la capa de canon (Biblia, decisiones permanentes). Define mecanismo de promoción deliberada de meme a canon. | Active |
-| [Pipeline de Publicación Local y Estándar CSV](13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md) | Documenta el script propio de Fernando (PyCharm + Gemini + Meta API) que publica vía CSV, y el estándar que los calendarios deben seguir para ser exportables a ese formato. | Active |
+| [Pipeline de Publicación Local y Estándar CSV](13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md) | Documenta el script propio de Fernando, el estándar CSV y la Custom API de Meta configurada para Universe Sent Me. | Active |
 
 ---
 
