@@ -5,7 +5,7 @@
 **Estado:** Review  
 **Fecha de creación:** 2026-08-14  
 **Última actualización:** 2026-08-14  
-**Versión:** 1.1
+**Versión:** 1.2
 **Autor:** Manus AI  
 **Documentos relacionados:** [`GrowthOS/01_03_Reuse_Queue.md`](../../GrowthOS/01_03_Reuse_Queue.md), [`Operations/Research/2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md`](2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md), [`GrowthOS/05_02_Calendario_04_09_Agosto.md`](../../GrowthOS/05_02_Calendario_04_09_Agosto.md), [`GrowthOS/05_03_Calendario_10_16_Agosto.md`](../../GrowthOS/05_03_Calendario_10_16_Agosto.md)
 
@@ -13,20 +13,18 @@
 
 ## 1. Resultado rápido
 
-La carpeta de mayo **no debe descartarse completa**, pero la revisión inicial sobreestimó su reserva disponible porque confundió archivos físicos con piezas no publicadas. Fernando confirmó que ocho piezas de la muestra ya fueron publicadas, incluyendo algunas programadas el mismo día. Esas piezas quedan excluidas de la prueba actual aunque sigan almacenadas en Drive. La decisión correcta no es “mayo agotado” frente a “junio nuevo”; es pasar a junio para aprovechar el conjunto curado `Top`, mientras se conserva mayo como reserva secundaria filtrada por rendimiento, saturación, claridad y canon.
+La carpeta de mayo ahora está organizada operativamente por Fernando. La raíz contiene los candidatos que no se han publicado en los últimos 30 días; las carpetas separadas contienen lo reutilizado en julio y agosto. Esto corrige el problema anterior de confundir inventario físico con reserva disponible. La raíz de mayo vuelve a ser una fuente válida de candidatos, aunque cada pieza todavía debe pasar por el filtro de rendimiento, saturación, claridad y canon.
 
 | Fuente | Inventario encontrado | Estado para la prueba |
 |---|---:|---|
-| Carpeta `05 Mayo` | 169 archivos: 167 imágenes y 2 videos | Reserva amplia; no todo está elegible |
-| Mayo confirmado como publicado por Fernando | 8 IDs: `260516`, `260523`, `260574`, `260595`, `260596`, `260602`, `260610`, `260624` | Excluido de la prueba actual |
-| Mayo referenciado en calendarios/documentos de agosto | 18 IDs detectados por nombre | No volver a usar sin verificar fecha real y contexto |
-| Mayo no confirmado como publicado en esta revisión | 159 registros del catálogo | Pendientes de cruzar con historial completo de Meta |
-| Reuse Queue de mayo | 168 procesados; 111 clasificados | Solo la parte clasificada puede evaluarse con reglas completas |
-| Prioridad formal documentada de mayo | 12 piezas/agrupaciones prioritarias | Primera reserva recomendada |
+| Raíz de `05 Mayo` | 133 assets: 131 imágenes y 2 videos | Candidatos disponibles según clasificación del usuario; pendientes de filtro de rendimiento/canon |
+| `05 Mayo/Reutilizado Agosto` | 21 imágenes | Historial de reuse; no usar automáticamente en la prueba |
+| `05 Mayo/Reutilizado Juilo (menos de 30 dias)` | 7 imágenes | Historial de reuse reciente; bloqueado por la regla de 30 días |
+| Fecha individual de publicación en mayo | No disponible para los 133 candidatos raíz | Registrar como `Unknown_May_2026`; no inventar fecha |
 | Carpeta `06 Junio` | 197 imágenes y una subcarpeta `Top` | Reserva más reciente |
 | Subcarpeta `06 Junio/Top` | 9 archivos: 8 piezas y 1 captura de pantalla | 8 candidatos curados de alto interés |
 
-La diferencia entre “disponible en Drive” y “elegible para publicar” es esencial. Un archivo físico solo se vuelve elegible después de verificar que no fue publicado recientemente; las ocho piezas confirmadas por Fernando quedan bloqueadas para esta prueba aunque cumplan la antigüedad. Para las demás piezas todavía debe verificarse la fecha real de publicación, que no está bloqueado por canon, que no está saturado por uso reciente, que el copy sigue siendo comprensible y que conserva valor para la hipótesis actual.
+La raíz de mayo puede tratarse como disponible bajo la clasificación de Fernando: no se ha publicado en los últimos 30 días. La fecha exacta de publicación original en mayo queda como desconocida y no debe reconstruirse artificialmente a partir de `createdTime` o `modifiedTime` de Drive. El control operativo será `Fecha_Ultima_Publicacion = Unknown_May_2026`, `Regla_30_Dias = Confirmada_por_usuario` y una nueva fecha real de reuse registrada cuando se publique.
 
 ## 2. Revisión visual rápida de mayo
 
@@ -38,30 +36,28 @@ La muestra sugiere que mayo todavía puede aportar variedad, pero no debe rellen
 
 ## 3. Estado de mayo frente a la prueba de dos semanas
 
-La prueba requiere aproximadamente 28 piezas `Reuse_Top` durante 14 días. La Reuse Queue documenta 12 prioridades de mayo, pero la confirmación del usuario demuestra que algunas ya fueron publicadas y no deben contarse otra vez. Por tanto, **mayo no cubre por sí solo la necesidad de reuse de la prueba con un nivel de confianza alto** hasta completar el cruce contra Meta.
+La prueba requiere aproximadamente 28 piezas `Reuse_Top` durante 14 días. La raíz de mayo contiene 133 candidatos clasificados por el usuario como no publicados en los últimos 30 días, por lo que sí existe una reserva física suficiente para cubrir la prueba. No obstante, la selección final debe limitarse a 28 piezas con buen rendimiento histórico, diversidad de personajes y ausencia de bloqueos de canon.
 
-El conjunto `06 Junio/Top` contiene ocho piezas de junio seleccionadas como top. Debe funcionar como primera fuente para ampliar la reserva, siempre que se confirme la fecha de publicación y que los assets no hayan sido usados recientemente. Las 12 prioridades formales de mayo no deben contarse automáticamente como disponibles: al menos ocho piezas que parecían candidatas ya están publicadas. Los 8 top de junio son la única reserva curada que debe revisarse primero; después habrá que completar los 20 slots restantes con junio y mayo no publicado confirmado, que pueden salir de mayo clasificado o de junio después de revisar sus métricas.
+El conjunto `06 Junio/Top` sigue siendo útil como reserva de contenido más reciente, pero ya no es necesario depender de él para completar los 28 slots. La raíz de mayo ofrece suficiente volumen; junio puede usarse selectivamente para introducir frescura y evitar que toda la prueba dependa de memes de mayo.
 
 ## 4. Recomendación operativa
 
-Se recomienda **no descartar ni borrar piezas de mayo**. La carpeta debe conservarse como archivo histórico y reserva secundaria. Para el calendario experimental, la selección debe seguir este orden:
+Se recomienda **no descartar ni borrar piezas de mayo**. La raíz debe funcionar como fuente principal de la prueba y las carpetas históricas deben conservarse como archivo de trazabilidad. Para el calendario experimental, la selección debe seguir este orden:
 
-1. Usar primero las piezas de `06 Junio/Top`, después de validar antigüedad, ID y estado de publicación.
-2. Cruzar todas las prioridades formales de mayo contra el historial de Meta; no contar ninguna como disponible solo por aparecer en la Reuse Queue.
-3. Completar los slots restantes con piezas de junio y mayo no publicado confirmado, usando rendimiento histórico, claridad y variedad de personajes.
-4. Dejar fuera temporalmente los archivos sin clasificación, los duplicados de formato, los copys demasiado contextuales y las piezas que requieran corrección visual o de canon.
+1. Seleccionar los 28 `Reuse_Top` desde la raíz de mayo, aplicando rendimiento histórico, diversidad de personajes, claridad y canon.
+2. Sustituir selectivamente entre 4 y 8 slots por piezas de `06 Junio/Top` si aportan frescura o personajes distintos.
+3. Mantener fuera de la prueba las carpetas `Reutilizado Agosto` y `Reutilizado Juilo (menos de 30 dias)`, salvo nueva validación explícita de antigüedad.
+4. Dejar fuera temporalmente los archivos con errores, copy demasiado contextual, duplicados de formato o bloqueos de canon.
 
-La recomendación corregida es **priorizar junio y no contar todavía con las piezas visualmente revisadas de mayo como reserva confirmada**. Junio aporta frescura y un conjunto `Top` más manejable. Mayo conserva profundidad de inventario, pero sus candidatos deben validarse individualmente contra Meta antes de llenar cualquiera de los 28 slots reuse.
+La recomendación actualizada es **usar la raíz de mayo como fuente principal de la prueba**, porque ya está separada por estado operativo y contiene 133 candidatos. Se recomienda reservar entre 4 y 8 slots para piezas de junio si sus métricas y personajes aportan variedad. Las carpetas `Reutilizado Agosto` y `Reutilizado Juilo (menos de 30 dias)` deben permanecer fuera de la selección actual, salvo que una pieza supere explícitamente la ventana de 30 días y vuelva a validarse.
 
 ## 5. Piezas y grupos que requieren atención
 
-Fernando confirmó como ya publicadas las piezas `260516`, `260523`, `260574`, `260595`, `260596`, `260602`, `260610` y `260624`. Aunque algunas tengan buen aspecto visual, quedan excluidas de la prueba actual y no deben volver a programarse.
-
-También aparecen referencias a `260530`, `260629`, `260638`, `260648` y `260654` en documentos de agosto. Estas piezas quedan en estado `Pendiente de historial` hasta cruzarlas con la extracción completa de Meta. La muestra visual anterior no debe usarse como lista de candidatos elegibles: sirvió únicamente para observar estilo y legibilidad.
+Las piezas ya reutilizadas en julio y agosto quedaron físicamente separadas por Fernando y no forman parte de la raíz candidata. En particular, la carpeta `Reutilizado Agosto` contiene 21 imágenes y `Reutilizado Juilo (menos de 30 dias)` contiene 7 imágenes. La muestra visual anterior queda reemplazada por esta clasificación estructural de Drive.
 
 ## 6. Límites de esta revisión
 
-La revisión de Drive confirma disponibilidad física, nombres, tipos de archivo, fechas de creación, hashes y referencias documentales, pero no reemplaza una extracción histórica completa por archivo. La carpeta no contiene por sí sola la métrica de rendimiento de cada meme. Tampoco se encontró en el clon local el CSV físico mencionado por la Reuse Queue, por lo que el estado de “111 clasificados” proviene de la documentación existente y debe sincronizarse con el inventario estructurado antes de asignar los 28 slots definitivos.
+La revisión actual confirma la estructura de Drive, los nombres con referencias y personajes, los tipos de archivo y la clasificación operativa realizada por Fernando. No existe un registro individual de la fecha original de publicación en mayo; por eso el inventario usa `Unknown_May_2026` y conserva la confirmación de la regla de 30 días como una declaración operativa del usuario. Antes de programar cada pieza se debe registrar su nuevo `ID_Meta`, fecha de publicación y resultado de métricas.
 
 No se eliminó, movió ni modificó ningún archivo de Drive. La recomendación de descartar significa **excluir temporalmente de la prueba**, no borrar del archivo.
 
