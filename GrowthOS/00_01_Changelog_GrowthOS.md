@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.25
+**Versión:** 1.26
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -26,6 +26,14 @@
 - Se registraron los permisos efectivos y las cuentas vinculadas en `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`.
 
 ---
+
+---
+
+## [1.2.26] — 2026-08-14 (Manus)
+### Corregido
+- **Corrección de inventario reuse mayo:** Fernando confirmó que `260516`, `260523`, `260574`, `260595`, `260596`, `260602`, `260610` y `260624` ya fueron publicados, incluso algunos el mismo día de la revisión. Estas piezas quedan excluidas de la prueba actual.
+- Se corrigió el informe `Operations/Research/2026-08-14_Revision_Reuse_Mayo_Junio.md`: la muestra visual se considera evidencia de estilo, no disponibilidad; el inventario físico de Drive ya no se presenta como reserva elegible.
+- El catálogo CSV ahora distingue `Published_Confirmed_User`, `Unverified` y `Pending_Historical_Check`.
 
 ---
 
