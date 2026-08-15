@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-15
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -92,6 +92,14 @@ El flujo económico es el siguiente:
 
 Esta arquitectura reduce llamadas repetidas, evita que el agente relea documentos largos y permite que cada sesión trabaje con un delta pequeño. El ahorro no proviene de eliminar el aprendizaje; proviene de **no recalcular ni volver a descargar lo que ya está registrado**.
 
+### 5.1 Cadencia recomendada para métricas
+
+La revisión operativa de métricas se hará **cada dos días** como lote, en lugar de consultar cada publicación diariamente. La ejecución debe leer únicamente las filas de `Publication_Log.csv` cuyo timestamp real ya haya alcanzado una ventana de 24 o 72 horas, agrupar los Meta Post IDs pendientes y actualizar ambos ledgers en una sola pasada.
+
+La cadencia de 48 horas reduce despertares y lecturas repetidas, pero no cambia la definición de las ventanas. Cada fila conserva su hora real de publicación; no se sustituye una medición de 24 horas por el total acumulado disponible al segundo día. Cuando Meta permita una consulta temporal con `since`/`until`, se usará esa ventana; si el metric solicitado solo devuelve un total de lifetime o no permite reconstruir el snapshot, se registrará `24h_snapshot_unavailable` o `72h_snapshot_unavailable` en la nota y no se inventará el valor [7] [8].
+
+El mismo procedimiento aplica a las publicaciones posteriores: registrar primero el Meta ID y la hora real, calcular `+24h` y `+72h`, seleccionar solo las filas vencidas en la siguiente revisión de dos días y mantener separadas las métricas de Facebook e Instagram. Si se requiere un snapshot exacto garantizado y Meta no permite reconstruirlo retrospectivamente, hará falta una captura ligera en la ventana exacta; esa captura no requiere releer el Growth OS completo.
+
 ## 6. Primer estado implementado
 
 El `ExperimentLog` contiene seis observaciones históricas, nueve publicaciones reales de Facebook del 15–16 de agosto y una publicación manual real de Instagram. El `Publication_Log` enlaza las nueve publicaciones de Facebook con `CNT-031`–`CNT-039`, conserva la prueba de Instagram eliminada manualmente y registra también la publicación manual de Instagram de `CNT-031`. Las métricas 24/72 horas de las nueve publicaciones de Facebook quedan pendientes hasta que exista una ventana temporal válida.
@@ -138,3 +146,5 @@ Los estados de canon y aprobación no se cambian automáticamente. Fernando o Cl
 [4]: `Content_Inventory.csv` — Inventario actual de 39 piezas, estados históricos y campos canónicos derivados.
 [5]: `../Operations/Research/2026-08-15_Publication_Log.csv` — Primer ledger de publicaciones implementado.
 [6]: `../Operations/Research/2026-08-15_ExperimentLog.csv` — Primer ledger experimental implementado.
+[7]: https://developers.facebook.com/docs/graph-api/reference/post/insights/ — parámetros `since`, `until`, `period` y métricas de Post Insights.
+[8]: https://developers.facebook.com/documentation/pages-api/platforminsights/page — limitaciones y actualización de Page Insights.

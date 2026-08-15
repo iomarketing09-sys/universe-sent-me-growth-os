@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.62
+**Versión:** 1.63
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -20,6 +20,17 @@
 - El inventario pasó de 30 a 39 IDs únicos sin borrar campos históricos ni aprobar estados de canon.
 ### Nota operativa
 - `260583` no debe republicarse. La publicación de Instagram `2608030` fue manual y no demuestra programación futura nativa ni ejecución automática del scheduler.
+
+---
+
+## [1.2.63] — 2026-08-15 (Manus)
+### Decisión CGO
+- **Métricas cada 48 horas:** se adopta una revisión agrupada cada dos días para reducir consultas repetidas y leer solo las filas del `Publication_Log` que ya alcanzaron sus ventanas de 24 o 72 horas.
+- La cadencia no autoriza a sustituir un snapshot exacto de 24 horas por un total acumulado de lifetime. Si Meta no permite reconstruir retrospectivamente la ventana, se registra la limitación y no se inventa el valor.
+### Estado vigente del Growth OS
+- La reconciliación Facebook 15–16 y la fuente maestra están cerradas; el pendiente P0 es completar métricas/veredictos de `HB-003`, `HB-004` y `HB-005` y actualizar la baseline.
+- Siguen como P0 la limpieza del scheduler pausado de Instagram y la resolución del conflicto de canon Silvio/Payaso. Como P1 quedan producir/aprobar las 46 piezas nuevas del calendario 17–30, revisar los 28 reuse y retirar referencias activas a Make. Como P2 queda crear el ledger ligero de comentarios y registrar cobertura de respuestas.
+- Se actualizó `Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md` a la versión 1.1 y `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` a la versión 1.2.
 
 ---
 
