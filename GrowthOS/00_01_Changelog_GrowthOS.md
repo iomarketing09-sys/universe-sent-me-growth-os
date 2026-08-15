@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.70
+**Versión:** 1.71
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -76,6 +76,16 @@
 - `GrowthOS/10_00_Kit_de_Hashtags_USM.md` fue corregido a v1.1: `#MaeveUSM` corresponde a Maeve (Chica del Suéter) y `#KaelUSM` corresponde a Kael (Chico de los Pantalones).
 - Se retiraron referencias operativas nominales a Make de README, governance, arquitectura de calendario, Approval Queue, sistema de memes, formato semanal, monetización, pipeline y bridge. La guía archivada, changelog, auditorías históricas y blueprints conservan menciones solo como trazabilidad.
 - Se actualizó la auditoría general para marcar esta limpieza como cerrada/controlada y documentar el resultado real de la extracción. El índice pasa a v3.5.
+
+---
+
+## [1.2.71] — 2026-08-15 (Manus)
+### Primer lote real de community engagement
+- Se extrajeron y validaron 9 comentarios de la publicación de Silvio `1036844829507460_122148874371072582` mediante Meta Graph API v26. El lote tiene 9 `Comentario_ID` únicos, permanece anonimizado y no inventa ninguna relación `CNT-####`.
+- El ledger registra 3 respuestas sugeridas en `Pendiente_Fernando`, 1 comentario escalado para revisión individual y 5 interacciones sin respuesta requerida. Ninguna respuesta se ha publicado.
+- Se corrigió la alineación CSV de un insight con coma, se ejecutó `validate_community_target_lot.py` y el resultado fue `validation=ok`.
+- Se actualizaron `Operations/Research/2026-08-15_Community_Engagement_Log.csv`, su ficha Markdown, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `GrowthOS/00_Índice.md`, la auditoría general, la auditoría de comentarios y la deuda documental P2.
+- Próximo paso controlado: Fernando debe aprobar o rechazar las tres respuestas propuestas y revisar individualmente el comentario escalado antes de cualquier escritura en Meta.
 
 ---
 

@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-15
-version: "1.4"
+version: "1.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -126,7 +126,7 @@ El mismo procedimiento aplica a las publicaciones posteriores: registrar primero
 
 El `ExperimentLog` contiene seis observaciones históricas, nueve publicaciones reales de Facebook del 15–16 de agosto y una publicación manual real de Instagram. El `Publication_Log` enlaza las nueve publicaciones de Facebook con `CNT-031`–`CNT-039`, conserva la prueba de Instagram eliminada manualmente y registra también la publicación manual de Instagram de `CNT-031`. Las métricas 24/72 horas de las nueve publicaciones de Facebook quedan pendientes hasta que exista una ventana temporal válida.
 
-El `Community_Engagement_Log.csv` fue creado el 15 de agosto con encabezados, sin filas de comentarios. Ese estado es intencional: la muestra histórica de 67 comentarios se conserva como análisis agregado y no se transforma en filas sin una nueva extracción verificable. Las futuras revisiones deben recuperar solo el delta nuevo, deduplicar por `Comentario_ID` y mantener respuestas y moderación bajo aprobación humana.
+El `Community_Engagement_Log.csv` se creó el 15 de agosto y ya contiene el primer lote verificable de nueve comentarios de `1036844829507460_122148874371072582`. La muestra histórica de 67 comentarios se conserva como análisis agregado y no se transforma retroactivamente en filas. Las futuras revisiones deben recuperar solo el delta nuevo, deduplicar por `Comentario_ID` y mantener respuestas y moderación bajo aprobación humana.
 
 El lote 1 de normalización cubrió inicialmente 28 filas y, tras resolver las excepciones, `Content_Inventory.csv` llegó a 30 registros. La reconciliación del calendario 15–16 añadió nueve piezas de identidad nuevas, por lo que el inventario contiene ahora 39 registros. Se preservaron todas las columnas originales y se añadieron campos normalizados para estado operativo, estado de canon, asset confirmado, asset candidato, relaciones y trazabilidad de reconciliación.
 
