@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.58
+**Versión:** 1.59
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -83,6 +83,16 @@
 - Los tres assets fueron generados con Nano Banana Pro en formato 1:1, con fondos mínimos, gradientes mágicos y foco principal en personaje, expresión y frase.
 - Se actualizó `Operations/Research/2026-08-15_Propuesta_Memes_Respuesta_USM.md` a la versión 2.1 y se incorporó el lote al registro canónico de comunidad.
 - Los assets quedan en estado `Review`; son respuestas individuales y no publicaciones del calendario regular.
+
+---
+
+## [1.2.59] — 2026-08-15 (Manus)
+### Publicación confirmada de CNT-023 — Elara / Lámpara de Luna
+- Fernando proporcionó el permalink `https://www.facebook.com/reel/1067337609170026` y la verificación visual confirmó el Reel de Elara con la caja de Mercado Libre.
+- Meta Graph API resolvió el Reel como Page Post ID `1036844829507460_122147352825072582`, creado el 2026-08-09 a las 01:19:54 UTC, con caption de “¿Qué me llegó?”, CTA `LUNA` y hashtags `#UniverseSentMe #QueMeLlegoUSM #UniverseUSM #ElaraUSM`.
+- `CNT-023` pasó a `Published` en `Content_Inventory.csv` y se añadió `PUB-FB-2026-08-08-CNT023` a `Publication_Log.csv`.
+- Se conservó la resolución como conjunto de 7 assets de Drive; no se inventó un `260####` individual.
+- Se actualizaron el preview de reconciliación, la fuente maestra y el índice.
 
 ---
 
