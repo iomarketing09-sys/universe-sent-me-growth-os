@@ -32,13 +32,13 @@ Se añadieron columnas normalizadas sin borrar ni sobrescribir `estado` o `bloqu
 
 | Excepción | Resolución | Evidencia |
 |---|---|---|
-| `CNT-002` | `Rejected_Mismatch` | El post de Meta del 30-Jul usa `🤭`, `WilfredUSM`, `MercadoLibre` y `plush`; `260509` es `Universe - Existencial 260509.png`. Se rechaza la asociación. |
+| `CNT-002` | `Resolved_Production_Set` | Meta identificó el post `1036844829507460_122143141185072582`, publicado el 30-Jul 14:16:47 UTC, con permalink [Facebook Reel](https://www.facebook.com/reel/911880681976378/). El video dura 17.39 s y contiene la secuencia de caja Mercado Libre, Wilfred y peluche. Drive aporta tres videos de producción relacionados; no existe un 260 único confirmado. |
 | `CNT-023` | `Resolved_Asset_Set` | El episodio 2 corresponde a la carpeta Drive `Elara - Lampara de luna`, con 7 videos de producción. Se registra como conjunto, no como un único `260`. |
 | `CNT-029` | `Resolved_Project_Record` | Se recupera su ficha de producción, banco de 9 cuadros y estado Draft; no existe referencia `260` y no se inventa. |
 | `CNT-030` | `Resolved_Dependent_Record` | Se recupera su ficha de audio/montaje y se enlaza con `CNT-029`; no es una publicación independiente. |
 
-`CNT-029` y `CNT-030` ya fueron incorporados al inventario como registros completos. `CNT-002` conserva su asset exacto pendiente, mientras `CNT-023` conserva una relación con `CNT-002` como episodio 1 y el ID de su carpeta de producción.
+`CNT-029` y `CNT-030` ya fueron incorporados al inventario como registros completos. `CNT-002` queda cerrado a nivel de publicación y conjunto de producción: su `Meta_Post_ID`, permalink, fecha y assets relacionados ya están en el inventario y en `Publication_Log`. El nombre del render final o un 260 individual no se inventa porque Drive solo conserva componentes de producción.
 
 ## Estado final
 
-Las cuatro excepciones originales quedaron resueltas a nivel de registro y trazabilidad. Solo queda como pendiente operativo encontrar el asset exacto que se publicó para `CNT-002`; esta falta no bloquea la existencia ni la aprobación de su ficha de contenido.
+Las cuatro excepciones originales quedaron resueltas a nivel de registro y trazabilidad. CNT-002 ya no tiene una excepción abierta: el post real y el conjunto de producción fueron identificados. Queda únicamente una nota histórica: no se conserva el nombre del render final como archivo `260####`, por lo que el inventario no crea una falsa precisión.

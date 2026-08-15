@@ -97,13 +97,13 @@ El primer `ExperimentLog` ya contiene seis observaciones históricas de junio–
 
 El lote 1 de normalización cubrió inicialmente 28 filas y, tras resolver las excepciones, `Content_Inventory.csv` contiene 30 registros. Se preservaron todas las columnas originales y se añadieron campos normalizados para estado operativo, estado de canon, asset confirmado, asset candidato, relaciones y trazabilidad de reconciliación.
 
-`CNT-002 → 260509` quedó resuelto como `Rejected_Mismatch`: el post real de Meta del 30 de julio usa `WilfredUSM`, `MercadoLibre` y `plush`, mientras que el archivo 260509 de Drive corresponde a Universe existencial. El asset exacto de CNT-002 continúa pendiente, pero ya no existe una asociación falsa en el inventario.
+`CNT-002 → 260509` quedó resuelto como `Resolved_Production_Set`: Meta identificó el post `1036844829507460_122143141185072582`, publicado el 30 de julio a las 14:16:47 UTC, con permalink `https://www.facebook.com/reel/911880681976378/`. El reel dura 17.39 segundos y su secuencia coincide con los tres videos de producción de Wilfred/caja/peluche localizados en Drive. El archivo 260509 de Drive corresponde a Universe existencial y se mantiene rechazado. No existe un render final `260####` confirmado, así que no se inventa uno.
 
 `CNT-023` quedó resuelto como `Resolved_Asset_Set`: el episodio 2 de “¿Qué me llegó?” se relaciona con la carpeta de Drive `Elara - Lampara de luna`, que contiene 7 videos de producción. El registro no se fuerza a un único `260####`; se conserva como conjunto de assets y se enlaza con `CNT-002`, el episodio 1.
 
 `CNT-029` y `CNT-030` fueron incorporados desde sus documentos reales de producción. CNT-029 es el reel “Pausa para ver qué piensa de ti”, con banco de 9 cuadros y estado Draft; CNT-030 es su especificación dependiente de audio y montaje, no una publicación independiente. Ambos quedan enlazados entre sí y no reciben referencias 260 inventadas.
 
-El preview actualizado está en `Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.md` y el CSV detallado en `Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.csv`. La normalización es reversible porque `estado` y `bloqueado_canon` originales permanecen intactos. El único pendiente operativo es encontrar el asset exacto de CNT-002; no bloquea la integridad de los 30 registros.
+El preview actualizado está en `Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.md` y el CSV detallado en `Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.csv`. La normalización es reversible porque `estado` y `bloqueado_canon` originales permanecen intactos. CNT-002 ya no tiene una excepción abierta a nivel de publicación ni de conjunto de producción. Solo queda registrada la ausencia del nombre del render final como archivo `260####`, lo cual no bloquea la integridad de los 30 registros.
 
 ## 7. Reglas de gobernanza
 

@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.56
+**Versión:** 1.57
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -83,6 +83,16 @@
 - Los tres assets fueron generados con Nano Banana Pro en formato 1:1, con fondos mínimos, gradientes mágicos y foco principal en personaje, expresión y frase.
 - Se actualizó `Operations/Research/2026-08-15_Propuesta_Memes_Respuesta_USM.md` a la versión 2.1 y se incorporó el lote al registro canónico de comunidad.
 - Los assets quedan en estado `Review`; son respuestas individuales y no publicaciones del calendario regular.
+
+---
+
+## [1.2.57] — 2026-08-15 (Manus)
+### Cierre de CNT-002 mediante Meta Graph API
+- Se identificó el post real de CNT-002 mediante Graph API: `1036844829507460_122143141185072582`, publicado el 2026-07-30 a las 14:16:47 UTC, con permalink `https://www.facebook.com/reel/911880681976378/`.
+- El reel dura 17.39 segundos y su secuencia coincide con los videos de producción de Drive `Wilfred_holding_plush_toy_202607300618.mp4`, `Wilfred_holding_plush_unimpressed_202607300634.mp4` y `Cat_carrying_box_to_Wilfred_202607300636.mp4`.
+- Se rechazó definitivamente la asociación con `260509`, cuyo archivo es `Universe - Existencial 260509.png`.
+- `CNT-002` quedó como `Resolved_Production_Set`; se añadió la publicación histórica a `Publication_Log.csv` y se registró el permalink, fecha, Meta ID y conjunto de producción en `Content_Inventory.csv`.
+- La excepción queda cerrada sin inventar un render final `260####` que no existe como archivo localizado.
 
 ---
 
