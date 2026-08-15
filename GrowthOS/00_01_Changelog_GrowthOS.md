@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.46
+**Versión:** 1.47
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -26,6 +26,16 @@
 - Se registraron los permisos efectivos y las cuentas vinculadas en `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`.
 
 ---
+
+---
+
+## [1.2.47] — 2026-08-15 (Manus)
+### Auditoría de comentarios de Facebook
+- Se creó `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` con la verificación directa de permisos y la propuesta CGO de escucha, respuesta humana guiada y aprendizaje editorial.
+- `/me/permissions` respondió HTTP 200; el token tiene `pages_manage_engagement`, `pages_read_engagement` y la Página devuelve `MODERATE`/`CREATE_CONTENT`.
+- La lectura de `/{post_id}/comments` respondió HTTP 200. En 20 publicaciones recientes se observaron 67 comentarios acumulados, 16 publicaciones con comentarios, mediana de 2 y máximo de 14.
+- La escritura de respuestas, ocultamientos o eliminaciones no se probó; queda pendiente una prueba controlada con confirmación explícita de Fernando.
+- El mismo chequeo mostró que `instagram_manage_comments` ahora está concedido, por lo que se corrige el diagnóstico anterior de permiso ausente. La moderación de Instagram sigue separada y no se automatiza todavía.
 
 ---
 

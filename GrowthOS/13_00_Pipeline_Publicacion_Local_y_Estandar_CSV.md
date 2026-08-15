@@ -88,8 +88,8 @@ El 2026-08-14 se creó y activó el conector **Universe Sent Me Meta API**, una 
 | Operaciones previstas | Identidad de página, publicaciones, insights y publicación en feed únicamente con solicitud explícita y confirmación previa |
 | Página Universe Sent Me | ID `1036844829507460`; tareas: `MODERATE`, `CREATE_CONTENT`, `MESSAGING`, `ANALYZE`, entre otras |
 | Instagram vinculado | Cuenta profesional ID `17841462696378190` |
-| Permisos efectivos concedidos | `pages_show_list`, `business_management`, `instagram_basic`, `instagram_content_publish`, `pages_read_engagement`, `pages_read_user_content`, `pages_manage_posts`, `pages_manage_engagement`, `read_audience_network_insights`, `public_profile` |
-| Permiso ausente para comentarios de Instagram | `instagram_manage_comments` |
+| Permisos efectivos concedidos | `pages_show_list`, `business_management`, `instagram_basic`, `instagram_content_publish`, `instagram_manage_comments`, `pages_read_engagement`, `pages_read_user_content`, `pages_manage_posts`, `pages_manage_engagement`, `read_audience_network_insights`, `public_profile` |
+| Permiso no devuelto por el token actual para comentarios de Facebook | `pages_read_user_engagement` — la lectura real de comentarios sí respondió HTTP 200, por lo que queda como diferencia documentada y no como bloqueo activo |
 | Prueba de lectura Facebook | HTTP 200 con comentarios de una publicación de Universe Sent Me |
 | Prueba de lectura Instagram | HTTP 200 en el medio consultado; no había comentarios devueltos |
 
@@ -98,9 +98,9 @@ El 2026-08-14 se creó y activó el conector **Universe Sent Me Meta API**, una 
 
 ### Comentarios: diagnóstico operativo
 
-**Facebook:** el conjunto actual es suficiente para el flujo principal de moderación y respuesta a comentarios de la página: `pages_manage_engagement` está concedido, la página devuelve la tarea `MODERATE` y se verificó con HTTP 200 la lectura de comentarios usando el Page Access Token derivado desde `/me/accounts`. La documentación actual de Meta también menciona `pages_read_engagement` y, según el flujo, `pages_read_user_engagement`; si una operación concreta devuelve un error de permisos sobre contenido generado por usuarios, habrá que revisar esa diferencia porque el token actual muestra `pages_read_user_content`, no `pages_read_user_engagement`.
+**Facebook:** el conjunto actual permite el flujo de lectura y deja preparada la moderación: `pages_manage_engagement` y `pages_read_engagement` están concedidos, la página devuelve las tareas `MODERATE` y `CREATE_CONTENT`, y se verificó HTTP 200 leyendo comentarios de publicaciones propias. En un escaneo de 20 publicaciones recientes se encontraron 67 comentarios, con comentarios en 16 publicaciones. La guía específica de Meta también menciona `pages_read_user_engagement`, que no aparece en el token actual; aun así, la lectura real funciona. Las respuestas, ocultamientos o eliminaciones aún no se han probado y deben ejecutarse solo con confirmación explícita.
 
-**Instagram:** la cuenta profesional está vinculada y `instagram_basic` está concedido, pero falta **`instagram_manage_comments`**, que Meta exige para leer, gestionar y responder comentarios mediante la API de Instagram con Facebook Login. Por tanto, **todavía no debemos automatizar respuestas en Instagram**. Para habilitarlo, hay que solicitar/conceder `instagram_manage_comments` en la aplicación de Meta y volver a generar o reautorizar el token con ese permiso. La respuesta documentada por Meta usa `POST /<IG_COMMENT_ID>/replies` para responder a un comentario, con `instagram_basic`, `instagram_manage_comments` y `pages_read_engagement`.
+**Instagram:** la auditoría de permisos del 2026-08-15 devolvió también `instagram_manage_comments` como concedido. Esto corrige el diagnóstico anterior de permiso ausente. La publicación y la moderación de Instagram siguen siendo flujos separados; no se automatizarán respuestas allí hasta diseñar y probar su propio playbook.
 
 ### Seguridad y mantenimiento
 
