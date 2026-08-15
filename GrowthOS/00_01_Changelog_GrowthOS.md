@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.34
+**Versión:** 1.35
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -29,9 +29,18 @@
 
 ---
 
+## [1.2.35] — 2026-08-14 (Manus)
+### Cambiado
+- La prueba `EXP-2026-08-CAL-01` se amplió de 68 a **74 slots**.
+- De lunes a jueves se añadió la publicación de las **19:00**; viernes adopta el patrón de sábado con 10:00, 11:00, 13:30 y 19:00.
+- El domingo conserva sus cinco horarios —10:00, 13:30, 16:00, 19:00 y 22:00— y queda formalmente definido como **día estelar**.
+- La mezcla se actualizó a **46 piezas nuevas y 28 reuse**, aproximadamente 62%/38%. La frecuencia adicional se cubre con contenido nuevo, no con reuse extra.
+
+---
+
 ## [1.2.34] — 2026-08-14 (Manus)
 ### Añadido
-- Se creó `Operations/Research/2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md` y su CSV ampliado con caption, variante de copy y decisión de Instagram para los 68 slots.
+- Se creó `Operations/Research/2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md` y su CSV ampliado con caption, variante de copy y decisión de Instagram para los 74 slots.
 - Se creó `Operations/Research/2026-08-14_Recomendacion_Instagram_CGO.md`: la recomendación es cross-post selectivo, no duplicación masiva. Primera tanda sugerida: `260560`, `260625` y `260528`; `260539` y `humor4.16` quedan como pruebas orgánicas posteriores y de mayor riesgo de distribución.
 - La cuenta de Instagram sigue con el conector no conectado; no se publicó ningún asset durante esta tarea.
 
