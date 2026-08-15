@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-15
-**Versión:** 3.0
+**Versión:** 3.1
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -27,7 +27,7 @@
 | [Guía histórica de Automatización con Make](02_00_Guia_Automatizacion_Make.md) | Referencia archivada de una arquitectura no operativa. | Archived |
 | [Sistema de Generación de Memes](03_00_Sistema_Generacion_Memes.md) | Flujo de ingesta (Drive), adaptación (Gemini) y archivo visual (GitHub). | Active |
 | [Canon Contradictions Report](Canon_Contradictions_Report.md) | Contradicciones activas que bloquean producción. | Active |
-| [Inventario de Contenido](Content_Inventory.csv) | CSV maestro con metadatos de las 25 piezas existentes. | Active |
+| [Inventario de Contenido](Content_Inventory.csv) | CSV maestro con 39 piezas, estados históricos y campos canónicos de identidad/publicación. | Active |
 | [Auditoría Higgsfield Grant](../Operations/Research/2026-08-02_Auditoria_Higgsfield_Grant.md) | Análisis estratégico para la candidatura del Filmmaker Grant. | Review |
 | [Reporte Mensual Junio-Julio 2026](../Operations/Research/2026-08-08_Reporte_Mensual_Junio_Julio_2026.md) | Cierra el vacío de datos entre mayo y el análisis de 28 días de agosto. 61 días vía Windsor.ai, top días y posts por mes. | Active |
 | [Métricas Baseline — FB & IG](08_00_Metricas_Baseline_Plataformas.md) | Datos reales de Windsor.ai: top 10 FB, tabla Reels, tabla IG, insights de canal. Actualizar cada domingo. | Active |
@@ -37,9 +37,9 @@
 | [Sistema de Dos Capas: Contenido vs. Canon](12_00_Sistema_Dos_Capas_Contenido_Canon.md) | Separa la capa libre de memes/reels (algoritmo, exploración) de la capa de canon (Biblia, decisiones permanentes). Define mecanismo de promoción deliberada de meme a canon. | Active |
 | [Pipeline de Publicación Local y Estándar CSV](13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md) | Documenta el script propio de Fernando, el estándar CSV y la Custom API de Meta configurada para Universe Sent Me. | Active |
 | [Fuente Maestra y Ledgers del Growth OS](14_00_Fuente_Maestra_y_Ledgers.md) | Define el inventario maestro de piezas, el Publication Log, el ExperimentLog y las reglas de bajo consumo de tokens. | Active |
-| [Publication Log inicial](../Operations/Research/2026-08-15_Publication_Log.csv) | Historial inicial de 9 publicaciones de Facebook y 1 prueba de Instagram eliminada manualmente. | Active |
-| [ExperimentLog inicial](../Operations/Research/2026-08-15_ExperimentLog.csv) | Seis observaciones históricas y nueve publicaciones de Facebook pendientes de métricas 24/72 horas. | Active |
-| [Reconciliación de inventario — lote 1](../Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.md) | 30 registros normalizados; CNT-002 cerrado con Meta + conjunto de producción, CNT-023 publicado y trazado con 7 assets, CNT-029/CNT-030 incorporados y enlazados. | Active |
+| [Publication Log inicial](../Operations/Research/2026-08-15_Publication_Log.csv) | Ledger append-only con 9 publicaciones de Facebook confirmadas, la prueba de Instagram eliminada y 1 publicación manual real de Instagram. | Active |
+| [ExperimentLog inicial](../Operations/Research/2026-08-15_ExperimentLog.csv) | Seis observaciones históricas, nueve publicaciones de Facebook pendientes de métricas 24/72 horas y una observación manual de Instagram. | Active |
+| [Reconciliación de inventario — lote 1](../Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.md) | 30 registros históricos normalizados; CNT-002 cerrado con Meta + conjunto de producción, CNT-023 publicado y trazado con 7 assets, CNT-029/CNT-030 incorporados y enlazados. | Active |
 | [Auditoría del Growth OS — 14 de agosto](../Operations/Research/2026-08-14_Auditoria_Growth_OS.md) | Evalúa la programación modificada, las integraciones, la automatización y el ciclo de aprendizaje. | Superseded |
 | [Auditoría general del Growth OS — 15 de agosto](../Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md) | Auditoría de integración extremo a extremo, estado live de Meta, documentación, comunidad, riesgos y plan CGO. | Review |
 | [Ciclo de Aprendizaje de Horarios — 14 de agosto](../Operations/Research/2026-08-14_Ciclo_Aprendizaje_Horarios.md) | Reconstruye la hipótesis y la evidencia detrás del cambio de horarios. | Review |
@@ -54,7 +54,8 @@
 | [Ranking Reuse Mayo — rendimiento Meta](../Operations/Research/2026-08-14_Reuse_Mayo_Ranking.csv) | Ranking individual de 123 assets cruzados con 205 publicaciones de mayo. | Active |
 | [Pipeline de publicación y archivado mensual](13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md) | Estándar CSV, publicación por Graph API y movimiento de assets publicados a la carpeta mensual. | Active |
 | [Inventario de memes nuevos de Drive — 15 de agosto](../Operations/Research/2026-08-15_Inventario_Memes_Nuevos_Drive.md) | Registro de 38 imágenes nuevas encontradas en la raíz de Humor existencial, con referencias y enlaces de Drive. | Review |
-| [Calendario 15–16 de agosto — programado](../Operations/Research/2026-08-15_Calendario_15_16_Agosto.md) | Registro de 9 publicaciones de Facebook programadas: 5 nuevas y 4 reuse; incluye prueba de Instagram eliminada manualmente y scheduler selectivo pendiente. | Active |
+| [Calendario 15–16 de agosto — programado](../Operations/Research/2026-08-15_Calendario_15_16_Agosto.md) | Registro de 9 publicaciones de Facebook (5 nuevas y 4 reuse) confirmadas en Meta; incluye prueba de Instagram eliminada y distribución manual selectiva. | Active |
+| [Reconciliación Facebook 15–16 → CNT](../Operations/Research/2026-08-15_Reconciliacion_Publicaciones_15_16_CNT.md) | Cierra el vínculo de los 9 assets del calendario con CNT-031–CNT-039 y registra la publicación manual de Instagram 2608030. | Active |
 
 ---
 

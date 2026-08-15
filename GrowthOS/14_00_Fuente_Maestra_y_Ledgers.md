@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-15
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -13,6 +13,7 @@ related_documents:
   - "GrowthOS/Content_Inventory.csv"
   - "Operations/Research/2026-08-15_Publication_Log.csv"
   - "Operations/Research/2026-08-15_ExperimentLog.csv"
+  - "Operations/Research/2026-08-15_Reconciliacion_Publicaciones_15_16_CNT.md"
   - "GrowthOS/00_Índice.md"
 organization: "GrowthOS"
 ---
@@ -93,9 +94,9 @@ Esta arquitectura reduce llamadas repetidas, evita que el agente relea documento
 
 ## 6. Primer estado implementado
 
-El primer `ExperimentLog` ya contiene seis observaciones históricas de junio–agosto y nueve publicaciones de Facebook programadas para el 15–16 de agosto. El `Publication_Log` contiene las nueve órdenes de Facebook y la prueba de Instagram que fue eliminada manualmente. Las métricas 24/72 horas de las nueve publicaciones quedan pendientes hasta que exista una ventana temporal válida.
+El `ExperimentLog` contiene seis observaciones históricas, nueve publicaciones reales de Facebook del 15–16 de agosto y una publicación manual real de Instagram. El `Publication_Log` enlaza las nueve publicaciones de Facebook con `CNT-031`–`CNT-039`, conserva la prueba de Instagram eliminada manualmente y registra también la publicación manual de Instagram de `CNT-031`. Las métricas 24/72 horas de las nueve publicaciones de Facebook quedan pendientes hasta que exista una ventana temporal válida.
 
-El lote 1 de normalización cubrió inicialmente 28 filas y, tras resolver las excepciones, `Content_Inventory.csv` contiene 30 registros. Se preservaron todas las columnas originales y se añadieron campos normalizados para estado operativo, estado de canon, asset confirmado, asset candidato, relaciones y trazabilidad de reconciliación.
+El lote 1 de normalización cubrió inicialmente 28 filas y, tras resolver las excepciones, `Content_Inventory.csv` llegó a 30 registros. La reconciliación del calendario 15–16 añadió nueve piezas de identidad nuevas, por lo que el inventario contiene ahora 39 registros. Se preservaron todas las columnas originales y se añadieron campos normalizados para estado operativo, estado de canon, asset confirmado, asset candidato, relaciones y trazabilidad de reconciliación.
 
 `CNT-002 → 260509` quedó resuelto como `Resolved_Production_Set`: Meta identificó el post `1036844829507460_122143141185072582`, publicado el 30 de julio a las 14:16:47 UTC, con permalink `https://www.facebook.com/reel/911880681976378/`. El reel dura 17.39 segundos y su secuencia coincide con los tres videos de producción de Wilfred/caja/peluche localizados en Drive. El archivo 260509 de Drive corresponde a Universe existencial y se mantiene rechazado. No existe un render final `260####` confirmado, así que no se inventa uno.
 
@@ -103,11 +104,11 @@ El lote 1 de normalización cubrió inicialmente 28 filas y, tras resolver las e
 
 `CNT-029` y `CNT-030` fueron incorporados desde sus documentos reales de producción. CNT-029 es el reel “Pausa para ver qué piensa de ti”, con banco de 9 cuadros, hook de pausa y estado `Draft_Pending_Approval`; la búsqueda acotada de Meta del 14–17 de agosto no encontró una publicación coincidente. CNT-030 es su especificación dependiente de audio y montaje, también `Draft_Pending_Approval`, no una publicación independiente. Ambos quedan enlazados entre sí, conservan sus nombres de assets documentados y no reciben referencias 260 inventadas.
 
-El preview actualizado está en `Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.md` y el CSV detallado en `Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.csv`. CNT-023 conserva además el `drive_reference_id` de la carpeta de producción, el listado exacto de sus siete assets y la publicación confirmada en `Publication_Log.csv`. CNT-029/CNT-030 conservan sus bancos de assets y no generan filas de publicación hasta que exista aprobación y un permalink real. La normalización es reversible porque `estado` y `bloqueado_canon` originales permanecen intactos. CNT-002 ya no tiene una excepción abierta a nivel de publicación ni de conjunto de producción. Solo queda registrada la ausencia del nombre del render final como archivo `260####`, lo cual no bloquea la integridad de los 30 registros.
+El preview actualizado está en `Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.md` y el CSV detallado en `Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.csv`. CNT-023 conserva además el `drive_reference_id` de la carpeta de producción, el listado exacto de sus siete assets y la publicación confirmada en `Publication_Log.csv`. CNT-029/CNT-030 conservan sus bancos de assets y no generan filas de publicación hasta que exista aprobación y un permalink real. La normalización es reversible porque `estado` y `bloqueado_canon` originales permanecen intactos. CNT-002 ya no tiene una excepción abierta a nivel de publicación ni de conjunto de producción. Solo queda registrada la ausencia del nombre del render final como archivo `260####`, lo cual no bloquea la integridad de los 39 registros actuales.
 
 ## 7. Estado de unificación — lote 1
 
-El 15 de agosto de 2026 se aplicó el primer lote de unificación al inventario maestro. `Content_Inventory.csv` conserva sus 30 filas y todos los campos históricos, y ahora también contiene siete campos canónicos derivados: `Asset_Ref`, `Asset_Filename`, `Drive_ID`, `Estado_Canon`, `Estado_Produccion`, `Estado_Publicacion` y `Ultima_Sincronizacion`.
+El 15 de agosto de 2026 se aplicó el primer lote de unificación al inventario maestro. Después de reconciliar el calendario 15–16, `Content_Inventory.csv` conserva sus 39 filas y todos los campos históricos, y contiene siete campos canónicos derivados: `Asset_Ref`, `Asset_Filename`, `Drive_ID`, `Estado_Canon`, `Estado_Produccion`, `Estado_Publicacion` y `Ultima_Sincronizacion`.
 
 | Campo canónico | Regla aplicada en el lote 1 |
 |---|---|
@@ -119,9 +120,9 @@ El 15 de agosto de 2026 se aplicó el primer lote de unificación al inventario 
 | `Estado_Publicacion` | Marca `Publicada` solo cuando existe `meta_publication_id`; el resto queda `No_Publicada`. |
 | `Ultima_Sincronizacion` | Fecha del lote: `2026-08-15`. |
 
-El lote validó 30 IDs únicos, 2 piezas con publicación Meta enlazada (`CNT-002` y `CNT-023`) y 28 piezas sin publicación confirmada. Se preservaron los estados históricos y no se confirmó ningún asset `260####` sin evidencia.
+La validación posterior al lote reconcilió 39 IDs únicos, 11 piezas con publicación Meta enlazada (`CNT-002`, `CNT-023` y `CNT-031`–`CNT-039`) y 28 piezas sin publicación confirmada. Se preservaron los estados históricos y no se confirmó ningún asset `260####` sin evidencia.
 
-La unificación todavía no está completa. Los siguientes trabajos quedan explícitamente separados para evitar una migración riesgosa: mapear las nueve órdenes del calendario 15–16 a `ID_Pieza`, completar métricas 24/72 horas en `Publication_Log`, enlazar las observaciones de `ExperimentLog` con publicaciones concretas, resolver los 13 estados `Canon_Review_Required`, confirmar si el canon de Silvio puede actualizarse y convertir calendarios/colas en exportaciones verificables del inventario. Estos pendientes son de integración y aprobación; no deben resolverse inventando IDs.
+La unificación todavía no está completa. Los siguientes trabajos quedan explícitamente separados para evitar una migración riesgosa: completar métricas 24/72 horas en `Publication_Log`, cerrar el aprendizaje de `HB-003`, `HB-004` y `HB-005`, resolver los 13 estados `Canon_Review_Required`, confirmar si el canon de Silvio puede actualizarse y convertir calendarios/colas en exportaciones verificables del inventario. El mapeo de las nueve órdenes del calendario 15–16 ya está cerrado mediante `CNT-031`–`CNT-039`. Estos pendientes restantes son de medición, integración y aprobación; no deben resolverse inventando IDs.
 
 ## 8. Reglas de gobernanza
 
@@ -134,6 +135,6 @@ Los estados de canon y aprobación no se cambian automáticamente. Fernando o Cl
 [1]: `01_00_Arquitectura_Calendario_Escalable.md` — Arquitectura de metadatos, estados y calendario como vista.
 [2]: `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md` — Formato de exportación y publicación mediante Meta Graph API.
 [3]: `Integracion_Growth_OS.md` — HypothesisBank, ExperimentLog y puente con canon.
-[4]: `Content_Inventory.csv` — Inventario actual de 30 piezas, estados históricos y campos canónicos derivados.
+[4]: `Content_Inventory.csv` — Inventario actual de 39 piezas, estados históricos y campos canónicos derivados.
 [5]: `../Operations/Research/2026-08-15_Publication_Log.csv` — Primer ledger de publicaciones implementado.
 [6]: `../Operations/Research/2026-08-15_ExperimentLog.csv` — Primer ledger experimental implementado.

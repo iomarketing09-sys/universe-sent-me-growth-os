@@ -4,9 +4,22 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.61
+**Versión:** 1.62
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.62] — 2026-08-15 (Manus)
+### Reconciliado
+- **Publicaciones Facebook 15–16 de agosto:** se crearon `CNT-031`–`CNT-039` para los nueve assets que no tenían una fila CNT previa. Cada relación se sustentó con filename exacto de Drive, caption/personajes del calendario aprobado, Meta Post ID y permalink confirmado por Graph API.
+- `Publication_Log.csv` ahora enlaza las nueve publicaciones de Facebook con sus CNT, conserva la prueba de Instagram de `260583` como eliminada manualmente y registra la publicación manual real de `2608030` como `PUB-IG-15_16-01`/`CNT-031`.
+- `ExperimentLog.csv` enlaza las nueve observaciones de Facebook y añade la observación operativa de Instagram. Las métricas de 24/72 horas siguen pendientes y no se estimaron.
+### Documentado
+- Se creó `Operations/Research/2026-08-15_Reconciliacion_Publicaciones_15_16_CNT.md` y se actualizaron `14_00_Fuente_Maestra_y_Ledgers.md` y `00_Índice.md`.
+- El inventario pasó de 30 a 39 IDs únicos sin borrar campos históricos ni aprobar estados de canon.
+### Nota operativa
+- `260583` no debe republicarse. La publicación de Instagram `2608030` fue manual y no demuestra programación futura nativa ni ejecución automática del scheduler.
 
 ---
 
