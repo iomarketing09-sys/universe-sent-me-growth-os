@@ -4,7 +4,7 @@ purpose: "Evaluar de extremo a extremo la integración entre estrategia, documen
 status: Review
 created: 2026-08-15
 updated: 2026-08-15
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/00_Índice.md"
@@ -18,6 +18,8 @@ related_documents:
   - "Operations/Research/2026-08-15_Calendario_15_16_Agosto.md"
   - "Operations/Research/2026-08-15_Reconciliacion_Publicaciones_15_16_CNT.md"
   - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
+  - "GrowthOS/Integracion_Growth_OS.md"
+  - "Operations/Research/2026-08-15_Reclasificacion_Canon_vs_Reconciliacion.json"
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
 organization: "Operations/Research"
 ---
@@ -32,18 +34,18 @@ La conclusión CGO es: **funciona operativamente para Facebook, funciona técnic
 
 > **Veredicto actualizado:** el sistema está en una etapa de transición entre “operación manual documentada” y “Growth OS cerrado”. La trazabilidad del lote 15–16 ya está cerrada; antes de aumentar la complejidad o automatizar comentarios, hay que cerrar métricas/veredictos, canon y scheduler. No recomiendo añadir otra plataforma o automatización todavía; recomiendo consolidar la ruta Facebook + Graph API y revisar métricas por lotes cada dos días cuando las ventanas exactas sean válidas.
 
-Esta auditoría fue originalmente de solo lectura. La actualización 1.1 incorpora los cambios ya versionados en la reconciliación posterior, pero no modifica publicaciones, comentarios ni assets de Drive.
+Esta auditoría fue originalmente de solo lectura. La actualización 1.3 incorpora los cambios ya versionados en la reconciliación posterior, pero no modifica publicaciones, comentarios ni assets de Drive.
 
 ## Actualización posterior a la auditoría — estado vigente
 
-La auditoría original identificó varias brechas que ya fueron resueltas en el lote de reconciliación Facebook 15–16. El inventario maestro ahora contiene 39 IDs únicos; `CNT-031`–`CNT-039` enlazan los nueve assets publicados con sus Meta Post IDs; `Publication_Log.csv` contiene los hechos de Facebook y la publicación manual de Instagram 2608030; y `ExperimentLog.csv` contiene las observaciones del lote, aunque todavía sin métricas 24/72 horas. La evidencia y los criterios están documentados en `2026-08-15_Reconciliacion_Publicaciones_15_16_CNT.md`.
+La auditoría original identificó varias brechas que ya fueron resueltas en el lote de reconciliación Facebook 15–16. El inventario maestro ahora contiene 39 IDs únicos; `CNT-031`–`CNT-039` enlazan los nueve assets publicados con sus Meta Post IDs; `Publication_Log.csv` contiene los hechos de Facebook y la publicación manual de Instagram 2608030; y `ExperimentLog.csv` contiene las observaciones del lote, aunque todavía sin métricas 24/72 horas. La alerta Silvio/Payaso fue diagnosticada como caché desincronizado: el reporte local registra la resolución canónica de `8e9fe9a`, mientras el bridge estaba congelado en `939752c`. La evidencia y los criterios están documentados en `2026-08-15_Reconciliacion_Publicaciones_15_16_CNT.md`, `GrowthOS/Integracion_Growth_OS.md` y `2026-08-15_Reclasificacion_Canon_vs_Reconciliacion.json`.
 
 | Estado actual | Pendiente real | Prioridad |
 |---|---|---:|
 | Facebook 15–16 | No requiere otra reconciliación de identidad; falta extraer métricas en ventanas válidas. | P0 |
 | Instagram 15–16 | 2608030 está registrado como publicación manual; 260583 permanece eliminado y bloqueado contra republicación. | Cerrado / controlado |
 | Scheduler Instagram | Está en `pause`, conserva el cron aprobado, ya no tiene `intervalSeconds` y solo mantiene el conector de Meta Graph API. Antes de reactivarlo habrá que verificar el modo de ejecución. | Controlado |
-| Canon | Resolver la contradicción `Silvio`/`Payaso` y los 13 registros `Canon_Review_Required`. | P0 |
+| Canon | Silvio/Payaso ya está resuelto en la evidencia canónica registrada; queda CNT-004 como única contradicción narrativa sustantiva y deben mantenerse separados los motivos administrativos de revisión. | P1 |
 | Aprendizaje | Completar 24/72 horas y cerrar `HB-003`, `HB-004` y `HB-005`; actualizar baseline. | P0 |
 | Calendario 17–30 | Producir y aprobar las 46 piezas nuevas; verificar los 28 reuse y dejar vacíos los slots no listos. | P1 |
 | Make y documentación | Retirar referencias activas a Make y normalizar primero los documentos de control. | P1 |
@@ -119,19 +121,25 @@ El estado live consultado después de la limpieza está en `pause`, conserva el 
 
 No hay evidencia de publicaciones ejecutadas durante esta limpieza. El criterio de cierre operativo alcanzado es un único cron, sin intervalo residual, tarea pausada y solo Meta API adjunta. Queda como control previo a una futura activación validar `runMode` y ejecutar `nothing_due` fuera de ventana.
 
-### 5.3 Make está retirado estratégicamente, pero no completamente retirado del sistema
+### 5.3 El canon ya no tiene un conflicto global Silvio/Payaso
+
+La revisión cruzada corrigió el diagnóstico anterior. `GrowthOS/Canon_Contradictions_Report.md` registra la contradicción #5 como `RESUELTO` el 3 de agosto, con Silvio confirmado como nombre propio de El Payaso y diseño corregido en el commit canónico `8e9fe9a`. El bridge seguía usando la caché del 31 de julio (`939752c`), por lo que la alerta de la auditoría era un problema de sincronización, no una decisión pendiente de Fernando.
+
+El único registro que conserva una contradicción narrativa sustantiva en el inventario es `CNT-004`, asociado a la mini-historia “La Búsqueda del Frasco Olvidado”. Las otras 21 filas que antes compartían `Canon_Review_Required` se reclasificaron con `Motivo_Revision_Normalizado`: aprobación administrativa, restricción no bloqueante, reconciliación de inventario o identidad reconciliada sin conflicto canónico evidente. Ningún cambio convierte `Estado_Canon=Revision` en `Aprobado`.
+
+### 5.4 Make está retirado estratégicamente, pero no completamente retirado del sistema
 
 La decisión estratégica está correcta: Make no debe ser la ruta operativa. El conector Make está actualmente deshabilitado, sin autorización ni herramientas disponibles. Sin embargo, todavía aparece en el snapshot de conectores del scheduler y se menciona en 15 documentos no archivados o sin estado normalizado. `README.md`, `Studio_Governance.md`, algunas guías activas y documentos de producción aún conservan lenguaje de Make.
 
 Esto no significa que Make esté ejecutando publicaciones. Sí significa que un agente o una persona puede leer dos arquitecturas diferentes y no saber cuál es vigente. El remedio no es borrar la guía histórica, sino marcar de forma consistente lo histórico, actualizar governance, README, formatos y colas activas, y retirar Make de cualquier schedule operativo.
 
-### 5.4 El canon y la producción no están sincronizados
+### 5.5 El canon y la producción no están sincronizados
 
-El puente de canon tiene una advertencia explícita: el nombre “Silvio” no existe todavía en canon y no debe usarse hasta confirmación. Al mismo tiempo, el proyecto, el inventario de contenido y los assets recientes utilizan Silvio como personaje recurrente. Esta es una contradicción de gobernanza, no solo un detalle de naming.
+La alerta Silvio/Payaso quedó resuelta como problema de caché. El reporte local de contradicciones registra que Silvio fue confirmado como nombre propio de El Payaso el 3 de agosto, con diseño corregido y aprobado en `8e9fe9a`; el bridge fue actualizado para dejar de repetir la advertencia anterior. El repositorio canónico remoto no pudo consultarse desde esta sesión, por lo que el bridge conserva la evidencia local y exige verificar el HEAD real en la próxima sincronización.
 
-Mientras esa discrepancia exista, no debe considerarse cerrada la validación canónica de los assets de Silvio. Fernando o Claude deben confirmar la identidad y el nombre canónico; después Manus debe actualizar el puente `Integracion_Growth_OS.md`, el inventario y cualquier documento de producción relacionado. El mismo documento deja pendientes reglas de diseño para otros personajes y lugares, por lo que la sincronización del caché no está completa.
+El inventario ahora separa el motivo de revisión del estado canónico mediante `Motivo_Revision_Normalizado`. De las 22 filas que antes compartían `Canon_Review_Required`, solo `CNT-004` queda como contradicción narrativa sustantiva; 21 se clasifican como aprobación administrativa, restricción no bloqueante, reconciliación de inventario, canon resuelto o identidad reconciliada sin conflicto evidente. Ninguna transición a `Aprobado` fue ejecutada.
 
-### 5.5 Hay demasiadas fuentes de calendario e inventario
+### 5.6 Hay demasiadas fuentes de calendario e inventario
 
 El Growth OS declara que el inventario estructurado es la fuente central y que las colas son vistas filtradas. En la práctica conviven `Content_Inventory.csv`, calendarios Markdown, calendarios CSV de investigación, la propuesta de 74 slots, la cola de reuse, el inventario de Drive y el pipeline multi-marca de Fernando.
 
@@ -141,7 +149,7 @@ El calendario 15–16 también mezcla aprobación del plan con estado de publica
 
 **Criterio de cierre:** una fila maestra por pieza, una tabla de publicaciones por plataforma y una tabla de experimentos; el calendario debe ser una vista, no otra fuente paralela de estado.
 
-### 5.6 La documentación no está normalizada
+### 5.7 La documentación no está normalizada
 
 El escaneo del repositorio encontró 75 Markdown y 480 archivos totales. No se detectaron enlaces locales rotos, lo cual es positivo. Sin embargo, 71 de 75 Markdown no contienen todos los campos de metadatos exigidos por la gobernanza actual. El problema incluye documentos históricos, pero también documentos que siguen marcados `Active` o que todavía aparecen como fuente operativa.
 
@@ -151,7 +159,7 @@ La deuda no debe resolverse reescribiendo todo de una vez. Conviene normalizar p
 
 | Etapa | Fuente o componente | Estado actual | Brecha principal |
 |---|---|---|---|
-| Canon | Repo `universe-sent-me-1` + caché `Integracion_Growth_OS.md` | Parcial | Caché atrasado y conflicto Silvio/Payaso; varias fichas pendientes. |
+| Canon | Repo `universe-sent-me-1` + caché `Integracion_Growth_OS.md` | Parcial | Silvio ya está sincronizado; CNT-004 y algunas fichas administrativas siguen en revisión. |
 | Idea e inventario | `Content_Inventory.csv`, Drive, colas | Parcial | IDs, estados y bloqueos no están unificados. |
 | Selección editorial | Calendario Markdown/CSV + HypothesisBank | Funcional pero fragmentada | Varias fuentes y aprobación de plan mezclada con aprobación de pieza. |
 | Producción | 38 assets nuevos + 46 slots por generar | Incompleta | La capacidad de completar el experimento aún no está cerrada. |
@@ -168,7 +176,7 @@ La deuda no debe resolverse reescribiendo todo de una vez. Conviene normalizar p
 | Prioridad | Riesgo | Probabilidad | Impacto | Criterio de cierre |
 |---|---|---:|---:|---|
 | P1 | El scheduler de Instagram está limpio y pausado, pero conserva `runMode=ask_user` y requiere una prueba de no-op antes de reactivarse. | Media | Medio | Verificar modo compatible y ejecutar `nothing_due` sin publicar. |
-| P0 | El caché de canon permite producción con una contradicción activa sobre Silvio. | Alta | Alto | Confirmación de Fernando/Claude y actualización de puente, inventario y documentos relacionados. |
+| P1 | CNT-004 conserva contradicciones narrativas sustantivas; el resto de los antiguos `Canon_Review_Required` debe leerse por motivo normalizado. | Media | Medio | Mantener CNT-004 bloqueado para esa mini-historia y no confundir revisiones administrativas con aprobación canónica. |
 | P0 | El ciclo de aprendizaje sigue abierto: el `ExperimentLog` ya existe, pero las métricas 24/72 horas y los veredictos siguen pendientes. | Alta | Alto | Extraer métricas en ventanas válidas, cerrar `HB-003`/`HB-004`/`HB-005` y actualizar la baseline. |
 | P1 | Calendarios e inventarios usan estados, IDs y estructuras no uniformes. | Alta | Alto | Esquema maestro con ID de pieza, asset, plataforma, estado de canon, estado de publicación e IDs Meta. |
 | P1 | El experimento 17–30 tiene 46 assets nuevas sin generar/aprobar y 38 assets nuevos de Drive pendientes de revisión. | Alta | Alto | Confirmar capacidad, producir y aprobar la cola; no rellenar huecos con reuse improvisado. |
@@ -180,7 +188,7 @@ La deuda no debe resolverse reescribiendo todo de una vez. Conviene normalizar p
 
 ### Próximas 24 horas: estabilizar el control plane
 
-La limpieza del scheduler ya fue ejecutada sin publicar nada: se retiró el intervalo residual y se dejó únicamente Meta Graph API adjunta. Antes de reactivarlo, queda validar el modo de ejecución y hacer una prueba `nothing_due`. En paralelo, debe tratarse `Publication_Log.csv` como fuente de estado real; el calendario 15–16 queda como vista histórica de planeación. La expansión del calendario experimental debe permanecer congelada hasta confirmar la resolución del conflicto de canon de Silvio y la disponibilidad real de las 46 piezas nuevas.
+La limpieza del scheduler ya fue ejecutada sin publicar nada: se retiró el intervalo residual y se dejó únicamente Meta Graph API adjunta. Antes de reactivarlo, queda validar el modo de ejecución y hacer una prueba `nothing_due`. En paralelo, debe tratarse `Publication_Log.csv` como fuente de estado real; el calendario 15–16 queda como vista histórica de planeación. La expansión del calendario experimental debe permanecer congelada hasta confirmar la disponibilidad real de las 46 piezas nuevas y que ninguna pieza use la mini-historia bloqueada de CNT-004 sin reescritura.
 
 ### Próximos 7 días: cerrar trazabilidad y aprendizaje
 
@@ -207,7 +215,7 @@ La automatización futura debe concentrarse primero en tareas deterministas de b
 | `README.md` | Reemplazar la descripción que todavía presenta Make como parte de la arquitectura principal. |
 | `Studio_Governance.md` | Actualizar el flujo semanal que todavía menciona Make como generador de calendario y extractor de métricas. |
 | `GrowthOS/00_Índice.md` | Marcar fuentes históricas, incorporar este reporte y aclarar cuál es el calendario operativo vigente. |
-| `GrowthOS/Integracion_Growth_OS.md` | Actualizar el caché de canon, resolver Silvio/Payaso y definir el `ExperimentLog` operativo. |
+| `GrowthOS/Integracion_Growth_OS.md` | Mantener el caché sincronizado con el HEAD canónico; Silvio ya fue corregido y el bridge registra la limitación de verificación remota de esta sesión. |
 | `GrowthOS/01_00_Arquitectura_Calendario_Escalable.md` | Añadir la separación entre pieza maestra, publicación por plataforma y experimento. |
 | `GrowthOS/01_01_Calendario_Semanal.md` | Reemplazar el tablero W01 desactualizado o marcarlo como histórico. |
 | `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md` | Sincronizar horarios, cross-posting y regla de aprendizaje con la prueba actual. |

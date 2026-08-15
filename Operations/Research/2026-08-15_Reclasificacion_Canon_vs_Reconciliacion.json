@@ -1,0 +1,25 @@
+{
+  "total_rows": 39,
+  "classified_rows": 22,
+  "new_field": "Motivo_Revision_Normalizado",
+  "historical_fields_preserved": true,
+  "motivo_counts": {
+    "Inventario_Reconciliacion_Pendiente": 1,
+    "Canon_Contradiccion_Sustantiva": 1,
+    "Canon_Aprobacion_Administrativa": 7,
+    "Canon_Restriccion_No_Bloqueante": 3,
+    "Canon_Resuelto_Reconciliacion_Pendiente": 1,
+    "Identidad_Reconciliada_Sin_Conflicto_Canon_Evidente": 9
+  },
+  "estado_canon_normalizado_after": {
+    "Canon_Clear_or_Unverified": 33,
+    "Canon_Review_Required": 1,
+    "Canon_Constrained": 4,
+    "Canon_Partial": 1
+  },
+  "canon_review_required_after": 1,
+  "canon_review_required_id_after": [
+    "CNT-004"
+  ],
+  "notes": "Motivo_Revision_Normalizado is an administrative/diagnostic classification and does not approve canon states."
+}

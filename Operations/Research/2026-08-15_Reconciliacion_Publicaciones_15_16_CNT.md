@@ -4,7 +4,7 @@ purpose: "Registrar la reconciliación verificable entre los nueve assets public
 status: Active
 created: 2026-08-15
 updated: 2026-08-15
-version: "1.3"
+version: "1.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
@@ -52,6 +52,8 @@ Esta publicación **no fue una programación futura nativa de Instagram ni una e
 ## Reglas de canon y estado
 
 Los nueve registros nuevos conservan los campos históricos requeridos y reciben `Estado_Canon=Revision`, `Estado_Produccion=Asset_Listo` y `Estado_Publicacion=Publicada` en la fuente maestra. `Revision` no significa aprobación de canon: Fernando o Claude deben decidir cualquier estado protegido. La reconciliación confirma identidad y publicación, no canon narrativo.
+
+La revisión posterior del flag `Canon_Review_Required` distinguió ambos ejes. De las 22 filas que lo tenían en `estado_canon_normalizado`, solo `CNT-004` conserva una contradicción narrativa sustantiva. Las otras 21 recibieron `Motivo_Revision_Normalizado` para indicar aprobación administrativa, restricción no bloqueante, reconciliación de inventario, canon resuelto o identidad reconciliada sin conflicto canónico evidente. Este cambio es una clasificación diagnóstica y no aprueba ninguna pieza.
 
 `260583` queda registrado porque el post de Facebook del 15 de agosto tiene un Meta Post ID real; la prohibición de republicación se aplica a la prueba de Instagram eliminada y queda reflejada en `CNT-032`, `PUB-IG-TEST-02`, el calendario y las notas del ledger. No se crea una nueva publicación ni se programa una republicación.
 

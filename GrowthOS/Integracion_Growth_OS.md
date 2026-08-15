@@ -7,8 +7,8 @@
 | Campo | Valor |
 | :--- | :--- |
 | **Última sincronización** | 2026-08-15 |
-| **Fuente de canon** | Repo GitHub: `iomarketing09-sys/universe-sent-me-1` (commit `939752c`) |
-| **Estado del documento** | v2.3 — Graph API de Meta como ruta operativa; Make archivado; fuente maestra y ledgers implementados; HB-003/HB-004/HB-005 en prueba |
+| **Fuente de canon** | Repo GitHub: `iomarketing09-sys/universe-sent-me-1`; resolución de Silvio registrada en canon como commit `8e9fe9a` y reflejada en `GrowthOS/Canon_Contradictions_Report.md` (commit local `c9730ee6`). |
+| **Estado del documento** | v2.4 — Caché de canon corregido para Silvio; Graph API de Meta como ruta operativa; Make archivado; fuente maestra y ledgers implementados; HB-003/HB-004/HB-005 en prueba |
 | **Propietario** | Manus (Manus AI) |
 | **Guardián de Canon** | Claude (vía repo GitHub) |
 | **Aprobador final** | Fernando |
@@ -28,7 +28,7 @@
 | Wilfred | `@char_USM_wilfred` | Guardián del bosque con barba blanca larga, gorro rojo, personalidad enfocada en sabiduría y humor seco. No moraliza explícitamente ni diagnostica a otros personajes. | `02 Personajes/Primer Círculo/Wilfred/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
 | Elara | `@char_USM_elara` | Lectora de cartas mágicas conectada con astrología y naturaleza. Rol diferenciado de Universe (no es tarotista principal — ese es Universe). | `02 Personajes/Primer Círculo/Elara/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
 | Ganso | `@char_USM_ganso` | *(Pendiente: consultar ficha canónica para regla de diseño activa)* | `02 Personajes/Primer Círculo/Ganso/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
-| Payaso | `@char_USM_payaso` | *(Pendiente: consultar ficha canónica para regla de diseño activa)* **Nota:** El nombre "Silvio" NO existe en canon. No usar hasta confirmación explícita. | `02 Personajes/Primer Círculo/Payaso/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
+| Payaso / Silvio | `@char_USM_payaso` | Silvio es el nombre propio confirmado de El Payaso. El diseño corregido y su expresión aprobada quedaron registrados en canon; `#SilvioUSM` está autorizado. | `02 Personajes/Primer Círculo/Payaso/03 Reglas de diseño.md`, `GrowthOS/Canon_Contradictions_Report.md` | 2026-08-03 (canon commit `8e9fe9a`; constancia local `c9730ee6`) |
 
 ### 1.2 Personajes — Segundo Círculo
 
@@ -130,7 +130,8 @@ El sistema se compone de:
 | :--- | :--- | :--- | :--- |
 | 2026-07-31 | Creación del documento puente (v1.0) | Repo `iomarketing09-sys/universe-sent-me-1` (commit `cf2ac53`) | Manus |
 | 2026-07-31 | Implementación de arquitectura escalable (v2.0) | Repo `iomarketing09-sys/universe-sent-me-1` (commit `939752c`) | Manus |
-| — | *(próxima actualización)* | *(pendiente)* | — |
+| 2026-08-03 | Resolución de Silvio y diseño corregido | Canon commit `8e9fe9a`, registrado en `Canon_Contradictions_Report.md` | Fernando vía Claude |
+| 2026-08-15 | Resincronización del caché para corregir la falsa alerta Silvio/Payaso | Growth OS local: commit `c9730ee6`; HEAD remoto del repo de canon no verificable en esta sesión | Manus |
 
 ---
 
@@ -142,5 +143,6 @@ El sistema se compone de:
 4. El campo `Estado` en el Calendario Editorial es un **bloqueo operativo**, no una etiqueta. Manus no puede publicarlo si no dice literalmente "Aprobado".
 5. El cambio de estado a "Aprobado" solo lo puede hacer Fernando o Claude. Nunca Manus, nunca una regla automática.
 6. Antes de cada sesión de trabajo, Manus debe verificar si el commit de referencia sigue siendo el HEAD del repo. Si no, debe marcar las reglas como desactualizadas.
-7. **Nueva (v2.0):** La arquitectura completa del calendario vive en `GrowthOS/` del repositorio. Este documento mantiene la vista condensada del Calendario Editorial y el HypothesisBank.
-8. **Nueva (v2.3):** Para ahorrar consultas y tokens, solo se consultan deltas de publicaciones y comentarios desde la última sincronización; no se vuelve a descargar toda la historia en cada sesión.
+7. En esta resincronización, el repo canónico no estuvo disponible para consulta remota desde la sesión; por eso `8e9fe9a` se trata como evidencia canónica registrada por Claude/Fernando en el reporte local, no como una comprobación remota nueva. La próxima lectura debe verificar el HEAD real antes de sobrescribir otra vez el bridge.
+8. **Nueva (v2.0):** La arquitectura completa del calendario vive en `GrowthOS/` del repositorio. Este documento mantiene la vista condensada del Calendario Editorial y el HypothesisBank.
+9. **Nueva (v2.3):** Para ahorrar consultas y tokens, solo se consultan deltas de publicaciones y comentarios desde la última sincronización; no se vuelve a descargar toda la historia en cada sesión.

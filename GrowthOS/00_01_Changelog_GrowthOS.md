@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.64
+**Versión:** 1.66
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -29,8 +29,8 @@
 - La cadencia no autoriza a sustituir un snapshot exacto de 24 horas por un total acumulado de lifetime. Si Meta no permite reconstruir retrospectivamente la ventana, se registra la limitación y no se inventa el valor.
 ### Estado vigente del Growth OS
 - La reconciliación Facebook 15–16 y la fuente maestra están cerradas; el pendiente P0 es completar métricas/veredictos de `HB-003`, `HB-004` y `HB-005` y actualizar la baseline.
-- Siguen como P0 completar métricas/veredictos de `HB-003`, `HB-004` y `HB-005`, actualizar la baseline y resolver el conflicto de canon Silvio/Payaso. El scheduler quedó controlado y pausado; antes de reactivarlo solo falta validar el modo y ejecutar una prueba `nothing_due`. Como P1 quedan producir/aprobar las 46 piezas nuevas del calendario 17–30, revisar los 28 reuse y retirar referencias activas a Make. Como P2 queda crear el ledger ligero de comentarios y registrar cobertura de respuestas.
-- Se actualizó `Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md` a la versión 1.2 y `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` a la versión 1.2.
+- Siguen como P0 completar métricas/veredictos de `HB-003`, `HB-004` y `HB-005` y actualizar la baseline. Silvio/Payaso ya no es un P0: la alerta fue un caché desincronizado y el bridge quedó corregido. Como P1 quedan CNT-004 por sus contradicciones narrativas sustantivas, producir/aprobar las 46 piezas nuevas del calendario 17–30, revisar los 28 reuse y retirar referencias activas a Make. Como P2 queda crear el ledger ligero de comentarios y registrar cobertura de respuestas.
+- Se actualizó `Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md` a la versión 1.3, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` a la versión 1.3 y `GrowthOS/Integracion_Growth_OS.md` a la versión 2.4.
 
 ---
 
@@ -40,6 +40,22 @@
 - `Publication_Log.csv` y `ExperimentLog.csv` registraron la revisión no elegible sin inventar snapshots ni totales acumulados.
 - El scheduler de Instagram quedó pausado y limpiado: se retiró `intervalSeconds`, se conservó el cron aprobado y se dejó únicamente `Universe Sent Me Meta API` adjunto. No se publicó contenido durante la operación.
 - Se actualizó `Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md` a la versión 1.2 y `Operations/Research/2026-08-15_Reconciliacion_Publicaciones_15_16_CNT.md` a la versión 1.3.
+
+---
+
+## [1.2.65] — 2026-08-15 (Manus)
+### Corrección de canon y clasificación de inventario
+- Se verificó localmente que `Canon_Contradictions_Report.md` marca la contradicción Silvio/Payaso como `RESUELTO` el 2026-08-03, con nombre y diseño corregido registrados bajo el commit canónico `8e9fe9a`. El bridge estaba congelado en `939752c`; se actualizó a v2.4. El repositorio canónico remoto no fue accesible desde esta sesión, por lo que la próxima sincronización debe comprobar su HEAD real.
+- Se reclasificaron las 22 filas que compartían `estado_canon_normalizado=Canon_Review_Required` mediante `Motivo_Revision_Normalizado`, preservando `estado`, `bloqueado_canon` y `Estado_Canon=Revision`. Solo `CNT-004` conserva `Canon_Review_Required`; 21 filas ahora distinguen reconciliación, aprobación administrativa, restricción no bloqueante, canon resuelto o identidad reconciliada sin conflicto evidente.
+- Se actualizó `Operations/Research/2026-08-15_Reclasificacion_Canon_vs_Reconciliacion.json`, `Operations/Research/2026-08-15_Reconciliacion_Publicaciones_15_16_CNT.md` a v1.4, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` a v1.3, `GrowthOS/00_Índice.md` a v3.3 y la auditoría general a v1.3.
+
+---
+
+## [1.2.66] — 2026-08-15 (Manus)
+### Cierre de sincronización y clasificación
+- Se marcó `Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.md` como `Superseded`; su conteo original de 13 `Canon_Review_Required` se conserva solo como snapshot histórico.
+- Se confirmó que el campo histórico `bloqueado_canon` de `CNT-009` conserva una advertencia antigua sobre Silvio, mientras `Motivo_Revision_Normalizado=Canon_Resuelto_Reconciliacion_Pendiente` y el bridge actualizado registran la resolución canónica de `8e9fe9a`.
+- No se aprobó canon nuevo. `Estado_Canon=Revision` se conserva donde correspondía y la única contradicción canónica sustantiva vigente en el inventario es `CNT-004`.
 
 ---
 

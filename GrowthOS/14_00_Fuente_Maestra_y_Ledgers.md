@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-15
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -75,8 +75,24 @@ La fuente maestra debe conservar los campos narrativos y de flujo que ya existen
 | `Estado_Produccion` | `Idea`, `En_Produccion`, `Asset_Listo`, `Pendiente_Revision`. |
 | `Estado_Publicacion` | `No_Publicada`, `Programada`, `Publicada`, `Archivada`, `Error`. |
 | `Ultima_Sincronizacion` | Fecha de la última reconciliación del registro. |
+| `Motivo_Revision_Normalizado` | Clasifica por qué una pieza permanece en `Revision` sin convertir el motivo en una aprobación de canon. |
 
 Estos campos deben eliminar la necesidad de interpretar texto libre como “Draft v2”, “pendiente aprobación” o “bloqueado por continuidad” cada vez que se genere un calendario.
+
+### 4.1 Distinción entre canon y reconciliación administrativa
+
+`Estado_Canon` y `estado_canon_normalizado` expresan la condición canónica de la pieza, pero no deben absorber cualquier problema de inventario. `Motivo_Revision_Normalizado` separa las causas que mantienen un registro en revisión:
+
+| Motivo | Uso |
+|---|---|
+| `Canon_Contradiccion_Sustantiva` | Existe una contradicción narrativa o de diseño que sí requiere revisión canónica. Actualmente: `CNT-004`. |
+| `Canon_Aprobacion_Administrativa` | La pieza espera una aprobación o ficha formal, sin que el inventario evidencie una contradicción sustantiva. |
+| `Canon_Restriccion_No_Bloqueante` | Existe una regla de continuidad que debe observarse, pero no constituye por sí sola un bloqueo de canon para la capa libre. |
+| `Canon_Resuelto_Reconciliacion_Pendiente` | La identidad canónica fue resuelta, pero falta cerrar la relación de inventario o asset. Actualmente: `CNT-009`, cuyo nombre Silvio está confirmado en `8e9fe9a`. |
+| `Inventario_Reconciliacion_Pendiente` | Falta una coincidencia CNT↔260/Drive; no es una aprobación creativa. |
+| `Identidad_Reconciliada_Sin_Conflicto_Canon_Evidente` | La pieza fue creada o reconciliada a partir de asset, caption y Meta ID, sin evidencia de contradicción canónica. Actualmente: `CNT-031`–`CNT-039`. |
+
+La reclasificación del 15 de agosto dejó **1** registro en `Canon_Review_Required` (`CNT-004`), **4** en `Canon_Constrained`, **1** en `Canon_Partial` y **33** en `Canon_Clear_or_Unverified`. Esto no aprueba ninguna pieza: el estado operativo `Estado_Canon=Revision` se conserva y cualquier transición a `Aprobado` sigue reservada a Fernando o Claude. La evidencia completa está en `Operations/Research/2026-08-15_Reclasificacion_Canon_vs_Reconciliacion.json`.
 
 ## 5. Diseño de bajo consumo de tokens
 
@@ -148,3 +164,4 @@ Los estados de canon y aprobación no se cambian automáticamente. Fernando o Cl
 [6]: `../Operations/Research/2026-08-15_ExperimentLog.csv` — Primer ledger experimental implementado.
 [7]: https://developers.facebook.com/docs/graph-api/reference/post/insights/ — parámetros `since`, `until`, `period` y métricas de Post Insights.
 [8]: https://developers.facebook.com/documentation/pages-api/platforminsights/page — limitaciones y actualización de Page Insights.
+[9]: `../Operations/Research/2026-08-15_Reclasificacion_Canon_vs_Reconciliacion.json` — distribución de motivos de revisión canónica y administrativa.

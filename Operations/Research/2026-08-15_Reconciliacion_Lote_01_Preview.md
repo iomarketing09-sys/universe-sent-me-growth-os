@@ -1,7 +1,11 @@
 # Preview de reconciliación — lote 1
 
-**Estado:** Active
+**Estado:** Superseded — reemplazado por la clasificación de `Motivo_Revision_Normalizado` en `GrowthOS/Content_Inventory.csv` y `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`.
 **Fecha:** 2026-08-15
+**Última actualización:** 2026-08-15
+**Versión:** 1.1
+**Propósito:** Conservar el snapshot histórico del lote inicial y señalar que su distribución de 13 `Canon_Review_Required` ya no es el estado operativo actual.
+**Documentos relacionados:** `GrowthOS/Content_Inventory.csv`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `Operations/Research/2026-08-15_Reclasificacion_Canon_vs_Reconciliacion.json`
 **Regla:** las resoluciones se basan en evidencia documental, Meta y Drive; ningún `260####` fue marcado como asset confirmado.
 
 ## Distribución propuesta de estados
@@ -14,7 +18,7 @@
 | Estado operativo `Pending_Approval` | 2 |
 | Estado operativo `Idea` | 17 |
 | Estado operativo `Draft_Pending_Approval` | 3 |
-| Estado canon `Canon_Review_Required` | 13 |
+| Estado canon histórico `Canon_Review_Required` | 13 (snapshot original; no es el conteo operativo actual) |
 | Estado canon `Canon_Clear_or_Unverified` | 13 |
 | Estado canon `Canon_Constrained` | 1 |
 | Estado canon `Canon_Partial` | 1 |
@@ -40,5 +44,7 @@ Se añadieron columnas normalizadas sin borrar ni sobrescribir `estado` o `bloqu
 `CNT-023` queda completamente trazable como conjunto de 7 assets de Drive, con relación a `CNT-002` como episodio 1 y con una publicación de Facebook confirmada. Su `Meta_Post_ID`, Reel ID, permalink, fecha y caption ya están en el inventario y en `Publication_Log`. `CNT-029` y `CNT-030` ya fueron incorporados al inventario como registros completos, relacionados entre sí, en Draft y sin publicación Meta confirmada. `CNT-002` queda cerrado a nivel de publicación y conjunto de producción.
 
 ## Estado final
+
+Este preview conserva el snapshot histórico del primer lote. Para el estado operativo vigente debe consultarse `Content_Inventory.csv`: 22 filas habían heredado el flag `Canon_Review_Required`, pero ahora solo `CNT-004` conserva ese estado por contradicción narrativa sustantiva; las otras 21 tienen un motivo normalizado separado.
 
 Las cuatro excepciones originales quedaron resueltas a nivel de registro y trazabilidad. CNT-002 ya no tiene una excepción abierta: el post real y el conjunto de producción fueron identificados. Queda únicamente una nota histórica: no se conserva el nombre del render final como archivo `260####`, por lo que el inventario no crea una falsa precisión.
