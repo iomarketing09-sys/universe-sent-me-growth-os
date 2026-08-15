@@ -11,8 +11,8 @@ dependencias:
 **Propósito:** Documentar el pipeline de publicación real que usa Fernando (script propio en PyCharm, con Gemini, publicando vía Meta Graph API) y establecer el estándar de exportación CSV que cualquier calendario de Growth OS debe producir para poder alimentarlo directamente, sin reformateo manual.
 **Estado:** Active
 **Fecha de creación:** 2026-08-12
-**Última actualización:** 2026-08-14
-**Versión:** 1.5
+**Última actualización:** 2026-08-15
+**Versión:** 1.7
 **Autor:** Claude, documentando información provista por Fernando; actualización de Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `05_03_Calendario_10_16_Agosto.md` (y calendarios futuros), `GrowthOS/00_01_Changelog_GrowthOS.md`, `GrowthOS/00_Índice.md`
 
@@ -56,7 +56,7 @@ Fernando ya tiene un **script funcional en PyCharm, usando la API de Gemini, que
 - **Facebook Graph API:** programación real validada el 2026-08-15. El token de entorno se comporta como User Access Token; Manus deriva en memoria el Page Access Token mediante `/me/accounts`, selecciona la Página real `1036844829507460` y usa `/page_id/photos` para carga temporal seguida de `/page_id/feed` con `attached_media[0]`, `published=false`, `scheduled_publish_time` y `unpublished_content_type=SCHEDULED`. La primera prueba programó 9 posts correctamente y devolvió `is_published=false` en la verificación posterior.
 - **Instagram Graph API:** auditoría directa completada el 2026-08-15. `@universe_sent_me_0326` (`17841462696378190`) responde HTTP 200, la Página está vinculada, `instagram_basic` e `instagram_content_publish` están concedidos, la Página devuelve `CREATE_CONTENT`/`MANAGE`, la lectura de media funciona y la cuota consultada está en `0/100` contenedores en 24 horas. La publicación inmediata de 260583 fue validada y luego eliminada manualmente; la programación nativa con `scheduled_publish_time` devolvió `User must be on whitelist`.
 - **Ejecución:** Manus prepara, valida y ejecuta las órdenes de publicación mediante Graph API. En Facebook se usa la programación nativa de Page Feed. En Instagram se crea un contenedor en `/{ig_id}/media`, se verifica su estado y se publica mediante `/{ig_id}/media_publish`; la ejecución futura se resuelve disparando este flujo mediante un scheduler externo en la hora `America/Mexico_City`. El scheduler temporal de 15–16 está activo hasta `2026-08-17T04:30:00Z`, con cron `0 0,30 11,14,17,20 15,16 8 *` en `America/Matamoros`, equivalente a los cinco slots aprobados en `America/Mexico_City`. El runner aplica una ventana de 8 minutos y excluye `260583` por `ELIMINADA_MANUALMENTE`. Las cinco imágenes se alojan una sola vez en URLs temporales antes del periodo de ejecución; cada despertar reutiliza la URL preparada y no vuelve a descargar, copiar ni subir archivos de Drive.
-- **Token:** se usan tokens temporales. El token almacenado en el conector es un token de usuario; Manus deriva en memoria el Page Access Token de Universe Sent Me para llamadas de Página. Si el token expira, la programación y lectura quedan bloqueadas hasta reemplazarlo.
+- **Token:** el conector contiene actualmente un token de usuario de larga duración. Manus deriva en memoria el Page Access Token de Universe Sent Me para llamadas de Página. Si el token expira o se revoca, la programación y lectura quedan bloqueadas hasta reemplazarlo.
 - **Ruta de imagen:** el archivo usa **dos columnas separadas** — `Archivo` (solo filename) y `Ruta_Completa` (ruta local absoluta). Un calendario de Growth OS que quiera ser exportable a este formato necesita poder producir ambas, y la ruta completa depende de la carpeta real donde Fernando tiene cada asset (que varía por mes/proyecto, como ya se vio con las carpetas `05 Mayo`, `flexi/Quirelli`, etc.).
 
 ## 3. Archivado posterior a la publicación
