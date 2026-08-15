@@ -30,12 +30,14 @@
 ---
 
 ## [1.2.46] — 2026-08-15 (Manus)
-### Ejecución scheduler Instagram 15–16
-- Se ejecutó `Operations/Production/run_instagram_15_16_scheduler.py` a las 00:16:21 en `America/Mexico_City`.
-- Resultado: `nothing_due`; no había ningún slot dentro de la ventana válida de ocho minutos, por lo que no se realizaron llamadas `media`, verificación ni `media_publish`.
+### Optimización y primera verificación del scheduler Instagram 15–16
+- Se corrigió la preparación inicial de assets para que `gws drive files get` descargue a nombres temporales seguros dentro de su directorio de trabajo.
+- Las cinco imágenes aprobadas para Instagram se alojaron una sola vez en URLs temporales y se guardaron en `/home/ubuntu/instagram_15_16_public_urls.json`.
+- `run_instagram_15_16_scheduler.py` dejó de descargar desde Drive y ejecutar `manus-upload-file` en cada despertar; ahora reutiliza exclusivamente el manifiesto de URLs, conserva la ventana de 8 minutos, la idempotencia, la exclusión de `260583` y la protección de Facebook.
+- La tarea `USM Instagram 15-16 Agosto` quedó activa con 16 despertares candidatos, `runAsNewTask=true`, zona `America/Matamoros` y expiración `2026-08-17T04:30:00Z`.
+- Se ejecutó el runner a las 00:16:21 en `America/Mexico_City` y devolvió `nothing_due`; no había ningún slot dentro de la ventana válida de ocho minutos, por lo que no se realizaron llamadas `media`, verificación ni `media_publish`.
 - No se generaron IDs de contenedor, IDs de media ni errores de Meta. Facebook no fue modificado y `scheduled_publish_time` no fue utilizado.
-- Se confirmó la exclusión de `260583 - Universe.png` por `ELIMINADA_MANUALMENTE`.
-- El detalle operativo quedó registrado en `Operations/Production/instagram_15_16_scheduler_playbook.md`; no se requiere actualizar CSV ni estado local porque no hubo filas procesadas.
+- Se confirmó la exclusión de `260583 - Universe.png` por `ELIMINADA_MANUALMENTE`; no se requiere actualizar CSV ni estado local porque no hubo filas procesadas.
 
 ---
 

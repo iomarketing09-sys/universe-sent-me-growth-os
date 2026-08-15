@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import csv, json, os, re, subprocess, tempfile, time
+import csv, json, os, time
 from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -9,7 +9,7 @@ BASE = 'https://graph.facebook.com/v26.0'
 TZ = ZoneInfo('America/Mexico_City')
 REPO = Path('/home/ubuntu/universe-sent-me-growth-os')
 CALENDAR = REPO / 'Operations/Research/2026-08-15_Calendario_15_16_Agosto.csv'
-MAP_FILE = Path('/home/ubuntu/approved_assets_map.json')
+PUBLIC_URLS_FILE = Path('/home/ubuntu/instagram_15_16_public_urls.json')
 STATE_FILE = Path('/home/ubuntu/instagram_scheduler_15_16_state.json')
 TARGET_DATES = {'2026-08-15', '2026-08-16'}
 
@@ -33,23 +33,12 @@ def derive_page_token():
     return page['access_token'], page['instagram_business_account']['id']
 
 
-def find_drive_file_id(filename):
-    manifest = load_json(MAP_FILE, {})
-    if filename in manifest:
-        return manifest[filename]
-    # The manifest is the source of truth for the approved nine assets; do not guess a Drive file.
-    raise RuntimeError(f'No approved Drive ID for exact filename: {filename}')
-
-
-def public_asset_url(filename, workdir):
-    file_id = find_drive_file_id(filename)
-    local = workdir / Path(filename).name
-    subprocess.run(['gws', 'drive', 'files', 'get', '--params', json.dumps({'fileId': file_id, 'alt': 'media'}), '--output', str(local)], check=True, capture_output=True, text=True)
-    out = subprocess.run(['manus-upload-file', str(local)], check=True, capture_output=True, text=True).stdout
-    match = re.search(r'CDN URL:\s*(\S+)', out)
-    if not match:
-        raise RuntimeError(f'Could not parse CDN URL for {filename}: {out[-500:]}')
-    return match.group(1)
+def public_asset_url(filename):
+    manifest = load_json(PUBLIC_URLS_FILE, {})
+    entry = manifest.get(filename)
+    if not entry or not entry.get('public_url'):
+        raise RuntimeError(f'No prepared temporary URL for exact approved filename: {filename}')
+    return entry['public_url']
 
 
 def publish_row(row, page_token, ig_id, state):
@@ -57,35 +46,34 @@ def publish_row(row, page_token, ig_id, state):
     key = f"{row['Fecha']} {row['Hora']} {filename}"
     if state.get(key, {}).get('ig_media_id') or row.get('IG_Media_ID'):
         return {'key': key, 'status': 'already_done', 'ig_media_id': state.get(key, {}).get('ig_media_id') or row.get('IG_Media_ID')}
-    with tempfile.TemporaryDirectory(prefix='usm-ig-') as td:
-        image_url = public_asset_url(filename, Path(td))
-        r = requests.post(BASE + f'/{ig_id}/media', headers={'Authorization': f'Bearer {page_token}'}, data={'image_url': image_url, 'caption': row['Caption']}, timeout=60)
-        create = r.json()
-        if r.status_code >= 400 or 'id' not in create:
-            state[key] = {'status': 'container_error', 'http_status': r.status_code, 'response': create, 'updated_at': datetime.now(TZ).isoformat()}
-            return state[key]
-        container_id = create['id']
-        state[key] = {'status': 'container_created', 'ig_container_id': container_id, 'updated_at': datetime.now(TZ).isoformat()}
-        save_json(STATE_FILE, state)
-        status = None
-        status_response = {}
-        for _ in range(12):
-            s = requests.get(BASE + f'/{container_id}', headers={'Authorization': f'Bearer {page_token}'}, params={'fields': 'id,status_code,status'}, timeout=30)
-            status_response = s.json(); status = status_response.get('status_code')
-            if status in {'FINISHED', 'PUBLISHED', 'ERROR', 'EXPIRED'}: break
-            time.sleep(5)
-        if status not in {'FINISHED', 'PUBLISHED'}:
-            state[key].update({'status': 'container_not_ready', 'container_status': status_response, 'updated_at': datetime.now(TZ).isoformat()})
-            return state[key]
-        p = requests.post(BASE + f'/{ig_id}/media_publish', headers={'Authorization': f'Bearer {page_token}'}, data={'creation_id': container_id}, timeout=60)
-        publish = p.json()
-        if p.status_code >= 400 or 'id' not in publish:
-            state[key].update({'status': 'publish_error', 'http_status': p.status_code, 'response': publish, 'updated_at': datetime.now(TZ).isoformat()})
-            return state[key]
-        media_id = publish['id']
-        verify = requests.get(BASE + f'/{media_id}', headers={'Authorization': f'Bearer {page_token}'}, params={'fields': 'id,permalink,timestamp,media_type,media_product_type'}, timeout=30).json()
-        state[key].update({'status': 'published', 'ig_media_id': media_id, 'permalink': verify.get('permalink'), 'published_at': verify.get('timestamp'), 'updated_at': datetime.now(TZ).isoformat()})
+    image_url = public_asset_url(filename)
+    r = requests.post(BASE + f'/{ig_id}/media', headers={'Authorization': f'Bearer {page_token}'}, data={'image_url': image_url, 'caption': row['Caption']}, timeout=60)
+    create = r.json()
+    if r.status_code >= 400 or 'id' not in create:
+        state[key] = {'status': 'container_error', 'http_status': r.status_code, 'response': create, 'updated_at': datetime.now(TZ).isoformat()}
         return state[key]
+    container_id = create['id']
+    state[key] = {'status': 'container_created', 'ig_container_id': container_id, 'updated_at': datetime.now(TZ).isoformat()}
+    save_json(STATE_FILE, state)
+    status = None
+    status_response = {}
+    for _ in range(12):
+        s = requests.get(BASE + f'/{container_id}', headers={'Authorization': f'Bearer {page_token}'}, params={'fields': 'id,status_code,status'}, timeout=30)
+        status_response = s.json(); status = status_response.get('status_code')
+        if status in {'FINISHED', 'PUBLISHED', 'ERROR', 'EXPIRED'}: break
+        time.sleep(5)
+    if status not in {'FINISHED', 'PUBLISHED'}:
+        state[key].update({'status': 'container_not_ready', 'container_status': status_response, 'updated_at': datetime.now(TZ).isoformat()})
+        return state[key]
+    p = requests.post(BASE + f'/{ig_id}/media_publish', headers={'Authorization': f'Bearer {page_token}'}, data={'creation_id': container_id}, timeout=60)
+    publish = p.json()
+    if p.status_code >= 400 or 'id' not in publish:
+        state[key].update({'status': 'publish_error', 'http_status': p.status_code, 'response': publish, 'updated_at': datetime.now(TZ).isoformat()})
+        return state[key]
+    media_id = publish['id']
+    verify = requests.get(BASE + f'/{media_id}', headers={'Authorization': f'Bearer {page_token}'}, params={'fields': 'id,permalink,timestamp,media_type,media_product_type'}, timeout=30).json()
+    state[key].update({'status': 'published', 'ig_media_id': media_id, 'permalink': verify.get('permalink'), 'published_at': verify.get('timestamp'), 'updated_at': datetime.now(TZ).isoformat()})
+    return state[key]
 
 
 def main():
