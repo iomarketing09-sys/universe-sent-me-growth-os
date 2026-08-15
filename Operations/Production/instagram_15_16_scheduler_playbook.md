@@ -4,7 +4,7 @@ purpose: Ejecutar de forma autónoma las publicaciones de Instagram aprobadas de
 status: Active
 created: 2026-08-15
 updated: 2026-08-15
-version: 1.0
+version: 1.1
 author: Manus AI
 documents_related:
   - ../../GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md
@@ -23,3 +23,16 @@ Ejecuta esta tarea autónomamente, sin pedir confirmación al usuario:
 6. Conserva la idempotencia usando `/home/ubuntu/instagram_scheduler_15_16_state.json`. Si una fila ya tiene `ig_media_id`, estado `published` o `ELIMINADA_MANUALMENTE`, no la vuelvas a publicar.
 7. Si la publicación es exitosa, registra el ID de contenedor, ID de media, permalink y timestamp en el estado local y actualiza el CSV y Markdown correspondientes. Si Meta devuelve 401, 403 o cualquier error, guarda la respuesta completa y no repitas una creación de contenedor que pueda duplicarse.
 8. El scheduler despierta solo en los grupos de horas candidatos `10:00`, `10:30`, `13:00`, `13:30`, `16:00`, `16:30`, `19:00` y `19:30`; el runner filtra el minuto exacto y deja pasar únicamente el slot correspondiente. Al final informa únicamente el resultado de esta ejecución; no publiques assets fuera del 15–16 de agosto.
+
+## Registro de ejecución
+
+### 2026-08-15 00:11:13 America/Mexico_City
+
+- Resultado: `nothing_due`.
+- Filas procesadas: 0.
+- IDs de contenedor: ninguno.
+- IDs de media: ninguno.
+- Errores de Meta: ninguno; no se realizaron llamadas de publicación porque ningún slot estaba dentro de la ventana válida de ocho minutos.
+- Facebook: sin cambios.
+- Exclusión confirmada: `260583 - Universe.png` no fue recuperada ni publicada.
+- `scheduled_publish_time`: no utilizado.
