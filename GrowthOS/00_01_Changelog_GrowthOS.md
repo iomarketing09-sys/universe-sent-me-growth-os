@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.36
+**Versión:** 1.37
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -26,6 +26,13 @@
 - Se registraron los permisos efectivos y las cuentas vinculadas en `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`.
 
 ---
+
+---
+
+## [1.2.37] — 2026-08-15 (Manus)
+### Corregido
+- Se reemplazaron los hashtags provisionales del calendario `Operations/Research/2026-08-15_Calendario_15_16_Agosto.csv` y su versión Markdown por etiquetas del roster oficial de `GrowthOS/10_00_Kit_de_Hashtags_USM.md`.
+- Se validó que no quedaran hashtags inventados ni nombres de personajes fuera del kit; Kael no recibe hashtag propio porque su identificador canónico aún no está confirmado.
 
 ---
 
