@@ -95,13 +95,15 @@ Esta arquitectura reduce llamadas repetidas, evita que el agente relea documento
 
 El primer `ExperimentLog` ya contiene seis observaciones históricas de junio–agosto y nueve publicaciones de Facebook programadas para el 15–16 de agosto. El `Publication_Log` contiene las nueve órdenes de Facebook y la prueba de Instagram que fue eliminada manualmente. Las métricas 24/72 horas de las nueve publicaciones quedan pendientes hasta que exista una ventana temporal válida.
 
-El lote 1 de normalización cubrió las 28 filas actuales de `Content_Inventory.csv`. Se preservaron todas las columnas originales y se añadieron campos normalizados para estado operativo, estado de canon, asset confirmado, asset candidato y trazabilidad de reconciliación. La distribución propuesta quedó en 17 `Idea`, 3 `Production_Pending`, 3 `Draft_Pending_Approval`, 2 `Pending_Approval`, 2 `Reuse_Candidate` y 1 `Blocked_Operational`.
+El lote 1 de normalización cubrió inicialmente 28 filas y, tras resolver las excepciones, `Content_Inventory.csv` contiene 30 registros. Se preservaron todas las columnas originales y se añadieron campos normalizados para estado operativo, estado de canon, asset confirmado, asset candidato, relaciones y trazabilidad de reconciliación.
 
-La búsqueda documental encontró dos relaciones históricas candidatas, pero ninguna se marcó como confirmada: `CNT-002 → 260509` tiene conflicto entre el título de la pieza y el nombre del asset; `CNT-023 → 260801` no tiene archivo exacto en Drive y solo aparecen referencias `2608010–2608019`. Además, `CNT-029` y `CNT-030` aparecen en el historial del repositorio pero faltan en el inventario actual. Todos estos casos quedaron como pendientes explícitos y requieren confirmación o reconciliación posterior.
+`CNT-002 → 260509` quedó resuelto como `Rejected_Mismatch`: el post real de Meta del 30 de julio usa `WilfredUSM`, `MercadoLibre` y `plush`, mientras que el archivo 260509 de Drive corresponde a Universe existencial. El asset exacto de CNT-002 continúa pendiente, pero ya no existe una asociación falsa en el inventario.
 
-El preview reproducible está en `Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.md` y el CSV detallado en `Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.csv`. La normalización aplicada es reversible porque `estado` y `bloqueado_canon` originales permanecen intactos.
+`CNT-023` quedó resuelto como `Resolved_Asset_Set`: el episodio 2 de “¿Qué me llegó?” se relaciona con la carpeta de Drive `Elara - Lampara de luna`, que contiene 7 videos de producción. El registro no se fuerza a un único `260####`; se conserva como conjunto de assets y se enlaza con `CNT-002`, el episodio 1.
 
-El siguiente paso de migración no es crear otro calendario: es confirmar las dos candidaturas ambiguas, incorporar los IDs `CNT-029` y `CNT-030` solo con su ficha correspondiente, y después convertir las colas en vistas filtradas.
+`CNT-029` y `CNT-030` fueron incorporados desde sus documentos reales de producción. CNT-029 es el reel “Pausa para ver qué piensa de ti”, con banco de 9 cuadros y estado Draft; CNT-030 es su especificación dependiente de audio y montaje, no una publicación independiente. Ambos quedan enlazados entre sí y no reciben referencias 260 inventadas.
+
+El preview actualizado está en `Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.md` y el CSV detallado en `Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.csv`. La normalización es reversible porque `estado` y `bloqueado_canon` originales permanecen intactos. El único pendiente operativo es encontrar el asset exacto de CNT-002; no bloquea la integridad de los 30 registros.
 
 ## 7. Reglas de gobernanza
 

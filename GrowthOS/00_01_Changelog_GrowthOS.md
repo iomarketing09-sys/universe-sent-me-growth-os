@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.55
+**Versión:** 1.56
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -83,6 +83,16 @@
 - Los tres assets fueron generados con Nano Banana Pro en formato 1:1, con fondos mínimos, gradientes mágicos y foco principal en personaje, expresión y frase.
 - Se actualizó `Operations/Research/2026-08-15_Propuesta_Memes_Respuesta_USM.md` a la versión 2.1 y se incorporó el lote al registro canónico de comunidad.
 - Los assets quedan en estado `Review`; son respuestas individuales y no publicaciones del calendario regular.
+
+---
+
+## [1.2.56] — 2026-08-15 (Manus)
+### Resolución de excepciones del inventario
+- `CNT-002 → 260509` fue rechazado como `Rejected_Mismatch`: el post de Meta del 30 de julio corresponde a Wilfred/MercadoLibre/plush, mientras 260509 es un asset de Universe existencial.
+- `CNT-023` fue resuelto como `Resolved_Asset_Set`: su episodio 2 de “¿Qué me llegó?” se conecta a la carpeta Drive `Elara - Lampara de luna`, con 7 videos de producción, sin forzar un único `260####`.
+- `CNT-029` y `CNT-030` fueron incorporados desde sus documentos de producción y enlazados entre sí; CNT-030 es el registro dependiente de audio/montaje de CNT-029, no una publicación independiente.
+- `Content_Inventory.csv` pasó de 28 a 30 registros, manteniendo las columnas históricas y sin inventar ningún asset 260 confirmado. El único pendiente operativo es localizar el asset exacto de CNT-002.
+- Se actualizaron el preview de reconciliación, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_Índice.md`.
 
 ---
 
