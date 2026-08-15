@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.37
+**Versión:** 1.38
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -26,6 +26,16 @@
 - Se registraron los permisos efectivos y las cuentas vinculadas en `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`.
 
 ---
+
+---
+
+## [1.2.38] — 2026-08-15 (Manus)
+### Ejecutado y corregido
+- Se auditó el token renovado: `pages_manage_posts` está concedido y la Página Universe Sent Me devuelve tareas `CREATE_CONTENT`, `MANAGE` y `MODERATE`.
+- Se corrigió el diagnóstico inicial: `2920605591459033` es el ID del usuario `Fernando Gdlr`; la Página real es `1036844829507460`, derivada mediante `/me/accounts`. El error anterior sobre `publish_actions` fue causado por usar el ID de usuario en la ruta de Página.
+- Se programaron **9 publicaciones de Facebook** para el 15–16 de agosto mediante carga temporal de foto y Page Feed programado. Meta devolvió `is_published=false` y se registraron los IDs en `Operations/Research/2026-08-15_Calendario_15_16_Agosto.csv`.
+- Se movieron los **9 archivos originales** utilizados a `Humor existencial/08 Agosto` mediante cambio de carpeta, sin crear copias. La ubicación fue verificada por ID de Drive.
+- Instagram no se ejecutó en esta operación; permanece como distribución selectiva pendiente de una orden específica de publicación/programación.
 
 ---
 

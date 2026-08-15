@@ -1,7 +1,7 @@
 ---
 estado: Active
-version: "1.5"
-ultima_revision: 2026-08-14
+version: "1.6"
+ultima_revision: 2026-08-15
 dependencias:
   - GrowthOS/01_00_Arquitectura_Calendario_Escalable.md
 ---
@@ -53,8 +53,8 @@ Fernando ya tiene un **script funcional en PyCharm, usando la API de Gemini, que
 
 **Estado actual del pipeline:**
 - **Make:** retirado de la estrategia operativa. La guía histórica se conserva en `02_00_Guia_Automatizacion_Make.md` con estado `Archived`.
-- **Facebook Graph API:** acceso de lectura y listado de publicaciones programadas validado el 2026-08-14 usando el Page Access Token derivado internamente desde el token de usuario.
-- **Instagram Graph API:** identidad de `@universe_sent_me_0326` y lectura de media validadas el 2026-08-14. La publicación real todavía requiere una primera prueba explícita con un asset aprobado; no se ejecutó durante la auditoría.
+- **Facebook Graph API:** programación real validada el 2026-08-15. El token de entorno se comporta como User Access Token; Manus deriva en memoria el Page Access Token mediante `/me/accounts`, selecciona la Página real `1036844829507460` y usa `/page_id/photos` para carga temporal seguida de `/page_id/feed` con `attached_media[0]`, `published=false`, `scheduled_publish_time` y `unpublished_content_type=SCHEDULED`. La primera prueba programó 9 posts correctamente y devolvió `is_published=false` en la verificación posterior.
+- **Instagram Graph API:** identidad de `@universe_sent_me_0326` y lectura de media validadas el 2026-08-14. La publicación real todavía requiere una primera prueba explícita con un asset aprobado; no se ejecutó durante esta operación porque la orden aprobada se ejecutó como programación de Facebook.
 - **Ejecución:** Manus prepara, valida y ejecuta las órdenes de publicación mediante Graph API. En Facebook se puede usar la programación nativa de Page Feed; en Instagram se debe coordinar la publicación mediante el flujo de Manus y respetar la exigencia de media alojada públicamente.
 - **Token:** se usan tokens temporales. El token almacenado en el conector es un token de usuario; Manus deriva en memoria el Page Access Token de Universe Sent Me para llamadas de Página. Si el token expira, la programación y lectura quedan bloqueadas hasta reemplazarlo.
 - **Ruta de imagen:** el archivo usa **dos columnas separadas** — `Archivo` (solo filename) y `Ruta_Completa` (ruta local absoluta). Un calendario de Growth OS que quiera ser exportable a este formato necesita poder producir ambas, y la ruta completa depende de la carpeta real donde Fernando tiene cada asset (que varía por mes/proyecto, como ya se vio con las carpetas `05 Mayo`, `flexi/Quirelli`, etc.).
@@ -84,7 +84,7 @@ El 2026-08-14 se creó y activó el conector **Universe Sent Me Meta API**, una 
 | URL base | `https://graph.facebook.com` |
 | Autenticación | Encabezado `Authorization: Bearer $META_PAGE_ACCESS_TOKEN` |
 | Verificación realizada | `GET /me?fields=id,name` |
-| Resultado de verificación | HTTP 200; identidad devuelta: `Fernando Gdlr`, ID `2920605591459033` |
+| Resultado de verificación | HTTP 200; identidad de usuario: `Fernando Gdlr`, ID `2920605591459033`; Página derivada: `Universe Sent Me`, ID `1036844829507460` |
 | Operaciones previstas | Identidad de página, publicaciones, insights y publicación en feed únicamente con solicitud explícita y confirmación previa |
 | Página Universe Sent Me | ID `1036844829507460`; tareas: `MODERATE`, `CREATE_CONTENT`, `MESSAGING`, `ANALYZE`, entre otras |
 | Instagram vinculado | Cuenta profesional ID `17841462696378190` |
@@ -94,7 +94,7 @@ El 2026-08-14 se creó y activó el conector **Universe Sent Me Meta API**, una 
 | Prueba de lectura Instagram | HTTP 200 en el medio consultado; no había comentarios devueltos |
 
 
-> La creación del conector quedó confirmada por el usuario. El 2026-08-14 se revalidó el token temporal: identidad de usuario HTTP 200, identidad de Página HTTP 200, feed de Página HTTP 200, publicaciones programadas HTTP 200 e identidad/media de Instagram HTTP 200. La Custom API no autoriza por sí sola ninguna publicación: cualquier operación de escritura debe solicitarse expresamente y confirmarse antes de ejecutarse.
+> La creación del conector quedó confirmada por el usuario. El 2026-08-15 se corrigió un diagnóstico inicial: `2920605591459033` es la identidad del usuario, no el ID de la Página. Usar ese ID en `/photos` produjo el error engañoso sobre `publish_actions`; la Página correcta es `1036844829507460`, derivada desde `/me/accounts`, con tareas `CREATE_CONTENT` y `MANAGE`. Con el Page Access Token correcto se programaron 9 publicaciones y se verificaron sus IDs. La Custom API no autoriza por sí sola ninguna publicación: cualquier operación de escritura debe solicitarse expresamente y confirmarse antes de ejecutarse.
 
 ### Comentarios: diagnóstico operativo
 
