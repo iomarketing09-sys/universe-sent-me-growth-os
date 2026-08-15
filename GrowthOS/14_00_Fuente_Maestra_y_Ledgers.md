@@ -95,7 +95,13 @@ Esta arquitectura reduce llamadas repetidas, evita que el agente relea documento
 
 El primer `ExperimentLog` ya contiene seis observaciones históricas de junio–agosto y nueve publicaciones de Facebook programadas para el 15–16 de agosto. El `Publication_Log` contiene las nueve órdenes de Facebook y la prueba de Instagram que fue eliminada manualmente. Las métricas 24/72 horas de las nueve publicaciones quedan pendientes hasta que exista una ventana temporal válida.
 
-El siguiente paso de migración no es crear otro calendario: es añadir los campos normalizados al inventario actual, reconciliar los `CNT-####` con los `260####` confirmados y convertir las colas en vistas filtradas. Hasta completar esa reconciliación, las filas sin correspondencia deben conservarse como pendientes explícitos.
+El lote 1 de normalización cubrió las 28 filas actuales de `Content_Inventory.csv`. Se preservaron todas las columnas originales y se añadieron campos normalizados para estado operativo, estado de canon, asset confirmado, asset candidato y trazabilidad de reconciliación. La distribución propuesta quedó en 17 `Idea`, 3 `Production_Pending`, 3 `Draft_Pending_Approval`, 2 `Pending_Approval`, 2 `Reuse_Candidate` y 1 `Blocked_Operational`.
+
+La búsqueda documental encontró dos relaciones históricas candidatas, pero ninguna se marcó como confirmada: `CNT-002 → 260509` tiene conflicto entre el título de la pieza y el nombre del asset; `CNT-023 → 260801` no tiene archivo exacto en Drive y solo aparecen referencias `2608010–2608019`. Además, `CNT-029` y `CNT-030` aparecen en el historial del repositorio pero faltan en el inventario actual. Todos estos casos quedaron como pendientes explícitos y requieren confirmación o reconciliación posterior.
+
+El preview reproducible está en `Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.md` y el CSV detallado en `Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.csv`. La normalización aplicada es reversible porque `estado` y `bloqueado_canon` originales permanecen intactos.
+
+El siguiente paso de migración no es crear otro calendario: es confirmar las dos candidaturas ambiguas, incorporar los IDs `CNT-029` y `CNT-030` solo con su ficha correspondiente, y después convertir las colas en vistas filtradas.
 
 ## 7. Reglas de gobernanza
 

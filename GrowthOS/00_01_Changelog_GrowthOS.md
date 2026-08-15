@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.54
+**Versión:** 1.55
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -83,6 +83,16 @@
 - Los tres assets fueron generados con Nano Banana Pro en formato 1:1, con fondos mínimos, gradientes mágicos y foco principal en personaje, expresión y frase.
 - Se actualizó `Operations/Research/2026-08-15_Propuesta_Memes_Respuesta_USM.md` a la versión 2.1 y se incorporó el lote al registro canónico de comunidad.
 - Los assets quedan en estado `Review`; son respuestas individuales y no publicaciones del calendario regular.
+
+---
+
+## [1.2.55] — 2026-08-15 (Manus)
+### Normalización y reconciliación de inventario — lote 1
+- Se auditaron las 28 filas actuales de `GrowthOS/Content_Inventory.csv` y se conservaron intactas las columnas históricas `estado` y `bloqueado_canon`.
+- Se añadieron estados normalizados y campos de reconciliación reversibles. La distribución operativa quedó en 17 `Idea`, 3 `Production_Pending`, 3 `Draft_Pending_Approval`, 2 `Pending_Approval`, 2 `Reuse_Candidate` y 1 `Blocked_Operational`.
+- La búsqueda encontró dos relaciones históricas candidatas, pero ninguna confirmada: `CNT-002 → 260509` tiene conflicto de título; `CNT-023 → 260801` no tiene archivo exacto en Drive y solo aparecen referencias `2608010–2608019`.
+- `CNT-029` y `CNT-030` aparecen en el historial del repositorio pero faltan en el inventario actual. No se crearon filas automáticamente.
+- Se añadió el preview `Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.md` y se actualizó `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_Índice.md`.
 
 ---
 
