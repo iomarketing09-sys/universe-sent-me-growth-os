@@ -88,7 +88,7 @@ Se han identificado **5 contradicciones de canon** en la mini-historia "La Búsq
 | :--- | :--- |
 | **Personaje involucrado** | "Maeve" |
 | **Resolución de Fernando** | Maeve es el nombre confirmado de la Chica del Suéter (carpeta `PERSONAJES/Maeve (la chica del suéter)/` en Drive, ya revisada por Claude). El post del 2026-08-02 con `#MaeveUSM` y `#FantasmaUSM` **no era un error de identidad** — la pieza muestra a Maeve abrazando al Fantasma; ambos hashtags son correctos porque ambos personajes aparecen en la escena. Claude marcó esto como contradicción por error de lectura propia; queda corregido aquí. |
-| **Pendiente** | Registrar "Maeve" formalmente en la Biblia (`02 Personajes/Segundo Círculo/Chica del Suéter/`), mismo tratamiento que Kiri y Silvio. Autónéticamente aprobado por Fernando, pendiente solo del commit de canon. |
+| **Formalización** | Maeve quedó formalizada junto con Kael en el commit canónico `a994354`. Maeve es la Chica del Suéter; Kael es el Chico de los Pantalones. Ambos nombres están cerrados y sus hashtags propios están autorizados. |
 | **Estado** | Sin bloqueo. `#MaeveUSM` y `#FantasmaUSM` pueden co-existir en una misma pieza cuando ambos personajes aparecen juntos. |
 
 ---

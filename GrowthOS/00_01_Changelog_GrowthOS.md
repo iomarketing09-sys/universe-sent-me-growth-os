@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.68
+**Versión:** 1.69
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -72,10 +72,21 @@
 ## [1.2.68] — 2026-08-15 (Manus)
 ### IDs, métricas y limpieza de documentación operativa
 - Se corrigió la descripción del primer extractor: la extracción se ejecutó el `2026-08-15 16:59:37` en `America/Matamoros`, evaluó las nueve publicaciones de `EXP-2026-08-CAL-01`, encontró 0 ventanas 24/72 elegibles, escribió 0 métricas y no modificó veredictos.
-- La tabla de IDs de `GrowthOS/Integracion_Growth_OS.md` ya incluye `@char_USM_kael` y `@char_USM_maeve` como canon cerrado desde `a994354`; la relación narrativa con Universe permanece abierta.
-- `GrowthOS/10_00_Kit_de_Hashtags_USM.md` fue corregido a v1.1: `#KaelUSM` y `#MaeveUSM` quedan asignados a los personajes correctos, mientras Chica del Suéter y Chico de los Pantalones conservan hashtags estructurales.
+- La tabla de IDs de `GrowthOS/Integracion_Growth_OS.md` ya incluye `@char_USM_kael` (alias visual: Chico de los Pantalones) y `@char_USM_maeve` (alias visual: Chica del Suéter) como canon cerrado desde `a994354`; la relación narrativa con Universe permanece abierta.
+- `GrowthOS/10_00_Kit_de_Hashtags_USM.md` fue corregido a v1.1: `#MaeveUSM` corresponde a Maeve (Chica del Suéter) y `#KaelUSM` corresponde a Kael (Chico de los Pantalones).
 - Se retiraron referencias operativas nominales a Make de README, governance, arquitectura de calendario, Approval Queue, sistema de memes, formato semanal, monetización, pipeline y bridge. La guía archivada, changelog, auditorías históricas y blueprints conservan menciones solo como trazabilidad.
 - Se actualizó la auditoría general para marcar esta limpieza como cerrada/controlada y documentar el resultado real de la extracción. El índice pasa a v3.5.
+
+---
+
+## [1.2.69] — 2026-08-15 (Manus)
+### Corrección de alias canónicos de Maeve y Kael
+- Se corrigió la correspondencia confirmada por Fernando: **Chica del Suéter = Maeve** y **Chico de los Pantalones = Kael**.
+- `GrowthOS/Integracion_Growth_OS.md` pasó a v2.5.1 y eliminó las dos filas estructurales duplicadas; Maeve y Kael conservan sus IDs canónicos y ahora incluyen sus alias visuales/editoriales.
+- `GrowthOS/10_00_Kit_de_Hashtags_USM.md` quedó alineado con `#MaeveUSM` y `#KaelUSM`.
+- `Content_Inventory.csv` actualizó CNT-013 y CNT-014 a `@char_USM_maeve` y `@char_USM_kael`, preservando los campos históricos de estado y bloqueo.
+- `GrowthOS/Canon_Contradictions_Report.md` dejó registrado que ambos nombres quedaron formalizados en `a994354`.
+- El índice pasa a v3.6.
 
 ---
 

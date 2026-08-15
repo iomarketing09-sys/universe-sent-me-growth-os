@@ -8,7 +8,7 @@
 | :--- | :--- |
 | **Última sincronización** | 2026-08-15T22:56:57Z |
 | **Fuente de canon** | Repo GitHub administrado por Claude: `iomarketing09-sys/universe-sent-me-1`, rama `main`, HEAD `1daaad5342c278909b78076a54d8b220fa51e023`. Ficha de sincronización recibida por Claude mediante clonación directa. |
-| **Estado del documento** | v2.5 — Resincronizado contra HEAD `1daaad5`; Silvio/Kiri/Kael/Maeve y cambios de Universe actualizados; La Hoguera y La Ciudad marcadas como propuestas; conflictos de Growth OS separados del canon |
+| **Estado del documento** | v2.5.1 — Resincronizado contra HEAD `1daaad5`; Maeve = Chica del Suéter y Kael = Chico de los Pantalones; Silvio/Kiri y cambios de Universe actualizados; La Hoguera y La Ciudad marcadas como propuestas; conflictos de Growth OS separados del canon |
 | **Propietario** | Manus (Manus AI) |
 | **Guardián de Canon** | Claude (vía repo GitHub) |
 | **Aprobador final** | Fernando |
@@ -36,10 +36,8 @@
 | :--- | :--- | :--- | :--- | :--- |
 | Hada (Kiri) | `@char_USM_hada` | Nombre propio confirmado: Kiri. Su territorio emocional es el asombro genuino. Su varita es un objeto personal canonizado como elemento visual/identitario; su función narrativa y relación con el lenguaje de Resonancia siguen abiertas. | `02 Personajes/Segundo Círculo/Hada/00 Resumen.md`, `01 Territorio emocional.md`, `03 Reglas de diseño.md` | 2026-08-04 (commits `f7bebca`, `990a69c`; HEAD `1daaad5`) |
 | Evan | `@char_USM_evan` | La relación de Evan con Elara y Kiri puede generar lecturas de cercanía o “chisme”, pero ninguna es romántica en canon. La ambigüedad queda abierta deliberadamente y no debe resolverse automáticamente. | `02 Personajes/Segundo Círculo/Evan/02 Relaciones.md` | 2026-08-12 (commit `1daaad5`) |
-| Kael | `@char_USM_kael` | Personaje canonizado del Segundo Círculo. Forma una pareja establecida con Maeve. Su relación narrativa con Universe existe visualmente, pero aún no está definida. | `02 Personajes/Segundo Círculo/Kael/00 Resumen.md`, `01 Territorio emocional.md`, `02 Relaciones.md`, `03 Reglas de diseño.md` | 2026-08-11 (commit `a994354`) |
-| Maeve | `@char_USM_maeve` | Personaje canonizado del Segundo Círculo. Forma una pareja establecida con Kael. Su relación narrativa con Universe existe visualmente, pero aún no está definida. | `02 Personajes/Segundo Círculo/Maeve/00 Resumen.md`, `01 Territorio emocional.md`, `02 Relaciones.md`, `03 Reglas de diseño.md` | 2026-08-11 (commit `a994354`) |
-| Chica del Suéter | `@char_USM_chica_sweater` | *(Pendiente: consultar ficha)* | `02 Personajes/Segundo Círculo/Chica del Suéter/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
-| Chico de los Pantalones | `@char_USM_chico_pantalones` | *(Pendiente: consultar ficha)* | `02 Personajes/Segundo Círculo/Chico de los Pantalones/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
+| Kael | `@char_USM_kael` | Personaje canonizado del Segundo Círculo. Forma una pareja establecida con Maeve. **Alias visual/editorial: Chico de los Pantalones.** Su relación narrativa con Universe existe visualmente, pero aún no está definida. | `02 Personajes/Segundo Círculo/Kael/00 Resumen.md`, `01 Territorio emocional.md`, `02 Relaciones.md`, `03 Reglas de diseño.md` | 2026-08-11 (commit `a994354`) |
+| Maeve | `@char_USM_maeve` | Personaje canonizado del Segundo Círculo. **Alias visual/editorial: Chica del Suéter.** Forma una pareja establecida con Kael. Su relación narrativa con Universe existe visualmente, pero aún no está definida. | `02 Personajes/Segundo Círculo/Maeve/00 Resumen.md`, `01 Territorio emocional.md`, `02 Relaciones.md`, `03 Reglas de diseño.md` | 2026-08-11 (commit `a994354`) |
 | Fantasma | `@char_USM_fantasma` | Congelado emocionalmente en un instante que nunca cerró — no es incapacidad física. Puede actuar, pero no puede resolver esa identidad ni "salvar el día" de forma heroica y dramáticamente visible dentro de una misma pieza. La regla no cambió en el delta actual. | `02 Personajes/Segundo Círculo/Fantasma/01 Territorio emocional.md`, `03 Reglas de diseño.md` | 2026-08-02 (sin cambios desde antes de `939752c`; confirmado en HEAD `1daaad5`) |
 
 ### 1.3 Lugares
@@ -164,6 +162,7 @@ El sistema se compone de:
 | 2026-07-31 | Implementación de arquitectura escalable (v2.0) | Repo `iomarketing09-sys/universe-sent-me-1` (commit `939752c`) | Manus |
 | 2026-08-03 | Resolución de Silvio y diseño corregido | Canon commit `8e9fe9a`, registrado en `Canon_Contradictions_Report.md` | Fernando vía Claude |
 | 2026-08-15 | Resincronización contra el HEAD canónico actual `1daaad5` | Ficha `canon_sync_fiche.md` proporcionada por Claude; consultada `2026-08-15T22:56:57Z` vía clonación directa | Manus |
+| 2026-08-15 | Corrección de alias visuales de Kael y Maeve | Aclaración de Fernando: Chico de los Pantalones = Kael; Chica del Suéter = Maeve | Manus |
 
 ---
 

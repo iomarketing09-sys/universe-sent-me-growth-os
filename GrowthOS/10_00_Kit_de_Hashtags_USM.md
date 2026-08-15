@@ -27,15 +27,13 @@
 | Elara | `#ElaraUSM` | Nombre propio, canon desde origen |
 | El Ganso | `#GansoUSM` | Identificador estructural (sin nombre propio) |
 | El Payaso | `#SilvioUSM` | Nombre propio confirmado 2026-08-03 (commit `8e9fe9a`), diseño corregido y aprobado |
-| Chica del Suéter | `#ChicaDelSueterUSM` | Identificador estructural; no confundir con Maeve |
+| Maeve (Chica del Suéter) | `#MaeveUSM` | Nombre propio canonizado 2026-08-11 (commit `a994354`); Chica del Suéter es su alias visual/editorial |
 | El Hada | `#KiriUSM` | Nombre propio confirmado 2026-08-03 (commit `f7bebca`) |
 | El Fantasma | `#FantasmaUSM` | Identificador estructural (sin nombre propio todavía) |
 | Evan | `#EvanUSM` | Nombre propio, canon desde origen |
-| Kael | `#KaelUSM` | Nombre propio canonizado 2026-08-11 (commit `a994354`) |
-| Maeve | `#MaeveUSM` | Nombre propio canonizado 2026-08-11 (commit `a994354`) |
-| Chico de los Pantalones | `#ChicoDeLosPantalonesUSM` | Identificador estructural; no confundir con Kael |
+| Kael (Chico de los Pantalones) | `#KaelUSM` | Nombre propio canonizado 2026-08-11 (commit `a994354`); Chico de los Pantalones es su alias visual/editorial |
 
-*Pendiente: revisar únicamente los identificadores estructurales que todavía no tengan nombre propio confirmado; Kael y Maeve ya no están pendientes.*
+*Pendiente: revisar únicamente los identificadores estructurales que todavía no tengan nombre propio confirmado; Kael y Maeve ya están correctamente asignados a sus alias visuales.*
 
 ---
 
