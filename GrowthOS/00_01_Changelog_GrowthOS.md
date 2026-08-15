@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.59
+**Versión:** 1.60
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -83,6 +83,16 @@
 - Los tres assets fueron generados con Nano Banana Pro en formato 1:1, con fondos mínimos, gradientes mágicos y foco principal en personaje, expresión y frase.
 - Se actualizó `Operations/Research/2026-08-15_Propuesta_Memes_Respuesta_USM.md` a la versión 2.1 y se incorporó el lote al registro canónico de comunidad.
 - Los assets quedan en estado `Review`; son respuestas individuales y no publicaciones del calendario regular.
+
+---
+
+## [1.2.60] — 2026-08-15 (Manus)
+### Resolución de CNT-029 y CNT-030
+- Se verificó la ficha de producción v2.1 de CNT-029: reel “Pausa para ver qué piensa de ti”, banco de 9 cuadros, hook de pausa y estado `Draft_Pending_Approval`.
+- Se verificó la ficha v2.0 de CNT-030: audio y concepto de montaje dependiente de CNT-029, también `Draft_Pending_Approval`; no es una publicación independiente.
+- La búsqueda acotada de Meta del 14–17 de agosto no encontró un caption o permalink coincidente para CNT-029/CNT-030. No se añadieron filas ficticias al `Publication_Log`.
+- Se conservaron los nombres de assets documentados y se registraron las dependencias `CNT-029 ↔ CNT-030` en el inventario maestro.
+- Las cuatro excepciones del lote 1 quedan resueltas a nivel de registro; CNT-029/CNT-030 solo requieren aprobación y publicación futura para completar su trazabilidad de ejecución.
 
 ---
 
