@@ -36,6 +36,9 @@
 | [Estrategia Monetización Mercado Libre](11_00_Estrategia_Monetizacion_MercadoLibre.md) | Marco operativo para capitalizar la afiliación de Mercado Libre. | Active |
 | [Sistema de Dos Capas: Contenido vs. Canon](12_00_Sistema_Dos_Capas_Contenido_Canon.md) | Separa la capa libre de memes/reels (algoritmo, exploración) de la capa de canon (Biblia, decisiones permanentes). Define mecanismo de promoción deliberada de meme a canon. | Active |
 | [Pipeline de Publicación Local y Estándar CSV](13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md) | Documenta el script propio de Fernando, el estándar CSV y la Custom API de Meta configurada para Universe Sent Me. | Active |
+| [Fuente Maestra y Ledgers del Growth OS](14_00_Fuente_Maestra_y_Ledgers.md) | Define el inventario maestro de piezas, el Publication Log, el ExperimentLog y las reglas de bajo consumo de tokens. | Active |
+| [Publication Log inicial](../Operations/Research/2026-08-15_Publication_Log.csv) | Historial inicial de 9 publicaciones de Facebook y 1 prueba de Instagram eliminada manualmente. | Active |
+| [ExperimentLog inicial](../Operations/Research/2026-08-15_ExperimentLog.csv) | Seis observaciones históricas y nueve publicaciones de Facebook pendientes de métricas 24/72 horas. | Active |
 | [Auditoría del Growth OS — 14 de agosto](../Operations/Research/2026-08-14_Auditoria_Growth_OS.md) | Evalúa la programación modificada, las integraciones, la automatización y el ciclo de aprendizaje. | Superseded |
 | [Auditoría general del Growth OS — 15 de agosto](../Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md) | Auditoría de integración extremo a extremo, estado live de Meta, documentación, comunidad, riesgos y plan CGO. | Review |
 | [Ciclo de Aprendizaje de Horarios — 14 de agosto](../Operations/Research/2026-08-14_Ciclo_Aprendizaje_Horarios.md) | Reconstruye la hipótesis y la evidencia detrás del cambio de horarios. | Review |

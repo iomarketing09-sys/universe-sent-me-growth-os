@@ -6,9 +6,9 @@
 
 | Campo | Valor |
 | :--- | :--- |
-| **Última sincronización** | 2026-08-14 |
+| **Última sincronización** | 2026-08-15 |
 | **Fuente de canon** | Repo GitHub: `iomarketing09-sys/universe-sent-me-1` (commit `939752c`) |
-| **Estado del documento** | v2.2 — Graph API de Meta como ruta operativa; Make archivado; HB-003 en prueba |
+| **Estado del documento** | v2.3 — Graph API de Meta como ruta operativa; Make archivado; fuente maestra y ledgers implementados; HB-003/HB-004/HB-005 en prueba |
 | **Propietario** | Manus (Manus AI) |
 | **Guardián de Canon** | Claude (vía repo GitHub) |
 | **Aprobador final** | Fernando |
@@ -102,7 +102,10 @@
 
 | ID Exp | Hipótesis ID | Contenido publicado | Personaje/Lugar | Formato | Fecha publicación | Plataforma | Vistas | Retención % | Interacciones | Estado Canon | Veredicto | Conclusión | Observaciones |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| *(vacío)* | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| `EXP-2026-08-BASELINE-01` | HB-005 | Cohortes junio 1–14, julio 1–14 y agosto 1–14 | Facebook | Foto/meme | 2026-06-01 a 2026-08-14 | Cerrada | — | — | Veredicto consolidado: julio es la referencia principal; agosto cae frente a julio, pero supera a junio por pieza. |
+| `EXP-2026-08-BASELINE-02` | HB-003 | Cohortes 4–9 y 10–14 de agosto | Facebook | Foto/meme | 2026-08-04 a 2026-08-14 | Cerrada / señal preliminar | — | — | La mediana 37 frente a 26 es compatible con la ampliación horaria, pero no es causal por confusión de contenido y día. |
+| `EXP-2026-08-BASELINE-03` | HB-004 | Mix de reuse del 4–9 de agosto | Facebook | Foto/meme | 2026-08-04 a 2026-08-09 | Inconclusa | — | — | Se observaron al menos 14 reuse sobre aproximadamente 32 publicaciones; queda en prueba con Reuse_Top frente a Nueva. |
+| `EXP-2026-08-CAL-01` | HB-003 / HB-004 / HB-005 | Lote Facebook 15–16 de agosto | Facebook | Imagen estática | 2026-08-15 a 2026-08-16 | Pendiente_24h | — | — | 9 publicaciones programadas; métricas e hipótesis se completan a 24/72 horas. |
 
 ---
 
@@ -112,11 +115,12 @@
 
 El sistema se compone de:
 
-1. **Fuente editorial central** (inventario estructurado, CSV o calendario Markdown): contiene las piezas y sus metadatos operativos.
-2. **5 colas operativas** (vistas filtradas de la fuente): `Backlog`, `Reuse Queue`, `Production Queue`, `Approval Queue`, `Calendario Semanal`.
-3. **Flujo directo Manus + Graph API:** Manus valida estado, canon, asset, copy, plataforma y fecha; después crea la orden de publicación en Facebook o Instagram y registra el resultado.
-4. **Máquina de estados** (11 estados, 11 transiciones válidas): controla el flujo de cada pieza desde la idea hasta el archivo.
-5. **Registro post-publicación:** Manus consulta métricas disponibles y actualiza el `HypothesisBank` y el `ExperimentLog`.
+1. **Fuente maestra de contenido:** `GrowthOS/Content_Inventory.csv` identifica una vez cada pieza creativa (`CNT-####`) y sus metadatos.
+2. **Ledgers append-only:** `Operations/Research/2026-08-15_Publication_Log.csv` registra una fila por publicación/plataforma y `Operations/Research/2026-08-15_ExperimentLog.csv` registra una fila por observación de hipótesis.
+3. **Colas y calendarios:** `Backlog`, `Reuse Queue`, `Production Queue`, `Approval Queue` y `Calendario Semanal` son vistas filtradas, no fuentes paralelas.
+4. **Flujo directo Manus + Graph API:** Manus valida estado, canon, asset, copy, plataforma y fecha; después crea la orden de publicación y registra el resultado.
+5. **Máquina de estados:** controla el flujo de cada pieza desde la idea hasta el archivo.
+6. **Registro post-publicación:** Manus consulta solo métricas nuevas, actualiza el `HypothesisBank` y agrega el resultado al `ExperimentLog`.
 
 ---
 
@@ -132,10 +136,11 @@ El sistema se compone de:
 
 ## 7. Reglas Operativas de Este Documento
 
-1. Este documento NO vive en el repo de GitHub. Vive en Google Drive, carpeta del Growth OS.
-2. El repo de GitHub (`iomarketing09-sys/universe-sent-me-1`) es la **única fuente de verdad** del canon. Este documento es un caché consultivo.
+1. Este documento vive y se versiona en el repositorio Growth OS. Es un puente condensado; la fuente de verdad del canon sigue siendo el repo GitHub `iomarketing09-sys/universe-sent-me-1`.
+2. `GrowthOS/Content_Inventory.csv` es la fuente maestra de identidad de piezas; `Publication_Log.csv` y `ExperimentLog.csv` son ledgers append-only. Calendarios y colas no deben convertirse en fuentes paralelas.
 3. Cada regla aquí debe llevar fecha de sincronización y commit de referencia.
 4. El campo `Estado` en el Calendario Editorial es un **bloqueo operativo**, no una etiqueta. Manus no puede publicarlo si no dice literalmente "Aprobado".
 5. El cambio de estado a "Aprobado" solo lo puede hacer Fernando o Claude. Nunca Manus, nunca una regla automática.
 6. Antes de cada sesión de trabajo, Manus debe verificar si el commit de referencia sigue siendo el HEAD del repo. Si no, debe marcar las reglas como desactualizadas.
 7. **Nueva (v2.0):** La arquitectura completa del calendario vive en `GrowthOS/` del repositorio. Este documento mantiene la vista condensada del Calendario Editorial y el HypothesisBank.
+8. **Nueva (v2.3):** Para ahorrar consultas y tokens, solo se consultan deltas de publicaciones y comentarios desde la última sincronización; no se vuelve a descargar toda la historia en cada sesión.

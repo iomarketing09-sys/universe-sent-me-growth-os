@@ -4,6 +4,9 @@ version: "1.7"
 ultima_revision: 2026-08-15
 dependencias:
   - GrowthOS/01_00_Arquitectura_Calendario_Escalable.md
+  - GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md
+  - Operations/Research/2026-08-15_Publication_Log.csv
+  - Operations/Research/2026-08-15_ExperimentLog.csv
 ---
 
 # Pipeline de Publicación Local (PyCharm + Gemini + Meta API) y Estándar de Exportación de Calendarios
@@ -14,7 +17,7 @@ dependencias:
 **Última actualización:** 2026-08-15
 **Versión:** 1.7
 **Autor:** Claude, documentando información provista por Fernando; actualización de Manus AI
-**Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `05_03_Calendario_10_16_Agosto.md` (y calendarios futuros), `GrowthOS/00_01_Changelog_GrowthOS.md`, `GrowthOS/00_Índice.md`
+**Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `05_03_Calendario_10_16_Agosto.md` (y calendarios futuros), `Operations/Research/2026-08-15_Publication_Log.csv`, `Operations/Research/2026-08-15_ExperimentLog.csv`, `GrowthOS/00_01_Changelog_GrowthOS.md`, `GrowthOS/00_Índice.md`
 
 ---
 
@@ -67,7 +70,13 @@ Si la publicación falla o queda pendiente, el archivo no se mueve: permanece en
 
 Este archivado organiza disponibilidad y trazabilidad, pero no sustituye el registro de Meta. Para decidir reuse, la fuente prioritaria sigue siendo el historial real de publicaciones y métricas, no únicamente la ubicación del archivo.
 
-## 4. Implicación directa para Growth OS
+## 4. Fuente maestra y registro de aprendizaje
+
+La identidad de la pieza se conserva en `GrowthOS/Content_Inventory.csv`. Cada publicación ejecutada se agrega a `Operations/Research/2026-08-15_Publication_Log.csv`, una fila por plataforma y orden real de Meta. Las métricas de 24/72 horas y las conclusiones se agregan a `Operations/Research/2026-08-15_ExperimentLog.csv`. El calendario es una vista de planificación/exportación y no debe convertirse en una segunda base de datos.
+
+Para minimizar consumo de tokens, la extracción post-publicación debe consultar solo los `Meta_ID` nuevos o modificados desde la última sincronización. La carpeta de Drive sirve para archivado físico; no sustituye `Publication_Log` ni el historial de Meta.
+
+## 5. Implicación directa para Growth OS
 
 **A partir de este documento, cualquier calendario que se entregue como "listo para publicar" (no solo como tabla de planeación) debe poder exportarse a esta estructura de 8 columnas** — no basta con la tabla en markdown que se ha usado hasta ahora en los calendarios semanales (`05_02`, `05_03`, etc.). La tabla markdown sigue siendo útil para revisión y aprobación entre Fernando y Claude/Manus, pero el entregable final operativo es este formato.
 

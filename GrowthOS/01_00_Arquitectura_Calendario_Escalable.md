@@ -3,8 +3,8 @@
 **Propósito:** Definir la arquitectura de metadatos y flujos operativos para gestionar más de 1,000 piezas de contenido, permitiendo filtrado, priorización y publicación controlada mediante Manus y la API de Graph de Meta.
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-14
-**Versión:** 1.1
+**Última actualización:** 2026-08-15
+**Versión:** 1.2
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`; `Universe Sent Me - Biblia/07 Historias/00 Estándar de Historias.md` (repositorio separado, solo lectura: `iomarketing09-sys/universe-sent-me-1`)
 
@@ -48,7 +48,7 @@ Para escalar a 1,000+ piezas, cada idea debe existir como una fila independiente
 | `Fecha_Ultima_Publicacion` | Fecha de la última vez que se publicó | `YYYY-MM-DD` o vacío |
 | `Dias_Desde_Publicacion` | Días transcurridos desde la última publicación | Entero (calculado) |
 
-> **Nota operativa:** La fuente puede ser un calendario Markdown, CSV o inventario estructurado. Antes de programar, Manus debe convertir cada fila aprobada a una orden de publicación con fecha, hora, plataforma, asset público o ruta confirmada, caption, estado e identificador de trazabilidad.
+> **Nota operativa:** La fuente de identidad es `GrowthOS/Content_Inventory.csv`. Antes de programar, Manus debe convertir cada fila aprobada a una orden de publicación y registrarla en `Operations/Research/2026-08-15_Publication_Log.csv`. El calendario Markdown/CSV es una vista de selección, no una segunda fuente maestra. Después de publicar, las métricas y el veredicto se registran en `Operations/Research/2026-08-15_ExperimentLog.csv`.
 
 ---
 
@@ -103,7 +103,7 @@ Para evitar errores en la ejecución, Manus solo debe permitir las siguientes tr
 
 ## 3. Arquitectura del Calendario Semanal
 
-El calendario no es una tabla estática, sino una **vista filtrada** del inventario total. Para escalar a 1,000+ piezas, el calendario semanal debe generarse dinámicamente basándose en reglas de negocio.
+El calendario no es una tabla estática ni una fuente maestra, sino una **vista filtrada** del inventario total. Para escalar a 1,000+ piezas, el calendario semanal debe generarse dinámicamente basándose en reglas de negocio y sus resultados deben registrarse en el Publication Log.
 
 ### Reglas de Asignación Dinámica
 
@@ -121,6 +121,8 @@ Para asignar contenido a los próximos 7 días, el sistema debe aplicar las sigu
 10. **Tendencias:** Buscar oportunidades únicamente cuando sean compatibles con la identidad de Universe Sent Me. Las tendencias son herramientas, no objetivos.
 
 ### Estructura del Calendario Semanal (Vista)
+
+Las colas `Backlog`, `Reuse Queue`, `Production Queue` y `Approval Queue` también son vistas filtradas de `Content_Inventory.csv`; ninguna debe crear un estado paralelo. La relación entre pieza, publicación y aprendizaje se conserva mediante `ID_Pieza`, `Publicacion_ID` y `Observacion_ID`.
 
 El calendario de 7 días debe proyectar los siguientes campos para la operación diaria:
 
@@ -148,8 +150,8 @@ Para que este sistema sea escalable y trazable, Manus leerá la fuente editorial
    - *Acción:* registrar ID devuelto, timestamp, permalink o error y actualizar el estado de la pieza.
 
 3. **Registro post-publicación:**
-   - *Trigger:* Publicación confirmada o revisión de métricas.
-   - *Acción:* consultar métricas disponibles, actualizar `ExperimentLog` y el `HypothesisBank`, y documentar cualquier error o aprendizaje.
+   - *Trigger:* Publicación confirmada o ventana de métricas de 24/72 horas.
+   - *Acción:* consultar únicamente métricas nuevas por `Meta_ID`, actualizar `Publication_Log`, agregar la observación al `ExperimentLog` y actualizar el `HypothesisBank`. No volver a descargar el histórico completo.
 
 ### Flujos históricos de Make (no operativos)
 

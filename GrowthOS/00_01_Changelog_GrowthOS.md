@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.53
+**Versión:** 1.54
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -83,6 +83,16 @@
 - Los tres assets fueron generados con Nano Banana Pro en formato 1:1, con fondos mínimos, gradientes mágicos y foco principal en personaje, expresión y frase.
 - Se actualizó `Operations/Research/2026-08-15_Propuesta_Memes_Respuesta_USM.md` a la versión 2.1 y se incorporó el lote al registro canónico de comunidad.
 - Los assets quedan en estado `Review`; son respuestas individuales y no publicaciones del calendario regular.
+
+---
+
+## [1.2.54] — 2026-08-15 (Manus)
+### Primer ExperimentLog y fuente maestra unificada
+- Se creó `Operations/Research/2026-08-15_ExperimentLog.csv` con seis observaciones históricas de junio–agosto y nueve publicaciones de Facebook del 15–16 de agosto pendientes de métricas 24/72 horas.
+- Se creó `Operations/Research/2026-08-15_Publication_Log.csv` con una fila por publicación/plataforma: 9 órdenes de Facebook y 1 prueba de Instagram eliminada manualmente.
+- Se creó `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, estableciendo `Content_Inventory.csv` como fuente de identidad, los dos CSV como ledgers append-only y los calendarios/colas como vistas.
+- Se actualizó `Integracion_Growth_OS.md`, `01_00_Arquitectura_Calendario_Escalable.md`, `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md` y `00_Índice.md` para compartir la nueva trazabilidad y consultar solo deltas, reduciendo lecturas y llamadas repetidas.
+- Las métricas 24/72 horas de las nueve publicaciones quedan pendientes hasta que transcurran las ventanas válidas; no se estiman ni se inventan resultados.
 
 ---
 
