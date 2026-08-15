@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.43
+**Versión:** 1.44
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -29,9 +29,16 @@
 
 ---
 
+## [1.2.44] — 2026-08-15 (Manus)
+### Optimización de frecuencia del scheduler Instagram
+- La revisión se redujo de cada 5 minutos a cada 15 minutos para evitar ejecuciones innecesarias mientras se conserva un margen operativo razonable para este calendario de nueve slots.
+- La tarea continúa activa, con expiración `2026-08-17T04:30:00Z`, y mantiene el filtro de fechas, la idempotencia y la exclusión de `260583`.
+
+---
+
 ## [1.2.43] — 2026-08-15 (Manus)
 ### Scheduler temporal Instagram 15–16
-- Se configuró una tarea recurrente autónoma `USM Instagram 15-16 Agosto`, con intervalo de 5 minutos y expiración `2026-08-17T04:30:00Z`.
+- Se configuró una tarea recurrente autónoma `USM Instagram 15-16 Agosto`, con intervalo de 15 minutos y expiración `2026-08-17T04:30:00Z`.
 - El ejecutor procesa únicamente filas `Facebook; Instagram selectivo` del calendario del 15–16, respetando `America/Mexico_City` y usando el flujo `media` → verificación → `media_publish`.
 - `260583` quedó marcado `ELIMINADA_MANUALMENTE` después de que Fernando borrara la prueba; el runner no lo republicará.
 - El scheduler no modifica Facebook, no usa `scheduled_publish_time` y conserva estados/errores para mantener idempotencia.
