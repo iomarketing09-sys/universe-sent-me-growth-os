@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-15
-version: "1.3"
+version: "1.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -13,6 +13,8 @@ related_documents:
   - "GrowthOS/Content_Inventory.csv"
   - "Operations/Research/2026-08-15_Publication_Log.csv"
   - "Operations/Research/2026-08-15_ExperimentLog.csv"
+  - "Operations/Research/2026-08-15_Community_Engagement_Log.csv"
+  - "Operations/Research/2026-08-15_Community_Engagement_Log.md"
   - "Operations/Research/2026-08-15_Reconciliacion_Publicaciones_15_16_CNT.md"
   - "GrowthOS/00_Índice.md"
 organization: "GrowthOS"
@@ -22,15 +24,16 @@ organization: "GrowthOS"
 
 ## 1. Decisión de arquitectura
 
-La fuente maestra no debe ser un calendario gigante ni una tabla que repita una pieza cada vez que se publica en otra plataforma. La arquitectura recomendada para Universe Sent Me es **una fuente maestra de contenido más dos ledgers append-only**:
+La fuente maestra no debe ser un calendario gigante ni una tabla que repita una pieza cada vez que se publica en otra plataforma. La arquitectura recomendada para Universe Sent Me es **una fuente maestra de contenido más tres ledgers append-only**, cada uno con una función distinta: hechos de publicación, aprendizaje experimental y señales cualitativas de comunidad.
 
 | Capa | Archivo canónico | Qué representa | Quién lo modifica |
 |---|---|---|---|
 | Identidad y estado de la pieza | `GrowthOS/Content_Inventory.csv` | Una fila por pieza creativa o concepto (`CNT-####`). Contiene personaje, formato, objetivo, hipótesis, canon, producción y elegibilidad de reuse. | Manus prepara; Fernando/Claude aprueban estados protegidos. |
 | Historial de publicación | `Operations/Research/2026-08-15_Publication_Log.csv` | Una fila por publicación y plataforma. Conecta pieza, asset, fecha, cuenta, IDs de Meta, permalink, archivado y estado real. | Manus agrega después de cada orden o resultado de Meta. |
 | Aprendizaje experimental | `Operations/Research/2026-08-15_ExperimentLog.csv` | Una fila por cohorte, publicación u observación de hipótesis. Contiene métricas, veredicto, conclusión y próxima acción. | Manus agrega datos; CGO/Manus redacta conclusión; Fernando aprueba decisiones de calendario. |
+| Comunidad cualitativa | `Operations/Research/2026-08-15_Community_Engagement_Log.csv` | Una fila por comentario real que aporte señal, respuesta humana o decisión de moderación. No guarda identidades personales y complementa, pero no sustituye, el aprendizaje cuantitativo. | Manus agrega datos anonimizados; las respuestas públicas y acciones de moderación requieren aprobación humana. |
 
-La idea clave es que **no todo debe vivir en una sola fila**. Una pieza puede publicarse muchas veces, en varias plataformas y bajo varios experimentos. Si todo se fuerza dentro de `Content_Inventory.csv`, aparecerán columnas repetidas, estados contradictorios y pérdida de historial. El inventario identifica la pieza; `Publication_Log` identifica el hecho de publicación; `ExperimentLog` identifica lo aprendido.
+La idea clave es que **no todo debe vivir en una sola fila**. Una pieza puede publicarse muchas veces, en varias plataformas y bajo varios experimentos. Si todo se fuerza dentro de `Content_Inventory.csv`, aparecerán columnas repetidas, estados contradictorios y pérdida de historial. El inventario identifica la pieza; `Publication_Log` identifica el hecho de publicación; `ExperimentLog` identifica lo aprendido cuantitativamente; `Community_Engagement_Log` identifica señales cualitativas de conversación y cobertura de respuesta.
 
 ## 2. Qué queda como vista y qué deja de ser fuente
 
@@ -43,6 +46,7 @@ Los calendarios semanales, la `Reuse Queue`, la `Production Queue` y la `Approva
 | Production Queue | Filtrar piezas en producción o pendientes de asset; no cambia el estado maestro sin una decisión registrada. |
 | Approval Queue | Filtrar piezas con revisión de canon o aprobación de Fernando pendiente. |
 | Reporte de aprendizaje | Agrupar `ExperimentLog` por `Experiment_ID`, `Hypothesis_ID`, plataforma, tipo y slot. |
+| Reporte de comunidad | Agrupar `Community_Engagement_Log` por `Post_ID`, `CNT_ID`, `Tipo`, `Respuesta_Estado`, prioridad y ventana de revisión. |
 
 El calendario 15–16 de agosto y la propuesta 17–30 permanecen como documentos de planeación/exportación. No deben convertirse en una segunda base de datos permanente.
 
@@ -55,8 +59,10 @@ ID_Pieza (CNT-####)
    ├── Asset_Ref / nombre exacto / Drive_ID
    ├── Publicacion_ID → una fila por plataforma y fecha
    │      └── Meta_Post_ID o IG_Media_ID
-   └── Observacion_ID → una fila por experimento, cohorte o resultado
-          └── Experiment_ID + Hypothesis_ID
+   ├── Observacion_ID → una fila por experimento, cohorte o resultado
+   │      └── Experiment_ID + Hypothesis_ID
+   └── Comentario_ID → una fila cualitativa de comunidad, cuando exista
+          └── Respuesta_Estado + Accion_Calendario
 ```
 
 Los códigos `260####` son referencias de asset y no sustituyen automáticamente al `CNT-####`. Cuando todavía no exista una correspondencia confirmada, el campo `ID_Pieza` debe quedar vacío y anotarse como pendiente de reconciliación; no se debe inventar un vínculo.
@@ -104,7 +110,7 @@ El flujo económico es el siguiente:
 2. **Durante la publicación:** registrar el resultado en `Publication_Log.csv`; no volver a inspeccionar todo el inventario.
 3. **A las 24 y 72 horas:** consultar métricas solo para los `Meta_ID` nuevos del lote, idealmente en una llamada paginada o agrupada; no volver a pedir publicaciones históricas completas.
 4. **Al cierre del ciclo:** agregar una observación consolidada a `ExperimentLog.csv`, actualizar el veredicto de la hipótesis y generar las colas como vistas.
-5. **Para comentarios:** leer solo comentarios nuevos desde el último cursor o ventana; no revisar cada cinco minutos y no conservar identidades personales.
+5. **Para comentarios:** leer solo comentarios nuevos desde el último cursor o ventana; no revisar cada cinco minutos, deduplicar por `Comentario_ID` y no conservar identidades personales. Registrar las señales en `Community_Engagement_Log.csv`.
 
 Esta arquitectura reduce llamadas repetidas, evita que el agente relea documentos largos y permite que cada sesión trabaje con un delta pequeño. El ahorro no proviene de eliminar el aprendizaje; proviene de **no recalcular ni volver a descargar lo que ya está registrado**.
 
@@ -119,6 +125,8 @@ El mismo procedimiento aplica a las publicaciones posteriores: registrar primero
 ## 6. Primer estado implementado
 
 El `ExperimentLog` contiene seis observaciones históricas, nueve publicaciones reales de Facebook del 15–16 de agosto y una publicación manual real de Instagram. El `Publication_Log` enlaza las nueve publicaciones de Facebook con `CNT-031`–`CNT-039`, conserva la prueba de Instagram eliminada manualmente y registra también la publicación manual de Instagram de `CNT-031`. Las métricas 24/72 horas de las nueve publicaciones de Facebook quedan pendientes hasta que exista una ventana temporal válida.
+
+El `Community_Engagement_Log.csv` fue creado el 15 de agosto con encabezados, sin filas de comentarios. Ese estado es intencional: la muestra histórica de 67 comentarios se conserva como análisis agregado y no se transforma en filas sin una nueva extracción verificable. Las futuras revisiones deben recuperar solo el delta nuevo, deduplicar por `Comentario_ID` y mantener respuestas y moderación bajo aprobación humana.
 
 El lote 1 de normalización cubrió inicialmente 28 filas y, tras resolver las excepciones, `Content_Inventory.csv` llegó a 30 registros. La reconciliación del calendario 15–16 añadió nueve piezas de identidad nuevas, por lo que el inventario contiene ahora 39 registros. Se preservaron todas las columnas originales y se añadieron campos normalizados para estado operativo, estado de canon, asset confirmado, asset candidato, relaciones y trazabilidad de reconciliación.
 
@@ -146,11 +154,11 @@ El 15 de agosto de 2026 se aplicó el primer lote de unificación al inventario 
 
 La validación posterior al lote reconcilió 39 IDs únicos, 11 piezas con publicación Meta enlazada (`CNT-002`, `CNT-023` y `CNT-031`–`CNT-039`) y 28 piezas sin publicación confirmada. Se preservaron los estados históricos y no se confirmó ningún asset `260####` sin evidencia.
 
-La unificación todavía no está completa. Los siguientes trabajos quedan explícitamente separados para evitar una migración riesgosa: completar métricas 24/72 horas en `Publication_Log`, cerrar el aprendizaje de `HB-003`, `HB-004` y `HB-005`, resolver los 13 estados `Canon_Review_Required`, confirmar si el canon de Silvio puede actualizarse y convertir calendarios/colas en exportaciones verificables del inventario. El mapeo de las nueve órdenes del calendario 15–16 ya está cerrado mediante `CNT-031`–`CNT-039`. Estos pendientes restantes son de medición, integración y aprobación; no deben resolverse inventando IDs.
+La unificación todavía no está completa. Los siguientes trabajos quedan explícitamente separados para evitar una migración riesgosa: completar métricas 24/72 horas en `Publication_Log`, cerrar el aprendizaje de `HB-003`, `HB-004` y `HB-005`, resolver `CNT-004`, convertir calendarios/colas en exportaciones verificables del inventario y poblar progresivamente el `Community_Engagement_Log` con comentarios reales. El mapeo de las nueve órdenes del calendario 15–16 ya está cerrado mediante `CNT-031`–`CNT-039`. Estos pendientes restantes son de medición, integración, comunidad y aprobación; no deben resolverse inventando IDs.
 
 ## 8. Reglas de gobernanza
 
-`Content_Inventory.csv` es la fuente de identidad de las piezas. `Publication_Log.csv` es el historial de hechos y no debe sobrescribirse para “limpiar” errores; se corrigen mediante una columna de nota o una nueva entrada de corrección. `ExperimentLog.csv` es el registro de aprendizaje y no debe llenarse con hipótesis inventadas ni con métricas estimadas.
+`Content_Inventory.csv` es la fuente de identidad de las piezas. `Publication_Log.csv` es el historial de hechos y no debe sobrescribirse para “limpiar” errores; se corrigen mediante una columna de nota o una nueva entrada de corrección. `ExperimentLog.csv` es el registro de aprendizaje y no debe llenarse con hipótesis inventadas ni con métricas estimadas. `Community_Engagement_Log.csv` es la capa cualitativa y no debe llenarse con identidades personales, comentarios inventados o respuestas no verificadas.
 
 Los estados de canon y aprobación no se cambian automáticamente. Fernando o Claude conservan la autoridad sobre canon y aprobación final. Manus puede validar, agregar datos, preparar vistas y documentar resultados, pero no convertir una propuesta en canon ni marcar una pieza bloqueada como aprobada.
 

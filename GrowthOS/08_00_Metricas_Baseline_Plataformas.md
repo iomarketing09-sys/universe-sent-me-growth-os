@@ -3,10 +3,10 @@
 **Propósito:** Registro de métricas reales extraídas de Windsor.ai. Fuente de verdad para comparaciones de rendimiento, calibración de hipótesis y decisiones de canal. No es un resumen de sesión — es un documento vivo que debe actualizarse con cada ciclo de análisis.
 **Estado:** Active
 **Fecha de creación:** 2026-08-03
-**Última actualización:** 2026-08-05
-**Versión:** 1.1
+**Última actualización:** 2026-08-15
+**Versión:** 1.2
 **Autor:** Claude (Guardián de Canon, extracción directa vía Windsor.ai MCP)
-**Documentos relacionados:** `07_00_Registro_Maestro_Reels.md`, `06_00_Reglas_Aprendizaje_Tendencias.md`, `01_00_Arquitectura_Calendario_Escalable.md`
+**Documentos relacionados:** `07_00_Registro_Maestro_Reels.md`, `06_00_Reglas_Aprendizaje_Tendencias.md`, `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Research/2026-08-15_Publication_Log.csv`, `../Operations/Research/2026-08-15_ExperimentLog.csv`
 
 > **Metodología:** Datos extraídos directamente desde Windsor.ai el 2026-08-03. Período cubierto: últimos 14 días con datos del día actual incluidos. Cuentas: Facebook Page @UniverseSentMe (ID `1036844829507460`) e Instagram @universe_sent_me_0326 (ID `17841462696378190`). Los datos de IG publicados hoy mismo pueden mostrar cero por latencia de la API.
 
@@ -109,11 +109,41 @@
 
 ---
 
-## 7. Próxima Actualización
+## 7. Diseño de actualización de baseline común
+
+La baseline común debe permitir comparar Facebook e Instagram sin mezclar magnitudes, formatos ni ventanas temporales incompatibles. Las cifras históricas de las secciones anteriores se conservan como snapshot Windsor.ai del 3–5 de agosto; no se sobrescriben con datos parciales del lote 15–16.
+
+| Campo de actualización | Regla |
+|---|---|
+| `Periodo` | Cohorte explícita: junio, julio, agosto o ventana aprobada. |
+| `Plataforma` | `Facebook` e `Instagram` siempre separados; nunca sumar alcance entre canales. |
+| `Formato` | `Imagen`, `Reel`, `Carrusel` u otro formato real. |
+| `N_publicaciones` | Solo publicaciones con Meta ID o fuente histórica verificable. |
+| `Interacciones` | Definición constante por cohorte; documentar si es reacciones + comentarios + shares. |
+| `Alcance_o_Impresiones` | Mantener el campo original de la fuente; no convertir impresiones en alcance. |
+| `Mediana_por_publicacion` | Mediana de la métrica principal dentro de la cohorte, no promedio de promedios. |
+| `Comentarios_totales` | Total de comentarios reales; separar etiquetas automáticas y comentarios cualitativos usando el Community Engagement Log. |
+| `Ventana` | `Lifetime`, `24h_snapshot`, `72h_snapshot` o `Historico`; no comparar ventanas distintas sin marcarlo. |
+| `Fuente` | Windsor.ai, Meta Graph API, Publication Log o ExperimentLog, con fecha de extracción. |
+| `Estado` | `Historico`, `Parcial`, `Validado_24h`, `Validado_72h` o `Snapshot_No_Disponible`. |
+
+La próxima actualización numérica deberá unir `Content_Inventory.csv`, `Publication_Log.csv` y `ExperimentLog.csv` por `CNT-####` y Meta ID. Para el lote 15–16 se incorporarán las nueve publicaciones solo cuando existan ventanas válidas; la primera extracción del 15 de agosto evaluó las nueve y encontró cero ventanas elegibles, por lo que no se añadieron métricas prematuras.
+
+El reporte comparará por separado: (a) frecuencia y mediana de interacciones por publicación; (b) Facebook imagen frente a Facebook Reel; (c) Instagram Reel frente a Instagram imagen; (d) contenido nuevo frente a reuse; y (e) comentarios totales frente a comentarios cualitativos. Facebook seguirá siendo el canal principal de distribución en la lectura actual, mientras Instagram se evaluará como canal en desarrollo y no se presentará como fracaso por sus volúmenes absolutos todavía pequeños.
+
+No se emitirá un veredicto de canal hasta completar el lote de métricas y armonizar las definiciones de interacción. La baseline común es un marco de comparación, no una autorización para mezclar los numeradores de Facebook e Instagram.
+
+## 8. Próxima Actualización
 
 Este documento debe actualizarse:
 - Cada domingo (ciclo semanal de análisis)
 - Después de publicar cualquier pieza con distribución en más de una plataforma
 - Cuando se cierren hipótesis en el HypothesisBank
 
-Herramienta de extracción: Windsor.ai MCP → connector `facebook_organic` + `instagram`. Campos clave: `post_impressions`, `post_engagements`, `post_reactions_total`, `media_reach`, `media_views`, `media_engagement`.
+Herramienta de extracción histórica: Windsor.ai MCP → connector `facebook_organic` + `instagram`. Fuente operativa vigente para publicaciones reconciliadas: Meta Graph API v26 + `Publication_Log.csv`. Campos clave históricos: `post_impressions`, `post_engagements`, `post_reactions_total`, `media_reach`, `media_views`, `media_engagement`. Campos operativos: reacciones, comentarios, shares, Meta ID, timestamp real y estado de ventana.
+
+## Referencias
+
+[1]: https://developers.facebook.com/docs/graph-api/reference/post/insights/ "Meta for Developers — Post Insights"
+[2]: ../Operations/Research/2026-08-15_Publication_Log.csv "Publication Log de Universe Sent Me"
+[3]: ../Operations/Research/2026-08-15_ExperimentLog.csv "ExperimentLog de Universe Sent Me"

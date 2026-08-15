@@ -3,10 +3,10 @@
 **Propósito:** Formalizar la separación entre la capa de memes/reels (exploración libre, orientada a algoritmo y audiencia amplia) y la capa de canon (Biblia, decisiones deliberadas y permanentes sobre personajes). Define qué tan libre es cada capa, cómo un patrón de la capa 1 puede promoverse a la capa 2, y qué límites duros aplican incluso en la capa libre.
 **Estado:** Aprobado
 **Fecha de creación:** 2026-08-10
-**Última actualización:** 2026-08-10
-**Versión:** 1.3
+**Última actualización:** 2026-08-15
+**Versión:** 1.4
 **Autor:** Claude, formalizando dirección estratégica de Fernando
-**Documentos relacionados:** `03_00_Sistema_Generacion_Memes.md` (pipeline técnico de producción), `Canon_Contradictions_Report.md` (histórico de fricciones que motivaron este sistema), `Operations/Memories/mayo_2026_top_posts_metaBS.md` (evidencia original que originó esta discusión)
+**Documentos relacionados:** `03_00_Sistema_Generacion_Memes.md` (pipeline técnico de producción), `Canon_Contradictions_Report.md` (histórico de fricciones que motivaron este sistema), `Operations/Research/2026-08-15_Community_Engagement_Log.md` (ledger cualitativo), `Operations/Memories/mayo_2026_top_posts_metaBS.md` (evidencia original que originó esta discusión)
 
 ---
 
@@ -109,7 +109,7 @@ Fernando distribuye contenido regularmente en grupos de Facebook ajenos a la pá
 
 ## 9. Pendientes
 
-1. Implementar el registro mensual de insights de comunidad y mover a producción los assets de respuesta que Fernando apruebe (sección 5).
+1. Poblar progresivamente `Operations/Research/2026-08-15_Community_Engagement_Log.csv` con comentarios reales y mover a producción los assets de respuesta que Fernando apruebe (sección 5).
 2. Revisar retroactivamente los memes de mayo-agosto ya publicados en busca de patrones que ya cumplan el umbral de la sección 4.1, como primera aplicación práctica del sistema (sesión dedicada, ya mencionada en conversaciones anteriores).
 3. Confirmar con Fernando si el "Canon_Contradictions_Report.md" debe actualizarse con una nota que aclare explícitamente que su alcance es solo narrativa seria, para evitar que una futura sesión lo aplique por error a un meme suelto.
 4. Definir si conviene registrar en el calendario editorial las fechas en que Fernando publica en Polvo de estrellas, para poder correlacionar caídas de rendimiento de la página propia con posibles aluviones de aprobación del grupo externo (sección 8) — por ahora es una observación puntual, no un patrón confirmado con datos suficientes.

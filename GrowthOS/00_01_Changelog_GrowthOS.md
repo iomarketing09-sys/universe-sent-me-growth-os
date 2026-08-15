@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.69
+**Versión:** 1.70
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -76,6 +76,17 @@
 - `GrowthOS/10_00_Kit_de_Hashtags_USM.md` fue corregido a v1.1: `#MaeveUSM` corresponde a Maeve (Chica del Suéter) y `#KaelUSM` corresponde a Kael (Chico de los Pantalones).
 - Se retiraron referencias operativas nominales a Make de README, governance, arquitectura de calendario, Approval Queue, sistema de memes, formato semanal, monetización, pipeline y bridge. La guía archivada, changelog, auditorías históricas y blueprints conservan menciones solo como trazabilidad.
 - Se actualizó la auditoría general para marcar esta limpieza como cerrada/controlada y documentar el resultado real de la extracción. El índice pasa a v3.5.
+
+---
+
+## [1.2.70] — 2026-08-15 (Manus)
+### Pendientes P2: comunidad, baseline y deuda documental
+- Se creó `Operations/Research/2026-08-15_Community_Engagement_Log.csv` con encabezados y cero filas intencionalmente; no se inventó un backfill de los 67 comentarios históricos.
+- Se creó `Operations/Research/2026-08-15_Community_Engagement_Log.md` con taxonomía, privacidad, ventanas de revisión y reglas de aprobación humana.
+- `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` pasó a v1.4 e incorporó el Community Engagement Log como ledger cualitativo complementario.
+- `GrowthOS/08_00_Metricas_Baseline_Plataformas.md` pasó a v1.2 y documenta el esquema de comparación Facebook/Instagram; no se alteraron cifras históricas ni se escribieron métricas prematuras del lote 15–16.
+- `Operations/Research/2026-08-15_Deuda_Documental_P2.md` clasifica documentos activos, históricos, superseded y pendientes de metadatos; las referencias restantes a Make quedan como trazabilidad.
+- Se actualizaron el sistema de dos capas, la auditoría de comentarios, la auditoría general y el índice maestro.
 
 ---
 

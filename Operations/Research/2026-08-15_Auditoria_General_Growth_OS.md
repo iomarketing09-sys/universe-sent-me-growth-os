@@ -50,7 +50,7 @@ La auditoría original identificó varias brechas que ya fueron resueltas en el 
 | Aprendizaje | Completar 24/72 horas y cerrar `HB-003`, `HB-004` y `HB-005`; actualizar baseline. | P0 |
 | Calendario 17–30 | Producir y aprobar las 46 piezas nuevas; verificar los 28 reuse y dejar vacíos los slots no listos. | P1 |
 | Automatizaciones heredadas y documentación | Referencias activas retiradas de los documentos de control; permanecen menciones históricas en changelog, archivo y auditorías antiguas. | Cerrado / controlado |
-| Comunidad | Crear ledger ligero anonimizado de comentarios y registrar cobertura de respuestas. | P2 |
+| Comunidad | Ledger ligero creado y documentado; falta poblarlo con comentarios reales y registrar cobertura de respuestas. | P2 |
 
 El estado live posterior a la limpieza es `pause`, con cron `0 0,30 11,14,17,20 15,16 8 *`, expiración `2026-08-17T04:30:00Z`, `runAsNewTask=true`, `runMode=ask_user`, sin `intervalSeconds` y con un único conector: `Universe Sent Me Meta API`. No se publicó contenido durante la limpieza. Antes de una nueva campaña solo queda verificar que el modo de ejecución sea compatible y ejecutar una prueba controlada `nothing_due`.
 
@@ -182,7 +182,7 @@ La deuda no debe resolverse reescribiendo todo de una vez. Conviene normalizar p
 | P1 | Calendarios e inventarios usan estados, IDs y estructuras no uniformes. | Alta | Alto | Esquema maestro con ID de pieza, asset, plataforma, estado de canon, estado de publicación e IDs Meta. |
 | P1 | El experimento 17–30 tiene 46 assets nuevas sin generar/aprobar y 38 assets nuevos de Drive pendientes de revisión. | Alta | Alto | Confirmar capacidad, producir y aprobar la cola; no rellenar huecos con reuse improvisado. |
 | P2 | Permanecen menciones históricas de automatizaciones heredadas en changelog, archivo, auditorías antiguas y algunos blueprints. | Baja | Bajo | Conservarlas como trazabilidad; no tratarlas como arquitectura activa. |
-| P2 | La comunidad tiene comentarios y assets de respuesta, pero no un registro operativo de cobertura y aprendizaje. | Media | Medio | Crear una tabla ligera de comentarios anonimizada y dos ventanas de revisión. |
+| P2 | La comunidad tiene comentarios, assets de respuesta y ahora un ledger operativo; falta poblarlo con nuevas extracciones y medir cobertura de respuesta. | Media | Medio | Crear una tabla ligera de comentarios anonimizada y dos ventanas de revisión. |
 | P2 | La medición de Instagram y Facebook no está consolidada en una baseline común actualizada. | Media | Medio | Actualizar baseline después del lote 15–16 y separar métricas de canal. |
 
 ## 8. Plan CGO recomendado

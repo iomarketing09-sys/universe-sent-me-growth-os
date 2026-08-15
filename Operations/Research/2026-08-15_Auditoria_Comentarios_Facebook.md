@@ -4,13 +4,15 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-15
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
   - "GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md"
   - "GrowthOS/08_00_Metricas_Baseline_Plataformas.md"
   - "GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md"
+  - "Operations/Research/2026-08-15_Community_Engagement_Log.csv"
+  - "Operations/Research/2026-08-15_Community_Engagement_Log.md"
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
 organization: "Operations/Research"
 ---
@@ -135,7 +137,7 @@ La recomendación técnica es **no crear todavía un bot de respuesta en tiempo 
 
 El siguiente paso recomendado es una prueba controlada de una sola respuesta a un comentario real, elegido por Fernando, con texto preparado y confirmación antes de publicar. Esa prueba validará el endpoint de escritura, el formato del Page Access Token y el comportamiento visible en Facebook sin abrir todavía la puerta a automatización masiva.
 
-Después de esa prueba, el Growth OS debe incorporar un registro ligero de comentarios cualitativos y añadir una revisión de comunidad al cierre diario. La decisión de automatizar respuestas deberá basarse en tres evidencias: volumen sostenido, baja tasa de errores de clasificación y existencia de plantillas de respuesta aprobadas.
+El Growth OS ya incorpora el registro ligero `Community_Engagement_Log.csv` y debe poblarlo progresivamente con comentarios reales durante las revisiones del mismo día y de 24–48 horas. La decisión de automatizar respuestas deberá basarse en tres evidencias: volumen sostenido, baja tasa de errores de clasificación y existencia de plantillas de respuesta aprobadas.
 
 ## 9. Documentos que requieren coherencia
 
@@ -147,6 +149,7 @@ La actualización de este documento requiere mantener sincronizados los siguient
 | `GrowthOS/00_01_Changelog_GrowthOS.md` | Registrar la auditoría, el escaneo de 20 publicaciones y la propuesta de flujo |
 | `GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md` | En una futura revisión, enlazar el registro cualitativo real de comunidad con esta auditoría |
 | `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md` | Incorporar la señal de comentarios como variable de aprendizaje cuando termine la prueba de 14 días |
+| `Operations/Research/2026-08-15_Community_Engagement_Log.csv` | Poblar únicamente con comentarios reales, deduplicados por `Comentario_ID` y sin identidades personales. |
 
 ## 10. Análisis real de los 67 comentarios
 
