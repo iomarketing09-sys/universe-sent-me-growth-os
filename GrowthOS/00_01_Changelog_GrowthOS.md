@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.57
+**Versión:** 1.58
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -83,6 +83,15 @@
 - Los tres assets fueron generados con Nano Banana Pro en formato 1:1, con fondos mínimos, gradientes mágicos y foco principal en personaje, expresión y frase.
 - Se actualizó `Operations/Research/2026-08-15_Propuesta_Memes_Respuesta_USM.md` a la versión 2.1 y se incorporó el lote al registro canónico de comunidad.
 - Los assets quedan en estado `Review`; son respuestas individuales y no publicaciones del calendario regular.
+
+---
+
+## [1.2.58] — 2026-08-15 (Manus)
+### Cierre de CNT-023 como conjunto de assets
+- Se verificó nuevamente la carpeta Drive `Elara - Lampara de luna` mediante `gws`: contiene 7 archivos hijos, cuatro videos/imagenes de entrega y apertura de paquete y tres renders de secuencia.
+- `CNT-023` mantiene el estado `Resolved_Asset_Set`, conserva los siete nombres en `asset_set`, el `drive_reference_id` de la carpeta y la relación `registro_relacionado=CNT-002`.
+- No se asignó un `260####` individual porque el episodio 2 de “¿Qué me llegó?” es un conjunto de producción y no una publicación histórica separada. No se añadió ninguna fila ficticia a `Publication_Log`.
+- Se actualizó el preview de reconciliación y `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`; la validación conserva 30 filas y 30 IDs únicos.
 
 ---
 
