@@ -4,7 +4,7 @@ purpose: "Evaluar de extremo a extremo la integración entre estrategia, documen
 status: Review
 created: 2026-08-15
 updated: 2026-08-15
-version: "1.3"
+version: "1.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/00_Índice.md"
@@ -34,11 +34,11 @@ La conclusión CGO es: **funciona operativamente para Facebook, funciona técnic
 
 > **Veredicto actualizado:** el sistema está en una etapa de transición entre “operación manual documentada” y “Growth OS cerrado”. La trazabilidad del lote 15–16 ya está cerrada; antes de aumentar la complejidad o automatizar comentarios, hay que cerrar métricas/veredictos, canon y scheduler. No recomiendo añadir otra plataforma o automatización todavía; recomiendo consolidar la ruta Facebook + Graph API y revisar métricas por lotes cada dos días cuando las ventanas exactas sean válidas.
 
-Esta auditoría fue originalmente de solo lectura. La actualización 1.3 incorpora los cambios ya versionados en la reconciliación posterior, pero no modifica publicaciones, comentarios ni assets de Drive.
+Esta auditoría fue originalmente de solo lectura. La actualización 1.4 incorpora los cambios ya versionados en la reconciliación posterior, pero no modifica publicaciones, comentarios ni assets de Drive.
 
 ## Actualización posterior a la auditoría — estado vigente
 
-La auditoría original identificó varias brechas que ya fueron resueltas en el lote de reconciliación Facebook 15–16. El inventario maestro ahora contiene 39 IDs únicos; `CNT-031`–`CNT-039` enlazan los nueve assets publicados con sus Meta Post IDs; `Publication_Log.csv` contiene los hechos de Facebook y la publicación manual de Instagram 2608030; y `ExperimentLog.csv` contiene las observaciones del lote, aunque todavía sin métricas 24/72 horas. La alerta Silvio/Payaso fue diagnosticada como caché desincronizado: el reporte local registra la resolución canónica de `8e9fe9a`, mientras el bridge estaba congelado en `939752c`. La evidencia y los criterios están documentados en `2026-08-15_Reconciliacion_Publicaciones_15_16_CNT.md`, `GrowthOS/Integracion_Growth_OS.md` y `2026-08-15_Reclasificacion_Canon_vs_Reconciliacion.json`.
+La auditoría original identificó varias brechas que ya fueron resueltas en el lote de reconciliación Facebook 15–16. El inventario maestro ahora contiene 39 IDs únicos; `CNT-031`–`CNT-039` enlazan los nueve assets publicados con sus Meta Post IDs; `Publication_Log.csv` contiene los hechos de Facebook y la publicación manual de Instagram 2608030; y `ExperimentLog.csv` contiene las observaciones del lote, aunque todavía sin métricas 24/72 horas. La ficha de sincronización de Claude confirmó el HEAD canónico `1daaad5342c278909b78076a54d8b220fa51e023` y el bridge quedó actualizado a v2.5. Silvio/Kiri/Kael/Maeve y los cambios posteriores de Universe ya están reflejados; La Hoguera y La Ciudad permanecen como propuestas. La evidencia está documentada en `GrowthOS/Integracion_Growth_OS.md`, `2026-08-15_Reconciliacion_Publicaciones_15_16_CNT.md` y `2026-08-15_Reclasificacion_Canon_vs_Reconciliacion.json`.
 
 | Estado actual | Pendiente real | Prioridad |
 |---|---|---:|
@@ -123,7 +123,7 @@ No hay evidencia de publicaciones ejecutadas durante esta limpieza. El criterio 
 
 ### 5.3 El canon ya no tiene un conflicto global Silvio/Payaso
 
-La revisión cruzada corrigió el diagnóstico anterior. `GrowthOS/Canon_Contradictions_Report.md` registra la contradicción #5 como `RESUELTO` el 3 de agosto, con Silvio confirmado como nombre propio de El Payaso y diseño corregido en el commit canónico `8e9fe9a`. El bridge seguía usando la caché del 31 de julio (`939752c`), por lo que la alerta de la auditoría era un problema de sincronización, no una decisión pendiente de Fernando.
+La revisión cruzada corrigió el diagnóstico anterior. `GrowthOS/Canon_Contradictions_Report.md` registra la contradicción #5 como `RESUELTO` el 3 de agosto, con Silvio confirmado como nombre propio de El Payaso y diseño corregido en el commit canónico `8e9fe9a`. La ficha de Claude confirmó que el HEAD real es `1daaad5`; el bridge ya está resincronizado contra esa referencia y Silvio queda cerrado, sin aprobación pendiente.
 
 El único registro que conserva una contradicción narrativa sustantiva en el inventario es `CNT-004`, asociado a la mini-historia “La Búsqueda del Frasco Olvidado”. Las otras 21 filas que antes compartían `Canon_Review_Required` se reclasificaron con `Motivo_Revision_Normalizado`: aprobación administrativa, restricción no bloqueante, reconciliación de inventario o identidad reconciliada sin conflicto canónico evidente. Ningún cambio convierte `Estado_Canon=Revision` en `Aprobado`.
 
@@ -135,7 +135,7 @@ Esto no significa que Make esté ejecutando publicaciones. Sí significa que un 
 
 ### 5.5 El canon y la producción no están sincronizados
 
-La alerta Silvio/Payaso quedó resuelta como problema de caché. El reporte local de contradicciones registra que Silvio fue confirmado como nombre propio de El Payaso el 3 de agosto, con diseño corregido y aprobado en `8e9fe9a`; el bridge fue actualizado para dejar de repetir la advertencia anterior. El repositorio canónico remoto no pudo consultarse desde esta sesión, por lo que el bridge conserva la evidencia local y exige verificar el HEAD real en la próxima sincronización.
+La alerta Silvio/Payaso quedó resuelta como problema de caché. Claude confirmó mediante clonación directa que `1daaad5` es el HEAD actual de `main`; el bridge v2.5 registra esa referencia y los cambios canónicos posteriores. El repositorio sigue administrado por Claude: Manus no lo modifica y debe solicitar una nueva ficha cuando el HEAD cambie.
 
 El inventario ahora separa el motivo de revisión del estado canónico mediante `Motivo_Revision_Normalizado`. De las 22 filas que antes compartían `Canon_Review_Required`, solo `CNT-004` queda como contradicción narrativa sustantiva; 21 se clasifican como aprobación administrativa, restricción no bloqueante, reconciliación de inventario, canon resuelto o identidad reconciliada sin conflicto evidente. Ninguna transición a `Aprobado` fue ejecutada.
 

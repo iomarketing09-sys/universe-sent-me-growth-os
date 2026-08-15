@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.66
+**Versión:** 1.67
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -56,6 +56,16 @@
 - Se marcó `Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.md` como `Superseded`; su conteo original de 13 `Canon_Review_Required` se conserva solo como snapshot histórico.
 - Se confirmó que el campo histórico `bloqueado_canon` de `CNT-009` conserva una advertencia antigua sobre Silvio, mientras `Motivo_Revision_Normalizado=Canon_Resuelto_Reconciliacion_Pendiente` y el bridge actualizado registran la resolución canónica de `8e9fe9a`.
 - No se aprobó canon nuevo. `Estado_Canon=Revision` se conserva donde correspondía y la única contradicción canónica sustantiva vigente en el inventario es `CNT-004`.
+
+---
+
+## [1.2.67] — 2026-08-15 (Manus)
+### Resincronización del bridge con el canon administrado por Claude
+- `GrowthOS/Integracion_Growth_OS.md` pasó a v2.5 y se resincronizó contra la rama `main` del repositorio canónico con HEAD `1daaad5342c278909b78076a54d8b220fa51e023`, según la ficha consultada por Claude el `2026-08-15T22:56:57Z` mediante clonación directa.
+- Se incorporaron los cambios verificables posteriores a `939752c`: Universe blanco/crema y registro sarcástico limitado por Anti-tono; Kiri y su varita; Kael y Maeve como pareja canonizada; ambigüedad Evan/Kiri/Elara abierta; y las propuestas no canónicas La Hoguera y La Ciudad.
+- Se incorporó la tabla de contradicciones de `La Búsqueda del Frasco Olvidado` como contenido de Growth OS evaluado contra reglas canónicas, no como contenido del repositorio de canon. Capítulos 8 y 10 y la duplicación de rol de Elara siguen activos; Capítulo 7 requiere relectura directa; Silvio está resuelto.
+- Se documentó que `universe-sent-me-1` es administrado por Claude: Manus no lo modifica ni convierte contenido de Growth OS en canon. La próxima sincronización requiere una nueva ficha de HEAD.
+- Se actualizó `GrowthOS/00_Índice.md` a v3.4 y `Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md` a v1.4.
 
 ---
 

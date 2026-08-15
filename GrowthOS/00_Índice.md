@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-15
-**Versión:** 3.3
+**Versión:** 3.4
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -37,12 +37,12 @@
 | [Sistema de Dos Capas: Contenido vs. Canon](12_00_Sistema_Dos_Capas_Contenido_Canon.md) | Separa la capa libre de memes/reels (algoritmo, exploración) de la capa de canon (Biblia, decisiones permanentes). Define mecanismo de promoción deliberada de meme a canon. | Active |
 | [Pipeline de Publicación Local y Estándar CSV](13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md) | Documenta el script propio de Fernando, el estándar CSV y la Custom API de Meta configurada para Universe Sent Me. | Active |
 | [Fuente Maestra y Ledgers del Growth OS](14_00_Fuente_Maestra_y_Ledgers.md) | Define el inventario maestro, los ledgers, la distinción canon/reconciliación y la cadencia de métricas cada 48 horas. | Active |
-| [Bridge de Integración Growth OS–Canon](Integracion_Growth_OS.md) | Caché condensado del canon, HypothesisBank y reglas de sincronización; v2.4 con Silvio corregido y verificación de HEAD exigida. | Active |
+| [Bridge de Integración Growth OS–Canon](Integracion_Growth_OS.md) | Caché condensado del canon, HypothesisBank y reglas de sincronización; v2.5 resincronizado contra HEAD `1daaad5`, con autoridad administrada por Claude. | Active |
 | [Publication Log inicial](../Operations/Research/2026-08-15_Publication_Log.csv) | Ledger append-only con 9 publicaciones de Facebook confirmadas, la prueba de Instagram eliminada y 1 publicación manual real de Instagram. | Active |
 | [ExperimentLog inicial](../Operations/Research/2026-08-15_ExperimentLog.csv) | Seis observaciones históricas, nueve publicaciones de Facebook pendientes de métricas 24/72 horas y una observación manual de Instagram. | Active |
 | [Reconciliación de inventario — lote 1](../Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.md) | Snapshot histórico de 30 registros y cuatro excepciones; superseded por la clasificación vigente canon/reconciliación. | Superseded |
 | [Auditoría del Growth OS — 14 de agosto](../Operations/Research/2026-08-14_Auditoria_Growth_OS.md) | Evalúa la programación modificada, las integraciones, la automatización y el ciclo de aprendizaje. | Superseded |
-| [Auditoría general del Growth OS — 15 de agosto](../Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md) | Auditoría de integración extremo a extremo, estado live de Meta, reconciliación posterior, clasificación canon/reconciliación, pendientes priorizados y plan CGO. | Review |
+| [Auditoría general del Growth OS — 15 de agosto](../Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md) | Auditoría de integración extremo a extremo, estado live de Meta, reconciliación posterior, resincronización canónica contra HEAD `1daaad5`, clasificación canon/reconciliación y pendientes priorizados. | Review |
 | [Ciclo de Aprendizaje de Horarios — 14 de agosto](../Operations/Research/2026-08-14_Ciclo_Aprendizaje_Horarios.md) | Reconstruye la hipótesis y la evidencia detrás del cambio de horarios. | Review |
 | [Comparativo Junio–Julio–Agosto — 14 de agosto](../Operations/Research/2026-08-14_Comparativo_Desempeno_Junio_Julio_Agosto.md) | Determina si la caída de agosto proviene de frecuencia, reuse, horarios o mezcla editorial. | Review |
 | [Diseño de Prueba de Calendario — 2 semanas](../Operations/Research/2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md) | Protocolo para controlar frecuencia, contenido nuevo/reuse y franjas horarias. | Review |

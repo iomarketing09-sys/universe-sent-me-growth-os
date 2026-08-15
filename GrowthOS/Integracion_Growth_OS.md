@@ -6,9 +6,9 @@
 
 | Campo | Valor |
 | :--- | :--- |
-| **Última sincronización** | 2026-08-15 |
-| **Fuente de canon** | Repo GitHub: `iomarketing09-sys/universe-sent-me-1`; resolución de Silvio registrada en canon como commit `8e9fe9a` y reflejada en `GrowthOS/Canon_Contradictions_Report.md` (commit local `c9730ee6`). |
-| **Estado del documento** | v2.4 — Caché de canon corregido para Silvio; Graph API de Meta como ruta operativa; Make archivado; fuente maestra y ledgers implementados; HB-003/HB-004/HB-005 en prueba |
+| **Última sincronización** | 2026-08-15T22:56:57Z |
+| **Fuente de canon** | Repo GitHub administrado por Claude: `iomarketing09-sys/universe-sent-me-1`, rama `main`, HEAD `1daaad5342c278909b78076a54d8b220fa51e023`. Ficha de sincronización recibida por Claude mediante clonación directa. |
+| **Estado del documento** | v2.5 — Resincronizado contra HEAD `1daaad5`; Silvio/Kiri/Kael/Maeve y cambios de Universe actualizados; La Hoguera y La Ciudad marcadas como propuestas; conflictos de Growth OS separados del canon |
 | **Propietario** | Manus (Manus AI) |
 | **Guardián de Canon** | Claude (vía repo GitHub) |
 | **Aprobador final** | Fernando |
@@ -24,7 +24,7 @@
 
 | Personaje | ID Canon | Regla de Diseño (Resumen) | Fuente | Última sincronización |
 | :--- | :--- | :--- | :--- | :--- |
-| Universe | `@char_USM_universe` | La profundidad nunca debe aparecer antes que el humor. Conoce el mecanismo pero nunca entiende completamente el propósito ni tiene acceso total. No es orquestador del conflicto. | `02 Personajes/Primer Círculo/Universe/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
+| Universe | `@char_USM_universe` | La profundidad nunca debe aparecer antes que el humor. Conoce el mecanismo pero nunca entiende completamente el propósito ni tiene acceso total. No es orquestador del conflicto. Canon actualiza el color de pelaje a blanco/crema y añade un registro sarcástico/cortante permitido en memes y composiciones cinematográficas, siempre limitado por Anti-tono: se ríe con, no de, y no muestra desprecio hacia otro personaje o el público. | `02 Personajes/Primer Círculo/Universe/03 Reglas de diseño.md` | 2026-08-12 (commits `94aa9e8`, `e8b6f22`, `b52ea42`; HEAD `1daaad5`) |
 | Wilfred | `@char_USM_wilfred` | Guardián del bosque con barba blanca larga, gorro rojo, personalidad enfocada en sabiduría y humor seco. No moraliza explícitamente ni diagnostica a otros personajes. | `02 Personajes/Primer Círculo/Wilfred/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
 | Elara | `@char_USM_elara` | Lectora de cartas mágicas conectada con astrología y naturaleza. Rol diferenciado de Universe (no es tarotista principal — ese es Universe). | `02 Personajes/Primer Círculo/Elara/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
 | Ganso | `@char_USM_ganso` | *(Pendiente: consultar ficha canónica para regla de diseño activa)* | `02 Personajes/Primer Círculo/Ganso/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
@@ -34,11 +34,13 @@
 
 | Personaje | ID Canon | Nota | Fuente | Última sincronización |
 | :--- | :--- | :--- | :--- | :--- |
-| Hada (Kiri) | `@char_USM_hada` | Nombre propio confirmado por Fernando (2026-08-03): Kiri. Su territorio emocional es el asombro genuino — la primera vez que una emoción aparece antes del mecanismo para esconderla. Puede tocar la grieta de Wilfred con preguntas simples que la ironía no puede esquivar. | `02 Personajes/Segundo Círculo/Hada/00 Resumen.md`, `01 Territorio emocional.md`, `03 Reglas de diseño.md` | 2026-08-03 (commit `f7bebca`) |
-| Evan | `@char_USM_evan` | *(Pendiente: consultar ficha)* | `02 Personajes/Segundo Círculo/Evan/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
+| Hada (Kiri) | `@char_USM_hada` | Nombre propio confirmado: Kiri. Su territorio emocional es el asombro genuino. Su varita es un objeto personal canonizado como elemento visual/identitario; su función narrativa y relación con el lenguaje de Resonancia siguen abiertas. | `02 Personajes/Segundo Círculo/Hada/00 Resumen.md`, `01 Territorio emocional.md`, `03 Reglas de diseño.md` | 2026-08-04 (commits `f7bebca`, `990a69c`; HEAD `1daaad5`) |
+| Evan | `@char_USM_evan` | La relación de Evan con Elara y Kiri puede generar lecturas de cercanía o “chisme”, pero ninguna es romántica en canon. La ambigüedad queda abierta deliberadamente y no debe resolverse automáticamente. | `02 Personajes/Segundo Círculo/Evan/02 Relaciones.md` | 2026-08-12 (commit `1daaad5`) |
+| Kael | `@char_USM_kael` | Personaje canonizado del Segundo Círculo. Forma una pareja establecida con Maeve. Su relación narrativa con Universe existe visualmente, pero aún no está definida. | `02 Personajes/Segundo Círculo/Kael/00 Resumen.md`, `01 Territorio emocional.md`, `02 Relaciones.md`, `03 Reglas de diseño.md` | 2026-08-11 (commit `a994354`) |
+| Maeve | `@char_USM_maeve` | Personaje canonizado del Segundo Círculo. Forma una pareja establecida con Kael. Su relación narrativa con Universe existe visualmente, pero aún no está definida. | `02 Personajes/Segundo Círculo/Maeve/00 Resumen.md`, `01 Territorio emocional.md`, `02 Relaciones.md`, `03 Reglas de diseño.md` | 2026-08-11 (commit `a994354`) |
 | Chica del Suéter | `@char_USM_chica_sweater` | *(Pendiente: consultar ficha)* | `02 Personajes/Segundo Círculo/Chica del Suéter/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
 | Chico de los Pantalones | `@char_USM_chico_pantalones` | *(Pendiente: consultar ficha)* | `02 Personajes/Segundo Círculo/Chico de los Pantalones/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
-| Fantasma | `@char_USM_fantasma` | Congelado emocionalmente en un instante que nunca cerró — no es incapacidad física. Se aferra por lógica de supervivencia interna, no por nostalgia (ver Territorio Emocional). Restricción real: no puede resolver esa identidad ni "salvar el día" de forma heroica y dramáticamente visible dentro de una misma pieza. *(Corregido 2026-08-02 por Claude — la nota original describía inmovilidad física, que no existe en canon.)* | `02 Personajes/Segundo Círculo/Fantasma/01 Territorio emocional.md`, `03 Reglas de diseño.md` | 2026-08-02 (corrección) |
+| Fantasma | `@char_USM_fantasma` | Congelado emocionalmente en un instante que nunca cerró — no es incapacidad física. Puede actuar, pero no puede resolver esa identidad ni "salvar el día" de forma heroica y dramáticamente visible dentro de una misma pieza. La regla no cambió en el delta actual. | `02 Personajes/Segundo Círculo/Fantasma/01 Territorio emocional.md`, `03 Reglas de diseño.md` | 2026-08-02 (sin cambios desde antes de `939752c`; confirmado en HEAD `1daaad5`) |
 
 ### 1.3 Lugares
 
@@ -48,6 +50,8 @@
 | Jardines Eternos | `@loc_USM_jardines` | *(Pendiente: consultar ficha)* | `06 Lugares/Jardines Eternos.md` | 2026-07-31 (commit `939752c`) |
 | La Plaza del Mercado | `@loc_USM_plaza` | *(Pendiente: consultar ficha)* | `06 Lugares/La Plaza del Mercado.md` | 2026-07-31 (commit `939752c`) |
 | Mar de Nubes | `@loc_USM_mar_nubes` | *(Pendiente: consultar ficha)* | `06 Lugares/Mar de Nubes.md` | 2026-07-31 (commit `939752c`) |
+| La Hoguera | `(ID pendiente; no asignar)` | Propuesta de lugar; no es canon y no debe tratarse como cerrado. | `06 Lugares/La Hoguera.md` | 2026-08-04 (commit `9dcf9d4`) |
+| La Ciudad | `(ID pendiente; no asignar)` | Propuesta parcial con dirección visual; no es canon y no debe tratarse como cerrado. | `06 Lugares/La Ciudad.md` | 2026-08-04 (commit `9dcf9d4`) |
 
 ### 1.4 Reglas de Diseño de Historias
 
@@ -57,6 +61,34 @@
 | Sin moralización explícita | Una historia no puede existir para ilustrar una lección. Ningún personaje puede diagnosticar a otro. La lección debe sentirse sin nombrarse. | `07 Historias/00 Estándar de Historias.md` | 2026-07-31 (commit `939752c`) |
 | Fantasma congelado emocionalmente | El Fantasma no puede resolver ni superar de forma dramática y visible su identidad congelada dentro de una misma pieza. No tiene restricción de movilidad física ni de acción. *(Corregido 2026-08-02 por Claude — "Fantasma inmovilizado" describía incapacidad física, que no existe en canon.)* | `02 Personajes/Segundo Círculo/Fantasma/01 Territorio emocional.md`, `03 Reglas de diseño.md` | 2026-08-02 (corrección) |
 | Universe limitado | Universe conoce el mecanismo pero nunca entiende completamente el propósito. No es orquestador de conflictos. | `02 Personajes/Primer Círculo/Universe/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
+
+### 1.5 Delta canónico posterior a 939752c
+
+La siguiente tabla resume únicamente los cambios confirmados por la ficha de sincronización de Claude hasta el HEAD `1daaad5`. Las propuestas permanecen separadas del canon.
+
+| Commit | Elemento | Estado y efecto vigente |
+|---|---|---|
+| `8e9fe9a` | Payaso / Silvio | `CANON v1.1`, cerrado. Silvio es el nombre propio; el diseño aprobado usa sonrisa ladeada cómplice y ceja levantada, no el payaso triste. |
+| `f7bebca`, `990a69c` | Hada / Kiri | `CANON v1.2`, cerrado. Kiri y su varita están confirmados como identidad visual; la función narrativa de la varita sigue abierta. |
+| `94aa9e8`, `e8b6f22`, `b52ea42` | Universe | Pelaje blanco/crema y registro sarcástico/cortante canonizados. El registro aplica a memes y composiciones cinematográficas, siempre limitado por Anti-tono. |
+| `9dcf9d4` | La Hoguera y La Ciudad | `Propuesta`; no son lugares canonizados y no deben tratarse como estados cerrados. No se asignan IDs canon en este bridge. |
+| `a994354` | Kael y Maeve | `CANON v1.0` cada uno; pareja establecida. La relación narrativa con Universe sigue abierta. |
+| `1daaad5` | Evan, Kiri y Elara | La cercanía que genera lecturas de “chisme” queda abierta y no es romance canon. No debe resolverse automáticamente. |
+| `aa948c5` | Excepción de Anti-tono en Reels | `PENDIENTE`, no canon. No modifica reglas activas ni IDs. |
+
+### 1.6 Contenido de Growth OS evaluado contra reglas canónicas
+
+`La Búsqueda del Frasco Olvidado` no es un documento del repositorio canónico; vive en el espacio de producción del Growth OS y debe evaluarse contra reglas que sí están cerradas en la Biblia.
+
+| Elemento | Estado vigente | Acción requerida |
+|---|---|---|
+| Capítulo 10 — Universe omnisciente | Contradicción activa | Reescribir: Universe no puede revelar que conocía todo el plan ni actuar como orquestador omnisciente. |
+| Capítulo 8 — moralización de Wilfred | Contradicción activa | Reescribir diálogo y CTA para que la lección se sienta, no se nombre ni se diagnostique. |
+| Elara como tarotista | Conflicto de diferenciación activo | Reasignar el ángulo hacia astrología y naturaleza; no duplicar el rol tarotista de Universe. |
+| Capítulo 7 — Fantasma | Relectura requerida | Revisar el texto directo para determinar si “salvar el día” resuelve visiblemente su identidad congelada. La regla canónica no cambió. |
+| Silvio / Contradicción #5 | Resuelto | No es un bloqueo vigente; tratar Silvio como canon cerrado. |
+
+Estos conflictos no representan cambios del canon remoto. `CNT-004` permanece `Blocked_Operational` en el inventario del Growth OS hasta que la historia sea corregida y aprobada por Fernando o Claude.
 
 ---
 
@@ -131,7 +163,7 @@ El sistema se compone de:
 | 2026-07-31 | Creación del documento puente (v1.0) | Repo `iomarketing09-sys/universe-sent-me-1` (commit `cf2ac53`) | Manus |
 | 2026-07-31 | Implementación de arquitectura escalable (v2.0) | Repo `iomarketing09-sys/universe-sent-me-1` (commit `939752c`) | Manus |
 | 2026-08-03 | Resolución de Silvio y diseño corregido | Canon commit `8e9fe9a`, registrado en `Canon_Contradictions_Report.md` | Fernando vía Claude |
-| 2026-08-15 | Resincronización del caché para corregir la falsa alerta Silvio/Payaso | Growth OS local: commit `c9730ee6`; HEAD remoto del repo de canon no verificable en esta sesión | Manus |
+| 2026-08-15 | Resincronización contra el HEAD canónico actual `1daaad5` | Ficha `canon_sync_fiche.md` proporcionada por Claude; consultada `2026-08-15T22:56:57Z` vía clonación directa | Manus |
 
 ---
 
@@ -142,7 +174,8 @@ El sistema se compone de:
 3. Cada regla aquí debe llevar fecha de sincronización y commit de referencia.
 4. El campo `Estado` en el Calendario Editorial es un **bloqueo operativo**, no una etiqueta. Manus no puede publicarlo si no dice literalmente "Aprobado".
 5. El cambio de estado a "Aprobado" solo lo puede hacer Fernando o Claude. Nunca Manus, nunca una regla automática.
-6. Antes de cada sesión de trabajo, Manus debe verificar si el commit de referencia sigue siendo el HEAD del repo. Si no, debe marcar las reglas como desactualizadas.
-7. En esta resincronización, el repo canónico no estuvo disponible para consulta remota desde la sesión; por eso `8e9fe9a` se trata como evidencia canónica registrada por Claude/Fernando en el reporte local, no como una comprobación remota nueva. La próxima lectura debe verificar el HEAD real antes de sobrescribir otra vez el bridge.
-8. **Nueva (v2.0):** La arquitectura completa del calendario vive en `GrowthOS/` del repositorio. Este documento mantiene la vista condensada del Calendario Editorial y el HypothesisBank.
-9. **Nueva (v2.3):** Para ahorrar consultas y tokens, solo se consultan deltas de publicaciones y comentarios desde la última sincronización; no se vuelve a descargar toda la historia en cada sesión.
+6. Antes de cada sesión de trabajo, Manus debe obtener de Claude una ficha o confirmación del HEAD actual del repositorio canónico. Si el HEAD cambia, este bridge debe marcarse desactualizado hasta resincronización.
+7. `iomarketing09-sys/universe-sent-me-1` es administrado por Claude. Manus no modifica ese repositorio ni convierte contenido de Growth OS en canon; cualquier cambio de nombre, diseño, regla narrativa o aprobación debe aclararse con Claude y, cuando corresponda, Fernando.
+8. La ficha recibida el 2026-08-15 confirma que `1daaad5342c278909b78076a54d8b220fa51e023` es el HEAD de `main`. Esta referencia es la autoridad de esta versión del bridge; si no existe una ficha nueva, no se deben inferir cambios posteriores.
+9. **Nueva (v2.0):** La arquitectura completa del calendario vive en `GrowthOS/` del repositorio. Este documento mantiene la vista condensada del Calendario Editorial y el HypothesisBank.
+10. **Nueva (v2.3):** Para ahorrar consultas y tokens, solo se consultan deltas de publicaciones y comentarios desde la última sincronización; no se vuelve a descargar toda la historia en cada sesión.
