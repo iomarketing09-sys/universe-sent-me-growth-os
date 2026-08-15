@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-15
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -147,6 +147,70 @@ La actualización de este documento requiere mantener sincronizados los siguient
 | `GrowthOS/00_01_Changelog_GrowthOS.md` | Registrar la auditoría, el escaneo de 20 publicaciones y la propuesta de flujo |
 | `GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md` | En una futura revisión, enlazar el registro cualitativo real de comunidad con esta auditoría |
 | `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md` | Incorporar la señal de comentarios como variable de aprendizaje cuando termine la prueba de 14 días |
+
+## 10. Análisis real de los 67 comentarios
+
+La segunda extracción recuperó el texto de los 67 comentarios sin solicitar ni conservar nombres, PSID ni perfiles de comentaristas. La clasificación se hizo sobre el contenido visible y sobre el contexto de la publicación; por tanto, describe señales de conversación, no identidades ni datos demográficos.
+
+### 10.1 Composición de la muestra
+
+| Categoría analítica | Casos | Proporción | Lectura CGO |
+|---|---:|---:|---|
+| Comentarios de distribución de la página (`@seguidores` / `@fansdestacados`) | 14 | 20.9% | Son distribución o etiquetado de audiencia; no deben contarse como conversación orgánica. |
+| Comentarios vacíos o sin texto | 15 | 22.4% | Señal de interacción de bajo contenido; no permite inferir una intención. |
+| Etiquetas de amigos o personas | 13 | 19.4% | Buena señal de compartibilidad social y de identificación con una situación. |
+| Acuerdo, risa o aprobación breve | 9 | 13.4% | Confirma comprensión o agrado, pero ofrece poco aprendizaje cualitativo. |
+| Reacción de emojis o afecto | 6 | 9.0% | Expresa tono positivo o emocional, aunque no explica el motivo. |
+| Comentario contextual o sustantivo | 7 | 10.4% | Es la señal más valiosa para aprender lenguaje, situaciones y necesidades de la comunidad. |
+| Crítica, desacuerdo o tono de riesgo | 3 | 4.5% | Requiere criterio humano; puede ser señal editorial o riesgo de moderación. |
+
+Los grupos suman los 67 comentarios. Después de descontar los 14 comentarios de distribución de la página y los 15 vacíos, quedan **38 comentarios con texto o reacción de audiencia que contienen alguna señal social**. Solo **7** son claramente contextuales o sustantivos; esta es la parte que el Growth OS debe proteger y estudiar, no mezclar con menciones automáticas o respuestas vacías.
+
+### 10.2 Publicaciones que concentraron la conversación
+
+| Publicación | Comentarios | Señal principal |
+|---|---:|---|
+| “¿Qué quieres desayunar?” — Evan/Kiri | 14 | Fue la pieza más conversacional. Generó respuestas de comida, afecto, etiquetas y frases de pareja; el formato abierto permite que cada persona complete la escena desde su experiencia. |
+| “Tus únicas amigas son estas” — Kael | 11 | Activó etiquetas, bromas de complicidad y comentarios sobre atractivo. Tiene alto potencial de compartibilidad, pero también mayor probabilidad de comentarios sexualizados o de doble sentido. |
+| Meme de Silvio — payaso | 8 | Generó una conversación más larga: acuerdos, reinterpretaciones y una referencia a una tendencia externa. También concentró dos comentarios de tono riesgoso. |
+| “Te extraño bruja” — Maeve | 6 | Produjo aprobación y risas breves; funciona como identificación emocional, pero no abrió muchas historias personales. |
+| Publicación “🫢” | 5 | Volumen menor, pero generó frases personales relacionadas con soledad, sinceridad y seguir mejorando. Tiene menos cantidad y más potencial de insight. |
+
+La pieza de desayuno debe tratarse como una **hipótesis fuerte**, no como una prueba causal: su pregunta y su encuadre relacional probablemente facilitaron la participación, pero todavía necesitamos repetir variantes similares en varias piezas. Del mismo modo, los memes de atractivo o doble sentido pueden generar conversación y etiquetas, pero no necesariamente construyen comunidad profunda.
+
+### 10.3 Patrones de tono y contenido
+
+El patrón dominante es la **participación de baja fricción**: una etiqueta, una risa, un emoji o una frase breve. Esto es positivo para distribución, pero no debe confundirse con conversación profunda. El segundo patrón es la **conversación social entre personas**, especialmente en las piezas que describen parejas, atractivo, amistad o situaciones reconocibles. Esas publicaciones convierten el meme en un objeto para etiquetar a alguien.
+
+El tercer patrón, menor pero estratégico, es la **auto-revelación**. Aparece en comentarios sobre pasar mucho tiempo a solas, preferir la sinceridad, extrañar a alguien o relacionarse con la escena del meme. Estas respuestas conectan directamente con la tesis emocional de Universe Sent Me: la audiencia no solo reacciona al chiste, sino que ocasionalmente usa la página para decir “esto me pasa” o “esto describe mi situación”.
+
+El cuarto patrón es el **riesgo de desviación temática**. En el post de Silvio, un comentario llevó la conversación hacia una referencia de tendencia externa y otro desarrolló una crítica general sobre relaciones, sexualización y expectativas. En otro post apareció una crítica agresiva sobre burlarse en lugar de ofrecer oportunidades laborales. No conviene borrar automáticamente este tipo de comentarios: primero hay que distinguir crítica útil, humor oscuro, provocación y abuso.
+
+### 10.4 Persistencia temporal
+
+La conversación no termina en la primera hora. Las publicaciones con mayor volumen conservaron comentarios nuevos aproximadamente durante dos días y medio: “¿Qué quieres desayunar?” recibió actividad hasta casi 60 horas después, y “Tus únicas amigas” también mantuvo actividad durante unas 60 horas. Esto valida una revisión de seguimiento al día siguiente y no solamente una revisión inmediata después de publicar.
+
+En el conjunto analizado no se identificaron respuestas conversacionales de la página a los comentarios de la audiencia. Las 14 entradas claramente atribuibles por texto a la página eran menciones de distribución (`@seguidores` o `@fansdestacados`), no respuestas que desarrollaran la conversación. Esta es la oportunidad operativa más concreta: **la comunidad ya está dejando material; la página todavía no está convirtiendo ese material en relación ni aprendizaje visible**.
+
+### 10.5 Decisiones CGO para el calendario
+
+Durante la prueba de 14 días se deben incluir tres tipos de estímulo, sin convertir cada copy en una solicitud de comentario:
+
+| Estímulo | Ejemplo de copy | Qué mediremos |
+|---|---|---|
+| Escena abierta | “¿Qué quieres desayunar?” o una pregunta equivalente ligada al meme | Comentarios con contenido y diversidad de respuestas |
+| Identificación social | “¿A quién le pasa esto?” o “¿quién de USM diría esto?” | Etiquetas y compartidos entre personas |
+| Insight emocional | “¿Te ha pasado o solo a mí?” | Historias personales y lenguaje reutilizable para futuros memes |
+
+La distribución recomendada es un estímulo conversacional por día como máximo y no necesariamente en el meme de mayor prioridad de alcance. El resto de publicaciones debe conservar copies simples para mantener una línea base. Las etiquetas automáticas de audiencia deben registrarse aparte y excluirse de la métrica de comentarios cualitativos.
+
+### 10.6 Decisiones operativas de moderación
+
+La primera respuesta a comentarios debe ser humana y guiada. La prioridad de revisión debe ser: primero publicaciones con 5 o más comentarios; después comentarios sustantivos, preguntas, historias personales y críticas; por último emojis, etiquetas y frases de aprobación.
+
+Se recomiendan dos ventanas de revisión: una durante el mismo día de publicación y otra entre 24 y 48 horas después. En la primera ventana se responde a comentarios que puedan abrir conversación; en la segunda se recuperan señales tardías. La respuesta debe ser breve, cálida y coherente con el tono de la marca. No se deben hacer diagnósticos, promesas de ayuda ni discusiones políticas o personales.
+
+Ejemplos de respuesta guiada podrían ser: “Jajaja, el pan y café también cuenta. ¿Eres más de desayuno tranquilo o de sobrevivir con lo que haya?” para una respuesta de baja fricción; o “Eso ya no es solo un meme, Wilfred necesita tomar nota” para una complicidad con personaje. Son ejemplos para revisión humana, no plantillas para publicar automáticamente.
 
 ## Referencias
 

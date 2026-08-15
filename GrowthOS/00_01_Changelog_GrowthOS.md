@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.47
+**Versión:** 1.48
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -36,6 +36,16 @@
 - La lectura de `/{post_id}/comments` respondió HTTP 200. En 20 publicaciones recientes se observaron 67 comentarios acumulados, 16 publicaciones con comentarios, mediana de 2 y máximo de 14.
 - La escritura de respuestas, ocultamientos o eliminaciones no se probó; queda pendiente una prueba controlada con confirmación explícita de Fernando.
 - El mismo chequeo mostró que `instagram_manage_comments` ahora está concedido, por lo que se corrige el diagnóstico anterior de permiso ausente. La moderación de Instagram sigue separada y no se automatiza todavía.
+
+---
+
+## [1.2.48] — 2026-08-15 (Manus)
+### Análisis cualitativo de comentarios de Facebook
+- Se recuperó el texto anonimizado de los 67 comentarios de las 20 publicaciones recientes y se actualizó `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` a la versión 1.1.
+- La muestra contiene 14 comentarios de distribución de la página, 15 vacíos, 13 etiquetas sociales, 9 acuerdos o risas breves, 6 reacciones de emojis, 7 comentarios contextuales y 3 críticos o de riesgo.
+- “¿Qué quieres desayunar?” fue la publicación más conversacional con 14 comentarios; “Tus únicas amigas son estas” concentró 11; el meme de Silvio concentró 8 y también los riesgos de tono más claros.
+- La comunidad dejó señales de auto-revelación sobre soledad, sinceridad, afecto y extrañar a alguien. Se recomienda medir comentarios cualitativos por separado de menciones automáticas y emojis.
+- Se recomendó revisar el mismo día y entre 24–48 horas después, mantener respuestas humanas guiadas y probar un estímulo conversacional por día como máximo durante el calendario experimental.
 
 ---
 
