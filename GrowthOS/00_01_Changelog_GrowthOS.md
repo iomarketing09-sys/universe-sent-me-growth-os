@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.38
+**Versión:** 1.39
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -26,6 +26,14 @@
 - Se registraron los permisos efectivos y las cuentas vinculadas en `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`.
 
 ---
+
+---
+
+## [1.2.39] — 2026-08-15 (Manus)
+### Añadido y confirmado
+- Se creó y validó la skill `usm-calendar-scheduler`, con el flujo simplificado para validar calendarios aprobados, derivar correctamente el Page Access Token, programar Facebook, verificar IDs, mover originales en Drive sin copias y registrar el resultado.
+- La skill incluye una referencia técnica sobre la diferencia entre User ID y Page ID, el flujo `/photos` + `/feed` y el tratamiento separado de Instagram.
+- Se confirmó que las publicaciones del 15–16 de agosto quedaron programadas únicamente en Facebook. Instagram no quedó programado: el conector estaba desconectado y no existe un registro de publicación o programación de Instagram para esas piezas.
 
 ---
 
