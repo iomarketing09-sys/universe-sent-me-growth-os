@@ -47,3 +47,19 @@ Ejecuta esta tarea autónomamente, sin pedir confirmación al usuario:
 - Facebook: sin cambios.
 - Exclusión confirmada: `260583 - Universe.png` no fue recuperada ni publicada.
 - `scheduled_publish_time`: no utilizado.
+
+### 2026-08-15 10:10:20 America/Mexico_City
+
+- Resultado: `nothing_due`.
+- Filas objetivo validadas: 5 filas con `Plataforma=Facebook; Instagram selectivo` para 2026-08-15 y 2026-08-16.
+- Filas procesadas: 0; el slot de 10:00 ya estaba fuera de la ventana válida de ocho minutos al despertar del runner.
+- IDs de contenedor: ninguno.
+- IDs de media: ninguno.
+- Errores de Meta: ninguno; no se realizaron llamadas `media`, verificación ni `media_publish`.
+- Facebook: sin cambios.
+- Exclusión confirmada: `260583 - Universe.png` no forma parte de las filas objetivo y no fue recuperada ni publicada; permanece prohibida por `IG_Estado=ELIMINADA_MANUALMENTE`.
+- `scheduled_publish_time`: no utilizado.
+
+---
+
+**Nota de coherencia documental:** No se requirieron actualizaciones en el calendario CSV/Markdown porque no hubo publicaciones, IDs ni cambios de estado. El playbook conserva el registro operativo de esta ejecución y continúa siendo la fuente de procedimiento para el runner.
