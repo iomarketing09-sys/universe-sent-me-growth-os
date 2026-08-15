@@ -4,7 +4,7 @@ purpose: "Adaptar cinco referencias de memes al lenguaje visual, personajes, esc
 status: Review
 created: 2026-08-15
 updated: 2026-08-15
-version: "2.0"
+version: "2.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -49,5 +49,17 @@ Las cinco piezas fueron regeneradas con **Nano Banana Pro** en formato vertical 
 | 3 | `usm_meme_response_v2_03_elara_universe.png` | Review |
 | 4 | `usm_meme_response_v2_04_no_somos_adivinos.png` | Review; preferida por Fernando |
 | 5 | `usm_meme_response_v2_05_silvio_reaction.png` | Review |
+
+### Lote 2: reconocimiento de seguidores activos
+
+Este lote está diseñado para responder a las personas que comentan con frecuencia y ya muestran una relación repetida con la página. A diferencia del lote anterior, el fondo se mantiene deliberadamente mínimo: gradientes mágicos, pocas estrellas, una luz suave o una forma de diálogo. La atención queda en el personaje, la expresión y la frase.
+
+| Asset | Función | Personaje | Texto | Archivo | Estado |
+|---:|---|---|---|---|---|
+| 6 | Reconocer que la persona volvió a comentar y agradecer su presencia | Universe | **OTRA VEZ TÚ** / **GRACIAS POR ESTAR SIEMPRE** | `usm_active_follower_01_universe_otra_vez_tu.png` | Review |
+| 7 | Convertir al seguidor frecuente en parte del mundo de USM | Wilfred | **YA TE RECONOCE** / **WILFRED** | `usm_active_follower_02_wilfred_bosque.png` | Review |
+| 8 | Celebrar de forma exagerada y juguetona que la persona comentó | Silvio | **TÚ COMENTAS** / **SILVIO SE EMOCIONA** | `usm_active_follower_03_silvio_comentario.png` | Review |
+
+Los tres assets fueron generados con **Nano Banana Pro** en formato cuadrado 1:1. Son respuestas personales y no publicaciones del calendario regular. Pueden enviarse junto con una respuesta breve o utilizarse solos cuando el comentario ya contiene el contexto.
 
 La referencia maestra de consistencia usada durante la regeneración fue `usm_meme_response_style_reference.png`. Después de la revisión de Fernando, las aprobadas podrán pasar a una carpeta permanente de assets de respuesta y registrarse en el inventario de producción. No se crearon copias permanentes en Drive.
