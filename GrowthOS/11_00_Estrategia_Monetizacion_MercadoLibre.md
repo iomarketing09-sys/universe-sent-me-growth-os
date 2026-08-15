@@ -3,8 +3,8 @@
 **Propósito:** Definir el marco operativo para capitalizar la afiliación de Mercado Libre a través de contenido narrativo y la sección recurrente "¿Qué me llegó?".
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
-**Última actualización:** 2026-08-05
-**Versión:** 1.0
+**Última actualización:** 2026-08-15
+**Versión:** 1.1
 **Autor:** Manus AI (CGO)
 **Documentos relacionados:** `01_02_Content_Backlog.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`
 
@@ -28,7 +28,7 @@ Transformaremos el unboxing tradicional en una pieza de **Story-Commerce** utili
 
 ### A. Facebook Reels (Canal Principal)
 - **Gancho:** El paquete de Mercado Libre apareciendo en un entorno fantástico.
-- **CTA:** "Link en el primer comentario" o "Escribe INFO para enviarte el link". La gestión se realizará mediante el flujo de Manus y Meta Graph API cuando los permisos lo permitan; Make queda fuera de la estrategia.
+- **CTA:** "Link en el primer comentario" o "Escribe INFO para enviarte el link". La gestión se realizará mediante el flujo de Manus y Meta Graph API cuando los permisos lo permitan.
 - **Monetización:** Comisión por venta + Bonos por visualizaciones (si aplica).
 
 ### B. Mercado Libre Clips
@@ -61,3 +61,4 @@ Se integrarán en el `08_00_Metricas_Baseline_Plataformas.md`:
 | Fecha | Versión | Cambio | Autor |
 |---|---|---|---|
 | 2026-08-05 | 1.0 | Creación de la estrategia inicial de monetización ML. | Manus AI (CGO) |
+| 2026-08-15 | 1.1 | Se elimina la referencia operativa a Make; el flujo vigente queda en Manus + Meta Graph API. | Manus AI (CGO) |

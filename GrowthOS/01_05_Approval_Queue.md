@@ -37,4 +37,4 @@ Este es el cuello de botella operativo del calendario. Ninguna pieza en esta col
 
 1. **Revisión Canon:** Una vez que Claude/Manus confirme que no hay contradicciones, el estado debe cambiar a `Pendiente Aprobación Fernando`.
 2. **Aprobación Fernando:** Solo Fernando puede cambiar el estado a `Aprobado`.
-3. **Automatización Make:** El flujo `Flujo de Notificación de Aprobación` debe alertar a Fernando cuando una pieza pase de `En Producción` a `Pendiente Aprobación Fernando`.
+3. **Notificación y registro:** Manus registra el cambio y notifica a Fernando por el canal operativo acordado cuando una pieza pase de `En Producción` a `Pendiente Aprobación Fernando`; este flujo no tiene automatización activa.

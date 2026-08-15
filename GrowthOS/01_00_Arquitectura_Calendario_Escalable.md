@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-15
-**Versión:** 1.2
+**Versión:** 1.3
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`; `Universe Sent Me - Biblia/07 Historias/00 Estándar de Historias.md` (repositorio separado, solo lectura: `iomarketing09-sys/universe-sent-me-1`)
 
@@ -12,7 +12,7 @@
 
 ## 1. Sistema de Metadatos Estandarizado
 
-Para escalar a 1,000+ piezas, cada idea debe existir como una fila independiente en un sistema relacional o inventario estructurado. La ejecución vigente no depende de Make: Manus lee la fuente aprobada, valida los bloqueos y utiliza la API de Graph de Meta para programar o publicar en Facebook e Instagram. El estándar de historias de la Biblia (`07 Historias/00 Estándar de Historias.md`) provee la base narrativa, pero el Growth OS requiere metadatos operativos.
+Para escalar a 1,000+ piezas, cada idea debe existir como una fila independiente en un sistema relacional o inventario estructurado. La ejecución vigente usa Manus + Meta Graph API: Manus lee la fuente aprobada, valida los bloqueos y utiliza la API de Graph de Meta para programar o publicar en Facebook e Instagram. El estándar de historias de la Biblia (`07 Historias/00 Estándar de Historias.md`) provee la base narrativa, pero el Growth OS requiere metadatos operativos.
 
 ### Campos Obligatorios (ID Únicos)
 
@@ -83,7 +83,7 @@ graph TD
 
 ### Transiciones Permitidas para Manus y Graph API
 
-> La guía histórica de Make queda archivada; las transiciones se ejecutan mediante validación explícita de Manus y registro de resultados de Meta.
+> Las transiciones heredadas quedan fuera del flujo vigente; las transiciones actuales se ejecutan mediante validación explícita de Manus y registro de resultados de Meta.
 
 Para evitar errores en la ejecución, Manus solo debe permitir las siguientes transiciones de estado y registrar el resultado de cada llamada a Meta:
 
@@ -135,7 +135,7 @@ El calendario de 7 días debe proyectar los siguientes campos para la operación
 
 ## 4. Integración vigente con Manus y Graph API
 
-Para que este sistema sea escalable y trazable, Manus leerá la fuente editorial aprobada usando la estructura de metadatos anterior, validará canon, assets, fecha y plataforma, y ejecutará Graph API de Meta. La guía histórica de Make queda archivada en `02_00_Guia_Automatizacion_Make.md` y ya no forma parte de este flujo.
+Para que este sistema sea escalable y trazable, Manus leerá la fuente editorial aprobada usando la estructura de metadatos anterior, validará canon, assets, fecha y plataforma, y ejecutará Graph API de Meta. Las automatizaciones heredadas quedan fuera de este flujo; la ruta vigente es Manus + Meta Graph API.
 
 ### Flujo vigente de publicación
 
@@ -153,22 +153,6 @@ Para que este sistema sea escalable y trazable, Manus leerá la fuente editorial
    - *Trigger:* Publicación confirmada o ventana de métricas de 24/72 horas.
    - *Acción:* consultar únicamente métricas nuevas por `Meta_ID`, actualizar `Publication_Log`, agregar la observación al `ExperimentLog` y actualizar el `HypothesisBank`. No volver a descargar el histórico completo.
 
-### Flujos históricos de Make (no operativos)
+### Procesos heredados
 
-1. **Flujo de Notificación de Aprobación:**
-   - *Trigger:* Fila modificada donde `Estado` cambia de `Pendiente Aprobación Fernando` a `Aprobado`.
-   - *Acción:* Enviar notificación a Telegram/Slack/Email informando que `CNT-####` está listo para programación.
-
-2. **Flujo de Generación de Calendario (Semanal):**
-   - *Trigger:* Scheduled (cada domingo a las 23:00).
-   - *Acción:* Filtrar todas las filas con `Estado == Aprobado` y `Es_Reutilizable == Sí` (prioridad).
-   - *Acción:* Generar borrador de la próxima semana respetando la Regla de Equilibrio y Formato.
-   - *Acción:* Enviar borrador a Fernando para revisión final.
-
-3. **Flujo de Bloqueo Canon:**
-   - *Trigger:* Fila modificada donde `Bloqueado_Canon` cambia de `No` a `Sí`.
-   - *Acción:* Si el `Estado` actual es `Programado` o `Publicado`, cambiar forzosamente a `Archivado` y notificar a Fernando.
-
-4. **Flujo de Publicación Programada:**
-   - *Trigger:* Fila modificada donde `Estado` cambia de `Aprobado` a `Programado`.
-   - *Acción:* Extraer el `ID_Pieza`, leer el documento asociado en el repo (si aplica) y enviar a las herramientas de publicación (API de Instagram/Meta).
+Los procesos históricos de automatización se conservan únicamente en su documento archivado y no forman parte de esta arquitectura activa. El flujo vigente está definido en las secciones anteriores: validación explícita de Manus, aprobación de Fernando/Claude, publicación mediante Meta Graph API y registro en los ledgers maestros.

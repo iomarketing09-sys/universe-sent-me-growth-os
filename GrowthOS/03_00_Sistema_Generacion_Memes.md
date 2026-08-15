@@ -3,10 +3,10 @@
 **Propósito:** Documentar el flujo de trabajo para la ingesta, aprobación y adaptación de memes en el universo de Universe Sent Me.
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
-**Última actualización:** 2026-08-14
-**Versión:** 2.2
+**Última actualización:** 2026-08-15
+**Versión:** 2.3
 **Autor:** Manus AI
-**Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_03_Reuse_Queue.md`, `Integracion_Growth_OS.md`
+**Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_03_Reuse_Queue.md`, `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`, `Integracion_Growth_OS.md`
 
 ---
 
@@ -98,7 +98,7 @@ Los memes ya publicados (como el archivo de mayo) entran directamente en la `Reu
 
 ## 7. Documentación Relacionada
 
--   **Guía de Automatización Make:** `GrowthOS/02_00_Guia_Automatizacion_Make.md`
+-   **Pipeline vigente de publicación:** `GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md` y `GrowthOS/Integracion_Growth_OS.md`
 -   **Cola de Reutilización:** `GrowthOS/01_03_Reuse_Queue.md`
 -   **Script de Generación:** `usm_meme_generator.py` (en el entorno de Manus)
 -   **Script de Procesamiento Drive:** `usm_meme_drive_processor.py` (en el entorno de Manus)

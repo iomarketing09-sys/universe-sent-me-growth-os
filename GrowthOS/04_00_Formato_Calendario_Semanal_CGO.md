@@ -3,8 +3,8 @@
 **Propósito:** Establecer la estructura de distribución semanal de contenido en las plataformas de Universe Sent Me, optimizando el mix entre reutilización de memes, reels, nuevo contenido y lore, ajustado a las frecuencias de publicación reales y validado con datos de mayo 2026.
 **Estado:** Active (Propuesta)
 **Fecha de creación:** 2026-08-01
-**Última actualización:** 2026-08-01
-**Versión:** 3.0
+**Última actualización:** 2026-08-15
+**Versión:** 3.1
 **Autor:** Manus AI (CGO)
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_01_Calendario_Semanal.md`, `01_03_Reuse_Queue.md`, `03_00_Sistema_Generacion_Memes.md`
 
@@ -112,10 +112,10 @@ Para que este formato funcione a escala, se deben aplicar estas reglas al llenar
 
 1.  **Regla de Costo Cero (Prioridad 1):** Los slots de Facebook y las primeras horas de Instagram deben llenarse primero con **Memes Reutilizados** de la `Reuse Queue`.
 2.  **Regla de la Carpeta Drive (Prioridad 2):** Los slots de "Memes Nuevos" (4 a 6 por semana) deben llenarse exclusivamente con las piezas generadas por Manus/Gemini en la carpeta `Generated_By_Gemini`.
-3.  **Regla de Cascada de Video (Prioridad 3):** Todo Reel aprobado para Instagram o Facebook **debe** ser republicado automáticamente en TikTok y YouTube Shorts para maximizar el alcance orgánico sin costo de producción.
+3.  **Regla de Cascada de Video (Prioridad 3):** Todo Reel aprobado para Instagram o Facebook **debe** ser republicado mediante el flujo explícito de publicación documentado, con validación de estado y registro de cada plataforma; no se presupone una automatización silenciosa.
 4.  **Regla de Aprobación:** El Lore y los Reels experimentales requieren aprobación explícita de Fernando antes de pasar al estado `Programado`.
 5.  **Regla de Canon:** Nunca se asignará un personaje a un formato que contradiga sus reglas de diseño (ej. el Fantasma nunca superando su apego de forma dramática y visible en una sola pieza, Wilfred nunca moralizando). *(Corrección 2026-08-02: el ejemplo original decía "el Fantasma nunca en un Reel dinámico" — el Fantasma no tiene restricción de movilidad física en canon; sí tiene restricción de no resolver su identidad congelada de forma visible y permanente dentro de un mismo episodio.)*
 
 ---
 
-**Nota de CGO (actualizada 2026-08-14):** Esta estructura será utilizada por Manus para generar y validar el borrador de la siguiente semana, filtrando la `Reuse Queue` y el `Content Backlog` según estas cuotas. La programación y publicación se ejecutan mediante el flujo directo de Graph API de Meta; Make queda archivado y fuera de la estrategia operativa.
+**Nota de CGO (actualizada 2026-08-15):** Esta estructura será utilizada por Manus para generar y validar el borrador de la siguiente semana, filtrando la `Reuse Queue` y el `Content Backlog` según estas cuotas. La programación y publicación se ejecutan mediante el flujo directo de Graph API de Meta; las automatizaciones heredadas no forman parte de la estrategia operativa.

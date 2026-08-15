@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.67
+**Versión:** 1.68
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -66,6 +66,16 @@
 - Se incorporó la tabla de contradicciones de `La Búsqueda del Frasco Olvidado` como contenido de Growth OS evaluado contra reglas canónicas, no como contenido del repositorio de canon. Capítulos 8 y 10 y la duplicación de rol de Elara siguen activos; Capítulo 7 requiere relectura directa; Silvio está resuelto.
 - Se documentó que `universe-sent-me-1` es administrado por Claude: Manus no lo modifica ni convierte contenido de Growth OS en canon. La próxima sincronización requiere una nueva ficha de HEAD.
 - Se actualizó `GrowthOS/00_Índice.md` a v3.4 y `Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md` a v1.4.
+
+---
+
+## [1.2.68] — 2026-08-15 (Manus)
+### IDs, métricas y limpieza de documentación operativa
+- Se corrigió la descripción del primer extractor: la extracción se ejecutó el `2026-08-15 16:59:37` en `America/Matamoros`, evaluó las nueve publicaciones de `EXP-2026-08-CAL-01`, encontró 0 ventanas 24/72 elegibles, escribió 0 métricas y no modificó veredictos.
+- La tabla de IDs de `GrowthOS/Integracion_Growth_OS.md` ya incluye `@char_USM_kael` y `@char_USM_maeve` como canon cerrado desde `a994354`; la relación narrativa con Universe permanece abierta.
+- `GrowthOS/10_00_Kit_de_Hashtags_USM.md` fue corregido a v1.1: `#KaelUSM` y `#MaeveUSM` quedan asignados a los personajes correctos, mientras Chica del Suéter y Chico de los Pantalones conservan hashtags estructurales.
+- Se retiraron referencias operativas nominales a Make de README, governance, arquitectura de calendario, Approval Queue, sistema de memes, formato semanal, monetización, pipeline y bridge. La guía archivada, changelog, auditorías históricas y blueprints conservan menciones solo como trazabilidad.
+- Se actualizó la auditoría general para marcar esta limpieza como cerrada/controlada y documentar el resultado real de la extracción. El índice pasa a v3.5.
 
 ---
 

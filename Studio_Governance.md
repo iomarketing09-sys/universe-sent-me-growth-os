@@ -3,8 +3,8 @@
 **Propósito:** Resumen de roles, permisos y flujo de trabajo para uso rápido de Manus. **Este no es el documento autoritativo.** El documento completo y vinculante vive en el repositorio de canon: `universe-sent-me-1/Studio/Studio_Governance.md`. En caso de conflicto entre este resumen y el documento completo, **el documento completo siempre gana.**
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-03
-**Versión:** 1.1
+**Última actualización:** 2026-08-15
+**Versión:** 1.2
 **Autor:** Manus AI (v1.0); actualización de encabezado por Claude (v1.1, 2026-08-03)
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `GrowthOS/01_00_Arquitectura_Calendario_Escalable.md`, `GrowthOS/09_00_Estandar_Documentacion_Interna.md`
 
@@ -17,7 +17,7 @@
 | Repositorio | Propósito | Permisos de Manus | Guardián |
 | :--- | :--- | :--- | :--- |
 | `universe-sent-me-1` | Canon narrativo (personajes, lugares, filosofía, cosmogonía) | **Solo lectura** | Claude |
-| `universe-sent-me-growth-os` | Operaciones de crecimiento (calendario, colas, hipótesis, automatización) | **Lectura y escritura** | Manus |
+| `universe-sent-me-growth-os` | Operaciones de crecimiento (calendario, colas, hipótesis y publicación controlada) | **Lectura y escritura** | Manus |
 
 El puente entre ambos repositorios es `GrowthOS/Integracion_Growth_OS.md`, que mantiene un caché fechado de las reglas de canon relevantes con commit de referencia. Manus consulta este caché para generar contenido sin necesitar acceso directo al repo de canon.
 
@@ -35,7 +35,7 @@ El puente entre ambos repositorios es `GrowthOS/Integracion_Growth_OS.md`, que m
 
 ## 3. Regla de Bloqueo Operativo (No Negociable)
 
-> Ninguna pieza de contenido puede pasar a `Programado` o `Publicado` sin que su campo `Estado Canon` / `Bloqueado_Canon` diga `Aprobado` — y ese campo solo lo puede marcar **Fernando o Claude**, nunca Manus ni una automatización de Make.
+> Ninguna pieza de contenido puede pasar a `Programado` o `Publicado` sin que su campo `Estado Canon` / `Bloqueado_Canon` diga `Aprobado` — y ese campo solo lo puede marcar **Fernando o Claude**, nunca Manus ni una automatización.
 
 Esta regla se aplica tanto en el repositorio como en la base de datos externa (Google Sheets / Airtable).
 
@@ -83,11 +83,11 @@ El siguiente calendario establece la frecuencia y el alcance de las revisiones e
 
 | Día | Actividad | Responsable |
 | :--- | :--- | :--- |
-| **Domingo** | 1. Make genera borrador del calendario. 2. Claude revisa el caché de canon. 3. Manus actualiza `Integracion_Growth_OS.md` si hay cambios. | Manus + Claude |
+| **Domingo** | 1. Manus prepara el borrador del calendario desde las colas. 2. Claude revisa el caché de canon. 3. Manus actualiza `Integracion_Growth_OS.md` si hay cambios. | Manus + Claude |
 | **Lunes** | Fernando revisa y aprueba el calendario semanal. Comienza la producción. | Fernando |
 | **Martes–Viernes** | Producción activa. Revisión diaria de contenido nuevo con Claude. | Manus + Claude |
 | **Sábado** | Última publicación de la semana. | Manus |
-| **Domingo siguiente** | Make extrae métricas (Flujo 4). Claude valida hipótesis. | Manus + Make |
+| **Cada 48 horas** | Manus extrae únicamente las métricas 24/72 horas que ya sean elegibles y Claude/CGO valida las hipótesis. | Manus + Claude/CGO |
 
 ---
 
@@ -95,7 +95,7 @@ El siguiente calendario establece la frecuencia y el alcance de las revisiones e
 
 > Ninguna pieza puede ser reutilizada si han pasado menos de **30 días** desde su `Fecha_Ultima_Publicacion`. Esta regla protege contra la fatiga de audiencia y es ineludible.
 
-Los campos `Fecha_Ultima_Publicacion` y `Dias_Desde_Publicacion` en la base de datos son obligatorios para que Make pueda filtrar automáticamente.
+Los campos `Fecha_Ultima_Publicacion` y `Dias_Desde_Publicacion` en el inventario maestro son obligatorios para que Manus pueda aplicar automáticamente el filtro de 30 días.
 
 ---
 
@@ -127,4 +127,4 @@ Cuando Claude detecta una contradicción durante una revisión diaria:
 | Fecha | Versión | Cambio | Autor |
 | :--- | :--- | :--- | :--- |
 | 2026-07-31 | 1.0 | Creación del documento de governance. Definición de roles, permisos, revisiones diarias y semanales. | Manus AI |
-| — | — | *(próxima actualización)* | — |
+| 2026-08-15 | 1.2 | Se retira la dependencia operativa de Make; el flujo vigente usa Manus, Meta Graph API y revisión con Claude/Fernando. | Manus AI |

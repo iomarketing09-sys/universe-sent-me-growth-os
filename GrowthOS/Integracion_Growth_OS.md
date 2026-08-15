@@ -98,7 +98,7 @@ Estos conflictos no representan cambios del canon remoto. `CNT-004` permanece `B
 > El cambio a "Aprobado" solo puede ser realizado por Fernando o Claude.
 > Manus no puede ejecutar una publicación con estado ≠ "Aprobado" ni con `Bloqueado_Canon == Sí`.
 
-> **v2.1:** La arquitectura del calendario sigue documentada en `GrowthOS/01_00_Arquitectura_Calendario_Escalable.md`, pero Make queda retirado de la estrategia operativa. El calendario semanal operativo vive en `GrowthOS/01_01_Calendario_Semanal.md`; Manus valida cada orden y utiliza la API de Graph de Meta para programar o publicar. La guía histórica de Make se conserva archivada en `GrowthOS/02_00_Guia_Automatizacion_Make.md`.
+> **v2.1:** La arquitectura del calendario sigue documentada en `GrowthOS/01_00_Arquitectura_Calendario_Escalable.md`; la operación vigente vive en `GrowthOS/01_01_Calendario_Semanal.md`, y Manus valida cada orden y utiliza la API de Graph de Meta para programar o publicar. Las guías de automatización heredadas se conservan únicamente como archivo histórico.
 
 | Semana | Día | Fecha | Plataforma | Formato | Personaje/Lugar | Hook/Título | Brief | ID Canon consultado | Estado Canon | Responsable aprobación | Fecha aprobación |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |

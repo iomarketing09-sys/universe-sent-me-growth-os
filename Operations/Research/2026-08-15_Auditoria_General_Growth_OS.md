@@ -20,6 +20,7 @@ related_documents:
   - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
   - "GrowthOS/Integracion_Growth_OS.md"
   - "Operations/Research/2026-08-15_Reclasificacion_Canon_vs_Reconciliacion.json"
+  - "Operations/Research/2026-08-15_Metricas_24_72_Extraccion_01.json"
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
 organization: "Operations/Research"
 ---
@@ -38,7 +39,7 @@ Esta auditoría fue originalmente de solo lectura. La actualización 1.4 incorpo
 
 ## Actualización posterior a la auditoría — estado vigente
 
-La auditoría original identificó varias brechas que ya fueron resueltas en el lote de reconciliación Facebook 15–16. El inventario maestro ahora contiene 39 IDs únicos; `CNT-031`–`CNT-039` enlazan los nueve assets publicados con sus Meta Post IDs; `Publication_Log.csv` contiene los hechos de Facebook y la publicación manual de Instagram 2608030; y `ExperimentLog.csv` contiene las observaciones del lote, aunque todavía sin métricas 24/72 horas. La ficha de sincronización de Claude confirmó el HEAD canónico `1daaad5342c278909b78076a54d8b220fa51e023` y el bridge quedó actualizado a v2.5. Silvio/Kiri/Kael/Maeve y los cambios posteriores de Universe ya están reflejados; La Hoguera y La Ciudad permanecen como propuestas. La evidencia está documentada en `GrowthOS/Integracion_Growth_OS.md`, `2026-08-15_Reconciliacion_Publicaciones_15_16_CNT.md` y `2026-08-15_Reclasificacion_Canon_vs_Reconciliacion.json`.
+La auditoría original identificó varias brechas que ya fueron resueltas en el lote de reconciliación Facebook 15–16. El inventario maestro ahora contiene 39 IDs únicos; `CNT-031`–`CNT-039` enlazan los nueve assets publicados con sus Meta Post IDs; `Publication_Log.csv` contiene los hechos de Facebook y la publicación manual de Instagram 2608030; y `ExperimentLog.csv` contiene las observaciones del lote, aunque todavía sin métricas 24/72 horas. La primera extracción agrupada sí se ejecutó el `2026-08-15 16:59:37` en `America/Matamoros`: evaluó las nueve publicaciones, encontró **0 ventanas 24/72 elegibles**, escribió **0 métricas** y no modificó veredictos. La ficha de sincronización de Claude confirmó el HEAD canónico `1daaad5342c278909b78076a54d8b220fa51e023` y el bridge quedó actualizado a v2.5. Silvio/Kiri/Kael/Maeve y los cambios posteriores de Universe ya están reflejados; La Hoguera y La Ciudad permanecen como propuestas. La evidencia está documentada en `GrowthOS/Integracion_Growth_OS.md`, `2026-08-15_Reconciliacion_Publicaciones_15_16_CNT.md`, `2026-08-15_Metricas_24_72_Extraccion_01.json` y `2026-08-15_Reclasificacion_Canon_vs_Reconciliacion.json`.
 
 | Estado actual | Pendiente real | Prioridad |
 |---|---|---:|
@@ -48,7 +49,7 @@ La auditoría original identificó varias brechas que ya fueron resueltas en el 
 | Canon | Silvio/Payaso ya está resuelto en la evidencia canónica registrada; queda CNT-004 como única contradicción narrativa sustantiva y deben mantenerse separados los motivos administrativos de revisión. | P1 |
 | Aprendizaje | Completar 24/72 horas y cerrar `HB-003`, `HB-004` y `HB-005`; actualizar baseline. | P0 |
 | Calendario 17–30 | Producir y aprobar las 46 piezas nuevas; verificar los 28 reuse y dejar vacíos los slots no listos. | P1 |
-| Make y documentación | Retirar referencias activas a Make y normalizar primero los documentos de control. | P1 |
+| Automatizaciones heredadas y documentación | Referencias activas retiradas de los documentos de control; permanecen menciones históricas en changelog, archivo y auditorías antiguas. | Cerrado / controlado |
 | Comunidad | Crear ledger ligero anonimizado de comentarios y registrar cobertura de respuestas. | P2 |
 
 El estado live posterior a la limpieza es `pause`, con cron `0 0,30 11,14,17,20 15,16 8 *`, expiración `2026-08-17T04:30:00Z`, `runAsNewTask=true`, `runMode=ask_user`, sin `intervalSeconds` y con un único conector: `Universe Sent Me Meta API`. No se publicó contenido durante la limpieza. Antes de una nueva campaña solo queda verificar que el modo de ejecución sea compatible y ejecutar una prueba controlada `nothing_due`.
@@ -73,7 +74,7 @@ La calificación es una herramienta de diagnóstico CGO, no una métrica oficial
 | Publicación Instagram | Ámbar | 7/10 | La API, la cuenta y los permisos responden; la programación nativa no está disponible, pero el scheduler quedó pausado y limpio para no ejecutar por accidente. |
 | Métricas y ciclo de aprendizaje | Ámbar | 6/10 | El `ExperimentLog` y la reconciliación ya existen; faltan métricas 24/72 horas, veredictos y actualización de baseline. |
 | Comunidad y comentarios | Ámbar | 7/10 | Ya existe conversación orgánica y una propuesta sólida de moderación, pero no hay todavía registro operativo de comentarios ni cobertura de respuesta. |
-| Documentación y fuente única de verdad | Ámbar | 5/10 | GitHub es la fuente oficial, hay enlaces internos válidos, pero 71 de 75 Markdown no cumplen el esquema de metadatos normalizado y 15 documentos aún contaminan la arquitectura con Make. |
+| Documentación y fuente única de verdad | Ámbar | 6/10 | GitHub es la fuente oficial, hay enlaces internos válidos, los documentos de control ya no presentan Make como ruta activa y permanece deuda de metadatos en documentos históricos. |
 
 **Madurez integral estimada: 6/10.** El sistema puede operar, pero todavía requiere intervención humana y reconciliación documental para evitar decisiones contradictorias.
 
@@ -127,11 +128,11 @@ La revisión cruzada corrigió el diagnóstico anterior. `GrowthOS/Canon_Contrad
 
 El único registro que conserva una contradicción narrativa sustantiva en el inventario es `CNT-004`, asociado a la mini-historia “La Búsqueda del Frasco Olvidado”. Las otras 21 filas que antes compartían `Canon_Review_Required` se reclasificaron con `Motivo_Revision_Normalizado`: aprobación administrativa, restricción no bloqueante, reconciliación de inventario o identidad reconciliada sin conflicto canónico evidente. Ningún cambio convierte `Estado_Canon=Revision` en `Aprobado`.
 
-### 5.4 Make está retirado estratégicamente, pero no completamente retirado del sistema
+### 5.4 Las referencias activas a automatizaciones heredadas fueron retiradas
 
-La decisión estratégica está correcta: Make no debe ser la ruta operativa. El conector Make está actualmente deshabilitado, sin autorización ni herramientas disponibles. Sin embargo, todavía aparece en el snapshot de conectores del scheduler y se menciona en 15 documentos no archivados o sin estado normalizado. `README.md`, `Studio_Governance.md`, algunas guías activas y documentos de producción aún conservan lenguaje de Make.
+La ruta operativa vigente es Manus + Meta Graph API, con aprobación de Fernando/Claude y registro en los ledgers maestros. Se actualizaron README, governance, arquitectura de calendario, Approval Queue, sistema de memes, formato semanal, monetización, pipeline y bridge para que no presenten Make como ejecutor o dependencia activa.
 
-Esto no significa que Make esté ejecutando publicaciones. Sí significa que un agente o una persona puede leer dos arquitecturas diferentes y no saber cuál es vigente. El remedio no es borrar la guía histórica, sino marcar de forma consistente lo histórico, actualizar governance, README, formatos y colas activas, y retirar Make de cualquier schedule operativo.
+Se conservan menciones en el changelog, el documento histórico de automatización, auditorías antiguas y algunos blueprints de producción porque forman parte de la trazabilidad. Esas menciones no representan una ruta live ni un schedule operativo. El control de cierre es que los documentos de control listados ya no contienen referencias nominales activas, y cualquier futura automatización debe documentarse con configuración live y propietario.
 
 ### 5.5 El canon y la producción no están sincronizados
 
@@ -180,7 +181,7 @@ La deuda no debe resolverse reescribiendo todo de una vez. Conviene normalizar p
 | P0 | El ciclo de aprendizaje sigue abierto: el `ExperimentLog` ya existe, pero las métricas 24/72 horas y los veredictos siguen pendientes. | Alta | Alto | Extraer métricas en ventanas válidas, cerrar `HB-003`/`HB-004`/`HB-005` y actualizar la baseline. |
 | P1 | Calendarios e inventarios usan estados, IDs y estructuras no uniformes. | Alta | Alto | Esquema maestro con ID de pieza, asset, plataforma, estado de canon, estado de publicación e IDs Meta. |
 | P1 | El experimento 17–30 tiene 46 assets nuevas sin generar/aprobar y 38 assets nuevos de Drive pendientes de revisión. | Alta | Alto | Confirmar capacidad, producir y aprobar la cola; no rellenar huecos con reuse improvisado. |
-| P1 | Documentos activos aún contienen referencias a Make y horarios/reglas históricas. | Alta | Medio | Marcar histórico o actualizar todos los documentos de control y el índice. |
+| P2 | Permanecen menciones históricas de automatizaciones heredadas en changelog, archivo, auditorías antiguas y algunos blueprints. | Baja | Bajo | Conservarlas como trazabilidad; no tratarlas como arquitectura activa. |
 | P2 | La comunidad tiene comentarios y assets de respuesta, pero no un registro operativo de cobertura y aprendizaje. | Media | Medio | Crear una tabla ligera de comentarios anonimizada y dos ventanas de revisión. |
 | P2 | La medición de Instagram y Facebook no está consolidada en una baseline común actualizada. | Media | Medio | Actualizar baseline después del lote 15–16 y separar métricas de canal. |
 
@@ -212,11 +213,10 @@ La automatización futura debe concentrarse primero en tareas deterministas de b
 
 | Documento | Motivo |
 |---|---|
-| `README.md` | Reemplazar la descripción que todavía presenta Make como parte de la arquitectura principal. |
-| `Studio_Governance.md` | Actualizar el flujo semanal que todavía menciona Make como generador de calendario y extractor de métricas. |
-| `GrowthOS/00_Índice.md` | Marcar fuentes históricas, incorporar este reporte y aclarar cuál es el calendario operativo vigente. |
-| `GrowthOS/Integracion_Growth_OS.md` | Mantener el caché sincronizado con el HEAD canónico; Silvio ya fue corregido y el bridge registra la limitación de verificación remota de esta sesión. |
-| `GrowthOS/01_00_Arquitectura_Calendario_Escalable.md` | Añadir la separación entre pieza maestra, publicación por plataforma y experimento. |
+| `README.md`, `Studio_Governance.md` y documentos de control | Actualizados para que Manus + Meta Graph API sea la única ruta operativa; solo quedan menciones históricas fuera del control live. |
+| `GrowthOS/00_Índice.md` | Mantener fuentes históricas marcadas, incorporar este reporte y aclarar cuál es el calendario operativo vigente. |
+| `GrowthOS/Integracion_Growth_OS.md` | Mantener el caché sincronizado con el HEAD canónico administrado por Claude; última ficha: `1daaad5`. |
+| `GrowthOS/01_00_Arquitectura_Calendario_Escalable.md` | La separación entre pieza maestra, publicación por plataforma y experimento ya está documentada. |
 | `GrowthOS/01_01_Calendario_Semanal.md` | Reemplazar el tablero W01 desactualizado o marcarlo como histórico. |
 | `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md` | Sincronizar horarios, cross-posting y regla de aprendizaje con la prueba actual. |
 | `GrowthOS/07_00_Registro_Maestro_Reels.md` | Actualizar métricas y cerrar la auditoría de cascada pendiente. |

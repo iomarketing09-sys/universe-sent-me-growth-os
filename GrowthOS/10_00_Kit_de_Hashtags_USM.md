@@ -3,8 +3,8 @@
 **Propósito:** Sistema de hashtags de marca con firma `USM` para uso consistente en Facebook e Instagram. Reemplaza la elección ad-hoc de hashtags por un roster fijo y versionado, evitando errores de tipeo (ver caso "LoresUSM") y usos de nombres no aprobados en canon (ver caso "Maeve").
 **Estado:** Active
 **Fecha de creación:** 2026-08-03
-**Última actualización:** 2026-08-03
-**Versión:** 1.0
+**Última actualización:** 2026-08-15
+**Versión:** 1.1
 **Autor:** Claude (a solicitud de Fernando, 2026-08-03)
 **Documentos relacionados:** `06_00_Reglas_Aprendizaje_Tendencias.md` (Sección 6), `Canon_Contradictions_Report.md`, `Integracion_Growth_OS.md`
 
@@ -27,13 +27,15 @@
 | Elara | `#ElaraUSM` | Nombre propio, canon desde origen |
 | El Ganso | `#GansoUSM` | Identificador estructural (sin nombre propio) |
 | El Payaso | `#SilvioUSM` | Nombre propio confirmado 2026-08-03 (commit `8e9fe9a`), diseño corregido y aprobado |
-| Chica del Suéter | `#MaeveUSM` | Nombre propio confirmado 2026-08-03. `#MaeveUSM` y `#FantasmaUSM` pueden co-existir en la misma pieza cuando ambos personajes aparecen juntos (ej. "Ghost of You") |
+| Chica del Suéter | `#ChicaDelSueterUSM` | Identificador estructural; no confundir con Maeve |
 | El Hada | `#KiriUSM` | Nombre propio confirmado 2026-08-03 (commit `f7bebca`) |
 | El Fantasma | `#FantasmaUSM` | Identificador estructural (sin nombre propio todavía) |
 | Evan | `#EvanUSM` | Nombre propio, canon desde origen |
-| Chico de los Pantalones | `#ChicoDeLosPantalonesUSM` | Identificador estructural (sin nombre propio todavía — carpeta "Kael_Aeris" en Drive pendiente de confirmación final) |
+| Kael | `#KaelUSM` | Nombre propio canonizado 2026-08-11 (commit `a994354`) |
+| Maeve | `#MaeveUSM` | Nombre propio canonizado 2026-08-11 (commit `a994354`) |
+| Chico de los Pantalones | `#ChicoDeLosPantalonesUSM` | Identificador estructural; no confundir con Kael |
 
-*Pendiente: cuando Fernando entregue la carpeta con personajes/props/lugares aprobados, revisar si alguno de los identificadores estructurales de arriba recibe nombre propio (como pasó con Kiri) y actualizar esta tabla.*
+*Pendiente: revisar únicamente los identificadores estructurales que todavía no tengan nombre propio confirmado; Kael y Maeve ya no están pendientes.*
 
 ---
 
