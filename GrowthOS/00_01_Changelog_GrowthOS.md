@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.60
+**Versión:** 1.61
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -83,6 +83,16 @@
 - Los tres assets fueron generados con Nano Banana Pro en formato 1:1, con fondos mínimos, gradientes mágicos y foco principal en personaje, expresión y frase.
 - Se actualizó `Operations/Research/2026-08-15_Propuesta_Memes_Respuesta_USM.md` a la versión 2.1 y se incorporó el lote al registro canónico de comunidad.
 - Los assets quedan en estado `Review`; son respuestas individuales y no publicaciones del calendario regular.
+
+---
+
+## [1.2.61] — 2026-08-15 (Manus)
+### Primer lote de unificación de la fuente maestra
+- `Content_Inventory.csv` conserva 30 filas, 30 IDs únicos y todos los campos históricos.
+- Se añadieron los campos canónicos derivados `Asset_Ref`, `Asset_Filename`, `Drive_ID`, `Estado_Canon`, `Estado_Produccion`, `Estado_Publicacion` y `Ultima_Sincronizacion`.
+- El lote enlaza 2 piezas con publicación Meta (`CNT-002` y `CNT-023`) y deja 28 piezas sin publicación confirmada; no se confirmó ningún `260####` sin evidencia.
+- Quedan pendientes de integración: mapear las 9 órdenes del calendario 15–16 a `ID_Pieza`, completar métricas 24/72 horas, enlazar el ExperimentLog con publicaciones, resolver revisiones de canon y convertir calendarios/colas en vistas verificables.
+- La migración conserva reversibilidad: los estados históricos no se eliminan ni se sustituyen automáticamente.
 
 ---
 

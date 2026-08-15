@@ -105,7 +105,25 @@ El lote 1 de normalización cubrió inicialmente 28 filas y, tras resolver las e
 
 El preview actualizado está en `Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.md` y el CSV detallado en `Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.csv`. CNT-023 conserva además el `drive_reference_id` de la carpeta de producción, el listado exacto de sus siete assets y la publicación confirmada en `Publication_Log.csv`. CNT-029/CNT-030 conservan sus bancos de assets y no generan filas de publicación hasta que exista aprobación y un permalink real. La normalización es reversible porque `estado` y `bloqueado_canon` originales permanecen intactos. CNT-002 ya no tiene una excepción abierta a nivel de publicación ni de conjunto de producción. Solo queda registrada la ausencia del nombre del render final como archivo `260####`, lo cual no bloquea la integridad de los 30 registros.
 
-## 7. Reglas de gobernanza
+## 7. Estado de unificación — lote 1
+
+El 15 de agosto de 2026 se aplicó el primer lote de unificación al inventario maestro. `Content_Inventory.csv` conserva sus 30 filas y todos los campos históricos, y ahora también contiene siete campos canónicos derivados: `Asset_Ref`, `Asset_Filename`, `Drive_ID`, `Estado_Canon`, `Estado_Produccion`, `Estado_Publicacion` y `Ultima_Sincronizacion`.
+
+| Campo canónico | Regla aplicada en el lote 1 |
+|---|---|
+| `Asset_Ref` | Copia únicamente de `asset_ref_confirmado`; queda vacío si no existe evidencia confirmada. |
+| `Asset_Filename` | Usa el conjunto de assets documentado cuando existe; no convierte nombres de producción en un falso `260####`. |
+| `Drive_ID` | Deriva de `drive_reference_id`. |
+| `Estado_Canon` | Normaliza el estado existente a `Revision` o `Restringido`; no aprueba canon automáticamente. |
+| `Estado_Produccion` | Normaliza ideas, producción pendiente, revisión, reuse, bloqueo y publicación sin borrar el texto original. |
+| `Estado_Publicacion` | Marca `Publicada` solo cuando existe `meta_publication_id`; el resto queda `No_Publicada`. |
+| `Ultima_Sincronizacion` | Fecha del lote: `2026-08-15`. |
+
+El lote validó 30 IDs únicos, 2 piezas con publicación Meta enlazada (`CNT-002` y `CNT-023`) y 28 piezas sin publicación confirmada. Se preservaron los estados históricos y no se confirmó ningún asset `260####` sin evidencia.
+
+La unificación todavía no está completa. Los siguientes trabajos quedan explícitamente separados para evitar una migración riesgosa: mapear las nueve órdenes del calendario 15–16 a `ID_Pieza`, completar métricas 24/72 horas en `Publication_Log`, enlazar las observaciones de `ExperimentLog` con publicaciones concretas, resolver los 13 estados `Canon_Review_Required`, confirmar si el canon de Silvio puede actualizarse y convertir calendarios/colas en exportaciones verificables del inventario. Estos pendientes son de integración y aprobación; no deben resolverse inventando IDs.
+
+## 8. Reglas de gobernanza
 
 `Content_Inventory.csv` es la fuente de identidad de las piezas. `Publication_Log.csv` es el historial de hechos y no debe sobrescribirse para “limpiar” errores; se corrigen mediante una columna de nota o una nueva entrada de corrección. `ExperimentLog.csv` es el registro de aprendizaje y no debe llenarse con hipótesis inventadas ni con métricas estimadas.
 
@@ -116,6 +134,6 @@ Los estados de canon y aprobación no se cambian automáticamente. Fernando o Cl
 [1]: `01_00_Arquitectura_Calendario_Escalable.md` — Arquitectura de metadatos, estados y calendario como vista.
 [2]: `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md` — Formato de exportación y publicación mediante Meta Graph API.
 [3]: `Integracion_Growth_OS.md` — HypothesisBank, ExperimentLog y puente con canon.
-[4]: `Content_Inventory.csv` — Inventario actual de 28 piezas y sus estados históricos.
+[4]: `Content_Inventory.csv` — Inventario actual de 30 piezas, estados históricos y campos canónicos derivados.
 [5]: `../Operations/Research/2026-08-15_Publication_Log.csv` — Primer ledger de publicaciones implementado.
 [6]: `../Operations/Research/2026-08-15_ExperimentLog.csv` — Primer ledger experimental implementado.
