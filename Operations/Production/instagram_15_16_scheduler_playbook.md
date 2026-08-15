@@ -4,7 +4,7 @@ purpose: Ejecutar de forma autónoma las publicaciones de Instagram aprobadas de
 status: Active
 created: 2026-08-15
 updated: 2026-08-15
-version: 1.1
+version: 1.2
 author: Manus AI
 documents_related:
   - ../../GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md
@@ -33,6 +33,17 @@ Ejecuta esta tarea autónomamente, sin pedir confirmación al usuario:
 - IDs de contenedor: ninguno.
 - IDs de media: ninguno.
 - Errores de Meta: ninguno; no se realizaron llamadas de publicación porque ningún slot estaba dentro de la ventana válida de ocho minutos.
+- Facebook: sin cambios.
+- Exclusión confirmada: `260583 - Universe.png` no fue recuperada ni publicada.
+- `scheduled_publish_time`: no utilizado.
+
+### 2026-08-15 00:16:21 America/Mexico_City
+
+- Resultado: `nothing_due`.
+- Filas procesadas: 0.
+- IDs de contenedor: ninguno.
+- IDs de media: ninguno.
+- Errores de Meta: ninguno; no se realizaron llamadas `media`, verificación ni `media_publish` porque ningún slot estaba dentro de la ventana válida de ocho minutos.
 - Facebook: sin cambios.
 - Exclusión confirmada: `260583 - Universe.png` no fue recuperada ni publicada.
 - `scheduled_publish_time`: no utilizado.

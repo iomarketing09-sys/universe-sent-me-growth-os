@@ -3,8 +3,8 @@
 **Propósito:** Registro centralizado de hitos, integraciones, cambios estratégicos y actualizaciones de arquitectura. Este documento permite a los agentes (Manus, Claude, etc.) sincronizar contexto rápidamente sin re-leer todo el repositorio.
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
-**Última actualización:** 2026-08-14
-**Versión:** 1.45
+**Última actualización:** 2026-08-15
+**Versión:** 1.46
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -26,6 +26,16 @@
 - Se registraron los permisos efectivos y las cuentas vinculadas en `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`.
 
 ---
+
+---
+
+## [1.2.46] — 2026-08-15 (Manus)
+### Ejecución scheduler Instagram 15–16
+- Se ejecutó `Operations/Production/run_instagram_15_16_scheduler.py` a las 00:16:21 en `America/Mexico_City`.
+- Resultado: `nothing_due`; no había ningún slot dentro de la ventana válida de ocho minutos, por lo que no se realizaron llamadas `media`, verificación ni `media_publish`.
+- No se generaron IDs de contenedor, IDs de media ni errores de Meta. Facebook no fue modificado y `scheduled_publish_time` no fue utilizado.
+- Se confirmó la exclusión de `260583 - Universe.png` por `ELIMINADA_MANUALMENTE`.
+- El detalle operativo quedó registrado en `Operations/Production/instagram_15_16_scheduler_playbook.md`; no se requiere actualizar CSV ni estado local porque no hubo filas procesadas.
 
 ---
 
