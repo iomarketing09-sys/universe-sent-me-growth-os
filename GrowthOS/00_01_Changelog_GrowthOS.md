@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.63
+**Versión:** 1.64
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -29,8 +29,17 @@
 - La cadencia no autoriza a sustituir un snapshot exacto de 24 horas por un total acumulado de lifetime. Si Meta no permite reconstruir retrospectivamente la ventana, se registra la limitación y no se inventa el valor.
 ### Estado vigente del Growth OS
 - La reconciliación Facebook 15–16 y la fuente maestra están cerradas; el pendiente P0 es completar métricas/veredictos de `HB-003`, `HB-004` y `HB-005` y actualizar la baseline.
-- Siguen como P0 la limpieza del scheduler pausado de Instagram y la resolución del conflicto de canon Silvio/Payaso. Como P1 quedan producir/aprobar las 46 piezas nuevas del calendario 17–30, revisar los 28 reuse y retirar referencias activas a Make. Como P2 queda crear el ledger ligero de comentarios y registrar cobertura de respuestas.
-- Se actualizó `Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md` a la versión 1.1 y `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` a la versión 1.2.
+- Siguen como P0 completar métricas/veredictos de `HB-003`, `HB-004` y `HB-005`, actualizar la baseline y resolver el conflicto de canon Silvio/Payaso. El scheduler quedó controlado y pausado; antes de reactivarlo solo falta validar el modo y ejecutar una prueba `nothing_due`. Como P1 quedan producir/aprobar las 46 piezas nuevas del calendario 17–30, revisar los 28 reuse y retirar referencias activas a Make. Como P2 queda crear el ledger ligero de comentarios y registrar cobertura de respuestas.
+- Se actualizó `Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md` a la versión 1.2 y `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` a la versión 1.2.
+
+---
+
+## [1.2.64] — 2026-08-15 (Manus)
+### Métricas y scheduler
+- Se ejecutó la primera extracción agrupada de métricas para las nueve publicaciones Facebook del experimento `EXP-2026-08-CAL-01`. Las nueve filas fueron evaluadas; `eligible_count=0`, no se escribió ninguna métrica 24/72 horas y no se modificaron veredictos. La evidencia quedó en `Operations/Research/2026-08-15_Metricas_24_72_Extraccion_01.json`.
+- `Publication_Log.csv` y `ExperimentLog.csv` registraron la revisión no elegible sin inventar snapshots ni totales acumulados.
+- El scheduler de Instagram quedó pausado y limpiado: se retiró `intervalSeconds`, se conservó el cron aprobado y se dejó únicamente `Universe Sent Me Meta API` adjunto. No se publicó contenido durante la operación.
+- Se actualizó `Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md` a la versión 1.2 y `Operations/Research/2026-08-15_Reconciliacion_Publicaciones_15_16_CNT.md` a la versión 1.3.
 
 ---
 

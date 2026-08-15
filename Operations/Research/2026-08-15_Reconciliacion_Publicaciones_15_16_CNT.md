@@ -4,7 +4,7 @@ purpose: "Registrar la reconciliación verificable entre los nueve assets public
 status: Active
 created: 2026-08-15
 updated: 2026-08-15
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
@@ -57,7 +57,7 @@ Los nueve registros nuevos conservan los campos históricos requeridos y reciben
 
 ## Estado de métricas al corte
 
-La fecha del entorno al comprobar el ledger fue `2026-08-15T13:22:11-05:00` en `America/Matamoros`. El primer post de Facebook tenía aproximadamente tres horas de antigüedad y los demás no habían alcanzado 24 horas; las publicaciones del 16 de agosto tampoco tenían una ventana válida. En consecuencia, no se consultaron ni se estimaron `Interacciones_24h` o `Interacciones_72h`. El `Publication_Log` y el `ExperimentLog` conservan esos campos vacíos con estado `Pendiente_24h`, que es el resultado correcto hasta que una ejecución posterior tenga una ventana temporal válida.
+La fecha del entorno al comprobar el ledger fue `2026-08-15T13:22:11-05:00` en `America/Matamoros`. El primer post de Facebook tenía aproximadamente tres horas de antigüedad y los demás no habían alcanzado 24 horas; las publicaciones del 16 de agosto tampoco tenían una ventana válida. En consecuencia, no se consultaron ni se estimaron `Interacciones_24h` o `Interacciones_72h`. El `Publication_Log` y el `ExperimentLog` conservan esos campos vacíos con estado `Pendiente_24h`, que es el resultado correcto hasta que una ejecución posterior tenga una ventana temporal válida. La primera extracción agrupada se ejecutó a las `2026-08-15T21:59:37Z`: evaluó las nueve publicaciones del experimento, encontró `eligible_count=0`, escribió cero métricas y dejó evidencia en `2026-08-15_Metricas_24_72_Extraccion_01.json`.
 
 ## Impacto en documentos relacionados
 

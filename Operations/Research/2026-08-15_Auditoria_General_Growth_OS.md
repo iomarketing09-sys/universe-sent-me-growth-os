@@ -4,7 +4,7 @@ purpose: "Evaluar de extremo a extremo la integración entre estrategia, documen
 status: Review
 created: 2026-08-15
 updated: 2026-08-15
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/00_Índice.md"
@@ -42,14 +42,14 @@ La auditoría original identificó varias brechas que ya fueron resueltas en el 
 |---|---|---:|
 | Facebook 15–16 | No requiere otra reconciliación de identidad; falta extraer métricas en ventanas válidas. | P0 |
 | Instagram 15–16 | 2608030 está registrado como publicación manual; 260583 permanece eliminado y bloqueado contra republicación. | Cerrado / controlado |
-| Scheduler Instagram | Está en `pause`, conserva el cron correcto pero también `intervalSeconds=900`, `SCHEDULE_TYPE_INTERVAL` y conectores innecesarios, incluido Make. Debe limpiarse o expirar antes de una nueva activación. | P0 |
+| Scheduler Instagram | Está en `pause`, conserva el cron aprobado, ya no tiene `intervalSeconds` y solo mantiene el conector de Meta Graph API. Antes de reactivarlo habrá que verificar el modo de ejecución. | Controlado |
 | Canon | Resolver la contradicción `Silvio`/`Payaso` y los 13 registros `Canon_Review_Required`. | P0 |
 | Aprendizaje | Completar 24/72 horas y cerrar `HB-003`, `HB-004` y `HB-005`; actualizar baseline. | P0 |
 | Calendario 17–30 | Producir y aprobar las 46 piezas nuevas; verificar los 28 reuse y dejar vacíos los slots no listos. | P1 |
 | Make y documentación | Retirar referencias activas a Make y normalizar primero los documentos de control. | P1 |
 | Comunidad | Crear ledger ligero anonimizado de comentarios y registrar cobertura de respuestas. | P2 |
 
-El estado live consultado del scheduler es `pause`, con cron `0 0,30 11,14,17,20 15,16 8 *`, expiración `2026-08-17T04:30:00Z`, `runAsNewTask=true`, `runMode=ask_user`, `intervalSeconds=900` y diez conectores adjuntos. Esto confirma que el scheduler no debe considerarse listo para una próxima campaña hasta eliminar la configuración residual y verificar una ejecución controlada `nothing_due`.
+El estado live posterior a la limpieza es `pause`, con cron `0 0,30 11,14,17,20 15,16 8 *`, expiración `2026-08-17T04:30:00Z`, `runAsNewTask=true`, `runMode=ask_user`, sin `intervalSeconds` y con un único conector: `Universe Sent Me Meta API`. No se publicó contenido durante la limpieza. Antes de una nueva campaña solo queda verificar que el modo de ejecución sea compatible y ejecutar una prueba controlada `nothing_due`.
 
 ## 2. Alcance y método
 
@@ -68,7 +68,7 @@ La calificación es una herramienta de diagnóstico CGO, no una métrica oficial
 | Canon y governance | Rojo | 4/10 | Las reglas de bloqueo son fuertes, pero el caché de canon está atrasado y existe un conflicto explícito sobre el nombre Silvio. |
 | Inventario, Drive y reuse | Ámbar | 6/10 | Hay 38 assets nuevos registrados y 123 piezas rankeadas para reuse, pero los estados no están unificados con el calendario ni con el pipeline final. |
 | Publicación Facebook | Verde | 9/10 | Meta devolvió 9 publicaciones programadas, coincidentes con el calendario 15–16; la ruta Page Access Token + Page Feed está validada. |
-| Publicación Instagram | Ámbar | 6/10 | La API, la cuenta y los permisos responden; la programación nativa no está disponible y el scheduler temporal aún muestra una discrepancia de configuración. |
+| Publicación Instagram | Ámbar | 7/10 | La API, la cuenta y los permisos responden; la programación nativa no está disponible, pero el scheduler quedó pausado y limpio para no ejecutar por accidente. |
 | Métricas y ciclo de aprendizaje | Ámbar | 6/10 | El `ExperimentLog` y la reconciliación ya existen; faltan métricas 24/72 horas, veredictos y actualización de baseline. |
 | Comunidad y comentarios | Ámbar | 7/10 | Ya existe conversación orgánica y una propuesta sólida de moderación, pero no hay todavía registro operativo de comentarios ni cobertura de respuesta. |
 | Documentación y fuente única de verdad | Ámbar | 5/10 | GitHub es la fuente oficial, hay enlaces internos válidos, pero 71 de 75 Markdown no cumplen el esquema de metadatos normalizado y 15 documentos aún contaminan la arquitectura con Make. |
@@ -111,13 +111,13 @@ Esta sigue siendo la brecha más importante del Growth OS. La memoria operativa 
 
 **Criterio de cierre:** cada publicación del experimento debe tener una fila con `Experiment_ID`, `Hypothesis_ID`, hora planificada, hora real, tipo de contenido, ID Meta, interacciones a 24/72 horas, shares, desviación horaria, veredicto y próxima acción.
 
-### 5.2 El scheduler de Instagram no está suficientemente confiable
+### 5.2 El scheduler de Instagram quedó pausado y limpio
 
 El runner está bien simplificado: usa URLs públicas preparadas una sola vez, filtra los cinco slots selectivos, evita republicar 260583, no toca Facebook y aplica una ventana de ocho minutos. El código es idempotente y evita descargas o subidas de Drive en cada despertar.
 
-El estado live consultado después de la reconciliación está en `pause`, pero conserva `intervalSeconds=900` y `SCHEDULE_TYPE_INTERVAL` junto con el cron de 16 despertares. También mantiene `runAsNewTask=true`, `runMode=ask_user` y diez conectores adjuntos, incluido Make. Por tanto, no debe reactivarse para una campaña nueva sin limpiar la configuración.
+El estado live consultado después de la limpieza está en `pause`, conserva el cron de 16 despertares, ya no expone `intervalSeconds` y mantiene únicamente el conector `Universe Sent Me Meta API`. La tarea conserva `runAsNewTask=true` y `runMode=ask_user`; por tanto, no debe reactivarse para una campaña nueva hasta validar el modo de ejecución con una prueba sin publicaciones debidas.
 
-No afirmo que el scheduler esté publicando cada 15 minutos; afirmo que **la configuración observada no probaría que usaría únicamente el cron de 16 despertares si se reactivara**. El criterio de cierre es un solo trigger, sin intervalo residual, modo compatible con el playbook, solo Meta API adjunta y una ejecución de prueba `nothing_due` fuera de ventana.
+No hay evidencia de publicaciones ejecutadas durante esta limpieza. El criterio de cierre operativo alcanzado es un único cron, sin intervalo residual, tarea pausada y solo Meta API adjunta. Queda como control previo a una futura activación validar `runMode` y ejecutar `nothing_due` fuera de ventana.
 
 ### 5.3 Make está retirado estratégicamente, pero no completamente retirado del sistema
 
@@ -167,7 +167,7 @@ La deuda no debe resolverse reescribiendo todo de una vez. Conviene normalizar p
 
 | Prioridad | Riesgo | Probabilidad | Impacto | Criterio de cierre |
 |---|---|---:|---:|---|
-| P0 | El scheduler de Instagram no coincide inequívocamente con el diseño de 16 despertares y conserva conectores innecesarios. | Media | Alto | Estado live con un único cron, modo autónomo, sin intervalo residual y solo Meta API adjunta. |
+| P1 | El scheduler de Instagram está limpio y pausado, pero conserva `runMode=ask_user` y requiere una prueba de no-op antes de reactivarse. | Media | Medio | Verificar modo compatible y ejecutar `nothing_due` sin publicar. |
 | P0 | El caché de canon permite producción con una contradicción activa sobre Silvio. | Alta | Alto | Confirmación de Fernando/Claude y actualización de puente, inventario y documentos relacionados. |
 | P0 | El ciclo de aprendizaje sigue abierto: el `ExperimentLog` ya existe, pero las métricas 24/72 horas y los veredictos siguen pendientes. | Alta | Alto | Extraer métricas en ventanas válidas, cerrar `HB-003`/`HB-004`/`HB-005` y actualizar la baseline. |
 | P1 | Calendarios e inventarios usan estados, IDs y estructuras no uniformes. | Alta | Alto | Esquema maestro con ID de pieza, asset, plataforma, estado de canon, estado de publicación e IDs Meta. |
@@ -180,7 +180,7 @@ La deuda no debe resolverse reescribiendo todo de una vez. Conviene normalizar p
 
 ### Próximas 24 horas: estabilizar el control plane
 
-Primero debe limpiarse el scheduler pausado sin publicar nada: retirar el intervalo residual de 900 segundos, resolver el modo de ejecución y dejar únicamente la API de Meta adjunta. Segundo, debe tratarse `Publication_Log.csv` como fuente de estado real; el calendario 15–16 queda como vista histórica de planeación y no debe utilizarse para inferir publicaciones futuras. Tercero, debe congelarse la expansión del calendario experimental hasta confirmar la resolución del conflicto de canon de Silvio y la disponibilidad real de las 46 piezas nuevas.
+La limpieza del scheduler ya fue ejecutada sin publicar nada: se retiró el intervalo residual y se dejó únicamente Meta Graph API adjunta. Antes de reactivarlo, queda validar el modo de ejecución y hacer una prueba `nothing_due`. En paralelo, debe tratarse `Publication_Log.csv` como fuente de estado real; el calendario 15–16 queda como vista histórica de planeación. La expansión del calendario experimental debe permanecer congelada hasta confirmar la resolución del conflicto de canon de Silvio y la disponibilidad real de las 46 piezas nuevas.
 
 ### Próximos 7 días: cerrar trazabilidad y aprendizaje
 

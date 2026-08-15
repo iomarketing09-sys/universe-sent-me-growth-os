@@ -1,0 +1,85 @@
+{
+  "extracted_at_utc": "2026-08-15T21:59:37.570774+00:00",
+  "extracted_at_local": "2026-08-15T16:59:37.570774-05:00",
+  "timezone": "America/Matamoros",
+  "definition": "Current public interaction totals are reactions + comments + shares; a value is written only when its corresponding 24h or 72h window is due.",
+  "source_log": "/home/ubuntu/universe-sent-me-growth-os/Operations/Research/2026-08-15_Publication_Log.csv",
+  "candidate_count": 9,
+  "eligible_count": 0,
+  "candidates": [
+    {
+      "publicacion_id": "PUB-FB-15_16-01",
+      "id_pieza": "CNT-031",
+      "meta_post_id": "1036844829507460_122150559441072582",
+      "published_at_utc": "2026-08-15T15:00:22+00:00",
+      "due_windows": [],
+      "age_hours": 6.988
+    },
+    {
+      "publicacion_id": "PUB-FB-15_16-02",
+      "id_pieza": "CNT-032",
+      "meta_post_id": "1036844829507460_122150559591072582",
+      "published_at_utc": "2026-08-15T16:00:05+00:00",
+      "due_windows": [],
+      "age_hours": 5.992
+    },
+    {
+      "publicacion_id": "PUB-FB-15_16-03",
+      "id_pieza": "CNT-033",
+      "meta_post_id": "1036844829507460_122150559693072582",
+      "published_at_utc": "2026-08-15T18:30:00+00:00",
+      "due_windows": [],
+      "age_hours": 3.494
+    },
+    {
+      "publicacion_id": "PUB-FB-15_16-04",
+      "id_pieza": "CNT-034",
+      "meta_post_id": "1036844829507460_122150559765072582",
+      "published_at_utc": "2026-08-16T00:00:00+00:00",
+      "due_windows": [],
+      "age_hours": -2.006
+    },
+    {
+      "publicacion_id": "PUB-FB-15_16-05",
+      "id_pieza": "CNT-035",
+      "meta_post_id": "1036844829507460_122150559873072582",
+      "published_at_utc": "2026-08-16T15:00:00+00:00",
+      "due_windows": [],
+      "age_hours": -17.006
+    },
+    {
+      "publicacion_id": "PUB-FB-15_16-06",
+      "id_pieza": "CNT-036",
+      "meta_post_id": "1036844829507460_122150559981072582",
+      "published_at_utc": "2026-08-16T18:30:00+00:00",
+      "due_windows": [],
+      "age_hours": -20.506
+    },
+    {
+      "publicacion_id": "PUB-FB-15_16-07",
+      "id_pieza": "CNT-037",
+      "meta_post_id": "1036844829507460_122150560083072582",
+      "published_at_utc": "2026-08-16T21:00:00+00:00",
+      "due_windows": [],
+      "age_hours": -23.006
+    },
+    {
+      "publicacion_id": "PUB-FB-15_16-08",
+      "id_pieza": "CNT-038",
+      "meta_post_id": "1036844829507460_122150560215072582",
+      "published_at_utc": "2026-08-17T00:00:00+00:00",
+      "due_windows": [],
+      "age_hours": -26.006
+    },
+    {
+      "publicacion_id": "PUB-FB-15_16-09",
+      "id_pieza": "CNT-039",
+      "meta_post_id": "1036844829507460_122150560383072582",
+      "published_at_utc": "2026-08-17T03:00:00+00:00",
+      "due_windows": [],
+      "age_hours": -29.006
+    }
+  ],
+  "responses": [],
+  "status": "no_eligible_windows"
+}
