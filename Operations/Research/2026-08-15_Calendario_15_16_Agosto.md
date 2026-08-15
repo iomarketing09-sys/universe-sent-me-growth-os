@@ -21,7 +21,7 @@
 | Fecha | Día | Hora | Tipo | Asset | Caption | Estado | Plataforma | Nota |
 |---|---|---:|---|---|---|---|---|---|
 | 2026-08-15 | Sábado | 10:00 | Nueva | `2608030 - Universe - Que fibra tomas pa cagarla tanto.jpeg` | ¿Qué fibra tomas para cagarla tanto? 🐈 #UniverseSentMe #UniverseUSM #MemesUSM | `PROGRAMADA` | Facebook; Instagram selectivo | Nuevo; remate inmediato y legible; evitar explicar el texto visual. Meta Post `1036844829507460_122150559441072582`; Photo `122150559393072582`; original movido a `08 Agosto` sin copia. |
-| 2026-08-15 | Sábado | 11:00 | Reuse_Approved_User_Context | `260583 - Universe.png` | 😼 #UniverseSentMe #UniverseUSM #MemesUSM | `PROGRAMADA` | Facebook | Reuse manual aprobado; conservar contexto original y verificar que no haya publicación reciente. Meta Post `1036844829507460_122150559591072582`; Photo `122150559555072582`; original movido a `08 Agosto` sin copia. |
+| 2026-08-15 | Sábado | 11:00 | Reuse_Approved_User_Context | `260583 - Universe.png` | 😼 #UniverseSentMe #UniverseUSM #MemesUSM | `PROGRAMADA` | Facebook | Reuse manual aprobado; conservar contexto original y verificar que no haya publicación reciente. Meta Post `1036844829507460_122150559591072582`; Photo `122150559555072582`; original movido a `08 Agosto` sin copia. Prueba Instagram publicada: Container `17976335523089880`; Media `18105410684129991`; https://www.instagram.com/p/DcDHxq5AMHh/. PPA no bloqueó la prueba. |
 | 2026-08-15 | Sábado | 13:30 | Nueva | `2608033 - Fantasma - vendra primero mi boda o jesus.jpeg` | La pregunta importante del día. 👻 #UniverseSentMe #FantasmaUSM #MemesUSM | `PROGRAMADA` | Facebook; Instagram selectivo | Nuevo; humor absurdo y pregunta clara. Revisar ortografía final del asset antes de programar. Meta Post `1036844829507460_122150559693072582`; Photo `122150559639072582`; original movido a `08 Agosto` sin copia. |
 | 2026-08-15 | Sábado | 19:00 | Reuse_Approved_User_Context | `260539 - Evan+Kiri.png` | 🫣🫣 #UniverseSentMe #EvanUSM #KiriUSM | `PROGRAMADA` | Facebook; Instagram solo tras revisión | Reuse manual con doble sentido/sexualización válida; mantener contexto y no impulsar con pauta. Meta Post `1036844829507460_122150559765072582`; Photo `122150559729072582`; original movido a `08 Agosto` sin copia. |
 | 2026-08-16 | Domingo | 10:00 | Nueva | `2608037- Universe - soñe que era un litrro de agua.jpeg` | Necesito hidratarme hasta en los sueños. 💧 #UniverseSentMe #UniverseUSM #MemesUSM | `PROGRAMADA` | Facebook; Instagram selectivo | Nuevo; pieza visual de Universe y gag reconocible para la mañana. Meta Post `1036844829507460_122150559873072582`; Photo `122150559807072582`; original movido a `08 Agosto` sin copia. |
@@ -32,7 +32,7 @@
 
 ## Registro de ejecución
 
-La programación se ejecutó mediante Graph API usando el Page Access Token derivado desde `/me/accounts`. Meta devolvió `is_published: false` y `scheduled_publish_time` para los nueve posts, confirmando que quedaron programados y no publicados inmediatamente. Los IDs de publicación y de foto temporal están en el CSV operativo.
+La programación de Facebook se ejecutó mediante Graph API usando el Page Access Token derivado desde `/me/accounts`. Meta devolvió `is_published: false` y `scheduled_publish_time` para los nueve posts. Adicionalmente, 260583 fue publicado en Instagram como prueba controlada mediante `/{IG_ID}/media` y `/{IG_ID}/media_publish`; sus IDs y permalink están en el CSV operativo.
 
 ## Reglas de ejecución
 

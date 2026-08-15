@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.40
+**Versión:** 1.41
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -26,6 +26,16 @@
 - Se registraron los permisos efectivos y las cuentas vinculadas en `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`.
 
 ---
+
+---
+
+## [1.2.41] — 2026-08-15 (Manus)
+### Prueba controlada Instagram
+- Se publicó mediante Graph API directa el asset aprobado `260583 - Universe.png` en `@universe_sent_me_0326`.
+- Creación de contenedor: `17976335523089880`; estado `FINISHED`.
+- Publicación verificada: `18105410684129991`; permalink `https://www.instagram.com/p/DcDHxq5AMHh/`.
+- La prueba demuestra que los permisos, la vinculación de la Página y el PPA permiten publicar en Instagram. El scheduler futuro queda como pendiente independiente: la API ejecutó publicación inmediata, no programación futura.
+- El calendario del 15–16 fue actualizado con `IG_Container_ID`, `IG_Media_ID`, permalink y estado `PUBLICADA_PRUEBA` para esta fila.
 
 ---
 

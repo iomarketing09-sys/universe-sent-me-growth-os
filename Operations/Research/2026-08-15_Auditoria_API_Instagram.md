@@ -34,7 +34,7 @@ El problema anterior fue de **separación de canales**. El mensaje `Instagram co
 | Lectura de identidad Instagram | HTTP 200; 42 seguidores y 460 piezas de media al momento de la auditoría |
 | Lectura de media reciente | HTTP 200; devolvió Reels, imágenes y carruseles recientes |
 | Cuota de publicación | HTTP 200; `quota_usage=0`, `quota_total=100`, `quota_duration=86400` |
-| Publicación de Instagram el 15–16 | No ejecutada; no existe `IG_CONTAINER_ID` ni `IG_MEDIA_ID` asociado |
+| Publicación de Instagram el 15–16 | Prueba controlada ejecutada con 260583; `IG_CONTAINER_ID` y `IG_MEDIA_ID` registrados |
 
 La cuenta, la vinculación y los permisos están operativos a nivel de Graph API. La cuota en cero no prueba por sí sola que una publicación sea posible, pero elimina saturación de cuota como causa del bloqueo observado.
 
@@ -59,7 +59,7 @@ El flujo operativo será el siguiente:
 7. Verificar la pieza publicada mediante `/media` y registrar permalink, estado y timestamp.
 8. Solo después de confirmar el ID real, mover el original de Drive a la carpeta mensual, sin crear copias.
 
-La API de Instagram documenta creación y publicación de contenedores, pero el calendario futuro no debe marcarse como `PROGRAMADO` solo por crear un contenedor. Para programar horarios futuros, Manus debe ejecutar la llamada de publicación en el momento planificado mediante un scheduler autorizado o utilizar una herramienta que confirme scheduling nativo. En esta auditoría no se creó un contenedor de prueba porque Fernando solicitó diagnóstico, no publicación.
+La API de Instagram documenta creación y publicación de contenedores, pero el calendario futuro no debe marcarse como `PROGRAMADO` solo por crear un contenedor. Para programar horarios futuros, Manus debe ejecutar la llamada de publicación en el momento planificado mediante un scheduler autorizado o utilizar una herramienta que confirme scheduling nativo. La prueba controlada creó el contenedor `17976335523089880`, alcanzó `FINISHED` y publicó correctamente el media `18105410684129991` en `https://www.instagram.com/p/DcDHxq5AMHh/`; PPA no bloqueó esta publicación.
 
 ## Checklist antes del primer post de prueba
 
@@ -70,11 +70,11 @@ La API de Instagram documenta creación y publicación de contenedores, pero el 
 | Permisos de publicación | Confirmado |
 | Tarea `CREATE_CONTENT`/`MANAGE` | Confirmado |
 | Cuota de publicación disponible | Confirmado |
-| Page Publishing Authorization (PPA) | Pendiente de comprobar durante una publicación controlada |
-| Prueba real de un asset aprobado | Pendiente de aprobación explícita |
+| Page Publishing Authorization (PPA) | Superado en la prueba de 260583; no bloqueó la publicación |
+| Prueba real de un asset aprobado | Completada con 260583; publicación verificada |
 | Scheduler para ejecutar en horario futuro | Pendiente de implementar/confirmar |
 
-PPA es el único bloqueo externo relevante que aún debe verificarse en una prueba real. Meta advierte que una Página vinculada puede requerir Page Publishing Authorization; si está pendiente, la publicación de Instagram falla aunque los permisos aparezcan concedidos.[1]
+La prueba de 260583 demuestra que PPA no bloqueó esta Página en esta operación. Meta advierte que una Página vinculada puede requerir Page Publishing Authorization; si cambia el estado de la Página o la autorización, una publicación futura podría fallar aunque los permisos aparezcan concedidos.[1]
 
 ## Decisión operativa
 
