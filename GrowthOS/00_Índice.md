@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-14
-**Versión:** 2.7
+**Versión:** 2.8
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -47,6 +47,8 @@
 | [Revisión de Reuse — Mayo frente a Junio](../Operations/Research/2026-08-14_Revision_Reuse_Mayo_Junio.md) | Inventario de Drive, elegibilidad de mayo y reserva Top de junio. | Review |
 | [Ranking Reuse Mayo — rendimiento Meta](../Operations/Research/2026-08-14_Reuse_Mayo_Ranking.csv) | Ranking individual de 123 assets cruzados con 205 publicaciones de mayo. | Active |
 | [Pipeline de publicación y archivado mensual](13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md) | Estándar CSV, publicación por Graph API y movimiento de assets publicados a la carpeta mensual. | Active |
+| [Inventario de memes nuevos de Drive — 15 de agosto](../Operations/Research/2026-08-15_Inventario_Memes_Nuevos_Drive.md) | Registro de 38 imágenes nuevas encontradas en la raíz de Humor existencial, con referencias y enlaces de Drive. | Review |
+| [Calendario 15–16 de agosto — pendiente de aprobación](../Operations/Research/2026-08-15_Calendario_15_16_Agosto.md) | Propuesta de 9 publicaciones: 5 nuevas y 4 reuse, lista para programación después de aprobación. | Draft |
 
 ---
 

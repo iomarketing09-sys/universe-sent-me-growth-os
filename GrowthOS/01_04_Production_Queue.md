@@ -3,8 +3,8 @@
 **Propósito:** Lista de contenido que requiere producción nueva (generación de assets, edición, redacción de guiones) antes de poder ser programado.
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-14
-**Versión:** 1.3
+**Última actualización:** 2026-08-15
+**Versión:** 1.4
 **Autor:** Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_02_Content_Backlog.md`
 
@@ -25,6 +25,10 @@
 | CNT-025 | Experimentos Growth OS — tests A/B | Variable | Reel (parejas) | Media-Alta | Pendiente de aprobación | Requiere aprobación de Fernando. |
 | CNT-027 | Meme Fantasma "Ghosting eterno" (derivado de Drive Ideas-Memes) | @char_USM_fantasma | Foto (frase en copy) | Baja | **Propuesta lista** — Draft, pendiente de aprobación de Fernando | Score 9.10/10 (`Operations/Production/CNT027_Meme_Fantasma_Ghosting_DriveIdeas.md`). Base visual: asset 2K existente del proyecto (Fantasma levitando sobre el bosque); solo requiere copy en publicación. Slot sugerido 4:00–5:00 PM. |
 | CNT-028 | Banco de 5 memes adaptados de Drive (frase intacta + marca en imagen) | Multichar (Fantasma, Kael+Maeve, Silvio, Wilfred, Universe) | Foto adaptada | Baja | **Imágenes listas** — Draft, pendientes de aprobación de Fernando | 5 imágenes ya generadas y verificadas palabra por palabra (`Operations/Production/CNT028_Memes_Adaptados_Drive_Frase_Intacta.md`). Modo "Adaptado" formalizado en `03_00`. Assets: 01–05 en archivos compartidos del proyecto.
+
+### Ingreso de Drive — 15 de agosto de 2026
+
+Se incorporaron **38 memes nuevos** directamente desde la raíz operativa `My Drive/Universe sent me/USM/Humor existencial`. El inventario detallado, las referencias de Drive y la primera clasificación visual están en [`Operations/Research/2026-08-15_Inventario_Memes_Nuevos_Drive.md`](../Operations/Research/2026-08-15_Inventario_Memes_Nuevos_Drive.md) y [`Operations/Research/2026-08-15_Inventario_Memes_Nuevos_Drive.csv`](../Operations/Research/2026-08-15_Inventario_Memes_Nuevos_Drive.csv). Todos permanecen en estado `Nuevo_Pendiente_Revision`; no entran automáticamente al calendario hasta aprobación.
 
 ---
 
