@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import csv, json, os, re, subprocess, tempfile, time
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 import requests
@@ -99,7 +99,8 @@ def main():
         if platform != 'Facebook; Instagram selectivo': continue
         if row.get('IG_Estado') == 'PUBLICADA_PRUEBA' or row.get('IG_Media_ID'): continue
         target = datetime.strptime(f"{row['Fecha']} {row['Hora']}", '%Y-%m-%d %H:%M').replace(tzinfo=TZ)
-        if target <= now: due.append(row)
+        # The schedule fires at candidate minute groups. Publish only within an 8-minute window after the exact local slot; never catch up a missed slot late.
+        if target <= now < target + timedelta(minutes=8): due.append(row)
     if not due:
         print(json.dumps({'now_local': now.isoformat(), 'status': 'nothing_due', 'target_dates': sorted(TARGET_DATES)}, ensure_ascii=False))
         return
