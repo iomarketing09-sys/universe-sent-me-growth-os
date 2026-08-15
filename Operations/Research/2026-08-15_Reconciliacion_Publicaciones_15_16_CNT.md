@@ -4,7 +4,7 @@ purpose: "Registrar la reconciliación verificable entre los nueve assets public
 status: Active
 created: 2026-08-15
 updated: 2026-08-15
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
@@ -47,7 +47,7 @@ Los nueve posts fueron confirmados como existentes mediante Meta Graph API v26. 
 
 `CNT-031` también queda enlazado a la publicación manual de Instagram registrada como `PUB-IG-15_16-01`. El media real es `18145111759484218`, con permalink `https://www.instagram.com/p/DcEX6BSE8ka/`, publicado el 15 de agosto a las 10:59:41 hora local después de aprobación explícita. El slot original de las 10:00 quedó perdido.
 
-Esta publicación **no fue una programación futura nativa de Instagram ni una ejecución automática del scheduler**. El commit `1694b00` documenta la publicación manual. La prueba de `260583`, enlazada a `CNT-032` como `PUB-IG-TEST-02`, permanece en estado `Eliminada_Manualmente` y no debe republicarse. La documentación operativa mantiene el scheduler selectivo desactivado y la distribución de Instagram bajo aprobación manual.
+Esta publicación **no fue una programación futura nativa de Instagram ni una ejecución automática del scheduler**. El commit `1694b00` documenta la publicación manual. El archivo local de idempotencia del scheduler no estaba disponible en esta sesión; por esa razón no se usa como evidencia positiva ni se infiere una ejecución automática. La evidencia operativa disponible es el calendario versionado, el `IG_Media_ID`, el permalink y el commit manual. La prueba de `260583`, enlazada a `CNT-032` como `PUB-IG-TEST-02`, permanece en estado `Eliminada_Manualmente` y no debe republicarse. La documentación operativa mantiene el scheduler selectivo desactivado y la distribución de Instagram bajo aprobación manual.
 
 ## Reglas de canon y estado
 
