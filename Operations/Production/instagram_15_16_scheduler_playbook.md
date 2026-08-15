@@ -1,10 +1,10 @@
 ---
 title: Playbook Scheduler Instagram — 15–16 de agosto de 2026
-purpose: Ejecutar de forma autónoma las publicaciones de Instagram aprobadas del calendario del 15–16, con protección contra duplicados y exclusión explícita de la prueba eliminada.
+purpose: Registrar y ejecutar únicamente publicaciones de Instagram aprobadas manualmente por Fernando, con protección contra duplicados y exclusión explícita de la prueba eliminada; la automatización programada queda desactivada.
 status: Active
 created: 2026-08-15
 updated: 2026-08-15
-version: 1.3
+version: 1.4
 author: Manus AI
 documents_related:
   - ../../GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md
@@ -12,6 +12,18 @@ documents_related:
   - ../Research/2026-08-15_Auditoria_API_Instagram.md
 organization: Operations/Production
 ---
+
+## Modo operativo vigente: aprobación manual
+
+La tarea programada fue desactivada el 2026-08-15. Este playbook ya no autoriza ejecuciones autónomas. Cada publicación de Instagram requiere una decisión explícita de Fernando para una fila concreta; sin esa aprobación, el runner no debe crear contenedores ni publicar media. Facebook mantiene su registro independiente y no debe modificarse desde este flujo.
+
+## Procedimiento manual aprobado
+
+Cuando Fernando apruebe una fila específica, se deberá comprobar el asset exacto, caption, estado `IG_Estado`, ausencia de `ig_media_id` y contexto editorial. Solo después se ejecutará `media`, se verificará `status_code` y se ejecutará `media_publish`. La decisión manual deberá indicar como mínimo la fila o asset, la hora de publicación inmediata y si se autoriza Instagram únicamente. Nunca usar `scheduled_publish_time` ni republicar `260583 - Universe.png`.
+
+## Historial del procedimiento anterior
+
+Las instrucciones siguientes documentan el runner heredado y no constituyen autorización para nuevas ejecuciones automáticas:
 
 Ejecuta esta tarea autónomamente, sin pedir confirmación al usuario:
 
@@ -75,4 +87,12 @@ Ejecuta esta tarea autónomamente, sin pedir confirmación al usuario:
 
 ---
 
-**Nota de coherencia documental:** No se requirieron actualizaciones en el calendario CSV/Markdown porque no hubo publicaciones, IDs ni cambios de estado. El playbook conserva el registro operativo de esta ejecución y continúa siendo la fuente de procedimiento para el runner.
+### 2026-08-15 10:47:13 America/Mexico_City — Cambio a aprobación manual
+
+- La tarea programada `USM Instagram 15-16 Agosto` quedó desactivada.
+- Motivo: la ejecución automática no garantizaba que el despertar coincidiera con la ventana de ocho minutos posterior al slot; además, la zona configurada era `America/Matamoros` mientras el procedimiento exigía `America/Mexico_City`.
+- Instagram: seis filas quedaron registradas como `PENDIENTE_APROBACION_MANUAL` o `PENDIENTE_REVISION_MANUAL` en el CSV; ninguna fue publicada por este cambio.
+- Facebook: sin cambios.
+- `260583 - Universe.png`: continúa excluida por `ELIMINADA_MANUALMENTE`.
+
+**Nota de coherencia documental:** El CSV operativo fue actualizado con estados explícitos de aprobación manual para Instagram. La recomendación CGO y el calendario Markdown deben reflejar que Instagram funciona como laboratorio selectivo con decisiones fila por fila; Facebook conserva su programación independiente.

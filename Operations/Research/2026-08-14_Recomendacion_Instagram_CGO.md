@@ -1,10 +1,10 @@
 # Recomendación CGO — distribución de memes en Instagram
 
 **Propósito:** Definir si Universe Sent Me debe publicar memes estáticos en Instagram, qué piezas deben probarse primero y cómo separar evidencia de Facebook de evidencia propia de Instagram.  
-**Estado:** Review  
-**Fecha de creación:** 2026-08-14  
-**Última actualización:** 2026-08-14  
-**Versión:** 1.0  
+**Estado:** Active
+**Fecha de creación:** 2026-08-14
+**Última actualización:** 2026-08-15
+**Versión:** 1.1
 **Autor:** Manus AI  
 **Documentos relacionados:** [`GrowthOS/08_00_Metricas_Baseline_Plataformas.md`](../../GrowthOS/08_00_Metricas_Baseline_Plataformas.md), [`Operations/Research/2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md`](2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md), [`Operations/Research/2026-08-14_Analisis_Copys_Rendimiento.md`](2026-08-14_Analisis_Copys_Rendimiento.md), [`GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md`](../../GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md)
 
@@ -52,7 +52,17 @@ Durante los primeros 14 días, Instagram debería recibir **una imagen estática
 
 La decisión CGO es **cross-post selectivo, no cross-post masivo**. La primera tanda debería usar `260560`, `260625` y `260528`. Después, si la cuenta no presenta restricciones, se puede probar `260539`; `humor4.16` queda como reserva para una prueba controlada, porque su potencial de interacción es alto pero también lo es el riesgo de distribución limitada. El resto de los reuse debe permanecer Facebook-first hasta disponer de métricas propias de Instagram.
 
-La ejecución real queda bloqueada hasta reconectar el conector de Instagram. No se realizó ninguna publicación en esta tarea.
+La ejecución automática queda bloqueada por decisión operativa. Cualquier publicación futura requiere aprobación manual explícita y registro propio de Instagram; la prueba histórica de `260583` permanece eliminada y no debe republicarse.
+
+## Decisión operativa revisada — 2026-08-15
+
+La automatización programada de Instagram queda descartada. Instagram se gestionará como un laboratorio de **aprobación manual fila por fila**: Fernando decide el asset, confirma el caption y autoriza la publicación inmediata; el sistema no debe recuperar slots perdidos ni publicar por inferencia. Facebook conserva su calendario y su programación independiente.
+
+La pérdida de una ventana no debe convertirse en una prohibición de publicar. Si un meme sigue siendo oportuno y el asset está validado, se puede publicar fuera del slot original como una nueva decisión editorial, registrando la hora real y sin fingir que se cumplió el horario del calendario. Para proteger el aprendizaje CGO, se recomienda no publicar varios memes seguidos: elegir una pieza con alto potencial visual, esperar métricas iniciales y decidir la siguiente a partir de evidencia.
+
+Para la decisión actual, **no recomiendo publicar automáticamente el meme de las 10:00**. Sí recomiendo evaluar una publicación manual inmediata si el asset se revisa y Fernando la aprueba expresamente. La primera opción del lote es `2608030 - Universe - Que fibra tomas pa cagarla tanto.jpeg` por su remate inmediato y legible; como segunda opción de menor riesgo editorial queda `2608033 - Fantasma - vendra primero mi boda o jesus.jpeg`, pero requiere corregir o confirmar la ortografía visible indicada en el calendario. No recomiendo comenzar con `260539`, `2608060` ni `humor4.16` sin revisión adicional por su contexto sexualizado o de pareja.
+
+El flujo aprobado para cada decisión será: **selección manual → revisión de asset y caption → aprobación explícita → creación de media → verificación de estado → `media_publish` → registro de IDs, permalink, hora real y métricas iniciales**. No se utilizará `scheduled_publish_time`.
 
 ## Referencias internas
 

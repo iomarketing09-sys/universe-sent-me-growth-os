@@ -1,10 +1,10 @@
 # Calendario operativo programado — 15 y 16 de agosto de 2026
 
 **Propósito:** Preparar un calendario listo para programar después de la aprobación, usando la misma estrategia de fin de semana: 2 nuevas + 2 reuse el sábado y 3 nuevas + 2 reuse el domingo estelar.
-**Estado:** Programada
+**Estado:** Active
 **Fecha de creación:** 2026-08-15
 **Última actualización:** 2026-08-15
-**Versión:** 1.1
+**Versión:** 1.2
 **Autor:** Manus AI
 **Documentos relacionados:** [`2026-08-15_Inventario_Memes_Nuevos_Drive.md`](2026-08-15_Inventario_Memes_Nuevos_Drive.md), [`../../GrowthOS/05_03_Calendario_10_16_Agosto.md`](../../GrowthOS/05_03_Calendario_10_16_Agosto.md), [`../../GrowthOS/01_03_Reuse_Queue.md`](../../GrowthOS/01_03_Reuse_Queue.md), [`../../GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`](../../GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md)
 
@@ -13,7 +13,8 @@
 - 9 publicaciones propuestas: 5 nuevas y 4 reuse aprobados manualmente.
 - Sábado: 10:00, 11:00, 13:30 y 19:00.
 - Domingo estelar: 10:00, 13:30, 16:00, 19:00 y 22:00.
-- Las nueve publicaciones fueron aprobadas y programadas mediante Graph API; sus IDs están registrados en el CSV y en cada fila de esta tabla.
+- Las nueve publicaciones de Facebook fueron aprobadas y programadas mediante Graph API; sus IDs están registrados en el CSV y en cada fila de esta tabla.
+- Instagram queda como distribución selectiva con aprobación manual por fila; las filas selectivas no constituyen autorización automática.
 - Los nueve originales utilizados fueron movidos a `Humor existencial/08 Agosto` sin crear copias.
 
 ## Calendario
@@ -30,13 +31,19 @@
 | 2026-08-16 | Domingo | 19:00 | Nueva | `2608060 - Kael+Maeve - gustos salvajones.jpeg` | No tenemos gustos raros, tenemos gustos salvajones. 😏 #UniverseSentMe #MaeveUSM #MemesUSM | `PROGRAMADA` | Facebook; Instagram selectivo | Nuevo; reservar para la transición nocturna y revisar contexto de pareja. Meta Post `1036844829507460_122150560215072582`; Photo `122150560143072582`; original movido a `08 Agosto` sin copia. |
 | 2026-08-16 | Domingo | 22:00 | Reuse_Approved_User_Context | `humor4.16.png` | 🫣🫣 #UniverseSentMe #MemesUSM | `PROGRAMADA` | Facebook; Instagram solo tras revisión | Reuse manual con contexto sexualizado; domingo estelar y horario nocturno. No combinar con otra pieza sexualizada cercana. Meta Post `1036844829507460_122150560383072582`; Photo `122150560341072582`; original movido a `08 Agosto` sin copia. |
 
+## Registro de Instagram — modo manual
+
+A partir del 2026-08-15, `IG_Estado` distingue las filas que esperan una decisión humana: `PENDIENTE_APROBACION_MANUAL` para piezas aptas para evaluar y `PENDIENTE_REVISION_MANUAL` para piezas que requieren revisar contexto, elegibilidad u oportunidad. El estado `PROGRAMADA` de la fila continúa describiendo Facebook y no autoriza una publicación en Instagram.
+
+Para el lote actual, la propuesta de decisión es comenzar por `2608030 - Universe - Que fibra tomas pa cagarla tanto.jpeg`, con caption corto y prueba orgánica aislada. La hora original de las 10:00 se considera perdida como slot, pero la pieza puede publicarse ahora como una nueva decisión editorial si Fernando la aprueba expresamente. No se debe publicar todavía solo por estar en el calendario.
+
 ## Registro de ejecución
 
 La programación de Facebook se ejecutó mediante Graph API usando el Page Access Token derivado desde `/me/accounts`. Meta devolvió `is_published: false` y `scheduled_publish_time` para los nueve posts. Adicionalmente, 260583 fue publicado en Instagram como prueba controlada mediante `/{IG_ID}/media` y `/{IG_ID}/media_publish`; sus IDs y permalink están en el CSV operativo. La publicación fue eliminada manualmente por Fernando y queda como historial, no como destino de republicación.
 
 ## Reglas de ejecución
 
-La aprobación de Fernando quedó recibida antes de la ejecución. Las nueve órdenes de Facebook fueron creadas; Instagram permanece como distribución selectiva; la prueba de 260583 fue eliminada manualmente y no debe republicarse. El scheduler solo podrá ejecutar las filas futuras de Instagram que no tengan `IG_Estado=ELIMINADA_MANUALMENTE`. El calendario del 17–30 de agosto no fue alterado.
+La aprobación de Fernando quedó recibida antes de la ejecución de Facebook. Las nueve órdenes de Facebook fueron creadas; Instagram permanece como distribución selectiva y manual. La tarea programada de Instagram fue desactivada el 2026-08-15 porque no garantizaba la coincidencia entre despertar y ventana de publicación. Cada fila de Instagram ahora requiere aprobación explícita, y el calendario del 17–30 de agosto no fue alterado. La prueba de `260583` fue eliminada manualmente y no debe republicarse.
 
 ### Referencias
 
