@@ -4,7 +4,7 @@ purpose: Ejecutar de forma autónoma las publicaciones de Instagram aprobadas de
 status: Active
 created: 2026-08-15
 updated: 2026-08-15
-version: 1.2
+version: 1.3
 author: Manus AI
 documents_related:
   - ../../GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md
@@ -51,7 +51,7 @@ Ejecuta esta tarea autónomamente, sin pedir confirmación al usuario:
 ### 2026-08-15 10:10:20 America/Mexico_City
 
 - Resultado: `nothing_due`.
-- Filas objetivo validadas: 5 filas con `Plataforma=Facebook; Instagram selectivo` para 2026-08-15 y 2026-08-16.
+- Filas objetivo validadas: 4 filas con `Plataforma=Facebook; Instagram selectivo` para 2026-08-15 y 2026-08-16.
 - Filas procesadas: 0; el slot de 10:00 ya estaba fuera de la ventana válida de ocho minutos al despertar del runner.
 - IDs de contenedor: ninguno.
 - IDs de media: ninguno.
@@ -59,6 +59,19 @@ Ejecuta esta tarea autónomamente, sin pedir confirmación al usuario:
 - Facebook: sin cambios.
 - Exclusión confirmada: `260583 - Universe.png` no forma parte de las filas objetivo y no fue recuperada ni publicada; permanece prohibida por `IG_Estado=ELIMINADA_MANUALMENTE`.
 - `scheduled_publish_time`: no utilizado.
+
+### 2026-08-15 10:39:40 America/Mexico_City
+
+- Resultado: `nothing_due`.
+- Filas objetivo validadas: 4 filas con `Plataforma=Facebook; Instagram selectivo` para 2026-08-15 y 2026-08-16.
+- Filas procesadas: 0; el slot de 10:00 estaba fuera de la ventana válida de ocho minutos cuando despertó el runner.
+- IDs de contenedor: ninguno.
+- IDs de media: ninguno.
+- Errores de Meta: ninguno; no se ejecutaron llamadas `media`, verificación ni `media_publish`.
+- Facebook: sin cambios.
+- Exclusión confirmada: `260583 - Universe.png` no fue recuperada ni publicada y permanece bloqueada por `IG_Estado=ELIMINADA_MANUALMENTE`.
+- `scheduled_publish_time`: no utilizado.
+- Estado local: `/home/ubuntu/instagram_scheduler_15_16_state.json` permaneció sin registros nuevos.
 
 ---
 
