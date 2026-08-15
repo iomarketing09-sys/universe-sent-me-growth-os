@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.48
+**Versión:** 1.49
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -46,6 +46,15 @@
 - “¿Qué quieres desayunar?” fue la publicación más conversacional con 14 comentarios; “Tus únicas amigas son estas” concentró 11; el meme de Silvio concentró 8 y también los riesgos de tono más claros.
 - La comunidad dejó señales de auto-revelación sobre soledad, sinceridad, afecto y extrañar a alguien. Se recomienda medir comentarios cualitativos por separado de menciones automáticas y emojis.
 - Se recomendó revisar el mismo día y entre 24–48 horas después, mantener respuestas humanas guiadas y probar un estímulo conversacional por día como máximo durante el calendario experimental.
+
+---
+
+## [1.2.49] — 2026-08-15 (Manus)
+### Comunidad y respuestas creativas
+- Fernando confirmó que las respuestas tardías todavía generan agradecimiento explícito —“por eso amamos la página”— y que una mejora de velocidad puede fortalecer una relación que ya existe.
+- Se actualizó `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` a la versión 1.2 para incorporar una estrategia de assets de respuesta: memes juguetones, reacciones de personajes, llamadas de atención cariñosas y cierres visuales.
+- Los comentarios negativos se tratarán individualmente. Un comentario oscuro o de estrés no se penaliza automáticamente; se observarán patrones de acoso, amenazas, discriminación, spam o escalamiento antes de ocultar, eliminar o bloquear.
+- `GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md` dejó de considerar pendiente la evidencia de comunidad: el agradecimiento por el tono de respuesta se reconoce como señal cualitativa de pertenencia. Queda pendiente formalizar el registro mensual y la biblioteca de assets.
 
 ---
 

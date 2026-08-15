@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-15
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -190,7 +190,7 @@ El cuarto patrón es el **riesgo de desviación temática**. En el post de Silvi
 
 La conversación no termina en la primera hora. Las publicaciones con mayor volumen conservaron comentarios nuevos aproximadamente durante dos días y medio: “¿Qué quieres desayunar?” recibió actividad hasta casi 60 horas después, y “Tus únicas amigas” también mantuvo actividad durante unas 60 horas. Esto valida una revisión de seguimiento al día siguiente y no solamente una revisión inmediata después de publicar.
 
-En el conjunto analizado no se identificaron respuestas conversacionales de la página a los comentarios de la audiencia. Las 14 entradas claramente atribuibles por texto a la página eran menciones de distribución (`@seguidores` o `@fansdestacados`), no respuestas que desarrollaran la conversación. Esta es la oportunidad operativa más concreta: **la comunidad ya está dejando material; la página todavía no está convirtiendo ese material en relación ni aprendizaje visible**.
+En la muestra analizada no se identificaron respuestas conversacionales recientes de la página; las 14 entradas claramente atribuibles por texto a la página eran menciones de distribución (`@seguidores` o `@fansdestacados`). Sin embargo, Fernando confirmó una evidencia cualitativa adicional: cuando responde, incluso después de varios días, algunas personas expresan agradecimiento explícito con frases como “por eso amamos la página”. Por tanto, la oportunidad no es solo responder rápido, sino convertir la respuesta en una señal visible de cuidado y pertenencia. A partir de ahora, la velocidad será una mejora operativa, no una condición para que la interacción tenga valor.
 
 ### 10.5 Decisiones CGO para el calendario
 
@@ -211,6 +211,16 @@ La primera respuesta a comentarios debe ser humana y guiada. La prioridad de rev
 Se recomiendan dos ventanas de revisión: una durante el mismo día de publicación y otra entre 24 y 48 horas después. En la primera ventana se responde a comentarios que puedan abrir conversación; en la segunda se recuperan señales tardías. La respuesta debe ser breve, cálida y coherente con el tono de la marca. No se deben hacer diagnósticos, promesas de ayuda ni discusiones políticas o personales.
 
 Ejemplos de respuesta guiada podrían ser: “Jajaja, el pan y café también cuenta. ¿Eres más de desayuno tranquilo o de sobrevivir con lo que haya?” para una respuesta de baja fricción; o “Eso ya no es solo un meme, Wilfred necesita tomar nota” para una complicidad con personaje. Son ejemplos para revisión humana, no plantillas para publicar automáticamente.
+
+### 10.7 Respuestas creativas y tratamiento de comentarios negativos
+
+Fernando propuso crear una biblioteca de memes de respuesta para acompañar comentarios, con recursos como “mira, te habla tu mamá”, “díganle que sí, está enfermito” o reacciones visuales de los personajes. La recomendación CGO es tratarlos como **assets de respuesta**, no como publicaciones editoriales ordinarias. Pueden utilizarse solos cuando el comentario ya sea el chiste, o acompañar una respuesta textual breve cuando el intercambio lo merezca.
+
+La biblioteca debe organizarse por función: respuesta juguetona, complicidad de personaje, llamada de atención cariñosa, reacción absurda y cierre elegante. Cada asset debe conservar el tono de USM y evitar humillar a una persona concreta. La respuesta creativa debe amplificar la conversación, no reemplazarla.
+
+Los comentarios negativos deben analizarse individualmente. Fernando confirmó que uno de los comentaristas que inicialmente parecía estar expresando estrés regresó después a comentar normalmente en otra publicación; eso es compatible con una lectura de humor negro o descarga momentánea, no necesariamente con una intención de daño persistente. La regla operativa será observar el patrón de conducta: un comentario aislado puede recibir una respuesta neutral o no recibir respuesta; la repetición de acoso, amenazas, discriminación, spam o escalamiento sí justificaría ocultar, eliminar o bloquear según el caso. No se debe penalizar automáticamente a un nuevo seguidor por un solo comentario oscuro.
+
+El objetivo es pasar de “moderar comentarios” a **cultivar una comunidad con personalidad**: responder a quienes sostienen la conversación, usar memes como lenguaje nativo del universo y reservar medidas de moderación para patrones reales de abuso.
 
 ## Referencias
 

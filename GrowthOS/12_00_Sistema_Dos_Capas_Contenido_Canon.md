@@ -82,11 +82,11 @@ Se queda como recurso libre de Capa 1 — se puede seguir usando en memes indefi
 
 ## 5. Registro cualitativo de comunidad (nueva pieza de datos, no capturada antes)
 
-Fernando reporta que la comunidad deja en comentarios contenido valioso que ningún reporte de métricas captura: historias personales, puntos de vista profundos, agradecimiento explícito por el tono de respuesta de la página ("por esto amamos esta página"). Esto es evidencia cualitativa en vivo de la Tesis Emocional del proyecto ("las personas se sienten menos solas cuando descubren que alguien más ya vivió lo mismo") y merece un lugar de registro propio, distinto de las métricas cuantitativas (reacciones, shares, alcance).
+Fernando reporta —y confirmó con ejemplos reales— que la comunidad deja en comentarios contenido valioso que ningún reporte de métricas captura: historias personales, puntos de vista profundos y agradecimiento explícito por el tono de respuesta de la página ("por esto amamos esta página"). Incluso cuando la respuesta llega varios días después, puede reforzar la sensación de cuidado y pertenencia. Esto es evidencia cualitativa en vivo de la Tesis Emocional del proyecto ("las personas se sienten menos solas cuando descubren que alguien más ya vivió lo mismo") y merece un lugar de registro propio, distinto de las métricas cuantitativas (reacciones, shares, alcance).
 
-**Propuesta de formato** (a definir con Fernando en su primer uso real): un documento tipo `Operations/Memories/comunidad_insights_[mes].md`, donde se registre — sin exponer identidad de usuarios reales salvo que Fernando decida lo contrario — el tipo de comentario, qué pieza lo generó, y si aporta señal para posible promoción a canon (ej. si varias personas reaccionan con su propia historia a un mismo patrón de humor, eso refuerza la señal cuantitativa de la sección 4).
+**Formato recomendado:** un documento tipo `Operations/Memories/comunidad_insights_[mes].md`, donde se registre — sin exponer identidad de usuarios reales salvo que Fernando decida lo contrario — el tipo de comentario, qué pieza lo generó, la respuesta dada y si aporta señal para posible promoción a canon. También deben registrarse los assets de respuesta utilizados y su función (respuesta juguetona, complicidad de personaje, llamada de atención cariñosa, reacción absurda o cierre elegante). Si varias personas reaccionan con su propia historia a un mismo patrón de humor, eso refuerza la señal cuantitativa de la sección 4.
 
-Este registro queda como pendiente de implementación — no se generó ningún ejemplo en esta sesión porque no había datos concretos de comentarios a mano.
+El primer escaneo de 67 comentarios quedó documentado en `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`. El registro mensual de insights y la biblioteca formal de assets de respuesta siguen pendientes de implementación.
 
 ## 6. Lo que este sistema NO cambia
 
@@ -109,7 +109,7 @@ Fernando distribuye contenido regularmente en grupos de Facebook ajenos a la pá
 
 ## 9. Pendientes
 
-1. Implementar el primer registro cualitativo real de comunidad cuando Fernando tenga comentarios concretos a mano (sección 5).
+1. Implementar el registro mensual de insights de comunidad y la biblioteca de assets de respuesta (sección 5).
 2. Revisar retroactivamente los memes de mayo-agosto ya publicados en busca de patrones que ya cumplan el umbral de la sección 4.1, como primera aplicación práctica del sistema (sesión dedicada, ya mencionada en conversaciones anteriores).
 3. Confirmar con Fernando si el "Canon_Contradictions_Report.md" debe actualizarse con una nota que aclare explícitamente que su alcance es solo narrativa seria, para evitar que una futura sesión lo aplique por error a un meme suelto.
 4. Definir si conviene registrar en el calendario editorial las fechas en que Fernando publica en Polvo de estrellas, para poder correlacionar caídas de rendimiento de la página propia con posibles aluviones de aprobación del grupo externo (sección 8) — por ahora es una observación puntual, no un patrón confirmado con datos suficientes.
