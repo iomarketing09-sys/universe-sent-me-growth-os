@@ -3,7 +3,7 @@
 **Propósito:** Registro centralizado de hitos, integraciones, cambios estratégicos y actualizaciones de arquitectura. Este documento permite a los agentes (Manus, Claude, etc.) sincronizar contexto rápidamente sin re-leer todo el repositorio.
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
-**Última actualización:** 2026-08-14
+**Última actualización:** 2026-08-15
 **Versión:** 1.44
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
@@ -33,6 +33,11 @@
 ### Optimización de frecuencia del scheduler Instagram
 - La revisión se redujo de cada 5 minutos a cada 15 minutos para evitar ejecuciones innecesarias mientras se conserva un margen operativo razonable para este calendario de nueve slots.
 - La tarea continúa activa, con expiración `2026-08-17T04:30:00Z`, y mantiene el filtro de fechas, la idempotencia y la exclusión de `260583`.
+
+### Ejecución del scheduler Instagram 15–16
+- Se ejecutó el runner indicado por `Operations/Production/instagram_15_16_scheduler_playbook.md` a las `2026-08-15T00:06:48-06:00` en `America/Mexico_City`.
+- Resultado: `nothing_due`. Los primeros slots elegibles del 15–16 todavía no habían llegado; por tanto, no se creó ningún contenedor, no se llamó a `media_publish`, no se registraron IDs ni errores de Meta y no se modificó Facebook.
+- `260583 - Universe.png` permaneció excluido por `IG_Estado=ELIMINADA_MANUALMENTE`. La ejecución no usó `scheduled_publish_time`.
 
 ---
 
