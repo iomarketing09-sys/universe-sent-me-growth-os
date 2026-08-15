@@ -3,8 +3,8 @@
 **Propósito:** Punto de entrada a toda la documentación operativa del Growth OS (calendario editorial, colas, automatizaciones, governance).
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-14
-**Versión:** 2.8
+**Última actualización:** 2026-08-15
+**Versión:** 2.9
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -44,11 +44,12 @@
 | [Análisis de Copys y Rendimiento — 14 de agosto](../Operations/Research/2026-08-14_Analisis_Copys_Rendimiento.md) | Evidencia histórica sobre emojis, copy mínimo, frases cortas y copy conversacional. | Review |
 | [Calendario Experimental con Copys — 17–30 agosto](../Operations/Research/2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md) | Versión operativa de 74 slots con caption propuesto y criterio de distribución en Instagram. | Draft |
 | [Recomendación Instagram — CGO](../Operations/Research/2026-08-14_Recomendacion_Instagram_CGO.md) | Dictamen sobre cross-post selectivo, memes candidatos y prueba orgánica en Instagram. | Review |
+| [Auditoría directa de Instagram API — 15 de agosto](../Operations/Research/2026-08-15_Auditoria_API_Instagram.md) | Verifica permisos, vinculación, cuota y flujo de publicación de Instagram mediante Graph API directa. | Active |
 | [Revisión de Reuse — Mayo frente a Junio](../Operations/Research/2026-08-14_Revision_Reuse_Mayo_Junio.md) | Inventario de Drive, elegibilidad de mayo y reserva Top de junio. | Review |
 | [Ranking Reuse Mayo — rendimiento Meta](../Operations/Research/2026-08-14_Reuse_Mayo_Ranking.csv) | Ranking individual de 123 assets cruzados con 205 publicaciones de mayo. | Active |
 | [Pipeline de publicación y archivado mensual](13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md) | Estándar CSV, publicación por Graph API y movimiento de assets publicados a la carpeta mensual. | Active |
 | [Inventario de memes nuevos de Drive — 15 de agosto](../Operations/Research/2026-08-15_Inventario_Memes_Nuevos_Drive.md) | Registro de 38 imágenes nuevas encontradas en la raíz de Humor existencial, con referencias y enlaces de Drive. | Review |
-| [Calendario 15–16 de agosto — pendiente de aprobación](../Operations/Research/2026-08-15_Calendario_15_16_Agosto.md) | Propuesta de 9 publicaciones: 5 nuevas y 4 reuse, lista para programación después de aprobación. | Draft |
+| [Calendario 15–16 de agosto — programado](../Operations/Research/2026-08-15_Calendario_15_16_Agosto.md) | Registro de 9 publicaciones de Facebook programadas: 5 nuevas y 4 reuse; Instagram no ejecutado. | Active |
 
 ---
 

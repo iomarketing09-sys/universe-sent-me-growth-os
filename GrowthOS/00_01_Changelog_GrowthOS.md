@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.39
+**Versión:** 1.40
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -26,6 +26,17 @@
 - Se registraron los permisos efectivos y las cuentas vinculadas en `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`.
 
 ---
+
+---
+
+## [1.2.40] — 2026-08-15 (Manus)
+### Auditoría Instagram API
+- Se auditó Instagram directamente mediante Meta Graph API v26.0, no mediante el conector MCP.
+- La cuenta `@universe_sent_me_0326` (`17841462696378190`) está vinculada a la Página correcta (`1036844829507460`), responde HTTP 200 y devuelve media reciente.
+- Los permisos `instagram_basic`, `instagram_content_publish` y `pages_read_engagement` están concedidos; la Página devuelve tareas `CREATE_CONTENT` y `MANAGE`.
+- La cuota de publicación consultada es `0/100` contenedores en la ventana de 24 horas.
+- El conector MCP desconectado no representa un fallo de Graph API. Instagram no quedó programado el 15–16 porque nunca se creó un contenedor ni se llamó a `media_publish`.
+- Se añadió el informe permanente `Operations/Research/2026-08-15_Auditoria_API_Instagram.md` con el flujo correcto, el posible requisito PPA y el checklist para una primera prueba controlada.
 
 ---
 
