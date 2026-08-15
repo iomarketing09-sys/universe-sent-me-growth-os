@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-14
-**Versión:** 1.41
+**Versión:** 1.42
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -26,6 +26,16 @@
 - Se registraron los permisos efectivos y las cuentas vinculadas en `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`.
 
 ---
+
+---
+
+## [1.2.42] — 2026-08-15 (Manus)
+### Prueba de programación futura Instagram
+- Se probó mediante Graph API directa la primera publicación aprobada para Instagram: `2608030 - Universe - Que fibra tomas pa cagarla tanto.jpeg`.
+- Se solicitó `scheduled_publish_time=1786982400`, correspondiente al 2026-08-17 a las 10:00 de Ciudad de México, en `POST /17841462696378190/media`.
+- Meta respondió HTTP 400, código 3: `User must be on whitelist`.
+- No se llamó a `media_publish`, no se creó un `IG_CONTAINER_ID` y no se publicó la imagen. El resultado demuestra que la publicación inmediata funciona, pero la ruta de programación futura probada no está habilitada para esta app/cuenta.
+- La operación futura queda pendiente de un scheduler externo autorizado que ejecute `media_publish` en el momento del calendario, o de habilitar formalmente la capacidad de scheduling de Meta.
 
 ---
 

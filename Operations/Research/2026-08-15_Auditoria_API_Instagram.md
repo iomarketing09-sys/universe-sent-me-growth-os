@@ -59,7 +59,7 @@ El flujo operativo será el siguiente:
 7. Verificar la pieza publicada mediante `/media` y registrar permalink, estado y timestamp.
 8. Solo después de confirmar el ID real, mover el original de Drive a la carpeta mensual, sin crear copias.
 
-La API de Instagram documenta creación y publicación de contenedores, pero el calendario futuro no debe marcarse como `PROGRAMADO` solo por crear un contenedor. Para programar horarios futuros, Manus debe ejecutar la llamada de publicación en el momento planificado mediante un scheduler autorizado o utilizar una herramienta que confirme scheduling nativo. La prueba controlada creó el contenedor `17976335523089880`, alcanzó `FINISHED` y publicó correctamente el media `18105410684129991` en `https://www.instagram.com/p/DcDHxq5AMHh/`; PPA no bloqueó esta publicación.
+La API de Instagram documenta creación y publicación de contenedores, pero el calendario futuro no debe marcarse como `PROGRAMADO` solo por crear un contenedor. La prueba controlada creó el contenedor `17976335523089880`, alcanzó `FINISHED` y publicó correctamente el media `18105410684129991` en `https://www.instagram.com/p/DcDHxq5AMHh/`; PPA no bloqueó esta publicación. La prueba separada de programación futura con 2608030 para `2026-08-17T10:00:00-06:00` envió `scheduled_publish_time=1786982400` a `POST /17841462696378190/media` y Meta devolvió HTTP 400, código 3, `User must be on whitelist`. No se llamó a `media_publish`, no se publicó el asset y no se creó un contenedor.
 
 ## Checklist antes del primer post de prueba
 
@@ -72,9 +72,9 @@ La API de Instagram documenta creación y publicación de contenedores, pero el 
 | Cuota de publicación disponible | Confirmado |
 | Page Publishing Authorization (PPA) | Superado en la prueba de 260583; no bloqueó la publicación |
 | Prueba real de un asset aprobado | Completada con 260583; publicación verificada |
-| Scheduler para ejecutar en horario futuro | Pendiente de implementar/confirmar |
+| Scheduler para ejecutar en horario futuro | Meta devolvió HTTP 400, código 3, `User must be on whitelist` al probar `scheduled_publish_time` |
 
-La prueba de 260583 demuestra que PPA no bloqueó esta Página en esta operación. Meta advierte que una Página vinculada puede requerir Page Publishing Authorization; si cambia el estado de la Página o la autorización, una publicación futura podría fallar aunque los permisos aparezcan concedidos.[1]
+La prueba de 260583 demuestra que PPA no bloqueó esta Página en esta operación. La respuesta `User must be on whitelist` indica que la capacidad de programación futura probada no está habilitada para esta ruta, app o cuenta; no es un fallo de permisos básicos ni de PPA. Por ahora, la única ruta confirmada es que Manus ejecute `media_publish` en el momento planificado mediante un scheduler externo autorizado.[1]
 
 ## Decisión operativa
 
