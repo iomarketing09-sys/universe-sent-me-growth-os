@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-15
 **Última actualización:** 2026-08-15
-**Versión:** 1.2
+**Versión:** 1.3
 **Autor:** Manus AI
 **Documentos relacionados:** [`2026-08-15_Inventario_Memes_Nuevos_Drive.md`](2026-08-15_Inventario_Memes_Nuevos_Drive.md), [`../../GrowthOS/05_03_Calendario_10_16_Agosto.md`](../../GrowthOS/05_03_Calendario_10_16_Agosto.md), [`../../GrowthOS/01_03_Reuse_Queue.md`](../../GrowthOS/01_03_Reuse_Queue.md), [`../../GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`](../../GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md)
 
@@ -21,7 +21,7 @@
 
 | Fecha | Día | Hora | Tipo | Asset | Caption | Estado | Plataforma | Nota |
 |---|---|---:|---|---|---|---|---|---|
-| 2026-08-15 | Sábado | 10:00 | Nueva | `2608030 - Universe - Que fibra tomas pa cagarla tanto.jpeg` | ¿Qué fibra tomas para cagarla tanto? 🐈 #UniverseSentMe #UniverseUSM #MemesUSM | `PROGRAMADA` | Facebook; Instagram selectivo | Nuevo; remate inmediato y legible; evitar explicar el texto visual. Meta Post `1036844829507460_122150559441072582`; Photo `122150559393072582`; original movido a `08 Agosto` sin copia. |
+| 2026-08-15 | Sábado | 10:00 | Nueva | `2608030 - Universe - Que fibra tomas pa cagarla tanto.jpeg` | ¿Qué fibra tomas para cagarla tanto? 🐈 #UniverseSentMe #UniverseUSM | `PROGRAMADA` | Facebook; Instagram selectivo | Facebook programado; Instagram publicada manualmente a las 10:59:41, Container `17976428061089880`, Media `18145111759484218`, https://www.instagram.com/p/DcEX6BSE8ka/. Meta Post `1036844829507460_122150559441072582`; Photo `122150559393072582`; original movido a `08 Agosto` sin copia. |
 | 2026-08-15 | Sábado | 11:00 | Reuse_Approved_User_Context | `260583 - Universe.png` | 😼 #UniverseSentMe #UniverseUSM #MemesUSM | `PROGRAMADA` | Facebook | Reuse manual aprobado; conservar contexto original y verificar que no haya publicación reciente. Meta Post `1036844829507460_122150559591072582`; Photo `122150559555072582`; original movido a `08 Agosto` sin copia. Prueba Instagram publicada: Container `17976335523089880`; Media `18105410684129991`; https://www.instagram.com/p/DcDHxq5AMHh/. PPA no bloqueó la prueba. Fernando eliminó manualmente la publicación; no republicar automáticamente. |
 | 2026-08-15 | Sábado | 13:30 | Nueva | `2608033 - Fantasma - vendra primero mi boda o jesus.jpeg` | La pregunta importante del día. 👻 #UniverseSentMe #FantasmaUSM #MemesUSM | `PROGRAMADA` | Facebook; Instagram selectivo | Nuevo; humor absurdo y pregunta clara. Revisar ortografía final del asset antes de programar. Meta Post `1036844829507460_122150559693072582`; Photo `122150559639072582`; original movido a `08 Agosto` sin copia. |
 | 2026-08-15 | Sábado | 19:00 | Reuse_Approved_User_Context | `260539 - Evan+Kiri.png` | 🫣🫣 #UniverseSentMe #EvanUSM #KiriUSM | `PROGRAMADA` | Facebook; Instagram solo tras revisión | Reuse manual con doble sentido/sexualización válida; mantener contexto y no impulsar con pauta. Meta Post `1036844829507460_122150559765072582`; Photo `122150559729072582`; original movido a `08 Agosto` sin copia. |
@@ -35,11 +35,11 @@
 
 A partir del 2026-08-15, `IG_Estado` distingue las filas que esperan una decisión humana: `PENDIENTE_APROBACION_MANUAL` para piezas aptas para evaluar y `PENDIENTE_REVISION_MANUAL` para piezas que requieren revisar contexto, elegibilidad u oportunidad. El estado `PROGRAMADA` de la fila continúa describiendo Facebook y no autoriza una publicación en Instagram.
 
-Para el lote actual, la propuesta de decisión es comenzar por `2608030 - Universe - Que fibra tomas pa cagarla tanto.jpeg`, con caption corto y prueba orgánica aislada. La hora original de las 10:00 se considera perdida como slot, pero la pieza puede publicarse ahora como una nueva decisión editorial si Fernando la aprueba expresamente. No se debe publicar todavía solo por estar en el calendario.
+Para el lote actual, `2608030 - Universe - Que fibra tomas pa cagarla tanto.jpeg` fue aprobada y publicada manualmente a las 10:59:41 en Instagram. La hora original de las 10:00 se conserva como slot perdido; la publicación queda registrada como decisión editorial manual fuera de horario. No se autoriza ninguna otra fila sin aprobación explícita.
 
 ## Registro de ejecución
 
-La programación de Facebook se ejecutó mediante Graph API usando el Page Access Token derivado desde `/me/accounts`. Meta devolvió `is_published: false` y `scheduled_publish_time` para los nueve posts. Adicionalmente, 260583 fue publicado en Instagram como prueba controlada mediante `/{IG_ID}/media` y `/{IG_ID}/media_publish`; sus IDs y permalink están en el CSV operativo. La publicación fue eliminada manualmente por Fernando y queda como historial, no como destino de republicación.
+La programación de Facebook se ejecutó mediante Graph API usando el Page Access Token derivado desde `/me/accounts`. Meta devolvió `is_published: false` y `scheduled_publish_time` para los nueve posts. Posteriormente, `2608030` fue publicado manualmente en Instagram mediante `/{IG_ID}/media`, verificación `status_code=FINISHED` y `/{IG_ID}/media_publish`; sus IDs y permalink están en el CSV operativo. `260583` fue publicado previamente como prueba controlada y eliminado manualmente por Fernando; queda como historial, no como destino de republicación.
 
 ## Reglas de ejecución
 

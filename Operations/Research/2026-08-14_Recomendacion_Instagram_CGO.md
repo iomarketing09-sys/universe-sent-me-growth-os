@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-14
 **Última actualización:** 2026-08-15
-**Versión:** 1.1
+**Versión:** 1.2
 **Autor:** Manus AI  
 **Documentos relacionados:** [`GrowthOS/08_00_Metricas_Baseline_Plataformas.md`](../../GrowthOS/08_00_Metricas_Baseline_Plataformas.md), [`Operations/Research/2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md`](2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md), [`Operations/Research/2026-08-14_Analisis_Copys_Rendimiento.md`](2026-08-14_Analisis_Copys_Rendimiento.md), [`GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md`](../../GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md)
 
@@ -60,9 +60,9 @@ La automatización programada de Instagram queda descartada. Instagram se gestio
 
 La pérdida de una ventana no debe convertirse en una prohibición de publicar. Si un meme sigue siendo oportuno y el asset está validado, se puede publicar fuera del slot original como una nueva decisión editorial, registrando la hora real y sin fingir que se cumplió el horario del calendario. Para proteger el aprendizaje CGO, se recomienda no publicar varios memes seguidos: elegir una pieza con alto potencial visual, esperar métricas iniciales y decidir la siguiente a partir de evidencia.
 
-Para la decisión actual, **no recomiendo publicar automáticamente el meme de las 10:00**. Sí recomiendo evaluar una publicación manual inmediata si el asset se revisa y Fernando la aprueba expresamente. La primera opción del lote es `2608030 - Universe - Que fibra tomas pa cagarla tanto.jpeg` por su remate inmediato y legible; como segunda opción de menor riesgo editorial queda `2608033 - Fantasma - vendra primero mi boda o jesus.jpeg`, pero requiere corregir o confirmar la ortografía visible indicada en el calendario. No recomiendo comenzar con `260539`, `2608060` ni `humor4.16` sin revisión adicional por su contexto sexualizado o de pareja.
+La primera prueba manual del lote fue `2608030 - Universe - Que fibra tomas pa cagarla tanto.jpeg`, publicada con aprobación explícita a las 10:59:41 de America/Mexico_City. El slot original de las 10:00 se conserva como perdido; la publicación se registra como decisión editorial fuera de horario. Antes de publicar otra pieza se deben recoger métricas iniciales de esta prueba. Como siguiente opción de menor riesgo editorial queda `2608033 - Fantasma - vendra primero mi boda o jesus.jpeg`, pero requiere corregir o confirmar la ortografía visible indicada en el calendario. No recomiendo comenzar con `260539`, `2608060` ni `humor4.16` sin revisión adicional por su contexto sexualizado o de pareja.
 
-El flujo aprobado para cada decisión será: **selección manual → revisión de asset y caption → aprobación explícita → creación de media → verificación de estado → `media_publish` → registro de IDs, permalink, hora real y métricas iniciales**. No se utilizará `scheduled_publish_time`.
+El flujo aprobado para cada decisión será: **selección manual → revisión de asset y caption → aprobación explícita → creación de media → verificación de estado → `media_publish` → registro de IDs, permalink, hora real y métricas iniciales**. En la prueba 2608030, Meta devolvió `status_code=FINISHED` y el permalink `https://www.instagram.com/p/DcEX6BSE8ka/`. No se utilizará `scheduled_publish_time`.
 
 ## Referencias internas
 

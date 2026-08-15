@@ -4,7 +4,7 @@ purpose: Registrar y ejecutar únicamente publicaciones de Instagram aprobadas m
 status: Active
 created: 2026-08-15
 updated: 2026-08-15
-version: 1.4
+version: 1.5
 author: Manus AI
 documents_related:
   - ../../GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md
@@ -95,4 +95,19 @@ Ejecuta esta tarea autónomamente, sin pedir confirmación al usuario:
 - Facebook: sin cambios.
 - `260583 - Universe.png`: continúa excluida por `ELIMINADA_MANUALMENTE`.
 
-**Nota de coherencia documental:** El CSV operativo fue actualizado con estados explícitos de aprobación manual para Instagram. La recomendación CGO y el calendario Markdown deben reflejar que Instagram funciona como laboratorio selectivo con decisiones fila por fila; Facebook conserva su programación independiente.
+### 2026-08-15 10:59:44 America/Mexico_City — Publicación manual aprobada de 2608030
+
+- Resultado: `published` mediante Graph API directa.
+- Cuenta/IG ID: `17841462696378190` (`@universe_sent_me_0326`).
+- Asset: `2608030 - Universe - Que fibra tomas pa cagarla tanto.jpeg`.
+- Caption: `¿Qué fibra tomas para cagarla tanto? 🐈 #UniverseSentMe #UniverseUSM #MemesUSM`.
+- ID de contenedor: `17976428061089880`.
+- Verificación: `status_code=FINISHED`; Meta confirmó que el media estaba listo para publicarse.
+- ID de media: `18145111759484218`.
+- Permalink: https://www.instagram.com/p/DcEX6BSE8ka/
+- Hora real publicada: `2026-08-15T10:59:41-06:00`.
+- `scheduled_publish_time`: no utilizado.
+- Facebook: sin cambios.
+- `260583 - Universe.png`: no tocada y continúa excluida por `ELIMINADA_MANUALMENTE`.
+
+**Nota de coherencia documental:** El CSV operativo fue actualizado con los IDs, permalink, estado `PUBLICADA` y hora real de Instagram. La recomendación CGO y el calendario Markdown deben reflejar que Instagram funciona como laboratorio selectivo con decisiones fila por fila; Facebook conserva su programación independiente.
