@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-16
-**Versión:** 1.81
+**Versión:** 1.82
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -182,6 +182,16 @@
 - Se detectaron cinco pares de reuse consecutivos. Se preparó una propuesta Draft que conserva 46 nuevas y 28 reuse, mantiene `260528` el domingo 30 a las 22:00 y reubica cinco reuse sin tocar el calendario anterior.
 - Drive confirmó que `260508 - Universe.jpg` y `Universe - Existencial 260508.png` son dos archivos distintos con checksums y contenidos visuales diferentes; ambos deben conservar filename completo para evitar ambigüedad.
 - Se crearon `Operations/Research/2026-08-16_Revision_Calendario_17_30.md` y `Operations/Research/2026-08-16_Propuesta_Ajuste_Calendario_17_30_Agosto.md/.csv`. La propuesta queda pendiente de aprobación de Fernando; no se generaron imágenes, no se movieron assets y no se programó contenido.
+
+---
+
+## [1.2.82] — 2026-08-16 (Manus)
+### Revisión visual de los 33 memes nuevos
+- Se descargaron localmente los 33 assets aún no registrados como publicados y se revisaron visualmente por lotes; no se movió ni copió ningún archivo dentro de Drive.
+- Se generaron `2026-08-16_Clasificacion_Visual_33_Memes_Nuevos.csv` y `2026-08-16_Asignacion_Visual_Calendario_17_30_Agosto.csv`.
+- Resultado validado: 28 candidatos asignados a slots `Nueva`, 5 piezas retenidas por aprobación editorial (`2608047`, `2608051`, `2608053`, `2608059`, `2608062`) y 18 slots todavía `PENDIENTE_GENERAR`.
+- Las piezas sensibles se mantienen fuera de la programación automática: contienen sexualidad explícita, doble sentido fuerte o una representación romántica coercitiva. No se descartan sin decisión de Fernando.
+- Se creó `2026-08-16_Revision_Visual_Asignacion_33_Memes_Nuevos.md`; la propuesta queda en estado `Review` y no autoriza generación, movimiento, programación ni publicación.
 
 ---
 
