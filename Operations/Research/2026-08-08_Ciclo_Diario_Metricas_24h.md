@@ -4,7 +4,7 @@
 **Estado:** Superseded
 **Fecha de creación:** 2026-08-08
 **Última actualización:** 2026-08-16
-**Versión:** 1.3
+**Versión:** 1.4
 **Autor:** Manus AI (CGO — rutina automatizada)
 **Documentos relacionados:** `../../GrowthOS/08_00_Metricas_Baseline_Plataformas.md`, `../../GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `../../GrowthOS/00_01_Changelog_GrowthOS.md`
 
@@ -50,17 +50,17 @@ Se mantienen dos riesgos de acceso que bloquean la medición completa: (a) el al
 
 Este documento conserva el registro histórico de una revisión diaria del 7–8 de agosto. La cadencia diaria quedó supersedida por una revisión agrupada cada 48 horas para reducir despertares y consultas repetidas. Para el experimento `EXP-2026-08-CAL-01`, la hora recomendada es 22:15 de `America/Matamoros`, comenzando el 2026-08-16, con un solo despertar que procese todas las filas vencidas.
 
-La tarea existente de métricas no apareció entre los schedules visibles de esta sesión; solo se observó el scheduler pausado de Instagram. Fernando decidió crear una tarea independiente de métricas. Por seguridad, no se modificó el scheduler de Instagram. La nueva tarea debe usar su propio schedule cada 48 horas, a las 22:15 de `America/Matamoros`, comenzando el 2026-08-16.
+La tarea independiente de métricas se materializó separada del scheduler pausado de Instagram. Por seguridad, no se modificó el scheduler de Instagram. La nueva tarea usa su propio schedule a las 22:15 de `America/Matamoros`, comenzando el 2026-08-16, con procesamiento agrupado de todas las filas vencidas.
 
 ## 6. Estado de materialización de la tarea independiente
 
-El 2026-08-16 se intentó crear la tarea `USM Growth OS - Revisión de Métricas cada 48h` con un primer disparo calculado para el 2026-08-16 a las 22:15 de `America/Matamoros` y una repetición de 172800 segundos. La operación fue rechazada por el servicio de programación con `permission_denied: 403 Forbidden`; por tanto, **la tarea no quedó creada ni activa** y no existe un identificador de schedule que registrar. Tras la solicitud explícita de reintento, se recalculó el intervalo restante hasta las 22:15 (`77190` segundos al momento del intento) y se volvió a enviar como tarea independiente con playbook autónomo; el servicio devolvió nuevamente `permission_denied: 403 Forbidden`.
+La tarea `USM Growth OS - Revisión de Métricas cada 48h` quedó creada y activa el 2026-08-16 con el identificador `egAl6a7WZExBrDPd8tIY1B`. Su expresión es `0 15 22 */2 * *` y el servicio confirmó la zona horaria `America/Matamoros`; la ejecución queda definida como un solo despertar por lote, sin un despertar por publicación. El schedule está limitado al conector `Universe Sent Me Meta API` y no incluye el conector de Instagram.
 
-La definición operativa preparada para la tarea exige un solo despertar por ejecución, el procesamiento exclusivo de filas vencidas de `EXP-2026-08-CAL-01`, la actualización únicamente de `2026-08-15_Publication_Log.csv` y `2026-08-15_ExperimentLog.csv`, y una evidencia JSON por ejecución. También exige que las consultas a plataformas sean de solo lectura y que no se publique contenido ni se modifique Instagram. Durante este intento no se modificó Instagram, no se publicó contenido y no se alteraron los dos ledgers.
+La definición operativa exige usar exclusivamente `/home/ubuntu/extract_metrics_24_72.py`, procesar solo filas vencidas de `EXP-2026-08-CAL-01` en Facebook, actualizar únicamente `2026-08-15_Publication_Log.csv` y `2026-08-15_ExperimentLog.csv`, y registrar evidencia JSON en `2026-08-16_Metricas_24_72_Extraccion.json`. Las consultas de plataforma son de lectura; no se publica contenido, no se usa ni modifica Instagram y no se altera su scheduler.
 
-La ruta exacta `/home/ubuntu/extract_metrics_24_72.py` tampoco se encontró en el entorno de esta sesión ni dentro del historial del repositorio durante la verificación posterior al reintento. Este punto debe resolverse antes de la primera ejecución; no se debe sustituir el extractor por otro script ni crear una implementación no validada bajo esta tarea.
+El extractor entregado fue validado contra la copia canónica `Operations/Production/extract_metrics_24_72.py` y se dejó disponible en `/home/ubuntu/extract_metrics_24_72.py`. La prueba seca determinista encontró 9 candidatos y 9 ventanas 24h elegibles, sin llamadas de red, sin actualizaciones de ledgers, sin publicación y sin tocar Instagram.
 
-**Acción pendiente:** habilitar la creación de schedules para esta tarea y restaurar o poner a disposición el extractor exacto. Después debe verificarse el estado del schedule y realizarse una primera ejecución controlada que produzca evidencia JSON sin publicar ni tocar Instagram.
+**Estado vigente:** la programación está activa y lista para su primera ejecución controlada. La evidencia y los cambios de ledger deben revisarse después de cada corrida, manteniendo la regla de no sustituir snapshots exactos por totales lifetime.
 
 ## 7. Propuesta de contenido para el 2026-08-08 (pasar por rúbrica ≥8.5 antes de publicar)
 

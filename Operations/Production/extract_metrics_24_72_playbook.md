@@ -4,7 +4,7 @@ purpose: "Definir la ejecución agrupada, idempotente y de bajo consumo del extr
 status: Active
 created: 2026-08-16
 updated: 2026-08-16
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/extract_metrics_24_72.py"
@@ -67,11 +67,13 @@ La prueba seca determinista con `--now 2026-08-18T04:00:00Z` encontró 9 candida
 
 La primera ejecución real debe conservar la evidencia JSON y registrar la limitación de ventana si Meta solo devuelve totales acumulados. La extracción no debe cerrar `HB-003`, `HB-004` o `HB-005` hasta que existan métricas válidas o una decisión explícita de tratar las ventanas como no disponibles.
 
-## 5. Programación recomendada
+## 5. Programación confirmada
 
-La tarea independiente debe comenzar el 2026-08-16 a las 22:15 de `America/Matamoros` y repetir cada 172800 segundos. Para el calendario experimental del 15–16, un solo despertar por ejecución es suficiente porque el extractor recorre el ledger completo y selecciona cada fila vencida.
+La tarea independiente quedó activa el 2026-08-16 para ejecutarse a las 22:15 de `America/Matamoros` con la expresión de seis campos `0 15 22 */2 * *`, que establece la cadencia de días alternos del calendario. El identificador de la tarea es `egAl6a7WZExBrDPd8tIY1B` y el schedule está limitado al conector `Universe Sent Me Meta API` (`76925630-05da-4aa7-878d-64a6a520ca6d`), sin heredar el conector de Instagram. El modo permanece en un solo despertar de la tarea actual (`runAsNewTask=false`): una ejecución recorre el lote completo y no crea un despertar por publicación.
 
-Si el servicio de programación devuelve `permission_denied: 403 Forbidden`, no se debe alterar el scheduler de Instagram ni crear una segunda variante a ciegas. Se debe solicitar la revisión del permiso en [help.manus.im](https://help.manus.im), conservar esta definición y reintentar solo cuando el permiso esté habilitado.
+El detalle operativo exige usar `/home/ubuntu/extract_metrics_24_72.py`, procesar únicamente Facebook y `EXP-2026-08-CAL-01`, actualizar solo los dos ledgers indicados y registrar la evidencia JSON. Las consultas de Meta son de lectura; queda prohibido publicar, usar o modificar Instagram y modificar su scheduler.
+
+La copia canónica del extractor está en `Operations/Production/extract_metrics_24_72.py`, y la copia operativa solicitada existe en `/home/ubuntu/extract_metrics_24_72.py`. La programación fue verificada como `active` y con zona horaria `America/Matamoros`.
 
 ## Referencias
 

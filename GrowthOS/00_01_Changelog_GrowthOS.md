@@ -145,6 +145,16 @@
 
 ---
 
+## [1.2.79] — 2026-08-16 (Manus)
+### Schedule de revisión de métricas materializado
+- Se creó y verificó como activo `USM Growth OS - Revisión de Métricas cada 48h`, con task UID `egAl6a7WZExBrDPd8tIY1B`, expresión `0 15 22 */2 * *` y zona horaria `America/Matamoros`.
+- El schedule usa únicamente `Universe Sent Me Meta API` para consultas de lectura; no hereda Instagram, no publica contenido, no modifica Instagram y no altera el scheduler de Instagram.
+- La tarea ejecuta `/home/ubuntu/extract_metrics_24_72.py` en un solo despertar por lote, procesa únicamente filas vencidas de `EXP-2026-08-CAL-01` en Facebook, actualiza los dos ledgers autorizados y registra evidencia JSON.
+- Se validó la copia operativa contra `Operations/Production/extract_metrics_24_72.py`. La prueba seca encontró 9 candidatos y 9 ventanas 24h elegibles, sin llamadas de red ni cambios en ledgers.
+- Se actualizaron `Operations/Production/extract_metrics_24_72_playbook.md` a v1.1 y `Operations/Research/2026-08-08_Ciclo_Diario_Metricas_24h.md` a v1.4.
+
+---
+
 ## [1.2.78] — 2026-08-16 (Manus)
 ### Extractor de métricas recreado y validado
 - Se recreó `Operations/Production/extract_metrics_24_72.py` y se dejó una copia operativa en `/home/ubuntu/extract_metrics_24_72.py` para la tarea independiente.
