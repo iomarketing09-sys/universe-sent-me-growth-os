@@ -4,9 +4,22 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-16
-**Versión:** 1.89
+**Versión:** 1.90
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.90] — 2026-08-16 (Manus)
+### Auditoría general del Growth OS — estado real del control plane
+- Facebook 17–30 quedó confirmado como **74/74 posts programados** por Meta; la consulta live devolvió 76 posts programados en total, incluidos 2 previos. Los 74 siguen `is_published=false`, por lo que aún no generan métricas de publicación real.
+- Drive contiene 35 de los 46 archivos del manifiesto en `08 Agosto`; 11 reuse todavía no aparecen en la carpeta destino. No se ejecutaron movimientos durante la auditoría.
+- `Publication_Log.csv` y `ExperimentLog.csv` registraron dos hechos adicionales de Instagram (`2608036` y `2608060`) como `Eliminada_Manualmente` / `Excluida_del_aprendizaje`, porque Meta confirmó su publicación inmediata y Fernando eliminó posteriormente ambas. No se contarán como publicaciones activas ni se republicarán automáticamente.
+- La tarea histórica de Instagram quedó temporalmente transformada en una ejecución única de `2608060` a las 19:00, con `runAsNewTask=false`, sin repetición y con expiración posterior; el resultado definirá si se prepara una campaña nueva, no una reactivación permanente.
+- El ciclo de aprendizaje sigue siendo el principal bloqueo: las columnas 24/72h del `ExperimentLog` están vacías, el schedule de revisión cada 48 horas está documentado como activo y `HB-003`, `HB-004` y `HB-005` permanecen abiertos.
+- La fuente maestra sigue incompleta frente al calendario: `Content_Inventory.csv` tiene 39 filas, mientras el calendario 17–30 contiene 71 referencias `260####` distintas; la reconciliación debe hacerse sin inventar relaciones CNT.
+- `CNT-004` continúa como única contradicción narrativa sustantiva; Silvio/Payaso está resuelto. El ledger comunitario contiene 9 comentarios y 4 respuestas publicadas, pero aún falta revisar deltas y cobertura.
+- Informe actualizado: `Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md` v1.6.
 
 ---
 
