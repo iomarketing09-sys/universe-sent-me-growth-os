@@ -4,9 +4,18 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-16
-**Versión:** 1.88
+**Versión:** 1.89
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.89] — 2026-08-16 (Manus)
+### Pausa definitiva del scheduler histórico de Instagram 15–16
+- La tarea `USM Instagram 15-16 Agosto` estaba activa con `runAsNewTask=true`, cron de múltiples despertares y expiración `2026-08-17T04:30:00Z`; sus ejecuciones abrían nuevas ventanas y se detenían con prerrequisitos incorrectos.
+- Se verificó que `Operations/Production/instagram_15_16_scheduler_playbook.md` y `run_instagram_15_16_scheduler.py` sí existen y están versionados. El conector `Universe Sent Me Meta API` también aparece habilitado en la configuración actual; no se modificó el conector.
+- La tarea fue pausada con `manus-config schedule update --enabled=false`. El playbook quedó actualizado a v1.6 y declara aprobación manual fila por fila; no se debe reactivar esta tarea histórica.
+- No se publicaron posts, no se crearon contenedores ni media nuevos, no se modificó Facebook, no se movió Drive y `260583` continúa excluida por `ELIMINADA_MANUALMENTE`.
 
 ---
 

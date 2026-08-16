@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-16
-**Versión:** 4.9
+**Versión:** 5.0
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -54,6 +54,7 @@
 | [Calendario Experimental con Copys — 17–30 agosto](../Operations/Research/2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md) | Versión operativa de 74 slots con caption propuesto y criterio de distribución en Instagram. | Draft |
 | [Recomendación Instagram — CGO](../Operations/Research/2026-08-14_Recomendacion_Instagram_CGO.md) | Dictamen sobre cross-post selectivo, memes candidatos y prueba orgánica en Instagram. | Review |
 | [Auditoría directa de Instagram API — 15 de agosto](../Operations/Research/2026-08-15_Auditoria_API_Instagram.md) | Verifica permisos, vinculación, cuota y flujo de publicación de Instagram mediante Graph API directa. | Active |
+| [Playbook Scheduler Instagram 15–16](../Operations/Production/instagram_15_16_scheduler_playbook.md) | Flujo histórico pausado; Instagram requiere aprobación manual fila por fila y `260583` permanece excluida. | Active |
 | [Extractor de métricas 24/72h](../Operations/Production/extract_metrics_24_72_playbook.md) | Playbook y contrato del extractor agrupado, idempotente y de un solo despertar para `EXP-2026-08-CAL-01`. | Active |
 | [Revisión calendario 17–30 — 16 de agosto](../Operations/Research/2026-08-16_Revision_Calendario_17_30.md) | Conciliación final de 74 slots: 35 nuevos, 36 reuse Top, 3 reuse Reserve, cero placeholders y movimiento manual posterior a Facebook. | Active |
 | [Propuesta ajustada calendario 17–30](../Operations/Research/2026-08-16_Propuesta_Ajuste_Calendario_17_30_Agosto.md) | Versión aprobada e integrada: 74 slots con 35 nuevos, 36 reuse Top y 3 reuse Reserve; lista para programación en Facebook. | Active |

@@ -3,8 +3,8 @@ title: Playbook Scheduler Instagram — 15–16 de agosto de 2026
 purpose: Registrar y ejecutar únicamente publicaciones de Instagram aprobadas manualmente por Fernando, con protección contra duplicados y exclusión explícita de la prueba eliminada; la automatización programada queda desactivada.
 status: Active
 created: 2026-08-15
-updated: 2026-08-15
-version: 1.5
+updated: 2026-08-16
+version: 1.6
 author: Manus AI
 documents_related:
   - ../../GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md
@@ -15,7 +15,7 @@ organization: Operations/Production
 
 ## Modo operativo vigente: aprobación manual
 
-La tarea programada fue desactivada el 2026-08-15. Este playbook ya no autoriza ejecuciones autónomas. Cada publicación de Instagram requiere una decisión explícita de Fernando para una fila concreta; sin esa aprobación, el runner no debe crear contenedores ni publicar media. Facebook mantiene su registro independiente y no debe modificarse desde este flujo.
+La tarea programada está pausada desde el 2026-08-16. Este playbook no autoriza ejecuciones autónomas. Cada publicación de Instagram requiere una decisión explícita de Fernando para una fila concreta; sin esa aprobación, el runner no debe crear contenedores ni publicar media. Facebook mantiene su registro independiente y no debe modificarse desde este flujo.
 
 ## Procedimiento manual aprobado
 
@@ -111,3 +111,14 @@ Ejecuta esta tarea autónomamente, sin pedir confirmación al usuario:
 - `260583 - Universe.png`: no tocada y continúa excluida por `ELIMINADA_MANUALMENTE`.
 
 **Nota de coherencia documental:** El CSV operativo fue actualizado con los IDs, permalink, estado `PUBLICADA` y hora real de Instagram. La recomendación CGO y el calendario Markdown deben reflejar que Instagram funciona como laboratorio selectivo con decisiones fila por fila; Facebook conserva su programación independiente.
+
+
+### 2026-08-16 — Diagnóstico de despertares repetidos y pausa de seguridad
+
+- La tarea `USM Instagram 15-16 Agosto` tenía estado activo, `runAsNewTask=true`, cron `0 0,30 11,14,17,20 15,16 8 *`, zona `America/Matamoros` y expiración `2026-08-17T04:30:00Z`.
+- La configuración del proyecto contiene el conector editable `Universe Sent Me Meta API` con UID `76925630-05da-4aa7-878d-64a6a520ca6d` y estado habilitado. No se modificó el conector.
+- El playbook y el runner sí existen y están versionados en `Operations/Production/`. El mensaje de la tarea sobre archivo inexistente no coincide con el repositorio; la causa operativa más probable es que una tarea nueva no recibe automáticamente las rutas locales del sandbox de la sesión principal.
+- La tarea fue pausada mediante `manus-config schedule update --enabled=false`. Su estado operativo actual es `pause`; no se ejecutaron publicaciones, no se modificó Facebook, no se movió Drive y `260583` permanece excluida.
+- No se debe reactivar esta tarea histórica. La distribución de Instagram queda en aprobación manual fila por fila hasta que Fernando solicite una campaña nueva con un playbook autocontenido y un horario válido.
+
+---
