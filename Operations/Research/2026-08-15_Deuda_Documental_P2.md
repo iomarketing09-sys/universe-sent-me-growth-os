@@ -4,7 +4,7 @@ purpose: "Clasificar el estado de los documentos operativos, históricos y de in
 status: Active
 created: 2026-08-15
 updated: 2026-08-15
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/09_00_Estandar_Documentacion_Interna.md"
@@ -62,7 +62,7 @@ No se deben modificar automáticamente documentos canónicos administrados por C
 
 ## 5. Relación con los P2
 
-El Community Engagement Log ya está creado, documentado y poblado con un primer lote verificable de nueve comentarios; quedan pendientes la aprobación humana de cuatro respuestas propuestas y la extracción incremental de nuevos deltas. El cuarto comentario fue revisado y reclasificado como humor ácido contextual, sin riesgo de moderación escalado. La baseline Facebook/Instagram ya tiene un esquema de actualización, pero sus cifras deben esperar las ventanas 24/72 horas y la armonización de definiciones. Este documento cubre la deuda de organización, no sustituye el cierre del aprendizaje cuantitativo ni la revisión de `CNT-004`.
+El Community Engagement Log ya está creado, documentado y poblado con un primer lote verificable de nueve comentarios; las cuatro respuestas fueron aprobadas y publicadas con sus `Respuesta_Meta_ID`, y quedan la extracción incremental de nuevos deltas y la medición de cobertura. El cuarto comentario fue revisado y reclasificado como humor ácido contextual, sin riesgo de moderación escalado. La baseline Facebook/Instagram ya tiene un esquema de actualización, pero sus cifras deben esperar las ventanas 24/72 horas y la armonización de definiciones. Este documento cubre la deuda de organización, no sustituye el cierre del aprendizaje cuantitativo ni la revisión de `CNT-004`.
 
 ## Referencias
 

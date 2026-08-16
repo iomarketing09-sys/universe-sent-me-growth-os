@@ -131,13 +131,13 @@ Debe automatizarse la recuperación de comentarios, la deduplicación por `Comen
 
 Las respuestas públicas, menciones, eliminación, ocultamiento y cualquier respuesta a una historia personal deben permanecer bajo aprobación humana durante la primera fase. También debe mantenerse bajo aprobación humana cualquier comentario que pueda interpretarse como crisis, acoso, discriminación o conflicto con las reglas de la página.
 
-La recomendación técnica es **no crear todavía un bot de respuesta en tiempo real**. Primero validaremos la taxonomía y el tono con datos reales durante 14 días. Si el volumen aumenta y las respuestas repetitivas superan claramente el tiempo disponible, se puede separar después el colector determinista del agente que propone respuestas.
+La recomendación técnica sigue siendo **no crear todavía un bot de respuesta en tiempo real**. La taxonomía y el tono ya se probaron con el primer lote real: Fernando aprobó cuatro textos y Meta confirmó cuatro publicaciones exitosas. Si el volumen aumenta y las respuestas repetitivas superan claramente el tiempo disponible, se puede separar después el colector determinista del agente que propone respuestas.
 
 ## 8. Próximo paso operativo
 
-El siguiente paso recomendado es una prueba controlada de una sola respuesta a un comentario real, elegido por Fernando, con texto preparado y confirmación antes de publicar. Esa prueba validará el endpoint de escritura, el formato del Page Access Token y el comportamiento visible en Facebook sin abrir todavía la puerta a automatización masiva.
+La prueba controlada de escritura se ejecutó el 2026-08-16 a las 01:45 UTC. Después de derivar el Page Access Token de Universe Sent Me, Meta respondió HTTP 200 para las cuatro publicaciones de respuesta y devolvió un `Respuesta_Meta_ID` distinto para cada comentario. El resultado valida el endpoint y el flujo de aprobación humana; no autoriza respuestas automáticas futuras.
 
-El Growth OS ya incorpora el registro ligero `Community_Engagement_Log.csv` y el primer lote real contiene nueve comentarios de una publicación de Silvio. Las cuatro respuestas propuestas permanecen pendientes de aprobación de Fernando; el cuarto comentario fue reclasificado como humor ácido contextual y no como riesgo de moderación. Las siguientes revisiones deben recuperar solo deltas nuevos durante las ventanas del mismo día y de 24–48 horas. La decisión de automatizar respuestas deberá basarse en tres evidencias: volumen sostenido, baja tasa de errores de clasificación y existencia de plantillas de respuesta aprobadas.
+El Growth OS ya incorpora el registro ligero `Community_Engagement_Log.csv` y el primer lote real contiene nueve comentarios de una publicación de Silvio. Las cuatro respuestas fueron aprobadas por Fernando y publicadas; el cuarto comentario permanece clasificado como humor ácido contextual y no como riesgo de moderación. Las siguientes revisiones deben recuperar solo deltas nuevos durante las ventanas del mismo día y de 24–48 horas. La decisión de automatizar respuestas deberá basarse en tres evidencias: volumen sostenido, baja tasa de errores de clasificación y existencia de plantillas de respuesta aprobadas.
 
 ## 9. Documentos que requieren coherencia
 

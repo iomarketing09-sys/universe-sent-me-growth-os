@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-15
-**Versión:** 4.0
+**Versión:** 4.1
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -41,7 +41,7 @@
 | [Publication Log inicial](../Operations/Research/2026-08-15_Publication_Log.csv) | Ledger append-only con 9 publicaciones de Facebook confirmadas, la prueba de Instagram eliminada y 1 publicación manual real de Instagram. | Active |
 | [ExperimentLog inicial](../Operations/Research/2026-08-15_ExperimentLog.csv) | Seis observaciones históricas, nueve publicaciones de Facebook pendientes de métricas 24/72 horas y una observación manual de Instagram. | Active |
 | [Community Engagement Log](../Operations/Research/2026-08-15_Community_Engagement_Log.md) | Esquema y flujo para registrar comentarios reales, respuestas humanas y señales cualitativas sin identidades personales. | Active |
-| [Community Engagement Log — datos](../Operations/Research/2026-08-15_Community_Engagement_Log.csv) | Ledger append-only de comunidad; primer lote de 9 comentarios registrado, con 4 respuestas pendientes de aprobación y 0 riesgos escalados; el cuarto comentario quedó como humor ácido contextual. | Active |
+| [Community Engagement Log — datos](../Operations/Research/2026-08-15_Community_Engagement_Log.csv) | Ledger append-only de comunidad; primer lote de 9 comentarios registrado, 4 respuestas aprobadas/publicadas con IDs Meta y 0 riesgos escalados; el cuarto comentario quedó como humor ácido contextual. | Active |
 | [Deuda documental P2](../Operations/Research/2026-08-15_Deuda_Documental_P2.md) | Clasifica documentos activos, históricos, superseded y pendientes de metadatos; Make queda solo como trazabilidad, no como ruta operativa. | Active |
 | [Reconciliación de inventario — lote 1](../Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.md) | Snapshot histórico de 30 registros y cuatro excepciones; superseded por la clasificación vigente canon/reconciliación. | Superseded |
 | [Auditoría del Growth OS — 14 de agosto](../Operations/Research/2026-08-14_Auditoria_Growth_OS.md) | Evalúa la programación modificada, las integraciones, la automatización y el ciclo de aprendizaje. | Superseded |

@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-15
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -35,8 +35,10 @@ El campo `Privacidad` utiliza inicialmente `Anonimizado`. Si un comentario requi
 |---|---|---|
 | `Tipo` | `Distribucion_Automatica`, `Vacio`, `Etiqueta_Social`, `Aprobacion_Breve`, `Reaccion_Emoji`, `Contextual_Sustantivo`, `Historia_Personal`, `Pregunta`, `Critica`, `Riesgo_Moderacion`, `Spam` | Clasificar la función observable del comentario sin diagnosticar al autor. |
 | `Respuesta_Estado` | `Sin_Revisar`, `No_Requiere_Respuesta`, `Pendiente_Respuesta`, `Respondido`, `Escalado`, `Archivado` | Registrar el estado de atención humana. |
-| `Respuesta_Sugerida` | Texto breve o instrucción de no respuesta | Preparar una opción humana sin publicarla. |
-| `Aprobacion_Estado` | `No_Aplica`, `Pendiente_Fernando`, `Aprobada`, `Rechazada` | Impedir que una propuesta se interprete como publicación ejecutada. |
+| `Respuesta_Fecha` | Timestamp ISO 8601 o vacío | Registrar cuándo se publicó la respuesta, no cuándo se propuso. |
+| `Respuesta_Meta_ID` | ID de comentario de respuesta o vacío | Conservar la evidencia de publicación devuelta por Meta Graph API. |
+| `Respuesta_Sugerida` | Texto breve o instrucción de no respuesta | Preparar una opción humana; después de publicar, conserva el texto exacto aprobado. |
+| `Aprobacion_Estado` | `No_Aplica`, `Pendiente_Fernando`, `Aprobada`, `Rechazada` | Distinguir una propuesta pendiente de una respuesta aprobada por Fernando. |
 | `Moderacion_Estado` | `No_Accion`, `Revisar`, `Ocultar`, `Eliminar`, `Bloquear`, `Escalar` | Registrar una decisión de moderación sin ejecutarla automáticamente. |
 | `Prioridad` | `Alta`, `Media`, `Baja` | Priorizar preguntas, historias, críticas útiles y riesgos por encima de emojis o etiquetas automáticas. |
 | `Accion_Calendario` | `Ninguna`, `Repetir_Hook`, `Probar_CTA`, `Probar_Personaje`, `Crear_Asset_Respuesta`, `Actualizar_Copy`, `Revisar_Canon` | Devolver la señal al calendario o a la producción. |
@@ -54,7 +56,7 @@ Una respuesta humana debe ser breve, cálida y coherente con Universe Sent Me. N
 
 El ledger es append-only. Una corrección debe registrarse como nueva observación o mediante una nota de auditoría, no sobrescribiendo silenciosamente una respuesta o clasificación anterior. `Comentario_ID` es la clave de idempotencia y `Ultima_Sincronizacion` debe indicar cuándo se recuperó o revisó la fila.
 
-No se publican respuestas, se ocultan comentarios, se eliminan comentarios ni se bloquean personas desde este documento. `Respuesta_Sugerida` es una bandeja de aprobación, no un hecho de publicación. Cualquier escritura requiere una solicitud explícita y confirmación de Fernando, además de una revisión del texto o acción concreta.
+Este documento no autoriza por sí mismo respuestas, ocultamientos, eliminaciones ni bloqueos. Antes de la aprobación, `Respuesta_Sugerida` es una bandeja de revisión; después de una publicación autorizada, `Respuesta_Estado`, `Respuesta_Fecha` y `Respuesta_Meta_ID` deben registrar el hecho real. Cualquier escritura requiere una solicitud explícita y confirmación de Fernando, además de una revisión del texto o acción concreta.
 
 ## 6. Métricas derivadas
 
@@ -75,10 +77,10 @@ El 15 de agosto se recuperaron nueve comentarios de la publicación de Silvio co
 | Distribución automática o comentario vacío | 3 | Registrar para cobertura, sin respuesta. |
 | Aprobación breve | 1 | No requiere respuesta individual. |
 | Desinterés explícito | 1 | No responder; no presenta riesgo de moderación por sí solo. |
-| Conversación humorística/contextual | 4 | Preparar respuesta juguetona o ácida, pendiente de aprobación humana. |
+| Conversación humorística/contextual | 4 | Las cuatro respuestas fueron aprobadas y publicadas; conservar sus IDs Meta en el CSV. |
 | Generalización humorística no dirigida | 0 | No escalar; mantener el remate ácido sin personalizar contra quien comenta. |
 
-El lote se conserva sin nombres ni perfiles. La publicación no está vinculada automáticamente a un `CNT-####` porque la consulta proporcionó un Meta Post ID, no una identidad de pieza reconciliada. Las cuatro respuestas sugeridas del ledger son propuestas editoriales y permanecen en `Pendiente_Fernando`; ninguna se ha publicado. El cuarto comentario fue reclasificado como humor ácido contextual y su respuesta propuesta mantiene el remate sin atacar a la persona que comentó.
+El lote se conserva sin nombres ni perfiles. La publicación no está vinculada automáticamente a un `CNT-####` porque la consulta proporcionó un Meta Post ID, no una identidad de pieza reconciliada. Las cuatro respuestas del primer lote fueron aprobadas por Fernando y publicadas mediante Meta Graph API el 2026-08-16 a las 01:45 UTC. Sus IDs de respuesta se registran en `Respuesta_Meta_ID`; el cuarto comentario conserva la clasificación de humor ácido contextual y su respuesta mantiene el remate sin atacar a la persona que comentó.
 
 ## Referencias
 

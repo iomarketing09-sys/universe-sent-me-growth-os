@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.72
+**Versión:** 1.73
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -95,6 +95,16 @@
 - El ledger reclasificó el registro de `Riesgo_Moderacion`/`Escalado` a `Contextual_Sustantivo`/`Pendiente_Respuesta`, con `Moderacion_Estado=No_Accion` y prioridad `Media`.
 - Se propuso la respuesta: “Silvio concluye: no es cosa de hombres o mujeres; es competencia mundial de ridículos.” La respuesta conserva el humor ácido sin atacar a la autora y queda pendiente de aprobación junto con las otras tres.
 - Se actualizaron el CSV y la ficha del Community Engagement Log, la auditoría general, la auditoría de comentarios, el índice y la deuda documental P2. No se publicó ninguna respuesta.
+
+---
+
+## [1.2.73] — 2026-08-16 (Manus)
+### Publicación de respuestas comunitarias aprobadas
+- Fernando aprobó las cuatro respuestas del primer lote del post de Silvio y actualizó las respuestas 2 y 3 a: “Silvio no busca tendencias. Bastante tiene con terminar esa frase” y “Wilfred lleva años diciendo eso. Nadie le hace caso.”
+- La publicación mediante Meta Graph API v26 usó el Page Access Token derivado para `Universe Sent Me`; Meta respondió HTTP 200 en las cuatro operaciones y devolvió estos `Respuesta_Meta_ID`: `122148874563072582_27890320530627412`, `122148874563072582_1085071464477450`, `122148874563072582_1591809705981593` y `122148874563072582_1358728859707799`.
+- `Community_Engagement_Log.csv` añadió el campo `Respuesta_Meta_ID` y actualizó las cuatro filas a `Respuesta_Estado=Respondido`, `Aprobacion_Estado=Aprobada`, con timestamp `2026-08-16T01:45:00.480282+00:00`.
+- La prueba valida el flujo de aprobación humana y escritura controlada; no habilita respuestas automáticas ni crea un bot.
+- Se sincronizaron la ficha del ledger, la fuente maestra, las auditorías, el índice y la deuda documental P2. Ninguna relación `CNT-####` fue inventada.
 
 ---
 
