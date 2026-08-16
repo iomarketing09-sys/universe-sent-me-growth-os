@@ -3,8 +3,8 @@
 **Propósito:** Registro centralizado de hitos, integraciones, cambios estratégicos y actualizaciones de arquitectura. Este documento permite a los agentes (Manus, Claude, etc.) sincronizar contexto rápidamente sin re-leer todo el repositorio.
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
-**Última actualización:** 2026-08-15
-**Versión:** 1.75
+**Última actualización:** 2026-08-16
+**Versión:** 1.76
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -124,6 +124,15 @@
 - La nueva tarea deberá ejecutarse cada 48 horas a las 22:15 de `America/Matamoros`, comenzando el 2026-08-16, con un solo despertar por ejecución y procesamiento agrupado de todas las filas vencidas.
 - La tarea `USM Instagram 15-16 Agosto` no fue modificada. La creación del nuevo schedule requiere abrir una tarea independiente, porque esta sesión ya tiene un schedule asociado y el CLI no expone aquí una credencial para crear otra tarea programáticamente.
 - Se actualizó `Operations/Research/2026-08-08_Ciclo_Diario_Metricas_24h.md` para registrar la decisión.
+
+---
+
+## [1.2.76] — 2026-08-16 (Manus)
+### Estado de programación de métricas
+- Se intentó crear la tarea independiente `USM Growth OS - Revisión de Métricas cada 48h` para `EXP-2026-08-CAL-01`, con primer disparo el 2026-08-16 a las 22:15 de `America/Matamoros`, repetición cada 48 horas y un solo despertar por ejecución.
+- El servicio de programación devolvió `permission_denied: 403 Forbidden`; la tarea no quedó creada ni activa. No se modificó el scheduler pausado de Instagram, no se publicó contenido y no se alteraron `Publication_Log.csv` ni `ExperimentLog.csv`.
+- La ruta exacta `/home/ubuntu/extract_metrics_24_72.py` no está disponible en el entorno de esta sesión ni en el historial del repositorio. La activación queda bloqueada hasta restaurar el extractor exacto y habilitar la creación del schedule.
+- Se actualizó `Operations/Research/2026-08-08_Ciclo_Diario_Metricas_24h.md` a v1.2 con el estado, las restricciones y las acciones pendientes.
 
 ---
 
