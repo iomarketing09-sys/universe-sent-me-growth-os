@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-16
-**Versión:** 1.77
+**Versión:** 1.78
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -131,7 +131,7 @@
 ### Estado de programación de métricas
 - Se intentó crear la tarea independiente `USM Growth OS - Revisión de Métricas cada 48h` para `EXP-2026-08-CAL-01`, con primer disparo el 2026-08-16 a las 22:15 de `America/Matamoros`, repetición cada 48 horas y un solo despertar por ejecución.
 - El servicio de programación devolvió `permission_denied: 403 Forbidden`; la tarea no quedó creada ni activa. No se modificó el scheduler pausado de Instagram, no se publicó contenido y no se alteraron `Publication_Log.csv` ni `ExperimentLog.csv`.
-- La ruta exacta `/home/ubuntu/extract_metrics_24_72.py` no está disponible en el entorno de esta sesión ni en el historial del repositorio. La activación queda bloqueada hasta restaurar el extractor exacto y habilitar la creación del schedule.
+- La ruta exacta `/home/ubuntu/extract_metrics_24_72.py` no estaba disponible en ese entorno. La activación quedó bloqueada hasta restaurar el extractor exacto y habilitar la creación del schedule.
 - Se actualizó `Operations/Research/2026-08-08_Ciclo_Diario_Metricas_24h.md` a v1.2 con el estado, las restricciones y las acciones pendientes.
 
 ---
@@ -140,8 +140,20 @@
 ### Reintento de creación del scheduler de métricas
 - Tras la solicitud explícita de Fernando, se reintentó crear `USM Growth OS - Revisión de Métricas cada 48h` como tarea independiente, recalculando el intervalo hasta el primer disparo de las 22:15 en `America/Matamoros` (`77190` segundos al momento del intento).
 - El servicio volvió a responder `permission_denied: 403 Forbidden`; la tarea no quedó creada, no existe un schedule activo y no se ejecutó ninguna revisión de métricas.
-- La verificación confirmó que `/home/ubuntu/extract_metrics_24_72.py` sigue ausente en el entorno de la sesión. No se creó un sustituto ni se modificaron `Publication_Log.csv`, `ExperimentLog.csv`, Instagram o el scheduler de Instagram.
+- La verificación confirmó que `/home/ubuntu/extract_metrics_24_72.py` estaba ausente en el entorno de la sesión. No se creó un sustituto en ese intento ni se modificaron `Publication_Log.csv`, `ExperimentLog.csv`, Instagram o el scheduler de Instagram.
 - Se actualizó `Operations/Research/2026-08-08_Ciclo_Diario_Metricas_24h.md` a v1.3.
+
+---
+
+## [1.2.78] — 2026-08-16 (Manus)
+### Extractor de métricas recreado y validado
+- Se recreó `Operations/Production/extract_metrics_24_72.py` y se dejó una copia operativa en `/home/ubuntu/extract_metrics_24_72.py` para la tarea independiente.
+- El extractor procesa en un solo despertar todas las filas vencidas de `EXP-2026-08-CAL-01`, calcula ventanas con `America/Matamoros`, deriva el Page Access Token de la Página correcta y nunca publica ni modifica Instagram.
+- La idempotencia usa `Publicacion_ID` y marcadores `METRICS-RUN:<run_id>`; si Graph API solo devuelve totales lifetime, registra `24h_snapshot_unavailable`/`72h_snapshot_unavailable` y no escribe esos totales en campos de ventana.
+- La validación seca determinista encontró 9 candidatos y 9 ventanas de 24 horas elegibles, escribió 0 métricas y 0 ledgers, y confirmó `single_wakeup_batch=true`, `instagram_touched=false` y `content_published=false`. Las pruebas unitarias de cálculo e idempotencia también pasaron.
+- Se creó `Operations/Production/extract_metrics_24_72_playbook.md` y se actualizó el índice y la fuente maestra. La programación sigue bloqueada externamente por `permission_denied: 403 Forbidden`; no se intentó modificar Instagram.
+
+---
 
 ---
 
