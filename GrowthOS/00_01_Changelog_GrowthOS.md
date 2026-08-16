@@ -4,9 +4,19 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-16
-**Versión:** 1.86
+**Versión:** 1.87
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.87] — 2026-08-16 (Manus)
+### Integración aprobada de los 11 reuse en el calendario de agosto
+- Fernando aprobó la propuesta de completar los 11 slots faltantes con 8 reuse de `06 Junio/Top` y 3 reuse Reserve de la raíz disponible de `05 Mayo`.
+- El calendario maestro y el ledger de asignación quedaron actualizados a 74 slots completos: 35 `Nueva`, 36 `Reuse_Top` y 3 `Reuse_Reserve`; no quedan filas `PENDIENTE_GENERAR`.
+- Los ocho assets nuevos afectados por la redistribución conservaron su identidad y fueron reubicados en el ledger y el manifiesto, sin inventar relaciones CNT↔260.
+- El manifiesto CSV y JSON quedaron sincronizados con 46 archivos, `MOVE_ONLY`, `copy_allowed=NO` y `MANUAL_MOVE_AFTER_FB_PROGRAMMING`. Los archivos permanecen en sus carpetas de origen hasta confirmar la programación de Facebook; no se movió ni copió ningún archivo.
+- Instagram queda explícitamente pendiente y no se modificó su scheduler ni se prepararon publicaciones.
 
 ---
 

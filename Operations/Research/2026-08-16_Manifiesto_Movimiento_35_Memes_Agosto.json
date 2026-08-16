@@ -7,7 +7,7 @@
   "copy_allowed": false,
   "requires_user_confirmation_before_execution": false,
   "execution_owner": "Fernando",
-  "asset_count": 35,
+  "asset_count": 46,
   "assets": [
     {
       "asset_ref": "2608028",
@@ -20,7 +20,8 @@
       "calendar_time": "11:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608034",
@@ -33,7 +34,8 @@
       "calendar_time": "13:30",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608027",
@@ -46,7 +48,8 @@
       "calendar_time": "17:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608029",
@@ -59,7 +62,8 @@
       "calendar_time": "19:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608038",
@@ -68,11 +72,12 @@
       "source_parent_id": "1b0FRf8BFg2fIUoIf5CeMeiQb3uDduWcZ",
       "target_folder_id": "11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf",
       "target_folder_name": "08 Agosto",
-      "calendar_date": "2026-08-18",
-      "calendar_time": "10:00",
+      "calendar_date": "2026-08-20",
+      "calendar_time": "11:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608046",
@@ -85,7 +90,8 @@
       "calendar_time": "11:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608050",
@@ -94,11 +100,12 @@
       "source_parent_id": "1b0FRf8BFg2fIUoIf5CeMeiQb3uDduWcZ",
       "target_folder_id": "11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf",
       "target_folder_name": "08 Agosto",
-      "calendar_date": "2026-08-18",
-      "calendar_time": "13:30",
+      "calendar_date": "2026-08-22",
+      "calendar_time": "10:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608052",
@@ -111,7 +118,8 @@
       "calendar_time": "16:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608032",
@@ -124,7 +132,8 @@
       "calendar_time": "19:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608061",
@@ -137,7 +146,8 @@
       "calendar_time": "11:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608031",
@@ -150,7 +160,8 @@
       "calendar_time": "16:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608035",
@@ -159,11 +170,12 @@
       "source_parent_id": "1b0FRf8BFg2fIUoIf5CeMeiQb3uDduWcZ",
       "target_folder_id": "11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf",
       "target_folder_name": "08 Agosto",
-      "calendar_date": "2026-08-19",
-      "calendar_time": "17:00",
+      "calendar_date": "2026-08-23",
+      "calendar_time": "10:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608040",
@@ -176,7 +188,8 @@
       "calendar_time": "19:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608048",
@@ -185,11 +198,12 @@
       "source_parent_id": "1b0FRf8BFg2fIUoIf5CeMeiQb3uDduWcZ",
       "target_folder_id": "11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf",
       "target_folder_name": "08 Agosto",
-      "calendar_date": "2026-08-20",
-      "calendar_time": "10:00",
+      "calendar_date": "2026-08-24",
+      "calendar_time": "13:30",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608056",
@@ -202,7 +216,8 @@
       "calendar_time": "16:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608041",
@@ -215,7 +230,8 @@
       "calendar_time": "19:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2607831",
@@ -224,11 +240,12 @@
       "source_parent_id": "1b0FRf8BFg2fIUoIf5CeMeiQb3uDduWcZ",
       "target_folder_id": "11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf",
       "target_folder_name": "08 Agosto",
-      "calendar_date": "2026-08-21",
+      "calendar_date": "2026-08-25",
       "calendar_time": "10:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608049",
@@ -241,7 +258,8 @@
       "calendar_time": "13:30",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608063",
@@ -254,7 +272,8 @@
       "calendar_time": "13:30",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608057",
@@ -267,7 +286,8 @@
       "calendar_time": "16:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608042",
@@ -276,11 +296,12 @@
       "source_parent_id": "1b0FRf8BFg2fIUoIf5CeMeiQb3uDduWcZ",
       "target_folder_id": "11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf",
       "target_folder_name": "08 Agosto",
-      "calendar_date": "2026-08-23",
-      "calendar_time": "19:00",
+      "calendar_date": "2026-08-27",
+      "calendar_time": "11:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "260661",
@@ -293,7 +314,8 @@
       "calendar_time": "10:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608053",
@@ -306,7 +328,8 @@
       "calendar_time": "17:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608045",
@@ -315,11 +338,12 @@
       "source_parent_id": "1b0FRf8BFg2fIUoIf5CeMeiQb3uDduWcZ",
       "target_folder_id": "11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf",
       "target_folder_name": "08 Agosto",
-      "calendar_date": "2026-08-24",
-      "calendar_time": "19:00",
+      "calendar_date": "2026-08-29",
+      "calendar_time": "10:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608062",
@@ -332,7 +356,8 @@
       "calendar_time": "16:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608043",
@@ -345,7 +370,8 @@
       "calendar_time": "19:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608065",
@@ -358,7 +384,8 @@
       "calendar_time": "11:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608058",
@@ -371,7 +398,8 @@
       "calendar_time": "16:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608044",
@@ -384,7 +412,8 @@
       "calendar_time": "19:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608064",
@@ -397,7 +426,8 @@
       "calendar_time": "16:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608055",
@@ -410,7 +440,8 @@
       "calendar_time": "19:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608059",
@@ -423,7 +454,8 @@
       "calendar_time": "13:30",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608047",
@@ -436,7 +468,8 @@
       "calendar_time": "13:30",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608051",
@@ -449,7 +482,8 @@
       "calendar_time": "16:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
       "asset_ref": "2608054",
@@ -459,10 +493,167 @@
       "target_folder_id": "11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf",
       "target_folder_name": "08 Agosto",
       "calendar_date": "2026-08-30",
+      "calendar_time": "10:00",
+      "operation": "MOVE_ONLY",
+      "copy_allowed": "NO",
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
+    },
+    {
+      "asset_ref": "260646",
+      "filename": "260646 - No sean asi.. (14-jun-26).png",
+      "drive_id": "1uEnhVN6M0LLIreuZTJdsIKkNkmyiCI3T",
+      "source_parent_id": "16P130zWhuFn4ejzkr6VlX9GFA_Ule83k",
+      "target_folder_id": "11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf",
+      "target_folder_name": "08 Agosto",
+      "calendar_date": "2026-08-18",
+      "calendar_time": "10:00",
+      "operation": "MOVE_ONLY",
+      "copy_allowed": "NO",
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
+    },
+    {
+      "asset_ref": "260735",
+      "filename": "260735 - Universe - dentro de ti hay dos payasos (10-jun-26).png",
+      "drive_id": "1ZmJrhaJFpF3_R9prrCV6u8wyOt9GkWH0",
+      "source_parent_id": "16P130zWhuFn4ejzkr6VlX9GFA_Ule83k",
+      "target_folder_id": "11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf",
+      "target_folder_name": "08 Agosto",
+      "calendar_date": "2026-08-18",
+      "calendar_time": "13:30",
+      "operation": "MOVE_ONLY",
+      "copy_allowed": "NO",
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
+    },
+    {
+      "asset_ref": "260733",
+      "filename": "260733 - Evan - Yo aura fuerte (10-jun-26).png",
+      "drive_id": "1H5FGtTmz9rJtVWZqzmyR12gnb7LlBDUO",
+      "source_parent_id": "16P130zWhuFn4ejzkr6VlX9GFA_Ule83k",
+      "target_folder_id": "11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf",
+      "target_folder_name": "08 Agosto",
+      "calendar_date": "2026-08-19",
+      "calendar_time": "17:00",
+      "operation": "MOVE_ONLY",
+      "copy_allowed": "NO",
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
+    },
+    {
+      "asset_ref": "2607794",
+      "filename": "2607794 - Universe - Aver.. A ver... (22-jun-26).png",
+      "drive_id": "1NzGQgxa38avO_jp14x7eRTzoaRutv9IW",
+      "source_parent_id": "16P130zWhuFn4ejzkr6VlX9GFA_Ule83k",
+      "target_folder_id": "11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf",
+      "target_folder_name": "08 Agosto",
+      "calendar_date": "2026-08-20",
+      "calendar_time": "10:00",
+      "operation": "MOVE_ONLY",
+      "copy_allowed": "NO",
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
+    },
+    {
+      "asset_ref": "2607838",
+      "filename": "2607838 - Dios - Quien me creo a mi (29-jun-26).png",
+      "drive_id": "19Yk1HkueUl4HSZPS2ruxj_AFYEDFO4P0",
+      "source_parent_id": "16P130zWhuFn4ejzkr6VlX9GFA_Ule83k",
+      "target_folder_id": "11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf",
+      "target_folder_name": "08 Agosto",
+      "calendar_date": "2026-08-21",
+      "calendar_time": "10:00",
+      "operation": "MOVE_ONLY",
+      "copy_allowed": "NO",
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
+    },
+    {
+      "asset_ref": "260757",
+      "filename": "260757 - Maeve - Estas seguro¿ (14-jun-26).png",
+      "drive_id": "1P8GwAgZGb_zvyJv2mdYYBFcj32JFbo0T",
+      "source_parent_id": "16P130zWhuFn4ejzkr6VlX9GFA_Ule83k",
+      "target_folder_id": "11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf",
+      "target_folder_name": "08 Agosto",
+      "calendar_date": "2026-08-23",
       "calendar_time": "19:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "MANUAL_MOVE_BY_FERNANDO"
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
+    },
+    {
+      "asset_ref": "2607825",
+      "filename": "2607825 - Kael - Ser el malo de la historia (28-jun-26).png",
+      "drive_id": "1sJxr-1-NnLFn4Q2Tl1lUB-_QJQmUB5n3",
+      "source_parent_id": "16P130zWhuFn4ejzkr6VlX9GFA_Ule83k",
+      "target_folder_id": "11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf",
+      "target_folder_name": "08 Agosto",
+      "calendar_date": "2026-08-24",
+      "calendar_time": "19:00",
+      "operation": "MOVE_ONLY",
+      "copy_allowed": "NO",
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
+    },
+    {
+      "asset_ref": "2607792",
+      "filename": "2607792 - fantasma+Universe - El gato ;o (21-jun-26).jpeg",
+      "drive_id": "1dYQ2ymvaqEC3P1S96TqrFBOXexYXDT8E",
+      "source_parent_id": "16P130zWhuFn4ejzkr6VlX9GFA_Ule83k",
+      "target_folder_id": "11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf",
+      "target_folder_name": "08 Agosto",
+      "calendar_date": "2026-08-25",
+      "calendar_time": "13:30",
+      "operation": "MOVE_ONLY",
+      "copy_allowed": "NO",
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
+    },
+    {
+      "asset_ref": "260571",
+      "filename": "260571 - Kiri.png",
+      "drive_id": "1l8b7NwW2kZfC8TnG3OGlEWRCGOpaa6q7",
+      "source_parent_id": "152ylWM4aSBy0F1yNVVh1s0gT9MDp8wJF",
+      "target_folder_id": "11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf",
+      "target_folder_name": "08 Agosto",
+      "calendar_date": "2026-08-27",
+      "calendar_time": "10:00",
+      "operation": "MOVE_ONLY",
+      "copy_allowed": "NO",
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
+    },
+    {
+      "asset_ref": "260550",
+      "filename": "260550 - Universe.png",
+      "drive_id": "16P7UK_3ecK9PFc7uyemgp4OuuQEBXk81",
+      "source_parent_id": "152ylWM4aSBy0F1yNVVh1s0gT9MDp8wJF",
+      "target_folder_id": "11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf",
+      "target_folder_name": "08 Agosto",
+      "calendar_date": "2026-08-28",
+      "calendar_time": "11:00",
+      "operation": "MOVE_ONLY",
+      "copy_allowed": "NO",
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
+    },
+    {
+      "asset_ref": "260617",
+      "filename": "260617 - Elara+Kael.png",
+      "drive_id": "1xcQiKkH9NfgBoVrRfLmdhSBV2ShoXMq3",
+      "source_parent_id": "152ylWM4aSBy0F1yNVVh1s0gT9MDp8wJF",
+      "target_folder_id": "11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf",
+      "target_folder_name": "08 Agosto",
+      "calendar_date": "2026-08-30",
+      "calendar_time": "19:00",
+      "operation": "MOVE_ONLY",
+      "copy_allowed": "NO",
+      "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING",
+      "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     }
-  ]
+  ],
+  "move_timing": "AFTER_FACEBOOK_PROGRAMMING",
+  "status": "MANUAL_MOVE_AFTER_FB_PROGRAMMING"
 }

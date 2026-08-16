@@ -1,10 +1,10 @@
 ---
 title: "Propuesta ajustada de calendario experimental 17–30 de agosto"
 purpose: "Presentar para aprobación la versión base de 74 slots y un anexo de completación con 11 reuse —8 de 06 Junio/Top y 3 de la raíz disponible de 05 Mayo—, incluyendo los movimientos necesarios para conservar la separación operativa."
-status: Review
+status: Active
 created: 2026-08-16
 updated: 2026-08-16
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-16_Revision_Calendario_17_30.md"
@@ -18,15 +18,15 @@ organization: "Operations/Research"
 
 # Propuesta ajustada de calendario experimental 17–30 de agosto
 
-> **Estado:** Review. Fernando aprobó los cinco movimientos de reuse y los 35 assets nuevos del calendario base. Este anexo propone completar los 11 slots restantes con reuse de junio y mayo; aún requiere aprobación específica y no autoriza movimiento de archivos, programación ni publicación.
+> **Estado:** Active. Fernando aprobó los cinco movimientos previos, los 35 assets nuevos y la completación de los 11 slots con 8 reuse de junio y 3 reuse Reserve de mayo. La propuesta está integrada en el calendario maestro para programación en Facebook. Instagram permanece pendiente y los archivos no se moverán hasta confirmar la programación.
 
 ## Aprobación registrada
 
-Fernando aprobó los cinco movimientos de reuse: `260508 - Universe.jpg`, `260589.png`, `260518 - Kael.png`, `260590 - Maeve.png` y `741 - Elara+Maeve.png`. Se conserva la trazabilidad de los slots anteriores y nuevos en la tabla siguiente. Esta aprobación no convierte los 46 placeholders en assets autorizados ni autoriza publicación.
+Fernando aprobó los cinco movimientos de reuse: `260508 - Universe.jpg`, `260589.png`, `260518 - Kael.png`, `260590 - Maeve.png` y `741 - Elara+Maeve.png`. Posteriormente aprobó la completación de los 11 slots con ocho reuse de junio y tres reuse Reserve de mayo. Se conserva la trazabilidad y el calendario queda autorizado para programación en Facebook; Instagram no se modifica.
 
 ## Resumen
 
-La propuesta base conserva los **74 slots**, con **46 `Nueva`** y **28 `Reuse_Top`**. El anexo añade una alternativa de cierre con **39 reuse totales** —8 `Reuse_Top` de junio y 3 `Reuse_Reserve` de mayo— y mantiene los 35 assets nuevos aprobados, moviendo ocho de ellos a slots liberados. `260528` queda el domingo 30 a las 22:00 y los cinco assets nuevos ya publicados en 15–16 permanecen fuera de la cola futura.
+La versión integrada conserva los **74 slots**, con **35 `Nueva`**, **36 `Reuse_Top`** y **3 `Reuse_Reserve`**. Los ocho movimientos de assets nuevos ya quedaron reflejados en el calendario maestro y el manifiesto. `260528` queda el domingo 30 a las 22:00 y los cinco assets nuevos ya publicados en 15–16 permanecen fuera de la cola futura.
 
 ## Cambios frente a la propuesta anterior
 
@@ -38,7 +38,7 @@ La propuesta base conserva los **74 slots**, con **46 `Nueva`** y **28 `Reuse_To
 | `260590 - Maeve.png` | 28 ago 13:30 | 26 ago 17:00 | Evitar la concentración de reuse del 28–29. |
 | `741 - Elara+Maeve.png` | 29 ago 10:00 | 29 ago 11:00 | Evitar reuse consecutivo con el 28 ago a las 19:00. |
 
-El movimiento de `260590` a las 17:00 del 26 de agosto usa un slot que antes era `Nueva`; el movimiento de `741 - Elara+Maeve.png` a las 11:00 del 29 de agosto usa un slot que antes era `Nueva`. Los slots liberados vuelven a `PENDIENTE_GENERAR`.
+El movimiento de `260590` a las 17:00 del 26 de agosto usa un slot que antes era `Nueva`; el movimiento de `741 - Elara+Maeve.png` a las 11:00 del 29 de agosto usa un slot que antes era `Nueva`. Los slots liberados se completan con los 11 reuse aprobados en el anexo; ya no quedan slots `PENDIENTE_GENERAR`.
 
 ## Tabla operativa
 
@@ -143,7 +143,7 @@ Este diseño mantiene los 35 assets nuevos en el período, completa los 11 slots
 
 ## Condiciones de aprobación
 
-La versión base ya tiene 35 assets nuevos aprobados visualmente. El anexo de 11 reuse fue revisado contra Drive, ranking y contexto visual, pero requiere aprobación de Fernando antes de incorporarse al calendario operativo maestro. Los 11 slots no deben quedar como generación nueva si se aprueba esta alternativa.
+La versión integrada tiene 35 assets nuevos aprobados y 11 reuse adicionales aprobados por Fernando. El calendario maestro y el manifiesto contienen 46 archivos, todos marcados para `MOVE_ONLY` después de la programación de Facebook. Instagram queda fuera de esta fase.
 
 La publicación futura debe usar la fuente maestra, el `Publication_Log.csv` y el kit de hashtags vigente. No se deben mover ni copiar assets en Drive hasta que el calendario esté aprobado y cada archivo tenga una asignación final.
 
