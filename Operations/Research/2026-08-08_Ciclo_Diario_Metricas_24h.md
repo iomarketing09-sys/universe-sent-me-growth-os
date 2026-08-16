@@ -1,10 +1,10 @@
 # Ciclo Diario de Métricas — 24h (2026-08-07/08)
 
 **Propósito:** Registro de métricas de las últimas 24 horas (2026-08-07 01:31 – 2026-08-08 01:31 UTC), calificación de publicaciones (Score 1-10), actualización de hipótesis y propuesta de contenido del día siguiente, según la rutina del Chief Growth Officer del Growth OS.
-**Estado:** Active
+**Estado:** Superseded
 **Fecha de creación:** 2026-08-08
-**Última actualización:** 2026-08-08
-**Versión:** 1.0
+**Última actualización:** 2026-08-16
+**Versión:** 1.1
 **Autor:** Manus AI (CGO — rutina automatizada)
 **Documentos relacionados:** `../../GrowthOS/08_00_Metricas_Baseline_Plataformas.md`, `../../GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `../../GrowthOS/00_01_Changelog_GrowthOS.md`
 
@@ -46,7 +46,13 @@ La hipótesis del baseline de 28 días **"Captions cortos y minimalistas"** qued
 
 Se mantienen dos riesgos de acceso que bloquean la medición completa: (a) el alcance/impresiones dejó de estar disponible en Graph API v21.0, por lo que se propone adoptar provisionalmente el **share rate sobre interacciones (shares/interacciones ≥ 0.25)** como proxy de viralidad hasta normalizar la métrica de alcance; (b) el conector de Instagram quedó en estado "not connected" tras el cambio de vinculación de @firmabordados a @universe_sent_me_0326 — se requiere re-autorizar la cuenta en la interfaz de Manus. Adicionalmente, se observa un posible riesgo de **sobrepublishing** (6 posts/día puede canibalizar alcance por post); se propone un tope de 3-4 posts FB/día y monitorear las próximas 72 horas.
 
-## 5. Propuesta de contenido para el 2026-08-08 (pasar por rúbrica ≥8.5 antes de publicar)
+## 5. Cadencia vigente posterior a este informe
+
+Este documento conserva el registro histórico de una revisión diaria del 7–8 de agosto. La cadencia diaria quedó supersedida por una revisión agrupada cada 48 horas para reducir despertares y consultas repetidas. Para el experimento `EXP-2026-08-CAL-01`, la hora recomendada es 22:15 de `America/Matamoros`, comenzando el 2026-08-16, con un solo despertar que procese todas las filas vencidas.
+
+La tarea existente de métricas no apareció entre los schedules visibles de esta sesión; solo se observó el scheduler pausado de Instagram. Por seguridad, no se modificó ese scheduler. La actualización de la tarea de métricas debe ejecutarse desde su propia sesión/tarea para no alterar la programación de Instagram.
+
+## 6. Propuesta de contenido para el 2026-08-08 (pasar por rúbrica ≥8.5 antes de publicar)
 
 | Slot (UTC) | Personaje | Copy propuesto | Fundamento |
 | :--- | :--- | :--- | :--- |
@@ -56,4 +62,4 @@ Se mantienen dos riesgos de acceso que bloquean la medición completa: (a) el al
 
 ---
 
-*Registro paralelo en Google Sheet: ExperimentLog (6 filas, 2026-08-07/08), Hypothesis Bank (H11-H14) y Dashboard actualizado al 2026-08-08 01:42 UTC.*
+*Registro paralelo en Google Sheet: ExperimentLog (6 filas, 2026-08-07/08), Hypothesis Bank (H11-H14) y Dashboard actualizado al 2026-08-08 01:42 UTC. La cadencia vigente se documenta en `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`.*

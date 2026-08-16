@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.73
+**Versión:** 1.74
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -105,6 +105,16 @@
 - `Community_Engagement_Log.csv` añadió el campo `Respuesta_Meta_ID` y actualizó las cuatro filas a `Respuesta_Estado=Respondido`, `Aprobacion_Estado=Aprobada`, con timestamp `2026-08-16T01:45:00.480282+00:00`.
 - La prueba valida el flujo de aprobación humana y escritura controlada; no habilita respuestas automáticas ni crea un bot.
 - Se sincronizaron la ficha del ledger, la fuente maestra, las auditorías, el índice y la deuda documental P2. Ninguna relación `CNT-####` fue inventada.
+
+---
+
+## [1.2.74] — 2026-08-16 (Manus)
+### Optimización de cadencia de métricas
+- La revisión diaria de métricas quedó sustituida por una revisión agrupada cada 48 horas para reducir despertares y consultas repetidas.
+- La hora recomendada para `EXP-2026-08-CAL-01` es **22:15 de America/Matamoros**, comenzando el `2026-08-16`; a esa hora ya maduró el último slot del día anterior y el lote puede procesar todas las filas vencidas de una sola vez.
+- Se confirma que **un solo despertar por ejecución es suficiente** para las nueve publicaciones: el extractor recorre las filas vencidas, consulta solo los Meta Post IDs elegibles y no requiere un despertar por publicación.
+- La tarea de métricas no apareció entre los schedules visibles de esta sesión; solo se observó `USM Instagram 15-16 Agosto`, pausado. No se modificó ese scheduler para evitar alterar una tarea distinta.
+- Se actualizaron `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` a v1.7 y `Operations/Research/2026-08-08_Ciclo_Diario_Metricas_24h.md` a v1.1 (Superseded).
 
 ---
 

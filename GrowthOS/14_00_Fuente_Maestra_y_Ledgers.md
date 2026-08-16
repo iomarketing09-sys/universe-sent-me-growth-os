@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-15
-version: "1.6"
+version: "1.7"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -116,11 +116,11 @@ Esta arquitectura reduce llamadas repetidas, evita que el agente relea documento
 
 ### 5.1 Cadencia recomendada para métricas
 
-La revisión operativa de métricas se hará **cada dos días** como lote, en lugar de consultar cada publicación diariamente. La ejecución debe leer únicamente las filas de `Publication_Log.csv` cuyo timestamp real ya haya alcanzado una ventana de 24 o 72 horas, agrupar los Meta Post IDs pendientes y actualizar ambos ledgers en una sola pasada.
+La revisión operativa de métricas se hará **cada dos días** como lote, en lugar de consultar cada publicación diariamente. Para el experimento `EXP-2026-08-CAL-01`, la hora recomendada es **22:15 de America/Matamoros**, comenzando el 2026-08-16, porque a esa hora ya maduró el último slot del día anterior y se evita despertar durante la ventana activa de publicaciones. La ejecución debe leer únicamente las filas de `Publication_Log.csv` cuyo timestamp real ya haya alcanzado una ventana de 24 o 72 horas, agrupar los Meta Post IDs pendientes y actualizar ambos ledgers en una sola pasada.
 
 La cadencia de 48 horas reduce despertares y lecturas repetidas, pero no cambia la definición de las ventanas. Cada fila conserva su hora real de publicación; no se sustituye una medición de 24 horas por el total acumulado disponible al segundo día. Cuando Meta permita una consulta temporal con `since`/`until`, se usará esa ventana; si el metric solicitado solo devuelve un total de lifetime o no permite reconstruir el snapshot, se registrará `24h_snapshot_unavailable` o `72h_snapshot_unavailable` en la nota y no se inventará el valor [7] [8].
 
-El mismo procedimiento aplica a las publicaciones posteriores: registrar primero el Meta ID y la hora real, calcular `+24h` y `+72h`, seleccionar solo las filas vencidas en la siguiente revisión de dos días y mantener separadas las métricas de Facebook e Instagram. Si se requiere un snapshot exacto garantizado y Meta no permite reconstruirlo retrospectivamente, hará falta una captura ligera en la ventana exacta; esa captura no requiere releer el Growth OS completo.
+El mismo procedimiento aplica a las publicaciones posteriores: registrar primero el Meta ID y la hora real, calcular `+24h` y `+72h`, seleccionar solo las filas vencidas en la siguiente revisión de dos días y mantener separadas las métricas de Facebook e Instagram. **Un solo despertar es suficiente para la operación del Growth OS**: el script procesa todas las filas vencidas en lote, no solo una publicación. Esto minimiza sesiones y consultas, aunque retrasa algunos snapshots respecto a la hora exacta; si se necesitara exactitud estricta a 24/72 horas, habría que usar dos ejecuciones o un proceso persistente determinista. Si Meta no permite reconstruir retrospectivamente el snapshot, se conserva la limitación y no se inventa el valor.
 
 ## 6. Primer estado implementado
 
