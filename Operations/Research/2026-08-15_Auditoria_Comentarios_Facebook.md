@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-15
-version: "1.4"
+version: "1.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -137,7 +137,7 @@ La recomendación técnica es **no crear todavía un bot de respuesta en tiempo 
 
 El siguiente paso recomendado es una prueba controlada de una sola respuesta a un comentario real, elegido por Fernando, con texto preparado y confirmación antes de publicar. Esa prueba validará el endpoint de escritura, el formato del Page Access Token y el comportamiento visible en Facebook sin abrir todavía la puerta a automatización masiva.
 
-El Growth OS ya incorpora el registro ligero `Community_Engagement_Log.csv` y el primer lote real contiene nueve comentarios de una publicación de Silvio. Las tres respuestas propuestas permanecen pendientes de aprobación de Fernando; las siguientes revisiones deben recuperar solo deltas nuevos durante las ventanas del mismo día y de 24–48 horas. La decisión de automatizar respuestas deberá basarse en tres evidencias: volumen sostenido, baja tasa de errores de clasificación y existencia de plantillas de respuesta aprobadas.
+El Growth OS ya incorpora el registro ligero `Community_Engagement_Log.csv` y el primer lote real contiene nueve comentarios de una publicación de Silvio. Las cuatro respuestas propuestas permanecen pendientes de aprobación de Fernando; el cuarto comentario fue reclasificado como humor ácido contextual y no como riesgo de moderación. Las siguientes revisiones deben recuperar solo deltas nuevos durante las ventanas del mismo día y de 24–48 horas. La decisión de automatizar respuestas deberá basarse en tres evidencias: volumen sostenido, baja tasa de errores de clasificación y existencia de plantillas de respuesta aprobadas.
 
 ## 9. Documentos que requieren coherencia
 

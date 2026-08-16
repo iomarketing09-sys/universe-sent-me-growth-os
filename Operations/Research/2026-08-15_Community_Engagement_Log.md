@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-15
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -75,10 +75,10 @@ El 15 de agosto se recuperaron nueve comentarios de la publicación de Silvio co
 | Distribución automática o comentario vacío | 3 | Registrar para cobertura, sin respuesta. |
 | Aprobación breve | 1 | No requiere respuesta individual. |
 | Desinterés explícito | 1 | No responder; no presenta riesgo de moderación por sí solo. |
-| Conversación humorística/contextual | 3 | Preparar respuesta juguetona, pendiente de aprobación humana. |
-| Comentario con generalización hostil | 1 | Escalar para revisión; no responder ni moderar automáticamente. |
+| Conversación humorística/contextual | 4 | Preparar respuesta juguetona o ácida, pendiente de aprobación humana. |
+| Generalización humorística no dirigida | 0 | No escalar; mantener el remate ácido sin personalizar contra quien comenta. |
 
-El lote se conserva sin nombres ni perfiles. La publicación no está vinculada automáticamente a un `CNT-####` porque la consulta proporcionó un Meta Post ID, no una identidad de pieza reconciliada. Las tres respuestas sugeridas del ledger son propuestas editoriales y permanecen en `Pendiente_Fernando`; ninguna se ha publicado.
+El lote se conserva sin nombres ni perfiles. La publicación no está vinculada automáticamente a un `CNT-####` porque la consulta proporcionó un Meta Post ID, no una identidad de pieza reconciliada. Las cuatro respuestas sugeridas del ledger son propuestas editoriales y permanecen en `Pendiente_Fernando`; ninguna se ha publicado. El cuarto comentario fue reclasificado como humor ácido contextual y su respuesta propuesta mantiene el remate sin atacar a la persona que comentó.
 
 ## Referencias
 
