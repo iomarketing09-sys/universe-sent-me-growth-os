@@ -76,6 +76,8 @@ Primero debe decidirse si se mantienen los cinco pares de reuse consecutivos o s
 
 El calendario no debe programarse todavía. La siguiente versión debe conservar los 74 slots, retirar de cualquier cola futura los cinco assets ya publicados y mantener `PENDIENTE_GENERAR` en los espacios donde todavía no exista un visual aprobado.
 
-## 7. Siguiente acción recomendada
+## 7. Decisión y siguiente acción recomendada
 
-La siguiente iteración debe ser una **propuesta de ajuste de reuse**, no una publicación: conservar `260528` el domingo a las 22:00, mantener las 28 plazas reuse, separar los cinco pares consecutivos y dejar los 46 slots nuevos pendientes de asignación visual. Tras esa revisión, Fernando puede aprobar o rechazar los cambios antes de comenzar la producción de imágenes nuevas.
+Fernando aprobó los cinco movimientos de reuse propuestos: `260508 - Universe.jpg`, `260589.png`, `260518 - Kael.png`, `260590 - Maeve.png` y `741 - Elara+Maeve.png`. La aprobación es parcial y no convierte los 46 placeholders en assets autorizados.
+
+La siguiente iteración debe ser la **revisión visual y editorial de los 33 memes nuevos todavía no reconciliados como publicados**, asignando cada asset solo a un contexto compatible. No se deben mover archivos de Drive ni programar publicaciones hasta completar esa revisión y obtener aprobación del calendario operativo.

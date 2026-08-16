@@ -1,7 +1,7 @@
 ---
 title: "Propuesta ajustada de calendario experimental 17–30 de agosto"
 purpose: "Presentar para aprobación una versión de 74 slots que conserva 28 reuse y 46 espacios nuevos, separa los reuse consecutivos y respeta las decisiones previas."
-status: Draft
+status: Review
 created: 2026-08-16
 updated: 2026-08-16
 version: "1.0"
@@ -17,7 +17,11 @@ organization: "Operations/Research"
 
 # Propuesta ajustada de calendario experimental 17–30 de agosto
 
-> **Estado:** Draft. Esta propuesta no autoriza generación, movimiento de archivos, programación ni publicación. Requiere aprobación de Fernando.
+> **Estado:** Review. Fernando aprobó los cinco movimientos de reuse el 2026-08-16. La aprobación es parcial: los 46 slots nuevos siguen pendientes de revisión visual y la propuesta completa todavía no autoriza generación, movimiento de archivos, programación ni publicación.
+
+## Aprobación registrada
+
+Fernando aprobó los cinco movimientos de reuse: `260508 - Universe.jpg`, `260589.png`, `260518 - Kael.png`, `260590 - Maeve.png` y `741 - Elara+Maeve.png`. Se conserva la trazabilidad de los slots anteriores y nuevos en la tabla siguiente. Esta aprobación no convierte los 46 placeholders en assets autorizados ni autoriza publicación.
 
 ## Resumen
 

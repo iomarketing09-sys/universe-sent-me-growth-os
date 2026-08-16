@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-16
-**Versión:** 1.80
+**Versión:** 1.81
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -182,6 +182,14 @@
 - Se detectaron cinco pares de reuse consecutivos. Se preparó una propuesta Draft que conserva 46 nuevas y 28 reuse, mantiene `260528` el domingo 30 a las 22:00 y reubica cinco reuse sin tocar el calendario anterior.
 - Drive confirmó que `260508 - Universe.jpg` y `Universe - Existencial 260508.png` son dos archivos distintos con checksums y contenidos visuales diferentes; ambos deben conservar filename completo para evitar ambigüedad.
 - Se crearon `Operations/Research/2026-08-16_Revision_Calendario_17_30.md` y `Operations/Research/2026-08-16_Propuesta_Ajuste_Calendario_17_30_Agosto.md/.csv`. La propuesta queda pendiente de aprobación de Fernando; no se generaron imágenes, no se movieron assets y no se programó contenido.
+
+---
+
+## [1.2.81] — 2026-08-16 (Manus)
+### Aprobación parcial del calendario 17–30
+- Fernando aprobó los cinco movimientos de reuse documentados en `2026-08-16_Propuesta_Ajuste_Calendario_17_30_Agosto.md`.
+- La propuesta conserva estado `Review`: los 46 slots nuevos siguen como `PENDIENTE_GENERAR` y los 33 assets nuevos disponibles aún requieren revisión visual/editorial.
+- Se actualizó el índice y la auditoría del calendario. No se movieron assets de Drive, no se generaron imágenes y no se programó contenido.
 
 ---
 

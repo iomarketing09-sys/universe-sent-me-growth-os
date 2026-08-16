@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-15
-**Versión:** 4.3
+**Versión:** 4.4
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -56,7 +56,7 @@
 | [Auditoría directa de Instagram API — 15 de agosto](../Operations/Research/2026-08-15_Auditoria_API_Instagram.md) | Verifica permisos, vinculación, cuota y flujo de publicación de Instagram mediante Graph API directa. | Active |
 | [Extractor de métricas 24/72h](../Operations/Production/extract_metrics_24_72_playbook.md) | Playbook y contrato del extractor agrupado, idempotente y de un solo despertar para `EXP-2026-08-CAL-01`. | Active |
 | [Revisión calendario 17–30 — 16 de agosto](../Operations/Research/2026-08-16_Revision_Calendario_17_30.md) | Conciliación de 74 slots, 38 assets nuevos, reuse y publicaciones reales; identifica cinco movimientos pendientes. | Review |
-| [Propuesta ajustada calendario 17–30](../Operations/Research/2026-08-16_Propuesta_Ajuste_Calendario_17_30_Agosto.md) | Draft de 74 slots con 28 reuse, 46 espacios nuevos y separación de reuse consecutivos; requiere aprobación. | Draft |
+| [Propuesta ajustada calendario 17–30](../Operations/Research/2026-08-16_Propuesta_Ajuste_Calendario_17_30_Agosto.md) | Revisión de 74 slots con 28 reuse y 46 espacios nuevos; cinco movimientos de reuse aprobados, revisión visual de los nuevos pendiente. | Review |
 | [Revisión de Reuse — Mayo frente a Junio](../Operations/Research/2026-08-14_Revision_Reuse_Mayo_Junio.md) | Inventario de Drive, elegibilidad de mayo y reserva Top de junio. | Review |
 | [Ranking Reuse Mayo — rendimiento Meta](../Operations/Research/2026-08-14_Reuse_Mayo_Ranking.csv) | Ranking individual de 123 assets cruzados con 205 publicaciones de mayo. | Active |
 | [Pipeline de publicación y archivado mensual](13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md) | Estándar CSV, publicación por Graph API y movimiento de assets publicados a la carpeta mensual. | Active |
