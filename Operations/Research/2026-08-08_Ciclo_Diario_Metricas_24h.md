@@ -4,7 +4,7 @@
 **Estado:** Superseded
 **Fecha de creación:** 2026-08-08
 **Última actualización:** 2026-08-16
-**Versión:** 1.2
+**Versión:** 1.3
 **Autor:** Manus AI (CGO — rutina automatizada)
 **Documentos relacionados:** `../../GrowthOS/08_00_Metricas_Baseline_Plataformas.md`, `../../GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `../../GrowthOS/00_01_Changelog_GrowthOS.md`
 
@@ -54,11 +54,11 @@ La tarea existente de métricas no apareció entre los schedules visibles de est
 
 ## 6. Estado de materialización de la tarea independiente
 
-El 2026-08-16 se intentó crear la tarea `USM Growth OS - Revisión de Métricas cada 48h` con un primer disparo calculado para el 2026-08-16 a las 22:15 de `America/Matamoros` y una repetición de 172800 segundos. La operación fue rechazada por el servicio de programación con `permission_denied: 403 Forbidden`; por tanto, **la tarea no quedó creada ni activa** y no existe un identificador de schedule que registrar.
+El 2026-08-16 se intentó crear la tarea `USM Growth OS - Revisión de Métricas cada 48h` con un primer disparo calculado para el 2026-08-16 a las 22:15 de `America/Matamoros` y una repetición de 172800 segundos. La operación fue rechazada por el servicio de programación con `permission_denied: 403 Forbidden`; por tanto, **la tarea no quedó creada ni activa** y no existe un identificador de schedule que registrar. Tras la solicitud explícita de reintento, se recalculó el intervalo restante hasta las 22:15 (`77190` segundos al momento del intento) y se volvió a enviar como tarea independiente con playbook autónomo; el servicio devolvió nuevamente `permission_denied: 403 Forbidden`.
 
 La definición operativa preparada para la tarea exige un solo despertar por ejecución, el procesamiento exclusivo de filas vencidas de `EXP-2026-08-CAL-01`, la actualización únicamente de `2026-08-15_Publication_Log.csv` y `2026-08-15_ExperimentLog.csv`, y una evidencia JSON por ejecución. También exige que las consultas a plataformas sean de solo lectura y que no se publique contenido ni se modifique Instagram. Durante este intento no se modificó Instagram, no se publicó contenido y no se alteraron los dos ledgers.
 
-La ruta exacta `/home/ubuntu/extract_metrics_24_72.py` tampoco se encontró en el entorno de esta sesión ni dentro del historial del repositorio. Este punto debe resolverse antes de la primera ejecución; no se debe sustituir el extractor por otro script ni crear una implementación no validada bajo esta tarea.
+La ruta exacta `/home/ubuntu/extract_metrics_24_72.py` tampoco se encontró en el entorno de esta sesión ni dentro del historial del repositorio durante la verificación posterior al reintento. Este punto debe resolverse antes de la primera ejecución; no se debe sustituir el extractor por otro script ni crear una implementación no validada bajo esta tarea.
 
 **Acción pendiente:** habilitar la creación de schedules para esta tarea y restaurar o poner a disposición el extractor exacto. Después debe verificarse el estado del schedule y realizarse una primera ejecución controlada que produzca evidencia JSON sin publicar ni tocar Instagram.
 

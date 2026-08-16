@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-16
-**Versión:** 1.76
+**Versión:** 1.77
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -133,6 +133,15 @@
 - El servicio de programación devolvió `permission_denied: 403 Forbidden`; la tarea no quedó creada ni activa. No se modificó el scheduler pausado de Instagram, no se publicó contenido y no se alteraron `Publication_Log.csv` ni `ExperimentLog.csv`.
 - La ruta exacta `/home/ubuntu/extract_metrics_24_72.py` no está disponible en el entorno de esta sesión ni en el historial del repositorio. La activación queda bloqueada hasta restaurar el extractor exacto y habilitar la creación del schedule.
 - Se actualizó `Operations/Research/2026-08-08_Ciclo_Diario_Metricas_24h.md` a v1.2 con el estado, las restricciones y las acciones pendientes.
+
+---
+
+## [1.2.77] — 2026-08-16 (Manus)
+### Reintento de creación del scheduler de métricas
+- Tras la solicitud explícita de Fernando, se reintentó crear `USM Growth OS - Revisión de Métricas cada 48h` como tarea independiente, recalculando el intervalo hasta el primer disparo de las 22:15 en `America/Matamoros` (`77190` segundos al momento del intento).
+- El servicio volvió a responder `permission_denied: 403 Forbidden`; la tarea no quedó creada, no existe un schedule activo y no se ejecutó ninguna revisión de métricas.
+- La verificación confirmó que `/home/ubuntu/extract_metrics_24_72.py` sigue ausente en el entorno de la sesión. No se creó un sustituto ni se modificaron `Publication_Log.csv`, `ExperimentLog.csv`, Instagram o el scheduler de Instagram.
+- Se actualizó `Operations/Research/2026-08-08_Ciclo_Diario_Metricas_24h.md` a v1.3.
 
 ---
 
