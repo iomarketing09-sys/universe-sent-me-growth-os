@@ -1,10 +1,12 @@
 ---
 title: "Revisión visual y asignación de 33 memes nuevos — calendario 17–30"
-purpose: "Documentar la inspección visual de los 33 assets nuevos disponibles y proponer asignaciones horarias sin mover archivos ni autorizar publicación.",status: Review
+purpose: "Documentar la inspección visual de los 33 assets nuevos disponibles y proponer asignaciones horarias sin mover archivos ni autorizar publicación."
+status: Review
 created: 2026-08-16
 updated: 2026-08-16
 version: "1.0"
-author: "Manus AI (CGO)",related_documents:
+author: "Manus AI (CGO)"
+related_documents:
   - "Operations/Research/2026-08-16_Revision_Calendario_17_30.md"
   - "Operations/Research/2026-08-16_Propuesta_Ajuste_Calendario_17_30_Agosto.md"
   - "Operations/Research/2026-08-16_Clasificacion_Visual_33_Memes_Nuevos.csv"
@@ -15,29 +17,33 @@ organization: "Operations/Research"
 
 # Revisión visual y asignación de 33 memes nuevos
 
-> **Estado:** Review. Esta ficha contiene una propuesta de asignación visual; no autoriza mover assets, generar imágenes, programar ni publicar. Las piezas de riesgo editorial requieren aprobación individual.
+> **Estado:** Review. Fernando aprobó las 28 asignaciones y las 5 piezas previamente retenidas el 2026-08-16. La aprobación no cubre los 13 slots que siguen como `PENDIENTE_GENERAR`; todavía no autoriza mover assets, programar ni publicar.
+
+## Aprobación registrada
+
+Fernando aprobó la clasificación completa de los 33 memes: las 28 asignaciones propuestas y las 5 piezas previamente retenidas (`2608047`, `2608051`, `2608053`, `2608059` y `2608062`). Las cinco quedan integradas como candidatas editoriales de tarde/noche, pero los 13 slots sin asset permanecen pendientes.
 
 ## Resultado ejecutivo
 
-Se revisaron visualmente **33 memes nuevos** descargados desde los Drive IDs del inventario. Se proponen **28 asignaciones** a slots `Nueva`, se retienen **5 piezas** por contenido sexual, doble sentido o romance coercitivo, y quedan **18 slots nuevos** como `PENDIENTE_GENERAR` en la propuesta de 74 slots. La validación confirmó 74 filas, 46 nuevas, 28 reuse y cero pares de reuse consecutivos.
+Se revisaron visualmente **33 memes nuevos** descargados desde los Drive IDs del inventario. Se integran **33 asignaciones** a slots `Nueva`, con 15 piezas marcadas como `Candidato_Editorial` por su tono sexual, sugerente o coercitivo aprobado, y quedan **13 slots nuevos** como `PENDIENTE_GENERAR` en la propuesta de 74 slots. La validación confirmó 74 filas, 46 nuevas, 28 reuse y cero pares de reuse consecutivos.
 
 | Estado visual | Cantidad | Tratamiento |
 |---|---:|---|
-| `Candidato` | 18 | Asignación propuesta; revisión final de legibilidad y copy. |
-| `Candidato_Editorial` | 10 | Asignación propuesta a tarde/noche; revisar texto y tono antes de aprobar. |
-| `Retener_Editorial` | 5 | Sin slot; aprobación individual antes de incluir. |
+| `Candidato` | 18 | Asignación aprobada; revisión final de legibilidad y copy antes de programar. |
+| `Candidato_Editorial` | 15 | Asignación aprobada a tarde/noche; conservar control de tono antes de programar. |
+| `Retener_Editorial` | 0 | No quedan piezas retenidas después de la aprobación de Fernando. |
 
-## Piezas retenidas
+## Piezas aprobadas con control editorial
 
 | Asset | Personaje(s) | Motivo |
 |---|---|---|
-| `2608047` — 2608047 - Kael - Inolerancia a la lactosa.jpeg | Kael | Doble sentido sexual; requiere aprobación individual. |
-| `2608051` — 2608051 - Universe - Mi unico defecto es que me gusta cger.jpeg | Universe | Lenguaje sexual explícito; fin de semana, requiere aprobación. |
-| `2608053` — 2608053 - Universe - Quieras o no.jpeg | Universe | Romance coercitivo con arma de juguete; requiere aprobación individual. |
-| `2608059` — 2608059 - Kael - Si la vida te da limones.jpeg | Kael | Doble sentido sexual; requiere aprobación individual. |
-| `2608062` — 2608062 - Kiri+Evan - prestame el marron.jpeg | Kiri+Evan | Doble sentido sexual; requiere aprobación individual. |
+| `2608047` — 2608047 - Kael - Inolerancia a la lactosa.jpeg | Kael | Doble sentido sexual; aprobado por Fernando; conservar control editorial de plataforma. |
+| `2608051` — 2608051 - Universe - Mi unico defecto es que me gusta cger.jpeg | Universe | Lenguaje sexual explícito; fin de semana, aprobado por Fernando; conservar control editorial de plataforma. |
+| `2608053` — 2608053 - Universe - Quieras o no.jpeg | Universe | Romance coercitivo con arma de juguete; aprobado por Fernando; conservar control editorial de plataforma. |
+| `2608059` — 2608059 - Kael - Si la vida te da limones.jpeg | Kael | Doble sentido sexual; aprobado por Fernando; conservar control editorial de plataforma. |
+| `2608062` — 2608062 - Kiri+Evan - prestame el marron.jpeg | Kiri+Evan | Doble sentido sexual; aprobado por Fernando; conservar control editorial de plataforma. |
 
-Las cinco piezas retenidas son `2608047`, `2608051`, `2608053`, `2608059` y `2608062`. No se descartan; simplemente no se asignan hasta que Fernando decida si el tono sexual, el doble sentido o el recurso coercitivo son adecuados para este lote.
+Las cinco piezas que inicialmente requerían aprobación (`2608047`, `2608051`, `2608053`, `2608059` y `2608062`) ya fueron aprobadas por Fernando y tienen asignaciones de tarde o fin de semana. Se conserva la marca `Candidato_Editorial` para recordar que el caption final y el control de plataforma deben respetar el tono aprobado.
 
 ## Asignaciones propuestas
 
@@ -68,7 +74,7 @@ Las cinco piezas retenidas son `2608047`, `2608051`, `2608053`, `2608059` y `260
 | `2608057` — 2608057 - Fantasma - Sabes que me caeria bien.jpeg | Fantasma | 2026-08-23 16:00 | Candidato_Editorial | Tarde/noche o fin de semana | Doble sentido sexual; domingo tarde/noche. |
 | `2608058` — 2608058 - Silvio - Tiene que dar tranquilidad.jpeg | Silvio | 2026-08-26 16:00 | Candidato | Mañana/media mañana/tarde según slot | Ansiedad/contraste humorístico; tarde. |
 | `2608061` — 2608061 - Fantasma - acaso parezco alguien que quiere ser genial.jpeg | Fantasma | 2026-08-19 11:00 | Candidato | Mañana/media mañana/tarde según slot | Humor seco/relatable; media mañana. |
-| `2608063` — 2608063 - Universe - Larga vida a esas mujeres.jpeg | Universe | 2026-08-22 13:30 | Candidato_Editorial | Tarde/noche o fin de semana | Doble sentido sexual; sábado mediodía, requiere aprobación. |
+| `2608063` — 2608063 - Universe - Larga vida a esas mujeres.jpeg | Universe | 2026-08-22 13:30 | Candidato_Editorial | Tarde/noche o fin de semana | Doble sentido sexual; sábado mediodía, aprobado por Fernando; conservar control editorial de plataforma. |
 | `2608064` — 2608064 - Universe - Quieren hacer pendejo al que nacio asi.jpeg | Universe | 2026-08-27 16:00 | Candidato | Mañana/media mañana/tarde según slot | Lenguaje fuerte/ácido; tarde. |
 | `2608065` — 2608065 - Fantasma - Pedazo de socrates.jpeg | Fantasma | 2026-08-26 11:00 | Candidato | Mañana/media mañana/tarde según slot | Existencial/ácido; media mañana. |
 
@@ -80,11 +86,11 @@ La clasificación se basa en la inspección visual de las imágenes originales y
 
 ## Slots que siguen pendientes
 
-Quedan **18 slots nuevos** sin asset asignado. Se mantienen como `PENDIENTE_GENERAR` para no inventar contenido ni forzar piezas sensibles en horarios inadecuados. Esto permite completar la proporción de frecuencia con nuevos memes que todavía deben generarse y aprobarse.
+Quedan **13 slots nuevos** sin asset asignado. Se mantienen como `PENDIENTE_GENERAR` para no inventar contenido ni forzar piezas futuras en horarios inadecuados. Esto permite completar la proporción de frecuencia con nuevos memes que todavía deben generarse y aprobarse.
 
 ## Siguiente decisión de Fernando
 
-Fernando debe aprobar o modificar las 28 asignaciones propuestas y decidir individualmente sobre las cinco piezas retenidas. Después de esa decisión se puede preparar una versión operativa del calendario, mover los archivos de Drive sin copias y generar los captions finales. Hasta entonces, los CSV son propuestas de trabajo y no órdenes de publicación.
+La aprobación visual de los 33 assets ya está registrada. El siguiente control es técnico-operativo: verificar que cada Drive ID y destino mensual corresponda al asset correcto, definir captions finales con el kit vigente y conservar 13 placeholders para producción futura. Hasta completar ese control, los CSV son propuestas operativas y no órdenes de publicación.
 
 ## Referencias
 

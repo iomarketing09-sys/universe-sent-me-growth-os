@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-16
-**Versión:** 1.82
+**Versión:** 1.83
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -182,6 +182,15 @@
 - Se detectaron cinco pares de reuse consecutivos. Se preparó una propuesta Draft que conserva 46 nuevas y 28 reuse, mantiene `260528` el domingo 30 a las 22:00 y reubica cinco reuse sin tocar el calendario anterior.
 - Drive confirmó que `260508 - Universe.jpg` y `Universe - Existencial 260508.png` son dos archivos distintos con checksums y contenidos visuales diferentes; ambos deben conservar filename completo para evitar ambigüedad.
 - Se crearon `Operations/Research/2026-08-16_Revision_Calendario_17_30.md` y `Operations/Research/2026-08-16_Propuesta_Ajuste_Calendario_17_30_Agosto.md/.csv`. La propuesta queda pendiente de aprobación de Fernando; no se generaron imágenes, no se movieron assets y no se programó contenido.
+
+---
+
+## [1.2.83] — 2026-08-16 (Manus)
+### Calendario operativo y manifiesto de movimiento
+- Fernando aprobó las 33 asignaciones visuales: 18 candidatos generales y 15 candidatos con control editorial.
+- Se generó `2026-08-16_Calendario_Operativo_17_30_Agosto.csv/.md` con captions mínimos del kit USM, 28 reuse aprobados y 13 slots `PENDIENTE_GENERAR`.
+- Se verificaron los 33 Drive IDs y todos permanecen en `Humor existencial` (`1b0FRf8BFg2fIUoIf5CeMeiQb3uDduWcZ`). El destino correcto es `08 Agosto` (`11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf`).
+- Se generó el manifiesto `MOVE_ONLY` con 33 filas; no permite copias y queda `READY_FOR_USER_CONFIRMATION`. No se movieron archivos ni se programó contenido.
 
 ---
 

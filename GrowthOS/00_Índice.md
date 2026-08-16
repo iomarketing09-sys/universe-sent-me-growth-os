@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-15
-**Versión:** 4.5
+**Versión:** 4.6
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -59,7 +59,9 @@
 | [Propuesta ajustada calendario 17–30](../Operations/Research/2026-08-16_Propuesta_Ajuste_Calendario_17_30_Agosto.md) | Revisión de 74 slots con 28 reuse y 46 espacios nuevos; cinco movimientos de reuse aprobados, revisión visual de los nuevos pendiente. | Review |
 | [Revisión visual y asignación de 33 memes nuevos](../Operations/Research/2026-08-16_Revision_Visual_Asignacion_33_Memes_Nuevos.md) | Clasificación visual de 33 assets: 28 asignaciones propuestas, 5 piezas retenidas por revisión editorial y 18 slots aún pendientes. | Review |
 | [Clasificación visual — 33 memes nuevos](../Operations/Research/2026-08-16_Clasificacion_Visual_33_Memes_Nuevos.csv) | Ledger estructurado de personajes, tono, franja horaria, riesgo editorial y slot propuesto. | Review |
-| [Asignación visual — calendario 17–30](../Operations/Research/2026-08-16_Asignacion_Visual_Calendario_17_30_Agosto.csv) | Copia de trabajo del calendario con 28 assets nuevos asignados y 18 placeholders conservados. | Review |
+| [Asignación visual — calendario 17–30](../Operations/Research/2026-08-16_Asignacion_Visual_Calendario_17_30_Agosto.csv) | Copia de trabajo del calendario con 33 assets nuevos asignados y 13 placeholders conservados. | Review |
+| [Calendario operativo 17–30](../Operations/Research/2026-08-16_Calendario_Operativo_17_30_Agosto.md) | Versión previa a programación con 33 assets aprobados, captions del kit USM, 28 reuse y 13 placeholders. | Review |
+| [Manifiesto MOVE_ONLY de agosto](../Operations/Research/2026-08-16_Manifiesto_Movimiento_33_Memes_Agosto.csv) | 33 Drive IDs verificados para mover desde `Humor existencial` a `08 Agosto`; no permite copias y requiere confirmación. | Review |
 | [Revisión de Reuse — Mayo frente a Junio](../Operations/Research/2026-08-14_Revision_Reuse_Mayo_Junio.md) | Inventario de Drive, elegibilidad de mayo y reserva Top de junio. | Review |
 | [Ranking Reuse Mayo — rendimiento Meta](../Operations/Research/2026-08-14_Reuse_Mayo_Ranking.csv) | Ranking individual de 123 assets cruzados con 205 publicaciones de mayo. | Active |
 | [Pipeline de publicación y archivado mensual](13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md) | Estándar CSV, publicación por Graph API y movimiento de assets publicados a la carpeta mensual. | Active |
