@@ -1,10 +1,10 @@
 ---
 title: "Propuesta ajustada de calendario experimental 17–30 de agosto"
-purpose: "Presentar para aprobación la versión base de 74 slots y un anexo de completación con 11 reuse —8 de 06 Junio/Top y 3 de la raíz disponible de 05 Mayo—, incluyendo los movimientos necesarios para conservar la separación operativa."
+purpose: "Conservar la trazabilidad de la propuesta aprobada de 74 slots y su anexo de 11 reuse; el calendario maestro y los ledgers posteriores son la fuente operativa vigente."
 status: Active
 created: 2026-08-16
 updated: 2026-08-16
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-16_Revision_Calendario_17_30.md"
@@ -13,18 +13,23 @@ related_documents:
   - "Operations/Research/2026-08-15_Publication_Log.csv"
   - "Operations/Research/2026-08-16_Propuesta_Completado_11_Reuse_Junio_Mayo.csv"
   - "GrowthOS/10_00_Kit_de_Hashtags_USM.md"
+  - "Operations/Research/2026-08-16_Programacion_Facebook_17_30_Agosto.md"
 organization: "Operations/Research"
 ---
 
 # Propuesta ajustada de calendario experimental 17–30 de agosto
 
-> **Estado:** Active. Fernando aprobó los cinco movimientos previos, los 35 assets nuevos y la completación de los 11 slots con 8 reuse de junio y 3 reuse Reserve de mayo. La propuesta está integrada en el calendario maestro para programación en Facebook. Instagram permanece pendiente y los archivos no se moverán hasta confirmar la programación.
+> **Estado:** Active. Fernando aprobó los cinco movimientos previos, los 35 assets nuevos y la completación de los 11 slots con 8 reuse de junio y 3 reuse Reserve de mayo. Los 74 slots ya están integrados y programados en Facebook mediante Meta Graph API v26. Instagram permanece pendiente y los archivos no se moverán hasta la ejecución manual posterior.
 
 ## Aprobación registrada
 
-Fernando aprobó los cinco movimientos de reuse: `260508 - Universe.jpg`, `260589.png`, `260518 - Kael.png`, `260590 - Maeve.png` y `741 - Elara+Maeve.png`. Posteriormente aprobó la completación de los 11 slots con ocho reuse de junio y tres reuse Reserve de mayo. Se conserva la trazabilidad y el calendario queda autorizado para programación en Facebook; Instagram no se modifica.
+Fernando aprobó los cinco movimientos de reuse: `260508 - Universe.jpg`, `260589.png`, `260518 - Kael.png`, `260590 - Maeve.png` y `741 - Elara+Maeve.png`. Posteriormente aprobó la completación de los 11 slots con ocho reuse de junio y tres reuse Reserve de mayo. Se conserva la trazabilidad y los 74 slots quedaron programados y verificados en Facebook; Instagram no se modifica.
 
 ## Resumen
+
+La versión integrada conserva los **74 slots**, con **35 `Nueva`**, **36 `Reuse_Top`** y **3 `Reuse_Reserve`**. El estado operativo vigente y los Meta IDs reales se encuentran en el calendario maestro y en `Publication_Log.csv`.
+
+> **Nota de fuente única:** La tabla operativa de esta propuesta conserva filas del borrador histórico y puede mostrar placeholders heredados. No es la fuente operativa vigente. Para fechas, assets, captions, estados y Meta IDs debe consultarse `2026-08-16_Calendario_Operativo_17_30_Agosto.csv` y `2026-08-15_Publication_Log.csv`; ambos reflejan la programación real confirmada por Meta.
 
 La versión integrada conserva los **74 slots**, con **35 `Nueva`**, **36 `Reuse_Top`** y **3 `Reuse_Reserve`**. Los ocho movimientos de assets nuevos ya quedaron reflejados en el calendario maestro y el manifiesto. `260528` queda el domingo 30 a las 22:00 y los cinco assets nuevos ya publicados en 15–16 permanecen fuera de la cola futura.
 

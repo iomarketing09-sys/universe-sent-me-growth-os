@@ -4,9 +4,20 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-16
-**Versión:** 1.87
+**Versión:** 1.88
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.88] — 2026-08-16 (Manus)
+### Programación Facebook 17–30 de agosto
+- Se programaron **74 posts de Facebook** mediante Meta Graph API v26.0 usando el flujo oficial de foto temporal (`/{page_id}/photos`, `published=false`, `temporary=true`) seguido de post en `/{page_id}/feed` con `attached_media`, `published=false`, `scheduled_publish_time` y `unpublished_content_type=SCHEDULED`.
+- Meta devolvió **74 Page Post IDs**, **74 Photo IDs** y **74 verificaciones exitosas** con `is_published=false`; no hubo errores finales y `260583` no apareció en el lote.
+- `Publication_Log.csv` recibió 74 filas respaldadas por IDs y permalinks reales; `ExperimentLog.csv` recibió 74 observaciones operativas sin métricas inventadas ni relaciones CNT creadas sin evidencia.
+- El calendario maestro y el ledger de asignación pasaron a `Programado`; el manifiesto de 46 archivos pasó a `LISTO_PARA_MOVIMIENTO_MANUAL`. No se movió ni copió ningún archivo en Drive.
+- Instagram no se tocó. El extractor de métricas fue ampliado para reconocer `OBS-FB-17_30-*` cuando las publicaciones pasen de programadas a publicadas y existan ventanas 24/72h elegibles.
+- Informe permanente: `Operations/Research/2026-08-16_Programacion_Facebook_17_30_Agosto.md`.
 
 ---
 

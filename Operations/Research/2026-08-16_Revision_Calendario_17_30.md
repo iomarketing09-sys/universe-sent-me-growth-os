@@ -1,10 +1,10 @@
 ---
 title: "Revisión del calendario experimental 17–30 de agosto"
-purpose: "Auditar y dejar trazable la versión aprobada de 74 slots contra el inventario de Drive y los ledgers antes de programar en Facebook y mover manualmente los archivos."
+purpose: "Auditar y dejar trazable la versión aprobada de 74 slots contra el inventario de Drive, los ledgers y la programación real de Facebook antes del movimiento manual de archivos."
 status: Active
 created: 2026-08-16
 updated: 2026-08-16
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-14_Propuesta_Calendario_17_30_Agosto.csv"
@@ -17,6 +17,7 @@ related_documents:
   - "Operations/Research/2026-08-14_Revision_Reuse_Mayo_Junio.md"
   - "Operations/Research/2026-08-16_Calendario_Operativo_17_30_Agosto.csv"
   - "Operations/Research/2026-08-16_Manifiesto_Movimiento_35_Memes_Agosto.csv"
+  - "Operations/Research/2026-08-16_Programacion_Facebook_17_30_Agosto.md"
 organization: "Operations/Research"
 ---
 
@@ -26,7 +27,7 @@ organization: "Operations/Research"
 
 La versión aprobada contiene **74 slots en 14 días**: 35 assets nuevos, 36 reuse Top y 3 reuse Reserve. La estructura de frecuencia conserva la distribución horaria aprobada: seis publicaciones de lunes a jueves, cuatro el viernes y sábado, y cinco el domingo con slots nocturnos de 22:00.
 
-La versión ya está integrada en el calendario operativo y queda lista para programación en Facebook. Los cinco assets publicados el 15–16 permanecen fuera de la cola, las variantes con el número 260508 conservan filename completo y Drive ID, y los reuse incorporados quedan trazados en el manifiesto. Instagram permanece pendiente y no se modifica.
+La versión ya está integrada en el calendario operativo y los 74 slots quedaron programados y verificados en Facebook mediante Meta Graph API v26. Los cinco assets publicados el 15–16 permanecen fuera de la cola, las variantes con el número 260508 conservan filename completo y Drive ID, y los reuse incorporados quedan trazados en el manifiesto. Instagram permanece pendiente y no se modifica.
 
 ## 2. Conciliación de fuentes
 
@@ -76,10 +77,10 @@ La versión aprobada usa 35 nuevas y 39 reuse, equivalente a **47.3% nuevo y 52.
 
 Los cinco pares de reuse y los movimientos necesarios fueron revisados. Fernando aprobó la completación con 8 reuse de junio y 3 reuse Reserve de mayo. La versión operativa contiene 35 assets nuevos, 39 reuse y cero placeholders. Los assets con contenido sexual, lenguaje fuerte o posible riesgo editorial se mantienen marcados individualmente. Instagram no se programa en esta fase.
 
-El calendario queda listo para programarse únicamente en Facebook mediante la API Graph. Los archivos todavía permanecen en sus carpetas de origen; después de confirmar la programación, Fernando realizará el movimiento manual `MOVE_ONLY` al folder `08 Agosto`. No se deben crear copias ni modificar Instagram.
+La programación únicamente en Facebook quedó confirmada por Meta. Los archivos todavía permanecen en sus carpetas de origen; Fernando puede realizar ahora el movimiento manual `MOVE_ONLY` al folder `08 Agosto`. No se deben crear copias ni modificar Instagram.
 
 ## 7. Decisión y siguiente acción recomendada
 
-Fernando aprobó los cinco movimientos de reuse propuestos: `260508 - Universe.jpg`, `260589.png`, `260518 - Kael.png`, `260590 - Maeve.png` y `741 - Elara+Maeve.png`. La aprobación incluye la completación de los 11 slots: 8 reuse de junio y 3 reuse Reserve de mayo. Los 74 slots quedan asignados y autorizados para programación en Facebook.
+Fernando aprobó los cinco movimientos de reuse propuestos: `260508 - Universe.jpg`, `260589.png`, `260518 - Kael.png`, `260590 - Maeve.png` y `741 - Elara+Maeve.png`. La aprobación incluye la completación de los 11 slots: 8 reuse de junio y 3 reuse Reserve de mayo. Los 74 slots quedaron asignados, programados y verificados en Facebook.
 
-Los extras `260661` y `2607831` siguen integrados en el lote de 35 assets nuevos. El manifiesto actualizado contiene 46 archivos y ordena movimiento manual posterior a la programación de Facebook; Instagram permanece pendiente.
+Los extras `260661` y `2607831` siguen integrados en el lote de 35 assets nuevos. El manifiesto actualizado contiene 46 archivos, está listo para movimiento manual y conserva `MOVE_ONLY`; Instagram permanece pendiente.

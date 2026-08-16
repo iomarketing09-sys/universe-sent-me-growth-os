@@ -1,10 +1,10 @@
 ---
-title: "Calendario operativo 17–30 de agosto — versión aprobada para programación en Facebook"
-purpose: "Consolidar 35 assets nuevos aprobados, 36 reuse Top y 3 reuse Reserve en una versión operativa aprobada para programación en Facebook, manteniendo el movimiento manual de Drive para después de programar."
+title: "Calendario operativo 17–30 de agosto — Facebook programado"
+purpose: "Consolidar y registrar 35 assets nuevos, 36 reuse Top y 3 reuse Reserve ya programados en Facebook, manteniendo el movimiento manual de Drive para después de la programación."
 status: Active
 created: 2026-08-16
 updated: 2026-08-16
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-16_Revision_Visual_Asignacion_35_Memes_Nuevos.md"
@@ -14,12 +14,13 @@ related_documents:
   - "Operations/Research/2026-08-16_Asignacion_Visual_Calendario_17_30_Agosto.csv"
   - "Operations/Research/2026-08-16_Manifiesto_Movimiento_35_Memes_Agosto.csv"
   - "Operations/Research/2026-08-16_Propuesta_Completado_11_Reuse_Junio_Mayo.csv"
+  - "Operations/Research/2026-08-16_Programacion_Facebook_17_30_Agosto.md"
 organization: "Operations/Research"
 ---
 
 # Calendario operativo 17–30 de agosto
 
-> **Estado:** Active. Fernando aprobó la completación del calendario. La versión queda lista para programar en Facebook; Instagram permanece pendiente y no se modifica. Fernando moverá manualmente los archivos después de confirmar la programación en Facebook.
+> **Estado:** Active. Fernando aprobó la completación del calendario y los 74 slots quedaron programados y verificados en Facebook mediante Meta Graph API v26. Instagram permanece pendiente y no se modifica. Fernando moverá manualmente los archivos después de la programación.
 
 La versión consolida **35 assets nuevos aprobados**, **36 reuse Top**, **3 reuse Reserve** y **74 slots asignados**, sin placeholders `PENDIENTE_GENERAR`. Los 35 nuevos conservan sus captions de secuencias de múltiples emojis; los 11 reuse incorporados usan captions aprobados con secuencias de emojis del kit USM. La proporción final es 35 nuevos y 39 reuse.
 
@@ -33,7 +34,7 @@ El destino verificado es `08 Agosto`, folder ID `11nuEUoU2Or8uc0oxXLu7-k6LChk8zQ
 
 ## Siguiente control
 
-El siguiente paso es programar los 74 slots en Facebook mediante la API Graph, utilizando los archivos todavía ubicados en sus carpetas de origen. Después de confirmar cada programación, Fernando realizará el movimiento manual al folder `08 Agosto`. Instagram no se toca en esta etapa.
+El siguiente paso operativo es que Fernando ejecute el movimiento manual `MOVE_ONLY` de los 46 archivos del manifiesto al folder `08 Agosto`. Los archivos todavía no se han movido ni copiado. Instagram no se toca en esta etapa. Después de la publicación real, se actualizarán las fechas reales y se extraerán las métricas 24/72 horas.
 
 ## Referencias
 

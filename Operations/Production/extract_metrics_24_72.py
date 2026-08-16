@@ -173,12 +173,13 @@ def update_ledgers(
 
     for row in experiment_rows:
         publicacion_id = row.get("Observacion_ID", "")
-        if not publicacion_id.startswith("OBS-FB-15_16-"):
+        if not publicacion_id.startswith(("OBS-FB-15_16-", "OBS-FB-17_30-")):
             continue
-        windows = due_by_publication.get(publicacion_id.replace("OBS-FB-", "PUB-FB-"), [])
+        publication_key = publicacion_id.replace("OBS-FB-", "PUB-FB-")
+        windows = due_by_publication.get(publication_key, [])
         if not windows:
             continue
-        evidence = evidence_by_publication.get(publicacion_id.replace("OBS-FB-", "PUB-FB-"), {})
+        evidence = evidence_by_publication.get(publication_key, {})
         unavailable_markers = " ".join(f"{window}_snapshot_unavailable" for window in windows if not evidence.get("exact_window_available", False))
         note = f"{marker} {extracted_at}: {','.join(windows)} due; {unavailable_markers}; {evidence.get('window_note', 'no exact window')}"
         row["Conclusion"] = append_marker(row.get("Conclusion", ""), note)

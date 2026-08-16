@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-16
-**Versión:** 4.8
+**Versión:** 4.9
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -61,8 +61,9 @@
 | [Revisión visual y asignación de 35 memes nuevos](../Operations/Research/2026-08-16_Revision_Visual_Asignacion_35_Memes_Nuevos.md) | Revisión de 35 assets aprobados; los 11 slots originalmente pendientes fueron completados con reuse aprobado. | Active |
 | [Clasificación visual — 35 memes nuevos](../Operations/Research/2026-08-16_Clasificacion_Visual_35_Memes_Nuevos.csv) | Ledger estructurado de personajes, tono, franja horaria, riesgo editorial y slot propuesto para 35 assets. | Review |
 | [Asignación visual — calendario 17–30](../Operations/Research/2026-08-16_Asignacion_Visual_Calendario_17_30_Agosto.csv) | Ledger operativo completo con 35 nuevos, 36 reuse Top y 3 reuse Reserve; cero placeholders. | Active |
-| [Calendario operativo 17–30](../Operations/Research/2026-08-16_Calendario_Operativo_17_30_Agosto.md) | Versión aprobada para Facebook: 35 nuevos, 36 reuse Top, 3 reuse Reserve, 74 slots completos y movimiento manual posterior. | Active |
-| [Manifiesto MOVE_ONLY de agosto](../Operations/Research/2026-08-16_Manifiesto_Movimiento_35_Memes_Agosto.csv) | 46 Drive IDs para mover manualmente desde sus carpetas de origen a `08 Agosto` después de programar Facebook; no permite copias. | Active |
+| [Calendario operativo 17–30](../Operations/Research/2026-08-16_Calendario_Operativo_17_30_Agosto.md) | Facebook programado: 35 nuevos, 36 reuse Top, 3 reuse Reserve, 74 slots completos y movimiento manual posterior. | Active |
+| [Programación Facebook 17–30](../Operations/Research/2026-08-16_Programacion_Facebook_17_30_Agosto.md) | Registro de 74 Page Post IDs y Photo IDs verificados por Meta; Drive no movido e Instagram pendiente. | Active |
+| [Manifiesto MOVE_ONLY de agosto](../Operations/Research/2026-08-16_Manifiesto_Movimiento_35_Memes_Agosto.csv) | 46 Drive IDs listos para movimiento manual desde sus carpetas de origen a `08 Agosto` después de la programación confirmada; no permite copias. | Active |
 | [Revisión de Reuse — Mayo frente a Junio](../Operations/Research/2026-08-14_Revision_Reuse_Mayo_Junio.md) | Inventario de Drive, elegibilidad de mayo y reserva Top de junio. | Review |
 | [Ranking Reuse Mayo — rendimiento Meta](../Operations/Research/2026-08-14_Reuse_Mayo_Ranking.csv) | Ranking individual de 123 assets cruzados con 205 publicaciones de mayo. | Active |
 | [Pipeline de publicación y archivado mensual](13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md) | Estándar CSV, publicación por Graph API y movimiento de assets publicados a la carpeta mensual. | Active |
