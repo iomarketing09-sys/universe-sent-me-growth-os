@@ -50,7 +50,7 @@ Se mantienen dos riesgos de acceso que bloquean la medición completa: (a) el al
 
 Este documento conserva el registro histórico de una revisión diaria del 7–8 de agosto. La cadencia diaria quedó supersedida por una revisión agrupada cada 48 horas para reducir despertares y consultas repetidas. Para el experimento `EXP-2026-08-CAL-01`, la hora recomendada es 22:15 de `America/Matamoros`, comenzando el 2026-08-16, con un solo despertar que procese todas las filas vencidas.
 
-La tarea existente de métricas no apareció entre los schedules visibles de esta sesión; solo se observó el scheduler pausado de Instagram. Por seguridad, no se modificó ese scheduler. La actualización de la tarea de métricas debe ejecutarse desde su propia sesión/tarea para no alterar la programación de Instagram.
+La tarea existente de métricas no apareció entre los schedules visibles de esta sesión; solo se observó el scheduler pausado de Instagram. Fernando decidió crear una tarea independiente de métricas. Por seguridad, no se modificó el scheduler de Instagram. La nueva tarea debe usar su propio schedule cada 48 horas, a las 22:15 de `America/Matamoros`, comenzando el 2026-08-16.
 
 ## 6. Propuesta de contenido para el 2026-08-08 (pasar por rúbrica ≥8.5 antes de publicar)
 

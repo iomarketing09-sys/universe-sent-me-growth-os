@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-15
-**Versión:** 1.74
+**Versión:** 1.75
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -115,6 +115,15 @@
 - Se confirma que **un solo despertar por ejecución es suficiente** para las nueve publicaciones: el extractor recorre las filas vencidas, consulta solo los Meta Post IDs elegibles y no requiere un despertar por publicación.
 - La tarea de métricas no apareció entre los schedules visibles de esta sesión; solo se observó `USM Instagram 15-16 Agosto`, pausado. No se modificó ese scheduler para evitar alterar una tarea distinta.
 - Se actualizaron `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` a v1.7 y `Operations/Research/2026-08-08_Ciclo_Diario_Metricas_24h.md` a v1.1 (Superseded).
+
+---
+
+## [1.2.75] — 2026-08-16 (Manus)
+### Separación de la tarea de métricas
+- Fernando decidió crear una tarea independiente para la revisión de métricas, en lugar de reutilizar la sesión que contiene el scheduler pausado de Instagram.
+- La nueva tarea deberá ejecutarse cada 48 horas a las 22:15 de `America/Matamoros`, comenzando el 2026-08-16, con un solo despertar por ejecución y procesamiento agrupado de todas las filas vencidas.
+- La tarea `USM Instagram 15-16 Agosto` no fue modificada. La creación del nuevo schedule requiere abrir una tarea independiente, porque esta sesión ya tiene un schedule asociado y el CLI no expone aquí una credencial para crear otra tarea programáticamente.
+- Se actualizó `Operations/Research/2026-08-08_Ciclo_Diario_Metricas_24h.md` para registrar la decisión.
 
 ---
 
