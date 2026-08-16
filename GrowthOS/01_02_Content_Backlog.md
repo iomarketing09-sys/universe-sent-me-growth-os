@@ -3,8 +3,8 @@
 **Propósito:** Lista maestra de todo el contenido pendiente ordenado por prioridad estratégica.
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-14
-**Versión:** 1.3
+**Última actualización:** 2026-08-16
+**Versión:** 1.4
 **Autor:** Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_01_Calendario_Semanal.md`
 
@@ -34,7 +34,7 @@
 | CNT-008 | Elara — cartas mágicas y astrología | @char_USM_elara | Foto / Reel / Carrusel | Idea | No |
 | CNT-015 | Fantasma — contenido contemplativo | @char_USM_fantasma | Reel / Foto / Frase | **Publicado** (5 Ago, cascada FB/IG/TT/YT) | No* |
 | CNT-021 | Behind the scenes — pipeline de producción IA | N/A (meta) | Reel / Carrusel | Idea | No |
-| CNT-004 | La Búsqueda del Frasco Olvidado (mini-historia) | @char_USM_universe | Carruseles + Reels | Bloqueado | Sí (5 contradicciones) |
+| CNT-004 | La Búsqueda del Frasco Olvidado (mini-historia) | @char_USM_universe | Carruseles + Reels | Diferido — no desarrollar por ahora | Sí — revisión canónica pendiente si se retoma |
 | CNT-005 | HB-001: Wilfred existencial vs humorístico | @char_USM_wilfred | Reel (2 variantes) | Pendiente de aprobación | Sí (Fernando) |
 | CNT-025 | Experimentos Growth OS — tests A/B | Variable | Reel (parejas) | Pendiente de aprobación | Sí (Fernando) |
 

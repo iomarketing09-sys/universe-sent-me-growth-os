@@ -1,0 +1,37 @@
+{
+  "title": "Preparación P2 de baseline Facebook e Instagram — lote 15–16",
+  "purpose": "Registrar el control de preparación para actualizar la baseline común sin escribir métricas 24/72h no disponibles.",
+  "status": "Active",
+  "created": "2026-08-16",
+  "updated": "2026-08-16",
+  "version": "1.0",
+  "author": "Manus AI (CGO)",
+  "related_documents": [
+    "GrowthOS/08_00_Metricas_Baseline_Plataformas.md",
+    "Operations/Research/2026-08-15_ExperimentLog.csv",
+    "Operations/Research/2026-08-15_Publication_Log.csv",
+    "Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md",
+    "Operations/Research/2026-08-15_Deuda_Documental_P2.md"
+  ],
+  "organization": "Operations/Research",
+  "source": "ExperimentLog.csv — local deterministic readiness check",
+  "observation_filter": [
+    "OBS-FB-15_16-*",
+    "OBS-IG-15_16-*"
+  ],
+  "cohort_rows": 12,
+  "facebook_rows": 9,
+  "instagram_rows": 3,
+  "with_meta_id": 12,
+  "facebook_with_24h": 0,
+  "facebook_with_72h": 0,
+  "facebook_pending_24h_verdicts": 9,
+  "instagram_active_for_learning": 0,
+  "decision": "No actualizar numéricamente la baseline; esperar snapshots válidos del cierre P0.",
+  "integrity_rules": {
+    "do_not_use_lifetime_as_24h": true,
+    "do_not_mix_facebook_and_instagram_numerators": true,
+    "do_not_close_hypotheses_without_snapshots": true,
+    "deleted_instagram_rows_remain_excluded": true
+  }
+}

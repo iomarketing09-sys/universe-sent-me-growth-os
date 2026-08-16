@@ -4,7 +4,7 @@ purpose: "Evaluar de extremo a extremo la integración entre estrategia, documen
 status: Review
 created: 2026-08-15
 updated: 2026-08-16
-version: "1.6"
+version: "1.7"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/00_Índice.md"
@@ -48,11 +48,11 @@ La auditoría original identificó varias brechas que ya fueron resueltas en el 
 | Facebook 15–16 | Identidad reconciliada; faltan snapshots 24/72h válidos y cierre de hipótesis. | P0 |
 | Instagram 15–16 | 2608030 permanece como publicación manual activa documentada. `260583`, `2608036` y `2608060` tienen historial eliminado y quedan excluidos del aprendizaje activo; la prueba de `2608060` a las 19:00 sigue pendiente al momento de esta auditoría. | P1 |
 | Scheduler Instagram | La tarea está temporalmente activa como una ejecución única a las 19:00 con `runAsNewTask=false`; debe verificarse el resultado y quedar pausada o expirada después, no recurrente. | P1 |
-| Canon | Silvio/Payaso está resuelto; `CNT-004` sigue siendo la única contradicción narrativa sustantiva, con capítulos 10, 8, Elara/tarot y capítulo 7 pendientes de revisión/aprobación. | P1 |
+| Canon | Silvio/Payaso está resuelto. `CNT-004` queda diferido y fuera de desarrollo; conserva revisión canónica pendiente si algún día se retoma. | P2 diferido |
 | Aprendizaje | La revisión agrupada de métricas está documentada como activa cada 48h a las 22:15; faltan resultados válidos y cierre de `HB-003`, `HB-004` y `HB-005`. | P0 |
 | Calendario 17–30 | Los 74 slots están completos y programados; falta que se publiquen y extraer métricas. El movimiento de los 46 archivos del manifiesto ya está verificado en `08 Agosto`. | P1 |
 | Fuente maestra | `Content_Inventory.csv` tiene 39 filas y no contiene coincidencias textuales directas para las 71 referencias `260####` distintas del calendario 17–30; falta reconciliación progresiva sin inventar CNT. | P1 |
-| Comunidad | Ledger inicial de 9 comentarios y 4 respuestas publicado; falta revisar deltas nuevos, cobertura y tiempo de respuesta. | P2 |
+| Comunidad | Ledger con 15 comentarios reales y 4 respuestas publicadas; el primer delta P2 añadió 6 filas, sin comentarios cualitativos nuevos ni respuestas pendientes. Falta continuar con la siguiente ventana incremental. | P2 |
 | Automatizaciones heredadas | Make permanece retirado; la tarea histórica de Instagram no debe convertirse en ruta permanente sin un playbook autocontenido y una prueba de no-op. | P1 |
 
 El estado live consultado a las 18:02 CDT muestra una ejecución única activa para las 19:00 de `America/Matamoros`, con cron `0 0 19 16 8 *`, `runAsNewTask=false`, sin repetición y expiración `2026-08-17T01:30:00Z`. El detalle limita la operación a `2608060`, exige `media → FINISHED → media_publish`, prohíbe `scheduled_publish_time`, Facebook, Drive y `260583`. Esta ejecución es una prueba, no una reactivación permanente. En paralelo, la tarea independiente de métricas quedó documentada como activa según `ed663ee`, con identificador `egAl6a7WZExFrDPd8tIY1B`, cron `0 15 22 */2 * *`, zona `America/Matamoros` y un solo despertar por ejecución.
@@ -71,12 +71,12 @@ La calificación es una herramienta de diagnóstico CGO, no una métrica oficial
 |---|---|---:|---|
 | Estrategia editorial y experimento | Ámbar | 8/10 | Las hipótesis HB-003, HB-004 y HB-005 están bien planteadas y los 74 slots ya están definidos; la prueba debe evaluarse con datos reales de publicación y métricas, no con el calendario por sí solo. |
 | Arquitectura de calendario y estados | Ámbar | 5/10 | La máquina de estados existe, pero conviven Markdown, CSV, inventario maestro y calendarios históricos con convenciones diferentes. |
-| Canon y governance | Ámbar | 6/10 | Silvio/Payaso está resuelto y el bridge está sincronizado; `CNT-004` continúa bloqueado por contradicciones narrativas sustantivas. |
+| Canon y governance | Ámbar | 7/10 | Silvio/Payaso está resuelto y el bridge está sincronizado; `CNT-004` conserva contradicciones narrativas sustantivas, pero su desarrollo fue diferido y ya no bloquea el trabajo activo. |
 | Inventario, Drive y reuse | Ámbar | 6/10 | Drive ya muestra 46 de 46 archivos del manifiesto en `08 Agosto`, sin copias ni IDs restantes en origen; el inventario de 39 filas todavía no cubre las referencias de asset del calendario 17–30. |
 | Publicación Facebook | Verde | 9/10 | Meta devuelve 74/74 posts del calendario 17–30 programados y verificados, además de 2 posts programados previos; la ruta Page Access Token + Page Feed está validada. |
 | Publicación Instagram | Ámbar | 6/10 | La API, la cuenta y los permisos responden; la programación nativa no está disponible. La prueba única de las 19:00 debe confirmar si el contexto actual ejecuta correctamente el flujo antes de decidir si se conserva cualquier tarea. |
-| Métricas y ciclo de aprendizaje | Rojo | 5/10 | El `ExperimentLog` y la tarea de revisión existen, pero las columnas 24/72h están vacías y `HB-003`, `HB-004` y `HB-005` siguen abiertos. |
-| Comunidad y comentarios | Ámbar | 7/10 | Ya existe conversación orgánica y una propuesta sólida de moderación, pero no hay todavía registro operativo de comentarios ni cobertura de respuesta. |
+| Métricas y ciclo de aprendizaje | Rojo | 5/10 | El `ExperimentLog` y la tarea de revisión existen, pero las columnas 24/72h del lote activo siguen vacías y `HB-003`, `HB-004` y `HB-005` siguen abiertos; el P2 de baseline depende de este cierre P0. |
+| Comunidad y comentarios | Ámbar | 7/10 | Ya existe conversación orgánica, ledger operativo y flujo de aprobación humana; el primer delta P2 no produjo comentarios cualitativos nuevos y la siguiente ventana aún está pendiente. |
 | Documentación y fuente única de verdad | Ámbar | 6/10 | GitHub es la fuente oficial, hay enlaces internos válidos, los documentos de control ya no presentan Make como ruta activa y permanece deuda de metadatos en documentos históricos. |
 
 **Madurez integral estimada: 6/10.** El sistema puede operar, pero todavía requiere intervención humana y reconciliación documental para evitar decisiones contradictorias.
@@ -129,7 +129,7 @@ Hasta las 18:02 CDT no había evidencia de nuevas publicaciones durante esta pru
 
 La revisión cruzada corrigió el diagnóstico anterior. `GrowthOS/Canon_Contradictions_Report.md` registra la contradicción #5 como `RESUELTO` el 3 de agosto, con Silvio confirmado como nombre propio de El Payaso y diseño corregido en el commit canónico `8e9fe9a`. La ficha de Claude confirmó que el HEAD real es `1daaad5`; el bridge ya está resincronizado contra esa referencia y Silvio queda cerrado, sin aprobación pendiente.
 
-El único registro que conserva una contradicción narrativa sustantiva en el inventario es `CNT-004`, asociado a la mini-historia “La Búsqueda del Frasco Olvidado”. Las otras 21 filas que antes compartían `Canon_Review_Required` se reclasificaron con `Motivo_Revision_Normalizado`: aprobación administrativa, restricción no bloqueante, reconciliación de inventario o identidad reconciliada sin conflicto canónico evidente. Ningún cambio convierte `Estado_Canon=Revision` en `Aprobado`.
+El único registro que conserva una contradicción narrativa sustantiva en el inventario es `CNT-004`, asociado a la mini-historia “La Búsqueda del Frasco Olvidado”. Por decisión de Fernando, su desarrollo queda diferido y fuera de la cola activa. Las otras 21 filas que antes compartían `Canon_Review_Required` se reclasificaron con `Motivo_Revision_Normalizado`: aprobación administrativa, restricción no bloqueante, reconciliación de inventario o identidad reconciliada sin conflicto canónico evidente. Ningún cambio convierte `Estado_Canon=Revision` en `Aprobado`.
 
 ### 5.4 Las referencias activas a automatizaciones heredadas fueron retiradas
 
@@ -163,7 +163,7 @@ La deuda no debe resolverse reescribiendo todo de una vez. Conviene normalizar p
 
 | Etapa | Fuente o componente | Estado actual | Brecha principal |
 |---|---|---|---|
-| Canon | Repo `universe-sent-me-1` + caché `Integracion_Growth_OS.md` | Parcial | Silvio ya está sincronizado; CNT-004 y algunas fichas administrativas siguen en revisión. |
+| Canon | Repo `universe-sent-me-1` + caché `Integracion_Growth_OS.md` | Parcial | Silvio ya está sincronizado; CNT-004 conserva revisión pendiente, pero está diferido y no bloquea el lote activo. |
 | Idea e inventario | `Content_Inventory.csv`, Drive, colas | Parcial | IDs, estados y bloqueos no están unificados. |
 | Selección editorial | Calendario Markdown/CSV + HypothesisBank | Funcional pero fragmentada | Varias fuentes y aprobación de plan mezclada con aprobación de pieza. |
 | Producción | 35 nuevos + 39 reuse en calendario | Operativa para el lote actual | El calendario está completo; la brecha es reconciliar identidad de los assets y esperar resultados, no generar 46 piezas nuevas. |
@@ -180,13 +180,13 @@ La deuda no debe resolverse reescribiendo todo de una vez. Conviene normalizar p
 | Prioridad | Riesgo | Probabilidad | Impacto | Criterio de cierre |
 |---|---|---:|---:|---|
 | P1 | El scheduler de Instagram está limpio y pausado, pero conserva `runMode=ask_user` y requiere una prueba de no-op antes de reactivarse. | Media | Medio | Verificar modo compatible y ejecutar `nothing_due` sin publicar. |
-| P1 | CNT-004 conserva contradicciones narrativas sustantivas; el resto de los antiguos `Canon_Review_Required` debe leerse por motivo normalizado. | Media | Medio | Mantener CNT-004 bloqueado para esa mini-historia y no confundir revisiones administrativas con aprobación canónica. |
+| P2 diferido | CNT-004 conserva contradicciones narrativas sustantivas, pero Fernando decidió no desarrollarlo por ahora. | Baja | Medio | Mantenerlo fuera de producción y de programación; si se retoma, revisar texto fuente y solicitar aprobación canónica. |
 | P0 | El ciclo de aprendizaje sigue abierto, pero la tarea de revisión ya está activa; todavía no hay métricas 24/72 horas ni veredictos cerrados para el lote 15–16. | Alta | Alto | Esperar la ejecución de 22:15, validar la evidencia, cerrar `HB-003`/`HB-004`/`HB-005` y actualizar la baseline. |
 | P1 | Calendarios e inventarios usan estados, IDs y estructuras no uniformes. | Alta | Alto | Esquema maestro con ID de pieza, asset, plataforma, estado de canon, estado de publicación e IDs Meta. |
 | P1 | El experimento 17–30 tiene 46 assets nuevas sin generar/aprobar y 38 assets nuevos de Drive pendientes de revisión. | Alta | Alto | Confirmar capacidad, producir y aprobar la cola; no rellenar huecos con reuse improvisado. |
-| P2 | Permanecen menciones históricas de automatizaciones heredadas en changelog, archivo, auditorías antiguas y algunos blueprints. | Baja | Bajo | Conservarlas como trazabilidad; no tratarlas como arquitectura activa. |
-| P2 | La comunidad tiene comentarios, assets de respuesta y un ledger operativo con su primer lote real; las cuatro respuestas ya fueron publicadas con IDs Meta registrados. Falta medir cobertura y tiempos en los siguientes deltas. | Media | Medio | Mantener la tabla anonimizada y ejecutar dos ventanas de revisión. |
-| P2 | La medición de Instagram y Facebook no está consolidada en una baseline común actualizada. | Media | Medio | Actualizar baseline después del lote 15–16 y separar métricas de canal. |
+| P2 controlado | Permanecen menciones históricas de automatizaciones heredadas en changelog, archivo, auditorías antiguas y algunos blueprints. | Baja | Bajo | Control verificado: conservarlas como trazabilidad; no tratarlas como arquitectura activa. |
+| P2 | La comunidad tiene comentarios, assets de respuesta y un ledger operativo; las cuatro respuestas del primer lote están publicadas con IDs Meta y el primer delta incremental ya fue revisado. | Baja | Bajo | Mantener la tabla anonimizada y ejecutar la siguiente ventana solo sobre comentarios posteriores al cursor vigente. |
+| P2 | La medición de Instagram y Facebook no está consolidada en una baseline común actualizada; el control del 16 de agosto confirmó 0/9 snapshots 24h y 0/9 snapshots 72h para Facebook activo. | Media | Medio | Actualizar baseline después del lote 15–16 y separar métricas de canal, sin escribir valores prematuros. |
 
 ## 8. Plan CGO recomendado
 
@@ -202,7 +202,7 @@ En paralelo, debe existir una fila maestra por pieza que conecte `CNT-####`, ref
 
 ### Próximos 14 días: ejecutar la prueba sin contaminarla
 
-La prueba Aug 17–30 ya está programada en Facebook con 35 nuevas y 39 reuse. Debe analizarse como una condición experimental completa, registrando cuándo cada post pasa de `Programada` a `Publicado` y extrayendo solo ventanas 24/72h válidas. Instagram debe medirse aparte y no mezclarse con las hipótesis de Facebook; cualquier fila eliminada debe quedar fuera del aprendizaje activo.
+La prueba Aug 17–30 ya está programada en Facebook con 35 nuevas y 39 reuse. Debe analizarse como una condición experimental completa, registrando cuándo cada post pasa de `Programada` a `Publicado` y extrayendo solo ventanas 24/72h válidas. Instagram debe medirse aparte y no mezclarse con las hipótesis de Facebook; cualquier fila eliminada debe quedar fuera del aprendizaje activo. CNT-004 no se incluye en esta expansión editorial porque su desarrollo está diferido.
 
 La revisión de comentarios debe realizarse el mismo día y entre 24–48 horas después, priorizando publicaciones con cinco o más comentarios, preguntas, historias, críticas y comentarios sustantivos. Las respuestas públicas y los assets de reacción deben continuar bajo criterio humano durante esta fase.
 

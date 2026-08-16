@@ -27,6 +27,6 @@
 ## Reglas de Priorización Aplicadas
 
 1. **Regla de Reutilización:** `CNT-006` (Tarot) se programó primero por ser un activo evergreen de alta demanda y bajo costo.
-2. **Regla de Aprobación:** Ninguna pieza bloqueada por canon (ej. la mini-historia serializada `CNT-004` o la variante con "Silvio" `CNT-009`) ha sido asignada.
+2. **Regla de Aprobación:** Ninguna pieza con revisión canónica pendiente ha sido asignada; `CNT-004` está diferido y no entra en la programación hasta una eventual revisión y aprobación.
 3. **Regla de Equilibrio:** Se alternan los personajes principales (Universe, Wilfred, Fantasma, Elara) a lo largo de la semana para evitar la fatiga de audiencia.
 4. **Regla de Hipótesis:** Se asignaron espacios específicos para validar las hipótesis del Growth OS (`CNT-001` y `CNT-025`).

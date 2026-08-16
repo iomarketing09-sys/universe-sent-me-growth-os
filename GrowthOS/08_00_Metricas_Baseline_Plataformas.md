@@ -3,10 +3,10 @@
 **Propósito:** Registro de métricas reales extraídas de Windsor.ai. Fuente de verdad para comparaciones de rendimiento, calibración de hipótesis y decisiones de canal. No es un resumen de sesión — es un documento vivo que debe actualizarse con cada ciclo de análisis.
 **Estado:** Active
 **Fecha de creación:** 2026-08-03
-**Última actualización:** 2026-08-15
-**Versión:** 1.2
+**Última actualización:** 2026-08-16
+**Versión:** 1.3
 **Autor:** Claude (Guardián de Canon, extracción directa vía Windsor.ai MCP)
-**Documentos relacionados:** `07_00_Registro_Maestro_Reels.md`, `06_00_Reglas_Aprendizaje_Tendencias.md`, `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Research/2026-08-15_Publication_Log.csv`, `../Operations/Research/2026-08-15_ExperimentLog.csv`
+**Documentos relacionados:** `07_00_Registro_Maestro_Reels.md`, `06_00_Reglas_Aprendizaje_Tendencias.md`, `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Research/2026-08-15_Publication_Log.csv`, `../Operations/Research/2026-08-15_ExperimentLog.csv`, `../Operations/Research/2026-08-16_P2_Comunidad_Delta_01.json`, `../Operations/Research/2026-08-16_P2_Baseline_Preparacion_01.json`
 
 > **Metodología:** Datos extraídos directamente desde Windsor.ai el 2026-08-03. Período cubierto: últimos 14 días con datos del día actual incluidos. Cuentas: Facebook Page @UniverseSentMe (ID `1036844829507460`) e Instagram @universe_sent_me_0326 (ID `17841462696378190`). Los datos de IG publicados hoy mismo pueden mostrar cero por latencia de la API.
 
@@ -133,7 +133,22 @@ El reporte comparará por separado: (a) frecuencia y mediana de interacciones po
 
 No se emitirá un veredicto de canal hasta completar el lote de métricas y armonizar las definiciones de interacción. La baseline común es un marco de comparación, no una autorización para mezclar los numeradores de Facebook e Instagram.
 
-## 8. Próxima Actualización
+## 8. Control P2 de preparación — 16 de agosto de 2026
+
+La auditoría de preparación se ejecutó sobre los identificadores de observación `OBS-FB-15_16-*` y `OBS-IG-15_16-*`, evitando contar filas históricas que comparten `Experiment_ID`. El lote contiene **12 observaciones**: nueve de Facebook y tres de Instagram. Las nueve publicaciones activas de Facebook tienen Meta ID, pero **0/9** tienen `Interacciones_24h` y **0/9** tienen `Interacciones_72h`; las tres filas de Instagram están documentadas como operación o excluidas del aprendizaje activo. Por ello, la baseline común no se actualiza numéricamente en esta revisión.
+
+| Control | Resultado | Decisión |
+|---|---:|---|
+| Observaciones del lote 15–16 | 12 | Separar por plataforma. |
+| Facebook activo | 9 | Mantener pendiente de métricas 24/72h. |
+| Instagram activo para aprendizaje | 0 | No mezclar filas eliminadas; conservar trazabilidad. |
+| Snapshots 24h válidos | 0 | No escribir métricas. |
+| Snapshots 72h válidos | 0 | No escribir métricas. |
+| Actualización numérica de baseline | No ejecutada | Esperar el cierre P0 del extractor. |
+
+La siguiente actualización numérica debe ejecutarse después de que el extractor de 48 horas produzca snapshots válidos para Facebook. La comunidad se mide por separado mediante `Community_Engagement_Log.csv`; sus cuatro comentarios vacíos y dos menciones automáticas del delta del 16 de agosto no se suman como interacción cualitativa.
+
+## 9. Próxima Actualización
 
 Este documento debe actualizarse:
 - Cada domingo (ciclo semanal de análisis)

@@ -80,13 +80,13 @@ La siguiente tabla resume únicamente los cambios confirmados por la ficha de si
 
 | Elemento | Estado vigente | Acción requerida |
 |---|---|---|
-| Capítulo 10 — Universe omnisciente | Contradicción activa | Reescribir: Universe no puede revelar que conocía todo el plan ni actuar como orquestador omnisciente. |
-| Capítulo 8 — moralización de Wilfred | Contradicción activa | Reescribir diálogo y CTA para que la lección se sienta, no se nombre ni se diagnostique. |
-| Elara como tarotista | Conflicto de diferenciación activo | Reasignar el ángulo hacia astrología y naturaleza; no duplicar el rol tarotista de Universe. |
-| Capítulo 7 — Fantasma | Relectura requerida | Revisar el texto directo para determinar si “salvar el día” resuelve visiblemente su identidad congelada. La regla canónica no cambió. |
+| Capítulo 10 — Universe omnisciente | Pendiente canónico, desarrollo diferido | Si se retoma, revisar que Universe no revele que conocía todo el plan ni actúe como orquestador omnisciente. |
+| Capítulo 8 — moralización de Wilfred | Pendiente canónico, desarrollo diferido | Si se retoma, revisar diálogo y CTA para que la lección se sienta, no se nombre ni se diagnostique. |
+| Elara como tarotista | Diferenciación de producción pendiente, desarrollo diferido | Si se retoma, reasignar el ángulo hacia astrología y naturaleza; no duplicar el rol tarotista de Universe. |
+| Capítulo 7 — Fantasma | Relectura pendiente, desarrollo diferido | Si se retoma, revisar el texto directo para determinar si “salvar el día” resuelve visiblemente su identidad congelada. La regla canónica no cambió. |
 | Silvio / Contradicción #5 | Resuelto | No es un bloqueo vigente; tratar Silvio como canon cerrado. |
 
-Estos conflictos no representan cambios del canon remoto. `CNT-004` permanece `Blocked_Operational` en el inventario del Growth OS hasta que la historia sea corregida y aprobada por Fernando o Claude.
+Estos conflictos no representan cambios del canon remoto. Por decisión operativa de Fernando, `CNT-004` queda **diferido y fuera de desarrollo** por ahora. El inventario conserva `Estado_Canon=Revision`, `Canon_Review_Required` y `Motivo_Revision_Normalizado=Canon_Contradiccion_Sustantiva`; únicamente cambia el estado operativo a `Deferred_Operational` y el estado de producción a `Diferido`. Si el proyecto se retoma, requerirá la revisión del texto fuente y aprobación explícita de Fernando o Claude.
 
 ---
 

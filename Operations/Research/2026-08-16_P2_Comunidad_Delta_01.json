@@ -1,0 +1,55 @@
+{
+  "title": "Delta P2 de comunidad — Facebook — 16 de agosto de 2026",
+  "purpose": "Conservar evidencia mínima, anonimizada e idempotente de la revisión incremental de comentarios de Facebook.",
+  "status": "Active",
+  "created": "2026-08-16",
+  "updated": "2026-08-16",
+  "version": "1.0",
+  "author": "Manus AI (CGO)",
+  "related_documents": [
+    "Operations/Research/2026-08-15_Community_Engagement_Log.md",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
+    "Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md",
+    "Operations/Research/2026-08-15_Deuda_Documental_P2.md",
+    "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
+  ],
+  "organization": "Operations/Research",
+  "source": "Meta Graph API v26 — Facebook Page feed and comments",
+  "page_id": "1036844829507460",
+  "query_since": "2026-08-16T01:45:00Z",
+  "executed_at": "2026-08-16T23:41:56Z",
+  "posts_returned": 3,
+  "post_ids": [
+    "1036844829507460_122150560083072582",
+    "1036844829507460_122150559981072582",
+    "1036844829507460_122150559873072582"
+  ],
+  "comments_returned": 6,
+  "new_comment_ids": [
+    "122150560083072582_2163324611195836",
+    "122150559981072582_1374355454096145",
+    "122150559981072582_1600827945012626",
+    "122150559981072582_4583774341900775",
+    "122150559873072582_933934449728408",
+    "122150559873072582_1738197423962274"
+  ],
+  "classification": {
+    "empty_comments": 4,
+    "automatic_follower_mentions": 2,
+    "qualitative_comments_requiring_response": 0,
+    "responses_published": 0,
+    "moderation_escalations": 0
+  },
+  "ledger_result": {
+    "rows_appended": 6,
+    "duplicate_rows_skipped": 0,
+    "response_coverage_new_qualitative": "not_applicable",
+    "next_cursor": "2026-08-16T23:41:56Z"
+  },
+  "safety": {
+    "no_personal_profiles_stored": true,
+    "no_meta_write_performed": true,
+    "no_reply_published": true,
+    "no_scheduler_created": true
+  }
+}

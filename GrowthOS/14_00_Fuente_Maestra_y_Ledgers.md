@@ -80,7 +80,7 @@ La fuente maestra debe conservar los campos narrativos y de flujo que ya existen
 | `Asset_Filename` | Nombre exacto del archivo. |
 | `Drive_ID` | Identificador de Google Drive cuando exista. |
 | `Estado_Canon` | `Libre`, `Revision`, `Aprobado`, `Bloqueado`. |
-| `Estado_Produccion` | `Idea`, `En_Produccion`, `Asset_Listo`, `Pendiente_Revision`. |
+| `Estado_Produccion` | `Idea`, `En_Produccion`, `Asset_Listo`, `Pendiente_Revision`, `Diferido`. |
 | `Estado_Publicacion` | `No_Publicada`, `Programada`, `Publicada`, `Archivada`, `Error`. |
 | `Ultima_Sincronizacion` | Fecha de la última reconciliación del registro. |
 | `Motivo_Revision_Normalizado` | Clasifica por qué una pieza permanece en `Revision` sin convertir el motivo en una aprobación de canon. |
@@ -93,14 +93,14 @@ Estos campos deben eliminar la necesidad de interpretar texto libre como “Draf
 
 | Motivo | Uso |
 |---|---|
-| `Canon_Contradiccion_Sustantiva` | Existe una contradicción narrativa o de diseño que sí requiere revisión canónica. Actualmente: `CNT-004`. |
+| `Canon_Contradiccion_Sustantiva` | Existe una contradicción narrativa o de diseño que sí requiere revisión canónica. `CNT-004` conserva este motivo, aunque su desarrollo está diferido. |
 | `Canon_Aprobacion_Administrativa` | La pieza espera una aprobación o ficha formal, sin que el inventario evidencie una contradicción sustantiva. |
 | `Canon_Restriccion_No_Bloqueante` | Existe una regla de continuidad que debe observarse, pero no constituye por sí sola un bloqueo de canon para la capa libre. |
 | `Canon_Resuelto_Reconciliacion_Pendiente` | La identidad canónica fue resuelta, pero falta cerrar la relación de inventario o asset. Actualmente: `CNT-009`, cuyo nombre Silvio está confirmado en `8e9fe9a`. |
 | `Inventario_Reconciliacion_Pendiente` | Falta una coincidencia CNT↔260/Drive; no es una aprobación creativa. |
 | `Identidad_Reconciliada_Sin_Conflicto_Canon_Evidente` | La pieza fue creada o reconciliada a partir de asset, caption y Meta ID, sin evidencia de contradicción canónica. Actualmente: `CNT-031`–`CNT-039`. |
 
-La reclasificación del 15 de agosto dejó **1** registro en `Canon_Review_Required` (`CNT-004`), **4** en `Canon_Constrained`, **1** en `Canon_Partial` y **33** en `Canon_Clear_or_Unverified`. Esto no aprueba ninguna pieza: el estado operativo `Estado_Canon=Revision` se conserva y cualquier transición a `Aprobado` sigue reservada a Fernando o Claude. La evidencia completa está en `Operations/Research/2026-08-15_Reclasificacion_Canon_vs_Reconciliacion.json`.
+La reclasificación del 15 de agosto dejó **1** registro en `Canon_Review_Required` (`CNT-004`), **4** en `Canon_Constrained`, **1** en `Canon_Partial` y **33** en `Canon_Clear_or_Unverified`. CNT-004 queda fuera de desarrollo por decisión operativa, pero conserva `Estado_Canon=Revision`; cualquier transición a `Aprobado` sigue reservada a Fernando o Claude. La evidencia completa está en `Operations/Research/2026-08-15_Reclasificacion_Canon_vs_Reconciliacion.json`.
 
 ## 5. Diseño de bajo consumo de tokens
 
@@ -128,7 +128,7 @@ El mismo procedimiento aplica a las publicaciones posteriores: registrar primero
 
 El `ExperimentLog` contiene seis observaciones históricas, nueve publicaciones reales de Facebook del 15–16 de agosto y una publicación manual real de Instagram. El `Publication_Log` enlaza las nueve publicaciones de Facebook con `CNT-031`–`CNT-039`, conserva la prueba de Instagram eliminada manualmente y registra también la publicación manual de Instagram de `CNT-031`. Las métricas 24/72 horas de las nueve publicaciones de Facebook quedan pendientes hasta que exista una ventana temporal válida.
 
-El `Community_Engagement_Log.csv` se creó el 15 de agosto y ya contiene el primer lote verificable de nueve comentarios de `1036844829507460_122148874371072582`. Las cuatro respuestas aprobadas fueron publicadas el 2026-08-16 y sus `Respuesta_Meta_ID` quedaron registrados en el ledger. La muestra histórica de 67 comentarios se conserva como análisis agregado y no se transforma retroactivamente en filas. Las futuras revisiones deben recuperar solo el delta nuevo, deduplicar por `Comentario_ID` y mantener respuestas y moderación bajo aprobación humana.
+El `Community_Engagement_Log.csv` contiene 15 comentarios reales: nueve del primer lote de `1036844829507460_122148874371072582` y seis del delta del 16 de agosto. Las cuatro respuestas aprobadas fueron publicadas el 2026-08-16 y sus `Respuesta_Meta_ID` quedaron registrados en el ledger. El delta más reciente contiene cuatro comentarios vacíos y dos menciones automáticas `@seguidores`, sin comentarios cualitativos nuevos ni respuestas publicadas. La muestra histórica de 67 comentarios se conserva como análisis agregado y no se transforma retroactivamente en filas. Las futuras revisiones deben recuperar solo el delta nuevo, deduplicar por `Comentario_ID` y mantener respuestas y moderación bajo aprobación humana.
 
 El lote 1 de normalización cubrió inicialmente 28 filas y, tras resolver las excepciones, `Content_Inventory.csv` llegó a 30 registros. La reconciliación del calendario 15–16 añadió nueve piezas de identidad nuevas, por lo que el inventario contiene ahora 39 registros. Se preservaron todas las columnas originales y se añadieron campos normalizados para estado operativo, estado de canon, asset confirmado, asset candidato, relaciones y trazabilidad de reconciliación.
 
@@ -156,7 +156,7 @@ El 15 de agosto de 2026 se aplicó el primer lote de unificación al inventario 
 
 La validación posterior al lote reconcilió 39 IDs únicos, 11 piezas con publicación Meta enlazada (`CNT-002`, `CNT-023` y `CNT-031`–`CNT-039`) y 28 piezas sin publicación confirmada. Se preservaron los estados históricos y no se confirmó ningún asset `260####` sin evidencia.
 
-La unificación todavía no está completa. Los siguientes trabajos quedan explícitamente separados para evitar una migración riesgosa: completar métricas 24/72 horas en `Publication_Log`, cerrar el aprendizaje de `HB-003`, `HB-004` y `HB-005`, resolver `CNT-004`, convertir calendarios/colas en exportaciones verificables del inventario y poblar progresivamente el `Community_Engagement_Log` con comentarios reales. El mapeo de las nueve órdenes del calendario 15–16 ya está cerrado mediante `CNT-031`–`CNT-039`. Estos pendientes restantes son de medición, integración, comunidad y aprobación; no deben resolverse inventando IDs.
+La unificación todavía no está completa. Los siguientes trabajos quedan explícitamente separados para evitar una migración riesgosa: completar métricas 24/72 horas en `Publication_Log`, cerrar el aprendizaje de `HB-003`, `HB-004` y `HB-005`, convertir calendarios/colas en exportaciones verificables del inventario y poblar progresivamente el `Community_Engagement_Log` con comentarios reales. `CNT-004` queda diferido y no forma parte del lote activo de desarrollo; si se retoma, requerirá revisión canónica y aprobación. El mapeo de las nueve órdenes del calendario 15–16 ya está cerrado mediante `CNT-031`–`CNT-039`. Estos pendientes restantes son de medición, integración, comunidad y aprobación; no deben resolverse inventando IDs.
 
 ## 8. Reglas de gobernanza
 

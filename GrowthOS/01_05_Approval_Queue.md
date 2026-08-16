@@ -3,8 +3,8 @@
 **Propósito:** Lista de contenido que únicamente espera revisión de Claude (validación de canon) o aprobación de Fernando (revisión narrativa/estratégica) antes de poder ser programado.
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-14
-**Versión:** 1.3
+**Última actualización:** 2026-08-16
+**Versión:** 1.4
 **Autor:** Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_02_Content_Backlog.md`
 
@@ -12,14 +12,14 @@
 
 ## Contenido Pendiente de Revisión / Aprobación
 
-Este es el cuello de botella operativo del calendario. Ninguna pieza en esta cola puede ser publicada hasta que su estado cambie a `Aprobado`.
+Este es el cuello de botella operativo del calendario. Ninguna pieza en esta cola puede ser publicada hasta que su estado cambie a `Aprobado`. CNT-004 se conserva como referencia de revisión futura, pero queda fuera de la cola activa por decisión operativa.
 
 ### Pendiente de Revisión de Canon (Claude / Manus)
 
 | ID_Pieza | Título | Personaje Principal | Motivo de Revisión | Acción Requerida |
 | :--- | :--- | :--- | :--- | :--- |
 | CNT-001 | Mi gato: tarotista (meme-to-reel) | @char_USM_universe | Pendiente de revisión de continuidad visual | Verificar que los 3 shots generados mantengan la consistencia del outfit de Tarotista. |
-| CNT-004 | La Búsqueda del Frasco Olvidado | @char_USM_universe | 5 contradicciones de canon activas | Reescribir capítulos 7, 8 y 10. Reasignar rol de Elara. Confirmar nombre "Silvio". |
+| CNT-004 | La Búsqueda del Frasco Olvidado | @char_USM_universe | Diferido — no desarrollar por ahora; revisión canónica pendiente si se retoma | No entra en la cola activa. Si se reactiva, revisar texto fuente de capítulos 7, 8 y 10 y la escena de Elara; no reabrir Silvio, que permanece cerrado. |
 
 ### Pendiente de Aprobación Estratégica (Fernando)
 

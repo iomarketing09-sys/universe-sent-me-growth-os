@@ -4,9 +4,27 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-16
-**Versión:** 1.91
+**Versión:** 1.93
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.93] — 2026-08-16 (Manus)
+### Primer lote P2 de comunidad y preparación de baseline
+- La consulta incremental de comentarios se ejecutó desde el cursor `2026-08-16T01:45:00Z` y devolvió 3 publicaciones propias con 6 comentarios nuevos.
+- Se añadieron 6 filas al `Community_Engagement_Log.csv`: 4 comentarios vacíos y 2 menciones automáticas `@seguidores`. No hubo comentarios cualitativos nuevos, respuestas pendientes ni escrituras en Meta. La evidencia está en `Operations/Research/2026-08-16_P2_Comunidad_Delta_01.json`.
+- El control de preparación de baseline aisló 12 observaciones del lote 15–16: 9 de Facebook y 3 de Instagram. Las 9 filas activas de Facebook tienen 0/9 snapshots 24h y 0/9 snapshots 72h; no se actualizaron cifras ni veredictos.
+- Se actualizaron el Community Engagement Log, la fuente maestra, la baseline, la auditoría general, la deuda documental P2 y el índice. El siguiente P2 operativo es una nueva ventana incremental de comunidad; la baseline espera el cierre P0 de métricas.
+
+---
+
+## [1.2.92] — 2026-08-16 (Manus)
+### CNT-004 diferido y transición a pendientes P2
+- Fernando decidió dejar `CNT-004 — La Búsqueda del Frasco Olvidado` fuera del desarrollo por ahora.
+- El inventario conserva intactos los campos históricos `estado` y `bloqueado_canon`, mantiene `Estado_Canon=Revision`, `Canon_Review_Required` y `Motivo_Revision_Normalizado=Canon_Contradiccion_Sustantiva`, y cambia únicamente el estado operativo a `Deferred_Operational` y el de producción a `Diferido`.
+- Se actualizaron el bridge, backlog, cola de producción, cola de aprobación, fuente maestra, auditoría general, índice y deuda documental P2. CNT-004 no se marca como resuelto en canon y no forma parte del lote activo.
+- El trabajo operativo continúa con los P2 de comunidad, baseline común y normalización documental; las menciones históricas a Make permanecen solo como trazabilidad.
 
 ---
 

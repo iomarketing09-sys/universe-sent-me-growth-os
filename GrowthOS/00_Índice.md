@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-16
-**Versión:** 5.2
+**Versión:** 5.3
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -26,8 +26,8 @@
 | [Approval Queue](01_05_Approval_Queue.md) | Contenido pendiente de revisión/aprobación. | Active |
 | [Guía histórica de Automatización con Make](02_00_Guia_Automatizacion_Make.md) | Referencia archivada de una arquitectura no operativa. | Archived |
 | [Sistema de Generación de Memes](03_00_Sistema_Generacion_Memes.md) | Flujo de ingesta (Drive), adaptación (Gemini) y archivo visual (GitHub). | Active |
-| [Canon Contradictions Report](Canon_Contradictions_Report.md) | Contradicciones activas que bloquean producción. | Active |
-| [Inventario de Contenido](Content_Inventory.csv) | CSV maestro con 39 piezas, estados históricos y campos canónicos de identidad/publicación. | Active |
+| [Canon Contradictions Report](Canon_Contradictions_Report.md) | Registro histórico de contradicciones; CNT-004 queda diferido fuera de desarrollo, no resuelto en canon. | Active |
+| [Inventario de Contenido](Content_Inventory.csv) | CSV maestro con 39 piezas; conserva estados históricos y registra CNT-004 como `Deferred_Operational` con revisión canónica pendiente. | Active |
 | [Auditoría Higgsfield Grant](../Operations/Research/2026-08-02_Auditoria_Higgsfield_Grant.md) | Análisis estratégico para la candidatura del Filmmaker Grant. | Review |
 | [Reporte Mensual Junio-Julio 2026](../Operations/Research/2026-08-08_Reporte_Mensual_Junio_Julio_2026.md) | Cierra el vacío de datos entre mayo y el análisis de 28 días de agosto. 61 días vía Windsor.ai, top días y posts por mes. | Active |
 | [Métricas Baseline — FB & IG](08_00_Metricas_Baseline_Plataformas.md) | Datos reales de Windsor.ai: top 10 FB, tabla Reels, tabla IG, insights de canal. Actualizar cada domingo. | Active |
@@ -41,11 +41,13 @@
 | [Publication Log](../Operations/Research/2026-08-15_Publication_Log.csv) | Ledger append-only con 85 hechos de Facebook, 1 publicación manual activa de Instagram y 3 pruebas de Instagram eliminadas manualmente. | Active |
 | [ExperimentLog](../Operations/Research/2026-08-15_ExperimentLog.csv) | Observaciones históricas, 89 registros de Facebook pendientes de métricas 24/72 horas, 1 publicación activa de Instagram y 2 pruebas Instagram excluidas del aprendizaje. | Active |
 | [Community Engagement Log](../Operations/Research/2026-08-15_Community_Engagement_Log.md) | Esquema y flujo para registrar comentarios reales, respuestas humanas y señales cualitativas sin identidades personales. | Active |
-| [Community Engagement Log — datos](../Operations/Research/2026-08-15_Community_Engagement_Log.csv) | Ledger append-only de comunidad; primer lote de 9 comentarios registrado, 4 respuestas aprobadas/publicadas con IDs Meta y 0 riesgos escalados; el cuarto comentario quedó como humor ácido contextual. | Active |
-| [Deuda documental P2](../Operations/Research/2026-08-15_Deuda_Documental_P2.md) | Clasifica documentos activos, históricos, superseded y pendientes de metadatos; Make queda solo como trazabilidad, no como ruta operativa. | Active |
+| [Community Engagement Log — datos](../Operations/Research/2026-08-15_Community_Engagement_Log.csv) | Ledger append-only de comunidad; 15 comentarios reales registrados, 4 respuestas aprobadas/publicadas con IDs Meta y el primer delta P2 sin comentarios cualitativos nuevos. | Active |
+| [Delta P2 de comunidad — 16 de agosto](../Operations/Research/2026-08-16_P2_Comunidad_Delta_01.json) | Evidencia anonimizada de 3 publicaciones, 6 comentarios nuevos, 0 respuestas requeridas y 0 escrituras en Meta. | Active |
+| [Preparación P2 de baseline — lote 15–16](../Operations/Research/2026-08-16_P2_Baseline_Preparacion_01.json) | Control estructurado: 12 observaciones, 9 Facebook activas, 0/9 snapshots 24h y 0/9 snapshots 72h; no se actualizó la baseline. | Active |
+| [Deuda documental P2](../Operations/Research/2026-08-15_Deuda_Documental_P2.md) | Cola de deuda documental y P2 activos; CNT-004 queda diferido y no forma parte del trabajo operativo actual. Make queda solo como trazabilidad. | Active |
 | [Reconciliación de inventario — lote 1](../Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.md) | Snapshot histórico de 30 registros y cuatro excepciones; superseded por la clasificación vigente canon/reconciliación. | Superseded |
 | [Auditoría del Growth OS — 14 de agosto](../Operations/Research/2026-08-14_Auditoria_Growth_OS.md) | Evalúa la programación modificada, las integraciones, la automatización y el ciclo de aprendizaje. | Superseded |
-| [Auditoría general del Growth OS — 16 de agosto](../Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md) | Estado actualizado: Facebook 74/74 programado, Drive 46/46 movido y verificado, Instagram manual con prueba única pendiente, métricas y fuente maestra aún abiertas. | Review |
+| [Auditoría general del Growth OS — 16 de agosto](../Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md) | Estado actualizado: Facebook 74/74 programado, Drive 46/46 movido y verificado, CNT-004 diferido y P2 activos en comunidad, baseline y documentación. | Review |
 | [Ciclo de Aprendizaje de Horarios — 14 de agosto](../Operations/Research/2026-08-14_Ciclo_Aprendizaje_Horarios.md) | Reconstruye la hipótesis y la evidencia detrás del cambio de horarios. | Review |
 | [Comparativo Junio–Julio–Agosto — 14 de agosto](../Operations/Research/2026-08-14_Comparativo_Desempeno_Junio_Julio_Agosto.md) | Determina si la caída de agosto proviene de frecuencia, reuse, horarios o mezcla editorial. | Review |
 | [Diseño de Prueba de Calendario — 2 semanas](../Operations/Research/2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md) | Protocolo para controlar frecuencia, contenido nuevo/reuse y franjas horarias. | Review |

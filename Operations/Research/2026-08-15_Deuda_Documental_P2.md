@@ -3,8 +3,8 @@ title: "Deuda documental P2 — Growth OS"
 purpose: "Clasificar el estado de los documentos operativos, históricos y de investigación del Growth OS para mantener una fuente de verdad clara sin borrar trazabilidad ni reactivar procesos retirados."
 status: Active
 created: 2026-08-15
-updated: 2026-08-15
-version: "1.3"
+updated: 2026-08-16
+version: "1.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/09_00_Estandar_Documentacion_Interna.md"
@@ -50,7 +50,7 @@ La limpieza de documentos de control ya fue realizada. Las coincidencias restant
 
 ## 4. Orden de trabajo
 
-La normalización futura debe seguir este orden:
+La normalización futura debe seguir este orden. El control P2 del 16 de agosto verificó que los documentos de entrada operativos describen Manus + Meta Graph API y que las menciones restantes de Make están clasificadas como trazabilidad histórica; no se requiere una limpieza destructiva adicional.
 
 1. Revisar los documentos de control activos y confirmar que solo describen Manus + Meta Graph API, ledgers y aprobación humana.
 2. Marcar como `Archived` la guía histórica de Make y como `Superseded` los snapshots que ya tienen una fuente vigente.
@@ -62,7 +62,21 @@ No se deben modificar automáticamente documentos canónicos administrados por C
 
 ## 5. Relación con los P2
 
-El Community Engagement Log ya está creado, documentado y poblado con un primer lote verificable de nueve comentarios; las cuatro respuestas fueron aprobadas y publicadas con sus `Respuesta_Meta_ID`, y quedan la extracción incremental de nuevos deltas y la medición de cobertura. El cuarto comentario fue revisado y reclasificado como humor ácido contextual, sin riesgo de moderación escalado. La baseline Facebook/Instagram ya tiene un esquema de actualización, pero sus cifras deben esperar las ventanas 24/72 horas y la armonización de definiciones. Este documento cubre la deuda de organización, no sustituye el cierre del aprendizaje cuantitativo ni la revisión de `CNT-004`.
+### 5.1 Estado del primer lote P2 de comunidad
+
+El primer delta incremental se ejecutó el `2026-08-16T23:41:56Z` desde el cursor `2026-08-16T01:45:00Z`. Meta devolvió tres publicaciones propias y seis comentarios nuevos: cuatro vacíos y dos menciones automáticas `@seguidores`. Se añadieron las seis filas al ledger append-only, no hubo comentarios cualitativos que requirieran respuesta y no se realizó ninguna escritura en Meta. La evidencia mínima está en `Operations/Research/2026-08-16_P2_Comunidad_Delta_01.json`. El siguiente delta debe comenzar después del cursor `2026-08-16T23:41:56Z`, sin crear un scheduler adicional.
+
+### 5.2 Siguiente orden de trabajo P2
+
+| Orden | P2 | Estado | Criterio de cierre |
+|---:|---|---|---|
+| 1 | Comunidad | **Lote 1 ejecutado** | Ejecutar la siguiente ventana incremental cuando exista un nuevo delta; medir cobertura solo sobre comentarios cualitativos. |
+| 2 | Baseline Facebook/Instagram | Pendiente de datos | Esperar métricas 24/72h válidas del lote 15–16, armonizar definiciones y actualizar la baseline separando canales. |
+| 3 | Deuda documental | **Control activo verificado** | Las menciones restantes de Make son históricas, de changelog, de auditoría o de trazabilidad; no presentan la ruta como operativa. Mantenerlas sin reactivar el proceso. |
+
+
+
+El Community Engagement Log, la evidencia del primer delta y la preparación de baseline están documentados en las secciones anteriores. La comunidad ya tiene una ruta incremental y anonimizada; la baseline conserva su snapshot histórico porque las ventanas 24/72h del Facebook activo siguen vacías. CNT-004 queda fuera del lote activo por decisión operativa y conserva su revisión canónica pendiente. Este documento cubre la deuda de organización y los P2 activos; no sustituye el cierre del aprendizaje cuantitativo.
 
 ## Referencias
 
