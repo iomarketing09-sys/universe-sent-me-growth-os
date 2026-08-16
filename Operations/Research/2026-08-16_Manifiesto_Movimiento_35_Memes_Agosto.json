@@ -20,7 +20,7 @@
       "calendar_time": "11:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -34,7 +34,7 @@
       "calendar_time": "13:30",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -48,7 +48,7 @@
       "calendar_time": "17:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -62,7 +62,7 @@
       "calendar_time": "19:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -76,7 +76,7 @@
       "calendar_time": "11:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -90,7 +90,7 @@
       "calendar_time": "11:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -104,7 +104,7 @@
       "calendar_time": "10:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -118,7 +118,7 @@
       "calendar_time": "16:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -132,7 +132,7 @@
       "calendar_time": "19:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -146,7 +146,7 @@
       "calendar_time": "11:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -160,7 +160,7 @@
       "calendar_time": "16:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -174,7 +174,7 @@
       "calendar_time": "10:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -188,7 +188,7 @@
       "calendar_time": "19:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -202,7 +202,7 @@
       "calendar_time": "13:30",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -216,7 +216,7 @@
       "calendar_time": "16:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -230,7 +230,7 @@
       "calendar_time": "19:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -244,7 +244,7 @@
       "calendar_time": "10:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -258,7 +258,7 @@
       "calendar_time": "13:30",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -272,7 +272,7 @@
       "calendar_time": "13:30",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -286,7 +286,7 @@
       "calendar_time": "16:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -300,7 +300,7 @@
       "calendar_time": "11:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -314,7 +314,7 @@
       "calendar_time": "10:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -328,7 +328,7 @@
       "calendar_time": "17:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -342,7 +342,7 @@
       "calendar_time": "10:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -356,7 +356,7 @@
       "calendar_time": "16:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -370,7 +370,7 @@
       "calendar_time": "19:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -384,7 +384,7 @@
       "calendar_time": "11:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -398,7 +398,7 @@
       "calendar_time": "16:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -412,7 +412,7 @@
       "calendar_time": "19:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -426,7 +426,7 @@
       "calendar_time": "16:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -440,7 +440,7 @@
       "calendar_time": "19:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -454,7 +454,7 @@
       "calendar_time": "13:30",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -468,7 +468,7 @@
       "calendar_time": "13:30",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -482,7 +482,7 @@
       "calendar_time": "16:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -496,7 +496,7 @@
       "calendar_time": "10:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -510,7 +510,7 @@
       "calendar_time": "10:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -524,7 +524,7 @@
       "calendar_time": "13:30",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -538,7 +538,7 @@
       "calendar_time": "17:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -552,7 +552,7 @@
       "calendar_time": "10:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -566,7 +566,7 @@
       "calendar_time": "10:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -580,7 +580,7 @@
       "calendar_time": "19:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -594,7 +594,7 @@
       "calendar_time": "19:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -608,7 +608,7 @@
       "calendar_time": "13:30",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -622,7 +622,7 @@
       "calendar_time": "10:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -636,7 +636,7 @@
       "calendar_time": "11:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     },
     {
@@ -650,10 +650,21 @@
       "calendar_time": "19:00",
       "operation": "MOVE_ONLY",
       "copy_allowed": "NO",
-      "status": "LISTO_PARA_MOVIMIENTO_MANUAL",
+      "status": "MOVED_MANUALLY_VERIFIED",
       "move_timing": "AFTER_FACEBOOK_PROGRAMMING"
     }
   ],
   "move_timing": "AFTER_FACEBOOK_PROGRAMMING",
-  "status": "LISTO_PARA_MOVIMIENTO_MANUAL"
+  "status": "MOVED_MANUALLY_VERIFIED",
+  "updated": "2026-08-16",
+  "verified_at_utc": "2026-08-16T23:21:22Z",
+  "verification": {
+    "target_folder_id": "11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf",
+    "manifest_asset_count": 46,
+    "manifest_assets_found_in_target": 46,
+    "manifest_assets_remaining_in_source": 0,
+    "operation": "MOVE_ONLY",
+    "copy_allowed": false,
+    "verification_method": "Google Drive parent listing after PATCH updates"
+  }
 }

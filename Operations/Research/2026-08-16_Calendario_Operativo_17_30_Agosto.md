@@ -1,10 +1,10 @@
 ---
 title: "Calendario operativo 17–30 de agosto — Facebook programado"
-purpose: "Consolidar y registrar 35 assets nuevos, 36 reuse Top y 3 reuse Reserve ya programados en Facebook, manteniendo el movimiento manual de Drive para después de la programación."
+purpose: "Consolidar y registrar 35 assets nuevos, 36 reuse Top y 3 reuse Reserve programados en Facebook, con el movimiento manual de los 46 assets verificado en Drive."
 status: Active
 created: 2026-08-16
 updated: 2026-08-16
-version: "1.3"
+version: "1.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-16_Revision_Visual_Asignacion_35_Memes_Nuevos.md"
@@ -20,7 +20,7 @@ organization: "Operations/Research"
 
 # Calendario operativo 17–30 de agosto
 
-> **Estado:** Active. Fernando aprobó la completación del calendario y los 74 slots quedaron programados y verificados en Facebook mediante Meta Graph API v26. Instagram permanece pendiente y no se modifica. Fernando moverá manualmente los archivos después de la programación.
+> **Estado:** Active. Fernando aprobó la completación del calendario y los 74 slots quedaron programados y verificados en Facebook mediante Meta Graph API v26. Los 46 archivos del manifiesto fueron movidos manualmente y verificados en `08 Agosto` sin copias. Instagram permanece pendiente y no se modifica en este documento.
 
 La versión consolida **35 assets nuevos aprobados**, **36 reuse Top**, **3 reuse Reserve** y **74 slots asignados**, sin placeholders `PENDIENTE_GENERAR`. Los 35 nuevos conservan sus captions de secuencias de múltiples emojis; los 11 reuse incorporados usan captions aprobados con secuencias de emojis del kit USM. La proporción final es 35 nuevos y 39 reuse.
 
@@ -30,11 +30,11 @@ Los captions de los nuevos evitan repetir el texto visual y usan una secuencia d
 
 ## Control de Drive
 
-El destino verificado es `08 Agosto`, folder ID `11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf`, dentro de `Humor existencial`. El manifiesto actualizado contiene **46 Drive IDs**: 35 assets nuevos y 11 reuse. Todos están marcados `MOVE_ONLY`, `copy_allowed=NO` y `MANUAL_MOVE_AFTER_FB_PROGRAMMING`. Los archivos permanecen en sus carpetas de origen hasta que Fernando confirme que la programación de Facebook quedó realizada; no se crean copias.
+El destino verificado es `08 Agosto`, folder ID `11nuEUoU2Or8uc0oxXLu7-k6LChk8zQNf`, dentro de `Humor existencial`. El manifiesto actualizado contiene **46 Drive IDs**: 35 assets nuevos y 11 reuse. Todos están marcados `MOVE_ONLY`, `copy_allowed=NO` y `MOVED_MANUALLY_VERIFIED`; `copy_allowed=NO` se conserva. La consulta posterior a Drive encontró los 46 IDs dentro de `08 Agosto` y cero de esos IDs restantes en las carpetas de origen; no se crearon copias.
 
 ## Siguiente control
 
-El siguiente paso operativo es que Fernando ejecute el movimiento manual `MOVE_ONLY` de los 46 archivos del manifiesto al folder `08 Agosto`. Los archivos todavía no se han movido ni copiado. Instagram no se toca en esta etapa. Después de la publicación real, se actualizarán las fechas reales y se extraerán las métricas 24/72 horas.
+El movimiento de Drive está cerrado y verificado. El siguiente control es esperar la publicación real de Facebook, extraer las métricas 24/72 horas en lote y cerrar el ciclo de aprendizaje. Instagram permanece separado y requiere una decisión operativa independiente.
 
 ## Referencias
 

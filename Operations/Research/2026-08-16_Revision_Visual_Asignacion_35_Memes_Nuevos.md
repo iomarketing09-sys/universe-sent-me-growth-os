@@ -1,10 +1,10 @@
 ---
 title: "Revisión visual y asignación de 35 memes nuevos — calendario 17–30"
-purpose: "Documentar la inspección visual de los 35 assets disponibles y proponer asignaciones horarias sin mover archivos ni autorizar publicación."
+purpose: "Documentar la inspección visual de los 35 assets aprobados, sus asignaciones horarias y la integración posterior de los 11 reuse que completaron el calendario."
 status: Review
 created: 2026-08-16
 updated: 2026-08-16
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-16_Revision_Calendario_17_30.md"
@@ -17,21 +17,21 @@ organization: "Operations/Research"
 
 # Revisión visual y asignación de 35 memes nuevos
 
-> **Estado:** Review. Los 35 assets están aprobados para el calendario; quedan 11 slots `PENDIENTE_GENERAR`. Fernando moverá los archivos manualmente; no se autoriza programación ni publicación en esta ficha.
+> **Estado:** Review. Los 35 assets están aprobados y los 11 slots originalmente vacíos fueron completados con reuse aprobado. El manifiesto de 46 archivos quedó movido y verificado en `08 Agosto`; esta ficha no autoriza publicaciones adicionales.
 
 ## Aprobación registrada
 
-Fernando aprobó la clasificación de los 33 assets revisados originalmente y confirmó también `260661` y `2607831`. Los 35 assets están integrados en slots de media mañana, tarde o noche según su contexto. Los 11 slots sin asset permanecen pendientes de generación.
+Fernando aprobó la clasificación de los 33 assets revisados originalmente y confirmó también `260661` y `2607831`. Los 35 assets están integrados en slots de media mañana, tarde o noche según su contexto. Los 11 slots originalmente sin asset fueron completados con 8 reuse de junio y 3 reuse Reserve de mayo, con aprobación registrada en el anexo correspondiente.
 
 ## Resultado ejecutivo
 
-Se revisaron visualmente **35 assets disponibles** en la raíz de `Humor existencial`. Se integran **35 asignaciones** a slots `Nueva`, todas aprobadas por Fernando. Quedan **11 slots nuevos** como `PENDIENTE_GENERAR` en la propuesta de 74 slots. La validación confirmó 74 filas, 46 nuevas, 28 reuse y cero pares de reuse consecutivos.
+Se revisaron visualmente **35 assets disponibles** en la raíz de `Humor existencial`. Se integran **35 asignaciones** a slots `Nueva`, todas aprobadas por Fernando. Los 11 slots restantes fueron completados con reuse aprobado. La validación final confirmó 74 filas, 35 nuevas, 36 `Reuse_Top`, 3 `Reuse_Reserve` y cinco pares consecutivos de reuse como condición documentada del experimento.
 
 | Estado visual | Cantidad | Tratamiento |
 |---|---:|---|
 | `Candidato` | 18 | Asignación aprobada; revisión final de legibilidad y copy antes de programar. |
 | `Candidato_Editorial` | 15 | Asignación aprobada a tarde/noche; conservar control de tono antes de programar. |
-| `Candidato_Extra_Aprobado` | 2 | Extras detectados en Drive y aprobados por Fernando; pendientes solo de programación. |
+| `Candidato_Extra_Aprobado` | 2 | Extras detectados en Drive y aprobados por Fernando; integrados en el calendario y archivados en `08 Agosto`. |
 
 ## Piezas aprobadas con control editorial y trazabilidad de extras
 

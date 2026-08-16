@@ -1,10 +1,10 @@
 ---
 title: "Revisión del calendario experimental 17–30 de agosto"
-purpose: "Auditar y dejar trazable la versión aprobada de 74 slots contra el inventario de Drive, los ledgers y la programación real de Facebook antes del movimiento manual de archivos."
+purpose: "Auditar y dejar trazable la versión aprobada de 74 slots contra el inventario de Drive, los ledgers y la programación real de Facebook, incluyendo la verificación posterior del movimiento manual."
 status: Active
 created: 2026-08-16
 updated: 2026-08-16
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-14_Propuesta_Calendario_17_30_Agosto.csv"
@@ -77,10 +77,10 @@ La versión aprobada usa 35 nuevas y 39 reuse, equivalente a **47.3% nuevo y 52.
 
 Los cinco pares de reuse y los movimientos necesarios fueron revisados. Fernando aprobó la completación con 8 reuse de junio y 3 reuse Reserve de mayo. La versión operativa contiene 35 assets nuevos, 39 reuse y cero placeholders. Los assets con contenido sexual, lenguaje fuerte o posible riesgo editorial se mantienen marcados individualmente. Instagram no se programa en esta fase.
 
-La programación únicamente en Facebook quedó confirmada por Meta. Los archivos todavía permanecen en sus carpetas de origen; Fernando puede realizar ahora el movimiento manual `MOVE_ONLY` al folder `08 Agosto`. No se deben crear copias ni modificar Instagram.
+La programación únicamente en Facebook quedó confirmada por Meta. Los 46 archivos del manifiesto fueron movidos mediante `MOVE_ONLY` al folder `08 Agosto` y la consulta posterior verificó 46/46 IDs en destino y 0/46 restantes en las carpetas de origen. No se crearon copias ni se modificó Instagram.
 
 ## 7. Decisión y siguiente acción recomendada
 
 Fernando aprobó los cinco movimientos de reuse propuestos: `260508 - Universe.jpg`, `260589.png`, `260518 - Kael.png`, `260590 - Maeve.png` y `741 - Elara+Maeve.png`. La aprobación incluye la completación de los 11 slots: 8 reuse de junio y 3 reuse Reserve de mayo. Los 74 slots quedaron asignados, programados y verificados en Facebook.
 
-Los extras `260661` y `2607831` siguen integrados en el lote de 35 assets nuevos. El manifiesto actualizado contiene 46 archivos, está listo para movimiento manual y conserva `MOVE_ONLY`; Instagram permanece pendiente.
+Los extras `260661` y `2607831` siguen integrados en el lote de 35 assets nuevos. El manifiesto actualizado contiene 46 archivos, todos con estado `MOVED_MANUALLY_VERIFIED` y operación `MOVE_ONLY`; Instagram permanece pendiente.

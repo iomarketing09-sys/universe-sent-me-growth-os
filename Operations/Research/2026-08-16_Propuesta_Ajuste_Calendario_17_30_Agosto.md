@@ -1,10 +1,10 @@
 ---
 title: "Propuesta ajustada de calendario experimental 17–30 de agosto"
 purpose: "Conservar la trazabilidad de la propuesta aprobada de 74 slots y su anexo de 11 reuse; el calendario maestro y los ledgers posteriores son la fuente operativa vigente."
-status: Active
+status: Superseded
 created: 2026-08-16
 updated: 2026-08-16
-version: "1.3"
+version: "1.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-16_Revision_Calendario_17_30.md"
@@ -19,7 +19,7 @@ organization: "Operations/Research"
 
 # Propuesta ajustada de calendario experimental 17–30 de agosto
 
-> **Estado:** Active. Fernando aprobó los cinco movimientos previos, los 35 assets nuevos y la completación de los 11 slots con 8 reuse de junio y 3 reuse Reserve de mayo. Los 74 slots ya están integrados y programados en Facebook mediante Meta Graph API v26. Instagram permanece pendiente y los archivos no se moverán hasta la ejecución manual posterior.
+> **Estado:** Superseded operativamente por el calendario maestro programado. Fernando aprobó los cinco movimientos previos, los 35 assets nuevos y la completación de los 11 slots con 8 reuse de junio y 3 reuse Reserve de mayo. Los 74 slots están integrados y programados en Facebook mediante Meta Graph API v26; los 46 archivos fueron movidos y verificados en `08 Agosto` sin copias. Instagram permanece pendiente.
 
 ## Aprobación registrada
 
@@ -148,9 +148,9 @@ Este diseño mantiene los 35 assets nuevos en el período, completa los 11 slots
 
 ## Condiciones de aprobación
 
-La versión integrada tiene 35 assets nuevos aprobados y 11 reuse adicionales aprobados por Fernando. El calendario maestro y el manifiesto contienen 46 archivos, todos marcados para `MOVE_ONLY` después de la programación de Facebook. Instagram queda fuera de esta fase.
+La versión integrada tiene 35 assets nuevos aprobados y 11 reuse adicionales aprobados por Fernando. El calendario maestro y el manifiesto contienen 46 archivos, todos con operación `MOVE_ONLY` y estado `MOVED_MANUALLY_VERIFIED` tras la verificación de Drive. Instagram queda fuera de esta fase.
 
-La publicación futura debe usar la fuente maestra, el `Publication_Log.csv` y el kit de hashtags vigente. No se deben mover ni copiar assets en Drive hasta que el calendario esté aprobado y cada archivo tenga una asignación final.
+La publicación futura debe usar la fuente maestra, el `Publication_Log.csv` y el kit de hashtags vigente. El movimiento de los 46 assets ya está cerrado y verificado; cualquier nuevo movimiento requiere un manifiesto y una aprobación operativa independientes.
 
 ## Referencias
 

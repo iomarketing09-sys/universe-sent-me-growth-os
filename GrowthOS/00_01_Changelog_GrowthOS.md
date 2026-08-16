@@ -4,9 +4,18 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-16
-**Versión:** 1.90
+**Versión:** 1.91
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.91] — 2026-08-16 (Manus)
+### Movimiento y verificación de los 46 assets del calendario 17–30
+- Fernando autorizó y se ejecutó el movimiento de los 11 reuse restantes del manifiesto hacia `08 Agosto` mediante Google Drive `PATCH` con `addParents` y `removeParents`, sin crear copias.
+- La consulta posterior a Drive encontró los **46/46 Drive IDs** del manifiesto dentro de `08 Agosto` y **0/46** restantes en las carpetas de origen. El CSV y el JSON del manifiesto quedaron en `MOVED_MANUALLY_VERIFIED`, conservando `MOVE_ONLY` y `copy_allowed=NO`.
+- El calendario operativo 17–30 quedó actualizado: el archivado Drive ya no es pendiente. Permanecen como siguientes controles la publicación real de Facebook y la extracción de métricas 24/72h.
+- No se modificó Instagram, no se publicaron posts adicionales y no se alteró Facebook durante este movimiento.
 
 ---
 

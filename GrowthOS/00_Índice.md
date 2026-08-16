@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-16
-**Versión:** 5.1
+**Versión:** 5.2
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -38,14 +38,14 @@
 | [Pipeline de Publicación Local y Estándar CSV](13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md) | Documenta el script propio de Fernando, el estándar CSV y la Custom API de Meta configurada para Universe Sent Me. | Active |
 | [Fuente Maestra y Ledgers del Growth OS](14_00_Fuente_Maestra_y_Ledgers.md) | Define el inventario maestro, los ledgers, la distinción canon/reconciliación y la cadencia de métricas cada 48 horas. | Active |
 | [Bridge de Integración Growth OS–Canon](Integracion_Growth_OS.md) | Caché condensado del canon, HypothesisBank y reglas de sincronización; v2.5.1 resincronizado contra HEAD `1daaad5`, con Maeve/Kael y sus alias visuales corregidos. | Active |
-| [Publication Log inicial](../Operations/Research/2026-08-15_Publication_Log.csv) | Ledger append-only con 9 publicaciones de Facebook confirmadas, la prueba de Instagram eliminada y 1 publicación manual real de Instagram. | Active |
-| [ExperimentLog inicial](../Operations/Research/2026-08-15_ExperimentLog.csv) | Seis observaciones históricas, nueve publicaciones de Facebook pendientes de métricas 24/72 horas y una observación manual de Instagram. | Active |
+| [Publication Log](../Operations/Research/2026-08-15_Publication_Log.csv) | Ledger append-only con 85 hechos de Facebook, 1 publicación manual activa de Instagram y 3 pruebas de Instagram eliminadas manualmente. | Active |
+| [ExperimentLog](../Operations/Research/2026-08-15_ExperimentLog.csv) | Observaciones históricas, 89 registros de Facebook pendientes de métricas 24/72 horas, 1 publicación activa de Instagram y 2 pruebas Instagram excluidas del aprendizaje. | Active |
 | [Community Engagement Log](../Operations/Research/2026-08-15_Community_Engagement_Log.md) | Esquema y flujo para registrar comentarios reales, respuestas humanas y señales cualitativas sin identidades personales. | Active |
 | [Community Engagement Log — datos](../Operations/Research/2026-08-15_Community_Engagement_Log.csv) | Ledger append-only de comunidad; primer lote de 9 comentarios registrado, 4 respuestas aprobadas/publicadas con IDs Meta y 0 riesgos escalados; el cuarto comentario quedó como humor ácido contextual. | Active |
 | [Deuda documental P2](../Operations/Research/2026-08-15_Deuda_Documental_P2.md) | Clasifica documentos activos, históricos, superseded y pendientes de metadatos; Make queda solo como trazabilidad, no como ruta operativa. | Active |
 | [Reconciliación de inventario — lote 1](../Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.md) | Snapshot histórico de 30 registros y cuatro excepciones; superseded por la clasificación vigente canon/reconciliación. | Superseded |
 | [Auditoría del Growth OS — 14 de agosto](../Operations/Research/2026-08-14_Auditoria_Growth_OS.md) | Evalúa la programación modificada, las integraciones, la automatización y el ciclo de aprendizaje. | Superseded |
-| [Auditoría general del Growth OS — 16 de agosto](../Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md) | Estado actualizado: Facebook 74/74 programado, Drive 35/46 movido, Instagram manual con prueba única pendiente, métricas y fuente maestra aún abiertas. | Review |
+| [Auditoría general del Growth OS — 16 de agosto](../Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md) | Estado actualizado: Facebook 74/74 programado, Drive 46/46 movido y verificado, Instagram manual con prueba única pendiente, métricas y fuente maestra aún abiertas. | Review |
 | [Ciclo de Aprendizaje de Horarios — 14 de agosto](../Operations/Research/2026-08-14_Ciclo_Aprendizaje_Horarios.md) | Reconstruye la hipótesis y la evidencia detrás del cambio de horarios. | Review |
 | [Comparativo Junio–Julio–Agosto — 14 de agosto](../Operations/Research/2026-08-14_Comparativo_Desempeno_Junio_Julio_Agosto.md) | Determina si la caída de agosto proviene de frecuencia, reuse, horarios o mezcla editorial. | Review |
 | [Diseño de Prueba de Calendario — 2 semanas](../Operations/Research/2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md) | Protocolo para controlar frecuencia, contenido nuevo/reuse y franjas horarias. | Review |
@@ -56,15 +56,15 @@
 | [Auditoría directa de Instagram API — 15 de agosto](../Operations/Research/2026-08-15_Auditoria_API_Instagram.md) | Verifica permisos, vinculación, cuota y flujo de publicación de Instagram mediante Graph API directa. | Active |
 | [Playbook Scheduler Instagram 15–16](../Operations/Production/instagram_15_16_scheduler_playbook.md) | Flujo histórico pausado; Instagram requiere aprobación manual fila por fila y `260583` permanece excluida. | Active |
 | [Extractor de métricas 24/72h](../Operations/Production/extract_metrics_24_72_playbook.md) | Playbook y contrato del extractor agrupado, idempotente y de un solo despertar para `EXP-2026-08-CAL-01`. | Active |
-| [Revisión calendario 17–30 — 16 de agosto](../Operations/Research/2026-08-16_Revision_Calendario_17_30.md) | Conciliación final de 74 slots: 35 nuevos, 36 reuse Top, 3 reuse Reserve, cero placeholders y movimiento manual posterior a Facebook. | Active |
-| [Propuesta ajustada calendario 17–30](../Operations/Research/2026-08-16_Propuesta_Ajuste_Calendario_17_30_Agosto.md) | Versión aprobada e integrada: 74 slots con 35 nuevos, 36 reuse Top y 3 reuse Reserve; lista para programación en Facebook. | Active |
+| [Revisión calendario 17–30 — 16 de agosto](../Operations/Research/2026-08-16_Revision_Calendario_17_30.md) | Conciliación final de 74 slots: 35 nuevos, 36 reuse Top, 3 reuse Reserve, cero placeholders y movimiento de 46 archivos verificado en Drive. | Active |
+| [Propuesta ajustada calendario 17–30](../Operations/Research/2026-08-16_Propuesta_Ajuste_Calendario_17_30_Agosto.md) | Versión aprobada e integrada: 74 slots con 35 nuevos, 36 reuse Top y 3 reuse Reserve; supersedida operativamente por el calendario ya programado en Facebook. | Superseded |
 | [Anexo de completación: 11 reuse junio–mayo](../Operations/Research/2026-08-16_Propuesta_Completado_11_Reuse_Junio_Mayo.csv) | Ledger integrado de 11 reuse aprobados, Drive IDs, captions y ocho movimientos de assets nuevos para preservar la separación operativa. | Active |
 | [Revisión visual y asignación de 35 memes nuevos](../Operations/Research/2026-08-16_Revision_Visual_Asignacion_35_Memes_Nuevos.md) | Revisión de 35 assets aprobados; los 11 slots originalmente pendientes fueron completados con reuse aprobado. | Active |
 | [Clasificación visual — 35 memes nuevos](../Operations/Research/2026-08-16_Clasificacion_Visual_35_Memes_Nuevos.csv) | Ledger estructurado de personajes, tono, franja horaria, riesgo editorial y slot propuesto para 35 assets. | Review |
 | [Asignación visual — calendario 17–30](../Operations/Research/2026-08-16_Asignacion_Visual_Calendario_17_30_Agosto.csv) | Ledger operativo completo con 35 nuevos, 36 reuse Top y 3 reuse Reserve; cero placeholders. | Active |
-| [Calendario operativo 17–30](../Operations/Research/2026-08-16_Calendario_Operativo_17_30_Agosto.md) | Facebook programado: 35 nuevos, 36 reuse Top, 3 reuse Reserve, 74 slots completos y movimiento manual posterior. | Active |
-| [Programación Facebook 17–30](../Operations/Research/2026-08-16_Programacion_Facebook_17_30_Agosto.md) | Registro de 74 Page Post IDs y Photo IDs verificados por Meta; Drive no movido e Instagram pendiente. | Active |
-| [Manifiesto MOVE_ONLY de agosto](../Operations/Research/2026-08-16_Manifiesto_Movimiento_35_Memes_Agosto.csv) | 46 Drive IDs listos para movimiento manual desde sus carpetas de origen a `08 Agosto` después de la programación confirmada; no permite copias. | Active |
+| [Calendario operativo 17–30](../Operations/Research/2026-08-16_Calendario_Operativo_17_30_Agosto.md) | Facebook programado: 35 nuevos, 36 reuse Top, 3 reuse Reserve, 74 slots completos y 46 archivos movidos/verificados en Drive. | Active |
+| [Programación Facebook 17–30](../Operations/Research/2026-08-16_Programacion_Facebook_17_30_Agosto.md) | Registro de 74 Page Post IDs y Photo IDs verificados por Meta; los 46 archivos ya fueron movidos/verificados en Drive e Instagram permanece pendiente. | Active |
+| [Manifiesto MOVE_ONLY de agosto](../Operations/Research/2026-08-16_Manifiesto_Movimiento_35_Memes_Agosto.csv) | 46 Drive IDs movidos y verificados en `08 Agosto` mediante `MOVE_ONLY`; no permite copias y no quedan IDs del manifiesto en origen. | Active |
 | [Revisión de Reuse — Mayo frente a Junio](../Operations/Research/2026-08-14_Revision_Reuse_Mayo_Junio.md) | Inventario de Drive, elegibilidad de mayo y reserva Top de junio. | Review |
 | [Ranking Reuse Mayo — rendimiento Meta](../Operations/Research/2026-08-14_Reuse_Mayo_Ranking.csv) | Ranking individual de 123 assets cruzados con 205 publicaciones de mayo. | Active |
 | [Pipeline de publicación y archivado mensual](13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md) | Estándar CSV, publicación por Graph API y movimiento de assets publicados a la carpeta mensual. | Active |

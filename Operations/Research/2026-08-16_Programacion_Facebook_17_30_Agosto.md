@@ -5,7 +5,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-16
 **Última actualización:** 2026-08-16
-**Versión:** 1.0
+**Versión:** 1.1
 **Autor:** Manus AI
 **Documentos relacionados:** `2026-08-16_Calendario_Operativo_17_30_Agosto.csv`, `2026-08-16_Asignacion_Visual_Calendario_17_30_Agosto.csv`, `2026-08-15_Publication_Log.csv`, `2026-08-15_ExperimentLog.csv`, `2026-08-16_Manifiesto_Movimiento_35_Memes_Agosto.csv`, `GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`
 
@@ -43,7 +43,7 @@ El log técnico bruto de las respuestas de Meta se conserva fuera del repositori
 
 ## Drive e Instagram
 
-Los archivos permanecieron en sus carpetas originales durante toda la programación. No se movieron ni copiaron archivos. El manifiesto de 46 archivos quedó en estado `LISTO_PARA_MOVIMIENTO_MANUAL`; Fernando puede ejecutar posteriormente el movimiento `MOVE_ONLY` a `08 Agosto` según el manifiesto, sin crear copias.
+Durante la programación, los archivos permanecieron en sus carpetas originales: no se movieron ni copiaron archivos en esa fase. Posteriormente, Fernando ejecutó el movimiento `MOVE_ONLY` de los 46 archivos a `08 Agosto`. La consulta posterior a Drive verificó 46/46 IDs en la carpeta destino y 0/46 restantes en las carpetas de origen; no se crearon copias. El manifiesto quedó en `MOVED_MANUALLY_VERIFIED`.
 
 Instagram quedó fuera del alcance. No se llamó a la API de publicación de Instagram, no se modificó el scheduler `USM Instagram 15-16 Agosto` y no se generaron publicaciones para esa plataforma.
 

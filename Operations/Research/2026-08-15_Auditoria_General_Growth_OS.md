@@ -34,9 +34,9 @@ El Growth OS de Universe Sent Me tiene una arquitectura reconocible, una estrate
 
 La conclusión CGO es: **Facebook está operativo y validado; Instagram tiene acceso técnico pero no una automatización confiable todavía; el Growth OS sigue parcialmente integrado**. El riesgo principal es ahora el control plane: ledgers incompletos para los dos intentos de Instagram eliminados, 74 posts programados aún no publicados, métricas 24/72h sin snapshots, inventario maestro separado del calendario y una tarea de Instagram temporal que debe verificarse y luego quedar pausada o convertirse en una campaña nueva autocontenida.
 
-> **Veredicto actualizado:** el sistema está en transición entre operación documentada y Growth OS cerrado. Facebook 17–30 ya está programado y Meta confirma 74/74; el manifiesto tiene 46 archivos, de los cuales Drive muestra 35 ya en `08 Agosto` y 11 todavía fuera. Instagram debe mantenerse separado hasta comprobar la ejecución puntual de las 19:00; no recomiendo reactivar el scheduler como automatización permanente antes de cerrar esa prueba. La prioridad estructural sigue siendo métricas, reconciliación e inventario.
+> **Veredicto actualizado:** el sistema está en transición entre operación documentada y Growth OS cerrado. Facebook 17–30 ya está programado y Meta confirma 74/74; el manifiesto tiene 46 archivos, de los cuales Drive muestra los 46 archivos ya en `08 Agosto` y cero IDs del manifiesto restantes en las carpetas de origen. Instagram debe mantenerse separado hasta comprobar la ejecución puntual de las 19:00; no recomiendo reactivar el scheduler como automatización permanente antes de cerrar esa prueba. La prioridad estructural sigue siendo métricas, reconciliación e inventario.
 
-Esta auditoría se actualizó con consultas de solo lectura contra GitHub, Meta, Drive y los ledgers. La reconciliación documental de los dos intentos Instagram eliminados se registra sin republicar, mover archivos ni modificar Facebook.
+Esta auditoría se actualizó con consultas de solo lectura contra GitHub, Meta, Drive y los ledgers. La reconciliación documental de los dos intentos Instagram eliminados se registra sin republicar ni modificar Facebook. El movimiento de Drive se ejecutó después y quedó verificado como `MOVE_ONLY`, sin copias.
 
 ## Actualización posterior a la auditoría — estado vigente
 
@@ -50,7 +50,7 @@ La auditoría original identificó varias brechas que ya fueron resueltas en el 
 | Scheduler Instagram | La tarea está temporalmente activa como una ejecución única a las 19:00 con `runAsNewTask=false`; debe verificarse el resultado y quedar pausada o expirada después, no recurrente. | P1 |
 | Canon | Silvio/Payaso está resuelto; `CNT-004` sigue siendo la única contradicción narrativa sustantiva, con capítulos 10, 8, Elara/tarot y capítulo 7 pendientes de revisión/aprobación. | P1 |
 | Aprendizaje | La revisión agrupada de métricas está documentada como activa cada 48h a las 22:15; faltan resultados válidos y cierre de `HB-003`, `HB-004` y `HB-005`. | P0 |
-| Calendario 17–30 | Los 74 slots están completos y programados; falta que se publiquen, extraer métricas y mover 11 de los 46 archivos del manifiesto que aún no aparecen en `08 Agosto`. | P1 |
+| Calendario 17–30 | Los 74 slots están completos y programados; falta que se publiquen y extraer métricas. El movimiento de los 46 archivos del manifiesto ya está verificado en `08 Agosto`. | P1 |
 | Fuente maestra | `Content_Inventory.csv` tiene 39 filas y no contiene coincidencias textuales directas para las 71 referencias `260####` distintas del calendario 17–30; falta reconciliación progresiva sin inventar CNT. | P1 |
 | Comunidad | Ledger inicial de 9 comentarios y 4 respuestas publicado; falta revisar deltas nuevos, cobertura y tiempo de respuesta. | P2 |
 | Automatizaciones heredadas | Make permanece retirado; la tarea histórica de Instagram no debe convertirse en ruta permanente sin un playbook autocontenido y una prueba de no-op. | P1 |
@@ -72,7 +72,7 @@ La calificación es una herramienta de diagnóstico CGO, no una métrica oficial
 | Estrategia editorial y experimento | Ámbar | 8/10 | Las hipótesis HB-003, HB-004 y HB-005 están bien planteadas y los 74 slots ya están definidos; la prueba debe evaluarse con datos reales de publicación y métricas, no con el calendario por sí solo. |
 | Arquitectura de calendario y estados | Ámbar | 5/10 | La máquina de estados existe, pero conviven Markdown, CSV, inventario maestro y calendarios históricos con convenciones diferentes. |
 | Canon y governance | Ámbar | 6/10 | Silvio/Payaso está resuelto y el bridge está sincronizado; `CNT-004` continúa bloqueado por contradicciones narrativas sustantivas. |
-| Inventario, Drive y reuse | Ámbar | 5/10 | Drive ya muestra 35 de 46 archivos del manifiesto en `08 Agosto`, pero 11 siguen fuera y el inventario de 39 filas no cubre las referencias de asset del calendario 17–30. |
+| Inventario, Drive y reuse | Ámbar | 6/10 | Drive ya muestra 46 de 46 archivos del manifiesto en `08 Agosto`, sin copias ni IDs restantes en origen; el inventario de 39 filas todavía no cubre las referencias de asset del calendario 17–30. |
 | Publicación Facebook | Verde | 9/10 | Meta devuelve 74/74 posts del calendario 17–30 programados y verificados, además de 2 posts programados previos; la ruta Page Access Token + Page Feed está validada. |
 | Publicación Instagram | Ámbar | 6/10 | La API, la cuenta y los permisos responden; la programación nativa no está disponible. La prueba única de las 19:00 debe confirmar si el contexto actual ejecuta correctamente el flujo antes de decidir si se conserva cualquier tarea. |
 | Métricas y ciclo de aprendizaje | Rojo | 5/10 | El `ExperimentLog` y la tarea de revisión existen, pero las columnas 24/72h están vacías y `HB-003`, `HB-004` y `HB-005` siguen abiertos. |
@@ -93,7 +93,7 @@ El diseño experimental posterior formaliza tres hipótesis: horarios ampliados,
 
 La integración directa de Meta está operativa. El token de usuario respondió HTTP 200 para identidad y permisos; `/me/accounts` devolvió la Página `Universe Sent Me` con ID `1036844829507460`, tareas `CREATE_CONTENT`, `MODERATE`, `MANAGE` y `ANALYZE`, además de la cuenta profesional de Instagram `17841462696378190`.
 
-Con el Page Access Token derivado, Meta devuelve **76 publicaciones programadas**: 74 corresponden al calendario 17–30 y 2 son posts programados previos. Los 74 tienen `Meta_Post_ID` y `Meta_Photo_ID` en el ledger y `is_published=false`; la prueba de Facebook está programada, no publicada todavía. Drive muestra 35 de los 46 archivos del manifiesto en `08 Agosto`; los 11 restantes siguen pendientes de movimiento manual [3].
+Con el Page Access Token derivado, Meta devuelve **76 publicaciones programadas**: 74 corresponden al calendario 17–30 y 2 son posts programados previos. Los 74 tienen `Meta_Post_ID` y `Meta_Photo_ID` en el ledger y `is_published=false`; la prueba de Facebook está programada, no publicada todavía. Drive muestra los **46/46 archivos** del manifiesto en `08 Agosto`, con cero IDs restantes en las carpetas de origen y sin copias [3].
 
 ### 4.3 Instagram tiene acceso técnico real
 
