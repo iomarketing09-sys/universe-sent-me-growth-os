@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-16
-**Versión:** 1.79
+**Versión:** 1.80
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -172,6 +172,16 @@
 - `Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md` pasó a v1.5 y refleja que la tarea independiente de métricas está activa con `egAl6a7WZExBrDPd8tIY1B`, cron `0 15 22 */2 * *`, zona `America/Matamoros` y un solo despertar.
 - El P0 ya no es crear el schedule: queda esperar la primera ejecución válida, verificar la evidencia, actualizar `Publication_Log.csv` y `ExperimentLog.csv`, cerrar `HB-003`/`HB-004`/`HB-005` y actualizar la baseline.
 - Se mantienen como P1: prueba `nothing_due` antes de reactivar Instagram, revisión de `CNT-004`, normalización completa de estados y preparación/aprobación del calendario 17–30. La comunidad queda en P2 para medir cobertura y tiempo de respuesta en nuevos deltas.
+
+---
+
+## [1.2.80] — 2026-08-16 (Manus)
+### Revisión del calendario experimental 17–30
+- Se auditó la propuesta de 74 slots contra el inventario de 38 assets nuevos y el `Publication_Log.csv`.
+- Se confirmó que 5 assets de los 38 ya fueron publicados en 15–16 (`2608030`, `2608033`, `2608036`, `2608037` y `2608060`); quedan 33 nuevos no registrados como publicados para revisión visual, no aprobación automática.
+- Se detectaron cinco pares de reuse consecutivos. Se preparó una propuesta Draft que conserva 46 nuevas y 28 reuse, mantiene `260528` el domingo 30 a las 22:00 y reubica cinco reuse sin tocar el calendario anterior.
+- Drive confirmó que `260508 - Universe.jpg` y `Universe - Existencial 260508.png` son dos archivos distintos con checksums y contenidos visuales diferentes; ambos deben conservar filename completo para evitar ambigüedad.
+- Se crearon `Operations/Research/2026-08-16_Revision_Calendario_17_30.md` y `Operations/Research/2026-08-16_Propuesta_Ajuste_Calendario_17_30_Agosto.md/.csv`. La propuesta queda pendiente de aprobación de Fernando; no se generaron imágenes, no se movieron assets y no se programó contenido.
 
 ---
 
