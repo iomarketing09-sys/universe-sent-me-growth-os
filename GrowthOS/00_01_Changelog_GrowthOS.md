@@ -4,9 +4,18 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-16
-**Versión:** 1.84
+**Versión:** 1.85
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.85] — 2026-08-16 (Manus)
+### Aprobación final del lote operativo de agosto
+- Fernando aprobó `260661` y `2607831`, cerrando la aprobación visual de los 35 assets nuevos asignados al calendario del 17–30 de agosto.
+- Se actualizaron la clasificación visual, la asignación de slots, el calendario operativo, el inventario especializado y el informe de revisión; los 11 slots `PENDIENTE_GENERAR` permanecen sin inventar contenido.
+- La validación final pasó: 35 filas nuevas asignadas, 35 captions con secuencias de emojis, 35 filas en el manifiesto, 28 reuse sin pares consecutivos y 11 placeholders.
+- El movimiento de los 35 archivos a `08 Agosto` continúa siendo manual por Fernando y de tipo `MOVE_ONLY`; no se crearán copias ni se programará contenido automáticamente desde este cierre documental.
 
 ---
 
@@ -188,9 +197,9 @@
 ## [1.2.84] — 2026-08-16 (Manus)
 ### Corrección del conteo Drive y captions de emojis
 - Fernando señaló que la carpeta raíz contiene 35 imágenes, no 33. La conciliación directa de Drive confirmó 41 hijos: 6 carpetas mensuales y 35 imágenes.
-- Los dos extras no registrados inicialmente son `260661` (Wilfred: memes prohibidos) y `2607831` (Kiri: pollo asado en el cine). Ambos se integraron al inventario especializado, clasificación, asignación y manifiesto; quedan pendientes de aprobación específica.
+- Los dos extras no registrados inicialmente son `260661` (Wilfred: memes prohibidos) y `2607831` (Kiri: pollo asado en el cine). Ambos se integraron al inventario especializado, clasificación, asignación y manifiesto, y Fernando aprobó su inclusión en el calendario.
 - La versión operativa ahora contiene 35 assets nuevos asignados, 11 placeholders y 28 reuse. Los 35 nuevos usan captions de secuencias de múltiples emojis más hashtags del kit USM; los reuse conservan sus captions previos.
-- Fernando moverá manualmente los archivos; el manifiesto de 35 assets es de referencia `MOVE_ONLY` y no se ejecutará ningún movimiento desde esta sesión.
+- Fernando moverá manualmente los archivos; el manifiesto de 35 assets es de referencia `MOVE_ONLY`, con `copy_allowed=NO`, y no se ejecutará ningún movimiento desde esta sesión.
 
 ---
 

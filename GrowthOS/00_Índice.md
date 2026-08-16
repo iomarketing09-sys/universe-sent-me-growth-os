@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-16
-**Versión:** 4.6
+**Versión:** 4.7
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -55,9 +55,9 @@
 | [Recomendación Instagram — CGO](../Operations/Research/2026-08-14_Recomendacion_Instagram_CGO.md) | Dictamen sobre cross-post selectivo, memes candidatos y prueba orgánica en Instagram. | Review |
 | [Auditoría directa de Instagram API — 15 de agosto](../Operations/Research/2026-08-15_Auditoria_API_Instagram.md) | Verifica permisos, vinculación, cuota y flujo de publicación de Instagram mediante Graph API directa. | Active |
 | [Extractor de métricas 24/72h](../Operations/Production/extract_metrics_24_72_playbook.md) | Playbook y contrato del extractor agrupado, idempotente y de un solo despertar para `EXP-2026-08-CAL-01`. | Active |
-| [Revisión calendario 17–30 — 16 de agosto](../Operations/Research/2026-08-16_Revision_Calendario_17_30.md) | Conciliación de 74 slots, 38 assets nuevos, reuse y publicaciones reales; identifica cinco movimientos pendientes. | Review |
-| [Propuesta ajustada calendario 17–30](../Operations/Research/2026-08-16_Propuesta_Ajuste_Calendario_17_30_Agosto.md) | Revisión de 74 slots con 28 reuse y 46 espacios nuevos; cinco movimientos de reuse aprobados, revisión visual de los nuevos pendiente. | Review |
-| [Revisión visual y asignación de 35 memes nuevos](../Operations/Research/2026-08-16_Revision_Visual_Asignacion_35_Memes_Nuevos.md) | Revisión de 35 assets: 33 asignaciones ya aprobadas y 2 extras de Drive pendientes de aprobación específica; 11 slots nuevos siguen pendientes. | Review |
+| [Revisión calendario 17–30 — 16 de agosto](../Operations/Research/2026-08-16_Revision_Calendario_17_30.md) | Conciliación de 74 slots, 35 assets nuevos aprobados, 28 reuse y 11 placeholders; identifica controles de producción restantes. | Review |
+| [Propuesta ajustada calendario 17–30](../Operations/Research/2026-08-16_Propuesta_Ajuste_Calendario_17_30_Agosto.md) | Revisión de 74 slots con 28 reuse y 46 espacios nuevos; cinco movimientos de reuse aprobados y 35 assets nuevos aprobados visualmente. | Review |
+| [Revisión visual y asignación de 35 memes nuevos](../Operations/Research/2026-08-16_Revision_Visual_Asignacion_35_Memes_Nuevos.md) | Revisión de 35 assets: los 35 están aprobados para el calendario; 11 slots nuevos siguen pendientes de generación. | Review |
 | [Clasificación visual — 35 memes nuevos](../Operations/Research/2026-08-16_Clasificacion_Visual_35_Memes_Nuevos.csv) | Ledger estructurado de personajes, tono, franja horaria, riesgo editorial y slot propuesto para 35 assets. | Review |
 | [Asignación visual — calendario 17–30](../Operations/Research/2026-08-16_Asignacion_Visual_Calendario_17_30_Agosto.csv) | Copia de trabajo del calendario con 35 assets nuevos asignados y 11 placeholders conservados. | Review |
 | [Calendario operativo 17–30](../Operations/Research/2026-08-16_Calendario_Operativo_17_30_Agosto.md) | Versión previa a programación con 35 assets, captions de múltiples emojis, 28 reuse y 11 placeholders. | Review |

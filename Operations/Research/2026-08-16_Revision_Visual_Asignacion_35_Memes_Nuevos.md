@@ -4,7 +4,7 @@ purpose: "Documentar la inspección visual de los 35 assets disponibles y propon
 status: Review
 created: 2026-08-16
 updated: 2026-08-16
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-16_Revision_Calendario_17_30.md"
@@ -17,23 +17,23 @@ organization: "Operations/Research"
 
 # Revisión visual y asignación de 35 memes nuevos
 
-> **Estado:** Review. Hay 33 assets previamente aprobados y 2 assets adicionales detectados en Drive (`260661` y `2607831`) pendientes de aprobación específica. Fernando moverá los archivos manualmente; no se autoriza programación ni publicación en esta ficha.
+> **Estado:** Review. Los 35 assets están aprobados para el calendario; quedan 11 slots `PENDIENTE_GENERAR`. Fernando moverá los archivos manualmente; no se autoriza programación ni publicación en esta ficha.
 
 ## Aprobación registrada
 
-Fernando aprobó la clasificación de los 33 assets revisados originalmente. Drive reveló después dos assets adicionales: `260661` y `2607831`. Ambos fueron revisados visualmente, integrados como candidatos en slots de media mañana y quedan pendientes de aprobación específica. Los 11 slots sin asset permanecen pendientes.
+Fernando aprobó la clasificación de los 33 assets revisados originalmente y confirmó también `260661` y `2607831`. Los 35 assets están integrados en slots de media mañana, tarde o noche según su contexto. Los 11 slots sin asset permanecen pendientes de generación.
 
 ## Resultado ejecutivo
 
-Se revisaron visualmente **35 assets disponibles** en la raíz de `Humor existencial`. Se integran **35 asignaciones** a slots `Nueva`: 33 assets previamente catalogados y 2 extras de Drive pendientes de aprobación específica. Quedan **11 slots nuevos** como `PENDIENTE_GENERAR` en la propuesta de 74 slots. La validación confirmó 74 filas, 46 nuevas, 28 reuse y cero pares de reuse consecutivos.
+Se revisaron visualmente **35 assets disponibles** en la raíz de `Humor existencial`. Se integran **35 asignaciones** a slots `Nueva`, todas aprobadas por Fernando. Quedan **11 slots nuevos** como `PENDIENTE_GENERAR` en la propuesta de 74 slots. La validación confirmó 74 filas, 46 nuevas, 28 reuse y cero pares de reuse consecutivos.
 
 | Estado visual | Cantidad | Tratamiento |
 |---|---:|---|
 | `Candidato` | 18 | Asignación aprobada; revisión final de legibilidad y copy antes de programar. |
 | `Candidato_Editorial` | 15 | Asignación aprobada a tarde/noche; conservar control de tono antes de programar. |
-| `Candidato_Extra_Pendiente_Aprobacion` | 2 | Extras detectados en Drive; asignación preliminar, aprobación específica pendiente. |
+| `Candidato_Extra_Aprobado` | 2 | Extras detectados en Drive y aprobados por Fernando; pendientes solo de programación. |
 
-## Piezas aprobadas con control editorial y extras pendientes
+## Piezas aprobadas con control editorial y trazabilidad de extras
 
 | Asset | Personaje(s) | Motivo |
 |---|---|---|
@@ -43,7 +43,7 @@ Se revisaron visualmente **35 assets disponibles** en la raíz de `Humor existen
 | `2608059` — 2608059 - Kael - Si la vida te da limones.jpeg | Kael | Doble sentido sexual; aprobado por Fernando; conservar control editorial de plataforma. |
 | `2608062` — 2608062 - Kiri+Evan - prestame el marron.jpeg | Kiri+Evan | Doble sentido sexual; aprobado por Fernando; conservar control editorial de plataforma. |
 
-Las cinco piezas que inicialmente requerían aprobación (`2608047`, `2608051`, `2608053`, `2608059` y `2608062`) ya fueron aprobadas por Fernando y tienen asignaciones de tarde o fin de semana. Los extras `260661` (Wilfred) y `2607831` (Kiri) fueron descubiertos al conciliar Drive contra el inventario; no se consideran aprobados hasta que Fernando los confirme específicamente.
+Las cinco piezas que inicialmente requerían aprobación (`2608047`, `2608051`, `2608053`, `2608059` y `2608062`) ya fueron aprobadas por Fernando y tienen asignaciones de tarde o fin de semana. Los extras `260661` (Wilfred) y `2607831` (Kiri) fueron descubiertos al conciliar Drive contra el inventario y posteriormente aprobados por Fernando. Se conserva la trazabilidad de que fueron añadidos después del primer lote de 33.
 
 ## Asignaciones propuestas
 
@@ -77,8 +77,8 @@ Las cinco piezas que inicialmente requerían aprobación (`2608047`, `2608051`, 
 | `2608063` — 2608063 - Universe - Larga vida a esas mujeres.jpeg | Universe | 2026-08-22 13:30 | Candidato_Editorial | Tarde/noche o fin de semana | Doble sentido sexual; sábado mediodía, aprobado por Fernando; conservar control editorial de plataforma. |
 | `2608064` — 2608064 - Universe - Quieren hacer pendejo al que nacio asi.jpeg | Universe | 2026-08-27 16:00 | Candidato | Mañana/media mañana/tarde según slot | Lenguaje fuerte/ácido; tarde. |
 | `2608065` — 2608065 - Fantasma - Pedazo de socrates.jpeg | Fantasma | 2026-08-26 11:00 | Candidato | Mañana/media mañana/tarde según slot | Existencial/ácido; media mañana. |
-| `260661` — Universe - Existencial 260661.png | Wilfred | 2026-08-24 10:00 | Candidato_Extra_Pendiente_Aprobacion | Mañana/media mañana | Humor irreverente; extra detectado en Drive; aprobación específica pendiente. |
-| `2607831` — Universe - Existencial 2607831.png | Kiri | 2026-08-21 10:00 | Candidato_Extra_Pendiente_Aprobacion | Mañana/media mañana | Humor absurdo; extra detectado en Drive; aprobación específica pendiente. |
+| `260661` — Universe - Existencial 260661.png | Wilfred | 2026-08-24 10:00 | Candidato_Extra_Aprobado | Mañana/media mañana | Humor irreverente; extra detectado en Drive; aprobación de Fernando registrada. |
+| `2607831` — Universe - Existencial 2607831.png | Kiri | 2026-08-21 10:00 | Candidato_Extra_Aprobado | Mañana/media mañana | Humor absurdo; extra detectado en Drive; aprobación de Fernando registrada. |
 
 ## Criterios aplicados
 
@@ -92,7 +92,7 @@ Quedan **11 slots nuevos** sin asset asignado. Se mantienen como `PENDIENTE_GENE
 
 ## Siguiente decisión de Fernando
 
-La aprobación visual de los 33 assets originales ya está registrada. El siguiente control es confirmar específicamente `260661` y `2607831`, mantener captions de múltiples emojis para los 35 nuevos y conservar 11 placeholders para producción futura. Hasta completar ese control, los CSV son propuestas operativas y no órdenes de publicación.
+La aprobación visual de los 35 assets ya está registrada. El siguiente control es que Fernando mueva manualmente los 35 archivos a `08 Agosto`, manteniendo los captions de múltiples emojis y conservando 11 placeholders para producción futura. Hasta completar ese control, los CSV son propuestas operativas y no órdenes de publicación.
 
 ## Referencias
 

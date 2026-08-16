@@ -80,4 +80,4 @@ El calendario no debe programarse todavía. La siguiente versión debe conservar
 
 Fernando aprobó los cinco movimientos de reuse propuestos: `260508 - Universe.jpg`, `260589.png`, `260518 - Kael.png`, `260590 - Maeve.png` y `741 - Elara+Maeve.png`. La aprobación es parcial y no convierte los 11 placeholders restantes en assets autorizados.
 
-La siguiente iteración es confirmar específicamente los extras `260661` y `2607831`, mientras Fernando mueve manualmente los 35 archivos a `08 Agosto` sin copias. La programación permanece pendiente de esa confirmación y de los 11 slots que todavía requieren generación.
+Los extras `260661` y `2607831` ya fueron aprobados y están integrados en el lote de 35 assets. El siguiente control es que Fernando mueva manualmente los 35 archivos a `08 Agosto` sin copias. La programación permanece pendiente de los 11 slots que todavía requieren generación.
