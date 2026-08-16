@@ -1,23 +1,24 @@
 ---
 title: "Propuesta ajustada de calendario experimental 17–30 de agosto"
-purpose: "Presentar para aprobación una versión de 74 slots que conserva 28 reuse y 46 espacios nuevos, separa los reuse consecutivos y respeta las decisiones previas."
+purpose: "Presentar para aprobación la versión base de 74 slots y un anexo de completación con 11 reuse —8 de 06 Junio/Top y 3 de la raíz disponible de 05 Mayo—, incluyendo los movimientos necesarios para conservar la separación operativa."
 status: Review
 created: 2026-08-16
 updated: 2026-08-16
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-16_Revision_Calendario_17_30.md"
   - "Operations/Research/2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md"
   - "Operations/Research/2026-08-15_Inventario_Memes_Nuevos_Drive.csv"
   - "Operations/Research/2026-08-15_Publication_Log.csv"
+  - "Operations/Research/2026-08-16_Propuesta_Completado_11_Reuse_Junio_Mayo.csv"
   - "GrowthOS/10_00_Kit_de_Hashtags_USM.md"
 organization: "Operations/Research"
 ---
 
 # Propuesta ajustada de calendario experimental 17–30 de agosto
 
-> **Estado:** Review. Fernando aprobó los cinco movimientos de reuse el 2026-08-16. La aprobación es parcial: los 46 slots nuevos siguen pendientes de revisión visual y la propuesta completa todavía no autoriza generación, movimiento de archivos, programación ni publicación.
+> **Estado:** Review. Fernando aprobó los cinco movimientos de reuse y los 35 assets nuevos del calendario base. Este anexo propone completar los 11 slots restantes con reuse de junio y mayo; aún requiere aprobación específica y no autoriza movimiento de archivos, programación ni publicación.
 
 ## Aprobación registrada
 
@@ -25,7 +26,7 @@ Fernando aprobó los cinco movimientos de reuse: `260508 - Universe.jpg`, `26058
 
 ## Resumen
 
-La propuesta conserva los **74 slots**, con **46 `Nueva`** y **28 `Reuse_Top`**. Se mantienen los horarios aprobados, `260528` queda el domingo 30 a las 22:00 y se corrigen cinco pares de reuse consecutivos detectados en la versión anterior. Los cinco assets nuevos ya publicados en 15–16 no se asignan a los slots nuevos; permanecen fuera de la cola futura.
+La propuesta base conserva los **74 slots**, con **46 `Nueva`** y **28 `Reuse_Top`**. El anexo añade una alternativa de cierre con **39 reuse totales** —8 `Reuse_Top` de junio y 3 `Reuse_Reserve` de mayo— y mantiene los 35 assets nuevos aprobados, moviendo ocho de ellos a slots liberados. `260528` queda el domingo 30 a las 22:00 y los cinco assets nuevos ya publicados en 15–16 permanecen fuera de la cola futura.
 
 ## Cambios frente a la propuesta anterior
 
@@ -118,9 +119,31 @@ El movimiento de `260590` a las 17:00 del 26 de agosto usa un slot que antes era
 | 2026-08-30 | Domingo | 19:00 | Nueva |  | PENDIENTE — 1–2 emojis que reaccionen al remate visual; no repetir el texto de la imagen. | Emoji_Minimo_Por_Definir | FB primero | Dejar vacío hasta generar y aprobar meme nuevo; el reuse manual queda en reserva para una futura rotación |
 | 2026-08-30 | Domingo | 22:00 | Reuse_Top | 260528 - Universe.png | Ya duérmete… 🌙 #UniverseSentMe | Frase_Corta | IG prioritario | historial mayo; revisar contexto antes de programar |
 
+## Anexo de completación: 11 reuse de junio y mayo
+
+La alternativa propone llenar los 11 slots que estaban `PENDIENTE_GENERAR` con ocho piezas de `06 Junio/Top` y tres piezas disponibles en la raíz de `05 Mayo`. Los ocho archivos de junio fueron verificados en Drive y revisados visualmente; los tres de mayo pertenecen a la raíz disponible confirmada por Fernando y conservan estado histórico de publicación desconocido, por lo que se mantienen como `Reuse_Reserve`, no como `Reuse_Top`.
+
+| Slot propuesto | Fuente | Asset | Criterio de franja |
+|---|---|---|---|
+| 2026-08-18 10:00 | 06 Junio/Top | `260646` — No sean así | Rutina/trabajo; mañana |
+| 2026-08-18 13:30 | 06 Junio/Top | `260735` — Universe: dos payasos | Absurdismo claro; mediodía |
+| 2026-08-19 17:00 | 06 Junio/Top | `260733` — Evan: aura fuerte | Reflexivo/afectivo; tarde |
+| 2026-08-20 10:00 | 06 Junio/Top | `2607794` — Universe: A ver | Relatable/reflexivo; mañana |
+| 2026-08-21 10:00 | 06 Junio/Top | `2607838` — Dios: quién me creó | Existencial evergreen; mañana |
+| 2026-08-23 19:00 | 06 Junio/Top | `260757` — Maeve: ¿estás seguro? | Doble sentido; noche |
+| 2026-08-24 19:00 | 06 Junio/Top | `2607825` — Kael: ser el malo | Humor ácido; noche |
+| 2026-08-25 13:30 | 06 Junio/Top | `2607792` — Fantasma+Universe: el gato | Interacción afectiva; mediodía |
+| 2026-08-27 10:00 | 05 Mayo raíz | `260571` — Kiri | Estrés cotidiano; mañana |
+| 2026-08-28 11:00 | 05 Mayo raíz | `260550` — Universe | Ejercicio/comida; media mañana |
+| 2026-08-30 19:00 | 05 Mayo raíz | `260617` — Elara+Kael | Escena nocturna; domingo noche |
+
+Para evitar concentrar reuse consecutivos, la propuesta mueve ocho assets nuevos aprobados a slots liberados: `2608038` pasa del 18 ago 10:00 al 20 ago 11:00; `2608050` del 18 ago 13:30 al 22 ago 10:00; `2608035` del 19 ago 17:00 al 23 ago 10:00; `2608048` del 20 ago 10:00 al 24 ago 13:30; `2607831` del 21 ago 10:00 al 25 ago 10:00; `2608042` del 23 ago 19:00 al 27 ago 11:00; `2608045` del 24 ago 19:00 al 29 ago 10:00; y `2608054` del 30 ago 19:00 al 30 ago 10:00.
+
+Este diseño mantiene los 35 assets nuevos en el período, completa los 11 slots y reduce los pares consecutivos de reuse a cinco según la misma regla cronológica usada por el validador. No es matemáticamente posible mantener cero pares con 39 reuse en 74 slots, porque 39 supera el máximo de 37 reuse alternados; por eso la propuesta hace explícito el trade-off en vez de ocultarlo. La tabla detallada con Drive IDs, captions, tipo de reuse y estado de aprobación está en `2026-08-16_Propuesta_Completado_11_Reuse_Junio_Mayo.csv`.
+
 ## Condiciones de aprobación
 
-La propuesta debe revisarse visualmente antes de asignar los 46 nuevos. El inventario de Drive contiene 33 assets nuevos todavía no reconciliados como publicados, pero todos permanecen `Nuevo_Pendiente_Revision`; ese número no equivale a assets aprobados. No se debe usar un filename como sustituto de la revisión visual.
+La versión base ya tiene 35 assets nuevos aprobados visualmente. El anexo de 11 reuse fue revisado contra Drive, ranking y contexto visual, pero requiere aprobación de Fernando antes de incorporarse al calendario operativo maestro. Los 11 slots no deben quedar como generación nueva si se aprueba esta alternativa.
 
 La publicación futura debe usar la fuente maestra, el `Publication_Log.csv` y el kit de hashtags vigente. No se deben mover ni copiar assets en Drive hasta que el calendario esté aprobado y cada archivo tenga una asignación final.
 

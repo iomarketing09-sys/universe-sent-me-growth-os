@@ -4,9 +4,18 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-16
-**Versión:** 1.85
+**Versión:** 1.86
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.86] — 2026-08-16 (Manus)
+### Propuesta de cierre de los 11 slots restantes
+- Se verificaron en Drive los ocho archivos de `06 Junio/Top`: `260646`, `260735`, `260733`, `2607794`, `2607838`, `260757`, `2607825` y `2607792`.
+- Se verificaron en la raíz disponible de `05 Mayo` tres candidatos adicionales: `260571`, `260550` y `260617`. Sus fechas históricas individuales permanecen desconocidas, por lo que se clasifican como `Reuse_Reserve`, no como `Reuse_Top`.
+- Se creó el anexo `Operations/Research/2026-08-16_Propuesta_Completado_11_Reuse_Junio_Mayo.csv` y se actualizó la propuesta ajustada. La alternativa completa los 11 slots, conserva los 35 assets nuevos aprobados y requiere mover ocho assets nuevos a otros slots.
+- La alternativa produce 39 reuse y 35 nuevos. Con 39 reuse en 74 slots no es posible mantener cero pares consecutivos —el máximo alternado es 37—; el diseño revisado reduce el resultado a cinco pares y deja el trade-off explícito. El calendario operativo maestro no se modificó ni se aprobó automáticamente.
 
 ---
 
