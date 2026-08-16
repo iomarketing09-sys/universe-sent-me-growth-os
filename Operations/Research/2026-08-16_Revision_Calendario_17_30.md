@@ -72,12 +72,12 @@ La propuesta usa 46 nuevas y 28 reuse, equivalente a **62.2% nuevo y 37.8% reuse
 
 ## 6. Bloqueos antes de aprobación
 
-Primero debe decidirse si se mantienen los cinco pares de reuse consecutivos o si se intercambian slots. Después debe hacerse una revisión visual de los 33 nuevos disponibles y asignar cada asset a un contexto horario coherente. Los assets con contenido sexual, lenguaje fuerte o posible riesgo editorial deben marcarse individualmente; no se descartan por inferencia del filename.
+Los cinco pares de reuse ya fueron revisados y los cinco movimientos fueron aprobados. La revisión visual de 35 assets ya está hecha: 33 fueron aprobados previamente y 2 extras requieren aprobación específica. La versión operativa conserva 11 placeholders y captions de secuencias de múltiples emojis para los 35 nuevos. Los assets con contenido sexual, lenguaje fuerte o posible riesgo editorial se mantienen marcados individualmente.
 
 El calendario no debe programarse todavía. La siguiente versión debe conservar los 74 slots, retirar de cualquier cola futura los cinco assets ya publicados y mantener `PENDIENTE_GENERAR` en los espacios donde todavía no exista un visual aprobado.
 
 ## 7. Decisión y siguiente acción recomendada
 
-Fernando aprobó los cinco movimientos de reuse propuestos: `260508 - Universe.jpg`, `260589.png`, `260518 - Kael.png`, `260590 - Maeve.png` y `741 - Elara+Maeve.png`. La aprobación es parcial y no convierte los 46 placeholders en assets autorizados.
+Fernando aprobó los cinco movimientos de reuse propuestos: `260508 - Universe.jpg`, `260589.png`, `260518 - Kael.png`, `260590 - Maeve.png` y `741 - Elara+Maeve.png`. La aprobación es parcial y no convierte los 11 placeholders restantes en assets autorizados.
 
-La siguiente iteración debe ser la **revisión visual y editorial de los 33 memes nuevos todavía no reconciliados como publicados**, asignando cada asset solo a un contexto compatible. No se deben mover archivos de Drive ni programar publicaciones hasta completar esa revisión y obtener aprobación del calendario operativo.
+La siguiente iteración es confirmar específicamente los extras `260661` y `2607831`, mientras Fernando mueve manualmente los 35 archivos a `08 Agosto` sin copias. La programación permanece pendiente de esa confirmación y de los 11 slots que todavía requieren generación.

@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-16
-**Versión:** 1.83
+**Versión:** 1.84
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -182,6 +182,15 @@
 - Se detectaron cinco pares de reuse consecutivos. Se preparó una propuesta Draft que conserva 46 nuevas y 28 reuse, mantiene `260528` el domingo 30 a las 22:00 y reubica cinco reuse sin tocar el calendario anterior.
 - Drive confirmó que `260508 - Universe.jpg` y `Universe - Existencial 260508.png` son dos archivos distintos con checksums y contenidos visuales diferentes; ambos deben conservar filename completo para evitar ambigüedad.
 - Se crearon `Operations/Research/2026-08-16_Revision_Calendario_17_30.md` y `Operations/Research/2026-08-16_Propuesta_Ajuste_Calendario_17_30_Agosto.md/.csv`. La propuesta queda pendiente de aprobación de Fernando; no se generaron imágenes, no se movieron assets y no se programó contenido.
+
+---
+
+## [1.2.84] — 2026-08-16 (Manus)
+### Corrección del conteo Drive y captions de emojis
+- Fernando señaló que la carpeta raíz contiene 35 imágenes, no 33. La conciliación directa de Drive confirmó 41 hijos: 6 carpetas mensuales y 35 imágenes.
+- Los dos extras no registrados inicialmente son `260661` (Wilfred: memes prohibidos) y `2607831` (Kiri: pollo asado en el cine). Ambos se integraron al inventario especializado, clasificación, asignación y manifiesto; quedan pendientes de aprobación específica.
+- La versión operativa ahora contiene 35 assets nuevos asignados, 11 placeholders y 28 reuse. Los 35 nuevos usan captions de secuencias de múltiples emojis más hashtags del kit USM; los reuse conservan sus captions previos.
+- Fernando moverá manualmente los archivos; el manifiesto de 35 assets es de referencia `MOVE_ONLY` y no se ejecutará ningún movimiento desde esta sesión.
 
 ---
 

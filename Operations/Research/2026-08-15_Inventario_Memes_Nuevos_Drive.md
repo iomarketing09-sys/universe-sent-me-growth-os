@@ -3,14 +3,14 @@
 **Propósito:** Registrar los assets nuevos encontrados en la raíz operativa `My Drive/Universe sent me/USM/Humor existencial`, conservar su referencia de Drive y dejar una primera clasificación para producción y calendario.  
 **Estado:** Review  
 **Fecha de creación:** 2026-08-15  
-**Última actualización:** 2026-08-15  
-**Versión:** 1.0  
+**Última actualización:** 2026-08-16
+**Versión:** 1.1
 **Autor:** Manus AI  
 **Documentos relacionados:** [`GrowthOS/01_04_Production_Queue.md`](../../GrowthOS/01_04_Production_Queue.md), [`GrowthOS/01_03_Reuse_Queue.md`](../../GrowthOS/01_03_Reuse_Queue.md), [`2026-08-15_Calendario_15_16_Agosto.md`](2026-08-15_Calendario_15_16_Agosto.md)
 
 ## Resumen
 
-Se encontraron **38 archivos de imagen nuevos** directamente en la raíz de la carpeta de entrada. Las carpetas mensuales —03 Marzo, 04 Abril, 05 Mayo, 06 Junio, 07 Julio y 08 Agosto— se excluyeron del conteo porque representan archivo histórico, no contenido nuevo pendiente.
+La conciliación directa de Drive confirmó **35 archivos de imagen actuales** directamente en la raíz de la carpeta de entrada. Las carpetas mensuales —03 Marzo, 04 Abril, 05 Mayo, 06 Junio, 07 Julio y 08 Agosto— se excluyeron del conteo porque representan archivo histórico. El inventario especializado contiene ahora **40 registros**: los 35 assets actuales y 5 filas históricas de assets nuevos ya usados o registrados en el lote previo. Los dos assets que faltaban en la revisión anterior son `260661` y `2607831`.
 
 | Ref. | Personajes | Título descriptivo | Estado | Clasificación visual inicial | Drive |
 |---:|---|---|---|---|---|
@@ -52,10 +52,12 @@ Se encontraron **38 archivos de imagen nuevos** directamente en la raíz de la c
 | 2608063 | Universe | Larga vida a esas mujeres | `Nuevo_Pendiente_Revision` | Pendiente de revisión individual y aprobación de copy; no publicar automáticamente. | [Abrir](https://drive.google.com/file/d/1tqSd44quWVGE1DAxEMXubCkhwrOXIE8l/view?usp=drivesdk) |
 | 2608064 | Universe | Quieren hacer pendejo al que nacio asi | `Nuevo_Pendiente_Revision` | Pendiente de revisión individual y aprobación de copy; no publicar automáticamente. | [Abrir](https://drive.google.com/file/d/1pobDeNctju8fvKuMr5G_UYFP_3kZhveG/view?usp=drivesdk) |
 | 2608065 | Fantasma | Pedazo de socrates | `Nuevo_Pendiente_Revision` | Pendiente de revisión individual y aprobación de copy; no publicar automáticamente. | [Abrir](https://drive.google.com/file/d/19w2ShwavNcAS4YDdY7pH4XYqtktLcSN-/view?usp=drivesdk) |
+| 260661 | Wilfred | Tengo memes prohibidos de páginas que la gente teme visitar | `Nuevo_Pendiente_Revision` | Extra detectado en Drive; humor irreverente, candidato de media mañana; aprobación específica pendiente. | [Abrir](https://drive.google.com/file/d/17hUIV21cMGCpVTR_BcHYVk_GonanVQVi/view?usp=drivesdk) |
+| 2607831 | Kiri | Ya llegará con quien esconder un pollo asado en el cine | `Nuevo_Pendiente_Revision` | Extra detectado en Drive; humor absurdo, candidato de media mañana; aprobación específica pendiente. | [Abrir](https://drive.google.com/file/d/1T4q8CIhYOt8Wl1ZsJDDWZgTW_GjAGIeA/view?usp=drivesdk) |
 
 ## Criterio de registro
 
-Estos assets se mantienen en la raíz de Drive porque todavía están pendientes de selección, aprobación y programación. Una vez publicados y confirmados sus IDs de Meta, deberán moverse a `Humor existencial/08 Agosto` o a la carpeta mensual que corresponda, siguiendo el pipeline vigente. La referencia numérica del nombre se conserva como identificador operativo.
+Estos assets se mantienen en la raíz de Drive porque todavía están pendientes de selección, aprobación y programación. Los dos extras `260661` y `2607831` requieren una aprobación específica antes de considerarse parte del calendario operativo final. Una vez publicados y confirmados sus IDs de Meta, deberán moverse a `Humor existencial/08 Agosto` o a la carpeta mensual que corresponda, siguiendo el pipeline vigente. La referencia numérica del nombre se conserva como identificador operativo.
 
 El inventario no convierte automáticamente todos los archivos en contenido aprobado. La revisión visual del contacto-sheet permite priorizar candidatos, pero el estado de publicación debe permanecer en `PENDIENTE_APROBACION` hasta que Fernando apruebe el calendario.
 

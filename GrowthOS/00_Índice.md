@@ -3,7 +3,7 @@
 **Propósito:** Punto de entrada a toda la documentación operativa del Growth OS (calendario editorial, colas, automatizaciones, governance).
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-15
+**Última actualización:** 2026-08-16
 **Versión:** 4.6
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
@@ -57,15 +57,15 @@
 | [Extractor de métricas 24/72h](../Operations/Production/extract_metrics_24_72_playbook.md) | Playbook y contrato del extractor agrupado, idempotente y de un solo despertar para `EXP-2026-08-CAL-01`. | Active |
 | [Revisión calendario 17–30 — 16 de agosto](../Operations/Research/2026-08-16_Revision_Calendario_17_30.md) | Conciliación de 74 slots, 38 assets nuevos, reuse y publicaciones reales; identifica cinco movimientos pendientes. | Review |
 | [Propuesta ajustada calendario 17–30](../Operations/Research/2026-08-16_Propuesta_Ajuste_Calendario_17_30_Agosto.md) | Revisión de 74 slots con 28 reuse y 46 espacios nuevos; cinco movimientos de reuse aprobados, revisión visual de los nuevos pendiente. | Review |
-| [Revisión visual y asignación de 33 memes nuevos](../Operations/Research/2026-08-16_Revision_Visual_Asignacion_33_Memes_Nuevos.md) | Clasificación visual de 33 assets: 28 asignaciones propuestas, 5 piezas retenidas por revisión editorial y 18 slots aún pendientes. | Review |
-| [Clasificación visual — 33 memes nuevos](../Operations/Research/2026-08-16_Clasificacion_Visual_33_Memes_Nuevos.csv) | Ledger estructurado de personajes, tono, franja horaria, riesgo editorial y slot propuesto. | Review |
-| [Asignación visual — calendario 17–30](../Operations/Research/2026-08-16_Asignacion_Visual_Calendario_17_30_Agosto.csv) | Copia de trabajo del calendario con 33 assets nuevos asignados y 13 placeholders conservados. | Review |
-| [Calendario operativo 17–30](../Operations/Research/2026-08-16_Calendario_Operativo_17_30_Agosto.md) | Versión previa a programación con 33 assets aprobados, captions del kit USM, 28 reuse y 13 placeholders. | Review |
-| [Manifiesto MOVE_ONLY de agosto](../Operations/Research/2026-08-16_Manifiesto_Movimiento_33_Memes_Agosto.csv) | 33 Drive IDs verificados para mover desde `Humor existencial` a `08 Agosto`; no permite copias y requiere confirmación. | Review |
+| [Revisión visual y asignación de 35 memes nuevos](../Operations/Research/2026-08-16_Revision_Visual_Asignacion_35_Memes_Nuevos.md) | Revisión de 35 assets: 33 asignaciones ya aprobadas y 2 extras de Drive pendientes de aprobación específica; 11 slots nuevos siguen pendientes. | Review |
+| [Clasificación visual — 35 memes nuevos](../Operations/Research/2026-08-16_Clasificacion_Visual_35_Memes_Nuevos.csv) | Ledger estructurado de personajes, tono, franja horaria, riesgo editorial y slot propuesto para 35 assets. | Review |
+| [Asignación visual — calendario 17–30](../Operations/Research/2026-08-16_Asignacion_Visual_Calendario_17_30_Agosto.csv) | Copia de trabajo del calendario con 35 assets nuevos asignados y 11 placeholders conservados. | Review |
+| [Calendario operativo 17–30](../Operations/Research/2026-08-16_Calendario_Operativo_17_30_Agosto.md) | Versión previa a programación con 35 assets, captions de múltiples emojis, 28 reuse y 11 placeholders. | Review |
+| [Manifiesto MOVE_ONLY de agosto](../Operations/Research/2026-08-16_Manifiesto_Movimiento_35_Memes_Agosto.csv) | 35 Drive IDs para mover manualmente desde `Humor existencial` a `08 Agosto`; no permite copias. | Review |
 | [Revisión de Reuse — Mayo frente a Junio](../Operations/Research/2026-08-14_Revision_Reuse_Mayo_Junio.md) | Inventario de Drive, elegibilidad de mayo y reserva Top de junio. | Review |
 | [Ranking Reuse Mayo — rendimiento Meta](../Operations/Research/2026-08-14_Reuse_Mayo_Ranking.csv) | Ranking individual de 123 assets cruzados con 205 publicaciones de mayo. | Active |
 | [Pipeline de publicación y archivado mensual](13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md) | Estándar CSV, publicación por Graph API y movimiento de assets publicados a la carpeta mensual. | Active |
-| [Inventario de memes nuevos de Drive — 15 de agosto](../Operations/Research/2026-08-15_Inventario_Memes_Nuevos_Drive.md) | Registro de 38 imágenes nuevas encontradas en la raíz de Humor existencial, con referencias y enlaces de Drive. | Review |
+| [Inventario de memes nuevos de Drive — 15 de agosto](../Operations/Research/2026-08-15_Inventario_Memes_Nuevos_Drive.md) | Registro especializado actualizado: 35 imágenes actuales en la raíz de Humor existencial y 40 filas acumuladas con referencias y enlaces de Drive. | Review |
 | [Calendario 15–16 de agosto — programado](../Operations/Research/2026-08-15_Calendario_15_16_Agosto.md) | Registro de 9 publicaciones de Facebook (5 nuevas y 4 reuse) confirmadas en Meta; incluye prueba de Instagram eliminada y distribución manual selectiva. | Active |
 | [Reconciliación Facebook 15–16 → CNT](../Operations/Research/2026-08-15_Reconciliacion_Publicaciones_15_16_CNT.md) | Cierra el vínculo de los 9 assets del calendario con CNT-031–CNT-039 y registra la publicación manual de Instagram 2608030. | Active |
 
