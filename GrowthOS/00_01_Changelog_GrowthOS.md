@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-16
-**Versión:** 1.78
+**Versión:** 1.79
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
@@ -164,6 +164,14 @@
 - Se creó `Operations/Production/extract_metrics_24_72_playbook.md` y se actualizó el índice y la fuente maestra. La programación sigue bloqueada externamente por `permission_denied: 403 Forbidden`; no se intentó modificar Instagram.
 
 ---
+
+---
+
+## [1.2.79] — 2026-08-16 (Manus)
+### Revisión de pendientes después de activar métricas
+- `Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md` pasó a v1.5 y refleja que la tarea independiente de métricas está activa con `egAl6a7WZExBrDPd8tIY1B`, cron `0 15 22 */2 * *`, zona `America/Matamoros` y un solo despertar.
+- El P0 ya no es crear el schedule: queda esperar la primera ejecución válida, verificar la evidencia, actualizar `Publication_Log.csv` y `ExperimentLog.csv`, cerrar `HB-003`/`HB-004`/`HB-005` y actualizar la baseline.
+- Se mantienen como P1: prueba `nothing_due` antes de reactivar Instagram, revisión de `CNT-004`, normalización completa de estados y preparación/aprobación del calendario 17–30. La comunidad queda en P2 para medir cobertura y tiempo de respuesta en nuevos deltas.
 
 ---
 

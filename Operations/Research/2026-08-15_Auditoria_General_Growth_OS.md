@@ -3,8 +3,8 @@ title: "Auditoría general del Growth OS — estado de integración"
 purpose: "Evaluar de extremo a extremo la integración entre estrategia, documentación, inventario, calendario, canon, contenido, comunidad, Meta Graph API, Drive, automatizaciones y ciclo de aprendizaje de Universe Sent Me."
 status: Review
 created: 2026-08-15
-updated: 2026-08-15
-version: "1.4"
+updated: 2026-08-16
+version: "1.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/00_Índice.md"
@@ -13,6 +13,7 @@ related_documents:
   - "GrowthOS/Integracion_Growth_OS.md"
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
   - "GrowthOS/08_00_Metricas_Baseline_Plataformas.md"
+  - "Operations/Production/extract_metrics_24_72_playbook.md"
   - "Operations/Research/2026-08-14_Comparativo_Desempeno_Junio_Julio_Agosto.md"
   - "Operations/Research/2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md"
   - "Operations/Research/2026-08-15_Calendario_15_16_Agosto.md"
@@ -47,12 +48,12 @@ La auditoría original identificó varias brechas que ya fueron resueltas en el 
 | Instagram 15–16 | 2608030 está registrado como publicación manual; 260583 permanece eliminado y bloqueado contra republicación. | Cerrado / controlado |
 | Scheduler Instagram | Está en `pause`, conserva el cron aprobado, ya no tiene `intervalSeconds` y solo mantiene el conector de Meta Graph API. Antes de reactivarlo habrá que verificar el modo de ejecución. | Controlado |
 | Canon | Silvio/Payaso ya está resuelto en la evidencia canónica registrada; queda CNT-004 como única contradicción narrativa sustantiva y deben mantenerse separados los motivos administrativos de revisión. | P1 |
-| Aprendizaje | Completar 24/72 horas y cerrar `HB-003`, `HB-004` y `HB-005`; actualizar baseline. | P0 |
+| Aprendizaje | El schedule independiente de métricas ya está activo a las 22:15 cada 48 horas; falta esperar la primera ejecución válida, actualizar los ledgers y cerrar `HB-003`, `HB-004` y `HB-005`. | P0 |
 | Calendario 17–30 | Producir y aprobar las 46 piezas nuevas; verificar los 28 reuse y dejar vacíos los slots no listos. | P1 |
 | Automatizaciones heredadas y documentación | Referencias activas retiradas de los documentos de control; permanecen menciones históricas en changelog, archivo y auditorías antiguas. | Cerrado / controlado |
 | Comunidad | Primer lote de 9 comentarios registrado; las 4 respuestas fueron aprobadas y publicadas, con 0 riesgos escalados. El cuarto comentario se mantiene como humor ácido contextual. Quedan deltas futuros y medición de cobertura. | P2 |
 
-El estado live posterior a la limpieza es `pause`, con cron `0 0,30 11,14,17,20 15,16 8 *`, expiración `2026-08-17T04:30:00Z`, `runAsNewTask=true`, `runMode=ask_user`, sin `intervalSeconds` y con un único conector: `Universe Sent Me Meta API`. No se publicó contenido durante la limpieza. Antes de una nueva campaña solo queda verificar que el modo de ejecución sea compatible y ejecutar una prueba controlada `nothing_due`.
+El estado live del scheduler de Instagram sigue siendo `pause`, con cron `0 0,30 11,14,17,20 15,16 8 *`, expiración `2026-08-17T04:30:00Z`, `runAsNewTask=true`, `runMode=ask_user`, sin `intervalSeconds` y con un único conector: `Universe Sent Me Meta API`. No se publicó contenido durante la limpieza. Antes de una nueva campaña solo queda verificar que el modo de ejecución sea compatible y ejecutar una prueba controlada `nothing_due`. En paralelo, la tarea independiente de métricas quedó activa según `ed663ee`, con identificador `egAl6a7WZExBrDPd8tIY1B`, cron `0 15 22 */2 * *`, zona `America/Matamoros` y un solo despertar por ejecución.
 
 ## 2. Alcance y método
 
@@ -178,7 +179,7 @@ La deuda no debe resolverse reescribiendo todo de una vez. Conviene normalizar p
 |---|---|---:|---:|---|
 | P1 | El scheduler de Instagram está limpio y pausado, pero conserva `runMode=ask_user` y requiere una prueba de no-op antes de reactivarse. | Media | Medio | Verificar modo compatible y ejecutar `nothing_due` sin publicar. |
 | P1 | CNT-004 conserva contradicciones narrativas sustantivas; el resto de los antiguos `Canon_Review_Required` debe leerse por motivo normalizado. | Media | Medio | Mantener CNT-004 bloqueado para esa mini-historia y no confundir revisiones administrativas con aprobación canónica. |
-| P0 | El ciclo de aprendizaje sigue abierto: el `ExperimentLog` ya existe, pero las métricas 24/72 horas y los veredictos siguen pendientes. | Alta | Alto | Extraer métricas en ventanas válidas, cerrar `HB-003`/`HB-004`/`HB-005` y actualizar la baseline. |
+| P0 | El ciclo de aprendizaje sigue abierto, pero la tarea de revisión ya está activa; todavía no hay métricas 24/72 horas ni veredictos cerrados para el lote 15–16. | Alta | Alto | Esperar la ejecución de 22:15, validar la evidencia, cerrar `HB-003`/`HB-004`/`HB-005` y actualizar la baseline. |
 | P1 | Calendarios e inventarios usan estados, IDs y estructuras no uniformes. | Alta | Alto | Esquema maestro con ID de pieza, asset, plataforma, estado de canon, estado de publicación e IDs Meta. |
 | P1 | El experimento 17–30 tiene 46 assets nuevas sin generar/aprobar y 38 assets nuevos de Drive pendientes de revisión. | Alta | Alto | Confirmar capacidad, producir y aprobar la cola; no rellenar huecos con reuse improvisado. |
 | P2 | Permanecen menciones históricas de automatizaciones heredadas en changelog, archivo, auditorías antiguas y algunos blueprints. | Baja | Bajo | Conservarlas como trazabilidad; no tratarlas como arquitectura activa. |
