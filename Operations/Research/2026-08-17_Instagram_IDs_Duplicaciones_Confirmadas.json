@@ -1,0 +1,95 @@
+{
+  "title": "IDs de duplicaciones Instagram 17–30 proporcionados por Fernando",
+  "purpose": "Registrar los seis identificadores entregados por Fernando sin inventar permalinks, horas reales ni estados de publicación.",
+  "status": "Review",
+  "created": "2026-08-17",
+  "updated": "2026-08-17",
+  "version": "1.0",
+  "author": "Manus AI (CGO)",
+  "related_documents": [
+    "Operations/Research/2026-08-17_Registros_Instagram_Manual_5.md",
+    "Operations/Research/2026-08-15_Publication_Log.csv",
+    "Operations/Research/2026-08-15_ExperimentLog.csv",
+    "Operations/Research/2026-08-17_Calendario_Instagram_17_30_Propuesto.md"
+  ],
+  "organization": "Operations/Research",
+  "interpretation": "IDs registrados como Programada; no se declara Publicada sin permalink o confirmación de estado efectivo.",
+  "records": [
+    {
+      "asset_code": "260633",
+      "asset": "260633 - Universe.png",
+      "date_local": "2026-08-17",
+      "time_local": "10:00",
+      "ig_media_or_meta_id": "1564061365193135",
+      "caption": "😮‍💨 #UniverseSentMe",
+      "publication_log_id": "PUB-IG-17_30-01B",
+      "experiment_log_id": "OBS-IG-17_30-01B",
+      "state": "Programada"
+    },
+    {
+      "asset_code": "260560",
+      "asset": "260560 - Fantasma.png",
+      "date_local": "2026-08-19",
+      "time_local": "13:30",
+      "ig_media_or_meta_id": "1385059653723843",
+      "caption": "Esperando octubre… 👻 #UniverseSentMe",
+      "publication_log_id": "PUB-IG-17_30-02B",
+      "experiment_log_id": "OBS-IG-17_30-02B",
+      "state": "Programada"
+    },
+    {
+      "asset_code": "260614",
+      "asset": "260614 - Universe.png",
+      "date_local": "2026-08-21",
+      "time_local": "19:00",
+      "ig_media_or_meta_id": "1598897621792943",
+      "caption": "Analizando mi propio caos. 🧐 #UniverseSentMe",
+      "publication_log_id": "PUB-IG-17_30-03B",
+      "experiment_log_id": "OBS-IG-17_30-03B",
+      "state": "Programada"
+    },
+    {
+      "asset_code": "260625",
+      "asset": "260625.png",
+      "date_local": "2026-08-23",
+      "time_local": "22:00",
+      "ig_media_or_meta_id": "2631450910602853",
+      "caption": "El cambio da miedo… quedarse igual también. 😮‍💨 #UniverseSentMe",
+      "publication_log_id": "PUB-IG-17_30-04B",
+      "experiment_log_id": "OBS-IG-17_30-04B",
+      "state": "Programada"
+    },
+    {
+      "asset_code": "260613",
+      "asset": "260613 - Wilfred.png",
+      "date_local": "2026-08-25",
+      "time_local": "17:00",
+      "ig_media_or_meta_id": "1372611618180903",
+      "caption": "Wilfred sabe. 🌲 #UniverseSentMe",
+      "publication_log_id": "PUB-IG-17_30-05B",
+      "experiment_log_id": "OBS-IG-17_30-05B",
+      "state": "Programada"
+    },
+    {
+      "asset_code": "260528",
+      "asset": "260528 - Universe.png",
+      "date_local": "2026-08-30",
+      "time_local": "22:00",
+      "ig_media_or_meta_id": "1406763488012220",
+      "caption": "Ya duérmete… 🌙 #UniverseSentMe",
+      "publication_log_id": "PUB-IG-17_30-06B",
+      "experiment_log_id": "OBS-IG-17_30-06B",
+      "state": "Programada"
+    }
+  ],
+  "excluded_historical_row": {
+    "asset_code": "260633",
+    "historical_media_id": "17943879225288953",
+    "state": "Eliminada_Manualmente",
+    "new_record_separate": true
+  },
+  "meta_called": false,
+  "facebook_modified": false,
+  "drive_modified": false,
+  "scheduler_modified": false
+}

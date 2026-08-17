@@ -30,11 +30,11 @@ La primera ola contiene seis assets ya existentes, separados para observar disti
 | Orden | Fecha objetivo | Hora objetivo | Asset | Tipo | Caption exacto | Motivo CGO | Estado operativo |
 |---:|---|---|---|---|---|---|---|
 | 1 | 2026-08-17 | 10:00 | `260633 - Universe.png` | `Reuse_Top` | `😮‍💨 #UniverseSentMe` | Primer test de imagen estática, Universe y horario de mañana. | `Eliminada_Manualmente` — media histórica `17943879225288953`; **no republicar** |
-| 2 | 2026-08-19 | 13:30 | `260560 - Fantasma.png` | `Reuse_Top` | `Esperando octubre… 👻 #UniverseSentMe` | Candidato prioritario; Fantasma tiene señal previa y el mensaje es legible sin contexto. | `Pendiente_Aprobación_Fernando` |
-| 3 | 2026-08-21 | 19:00 | `260614 - Universe.png` | `Reuse_Top` | `Analizando mi propio caos. 🧐 #UniverseSentMe` | Candidato secundario para probar una franja nocturna con copy breve. | `Pendiente_Aprobación_Fernando` |
-| 4 | 2026-08-23 | 22:00 | `260625.png` | `Reuse_Top` | `El cambio da miedo… quedarse igual también. 😮‍💨 #UniverseSentMe` | Candidato prioritario; composición vertical y humor relatable. | `Pendiente_Aprobación_Fernando` |
-| 5 | 2026-08-25 | 17:00 | `260613 - Wilfred.png` | `Reuse_Top` | `Wilfred sabe. 🌲 #UniverseSentMe` | Prueba de personaje; visual simple y copy de reconocimiento inmediato. | `Pendiente_Aprobación_Fernando` |
-| 6 | 2026-08-30 | 22:00 | `260528 - Universe.png` | `Reuse_Top` | `Ya duérmete… 🌙 #UniverseSentMe` | Contexto nocturno explícito; reserva el horario de domingo por la noche. | `Pendiente_Aprobación_Fernando` |
+| 2 | 2026-08-19 | 13:30 | `260560 - Fantasma.png` | `Reuse_Top` | `Esperando octubre… 👻 #UniverseSentMe` | Candidato prioritario; Fantasma tiene señal previa y el mensaje es legible sin contexto. | `Programada_ID_Proporcionado` — `1385059653723843`; permalink pendiente |
+| 3 | 2026-08-21 | 19:00 | `260614 - Universe.png` | `Reuse_Top` | `Analizando mi propio caos. 🧐 #UniverseSentMe` | Candidato secundario para probar una franja nocturna con copy breve. | `Programada_ID_Proporcionado` — `1598897621792943`; permalink pendiente |
+| 4 | 2026-08-23 | 22:00 | `260625.png` | `Reuse_Top` | `El cambio da miedo… quedarse igual también. 😮‍💨 #UniverseSentMe` | Candidato prioritario; composición vertical y humor relatable. | `Programada_ID_Proporcionado` — `2631450910602853`; permalink pendiente |
+| 5 | 2026-08-25 | 17:00 | `260613 - Wilfred.png` | `Reuse_Top` | `Wilfred sabe. 🌲 #UniverseSentMe` | Prueba de personaje; visual simple y copy de reconocimiento inmediato. | `Programada_ID_Proporcionado` — `1372611618180903`; permalink pendiente |
+| 6 | 2026-08-30 | 22:00 | `260528 - Universe.png` | `Reuse_Top` | `Ya duérmete… 🌙 #UniverseSentMe` | Contexto nocturno explícito; reserva el horario de domingo por la noche. | `Programada_ID_Proporcionado` — `1406763488012220`; permalink pendiente |
 
 Las fechas y horas son **ventanas de decisión**, no órdenes automáticas. Antes de cada publicación se debe confirmar que la fila no tenga `IG_Media_ID`, no esté `PUBLICADA` ni `ELIMINADA_MANUALMENTE`, y que exista una URL pública exacta del asset.
 
