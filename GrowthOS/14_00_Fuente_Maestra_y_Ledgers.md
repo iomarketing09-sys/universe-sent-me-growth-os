@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-17
-version: "1.9"
+version: "2.0"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -20,6 +20,7 @@ related_documents:
   - "Operations/Research/2026-08-15_Reconciliacion_Publicaciones_15_16_CNT.md"
   - "GrowthOS/00_Índice.md"
   - "Operations/Research/2026-08-17_Instagram_Publicacion_260633.json"
+  - "Operations/Research/2026-08-17_Instagram_IDs_Duplicaciones_Confirmadas.json"
 organization: "GrowthOS"
 ---
 
@@ -127,7 +128,7 @@ El mismo procedimiento aplica a las publicaciones posteriores: registrar primero
 
 ## 6. Primer estado implementado
 
-El `ExperimentLog` contiene observaciones históricas, nueve publicaciones reales de Facebook del 15–16 de agosto y cuatro publicaciones activas de Instagram: `2608030`, `2608036`, `2608060` y `260633`. La nueva fila `260633` no recibe un CNT inventado; permanece con `ID_Pieza` vacío hasta una reconciliación con evidencia suficiente. El `Publication_Log` enlaza las nueve publicaciones de Facebook con `CNT-031`–`CNT-039`, conserva tres intentos históricos de Instagram eliminados manualmente y registra las tres publicaciones activas con sus nuevos media IDs y permalinks. Las métricas 24/72 horas de las nueve publicaciones de Facebook y de las dos republicaciones nuevas quedan pendientes hasta que exista una ventana temporal válida.
+El `ExperimentLog` contiene observaciones históricas, nueve publicaciones reales de Facebook del 15–16 de agosto y tres publicaciones activas confirmadas de Instagram: `2608030`, `2608036` y `2608060`. Además, registra seis IDs proporcionados por Fernando para duplicaciones Instagram 17–30 (`260633`, `260560`, `260614`, `260625`, `260613` y `260528`) con estado prudente `Programada`, sin permalink ni hora real inventados. La fila histórica de `260633` con media `17943879225288953` permanece como `Eliminada_Manualmente`; el nuevo ID `1564061365193135` se conserva como registro separado. Ninguna de estas filas recibe un CNT inventado; permanecen con `ID_Pieza` vacío hasta una reconciliación con evidencia suficiente. El `Publication_Log` enlaza las nueve publicaciones de Facebook con `CNT-031`–`CNT-039`, conserva intentos históricos de Instagram eliminados manualmente y separa publicaciones activas confirmadas de programaciones con ID proporcionado. Las métricas 24/72 horas de Facebook y los cortes observados de Instagram quedan pendientes de evidencia válida.
 
 El `Community_Engagement_Log.csv` contiene 18 comentarios reales: nueve del primer lote, seis del delta del 16 de agosto, dos del delta del 17 de agosto y una revisión puntual de publicación. Las cuatro respuestas del primer lote y la respuesta puntual fueron aceptadas por Meta; la respuesta puntual tiene `Respuesta_Meta_ID=122148874563072582_1613678620282915`, aunque su verificación GET devolvió HTTP 403 por permisos. La muestra histórica de 67 comentarios se conserva como análisis agregado y no se transforma retroactivamente en filas. Las futuras revisiones deben recuperar solo el delta nuevo, deduplicar por `Comentario_ID` y mantener respuestas y moderación bajo aprobación humana.
 

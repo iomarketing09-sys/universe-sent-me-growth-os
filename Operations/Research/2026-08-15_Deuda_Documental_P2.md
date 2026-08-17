@@ -3,8 +3,8 @@ title: "Deuda documental P2 — Growth OS"
 purpose: "Clasificar el estado de los documentos operativos, históricos y de investigación del Growth OS para mantener una fuente de verdad clara sin borrar trazabilidad ni reactivar procesos retirados."
 status: Active
 created: 2026-08-15
-updated: 2026-08-16
-version: "1.4"
+updated: 2026-08-17
+version: "1.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/09_00_Estandar_Documentacion_Interna.md"
@@ -72,7 +72,7 @@ El primer delta incremental se ejecutó el `2026-08-16T23:41:56Z` desde el curso
 |---:|---|---|---|
 | 1 | Comunidad | **Lote 1 ejecutado** | Ejecutar la siguiente ventana incremental cuando exista un nuevo delta; medir cobertura solo sobre comentarios cualitativos. |
 | 2 | Baseline Facebook/Instagram | Pendiente de datos | Esperar métricas 24/72h válidas del lote 15–16, armonizar definiciones y actualizar la baseline separando canales. |
-| 3 | Deuda documental | **Control activo verificado** | Las menciones restantes de Make son históricas, de changelog, de auditoría o de trazabilidad; no presentan la ruta como operativa. Mantenerlas sin reactivar el proceso. |
+| 3 | Deuda documental | **Normalización P2 cerrada — 2026-08-17** | Se normalizaron estados Instagram, fuente maestra, calendario, índice, changelog y metadatos críticos; las menciones restantes de Make son trazabilidad histórica. Queda solo una cola residual de metadatos antiguos sin impacto operativo. |
 
 
 

@@ -4,7 +4,7 @@ purpose: "Evaluar de extremo a extremo la integración entre estrategia, documen
 status: Review
 created: 2026-08-15
 updated: 2026-08-17
-version: "2.1"
+version: "2.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/00_Índice.md"
@@ -37,7 +37,7 @@ organization: "Operations/Research"
 
 ## 1. Dictamen ejecutivo
 
-El Growth OS de Universe Sent Me tiene una arquitectura reconocible, una estrategia editorial basada en datos, publicación directa por Meta Graph API, reglas de canon, reuse, experimento de calendario y señales de comunidad. Sin embargo, todavía **no funciona como un sistema cerrado de extremo a extremo**: la programación ya está operativa, pero las métricas todavía no han regresado al `ExperimentLog`, la identidad de las 74 piezas no está consolidada en `Content_Inventory.csv`, y la ruta de Instagram sigue siendo una prueba manual separada.
+El Growth OS de Universe Sent Me tiene una arquitectura reconocible, una estrategia editorial basada en datos, publicación directa por Meta Graph API, reglas de canon, reuse, experimento de calendario y señales de comunidad. Sin embargo, todavía **no funciona como un sistema cerrado de extremo a extremo**: la programación ya está operativa, pero las métricas todavía no han regresado al `ExperimentLog`, la identidad de las 74 piezas no está consolidada en `Content_Inventory.csv`, y la ruta de Instagram sigue siendo una operación manual separada, ahora normalizada con seis IDs de duplicación prudentes y tres publicaciones activas confirmadas.
 
 La conclusión CGO es: **Facebook está operativo y validado; Instagram tiene acceso técnico y la publicación manual selectiva ya está validada, pero no existe automatización confiable todavía; el Growth OS sigue parcialmente integrado**. El riesgo principal es ahora el control plane: 74 posts programados aún no publicados, métricas 24/72h sin snapshots, inventario maestro separado del calendario y una ruta de Instagram manual que requiere aprobación por fila.
 
@@ -54,7 +54,7 @@ La auditoría original identificó varias brechas que ya fueron resueltas en el 
 | Facebook 17–30 | Meta devuelve 76 posts programados, de los cuales 74 pertenecen al calendario 17–30; todavía no están publicados y no tienen métricas reales. | P1 |
 | Facebook 15–16 | Identidad reconciliada; faltan snapshots 24/72h válidos y cierre de hipótesis. | P0 |
 | Instagram 15–16 | `2608030` permanece activa y las republicaciones autorizadas de `2608036` y `2608060` están confirmadas por Meta con nuevos media IDs y permalinks. Los intentos anteriores eliminados quedan separados como historial. `260583` sigue excluida. | P1 controlado |
-| Instagram 17–30 | La asignación contiene 8 filas `FB + IG selectivo`, 1 `FB + IG prioritario`, 2 `IG prioritario` y 1 `IG secundario`. La primera ola de 6 assets fue aprobada; `260633` ya está publicada fuera de ventana y las otras 5 filas siguen pendientes. | P1 |
+| Instagram 17–30 | La primera ola de 6 assets tiene IDs proporcionados: `260633`, `260560`, `260614`, `260625`, `260613` y `260528`; se registran como `Programada` hasta obtener permalink/estado live. El media histórico de `260633` permanece eliminado y separado. | P1 |
 | Scheduler Instagram | La tarea histórica 15–16 fue eliminada. No se recomienda recrearla con polling; una campaña futura debe usar ejecuciones exactas por fila, playbook autocontenido, zona única y `no-op_late`. | P1 controlado |
 | Canon | Silvio/Payaso está resuelto. `CNT-004` queda diferido y fuera de desarrollo; conserva revisión canónica pendiente si algún día se retoma. | P2 diferido |
 | Aprendizaje | La extracción P0 del 17 de agosto evaluó 4 ventanas 24h y obtuvo solo totales lifetime; `0/4` snapshots exactos fueron escritos. La revisión operativa posterior rescató 502 interacciones observadas y 23 comentarios en las 9 publicaciones, sin cerrar `HB-003`, `HB-004` ni `HB-005`. | P0 |
@@ -82,7 +82,7 @@ La calificación es una herramienta de diagnóstico CGO, no una métrica oficial
 | Canon y governance | Ámbar | 7/10 | Silvio/Payaso está resuelto y el bridge está sincronizado; `CNT-004` conserva contradicciones narrativas sustantivas, pero su desarrollo fue diferido y ya no bloquea el trabajo activo. |
 | Inventario, Drive y reuse | Ámbar | 6/10 | Drive ya muestra 46 de 46 archivos del manifiesto en `08 Agosto`, sin copias ni IDs restantes en origen; el lote 01 dejó 8 candidatos con evidencia y 2 filas pendientes, sin inventar CNT. |
 | Publicación Facebook | Verde | 9/10 | Meta devuelve 74/74 posts del calendario 17–30 programados y verificados, además de 2 posts programados previos; la ruta Page Access Token + Page Feed está validada. |
-| Publicación Instagram | Ámbar | 7/10 | La API, la cuenta y los permisos responden; la programación nativa no está disponible. La ola 17–30 ya tiene una publicación manual real (`260633`) y mantiene cinco filas pendientes de ejecución individual. |
+| Publicación Instagram | Ámbar | 7/10 | La API, la cuenta y los permisos responden; la programación nativa no está disponible. Hay tres publicaciones activas confirmadas y seis IDs de duplicación registrados prudentemente sin permalink live; el scheduler sigue eliminado. |
 | Métricas y ciclo de aprendizaje | Rojo | 5/10 | El extractor y el `ExperimentLog` existen; Meta solo devolvió lifetime para 4 ventanas 24h elegibles. El corte observado ya rescata 502 interacciones y 23 comentarios, pero no sustituye ventanas estrictas ni cierra hipótesis. |
 | Comunidad y comentarios | Ámbar | 7/10 | Ya existe conversación orgánica, ledger operativo y flujo de aprobación humana; la historia personal fue respondida con aprobación explícita y su ID Meta quedó registrado. |
 | Documentación y fuente única de verdad | Ámbar | 6/10 | GitHub es la fuente oficial, hay enlaces internos válidos, los documentos de control ya no presentan Make como ruta activa y permanece deuda de metadatos en documentos históricos. |
@@ -107,7 +107,7 @@ Con el Page Access Token derivado, Meta devuelve **76 publicaciones programadas*
 
 La cuenta `@universe_sent_me_0326` respondió HTTP 200, devolvió `media_count=460` y permitió leer media reciente con permalinks y captions. El token vigente incluye `instagram_basic`, `instagram_content_publish` e `instagram_manage_comments`. La página está correctamente vinculada a la cuenta profesional.
 
-La limitación está identificada: el parámetro `scheduled_publish_time` para Instagram devolvió un error de whitelist. Las dos republicaciones autorizadas se ejecutaron inmediatamente mediante Graph API sin programación nativa. `2608030`, `2608036` y `2608060` tienen publicaciones activas documentadas; los intentos históricos eliminados se conservan separados y `260583` permanece prohibida [4].
+La limitación está identificada: el parámetro `scheduled_publish_time` para Instagram devolvió un error de whitelist. Las dos republicaciones autorizadas se ejecutaron inmediatamente mediante Graph API sin programación nativa. `2608030`, `2608036` y `2608060` tienen publicaciones activas documentadas; los seis IDs de duplicación 17–30 se conservan como `Programada` hasta verificar permalink/estado live. Los intentos históricos eliminados se conservan separados y `260583` permanece prohibida [4].
 
 ### 4.4 La comunidad ya es una fuente de aprendizaje
 
