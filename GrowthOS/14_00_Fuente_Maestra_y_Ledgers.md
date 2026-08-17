@@ -22,6 +22,7 @@ related_documents:
   - "Operations/Research/2026-08-17_Instagram_Publicacion_260633.json"
   - "Operations/Research/2026-08-17_Instagram_IDs_Duplicaciones_Confirmadas.json"
   - "Operations/Research/Historical_Performance_Snapshot.csv"
+  - "Operations/Research/Historical_Performance_Individuals.csv"
 organization: "GrowthOS"
 ---
 
@@ -29,7 +30,7 @@ organization: "GrowthOS"
 
 ## 1. Decisión de arquitectura
 
-La fuente maestra no debe ser un calendario gigante ni una tabla que repita una pieza cada vez que se publica en otra plataforma. Los agregados mensuales históricos viven en `Operations/Research/Historical_Performance_Snapshot.csv` como capa de referencia y no sustituyen los ledgers append-only. La arquitectura recomendada para Universe Sent Me es **una fuente maestra de contenido más tres ledgers append-only**, cada uno con una función distinta: hechos de publicación, aprendizaje experimental y señales cualitativas de comunidad.
+La fuente maestra no debe ser un calendario gigante ni una tabla que repita una pieza cada vez que se publica en otra plataforma. Los agregados mensuales históricos viven en `Operations/Research/Historical_Performance_Snapshot.csv` como capa de referencia y las publicaciones individuales históricas verificables en `Operations/Research/Historical_Performance_Individuals.csv`; ninguna de las dos capas sustituye los ledgers append-only. La arquitectura recomendada para Universe Sent Me es **una fuente maestra de contenido más tres ledgers append-only**, cada uno con una función distinta: hechos de publicación, aprendizaje experimental y señales cualitativas de comunidad.
 
 | Capa | Archivo canónico | Qué representa | Quién lo modifica |
 |---|---|---|---|

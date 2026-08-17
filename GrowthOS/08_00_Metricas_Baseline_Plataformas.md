@@ -6,7 +6,7 @@
 **Última actualización:** 2026-08-17
 **Versión:** 1.5
 **Autor:** Claude (Guardián de Canon, extracción directa vía Windsor.ai MCP)
-**Documentos relacionados:** `07_00_Registro_Maestro_Reels.md`, `06_00_Reglas_Aprendizaje_Tendencias.md`, `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Research/Historical_Performance_Snapshot.csv`, `../Operations/Research/2026-08-15_Publication_Log.csv`, `../Operations/Research/2026-08-15_ExperimentLog.csv`, `../Operations/Research/2026-08-16_P2_Comunidad_Delta_01.json`, `../Operations/Research/2026-08-16_P2_Baseline_Preparacion_01.json`, `../Operations/Research/2026-08-17_Metricas_24_72_Extraccion_02.json`, `../Operations/Research/2026-08-17_Investigacion_Ventanas_Temporales_Meta.md`
+**Documentos relacionados:** `07_00_Registro_Maestro_Reels.md`, `06_00_Reglas_Aprendizaje_Tendencias.md`, `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Research/Historical_Performance_Snapshot.csv`, `../Operations/Research/Historical_Performance_Individuals.csv`, `../Operations/Research/2026-08-15_Publication_Log.csv`, `../Operations/Research/2026-08-15_ExperimentLog.csv`, `../Operations/Research/2026-08-16_P2_Comunidad_Delta_01.json`, `../Operations/Research/2026-08-16_P2_Baseline_Preparacion_01.json`, `../Operations/Research/2026-08-17_Metricas_24_72_Extraccion_02.json`, `../Operations/Research/2026-08-17_Investigacion_Ventanas_Temporales_Meta.md`
 
 > **Metodología:** Datos extraídos directamente desde Windsor.ai el 2026-08-03. Período cubierto: últimos 14 días con datos del día actual incluidos. Cuentas: Facebook Page @UniverseSentMe (ID `1036844829507460`) e Instagram @universe_sent_me_0326 (ID `17841462696378190`). Los datos de IG publicados hoy mismo pueden mostrar cero por latencia de la API.
 
@@ -180,6 +180,8 @@ Se integró `Operations/Research/Historical_Performance_Snapshot.csv` como capa 
 | Julio 2026 | Instagram | Mes completo | Interacciones | 101 | Histórico; tendencia interna IG |
 
 Estos valores no se escriben en `Interacciones_24h`, `Interacciones_72h` ni en los ledgers operativos. Tampoco se suman alcance de mayo con interacciones de junio-julio. La tabla sirve para contexto de tendencia, selección de reuse y formulación de hipótesis.
+
+El lote individual 02 añade 28 filas verificables del ranking de reuse de mayo y 11 top posts de junio-julio en `Historical_Performance_Individuals.csv`. Cada fila conserva Meta ID, fecha, fuente y definición métrica; no recibe CNT automáticamente y no se incorpora al Publication Log operativo.
 
 ## 12. Próxima Actualización
 
