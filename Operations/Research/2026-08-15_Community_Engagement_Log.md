@@ -21,7 +21,7 @@ organization: "Operations/Research"
 
 Este documento define el uso del ledger `2026-08-15_Community_Engagement_Log.csv`. El registro convierte los comentarios en señales de aprendizaje sin transformarlos en un sistema de vigilancia ni en un bot de respuestas. La unidad de registro es un comentario real recuperado desde una publicación propia; cada comentario se identifica por su `Comentario_ID` y solo puede aparecer una vez.
 
-El ledger se creó vacío de forma intencional. Después de extracciones verificables, ahora contiene 17 comentarios reales: nueve del primer lote, seis del delta del 16 de agosto y dos del delta del 17 de agosto. La auditoría histórica de 67 comentarios de las 20 publicaciones recientes permanece como evidencia agregada y no se reconstruyen sus filas individuales. No se inventan nombres, perfiles, IDs personales, intenciones ni respuestas históricas.
+El ledger se creó vacío de forma intencional. Después de extracciones verificables, ahora contiene 18 comentarios reales: nueve del primer lote, seis del delta del 16 de agosto, dos del delta del 17 de agosto y una revisión puntual de publicación. La auditoría histórica de 67 comentarios de las 20 publicaciones recientes permanece como evidencia agregada y no se reconstruyen sus filas individuales. No se inventan nombres, perfiles, IDs personales, intenciones ni respuestas históricas.
 
 ## 2. Fuente y privacidad
 
@@ -90,11 +90,17 @@ La consulta incremental se ejecutó el `2026-08-17T01:48:41Z` con `query_since=2
 
 La cobertura de respuesta cualitativa para este delta es `not_applicable`. La siguiente revisión debe consultar únicamente comentarios posteriores a `2026-08-17T01:48:41Z`; no se requiere un scheduler adicional ni una consulta de alta frecuencia.
 
-## 10. Relación con otros documentos
+## 10. Revisión puntual — comentario 3290357934484526
 
-`Auditoria_Comentarios_Facebook.md` contiene el diagnóstico técnico y la taxonomía inicial. Este documento contiene la operación permanente del ledger. El delta anonimizado del 16 de agosto queda evidenciado en `2026-08-16_P2_Comunidad_Delta_01.json` y el delta del 17 de agosto en `2026-08-17_P2_Comunidad_Delta_02.json`. `Content_Inventory.csv`, `Publication_Log.csv` y `ExperimentLog.csv` siguen siendo las fuentes para identidad, hechos de publicación y aprendizaje cuantitativo; el Community Engagement Log es una capa cualitativa complementaria y no sustituye ninguno de ellos.
+La publicación `1036844829507460_122148874371072582` fue revisada puntualmente después de recibir un enlace directo. Meta devolvió diez comentarios actuales; nueve ya estaban en el ledger y uno no estaba registrado: el comentario `3290357934484526`, clasificado como `Historia_Personal`. El comentario mezcla humor autobiográfico con un relato de conflicto relacional y problemas legales. Se preparó una respuesta candidata empática con humor ligero, pero permanece `Pendiente_Fernando`; no se discutieron los hechos, no se ofreció consejo legal o médico y no se escribió en Meta.
 
-## 11. Primer lote real — publicación `1036844829507460_122148874371072582`
+La evidencia anonimizada queda en `2026-08-17_Comentario_3290357934484526_Revision.json`. Esta revisión puntual no modifica el cursor global de deltas; la siguiente consulta incremental debe continuar después de `2026-08-17T01:48:41Z`.
+
+## 11. Relación con otros documentos
+
+`Auditoria_Comentarios_Facebook.md` contiene el diagnóstico técnico y la taxonomía inicial. Este documento contiene la operación permanente del ledger. El delta anonimizado del 16 de agosto queda evidenciado en `2026-08-16_P2_Comunidad_Delta_01.json`, el delta del 17 de agosto en `2026-08-17_P2_Comunidad_Delta_02.json` y la revisión puntual en `2026-08-17_Comentario_3290357934484526_Revision.json`. `Content_Inventory.csv`, `Publication_Log.csv` y `ExperimentLog.csv` siguen siendo las fuentes para identidad, hechos de publicación y aprendizaje cuantitativo; el Community Engagement Log es una capa cualitativa complementaria y no sustituye ninguno de ellos.
+
+## 12. Primer lote real — publicación `1036844829507460_122148874371072582`
 
 El 15 de agosto se recuperaron nueve comentarios de la publicación de Silvio con solo lectura mediante Meta Graph API v26. Se registraron todos porque el objetivo del primer lote es probar la taxonomía completa, no responder indiscriminadamente.
 

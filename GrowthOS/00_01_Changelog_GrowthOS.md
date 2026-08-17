@@ -4,9 +4,17 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 1.96
+**Versión:** 1.97
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.97] — 2026-08-17 (Manus)
+### Revisión puntual de comentario personal en publicación de Silvio
+- La revisión del Post ID `1036844829507460_122148874371072582` devolvió diez comentarios; nueve ya estaban registrados y uno nuevo (`3290357934484526`) fue clasificado como `Historia_Personal`.
+- El comentario combina humor autobiográfico con referencias a conflicto relacional, problemas legales y malestar emocional. Se preparó una respuesta empática con humor ligero, sin discutir hechos ni ofrecer consejo legal o médico.
+- La respuesta queda `Pendiente_Fernando`; no se escribió en Meta. Se actualizó el ledger comunitario a 18 comentarios y se creó `Operations/Research/2026-08-17_Comentario_3290357934484526_Revision.json`.
 
 ---
 
