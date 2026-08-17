@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 2.04
+**Versión:** 2.05
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.05.00] — 2026-08-17 (Manus): Protocolo P0 de métricas comparables y veredictos.** Se definió `mediana_por_publicación` como métrica principal, con shares y comentarios raíz como métricas secundarias, separando Facebook/Instagram, formatos, nuevo/reuse y ventanas exactas de 24/72 horas. Lifetime histórico y `Corte_Observado` quedan fuera de la métrica contractual. Los veredictos serán `Validada`, `Parcialmente validada`, `No validada`, `Inconclusa` o `Invalidada por diseño`, con mínimo operativo de cinco publicaciones comparables por celda y uplift predefinido. Documento: `Operations/Research/2026-08-17_Protocolo_P0_Metricas_y_Veredictos.md`.
 
 - **[2.04.00] — 2026-08-17 (Manus): Priorización de pendientes posterior al análisis de julio.** La secuencia CGO prioriza: P0, cerrar el ciclo de aprendizaje de la prueba activa con métricas comparables; P1, monitorear la ola Facebook 17–30, ampliar la recopilación individual de julio y consolidar la fuente maestra; P2, actualizar baseline separando canales, revisar la Biblia con Claude usando evidencia clasificada, continuar comentarios con aprobación humana y mantener Instagram controlado. CNT-004 permanece diferido y Make solo como trazabilidad histórica. Documento: `Operations/Research/2026-08-17_Prioridad_Siguientes_Pendientes_Growth_OS.md`.
 
