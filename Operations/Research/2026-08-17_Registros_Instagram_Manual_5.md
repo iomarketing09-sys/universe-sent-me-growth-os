@@ -19,7 +19,7 @@ organization: "Operations/Research"
 
 Fernando puede duplicar manualmente en Meta las cinco filas siguientes. Manus no publicará, no programará y no llamará a Meta durante esta fase. La zona de referencia es `America/Matamoros`; cada fecha y hora debe conservarse tal como aparece en Facebook. Las cinco filas ya tienen un identificador proporcionado por Fernando. Se registran como `Programada` porque todavía no tenemos permalink ni una respuesta live de Meta que confirme el estado efectivo; no se inventa hora real ni se marca `Publicado`.
 
-> `260633 - Universe.png` queda excluido: Fernando confirmó que fue eliminado manualmente. No republicar.
+> El media histórico `17943879225288953` de `260633` queda excluido y no debe republicarse. Fernando confirmó una nueva duplicación manual con el identificador `1564061365193135`; se registra como una fila separada y no como reactivación del media eliminado.
 
 | Orden | Fecha | Hora | Asset | Caption exacto | Facebook Page Post ID | ID Instagram proporcionado | Estado registrado |
 |---:|---|---:|---|---|---|---|---|
@@ -31,7 +31,7 @@ Fernando puede duplicar manualmente en Meta las cinco filas siguientes. Manus no
 
 ## Controles de exclusión
 
-No tocar `260583`, `260633`, `2608030`, `2608036` ni `2608060`. Los tres últimos ya tienen publicaciones activas documentadas; `260583` está prohibida y `260633` quedó eliminada manualmente.
+No tocar `260583`, `2608030`, `2608036` ni `2608060`. El media histórico `17943879225288953` de `260633` queda excluido; el nuevo identificador `1564061365193135` fue proporcionado por Fernando y está registrado como duplicación manual separada.
 
 ## Registro posterior
 

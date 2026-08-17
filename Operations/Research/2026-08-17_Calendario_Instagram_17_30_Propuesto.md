@@ -29,7 +29,7 @@ La primera ola contiene seis assets ya existentes, separados para observar disti
 
 | Orden | Fecha objetivo | Hora objetivo | Asset | Tipo | Caption exacto | Motivo CGO | Estado operativo |
 |---:|---|---|---|---|---|---|---|
-| 1 | 2026-08-17 | 10:00 | `260633 - Universe.png` | `Reuse_Top` | `😮‍💨 #UniverseSentMe` | Primer test de imagen estática, Universe y horario de mañana. | `Eliminada_Manualmente` — media histórica `17943879225288953`; **no republicar** |
+| 1 | 2026-08-17 | 10:00 | `260633 - Universe.png` | `Reuse_Top` | `😮‍💨 #UniverseSentMe` | Primer test de imagen estática, Universe y horario de mañana. | `Programada_ID_Proporcionado` — nuevo ID `1564061365193135`; media histórico `17943879225288953` eliminado |
 | 2 | 2026-08-19 | 13:30 | `260560 - Fantasma.png` | `Reuse_Top` | `Esperando octubre… 👻 #UniverseSentMe` | Candidato prioritario; Fantasma tiene señal previa y el mensaje es legible sin contexto. | `Programada_ID_Proporcionado` — `1385059653723843`; permalink pendiente |
 | 3 | 2026-08-21 | 19:00 | `260614 - Universe.png` | `Reuse_Top` | `Analizando mi propio caos. 🧐 #UniverseSentMe` | Candidato secundario para probar una franja nocturna con copy breve. | `Programada_ID_Proporcionado` — `1598897621792943`; permalink pendiente |
 | 4 | 2026-08-23 | 22:00 | `260625.png` | `Reuse_Top` | `El cambio da miedo… quedarse igual también. 😮‍💨 #UniverseSentMe` | Candidato prioritario; composición vertical y humor relatable. | `Programada_ID_Proporcionado` — `2631450910602853`; permalink pendiente |
@@ -52,7 +52,7 @@ Las fechas y horas son **ventanas de decisión**, no órdenes automáticas. Ante
 
 La operación recomendada usa una revisión local de la fila y una sola ejecución de publicación por asset aprobado. La validación debe recuperar solo la fila objetivo y revisar la URL, caption e idempotencia. El publicador debe derivar el Page Access Token, crear un único contenedor, esperar dentro del mismo proceso a `FINISHED`, ejecutar `media_publish` y guardar el resultado completo. No se deben abrir tareas recurrentes, hacer polling cada cinco minutos, consultar el historial completo de Instagram ni descargar nuevamente archivos de Drive.
 
-Cada publicación debe registrar `IG_Container_ID`, `IG_Media_ID`, permalink, hora real, estado, caption exacto y cualquier error. La aprobación es por fila y no se extiende automáticamente a la siguiente. La fila `260633` fue ejecutada el 2026-08-16 a las 23:08:35 America/Matamoros como publicación inmediata fuera de su ventana de 10:00 y posteriormente eliminada manualmente por Fernando; queda excluida de cualquier republicación. Las cinco filas restantes siguen pendientes de duplicación manual.
+Cada publicación debe registrar `IG_Container_ID`, `IG_Media_ID`, permalink, hora real, estado, caption exacto y cualquier error. La aprobación es por fila y no se extiende automáticamente a la siguiente. La fila histórica `260633` fue ejecutada el 2026-08-16 a las 23:08:35 America/Matamoros y posteriormente eliminada manualmente por Fernando. Fernando confirmó una nueva duplicación manual con identificador `1564061365193135`; se registra como fila separada y las cinco filas restantes también tienen IDs proporcionados, pendientes de permalink/estado live.
 
 ## Medición
 
