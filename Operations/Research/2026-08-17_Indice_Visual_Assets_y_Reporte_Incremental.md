@@ -1,10 +1,10 @@
 ---
 title: "Índice visual de assets y reporte incremental de publicaciones"
 purpose: "Definir una arquitectura persistente para analizar assets de Drive una sola vez y mantener reportes de publicaciones mediante actualizaciones incrementales, evitando búsquedas visuales completas repetidas."
-status: "Review"
+status: "Active"
 created: 2026-08-17
 updated: 2026-08-17
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-17_Cruce_Assets_Junio_Meta_Top.md"
@@ -52,8 +52,14 @@ Para el tamaño actual de Universe Sent Me, la alternativa equilibrada es constr
 
 El índice no debe mover ni copiar archivos de Drive. Debe guardar únicamente metadatos, hashes, OCR y referencias. La detección de una coincidencia será candidata hasta que exista una combinación verificable de filename/Drive ID, Meta ID y fecha o caption. `260583` permanece prohibido; los estados históricos deben preservarse; y ningún reporte puede convertir un snapshot lifetime en métrica 24/72h.
 
+## Resultado de la reconciliación visual de top posts de junio
+
+El 17 de agosto se revisaron visualmente los cinco top posts de junio directamente en Facebook y se compararon contra los 196 assets indexados de `06 Junio`. Se confirmó que la evidencia visual directa es más fuerte que el caption o la similitud temática. El único asset de junio previamente cerrado permanece como `260724` → `CNT-068` para `Polvo de estrellas` / `✨✨✨`.
+
+Para `El gato: 😧`, `a ver... a ver... 🤨`, `yo Aura Fuerte 😏`, `Me da miedo ser el malo de la historia...` y `🤡`, la imagen publicada fue inspeccionada, pero no se encontró coincidencia exacta en el lote de 196 archivos. Estas filas quedan en `Meta_confirmed_asset_pending`, sin `asset_ref`, filename ni CNT. No se crean CNT por compartir personaje, paleta, composición aproximada o palabras similares. El layer `Historical_Asset_Performance.csv` conserva las métricas históricas y la evidencia visual pendiente sin mezclarla con 24/72h.
+
 ## Próximo paso propuesto
 
-Construir el índice visual inicial de los 196 assets de junio, comenzando por dimensiones, hash visual y OCR. Después se revisarán primero los candidatos que tengan caption/fecha Meta y se actualizará solo la fila correspondiente. El reporte diario o de 48 horas se implementará únicamente después de validar el índice inicial y aprobar el formato del reporte.
+El índice visual inicial de los 196 assets de junio ya está construido con dimensiones, hashes y referencias. El siguiente paso es resolver únicamente los casos `Meta_confirmed_asset_pending` cuando aparezca evidencia adicional de Drive/Meta; no se repetirá la búsqueda visual completa. El reporte incremental seguirá bajo demanda o cada 48 horas, alineado con P0, y no se automatizará sin aprobación.
 
 No se crea ningún scheduler con este documento. La propuesta requiere aprobación antes de automatizar ejecuciones recurrentes.
