@@ -1,10 +1,10 @@
 ---
 title: "Reconciliación de históricos individuales con inventario y Drive"
 purpose: "Clasificar los 39 registros individuales históricos frente a Content_Inventory.csv y Drive, y detectar lotes históricos adicionales pendientes de integración sin inventar relaciones CNT."
-status: "Review"
+status: "Archived"
 created: 2026-08-17
 updated: 2026-08-17
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Historical_Performance_Individuals.csv"
@@ -20,11 +20,13 @@ organization: "Operations/Research"
 
 # Reconciliación de históricos individuales con inventario y Drive
 
+> **Estado del documento:** Este informe conserva el corte previo a la creación de CNT. La decisión posterior integró los 28 assets de mayo como `CNT-040`–`CNT-067`; el informe vigente para esa integración es `2026-08-17_Integracion_CNT_Mayo_Reserve_Revision.md`.
+
 ## Dictamen
 
 La reconciliación no encontró coincidencias CNT confirmadas para los 39 registros en `Content_Inventory.csv`. Sí encontró **28 assets exactos en la carpeta `05 Mayo` de Drive**, todos correspondientes al bloque de reuse de mayo. Los 11 top posts de junio–julio tienen Meta ID y métricas verificables, pero no tienen evidencia de archivo individual localizada en la carpeta `05 Mayo`, lo cual es esperable porque no son necesariamente assets de mayo.
 
-Por seguridad, **no se modificó `Content_Inventory.csv`**. El hecho de que un `260###` exista en Drive y tenga un Meta ID no basta para crear o asignar un `CNT-####`; falta una relación de inventario explícita o evidencia suficiente de que el asset corresponde a un concepto CNT existente.
+En el corte original, por seguridad, **no se modificó `Content_Inventory.csv`**. Esa decisión fue posteriormente reemplazada por la integración controlada de los 28 assets de mayo, documentada por separado. El hecho de que un `260###` exista en Drive y tenga un Meta ID no basta para crear o asignar un `CNT-####`; falta una relación de inventario explícita o evidencia suficiente de que el asset corresponde a un concepto CNT existente.
 
 ## Resultado de los 39 registros
 
