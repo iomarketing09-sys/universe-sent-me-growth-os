@@ -1,0 +1,150 @@
+{
+  "proposal_rows": 6,
+  "manual_duplicate_count": 6,
+  "scheduler_candidate_count": 0,
+  "rows": [
+    {
+      "order": 1,
+      "date": "2026-08-17",
+      "time": "10:00",
+      "asset": "260633 - Universe.png",
+      "kind": "Reuse_Top",
+      "caption": "😮‍💨 #UniverseSentMe",
+      "reason": "Primer test de imagen estática, Universe y horario de mañana.",
+      "ig_status": "Publicado_fuera_de_ventana` — Meta media `17943879225288953`; [permalink](https://www.instagram.com/p/DcIQHJJHEp0/)",
+      "asset_code": "260633",
+      "facebook_matches": [
+        {
+          "Publicacion_ID": "PUB-FB-17_30-01",
+          "Asset_Ref": "260633 - Universe.png",
+          "Fecha_Planeada_Local": "2026-08-17",
+          "Hora_Planeada_Local": "10:00",
+          "Meta_Post_ID": "1036844829507460_122151373701072582",
+          "Estado_Publicacion": "Programada",
+          "Fuente": "2026-08-16_Calendario_Operativo_17_30_Agosto.csv; Meta Graph API v26; facebook_schedule_api_results.jsonl"
+        }
+      ],
+      "classification": "Duplicación manual Meta recomendada"
+    },
+    {
+      "order": 2,
+      "date": "2026-08-19",
+      "time": "13:30",
+      "asset": "260560 - Fantasma.png",
+      "kind": "Reuse_Top",
+      "caption": "Esperando octubre… 👻 #UniverseSentMe",
+      "reason": "Candidato prioritario; Fantasma tiene señal previa y el mensaje es legible sin contexto.",
+      "ig_status": "Pendiente_Aprobación_Fernando",
+      "asset_code": "260560",
+      "facebook_matches": [
+        {
+          "Publicacion_ID": "PUB-FB-17_30-15",
+          "Asset_Ref": "260560 - Fantasma.png",
+          "Fecha_Planeada_Local": "2026-08-19",
+          "Hora_Planeada_Local": "13:30",
+          "Meta_Post_ID": "1036844829507460_122151374655072582",
+          "Estado_Publicacion": "Programada",
+          "Fuente": "2026-08-16_Calendario_Operativo_17_30_Agosto.csv; Meta Graph API v26; facebook_schedule_api_results.jsonl"
+        }
+      ],
+      "classification": "Duplicación manual Meta recomendada"
+    },
+    {
+      "order": 3,
+      "date": "2026-08-21",
+      "time": "19:00",
+      "asset": "260614 - Universe.png",
+      "kind": "Reuse_Top",
+      "caption": "Analizando mi propio caos. 🧐 #UniverseSentMe",
+      "reason": "Candidato secundario para probar una franja nocturna con copy breve.",
+      "ig_status": "Pendiente_Aprobación_Fernando",
+      "asset_code": "260614",
+      "facebook_matches": [
+        {
+          "Publicacion_ID": "PUB-FB-17_30-28",
+          "Asset_Ref": "260614 - Universe.png",
+          "Fecha_Planeada_Local": "2026-08-21",
+          "Hora_Planeada_Local": "19:00",
+          "Meta_Post_ID": "1036844829507460_122151375843072582",
+          "Estado_Publicacion": "Programada",
+          "Fuente": "2026-08-16_Calendario_Operativo_17_30_Agosto.csv; Meta Graph API v26; facebook_schedule_api_results.jsonl"
+        }
+      ],
+      "classification": "Duplicación manual Meta recomendada"
+    },
+    {
+      "order": 4,
+      "date": "2026-08-23",
+      "time": "22:00",
+      "asset": "260625.png",
+      "kind": "Reuse_Top",
+      "caption": "El cambio da miedo… quedarse igual también. 😮‍💨 #UniverseSentMe",
+      "reason": "Candidato prioritario; composición vertical y humor relatable.",
+      "ig_status": "Pendiente_Aprobación_Fernando",
+      "asset_code": "260625",
+      "facebook_matches": [
+        {
+          "Publicacion_ID": "PUB-FB-17_30-37",
+          "Asset_Ref": "260625.png",
+          "Fecha_Planeada_Local": "2026-08-23",
+          "Hora_Planeada_Local": "22:00",
+          "Meta_Post_ID": "1036844829507460_122151376629072582",
+          "Estado_Publicacion": "Programada",
+          "Fuente": "2026-08-16_Calendario_Operativo_17_30_Agosto.csv; Meta Graph API v26; facebook_schedule_api_results.jsonl"
+        }
+      ],
+      "classification": "Duplicación manual Meta recomendada"
+    },
+    {
+      "order": 5,
+      "date": "2026-08-25",
+      "time": "17:00",
+      "asset": "260613 - Wilfred.png",
+      "kind": "Reuse_Top",
+      "caption": "Wilfred sabe. 🌲 #UniverseSentMe",
+      "reason": "Prueba de personaje; visual simple y copy de reconocimiento inmediato.",
+      "ig_status": "Pendiente_Aprobación_Fernando",
+      "asset_code": "260613",
+      "facebook_matches": [
+        {
+          "Publicacion_ID": "PUB-FB-17_30-48",
+          "Asset_Ref": "260613 - Wilfred.png",
+          "Fecha_Planeada_Local": "2026-08-25",
+          "Hora_Planeada_Local": "17:00",
+          "Meta_Post_ID": "1036844829507460_122151377553072582",
+          "Estado_Publicacion": "Programada",
+          "Fuente": "2026-08-16_Calendario_Operativo_17_30_Agosto.csv; Meta Graph API v26; facebook_schedule_api_results.jsonl"
+        }
+      ],
+      "classification": "Duplicación manual Meta recomendada"
+    },
+    {
+      "order": 6,
+      "date": "2026-08-30",
+      "time": "22:00",
+      "asset": "260528 - Universe.png",
+      "kind": "Reuse_Top",
+      "caption": "Ya duérmete… 🌙 #UniverseSentMe",
+      "reason": "Contexto nocturno explícito; reserva el horario de domingo por la noche.",
+      "ig_status": "Pendiente_Aprobación_Fernando",
+      "asset_code": "260528",
+      "facebook_matches": [
+        {
+          "Publicacion_ID": "PUB-FB-17_30-74",
+          "Asset_Ref": "260528 - Universe.png",
+          "Fecha_Planeada_Local": "2026-08-30",
+          "Hora_Planeada_Local": "22:00",
+          "Meta_Post_ID": "1036844829507460_122151379707072582",
+          "Estado_Publicacion": "Programada",
+          "Fuente": "2026-08-16_Calendario_Operativo_17_30_Agosto.csv; Meta Graph API v26; facebook_schedule_api_results.jsonl"
+        }
+      ],
+      "classification": "Duplicación manual Meta recomendada"
+    }
+  ],
+  "source_files": [
+    "Operations/Research/2026-08-15_Publication_Log.csv",
+    "Operations/Research/2026-08-17_Calendario_Instagram_17_30_Propuesto.md"
+  ],
+  "matching_rule": "Exact 260### asset code found in Facebook calendar; no CNT relationship inferred."
+}

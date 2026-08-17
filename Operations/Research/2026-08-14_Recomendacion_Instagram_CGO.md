@@ -84,6 +84,12 @@ Si Fernando quiere automatizar las cinco filas restantes, la opción CGO aceptab
 
 Mi recomendación operativa inmediata es conservar el **modo manual fila por fila** hasta aprobar una campaña nueva autocontenida. Es más seguro y, con el volumen actual de Instagram, la diferencia de consumo frente a seis despertares programados no justifica todavía asumir el riesgo de una automatización defectuosa. El scheduler exacto solo debe implementarse después de confirmar las cinco filas, sus horarios y la zona horaria canónica.
 
+## Estrategia híbrida propuesta — cruce 17–30
+
+El cruce exacto de la primera ola contra `Publication_Log.csv` confirmó que las seis filas Instagram (`260633`, `260560`, `260614`, `260625`, `260613` y `260528`) tienen una fila equivalente ya programada en Facebook. Por ello, la primera ola no tiene filas exclusivas para scheduler: `260633` ya fue publicada y las otras cinco pueden duplicarse manualmente en Meta conservando su fecha, hora y caption aprobados. El detalle y los Page Post IDs están en [`Cruce Instagram–Facebook 17–30`](2026-08-17_Cruce_Instagram_Facebook_17_30.md).
+
+La regla CGO queda así: si existe una coincidencia exacta de asset `260###` en Facebook, se prioriza duplicación manual en Meta; si una futura fila no tiene una publicación Facebook equivalente, puede pasar a un scheduler exacto de una sola ejecución, con `no-op_late`, idempotencia y playbook autocontenido. Esta separación reduce la complejidad y evita usar automatización donde Meta ya tiene una publicación programada como referencia editorial.
+
 ## Referencias internas
 
 [1]: ../../GrowthOS/08_00_Metricas_Baseline_Plataformas.md — Línea base de métricas de Facebook e Instagram, extraída de Windsor.ai el 3 de agosto de 2026.  
