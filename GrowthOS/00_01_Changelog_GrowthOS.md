@@ -4,9 +4,18 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 1.99
+**Versión:** 2.00
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.3.00] — 2026-08-17 (Manus)
+### Diagnóstico y solución para ventanas temporales de Meta
+- Se consultaron las referencias oficiales v26.0 de Post Insights, Page Insights y Batch Requests.
+- Las pruebas reales con la cuenta Universe Sent Me confirmaron que la lectura directa del objeto post devuelve lifetime, Post/Page Insights respondieron `data=[]` para las métricas temporales probadas y `post_impressions` fue inválida en v26.0. La página sí cumple el requisito de tamaño con 4,731 seguidores/likes.
+- Se documentó que el lote histórico 15–16 no puede reconstruirse con exactitud a partir de lifetime. La solución propuesta para futuras publicaciones es capturar un baseline al publicar y calcular deltas de contadores a +24h y +72h, con un solo despertar diario y Batch Requests para reducir conexiones.
+- Se creó `Operations/Research/2026-08-17_Investigacion_Ventanas_Temporales_Meta.md`, se actualizó el playbook del extractor a v1.2 y se mantuvieron abiertas `HB-003`, `HB-004` y `HB-005`.
 
 ---
 

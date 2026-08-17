@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-17
-**Versión:** 5.9
+**Versión:** 6.0
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -62,7 +62,8 @@
 | [Recomendación Instagram — CGO](../Operations/Research/2026-08-14_Recomendacion_Instagram_CGO.md) | Dictamen sobre cross-post selectivo, memes candidatos y prueba orgánica en Instagram. | Review |
 | [Auditoría directa de Instagram API — 15 de agosto](../Operations/Research/2026-08-15_Auditoria_API_Instagram.md) | Verifica permisos, vinculación, cuota y flujo de publicación de Instagram mediante Graph API directa. | Active |
 | [Playbook Scheduler Instagram 15–16](../Operations/Production/instagram_15_16_scheduler_playbook.md) | Flujo histórico pausado; aprobación manual fila por fila, protección contra duplicados y `260583`/filas eliminadas excluidas. | Active |
-| [Extractor de métricas 24/72h](../Operations/Production/extract_metrics_24_72_playbook.md) | Playbook y contrato del extractor agrupado, idempotente y de un solo despertar para `EXP-2026-08-CAL-01`. | Active |
+| [Extractor de métricas 24/72h](../Operations/Production/extract_metrics_24_72_playbook.md) | Playbook y contrato del extractor agrupado, idempotente y de un solo despertar para `EXP-2026-08-CAL-01`; distingue lifetime histórico de snapshots futuros. | Active |
+| [Investigación de ventanas temporales Meta](../Operations/Research/2026-08-17_Investigacion_Ventanas_Temporales_Meta.md) | Diagnóstico oficial y prueba real: Post/Page Insights devolvieron `data=[]`; solución propuesta basada en baseline al publicar y deltas de contadores a +24h/+72h. | Review |
 | [Revisión calendario 17–30 — 16 de agosto](../Operations/Research/2026-08-16_Revision_Calendario_17_30.md) | Conciliación final de 74 slots: 35 nuevos, 36 reuse Top, 3 reuse Reserve, cero placeholders y movimiento de 46 archivos verificado en Drive. | Active |
 | [Propuesta ajustada calendario 17–30](../Operations/Research/2026-08-16_Propuesta_Ajuste_Calendario_17_30_Agosto.md) | Versión aprobada e integrada: 74 slots con 35 nuevos, 36 reuse Top y 3 reuse Reserve; supersedida operativamente por el calendario ya programado en Facebook. | Superseded |
 | [Anexo de completación: 11 reuse junio–mayo](../Operations/Research/2026-08-16_Propuesta_Completado_11_Reuse_Junio_Mayo.csv) | Ledger integrado de 11 reuse aprobados, Drive IDs, captions y ocho movimientos de assets nuevos para preservar la separación operativa. | Active |

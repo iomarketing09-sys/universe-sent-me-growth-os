@@ -6,7 +6,7 @@
 **Última actualización:** 2026-08-17
 **Versión:** 1.4
 **Autor:** Claude (Guardián de Canon, extracción directa vía Windsor.ai MCP)
-**Documentos relacionados:** `07_00_Registro_Maestro_Reels.md`, `06_00_Reglas_Aprendizaje_Tendencias.md`, `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Research/2026-08-15_Publication_Log.csv`, `../Operations/Research/2026-08-15_ExperimentLog.csv`, `../Operations/Research/2026-08-16_P2_Comunidad_Delta_01.json`, `../Operations/Research/2026-08-16_P2_Baseline_Preparacion_01.json`, `../Operations/Research/2026-08-17_Metricas_24_72_Extraccion_02.json`
+**Documentos relacionados:** `07_00_Registro_Maestro_Reels.md`, `06_00_Reglas_Aprendizaje_Tendencias.md`, `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Research/2026-08-15_Publication_Log.csv`, `../Operations/Research/2026-08-15_ExperimentLog.csv`, `../Operations/Research/2026-08-16_P2_Comunidad_Delta_01.json`, `../Operations/Research/2026-08-16_P2_Baseline_Preparacion_01.json`, `../Operations/Research/2026-08-17_Metricas_24_72_Extraccion_02.json`, `../Operations/Research/2026-08-17_Investigacion_Ventanas_Temporales_Meta.md`
 
 > **Metodología:** Datos extraídos directamente desde Windsor.ai el 2026-08-03. Período cubierto: últimos 14 días con datos del día actual incluidos. Cuentas: Facebook Page @UniverseSentMe (ID `1036844829507460`) e Instagram @universe_sent_me_0326 (ID `17841462696378190`). Los datos de IG publicados hoy mismo pueden mostrar cero por latencia de la API.
 
@@ -159,7 +159,7 @@ La extracción oficial se ejecutó en un solo lote a las `2026-08-17T03:37:53Z`,
 | `CNT-033` / `2608034` | 24h | 35 | 7 | 10 | 52 | No |
 | `CNT-034` / `2608035` | 24h | 53 | 3 | 14 | 70 | No |
 
-**Resultado P0:** `4/9` publicaciones tenían una ventana 24h elegible; `0/4` devolvieron un snapshot exacto; `0` campos 24h/72h fueron escritos. Instagram no fue tocado, no se publicó contenido y la baseline común no se actualiza numéricamente todavía. La evidencia completa está en `Operations/Research/2026-08-17_Metricas_24_72_Extraccion_02.json`.
+**Resultado P0:** `4/9` publicaciones tenían una ventana 24h elegible; `0/4` devolvieron un snapshot exacto; `0` campos 24h/72h fueron escritos. Instagram no fue tocado, no se publicó contenido y la baseline común no se actualiza numéricamente todavía. La evidencia completa está en `Operations/Research/2026-08-17_Metricas_24_72_Extraccion_02.json`. El diagnóstico y la solución propuesta para futuras capturas están en `Operations/Research/2026-08-17_Investigacion_Ventanas_Temporales_Meta.md`.
 
 ## 10. Próxima Actualización
 
