@@ -3,8 +3,8 @@
 **Propósito:** Punto de entrada a toda la documentación operativa del Growth OS (calendario editorial, colas, automatizaciones, governance).
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-16
-**Versión:** 5.4
+**Última actualización:** 2026-08-17
+**Versión:** 5.5
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -38,17 +38,18 @@
 | [Pipeline de Publicación Local y Estándar CSV](13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md) | Documenta el script propio de Fernando, el estándar CSV y la Custom API de Meta configurada para Universe Sent Me. | Active |
 | [Fuente Maestra y Ledgers del Growth OS](14_00_Fuente_Maestra_y_Ledgers.md) | Define el inventario maestro, los ledgers, la distinción canon/reconciliación y la cadencia de métricas cada 48 horas. | Active |
 | [Bridge de Integración Growth OS–Canon](Integracion_Growth_OS.md) | Caché condensado del canon, HypothesisBank y reglas de sincronización; v2.5.1 resincronizado contra HEAD `1daaad5`, con Maeve/Kael y sus alias visuales corregidos. | Active |
-| [Publication Log](../Operations/Research/2026-08-15_Publication_Log.csv) | Ledger append-only con 85 hechos de Facebook, 1 publicación manual activa de Instagram y 3 pruebas de Instagram eliminadas manualmente. | Active |
-| [ExperimentLog](../Operations/Research/2026-08-15_ExperimentLog.csv) | Observaciones históricas, 89 registros de Facebook pendientes de métricas 24/72 horas, 1 publicación activa de Instagram y 2 pruebas Instagram excluidas del aprendizaje. | Active |
+| [Publication Log](../Operations/Research/2026-08-15_Publication_Log.csv) | Ledger append-only con 85 hechos de Facebook, 3 publicaciones activas de Instagram y 3 intentos históricos de Instagram eliminados manualmente. | Active |
+| [ExperimentLog](../Operations/Research/2026-08-15_ExperimentLog.csv) | Observaciones históricas, 89 registros de Facebook pendientes de métricas 24/72 horas, 3 publicaciones activas de Instagram y 3 filas históricas de Instagram excluidas del aprendizaje. | Active |
 | [Community Engagement Log](../Operations/Research/2026-08-15_Community_Engagement_Log.md) | Esquema y flujo para registrar comentarios reales, respuestas humanas y señales cualitativas sin identidades personales. | Active |
 | [Community Engagement Log — datos](../Operations/Research/2026-08-15_Community_Engagement_Log.csv) | Ledger append-only de comunidad; 15 comentarios reales registrados, 4 respuestas aprobadas/publicadas con IDs Meta y el primer delta P2 sin comentarios cualitativos nuevos. | Active |
 | [Delta P2 de comunidad — 16 de agosto](../Operations/Research/2026-08-16_P2_Comunidad_Delta_01.json) | Evidencia anonimizada de 3 publicaciones, 6 comentarios nuevos, 0 respuestas requeridas y 0 escrituras en Meta. | Active |
 | [Preparación P2 de baseline — lote 15–16](../Operations/Research/2026-08-16_P2_Baseline_Preparacion_01.json) | Control estructurado: 12 observaciones, 9 Facebook activas, 0/9 snapshots 24h y 0/9 snapshots 72h; no se actualizó la baseline. | Active |
 | [Resultado preflight Instagram 2608060](../Operations/Research/2026-08-16_Instagram_2608060_Prueba_Resultado.json) | Prueba detenida antes de Meta porque la fila ya tenía `IG_Media_ID` y `Eliminada_Manualmente`; no hubo publicación ni reintento. | Active |
+| [Republicación Instagram 2608036/2608060 — 16 de agosto](../Operations/Research/2026-08-17_Instagram_Republicacion_2608036_2608060.json) | Evidencia de dos republicaciones autorizadas, con `FINISHED`, media IDs, permalinks y sin uso de programación nativa. | Active |
 | [Deuda documental P2](../Operations/Research/2026-08-15_Deuda_Documental_P2.md) | Cola de deuda documental y P2 activos; CNT-004 queda diferido y no forma parte del trabajo operativo actual. Make queda solo como trazabilidad. | Active |
 | [Reconciliación de inventario — lote 1](../Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.md) | Snapshot histórico de 30 registros y cuatro excepciones; superseded por la clasificación vigente canon/reconciliación. | Superseded |
 | [Auditoría del Growth OS — 14 de agosto](../Operations/Research/2026-08-14_Auditoria_Growth_OS.md) | Evalúa la programación modificada, las integraciones, la automatización y el ciclo de aprendizaje. | Superseded |
-| [Auditoría general del Growth OS — 16 de agosto](../Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md) | Estado actualizado: Facebook 74/74 programado, Drive 46/46 movido y verificado, CNT-004 diferido, P2 documentados y prueba Instagram 2608060 bloqueada en preflight por idempotencia. | Review |
+| [Auditoría general del Growth OS — 16 de agosto](../Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md) | Estado actualizado: Facebook 74/74 programado, Drive 46/46 movido y verificado, CNT-004 diferido, P2 documentados y dos republicaciones Instagram confirmadas. | Review |
 | [Ciclo de Aprendizaje de Horarios — 14 de agosto](../Operations/Research/2026-08-14_Ciclo_Aprendizaje_Horarios.md) | Reconstruye la hipótesis y la evidencia detrás del cambio de horarios. | Review |
 | [Comparativo Junio–Julio–Agosto — 14 de agosto](../Operations/Research/2026-08-14_Comparativo_Desempeno_Junio_Julio_Agosto.md) | Determina si la caída de agosto proviene de frecuencia, reuse, horarios o mezcla editorial. | Review |
 | [Diseño de Prueba de Calendario — 2 semanas](../Operations/Research/2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md) | Protocolo para controlar frecuencia, contenido nuevo/reuse y franjas horarias. | Review |

@@ -1,0 +1,65 @@
+{
+  "title": "Republicación autorizada de Instagram — 2608036 y 2608060",
+  "purpose": "Registrar dos publicaciones reales ejecutadas en Instagram después de la autorización explícita de Fernando para republicar assets previamente eliminados manualmente.",
+  "status": "Active",
+  "created": "2026-08-17",
+  "updated": "2026-08-17",
+  "version": "1.0",
+  "author": "Manus AI (CGO)",
+  "related_documents": [
+    "Operations/Production/instagram_15_16_scheduler_playbook.md",
+    "Operations/Research/2026-08-15_Publication_Log.csv",
+    "Operations/Research/2026-08-15_ExperimentLog.csv",
+    "Operations/Research/2026-08-15_Calendario_15_16_Agosto.csv",
+    "Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md"
+  ],
+  "organization": "Operations/Research",
+  "account": {
+    "username": "@universe_sent_me_0326",
+    "instagram_id": "17841462696378190"
+  },
+  "authorization": "Fernando confirmó: republicar ahora 2608036 y 2608060 en Instagram aunque sus publicaciones anteriores hubieran sido eliminadas manualmente.",
+  "execution_rules": {
+    "instagram_only": true,
+    "scheduled_publish_time_used": false,
+    "facebook_touched": false,
+    "drive_touched": false,
+    "permanent_scheduler_modified": false,
+    "new_images_generated": false,
+    "source_assets": "Assets locales previamente aprobados; se obtuvieron URLs CDN públicas temporales para la API."
+  },
+  "publications": [
+    {
+      "asset": "2608036- Elara+Evan - Nadie nos soporta.jpeg",
+      "cnt": "CNT-037",
+      "caption": "Cuando hasta ustedes dos saben que son demasiado. 😅 #UniverseSentMe #ElaraUSM #EvanUSM",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663570801562/CZIXREfeFGSfQdBC.jpeg",
+      "container_id": "17976656439089880",
+      "container_status_code": "FINISHED",
+      "media_id": "17891183814416135",
+      "permalink": "https://www.instagram.com/p/DcHxuuWllRk/",
+      "published_at_utc": "2026-08-17T00:43:02+0000",
+      "published_at_local": "2026-08-16T18:43:02-06:00",
+      "status": "Publicado"
+    },
+    {
+      "asset": "2608060 - Kael+Maeve - gustos salvajones.jpeg",
+      "cnt": "CNT-038",
+      "caption": "No tenemos gustos raros, tenemos gustos salvajones. 😏 #UniverseSentMe #MaeveUSM #MemesUSM",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663570801562/QMfnQXvyzbKaDxcc.jpeg",
+      "container_id": "17976656466089880",
+      "container_status_code": "FINISHED",
+      "media_id": "17909839698449207",
+      "permalink": "https://www.instagram.com/p/DcHxv5SlorV/",
+      "published_at_utc": "2026-08-17T00:43:17+0000",
+      "published_at_local": "2026-08-16T18:43:17-06:00",
+      "status": "Publicado"
+    }
+  ],
+  "historical_rows": {
+    "2608036": "Eliminada_Manualmente",
+    "2608060": "Eliminada_Manualmente",
+    "260583": "Prohibida; no republicar",
+    "2608030": "Publicada previamente; no duplicar"
+  }
+}

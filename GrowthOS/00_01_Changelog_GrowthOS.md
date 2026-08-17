@@ -3,10 +3,19 @@
 **Propósito:** Registro centralizado de hitos, integraciones, cambios estratégicos y actualizaciones de arquitectura. Este documento permite a los agentes (Manus, Claude, etc.) sincronizar contexto rápidamente sin re-leer todo el repositorio.
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
-**Última actualización:** 2026-08-16
-**Versión:** 1.94
+**Última actualización:** 2026-08-17
+**Versión:** 1.95
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.95] — 2026-08-17 (Manus)
+### Republicación autorizada de 2608036 y 2608060 en Instagram
+- Fernando confirmó explícitamente que `2608036` y `2608060` podían republicarse aunque sus intentos anteriores hubieran sido eliminados manualmente. No se generaron imágenes nuevas; se reutilizaron los assets existentes.
+- Meta confirmó `FINISHED → media_publish` para ambas filas. `2608036` quedó publicado con media `17891183814416135` y permalink https://www.instagram.com/p/DcHxuuWllRk/; `2608060` quedó publicado con media `17909839698449207` y permalink https://www.instagram.com/p/DcHxv5SlorV/.
+- No se usó `scheduled_publish_time`, no se tocó Facebook, Drive ni el scheduler permanente. `2608030` no se duplicó y `260583` continúa prohibida.
+- Se actualizaron el playbook v1.8, el calendario 15–16, `Publication_Log.csv`, `ExperimentLog.csv`, la auditoría general, el índice y la evidencia `Operations/Research/2026-08-17_Instagram_Republicacion_2608036_2608060.json`.
 
 ---
 

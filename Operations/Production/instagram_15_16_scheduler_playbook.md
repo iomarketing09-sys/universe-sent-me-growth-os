@@ -3,14 +3,15 @@ title: Playbook Scheduler Instagram — 15–16 de agosto de 2026
 purpose: Registrar y ejecutar únicamente publicaciones de Instagram aprobadas manualmente por Fernando, con protección contra duplicados y exclusión explícita de la prueba eliminada; la automatización programada queda desactivada.
 status: Active
 created: 2026-08-15
-updated: 2026-08-16
-version: 1.7
+updated: 2026-08-17
+version: 1.8
 author: Manus AI
 documents_related:
   - ../../GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md
   - ../Research/2026-08-15_Calendario_15_16_Agosto.md
   - ../Research/2026-08-15_Auditoria_API_Instagram.md
   - ../Research/2026-08-16_Instagram_2608060_Prueba_Resultado.json
+  - ../Research/2026-08-17_Instagram_Republicacion_2608036_2608060.json
 organization: Operations/Production
 ---
 
@@ -135,4 +136,14 @@ Ejecuta esta tarea autónomamente, sin pedir confirmación al usuario:
 - Facebook: sin cambios. Drive: sin cambios. Scheduler: sin cambios. Reintentos: ninguno.
 - Evidencia: `Operations/Research/2026-08-16_Instagram_2608060_Prueba_Resultado.json`.
 
-La aprobación recibida no sobreescribe la regla de idempotencia del playbook: `2608060` no puede republicarse después de que la publicación anterior fue eliminada manualmente.
+La aprobación recibida del 2026-08-16 sí autorizó excepcionalmente la republicación de `2608036` y `2608060`, pese a sus publicaciones anteriores eliminadas manualmente. Esta excepción es puntual, queda documentada en la evidencia de republicación y no autoriza republicar `260583` ni duplicar `2608030`.
+
+### 2026-08-16 18:43 America/Matamoros — Republicación autorizada de 2608036
+
+La republicación excepcional de `2608036- Elara+Evan - Nadie nos soporta.jpeg` fue autorizada explícitamente por Fernando. Se utilizó el asset existente y una URL CDN pública temporal; no se generó una imagen nueva. Meta confirmó `status_code=FINISHED` y después `media_publish` devolvió el media `17891183814416135`, con permalink https://www.instagram.com/p/DcHxuuWllRk/. La hora real fue `2026-08-16T18:43:02-06:00`. No se utilizó `scheduled_publish_time`, no se tocó Facebook, Drive ni el scheduler y no hubo reintento.
+
+### 2026-08-16 18:43 America/Matamoros — Republicación autorizada de 2608060
+
+La republicación excepcional de `2608060 - Kael+Maeve - gustos salvajones.jpeg` fue autorizada explícitamente por Fernando. Se utilizó el asset existente y una URL CDN pública temporal; no se generó una imagen nueva. Meta confirmó `status_code=FINISHED` y después `media_publish` devolvió el media `17909839698449207`, con permalink https://www.instagram.com/p/DcHxv5SlorV/. La hora real fue `2026-08-16T18:43:17-06:00`. No se utilizó `scheduled_publish_time`, no se tocó Facebook, Drive ni el scheduler y no hubo reintento.
+
+Estas dos filas nuevas son publicaciones activas distintas de los intentos históricos eliminados. `2608030` permanece sin duplicar y `260583` sigue prohibida.
