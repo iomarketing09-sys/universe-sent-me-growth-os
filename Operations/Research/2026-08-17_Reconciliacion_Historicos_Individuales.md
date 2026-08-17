@@ -4,7 +4,7 @@ purpose: "Clasificar los 39 registros individuales históricos frente a Content_
 status: "Archived"
 created: 2026-08-17
 updated: 2026-08-17
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Historical_Performance_Individuals.csv"
@@ -15,6 +15,8 @@ related_documents:
   - "Operations/Research/2026-08-14_Revision_Reuse_Mayo_Junio_Datos.csv"
   - "Operations/Research/2026-08-14_Reuse_Mayo_Meta_Cruce_Datos.csv"
   - "Operations/Research/2026-08-14_Reuse_Mayo_Unmatched_Review.csv"
+  - "Operations/Research/2026-08-17_Lista_Confirmacion_Assets_Julio.md"
+  - "Operations/Research/2026-08-17_Lista_Confirmacion_Assets_Julio.csv"
 organization: "Operations/Research"
 ---
 
@@ -55,7 +57,7 @@ La revisión de datasets identificó los siguientes lotes que todavía pueden ap
 
 Las 28 filas de mayo pueden avanzar a una fase de reconciliación de inventario porque tienen filename exacto, Drive ID, Meta ID y métricas del ranking. Sin embargo, todavía no deben recibir CNT automáticamente. Primero hay que comprobar si el inventario debe representar cada meme como pieza individual o si algunos son variantes/repeticiones del mismo concepto.
 
-Los 11 top posts de junio–julio deben cruzarse en una fase separada con sus carpetas históricas de Drive y con los filenames reales. La coincidencia por caption y Meta ID demuestra que la publicación existió, pero no prueba por sí sola qué archivo creativo la originó.
+Los 11 top posts de junio–julio deben cruzarse en una fase separada con sus carpetas históricas de Drive y con los filenames reales. La coincidencia por caption y Meta ID demuestra que la publicación existió, pero no prueba por sí sola qué archivo creativo la originó. Para agilizar el lote de julio, se preparó una lista manual con los seis top posts de julio documentados hasta ahora: `2026-08-17_Lista_Confirmacion_Assets_Julio.md` y su CSV editable.
 
 Los 95 registros `Reserve` y los 8 `Unmatched_Review` son trabajo adicional, no parte del lote confirmado. Los 205 cruces amplios y las 508 filas comparativas deben deduplicarse antes de incorporarse; añadirlos ahora duplicaría evidencia y contaminaría la lectura histórica.
 
