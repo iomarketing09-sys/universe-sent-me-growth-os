@@ -1,0 +1,45 @@
+{
+  "title": "P2 Comunidad — Delta incremental 02",
+  "purpose": "Registrar y clasificar únicamente los comentarios nuevos posteriores al cursor del primer delta P2.",
+  "status": "Active",
+  "created": "2026-08-17",
+  "updated": "2026-08-17",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.md",
+    "Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md",
+    "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
+  ],
+  "organization": "Operations/Research",
+  "query_since": "2026-08-16T23:41:56.744815+00:00",
+  "generated_at": "2026-08-17T01:48:41.946669+00:00",
+  "page_id": "1036844829507460",
+  "posts_returned": 1,
+  "comments_returned": 2,
+  "new_rows_added": 2,
+  "qualitative_comments_requiring_reply": 0,
+  "automatic_mentions": 1,
+  "empty_comments": 1,
+  "responses_published": 0,
+  "meta_writes": 0,
+  "comments": [
+    {
+      "comment_id": "122150560215072582_1538293250939503",
+      "post_id": "1036844829507460_122150560215072582",
+      "created_time": "2026-08-17T01:08:41+0000",
+      "classification": "Distribucion_Automatica",
+      "response_status": "No_Requiere_Respuesta",
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122150560215072582?comment_id=1538293250939503"
+    },
+    {
+      "comment_id": "122150560215072582_1791440162034610",
+      "post_id": "1036844829507460_122150560215072582",
+      "created_time": "2026-08-17T01:04:01+0000",
+      "classification": "Vacio",
+      "response_status": "No_Requiere_Respuesta",
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122150560215072582?comment_id=1791440162034610"
+    }
+  ]
+}

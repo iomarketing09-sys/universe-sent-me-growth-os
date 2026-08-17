@@ -4,9 +4,18 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 1.95
+**Versión:** 1.96
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.96] — 2026-08-17 (Manus)
+### Segundo delta incremental P2 de comunidad
+- Se consultó únicamente el intervalo posterior a `2026-08-16T23:41:56.744815Z`; Meta devolvió 1 publicación y 2 comentarios nuevos.
+- Se registraron 1 comentario vacío y 1 mención automática `@seguidores`. No hubo comentarios cualitativos nuevos, respuestas requeridas ni escrituras en Meta.
+- El ledger comunitario pasa a 17 comentarios reales y la siguiente consulta debe iniciar después de `2026-08-17T01:48:41Z`.
+- Se actualizaron `Community_Engagement_Log.md`, `Community_Engagement_Log.csv`, la auditoría, la fuente maestra, el índice y la evidencia `Operations/Research/2026-08-17_P2_Comunidad_Delta_02.json`.
 
 ---
 
