@@ -4,7 +4,7 @@ purpose: "Acelerar la reconciliación de los top posts de julio mediante la capt
 status: "Review"
 created: 2026-08-17
 updated: 2026-08-17
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Historical_Performance_Individuals.csv"
@@ -48,6 +48,21 @@ La respuesta más eficiente puede tener este formato:
 ```
 
 Si un post no aparece en Drive o hay dos variantes parecidas, debe marcarse como `No encontrado` o `Ambiguo`; no se debe elegir por parecido de personaje, color o caption. La experiencia con los cinco posts de junio demuestra que los archivos históricos pueden haber sido movidos posteriormente a una carpeta operativa, por lo que la búsqueda debe incluir los manifiestos de movimiento y las carpetas de reuse.
+
+## Resultado de la búsqueda automática en Drive
+
+La carpeta `My Drive\\Universe sent me\\USM\\Humor existencial\\07 Julio` fue recorrida con los seis `Asset_Ref`. Se encontró exactamente un archivo para cada referencia; no hubo duplicados dentro de esa carpeta.
+
+| Asset_Ref | Filename exacto | Drive ID | Tipo | Estado |
+|---|---|---|---|---|
+| `260604` | `Universe - Existencial 260604.png` | `1WXH7_KH4jdhFcqnGDYRGrHtKRNI6VD77` | PNG | Filename_Confirmed_Drive |
+| `2607987` | `Universe - Existencial 2607987.jpeg` | `1CeJ4UYYlU1I7ecJtYtgLOYBzHXyVc9sm` | JPEG | Filename_Confirmed_Drive |
+| `729` | `Universe - Existencial 729.png` | `1n9mj2FnGRv0kbEbEHk2RV1KKJDeSQTxk` | PNG | Filename_Confirmed_Drive |
+| `260504` | `Universe - Existencial 260504.png` | `1V6q1qygkALahU-HqNSJP-rmIwI-t0m16` | PNG | Filename_Confirmed_Drive |
+| `728` | `Universe - Existencial 728.png` | `1aV1bNoJpaXjtdZEQExebSj6i4SkXhVWr` | PNG | Filename_Confirmed_Drive |
+| `2607966` | `Universe - Existencial 2607966.jpeg` | `1r6TG0yLNQAlVF8RL0XfqbevmobIVd89m` | JPEG | Filename_Confirmed_Drive |
+
+La búsqueda confirma el archivo y su unicidad, pero todavía no demuestra por sí sola que la imagen sea la creatividad exacta del post de Meta. La relación editorial final se cerrará después de comparar el asset con la publicación y sus métricas.
 
 ## Regla de integración
 
