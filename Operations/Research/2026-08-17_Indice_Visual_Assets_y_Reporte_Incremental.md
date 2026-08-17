@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura persistente para analizar assets de Drive una
 status: "Active"
 created: 2026-08-17
 updated: 2026-08-17
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-17_Cruce_Assets_Junio_Meta_Top.md"
@@ -58,16 +58,16 @@ El 17 de agosto se revisaron visualmente los cinco top posts de junio directamen
 
 La evidencia adicional de la carpeta `08 Agosto` resolvió los cinco casos que parecían pendientes. Los archivos habían sido movidos desde la carpeta histórica de junio durante la programación de reuse y por eso no aparecían en el lote local original de `06 Junio`. Las relaciones confirmadas son: `2607792` → `CNT-069` para `El gato: 😧`; `2607794` → `CNT-070` para `a ver... a ver... 🤨`; `260733` → `CNT-071` para `yo Aura Fuerte 😏`; `2607825` → `CNT-072` para `Me da miedo ser el malo de la historia...`; y `260735` → `CNT-073` para `🤡`. La confirmación conjunta usa la composición visual de Facebook, filename exacto, Drive ID, Meta ID y el manifiesto MOVE_ONLY. El layer `Historical_Asset_Performance.csv` conserva las métricas históricas sin mezclarlas con 24/72h.
 
-## Estado de cierre operativo de junio
+## Estado real: recopilación de junio en curso
 
-La auditoría del 17 de agosto confirma que junio ya tiene un núcleo histórico utilizable para el Growth OS: seis publicaciones individuales con Meta ID, asset y CNT reconciliados (`CNT-069` a `CNT-073`), además de `260724` → `CNT-068`, que conserva su snapshot histórico observado. El índice visual contiene 196 filas y 176 referencias únicas; la mayoría son assets de Drive sin publicación individual de Meta vinculada.
+La auditoría confirma que junio ya tiene un núcleo histórico utilizable para el Growth OS: seis publicaciones individuales con Meta ID, asset y CNT reconciliados (`CNT-069` a `CNT-073`), además de `260724` → `CNT-068`, que conserva su snapshot histórico observado. Sin embargo, **junio no está cerrado**. Los 196 assets indexados representan una fuente de evidencia publicada que debe seguir cruzándose con Meta, Drive y los registros históricos antes de concluir el análisis.
 
-Por tanto, junio queda cerrado en el nivel de rendimiento histórico individual y reconciliación de los principales posts. El inventario visual permanece disponible como fuente de consulta, pero no se deben crear CNT ni asignar métricas a los assets restantes sin una pregunta de rendimiento, una decisión de reuse o nueva evidencia de Meta. Esta separación permite alimentar la Biblia con datos reales sin convertir el índice completo en una tarea costosa y de bajo retorno.
+El objetivo correcto es recuperar toda la información disponible de los assets que sí fueron publicados, no reconciliar ciegamente cada archivo de la carpeta. Para cada asset publicado se debe intentar obtener, en este orden, `Asset_Ref`, filename exacto, Drive ID, Meta ID, fecha, caption, formato, personajes, métricas lifetime y cualquier snapshot o comentario disponible. Los assets sin relación confirmada se mantienen como pendientes, no como descartados.
 
-Los documentos relacionados actualizados son `GrowthOS/Content_Inventory.csv`, `Operations/Research/Historical_Asset_Performance.csv` y `Operations/Research/Historical_Performance_Individuals.csv`.
+Junio y julio deben analizarse juntos como los meses de mejor referencia histórica identificados hasta ahora. La comparación posterior deberá usar sus datos reales para alimentar la Biblia y el Growth OS, sin mezclar snapshots lifetime con métricas 24/72h ni crear CNT por similitud temática.
 
 ## Próximo paso propuesto
 
-El índice visual inicial de los 196 assets de junio sigue siendo válido como fotografía de la carpeta original, pero debe complementarse con un registro de movimientos MOVE_ONLY. Cuando un asset histórico haya sido movido a una carpeta operativa, la búsqueda debe consultar primero los manifiestos de movimiento y el `Asset_Ref`, en vez de concluir que falta el archivo. El reporte incremental seguirá bajo demanda o cada 48 horas, alineado con P0, y no se automatizará sin aprobación.
+El siguiente lote debe ampliar la recopilación de junio usando los mismos principios que funcionaron con julio: localizar los assets publicados por `Asset_Ref`, revisar carpetas operativas derivadas de movimientos `MOVE_ONLY`, cruzar con Meta y registrar cada evidencia. Se priorizarán los posts de mayor rendimiento y después los assets publicados restantes con señales disponibles. El índice visual seguirá siendo persistente, pero no se considerará un cierre hasta completar la recuperación razonable de la información publicada.
 
 No se crea ningún scheduler con este documento. La propuesta requiere aprobación antes de automatizar ejecuciones recurrentes.
