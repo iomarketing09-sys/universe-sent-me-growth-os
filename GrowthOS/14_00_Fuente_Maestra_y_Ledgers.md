@@ -3,8 +3,8 @@ title: "Fuente maestra y ledgers del Growth OS"
 purpose: "Definir una arquitectura mínima y unificada para que inventario, publicaciones, calendarios y aprendizaje compartan IDs sin duplicar datos ni repetir consultas innecesarias."
 status: Active
 created: 2026-08-15
-updated: 2026-08-15
-version: "1.8"
+updated: 2026-08-17
+version: "1.9"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -19,6 +19,7 @@ related_documents:
   - "Operations/Production/extract_metrics_24_72_playbook.md"
   - "Operations/Research/2026-08-15_Reconciliacion_Publicaciones_15_16_CNT.md"
   - "GrowthOS/00_Índice.md"
+  - "Operations/Research/2026-08-17_Instagram_Publicacion_260633.json"
 organization: "GrowthOS"
 ---
 
@@ -126,7 +127,7 @@ El mismo procedimiento aplica a las publicaciones posteriores: registrar primero
 
 ## 6. Primer estado implementado
 
-El `ExperimentLog` contiene observaciones históricas, nueve publicaciones reales de Facebook del 15–16 de agosto y tres publicaciones activas de Instagram: `2608030`, `2608036` y `2608060`. El `Publication_Log` enlaza las nueve publicaciones de Facebook con `CNT-031`–`CNT-039`, conserva tres intentos históricos de Instagram eliminados manualmente y registra las tres publicaciones activas con sus nuevos media IDs y permalinks. Las métricas 24/72 horas de las nueve publicaciones de Facebook y de las dos republicaciones nuevas quedan pendientes hasta que exista una ventana temporal válida.
+El `ExperimentLog` contiene observaciones históricas, nueve publicaciones reales de Facebook del 15–16 de agosto y cuatro publicaciones activas de Instagram: `2608030`, `2608036`, `2608060` y `260633`. La nueva fila `260633` no recibe un CNT inventado; permanece con `ID_Pieza` vacío hasta una reconciliación con evidencia suficiente. El `Publication_Log` enlaza las nueve publicaciones de Facebook con `CNT-031`–`CNT-039`, conserva tres intentos históricos de Instagram eliminados manualmente y registra las tres publicaciones activas con sus nuevos media IDs y permalinks. Las métricas 24/72 horas de las nueve publicaciones de Facebook y de las dos republicaciones nuevas quedan pendientes hasta que exista una ventana temporal válida.
 
 El `Community_Engagement_Log.csv` contiene 18 comentarios reales: nueve del primer lote, seis del delta del 16 de agosto, dos del delta del 17 de agosto y una revisión puntual de publicación. Las cuatro respuestas del primer lote y la respuesta puntual fueron aceptadas por Meta; la respuesta puntual tiene `Respuesta_Meta_ID=122148874563072582_1613678620282915`, aunque su verificación GET devolvió HTTP 403 por permisos. La muestra histórica de 67 comentarios se conserva como análisis agregado y no se transforma retroactivamente en filas. Las futuras revisiones deben recuperar solo el delta nuevo, deduplicar por `Comentario_ID` y mantener respuestas y moderación bajo aprobación humana.
 

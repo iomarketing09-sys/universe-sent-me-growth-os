@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-14
 **Última actualización:** 2026-08-17
-**Versión:** 1.3
+**Versión:** 1.4
 **Autor:** Manus AI  
 **Documentos relacionados:** [`GrowthOS/08_00_Metricas_Baseline_Plataformas.md`](../../GrowthOS/08_00_Metricas_Baseline_Plataformas.md), [`Operations/Research/2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md`](2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md), [`Operations/Research/2026-08-14_Analisis_Copys_Rendimiento.md`](2026-08-14_Analisis_Copys_Rendimiento.md), [`GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md`](../../GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md), [`Calendario Instagram 17–30 propuesto`](2026-08-17_Calendario_Instagram_17_30_Propuesto.md)
 
@@ -69,6 +69,12 @@ El flujo aprobado para cada decisión será: **selección manual → revisión d
 La propuesta vigente para el siguiente periodo contiene seis assets existentes: `260633`, `260560`, `260614`, `260625`, `260613` y `260528`. No es una programación automática ni una autorización global de publicación. Cada fila requiere aprobación explícita, URL pública exacta, caption confirmado y validación de idempotencia antes de `media → FINISHED → media_publish`. El detalle de fechas objetivo, captions, reservas y exclusiones está en [`Calendario Instagram 17–30 propuesto`](2026-08-17_Calendario_Instagram_17_30_Propuesto.md).
 
 La primera ola mantiene Facebook como superficie primaria, excluye `260583`, no republica `2608030`, `2608036` ni `2608060`, y deja `260539` y `humor4.16` como pruebas de mayor riesgo para una decisión posterior.
+
+## Resultado de la primera ejecución de la ola 17–30 — 2026-08-17
+
+La fila `260633 - Universe.png` fue publicada manualmente en Instagram con aprobación explícita de Fernando. Meta confirmó el contenedor `17976689082089880` en estado `FINISHED`, publicó el media `17943879225288953` y devolvió el permalink [https://www.instagram.com/p/DcIQHJJHEp0/](https://www.instagram.com/p/DcIQHJJHEp0/). La publicación ocurrió a las 23:08:35 de America/Matamoros, fuera de la ventana planeada de las 10:00; por tanto, se registra como decisión editorial fuera de horario y no como cumplimiento del slot.
+
+La publicación no usó `scheduled_publish_time`, no modificó Facebook ni Drive y no creó un CNT porque la relación `260633 ↔ CNT-####` todavía no está confirmada. El asset fue localizado en la carpeta `05 Mayo`; la discrepancia con la expectativa operativa de `08 Agosto` se conserva como pendiente administrativa. Las otras cinco filas siguen requiriendo aprobación y ejecución individual.
 
 ## Referencias internas
 

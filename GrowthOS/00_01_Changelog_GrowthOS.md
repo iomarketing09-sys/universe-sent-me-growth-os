@@ -8,6 +8,8 @@
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
+- Se publicó manualmente `260633 - Universe.png` en Instagram con aprobación explícita: container `17976689082089880`, media `17943879225288953`, permalink `https://www.instagram.com/p/DcIQHJJHEp0/`, hora local `2026-08-16 23:08:35`, sin `scheduled_publish_time`. Se actualizaron ambos ledgers, la propuesta Instagram, la recomendación CGO, la fuente maestra y la auditoría; no se tocó Facebook ni Drive y no se creó CNT sin evidencia.
+
 ---
 
 ## [1.3.00] — 2026-08-17 (Manus)
