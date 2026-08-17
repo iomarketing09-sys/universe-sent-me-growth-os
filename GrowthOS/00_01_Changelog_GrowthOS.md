@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 2.00
+**Versión:** 2.01
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.01.00] — 2026-08-17 (Manus): Taxonomía editorial basada en evidencia para revisión con Claude.** Se normalizaron `Content_Inventory.csv` y la base histórica de junio con `personaje_principal_normalizado`, `personajes_secundarios_normalizados`, `rol_narrativo`, `tipo_humor_normalizado`, `potencial_etiquetado`, `confianza_taxonomia`, `fuente_taxonomia` y `nota_taxonomia`. Esta capa es analítica y no modifica el canon automáticamente. La evidencia observada —assets, posts, captions, comentarios, shares, horarios y rendimiento— debe mantenerse separada de las hipótesis de aprendizaje y de las decisiones canónicas. Antes de modificar la Biblia, Claude y Manus deben revisar cada supuesto y clasificarlo como `Sustentado por datos`, `Compatible pero no demostrado`, `Contradicho por evidencia` o `Sin evidencia disponible`. Toda modificación canónica requiere aprobación explícita y actualización de los documentos de Canon y de los bridges relacionados. Documentos: `Operations/Research/2026-08-17_Taxonomia_Editorial_Contenido_USM.md`, `GrowthOS/Content_Inventory.csv`, `Operations/Research/2026-08-17_Junio_Analisis_Base.csv` y `Operations/Research/2026-08-17_Reporte_Final_Recopilacion_Junio.md`.
 
 - Se publicó manualmente `260633 - Universe.png` en Instagram con aprobación explícita: container `17976689082089880`, media `17943879225288953`, permalink `https://www.instagram.com/p/DcIQHJJHEp0/`, hora local `2026-08-16 23:08:35`, sin `scheduled_publish_time`. Se actualizaron ambos ledgers, la propuesta Instagram, la recomendación CGO, la fuente maestra y la auditoría; no se tocó Facebook ni Drive y no se creó CNT sin evidencia.
 - Fernando eliminó la tarea histórica `USM Instagram 15-16 Agosto`. Se documentó la decisión CGO de no recrearla con polling: si se automatiza una campaña nueva, deberá usar una ejecución exacta por fila, playbook autocontenido, zona `America/Matamoros`, tolerancia máxima de ±2 minutos, `no-op_late`, bloqueo idempotente y ningún uso de `scheduled_publish_time`. La recomendación inmediata sigue siendo publicación manual fila por fila hasta aprobar la campaña concreta.
