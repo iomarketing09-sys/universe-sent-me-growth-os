@@ -18,6 +18,8 @@
 - Se creó `Operations/Research/2026-08-17_Investigacion_Ventanas_Temporales_Meta.md`, se actualizó el playbook del extractor a v1.2 y se mantuvieron abiertas `HB-003`, `HB-004` y `HB-005`.
 - Se añadió una propuesta de dos carriles: `Ventana_Estricta_24h/72h` para métricas contractuales y `Corte_Observado` para rescatar el lote 15–16 con reacciones, comentarios, shares y edad real del post, sin escribir esos datos en los campos estrictos.
 - Se ejecutó una revisión de lectura agrupada sobre las 9 publicaciones del lote: 370 reacciones, 23 comentarios y 109 shares, para 502 interacciones observadas. Se recuperaron 23 comentarios y se generó `Operations/Research/2026-08-17_Reporte_Corte_Observado_15_16.md`; no se modificaron `Publication_Log.csv`, `ExperimentLog.csv`, `Interacciones_24h` ni `Interacciones_72h`.
+- Se creó la propuesta `Operations/Research/2026-08-17_Calendario_Instagram_17_30_Propuesto.md` con seis assets existentes para una primera ola selectiva. La cola no es una programación automática: cada fila requiere aprobación explícita, URL pública exacta y ejecución inmediata con `media → FINISHED → media_publish`.
+- Se auditó localmente el primer lote de 10 filas del calendario 17–30: 8 quedaron como candidatas con evidencia de asset, 2 requieren evidencia adicional y se crearon 0 CNT. La auditoría de la cola Instagram confirmó 8 filas `FB + IG selectivo`, 1 `FB + IG prioritario`, 2 `IG prioritario` y 1 `IG secundario`; no se llamó a Meta ni se publicaron filas nuevas.
 
 ---
 

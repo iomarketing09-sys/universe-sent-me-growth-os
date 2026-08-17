@@ -1,0 +1,630 @@
+{
+  "calendar_rows": 74,
+  "decisions": {
+    "FB + IG selectivo": {
+      "count": 8,
+      "rows": [
+        {
+          "date": "2026-08-17",
+          "time": "10:00",
+          "type": "Reuse_Top",
+          "file": "260633 - Universe.png",
+          "caption": "😮‍💨 #UniverseSentMe",
+          "reason": "Universe; top-ranked reuse; test image on IG only if account is connected."
+        },
+        {
+          "date": "2026-08-18",
+          "time": "17:00",
+          "type": "Reuse_Top",
+          "file": "260644 - Universe.png",
+          "caption": "😒 #UniverseSentMe",
+          "reason": "Clean reaction format; suitable for a small IG image test."
+        },
+        {
+          "date": "2026-08-19",
+          "time": "10:00",
+          "type": "Reuse_Top",
+          "file": "260515 - Universe.png",
+          "caption": "🫠 #UniverseSentMe",
+          "reason": "Relatable Universe piece; candidate for image test."
+        },
+        {
+          "date": "2026-08-20",
+          "time": "17:00",
+          "type": "Reuse_Top",
+          "file": "260508 - Universe.jpg",
+          "caption": "🫣 #UniverseSentMe",
+          "reason": "Short, legible, low-copy visual."
+        },
+        {
+          "date": "2026-08-21",
+          "time": "11:00",
+          "type": "Reuse_Top",
+          "file": "260635 - Universe.png",
+          "caption": "🙂‍↔️ #UniverseSentMe",
+          "reason": "Reaction-led visual; suitable for controlled image test."
+        },
+        {
+          "date": "2026-08-22",
+          "time": "19:00",
+          "type": "Reuse_Top",
+          "file": "260510 - Universe.png",
+          "caption": "🌙 #UniverseSentMe",
+          "reason": "Night-context piece; possible Sunday/evening IG test."
+        },
+        {
+          "date": "2026-08-25",
+          "time": "17:00",
+          "type": "Reuse_Top",
+          "file": "260613 - Wilfred.png",
+          "caption": "Wilfred sabe. 🌲 #UniverseSentMe",
+          "reason": "Character-led image; test only if visual is immediately legible."
+        },
+        {
+          "date": "2026-08-26",
+          "time": "10:00",
+          "type": "Reuse_Top",
+          "file": "260620 - Fantasma.png",
+          "caption": "👻 #UniverseSentMe",
+          "reason": "Fantasma is a priority character for discovery."
+        }
+      ]
+    },
+    "FB primero": {
+      "count": 46,
+      "rows": [
+        {
+          "date": "2026-08-17",
+          "time": "11:00",
+          "type": "Nueva",
+          "file": "2608028 - Universe -  El amor esta en todos lados.png",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-17",
+          "time": "13:30",
+          "type": "Nueva",
+          "file": "2608034- Elara - uno debe ser chismoso.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-17",
+          "time": "17:00",
+          "type": "Nueva",
+          "file": "2608027.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-17",
+          "time": "19:00",
+          "type": "Nueva",
+          "file": "2608029 - Wilfred - Quiero loquiar.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-18",
+          "time": "10:00",
+          "type": "Reuse_Top",
+          "file": "260646 - No sean asi.. (14-jun-26).png",
+          "caption": "🎢😵‍💫💼",
+          "reason": "Instagram pendiente por decisión de Fernando; no programar en esta fase."
+        },
+        {
+          "date": "2026-08-18",
+          "time": "11:00",
+          "type": "Nueva",
+          "file": "2608046 - Universe - Mis firmas no se parecen.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-18",
+          "time": "13:30",
+          "type": "Reuse_Top",
+          "file": "260735 - Universe - dentro de ti hay dos payasos (10-jun-26).png",
+          "caption": "🤡🐱💥",
+          "reason": "Instagram pendiente por decisión de Fernando; no programar en esta fase."
+        },
+        {
+          "date": "2026-08-18",
+          "time": "16:00",
+          "type": "Nueva",
+          "file": "2608052 - Evan - Yo confiando en Google Maps.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-18",
+          "time": "19:00",
+          "type": "Nueva",
+          "file": "2608032 - Kiri - Para romper el echizo tendras que besarla en los labios.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-19",
+          "time": "11:00",
+          "type": "Nueva",
+          "file": "2608061 - Fantasma - acaso parezco alguien que quiere ser genial.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-19",
+          "time": "16:00",
+          "type": "Nueva",
+          "file": "2608031 - Maeve+Silvio - Risas falsas.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-19",
+          "time": "17:00",
+          "type": "Reuse_Top",
+          "file": "260733 - Evan - Yo aura fuerte (10-jun-26).png",
+          "caption": "🌈💔🫶",
+          "reason": "Instagram pendiente por decisión de Fernando; no programar en esta fase."
+        },
+        {
+          "date": "2026-08-19",
+          "time": "19:00",
+          "type": "Nueva",
+          "file": "2608040- Wilfred - el universo me susurro en sueños.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-20",
+          "time": "10:00",
+          "type": "Reuse_Top",
+          "file": "2607794 - Universe - Aver.. A ver... (22-jun-26).png",
+          "caption": "😳🧠🐱",
+          "reason": "Instagram pendiente por decisión de Fernando; no programar en esta fase."
+        },
+        {
+          "date": "2026-08-20",
+          "time": "11:00",
+          "type": "Nueva",
+          "file": "2608038- Ganso - Mejor pudriendome en dinero.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-20",
+          "time": "16:00",
+          "type": "Nueva",
+          "file": "2608056 - Wilfred - Analize tu contexto.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-20",
+          "time": "19:00",
+          "type": "Nueva",
+          "file": "2608041 - Maeve+kael - No me averguenza amar.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-21",
+          "time": "10:00",
+          "type": "Reuse_Top",
+          "file": "2607838 - Dios - Quien me creo a mi (29-jun-26).png",
+          "caption": "☁️✨🤔",
+          "reason": "Instagram pendiente por decisión de Fernando; no programar en esta fase."
+        },
+        {
+          "date": "2026-08-21",
+          "time": "13:30",
+          "type": "Nueva",
+          "file": "2608049 - Elara - Tibio tu cafe.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-22",
+          "time": "10:00",
+          "type": "Nueva",
+          "file": "2608050 - Universe - A ponerse en forma.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-22",
+          "time": "13:30",
+          "type": "Nueva",
+          "file": "2608063 - Universe - Larga vida a esas mujeres.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-23",
+          "time": "10:00",
+          "type": "Nueva",
+          "file": "2608035- Maeve - La necesidad de enloquecer.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-23",
+          "time": "16:00",
+          "type": "Nueva",
+          "file": "2608057 - Fantasma - Sabes que me caeria bien.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-23",
+          "time": "19:00",
+          "type": "Reuse_Top",
+          "file": "260757 - Maeve - Estas seguro¿ (14-jun-26).png",
+          "caption": "😳🛏️🔥",
+          "reason": "Instagram pendiente por decisión de Fernando; no programar en esta fase."
+        },
+        {
+          "date": "2026-08-24",
+          "time": "10:00",
+          "type": "Nueva",
+          "file": "Universe - Existencial 260661.png",
+          "caption": "🤫🌲📚",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-24",
+          "time": "13:30",
+          "type": "Nueva",
+          "file": "2608048 - Universe - Inalcanzable para todos.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-24",
+          "time": "17:00",
+          "type": "Nueva",
+          "file": "2608053 - Universe - Quieras o no.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-24",
+          "time": "19:00",
+          "type": "Reuse_Top",
+          "file": "2607825 - Kael - Ser el malo de la historia (28-jun-26).png",
+          "caption": "😈🚲🫣",
+          "reason": "Instagram pendiente por decisión de Fernando; no programar en esta fase."
+        },
+        {
+          "date": "2026-08-25",
+          "time": "10:00",
+          "type": "Nueva",
+          "file": "Universe - Existencial 2607831.png",
+          "caption": "🧚‍♀️🍗🎬😂",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-25",
+          "time": "13:30",
+          "type": "Reuse_Top",
+          "file": "2607792 - fantasma+Universe - El gato ;o (21-jun-26).jpeg",
+          "caption": "👻🐱💬",
+          "reason": "Instagram pendiente por decisión de Fernando; no programar en esta fase."
+        },
+        {
+          "date": "2026-08-25",
+          "time": "16:00",
+          "type": "Nueva",
+          "file": "2608062 - Kiri+Evan - prestame el marron.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-25",
+          "time": "19:00",
+          "type": "Nueva",
+          "file": "2608043 - Maeve - No te pedi que me revivieras.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-26",
+          "time": "11:00",
+          "type": "Nueva",
+          "file": "2608065 - Fantasma - Pedazo de socrates.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-26",
+          "time": "16:00",
+          "type": "Nueva",
+          "file": "2608058 - Silvio - Tiene que dar tranquilidad.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-26",
+          "time": "19:00",
+          "type": "Nueva",
+          "file": "2608044 - Silvio - Sabra dios cuantos ligues.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-27",
+          "time": "10:00",
+          "type": "Reuse_Reserve",
+          "file": "260571 - Kiri.png",
+          "caption": "😵‍💫🧹💥",
+          "reason": "Instagram pendiente por decisión de Fernando; no programar en esta fase."
+        },
+        {
+          "date": "2026-08-27",
+          "time": "11:00",
+          "type": "Nueva",
+          "file": "2608042 - Maeve+kael - Te quiero besiquiar.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-27",
+          "time": "16:00",
+          "type": "Nueva",
+          "file": "2608064 - Universe - Quieren hacer pendejo al que nacio asi.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-27",
+          "time": "19:00",
+          "type": "Nueva",
+          "file": "2608055 - Kiri - Parezco normal.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-28",
+          "time": "11:00",
+          "type": "Reuse_Reserve",
+          "file": "260550 - Universe.png",
+          "caption": "🍟🏋️‍♂️😵",
+          "reason": "Instagram pendiente por decisión de Fernando; no programar en esta fase."
+        },
+        {
+          "date": "2026-08-28",
+          "time": "13:30",
+          "type": "Nueva",
+          "file": "2608059 - Kael - Si la vida te da limones.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-29",
+          "time": "10:00",
+          "type": "Nueva",
+          "file": "2608045 - Kiri+Evan - No te voy a mentir.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-29",
+          "time": "13:30",
+          "type": "Nueva",
+          "file": "2608047 - Kael - Inolerancia a la lactosa.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-30",
+          "time": "10:00",
+          "type": "Nueva",
+          "file": "2608054 - Maeve - Salgamos a hablar de todo.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-30",
+          "time": "16:00",
+          "type": "Nueva",
+          "file": "2608051 - Universe - Mi unico defecto es que me gusta cger.jpeg",
+          "caption": "PENDIENTE — definir después de aprobar el asset visual; no repetir texto de la imagen.",
+          "reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial."
+        },
+        {
+          "date": "2026-08-30",
+          "time": "19:00",
+          "type": "Reuse_Reserve",
+          "file": "260617 - Elara+Kael.png",
+          "caption": "🔥☕🏕️",
+          "reason": "Instagram pendiente por decisión de Fernando; no programar en esta fase."
+        }
+      ]
+    },
+    "FB": {
+      "count": 16,
+      "rows": [
+        {
+          "date": "2026-08-17",
+          "time": "16:00",
+          "type": "Reuse_Top",
+          "file": "260642 - Universe+Wilfred.png",
+          "caption": "😶‍🌫️ #UniverseSentMe",
+          "reason": "Cross-post only after first IG test is measured."
+        },
+        {
+          "date": "2026-08-20",
+          "time": "13:30",
+          "type": "Reuse_Top",
+          "file": "260659 - Universe.png",
+          "caption": "🤨 #UniverseSentMe",
+          "reason": "Keep as Facebook-first until IG baseline improves."
+        },
+        {
+          "date": "2026-08-22",
+          "time": "11:00",
+          "type": "Reuse_Top",
+          "file": "260589.png",
+          "caption": "😌 #UniverseSentMe",
+          "reason": "Neutral candidate; do not spend IG testing capacity first."
+        },
+        {
+          "date": "2026-08-23",
+          "time": "13:30",
+          "type": "Reuse_Top",
+          "file": "Universe - Existencial 260508.png",
+          "caption": "💔 #UniverseSentMe",
+          "reason": "Keep Facebook-first; emotional context is not enough evidence for IG."
+        },
+        {
+          "date": "2026-08-24",
+          "time": "11:00",
+          "type": "Reuse_Top",
+          "file": "260518 - Kael.png",
+          "caption": "😏 #UniverseSentMe",
+          "reason": "Character-specific; no IG evidence yet."
+        },
+        {
+          "date": "2026-08-24",
+          "time": "16:00",
+          "type": "Reuse_Top",
+          "file": "260607 - Universe.png",
+          "caption": "🫠 #UniverseSentMe",
+          "reason": "Facebook-first until connector is restored."
+        },
+        {
+          "date": "2026-08-25",
+          "time": "11:00",
+          "type": "Reuse_Top",
+          "file": "Universe - Existencial 622.png",
+          "caption": "😵‍💫 #UniverseSentMe",
+          "reason": "Facebook-first."
+        },
+        {
+          "date": "2026-08-26",
+          "time": "13:30",
+          "type": "Reuse_Top",
+          "file": "260540 - Elara.png",
+          "caption": "🔮 #UniverseSentMe",
+          "reason": "No IG priority without stronger visual evidence."
+        },
+        {
+          "date": "2026-08-26",
+          "time": "17:00",
+          "type": "Reuse_Top",
+          "file": "260590 - Maeve.png",
+          "caption": "😶 #UniverseSentMe",
+          "reason": "Facebook-first; no IG priority."
+        },
+        {
+          "date": "2026-08-27",
+          "time": "13:30",
+          "type": "Reuse_Top",
+          "file": "260573 - Universe.png",
+          "caption": "😐 #UniverseSentMe",
+          "reason": "Facebook-first."
+        },
+        {
+          "date": "2026-08-27",
+          "time": "17:00",
+          "type": "Reuse_Top",
+          "file": "260542 - Universe.png",
+          "caption": "🫣 #UniverseSentMe",
+          "reason": "Facebook-first."
+        },
+        {
+          "date": "2026-08-28",
+          "time": "10:00",
+          "type": "Reuse_Top",
+          "file": "260527 - Universe.png",
+          "caption": "😮‍💨 #UniverseSentMe",
+          "reason": "Facebook-first."
+        },
+        {
+          "date": "2026-08-28",
+          "time": "19:00",
+          "type": "Reuse_Top",
+          "file": "260543 - Evan.png",
+          "caption": "😬 #UniverseSentMe",
+          "reason": "Facebook-first."
+        },
+        {
+          "date": "2026-08-29",
+          "time": "11:00",
+          "type": "Reuse_Top",
+          "file": "741 - Elara+Maeve.png",
+          "caption": "👀 #UniverseSentMe",
+          "reason": "Facebook-first; verify character context before IG."
+        },
+        {
+          "date": "2026-08-29",
+          "time": "19:00",
+          "type": "Reuse_Top",
+          "file": "260559 - Universe.png",
+          "caption": "🫠 #UniverseSentMe",
+          "reason": "Facebook-first."
+        },
+        {
+          "date": "2026-08-30",
+          "time": "13:30",
+          "type": "Reuse_Top",
+          "file": "260650 - Universe.png",
+          "caption": "🫣 #UniverseSentMe",
+          "reason": "Facebook-first."
+        }
+      ]
+    },
+    "FB + IG prioritario": {
+      "count": 1,
+      "rows": [
+        {
+          "date": "2026-08-19",
+          "time": "13:30",
+          "type": "Reuse_Top",
+          "file": "260560 - Fantasma.png",
+          "caption": "Esperando octubre… 👻 #UniverseSentMe",
+          "reason": "Fantasma has documented traction; strongest IG image candidate."
+        }
+      ]
+    },
+    "IG secundario": {
+      "count": 1,
+      "rows": [
+        {
+          "date": "2026-08-21",
+          "time": "19:00",
+          "type": "Reuse_Top",
+          "file": "260614 - Universe.png",
+          "caption": "Analizando mi propio caos. 🧐 #UniverseSentMe",
+          "reason": "Readable but text-heavy; test only after priority candidates."
+        }
+      ]
+    },
+    "IG prioritario": {
+      "count": 2,
+      "rows": [
+        {
+          "date": "2026-08-23",
+          "time": "22:00",
+          "type": "Reuse_Top",
+          "file": "260625.png",
+          "caption": "El cambio da miedo… quedarse igual también. 😮‍💨 #UniverseSentMe",
+          "reason": "Strong vertical composition and acidic relatable line."
+        },
+        {
+          "date": "2026-08-30",
+          "time": "22:00",
+          "type": "Reuse_Top",
+          "file": "260528 - Universe.png",
+          "caption": "Ya duérmete… 🌙 #UniverseSentMe",
+          "reason": "Night-context image; schedule only in evening, never as morning content."
+        }
+      ]
+    }
+  },
+  "read_only": true,
+  "meta_called": false,
+  "changes_written": false
+}

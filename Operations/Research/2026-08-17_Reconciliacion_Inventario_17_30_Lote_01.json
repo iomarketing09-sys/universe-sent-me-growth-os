@@ -1,0 +1,252 @@
+{
+  "summary": {
+    "lot_size": 10,
+    "existing_cnt_match_count": 0,
+    "asset_evidence_candidate_count": 8,
+    "needs_evidence_count": 2,
+    "cnt_created": 0,
+    "meta_called": false,
+    "drive_modified": false,
+    "inventory_modified": false
+  },
+  "records": [
+    {
+      "fecha": "2026-08-17",
+      "hora": "10:00",
+      "tipo_contenido": "Reuse_Top",
+      "archivo": "260633 - Universe.png",
+      "asset_ref": "260633",
+      "meta_post_id": null,
+      "is_published": null,
+      "calendar_status": "Programado",
+      "inventory_cnt_matches": [],
+      "manifest_evidence": [],
+      "visual_assignment": {
+        "instagram_decision": "FB + IG selectivo",
+        "instagram_reason": "Universe; top-ranked reuse; test image on IG only if account is connected.",
+        "context_note": "historial mayo; revisar contexto antes de programar"
+      },
+      "reconciliation_status": "Needs_evidence",
+      "cnt_creation_authorized": false
+    },
+    {
+      "fecha": "2026-08-17",
+      "hora": "11:00",
+      "tipo_contenido": "Nueva",
+      "archivo": "2608028 - Universe -  El amor esta en todos lados.png",
+      "asset_ref": "2608028",
+      "meta_post_id": null,
+      "is_published": null,
+      "calendar_status": "Programado",
+      "inventory_cnt_matches": [],
+      "manifest_evidence": [
+        {
+          "manifest_status": "MOVED_MANUALLY_VERIFIED",
+          "drive_file_id": "1OMQislufbj5TEThH37s0GnpirN2ffwuy",
+          "filename": "2608028 - Universe -  El amor esta en todos lados.png"
+        }
+      ],
+      "visual_assignment": {
+        "instagram_decision": "FB primero",
+        "instagram_reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial.",
+        "context_note": "Relacional ligero; media mañana. Asignación visual propuesta; requiere aprobación antes de producción/programación."
+      },
+      "reconciliation_status": "Asset_evidence_candidate",
+      "cnt_creation_authorized": false
+    },
+    {
+      "fecha": "2026-08-17",
+      "hora": "13:30",
+      "tipo_contenido": "Nueva",
+      "archivo": "2608034- Elara - uno debe ser chismoso.jpeg",
+      "asset_ref": "2608034",
+      "meta_post_id": null,
+      "is_published": null,
+      "calendar_status": "Programado",
+      "inventory_cnt_matches": [],
+      "manifest_evidence": [
+        {
+          "manifest_status": "MOVED_MANUALLY_VERIFIED",
+          "drive_file_id": "1jkOakhil7LbJVHxHPvx8Alladlc5W8XT",
+          "filename": "2608034- Elara - uno debe ser chismoso.jpeg"
+        }
+      ],
+      "visual_assignment": {
+        "instagram_decision": "FB primero",
+        "instagram_reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial.",
+        "context_note": "Chisme/observación; mediodía. Asignación visual propuesta; requiere aprobación antes de producción/programación."
+      },
+      "reconciliation_status": "Asset_evidence_candidate",
+      "cnt_creation_authorized": false
+    },
+    {
+      "fecha": "2026-08-17",
+      "hora": "16:00",
+      "tipo_contenido": "Reuse_Top",
+      "archivo": "260642 - Universe+Wilfred.png",
+      "asset_ref": "260642",
+      "meta_post_id": null,
+      "is_published": null,
+      "calendar_status": "Programado",
+      "inventory_cnt_matches": [],
+      "manifest_evidence": [],
+      "visual_assignment": {
+        "instagram_decision": "FB",
+        "instagram_reason": "Cross-post only after first IG test is measured.",
+        "context_note": "historial mayo; revisar contexto antes de programar"
+      },
+      "reconciliation_status": "Needs_evidence",
+      "cnt_creation_authorized": false
+    },
+    {
+      "fecha": "2026-08-17",
+      "hora": "17:00",
+      "tipo_contenido": "Nueva",
+      "archivo": "2608027.jpeg",
+      "asset_ref": "2608027",
+      "meta_post_id": null,
+      "is_published": null,
+      "calendar_status": "Programado",
+      "inventory_cnt_matches": [],
+      "manifest_evidence": [
+        {
+          "manifest_status": "MOVED_MANUALLY_VERIFIED",
+          "drive_file_id": "1CRelpkyI-Y9zdp8qQ2kGBDCdX3XlD9VL",
+          "filename": "2608027.jpeg"
+        }
+      ],
+      "visual_assignment": {
+        "instagram_decision": "FB primero",
+        "instagram_reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial.",
+        "context_note": "Humor ácido existencial; tarde. Asignación visual propuesta; requiere aprobación antes de producción/programación."
+      },
+      "reconciliation_status": "Asset_evidence_candidate",
+      "cnt_creation_authorized": false
+    },
+    {
+      "fecha": "2026-08-17",
+      "hora": "19:00",
+      "tipo_contenido": "Nueva",
+      "archivo": "2608029 - Wilfred - Quiero loquiar.jpeg",
+      "asset_ref": "2608029",
+      "meta_post_id": null,
+      "is_published": null,
+      "calendar_status": "Programado",
+      "inventory_cnt_matches": [],
+      "manifest_evidence": [
+        {
+          "manifest_status": "MOVED_MANUALLY_VERIFIED",
+          "drive_file_id": "1hmJCzpO7HFnRB3vs0cxVoFglhcfYtQN7",
+          "filename": "2608029 - Wilfred - Quiero loquiar.jpeg"
+        }
+      ],
+      "visual_assignment": {
+        "instagram_decision": "FB primero",
+        "instagram_reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial.",
+        "context_note": "Contexto nocturno explícito; noche. Asignación visual propuesta; requiere aprobación antes de producción/programación."
+      },
+      "reconciliation_status": "Asset_evidence_candidate",
+      "cnt_creation_authorized": false
+    },
+    {
+      "fecha": "2026-08-18",
+      "hora": "10:00",
+      "tipo_contenido": "Reuse_Top",
+      "archivo": "260646 - No sean asi.. (14-jun-26).png",
+      "asset_ref": "260646",
+      "meta_post_id": null,
+      "is_published": null,
+      "calendar_status": "Programado",
+      "inventory_cnt_matches": [],
+      "manifest_evidence": [
+        {
+          "manifest_status": "MOVED_MANUALLY_VERIFIED",
+          "drive_file_id": "1uEnhVN6M0LLIreuZTJdsIKkNkmyiCI3T",
+          "filename": "260646 - No sean asi.. (14-jun-26).png"
+        }
+      ],
+      "visual_assignment": {
+        "instagram_decision": "FB primero",
+        "instagram_reason": "Instagram pendiente por decisión de Fernando; no programar en esta fase.",
+        "context_note": "Contexto de rutina/trabajo; apropiado para mañana. Fuente verificada: June_Top; folder_id=16P130zWhuFn4ejzkr6VlX9GFA_Ule83k. Aprobado por Fernando; programar en Facebook antes del movimiento manual."
+      },
+      "reconciliation_status": "Asset_evidence_candidate",
+      "cnt_creation_authorized": false
+    },
+    {
+      "fecha": "2026-08-18",
+      "hora": "11:00",
+      "tipo_contenido": "Nueva",
+      "archivo": "2608046 - Universe - Mis firmas no se parecen.jpeg",
+      "asset_ref": "2608046",
+      "meta_post_id": null,
+      "is_published": null,
+      "calendar_status": "Programado",
+      "inventory_cnt_matches": [],
+      "manifest_evidence": [
+        {
+          "manifest_status": "MOVED_MANUALLY_VERIFIED",
+          "drive_file_id": "1PNkHfF94nsAWjERNaR_hrJr8xSCOJFNf",
+          "filename": "2608046 - Universe - Mis firmas no se parecen.jpeg"
+        }
+      ],
+      "visual_assignment": {
+        "instagram_decision": "FB primero",
+        "instagram_reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial.",
+        "context_note": "Absurdismo visual; media mañana. Asignación visual propuesta; requiere aprobación antes de producción/programación."
+      },
+      "reconciliation_status": "Asset_evidence_candidate",
+      "cnt_creation_authorized": false
+    },
+    {
+      "fecha": "2026-08-18",
+      "hora": "13:30",
+      "tipo_contenido": "Reuse_Top",
+      "archivo": "260735 - Universe - dentro de ti hay dos payasos (10-jun-26).png",
+      "asset_ref": "260735",
+      "meta_post_id": null,
+      "is_published": null,
+      "calendar_status": "Programado",
+      "inventory_cnt_matches": [],
+      "manifest_evidence": [
+        {
+          "manifest_status": "MOVED_MANUALLY_VERIFIED",
+          "drive_file_id": "1ZmJrhaJFpF3_R9prrCV6u8wyOt9GkWH0",
+          "filename": "260735 - Universe - dentro de ti hay dos payasos (10-jun-26).png"
+        }
+      ],
+      "visual_assignment": {
+        "instagram_decision": "FB primero",
+        "instagram_reason": "Instagram pendiente por decisión de Fernando; no programar en esta fase.",
+        "context_note": "Absurdismo visual claro; franja diurna. Fuente verificada: June_Top; folder_id=16P130zWhuFn4ejzkr6VlX9GFA_Ule83k. Aprobado por Fernando; programar en Facebook antes del movimiento manual."
+      },
+      "reconciliation_status": "Asset_evidence_candidate",
+      "cnt_creation_authorized": false
+    },
+    {
+      "fecha": "2026-08-18",
+      "hora": "16:00",
+      "tipo_contenido": "Nueva",
+      "archivo": "2608052 - Evan - Yo confiando en Google Maps.jpeg",
+      "asset_ref": "2608052",
+      "meta_post_id": null,
+      "is_published": null,
+      "calendar_status": "Programado",
+      "inventory_cnt_matches": [],
+      "manifest_evidence": [
+        {
+          "manifest_status": "MOVED_MANUALLY_VERIFIED",
+          "drive_file_id": "1xjqD0PgX-Q42RAIEmfJu9H3RvNDWwU73",
+          "filename": "2608052 - Evan - Yo confiando en Google Maps.jpeg"
+        }
+      ],
+      "visual_assignment": {
+        "instagram_decision": "FB primero",
+        "instagram_reason": "El asset aún no existe; decidir IG después de revisar legibilidad, formato y riesgo editorial.",
+        "context_note": "Situacional/absurdo; tarde. Asignación visual propuesta; requiere aprobación antes de producción/programación."
+      },
+      "reconciliation_status": "Asset_evidence_candidate",
+      "cnt_creation_authorized": false
+    }
+  ]
+}

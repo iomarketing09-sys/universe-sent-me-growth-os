@@ -26,6 +26,10 @@ related_documents:
   - "Operations/Research/2026-08-17_Investigacion_Ventanas_Temporales_Meta.md"
   - "Operations/Research/2026-08-17_Reporte_Corte_Observado_15_16.md"
   - "Operations/Research/2026-08-17_Corte_Observado_15_16.json"
+  - "Operations/Research/2026-08-17_Reconciliacion_Inventario_17_30_Lote_01.md"
+  - "Operations/Research/2026-08-17_Auditoria_Inventario_y_Cola_Instagram.json"
+  - "Operations/Research/2026-08-17_Calendario_Instagram_17_30_Propuesto.md"
+  - "Operations/Research/2026-08-17_Revision_Calendario_Instagram_17_30.json"
 organization: "Operations/Research"
 ---
 
@@ -50,11 +54,12 @@ La auditoría original identificó varias brechas que ya fueron resueltas en el 
 | Facebook 17–30 | Meta devuelve 76 posts programados, de los cuales 74 pertenecen al calendario 17–30; todavía no están publicados y no tienen métricas reales. | P1 |
 | Facebook 15–16 | Identidad reconciliada; faltan snapshots 24/72h válidos y cierre de hipótesis. | P0 |
 | Instagram 15–16 | `2608030` permanece activa y las republicaciones autorizadas de `2608036` y `2608060` están confirmadas por Meta con nuevos media IDs y permalinks. Los intentos anteriores eliminados quedan separados como historial. `260583` sigue excluida. | P1 controlado |
+| Instagram 17–30 | La asignación contiene 8 filas `FB + IG selectivo`, 1 `FB + IG prioritario`, 2 `IG prioritario` y 1 `IG secundario`. Se propone una primera ola de 6 assets existentes; ninguna fila está autorizada para publicación todavía. | P1 |
 | Scheduler Instagram | La prueba no creó ni modificó ningún scheduler; el playbook permanece en aprobación manual y la ejecución histórica sigue pausada. | P1 controlado |
 | Canon | Silvio/Payaso está resuelto. `CNT-004` queda diferido y fuera de desarrollo; conserva revisión canónica pendiente si algún día se retoma. | P2 diferido |
 | Aprendizaje | La extracción P0 del 17 de agosto evaluó 4 ventanas 24h y obtuvo solo totales lifetime; `0/4` snapshots exactos fueron escritos. La revisión operativa posterior rescató 502 interacciones observadas y 23 comentarios en las 9 publicaciones, sin cerrar `HB-003`, `HB-004` ni `HB-005`. | P0 |
 | Calendario 17–30 | Los 74 slots están completos y programados; falta que se publiquen y extraer métricas. El movimiento de los 46 archivos del manifiesto ya está verificado en `08 Agosto`. | P1 |
-| Fuente maestra | `Content_Inventory.csv` tiene 39 filas y no contiene coincidencias textuales directas para las 71 referencias `260####` distintas del calendario 17–30; falta reconciliación progresiva sin inventar CNT. | P1 |
+| Fuente maestra | `Content_Inventory.csv` tiene 39 filas y no contiene coincidencias textuales directas para las 71 referencias `260####` distintas del calendario 17–30. El lote 01 auditó 10 filas: 8 quedaron como candidatas con evidencia de asset, 2 requieren evidencia adicional y se crearon 0 CNT. | P1 |
 | Comunidad | Ledger con 18 comentarios reales y 5 respuestas publicadas; los deltas incrementales no produjeron comentarios cualitativos y la revisión puntual fue respondida con ID Meta real. La verificación GET posterior devolvió 403 por permisos. | P2 |
 | Automatizaciones heredadas | Make permanece retirado; la tarea histórica de Instagram no debe convertirse en ruta permanente sin un playbook autocontenido y una prueba de no-op. | P1 |
 
@@ -75,9 +80,9 @@ La calificación es una herramienta de diagnóstico CGO, no una métrica oficial
 | Estrategia editorial y experimento | Ámbar | 8/10 | Las hipótesis HB-003, HB-004 y HB-005 están bien planteadas y los 74 slots ya están definidos; la prueba debe evaluarse con datos reales de publicación y métricas, no con el calendario por sí solo. |
 | Arquitectura de calendario y estados | Ámbar | 5/10 | La máquina de estados existe, pero conviven Markdown, CSV, inventario maestro y calendarios históricos con convenciones diferentes. |
 | Canon y governance | Ámbar | 7/10 | Silvio/Payaso está resuelto y el bridge está sincronizado; `CNT-004` conserva contradicciones narrativas sustantivas, pero su desarrollo fue diferido y ya no bloquea el trabajo activo. |
-| Inventario, Drive y reuse | Ámbar | 6/10 | Drive ya muestra 46 de 46 archivos del manifiesto en `08 Agosto`, sin copias ni IDs restantes en origen; el inventario de 39 filas todavía no cubre las referencias de asset del calendario 17–30. |
+| Inventario, Drive y reuse | Ámbar | 6/10 | Drive ya muestra 46 de 46 archivos del manifiesto en `08 Agosto`, sin copias ni IDs restantes en origen; el lote 01 dejó 8 candidatos con evidencia y 2 filas pendientes, sin inventar CNT. |
 | Publicación Facebook | Verde | 9/10 | Meta devuelve 74/74 posts del calendario 17–30 programados y verificados, además de 2 posts programados previos; la ruta Page Access Token + Page Feed está validada. |
-| Publicación Instagram | Ámbar | 7/10 | La API, la cuenta y los permisos responden; la programación nativa no está disponible. Las dos republicaciones autorizadas fueron publicadas mediante `media → FINISHED → media_publish`; la ruta sigue siendo manual y selectiva. |
+| Publicación Instagram | Ámbar | 7/10 | La API, la cuenta y los permisos responden; la programación nativa no está disponible. Las dos republicaciones autorizadas fueron publicadas mediante `media → FINISHED → media_publish`; la propuesta 17–30 mantiene una cola manual selectiva de seis assets. |
 | Métricas y ciclo de aprendizaje | Rojo | 5/10 | El extractor y el `ExperimentLog` existen; Meta solo devolvió lifetime para 4 ventanas 24h elegibles. El corte observado ya rescata 502 interacciones y 23 comentarios, pero no sustituye ventanas estrictas ni cierra hipótesis. |
 | Comunidad y comentarios | Ámbar | 7/10 | Ya existe conversación orgánica, ledger operativo y flujo de aprobación humana; la historia personal fue respondida con aprobación explícita y su ID Meta quedó registrado. |
 | Documentación y fuente única de verdad | Ámbar | 6/10 | GitHub es la fuente oficial, hay enlaces internos válidos, los documentos de control ya no presentan Make como ruta activa y permanece deuda de metadatos en documentos históricos. |
@@ -150,7 +155,7 @@ El inventario ahora separa el motivo de revisión del estado canónico mediante 
 
 El Growth OS declara que el inventario estructurado es la fuente central y que las colas son vistas filtradas. En la práctica conviven `Content_Inventory.csv`, calendarios Markdown, calendarios CSV de investigación, la propuesta de 74 slots, la cola de reuse, el inventario de Drive y el pipeline multi-marca de Fernando.
 
-La evidencia cuantitativa muestra la fragmentación: `Content_Inventory.csv` contiene 39 filas con estados históricos y canónicos normalizados; el inventario de memes nuevos mantiene 38 filas; el ranking de reuse contiene 123 assets. El calendario 17–30 tiene 74 filas y ya no contiene `PENDIENTE_GENERAR`: registra 35 nuevas, 36 `Reuse_Top` y 3 `Reuse_Reserve`, pero las 71 referencias `260####` distintas del calendario no aparecen por referencia en el texto del inventario maestro. Esto confirma una deuda de identidad, no una autorización para inventar CNT.
+La evidencia cuantitativa muestra la fragmentación: `Content_Inventory.csv` contiene 39 filas con estados históricos y canónicos normalizados; el inventario de memes nuevos mantiene 38 filas; el ranking de reuse contiene 123 assets. El lote 01 del calendario 17–30 revisó diez filas sin crear CNT nuevos: ocho quedaron como candidatas con evidencia de asset y dos requieren confirmación adicional. El calendario 17–30 tiene 74 filas y ya no contiene `PENDIENTE_GENERAR`: registra 35 nuevas, 36 `Reuse_Top` y 3 `Reuse_Reserve`, pero las 71 referencias `260####` distintas del calendario no aparecen por referencia en el texto del inventario maestro. Esto confirma una deuda de identidad, no una autorización para inventar CNT.
 
 El calendario 15–16 también mezcla aprobación del plan con estado de publicación: todas sus filas dicen `PROGRAMADA` por el lado de Facebook, mientras Instagram usa estados separados. `2608030`, `2608036` y `2608060` tienen publicaciones activas documentadas; los intentos históricos eliminados se mantienen en los ledgers como trazabilidad, y `260583` permanece excluida.
 

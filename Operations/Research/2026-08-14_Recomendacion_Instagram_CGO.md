@@ -3,10 +3,10 @@
 **Propósito:** Definir si Universe Sent Me debe publicar memes estáticos en Instagram, qué piezas deben probarse primero y cómo separar evidencia de Facebook de evidencia propia de Instagram.  
 **Estado:** Active
 **Fecha de creación:** 2026-08-14
-**Última actualización:** 2026-08-15
-**Versión:** 1.2
+**Última actualización:** 2026-08-17
+**Versión:** 1.3
 **Autor:** Manus AI  
-**Documentos relacionados:** [`GrowthOS/08_00_Metricas_Baseline_Plataformas.md`](../../GrowthOS/08_00_Metricas_Baseline_Plataformas.md), [`Operations/Research/2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md`](2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md), [`Operations/Research/2026-08-14_Analisis_Copys_Rendimiento.md`](2026-08-14_Analisis_Copys_Rendimiento.md), [`GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md`](../../GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md)
+**Documentos relacionados:** [`GrowthOS/08_00_Metricas_Baseline_Plataformas.md`](../../GrowthOS/08_00_Metricas_Baseline_Plataformas.md), [`Operations/Research/2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md`](2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md), [`Operations/Research/2026-08-14_Analisis_Copys_Rendimiento.md`](2026-08-14_Analisis_Copys_Rendimiento.md), [`GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md`](../../GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md), [`Calendario Instagram 17–30 propuesto`](2026-08-17_Calendario_Instagram_17_30_Propuesto.md)
 
 ## Dictamen ejecutivo
 
@@ -63,6 +63,12 @@ La pérdida de una ventana no debe convertirse en una prohibición de publicar. 
 La primera prueba manual del lote fue `2608030 - Universe - Que fibra tomas pa cagarla tanto.jpeg`, publicada con aprobación explícita a las 10:59:41 de America/Mexico_City. El slot original de las 10:00 se conserva como perdido; la publicación se registra como decisión editorial fuera de horario. Antes de publicar otra pieza se deben recoger métricas iniciales de esta prueba. Como siguiente opción de menor riesgo editorial queda `2608033 - Fantasma - vendra primero mi boda o jesus.jpeg`, pero requiere corregir o confirmar la ortografía visible indicada en el calendario. No recomiendo comenzar con `260539`, `2608060` ni `humor4.16` sin revisión adicional por su contexto sexualizado o de pareja.
 
 El flujo aprobado para cada decisión será: **selección manual → revisión de asset y caption → aprobación explícita → creación de media → verificación de estado → `media_publish` → registro de IDs, permalink, hora real y métricas iniciales**. En la prueba 2608030, Meta devolvió `status_code=FINISHED` y el permalink `https://www.instagram.com/p/DcEX6BSE8ka/`. No se utilizará `scheduled_publish_time`.
+
+## Propuesta de cola selectiva 17–30 — 2026-08-17
+
+La propuesta vigente para el siguiente periodo contiene seis assets existentes: `260633`, `260560`, `260614`, `260625`, `260613` y `260528`. No es una programación automática ni una autorización global de publicación. Cada fila requiere aprobación explícita, URL pública exacta, caption confirmado y validación de idempotencia antes de `media → FINISHED → media_publish`. El detalle de fechas objetivo, captions, reservas y exclusiones está en [`Calendario Instagram 17–30 propuesto`](2026-08-17_Calendario_Instagram_17_30_Propuesto.md).
+
+La primera ola mantiene Facebook como superficie primaria, excluye `260583`, no republica `2608030`, `2608036` ni `2608060`, y deja `260539` y `humor4.16` como pruebas de mayor riesgo para una decisión posterior.
 
 ## Referencias internas
 
