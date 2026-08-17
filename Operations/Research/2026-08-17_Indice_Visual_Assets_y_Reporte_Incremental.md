@@ -4,10 +4,11 @@ purpose: "Definir una arquitectura persistente para analizar assets de Drive una
 status: "Active"
 created: 2026-08-17
 updated: 2026-08-17
-version: "1.3"
+version: "1.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-17_Cruce_Assets_Junio_Meta_Top.md"
+  - "Operations/Research/2026-08-17_Cola_Reconciliacion_Assets_Junio.csv"
   - "Operations/Research/2026-08-17_Auditoria_Revision_Junio.md"
   - "Operations/Research/Historical_Performance_Individuals.csv"
   - "GrowthOS/Content_Inventory.csv"
@@ -65,6 +66,12 @@ La auditoría confirma que junio ya tiene un núcleo histórico utilizable para 
 El objetivo correcto es recuperar toda la información disponible de los assets que sí fueron publicados, no reconciliar ciegamente cada archivo de la carpeta. Para cada asset publicado se debe intentar obtener, en este orden, `Asset_Ref`, filename exacto, Drive ID, Meta ID, fecha, caption, formato, personajes, métricas lifetime y cualquier snapshot o comentario disponible. Los assets sin relación confirmada se mantienen como pendientes, no como descartados.
 
 Junio y julio deben analizarse juntos como los meses de mejor referencia histórica identificados hasta ahora. La comparación posterior deberá usar sus datos reales para alimentar la Biblia y el Growth OS, sin mezclar snapshots lifetime con métricas 24/72h ni crear CNT por similitud temática.
+
+## Cola exhaustiva de recopilación de junio
+
+El dataset histórico contiene **230 publicaciones de junio**. Se generó `2026-08-17_Cola_Reconciliacion_Assets_Junio.csv`, ordenada por interacciones lifetime, para no limitar el análisis a los cinco top posts. Actualmente seis publicaciones ya están reconciliadas y quedan 224 en estado `Needs_Asset_Match`. La cola conserva Meta ID, fecha, caption, reacciones, comentarios, shares e interacciones, y define como siguiente evidencia el cruce visual con Drive/07 Junio y las carpetas operativas derivadas de movimientos `MOVE_ONLY`.
+
+La prioridad de trabajo será descendente por interacciones. El siguiente lote recomendado comienza con `No sean asi.. 😆` (1,181 interacciones), `😏` del 29 de junio (1,069), `😎` del 11 de junio (924), `o pedir follows 🫣` (547) y los demás posts por encima de 500 interacciones. Así se recupera primero la información de mayor valor para la Biblia, sin abandonar después el resto de los assets que sí tengan evidencia publicada.
 
 ## Próximo paso propuesto
 
