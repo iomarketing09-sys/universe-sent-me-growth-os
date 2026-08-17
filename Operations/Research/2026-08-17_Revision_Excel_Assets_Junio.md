@@ -96,6 +96,18 @@ El Excel permite acelerar la reconciliación de junio porque ofrece una relació
 
 La cola histórica debe actualizarse después de revisar los 11 casos cercanos y el outlier, no antes. Cualquier registro sin Asset_Ref seguirá como pendiente de identificación editorial.
 
+## Integración de los matches confirmados
+
+Los 160 matches `Visual_Confirmed` ya fueron integrados a la cola histórica. Los registros correspondientes quedaron marcados como `Visual_Confirmed` cuando no tenían un estado editorial previo y recibieron su `asset_ref_known`. Los seis casos que ya tenían CNT conservaron su estado reconciliado y no se duplicaron.
+
+También se añadieron 159 relaciones nuevas a `Historical_Asset_Performance.csv` y 159 a `Historical_Performance_Individuals.csv`. La diferencia entre 160 matches y 159 filas nuevas se debe a que una relación ya existía en los ledgers. Los nuevos registros conservan las métricas lifetime y mantienen separados el Facebook photo ID, el Meta post ID y el CNT.
+
+No se crearon todavía 154 CNT nuevos: se deja esa ampliación para después de revisar los 11 casos cercanos, el outlier y la posible reutilización de referencias. Esto evita inflar el inventario maestro antes de terminar la revisión editorial.
+
+## Casos pendientes para evaluación manual
+
+Los 11 casos `Visual_Review` son: `260718`, `260731`, `260744`, `260736`, `260757`, `2607796`, `2607809`, `2607812`, `2607821`, `2607830` y `2607837`. El outlier es `Universe sent me - 015`, con photo ID `122127652731072582`; su mejor candidato visual tiene distancia 250 y no debe aceptarse sin evidencia adicional.
+
 ## Referencias
 
 [1]: `Operations/Research/2026-08-17_Cola_Reconciliacion_Assets_Junio.csv` "Cola de reconciliación histórica de junio"
