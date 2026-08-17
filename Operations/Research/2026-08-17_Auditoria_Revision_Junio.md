@@ -43,6 +43,6 @@ Esta evidencia sirve para aprendizaje editorial y selección de futuros reuse, p
 
 ## Siguiente lote recomendado
 
-El siguiente lote de junio debe comenzar con los posts individuales adicionales del dataset de 508 filas y los assets de la carpeta `06 Junio`. La reconstrucción debe priorizar los top posts y usar coincidencia visual o evidencia de Meta cuando el filename no sea suficiente. Las filas se clasificarán como `Fecha_y_asset_confirmados`, `Meta_confirmado_asset_pendiente` o `Asset_Drive_sin_post_confirmado`. Solo la primera categoría podrá enlazarse después a un CNT. Este proceso no requiere las capturas de la biblia ni debe mezclar su contenido con estadísticas de publicación.
+El siguiente lote de junio debe continuar con los posts individuales adicionales del dataset de 508 filas y los assets de la carpeta `06 Junio`. El post `✨✨✨` de Top ya fue resuelto mediante comparación visual: corresponde a `260724`, Drive ID `1smMni1etHda5lhATT0XGtjE1EcAvIFYw`, Meta ID `1036844829507460_122127939543072582` y `CNT-068`. Las filas restantes se clasificarán como `Fecha_y_asset_confirmados`, `Meta_confirmado_asset_pendiente` o `Asset_Drive_sin_post_confirmado`. Este proceso no requiere las capturas de la biblia ni debe mezclar su contenido con estadísticas de publicación.
 
-No se modificaron `Content_Inventory.csv`, `Publication_Log.csv` ni `ExperimentLog.csv` durante esta auditoría.
+No se modificaron `Publication_Log.csv` ni `ExperimentLog.csv`; `Content_Inventory.csv` recibió únicamente la fila histórica `CNT-068`, sustentada por coincidencia visual exacta, Drive y dataset Meta.

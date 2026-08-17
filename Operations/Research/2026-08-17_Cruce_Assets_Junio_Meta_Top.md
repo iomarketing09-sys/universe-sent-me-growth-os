@@ -21,7 +21,7 @@ organization: "Operations/Research"
 
 La carpeta Drive `06 Junio` contiene **196 archivos de imagen** y una subcarpeta `Top`. La subcarpeta `Top` no contiene una colección de assets: contiene **una sola captura de pantalla**.
 
-El cruce automático completo contra Graph API quedó limitado por permisos actuales: la consulta directa de publicaciones históricas devolvió el error Meta `(#10) pages_read_engagement/Page Public Content Access`. Por ello, no se afirma que los 196 assets tengan fecha confirmada mediante Graph. Se utilizó el dataset histórico ya versionado como fuente secundaria y se separaron las coincidencias fuertes de las que todavía necesitan evidencia de imagen o permiso API.
+El cruce automático completo contra Graph API quedó limitado por permisos actuales: la consulta directa de publicaciones históricas devolvió el error Meta `(#10) pages_read_engagement/Page Public Content Access`. Por ello, no se afirma que los 196 assets tengan fecha confirmada mediante Graph. Se utilizó el dataset histórico ya versionado como fuente secundaria y se separaron las coincidencias fuertes de las que todavía necesitan evidencia de imagen o permiso API. La búsqueda visual local sí permitió resolver un asset individual: `Universe - Existencial 260724.png`.
 
 ## Subcarpeta Top
 
@@ -35,27 +35,27 @@ El dataset histórico contiene una coincidencia fuerte para el caption `✨✨�
 | Fecha local | 2026-06-07 18:43:18, America/Matamoros |
 | Métricas históricas | 25 reacciones, 1 comentario, 6 shares, 32 interacciones |
 | Captura Top | Aproximadamente 4.4k reacciones, 143 comentarios y 1.4k shares |
-| Filename/Drive ID | No visible en la captura |
-| CNT existente | No encontrado entre los cinco top posts ya integrados |
+| Filename/Drive ID | `Universe - Existencial 260724.png` / `1smMni1etHda5lhATT0XGtjE1EcAvIFYw` |
+| CNT existente | **Creado en este lote: `CNT-068`** |
 
-La coincidencia caption + fecha + pieza visual es fuerte para identificar el post, pero los contadores no son intercambiables: representan snapshots de distinta fecha o fuente. La captura tampoco permite conocer el filename ni el Drive ID, por lo que todavía no se debe crear CNT para esta pieza.
+La coincidencia caption + fecha + pieza visual es fuerte para identificar el post, pero los contadores no son intercambiables: representan snapshots de distinta fecha o fuente. La captura por sí sola no mostraba el filename ni el Drive ID; la comparación visual contra los 196 assets resolvió ambos campos y permitió crear `CNT-068` con confianza alta.
 
 ## Comparación con posts ya integrados
 
-Los cinco posts de junio ya integrados son `El gato: 😧`, `a ver... a ver... 🤨`, `yo Aura Fuerte 😏`, `Me da miedo ser el malo de la historia...` y `🤡`. La pieza de Top `✨✨✨` **no duplica ninguno de esos cinco**; debe tratarse como un sexto candidato histórico separado, con Meta ID y fecha probable confirmados por el dataset, pero con asset pendiente.
+Los cinco posts de junio ya integrados son `El gato: 😧`, `a ver... a ver... 🤨`, `yo Aura Fuerte 😏`, `Me da miedo ser el malo de la historia...` y `🤡`. La pieza de Top `✨✨✨` **no duplica ninguno de esos cinco**; ahora queda como un sexto post histórico confirmado, enlazado a `260724` y `CNT-068`.
 
 ## Clasificación operativa
 
 | Resultado | Cantidad | Interpretación |
 |---|---:|---|
-| Assets en 06 Junio | 196 | Disponibles en Drive; sin fecha individual automática todavía. |
-| Elementos en Top | 1 captura | Evidencia visual, no asset original. |
-| Coincidencia fuerte Top→Meta/dataset | 1 | `✨✨✨`, 7 de junio, Meta ID localizado en dataset. |
-| Nuevos CNT creados | 0 | No se modifica el inventario. |
+| Assets en 06 Junio | 196 | Disponibles en Drive; sin fecha individual automática general. |
+| Elementos en Top | 1 captura | Evidencia visual de un post. |
+| Coincidencia fuerte Top→Meta/dataset | 1 | `✨✨✨`, 7 de junio, Meta ID y asset visual resueltos. |
+| Nuevos CNT creados | 1 | `CNT-068` para `260724`. |
 | Fechas confirmadas para los 196 por Graph live | 0 | Bloqueado por permiso Meta. |
 
 ## Conclusión CGO
 
-La subcarpeta Top confirma un post histórico adicional que no estaba en los cinco registros individuales integrados. Sin embargo, la fuente Top es una captura, no el archivo original, y la consulta Graph live no está autorizada por los permisos actuales. El siguiente paso correcto no es crear CNT, sino localizar el asset visual exacto de `✨✨✨` dentro de los 196 archivos de junio mediante comparación de imagen o aportar una exportación de Meta con attachments. Después se podrá enlazar la fecha, Meta ID, Drive ID y asset en una sola fila verificable.
+La subcarpeta Top confirma un post histórico adicional que no estaba en los cinco registros individuales integrados. La búsqueda visual local resolvió el asset exacto: `Universe - Existencial 260724.png`, Drive ID `1smMni1etHda5lhATT0XGtjE1EcAvIFYw`. Se creó `CNT-068`, se vinculó el Meta ID `1036844829507460_122127939543072582` y se añadió el post a `Historical_Performance_Individuals.csv`. La limitación Graph sigue aplicando al resto de los 196 assets.
 
-No se movieron ni copiaron archivos de Drive, no se modificaron `Content_Inventory.csv`, `Publication_Log.csv` ni `ExperimentLog.csv`, y no se hicieron más llamadas a Meta después del bloqueo de permisos.
+No se movieron ni copiaron archivos de Drive, no se modificaron `Publication_Log.csv` ni `ExperimentLog.csv`, y no se hicieron más llamadas a Meta después del bloqueo de permisos. `Content_Inventory.csv` sí recibió únicamente la nueva fila histórica `CNT-068`, sustentada por la coincidencia visual exacta y la evidencia del dataset.

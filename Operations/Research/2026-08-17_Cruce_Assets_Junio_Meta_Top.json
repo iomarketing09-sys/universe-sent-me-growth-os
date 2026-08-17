@@ -34,17 +34,18 @@
       "comments": 143,
       "shares": 1400
     },
-    "asset_filename": null,
-    "drive_id": null,
-    "already_integrated_individual": false,
-    "classification": "Meta_and_date_strong_match_asset_pending"
+    "asset_filename": "Universe - Existencial 260724.png",
+    "drive_id": "1smMni1etHda5lhATT0XGtjE1EcAvIFYw",
+    "cnt_id": "CNT-068",
+    "already_integrated_individual": true,
+    "classification": "Visual_Meta_Drive_confirmed"
   },
   "already_integrated_june_posts": 5,
-  "new_cnt_created": 0,
+  "new_cnt_created": 1,
   "notes": [
     "Top capture is visual evidence, not an original asset.",
     "Historical dataset and screenshot metrics are different snapshots and must not be merged.",
     "No Drive files were moved or copied.",
-    "No operational ledgers or Content_Inventory rows were modified."
+    "No operational ledgers were modified; Content_Inventory received only CNT-068 after visual confirmation."
   ]
 }
