@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 2.05
+**Versión:** 2.06
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.06.00] — 2026-08-17 (Manus): Verificación Meta y baseline de la ola activa.** Se verificó en modo lectura la página Universe Sent Me (`1036844829507460`) y se confirmaron cinco publicaciones reales del 17 de agosto, correspondientes a los slots 10:00, 11:00, 13:30, 16:00 y 17:00. Se creó `Operations/Research/2026-08-17_Verificacion_Meta_Ola_Activa.json` con la evidencia y `Operations/Research/2026-08-17_P0_Baseline_Ola_Activa.csv` con el cruce por fecha/slot local, Asset_Ref y Meta Post ID. Ninguna ventana 24h/72h está vencida en este corte; no se usaron totales lifetime como sustituto.
 
 - **[2.05.00] — 2026-08-17 (Manus): Protocolo P0 de métricas comparables y veredictos.** Se definió `mediana_por_publicación` como métrica principal, con shares y comentarios raíz como métricas secundarias, separando Facebook/Instagram, formatos, nuevo/reuse y ventanas exactas de 24/72 horas. Lifetime histórico y `Corte_Observado` quedan fuera de la métrica contractual. Los veredictos serán `Validada`, `Parcialmente validada`, `No validada`, `Inconclusa` o `Invalidada por diseño`, con mínimo operativo de cinco publicaciones comparables por celda y uplift predefinido. Documento: `Operations/Research/2026-08-17_Protocolo_P0_Metricas_y_Veredictos.md`.
 
