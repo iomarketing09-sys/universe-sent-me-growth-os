@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura persistente para analizar assets de Drive una
 status: "Active"
 created: 2026-08-17
 updated: 2026-08-17
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-17_Cruce_Assets_Junio_Meta_Top.md"
@@ -57,6 +57,14 @@ El índice no debe mover ni copiar archivos de Drive. Debe guardar únicamente m
 El 17 de agosto se revisaron visualmente los cinco top posts de junio directamente en Facebook y se compararon contra los 196 assets indexados de `06 Junio`. Se confirmó que la evidencia visual directa es más fuerte que el caption o la similitud temática. El único asset de junio previamente cerrado permanece como `260724` → `CNT-068` para `Polvo de estrellas` / `✨✨✨`.
 
 La evidencia adicional de la carpeta `08 Agosto` resolvió los cinco casos que parecían pendientes. Los archivos habían sido movidos desde la carpeta histórica de junio durante la programación de reuse y por eso no aparecían en el lote local original de `06 Junio`. Las relaciones confirmadas son: `2607792` → `CNT-069` para `El gato: 😧`; `2607794` → `CNT-070` para `a ver... a ver... 🤨`; `260733` → `CNT-071` para `yo Aura Fuerte 😏`; `2607825` → `CNT-072` para `Me da miedo ser el malo de la historia...`; y `260735` → `CNT-073` para `🤡`. La confirmación conjunta usa la composición visual de Facebook, filename exacto, Drive ID, Meta ID y el manifiesto MOVE_ONLY. El layer `Historical_Asset_Performance.csv` conserva las métricas históricas sin mezclarlas con 24/72h.
+
+## Estado de cierre operativo de junio
+
+La auditoría del 17 de agosto confirma que junio ya tiene un núcleo histórico utilizable para el Growth OS: seis publicaciones individuales con Meta ID, asset y CNT reconciliados (`CNT-069` a `CNT-073`), además de `260724` → `CNT-068`, que conserva su snapshot histórico observado. El índice visual contiene 196 filas y 176 referencias únicas; la mayoría son assets de Drive sin publicación individual de Meta vinculada.
+
+Por tanto, junio queda cerrado en el nivel de rendimiento histórico individual y reconciliación de los principales posts. El inventario visual permanece disponible como fuente de consulta, pero no se deben crear CNT ni asignar métricas a los assets restantes sin una pregunta de rendimiento, una decisión de reuse o nueva evidencia de Meta. Esta separación permite alimentar la Biblia con datos reales sin convertir el índice completo en una tarea costosa y de bajo retorno.
+
+Los documentos relacionados actualizados son `GrowthOS/Content_Inventory.csv`, `Operations/Research/Historical_Asset_Performance.csv` y `Operations/Research/Historical_Performance_Individuals.csv`.
 
 ## Próximo paso propuesto
 
