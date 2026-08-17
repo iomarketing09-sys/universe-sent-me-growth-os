@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-16
-**Versión:** 5.3
+**Versión:** 5.4
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -44,10 +44,11 @@
 | [Community Engagement Log — datos](../Operations/Research/2026-08-15_Community_Engagement_Log.csv) | Ledger append-only de comunidad; 15 comentarios reales registrados, 4 respuestas aprobadas/publicadas con IDs Meta y el primer delta P2 sin comentarios cualitativos nuevos. | Active |
 | [Delta P2 de comunidad — 16 de agosto](../Operations/Research/2026-08-16_P2_Comunidad_Delta_01.json) | Evidencia anonimizada de 3 publicaciones, 6 comentarios nuevos, 0 respuestas requeridas y 0 escrituras en Meta. | Active |
 | [Preparación P2 de baseline — lote 15–16](../Operations/Research/2026-08-16_P2_Baseline_Preparacion_01.json) | Control estructurado: 12 observaciones, 9 Facebook activas, 0/9 snapshots 24h y 0/9 snapshots 72h; no se actualizó la baseline. | Active |
+| [Resultado preflight Instagram 2608060](../Operations/Research/2026-08-16_Instagram_2608060_Prueba_Resultado.json) | Prueba detenida antes de Meta porque la fila ya tenía `IG_Media_ID` y `Eliminada_Manualmente`; no hubo publicación ni reintento. | Active |
 | [Deuda documental P2](../Operations/Research/2026-08-15_Deuda_Documental_P2.md) | Cola de deuda documental y P2 activos; CNT-004 queda diferido y no forma parte del trabajo operativo actual. Make queda solo como trazabilidad. | Active |
 | [Reconciliación de inventario — lote 1](../Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.md) | Snapshot histórico de 30 registros y cuatro excepciones; superseded por la clasificación vigente canon/reconciliación. | Superseded |
 | [Auditoría del Growth OS — 14 de agosto](../Operations/Research/2026-08-14_Auditoria_Growth_OS.md) | Evalúa la programación modificada, las integraciones, la automatización y el ciclo de aprendizaje. | Superseded |
-| [Auditoría general del Growth OS — 16 de agosto](../Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md) | Estado actualizado: Facebook 74/74 programado, Drive 46/46 movido y verificado, CNT-004 diferido y P2 activos en comunidad, baseline y documentación. | Review |
+| [Auditoría general del Growth OS — 16 de agosto](../Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md) | Estado actualizado: Facebook 74/74 programado, Drive 46/46 movido y verificado, CNT-004 diferido, P2 documentados y prueba Instagram 2608060 bloqueada en preflight por idempotencia. | Review |
 | [Ciclo de Aprendizaje de Horarios — 14 de agosto](../Operations/Research/2026-08-14_Ciclo_Aprendizaje_Horarios.md) | Reconstruye la hipótesis y la evidencia detrás del cambio de horarios. | Review |
 | [Comparativo Junio–Julio–Agosto — 14 de agosto](../Operations/Research/2026-08-14_Comparativo_Desempeno_Junio_Julio_Agosto.md) | Determina si la caída de agosto proviene de frecuencia, reuse, horarios o mezcla editorial. | Review |
 | [Diseño de Prueba de Calendario — 2 semanas](../Operations/Research/2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md) | Protocolo para controlar frecuencia, contenido nuevo/reuse y franjas horarias. | Review |
@@ -56,7 +57,7 @@
 | [Calendario Experimental con Copys — 17–30 agosto](../Operations/Research/2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md) | Versión operativa de 74 slots con caption propuesto y criterio de distribución en Instagram. | Draft |
 | [Recomendación Instagram — CGO](../Operations/Research/2026-08-14_Recomendacion_Instagram_CGO.md) | Dictamen sobre cross-post selectivo, memes candidatos y prueba orgánica en Instagram. | Review |
 | [Auditoría directa de Instagram API — 15 de agosto](../Operations/Research/2026-08-15_Auditoria_API_Instagram.md) | Verifica permisos, vinculación, cuota y flujo de publicación de Instagram mediante Graph API directa. | Active |
-| [Playbook Scheduler Instagram 15–16](../Operations/Production/instagram_15_16_scheduler_playbook.md) | Flujo histórico pausado; Instagram requiere aprobación manual fila por fila y `260583` permanece excluida. | Active |
+| [Playbook Scheduler Instagram 15–16](../Operations/Production/instagram_15_16_scheduler_playbook.md) | Flujo histórico pausado; aprobación manual fila por fila, protección contra duplicados y `260583`/filas eliminadas excluidas. | Active |
 | [Extractor de métricas 24/72h](../Operations/Production/extract_metrics_24_72_playbook.md) | Playbook y contrato del extractor agrupado, idempotente y de un solo despertar para `EXP-2026-08-CAL-01`. | Active |
 | [Revisión calendario 17–30 — 16 de agosto](../Operations/Research/2026-08-16_Revision_Calendario_17_30.md) | Conciliación final de 74 slots: 35 nuevos, 36 reuse Top, 3 reuse Reserve, cero placeholders y movimiento de 46 archivos verificado en Drive. | Active |
 | [Propuesta ajustada calendario 17–30](../Operations/Research/2026-08-16_Propuesta_Ajuste_Calendario_17_30_Agosto.md) | Versión aprobada e integrada: 74 slots con 35 nuevos, 36 reuse Top y 3 reuse Reserve; supersedida operativamente por el calendario ya programado en Facebook. | Superseded |

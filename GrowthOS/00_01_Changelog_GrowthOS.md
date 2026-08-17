@@ -4,9 +4,18 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-16
-**Versión:** 1.93
+**Versión:** 1.94
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.94] — 2026-08-16 (Manus)
+### Preflight de Instagram 2608060 detenido por idempotencia
+- Fernando aprobó la prueba única para `2608060 - Kael+Maeve - gustos salvajones.jpeg` en Instagram únicamente, usando la URL pública y el caption exactos del playbook.
+- La validación encontró que la fila ya tenía `IG_Media_ID=17922210816414183` y `Estado_Publicacion=Eliminada_Manualmente`. Conforme al playbook, la ejecución se detuvo antes de crear el contenedor.
+- No se llamó a `media`, no se verificó `FINISHED`, no se ejecutó `media_publish`, no se usó `scheduled_publish_time`, no se reintentó y no se modificó Facebook, Drive ni el scheduler.
+- El resultado quedó documentado en `Operations/Research/2026-08-16_Instagram_2608060_Prueba_Resultado.json`; el playbook pasó a v1.7 y la auditoría/índice fueron sincronizados.
 
 ---
 

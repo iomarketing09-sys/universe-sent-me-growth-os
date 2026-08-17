@@ -1,0 +1,40 @@
+{
+  "title": "Resultado de preflight — prueba única Instagram 2608060",
+  "purpose": "Registrar el resultado de la prueba solicitada y demostrar que la publicación fue detenida por la regla de idempotencia.",
+  "status": "Active",
+  "created": "2026-08-16",
+  "updated": "2026-08-16",
+  "version": "1.0",
+  "author": "Manus AI (CGO)",
+  "related_documents": [
+    "Operations/Production/instagram_15_16_scheduler_playbook.md",
+    "Operations/Research/2026-08-15_Publication_Log.csv",
+    "Operations/Research/2026-08-15_ExperimentLog.csv",
+    "Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md",
+    "Operations/Research/2026-08-16_P2_Baseline_Preparacion_01.json"
+  ],
+  "organization": "Operations/Research",
+  "requested_asset": "2608060 - Kael+Maeve - gustos salvajones.jpeg",
+  "instagram_user": "@universe_sent_me_0326",
+  "instagram_id": "17841462696378190",
+  "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663570801562/yPMEXHrwQMbXeOiW.jpeg",
+  "requested_caption": "No tenemos gustos raros, tenemos gustos salvajones. 😏 #UniverseSentMe #MaeveUSM #MemesUSM",
+  "preflight": {
+    "publication_log_existing_row": true,
+    "existing_ig_media_id": "17922210816414183",
+    "existing_state": "Eliminada_Manualmente",
+    "existing_excluded_from_learning": true,
+    "guardrail_result": "BLOCKED_IDEMPOTENCY"
+  },
+  "execution": {
+    "media_container_created": false,
+    "status_verified": false,
+    "media_publish_called": false,
+    "scheduled_publish_time_used": false,
+    "facebook_touched": false,
+    "drive_touched": false,
+    "scheduler_modified": false,
+    "retry_performed": false
+  },
+  "decision": "Stop without publication. The playbook requires no existing IG_Media_ID and prohibits rows marked ELIMINADA_MANUALMENTE from being republished."
+}

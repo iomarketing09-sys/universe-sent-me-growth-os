@@ -4,12 +4,13 @@ purpose: Registrar y ejecutar únicamente publicaciones de Instagram aprobadas m
 status: Active
 created: 2026-08-15
 updated: 2026-08-16
-version: 1.6
+version: 1.7
 author: Manus AI
 documents_related:
   - ../../GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md
   - ../Research/2026-08-15_Calendario_15_16_Agosto.md
   - ../Research/2026-08-15_Auditoria_API_Instagram.md
+  - ../Research/2026-08-16_Instagram_2608060_Prueba_Resultado.json
 organization: Operations/Production
 ---
 
@@ -19,7 +20,7 @@ La tarea programada está pausada desde el 2026-08-16. Este playbook no autoriza
 
 ## Procedimiento manual aprobado
 
-Cuando Fernando apruebe una fila específica, se deberá comprobar el asset exacto, caption, estado `IG_Estado`, ausencia de `ig_media_id` y contexto editorial. Solo después se ejecutará `media`, se verificará `status_code` y se ejecutará `media_publish`. La decisión manual deberá indicar como mínimo la fila o asset, la hora de publicación inmediata y si se autoriza Instagram únicamente. Nunca usar `scheduled_publish_time` ni republicar `260583 - Universe.png`.
+Cuando Fernando apruebe una fila específica, se deberá comprobar el asset exacto, caption, estado `IG_Estado`, ausencia de `ig_media_id` y contexto editorial. Solo después se ejecutará `media`, se verificará `status_code` y se ejecutará `media_publish`. La decisión manual deberá indicar como mínimo la fila o asset, la hora de publicación inmediata y si se autoriza Instagram únicamente. Nunca usar `scheduled_publish_time` ni republicar `260583 - Universe.png`. Si la fila ya tiene cualquier `IG_Media_ID` o está marcada `Eliminada_Manualmente`, la ejecución se detiene antes de llamar a Meta; no se crea un contenedor de prueba ni se reintenta.
 
 ## Historial del procedimiento anterior
 
@@ -122,3 +123,16 @@ Ejecuta esta tarea autónomamente, sin pedir confirmación al usuario:
 - No se debe reactivar esta tarea histórica. La distribución de Instagram queda en aprobación manual fila por fila hasta que Fernando solicite una campaña nueva con un playbook autocontenido y un horario válido.
 
 ---
+
+### 2026-08-16 — Preflight de prueba única para 2608060
+
+- Resultado: `BLOCKED_IDEMPOTENCY`.
+- Asset validado: `2608060 - Kael+Maeve - gustos salvajones.jpeg`.
+- Cuenta objetivo: `@universe_sent_me_0326` (`17841462696378190`).
+- La fila ya tenía `IG_Media_ID=17922210816414183` y `Estado_Publicacion=Eliminada_Manualmente` en los ledgers.
+- Acción: detenerse antes de `media`; no se creó contenedor, no se verificó estado y no se ejecutó `media_publish`.
+- `scheduled_publish_time`: no utilizado.
+- Facebook: sin cambios. Drive: sin cambios. Scheduler: sin cambios. Reintentos: ninguno.
+- Evidencia: `Operations/Research/2026-08-16_Instagram_2608060_Prueba_Resultado.json`.
+
+La aprobación recibida no sobreescribe la regla de idempotencia del playbook: `2608060` no puede republicarse después de que la publicación anterior fue eliminada manualmente.

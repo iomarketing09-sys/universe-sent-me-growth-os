@@ -4,7 +4,7 @@ purpose: "Evaluar de extremo a extremo la integración entre estrategia, documen
 status: Review
 created: 2026-08-15
 updated: 2026-08-16
-version: "1.7"
+version: "1.8"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/00_Índice.md"
@@ -32,9 +32,9 @@ organization: "Operations/Research"
 
 El Growth OS de Universe Sent Me tiene una arquitectura reconocible, una estrategia editorial basada en datos, publicación directa por Meta Graph API, reglas de canon, reuse, experimento de calendario y señales de comunidad. Sin embargo, todavía **no funciona como un sistema cerrado de extremo a extremo**: la programación ya está operativa, pero las métricas todavía no han regresado al `ExperimentLog`, la identidad de las 74 piezas no está consolidada en `Content_Inventory.csv`, y la ruta de Instagram sigue siendo una prueba manual separada.
 
-La conclusión CGO es: **Facebook está operativo y validado; Instagram tiene acceso técnico pero no una automatización confiable todavía; el Growth OS sigue parcialmente integrado**. El riesgo principal es ahora el control plane: ledgers incompletos para los dos intentos de Instagram eliminados, 74 posts programados aún no publicados, métricas 24/72h sin snapshots, inventario maestro separado del calendario y una tarea de Instagram temporal que debe verificarse y luego quedar pausada o convertirse en una campaña nueva autocontenida.
+La conclusión CGO es: **Facebook está operativo y validado; Instagram tiene acceso técnico pero no una automatización confiable todavía; el Growth OS sigue parcialmente integrado**. El riesgo principal es ahora el control plane: ledgers incompletos para los dos intentos de Instagram eliminados, 74 posts programados aún no publicados, métricas 24/72h sin snapshots, inventario maestro separado del calendario y un flujo de Instagram manual que permanece pausado después de un preflight bloqueado por idempotencia.
 
-> **Veredicto actualizado:** el sistema está en transición entre operación documentada y Growth OS cerrado. Facebook 17–30 ya está programado y Meta confirma 74/74; el manifiesto tiene 46 archivos, de los cuales Drive muestra los 46 archivos ya en `08 Agosto` y cero IDs del manifiesto restantes en las carpetas de origen. Instagram debe mantenerse separado hasta comprobar la ejecución puntual de las 19:00; no recomiendo reactivar el scheduler como automatización permanente antes de cerrar esa prueba. La prioridad estructural sigue siendo métricas, reconciliación e inventario.
+> **Veredicto actualizado:** el sistema está en transición entre operación documentada y Growth OS cerrado. Facebook 17–30 ya está programado y Meta confirma 74/74; el manifiesto tiene 46 archivos, de los cuales Drive muestra los 46 archivos ya en `08 Agosto` y cero IDs del manifiesto restantes en las carpetas de origen. Instagram debe mantenerse separado de Facebook; la prueba puntual de `2608060` fue bloqueada por idempotencia antes de llamar a Meta y no recomiendo reactivar el scheduler como automatización permanente. La prioridad estructural sigue siendo métricas, reconciliación e inventario.
 
 Esta auditoría se actualizó con consultas de solo lectura contra GitHub, Meta, Drive y los ledgers. La reconciliación documental de los dos intentos Instagram eliminados se registra sin republicar ni modificar Facebook. El movimiento de Drive se ejecutó después y quedó verificado como `MOVE_ONLY`, sin copias.
 
@@ -46,8 +46,8 @@ La auditoría original identificó varias brechas que ya fueron resueltas en el 
 |---|---|---:|
 | Facebook 17–30 | Meta devuelve 76 posts programados, de los cuales 74 pertenecen al calendario 17–30; todavía no están publicados y no tienen métricas reales. | P1 |
 | Facebook 15–16 | Identidad reconciliada; faltan snapshots 24/72h válidos y cierre de hipótesis. | P0 |
-| Instagram 15–16 | 2608030 permanece como publicación manual activa documentada. `260583`, `2608036` y `2608060` tienen historial eliminado y quedan excluidos del aprendizaje activo; la prueba de `2608060` a las 19:00 sigue pendiente al momento de esta auditoría. | P1 |
-| Scheduler Instagram | La tarea está temporalmente activa como una ejecución única a las 19:00 con `runAsNewTask=false`; debe verificarse el resultado y quedar pausada o expirada después, no recurrente. | P1 |
+| Instagram 15–16 | 2608030 permanece como publicación manual activa documentada. `260583`, `2608036` y `2608060` tienen historial eliminado y quedan excluidos del aprendizaje activo. La nueva prueba de `2608060` fue detenida en preflight porque la fila ya tenía `IG_Media_ID` y `Eliminada_Manualmente`. | P1 controlado |
+| Scheduler Instagram | La prueba no creó ni modificó ningún scheduler; el playbook permanece en aprobación manual y la ejecución histórica sigue pausada. | P1 controlado |
 | Canon | Silvio/Payaso está resuelto. `CNT-004` queda diferido y fuera de desarrollo; conserva revisión canónica pendiente si algún día se retoma. | P2 diferido |
 | Aprendizaje | La revisión agrupada de métricas está documentada como activa cada 48h a las 22:15; faltan resultados válidos y cierre de `HB-003`, `HB-004` y `HB-005`. | P0 |
 | Calendario 17–30 | Los 74 slots están completos y programados; falta que se publiquen y extraer métricas. El movimiento de los 46 archivos del manifiesto ya está verificado en `08 Agosto`. | P1 |
@@ -55,7 +55,7 @@ La auditoría original identificó varias brechas que ya fueron resueltas en el 
 | Comunidad | Ledger con 15 comentarios reales y 4 respuestas publicadas; el primer delta P2 añadió 6 filas, sin comentarios cualitativos nuevos ni respuestas pendientes. Falta continuar con la siguiente ventana incremental. | P2 |
 | Automatizaciones heredadas | Make permanece retirado; la tarea histórica de Instagram no debe convertirse en ruta permanente sin un playbook autocontenido y una prueba de no-op. | P1 |
 
-El estado live consultado a las 18:02 CDT muestra una ejecución única activa para las 19:00 de `America/Matamoros`, con cron `0 0 19 16 8 *`, `runAsNewTask=false`, sin repetición y expiración `2026-08-17T01:30:00Z`. El detalle limita la operación a `2608060`, exige `media → FINISHED → media_publish`, prohíbe `scheduled_publish_time`, Facebook, Drive y `260583`. Esta ejecución es una prueba, no una reactivación permanente. En paralelo, la tarea independiente de métricas quedó documentada como activa según `ed663ee`, con identificador `egAl6a7WZExFrDPd8tIY1B`, cron `0 15 22 */2 * *`, zona `America/Matamoros` y un solo despertar por ejecución.
+La prueba aprobada para `2608060` fue detenida en preflight antes de llamar a Meta porque la fila ya tenía `IG_Media_ID=17922210816414183` y estaba marcada `Eliminada_Manualmente`. La operación no avanzó más allá del preflight. No se creó contenedor, no se verificó estado ni se ejecutó `media_publish`; tampoco se tocó Facebook, Drive ni ningún scheduler. En paralelo, la tarea independiente de métricas quedó documentada como activa según `ed663ee`, con identificador `egAl6a7WZExFrDPd8tIY1B`, cron `0 15 22 */2 * *`, zona `America/Matamoros` y un solo despertar por ejecución.
 
 ## 2. Alcance y método
 
@@ -74,7 +74,7 @@ La calificación es una herramienta de diagnóstico CGO, no una métrica oficial
 | Canon y governance | Ámbar | 7/10 | Silvio/Payaso está resuelto y el bridge está sincronizado; `CNT-004` conserva contradicciones narrativas sustantivas, pero su desarrollo fue diferido y ya no bloquea el trabajo activo. |
 | Inventario, Drive y reuse | Ámbar | 6/10 | Drive ya muestra 46 de 46 archivos del manifiesto en `08 Agosto`, sin copias ni IDs restantes en origen; el inventario de 39 filas todavía no cubre las referencias de asset del calendario 17–30. |
 | Publicación Facebook | Verde | 9/10 | Meta devuelve 74/74 posts del calendario 17–30 programados y verificados, además de 2 posts programados previos; la ruta Page Access Token + Page Feed está validada. |
-| Publicación Instagram | Ámbar | 6/10 | La API, la cuenta y los permisos responden; la programación nativa no está disponible. La prueba única de las 19:00 debe confirmar si el contexto actual ejecuta correctamente el flujo antes de decidir si se conserva cualquier tarea. |
+| Publicación Instagram | Ámbar | 6/10 | La API, la cuenta y los permisos responden; la programación nativa no está disponible. La prueba de `2608060` fue detenida antes de Meta porque ya tenía `IG_Media_ID` y `Eliminada_Manualmente`; no se reintentó. |
 | Métricas y ciclo de aprendizaje | Rojo | 5/10 | El `ExperimentLog` y la tarea de revisión existen, pero las columnas 24/72h del lote activo siguen vacías y `HB-003`, `HB-004` y `HB-005` siguen abiertos; el P2 de baseline depende de este cierre P0. |
 | Comunidad y comentarios | Ámbar | 7/10 | Ya existe conversación orgánica, ledger operativo y flujo de aprobación humana; el primer delta P2 no produjo comentarios cualitativos nuevos y la siguiente ventana aún está pendiente. |
 | Documentación y fuente única de verdad | Ámbar | 6/10 | GitHub es la fuente oficial, hay enlaces internos válidos, los documentos de control ya no presentan Make como ruta activa y permanece deuda de metadatos en documentos históricos. |
@@ -99,7 +99,7 @@ Con el Page Access Token derivado, Meta devuelve **76 publicaciones programadas*
 
 La cuenta `@universe_sent_me_0326` respondió HTTP 200, devolvió `media_count=460` y permitió leer media reciente con permalinks y captions. El token vigente incluye `instagram_basic`, `instagram_content_publish` e `instagram_manage_comments`. La página está correctamente vinculada a la cuenta profesional.
 
-La limitación está identificada: el parámetro `scheduled_publish_time` para Instagram devolvió un error de whitelist. La ejecución futura debe ser inmediata en el horario correcto mediante un scheduler, no mediante programación nativa. La prueba 260583 fue publicada y después eliminada manualmente por Fernando; el calendario y el runner la excluyen como `ELIMINADA_MANUALMENTE` [4].
+La limitación está identificada: el parámetro `scheduled_publish_time` para Instagram devolvió un error de whitelist. La ejecución futura, si se autoriza para un asset nuevo elegible, debe ser inmediata en el horario correcto mediante una tarea puntual, no mediante programación nativa. `260583`, `2608036` y `2608060` fueron eliminados manualmente y permanecen excluidos; la prueba de `2608060` quedó bloqueada en preflight por su `IG_Media_ID` existente [4].
 
 ### 4.4 La comunidad ya es una fuente de aprendizaje
 
@@ -121,9 +121,9 @@ Esta sigue siendo la brecha más importante del Growth OS. La memoria operativa 
 
 El runner está bien simplificado: usa URLs públicas preparadas una sola vez, filtra los cinco slots selectivos, evita republicar 260583, no toca Facebook y aplica una ventana de ocho minutos. El código es idempotente y evita descargas o subidas de Drive en cada despertar.
 
-El estado live de la tarea fue cambiado temporalmente a una única ejecución a las 19:00 con `runAsNewTask=false`, sin repetición y con expiración posterior. El detalle limita el flujo a `2608060`, exige verificación `FINISHED`, prohíbe `scheduled_publish_time` y mantiene Facebook, Drive y `260583` fuera del alcance. El resultado de esta prueba definirá si la ruta merece una nueva campaña; no debe convertirse automáticamente en una tarea recurrente.
+La tarea histórica de Instagram permanece pausada y este intento no la modificó. El preflight del asset `2608060` detectó un `IG_Media_ID` existente y el estado `Eliminada_Manualmente`; por eso no se creó contenedor, no se verificó `FINISHED` y no se ejecutó `media_publish`. El flujo no debe convertirse automáticamente en una tarea recurrente.
 
-Hasta las 18:02 CDT no había evidencia de nuevas publicaciones durante esta prueba. El criterio de cierre será confirmar el resultado de las 19:00 y dejar la tarea como ejecución única expirada o pausada, sin convertirla en scheduler recurrente. El flujo permanente de Instagram seguirá requiriendo un playbook autocontenido y aprobación manual.
+El criterio de cierre de esta prueba quedó satisfecho por el preflight: no hubo publicación, no hubo reintento y la tarea histórica no se modificó. El flujo permanente de Instagram seguirá requiriendo un playbook autocontenido, una fila elegible sin `IG_Media_ID` previo y aprobación manual.
 
 ### 5.3 El canon ya no tiene un conflicto global Silvio/Payaso
 
@@ -149,7 +149,7 @@ El Growth OS declara que el inventario estructurado es la fuente central y que l
 
 La evidencia cuantitativa muestra la fragmentación: `Content_Inventory.csv` contiene 39 filas con estados históricos y canónicos normalizados; el inventario de memes nuevos mantiene 38 filas; el ranking de reuse contiene 123 assets. El calendario 17–30 tiene 74 filas y ya no contiene `PENDIENTE_GENERAR`: registra 35 nuevas, 36 `Reuse_Top` y 3 `Reuse_Reserve`, pero las 71 referencias `260####` distintas del calendario no aparecen por referencia en el texto del inventario maestro. Esto confirma una deuda de identidad, no una autorización para inventar CNT.
 
-El calendario 15–16 también mezcla aprobación del plan con estado de publicación: todas sus filas dicen `PROGRAMADA` por el lado de Facebook, mientras Instagram usa estados separados. `2608030` permanece publicado manualmente; `260583`, `2608036` y `2608060` tienen historial eliminado. El estado general todavía requiere consultar el ledger por plataforma para distinguir Facebook completado, Instagram pendiente, asset archivado y prueba eliminada.
+El calendario 15–16 también mezcla aprobación del plan con estado de publicación: todas sus filas dicen `PROGRAMADA` por el lado de Facebook, mientras Instagram usa estados separados. `2608030` permanece publicado manualmente; `260583`, `2608036` y `2608060` tienen historial eliminado. El estado general debe consultar el ledger por plataforma para distinguir Facebook completado, Instagram excluido, asset archivado y prueba eliminada.
 
 **Criterio de cierre:** una fila maestra por pieza, una tabla de publicaciones por plataforma y una tabla de experimentos; el calendario debe ser una vista, no otra fuente paralela de estado.
 
@@ -169,17 +169,17 @@ La deuda no debe resolverse reescribiendo todo de una vez. Conviene normalizar p
 | Producción | 35 nuevos + 39 reuse en calendario | Operativa para el lote actual | El calendario está completo; la brecha es reconciliar identidad de los assets y esperar resultados, no generar 46 piezas nuevas. |
 | Aprobación | Fernando/Claude y regla de canon | Definida | No todos los calendarios muestran estado individual por pieza. |
 | Programación Facebook | Page Access Token + Page Feed | Integrada | 74/74 posts del calendario 17–30 programados y verificados; aún no publicados. |
-| Publicación Instagram | Media → verify → media_publish | Parcial | API viva; no native scheduling; prueba puntual de las 19:00 pendiente al momento de la auditoría y scheduler histórico no apto como ruta permanente. |
+| Publicación Instagram | Media → verify → media_publish | Parcial | API viva; no native scheduling; la prueba puntual de `2608060` fue detenida en preflight por idempotencia y el scheduler histórico no es una ruta permanente. |
 | Archivado Drive | Movimiento mensual sin copias | Integrada para 15–16 | Falta una vista maestra que conecte archivo, publicación y experimento. |
-| Métricas | Baseline Windsor/archivos históricos + Graph API | Desincronizada | Baseline al 5 de agosto; `ExperimentLog` ya creado, pero métricas 24/72 horas y veredictos pendientes. |
-| Comunidad | Lectura de comentarios + propuesta de respuesta | Parcial | Falta tabla de comentarios, cobertura de respuesta y señal editorial enlazada. |
+| Métricas | Baseline Windsor/archivos históricos + Graph API | Desincronizada | Baseline histórica conservada; `ExperimentLog` ya creado, pero las 9 filas activas de Facebook tienen 0/9 snapshots 24h y 0/9 snapshots 72h. |
+| Comunidad | Ledger incremental + aprobación humana | Parcial | El ledger ya contiene 15 comentarios y el primer delta fue revisado; falta continuar con nuevas ventanas para medir cobertura cualitativa. |
 | Aprendizaje | HypothesisBank HB-001–HB-005 | Incompleto | Hay hipótesis y ExperimentLog, pero no veredictos recientes ni cierre de métricas. |
 
 ## 7. Riesgos priorizados
 
 | Prioridad | Riesgo | Probabilidad | Impacto | Criterio de cierre |
 |---|---|---:|---:|---|
-| P1 | El scheduler de Instagram está limpio y pausado, pero conserva `runMode=ask_user` y requiere una prueba de no-op antes de reactivarse. | Media | Medio | Verificar modo compatible y ejecutar `nothing_due` sin publicar. |
+| P1 controlado | El scheduler de Instagram está limpio y pausado; la prueba de `2608060` fue bloqueada antes de Meta por idempotencia. | Baja | Bajo | No reactivar la tarea histórica; cualquier nueva prueba debe usar una fila nueva elegible y aprobación explícita. |
 | P2 diferido | CNT-004 conserva contradicciones narrativas sustantivas, pero Fernando decidió no desarrollarlo por ahora. | Baja | Medio | Mantenerlo fuera de producción y de programación; si se retoma, revisar texto fuente y solicitar aprobación canónica. |
 | P0 | El ciclo de aprendizaje sigue abierto, pero la tarea de revisión ya está activa; todavía no hay métricas 24/72 horas ni veredictos cerrados para el lote 15–16. | Alta | Alto | Esperar la ejecución de 22:15, validar la evidencia, cerrar `HB-003`/`HB-004`/`HB-005` y actualizar la baseline. |
 | P1 | Calendarios e inventarios usan estados, IDs y estructuras no uniformes. | Alta | Alto | Esquema maestro con ID de pieza, asset, plataforma, estado de canon, estado de publicación e IDs Meta. |
