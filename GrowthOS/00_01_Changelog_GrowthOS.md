@@ -17,6 +17,7 @@
 - Se documentó que el lote histórico 15–16 no puede reconstruirse con exactitud a partir de lifetime. La solución propuesta para futuras publicaciones es capturar un baseline al publicar y calcular deltas de contadores a +24h y +72h, con un solo despertar diario y Batch Requests para reducir conexiones.
 - Se creó `Operations/Research/2026-08-17_Investigacion_Ventanas_Temporales_Meta.md`, se actualizó el playbook del extractor a v1.2 y se mantuvieron abiertas `HB-003`, `HB-004` y `HB-005`.
 - Se añadió una propuesta de dos carriles: `Ventana_Estricta_24h/72h` para métricas contractuales y `Corte_Observado` para rescatar el lote 15–16 con reacciones, comentarios, shares y edad real del post, sin escribir esos datos en los campos estrictos.
+- Se ejecutó una revisión de lectura agrupada sobre las 9 publicaciones del lote: 370 reacciones, 23 comentarios y 109 shares, para 502 interacciones observadas. Se recuperaron 23 comentarios y se generó `Operations/Research/2026-08-17_Reporte_Corte_Observado_15_16.md`; no se modificaron `Publication_Log.csv`, `ExperimentLog.csv`, `Interacciones_24h` ni `Interacciones_72h`.
 
 ---
 

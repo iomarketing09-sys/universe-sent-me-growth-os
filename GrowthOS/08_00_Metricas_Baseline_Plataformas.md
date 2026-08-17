@@ -161,7 +161,13 @@ La extracción oficial se ejecutó en un solo lote a las `2026-08-17T03:37:53Z`,
 
 **Resultado P0:** `4/9` publicaciones tenían una ventana 24h elegible; `0/4` devolvieron un snapshot exacto; `0` campos 24h/72h fueron escritos. Instagram no fue tocado, no se publicó contenido y la baseline común no se actualiza numéricamente todavía. La evidencia completa está en `Operations/Research/2026-08-17_Metricas_24_72_Extraccion_02.json`. El diagnóstico y la solución propuesta para futuras capturas están en `Operations/Research/2026-08-17_Investigacion_Ventanas_Temporales_Meta.md`.
 
-## 10. Próxima Actualización
+## 10. Corte observado del lote 15–16 — 17 de agosto de 2026
+
+Se ejecutó una revisión agrupada de lectura a las `2026-08-17T04:25:10.797397Z` sobre las nueve publicaciones activas de Facebook. El corte recuperó 370 reacciones, 23 comentarios y 109 shares, para 502 interacciones observadas. La evidencia detallada, la edad de cada post y los 23 comentarios recuperados están en `Operations/Research/2026-08-17_Corte_Observado_15_16.json` y `Operations/Research/2026-08-17_Reporte_Corte_Observado_15_16.md`.
+
+Este corte es operativo y descriptivo: no reemplaza snapshots exactos de 24/72 horas, no actualiza `Interacciones_24h` ni `Interacciones_72h` y no cierra hipótesis. Los comentarios se conservan como señal cualitativa separada de la baseline numérica.
+
+## 11. Próxima Actualización
 
 Este documento debe actualizarse:
 - Cada domingo (ciclo semanal de análisis)
