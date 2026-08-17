@@ -4,7 +4,7 @@ purpose: "Determinar qué datos de mayo, junio y julio ya están documentados, q
 status: "Review"
 created: 2026-08-17
 updated: 2026-08-17
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/08_00_Metricas_Baseline_Plataformas.md"
@@ -75,6 +75,10 @@ El primer lote recomendado es un resumen estructurado de mayo, junio y julio, no
 
 La integración de históricos mejorará el Growth OS en cuatro puntos: permitirá medir la caída de agosto contra una base de tres meses; distinguirá patrones persistentes de efectos particulares de agosto; hará más confiable la selección de reuse; y evitará que el aprendizaje se reinicie cada mes.
 
+## Resultado del primer lote
+
+El primer lote de agregados mensuales fue integrado sin modificar `Publication_Log.csv`, `ExperimentLog.csv` ni `Content_Inventory.csv`. El valor de mayo se conserva como snapshot de top posts y no como total mensual, porque la fuente disponible no cubre todo el mes con la misma metodología. Junio y julio sí se incorporan como agregados mensuales de interacciones; Instagram queda como tendencia interna del canal y no se compara en magnitud con Facebook.
+
 ## Decisión CGO propuesta
 
 La recomendación es **aprobar la integración histórica en dos capas**:
@@ -84,4 +88,4 @@ La recomendación es **aprobar la integración histórica en dos capas**:
 3. Usar esos históricos para hipótesis y selección editorial, no para cerrar métricas P0 actuales.
 4. Mantener Facebook e Instagram separados y conservar `Historico` como estado de ventana.
 
-El siguiente trabajo concreto sería construir `Historical_Performance_Snapshot.csv` a partir de los datasets ya presentes, comenzando con los agregados mensuales y los top posts verificables. Ese archivo deberá enlazarse desde la baseline y la fuente maestra, y cada fila deberá conservar su método de medición.
+El primer lote ya fue construido en `Operations/Research/Historical_Performance_Snapshot.csv` con cinco filas: mayo Facebook como snapshot de los 12 top posts disponibles, junio y julio Facebook como meses completos, y junio y julio Instagram como meses completos. El archivo quedó enlazado desde la baseline, la fuente maestra y el índice. Cada fila conserva su método de medición, ventana, fuente y comparabilidad. El siguiente lote podrá incorporar publicaciones individuales verificables, comenzando por el ranking de reuse de mayo.

@@ -4,9 +4,9 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-03
 **Última actualización:** 2026-08-17
-**Versión:** 1.4
+**Versión:** 1.5
 **Autor:** Claude (Guardián de Canon, extracción directa vía Windsor.ai MCP)
-**Documentos relacionados:** `07_00_Registro_Maestro_Reels.md`, `06_00_Reglas_Aprendizaje_Tendencias.md`, `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Research/2026-08-15_Publication_Log.csv`, `../Operations/Research/2026-08-15_ExperimentLog.csv`, `../Operations/Research/2026-08-16_P2_Comunidad_Delta_01.json`, `../Operations/Research/2026-08-16_P2_Baseline_Preparacion_01.json`, `../Operations/Research/2026-08-17_Metricas_24_72_Extraccion_02.json`, `../Operations/Research/2026-08-17_Investigacion_Ventanas_Temporales_Meta.md`
+**Documentos relacionados:** `07_00_Registro_Maestro_Reels.md`, `06_00_Reglas_Aprendizaje_Tendencias.md`, `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Research/Historical_Performance_Snapshot.csv`, `../Operations/Research/2026-08-15_Publication_Log.csv`, `../Operations/Research/2026-08-15_ExperimentLog.csv`, `../Operations/Research/2026-08-16_P2_Comunidad_Delta_01.json`, `../Operations/Research/2026-08-16_P2_Baseline_Preparacion_01.json`, `../Operations/Research/2026-08-17_Metricas_24_72_Extraccion_02.json`, `../Operations/Research/2026-08-17_Investigacion_Ventanas_Temporales_Meta.md`
 
 > **Metodología:** Datos extraídos directamente desde Windsor.ai el 2026-08-03. Período cubierto: últimos 14 días con datos del día actual incluidos. Cuentas: Facebook Page @UniverseSentMe (ID `1036844829507460`) e Instagram @universe_sent_me_0326 (ID `17841462696378190`). Los datos de IG publicados hoy mismo pueden mostrar cero por latencia de la API.
 
@@ -167,7 +167,21 @@ Se ejecutó una revisión agrupada de lectura a las `2026-08-17T04:25:10.797397Z
 
 Este corte es operativo y descriptivo: no reemplaza snapshots exactos de 24/72 horas, no actualiza `Interacciones_24h` ni `Interacciones_72h` y no cierra hipótesis. Los comentarios se conservan como señal cualitativa separada de la baseline numérica.
 
-## 11. Próxima Actualización
+## 11. Snapshot histórico mensual integrado — 17 de agosto de 2026
+
+Se integró `Operations/Research/Historical_Performance_Snapshot.csv` como capa histórica separada. Contiene agregados de junio y julio por plataforma, además de un snapshot de los 12 top posts de Facebook disponibles para mayo. Mayo no se presenta como total mensual porque la fuente es una captura de top posts de Meta Business Suite, no un extracto mensual completo.
+
+| Periodo | Plataforma | Cobertura | Métrica principal | Valor | Estado |
+|---|---|---|---|---:|---|
+| Mayo 2026 | Facebook | Top 12 posts | Alcance acumulado del snapshot | 933,016 | Histórico; tendencia relativa |
+| Junio 2026 | Facebook | Mes completo | Interacciones | 18,451 | Histórico |
+| Julio 2026 | Facebook | Mes completo | Interacciones | 68,155 | Histórico |
+| Junio 2026 | Instagram | Mes completo | Interacciones | 103 | Histórico; tendencia interna IG |
+| Julio 2026 | Instagram | Mes completo | Interacciones | 101 | Histórico; tendencia interna IG |
+
+Estos valores no se escriben en `Interacciones_24h`, `Interacciones_72h` ni en los ledgers operativos. Tampoco se suman alcance de mayo con interacciones de junio-julio. La tabla sirve para contexto de tendencia, selección de reuse y formulación de hipótesis.
+
+## 12. Próxima Actualización
 
 Este documento debe actualizarse:
 - Cada domingo (ciclo semanal de análisis)

@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-17
-version: "2.0"
+version: "2.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -21,6 +21,7 @@ related_documents:
   - "GrowthOS/00_Índice.md"
   - "Operations/Research/2026-08-17_Instagram_Publicacion_260633.json"
   - "Operations/Research/2026-08-17_Instagram_IDs_Duplicaciones_Confirmadas.json"
+  - "Operations/Research/Historical_Performance_Snapshot.csv"
 organization: "GrowthOS"
 ---
 
@@ -28,7 +29,7 @@ organization: "GrowthOS"
 
 ## 1. Decisión de arquitectura
 
-La fuente maestra no debe ser un calendario gigante ni una tabla que repita una pieza cada vez que se publica en otra plataforma. La arquitectura recomendada para Universe Sent Me es **una fuente maestra de contenido más tres ledgers append-only**, cada uno con una función distinta: hechos de publicación, aprendizaje experimental y señales cualitativas de comunidad.
+La fuente maestra no debe ser un calendario gigante ni una tabla que repita una pieza cada vez que se publica en otra plataforma. Los agregados mensuales históricos viven en `Operations/Research/Historical_Performance_Snapshot.csv` como capa de referencia y no sustituyen los ledgers append-only. La arquitectura recomendada para Universe Sent Me es **una fuente maestra de contenido más tres ledgers append-only**, cada uno con una función distinta: hechos de publicación, aprendizaje experimental y señales cualitativas de comunidad.
 
 | Capa | Archivo canónico | Qué representa | Quién lo modifica |
 |---|---|---|---|
