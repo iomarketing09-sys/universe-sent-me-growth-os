@@ -76,11 +76,25 @@ Los 17 registros requieren una segunda fuente antes de crear CNT o marcar una re
 
 Los valores `humor3.8`, `humor3.9`, etc. parecen nombres internos o referencias de clasificación, no Asset_Ref canónicos. No se convierten a CNT sin una relación adicional con filename, Drive ID o asset visual.
 
+## Resultado de la localización automática
+
+Meta permitió consultar los 172 objetos multimedia con los campos `id`, `created_time`, `link`, `name`, `album` y `from`. La consulta confirmó 172 objetos válidos: 168 fueron creados en junio y 4 en julio, aunque los cuatro últimos pertenecen al archivo aportado dentro del lote de junio y deben conservarse para revisión de periodo.
+
+La comparación visual entre las imágenes de los photo objects y `full_picture` de las 230 publicaciones de la cola produjo 160 coincidencias visuales de alta confianza, 11 coincidencias cercanas que requieren revisión y 1 caso sin coincidencia concluyente. No hubo duplicación del mejor Meta post ID entre los 172 registros.
+
+| Estado del mapeo | Registros | Acción |
+|---|---:|---|
+| `Visual_Confirmed` | 160 | Listos para reconciliación editorial; conservar photo ID y Meta post ID por separado |
+| `Visual_Review` | 11 | Revisar manualmente antes de crear o actualizar CNT |
+| `Manual_Review_Required` | 1 | No asignar relación todavía: `Universe sent me - 015` |
+
+El mapeo completo quedó en `2026-08-17_Mapeo_Photo_ID_Post_Junio.csv`. El campo `visual_hamming_distance` registra la distancia visual usada para clasificar cada coincidencia. Los seis CNT ya existentes no se duplican.
+
 ## Próximo procedimiento
 
-El Excel permite acelerar la reconciliación de junio porque ofrece una relación directa entre 172 assets y sus objetos multimedia de Facebook. El siguiente proceso debe conservar ambos identificadores: buscar cada `facebook_photo_id` en la URL o evidencia de Facebook, recuperar el `meta_publication_id` correspondiente y enlazarlo con el Asset_Ref. Los seis casos ya reconciliados se mantendrán sin duplicar CNT.
+El Excel permite acelerar la reconciliación de junio porque ofrece una relación directa entre 172 assets y sus objetos multimedia de Facebook. El siguiente proceso debe conservar ambos identificadores: `facebook_photo_id` para el objeto multimedia y `meta_publication_id` para la publicación editorial. Los seis casos ya reconciliados se mantendrán sin duplicar CNT.
 
-La cola histórica debe actualizarse después de esa conversión, no antes. Cualquier registro sin Asset_Ref seguirá como pendiente de identificación editorial.
+La cola histórica debe actualizarse después de revisar los 11 casos cercanos y el outlier, no antes. Cualquier registro sin Asset_Ref seguirá como pendiente de identificación editorial.
 
 ## Referencias
 
