@@ -19,13 +19,13 @@ organization: "Operations/Research"
 
 ## Dictamen
 
-El cruce exacto por referencia de asset `260###` contra el `Publication_Log.csv` confirma que **las seis filas de la primera ola de Instagram ya tienen una publicación equivalente programada en Facebook**. Por lo tanto, el resultado del cruce actual es **0 filas exclusivas de Instagram** y **6 duplicaciones manuales potenciales en Meta**.
+El cruce exacto por referencia de asset `260###` contra el `Publication_Log.csv` confirma que **las seis filas de la primera ola de Instagram ya tienen una publicación equivalente programada en Facebook**. Por lo tanto, el resultado actualizado es **0 filas exclusivas de Instagram**, **5 duplicaciones manuales pendientes** y **1 fila excluida por eliminación manual** (`260633`).
 
-La fila `260633` ya fue publicada manualmente en Instagram y no debe repetirse. Las otras cinco pueden duplicarse manualmente en Meta cuando Fernando confirme que desea ejecutarlas. No se recomienda crear un scheduler para ninguna de estas seis filas mientras la duplicación manual siga siendo viable.
+La fila `260633` fue publicada manualmente y posteriormente eliminada por Fernando; no debe repetirse. Las otras cinco pueden duplicarse manualmente en Meta cuando Fernando confirme que desea ejecutarlas. No se recomienda crear un scheduler para ninguna de estas cinco filas mientras la duplicación manual siga siendo viable.
 
 | Orden | Fecha | Hora | Asset | Publicación Facebook | Page Post ID | Estado Facebook | Estado Instagram |
 |---:|---|---:|---|---|---|---|---|
-| 1 | 17 ago | 10:00 | `260633 - Universe.png` | `PUB-FB-17_30-01` | `1036844829507460_122151373701072582` | Programada | Ya publicada fuera de ventana; no repetir |
+| 1 | 17 ago | 10:00 | `260633 - Universe.png` | `PUB-FB-17_30-01` | `1036844829507460_122151373701072582` | Programada | Eliminada manualmente; no repetir |
 | 2 | 19 ago | 13:30 | `260560 - Fantasma.png` | `PUB-FB-17_30-15` | `1036844829507460_122151374655072582` | Programada | Pendiente; duplicación manual recomendada |
 | 3 | 21 ago | 19:00 | `260614 - Universe.png` | `PUB-FB-17_30-28` | `1036844829507460_122151375843072582` | Programada | Pendiente; duplicación manual recomendada |
 | 4 | 23 ago | 22:00 | `260625.png` | `PUB-FB-17_30-37` | `1036844829507460_122151376629072582` | Programada | Pendiente; duplicación manual recomendada |

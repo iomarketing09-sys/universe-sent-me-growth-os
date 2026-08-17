@@ -72,9 +72,9 @@ La primera ola mantiene Facebook como superficie primaria, excluye `260583`, no 
 
 ## Resultado de la primera ejecución de la ola 17–30 — 2026-08-17
 
-La fila `260633 - Universe.png` fue publicada manualmente en Instagram con aprobación explícita de Fernando. Meta confirmó el contenedor `17976689082089880` en estado `FINISHED`, publicó el media `17943879225288953` y devolvió el permalink [https://www.instagram.com/p/DcIQHJJHEp0/](https://www.instagram.com/p/DcIQHJJHEp0/). La publicación ocurrió a las 23:08:35 de America/Matamoros, fuera de la ventana planeada de las 10:00; por tanto, se registra como decisión editorial fuera de horario y no como cumplimiento del slot.
+La fila `260633 - Universe.png` fue publicada manualmente en Instagram con aprobación explícita de Fernando y posteriormente eliminada manualmente. Meta había confirmado el contenedor `17976689082089880`, el media `17943879225288953` y el permalink [https://www.instagram.com/p/DcIQHJJHEp0/](https://www.instagram.com/p/DcIQHJJHEp0/). La publicación ocurrió a las 23:08:35 de America/Matamoros, fuera de la ventana planeada de las 10:00; queda como historial eliminado y no debe republicarse.
 
-La publicación no usó `scheduled_publish_time`, no modificó Facebook ni Drive y no creó un CNT porque la relación `260633 ↔ CNT-####` todavía no está confirmada. El asset fue localizado en la carpeta `05 Mayo`; la discrepancia con la expectativa operativa de `08 Agosto` se conserva como pendiente administrativa. Las otras cinco filas siguen requiriendo aprobación y ejecución individual.
+La publicación no usó `scheduled_publish_time`, no modificó Facebook ni Drive y no creó un CNT porque la relación `260633 ↔ CNT-####` todavía no está confirmada. El asset fue localizado en la carpeta `05 Mayo`; la discrepancia con la expectativa operativa de `08 Agosto` se conserva como pendiente administrativa. `260633` queda excluida de toda republicación; las otras cinco filas siguen requiriendo duplicación manual individual.
 
 ## Recomendación sobre un nuevo scheduler — 2026-08-17
 

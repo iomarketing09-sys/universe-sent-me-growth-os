@@ -4,7 +4,7 @@ purpose: "Definir una primera ola selectiva de publicaciones de Instagram a part
 status: "Review"
 created: 2026-08-17
 updated: 2026-08-17
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-14_Recomendacion_Instagram_CGO.md"
@@ -29,7 +29,7 @@ La primera ola contiene seis assets ya existentes, separados para observar disti
 
 | Orden | Fecha objetivo | Hora objetivo | Asset | Tipo | Caption exacto | Motivo CGO | Estado operativo |
 |---:|---|---|---|---|---|---|---|
-| 1 | 2026-08-17 | 10:00 | `260633 - Universe.png` | `Reuse_Top` | `😮‍💨 #UniverseSentMe` | Primer test de imagen estática, Universe y horario de mañana. | `Publicado_fuera_de_ventana` — Meta media `17943879225288953`; [permalink](https://www.instagram.com/p/DcIQHJJHEp0/) |
+| 1 | 2026-08-17 | 10:00 | `260633 - Universe.png` | `Reuse_Top` | `😮‍💨 #UniverseSentMe` | Primer test de imagen estática, Universe y horario de mañana. | `Eliminada_Manualmente` — media histórica `17943879225288953`; **no republicar** |
 | 2 | 2026-08-19 | 13:30 | `260560 - Fantasma.png` | `Reuse_Top` | `Esperando octubre… 👻 #UniverseSentMe` | Candidato prioritario; Fantasma tiene señal previa y el mensaje es legible sin contexto. | `Pendiente_Aprobación_Fernando` |
 | 3 | 2026-08-21 | 19:00 | `260614 - Universe.png` | `Reuse_Top` | `Analizando mi propio caos. 🧐 #UniverseSentMe` | Candidato secundario para probar una franja nocturna con copy breve. | `Pendiente_Aprobación_Fernando` |
 | 4 | 2026-08-23 | 22:00 | `260625.png` | `Reuse_Top` | `El cambio da miedo… quedarse igual también. 😮‍💨 #UniverseSentMe` | Candidato prioritario; composición vertical y humor relatable. | `Pendiente_Aprobación_Fernando` |
@@ -52,7 +52,7 @@ Las fechas y horas son **ventanas de decisión**, no órdenes automáticas. Ante
 
 La operación recomendada usa una revisión local de la fila y una sola ejecución de publicación por asset aprobado. La validación debe recuperar solo la fila objetivo y revisar la URL, caption e idempotencia. El publicador debe derivar el Page Access Token, crear un único contenedor, esperar dentro del mismo proceso a `FINISHED`, ejecutar `media_publish` y guardar el resultado completo. No se deben abrir tareas recurrentes, hacer polling cada cinco minutos, consultar el historial completo de Instagram ni descargar nuevamente archivos de Drive.
 
-Cada publicación debe registrar `IG_Container_ID`, `IG_Media_ID`, permalink, hora real, estado, caption exacto y cualquier error. La aprobación es por fila y no se extiende automáticamente a la siguiente. La fila `260633` fue ejecutada el 2026-08-16 a las 23:08:35 America/Matamoros como publicación inmediata fuera de su ventana de 10:00; las cinco filas restantes siguen pendientes.
+Cada publicación debe registrar `IG_Container_ID`, `IG_Media_ID`, permalink, hora real, estado, caption exacto y cualquier error. La aprobación es por fila y no se extiende automáticamente a la siguiente. La fila `260633` fue ejecutada el 2026-08-16 a las 23:08:35 America/Matamoros como publicación inmediata fuera de su ventana de 10:00 y posteriormente eliminada manualmente por Fernando; queda excluida de cualquier republicación. Las cinco filas restantes siguen pendientes de duplicación manual.
 
 ## Medición
 

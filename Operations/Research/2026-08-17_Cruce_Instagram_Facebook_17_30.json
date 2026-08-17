@@ -1,6 +1,6 @@
 {
   "proposal_rows": 6,
-  "manual_duplicate_count": 6,
+  "manual_duplicate_count": 5,
   "scheduler_candidate_count": 0,
   "rows": [
     {
@@ -11,7 +11,7 @@
       "kind": "Reuse_Top",
       "caption": "😮‍💨 #UniverseSentMe",
       "reason": "Primer test de imagen estática, Universe y horario de mañana.",
-      "ig_status": "Publicado_fuera_de_ventana` — Meta media `17943879225288953`; [permalink](https://www.instagram.com/p/DcIQHJJHEp0/)",
+      "ig_status": "Eliminada_Manualmente — media histórica 17943879225288953; no republicar",
       "asset_code": "260633",
       "facebook_matches": [
         {
@@ -24,7 +24,7 @@
           "Fuente": "2026-08-16_Calendario_Operativo_17_30_Agosto.csv; Meta Graph API v26; facebook_schedule_api_results.jsonl"
         }
       ],
-      "classification": "Duplicación manual Meta recomendada"
+      "classification": "Excluida_Eliminada_Manualmente"
     },
     {
       "order": 2,
@@ -146,5 +146,12 @@
     "Operations/Research/2026-08-15_Publication_Log.csv",
     "Operations/Research/2026-08-17_Calendario_Instagram_17_30_Propuesto.md"
   ],
-  "matching_rule": "Exact 260### asset code found in Facebook calendar; no CNT relationship inferred."
+  "matching_rule": "Exact 260### asset code found in Facebook calendar; no CNT relationship inferred.",
+  "excluded_manual_count": 1,
+  "excluded_assets": [
+    {
+      "asset_code": "260633",
+      "reason": "Eliminada manualmente por Fernando; no republicar."
+    }
+  ]
 }

@@ -1,0 +1,137 @@
+{
+  "title": "Registros manuales Instagram — cinco duplicaciones Facebook 17–30",
+  "purpose": "Preparar los datos exactos para que Fernando duplique manualmente en Meta cinco publicaciones ya programadas en Facebook.",
+  "status": "Review",
+  "created": "2026-08-17",
+  "updated": "2026-08-17",
+  "version": "1.0",
+  "author": "Manus AI (CGO)",
+  "related_documents": [
+    "Operations/Research/2026-08-17_Cruce_Instagram_Facebook_17_30.md",
+    "Operations/Research/2026-08-17_Calendario_Instagram_17_30_Propuesto.md",
+    "Operations/Research/2026-08-15_Publication_Log.csv",
+    "Operations/Research/2026-08-17_Cruce_Instagram_Facebook_17_30.json"
+  ],
+  "organization": "Operations/Research",
+  "excluded_asset": {
+    "asset_code": "260633",
+    "state": "Eliminada_Manualmente",
+    "reason": "Fernando confirmó eliminación; no republicar."
+  },
+  "manual_records": [
+    {
+      "order": 2,
+      "asset_code": "260560",
+      "asset": "260560 - Fantasma.png",
+      "date_local": "2026-08-19",
+      "time_local": "13:30",
+      "timezone": "America/Matamoros",
+      "caption_exact": "Esperando octubre… 👻 #UniverseSentMe",
+      "facebook_publication_id": "PUB-FB-17_30-15",
+      "facebook_meta_post_id": "1036844829507460_122151374655072582",
+      "facebook_state": "Programada",
+      "instagram_state": "Pendiente_Duplicación_Manual",
+      "action": "Fernando duplica manualmente en Meta; Manus no publica ni programa esta fila.",
+      "idempotency_check": "Antes de duplicar, confirmar que no exista IG_Media_ID, permalink o estado publicado.",
+      "do_not_use": [
+        "260583",
+        "260633",
+        "2608030",
+        "2608036",
+        "2608060"
+      ]
+    },
+    {
+      "order": 3,
+      "asset_code": "260614",
+      "asset": "260614 - Universe.png",
+      "date_local": "2026-08-21",
+      "time_local": "19:00",
+      "timezone": "America/Matamoros",
+      "caption_exact": "Analizando mi propio caos. 🧐 #UniverseSentMe",
+      "facebook_publication_id": "PUB-FB-17_30-28",
+      "facebook_meta_post_id": "1036844829507460_122151375843072582",
+      "facebook_state": "Programada",
+      "instagram_state": "Pendiente_Duplicación_Manual",
+      "action": "Fernando duplica manualmente en Meta; Manus no publica ni programa esta fila.",
+      "idempotency_check": "Antes de duplicar, confirmar que no exista IG_Media_ID, permalink o estado publicado.",
+      "do_not_use": [
+        "260583",
+        "260633",
+        "2608030",
+        "2608036",
+        "2608060"
+      ]
+    },
+    {
+      "order": 4,
+      "asset_code": "260625",
+      "asset": "260625.png",
+      "date_local": "2026-08-23",
+      "time_local": "22:00",
+      "timezone": "America/Matamoros",
+      "caption_exact": "El cambio da miedo… quedarse igual también. 😮‍💨 #UniverseSentMe",
+      "facebook_publication_id": "PUB-FB-17_30-37",
+      "facebook_meta_post_id": "1036844829507460_122151376629072582",
+      "facebook_state": "Programada",
+      "instagram_state": "Pendiente_Duplicación_Manual",
+      "action": "Fernando duplica manualmente en Meta; Manus no publica ni programa esta fila.",
+      "idempotency_check": "Antes de duplicar, confirmar que no exista IG_Media_ID, permalink o estado publicado.",
+      "do_not_use": [
+        "260583",
+        "260633",
+        "2608030",
+        "2608036",
+        "2608060"
+      ]
+    },
+    {
+      "order": 5,
+      "asset_code": "260613",
+      "asset": "260613 - Wilfred.png",
+      "date_local": "2026-08-25",
+      "time_local": "17:00",
+      "timezone": "America/Matamoros",
+      "caption_exact": "Wilfred sabe. 🌲 #UniverseSentMe",
+      "facebook_publication_id": "PUB-FB-17_30-48",
+      "facebook_meta_post_id": "1036844829507460_122151377553072582",
+      "facebook_state": "Programada",
+      "instagram_state": "Pendiente_Duplicación_Manual",
+      "action": "Fernando duplica manualmente en Meta; Manus no publica ni programa esta fila.",
+      "idempotency_check": "Antes de duplicar, confirmar que no exista IG_Media_ID, permalink o estado publicado.",
+      "do_not_use": [
+        "260583",
+        "260633",
+        "2608030",
+        "2608036",
+        "2608060"
+      ]
+    },
+    {
+      "order": 6,
+      "asset_code": "260528",
+      "asset": "260528 - Universe.png",
+      "date_local": "2026-08-30",
+      "time_local": "22:00",
+      "timezone": "America/Matamoros",
+      "caption_exact": "Ya duérmete… 🌙 #UniverseSentMe",
+      "facebook_publication_id": "PUB-FB-17_30-74",
+      "facebook_meta_post_id": "1036844829507460_122151379707072582",
+      "facebook_state": "Programada",
+      "instagram_state": "Pendiente_Duplicación_Manual",
+      "action": "Fernando duplica manualmente en Meta; Manus no publica ni programa esta fila.",
+      "idempotency_check": "Antes de duplicar, confirmar que no exista IG_Media_ID, permalink o estado publicado.",
+      "do_not_use": [
+        "260583",
+        "260633",
+        "2608030",
+        "2608036",
+        "2608060"
+      ]
+    }
+  ],
+  "meta_called": false,
+  "facebook_modified": false,
+  "instagram_modified": false,
+  "scheduler_created": false
+}
