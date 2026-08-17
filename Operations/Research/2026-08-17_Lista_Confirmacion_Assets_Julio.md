@@ -4,7 +4,7 @@ purpose: "Acelerar la reconciliación de los top posts de julio mediante la capt
 status: "Review"
 created: 2026-08-17
 updated: 2026-08-17
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Historical_Performance_Individuals.csv"
@@ -33,6 +33,10 @@ La confirmación manual debe registrar el `Asset_Ref` exacto y, de ser posible, 
 | 5 | 2026-07-18 | `😐` | `1036844829507460_122139999861072582` | 3,993 | 2,536 | 8 | 1,449 | **Por confirmar** | **Por confirmar** | Pending_Evidence |
 | 6 | 2026-07-22 | `🙂‍↕️ #UniverseSentMe #humor #memesenespañol #relatable #vidareal #meditacion` | `1036844829507460_122141207841072582` | 2,747 | 1,722 | 10 | 1,015 | **Por confirmar** | **Por confirmar** | Pending_Evidence |
 
+## Estado de la lista recibida
+
+El usuario completó las seis filas con una referencia de asset y la carpeta `My Drive\\Universe sent me\\USM\\Humor existencial\\07 Julio`. Las referencias normalizadas son `260604`, `2607987`, `729`, `260504`, `728` y `2607966`. Como no se proporcionó el filename completo, la tabla conserva el texto original en `asset_ref_manual`, separa la carpeta en `drive_folder_manual` y añade `asset_ref_normalized`. El estado actual es `User_Provided_Ref_Folder`: suficiente para iniciar el cruce, pero no equivale todavía a `Confirmed_CNT`.
+
 ## Instrucciones para devolver la confirmación
 
 La respuesta más eficiente puede tener este formato:
@@ -47,7 +51,7 @@ Si un post no aparece en Drive o hay dos variantes parecidas, debe marcarse como
 
 ## Regla de integración
 
-Un `Asset_Ref` confirmado aquí no crea automáticamente un CNT. Después de recibir la lista, se comprobarán filename, Drive ID, Meta ID, fecha y evidencia visual. Solo entonces se actualizarán `Content_Inventory.csv`, `Historical_Asset_Performance.csv` y `Historical_Performance_Individuals.csv`.
+Un `Asset_Ref` proporcionado aquí no crea automáticamente un CNT. Después de recibir la lista, se comprobarán filename, Drive ID, Meta ID, fecha y evidencia visual. La ausencia del filename manual no bloquea el proceso: puede recuperarse desde la carpeta de julio si el Asset_Ref es único. Solo entonces se actualizarán `Content_Inventory.csv`, `Historical_Asset_Performance.csv` y `Historical_Performance_Individuals.csv`.
 
 ## Referencias
 
