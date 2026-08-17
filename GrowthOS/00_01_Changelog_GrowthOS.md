@@ -16,6 +16,7 @@
 - Las pruebas reales con la cuenta Universe Sent Me confirmaron que la lectura directa del objeto post devuelve lifetime, Post/Page Insights respondieron `data=[]` para las métricas temporales probadas y `post_impressions` fue inválida en v26.0. La página sí cumple el requisito de tamaño con 4,731 seguidores/likes.
 - Se documentó que el lote histórico 15–16 no puede reconstruirse con exactitud a partir de lifetime. La solución propuesta para futuras publicaciones es capturar un baseline al publicar y calcular deltas de contadores a +24h y +72h, con un solo despertar diario y Batch Requests para reducir conexiones.
 - Se creó `Operations/Research/2026-08-17_Investigacion_Ventanas_Temporales_Meta.md`, se actualizó el playbook del extractor a v1.2 y se mantuvieron abiertas `HB-003`, `HB-004` y `HB-005`.
+- Se añadió una propuesta de dos carriles: `Ventana_Estricta_24h/72h` para métricas contractuales y `Corte_Observado` para rescatar el lote 15–16 con reacciones, comentarios, shares y edad real del post, sin escribir esos datos en los campos estrictos.
 
 ---
 

@@ -4,7 +4,7 @@ purpose: "Determinar por qué Meta no devuelve snapshots históricos exactos de 
 status: "Review"
 created: 2026-08-17
 updated: 2026-08-17
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/extract_metrics_24_72.py"
@@ -123,3 +123,26 @@ La solución propuesta queda en `Review`. No se ha alterado el schedule vigente,
 [2]: https://developers.facebook.com/docs/graph-api/reference/page/insights/ "Meta for Developers — Graph API Reference v26.0: Page Insights"
 
 [3]: https://developers.facebook.com/docs/graph-api/batch-requests/ "Meta for Developers — Batch Requests"
+
+## 8. Propuesta de reporte operativo para el lote 15–16
+
+La ausencia de snapshots exactos no obliga a descartar el lote. Se propone un esquema de medición de dos carriles:
+
+| Carril | Nombre en el reporte | Uso | ¿Puede llenar `Interacciones_24h`/`Interacciones_72h`? |
+|---|---|---|---|
+| A | `Ventana_Estricta_24h/72h` | Solo capturas realizadas cerca de la frontera temporal con baseline comparable. | Sí, únicamente cuando cumple el contrato. |
+| B | `Corte_Observado` | Lectura disponible a la hora de revisión, con edad real del post y datos acumulados actuales. | No; se conserva en campos separados. |
+
+Para cada publicación del lote 15–16, el reporte operativo puede incluir `Meta_Post_ID`, hora real de publicación, hora del corte, edad del post en horas, reacciones observadas, comentarios observados, shares observados, interacciones observadas, proporción de shares, URL/permalink y HTTP status. En un anexo cualitativo se pueden listar los comentarios públicos recuperables, su hora, texto, reacciones y si recibieron respuesta, respetando el ledger de comunidad y la aprobación humana para cualquier nueva respuesta.
+
+La fórmula descriptiva del corte será:
+
+```text
+Interacciones_Observadas = reacciones_observadas + comentarios_observados + shares_observados
+```
+
+Estas cifras sirven para saber **cómo estaba cada publicación cuando se revisó**, no para afirmar cómo estaba exactamente a las 24 o 72 horas. El reporte debe ordenar también por `edad_del_post_en_horas`, porque una publicación de 27 horas y otra de 60 horas no son comparables como si estuvieran en la misma ventana.
+
+El lote 15–16 puede, por tanto, producir tres resultados válidos: una tabla comparativa de cortes observados para las nueve publicaciones; una tabla cualitativa de comentarios y respuestas; y, por separado, una tabla de ventanas estrictas que actualmente quedará como `No disponible` cuando no exista baseline. Las hipótesis pueden recibir un **veredicto descriptivo provisional** —por ejemplo, `Señal_Observada`, `Inconcluso_por_Ventana` o `No_Comparable`—, pero no deben marcarse como validadas únicamente con cortes de edades diferentes.
+
+Esta propuesta queda en `Review` y no cambia todavía el contrato del extractor ni los campos estrictos del `ExperimentLog`. Requiere aprobación de Fernando antes de añadir un `Metrics_Snapshot_Log.csv` y ejecutar la extracción histórica con comentarios.
