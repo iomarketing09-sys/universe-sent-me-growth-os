@@ -21,7 +21,7 @@ organization: "Operations/Research"
 
 Junio es el siguiente periodo correcto para trabajar. Mayo ya tiene suficiente cobertura estructurada y el repositorio ya contiene una primera selección de **cinco top posts individuales de junio**. Estos cinco registros coinciden con la sección “Posts destacados de junio” del reporte mensual elaborado con Windsor.ai; no es necesario volver a integrarlos ni crearles CNT automáticamente.
 
-No se encontró dentro del repositorio oficial ni en la carpeta compartida del proyecto un documento independiente que contenga la revisión manual de junio realizada con Claude. Por tanto, el Growth OS puede confirmar lo que ya está versionado, pero no debe asumir que esos cinco posts representan toda la selección manual externa. Si Fernando tiene ese documento o una lista adicional de IDs, deberá incorporarse como evidencia para el siguiente cruce.
+Las capturas que Fernando compartió con Claude pertenecen a la biblia y no deben tratarse como fuente estadística. La fuente operativa de junio es la carpeta Drive `06 Junio` (`1Yihb7b3K3cRYOziDp_DbBJsNeyiB3S0y`), que contiene 197 elementos: 196 archivos de imagen y una subcarpeta `Top`. La carpeta organiza los assets por mes, pero no conserva por sí sola el día de publicación. Por tanto, el Growth OS puede confirmar lo que ya está versionado, pero debe reconstruir cualquier fecha individual cruzando cada asset con publicaciones Meta mediante filename/ref, caption, imagen o evidencia de calendario. No se debe asumir que los cinco top posts representan todo el mes.
 
 ## Top posts de junio ya integrados
 
@@ -43,6 +43,6 @@ Esta evidencia sirve para aprendizaje editorial y selección de futuros reuse, p
 
 ## Siguiente lote recomendado
 
-El siguiente lote de junio debe comenzar con los posts individuales adicionales del dataset de 508 filas que cumplan simultáneamente: Meta ID, fecha de junio, métricas, filename/asset identificable y ausencia de duplicación con los cinco ya integrados. La revisión manual de Claude debe cruzarse antes de incorporar nuevas filas, para evitar que el Growth OS mantenga dos rankings diferentes con criterios incompatibles.
+El siguiente lote de junio debe comenzar con los posts individuales adicionales del dataset de 508 filas y los assets de la carpeta `06 Junio`. La reconstrucción debe priorizar los top posts y usar coincidencia visual o evidencia de Meta cuando el filename no sea suficiente. Las filas se clasificarán como `Fecha_y_asset_confirmados`, `Meta_confirmado_asset_pendiente` o `Asset_Drive_sin_post_confirmado`. Solo la primera categoría podrá enlazarse después a un CNT. Este proceso no requiere las capturas de la biblia ni debe mezclar su contenido con estadísticas de publicación.
 
 No se modificaron `Content_Inventory.csv`, `Publication_Log.csv` ni `ExperimentLog.csv` durante esta auditoría.
