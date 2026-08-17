@@ -4,7 +4,7 @@
 **Estado:** Aprobado
 **Fecha de creación:** 2026-08-10
 **Última actualización:** 2026-08-15
-**Versión:** 1.4
+**Versión:** 1.5
 **Autor:** Claude, formalizando dirección estratégica de Fernando
 **Documentos relacionados:** `03_00_Sistema_Generacion_Memes.md` (pipeline técnico de producción), `Canon_Contradictions_Report.md` (histórico de fricciones que motivaron este sistema), `Operations/Research/2026-08-15_Community_Engagement_Log.md` (ledger cualitativo), `Operations/Memories/mayo_2026_top_posts_metaBS.md` (evidencia original que originó esta discusión)
 
@@ -87,6 +87,14 @@ Fernando reporta —y confirmó con ejemplos reales— que la comunidad deja en 
 **Formato recomendado:** un documento tipo `Operations/Memories/comunidad_insights_[mes].md`, donde se registre — sin exponer identidad de usuarios reales salvo que Fernando decida lo contrario — el tipo de comentario, qué pieza lo generó, la respuesta dada y si aporta señal para posible promoción a canon. También deben registrarse los assets de respuesta utilizados y su función (respuesta juguetona, complicidad de personaje, llamada de atención cariñosa, reacción absurda o cierre elegante). Si varias personas reaccionan con su propia historia a un mismo patrón de humor, eso refuerza la señal cuantitativa de la sección 4.
 
 El primer escaneo de 67 comentarios quedó documentado en `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`. Se generó y regeneró un primer lote de cinco assets de respuesta en `Operations/Research/2026-08-15_Propuesta_Memes_Respuesta_USM.md`, usando personajes y escenarios de `My Drive/Universe sent me/USM/Elementos`. La versión Nano Banana prioriza escenas animadas detalladas y remates integrados al mundo, no plantillas de meme. Después se añadió un segundo lote de tres assets cuadrados 1:1 para reconocer a seguidores activos, con fondos mínimos y foco en personaje y frase. La biblioteca mensual de insights y el traslado de los assets aprobados a una carpeta permanente de producción siguen pendientes.
+
+### 5.1 Hallazgo (Claude, 2026-08-17): validación cualitativa de Silvio, no promoción nueva
+
+Revisión de `Operations/Research/2026-08-15_Community_Engagement_Log.csv` (18 comentarios reales con respuesta ya aprobada por Fernando): **8 de 9 comentarios cualitativos sustanciales del lote corresponden a un solo post de Silvio**, con respuestas del propio Fernando que refuerzan exactamente el registro ya cerrado en canon ("brutalmente honesto sobre su propio ridículo — sabe exactamente lo que le pasó y lo dice antes que nadie más pueda", `Silvio/03 Reglas de diseño.md`). Ejemplos de respuesta aprobada: *"Silvio, ya te descubrieron. Tú sigue haciendo como que no escuchaste."*; *"Silvio no busca tendencias. Bastante tiene con terminar esa frase."*
+
+**Esto no es una promoción nueva bajo la sección 4** — no hay patrón sin registrar que cruce el umbral. Es la primera vez que el registro cualitativo (sección 5) confirma con evidencia real de audiencia que un rasgo ya cerrado en canon está funcionando exactamente como se diseñó. Se deja anotado porque valida el mecanismo de promoción en sí: lo que se promovió con datos cuantitativos (mayo-agosto) coincide con cómo la audiencia lo recibe cualitativamente meses después.
+
+También en el mismo log: un comentario con relato personal de conflicto relacional/legal recibió respuesta empática con humor ligero, sin diagnosticar ni pedir detalles — coherente con las reglas de bienestar del usuario y con la Tesis Emocional del proyecto ("las personas se sienten menos solas..."), en vivo.
 
 ## 6. Lo que este sistema NO cambia
 
