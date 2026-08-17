@@ -4,7 +4,7 @@ purpose: "Acelerar la reconciliación de los top posts de julio mediante la capt
 status: "Review"
 created: 2026-08-17
 updated: 2026-08-17
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Historical_Performance_Individuals.csv"
@@ -62,11 +62,24 @@ La carpeta `My Drive\\Universe sent me\\USM\\Humor existencial\\07 Julio` fue re
 | `728` | `Universe - Existencial 728.png` | `1aV1bNoJpaXjtdZEQExebSj6i4SkXhVWr` | PNG | Filename_Confirmed_Drive |
 | `2607966` | `Universe - Existencial 2607966.jpeg` | `1r6TG0yLNQAlVF8RL0XfqbevmobIVd89m` | JPEG | Filename_Confirmed_Drive |
 
-La búsqueda confirma el archivo y su unicidad, pero todavía no demuestra por sí sola que la imagen sea la creatividad exacta del post de Meta. La relación editorial final se cerrará después de comparar el asset con la publicación y sus métricas.
+La comparación visual directa con las seis publicaciones de Facebook confirmó las relaciones editoriales. En todos los casos coincidieron la composición de la imagen, el texto incrustado, el Meta ID, la fecha histórica, el filename exacto y el Drive ID.
+
+## CNT editoriales confirmados
+
+| Asset_Ref | Meta ID | CNT editorial | Confirmación visual |
+|---|---|---|---|
+| `260604` | `1036844829507460_122140003413072582` | `CNT-074` | `¿Por qué estás tan callado? ¿Qué tienes en mente?` + personaje dentro de burbuja |
+| `2607987` | `1036844829507460_122142779757072582` | `CNT-075` | Fantasma en bosque + `No es desinterés, ya se me olvidan las cosas bien feo.` |
+| `729` | `1036844829507460_122142627051072582` | `CNT-076` | Dos parejas de esqueletos + `Ni ella le habló y él no la buscó...` |
+| `260504` | `1036844829507460_122140844349072582` | `CNT-077` | Collage de múltiples temas + `Los cambios de tema que tengo en una sola conversación:` |
+| `728` | `1036844829507460_122139999861072582` | `CNT-078` | Gato con gafas en nubes + `Adivina kien anda bien caliente` / `El planeta invesil, cuídalo` |
+| `2607966` | `1036844829507460_122141207841072582` | `CNT-079` | Gato con capa junto a vela + `Lo que publico no me define... En realidad estoy más loco.` |
+
+Los seis CNT se añadieron al inventario maestro y sus métricas se incorporaron a `Historical_Asset_Performance.csv` como rendimiento histórico lifetime de la extracción. No se presentan como métricas 24/72h.
 
 ## Regla de integración
 
-Un `Asset_Ref` proporcionado aquí no crea automáticamente un CNT. Después de recibir la lista, se comprobarán filename, Drive ID, Meta ID, fecha y evidencia visual. La ausencia del filename manual no bloquea el proceso: puede recuperarse desde la carpeta de julio si el Asset_Ref es único. Solo entonces se actualizarán `Content_Inventory.csv`, `Historical_Asset_Performance.csv` y `Historical_Performance_Individuals.csv`.
+Un `Asset_Ref` proporcionado aquí no crea automáticamente un CNT. En este lote, la regla se cumplió para los seis registros: filename, Drive ID, Meta ID, fecha y evidencia visual fueron confirmados. Los siguientes lotes deberán seguir el mismo estándar antes de modificar los ledgers.
 
 ## Referencias
 
