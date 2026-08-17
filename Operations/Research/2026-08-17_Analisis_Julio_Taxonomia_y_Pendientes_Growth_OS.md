@@ -79,3 +79,20 @@ El siguiente lote de trabajo debe ser la **revisión visual y editorial de los s
 Para la Biblia, los resultados actuales deben registrarse como hipótesis: `El humor existencial/relatable y la etiquetabilidad parecen explicar parte de la difusión de julio`. No debe elevarse todavía a regla canónica.
 
 Este documento debe comunicarse a Claude mediante el Changelog antes de modificar cualquier regla de la Biblia.
+
+## Revisión visual de los seis top posts
+
+La revisión directa de las imágenes corrigió la taxonomía provisional basada en los filenames. Solo `2607966` y `728` muestran claramente a Universe, mientras que `2607987` muestra a Fantasma. `260504`, `260604` y `729` contienen figuras humanas, corales o esqueletos, pero no aportan evidencia suficiente para asignar personajes canónicos concretos.
+
+| Asset | Personaje principal visual | Rol narrativo | Tipo de humor visual | Potencial de etiquetado |
+|---:|---|---|---|---|
+| `260504` | No identificado | Reparto coral | Observacional social | Alto |
+| `260604` | No identificado | Protagonista | Relatable cotidiano; existencial o absurdo | Alto |
+| `2607966` | Universe | Protagonista | Existencial o relatable | Medio |
+| `2607987` | Fantasma | Protagonista | Relatable; existencial | Medio |
+| `728` | Universe | Protagonista | Sexual o insinuación; observacional social | Medio |
+| `729` | No identificado | Dúo o pareja | Humor ácido o negro; relatable | Alto |
+
+La revisión visual confirma que el filename `Universe - Existencial` no puede utilizarse como sustituto del personaje visible. La evidencia cambia el aprendizaje: los posts más fuertes de julio no forman un grupo homogéneo de Universe ni demuestran que un personaje específico sea la causa del rendimiento. La señal más defendible es la combinación de una situación clara, una emoción reconocible y potencial de compartir o etiquetar.
+
+La taxonomía de estos seis registros se considera ahora de confianza alta porque se apoya en observación visual directa. Las clasificaciones no modifican el canon y deben revisarse con Claude únicamente como evidencia de aprendizaje.
