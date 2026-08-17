@@ -4,7 +4,7 @@ purpose: Registrar y ejecutar únicamente publicaciones de Instagram aprobadas m
 status: Active
 created: 2026-08-15
 updated: 2026-08-17
-version: 1.8
+version: 2.0
 author: Manus AI
 documents_related:
   - ../../GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md
@@ -123,6 +123,25 @@ Ejecuta esta tarea autónomamente, sin pedir confirmación al usuario:
 - La tarea fue pausada mediante `manus-config schedule update --enabled=false`. Su estado operativo actual es `pause`; no se ejecutaron publicaciones, no se modificó Facebook, no se movió Drive y `260583` permanece excluida.
 - No se debe reactivar esta tarea histórica. La distribución de Instagram queda en aprobación manual fila por fila hasta que Fernando solicite una campaña nueva con un playbook autocontenido y un horario válido.
 
+### 2026-08-17 — Diagnóstico y propuesta de reemplazo del scheduler
+
+La tarea `USM Instagram 15-16 Agosto` fue eliminada por Fernando y no aparece como schedule activo en la inspección actual. No debe recrearse copiando su configuración. Los errores principales fueron: una discrepancia entre `America/Matamoros` y `America/Mexico_City`; despertares periódicos que podían perder la ventana exacta; ejecución como tarea nueva sin garantizar que el playbook y el estado local estuvieran disponibles; y mezcla conceptual entre “slot editorial” y “publicación inmediata aprobada”.
+
+La propuesta CGO para una campaña nueva es **seis ejecuciones exactas de una sola publicación**, una por cada fila aprobada, en lugar de un worker que revise cada cinco minutos. Cada ejecución debe recibir un playbook autocontenido y un manifiesto cerrado con `asset_ref`, nombre exacto, caption, URL pública, fecha, hora y zona horaria. El proceso debe validar la hora local, ejecutar solo si está dentro de una tolerancia máxima de dos minutos, detenerse con `no-op_late` si el slot ya pasó, y nunca recuperar una publicación atrasada por inferencia.
+
+| Control | Regla obligatoria |
+|---|---|
+| Zona horaria | Usar una sola zona canónica: `America/Matamoros`; mostrar siempre la hora local y UTC en los registros. |
+| Alcance | Un solo asset y un solo caption por ejecución; Instagram únicamente. |
+| Momento | Una ejecución exacta por fila; sin polling de cinco minutos ni intervalos recurrentes. |
+| Idempotencia | Detenerse si existe `IG_Media_ID`, permalink o estado `Publicado`/`Eliminada_Manualmente`. |
+| Ventana | Tolerancia máxima de ±2 minutos; fuera de ventana, `no-op_late` y no publicación. |
+| Dependencias | Playbook, manifiesto y runner deben viajar dentro de la tarea; no depender de rutas efímeras del sandbox. |
+| Errores | Guardar respuesta completa, no reintentar creación de container automáticamente y alertar para revisión humana. |
+| Trazabilidad | Registrar container ID, media ID, permalink, hora real y estado en GitHub. |
+| Protección | No usar `scheduled_publish_time`, no tocar Facebook, no mover Drive durante la ejecución y mantener `260583` bloqueada. |
+
+Esta arquitectura requiere seis despertares totales para seis publicaciones y elimina la causa de los despertares repetidos. Antes de implementarla, Fernando debe aprobar la campaña concreta, la zona horaria canónica y cada fila. La alternativa más segura y económica sigue siendo la publicación manual inmediata fila por fila; el scheduler exacto solo conviene cuando las horas aprobadas sean realmente importantes.
 ---
 
 ### 2026-08-16 — Preflight de prueba única para 2608060

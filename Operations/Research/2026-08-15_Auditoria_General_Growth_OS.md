@@ -4,7 +4,7 @@ purpose: "Evaluar de extremo a extremo la integración entre estrategia, documen
 status: Review
 created: 2026-08-15
 updated: 2026-08-17
-version: "2.0"
+version: "2.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/00_Índice.md"
@@ -55,15 +55,15 @@ La auditoría original identificó varias brechas que ya fueron resueltas en el 
 | Facebook 15–16 | Identidad reconciliada; faltan snapshots 24/72h válidos y cierre de hipótesis. | P0 |
 | Instagram 15–16 | `2608030` permanece activa y las republicaciones autorizadas de `2608036` y `2608060` están confirmadas por Meta con nuevos media IDs y permalinks. Los intentos anteriores eliminados quedan separados como historial. `260583` sigue excluida. | P1 controlado |
 | Instagram 17–30 | La asignación contiene 8 filas `FB + IG selectivo`, 1 `FB + IG prioritario`, 2 `IG prioritario` y 1 `IG secundario`. La primera ola de 6 assets fue aprobada; `260633` ya está publicada fuera de ventana y las otras 5 filas siguen pendientes. | P1 |
-| Scheduler Instagram | La prueba no creó ni modificó ningún scheduler; el playbook permanece en aprobación manual y la ejecución histórica sigue pausada. | P1 controlado |
+| Scheduler Instagram | La tarea histórica 15–16 fue eliminada. No se recomienda recrearla con polling; una campaña futura debe usar ejecuciones exactas por fila, playbook autocontenido, zona única y `no-op_late`. | P1 controlado |
 | Canon | Silvio/Payaso está resuelto. `CNT-004` queda diferido y fuera de desarrollo; conserva revisión canónica pendiente si algún día se retoma. | P2 diferido |
 | Aprendizaje | La extracción P0 del 17 de agosto evaluó 4 ventanas 24h y obtuvo solo totales lifetime; `0/4` snapshots exactos fueron escritos. La revisión operativa posterior rescató 502 interacciones observadas y 23 comentarios en las 9 publicaciones, sin cerrar `HB-003`, `HB-004` ni `HB-005`. | P0 |
 | Calendario 17–30 | Los 74 slots están completos y programados; falta que se publiquen y extraer métricas. El movimiento de los 46 archivos del manifiesto ya está verificado en `08 Agosto`. | P1 |
 | Fuente maestra | `Content_Inventory.csv` tiene 39 filas y no contiene coincidencias textuales directas para las 71 referencias `260####` distintas del calendario 17–30. El lote 01 auditó 10 filas: 8 quedaron como candidatas con evidencia de asset, 2 requieren evidencia adicional y se crearon 0 CNT. | P1 |
 | Comunidad | Ledger con 18 comentarios reales y 5 respuestas publicadas; los deltas incrementales no produjeron comentarios cualitativos y la revisión puntual fue respondida con ID Meta real. La verificación GET posterior devolvió 403 por permisos. | P2 |
-| Automatizaciones heredadas | Make permanece retirado; la tarea histórica de Instagram no debe convertirse en ruta permanente sin un playbook autocontenido y una prueba de no-op. | P1 |
+| Automatizaciones heredadas | Make permanece retirado; la tarea histórica de Instagram fue eliminada y no debe recrearse con polling. Si se automatiza una campaña futura, debe usar una ejecución exacta por fila, playbook autocontenido, zona horaria única y `no-op_late`. | P1 |
 
-La aprobación explícita de Fernando autorizó excepcionalmente republicar `2608036` y `2608060` aunque sus intentos anteriores hubieran sido eliminados. Meta confirmó ambas nuevas publicaciones con `status_code=FINISHED` y `media_publish`: `2608036` → media `17891183814416135`, permalink https://www.instagram.com/p/DcHxuuWllRk/; `2608060` → media `17909839698449207`, permalink https://www.instagram.com/p/DcHxv5SlorV/. No se utilizó `scheduled_publish_time`, no se tocó Facebook, Drive ni el scheduler. La tarea independiente de métricas continúa documentada como activa según `ed663ee`, con identificador `egAl6a7WZExBrDPd8tIY1B`, cron `0 15 22 */2 * *`, zona `America/Matamoros` y un solo despertar por ejecución.
+La aprobación explícita de Fernando autorizó excepcionalmente republicar `2608036` y `2608060` aunque sus intentos anteriores hubieran sido eliminados. Meta confirmó ambas nuevas publicaciones con `status_code=FINISHED` y `media_publish`: `2608036` → media `17891183814416135`, permalink https://www.instagram.com/p/DcHxuuWllRk/; `2608060` → media `17909839698449207`, permalink https://www.instagram.com/p/DcHxv5SlorV/. No se utilizó `scheduled_publish_time`, no se tocó Facebook, Drive ni el scheduler. La tarea independiente de métricas continúa documentada como activa según `ed663ee`, con identificador `egAl6a7WZExBrDPd8tIY1B`, cron `0 15 22 */2 * *`, zona `America/Matamoros` y un solo despertar por ejecución. La tarea histórica de Instagram 15–16 fue eliminada; cualquier sustitución requiere aprobación de campaña y ejecuciones exactas por fila, no un worker recurrente.
 
 ## 2. Alcance y método
 

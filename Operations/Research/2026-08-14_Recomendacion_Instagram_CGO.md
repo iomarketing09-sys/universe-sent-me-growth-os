@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-14
 **Última actualización:** 2026-08-17
-**Versión:** 1.4
+**Versión:** 1.5
 **Autor:** Manus AI  
 **Documentos relacionados:** [`GrowthOS/08_00_Metricas_Baseline_Plataformas.md`](../../GrowthOS/08_00_Metricas_Baseline_Plataformas.md), [`Operations/Research/2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md`](2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md), [`Operations/Research/2026-08-14_Analisis_Copys_Rendimiento.md`](2026-08-14_Analisis_Copys_Rendimiento.md), [`GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md`](../../GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md), [`Calendario Instagram 17–30 propuesto`](2026-08-17_Calendario_Instagram_17_30_Propuesto.md)
 
@@ -75,6 +75,14 @@ La primera ola mantiene Facebook como superficie primaria, excluye `260583`, no 
 La fila `260633 - Universe.png` fue publicada manualmente en Instagram con aprobación explícita de Fernando. Meta confirmó el contenedor `17976689082089880` en estado `FINISHED`, publicó el media `17943879225288953` y devolvió el permalink [https://www.instagram.com/p/DcIQHJJHEp0/](https://www.instagram.com/p/DcIQHJJHEp0/). La publicación ocurrió a las 23:08:35 de America/Matamoros, fuera de la ventana planeada de las 10:00; por tanto, se registra como decisión editorial fuera de horario y no como cumplimiento del slot.
 
 La publicación no usó `scheduled_publish_time`, no modificó Facebook ni Drive y no creó un CNT porque la relación `260633 ↔ CNT-####` todavía no está confirmada. El asset fue localizado en la carpeta `05 Mayo`; la discrepancia con la expectativa operativa de `08 Agosto` se conserva como pendiente administrativa. Las otras cinco filas siguen requiriendo aprobación y ejecución individual.
+
+## Recomendación sobre un nuevo scheduler — 2026-08-17
+
+La tarea histórica de Instagram fue eliminada y **no recomiendo recrearla con intervalos, polling o el playbook 15–16**. El diagnóstico muestra cuatro riesgos: zona horaria inconsistente, despertares que no coinciden con los slots, tareas nuevas sin dependencias autocontenidas y posibilidad de confundir una ventana perdida con autorización para publicar tarde.
+
+Si Fernando quiere automatizar las cinco filas restantes, la opción CGO aceptable es un scheduler de **una ejecución exacta por publicación**, con seis despertares totales para seis filas. Cada tarea debe contener el asset, caption, URL pública, fecha, hora, zona `America/Matamoros`, ventana máxima de ±2 minutos, bloqueo idempotente y regla `no-op_late`. Si la hora ya pasó, no publica ni recupera el slot; informa el incumplimiento para decisión humana. No se debe usar `scheduled_publish_time`, tocar Facebook, mover Drive ni ejecutar un worker recurrente.
+
+Mi recomendación operativa inmediata es conservar el **modo manual fila por fila** hasta aprobar una campaña nueva autocontenida. Es más seguro y, con el volumen actual de Instagram, la diferencia de consumo frente a seis despertares programados no justifica todavía asumir el riesgo de una automatización defectuosa. El scheduler exacto solo debe implementarse después de confirmar las cinco filas, sus horarios y la zona horaria canónica.
 
 ## Referencias internas
 
