@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 2.03
+**Versión:** 2.04
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.04.00] — 2026-08-17 (Manus): Priorización de pendientes posterior al análisis de julio.** La secuencia CGO prioriza: P0, cerrar el ciclo de aprendizaje de la prueba activa con métricas comparables; P1, monitorear la ola Facebook 17–30, ampliar la recopilación individual de julio y consolidar la fuente maestra; P2, actualizar baseline separando canales, revisar la Biblia con Claude usando evidencia clasificada, continuar comentarios con aprobación humana y mantener Instagram controlado. CNT-004 permanece diferido y Make solo como trazabilidad histórica. Documento: `Operations/Research/2026-08-17_Prioridad_Siguientes_Pendientes_Growth_OS.md`.
 
 - **[2.03.00] — 2026-08-17 (Manus): Revisión visual de los seis top posts de julio.** Se revisaron directamente los seis assets confirmados. Solo `2607966` y `728` muestran claramente a Universe; `2607987` muestra a Fantasma; `260504`, `260604` y `729` no aportan evidencia suficiente para asignar personajes canónicos concretos. Se corrigió la taxonomía y se invalidó el uso del filename `Universe - Existencial` como sustituto del personaje visible. El aprendizaje queda formulado como hipótesis: la situación reconocible, la emoción clara y el potencial de compartir/etiquetar parecen ser señales más defendibles que el nombre del personaje. Informe: `Operations/Research/2026-08-17_Analisis_Julio_Taxonomia_y_Pendientes_Growth_OS.md`.
 
