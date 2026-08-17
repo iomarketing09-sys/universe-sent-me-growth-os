@@ -3,10 +3,10 @@
 **Propósito:** Registro de métricas reales extraídas de Windsor.ai. Fuente de verdad para comparaciones de rendimiento, calibración de hipótesis y decisiones de canal. No es un resumen de sesión — es un documento vivo que debe actualizarse con cada ciclo de análisis.
 **Estado:** Active
 **Fecha de creación:** 2026-08-03
-**Última actualización:** 2026-08-16
-**Versión:** 1.3
+**Última actualización:** 2026-08-17
+**Versión:** 1.4
 **Autor:** Claude (Guardián de Canon, extracción directa vía Windsor.ai MCP)
-**Documentos relacionados:** `07_00_Registro_Maestro_Reels.md`, `06_00_Reglas_Aprendizaje_Tendencias.md`, `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Research/2026-08-15_Publication_Log.csv`, `../Operations/Research/2026-08-15_ExperimentLog.csv`, `../Operations/Research/2026-08-16_P2_Comunidad_Delta_01.json`, `../Operations/Research/2026-08-16_P2_Baseline_Preparacion_01.json`
+**Documentos relacionados:** `07_00_Registro_Maestro_Reels.md`, `06_00_Reglas_Aprendizaje_Tendencias.md`, `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Research/2026-08-15_Publication_Log.csv`, `../Operations/Research/2026-08-15_ExperimentLog.csv`, `../Operations/Research/2026-08-16_P2_Comunidad_Delta_01.json`, `../Operations/Research/2026-08-16_P2_Baseline_Preparacion_01.json`, `../Operations/Research/2026-08-17_Metricas_24_72_Extraccion_02.json`
 
 > **Metodología:** Datos extraídos directamente desde Windsor.ai el 2026-08-03. Período cubierto: últimos 14 días con datos del día actual incluidos. Cuentas: Facebook Page @UniverseSentMe (ID `1036844829507460`) e Instagram @universe_sent_me_0326 (ID `17841462696378190`). Los datos de IG publicados hoy mismo pueden mostrar cero por latencia de la API.
 
@@ -127,7 +127,7 @@ La baseline común debe permitir comparar Facebook e Instagram sin mezclar magni
 | `Fuente` | Windsor.ai, Meta Graph API, Publication Log o ExperimentLog, con fecha de extracción. |
 | `Estado` | `Historico`, `Parcial`, `Validado_24h`, `Validado_72h` o `Snapshot_No_Disponible`. |
 
-La próxima actualización numérica deberá unir `Content_Inventory.csv`, `Publication_Log.csv` y `ExperimentLog.csv` por `CNT-####` y Meta ID. Para el lote 15–16 se incorporarán las nueve publicaciones solo cuando existan ventanas válidas; la primera extracción del 15 de agosto evaluó las nueve y encontró cero ventanas elegibles, por lo que no se añadieron métricas prematuras.
+La próxima actualización numérica deberá unir `Content_Inventory.csv`, `Publication_Log.csv` y `ExperimentLog.csv` por `CNT-####` y Meta ID. Para el lote 15–16 se incorporarán las nueve publicaciones solo cuando existan ventanas válidas. La extracción del 15 de agosto encontró cero ventanas elegibles; la revisión P0 del 17 de agosto encontró cuatro ventanas 24h elegibles, pero Meta devolvió únicamente totales lifetime, por lo que no se añadieron métricas prematuras.
 
 El reporte comparará por separado: (a) frecuencia y mediana de interacciones por publicación; (b) Facebook imagen frente a Facebook Reel; (c) Instagram Reel frente a Instagram imagen; (d) contenido nuevo frente a reuse; y (e) comentarios totales frente a comentarios cualitativos. Facebook seguirá siendo el canal principal de distribución en la lectura actual, mientras Instagram se evaluará como canal en desarrollo y no se presentará como fracaso por sus volúmenes absolutos todavía pequeños.
 
@@ -146,9 +146,22 @@ La auditoría de preparación se ejecutó sobre los identificadores de observaci
 | Snapshots 72h válidos | 0 | No escribir métricas. |
 | Actualización numérica de baseline | No ejecutada | Esperar el cierre P0 del extractor. |
 
-La siguiente actualización numérica debe ejecutarse después de que el extractor de 48 horas produzca snapshots válidos para Facebook. La comunidad se mide por separado mediante `Community_Engagement_Log.csv`; sus cuatro comentarios vacíos y dos menciones automáticas del delta del 16 de agosto no se suman como interacción cualitativa.
+La siguiente actualización numérica debe ejecutarse después de que el extractor de 48 horas produzca snapshots válidos para Facebook. La comunidad se mide por separado mediante `Community_Engagement_Log.csv`; sus comentarios vacíos, menciones automáticas y la respuesta puntual no se mezclan con las métricas 24/72h.
 
-## 9. Próxima Actualización
+## 9. Resultado P0 de extracción — 17 de agosto de 2026
+
+La extracción oficial se ejecutó en un solo lote a las `2026-08-17T03:37:53Z`, usando la tarea `EXP-2026-08-CAL-01`. Evaluó nueve publicaciones de Facebook del 15–16; cuatro ya habían cumplido 24 horas (`CNT-031` a `CNT-034`) y cinco todavía no. Meta respondió HTTP 200 para las cuatro consultas, pero solo entregó totales acumulados lifetime. Conforme a la regla P0, esos totales se conservaron como evidencia y no se escribieron en `Interacciones_24h` ni `Interacciones_72h`.
+
+| Asset | Ventana elegible | Lifetime reacciones | Lifetime comentarios | Lifetime shares | Lifetime interacciones | Métrica 24h escrita |
+|---|---|---:|---:|---:|---:|---|
+| `CNT-031` / `2608030` | 24h | 96 | 2 | 23 | 121 | No |
+| `CNT-032` / `2608033` | 24h | 52 | 1 | 20 | 73 | No |
+| `CNT-033` / `2608034` | 24h | 35 | 7 | 10 | 52 | No |
+| `CNT-034` / `2608035` | 24h | 53 | 3 | 14 | 70 | No |
+
+**Resultado P0:** `4/9` publicaciones tenían una ventana 24h elegible; `0/4` devolvieron un snapshot exacto; `0` campos 24h/72h fueron escritos. Instagram no fue tocado, no se publicó contenido y la baseline común no se actualiza numéricamente todavía. La evidencia completa está en `Operations/Research/2026-08-17_Metricas_24_72_Extraccion_02.json`.
+
+## 10. Próxima Actualización
 
 Este documento debe actualizarse:
 - Cada domingo (ciclo semanal de análisis)

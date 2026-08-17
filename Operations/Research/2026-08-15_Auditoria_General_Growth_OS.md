@@ -3,8 +3,8 @@ title: "Auditoría general del Growth OS — estado de integración"
 purpose: "Evaluar de extremo a extremo la integración entre estrategia, documentación, inventario, calendario, canon, contenido, comunidad, Meta Graph API, Drive, automatizaciones y ciclo de aprendizaje de Universe Sent Me."
 status: Review
 created: 2026-08-15
-updated: 2026-08-16
-version: "1.8"
+updated: 2026-08-17
+version: "1.9"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/00_Índice.md"
@@ -49,7 +49,7 @@ La auditoría original identificó varias brechas que ya fueron resueltas en el 
 | Instagram 15–16 | `2608030` permanece activa y las republicaciones autorizadas de `2608036` y `2608060` están confirmadas por Meta con nuevos media IDs y permalinks. Los intentos anteriores eliminados quedan separados como historial. `260583` sigue excluida. | P1 controlado |
 | Scheduler Instagram | La prueba no creó ni modificó ningún scheduler; el playbook permanece en aprobación manual y la ejecución histórica sigue pausada. | P1 controlado |
 | Canon | Silvio/Payaso está resuelto. `CNT-004` queda diferido y fuera de desarrollo; conserva revisión canónica pendiente si algún día se retoma. | P2 diferido |
-| Aprendizaje | La revisión agrupada de métricas está documentada como activa cada 48h a las 22:15; faltan resultados válidos y cierre de `HB-003`, `HB-004` y `HB-005`. | P0 |
+| Aprendizaje | La extracción P0 del 17 de agosto evaluó 4 ventanas 24h y obtuvo solo totales lifetime; `0/4` snapshots exactos fueron escritos y `HB-003`, `HB-004` y `HB-005` siguen abiertos. | P0 |
 | Calendario 17–30 | Los 74 slots están completos y programados; falta que se publiquen y extraer métricas. El movimiento de los 46 archivos del manifiesto ya está verificado en `08 Agosto`. | P1 |
 | Fuente maestra | `Content_Inventory.csv` tiene 39 filas y no contiene coincidencias textuales directas para las 71 referencias `260####` distintas del calendario 17–30; falta reconciliación progresiva sin inventar CNT. | P1 |
 | Comunidad | Ledger con 18 comentarios reales y 5 respuestas publicadas; los deltas incrementales no produjeron comentarios cualitativos y la revisión puntual fue respondida con ID Meta real. La verificación GET posterior devolvió 403 por permisos. | P2 |
@@ -75,7 +75,7 @@ La calificación es una herramienta de diagnóstico CGO, no una métrica oficial
 | Inventario, Drive y reuse | Ámbar | 6/10 | Drive ya muestra 46 de 46 archivos del manifiesto en `08 Agosto`, sin copias ni IDs restantes en origen; el inventario de 39 filas todavía no cubre las referencias de asset del calendario 17–30. |
 | Publicación Facebook | Verde | 9/10 | Meta devuelve 74/74 posts del calendario 17–30 programados y verificados, además de 2 posts programados previos; la ruta Page Access Token + Page Feed está validada. |
 | Publicación Instagram | Ámbar | 7/10 | La API, la cuenta y los permisos responden; la programación nativa no está disponible. Las dos republicaciones autorizadas fueron publicadas mediante `media → FINISHED → media_publish`; la ruta sigue siendo manual y selectiva. |
-| Métricas y ciclo de aprendizaje | Rojo | 5/10 | El `ExperimentLog` y la tarea de revisión existen, pero las columnas 24/72h del lote activo siguen vacías y `HB-003`, `HB-004` y `HB-005` siguen abiertos; el P2 de baseline depende de este cierre P0. |
+| Métricas y ciclo de aprendizaje | Rojo | 5/10 | El extractor y el `ExperimentLog` existen; Meta solo devolvió lifetime para 4 ventanas 24h elegibles, por lo que `0/4` snapshots exactos fueron escritos y las hipótesis siguen abiertas. |
 | Comunidad y comentarios | Ámbar | 7/10 | Ya existe conversación orgánica, ledger operativo y flujo de aprobación humana; la historia personal fue respondida con aprobación explícita y su ID Meta quedó registrado. |
 | Documentación y fuente única de verdad | Ámbar | 6/10 | GitHub es la fuente oficial, hay enlaces internos válidos, los documentos de control ya no presentan Make como ruta activa y permanece deuda de metadatos en documentos históricos. |
 
@@ -111,7 +111,7 @@ La evidencia de Fernando —personas que expresan “por eso amamos la página�
 
 ### 5.1 El ciclo de aprendizaje no está cerrado
 
-`GrowthOS/Integracion_Growth_OS.md` contiene HB-001 a HB-005 y el `ExperimentLog` ya registra seis observaciones históricas, nueve publicaciones de Facebook y una publicación manual de Instagram. La brecha actual es completar las métricas 24/72 horas, enlazar los resultados con una definición consistente de interacción, cerrar el veredicto de cada hipótesis y actualizar la baseline posterior al 5 de agosto.
+`GrowthOS/Integracion_Growth_OS.md` contiene HB-001 a HB-005 y el `ExperimentLog` ya registra las nueve publicaciones de Facebook del lote 15–16, las publicaciones activas de Instagram y sus filas históricas excluidas. La revisión P0 añadió evidencia lifetime para cuatro ventanas 24h, pero no snapshots exactos; la brecha actual sigue siendo completar métricas 24/72 horas, enlazar los resultados con una definición consistente de interacción, cerrar el veredicto de cada hipótesis y actualizar la baseline posterior al 5 de agosto.
 
 Esta sigue siendo la brecha más importante del Growth OS. La memoria operativa ya existe, pero todavía no ha convertido el lote reconciliado en aprendizaje accionable. Una revisión cada dos días es adecuada para reducir llamadas repetidas, siempre que cada ejecución seleccione solo las filas que ya alcanzaron exactamente 24 o 72 horas y no intente reconstruir retrospectivamente una medición puntual con un total acumulado [6].
 
@@ -171,7 +171,7 @@ La deuda no debe resolverse reescribiendo todo de una vez. Conviene normalizar p
 | Programación Facebook | Page Access Token + Page Feed | Integrada | 74/74 posts del calendario 17–30 programados y verificados; aún no publicados. |
 | Publicación Instagram | Media → verify → media_publish | Integrada para publicación manual | API viva; no native scheduling; dos republicaciones autorizadas confirmadas con `FINISHED → media_publish`; el scheduler histórico no es una ruta permanente. |
 | Archivado Drive | Movimiento mensual sin copias | Integrada para 15–16 | Falta una vista maestra que conecte archivo, publicación y experimento. |
-| Métricas | Baseline Windsor/archivos históricos + Graph API | Desincronizada | Baseline histórica conservada; `ExperimentLog` ya creado, pero las 9 filas activas de Facebook tienen 0/9 snapshots 24h y 0/9 snapshots 72h. |
+| Métricas | Baseline Windsor/archivos históricos + Graph API | Desincronizada | Baseline histórica conservada; la revisión P0 evaluó 4 ventanas 24h y obtuvo lifetime únicamente. Las 9 filas activas de Facebook siguen con 0/9 snapshots 24h y 0/9 snapshots 72h exactos. |
 | Comunidad | Ledger incremental + aprobación humana | Parcial | El ledger ya contiene 18 comentarios y 5 respuestas reales; los dos primeros deltas y la revisión puntual fueron registrados. La verificación de la última respuesta quedó limitada por HTTP 403. |
 | Aprendizaje | HypothesisBank HB-001–HB-005 | Incompleto | Hay hipótesis y ExperimentLog, pero no veredictos recientes ni cierre de métricas. |
 
@@ -181,7 +181,7 @@ La deuda no debe resolverse reescribiendo todo de una vez. Conviene normalizar p
 |---|---|---:|---:|---|
 | P1 controlado | El scheduler de Instagram está limpio y pausado; dos publicaciones fueron ejecutadas manualmente con aprobación excepcional y quedaron registradas. | Baja | Bajo | No reactivar la tarea histórica; conservar publicación manual selectiva y documentar cualquier excepción de republicación. |
 | P2 diferido | CNT-004 conserva contradicciones narrativas sustantivas, pero Fernando decidió no desarrollarlo por ahora. | Baja | Medio | Mantenerlo fuera de producción y de programación; si se retoma, revisar texto fuente y solicitar aprobación canónica. |
-| P0 | El ciclo de aprendizaje sigue abierto, pero la tarea de revisión ya está activa; todavía no hay métricas 24/72 horas ni veredictos cerrados para el lote 15–16. | Alta | Alto | Esperar la ejecución de 22:15, validar la evidencia, cerrar `HB-003`/`HB-004`/`HB-005` y actualizar la baseline. |
+| P0 | El ciclo de aprendizaje sigue abierto: la revisión del 17 de agosto evaluó cuatro ventanas 24h, pero Meta devolvió lifetime y no snapshots exactos. | Alta | Alto | Esperar una extracción que produzca ventanas válidas, no sustituirlas con lifetime, cerrar `HB-003`/`HB-004`/`HB-005` y actualizar la baseline. |
 | P1 | Calendarios e inventarios usan estados, IDs y estructuras no uniformes. | Alta | Alto | Esquema maestro con ID de pieza, asset, plataforma, estado de canon, estado de publicación e IDs Meta. |
 | P1 | El experimento 17–30 tiene 46 assets nuevas sin generar/aprobar y 38 assets nuevos de Drive pendientes de revisión. | Alta | Alto | Confirmar capacidad, producir y aprobar la cola; no rellenar huecos con reuse improvisado. |
 | P2 controlado | Permanecen menciones históricas de automatizaciones heredadas en changelog, archivo, auditorías antiguas y algunos blueprints. | Baja | Bajo | Control verificado: conservarlas como trazabilidad; no tratarlas como arquitectura activa. |

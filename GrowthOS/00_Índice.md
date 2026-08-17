@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-17
-**Versión:** 5.8
+**Versión:** 5.9
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -46,12 +46,13 @@
 | [Delta P2 de comunidad — 17 de agosto](../Operations/Research/2026-08-17_P2_Comunidad_Delta_02.json) | Evidencia anonimizada de 1 publicación, 2 comentarios nuevos, 0 respuestas requeridas y 0 escrituras en Meta. | Active |
 | [Revisión puntual comentario 3290357934484526](../Operations/Research/2026-08-17_Comentario_3290357934484526_Revision.json) | Historia personal respondida con aprobación explícita; Meta devolvió el ID `122148874563072582_1613678620282915` y la verificación GET posterior devolvió 403 por permisos. | Active |
 | [Preparación P2 de baseline — lote 15–16](../Operations/Research/2026-08-16_P2_Baseline_Preparacion_01.json) | Control estructurado: 12 observaciones, 9 Facebook activas, 0/9 snapshots 24h y 0/9 snapshots 72h; no se actualizó la baseline. | Active |
+| [Extracción P0 de métricas — 17 de agosto](../Operations/Research/2026-08-17_Metricas_24_72_Extraccion_02.json) | Cuatro ventanas 24h elegibles consultadas; Meta devolvió lifetime únicamente, 0/4 snapshots exactos escritos y 0 cambios numéricos en la baseline. | Active |
 | [Resultado preflight Instagram 2608060](../Operations/Research/2026-08-16_Instagram_2608060_Prueba_Resultado.json) | Prueba detenida antes de Meta porque la fila ya tenía `IG_Media_ID` y `Eliminada_Manualmente`; no hubo publicación ni reintento. | Active |
 | [Republicación Instagram 2608036/2608060 — 16 de agosto](../Operations/Research/2026-08-17_Instagram_Republicacion_2608036_2608060.json) | Evidencia de dos republicaciones autorizadas, con `FINISHED`, media IDs, permalinks y sin uso de programación nativa. | Active |
 | [Deuda documental P2](../Operations/Research/2026-08-15_Deuda_Documental_P2.md) | Cola de deuda documental y P2 activos; CNT-004 queda diferido y no forma parte del trabajo operativo actual. Make queda solo como trazabilidad. | Active |
 | [Reconciliación de inventario — lote 1](../Operations/Research/2026-08-15_Reconciliacion_Lote_01_Preview.md) | Snapshot histórico de 30 registros y cuatro excepciones; superseded por la clasificación vigente canon/reconciliación. | Superseded |
 | [Auditoría del Growth OS — 14 de agosto](../Operations/Research/2026-08-14_Auditoria_Growth_OS.md) | Evalúa la programación modificada, las integraciones, la automatización y el ciclo de aprendizaje. | Superseded |
-| [Auditoría general del Growth OS — 16 de agosto](../Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md) | Estado actualizado: Facebook 74/74 programado, Drive 46/46 movido y verificado, CNT-004 diferido, P2 documentados y dos republicaciones Instagram confirmadas. | Review |
+| [Auditoría general del Growth OS — 16 de agosto](../Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md) | Estado actualizado: Facebook 74/74 programado, Drive 46/46 movido y verificado, CNT-004 diferido, P2 documentados, Instagram confirmado y P0 de métricas ejecutado sin snapshots exactos. | Review |
 | [Ciclo de Aprendizaje de Horarios — 14 de agosto](../Operations/Research/2026-08-14_Ciclo_Aprendizaje_Horarios.md) | Reconstruye la hipótesis y la evidencia detrás del cambio de horarios. | Review |
 | [Comparativo Junio–Julio–Agosto — 14 de agosto](../Operations/Research/2026-08-14_Comparativo_Desempeno_Junio_Julio_Agosto.md) | Determina si la caída de agosto proviene de frecuencia, reuse, horarios o mezcla editorial. | Review |
 | [Diseño de Prueba de Calendario — 2 semanas](../Operations/Research/2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md) | Protocolo para controlar frecuencia, contenido nuevo/reuse y franjas horarias. | Review |

@@ -4,9 +4,18 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 1.98
+**Versión:** 1.99
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.99] — 2026-08-17 (Manus)
+### Revisión P0 de métricas 24/72h
+- El extractor oficial evaluó nueve publicaciones de Facebook del lote 15–16 en un solo lote; cuatro (`CNT-031`–`CNT-034`) ya tenían ventana 24h elegible y cinco aún no.
+- Meta respondió HTTP 200, pero devolvió únicamente totales lifetime. Se conservaron como evidencia, no se escribieron en `Interacciones_24h` ni `Interacciones_72h` y no se cerraron `HB-003`, `HB-004` ni `HB-005`.
+- Resultado: `4/9` ventanas 24h elegibles, `0/4` snapshots exactos, `0` escrituras métricas. Instagram no fue tocado y no se publicó contenido.
+- Se actualizaron la baseline v1.4, la auditoría v1.9, el índice v5.9 y la evidencia `Operations/Research/2026-08-17_Metricas_24_72_Extraccion_02.json`.
 
 ---
 
