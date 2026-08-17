@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-08-17",
+  "drive": {
+    "folder_name": "06 Junio",
+    "folder_id": "1Yihb7b3K3cRYOziDp_DbBJsNeyiB3S0y",
+    "image_files_direct": 196,
+    "top_subfolder_id": "16P130zWhuFn4ejzkr6VlX9GFA_Ule83k",
+    "top_children": 1,
+    "top_child": {
+      "name": "Captura de pantalla 2026-08-10 172914.png",
+      "drive_id": "1BFDYWLnwCHOUsQjS4v95lUGSPWggrd_f",
+      "type": "screenshot"
+    }
+  },
+  "meta_live": {
+    "status": "blocked",
+    "error_code": 10,
+    "reason": "pages_read_engagement or Page Public Content Access required",
+    "post_dates_confirmed_via_graph": 0
+  },
+  "top_match": {
+    "caption": "✨✨✨",
+    "visible_date": "2026-06-07",
+    "page_post_id": "1036844829507460_122127939543072582",
+    "dataset_local_datetime": "2026-06-07T18:43:18-06:00",
+    "dataset_metrics": {
+      "reactions": 25,
+      "comments": 1,
+      "shares": 6,
+      "interactions": 32
+    },
+    "screenshot_metrics_approx": {
+      "reactions": 4400,
+      "comments": 143,
+      "shares": 1400
+    },
+    "asset_filename": null,
+    "drive_id": null,
+    "already_integrated_individual": false,
+    "classification": "Meta_and_date_strong_match_asset_pending"
+  },
+  "already_integrated_june_posts": 5,
+  "new_cnt_created": 0,
+  "notes": [
+    "Top capture is visual evidence, not an original asset.",
+    "Historical dataset and screenshot metrics are different snapshots and must not be merged.",
+    "No Drive files were moved or copied.",
+    "No operational ledgers or Content_Inventory rows were modified."
+  ]
+}
