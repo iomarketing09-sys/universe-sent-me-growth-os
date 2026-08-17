@@ -4,9 +4,17 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 1.97
+**Versión:** 1.98
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+---
+
+## [1.2.98] — 2026-08-17 (Manus)
+### Publicación de respuesta aprobada en comentario comunitario
+- Fernando aprobó la respuesta `Eso ya no fue una relación, fue una temporada completa de drama con trámites incluidos. Ojalá la estabilidad te encuentre antes que la próxima cita. 😅` para el comentario `3290357934484526`.
+- Meta aceptó el POST con HTTP 200 y devolvió el ID real `122148874563072582_1613678620282915`. La verificación GET posterior devolvió HTTP 403 `Missing Permissions`; no se reintentó.
+- El ledger comunitario pasó a 5 respuestas publicadas y la evidencia `2026-08-17_Comentario_3290357934484526_Revision.json` quedó actualizada con el resultado real.
 
 ---
 

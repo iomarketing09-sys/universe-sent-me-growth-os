@@ -52,7 +52,7 @@ La auditoría original identificó varias brechas que ya fueron resueltas en el 
 | Aprendizaje | La revisión agrupada de métricas está documentada como activa cada 48h a las 22:15; faltan resultados válidos y cierre de `HB-003`, `HB-004` y `HB-005`. | P0 |
 | Calendario 17–30 | Los 74 slots están completos y programados; falta que se publiquen y extraer métricas. El movimiento de los 46 archivos del manifiesto ya está verificado en `08 Agosto`. | P1 |
 | Fuente maestra | `Content_Inventory.csv` tiene 39 filas y no contiene coincidencias textuales directas para las 71 referencias `260####` distintas del calendario 17–30; falta reconciliación progresiva sin inventar CNT. | P1 |
-| Comunidad | Ledger con 18 comentarios reales y 4 respuestas publicadas; los deltas incrementales no produjeron comentarios cualitativos, pero una revisión puntual detectó una `Historia_Personal` con respuesta candidata pendiente de aprobación. | P2 |
+| Comunidad | Ledger con 18 comentarios reales y 5 respuestas publicadas; los deltas incrementales no produjeron comentarios cualitativos y la revisión puntual fue respondida con ID Meta real. La verificación GET posterior devolvió 403 por permisos. | P2 |
 | Automatizaciones heredadas | Make permanece retirado; la tarea histórica de Instagram no debe convertirse en ruta permanente sin un playbook autocontenido y una prueba de no-op. | P1 |
 
 La aprobación explícita de Fernando autorizó excepcionalmente republicar `2608036` y `2608060` aunque sus intentos anteriores hubieran sido eliminados. Meta confirmó ambas nuevas publicaciones con `status_code=FINISHED` y `media_publish`: `2608036` → media `17891183814416135`, permalink https://www.instagram.com/p/DcHxuuWllRk/; `2608060` → media `17909839698449207`, permalink https://www.instagram.com/p/DcHxv5SlorV/. No se utilizó `scheduled_publish_time`, no se tocó Facebook, Drive ni el scheduler. La tarea independiente de métricas continúa documentada como activa según `ed663ee`, con identificador `egAl6a7WZExBrDPd8tIY1B`, cron `0 15 22 */2 * *`, zona `America/Matamoros` y un solo despertar por ejecución.
@@ -76,7 +76,7 @@ La calificación es una herramienta de diagnóstico CGO, no una métrica oficial
 | Publicación Facebook | Verde | 9/10 | Meta devuelve 74/74 posts del calendario 17–30 programados y verificados, además de 2 posts programados previos; la ruta Page Access Token + Page Feed está validada. |
 | Publicación Instagram | Ámbar | 7/10 | La API, la cuenta y los permisos responden; la programación nativa no está disponible. Las dos republicaciones autorizadas fueron publicadas mediante `media → FINISHED → media_publish`; la ruta sigue siendo manual y selectiva. |
 | Métricas y ciclo de aprendizaje | Rojo | 5/10 | El `ExperimentLog` y la tarea de revisión existen, pero las columnas 24/72h del lote activo siguen vacías y `HB-003`, `HB-004` y `HB-005` siguen abiertos; el P2 de baseline depende de este cierre P0. |
-| Comunidad y comentarios | Ámbar | 7/10 | Ya existe conversación orgánica, ledger operativo y flujo de aprobación humana; una revisión puntual detectó una historia personal y dejó una respuesta candidata pendiente de aprobación. |
+| Comunidad y comentarios | Ámbar | 7/10 | Ya existe conversación orgánica, ledger operativo y flujo de aprobación humana; la historia personal fue respondida con aprobación explícita y su ID Meta quedó registrado. |
 | Documentación y fuente única de verdad | Ámbar | 6/10 | GitHub es la fuente oficial, hay enlaces internos válidos, los documentos de control ya no presentan Make como ruta activa y permanece deuda de metadatos en documentos históricos. |
 
 **Madurez integral estimada: 6/10.** El sistema puede operar, pero todavía requiere intervención humana y reconciliación documental para evitar decisiones contradictorias.
@@ -172,7 +172,7 @@ La deuda no debe resolverse reescribiendo todo de una vez. Conviene normalizar p
 | Publicación Instagram | Media → verify → media_publish | Integrada para publicación manual | API viva; no native scheduling; dos republicaciones autorizadas confirmadas con `FINISHED → media_publish`; el scheduler histórico no es una ruta permanente. |
 | Archivado Drive | Movimiento mensual sin copias | Integrada para 15–16 | Falta una vista maestra que conecte archivo, publicación y experimento. |
 | Métricas | Baseline Windsor/archivos históricos + Graph API | Desincronizada | Baseline histórica conservada; `ExperimentLog` ya creado, pero las 9 filas activas de Facebook tienen 0/9 snapshots 24h y 0/9 snapshots 72h. |
-| Comunidad | Ledger incremental + aprobación humana | Parcial | El ledger ya contiene 18 comentarios; los dos primeros deltas fueron revisados y una historia personal quedó en revisión humana con respuesta candidata. |
+| Comunidad | Ledger incremental + aprobación humana | Parcial | El ledger ya contiene 18 comentarios y 5 respuestas reales; los dos primeros deltas y la revisión puntual fueron registrados. La verificación de la última respuesta quedó limitada por HTTP 403. |
 | Aprendizaje | HypothesisBank HB-001–HB-005 | Incompleto | Hay hipótesis y ExperimentLog, pero no veredictos recientes ni cierre de métricas. |
 
 ## 7. Riesgos priorizados
@@ -185,7 +185,7 @@ La deuda no debe resolverse reescribiendo todo de una vez. Conviene normalizar p
 | P1 | Calendarios e inventarios usan estados, IDs y estructuras no uniformes. | Alta | Alto | Esquema maestro con ID de pieza, asset, plataforma, estado de canon, estado de publicación e IDs Meta. |
 | P1 | El experimento 17–30 tiene 46 assets nuevas sin generar/aprobar y 38 assets nuevos de Drive pendientes de revisión. | Alta | Alto | Confirmar capacidad, producir y aprobar la cola; no rellenar huecos con reuse improvisado. |
 | P2 controlado | Permanecen menciones históricas de automatizaciones heredadas en changelog, archivo, auditorías antiguas y algunos blueprints. | Baja | Bajo | Control verificado: conservarlas como trazabilidad; no tratarlas como arquitectura activa. |
-| P2 | La comunidad tiene comentarios, assets de respuesta y un ledger operativo; las cuatro respuestas del primer lote están publicadas con IDs Meta y una revisión puntual dejó una historia personal pendiente de aprobación. | Baja | Bajo | Mantener la tabla anonimizada, revisar la respuesta candidata con Fernando y ejecutar la siguiente ventana solo sobre comentarios posteriores al cursor vigente. |
+| P2 | La comunidad tiene comentarios, assets de respuesta y un ledger operativo; las cinco respuestas publicadas tienen IDs Meta y la última verificación GET devolvió HTTP 403 por permisos. | Baja | Bajo | Mantener la tabla anonimizada, conservar el ID real de respuesta y ejecutar la siguiente ventana solo sobre comentarios posteriores al cursor vigente. |
 | P2 | La medición de Instagram y Facebook no está consolidada en una baseline común actualizada; el control del 16 de agosto confirmó 0/9 snapshots 24h y 0/9 snapshots 72h para Facebook activo. | Media | Medio | Actualizar baseline después del lote 15–16 y separar métricas de canal, sin escribir valores prematuros. |
 
 ## 8. Plan CGO recomendado

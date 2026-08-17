@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-17
-**Versión:** 5.7
+**Versión:** 5.8
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -41,10 +41,10 @@
 | [Publication Log](../Operations/Research/2026-08-15_Publication_Log.csv) | Ledger append-only con 85 hechos de Facebook, 3 publicaciones activas de Instagram y 3 intentos históricos de Instagram eliminados manualmente. | Active |
 | [ExperimentLog](../Operations/Research/2026-08-15_ExperimentLog.csv) | Observaciones históricas, 89 registros de Facebook pendientes de métricas 24/72 horas, 3 publicaciones activas de Instagram y 3 filas históricas de Instagram excluidas del aprendizaje. | Active |
 | [Community Engagement Log](../Operations/Research/2026-08-15_Community_Engagement_Log.md) | Esquema y flujo para registrar comentarios reales, respuestas humanas y señales cualitativas sin identidades personales. | Active |
-| [Community Engagement Log — datos](../Operations/Research/2026-08-15_Community_Engagement_Log.csv) | Ledger append-only de comunidad; 18 comentarios reales registrados, 4 respuestas aprobadas/publicadas con IDs Meta y una historia personal pendiente de aprobación. | Active |
+| [Community Engagement Log — datos](../Operations/Research/2026-08-15_Community_Engagement_Log.csv) | Ledger append-only de comunidad; 18 comentarios reales registrados y 5 respuestas publicadas con IDs Meta. La última verificación GET devolvió 403 por permisos. | Active |
 | [Delta P2 de comunidad — 16 de agosto](../Operations/Research/2026-08-16_P2_Comunidad_Delta_01.json) | Evidencia anonimizada de 3 publicaciones, 6 comentarios nuevos, 0 respuestas requeridas y 0 escrituras en Meta. | Active |
 | [Delta P2 de comunidad — 17 de agosto](../Operations/Research/2026-08-17_P2_Comunidad_Delta_02.json) | Evidencia anonimizada de 1 publicación, 2 comentarios nuevos, 0 respuestas requeridas y 0 escrituras en Meta. | Active |
-| [Revisión puntual comentario 3290357934484526](../Operations/Research/2026-08-17_Comentario_3290357934484526_Revision.json) | Historia personal localizada en una publicación específica; respuesta candidata empática pendiente de aprobación, sin escritura en Meta. | Review |
+| [Revisión puntual comentario 3290357934484526](../Operations/Research/2026-08-17_Comentario_3290357934484526_Revision.json) | Historia personal respondida con aprobación explícita; Meta devolvió el ID `122148874563072582_1613678620282915` y la verificación GET posterior devolvió 403 por permisos. | Active |
 | [Preparación P2 de baseline — lote 15–16](../Operations/Research/2026-08-16_P2_Baseline_Preparacion_01.json) | Control estructurado: 12 observaciones, 9 Facebook activas, 0/9 snapshots 24h y 0/9 snapshots 72h; no se actualizó la baseline. | Active |
 | [Resultado preflight Instagram 2608060](../Operations/Research/2026-08-16_Instagram_2608060_Prueba_Resultado.json) | Prueba detenida antes de Meta porque la fila ya tenía `IG_Media_ID` y `Eliminada_Manualmente`; no hubo publicación ni reintento. | Active |
 | [Republicación Instagram 2608036/2608060 — 16 de agosto](../Operations/Research/2026-08-17_Instagram_Republicacion_2608036_2608060.json) | Evidencia de dos republicaciones autorizadas, con `FINISHED`, media IDs, permalinks y sin uso de programación nativa. | Active |

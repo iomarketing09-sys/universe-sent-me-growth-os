@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-17
-version: "1.5"
+version: "1.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -92,7 +92,7 @@ La cobertura de respuesta cualitativa para este delta es `not_applicable`. La si
 
 ## 10. Revisión puntual — comentario 3290357934484526
 
-La publicación `1036844829507460_122148874371072582` fue revisada puntualmente después de recibir un enlace directo. Meta devolvió diez comentarios actuales; nueve ya estaban en el ledger y uno no estaba registrado: el comentario `3290357934484526`, clasificado como `Historia_Personal`. El comentario mezcla humor autobiográfico con un relato de conflicto relacional y problemas legales. Se preparó una respuesta candidata empática con humor ligero, pero permanece `Pendiente_Fernando`; no se discutieron los hechos, no se ofreció consejo legal o médico y no se escribió en Meta.
+La publicación `1036844829507460_122148874371072582` fue revisada puntualmente después de recibir un enlace directo. Meta devolvió diez comentarios actuales; nueve ya estaban en el ledger y uno no estaba registrado: el comentario `3290357934484526`, clasificado como `Historia_Personal`. El comentario mezcla humor autobiográfico con un relato de conflicto relacional y problemas legales. Fernando aprobó la respuesta candidata empática con humor ligero y Meta aceptó el POST con HTTP 200, devolviendo el ID de respuesta `122148874563072582_1613678620282915`. La verificación GET posterior devolvió HTTP 403 `Missing Permissions`; no se reintentó y el ledger conserva el hecho real de publicación.
 
 La evidencia anonimizada queda en `2026-08-17_Comentario_3290357934484526_Revision.json`. Esta revisión puntual no modifica el cursor global de deltas; la siguiente consulta incremental debe continuar después de `2026-08-17T01:48:41Z`.
 

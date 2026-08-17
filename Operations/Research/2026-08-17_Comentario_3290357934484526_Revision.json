@@ -1,10 +1,10 @@
 {
   "title": "Revisión puntual del comentario 3290357934484526",
   "purpose": "Registrar un comentario personal localizado en una revisión específica de la publicación y dejar una respuesta candidata bajo aprobación humana.",
-  "status": "Review",
+  "status": "Active",
   "created": "2026-08-17",
   "updated": "2026-08-17",
-  "version": "1.0",
+  "version": "1.1",
   "author": "Manus AI",
   "related_documents": [
     "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
@@ -20,9 +20,15 @@
   "created_time": "2026-08-16T17:42:58+0000",
   "classification": "Historia_Personal",
   "risk_note": "Historia personal con referencia a problemas legales y malestar emocional; no discutir hechos, no diagnosticar y no convertir el comentario en consejo legal o médico.",
-  "response_status": "Pendiente_Respuesta",
-  "approval_status": "Pendiente_Fernando",
+  "response_status": "Respondido",
+  "approval_status": "Aprobada",
   "response_candidate": "Eso ya no fue una relación, fue una temporada completa de drama con trámites incluidos. Ojalá la estabilidad te encuentre antes que la próxima cita. 😅",
-  "meta_write_performed": false,
+  "meta_write_performed": true,
+  "reply_id": "122148874563072582_1613678620282915",
+  "published_at": "2026-08-17T03:33:49.322694+00:00",
+  "post_http_status": 200,
+  "verification_http_status": 403,
+  "verification_error": "(#200) Missing Permissions",
+  "retries": 0,
   "ledger_row_added": 1
 }
