@@ -3,8 +3,8 @@ title: "Reporte final de recopilación histórica de junio"
 purpose: "Consolidar los assets publicados, sus objetos multimedia de Facebook, publicaciones editoriales, métricas lifetime y aprendizajes documentados para alimentar la Biblia y el Growth OS."
 status: "Review"
 created: 2026-08-17
-updated: 2026-08-17
-version: "1.1"
+updated: 2026-08-18
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-17_Revision_Excel_Assets_Junio.md"
@@ -95,9 +95,26 @@ Junio queda ampliamente integrado a nivel histórico individual: `Historical_Per
 | Seleccionar reuse histórico | Puede hacerse con los assets confirmados de mayor difusión y distancia de 30 días | P1 operativo cuando se abra una cola reuse |
 | Reconstruir ventanas 24/72h históricas | No posible de forma exacta con los datos actuales; conservar lifetime como histórico | No ejecutar |
 
+## Auditoría de estado posterior a la aprobación de CNT
+
+Los seis candidatos aprobados ya fueron integrados como `CNT-080`–`CNT-085` y quedaron en `Reuse_Candidate`. Esto es una integración de inventario histórico, no una decisión de calendario. La prueba activa de agosto continúa sin cambios hasta el 30 de agosto.
+
+| Capa | Estado al 18 de agosto | Pendiente real |
+|---|---|---|
+| Publicaciones individuales | 177 filas de junio; 172 Meta IDs únicos | No falta integración básica de publicaciones confirmadas |
+| Assets de Drive | 196 assets indexados; 172 relaciones publicación→asset confirmadas | Resolver 17 registros sin `Asset_Ref` utilizable y 58 casos de cola sin match si se busca cobertura completa |
+| CNT prioritarios | `CNT-080`–`CNT-085` creados | No crear más CNT hasta seleccionar otro lote útil |
+| Taxonomía visual | 17 assets revisados; seis enriquecidos como CNT | Ampliar solo a lotes con valor analítico o de reuse |
+| Comentarios | 72 comentarios extraídos de cinco posts prioritarios | Hacer análisis cualitativo profundo solo si aporta decisiones de comunidad |
+| Reuse | Cola de seis CNT preparada | No programar durante la prueba activa; reevaluar después del 30 de agosto |
+| Lifetime histórico | Integrado y separado | No reconstruir ventanas históricas 24/72h |
+| Canon | Sin cambios | No convertir rendimiento en reglas canónicas automáticamente |
+
 ## Estado
 
-Junio queda **recopilado y relacionado**, pero no completamente cerrado como análisis estratégico. Lo importante que falta no es volver a buscar los 172 cruces ya confirmados, sino decidir qué subconjunto merece enriquecimiento editorial, lectura de comentarios, creación de CNT o incorporación a la cola de reuse. Los 17 registros sin Asset_Ref y los 58 posts restantes de la cola son reservas separadas y no deben mezclarse con la capa individual ya confirmada.
+Junio queda **integrado a nivel suficiente para el Growth OS**. Lo pendiente se divide en dos reservas: una reserva de reconciliación —17 registros sin `Asset_Ref` utilizable y 58 casos sin match— y una reserva analítica —taxonomía, comentarios y selección adicional de reuse—. Ninguna bloquea la prueba activa de agosto.
+
+La recomendación CGO es congelar la programación de estos seis CNT hasta el cierre del experimento del 30 de agosto. Después se podrá comparar su evidencia histórica con el veredicto P0 y decidir si alguno merece una nueva prueba controlada.
 
 ## Referencias
 
