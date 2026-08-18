@@ -1,0 +1,2 @@
+Campaign_ID,Link_ID,ML_Tag,Snapshot_Date_Local,Clicks,Gross_Sales,Approved_Sales,Units_Sold,Revenue_MXN,Commission_MXN,Confirmed_Commission_MXN,Conversion_Rate,Status,Source,Notes
+USM-HIST-FB-202608,ML-FB-2026-08-04_18,Links de facebook - universesentme,2026-08-19,3,2,,2,322.65,28.84,,66.67%,Historical_Aggregate_No_Link_Granularity,Mercado Libre Metrics,"Aggregate historical signal; not attributable to a specific Facebook post or product; sales in review"

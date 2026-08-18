@@ -4,7 +4,7 @@ purpose: "Definir una configuración reproducible para atribuir enlaces, clics, 
 status: "Review"
 created: 2026-08-19
 updated: 2026-08-19
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/11_00_Estrategia_Monetizacion_MercadoLibre.md"
@@ -90,7 +90,11 @@ El archivo `Operations/Research/Affiliate_Link_Ledger.csv` debe conservar una fi
 
 Los campos mínimos son:
 
-`Link_ID`, `ML_Link_or_ID`, `ML_Tag`, `Platform`, `Surface`, `Content_ID`, `Meta_Post_ID`, `Reel_ID`, `Character`, `Product_ID`, `Product_Title`, `CTA`, `Created_Local`, `Published_Local`, `Status`, `Clicks`, `Gross_Sales`, `Approved_Sales`, `Units_Sold`, `Revenue_MXN`, `Commission_MXN`, `Confirmed_Commission_MXN`, `Last_Click_At`, `Metrics_Cutoff_Local`, `Source`, `Notes`.
+`Campaign_ID`, `Link_ID`, `ML_Link_or_ID`, `ML_Tag`, `Platform`, `Surface`, `Content_ID`, `Meta_Post_ID`, `Reel_ID`, `Character`, `Product_Key`, `Product_ID`, `Product_Title`, `Product_URL`, `CTA`, `Created_Local`, `Published_Local`, `Approval_Status`, `Publication_Status`, `Status`, `Clicks`, `Gross_Sales`, `Approved_Sales`, `Units_Sold`, `Revenue_MXN`, `Commission_MXN`, `Confirmed_Commission_MXN`, `Last_Click_At`, `Metrics_Cutoff_Local`, `Source`, `Notes`.
+
+La identidad del link se conserva en `Affiliate_Link_Ledger.csv`, una fila por link. La evolución de sus métricas se registra en `Affiliate_Metrics_Snapshots.csv`, una fila por link y fecha de corte. Nunca se reemplaza un snapshot anterior.
+
+Cada etiqueta debe corresponder a una sola combinación `Campaign_ID + Content_ID + Product_Key + Surface`. Si el producto aparece en el copy y en un comentario, se crean links y etiquetas distintas. El nombre agregado `Links de facebook - universesentme` se conserva solo como evidencia histórica y no se reutiliza para nuevas campañas.
 
 ## Reglas de control
 
@@ -107,6 +111,10 @@ Si los clics son cero, el valor debe quedar vacío y no ser `0%`. El RPM afiliad
 `Affiliate_RPM = Confirmed_Commission_MXN / (Clicks / 1000)`
 
 y solo se calculará cuando haya comisión confirmada y clics registrados.
+
+## Piloto Facebook 18–30 de agosto
+
+El piloto recomendado para la ola del 18–30 está documentado en `Operations/Production/2026-08-19_Piloto_Afiliados_Facebook_18_30_Agosto.md`. Debe limitarse a cuatro-seis publicaciones, mantener sin cambios la frecuencia y el calendario P0, y utilizar como máximo un producto y un link por publicación. La primera variante recomendada es `POST_COMMENT`, con aprobación humana antes de publicar.
 
 ## Primer piloto recomendado
 
