@@ -3,8 +3,8 @@ title: "Auditoría de comentarios de Facebook y propuesta de Community Growth"
 purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y definir un sistema de escucha, respuesta y aprendizaje para Universe Sent Me."
 status: Active
 created: 2026-08-15
-updated: 2026-08-15
-version: "1.5"
+updated: 2026-08-18
+version: "1.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -152,6 +152,44 @@ La actualización de este documento requiere mantener sincronizados los siguient
 | `Operations/Research/2026-08-15_Community_Engagement_Log.csv` | Poblar únicamente con comentarios reales, deduplicados por `Comentario_ID` y sin identidades personales. |
 
 ## 10. Análisis real de los 67 comentarios
+
+## 11. Revisión independiente del corte 15–18 de agosto de 2026
+
+La revisión independiente se ejecutó en modo lectura mediante Meta Graph API v26 usando el token de página derivado de la cuenta autenticada. Se consultaron las publicaciones propias del 15 al 18 de agosto y sus comentarios visibles. No se publicaron respuestas, no se eliminaron comentarios y no se modificó ninguna publicación.
+
+### 11.1 Veredicto operativo
+
+La comunidad está activa, pero la bandeja actual no exige responder todo. En el corte recuperado aparecen comentarios automáticos de `@seguidores`/`@fansdestacados`, comentarios vacíos, conversaciones entre usuarios y tres oportunidades cualitativas que todavía pueden recibir una respuesta de marca. La extracción anidada confirmó que Fernando ya respondió otros comentarios que inicialmente parecían pendientes. La prioridad correcta es responder pocos comentarios con contexto, no convertir cada interacción en una obligación.
+
+| Grupo | Resultado | Acción CGO |
+|---|---:|---|
+| Oportunidades cualitativas con respuesta recomendable | 3 | Proponer respuesta individual y esperar aprobación |
+| Comentarios de baja señal o reacción breve | 5 | No responder por ahora |
+| Conversaciones entre usuarios | 3 | No interrumpir |
+| Comentarios automáticos o vacíos | 16 aprox. | No responder |
+| Comentario sexualizado de doble sentido | 2 | Ya hubo respuesta de la página; no añadir más por ahora |
+
+### 11.2 Bandeja priorizada para aprobación
+
+| Comentario_ID | Post_ID | Comentario | Lectura | Respuesta propuesta | Prioridad |
+|---|---|---|---|---|---|
+| `122151374157072582_2093067344913171` | `1036844829507460_122151374157072582` | “Pos' mentira no es... 🤭” | Identificación y complicidad con el remate | “La verdad siempre encuentra la forma de filtrarse. 🤭” | Media |
+| `122151374157072582_1577015310481547` | `1036844829507460_122151374157072582` | “Soy!!!” | Identificación directa, oportunidad de vínculo | “Lo sospechábamos, pero gracias por confirmar. 😌” | Media |
+| `122151373833072582_1715141313071482` | `1036844829507460_122151373833072582` | “Chismoso no, comunicativo… el arte de intercambiar opiniones con otra persona mientras le desnudas la vida a otra…” | Remate elaborado y alineado con humor de Elara | “Eso no es chisme, es investigación de campo con excelente memoria. 🔥” | Alta |
+
+### 11.3 Respuestas ya detectadas y comentarios que recomiendo no responder
+
+La extracción anidada confirmó que Fernando ya respondió, entre otros, a `122151374019072582_1383723233734212` (“Mmmm, pensé que era otra cosa”), `122151373761072582_28448852694801495` (“No sólo te enamoras de personas…”), `122150559765072582_4076353235990843` (“Mi elfa hermosa”), el hilo sexualizado de `122150560383072582` y el hilo de “Jesús” de `122150559693072582`. No deben recibir una segunda respuesta de la página.
+
+
+El comentario `122151373953072582_2524226381333788` (“La verdad 🤷🏻”) es una reacción breve sin una apertura clara. Los comentarios `122150560383072582_1593968258808961` y `122150560383072582_2582437328879706` pertenecen al carril de humor sexualizado; no son una amenaza ni un ataque, pero responderlos puede mover la conversación hacia un tono más explícito. El hilo de `122150559693072582` sobre “Jesús” ya funciona como conversación entre seguidores; conviene no interrumpirlo con una respuesta institucional. Las menciones automáticas, comentarios vacíos y etiquetas de audiencia tampoco requieren respuesta.
+
+### 11.4 Aprendizaje provisional
+
+El corte confirma tres señales útiles para el Growth OS: los comentarios con mejor potencial de respuesta no son necesariamente los más largos, sino los que amplían el remate sin atacar a otra persona; las respuestas de personaje funcionan mejor cuando continúan el mundo de Universe Sent Me en vez de explicar el chiste; y las conversaciones entre seguidores deben preservarse como espacio comunitario, no competir con ellas mediante una respuesta de la página.
+
+La siguiente revisión debe comparar los seis comentarios priorizados con cualquier respuesta ya publicada por Fernando para evitar duplicar atención. Ninguna respuesta nueva debe publicarse sin aprobación explícita.
+
 
 La segunda extracción recuperó el texto de los 67 comentarios sin solicitar ni conservar nombres, PSID ni perfiles de comentaristas. La clasificación se hizo sobre el contenido visible y sobre el contexto de la publicación; por tanto, describe señales de conversación, no identidades ni datos demográficos.
 
