@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 2.25
+**Versión:** 2.26
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.26.00] — 2026-08-19 (Manus): Cierre de atribución histórica de afiliados de Facebook.** Se conserva la señal agregada `Links de facebook - universesentme` como evidencia de monetización del método: 3 clics, 2 unidades vendidas, $322.65 MXN en ventas brutas y $28.84 MXN de comisión estimada. Se cierra como `No determinable por falta de granularidad` la relación entre productos y publicaciones específicas; no se atribuyen las ventas al Reel de Elara. Las futuras publicaciones deben usar etiquetas separadas por producto y post. Documento: `Operations/Research/2026-08-19_MercadoLibre_Facebook_Afiliados_Observacion.md`.
 
 - **[2.25.00] — 2026-08-19 (Manus): Primera señal comercial verificable de afiliación en Facebook.** La Central de Afiliados de Mercado Libre muestra para el periodo 4–18 de agosto la etiqueta agregada `Links de facebook - universesentme`: 3 clics, 2 unidades vendidas, $322.65 MXN en ventas brutas y $28.84 MXN de comisión estimada. Ambas ventas están `En revisión`; el panel reporta una incidencia de datos para los días 16 y 17. La señal confirma actividad comercial de Facebook, pero no atribuye las ventas específicamente al Reel de Elara. Se documenta la observación y se recomienda separar etiquetas por publicación. Documento: `Operations/Research/2026-08-19_MercadoLibre_Facebook_Afiliados_Observacion.md`.
 

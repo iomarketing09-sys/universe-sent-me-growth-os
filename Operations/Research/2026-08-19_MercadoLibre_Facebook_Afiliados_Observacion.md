@@ -42,3 +42,7 @@ La segunda venta es compatible temáticamente con la lámpara de luna de Elara, 
 La vista no incluye Instagram ni se utilizará para analizar Instagram. La pestaña `Etiquetas de seguimiento` muestra una única etiqueta agregada: **`Links de facebook - universesentme`**. Para el periodo 4–18 de agosto, esa etiqueta registra 3 clics, 2 unidades vendidas, una tasa de conversión visible de 66.67% y un aumento estimado de $28.84 MXN. Por tanto, las dos ventas están atribuidas al conjunto de links de Facebook de Universe Sent Me, pero todavía no es posible atribuirlas específicamente al Reel de la lámpara de luna porque la etiqueta no distingue publicaciones.
 
 El panel presenta una incidencia de datos para los días 16 y 17 de agosto. El estado de las dos ventas es `En revisión`; deben tratarse como ventas estimadas, no como comisión confirmada. La evidencia disponible sí permite cerrar una primera conclusión: Facebook ya generó una señal afiliada observable durante el periodo, pero la granularidad actual de la etiqueta es insuficiente para medir el Reel de Elara de forma aislada.
+
+## Decisión de cierre histórico
+
+Se cierra la reconstrucción por publicación como **No determinable por falta de granularidad**. Se conserva únicamente la evidencia de que el método agregado de links de Facebook ya monetizó durante el periodo observado. No se atribuyen las ventas al Reel de la lámpara de luna, al reloj ni al proyector mediante inferencia. Las futuras publicaciones deberán utilizar etiquetas diferenciadas por producto y publicación antes de compartir el enlace.
