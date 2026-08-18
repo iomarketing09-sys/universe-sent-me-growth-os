@@ -54,6 +54,19 @@ Debe existir **un link etiquetado por unidad de decisión**. Si el mismo product
 
 ## Flujo operativo
 
+### Flujo preferido: adjuntar el producto desde Facebook
+
+Cuando Facebook permita agregar un producto afiliado desde el catálogo de Mercado Libre a una publicación ya publicada, ese flujo será la primera opción para el piloto. La publicación debe quedar identificada en el ledger antes de adjuntar el producto; después se registra el producto seleccionado, la fecha/hora de adjunción, la URL o ID que Facebook devuelva y una captura de confirmación. El enlace no se considera operativo hasta que la interfaz muestre que el producto quedó adjunto.
+
+Este flujo se registra con `Surface=FACEBOOK_NATIVE_PRODUCT` y requiere, cuando estén disponibles, `Native_Product_Attachment_ID`, `Native_Product_Attached_At`, `Native_Product_URL` y `Native_Product_Status`. Si Facebook no expone un ID propio, se conserva la URL de la publicación, el producto elegido, la etiqueta de Mercado Libre y la evidencia de pantalla.
+
+Como el producto puede agregarse después de publicar, `Published_Local` y `Native_Product_Attached_At` deben ser campos distintos. Nunca se debe tratar la fecha de publicación como fecha de inicio del tracking afiliado.
+
+### Flujo alternativo: link manual aprobado
+
+Si el catálogo nativo no está disponible, se puede usar un comentario o copy con el link generado en Mercado Libre, pero solo después de registrar la fila del ledger y obtener aprobación humana. La superficie será `POST_COMMENT` o `POST_COPY`, nunca `FACEBOOK_NATIVE_PRODUCT`.
+
+
 ### 1. Crear el link
 
 Desde la Central de Afiliados y Creadores, generar el link del producto y agregar la etiqueta correspondiente. Registrar inmediatamente el URL o ID generado en `Affiliate_Link_Ledger.csv`.
@@ -90,7 +103,7 @@ El archivo `Operations/Research/Affiliate_Link_Ledger.csv` debe conservar una fi
 
 Los campos mínimos son:
 
-`Campaign_ID`, `Link_ID`, `ML_Link_or_ID`, `ML_Tag`, `Platform`, `Surface`, `Content_ID`, `Meta_Post_ID`, `Reel_ID`, `Character`, `Product_Key`, `Product_ID`, `Product_Title`, `Product_URL`, `CTA`, `Created_Local`, `Published_Local`, `Approval_Status`, `Publication_Status`, `Status`, `Clicks`, `Gross_Sales`, `Approved_Sales`, `Units_Sold`, `Revenue_MXN`, `Commission_MXN`, `Confirmed_Commission_MXN`, `Last_Click_At`, `Metrics_Cutoff_Local`, `Source`, `Notes`.
+`Campaign_ID`, `Link_ID`, `ML_Link_or_ID`, `ML_Tag`, `Platform`, `Surface`, `Content_ID`, `Meta_Post_ID`, `Reel_ID`, `Character`, `Product_Key`, `Product_ID`, `Product_Title`, `Product_URL`, `Native_Product_Attachment_ID`, `Native_Product_Attached_At`, `Native_Product_Status`, `CTA`, `Created_Local`, `Published_Local`, `Approval_Status`, `Publication_Status`, `Status`, `Clicks`, `Gross_Sales`, `Approved_Sales`, `Units_Sold`, `Revenue_MXN`, `Commission_MXN`, `Confirmed_Commission_MXN`, `Last_Click_At`, `Metrics_Cutoff_Local`, `Source`, `Notes`.
 
 La identidad del link se conserva en `Affiliate_Link_Ledger.csv`, una fila por link. La evolución de sus métricas se registra en `Affiliate_Metrics_Snapshots.csv`, una fila por link y fecha de corte. Nunca se reemplaza un snapshot anterior.
 

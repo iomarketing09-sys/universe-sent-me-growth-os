@@ -21,7 +21,7 @@ organization: "Operations/Production"
 
 Sí conviene probar enlaces en algunas publicaciones del 18 al 30, porque ya existe una señal agregada de monetización de Facebook: 3 clics, 2 unidades vendidas y $28.84 MXN de comisión estimada durante el corte observado. Sin embargo, no conviene insertar enlaces en toda la ola. La prueba debe ser pequeña, editorialmente natural y separada del P0 de frecuencia, contenido nuevo/reuse y mediana de interacciones.
 
-La recomendación es seleccionar **entre cuatro y seis publicaciones**, con un máximo de un producto y un enlace por publicación. El resto de la ola funciona como grupo sin enlace; no es un grupo experimental perfecto, pero permite observar si el enlace aparece asociado a una caída inusual de interacciones o comentarios.
+La recomendación queda ajustada a **10 publicaciones**, con un máximo de un producto afiliado por publicación. El resto de la ola funciona como grupo sin enlace; no es un grupo experimental perfecto, pero permite observar si el enlace aparece asociado a una caída inusual de interacciones o comentarios.
 
 ## Criterios de selección
 
@@ -41,7 +41,7 @@ El piloto no debe cambiar el horario ni la frecuencia del calendario 18–30. Si
 
 ## Diseño de la prueba
 
-El identificador de campaña será `USM-AFF-FB-20260818-30-P01`. Cada publicación elegida tendrá un `Content_ID` interno, un `Meta_Post_ID` después de publicar, un producto de Mercado Libre y una etiqueta exclusiva.
+El identificador de campaña será `USM-AFF-FB-20260818-30-P01`. Cada una de las 10 publicaciones elegidas tendrá un `Content_ID` interno, un `Meta_Post_ID`, un producto de Mercado Libre, una etiqueta exclusiva y, si Facebook lo expone, un `Native_Product_Attachment_ID`.
 
 Para no volver a perder la granularidad, cada publicación debe usar **un link por producto y por post**. Si el link aparece en el copy, la superficie será `POST_COPY`; si aparece en un comentario aprobado, será `POST_COMMENT`. No se usará el mismo link en ambas superficies durante este primer piloto.
 
@@ -52,7 +52,9 @@ El piloto puede usar dos variantes, pero no deben mezclarse:
 | `POST_COMMENT` | Primera opción para mantener el copy principal limpio y continuar el humor en el comentario. |
 | `POST_COPY` | Solo cuando el producto es parte explícita del contenido o el CTA debe ser visible desde la publicación. |
 
-Para la primera ola recomiendo empezar con comentarios aprobados, uno por publicación, porque permiten mantener separados el remate editorial y el registro comercial. Esto no afirma que el comentario tenga mejor rendimiento; simplemente reduce el cambio visual en el contenido principal.
+La primera opción será utilizar el **flujo nativo de Facebook para agregar el producto afiliado a la publicación**, incluso cuando la publicación ya esté programada o publicada, siempre que la interfaz lo permita. Este método debe registrarse con la fecha/hora de adjunción y una evidencia de confirmación. El comentario o copy con link manual queda como alternativa de respaldo, no como opción principal.
+
+Si Facebook no permite el flujo nativo en una candidata, se podrá usar un comentario aprobado, uno por publicación, con etiqueta y link separados. Esto no afirma que el comentario tenga mejor rendimiento; simplemente conserva el remate editorial y ofrece una alternativa controlada.
 
 ## Nomenclatura
 
