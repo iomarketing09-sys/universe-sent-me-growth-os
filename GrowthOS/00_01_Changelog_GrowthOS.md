@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 2.24
+**Versión:** 2.25
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.25.00] — 2026-08-19 (Manus): Primera señal comercial verificable de afiliación en Facebook.** La Central de Afiliados de Mercado Libre muestra para el periodo 4–18 de agosto la etiqueta agregada `Links de facebook - universesentme`: 3 clics, 2 unidades vendidas, $322.65 MXN en ventas brutas y $28.84 MXN de comisión estimada. Ambas ventas están `En revisión`; el panel reporta una incidencia de datos para los días 16 y 17. La señal confirma actividad comercial de Facebook, pero no atribuye las ventas específicamente al Reel de Elara. Se documenta la observación y se recomienda separar etiquetas por publicación. Documento: `Operations/Research/2026-08-19_MercadoLibre_Facebook_Afiliados_Observacion.md`.
 
 - **[2.24.00] — 2026-08-19 (Manus): Auditoría separada de Reels y monetización.** Se recuperaron 12 Reels/videos de Meta con mediana actual de 19.5 interacciones; julio tuvo mediana 25.5 y agosto 17.0 en la muestra recuperada. Las consultas de Insights solicitadas para vistas y retención devolvieron HTTP 400 por métricas inválidas, por lo que Reels queda subinstrumentado y no se mezcla con P0. La monetización nativa de Facebook queda como `No verificada` porque Content Monetization es invite-only y Business Suite pidió inicio de sesión; la afiliación de Mercado Libre permanece como diseño activo sin clics, conversiones ni comisiones registradas. Documento: `Operations/Research/2026-08-19_Auditoria_Reels_y_Monetizacion.md`.
 

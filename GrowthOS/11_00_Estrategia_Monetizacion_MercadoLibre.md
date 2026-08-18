@@ -61,7 +61,9 @@ Se integrarán en el `08_00_Metricas_Baseline_Plataformas.md`:
 
 La estrategia conserva dos carriles separados: **monetización nativa de Meta**, todavía no verificada para la página, y **afiliación de Mercado Libre**, que puede probarse mediante links etiquetados. El procedimiento operativo, la nomenclatura de etiquetas y las reglas de conciliación están en `Operations/Production/2026-08-19_Playbook_Tracking_Afiliados_MercadoLibre.md`; los registros se almacenan en `Operations/Research/Affiliate_Link_Ledger.csv`.
 
-El primer piloto recomendado es el Reel de la lámpara de luna de Elara. Debe utilizar una etiqueta exclusiva para el Reel y otra para cualquier comentario aprobado que contenga el link. No se considerarán conversiones ni comisiones confirmadas hasta conciliar los reportes de Mercado Libre, respetar la ventana de atribución de 24 horas y distinguir ventas brutas de ventas aprobadas.
+El primer piloto recomendado es el Reel de la lámpara de luna de Elara. La primera observación del panel de Mercado Libre, para el periodo 4–18 de agosto, muestra una etiqueta agregada `Links de facebook - universesentme` con 3 clics, 2 unidades vendidas, $322.65 MXN en ventas brutas y $28.84 MXN de comisión estimada. Ambas ventas están `En revisión`, por lo que esta señal es comercialmente positiva pero todavía no es comisión confirmada ni atribución específica al Reel de Elara. El panel reporta además una incidencia de datos para los días 16 y 17 de agosto.
+
+El siguiente paso es reemplazar la etiqueta agregada por etiquetas separadas para cada nueva superficie de Facebook. El Reel de Elara y cualquier comentario aprobado deben usar identificadores distintos. No se considerarán conversiones ni comisiones confirmadas hasta conciliar los reportes de Mercado Libre, respetar la ventana de atribución de 24 horas y distinguir ventas brutas de ventas aprobadas. La evidencia está documentada en `Operations/Research/2026-08-19_MercadoLibre_Facebook_Afiliados_Observacion.md`.
 
 ## Historial de Versiones
 | Fecha | Versión | Cambio | Autor |
