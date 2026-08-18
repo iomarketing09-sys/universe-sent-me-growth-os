@@ -3,8 +3,8 @@
 **Propósito:** Definir el marco operativo para capitalizar la afiliación de Mercado Libre a través de contenido narrativo y la sección recurrente "¿Qué me llegó?".
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
-**Última actualización:** 2026-08-15
-**Versión:** 1.1
+**Última actualización:** 2026-08-19
+**Versión:** 1.2
 **Autor:** Manus AI (CGO)
 **Documentos relacionados:** `01_02_Content_Backlog.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`
 
@@ -57,8 +57,15 @@ Se integrarán en el `08_00_Metricas_Baseline_Plataformas.md`:
 - [ ] Producir el primer Reel de Wilfred recibiendo un producto de tecnología "humana".
 
 ---
+## 6. Tracking de atribución y estado operativo
+
+La estrategia conserva dos carriles separados: **monetización nativa de Meta**, todavía no verificada para la página, y **afiliación de Mercado Libre**, que puede probarse mediante links etiquetados. El procedimiento operativo, la nomenclatura de etiquetas y las reglas de conciliación están en `Operations/Production/2026-08-19_Playbook_Tracking_Afiliados_MercadoLibre.md`; los registros se almacenan en `Operations/Research/Affiliate_Link_Ledger.csv`.
+
+El primer piloto recomendado es el Reel de la lámpara de luna de Elara. Debe utilizar una etiqueta exclusiva para el Reel y otra para cualquier comentario aprobado que contenga el link. No se considerarán conversiones ni comisiones confirmadas hasta conciliar los reportes de Mercado Libre, respetar la ventana de atribución de 24 horas y distinguir ventas brutas de ventas aprobadas.
+
 ## Historial de Versiones
 | Fecha | Versión | Cambio | Autor |
 |---|---|---|---|
 | 2026-08-05 | 1.0 | Creación de la estrategia inicial de monetización ML. | Manus AI (CGO) |
 | 2026-08-15 | 1.1 | Se elimina la referencia operativa a Make; el flujo vigente queda en Manus + Meta Graph API. | Manus AI (CGO) |
+| 2026-08-19 | 1.2 | Se añade tracking por etiquetas nativas de Mercado Libre, ledger de enlaces y piloto de atribución para el Reel de Elara. | Manus AI (CGO) |
