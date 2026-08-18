@@ -1,0 +1,223 @@
+{
+  "extracted_at_utc": "2026-08-18T00:15:33.764245+00:00",
+  "post_ids": [
+    "1036844829507460_122134061121072582",
+    "1036844829507460_122129214813072582",
+    "1036844829507460_122130411897072582",
+    "1036844829507460_122134374249072582",
+    "1036844829507460_122128536909072582"
+  ],
+  "selection_basis": "Top visible comments among reviewed June priority assets; no publishing action.",
+  "batch_response": [
+    {
+      "code": 200,
+      "headers": [
+        {
+          "name": "Expires",
+          "value": "Sat, 01 Jan 2000 00:00:00 GMT"
+        },
+        {
+          "name": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "name": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "name": "Strict-Transport-Security",
+          "value": "max-age=15552000; preload"
+        },
+        {
+          "name": "Facebook-API-Version",
+          "value": "v26.0"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "name": "X-Business-Use-Case-Usage",
+          "value": "{\"1036844829507460\":[{\"type\":\"pages\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+        },
+        {
+          "name": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/javascript; charset=UTF-8"
+        }
+      ],
+      "body": "{\"id\":\"1036844829507460_122134061121072582\",\"created_time\":\"2026-06-28T00:36:52+0000\",\"message\":\"\\ud83d\\ude0e\\ud83d\\ude0e\\ud83d\\ude0e\",\"comments\":{\"data\":[{\"id\":\"122134061121072582_1397684135546362\",\"from\":{\"name\":\"Universe Sent Me\",\"id\":\"1036844829507460\"},\"message\":\"\\u0040seguidores Universe Sent Me\",\"created_time\":\"2026-06-28T02:37:41+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122134061121072582_2346741262400502\",\"message\":\"La comunicaci\\u00f3n saludable da lugar a la otra tambi\\u00e9n.\",\"created_time\":\"2026-07-05T03:42:57+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122134061121072582_872091909290990\",\"message\":\"\\ud83d\\udc41\\ufe0f\\ud83d\\udc41\\ufe0f ... dif\\u00edcil decisi\\u00f3n sem\\u00e1ntica......\\ud83c\\udf00\",\"created_time\":\"2026-07-04T20:39:00+0000\",\"like_count\":0,\"comment_count\":1},{\"id\":\"122134061121072582_1021374987259998\",\"message\":\"Las dos cosas \\u2728\",\"created_time\":\"2026-07-03T18:04:17+0000\",\"like_count\":0,\"comment_count\":1},{\"id\":\"122134061121072582_1550726676762384\",\"message\":\"#2\",\"created_time\":\"2026-07-01T04:01:44+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122134061121072582_1389853503038023\",\"message\":\"Las 2 cosas\\ud83d\\ude42\",\"created_time\":\"2026-07-01T00:05:06+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122134061121072582_1329879295881858\",\"message\":\"Ambos son un complemento\",\"created_time\":\"2026-06-30T23:46:00+0000\",\"like_count\":0,\"comment_count\":1},{\"id\":\"122134061121072582_1717369822831255\",\"message\":\"Ambos con la persona correcta.\",\"created_time\":\"2026-06-30T22:11:46+0000\",\"like_count\":2,\"comment_count\":0},{\"id\":\"122134061121072582_1303053141989112\",\"message\":\"Uno lleva al otro\",\"created_time\":\"2026-06-30T19:20:23+0000\",\"like_count\":0,\"comment_count\":1},{\"id\":\"122134061121072582_1001240639179891\",\"message\":\"Ambos!! Queremos ambos!! \\u2764\\ufe0f\",\"created_time\":\"2026-06-30T05:52:57+0000\",\"like_count\":0,\"comment_count\":1},{\"id\":\"122134061121072582_27019577171074338\",\"message\":\"Q no se pueden los 2 o q\",\"created_time\":\"2026-06-29T21:33:40+0000\",\"like_count\":0,\"comment_count\":1},{\"id\":\"122134061121072582_2022652361698757\",\"message\":\"Que no se hable solo sexo\",\"created_time\":\"2026-06-29T19:12:24+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122134061121072582_1272535984773006\",\"message\":\"Con la comunicaci\\u00f3n saludable puedes tener el sexo incre\\u00edblemente apasionado, el todo es que la comunicaci\\u00f3n sea para hacer un tr\\u00edo \\ud83e\\udd23\\ud83e\\udd23\",\"created_time\":\"2026-06-29T16:22:16+0000\",\"like_count\":0,\"comment_count\":1},{\"id\":\"122134061121072582_1558619719124318\",\"message\":\"Pero tienes pit\\u00f3 chico\\/pero por dentro, tus pensamientos ser\\u00e1n los peores :v\",\"created_time\":\"2026-06-29T12:34:41+0000\",\"like_count\":0,\"comment_count\":1},{\"id\":\"122134061121072582_1499369564735168\",\"message\":\"ES COMO SI ME DIERAN A ELEGIR ENTRE INHALAR O EXHALAR BRO\",\"created_time\":\"2026-06-29T05:14:52+0000\",\"like_count\":1,\"comment_count\":2},{\"id\":\"122134061121072582_1495046178521710\",\"message\":\"Comunicaci\\u00f3n saludable, y una buena comunicaci\\u00f3n puede llegar a un sexo incre\\u00edble\",\"created_time\":\"2026-06-29T03:22:43+0000\",\"like_count\":1,\"comment_count\":1},{\"id\":\"122134061121072582_1886685501999981\",\"message\":\"El sexo tambi\\u00e9n es comunicaci\\u00f3n.\",\"created_time\":\"2026-06-29T02:21:33+0000\",\"like_count\":0,\"comment_count\":5},{\"id\":\"122134061121072582_2008834093840070\",\"message\":\"Creo que prefiero la comunicaci\\u00f3n saludable...el primero no resuelve nada...y lo digo x experiencia\",\"created_time\":\"2026-06-29T01:49:15+0000\",\"like_count\":0,\"comment_count\":2},{\"id\":\"122134061121072582_1539435591066424\",\"message\":\"a est\\u00e1s alturas de mi vida, ya prefiero la comunicaci\\u00f3n saludable porque al sentir esa calidez mental, viene lo dem\\u00e1s!\",\"created_time\":\"2026-06-29T01:04:08+0000\",\"like_count\":4,\"comment_count\":1},{\"id\":\"122134061121072582_1033096236078004\",\"message\":\"\",\"created_time\":\"2026-06-28T23:03:49+0000\",\"like_count\":0,\"comment_count\":1},{\"id\":\"122134061121072582_1037496022004634\",\"message\":\"Que se comuniquen mientras tienen sexo jjjjj\",\"created_time\":\"2026-06-28T22:36:07+0000\",\"like_count\":0,\"comment_count\":1},{\"id\":\"122134061121072582_1928022434551200\",\"message\":\"Comunicaci\\u00f3n para luego llegar al sexo siii....\",\"created_time\":\"2026-06-28T22:04:44+0000\",\"like_count\":0,\"comment_count\":1},{\"id\":\"122134061121072582_1483569616428163\",\"message\":\"Ambos\",\"created_time\":\"2026-06-28T21:22:17+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122134061121072582_4226751767590463\",\"message\":\"Comunicaci\\u00f3n saludable\",\"created_time\":\"2026-06-28T16:26:32+0000\",\"like_count\":1,\"comment_count\":1},{\"id\":\"122134061121072582_2373556313474632\",\"message\":\"Comunicaci\\u00f3n\",\"created_time\":\"2026-06-28T14:53:16+0000\",\"like_count\":1,\"comment_count\":1},{\"id\":\"122134061121072582_2519815538438458\",\"message\":\"Las 2 no me vengan con jaladas emocionales si no tienes 1 de las 2 cualquier relaci\\u00f3n se ir\\u00eda al carajo\\n\\nDigan lo que digan\",\"created_time\":\"2026-07-04T01:34:11+0000\",\"like_count\":0,\"comment_count\":0}],\"paging\":{\"cursors\":{\"before\":\"MjcZD\",\"after\":\"MQZDZD\"}}}}"
+    },
+    {
+      "code": 200,
+      "headers": [
+        {
+          "name": "Expires",
+          "value": "Sat, 01 Jan 2000 00:00:00 GMT"
+        },
+        {
+          "name": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "name": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "name": "Strict-Transport-Security",
+          "value": "max-age=15552000; preload"
+        },
+        {
+          "name": "Facebook-API-Version",
+          "value": "v26.0"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "name": "X-Business-Use-Case-Usage",
+          "value": "{\"1036844829507460\":[{\"type\":\"pages\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+        },
+        {
+          "name": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/javascript; charset=UTF-8"
+        }
+      ],
+      "body": "{\"id\":\"1036844829507460_122129214813072582\",\"created_time\":\"2026-06-11T18:59:41+0000\",\"message\":\"\\ud83d\\ude0e\",\"comments\":{\"data\":[{\"id\":\"122129214813072582_1016808217557432\",\"from\":{\"name\":\"Universe Sent Me\",\"id\":\"1036844829507460\"},\"message\":\"\\u0040seguidores Universe Sent Me\",\"created_time\":\"2026-06-11T19:03:31+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122129214813072582_1289411179848114\",\"message\":\"que gato? .... a estoy sano xd\",\"created_time\":\"2026-06-13T17:45:54+0000\",\"like_count\":0,\"comment_count\":1},{\"id\":\"122129214813072582_1312452254395751\",\"message\":\"No me den m\\u00e1s razones para ir al psiquiatra por favor\",\"created_time\":\"2026-06-13T13:12:06+0000\",\"like_count\":0,\"comment_count\":1},{\"id\":\"122129214813072582_1333668118161827\",\"message\":\"A canijo.....y si pienso que yo soy el gato? \\ud83d\\ude1b\",\"created_time\":\"2026-06-13T05:50:48+0000\",\"like_count\":0,\"comment_count\":1},{\"id\":\"122129214813072582_1331036855026987\",\"message\":\"un gato que nadie m\\u00e1s  puede ver, me ha empezado a hablar por eso soy cuidadoso de mis palabras porque empiezo a sospechar que me va a abandonar\",\"created_time\":\"2026-06-13T00:56:18+0000\",\"like_count\":0,\"comment_count\":1},{\"id\":\"122129214813072582_1038422662464727\",\"message\":\"Inches gatos\",\"created_time\":\"2026-06-12T20:18:18+0000\",\"like_count\":0,\"comment_count\":1},{\"id\":\"122129214813072582_990396837074393\",\"message\":\"25\\u0025 c\\/u.\",\"created_time\":\"2026-06-12T20:09:45+0000\",\"like_count\":0,\"comment_count\":1},{\"id\":\"122129214813072582_4478860672399826\",\"message\":\"Tiene que ser precisamente un gato??\",\"created_time\":\"2026-06-12T20:04:29+0000\",\"like_count\":3,\"comment_count\":1},{\"id\":\"122129214813072582_1525305469137029\",\"message\":\"Mi ex esposo tuvo un episodio de esquizofrenia y fue muy descorcertante ver como ten\\u00eda una conversaci\\u00f3n con alguien que no estaba ahi\",\"created_time\":\"2026-06-12T19:40:09+0000\",\"like_count\":0,\"comment_count\":3},{\"id\":\"122129214813072582_4348454028705202\",\"message\":\"Man\\u00eda: Crees que deber\\u00edas ser atendido y adorado por todos igual que un gato\",\"created_time\":\"2026-06-12T15:14:16+0000\",\"like_count\":3,\"comment_count\":1},{\"id\":\"122129214813072582_2421797888308371\",\"message\":\"Excelente explicacion\",\"created_time\":\"2026-06-12T14:25:14+0000\",\"like_count\":0,\"comment_count\":1},{\"id\":\"122129214813072582_1373942057879686\",\"message\":\"Tengo miedo de un gato que me ha empezado a hablar y que solo yo puedo ver.\",\"created_time\":\"2026-06-11T23:13:11+0000\",\"like_count\":1,\"comment_count\":3},{\"id\":\"122129214813072582_1664136248563005\",\"message\":\"Janaina Yukito\",\"created_time\":\"2026-06-13T14:26:39+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122129214813072582_2453546175069313\",\"message\":\"Laura Nicol Le\\u00f3n Escalante\",\"created_time\":\"2026-06-13T17:55:37+0000\",\"like_count\":0,\"comment_count\":0}],\"paging\":{\"cursors\":{\"before\":\"MTQZD\",\"after\":\"MQZDZD\"}}}}"
+    },
+    {
+      "code": 200,
+      "headers": [
+        {
+          "name": "Expires",
+          "value": "Sat, 01 Jan 2000 00:00:00 GMT"
+        },
+        {
+          "name": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "name": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "name": "Strict-Transport-Security",
+          "value": "max-age=15552000; preload"
+        },
+        {
+          "name": "Facebook-API-Version",
+          "value": "v26.0"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "name": "X-Business-Use-Case-Usage",
+          "value": "{\"1036844829507460\":[{\"type\":\"pages\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+        },
+        {
+          "name": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/javascript; charset=UTF-8"
+        }
+      ],
+      "body": "{\"id\":\"1036844829507460_122130411897072582\",\"created_time\":\"2026-06-15T23:35:48+0000\",\"message\":\"\\ud83d\\ude0f\",\"comments\":{\"data\":[{\"id\":\"122130411897072582_1739335950397909\",\"from\":{\"name\":\"Universe Sent Me\",\"id\":\"1036844829507460\"},\"message\":\"\\u0040seguidores Universe Sent Me\",\"created_time\":\"2026-06-15T23:53:27+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122130411897072582_2464637040675537\",\"message\":\"No importa si tienen la misma o diferente forma de dar y recibir el amor el problema es que, 10000 rosas que t\\u00fa le des no significan nada con 1 sola rosa que le regale el que ella ama y elige mi compa\",\"created_time\":\"2026-06-17T05:46:15+0000\",\"like_count\":2,\"comment_count\":2},{\"id\":\"122130411897072582_1055010146854586\",\"message\":\"Ser Intenso, no te hace m\\u00e1s hombre te hace pendejo, & mujer Masculina no la hace cabrona, la hace Ingenua!\",\"created_time\":\"2026-06-17T05:33:44+0000\",\"like_count\":1,\"comment_count\":1},{\"id\":\"122130411897072582_1991788261460373\",\"message\":\"Y luego ser intenso no es de migajeros? O como es el juego ahora?\",\"created_time\":\"2026-06-17T03:10:16+0000\",\"like_count\":1,\"comment_count\":9},{\"id\":\"122130411897072582_1168264655465585\",\"message\":\"Nunca tuve miedo de verme intenso, es mas siento que no hacerlo es una reveranda perdida de tiempo xd\",\"created_time\":\"2026-06-17T01:46:34+0000\",\"like_count\":2,\"comment_count\":3},{\"id\":\"122130411897072582_902759658917725\",\"message\":\"El yltimo pelda\\u00f1o antes del gran cambio\",\"created_time\":\"2026-06-17T00:22:33+0000\",\"like_count\":3,\"comment_count\":1},{\"id\":\"122130411897072582_997516962993592\",\"message\":\"No le tem\\u00eda pero todo sali\\u00f3 de la v3rga\",\"created_time\":\"2026-06-16T23:46:11+0000\",\"like_count\":2,\"comment_count\":1},{\"id\":\"122130411897072582_4349857428567554\",\"message\":\"Es como decir que antes est\\u00e1bamos mejor con el pri y el pan\",\"created_time\":\"2026-06-16T19:39:36+0000\",\"like_count\":1,\"comment_count\":1},{\"id\":\"122130411897072582_1041325151562742\",\"message\":\"Noooo mi compaaaaa, es una trampa \\ud83e\\udea4\",\"created_time\":\"2026-06-16T16:14:28+0000\",\"like_count\":4,\"comment_count\":1},{\"id\":\"122130411897072582_1779096899548935\",\"message\":\"Jajajaja \\nA ese wey lo van a traer de pendejo\",\"created_time\":\"2026-06-16T15:02:32+0000\",\"like_count\":6,\"comment_count\":2},{\"id\":\"122130411897072582_985367954281068\",\"message\":\"\",\"created_time\":\"2026-06-16T00:04:51+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122130411897072582_1015818524163138\",\"message\":\"\",\"created_time\":\"2026-06-16T21:44:28+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122130411897072582_1310542430760261\",\"message\":\"Lili Rosas hahahahaha 5mentarios\",\"created_time\":\"2026-06-17T04:42:30+0000\",\"like_count\":0,\"comment_count\":1}],\"paging\":{\"cursors\":{\"before\":\"MTQZD\",\"after\":\"MQZDZD\"}}}}"
+    },
+    {
+      "code": 200,
+      "headers": [
+        {
+          "name": "Expires",
+          "value": "Sat, 01 Jan 2000 00:00:00 GMT"
+        },
+        {
+          "name": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "name": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "name": "Strict-Transport-Security",
+          "value": "max-age=15552000; preload"
+        },
+        {
+          "name": "Facebook-API-Version",
+          "value": "v26.0"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "name": "X-Business-Use-Case-Usage",
+          "value": "{\"1036844829507460\":[{\"type\":\"pages\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+        },
+        {
+          "name": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/javascript; charset=UTF-8"
+        }
+      ],
+      "body": "{\"id\":\"1036844829507460_122134374249072582\",\"created_time\":\"2026-06-30T00:26:50+0000\",\"message\":\"\\ud83d\\ude0f\",\"comments\":{\"data\":[{\"id\":\"122134374249072582_1670864440858416\",\"from\":{\"name\":\"Universe Sent Me\",\"id\":\"1036844829507460\"},\"message\":\"\\u0040seguidores Universe Sent Me\",\"created_time\":\"2026-06-30T00:43:40+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122134374249072582_1419727093509575\",\"message\":\"\",\"created_time\":\"2026-07-01T12:42:21+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122134374249072582_1263964909000367\",\"message\":\"\\ud83d\\ude0a gracias\",\"created_time\":\"2026-06-30T01:16:31+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122134374249072582_1335032528067432\",\"message\":\"As\\u00ed somos los rom\\u00e1nticos empedernidos \\ud83d\\udd25\",\"created_time\":\"2026-06-30T01:02:53+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122134374249072582_27341432335495503\",\"message\":\"Humildemente \\ud83d\\udc85\\ud83c\\udffd\",\"created_time\":\"2026-06-30T00:45:04+0000\",\"like_count\":1,\"comment_count\":0},{\"id\":\"122134374249072582_1350663427169511\",\"message\":\"Uff obvio mi amor Karen Contreras \\ud83d\\ude0d\",\"created_time\":\"2026-06-30T22:12:44+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122134374249072582_27398033846471892\",\"message\":\"Las chicas despu\\u00e9s de escuchar esto\",\"created_time\":\"2026-06-30T21:50:43+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122134374249072582_1001020649368726\",\"message\":\"Rodrigo Rosso\",\"created_time\":\"2026-07-03T07:11:25+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122134374249072582_998885159440291\",\"message\":\"Frida Fernanda\",\"created_time\":\"2026-07-03T00:40:29+0000\",\"like_count\":0,\"comment_count\":2}],\"paging\":{\"cursors\":{\"before\":\"MTEZD\",\"after\":\"MQZDZD\"}}}}"
+    },
+    {
+      "code": 200,
+      "headers": [
+        {
+          "name": "Expires",
+          "value": "Sat, 01 Jan 2000 00:00:00 GMT"
+        },
+        {
+          "name": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "name": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "name": "Strict-Transport-Security",
+          "value": "max-age=15552000; preload"
+        },
+        {
+          "name": "Facebook-API-Version",
+          "value": "v26.0"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "name": "X-Business-Use-Case-Usage",
+          "value": "{\"1036844829507460\":[{\"type\":\"pages\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+        },
+        {
+          "name": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/javascript; charset=UTF-8"
+        }
+      ],
+      "body": "{\"id\":\"1036844829507460_122128536909072582\",\"created_time\":\"2026-06-09T22:27:20+0000\",\"message\":\"\\ud83e\\udd74\\ud83e\\udee0\\ud83e\\udee0\",\"comments\":{\"data\":[{\"id\":\"122128536909072582_2382618792230988\",\"from\":{\"name\":\"Universe Sent Me\",\"id\":\"1036844829507460\"},\"message\":\"\\u0040seguidores Universe Sent Me\",\"created_time\":\"2026-06-09T23:12:12+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122128536909072582_2122980811878865\",\"message\":\"\\ud83d\\ude0e\\ud83d\\ude02\",\"created_time\":\"2026-06-10T15:42:47+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122128536909072582_27451801504507085\",\"message\":\"Shuu a la mierda todo el esfuerzo que ,hice gym me chupo todo la energ\\u00eda\",\"created_time\":\"2026-06-10T14:56:41+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122128536909072582_4347459038901170\",\"message\":\"Yo tambi\\u00e9n quiero vivir ese sue\\u00f1o don Pool \\ud83e\\udd7a\",\"created_time\":\"2026-06-10T13:04:57+0000\",\"like_count\":1,\"comment_count\":0},{\"id\":\"122128536909072582_2561358707651544\",\"message\":\"\",\"created_time\":\"2026-06-10T04:17:47+0000\",\"like_count\":0,\"comment_count\":1},{\"id\":\"122128536909072582_1034465675678187\",\"message\":\"Franches Aris \\ud83e\\udd7a\\ud83d\\ude14\\ud83e\\udd7a porque siempre me tienes que dejar as\\u00ed \\ud83d\\ude42\",\"created_time\":\"2026-06-10T14:53:16+0000\",\"like_count\":0,\"comment_count\":1},{\"id\":\"122128536909072582_1011150001467193\",\"message\":\"Tiffany Mart\\u00ednez\",\"created_time\":\"2026-06-10T14:26:01+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122128536909072582_1622037665573447\",\"message\":\"Brayan Alexis\",\"created_time\":\"2026-06-10T05:53:13+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122128536909072582_1555437622910183\",\"message\":\"Carlos Torres P\\u00e9rez\",\"created_time\":\"2026-06-10T16:24:12+0000\",\"like_count\":0,\"comment_count\":0},{\"id\":\"122128536909072582_1737477937690980\",\"message\":\"CARDIO\",\"created_time\":\"2026-06-10T00:22:11+0000\",\"like_count\":0,\"comment_count\":0}],\"paging\":{\"cursors\":{\"before\":\"MTAZD\",\"after\":\"MQZDZD\"}}}}"
+    }
+  ]
+}

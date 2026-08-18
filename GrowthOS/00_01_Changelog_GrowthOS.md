@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 2.09
+**Versión:** 2.10
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.10.00] — 2026-08-18 (Manus): Revisión visual y conversación del lote prioritario de junio.** Se revisaron 17 assets con match único de Drive. La observación directa confirmó que varios filenames `Universe - Existencial` contienen humanos, Wilfred, Ganso o dúos; no se atribuyeron personajes por filename. Se extrajeron 72 comentarios mediante un lote de lectura con el Page Access Token, sin publicar respuestas. La propuesta actual recomienda seis candidatos para decisión de CNT/reuse (`2607823`, `2607787`, `2607816`, `2607828`, `260740`, `2607837`) y mantiene los demás en investigación. Documento: `Operations/Research/2026-08-18_Propuesta_CNT_Reuse_Junio_Lote_Prioritario.md`.
 
 - **[2.09.00] — 2026-08-18 (Manus): Inicio del lote prioritario de junio por difusión.** Se seleccionaron 25 publicaciones desde las 177 filas individuales de junio, ordenadas por shares, interacciones y comentarios. El lote queda como cola de investigación: primero se revisarán los casos con asset/Meta/Drive confirmados, después se resolverán los candidatos sin match y solo las piezas aprobadas recibirán CNT o pasarán a reuse. Se mantuvieron separadas las métricas lifetime y las ventanas P0 de agosto. Documentos: `Operations/Research/2026-08-18_Junio_Lote_Priorizado_Difusion.md` y `Operations/Research/2026-08-18_Junio_Lote_Priorizado_Difusion_Enriquecido.csv`.
 
