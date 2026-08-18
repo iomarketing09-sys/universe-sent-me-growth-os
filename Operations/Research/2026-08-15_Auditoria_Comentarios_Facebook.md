@@ -296,3 +296,14 @@ Fernando confirmó la publicación de las tres respuestas aprobadas. Meta devolv
 | `122151373833072582_1715141313071482` | “Eso no es chisme, es investigación de campo… con excelente memoria. 🔥” | `122151373833072582_1625579462232436` | 20:11:11 |
 
 Las tres filas del ledger comunitario pasan a `Respondido`. No se realizaron otras acciones de moderación ni publicaciones adicionales.
+
+
+## 14. Revisión de comentarios de hoy — 2026-08-18
+
+Se ejecutó una consulta de solo lectura con el token de página. Desde el último corte verificado, a las 20:11 UTC, la nueva publicación de las 21:00 UTC no tenía comentarios. En el conjunto de publicaciones recientes apareció un comentario cualitativo previo al último corte que no estaba registrado en el ledger:
+
+| Comentario_ID | Post_ID | Comentario | Clasificación | Recomendación |
+|---|---|---|---|---|
+| `122151374217072582_1811120803575478` | `1036844829507460_122151374217072582` | “La copia jugando de diva con esa canción de envidia ajena jugando de santos jajajajajan” | Crítica interpretativa ambigua; tono burlón, sin amenaza ni insulto directo | No moderar. Dejar pendiente de criterio humano; responder solo si Fernando considera que aporta conversación. |
+
+No se detectaron comentarios con señales de abuso, amenaza, spam o necesidad de ocultamiento. No se publicó ninguna respuesta ni se modificó Facebook.
