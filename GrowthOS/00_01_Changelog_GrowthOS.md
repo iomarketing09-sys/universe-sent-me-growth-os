@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 2.15
+**Versión:** 2.16
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.16.00] — 2026-08-18 (Manus): Cinco casos convertidos en señales comparables del Growth OS.** Se creó la matriz `2026-08-18_Matriz_Aprendizajes_GrowthOS_Cinco_Casos.csv` y se añadieron las señales abiertas `HJ-001`–`HJ-005` a `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`. Se definió un filtro de expansión para los 58 casos: solo se analizarán cuando respondan preguntas concretas sobre estructura narrativa, personajes, transformaciones, humor, densidad visual o conversación. Las señales no modifican canon ni calendario.
 
 - **[2.15.00] — 2026-08-18 (Manus): Nuevo alcance para los casos sin match.** Por decisión de Fernando, no se rastreará el origen de estas publicaciones en marzo, abril, mayo u otras carpetas. Los 58 casos se utilizarán únicamente por sus datos observables de Meta y revisión visual: rendimiento, formato, personajes visibles, rol narrativo, tipo de humor, potencial de etiquetado y conversación disponible. Se actualizó la hipótesis y el análisis detallado para retirar el rastreo de origen como requisito.
 

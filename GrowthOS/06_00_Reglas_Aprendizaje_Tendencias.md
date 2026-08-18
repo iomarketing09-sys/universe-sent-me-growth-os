@@ -91,3 +91,25 @@ Ante varias opciones, selecciona siempre aquella que:
 - **CTA "etiquétalo":** usado como gancho de engagement nativo en el copy de Facebook/Instagram de esta pieza — monitorear si mueve comentarios/shares de forma medible antes de adoptarlo como default en el Sistema de Generación de Memes (`03_00`).
 
 Pendiente: una vez publicado "El Bucle del Fantasma", registrar sus métricas en `07_00_Registro_Maestro_Reels.md` y volver a esta sección para confirmar o descartar la hipótesis del hashtag de formato.
+
+---
+
+## 7. Señales históricas abiertas — junio 2026
+
+Estas señales provienen de cinco publicaciones históricas de Facebook analizadas visualmente y con métricas lifetime. No son reglas canonizadas ni sustituyen el protocolo P0 de métricas temporales.
+
+| ID | Señal | Evidencia | Estado |
+|---|---|---|---|
+| HJ-001 | Un personaje reconocible puede conservar difusión cuando se somete a una transformación visual extrema, siempre que se mantengan sus marcadores principales y el caption sea breve | Universe con gafas en versión muscular: 164 interacciones y 42 shares | Hipótesis abierta |
+| HJ-002 | Una microhistoria de tres tiempos con una respuesta literal de un personaje fantástico puede generar shares superiores a una pieza textual simple | Diálogo humano-hada: 155 interacciones y 19 shares | Hipótesis abierta |
+| HJ-003 | La continuidad visual de un personaje puede aportar valor de identidad aunque una publicación aislada tenga bajo rendimiento | Wilfred en bosque: diseño visual compatible; 18 interacciones y 2 shares | Señal cualitativa |
+| HJ-004 | La densidad de símbolos, personajes y territorio puede comunicar el mundo de Universe sin depender de un protagonista único | Cartel de hada/Wilfred/tarot | Hipótesis abierta |
+| HJ-005 | Un personaje secundario con vestuario y fondo contextual puede sostener una pieza aunque todavía no exista una regla narrativa documentada | Ganso con traje y fondo cósmico | Hipótesis abierta |
+
+### Regla de uso
+
+Las señales HJ solo pueden alimentar análisis comparativos y diseño de experimentos. Para validarlas se necesita un lote adicional de casos codificados con las mismas variables: formato, estructura narrativa, personaje visible, tipo de humor, shares e interacciones. No deben convertirse automáticamente en reglas de producción, canon o calendario.
+
+### Documento fuente
+
+La matriz completa se encuentra en `Operations/Research/2026-08-18_Matriz_Aprendizajes_GrowthOS_Cinco_Casos.csv`. El filtro para seleccionar casos adicionales se encuentra en `Operations/Research/2026-08-18_Filtro_Expansion_58_Casos_GrowthOS.md`.
