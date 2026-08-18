@@ -283,3 +283,16 @@ Fernando aprobó las tres respuestas pendientes con estos textos finales:
 > **Regla editorial:** los personajes no deben aparecer en todas las respuestas. Deben funcionar como condimento cuando aporten un remate concreto; una respuesta puede ser plenamente USM por su tono, ritmo y complicidad sin mencionar a Silvio, Wilfred, Elara u otro personaje.
 
 Estado operativo: las tres respuestas están `Aprobada` y `Pendiente_Aprobacion` de publicación en el ledger. No se han publicado todavía en Meta.
+
+
+## 13. Publicación verificada de respuestas aprobadas — 2026-08-18
+
+Fernando confirmó la publicación de las tres respuestas aprobadas. Meta devolvió HTTP 200 e identificadores reales:
+
+| Comentario original | Respuesta publicada | Respuesta_Meta_ID | Hora UTC |
+|---|---|---|---|
+| `122151374217072582_2093067344913171` | “Y nosotros aquí fingiendo que no nos dimos cuenta. 🤭” | `122151374217072582_2435856813608994` | 20:11:04 |
+| `122151374217072582_1577015310481547` | “Lo sospechábamos, pero gracias por confirmar. 😌” | `122151374217072582_1830912011221593` | 20:11:08 |
+| `122151373833072582_1715141313071482` | “Eso no es chisme, es investigación de campo… con excelente memoria. 🔥” | `122151373833072582_1625579462232436` | 20:11:11 |
+
+Las tres filas del ledger comunitario pasan a `Respondido`. No se realizaron otras acciones de moderación ni publicaciones adicionales.
