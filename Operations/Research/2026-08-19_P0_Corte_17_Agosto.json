@@ -1,0 +1,63 @@
+{
+  "extracted_at_utc": "2026-08-18T03:26:12.572801+00:00",
+  "extracted_at_local": "2026-08-17T22:26:12.572801-05:00",
+  "timezone": "America/Matamoros",
+  "experiment_id": "EXP-2026-08-CAL-01",
+  "target": "five confirmed Facebook posts from 2026-08-17",
+  "candidate_count": 5,
+  "eligible_count": 0,
+  "exact_window_writes": 0,
+  "ledger_updates": false,
+  "instagram_touched": false,
+  "content_published": false,
+  "page_context": {
+    "page_id": "1036844829507460",
+    "page_name": "Universe Sent Me",
+    "status_code": 200
+  },
+  "candidates": [
+    {
+      "publication_id": "PUB-FB-2026-08-17-1000",
+      "asset_ref": "260633",
+      "meta_post_id": "1036844829507460_122151373701072582",
+      "published_at_local": "2026-08-17T10:00:03-05:00",
+      "age_hours": 12.436,
+      "due_windows": []
+    },
+    {
+      "publication_id": "PUB-FB-2026-08-17-1100",
+      "asset_ref": "2608028",
+      "meta_post_id": "1036844829507460_122151373761072582",
+      "published_at_local": "2026-08-17T11:00:04-05:00",
+      "age_hours": 11.436,
+      "due_windows": []
+    },
+    {
+      "publication_id": "PUB-FB-2026-08-17-1330",
+      "asset_ref": "2608034- Elara",
+      "meta_post_id": "1036844829507460_122151373833072582",
+      "published_at_local": "2026-08-17T13:30:01-05:00",
+      "age_hours": 8.937,
+      "due_windows": []
+    },
+    {
+      "publication_id": "PUB-FB-2026-08-17-1600",
+      "asset_ref": "260642",
+      "meta_post_id": "1036844829507460_122151373893072582",
+      "published_at_local": "2026-08-17T16:00:02-05:00",
+      "age_hours": 6.436,
+      "due_windows": []
+    },
+    {
+      "publication_id": "PUB-FB-2026-08-17-1700",
+      "asset_ref": "2608027.jpeg",
+      "meta_post_id": "1036844829507460_122151373953072582",
+      "published_at_local": "2026-08-17T17:00:03-05:00",
+      "age_hours": 5.436,
+      "due_windows": []
+    }
+  ],
+  "responses": [],
+  "status": "extracted_lifetime_only",
+  "run_id": "20260818T032547Z"
+}
