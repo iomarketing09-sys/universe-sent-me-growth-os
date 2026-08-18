@@ -4,7 +4,7 @@ purpose: "Definir una configuración reproducible para atribuir enlaces, clics, 
 status: "Review"
 created: 2026-08-19
 updated: 2026-08-18
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/11_00_Estrategia_Monetizacion_MercadoLibre.md"
@@ -134,6 +134,16 @@ y solo se calculará cuando haya comisión confirmada y clics registrados.
 ## Piloto Facebook 18–30 de agosto
 
 El piloto recomendado para la ola del 18–30 está documentado en `Operations/Production/2026-08-19_Piloto_Afiliados_Facebook_18_30_Agosto.md`. La propuesta aprobada se amplió a diez oportunidades distribuidas desde el 18 de agosto; mantiene sin cambios la frecuencia y el calendario P0, y utiliza como máximo un producto y un link por publicación. La primera opción operativa es `FACEBOOK_NATIVE_PRODUCT`, con aprobación humana antes de adjuntar.
+
+## Estado consolidado de revisión — 18 de agosto de 2026
+
+La revisión del repositorio confirma que el sistema está preparado a nivel de diseño, pero todavía no está operativo para la ola de diez publicaciones de Facebook. En `Affiliate_Pilot_Assignments.csv` existen diez oportunidades, cada una con una etiqueta granular creada (`usmfb2606440818` a `usmfb2605280830`), pero ninguna fila contiene todavía `Product_Key`, `ML_Link_or_ID`, `Native_Product_Attachment_ID` ni un estado de producto adjunto. Por tanto, las etiquetas no deben interpretarse como enlaces afiliados utilizables.
+
+El único enlace afiliado generado que aparece documentado es `https://meli.la/2zCoRix`, asociado a `usmfb2606440818`. El propio registro indica que quedó pendiente de adjunción y que no fue publicado. Además, el ledger conserva un registro histórico agregado de Facebook (`Links de facebook - universesentme`) con 3 clics, 2 unidades vendidas, $322.65 MXN en ventas estimadas y $28.84 MXN de comisión en revisión; ese registro sirve como evidencia histórica, pero no permite atribuir resultados a una publicación concreta.
+
+La conclusión operativa es que **todavía no hay una matriz de links afiliados lista para publicar**. El siguiente paso correcto es completar una fila por oportunidad con URL normal verificada, producto elegido, link corto devuelto por Mercado Libre, etiqueta correspondiente y evidencia de adjunción nativa en Facebook. La aprobación humana debe ocurrir después de verificar el encaje editorial del producto y antes de adjuntarlo o publicarlo.
+
+La documentación relacionada que debe mantenerse sincronizada es `Operations/Research/Affiliate_Pilot_Assignments.csv`, `Operations/Research/Affiliate_Link_Ledger.csv`, `Operations/Research/2026-08-19_MercadoLibre_Facebook_Afiliados_Observacion.md` y `Operations/Production/2026-08-19_Piloto_Afiliados_Facebook_18_30_Agosto.md`. No se requiere crear un documento nuevo porque el hallazgo pertenece al playbook existente y los registros tabulares ya contienen el detalle operativo.
 
 ## Primer piloto recomendado
 
