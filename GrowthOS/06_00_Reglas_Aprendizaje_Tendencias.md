@@ -131,3 +131,9 @@ El diálogo implícito, las escenas relacionales y el texto sobre fotografía no
 ## 10. Siguiente lote de búsqueda — 2026-08-19
 
 La revisión de 15 candidatos adicionales no encontró una nueva composición secuencial clara ni otra transformación corporal de Universe. La escena de hombre y hada con globo único queda fuera de `dialogo_secuencial`. Ganso siendo vestido introduce la subcategoría exploratoria `transformacion_vestuario_personaje_secundario`, con `n=1` y sin capacidad de validar una regla. El resultado negativo evita forzar ejemplos en las celdas pequeñas. Documento: `Operations/Research/2026-08-19_Analisis_Siguiente_Lote_Dialogo_Transformacion.md`.
+
+## 11. Humor sexual y ácido — 2026-08-19
+
+La muestra visual de junio produjo 13 casos de humor ácido, con mediana exploratoria de 20 interacciones, 2 comentarios y 4 shares, pero con gran dispersión causada por outliers relacionales/antihéroe. El humor sexual quedó separado en explícito y sugerente: solo hubo un caso de cada tipo, por lo que ambos resultados son inconclusos.
+
+La clasificación por caption generó falsos positivos: amor, pareja, cuerpo o enamoramiento no equivalen automáticamente a humor sexual. Se exige evidencia visual o textual explícita. El humor ácido deberá subdividirse por función: relacional/antihéroe, insulto/autodesprecio, observacional, ansiedad/absurdo, infografía absurda y ciclos relacionales. Documento: `Operations/Research/2026-08-19_Analisis_Humor_Sexual_Acido.md`.

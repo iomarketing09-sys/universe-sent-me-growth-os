@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 2.19
+**Versión:** 2.20
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.20.00] — 2026-08-19 (Manus): Humor sexual y ácido analizados por separado.** Se revisaron visualmente 16 publicaciones. El humor ácido produjo una señal exploratoria con `n=13`, mediana de 20 interacciones y 4 shares; el humor sexual quedó inconcluso con un caso explícito y uno sugerente. Se corrigieron falsos positivos de caption y se mantuvieron las categorías separadas. No se modifican calendario, CNT ni canon.
 
 - **[2.19.00] — 2026-08-19 (Manus): Siguiente lote de diálogo y transformación revisado.** Se recuperaron y revisaron 15 candidatos adicionales. No apareció una nueva composición secuencial clara ni otra transformación corporal de Universe. Se registró `transformacion_vestuario_personaje_secundario` como hipótesis aislada para Ganso (`n=1`). La ausencia de nuevos ejemplos comparables se conserva como resultado negativo; no se fuerzan celdas ni se modifican calendario, CNT o canon.
 

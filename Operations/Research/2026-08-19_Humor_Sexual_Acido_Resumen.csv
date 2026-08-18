@@ -1,0 +1,4 @@
+tipo_humor,n,mediana_interacciones,mediana_comentarios,mediana_shares,total_interacciones,total_shares,veredicto
+humor_acido,13,20.0,2.0,4.0,2354,714,exploratoria
+humor_sexual_explicito,1,47.0,2.0,4.0,47,4,inconclusa_muestra_pequena
+humor_sexual_sugerente,1,16.0,1.0,3.0,16,3,inconclusa_muestra_pequena
