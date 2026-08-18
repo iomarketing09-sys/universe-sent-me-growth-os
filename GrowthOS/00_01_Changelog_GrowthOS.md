@@ -3,10 +3,14 @@
 **Propósito:** Registro centralizado de hitos, integraciones, cambios estratégicos y actualizaciones de arquitectura. Este documento permite a los agentes (Manus, Claude, etc.) sincronizar contexto rápidamente sin re-leer todo el repositorio.
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
-**Última actualización:** 2026-08-17
-**Versión:** 2.28
+**Última actualización:** 2026-08-18
+**Versión:** 2.30
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.30.00] — 2026-08-18 (Manus): Cierre de la creación de etiquetas granulares del piloto afiliado.** Se completaron las diez etiquetas, una por oportunidad/publicación, para AFF-01–AFF-10: `usmfb2606440818`, `usmfb2605600819`, `usmfb2606590820`, `usmfb2606350821`, `usmfb2605100822`, `usmfb2605180824`, `usmfb2605400826`, `usmfb2605900828`, `usmfb7410829` y `usmfb2605280830`. AFF-01 conserva el único link afiliado generado hasta ahora (`https://meli.la/2zCoRix`); los otros nueve links, la selección final de productos y la adjunción nativa en Facebook siguen pendientes. No se publicó ni modificó ninguna publicación. Documentos: `Operations/Research/Affiliate_Pilot_Assignments.csv`, `Operations/Research/Affiliate_Link_Ledger.csv` y `Operations/Research/2026-08-19_Candidatas_Afiliacion_Facebook_18_30_Observacion.md`.
+
+- **[2.29.00] — 2026-08-18 (Manus): Verificación del generador real de links afiliados y primera prueba granular.** Se confirmó en la Central de Afiliados que la URL normal del producto debe pasar por el generador para producir el link afiliado final; las URLs normales no se registran como links afiliados. Mercado Libre exige etiquetas en minúsculas y números. Se crearon `usmfb2606440818`, `usmfb2605600819` y `usmfb2606590820`. Para AFF-01 se generó `https://meli.la/2zCoRix` con `usmfb2606440818`; quedó registrado como `Link_Generated_Product_Pending_Attachment`, sin publicar ni adjuntar en Facebook. Documento: `Operations/Production/2026-08-19_Playbook_Tracking_Afiliados_MercadoLibre.md`; ledger: `Operations/Research/Affiliate_Link_Ledger.csv`.
 
 - **[2.28.00] — 2026-08-19 (Manus): Redistribución temporal de 10 oportunidades afiliadas.** La propuesta se reconcilia contra el calendario maestro 17–30 y distribuye oportunidades desde el 18 hasta el 30 de agosto, comenzando el día 18 y dejando libres los días 23, 25 y 27 como referencias sin afiliación. No se generaron URLs, no se adjuntaron productos y no se modificaron publicaciones. Documento: `Operations/Production/2026-08-19_Piloto_Afiliados_Facebook_18_30_Agosto.md`; registro: `Operations/Research/Affiliate_Pilot_Assignments.csv`.
 

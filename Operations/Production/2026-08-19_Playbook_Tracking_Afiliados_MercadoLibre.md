@@ -3,8 +3,8 @@ title: "Playbook de tracking de afiliados Mercado Libre"
 purpose: "Definir una configuración reproducible para atribuir enlaces, clics, ventas y comisiones de Mercado Libre a publicaciones concretas de Universe Sent Me."
 status: "Review"
 created: 2026-08-19
-updated: 2026-08-19
-version: "1.1"
+updated: 2026-08-18
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/11_00_Estrategia_Monetizacion_MercadoLibre.md"
@@ -34,6 +34,12 @@ La configuración mínima tiene cuatro capas:
 | Conciliación | Comparar lo publicado con el reporte de Mercado Libre cada 24 horas y después del periodo de revisión | Ledger + exportación del panel |
 
 No se recomienda introducir primero un acortador externo ni una redirección propia. Añadir una capa intermedia puede romper la atribución, ocultar el dominio de destino o violar las reglas del programa. Primero deben usarse las etiquetas nativas de Mercado Libre.
+
+## Verificación operativa del generador
+
+La Central de Afiliados y Creadores fue verificada en sesión autenticada. El generador recibe una o más URLs normales de páginas de producto, permite seleccionar una etiqueta administrada por la cuenta y devuelve un link afiliado corto o completo. La URL normal del producto nunca debe registrarse como `ML_Link_or_ID` ni compartirse como si fuera el enlace afiliado.
+
+Mercado Libre rechazó una etiqueta con mayúsculas; para este piloto se usarán únicamente etiquetas en minúsculas y números, sin espacios ni caracteres especiales. El primer link generado fue `https://meli.la/2zCoRix`, asociado a `usmfb2606440818`; quedó registrado como pendiente de adjunción nativa y no fue publicado.
 
 ## Convención de etiquetas
 
@@ -127,7 +133,7 @@ y solo se calculará cuando haya comisión confirmada y clics registrados.
 
 ## Piloto Facebook 18–30 de agosto
 
-El piloto recomendado para la ola del 18–30 está documentado en `Operations/Production/2026-08-19_Piloto_Afiliados_Facebook_18_30_Agosto.md`. Debe limitarse a cuatro-seis publicaciones, mantener sin cambios la frecuencia y el calendario P0, y utilizar como máximo un producto y un link por publicación. La primera variante recomendada es `POST_COMMENT`, con aprobación humana antes de publicar.
+El piloto recomendado para la ola del 18–30 está documentado en `Operations/Production/2026-08-19_Piloto_Afiliados_Facebook_18_30_Agosto.md`. La propuesta aprobada se amplió a diez oportunidades distribuidas desde el 18 de agosto; mantiene sin cambios la frecuencia y el calendario P0, y utiliza como máximo un producto y un link por publicación. La primera opción operativa es `FACEBOOK_NATIVE_PRODUCT`, con aprobación humana antes de adjuntar.
 
 ## Primer piloto recomendado
 
