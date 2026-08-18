@@ -57,6 +57,62 @@ El top 15 demuestra que la cola sin match contiene material de alto valor histó
 
 La prioridad inmediata debe ser comparar primero `122127916017072582` y `122134608507072582` con los índices de mayo y las referencias de personajes, porque pueden conectar directamente el territorio espiritual, Wilfred y Ganso con la etapa de formación de la marca. Después deben revisarse `122130196011072582` y `122129404893072582` por la consolidación temprana de Universe, hadas y diálogo narrativo.
 
+## Revisión detallada de los cinco casos prioritarios — corte 01
+
+### `122127916017072582` — hada, Wilfred y territorio espiritual
+
+La pieza es un cartel vertical con una identidad gráfica deliberada: marco ornamental, paleta crema y dorada, estrellas, lunas, ojo central, arcoíris, cristales, cartas de tarot y símbolos esotéricos. La composición incluye explícitamente un hada rubia de alas transparentes y un gnomo de barba blanca y sombrero rojo. El texto busca “amigos espirituales, raros, locos, tarotistas y hechiceros” que rompan lo tradicional. Wilfred no aparece como una figura aislada de bosque: ya participa en un **territorio espiritual colectivo** junto a tarot, magia y personajes feéricos.
+
+**Observación:** es una evidencia visual fuerte de que el lenguaje de mundo —no solo el personaje— estaba tomando forma.
+
+**Hipótesis:** podría ser un antecedente directo de la relación entre Wilfred, Elara/territorio tarot y Kiri/hadas, pero no demuestra por sí sola cuándo se fijaron esos nombres o reglas.
+
+**Canon:** no modificar. Registrar como evidencia de preconfiguración visual del mundo.
+
+### `122134608507072582` — Ganso con traje
+
+La imagen muestra un ganso antropomorfizado con traje negro, moño y pañuelo, mientras varias manos humanas ajustan su ropa. El fondo no es genérico: presenta una luna planetaria y una galaxia espiral, coherentes con el imaginario cósmico de Universe. El texto “Ya le entendí a la vida banda…” funciona como frase de personaje, aunque todavía no hay nombre propio ni rasgos de personalidad documentados en la imagen.
+
+**Observación:** Ganso no aparece como un animal insertado en un meme cualquiera; está integrado a una escena teatral/cósmica con vestuario y presencia protagonista.
+
+**Hipótesis:** puede ser una forma temprana de un personaje que después se volvió parte del elenco, o una prueba de la fórmula “animal + escenario cósmico + remate coloquial”.
+
+**Canon:** no asumir nombre, personalidad ni continuidad adicional sin cotejar con documentos de personajes y otros assets.
+
+### `122130196011072582` — Universe en versión muscular
+
+La imagen presenta dos versiones del mismo gato con gafas redondas: una figura adulta extremadamente musculosa detrás y un gato pequeño al frente. La identidad visual de Universe sí está presente en ambas figuras mediante las gafas, la forma felina y la marca `@UniverseSentMe`. El remate contrasta la “flojera” de ligar con el deseo de salir con alguien, usando una fantasía hiperbólica y absurda.
+
+**Observación:** el personaje no depende solo de su silueta normal; puede sostener variaciones visuales extremas sin perder reconocimiento.
+
+**Hipótesis:** este caso puede explicar parte del motor de crecimiento: personaje identificable + transformación absurda + caption breve y relatable. La consistencia está en los signos del personaje y en el tono, no necesariamente en repetir una anatomía única.
+
+**Canon:** sí aporta evidencia de una convención visual de Universe, pero no debe convertir la versión musculosa en diseño oficial.
+
+### `122129404893072582` — diálogo humano-hada
+
+La pieza utiliza un carrusel o composición de tres paneles: un hombre joven en una habitación nocturna escribe “te extraño”; una hada rubia con alas translúcidas responde “y eso?”; el hombre remata “eso también te extraña”. El humor nace de la interpretación literal y de la oposición entre una emoción humana y una respuesta feérica/ingenua. La puesta en escena es íntima, nocturna y narrativa, no un fondo genérico de meme.
+
+**Observación:** ya existe una gramática de personajes que conversan en escenas cotidianas, con un ser fantástico integrado a una relación social reconocible.
+
+**Hipótesis:** puede ser antecedente del uso de Kiri o de una figura feérica previa; no es suficiente para identificarla como Kiri o Elara. También muestra que la marca podía producir microhistorias de tres tiempos antes de la organización actual.
+
+**Canon:** registrar como “hada no identificada” y no mapearla automáticamente a un personaje canónico.
+
+### `122125544019072582` — Wilfred en el bosque
+
+La imagen presenta un gnomo de barba blanca, orejas puntiagudas, sombrero rojo, túnica verde, cinturón, botas, bastón y una fogata en un bosque azul nocturno. El diseño coincide de manera sustantiva con la descripción visual actual de Wilfred: guardián/gnomo de bosque, barba blanca, sombrero rojo y tono de sabiduría fantástica. El texto, sin embargo, subvierte la solemnidad del escenario: “Lanzando un hechizo para que dejes de valer vrg”.
+
+**Observación:** este es el vínculo visual más fuerte del lote con un personaje canónico actual. No es solo una similitud genérica de gnomo; comparte múltiples rasgos distintivos y el entorno forestal.
+
+**Hipótesis:** la imagen puede ser una de las primeras formulaciones visuales de Wilfred o una pieza que ya utilizaba un diseño establecido antes de que se documentara formalmente.
+
+**Canon:** puede enviarse a revisión de Claude como evidencia histórica compatible con Wilfred, pero no debe cambiar por sí sola una regla canónica ya cerrada.
+
+## Síntesis provisional
+
+Los cinco casos muestran cinco funciones distintas dentro del origen de Universe: construcción de mundo (`122127916017072582`), aparición de un personaje secundario (`122134608507072582`), elasticidad del protagonista (`122130196011072582`), microhistoria entre personajes (`122129404893072582`) y continuidad visual fuerte de Wilfred (`122125544019072582`).
+
 ## Próxima acción
 
 Revisar la tercera hoja de contacto, después comparar estos 15 casos contra los índices de Drive de marzo, abril y mayo. Los candidatos con personajes visibles o estética de transición deben recibir prioridad sobre los memes sin evidencia visual recuperable. Ninguno debe recibir CNT ni modificar el canon hasta completar la reconciliación.

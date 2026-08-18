@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 2.13
+**Versión:** 2.14
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.14.00] — 2026-08-18 (Manus): Análisis detallado de cinco casos fundacionales.** Se analizaron `122127916017072582` (hada/Wilfred/tarot), `122134608507072582` (Ganso), `122130196011072582` (Universe muscular), `122129404893072582` (diálogo humano-hada) y `122125544019072582` (Wilfred). El resultado separa observación, hipótesis de origen, aprendizaje Growth OS y límites canónicos. El caso de Wilfred es la continuidad visual más fuerte; Universe muscular y el diálogo de tres paneles son las señales estratégicas de mayor rendimiento. Documento: `Operations/Research/2026-08-18_Analisis_Detallado_Cinco_Casos_Fundacionales_Junio.md`.
 
 - **[2.13.00] — 2026-08-18 (Manus): Reclasificación de los 58 casos sin match como archivo fundacional.** La cola `Needs_Asset_Match` no se tratará como sobrante: conserva Meta IDs, fechas, captions y métricas, y puede representar la etapa creativa previa a la nomenclatura estable de mayo. Se recuperó y revisó visualmente el top 15 por interacciones. Aparecen Universe, Wilfred, Ganso, hadas, tarot, escenarios cósmicos y formatos de fotografía real/texto. La evidencia todavía no demuestra origen en marzo o abril; se requiere cruce visual/hash con carpetas anteriores. Documento: `Operations/Research/2026-08-18_Hipotesis_Archivo_Fundacional_Junio.md`.
 
