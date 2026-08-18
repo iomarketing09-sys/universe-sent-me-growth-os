@@ -36,6 +36,21 @@ No se crearán CNT para todos los assets confirmados. Un asset recibe propuesta 
 
 Los assets con personaje humano no identificado, sin match único de Drive o con contexto editorial ambiguo deben permanecer en la cola de investigación. Esto incluye, por ahora, `260747`, `260731`, `260765`, `260775`, `2607783`, `2607786`, `2607825`, `2607794`, `260735`, `260646`, `2607792`, `2607838` y `260757` hasta completar evidencia de archivo y decisión editorial.
 
+## CNT creados tras la aprobación
+
+Los seis registros fueron añadidos al inventario maestro como `CNT-080` a `CNT-085`. Todos quedaron en estado `Reuse_Candidate`, con publicación histórica separada de cualquier programación futura.
+
+| CNT | Asset | Uso propuesto |
+|---|---:|---|
+| `CNT-080` | `2607823` | Reuse prioritario; conversación alta |
+| `CNT-081` | `2607787` | Reuse prioritario; dúo Universe + Fantasma |
+| `CNT-082` | `2607816` | Reuse prioritario medio; humor social |
+| `CNT-083` | `2607828` | Reuse medio; Ganso |
+| `CNT-084` | `260740` | Reuse medio; revisar referencias a salud mental |
+| `CNT-085` | `2607837` | Reuse medio; revisar tono sexual |
+
+La cola operativa se encuentra en `Operations/Research/2026-08-18_Cola_Reuse_Junio_Aprobada.csv`. La creación de estos CNT no mueve archivos de Drive, no publica contenido y no modifica el calendario.
+
 ## Próximo paso requerido
 
-Fernando debe aprobar o modificar el subgrupo recomendado. Después se crearán únicamente los CNT aprobados, se actualizará `Content_Inventory.csv` y se preparará una cola de reuse con distancia mínima de 30 días, contexto compatible y slot adecuado. Esta propuesta no autoriza publicaciones ni movimientos en Drive.
+La aprobación de Fernando fue otorgada el 18 de agosto de 2026. Los seis CNT ya fueron creados y la cola de reuse quedó preparada. El siguiente paso, si se desea utilizar alguna pieza, será seleccionar fechas y slots en un calendario aprobado. Esta propuesta no autoriza por sí sola publicaciones ni movimientos en Drive.
