@@ -307,3 +307,14 @@ Se ejecutó una consulta de solo lectura con el token de página. Desde el últi
 | `122151374217072582_1811120803575478` | `1036844829507460_122151374217072582` | “La copia jugando de diva con esa canción de envidia ajena jugando de santos jajajajajan” | Crítica interpretativa ambigua; tono burlón, sin amenaza ni insulto directo | No moderar. Dejar pendiente de criterio humano; responder solo si Fernando considera que aporta conversación. |
 
 No se detectaron comentarios con señales de abuso, amenaza, spam o necesidad de ocultamiento. No se publicó ninguna respuesta ni se modificó Facebook.
+
+
+## 15. Respuesta seleccionada para abrir contexto narrativo — 2026-08-18
+
+Para el comentario `122151374217072582_1811120803575478`, Fernando seleccionó como respuesta propuesta:
+
+> “Momento… ¿cómo que soundtrack, villanos y santos? 👀 Necesitamos el episodio anterior.”
+
+La intención es convertir una referencia ambigua en una invitación directa a contar la historia, sin tomar partido ni exigir contexto con lenguaje institucional. El aprendizaje editorial es que ciertos comentarios con drama implícito pueden funcionar como **puertas de entrada a una segunda ronda de conversación**: la primera respuesta debe abrir el relato, no cerrarlo con un remate autosuficiente.
+
+Estado: `Pendiente_Fernando`; no publicado.
