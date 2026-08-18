@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 2.21
+**Versión:** 2.22
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.22.00] — 2026-08-19 (Manus): Subgrupos de humor ácido analizados.** La muestra de 13 casos mantiene una mediana de 20 interacciones, pero tres outliers de funciones distintas concentran 92.6% del total. Observacional es la única microseñal repetida por encima del centro (`n=2`, mediana 30 interacciones y 6 shares). Se mantiene como hipótesis abierta; no se modifica calendario, CNT ni canon.
 
 - **[2.21.00] — 2026-08-19 (Manus): Ampliación del humor sexual.** Se revisaron visualmente 20 casos adicionales de alto rendimiento. La muestra sexual quedó en `n=2` explícitos y `n=5` sugerentes. El grupo sugerente mantiene una señal exploratoria, pero está condicionado por un outlier textual de 171 interacciones y 50 shares; no se convierte en regla. No se crean CNT ni se modifica calendario, canon o Instagram.
 
