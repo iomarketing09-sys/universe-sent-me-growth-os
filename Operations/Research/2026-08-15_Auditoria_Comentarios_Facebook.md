@@ -268,3 +268,18 @@ El objetivo es pasar de “moderar comentarios” a **cultivar una comunidad con
 [1]: https://developers.facebook.com/documentation/pages-api "Meta for Developers — Facebook Pages API"
 [2]: https://developers.facebook.com/documentation/pages-api/comments-mentions "Meta for Developers — Comments and @mentions"
 [3]: https://developers.facebook.com/docs/graph-api/reference/comment/ "Meta for Developers — Graph API Comment reference"
+
+
+## 12. Versión aprobada de respuestas y regla de estilo — 2026-08-18
+
+Fernando aprobó las tres respuestas pendientes con estos textos finales:
+
+| Comentario | Respuesta aprobada | Criterio |
+|---|---|---|
+| “Pos' mentira no es... 🤭” | “Y nosotros aquí fingiendo que no nos dimos cuenta. 🤭” | Complicidad directa, sin frase genérica. |
+| “Soy!!!” | “Lo sospechábamos, pero gracias por confirmar. 😌” | Mantener breve; el comentario ya entrega el remate. |
+| “Chismoso no, comunicativo…” | “Eso no es chisme, es investigación de campo… con excelente memoria. 🔥” | La pausa conserva el juego y deja abierta la conversación. |
+
+> **Regla editorial:** los personajes no deben aparecer en todas las respuestas. Deben funcionar como condimento cuando aporten un remate concreto; una respuesta puede ser plenamente USM por su tono, ritmo y complicidad sin mencionar a Silvio, Wilfred, Elara u otro personaje.
+
+Estado operativo: las tres respuestas están `Aprobada` y `Pendiente_Aprobacion` de publicación en el ledger. No se han publicado todavía en Meta.
