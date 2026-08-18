@@ -4,7 +4,7 @@ purpose: "Consolidar los assets publicados, sus objetos multimedia de Facebook, 
 status: "Review"
 created: 2026-08-17
 updated: 2026-08-17
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-17_Revision_Excel_Assets_Junio.md"
@@ -80,9 +80,24 @@ Los aprendizajes deben separarse en tres niveles. El primero es **rendimiento br
 
 La siguiente fase recomendada es asignar CNT únicamente a los assets prioritarios o reutilizables, comenzando por los que tengan mayor rendimiento y una relación visual/editorial confirmada. No es necesario convertir automáticamente los 171 Asset_Ref en CNT si todavía no serán usados en producción.
 
+## Auditoría de pendientes actualizada
+
+Junio queda ampliamente integrado a nivel histórico individual: `Historical_Performance_Individuals.csv` contiene 177 filas del periodo `Junio_2026`, compuestas por los 172 cruces del lote de junio y los registros destacados ya existentes. El índice visual contiene 196 assets de Drive. La relación entre publicación y asset está confirmada para 172 registros; 17 registros del Excel original no tienen una referencia de asset utilizable y un caso mantiene relación editorial confirmada pero `Asset_Ref` pendiente.
+
+| Pendiente | Estado | Prioridad |
+|---|---|---|
+| Reconciliar los 17 registros sin Asset_Ref utilizable | Pendiente; contienen referencias internas, vacío o `N/A` | P2 / bajo demanda |
+| Revisar los 58 posts de la cola todavía sin asset match | Reserva de investigación; no crear CNT automáticamente | P1 histórico si se busca cobertura completa |
+| Convertir todos los assets confirmados en CNT | No recomendado; solo asignar CNT a piezas prioritarias o reutilizables | P2 / bajo demanda |
+| Completar taxonomía editorial | Parcial; aplicada en los casos enriquecidos, no como clasificación exhaustiva de todo junio | P1 analítico |
+| Analizar comentarios y replies | Pendiente como capa de conversación | P2 |
+| Recalcular personajes, horarios y formatos | Hay análisis inicial y tablas, pero todavía requiere ampliación y lectura editorial | P1 analítico |
+| Seleccionar reuse histórico | Puede hacerse con los assets confirmados de mayor difusión y distancia de 30 días | P1 operativo cuando se abra una cola reuse |
+| Reconstruir ventanas 24/72h históricas | No posible de forma exacta con los datos actuales; conservar lifetime como histórico | No ejecutar |
+
 ## Estado
 
-Junio queda **recopilado y relacionado a nivel de objetos multimedia y publicaciones editoriales**. No queda cerrado como análisis estratégico: todavía puede ampliarse la lectura de comentarios, personajes, horarios, formatos y reutilización. Los 58 posts restantes de la cola y los 17 registros sin Asset_Ref utilizable son la siguiente reserva de investigación bajo demanda.
+Junio queda **recopilado y relacionado**, pero no completamente cerrado como análisis estratégico. Lo importante que falta no es volver a buscar los 172 cruces ya confirmados, sino decidir qué subconjunto merece enriquecimiento editorial, lectura de comentarios, creación de CNT o incorporación a la cola de reuse. Los 17 registros sin Asset_Ref y los 58 posts restantes de la cola son reservas separadas y no deben mezclarse con la capa individual ya confirmada.
 
 ## Referencias
 

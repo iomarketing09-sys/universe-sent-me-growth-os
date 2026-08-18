@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 2.07
+**Versión:** 2.08
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.08.00] — 2026-08-17 (Manus): Auditoría de pendientes históricos de junio.** Se confirmó que junio cuenta con 177 filas individuales en `Historical_Performance_Individuals.csv`, 196 assets indexados en Drive y 172 relaciones publicación→asset confirmadas. Permanecen como reservas: 17 registros sin `Asset_Ref` utilizable y 58 posts de la cola sin asset match. La taxonomía, comentarios, lectura ampliada de personajes/horarios/formatos y selección de reuse siguen pendientes analíticos/operativos; no se recomienda crear CNT para todos los assets automáticamente. Las ventanas históricas 24/72h no se reconstruirán: se conserva lifetime separado. Documento actualizado: `Operations/Research/2026-08-17_Reporte_Final_Recopilacion_Junio.md`.
 
 - **[2.07.00] — 2026-08-17 (Manus): Auditoría de integración histórica de julio.** Se confirmó que los seis top posts de julio ya están integrados individualmente con Meta ID, métricas lifetime, asset, Drive ID y CNT (`CNT-074`–`CNT-079`). La comparación mensual contiene 207 publicaciones de julio, pero no sustituye la reconciliación individual. El pendiente real es ampliar la muestra individual comenzando por posts con más shares y comentarios, aplicar la taxonomía normalizada y contrastar las hipótesis de etiquetabilidad, humor y horario. Se clasifica como P1 histórico y no bloquea el cierre P0 de agosto. Documento actualizado: `Operations/Research/2026-08-17_Analisis_Julio_Taxonomia_y_Pendientes_Growth_OS.md`.
 
