@@ -113,3 +113,11 @@ Las señales HJ solo pueden alimentar análisis comparativos y diseño de experi
 ### Documento fuente
 
 La matriz completa se encuentra en `Operations/Research/2026-08-18_Matriz_Aprendizajes_GrowthOS_Cinco_Casos.csv`. El filtro para seleccionar casos adicionales se encuentra en `Operations/Research/2026-08-18_Filtro_Expansion_58_Casos_GrowthOS.md`.
+
+## 8. Resultado exploratorio del Lote A — estructuras narrativas
+
+El Lote A comparó diez publicaciones históricas de junio. La microhistoria de tres paneles obtuvo 155 interacciones y 19 shares; la transformación visual de Universe obtuvo 164 interacciones y 42 shares. Ambas son **señales prometedoras pero inconclusas** porque cada celda tiene `n=1`.
+
+Las cinco escenas de personaje tuvieron mediana de 18 interacciones y 2 shares, pero forman una categoría demasiado heterogénea. Los dos controles de texto simple tuvieron mediana de 27.5 interacciones y 4.5 shares, aunque no son controles pareados. La conclusión operativa es no declarar ganador a ningún formato: primero ampliar diálogos, transformaciones y escenas relacionales con la misma codificación.
+
+La taxonomía deberá distinguir `texto_simple`, `escena_caption_unico`, `duo_globo_texto`, `dialogo_secuencial`, `transformacion_visual` y `composicion_mundo`. Documento: `Operations/Research/2026-08-18_Analisis_Lote_A_Estructuras_Narrativas.md`.

@@ -113,6 +113,16 @@ La imagen presenta un gnomo de barba blanca, orejas puntiagudas, sombrero rojo, 
 
 Los cinco casos muestran cinco funciones distintas dentro del origen de Universe: construcción de mundo (`122127916017072582`), aparición de un personaje secundario (`122134608507072582`), elasticidad del protagonista (`122130196011072582`), microhistoria entre personajes (`122129404893072582`) y continuidad visual fuerte de Wilfred (`122125544019072582`).
 
+## Observaciones visuales para el Lote A
+
+### `122129952933072582` — escena de dos humanos en mundo fantástico
+
+La pieza muestra a dos hombres sentados frente a un paisaje de nubes, castillos flotantes y globos aerostáticos. El texto aparece como una sola línea central: “A la gente ya no se le caen los billetes en la calle como antes”. Se clasifica como **escena de personajes con caption único**, no como diálogo ni como panel secuencial.
+
+### `122130232503072582` — escena relacional humano-hada
+
+La pieza muestra a un hombre y un hada sentados juntos sobre nubes, con una burbuja de texto que concentra el remate sexual/relacional y una firma de marca. Se clasifica como **escena de dúo con caption en globo**, distinta de la microhistoria de tres paneles de `122129404893072582`.
+
 ## Próxima acción
 
 Revisar la tercera hoja de contacto, después comparar estos 15 casos contra los índices de Drive de marzo, abril y mayo. Los candidatos con personajes visibles o estética de transición deben recibir prioridad sobre los memes sin evidencia visual recuperable. Ninguno debe recibir CNT ni modificar el canon hasta completar la reconciliación.
