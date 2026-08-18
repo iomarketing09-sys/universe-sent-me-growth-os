@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 2.20
+**Versión:** 2.21
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.21.00] — 2026-08-19 (Manus): Ampliación del humor sexual.** Se revisaron visualmente 20 casos adicionales de alto rendimiento. La muestra sexual quedó en `n=2` explícitos y `n=5` sugerentes. El grupo sugerente mantiene una señal exploratoria, pero está condicionado por un outlier textual de 171 interacciones y 50 shares; no se convierte en regla. No se crean CNT ni se modifica calendario, canon o Instagram.
 
 - **[2.20.00] — 2026-08-19 (Manus): Humor sexual y ácido analizados por separado.** Se revisaron visualmente 16 publicaciones. El humor ácido produjo una señal exploratoria con `n=13`, mediana de 20 interacciones y 4 shares; el humor sexual quedó inconcluso con un caso explícito y uno sugerente. Se corrigieron falsos positivos de caption y se mantuvieron las categorías separadas. No se modifican calendario, CNT ni canon.
 
