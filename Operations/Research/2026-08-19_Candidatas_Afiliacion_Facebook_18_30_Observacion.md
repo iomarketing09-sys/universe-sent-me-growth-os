@@ -276,3 +276,22 @@ Cierre de etiquetas: creadas correctamente las diez etiquetas granulares del pil
 - AFF-10: `usmfb2605280830`
 
 Estado operativo: las etiquetas están creadas en la Central de Afiliados; AFF-01 ya tiene el enlace `https://meli.la/2zCoRix`; los otros nueve enlaces deben generarse mediante el Link Builder. No se ha publicado, editado ni adjuntado ningún producto en Facebook; permanece vigente la aprobación humana obligatoria de la tabla final.
+
+Hallazgo verificable AFF-02: el listado `fantasma-decorativo-luz-led` mostró como primer resultado `Fantasma Decorativo Halloween Tela Con Luz Led`, con precio visible de `$146.72 MXN` (antes $249.10) y envío FULL. Se mantiene como candidato principal por encaje directo con Fantasma y por estar dentro del rango objetivo. Aún falta abrir el resultado para recuperar la URL normal exacta del producto y generar el link afiliado con `usmfb2605600819`; no se adjuntó nada en Facebook.
+
+Link generado AFF-02: se usó la URL normal `https://www.mercadolibre.com.mx/fantasma-decorativo-halloween-tela-con-luz-led/p/MLM2093520998` con la etiqueta `usmfb2605600819`. Mercado Libre mostró el aviso `El link se generó y se copió correctamente` y devolvió el link corto `https://meli.la/1IzDjkN`. Producto: `Fantasma Decorativo Halloween Tela Con Luz Led`, precio observado `$146.72 MXN`, publicación `MLM3046410119`, producto `MLM2093520998`. Estado: link generado, pendiente de adjunción nativa y aprobación final; no se modificó Facebook.
+
+Hallazgo verificable AFF-03: el listado `casa-rascador-gato-caja` mostró `Caja Para Rascar Y Casa De Cartón Para Gatos` a `$191.23 MXN`, `Caja Para Rascar Cat House, Casa De Cartón Para Gatos` a `$202.87 MXN`, `Caja Para Rascar Gatos Con Tablero Lishan` a `$242.25 MXN`, `Sjx. Casa De Cartón Rascador Para Gatos` a `$251.49 MXN` y `Casa Rascadora Para Gatos Cuadrados Interior` a `$180.27 MXN`. Se mantiene como preferencia la opción cuyo producto/imagen coincida mejor con el asset 260659; aún falta abrir un resultado para obtener la URL normal exacta y generar el link con `usmfb2606590820`.
+
+Link generado AFF-03: se usó la URL normal `https://www.mercadolibre.com.mx/caja-para-rascar-y-casa-de-carton-para-gatos/up/MLMU4776087190` con la etiqueta `usmfb2606590820`. Mercado Libre confirmó que el link se generó y copió correctamente y devolvió `https://meli.la/1UTaJUe`. Producto: `Caja Para Rascar Y Casa De Cartón Para Gatos`, precio observado `$191.23 MXN`, producto `MLMU4776087190`. Estado: link generado, pendiente de adjunción nativa y aprobación final; no se modificó Facebook.
+
+Hallazgo verificable AFF-04: el listado `lampara-antorcha-led-recargable-usb` mostró opciones dentro del rango objetivo, entre ellas `Linterna Táctica Recargable 120000 Lúmenes Led Campismo` a `$168.25 MXN`, `Lámpara Táctica Recargable Campismo Linterna Potente` a `$238 MXN`, `Lámpara Led Recargable 200000lm Luz Blanca` a `$295.24 MXN` y `Linterna Táctica Lidimi LED Recargable` a `$249 MXN`. Se priorizará la opción cuya imagen conserve mejor el motivo de fuego/luz del asset 260635; falta abrir el producto y generar el link con `usmfb2606350821`.
+
+Lote manual AFF-05/AFF-06 — URLs sugeridas sin usar navegador adicional:
+
+| Opportunity_ID | Content_ID | Etiqueta | URL normal sugerida | Producto/precio observado | Estado |
+|---|---|---|---|---|---|
+| AFF-05 | 260510 | `usmfb2605100822` | `https://www.mercadolibre.com.mx/soporte-de-taza-de-escritorio-soporte-de-bebidas-negro/p/MLM2047372590` | Soporte para teléfono/taza de escritorio; $211.95 MXN | URL recuperada de HTML guardado; validar visualmente antes de generar |
+| AFF-06 | 260518 | `usmfb2605180824` | `https://www.mercadolibre.com.mx/soporte-de-taza-de-escritorio-abrazadera-de-soporte-de/p/MLM2101984748` | Soporte de escritorio/taza; $225.64 MXN | URL recuperada de HTML guardado; candidato provisional, no coincide con la idea inicial de regalo/rosa |
+
+Restricción: estas son URLs normales de producto, no links afiliados. Deben introducirse manualmente en el Link Builder con la etiqueta indicada. No registrar la URL como `ML_Link_or_ID` hasta que Mercado Libre devuelva el link afiliado corto. AFF-06 requiere validación humana del encaje editorial antes de generar; si se desea conservar el concepto de regalo/rosa, debe sustituirse por una URL individual verificada de ese producto.
