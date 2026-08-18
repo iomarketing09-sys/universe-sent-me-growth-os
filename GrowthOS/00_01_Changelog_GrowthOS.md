@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 2.17
+**Versión:** 2.18
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.18.00] — 2026-08-19 (Manus): Ampliación de diálogo y transformación de Universe.** Se recuperaron y codificaron 12 publicaciones históricas con evidencia visual de Meta. La microhistoria secuencial conserva una señal prometedora pero inconclusa; las transformaciones de Universe muestran mediana exploratoria de 85.5 interacciones y 21 shares con gran dispersión. No se agruparon diálogo implícito, escenas relacionales ni controles textuales con la microhistoria. No se modifican calendario, CNT ni canon.
 
 - **[2.17.00] — 2026-08-18 (Manus): Lote A analizado por estructura narrativa.** Se codificaron diez publicaciones históricas en `texto_simple`, `escena_caption_unico`, `duo_globo_texto`, `dialogo_secuencial`, `transformacion_visual` y `composicion_mundo`. La microhistoria y la transformación de Universe son señales prometedoras, pero inconclusas por `n=1`; no se declara ganador de formato. Se recomienda ampliar diálogos, transformaciones y escenas relacionales antes de convertir estas señales en reglas.
 

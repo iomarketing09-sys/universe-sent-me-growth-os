@@ -1,0 +1,13 @@
+meta_id,fecha,interacciones,reacciones,comentarios,shares,estructura_narrativa,subgrupo,personajes_observables,tipo_humor,nivel_confianza_visual,asset_ref_conocido
+1036844829507460_122130032151072582,2026-06-12,4,4,0,0,dialogo_implicito,Dos líneas de remate en personaje,Wilfred visualmente compatible,Humor seco / absurdo,Alta,
+1036844829507460_122129404893072582,2026-06-11,155,135,1,19,dialogo_secuencial,Microhistoria de tres paneles,Hombre + hada visualmente compatible,Literalidad / absurdo romántico,Alta,
+1036844829507460_122125520661072582,2026-06-01,15,13,1,1,escena_personaje_caption,Universe en escena con caption,Universe,Relatable / espera,Alta,
+1036844829507460_122134055109072582,2026-06-27,9,8,1,0,escena_personaje_caption,Personaje en mundo astrológico,Mujer no identificada,Esotérico / reflexivo,Alta,
+1036844829507460_122129952933072582,2026-06-12,27,19,4,4,escena_relacional_caption,Dúo con caption único,Dos humanos no identificados,Relatable / observacional,Alta,
+1036844829507460_122125894767072582,2026-06-02,0,0,0,0,escena_relacional_caption,Dúo relacional con cinta,Dos humanos no identificados,Relatable / afectivo,Alta,
+1036844829507460_122126653755072582,2026-06-04,0,0,0,0,escena_relacional_caption,Pareja fantástica con remate,Dos humanos no identificados,Romántico / posesivo,Alta,
+1036844829507460_122126265063072582,2026-06-03,0,0,0,0,metafora_visual_caption,Metáfora visual con caption,Hombre no identificado,Romántico / visual,Alta,
+1036844829507460_122133424479072582,2026-06-24,5,4,0,1,personaje_caption,Personaje con remate textual,Silvio visualmente compatible,Romántico / absurdo,Alta,
+1036844829507460_122127189117072582,2026-06-05,8,7,0,1,texto_sobre_fotografia,Texto sobre cielo real,Ninguno visible,Observacional / sexual,Alta,
+1036844829507460_122130196011072582,2026-06-13,164,120,2,42,transformacion_visual,Transformación Universe explícita,Universe,Absurdo / relatable,Alta,
+1036844829507460_122130324285072582,2026-06-14,7,7,0,0,transformacion_visual,Transformación de material/escena,Universe,Absurdo visual,Alta,

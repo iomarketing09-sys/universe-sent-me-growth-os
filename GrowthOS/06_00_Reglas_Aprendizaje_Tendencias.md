@@ -121,3 +121,9 @@ El Lote A comparó diez publicaciones históricas de junio. La microhistoria de 
 Las cinco escenas de personaje tuvieron mediana de 18 interacciones y 2 shares, pero forman una categoría demasiado heterogénea. Los dos controles de texto simple tuvieron mediana de 27.5 interacciones y 4.5 shares, aunque no son controles pareados. La conclusión operativa es no declarar ganador a ningún formato: primero ampliar diálogos, transformaciones y escenas relacionales con la misma codificación.
 
 La taxonomía deberá distinguir `texto_simple`, `escena_caption_unico`, `duo_globo_texto`, `dialogo_secuencial`, `transformacion_visual` y `composicion_mundo`. Documento: `Operations/Research/2026-08-18_Analisis_Lote_A_Estructuras_Narrativas.md`.
+
+## 9. Ampliación diálogo y transformación — 2026-08-19
+
+La ampliación recuperó y codificó doce publicaciones. El diálogo secuencial conserva una señal prometedora pero inconclusa con un caso de 155 interacciones y 19 shares. La transformación visual de Universe reúne dos casos con mediana de 85.5 interacciones y 21 shares, pero con gran dispersión: un caso obtuvo 164/42 y otro 7/0. Por tanto, la hipótesis debe distinguir claridad del contraste, tipo de transformación y preservación de marcadores del personaje.
+
+El diálogo implícito, las escenas relacionales y el texto sobre fotografía no se deben agrupar con la microhistoria secuencial. Las escenas relacionales incluyen filas con métricas cero y requieren verificación antes de interpretar su mediana. Documento: `Operations/Research/2026-08-19_Analisis_Lote_Dialogo_Transformacion.md`.
