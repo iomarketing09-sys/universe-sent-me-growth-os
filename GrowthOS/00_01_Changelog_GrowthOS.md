@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 2.27
+**Versión:** 2.28
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.28.00] — 2026-08-19 (Manus): Redistribución temporal de 10 oportunidades afiliadas.** La propuesta se reconcilia contra el calendario maestro 17–30 y distribuye oportunidades desde el 18 hasta el 30 de agosto, comenzando el día 18 y dejando libres los días 23, 25 y 27 como referencias sin afiliación. No se generaron URLs, no se adjuntaron productos y no se modificaron publicaciones. Documento: `Operations/Production/2026-08-19_Piloto_Afiliados_Facebook_18_30_Agosto.md`; registro: `Operations/Research/Affiliate_Pilot_Assignments.csv`.
 
 - **[2.27.00] — 2026-08-19 (Manus): Diseño del piloto de afiliación Facebook 18–30.** Se recomienda probar cuatro-seis publicaciones sin modificar el calendario P0, con un producto, link y etiqueta únicos por publicación. Se crea `Affiliate_Metrics_Snapshots.csv` como ledger append-only para preservar cada corte de métricas. Se actualiza el playbook y la estrategia de Mercado Libre a las versiones 1.1 y 1.3.
 

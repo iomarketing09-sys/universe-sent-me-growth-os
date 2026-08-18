@@ -10,6 +10,7 @@ related_documents:
   - "Operations/Production/2026-08-19_Playbook_Tracking_Afiliados_MercadoLibre.md"
   - "Operations/Research/Affiliate_Link_Ledger.csv"
   - "Operations/Research/Affiliate_Metrics_Snapshots.csv"
+  - "Operations/Research/Affiliate_Pilot_Assignments.csv"
   - "GrowthOS/11_00_Estrategia_Monetizacion_MercadoLibre.md"
   - "Operations/Research/2026-08-19_MercadoLibre_Facebook_Afiliados_Observacion.md"
 organization: "Operations/Production"
@@ -96,3 +97,24 @@ No se deben mezclar las métricas afiliadas con `Interacciones_24h`, `Interaccio
 El piloto no busca demostrar que un meme vende por sí solo. Busca responder tres preguntas concretas: si la audiencia hace clic cuando el producto encaja con el contenido; si una etiqueta por publicación permite identificar el origen de las ventas; y si el enlace genera ventas aprobadas después de la ventana de atribución.
 
 Si hay clics sin ventas, se revisa el producto, el CTA y el encaje. Si hay ventas bajo una etiqueta específica, se puede repetir el patrón. Si no hay clics, no se concluye que Facebook no monetiza: se revisa el copy, la superficie y el producto. Solo se toma una decisión después de varios links comparables.
+
+## Distribución temporal propuesta
+
+La selección se distribuye desde el 18 hasta el 30 de agosto para evitar concentrar todas las oportunidades en los últimos cuatro días. Se eligieron slots con assets identificados en el calendario maestro y se dejó pendiente la búsqueda del producto hasta validar visualmente el encaje en el navegador.
+
+| Oportunidad | Fecha | Hora | Asset del calendario | Personaje/identidad visible | Superficie prevista | Producto |
+|---:|---|---:|---|---|---|---|
+| AFF-01 | 18 ago | 17:00 | `260644 - Universe.png` | Universe | `FACEBOOK_NATIVE_PRODUCT` | Pendiente de búsqueda |
+| AFF-02 | 19 ago | 13:30 | `260560 - Fantasma.png` | Fantasma | `FACEBOOK_NATIVE_PRODUCT` | Pendiente de búsqueda |
+| AFF-03 | 20 ago | 13:30 | `260659 - Universe.png` | Universe | `FACEBOOK_NATIVE_PRODUCT` | Pendiente de búsqueda |
+| AFF-04 | 21 ago | 11:00 | `260635 - Universe.png` | Universe | `FACEBOOK_NATIVE_PRODUCT` | Pendiente de búsqueda |
+| AFF-05 | 22 ago | 19:00 | `260510 - Universe.png` | Universe / contexto nocturno | `FACEBOOK_NATIVE_PRODUCT` | Pendiente de búsqueda |
+| AFF-06 | 24 ago | 10:00 | `260518 - Kael.png` | Kael | `FACEBOOK_NATIVE_PRODUCT` | Pendiente de búsqueda |
+| AFF-07 | 26 ago | 13:30 | `260540 - Elara.png` | Elara | `FACEBOOK_NATIVE_PRODUCT` | Pendiente de búsqueda |
+| AFF-08 | 28 ago | 13:30 | `260590 - Maeve.png` | Maeve | `FACEBOOK_NATIVE_PRODUCT` | Pendiente de búsqueda |
+| AFF-09 | 29 ago | 10:00 | `741 - Elara+Maeve.png` | Elara + Maeve | `FACEBOOK_NATIVE_PRODUCT` | Pendiente de búsqueda |
+| AFF-10 | 30 ago | 22:00 | `260528 - Universe.png` | Universe / noche | `FACEBOOK_NATIVE_PRODUCT` | Pendiente de búsqueda |
+
+Se dejan libres los días 23, 25 y 27 para no sobrecargar la primera prueba y para conservar publicaciones sin afiliación como referencia operativa. La distribución no cambia la programación ni añade contenido; solo define dónde se intentará adjuntar un producto después de la aprobación.
+
+La publicación del 18 es el primer candidato, como solicitó Fernando. Las URLs, etiquetas y productos se buscarán después de validar esta lista y el encaje visual de cada asset. Ningún enlace ha sido creado o adjuntado en esta fase.

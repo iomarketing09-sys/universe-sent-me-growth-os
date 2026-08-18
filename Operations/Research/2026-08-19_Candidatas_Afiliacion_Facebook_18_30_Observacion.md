@@ -52,3 +52,9 @@ La interfaz también muestra acciones como `Publicar ahora`; no se utilizó ning
 El menú rápido de una publicación programada solo mostró `Administrar publicación` y `Copiar identificador de la publicación`; no mostró directamente `Agregar enlace de afiliación`. Esto no descarta el flujo nativo: se debe verificar dentro de `Administrar publicación`, sin pulsar ningún botón de publicación o confirmación hasta contar con aprobación humana.
 
 La interfaz permite copiar el identificador de la publicación, lo que será útil para completar `Meta_Post_ID` antes de registrar cada producto.
+
+## Distribución maestra propuesta
+
+La relación correcta se tomó de `2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md`, no de una lectura parcial del navegador. Las diez oportunidades propuestas quedan distribuidas así: 18/17:00 `260644 - Universe.png`; 19/13:30 `260560 - Fantasma.png`; 20/13:30 `260659 - Universe.png`; 21/11:00 `260635 - Universe.png`; 22/19:00 `260510 - Universe.png`; 24/10:00 `260518 - Kael.png`; 26/13:30 `260540 - Elara.png`; 28/13:30 `260590 - Maeve.png`; 29/10:00 `741 - Elara+Maeve.png`; 30/22:00 `260528 - Universe.png`.
+
+La selección se mantiene como propuesta hasta que se revise el encaje visual y se apruebe el conjunto. La ausencia de oportunidades afiliadas los días 23, 25 y 27 es intencional para conservar referencias sin afiliación y no concentrar demasiadas inserciones consecutivas.

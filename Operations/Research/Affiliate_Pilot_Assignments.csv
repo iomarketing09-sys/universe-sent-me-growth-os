@@ -1,0 +1,11 @@
+Campaign_ID,Opportunity_ID,Date_Local,Time_Local,Content_ID,Asset_Ref,Character,Surface,Product_Key,ML_Tag,Native_Product_Attachment_ID,Status,Approval_Status,Notes
+USM-AFF-FB-20260818-30-P01,AFF-01,2026-08-18,17:00,260644,260644 - Universe.png,Universe,FACEBOOK_NATIVE_PRODUCT,,,,Planned_No_Product,Pending,"First affiliate opportunity; product search pending"
+USM-AFF-FB-20260818-30-P01,AFF-02,2026-08-19,13:30,260560,260560 - Fantasma.png,Fantasma,FACEBOOK_NATIVE_PRODUCT,,,,Planned_No_Product,Pending,"Product search pending"
+USM-AFF-FB-20260818-30-P01,AFF-03,2026-08-20,13:30,260659,260659 - Universe.png,Universe,FACEBOOK_NATIVE_PRODUCT,,,,Planned_No_Product,Pending,"Product search pending"
+USM-AFF-FB-20260818-30-P01,AFF-04,2026-08-21,11:00,260635,260635 - Universe.png,Universe,FACEBOOK_NATIVE_PRODUCT,,,,Planned_No_Product,Pending,"Product search pending"
+USM-AFF-FB-20260818-30-P01,AFF-05,2026-08-22,19:00,260510,260510 - Universe.png,Universe,FACEBOOK_NATIVE_PRODUCT,,,,Planned_No_Product,Pending,"Product search pending"
+USM-AFF-FB-20260818-30-P01,AFF-06,2026-08-24,10:00,260518,260518 - Kael.png,Kael,FACEBOOK_NATIVE_PRODUCT,,,,Planned_No_Product,Pending,"Product search pending"
+USM-AFF-FB-20260818-30-P01,AFF-07,2026-08-26,13:30,260540,260540 - Elara.png,Elara,FACEBOOK_NATIVE_PRODUCT,,,,Planned_No_Product,Pending,"Product search pending"
+USM-AFF-FB-20260818-30-P01,AFF-08,2026-08-28,13:30,260590,260590 - Maeve.png,Maeve,FACEBOOK_NATIVE_PRODUCT,,,,Planned_No_Product,Pending,"Product search pending"
+USM-AFF-FB-20260818-30-P01,AFF-09,2026-08-29,10:00,741,741 - Elara+Maeve.png,Elara+Maeve,FACEBOOK_NATIVE_PRODUCT,,,,Planned_No_Product,Pending,"Product search pending"
+USM-AFF-FB-20260818-30-P01,AFF-10,2026-08-30,22:00,260528,260528 - Universe.png,Universe,FACEBOOK_NATIVE_PRODUCT,,,,Planned_No_Product,Pending,"Product search pending; night context"
