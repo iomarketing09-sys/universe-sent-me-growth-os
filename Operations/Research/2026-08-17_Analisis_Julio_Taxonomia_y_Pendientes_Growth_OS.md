@@ -4,7 +4,7 @@ purpose: "Aplicar la taxonomía editorial a la muestra histórica disponible de 
 status: "Review"
 created: 2026-08-17
 updated: 2026-08-17
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-17_Julio_Analisis_Taxonomia.csv"
@@ -71,6 +71,22 @@ La tercera hipótesis es que la taxonomía actual necesita una revisión visual 
 | P2 | Instagram | Controlado | Mantener el scheduler histórico fuera de operación; cualquier nueva ola debe tener playbook autocontenido e idempotencia |
 | P2 | CNT-004 | Diferido por decisión del usuario | Mantener fuera de producción y no usarlo para conclusiones canónicas |
 | P2 | Menciones históricas a Make | Trazabilidad | No tratar documentos antiguos como arquitectura activa; actualizar solo documentos de control cuando corresponda |
+
+## Auditoría de integración al Growth OS
+
+La cobertura individual de julio sigue siendo **parcial**. `Historical_Performance_Individuals.csv` contiene seis publicaciones de julio con Meta ID, métricas lifetime, asset confirmado, Drive ID y CNT editorial (`CNT-074` a `CNT-079`). La comparación mensual sí contiene 207 publicaciones de julio, pero esa tabla es una capa agregada/analítica y no sustituye la reconciliación individual asset → Meta → CNT.
+
+| Capa | Estado actual | Qué falta |
+|---|---|---|
+| Agregado mensual | Integrado | No falta integración; debe mantenerse separado de lifetime individual y de 24/72h |
+| Top posts individuales | Integrado para seis casos | No falta reconciliación de esos seis; falta ampliar la muestra si se quiere estudiar más que los top posts |
+| Assets de Drive | Confirmados para los seis top | Falta localizar y cruzar más assets de julio con publicaciones Meta |
+| CNT editorial | `CNT-074`–`CNT-079` creados | No crear CNT masivos sin una correspondencia Meta/Drive verificable |
+| Taxonomía | Aplicada y revisada visualmente en seis casos | Falta aplicarla a una muestra ampliada de julio |
+| Métricas | Lifetime históricas disponibles para los seis y agregado mensual para 207 publicaciones | Falta una capa individual ampliada con métricas y fecha; 24/72h no es reconstruible para publicaciones históricas |
+| Aprendizaje | Hipótesis inicial documentada | Falta contrastar potencial de etiquetado, humor y horario con más casos |
+
+Por lo tanto, lo que falta de julio no es “cerrar” los seis top posts: esos ya están integrados. El pendiente real es ampliar la cobertura individual de julio, empezando por publicaciones con más shares y comentarios, y después aplicarles la taxonomía normalizada. Esta ampliación es **P1 histórico**, pero no bloquea la operación actual ni debe retrasar el corte P0 de agosto.
 
 ## Recomendación CGO
 

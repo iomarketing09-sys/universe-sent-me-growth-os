@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 2.06
+**Versión:** 2.07
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.07.00] — 2026-08-17 (Manus): Auditoría de integración histórica de julio.** Se confirmó que los seis top posts de julio ya están integrados individualmente con Meta ID, métricas lifetime, asset, Drive ID y CNT (`CNT-074`–`CNT-079`). La comparación mensual contiene 207 publicaciones de julio, pero no sustituye la reconciliación individual. El pendiente real es ampliar la muestra individual comenzando por posts con más shares y comentarios, aplicar la taxonomía normalizada y contrastar las hipótesis de etiquetabilidad, humor y horario. Se clasifica como P1 histórico y no bloquea el cierre P0 de agosto. Documento actualizado: `Operations/Research/2026-08-17_Analisis_Julio_Taxonomia_y_Pendientes_Growth_OS.md`.
 
 - **[2.06.00] — 2026-08-17 (Manus): Verificación Meta y baseline de la ola activa.** Se verificó en modo lectura la página Universe Sent Me (`1036844829507460`) y se confirmaron cinco publicaciones reales del 17 de agosto, correspondientes a los slots 10:00, 11:00, 13:30, 16:00 y 17:00. Se creó `Operations/Research/2026-08-17_Verificacion_Meta_Ola_Activa.json` con la evidencia y `Operations/Research/2026-08-17_P0_Baseline_Ola_Activa.csv` con el cruce por fecha/slot local, Asset_Ref y Meta Post ID. Ninguna ventana 24h/72h está vencida en este corte; no se usaron totales lifetime como sustituto.
 
