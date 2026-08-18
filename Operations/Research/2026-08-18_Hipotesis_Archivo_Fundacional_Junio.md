@@ -20,27 +20,21 @@ organization: "Operations/Research"
 
 ## Hipótesis de trabajo
 
-Los 58 registros de junio marcados como `Needs_Asset_Match` no deben interpretarse como contenido irrelevante o defectuoso. Es plausible que representen una capa temprana del archivo creativo que impulsó la página antes de que se consolidaran los personajes, la estética de animación, los escenarios y la nomenclatura de Universe.
+Los 58 registros de junio marcados como `Needs_Asset_Match` no deben interpretarse como contenido irrelevante o defectuoso. Representan una capa histórica de publicaciones con datos reales de Meta y valor editorial observable, independientemente de cuándo o dónde se creó cada asset. El Growth OS los utilizará por su rendimiento, formato, humor, personajes visibles y potencial de aprendizaje, sin intentar reconstruir su origen temporal.
 
-La hipótesis distingue tres etapas, sin asumirlas como hechos hasta recuperar evidencia:
+La hipótesis no requiere clasificar los casos por mes de creación. Todos se tratarán como publicaciones históricas observables de junio y se analizarán por el valor que aportan al Growth OS.
 
-| Etapa | Posible función histórica |
-|---|---|
-| Marzo–abril | Memes fundacionales o experimentos iniciales que ayudaron a descubrir el tono y la respuesta de audiencia |
-| Mayo | Consolidación de una identidad visual más consistente y comienzo de la reutilización organizada |
-| Junio | Expansión de la frecuencia y mezcla de memes que alimentaron el crecimiento, incluyendo piezas aún no enlazadas a Drive |
-
-La fecha de publicación en junio no implica que el asset haya sido creado en junio. Un post de junio puede ser un reuse de marzo, abril o mayo, o una pieza que quedó fuera de la organización mensual.
+La fecha de publicación en junio solo se utilizará como fecha de observación de rendimiento. No se inferirá una fecha de creación del asset ni se clasificará la pieza como reuse de otro mes salvo que exista evidencia ya documentada y necesaria para una decisión operativa.
 
 ## Qué evidencia conservan
 
 Los 58 registros sí conservan, en distinto grado, `facebook_photo_id`, `meta_publication_id`, fecha local, caption y métricas históricas. Por tanto, pueden estudiarse como publicaciones reales aunque falte el archivo creativo. El primer filtro de valor debe ser shares, interacciones y comentarios, no la presencia de un personaje canónico.
 
-## Protocolo de reconstrucción
+## Protocolo de utilización histórica
 
-Primero se ordenarán los 58 casos por shares y por interacciones. Después se consultarán los objetos multimedia y las imágenes de Meta para recuperar la evidencia visual. Los candidatos se cruzarán contra los índices de Drive de marzo, abril, mayo y junio mediante perceptual hash, dimensiones, filename parcial, caption y similitud visual. Los casos sin coincidencia permanecerán como `Historical_Unmatched`, no se convertirán en CNT automáticamente.
+Primero se ordenarán los 58 casos por shares e interacciones. Después se utilizarán los objetos multimedia y las imágenes de Meta para recuperar la evidencia visual disponible. Cada caso se enriquecerá con formato, composición, personajes observables, rol narrativo, tipo de humor, potencial de etiquetado y señales de conversación. Los casos sin coincidencia de asset permanecerán como `Historical_Unmatched`, pero seguirán siendo válidos para análisis de rendimiento y aprendizaje. No se hará rastreo de origen en otras carpetas o meses.
 
-Cuando exista coincidencia visual suficiente, el registro conservará tres capas separadas: fecha de publicación en Meta, posible fecha o carpeta de creación del asset y nivel de confianza de la relación. La ausencia de personajes de la Biblia no será motivo de descarte; se registrará como `Personaje_No_Canonico`, `Humano_No_Identificado` o `Sin_Personaje_Visible` según la evidencia.
+Cuando exista evidencia visual suficiente, el registro conservará la fecha de publicación en Meta, el nivel de confianza de la observación y los campos editoriales disponibles. No se añadirá una fecha de creación inferida. La ausencia de personajes de la Biblia no será motivo de descarte; se registrará como `Personaje_No_Canonico`, `Humano_No_Identificado` o `Sin_Personaje_Visible` según la evidencia.
 
 ## Criterio de integración
 
@@ -50,10 +44,8 @@ Un caso podrá integrarse al histórico individual cuando tenga Meta ID y eviden
 
 El top 15 recuperado desde Meta confirmó que la cola contiene varias señales de formación de Universe: Universe/gato con gafas, Wilfred/gnomo, Ganso, hadas, tarot, escenarios cósmicos y una mezcla de fotografía real con ilustración. El caso `122125544019072582` muestra a Wilfred en un bosque; `122127916017072582` combina hada, Wilfred, tarot y territorio esotérico; `122134608507072582` muestra a Ganso con traje; y `122130196011072582` muestra a Universe en una versión muscular absurda.
 
-El listado de `05 Mayo` contiene 128 assets y ya utiliza nombres consistentes de personajes como Universe, Wilfred, Fantasma, Kiri, Elara, Maeve y Kael. Sin embargo, los 15 casos fundacionales recuperados desde Meta no tienen todavía coincidencia de filename directa en esa lista. Esto no descarta una relación visual: puede tratarse de assets antiguos con nombres distintos, archivos fuera de la carpeta mensual o publicaciones creadas antes de que se normalizara la nomenclatura.
-
-La evidencia actual sostiene que estos casos son un archivo de evolución creativa, pero **no demuestra todavía que provengan de marzo o abril**. Esa afirmación requiere cruzar imágenes o hashes con las carpetas y publicaciones anteriores.
+Los 15 casos recuperados desde Meta se tratarán como publicaciones históricas válidas aunque no exista una coincidencia de asset en Drive. La ausencia de `Asset_Ref` limita la integración del archivo creativo, pero no invalida las métricas, la revisión visual ni el aprendizaje editorial.
 
 ## Prioridad
 
-La prioridad inicial será reconstruir los casos del cuartil superior por shares y los que tengan personajes o territorios visuales de formación. El orden recomendado es `122127916017072582` (hada/Wilfred/tarot), `122134608507072582` (Ganso), `122130196011072582` (Universe), `122129404893072582` (hada y diálogo) y `122125544019072582` (Wilfred). Después se procesarán las fotografías y memes textuales tempranos si el cruce histórico muestra valor.
+La prioridad inicial será analizar el cuartil superior por shares e interacciones y los casos que aporten señales claras sobre personajes, formato, humor o conversación. El primer lote detallado ya está compuesto por `122127916017072582`, `122134608507072582`, `122130196011072582`, `122129404893072582` y `122125544019072582`. El siguiente paso será convertir sus señales en aprendizajes comparables del Growth OS y ampliar el análisis al resto de la cola solo cuando exista una pregunta concreta.

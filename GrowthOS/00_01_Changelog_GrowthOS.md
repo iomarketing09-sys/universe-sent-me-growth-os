@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 2.14
+**Versión:** 2.15
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.15.00] — 2026-08-18 (Manus): Nuevo alcance para los casos sin match.** Por decisión de Fernando, no se rastreará el origen de estas publicaciones en marzo, abril, mayo u otras carpetas. Los 58 casos se utilizarán únicamente por sus datos observables de Meta y revisión visual: rendimiento, formato, personajes visibles, rol narrativo, tipo de humor, potencial de etiquetado y conversación disponible. Se actualizó la hipótesis y el análisis detallado para retirar el rastreo de origen como requisito.
 
 - **[2.14.00] — 2026-08-18 (Manus): Análisis detallado de cinco casos fundacionales.** Se analizaron `122127916017072582` (hada/Wilfred/tarot), `122134608507072582` (Ganso), `122130196011072582` (Universe muscular), `122129404893072582` (diálogo humano-hada) y `122125544019072582` (Wilfred). El resultado separa observación, hipótesis de origen, aprendizaje Growth OS y límites canónicos. El caso de Wilfred es la continuidad visual más fuerte; Universe muscular y el diálogo de tres paneles son las señales estratégicas de mayor rendimiento. Documento: `Operations/Research/2026-08-18_Analisis_Detallado_Cinco_Casos_Fundacionales_Junio.md`.
 

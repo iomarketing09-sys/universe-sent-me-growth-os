@@ -19,7 +19,7 @@ organization: "Operations/Research"
 
 ## Alcance y método
 
-Este análisis selecciona cinco casos de la cola `Needs_Asset_Match` por su **valor para explicar la formación de Universe**, no porque sean necesariamente los cinco posts con más interacciones. Se utilizaron el objeto multimedia recuperado desde Meta, la revisión visual individual, la fecha y las métricas del ledger histórico, el listado de 128 assets de `05 Mayo` y el bridge de canon sincronizado. Las observaciones visuales se mantienen separadas de las hipótesis de origen y de cualquier decisión canónica [1] [2] [3] [4].
+Este análisis selecciona cinco casos de la cola `Needs_Asset_Match` por su **valor para explicar señales útiles de Universe**, no porque sean necesariamente los cinco posts con más interacciones. Se utilizaron el objeto multimedia recuperado desde Meta, la revisión visual individual, la fecha y las métricas del ledger histórico y el bridge de canon sincronizado. Las observaciones visuales se mantienen separadas de las hipótesis de aprendizaje y de cualquier decisión canónica [1] [2] [3].
 
 > **Regla de interpretación:** una pieza puede aportar evidencia sobre el origen de un personaje o de una convención visual sin convertirse automáticamente en canon.
 
@@ -161,13 +161,12 @@ Los cinco casos muestran que la consistencia de Universe se construyó en varias
 
 ## Conclusión
 
-Los cinco casos deben integrarse como **evidencia histórica fundacional**, no como nuevos contenidos de producción ni como cambios automáticos de canon. El caso de Universe muscular y el diálogo humano-hada aportan además señales fuertes para el Growth OS: reconocimiento de personaje, transformación absurda y microhistoria compartible. El caso de Wilfred aporta continuidad visual; los casos de hada/tarot y Ganso ayudan a reconstruir el mundo y el elenco emergente.
+Los cinco casos deben integrarse como **evidencia histórica utilizable**, no como nuevos contenidos de producción ni como cambios automáticos de canon. El caso de Universe muscular y el diálogo humano-hada aportan señales fuertes para el Growth OS: reconocimiento de personaje, transformación absurda y microhistoria compartible. El caso de Wilfred aporta una referencia visual útil para la taxonomía; los casos de hada/tarot y Ganso aportan señales sobre territorio, personajes visibles y composición.
 
-La siguiente investigación debe cruzar estos cinco archivos contra las carpetas de mayo y, si están disponibles, marzo y abril. El objetivo no es probar una narrativa deseada, sino determinar con evidencia cuándo aparecieron los rasgos que después se volvieron canon.
+La siguiente acción no será rastrear cuándo o dónde se originaron estos assets. Será convertir los datos disponibles en campos comparables del Growth OS: rendimiento, formato, personajes observables, rol narrativo, tipo de humor, potencial de etiquetado y conversación cuando exista. El objetivo es aprender qué elementos funcionaron y cómo describirlos, no reconstruir una genealogía que no necesitamos para operar.
 
 ## Referencias
 
 [1]: `Operations/Research/2026-08-18_Junio_Unmatched_Top15_Meta_Media.json` "Objetos multimedia recuperados desde Meta para el top 15"
 [2]: `Operations/Research/2026-08-18_Junio_Archivo_Fundacional_Top15.csv` "Clasificación inicial del archivo fundacional"
-[3]: `Operations/Research/2026-08-18_Drive_Assets_Mayo_Listing.json` "Listado de 128 assets en la carpeta 05 Mayo"
-[4]: `GrowthOS/Integracion_Growth_OS.md` "Bridge vigente entre Growth OS y Biblia de Canon"
+[3]: `GrowthOS/Integracion_Growth_OS.md` "Bridge vigente entre Growth OS y Biblia de Canon"
