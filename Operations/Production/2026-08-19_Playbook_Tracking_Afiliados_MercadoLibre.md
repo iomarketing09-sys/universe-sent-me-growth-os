@@ -4,7 +4,7 @@ purpose: "Definir una configuración reproducible para atribuir enlaces, clics, 
 status: "Review"
 created: 2026-08-19
 updated: 2026-08-18
-version: "1.3"
+version: "1.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/11_00_Estrategia_Monetizacion_MercadoLibre.md"
@@ -137,13 +137,13 @@ El piloto recomendado para la ola del 18–30 está documentado en `Operations/P
 
 ## Estado consolidado de revisión — 18 de agosto de 2026
 
-La revisión del repositorio confirma que el sistema está preparado a nivel de diseño, pero todavía no está operativo para la ola de diez publicaciones de Facebook. En `Affiliate_Pilot_Assignments.csv` existen diez oportunidades, cada una con una etiqueta granular creada (`usmfb2606440818` a `usmfb2605280830`), pero ninguna fila contiene todavía `Product_Key`, `ML_Link_or_ID`, `Native_Product_Attachment_ID` ni un estado de producto adjunto. Por tanto, las etiquetas no deben interpretarse como enlaces afiliados utilizables.
+La matriz del piloto ya contiene diez productos y diez links afiliados cortos, uno por oportunidad, cada uno con su etiqueta granular, producto y URL normal verificada. Los diez registros permanecen en estado `Link_Generated_Product_Pending_Attachment`; todavía no se ha adjuntado ningún producto a una publicación ni se ha publicado o modificado contenido.
 
-El único enlace afiliado generado que aparece documentado es `https://meli.la/2zCoRix`, asociado a `usmfb2606440818`. El propio registro indica que quedó pendiente de adjunción y que no fue publicado. Además, el ledger conserva un registro histórico agregado de Facebook (`Links de facebook - universesentme`) con 3 clics, 2 unidades vendidas, $322.65 MXN en ventas estimadas y $28.84 MXN de comisión en revisión; ese registro sirve como evidencia histórica, pero no permite atribuir resultados a una publicación concreta.
+Meta Business Suite fue verificado en la vista de publicaciones programadas. Para una publicación, el menú disponible muestra `Administrar publicación`, `Copiar identificador de la publicación`, `Editar publicación`, `Reprogramar publicación`, `Mover a borradores`, `Duplicar publicación`, `Eliminar publicación` y `Activar remix`. En esa vista no aparece directamente una opción llamada `Agregar enlace de afiliación` o `Adjuntar producto`. Por ello, el flujo seguro debe continuar entrando en `Administrar publicación` y verificando si el editor ofrece un módulo de producto, catálogo o afiliación; no se debe asumir que la opción existe hasta verla en pantalla.
 
-La conclusión operativa es que **todavía no hay una matriz de links afiliados lista para publicar**. El siguiente paso correcto es completar una fila por oportunidad con URL normal verificada, producto elegido, link corto devuelto por Mercado Libre, etiqueta correspondiente y evidencia de adjunción nativa en Facebook. La aprobación humana debe ocurrir después de verificar el encaje editorial del producto y antes de adjuntarlo o publicarlo.
+El procedimiento operativo aprobado para la siguiente sesión es: seleccionar una publicación objetivo por fecha, hora y texto; abrir `Administrar publicación`; buscar el módulo nativo de producto/afiliación; elegir el producto correspondiente del ledger; comprobar que Facebook muestre el producto asociado; capturar la evidencia; y detenerse antes de cualquier botón de `Publicar`, `Guardar cambios`, `Programar` o confirmación equivalente hasta contar con aprobación humana explícita. Si no existe el módulo nativo, no se pegará el link manualmente ni se cambiará la superficie del ledger sin una decisión aprobada.
 
-La documentación relacionada que debe mantenerse sincronizada es `Operations/Research/Affiliate_Pilot_Assignments.csv`, `Operations/Research/Affiliate_Link_Ledger.csv`, `Operations/Research/2026-08-19_MercadoLibre_Facebook_Afiliados_Observacion.md` y `Operations/Production/2026-08-19_Piloto_Afiliados_Facebook_18_30_Agosto.md`. No se requiere crear un documento nuevo porque el hallazgo pertenece al playbook existente y los registros tabulares ya contienen el detalle operativo.
+La documentación relacionada que debe mantenerse sincronizada es `Operations/Research/Affiliate_Pilot_Assignments.csv`, `Operations/Research/Affiliate_Link_Ledger.csv`, `Operations/Research/2026-08-19_MercadoLibre_Facebook_Afiliados_Observacion.md` y `Operations/Production/2026-08-19_Piloto_Afiliados_Facebook_18_30_Agosto.md`. No se requiere crear un documento nuevo porque el flujo pertenece al playbook existente y los registros tabulares ya contienen el detalle de cada oportunidad.
 
 ## Primer piloto recomendado
 
