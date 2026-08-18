@@ -127,3 +127,7 @@ La taxonomía deberá distinguir `texto_simple`, `escena_caption_unico`, `duo_gl
 La ampliación recuperó y codificó doce publicaciones. El diálogo secuencial conserva una señal prometedora pero inconclusa con un caso de 155 interacciones y 19 shares. La transformación visual de Universe reúne dos casos con mediana de 85.5 interacciones y 21 shares, pero con gran dispersión: un caso obtuvo 164/42 y otro 7/0. Por tanto, la hipótesis debe distinguir claridad del contraste, tipo de transformación y preservación de marcadores del personaje.
 
 El diálogo implícito, las escenas relacionales y el texto sobre fotografía no se deben agrupar con la microhistoria secuencial. Las escenas relacionales incluyen filas con métricas cero y requieren verificación antes de interpretar su mediana. Documento: `Operations/Research/2026-08-19_Analisis_Lote_Dialogo_Transformacion.md`.
+
+## 10. Siguiente lote de búsqueda — 2026-08-19
+
+La revisión de 15 candidatos adicionales no encontró una nueva composición secuencial clara ni otra transformación corporal de Universe. La escena de hombre y hada con globo único queda fuera de `dialogo_secuencial`. Ganso siendo vestido introduce la subcategoría exploratoria `transformacion_vestuario_personaje_secundario`, con `n=1` y sin capacidad de validar una regla. El resultado negativo evita forzar ejemplos en las celdas pequeñas. Documento: `Operations/Research/2026-08-19_Analisis_Siguiente_Lote_Dialogo_Transformacion.md`.
