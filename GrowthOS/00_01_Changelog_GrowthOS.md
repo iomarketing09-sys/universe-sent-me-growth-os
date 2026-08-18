@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-17
-**Versión:** 2.23
+**Versión:** 2.24
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.24.00] — 2026-08-19 (Manus): Auditoría separada de Reels y monetización.** Se recuperaron 12 Reels/videos de Meta con mediana actual de 19.5 interacciones; julio tuvo mediana 25.5 y agosto 17.0 en la muestra recuperada. Las consultas de Insights solicitadas para vistas y retención devolvieron HTTP 400 por métricas inválidas, por lo que Reels queda subinstrumentado y no se mezcla con P0. La monetización nativa de Facebook queda como `No verificada` porque Content Monetization es invite-only y Business Suite pidió inicio de sesión; la afiliación de Mercado Libre permanece como diseño activo sin clics, conversiones ni comisiones registradas. Documento: `Operations/Research/2026-08-19_Auditoria_Reels_y_Monetizacion.md`.
 
 - **[2.23.00] — 2026-08-19 (Manus): Auditoría integral del Growth OS.** Meta Graph API y la página responden correctamente en modo lectura; la única tarea activa es el primer corte P0 24h en `America/Matamoros`. La ola del 17 de agosto tiene cinco posts confirmados, pero el inventario maestro todavía no contiene los filenames operativos de la programación 17–30. El Publication Log tiene 98 filas, el ExperimentLog 101 y el baseline P0 cinco filas pendientes de ventana. Se detectaron cinco duplicados lógicos en el histórico de junio y 13 rutas de evidencia visual sin seguimiento; se documentan sin crear CNT ni modificar calendario, canon o Instagram. Documento: `Operations/Research/2026-08-19_Auditoria_Integral_Growth_OS.md`.
 
