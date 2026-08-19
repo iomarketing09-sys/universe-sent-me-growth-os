@@ -7,11 +7,13 @@ const fbAudit = JSON.parse(fs.readFileSync(path.join(root, 'Operations/Research/
 const costInventory = JSON.parse(fs.readFileSync(path.join(root, 'Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json'), 'utf8'))
 const youtubeNative = JSON.parse(fs.readFileSync(path.join(root, 'Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json'), 'utf8'))
 const historicalAdjudications = JSON.parse(fs.readFileSync(path.join(root, 'Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json'), 'utf8'))
+const reconciliationDecisions = JSON.parse(fs.readFileSync(path.join(root, 'Operations/Research/2026-08-19_Decisiones_Reconciliacion_Reels.json'), 'utf8'))
 const youtubeDates = new Map(youtubeNative.rows.map((row) => [row.video, row]))
 const highEvidenceLinks = JSON.parse(fs.readFileSync(path.join(root, 'Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json'), 'utf8'))
 const highEvidenceConceptByContentId = new Map(highEvidenceLinks.relationships.flatMap((relationship) => relationship.publications.map((publication) => [publication.content_id, relationship.canonical_concept_id])))
 const driveAssetInventory = JSON.parse(fs.readFileSync(path.join(root, 'Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json'), 'utf8'))
 const driveEvidenceByContentId = new Map(driveAssetInventory.asset_links.flatMap((link) => link.platform_content_ids.map((contentId) => [contentId, link])))
+const reconciliationDecisionByContentId = new Map(reconciliationDecisions.decisions.map((decision) => [decision.content_id, decision]))
 const evidenceLabels = {
   'CON-2026-08-05-Instante_suspendido': { content_asset_id: 'CNT-015', experiment_id: 'Sin_etiqueta_historica', hypothesis_ids: [], evidence: 'GrowthOS/07_00_Registro_Maestro_Reels.md: CNT-015 publicado en cascada el 5 de agosto.' },
 }
@@ -98,6 +100,7 @@ const crossPlatformContentIds = new Set(crossPlatformConcepts.flatMap((concept) 
 const costMap = new Map(costInventory.rows.map((row) => [`${row.platform}|${row.content_id}`, row.cost_mxn]))
 const enriched = records.map((row) => {
   const label = row.canonical_concept_id ? evidenceLabels[row.canonical_concept_id] : null
+  const decision = reconciliationDecisionByContentId.get(row.content_id)
   return {
     ...row,
     cost_mxn: costMap.get(`${row.platform}|${row.content_id}`) ?? null,
@@ -106,21 +109,26 @@ const enriched = records.map((row) => {
     experiment_id: label?.experiment_id ?? 'Sin_etiqueta_historica',
     hypothesis_ids: label?.hypothesis_ids ?? [],
     experiment_evidence: label?.evidence ?? 'No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.',
+    reconciliation_decision: decision?.resolution_type ?? null,
+    crosspost_status: decision?.crosspost_status ?? null,
   }
 })
+const unlinkedRecords = enriched.filter((row) => !crossPlatformContentIds.has(row.content_id))
+const pendingReviewRecords = unlinkedRecords.filter((row) => !reconciliationDecisionByContentId.get(row.content_id)?.review_closed)
 const result = {
   title: 'Historial consolidado de Reels y videos cortos',
   purpose: 'Inventario reconciliable de Reels y videos cortos publicados; no infiere cross-posts sin evidencia explícita.',
   status: 'Active',
   created_at: '2026-08-19',
   last_updated: '2026-08-19',
-  version: '1.3',
+  version: '1.4',
   author: 'Manus AI',
   related_documents: [
     '2026-08-19_Relaciones_Reels_Alta_Evidencia.json',
     '2026-08-19_Inventario_Assets_Drive_Reels.json',
     '2026-08-19_Piezas_Sin_Cascada_Revision.json',
     '2026-08-19_Publicaciones_Historicas_Adjudicadas.json',
+    '2026-08-19_Decisiones_Reconciliacion_Reels.json',
     '../../GrowthOS/07_00_Registro_Maestro_Reels.md',
     '../../GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md',
   ],
@@ -131,7 +139,9 @@ const result = {
     total_records: enriched.length,
     by_platform: Object.fromEntries(['Facebook', 'Instagram', 'TikTok', 'YouTube'].map((platform) => [platform, enriched.filter((row) => row.platform === platform).length])),
     explicit_cross_platform_concepts: crossPlatformConcepts.length,
-    unlinked_records: enriched.filter((row) => !crossPlatformContentIds.has(row.content_id)).length,
+    unlinked_records: unlinkedRecords.length,
+    pending_cross_platform_review: pendingReviewRecords.length,
+    closed_without_crosspost: unlinkedRecords.length - pendingReviewRecords.length,
     records_with_drive_asset_evidence: enriched.filter((row) => row.drive_asset_evidence).length,
     records_with_explicit_experiment_evidence: enriched.filter((row) => row.experiment_id !== 'Sin_etiqueta_historica').length,
   },

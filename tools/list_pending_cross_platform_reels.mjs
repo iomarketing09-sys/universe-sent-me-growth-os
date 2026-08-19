@@ -4,12 +4,15 @@ import path from 'node:path'
 const root = '/home/ubuntu/universe-sent-me-growth-os'
 const historyPath = path.join(root, 'Operations/Research/2026-08-19_Historial_Reels_Consolidado.json')
 const reviewPath = path.join(root, 'Operations/Research/2026-08-19_Piezas_Sin_Cascada_Revision.json')
+const decisionsPath = path.join(root, 'Operations/Research/2026-08-19_Decisiones_Reconciliacion_Reels.json')
 const history = JSON.parse(fs.readFileSync(historyPath, 'utf8'))
+const decisions = JSON.parse(fs.readFileSync(decisionsPath, 'utf8'))
 const priorReview = fs.existsSync(reviewPath) ? JSON.parse(fs.readFileSync(reviewPath, 'utf8')) : { pieces: [] }
 const priorReviewByContentId = new Map((priorReview.pieces ?? []).map((piece) => [piece.content_id, piece]))
 const crossPlatformIds = new Set(history.explicit_cross_platform_concepts.flatMap((concept) => concept.publications.map((publication) => publication.content_id)))
+const closedReviewIds = new Set(decisions.decisions.filter((decision) => decision.review_closed).map((decision) => decision.content_id))
 const pending = history.records
-  .filter((record) => !crossPlatformIds.has(record.content_id))
+  .filter((record) => !crossPlatformIds.has(record.content_id) && !closedReviewIds.has(record.content_id))
   .sort((a, b) => String(a.published_at ?? '').localeCompare(String(b.published_at ?? '')))
   .map((record, index) => {
     const prior = priorReviewByContentId.get(record.content_id)
@@ -34,15 +37,16 @@ const pending = history.records
 const artifact = {
   title: 'Piezas sin cascada cross-platform confirmada — revisión guiada',
   purpose: 'Presentar las publicaciones que aún no pertenecen a una relación multicanal verificada y registrar decisiones explícitas del usuario.',
-  status: 'Review',
+  status: pending.length ? 'Review' : 'Closed',
   created_at: '2026-08-19',
   last_updated: '2026-08-19',
-  version: '1.2',
+  version: '1.3',
   author: 'Manus AI',
   related_documents: [
     '2026-08-19_Historial_Reels_Consolidado.json',
     '2026-08-19_Inventario_Assets_Drive_Reels.json',
     '2026-08-19_Relaciones_Reels_Alta_Evidencia.json',
+    '2026-08-19_Decisiones_Reconciliacion_Reels.json',
     '../../GrowthOS/07_00_Registro_Maestro_Reels.md',
   ],
   count: pending.length,

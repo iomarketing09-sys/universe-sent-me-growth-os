@@ -1,115 +1,19 @@
 {
   "title": "Piezas sin cascada cross-platform confirmada — revisión guiada",
   "purpose": "Presentar las publicaciones que aún no pertenecen a una relación multicanal verificada y registrar decisiones explícitas del usuario.",
-  "status": "Review",
+  "status": "Closed",
   "created_at": "2026-08-19",
   "last_updated": "2026-08-19",
-  "version": "1.2",
+  "version": "1.3",
   "author": "Manus AI",
   "related_documents": [
     "2026-08-19_Historial_Reels_Consolidado.json",
     "2026-08-19_Inventario_Assets_Drive_Reels.json",
     "2026-08-19_Relaciones_Reels_Alta_Evidencia.json",
+    "2026-08-19_Decisiones_Reconciliacion_Reels.json",
     "../../GrowthOS/07_00_Registro_Maestro_Reels.md"
   ],
-  "count": 5,
-  "pieces": [
-    {
-      "review_id": "P01",
-      "platform": "Instagram",
-      "published_at": "2026-07-24T16:16:24+0000",
-      "content_type": "Reel",
-      "content_id": "18102391205336788",
-      "title_or_caption": "Cultiva la paz interior..\n\n#universesentme #relatable #humoracido #rockstar",
-      "character": "Universe",
-      "canonical_concept_id": "Sin_concepto_confirmado",
-      "drive_asset_evidence": null,
-      "review_status": "Pendiente_de_confirmacion_de_Fernando"
-    },
-    {
-      "review_id": "P03",
-      "platform": "TikTok",
-      "published_at": "2026-07-30T06:47:13",
-      "content_type": "Video",
-      "content_id": "7668208937937718549",
-      "title_or_caption": "Los gatos en la madrugada... #gatos #humor #vidagatuna ",
-      "character": "Universe",
-      "canonical_concept_id": "CON-2026-07-30-Gatos_Madrugada",
-      "drive_asset_evidence": {
-        "strength": "Directa_confirmada_por_Fernando",
-        "assets": [
-          {
-            "id": "1AP7zyGeKtaA7PO5SX5kb6lQR_zMcO09W",
-            "name": "VID_20260729_011600_407_bsl.mp4"
-          }
-        ]
-      },
-      "review_status": "Pendiente_de_confirmacion_de_Fernando"
-    },
-    {
-      "review_id": "P04",
-      "platform": "TikTok",
-      "published_at": "2026-07-30T06:55:47",
-      "content_type": "Video",
-      "content_id": "7668211137661472020",
-      "title_or_caption": "Desde que decidí no andar con pendej@s, no he vuelto a tener una relación. #UniverseSentMe #fantasmaUSM #humor #meme ",
-      "character": "Fantasma",
-      "canonical_concept_id": "Sin_concepto_confirmado",
-      "drive_asset_evidence": null,
-      "review_status": "Pendiente_de_confirmacion_de_Fernando"
-    },
-    {
-      "review_id": "P05",
-      "platform": "Facebook",
-      "published_at": "2026-07-30T14:17:19+0000",
-      "content_type": "Reel",
-      "content_id": "1036844829507460_122143141185072582",
-      "title_or_caption": "🤭 \n\n #UniverseSentMe #WilfredUSM #humor #MercadoLibre #plush",
-      "character": "Wilfred",
-      "canonical_concept_id": "CON-2026-07-30-Wilfred_Plush",
-      "drive_asset_evidence": {
-        "strength": "Directa_confirmada_por_Fernando",
-        "assets": [
-          {
-            "id": "1ovw39lQ-DrQ8TFc8Tje_onkown_TTWAZ",
-            "name": "Wilfred_holding_plush_toy_202607300618.mp4"
-          },
-          {
-            "id": "1Az-HR4JR4t3ObvX4taR2g1kUeer-Nvmr",
-            "name": "Man_opening_box_skepticism_1080p_202607300627.mp4"
-          },
-          {
-            "id": "1rbYxyQoaIVLXTioJ-db1_nfDmtzCQbnN",
-            "name": "Wilfred_holding_plush_unimpressed_202607300634.mp4"
-          },
-          {
-            "id": "1cdso5Jm0aTOMcWGSB-_uDQNeOxNBS_P8",
-            "name": "Cat_carrying_box_to_Wilfred_202607300636.mp4"
-          }
-        ]
-      },
-      "review_status": "Pendiente_de_confirmacion_de_Fernando"
-    },
-    {
-      "review_id": "P06",
-      "platform": "TikTok",
-      "published_at": "2026-07-31T20:51:55",
-      "content_type": "Video",
-      "content_id": "7668797651353226516",
-      "title_or_caption": "Cuando dices que vas ahorrar.. y tú gato con 17 juguetes nuevos 🤪 #humor #gatos #relatable #memes ",
-      "character": "Universe",
-      "canonical_concept_id": "CON-2026-07-31-Gato_17_Juguetes",
-      "drive_asset_evidence": {
-        "strength": "Directa_confirmada_por_Fernando",
-        "assets": [
-          {
-            "id": "1kH_OQbWvyBiWJgjzRJy6L_gD9hsO845w",
-            "name": "Sad_clown_fiery_explosion_dramatic_Yo despues de comprar cosas para mi gato.mp4"
-          }
-        ]
-      },
-      "review_status": "Pendiente_de_confirmacion_de_Fernando"
-    }
-  ],
+  "count": 0,
+  "pieces": [],
   "decision_rule": "Solo se agregará una relación cross-platform al historial consolidado cuando Fernando confirme las publicaciones y se recupere un Platform_Content_ID, URL o fecha que permita identificarlas de manera inequívoca."
 }

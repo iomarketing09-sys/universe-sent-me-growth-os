@@ -4,7 +4,7 @@
   "status": "Active",
   "created_at": "2026-08-19",
   "last_updated": "2026-08-19",
-  "version": "1.4",
+  "version": "1.5",
   "author": "Manus AI",
   "related_documents": [
     "2026-08-19_Historial_Reels_Consolidado.json",
@@ -79,17 +79,17 @@
       ]
     },
     {
-      "canonical_concept_id": "CON-2026-07-30-Gatos_Madrugada",
+      "canonical_concept_id": "CON-2026-07-29-Rock_vs_Juan_Gabriel",
       "strength": "Directa_confirmada_por_Fernando",
-      "evidence": "Fernando identificó VID_20260729_011600_407_bsl.mp4 como asset fuente de P05 de TikTok; todavía no hay una publicación equivalente confirmada en otra plataforma.",
-      "platform_content_ids": ["7668208937937718549"],
+      "evidence": "Fernando identificó VID_20260729_011600_407_bsl.mp4 como asset fuente de la adaptación TikTok `Los gatos en la madrugada` y confirmó que pertenece a la producción distribuida en Facebook e Instagram como `Un rock bien gótico`.",
+      "platform_content_ids": ["7668208937937718549", "1036844829507460_122143033293072582", "18004973039958799"],
       "drive_assets": [{"id": "1AP7zyGeKtaA7PO5SX5kb6lQR_zMcO09W", "name": "VID_20260729_011600_407_bsl.mp4", "duration_ms": 9616}]
     },
     {
       "canonical_concept_id": "CON-2026-07-31-Gato_17_Juguetes",
       "strength": "Directa_confirmada_por_Fernando",
-      "evidence": "Fernando identificó el asset Sad clown con explosión como fuente de P08 de TikTok; todavía no hay una publicación equivalente confirmada en otra plataforma.",
-      "platform_content_ids": ["7668797651353226516"],
+      "evidence": "Fernando identificó el asset Sad clown con explosión como fuente del TikTok y confirmó la misma producción en Instagram y Facebook, publicados localmente el 4 de julio como una republicación anterior.",
+      "platform_content_ids": ["7668797651353226516", "18014226926888946", "1036844829507460_122136156675072582"],
       "drive_assets": [{"id": "1kH_OQbWvyBiWJgjzRJy6L_gD9hsO845w", "name": "Sad_clown_fiery_explosion_dramatic_Yo despues de comprar cosas para mi gato.mp4", "duration_ms": 9999}]
     },
     {

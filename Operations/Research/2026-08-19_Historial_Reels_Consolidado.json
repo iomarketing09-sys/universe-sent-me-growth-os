@@ -4,13 +4,14 @@
   "status": "Active",
   "created_at": "2026-08-19",
   "last_updated": "2026-08-19",
-  "version": "1.3",
+  "version": "1.4",
   "author": "Manus AI",
   "related_documents": [
     "2026-08-19_Relaciones_Reels_Alta_Evidencia.json",
     "2026-08-19_Inventario_Assets_Drive_Reels.json",
     "2026-08-19_Piezas_Sin_Cascada_Revision.json",
     "2026-08-19_Publicaciones_Historicas_Adjudicadas.json",
+    "2026-08-19_Decisiones_Reconciliacion_Reels.json",
     "../../GrowthOS/07_00_Registro_Maestro_Reels.md",
     "../../GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
   ],
@@ -53,7 +54,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Facebook",
@@ -88,7 +91,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Facebook",
@@ -123,7 +128,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Facebook",
@@ -143,7 +150,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Facebook",
@@ -185,7 +194,9 @@
       "content_asset_id": "CNT-015",
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "GrowthOS/07_00_Registro_Maestro_Reels.md: CNT-015 publicado en cascada el 5 de agosto."
+      "experiment_evidence": "GrowthOS/07_00_Registro_Maestro_Reels.md: CNT-015 publicado en cascada el 5 de agosto.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Facebook",
@@ -225,7 +236,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Facebook",
@@ -265,7 +278,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Facebook",
@@ -285,7 +300,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Facebook",
@@ -334,7 +351,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": "Publicacion_exclusiva_confirmada",
+      "crosspost_status": "Exclusiva_Facebook"
     },
     {
       "platform": "Facebook",
@@ -354,7 +373,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Facebook",
@@ -370,11 +391,29 @@
       "source": "2026-08-19_Meta_Reels_Audit.json",
       "evidence_status": "Confirmado_por_Meta_API",
       "cost_mxn": null,
-      "drive_asset_evidence": null,
+      "drive_asset_evidence": {
+        "canonical_concept_id": "CON-2026-07-29-Rock_vs_Juan_Gabriel",
+        "strength": "Directa_confirmada_por_Fernando",
+        "evidence": "Fernando identificó VID_20260729_011600_407_bsl.mp4 como asset fuente de la adaptación TikTok `Los gatos en la madrugada` y confirmó que pertenece a la producción distribuida en Facebook e Instagram como `Un rock bien gótico`.",
+        "platform_content_ids": [
+          "7668208937937718549",
+          "1036844829507460_122143033293072582",
+          "18004973039958799"
+        ],
+        "drive_assets": [
+          {
+            "id": "1AP7zyGeKtaA7PO5SX5kb6lQR_zMcO09W",
+            "name": "VID_20260729_011600_407_bsl.mp4",
+            "duration_ms": 9616
+          }
+        ]
+      },
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Facebook",
@@ -394,7 +433,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Facebook",
@@ -435,7 +476,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Facebook",
@@ -470,7 +513,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Facebook",
@@ -506,7 +551,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Instagram",
@@ -542,7 +589,85 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "18014226926888946",
+      "published_at": "2026-07-05T04:43:49Z",
+      "content_type": "Reel",
+      "title_or_caption": "Gasté como si no hubiera un mañana...",
+      "character": "Sin clasificar",
+      "canonical_concept_id": "CON-2026-07-31-Gato_17_Juguetes",
+      "engagement": null,
+      "views": null,
+      "reach": null,
+      "source": "Conector nativo de Instagram — get_post_list",
+      "evidence_status": "Confirmado_por_Instagram_Connector_y_Fernando",
+      "cost_mxn": null,
+      "drive_asset_evidence": {
+        "canonical_concept_id": "CON-2026-07-31-Gato_17_Juguetes",
+        "strength": "Directa_confirmada_por_Fernando",
+        "evidence": "Fernando identificó el asset Sad clown con explosión como fuente del TikTok y confirmó la misma producción en Instagram y Facebook, publicados localmente el 4 de julio como una republicación anterior.",
+        "platform_content_ids": [
+          "7668797651353226516",
+          "18014226926888946",
+          "1036844829507460_122136156675072582"
+        ],
+        "drive_assets": [
+          {
+            "id": "1kH_OQbWvyBiWJgjzRJy6L_gD9hsO845w",
+            "name": "Sad_clown_fiery_explosion_dramatic_Yo despues de comprar cosas para mi gato.mp4",
+            "duration_ms": 9999
+          }
+        ]
+      },
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
+    },
+    {
+      "platform": "Facebook",
+      "content_id": "1036844829507460_122136156675072582",
+      "published_at": "2026-07-05T04:44:05Z",
+      "content_type": "Reel",
+      "title_or_caption": "Yo después de comprar cosas para mi gato a las 2 am...",
+      "character": "Universe",
+      "canonical_concept_id": "CON-2026-07-31-Gato_17_Juguetes",
+      "engagement": null,
+      "views": null,
+      "reach": null,
+      "source": "Meta Graph API directa — Page feed",
+      "evidence_status": "Confirmado_por_Meta_Graph_API_y_Fernando",
+      "cost_mxn": null,
+      "drive_asset_evidence": {
+        "canonical_concept_id": "CON-2026-07-31-Gato_17_Juguetes",
+        "strength": "Directa_confirmada_por_Fernando",
+        "evidence": "Fernando identificó el asset Sad clown con explosión como fuente del TikTok y confirmó la misma producción en Instagram y Facebook, publicados localmente el 4 de julio como una republicación anterior.",
+        "platform_content_ids": [
+          "7668797651353226516",
+          "18014226926888946",
+          "1036844829507460_122136156675072582"
+        ],
+        "drive_assets": [
+          {
+            "id": "1kH_OQbWvyBiWJgjzRJy6L_gD9hsO845w",
+            "name": "Sad_clown_fiery_explosion_dramatic_Yo despues de comprar cosas para mi gato.mp4",
+            "duration_ms": 9999
+          }
+        ]
+      },
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Instagram",
@@ -562,7 +687,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": "Version_alternativa_confirmada",
+      "crosspost_status": "No_agrupar_como_mismo_export"
     },
     {
       "platform": "Instagram",
@@ -603,7 +730,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Instagram",
@@ -638,7 +767,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Instagram",
@@ -654,11 +785,29 @@
       "source": "Windsor.ai:instagram",
       "evidence_status": "Confirmado_por_Windsor",
       "cost_mxn": 15,
-      "drive_asset_evidence": null,
+      "drive_asset_evidence": {
+        "canonical_concept_id": "CON-2026-07-29-Rock_vs_Juan_Gabriel",
+        "strength": "Directa_confirmada_por_Fernando",
+        "evidence": "Fernando identificó VID_20260729_011600_407_bsl.mp4 como asset fuente de la adaptación TikTok `Los gatos en la madrugada` y confirmó que pertenece a la producción distribuida en Facebook e Instagram como `Un rock bien gótico`.",
+        "platform_content_ids": [
+          "7668208937937718549",
+          "1036844829507460_122143033293072582",
+          "18004973039958799"
+        ],
+        "drive_assets": [
+          {
+            "id": "1AP7zyGeKtaA7PO5SX5kb6lQR_zMcO09W",
+            "name": "VID_20260729_011600_407_bsl.mp4",
+            "duration_ms": 9616
+          }
+        ]
+      },
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Instagram",
@@ -678,7 +827,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Instagram",
@@ -698,7 +849,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Instagram",
@@ -718,7 +871,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Instagram",
@@ -758,7 +913,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Instagram",
@@ -798,7 +955,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Instagram",
@@ -840,7 +999,9 @@
       "content_asset_id": "CNT-015",
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "GrowthOS/07_00_Registro_Maestro_Reels.md: CNT-015 publicado en cascada el 5 de agosto."
+      "experiment_evidence": "GrowthOS/07_00_Registro_Maestro_Reels.md: CNT-015 publicado en cascada el 5 de agosto.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Instagram",
@@ -875,7 +1036,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Instagram",
@@ -895,7 +1058,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Instagram",
@@ -930,7 +1095,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "Instagram",
@@ -966,7 +1133,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "TikTok",
@@ -986,7 +1155,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": "Publicacion_exclusiva_confirmada",
+      "crosspost_status": "Exclusiva_TikTok"
     },
     {
       "platform": "TikTok",
@@ -995,7 +1166,7 @@
       "content_type": "Video",
       "title_or_caption": "Los gatos en la madrugada... #gatos #humor #vidagatuna ",
       "character": "Universe",
-      "canonical_concept_id": "CON-2026-07-30-Gatos_Madrugada",
+      "canonical_concept_id": "CON-2026-07-29-Rock_vs_Juan_Gabriel",
       "engagement": 2,
       "views": 157,
       "reach": 146,
@@ -1003,11 +1174,13 @@
       "evidence_status": "Confirmado_por_Windsor",
       "cost_mxn": 15,
       "drive_asset_evidence": {
-        "canonical_concept_id": "CON-2026-07-30-Gatos_Madrugada",
+        "canonical_concept_id": "CON-2026-07-29-Rock_vs_Juan_Gabriel",
         "strength": "Directa_confirmada_por_Fernando",
-        "evidence": "Fernando identificó VID_20260729_011600_407_bsl.mp4 como asset fuente de P05 de TikTok; todavía no hay una publicación equivalente confirmada en otra plataforma.",
+        "evidence": "Fernando identificó VID_20260729_011600_407_bsl.mp4 como asset fuente de la adaptación TikTok `Los gatos en la madrugada` y confirmó que pertenece a la producción distribuida en Facebook e Instagram como `Un rock bien gótico`.",
         "platform_content_ids": [
-          "7668208937937718549"
+          "7668208937937718549",
+          "1036844829507460_122143033293072582",
+          "18004973039958799"
         ],
         "drive_assets": [
           {
@@ -1020,7 +1193,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": "Cascada_confirmada",
+      "crosspost_status": "Confirmada_por_Fernando"
     },
     {
       "platform": "TikTok",
@@ -1039,9 +1214,11 @@
       "drive_asset_evidence": {
         "canonical_concept_id": "CON-2026-07-31-Gato_17_Juguetes",
         "strength": "Directa_confirmada_por_Fernando",
-        "evidence": "Fernando identificó el asset Sad clown con explosión como fuente de P08 de TikTok; todavía no hay una publicación equivalente confirmada en otra plataforma.",
+        "evidence": "Fernando identificó el asset Sad clown con explosión como fuente del TikTok y confirmó la misma producción en Instagram y Facebook, publicados localmente el 4 de julio como una republicación anterior.",
         "platform_content_ids": [
-          "7668797651353226516"
+          "7668797651353226516",
+          "18014226926888946",
+          "1036844829507460_122136156675072582"
         ],
         "drive_assets": [
           {
@@ -1054,7 +1231,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": "Cascada_confirmada",
+      "crosspost_status": "Confirmada_por_Fernando__republicacion_diferida"
     },
     {
       "platform": "TikTok",
@@ -1074,7 +1253,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "TikTok",
@@ -1094,7 +1275,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "TikTok",
@@ -1114,7 +1297,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "TikTok",
@@ -1156,7 +1341,9 @@
       "content_asset_id": "CNT-015",
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "GrowthOS/07_00_Registro_Maestro_Reels.md: CNT-015 publicado en cascada el 5 de agosto."
+      "experiment_evidence": "GrowthOS/07_00_Registro_Maestro_Reels.md: CNT-015 publicado en cascada el 5 de agosto.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "YouTube",
@@ -1197,7 +1384,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "YouTube",
@@ -1217,7 +1406,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "YouTube",
@@ -1253,7 +1444,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "YouTube",
@@ -1273,7 +1466,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "YouTube",
@@ -1315,7 +1510,9 @@
       "content_asset_id": "CNT-015",
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "GrowthOS/07_00_Registro_Maestro_Reels.md: CNT-015 publicado en cascada el 5 de agosto."
+      "experiment_evidence": "GrowthOS/07_00_Registro_Maestro_Reels.md: CNT-015 publicado en cascada el 5 de agosto.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     },
     {
       "platform": "YouTube",
@@ -1335,7 +1532,9 @@
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
-      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": null,
+      "crosspost_status": null
     }
   ],
   "explicit_cross_platform_concepts": [
@@ -1506,6 +1705,11 @@
           "platform": "Instagram",
           "content_id": "18004973039958799",
           "evidence_status": "Confirmado_por_Windsor"
+        },
+        {
+          "platform": "TikTok",
+          "content_id": "7668208937937718549",
+          "evidence_status": "Confirmado_por_Windsor"
         }
       ]
     },
@@ -1580,6 +1784,26 @@
       ]
     },
     {
+      "canonical_concept_id": "CON-2026-07-31-Gato_17_Juguetes",
+      "publications": [
+        {
+          "platform": "Instagram",
+          "content_id": "18014226926888946",
+          "evidence_status": "Confirmado_por_Instagram_Connector_y_Fernando"
+        },
+        {
+          "platform": "Facebook",
+          "content_id": "1036844829507460_122136156675072582",
+          "evidence_status": "Confirmado_por_Meta_Graph_API_y_Fernando"
+        },
+        {
+          "platform": "TikTok",
+          "content_id": "7668797651353226516",
+          "evidence_status": "Confirmado_por_Windsor"
+        }
+      ]
+    },
+    {
       "canonical_concept_id": "CON-2026-08-03-Habilidades_manual",
       "publications": [
         {
@@ -1611,16 +1835,18 @@
     }
   ],
   "summary": {
-    "total_records": 43,
+    "total_records": 45,
     "by_platform": {
-      "Facebook": 15,
-      "Instagram": 15,
+      "Facebook": 16,
+      "Instagram": 16,
       "TikTok": 7,
       "YouTube": 6
     },
-    "explicit_cross_platform_concepts": 16,
-    "unlinked_records": 5,
-    "records_with_drive_asset_evidence": 25,
+    "explicit_cross_platform_concepts": 17,
+    "unlinked_records": 3,
+    "pending_cross_platform_review": 0,
+    "closed_without_crosspost": 3,
+    "records_with_drive_asset_evidence": 29,
     "records_with_explicit_experiment_evidence": 0
   },
   "limitations": [

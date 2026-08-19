@@ -4,21 +4,21 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-19
-**Versión:** 1.7
+**Versión:** 1.8
 **Autor:** Manus AI (CGO)
-**Documentos relacionados:** `05_00_Calendario_01_02_Ago.md`, `Operations/Memories/deep_dive_reels_comparativo.md`, `../Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`, `../Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json`, `../Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json`, `../Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json`, `../Operations/Research/2026-08-19_Piezas_Sin_Cascada_Revision.json`, `../Operations/Research/2026-08-19_Auditoria_Assets_Drive_Reels.md`, `../Operations/Research/2026-08-19_Meta_Reels_Audit.json`, `../Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json`, `../Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json`, `14_00_Fuente_Maestra_y_Ledgers.md`
+**Documentos relacionados:** `05_00_Calendario_01_02_Ago.md`, `Operations/Memories/deep_dive_reels_comparativo.md`, `../Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`, `../Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json`, `../Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json`, `../Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json`, `../Operations/Research/2026-08-19_Decisiones_Reconciliacion_Reels.json`, `../Operations/Research/2026-08-19_Piezas_Sin_Cascada_Revision.json`, `../Operations/Research/2026-08-19_Auditoria_Assets_Drive_Reels.md`, `../Operations/Research/2026-08-19_Meta_Reels_Audit.json`, `../Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json`, `../Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json`, `14_00_Fuente_Maestra_y_Ledgers.md`
 
 ---
 
 ## Historial consolidado y cascadas verificadas — corte 22 julio–18 agosto de 2026
 
-El consolidado actual contiene **43 registros de video corto** con evidencia de fuente: 15 Reels de Facebook, 15 Reels de Instagram, 7 videos de TikTok y 6 videos/Shorts de YouTube. Treinta y nueve provienen del corte analítico original; cuatro publicaciones históricas adjudicadas se incorporaron para cerrar relaciones confirmadas por Fernando, conservando sus IDs y formato pero sin inventar una ventana métrica comparable. Los formatos de Facebook se clasifican por `video` y `video_inline` en Meta; el resto de publicaciones orgánicas de Facebook permanece fuera de esta tabla hasta que tenga evidencia de formato.
+El consolidado actual contiene **45 registros de video corto** con evidencia de fuente: 16 Reels de Facebook, 16 Reels de Instagram, 7 videos de TikTok y 6 videos/Shorts de YouTube. Treinta y nueve provienen del corte analítico original; seis publicaciones históricas adjudicadas se incorporaron para cerrar relaciones confirmadas por Fernando, conservando IDs y formato pero sin inventar una ventana métrica comparable. Los formatos de Facebook se clasifican por `video` y `video_inline` en Meta; el resto de publicaciones orgánicas de Facebook permanece fuera de esta tabla hasta que tenga evidencia de formato.
 
 | Concepto canónico confirmado | Facebook | Instagram | TikTok | YouTube | Estado de reconciliación |
 |---|:---:|:---:|:---:|:---:|---|
 | Instante suspendido / “Vitamina B (besos)” | Sí | Sí | Sí | Sí | Cascada confirmada; fechas nativas disponibles en las cuatro publicaciones. |
 | Mi gato sabe hacer de todo | Sí | Sí | No confirmada | No confirmada | Cross-post confirmado entre Facebook e Instagram. |
-| Rock gótico vs. Juan Gabriel | Sí | Sí | No confirmada | No confirmada | Cross-post confirmado entre Facebook e Instagram. |
+| Rock gótico vs. Juan Gabriel / gatos en la madrugada | Sí | Sí | Sí | No confirmada | Cascada confirmada por Fernando; TikTok usa una adaptación de copy distinta y conserva su asset fuente identificado. |
 | Muros vemos / Inbox no sabemos | Sí | Sí | Sí | Sí | Coincidencia textual confirmada; fecha de YouTube pendiente. |
 | Conversaciones atrancadas | Sí | Sí | No confirmada | No confirmada | Coincidencia textual confirmada entre Meta. |
 | Fantasma Backrooms | Sí | Sí | No confirmada | No confirmada | Coincidencia textual confirmada entre Meta. |
@@ -32,10 +32,11 @@ El consolidado actual contiene **43 registros de video corto** con evidencia de 
 | Fantasma caminando con gatos | Sí | Sí | No confirmada | Sí | Cascada confirmada por Fernando; Meta verificó el copy idéntico en FB/IG y el Short `Qoa-XUOVALk` fue reasignado a esta producción. |
 | Mi ascenso a la locura | Sí | Sí | No confirmada | No confirmada | Cascada confirmada por Fernando; copy y hashtags idénticos, publicados con 13 segundos de diferencia. |
 | Escribiendo / verdadero terror psicológico | Sí | Sí | No confirmada | Sí | Cascada confirmada por Fernando; FB/IG publicaron el copy `El verdadero terror psicológico...` con 13 segundos de diferencia y YouTube usa el título `Escribiendo...`. |
+| Gato con 17 juguetes / gastar sin mañana | Sí | Sí | Sí | No confirmada | Cascada confirmada por Fernando; Meta se publicó localmente el 4 de julio y TikTok el 31 de julio como republicación diferida. |
 
-> **Regla vigente:** las 5 piezas que aún no tienen relación explícita o evidencia de alta confianza se conservan como publicaciones independientes. No se atribuyen a una cascada, no se suman como una sola producción y no reciben una etiqueta de campaña inventada.
+> **Estado de revisión:** no quedan piezas pendientes de decisión cross-platform. Tres registros permanecen fuera de una cascada por resolución explícita: P01 es una versión alternativa de *Fantasma caminando con gatos* y no el mismo export; P04 es un carrusel de memes exclusivo de TikTok; P05 es un Reel exclusivo de Facebook. Ninguno recibe campañas o relaciones inventadas.
 
-La evidencia por publicación, las relaciones confirmadas y las limitaciones se conservan en `Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`. Las fechas nativas de los seis videos de YouTube están en `Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json`, las relaciones de alta evidencia y confirmadas por Fernando en `Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json`, las recuperaciones de identidad fuera del corte en `Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json` y los assets fuente disponibles en Drive en `Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json`. Veinticinco publicaciones ya tienen asset fuente asociado; los assets que aún permanezcan solo en el celular siguen como evidencia pendiente. Ningún registro recibe `Experiment_ID` retrospectivo sin evidencia explícita; por ahora todos mantienen `Sin_etiqueta_historica`. Estos archivos son el insumo de la vista de cascadas del dashboard.
+La evidencia por publicación, las relaciones confirmadas y las limitaciones se conservan en `Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`. Las fechas nativas de los seis videos de YouTube están en `Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json`, las relaciones de alta evidencia y confirmadas por Fernando en `Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json`, las recuperaciones de identidad fuera del corte en `Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json`, las decisiones de versión/exclusividad en `Operations/Research/2026-08-19_Decisiones_Reconciliacion_Reels.json` y los assets fuente disponibles en Drive en `Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json`. Veintinueve publicaciones ya tienen asset fuente asociado; los assets que aún permanezcan solo en el celular siguen como evidencia pendiente. Ningún registro recibe `Experiment_ID` retrospectivo sin evidencia explícita; por ahora todos mantienen `Sin_etiqueta_historica`. Estos archivos son el insumo de la vista de cascadas del dashboard.
 
 ---
 

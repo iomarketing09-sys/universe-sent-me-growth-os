@@ -1,0 +1,63 @@
+{
+  "title": "Decisiones de reconciliación de Reels — cierre de piezas pendientes",
+  "purpose": "Conservar las decisiones explícitas de Fernando sobre versiones alternativas, publicaciones exclusivas y cascadas cross-platform para que el historial se regenere sin reabrir casos resueltos.",
+  "status": "Active",
+  "created_at": "2026-08-19",
+  "last_updated": "2026-08-19",
+  "version": "1.0",
+  "author": "Fernando, registrado por Manus AI",
+  "related_documents": [
+    "2026-08-19_Piezas_Sin_Cascada_Revision.json",
+    "2026-08-19_Historial_Reels_Consolidado.json",
+    "2026-08-19_Relaciones_Reels_Alta_Evidencia.json",
+    "2026-08-19_Inventario_Assets_Drive_Reels.json",
+    "../../GrowthOS/07_00_Registro_Maestro_Reels.md"
+  ],
+  "decisions": [
+    {
+      "content_id": "18102391205336788",
+      "review_id": "P01",
+      "resolution_type": "Version_alternativa_confirmada",
+      "canonical_family_concept_id": "CON-2026-07-25-Fantasma_Camina_Gatos",
+      "statement": "Es otra versión del video de Fantasma caminando con los gatos.",
+      "crosspost_status": "No_agrupar_como_mismo_export",
+      "review_closed": true
+    },
+    {
+      "content_id": "7668208937937718549",
+      "review_id": "P03",
+      "resolution_type": "Cascada_confirmada",
+      "canonical_concept_id": "CON-2026-07-29-Rock_vs_Juan_Gabriel",
+      "statement": "La versión de TikTok `Los gatos en la madrugada` pertenece a la producción publicada en Facebook e Instagram como `Un rock bien gótico Vs una canción de Juan Gabriel`.",
+      "crosspost_status": "Confirmada_por_Fernando",
+      "review_closed": true
+    },
+    {
+      "content_id": "7668211137661472020",
+      "review_id": "P04",
+      "resolution_type": "Publicacion_exclusiva_confirmada",
+      "creative_structure": "Carrusel_de_memes",
+      "statement": "Solo se publicó en TikTok; su estructura creativa es carrusel de memes. El registro técnico nativo se conserva como Video.",
+      "crosspost_status": "Exclusiva_TikTok",
+      "review_closed": true
+    },
+    {
+      "content_id": "1036844829507460_122143141185072582",
+      "review_id": "P05",
+      "resolution_type": "Publicacion_exclusiva_confirmada",
+      "statement": "Solo se publicó en Facebook.",
+      "crosspost_status": "Exclusiva_Facebook",
+      "review_closed": true
+    },
+    {
+      "content_id": "7668797651353226516",
+      "review_id": "P06",
+      "resolution_type": "Cascada_confirmada",
+      "canonical_concept_id": "CON-2026-07-31-Gato_17_Juguetes",
+      "statement": "La versión de TikTok se relaciona con Instagram `Gasté como si no hubiera un mañana...` y Facebook `Yo después de comprar cosas para mi gato a las 2 am...`, publicados localmente el 4 de julio.",
+      "crosspost_status": "Confirmada_por_Fernando__republicacion_diferida",
+      "review_closed": true
+    }
+  ],
+  "rule": "Una versión alternativa pertenece a la familia conceptual, pero no se presenta como el mismo export ni se suma como cascada de distribución. Una publicación exclusiva se conserva en el historial y no vuelve a la cola de revisión cross-platform."
+}
