@@ -25,6 +25,7 @@ related_documents:
   - "Operations/Research/2026-08-19_Windsor_Instagram_28D_Normalizado.json"
   - "Operations/Research/2026-08-19_Windsor_Facebook_Organic_28D_Normalizado.json"
   - "Operations/Research/2026-08-19_Social_Performance_28D_Normalizado.json"
+  - "Operations/Research/2026-08-19_Retorno_Engagement_Esfuerzo_28D.json"
   - "GrowthOS/08_00_Metricas_Baseline_Plataformas.md"
   - "Operations/Research/Historical_Performance_Snapshot.csv"
   - "Operations/Research/Historical_Performance_Individuals.csv"

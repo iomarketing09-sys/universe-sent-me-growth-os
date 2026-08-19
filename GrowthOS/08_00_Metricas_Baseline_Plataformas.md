@@ -4,9 +4,9 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-03
 **Última actualización:** 2026-08-19
-**Versión:** 2.0
+**Versión:** 2.1
 **Autor:** Claude (Guardián de Canon, extracción directa vía Windsor.ai MCP)
-**Documentos relacionados:** `07_00_Registro_Maestro_Reels.md`, `06_00_Reglas_Aprendizaje_Tendencias.md`, `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Research/Historical_Performance_Snapshot.csv`, `../Operations/Research/Historical_Performance_Individuals.csv`, `../Operations/Research/2026-08-15_Publication_Log.csv`, `../Operations/Research/2026-08-15_ExperimentLog.csv`, `../Operations/Research/2026-08-16_P2_Comunidad_Delta_01.json`, `../Operations/Research/2026-08-16_P2_Baseline_Preparacion_01.json`, `../Operations/Research/2026-08-17_Metricas_24_72_Extraccion_02.json`, `../Operations/Research/2026-08-17_Investigacion_Ventanas_Temporales_Meta.md`, `../Operations/Research/2026-08-19_Social_Performance_28D_Normalizado.json`
+**Documentos relacionados:** `07_00_Registro_Maestro_Reels.md`, `06_00_Reglas_Aprendizaje_Tendencias.md`, `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Research/Historical_Performance_Snapshot.csv`, `../Operations/Research/Historical_Performance_Individuals.csv`, `../Operations/Research/2026-08-15_Publication_Log.csv`, `../Operations/Research/2026-08-15_ExperimentLog.csv`, `../Operations/Research/2026-08-16_P2_Comunidad_Delta_01.json`, `../Operations/Research/2026-08-16_P2_Baseline_Preparacion_01.json`, `../Operations/Research/2026-08-17_Metricas_24_72_Extraccion_02.json`, `../Operations/Research/2026-08-17_Investigacion_Ventanas_Temporales_Meta.md`, `../Operations/Research/2026-08-19_Social_Performance_28D_Normalizado.json`, `../Operations/Research/2026-08-19_Retorno_Engagement_Esfuerzo_28D.json`
 
 > **Metodología:** Este documento conserva snapshots históricos y cortes reproducibles. El corte multicanal más reciente fue extraído desde Windsor.ai el 2026-08-19 para el período 22 de julio–18 de agosto de 2026. Cuentas: Facebook Page `1036844829507460`, Instagram `17841462696378190`, TikTok `Universe Sent Me` (`_000bYPIECRpRjubuhKmzaeo3iFDirTBYXPP`) y YouTube `Universe Sent Me` (`UCBNbmSB3QG73ef7EqN2Ew1A`, conectado en Windsor como account `27679`). Los snapshots históricos anteriores no se sobrescriben; cada fila conserva fuente, fecha de extracción y ventana.
 
@@ -212,7 +212,24 @@ TikTok entregó filas repetidas con métricas nulas para un mismo video; el norm
 
 El dataset reproducible del corte está en `Operations/Research/2026-08-19_Social_Performance_28D_Normalizado.json`. La fuente de arquitectura, roles y reglas de no duplicación está en `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`.
 
-## 13. Próxima Actualización
+## 13. Retorno de engagement por esfuerzo de publicación — corte de 28 días
+
+Para priorizar el esfuerzo operativo actual se utiliza el proxy **engagement por pieza publicada**. El denominador representa publicaciones registradas, no horas de guion, edición, dirección de arte, coste de herramientas ni complejidad de producción. Por ello, la métrica sirve para asignar el siguiente ciclo de distribución y experimentación, no para afirmar que un canal sea intrínsecamente superior.
+
+| Ranking | Plataforma | Piezas | Engagement | Engagement por pieza | Engagement por 100 views | Lectura operativa |
+|---:|---|---:|---:|---:|---:|---|
+| 1 | Facebook | 119 | 30,729 | **258.2** | N/D | Motor principal de distribución y retorno medible. |
+| 2 | YouTube | 6 | 36 | **6.0** | 0.72 | Canal de prueba selectiva; la vista diaria no equivale a snapshot lifetime. |
+| 3 | TikTok | 7 | 23 | **3.3** | 1.01 | Mejor laboratorio de video corto fuera de Meta; mantener experimentos acotados. |
+| 4 | Instagram | 34 | 59 | **1.7** | 3.58 | El engagement relativo por view existe, pero el volumen y retorno por publicación no justifican más frecuencia sin cambiar la propuesta de formato. |
+
+La recomendación CGO para el siguiente ciclo es conservar **Facebook** como canal principal de distribución, asignar a **TikTok** el rol de laboratorio de crecimiento en video corto, mantener **YouTube** como prueba selectiva orientada a retención y descubrimiento, y reducir el volumen indiscriminado en **Instagram** para concentrarlo en Reels con hipótesis de personaje, hook y retención explícitas.
+
+> **Límite de comparabilidad:** Facebook usa `reacciones + comentarios + shares`; Instagram usa `media_engagement`; TikTok suma likes, comentarios, shares y favoritos; YouTube usa actividad diaria acumulada. Las ventanas no son homogéneas. El ranking es un proxy de esfuerzo operativo, no una medición causal entre plataformas.
+
+La evidencia calculable está en `Operations/Research/2026-08-19_Retorno_Engagement_Esfuerzo_28D.json`; el dashboard interactivo correspondiente utiliza el dataset normalizado y expone filtros de período, plataforma, formato y personaje.
+
+## 14. Próxima Actualización
 
 Este documento debe actualizarse:
 - Cada domingo (ciclo semanal de análisis)

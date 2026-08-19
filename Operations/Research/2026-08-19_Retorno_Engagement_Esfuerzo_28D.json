@@ -1,0 +1,56 @@
+{
+  "period": {
+    "start": "2026-07-22",
+    "end": "2026-08-18"
+  },
+  "metric": "engagement por pieza publicada",
+  "proxy_definition": "Una pieza publicada equivale a una unidad de esfuerzo operativo. El resultado no representa horas de producción, costo de edición ni nivel de complejidad creativa.",
+  "records": [
+    {
+      "platform": "Facebook",
+      "pieces": 119,
+      "engagement": 30729,
+      "views": null,
+      "definition": "reacciones + comentarios + shares",
+      "window": "corte 22 jul–18 ago 2026",
+      "engagement_per_piece": 258.2268907563025,
+      "engagement_per_100_views": null
+    },
+    {
+      "platform": "YouTube",
+      "pieces": 6,
+      "engagement": 36,
+      "views": 5022,
+      "definition": "likes + comments + shares de actividad diaria acumulada",
+      "window": "actividad diaria acumulada del corte",
+      "engagement_per_piece": 6,
+      "engagement_per_100_views": 0.7168458781362007
+    },
+    {
+      "platform": "TikTok",
+      "pieces": 7,
+      "engagement": 23,
+      "views": 2268,
+      "definition": "likes + comments + shares + favoritos",
+      "window": "snapshot actual / lifetime de piezas publicadas en el corte",
+      "engagement_per_piece": 3.2857142857142856,
+      "engagement_per_100_views": 1.0141093474426808
+    },
+    {
+      "platform": "Instagram",
+      "pieces": 34,
+      "engagement": 59,
+      "views": 1646,
+      "definition": "media_engagement nativo",
+      "window": "snapshot actual / lifetime de piezas publicadas en el corte",
+      "engagement_per_piece": 1.7352941176470589,
+      "engagement_per_100_views": 3.5844471445929527
+    }
+  ],
+  "recommendation": {
+    "primary_distribution": "Facebook",
+    "video_growth_experiment": "TikTok",
+    "selective_testing": "YouTube",
+    "reduce_or_reframe": "Instagram"
+  }
+}
