@@ -4,7 +4,7 @@ purpose: "Definir el blueprint de producción, la instrumentación y los control
 status: Active
 created: 2026-08-19
 updated: 2026-08-19
-version: "1.5"
+version: "1.6"
 author: "Manus AI (CGO), aprobado por Fernando"
 related_documents:
   - "2026-08-19_Diseno_Experimento_Reels_v2.md"
@@ -329,3 +329,19 @@ Para P01 se debe generar en la Central de Afiliados un link nuevo, con una etiqu
 > *Enlace de afiliado: podríamos recibir una comisión sin costo adicional para ti.*
 
 No se añade una URL normal de producto, no se reutiliza una etiqueta de otra publicación y no se pega un link en el copy principal. El link afiliado mide una superficie distinta de la publicación y requiere su propio registro/ID para separar monetización de rendimiento creativo.
+
+### Registro de publicación — Instagram
+
+| Campo | Valor verificado |
+|---|---|
+| Plataforma | Instagram Reel |
+| Estado | `PUBLICADA` |
+| Cuenta | `@universe_sent_me_0326` |
+| Hora de registro local | 2026-08-19 18:51:59 CDT |
+| IG_Media_ID | `17902439976554149` |
+| Contenedor | `17977180962089880` |
+| Permalink | `https://www.instagram.com/reel/DcPY7QNF1hb/` |
+| Copy publicado | `yo después de mandar “no pasa nada” 🟣` + `#UniverseSentMe #UniverseUSM #MemesUSM #CuandoLeExplicas` |
+| Publicación en feed | Sí |
+
+Instagram ya no debe recibir otra carga de este asset. Facebook continúa como fila separada y pendiente hasta que Graph API finalice el upload iniciado; TikTok y YouTube se retoman después de cerrar o diagnosticar Facebook.
