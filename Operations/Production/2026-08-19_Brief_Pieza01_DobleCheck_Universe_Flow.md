@@ -142,16 +142,7 @@ Usar el tramo de apertura más contenido y ascendente del audio; evitar cualquie
 
 La prueba pasa si el espectador sigue entendiendo el conflicto con el audio apagado y si el gesto de cierre conserva su humor seco. Si el instrumental convierte el momento en un triunfo épico, reducirlo a 8–10% o volver a `SFX-only`.
 
-### Sincronía recomendada con la opción 1
-
-| Tiempo aproximado | Imagen / texto | Audio |
-|---|---|---|
-| 0.0–1.5 s | Teléfono, doble check y texto `yo después de mandar “no pasa nada”`. | Entrada del audio a 10–15%; `ping` claramente audible. |
-| 1.5–3.0 s | Zoom al teléfono y túnel/portal violeta. | Mantener audio de fondo; `whoosh` por encima. |
-| 3.0–5.5 s | Universe aparece y cierra el portal. | Bajar la música 2–3 dB durante el swipe y poner el SFX de cierre en primer plano. |
-| 5.5–6.0 s | Línea violeta final y corte. | Dejar una cola mínima; no forzar beat ni loop. |
-
-**Estado de decisión:** `Selección pendiente en biblioteca de Edits`. La disponibilidad, el nombre exacto y el tramo del audio se confirman dentro de la cuenta justo antes de publicar; una tendencia puede cambiar en días. Ninguna versión posterior debe depender de esta canción para que el experimento mida el hook y payoff visual, no el audio.
+**Estado de decisión:** `Prayer Instrumental disponible; prueba de montaje pendiente`. La disponibilidad fue confirmada por Fernando dentro de Edits; el tramo exacto se selecciona al montar. Ninguna versión posterior debe depender de esta canción para que el experimento mida el hook y payoff visual, no el audio.
 
 ## Referencias necesarias antes de generar video
 
