@@ -167,3 +167,47 @@ As the tunnel resolves, a small round violet portal is already open at the cente
 
 Do not introduce people, extra animals, Elara, dragons, extra characters, new props, text, logos, watermarks, dialogue, or music. Universe must not become human, change fur color, change glasses, wear clothes, or change body proportions. Only a soft tunnel whoosh resolving into a small portal-closing sound.
 ```
+
+## Ruta V3 aprobada — tres clips con keyframes de imagen
+
+Fernando propone correctamente separar la llegada al mundo de Universe del payoff. La ruta V2 se reemplaza: el render de teléfono/portal ya aprobado queda intacto como clip 1, y los dos clips siguientes se generan desde imágenes de inicio y final exactas. La imagen puente elimina la necesidad de pedirle a Flow que invente simultáneamente un túnel, personaje y acción final.
+
+| Clip | Duración / coste | Imagen inicial | Imagen final | Única responsabilidad |
+|---|---:|---|---|---|
+| 1 — `PHONE → PORTAL` | 4 s / 7 puntos ya usados | Teléfono realista | Frame final aprobado: túnel púrpura | Hook y entrada al portal. |
+| 2 — `PORTAL → UNIVERSE SEATED` | 4 s / 7 puntos | Frame final del clip 1 | **KF-B:** Universe sentado junto a teléfono/portal en Nubealis | Revelar mundo y personaje sin payoff. |
+| 3 — `UNIVERSE CLOSES CHAT` | 4 s / 7 puntos | **KF-B** exacto | **KF-C:** mismo encuadre, Universe acaba de cerrar el portal | Acción/payoff claro. |
+
+**Coste acumulado de la pieza:** 21 puntos. Con 848 puntos iniciales, equivale a aproximadamente 2.48%; se mantiene dentro de un presupuesto de iteración controlada.
+
+### Keyframes requeridos
+
+| ID | Descripción de imagen | Uso |
+|---|---|---|
+| `KF-B` | Vertical 9:16. En un pequeño claro de Nubealis, Universe —gato blanco pequeño, gafas redondas doradas finas, cuatro patas y cola— está sentado a la derecha de un teléfono vertical que funciona como portal violeta. El bosque tiene musgo, nubes espirales lilas y luz ámbar. Universe mira el portal, pero aún no lo toca. Sin texto ni marca de agua. | Final del clip 2 e inicio del clip 3. |
+| `KF-C` | Mismo encuadre, misma posición de cámara, mismo teléfono, mismo Universe y mismo bosque que `KF-B`. Universe tiene una pata extendida hacia el teléfono; el portal está casi cerrado, reducido a una línea violeta fina. No hay cambio de gafas, color, escala o posición. Sin texto ni marca de agua. | Final del clip 3. |
+
+**Uso del storyboard:** para esta ruta sí conviene generar un storyboard consistente antes de video. La cuadrícula se usa para fijar personaje, luz, teléfono y fondo; después se exportan/cortan `KF-B` y `KF-C` como dos imágenes verticales independientes. No usar la cuadrícula completa como keyframe de video.
+
+### Prompt para storyboard / keyframes B y C
+
+```text
+Create a consistent vertical 9:16 storyboard for two sequential keyframes in the same Nubealis clearing. Use the attached Universe reference for the exact character design: a small white cat, thin round golden wire glasses, four paws, tail, same face and body proportions. Include a single upright smartphone that acts as a violet portal. Keep the camera at the same medium distance, same forest clearing, same mossy ground, lavender spiral clouds and warm amber firelight in both frames.
+
+Frame B: Universe is seated to the right of the open phone-shaped violet portal, looking at it with dry resignation; he has not moved a paw yet.
+Frame C: identical composition, identical Universe, identical phone and background; Universe extends one paw toward the portal as it folds into a thin violet line, almost closed.
+
+No humans, no extra animals, no Elara, no dragons, no extra characters, no clothing, no logos, no watermark, no readable text. The two frames must look like consecutive moments from the same shot.
+```
+
+### Prompt V3 — Clip 2: PORTAL → UNIVERSE SEATED
+
+```text
+Use the actual last frame of Clip 1 as the starting image and KF-B as the ending image. Vertical 9:16, 4 seconds, one continuous camera movement. Begin inside the same purple energy tunnel from Clip 1: electric violet filaments and a dark center remain visible at frame one. The forward motion slows naturally as the tunnel opens into the exact Nubealis clearing shown in KF-B. By the final second, the composition must match KF-B exactly: Universe is already seated to the right of one open phone-shaped violet portal, looking at it; he does not move a paw yet. Keep Universe a small white cat with thin round golden wire glasses, four paws and tail. No text, watermark, people, extra animals, Elara, dragons, extra characters, dialogue or music. Only a soft tunnel whoosh resolving into a quiet forest ambience.
+```
+
+### Prompt V3 — Clip 3: UNIVERSE CLOSES CHAT
+
+```text
+Use KF-B as the starting image and KF-C as the ending image. Vertical 9:16, 4 seconds, one continuous locked medium shot. Preserve the exact same composition, forest, phone portal, lighting and Universe character from the two keyframes. Universe stays seated, looks at the open violet phone portal with dry resignation, blinks once, then slowly extends one paw and closes the portal exactly like dismissing a chat notification. The portal folds into a thin violet line by the final frame, matching KF-C. Universe must not walk, change position, change glasses, change fur, become human, wear clothes, or introduce any other character. No text, logos, watermark, dialogue or music; only a small portal-closing sound.
+```
