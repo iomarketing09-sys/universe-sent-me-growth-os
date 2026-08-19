@@ -4,9 +4,9 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-19
-**Versión:** 3.6
+**Versión:** 3.7
 **Autor:** Manus AI (CGO); Sección 6 añadida por Claude
-**Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`
+**Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`
 
 ---
 
@@ -197,3 +197,17 @@ El corte renovado confirmó a Facebook como la mayor señal de interacción por 
 La auditoría aportada por Fernando redefine el carril de Reels. El personaje no es el producto por sí solo: funciona como vehículo visual de una situación humana reconocible. Se prioriza Universe como personaje ancla de las primeras pruebas, se reserva Wilfred para papeles de remate o relación, y se prohíben aperturas contemplativas sin conflicto visual.
 
 La primera familia de experimentos mantiene una estructura de 6–7 segundos: conflicto real visible, transformación real → Universe, payoff y loop. La pieza debe ser comprensible en mute; shares, retención inicial, reach de no seguidores y completaciones tienen prioridad sobre likes. No se mezclan naturaleza, memes y microhistorias dentro de la primera familia; cada una tendrá su propia cohorte controlada de 5–10 casos. El diseño operativo vive en `Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`.
+
+## 15. Regla de selección de modelo y keyframes en Flow — 2026-08-19
+
+La primera pieza de `REAL → UNIVERSE / REACCIÓN` confirmó que la continuidad mejora al asignar a cada modelo una sola función: el Clip 1 `PHONE → PORTAL` se resolvió con una referencia inicial única; los Clips 2 y 3 exigieron controlar de forma explícita inicio y final. La regla no sustituye revisión humana, pero evita gastar créditos en un modelo que no puede respetar el tipo de continuidad requerido.
+
+| Situación de producción | Modelo recomendado | Referencias | Coste conocido | Regla |
+|---|---|---|---:|---|
+| El clip parte de un solo keyframe y puede descubrir su propio destino visual. | Omniflash | Imagen inicial única. | 7 puntos / hasta 4 s. | Usar para hooks, entradas a portales, inserts o transiciones donde el final no necesita coincidir con un frame predeterminado. |
+| El clip debe aterrizar en una composición o personaje exactos. | Veo 3.1 Lite | Imagen inicial y final. | 10 puntos / hasta 7 s. | Usar cuando continuidad de personaje, teléfono, cámara, luz y estado final sean criterios no negociables; recortar en edición los segundos útiles. |
+| La historia requiere varios estados visuales consistentes. | Storyboard previo | Cuadrícula para diseño; paneles exportados como keyframes individuales. | Según generación. | El storyboard fija personaje, entorno y progresión; no se usa la cuadrícula completa como referencia de video. |
+
+El registro de producción debe incorporar `Generation_Model`, `Generation_Cost_Points`, `Reference_Mode` (`inicio_unico` o `inicio_final`), `Clip_Sequence` y `Keyframe_IDs`. La decisión se documenta antes de generar; una iteración se clasifica por fallo de continuidad, personaje, composición o payoff, no solo por “no me gustó”.
+
+> **Caso P01:** Omniflash resolvió el Clip 1 con un frame inicial; Veo 3.1 Lite resolvió Clips 2 y 3 con referencias de inicio/final. El Clip 3 fue aprobado para edición con un recorte recomendado de 0:01–0:05. La firma visual se añade una vez en postproducción y no dentro de las referencias de generación.

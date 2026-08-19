@@ -245,3 +245,9 @@ El prompt de transición se construye en cinco bloques y se modifica únicamente
 ```text
 Use the actual last usable frame of Clip 2 as the starting image and KF-C as the ending image. Vertical 9:16, 7 seconds, one continuous locked medium shot. Preserve the exact same composition, forest, phone portal, lighting and Universe character from the two references. At the start, Universe is seated to the right of the open violet phone portal, already looking at it. Hold this pose for the first 0.5 seconds. Universe blinks once with dry resignation, then slowly extends one paw and closes the portal exactly like dismissing a chat notification. The portal folds inward into one thin violet line by the final frame, matching KF-C. Keep the camera fixed; the only motion is Universe’s blink, one paw gesture, and the portal closing. Universe must not walk, change position, change glasses, change fur, become human, wear clothes, or introduce any other character. No text, logos, watermark, dialogue or music; only a small portal-closing sound.
 ```
+
+### Estado de ejecución V3 — Clip 3 aprobado para edición
+
+El render `Cat_closing_phone_portal_202608191652.mp4` mantiene la composición, el bosque y los rasgos de Universe. El gesto de la pata se lee como descartar/cerrar una notificación, y el portal termina de forma comprensible en una línea violeta. **Estado:** `APPROVE`.
+
+La edición debe conservar aproximadamente **0:01–0:05** del clip: se elimina el arranque levemente lento y la cola estática después de cerrar. La marca `UniverseSentMe` no se replica dentro de las siguientes generaciones; si se desea, se añade como firma única en la edición final. El montaje queda pendiente de combinar tres segmentos: Clip 1 `PHONE → PORTAL`, Clip 2 `PORTAL → UNIVERSE SEATED` y Clip 3 `UNIVERSE CLOSES CHAT`.
