@@ -6,9 +6,9 @@
 
 **Fecha de creación:** 2026-08-19
 
-**Última actualización:** 2026-08-18
+**Última actualización:** 2026-08-19
 
-**Versión:** 1.1
+**Versión:** 1.2
 
 **Autor:** Manus AI
 
@@ -24,12 +24,13 @@
 
 | Escenario | Recomendación actual | Motivo |
 |---|---|---|
-| Uso local para probar modelos, redactar borradores o conectar herramientas creativas | **Sí, recomendado como piloto** | OmniRoute ofrece un endpoint local compatible con OpenAI y puede centralizar varios proveedores sin exponer credenciales en el navegador. [1] [2] |
+| Piloto en una computadora de baja potencia | **Sí, cloud-first** | OmniRoute actúa solo como gateway ligero en `127.0.0.1`; la inferencia ocurre en un provider cloud con API oficial. Si el gateway ralentiza el equipo, se usa directamente el Playground o API del provider. |
+| Uso local para probar modelos, redactar borradores o conectar herramientas creativas | **Sí, si el equipo lo soporta** | Puede centralizar providers sin exponer credenciales en el navegador, pero la inferencia local con Ollama se pospone por consumo de RAM, CPU, GPU y almacenamiento. [1] [2] |
 | Función compartida del dashboard social | **Sí, pero solo mediante backend y servicio separado** | El frontend actual no debe guardar secretos ni llamar directamente a proveedores o a OmniRoute. |
 | Extracción de Windsor, normalización, deduplicación o cálculo de métricas | **No** | Son procesos deterministas que requieren trazabilidad y ya están definidos en el flujo de actualización asistida. |
 | Exponer OmniRoute públicamente sin autenticación, límites ni revisión de proveedores | **No** | Amplía la superficie de ataque, puede filtrar datos y puede incumplir los términos de determinados proveedores o niveles gratuitos. [3] [6] |
 
-> **Decisión:** OmniRoute queda aprobado únicamente como **opción de piloto local o gateway privado detrás de un backend controlado**. No se instala todavía como dependencia del dashboard ni se activa un servicio de producción hasta que Fernando defina el primer caso de uso y se aprueben los controles operativos.
+> **Decisión:** OmniRoute queda aprobado como **gateway local de bajo consumo conectado a un único provider cloud oficial**, siempre que el equipo lo soporte. La inferencia local mediante Ollama queda pospuesta. Si OmniRoute ralentiza la computadora, el piloto debe ejecutarse directamente en el Playground o API del provider. No se instala como dependencia del dashboard ni se activa un servicio de producción hasta que Fernando defina el primer caso de uso y se aprueben los controles operativos.
 
 ## Qué es y qué aporta
 
@@ -90,10 +91,11 @@ No se selecciona una implementación definitiva hasta que exista un primer caso 
 | Enfoque | Cuándo usarlo | Ventaja | Coste operativo |
 |---|---|---|---|
 | Proveedor directo desde un backend | Piloto estrecho con un único modelo y poco tráfico. | Menor superficie operativa y menor número de componentes. | Menos flexibilidad y sin fallback multi-proveedor. |
-| OmniRoute local | Pruebas personales, herramientas creativas y evaluación de modelos. | Bajo riesgo de exposición pública y configuración rápida. [2] | Depende de que la máquina local esté disponible; no es un servicio compartido. |
+| OmniRoute local como gateway cloud-first | Piloto personal en una computadora de baja potencia, con un único provider cloud oficial. | Menor consumo que ejecutar modelos locales y endpoint OpenAI-compatible. | Sigue consumiendo RAM/CPU y envía prompts al provider cloud; no es un servicio compartido. |
+| Provider directo sin OmniRoute | Equipo demasiado lento para mantener el gateway o piloto con un único modelo. | Menor superficie operativa y menor consumo local. | No ofrece routing, fallback ni trazabilidad centralizada del gateway. |
 | OmniRoute autoalojado detrás de backend | Función compartida de análisis o producción editorial. | Endpoint uniforme, routing, fallback y control centralizado. [1] [2] | Requiere VM persistente, backups, observabilidad, control de proveedores y mantenimiento. |
 
-**Recomendación de implementación:** comenzar con **uso local**, utilizando datos sintéticos o un corte de métricas ya anonimizado. Si el piloto demuestra valor, construir un endpoint backend mínimo y desplegar OmniRoute en una VM separada; no incrustarlo dentro del frontend React ni dentro del proceso de extracción de Windsor.
+**Recomendación de implementación:** comenzar con **Groq cloud conectado a un gateway OmniRoute local de bajo consumo**, utilizando datos sintéticos o un corte de métricas ya anonimizado. Fijar un único provider y un model ID explícito; no usar `auto` ni conectar providers gratuitos de procedencia incierta. Si el gateway ralentiza el equipo, probar Groq o Gemini directamente desde su Playground/API. Si el piloto demuestra valor, construir un endpoint backend mínimo y desplegar OmniRoute en una VM separada; no incrustarlo dentro del frontend React ni dentro del proceso de extracción de Windsor.
 
 ## Piloto propuesto
 
@@ -102,8 +104,8 @@ El piloto debe responder una sola pregunta: **¿una lectura asistida por IA mejo
 | Fase | Acción | Criterio de salida |
 |---|---|---|
 | 1. Preparación | Seleccionar un dataset de prueba sin credenciales ni datos personales. | Payload mínimo documentado y reproducible. |
-| 2. Ejecución local | Instalar OmniRoute localmente o usar una instalación aislada; probar un modelo y un fallback permitido. | Respuesta obtenida sin exponer el servicio a Internet. |
-| 3. Evaluación | Comparar factualidad, tono, latencia, errores y coste frente a un borrador manual o proveedor directo. | Muestra revisada por Fernando; limitaciones registradas. |
+| 2. Ejecución cloud-first | Instalar OmniRoute localmente solo como gateway; conectar un provider cloud oficial y probar un model ID explícito, sin fallback automático. | Respuesta obtenida sin exponer el gateway a Internet y con el provider registrado. |
+| 3. Evaluación | Comparar factualidad, tono, latencia, errores y coste frente a un borrador manual o proveedor directo. Si el gateway pesa demasiado, repetir directamente en el Playground del provider. | Muestra revisada por Fernando; limitaciones registradas. |
 | 4. Trazabilidad | Guardar modelo, proveedor, fecha, versión del gateway, prompt estructurado y dataset utilizado. | Artefacto de evaluación en `Operations/Research/`. |
 | 5. Decisión | Elegir entre abandonar, mantener uso local o diseñar backend privado. | Decisión explícita y actualización de este documento. |
 
@@ -124,9 +126,9 @@ Si se aprueba una integración posterior, deberán actualizarse como mínimo est
 
 ## Próximo punto de decisión
 
-Antes de instalar paquetes, activar un servicio o mover credenciales, Fernando debe elegir el primer caso de uso: **lectura estratégica de datos, clasificación de contenido o generación creativa**. Con esa elección se decidirá entre un proveedor directo, OmniRoute local o OmniRoute autoalojado detrás de un backend privado.
+Antes de instalar paquetes, activar un servicio o mover credenciales, Fernando debe elegir el primer caso de uso: **lectura estratégica de datos, clasificación de contenido o generación creativa**. Con esa elección se decidirá entre Groq/Gemini directo, OmniRoute local como gateway cloud-first o OmniRoute autoalojado detrás de un backend privado.
 
-Hasta entonces, la conclusión operativa es: **sí se puede usar OmniRoute, pero ahora conviene usarlo solo como piloto local y no como parte del dashboard ni del pipeline canónico de métricas**.
+Hasta entonces, la conclusión operativa es: **sí se puede usar OmniRoute, pero en esta computadora debe probarse únicamente como gateway cloud-first de bajo consumo; si también ralentiza el equipo, se debe omitir el gateway y utilizar directamente el provider cloud**.
 
 ## Referencias
 
