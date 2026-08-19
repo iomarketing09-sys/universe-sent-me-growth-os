@@ -1,0 +1,35 @@
+{
+  "purpose": "Registrar relaciones cross-platform respaldadas por publicación prácticamente simultánea y coincidencia de copy, hashtags o personajes; no incluir inferencias débiles.",
+  "status": "Active",
+  "created_at": "2026-08-19",
+  "relationships": [
+    {
+      "canonical_concept_id": "CON-2026-07-29-Wilfred_MomentOS",
+      "confidence": "Alta",
+      "evidence": "Facebook e Instagram comparten hashtags #UniverseSentMe, #universo, #WilfredUSM, #humor y #MomentosUSM; publicados con 16 segundos de diferencia.",
+      "publications": [
+        {"platform": "Facebook", "content_id": "1036844829507460_122142839523072582", "published_at": "2026-07-29T04:14:25Z"},
+        {"platform": "Instagram", "content_id": "17884121250454162", "published_at": "2026-07-29T04:14:09Z"}
+      ]
+    },
+    {
+      "canonical_concept_id": "CON-2026-08-09-Elara_Evan_Estrellas",
+      "confidence": "Alta",
+      "evidence": "Misma publicación de Elara y Evan con etiquetas #ElaraUSM y #EvanUSM; publicada con 36 segundos de diferencia.",
+      "publications": [
+        {"platform": "Facebook", "content_id": "1036844829507460_122147211939072582", "published_at": "2026-08-09T02:00:39Z"},
+        {"platform": "Instagram", "content_id": "17940860565300063", "published_at": "2026-08-09T02:00:03Z"}
+      ]
+    },
+    {
+      "canonical_concept_id": "CON-2026-08-10-Cartones_Papeles",
+      "confidence": "Alta",
+      "evidence": "Copies semánticamente equivalentes —“no eran cartones pintados” y “no eran papeles”— con hashtags de Universe Sent Me; publicados con 44 segundos de diferencia.",
+      "publications": [
+        {"platform": "Facebook", "content_id": "1036844829507460_122147749683072582", "published_at": "2026-08-10T00:00:48Z"},
+        {"platform": "Instagram", "content_id": "17967086586135144", "published_at": "2026-08-10T00:00:04Z"}
+      ]
+    }
+  ],
+  "exclusion_rule": "No se crea relación si solo coinciden personaje, plataforma o ventana de varios días sin copy, hashtag, asset o timestamp compatible."
+}

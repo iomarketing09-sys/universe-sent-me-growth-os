@@ -31,7 +31,7 @@
       "content_type": "Reel",
       "title_or_caption": "Les dije que no eran cartones pintados \n\n #UniverseSentMe #memes #humor #UniverseUSM",
       "character": "Universe",
-      "canonical_concept_id": null,
+      "canonical_concept_id": "CON-2026-08-10-Cartones_Papeles",
       "engagement": 8,
       "views": null,
       "reach": null,
@@ -50,7 +50,7 @@
       "content_type": "Reel",
       "title_or_caption": "Elara pasó toda la noche tratando de leerlo. \nEvan solo quería ver las estrellas. 🌲✨\n\n#UniverseSentMe #ElaraUSM #EvanUSM #ElBosque #MomentosUSM",
       "character": "Elara",
-      "canonical_concept_id": null,
+      "canonical_concept_id": "CON-2026-08-09-Elara_Evan_Estrellas",
       "engagement": 8,
       "views": null,
       "reach": null,
@@ -221,7 +221,7 @@
       "content_type": "Reel",
       "title_or_caption": "#universesentme #universo #WilfredUSM #humor #MomentosUSM",
       "character": "Wilfred",
-      "canonical_concept_id": null,
+      "canonical_concept_id": "CON-2026-07-29-Wilfred_MomentOS",
       "engagement": 7,
       "views": null,
       "reach": null,
@@ -316,7 +316,7 @@
       "content_type": "Reel",
       "title_or_caption": "#universesentme #universo #WilfredUSM #humor #MomentosUSM",
       "character": "Wilfred",
-      "canonical_concept_id": null,
+      "canonical_concept_id": "CON-2026-07-29-Wilfred_MomentOS",
       "engagement": 0,
       "views": 33,
       "reach": 21,
@@ -430,7 +430,7 @@
       "content_type": "Reel",
       "title_or_caption": "#UniverseSentMe #EvanUSM #ElaraUSM",
       "character": "Elara",
-      "canonical_concept_id": null,
+      "canonical_concept_id": "CON-2026-08-09-Elara_Evan_Estrellas",
       "engagement": 1,
       "views": 10,
       "reach": 5,
@@ -468,7 +468,7 @@
       "content_type": "Reel",
       "title_or_caption": "Les dije que no eran papeles... \n#universesentme #UniverseUSM #memes #humor",
       "character": "Universe",
-      "canonical_concept_id": null,
+      "canonical_concept_id": "CON-2026-08-10-Cartones_Papeles",
       "engagement": 1,
       "views": 138,
       "reach": 106,
@@ -749,6 +749,36 @@
   ],
   "explicit_cross_platform_concepts": [
     {
+      "canonical_concept_id": "CON-2026-08-10-Cartones_Papeles",
+      "publications": [
+        {
+          "platform": "Facebook",
+          "content_id": "1036844829507460_122147749683072582",
+          "evidence_status": "Confirmado_por_Meta_API"
+        },
+        {
+          "platform": "Instagram",
+          "content_id": "17967086586135144",
+          "evidence_status": "Confirmado_por_Windsor"
+        }
+      ]
+    },
+    {
+      "canonical_concept_id": "CON-2026-08-09-Elara_Evan_Estrellas",
+      "publications": [
+        {
+          "platform": "Facebook",
+          "content_id": "1036844829507460_122147211939072582",
+          "evidence_status": "Confirmado_por_Meta_API"
+        },
+        {
+          "platform": "Instagram",
+          "content_id": "17940860565300063",
+          "evidence_status": "Confirmado_por_Windsor"
+        }
+      ]
+    },
+    {
       "canonical_concept_id": "CON-2026-08-09-Caja_de_Luna",
       "publications": [
         {
@@ -874,6 +904,21 @@
       ]
     },
     {
+      "canonical_concept_id": "CON-2026-07-29-Wilfred_MomentOS",
+      "publications": [
+        {
+          "platform": "Facebook",
+          "content_id": "1036844829507460_122142839523072582",
+          "evidence_status": "Confirmado_por_Meta_API"
+        },
+        {
+          "platform": "Instagram",
+          "content_id": "17884121250454162",
+          "evidence_status": "Confirmado_por_Windsor"
+        }
+      ]
+    },
+    {
       "canonical_concept_id": "CON-2026-08-03-Habilidades_manual",
       "publications": [
         {
@@ -912,13 +957,13 @@
       "TikTok": 7,
       "YouTube": 6
     },
-    "explicit_cross_platform_concepts": 9,
-    "unlinked_records": 17,
+    "explicit_cross_platform_concepts": 12,
+    "unlinked_records": 11,
     "records_with_explicit_experiment_evidence": 0
   },
   "limitations": [
     "Facebook audit identifica Reels por attachment_type=video/video_inline; no se infiere formato para posts estáticos.",
-    "Los conceptos entre plataformas solo se agrupan mediante frase o título explícitamente coincidente.",
+    "Los conceptos entre plataformas solo se agrupan mediante frase o título explícitamente coincidente, o por relación de alta evidencia documentada con publicación casi simultánea y copy/hashtags compatibles.",
     "Las seis piezas de YouTube incluidas en este corte ya tienen fecha nativa confirmada; futuras piezas deben recuperar el mismo campo antes de la reconciliación."
   ]
 }

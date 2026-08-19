@@ -3,10 +3,10 @@
 **Propósito:** Definir los criterios de decisión para la programación, reutilización, análisis y creación de contenido en Universe Sent Me.
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
-**Última actualización:** 2026-08-02
-**Versión:** 3.1
+**Última actualización:** 2026-08-19
+**Versión:** 3.2
 **Autor:** Manus AI (CGO); Sección 6 añadida por Claude
-**Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`
+**Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`
 
 ---
 
@@ -141,3 +141,22 @@ La clasificación por caption generó falsos positivos: amor, pareja, cuerpo o e
 La ampliación visual elevó la muestra sexual a `n=2` explícitos y `n=5` sugerentes. El grupo sugerente tiene mediana exploratoria de 24 interacciones y 2 shares, pero está condicionado por un outlier textual de 171 interacciones y 50 shares. La señal útil queda formulada como hipótesis: un doble sentido sexual textual puede difundirse cuando el remate es inmediato y relatable; no es una regla de producción. Documento: `Operations/Research/2026-08-19_Analisis_Ampliacion_Humor_Sexual.md`.
 
 La revisión de subgrupos del humor ácido confirma una muestra exploratoria, no una categoría ganadora. Tres outliers de funciones distintas concentran 92.6% de las interacciones; la única microseñal repetida por encima del centro es observacional (`n=2`, mediana 30 interacciones, 6 shares). La hipótesis transversal más útil es conflicto interpersonal comprensible en una lectura, no “insulto” o “autodesprecio” por separado. Documento: `Operations/Research/2026-08-19_Analisis_Subgrupos_Humor_Acido.md`.
+
+## 12. Convención obligatoria de campaña, experimento e hipótesis — 2026-08-19
+
+Toda pieza nueva debe recibir su identidad analítica **antes de su primera publicación**. El objetivo no es burocrático: permite reconocer la misma producción cuando se adapte a Instagram, Facebook, TikTok y YouTube, y evita crear campañas retrospectivas sin evidencia.
+
+| Campo | Formato | Ejemplo | Regla |
+|---|---|---|---|
+| `Concept_ID` | `CON-YYYY-MM-DD-Slug` | `CON-2026-08-21-Ojos_correctos` | Se crea una vez por asset o idea madre, antes del primer post. |
+| `Campaign_Label` | `CMP-YYYYMM-Tema-Objetivo` | `CMP-202608-Relatable-Distribucion` | Describe objetivo operativo; no se deriva automáticamente del caption. |
+| `Experiment_ID` | `EXP-YYYYMM-Campaign-##` | `EXP-202608-Relatable-01` | Agrupa piezas que prueban la misma variable deliberada. |
+| `Hypothesis_ID` | `HB-###` | `HB-014` | Debe existir en el HypothesisBank antes de marcar una pieza como prueba. |
+| `Primary_Asset_ID` | Archivo o CNT existente | `CNT-015` | Une las adaptaciones de una misma producción. |
+| `Platform_Content_ID` | ID nativo de la plataforma | `178...` o `video_id` | Se registra después de publicar y nunca se reemplaza por texto. |
+
+La fila de publicación debe incluir también `Platform`, `Format`, `Character`, `Hook_Type`, `Publication_Local`, `Source_Window`, `Effort_Status` y `Crosspost_Status`. Cuando una etiqueta no exista en el momento histórico, se debe conservar `Sin_etiqueta_historica`; está prohibido inferir un `Experiment_ID` o una hipótesis por el copy de una publicación antigua.
+
+> **Regla de cascada:** las adaptaciones de una misma idea deben mantener el mismo `Concept_ID` y `Primary_Asset_ID`, pero cada plataforma conserva un `Platform_Content_ID`, hora de publicación y métrica nativa independientes.
+
+El corte de 28 días solo se considera listo cuando los nuevos registros incluyen estas columnas o documentan explícitamente que son `Pendiente`. La plantilla y el ledger de esfuerzo están en `Operations/Production/Piloto_Esfuerzo_y_Experimentacion.csv`.

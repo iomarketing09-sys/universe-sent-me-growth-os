@@ -8,11 +8,11 @@
 
 **Última actualización:** 2026-08-19
 
-**Versión:** 1.0
+**Versión:** 1.1
 
 **Autor:** Manus AI
 
-**Documentos relacionados:** `../../GrowthOS/08_00_Metricas_Baseline_Plataformas.md`, `../../GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `../Research/2026-08-19_Social_Performance_28D_Normalizado.json`, `../Research/2026-08-19_Retorno_Engagement_Esfuerzo_28D.json`, `query_reel_insights.py`, `../../tools/normalize_social_dashboard_28d.py`, `../../tools/generate-dashboard-data.mjs`.
+**Documentos relacionados:** `../../GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `../../GrowthOS/08_00_Metricas_Baseline_Plataformas.md`, `../../GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `../Research/2026-08-19_Social_Performance_28D_Normalizado.json`, `../Research/2026-08-19_Retorno_Engagement_Esfuerzo_28D.json`, `../Research/2026-08-19_Historial_Reels_Consolidado.json`, `query_reel_insights.py`, `../../tools/normalize_social_dashboard_28d.py`, `../../tools/generate-dashboard-data.mjs`.
 
 ---
 
@@ -46,6 +46,21 @@ El dashboard utiliza una **actualización asistida**, no un proceso autónomo. C
 ## Cómo solicitar una actualización
 
 La solicitud estándar es: **“Actualiza el dashboard social con un corte de [N] días hasta [fecha]”**. Si no se indica un período, se solicitará confirmación antes de extraer. Para proteger la coherencia analítica, cualquier nueva fuente, campo o cambio de definición se documentará antes de incluirlo en comparativos.
+
+## Preflight del siguiente corte
+
+Antes de iniciar la próxima extracción, el operador debe comprobar esta lista. Si una condición no se cumple, debe marcarse como `Pendiente` en el artefacto de corte; no debe rellenarse con valores inventados.
+
+| Control | Evidencia requerida | Resultado esperado |
+|---|---|---|
+| Fecha de cierre y período | Solicitud explícita de Fernando. | Ventana ISO unívoca, por ejemplo `2026-07-23` a `2026-08-19`. |
+| Plataformas | Facebook, Instagram, TikTok y YouTube confirmadas. | Consulta por plataforma y cuenta correcta. |
+| Identidad analítica de nuevas piezas | `Concept_ID`, `Campaign_Label`, `Experiment_ID`, `Hypothesis_ID`, `Primary_Asset_ID`. | Valores previos a publicación o `Pendiente`; nunca retrospectivos inventados. |
+| Cascada | `Platform_Content_ID` nativo por cada adaptación. | Vínculos en el historial consolidado o `Sin_cascada_confirmada`. |
+| Esfuerzo | Coste y horas observadas cuando existan. | Retorno por MX$ y/o hora solo para filas con evidencia. |
+| Control de comparabilidad | Fuente, ventana y definiciones de métrica. | Nota de límites dentro del JSON normalizado y dashboard. |
+
+La plantilla de solicitud completa es: **“Actualiza el dashboard social con un corte de 28 días hasta [fecha]; aplica la convención `Concept_ID`/`Campaign_Label`/`Experiment_ID`/`Hypothesis_ID`; conserva `Pendiente` donde no haya evidencia.”**
 
 ## Datos de esfuerzo pendientes
 

@@ -7,6 +7,8 @@ const fbAudit = JSON.parse(fs.readFileSync(path.join(root, 'Operations/Research/
 const costInventory = JSON.parse(fs.readFileSync(path.join(root, 'Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json'), 'utf8'))
 const youtubeNative = JSON.parse(fs.readFileSync(path.join(root, 'Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json'), 'utf8'))
 const youtubeDates = new Map(youtubeNative.rows.map((row) => [row.video, row]))
+const highEvidenceLinks = JSON.parse(fs.readFileSync(path.join(root, 'Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json'), 'utf8'))
+const highEvidenceConceptByContentId = new Map(highEvidenceLinks.relationships.flatMap((relationship) => relationship.publications.map((publication) => [publication.content_id, relationship.canonical_concept_id])))
 const evidenceLabels = {
   'CON-2026-08-05-Instante_suspendido': { content_asset_id: 'CNT-015', experiment_id: 'Sin_etiqueta_historica', hypothesis_ids: [], evidence: 'GrowthOS/07_00_Registro_Maestro_Reels.md: CNT-015 publicado en cascada el 5 de agosto.' },
 }
@@ -56,19 +58,19 @@ for (const reel of fbAudit.video_reels) {
   const engagement = (reel.reactions ?? 0) + (reel.comments ?? 0) + (reel.shares ?? 0)
   records.push({
     platform: 'Facebook', content_id: reel.id, published_at: reel.created_time, content_type: 'Reel',
-    title_or_caption: reel.message, character: detectCharacter(reel.message), canonical_concept_id: canonicalConcept(reel.message),
+    title_or_caption: reel.message, character: detectCharacter(reel.message), canonical_concept_id: highEvidenceConceptByContentId.get(reel.id) ?? canonicalConcept(reel.message),
     engagement, views: null, reach: null, source: '2026-08-19_Meta_Reels_Audit.json', evidence_status: 'Confirmado_por_Meta_API',
   })
 }
 for (const row of social.platforms.Instagram.content_rows.filter((row) => row.content_type === 'Reel')) {
-  records.push({ platform: 'Instagram', content_id: row.content_id, published_at: row.published_at, content_type: 'Reel', title_or_caption: row.caption, character: detectCharacter(row.caption), canonical_concept_id: canonicalConcept(row.caption), engagement: row.engagement, views: row.views, reach: row.reach, source: row.source, evidence_status: 'Confirmado_por_Windsor' })
+  records.push({ platform: 'Instagram', content_id: row.content_id, published_at: row.published_at, content_type: 'Reel', title_or_caption: row.caption, character: detectCharacter(row.caption), canonical_concept_id: highEvidenceConceptByContentId.get(row.content_id) ?? canonicalConcept(row.caption), engagement: row.engagement, views: row.views, reach: row.reach, source: row.source, evidence_status: 'Confirmado_por_Windsor' })
 }
 for (const row of social.platforms.TikTok.content_rows) {
-  records.push({ platform: 'TikTok', content_id: row.content_id, published_at: row.published_at, content_type: 'Video', title_or_caption: row.caption, character: detectCharacter(row.caption), canonical_concept_id: canonicalConcept(row.caption), engagement: row.engagement, views: row.views, reach: row.reach, source: row.source, evidence_status: 'Confirmado_por_Windsor' })
+  records.push({ platform: 'TikTok', content_id: row.content_id, published_at: row.published_at, content_type: 'Video', title_or_caption: row.caption, character: detectCharacter(row.caption), canonical_concept_id: highEvidenceConceptByContentId.get(row.content_id) ?? canonicalConcept(row.caption), engagement: row.engagement, views: row.views, reach: row.reach, source: row.source, evidence_status: 'Confirmado_por_Windsor' })
 }
 for (const row of social.platforms.YouTube.lifetime_snapshots) {
   const native = youtubeDates.get(row.content_id)
-  records.push({ platform: 'YouTube', content_id: row.content_id, published_at: native?.published_at ?? null, content_type: 'Video / Short', title_or_caption: row.title, character: detectCharacter(row.title), canonical_concept_id: canonicalConcept(row.title), engagement: row.engagement, views: row.lifetime_views_snapshot, reach: null, source: native ? 'Windsor.ai:youtube; metadata nativo' : row.source, evidence_status: native ? 'Confirmado_por_Windsor; fecha_publicacion_confirmada' : 'Confirmado_por_Windsor; fecha_publicacion_pendiente' })
+  records.push({ platform: 'YouTube', content_id: row.content_id, published_at: native?.published_at ?? null, content_type: 'Video / Short', title_or_caption: row.title, character: detectCharacter(row.title), canonical_concept_id: highEvidenceConceptByContentId.get(row.content_id) ?? canonicalConcept(row.title), engagement: row.engagement, views: row.lifetime_views_snapshot, reach: null, source: native ? 'Windsor.ai:youtube; metadata nativo' : row.source, evidence_status: native ? 'Confirmado_por_Windsor; fecha_publicacion_confirmada' : 'Confirmado_por_Windsor; fecha_publicacion_pendiente' })
 }
 
 const concepts = Object.values(records.reduce((acc, row) => {
@@ -105,7 +107,7 @@ const result = {
   },
   limitations: [
     'Facebook audit identifica Reels por attachment_type=video/video_inline; no se infiere formato para posts estáticos.',
-    'Los conceptos entre plataformas solo se agrupan mediante frase o título explícitamente coincidente.',
+    'Los conceptos entre plataformas solo se agrupan mediante frase o título explícitamente coincidente, o por relación de alta evidencia documentada con publicación casi simultánea y copy/hashtags compatibles.',
     'Las seis piezas de YouTube incluidas en este corte ya tienen fecha nativa confirmada; futuras piezas deben recuperar el mismo campo antes de la reconciliación.',
   ],
 }
