@@ -146,6 +146,12 @@ La ruta V2 reemplaza el clip único. No se usan las dos referencias simultáneam
 
 **Presupuesto V2 de primera pasada:** 17 puntos. Si falla el clip 1, solo se regenera ese clip; si falla Universe, solo se regenera el clip 2. No se vuelve a generar la pareja completa sin identificar el fallo.
 
+### Estado de ejecución V2 — Clip 1 aprobado
+
+El render `Camera_zooming_into_phone_screen_202608191549.mp4` supera el control del primer clip. El doble check y la energía púrpura empiezan de inmediato; la cámara entra al teléfono sin perder la continuidad de mesa y mano. En los últimos 0.5 segundos ya no se ven teléfono, mano ni escritorio: queda un túnel de filamentos púrpura eléctricos, centro oscuro y fuerte inercia de zoom. Ese frame final es la **ancla real obligatoria** del clip 2.
+
+**Preparación manual en Flow:** extraer el último frame decodificable de este render o capturarlo en su último fotograma. Usarlo como imagen inicial del clip 2. El panel de Universe se adjunta solo como referencia secundaria de personaje y mundo; no como imagen final.
+
 ### Prompt V2 — Clip 1: PHONE → SCREEN
 
 ```text
@@ -155,5 +161,9 @@ Use only the attached phone image as visual reference. Vertical 9:16, 4 seconds,
 ### Prompt V2 — Clip 2: UNIVERSE CLOSES CHAT
 
 ```text
-Use the actual final frame of Clip 1 as the starting frame. Use the attached Universe image only as a character and art-style reference. Vertical 9:16, 4 to 7 seconds, one continuous medium shot in a small moss-green Nubealis forest clearing with lavender spiral clouds and warm amber light. The violet phone-shaped portal is already open at the left edge of the frame and remains there until Universe closes it. Universe is a small white cat with one consistent face, round thin golden wire glasses, four paws, tail, and the same proportions as the reference. He stays seated beside the portal, looks at it, blinks once with dry resignation, then closes it in one calm paw swipe, exactly like dismissing a chat notification. The portal folds into one thin violet line and fades. Universe does not walk, run, change clothes, change glasses, become human, or introduce any other character. No text, no watermark, no logos, no dialogue, no music; only a small portal closing sound.
+Use the actual last frame of Clip 1 as the starting image. Use the attached Universe image only as a character and art-style reference, not as an ending frame. Vertical 9:16, 4 seconds, one continuous forward-moving shot. Start inside the same fast purple energy tunnel from Clip 1: electric violet filaments, a dark center, and strong forward zoom motion are already present at frame one. During the first 0.7 seconds, the camera continues through the tunnel; the violet energy stretches outward and naturally opens into a small moss-green Nubealis forest clearing with lavender spiral clouds and warm amber light.
+
+As the tunnel resolves, a small round violet portal is already open at the center-left of the clearing. Universe is already seated on the right side of the portal: a small white cat, one consistent face, thin round golden wire glasses, four paws, tail, and the same proportions as the reference. He does not walk or change position. He looks at the portal, blinks once with dry resignation, then closes it in one calm paw swipe, exactly like dismissing a chat notification. The portal folds into one thin violet line and fades by the final half-second. Preserve the forward camera momentum from the first frame, then settle into a gentle stop after the reveal.
+
+Do not introduce people, extra animals, Elara, dragons, extra characters, new props, text, logos, watermarks, dialogue, or music. Universe must not become human, change fur color, change glasses, wear clothes, or change body proportions. Only a soft tunnel whoosh resolving into a small portal-closing sound.
 ```
