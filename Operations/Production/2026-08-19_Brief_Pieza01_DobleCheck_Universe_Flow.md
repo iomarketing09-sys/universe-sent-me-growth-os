@@ -35,7 +35,32 @@ La pieza se realizará en **Flow**, vertical **9:16**, con duración final de **
 
 Las referencias entregadas por Fernando definen el destino estilizado: bosque cálido y profundo de Nubealis, nubes en espiral lila, verdes musgo, luz de fogata ámbar y pintura digital cinematográfica. No se reutilizarán literalmente Elara, el dragón ni la composición aérea; se usan como guía de paleta, densidad y atmósfera. Universe debe aparecer como un gato de aspecto expresivo con gafas pequeñas y redondas; no se transforma en humano.
 
-## Estructura de clips
+## Flujo operativo confirmado en Flow
+
+Fernando genera primero un storyboard con personajes, escenarios e idea principal; la herramienta puede producir una cuadrícula 3×3 para mantener consistencia. Después utiliza imágenes de inicio/final como referencia para clips cortos. En este experimento ya existe un storyboard de dos estados: teléfono realista con el mensaje y Universo/portal con Universe.
+
+**Decisión CGO:** no se requiere una nueva cuadrícula 3×3 para esta primera pieza. El storyboard de dos estados ya cubre el arco único de 7 segundos y evita gastar puntos en variaciones que no miden la hipótesis. La cuadrícula 3×3 se reserva para historias de más de dos cambios de estado o para la segunda familia experimental. Antes de usar las dos imágenes como referencias, se deben recortar como paneles verticales independientes y eliminar cualquier marca de agua o texto generado; el texto final se añade en edición.
+
+## Ruta de generación y presupuesto
+
+| Ruta | Uso | Coste estimado | Decisión |
+|---|---|---:|---|
+| A — preferida | Un clip **Veo Lite** de 7 segundos con panel de teléfono como inicio y panel de Universe como final. | 10 puntos | Primera prueba; minimiza cortes y preserva el arco transformación → payoff. |
+| B — contingencia | Omniflash de 4 s para teléfono → portal, seguido de Veo Lite con el último frame real y la referencia final de Universe. | 17 puntos | Solo si la transición de la ruta A no conserva el teléfono, el portal o a Universe. |
+| Reserva de iteración | Tres intentos Omniflash y dos Veo Lite para corregir continuidad sin improvisar. | 41 puntos | 4.83% de los 848 puntos disponibles. |
+
+La primera ejecución no supera 10 puntos. No se lanza la ruta B ni iteraciones adicionales hasta revisar si la ruta A cumple los controles visuales.
+
+## Ruta A — estructura preferida de clip único
+
+| Tiempo | Estado visual | Regla de continuidad |
+|---|---|---|
+| 0.0–1.5 s | Teléfono realista y mano; aparece doble check. | El teléfono, la mesa y la mano se mantienen físicos y visibles. |
+| 1.5–3.5 s | La luz de pantalla se abre como portal. | El portal nace dentro de la pantalla; no sustituye el teléfono de golpe. |
+| 3.5–6.0 s | Universe se vuelve legible junto al portal en Nubealis. | Universe es un gato con gafas; no aparece ningún humano o personaje adicional. |
+| 6.0–7.0 s | Universe cierra el portal y recibe un pulso final. | El pulso final permite loop; no hay corte brusco. |
+
+## Ruta B — estructura de clips de contingencia
 
 | Clip | Duración | Propósito | Cámara y acción | Sonido |
 |---|---:|---|---|---|
@@ -49,6 +74,10 @@ Las referencias entregadas por Fernando definen el destino estilizado: bosque c�
 ## Prompt de video para Flow — Clip 01
 
 > Vertical 9:16, 3 seconds, fast readable pacing. A generic logo-free smartphone rests on a worn warm wooden desk at night; an anonymous adult thumb is already visible and completes one short sent message. A pair of blue double-check marks appears on the fictional chat interface with a single crisp notification ping. The phone, desk and hand stay in place while violet light inside the phone screen curls outward like a small portal; moss-green forest texture and lavender spiral clouds gradually replace only the screen reflection, then spill softly around the phone edge. The camera performs a subtle push-in, the physical phone remains stable, and the final frame is a seamless luminous portal that still contains the phone shape. No dialogue, no narration, no background music; only one notification ping and a soft magical whoosh.
+
+## Prompt de video para Flow — Ruta A, 7 segundos
+
+> Use the provided vertical phone panel as the starting composition and the provided vertical Universe-and-portal panel only as the ending visual destination. Vertical 9:16, 7 seconds, one continuous shot, fast readable pacing. A generic logo-free smartphone lies on a warm worn wooden desk at night; an anonymous adult hand is already beside it. A single pair of blue double-check marks appears on a fictional chat screen with one crisp notification ping. The physical phone, desk and hand remain present while soft violet light begins inside the phone screen, curls outward as a small portal, and gradually reveals a moss-green Nubealis forest with lavender spiral clouds and warm amber firelight. By the middle of the shot, Universe — a small expressive cat with round glasses — is already visible beside the phone-shaped portal; he blinks once with dry resignation, closes the portal with one paw and steps back. The final half-second is a brief violet pulse from the portal for a smooth loop. No readable text, no logos, no watermark, no humans in the fantasy scene, no Elara, no dragon, no dialogue, no narration, no background music; only the notification ping, a soft portal whoosh and a gentle fade sound.
 
 ## Prompt de video para Flow — Clip 02
 
@@ -74,4 +103,4 @@ El texto se añade en edición, no dentro de Flow, para no depender de tipograf�
 
 ## Control de calidad y medición
 
-La pieza se rechaza o itera si el conflicto no se entiende en el primer segundo, Universe no es legible como gato con gafas, el portal elimina el teléfono sin transición o el video necesita audio para comprenderse. Tras publicar, se capturan IDs nativos por plataforma y métricas a 24/72 h. El veredicto permitido es `WIN`, `SIGNAL`, `FAIL` o `NO_LEARNING`; las métricas principales son retención inicial, shares, reach de no seguidores y completaciones.
+La pieza se rechaza o itera si el conflicto no se entiende en el primer segundo, Universe no es legible como gato con gafas, el portal elimina el teléfono sin transición, aparece una marca de agua/texto generado o el video necesita audio para comprenderse. Tras la primera generación se decide si pasa a edición o si se activa la ruta B; no se gastan más puntos sin registrar el fallo específico. Tras publicar, se capturan IDs nativos por plataforma y métricas a 24/72 h. El veredicto permitido es `WIN`, `SIGNAL`, `FAIL` o `NO_LEARNING`; las métricas principales son retención inicial, shares, reach de no seguidores y completaciones.
