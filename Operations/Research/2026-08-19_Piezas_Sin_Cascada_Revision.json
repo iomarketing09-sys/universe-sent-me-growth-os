@@ -1,0 +1,147 @@
+{
+  "title": "Piezas sin cascada cross-platform confirmada — revisión guiada",
+  "purpose": "Presentar las publicaciones que aún no pertenecen a una relación multicanal verificada y registrar decisiones explícitas del usuario.",
+  "status": "Review",
+  "created_at": "2026-08-19",
+  "last_updated": "2026-08-19",
+  "version": "1.1",
+  "author": "Manus AI",
+  "related_documents": [
+    "2026-08-19_Historial_Reels_Consolidado.json",
+    "2026-08-19_Inventario_Assets_Drive_Reels.json",
+    "2026-08-19_Relaciones_Reels_Alta_Evidencia.json",
+    "../../GrowthOS/07_00_Registro_Maestro_Reels.md"
+  ],
+  "count": 7,
+  "pieces": [
+    {
+      "review_id": "P01",
+      "platform": "Instagram",
+      "published_at": "2026-07-25T21:10:02+0000",
+      "content_type": "Reel",
+      "content_id": "18079365233681564",
+      "title_or_caption": "Dicen que si lo ves caminando, no lo sigas...\nLos gatos sí saben a dónde va 👻 🌲 \n\n#universesentme #fantasmaUSM #MomentosUSM #darkfantasy #fyp",
+      "character": "Fantasma",
+      "canonical_concept_id": "CON-2026-07-25-Fantasma_Camina_Gatos",
+      "drive_asset_evidence": {
+        "strength": "Fuerte",
+        "assets": [
+          {
+            "id": "11v7841iVxpGK4YcJqKgaGTMJqnkfqHeK",
+            "name": "Ghost_walks_cats_through_forest_202607240113.mp4"
+          },
+          {
+            "id": "1o7tvteY4LicDbWS5_IqL_XhQrNHPf0pW",
+            "name": "Ghost_walks_cats_through_forest_202607251436.mp4"
+          }
+        ]
+      },
+      "review_status": "Pendiente_de_confirmacion_de_Fernando"
+    },
+    {
+      "review_id": "P02",
+      "platform": "Instagram",
+      "published_at": "2026-07-27T19:22:59+0000",
+      "content_type": "Reel",
+      "content_id": "17975917574904303",
+      "title_or_caption": "Mi ascenso a la locura 😵‍💫 \n\n#universesentme #hadaUSM #MomentosUSM #reflexiones",
+      "character": "Kiri",
+      "canonical_concept_id": "CON-2026-07-27-Mi_ascenso_a_la_locura",
+      "drive_asset_evidence": {
+        "strength": "Directa",
+        "assets": [
+          {
+            "id": "1c0QFsf661Tf4pNH0uuVkD4yK6BmPw2u3",
+            "name": "Hada_subiendo_escaleras_202607271336.mp4"
+          }
+        ]
+      },
+      "review_status": "Pendiente_de_confirmacion_de_Fernando"
+    },
+    {
+      "review_id": "P03",
+      "platform": "TikTok",
+      "published_at": "2026-07-30T06:47:13",
+      "content_type": "Video",
+      "content_id": "7668208937937718549",
+      "title_or_caption": "Los gatos en la madrugada... #gatos #humor #vidagatuna ",
+      "character": "Universe",
+      "canonical_concept_id": "CON-2026-07-30-Gatos_Madrugada",
+      "drive_asset_evidence": {
+        "strength": "Directa_confirmada_por_Fernando",
+        "assets": [
+          {
+            "id": "1AP7zyGeKtaA7PO5SX5kb6lQR_zMcO09W",
+            "name": "VID_20260729_011600_407_bsl.mp4"
+          }
+        ]
+      },
+      "review_status": "Pendiente_de_confirmacion_de_Fernando"
+    },
+    {
+      "review_id": "P04",
+      "platform": "TikTok",
+      "published_at": "2026-07-30T06:55:47",
+      "content_type": "Video",
+      "content_id": "7668211137661472020",
+      "title_or_caption": "Desde que decidí no andar con pendej@s, no he vuelto a tener una relación. #UniverseSentMe #fantasmaUSM #humor #meme ",
+      "character": "Fantasma",
+      "canonical_concept_id": "Sin_concepto_confirmado",
+      "drive_asset_evidence": null,
+      "review_status": "Pendiente_de_confirmacion_de_Fernando"
+    },
+    {
+      "review_id": "P05",
+      "platform": "Facebook",
+      "published_at": "2026-07-30T14:17:19+0000",
+      "content_type": "Reel",
+      "content_id": "1036844829507460_122143141185072582",
+      "title_or_caption": "🤭 \n\n #UniverseSentMe #WilfredUSM #humor #MercadoLibre #plush",
+      "character": "Wilfred",
+      "canonical_concept_id": "Sin_concepto_confirmado",
+      "drive_asset_evidence": null,
+      "review_status": "Pendiente_de_confirmacion_de_Fernando"
+    },
+    {
+      "review_id": "P06",
+      "platform": "TikTok",
+      "published_at": "2026-07-31T20:51:55",
+      "content_type": "Video",
+      "content_id": "7668797651353226516",
+      "title_or_caption": "Cuando dices que vas ahorrar.. y tú gato con 17 juguetes nuevos 🤪 #humor #gatos #relatable #memes ",
+      "character": "Universe",
+      "canonical_concept_id": "CON-2026-07-31-Gato_17_Juguetes",
+      "drive_asset_evidence": {
+        "strength": "Directa_confirmada_por_Fernando",
+        "assets": [
+          {
+            "id": "1kH_OQbWvyBiWJgjzRJy6L_gD9hsO845w",
+            "name": "Sad_clown_fiery_explosion_dramatic_Yo despues de comprar cosas para mi gato.mp4"
+          }
+        ]
+      },
+      "review_status": "Pendiente_de_confirmacion_de_Fernando"
+    },
+    {
+      "review_id": "P07",
+      "platform": "YouTube",
+      "published_at": "2026-07-31T21:02:44Z",
+      "content_type": "Video / Short",
+      "content_id": "rox7BGGcfwQ",
+      "title_or_caption": "Cc vuelves a leer una conversación de hace 3 años.. y sale \"Escribiendo...\" 💀",
+      "character": "Sin clasificar",
+      "canonical_concept_id": "CON-2026-07-31-Escribiendo",
+      "drive_asset_evidence": {
+        "strength": "Fuerte",
+        "assets": [
+          {
+            "id": "15er7Pj25oc8GuYV6Bb7ysnbyzFfzEbwZ",
+            "name": "Cuando esas viendo una conversacion vieja y sale un - escribiendo _ Kael.mp4"
+          }
+        ]
+      },
+      "review_status": "Pendiente_de_confirmacion_de_Fernando"
+    }
+  ],
+  "decision_rule": "Solo se agregará una relación cross-platform cuando Fernando la confirme o exista una coincidencia verificable de IDs, copy, asset y ventana temporal."
+}

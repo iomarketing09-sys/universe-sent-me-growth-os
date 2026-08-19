@@ -4,11 +4,12 @@
   "status": "Active",
   "created_at": "2026-08-19",
   "last_updated": "2026-08-19",
-  "version": "1.0",
+  "version": "1.1",
   "author": "Manus AI",
   "related_documents": [
     "2026-08-19_Historial_Reels_Consolidado.json",
     "2026-08-19_Relaciones_Reels_Alta_Evidencia.json",
+    "2026-08-19_Piezas_Sin_Cascada_Revision.json",
     "../../GrowthOS/07_00_Registro_Maestro_Reels.md",
     "../../GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
   ],
@@ -66,6 +67,34 @@
       "drive_assets": [{"id": "1bCh7WB6tPB1IxZjCkrbBRPluF7rIDmSY", "name": "Generate_video_from_storyboard_1080p_202608091406.mp4", "duration_ms": 5999}]
     },
     {
+      "canonical_concept_id": "CON-2026-07-25-Paz_Interior_Fantasma",
+      "strength": "Directa_confirmada_por_Fernando",
+      "evidence": "Fernando confirmó que P01 de Instagram y P04 de YouTube proceden del mismo archivo VID_20260725_135521_680_bsl.mp4.",
+      "platform_content_ids": ["18102391205336788", "Qoa-XUOVALk"],
+      "drive_assets": [{"id": "19hdaSaYCvWs2B0pZjssZB5_1pbBy36pH", "name": "VID_20260725_135521_680_bsl.mp4", "duration_ms": 19416}]
+    },
+    {
+      "canonical_concept_id": "CON-2026-07-30-Gatos_Madrugada",
+      "strength": "Directa_confirmada_por_Fernando",
+      "evidence": "Fernando identificó VID_20260729_011600_407_bsl.mp4 como asset fuente de P05 de TikTok; todavía no hay una publicación equivalente confirmada en otra plataforma.",
+      "platform_content_ids": ["7668208937937718549"],
+      "drive_assets": [{"id": "1AP7zyGeKtaA7PO5SX5kb6lQR_zMcO09W", "name": "VID_20260729_011600_407_bsl.mp4", "duration_ms": 9616}]
+    },
+    {
+      "canonical_concept_id": "CON-2026-07-31-Gato_17_Juguetes",
+      "strength": "Directa_confirmada_por_Fernando",
+      "evidence": "Fernando identificó el asset Sad clown con explosión como fuente de P08 de TikTok; todavía no hay una publicación equivalente confirmada en otra plataforma.",
+      "platform_content_ids": ["7668797651353226516"],
+      "drive_assets": [{"id": "1kH_OQbWvyBiWJgjzRJy6L_gD9hsO845w", "name": "Sad_clown_fiery_explosion_dramatic_Yo despues de comprar cosas para mi gato.mp4", "duration_ms": 9999}]
+    },
+    {
+      "canonical_concept_id": "CON-2026-08-11-Universe_Sin_Caption",
+      "strength": "Directa_confirmada_por_Fernando",
+      "evidence": "Fernando confirmó que P10 de Instagram y P11 de Facebook proceden de VID_20260811_004743_587_bsl.mp4. La ubicación en `TRAILER UNIVERSE` es solo organización de assets, no clasificación de contenido.",
+      "platform_content_ids": ["17915449680426911", "1036844829507460_122148560799072582"],
+      "drive_assets": [{"id": "12tZLRmDj7w66ramfIHJsbuWAM0wSTnX2", "name": "VID_20260811_004743_587_bsl.mp4", "duration_ms": 12683, "folder_context": "TRAILER UNIVERSE — contenedor administrativo"}]
+    },
+    {
       "canonical_concept_id": "CON-2026-07-25-Fantasma_Camina_Gatos",
       "strength": "Fuerte",
       "evidence": "El nombre de los assets `Ghost_walks_cats_through_forest` coincide con el copy de Instagram sobre seguir a Fantasma y gatos que saben a dónde va.",
@@ -83,7 +112,6 @@
   "candidate_assets_without_published_match": [
     {"id": "1tE84FJLyLNwqELa5E23_7Tn5dvDwN_WI", "name": "Wilfred realista haciendo una posion.mp4"},
     {"id": "1vXo9XTE6TtwBaxVCegNNt5-BPj0GzDFs", "name": "Man_and_cat_in_cantina_Tu playera es pirata (Universe + Evan).mp4"},
-    {"id": "1kH_OQbWvyBiWJgjzRJy6L_gD9hsO845w", "name": "Sad_clown_fiery_explosion_dramatic_Yo despues de comprar cosas para mi gato.mp4"},
     {"id": "1HFBUvDQSmHzdxrPxlBs6uTrSIOY6xzT0", "name": "Elara_and_Evan_hug_Gracias por sacarme del caos.mp4"}
   ],
   "limitations": [

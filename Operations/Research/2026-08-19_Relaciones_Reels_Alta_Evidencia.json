@@ -1,7 +1,17 @@
 {
+  "title": "Relaciones de Reels de alta evidencia",
   "purpose": "Registrar relaciones cross-platform respaldadas por publicación prácticamente simultánea y coincidencia de copy, hashtags o personajes; no incluir inferencias débiles.",
   "status": "Active",
   "created_at": "2026-08-19",
+  "last_updated": "2026-08-19",
+  "version": "1.1",
+  "author": "Manus AI",
+  "related_documents": [
+    "2026-08-19_Historial_Reels_Consolidado.json",
+    "2026-08-19_Inventario_Assets_Drive_Reels.json",
+    "2026-08-19_Piezas_Sin_Cascada_Revision.json",
+    "../../GrowthOS/07_00_Registro_Maestro_Reels.md"
+  ],
   "relationships": [
     {
       "canonical_concept_id": "CON-2026-07-29-Wilfred_MomentOS",
@@ -28,6 +38,26 @@
       "publications": [
         {"platform": "Facebook", "content_id": "1036844829507460_122147749683072582", "published_at": "2026-08-10T00:00:48Z"},
         {"platform": "Instagram", "content_id": "17967086586135144", "published_at": "2026-08-10T00:00:04Z"}
+      ]
+    },
+    {
+      "canonical_concept_id": "CON-2026-07-25-Paz_Interior_Fantasma",
+      "confidence": "Confirmada_por_Fernando",
+      "evidence": "Fernando confirmó que el Reel de Instagram “Cultiva la paz interior” y el Short de YouTube titulado “Fantasma” proceden del mismo asset de Drive: VID_20260725_135521_680_bsl.mp4 (19hdaSaYCvWs2B0pZjssZB5_1pbBy36pH).",
+      "drive_asset": {"id": "19hdaSaYCvWs2B0pZjssZB5_1pbBy36pH", "name": "VID_20260725_135521_680_bsl.mp4", "duration_ms": 19416},
+      "publications": [
+        {"platform": "Instagram", "content_id": "18102391205336788", "published_at": "2026-07-24T16:16:24Z"},
+        {"platform": "YouTube", "content_id": "Qoa-XUOVALk", "published_at": "2026-07-29T08:54:07Z"}
+      ]
+    },
+    {
+      "canonical_concept_id": "CON-2026-08-11-Universe_Sin_Caption",
+      "confidence": "Confirmada_por_Fernando",
+      "evidence": "Fernando confirmó que los Reels de Instagram y Facebook del 11 de agosto proceden del mismo asset de Drive: VID_20260811_004743_587_bsl.mp4 (12tZLRmDj7w66ramfIHJsbuWAM0wSTnX2). El asset reside en la carpeta `TRAILER UNIVERSE` solo por organización y no se clasifica como tráiler.",
+      "drive_asset": {"id": "12tZLRmDj7w66ramfIHJsbuWAM0wSTnX2", "name": "VID_20260811_004743_587_bsl.mp4", "duration_ms": 12683, "folder_context": "TRAILER UNIVERSE — contenedor administrativo, no clasificación editorial"},
+      "publications": [
+        {"platform": "Instagram", "content_id": "17915449680426911", "published_at": "2026-08-11T19:08:45Z"},
+        {"platform": "Facebook", "content_id": "1036844829507460_122148560799072582", "published_at": "2026-08-11T19:22:29Z"}
       ]
     }
   ],

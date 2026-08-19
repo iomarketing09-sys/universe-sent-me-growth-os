@@ -100,7 +100,20 @@ const enriched = records.map((row) => {
   }
 })
 const result = {
+  title: 'Historial consolidado de Reels y videos cortos',
   purpose: 'Inventario reconciliable de Reels y videos cortos publicados; no infiere cross-posts sin evidencia explícita.',
+  status: 'Active',
+  created_at: '2026-08-19',
+  last_updated: '2026-08-19',
+  version: '1.3',
+  author: 'Manus AI',
+  related_documents: [
+    '2026-08-19_Relaciones_Reels_Alta_Evidencia.json',
+    '2026-08-19_Inventario_Assets_Drive_Reels.json',
+    '2026-08-19_Piezas_Sin_Cascada_Revision.json',
+    '../../GrowthOS/07_00_Registro_Maestro_Reels.md',
+    '../../GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md',
+  ],
   period: social.cut,
   records: enriched,
   explicit_cross_platform_concepts: crossPlatformConcepts,
@@ -114,7 +127,7 @@ const result = {
   },
   limitations: [
     'Facebook audit identifica Reels por attachment_type=video/video_inline; no se infiere formato para posts estáticos.',
-    'Los conceptos entre plataformas solo se agrupan mediante frase o título explícitamente coincidente, o por relación de alta evidencia documentada con publicación casi simultánea y copy/hashtags compatibles.',
+    'Los conceptos entre plataformas solo se agrupan mediante frase o título explícitamente coincidente, por relación de alta evidencia documentada, o por confirmación explícita de Fernando vinculada a un asset identificable de Drive.',
     'Las seis piezas de YouTube incluidas en este corte ya tienen fecha nativa confirmada; futuras piezas deben recuperar el mismo campo antes de la reconciliación.',
   ],
 }

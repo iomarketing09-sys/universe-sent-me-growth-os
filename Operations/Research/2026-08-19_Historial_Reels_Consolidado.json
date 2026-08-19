@@ -1,5 +1,18 @@
 {
+  "title": "Historial consolidado de Reels y videos cortos",
   "purpose": "Inventario reconciliable de Reels y videos cortos publicados; no infiere cross-posts sin evidencia explícita.",
+  "status": "Active",
+  "created_at": "2026-08-19",
+  "last_updated": "2026-08-19",
+  "version": "1.3",
+  "author": "Manus AI",
+  "related_documents": [
+    "2026-08-19_Relaciones_Reels_Alta_Evidencia.json",
+    "2026-08-19_Inventario_Assets_Drive_Reels.json",
+    "2026-08-19_Piezas_Sin_Cascada_Revision.json",
+    "../../GrowthOS/07_00_Registro_Maestro_Reels.md",
+    "../../GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
+  ],
   "period": {
     "start": "2026-07-22",
     "end": "2026-08-18"
@@ -12,14 +25,30 @@
       "content_type": "Reel",
       "title_or_caption": "#UniverseSentMe",
       "character": "Universe",
-      "canonical_concept_id": null,
+      "canonical_concept_id": "CON-2026-08-11-Universe_Sin_Caption",
       "engagement": 15,
       "views": null,
       "reach": null,
       "source": "2026-08-19_Meta_Reels_Audit.json",
       "evidence_status": "Confirmado_por_Meta_API",
       "cost_mxn": null,
-      "drive_asset_evidence": null,
+      "drive_asset_evidence": {
+        "canonical_concept_id": "CON-2026-08-11-Universe_Sin_Caption",
+        "strength": "Directa_confirmada_por_Fernando",
+        "evidence": "Fernando confirmó que P10 de Instagram y P11 de Facebook proceden de VID_20260811_004743_587_bsl.mp4. La ubicación en `TRAILER UNIVERSE` es solo organización de assets, no clasificación de contenido.",
+        "platform_content_ids": [
+          "17915449680426911",
+          "1036844829507460_122148560799072582"
+        ],
+        "drive_assets": [
+          {
+            "id": "12tZLRmDj7w66ramfIHJsbuWAM0wSTnX2",
+            "name": "VID_20260811_004743_587_bsl.mp4",
+            "duration_ms": 12683,
+            "folder_context": "TRAILER UNIVERSE — contenedor administrativo"
+          }
+        ]
+      },
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
@@ -344,14 +373,29 @@
       "content_type": "Reel",
       "title_or_caption": "Cultiva la paz interior..\n\n#universesentme #relatable #humoracido #rockstar",
       "character": "Universe",
-      "canonical_concept_id": null,
+      "canonical_concept_id": "CON-2026-07-25-Paz_Interior_Fantasma",
       "engagement": 19,
       "views": 354,
       "reach": 247,
       "source": "Windsor.ai:instagram",
       "evidence_status": "Confirmado_por_Windsor",
       "cost_mxn": 15,
-      "drive_asset_evidence": null,
+      "drive_asset_evidence": {
+        "canonical_concept_id": "CON-2026-07-25-Paz_Interior_Fantasma",
+        "strength": "Directa_confirmada_por_Fernando",
+        "evidence": "Fernando confirmó que P01 de Instagram y P04 de YouTube proceden del mismo archivo VID_20260725_135521_680_bsl.mp4.",
+        "platform_content_ids": [
+          "18102391205336788",
+          "Qoa-XUOVALk"
+        ],
+        "drive_assets": [
+          {
+            "id": "19hdaSaYCvWs2B0pZjssZB5_1pbBy36pH",
+            "name": "VID_20260725_135521_680_bsl.mp4",
+            "duration_ms": 19416
+          }
+        ]
+      },
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
@@ -729,14 +773,30 @@
       "content_type": "Reel",
       "title_or_caption": "#UniverseSentMe 🫶✨",
       "character": "Universe",
-      "canonical_concept_id": null,
+      "canonical_concept_id": "CON-2026-08-11-Universe_Sin_Caption",
       "engagement": 2,
       "views": 51,
       "reach": 37,
       "source": "Windsor.ai:instagram",
       "evidence_status": "Confirmado_por_Windsor",
       "cost_mxn": 15,
-      "drive_asset_evidence": null,
+      "drive_asset_evidence": {
+        "canonical_concept_id": "CON-2026-08-11-Universe_Sin_Caption",
+        "strength": "Directa_confirmada_por_Fernando",
+        "evidence": "Fernando confirmó que P10 de Instagram y P11 de Facebook proceden de VID_20260811_004743_587_bsl.mp4. La ubicación en `TRAILER UNIVERSE` es solo organización de assets, no clasificación de contenido.",
+        "platform_content_ids": [
+          "17915449680426911",
+          "1036844829507460_122148560799072582"
+        ],
+        "drive_assets": [
+          {
+            "id": "12tZLRmDj7w66ramfIHJsbuWAM0wSTnX2",
+            "name": "VID_20260811_004743_587_bsl.mp4",
+            "duration_ms": 12683,
+            "folder_context": "TRAILER UNIVERSE — contenedor administrativo"
+          }
+        ]
+      },
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
@@ -769,14 +829,28 @@
       "content_type": "Video",
       "title_or_caption": "Los gatos en la madrugada... #gatos #humor #vidagatuna ",
       "character": "Universe",
-      "canonical_concept_id": null,
+      "canonical_concept_id": "CON-2026-07-30-Gatos_Madrugada",
       "engagement": 2,
       "views": 157,
       "reach": 146,
       "source": "Windsor.ai:tiktok_organic",
       "evidence_status": "Confirmado_por_Windsor",
       "cost_mxn": 15,
-      "drive_asset_evidence": null,
+      "drive_asset_evidence": {
+        "canonical_concept_id": "CON-2026-07-30-Gatos_Madrugada",
+        "strength": "Directa_confirmada_por_Fernando",
+        "evidence": "Fernando identificó VID_20260729_011600_407_bsl.mp4 como asset fuente de P05 de TikTok; todavía no hay una publicación equivalente confirmada en otra plataforma.",
+        "platform_content_ids": [
+          "7668208937937718549"
+        ],
+        "drive_assets": [
+          {
+            "id": "1AP7zyGeKtaA7PO5SX5kb6lQR_zMcO09W",
+            "name": "VID_20260729_011600_407_bsl.mp4",
+            "duration_ms": 9616
+          }
+        ]
+      },
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
@@ -789,14 +863,28 @@
       "content_type": "Video",
       "title_or_caption": "Cuando dices que vas ahorrar.. y tú gato con 17 juguetes nuevos 🤪 #humor #gatos #relatable #memes ",
       "character": "Universe",
-      "canonical_concept_id": null,
+      "canonical_concept_id": "CON-2026-07-31-Gato_17_Juguetes",
       "engagement": 7,
       "views": 518,
       "reach": 487,
       "source": "Windsor.ai:tiktok_organic",
       "evidence_status": "Confirmado_por_Windsor",
       "cost_mxn": 15,
-      "drive_asset_evidence": null,
+      "drive_asset_evidence": {
+        "canonical_concept_id": "CON-2026-07-31-Gato_17_Juguetes",
+        "strength": "Directa_confirmada_por_Fernando",
+        "evidence": "Fernando identificó el asset Sad clown con explosión como fuente de P08 de TikTok; todavía no hay una publicación equivalente confirmada en otra plataforma.",
+        "platform_content_ids": [
+          "7668797651353226516"
+        ],
+        "drive_assets": [
+          {
+            "id": "1kH_OQbWvyBiWJgjzRJy6L_gD9hsO845w",
+            "name": "Sad_clown_fiery_explosion_dramatic_Yo despues de comprar cosas para mi gato.mp4",
+            "duration_ms": 9999
+          }
+        ]
+      },
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
@@ -911,14 +999,29 @@
       "content_type": "Video / Short",
       "title_or_caption": "Fantasma",
       "character": "Fantasma",
-      "canonical_concept_id": null,
+      "canonical_concept_id": "CON-2026-07-25-Paz_Interior_Fantasma",
       "engagement": 0,
       "views": 8,
       "reach": null,
       "source": "Windsor.ai:youtube; metadata nativo",
       "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_confirmada",
       "cost_mxn": 15,
-      "drive_asset_evidence": null,
+      "drive_asset_evidence": {
+        "canonical_concept_id": "CON-2026-07-25-Paz_Interior_Fantasma",
+        "strength": "Directa_confirmada_por_Fernando",
+        "evidence": "Fernando confirmó que P01 de Instagram y P04 de YouTube proceden del mismo archivo VID_20260725_135521_680_bsl.mp4.",
+        "platform_content_ids": [
+          "18102391205336788",
+          "Qoa-XUOVALk"
+        ],
+        "drive_assets": [
+          {
+            "id": "19hdaSaYCvWs2B0pZjssZB5_1pbBy36pH",
+            "name": "VID_20260725_135521_680_bsl.mp4",
+            "duration_ms": 19416
+          }
+        ]
+      },
       "content_asset_id": null,
       "experiment_id": "Sin_etiqueta_historica",
       "hypothesis_ids": [],
@@ -1062,6 +1165,21 @@
     }
   ],
   "explicit_cross_platform_concepts": [
+    {
+      "canonical_concept_id": "CON-2026-08-11-Universe_Sin_Caption",
+      "publications": [
+        {
+          "platform": "Facebook",
+          "content_id": "1036844829507460_122148560799072582",
+          "evidence_status": "Confirmado_por_Meta_API"
+        },
+        {
+          "platform": "Instagram",
+          "content_id": "17915449680426911",
+          "evidence_status": "Confirmado_por_Windsor"
+        }
+      ]
+    },
     {
       "canonical_concept_id": "CON-2026-08-10-Cartones_Papeles",
       "publications": [
@@ -1233,6 +1351,21 @@
       ]
     },
     {
+      "canonical_concept_id": "CON-2026-07-25-Paz_Interior_Fantasma",
+      "publications": [
+        {
+          "platform": "Instagram",
+          "content_id": "18102391205336788",
+          "evidence_status": "Confirmado_por_Windsor"
+        },
+        {
+          "platform": "YouTube",
+          "content_id": "Qoa-XUOVALk",
+          "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_confirmada"
+        }
+      ]
+    },
+    {
       "canonical_concept_id": "CON-2026-08-03-Habilidades_manual",
       "publications": [
         {
@@ -1271,14 +1404,14 @@
       "TikTok": 7,
       "YouTube": 6
     },
-    "explicit_cross_platform_concepts": 12,
-    "unlinked_records": 11,
-    "records_with_drive_asset_evidence": 15,
+    "explicit_cross_platform_concepts": 14,
+    "unlinked_records": 7,
+    "records_with_drive_asset_evidence": 21,
     "records_with_explicit_experiment_evidence": 0
   },
   "limitations": [
     "Facebook audit identifica Reels por attachment_type=video/video_inline; no se infiere formato para posts estáticos.",
-    "Los conceptos entre plataformas solo se agrupan mediante frase o título explícitamente coincidente, o por relación de alta evidencia documentada con publicación casi simultánea y copy/hashtags compatibles.",
+    "Los conceptos entre plataformas solo se agrupan mediante frase o título explícitamente coincidente, por relación de alta evidencia documentada, o por confirmación explícita de Fernando vinculada a un asset identificable de Drive.",
     "Las seis piezas de YouTube incluidas en este corte ya tienen fecha nativa confirmada; futuras piezas deben recuperar el mismo campo antes de la reconciliación."
   ]
 }
