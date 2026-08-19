@@ -206,6 +206,20 @@ Frame C: identical composition, identical Universe, identical phone and backgrou
 No humans, no extra animals, no Elara, no dragons, no extra characters, no clothing, no logos, no watermark, no readable text. The two frames must look like consecutive moments from the same shot.
 ```
 
+### Prompt de edición de imagen — KF-B → KF-C
+
+Adjuntar **solo KF-B** como imagen de referencia y generar una imagen nueva vertical. El propósito no es rediseñar la escena, sino editar dos elementos: la pata de Universe y el portal.
+
+```text
+Use the attached KF-B image as the exact visual reference. Create one new vertical 9:16 image that preserves the same camera angle, framing, crop, composition, forest background, trees, moss, fireflies, lavender spiral clouds, warm amber lighting, and depth of field. Preserve Universe exactly: the same small white cat, same face, same thin round golden wire glasses, same fur texture, same body proportions, same seated position on the right side of the frame.
+
+Change only two things. First, Universe’s front paw is now gently extended toward the portal, as if he has just dismissed a chat notification; do not make him stand, walk, jump, or change expression. Second, the tall open phone-shaped violet portal on the left has already collapsed: replace it with one very thin vertical violet line in exactly the same location, with a faint soft glow and a few tiny fading particles. The line is the last trace of the closed phone portal; it must not look like a full phone, doorway, flame, or open portal.
+
+Remove any watermark, username, logo, or readable text. Do not add people, extra animals, characters, props, clothing, new objects, or a new camera angle. This image must look like the immediate next frame after KF-B from the same shot.
+```
+
+Si Flow permite editar con máscara, marcar únicamente el teléfono/portal y la pata frontal de Universe. Si no permite máscara, repetir en la primera frase: **“preserve the entire image exactly; change only the portal and the front paw.”**
+
 ### Prompt V3 — Clip 2: PORTAL → UNIVERSE SEATED
 
 ```text
