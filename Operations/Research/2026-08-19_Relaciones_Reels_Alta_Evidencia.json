@@ -4,7 +4,7 @@
   "status": "Active",
   "created_at": "2026-08-19",
   "last_updated": "2026-08-19",
-  "version": "1.1",
+  "version": "1.3",
   "author": "Manus AI",
   "related_documents": [
     "2026-08-19_Historial_Reels_Consolidado.json",
@@ -41,16 +41,6 @@
       ]
     },
     {
-      "canonical_concept_id": "CON-2026-07-25-Paz_Interior_Fantasma",
-      "confidence": "Confirmada_por_Fernando",
-      "evidence": "Fernando confirmó que el Reel de Instagram “Cultiva la paz interior” y el Short de YouTube titulado “Fantasma” proceden del mismo asset de Drive: VID_20260725_135521_680_bsl.mp4 (19hdaSaYCvWs2B0pZjssZB5_1pbBy36pH).",
-      "drive_asset": {"id": "19hdaSaYCvWs2B0pZjssZB5_1pbBy36pH", "name": "VID_20260725_135521_680_bsl.mp4", "duration_ms": 19416},
-      "publications": [
-        {"platform": "Instagram", "content_id": "18102391205336788", "published_at": "2026-07-24T16:16:24Z"},
-        {"platform": "YouTube", "content_id": "Qoa-XUOVALk", "published_at": "2026-07-29T08:54:07Z"}
-      ]
-    },
-    {
       "canonical_concept_id": "CON-2026-08-11-Universe_Sin_Caption",
       "confidence": "Confirmada_por_Fernando",
       "evidence": "Fernando confirmó que los Reels de Instagram y Facebook del 11 de agosto proceden del mismo asset de Drive: VID_20260811_004743_587_bsl.mp4 (12tZLRmDj7w66ramfIHJsbuWAM0wSTnX2). El asset reside en la carpeta `TRAILER UNIVERSE` solo por organización y no se clasifica como tráiler.",
@@ -58,6 +48,35 @@
       "publications": [
         {"platform": "Instagram", "content_id": "17915449680426911", "published_at": "2026-08-11T19:08:45Z"},
         {"platform": "Facebook", "content_id": "1036844829507460_122148560799072582", "published_at": "2026-08-11T19:22:29Z"}
+      ]
+    },
+    {
+      "canonical_concept_id": "CON-2026-07-25-Fantasma_Camina_Gatos",
+      "confidence": "Confirmada_por_Fernando",
+      "evidence": "Fernando confirmó que el Short `Qoa-XUOVALk`, publicado en YouTube el 29 de julio con el mismo copy, pertenece a esta misma producción. Facebook e Instagram comparten el copy completo y se publicaron con 7 segundos de diferencia.",
+      "publications": [
+        {"platform": "Instagram", "content_id": "18079365233681564", "published_at": "2026-07-25T21:10:02Z"},
+        {"platform": "Facebook", "content_id": "1036844829507460_122141842839072582", "published_at": "2026-07-25T21:10:09Z"},
+        {"platform": "YouTube", "content_id": "Qoa-XUOVALk", "published_at": "2026-07-29T08:54:07Z"}
+      ]
+    },
+    {
+      "canonical_concept_id": "CON-2026-07-27-Mi_ascenso_a_la_locura",
+      "confidence": "Confirmada_por_Fernando",
+      "evidence": "Fernando confirmó la cascada de Instagram y Facebook. Ambas publicaciones comparten copy, hashtags y se publicaron con 13 segundos de diferencia.",
+      "publications": [
+        {"platform": "Instagram", "content_id": "17975917574904303", "published_at": "2026-07-27T19:22:59Z"},
+        {"platform": "Facebook", "content_id": "1036844829507460_122142469383072582", "published_at": "2026-07-27T19:23:12Z"}
+      ]
+    },
+    {
+      "canonical_concept_id": "CON-2026-07-31-Escribiendo",
+      "confidence": "Confirmada_por_Fernando",
+      "evidence": "Fernando confirmó que el Short de YouTube del 31 de julio y los Reels de Instagram y Facebook del 21 de julio son la misma producción. Instagram y Facebook comparten el copy `El verdadero terror psicológico...` y se publicaron con 13 segundos de diferencia.",
+      "publications": [
+        {"platform": "Instagram", "content_id": "18011682410922621", "published_at": "2026-07-21T20:58:30Z"},
+        {"platform": "Facebook", "content_id": "1036844829507460_122140853631072582", "published_at": "2026-07-21T20:58:43Z"},
+        {"platform": "YouTube", "content_id": "rox7BGGcfwQ", "published_at": "2026-07-31T21:02:44Z"}
       ]
     }
   ],

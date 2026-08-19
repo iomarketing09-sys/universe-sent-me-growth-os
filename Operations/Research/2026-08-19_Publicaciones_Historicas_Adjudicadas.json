@@ -1,0 +1,62 @@
+{
+  "title": "Publicaciones históricas adjudicadas para reconciliación de Reels",
+  "purpose": "Conservar publicaciones verificadas fuera del corte normalizado de 28 días que Fernando confirmó como parte de cascadas existentes.",
+  "status": "Active",
+  "created_at": "2026-08-19",
+  "last_updated": "2026-08-19",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "2026-08-19_Historial_Reels_Consolidado.json",
+    "2026-08-19_Relaciones_Reels_Alta_Evidencia.json",
+    "2026-08-19_Inventario_Assets_Drive_Reels.json",
+    "../../GrowthOS/07_00_Registro_Maestro_Reels.md",
+    "../../GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
+  ],
+  "evidence_method": "Facebook fue recuperado mediante lectura directa de Meta Graph API con token de Page; Instagram fue recuperado mediante el conector nativo de Instagram. La pertenencia a cada cascada fue confirmada explícitamente por Fernando.",
+  "rows": [
+    {
+      "platform": "Facebook",
+      "content_id": "1036844829507460_122141842839072582",
+      "published_at": "2026-07-25T21:10:09Z",
+      "content_type": "Reel",
+      "title_or_caption": "Dicen que si lo ves caminando, no lo sigas...\nLos gatos sí saben a dónde va 👻 🌲",
+      "media_type": "video",
+      "source": "Meta Graph API directa — Page feed",
+      "evidence_status": "Confirmado_por_Meta_Graph_API_y_Fernando"
+    },
+    {
+      "platform": "Facebook",
+      "content_id": "1036844829507460_122142469383072582",
+      "published_at": "2026-07-27T19:23:12Z",
+      "content_type": "Reel",
+      "title_or_caption": "Mi ascenso a la locura 😵‍💫",
+      "media_type": "video",
+      "source": "Meta Graph API directa — Page feed",
+      "evidence_status": "Confirmado_por_Meta_Graph_API_y_Fernando"
+    },
+    {
+      "platform": "Facebook",
+      "content_id": "1036844829507460_122140853631072582",
+      "published_at": "2026-07-21T20:58:43Z",
+      "content_type": "Reel",
+      "title_or_caption": "El verdadero terror psicológico...",
+      "media_type": "video",
+      "source": "Meta Graph API directa — Page feed",
+      "evidence_status": "Confirmado_por_Meta_Graph_API_y_Fernando"
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "18011682410922621",
+      "published_at": "2026-07-21T20:58:30Z",
+      "content_type": "Reel",
+      "title_or_caption": "El verdadero terror psicológico...",
+      "source": "Conector nativo de Instagram — get_post_list",
+      "evidence_status": "Confirmado_por_Instagram_Connector_y_Fernando"
+    }
+  ],
+  "limitations": [
+    "P01 tiene Facebook e Instagram identificados; Fernando confirmó también una publicación de YouTube el 29 de julio con el mismo copy, pero su Platform_Content_ID o URL aún no se ha recuperado.",
+    "No se asignan métricas nuevas a estas filas históricas porque esta recuperación verificó identidad y formato, no una ventana analítica comparable."
+  ]
+}

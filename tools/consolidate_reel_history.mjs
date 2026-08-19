@@ -6,6 +6,7 @@ const social = JSON.parse(fs.readFileSync(path.join(root, 'Operations/Research/2
 const fbAudit = JSON.parse(fs.readFileSync(path.join(root, 'Operations/Research/2026-08-19_Meta_Reels_Audit.json'), 'utf8'))
 const costInventory = JSON.parse(fs.readFileSync(path.join(root, 'Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json'), 'utf8'))
 const youtubeNative = JSON.parse(fs.readFileSync(path.join(root, 'Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json'), 'utf8'))
+const historicalAdjudications = JSON.parse(fs.readFileSync(path.join(root, 'Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json'), 'utf8'))
 const youtubeDates = new Map(youtubeNative.rows.map((row) => [row.video, row]))
 const highEvidenceLinks = JSON.parse(fs.readFileSync(path.join(root, 'Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json'), 'utf8'))
 const highEvidenceConceptByContentId = new Map(highEvidenceLinks.relationships.flatMap((relationship) => relationship.publications.map((publication) => [publication.content_id, relationship.canonical_concept_id])))
@@ -65,6 +66,14 @@ for (const reel of fbAudit.video_reels) {
     engagement, views: null, reach: null, source: '2026-08-19_Meta_Reels_Audit.json', evidence_status: 'Confirmado_por_Meta_API',
   })
 }
+for (const row of historicalAdjudications.rows) {
+  if (records.some((record) => record.content_id === row.content_id)) continue
+  records.push({
+    platform: row.platform, content_id: row.content_id, published_at: row.published_at, content_type: row.content_type,
+    title_or_caption: row.title_or_caption, character: detectCharacter(row.title_or_caption), canonical_concept_id: conceptIdFor(row.content_id, row.title_or_caption),
+    engagement: null, views: null, reach: null, source: row.source, evidence_status: row.evidence_status,
+  })
+}
 for (const row of social.platforms.Instagram.content_rows.filter((row) => row.content_type === 'Reel')) {
   records.push({ platform: 'Instagram', content_id: row.content_id, published_at: row.published_at, content_type: 'Reel', title_or_caption: row.caption, character: detectCharacter(row.caption), canonical_concept_id: conceptIdFor(row.content_id, row.caption), engagement: row.engagement, views: row.views, reach: row.reach, source: row.source, evidence_status: 'Confirmado_por_Windsor' })
 }
@@ -111,6 +120,7 @@ const result = {
     '2026-08-19_Relaciones_Reels_Alta_Evidencia.json',
     '2026-08-19_Inventario_Assets_Drive_Reels.json',
     '2026-08-19_Piezas_Sin_Cascada_Revision.json',
+    '2026-08-19_Publicaciones_Historicas_Adjudicadas.json',
     '../../GrowthOS/07_00_Registro_Maestro_Reels.md',
     '../../GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md',
   ],

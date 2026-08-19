@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-19
-version: "2.2"
+version: "2.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -33,6 +33,7 @@ related_documents:
   - "Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json"
   - "Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json"
   - "Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json"
+  - "Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json"
   - "Operations/Research/2026-08-19_Auditoria_Assets_Drive_Reels.md"
   - "GrowthOS/08_00_Metricas_Baseline_Plataformas.md"
   - "Operations/Research/Historical_Performance_Snapshot.csv"
@@ -68,6 +69,8 @@ La comprobación del corte 22 de julio–18 de agosto de 2026 probó tres fuente
 | Windsor YouTube | Seis videos únicos y actividad diaria por video con views, likes, retención y suscriptores | `date` es actividad diaria; `video_view_count` es snapshot lifetime y no debe sumarse por día | Fuente analítica principal de YouTube con tablas separadas diaria y lifetime |
 
 La regla de no duplicación es estricta: una fila de rendimiento debe registrar `fuente_metrica`, `fecha_extraccion`, `definicion_metrica`, `ventana_comparabilidad` y el ID de la publicación. Para Instagram, Windsor es la fuente primaria de análisis hasta que Graph API obtenga `instagram_manage_insights`; el conector confirma muestras, no reemplaza el lote completo. Para Facebook, `Publication_Log.csv` y los datasets Meta conservan como métrica canónica `reacciones + comentarios + shares`; los agregados de Windsor (`post_engagements`) se guardan como métrica alternativa y no se suman con la métrica canónica.
+
+Las recuperaciones puntuales fuera de un corte normalizado se conservan en `Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json`. Esta capa solo registra identidad, formato, copy y hora de publicaciones que Fernando confirmó como parte de una cascada; no introduce métricas retrospectivas ni reemplaza la fuente analítica primaria.
 
 Para TikTok y YouTube, el dashboard debe conservar una capa común sin forzar equivalencia semántica: `views` se muestra como views nativas de cada plataforma, `reach` solo se muestra cuando la fuente lo entrega, y `engagement` se calcula como suma documentada de acciones disponibles si no existe una métrica nativa. YouTube debe mostrar por separado la actividad diaria y el snapshot lifetime; TikTok debe eliminar filas repetidas por `video_id` y priorizar la fila con mayor cobertura de métricas.
 

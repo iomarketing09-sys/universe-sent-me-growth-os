@@ -4,7 +4,7 @@
   "status": "Active",
   "created_at": "2026-08-19",
   "last_updated": "2026-08-19",
-  "version": "1.1",
+  "version": "1.4",
   "author": "Manus AI",
   "related_documents": [
     "2026-08-19_Historial_Reels_Consolidado.json",
@@ -26,9 +26,9 @@
   "asset_links": [
     {
       "canonical_concept_id": "CON-2026-07-27-Mi_ascenso_a_la_locura",
-      "strength": "Directa",
-      "evidence": "La subcarpeta tiene el mismo nombre del Reel publicado y contiene una toma de Hada subiendo escaleras del día de publicación.",
-      "platform_content_ids": ["17975917574904303"],
+      "strength": "Directa_confirmada_por_Fernando",
+      "evidence": "La subcarpeta tiene el mismo nombre del Reel publicado y contiene una toma de Hada subiendo escaleras del día de publicación. Fernando confirmó la cascada Instagram/Facebook y Meta Graph API verificó el Reel de Facebook correspondiente.",
+      "platform_content_ids": ["17975917574904303", "1036844829507460_122142469383072582"],
       "drive_assets": [{"id": "1c0QFsf661Tf4pNH0uuVkD4yK6BmPw2u3", "name": "Hada_subiendo_escaleras_202607271336.mp4", "duration_ms": 3999}]
     },
     {
@@ -67,11 +67,16 @@
       "drive_assets": [{"id": "1bCh7WB6tPB1IxZjCkrbBRPluF7rIDmSY", "name": "Generate_video_from_storyboard_1080p_202608091406.mp4", "duration_ms": 5999}]
     },
     {
-      "canonical_concept_id": "CON-2026-07-25-Paz_Interior_Fantasma",
+      "canonical_concept_id": "CON-2026-07-30-Wilfred_Plush",
       "strength": "Directa_confirmada_por_Fernando",
-      "evidence": "Fernando confirmó que P01 de Instagram y P04 de YouTube proceden del mismo archivo VID_20260725_135521_680_bsl.mp4.",
-      "platform_content_ids": ["18102391205336788", "Qoa-XUOVALk"],
-      "drive_assets": [{"id": "19hdaSaYCvWs2B0pZjssZB5_1pbBy36pH", "name": "VID_20260725_135521_680_bsl.mp4", "duration_ms": 19416}]
+      "evidence": "Fernando confirmó la carpeta `My Drive/Universe sent me/USM/Reels/¿Que me llego¿/Wilfred - Plush` como asset fuente de P05 de Facebook. Los cuatro clips de la carpeta son material de la misma producción; todavía no hay una publicación equivalente confirmada en otra plataforma.",
+      "platform_content_ids": ["1036844829507460_122143141185072582"],
+      "drive_assets": [
+        {"id": "1ovw39lQ-DrQ8TFc8Tje_onkown_TTWAZ", "name": "Wilfred_holding_plush_toy_202607300618.mp4", "duration_ms": 3999},
+        {"id": "1Az-HR4JR4t3ObvX4taR2g1kUeer-Nvmr", "name": "Man_opening_box_skepticism_1080p_202607300627.mp4", "duration_ms": 3999},
+        {"id": "1rbYxyQoaIVLXTioJ-db1_nfDmtzCQbnN", "name": "Wilfred_holding_plush_unimpressed_202607300634.mp4", "duration_ms": 5999},
+        {"id": "1cdso5Jm0aTOMcWGSB-_uDQNeOxNBS_P8", "name": "Cat_carrying_box_to_Wilfred_202607300636.mp4", "duration_ms": 3999}
+      ]
     },
     {
       "canonical_concept_id": "CON-2026-07-30-Gatos_Madrugada",
@@ -96,16 +101,16 @@
     },
     {
       "canonical_concept_id": "CON-2026-07-25-Fantasma_Camina_Gatos",
-      "strength": "Fuerte",
-      "evidence": "El nombre de los assets `Ghost_walks_cats_through_forest` coincide con el copy de Instagram sobre seguir a Fantasma y gatos que saben a dónde va.",
-      "platform_content_ids": ["18079365233681564"],
+      "strength": "Directa_confirmada_por_Fernando",
+      "evidence": "El nombre de los assets `Ghost_walks_cats_through_forest` coincide con el copy de Instagram sobre seguir a Fantasma y gatos que saben a dónde va. Fernando confirmó la cascada Instagram/Facebook/YouTube, incluido el Short `Qoa-XUOVALk`; Meta Graph API verificó el Reel de Facebook con el mismo copy.",
+      "platform_content_ids": ["18079365233681564", "1036844829507460_122141842839072582", "Qoa-XUOVALk"],
       "drive_assets": [{"id": "11v7841iVxpGK4YcJqKgaGTMJqnkfqHeK", "name": "Ghost_walks_cats_through_forest_202607240113.mp4", "duration_ms": 9999}, {"id": "1o7tvteY4LicDbWS5_IqL_XhQrNHPf0pW", "name": "Ghost_walks_cats_through_forest_202607251436.mp4", "duration_ms": 3083}]
     },
     {
       "canonical_concept_id": "CON-2026-07-31-Escribiendo",
-      "strength": "Fuerte",
-      "evidence": "El nombre del asset coincide semánticamente con el título del Short de YouTube sobre una conversación vieja que muestra `Escribiendo...`.",
-      "platform_content_ids": ["rox7BGGcfwQ"],
+      "strength": "Confirmada_por_Fernando",
+      "evidence": "El nombre del asset coincide semánticamente con el título del Short de YouTube sobre una conversación vieja que muestra `Escribiendo...`. Fernando confirmó que este Short y los Reels de Instagram/Facebook con el copy `El verdadero terror psicológico...` son la misma producción.",
+      "platform_content_ids": ["rox7BGGcfwQ", "18011682410922621", "1036844829507460_122140853631072582"],
       "drive_assets": [{"id": "15er7Pj25oc8GuYV6Bb7ysnbyzFfzEbwZ", "name": "Cuando esas viendo una conversacion vieja y sale un - escribiendo _ Kael.mp4", "duration_ms": 6999}]
     }
   ],

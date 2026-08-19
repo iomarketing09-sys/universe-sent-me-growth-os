@@ -4,7 +4,7 @@
   "status": "Review",
   "created_at": "2026-08-19",
   "last_updated": "2026-08-19",
-  "version": "1.1",
+  "version": "1.2",
   "author": "Manus AI",
   "related_documents": [
     "2026-08-19_Historial_Reels_Consolidado.json",
@@ -12,50 +12,18 @@
     "2026-08-19_Relaciones_Reels_Alta_Evidencia.json",
     "../../GrowthOS/07_00_Registro_Maestro_Reels.md"
   ],
-  "count": 7,
+  "count": 5,
   "pieces": [
     {
       "review_id": "P01",
       "platform": "Instagram",
-      "published_at": "2026-07-25T21:10:02+0000",
+      "published_at": "2026-07-24T16:16:24+0000",
       "content_type": "Reel",
-      "content_id": "18079365233681564",
-      "title_or_caption": "Dicen que si lo ves caminando, no lo sigas...\nLos gatos sí saben a dónde va 👻 🌲 \n\n#universesentme #fantasmaUSM #MomentosUSM #darkfantasy #fyp",
-      "character": "Fantasma",
-      "canonical_concept_id": "CON-2026-07-25-Fantasma_Camina_Gatos",
-      "drive_asset_evidence": {
-        "strength": "Fuerte",
-        "assets": [
-          {
-            "id": "11v7841iVxpGK4YcJqKgaGTMJqnkfqHeK",
-            "name": "Ghost_walks_cats_through_forest_202607240113.mp4"
-          },
-          {
-            "id": "1o7tvteY4LicDbWS5_IqL_XhQrNHPf0pW",
-            "name": "Ghost_walks_cats_through_forest_202607251436.mp4"
-          }
-        ]
-      },
-      "review_status": "Pendiente_de_confirmacion_de_Fernando"
-    },
-    {
-      "review_id": "P02",
-      "platform": "Instagram",
-      "published_at": "2026-07-27T19:22:59+0000",
-      "content_type": "Reel",
-      "content_id": "17975917574904303",
-      "title_or_caption": "Mi ascenso a la locura 😵‍💫 \n\n#universesentme #hadaUSM #MomentosUSM #reflexiones",
-      "character": "Kiri",
-      "canonical_concept_id": "CON-2026-07-27-Mi_ascenso_a_la_locura",
-      "drive_asset_evidence": {
-        "strength": "Directa",
-        "assets": [
-          {
-            "id": "1c0QFsf661Tf4pNH0uuVkD4yK6BmPw2u3",
-            "name": "Hada_subiendo_escaleras_202607271336.mp4"
-          }
-        ]
-      },
+      "content_id": "18102391205336788",
+      "title_or_caption": "Cultiva la paz interior..\n\n#universesentme #relatable #humoracido #rockstar",
+      "character": "Universe",
+      "canonical_concept_id": "Sin_concepto_confirmado",
+      "drive_asset_evidence": null,
       "review_status": "Pendiente_de_confirmacion_de_Fernando"
     },
     {
@@ -98,8 +66,28 @@
       "content_id": "1036844829507460_122143141185072582",
       "title_or_caption": "🤭 \n\n #UniverseSentMe #WilfredUSM #humor #MercadoLibre #plush",
       "character": "Wilfred",
-      "canonical_concept_id": "Sin_concepto_confirmado",
-      "drive_asset_evidence": null,
+      "canonical_concept_id": "CON-2026-07-30-Wilfred_Plush",
+      "drive_asset_evidence": {
+        "strength": "Directa_confirmada_por_Fernando",
+        "assets": [
+          {
+            "id": "1ovw39lQ-DrQ8TFc8Tje_onkown_TTWAZ",
+            "name": "Wilfred_holding_plush_toy_202607300618.mp4"
+          },
+          {
+            "id": "1Az-HR4JR4t3ObvX4taR2g1kUeer-Nvmr",
+            "name": "Man_opening_box_skepticism_1080p_202607300627.mp4"
+          },
+          {
+            "id": "1rbYxyQoaIVLXTioJ-db1_nfDmtzCQbnN",
+            "name": "Wilfred_holding_plush_unimpressed_202607300634.mp4"
+          },
+          {
+            "id": "1cdso5Jm0aTOMcWGSB-_uDQNeOxNBS_P8",
+            "name": "Cat_carrying_box_to_Wilfred_202607300636.mp4"
+          }
+        ]
+      },
       "review_status": "Pendiente_de_confirmacion_de_Fernando"
     },
     {
@@ -121,27 +109,7 @@
         ]
       },
       "review_status": "Pendiente_de_confirmacion_de_Fernando"
-    },
-    {
-      "review_id": "P07",
-      "platform": "YouTube",
-      "published_at": "2026-07-31T21:02:44Z",
-      "content_type": "Video / Short",
-      "content_id": "rox7BGGcfwQ",
-      "title_or_caption": "Cc vuelves a leer una conversación de hace 3 años.. y sale \"Escribiendo...\" 💀",
-      "character": "Sin clasificar",
-      "canonical_concept_id": "CON-2026-07-31-Escribiendo",
-      "drive_asset_evidence": {
-        "strength": "Fuerte",
-        "assets": [
-          {
-            "id": "15er7Pj25oc8GuYV6Bb7ysnbyzFfzEbwZ",
-            "name": "Cuando esas viendo una conversacion vieja y sale un - escribiendo _ Kael.mp4"
-          }
-        ]
-      },
-      "review_status": "Pendiente_de_confirmacion_de_Fernando"
     }
   ],
-  "decision_rule": "Solo se agregará una relación cross-platform cuando Fernando la confirme o exista una coincidencia verificable de IDs, copy, asset y ventana temporal."
+  "decision_rule": "Solo se agregará una relación cross-platform al historial consolidado cuando Fernando confirme las publicaciones y se recupere un Platform_Content_ID, URL o fecha que permita identificarlas de manera inequívoca."
 }

@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-19
-**Versión:** 3.2
+**Versión:** 3.3
 **Autor:** Manus AI (CGO); Sección 6 añadida por Claude
 **Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`
 
@@ -160,3 +160,19 @@ La fila de publicación debe incluir también `Platform`, `Format`, `Character`,
 > **Regla de cascada:** las adaptaciones de una misma idea deben mantener el mismo `Concept_ID` y `Primary_Asset_ID`, pero cada plataforma conserva un `Platform_Content_ID`, hora de publicación y métrica nativa independientes.
 
 El corte de 28 días solo se considera listo cuando los nuevos registros incluyen estas columnas o documentan explícitamente que son `Pendiente`. La plantilla y el ledger de esfuerzo están en `Operations/Production/Piloto_Esfuerzo_y_Experimentacion.csv`.
+
+### 12.1 Protocolo de ingreso desde celular y cierre de publicación
+
+Los exports de Reel que permanezcan en el celular no son descartables ni deben asociarse retrospectivamente por memoria. Al estar disponibles, se incorporan primero a `My Drive/Universe sent me/USM/Reels` dentro de una carpeta de producción descriptiva. El archivo conserva su nombre de export si ya identifica la toma; cuando se renombre, se adopta el patrón `CON-YYYY-MM-DD-Slug__vNN.mp4`. El inventario registra el `Drive_ID`, nombre exacto, duración y orientación del asset, pero no altera los nombres originales si estos ya funcionan como evidencia de producción.
+
+| Momento | Registro obligatorio | Regla de integridad |
+|---|---|---|
+| Antes de exportar | `Concept_ID`, `Campaign_Label`, `Experiment_ID`, `Hypothesis_ID`, `Primary_Asset_ID`, personaje, hook y estado de cascada | Si falta una hipótesis real, usar `Sin_hipotesis_asignada`; no inventar una. |
+| Al subir desde celular | Ruta de Drive, `Drive_ID`, nombre exacto, duración y versión | Marcar `Asset_Ingest_Status=En_Drive`. Si el archivo permanece en el celular, usar `Pendiente_celular`. |
+| Al publicar por plataforma | `Platform`, `Format`, `Publication_Local`, URL/permalink y `Platform_Content_ID` nativo | Una misma producción conserva `Concept_ID` y `Primary_Asset_ID`; cada plataforma recibe su propia fila. |
+| Al verificar cascada | `Crosspost_Status`, plataformas verificadas y evidencia de copy/asset/ID | No agrupar la producción hasta contar con dos IDs o URLs identificables; una declaración humana sin ID se conserva como `Declarada_ID_pendiente`. |
+| Al cierre de 24/72 h | fuente, ventana, definición métrica, métricas y actualización de hipótesis | Las métricas lifetime no sustituyen un snapshot temporal. |
+
+> **Corrección histórica:** cuando una identificación previa sea corregida por Fernando, se actualiza la relación documentada y se conserva la evidencia de la corrección. Nunca se rellena el hueco con un ID parecido ni se conserva una atribución contradicha por la confirmación humana posterior.
+
+La plantilla mínima para un Reel nuevo queda así: `Concept_ID | Campaign_Label | Experiment_ID | Hypothesis_ID | Primary_Asset_ID | Drive_ID | Platform | Platform_Content_ID | Publication_Local | Crosspost_Status | Source_Window | Effort_Status`. El mismo esquema debe acompañar al archivo antes de que se use en la primera plataforma.
