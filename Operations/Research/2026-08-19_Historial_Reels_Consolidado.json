@@ -1,0 +1,737 @@
+{
+  "purpose": "Inventario reconciliable de Reels y videos cortos publicados; no infiere cross-posts sin evidencia explícita.",
+  "period": {
+    "start": "2026-07-22",
+    "end": "2026-08-18"
+  },
+  "records": [
+    {
+      "platform": "Facebook",
+      "content_id": "1036844829507460_122148560799072582",
+      "published_at": "2026-08-11T19:22:29+0000",
+      "content_type": "Reel",
+      "title_or_caption": "#UniverseSentMe",
+      "character": "Universe",
+      "canonical_concept_id": null,
+      "engagement": 15,
+      "views": null,
+      "reach": null,
+      "source": "2026-08-19_Meta_Reels_Audit.json",
+      "evidence_status": "Confirmado_por_Meta_API",
+      "cost_mxn": null
+    },
+    {
+      "platform": "Facebook",
+      "content_id": "1036844829507460_122147749683072582",
+      "published_at": "2026-08-10T00:00:48+0000",
+      "content_type": "Reel",
+      "title_or_caption": "Les dije que no eran cartones pintados \n\n #UniverseSentMe #memes #humor #UniverseUSM",
+      "character": "Universe",
+      "canonical_concept_id": null,
+      "engagement": 8,
+      "views": null,
+      "reach": null,
+      "source": "2026-08-19_Meta_Reels_Audit.json",
+      "evidence_status": "Confirmado_por_Meta_API",
+      "cost_mxn": null
+    },
+    {
+      "platform": "Facebook",
+      "content_id": "1036844829507460_122147211939072582",
+      "published_at": "2026-08-09T02:00:39+0000",
+      "content_type": "Reel",
+      "title_or_caption": "Elara pasó toda la noche tratando de leerlo. \nEvan solo quería ver las estrellas. 🌲✨\n\n#UniverseSentMe #ElaraUSM #EvanUSM #ElBosque #MomentosUSM",
+      "character": "Elara",
+      "canonical_concept_id": null,
+      "engagement": 8,
+      "views": null,
+      "reach": null,
+      "source": "2026-08-19_Meta_Reels_Audit.json",
+      "evidence_status": "Confirmado_por_Meta_API",
+      "cost_mxn": null
+    },
+    {
+      "platform": "Facebook",
+      "content_id": "1036844829507460_122147352825072582",
+      "published_at": "2026-08-09T01:19:54+0000",
+      "content_type": "Reel",
+      "title_or_caption": "Universe no sabe qué trae en la caja. \nNunca sabe. 🌙📦\nPero sí sabe quedarse a ver la cara que pone Elara cuando la abre.\n\n👇 Comenta \"LUNA\" y te mandamos el link directo a la lámpara que le llegó a ella.\n\n#UniverseSentMe #QueMeLlegoUSM #UniverseUSM #ElaraUSM",
+      "character": "Elara",
+      "canonical_concept_id": "CON-2026-08-09-Caja_de_Luna",
+      "engagement": 19,
+      "views": null,
+      "reach": null,
+      "source": "2026-08-19_Meta_Reels_Audit.json",
+      "evidence_status": "Confirmado_por_Meta_API",
+      "cost_mxn": null
+    },
+    {
+      "platform": "Facebook",
+      "content_id": "1036844829507460_122145545163072582",
+      "published_at": "2026-08-06T00:32:27+0000",
+      "content_type": "Reel",
+      "title_or_caption": "Me hace falta vitamina B (besos).\n\nEl Bosque tiene sus propios fantasmas. Algunos observan desde la niebla, esperando algo que nunca llega. No porque no puedan moverse — sino porque moverse significaría soltar.\n\n👁️ ¿Conoces a alguien que sigue esperando algo que ya se fue? Etiquétalo.\n\n#FantasmaUSM #UniverseSentMe",
+      "character": "Fantasma",
+      "canonical_concept_id": "CON-2026-08-05-Instante_suspendido",
+      "engagement": 24,
+      "views": null,
+      "reach": null,
+      "source": "2026-08-19_Meta_Reels_Audit.json",
+      "evidence_status": "Confirmado_por_Meta_API",
+      "cost_mxn": null
+    },
+    {
+      "platform": "Facebook",
+      "content_id": "1036844829507460_122144700573072582",
+      "published_at": "2026-08-04T02:27:50+0000",
+      "content_type": "Reel",
+      "title_or_caption": "Dicen que si te sales de la realidad en el lugar equivocado, terminas aquí.\n\nFantasma no se perdió, su lógica de supervivencia lo llevó al espacio liminal definitivo. 👻🚪\n\nEtiqueta a esa persona que vive \"glitcheada\" entre el pasado y el presente.\n\n #UniverseSentMe #FantasmaUSM #Backrooms #LiminalSpaces #GlitchCore",
+      "character": "Fantasma",
+      "canonical_concept_id": "CON-2026-08-04-Fantasma_Backrooms",
+      "engagement": 20,
+      "views": null,
+      "reach": null,
+      "source": "2026-08-19_Meta_Reels_Audit.json",
+      "evidence_status": "Confirmado_por_Meta_API",
+      "cost_mxn": null
+    },
+    {
+      "platform": "Facebook",
+      "content_id": "1036844829507460_122144459607072582",
+      "published_at": "2026-08-03T03:23:56+0000",
+      "content_type": "Reel",
+      "title_or_caption": "Hay conversaciones que no llegan a ningun lado 👻 🐱 Universe lo intentó.\n\n¿A quien le tienes que explicar tu vida como tres veces porque sigue atorado en el mismo tema? 👇\n\n#UniverseSentMe #FantasmaUSM #memesen español #relatable #̤c̤o̤m̤e̤d̤y̤r̤e̤e̤l̤s̤",
+      "character": "Fantasma",
+      "canonical_concept_id": "CON-2026-08-03-Conversaciones_atrancadas",
+      "engagement": 9,
+      "views": null,
+      "reach": null,
+      "source": "2026-08-19_Meta_Reels_Audit.json",
+      "evidence_status": "Confirmado_por_Meta_API",
+      "cost_mxn": null
+    },
+    {
+      "platform": "Facebook",
+      "content_id": "1036844829507460_122143966461072582",
+      "published_at": "2026-08-02T01:13:16+0000",
+      "content_type": "Reel",
+      "title_or_caption": "La sabiduría del bosque es clara: lo que ves en el muro es solo la punta del iceberg. El verdadero caos está en el mensaje directo 🌲🤐\n#universesentme #WilfredUSM #humorsarcástico #murosvemos #reelsinstagram",
+      "character": "Wilfred",
+      "canonical_concept_id": "CON-2026-08-02-Muros_e_Inbox",
+      "engagement": 22,
+      "views": null,
+      "reach": null,
+      "source": "2026-08-19_Meta_Reels_Audit.json",
+      "evidence_status": "Confirmado_por_Meta_API",
+      "cost_mxn": null
+    },
+    {
+      "platform": "Facebook",
+      "content_id": "1036844829507460_122143141185072582",
+      "published_at": "2026-07-30T14:17:19+0000",
+      "content_type": "Reel",
+      "title_or_caption": "🤭 \n\n #UniverseSentMe #WilfredUSM #humor #MercadoLibre #plush",
+      "character": "Wilfred",
+      "canonical_concept_id": null,
+      "engagement": 26,
+      "views": null,
+      "reach": null,
+      "source": "2026-08-19_Meta_Reels_Audit.json",
+      "evidence_status": "Confirmado_por_Meta_API",
+      "cost_mxn": null
+    },
+    {
+      "platform": "Facebook",
+      "content_id": "1036844829507460_122143048701072582",
+      "published_at": "2026-07-30T02:03:18+0000",
+      "content_type": "Reel",
+      "title_or_caption": "Mi gato sabe hacer de todo... \n\n#universesentme #vidagatuna\n #UniverseUSM #humor",
+      "character": "Universe",
+      "canonical_concept_id": "CON-2026-07-30-Gato_hace_de_todo",
+      "engagement": 25,
+      "views": null,
+      "reach": null,
+      "source": "2026-08-19_Meta_Reels_Audit.json",
+      "evidence_status": "Confirmado_por_Meta_API",
+      "cost_mxn": null
+    },
+    {
+      "platform": "Facebook",
+      "content_id": "1036844829507460_122143033293072582",
+      "published_at": "2026-07-29T19:03:31+0000",
+      "content_type": "Reel",
+      "title_or_caption": "Un rock bien gótico Vs \nuna canción de Juan Gabriel\n\n#UniverseSentMe #UniverseUSM\n #vidagatuna #humor",
+      "character": "Universe",
+      "canonical_concept_id": "CON-2026-07-29-Rock_vs_Juan_Gabriel",
+      "engagement": 28,
+      "views": null,
+      "reach": null,
+      "source": "2026-08-19_Meta_Reels_Audit.json",
+      "evidence_status": "Confirmado_por_Meta_API",
+      "cost_mxn": null
+    },
+    {
+      "platform": "Facebook",
+      "content_id": "1036844829507460_122142839523072582",
+      "published_at": "2026-07-29T04:14:25+0000",
+      "content_type": "Reel",
+      "title_or_caption": "#universesentme #universo #WilfredUSM #humor #MomentosUSM",
+      "character": "Wilfred",
+      "canonical_concept_id": null,
+      "engagement": 7,
+      "views": null,
+      "reach": null,
+      "source": "2026-08-19_Meta_Reels_Audit.json",
+      "evidence_status": "Confirmado_por_Meta_API",
+      "cost_mxn": null
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "18102391205336788",
+      "published_at": "2026-07-24T16:16:24+0000",
+      "content_type": "Reel",
+      "title_or_caption": "Cultiva la paz interior..\n\n#universesentme #relatable #humoracido #rockstar",
+      "character": "Universe",
+      "canonical_concept_id": null,
+      "engagement": 19,
+      "views": 354,
+      "reach": 247,
+      "source": "Windsor.ai:instagram",
+      "evidence_status": "Confirmado_por_Windsor",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "18079365233681564",
+      "published_at": "2026-07-25T21:10:02+0000",
+      "content_type": "Reel",
+      "title_or_caption": "Dicen que si lo ves caminando, no lo sigas...\nLos gatos sí saben a dónde va 👻 🌲 \n\n#universesentme #fantasmaUSM #MomentosUSM #darkfantasy #fyp",
+      "character": "Fantasma",
+      "canonical_concept_id": null,
+      "engagement": 7,
+      "views": 145,
+      "reach": 127,
+      "source": "Windsor.ai:instagram",
+      "evidence_status": "Confirmado_por_Windsor",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "17975917574904303",
+      "published_at": "2026-07-27T19:22:59+0000",
+      "content_type": "Reel",
+      "title_or_caption": "Mi ascenso a la locura 😵‍💫 \n\n#universesentme #hadaUSM #MomentosUSM #reflexiones",
+      "character": "Kiri",
+      "canonical_concept_id": null,
+      "engagement": 2,
+      "views": 129,
+      "reach": 107,
+      "source": "Windsor.ai:instagram",
+      "evidence_status": "Confirmado_por_Windsor",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "18004973039958799",
+      "published_at": "2026-07-29T19:03:17+0000",
+      "content_type": "Reel",
+      "title_or_caption": "Un rock bien gótico Vs \nuna canción de Juan Gabriel\n\n#UniverseSentMe #UniverseUSM\n #vidagatuna #humor",
+      "character": "Universe",
+      "canonical_concept_id": "CON-2026-07-29-Rock_vs_Juan_Gabriel",
+      "engagement": 1,
+      "views": 78,
+      "reach": 58,
+      "source": "Windsor.ai:instagram",
+      "evidence_status": "Confirmado_por_Windsor",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "17884121250454162",
+      "published_at": "2026-07-29T04:14:09+0000",
+      "content_type": "Reel",
+      "title_or_caption": "#universesentme #universo #WilfredUSM #humor #MomentosUSM",
+      "character": "Wilfred",
+      "canonical_concept_id": null,
+      "engagement": 0,
+      "views": 33,
+      "reach": 21,
+      "source": "Windsor.ai:instagram",
+      "evidence_status": "Confirmado_por_Windsor",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "17893864368579271",
+      "published_at": "2026-07-30T02:03:03+0000",
+      "content_type": "Reel",
+      "title_or_caption": "Mi gato sabe hacer de todo... \n\n#universesentme #vidagatuna\n #UniverseUSM #humor",
+      "character": "Universe",
+      "canonical_concept_id": "CON-2026-07-30-Gato_hace_de_todo",
+      "engagement": 5,
+      "views": 140,
+      "reach": 116,
+      "source": "Windsor.ai:instagram",
+      "evidence_status": "Confirmado_por_Windsor",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "17922445887404611",
+      "published_at": "2026-08-02T01:30:04+0000",
+      "content_type": "Reel",
+      "title_or_caption": "La sabiduría del bosque es clara: lo que ves en el muro es solo la punta del iceberg. El verdadero caos está en el mensaje directo 🌲🤐\n\n#universesentme #WilfredUSM #humorsarcástico #murosvemos #reelsinstagram",
+      "character": "Wilfred",
+      "canonical_concept_id": "CON-2026-08-02-Muros_e_Inbox",
+      "engagement": 0,
+      "views": 37,
+      "reach": 29,
+      "source": "Windsor.ai:instagram",
+      "evidence_status": "Confirmado_por_Windsor",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "17873601261628669",
+      "published_at": "2026-08-03T03:23:29+0000",
+      "content_type": "Reel",
+      "title_or_caption": "Hay conversaciones que no llegan a ningun lado 👻 🐱 Universe lo intentó.\n\n¿A quien le tienes que explicar tu vida como tres veces porque sigue atorado en el mismo tema? 👇\n\n#UniverseSentMe #FantasmaUSM #memesen español #relatable #̤c̤o̤m̤e̤d̤y̤r̤e̤e̤l̤s̤",
+      "character": "Fantasma",
+      "canonical_concept_id": "CON-2026-08-03-Conversaciones_atrancadas",
+      "engagement": 0,
+      "views": 20,
+      "reach": 20,
+      "source": "Windsor.ai:instagram",
+      "evidence_status": "Confirmado_por_Windsor",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "18161490751464718",
+      "published_at": "2026-08-04T02:27:36+0000",
+      "content_type": "Reel",
+      "title_or_caption": "Dicen que si te sales de la realidad en el lugar equivocado, terminas aquí.\n\nFantasma no se perdió, su lógica de supervivencia lo llevó al espacio liminal definitivo. 👻🚪\n\nEtiqueta a esa persona que vive \"glitcheada\" entre el pasado y el presente.\n\n #UniverseSentMe #FantasmaUSM #Backrooms #LiminalSpaces #GlitchCore",
+      "character": "Fantasma",
+      "canonical_concept_id": "CON-2026-08-04-Fantasma_Backrooms",
+      "engagement": 3,
+      "views": 121,
+      "reach": 116,
+      "source": "Windsor.ai:instagram",
+      "evidence_status": "Confirmado_por_Windsor",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "18072347879724148",
+      "published_at": "2026-08-06T00:29:53+0000",
+      "content_type": "Reel",
+      "title_or_caption": "Me hace falta vitamina B.\n\n(besos).\n\n.\n.\n\n#FantasmaUSM #MomentosUSM #UniverseSentMe #Contemplativo #AestheticReels MelancholyVibes",
+      "character": "Fantasma",
+      "canonical_concept_id": "CON-2026-08-05-Instante_suspendido",
+      "engagement": 2,
+      "views": 41,
+      "reach": 27,
+      "source": "Windsor.ai:instagram",
+      "evidence_status": "Confirmado_por_Windsor",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "17940860565300063",
+      "published_at": "2026-08-09T02:00:03+0000",
+      "content_type": "Reel",
+      "title_or_caption": "#UniverseSentMe #EvanUSM #ElaraUSM",
+      "character": "Elara",
+      "canonical_concept_id": null,
+      "engagement": 1,
+      "views": 10,
+      "reach": 5,
+      "source": "Windsor.ai:instagram",
+      "evidence_status": "Confirmado_por_Windsor",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "18119820211888688",
+      "published_at": "2026-08-09T01:22:27+0000",
+      "content_type": "Reel",
+      "title_or_caption": "Universe no sabe qué trae en la caja. \nNunca sabe. 🌙📦\nPero sí sabe quedarse a ver la cara que pone Elara cuando la abre.\n\n#UniverseSentMe #QueMeLlegoUSM #UniverseUSM #ElaraUSM",
+      "character": "Elara",
+      "canonical_concept_id": "CON-2026-08-09-Caja_de_Luna",
+      "engagement": 4,
+      "views": 150,
+      "reach": 121,
+      "source": "Windsor.ai:instagram",
+      "evidence_status": "Confirmado_por_Windsor",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "17967086586135144",
+      "published_at": "2026-08-10T00:00:04+0000",
+      "content_type": "Reel",
+      "title_or_caption": "Les dije que no eran papeles... \n#universesentme #UniverseUSM #memes #humor",
+      "character": "Universe",
+      "canonical_concept_id": null,
+      "engagement": 1,
+      "views": 138,
+      "reach": 106,
+      "source": "Windsor.ai:instagram",
+      "evidence_status": "Confirmado_por_Windsor",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "17915449680426911",
+      "published_at": "2026-08-11T19:08:45+0000",
+      "content_type": "Reel",
+      "title_or_caption": "#UniverseSentMe 🫶✨",
+      "character": "Universe",
+      "canonical_concept_id": null,
+      "engagement": 2,
+      "views": 51,
+      "reach": 37,
+      "source": "Windsor.ai:instagram",
+      "evidence_status": "Confirmado_por_Windsor",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "TikTok",
+      "content_id": "7668211137661472020",
+      "published_at": "2026-07-30T06:55:47",
+      "content_type": "Video",
+      "title_or_caption": "Desde que decidí no andar con pendej@s, no he vuelto a tener una relación. #UniverseSentMe #fantasmaUSM #humor #meme ",
+      "character": "Fantasma",
+      "canonical_concept_id": null,
+      "engagement": 6,
+      "views": 521,
+      "reach": 492,
+      "source": "Windsor.ai:tiktok_organic",
+      "evidence_status": "Confirmado_por_Windsor",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "TikTok",
+      "content_id": "7668208937937718549",
+      "published_at": "2026-07-30T06:47:13",
+      "content_type": "Video",
+      "title_or_caption": "Los gatos en la madrugada... #gatos #humor #vidagatuna ",
+      "character": "Universe",
+      "canonical_concept_id": null,
+      "engagement": 2,
+      "views": 157,
+      "reach": 146,
+      "source": "Windsor.ai:tiktok_organic",
+      "evidence_status": "Confirmado_por_Windsor",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "TikTok",
+      "content_id": "7668797651353226516",
+      "published_at": "2026-07-31T20:51:55",
+      "content_type": "Video",
+      "title_or_caption": "Cuando dices que vas ahorrar.. y tú gato con 17 juguetes nuevos 🤪 #humor #gatos #relatable #memes ",
+      "character": "Universe",
+      "canonical_concept_id": null,
+      "engagement": 7,
+      "views": 518,
+      "reach": 487,
+      "source": "Windsor.ai:tiktok_organic",
+      "evidence_status": "Confirmado_por_Windsor",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "TikTok",
+      "content_id": "7669240375399189780",
+      "published_at": "2026-08-02T01:29:50",
+      "content_type": "Video",
+      "title_or_caption": "La sabiduría del bosque es clara: lo que ves en el muro es solo la punta del iceberg. El verdadero caos está en el mensaje directo 🌲🤐 #universesentme #WilfredUSM #humorsarcástico #murosvemos #reelsinstagram ",
+      "character": "Wilfred",
+      "canonical_concept_id": "CON-2026-08-02-Muros_e_Inbox",
+      "engagement": 3,
+      "views": 711,
+      "reach": 711,
+      "source": "Windsor.ai:tiktok_organic",
+      "evidence_status": "Confirmado_por_Windsor",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "TikTok",
+      "content_id": "7669957189435428117",
+      "published_at": "2026-08-03T23:51:16",
+      "content_type": "Video",
+      "title_or_caption": "Habilidades que no vienen en el manual de usuario  #UniverseSentMe #relatable #gatostiktok #destino ",
+      "character": "Universe",
+      "canonical_concept_id": null,
+      "engagement": 1,
+      "views": 186,
+      "reach": 178,
+      "source": "Windsor.ai:tiktok_organic",
+      "evidence_status": "Confirmado_por_Windsor",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "TikTok",
+      "content_id": "7670378001032301845",
+      "published_at": "2026-08-05T03:04:13",
+      "content_type": "Video",
+      "title_or_caption": "En los ojos correctos ",
+      "character": "Sin clasificar",
+      "canonical_concept_id": null,
+      "engagement": 0,
+      "views": 0,
+      "reach": 0,
+      "source": "Windsor.ai:tiktok_organic",
+      "evidence_status": "Confirmado_por_Windsor",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "TikTok",
+      "content_id": "7670705650501963028",
+      "published_at": "2026-08-06T00:15:39",
+      "content_type": "Video",
+      "title_or_caption": "me hace falta vitamina B  💀🫧 (besos) #FantasmaUSM #UniverseSentMe #Contemplativo #AestheticTok #GhostCore ",
+      "character": "Fantasma",
+      "canonical_concept_id": "CON-2026-08-05-Instante_suspendido",
+      "engagement": 4,
+      "views": 175,
+      "reach": 174,
+      "source": "Windsor.ai:tiktok_organic",
+      "evidence_status": "Confirmado_por_Windsor",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "YouTube",
+      "content_id": "Qoa-XUOVALk",
+      "published_at": null,
+      "content_type": "Video / Short",
+      "title_or_caption": "Fantasma",
+      "character": "Fantasma",
+      "canonical_concept_id": null,
+      "engagement": 0,
+      "views": 8,
+      "reach": null,
+      "source": "Windsor.ai:youtube",
+      "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_pendiente",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "YouTube",
+      "content_id": "zJhlOICkEuA",
+      "published_at": null,
+      "content_type": "Video / Short",
+      "title_or_caption": "El verdadero caos está en el mensaje directo 🌲🤐#universesentme",
+      "character": "Universe",
+      "canonical_concept_id": "CON-2026-08-02-Muros_e_Inbox",
+      "engagement": 6,
+      "views": 2249,
+      "reach": null,
+      "source": "Windsor.ai:youtube",
+      "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_pendiente",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "YouTube",
+      "content_id": "rox7BGGcfwQ",
+      "published_at": null,
+      "content_type": "Video / Short",
+      "title_or_caption": "Cc vuelves a leer una conversación de hace 3 años.. y sale \"Escribiendo...\" 💀",
+      "character": "Sin clasificar",
+      "canonical_concept_id": null,
+      "engagement": 0,
+      "views": 16,
+      "reach": null,
+      "source": "Windsor.ai:youtube",
+      "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_pendiente",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "YouTube",
+      "content_id": "3omHgH6ig6w",
+      "published_at": null,
+      "content_type": "Video / Short",
+      "title_or_caption": "Estás habilidades no vienen en el manual de usuario 😸 #cat #humorsarcástico #funny #relatable",
+      "character": "Sin clasificar",
+      "canonical_concept_id": null,
+      "engagement": 11,
+      "views": 900,
+      "reach": null,
+      "source": "Windsor.ai:youtube",
+      "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_pendiente",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "YouTube",
+      "content_id": "7qB8kWKwyTg",
+      "published_at": null,
+      "content_type": "Video / Short",
+      "title_or_caption": "Me hace falta vitamina B (besos) #FantasmaUSM #UniverseSentMe #Contemplativo",
+      "character": "Fantasma",
+      "canonical_concept_id": "CON-2026-08-05-Instante_suspendido",
+      "engagement": 14,
+      "views": 1847,
+      "reach": null,
+      "source": "Windsor.ai:youtube",
+      "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_pendiente",
+      "cost_mxn": 15
+    },
+    {
+      "platform": "YouTube",
+      "content_id": "LNL-bYhQ6pE",
+      "published_at": null,
+      "content_type": "Video / Short",
+      "title_or_caption": "En los ojos correctos... #funny #humorsarcástico #relatable",
+      "character": "Sin clasificar",
+      "canonical_concept_id": null,
+      "engagement": 0,
+      "views": 1,
+      "reach": null,
+      "source": "Windsor.ai:youtube",
+      "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_pendiente",
+      "cost_mxn": 15
+    }
+  ],
+  "explicit_cross_platform_concepts": [
+    {
+      "canonical_concept_id": "CON-2026-08-09-Caja_de_Luna",
+      "publications": [
+        {
+          "platform": "Facebook",
+          "content_id": "1036844829507460_122147352825072582",
+          "evidence_status": "Confirmado_por_Meta_API"
+        },
+        {
+          "platform": "Instagram",
+          "content_id": "18119820211888688",
+          "evidence_status": "Confirmado_por_Windsor"
+        }
+      ]
+    },
+    {
+      "canonical_concept_id": "CON-2026-08-05-Instante_suspendido",
+      "publications": [
+        {
+          "platform": "Facebook",
+          "content_id": "1036844829507460_122145545163072582",
+          "evidence_status": "Confirmado_por_Meta_API"
+        },
+        {
+          "platform": "Instagram",
+          "content_id": "18072347879724148",
+          "evidence_status": "Confirmado_por_Windsor"
+        },
+        {
+          "platform": "TikTok",
+          "content_id": "7670705650501963028",
+          "evidence_status": "Confirmado_por_Windsor"
+        },
+        {
+          "platform": "YouTube",
+          "content_id": "7qB8kWKwyTg",
+          "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_pendiente"
+        }
+      ]
+    },
+    {
+      "canonical_concept_id": "CON-2026-08-04-Fantasma_Backrooms",
+      "publications": [
+        {
+          "platform": "Facebook",
+          "content_id": "1036844829507460_122144700573072582",
+          "evidence_status": "Confirmado_por_Meta_API"
+        },
+        {
+          "platform": "Instagram",
+          "content_id": "18161490751464718",
+          "evidence_status": "Confirmado_por_Windsor"
+        }
+      ]
+    },
+    {
+      "canonical_concept_id": "CON-2026-08-03-Conversaciones_atrancadas",
+      "publications": [
+        {
+          "platform": "Facebook",
+          "content_id": "1036844829507460_122144459607072582",
+          "evidence_status": "Confirmado_por_Meta_API"
+        },
+        {
+          "platform": "Instagram",
+          "content_id": "17873601261628669",
+          "evidence_status": "Confirmado_por_Windsor"
+        }
+      ]
+    },
+    {
+      "canonical_concept_id": "CON-2026-08-02-Muros_e_Inbox",
+      "publications": [
+        {
+          "platform": "Facebook",
+          "content_id": "1036844829507460_122143966461072582",
+          "evidence_status": "Confirmado_por_Meta_API"
+        },
+        {
+          "platform": "Instagram",
+          "content_id": "17922445887404611",
+          "evidence_status": "Confirmado_por_Windsor"
+        },
+        {
+          "platform": "TikTok",
+          "content_id": "7669240375399189780",
+          "evidence_status": "Confirmado_por_Windsor"
+        },
+        {
+          "platform": "YouTube",
+          "content_id": "zJhlOICkEuA",
+          "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_pendiente"
+        }
+      ]
+    },
+    {
+      "canonical_concept_id": "CON-2026-07-30-Gato_hace_de_todo",
+      "publications": [
+        {
+          "platform": "Facebook",
+          "content_id": "1036844829507460_122143048701072582",
+          "evidence_status": "Confirmado_por_Meta_API"
+        },
+        {
+          "platform": "Instagram",
+          "content_id": "17893864368579271",
+          "evidence_status": "Confirmado_por_Windsor"
+        }
+      ]
+    },
+    {
+      "canonical_concept_id": "CON-2026-07-29-Rock_vs_Juan_Gabriel",
+      "publications": [
+        {
+          "platform": "Facebook",
+          "content_id": "1036844829507460_122143033293072582",
+          "evidence_status": "Confirmado_por_Meta_API"
+        },
+        {
+          "platform": "Instagram",
+          "content_id": "18004973039958799",
+          "evidence_status": "Confirmado_por_Windsor"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_records": 39,
+    "by_platform": {
+      "Facebook": 12,
+      "Instagram": 14,
+      "TikTok": 7,
+      "YouTube": 6
+    },
+    "explicit_cross_platform_concepts": 7,
+    "unlinked_records": 21
+  },
+  "limitations": [
+    "Facebook audit identifica Reels por attachment_type=video/video_inline; no se infiere formato para posts estáticos.",
+    "Los conceptos entre plataformas solo se agrupan mediante frase o título explícitamente coincidente.",
+    "YouTube requiere fecha de publicación primaria para su reconciliación temporal completa."
+  ]
+}
