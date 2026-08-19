@@ -3,14 +3,16 @@ title: Auditoría directa de Instagram API — Universe Sent Me
 purpose: Determinar por qué Instagram no se programó, separar el estado de Graph API del conector MCP y definir el flujo correcto para futuros posts.
 status: Active
 created: 2026-08-15
-updated: 2026-08-15
-version: 1.0
+updated: 2026-08-18
+version: 1.1
 author: Manus AI
 documents_related:
   - ../../GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md
   - ../../GrowthOS/10_00_Kit_de_Hashtags_USM.md
   - 2026-08-14_Recomendacion_Instagram_CGO.md
   - 2026-08-15_Calendario_15_16_Agosto.md
+  - 2026-08-18_Analisis_Rendimiento_28_Dias_Instagram_Facebook.md
+  - 2026-08-18_Instagram_Graph_API_28D.json
 organization: Operations/Research
 ---
 
@@ -18,7 +20,7 @@ organization: Operations/Research
 
 ## Resumen ejecutivo
 
-La auditoría se ejecutó **directamente contra Meta Graph API v26.0**, no mediante el conector MCP de Instagram. El resultado demuestra que la cuenta de Instagram no está desconectada de Graph API: el token identifica la Página correcta, encuentra la cuenta profesional vinculada, tiene los permisos de publicación declarados y puede leer media reciente.
+La auditoría se ejecutó **directamente contra Meta Graph API v26.0**, no mediante el conector MCP de Instagram. La cuenta de Instagram no está desconectada de Graph API: el token identifica la Página correcta, encuentra la cuenta profesional vinculada, conserva los permisos de publicación y puede leer media reciente. Sin embargo, la extracción de Insights del 18 de agosto mostró que el token actual no tiene permiso efectivo para esa acción.
 
 El problema anterior fue de **separación de canales**. El mensaje `Instagram connector not connected` pertenecía al conector MCP, mientras que la API directa sí respondió correctamente. Además, en la operación del 15–16 de agosto solo se ejecutó el flujo de Facebook; no se creó un contenedor ni se llamó a `media_publish` para Instagram. Por eso Instagram no quedó programado.
 
@@ -29,14 +31,20 @@ El problema anterior fue de **separación de canales**. El mensaje `Instagram co
 | User Access Token | HTTP 200; `Fernando Gdlr` (`2920605591459033`) |
 | Página derivada por `/me/accounts` | `Universe Sent Me` (`1036844829507460`) |
 | Cuenta profesional vinculada | `universe_sent_me_0326` (`17841462696378190`) |
-| Permisos | `instagram_basic`, `instagram_content_publish`, `pages_read_engagement`, `pages_manage_posts`, entre otros, en estado `granted` |
+| Permisos | `instagram_basic`, `instagram_content_publish`, `pages_read_engagement`, `pages_manage_posts`, entre otros, en estado `granted`; no aparece `instagram_manage_insights` |
 | Tareas de Página | `CREATE_CONTENT`, `MANAGE`, `MODERATE`, `ANALYZE`, entre otras |
 | Lectura de identidad Instagram | HTTP 200; 42 seguidores y 460 piezas de media al momento de la auditoría |
-| Lectura de media reciente | HTTP 200; devolvió Reels, imágenes y carruseles recientes |
+| Lectura de media reciente | HTTP 200; la extracción del corte devolvió 34 Reels, imágenes y carruseles |
 | Cuota de publicación | HTTP 200; `quota_usage=0`, `quota_total=100`, `quota_duration=86400` |
 | Publicación de Instagram el 15–16 | Prueba controlada ejecutada con 260583; `IG_CONTAINER_ID` y `IG_MEDIA_ID` registrados |
 
-La cuenta, la vinculación y los permisos están operativos a nivel de Graph API. La cuota en cero no prueba por sí sola que una publicación sea posible, pero elimina saturación de cuota como causa del bloqueo observado.
+La cuenta, la vinculación y los permisos de publicación están operativos a nivel de Graph API. La cuota en cero no prueba por sí sola que una publicación sea posible, pero elimina saturación de cuota como causa del bloqueo observado. La lectura de media está operativa; la lectura de Insights permanece bloqueada por el error de permisos `(#10) Application does not have permission for this action` para las 34 piezas probadas.
+
+## Estado actual de lectura de Insights
+
+El 18 de agosto de 2026 se consultaron 34 piezas de Instagram publicadas entre el 22 de julio y el 18 de agosto. Las 34 llamadas a `/{ig-media-id}/insights` respondieron HTTP 400 con el error `(#10) Application does not have permission for this action)`. La consulta de `/me/permissions` confirmó permisos como `instagram_basic`, `instagram_content_publish` y permisos de Página, pero no `instagram_manage_insights`. Por tanto, recuperar el inventario de media no equivale a tener acceso a los Insights.
+
+Para cerrar esta brecha se debe autorizar o renovar el token con el permiso de lectura de Insights de Instagram y repetir la extracción. Hasta entonces, el Growth OS puede registrar publicaciones, IDs, timestamps, permalinks, likes y comentarios básicos, pero no debe declarar alcance, impresiones, retención o seguidores ganados.
 
 ## Causa del problema anterior
 
@@ -77,6 +85,8 @@ La API de Instagram documenta creación y publicación de contenedores, pero el 
 La prueba de 260583 demuestra que PPA no bloqueó esta Página en esta operación. La respuesta `User must be on whitelist` indica que la capacidad de programación futura probada no está habilitada para esta ruta, app o cuenta; no es un fallo de permisos básicos ni de PPA. Por ahora, la única ruta confirmada es que Manus ejecute `media_publish` en el momento planificado mediante un scheduler externo autorizado.[1]
 
 ## Decisión operativa
+
+Para análisis de rendimiento, Instagram se extraerá mediante Graph API directa. La extracción debe ejecutar primero `/me/permissions`, registrar el resultado, consultar `/{ig-user-id}/media` y luego consultar `/{ig-media-id}/insights`. Si Insights responde HTTP 400 por permiso, el resultado debe marcarse `INSIGHTS_BLOQUEADOS_PERMISO`, sin convertir el error en ceros ni utilizar likes/comments como sustituto.
 
 Para futuros calendarios, Facebook e Instagram deben tener estados separados. Una fila con `Facebook; Instagram selectivo` no autoriza automáticamente ambas publicaciones. El CSV debe registrar `Meta_Post_ID` para Facebook y `IG_Container_ID`, `IG_Media_ID` y `IG_Permalink` para Instagram. Si Instagram no tiene un ID verificable, debe permanecer como `NO_EJECUTADO` o `PENDIENTE_PRUEBA`, nunca como `PROGRAMADO`.
 

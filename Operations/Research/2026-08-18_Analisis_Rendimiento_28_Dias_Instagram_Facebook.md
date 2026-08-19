@@ -22,7 +22,7 @@ organization: "Operations/Research"
 
 El corte analizado comprende del **22 de julio al 18 de agosto de 2026**, inclusive. Facebook dispone de una muestra cuantificable y amplia: 119 publicaciones, 30,729 interacciones acumuladas y una mediana de 37 interacciones por publicación. El rendimiento fue claramente más fuerte en la parte de julio incluida en el período que en agosto: la mediana bajó de 43 a 29 interacciones y la media descendió de 335.2 a 192.1.
 
-Instagram no tiene todavía un conjunto de insights comparable dentro del repositorio. El `Publication_Log.csv` registra ocho filas relacionadas con Instagram en el corte, pero varias corresponden a eliminaciones, una a una publicación programada y tres a publicaciones activas sin valores de interacciones 24/72 horas. El conector autenticado de Instagram no pudo recuperar publicaciones porque la sesión quedó sin conexión después de seleccionar la cuenta. Por tanto, este documento no atribuye cifras de rendimiento a Instagram.
+Instagram ya fue consultado directamente mediante **Meta Graph API v26.0**. La API devolvió **34 piezas de media** dentro del corte, pero rechazó las 34 consultas de Insights con HTTP 400 y el error `(#10) Application does not have permission for this action`. La comprobación de permisos mostró `instagram_basic`, `instagram_content_publish` y permisos de Página, pero no `instagram_manage_insights`. Por tanto, la API sí permite inventariar publicaciones y recuperar likes/comments básicos, pero todavía no permite extraer alcance, impresiones, retención ni el conjunto completo de Insights. El conector MCP no es la ruta de análisis; la limitación actual está en el permiso efectivo del token de Graph API.
 
 > **Veredicto:** Facebook muestra una base de distribución fuerte pero concentrada en pocos posts; Reels presentan una señal de interacción mucho menor que el conjunto general de publicaciones. Instagram está en estado de instrumentación incompleta y requiere una extracción autenticada de insights antes de cualquier conclusión de rendimiento.
 
@@ -33,7 +33,7 @@ Instagram no tiene todavía un conjunto de insights comparable dentro del reposi
 | Período | 22 de julio–18 de agosto de 2026, inclusive |
 | Facebook general | Publicaciones del dataset histórico de la página, con reacciones, comentarios, shares e interacciones actuales |
 | Facebook Reels | 12 Reels de la auditoría Meta dentro del período, con interacciones actuales acumuladas |
-| Instagram | Registros del `Publication_Log.csv`; no hay insights válidos 24/72h ni métricas de alcance o retención en el corte |
+| Instagram | Meta Graph API devuelve 34 piezas; las consultas de Insights fallan por permiso faltante |
 | Métrica principal | Mediana de interacciones por publicación |
 | Precaución | Los valores de Facebook general y Facebook Reels son acumulados actuales; no deben interpretarse como ventanas exactas 24/72 horas |
 
@@ -95,14 +95,17 @@ Los mejores Reels por interacciones fueron `Un rock bien gótico vs. una canció
 
 | Registro en el período | Cantidad | Interpretación |
 |---|---:|---|
-| Filas relacionadas con Instagram | 8 | Incluye estados publicados, eliminados y programados |
+| Piezas devueltas por Graph API | 34 | Inventario real de media dentro del corte |
+| Consultas de Insights | 34 | Todas respondieron HTTP 400 |
+| Consultas exitosas de Insights | 0 | El token carece de permiso efectivo para esa acción |
+| Error observado | `(#10) Application does not have permission for this action` | Rechazo de aplicación/permisos, no ausencia de publicaciones |
+| Filas relacionadas en `Publication_Log.csv` | 8 | Incluye estados publicados, eliminados y programados |
 | Publicaciones activas registradas | 3 | Una del 15 de agosto y dos republicadas el 16 de agosto |
-| Filas eliminadas manualmente | 4 | No deben entrar en aprendizaje ni rendimiento activo |
-| Fila programada | 1 | No es rendimiento observado |
-| Interacciones 24/72h disponibles | 0 | Los campos están vacíos |
-| Alcance, vistas, retención y seguidores ganados | 0 | No hay serie comparable documentada |
 
-Las dos republicaciones de `2608036` y `2608060` sí tienen IDs y permalinks reales de Instagram, y la publicación de `2608030` figura como publicada. Sin embargo, el repositorio no conserva sus insights de rendimiento. La conclusión correcta es **publicación confirmada, rendimiento no medido**, no rendimiento cero.
+Graph API recuperó correctamente IDs, captions, timestamps, permalink, tipo de media, likes y comentarios básicos de las piezas. No se pueden usar esos likes/comments como sustituto de Insights completos porque la extracción no tiene alcance ni impresiones y los valores no corresponden necesariamente a la misma ventana temporal que el corte. La conclusión correcta es **inventario confirmado, Insights bloqueados por permiso**, no rendimiento cero.
+
+Para cerrar la brecha se necesita renovar o autorizar el token con el permiso de lectura de insights de Instagram (`instagram_manage_insights`) y repetir la extracción. Mientras tanto, el análisis de Instagram debe permanecer en estado `No concluyente`.
+
 
 ## Diagnóstico y acciones prioritarias
 

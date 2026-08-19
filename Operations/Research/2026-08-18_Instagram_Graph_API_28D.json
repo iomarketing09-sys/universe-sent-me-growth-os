@@ -1,0 +1,504 @@
+{
+  "title": "Instagram Graph API — 28-day performance extraction",
+  "purpose": "Record the direct Meta Graph API extraction for Instagram between 2026-07-22 and 2026-08-18.",
+  "status": "Active",
+  "created": "2026-08-18",
+  "updated": "2026-08-18",
+  "version": "1.0",
+  "author": "Manus AI (CGO)",
+  "organization": "Operations/Research",
+  "cut": {
+    "start_local": "2026-07-22",
+    "end_local": "2026-08-18"
+  },
+  "account": {
+    "page_id": "1036844829507460",
+    "page_name": "Universe Sent Me",
+    "instagram_user_id": "17841462696378190",
+    "me": {
+      "id": "2920605591459033",
+      "name": "Fernando Gdlr"
+    }
+  },
+  "media_count": 34,
+  "rows": [
+    {
+      "media": {
+        "id": "17964221226159563",
+        "caption": "Analizando mi propio caos. 🧐 #UniverseSentMe",
+        "media_type": "IMAGE",
+        "media_product_type": "FEED",
+        "timestamp": "2026-08-18T00:00:12+0000",
+        "permalink": "https://www.instagram.com/p/DcKRoWUDez8/",
+        "like_count": 1,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/17964221226159563/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'AckOm0760u-qV_3V_df404U'}"
+    },
+    {
+      "media": {
+        "id": "18108003721848441",
+        "caption": "😮‍💨 #UniverseSentMe",
+        "media_type": "IMAGE",
+        "media_product_type": "FEED",
+        "timestamp": "2026-08-17T15:00:16+0000",
+        "permalink": "https://www.instagram.com/p/DcJT1yajCO3/",
+        "like_count": 0,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/18108003721848441/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'A00hZw0Cm3NrdT4iuxoUPcb'}"
+    },
+    {
+      "media": {
+        "id": "17909839698449207",
+        "caption": "No tenemos gustos raros, tenemos gustos salvajones. 😏 #UniverseSentMe #MaeveUSM #MemesUSM",
+        "media_type": "IMAGE",
+        "media_product_type": "FEED",
+        "timestamp": "2026-08-17T00:43:17+0000",
+        "permalink": "https://www.instagram.com/p/DcHxv5SlorV/",
+        "like_count": 0,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/17909839698449207/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'Abe6_ZTV_AMA352my4xC0WK'}"
+    },
+    {
+      "media": {
+        "id": "17891183814416135",
+        "caption": "Cuando hasta ustedes dos saben que son demasiado. 😅 #UniverseSentMe #ElaraUSM #EvanUSM",
+        "media_type": "IMAGE",
+        "media_product_type": "FEED",
+        "timestamp": "2026-08-17T00:43:02+0000",
+        "permalink": "https://www.instagram.com/p/DcHxuuWllRk/",
+        "like_count": 0,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/17891183814416135/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'AQIr0GVosueCK8cHEFexjj_'}"
+    },
+    {
+      "media": {
+        "id": "18145111759484218",
+        "caption": "¿Qué fibra tomas para cagarla tanto? 🐈 #UniverseSentMe #UniverseUSM #MemesUSM",
+        "media_type": "IMAGE",
+        "media_product_type": "FEED",
+        "timestamp": "2026-08-15T16:59:41+0000",
+        "permalink": "https://www.instagram.com/p/DcEX6BSE8ka/",
+        "like_count": 2,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/18145111759484218/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'AvPO97jk2yZT3BJqMgfVxiC'}"
+    },
+    {
+      "media": {
+        "id": "17915449680426911",
+        "caption": "#UniverseSentMe 🫶✨",
+        "media_type": "VIDEO",
+        "media_product_type": "REELS",
+        "timestamp": "2026-08-11T19:08:45+0000",
+        "permalink": "https://www.instagram.com/reel/Db6TV2kxGke/",
+        "like_count": 2,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/17915449680426911/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'AnZ0FTbkzYx10Y2tUekEibP'}"
+    },
+    {
+      "media": {
+        "id": "17967086586135144",
+        "caption": "Les dije que no eran papeles... \n#universesentme #UniverseUSM #memes #humor",
+        "media_type": "VIDEO",
+        "media_product_type": "REELS",
+        "timestamp": "2026-08-10T00:00:04+0000",
+        "permalink": "https://www.instagram.com/reel/Db1rU6rhs10/",
+        "like_count": 1,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/17967086586135144/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'AcbWuM_a4dJSpsI4Z06tUOW'}"
+    },
+    {
+      "media": {
+        "id": "17940860565300063",
+        "caption": "#UniverseSentMe #EvanUSM #ElaraUSM",
+        "media_type": "VIDEO",
+        "media_product_type": "REELS",
+        "timestamp": "2026-08-09T02:00:03+0000",
+        "permalink": "https://www.instagram.com/reel/DbzUMLwhdQC/",
+        "like_count": 1,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/17940860565300063/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'A4B_I0pgIAcvt6LEZS6VQgO'}"
+    },
+    {
+      "media": {
+        "id": "18119820211888688",
+        "caption": "Universe no sabe qué trae en la caja. \nNunca sabe. 🌙📦\nPero sí sabe quedarse a ver la cara que pone Elara cuando la abre.\n\n#UniverseSentMe #QueMeLlegoUSM #UniverseUSM #ElaraUSM",
+        "media_type": "VIDEO",
+        "media_product_type": "REELS",
+        "timestamp": "2026-08-09T01:22:27+0000",
+        "permalink": "https://www.instagram.com/reel/DbzPxSAxi4A/",
+        "like_count": 2,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/18119820211888688/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'AChojeuinNditjo0rDVb8dq'}"
+    },
+    {
+      "media": {
+        "id": "18081387974486985",
+        "caption": "No porque no te quiera. Es que las estrellas dijeron que hoy no es el día. \nY las estrellas no mienten.\n.\n.\n.\n#ElaraUSM #UniverseSentMe #MemesUSM #TarotUSM",
+        "media_type": "IMAGE",
+        "media_product_type": "FEED",
+        "timestamp": "2026-08-08T02:00:20+0000",
+        "permalink": "https://www.instagram.com/p/DbwvbbrFpel/",
+        "like_count": 1,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/18081387974486985/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'AHxPmvHjkxARE-wD6LKaMNo'}"
+    },
+    {
+      "media": {
+        "id": "18114590923942174",
+        "caption": "El café ya está, el gato ya está, lo único que falta es que la vida se porte bien hoy.\n\n¿Quién más llegó con la actita de guerrero esta mañana?\n\n.\n.\n.\n#UniverseUSM #UniverseSentMe #MemesUSM #GatosUSM",
+        "media_type": "IMAGE",
+        "media_product_type": "FEED",
+        "timestamp": "2026-08-07T15:00:31+0000",
+        "permalink": "https://www.instagram.com/p/Dbvj6xAAYhK/",
+        "like_count": 1,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/18114590923942174/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'AqV5wGyCQCPu90rt0y0T3tG'}"
+    },
+    {
+      "media": {
+        "id": "18173095738436142",
+        "caption": "A veces el mejor lugar para estar perdido es en ningún lugar.\n\nEntre las nubes, el tiempo no avanza. Solo flota.\n\nEl Fantasma no busca llegar a ninguna parte. Su único propósito es observar cómo el mundo sigue girando, a millones de kilómetros de distancia.\n\n¿Alguna vez te has sentido flotando en medio de la nada?\n\n.\n.\n.\n#FantasmaUSM #MardeNubesUSM #UniverseSentMe #Contemplativo #LoreUSM #AestheticReels",
+        "media_type": "CAROUSEL_ALBUM",
+        "media_product_type": "FEED",
+        "timestamp": "2026-08-07T00:11:10+0000",
+        "permalink": "https://www.instagram.com/p/Dbt-JFNoCsd/",
+        "like_count": 0,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/18173095738436142/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'ANTmo-BAODOIfHW_NudVoS5'}"
+    },
+    {
+      "media": {
+        "id": "18072347879724148",
+        "caption": "Me hace falta vitamina B.\n\n(besos).\n\n.\n.\n\n#FantasmaUSM #MomentosUSM #UniverseSentMe #Contemplativo #AestheticReels MelancholyVibes",
+        "media_type": "VIDEO",
+        "media_product_type": "REELS",
+        "timestamp": "2026-08-06T00:29:53+0000",
+        "permalink": "https://www.instagram.com/reel/DbrbatqRaTs/",
+        "like_count": 1,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/18072347879724148/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'Aq_wQhsvPBDk1RT91YqWhHV'}"
+    },
+    {
+      "media": {
+        "id": "18078999359765013",
+        "caption": "😒",
+        "media_type": "IMAGE",
+        "media_product_type": "FEED",
+        "timestamp": "2026-08-05T02:15:04+0000",
+        "permalink": "https://www.instagram.com/p/DbpCuxHoNFV/",
+        "like_count": 1,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/18078999359765013/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'Ah6Iwjk0vZ3MMARNTTerjKW'}"
+    },
+    {
+      "media": {
+        "id": "18143330614554220",
+        "caption": "El destino tiene muchas formas, pero ninguna es ordinaria. Hoy completamos la colección de las Barajas de Universe Sent Me. Desde la raíz de Wilfred hasta el caos de Silvio. 🃏✨\n\nSi tuvieras que elegir una para que te leyera la semana, ¿cuál sería?",
+        "media_type": "CAROUSEL_ALBUM",
+        "media_product_type": "FEED",
+        "timestamp": "2026-08-05T00:00:23+0000",
+        "permalink": "https://www.instagram.com/p/DbozUXAEQi1/",
+        "like_count": 0,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/18143330614554220/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'AaM-Ylz38GqzPjJajW0Qv90'}"
+    },
+    {
+      "media": {
+        "id": "18054103250543427",
+        "caption": "Eficiencia divina vs Procesamiento artificial. El Ganso: 1, ChatGPT: 0. 🕶️✨\n\n #UniverseSentMe #GansoDios #IAvsRealidad #HumorAbsurdo #DiseñoDivino",
+        "media_type": "IMAGE",
+        "media_product_type": "FEED",
+        "timestamp": "2026-08-04T14:00:15+0000",
+        "permalink": "https://www.instagram.com/p/Dbnuo2wjeN4/",
+        "like_count": 0,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/18054103250543427/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'AjbBnSLZsZY9pwTylplPDYW'}"
+    },
+    {
+      "media": {
+        "id": "18161490751464718",
+        "caption": "Dicen que si te sales de la realidad en el lugar equivocado, terminas aquí.\n\nFantasma no se perdió, su lógica de supervivencia lo llevó al espacio liminal definitivo. 👻🚪\n\nEtiqueta a esa persona que vive \"glitcheada\" entre el pasado y el presente.\n\n #UniverseSentMe #FantasmaUSM #Backrooms #LiminalSpaces #GlitchCore",
+        "media_type": "VIDEO",
+        "media_product_type": "REELS",
+        "timestamp": "2026-08-04T02:27:36+0000",
+        "permalink": "https://www.instagram.com/reel/Dbme_JDRg2T/",
+        "like_count": 2,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/18161490751464718/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'ADF7BYXCiFZlGxHXHQFi2Zm'}"
+    },
+    {
+      "media": {
+        "id": "18112416184981205",
+        "caption": "El Tarot ha evolucionado. 🌌🔮 \n\nPresentamos las Barajas de Poder de Universe Sent Me. \nUn viaje visual a través de la esencia de nuestros personajes. \n\nDesliza para descubrir la magia oculta en cada diseño. \n\n#UniverseSentMe #TarotEvolution #CharacterDesign #ArteIA #ConceptArt #CartasMisticas #LoreUSM #FlowArt",
+        "media_type": "CAROUSEL_ALBUM",
+        "media_product_type": "FEED",
+        "timestamp": "2026-08-03T15:30:10+0000",
+        "permalink": "https://www.instagram.com/p/DblUIkIDYbF/",
+        "like_count": 0,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/18112416184981205/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'AofQvNiagMiW27xrVMriM2L'}"
+    },
+    {
+      "media": {
+        "id": "17873601261628669",
+        "caption": "Hay conversaciones que no llegan a ningun lado 👻 🐱 Universe lo intentó.\n\n¿A quien le tienes que explicar tu vida como tres veces porque sigue atorado en el mismo tema? 👇\n\n#UniverseSentMe #FantasmaUSM #memesen español #relatable #̤c̤o̤m̤e̤d̤y̤r̤e̤e̤l̤s̤",
+        "media_type": "VIDEO",
+        "media_product_type": "REELS",
+        "timestamp": "2026-08-03T03:23:29+0000",
+        "permalink": "https://www.instagram.com/reel/DbkA8Q7xz_t/",
+        "like_count": 0,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/17873601261628669/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'A7U4FCz1UNEl2whF5VjEV_6'}"
+    },
+    {
+      "media": {
+        "id": "17894839311585843",
+        "caption": "No todo silencio incomoda.\nAlgunos se sienten como estar exactamente donde debes estar.\n\n#UniverseSentMe #SilencioReconfortante #Compañía #MemesConAlma #Reflexion #FYP #EvanUSM #KiriUSM",
+        "media_type": "IMAGE",
+        "media_product_type": "FEED",
+        "timestamp": "2026-08-03T02:10:06+0000",
+        "permalink": "https://www.instagram.com/p/Dbj4knLgEuH/",
+        "like_count": 1,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/17894839311585843/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'AeUjhWphZ4M9d2MGLdlyEuk'}"
+    },
+    {
+      "media": {
+        "id": "17884469265458755",
+        "caption": "Que quede claro: adulto sí, pero no todos los días, ¿va? 😎☁️\n\n#UniverseSentMe #AdultingMemes #NoMamenMemes #HumorMexicano #MemesRelatable #FYP #UniverseUSM",
+        "media_type": "IMAGE",
+        "media_product_type": "FEED",
+        "timestamp": "2026-08-03T00:09:05+0000",
+        "permalink": "https://www.instagram.com/p/DbjquRfkVjn/",
+        "like_count": 0,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/17884469265458755/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'Ar7QpHS3yyftzN_oFpIgyXt'}"
+    },
+    {
+      "media": {
+        "id": "18099818579205676",
+        "caption": "Ghost of you. 👻\n\n #UniverseSentMe #relatable #destiny #MaeveUSM #FantasmaUSM",
+        "media_type": "IMAGE",
+        "media_product_type": "FEED",
+        "timestamp": "2026-08-02T22:54:23+0000",
+        "permalink": "https://www.instagram.com/p/DbjiLJzj-C1/",
+        "like_count": 0,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/18099818579205676/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'A96UiP22Wm8hZ1NWIrCXop_'}"
+    },
+    {
+      "media": {
+        "id": "18359856049300971",
+        "caption": "Una vez muerta la idealización,\nsolo eres cualquier persona...\n\n#UniverseSentMe #WilfredUSM",
+        "media_type": "IMAGE",
+        "media_product_type": "FEED",
+        "timestamp": "2026-08-02T16:30:20+0000",
+        "permalink": "https://www.instagram.com/p/Dbi2OUpgUgq/",
+        "like_count": 1,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/18359856049300971/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'AtnMNG6kj8Cpt6h8rQphYoa'}"
+    },
+    {
+      "media": {
+        "id": "17930851986363448",
+        "caption": "CRAWWWWWWW. A veces el único lenguaje honesto es un grito al vacío antes de dormir.\n\n#UniverseSentMe #HumorAbsurdo #GritoAlVacio #CierreDeDia",
+        "media_type": "IMAGE",
+        "media_product_type": "FEED",
+        "timestamp": "2026-08-02T03:38:42+0000",
+        "permalink": "https://www.instagram.com/p/Dbhd6oij4jT/",
+        "like_count": 0,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/17930851986363448/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'A8GSsqET0Jj1g7Ud42D6noQ'}"
+    },
+    {
+      "media": {
+        "id": "17922445887404611",
+        "caption": "La sabiduría del bosque es clara: lo que ves en el muro es solo la punta del iceberg. El verdadero caos está en el mensaje directo 🌲🤐\n\n#universesentme #WilfredUSM #humorsarcástico #murosvemos #reelsinstagram",
+        "media_type": "VIDEO",
+        "media_product_type": "REELS",
+        "timestamp": "2026-08-02T01:30:04+0000",
+        "permalink": "https://www.instagram.com/reel/DbhPPiHhlDu/",
+        "like_count": 0,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/17922445887404611/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'ArQ6PfgCx6g5pswBpI1XjM2'}"
+    },
+    {
+      "media": {
+        "id": "18129718936629871",
+        "caption": "Dormir es para los débiles. Yo soy el débil. Buenas noches, universo. \n\n#UniverseSentMe #Relatable #CansancioExistencial #BuenasNoches #HumorIA",
+        "media_type": "IMAGE",
+        "media_product_type": "FEED",
+        "timestamp": "2026-08-02T00:00:11+0000",
+        "permalink": "https://www.instagram.com/p/DbhE6Lsidtp/",
+        "like_count": 0,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/18129718936629871/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'AVjDcdBPM2pJpTMZJhHhI3q'}"
+    },
+    {
+      "media": {
+        "id": "18212697721343022",
+        "caption": "Si estás leyendo esto, ¡felicidades! Has sobrevivido a otro microinstante del caos universal. Sig\n\n#UniverseSentMe #HumorExistencial #MemesUSM",
+        "media_type": "IMAGE",
+        "media_product_type": "FEED",
+        "timestamp": "2026-08-01T17:59:58+0000",
+        "permalink": "https://www.instagram.com/p/Dbgbr4oDGlp/",
+        "like_count": 1,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/18212697721343022/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'AvQ0ejZqNZwDwZ8v3AR0MRL'}"
+    },
+    {
+      "media": {
+        "id": "17893864368579271",
+        "caption": "Mi gato sabe hacer de todo... \n\n#universesentme #vidagatuna\n #UniverseUSM #humor",
+        "media_type": "VIDEO",
+        "media_product_type": "REELS",
+        "timestamp": "2026-07-30T02:03:03+0000",
+        "permalink": "https://www.instagram.com/reel/DbZkdIQRI3e/",
+        "like_count": 3,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/17893864368579271/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'AUqBh2o2FnjwTGxCcvxFU4x'}"
+    },
+    {
+      "media": {
+        "id": "18004973039958799",
+        "caption": "Un rock bien gótico Vs \nuna canción de Juan Gabriel\n\n#UniverseSentMe #UniverseUSM\n #vidagatuna #humor",
+        "media_type": "VIDEO",
+        "media_product_type": "REELS",
+        "timestamp": "2026-07-29T19:03:17+0000",
+        "permalink": "https://www.instagram.com/reel/DbY0A9IR5Xm/",
+        "like_count": 1,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/18004973039958799/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'A4Y66u6WtD67ZI0xciVBu-V'}"
+    },
+    {
+      "media": {
+        "id": "17884121250454162",
+        "caption": "#universesentme #universo #WilfredUSM #humor #MomentosUSM",
+        "media_type": "VIDEO",
+        "media_product_type": "REELS",
+        "timestamp": "2026-07-29T04:14:09+0000",
+        "permalink": "https://www.instagram.com/reel/DbXOZa0BR_W/",
+        "like_count": 0,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/17884121250454162/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'ArRf2THf2ceT2d7EhZplBZ3'}"
+    },
+    {
+      "media": {
+        "id": "17975917574904303",
+        "caption": "Mi ascenso a la locura 😵‍💫 \n\n#universesentme #hadaUSM #MomentosUSM #reflexiones",
+        "media_type": "VIDEO",
+        "media_product_type": "REELS",
+        "timestamp": "2026-07-27T19:22:59+0000",
+        "permalink": "https://www.instagram.com/reel/DbTsX2JxgVm/",
+        "like_count": 2,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/17975917574904303/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'AWL7-8wNaFfUMashjTQU5z6'}"
+    },
+    {
+      "media": {
+        "id": "17890180845666321",
+        "caption": "API Test for 'instagram_content_publish'",
+        "media_type": "IMAGE",
+        "media_product_type": "FEED",
+        "timestamp": "2026-07-27T04:50:11+0000",
+        "permalink": "https://www.instagram.com/p/DbSJSD2HNCI/",
+        "like_count": 0,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/17890180845666321/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'A5YI-BE2qwBwv2ses_wiXf9'}"
+    },
+    {
+      "media": {
+        "id": "18079365233681564",
+        "caption": "Dicen que si lo ves caminando, no lo sigas...\nLos gatos sí saben a dónde va 👻 🌲 \n\n#universesentme #fantasmaUSM #MomentosUSM #darkfantasy #fyp",
+        "media_type": "VIDEO",
+        "media_product_type": "REELS",
+        "timestamp": "2026-07-25T21:10:02+0000",
+        "permalink": "https://www.instagram.com/reel/DbOvtHXRovy/",
+        "like_count": 6,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/18079365233681564/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'A9iVVDQctUt1odRJDXZLBYu'}"
+    },
+    {
+      "media": {
+        "id": "18102391205336788",
+        "caption": "Cultiva la paz interior..\n\n#universesentme #relatable #humoracido #rockstar",
+        "media_type": "VIDEO",
+        "media_product_type": "REELS",
+        "timestamp": "2026-07-24T16:16:24+0000",
+        "permalink": "https://www.instagram.com/reel/DbLpYFXx57F/",
+        "like_count": 14,
+        "comments_count": 0
+      },
+      "insights": null,
+      "insight_error": "/18102391205336788/insights HTTP 400: {'message': '(#10) Application does not have permission for this action', 'type': 'OAuthException', 'code': 10, 'fbtrace_id': 'ApvuW1qmWHsb9gnbiiHM201'}"
+    }
+  ],
+  "source": "Meta Graph API v26.0 direct",
+  "retrieved_at_utc": "2026-08-19T02:40:31.120938+00:00"
+}
