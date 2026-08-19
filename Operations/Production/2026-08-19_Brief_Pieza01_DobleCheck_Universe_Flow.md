@@ -4,7 +4,7 @@ purpose: "Definir el blueprint de producción, la instrumentación y los control
 status: Active
 created: 2026-08-19
 updated: 2026-08-19
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO), aprobado por Fernando"
 related_documents:
   - "2026-08-19_Diseno_Experimento_Reels_v2.md"
@@ -109,15 +109,23 @@ El texto se añade en edición, no dentro de Flow, para no depender de tipograf�
 | Caption | `yo después de mandar “no pasa nada”` | Publicación |
 | Hashtags iniciales | `#UniverseSentMe #UniverseUSM #MemesUSM` | Publicación |
 
-## Audio de edición para Instagram — recomendación vigente al 2026-08-19
+## Audio de edición para Instagram — selección verificable en Edits
 
-La narrativa base permanece comprensible en silencio. Por eso el audio de tendencia no se hornea en el máster ni sustituye los SFX: se añade **solo en la versión de Instagram**, en volumen bajo, y se selecciona de forma nativa al publicar. TikTok y YouTube Shorts conservan el máster con `ping`, `whoosh` y cierre de portal para poder elegir una tendencia propia en cada plataforma.
+La narrativa base permanece comprensible en silencio. Por eso ningún audio de tendencia se hornea en el máster ni sustituye los SFX: se añade **solo en la versión de Instagram**, en volumen bajo y únicamente después de comprobar que existe en la biblioteca real de la cuenta. TikTok y YouTube Shorts conservan el máster con `ping`, `whoosh` y cierre de portal para poder elegir una tendencia propia en cada plataforma.
 
-| Prioridad | Audio | Encaje con P01 | Uso recomendado | Riesgo / condición |
-|---:|---|---|---|---|
-| 1 | **`Not Very Nonchalant` — original sound, Trace Young** | La contradicción entre el texto “no pasa nada” y Universe cerrando el portal con absoluta resignación crea ironía inmediata. Es un audio original de tendencia y se reporta disponible para cuentas business. [1] | Iniciar desde la frase que contiene “nonchalant”; música a 10–15%, `ping` y cierre del portal por encima. No editar el gesto al ritmo de la voz: el gesto debe seguir pareciendo una decisión seca. | Confirmar que aparezca en Edits y que el tramo seleccionado no cubra el `ping`. Si no aparece, no sustituirlo por un audio parecido. |
-| 2 | **`I Treated You Bad (MJ Remix)` — original sound, neverbadagain** | El beat drop puede sincronizar teléfono → portal → Universe como revelación visual, pero vuelve el contenido más “transformación épica” que reacción incómoda. [1] | Usar solo si Fernando prioriza energía de transición: texto y doble check antes del drop; aparición de Universe al drop; cierre de portal con SFX propio. | Es audio licenciado y debe validarse en la biblioteca de la cuenta; no se recomienda para la versión cruzada sin confirmar derechos. |
-| No usar en P01 | **`You Never Take Me to Bangladesh` — Ian McConnell** | Es tendencia de humor absurdo, pero su letra propone un chiste paralelo y desplaza el remate visual de Universe. [1] [2] | Reservar para una pieza futura basada específicamente en quejas que escalan hacia el absurdo. | Audio licenciado; verificar disponibilidad en cuenta Creator. |
+> **Registro de disponibilidad — 2026-08-19:** Fernando no encontró en Instagram Edits las tres pistas sugeridas desde listados externos. Quedan retiradas como recomendación operativa. Los rankings públicos son una fuente de inspiración, no prueba de disponibilidad por cuenta, país, tipo de perfil o biblioteca de Edits.
+
+| Prioridad | Tipo de audio que se debe buscar en Edits | Por qué encaja con P01 | Condición de aprobación |
+|---:|---|---|---|
+| 1 | Instrumental ambiental, ligeramente irónico o de tensión suave; sin voz relevante durante los primeros 6 s. | Protege el caption y deja que la acción de Universe sea el remate. | Se entiende el Reel con volumen cero; `ping`, `whoosh` y cierre de portal siguen siendo audibles. |
+| 2 | Original audio de reacción/deadpan con frase breve, sin chiste distinto al del caption. | Puede añadir señal de tendencia sin redirigir la interpretación. | La frase no contradice “no pasa nada”, no ocupa el segundo 0 y no obliga a leer labios. |
+| 3 | Instrumental con un único beat o cambio de energía entre los segundos 2.5–3.5. | Puede subrayar la entrada de Universe, no la destrucción del portal. | El beat coincide con la revelación de Universe; el swipe sigue llevando el cierre por SFX, no por música. |
+
+### Protocolo de búsqueda dentro de Edits
+
+Abrir **Audio → Tendencias / Para ti** y escuchar los primeros seis segundos de candidatos instrumentales, ambientales o de reacción. Descartar de inmediato canciones con letras que narren otra situación romántica, una punchline verbal, una aceleración de baile o un drop demasiado dominante. Elegir tres candidatos disponibles y probarlos sobre el máster sin alterar los clips: gana el que eleve la anticipación del portal y deje el gesto de cerrar como una decisión fría, no como un baile o una transformación heroica.
+
+Si ningún candidato supera ese filtro, la decisión correcta es **SFX-only**. La pieza ya fue diseñada para funcionar así; no se debe sacrificar claridad por adherirse a una tendencia inaccesible.
 
 ### Sincronía recomendada con la opción 1
 
@@ -128,7 +136,7 @@ La narrativa base permanece comprensible en silencio. Por eso el audio de tenden
 | 3.0–5.5 s | Universe aparece y cierra el portal. | Bajar la música 2–3 dB durante el swipe y poner el SFX de cierre en primer plano. |
 | 5.5–6.0 s | Línea violeta final y corte. | Dejar una cola mínima; no forzar beat ni loop. |
 
-**Estado de decisión:** `Recomendación preparada; validación final en Instagram Edits pendiente`. La disponibilidad, el nombre exacto y el tramo del audio se confirman en la biblioteca de la cuenta justo antes de publicar; una tendencia puede cambiar en días. Ninguna versión posterior debe depender de esta canción para que el experimento mida el hook y payoff visual, no el audio.
+**Estado de decisión:** `Selección pendiente en biblioteca de Edits`. La disponibilidad, el nombre exacto y el tramo del audio se confirman dentro de la cuenta justo antes de publicar; una tendencia puede cambiar en días. Ninguna versión posterior debe depender de esta canción para que el experimento mida el hook y payoff visual, no el audio.
 
 ## Referencias necesarias antes de generar video
 
