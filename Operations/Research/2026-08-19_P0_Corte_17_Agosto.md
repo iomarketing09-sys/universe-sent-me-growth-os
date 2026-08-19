@@ -51,3 +51,31 @@ El extractor existente, si se ejecuta directamente sobre `Publication_Log.csv`, 
 Las cinco filas del baseline permanecen en `Pendiente_ventana`. `interactions_24h`, `comments_root_24h`, `shares_24h`, `interactions_72h`, `comments_root_72h`, `shares_72h` e `interactions_72h` siguen vacías. El ExperimentLog conserva sus valores vacíos y no recibió totales lifetime como sustitutos.
 
 La evidencia JSON completa se conserva en `2026-08-19_P0_Corte_17_Agosto.json`. El siguiente corte válido será cuando al menos una de las cinco publicaciones haya superado 24 horas; el proceso deberá consultar Meta en modo lectura y, si la API vuelve a entregar únicamente acumulados lifetime, registrar la limitación sin llenar los campos estrictos de 24/72h.
+
+
+## Cierre provisional del ciclo de aprendizaje — corte observado del 19 de agosto
+
+El alcance oficial de P0 es **el lote de cinco publicaciones del 17 de agosto**, no el lote de nueve publicaciones del 15–16. El lote del 15–16 (`CNT-031`–`CNT-039`) pertenece a la revisión histórica/operativa `HB-003|HB-004|HB-005` y no debe mezclarse con las cinco filas del baseline P0.
+
+A las **03:14 UTC del 19 de agosto de 2026** se ejecutó el extractor general. Como su fuente operativa contiene primero el lote 15–16, produjo evidencia para nueve filas `PUB-FB-15_16-*`; esa salida se conserva como evidencia separada y **no se usa para cerrar P0**. A continuación se consultaron directamente los cinco Meta Post IDs del baseline P0 para obtener un corte observado actual.
+
+| Slot local | Asset | Reacciones acumuladas observadas | Comentarios acumulados | Compartidos | Interacciones observadas |
+|---|---|---:|---:|---:|---:|
+| 10:00 | `260633` | 47 | 2 | 8 | 57 |
+| 11:00 | `2608028` | 462 | 2 | 172 | 636 |
+| 13:30 | `2608034- Elara` | 29 | 4 | 4 | 37 |
+| 16:00 | `260642` | 2 | 0 | 2 | 4 |
+| 17:00 | `2608027.jpeg` | 38 | 2 | 11 | 51 |
+| **Total** | **5 publicaciones** | **578** | **10** | **197** | **785** |
+
+Estas cifras son **totales acumulados observados al momento de la consulta**, no snapshots exactos de 24 o 72 horas. Por integridad metodológica no se escriben en los campos estrictos `interactions_24h` o `interactions_72h`.
+
+### Veredicto provisional
+
+El resultado está fuertemente concentrado en `2608028`, que reúne 636 de las 785 interacciones observadas. La señal provisional favorece una combinación de **identificación emocional amplia, composición visual clara y caption mínimo basado en emojis**, pero no permite atribuir causalidad a un solo factor. El segundo nivel —`260633` con 57 y `2608027` con 51— queda muy por debajo; `260642` fue el outlier de bajo rendimiento con 4 interacciones.
+
+La hipótesis de trabajo queda **parcialmente respaldada como señal editorial**, no validada como regla de horario: hay una diferencia grande entre piezas, pero la muestra de cinco publicaciones no permite concluir que las 11:00 sean universalmente mejores ni que las 16:00 sean universalmente débiles.
+
+### Estado del ciclo
+
+El ciclo queda **cerrado provisionalmente con limitación de ventana temporal**. El aprendizaje es utilizable para orientar la siguiente ola, pero las métricas exactas de 24/72 horas siguen pendientes porque Meta entregó acumulados lifetime. No se modificó Instagram ni se publicó contenido durante este corte.

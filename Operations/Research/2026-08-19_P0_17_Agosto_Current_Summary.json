@@ -1,0 +1,58 @@
+{
+  "experiment_id": "EXP-2026-08-CAL-01",
+  "official_p0_scope": "five confirmed Facebook posts published 2026-08-17",
+  "window_type": "current lifetime totals observed at extraction time; not exact 24h/72h snapshots",
+  "rows": [
+    {
+      "meta_post_id": "1036844829507460_122151373701072582",
+      "created_time": "2026-08-17T15:00:03+0000",
+      "message": "😮‍💨 #UniverseSentMe",
+      "reactions_lifetime": 47,
+      "comments_lifetime": 2,
+      "shares_lifetime": 8,
+      "interactions_observed": 57
+    },
+    {
+      "meta_post_id": "1036844829507460_122151373761072582",
+      "created_time": "2026-08-17T16:00:04+0000",
+      "message": "🥰🌎😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reactions_lifetime": 462,
+      "comments_lifetime": 2,
+      "shares_lifetime": 172,
+      "interactions_observed": 636
+    },
+    {
+      "meta_post_id": "1036844829507460_122151373833072582",
+      "created_time": "2026-08-17T18:30:01+0000",
+      "message": "👀🤫🃏 #ElaraUSM #MemesUSM #UniverseSentMe",
+      "reactions_lifetime": 29,
+      "comments_lifetime": 4,
+      "shares_lifetime": 4,
+      "interactions_observed": 37
+    },
+    {
+      "meta_post_id": "1036844829507460_122151373893072582",
+      "created_time": "2026-08-17T21:00:02+0000",
+      "message": "😶‍🌫️ #UniverseSentMe",
+      "reactions_lifetime": 2,
+      "comments_lifetime": 0,
+      "shares_lifetime": 2,
+      "interactions_observed": 4
+    },
+    {
+      "meta_post_id": "1036844829507460_122151373953072582",
+      "created_time": "2026-08-17T22:00:03+0000",
+      "message": "😮‍💨😵‍💫😂 #MemesUSM #UniverseSentMe",
+      "reactions_lifetime": 38,
+      "comments_lifetime": 2,
+      "shares_lifetime": 11,
+      "interactions_observed": 51
+    }
+  ],
+  "totals": {
+    "reactions_lifetime": 578,
+    "comments_lifetime": 10,
+    "shares_lifetime": 197,
+    "interactions_observed": 785
+  }
+}
