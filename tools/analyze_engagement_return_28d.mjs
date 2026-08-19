@@ -3,23 +3,22 @@ import path from 'node:path'
 
 const root = '/home/ubuntu/universe-sent-me-growth-os'
 const social = JSON.parse(fs.readFileSync(path.join(root, 'Operations/Research/2026-08-19_Social_Performance_28D_Normalizado.json'), 'utf8'))
+const facebookRows = JSON.parse(fs.readFileSync(path.join(root, 'Operations/Research/2026-08-19_Windsor_Facebook_Organic_28D_Normalizado.json'), 'utf8')).rows
 
-const facebook = { platform: 'Facebook', pieces: 119, engagement: 30729, views: null, definition: 'reacciones + comentarios + shares', window: 'corte 22 jul–18 ago 2026' }
+const sum = (rows, field) => rows.reduce((total, row) => total + Number(row[field] ?? 0), 0)
+const instagramRows = social.platforms.Instagram.content_rows
+const tikTokRows = social.platforms.TikTok.content_rows
+const youtubeRows = social.platforms.YouTube.daily_rows
+const facebook = { platform: 'Facebook', pieces: facebookRows.length, engagement: facebookRows.reduce((total, row) => total + Number(row.post_reactions_total ?? 0) + Number(row.post_comments_total ?? 0) + Number(row.post_activity_by_action_type_share ?? 0), 0), views: null, definition: 'reacciones + comentarios + shares', window: 'corte 22 jul–18 ago 2026' }
 const records = [
   facebook,
-  ...['Instagram', 'TikTok'].map((platform) => ({
-    platform,
-    pieces: social.platforms[platform].aggregates.content_count,
-    engagement: social.platforms[platform].aggregates.engagement_total,
-    views: social.platforms[platform].aggregates.views_total,
-    definition: platform === 'Instagram' ? 'media_engagement nativo' : 'likes + comments + shares + favoritos',
-    window: 'snapshot actual / lifetime de piezas publicadas en el corte',
-  })),
+  { platform: 'Instagram', pieces: instagramRows.length, engagement: sum(instagramRows, 'engagement'), views: sum(instagramRows, 'views'), definition: 'likes + comments + shares + guardados', window: 'snapshot actual / lifetime de piezas publicadas en el corte' },
+  { platform: 'TikTok', pieces: tikTokRows.length, engagement: sum(tikTokRows, 'engagement'), views: sum(tikTokRows, 'views'), definition: 'likes + comments + shares + favoritos', window: 'snapshot actual / lifetime de piezas publicadas en el corte' },
   {
     platform: 'YouTube',
     pieces: social.platforms.YouTube.lifetime_snapshots.length,
-    engagement: social.platforms.YouTube.daily_aggregates.engagement_total,
-    views: social.platforms.YouTube.daily_aggregates.views_total,
+    engagement: sum(youtubeRows, 'likes') + sum(youtubeRows, 'comments'),
+    views: sum(youtubeRows, 'views'),
     definition: 'likes + comments + shares de actividad diaria acumulada',
     window: 'actividad diaria acumulada del corte',
   },

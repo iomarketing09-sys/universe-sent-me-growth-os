@@ -8,12 +8,12 @@
   "records": [
     {
       "platform": "Facebook",
-      "pieces": 119,
-      "engagement": 30729,
+      "pieces": 143,
+      "engagement": 33482,
       "views": null,
       "definition": "reacciones + comentarios + shares",
       "window": "corte 22 jul–18 ago 2026",
-      "engagement_per_piece": 258.2268907563025,
+      "engagement_per_piece": 234.13986013986013,
       "engagement_per_100_views": null
     },
     {
@@ -39,12 +39,12 @@
     {
       "platform": "Instagram",
       "pieces": 34,
-      "engagement": 59,
-      "views": 1646,
-      "definition": "media_engagement nativo",
+      "engagement": 56,
+      "views": 1650,
+      "definition": "likes + comments + shares + guardados",
       "window": "snapshot actual / lifetime de piezas publicadas en el corte",
-      "engagement_per_piece": 1.7352941176470589,
-      "engagement_per_100_views": 3.5844471445929527
+      "engagement_per_piece": 1.6470588235294117,
+      "engagement_per_100_views": 3.3939393939393945
     }
   ],
   "recommendation": {
