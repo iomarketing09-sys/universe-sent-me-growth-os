@@ -120,3 +120,40 @@ El texto se añade en edición, no dentro de Flow, para no depender de tipograf�
 ## Control de calidad y medición
 
 La pieza se rechaza o itera si el conflicto no se entiende en el primer segundo, Universe no es legible como gato con gafas, el portal elimina el teléfono sin transición, aparece una marca de agua/texto generado o el video necesita audio para comprenderse. Tras la primera generación se decide si pasa a edición o si se activa la ruta B; no se gastan más puntos sin registrar el fallo específico. Tras publicar, se capturan IDs nativos por plataforma y métricas a 24/72 h. El veredicto permitido es `WIN`, `SIGNAL`, `FAIL` o `NO_LEARNING`; las métricas principales son retención inicial, shares, reach de no seguidores y completaciones.
+
+## Iteración V1 — render no aprobado
+
+**Archivo revisado:** `Cat_closes_phone_portal_202608191533.mp4`. La pieza conserva una idea visual prometedora —teléfono, energía púrpura y aparición de Universe—, pero no cumple el propósito del experimento como Reel de situación cotidiana con payoff seco.
+
+| Hallazgo | Efecto | Decisión V2 |
+|---|---|---|
+| El movimiento inicia tarde; el primer segundo es casi estático. | El hook no tiene urgencia visual. | Iniciar con doble check y pulso violeta ya activos. |
+| La mesa/mano desaparecen cuando empieza el bosque. | Salto físico que parece un corte accidental. | La cámara entra por completo a la pantalla antes de revelar el bosque. |
+| Universe cambia tipo de gafas y proporciones. | Se pierde consistencia de IP. | Usar el panel vertical de Universe solo como referencia de personaje del clip 2 y bloquear acción corporal mínima. |
+| Universe camina y abre/observa el portal. | El final parece “aventura mágica”, no reacción a un mensaje. | Universe se queda junto al portal y lo cierra con una sola pata, como cerrar un chat. |
+| Aparece una marca de agua y el loop no cierra. | Distracción y final sin intención. | Eliminar marcas de las referencias y no forzar loop en esta prueba. |
+
+**Veredicto V1:** `FAIL` de ejecución, no de hipótesis. No permite evaluar `HB-REEL-01` porque alteró la acción principal y contaminó la consistencia del personaje.
+
+## Ruta V2 — dos clips con continuidad física
+
+La ruta V2 reemplaza el clip único. No se usan las dos referencias simultáneamente como inicio/final de una sola interpolación: esa instrucción empuja a Flow a inventar una aventura completa. El primer panel controla solo el clip 1; el segundo panel controla el personaje y mundo del clip 2.
+
+| Clip | Modelo y coste | Referencias | Acción única | Final utilizable |
+|---|---:|---|---|---|
+| 1 — `PHONE → SCREEN` | Omniflash, 4 s, 7 puntos | Panel de teléfono únicamente. | Doble check activo; la cámara entra en la pantalla mientras el brillo violeta llena el cuadro. | Pantalla/portal violeta ocupa el 100% del frame. |
+| 2 — `UNIVERSE CLOSES CHAT` | Veo Lite, 4–7 s, 10 puntos | Último frame real del clip 1 como frame inicial; panel de Universe como referencia de personaje. | Universe junto al portal da un parpadeo y lo cierra con una pata; no camina. | Portal reducido a una línea violeta; corte limpio a negro o frame de reacción. |
+
+**Presupuesto V2 de primera pasada:** 17 puntos. Si falla el clip 1, solo se regenera ese clip; si falla Universe, solo se regenera el clip 2. No se vuelve a generar la pareja completa sin identificar el fallo.
+
+### Prompt V2 — Clip 1: PHONE → SCREEN
+
+```text
+Use only the attached phone image as visual reference. Vertical 9:16, 4 seconds, one continuous close-up. The generic logo-free phone is already resting on the same warm worn wooden desk, with one anonymous hand still at the edge of frame. At frame one, the fictional chat already shows a pair of blue double-check marks and a small violet glow begins inside the phone screen. The phone, desk and hand remain physically present while the camera slowly pushes directly into the phone screen; the violet light expands from inside the display and fills the frame completely by the final second. Do not reveal a forest, cat, portal doorway, new characters, readable text, logos, or watermarks yet. The final frame must be only a soft luminous violet screen texture with spiral cloud shapes, ready to continue into another shot. No dialogue, no music; one notification ping and a soft rising whoosh.
+```
+
+### Prompt V2 — Clip 2: UNIVERSE CLOSES CHAT
+
+```text
+Use the actual final frame of Clip 1 as the starting frame. Use the attached Universe image only as a character and art-style reference. Vertical 9:16, 4 to 7 seconds, one continuous medium shot in a small moss-green Nubealis forest clearing with lavender spiral clouds and warm amber light. The violet phone-shaped portal is already open at the left edge of the frame and remains there until Universe closes it. Universe is a small white cat with one consistent face, round thin golden wire glasses, four paws, tail, and the same proportions as the reference. He stays seated beside the portal, looks at it, blinks once with dry resignation, then closes it in one calm paw swipe, exactly like dismissing a chat notification. The portal folds into one thin violet line and fades. Universe does not walk, run, change clothes, change glasses, become human, or introduce any other character. No text, no watermark, no logos, no dialogue, no music; only a small portal closing sound.
+```
