@@ -1,10 +1,10 @@
 ---
 title: "Auditoría de Reels y monetización"
-purpose: "Separar el rendimiento histórico de Reels del experimento P0 de imágenes y verificar qué vías de monetización tienen evidencia real, cuáles son hipótesis y qué requiere comprobación en Meta Business Suite."
+purpose: "Separar el rendimiento histórico de Reels del experimento P0 de imágenes, verificar qué vías de monetización tienen evidencia real y establecer la cobertura documental del video corto en Instagram, Facebook, TikTok y YouTube."
 status: "Review"
 created: 2026-08-19
 updated: 2026-08-19
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -13,6 +13,7 @@ related_documents:
   - "Operations/Research/2026-08-19_Meta_Reels_Audit.json"
   - "Operations/Research/2026-08-19_Meta_Reel_Insights.json"
   - "Operations/Research/2026-08-19_Auditoria_Integral_Growth_OS.md"
+  - "Operations/Research/2026-08-17_Protocolo_P0_Metricas_y_Veredictos.md"
 organization: "Operations/Research"
 ---
 
@@ -23,6 +24,23 @@ organization: "Operations/Research"
 Este informe no mezcla Reels con el experimento P0 de imágenes del 17 de agosto. Las métricas de este documento son acumulados actuales devueltos por objetos de publicaciones de video en Meta y sirven para comparar el carril histórico de Reels. No son ventanas 24/72 horas ni deben entrar en la mediana principal del P0.
 
 La auditoría recuperó 12 publicaciones de video/Reel de la página `Universe Sent Me` mediante Meta Graph API v26.0. La API devolvió reacciones, comentarios y shares actuales; no devolvió vistas, watch time, retención o completaciones mediante la consulta de Insights intentada: las 12 consultas respondieron HTTP 400 por métrica de Insights inválida. Por eso las cifras de interacción son útiles para una primera lectura, pero no constituyen un análisis completo de distribución o retención.
+
+## Cobertura multicanal dentro del Growth OS
+
+La documentación existente sí cubre de forma operativa el rendimiento de **Instagram y Facebook**, principalmente mediante Meta Graph API, registros manuales, auditorías de Reels, históricos de publicaciones, cruces de assets y el protocolo P0 de métricas comparables. Esta cobertura es parcial para video: existen interacciones y algunos cortes de Insights, pero todavía falta un ledger uniforme con vistas, alcance, retención, tiempo promedio visto, completaciones y seguidores ganados para cada Reel.
+
+No se encontró dentro del repositorio un **ledger, histórico de rendimiento o protocolo específico para TikTok**. La nueva cuenta puede considerarse un canal abierto, pero su rendimiento aún no forma parte del Growth OS ni debe mezclarse con los datos de Meta.
+
+Tampoco se encontró un **ledger, histórico de rendimiento o protocolo específico para YouTube**, incluidos Shorts. La cuenta debe registrarse como canal pendiente de instrumentación; antes de comparar resultados será necesario definir si se medirá por video, Short y canal, y conservar las ventanas temporales de YouTube Analytics separadas de las de Meta.
+
+| Canal | Estado documental | Evidencia existente | Decisión operativa |
+|---|---|---|---|
+| Instagram | Parcialmente integrado | Registros, auditorías y cruces con Meta | Mantener separado por plataforma y añadir métricas de video |
+| Facebook | Parcialmente integrado | Históricos, Meta Graph API, Insights y Reels | Mantener cortes comparables y no mezclar lifetime con 24/72 horas |
+| TikTok | No integrado | No se encontró ledger ni histórico específico | Crear instrumentación antes de evaluar rendimiento |
+| YouTube / Shorts | No integrado | No se encontró ledger ni histórico específico | Crear instrumentación antes de evaluar rendimiento |
+
+La estructura correcta para el siguiente ciclo es un ledger de video corto con una fila por publicación y una columna explícita para `plataforma`. Los datos de Instagram y Facebook pueden compartir taxonomía, pero sus métricas deben permanecer separadas; TikTok y YouTube deben incorporarse como nuevos estratos cuando existan datos verificables.
 
 ## Rendimiento observado de Reels
 
@@ -51,6 +69,10 @@ La hipótesis mejor sustentada hasta ahora es que los Reels con **hook visual in
 La caída de la mediana de interacciones de julio a agosto justifica reabrir el carril de Reels, no abandonarlo. El problema actual es de instrumentación: sabemos qué publicaciones existen y sus interacciones actuales, pero no tenemos una serie consistente de vistas, retención, tiempo promedio visto, completaciones y seguidores ganados para todo el archivo.
 
 La próxima prueba de Reels debe usar una tabla propia, separada de `Publication_Log.csv` de imágenes, con una fila por Reel y estos campos mínimos: `Reel_ID`, `Meta_Post_ID`, `fecha_local`, `duracion_segundos`, `hook_0_3s`, `personaje_principal`, `tipo_de_formato`, `nuevo_o_reuse`, `CTA`, `vistas`, `alcance`, `retencion_3s`, `tiempo_promedio_visto`, `completaciones`, `shares`, `comentarios`, `seguidores_ganados` y `fuente_de_metrica`.
+
+## Implicaciones para el análisis solicitado
+
+La conclusión documental es que **sí existe una base de Growth OS para analizar Instagram y Facebook**, pero no una cobertura completa de Reels ni una base todavía preparada para TikTok y YouTube. Por ello, el primer análisis de rendimiento debe comenzar con Meta, usando los datos ya documentados, y después crear una línea base separada para los dos canales nuevos. No se deben inferir resultados de TikTok o YouTube a partir del rendimiento de Instagram o Facebook.
 
 ## Monetización nativa de Meta
 
