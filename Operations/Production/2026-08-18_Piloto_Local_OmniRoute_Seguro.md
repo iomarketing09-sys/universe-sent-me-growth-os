@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-19
 
-**Versión:** 1.2
+**Versión:** 1.3
 
 **Autor:** Manus AI
 
@@ -333,28 +333,318 @@ Después de cada suspensión o reinicio, debes asumir que la SQLite y las creden
 
 Oracle ofrece una VM Always Free con recursos persistentes durante la vida de la cuenta: hasta 2 OCPU y 12 GB de memoria total en Ampere A1, o hasta dos VMs AMD de 1 GB, además de 200 GB de almacenamiento de bloques en la región principal. Oracle puede reclamar instancias inactivas y la creación puede fallar temporalmente por falta de capacidad. [20]
 
-La ruta resumida es:
+### 1. Crear la cuenta y controlar el coste
 
-1. Crear una cuenta Oracle Cloud Free y una VM Ubuntu Always Free en la home region. Para OmniRoute, asignar 1 OCPU y 6 GB de RAM en Ampere A1 si hay capacidad; la imagen pública consultada incluye manifiestos `linux/amd64` y `linux/arm64`, por lo que el contenedor puede utilizar ARM64. [19] [20]
-2. Permitir únicamente SSH, HTTP y HTTPS en la VCN. No abrir directamente el puerto `20128` a Internet.
-3. Instalar Docker y crear `/opt/omniroute/.env` con el bloque común, más `PORT=20128`, `OMNIROUTE_SERVER_HOST=127.0.0.1`, `NEXT_PUBLIC_BASE_URL=https://TU_DOMINIO` y `BASE_URL=http://127.0.0.1:20128`.
-4. Ejecutar el contenedor con almacenamiento persistente y sin publicar el puerto directamente:
+1. Abre [Oracle Cloud Free](https://www.oracle.com/cloud/free/) y completa el registro. La cuenta puede solicitar verificación de identidad o método de pago según el país; eso no convierte automáticamente los recursos etiquetados como **Always Free Eligible** en recursos de pago.
+2. Identifica la **home region** de la tenancy. Las VMs Always Free deben crearse allí. Si la consola muestra `out of host capacity`, no cambies inmediatamente a una forma de pago: prueba otro availability domain de la misma región o espera a que haya capacidad. [20]
+3. Crea, si la consola lo permite, un compartment llamado `omniroute-free` y utiliza únicamente recursos que muestren la etiqueta **Always Free Eligible**. No crees Load Balancer, NAT Gateway, bases de datos de pago, discos fuera de la home region ni IPs o servicios adicionales sin revisar el coste.
+4. No actives Pay As You Go solo para resolver `out of host capacity`. Oracle indica que los recursos Always Free siguen sin cargo después de una actualización, pero cualquier recurso que exceda los límites gratuitos sí puede generar cargos. Las cuotas de compartment ayudan a limitar el consumo. [20]
+
+### 2. Crear la VM Always Free
+
+En **Compute → Instances → Create instance**, configura lo siguiente:
+
+| Campo | Valor recomendado |
+|---|---|
+| Name | `omniroute-free` |
+| Availability domain | Cualquiera disponible en la home region; si A1 no tiene capacidad, esperar o usar AMD Micro para una prueba mínima. |
+| Image | Ubuntu 24.04 LTS, marcada como Always Free Eligible. |
+| Shape | `VM.Standard.A1.Flex`, 1 OCPU y 6 GB RAM. Esta es la opción preferida para OmniRoute. |
+| Boot volume | 50 GB, dentro de los 200 GB Always Free de block volume. |
+| Networking | VCN nueva, subnet pública, asignar IPv4 pública. |
+| SSH keys | Subir una clave pública Ed25519; no usar contraseña SSH. |
+
+Oracle ofrece hasta 2 OCPU y 12 GB de RAM totales para A1 Always Free, o hasta dos VMs AMD `VM.Standard.E2.1.Micro` de 1 GB. Oracle puede reclamar una VM Always Free si durante siete días cumple simultáneamente sus umbrales de inactividad; no existe garantía de que una VM totalmente abandonada permanezca disponible. [20]
+
+En **Networking → Network Security Groups** o en la security list de la subnet, permite solamente:
+
+| Puerto | Origen | Uso |
+|---|---|---|
+| 22/TCP | Tu IP pública `/32` si es posible | SSH administrativo |
+| 80/TCP | `0.0.0.0/0` | Redirección HTTP a HTTPS o validación del dominio |
+| 443/TCP | `0.0.0.0/0` | HTTPS del reverse proxy |
+
+No abras el puerto `20128`, `20129`, `20132`, `6379`, `6333`, `8080` ni ningún puerto auxiliar a Internet.
+
+### 3. Conectarse y preparar Ubuntu
+
+Desde tu computadora, usa la clave privada correspondiente a la pública que subiste:
 
 ```bash
-docker run -d \
-  --name omniroute \
-  --restart unless-stopped \
-  --env-file /opt/omniroute/.env \
-  -p 127.0.0.1:20128:20128 \
-  -v omniroute-data:/app/data \
-  docker.io/diegosouzapw/omniroute@sha256:2bf79cf167478bf283c633ffef2e1e26ba746882e7267fab9320c09df56e8b57
+chmod 600 ~/.ssh/omniroute_oracle
+ssh -i ~/.ssh/omniroute_oracle ubuntu@IP_PUBLICA
 ```
 
-5. Instalar Nginx o Caddy como reverse proxy HTTPS delante de `127.0.0.1:20128`. Usa un dominio o subdominio real; no publiques el dashboard mediante una IP desnuda. Configura `NEXT_PUBLIC_BASE_URL` con la URL HTTPS real.
-6. Verificar el endpoint de salud, abrir el dashboard, cambiar la contraseña inicial, crear una API key de OmniRoute y conectar únicamente Groq.
-7. Programar backups del volumen `omniroute-data`. La gratuidad de Oracle no elimina la necesidad de backups ni protege contra reclamación por inactividad o errores de configuración.
+En la VM:
 
-Oracle es la mejor opción gratuita si aceptas administrar un servidor Linux. Si no quieres configurar firewall, dominio, Docker, HTTPS y backups, Railway es más sencillo para el trial, pero no es gratuito permanente.
+```bash
+sudo apt update && sudo apt full-upgrade -y
+sudo apt install -y ca-certificates curl gnupg ufw fail2ban openssl jq
+```
+
+Instala Docker Engine desde el repositorio oficial:
+
+```bash
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo \"$VERSION_CODENAME\") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo systemctl enable --now docker
+```
+
+Configura el firewall del sistema. Primero permite SSH para no bloquear la sesión actual:
+
+```bash
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow OpenSSH
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw --force enable
+sudo systemctl enable --now fail2ban
+sudo ufw status verbose
+```
+
+### 4. Crear el archivo `.env` con secretos únicos
+
+Crea la carpeta de instalación y un directorio de datos con permisos para el usuario no root del contenedor:
+
+```bash
+sudo mkdir -p /opt/omniroute/data /opt/omniroute/backups
+sudo chown -R 1000:1000 /opt/omniroute/data
+sudo chmod 700 /opt/omniroute /opt/omniroute/data /opt/omniroute/backups
+```
+
+Genera el `.env` sin pegar secretos reales en el repositorio. El siguiente comando crea contraseñas hexadecimales seguras para el piloto:
+
+```bash
+sudo bash -c 'cat > /opt/omniroute/.env <<EOF
+JWT_SECRET=$(openssl rand -hex 32)
+INITIAL_PASSWORD=$(openssl rand -hex 18)
+API_KEY_SECRET=$(openssl rand -hex 32)
+STORAGE_ENCRYPTION_KEY=$(openssl rand -hex 32)
+STORAGE_ENCRYPTION_KEY_VERSION=v1
+MACHINE_ID_SALT=$(openssl rand -hex 32)
+OMNIROUTE_WS_BRIDGE_SECRET=$(openssl rand -hex 32)
+NODE_ENV=production
+PORT=20128
+HOSTNAME=0.0.0.0
+DATA_DIR=/app/data
+APP_LOG_TO_FILE=true
+AUTH_COOKIE_SECURE=true
+REQUIRE_API_KEY=true
+CORS_ALLOW_ALL=false
+BASE_URL=http://127.0.0.1:20128
+NEXT_PUBLIC_BASE_URL=https://llms.TU-DOMINIO.com
+OMNIROUTE_PUBLIC_BASE_URL=https://llms.TU-DOMINIO.com
+CALL_LOG_RETENTION_DAYS=7
+APP_LOG_RETENTION_DAYS=7
+ARENA_ELO_SYNC_ENABLED=false
+OMNIROUTE_DISABLE_BACKGROUND_SERVICES=1
+OMNIROUTE_DISABLE_CREDENTIAL_HEALTH_CHECK=true
+OMNIROUTE_MEMORY_MB=2048
+EOF
+chmod 600 /opt/omniroute/.env'
+```
+
+Sustituye `llms.TU-DOMINIO.com` por tu dominio real antes de iniciar el contenedor. Guarda el valor de `INITIAL_PASSWORD` en un gestor de contraseñas; puedes consultarlo una sola vez con `sudo grep '^INITIAL_PASSWORD=' /opt/omniroute/.env` y luego limpiar el historial de la terminal. La guía oficial de OmniRoute exige secretos únicos y utiliza `/app/data` para SQLite y configuración cifrada. [18]
+
+No añadas `GROQ_API_KEY` ni `GEMINI_API_KEY` al `.env`: desde OmniRoute v3.8 las credenciales de providers se gestionan desde el dashboard y se almacenan en el sistema cifrado de datos. Añádelas únicamente desde **Providers** después de activar HTTPS. [21]
+
+### 5. Ejecutar OmniRoute con almacenamiento persistente
+
+La imagen pública consultada ofrece manifiestos `linux/amd64` y `linux/arm64`. El digest siguiente corresponde a la imagen `latest` consultada el 19 de agosto de 2026; vuelve a comprobarlo si la etiqueta ha cambiado antes de desplegar. [19]
+
+```bash
+IMAGE='docker.io/diegosouzapw/omniroute@sha256:2bf79cf167478bf283c633ffef2e1e26ba746882e7267fab9320c09df56e8b57'
+sudo docker pull "$IMAGE"
+sudo docker run -d \\
+  --name omniroute \\
+  --restart unless-stopped \\
+  --env-file /opt/omniroute/.env \\
+  -p 127.0.0.1:20128:20128 \\
+  -v /opt/omniroute/data:/app/data \\
+  "$IMAGE"
+```
+
+Comprueba el arranque:
+
+```bash
+sudo docker ps --filter name=omniroute
+sudo docker logs omniroute --tail 50
+curl -fsS http://127.0.0.1:20128/health
+```
+
+Debes ver el contenedor activo, la base de datos SQLite lista y una respuesta exitosa de `/health`. Si aparece `permission denied` en `/app/data`, vuelve a aplicar `sudo chown -R 1000:1000 /opt/omniroute/data` y reinicia el contenedor.
+
+### 6. Configurar dominio y HTTPS
+
+Para usar el dashboard desde fuera de la VM necesitas un dominio o subdominio real. La ruta recomendada por la guía de OmniRoute es Cloudflare + Nginx:
+
+1. En el DNS de Cloudflare, crea un registro `A` para `llms` apuntando a la IP pública de Oracle y activa el proxy naranja.
+2. En Cloudflare, crea un certificado de origen desde **SSL/TLS → Origin Server**. Guarda el certificado en `/etc/nginx/ssl/origin.crt` y la clave privada en `/etc/nginx/ssl/origin.key`, con permisos `600` para la clave.
+3. Instala Nginx:
+
+```bash
+sudo apt install -y nginx
+sudo mkdir -p /etc/nginx/ssl
+sudo chmod 700 /etc/nginx/ssl
+```
+
+4. Crea `/etc/nginx/sites-available/omniroute` con esta configuración, sustituyendo el dominio:
+
+```nginx
+server {
+    listen 80;
+    listen [::]:80;
+    server_name llms.TU-DOMINIO.com;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name llms.TU-DOMINIO.com;
+
+    ssl_certificate     /etc/nginx/ssl/origin.crt;
+    ssl_certificate_key /etc/nginx/ssl/origin.key;
+    ssl_protocols TLSv1.2 TLSv1.3;
+
+    location / {
+        proxy_pass http://127.0.0.1:20128;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_buffering off;
+        proxy_cache off;
+        proxy_read_timeout 600s;
+        proxy_send_timeout 600s;
+    }
+}
+```
+
+5. Activa la configuración y valida Nginx:
+
+```bash
+sudo rm -f /etc/nginx/sites-enabled/default
+sudo ln -s /etc/nginx/sites-available/omniroute /etc/nginx/sites-enabled/omniroute
+sudo nginx -t
+sudo systemctl enable --now nginx
+sudo systemctl reload nginx
+```
+
+6. En Cloudflare, utiliza **SSL/TLS → Overview → Full (Strict)** y activa **Always Use HTTPS**. Verifica desde cualquier equipo:
+
+```bash
+curl -sSI https://llms.TU-DOMINIO.com/health
+```
+
+No configures `NEXT_PUBLIC_BASE_URL` con la IP ni con HTTP: OmniRoute utiliza esa variable como origen canónico para callbacks y enlaces públicos. [18]
+
+Si todavía no tienes dominio, no expongas el dashboard. Puedes administrarlo mediante un túnel SSH temporal desde tu computadora:
+
+```bash
+ssh -i ~/.ssh/omniroute_oracle -N \\
+  -L 20128:127.0.0.1:20128 ubuntu@IP_PUBLICA
+```
+
+En ese caso, abre `http://127.0.0.1:20128` y cambia temporalmente `AUTH_COOKIE_SECURE=false`; ejecuta `sudo docker restart omniroute` para aplicar el cambio. Cuando utilices HTTPS público, vuelve a `AUTH_COOKIE_SECURE=true`, reinicia el contenedor y no vuelvas a usar la cookie por HTTP. El túnel no ejecuta modelos en tu computadora: solo transporta la interfaz y las solicitudes hacia la VM.
+
+### 7. Primer acceso y conexión con Groq
+
+1. Abre `https://llms.TU-DOMINIO.com`.
+2. Inicia sesión con `INITIAL_PASSWORD` y cámbiala inmediatamente.
+3. En **API Keys/API Manager**, crea una API key exclusiva para el piloto.
+4. En **Providers**, agrega Groq con una API key creada específicamente para esta instancia.
+5. Selecciona un model ID visible en el catálogo actual de Groq; no utilices `auto` durante la primera prueba.
+6. Prueba desde la VM o desde tu computadora:
+
+```bash
+curl -fsS https://llms.TU-DOMINIO.com/v1/models \\
+  -H 'Authorization: Bearer TU_OMNIROUTE_API_KEY'
+
+curl -fsS https://llms.TU-DOMINIO.com/v1/chat/completions \\
+  -H 'Authorization: Bearer TU_OMNIROUTE_API_KEY' \\
+  -H 'Content-Type: application/json' \\
+  -d '{
+    "model": "MODEL_ID_VISIBLE_EN_GROQ",
+    "messages": [{"role":"user","content":"Responde únicamente: OK"}],
+    "max_tokens": 16
+  }'
+```
+
+Usa prompts sintéticos o públicos. No envíes tokens de Meta, datos de seguidores, comentarios reales, datasets crudos ni documentos privados a un provider gratuito.
+
+### 8. Backups y actualización
+
+El `.env` y `/opt/omniroute/data` son críticos. Mantén el `.env` en un gestor de contraseñas y respalda solo los datos necesarios de OmniRoute:
+
+```bash
+sudo tar -czf /opt/omniroute/backups/omniroute-data-$(date +%F).tgz \\
+  -C /opt/omniroute data
+sudo chmod 600 /opt/omniroute/backups/*.tgz
+```
+
+Descarga periódicamente el backup fuera de la VM:
+
+```bash
+scp -i ~/.ssh/omniroute_oracle \\
+  ubuntu@IP_PUBLICA:/opt/omniroute/backups/omniroute-data-AAAA-MM-DD.tgz \\
+  ./
+```
+
+Para actualizar sin perder la configuración:
+
+```bash
+IMAGE='docker.io/diegosouzapw/omniroute@sha256:NUEVO_DIGEST_VERIFICADO'
+sudo docker pull "$IMAGE"
+sudo docker stop omniroute
+sudo docker rm omniroute
+sudo docker run -d \\
+  --name omniroute \\
+  --restart unless-stopped \\
+  --env-file /opt/omniroute/.env \\
+  -p 127.0.0.1:20128:20128 \\
+  -v /opt/omniroute/data:/app/data \\
+  "$IMAGE"
+sudo docker logs omniroute --tail 50
+```
+
+No uses `latest` en una actualización de producción sin revisar primero el cambio. Conserva el digest anterior y el backup hasta verificar `/health`, login, providers y `/v1/models`.
+
+### 9. Mantenimiento y diagnóstico
+
+Usa estos comandos mensualmente:
+
+```bash
+sudo docker stats --no-stream omniroute
+free -m
+df -h
+sudo ufw status verbose
+sudo systemctl status docker nginx fail2ban --no-pager
+```
+
+Si Oracle muestra que la VM puede considerarse inactiva, no generes tráfico artificial únicamente para evitar la reclamación. Usa la VM de forma real para el piloto, registra actividad operativa y conserva backups. Oracle puede reclamar una instancia que cumpla sus umbrales de inactividad durante siete días. [20]
+
+Los problemas más comunes son los siguientes:
+
+| Síntoma | Corrección |
+|---|---|
+| `out of host capacity` al crear A1 | Probar otro availability domain de la home region o esperar; no activar un plan de pago automáticamente. |
+| No hay respuesta en `/health` | Revisar `sudo docker logs omniroute`, `sudo docker ps` y que Nginx apunte a `127.0.0.1:20128`. |
+| Error 502 en el dominio | Comprobar que el contenedor esté activo, que el certificado y `proxy_pass` sean correctos y que el puerto 20128 no esté abierto directamente. |
+| No se puede escribir en SQLite | Aplicar `sudo chown -R 1000:1000 /opt/omniroute/data` y reiniciar el contenedor. |
+| Login no funciona detrás del túnel SSH | Usar temporalmente `AUTH_COOKIE_SECURE=false` solo en acceso HTTP local; volver a `true` con HTTPS. |
+| Se consume demasiada RAM | Mantener `OMNIROUTE_DISABLE_BACKGROUND_SERVICES=1`, reducir `OMNIROUTE_MEMORY_MB`, limitar solicitudes pesadas y no activar perfiles web/CLI. |
+
+Oracle es la mejor opción gratuita persistente si aceptas administrar un servidor Linux. Es gratuito solo dentro de los recursos Always Free y no elimina los deberes de seguridad, backup, actualización ni supervisión. Railway sigue siendo más sencillo para un trial, pero no es gratuito permanente.
 
 ## Paso 11: criterios de aceptación y cierre
 
@@ -364,7 +654,7 @@ El piloto de bajo consumo se considera correctamente configurado cuando se cumpl
 |---|---|
 | Red | OmniRoute escucha solo en `127.0.0.1` o `localhost`; el provider cloud es el único destino externo aprobado. |
 | Autenticación | El dashboard tiene contraseña cambiada y `/v1` rechaza solicitudes sin API key. |
-| Consumo | Se ha fijado `OMNIROUTE_MEMORY_MB=512`, se usan prompts cortos y no hay solicitudes simultáneas. |
+| Consumo | Se ha fijado `OMNIROUTE_MEMORY_MB` según el entorno —`512` en free tiers pequeños o `2048` en la VM Oracle A1 de 6 GB—, se usan prompts cortos y no hay solicitudes simultáneas. |
 | Proveedores | Solo Groq está conectado durante la primera fase; Gemini se añade únicamente para una comparación explícita. |
 | Datos | Todas las pruebas iniciales usan prompts sintéticos o públicos. |
 | Trazabilidad | Se registran versión, provider, model ID, fecha, latencia aproximada y resultado revisado. |
@@ -433,3 +723,5 @@ Si el piloto se convierte en una función compartida, se deberán actualizar el 
 [19]: [Docker Hub — OmniRoute image](https://hub.docker.com/r/diegosouzapw/omniroute)
 
 [20]: [Oracle Cloud — Always Free Resources](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm)
+
+[21]: [OmniRoute — Environment Variables v3.8.50](https://raw.githubusercontent.com/diegosouzapw/OmniRoute/release/v3.8.50/docs/reference/ENVIRONMENT.md)
