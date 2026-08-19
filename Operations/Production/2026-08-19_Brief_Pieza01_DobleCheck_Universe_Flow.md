@@ -4,7 +4,7 @@ purpose: "Definir el blueprint de producción, la instrumentación y los control
 status: Active
 created: 2026-08-19
 updated: 2026-08-19
-version: "1.3"
+version: "1.4"
 author: "Manus AI (CGO), aprobado por Fernando"
 related_documents:
   - "2026-08-19_Diseno_Experimento_Reels_v2.md"
@@ -115,6 +115,8 @@ La narrativa base permanece comprensible en silencio. Por eso ningún audio de t
 
 > **Registro de disponibilidad — 2026-08-19:** Fernando no encontró en Instagram Edits las tres pistas sugeridas desde listados externos. Quedan retiradas como recomendación operativa. Los rankings públicos son una fuente de inspiración, no prueba de disponibilidad por cuenta, país, tipo de perfil o biblioteca de Edits.
 
+> **Candidato disponible — 2026-08-19:** `Prayer Instrumental` de **VOIKRUZER**, observado por Fernando dentro de Edits con **76 mil Reels**. Se aprueba para prueba de montaje de la versión de Instagram, no como elemento narrativo obligatorio.
+
 | Prioridad | Tipo de audio que se debe buscar en Edits | Por qué encaja con P01 | Condición de aprobación |
 |---:|---|---|---|
 | 1 | Instrumental ambiental, ligeramente irónico o de tensión suave; sin voz relevante durante los primeros 6 s. | Protege el caption y deja que la acción de Universe sea el remate. | Se entiende el Reel con volumen cero; `ping`, `whoosh` y cierre de portal siguen siendo audibles. |
@@ -126,6 +128,19 @@ La narrativa base permanece comprensible en silencio. Por eso ningún audio de t
 Abrir **Audio → Tendencias / Para ti** y escuchar los primeros seis segundos de candidatos instrumentales, ambientales o de reacción. Descartar de inmediato canciones con letras que narren otra situación romántica, una punchline verbal, una aceleración de baile o un drop demasiado dominante. Elegir tres candidatos disponibles y probarlos sobre el máster sin alterar los clips: gana el que eleve la anticipación del portal y deje el gesto de cerrar como una decisión fría, no como un baile o una transformación heroica.
 
 Si ningún candidato supera ese filtro, la decisión correcta es **SFX-only**. La pieza ya fue diseñada para funcionar así; no se debe sacrificar claridad por adherirse a una tendencia inaccesible.
+
+### Configuración de prueba — Prayer Instrumental
+
+Usar el tramo de apertura más contenido y ascendente del audio; evitar cualquier fragmento que alcance un clímax orquestal antes del gesto final. Iniciar la canción en `0:00` con volumen de **12–18%**. Mantener el `ping` del doble check claramente por encima de la música, dejar el `whoosh` liderar la transición y bajar la canción 2–3 dB durante la pata de Universe y el cierre del portal. El objetivo es que la pieza gane tensión cinematográfica, no que el bosque parezca una escena heroica.
+
+| Tiempo del Reel | Imagen | Tratamiento de Prayer Instrumental |
+|---|---|---|
+| 0.0–1.5 s | Texto y doble check. | Entrada baja; `ping` domina. |
+| 1.5–3.0 s | Zoom hacia el teléfono y portal. | Dejar crecer la cama instrumental, con `whoosh` al frente. |
+| 3.0–5.2 s | Universe aparece y cierra el portal. | No buscar un drop: la tensión permanece contenida. Bajar música 2–3 dB para el swipe y el SFX de cierre. |
+| 5.2–6.0 s | Línea violeta y corte. | Cola corta o corte limpio; no extender el video para seguir la canción. |
+
+La prueba pasa si el espectador sigue entendiendo el conflicto con el audio apagado y si el gesto de cierre conserva su humor seco. Si el instrumental convierte el momento en un triunfo épico, reducirlo a 8–10% o volver a `SFX-only`.
 
 ### Sincronía recomendada con la opción 1
 
