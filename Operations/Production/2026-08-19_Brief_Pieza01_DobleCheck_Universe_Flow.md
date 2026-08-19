@@ -4,7 +4,7 @@ purpose: "Definir el blueprint de producción, la instrumentación y los control
 status: Active
 created: 2026-08-19
 updated: 2026-08-19
-version: "1.6"
+version: "1.7"
 author: "Manus AI (CGO), aprobado por Fernando"
 related_documents:
   - "2026-08-19_Diseno_Experimento_Reels_v2.md"
@@ -306,7 +306,7 @@ La edición debe conservar aproximadamente **0:01–0:05** del clip: se elimina 
 | Duración observada | 12 s |
 | Audio | `Prayer Instrumental` de VOIKRUZER + `ping`, `whoosh` y cierre de portal. |
 | Control final | `APPROVE`: texto legible 0:00–0:02, transición teléfono → portal continua, Universe consistente y payoff claro en mute. |
-| Estado | `READY_FOR_PUBLICATION` — requiere orden de publicación aprobada y IDs nativos posteriores. |
+| Estado | `PUBLICADA_EN_IG_Y_FB`; TikTok y YouTube aún pendientes. |
 
 La versión final mantiene el texto **“yo después de mandar ‘no pasa nada’”** al inicio y deja que el gesto de Universe cierre la historia. La marca `@UniverseSentMe` se conserva como atribución editorial en el tramo del bosque; no se observan errores de render, cortes accidentales ni texto no intencional.
 
@@ -345,3 +345,22 @@ No se añade una URL normal de producto, no se reutiliza una etiqueta de otra pu
 | Publicación en feed | Sí |
 
 Instagram ya no debe recibir otra carga de este asset. Facebook continúa como fila separada y pendiente hasta que Graph API finalice el upload iniciado; TikTok y YouTube se retoman después de cerrar o diagnosticar Facebook.
+
+### Registro de publicación — Facebook
+
+| Campo | Valor verificado |
+|---|---|
+| Plataforma | Facebook Reel |
+| Estado | `PUBLICADA` |
+| Página | Universe Sent Me (`1036844829507460`) |
+| Hora de publicación local | 2026-08-19 18:42:31 CDT |
+| Facebook Video/Reel ID | `1549931766108154` |
+| Procesamiento | `complete` |
+| Publicación | `complete / published` |
+| Copyright check | `complete / matches_found=false` |
+| Copy publicado | `Yo: “no pasa nada”. Universe, dos segundos después: 🟣` + copy y hashtags aprobados. |
+| Afiliado Mercado Libre | `MANUAL_NATIVE_ATTACHMENT_PENDING` |
+
+El Reel se publicó mediante Graph API reutilizando un único upload. La llamada de verificación posterior mostró un error no crítico por solicitar el campo no disponible `permalink`; la comprobación separada de `status` y `/{page_id}/video_reels` confirmó que el video está `ready` y publicado. No se creó un segundo Reel.
+
+**Siguiente acción de Fernando en Facebook:** abrir este Reel y adjuntar manualmente el producto **Soporte Para Celular Gato Escritorio Oficina Gatito Adorable** con un **link y etiqueta de afiliado nuevos**. No añadir el link como comentario/copy a menos que se adopte esa superficie de forma explícita en el ledger. Después de adjuntarlo, compartir el ID o una captura de confirmación para registrar `Native_Product_Attached_At`, la etiqueta y el producto sin atribución inventada.
