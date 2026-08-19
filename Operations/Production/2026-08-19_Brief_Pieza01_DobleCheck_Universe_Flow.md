@@ -176,16 +176,22 @@ Fernando propone correctamente separar la llegada al mundo de Universe del payof
 |---|---:|---|---|---|
 | 1 — `PHONE → PORTAL` | 4 s / 7 puntos ya usados | Teléfono realista | Frame final aprobado: túnel púrpura | Hook y entrada al portal. |
 | 2 — `PORTAL → UNIVERSE SEATED` | 4 s / 7 puntos | Frame final del clip 1 | **KF-B:** Universe sentado junto a teléfono/portal en Nubealis | Revelar mundo y personaje sin payoff. |
-| 3 — `UNIVERSE CLOSES CHAT` | 4 s / 7 puntos | **KF-B** exacto | **KF-C:** mismo encuadre, Universe acaba de cerrar el portal | Acción/payoff claro. |
+| 3 — `UNIVERSE CLOSES CHAT` | 7 s / 10 puntos | Último frame útil real del clip 2 | **KF-C:** mismo encuadre, Universe acaba de cerrar el portal | Acción/payoff con inicio y final bloqueados. |
 
-**Coste acumulado de la pieza:** 21 puntos. Con 848 puntos iniciales, equivale a aproximadamente 2.48%; se mantiene dentro de un presupuesto de iteración controlada.
+**Coste acumulado actualizado:** 27 puntos. Con 848 puntos iniciales, equivale a aproximadamente 3.18%; el Clip 3 usa Veo Lite porque el payoff necesita preservar a Universe y el encuadre en ambos extremos. Se editará a 2.5–3.5 segundos útiles; no se publican los 7 segundos completos.
+
+### Estado de ejecución V3 — Clip 2 usable con ajuste en edición
+
+El render `Cat_looking_at_violet_portal_202608191627.mp4` cumple la transición principal: el túnel púrpura se abre de forma fluida hacia el bosque, el teléfono/portal permanece como eje y Universe conserva gato blanco, gafas redondas doradas y anatomía felina. Se aprueba como **`USE_WITH_EDIT`**.
+
+La única corrección visible es la marca `UniverseSentMe` heredada de la referencia. Si la firma se desea conservar, se debe colocar una única versión limpia y estable en edición al final del flujo; no se debe pedir a Flow que la replique. Para el Clip 3 se usa como ancla el último frame útil del clip 2, antes de cualquier marca añadida en postproducción.
 
 ### Keyframes requeridos
 
 | ID | Descripción de imagen | Uso |
 |---|---|---|
 | `KF-B` | Vertical 9:16. En un pequeño claro de Nubealis, Universe —gato blanco pequeño, gafas redondas doradas finas, cuatro patas y cola— está sentado a la derecha de un teléfono vertical que funciona como portal violeta. El bosque tiene musgo, nubes espirales lilas y luz ámbar. Universe mira el portal, pero aún no lo toca. Sin texto ni marca de agua. | Final del clip 2 e inicio del clip 3. |
-| `KF-C` | Mismo encuadre, misma posición de cámara, mismo teléfono, mismo Universe y mismo bosque que `KF-B`. Universe tiene una pata extendida hacia el teléfono; el portal está casi cerrado, reducido a una línea violeta fina. No hay cambio de gafas, color, escala o posición. Sin texto ni marca de agua. | Final del clip 3. |
+| `KF-C` | Mismo encuadre, misma posición de cámara, mismo teléfono, mismo Universe y mismo bosque que el último frame útil del clip 2. Universe tiene una pata extendida hacia el teléfono; el portal está casi cerrado, reducido a una línea violeta fina. No hay cambio de gafas, color, escala o posición. Sin texto ni marca de agua. | Imagen final del clip 3. |
 
 **Uso del storyboard:** para esta ruta sí conviene generar un storyboard consistente antes de video. La cuadrícula se usa para fijar personaje, luz, teléfono y fondo; después se exportan/cortan `KF-B` y `KF-C` como dos imágenes verticales independientes. No usar la cuadrícula completa como keyframe de video.
 
@@ -223,5 +229,5 @@ El prompt de transición se construye en cinco bloques y se modifica únicamente
 ### Prompt V3 — Clip 3: UNIVERSE CLOSES CHAT
 
 ```text
-Use KF-B as the starting image and KF-C as the ending image. Vertical 9:16, 4 seconds, one continuous locked medium shot. Preserve the exact same composition, forest, phone portal, lighting and Universe character from the two keyframes. Universe stays seated, looks at the open violet phone portal with dry resignation, blinks once, then slowly extends one paw and closes the portal exactly like dismissing a chat notification. The portal folds into a thin violet line by the final frame, matching KF-C. Universe must not walk, change position, change glasses, change fur, become human, wear clothes, or introduce any other character. No text, logos, watermark, dialogue or music; only a small portal-closing sound.
+Use the actual last usable frame of Clip 2 as the starting image and KF-C as the ending image. Vertical 9:16, 7 seconds, one continuous locked medium shot. Preserve the exact same composition, forest, phone portal, lighting and Universe character from the two references. At the start, Universe is seated to the right of the open violet phone portal, already looking at it. Hold this pose for the first 0.5 seconds. Universe blinks once with dry resignation, then slowly extends one paw and closes the portal exactly like dismissing a chat notification. The portal folds inward into one thin violet line by the final frame, matching KF-C. Keep the camera fixed; the only motion is Universe’s blink, one paw gesture, and the portal closing. Universe must not walk, change position, change glasses, change fur, become human, wear clothes, or introduce any other character. No text, logos, watermark, dialogue or music; only a small portal-closing sound.
 ```
