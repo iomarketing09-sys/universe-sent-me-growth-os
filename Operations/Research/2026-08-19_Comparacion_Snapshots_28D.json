@@ -1,0 +1,163 @@
+{
+  "title": "Comparación de snapshots 28D",
+  "purpose": "Medir variación observada entre extracciones del mismo rango sin convertir snapshots lifetime en crecimiento atribuido al período.",
+  "status": "Active",
+  "created": "2026-08-19",
+  "updated": "2026-08-19",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "2026-08-19_Social_Performance_28D_Normalizado.json",
+    "2026-08-19_Retorno_Engagement_Esfuerzo_28D.json"
+  ],
+  "fixed_window": {
+    "start": "2026-07-22",
+    "end": "2026-08-18"
+  },
+  "prior_retrieved_at": "2026-08-19",
+  "current_retrieved_at": "2026-08-19T16:08:45.687Z",
+  "comparison_type": "same_window_snapshot_delta",
+  "platforms": {
+    "Instagram": {
+      "matched_pieces": 34,
+      "metrics": {
+        "views": {
+          "before": 1646,
+          "after": 1650,
+          "delta": 4
+        },
+        "reach": {
+          "before": 1216,
+          "after": 1218,
+          "delta": 2
+        },
+        "engagement": {
+          "before": 59,
+          "after": 56,
+          "delta": -3
+        },
+        "likes": {
+          "before": 44,
+          "after": 45,
+          "delta": 1
+        },
+        "shares": {
+          "before": 6,
+          "after": 6,
+          "delta": 0
+        },
+        "saves_or_favorites": {
+          "before": 5,
+          "after": 5,
+          "delta": 0
+        }
+      },
+      "top_view_deltas": [
+        {
+          "id": "18145111759484218",
+          "label": "¿Qué fibra tomas para cagarla tanto? 🐈 #UniverseSentMe #UniverseUSM #MemesUSM",
+          "delta": 2
+        },
+        {
+          "id": "18108003721848441",
+          "label": "😮‍💨 #UniverseSentMe",
+          "delta": 2
+        }
+      ],
+      "interpretation": "Cambio observado de snapshots lifetime sobre las mismas piezas; no es crecimiento de publicaciones nuevas."
+    },
+    "TikTok": {
+      "matched_pieces": 7,
+      "metrics": {
+        "views": {
+          "before": 2268,
+          "after": 2268,
+          "delta": 0
+        },
+        "engagement": {
+          "before": 23,
+          "after": 23,
+          "delta": 0
+        },
+        "likes": {
+          "before": 19,
+          "after": 19,
+          "delta": 0
+        },
+        "shares": {
+          "before": 2,
+          "after": 2,
+          "delta": 0
+        },
+        "saves_or_favorites": {
+          "before": 2,
+          "after": 2,
+          "delta": 0
+        }
+      },
+      "interpretation": "Cambio observado de snapshots lifetime sobre las mismas piezas; no es crecimiento de publicaciones nuevas."
+    },
+    "YouTube": {
+      "matched_pieces": 6,
+      "metrics": {
+        "lifetime_views_snapshot": {
+          "before": 5021,
+          "after": 5047,
+          "delta": 26
+        },
+        "likes_snapshot": {
+          "before": 0,
+          "after": 36,
+          "delta": 36
+        },
+        "comments_snapshot": {
+          "before": 0,
+          "after": 0,
+          "delta": 0
+        }
+      },
+      "top_view_deltas": [
+        {
+          "id": "rox7BGGcfwQ",
+          "label": "Cc vuelves a leer una conversación de hace 3 años.. y sale \"Escribiendo...\" 💀",
+          "delta": 7
+        },
+        {
+          "id": "7qB8kWKwyTg",
+          "label": "Me hace falta vitamina B (besos) #FantasmaUSM #UniverseSentMe #Contemplativo",
+          "delta": 6
+        },
+        {
+          "id": "Qoa-XUOVALk",
+          "label": "Fantasma",
+          "delta": 5
+        },
+        {
+          "id": "zJhlOICkEuA",
+          "label": "El verdadero caos está en el mensaje directo 🌲🤐#universesentme",
+          "delta": 3
+        },
+        {
+          "id": "3omHgH6ig6w",
+          "label": "Estás habilidades no vienen en el manual de usuario 😸 #cat #humorsarcástico #funny #relatable",
+          "delta": 3
+        },
+        {
+          "id": "LNL-bYhQ6pE",
+          "label": "En los ojos correctos... #funny #humorsarcástico #relatable",
+          "delta": 2
+        }
+      ],
+      "interpretation": "Cambio de snapshot lifetime; separar de la actividad diaria del corte."
+    },
+    "Facebook": {
+      "comparable": false,
+      "interpretation": "El artefacto de Windsor se recuperó desde caché con el mismo data_fetched_at. No hay nueva variación temporal atribuible entre snapshots."
+    }
+  },
+  "limits": [
+    "Las cuatro plataformas comparten un rango de publicación, no una ventana idéntica de rendimiento.",
+    "Facebook no debe compararse con Instagram, TikTok o YouTube por engagement absoluto.",
+    "Un delta de snapshot lifetime no prueba crecimiento orgánico del período sin una nueva ventana temporal de actividad."
+  ]
+}

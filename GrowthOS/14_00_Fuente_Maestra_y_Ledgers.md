@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-19
-version: "2.5"
+version: "2.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -36,6 +36,7 @@ related_documents:
   - "Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json"
   - "Operations/Research/2026-08-19_Decisiones_Reconciliacion_Reels.json"
   - "Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md"
+  - "Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md"
   - "Operations/Research/2026-08-19_Auditoria_Assets_Drive_Reels.md"
   - "GrowthOS/08_00_Metricas_Baseline_Plataformas.md"
   - "Operations/Research/Historical_Performance_Snapshot.csv"
@@ -77,6 +78,8 @@ Las recuperaciones puntuales fuera de un corte normalizado se conservan en `Oper
 Las decisiones humanas que cierran una revisión sin crear una cascada viven en `Operations/Research/2026-08-19_Decisiones_Reconciliacion_Reels.json`. Una versión alternativa puede quedar vinculada a una familia conceptual sin ser el mismo export; una publicación exclusiva cierra la revisión, pero permanece visible como registro individual en el historial.
 
 El corte renovado de 28 días ejecutado el 19 de agosto a las 16:00 se documenta en `Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`. Sus artefactos normalizados reemplazan el snapshot operativo vigente, preservando el rango 22 de julio–18 de agosto y sus definiciones de métrica por plataforma.
+
+La comparación entre el snapshot inicial y el renovado del mismo rango se conserva en `Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`. Este análisis distingue deltas de snapshot de una tendencia temporal: Facebook permanece no comparable mientras Windsor responda desde caché.
 
 Para TikTok y YouTube, el dashboard debe conservar una capa común sin forzar equivalencia semántica: `views` se muestra como views nativas de cada plataforma, `reach` solo se muestra cuando la fuente lo entrega, y `engagement` se calcula como suma documentada de acciones disponibles si no existe una métrica nativa. YouTube debe mostrar por separado la actividad diaria y el snapshot lifetime; TikTok debe eliminar filas repetidas por `video_id` y priorizar la fila con mayor cobertura de métricas.
 
