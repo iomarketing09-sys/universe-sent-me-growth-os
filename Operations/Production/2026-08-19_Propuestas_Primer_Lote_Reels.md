@@ -1,7 +1,7 @@
 ---
 title: "Propuestas CGO — primer lote de Reels"
 purpose: "Presentar un lote inicial de Reels visuales y una adaptación de meme potencial, todos alineados con Growth OS y listos para recibir identificadores antes de producción."
-status: Draft
+status: Archived
 created: 2026-08-19
 updated: 2026-08-19
 version: "1.0"
@@ -13,6 +13,10 @@ related_documents:
 ---
 
 # Propuestas CGO — primer lote de Reels
+
+## Estado de la propuesta
+
+Este lote se archivó **antes de aprobación y producción** porque Fernando aportó una auditoría de Reels que exige una dirección experimental más controlada: situación humana antes que personaje, hook visual inmediato, funcionamiento en mute y transformación real → UniverseSentMe. Ninguna opción de este documento debe recibir `Concept_ID`, generarse ni publicarse. Fue reemplazado por `2026-08-19_Diseno_Experimento_Reels_v2.md`.
 
 ## Enfoque de lote
 

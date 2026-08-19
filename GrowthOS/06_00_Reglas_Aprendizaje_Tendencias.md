@@ -4,9 +4,9 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-19
-**Versión:** 3.5
+**Versión:** 3.6
 **Autor:** Manus AI (CGO); Sección 6 añadida por Claude
-**Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Propuestas_Primer_Lote_Reels.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`
+**Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`
 
 ---
 
@@ -191,3 +191,9 @@ El corte renovado confirmó a Facebook como la mayor señal de interacción por 
 | P2 | Probar hipótesis abiertas con celdas comparables, no declarar ganadores todavía. | Microhistoria, transformación y humor ácido siguen con muestras pequeñas o heterogéneas. | CGO/Manus prepara diseño; Fernando aprueba. | Mínimo tres casos codificados por celda y veredicto documentado. |
 
 > **Decisión de ejecución:** el próximo lote debe priorizar calidad de instrumentación, cascada verificable y maduración de métricas. No se recomienda cambiar la cadencia general ni canonizar un formato ganador a partir del delta corto observado.
+
+## 14. Replanteamiento de Reels: situación primero — 2026-08-19
+
+La auditoría aportada por Fernando redefine el carril de Reels. El personaje no es el producto por sí solo: funciona como vehículo visual de una situación humana reconocible. Se prioriza Universe como personaje ancla de las primeras pruebas, se reserva Wilfred para papeles de remate o relación, y se prohíben aperturas contemplativas sin conflicto visual.
+
+La primera familia de experimentos mantiene una estructura de 6–7 segundos: conflicto real visible, transformación real → Universe, payoff y loop. La pieza debe ser comprensible en mute; shares, retención inicial, reach de no seguidores y completaciones tienen prioridad sobre likes. No se mezclan naturaleza, memes y microhistorias dentro de la primera familia; cada una tendrá su propia cohorte controlada de 5–10 casos. El diseño operativo vive en `Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`.
