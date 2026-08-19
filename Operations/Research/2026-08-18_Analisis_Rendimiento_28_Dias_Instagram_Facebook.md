@@ -1,10 +1,10 @@
 ---
 title: "Análisis de rendimiento de 28 días — Instagram y Facebook"
 purpose: "Analizar el rendimiento verificable de Instagram y Facebook entre el 22 de julio y el 18 de agosto de 2026, manteniendo separadas las plataformas, los formatos y las ventanas temporales."
-status: "Review"
+status: "Active"
 created: 2026-08-18
-updated: 2026-08-18
-version: "1.0"
+updated: 2026-08-19
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-14_Comparativo_Desempeno_Junio_Julio_Agosto_Datos.csv"
@@ -13,6 +13,8 @@ related_documents:
   - "Operations/Research/2026-08-19_Auditoria_Reels_y_Monetizacion.md"
   - "Operations/Research/2026-08-19_Meta_Reels_Audit.json"
   - "Operations/Research/2026-08-17_Instagram_Republicacion_2608036_2608060.json"
+  - "Operations/Research/2026-08-19_Windsor_Instagram_28D_Normalizado.json"
+  - "Operations/Research/2026-08-19_Windsor_Facebook_Organic_28D_Normalizado.json"
 organization: "Operations/Research"
 ---
 
@@ -22,9 +24,9 @@ organization: "Operations/Research"
 
 El corte analizado comprende del **22 de julio al 18 de agosto de 2026**, inclusive. Facebook dispone de una muestra cuantificable y amplia: 119 publicaciones, 30,729 interacciones acumuladas y una mediana de 37 interacciones por publicación. El rendimiento fue claramente más fuerte en la parte de julio incluida en el período que en agosto: la mediana bajó de 43 a 29 interacciones y la media descendió de 335.2 a 192.1.
 
-Instagram ya fue consultado directamente mediante **Meta Graph API v26.0**. La API devolvió **34 piezas de media** dentro del corte, pero rechazó las 34 consultas de Insights con HTTP 400 y el error `(#10) Application does not have permission for this action`. La comprobación de permisos mostró `instagram_basic`, `instagram_content_publish` y permisos de Página, pero no `instagram_manage_insights`. Por tanto, la API sí permite inventariar publicaciones y recuperar likes/comments básicos, pero todavía no permite extraer alcance, impresiones, retención ni el conjunto completo de Insights. El conector MCP no es la ruta de análisis; la limitación actual está en el permiso efectivo del token de Graph API.
+Instagram ya fue consultado mediante **Windsor.ai** y verificado con el conector de Instagram. Windsor devolvió **34 piezas de media** dentro del corte con métricas de engagement, alcance, views, guardados, shares y watch time para Reels. Tres comprobaciones cruzadas —dos Reels y una imagen— devolvieron exactamente los mismos valores en Windsor y en el conector de Instagram. La Graph API directa sigue siendo la ruta canónica para IDs y publicación, pero el token actual no tiene `instagram_manage_insights`, por lo que no es la fuente efectiva de Insights en este corte.
 
-> **Veredicto:** Facebook muestra una base de distribución fuerte pero concentrada en pocos posts; Reels presentan una señal de interacción mucho menor que el conjunto general de publicaciones. Instagram está en estado de instrumentación incompleta y requiere una extracción autenticada de insights antes de cualquier conclusión de rendimiento.
+> **Veredicto:** Facebook muestra una base de distribución fuerte pero concentrada en pocos posts; Reels presentan una señal de interacción mucho menor que el conjunto general de publicaciones. Instagram ya tiene una medición útil de 34 piezas mediante Windsor, con Reels como formato dominante, y cuenta con validación puntual del conector de Instagram. Graph API directa queda reservada para identidad, publicación y reconciliación hasta autorizar `instagram_manage_insights`.
 
 ## Definición del corte y comparabilidad
 
@@ -33,11 +35,11 @@ Instagram ya fue consultado directamente mediante **Meta Graph API v26.0**. La A
 | Período | 22 de julio–18 de agosto de 2026, inclusive |
 | Facebook general | Publicaciones del dataset histórico de la página, con reacciones, comentarios, shares e interacciones actuales |
 | Facebook Reels | 12 Reels de la auditoría Meta dentro del período, con interacciones actuales acumuladas |
-| Instagram | Meta Graph API devuelve 34 piezas; las consultas de Insights fallan por permiso faltante |
+| Instagram | Windsor devuelve 34 piezas con Insights; el conector confirma valores puntuales; Graph API directa mantiene la identidad y publicación |
 | Métrica principal | Mediana de interacciones por publicación |
 | Precaución | Los valores de Facebook general y Facebook Reels son acumulados actuales; no deben interpretarse como ventanas exactas 24/72 horas |
 
-La métrica de interacción utilizada es `reacciones + comentarios + shares`. El protocolo del Growth OS prioriza la mediana porque evita que unos pocos virales dominen el diagnóstico. Los valores de alcance, vistas, retención y seguidores ganados no están disponibles de forma completa para este corte.
+La métrica de interacción utilizada es `reacciones + comentarios + shares`. El protocolo del Growth OS prioriza la mediana porque evita que unos pocos virales dominen el diagnóstico. Los valores de alcance, views, guardados, shares y watch time están disponibles para Instagram mediante Windsor. Las métricas de Facebook general proceden del histórico/Meta y no son idénticas en definición a `post_engagements` de Windsor, por lo que el Growth OS conservará su métrica canónica por plataforma.
 
 ## Facebook: rendimiento general
 
@@ -91,20 +93,36 @@ Los Reels representan un carril de interacción considerablemente más débil qu
 
 Los mejores Reels por interacciones fueron `Un rock bien gótico vs. una canción de Juan Gabriel` con 28, el Reel de Wilfred con 26 y `Mi gato sabe hacer de todo` con 25. En agosto, la mediana de Reels fue 17.0, frente a 25.5 en los cuatro Reels de julio incluidos en el período. La muestra es pequeña y no contiene vistas ni retención, por lo que no permite saber si el problema está en distribución inicial, hook, duración o conversión a interacción.
 
-## Instagram: estado de la evidencia
+## Instagram: rendimiento obtenido mediante Windsor
 
-| Registro en el período | Cantidad | Interpretación |
-|---|---:|---|
-| Piezas devueltas por Graph API | 34 | Inventario real de media dentro del corte |
-| Consultas de Insights | 34 | Todas respondieron HTTP 400 |
-| Consultas exitosas de Insights | 0 | El token carece de permiso efectivo para esa acción |
-| Error observado | `(#10) Application does not have permission for this action` | Rechazo de aplicación/permisos, no ausencia de publicaciones |
-| Filas relacionadas en `Publication_Log.csv` | 8 | Incluye estados publicados, eliminados y programados |
-| Publicaciones activas registradas | 3 | Una del 15 de agosto y dos republicadas el 16 de agosto |
+| Métrica | Total 34 piezas | Mediana por pieza |
+|---|---:|---:|
+| Engagement | 59 | 1.0 |
+| Reach | 1,216 | — |
+| Views | 1,646 | — |
+| Likes | 44 | — |
+| Guardados | 5 | — |
+| Shares | 6 | — |
 
-Graph API recuperó correctamente IDs, captions, timestamps, permalink, tipo de media, likes y comentarios básicos de las piezas. No se pueden usar esos likes/comments como sustituto de Insights completos porque la extracción no tiene alcance ni impresiones y los valores no corresponden necesariamente a la misma ventana temporal que el corte. La conclusión correcta es **inventario confirmado, Insights bloqueados por permiso**, no rendimiento cero.
+| Formato | Piezas | Engagement | Mediana | Reach | Views |
+|---|---:|---:|---:|---:|---:|
+| Reels | 14 | 47 | 2.0 | 1,137 | 1,447 |
+| Imágenes | 17 | 12 | 0.0 | 70 | 168 |
+| Carruseles | 3 | 0 | 0.0 | 9 | 31 |
 
-Para cerrar la brecha se necesita renovar o autorizar el token con el permiso de lectura de insights de Instagram (`instagram_manage_insights`) y repetir la extracción. Mientras tanto, el análisis de Instagram debe permanecer en estado `No concluyente`.
+Los Reels son el formato claramente dominante en Instagram durante el corte: concentran aproximadamente el **79.7% del engagement**, el **93.5% del reach** y el **87.9% de las views** de las 34 piezas. El mejor Reel fue `Cultiva la paz interior`, con 19 interacciones, 247 de reach y 354 views. Le siguieron `Dicen que si lo ves caminando, no lo sigas`, con 7 interacciones, y `Mi gato sabe hacer de todo`, con 5.
+
+La evolución también muestra una caída de julio a agosto: la media de engagement pasó de 4.86 a 0.93 por pieza y el total de reach de 680 a 536, aunque agosto tiene una composición de formatos distinta y muchos posts con distribución muy baja. La señal es suficiente para investigar, pero no para atribuir causalidad sin estratificar por formato, personaje, copy y horario.
+
+## Verificación entre fuentes
+
+| Fuente | Resultado de la prueba | Uso recomendado |
+|---|---|---|
+| Windsor.ai | 34 piezas y métricas completas por media; consulta masiva rápida | Fuente analítica principal para Instagram |
+| Conector Instagram | Cuenta, publicaciones y insights por post; coincidió con Windsor en tres muestras | Fuente secundaria de validación y lectura puntual |
+| Graph API directa | IDs, media e identidad correctos; Insights bloqueados por permiso `instagram_manage_insights` | Fuente canónica para identidad, publicación y reconciliación |
+
+La conclusión correcta es **Instagram medido con Windsor y verificado puntualmente por el conector**, no rendimiento cero ni ausencia de datos. Facebook conserva su métrica canónica histórica `reacciones + comentarios + shares`; no se deben sumar directamente los agregados `post_engagements` de Windsor porque su definición puede incluir acciones adicionales y su fecha diaria puede usar otra normalización temporal.
 
 
 ## Diagnóstico y acciones prioritarias

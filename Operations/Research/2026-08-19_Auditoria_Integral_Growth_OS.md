@@ -4,7 +4,7 @@ purpose: "Verificar que la documentación, ledgers, inventario, experimento P0, 
 status: "Review"
 created: 2026-08-19
 updated: 2026-08-19
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
@@ -15,6 +15,8 @@ related_documents:
   - "Operations/Research/2026-08-17_Protocolo_P0_Metricas_y_Veredictos.md"
   - "Operations/Research/2026-08-16_Calendario_Operativo_17_30_Agosto.csv"
   - "Operations/Research/2026-08-19_Normalizacion_Documental_P2.md"
+  - "Operations/Research/2026-08-18_Analisis_Rendimiento_28_Dias_Instagram_Facebook.md"
+  - "Operations/Research/2026-08-19_Windsor_Instagram_28D_Normalizado.json"
 organization: "Operations/Research"
 ---
 
@@ -40,7 +42,7 @@ Las métricas temporales P0 aún no se han capturado: las cinco filas permanecen
 | ExperimentLog | Ámbar | 101 filas; 98 tienen métricas agregadas vacías | Conserva la estructura, pero aún no cierra el aprendizaje de la ola activa |
 | Inventario maestro | Rojo parcial | 85 filas; 74 `Asset_Ref` de publicaciones no tienen coincidencia en `Content_Inventory.csv` | El inventario no refleja todavía la totalidad de la programación 17–30 |
 | Histórico individual | Ámbar | 211 filas: 177 junio, 28 mayo, 6 julio; cinco Meta IDs duplicados | La cobertura es útil, pero requiere deduplicación lógica antes de comparaciones agregadas |
-| Instagram | Ámbar controlado | 13 filas en Publication Log; prueba eliminada y seis duplicaciones manuales documentadas | No se debe asumir publicación futura automática; la ruta manual sigue siendo la segura |
+| Instagram | Ámbar analítico / Verde en lectura Windsor | Windsor devolvió 34 piezas del corte con engagement, reach, views y watch time; el conector validó muestras | La medición histórica funciona; la publicación futura sigue controlada y separada |
 | Make | Verde retirado | Las menciones halladas son históricas o de auditoría | No se detectó como dependencia activa en la ruta vigente |
 
 ## Hallazgos de integración
@@ -67,7 +69,7 @@ El ExperimentLog contiene 95 filas de `EXP-2026-08-CAL-01`, pero 98 de sus 101 f
 
 La llamada directa al endpoint `/me` devuelve el usuario autorizado, no la página. Esto no debe interpretarse como fallo del conector: `/me/accounts` devuelve la página `Universe Sent Me` y un token de página; con ese token, el objeto de página responde HTTP 200 y el feed responde HTTP 200. La operación correcta debe resolver explícitamente el token de página antes de consultar el feed o realizar una acción sobre la página.
 
-Instagram permanece deliberadamente controlado. El Publication Log registra pruebas eliminadas y duplicaciones manuales, pero no debe afirmar publicación automática efectiva sin permalink, media ID o evidencia Meta. No se recomienda reactivar el scheduler de Instagram dentro de esta auditoría.
+Instagram permanece deliberadamente controlado para **publicación**, no para medición. El Publication Log registra pruebas eliminadas y duplicaciones manuales, pero no debe afirmar publicación automática efectiva sin permalink, media ID o evidencia Meta. Para rendimiento, Windsor devolvió 34 piezas del corte 22 de julio–18 de agosto con métricas de media, y el conector de Instagram coincidió con Windsor en dos Reels y una imagen. Graph API directa conserva la identidad y la publicación; su token actual todavía carece de `instagram_manage_insights`. No se recomienda reactivar el scheduler de Instagram dentro de esta auditoría.
 
 ## Correcciones aplicadas durante la auditoría
 

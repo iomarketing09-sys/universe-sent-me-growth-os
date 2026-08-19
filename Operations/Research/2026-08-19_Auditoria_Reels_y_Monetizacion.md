@@ -4,7 +4,7 @@ purpose: "Separar el rendimiento histórico de Reels del experimento P0 de imág
 status: "Review"
 created: 2026-08-19
 updated: 2026-08-19
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -14,6 +14,8 @@ related_documents:
   - "Operations/Research/2026-08-19_Meta_Reel_Insights.json"
   - "Operations/Research/2026-08-19_Auditoria_Integral_Growth_OS.md"
   - "Operations/Research/2026-08-17_Protocolo_P0_Metricas_y_Veredictos.md"
+  - "Operations/Research/2026-08-19_Windsor_Instagram_28D_Normalizado.json"
+  - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
 organization: "Operations/Research"
 ---
 
@@ -27,7 +29,7 @@ La auditoría recuperó 12 publicaciones de video/Reel de la página `Universe S
 
 ## Cobertura multicanal dentro del Growth OS
 
-La documentación existente sí cubre de forma operativa el rendimiento de **Instagram y Facebook**, principalmente mediante Meta Graph API, registros manuales, auditorías de Reels, históricos de publicaciones, cruces de assets y el protocolo P0 de métricas comparables. Esta cobertura es parcial para video: existen interacciones y algunos cortes de Insights, pero todavía falta un ledger uniforme con vistas, alcance, retención, tiempo promedio visto, completaciones y seguidores ganados para cada Reel.
+La documentación existente cubre de forma operativa el rendimiento de **Instagram y Facebook** mediante Meta Graph API, Windsor, el conector de Instagram, registros manuales, auditorías de Reels, históricos de publicaciones, cruces de assets y el protocolo P0. La cobertura de Instagram mejoró: Windsor ya devuelve vistas, reach, engagement, guardados, shares y watch time de Reels. La deuda restante es consolidar un ledger uniforme y completar las métricas de distribución y retención de Facebook Reels y los snapshots 24/72 horas.
 
 No se encontró dentro del repositorio un **ledger, histórico de rendimiento o protocolo específico para TikTok**. La nueva cuenta puede considerarse un canal abierto, pero su rendimiento aún no forma parte del Growth OS ni debe mezclarse con los datos de Meta.
 
@@ -90,15 +92,16 @@ El primer activo con señal comercial observable es el Reel de la lámpara de lu
 
 ## Veredicto CGO
 
-Reels no está fallando necesariamente por falta de potencial; está **subinstrumentado**. La prioridad es construir un ledger de video con métricas de distribución y retención, no producir más Reels a ciegas.
+Reels no está fallando necesariamente por falta de potencial. La evidencia de Windsor muestra que Instagram sí tiene distribución medible y que los Reels dominan el reach y las views del canal durante el corte. Facebook Reels todavía está subinstrumentado en vistas y retención, y la medición entre plataformas necesita un ledger común con definiciones explícitas. La prioridad es consolidar esa tabla y no producir más Reels a ciegas.
 
 La monetización nativa de Meta es una oportunidad futura, pero no debe tratarse como ingreso disponible hasta confirmar una invitación dentro de Business Suite. La monetización por afiliación puede probarse antes, pero requiere tracking real y una pieza piloto aprobada, no solo una estrategia escrita.
 
 | Carril | Estado | Próxima acción |
 |---|---|---|
-| Reels | Ámbar | Crear ledger propio y medir vistas/retención junto con interacciones |
+| Reels Instagram | Amarillo | Consolidar el ledger de Windsor y validar muestras con el conector de Instagram |
 | Monetización nativa Meta | Ámbar / No verificado | Revisar Business Suite > Monetization > Content monetization |
 | Mercado Libre afiliados | Ámbar / No validado | Crear enlace trazable y ledger de clics, ventas y comisión |
+| Reels Facebook | Ámbar | Completar vistas, retención y watch time mediante una extracción compatible |
 | P0 imágenes | Separado | Esperar el primer corte 24h; no mezclar con este informe |
 
 ## Referencias

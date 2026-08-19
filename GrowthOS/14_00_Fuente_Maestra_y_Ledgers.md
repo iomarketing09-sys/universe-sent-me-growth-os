@@ -3,8 +3,8 @@ title: "Fuente maestra y ledgers del Growth OS"
 purpose: "Definir una arquitectura mínima y unificada para que inventario, publicaciones, calendarios y aprendizaje compartan IDs sin duplicar datos ni repetir consultas innecesarias."
 status: Active
 created: 2026-08-15
-updated: 2026-08-17
-version: "2.1"
+updated: 2026-08-19
+version: "2.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -21,6 +21,9 @@ related_documents:
   - "GrowthOS/00_Índice.md"
   - "Operations/Research/2026-08-17_Instagram_Publicacion_260633.json"
   - "Operations/Research/2026-08-17_Instagram_IDs_Duplicaciones_Confirmadas.json"
+  - "Operations/Research/2026-08-18_Analisis_Rendimiento_28_Dias_Instagram_Facebook.md"
+  - "Operations/Research/2026-08-19_Windsor_Instagram_28D_Normalizado.json"
+  - "Operations/Research/2026-08-19_Windsor_Facebook_Organic_28D_Normalizado.json"
   - "Operations/Research/Historical_Performance_Snapshot.csv"
   - "Operations/Research/Historical_Performance_Individuals.csv"
   - "Operations/Research/2026-08-17_Integracion_CNT_Mayo_Reserve_Revision.md"
@@ -40,6 +43,20 @@ La fuente maestra no debe ser un calendario gigante ni una tabla que repita una 
 | Historial de publicación | `Operations/Research/2026-08-15_Publication_Log.csv` | Una fila por publicación y plataforma. Conecta pieza, asset, fecha, cuenta, IDs de Meta, permalink, archivado y estado real. | Manus agrega después de cada orden o resultado de Meta. |
 | Aprendizaje experimental | `Operations/Research/2026-08-15_ExperimentLog.csv` | Una fila por cohorte, publicación u observación de hipótesis. Contiene métricas, veredicto, conclusión y próxima acción. | Manus agrega datos; CGO/Manus redacta conclusión; Fernando aprueba decisiones de calendario. |
 | Comunidad cualitativa | `Operations/Research/2026-08-15_Community_Engagement_Log.csv` | Una fila por comentario real que aporte señal, respuesta humana o decisión de moderación. No guarda identidades personales y complementa, pero no sustituye, el aprendizaje cuantitativo. | Manus agrega datos anonimizados; las respuestas públicas y acciones de moderación requieren aprobación humana. |
+
+### 1.1 Jerarquía de fuentes de métricas y sincronización
+
+La comprobación del corte 22 de julio–18 de agosto de 2026 probó tres fuentes. La decisión CGO es **no elegir una única fuente para todo**, sino asignar a cada sistema la función en la que ofrece mejor trazabilidad.
+
+| Fuente | Cobertura comprobada | Limitación comprobada | Rol oficial en el Growth OS |
+|---|---|---|---|
+| Meta Graph API directa | Identidad de Página, cuenta profesional, IDs, publicación y reconciliación de Meta | El token actual carece de `instagram_manage_insights`; la lectura de Insights de Instagram respondió HTTP 400 | Fuente canónica de identidad, IDs, estados de publicación y operaciones Meta |
+| Windsor.ai | Consulta masiva de Instagram y Facebook orgánico; Instagram devolvió 34 piezas con engagement, reach, views, saves, shares y watch time de Reels | `post_engagements` de Facebook no es idéntico a `reacciones + comentarios + shares`; la fecha diaria puede normalizarse distinto | Fuente analítica principal para históricos y cortes comparativos, con definición de métrica registrada por conector |
+| Conector de Instagram | Lectura de cuenta, lista de publicaciones e Insights por post; coincidió con Windsor en dos Reels y una imagen | Lectura por publicación, paginación y menor eficiencia para lotes grandes | Fuente secundaria de validación puntual y diagnóstico cuando Windsor presente una anomalía |
+
+La regla de no duplicación es estricta: una fila de rendimiento debe registrar `fuente_metrica`, `fecha_extraccion`, `definicion_metrica`, `ventana_comparabilidad` y el ID de la publicación. Para Instagram, Windsor es la fuente primaria de análisis hasta que Graph API obtenga `instagram_manage_insights`; el conector confirma muestras, no reemplaza el lote completo. Para Facebook, `Publication_Log.csv` y los datasets Meta conservan como métrica canónica `reacciones + comentarios + shares`; los agregados de Windsor (`post_engagements`) se guardan como métrica alternativa y no se suman con la métrica canónica.
+
+La arquitectura también separa **fuente de identidad** y **fuente de rendimiento**. Que una publicación aparezca en Windsor o en el conector no autoriza a publicarla ni cambia su estado de calendario. Que Graph API confirme un ID no convierte automáticamente el total acumulado en una ventana 24/72 horas. Cada snapshot debe conservar su propia fecha y estado de comparabilidad.
 
 La idea clave es que **no todo debe vivir en una sola fila**. Una pieza puede publicarse muchas veces, en varias plataformas y bajo varios experimentos. Si todo se fuerza dentro de `Content_Inventory.csv`, aparecerán columnas repetidas, estados contradictorios y pérdida de historial. El inventario identifica la pieza; `Publication_Log` identifica el hecho de publicación; `ExperimentLog` identifica lo aprendido cuantitativamente; `Community_Engagement_Log` identifica señales cualitativas de conversación y cobertura de respuesta.
 
@@ -132,7 +149,7 @@ El mismo procedimiento aplica a las publicaciones posteriores: registrar primero
 
 ## 6. Primer estado implementado
 
-El `ExperimentLog` contiene observaciones históricas, nueve publicaciones reales de Facebook del 15–16 de agosto y tres publicaciones activas confirmadas de Instagram: `2608030`, `2608036` y `2608060`. Además, registra seis IDs proporcionados por Fernando para duplicaciones Instagram 17–30 (`260633`, `260560`, `260614`, `260625`, `260613` y `260528`) con estado prudente `Programada`, sin permalink ni hora real inventados. La fila histórica de `260633` con media `17943879225288953` permanece como `Eliminada_Manualmente`; el nuevo ID `1564061365193135` se conserva como registro separado. Ninguna de estas filas recibe un CNT inventado; permanecen con `ID_Pieza` vacío hasta una reconciliación con evidencia suficiente. El `Publication_Log` enlaza las nueve publicaciones de Facebook con `CNT-031`–`CNT-039`, conserva intentos históricos de Instagram eliminados manualmente y separa publicaciones activas confirmadas de programaciones con ID proporcionado. Las métricas 24/72 horas de Facebook y los cortes observados de Instagram quedan pendientes de evidencia válida.
+El `ExperimentLog` contiene observaciones históricas, nueve publicaciones reales de Facebook del 15–16 de agosto y tres publicaciones activas confirmadas de Instagram: `2608030`, `2608036` y `2608060`. Además, registra seis IDs proporcionados por Fernando para duplicaciones Instagram 17–30 (`260633`, `260560`, `260614`, `260625`, `260613` y `260528`) con estado prudente `Programada`, sin permalink ni hora real inventados. La fila histórica de `260633` con media `17943879225288953` permanece como `Eliminada_Manualmente`; el nuevo ID `1564061365193135` se conserva como registro separado. Ninguna de estas filas recibe un CNT inventado; permanecen con `ID_Pieza` vacío hasta una reconciliación con evidencia suficiente. El `Publication_Log` enlaza las nueve publicaciones de Facebook con `CNT-031`–`CNT-039`, conserva intentos históricos de Instagram eliminados manualmente y separa publicaciones activas confirmadas de programaciones con ID proporcionado. Las métricas 24/72 horas de Facebook siguen pendientes cuando Meta no permite reconstruir el snapshot exacto. Para históricos y cortes de publicación, Instagram ya tiene evidencia analítica de Windsor y validación puntual del conector; el estado de cada fila debe distinguir entre `lifetime_actual`, `corte_observado` y `snapshot_24_72h`.
 
 El `Community_Engagement_Log.csv` contiene 18 comentarios reales: nueve del primer lote, seis del delta del 16 de agosto, dos del delta del 17 de agosto y una revisión puntual de publicación. Las cuatro respuestas del primer lote y la respuesta puntual fueron aceptadas por Meta; la respuesta puntual tiene `Respuesta_Meta_ID=122148874563072582_1613678620282915`, aunque su verificación GET devolvió HTTP 403 por permisos. La muestra histórica de 67 comentarios se conserva como análisis agregado y no se transforma retroactivamente en filas. Las futuras revisiones deben recuperar solo el delta nuevo, deduplicar por `Comentario_ID` y mantener respuestas y moderación bajo aprobación humana.
 
