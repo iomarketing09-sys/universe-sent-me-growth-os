@@ -1,0 +1,359 @@
+{
+  "period": {
+    "start": "2026-07-22",
+    "end": "2026-08-18"
+  },
+  "cost_assumption": {
+    "amount_mxn": 15,
+    "applies_to": "Cada Reel o video corto tratado como pieza de producción individual",
+    "status": "Supuesto_aprobado_por_Fernando",
+    "hours_status": "Pendiente"
+  },
+  "comparability_warning": "Los IDs no contienen un mapeo completo de asset fuente entre plataformas. No sumar plataformas como piezas independientes para un ROI total hasta reconciliar cross-posts. El inventario presenta retorno por publicación dentro de cada plataforma.",
+  "platform_summary": {
+    "Instagram": {
+      "pieces": 14,
+      "engagement": 47,
+      "cost_mxn": 210,
+      "engagement_per_mxn": 0.22380952380952382
+    },
+    "TikTok": {
+      "pieces": 7,
+      "engagement": 23,
+      "cost_mxn": 105,
+      "engagement_per_mxn": 0.21904761904761905
+    },
+    "YouTube": {
+      "pieces": 6,
+      "engagement": 31,
+      "cost_mxn": 90,
+      "engagement_per_mxn": 0.34444444444444444
+    }
+  },
+  "rows": [
+    {
+      "platform": "Instagram",
+      "content_id": "18102391205336788",
+      "published_at": "2026-07-24T16:16:24+0000",
+      "label": "Cultiva la paz interior.. #universesentme #relatable #humoracido #rockstar",
+      "engagement": 19,
+      "views": 354,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 1.2666666666666666,
+      "window": "lifetime_current_snapshot",
+      "source": "Windsor.ai:instagram"
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "18079365233681564",
+      "published_at": "2026-07-25T21:10:02+0000",
+      "label": "Dicen que si lo ves caminando, no lo sigas... Los gatos sí saben a dónde va 👻 🌲 #universesentme #fantasmaUSM #Momentos",
+      "engagement": 7,
+      "views": 145,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0.4666666666666667,
+      "window": "lifetime_current_snapshot",
+      "source": "Windsor.ai:instagram"
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "17975917574904303",
+      "published_at": "2026-07-27T19:22:59+0000",
+      "label": "Mi ascenso a la locura 😵‍💫 #universesentme #hadaUSM #MomentosUSM #reflexiones",
+      "engagement": 2,
+      "views": 129,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0.13333333333333333,
+      "window": "lifetime_current_snapshot",
+      "source": "Windsor.ai:instagram"
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "18004973039958799",
+      "published_at": "2026-07-29T19:03:17+0000",
+      "label": "Un rock bien gótico Vs una canción de Juan Gabriel #UniverseSentMe #UniverseUSM #vidagatuna #humor",
+      "engagement": 1,
+      "views": 78,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0.06666666666666667,
+      "window": "lifetime_current_snapshot",
+      "source": "Windsor.ai:instagram"
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "17884121250454162",
+      "published_at": "2026-07-29T04:14:09+0000",
+      "label": "#universesentme #universo #WilfredUSM #humor #MomentosUSM",
+      "engagement": 0,
+      "views": 33,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0,
+      "window": "lifetime_current_snapshot",
+      "source": "Windsor.ai:instagram"
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "17893864368579271",
+      "published_at": "2026-07-30T02:03:03+0000",
+      "label": "Mi gato sabe hacer de todo... #universesentme #vidagatuna #UniverseUSM #humor",
+      "engagement": 5,
+      "views": 140,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0.3333333333333333,
+      "window": "lifetime_current_snapshot",
+      "source": "Windsor.ai:instagram"
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "17922445887404611",
+      "published_at": "2026-08-02T01:30:04+0000",
+      "label": "La sabiduría del bosque es clara: lo que ves en el muro es solo la punta del iceberg. El verdadero caos está en el mensa",
+      "engagement": 0,
+      "views": 37,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0,
+      "window": "lifetime_current_snapshot",
+      "source": "Windsor.ai:instagram"
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "17873601261628669",
+      "published_at": "2026-08-03T03:23:29+0000",
+      "label": "Hay conversaciones que no llegan a ningun lado 👻 🐱 Universe lo intentó. ¿A quien le tienes que explicar tu vida como t",
+      "engagement": 0,
+      "views": 20,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0,
+      "window": "lifetime_current_snapshot",
+      "source": "Windsor.ai:instagram"
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "18161490751464718",
+      "published_at": "2026-08-04T02:27:36+0000",
+      "label": "Dicen que si te sales de la realidad en el lugar equivocado, terminas aquí. Fantasma no se perdió, su lógica de superviv",
+      "engagement": 3,
+      "views": 121,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0.2,
+      "window": "lifetime_current_snapshot",
+      "source": "Windsor.ai:instagram"
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "18072347879724148",
+      "published_at": "2026-08-06T00:29:53+0000",
+      "label": "Me hace falta vitamina B. (besos). . . #FantasmaUSM #MomentosUSM #UniverseSentMe #Contemplativo #AestheticReels Melancho",
+      "engagement": 2,
+      "views": 41,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0.13333333333333333,
+      "window": "lifetime_current_snapshot",
+      "source": "Windsor.ai:instagram"
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "17940860565300063",
+      "published_at": "2026-08-09T02:00:03+0000",
+      "label": "#UniverseSentMe #EvanUSM #ElaraUSM",
+      "engagement": 1,
+      "views": 10,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0.06666666666666667,
+      "window": "lifetime_current_snapshot",
+      "source": "Windsor.ai:instagram"
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "18119820211888688",
+      "published_at": "2026-08-09T01:22:27+0000",
+      "label": "Universe no sabe qué trae en la caja. Nunca sabe. 🌙📦 Pero sí sabe quedarse a ver la cara que pone Elara cuando la abre",
+      "engagement": 4,
+      "views": 150,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0.26666666666666666,
+      "window": "lifetime_current_snapshot",
+      "source": "Windsor.ai:instagram"
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "17967086586135144",
+      "published_at": "2026-08-10T00:00:04+0000",
+      "label": "Les dije que no eran papeles... #universesentme #UniverseUSM #memes #humor",
+      "engagement": 1,
+      "views": 138,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0.06666666666666667,
+      "window": "lifetime_current_snapshot",
+      "source": "Windsor.ai:instagram"
+    },
+    {
+      "platform": "Instagram",
+      "content_id": "17915449680426911",
+      "published_at": "2026-08-11T19:08:45+0000",
+      "label": "#UniverseSentMe 🫶✨",
+      "engagement": 2,
+      "views": 51,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0.13333333333333333,
+      "window": "lifetime_current_snapshot",
+      "source": "Windsor.ai:instagram"
+    },
+    {
+      "platform": "TikTok",
+      "content_id": "7668211137661472020",
+      "published_at": "2026-07-30T06:55:47",
+      "label": "Desde que decidí no andar con pendej@s, no he vuelto a tener una relación. #UniverseSentMe #fantasmaUSM #humor #meme ",
+      "engagement": 6,
+      "views": 521,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0.4,
+      "window": "lifetime_current_snapshot",
+      "source": "Windsor.ai:tiktok_organic"
+    },
+    {
+      "platform": "TikTok",
+      "content_id": "7668208937937718549",
+      "published_at": "2026-07-30T06:47:13",
+      "label": "Los gatos en la madrugada... #gatos #humor #vidagatuna ",
+      "engagement": 2,
+      "views": 157,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0.13333333333333333,
+      "window": "lifetime_current_snapshot",
+      "source": "Windsor.ai:tiktok_organic"
+    },
+    {
+      "platform": "TikTok",
+      "content_id": "7668797651353226516",
+      "published_at": "2026-07-31T20:51:55",
+      "label": "Cuando dices que vas ahorrar.. y tú gato con 17 juguetes nuevos 🤪 #humor #gatos #relatable #memes ",
+      "engagement": 7,
+      "views": 518,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0.4666666666666667,
+      "window": "lifetime_current_snapshot",
+      "source": "Windsor.ai:tiktok_organic"
+    },
+    {
+      "platform": "TikTok",
+      "content_id": "7669240375399189780",
+      "published_at": "2026-08-02T01:29:50",
+      "label": "La sabiduría del bosque es clara: lo que ves en el muro es solo la punta del iceberg. El verdadero caos está en el mensa",
+      "engagement": 3,
+      "views": 711,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0.2,
+      "window": "lifetime_current_snapshot",
+      "source": "Windsor.ai:tiktok_organic"
+    },
+    {
+      "platform": "TikTok",
+      "content_id": "7669957189435428117",
+      "published_at": "2026-08-03T23:51:16",
+      "label": "Habilidades que no vienen en el manual de usuario #UniverseSentMe #relatable #gatostiktok #destino ",
+      "engagement": 1,
+      "views": 186,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0.06666666666666667,
+      "window": "lifetime_current_snapshot",
+      "source": "Windsor.ai:tiktok_organic"
+    },
+    {
+      "platform": "TikTok",
+      "content_id": "7670378001032301845",
+      "published_at": "2026-08-05T03:04:13",
+      "label": "En los ojos correctos ",
+      "engagement": 0,
+      "views": 0,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0,
+      "window": "lifetime_current_snapshot",
+      "source": "Windsor.ai:tiktok_organic"
+    },
+    {
+      "platform": "TikTok",
+      "content_id": "7670705650501963028",
+      "published_at": "2026-08-06T00:15:39",
+      "label": "me hace falta vitamina B 💀🫧 (besos) #FantasmaUSM #UniverseSentMe #Contemplativo #AestheticTok #GhostCore ",
+      "engagement": 4,
+      "views": 175,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0.26666666666666666,
+      "window": "lifetime_current_snapshot",
+      "source": "Windsor.ai:tiktok_organic"
+    },
+    {
+      "platform": "YouTube",
+      "content_id": "Qoa-XUOVALk",
+      "published_at": null,
+      "label": "Fantasma",
+      "engagement": 0,
+      "views": 8,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0,
+      "window": "daily_observed_activity",
+      "source": "Windsor.ai:youtube"
+    },
+    {
+      "platform": "YouTube",
+      "content_id": "zJhlOICkEuA",
+      "published_at": null,
+      "label": "El verdadero caos está en el mensaje directo 🌲🤐#universesentme",
+      "engagement": 6,
+      "views": 2249,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0.4,
+      "window": "daily_observed_activity",
+      "source": "Windsor.ai:youtube"
+    },
+    {
+      "platform": "YouTube",
+      "content_id": "rox7BGGcfwQ",
+      "published_at": null,
+      "label": "Cc vuelves a leer una conversación de hace 3 años.. y sale \"Escribiendo...\" 💀",
+      "engagement": 0,
+      "views": 16,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0,
+      "window": "daily_observed_activity",
+      "source": "Windsor.ai:youtube"
+    },
+    {
+      "platform": "YouTube",
+      "content_id": "3omHgH6ig6w",
+      "published_at": null,
+      "label": "Estás habilidades no vienen en el manual de usuario 😸 #cat #humorsarcástico #funny #relatable",
+      "engagement": 11,
+      "views": 900,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0.7333333333333333,
+      "window": "daily_observed_activity",
+      "source": "Windsor.ai:youtube"
+    },
+    {
+      "platform": "YouTube",
+      "content_id": "7qB8kWKwyTg",
+      "published_at": null,
+      "label": "Me hace falta vitamina B (besos) #FantasmaUSM #UniverseSentMe #Contemplativo",
+      "engagement": 14,
+      "views": 1847,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0.9333333333333333,
+      "window": "daily_observed_activity",
+      "source": "Windsor.ai:youtube"
+    },
+    {
+      "platform": "YouTube",
+      "content_id": "LNL-bYhQ6pE",
+      "published_at": null,
+      "label": "En los ojos correctos... #funny #humorsarcástico #relatable",
+      "engagement": 0,
+      "views": 1,
+      "cost_mxn": 15,
+      "engagement_per_mxn": 0,
+      "window": "daily_observed_activity",
+      "source": "Windsor.ai:youtube"
+    }
+  ]
+}

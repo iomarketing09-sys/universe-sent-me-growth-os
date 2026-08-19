@@ -27,6 +27,8 @@ related_documents:
   - "Operations/Research/2026-08-19_Social_Performance_28D_Normalizado.json"
   - "Operations/Research/2026-08-19_Retorno_Engagement_Esfuerzo_28D.json"
   - "Operations/Production/2026-08-19_Actualizacion_Asistida_Dashboard_Social.md"
+  - "Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md"
+  - "Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json"
   - "GrowthOS/08_00_Metricas_Baseline_Plataformas.md"
   - "Operations/Research/Historical_Performance_Snapshot.csv"
   - "Operations/Research/Historical_Performance_Individuals.csv"
