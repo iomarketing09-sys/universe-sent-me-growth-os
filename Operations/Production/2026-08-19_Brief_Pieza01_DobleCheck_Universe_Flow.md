@@ -4,12 +4,14 @@ purpose: "Definir el blueprint de producción, la instrumentación y los control
 status: Active
 created: 2026-08-19
 updated: 2026-08-19
-version: "1.4"
+version: "1.5"
 author: "Manus AI (CGO), aprobado por Fernando"
 related_documents:
   - "2026-08-19_Diseno_Experimento_Reels_v2.md"
   - "../Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md"
   - "../../GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md"
+  - "2026-08-19_Playbook_Tracking_Afiliados_MercadoLibre.md"
+  - "../Research/Affiliate_Link_Ledger.csv"
 ---
 
 # Brief Flow — Pieza 01: Doble check → Universe
@@ -292,3 +294,38 @@ Use the actual last usable frame of Clip 2 as the starting image and KF-C as the
 El render `Cat_closing_phone_portal_202608191652.mp4` mantiene la composición, el bosque y los rasgos de Universe. El gesto de la pata se lee como descartar/cerrar una notificación, y el portal termina de forma comprensible en una línea violeta. **Estado:** `APPROVE`.
 
 La edición debe conservar aproximadamente **0:01–0:05** del clip: se elimina el arranque levemente lento y la cola estática después de cerrar. La marca `UniverseSentMe` no se replica dentro de las siguientes generaciones; si se desea, se añade como firma única en la edición final. El montaje queda pendiente de combinar tres segmentos: Clip 1 `PHONE → PORTAL`, Clip 2 `PORTAL → UNIVERSE SEATED` y Clip 3 `UNIVERSE CLOSES CHAT`.
+
+## Montaje final y paquete de lanzamiento — 2026-08-19
+
+| Campo | Registro confirmado |
+|---|---|
+| Asset final | `VID_20260819_162821_989_bsl4342714348557751490.mp4` |
+| Drive_ID | `1gklRn_p8KCkE0ezQKvBVNOcIWKrvd_LD` |
+| Carpeta de Drive | `My Drive/Universe sent me/USM/Reels/08 Agosto/EXP-202608-REALUNIVERSE-01` (`151LcUdabuqrsCchJIDILBuhN6jAyfIbU`) |
+| Tamaño registrado | 20,455,124 bytes |
+| Duración observada | 12 s |
+| Audio | `Prayer Instrumental` de VOIKRUZER + `ping`, `whoosh` y cierre de portal. |
+| Control final | `APPROVE`: texto legible 0:00–0:02, transición teléfono → portal continua, Universe consistente y payoff claro en mute. |
+| Estado | `READY_FOR_PUBLICATION` — requiere orden de publicación aprobada y IDs nativos posteriores. |
+
+La versión final mantiene el texto **“yo después de mandar ‘no pasa nada’”** al inicio y deja que el gesto de Universe cierre la historia. La marca `@UniverseSentMe` se conserva como atribución editorial en el tramo del bosque; no se observan errores de render, cortes accidentales ni texto no intencional.
+
+### Propuesta de cascada para hoy — pendiente de aprobación explícita
+
+| Plataforma | Formato | Copy o título propuesto | Estado |
+|---|---|---|---|
+| Instagram | Reel | `yo después de mandar “no pasa nada” 🟣`<br><br>`#UniverseSentMe #UniverseUSM #MemesUSM #CuandoLeExplicas` | Lista para publicación manual; sin afiliación. |
+| TikTok | Video | `yo después de mandar “no pasa nada” 🟣 #UniverseSentMe #UniverseUSM #MemesUSM` | Lista para publicación manual; sin afiliación. |
+| YouTube | Short | Título: `yo después de mandar “no pasa nada” #Shorts`<br>Descripción: `Universe también sabe cuándo cerrar el portal. #UniverseSentMe #UniverseUSM #MemesUSM` | Lista para publicación manual; sin afiliación. |
+| Facebook | Reel | `Yo: “no pasa nada”.`<br>`Universe, dos segundos después: 🟣`<br><br>`Si tu chat también abre portales dimensionales, no estás solo.`<br><br>`#UniverseSentMe #UniverseUSM #MemesUSM` | Candidato para `FACEBOOK_NATIVE_PRODUCT`; no publicar hasta aprobar producto, link/etiqueta y superficie. |
+
+### Carril de afiliado Mercado Libre — Facebook
+
+El producto con mayor congruencia narrativa es un **soporte para celular con forma de gato**: el teléfono está en el hook y Universe es el personaje ancla. Existe un producto candidato en el piloto: `Soporte Para Celular Gato Escritorio Oficina Gatito Adorable` (`MLMU3833350067`). Sin embargo, su link actual `https://meli.la/2a1cBGa` y etiqueta `usmfb2605900828` fueron reservados en el ledger para otra unidad editorial; **no se reutilizan** para esta pieza.
+
+Para P01 se debe generar en la Central de Afiliados un link nuevo, con una etiqueta nueva —propuesta: `usmfb20260819universe01`, sujeta a validación de la Central— y registrarlo como una fila nueva antes de publicarlo. La superficie preferida es `FACEBOOK_NATIVE_PRODUCT`. Si el editor de Facebook no ofrece adjunción nativa, el fallback es un primer comentario manual solo después de aprobación humana del link exacto, con esta divulgación:
+
+> Para tener el celular a la vista mientras decides si contestar o cerrar el portal: **[LINK_AFILIADO_NUEVO]** 🐈📱  
+> *Enlace de afiliado: podríamos recibir una comisión sin costo adicional para ti.*
+
+No se añade una URL normal de producto, no se reutiliza una etiqueta de otra publicación y no se pega un link en el copy principal. El link afiliado mide una superficie distinta de la publicación y requiere su propio registro/ID para separar monetización de rendimiento creativo.
