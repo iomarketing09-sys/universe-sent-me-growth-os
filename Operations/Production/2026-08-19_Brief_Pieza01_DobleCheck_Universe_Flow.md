@@ -79,6 +79,22 @@ La primera ejecución no supera 10 puntos. No se lanza la ruta B ni iteraciones 
 
 > Use the provided vertical phone panel as the starting composition and the provided vertical Universe-and-portal panel only as the ending visual destination. Vertical 9:16, 7 seconds, one continuous shot, fast readable pacing. A generic logo-free smartphone lies on a warm worn wooden desk at night; an anonymous adult hand is already beside it. A single pair of blue double-check marks appears on a fictional chat screen with one crisp notification ping. The physical phone, desk and hand remain present while soft violet light begins inside the phone screen, curls outward as a small portal, and gradually reveals a moss-green Nubealis forest with lavender spiral clouds and warm amber firelight. By the middle of the shot, Universe — a small expressive cat with round glasses — is already visible beside the phone-shaped portal; he blinks once with dry resignation, closes the portal with one paw and steps back. The final half-second is a brief violet pulse from the portal for a smooth loop. No readable text, no logos, no watermark, no humans in the fantasy scene, no Elara, no dragon, no dialogue, no narration, no background music; only the notification ping, a soft portal whoosh and a gentle fade sound.
 
+### Prompt maestro recomendado — pegar en Flow
+
+```text
+Use the two attached images as one visual contract: Image 1 controls the opening live-action phone scene; Image 2 controls the final Nubealis mood, portal design, and Universe character design. Create one continuous vertical 9:16 video, 7 seconds long.
+
+Story: A generic logo-free smartphone sits on a warm worn wooden desk at night. An anonymous adult hand is already beside the phone. A pair of blue double-check marks appears on a fictional chat screen with one crisp notification ping. The phone, desk, and hand stay physically present while violet light begins inside the screen and slowly curls outward as a small phone-shaped portal. The portal naturally reveals a moss-green fantasy forest with lavender spiral clouds and warm amber firelight. Universe is already a small expressive cat with round glasses at the portal edge; he blinks once with dry resignation, closes the portal with one paw, and steps back. End with one soft violet pulse from the portal so the shot can loop.
+
+Visual direction: cinematic real-world opening that transforms smoothly into the warm, detailed painterly Nubealis look of the final reference. Keep the transition readable and physical, never abrupt. Use a subtle forward camera push only.
+
+Hard continuity: keep the phone recognizable throughout the transformation; Universe must remain a small cat with round glasses, white fur, four paws, tail, and the same proportions as the final reference. Keep only one hand in the real-world opening and only Universe in the fantasy world. Do not introduce people, extra animals, Elara, dragons, extra characters, new props, logos, readable text, watermarks, or a change of aspect ratio.
+
+Audio: no dialogue, no narration, no music. Only a notification ping, a soft magical whoosh, and a gentle portal fade.
+```
+
+El prompt se organiza en cuatro capas: contrato de referencias, historia, dirección visual y continuidad. Si el resultado falla, se ajusta **solo la capa que falló**; no se reescribe todo el prompt.
+
 ## Prompt de video para Flow — Clip 02
 
 > Use the actual last frame from Clip 01 as the first frame. Vertical 9:16, 3.5 to 4 seconds, moderate pacing, painterly cinematic fantasy matching the approved Nubealis references: mossy forest clearing, warm firelight, lavender spiral clouds at the edges, deep greens and soft amber highlights. The glowing phone-shaped portal remains present at the left side of the frame from the first frame to the end. Universe is a small expressive cat wearing round glasses, already sitting at the portal edge; he looks at it, slowly blinks with dry resignation, reaches one paw forward and closes the portal in one clear gesture. He takes a single small step away as the portal dims, then gives one brief pulse of violet light in the final half-second to support a loop. No humans, no Elara, no dragon, no dialogue, no narration, no background music; only a soft portal fade sound.
