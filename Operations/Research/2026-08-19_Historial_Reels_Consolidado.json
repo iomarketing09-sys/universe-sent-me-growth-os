@@ -18,7 +18,11 @@
       "reach": null,
       "source": "2026-08-19_Meta_Reels_Audit.json",
       "evidence_status": "Confirmado_por_Meta_API",
-      "cost_mxn": null
+      "cost_mxn": null,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Facebook",
@@ -33,7 +37,11 @@
       "reach": null,
       "source": "2026-08-19_Meta_Reels_Audit.json",
       "evidence_status": "Confirmado_por_Meta_API",
-      "cost_mxn": null
+      "cost_mxn": null,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Facebook",
@@ -48,7 +56,11 @@
       "reach": null,
       "source": "2026-08-19_Meta_Reels_Audit.json",
       "evidence_status": "Confirmado_por_Meta_API",
-      "cost_mxn": null
+      "cost_mxn": null,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Facebook",
@@ -63,7 +75,11 @@
       "reach": null,
       "source": "2026-08-19_Meta_Reels_Audit.json",
       "evidence_status": "Confirmado_por_Meta_API",
-      "cost_mxn": null
+      "cost_mxn": null,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Facebook",
@@ -78,7 +94,11 @@
       "reach": null,
       "source": "2026-08-19_Meta_Reels_Audit.json",
       "evidence_status": "Confirmado_por_Meta_API",
-      "cost_mxn": null
+      "cost_mxn": null,
+      "content_asset_id": "CNT-015",
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "GrowthOS/07_00_Registro_Maestro_Reels.md: CNT-015 publicado en cascada el 5 de agosto."
     },
     {
       "platform": "Facebook",
@@ -93,7 +113,11 @@
       "reach": null,
       "source": "2026-08-19_Meta_Reels_Audit.json",
       "evidence_status": "Confirmado_por_Meta_API",
-      "cost_mxn": null
+      "cost_mxn": null,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Facebook",
@@ -108,7 +132,11 @@
       "reach": null,
       "source": "2026-08-19_Meta_Reels_Audit.json",
       "evidence_status": "Confirmado_por_Meta_API",
-      "cost_mxn": null
+      "cost_mxn": null,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Facebook",
@@ -123,7 +151,11 @@
       "reach": null,
       "source": "2026-08-19_Meta_Reels_Audit.json",
       "evidence_status": "Confirmado_por_Meta_API",
-      "cost_mxn": null
+      "cost_mxn": null,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Facebook",
@@ -138,7 +170,11 @@
       "reach": null,
       "source": "2026-08-19_Meta_Reels_Audit.json",
       "evidence_status": "Confirmado_por_Meta_API",
-      "cost_mxn": null
+      "cost_mxn": null,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Facebook",
@@ -153,7 +189,11 @@
       "reach": null,
       "source": "2026-08-19_Meta_Reels_Audit.json",
       "evidence_status": "Confirmado_por_Meta_API",
-      "cost_mxn": null
+      "cost_mxn": null,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Facebook",
@@ -168,7 +208,11 @@
       "reach": null,
       "source": "2026-08-19_Meta_Reels_Audit.json",
       "evidence_status": "Confirmado_por_Meta_API",
-      "cost_mxn": null
+      "cost_mxn": null,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Facebook",
@@ -183,7 +227,11 @@
       "reach": null,
       "source": "2026-08-19_Meta_Reels_Audit.json",
       "evidence_status": "Confirmado_por_Meta_API",
-      "cost_mxn": null
+      "cost_mxn": null,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Instagram",
@@ -198,7 +246,11 @@
       "reach": 247,
       "source": "Windsor.ai:instagram",
       "evidence_status": "Confirmado_por_Windsor",
-      "cost_mxn": 15
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Instagram",
@@ -213,7 +265,11 @@
       "reach": 127,
       "source": "Windsor.ai:instagram",
       "evidence_status": "Confirmado_por_Windsor",
-      "cost_mxn": 15
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Instagram",
@@ -228,7 +284,11 @@
       "reach": 107,
       "source": "Windsor.ai:instagram",
       "evidence_status": "Confirmado_por_Windsor",
-      "cost_mxn": 15
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Instagram",
@@ -243,7 +303,11 @@
       "reach": 58,
       "source": "Windsor.ai:instagram",
       "evidence_status": "Confirmado_por_Windsor",
-      "cost_mxn": 15
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Instagram",
@@ -258,7 +322,11 @@
       "reach": 21,
       "source": "Windsor.ai:instagram",
       "evidence_status": "Confirmado_por_Windsor",
-      "cost_mxn": 15
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Instagram",
@@ -273,7 +341,11 @@
       "reach": 116,
       "source": "Windsor.ai:instagram",
       "evidence_status": "Confirmado_por_Windsor",
-      "cost_mxn": 15
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Instagram",
@@ -288,7 +360,11 @@
       "reach": 29,
       "source": "Windsor.ai:instagram",
       "evidence_status": "Confirmado_por_Windsor",
-      "cost_mxn": 15
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Instagram",
@@ -303,7 +379,11 @@
       "reach": 20,
       "source": "Windsor.ai:instagram",
       "evidence_status": "Confirmado_por_Windsor",
-      "cost_mxn": 15
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Instagram",
@@ -318,7 +398,11 @@
       "reach": 116,
       "source": "Windsor.ai:instagram",
       "evidence_status": "Confirmado_por_Windsor",
-      "cost_mxn": 15
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Instagram",
@@ -333,7 +417,11 @@
       "reach": 27,
       "source": "Windsor.ai:instagram",
       "evidence_status": "Confirmado_por_Windsor",
-      "cost_mxn": 15
+      "cost_mxn": 15,
+      "content_asset_id": "CNT-015",
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "GrowthOS/07_00_Registro_Maestro_Reels.md: CNT-015 publicado en cascada el 5 de agosto."
     },
     {
       "platform": "Instagram",
@@ -348,7 +436,11 @@
       "reach": 5,
       "source": "Windsor.ai:instagram",
       "evidence_status": "Confirmado_por_Windsor",
-      "cost_mxn": 15
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Instagram",
@@ -363,7 +455,11 @@
       "reach": 121,
       "source": "Windsor.ai:instagram",
       "evidence_status": "Confirmado_por_Windsor",
-      "cost_mxn": 15
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Instagram",
@@ -378,7 +474,11 @@
       "reach": 106,
       "source": "Windsor.ai:instagram",
       "evidence_status": "Confirmado_por_Windsor",
-      "cost_mxn": 15
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "Instagram",
@@ -393,7 +493,11 @@
       "reach": 37,
       "source": "Windsor.ai:instagram",
       "evidence_status": "Confirmado_por_Windsor",
-      "cost_mxn": 15
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "TikTok",
@@ -408,7 +512,11 @@
       "reach": 492,
       "source": "Windsor.ai:tiktok_organic",
       "evidence_status": "Confirmado_por_Windsor",
-      "cost_mxn": 15
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "TikTok",
@@ -423,7 +531,11 @@
       "reach": 146,
       "source": "Windsor.ai:tiktok_organic",
       "evidence_status": "Confirmado_por_Windsor",
-      "cost_mxn": 15
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "TikTok",
@@ -438,7 +550,11 @@
       "reach": 487,
       "source": "Windsor.ai:tiktok_organic",
       "evidence_status": "Confirmado_por_Windsor",
-      "cost_mxn": 15
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "TikTok",
@@ -453,7 +569,11 @@
       "reach": 711,
       "source": "Windsor.ai:tiktok_organic",
       "evidence_status": "Confirmado_por_Windsor",
-      "cost_mxn": 15
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "TikTok",
@@ -462,13 +582,17 @@
       "content_type": "Video",
       "title_or_caption": "Habilidades que no vienen en el manual de usuario  #UniverseSentMe #relatable #gatostiktok #destino ",
       "character": "Universe",
-      "canonical_concept_id": null,
+      "canonical_concept_id": "CON-2026-08-03-Habilidades_manual",
       "engagement": 1,
       "views": 186,
       "reach": 178,
       "source": "Windsor.ai:tiktok_organic",
       "evidence_status": "Confirmado_por_Windsor",
-      "cost_mxn": 15
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "TikTok",
@@ -477,13 +601,17 @@
       "content_type": "Video",
       "title_or_caption": "En los ojos correctos ",
       "character": "Sin clasificar",
-      "canonical_concept_id": null,
+      "canonical_concept_id": "CON-2026-08-05-Ojos_correctos",
       "engagement": 0,
       "views": 0,
       "reach": 0,
       "source": "Windsor.ai:tiktok_organic",
       "evidence_status": "Confirmado_por_Windsor",
-      "cost_mxn": 15
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "TikTok",
@@ -498,12 +626,16 @@
       "reach": 174,
       "source": "Windsor.ai:tiktok_organic",
       "evidence_status": "Confirmado_por_Windsor",
-      "cost_mxn": 15
+      "cost_mxn": 15,
+      "content_asset_id": "CNT-015",
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "GrowthOS/07_00_Registro_Maestro_Reels.md: CNT-015 publicado en cascada el 5 de agosto."
     },
     {
       "platform": "YouTube",
       "content_id": "Qoa-XUOVALk",
-      "published_at": null,
+      "published_at": "2026-07-29T08:54:07Z",
       "content_type": "Video / Short",
       "title_or_caption": "Fantasma",
       "character": "Fantasma",
@@ -511,14 +643,18 @@
       "engagement": 0,
       "views": 8,
       "reach": null,
-      "source": "Windsor.ai:youtube",
-      "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_pendiente",
-      "cost_mxn": 15
+      "source": "Windsor.ai:youtube; metadata nativo",
+      "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_confirmada",
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "YouTube",
       "content_id": "zJhlOICkEuA",
-      "published_at": null,
+      "published_at": "2026-08-02T01:32:47Z",
       "content_type": "Video / Short",
       "title_or_caption": "El verdadero caos está en el mensaje directo 🌲🤐#universesentme",
       "character": "Universe",
@@ -526,14 +662,18 @@
       "engagement": 6,
       "views": 2249,
       "reach": null,
-      "source": "Windsor.ai:youtube",
-      "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_pendiente",
-      "cost_mxn": 15
+      "source": "Windsor.ai:youtube; metadata nativo",
+      "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_confirmada",
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "YouTube",
       "content_id": "rox7BGGcfwQ",
-      "published_at": null,
+      "published_at": "2026-07-31T21:02:44Z",
       "content_type": "Video / Short",
       "title_or_caption": "Cc vuelves a leer una conversación de hace 3 años.. y sale \"Escribiendo...\" 💀",
       "character": "Sin clasificar",
@@ -541,29 +681,37 @@
       "engagement": 0,
       "views": 16,
       "reach": null,
-      "source": "Windsor.ai:youtube",
-      "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_pendiente",
-      "cost_mxn": 15
+      "source": "Windsor.ai:youtube; metadata nativo",
+      "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_confirmada",
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "YouTube",
       "content_id": "3omHgH6ig6w",
-      "published_at": null,
+      "published_at": "2026-08-03T23:54:39Z",
       "content_type": "Video / Short",
       "title_or_caption": "Estás habilidades no vienen en el manual de usuario 😸 #cat #humorsarcástico #funny #relatable",
       "character": "Sin clasificar",
-      "canonical_concept_id": null,
+      "canonical_concept_id": "CON-2026-08-03-Habilidades_manual",
       "engagement": 11,
       "views": 900,
       "reach": null,
-      "source": "Windsor.ai:youtube",
-      "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_pendiente",
-      "cost_mxn": 15
+      "source": "Windsor.ai:youtube; metadata nativo",
+      "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_confirmada",
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     },
     {
       "platform": "YouTube",
       "content_id": "7qB8kWKwyTg",
-      "published_at": null,
+      "published_at": "2026-08-06T00:34:41Z",
       "content_type": "Video / Short",
       "title_or_caption": "Me hace falta vitamina B (besos) #FantasmaUSM #UniverseSentMe #Contemplativo",
       "character": "Fantasma",
@@ -571,24 +719,32 @@
       "engagement": 14,
       "views": 1847,
       "reach": null,
-      "source": "Windsor.ai:youtube",
-      "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_pendiente",
-      "cost_mxn": 15
+      "source": "Windsor.ai:youtube; metadata nativo",
+      "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_confirmada",
+      "cost_mxn": 15,
+      "content_asset_id": "CNT-015",
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "GrowthOS/07_00_Registro_Maestro_Reels.md: CNT-015 publicado en cascada el 5 de agosto."
     },
     {
       "platform": "YouTube",
       "content_id": "LNL-bYhQ6pE",
-      "published_at": null,
+      "published_at": "2026-08-05T03:05:55Z",
       "content_type": "Video / Short",
       "title_or_caption": "En los ojos correctos... #funny #humorsarcástico #relatable",
       "character": "Sin clasificar",
-      "canonical_concept_id": null,
+      "canonical_concept_id": "CON-2026-08-05-Ojos_correctos",
       "engagement": 0,
       "views": 1,
       "reach": null,
-      "source": "Windsor.ai:youtube",
-      "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_pendiente",
-      "cost_mxn": 15
+      "source": "Windsor.ai:youtube; metadata nativo",
+      "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_confirmada",
+      "cost_mxn": 15,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere."
     }
   ],
   "explicit_cross_platform_concepts": [
@@ -628,7 +784,7 @@
         {
           "platform": "YouTube",
           "content_id": "7qB8kWKwyTg",
-          "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_pendiente"
+          "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_confirmada"
         }
       ]
     },
@@ -683,7 +839,7 @@
         {
           "platform": "YouTube",
           "content_id": "zJhlOICkEuA",
-          "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_pendiente"
+          "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_confirmada"
         }
       ]
     },
@@ -716,6 +872,36 @@
           "evidence_status": "Confirmado_por_Windsor"
         }
       ]
+    },
+    {
+      "canonical_concept_id": "CON-2026-08-03-Habilidades_manual",
+      "publications": [
+        {
+          "platform": "TikTok",
+          "content_id": "7669957189435428117",
+          "evidence_status": "Confirmado_por_Windsor"
+        },
+        {
+          "platform": "YouTube",
+          "content_id": "3omHgH6ig6w",
+          "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_confirmada"
+        }
+      ]
+    },
+    {
+      "canonical_concept_id": "CON-2026-08-05-Ojos_correctos",
+      "publications": [
+        {
+          "platform": "TikTok",
+          "content_id": "7670378001032301845",
+          "evidence_status": "Confirmado_por_Windsor"
+        },
+        {
+          "platform": "YouTube",
+          "content_id": "LNL-bYhQ6pE",
+          "evidence_status": "Confirmado_por_Windsor; fecha_publicacion_confirmada"
+        }
+      ]
     }
   ],
   "summary": {
@@ -726,12 +912,13 @@
       "TikTok": 7,
       "YouTube": 6
     },
-    "explicit_cross_platform_concepts": 7,
-    "unlinked_records": 21
+    "explicit_cross_platform_concepts": 9,
+    "unlinked_records": 17,
+    "records_with_explicit_experiment_evidence": 0
   },
   "limitations": [
     "Facebook audit identifica Reels por attachment_type=video/video_inline; no se infiere formato para posts estáticos.",
     "Los conceptos entre plataformas solo se agrupan mediante frase o título explícitamente coincidente.",
-    "YouTube requiere fecha de publicación primaria para su reconciliación temporal completa."
+    "Las seis piezas de YouTube incluidas en este corte ya tienen fecha nativa confirmada; futuras piezas deben recuperar el mismo campo antes de la reconciliación."
   ]
 }

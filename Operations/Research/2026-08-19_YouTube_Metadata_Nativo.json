@@ -1,0 +1,14 @@
+{
+  "source": "Windsor.ai:youtube",
+  "account_id": "27679",
+  "retrieved_at": "2026-08-19",
+  "fields": ["video", "video_title", "published_at", "video_view_count"],
+  "rows": [
+    {"video": "Qoa-XUOVALk", "video_title": "Fantasma", "published_at": "2026-07-29T08:54:07Z", "video_view_count": 8},
+    {"video": "7qB8kWKwyTg", "video_title": "Me hace falta vitamina B (besos) #FantasmaUSM #UniverseSentMe #Contemplativo", "published_at": "2026-08-06T00:34:41Z", "video_view_count": 1847},
+    {"video": "zJhlOICkEuA", "video_title": "El verdadero caos está en el mensaje directo 🌲🤐#universesentme", "published_at": "2026-08-02T01:32:47Z", "video_view_count": 2249},
+    {"video": "LNL-bYhQ6pE", "video_title": "En los ojos correctos... #funny #humorsarcástico #relatable", "published_at": "2026-08-05T03:05:55Z", "video_view_count": 1},
+    {"video": "rox7BGGcfwQ", "video_title": "Cc vuelves a leer una conversación de hace 3 años.. y sale \"Escribiendo...\" 💀", "published_at": "2026-07-31T21:02:44Z", "video_view_count": 16},
+    {"video": "3omHgH6ig6w", "video_title": "Estás habilidades no vienen en el manual de usuario 😸 #cat #humorsarcástico #funny #relatable", "published_at": "2026-08-03T23:54:39Z", "video_view_count": 900}
+  ]
+}

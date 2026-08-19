@@ -4,9 +4,9 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-19
-**Versión:** 1.2
+**Versión:** 1.3
 **Autor:** Manus AI (CGO)
-**Documentos relacionados:** `05_00_Calendario_01_02_Ago.md`, `Operations/Memories/deep_dive_reels_comparativo.md`, `../Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`, `../Operations/Research/2026-08-19_Meta_Reels_Audit.json`, `../Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json`, `14_00_Fuente_Maestra_y_Ledgers.md`
+**Documentos relacionados:** `05_00_Calendario_01_02_Ago.md`, `Operations/Memories/deep_dive_reels_comparativo.md`, `../Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`, `../Operations/Research/2026-08-19_Meta_Reels_Audit.json`, `../Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json`, `../Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json`, `14_00_Fuente_Maestra_y_Ledgers.md`
 
 ---
 
@@ -16,17 +16,19 @@ El consolidado actual contiene **39 registros de video corto** con evidencia de 
 
 | Concepto canónico confirmado | Facebook | Instagram | TikTok | YouTube | Estado de reconciliación |
 |---|:---:|:---:|:---:|:---:|---|
-| Instante suspendido / “Vitamina B (besos)” | Sí | Sí | Sí | Sí | Cascada confirmada; YouTube aún sin fecha nativa de publicación. |
+| Instante suspendido / “Vitamina B (besos)” | Sí | Sí | Sí | Sí | Cascada confirmada; fechas nativas disponibles en las cuatro publicaciones. |
 | Mi gato sabe hacer de todo | Sí | Sí | No confirmada | No confirmada | Cross-post confirmado entre Facebook e Instagram. |
 | Rock gótico vs. Juan Gabriel | Sí | Sí | No confirmada | No confirmada | Cross-post confirmado entre Facebook e Instagram. |
 | Muros vemos / Inbox no sabemos | Sí | Sí | Sí | Sí | Coincidencia textual confirmada; fecha de YouTube pendiente. |
 | Conversaciones atrancadas | Sí | Sí | No confirmada | No confirmada | Coincidencia textual confirmada entre Meta. |
 | Fantasma Backrooms | Sí | Sí | No confirmada | No confirmada | Coincidencia textual confirmada entre Meta. |
 | Caja de Luna | Sí | Sí | No confirmada | No confirmada | Coincidencia textual confirmada entre Meta. |
+| Ojos correctos | No confirmada | No confirmada | Sí | Sí | Cross-post confirmado entre TikTok y YouTube. |
+| Habilidades / manual de usuario | No confirmada | No confirmada | Sí | Sí | Cross-post confirmado entre TikTok y YouTube. |
 
 > **Regla vigente:** las 21 piezas que aún no tienen relación explícita de título, copy, asset o ID se conservan como publicaciones independientes. No se atribuyen a una cascada, no se suman como una sola producción y no reciben una etiqueta de campaña inventada.
 
-La evidencia por publicación, las relaciones confirmadas y las limitaciones se conservan en `Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`. Este archivo es el insumo de la vista de cascadas del dashboard.
+La evidencia por publicación, las relaciones confirmadas y las limitaciones se conservan en `Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`. Las fechas nativas de los seis videos de YouTube están en `Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json`. Ningún registro recibe `Experiment_ID` retrospectivo sin evidencia explícita; por ahora todos mantienen `Sin_etiqueta_historica`. Estos archivos son el insumo de la vista de cascadas del dashboard.
 
 ---
 
