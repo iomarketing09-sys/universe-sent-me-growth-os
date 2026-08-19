@@ -4,9 +4,9 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-19
-**Versión:** 3.3
+**Versión:** 3.4
 **Autor:** Manus AI (CGO); Sección 6 añadida por Claude
-**Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`
+**Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`
 
 ---
 
@@ -176,3 +176,18 @@ Los exports de Reel que permanezcan en el celular no son descartables ni deben a
 > **Corrección histórica:** cuando una identificación previa sea corregida por Fernando, se actualiza la relación documentada y se conserva la evidencia de la corrección. Nunca se rellena el hueco con un ID parecido ni se conserva una atribución contradicha por la confirmación humana posterior.
 
 La plantilla mínima para un Reel nuevo queda así: `Concept_ID | Campaign_Label | Experiment_ID | Hypothesis_ID | Primary_Asset_ID | Drive_ID | Platform | Platform_Content_ID | Publication_Local | Crosspost_Status | Source_Window | Effort_Status`. El mismo esquema debe acompañar al archivo antes de que se use en la primera plataforma.
+
+## 13. Prioridades estratégicas posteriores al corte 28D — 2026-08-19
+
+El corte renovado confirmó a Facebook como la mayor señal de interacción por publicación dentro de su propia definición, pero no demostró una aceleración temporal multicanal: Instagram solo tuvo movimiento marginal, TikTok quedó plano y YouTube obtuvo un incremento distribuido de catálogo. Por ello, la prioridad no es subir volumen ciegamente, sino convertir el siguiente lote en una cohorte medible.
+
+| Prioridad | Acción | Evidencia y dependencia | Responsable | Criterio de cierre |
+|---|---|---|---|---|
+| P0 | Aplicar la plantilla analítica a cada Reel nuevo antes de publicarlo. | Sin `Concept_ID`, campaña, experimento, hipótesis y IDs nativos no se puede atribuir aprendizaje por pieza. | Fernando aporta datos de producción; Manus valida y registra. | 100% de las publicaciones nuevas con los 12 campos mínimos. |
+| P0 | Ejecutar un corte fresco en 7 días y forzar una lectura de Facebook con `data_fetched_at` nuevo. | Facebook respondió desde caché; aún no existe una tendencia temporal comparable. | Manus. | Dos extracciones con fechas distintas y delta explícito por publicación. |
+| P1 | Mantener la cascada de Reels con mismo `Concept_ID` y `Primary_Asset_ID` en Instagram, TikTok y YouTube cuando sea pertinente. | Hay 17 cascadas verificadas, pero la cobertura debe medirse por cohorte, no suponerse. | Fernando aprueba publicación; Manus reconcilia IDs. | Cada adaptación conserva sus IDs, horas y estado de cascada. |
+| P1 | Medir cada lote nuevo a 24/72 h y cerrar su `ExperimentLog`. | Los snapshots lifetime no sustituyen ventanas temporales. | Manus. | Cada pieza madura tiene fuente, ventana, métricas y veredicto de hipótesis. |
+| P2 | Ingresar exports que permanezcan en el celular a Drive con sus metadatos. | Sin `Drive_ID` y asset fuente se debilita la trazabilidad de futuras cascadas. | Fernando sube exports; Manus inventaría. | `Asset_Ingest_Status=En_Drive` o `Pendiente_celular` explícito por asset. |
+| P2 | Probar hipótesis abiertas con celdas comparables, no declarar ganadores todavía. | Microhistoria, transformación y humor ácido siguen con muestras pequeñas o heterogéneas. | CGO/Manus prepara diseño; Fernando aprueba. | Mínimo tres casos codificados por celda y veredicto documentado. |
+
+> **Decisión de ejecución:** el próximo lote debe priorizar calidad de instrumentación, cascada verificable y maduración de métricas. No se recomienda cambiar la cadencia general ni canonizar un formato ganador a partir del delta corto observado.
