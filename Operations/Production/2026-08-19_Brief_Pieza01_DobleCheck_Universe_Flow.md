@@ -4,7 +4,7 @@ purpose: "Definir el blueprint de producción, la instrumentación y los control
 status: Active
 created: 2026-08-19
 updated: 2026-08-19
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO), aprobado por Fernando"
 related_documents:
   - "2026-08-19_Diseno_Experimento_Reels_v2.md"
@@ -109,6 +109,27 @@ El texto se añade en edición, no dentro de Flow, para no depender de tipograf�
 | Caption | `yo después de mandar “no pasa nada”` | Publicación |
 | Hashtags iniciales | `#UniverseSentMe #UniverseUSM #MemesUSM` | Publicación |
 
+## Audio de edición para Instagram — recomendación vigente al 2026-08-19
+
+La narrativa base permanece comprensible en silencio. Por eso el audio de tendencia no se hornea en el máster ni sustituye los SFX: se añade **solo en la versión de Instagram**, en volumen bajo, y se selecciona de forma nativa al publicar. TikTok y YouTube Shorts conservan el máster con `ping`, `whoosh` y cierre de portal para poder elegir una tendencia propia en cada plataforma.
+
+| Prioridad | Audio | Encaje con P01 | Uso recomendado | Riesgo / condición |
+|---:|---|---|---|---|
+| 1 | **`Not Very Nonchalant` — original sound, Trace Young** | La contradicción entre el texto “no pasa nada” y Universe cerrando el portal con absoluta resignación crea ironía inmediata. Es un audio original de tendencia y se reporta disponible para cuentas business. [1] | Iniciar desde la frase que contiene “nonchalant”; música a 10–15%, `ping` y cierre del portal por encima. No editar el gesto al ritmo de la voz: el gesto debe seguir pareciendo una decisión seca. | Confirmar que aparezca en Edits y que el tramo seleccionado no cubra el `ping`. Si no aparece, no sustituirlo por un audio parecido. |
+| 2 | **`I Treated You Bad (MJ Remix)` — original sound, neverbadagain** | El beat drop puede sincronizar teléfono → portal → Universe como revelación visual, pero vuelve el contenido más “transformación épica” que reacción incómoda. [1] | Usar solo si Fernando prioriza energía de transición: texto y doble check antes del drop; aparición de Universe al drop; cierre de portal con SFX propio. | Es audio licenciado y debe validarse en la biblioteca de la cuenta; no se recomienda para la versión cruzada sin confirmar derechos. |
+| No usar en P01 | **`You Never Take Me to Bangladesh` — Ian McConnell** | Es tendencia de humor absurdo, pero su letra propone un chiste paralelo y desplaza el remate visual de Universe. [1] [2] | Reservar para una pieza futura basada específicamente en quejas que escalan hacia el absurdo. | Audio licenciado; verificar disponibilidad en cuenta Creator. |
+
+### Sincronía recomendada con la opción 1
+
+| Tiempo aproximado | Imagen / texto | Audio |
+|---|---|---|
+| 0.0–1.5 s | Teléfono, doble check y texto `yo después de mandar “no pasa nada”`. | Entrada del audio a 10–15%; `ping` claramente audible. |
+| 1.5–3.0 s | Zoom al teléfono y túnel/portal violeta. | Mantener audio de fondo; `whoosh` por encima. |
+| 3.0–5.5 s | Universe aparece y cierra el portal. | Bajar la música 2–3 dB durante el swipe y poner el SFX de cierre en primer plano. |
+| 5.5–6.0 s | Línea violeta final y corte. | Dejar una cola mínima; no forzar beat ni loop. |
+
+**Estado de decisión:** `Recomendación preparada; validación final en Instagram Edits pendiente`. La disponibilidad, el nombre exacto y el tramo del audio se confirman en la biblioteca de la cuenta justo antes de publicar; una tendencia puede cambiar en días. Ninguna versión posterior debe depender de esta canción para que el experimento mida el hook y payoff visual, no el audio.
+
 ## Referencias necesarias antes de generar video
 
 | Referencia | Uso | Estado |
@@ -120,6 +141,12 @@ El texto se añade en edición, no dentro de Flow, para no depender de tipograf�
 ## Control de calidad y medición
 
 La pieza se rechaza o itera si el conflicto no se entiende en el primer segundo, Universe no es legible como gato con gafas, el portal elimina el teléfono sin transición, aparece una marca de agua/texto generado o el video necesita audio para comprenderse. Tras la primera generación se decide si pasa a edición o si se activa la ruta B; no se gastan más puntos sin registrar el fallo específico. Tras publicar, se capturan IDs nativos por plataforma y métricas a 24/72 h. El veredicto permitido es `WIN`, `SIGNAL`, `FAIL` o `NO_LEARNING`; las métricas principales son retención inicial, shares, reach de no seguidores y completaciones.
+
+## Referencias
+
+[1] [New Engen, “Instagram Trends: August 2026”](https://newengen.com/insights/instagram-trends/), consultado el 2026-08-19.
+
+[2] [SocialBee, “Trending Instagram songs this week”](https://socialbee.com/blog/trending-instagram-songs/), actualizado el 2026-08-19.
 
 ## Iteración V1 — render no aprobado
 
