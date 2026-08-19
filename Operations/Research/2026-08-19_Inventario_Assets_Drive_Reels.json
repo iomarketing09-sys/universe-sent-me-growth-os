@@ -1,0 +1,94 @@
+{
+  "title": "Inventario de assets de Drive para historial de Reels",
+  "purpose": "Conservar la evidencia de assets disponibles en My Drive/Universe sent me/USM/Reels y sus asociaciones verificables con Reels publicados.",
+  "status": "Active",
+  "created_at": "2026-08-19",
+  "last_updated": "2026-08-19",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "2026-08-19_Historial_Reels_Consolidado.json",
+    "2026-08-19_Relaciones_Reels_Alta_Evidencia.json",
+    "../../GrowthOS/07_00_Registro_Maestro_Reels.md",
+    "../../GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
+  ],
+  "source_folder": {
+    "path": "My Drive/Universe sent me/USM/Reels",
+    "folder_id": "1kWkZSbWvMGe0fwXu93UTh1iK6aVfE70a",
+    "modified_at": "2026-07-31T05:14:43.744Z"
+  },
+  "inventory_summary": {
+    "direct_video_assets_observed": 28,
+    "project_subfolders_observed": ["Mi ascenso a la locura", "08 Agosto", "TRAILER UNIVERSE", "¿Que me llego¿"],
+    "evidence_scope": "Solo assets presentes en Drive al momento de extracción; no cubre archivos que Fernando indicó que permanecen en su celular."
+  },
+  "asset_links": [
+    {
+      "canonical_concept_id": "CON-2026-07-27-Mi_ascenso_a_la_locura",
+      "strength": "Directa",
+      "evidence": "La subcarpeta tiene el mismo nombre del Reel publicado y contiene una toma de Hada subiendo escaleras del día de publicación.",
+      "platform_content_ids": ["17975917574904303"],
+      "drive_assets": [{"id": "1c0QFsf661Tf4pNH0uuVkD4yK6BmPw2u3", "name": "Hada_subiendo_escaleras_202607271336.mp4", "duration_ms": 3999}]
+    },
+    {
+      "canonical_concept_id": "CON-2026-08-03-Conversaciones_atrancadas",
+      "strength": "Directa",
+      "evidence": "La carpeta `Universe + Fantasma` contiene las tomas de Universe hablando y Fantasma reaccionando, compatibles con el copy publicado de una conversación que no llega a ningún lado.",
+      "platform_content_ids": ["1036844829507460_122144459607072582", "17873601261628669"],
+      "drive_assets": [{"id": "15-c_k6x4aGyT1kxNk4vIVTXhgcYt_meI", "name": "Universe_talking_animatedly_gesture_202608022059.mp4", "duration_ms": 3999}, {"id": "1igh-v3hvVNo12EJq5yZl1-rp4rVzvWFF", "name": "Fantasma_single_micro-gesture_tilt_202608022103.mp4", "duration_ms": 3999}]
+    },
+    {
+      "canonical_concept_id": "CON-2026-08-04-Fantasma_Backrooms",
+      "strength": "Directa",
+      "evidence": "La subcarpeta `Fantasma (Backrooms)` coincide con el copy de espacio liminal y contiene las tomas del pasillo amarillo y la disolución de Fantasma.",
+      "platform_content_ids": ["1036844829507460_122144700573072582", "18161490751464718"],
+      "drive_assets": [{"id": "10v_P2YhCQCmbCsGQTAZ_WxQP7NryAisf", "name": "Fantasma_walking_yellow_hallway_1080p_202608032104.mp4", "duration_ms": 7999}, {"id": "16k4Z0OkG9DNd6zWzVWVDzW0s3jNL4fuZ", "name": "Fantasma_dissolving_into_static_1080p_202608032113.mp4", "duration_ms": 7999}]
+    },
+    {
+      "canonical_concept_id": "CON-2026-08-05-Instante_suspendido",
+      "strength": "Directa",
+      "evidence": "El paquete en Drive está rotulado como CNT-015 y Fantasma contemplativo; coincide con la cascada previamente documentada de Vitamina B (besos).",
+      "platform_content_ids": ["1036844829507460_122145545163072582", "18072347879724148", "7670705650501963028", "7qB8kWKwyTg"],
+      "drive_assets": [{"id": "1HFzRgE6keLuzBsH7LXFGhVi-cRxiqEAq", "name": "Fantasma_frozen_in_forest_202608051814.mp4", "duration_ms": 3999}, {"id": "1QNH3xKYkgVeXfSNbokAWEOlGwVqcl-BM", "name": "Ghost_face_with_sunglasses_dark_202608062115.mp4", "duration_ms": 5999}]
+    },
+    {
+      "canonical_concept_id": "CON-2026-08-09-Elara_Evan_Estrellas",
+      "strength": "Directa",
+      "evidence": "La carpeta `Elara y Evan` contiene el export final titulado `Elara y Evan en el Bosque` y respalda la relación FB/IG ya confirmada por copy y timestamp.",
+      "platform_content_ids": ["1036844829507460_122147211939072582", "17940860565300063"],
+      "drive_assets": [{"id": "1CELb0iwDuuKEiEJj2n-vuutjUMIYlHA2", "name": "Elara y Evan en el Bosque.mp4", "duration_ms": 22083}]
+    },
+    {
+      "canonical_concept_id": "CON-2026-08-10-Cartones_Papeles",
+      "strength": "Directa",
+      "evidence": "La carpeta se titula `Universe+Silvio+Kael - No eran papeles` y contiene el video publicado en Facebook e Instagram con copies equivalentes.",
+      "platform_content_ids": ["1036844829507460_122147749683072582", "17967086586135144"],
+      "drive_assets": [{"id": "1bCh7WB6tPB1IxZjCkrbBRPluF7rIDmSY", "name": "Generate_video_from_storyboard_1080p_202608091406.mp4", "duration_ms": 5999}]
+    },
+    {
+      "canonical_concept_id": "CON-2026-07-25-Fantasma_Camina_Gatos",
+      "strength": "Fuerte",
+      "evidence": "El nombre de los assets `Ghost_walks_cats_through_forest` coincide con el copy de Instagram sobre seguir a Fantasma y gatos que saben a dónde va.",
+      "platform_content_ids": ["18079365233681564"],
+      "drive_assets": [{"id": "11v7841iVxpGK4YcJqKgaGTMJqnkfqHeK", "name": "Ghost_walks_cats_through_forest_202607240113.mp4", "duration_ms": 9999}, {"id": "1o7tvteY4LicDbWS5_IqL_XhQrNHPf0pW", "name": "Ghost_walks_cats_through_forest_202607251436.mp4", "duration_ms": 3083}]
+    },
+    {
+      "canonical_concept_id": "CON-2026-07-31-Escribiendo",
+      "strength": "Fuerte",
+      "evidence": "El nombre del asset coincide semánticamente con el título del Short de YouTube sobre una conversación vieja que muestra `Escribiendo...`.",
+      "platform_content_ids": ["rox7BGGcfwQ"],
+      "drive_assets": [{"id": "15er7Pj25oc8GuYV6Bb7ysnbyzFfzEbwZ", "name": "Cuando esas viendo una conversacion vieja y sale un - escribiendo _ Kael.mp4", "duration_ms": 6999}]
+    }
+  ],
+  "candidate_assets_without_published_match": [
+    {"id": "1tE84FJLyLNwqELa5E23_7Tn5dvDwN_WI", "name": "Wilfred realista haciendo una posion.mp4"},
+    {"id": "1vXo9XTE6TtwBaxVCegNNt5-BPj0GzDFs", "name": "Man_and_cat_in_cantina_Tu playera es pirata (Universe + Evan).mp4"},
+    {"id": "1kH_OQbWvyBiWJgjzRJy6L_gD9hsO845w", "name": "Sad_clown_fiery_explosion_dramatic_Yo despues de comprar cosas para mi gato.mp4"},
+    {"id": "1HFBUvDQSmHzdxrPxlBs6uTrSIOY6xzT0", "name": "Elara_and_Evan_hug_Gracias por sacarme del caos.mp4"}
+  ],
+  "limitations": [
+    "Los nombres de archivo y carpeta no sustituyen un Platform_Content_ID; se usan como evidencia de asset fuente, no como métrica.",
+    "Los assets que siguen solo en el celular no aparecen en este inventario y permanecen pendientes.",
+    "Un asset asociado a una publicación de una sola plataforma no prueba una cascada cross-platform por sí mismo."
+  ]
+}

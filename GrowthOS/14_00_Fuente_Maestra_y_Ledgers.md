@@ -32,6 +32,8 @@ related_documents:
   - "Operations/Research/2026-08-19_Historial_Reels_Consolidado.json"
   - "Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json"
   - "Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json"
+  - "Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json"
+  - "Operations/Research/2026-08-19_Auditoria_Assets_Drive_Reels.md"
   - "GrowthOS/08_00_Metricas_Baseline_Plataformas.md"
   - "Operations/Research/Historical_Performance_Snapshot.csv"
   - "Operations/Research/Historical_Performance_Individuals.csv"
