@@ -1,7 +1,7 @@
 ---
 title: "Diseño experimental de Reels v2 — situación primero"
 purpose: "Convertir los aprendizajes de la auditoría aportada por Fernando en un primer experimento controlado de Reels, priorizando hook visual, comprensión en mute, transformación real → Universe y shares/retención."
-status: Draft
+status: Active
 created: 2026-08-19
 updated: 2026-08-19
 version: "1.0"
@@ -11,6 +11,7 @@ related_documents:
   - "../Research/2026-08-19_Auditoria_Reels_y_Monetizacion.md"
   - "../../GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md"
   - "../../GrowthOS/07_00_Registro_Maestro_Reels.md"
+  - "2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md"
 ---
 
 # Diseño experimental de Reels v2 — situación primero
