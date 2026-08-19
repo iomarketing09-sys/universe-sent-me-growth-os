@@ -206,6 +206,20 @@ No humans, no extra animals, no Elara, no dragons, no extra characters, no cloth
 Use the actual last frame of Clip 1 as the starting image and KF-B as the ending image. Vertical 9:16, 4 seconds, one continuous camera movement. Begin inside the same purple energy tunnel from Clip 1: electric violet filaments and a dark center remain visible at frame one. The forward motion slows naturally as the tunnel opens into the exact Nubealis clearing shown in KF-B. By the final second, the composition must match KF-B exactly: Universe is already seated to the right of one open phone-shaped violet portal, looking at it; he does not move a paw yet. Keep Universe a small white cat with thin round golden wire glasses, four paws and tail. No text, watermark, people, extra animals, Elara, dragons, extra characters, dialogue or music. Only a soft tunnel whoosh resolving into a quiet forest ambience.
 ```
 
+#### Patrón modular reutilizable: frame real → keyframe destino
+
+El prompt de transición se construye en cinco bloques y se modifica únicamente el bloque que falle:
+
+| Bloque | Función | Qué contiene en Clip 2 |
+|---|---|---|
+| 1. Contrato de referencias | Define el rol de cada imagen; evita que Flow trate ambas como cuadros decorativos. | Último frame real = inicio obligatorio; KF-B = destino obligatorio. |
+| 2. Formato | Limita duración, relación y número de tomas. | `Vertical 9:16, 4 seconds, one continuous camera movement.` |
+| 3. Estado inicial | Repite solo lo que existe en el frame inicial y su inercia. | Túnel púrpura, centro oscuro, movimiento hacia adelante. |
+| 4. Transformación | Explica cómo desaparece el estado inicial y aparece el destino, sin introducir acción adicional. | El túnel se abre y desacelera hasta revelar el claro. |
+| 5. Estado final y exclusiones | Exige coincidencia con KF-B y elimina contaminantes previsibles. | Universe sentado a la derecha, portal abierto, sin mover la pata; sin personajes/agua/texto. |
+
+**Regla práctica:** el bloque 3 no describe nada que no aparezca en el último frame del clip anterior; el bloque 5 no describe nada que no exista en KF-B. Esto convierte el segmento central en una transición controlada, no en una nueva historia.
+
 ### Prompt V3 — Clip 3: UNIVERSE CLOSES CHAT
 
 ```text
