@@ -97,6 +97,8 @@ No se selecciona una implementación definitiva hasta que exista un primer caso 
 
 **Recomendación de implementación:** comenzar con **Groq cloud conectado a un gateway OmniRoute local de bajo consumo**, utilizando datos sintéticos o un corte de métricas ya anonimizado. Fijar un único provider y un model ID explícito; no usar `auto` ni conectar providers gratuitos de procedencia incierta. Si el gateway ralentiza el equipo, probar Groq o Gemini directamente desde su Playground/API. Si el piloto demuestra valor, construir un endpoint backend mínimo y desplegar OmniRoute en una VM separada; no incrustarlo dentro del frontend React ni dentro del proceso de extracción de Windsor.
 
+Para evitar cargar la computadora, el hosting externo queda permitido solo bajo estas condiciones: **Railway** sirve para un trial temporal con volumen en `/app/data`, **Render Free** solo para una demo descartable porque pierde la SQLite al suspenderse, y **Oracle Cloud Always Free** es la alternativa gratuita persistente si Fernando acepta administrar una VM, firewall, HTTPS y backups. El procedimiento detallado y sus límites están en [`2026-08-18_Piloto_Local_OmniRoute_Seguro.md`](2026-08-18_Piloto_Local_OmniRoute_Seguro.md).
+
 ## Piloto propuesto
 
 El piloto debe responder una sola pregunta: **¿una lectura asistida por IA mejora la velocidad o la claridad de interpretación de un corte normalizado sin degradar la trazabilidad?**

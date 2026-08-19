@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-19
 
-**Versión:** 1.1
+**Versión:** 1.2
 
 **Autor:** Manus AI
 
@@ -252,7 +252,111 @@ Después de conectar Gemini, no utilizar `model: "auto"` para esta comparación.
 
 Groq debe tratarse como una ruta cloud controlada, no como una ruta privada local. Aunque sus términos describen restricciones sobre el uso de inputs y outputs, el prompt sale del equipo y se aplican también los términos de cada model provider. [7]
 
-## Paso 10: criterios de aceptación y cierre
+## Paso 10: alojar OmniRoute fuera de la computadora
+
+### Decisión rápida
+
+| Plataforma | ¿Es gratuita? | Persistencia de OmniRoute | Veredicto para este piloto |
+|---|---|---|---|
+| Render Free | Sí, con límites | No: el filesystem es efímero y se pierde la SQLite al reiniciar, redeployar o suspender; el servicio se suspende tras 15 minutos sin tráfico. [13] [14] | **Solo demo temporal**, no recomendada para conservar providers y configuración. |
+| Railway | Trial de 5 USD por hasta 30 días; después, plan Free con 1 USD/mes de crédito | Sí mediante volumen en `/app/data`, pero los volúmenes de cuentas trial se eliminan 30 días después de expirar los créditos. [15] [16] | **Mejor para una prueba de 30 días**, no gratis permanente. |
+| Oracle Cloud Always Free | Sí, mientras se mantengan las condiciones de Always Free | Sí, mediante el disco de la VM; exige administrar Linux, Docker, firewall, dominio y backups. [20] | **Mejor alternativa gratuita persistente**, pero requiere más trabajo técnico y puede sufrir falta de capacidad o reclamación por inactividad. |
+
+Para tu caso, la recomendación es **Railway si quieres probarlo rápidamente durante el trial** y **Oracle Cloud Always Free si necesitas dejarlo funcionando sin pagar mensualmente**. Render Free es el camino más sencillo visualmente, pero su pérdida de SQLite hace que OmniRoute olvide la configuración de providers después de un reinicio o suspensión. Además, la instancia gratuita de Render ofrece 512 MB de RAM y 0,1 CPU, mientras que la guía de OmniRoute recomienda como mínimo una VM de 1 GB para un despliegue persistente. [14] [18]
+
+### Configuración común de secretos
+
+No subas un archivo `.env` al repositorio. En Render, Railway u Oracle, introduce cada variable desde el panel de variables/secretos o crea el archivo directamente en la VM con permisos restringidos. Genera valores distintos para cada instalación:
+
+```dotenv
+JWT_SECRET=<openssl-rand-hex-32>
+INITIAL_PASSWORD=<contraseña-larga-y-unica>
+API_KEY_SECRET=<openssl-rand-hex-32>
+STORAGE_ENCRYPTION_KEY=<openssl-rand-hex-32>
+STORAGE_ENCRYPTION_KEY_VERSION=v1
+MACHINE_ID_SALT=<openssl-rand-hex-32>
+OMNIROUTE_WS_BRIDGE_SECRET=<openssl-rand-hex-32>
+NODE_ENV=production
+DATA_DIR=/app/data
+AUTH_COOKIE_SECURE=true
+REQUIRE_API_KEY=true
+CORS_ALLOW_ALL=false
+CALL_LOG_RETENTION_DAYS=7
+APP_LOG_RETENTION_DAYS=7
+ARENA_ELO_SYNC_ENABLED=false
+OMNIROUTE_DISABLE_CREDENTIAL_HEALTH_CHECK=true
+OMNIROUTE_DISABLE_BACKGROUND_SERVICES=1
+OMNIROUTE_MEMORY_MB=512
+```
+
+`OMNIROUTE_WS_BRIDGE_SECRET` es requerido por la guía de despliegue para producción. No actives servicios web-cookie, MCP, Redis, Qdrant, Bifrost ni perfiles CLI en un free tier; solo necesitas el runtime base y un provider cloud oficial. [18]
+
+### Opción A: Railway para una prueba rápida
+
+1. Crea una cuenta en Railway. Si la verificación de GitHub no se completa, el trial puede tener restricciones de red; la documentación de Railway distingue entre trial completo y trial limitado. [15]
+2. Crea un proyecto y despliega la imagen pública de OmniRoute. Usa una referencia por digest cuando la plataforma lo permita: `docker.io/diegosouzapw/omniroute@sha256:2bf79cf167478bf283c633ffef2e1e26ba746882e7267fab9320c09df56e8b57`. Este digest corresponde a la imagen `latest` consultada el 19 de agosto de 2026; compruébalo nuevamente antes de usarlo porque las imágenes pueden cambiar. [19]
+3. Añade las variables del bloque anterior. Configura `PORT=20128`, `DASHBOARD_PORT=20128`, `API_PORT=20128`, `OMNIROUTE_SERVER_HOST=0.0.0.0` y `BASE_URL=http://127.0.0.1:20128`.
+4. Añade `NEXT_PUBLIC_BASE_URL=https://TU_DOMINIO.up.railway.app` después de generar el dominio público. Railway proporciona dominios `*.railway.app` y TLS automático. [17]
+5. Crea un volumen conectado al servicio y móntalo exactamente en `/app/data`. OmniRoute guarda allí su SQLite y la configuración cifrada. Railway documenta que un volumen montado en `/app/data` conserva los datos escritos por la aplicación y que los volúmenes se montan al iniciar el contenedor. [16]
+6. Añade `RAILWAY_RUN_UID=0` solo si el contenedor no puede escribir en el volumen. Railway advierte que los volúmenes se montan como root y que las imágenes con usuario no root pueden necesitar esta variable; usarla implica aceptar que el proceso principal se ejecute como root durante el piloto. [16]
+7. En **Settings → Networking → Public Networking**, genera el dominio. No abras puertos TCP adicionales ni publiques Redis, el puerto administrativo alternativo o servicios auxiliares. [17]
+8. Abre `https://TU_DOMINIO.up.railway.app`, cambia la contraseña inicial y crea una API key de OmniRoute.
+9. Conecta únicamente Groq con su API key oficial. Selecciona un model ID que aparezca disponible en el catálogo de tu cuenta, no `auto`. La clave de Groq debe guardarse en la configuración cifrada de OmniRoute sobre `/app/data`, no en un prompt ni en el código cliente.
+10. Prueba `https://TU_DOMINIO.up.railway.app/v1/models` y luego una solicitud pequeña a `/v1/chat/completions`. Si el trial termina, exporta o elimina los datos antes de que Railway elimine el volumen; no guardes allí la fuente maestra ni datasets permanentes.
+
+**Importante:** Railway no es completamente gratuito a largo plazo. Después de 30 días o de consumir 5 USD, el trial vuelve al plan Free con 1 USD de crédito mensual; el crédito no se acumula y los volúmenes de cuentas trial se eliminan 30 días después de expirar los créditos. [15]
+
+### Opción B: Render Free para una demo descartable
+
+Render puede desplegar una imagen Docker preconstruida y expone el servicio con HTTPS. En **New → Web Service → Existing Image**, utiliza `docker.io/diegosouzapw/omniroute:latest` o un digest verificado; Render exige que el servicio escuche en `0.0.0.0` y recomienda usar la variable `PORT`. [13] [14]
+
+Configura como mínimo:
+
+```dotenv
+PORT=10000
+DASHBOARD_PORT=10000
+API_PORT=10000
+OMNIROUTE_SERVER_HOST=0.0.0.0
+NEXT_PUBLIC_BASE_URL=https://TU_SERVICIO.onrender.com
+BASE_URL=http://127.0.0.1:10000
+DATA_DIR=/app/data
+AUTH_COOKIE_SECURE=true
+REQUIRE_API_KEY=true
+OMNIROUTE_MEMORY_MB=384
+OMNIROUTE_DISABLE_BACKGROUND_SERVICES=1
+OMNIROUTE_DISABLE_CREDENTIAL_HEALTH_CHECK=true
+```
+
+Después de cada suspensión o reinicio, debes asumir que la SQLite y las credenciales almacenadas desaparecerán. Render confirma que los servicios Free no pueden usar discos persistentes y que las bases SQLite locales se pierden; su Postgres Free también tiene una vigencia limitada de 30 días. [13] Por eso Render Free no debe ser la opción principal para OmniRoute. Úsalo solo para comprobar que el contenedor arranca, abrir el dashboard temporalmente y probar un provider sin datos privados.
+
+### Opción C: Oracle Cloud Always Free para persistencia gratuita
+
+Oracle ofrece una VM Always Free con recursos persistentes durante la vida de la cuenta: hasta 2 OCPU y 12 GB de memoria total en Ampere A1, o hasta dos VMs AMD de 1 GB, además de 200 GB de almacenamiento de bloques en la región principal. Oracle puede reclamar instancias inactivas y la creación puede fallar temporalmente por falta de capacidad. [20]
+
+La ruta resumida es:
+
+1. Crear una cuenta Oracle Cloud Free y una VM Ubuntu Always Free en la home region. Para OmniRoute, asignar 1 OCPU y 6 GB de RAM en Ampere A1 si hay capacidad; la imagen pública consultada incluye manifiestos `linux/amd64` y `linux/arm64`, por lo que el contenedor puede utilizar ARM64. [19] [20]
+2. Permitir únicamente SSH, HTTP y HTTPS en la VCN. No abrir directamente el puerto `20128` a Internet.
+3. Instalar Docker y crear `/opt/omniroute/.env` con el bloque común, más `PORT=20128`, `OMNIROUTE_SERVER_HOST=127.0.0.1`, `NEXT_PUBLIC_BASE_URL=https://TU_DOMINIO` y `BASE_URL=http://127.0.0.1:20128`.
+4. Ejecutar el contenedor con almacenamiento persistente y sin publicar el puerto directamente:
+
+```bash
+docker run -d \
+  --name omniroute \
+  --restart unless-stopped \
+  --env-file /opt/omniroute/.env \
+  -p 127.0.0.1:20128:20128 \
+  -v omniroute-data:/app/data \
+  docker.io/diegosouzapw/omniroute@sha256:2bf79cf167478bf283c633ffef2e1e26ba746882e7267fab9320c09df56e8b57
+```
+
+5. Instalar Nginx o Caddy como reverse proxy HTTPS delante de `127.0.0.1:20128`. Usa un dominio o subdominio real; no publiques el dashboard mediante una IP desnuda. Configura `NEXT_PUBLIC_BASE_URL` con la URL HTTPS real.
+6. Verificar el endpoint de salud, abrir el dashboard, cambiar la contraseña inicial, crear una API key de OmniRoute y conectar únicamente Groq.
+7. Programar backups del volumen `omniroute-data`. La gratuidad de Oracle no elimina la necesidad de backups ni protege contra reclamación por inactividad o errores de configuración.
+
+Oracle es la mejor opción gratuita si aceptas administrar un servidor Linux. Si no quieres configurar firewall, dominio, Docker, HTTPS y backups, Railway es más sencillo para el trial, pero no es gratuito permanente.
+
+## Paso 11: criterios de aceptación y cierre
 
 El piloto de bajo consumo se considera correctamente configurado cuando se cumplen todos estos criterios:
 
@@ -313,3 +417,19 @@ Si el piloto se convierte en una función compartida, se deberán actualizar el 
 [11]: [Groq — Supported Models and Rate Limits](https://console.groq.com/docs/models)
 
 [12]: [Google — Gemini Developer API pricing](https://ai.google.dev/gemini-api/docs/pricing)
+
+[13]: [Render — Deploy for Free](https://render.com/docs/free)
+
+[14]: [Render — Web Services and instance types](https://render.com/docs/web-services)
+
+[15]: [Railway — Free Trial and Free plan](https://docs.railway.com/pricing/free-trial)
+
+[16]: [Railway — Volumes](https://docs.railway.com/volumes)
+
+[17]: [Railway — Public Networking](https://docs.railway.com/networking/public-networking)
+
+[18]: [OmniRoute — VM Deployment Guide](https://raw.githubusercontent.com/diegosouzapw/OmniRoute/release/v3.8.50/docs/ops/VM_DEPLOYMENT_GUIDE.md)
+
+[19]: [Docker Hub — OmniRoute image](https://hub.docker.com/r/diegosouzapw/omniroute)
+
+[20]: [Oracle Cloud — Always Free Resources](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm)
