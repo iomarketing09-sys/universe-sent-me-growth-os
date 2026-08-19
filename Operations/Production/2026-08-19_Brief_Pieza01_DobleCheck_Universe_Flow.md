@@ -4,7 +4,7 @@ purpose: "Definir el blueprint de producción, la instrumentación y los control
 status: Active
 created: 2026-08-19
 updated: 2026-08-19
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO), aprobado por Fernando"
 related_documents:
   - "2026-08-19_Diseno_Experimento_Reels_v2.md"
@@ -175,7 +175,7 @@ Fernando propone correctamente separar la llegada al mundo de Universe del payof
 | Clip | Duración / coste | Imagen inicial | Imagen final | Única responsabilidad |
 |---|---:|---|---|---|
 | 1 — `PHONE → PORTAL` | 4 s / 7 puntos ya usados | Teléfono realista | Frame final aprobado: túnel púrpura | Hook y entrada al portal. |
-| 2 — `PORTAL → UNIVERSE SEATED` | 4 s / 7 puntos | Frame final del clip 1 | **KF-B:** Universe sentado junto a teléfono/portal en Nubealis | Revelar mundo y personaje sin payoff. |
+| 2 — `PORTAL → UNIVERSE SEATED` | 7 s / 10 puntos | Frame final del clip 1 | **KF-B:** Universe sentado junto a teléfono/portal en Nubealis | Revelar mundo y personaje sin payoff. |
 | 3 — `UNIVERSE CLOSES CHAT` | 7 s / 10 puntos | Último frame útil real del clip 2 | **KF-C:** mismo encuadre, Universe acaba de cerrar el portal | Acción/payoff con inicio y final bloqueados. |
 
 **Coste acumulado actualizado:** 27 puntos. Con 848 puntos iniciales, equivale a aproximadamente 3.18%; el Clip 3 usa Veo Lite porque el payoff necesita preservar a Universe y el encuadre en ambos extremos. Se editará a 2.5–3.5 segundos útiles; no se publican los 7 segundos completos.
