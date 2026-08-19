@@ -79,3 +79,35 @@ La hipótesis de trabajo queda **parcialmente respaldada como señal editorial**
 ### Estado del ciclo
 
 El ciclo queda **cerrado provisionalmente con limitación de ventana temporal**. El aprendizaje es utilizable para orientar la siguiente ola, pero las métricas exactas de 24/72 horas siguen pendientes porque Meta entregó acumulados lifetime. No se modificó Instagram ni se publicó contenido durante este corte.
+
+
+## Análisis del outlier 2608028 y ajustes para la siguiente ola
+
+### Desglose cuantitativo
+
+`2608028` registró **462 reacciones, 2 comentarios y 172 compartidos**, para **636 interacciones observadas**. Eso representa el **81.0%** de las interacciones del lote P0, el **79.9%** de las reacciones y el **87.3%** de los compartidos. Los otros cuatro posts juntos sumaron solo 149 interacciones.
+
+El resultado no proviene de una conversación especialmente larga: sus 2 comentarios representan apenas el 20% de los comentarios del lote. La ventaja está principalmente en **reacciones y compartidos**, lo que sugiere identificación inmediata y voluntad de recomendar o redistribuir el contenido.
+
+### Desglose creativo observable
+
+El asset presenta a Universe como un gato reconocible con sus gafas distintivas, en un escenario fantástico de alto atractivo visual. La composición utiliza tres momentos secuenciales: una afirmación general sobre el amor, un acercamiento expresivo al rostro y un cierre contemplativo del personaje frente al paisaje. El texto es breve, legible y completa una idea en tres pasos: “Lo bueno del amor es que / si eres un buen observador / lo verás en todos lados”.
+
+La pieza combina cinco ventajas que sí son observables: identidad fuerte de personaje, atractivo visual inmediato, progresión narrativa, frase universal y un remate emocional que no depende de conocer el canon. El caption publicado fue mínimo —`🥰🌎😂` más hashtags—, por lo que la imagen cargó casi todo el trabajo comunicativo y no compitió con un copy largo.
+
+### Qué podemos afirmar y qué no
+
+La evidencia respalda que esta combinación funcionó muy bien **en esta pieza y en este corte**. No demuestra que una imagen fantástica siempre superará a un meme simple, que las 11:00 sean siempre el mejor horario o que tres emojis sean la causa directa del resultado. El alto rendimiento puede incluir efectos de tema, calidad visual, familiaridad con Universe, hora, distribución algorítmica y compartibilidad.
+
+### Ajustes recomendados para la siguiente ola
+
+| Ajuste | Aplicación concreta | Medición de control |
+|---|---|---|
+| Replicar la estructura, no copiar el asset | Producir 2–3 piezas nuevas con personaje reconocible, frase universal, secuencia de 2–3 paneles y remate emocional | Comparar interacciones y compartidos contra la mediana de la ola |
+| Mantener captions mínimos como tratamiento | Probar 1–3 emojis + hashtags en un subconjunto, no en toda la ola | Separar por tratamiento `Emoji_Minimo` vs `Frase_Corta` |
+| Aumentar la capacidad de compartir | Priorizar frases que funcionen aunque el usuario no conozca el canon | Shares por publicación y proporción de shares sobre interacciones |
+| Conservar variedad editorial | Mantener humor ácido, sexual, cotidiano y personajes secundarios como controles | Evitar que toda la ola se vuelva sentimental o fantástica |
+| No sobreoptimizar el horario | Repetir la fórmula en al menos dos franjas distintas | Comparar por formato/tema y no solo por hora |
+| Reservar capacidad para outliers | Incluir una pequeña cuota de piezas visualmente ambiciosas | Identificar si reaparece un resultado de cola alta en otra pieza |
+
+La decisión operativa recomendada es **promover la fórmula creativa como hipótesis prioritaria**, no convertirla todavía en canon editorial. La siguiente ola debería contener un pequeño tratamiento de replicación: dos o tres piezas que compartan la estructura de 2608028 y un grupo de control que conserve la diversidad actual.
