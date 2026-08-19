@@ -31,18 +31,18 @@ La auditoría recuperó 12 publicaciones de video/Reel de la página `Universe S
 
 La documentación existente cubre de forma operativa el rendimiento de **Instagram y Facebook** mediante Meta Graph API, Windsor, el conector de Instagram, registros manuales, auditorías de Reels, históricos de publicaciones, cruces de assets y el protocolo P0. La cobertura de Instagram mejoró: Windsor ya devuelve vistas, reach, engagement, guardados, shares y watch time de Reels. La deuda restante es consolidar un ledger uniforme y completar las métricas de distribución y retención de Facebook Reels y los snapshots 24/72 horas.
 
-No se encontró dentro del repositorio un **ledger, histórico de rendimiento o protocolo específico para TikTok**. La nueva cuenta puede considerarse un canal abierto, pero su rendimiento aún no forma parte del Growth OS ni debe mezclarse con los datos de Meta.
+TikTok ya está conectado en Windsor y el primer corte del 22 de julio–18 de agosto devolvió siete videos deduplicables con views, reach, engagement, favoritos, watch time, finalización y seguidores ganados. Todavía no existe un ledger append-only específico; el dataset normalizado del corte es evidencia inicial y no debe mezclarse con Meta como una audiencia agregada.
 
-Tampoco se encontró un **ledger, histórico de rendimiento o protocolo específico para YouTube**, incluidos Shorts. La cuenta debe registrarse como canal pendiente de instrumentación; antes de comparar resultados será necesario definir si se medirá por video, Short y canal, y conservar las ventanas temporales de YouTube Analytics separadas de las de Meta.
+YouTube ya está conectado en Windsor y el primer corte devolvió seis videos únicos con actividad diaria, views, likes, retención y suscriptores. Todavía no existe un ledger append-only específico; YouTube debe conservar separadas las filas diarias y los snapshots lifetime, y diferenciar videos largos de Shorts antes de comparar formatos.
 
 | Canal | Estado documental | Evidencia existente | Decisión operativa |
 |---|---|---|---|
 | Instagram | Parcialmente integrado | Registros, auditorías y cruces con Meta | Mantener separado por plataforma y añadir métricas de video |
 | Facebook | Parcialmente integrado | Históricos, Meta Graph API, Insights y Reels | Mantener cortes comparables y no mezclar lifetime con 24/72 horas |
-| TikTok | No integrado | No se encontró ledger ni histórico específico | Crear instrumentación antes de evaluar rendimiento |
-| YouTube / Shorts | No integrado | No se encontró ledger ni histórico específico | Crear instrumentación antes de evaluar rendimiento |
+| TikTok | Instrumentación inicial | Windsor devolvió siete videos deduplicables y métricas de video | Crear ledger append-only y mantener métricas nativas separadas |
+| YouTube / Shorts | Instrumentación inicial | Windsor devolvió seis videos únicos y 24 filas diarias | Crear ledger append-only; separar actividad diaria, lifetime y tipo de video |
 
-La estructura correcta para el siguiente ciclo es un ledger de video corto con una fila por publicación y una columna explícita para `plataforma`. Los datos de Instagram y Facebook pueden compartir taxonomía, pero sus métricas deben permanecer separadas; TikTok y YouTube deben incorporarse como nuevos estratos cuando existan datos verificables.
+La estructura correcta para el siguiente ciclo es un ledger de video corto con una fila por publicación y una columna explícita para `plataforma`. El primer dataset multicanal reproducible está en `Operations/Research/2026-08-19_Social_Performance_28D_Normalizado.json`; debe convertirse progresivamente en un ledger append-only, no sobrescribirse como una tabla de sesión. Los datos de Instagram y Facebook pueden compartir taxonomía, pero sus métricas deben permanecer separadas; TikTok y YouTube deben incorporarse como nuevos estratos cuando existan datos verificables.
 
 ## Rendimiento observado de Reels
 

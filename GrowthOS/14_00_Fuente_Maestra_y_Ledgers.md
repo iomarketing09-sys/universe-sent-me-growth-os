@@ -24,6 +24,8 @@ related_documents:
   - "Operations/Research/2026-08-18_Analisis_Rendimiento_28_Dias_Instagram_Facebook.md"
   - "Operations/Research/2026-08-19_Windsor_Instagram_28D_Normalizado.json"
   - "Operations/Research/2026-08-19_Windsor_Facebook_Organic_28D_Normalizado.json"
+  - "Operations/Research/2026-08-19_Social_Performance_28D_Normalizado.json"
+  - "GrowthOS/08_00_Metricas_Baseline_Plataformas.md"
   - "Operations/Research/Historical_Performance_Snapshot.csv"
   - "Operations/Research/Historical_Performance_Individuals.csv"
   - "Operations/Research/2026-08-17_Integracion_CNT_Mayo_Reserve_Revision.md"
@@ -53,8 +55,12 @@ La comprobación del corte 22 de julio–18 de agosto de 2026 probó tres fuente
 | Meta Graph API directa | Identidad de Página, cuenta profesional, IDs, publicación y reconciliación de Meta | El token actual carece de `instagram_manage_insights`; la lectura de Insights de Instagram respondió HTTP 400 | Fuente canónica de identidad, IDs, estados de publicación y operaciones Meta |
 | Windsor.ai | Consulta masiva de Instagram y Facebook orgánico; Instagram devolvió 34 piezas con engagement, reach, views, saves, shares y watch time de Reels | `post_engagements` de Facebook no es idéntico a `reacciones + comentarios + shares`; la fecha diaria puede normalizarse distinto | Fuente analítica principal para históricos y cortes comparativos, con definición de métrica registrada por conector |
 | Conector de Instagram | Lectura de cuenta, lista de publicaciones e Insights por post; coincidió con Windsor en dos Reels y una imagen | Lectura por publicación, paginación y menor eficiencia para lotes grandes | Fuente secundaria de validación puntual y diagnóstico cuando Windsor presente una anomalía |
+| Windsor TikTok orgánico | Siete videos deduplicables con views, reach, likes, shares, favoritos, watch time, finalización y seguidores ganados | La respuesta incluye filas nulas repetidas y agregados diarios de cuenta que no deben sumarse con las filas por video | Fuente analítica principal de TikTok, después de deduplicar por `video_id` |
+| Windsor YouTube | Seis videos únicos y actividad diaria por video con views, likes, retención y suscriptores | `date` es actividad diaria; `video_view_count` es snapshot lifetime y no debe sumarse por día | Fuente analítica principal de YouTube con tablas separadas diaria y lifetime |
 
 La regla de no duplicación es estricta: una fila de rendimiento debe registrar `fuente_metrica`, `fecha_extraccion`, `definicion_metrica`, `ventana_comparabilidad` y el ID de la publicación. Para Instagram, Windsor es la fuente primaria de análisis hasta que Graph API obtenga `instagram_manage_insights`; el conector confirma muestras, no reemplaza el lote completo. Para Facebook, `Publication_Log.csv` y los datasets Meta conservan como métrica canónica `reacciones + comentarios + shares`; los agregados de Windsor (`post_engagements`) se guardan como métrica alternativa y no se suman con la métrica canónica.
+
+Para TikTok y YouTube, el dashboard debe conservar una capa común sin forzar equivalencia semántica: `views` se muestra como views nativas de cada plataforma, `reach` solo se muestra cuando la fuente lo entrega, y `engagement` se calcula como suma documentada de acciones disponibles si no existe una métrica nativa. YouTube debe mostrar por separado la actividad diaria y el snapshot lifetime; TikTok debe eliminar filas repetidas por `video_id` y priorizar la fila con mayor cobertura de métricas.
 
 La arquitectura también separa **fuente de identidad** y **fuente de rendimiento**. Que una publicación aparezca en Windsor o en el conector no autoriza a publicarla ni cambia su estado de calendario. Que Graph API confirme un ID no convierte automáticamente el total acumulado en una ventana 24/72 horas. Cada snapshot debe conservar su propia fecha y estado de comparabilidad.
 

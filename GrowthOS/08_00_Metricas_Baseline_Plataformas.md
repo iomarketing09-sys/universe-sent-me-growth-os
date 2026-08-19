@@ -1,14 +1,14 @@
-# Métricas Baseline — Facebook & Instagram (Universe Sent Me)
+# Métricas Baseline — Facebook, Instagram, TikTok & YouTube (Universe Sent Me)
 
-**Propósito:** Registro de métricas reales extraídas de Windsor.ai. Fuente de verdad para comparaciones de rendimiento, calibración de hipótesis y decisiones de canal. No es un resumen de sesión — es un documento vivo que debe actualizarse con cada ciclo de análisis.
+**Propósito:** Registro de métricas reales extraídas de Windsor.ai y Meta. Fuente de verdad para comparaciones de rendimiento, calibración de hipótesis y decisiones de canal en Facebook, Instagram, TikTok y YouTube. No es un resumen de sesión — es un documento vivo que debe actualizarse con cada ciclo de análisis.
 **Estado:** Active
 **Fecha de creación:** 2026-08-03
-**Última actualización:** 2026-08-17
-**Versión:** 1.5
+**Última actualización:** 2026-08-19
+**Versión:** 2.0
 **Autor:** Claude (Guardián de Canon, extracción directa vía Windsor.ai MCP)
-**Documentos relacionados:** `07_00_Registro_Maestro_Reels.md`, `06_00_Reglas_Aprendizaje_Tendencias.md`, `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Research/Historical_Performance_Snapshot.csv`, `../Operations/Research/Historical_Performance_Individuals.csv`, `../Operations/Research/2026-08-15_Publication_Log.csv`, `../Operations/Research/2026-08-15_ExperimentLog.csv`, `../Operations/Research/2026-08-16_P2_Comunidad_Delta_01.json`, `../Operations/Research/2026-08-16_P2_Baseline_Preparacion_01.json`, `../Operations/Research/2026-08-17_Metricas_24_72_Extraccion_02.json`, `../Operations/Research/2026-08-17_Investigacion_Ventanas_Temporales_Meta.md`
+**Documentos relacionados:** `07_00_Registro_Maestro_Reels.md`, `06_00_Reglas_Aprendizaje_Tendencias.md`, `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Research/Historical_Performance_Snapshot.csv`, `../Operations/Research/Historical_Performance_Individuals.csv`, `../Operations/Research/2026-08-15_Publication_Log.csv`, `../Operations/Research/2026-08-15_ExperimentLog.csv`, `../Operations/Research/2026-08-16_P2_Comunidad_Delta_01.json`, `../Operations/Research/2026-08-16_P2_Baseline_Preparacion_01.json`, `../Operations/Research/2026-08-17_Metricas_24_72_Extraccion_02.json`, `../Operations/Research/2026-08-17_Investigacion_Ventanas_Temporales_Meta.md`, `../Operations/Research/2026-08-19_Social_Performance_28D_Normalizado.json`
 
-> **Metodología:** Datos extraídos directamente desde Windsor.ai el 2026-08-03. Período cubierto: últimos 14 días con datos del día actual incluidos. Cuentas: Facebook Page @UniverseSentMe (ID `1036844829507460`) e Instagram @universe_sent_me_0326 (ID `17841462696378190`). Los datos de IG publicados hoy mismo pueden mostrar cero por latencia de la API.
+> **Metodología:** Este documento conserva snapshots históricos y cortes reproducibles. El corte multicanal más reciente fue extraído desde Windsor.ai el 2026-08-19 para el período 22 de julio–18 de agosto de 2026. Cuentas: Facebook Page `1036844829507460`, Instagram `17841462696378190`, TikTok `Universe Sent Me` (`_000bYPIECRpRjubuhKmzaeo3iFDirTBYXPP`) y YouTube `Universe Sent Me` (`UCBNbmSB3QG73ef7EqN2Ew1A`, conectado en Windsor como account `27679`). Los snapshots históricos anteriores no se sobrescriben; cada fila conserva fuente, fecha de extracción y ventana.
 
 ---
 
@@ -183,14 +183,43 @@ Estos valores no se escriben en `Interacciones_24h`, `Interacciones_72h` ni en l
 
 El lote individual 02 añade 28 filas verificables del ranking de reuse de mayo y 11 top posts de junio-julio en `Historical_Performance_Individuals.csv`. Cada fila conserva Meta ID, fecha, fuente y definición métrica; no recibe CNT automáticamente y no se incorpora al Publication Log operativo.
 
-## 12. Próxima Actualización
+## 12. Corte multicanal de 28 días — 22 de julio a 18 de agosto de 2026
+
+Este corte incorpora por primera vez TikTok y YouTube al mismo marco analítico. Los números se muestran juntos para facilitar la lectura operativa, pero **no deben sumarse como una audiencia total ni ordenarse como si las plataformas compartieran la misma definición de view, reach o engagement**.
+
+| Plataforma | Contenido deduplicado | Views observadas | Reach | Engagement normalizado | Mediana de engagement | Crecimiento |
+|---|---:|---:|---:|---:|---:|---|
+| Instagram | 34 piezas | 1,646 | 1,216 | 59 | 1 | No disponible en el corte |
+| TikTok | 7 videos | 2,268 | 2,188 | 23 | 3 | 2 seguidores ganados |
+| YouTube | 6 videos únicos / 24 filas diarias | 5,022 views diarias | No aplica | 36 likes | 0 | 10 suscriptores ganados / 1 perdido |
+
+### 12.1 Reglas de integración
+
+El dashboard debe tener una vista ejecutiva por plataforma y una vista de contenido. La vista ejecutiva presenta volumen publicado, views observadas, reach cuando exista, engagement normalizado, crecimiento de audiencia y tendencia. La vista de contenido conserva una fila por `content_id` para Instagram y TikTok; YouTube conserva además una tabla diaria separada porque Windsor entrega actividad por video y día.
+
+| Campo común | Instagram | TikTok | YouTube |
+|---|---|---|---|
+| `content_id` | `media_id` | `video_id` | `video` |
+| `published_at` | `timestamp` | `video_create_datetime` | Debe recuperarse del catálogo/video; no usar `date` diaria como fecha de publicación |
+| `views` | `media_views` | `video_views_count` | `views` diario; `video_view_count` como snapshot lifetime |
+| `reach` | `media_reach` | `video_reach` | No usar si no existe; no sustituirlo por views |
+| `engagement` | `media_engagement` | likes + comments + shares + favorites cuando no exista nativo | likes + comments + shares en la fila diaria |
+| Retención | `media_reel_avg_watch_time` para Reels | `video_average_time_watched`, `video_full_watched_rate` | `average_view_duration`, `average_view_percentage` |
+| Audiencia ganada | No disponible en este corte | `video_new_followers` | `subscribers_gained` y `subscribers_lost` |
+| Ventana | `lifetime_current_snapshot` | `lifetime_current_snapshot` | `daily_observed_activity` y `lifetime_current_snapshot` separados |
+
+TikTok entregó filas repetidas con métricas nulas para un mismo video; el normalizador conserva la fila con mayor cobertura de campos y deduplica por `video_id`. YouTube devuelve varias filas diarias para el mismo video; el dashboard no debe sumar `video_view_count` repetido. Facebook conserva su métrica canónica histórica `reacciones + comentarios + shares`, mientras Windsor `post_engagements` queda como métrica alternativa por su definición diferente.
+
+El dataset reproducible del corte está en `Operations/Research/2026-08-19_Social_Performance_28D_Normalizado.json`. La fuente de arquitectura, roles y reglas de no duplicación está en `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`.
+
+## 13. Próxima Actualización
 
 Este documento debe actualizarse:
 - Cada domingo (ciclo semanal de análisis)
 - Después de publicar cualquier pieza con distribución en más de una plataforma
 - Cuando se cierren hipótesis en el HypothesisBank
 
-Herramienta de extracción histórica: Windsor.ai MCP → connector `facebook_organic` + `instagram`. Fuente operativa vigente para publicaciones reconciliadas: Meta Graph API v26 + `Publication_Log.csv`. Campos clave históricos: `post_impressions`, `post_engagements`, `post_reactions_total`, `media_reach`, `media_views`, `media_engagement`. Campos operativos: reacciones, comentarios, shares, Meta ID, timestamp real y estado de ventana.
+Herramienta de extracción histórica: MCP → connectors `facebook_organic`, `instagram`, `tiktok_organic` y `youtube`; Meta Graph API v26 + `Publication_Log.csv` para identidad, publicación y reconciliación. Campos normalizados del dashboard: `platform`, `content_id`, `published_at`/`date`, `content_type`, `views`, `reach`, `engagement`, `likes`, `comments`, `shares`, `saves_or_favorites`, `avg_watch_time_seconds`, `completion_rate`/`average_view_percentage`, `followers_gained`/`subscribers_gained`, `source`, `retrieved_at`, `window_type` y `comparability`. Las filas sin dato deben permanecer como `null`, no convertirse en cero.
 
 ## Referencias
 
