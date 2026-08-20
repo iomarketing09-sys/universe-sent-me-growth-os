@@ -91,3 +91,12 @@ No se crearon CNT, no se modificó el calendario, no se publicaron contenidos y 
 ## Estado final
 
 El Growth OS está **funcionando en publicación y captura estructural**, pero **todavía no está debidamente integrado como fuente maestra única**. El siguiente trabajo debe ser de normalización de identificadores y cierre P0, no de crear más análisis históricos ni de modificar el canon.
+
+
+## Actualización posterior al cierre provisional P0 — 2026-08-20
+
+La sección inicial de esta auditoría fue redactada antes del corte observado del 19 de agosto. El estado vigente es el siguiente: el P0 de cinco publicaciones del 17 de agosto ya tiene un cierre provisional documentado en `2026-08-19_P0_Corte_17_Agosto.md`, con 785 interacciones observadas acumuladas. El campo de experimento queda `Cerrada_con_limitacion` porque Meta no entregó snapshots exactos 24/72h; los acumulados lifetime no sustituyen esas columnas.
+
+Por lo tanto, P0 ya no es un pendiente de extracción básica. El pendiente estadístico real es **analizar el lote operativo de nueve publicaciones del 15–16 (`CNT-031`–`CNT-039`) como cohorte separada**, y continuar los cortes observados de la ola 17–30 sin mezclarla con el baseline P0. También deben mantenerse separados los aprendizajes de P0 basados en el outlier `2608028` de cualquier conclusión general de horario.
+
+Los pendientes de integración que siguen vigentes son la reconciliación de `Asset_Ref`/filename del inventario maestro, la consolidación lógica de duplicados históricos y la medición controlada de Instagram. Instagram no debe reabrirse para publicación automática en este ciclo.
