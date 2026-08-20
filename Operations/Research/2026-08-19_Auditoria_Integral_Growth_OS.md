@@ -109,3 +109,10 @@ Se creó `Operations/Research/2026-08-20_Source_Alias_Table.csv` como capa repro
 También se creó `Operations/Research/2026-08-20_Historical_Performance_Individuals_Consolidated.csv`. El archivo fuente de 211 filas permanece intacto; la vista consolidada contiene 206 publicaciones lógicas y cinco grupos duplicados de Meta ID. Los cinco grupos tienen métricas de reacciones, comentarios y shares consistentes, por lo que deben contarse una sola vez en agregados y rankings. Las filas originales se conservan como evidencia múltiple.
 
 El estado correcto ya no es “sin tabla de aliases” ni “sin vista de consolidación”. La deuda restante es resolver las 46 filas de revisión, enlazar o exceptuar formalmente los cinco assets P0 y usar la vista consolidada para futuros agregados de junio. No se modificó canon ni se inventaron CNT.
+
+
+## Actualización de asociación P0 y aliases 17–30 — 2026-08-20
+
+Los cinco assets P0 fueron revisados contra el inventario y la evidencia local. `260633` quedó asociado a `CNT-062` y `260642` a `CNT-064`. `2608028`, `2608034- Elara` y `2608027.jpeg` conservan Meta Post ID y evidencia visual local, pero permanecen como excepciones sin fila en `Content_Inventory`; no se crearon CNT.
+
+En la programación 17–30 se revisaron 81 filas: 43 permanecen en `Review`. De esas, 33 tienen archivo local que confirma la identidad del asset, aunque aún falta la asociación administrativa al inventario; 10 no tienen evidencia local y requieren una consulta posterior a Drive/Meta o confirmación humana. Este resultado sustituye la cifra genérica de aliases sin clasificar y no debe interpretarse como autorización para crear CNT.

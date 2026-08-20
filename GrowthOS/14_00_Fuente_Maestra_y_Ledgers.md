@@ -249,3 +249,14 @@ La regla queda establecida: **una publicación lógica por Meta ID en agregados;
 ## 11. Deuda residual de fuente maestra
 
 La tabla de aliases reduce el problema de falsos huérfanos, pero no lo resuelve completamente. Las 46 filas `Review` requieren resolución posterior por evidencia; las cinco filas P0 deben enlazarse al inventario o mantenerse como excepción documentada. La consolidación histórica permite corregir doble conteo en junio, pero no autoriza recalcular ventanas 24/72 horas ni mezclar lifetime con cortes experimentales.
+
+
+## 12. Asociación de los cinco assets P0 — 2026-08-20
+
+El registro `Operations/Research/2026-08-20_P0_Asset_Association_Register.csv` cruza los cinco rows del baseline P0 con la tabla de aliases y el inventario. `260633` quedó asociado a `CNT-062` y `260642` a `CNT-064`, ambos con alta confianza. `2608028`, `2608034- Elara` y `2608027.jpeg` no tienen fila en `Content_Inventory`, aunque sus Meta Post IDs y archivos visuales locales están preservados como excepciones. No se crearon CNT ni se cambió canon.
+
+## 13. Resolución parcial de aliases 17–30 — 2026-08-20
+
+La programación 17–30 contiene 81 filas en la tabla de aliases; 43 permanecen en `Review`. La revisión de evidencia local encontró 33 assets con identidad verificable en `calendar_visual_review_20260816`, pero sin fila de inventario, y 10 sin evidencia local en esa carpeta. La identidad de asset verificada no equivale a asociación CNT: las 33 filas quedan listas para una decisión administrativa de inventario y las 10 requieren evidencia adicional de Drive/Meta o del usuario.
+
+La vista enriquecida está en `Operations/Research/2026-08-20_17_30_Alias_Evidence_Enriched.csv`. Hasta que se apruebe la normalización, cada publicación conserva su Meta ID, permalink, fecha y estado en el alias; `Content_Inventory.csv` no se modifica automáticamente.
