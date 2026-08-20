@@ -2,13 +2,13 @@
 
 **Propósito:** Definir una posible nueva familia de Reels musicales de Universe Sent Me, donde una canción licenciada guía una microhistoria emocional antes de seleccionar personajes, escenas o producción.
 
-**Estado:** Review — dirección global aprobada; pendiente de aprobación del tratamiento y de referencias antes de generar clips.
+**Estado:** Review — dirección global aprobada; montaje no lineal en revisión antes de generar un storyboard nuevo.
 
 **Fecha de creación:** 2026-08-20
 
 **Última actualización:** 2026-08-20
 
-**Versión:** 1.6
+**Versión:** 1.7
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -115,55 +115,56 @@ Fernando confirmó que `Remote Control` aparece en los cuatro selectores nativos
 
 La referencia de Drive `Elara y Evan en el Bosque.mp4` (`Drive_ID: 1CELb0iwDuuKEiEJj2n-vuutjUMIYlHA2`) confirma la base visual a preservar: Evan es más alto, de cabello castaño oscuro ondulado, barba ligera y hoodie café amplio; Elara es más baja, con cabello rubio largo ondulado, pecas, sombrero puntiagudo café oscuro con banda morada, cardigan tejido café, top claro, jeans y collar plateado. En las escenas de bosque usan mochilas de senderismo y tapetes enrollados. La referencia usa bosque nocturno de pinos, luna llena, estrellas, fogata naranja y animación limitada con movimientos sutiles. Estas características son restricciones de continuidad, no una declaración nueva de canon.
 
-### Tratamiento narrativo propuesto
+### Storyboard v1 — descartado por repetición visual
 
-El videoclip se organiza como recuerdos que podrían ser de la misma noche: Evan conduce despacio por una carretera de bosque mientras Elara mira la luz por la ventana; después comparten una preparación sencilla alrededor de una fogata y sus manos casi coinciden al pasar una taza. Caminan bajo árboles altos con las mochilas, siempre en paralelo y nunca tomados de la mano. En el golpe emocional se detienen frente a la fogata y giran el uno hacia el otro en una cercanía coreografiada, pero no se besan ni se abrazan. El cierre vuelve a la distancia: la cámara queda entre ambos mientras toman sendas opuestas, conservando la sensación de que todavía se reconocen sin intentar controlarse.
+El storyboard inicial con auto, mochilas, fogata, tazas y sendero fue rechazado en revisión creativa. Aunque la conducción funciona, el conjunto se lee como continuación del Reel anterior de acampada y no como un videoclip emocional autónomo. Los elementos **mochilas, tapetes, campamento compartido, preparación de comida, tazas, sendero de pareja, fogata compartida y dormir afuera** quedan prohibidos para la versión siguiente.
 
-El tratamiento utiliza el auto y la preparación de comida como acciones cotidianas, pero las sitúa en el viaje/campamento para mantener ropa, bosque y accesorios coherentes con la referencia vigente. No se inventan cambios de vestuario ni escenarios urbanos hasta contar con referencias específicas aprobadas.
+### Nuevo tratamiento: montaje emocional no lineal
 
-## Storyboard Flow — especificación de 3 × 3 paneles
+La pieza no cuenta una noche de forma lineal. Es un collage de imágenes que se contaminan entre sí: Evan avanza y repite el trayecto; Elara permanece aislada dentro de sus audífonos; cuando se encuentran, la intensidad aparece solo por unos segundos y no se resuelve. El auto es la columna emocional de Evan, pero Elara no viaja con él. La fogata puede aparecer únicamente como un plano introspectivo individual de Elara, tomado del lenguaje del trailer, nunca como actividad de campamento o escena de pareja.
 
-El storyboard no es un render final ni una referencia de audio. Su función es fijar identidad, vestuario, progresión de luz y lógica emocional antes de extraer paneles como keyframes individuales. Los nueve paneles se leen de izquierda a derecha y de arriba abajo.
-
-| Panel | Tiempo de edición | Acción visible | Función emocional |
+| Panel | Tiempo de edición | Imagen / acción | Función de montaje |
 |---:|---:|---|---|
-| 1 | 0:54–0:57 | Auto compacto sin marca avanza por carretera de bosque al anochecer; Evan conduce y Elara se ve como silueta de pasajera. | Llegada compartida, pero contenida. |
-| 2 | 0:57–1:00 | Interior del auto: Evan mira al frente; Elara observa los árboles por la ventana. No se miran ni se tocan. | Distancia cotidiana. |
-| 3 | 1:00–1:04 | Reflejo de ambos en el parabrisas mientras el bosque azul pasa detrás. | Están juntos en espacio, separados en atención. |
-| 4 | 1:04–1:07 | En el campamento, Elara revuelve una olla pequeña sobre la fogata; Evan sostiene dos tazas. | Rutina que todavía conocen. |
-| 5 | 1:07–1:10 | Al pasar una taza, sus manos casi coinciden; ninguno fuerza el contacto. | Cercanía interrumpida. |
-| 6 | 1:10–1:14 | Caminan por un sendero boscoso con mochilas, en paralelo y separados por medio paso. | Complicidad sin promesa. |
-| 7 | 1:14–1:17 | Plano medio de ambos junto al fuego: Elara gira primero; Evan responde con una mirada leve. | Reconocimiento. |
-| 8 | 1:17–1:21 | Frente a la fogata, los dos se aproximan un paso y se detienen; no hay beso, abrazo ni contacto. | Golpe emocional no resuelto. |
-| 9 | 1:21–1:24 | Plano amplio y estático: la fogata queda al centro mientras Evan y Elara toman senderos opuestos dentro del mismo bosque. | Soltar sin negar el vínculo. |
+| 1 | 0:54–0:57 | Evan conduce solo por una carretera nocturna mojada, con luces urbanas lejanas y reflejos azules en el parabrisas. | Movimiento y tensión. |
+| 2 | 0:57–1:00 | Primer plano de Evan: manos en el volante, ojos en el retrovisor, luces que cruzan su rostro. | Ansiedad contenida. |
+| 3 | 1:00–1:03 | Elara camina sola con audífonos por un borde de bosque; Wilfred desenfocado intenta hablarle detrás, pero ella no reacciona. | Aislamiento voluntario, no comedia. |
+| 4 | 1:03–1:07 | Evan vuelve a la carretera; un reflejo subjetivo de Elara aparece un instante en la ventana lateral y desaparece. | Ella existe en su pensamiento, no como aparición literal. |
+| 5 | 1:07–1:11 | Elara sentada sola frente a una fogata mínima, encuadre cerrado, audífonos puestos, mirando el fuego sin actividad de campamento alrededor. | Pausa íntima. |
+| 6 | 1:11–1:15 | Plano de Elara pensativa; la luz naranja del fuego y azul de la noche le cruzan el rostro. | Preparar el golpe emocional. |
+| 7 | 1:15–1:19 | Interior oscuro sin identificar, con ventana lluviosa y luz azul: Evan y Elara discuten en silencio, cerca pero sin tocarse. | Conflicto intenso sin diálogo. |
+| 8 | 1:19–1:22 | La discusión se detiene: sus rostros se acercan hasta un casi beso; se corta antes del contacto. | Clímax ambigüo y técnicamente seguro. |
+| 9 | 1:22–1:24 | Evan sigue manejando solo; Elara queda inmóvil junto al fuego en un corte paralelo. | Ninguno gana ni vuelve; el vínculo permanece abierto. |
+
+El casi beso es una intención visual, no una obligación del render. Si Flow no consigue rostros, proximidad y continuidad limpios, el panel se resuelve con respiración contenida, mirada fija y la distancia de un par de centímetros. Un beso explícito solo se evaluará después de revisar un panel y un clip de prueba; no se solicita en el storyboard.
 
 ### Referencias que se adjuntan a Flow
 
 | Insumo | Uso |
 |---|---|
-| Frame de personajes y bosque: `evan_elara_forest_10s.png` | Referencia primaria. Fija rostros, proporción, ropa, mochilas, estilo 2D y bosque. |
-| Video original `Elara y Evan en el Bosque.mp4` (`Drive_ID: 1CELb0iwDuuKEiEJj2n-vuutjUMIYlHA2`) | Referencia secundaria de movimiento, iluminación y dinámica entre los personajes. No usar como fuente de audio. |
+| Frame Evan + Elara de `Elara y Evan en el Bosque.mp4` (`Drive_ID: 1CELb0iwDuuKEiEJj2n-vuutjUMIYlHA2`) | Fija rostro, proporción, pelo, sombrero, cardigan, hoodie y estilo de ilustración. Flow no debe copiar de este frame mochilas, tapetes, campamento o composición. |
+| Asset de Elara con audífonos y Wilfred que Fernando identifica | Referencia de la dinámica del panel 3; Wilfred solo aparece desenfocado en el fondo. |
+| Asset del trailer de Elara frente al fuego que Fernando identifica | Referencia de encuadre, luz y quietud para los paneles 5–6; no referencia para una escena de acampada. |
 
-### Prompt listo para Flow Storyboard
+### Prompt listo para Flow Storyboard — v2
 
 ```text
-Create one vertical 9:16 visual storyboard as a clean 3x3 grid of nine sequential cinematic panels, read left to right and top to bottom. This is a silent visual plan for a 30-second music video; do not add any readable text, captions, panel numbers, dialogue bubbles, subtitles, logos, watermarks, music UI, lyrics, or title cards.
+Create one vertical 9:16 visual storyboard as a clean 3x3 grid of nine sequential cinematic panels, read left to right and top to bottom. This is a silent visual plan for a 30-second emotional music video. Do not add readable text, captions, panel numbers, subtitles, dialogue bubbles, logos, watermarks, lyrics, title cards, music UI, or sound effects labels.
 
-Use the attached Evan-and-Elara forest reference as the exact character and animation reference. Preserve Evan exactly: tall lean young man, dark brown messy wavy hair, brown eyes, light stubble, oversized chocolate-brown hoodie, blue jeans, hiking backpack. Preserve Elara exactly: petite young woman, long wavy blonde hair, brown eyes, freckles across nose and cheeks, dark-brown pointed witch hat with purple band, white over-ear headphones, chunky brown knit cardigan, light top, blue jeans, silver pendant necklace, hiking backpack. Keep their proportions, faces, clothes and 2D painterly USM animation style consistent in every panel.
+Use the attached Evan-and-Elara visual references only to preserve exact character identity and the established 2D painterly USM animation style. Preserve Evan: tall lean young man, dark brown messy wavy hair, brown eyes, light stubble, oversized chocolate-brown hoodie and blue jeans. Preserve Elara: petite young woman, long wavy blonde hair, freckles, brown eyes, dark-brown pointed witch hat with purple band, white over-ear headphones, chunky brown knit cardigan, light top, blue jeans and silver pendant. Do not give either character a backpack, sleeping mat, camping gear, tent, cooking props, picnic props or new clothing.
 
-The setting is one continuous night camping trip in a magical but grounded forest: deep pine-green foliage, mossy trail, full moon, stars, soft blue-silver moonlight, and a warm orange campfire. The palette moves only between cool blue night and warm campfire amber. Add a small unbranded compact car only in panels 1–3; it must not appear after the camp sequence begins. No extra characters, no Universe, no animals, no magical transformation, no kiss, no hug, no hand-holding, no romance confirmation.
+The storyboard is a non-linear emotional collage, not a chronological camping trip. Use cinematic hard cuts, close-ups, reflections and matching blue/orange light. Evan is associated with movement and a wet night road; Elara is associated with stillness, headphones and private thought. The shared scene is an intense silent argument that turns into a near kiss but never makes contact.
 
-Panel 1: exterior, unbranded compact car driving slowly through a forest road at blue dusk, Evan driving, Elara visible in passenger silhouette.
-Panel 2: interior medium two-shot, Evan looks forward while Elara looks out at passing trees, neither touches the other.
-Panel 3: both faces reflected softly in the windshield, forest passing outside, same restrained distance.
-Panel 4: at camp, Elara slowly stirs a small pot over a campfire while Evan holds two simple metal cups.
-Panel 5: close-up of a cup being passed, their hands nearly meet but do not touch.
-Panel 6: rear medium-wide shot, they walk in parallel along a moonlit forest path wearing the same backpacks, Evan half a step behind.
-Panel 7: medium shot by the fire, Elara turns toward Evan and Evan answers with a quiet glance.
-Panel 8: wide two-shot by the fire, they each take one small step closer and stop, emotionally close but with no physical contact.
-Panel 9: static wide ending, campfire centered, Evan and Elara walk away on opposite forest paths inside the same moonlit clearing.
+Panel 1: Evan drives alone in an unbranded compact car on a wet night road with distant small-city lights, blue reflections on the windshield.
+Panel 2: close-up montage frame of Evan’s hands on the steering wheel, his eye in the rear-view mirror, passing lights across his face.
+Panel 3: Elara walks alone at the edge of a dark forest wearing headphones; Wilfred is small, soft-focus and behind her as if trying to speak, while Elara never turns toward him. No comedy.
+Panel 4: Evan alone in the car again; a subjective reflection of Elara briefly appears in the side window, subtle and believable, never a ghost or magical apparition.
+Panel 5: intimate close shot of Elara alone in front of one small fire, still wearing headphones, watching the flames. No tent, no camp, no food, no cups, no other person.
+Panel 6: tighter portrait of Elara thinking, with warm firelight and cool blue night light moving across her face.
+Panel 7: Evan and Elara in an unnamed dark interior beside a rain-streaked window with blue light; they silently argue with expressive faces, close but not touching.
+Panel 8: the argument stops; their faces slowly approach until there are only a few centimeters between them, an intense almost-kiss with no contact, no hug and no romance resolution.
+Panel 9: parallel ending: Evan drives alone into night while Elara remains motionless by the small fire, cut together in one emotionally balanced composition.
 
-Keep camera language cinematic and restrained: gentle dollies, medium shots and expressive close-ups. Use soft line work, painterly textures and limited-animation storytelling. The emotional arc is shared routine, invisible distance, recognition, then quiet release.
+No extra characters except Wilfred in panel 3. No Universe, no animals, no magic transformation, no camping trip, no hiking, no shared campfire, no mugs, no walking together, no kiss, no hug, no hand-holding. The emotional arc is motion, isolation, memory, confrontation, almost-contact, unresolved distance.
 ```
 
 ### Contingencia
