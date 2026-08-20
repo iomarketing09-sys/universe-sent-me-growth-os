@@ -1,10 +1,10 @@
 ---
 title: "Análisis de julio con taxonomía normalizada y pendientes del Growth OS"
 purpose: "Aplicar la taxonomía editorial a la muestra histórica disponible de julio y priorizar los pendientes operativos, de aprendizaje y de canon."
-status: "Review"
+status: Active
 created: 2026-08-17
-updated: 2026-08-17
-version: "1.1"
+updated: 2026-08-20
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-17_Julio_Analisis_Taxonomia.csv"
@@ -62,10 +62,10 @@ La tercera hipótesis es que la taxonomía actual necesita una revisión visual 
 
 | Prioridad | Pendiente | Estado | Próxima acción |
 |---|---|---|---|
-| P0 | Métricas comparables de 24/72 horas y cierre del ciclo de aprendizaje | Abierto | Mantener separadas las métricas lifetime y los cortes observados; cerrar HB-003/HB-004/HB-005 solo con evidencia comparable |
-| P1 | Completar la cobertura histórica individual de julio | Parcial | Ampliar más allá de los seis top posts, priorizando posts con shares y comentarios altos |
+| Histórico | Métricas comparables de 24/72 horas | No reconstruible para julio | Mantener las métricas lifetime separadas; no usar julio histórico como sustituto de ventanas 24/72 horas de agosto |
+| P1 | Completar la cobertura histórica individual de julio | Parcial | Ampliar más allá de los seis top posts solo si existe una pregunta concreta; priorizar shares, comentarios y casos taxonómicamente comparables |
 | P1 | Monitorear la ola de Facebook 17–30 agosto | Activo | Registrar `Programada → Publicada`, extraer métricas válidas y no contaminar el experimento con reuse no aprobado |
-| P1 | Consolidar la fuente maestra y los estados | Parcial | Mantener una fila por pieza con CNT, Asset_Ref, Drive ID, Meta ID, permalink, canon, producción y publicación |
+| P2 | Consolidar la fuente maestra y los estados de julio | Parcial | Los seis top ya tienen CNT, Asset_Ref, Drive ID y Meta ID; ampliar la reconciliación solo con evidencia Meta/Drive y sin crear CNT masivos |
 | P2 | Revisión de comentarios recientes | Operativo | Continuar por ventanas incrementales y responder solo con aprobación humana |
 | P2 | Revisión de canon con Claude | Pendiente | Usar el Changelog y la taxonomía para clasificar cada supuesto de la Biblia antes de proponer cambios |
 | P2 | Instagram | Controlado | Mantener el scheduler histórico fuera de operación; cualquier nueva ola debe tener playbook autocontenido e idempotencia |
@@ -90,7 +90,7 @@ Por lo tanto, lo que falta de julio no es “cerrar” los seis top posts: esos 
 
 ## Recomendación CGO
 
-El siguiente lote de trabajo debe ser la **revisión visual y editorial de los seis top posts de julio**, no la creación automática de nuevos CNT. Después conviene ampliar la muestra con los posts de julio que tengan más shares y comentarios. Solo cuando la muestra tenga suficientes casos por personaje y tipo de humor será razonable comparar grupos.
+La **revisión visual y editorial de los seis top posts de julio ya está completada**. El siguiente lote, si se aprueba, debe ampliar la muestra con posts de julio que tengan más shares y comentarios para responder una pregunta concreta de rendimiento. Solo cuando existan suficientes casos comparables por personaje y tipo de humor será razonable comparar grupos.
 
 Para la Biblia, los resultados actuales deben registrarse como hipótesis: `El humor existencial/relatable y la etiquetabilidad parecen explicar parte de la difusión de julio`. No debe elevarse todavía a regla canónica.
 
