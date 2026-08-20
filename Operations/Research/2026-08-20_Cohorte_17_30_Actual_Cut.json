@@ -1,0 +1,313 @@
+{
+  "scope": "Actual Facebook posts local date 2026-08-17 through 2026-08-30, excluding P0 five-post baseline",
+  "extraction_time_utc": "2026-08-20T03:34:21.065676+00:00",
+  "window_note": "Current lifetime totals observed at extraction time; not exact 24h/72h snapshots",
+  "p0_excluded_ids": [
+    "1036844829507460_122151373701072582",
+    "1036844829507460_122151373761072582",
+    "1036844829507460_122151373833072582",
+    "1036844829507460_122151373893072582",
+    "1036844829507460_122151373953072582"
+  ],
+  "overall": {
+    "n": 14,
+    "reactions": 534,
+    "comments": 27,
+    "shares": 170,
+    "interactions": 731,
+    "mean_interactions": 52.214285714285715,
+    "median_interactions": 36.0
+  },
+  "by_date": {
+    "2026-08-17": {
+      "n": 1,
+      "reactions": 231,
+      "comments": 4,
+      "shares": 100,
+      "interactions": 335,
+      "mean_interactions": 335,
+      "median_interactions": 335
+    },
+    "2026-08-18": {
+      "n": 6,
+      "reactions": 139,
+      "comments": 10,
+      "shares": 40,
+      "interactions": 189,
+      "mean_interactions": 31.5,
+      "median_interactions": 30.5
+    },
+    "2026-08-19": {
+      "n": 7,
+      "reactions": 164,
+      "comments": 13,
+      "shares": 30,
+      "interactions": 207,
+      "mean_interactions": 29.571428571428573,
+      "median_interactions": 34
+    }
+  },
+  "by_slot": {
+    "10:00": {
+      "n": 2,
+      "reactions": 63,
+      "comments": 3,
+      "shares": 8,
+      "interactions": 74,
+      "mean_interactions": 37,
+      "median_interactions": 37.0
+    },
+    "11:00": {
+      "n": 2,
+      "reactions": 71,
+      "comments": 7,
+      "shares": 13,
+      "interactions": 91,
+      "mean_interactions": 45.5,
+      "median_interactions": 45.5
+    },
+    "13:30": {
+      "n": 2,
+      "reactions": 44,
+      "comments": 3,
+      "shares": 15,
+      "interactions": 62,
+      "mean_interactions": 31,
+      "median_interactions": 31.0
+    },
+    "16:00": {
+      "n": 2,
+      "reactions": 48,
+      "comments": 4,
+      "shares": 8,
+      "interactions": 60,
+      "mean_interactions": 30,
+      "median_interactions": 30.0
+    },
+    "17:00": {
+      "n": 2,
+      "reactions": 65,
+      "comments": 5,
+      "shares": 26,
+      "interactions": 96,
+      "mean_interactions": 48,
+      "median_interactions": 48.0
+    },
+    "19:00": {
+      "n": 3,
+      "reactions": 243,
+      "comments": 5,
+      "shares": 100,
+      "interactions": 348,
+      "mean_interactions": 116,
+      "median_interactions": 10
+    },
+    "19:03": {
+      "n": 1,
+      "reactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "interactions": 0,
+      "mean_interactions": 0,
+      "median_interactions": 0
+    }
+  },
+  "rows": [
+    {
+      "meta_post_id": "1036844829507460_122151374019072582",
+      "created_time_utc": "2026-08-18T00:00:01+0000",
+      "created_time_local": "2026-08-17T19:00:01-05:00",
+      "date_local": "2026-08-17",
+      "slot_local": "19:00",
+      "message": "🌲🤪😂 #WilfredUSM #MemesUSM #UniverseSentMe",
+      "asset_ref": "2608029 - Wilfred - Quiero loquiar.jpeg",
+      "publication_id": "",
+      "reactions": 231,
+      "comments": 4,
+      "shares": 100,
+      "interactions": 335
+    },
+    {
+      "meta_post_id": "1036844829507460_122151374085072582",
+      "created_time_utc": "2026-08-18T15:00:04+0000",
+      "created_time_local": "2026-08-18T10:00:04-05:00",
+      "date_local": "2026-08-18",
+      "slot_local": "10:00",
+      "message": "🎢😵‍💫💼 #MemesUSM #UniverseSentMe",
+      "asset_ref": "260646 - No sean asi.. (14-jun-26).png",
+      "publication_id": "",
+      "reactions": 10,
+      "comments": 0,
+      "shares": 3,
+      "interactions": 13
+    },
+    {
+      "meta_post_id": "1036844829507460_122151374157072582",
+      "created_time_utc": "2026-08-18T16:00:06+0000",
+      "created_time_local": "2026-08-18T11:00:06-05:00",
+      "date_local": "2026-08-18",
+      "slot_local": "11:00",
+      "message": "✍️📝😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "asset_ref": "2608046 - Universe - Mis firmas no se parecen.jpeg",
+      "publication_id": "",
+      "reactions": 46,
+      "comments": 4,
+      "shares": 7,
+      "interactions": 57
+    },
+    {
+      "meta_post_id": "1036844829507460_122151374217072582",
+      "created_time_utc": "2026-08-18T18:30:01+0000",
+      "created_time_local": "2026-08-18T13:30:01-05:00",
+      "date_local": "2026-08-18",
+      "slot_local": "13:30",
+      "message": "🤡🐱💥 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "asset_ref": "260735 - Universe - dentro de ti hay dos payasos (10-jun-26).png",
+      "publication_id": "",
+      "reactions": 38,
+      "comments": 3,
+      "shares": 14,
+      "interactions": 55
+    },
+    {
+      "meta_post_id": "1036844829507460_122151374289072582",
+      "created_time_utc": "2026-08-18T21:00:02+0000",
+      "created_time_local": "2026-08-18T16:00:02-05:00",
+      "date_local": "2026-08-18",
+      "slot_local": "16:00",
+      "message": "🗺️🏍️🌊 #EvanUSM #MemesUSM #UniverseSentMe",
+      "asset_ref": "2608052 - Evan - Yo confiando en Google Maps.jpeg",
+      "publication_id": "",
+      "reactions": 18,
+      "comments": 2,
+      "shares": 2,
+      "interactions": 22
+    },
+    {
+      "meta_post_id": "1036844829507460_122151374367072582",
+      "created_time_utc": "2026-08-18T22:00:29+0000",
+      "created_time_local": "2026-08-18T17:00:29-05:00",
+      "date_local": "2026-08-18",
+      "slot_local": "17:00",
+      "message": "😒 #UniverseSentMe",
+      "asset_ref": "260644 - Universe.png",
+      "publication_id": "",
+      "reactions": 24,
+      "comments": 1,
+      "shares": 14,
+      "interactions": 39
+    },
+    {
+      "meta_post_id": "1036844829507460_122151374457072582",
+      "created_time_utc": "2026-08-19T00:00:00+0000",
+      "created_time_local": "2026-08-18T19:00:00-05:00",
+      "date_local": "2026-08-18",
+      "slot_local": "19:00",
+      "message": "🧚‍♀️💋✨  \nTu maldición y solo se romperá con un beso en los labios. \nLuego, tomarás la forma del amor verdadero.\n\n#KiriUSM #MemesUSM #Universe #KiriUSM #MemesUSM #Universe #UniverseSentMe",
+      "asset_ref": "2608032 - Kiri - Para romper el echizo tendras que besarla en los labios.jpeg",
+      "publication_id": "",
+      "reactions": 3,
+      "comments": 0,
+      "shares": 0,
+      "interactions": 3
+    },
+    {
+      "meta_post_id": "1036844829507460_122151374517072582",
+      "created_time_utc": "2026-08-19T15:00:02+0000",
+      "created_time_local": "2026-08-19T10:00:02-05:00",
+      "date_local": "2026-08-19",
+      "slot_local": "10:00",
+      "message": "🫠 #UniverseSentMe",
+      "asset_ref": "260515 - Universe.png",
+      "publication_id": "",
+      "reactions": 53,
+      "comments": 3,
+      "shares": 5,
+      "interactions": 61
+    },
+    {
+      "meta_post_id": "1036844829507460_122151374589072582",
+      "created_time_utc": "2026-08-19T16:00:18+0000",
+      "created_time_local": "2026-08-19T11:00:18-05:00",
+      "date_local": "2026-08-19",
+      "slot_local": "11:00",
+      "message": "👻🤷‍♂️😂 #FantasmaUSM #MemesUSM #UniverseSentMe",
+      "asset_ref": "2608061 - Fantasma - acaso parezco alguien que quiere ser genial.jpeg",
+      "publication_id": "",
+      "reactions": 25,
+      "comments": 3,
+      "shares": 6,
+      "interactions": 34
+    },
+    {
+      "meta_post_id": "1036844829507460_122151374655072582",
+      "created_time_utc": "2026-08-19T18:30:02+0000",
+      "created_time_local": "2026-08-19T13:30:02-05:00",
+      "date_local": "2026-08-19",
+      "slot_local": "13:30",
+      "message": "Esperando octubre… 👻 #UniverseSentMe",
+      "asset_ref": "260560 - Fantasma.png",
+      "publication_id": "",
+      "reactions": 6,
+      "comments": 0,
+      "shares": 1,
+      "interactions": 7
+    },
+    {
+      "meta_post_id": "1036844829507460_122151374745072582",
+      "created_time_utc": "2026-08-19T21:00:00+0000",
+      "created_time_local": "2026-08-19T16:00:00-05:00",
+      "date_local": "2026-08-19",
+      "slot_local": "16:00",
+      "message": "😅🎭🙃 #MaeveUSM #SilvioUSM #UniverseSentMe",
+      "asset_ref": "2608031 - Maeve+Silvio - Risas falsas.jpeg",
+      "publication_id": "",
+      "reactions": 30,
+      "comments": 2,
+      "shares": 6,
+      "interactions": 38
+    },
+    {
+      "meta_post_id": "1036844829507460_122151374823072582",
+      "created_time_utc": "2026-08-19T22:00:00+0000",
+      "created_time_local": "2026-08-19T17:00:00-05:00",
+      "date_local": "2026-08-19",
+      "slot_local": "17:00",
+      "message": "🌈💔🫶 #UniverseUSM #MomentosUSM #UniverseSentMe",
+      "asset_ref": "260733 - Evan - Yo aura fuerte (10-jun-26).png",
+      "publication_id": "",
+      "reactions": 41,
+      "comments": 4,
+      "shares": 12,
+      "interactions": 57
+    },
+    {
+      "meta_post_id": "1036844829507460_122151374919072582",
+      "created_time_utc": "2026-08-20T00:00:01+0000",
+      "created_time_local": "2026-08-19T19:00:01-05:00",
+      "date_local": "2026-08-19",
+      "slot_local": "19:00",
+      "message": "🌙🌲✨ #WilfredUSM #MomentosUSM #UniverseSentMe",
+      "asset_ref": "2608040- Wilfred - el universo me susurro en sueños.jpeg",
+      "publication_id": "",
+      "reactions": 9,
+      "comments": 1,
+      "shares": 0,
+      "interactions": 10
+    },
+    {
+      "meta_post_id": "1036844829507460_122153090559072582",
+      "created_time_utc": "2026-08-20T00:03:50+0000",
+      "created_time_local": "2026-08-19T19:03:50-05:00",
+      "date_local": "2026-08-19",
+      "slot_local": "19:03",
+      "message": "Yo: “no pasa nada”.\nUniverse, dos segundos después: 🟣\n\nSi tu chat también abre portales dimensionales, no estás solo.\n\n#UniverseSentMe #UniverseUSM #MemesUSM",
+      "asset_ref": "",
+      "publication_id": "",
+      "reactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "interactions": 0
+    }
+  ]
+}
