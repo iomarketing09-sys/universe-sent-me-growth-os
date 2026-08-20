@@ -4,9 +4,9 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-20
-**Versión:** 2.3
+**Versión:** 2.4
 **Autor:** Manus AI (CGO)
-**Documentos relacionados:** `05_00_Calendario_01_02_Ago.md`, `Operations/Memories/deep_dive_reels_comparativo.md`, `../Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`, `../Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json`, `../Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json`, `../Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json`, `../Operations/Research/2026-08-19_Decisiones_Reconciliacion_Reels.json`, `../Operations/Research/2026-08-19_Piezas_Sin_Cascada_Revision.json`, `../Operations/Research/2026-08-19_Auditoria_Assets_Drive_Reels.md`, `../Operations/Research/2026-08-19_Meta_Reels_Audit.json`, `../Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json`, `../Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json`, `../Operations/Research/Affiliate_Link_Ledger.csv`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `14_00_Fuente_Maestra_y_Ledgers.md`
+**Documentos relacionados:** `05_00_Calendario_01_02_Ago.md`, `Operations/Memories/deep_dive_reels_comparativo.md`, `../Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`, `../Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json`, `../Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json`, `../Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json`, `../Operations/Research/2026-08-19_Decisiones_Reconciliacion_Reels.json`, `../Operations/Research/2026-08-19_Piezas_Sin_Cascada_Revision.json`, `../Operations/Research/2026-08-19_Auditoria_Assets_Drive_Reels.md`, `../Operations/Research/2026-08-19_Meta_Reels_Audit.json`, `../Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json`, `../Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json`, `../Operations/Research/Affiliate_Link_Ledger.csv`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Desamor.md`, `14_00_Fuente_Maestra_y_Ledgers.md`
 
 ---
 
@@ -75,6 +75,7 @@ Se ha detectado que varios Reels recientes solo se publicaron en Instagram. Seg�
 
 | ID_Pieza | Concepto | Personaje | Estado Actual |
 | :--- | :--- | :--- | :--- |
+| `CON-2026-08-20-RemoteControl-EvanElara` | Videoclip musical “Remote Control” | Evan + Elara | **Cascada completa confirmada por Fernando.** Instagram: `18209594575357100`, [permalink](https://www.instagram.com/reel/DcR29-aRRXN/), 20 Ago 17:41:41 CDT. Facebook: Reel `2815726225473165`, Post `122153750763072582`, [permalink](https://www.facebook.com/reel/2815726225473165/), producto nativo con link `https://meli.la/1eUqUye` y etiqueta `usmfb20260820rc01`, 20 Ago 18:02:04 CDT. TikTok: [`7676249640928414997`](https://www.tiktok.com/@universe.sent.me/video/7676249640928414997). YouTube publicado según confirmación de Fernando; ID/permalink pendiente de conciliación. |
 | `CON-2026-08-19-DobleCheck-Universe` | Doble check → Universe / “yo después de mandar ‘no pasa nada’” | Universe | **Cascada completa.** Instagram: `17902439976554149`, [permalink](https://www.instagram.com/reel/DcPY7QNF1hb/). Facebook vigente: [`2210896633022235`](https://www.facebook.com/reel/2210896633022235), producto nativo con link `https://meli.la/1AQ2upG` y etiqueta `usmfb20260819p01`. TikTok: [`7675906878127246613`](https://www.tiktok.com/@universe.sent.me/video/7675906878127246613). YouTube Short: [`YVsi53pXA4s`](https://youtube.com/shorts/YVsi53pXA4s?si=uGY617fIq5IknnQ6). El Reel de Graph `1549931766108154` fue eliminado antes de métricas y no entra al análisis. |
 | CNT-002 | Wilfred reseña su propio peluche | Wilfred | Pendiente de producción (Flow). |
 | CNT-003 | Trailer 001 — Universe Sent Me | Universe | Pendiente de producción (Flow). |

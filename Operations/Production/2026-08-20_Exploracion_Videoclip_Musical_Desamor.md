@@ -2,13 +2,13 @@
 
 **Propósito:** Definir una posible nueva familia de Reels musicales de Universe Sent Me, donde una canción licenciada guía una microhistoria emocional antes de seleccionar personajes, escenas o producción.
 
-**Estado:** Review — dirección global aprobada; montaje no lineal en revisión antes de generar un storyboard nuevo.
+**Estado:** Active — máster publicado en cascada completa; IDs nativos y primeras métricas en conciliación.
 
 **Fecha de creación:** 2026-08-20
 
 **Última actualización:** 2026-08-20
 
-**Versión:** 2.6
+**Versión:** 2.7
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -332,7 +332,7 @@ El corte `Evan+Elara-RemoteControl_Sussie4.mp4` amplía la pieza a **30 segundos
 
 La escena de manos a través del vidrio queda `NOT_NEEDED_FOR_THIS_CUT` y se conserva como idea reutilizable, no como pendiente de producción. Antes de publicar, exportar el máster sin música incrustada y seleccionar `Remote Control` nativamente en cada una de las cuatro plataformas verificadas.
 
-## Paquete de publicación propuesto — pendiente de aprobación de Fernando
+## Paquete de publicación — estado registrado 2026-08-20
 
 La publicación debe conservar el misterio del montaje. El copy no declara que Evan y Elara sean pareja, que hayan terminado ni que vayan a volver; formula una experiencia universal de memoria y distancia, dejando que la canción y los planos sostengan la lectura íntima. La pregunta final abre conversación desde la nostalgia musical y no fuerza una explicación de canon.
 
@@ -354,10 +354,10 @@ La publicación debe conservar el misterio del montaje. El copy no declara que E
 
 | Plataforma | Copy o título recomendado | Hashtags | Razonamiento |
 |---|---|---|---|
-| Instagram Reels | Usar el copy completo. | `#UniverseSentMe #EvanUSM #ElaraUSM #MomentosUSM #Sussie4 #LeonLarregui` | Seis etiquetas: raíz de marca, dos personajes, formato contemplativo y dos señales de descubrimiento musical. |
-| Facebook Reels | Usar las dos primeras líneas; la pregunta final es opcional si la descripción se percibe larga en el compositor nativo. | `#UniverseSentMe #EvanUSM #ElaraUSM` | En Facebook el texto pesa más que los hashtags; se preserva raíz y atribución de personajes, sin saturar. |
-| TikTok | Usar el copy completo, con la pregunta en una línea independiente. | `#UniverseSentMe #EvanUSM #ElaraUSM #Sussie4 #LeonLarregui` | El audio nativo es el principal contexto musical; las etiquetas refuerzan identidad y hacen descubrible la pieza para esa afinidad. |
-| YouTube Shorts | **Título:** `Hay personas que se quedan en el retrovisor | Evan + Elara`<br>**Descripción:** `Remote Control — Sussie 4 ft. León Larregui. ¿Qué canción te lleva de vuelta sin pedir permiso?` | `#UniverseSentMe #EvanUSM #ElaraUSM` en descripción | El título comunica la tensión sin prometer una relación canónica; la descripción contiene atribución musical y pregunta, sin repetir el copy entero. |
+| Instagram Reels | Publicado con el copy completo. | `#UniverseSentMe #EvanUSM #ElaraUSM #MomentosUSM #Sussie4 #LeonLarregui` | Publicación verificada: ID `18209594575357100`; [permalink](https://www.instagram.com/reel/DcR29-aRRXN/); 2026-08-20 17:41:41 CDT. |
+| Facebook Reels | Publicado con producto nativo afiliado. | `#UniverseSentMe #EvanUSM #ElaraUSM` | Verificado: Reel `2815726225473165`, Post `122153750763072582`, [permalink](https://www.facebook.com/reel/2815726225473165/); 2026-08-20 18:02:04 CDT. |
+| TikTok | Publicado con el copy completo. | `#UniverseSentMe #EvanUSM #ElaraUSM #Sussie4 #LeonLarregui` | Verificado: video `7676249640928414997`, [permalink](https://www.tiktok.com/@universe.sent.me/video/7676249640928414997); la fuente devuelve `2026-08-20T22:49:14` sin zona horaria declarada. |
+| YouTube Shorts | Publicado con el título y descripción definidos. | `#UniverseSentMe #EvanUSM #ElaraUSM` en descripción | Fernando confirmó publicación; ID/permalink pendiente de conciliación. |
 
 ### Arquitectura de hashtags
 
@@ -381,7 +381,7 @@ La elección nace del propio lenguaje del videoclip: Elara usa audífonos blanco
 | `ML_Tag` propuesta | `usmfb20260820rc01` |
 | CTA | `Producto nativo relacionado con los audífonos de Elara` |
 
-El producto se adjunta de forma nativa al Reel de Facebook, no se añade al caption. Antes de adjuntarlo, Fernando genera un **link nuevo y exclusivo** para este `Content_ID` en la Central de Afiliados y registra la fila en `Operations/Research/Affiliate_Link_Ledger.csv` con el producto exacto, URL normal, link corto y etiqueta. No reutilizar `https://meli.la/1AQ2upG`, que pertenece exclusivamente a P01.
+El producto se adjuntó de forma nativa al Reel de Facebook, sin añadirlo al caption. Fernando confirmó el link exclusivo `https://meli.la/1eUqUye` y la etiqueta `usmfb20260820rc01`; ambos quedaron registrados en `Operations/Research/Affiliate_Link_Ledger.csv`. El Reel de Facebook se verificó como `2815726225473165` y su Post asociado como `122153750763072582`; aún falta conciliar la URL normal de la ficha y el ID nativo de adjunción. No se reutiliza `https://meli.la/1AQ2upG`, que pertenece exclusivamente a P01.
 
 ### Validación de propuesta
 
@@ -389,7 +389,7 @@ El copy principal obtuvo **8.70/10 — PASS** en la rúbrica de `usm-content-pro
 
 ### Actualizaciones requeridas después de publicar
 
-Al aprobar y publicar, actualizar `GrowthOS/07_00_Registro_Maestro_Reels.md` con los cuatro IDs nativos, permalinks, fecha/hora, copy final y estado de cascada; registrar las ventanas de medición de 24 h y 72 h; y cambiar el estado de este paquete de `pendiente de aprobación` a `publicado` o `archivado`, según corresponda. No atribuir resultados a la familia musical hasta acumular una cohorte de 5–10 piezas bajo `EXP-202608-MUSICVIDEO-01`.
+La cascada completa ya fue confirmada por Fernando y el registro maestro incorporó su estado. Instagram, Facebook y TikTok tienen IDs/permalinks verificables; permanecen pendientes el ID/permalink de YouTube y la URL individual del producto junto con su ID de adjunción nativo. Las ventanas de 24 h y 72 h se medirán desde las horas nativas verificables; mientras tanto, no se atribuyen resultados a la familia musical hasta acumular una cohorte de 5–10 piezas bajo `EXP-202608-MUSICVIDEO-01`.
 
 ### Contingencia
 
