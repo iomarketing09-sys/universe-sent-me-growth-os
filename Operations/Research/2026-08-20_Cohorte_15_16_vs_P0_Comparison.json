@@ -1,0 +1,103 @@
+{
+  "cohort": {
+    "cohort": "Cohorte 15–16",
+    "n": 9,
+    "reactions": 560,
+    "comments": 25,
+    "shares": 162,
+    "interactions": 747,
+    "mean_interactions": 83.0
+  },
+  "p0": {
+    "cohort": "P0 17 agosto",
+    "n": 5,
+    "reactions": 578,
+    "comments": 10,
+    "shares": 197,
+    "interactions": 785,
+    "mean_interactions": 157.0
+  },
+  "per_post_ratio_cohort_to_p0": 0.5286624203821656,
+  "top_cohort_rows": [
+    {
+      "publicacion_id": "PUB-FB-15_16-04",
+      "cnt_id": "CNT-034",
+      "meta_post_id": "1036844829507460_122150559765072582",
+      "published_at_utc": "2026-08-16T00:00:00+00:00",
+      "age_hours": 75.225,
+      "reactions": 172,
+      "comments": 3,
+      "shares": 52,
+      "interactions": 227,
+      "exact_window_available": false,
+      "asset_ref": "260539 - Evan+Kiri.png",
+      "asset_filename": "",
+      "slot_local": "19:00",
+      "content_type": "",
+      "format": ""
+    },
+    {
+      "publicacion_id": "PUB-FB-15_16-01",
+      "cnt_id": "CNT-031",
+      "meta_post_id": "1036844829507460_122150559441072582",
+      "published_at_utc": "2026-08-15T15:00:22+00:00",
+      "age_hours": 84.219,
+      "reactions": 110,
+      "comments": 2,
+      "shares": 23,
+      "interactions": 135,
+      "exact_window_available": false,
+      "asset_ref": "2608030 - Universe - Que fibra tomas pa cagarla tanto.jpeg",
+      "asset_filename": "",
+      "slot_local": "10:00",
+      "content_type": "",
+      "format": ""
+    },
+    {
+      "publicacion_id": "PUB-FB-15_16-05",
+      "cnt_id": "CNT-035",
+      "meta_post_id": "1036844829507460_122150559873072582",
+      "published_at_utc": "2026-08-16T15:00:00+00:00",
+      "age_hours": 60.225,
+      "reactions": 75,
+      "comments": 2,
+      "shares": 15,
+      "interactions": 92,
+      "exact_window_available": false,
+      "asset_ref": "2608037- Universe - soñe que era un litrro de agua.jpeg",
+      "asset_filename": "",
+      "slot_local": "10:00",
+      "content_type": "",
+      "format": ""
+    }
+  ],
+  "top_p0_rows": [
+    {
+      "meta_post_id": "1036844829507460_122151373761072582",
+      "created_time": "2026-08-17T16:00:04+0000",
+      "message": "🥰🌎😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reactions_lifetime": 462,
+      "comments_lifetime": 2,
+      "shares_lifetime": 172,
+      "interactions_observed": 636
+    },
+    {
+      "meta_post_id": "1036844829507460_122151373701072582",
+      "created_time": "2026-08-17T15:00:03+0000",
+      "message": "😮‍💨 #UniverseSentMe",
+      "reactions_lifetime": 47,
+      "comments_lifetime": 2,
+      "shares_lifetime": 8,
+      "interactions_observed": 57
+    },
+    {
+      "meta_post_id": "1036844829507460_122151373953072582",
+      "created_time": "2026-08-17T22:00:03+0000",
+      "message": "😮‍💨😵‍💫😂 #MemesUSM #UniverseSentMe",
+      "reactions_lifetime": 38,
+      "comments_lifetime": 2,
+      "shares_lifetime": 11,
+      "interactions_observed": 51
+    }
+  ]
+}
