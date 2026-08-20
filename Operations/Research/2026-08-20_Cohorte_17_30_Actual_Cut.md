@@ -14,8 +14,8 @@ organization: "Operations/Research"
 ---
 
 # Alcance
-Se analizaron **14 publicaciones reales** visibles en Meta con fecha local entre el 17 y el 30 de agosto, excluyendo los cinco IDs del baseline P0. El corte registra **731 interacciones observadas**: 534 reacciones, 27 comentarios y 170 compartidos.
-Las cifras son acumulados lifetime observados al momento de consulta, no snapshots exactos de 24/72 horas.
+Se detectaron **14 publicaciones reales** visibles en Meta con fecha local entre el 17 y el 30 de agosto, excluyendo los cinco IDs del baseline P0. **13 publicaciones devolvieron métricas de imagen interpretables** y un reel devolvió ceros en estos campos; esos ceros no se interpretan como rendimiento nulo. Las 13 publicaciones con métricas observables registran **731 interacciones**: 534 reacciones, 27 comentarios y 170 compartidos.
+Las cifras son acumulados lifetime observados al momento de consulta, no snapshots exactos de 24/72 horas. La métrica de video del reel queda pendiente de un campo específico de video.
 
 ## Resumen por fecha local
 
