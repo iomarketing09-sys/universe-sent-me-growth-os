@@ -1,0 +1,12 @@
+{
+  "status_code": 400,
+  "url": "https://graph.facebook.com/v26.0/1036844829507460/tagged?fields=id%2Cfrom%2Cmessage%2Ccreated_time%2Cpermalink_url%2Ccomments.limit%28100%29%7Bid%2Cfrom%2Cmessage%2Ccreated_time%2Cmessage_tags%7D&limit=50&since=1786982196&until=1787241396",
+  "payload": {
+    "error": {
+      "message": "(#10) This endpoint requires the 'pages_read_user_content' permission or the 'Page Public Content Access' feature. Refer to https://developers.facebook.com/docs/apps/review/login-permissions#manage-pages and https://developers.facebook.com/docs/apps/review/feature#reference-PAGES_ACCESS for details.",
+      "type": "OAuthException",
+      "code": 10,
+      "fbtrace_id": "AgrxYUcerYQlcvJk6Ez-6p-"
+    }
+  }
+}

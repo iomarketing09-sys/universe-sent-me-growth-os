@@ -3,8 +3,8 @@ title: "Auditoría de comentarios de Facebook y propuesta de Community Growth"
 purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y definir un sistema de escucha, respuesta y aprendizaje para Universe Sent Me."
 status: Active
 created: 2026-08-15
-updated: 2026-08-18
-version: "1.6"
+updated: 2026-08-20
+version: "1.7"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -389,3 +389,26 @@ Fernando indicó responder ambos comentarios. Se publicaron y verificaron estas 
 | “Ay por Dios es al revés” | “¡Exacto! El remate venía con giro incluido. 😂🫠” | `122151374823072582_942838658075352` |
 
 Meta confirmó ambas respuestas a las 01:47:28 y 01:47:33 UTC. Las dos filas pasan a `Respondido`; no se realizaron otras acciones de moderación.
+
+
+## 23. Mención externa y reconocimiento de comunidad — 2026-08-20
+
+Fernando señaló una publicación externa de Skocaj Soledad en la que se menciona directamente a Universe Sent Me: [post externo](https://www.facebook.com/soledad.skocaj.50/posts/pfbid03fhXwxSSW1jU7BT7MLcb7hJWSvANcfJF2DWUG1qaDfLGokQEg5Ta6cYdnrCHvR26l). El texto visible dice: **“Con Universe Sent Me – ¡Estoy en racha! Entré en su lista de participación semanal 4 semanas seguidas.”** La publicación muestra una reacción positiva y un compartido. La mención es un reconocimiento espontáneo de recurrencia y pertenencia, no una solicitud de soporte ni una queja.
+
+La prioridad CGO es **alta como señal de comunidad y baja como urgencia de moderación**. Si Fernando decide interactuar, la respuesta debe agradecer la participación y reforzar la pertenencia sin convertirla en una promoción ni pedir datos personales. No se publicó ninguna respuesta durante esta revisión.
+
+## 24. Hilo de la publicación “Aura débil / Aura fuerte” — 2026-08-20
+
+El segundo enlace corresponde a la publicación propia [“Aura débil / Aura fuerte”](https://www.facebook.com/universesentme/posts/pfbid02sF7MoYRnBNsZdXrew945EsRNFbSTncCvFHkjSU7pxtkfQq2UZuYLukHrDjLNeqH3l). El post tenía, al momento de la extracción pública, **82 reacciones, 8 comentarios y 17 compartidos**. El comentario enlazado por la notificación es **“Falto farmar aura para que nos quede claro”**, de Jules Cadena. Es un remate humorístico que amplía la idea del meme; no es ofensivo ni requiere moderación.
+
+El hilo también contiene las observaciones **“La tribu de los migajeros 🤷🏻‍♀️”**, **“Ay por Dios es al revés”** y **“Estás alrevesado”**. Las dos últimas ya tienen respuestas independientes de Universe Sent Me registradas en la sección 22. La página también publicó una mención automática `@seguidores Universe Sent Me`; esa entrada no se considera conversación orgánica y no requiere respuesta adicional.
+
+La respuesta propuesta para el comentario de Jules es:
+
+> “Eso ya no es aura débil… eso es falta de actualización espiritual. 😂✨”
+
+Estado: **Pendiente de aprobación humana; no publicado**. La respuesta mantiene el humor ácido del comentario, no ataca a la persona y abre una posibilidad de continuidad sin explicar demasiado el remate.
+
+## 25. Limitación técnica de la revisión — 2026-08-20
+
+La lectura de comentarios de publicaciones propias funcionó mediante Meta Graph API v26. La consulta específica del endpoint de contenido etiquetado fue rechazada por Meta con el permiso `pages_read_user_content`/Page Public Content Access, por lo que las menciones externas deben verificarse mediante el enlace proporcionado por Fernando o mediante evidencia visible en su sesión. No se introdujeron credenciales, no se publicó contenido y no se modificó Facebook.
