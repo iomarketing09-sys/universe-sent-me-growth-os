@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-20
 
-**Versión:** 1.3
+**Versión:** 1.4
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -76,15 +76,15 @@ Fernando seleccionó el rango **0:54–1:24** como guía sonora: 30 segundos. Es
 
 | Variable pendiente | Decisión necesaria antes de Phase 2 |
 |---|---|
-| Tramo exacto | Fernando identifica en su biblioteca el inicio y final del audio que utilizará. |
-| Disponibilidad | Se verifica de forma independiente en Instagram, TikTok, Facebook y YouTube; no se asume portabilidad de licencia. |
-| Personajes | Evan + Elara solo como complicidad ambigua/no canónica; Maeve + Kael si la historia se vuelve romance confirmado. |
-| Duración | Elegir 15, 20 o 30 segundos según el tramo disponible. |
-| Estética | Confirmar si será 3D cinematográfico USM con guiños Telehit 2000s, sin usar marcas, logos o material de terceros. |
+| Tramo exacto | Confirmado: 0:54–1:24. |
+| Disponibilidad | Confirmada por Fernando en Instagram, Facebook, TikTok y YouTube Shorts; cada plataforma añade el audio nativamente. |
+| Personajes | Confirmado: Evan + Elara como complicidad ambigua/no canónica. |
+| Duración | Confirmada: 30 segundos. |
+| Estética | Confirmada: animación actual de USM, 3D cinematográfico con guiños Telehit 2000s, sin marcas, logos o material de terceros. |
 
 No se incorporarán letras completas, audio ni música a Flow. La canción se seleccionará desde la biblioteca licenciada de cada plataforma o se gestionará mediante la licencia que corresponda en la edición final.
 
-## Cascada propuesta para Remote Control — pendiente de aprobación
+## Cascada aprobada para Remote Control
 
 Esta pieza es un videoclip: la canción define el ritmo y el significado del montaje. Por ello no se debe subir un archivo con `Remote Control` incrustado, ni reemplazarla por música genérica en una plataforma solo para completar una cascada. Cada red debe añadir la pista desde su propia biblioteca con el tramo 0:54–1:24, si está habilitado para la cuenta y el territorio.
 
@@ -95,7 +95,7 @@ Esta pieza es un videoclip: la canción define el ritmo y el significado del mon
 | **Facebook Reels** | Lanzamiento condicional. | El selector nativo de la Página debe ofrecer el audio con autorización visible. | Retener la publicación. No sustituir por un Reel con música incrustada ni por una pista distinta. |
 | **TikTok** | Lanzamiento condicional y solo con licencia confirmada. | Si Universe Sent Me opera como negocio, TikTok exige usar su Commercial Music Library o contar con licencia propia para audio externo, incluso en publicaciones orgánicas. [8] | Retener el videoclip hasta tener licencia o confirmación comercial específica; no usar la biblioteca general como atajo. |
 
-La cascada inicial recomendada es **Instagram + YouTube Shorts**, solo si ambos validan el audio nativo. Facebook y TikTok se agregan después y quedan documentados como `PENDING_LICENSE_CHECK`; la cohorte se clasifica como **cascada parcial por licencia**, no como fallo de publicación. La primera verificación la hace Fernando en los cuatro selectores antes de que se genere el máster final.
+Fernando confirmó que `Remote Control` aparece en los cuatro selectores nativos. Se aprueba una cascada completa en **Instagram Reels, Facebook Reels, TikTok y YouTube Shorts**. La canción se añade con el mismo tramo de referencia en cada plataforma; el video se exporta sin la pista incrustada. La pieza se registra como videoclip musical multicanal, no como una variante de `REAL → UNIVERSE / REACCIÓN`.
 
 ### Contingencia
 
