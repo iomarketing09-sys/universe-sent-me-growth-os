@@ -407,7 +407,17 @@ La respuesta propuesta para el comentario de Jules es:
 
 > “Eso ya no es aura débil… eso es falta de actualización espiritual. 😂✨”
 
-Estado: **Pendiente de aprobación humana; no publicado**. La respuesta mantiene el humor ácido del comentario, no ataca a la persona y abre una posibilidad de continuidad sin explicar demasiado el remate.
+Estado: **Publicado y verificado**. Meta devolvió el ID de respuesta `122151374823072582_1792383575281432` mediante Graph API v26; no se modificó el contenido original.
+
+El tercer comentario omitido es:
+
+> **“La tribu de los migajeros 🤷🏻‍♀️”** — comentario `122151374823072582_1114814910869463`
+
+La propuesta para ese comentario es:
+
+> **“La tribu se reconoce entre sí. 😂🤷🏻‍♀️”**
+
+Estado: **Pendiente de aprobación humana; no publicado**. La respuesta conserva el humor del comentario y evita juzgar a la persona.
 
 ## 25. Limitación técnica de la revisión — 2026-08-20
 
