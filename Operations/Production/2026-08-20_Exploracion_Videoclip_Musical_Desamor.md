@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-20
 
-**Versión:** 2.0
+**Versión:** 2.1
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -251,6 +251,29 @@ Fernando decidió probar el primer render con un prompt menos prescriptivo. Con 
 | Sin diálogo, letra, texto, logo ni música incrustada. | Detalles secundarios de lluvia, luces y tránsito que fortalezcan la atmósfera. |
 
 La evaluación del primer render separará cuatro preguntas: continuidad de personajes, utilidad de montaje, atmósfera emocional y desvíos críticos. Si el render es atmosférico y recortable, se conserva aunque no replique exactamente el storyboard; solo se vuelve a aumentar la especificidad si la libertad produce pasajeros extra, cambio de identidad, confusión narrativa o estética ajena a USM.
+
+### Evaluación del primer render — Evan conduciendo
+
+El primer render `Evan_driving_car_in_rain_202608201449.mp4` costó **10 puntos**. Mantiene la identidad de Evan, el estilo 2D pictórico, la lluvia nocturna y una aparición breve de Elara como recuerdo tras el cristal, sin convertirla en pasajera real. El auto, sin embargo, se resuelve como hatchback contemporáneo, por lo que no conserva la silueta que el storyboard sugiere.
+
+| Elemento | Veredicto | Decisión de edición |
+|---|---|---|
+| Evan, lluvia, interior y atmósfera | `USE` | Conservar los planos interiores y de recuerdo para el montaje. |
+| Elara como memoria/reflejo | `USE` | Funciona como presencia subjetiva; no requiere corrección. |
+| Auto exterior | `REGENERATE_RECOMMENDED` | La silueta de hatchback debilita el motivo de videoclip clásico; se recomienda una segunda generación para planos exteriores. |
+| Continuidad/cortes | `PASS` | No hay pasajero extra, deformación o transición sobrenatural que obligue a descartar el clip completo. |
+
+El vehículo del storyboard se parece mucho más a un **coupé americano de dos puertas de mediados de los sesenta**, de capó largo, cabina corta, parte trasera compacta, parrilla rectangular y faros redondos —una silueta cercana a un Mustang clásico— que a un Volvo P1800. No se pide una marca ni un modelo: se pide la silueta visual.
+
+### Ajuste mínimo para una regeneración exterior
+
+Mantener el storyboard, `char_Evan`, la dirección abierta y toda la intención emocional. Sustituir únicamente la línea de vehículo por:
+
+```text
+Evan drives one unbranded 1960s-inspired two-door classic pony coupe: long hood, short rear deck, compact cabin, squared front grille, round headlights, simple chrome bumpers, dark teal paint and a low, elegant fastback-like silhouette. It must not look like a modern hatchback, SUV, sedan or sports supercar.
+```
+
+La regeneración recomendada se limita a planos de carretera/exterior. El primer clip no se desecha: sus planos de Evan y la memoria de Elara permanecen como material válido para Edits.
 
 ### Contingencia
 
