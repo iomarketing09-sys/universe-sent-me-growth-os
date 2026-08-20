@@ -413,11 +413,11 @@ El tercer comentario omitido es:
 
 > **“La tribu de los migajeros 🤷🏻‍♀️”** — comentario `122151374823072582_1114814910869463`
 
-La propuesta para ese comentario es:
+La respuesta aprobada para ese comentario fue:
 
 > **“La tribu se reconoce entre sí. 😂🤷🏻‍♀️”**
 
-Estado: **Pendiente de aprobación humana; no publicado**. La respuesta conserva el humor del comentario y evita juzgar a la persona.
+Estado: **Publicado y verificado**. Meta devolvió el ID `122151374823072582_1415067117189886`. La respuesta conserva el humor del comentario y evita juzgar a la persona.
 
 ## 25. Limitación técnica de la revisión — 2026-08-20
 
