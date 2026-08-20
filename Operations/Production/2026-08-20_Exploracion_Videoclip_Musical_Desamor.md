@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-20
 
-**Versión:** 1.0
+**Versión:** 1.1
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -65,3 +65,23 @@ La historia no muestra una ruptura ni un beso. Muestra: Evan y Elara manejando d
 [2] [Letras.com — interpretación de “La Sombra del Amor”](https://www.letras.com/porter/la-sombra-del-amor/significado.html). Fuente secundaria, consultada el 2026-08-20.
 
 [3] [Letras.com — interpretación de “Labios Rotos”](https://www.letras.com/zoe/1867316/significado.html). Fuente secundaria, consultada el 2026-08-20.
+
+## Candidata primaria — Remote Control
+
+Fernando seleccionó **“Remote Control” de Sussie 4 con León Larregui** como candidata primaria de la exploración. La canción propone una relación herida por control a distancia, deseo residual y un gesto final de soltar; no corresponde a una reconciliación romántica simple. Su lenguaje electrónico y su historial dentro de la cultura de canales de video mexicanos la hacen compatible con un tratamiento nostálgico tipo videoclip, no con una narración explicativa. [4] [5]
+
+La microhistoria recomendada es: dos personajes conservan una rutina íntima —manejar al amanecer, cocinar en una cocina cálida, caminar entre árboles— pero el montaje revela que no habitan el mismo presente. En el golpe musical comparten un momento de cercanía coreografiada, sin beso ni declaración; el corte final los devuelve a trayectorias diferentes. La pieza comunica “todavía se entienden, pero ya no pueden decidir por el otro”.
+
+| Variable pendiente | Decisión necesaria antes de Phase 2 |
+|---|---|
+| Tramo exacto | Fernando identifica en su biblioteca el inicio y final del audio que utilizará. |
+| Disponibilidad | Se verifica de forma independiente en Instagram, TikTok, Facebook y YouTube; no se asume portabilidad de licencia. |
+| Personajes | Evan + Elara solo como complicidad ambigua/no canónica; Maeve + Kael si la historia se vuelve romance confirmado. |
+| Duración | Elegir 15, 20 o 30 segundos según el tramo disponible. |
+| Estética | Confirmar si será 3D cinematográfico USM con guiños Telehit 2000s, sin usar marcas, logos o material de terceros. |
+
+No se incorporarán letras completas, audio ni música a Flow. La canción se seleccionará desde la biblioteca licenciada de cada plataforma o se gestionará mediante la licencia que corresponda en la edición final.
+
+[4] [Genius — “Remote Control”, ficha y letra](https://genius.com/Sussie-4-remote-control-lyrics). Fuente de letra no oficial, consultada el 2026-08-20.
+
+[5] [Chilango — historia de “Remote Control” de Sussie 4](https://www.chilango.com/musica/remote-control-la-cancion-que-no-volvera-a-tocar-sussie-4/), 2016.
