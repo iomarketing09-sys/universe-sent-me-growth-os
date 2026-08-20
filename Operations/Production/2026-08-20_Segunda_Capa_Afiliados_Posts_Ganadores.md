@@ -4,7 +4,7 @@ purpose: "Definir un experimento separado para agregar productos afiliados de Me
 status: "Draft"
 created: 2026-08-20
 updated: 2026-08-20
-version: "1.3"
+version: "1.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-19_Playbook_Tracking_Afiliados_MercadoLibre.md"
@@ -89,7 +89,16 @@ Esta selección sigue el criterio de historia primero y respeta la preferencia o
 
 La primera lámpara solar `MLMU3878057684` queda como reserva por envío internacional y baja validación visible. La `MLMU474178210` es ahora la opción prioritaria para Wilfred por su señal pública de más de 10 mil vendidos y precio dentro del rango, pero no se considera elegible hasta verificar el origen del envío. La tira LED `MLM-3088935338` es el candidato proporcionado por Fernando para Evan + Kiri; su precio y disponibilidad requieren lectura manual.
 
-Estos son candidatos públicos, no links afiliados. Todavía deben verificarse vendedor, disponibilidad, envío nacional, precio vigente y elegibilidad en la Central de Afiliados antes de generar cualquier `meli.la`.
+Los dos productos fueron confirmados como disponibles por Fernando. Se preparan los siguientes identificadores operativos, pero todavía no se han generado las URLs `meli.la`:
+
+| Post | Link_ID propuesto | ML Product ID | ML_Tag propuesta | Superficie | Estado |
+|---|---|---|---|---|---|
+| `2608029` / Wilfred | `ML-FB-WIN-2608029-XHP360` | `MLMU474178210` | `usmwin2608029w0820` | `FACEBOOK_NATIVE_PRODUCT` | [https://meli.la/1bpVmJQ](https://meli.la/1bpVmJQ) — generado, no adjuntado |
+| `CNT-034 / 260539` / Evan + Kiri | `ML-FB-WIN-CNT034-LEDNEON` | `MLM-3088935338` | `usmwin260539ek0820` | `FACEBOOK_NATIVE_PRODUCT` | [https://meli.la/11cbTYc](https://meli.la/11cbTYc) — generado, no adjuntado |
+
+Las etiquetas son exclusivas por post y producto. No se reutilizan las etiquetas de AFF-01–AFF-10 ni la del Reel `usmfb20260819p01`. Si se decide usar un comentario en vez del producto nativo, se generará otra etiqueta distinta.
+
+Los dos links fueron generados por Fernando y quedaron registrados en `Affiliate_Link_Ledger.csv` con estado `Link_Generated_Not_Attached`. La adjunción a Facebook sigue bloqueada hasta la aprobación final de cada registro.
 
 ## 6. Tracking independiente
 
