@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-20
 
-**Versión:** 2.5
+**Versión:** 2.6
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -365,6 +365,24 @@ El paquete usa una estructura de capas, no una lista de etiquetas genéricas. `#
 
 Los hashtags de marca y personaje respetan el roster `GrowthOS/10_00_Kit_de_Hashtags_USM.md`, que fija un máximo de 5–6 en Instagram y 2–3 en Facebook. Las etiquetas musicales son una hipótesis de descubrimiento, no una afirmación de que el hashtag por sí mismo genere distribución; deben anotarse con las métricas de cada publicación para aprender si aportan alcance cualitativo o conversación.
 
+### Producto afiliado para Facebook — recomendado, no adjuntado
+
+**Producto recomendado:** `Audífonos inalámbricos Bluetooth 5.3 QCY H3 Lite ANC con micrófono, color blanco`, o una ficha vigente equivalente de **audífonos over-ear blancos, inalámbricos y sin estética gamer**. La variante QCY aparece como una opción de alta valoración en Mercado Libre México; el precio, envío y disponibilidad se confirman sobre la ficha individual que Fernando elija justo antes de generar su enlace afiliado. [9]
+
+La elección nace del propio lenguaje del videoclip: Elara usa audífonos blancos como señal de aislamiento y escucha privada, y la canción nativa es el motor de la historia. Así, el producto extiende un elemento ya visible de la escena y no introduce un objeto ajeno para vender. Se descarta la lámpara con forma de fogata —aunque coincidiría con el plano introspectivo— porque esa categoría ya tiene una adjunción registrada en el piloto de afiliados y repetirla reduciría la novedad de esta prueba.
+
+| Campo de registro | Valor al crear el link |
+|---|---|
+| `Campaign_ID` | `EXP-202608-MUSICVIDEO-01` |
+| `Content_ID` | `CON-2026-08-20-RemoteControl-EvanElara` |
+| `Character` | `Elara` |
+| `Product_Key` | `qcy_h3_lite_white_headphones` |
+| `Surface` | `FACEBOOK_NATIVE_PRODUCT` |
+| `ML_Tag` propuesta | `usmfb20260820rc01` |
+| CTA | `Producto nativo relacionado con los audífonos de Elara` |
+
+El producto se adjunta de forma nativa al Reel de Facebook, no se añade al caption. Antes de adjuntarlo, Fernando genera un **link nuevo y exclusivo** para este `Content_ID` en la Central de Afiliados y registra la fila en `Operations/Research/Affiliate_Link_Ledger.csv` con el producto exacto, URL normal, link corto y etiqueta. No reutilizar `https://meli.la/1AQ2upG`, que pertenece exclusivamente a P01.
+
 ### Validación de propuesta
 
 El copy principal obtuvo **8.70/10 — PASS** en la rúbrica de `usm-content-proposer`: relación con una experiencia reconocible (9/10), carga emocional (9/10), potencial de compartir/comentar (9/10), giro contemporáneo de memoria a través del retrovisor (7/10), voz de Evan aún hipotética (7/10), y buen encaje de horario (10/10). Conserva la ambigüedad canónica de Evan + Elara.
@@ -386,3 +404,5 @@ Si la pista solo está disponible en una plataforma, se publica el videoclip exc
 [7] [YouTube Help — elegibilidad musical de Shorts](https://support.google.com/youtube/answer/13486873?hl=en), consultado el 2026-08-20.
 
 [8] [TikTok for Business — Commercial Music Library](https://ads.tiktok.com/help/article/commercial-music-library?lang=en), actualizado en julio de 2025.
+
+[9] [Mercado Libre México — listado de QCY H3 Lite ANC](https://listado.mercadolibre.com.mx/qcy-h3-lite), consultado el 2026-08-20. La disponibilidad, precio y ficha individual se verifican en el momento de generar el enlace afiliado.
