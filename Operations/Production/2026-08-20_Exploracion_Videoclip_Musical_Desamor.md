@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-20
 
-**Versión:** 2.2
+**Versión:** 2.3
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -301,6 +301,22 @@ El borrador no busca fingir una pieza terminada de 30 segundos. Sus primeros 20 
 Las firmas visuales detectadas en los extremos inferiores del render y el texto menor en tablero se corrigen en Edits con reencuadre leve (aprox. 105–110%) o máscara de degradado oscuro. No se debe aplicar un blur amplio que elimine la lluvia o la expresión de Evan.
 
 **Criterio de decisión tras el borrador:** si el bloque 0:54–1:14 ya sostiene la canción y la transición emocional, producir solo una escena de 5–7 segundos para el clímax. Si el montaje se siente fragmentado o repetitivo antes del clímax, producir primero una transición de Elara antes de pedir cualquier plano de cercanía entre ambos.
+
+### Revisión del primer corte editado — 2026-08-20
+
+El primer corte `VID_20260820_142918_619_bsl7970191468953177150.mp4` valida la decisión de detener la generación y montar con el material existente. Durante sus primeros 18 segundos, la alternancia de Evan conduciendo y Elara funciona como montaje de distancia: Evan se mueve, Elara permanece en su mundo y el reflejo en la ventana crea el primer vínculo visual entre ambos. **Estado:** `PROMISING_ROUGH_CUT`.
+
+| Área | Veredicto | Acción siguiente |
+|---|---|---|
+| Ritmo y cortes con la música | `PASS` | Mantener los cortes directos; no añadir transiciones decorativas. |
+| Arco emocional inicial | `PASS` | La distancia se entiende, pero el corte aún funciona como introducción extendida. |
+| Integración Evan / Elara | `PASS_WITH_GRADE` | Aplicar grado frío muy leve, grano sutil y bokeh/reflejos de lluvia mínimos en assets de Elara para aproximar los mundos. |
+| Limpieza de imagen | `EDIT_REQUIRED` | Reencuadrar 105–110% o usar máscara oscura para ocultar firmas inferiores y texto menor del tablero. |
+| Clímax final | `MISSING` | No generar todavía sin elección creativa; el borrador ya demuestra que una sola escena intensa resolvería la pieza. |
+
+La escena adicional con mejor relación de valor narrativo/coste es una **casi conexión a través del vidrio**: Evan dentro del coupé, Elara al otro lado de la ventana mojada; ambos levantan una mano hacia el mismo punto, pero sus palmas no se tocan. La escena no necesita beso, abrazo, diálogo ni magia literal. Resume el título `Remote Control` como cercanía imposible y puede sostener el bloque final de 5–7 segundos. Su producción queda `CANDIDATE_PENDING_FERNANDO_APPROVAL`.
+
+Antes de producirla, el siguiente corte debe aplicar los tres ajustes de edición: recorte de marcas, unificación leve de color y zoom digital contenido en el retrovisor de Evan. Después se valida si la escena de vidrio es la única generación adicional necesaria.
 
 ### Contingencia
 
