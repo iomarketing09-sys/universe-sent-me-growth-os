@@ -368,3 +368,12 @@ No se publicaron respuestas durante este corte.
 Fernando aclaró que los comentarios “Estás alrevesado” y “Ay por Dios es al revés” no señalan necesariamente que el asset completo esté invertido. Ambos reaccionan al **remate visual** y deben tratarse como intervenciones independientes, aunque compartan el mismo detalle de la pieza.
 
 La bandeja queda corregida: cada comentario requiere su propia respuesta contextual; no se debe responder con un único mensaje combinado.
+
+
+## 21. Aprobación de una sola respuesta sobre el remate visual — 2026-08-20
+
+Fernando aprobó únicamente la respuesta para el comentario `122151374823072582_899916076126399` (“Estás alrevesado”):
+
+> “Sí… pero ya que lo hicimos al revés, vamos a fingir que era parte del concepto. 😂👀”
+
+La respuesta acepta el error visual y lo convierte en parte del chiste, sin adoptar un tono defensivo. El comentario `122151374823072582_2572609183253364` (“Ay por Dios es al revés”) queda sin respuesta por ahora. Ninguna de las dos respuestas ha sido publicada.
