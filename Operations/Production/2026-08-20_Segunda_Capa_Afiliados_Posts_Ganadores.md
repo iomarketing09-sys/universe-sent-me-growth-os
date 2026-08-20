@@ -1,10 +1,10 @@
 ---
 title: "Segunda capa de afiliación para posts ganadores"
 purpose: "Definir un experimento separado para agregar productos afiliados de Mercado Libre a publicaciones de Facebook que ya demostraron rendimiento orgánico, sin confundir monetización con aprendizaje editorial ni sobrescribir el piloto de 10 oportunidades."
-status: "Draft"
+status: "Active"
 created: 2026-08-20
 updated: 2026-08-20
-version: "1.5"
+version: "1.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-19_Playbook_Tracking_Afiliados_MercadoLibre.md"
@@ -98,7 +98,7 @@ Los dos productos fueron confirmados como disponibles por Fernando. Se preparan 
 
 Las etiquetas son exclusivas por post y producto. No se reutilizan las etiquetas de AFF-01–AFF-10 ni la del Reel `usmfb20260819p01`. Si se decide usar un comentario en vez del producto nativo, se generará otra etiqueta distinta.
 
-Los dos links fueron generados por Fernando y quedaron registrados en `Affiliate_Link_Ledger.csv` con estado `Link_Generated_Not_Attached`. La adjunción a Facebook sigue bloqueada hasta la aprobación final de cada registro.
+Los dos links fueron generados por Fernando y quedaron registrados en `Affiliate_Link_Ledger.csv`. Fernando confirmó manualmente la adjunción de ambos productos nativos el 2026-08-20: la lámpara Xhp360 en `2608029` y las tiras LED neón en `CNT-034 / 260539`. Las filas están en estado `Native_Product_Attached_User_Confirmed`; la hora exacta y los IDs nativos individuales permanecen pendientes de conciliación.
 
 ## 6. Tracking independiente
 
@@ -117,7 +117,18 @@ El `Campaign_ID` será la marca de capa. No se sobrescriben los diez registros d
 
 La opción preferida sigue siendo `FACEBOOK_NATIVE_PRODUCT`. Si el flujo nativo no está disponible, un comentario aprobado debe utilizar una etiqueta y un link propios; nunca se reutiliza el link nativo del post ni se coloca el mismo producto en copy y comentario durante la misma prueba.
 
-## 7. Diseño de la primera ola
+## 7. Estado de activación de la primera ola
+
+La primera ola quedó activada manualmente en dos publicaciones, manteniendo `2608028` / Universe como control sin producto:
+
+| Post | Producto | ML_Tag | Estado de adjunción |
+|---|---|---|---|
+| `2608029` / Wilfred | Lámpara Táctica Recargable Xhp360 | `usmwin2608029w0820` | `Attached_User_Confirmed` |
+| `CNT-034 / 260539` / Evan + Kiri | Tiras LED neón flexible 5 m | `usmwin260539ek0820` | `Attached_User_Confirmed` |
+
+La activación no modificó captions, imágenes ni el contenido editorial. Los cortes afiliados se tomarán por separado a 24 horas, 48 horas y 7 días.
+
+## 8. Diseño de la primera ola
 
 La primera ola de Capa 2 debe tener tres candidatos como máximo, con dos adjunciones aprobadas y un control sin producto cuando el encaje de producto no sea claro. Esta estructura limita el riesgo de saturar publicaciones ganadoras y permite comparar monetización con una superficie editorial todavía natural.
 
@@ -125,12 +136,12 @@ Antes de adjuntar, se conserva un snapshot de interacciones orgánicas actual. D
 
 No se modifica el contenido que convirtió al post en ganador. La variable de Capa 2 es la presencia del producto y su superficie de tracking, no un nuevo caption, una nueva imagen o una republicación.
 
-## 8. Regla de expansión
+## 9. Regla de expansión
 
 No se amplía la capa después de un solo clic o una sola venta. La expansión requiere varios links comparables, al menos dos productos con encaje claro y evidencia de que la adjunción no produce una caída editorial anómala. El resultado de Capa 2 se reporta separado de P0, P1 y de la mediana general de publicaciones.
 
-## Documentos que requerirán actualización al activar la capa
+## Documentos relacionados actualizados al activar la capa
 
-Cuando Fernando apruebe candidatos y productos concretos, deberán actualizarse `Affiliate_Link_Ledger.csv`, `Affiliate_Metrics_Snapshots.csv`, `Affiliate_Pilot_Assignments.csv` si se reutiliza su estructura para la nueva campaña, el changelog y este documento de Draft a Active. No se debe adjuntar ningún producto mientras la fila, la etiqueta y la aprobación no estén registradas.
+La activación actualizó `Affiliate_Link_Ledger.csv`, el changelog y este documento de `Draft` a `Active`. `Affiliate_Metrics_Snapshots.csv` se actualizará cuando existan cortes visibles de las dos nuevas etiquetas. No se modificó `Affiliate_Pilot_Assignments.csv` porque la Capa 2 mantiene una campaña separada.
 
 ---

@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-20
-**Versión:** 1.6
+**Versión:** 1.7
 **Autor:** Manus AI (CGO)
 **Documentos relacionados:** `01_02_Content_Backlog.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `Operations/Production/2026-08-20_Segunda_Capa_Afiliados_Posts_Ganadores.md`
 
@@ -71,7 +71,7 @@ Para la ola del 18–30 quedó activo un piloto de **10 oportunidades**, sin mod
 
 La estrategia tendrá dos carriles afiliados: el piloto planificado de 10 publicaciones y una segunda capa posterior a publicación para posts con rendimiento orgánico superior. La segunda capa no debe adjuntar productos a todos los posts exitosos; debe usar un pequeño grupo de candidatos y conservar al menos un control descriptivo sin producto.
 
-La primera campaña propuesta es `USM-AFF-FB-WINNERS-202608`. Cada candidato recibirá un producto, un link y una etiqueta distintos de los usados en la capa 1. Los resultados se registrarán en `Affiliate_Metrics_Snapshots.csv` sin mezclarlos con las métricas editoriales de P0/P1.
+La primera campaña activa es `USM-AFF-FB-WINNERS-202608`. La primera ola quedó activada manualmente en dos publicaciones: `2608029` / Wilfred con `usmwin2608029w0820`, y `CNT-034 / 260539` / Evan+Kiri con `usmwin260539ek0820`. Cada candidato usa producto, link y etiqueta distintos de la capa 1. Los resultados se registrarán en `Affiliate_Metrics_Snapshots.csv` sin mezclarlos con las métricas editoriales de P0/P1. La hora exacta y los IDs nativos individuales permanecen pendientes de conciliación.
 
 ## Historial de Versiones
 | Fecha | Versión | Cambio | Autor |
@@ -83,3 +83,4 @@ La primera campaña propuesta es `USM-AFF-FB-WINNERS-202608`. Cada candidato rec
 | 2026-08-20 | 1.4 | Se corrige el alcance a 10 oportunidades activas y se separa la activación comercial de la medición pendiente; se registra el Reel `2210896633022235` con producto nativo. | Manus AI (CGO) |
 | 2026-08-20 | 1.5 | Se incorpora el snapshot manual: 2 clics, 0 unidades y $0 de comisión en el periodo visible; AFF-07 concentra el único clic granular visible y el Reel queda sin inferencia por etiqueta no visible. | Manus AI (CGO) |
 | 2026-08-20 | 1.6 | Se añade la segunda capa de monetización para posts ganadores, con campaña independiente, máximo tres candidatos iniciales y filtro de encaje editorial. | Manus AI (CGO) |
+| 2026-08-20 | 1.7 | Se activa manualmente la primera ola de Capa 2 en `2608029` y `CNT-034 / 260539`, con dos productos nativos confirmados y tracking separado. | Manus AI (CGO) |
