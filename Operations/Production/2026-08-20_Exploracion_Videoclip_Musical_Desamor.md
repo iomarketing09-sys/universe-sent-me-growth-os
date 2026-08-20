@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-20
 
-**Versión:** 1.8
+**Versión:** 1.9
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -216,6 +216,28 @@ Evan is alone in the driver’s seat of the same unbranded compact car, wearing 
 
 The camera stays physically inside the passenger-side area with a slow, subtle push-in; Evan does not change clothes, leave the car, look at a phone, speak, cry dramatically or introduce another passenger. No Elara, no Wilfred, no forest, no camping props, no readable text, no logo, no watermark. No dialogue and no background music; only low engine hum, rain and distant traffic ambience.
 ```
+
+### Render de prueba aprobado — Evan conduciendo, 10 s
+
+Fernando produjo el storyboard `Evan_driving_car_in_rain_202608201422.jpeg` para solicitar un único render de 10 segundos. El storyboard preserva cuatro elementos útiles: la carretera nocturna mojada, el interior de Evan, el retrovisor y un único recuerdo visual de Elara detrás del cristal. Este render reemplaza temporalmente la división E01/E02 como **prueba de montaje**; si falla por exceso de cortes o deriva de identidad, se vuelve a los clips separados de 5 segundos.
+
+Elara no ocupa un asiento, no conduce, no es pasajera ni aparece como fantasma físico. Es un reflejo/memoria breve, distorsionado por lluvia en la ventana lateral, visible solo durante una parte corta del render. `char_Evan` y `char_Elara` son referencias obligatorias de identidad: no se cambian rasgos físicos, vestuario característico ni estilo de animación.
+
+### Prompt final para Flow — video de 10 segundos
+
+```text
+Use the attached 9:16 Evan driving storyboard as the shot-composition reference, and use char_Evan and char_Elara as the exact character identity references. Vertical 9:16, 10 seconds, one cinematic emotional montage with four deliberate editorial cuts. Preserve every defining physical trait, signature clothing detail and the established 2D painterly Universe Sent Me animation style of char_Evan and char_Elara. Do not redesign either character.
+
+The video starts with an exterior three-quarter tracking shot of one small unbranded compact car moving alone along a wet night road at the edge of a small city. Rain falls steadily, wet asphalt reflects cool blue streetlights and distant building lights, and the car keeps a calm, physically believable speed. After about 2.5 seconds, cut inside to char_Evan in the driver’s seat: he wears his exact brown hoodie, keeps both hands on the wheel, looks forward with contained sadness, and blue/amber road lights move naturally across his face and windshield.
+
+At the middle of the video, cut briefly to a close-up of char_Evan’s eyes in the rear-view mirror, then cut to the passenger-side profile. For only one short moment, char_Elara is visible as a rain-softened subjective reflection beyond the side window; she is outside the car only as Evan’s memory, never a ghost, never physically present, never seated in the car, and she does not interact with him. By the final seconds, cut back to an elevated rear wide shot of the same car continuing alone into the wet blue night road.
+
+Keep the compact car, rain, road, windshield, dashboard and moving city lights physically present throughout their relevant shots. No other passengers, no Wilfred, no Universe, no animals, no forest, no camping gear, no backpacks, no tents, no phones, no magical effects, no scene change to a home, no visible lyrics, no readable signs, no subtitles, no logos and no watermarks. No dialogue and no background music; only restrained rain, engine hum, tires on wet pavement and distant city ambience.
+```
+
+### Criterio de aprobación del render
+
+El render pasa a edición si Evan mantiene rostro, cabello, hoodie y proporciones; el auto conserva interior/exterior coherentes; Elara aparece una sola vez como recuerdo no literal; y los cortes son comprensibles sin crear un segundo pasajero o una transición sobrenatural. Si el montaje de cuatro cortes resulta inestable, no se itera sobre 10 segundos: se producen E01 y E02 por separado a 5 segundos cada uno.
 
 ### Contingencia
 
