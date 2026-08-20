@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-20
 
-**Versión:** 1.2
+**Versión:** 1.3
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -84,6 +84,29 @@ Fernando seleccionó el rango **0:54–1:24** como guía sonora: 30 segundos. Es
 
 No se incorporarán letras completas, audio ni música a Flow. La canción se seleccionará desde la biblioteca licenciada de cada plataforma o se gestionará mediante la licencia que corresponda en la edición final.
 
+## Cascada propuesta para Remote Control — pendiente de aprobación
+
+Esta pieza es un videoclip: la canción define el ritmo y el significado del montaje. Por ello no se debe subir un archivo con `Remote Control` incrustado, ni reemplazarla por música genérica en una plataforma solo para completar una cascada. Cada red debe añadir la pista desde su propia biblioteca con el tramo 0:54–1:24, si está habilitado para la cuenta y el territorio.
+
+| Plataforma | Rol propuesto | Condición obligatoria | Decisión si no aparece el audio |
+|---|---|---|---|
+| **Instagram Reels** | Lanzamiento primario. | `Remote Control` debe estar disponible en el selector nativo de la cuenta. Meta puede restringir música licenciada para cuentas comerciales y por región. [6] | No publicar hasta verificar disponibilidad; no incrustar audio en el archivo. |
+| **YouTube Shorts** | Lanzamiento primario paralelo. | La canción debe aparecer en la Shorts Audio Library para esa cuenta/territorio; YouTube indica la cobertura disponible antes de publicar. [7] | No publicar la versión musical. Un teaser sin canción sería un asset separado, no un cross-post comparable. |
+| **Facebook Reels** | Lanzamiento condicional. | El selector nativo de la Página debe ofrecer el audio con autorización visible. | Retener la publicación. No sustituir por un Reel con música incrustada ni por una pista distinta. |
+| **TikTok** | Lanzamiento condicional y solo con licencia confirmada. | Si Universe Sent Me opera como negocio, TikTok exige usar su Commercial Music Library o contar con licencia propia para audio externo, incluso en publicaciones orgánicas. [8] | Retener el videoclip hasta tener licencia o confirmación comercial específica; no usar la biblioteca general como atajo. |
+
+La cascada inicial recomendada es **Instagram + YouTube Shorts**, solo si ambos validan el audio nativo. Facebook y TikTok se agregan después y quedan documentados como `PENDING_LICENSE_CHECK`; la cohorte se clasifica como **cascada parcial por licencia**, no como fallo de publicación. La primera verificación la hace Fernando en los cuatro selectores antes de que se genere el máster final.
+
+### Contingencia
+
+Si la pista solo está disponible en una plataforma, se publica el videoclip exclusivamente allí y se documenta como prueba de formato musical. No se toma la decisión de crear versiones con otra canción, silencio o una pista de reemplazo hasta medir si la historia funciona: eso agregaría una variable y convertiría cada publicación en una pieza distinta.
+
 [4] [Genius — “Remote Control”, ficha y letra](https://genius.com/Sussie-4-remote-control-lyrics). Fuente de letra no oficial, consultada el 2026-08-20.
 
 [5] [Chilango — historia de “Remote Control” de Sussie 4](https://www.chilango.com/musica/remote-control-la-cancion-que-no-volvera-a-tocar-sussie-4/), 2016.
+
+[6] [Instagram Help Center — acceso a la biblioteca de música licenciada](https://help.instagram.com/402084904469945/), consultado el 2026-08-20.
+
+[7] [YouTube Help — elegibilidad musical de Shorts](https://support.google.com/youtube/answer/13486873?hl=en), consultado el 2026-08-20.
+
+[8] [TikTok for Business — Commercial Music Library](https://ads.tiktok.com/help/article/commercial-music-library?lang=en), actualizado en julio de 2025.
