@@ -13,6 +13,7 @@ related_documents:
   - "GrowthOS/07_00_Registro_Maestro_Reels.md"
   - "Operations/Research/Affiliate_Metrics_Snapshots.csv"
   - "Operations/Research/2026-08-20_Meta_Reel_2210896633022235_Metrics.json"
+  - "Operations/Production/2026-08-20_Segunda_Capa_Afiliados_Posts_Ganadores.md"
 organization: "Operations/Production"
 ---
 
@@ -158,6 +159,12 @@ Además, se registró un Reel nuevo `2210896633022235` con producto nativo afili
 El primer piloto debe usar el Reel de la lámpara de luna de Elara, porque ya existe una pieza con CTA `LUNA`. La prueba debe crear una etiqueta única para el Reel y otra para cualquier comentario aprobado que contenga el link. No se deben utilizar todavía listas genéricas ni el mismo link en todas las publicaciones.
 
 El piloto debe durar al menos siete días de medición de clics y debe conservar los cortes diarios. Las ventas y comisiones se revisarán después, respetando la ventana de atribución de 24 horas y el periodo de validación de Mercado Libre.
+
+## Segunda capa: posts ganadores
+
+La segunda capa está definida en `Operations/Production/2026-08-20_Segunda_Capa_Afiliados_Posts_Ganadores.md`. Su campaña independiente será `USM-AFF-FB-WINNERS-202608`; no se mezclará con `USM-AFF-FB20260818-30-P01` ni con P0/P1. La primera ola tendrá como máximo tres candidatos, dos adjunciones aprobadas y un control sin producto cuando el encaje no sea claro.
+
+La selección debe partir de rendimiento observado y compartibilidad, pero debe pasar después por el filtro de historia primero, personaje natural, potencial visual, ticket impulsivo y demanda. Cada producto nuevo requiere link, etiqueta, fila de ledger y aprobación humana propios. No se adjuntará un producto solo porque el post sea viral.
 
 ## Referencias
 
