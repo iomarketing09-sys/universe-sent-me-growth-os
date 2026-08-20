@@ -1,0 +1,47 @@
+{
+  "raw_rows_total": 211,
+  "consolidated_rows_total": 206,
+  "raw_june_rows": 177,
+  "consolidated_june_rows": 172,
+  "raw_june_interactions": 22657.0,
+  "consolidated_june_interactions": 17334.0,
+  "raw_june_reactions": 17210.0,
+  "raw_june_comments": 425.0,
+  "raw_june_shares": 5022.0,
+  "consolidated_june_reactions": 13198.0,
+  "consolidated_june_comments": 384.0,
+  "consolidated_june_shares": 3752.0,
+  "duplicate_inflation_vs_consolidated": 5323.0,
+  "alias_confidence_counts": {
+    "High": 54,
+    "Review": 44
+  },
+  "noncnt_status_counts": {
+    "Approved_Admin": 8
+  },
+  "p0_status_counts": {
+    "Associated_Inventory_High": 2,
+    "Exception_Inventory_Missing_Local_Evidence": 3
+  },
+  "fb_17_30_coverage": {
+    "High": 33,
+    "Review": 41
+  },
+  "asset_260508_exact_allocation": [
+    {
+      "meta_id": "1036844829507460_122117393139072582",
+      "filename": "260508 - Universe.jpg",
+      "interactions": 9.0,
+      "inventory_id_after": "CNT-042",
+      "prior_inventory_candidates": "CNT-042;CNT-043"
+    },
+    {
+      "meta_id": "1036844829507460_122117731467072582",
+      "filename": "Universe - Existencial 260508.png",
+      "interactions": 8.0,
+      "inventory_id_after": "CNT-043",
+      "prior_inventory_candidates": "CNT-042;CNT-043"
+    }
+  ],
+  "staging_or_non_june_aliases_do_not_change_june_metrics": true
+}

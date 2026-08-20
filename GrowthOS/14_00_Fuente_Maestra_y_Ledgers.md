@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-20
-version: "2.7"
+version: "2.8"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -48,6 +48,8 @@ related_documents:
   - "Operations/Research/2026-08-20_Historical_Performance_Individuals_Consolidated.csv"
   - "Operations/Research/2026-08-20_Junio_Consolidated_View.md"
   - "Operations/Research/2026-08-20_Junio_Duplicate_Groups.md"
+  - "Operations/Research/2026-08-20_Alias_Impact_June.md"
+  - "Operations/Research/2026-08-20_Alias_Impact_June.json"
 organization: "GrowthOS"
 ---
 
@@ -285,3 +287,11 @@ Las ocho filas restantes con archivo local pero sin fila de inventario se prepar
 ## 17. Aprobación administrativa de aliases no-CNT — 2026-08-20
 
 Fernando aprobó las ocho filas de `Operations/Research/2026-08-20_NonCNT_Inventory_Alias_Approval.csv`. Su estado pasa a `Approved_Admin`; la aprobación solo autoriza conservar la relación administrativa del alias con su publicación y evidencia local. Se mantienen `CNT_Creation_Allowed=No` y `Canon_Impact=None`. `Content_Inventory.csv` no se modifica en este paso.
+
+## 18. Impacto de aliases en las métricas de junio — 2026-08-20
+
+El análisis de `Operations/Research/2026-08-20_Alias_Impact_June.md` confirma que la actualización de aliases no cambia los Meta IDs ni añade interacciones históricas. Los dos aliases resueltos de `260508` corresponden a publicaciones de mayo, no de junio; por tanto, su impacto directo sobre los agregados de junio es cero. Las ocho aprobaciones `Approved_Admin`, la capa staging de 33 assets y las excepciones P0 pertenecen a la operación de agosto y tampoco deben incorporarse a las métricas históricas de junio.
+
+El control de calidad mantiene separadas dos preguntas: **cuánto rindió junio** y **a qué CNT/asset puede atribuirse cada resultado**. Para la primera, los agregados deben calcularse sobre la vista consolidada: 172 publicaciones lógicas y 17,334 interacciones en el corte actual, no sobre las 177 filas fuente que contienen cinco duplicados. Para la segunda, la resolución de `260508` mejora la precisión de atribución de sus 17 interacciones totales, repartidas como 9 en `CNT-042` y 8 en `CNT-043`, sin cambiar la suma mensual.
+
+La regla operativa queda establecida: una reconciliación administrativa puede cambiar la clasificación por asset/CNT y la elegibilidad para análisis de reuse, pero no reescribe métricas de publicación ni se mezcla con P0, afiliados o ventanas 24/72 horas.
