@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-20
 
-**Versión:** 1.9
+**Versión:** 2.0
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -238,6 +238,19 @@ Keep the compact car, rain, road, windshield, dashboard and moving city lights p
 ### Criterio de aprobación del render
 
 El render pasa a edición si Evan mantiene rostro, cabello, hoodie y proporciones; el auto conserva interior/exterior coherentes; Elara aparece una sola vez como recuerdo no literal; y los cortes son comprensibles sin crear un segundo pasajero o una transición sobrenatural. Si el montaje de cuatro cortes resulta inestable, no se itera sobre 10 segundos: se producen E01 y E02 por separado a 5 segundos cada uno.
+
+### Calibración de prompt — dirección abierta de Flow
+
+Fernando decidió probar el primer render con un prompt menos prescriptivo. Con storyboard y `char_Evan` / `char_Elara` ya definidos en Flow, el texto de generación debe priorizar la emoción, la continuidad crítica y una intención de cámara, no intentar coreografiar cada corte. Esta prueba medirá qué decisiones visuales resuelve Flow de forma útil cuando conserva libertad interpretativa.
+
+| Mantener explícito | Dejar a criterio de Flow en la primera prueba |
+|---|---|
+| Duración, formato 9:16, emoción de Evan conduciendo y acción dramática general. | Número exacto de cortes, orden preciso de planos y timing de cada reflejo. |
+| `char_Evan` y `char_Elara` sin cambios de rasgos característicos ni estilo de animación. | Trayectoria exacta de cámara dentro del auto, mientras se mantenga comprensible. |
+| Elara no debe convertirse en pasajera real ni en aparición sobrenatural literal. | La forma sutil de representar la memoria/reflejo de Elara. |
+| Sin diálogo, letra, texto, logo ni música incrustada. | Detalles secundarios de lluvia, luces y tránsito que fortalezcan la atmósfera. |
+
+La evaluación del primer render separará cuatro preguntas: continuidad de personajes, utilidad de montaje, atmósfera emocional y desvíos críticos. Si el render es atmosférico y recortable, se conserva aunque no replique exactamente el storyboard; solo se vuelve a aumentar la especificidad si la libertad produce pasajeros extra, cambio de identidad, confusión narrativa o estética ajena a USM.
 
 ### Contingencia
 
