@@ -1,10 +1,10 @@
 ---
 title: "Playbook de tracking de afiliados Mercado Libre"
 purpose: "Definir una configuración reproducible para atribuir enlaces, clics, ventas y comisiones de Mercado Libre a publicaciones concretas de Universe Sent Me."
-status: "Review"
+status: "Active"
 created: 2026-08-19
-updated: 2026-08-18
-version: "1.4"
+updated: 2026-08-20
+version: "1.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/11_00_Estrategia_Monetizacion_MercadoLibre.md"
@@ -137,13 +137,19 @@ El piloto recomendado para la ola del 18–30 está documentado en `Operations/P
 
 ## Estado consolidado de revisión — 18 de agosto de 2026
 
-La matriz del piloto ya contiene diez productos y diez links afiliados cortos, uno por oportunidad, cada uno con su etiqueta granular, producto y URL normal verificada. Los diez registros permanecen en estado `Link_Generated_Product_Pending_Attachment`; todavía no se ha adjuntado ningún producto a una publicación ni se ha publicado o modificado contenido.
+La matriz del piloto contiene diez productos y diez links afiliados cortos, uno por oportunidad, cada uno con su etiqueta granular, producto y URL normal verificada. El estado fue corregido el 20 de agosto: Fernando confirmó que los diez links/productos ya fueron publicados o adjuntados en Facebook. El ledger marca las diez filas como `Published_User_Confirmed` / `Native_Product_Attached_User_Confirmed`; las horas exactas y los IDs nativos individuales de nueve filas permanecen pendientes de conciliación técnica.
 
 Meta Business Suite fue verificado en la vista de publicaciones programadas. Para una publicación, el menú disponible muestra `Administrar publicación`, `Copiar identificador de la publicación`, `Editar publicación`, `Reprogramar publicación`, `Mover a borradores`, `Duplicar publicación`, `Eliminar publicación` y `Activar remix`. En esa vista no aparece directamente una opción llamada `Agregar enlace de afiliación` o `Adjuntar producto`. Por ello, el flujo seguro debe continuar entrando en `Administrar publicación` y verificando si el editor ofrece un módulo de producto, catálogo o afiliación; no se debe asumir que la opción existe hasta verla en pantalla.
 
 El procedimiento operativo aprobado para la siguiente sesión es: seleccionar una publicación objetivo por fecha, hora y texto; abrir `Administrar publicación`; buscar el módulo nativo de producto/afiliación; elegir el producto correspondiente del ledger; comprobar que Facebook muestre el producto asociado; capturar la evidencia; y detenerse antes de cualquier botón de `Publicar`, `Guardar cambios`, `Programar` o confirmación equivalente hasta contar con aprobación humana explícita. Si no existe el módulo nativo, no se pegará el link manualmente ni se cambiará la superficie del ledger sin una decisión aprobada.
 
 La documentación relacionada que debe mantenerse sincronizada es `Operations/Research/Affiliate_Pilot_Assignments.csv`, `Operations/Research/Affiliate_Link_Ledger.csv`, `Operations/Research/2026-08-19_MercadoLibre_Facebook_Afiliados_Observacion.md` y `Operations/Production/2026-08-19_Piloto_Afiliados_Facebook_18_30_Agosto.md`. No se requiere crear un documento nuevo porque el flujo pertenece al playbook existente y los registros tabulares ya contienen el detalle de cada oportunidad.
+
+## Corrección de estado — 2026-08-20
+
+El estado anterior de esta sección era obsoleto: describía los diez links como pendientes de adjunción. La fuente operativa actual es la confirmación de Fernando y la actualización del ledger. Los diez links están considerados publicados/adjuntados para efectos de operación; no se deben inventar horas, IDs nativos ni métricas comerciales hasta contar con evidencia específica por fila.
+
+Además, se registró un Reel nuevo `2210896633022235` con producto nativo afiliado. Su link exclusivo es `https://meli.la/1AQ2upG`, etiqueta `usmfb20260819p01` y producto `MLMU3833350067` (soporte para celular con forma de gato). El Reel queda como `Published` y `Native_Product_Attached_User_Confirmed`, pendiente de medir clics y conversiones.
 
 ## Primer piloto recomendado
 

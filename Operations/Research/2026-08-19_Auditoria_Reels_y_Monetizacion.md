@@ -1,10 +1,10 @@
 ---
 title: "Auditoría de Reels y monetización"
 purpose: "Separar el rendimiento histórico de Reels del experimento P0 de imágenes, verificar qué vías de monetización tienen evidencia real y establecer la cobertura documental del video corto en Instagram, Facebook, TikTok y YouTube."
-status: "Review"
+status: "Active"
 created: 2026-08-19
-updated: 2026-08-19
-version: "1.2"
+updated: 2026-08-20
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -86,9 +86,11 @@ La API Graph utilizada para publicaciones no expone por sí sola el estado compl
 
 ## Monetización por afiliación de Mercado Libre
 
-La estrategia de Mercado Libre está documentada como un carril de **story-commerce** basado en `¿Qué me llegó?`, Wilfred, Universe, Elara y Silvio. Actualmente es una estrategia activa en documentación, pero no hay evidencia en los ledgers revisados de clics, ventas, conversiones, AOV, comisiones o RPM afiliado. Por ello su estado operativo es **Diseño activo / monetización no validada**.
+La estrategia de Mercado Libre está documentada como un carril de **story-commerce**. El estado ya no es “diseño activo / monetización no validada” en términos de preparación: el piloto contiene **10 links afiliados con etiqueta granular**, y Fernando confirmó que los 10 productos/links fueron publicados o adjuntados en Facebook.
 
-El primer activo con señal comercial observable es el Reel de la lámpara de luna de Elara, que utilizó un CTA de comentario con la palabra `LUNA`. Sin embargo, la existencia de comentarios o interacción no demuestra clics ni ventas. Para cerrar el ciclo se necesita un enlace de afiliado trazable, un registro de clics y un ledger de conversiones. Los comentarios públicos no deben automatizarse con enlaces sin aprobación humana.
+Además, existe un Reel nuevo de Facebook `2210896633022235` con el producto nativo `MLMU3833350067` —soporte para celular con forma de gato—, link exclusivo `https://meli.la/1AQ2upG` y etiqueta `usmfb20260819p01`. El Reel está registrado como `Published` y `Native_Product_Attached_User_Confirmed`.
+
+Lo que todavía no está validado es el rendimiento comercial: faltan cortes de clics, ventas aprobadas, unidades, ingresos y comisión confirmada por etiqueta. La publicación de links demuestra activación del carril, no conversión. Las métricas afiliadas deben mantenerse separadas de P0 y de las interacciones editoriales.
 
 ## Veredicto CGO
 
@@ -100,9 +102,15 @@ La monetización nativa de Meta es una oportunidad futura, pero no debe tratarse
 |---|---|---|
 | Reels Instagram | Amarillo | Consolidar el ledger de Windsor y validar muestras con el conector de Instagram |
 | Monetización nativa Meta | Ámbar / No verificado | Revisar Business Suite > Monetization > Content monetization |
-| Mercado Libre afiliados | Ámbar / No validado | Crear enlace trazable y ledger de clics, ventas y comisión |
+| Mercado Libre afiliados | Activo / medición pendiente | Ejecutar cortes de métricas por etiqueta y conciliar clics, ventas, unidades e ingresos |
 | Reels Facebook | Ámbar | Completar vistas, retención y watch time mediante una extracción compatible |
 | P0 imágenes | Separado | Esperar el primer corte 24h; no mezclar con este informe |
+
+## Corrección de estado — 2026-08-20
+
+La versión anterior de esta auditoría decía que Mercado Libre era únicamente un diseño activo y que todavía no existían enlaces trazables. Esa descripción quedó obsoleta. El ledger actual contiene diez links cortos granulares y un Reel afiliado adicional con confirmación humana de producto nativo. Las horas exactas y los IDs nativos individuales de nueve oportunidades del piloto todavía deben conciliarse, pero no deben marcarse como “no publicados”.
+
+El siguiente análisis prioritario para este carril es comercial: capturar un snapshot de Mercado Libre, mantener `Affiliate_Metrics_Snapshots.csv` como ledger append-only y separar `Clicks`, `Gross_Sales`, `Approved_Sales`, `Units_Sold`, `Revenue_MXN` y `Confirmed_Commission_MXN` de las métricas de contenido.
 
 ## Referencias
 

@@ -3,8 +3,8 @@
 **Propósito:** Mantener un inventario actualizado de todos los Reels publicados para evitar repeticiones, monitorear el cumplimiento de la Regla de Cascada y facilitar el análisis de rendimiento.
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
-**Última actualización:** 2026-08-19
-**Versión:** 2.2
+**Última actualización:** 2026-08-20
+**Versión:** 2.3
 **Autor:** Manus AI (CGO)
 **Documentos relacionados:** `05_00_Calendario_01_02_Ago.md`, `Operations/Memories/deep_dive_reels_comparativo.md`, `../Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`, `../Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json`, `../Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json`, `../Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json`, `../Operations/Research/2026-08-19_Decisiones_Reconciliacion_Reels.json`, `../Operations/Research/2026-08-19_Piezas_Sin_Cascada_Revision.json`, `../Operations/Research/2026-08-19_Auditoria_Assets_Drive_Reels.md`, `../Operations/Research/2026-08-19_Meta_Reels_Audit.json`, `../Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json`, `../Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json`, `../Operations/Research/Affiliate_Link_Ledger.csv`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `14_00_Fuente_Maestra_y_Ledgers.md`
 
@@ -80,3 +80,16 @@ Se ha detectado que varios Reels recientes solo se publicaron en Instagram. Seg�
 | CNT-003 | Trailer 001 — Universe Sent Me | Universe | Pendiente de producción (Flow). |
 | Nuevo | Propuesta 2: Idealización | Wilfred/Elara | Generando en Flow (Sábado 1 Ago). |
 | CNT-015 | El instante suspendido (Fantasma contemplativo) | Fantasma | **Publicado** en cascada (5 Ago, 7:00-7:30 PM). Audio: por definir. Hook: "vitamina B (besos)" en copy. |
+
+
+---
+
+## Actualización operativa — 2026-08-20
+
+El Reel `CON-2026-08-19-DobleCheck-Universe` / Meta `2210896633022235` permanece **publicado en cascada** en Instagram, Facebook, TikTok y YouTube Shorts. Fernando confirmó además la incorporación de un producto nativo de Mercado Libre en Facebook. El tracking asociado es exclusivo: etiqueta `usmfb20260819p01`, link `https://meli.la/1AQ2upG` y producto `MLMU3833350067`. La publicación no se mezcla con el experimento P0 de imágenes; sus métricas de video y afiliación se medirán en carriles separados.
+
+El siguiente paso técnico es recuperar métricas específicas de video desde la publicación de Facebook y capturar snapshots afiliados por etiqueta. No se debe inferir rendimiento comercial a partir de interacciones del Reel.
+
+Documentos sincronizados: `Operations/Production/2026-08-19_Playbook_Tracking_Afiliados_MercadoLibre.md`, `Operations/Research/2026-08-19_Auditoria_Reels_y_Monetizacion.md` y `Operations/Research/Affiliate_Link_Ledger.csv`.
+
+---
