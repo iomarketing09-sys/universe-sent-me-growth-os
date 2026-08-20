@@ -4,7 +4,7 @@ purpose: "Definir un experimento separado para agregar productos afiliados de Me
 status: "Draft"
 created: 2026-08-20
 updated: 2026-08-20
-version: "1.0"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-19_Playbook_Tracking_Afiliados_MercadoLibre.md"
@@ -15,6 +15,7 @@ related_documents:
   - "Operations/Research/2026-08-20_Cohorte_15_16_Analysis.md"
   - "Operations/Research/2026-08-20_Cohorte_17_30_Actual_Cut.md"
   - "Operations/Research/2026-08-19_P0_Corte_17_Agosto.md"
+  - "Operations/Research/2026-08-20_Capa2_Producto_Search_Evidence.md"
 organization: "Operations/Production"
 ---
 
@@ -69,7 +70,28 @@ El filtro recomendado es: historia primero; personaje natural; potencial visual;
 
 Los productos del piloto de Capa 1 no se reutilizan automáticamente en Capa 2. Si el mismo producto es narrativamente correcto para dos superficies, cada superficie debe recibir un link y una etiqueta distintos.
 
-## 5. Tracking independiente
+## 5. Propuesta de primera ola
+
+La recomendación inicial es monetizar dos candidatos y conservar uno como control. No se crean links ni se adjuntan productos hasta la aprobación específica de Fernando.
+
+| Post | Decisión | Producto propuesto | Rango objetivo | Encaje editorial | Riesgo controlado |
+|---|---|---|---:|---|---|
+| `2608029` — Wilfred | **Candidato de adjunción** | Lámpara de camping | $150–$300 MXN | Wilfred y el bosque permiten convertir el objeto en “fuego portátil” y mantener su humor seco | Evitar que el producto domine el remate coloquial |
+| `CNT-034 / 260539` — Evan + Kiri | **Candidato de adjunción** | Tiras LED suaves | $150–$250 MXN | La luz puede funcionar como extensión visual de la fantasía romántica y del mundo de Kiri | No usar iluminación estridente que rompa el tono |
+| `2608028` — Universe | **Control sin producto en la primera ola** | Lámpara creativa, solo para una fase posterior | $200–$300 MXN objetivo | El encaje visual es posible, pero el post es el outlier P0 y conviene protegerlo como referencia editorial limpia | No contaminar el aprendizaje del outlier con una variable comercial |
+
+Esta selección sigue el criterio de historia primero y respeta la preferencia operativa de productos impulsivos de aproximadamente $100–$300 MXN. La primera verificación pública encontró dos candidatos concretos:
+
+| Post | Producto público | Product ID / URL pública | Precio visible | Estado |
+|---|---|---|---:|---|
+| `2608029` / Wilfred | **Lámpara Táctica Recargable Xhp360 Campismo** | `MLMU474178210` — [ficha pública](https://www.mercadolibre.com.mx/lampara-tactica-recargable-xhp360-campismo-linterna-potente/up/MLMU474178210) | $255 MXN; 4.8; +10 mil vendidos | Verificar envío nacional y stock en sesión de Fernando |
+| `CNT-034 / 260539` / Evan + Kiri | **Tiras de leds / luces neón flexible tipo manguera con fuente, 5 m** | `MLM-3088935338` — [ficha proporcionada por Fernando](https://articulo.mercadolibre.com.mx/MLM-3088935338-tiras-de-leds-luz-luces-neon-flexible-manguera-con-fuente-5m-_JM?searchVariation=184205480543) | Precio, ventas y vendedor no confirmados | Verificar precio, stock y envío en sesión de Fernando |
+
+La primera lámpara solar `MLMU3878057684` queda como reserva por envío internacional y baja validación visible. La `MLMU474178210` es ahora la opción prioritaria para Wilfred por su señal pública de más de 10 mil vendidos y precio dentro del rango, pero no se considera elegible hasta verificar el origen del envío. La tira LED `MLM-3088935338` es el candidato proporcionado por Fernando para Evan + Kiri; su precio y disponibilidad requieren lectura manual.
+
+Estos son candidatos públicos, no links afiliados. Todavía deben verificarse vendedor, disponibilidad, envío nacional, precio vigente y elegibilidad en la Central de Afiliados antes de generar cualquier `meli.la`.
+
+## 6. Tracking independiente
 
 La campaña de Capa 2 será `USM-AFF-FB-WINNERS-202608`. Cada fila nueva conservará:
 
@@ -86,7 +108,7 @@ El `Campaign_ID` será la marca de capa. No se sobrescriben los diez registros d
 
 La opción preferida sigue siendo `FACEBOOK_NATIVE_PRODUCT`. Si el flujo nativo no está disponible, un comentario aprobado debe utilizar una etiqueta y un link propios; nunca se reutiliza el link nativo del post ni se coloca el mismo producto en copy y comentario durante la misma prueba.
 
-## 6. Diseño de la primera ola
+## 7. Diseño de la primera ola
 
 La primera ola de Capa 2 debe tener tres candidatos como máximo, con dos adjunciones aprobadas y un control sin producto cuando el encaje de producto no sea claro. Esta estructura limita el riesgo de saturar publicaciones ganadoras y permite comparar monetización con una superficie editorial todavía natural.
 
@@ -94,7 +116,7 @@ Antes de adjuntar, se conserva un snapshot de interacciones orgánicas actual. D
 
 No se modifica el contenido que convirtió al post en ganador. La variable de Capa 2 es la presencia del producto y su superficie de tracking, no un nuevo caption, una nueva imagen o una republicación.
 
-## 7. Regla de expansión
+## 8. Regla de expansión
 
 No se amplía la capa después de un solo clic o una sola venta. La expansión requiere varios links comparables, al menos dos productos con encaje claro y evidencia de que la adjunción no produce una caída editorial anómala. El resultado de Capa 2 se reporta separado de P0, P1 y de la mediana general de publicaciones.
 
