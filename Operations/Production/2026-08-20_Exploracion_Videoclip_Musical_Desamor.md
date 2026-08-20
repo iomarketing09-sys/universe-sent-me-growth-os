@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-20
 
-**Versión:** 2.8
+**Versión:** 2.9
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -389,7 +389,7 @@ El copy principal obtuvo **8.70/10 — PASS** en la rúbrica de `usm-content-pro
 
 ### Actualizaciones requeridas después de publicar
 
-La cascada completa ya fue confirmada por Fernando y el registro maestro incorporó sus cuatro IDs/permalinks. Permanecen pendientes la URL individual del producto y su ID de adjunción nativo. Las ventanas de 24 h y 72 h se medirán desde las horas nativas verificables; mientras tanto, no se atribuyen resultados a la familia musical hasta acumular una cohorte de 5–10 piezas bajo `EXP-202608-MUSICVIDEO-01`.
+La cascada completa ya fue confirmada por Fernando y el registro maestro incorporó sus cuatro IDs/permalinks. Permanecen pendientes la URL individual del producto y su ID de adjunción nativo. Para el primer snapshot multicanal común, usar como ancla la publicación verificable más tardía de Meta: Facebook, **2026-08-20 18:02:04 CDT**. Los cortes operativos son **2026-08-21 18:02:04 CDT (24 h)** y **2026-08-23 18:02:04 CDT (72 h)**. YouTube no expone todavía un timestamp nativo en las fuentes disponibles, por lo que esos cortes se registran como snapshots comparables de cascada y no como una edad exacta individual del Short. Mientras tanto, no se atribuyen resultados a la familia musical hasta acumular una cohorte de 5–10 piezas bajo `EXP-202608-MUSICVIDEO-01`.
 
 ### Contingencia
 
