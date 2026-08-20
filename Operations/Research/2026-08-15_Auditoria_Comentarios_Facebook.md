@@ -361,3 +361,10 @@ Los dos comentarios parecen referirse a que la imagen está invertida o presenta
 También aparecieron reacciones positivas con emojis en otra publicación; no requieren respuesta. El comentario “8” y un comentario vacío ya tenían respuestas posteriores de la página, por lo que no se clasifican como pendientes.
 
 No se publicaron respuestas durante este corte.
+
+
+## 20. Corrección de interpretación del remate visual — 2026-08-20
+
+Fernando aclaró que los comentarios “Estás alrevesado” y “Ay por Dios es al revés” no señalan necesariamente que el asset completo esté invertido. Ambos reaccionan al **remate visual** y deben tratarse como intervenciones independientes, aunque compartan el mismo detalle de la pieza.
+
+La bandeja queda corregida: cada comentario requiere su propia respuesta contextual; no se debe responder con un único mensaje combinado.
