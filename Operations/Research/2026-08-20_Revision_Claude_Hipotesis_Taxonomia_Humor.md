@@ -1,10 +1,10 @@
 ---
 title: "Revisión para Claude — hipótesis de taxonomía y humor"
 purpose: "Contrastar las hipótesis actuales del Growth OS con la evidencia histórica disponible antes de modificar la Biblia o el canon."
-status: Review
+status: Active
 created: 2026-08-20
 updated: 2026-08-20
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-17_Taxonomia_Editorial_Contenido_USM.md"
@@ -16,6 +16,7 @@ related_documents:
   - "Operations/Research/2026-08-19_Analisis_Ampliacion_Humor_Sexual.md"
   - "Operations/Research/2026-08-08_Reporte_Mensual_Junio_Julio_2026.md"
   - "GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md"
+  - "Operations/Research/2026-08-20_Respuesta_Claude_Hipotesis_Taxonomia_Humor.md"
 organization: "Operations/Research"
 ---
 
@@ -40,7 +41,7 @@ Las estructuras de microhistoria secuencial y transformación visual siguen sien
 | TAX-01 | La revisión visual es necesaria para asignar personaje y rol narrativo. | En los seis top posts de julio, solo `2607966` y `728` muestran claramente a Universe; `2607987` muestra a Fantasma; `260504`, `260604` y `729` no permiten asignar un personaje canónico concreto. | **Sustentada como regla metodológica.** | Mantenerla en la taxonomía; no convertir filenames genéricos en personajes. |
 | TAX-02 | La situación reconocible y la compartibilidad pueden explicar mejor el rendimiento que el personaje aislado. | Los seis top posts de julio combinan personajes confirmados, figuras no identificadas y una composición coral; los casos fuertes incluyen situaciones transferibles y acumulan 22,840 interacciones en conjunto. | **Compatible pero no demostrada causalmente.** | Ampliar casos comparables por situación, estructura y potencial de etiquetado. |
 | TAX-03 | Una microhistoria de tres tiempos con remate literal puede aumentar shares. | Un caso obtuvo 155 interacciones y 19 shares. El diálogo implícito, que no tiene turnos secuenciales, obtuvo 4 interacciones y 0 shares y no debe fusionarse con la misma celda. | **Señal prometedora, inconclusa; n=1 comparable.** | Buscar al menos tres casos adicionales con turnos visuales claros. |
-| TAX-04 | Una transformación visual es compartible cuando conserva marcadores reconocibles y el contraste se entiende de inmediato. | Dos casos: Universe muscular obtuvo 164/42 interacciones/shares; Universe atravesando papel obtuvo 7/0. Mediana 85.5/21, con dispersión extrema. | **Compatible pero heterogénea; no validada.** | Separar transformación corporal, material y de escenario; probar tres o más casos por celda. |
+| TAX-04 | Una transformación visual es compartible cuando conserva marcadores reconocibles y el contraste se entiende de inmediato. | Dos casos: Universe muscular obtuvo 164/42 interacciones/shares; Universe atravesando papel obtuvo 7/0. Mediana 85.5/21, con dispersión extrema. Claude añade que cada caso debe auditar la preservación de las gafas y marcadores físicos base. | **Compatible pero heterogénea; no validada.** | Separar transformación corporal, material y de escenario; auditar identidad canónica por caso y probar tres o más casos por celda. |
 | TAX-05 | La densidad de mundo mejora la difusión frente a composiciones simples. | El cartel hada/Wilfred/tarot obtuvo 14 interacciones y 1 share. Su valor de identidad es alto, pero no hay comparación pareada. | **Sin evidencia de rendimiento; señal editorial.** | Mantener como recurso de worldbuilding, no como palanca de shares. |
 | TAX-06 | Un personaje secundario con vestuario y contexto puede sostener un meme. | Ganso con vestuario obtuvo 14/2; Wilfred en bosque obtuvo 18/2. Ambos son casos aislados y no comparables entre sí. | **Señal cualitativa, no validada.** | No promover personaje ni diseño a canon por estos datos. |
 
@@ -48,11 +49,11 @@ Las estructuras de microhistoria secuencial y transformación visual siguen sien
 
 | ID | Hipótesis o supuesto | Evidencia actual | Veredicto para Claude | Decisión recomendada |
 |---|---|---|---|---|
-| HUM-01 | El humor ácido funciona como categoría general. | En 13 casos, la mediana fue 20 interacciones; tres outliers de funciones diferentes concentraron 2,180/2,354 interacciones, el 92.6%. | **No validada como categoría general.** | Mantener la familia, pero dividir por función narrativa. |
+| HUM-01 | El humor ácido funciona como categoría general. | En 13 casos, la mediana fue 20 interacciones; tres outliers de funciones diferentes concentraron 2,180/2,354 interacciones, el 92.6%. | **Contradicha por evidencia como categoría amplia.** | No usar “hazlo más ácido” como instrucción aislada; dividir por función narrativa y probar subfunciones. |
 | HUM-02 | El conflicto interpersonal comprensible en una lectura puede amplificar humor ácido. | Los tres outliers comparten remate relacional claro, contraste entre personajes o autodesprecio inmediatamente reconocible; ninguna función aislada explica el conjunto. | **Hipótesis transversal compatible, no confirmada.** | Probar observacional cotidiano, diálogo ácido y autodesprecio/antihéroe en celdas separadas. |
-| HUM-03 | El humor observacional puede ser una subcategoría repetible del humor ácido. | `n=2`, mediana de 30 interacciones y 6 shares; es la única microseñal repetida por encima del centro de la muestra. | **Exploratoria; muestra insuficiente.** | Reunir al menos tres casos adicionales antes de declararla ganadora. |
+| HUM-03 | El humor observacional puede ser una subcategoría repetible del humor ácido. | `n=2`, mediana de 30 interacciones y 6 shares; es la única señal repetida por encima del centro de la muestra, pero la muestra sigue siendo mínima. | **Sin evidencia disponible / exploratoria.** | No usarla como regla; reunir al menos tres casos adicionales. |
 | HUM-04 | El doble sentido sexual textual puede difundirse si el remate es inmediato y relatable. | Humor sugerente `n=5`, mediana 24/2; un outlier textual obtuvo 171 interacciones y 50 shares. Sin ese outlier, el grupo es modesto. | **Señal exploratoria condicionada por outlier.** | Mantener separado del humor ácido y probar con controles de doble sentido no sexual. |
-| HUM-05 | El humor sexual explícito tiene un rendimiento superior. | `n=2`, mediana 35 interacciones y 5 shares. | **Inconclusa.** | No elevar a regla ni incorporarla al calendario por rendimiento supuesto. |
+| HUM-05 | El humor sexual explícito tiene un rendimiento superior. | `n=2`, mediana 35 interacciones y 5 shares. | **Sin evidencia disponible.** | No elevar a regla ni incorporarla al calendario por rendimiento supuesto; si se explora con personajes canónicos, aplicar Anti-tono y Principio Creativo. |
 | HUM-06 | Caption mínimo o emojis son una palanca universal. | Junio y julio contienen varios outliers minimalistas y la señal reaparece en más de un mes; sin embargo, las piezas no forman un experimento pareado y el caso 2608028 fue un outlier. | **Patrón histórico plausible, no regla universal.** | Mantener `caption_minimo` como celda experimental y compararlo con `caption_refuerzo` y `caption_conversacional`. |
 
 ## 5. Separación entre evidencia, hipótesis y canon
@@ -63,19 +64,19 @@ Las estructuras de microhistoria secuencial y transformación visual siguen sien
 | Hipótesis de Growth OS | La claridad del conflicto, la transferibilidad social y la legibilidad del remate merecen pruebas comparables. | Que Universe, Wilfred, humor ácido o humor sexual son causas suficientes del rendimiento. |
 | Canon/Biblia | Ningún personaje ni relación nueva debe modificarse con esta evidencia sin revisión de Claude y aprobación explícita. | Promover diseños, relaciones, voces o reglas narrativas automáticamente. |
 
-## 6. Propuesta de revisión para Claude
+## 6. Criterio de revisión integrado de Claude
 
-Claude debería revisar cada hipótesis con cuatro etiquetas: **Sustentada por datos**, **Compatible pero no demostrada**, **Contradicha por evidencia** o **Sin evidencia disponible**. La propuesta inicial de Manus es la siguiente:
+Claude revisó cada hipótesis con cuatro etiquetas: **Sustentada por datos**, **Compatible pero no demostrada**, **Contradicha por evidencia** o **Sin evidencia disponible**. La clasificación integrada es la siguiente:
 
-| Clasificación propuesta | Hipótesis |
+| Clasificación integrada | Hipótesis |
 |---|---|
 | Sustentada por datos como método | TAX-01: la revisión visual y la fuente editorial pesan más que el filename para asignar personaje. |
 | Compatible pero no demostrada | TAX-02, TAX-03, TAX-04, HUM-02, HUM-03, HUM-04 y HUM-06. |
 | Señal editorial sin efecto de rendimiento demostrado | TAX-05 y TAX-06. |
 | Inconclusa | HUM-05 y cualquier conclusión de superioridad por personaje. |
-| No validada como categoría amplia | HUM-01: “el humor ácido funciona” sin subdivisión. |
+| Contradicha por evidencia como categoría amplia | HUM-01: “el humor ácido funciona” sin subdivisión. |
 
-Se solicita a Claude confirmar si esta clasificación es coherente con la Biblia actual, señalar contradicciones canónicas y distinguir qué hipótesis pueden alimentar briefs creativos sin convertirse en canon.
+Claude confirmó que esta clasificación es coherente con la Biblia actual y no señaló contradicciones que requieran modificar personajes, relaciones o lugares. La respuesta completa y archivada se conserva en `Operations/Research/2026-08-20_Respuesta_Claude_Hipotesis_Taxonomia_Humor.md`.
 
 ## 7. Diseño mínimo para cerrar hipótesis
 
@@ -85,7 +86,15 @@ Las pruebas más útiles serían una cohorte de microhistorias secuenciales fren
 
 ## 8. Decisión provisional del CGO
 
-Hasta recibir la revisión de Claude, las hipótesis pueden alimentar la **taxonomía, el diseño de tests y la selección de preguntas de aprendizaje**, pero no la Biblia, el canon, el calendario activo ni la cola automática de reuse. La decisión más sólida es optimizar por claridad de situación y compartibilidad, manteniendo los personajes como variables analíticas y narrativas, no como explicación automática del éxito.
+Con la revisión de Claude integrada, las hipótesis pueden alimentar la **taxonomía, el diseño de tests, los briefs creativos acotados y la selección de preguntas de aprendizaje**, pero no modifican la Biblia, el canon, el calendario activo ni la cola automática de reuse. La decisión más sólida sigue siendo optimizar por claridad de situación y compartibilidad, manteniendo los personajes como variables analíticas y narrativas, no como explicación automática del éxito.
+
+## 9. Resultado de la revisión de Claude — 2026-08-20
+
+Claude revisó este expediente y confirmó la mayoría de las clasificaciones provisionales, con tres ajustes relevantes. Primero, `HUM-01` pasa de `No validada` a **Contradicha por evidencia como categoría amplia**: los datos no solo son insuficientes, sino que la mediana modesta y la concentración del 92.6% en tres outliers contradicen usar “humor ácido” como palanca unificada. Segundo, `HUM-03` pasa a **Sin evidencia disponible / exploratoria**; `n=2` es un indicio insuficiente para llamarlo microseñal. Tercero, `HUM-05` pasa a **Sin evidencia disponible**, con el filtro adicional de Anti-tono y voz canónica si se decide explorar humor sexual explícito.
+
+Claude confirma que `TAX-01` puede fijarse como regla permanente de proceso: la revisión visual prevalece sobre filenames genéricos porque protege la identidad de Universe y Fantasma. `TAX-02` puede orientar briefs de situación reconocible, remate claro y compartibilidad. `TAX-03`, `TAX-04`, `HUM-02`, `HUM-03`, `HUM-04` y `HUM-06` permanecen como marcos de diseño o celdas experimentales. La única salvaguarda activa adicional es `TAX-04`: cada transformación de Universe debe registrar `preserva_gafas_universe` y `preserva_marcadores_identidad`; si alguna respuesta es `No`, el caso debe revisarse primero como posible conflicto de canon y no como simple observación de rendimiento.
+
+Claude no identifica contradicciones que requieran modificar personajes, relaciones o lugares de la Biblia. La respuesta completa queda archivada en `Operations/Research/2026-08-20_Respuesta_Claude_Hipotesis_Taxonomia_Humor.md`. El resultado integrado no autoriza cambios de canon, calendario, inventario protegido ni reuse automático.
 
 ## Referencias
 
