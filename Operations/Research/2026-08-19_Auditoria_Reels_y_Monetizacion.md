@@ -4,7 +4,7 @@ purpose: "Separar el rendimiento histórico de Reels del experimento P0 de imág
 status: "Active"
 created: 2026-08-19
 updated: 2026-08-20
-version: "1.3"
+version: "1.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -16,6 +16,8 @@ related_documents:
   - "Operations/Research/2026-08-17_Protocolo_P0_Metricas_y_Veredictos.md"
   - "Operations/Research/2026-08-19_Windsor_Instagram_28D_Normalizado.json"
   - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
+  - "Operations/Research/Affiliate_Metrics_Snapshots.csv"
+  - "Operations/Research/2026-08-20_Meta_Reel_2210896633022235_Metrics.json"
 organization: "Operations/Research"
 ---
 
@@ -111,6 +113,10 @@ La monetización nativa de Meta es una oportunidad futura, pero no debe tratarse
 La versión anterior de esta auditoría decía que Mercado Libre era únicamente un diseño activo y que todavía no existían enlaces trazables. Esa descripción quedó obsoleta. El ledger actual contiene diez links cortos granulares y un Reel afiliado adicional con confirmación humana de producto nativo. Las horas exactas y los IDs nativos individuales de nueve oportunidades del piloto todavía deben conciliarse, pero no deben marcarse como “no publicados”.
 
 El siguiente análisis prioritario para este carril es comercial: capturar un snapshot de Mercado Libre, mantener `Affiliate_Metrics_Snapshots.csv` como ledger append-only y separar `Clicks`, `Gross_Sales`, `Approved_Sales`, `Units_Sold`, `Revenue_MXN` y `Confirmed_Commission_MXN` de las métricas de contenido.
+
+### Estado del intento de snapshot — 2026-08-20
+
+La extracción de Meta sí fue completada. El post de página `1036844829507460_122153090559072582`, asociado al Reel `2210896633022235`, devolvió 1 reacción, 0 comentarios y `shares` no expuesto por el objeto consultado en el corte de las 05:07 UTC. La Central de Afiliados no pudo leerse porque la sesión disponible continuó resolviendo al formulario de inicio de sesión del navegador aislado, aunque el conector My Browser figura habilitado. No se introdujeron credenciales, no se adjuntaron productos y no se modificaron publicaciones. El snapshot afiliado queda pendiente de una sesión My Browser efectivamente conectada o de datos visibles proporcionados por Fernando.
 
 ## Referencias
 

@@ -93,3 +93,11 @@ El siguiente paso técnico es recuperar métricas específicas de video desde la
 Documentos sincronizados: `Operations/Production/2026-08-19_Playbook_Tracking_Afiliados_MercadoLibre.md`, `Operations/Research/2026-08-19_Auditoria_Reels_y_Monetizacion.md` y `Operations/Research/Affiliate_Link_Ledger.csv`.
 
 ---
+
+## Corte de métricas Meta — 2026-08-20 05:07 UTC
+
+El Reel `2210896633022235` aparece en el feed de la página mediante el post `1036844829507460_122153090559072582`. El corte actual devolvió **1 reacción**, **0 comentarios** y `shares` no expuesto por el objeto consultado. No se recuperaron vistas, watch time o retención mediante Insights; el endpoint de Insights usado previamente devolvió errores de métrica no válida. Este corte es lifetime/actual, no una ventana 24/72 horas, y permanece separado de P0.
+
+La evidencia JSON se conserva en `Operations/Research/2026-08-20_Meta_Reel_2210896633022235_Metrics.json`.
+
+---

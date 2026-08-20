@@ -3,8 +3,8 @@
 **Propósito:** Definir el marco operativo para capitalizar la afiliación de Mercado Libre a través de contenido narrativo y la sección recurrente "¿Qué me llegó?".
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
-**Última actualización:** 2026-08-19
-**Versión:** 1.3
+**Última actualización:** 2026-08-20
+**Versión:** 1.4
 **Autor:** Manus AI (CGO)
 **Documentos relacionados:** `01_02_Content_Backlog.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`
 
@@ -65,7 +65,7 @@ El primer piloto recomendado es el Reel de la lámpara de luna de Elara. La prim
 
 El siguiente paso es reemplazar la etiqueta agregada por etiquetas separadas para cada nueva superficie de Facebook. El Reel de Elara y cualquier comentario aprobado deben usar identificadores distintos. No se considerarán conversiones ni comisiones confirmadas hasta conciliar los reportes de Mercado Libre, respetar la ventana de atribución de 24 horas y distinguir ventas brutas de ventas aprobadas. La evidencia está documentada en `Operations/Research/2026-08-19_MercadoLibre_Facebook_Afiliados_Observacion.md`.
 
-Para la ola del 18–30 se recomienda un piloto de cuatro a seis publicaciones, sin modificar el calendario ni el P0. Cada publicación afiliada tendrá un producto, una etiqueta y un link únicos. La identidad se registrará en `Affiliate_Link_Ledger.csv` y cada corte de métricas se añadirá a `Affiliate_Metrics_Snapshots.csv`. La especificación completa está en `Operations/Production/2026-08-19_Piloto_Afiliados_Facebook_18_30_Agosto.md`.
+Para la ola del 18–30 quedó activo un piloto de **10 oportunidades**, sin modificar el P0 editorial. Cada publicación afiliada tiene un producto, una etiqueta y un link únicos. La identidad se registra en `Affiliate_Link_Ledger.csv` y cada corte de métricas se añade a `Affiliate_Metrics_Snapshots.csv`. Fernando confirmó que los diez productos/links fueron publicados o adjuntados en Facebook; las horas e IDs nativos individuales que no fueron capturados permanecen como deuda de conciliación, no como publicaciones pendientes.
 
 ## Historial de Versiones
 | Fecha | Versión | Cambio | Autor |
@@ -74,3 +74,4 @@ Para la ola del 18–30 se recomienda un piloto de cuatro a seis publicaciones, 
 | 2026-08-15 | 1.1 | Se elimina la referencia operativa a Make; el flujo vigente queda en Manus + Meta Graph API. | Manus AI (CGO) |
 | 2026-08-19 | 1.2 | Se añade tracking por etiquetas nativas de Mercado Libre, ledger de enlaces y piloto de atribución para el Reel de Elara. | Manus AI (CGO) |
 | 2026-08-19 | 1.3 | Se define el piloto Facebook 18–30 con cuatro-seis publicaciones, etiquetas por post/producto/superficie y snapshots append-only. | Manus AI (CGO) |
+| 2026-08-20 | 1.4 | Se corrige el alcance a 10 oportunidades activas y se separa la activación comercial de la medición pendiente; se registra el Reel `2210896633022235` con producto nativo. | Manus AI (CGO) |

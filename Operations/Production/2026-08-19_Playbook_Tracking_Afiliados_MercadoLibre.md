@@ -11,6 +11,8 @@ related_documents:
   - "Operations/Research/2026-08-19_Auditoria_Reels_y_Monetizacion.md"
   - "Operations/Research/Affiliate_Link_Ledger.csv"
   - "GrowthOS/07_00_Registro_Maestro_Reels.md"
+  - "Operations/Research/Affiliate_Metrics_Snapshots.csv"
+  - "Operations/Research/2026-08-20_Meta_Reel_2210896633022235_Metrics.json"
 organization: "Operations/Production"
 ---
 
@@ -39,7 +41,7 @@ No se recomienda introducir primero un acortador externo ni una redirección pro
 
 La Central de Afiliados y Creadores fue verificada en sesión autenticada. El generador recibe una o más URLs normales de páginas de producto, permite seleccionar una etiqueta administrada por la cuenta y devuelve un link afiliado corto o completo. La URL normal del producto nunca debe registrarse como `ML_Link_or_ID` ni compartirse como si fuera el enlace afiliado.
 
-Mercado Libre rechazó una etiqueta con mayúsculas; para este piloto se usarán únicamente etiquetas en minúsculas y números, sin espacios ni caracteres especiales. El primer link generado fue `https://meli.la/2zCoRix`, asociado a `usmfb2606440818`; quedó registrado como pendiente de adjunción nativa y no fue publicado.
+Mercado Libre rechazó una etiqueta con mayúsculas; para este piloto se usarán únicamente etiquetas en minúsculas y números, sin espacios ni caracteres especiales. El primer link generado fue `https://meli.la/2zCoRix`, asociado a `usmfb2606440818`. La documentación inicial lo dejó como pendiente de adjunción; posteriormente Fernando confirmó la publicación/adjunción de los diez productos del piloto, por lo que el estado vigente se conserva en el ledger como `Native_Product_Attached_User_Confirmed`.
 
 ## Convención de etiquetas
 
