@@ -2,13 +2,13 @@
 
 **Propósito:** Definir una posible nueva familia de Reels musicales de Universe Sent Me, donde una canción licenciada guía una microhistoria emocional antes de seleccionar personajes, escenas o producción.
 
-**Estado:** Draft — exploración de concepto; no autoriza storyboard, generación de keyframes, uso de canción ni publicación.
+**Estado:** Review — dirección global aprobada; pendiente de aprobación del tratamiento y de referencias antes de generar clips.
 
 **Fecha de creación:** 2026-08-20
 
 **Última actualización:** 2026-08-20
 
-**Versión:** 1.4
+**Versión:** 1.5
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -80,7 +80,7 @@ Fernando seleccionó el rango **0:54–1:24** como guía sonora: 30 segundos. Es
 | Disponibilidad | Confirmada por Fernando en Instagram, Facebook, TikTok y YouTube Shorts; cada plataforma añade el audio nativamente. |
 | Personajes | Confirmado: Evan + Elara como complicidad ambigua/no canónica. |
 | Duración | Confirmada: 30 segundos. |
-| Estética | Confirmada: animación actual de USM, 3D cinematográfico con guiños Telehit 2000s, sin marcas, logos o material de terceros. |
+| Estética | Confirmada: animación 2D digital actual de USM, con texturas pictóricas, guiños Telehit 2000s y sin marcas, logos o material de terceros. |
 
 No se incorporarán letras completas, audio ni música a Flow. La canción se seleccionará desde la biblioteca licenciada de cada plataforma o se gestionará mediante la licencia que corresponda en la edición final.
 
@@ -96,6 +96,30 @@ Esta pieza es un videoclip: la canción define el ritmo y el significado del mon
 | **TikTok** | Lanzamiento condicional y solo con licencia confirmada. | Si Universe Sent Me opera como negocio, TikTok exige usar su Commercial Music Library o contar con licencia propia para audio externo, incluso en publicaciones orgánicas. [8] | Retener el videoclip hasta tener licencia o confirmación comercial específica; no usar la biblioteca general como atajo. |
 
 Fernando confirmó que `Remote Control` aparece en los cuatro selectores nativos. Se aprueba una cascada completa en **Instagram Reels, Facebook Reels, TikTok y YouTube Shorts**. La canción se añade con el mismo tramo de referencia en cada plataforma; el video se exporta sin la pista incrustada. La pieza se registra como videoclip musical multicanal, no como una variante de `REAL → UNIVERSE / REACCIÓN`.
+
+## Definiciones globales de tratamiento — revisión
+
+| Dimensión | Decisión |
+|---|---|
+| Propósito | Abrir una familia de microhistorias emocionales compartibles sin reemplazar el humor de Universe ni medirla contra P01. |
+| Audiencia | Personas que asocian canciones de la era Telehit/indie mexicano con relaciones que no terminaron de irse. |
+| Relación | Evan + Elara: cercanía editorial ambigua. El video no afirma que son pareja, que terminaron o que vuelven. |
+| Arco | Rutina compartida → distancia apenas perceptible → cercanía que no se resuelve → liberación silenciosa. |
+| Duración / formato | 30 s, vertical 9:16, editado contra el rango 0:54–1:24 de `Remote Control`. |
+| Texto, diálogo y voz | Ninguno. La emoción debe sostenerse solo con actuación, montaje y canción nativa. |
+| Audio del máster | Sin música incrustada. SFX de ambiente muy discretos solo si no compiten con el audio nativo de cada plataforma. |
+| Estilo | Ilustración 2D digital USM: linework suave, texturas pictóricas, animación contenida de miradas/cabello/tela; nostalgia de videoclip 2000s sin replicar marcas o tomas ajenas. |
+| Luz y color | Azul plateado nocturno y verde profundo en bosque; naranja de fogata y ámbar interior para memoria/cercanía. El contraste emocional cambia por luz, no por filtros agresivos. |
+
+### Referencia visual comprobada
+
+La referencia de Drive `Elara y Evan en el Bosque.mp4` (`Drive_ID: 1CELb0iwDuuKEiEJj2n-vuutjUMIYlHA2`) confirma la base visual a preservar: Evan es más alto, de cabello castaño oscuro ondulado, barba ligera y hoodie café amplio; Elara es más baja, con cabello rubio largo ondulado, pecas, sombrero puntiagudo café oscuro con banda morada, cardigan tejido café, top claro, jeans y collar plateado. En las escenas de bosque usan mochilas de senderismo y tapetes enrollados. La referencia usa bosque nocturno de pinos, luna llena, estrellas, fogata naranja y animación limitada con movimientos sutiles. Estas características son restricciones de continuidad, no una declaración nueva de canon.
+
+### Tratamiento narrativo propuesto
+
+El videoclip se organiza como recuerdos que podrían ser de la misma noche: Evan conduce despacio por una carretera de bosque mientras Elara mira la luz por la ventana; después comparten una preparación sencilla alrededor de una fogata y sus manos casi coinciden al pasar una taza. Caminan bajo árboles altos con las mochilas, siempre en paralelo y nunca tomados de la mano. En el golpe emocional se detienen frente a la fogata y giran el uno hacia el otro en una cercanía coreografiada, pero no se besan ni se abrazan. El cierre vuelve a la distancia: la cámara queda entre ambos mientras toman sendas opuestas, conservando la sensación de que todavía se reconocen sin intentar controlarse.
+
+El tratamiento utiliza el auto y la preparación de comida como acciones cotidianas, pero las sitúa en el viaje/campamento para mantener ropa, bosque y accesorios coherentes con la referencia vigente. No se inventan cambios de vestuario ni escenarios urbanos hasta contar con referencias específicas aprobadas.
 
 ### Contingencia
 
