@@ -3,8 +3,8 @@ title: "Fuente maestra y ledgers del Growth OS"
 purpose: "Definir una arquitectura mínima y unificada para que inventario, publicaciones, calendarios y aprendizaje compartan IDs sin duplicar datos ni repetir consultas innecesarias."
 status: Active
 created: 2026-08-15
-updated: 2026-08-19
-version: "2.6"
+updated: 2026-08-20
+version: "2.7"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -43,6 +43,11 @@ related_documents:
   - "Operations/Research/Historical_Performance_Individuals.csv"
   - "Operations/Research/2026-08-17_Integracion_CNT_Mayo_Reserve_Revision.md"
   - "Operations/Research/2026-08-17_Revision_Reserve_Mayo.json"
+  - "Operations/Research/2026-08-20_Source_Alias_Table.csv"
+  - "Operations/Research/2026-08-20_Source_Alias_Table_Report.md"
+  - "Operations/Research/2026-08-20_Historical_Performance_Individuals_Consolidated.csv"
+  - "Operations/Research/2026-08-20_Junio_Consolidated_View.md"
+  - "Operations/Research/2026-08-20_Junio_Duplicate_Groups.md"
 organization: "GrowthOS"
 ---
 
@@ -225,3 +230,22 @@ Los estados de canon y aprobación no se cambian automáticamente. Fernando o Cl
 [7]: https://developers.facebook.com/docs/graph-api/reference/post/insights/ — parámetros `since`, `until`, `period` y métricas de Post Insights.
 [8]: https://developers.facebook.com/documentation/pages-api/platforminsights/page — limitaciones y actualización de Page Insights.
 [9]: `../Operations/Research/2026-08-15_Reclasificacion_Canon_vs_Reconciliacion.json` — distribución de motivos de revisión canónica y administrativa.
+
+
+## 9. Tabla de aliases de publicación — 2026-08-20
+
+La tabla `Operations/Research/2026-08-20_Source_Alias_Table.csv` funciona como una capa de reconciliación entre el `Publication_Log` y `Content_Inventory`. Extrae una clave numérica de `Asset_Ref` o del filename operativo y conserva el `Inventory_ID`, `Drive_ID`, `Meta_Post_ID`, permalink, plataforma y estado de publicación. No crea CNT y no convierte una coincidencia de filename en aprobación canónica.
+
+El primer corte contiene 98 filas del Publication Log. Se obtuvieron 52 coincidencias únicas de alta confianza, 46 filas con revisión o sin match y 3 filas sin clave numérica extraíble. Las filas `Review` deben resolverse mediante evidencia adicional de Drive/Meta o conservarse como excepciones explícitas. La tabla es la vista oficial de alias hasta que la fuente maestra incorpore una columna normalizada de alias.
+
+## 10. Vista consolidada del histórico individual de junio — 2026-08-20
+
+`Operations/Research/Historical_Performance_Individuals.csv` permanece como archivo fuente y no se elimina ni se reescribe para borrar duplicados. Para rankings, sumas y comparaciones se debe utilizar `Operations/Research/2026-08-20_Historical_Performance_Individuals_Consolidated.csv`, que reduce 211 filas fuente a 206 publicaciones lógicas.
+
+Se identificaron cinco grupos duplicados de Meta ID. Cada grupo tiene dos filas fuente con métricas de reacciones, comentarios y shares consistentes. La vista consolidada conserva `source_row_ids`, `sources_observed`, asset refs observados y candidatos de inventario para que la pérdida de filas no implique pérdida de evidencia.
+
+La regla queda establecida: **una publicación lógica por Meta ID en agregados; todas las filas fuente conservadas para auditoría**. Esta vista no modifica canon, no crea CNT y no sustituye los ledgers de publicación o experimentación.
+
+## 11. Deuda residual de fuente maestra
+
+La tabla de aliases reduce el problema de falsos huérfanos, pero no lo resuelve completamente. Las 46 filas `Review` requieren resolución posterior por evidencia; las cinco filas P0 deben enlazarse al inventario o mantenerse como excepción documentada. La consolidación histórica permite corregir doble conteo en junio, pero no autoriza recalcular ventanas 24/72 horas ni mezclar lifetime con cortes experimentales.

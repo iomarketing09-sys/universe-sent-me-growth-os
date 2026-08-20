@@ -3,8 +3,8 @@ title: "Auditoría integral del Growth OS"
 purpose: "Verificar que la documentación, ledgers, inventario, experimento P0, Meta Graph API, Instagram y schedules estén integrados y operando de forma coherente."
 status: "Review"
 created: 2026-08-19
-updated: 2026-08-19
-version: "1.1"
+updated: 2026-08-20
+version: 1.2
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
@@ -100,3 +100,12 @@ La sección inicial de esta auditoría fue redactada antes del corte observado d
 Por lo tanto, P0 ya no es un pendiente de extracción básica. El pendiente estadístico real es **analizar el lote operativo de nueve publicaciones del 15–16 (`CNT-031`–`CNT-039`) como cohorte separada**, y continuar los cortes observados de la ola 17–30 sin mezclarla con el baseline P0. También deben mantenerse separados los aprendizajes de P0 basados en el outlier `2608028` de cualquier conclusión general de horario.
 
 Los pendientes de integración que siguen vigentes son la reconciliación de `Asset_Ref`/filename del inventario maestro, la consolidación lógica de duplicados históricos y la medición controlada de Instagram. Instagram no debe reabrirse para publicación automática en este ciclo.
+
+
+## Actualización de fuente maestra e histórico de junio — 2026-08-20
+
+Se creó `Operations/Research/2026-08-20_Source_Alias_Table.csv` como capa reproducible entre `Publication_Log.csv` y `Content_Inventory.csv`. El primer corte cubre 98 filas: 52 coincidencias únicas de alta confianza, 46 filas en revisión o sin coincidencia y 3 filas sin clave numérica extraíble. La tabla conserva los nombres operativos, IDs de Meta, permalinks y estados sin crear CNT automáticos.
+
+También se creó `Operations/Research/2026-08-20_Historical_Performance_Individuals_Consolidated.csv`. El archivo fuente de 211 filas permanece intacto; la vista consolidada contiene 206 publicaciones lógicas y cinco grupos duplicados de Meta ID. Los cinco grupos tienen métricas de reacciones, comentarios y shares consistentes, por lo que deben contarse una sola vez en agregados y rankings. Las filas originales se conservan como evidencia múltiple.
+
+El estado correcto ya no es “sin tabla de aliases” ni “sin vista de consolidación”. La deuda restante es resolver las 46 filas de revisión, enlazar o exceptuar formalmente los cinco assets P0 y usar la vista consolidada para futuros agregados de junio. No se modificó canon ni se inventaron CNT.
