@@ -4,9 +4,9 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-20
-**Versión:** 3.8
+**Versión:** 3.9
 **Autor:** Manus AI (CGO); Sección 6 añadida por Claude
-**Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`
+**Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`, `../Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`
 
 ---
 
@@ -282,3 +282,7 @@ Se recomienda reservar una parte de P1 para replicar la estructura de **gancho c
 ### 16.8 Qué no canonizar todavía
 
 No convertir en regla cerrada que los captions de un emoji, los posts de las 19:00, el humor sexual o los fondos fantásticos sean ganadores por sí mismos. Las señales actuales son hipótesis respaldadas por outliers y cohortes pequeñas. El criterio de cierre será la repetición del patrón en al menos tres casos codificados y comparables.
+
+## 17. Paquete de revisión para Claude — 2026-08-20
+
+Las hipótesis de taxonomía, estructura narrativa y humor quedan reunidas en `Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md` para revisión de Claude. El paquete clasifica cada señal como sustentada por datos, compatible pero no demostrada, inconclusa, no validada o editorial. Mientras no exista una respuesta documentada de Claude y aprobación explícita, estas hipótesis solo pueden alimentar la taxonomía, el diseño de experimentos y la selección de preguntas de aprendizaje. No modifican Biblia, canon, calendario, inventario protegido ni cola automática de reuse.
