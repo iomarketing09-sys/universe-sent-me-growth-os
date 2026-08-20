@@ -273,3 +273,10 @@ La función de esta capa es separar tres conceptos que no deben mezclarse: ident
 La búsqueda ampliada localizó archivos para los diez casos que inicialmente no aparecían en `calendar_visual_review_20260816`. `260508` tiene dos variantes y dos candidatos de inventario (`CNT-042` y `CNT-043`); los otros ocho tienen un archivo local, pero no una fila de inventario correspondiente. La tabla de opciones está en `Operations/Research/2026-08-20_10_Cases_Resolution_Options.csv`.
 
 La ruta recomendada es validar primero los dos filenames de `260508` contra sus candidatos existentes y, después, mantener los otros ocho como aliases staging de evidencia. No se debe crear CNT ni escoger inventario por personaje, similitud visual o nombre parcial.
+
+
+## 16. Matches 260508 y aprobación de aliases no-CNT — 2026-08-20
+
+Se validaron dos aliases de `260508` por filename exacto y evidencia local independiente. `ALIAS-0036` se mapea a `CNT-042` (`260508 - Universe.jpg`) y `ALIAS-0047` se mapea a `CNT-043` (`Universe - Existencial 260508.png`). Ambos pasan a `Confidence=High` y quedan cerrados para este corte; no se creó CNT.
+
+Las ocho filas restantes con archivo local pero sin fila de inventario se prepararon en `Operations/Research/2026-08-20_NonCNT_Inventory_Alias_Approval.csv`. Todas están en `Pending_Admin_Approval`, con `Proposed_Record_Type=Inventory_Alias_NonCNT`, `CNT_Creation_Allowed=No` y `Canon_Impact=None`. La aprobación solicitada solo autoriza normalizar la relación administrativa del alias; no autoriza crear CNT ni modificar canon.

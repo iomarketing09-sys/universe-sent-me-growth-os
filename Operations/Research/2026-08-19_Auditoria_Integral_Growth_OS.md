@@ -123,3 +123,10 @@ En la programación 17–30 se revisaron 81 filas: 43 permanecen en `Review`. De
 Se creó `Operations/Research/2026-08-20_Inventory_Alias_Staging_17_30.csv` con 33 assets cuya identidad visual está confirmada por archivo local. La capa conserva evidencia y hashes, pero no crea CNT ni modifica `Content_Inventory.csv`.
 
 Los diez casos que no aparecieron en la carpeta visual principal fueron buscados en rutas locales adicionales. El resultado fue: dos filas relacionadas con `260508` tienen filename exacto y candidatos de inventario existentes; ocho assets tienen evidencia local pero no fila de inventario. No quedó ningún caso sin archivo después de la búsqueda ampliada. El archivo `2026-08-20_10_Cases_Resolution_Options.csv` documenta las rutas seguras de resolución y sus riesgos.
+
+
+## Actualización de aliases 260508 y lote no-CNT — 2026-08-20
+
+Se validaron los matches `ALIAS-0036 → CNT-042` y `ALIAS-0047 → CNT-043` mediante filename exacto, asset ref y hash de evidencia local. Ambos aliases pasan a alta confianza sin crear CNT.
+
+Las ocho identidades restantes con archivo local se prepararon para aprobación administrativa en `2026-08-20_NonCNT_Inventory_Alias_Approval.csv`. Permanecen separadas del inventario maestro, no crean CNT y no tienen impacto de canon. La aprobación requerida es únicamente administrativa: confirmar que el alias puede normalizarse como relación no-CNT.
