@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-20
 
-**Versión:** 1.5
+**Versión:** 1.6
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -120,6 +120,51 @@ La referencia de Drive `Elara y Evan en el Bosque.mp4` (`Drive_ID: 1CELb0iwDuuKE
 El videoclip se organiza como recuerdos que podrían ser de la misma noche: Evan conduce despacio por una carretera de bosque mientras Elara mira la luz por la ventana; después comparten una preparación sencilla alrededor de una fogata y sus manos casi coinciden al pasar una taza. Caminan bajo árboles altos con las mochilas, siempre en paralelo y nunca tomados de la mano. En el golpe emocional se detienen frente a la fogata y giran el uno hacia el otro en una cercanía coreografiada, pero no se besan ni se abrazan. El cierre vuelve a la distancia: la cámara queda entre ambos mientras toman sendas opuestas, conservando la sensación de que todavía se reconocen sin intentar controlarse.
 
 El tratamiento utiliza el auto y la preparación de comida como acciones cotidianas, pero las sitúa en el viaje/campamento para mantener ropa, bosque y accesorios coherentes con la referencia vigente. No se inventan cambios de vestuario ni escenarios urbanos hasta contar con referencias específicas aprobadas.
+
+## Storyboard Flow — especificación de 3 × 3 paneles
+
+El storyboard no es un render final ni una referencia de audio. Su función es fijar identidad, vestuario, progresión de luz y lógica emocional antes de extraer paneles como keyframes individuales. Los nueve paneles se leen de izquierda a derecha y de arriba abajo.
+
+| Panel | Tiempo de edición | Acción visible | Función emocional |
+|---:|---:|---|---|
+| 1 | 0:54–0:57 | Auto compacto sin marca avanza por carretera de bosque al anochecer; Evan conduce y Elara se ve como silueta de pasajera. | Llegada compartida, pero contenida. |
+| 2 | 0:57–1:00 | Interior del auto: Evan mira al frente; Elara observa los árboles por la ventana. No se miran ni se tocan. | Distancia cotidiana. |
+| 3 | 1:00–1:04 | Reflejo de ambos en el parabrisas mientras el bosque azul pasa detrás. | Están juntos en espacio, separados en atención. |
+| 4 | 1:04–1:07 | En el campamento, Elara revuelve una olla pequeña sobre la fogata; Evan sostiene dos tazas. | Rutina que todavía conocen. |
+| 5 | 1:07–1:10 | Al pasar una taza, sus manos casi coinciden; ninguno fuerza el contacto. | Cercanía interrumpida. |
+| 6 | 1:10–1:14 | Caminan por un sendero boscoso con mochilas, en paralelo y separados por medio paso. | Complicidad sin promesa. |
+| 7 | 1:14–1:17 | Plano medio de ambos junto al fuego: Elara gira primero; Evan responde con una mirada leve. | Reconocimiento. |
+| 8 | 1:17–1:21 | Frente a la fogata, los dos se aproximan un paso y se detienen; no hay beso, abrazo ni contacto. | Golpe emocional no resuelto. |
+| 9 | 1:21–1:24 | Plano amplio y estático: la fogata queda al centro mientras Evan y Elara toman senderos opuestos dentro del mismo bosque. | Soltar sin negar el vínculo. |
+
+### Referencias que se adjuntan a Flow
+
+| Insumo | Uso |
+|---|---|
+| Frame de personajes y bosque: `evan_elara_forest_10s.png` | Referencia primaria. Fija rostros, proporción, ropa, mochilas, estilo 2D y bosque. |
+| Video original `Elara y Evan en el Bosque.mp4` (`Drive_ID: 1CELb0iwDuuKEiEJj2n-vuutjUMIYlHA2`) | Referencia secundaria de movimiento, iluminación y dinámica entre los personajes. No usar como fuente de audio. |
+
+### Prompt listo para Flow Storyboard
+
+```text
+Create one vertical 9:16 visual storyboard as a clean 3x3 grid of nine sequential cinematic panels, read left to right and top to bottom. This is a silent visual plan for a 30-second music video; do not add any readable text, captions, panel numbers, dialogue bubbles, subtitles, logos, watermarks, music UI, lyrics, or title cards.
+
+Use the attached Evan-and-Elara forest reference as the exact character and animation reference. Preserve Evan exactly: tall lean young man, dark brown messy wavy hair, brown eyes, light stubble, oversized chocolate-brown hoodie, blue jeans, hiking backpack. Preserve Elara exactly: petite young woman, long wavy blonde hair, brown eyes, freckles across nose and cheeks, dark-brown pointed witch hat with purple band, white over-ear headphones, chunky brown knit cardigan, light top, blue jeans, silver pendant necklace, hiking backpack. Keep their proportions, faces, clothes and 2D painterly USM animation style consistent in every panel.
+
+The setting is one continuous night camping trip in a magical but grounded forest: deep pine-green foliage, mossy trail, full moon, stars, soft blue-silver moonlight, and a warm orange campfire. The palette moves only between cool blue night and warm campfire amber. Add a small unbranded compact car only in panels 1–3; it must not appear after the camp sequence begins. No extra characters, no Universe, no animals, no magical transformation, no kiss, no hug, no hand-holding, no romance confirmation.
+
+Panel 1: exterior, unbranded compact car driving slowly through a forest road at blue dusk, Evan driving, Elara visible in passenger silhouette.
+Panel 2: interior medium two-shot, Evan looks forward while Elara looks out at passing trees, neither touches the other.
+Panel 3: both faces reflected softly in the windshield, forest passing outside, same restrained distance.
+Panel 4: at camp, Elara slowly stirs a small pot over a campfire while Evan holds two simple metal cups.
+Panel 5: close-up of a cup being passed, their hands nearly meet but do not touch.
+Panel 6: rear medium-wide shot, they walk in parallel along a moonlit forest path wearing the same backpacks, Evan half a step behind.
+Panel 7: medium shot by the fire, Elara turns toward Evan and Evan answers with a quiet glance.
+Panel 8: wide two-shot by the fire, they each take one small step closer and stop, emotionally close but with no physical contact.
+Panel 9: static wide ending, campfire centered, Evan and Elara walk away on opposite forest paths inside the same moonlit clearing.
+
+Keep camera language cinematic and restrained: gentle dollies, medium shots and expressive close-ups. Use soft line work, painterly textures and limited-animation storytelling. The emotional arc is shared routine, invisible distance, recognition, then quiet release.
+```
 
 ### Contingencia
 
