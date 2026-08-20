@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-20
 
-**Versión:** 2.4
+**Versión:** 2.5
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -331,6 +331,47 @@ El corte `Evan+Elara-RemoteControl_Sussie4.mp4` amplía la pieza a **30 segundos
 | Texto residual en puerta del auto | `OPTIONAL_EDIT` — pequeño texto generado cerca de 0:13; corregir solo si puede ocultarse con un crop leve sin dañar el encuadre. No retrasa publicación. |
 
 La escena de manos a través del vidrio queda `NOT_NEEDED_FOR_THIS_CUT` y se conserva como idea reutilizable, no como pendiente de producción. Antes de publicar, exportar el máster sin música incrustada y seleccionar `Remote Control` nativamente en cada una de las cuatro plataformas verificadas.
+
+## Paquete de publicación propuesto — pendiente de aprobación de Fernando
+
+La publicación debe conservar el misterio del montaje. El copy no declara que Evan y Elara sean pareja, que hayan terminado ni que vayan a volver; formula una experiencia universal de memoria y distancia, dejando que la canción y los planos sostengan la lectura íntima. La pregunta final abre conversación desde la nostalgia musical y no fuerza una explicación de canon.
+
+> Hay personas que se quedan en el retrovisor aunque ya no vayan contigo.
+>
+> *Remote Control* — Sussie 4 ft. León Larregui.
+>
+> ¿Qué canción te lleva de vuelta sin pedir permiso?
+
+| Campo | Valor propuesto | Regla operativa |
+|---|---|---|
+| `Concept_ID` | `CON-2026-08-20-RemoteControl-EvanElara` | Identifica el máster y las cuatro publicaciones de esta pieza. |
+| `Campaign_Label` | `VIDECLIP_MUSICAL_REMOTE_CONTROL_202608` | Separa la familia editorial de `REAL → UNIVERSE / REACCIÓN`. |
+| `Experiment_ID` | `EXP-202608-MUSICVIDEO-01` | Cohorte nueva; no comparar sus resultados con P01. |
+| `Hypothesis_ID` | `HB-MUSICVIDEO-01` | Hipótesis: microhistorias emocionales sin diálogo, ancladas a audio nativo reconocible, generan compartidos, comentarios de identificación y guardados. Requiere 5–10 piezas antes de declarar un ganador. |
+| Máster | `Evan+Elara-RemoteControl_Sussie4.mp4` | Exportar sin música incrustada; cada red añade el audio nativo en el tramo 0:54–1:24. |
+
+### Adaptación mínima por plataforma
+
+| Plataforma | Copy o título recomendado | Hashtags | Razonamiento |
+|---|---|---|---|
+| Instagram Reels | Usar el copy completo. | `#UniverseSentMe #EvanUSM #ElaraUSM #MomentosUSM #Sussie4 #LeonLarregui` | Seis etiquetas: raíz de marca, dos personajes, formato contemplativo y dos señales de descubrimiento musical. |
+| Facebook Reels | Usar las dos primeras líneas; la pregunta final es opcional si la descripción se percibe larga en el compositor nativo. | `#UniverseSentMe #EvanUSM #ElaraUSM` | En Facebook el texto pesa más que los hashtags; se preserva raíz y atribución de personajes, sin saturar. |
+| TikTok | Usar el copy completo, con la pregunta en una línea independiente. | `#UniverseSentMe #EvanUSM #ElaraUSM #Sussie4 #LeonLarregui` | El audio nativo es el principal contexto musical; las etiquetas refuerzan identidad y hacen descubrible la pieza para esa afinidad. |
+| YouTube Shorts | **Título:** `Hay personas que se quedan en el retrovisor | Evan + Elara`<br>**Descripción:** `Remote Control — Sussie 4 ft. León Larregui. ¿Qué canción te lleva de vuelta sin pedir permiso?` | `#UniverseSentMe #EvanUSM #ElaraUSM` en descripción | El título comunica la tensión sin prometer una relación canónica; la descripción contiene atribución musical y pregunta, sin repetir el copy entero. |
+
+### Arquitectura de hashtags
+
+El paquete usa una estructura de capas, no una lista de etiquetas genéricas. `#UniverseSentMe` es obligatorio como firma rastreable; `#EvanUSM` y `#ElaraUSM` construyen el archivo de personajes; `#MomentosUSM` ubica la pieza como momento contemplativo dentro de la marca; y `#Sussie4` / `#LeonLarregui` son etiquetas de descubrimiento musical para Instagram y TikTok. No se usan hashtags genéricos como `#amor`, `#desamor`, `#parati` o `#fyp`: diluyen la atribución de la pieza y no son parte del roster documentado.
+
+Los hashtags de marca y personaje respetan el roster `GrowthOS/10_00_Kit_de_Hashtags_USM.md`, que fija un máximo de 5–6 en Instagram y 2–3 en Facebook. Las etiquetas musicales son una hipótesis de descubrimiento, no una afirmación de que el hashtag por sí mismo genere distribución; deben anotarse con las métricas de cada publicación para aprender si aportan alcance cualitativo o conversación.
+
+### Validación de propuesta
+
+El copy principal obtuvo **8.70/10 — PASS** en la rúbrica de `usm-content-proposer`: relación con una experiencia reconocible (9/10), carga emocional (9/10), potencial de compartir/comentar (9/10), giro contemporáneo de memoria a través del retrovisor (7/10), voz de Evan aún hipotética (7/10), y buen encaje de horario (10/10). Conserva la ambigüedad canónica de Evan + Elara.
+
+### Actualizaciones requeridas después de publicar
+
+Al aprobar y publicar, actualizar `GrowthOS/07_00_Registro_Maestro_Reels.md` con los cuatro IDs nativos, permalinks, fecha/hora, copy final y estado de cascada; registrar las ventanas de medición de 24 h y 72 h; y cambiar el estado de este paquete de `pendiente de aprobación` a `publicado` o `archivado`, según corresponda. No atribuir resultados a la familia musical hasta acumular una cohorte de 5–10 piezas bajo `EXP-202608-MUSICVIDEO-01`.
 
 ### Contingencia
 
