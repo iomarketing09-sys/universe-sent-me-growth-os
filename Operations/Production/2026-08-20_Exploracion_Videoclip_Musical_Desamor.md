@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-20
 
-**Versión:** 1.7
+**Versión:** 1.8
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -165,6 +165,56 @@ Panel 8: the argument stops; their faces slowly approach until there are only a 
 Panel 9: parallel ending: Evan drives alone into night while Elara remains motionless by the small fire, cut together in one emotionally balanced composition.
 
 No extra characters except Wilfred in panel 3. No Universe, no animals, no magic transformation, no camping trip, no hiking, no shared campfire, no mugs, no walking together, no kiss, no hug, no hand-holding. The emotional arc is motion, isolation, memory, confrontation, almost-contact, unresolved distance.
+```
+
+## Módulo de producción 01 — Evan conduciendo
+
+El storyboard completo funciona como mapa emocional, no como una lista obligatoria de assets. La primera producción será un módulo autónomo de Evan conduciendo, que se monta primero en Edits junto con los assets ya disponibles de Elara. Solo después de esa prueba se decide qué huecos requieren una generación adicional.
+
+No se solicita un render de 15 segundos. La unidad de trabajo es **10 segundos máximos**, dividida en dos clips de 5 segundos para conservar control de personaje, auto, carretera y cámara. El resultado útil podrá reducirse a 4–8 segundos en la edición final.
+
+| Clip | Duración | Escena / acción | Uso en edición | Modelo recomendado |
+|---|---:|---|---|---|
+| E01 — carretera | 5 s | Auto compacto sin marca, con Evan solo, avanza por una avenida mojada nocturna hacia luces de ciudad pequeñas. | Establecer movimiento; se puede intercalar con Elara. | Omniflash con frame inicial. |
+| E02 — interior | 5 s | Evan conduce en interior de auto; luces azules y ámbar cruzan su cara, mantiene la mirada al frente y revisa una vez el retrovisor. | Close-up emocional; permite cortes a ojos, manos y reflejo. | Omniflash con frame inicial. |
+
+### Storyboard Flow exclusivo para el módulo Evan — 10 segundos
+
+Generar primero un storyboard de cuatro paneles. No es un video: sirve para fijar la continuidad de Evan, el auto y el lenguaje de cámara antes de producir E01 y E02. Adjuntar una referencia limpia del rostro/vestuario de Evan sin mochila ni equipo de campamento.
+
+```text
+Create one vertical 9:16 visual storyboard as a clean 2x2 grid of four cinematic panels for a 10-second emotional driving module. This is a silent reference plan only. Do not add readable text, captions, panel numbers, subtitles, dialogue bubbles, logos, watermarks, music UI, lyrics or title cards.
+
+Use the attached Evan reference only to preserve exact character identity and established 2D painterly USM animation style. Evan is a tall, lean young man with dark-brown messy wavy hair, brown eyes, light stubble, an oversized chocolate-brown hoodie and blue jeans. He is alone. Do not give him a backpack, sleeping mat, camping gear, hat, headphones or new clothing.
+
+The mood is nocturnal and introspective, not an outdoor adventure. The setting is a wet road at the edge of a small city: distant apartment windows, traffic signals and blurred streetlights, no forest, no moonlit camping ground, no mountains, no tents and no road trip imagery. Use wet asphalt reflections, blue night light and occasional warm amber traffic light across the windshield.
+
+Panel 1: exterior rear three-quarter wide shot, an unbranded compact car with Evan alone inside travels calmly along the wet city-edge road at night.
+Panel 2: low front windshield shot, the road lights and rain reflections move across the glass while Evan drives in focused silence.
+Panel 3: interior profile medium close-up from the passenger side; Evan holds the wheel steadily, eyes forward, passing blue and amber lights move naturally across his face.
+Panel 4: extreme close-up through the rear-view mirror: Evan’s eye lifts briefly to the mirror, then returns forward. Keep the emotion restrained and unresolved.
+
+No Elara, no Wilfred, no Universe, no other passengers, no ghost/reflection of another person, no magical elements, no dialogue, no kiss, no shared scene and no camping imagery. The visual arc is forward motion, thought, restraint.
+```
+
+### Prompt de video — E01 carretera (5 s)
+
+```text
+Use only the approved Evan driving storyboard panel as visual reference. Vertical 9:16, 5 seconds, one continuous cinematic exterior tracking shot in the established 2D painterly USM animation style.
+
+Evan is alone inside one small unbranded compact car, wearing his exact oversized chocolate-brown hoodie and blue jeans. The car begins already moving slowly on a wet city-edge road at night; blue street reflections glide continuously beneath the tires while distant apartment windows and traffic lights remain physically present in the background. The camera tracks from a rear three-quarter angle at the same speed as the car, keeping the vehicle centered while rain sheen and light reflections move naturally across the road.
+
+No passengers, no Elara, no Wilfred, no backpacks, no forest, no camp, no moonlit trail, no tents, no magic, no readable signs, no logos, no watermark. No dialogue and no background music; only muted tire hiss on wet pavement and distant city ambience.
+```
+
+### Prompt de video — E02 interior (5 s)
+
+```text
+Use only the approved Evan interior driving storyboard panel as visual reference. Vertical 9:16, 5 seconds, one continuous passenger-side medium close-up in the established 2D painterly USM animation style.
+
+Evan is alone in the driver’s seat of the same unbranded compact car, wearing the exact chocolate-brown oversized hoodie. He keeps both hands on the steering wheel and looks forward with contained sadness; after roughly three seconds, his eyes rise once to the rear-view mirror and return to the road. Blue streetlight and occasional warm amber traffic light travel across his face and dashboard while the car interior, windshield, rear-view mirror and moving blurred road lights remain present throughout.
+
+The camera stays physically inside the passenger-side area with a slow, subtle push-in; Evan does not change clothes, leave the car, look at a phone, speak, cry dramatically or introduce another passenger. No Elara, no Wilfred, no forest, no camping props, no readable text, no logo, no watermark. No dialogue and no background music; only low engine hum, rain and distant traffic ambience.
 ```
 
 ### Contingencia
