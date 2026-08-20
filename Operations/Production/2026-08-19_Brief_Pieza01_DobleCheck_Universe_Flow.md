@@ -4,7 +4,7 @@ purpose: "Definir el blueprint de producción, la instrumentación y los control
 status: Active
 created: 2026-08-19
 updated: 2026-08-19
-version: "1.8"
+version: "1.9"
 author: "Manus AI (CGO), aprobado por Fernando"
 related_documents:
   - "2026-08-19_Diseno_Experimento_Reels_v2.md"
@@ -346,12 +346,12 @@ No se añade una URL normal de producto, no se reutiliza una etiqueta de otra pu
 
 Instagram ya no debe recibir otra carga de este asset. Facebook continúa como fila separada y pendiente hasta que Graph API finalice el upload iniciado; TikTok y YouTube se retoman después de cerrar o diagnosticar Facebook.
 
-### Registro de publicación — Facebook
+### Registro de publicación — Facebook (intento inicial eliminado)
 
 | Campo | Valor verificado |
 |---|---|
 | Plataforma | Facebook Reel |
-| Estado | `PUBLICADA` |
+| Estado | `ELIMINADA_Y_REEMPLAZADA` |
 | Página | Universe Sent Me (`1036844829507460`) |
 | Hora de publicación local | 2026-08-19 18:42:31 CDT |
 | Facebook Video/Reel ID | `1549931766108154` |
@@ -359,13 +359,27 @@ Instagram ya no debe recibir otra carga de este asset. Facebook continúa como f
 | Publicación | `complete / published` |
 | Copyright check | `complete / matches_found=false` |
 | Copy publicado | `Yo: “no pasa nada”. Universe, dos segundos después: 🟣` + copy y hashtags aprobados. |
-| Afiliado Mercado Libre | `MANUAL_NATIVE_ATTACHMENT_PENDING` |
+| Afiliado Mercado Libre | No adjuntado; no usar para métricas ni atribución. |
 
-El Reel se publicó mediante Graph API reutilizando un único upload. La llamada de verificación posterior mostró un error no crítico por solicitar el campo no disponible `permalink`; la comprobación separada de `status` y `/{page_id}/video_reels` confirmó que el video está `ready` y publicado. No se creó un segundo Reel.
+El Reel se publicó mediante Graph API reutilizando un único upload. La llamada de verificación posterior mostró un error no crítico por solicitar el campo no disponible `permalink`; la comprobación separada de `status` y `/{page_id}/video_reels` confirmó que el video estaba `ready` y publicado. Fernando lo eliminó antes de que recibiera métricas, porque Facebook no permitió adjuntar el producto afiliado en una publicación ya creada. No se conserva como resultado analítico ni recibe afiliación.
 
-**Siguiente acción de Fernando en Facebook:** abrir este Reel y adjuntar manualmente el producto **Soporte Para Celular Gato Escritorio Oficina Gatito Adorable** con un **link y etiqueta de afiliado nuevos**. No añadir el link como comentario/copy a menos que se adopte esa superficie de forma explícita en el ledger. Después de adjuntarlo, compartir el ID o una captura de confirmación para registrar `Native_Product_Attached_At`, la etiqueta y el producto sin atribución inventada.
+### Registro vigente — Facebook con producto afiliado
 
-### Cascada TikTok y YouTube Shorts — misma versión editorial
+| Campo | Valor confirmado por Fernando |
+|---|---|
+| Plataforma | Facebook Reel |
+| Estado | `PUBLICADA_Y_PRODUCTO_NATIVO_ADJUNTO` |
+| Permalink | `https://www.facebook.com/reel/2210896633022235` |
+| Facebook Reel ID | `2210896633022235` |
+| Producto | Soporte Para Celular Gato Escritorio Oficina Gatito Adorable (`MLMU3833350067`) |
+| Link afiliado | `https://meli.la/1AQ2upG` |
+| Etiqueta | `usmfb20260819p01` |
+| Superficie | `FACEBOOK_NATIVE_PRODUCT` |
+| Atribución | Link y etiqueta exclusivos de `CON-2026-08-19-DobleCheck-Universe`; pendientes de medición. |
+
+La hora exacta de adjunción y el ID interno del módulo de producto no fueron expuestos por Facebook. Por ello, el ledger registra la confirmación de Fernando y deja esos campos vacíos; no se infieren valores. Este Reel es la única publicación vigente de Facebook para el experimento.
+
+### Cascada TikTok y YouTube Shorts — publicaciones confirmadas
 
 Fernando indicó que subirá el asset final a TikTok y YouTube Shorts con el **mismo copy de Instagram**, sin enlace de afiliado ni modificación de hashtags:
 
@@ -375,4 +389,9 @@ yo después de mandar “no pasa nada” 🟣
 #UniverseSentMe #UniverseUSM #MemesUSM #CuandoLeExplicas
 ```
 
-La carga de estas dos plataformas queda en estado `PENDIENTE_DE_IDS_NATIVOS`. Al completar cada publicación, se deben conservar su URL, ID nativo y hora local; no se marca la cascada como completa por una declaración de intención.
+| Plataforma | Estado | ID nativo | Permalink | Hora exacta |
+|---|---|---|---|---|
+| TikTok | `PUBLICADA` | `7675906878127246613` | `https://www.tiktok.com/@universe.sent.me/video/7675906878127246613` | No expuesta por la URL pública; publicación confirmada por Fernando el 2026-08-19. |
+| YouTube Shorts | `PUBLICADA` | `YVsi53pXA4s` | `https://youtube.com/shorts/YVsi53pXA4s?si=uGY617fIq5IknnQ6` | No expuesta por la URL pública; publicación confirmada por Fernando el 2026-08-19. |
+
+La cascada de P01 queda `COMPLETA` en Instagram, Facebook, TikTok y YouTube Shorts. Las métricas se registran desde cada ID nativo en las primeras ventanas de 24 y 72 horas; no se agregan ni comparan las métricas del Reel de Facebook eliminado.
