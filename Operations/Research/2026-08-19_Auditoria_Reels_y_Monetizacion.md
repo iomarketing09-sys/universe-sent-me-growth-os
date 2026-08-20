@@ -4,7 +4,7 @@ purpose: "Separar el rendimiento histórico de Reels del experimento P0 de imág
 status: "Active"
 created: 2026-08-19
 updated: 2026-08-20
-version: "1.4"
+version: "1.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -18,6 +18,8 @@ related_documents:
   - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
   - "Operations/Research/Affiliate_Metrics_Snapshots.csv"
   - "Operations/Research/2026-08-20_Meta_Reel_2210896633022235_Metrics.json"
+  - "Operations/Research/2026-08-20_MercadoLibre_Snapshot_7d_Etiquetas.png"
+  - "Operations/Research/2026-08-20_MercadoLibre_Snapshot_Fecha.png"
 organization: "Operations/Research"
 ---
 
@@ -112,11 +114,17 @@ La monetización nativa de Meta es una oportunidad futura, pero no debe tratarse
 
 La versión anterior de esta auditoría decía que Mercado Libre era únicamente un diseño activo y que todavía no existían enlaces trazables. Esa descripción quedó obsoleta. El ledger actual contiene diez links cortos granulares y un Reel afiliado adicional con confirmación humana de producto nativo. Las horas exactas y los IDs nativos individuales de nueve oportunidades del piloto todavía deben conciliarse, pero no deben marcarse como “no publicados”.
 
-El siguiente análisis prioritario para este carril es comercial: capturar un snapshot de Mercado Libre, mantener `Affiliate_Metrics_Snapshots.csv` como ledger append-only y separar `Clicks`, `Gross_Sales`, `Approved_Sales`, `Units_Sold`, `Revenue_MXN` y `Confirmed_Commission_MXN` de las métricas de contenido.
+El siguiente análisis prioritario para este carril es comercial: mantener `Affiliate_Metrics_Snapshots.csv` como ledger append-only y separar `Clicks`, `Gross_Sales`, `Approved_Sales`, `Units_Sold`, `Revenue_MXN` y `Confirmed_Commission_MXN` de las métricas de contenido.
 
-### Estado del intento de snapshot — 2026-08-20
+### Snapshot manual confirmado — 2026-08-20
 
-La extracción de Meta sí fue completada. El post de página `1036844829507460_122153090559072582`, asociado al Reel `2210896633022235`, devolvió 1 reacción, 0 comentarios y `shares` no expuesto por el objeto consultado en el corte de las 05:07 UTC. La Central de Afiliados no pudo leerse porque la sesión disponible continuó resolviendo al formulario de inicio de sesión del navegador aislado, aunque el conector My Browser figura habilitado. No se introdujeron credenciales, no se adjuntaron productos y no se modificaron publicaciones. El snapshot afiliado queda pendiente de una sesión My Browser efectivamente conectada o de datos visibles proporcionados por Fernando.
+Fernando confirmó mediante capturas del panel de Mercado Libre que el periodo **Últimos 7 días**, actualizado a las **20:51**, mostraba 2 clics, 0 compradores, 0 órdenes, 0 productos/unidades, $0 de ventas brutas, $0 de ventas estimadas y $0 de comisión. La pestaña **Fecha** mostró que los 2 clics correspondían al 18 de agosto, con 0 unidades, 0% de conversión y $0 de aumento estimado.
+
+En la pestaña **Etiquetas de seguimiento** solo fueron visibles dos filas: la etiqueta histórica agregada `Links de facebook - universesentme` con 1 clic y `usmfb2605400826` —AFF-07, publicación `260540` de Elara— con 1 clic. AFF-07 queda como la única oportunidad granular con actividad visible en este corte; no registró unidades ni ventas. La etiqueta del Reel `usmfb20260819p01` no apareció en la tabla visible. Se clasifica como `Not_Visible_No_Inference`, no como cero clics, porque la interfaz puede ocultar etiquetas sin actividad.
+
+El resultado confirma activación mínima del tracking —el sistema registra clics—, pero todavía no evidencia conversión. La muestra es demasiado pequeña para declarar ganador a AFF-07 o evaluar el Reel comercialmente. El ledger actualizado conserva los cortes históricos, el corte por fecha, el corte de 7 días y la ausencia visible de la etiqueta del Reel sin inventar métricas.
+
+La extracción de Meta permanece separada: el post de página `1036844829507460_122153090559072582`, asociado al Reel `2210896633022235`, devolvió 1 reacción, 0 comentarios y `shares` no expuesto en el corte de las 05:07 UTC.
 
 ## Referencias
 
@@ -125,3 +133,15 @@ La extracción de Meta sí fue completada. El post de página `1036844829507460_
 [2]: https://www.facebook.com/business/learn/lessons/understand-monetization-eligibility-status "Check and maintain your monetization eligibility status — Meta Blueprint"
 
 [3]: https://creators.facebook.com/tools/facebook-content-monetization/ "Facebook Content Monetization — Facebook for Creators"
+
+## Optimización del tracking del Reel con producto nativo — 2026-08-20
+
+El Reel `2210896633022235` debe conservar exclusivamente la etiqueta `usmfb20260819p01`. Aunque utiliza el mismo producto de gato que AFF-08, no debe compartir el link ni la etiqueta de AFF-08, porque eso impediría distinguir si el clic provino del Reel o de la publicación `260590` de Maeve.
+
+La optimización recomendada es mantener el producto nativo como única llamada a la acción comercial del Reel y no añadir simultáneamente el mismo producto mediante un comentario. Si en el futuro se prueba un comentario, debe generarse una etiqueta distinta, por ejemplo una etiqueta de superficie `POST_COMMENT`, y registrarse como experimento separado. De esa forma se evita la competencia entre dos links y se conserva la atribución.
+
+La medición debe registrar snapshots en tres momentos: 24 horas, 48 horas y 7 días. Como la interfaz disponible permite periodos de 7, 15 y 30 días, cada snapshot debe conservar la fecha de captura, el periodo seleccionado, la fila visible de la etiqueta, los clics, las unidades, la tasa de conversión, el aumento estimado y la comisión. Si la etiqueta no aparece, el estado correcto es `Not_Visible_No_Inference`, nunca cero automático.
+
+El resultado actual es una señal de instrumentación, no de conversión: el panel mostró 2 clics totales y 0 unidades, con 1 clic granular visible para AFF-07. El Reel no tiene todavía una fila visible. No se debe cambiar el producto ni el copy por este resultado; primero se necesitan al menos varios clics atribuibles a la etiqueta del Reel para evaluar si la superficie nativa convierte.
+
+---

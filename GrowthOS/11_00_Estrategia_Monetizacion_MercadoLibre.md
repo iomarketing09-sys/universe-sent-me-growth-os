@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-20
-**Versión:** 1.4
+**Versión:** 1.5
 **Autor:** Manus AI (CGO)
 **Documentos relacionados:** `01_02_Content_Backlog.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`
 
@@ -63,7 +63,7 @@ La estrategia conserva dos carriles separados: **monetización nativa de Meta**,
 
 El primer piloto recomendado es el Reel de la lámpara de luna de Elara. La primera observación del panel de Mercado Libre, para el periodo 4–18 de agosto, muestra una etiqueta agregada `Links de facebook - universesentme` con 3 clics, 2 unidades vendidas, $322.65 MXN en ventas brutas y $28.84 MXN de comisión estimada. Ambas ventas están `En revisión`, por lo que esta señal es comercialmente positiva pero todavía no es comisión confirmada ni atribución específica al Reel de Elara. El panel reporta además una incidencia de datos para los días 16 y 17 de agosto.
 
-El siguiente paso es reemplazar la etiqueta agregada por etiquetas separadas para cada nueva superficie de Facebook. El Reel de Elara y cualquier comentario aprobado deben usar identificadores distintos. No se considerarán conversiones ni comisiones confirmadas hasta conciliar los reportes de Mercado Libre, respetar la ventana de atribución de 24 horas y distinguir ventas brutas de ventas aprobadas. La evidencia está documentada en `Operations/Research/2026-08-19_MercadoLibre_Facebook_Afiliados_Observacion.md`.
+El siguiente paso es mantener etiquetas separadas por publicación y superficie. El Reel de Elara y cualquier comentario aprobado deben usar identificadores distintos. No se considerarán conversiones ni comisiones confirmadas hasta conciliar los reportes de Mercado Libre, respetar la ventana de atribución de 24 horas y distinguir ventas brutas de ventas aprobadas. La evidencia histórica está documentada en `Operations/Research/2026-08-19_MercadoLibre_Facebook_Afiliados_Observacion.md`; el corte manual reciente está en `Affiliate_Metrics_Snapshots.csv`.
 
 Para la ola del 18–30 quedó activo un piloto de **10 oportunidades**, sin modificar el P0 editorial. Cada publicación afiliada tiene un producto, una etiqueta y un link únicos. La identidad se registra en `Affiliate_Link_Ledger.csv` y cada corte de métricas se añade a `Affiliate_Metrics_Snapshots.csv`. Fernando confirmó que los diez productos/links fueron publicados o adjuntados en Facebook; las horas e IDs nativos individuales que no fueron capturados permanecen como deuda de conciliación, no como publicaciones pendientes.
 
@@ -75,3 +75,4 @@ Para la ola del 18–30 quedó activo un piloto de **10 oportunidades**, sin mod
 | 2026-08-19 | 1.2 | Se añade tracking por etiquetas nativas de Mercado Libre, ledger de enlaces y piloto de atribución para el Reel de Elara. | Manus AI (CGO) |
 | 2026-08-19 | 1.3 | Se define el piloto Facebook 18–30 con cuatro-seis publicaciones, etiquetas por post/producto/superficie y snapshots append-only. | Manus AI (CGO) |
 | 2026-08-20 | 1.4 | Se corrige el alcance a 10 oportunidades activas y se separa la activación comercial de la medición pendiente; se registra el Reel `2210896633022235` con producto nativo. | Manus AI (CGO) |
+| 2026-08-20 | 1.5 | Se incorpora el snapshot manual: 2 clics, 0 unidades y $0 de comisión en el periodo visible; AFF-07 concentra el único clic granular visible y el Reel queda sin inferencia por etiqueta no visible. | Manus AI (CGO) |
