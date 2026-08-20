@@ -260,3 +260,16 @@ El registro `Operations/Research/2026-08-20_P0_Asset_Association_Register.csv` c
 La programación 17–30 contiene 81 filas en la tabla de aliases; 43 permanecen en `Review`. La revisión de evidencia local encontró 33 assets con identidad verificable en `calendar_visual_review_20260816`, pero sin fila de inventario, y 10 sin evidencia local en esa carpeta. La identidad de asset verificada no equivale a asociación CNT: las 33 filas quedan listas para una decisión administrativa de inventario y las 10 requieren evidencia adicional de Drive/Meta o del usuario.
 
 La vista enriquecida está en `Operations/Research/2026-08-20_17_30_Alias_Evidence_Enriched.csv`. Hasta que se apruebe la normalización, cada publicación conserva su Meta ID, permalink, fecha y estado en el alias; `Content_Inventory.csv` no se modifica automáticamente.
+
+
+## 14. Capa staging de aliases de inventario — 2026-08-20
+
+Se creó `Operations/Research/2026-08-20_Inventory_Alias_Staging_17_30.csv` con 33 assets cuya identidad visual está verificada, pero cuya fila de inventario todavía no existe. La capa staging conserva Alias ID, publicación, Meta Post ID, permalink, fecha/hora, ruta de evidencia y SHA-256. Tiene `CNT_Creation_Allowed=No`, no modifica `Content_Inventory.csv` y no produce impacto de canon.
+
+La función de esta capa es separar tres conceptos que no deben mezclarse: identidad del archivo, asociación administrativa al inventario y creación editorial de un CNT. Solo los dos primeros pueden resolverse automáticamente; el tercero requiere aprobación y reconciliación.
+
+## 15. Casos que no aparecieron en la evidencia local inicial
+
+La búsqueda ampliada localizó archivos para los diez casos que inicialmente no aparecían en `calendar_visual_review_20260816`. `260508` tiene dos variantes y dos candidatos de inventario (`CNT-042` y `CNT-043`); los otros ocho tienen un archivo local, pero no una fila de inventario correspondiente. La tabla de opciones está en `Operations/Research/2026-08-20_10_Cases_Resolution_Options.csv`.
+
+La ruta recomendada es validar primero los dos filenames de `260508` contra sus candidatos existentes y, después, mantener los otros ocho como aliases staging de evidencia. No se debe crear CNT ni escoger inventario por personaje, similitud visual o nombre parcial.

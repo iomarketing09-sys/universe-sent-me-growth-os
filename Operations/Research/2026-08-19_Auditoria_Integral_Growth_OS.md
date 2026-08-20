@@ -116,3 +116,10 @@ El estado correcto ya no es “sin tabla de aliases” ni “sin vista de consol
 Los cinco assets P0 fueron revisados contra el inventario y la evidencia local. `260633` quedó asociado a `CNT-062` y `260642` a `CNT-064`. `2608028`, `2608034- Elara` y `2608027.jpeg` conservan Meta Post ID y evidencia visual local, pero permanecen como excepciones sin fila en `Content_Inventory`; no se crearon CNT.
 
 En la programación 17–30 se revisaron 81 filas: 43 permanecen en `Review`. De esas, 33 tienen archivo local que confirma la identidad del asset, aunque aún falta la asociación administrativa al inventario; 10 no tienen evidencia local y requieren una consulta posterior a Drive/Meta o confirmación humana. Este resultado sustituye la cifra genérica de aliases sin clasificar y no debe interpretarse como autorización para crear CNT.
+
+
+## Actualización de staging de inventario y diez casos ampliados — 2026-08-20
+
+Se creó `Operations/Research/2026-08-20_Inventory_Alias_Staging_17_30.csv` con 33 assets cuya identidad visual está confirmada por archivo local. La capa conserva evidencia y hashes, pero no crea CNT ni modifica `Content_Inventory.csv`.
+
+Los diez casos que no aparecieron en la carpeta visual principal fueron buscados en rutas locales adicionales. El resultado fue: dos filas relacionadas con `260508` tienen filename exacto y candidatos de inventario existentes; ocho assets tienen evidencia local pero no fila de inventario. No quedó ningún caso sin archivo después de la búsqueda ampliada. El archivo `2026-08-20_10_Cases_Resolution_Options.csv` documenta las rutas seguras de resolución y sus riesgos.
