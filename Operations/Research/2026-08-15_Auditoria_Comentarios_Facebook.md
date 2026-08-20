@@ -377,3 +377,15 @@ Fernando aprobó únicamente la respuesta para el comentario `122151374823072582
 > “Sí… pero ya que lo hicimos al revés, vamos a fingir que era parte del concepto. 😂👀”
 
 La respuesta acepta el error visual y lo convierte en parte del chiste, sin adoptar un tono defensivo. El comentario `122151374823072582_2572609183253364` (“Ay por Dios es al revés”) queda sin respuesta por ahora. Ninguna de las dos respuestas ha sido publicada.
+
+
+## 22. Publicación de las dos respuestas sobre el remate visual — 2026-08-20
+
+Fernando indicó responder ambos comentarios. Se publicaron y verificaron estas respuestas independientes:
+
+| Comentario original | Respuesta publicada | ID Meta |
+|---|---|---|
+| “Estás alrevesado” | “Sí… pero ya que lo hicimos al revés, vamos a fingir que era parte del concepto. 😂👀” | `122151374823072582_904578688978118` |
+| “Ay por Dios es al revés” | “¡Exacto! El remate venía con giro incluido. 😂🫠” | `122151374823072582_942838658075352` |
+
+Meta confirmó ambas respuestas a las 01:47:28 y 01:47:33 UTC. Las dos filas pasan a `Respondido`; no se realizaron otras acciones de moderación.
