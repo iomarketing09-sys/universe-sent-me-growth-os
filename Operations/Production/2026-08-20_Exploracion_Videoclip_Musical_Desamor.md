@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-20
 
-**Versión:** 2.7
+**Versión:** 2.8
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -357,7 +357,7 @@ La publicación debe conservar el misterio del montaje. El copy no declara que E
 | Instagram Reels | Publicado con el copy completo. | `#UniverseSentMe #EvanUSM #ElaraUSM #MomentosUSM #Sussie4 #LeonLarregui` | Publicación verificada: ID `18209594575357100`; [permalink](https://www.instagram.com/reel/DcR29-aRRXN/); 2026-08-20 17:41:41 CDT. |
 | Facebook Reels | Publicado con producto nativo afiliado. | `#UniverseSentMe #EvanUSM #ElaraUSM` | Verificado: Reel `2815726225473165`, Post `122153750763072582`, [permalink](https://www.facebook.com/reel/2815726225473165/); 2026-08-20 18:02:04 CDT. |
 | TikTok | Publicado con el copy completo. | `#UniverseSentMe #EvanUSM #ElaraUSM #Sussie4 #LeonLarregui` | Verificado: video `7676249640928414997`, [permalink](https://www.tiktok.com/@universe.sent.me/video/7676249640928414997); la fuente devuelve `2026-08-20T22:49:14` sin zona horaria declarada. |
-| YouTube Shorts | Publicado con el título y descripción definidos. | `#UniverseSentMe #EvanUSM #ElaraUSM` en descripción | Fernando confirmó publicación; ID/permalink pendiente de conciliación. |
+| YouTube Shorts | Publicado con el título y descripción definidos. | `#UniverseSentMe #EvanUSM #ElaraUSM` en descripción | Verificado por Fernando: Short `nb6om1LhOMc`, [permalink](https://youtube.com/shorts/nb6om1LhOMc). |
 
 ### Arquitectura de hashtags
 
@@ -389,7 +389,7 @@ El copy principal obtuvo **8.70/10 — PASS** en la rúbrica de `usm-content-pro
 
 ### Actualizaciones requeridas después de publicar
 
-La cascada completa ya fue confirmada por Fernando y el registro maestro incorporó su estado. Instagram, Facebook y TikTok tienen IDs/permalinks verificables; permanecen pendientes el ID/permalink de YouTube y la URL individual del producto junto con su ID de adjunción nativo. Las ventanas de 24 h y 72 h se medirán desde las horas nativas verificables; mientras tanto, no se atribuyen resultados a la familia musical hasta acumular una cohorte de 5–10 piezas bajo `EXP-202608-MUSICVIDEO-01`.
+La cascada completa ya fue confirmada por Fernando y el registro maestro incorporó sus cuatro IDs/permalinks. Permanecen pendientes la URL individual del producto y su ID de adjunción nativo. Las ventanas de 24 h y 72 h se medirán desde las horas nativas verificables; mientras tanto, no se atribuyen resultados a la familia musical hasta acumular una cohorte de 5–10 piezas bajo `EXP-202608-MUSICVIDEO-01`.
 
 ### Contingencia
 
