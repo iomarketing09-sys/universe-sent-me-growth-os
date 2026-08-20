@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-20
 
-**Versión:** 2.1
+**Versión:** 2.2
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -254,7 +254,7 @@ La evaluación del primer render separará cuatro preguntas: continuidad de pers
 
 ### Evaluación del primer render — Evan conduciendo
 
-El primer render `Evan_driving_car_in_rain_202608201449.mp4` costó **10 puntos**. Mantiene la identidad de Evan, el estilo 2D pictórico, la lluvia nocturna y una aparición breve de Elara como recuerdo tras el cristal, sin convertirla en pasajera real. El auto, sin embargo, se resuelve como hatchback contemporáneo, por lo que no conserva la silueta que el storyboard sugiere.
+El primer render `Evan_driving_car_in_rain_202608201449.mp4` costó **15 puntos**. Mantiene la identidad de Evan, el estilo 2D pictórico, la lluvia nocturna y una aparición breve de Elara como recuerdo tras el cristal, sin convertirla en pasajera real. El auto, sin embargo, se resuelve como hatchback contemporáneo, por lo que no conserva la silueta que el storyboard sugiere.
 
 | Elemento | Veredicto | Decisión de edición |
 |---|---|---|
@@ -274,6 +274,33 @@ Evan drives one unbranded 1960s-inspired two-door classic pony coupe: long hood,
 ```
 
 La regeneración recomendada se limita a planos de carretera/exterior. El primer clip no se desecha: sus planos de Evan y la memoria de Elara permanecen como material válido para Edits.
+
+### Segundo render y decisión de borrador — 2026-08-20
+
+El segundo render `Evan_driving_car_in_rain_202608201508.mp4` también costó **15 puntos** y resuelve la silueta correcta: coupé clásico de dos puertas, lluvia nocturna, Evan consistente y Elara como recuerdo breve detrás del cristal. **Estado:** `USE_FOR_DRAFT`.
+
+La producción se detiene temporalmente: con los dos renders de Evan y los assets existentes de Elara hay material suficiente para editar un borrador de ritmo, identidad y atmósfera. No se genera todavía la escena intensa final; el montaje debe mostrar qué hueco narrativo real queda después de ver el conjunto.
+
+### Edits — borrador 0.1 (Remote Control 0:54–1:24)
+
+El borrador no busca fingir una pieza terminada de 30 segundos. Sus primeros 20 segundos prueban el lenguaje de montaje; los últimos 10 segundos se marcan como espacio de clímax pendiente para decidir posteriormente si se necesita un casi beso, una discusión silenciosa u otra escena nueva.
+
+| Audio | Duración | Fuente | Uso visual |
+|---|---:|---|---|
+| 0:54–0:56 | 2 s | Render Evan 2, 0:00–0:02 | Coupé clásico avanza bajo lluvia: apertura y atmósfera. |
+| 0:56–0:59 | 3 s | Asset Elara con audífonos / Wilfred | Elara camina aislada; Wilfred habla detrás, sin comedia explícita. |
+| 0:59–1:01 | 2 s | Render Evan 2, 0:02–0:04 | Evan al volante; luz azul/ámbar en rostro. |
+| 1:01–1:03 | 2 s | Asset Elara introspectiva de tráiler | Close-up o push-in lento de Elara frente al fuego, como memoria emocional. |
+| 1:03–1:05 | 2 s | Render Evan 2, 0:04–0:06 | Ojos de Evan en retrovisor. |
+| 1:05–1:07 | 2 s | Asset Elara con audífonos / Wilfred | Segundo corte del mismo asset, reencuadrado distinto, solo si no se percibe repetición. |
+| 1:07–1:09 | 2 s | Render Evan 2, 0:06–0:08 | Elara reflejada tras la ventana; usar como puente subjetivo. |
+| 1:09–1:12 | 3 s | Asset Elara introspectiva de tráiler | Pausa lenta: Elara sola, sin insertar objetos nuevos. |
+| 1:12–1:14 | 2 s | Render Evan 2, 0:08–0:10 | Coupé se aleja; prepara el bloque intenso. |
+| 1:14–1:24 | 10 s | Placeholder, sin generación aún | Mantener una tarjeta de trabajo o una repetición provisional marcada; aquí se definirá el clímax. |
+
+Las firmas visuales detectadas en los extremos inferiores del render y el texto menor en tablero se corrigen en Edits con reencuadre leve (aprox. 105–110%) o máscara de degradado oscuro. No se debe aplicar un blur amplio que elimine la lluvia o la expresión de Evan.
+
+**Criterio de decisión tras el borrador:** si el bloque 0:54–1:14 ya sostiene la canción y la transición emocional, producir solo una escena de 5–7 segundos para el clímax. Si el montaje se siente fragmentado o repetitivo antes del clímax, producir primero una transición de Elara antes de pedir cualquier plano de cercanía entre ambos.
 
 ### Contingencia
 
