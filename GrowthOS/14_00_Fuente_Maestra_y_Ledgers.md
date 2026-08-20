@@ -280,3 +280,8 @@ La ruta recomendada es validar primero los dos filenames de `260508` contra sus 
 Se validaron dos aliases de `260508` por filename exacto y evidencia local independiente. `ALIAS-0036` se mapea a `CNT-042` (`260508 - Universe.jpg`) y `ALIAS-0047` se mapea a `CNT-043` (`Universe - Existencial 260508.png`). Ambos pasan a `Confidence=High` y quedan cerrados para este corte; no se creó CNT.
 
 Las ocho filas restantes con archivo local pero sin fila de inventario se prepararon en `Operations/Research/2026-08-20_NonCNT_Inventory_Alias_Approval.csv`. Todas están en `Pending_Admin_Approval`, con `Proposed_Record_Type=Inventory_Alias_NonCNT`, `CNT_Creation_Allowed=No` y `Canon_Impact=None`. La aprobación solicitada solo autoriza normalizar la relación administrativa del alias; no autoriza crear CNT ni modificar canon.
+
+
+## 17. Aprobación administrativa de aliases no-CNT — 2026-08-20
+
+Fernando aprobó las ocho filas de `Operations/Research/2026-08-20_NonCNT_Inventory_Alias_Approval.csv`. Su estado pasa a `Approved_Admin`; la aprobación solo autoriza conservar la relación administrativa del alias con su publicación y evidencia local. Se mantienen `CNT_Creation_Allowed=No` y `Canon_Impact=None`. `Content_Inventory.csv` no se modifica en este paso.

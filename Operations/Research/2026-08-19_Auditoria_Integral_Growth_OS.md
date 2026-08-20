@@ -130,3 +130,8 @@ Los diez casos que no aparecieron en la carpeta visual principal fueron buscados
 Se validaron los matches `ALIAS-0036 → CNT-042` y `ALIAS-0047 → CNT-043` mediante filename exacto, asset ref y hash de evidencia local. Ambos aliases pasan a alta confianza sin crear CNT.
 
 Las ocho identidades restantes con archivo local se prepararon para aprobación administrativa en `2026-08-20_NonCNT_Inventory_Alias_Approval.csv`. Permanecen separadas del inventario maestro, no crean CNT y no tienen impacto de canon. La aprobación requerida es únicamente administrativa: confirmar que el alias puede normalizarse como relación no-CNT.
+
+
+## Cierre administrativo del lote no-CNT — 2026-08-20
+
+Las ocho filas no-CNT fueron aprobadas administrativamente por Fernando. La aprobación se limita a normalizar la relación alias-publicación-evidencia; no crea CNT, no modifica `Content_Inventory.csv` y no altera canon. El archivo conserva `Approval_Status=Approved_Admin` y las guardas de creación.

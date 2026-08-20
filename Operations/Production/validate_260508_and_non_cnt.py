@@ -15,8 +15,8 @@ for aid, inv in expected.items():
         raise SystemExit(f'{aid} mapping invalid')
 if len(noncnt) != 8:
     raise SystemExit(f'noncnt_rows={len(noncnt)} expected=8')
-if any(r.get('Approval_Status') != 'Pending_Admin_Approval' for r in noncnt):
-    raise SystemExit('a non-CNT row is not pending approval')
+if any(r.get('Approval_Status') != 'Approved_Admin' for r in noncnt):
+    raise SystemExit('a non-CNT row is not approved administratively')
 if any(r.get('CNT_Creation_Allowed') != 'No' or r.get('Canon_Impact') != 'None' for r in noncnt):
     raise SystemExit('non-CNT guard failed')
-print('validation=PASS aliases_260508=2 noncnt_pending=8 cnt_creation=NONE canon_impact=NONE')
+print('validation=PASS aliases_260508=2 noncnt_approved=8 cnt_creation=NONE canon_impact=NONE')
