@@ -41,7 +41,7 @@ No es un lote de ideas sueltas: son **cinco pruebas de la misma familia**. Se ma
 | Pieza | Situación visible | Transformación y payoff visual | Copy de apoyo, no explicación |
 |---|---|---|---|
 | 01 | Una mano envía un mensaje y se queda mirando el doble check. | El reflejo de la pantalla se transforma en Universe; Universe cierra el chat con una expresión seca y se aleja. | `yo después de mandar “no pasa nada”` |
-| 02 | Notificación bancaria: “movimiento inusual”. | La tarjeta y el escritorio se transforman; Universe mira una caja absurda de compras y tapa la notificación. | `el movimiento inusual era yo` — propuesta `DRAFT_NOT_AUTHORIZED` en `2026-08-20_Propuesta_Pieza02_MovimientoInusual_Universe.md`. |
+| 02 | Notificación bancaria: “movimiento inusual”. | La tarjeta y el escritorio se transforman; Universe mira una caja absurda de compras y tapa la notificación. | `el movimiento inusual era yo` — propuesta archivada por similitud con P01; no generada ni publicada. Una familia de videoclip musical se explora por separado. |
 | 03 | Alarma a las 6:00; una mano la pospone. | La habitación real se vuelve Nubealis; Universe vuelve a posponerla con un gesto solemne. | `yo negociando con la versión de mí que sí tiene metas` |
 | 04 | Foto real de un bosque quieto y una silueta a lo lejos. | La silueta se vuelve Universe, que detecta una notificación y decide no acercarse. | `cuando tu paz interior sí está disponible, pero tú no` |
 | 05 | Un plato del gato aparece lleno cinco minutos después de haber servido comida. | El plato se transforma en escena USM; Universe mira al gato como si fuera una auditoría cósmica. | `el comité de quejas ya recibió tu reporte` |

@@ -2,13 +2,13 @@
 
 **Propósito:** Proponer la segunda pieza controlada de `REAL → UNIVERSE / REACCIÓN`, cambiando la situación humana de P01 por compra impulsiva y preservando a Universe como anchor character, el payoff silencioso y la transformación real → mundo USM.
 
-**Estado:** Draft — requiere aprobación de Fernando antes de generar keyframes o gastar créditos de Flow.
+**Estado:** Archived — no aprobada por Fernando; la similitud percibida con P01 impide llevarla a storyboard o generación.
 
 **Fecha de creación:** 2026-08-20
 
 **Última actualización:** 2026-08-20
 
-**Versión:** 1.0
+**Versión:** 1.1
 
 **Autor:** Manus AI (CGO)
 
@@ -26,6 +26,12 @@
 | Hypothesis_ID | `HB-REEL-01` |
 | Personaje ancla | Universe: gato blanco pequeño, gafas redondas doradas finas; nunca humano. |
 | Estado | `DRAFT_NOT_AUTHORIZED` |
+
+## Decisión editorial — 2026-08-20
+
+Fernando rechazó esta propuesta antes de producción por sentirse demasiado cercana a P01: conserva teléfono, culpa posterior, transición violeta y la misma estructura de reacción seca. No se generaron keyframes, clips ni assets; por tanto, no hubo gasto de créditos ni publicación.
+
+La siguiente exploración se mueve a una familia independiente de **videoclip musical / microhistoria emocional**, inspirada en el atractivo observado de Fantasma caminando con gatos y de Elara + Evan en el bosque. Esta familia no se compara directamente contra `EXP-202608-REALUNIVERSE-01` hasta que se defina su hipótesis propia, canción autorizada y relación canónica de sus personajes.
 
 ## Variable que cambia y controles que se preservan
 
