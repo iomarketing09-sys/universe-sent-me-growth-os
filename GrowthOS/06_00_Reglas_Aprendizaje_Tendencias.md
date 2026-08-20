@@ -3,8 +3,8 @@
 **Propósito:** Definir los criterios de decisión para la programación, reutilización, análisis y creación de contenido en Universe Sent Me.
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
-**Última actualización:** 2026-08-19
-**Versión:** 3.7
+**Última actualización:** 2026-08-20
+**Versión:** 3.8
 **Autor:** Manus AI (CGO); Sección 6 añadida por Claude
 **Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`
 
@@ -211,3 +211,74 @@ La primera pieza de `REAL → UNIVERSE / REACCIÓN` confirmó que la continuidad
 El registro de producción debe incorporar `Generation_Model`, `Generation_Cost_Points`, `Reference_Mode` (`inicio_unico` o `inicio_final`), `Clip_Sequence` y `Keyframe_IDs`. La decisión se documenta antes de generar; una iteración se clasifica por fallo de continuidad, personaje, composición o payoff, no solo por “no me gustó”.
 
 > **Caso P01:** Omniflash resolvió el Clip 1 con un frame inicial; Veo 3.1 Lite resolvió Clips 2 y 3 con referencias de inicio/final. El Clip 3 fue aprobado para edición con un recorte recomendado de 0:01–0:05. La firma visual se añade una vez en postproducción y no dentro de las referencias de generación.
+
+---
+
+## 16. Lineamientos prácticos de copy para P1 — 2026-08-20
+
+### 16.1 Principio central
+
+Los datos recientes no justifican un caption universal ni un horario ganador. Sí respaldan una dirección: el copy debe **hacer comprensible el remate en una lectura, añadir una segunda capa de interpretación y facilitar que la pieza se comparta**. Los mejores ejemplos observados —CNT-034 y 2608029— combinan un gancho inmediato, una reinterpretación clara y una emoción que la audiencia puede apropiarse.
+
+> **Regla P1:** el copy no debe explicar el meme; debe entregar el giro que hace que la imagen sea compartible.
+
+### 16.2 Estructuras de copy prioritarias
+
+| Estructura | Uso | Fórmula práctica | Ejemplo de función |
+|---|---|---|---|
+| `gancho + aclaración inesperada` | Relatable, absurdo y situaciones cotidianas | Expresión coloquial + paréntesis o segunda línea que cambia la lectura | “Quiero ir a lokiar (poner una manta en el pasto para mirar la luna y las estrellas)” |
+| `halago o deseo + reacción` | Parejas, dúos y humor romántico/atrevido | Frase directa + reacción visual del personaje | “Te mereces unos besos…”, cuando el segundo panel muestra la reacción |
+| `situación reconocible + remate universal` | Humor cotidiano y emocional | Escena que cualquiera entiende + frase que pueda enviarse a otra persona | Priorizar identificación sobre explicación de lore |
+| `personaje + estado emocional deseable` | Piezas de mundo y personajes | Personaje reconocible en una pose que comunica descanso, caos, ternura o resignación | Wilfred recostado, sin diálogo adicional obligatorio |
+| `doble sentido inmediato` | Humor ácido o sexual sugerente | Doble lectura clara en una sola exposición, sin depender de contexto externo | Usar cuando el remate se entiende sin explicación |
+
+### 16.3 Reglas de redacción
+
+1. **Escribir para una lectura rápida.** El texto principal debe poder entenderse sin abrir comentarios ni conocer el canon. Si necesita explicación, la explicación debe formar parte del remate visual, no convertirse en un caption largo.
+2. **Preferir una idea por caption.** No acumular contexto, hashtags, CTA y chiste en el mismo bloque. El copy debe reforzar la imagen, no competir con ella.
+3. **Usar el giro antes que la descripción.** En lugar de describir lo que aparece en la imagen, introducir la reinterpretación, contradicción o deseo que hace gracioso el contenido.
+4. **Escribir para compartir.** Preguntarse si el usuario puede enviar la pieza a alguien con un “esto eres tú” implícito. Las piezas de P1 deben buscar compartibilidad, no solo reacción rápida.
+5. **Mantener el tono UniverseSentMe.** El copy puede ser coloquial, absurdo, romántico, ácido o sugerente, pero debe conservar complicidad y evitar sentirse como una frase genérica de community manager.
+6. **No forzar personajes.** El nombre de un personaje solo aparece si añade humor, contexto o identidad. La voz de la marca también puede construirse con ritmo, remate y complicidad.
+
+### 16.4 Caption mínimo, caption conversacional y CTA
+
+P1 debe probar tres tratamientos, no imponer uno solo:
+
+| Tratamiento | Cuándo usarlo | Formato |
+|---|---|---|
+| `caption_minimo` | Imagen con remate autosuficiente y potencial emocional/visual alto | 1–3 emojis + kit de hashtags aprobado |
+| `caption_refuerzo` | Imagen cuyo texto necesita una pequeña ampliación | Una frase corta que añade el giro, sin repetir el texto de la imagen |
+| `caption_conversacional` | Comentario, contexto narrativo o pieza diseñada para provocar identificación | Una frase breve + pregunta o invitación natural; usar con moderación |
+
+El caption mínimo observado en 2608028 no debe convertirse en regla universal; debe mantenerse como una celda experimental. Cada publicación de P1 deberá registrar su tratamiento para poder comparar `caption_minimo`, `caption_refuerzo` y `caption_conversacional`.
+
+### 16.5 Emojis y hashtags
+
+Los emojis deben funcionar como tono o remate, no como sustituto de una idea confusa. La regla operativa de P1 es probar entre **0 y 3 emojis**, colocados al inicio o al final según el ritmo de la frase. No llenar el caption de emojis cuando la imagen ya contiene un remate visual fuerte.
+
+Los hashtags deben seguir el `10_00_Kit_de_Hashtags_USM.md`. En Facebook son apoyo de clasificación y marca, no la palanca principal del alcance; el copy y la compartibilidad tienen prioridad. En Instagram se mantiene la mezcla oficial de hashtags de marca, personaje, nicho y formato cuando corresponda.
+
+### 16.6 Control de calidad antes de aprobar un copy
+
+Antes de enviar un copy a programación, validar:
+
+| Pregunta | Criterio de aprobación |
+|---|---|
+| ¿Se entiende el remate en una lectura? | Sí, sin explicación externa |
+| ¿El texto añade una capa o solo repite la imagen? | Añade una capa |
+| ¿Puede compartirse con otra persona? | Tiene identificación o deseo reconocible |
+| ¿Suena a UniverseSentMe? | Tiene complicidad, rareza o ritmo propio |
+| ¿El personaje está justificado? | Aporta; no aparece por obligación |
+| ¿La longitud compite con la imagen? | No; el caption es proporcional al asset |
+| ¿El tratamiento está registrado? | `caption_minimo`, `caption_refuerzo` o `caption_conversacional` |
+
+### 16.7 Diseño de prueba para P1
+
+La siguiente ola debe contener celdas comparables, no solo una colección de frases. Como mínimo, etiquetar cada publicación con `Hook_Type`, `Caption_Treatment`, `Character_Presence`, `Narrative_Structure`, `Humor_Function` y `Shareability_Hypothesis`.
+
+Se recomienda reservar una parte de P1 para replicar la estructura de **gancho coloquial + aclaración inesperada**, otra para **personaje en estado emocional deseable** y otra para controles de copy habitual. Distribuir estas estructuras en más de un horario evita atribuir el resultado al reloj cuando puede estar causado por el contenido.
+
+### 16.8 Qué no canonizar todavía
+
+No convertir en regla cerrada que los captions de un emoji, los posts de las 19:00, el humor sexual o los fondos fantásticos sean ganadores por sí mismos. Las señales actuales son hipótesis respaldadas por outliers y cohortes pequeñas. El criterio de cierre será la repetición del patrón en al menos tres casos codificados y comparables.
