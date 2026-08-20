@@ -345,3 +345,19 @@ Se publicó la respuesta aprobada al comentario `122151374289072582_136227462277
 > “Ya casi, ya casi… no me desconcentres. 😭👀🫩”
 
 Meta devolvió el ID `122151374289072582_1753493165792345` y verificó la publicación a las 23:17:38 UTC. La respuesta queda registrada como `Respondido`; no se realizaron otras acciones de moderación.
+
+
+## 19. Revisión de comentarios sin responder — 19–20 de agosto
+
+El corte posterior a la última revisión encontró dos comentarios cualitativos pendientes en la publicación `122151374823072582`:
+
+| Comentario_ID | Comentario | Clasificación | Estado |
+|---|---|---|---|
+| `122151374823072582_899916076126399` | “Estás alrevesado” | Corrección visual coloquial | Pendiente de respuesta |
+| `122151374823072582_2572609183253364` | “Ay por Dios es al revés” | Confirmación de la misma observación | Pendiente de respuesta |
+
+Los dos comentarios parecen referirse a que la imagen está invertida o presentada al revés. Conviene tratarlos como un mismo hilo y revisar primero el asset antes de responder. No hay señales de abuso o moderación.
+
+También aparecieron reacciones positivas con emojis en otra publicación; no requieren respuesta. El comentario “8” y un comentario vacío ya tenían respuestas posteriores de la página, por lo que no se clasifican como pendientes.
+
+No se publicaron respuestas durante este corte.
