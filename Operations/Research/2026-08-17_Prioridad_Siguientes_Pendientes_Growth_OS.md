@@ -4,7 +4,7 @@ purpose: "Ordenar el trabajo posterior al análisis histórico y a la activació
 status: Active
 created: 2026-08-17
 updated: 2026-08-20
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-19_Auditoria_Integral_Growth_OS.md"
@@ -14,6 +14,7 @@ related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
   - "Operations/Research/2026-08-17_Analisis_Julio_Taxonomia_y_Pendientes_Growth_OS.md"
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
+  - "Operations/Research/2026-08-20_Alias_Impact_June.md"
 organization: "Operations/Research"
 ---
 
@@ -33,7 +34,7 @@ La prioridad actual no es abrir más frentes creativos, sino medir correctamente
 | P1 | Afiliados | Capturar snapshots por etiqueta para AFF-01–AFF-10, el Reel `usmfb20260819p01` y la Capa 2 `usmwin2608029w0820` / `usmwin260539ek0820` | Acceso manual a Central de Afiliados y paneles de 7/15/30 días | Ledger con cortes visibles, clics, unidades, ventas y comisión; `Not_Visible_No_Inference` cuando una etiqueta no aparezca |
 | P1 | Reels | Completar la instrumentación del Reel `2210896633022235`: vistas, watch time, retención y, si es posible, shares/video insights compatibles | Campos Meta/Windsor compatibles y ledger separado por plataforma | Una fila reproducible con métricas de video, fuente, corte temporal y separación de afiliación |
 | P1 | Fuente maestra | Crear alias `Asset_Ref ↔ filename operativo ↔ CNT/id ↔ Meta Post ID` y enlazar los cinco assets P0 al inventario o documentar su excepción | Reconciliación sin inventar CNT | La programación activa puede cruzarse con el inventario sin falsos huérfanos ni relaciones creadas por filename por sí solo |
-| P1 | Histórico | Consolidar los cinco Meta IDs duplicados de junio antes de usar agregados o rankings acumulados | Comparación de fuentes y preservación de evidencia múltiple | Una publicación lógica por Meta ID, con fuentes y métricas no duplicadas |
+| Cerrado | Histórico | Consolidar los cinco Meta IDs duplicados de junio antes de usar agregados o rankings acumulados | Comparación de fuentes y preservación de evidencia múltiple | Una publicación lógica por Meta ID, con fuentes y métricas no duplicadas; cierre documentado en `2026-08-20_Alias_Impact_June.md` |
 | P2 | Histórico | Ampliar el análisis individual de julio solo con una pregunta concreta de rendimiento, empezando por shares, comentarios y taxonomía visual | Más reconciliación de assets y prioridad editorial | Nuevo lote con asset, Meta ID, métricas lifetime, taxonomía y pregunta de aprendizaje explícita |
 | P2 | Multicanal | Convertir los cortes existentes de Instagram, TikTok y YouTube en ledgers append-only separados | Normalización de columnas por plataforma | Una fila por publicación y plataforma, sin mezclar audiencia, vistas o watch time entre canales |
 | P2 | Comunidad | Mantener el monitoreo incremental de comentarios bajo aprobación humana; queda pendiente que Fernando publique manualmente la respuesta en el post externo de Skocaj Soledad | Acceso del perfil/página al post de tercero | Deltas revisados, respuestas aprobadas registradas y ninguna escritura no autorizada |
@@ -67,6 +68,6 @@ La deuda de IDs nativos individuales de los productos afiliados adjuntados manua
 
 ## Secuencia CGO recomendada
 
-Primero deben actualizarse los cortes de la cohorte 17–30 y el tracking afiliado porque son operaciones activas con valor de aprendizaje inmediato. Después conviene completar la extracción de video del Reel y corregir la documentación histórica de Reels. En tercer lugar debe construirse la tabla de alias y consolidarse la duplicación de junio; esa normalización hará más confiables los análisis de julio y la fuente maestra. Solo después conviene abrir nuevas piezas de Reel, ampliar la Capa 2 o revisar la Biblia con Claude.
+Primero deben actualizarse los cortes de la cohorte 17–30 y el tracking afiliado porque son operaciones activas con valor de aprendizaje inmediato. Después conviene completar la extracción de video del Reel y corregir la documentación histórica de Reels. La tabla de aliases y la consolidación de duplicados de junio ya quedaron cerradas; ahora solo queda decidir si se abre una revisión histórica específica de los registros sin CNT o si se conserva esa cola como investigación no bloqueante. Solo después conviene abrir nuevas piezas de Reel, ampliar la Capa 2 o revisar la Biblia con Claude.
 
 No se debe mezclar lifetime histórico con 24/72 horas, convertir un outlier en regla, reactivar el scheduler de Instagram ni modificar el canon sin evidencia comparable y aprobación explícita.
