@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-20
 
-**Versión:** 1.1
+**Versión:** 1.2
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -71,6 +71,8 @@ La historia no muestra una ruptura ni un beso. Muestra: Evan y Elara manejando d
 Fernando seleccionó **“Remote Control” de Sussie 4 con León Larregui** como candidata primaria de la exploración. La canción propone una relación herida por control a distancia, deseo residual y un gesto final de soltar; no corresponde a una reconciliación romántica simple. Su lenguaje electrónico y su historial dentro de la cultura de canales de video mexicanos la hacen compatible con un tratamiento nostálgico tipo videoclip, no con una narración explicativa. [4] [5]
 
 La microhistoria recomendada es: dos personajes conservan una rutina íntima —manejar al amanecer, cocinar en una cocina cálida, caminar entre árboles— pero el montaje revela que no habitan el mismo presente. En el golpe musical comparten un momento de cercanía coreografiada, sin beso ni declaración; el corte final los devuelve a trayectorias diferentes. La pieza comunica “todavía se entienden, pero ya no pueden decidir por el otro”.
+
+Fernando seleccionó el rango **0:54–1:24** como guía sonora: 30 segundos. Ese rango se usa para diseñar el ritmo de edición, no se introduce en Flow ni se copia como audio a archivos de producción. La licencia y disponibilidad deben resolverse de forma nativa por plataforma antes de publicar.
 
 | Variable pendiente | Decisión necesaria antes de Phase 2 |
 |---|---|
