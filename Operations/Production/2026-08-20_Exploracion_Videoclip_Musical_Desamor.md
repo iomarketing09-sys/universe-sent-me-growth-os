@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-20
 
-**Versión:** 2.3
+**Versión:** 2.4
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -317,6 +317,20 @@ El primer corte `VID_20260820_142918_619_bsl7970191468953177150.mp4` valida la d
 La escena adicional con mejor relación de valor narrativo/coste es una **casi conexión a través del vidrio**: Evan dentro del coupé, Elara al otro lado de la ventana mojada; ambos levantan una mano hacia el mismo punto, pero sus palmas no se tocan. La escena no necesita beso, abrazo, diálogo ni magia literal. Resume el título `Remote Control` como cercanía imposible y puede sostener el bloque final de 5–7 segundos. Su producción queda `CANDIDATE_PENDING_FERNANDO_APPROVAL`.
 
 Antes de producirla, el siguiente corte debe aplicar los tres ajustes de edición: recorte de marcas, unificación leve de color y zoom digital contenido en el retrovisor de Evan. Después se valida si la escena de vidrio es la única generación adicional necesaria.
+
+### Corte extendido — veredicto de publicación — 2026-08-20
+
+El corte `Evan+Elara-RemoteControl_Sussie4.mp4` amplía la pieza a **30 segundos** y resuelve el clímax sin generar la escena de casi conexión. La superposición final de Elara sobre la carretera funciona como cierre poético: convierte la distancia en presencia recordada y evita sobreexplicar la relación. **Estado:** `READY_TO_PUBLISH`.
+
+| Criterio | Veredicto |
+|---|---|
+| Duración y ritmo | `PASS` — los cortes siguen los cambios de intensidad sin sentirse extendidos. |
+| Arco Evan / Elara | `PASS` — soledad, conexión sugerida y distancia final se leen sin diálogo. |
+| Clímax | `PASS` — no hace falta casi beso, discusión ni otro asset. |
+| Continuidad visual | `PASS` — el coche, personajes y alternancia de paletas sostienen el realismo mágico de la pieza. |
+| Texto residual en puerta del auto | `OPTIONAL_EDIT` — pequeño texto generado cerca de 0:13; corregir solo si puede ocultarse con un crop leve sin dañar el encuadre. No retrasa publicación. |
+
+La escena de manos a través del vidrio queda `NOT_NEEDED_FOR_THIS_CUT` y se conserva como idea reutilizable, no como pendiente de producción. Antes de publicar, exportar el máster sin música incrustada y seleccionar `Remote Control` nativamente en cada una de las cuatro plataformas verificadas.
 
 ### Contingencia
 
