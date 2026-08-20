@@ -4,7 +4,7 @@ purpose: "Definir el blueprint de producción, la instrumentación y los control
 status: Active
 created: 2026-08-19
 updated: 2026-08-19
-version: "1.7"
+version: "1.8"
 author: "Manus AI (CGO), aprobado por Fernando"
 related_documents:
   - "2026-08-19_Diseno_Experimento_Reels_v2.md"
@@ -364,3 +364,15 @@ Instagram ya no debe recibir otra carga de este asset. Facebook continúa como f
 El Reel se publicó mediante Graph API reutilizando un único upload. La llamada de verificación posterior mostró un error no crítico por solicitar el campo no disponible `permalink`; la comprobación separada de `status` y `/{page_id}/video_reels` confirmó que el video está `ready` y publicado. No se creó un segundo Reel.
 
 **Siguiente acción de Fernando en Facebook:** abrir este Reel y adjuntar manualmente el producto **Soporte Para Celular Gato Escritorio Oficina Gatito Adorable** con un **link y etiqueta de afiliado nuevos**. No añadir el link como comentario/copy a menos que se adopte esa superficie de forma explícita en el ledger. Después de adjuntarlo, compartir el ID o una captura de confirmación para registrar `Native_Product_Attached_At`, la etiqueta y el producto sin atribución inventada.
+
+### Cascada TikTok y YouTube Shorts — misma versión editorial
+
+Fernando indicó que subirá el asset final a TikTok y YouTube Shorts con el **mismo copy de Instagram**, sin enlace de afiliado ni modificación de hashtags:
+
+```text
+yo después de mandar “no pasa nada” 🟣
+
+#UniverseSentMe #UniverseUSM #MemesUSM #CuandoLeExplicas
+```
+
+La carga de estas dos plataformas queda en estado `PENDIENTE_DE_IDS_NATIVOS`. Al completar cada publicación, se deben conservar su URL, ID nativo y hora local; no se marca la cascada como completa por una declaración de intención.
