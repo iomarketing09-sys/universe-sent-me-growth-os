@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-21
 
-**Versión:** 3.6
+**Versión:** 3.7
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -600,6 +600,26 @@ Fernando seleccionó la prueba A de Maeve y pidió incrementar su dramatismo cin
 | Límite | Se preservan pose, encuadre, ropa, ausencia de terceros y sensualidad no explícita. |
 
 El siguiente paso queda condicionado a la revisión de Fernando: aprobar esta dirección de luz o pedir un ajuste puntual antes de convertirla en un keyframe de producción y antes de generar cualquier clip.
+
+## Estructura de tres capas — Maeve exclusivamente — 2026-08-21
+
+Fernando confirmó que **Maeve es el único personaje** del videoclip. La alternativa de Kiri se descarta por completo como reparto, cameo o flash. La prueba original de Maeve ante el espejo se conserva como la base visual preferida; la variante de luz dramática queda disponible como referencia de contraste, no como sustituto automático.
+
+La estructura de tres capas resuelve dos riesgos: que el Reel se sienta como un solo cuadro bonito y que los flashes editoriales parezcan una intrusión sin propósito. Cada capa cambia el estado de la imagen, no la identidad de Maeve. La progresión es **presencia → autoconciencia → órbita**.
+
+| Capa | Duración orientativa | Imagen y cámara | Papel emocional | Límites |
+|---|---:|---|---|---|
+| **I. La habitación** | 0–5 s | La primera Maeve de espejo y plumas: plano vertical contenido, cámara con acercamiento lento, petróleo oscuro, ámbar suave y una pluma que asciende. | Presencia. Maeve no actúa para una mirada externa; simplemente ocupa el salón. | No usar la variante dramática completa aquí; mantener misterio y espacio negativo. |
+| **II. Destellos** | 5–10 s | Entre planos del espejo aparecen 3–4 flashes de 0.25–0.45 s: primer plano de la mirada de Maeve, una mano atravesando la luz de una pluma, perfil tras una cortina de terciopelo y reflejo de labios cerrados en el cristal. Luz lila rosada y ámbar, grano algo más visible, cortes en el beat. | Autoconciencia. No “seduce” a cámara: descubre la intensidad de estar sola en ese lugar. | Mismo vestido opaco de cuello alto, encuadres de rostro/manos/silueta; sin desnudez, poses sexuales, énfasis anatómico o tercera persona. |
+| **III. La órbita** | 10–15 s | Regreso al plano amplio. El espejo deja de reflejar el salón y muestra una profundidad ámbar sin horizonte; las plumas dejan de caer y giran alrededor de Maeve. Ella abre la mano; una pluma se posa y el reflejo vuelve con un corte seco. | Transformación. La habitación no la elige: responde a una gravedad que ella ya tenía. | Sin portal literal, explosión, diálogo ni final romántico. Efecto gradual y pictórico, no VFX agresivo. |
+
+La tercera capa es necesaria porque da **payoff** a los flashes: no son solo sensualidad editorial, sino la señal de que la realidad se está reordenando alrededor de Maeve. Con ello, la pieza conserva una lectura cinematográfica y metafórica en lugar de ilustrar la canción o funcionar como una colección de retratos.
+
+El tratamiento de tres capas recibió **8.88/10 — PASS**: relatability 8.5, emoción 9.5, gancho de compartido 9.0, giro moderno 8.5, voz de Maeve 7.5 y encaje horario 10.0. Antes de producir, Fernando debe aprobar esta progresión y el rango de 14–15 segundos. Después se generan solo los keyframes necesarios: base de capa I, 2–3 flashes de capa II y cierre de capa III.
+
+### Coherencia documental requerida
+
+El backlog se actualizó para indicar el tratamiento multicapa. La futura carpeta o paquete de producción debe usar únicamente referencias visuales de Maeve y registrar qué frames pertenecen a cada capa; no se reutiliza la imagen de Kiri ni se deriva un personaje nuevo de esa referencia.
 
 ### Contingencia
 
