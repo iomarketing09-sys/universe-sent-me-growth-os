@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-21
-**Versión:** 2.56
+**Versión:** 2.57
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.57.00] — 2026-08-21 (Manus): Se documenta el puente de aprendizaje Facebook → Reels.** Los experimentos comparables de imágenes alimentarán Reels únicamente como `Design_Input`/hipótesis editorial, nunca como métricas o veredictos de video. Se definieron tres traducciones futuras: `FUT-TRANS-003` hacia transformación real → Universe, `FUT-MICRO-005/006` hacia microhistoria audiovisual y `FUT-ACID-003` hacia diálogo ácido breve. Cada Reel requiere `Concept_ID`, `Experiment_ID`, `Hypothesis_ID`, `hook_0_3s`, duración, estructura narrativa, tratamiento/función de caption, IDs nativos y snapshots 24/72h. Las plataformas permanecen separadas, la afiliación conserva su ledger propio y la reutilización de memes respeta la antigüedad mínima de 30 días. No se programó una nueva ola de Reels ni se actualizaron métricas de video. Documento: `Operations/Research/2026-08-19_Auditoria_Reels_y_Monetizacion.md`.
 
 - **[2.56.00] — 2026-08-21 (Manus): Tres experimentos comparables programados y verificados en Facebook.** Bajo autorización explícita de Fernando, se cancelaron y verificaron como eliminadas las tres programaciones anteriores. Después se cargaron los PNG v3 y se crearon tres posts futuros con `is_published=false` y `scheduled_publish_time` confirmado: `FUT-MICRO-006/HB-007` → `2026-08-24 10:00`, Post `1036844829507460_122154023721072582`, Photo `122154023691072582`; `FUT-MICRO-005/HB-006` → `2026-08-24 13:30`, Post `1036844829507460_122154023781072582`, Photo `122154023757072582`; `FUT-ACID-003/HB-009` → `2026-08-27 16:00`, Post `1036844829507460_122154023841072582`, Photo `122154023817072582`. `Publication_Log` y el staging fueron actualizados; no se agregaron métricas 24/72h. Instagram, CNT, reuse y afiliados permanecen excluidos.
 

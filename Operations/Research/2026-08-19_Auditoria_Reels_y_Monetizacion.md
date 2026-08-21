@@ -145,3 +145,37 @@ La medición debe registrar snapshots en tres momentos: 24 horas, 48 horas y 7 d
 El resultado actual es una señal de instrumentación, no de conversión: el panel mostró 2 clics totales y 0 unidades, con 1 clic granular visible para AFF-07. El Reel no tiene todavía una fila visible. No se debe cambiar el producto ni el copy por este resultado; primero se necesitan al menos varios clics atribuibles a la etiqueta del Reel para evaluar si la superficie nativa convierte.
 
 ---
+
+
+## 9. Puente de transferencia Facebook → Reels — 2026-08-21
+
+Los experimentos comparables de imágenes sí pueden alimentar el carril de Reels, pero únicamente como **fuente de hipótesis editoriales y de diseño**. Sus interacciones, shares, medianas, horarios y veredictos no se trasladan como resultados de video. La plataforma, el formato y la unidad de consumo son distintos; por eso la transferencia correcta convierte una señal visual o narrativa en una hipótesis nueva, con un `Experiment_ID`, un `Hypothesis_ID` y métricas nativas de video propios.
+
+| Aprendizaje de imágenes | Traducción válida a Reel | No debe transferirse directamente | Métrica de validación en Reel |
+|---|---|---|---|
+| Situación humana reconocible y emoción legible | Abrir con conflicto visible en 0–1.2 s, sin depender del audio | El número de interacciones del post estático | Retención inicial, reach de no seguidores y completaciones |
+| Microhistoria de tres tiempos | Convertirla en setup → reacción → payoff/loop en 5–10 s | Tratar tres paneles como equivalente automático a tres segundos o a una duración fija | Retención por tramo, completación y shares |
+| Transformación visual de Universe | Usar una transición real → Universe conservando gafas y marcadores de identidad | Heredar el resultado histórico de la imagen o atribuirlo al personaje aislado | Retención de transición, completación y shares |
+| Humor observacional o ácido | Mostrar el conflicto en una lectura y resolverlo con una reacción seca o un diálogo breve | Mezclar humor ácido, autodesprecio, doble sentido y conversación como una sola familia | Shares, comentarios raíz, replies y mediana de interacciones |
+| `caption_minimo`, `caption_refuerzo`, `caption_conversacional` | Registrar por separado copy de apoyo, texto en pantalla y CTA de publicación | Concluir que un tratamiento ganador en imágenes también gana en video | Comparación dentro de una celda de video balanceada |
+| Hora de prueba | Usarla como covariable y distribuir casos comparables en más de una franja | Interpretar una hora ganadora sin controlar hook, duración y situación | Resultado ajustado por cohorte y franja |
+
+### 9.1 Cómo aprovecharlo sin contaminar los carriles
+
+El flujo recomendado es de **traducción, no de mezcla**. Primero se registra el experimento o publicación de Facebook como fuente (`Source_Experiment_ID`, `Source_Post_ID`, `Source_Cell_ID`, `Source_Learning_Type` y `Source_Window`). Después se redacta un brief de Reel nuevo que conserva la idea que se quiere probar, pero define una hipótesis de video independiente. Si el resultado de la imagen aún no tiene publicación o ventana métrica cerrada, la fuente solo puede clasificarse como `Design_Input`, nunca como `Performance_Learning`.
+
+El Reel debe recibir antes de producción su propio `Concept_ID`, `Campaign_Label`, `Experiment_ID`, `Hypothesis_ID`, `Primary_Asset_ID`, duración, hook de 0–3 segundos, `Narrative_Structure`, `Caption_Treatment`, `Caption_Function`, `Character_Presence`, `Crosspost_Status` y estado de reuse. Si se convierte un meme histórico en Reel, debe respetarse la regla de reutilización de al menos 30 días desde la última publicación y debe registrarse como adaptación, no como repost idéntico.
+
+La primera traducción recomendada, una vez que existan resultados de los comparables, es `FUT-TRANS-003` hacia una subfamilia de **transformación visual real → Universe**. La segunda es convertir `FUT-MICRO-005` o `FUT-MICRO-006` en una microhistoria audiovisual de tres beats. La tercera es traducir `FUT-ACID-003` a un diálogo ácido de 5–7 segundos. Estas tres rutas no deben entrar automáticamente en `HB-REEL-01`, que actualmente prueba la familia `REAL → UNIVERSE / REACCIÓN`; cada ruta debe tener hipótesis propia o una ampliación aprobada de la celda.
+
+### 9.2 Instrumentación mínima del puente
+
+El ledger de video debe conservar una fila por publicación y plataforma. Para cada Reel se deben capturar snapshots de 24 y 72 horas con `views`, `reach`, `retention_3s`, `avg_watch_time_seconds`, `completion_rate`, `shares`, `comments`, `replies`, `followers_gained` y `source_of_metric`. Las filas de Instagram, Facebook, TikTok y YouTube pueden compartir el mismo `Concept_ID` y `Primary_Asset_ID`, pero nunca deben sumarse como una audiencia o una mediana multicanal única.
+
+La afiliación se mantiene como carril comercial separado. Si un Reel lleva producto nativo o enlace de Mercado Libre, se registra `Affiliate_Attachment`, etiqueta, link, producto y hora de adjunción en el ledger afiliado; las ventas, clics y conversiones no se mezclan con el veredicto editorial de hook, retención o compartibilidad.
+
+### 9.3 Criterio de aprendizaje
+
+Una imagen con buen rendimiento genera una **hipótesis candidata** para video, no una garantía de éxito. El Reel se clasifica como `WIN`, `SIGNAL`, `FAIL` o `NO_LEARNING` únicamente después de verificar la ventana, la instrumentación y la estabilidad de las variables. Para una señal preliminar se requieren al menos tres casos de video comparables; para un veredicto operativo, cinco. Los outliers deben reportarse con mediana, sensibilidad sin outlier y tamaño de muestra limpio y contaminado.
+
+La decisión operativa actual es no programar una ola nueva de Reels únicamente por los tres posts comparables de Facebook. Primero se cierran sus ventanas de publicación y se registra qué hipótesis visual o narrativa sobrevivió a la evidencia. Después se prepara un lote de Reels separado, con control de duración, hook, personaje, CTA y producto, para comprobar si el aprendizaje cruza realmente de imagen a video.
