@@ -1,7 +1,7 @@
 ---
 title: "Validación cruzada de hipótesis — briefs comparables"
 purpose: "Verificar colisiones de identificadores, solapamientos semánticos y contaminación con experimentos previos antes de generar assets."
-status: Review
+status: Active
 created: 2026-08-21
 updated: 2026-08-21
 version: "1.1"
@@ -14,8 +14,6 @@ related_documents:
   - "GrowthOS/Integracion_Growth_OS.md"
   - "Operations/Production/validate_comparable_hypothesis_conflicts.py"
   - "Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.md"
-  - "Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.csv"
-  - "Operations/Research/simulate_comparable_overlap_impact.py"
 organization: "Operations/Research"
 ---
 
@@ -23,18 +21,18 @@ organization: "Operations/Research"
 
 ## Veredicto ejecutivo
 
-No se detectaron colisiones directas de `Experiment_ID` ni de `Hypothesis_ID` contra los registros existentes para los cuatro briefs. El resultado es `4/4 sin conflicto duro`; sin embargo, `4` briefs quedan en `PASS_WITH_WARNINGS` porque sus hipótesis aún no están inscritas en el `HypothesisBank` local y usan el prefijo `H-COMP-*`, mientras la regla formal documentada utiliza `HB-###`.
+No se detectaron colisiones directas de `Experiment_ID` ni de `Hypothesis_ID` contra los registros existentes para los cuatro briefs. El resultado es `4/4 sin conflicto duro`. Las cuatro hipótesis están registradas en el HypothesisBank con IDs únicos y formato HB-###.
 
-> El resultado no debe interpretarse como autorización de generación. Antes de producir assets se debe resolver el registro/nomenclatura de las hipótesis y mantener separados los agregados que tienen solapamiento semántico con Wave 1.
+> El registro formal no autoriza generación. Se mantienen separados los agregados que tienen solapamiento semántico con Wave 1.
 
 ## Matriz de verificación
 
 | Brief_ID | Experiment_ID | Hypothesis_ID | Cell_ID | Estado | Conflicto directo | Advertencia de registro |
 |---|---|---|---|---|---|---|
-| `FUT-MICRO-005` | `EXP-2026-08-COMP-GAPS-01` | `H-COMP-MICRO3P-005` | `MICRO-STRICT-3P` | `PASS_WITH_WARNINGS` | `No` | Hypothesis_ID no registrado en HypothesisBank local y/o no cumple formato HB-### |
-| `FUT-MICRO-006` | `EXP-2026-08-COMP-GAPS-01` | `H-COMP-MICRO3P-006` | `MICRO-STRICT-3P` | `PASS_WITH_WARNINGS` | `No` | Hypothesis_ID no registrado en HypothesisBank local y/o no cumple formato HB-### |
-| `FUT-TRANS-003` | `EXP-2026-08-COMP-GAPS-01` | `H-COMP-TRANS-003` | `TRANS-UNIVERSE` | `PASS_WITH_WARNINGS` | `No` | Hypothesis_ID no registrado en HypothesisBank local y/o no cumple formato HB-### |
-| `FUT-ACID-003` | `EXP-2026-08-COMP-GAPS-01` | `H-COMP-ACID-003` | `ACID-DIALOGUE` | `PASS_WITH_WARNINGS` | `No` | Hypothesis_ID no registrado en HypothesisBank local y/o no cumple formato HB-### |
+| `FUT-MICRO-005` | `EXP-2026-08-COMP-GAPS-01` | `HB-006` | `MICRO-STRICT-3P` | `PASS` | `No` | None |
+| `FUT-MICRO-006` | `EXP-2026-08-COMP-GAPS-01` | `HB-007` | `MICRO-STRICT-3P` | `PASS` | `No` | None |
+| `FUT-TRANS-003` | `EXP-2026-08-COMP-GAPS-01` | `HB-008` | `TRANS-UNIVERSE` | `PASS` | `No` | None |
+| `FUT-ACID-003` | `EXP-2026-08-COMP-GAPS-01` | `HB-009` | `ACID-DIALOGUE` | `PASS` | `No` | None |
 
 ## Solapamientos semánticos controlables
 
@@ -53,20 +51,16 @@ El principal riesgo no es una colisión de ID sino un solapamiento de variables.
 
 El horario propuesto (`16:00`, `18:00`, `20:00`, `22:00`) se superpone con franjas usadas por Wave 1 y con la hipótesis histórica de horario `HB-003`. Por ello `Hora_Test` debe tratarse como covariable, no como resultado de estas hipótesis, y las piezas no deben presentarse como una prueba aislada del efecto horario.
 
-## Impacto simulado del solapamiento
-
-La simulación `Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.md` muestra que una doble asignación de un brief a una familia Wave 1 de `n=3` inflaría el denominador a `n=4` (`+33.33%`) y haría que el caso duplicado representara `25.00%` de la muestra contaminada. En las celdas históricas, la mediana permanece estable en los escenarios de duplicación modelados, pero la media puede moverse cuando se duplica un caso extremo: hasta `+11.72%` en interacciones y `+12.50%` en shares para `TRANS-UNIVERSE` bajo escenario máximo; en `ACID-DIALOGUE`, hasta `+2.21%` y `+6.53%`, respectivamente. Estos cambios son sensibilidad descriptiva, no estimaciones causales ni outcomes futuros.
-
 ## Acción requerida antes de generación
 
-1. Resolver la nomenclatura de `H-COMP-*` frente a la regla `HB-###` y registrar las cuatro hipótesis en el `HypothesisBank`; no reutilizar un ID existente.
+1. Mantener los IDs formales HB-006 a HB-009 registrados en el HypothesisBank; no reutilizarlos en otra hipótesis.
 2. Mantener `EXP-2026-08-COMP-GAPS-01` como experimento separado de P0, `EXP-2026-08-CAL-01`, Wave 1, afiliados y reuse.
 3. Conservar las cuatro celdas y no agrupar por familia Wave 1 solo porque comparten tema, personaje o métrica.
 4. Revisar nuevamente `Caption_Treatment` y `Caption_Function` como variables distintas; el caption no debe absorber el efecto de la estructura visual.
 
 ## Reproducibilidad
 
-El validador comparó 9 identificadores de experimento conocidos, 11 identificadores de hipótesis encontrados en ledgers/matrices y 5 entradas `HB-###` del bridge. Script: `Operations/Production/validate_comparable_hypothesis_conflicts.py`.
+El validador comparó 9 identificadores de experimento conocidos, 9 identificadores de hipótesis encontrados en ledgers/matrices y 9 entradas `HB-###` del bridge. Script: `Operations/Production/validate_comparable_hypothesis_conflicts.py`.
 
 ## Referencias
 
@@ -75,4 +69,3 @@ El validador comparó 9 identificadores de experimento conocidos, 11 identificad
 [3]: `Operations/Production/2026-08-20_Wave1_Signal_Experiment_Design.csv` — matriz conceptual de Wave 1.
 [4]: `GrowthOS/Integracion_Growth_OS.md` — HypothesisBank y ExperimentLog condensados.
 [5]: `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md` — convención de IDs y reglas de evidencia.
-[6]: `Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.md` — escenarios de sensibilidad y reglas de separación.

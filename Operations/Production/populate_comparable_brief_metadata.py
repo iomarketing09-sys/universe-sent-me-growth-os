@@ -10,7 +10,7 @@ COMMON_EXPERIMENT_ID = "EXP-2026-08-COMP-GAPS-01"
 
 METADATA = {
     "FUT-MICRO-005": {
-        "Hypothesis_ID": "H-COMP-MICRO3P-005",
+        "Hypothesis_ID": "HB-006",
         "Caption_Function": "reaccion",
         "Humor_Function": "romantic_absurd_reframe",
         "Hora_Test": "18:00",
@@ -20,7 +20,7 @@ METADATA = {
         "Metadata_Notes": "Hora propuesta, no programada. Caption mínimo: reacción/remate breve, sin pregunta abierta. Personajes genéricos; exactamente tres paneles.",
     },
     "FUT-MICRO-006": {
-        "Hypothesis_ID": "H-COMP-MICRO3P-006",
+        "Hypothesis_ID": "HB-007",
         "Caption_Function": "refuerzo_semantico",
         "Humor_Function": "everyday_social_reframe",
         "Hora_Test": "20:00",
@@ -30,7 +30,7 @@ METADATA = {
         "Metadata_Notes": "Hora propuesta, no programada. Caption de refuerzo: ilumina la lectura sin repetir globos ni abrir una conversación artificial. Conflicto no romántico.",
     },
     "FUT-TRANS-003": {
-        "Hypothesis_ID": "H-COMP-TRANS-003",
+        "Hypothesis_ID": "HB-008",
         "Caption_Function": "pregunta_abierta",
         "Humor_Function": "visual_identity_contrast",
         "Hora_Test": "16:00",
@@ -40,7 +40,7 @@ METADATA = {
         "Metadata_Notes": "Hora propuesta, no programada. Caption conversacional: invitación breve/pregunta abierta sin describir literalmente el antes/después. Verificar gafas en ambos estados.",
     },
     "FUT-ACID-003": {
-        "Hypothesis_ID": "H-COMP-ACID-003",
+        "Hypothesis_ID": "HB-009",
         "Caption_Function": "reaccion",
         "Humor_Function": "interpersonal_contradiction",
         "Hora_Test": "22:00",

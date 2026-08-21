@@ -4,7 +4,7 @@ purpose: "Definir las piezas históricas/futuras mínimas necesarias para comple
 status: Active
 created: 2026-08-21
 updated: 2026-08-21
-version: "1.6"
+version: "1.7"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-20_Propuesta_Expansion_Celdas_Comparables.md"
@@ -54,11 +54,11 @@ Los diseños siguientes son briefs de prueba aprobados para preflight, no public
 | `ACID-DIALOGUE` | `n=2` | Bajo `n=3` | Un diálogo ácido nuevo con destinatario claro y remate seguro | `FUT-ACID-003` aprobado para preflight |
 | `SELF-DEPRECATION/ANTIHERO` | `n=3` | Señal preliminar heterogénea | Dos casos adicionales para `n=5`; separar autodesprecio de simple tristeza o roast | Sin brief activo |
 
-Los cuatro briefs aprobados no cierran ninguna celda por sí solos: autorizan únicamente preflight. La matriz CSV ya contiene propuestas para `Experiment_ID`, `Hypothesis_ID`, `Cell_ID`, `Narrative_Structure`, `Caption_Treatment`, `Caption_Function`, `Humor_Function`, `Character_Presence`, `Theme_Confound`, `Hora_Test`, `Reuse_Status=New_Asset_Proposed` y la zona horaria `America/Matamoros`. La validación cruzada no detectó colisiones directas de IDs (`4/4` sin conflicto duro), pero dejó `4/4` en `PASS_WITH_WARNINGS` porque los `H-COMP-*` aún no están inscritos en el `HypothesisBank` local y no siguen la forma formal `HB-###`. La promoción de cada pieza requerirá resolver esa nomenclatura, revisar los valores con el asset real, confirmar seguridad y ausencia de confusores excluidos, y obtener una aprobación humana separada para generar. Para una señal preliminar se mantiene `n=3`; para un veredicto operativo, `n=5`.
+Los cuatro briefs aprobados no cierran ninguna celda por sí solos: autorizan únicamente preflight. La matriz CSV ya contiene propuestas para `Experiment_ID`, `Hypothesis_ID`, `Cell_ID`, `Narrative_Structure`, `Caption_Treatment`, `Caption_Function`, `Humor_Function`, `Character_Presence`, `Theme_Confound`, `Hora_Test`, `Reuse_Status=New_Asset_Proposed` y la zona horaria `America/Matamoros`. La validación cruzada no detectó colisiones directas de IDs (`4/4` sin conflicto duro) y ahora confirma `4/4` en `PASS`: `HB-006` a `HB-009` están registrados en el `HypothesisBank` con formato formal único. La promoción de cada pieza todavía requerirá revisar los valores con el asset real, confirmar seguridad y ausencia de confusores excluidos, y obtener una aprobación humana separada para generar. Para una señal preliminar se mantiene `n=3`; para un veredicto operativo, `n=5`.
 
 ## Resultado de la validación cruzada de hipótesis
 
-El reporte `Operations/Research/2026-08-21_Validacion_Cruzada_Hipotesis_Briefs_Comparables.md` confirma que `EXP-2026-08-COMP-GAPS-01` no colisiona con `EXP-2026-08-BASELINE-01`, `EXP-2026-08-BASELINE-02`, `EXP-2026-08-BASELINE-03`, `EXP-2026-08-CAL-01` ni `EXP-2026-08-FAM01-W1` a `EXP-2026-08-FAM05-W1`. Los riesgos restantes son solapamientos semánticos controlables: ácido con FAM-04, identidad de Universe con FAM-05/HB-002 y microhistorias con FAM-02/FAM-03. No se deben combinar denominadores automáticamente. Antes de generación se debe registrar cada hipótesis en el HypothesisBank y resolver el prefijo `H-COMP-*` frente a la convención `HB-###`. La simulación de impacto confirmó que una doble asignación a una familia Wave 1 de `n=3` inflaría el denominador en `33.33%`; por ello no se deben combinar familias por parecido temático.
+El reporte `Operations/Research/2026-08-21_Validacion_Cruzada_Hipotesis_Briefs_Comparables.md` confirma que `EXP-2026-08-COMP-GAPS-01` no colisiona con `EXP-2026-08-BASELINE-01`, `EXP-2026-08-BASELINE-02`, `EXP-2026-08-BASELINE-03`, `EXP-2026-08-CAL-01` ni `EXP-2026-08-FAM01-W1` a `EXP-2026-08-FAM05-W1`. Los riesgos restantes son solapamientos semánticos controlables: ácido con FAM-04, identidad de Universe con FAM-05/HB-002 y microhistorias con FAM-02/FAM-03. No se deben combinar denominadores automáticamente. Las hipótesis ya están registradas como `HB-006` a `HB-009`; este registro no autoriza generación. La simulación de impacto confirmó que una doble asignación a una familia Wave 1 de `n=3` inflaría el denominador en `33.33%`; por ello no se deben combinar familias por parecido temático.
 
 ## Aprobación de análisis selectivo
 

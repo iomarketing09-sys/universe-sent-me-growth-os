@@ -147,6 +147,8 @@ def write_outputs(rows: list[dict[str, str]], brief_rows: list[dict[str, str]], 
     metric_rows = [row for row in rows if row["Record_Type"] == "Metric_Sensitivity"]
     family_rows = [row for row in rows if row["Record_Type"] == "Family_Overlap"]
     planned_hours = sorted({row["Planned_Hour"] for row in wave1_rows if row.get("Planned_Hour")})
+    validation_statuses = {row.get("Cross_Validation_Status", "UNREGISTERED") for row in brief_rows}
+    validation_status = "PASS" if validation_statuses == {"PASS"} else ", ".join(sorted(validation_statuses))
     lines = [
         "---",
         'title: "Simulación de impacto de solapamientos semánticos — briefs comparables"',
@@ -154,7 +156,7 @@ def write_outputs(rows: list[dict[str, str]], brief_rows: list[dict[str, str]], 
         "status: Active",
         "created: 2026-08-21",
         "updated: 2026-08-21",
-        'version: "1.0"',
+        'version: "1.1"',
         'author: "Manus AI (CGO)"',
         "related_documents:",
         '  - "Operations/Research/2026-08-21_Validacion_Cruzada_Hipotesis_Briefs_Comparables.md"',
@@ -214,7 +216,7 @@ def write_outputs(rows: list[dict[str, str]], brief_rows: list[dict[str, str]], 
             "",
             "## Decisión operativa",
             "",
-            "1. Mantener `Cross_Validation_Status=PASS_WITH_WARNINGS` hasta registrar las hipótesis en el `HypothesisBank` y resolver `H-COMP-*` frente a `HB-###`.",
+            f"1. Mantener `Cross_Validation_Status={validation_status}`. El registro formal de HB-006 a HB-009 no autoriza generación; cualquier cambio a `PASS_WITH_WARNINGS` vuelve a bloquear la promoción.",
             "2. Mantener `MICRO-STRICT-3P`, `TRANS-UNIVERSE` y `ACID-DIALOGUE` fuera de los agregados Wave 1 aunque compartan tema, personaje, caption u horario.",
             "3. No combinar `FUT-MICRO-006` con FAM-02 y FAM-03 simultáneamente; si se estudia la proximidad, elegir una sola celda primaria y registrar la otra como riesgo semántico.",
             "4. Reportar siempre métricas con y sin outlier, además de `n` limpio y `n` contaminado; no cerrar ninguna hipótesis con esta simulación.",

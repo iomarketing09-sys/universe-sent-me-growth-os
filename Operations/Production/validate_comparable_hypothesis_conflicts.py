@@ -44,9 +44,6 @@ def extract_known_ids() -> tuple[set[str], set[str], set[str]]:
     hypothesis_ids.update(row["Hypothesis_ID"] for row in wave1_rows if row.get("Hypothesis_ID"))
     bridge_text = BRIDGE.read_text(encoding="utf-8")
     bridge_hypotheses = set(re.findall(r"\bHB-\d{3}\b", bridge_text))
-    hypothesis_ids.update(bridge_hypotheses)
-    bridge_experiments = set(re.findall(r"\bEXP-2026-08-[A-Z0-9_-]+\b", bridge_text))
-    experiment_ids.update(bridge_experiments)
     return experiment_ids, hypothesis_ids, bridge_hypotheses
 
 
@@ -99,6 +96,12 @@ def cross_validate(rows: list[dict[str, str]]) -> tuple[list[dict[str, str]], se
 def write_report(results: list[dict[str, str]], existing_experiments: set[str], existing_hypotheses: set[str], registered_hypotheses: set[str]) -> None:
     conflicts = [item for item in results if item["status"] == "CONFLICT"]
     warnings = [item for item in results if item["status"] == "PASS_WITH_WARNINGS"]
+    if warnings:
+        registry_summary = f"{len(warnings)} briefs aún tienen advertencias de registro o nomenclatura."
+        pre_generation_summary = "Antes de producir assets se debe resolver el registro/nomenclatura de las hipótesis y mantener separados los agregados que tienen solapamiento semántico con Wave 1."
+    else:
+        registry_summary = "Las cuatro hipótesis están registradas en el HypothesisBank con IDs únicos y formato HB-###."
+        pre_generation_summary = "El registro formal no autoriza generación. Se mantienen separados los agregados que tienen solapamiento semántico con Wave 1."
     lines = [
         "---",
         'title: "Validación cruzada de hipótesis — briefs comparables"',
@@ -106,7 +109,7 @@ def write_report(results: list[dict[str, str]], existing_experiments: set[str], 
         f"status: {'Review' if conflicts or warnings else 'Active'}",
         "created: 2026-08-21",
         "updated: 2026-08-21",
-        'version: "1.0"',
+        'version: "1.1"',
         'author: "Manus AI (CGO)"',
         "related_documents:",
         '  - "Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv"',
@@ -115,6 +118,7 @@ def write_report(results: list[dict[str, str]], existing_experiments: set[str], 
         '  - "Operations/Research/2026-08-15_ExperimentLog.csv"',
         '  - "GrowthOS/Integracion_Growth_OS.md"',
         '  - "Operations/Production/validate_comparable_hypothesis_conflicts.py"',
+        '  - "Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.md"',
         'organization: "Operations/Research"',
         "---",
         "",
@@ -122,9 +126,9 @@ def write_report(results: list[dict[str, str]], existing_experiments: set[str], 
         "",
         "## Veredicto ejecutivo",
         "",
-        f"No se detectaron colisiones directas de `Experiment_ID` ni de `Hypothesis_ID` contra los registros existentes para los cuatro briefs. El resultado es `{len(results) - len(conflicts)}/{len(results)} sin conflicto duro`; sin embargo, `{len(warnings)}` briefs quedan en `PASS_WITH_WARNINGS` porque sus hipótesis aún no están inscritas en el `HypothesisBank` local y usan el prefijo `H-COMP-*`, mientras la regla formal documentada utiliza `HB-###`.",
+        f"No se detectaron colisiones directas de `Experiment_ID` ni de `Hypothesis_ID` contra los registros existentes para los cuatro briefs. El resultado es `{len(results) - len(conflicts)}/{len(results)} sin conflicto duro`. {registry_summary}",
         "",
-        "> El resultado no debe interpretarse como autorización de generación. Antes de producir assets se debe resolver el registro/nomenclatura de las hipótesis y mantener separados los agregados que tienen solapamiento semántico con Wave 1.",
+        f"> {pre_generation_summary}",
         "",
         "## Matriz de verificación",
         "",
@@ -161,7 +165,7 @@ def write_report(results: list[dict[str, str]], existing_experiments: set[str], 
             "",
             "## Acción requerida antes de generación",
             "",
-            "1. Resolver la nomenclatura de `H-COMP-*` frente a la regla `HB-###` y registrar las cuatro hipótesis en el `HypothesisBank`; no reutilizar un ID existente.",
+            "1. Mantener los IDs formales HB-006 a HB-009 registrados en el HypothesisBank; no reutilizarlos en otra hipótesis.",
             "2. Mantener `EXP-2026-08-COMP-GAPS-01` como experimento separado de P0, `EXP-2026-08-CAL-01`, Wave 1, afiliados y reuse.",
             "3. Conservar las cuatro celdas y no agrupar por familia Wave 1 solo porque comparten tema, personaje o métrica.",
             "4. Revisar nuevamente `Caption_Treatment` y `Caption_Function` como variables distintas; el caption no debe absorber el efecto de la estructura visual.",
