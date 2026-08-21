@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-21
-**Versión:** 2.43
+**Versión:** 2.44
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.44.00] — 2026-08-21 (Manus): Validación cruzada de hipótesis comparables contra experimentos previos.** Se cruzaron los cuatro briefs contra `ExperimentLog`, la matriz `Wave_1_Signal_Experiment_Design.csv` y el `HypothesisBank` documentado. Resultado: `0` colisiones directas de `Experiment_ID` o `Hypothesis_ID`; los cuatro quedan en `PASS_WITH_WARNINGS` porque `H-COMP-*` aún no está registrado en el `HypothesisBank` local y no cumple la convención formal `HB-###`. Se documentaron solapamientos controlables: `FUT-ACID-003` con FAM-04, `FUT-TRANS-003` con FAM-05/HB-002 y las microhistorias con FAM-02/FAM-03. No se deben combinar denominadores automáticamente. Reporte: `Operations/Research/2026-08-21_Validacion_Cruzada_Hipotesis_Briefs_Comparables.md`; validador: `Operations/Production/validate_comparable_hypothesis_conflicts.py`. No se generaron assets, no se actualizó `ExperimentLog` y no se autorizó calendario ni publicación.
 
 - **[2.43.00] — 2026-08-21 (Manus): Metadatos obligatorios de briefs comparables completados como propuesta.** Se añadieron a `Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv` los campos `Experiment_ID`, `Hypothesis_ID`, `Caption_Function`, `Humor_Function`, `Hora_Test`, `Hora_Test_TZ`, `Theme_Confound`, `Reuse_Status`, `Metadata_Status`, `Generation_Authorization` y `Metadata_Notes`. Los cuatro briefs comparten `EXP-2026-08-COMP-GAPS-01`, tienen hipótesis individuales `H-COMP-*`, horas propuestas en `America/Matamoros`, `Reuse_Status=New_Asset_Proposed`, `Metadata_Status=Complete_Proposed_Not_Authorized` y `Generation_Authorization=Pending_Human_Approval`. `Caption_Treatment` permanece separado de `Caption_Function`. No se actualizó `ExperimentLog`, no se generaron assets y no se autorizó calendario, publicación ni CNT. Scripts: `Operations/Production/populate_comparable_brief_metadata.py` y `Operations/Production/run_comparable_briefs_preflight.py`.
 
