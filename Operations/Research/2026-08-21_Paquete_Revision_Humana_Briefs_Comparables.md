@@ -118,7 +118,7 @@ La escena puede tener un panel con dos globos o dos paneles, siempre que los tur
 
 La generación inicial produjo cuatro archivos PNG, uno por brief. La tercera iteración aprobada produjo además tres variantes v3 con la referencia oficial de Evan. El control visual preliminar marca `Pass_visual_preliminar` para `FUT-MICRO-005`, `FUT-MICRO-006` y `FUT-ACID-003`. `FUT-TRANS-003` marca `Pass_visual_preliminar_con_identidad_consistente` porque las gafas son visibles en ambos estados y la comparación con la referencia compartida confirmó identidad consistente.
 
-Cada asset y variante pasará por control de identidad, texto, seguridad, `Cell_ID`, tratamiento de caption y hora experimental. Las v3 mejoran la identidad de Evan frente a v2, pero quedan pendientes de selección humana entre original, v2 y v3. La generación no modificó calendario, CNT ni plataformas. Solo una aprobación humana posterior e independiente podrá autorizar su inclusión en calendario, creación de CNT o publicación.
+Cada asset y variante pasará por control de identidad, texto, seguridad, `Cell_ID`, tratamiento de caption y hora experimental. Las v3 mejoran la identidad de Evan frente a v2 y Fernando las seleccionó el 2026-08-21 como versiones de prueba. Sustituyen a las v2 en el registro de variantes elegido; los originales y v2 se conservan como historial. La generación no modificó calendario, CNT ni plataformas. Solo una aprobación humana posterior e independiente podrá autorizar su inclusión en calendario, creación de CNT o publicación.
 
 Si un brief recibe ajustes, se actualizará este paquete y se conservará la versión anterior en el historial del repositorio. Si se rechaza, quedará como `Rejected_Brief` y no se reutilizará la idea automáticamente.
 

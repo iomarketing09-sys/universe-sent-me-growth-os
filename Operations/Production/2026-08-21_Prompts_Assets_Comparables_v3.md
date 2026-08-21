@@ -51,8 +51,8 @@ Los tres prompts v3 produjeron los siguientes archivos:
 | `FUT-MICRO-006` | `FUT-MICRO-006_HB-007_Microhistoria_Cotidiana_3P_v3.png` | `Pass_visual_v3_preliminar` |
 | `FUT-ACID-003` | `FUT-ACID-003_HB-009_Dialogo_Acido_Situacional_v3.png` | `Pass_visual_v3_preliminar` |
 
-La revisión visual preliminar confirma una mejora de identidad de Evan frente a v2: cabello oscuro despeinado, cejas marcadas, rostro cansado, expresión ensimismada y hoodie café/taupe. El texto y la composición experimental se conservaron. Las tres variantes quedan pendientes de selección humana y no reemplazan automáticamente a los originales ni a las v2.
+La revisión visual preliminar confirma una mejora de identidad de Evan frente a v2: cabello oscuro despeinado, cejas marcadas, rostro cansado, expresión ensimismada y hoodie café/taupe. El texto y la composición experimental se conservaron. Fernando seleccionó las tres variantes v3 el 2026-08-21. Reemplazan a las v2 en el registro de variantes elegido para la prueba, pero no activan calendario, CNT, reuse, afiliados, publicación ni una nueva observación en `ExperimentLog`.
 
 ## Gate posterior
 
-Las tres v3 quedan registradas como `Proposal_Not_Selected` hasta que Fernando elija entre original, v2 y v3. No sustituyen las v2 automáticamente. La aprobación de generación no autoriza calendario, CNT, reuse, afiliados ni publicación.
+Las tres v3 quedan registradas como `Selected_For_Experiment` por decisión de Fernando del 2026-08-21. Sustituyen a las v2 en el registro de variantes elegido para la prueba. La selección no autoriza calendario, CNT, reuse, afiliados ni publicación.

@@ -76,7 +76,7 @@ Las tres propuestas v2 corrigen parcialmente el problema señalado: los personaj
 
 ## Veredicto de la tercera iteración
 
-Las tres variantes v3 mejoran materialmente la fidelidad de Evan frente a las v2. Las tres conservan el texto y la estructura experimental; `FUT-MICRO-005` y `FUT-MICRO-006` mantienen exactamente tres paneles. El estado queda como `Pass_visual_v3_preliminar`, pendiente de selección humana entre original, v2 y v3. Ninguna versión reemplaza automáticamente a otra.
+Las tres variantes v3 mejoran materialmente la fidelidad de Evan frente a las v2. Las tres conservan el texto y la estructura experimental; `FUT-MICRO-005` y `FUT-MICRO-006` mantienen exactamente tres paneles. El estado queda como `Pass_visual_v3_preliminar` y Fernando seleccionó las tres v3 el 2026-08-21. Las v3 reemplazan a las v2 en el registro de variantes elegido para la prueba; los originales y v2 se conservan como historial. Ninguna versión activa calendario, CNT, reuse, afiliados o publicación.
 
 ## Alcance del control
 
