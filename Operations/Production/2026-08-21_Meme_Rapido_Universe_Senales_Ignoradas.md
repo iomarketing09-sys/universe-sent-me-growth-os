@@ -3,10 +3,10 @@
 | Campo | Valor |
 |---|---|
 | **Propósito** | Preparar un Reel cómico de ejecución rápida para hoy, usando el clip existente de Universe y un copy breve de alta identificación. |
-| **Estado** | Review — Fernando programará manualmente Facebook e Instagram; pendiente de confirmar horarios, IDs y permalinks. |
+| **Estado** | Active — Reels programados por Fernando en Facebook e Instagram; pendiente de confirmar horarios efectivos, IDs y permalinks. |
 | **Fecha de creación** | 2026-08-21 |
 | **Última actualización** | 2026-08-21 |
-| **Versión** | 1.2 |
+| **Versión** | 1.3 |
 | **Autor** | Manus AI |
 | **Documentos relacionados** | `GrowthOS/01_02_Content_Backlog.md`; `GrowthOS/11_00_Estrategia_Monetizacion_MercadoLibre.md`; `Operations/Production/2026-08-19_Playbook_Tracking_Afiliados_MercadoLibre.md`; `Operations/Research/Affiliate_Link_Ledger.csv`; `Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Desamor.md` |
 
@@ -19,9 +19,9 @@
 | Campo | Decisión |
 |---|---|
 | Personaje | Universe |
-| Archivo fuente | Clip existente correspondiente al asset de Universe en `/home/ubuntu/projects/universe-89b74a25/3 - Cat_sitting_in_cozy_space_202608060312.jpeg`; el nombre/ruta del clip se conciliará al registrar la publicación. |
+| Archivo fuente | Clip de Universe utilizado en el tráiler; nombre/ruta exactos pendientes de conciliación al recibir los IDs de publicación. |
 | Lectura visual | Universe, gato blanco/crema con gafas steampunk, mira hacia arriba en un taller cálido. El clip sostiene el gesto de observación necesario para el remate. |
-| Tratamiento | Reel breve sin texto superpuesto; el chiste vive en el copy. Antes de publicar, confirmar que el clip no tuvo una publicación demasiado reciente asociada. |
+| Tratamiento | Reel breve con texto superpuesto: `Universe viéndote pedir una señal después de ignorar las 8 que ya te mandó. 🥲` |
 
 ## Propuesta recomendada
 
@@ -37,6 +37,15 @@ La broma convierte a Universe en testigo del comportamiento del lector, no en un
 | Hashtags | `#UniverseSentMe #UniverseUSM #MemesUSM` |
 | Publicación | Manual, solo después de aprobación explícita de Fernando. Usar la próxima ventana disponible entre 7:00–9:00 PM hora local; si ya no aplica, no inventar un horario y confirmar con Fernando. |
 | Resultado esperado | Probar humor absurdo/relatable + giro mágico/cotidiano. Benchmark: ER promedio ponderado 2.51%; señal viral deseada ≥3.5% ER y share rate ≥0.5%. |
+
+## Ejecución programada por Fernando
+
+Fernando confirmó que programó los dos Reels el 2026-08-21. La ejecución real sustituye los copys planeados; se conserva aquí sin normalizar ortografía ni agregar hashtags que no fueron reportados.
+
+| Red | Estado informado | Clip y texto dentro del Reel | Copy realmente programado | Afiliación |
+|---|---|---|---|---|
+| Facebook | Programado; hora, ID y permalink pendientes. | Clip de Universe del tráiler + `Universe viéndote pedir una señal después de ignorar las 8 que ya te mandó. 🥲` | `universe viendote farmear aura` + enlace afiliado | Producto afiliado con forma nativa solo en Facebook; ID de adjunción pendiente. |
+| Instagram | Programado; hora, ID y permalink pendientes. | Clip de Universe del tráiler + `Universe viéndote pedir una señal después de ignorar las 8 que ya te mandó. 🥲` | `farmenado aura` | Sin adjunción nativa; el enlace se añadió directamente en el texto editado por Fernando. |
 
 ## Alternativas descartables si Fernando prefiere otra lectura
 
@@ -59,28 +68,28 @@ El producto se verificó en la Central de Afiliados de Mercado Libre con la sesi
 
 | Plataforma | Etiqueta única | Link afiliado único | Estado de uso |
 |---|---|---|---|
-| Facebook | `usmfbuniverse0821` | `https://meli.la/1p5sVZM` | Adjunción nativa manual y link escrito por Fernando en el texto editado. |
-| Instagram | `usmiguniverse0821` | `https://meli.la/26dJCQe` | Link escrito por Fernando en el texto editado; no tiene adjunción nativa. |
+| Facebook | `usmfbuniverse0821` | `https://meli.la/1p5sVZM` | Programado con link escrito por Fernando; producto nativo esperado, pendiente de confirmar ID de adjunción. |
+| Instagram | `usmiguniverse0821` | `https://meli.la/26dJCQe` | Programado con link escrito por Fernando; no tiene adjunción nativa. |
 | TikTok | `usmttuniverse0821` | `https://meli.la/1yT1Ghg` | Generado, pero en **hold** hasta verificar un enlace activo en perfil. |
 | YouTube | `usmytuniverse0821` | `https://meli.la/2qufJQD` | Generado, pero en **hold**; no forzar esta pieza estática a Shorts. |
 
 ## Matriz de publicación para hoy — viernes 21 de agosto, hora local CST
 
-La recomendación es lanzar el Reel donde la distribución y la afiliación tienen encaje: **Facebook e Instagram**. TikTok y YouTube conservan links trazables, pero no forman parte del lanzamiento de hoy para evitar CTAs muertos. Fernando programará manualmente Facebook e Instagram y confirmará el resultado antes de que se registre como publicación.
+La programación se ejecutó en **Facebook e Instagram**. TikTok y YouTube conservan links trazables, pero no forman parte del lanzamiento de hoy. La publicación se registra como programada, no como efectiva, hasta recibir sus horarios, IDs y permalinks.
 
 | Red | Hora recomendada | Formato y superficie | Copy final | Afiliación | Estado |
 |---|---:|---|---|---|---|
-| Facebook | Ventana de 4:30 PM CST, ajustable por Fernando | Reel con clip existente; adjuntar producto desde el módulo nativo de Facebook. | `Universe viéndote pedir una señal después de ignorar las 8 que ya te mandó. 🥲\n\nLa señal astral de hoy sí tiene forma de proyector. ✨\nProducto recomendado con enlace afiliado: https://meli.la/1p5sVZM\n\n#UniverseSentMe #UniverseUSM #MemesUSM` | Producto nativo con `https://meli.la/1p5sVZM`; Fernando añadirá el link al texto editado y debe registrar el ID de adjunción si la UI lo muestra. | Pending Fernando scheduling |
-| Instagram | Ventana de 7:20 PM CST, ajustable por Fernando | Reel con clip existente. | `Universe viéndote pedir una señal después de ignorar las 8 que ya te mandó. 🥲\n\nLa señal astral de hoy tiene forma de proyector. ✨\nEnlace afiliado: https://meli.la/26dJCQe\n\n#UniverseSentMe #UniverseUSM #MemesUSM` | No hay adjunción nativa; Fernando añadirá el link al texto editado. | Pending Fernando scheduling |
+| Facebook | Hora efectiva pendiente | Reel con clip de Universe del tráiler y texto de las ocho señales. | `universe viendote farmear aura` + enlace afiliado. | Link `https://meli.la/1p5sVZM`; producto nativo esperado, ID de adjunción pendiente. | Scheduled_User_Confirmed |
+| Instagram | Hora efectiva pendiente | Reel con clip de Universe del tráiler y texto de las ocho señales. | `farmenado aura` + enlace añadido al texto editado. | Link `https://meli.la/26dJCQe`; no hay adjunción nativa. | Scheduled_User_Confirmed |
 | TikTok | Hold | No publicar hoy. | — | Mantener `https://meli.la/1yT1Ghg` reservado; activar solo tras verificar el enlace en perfil. | Hold |
 | YouTube | Hold | No publicar hoy. | — | Mantener `https://meli.la/2qufJQD` reservado; no usar en Shorts ni Community sin una decisión editorial separada. | Hold |
 
 ## Checklist final de publicación manual
 
-1. Confirmar que el clip fuente de Universe no tuvo publicación pública reciente; no crear texto sobre el video.
-2. En Facebook, programar el Reel manualmente, adjuntar el producto desde el módulo nativo y usar el link exclusivo de Facebook en el texto editado.
-3. En Instagram, programar el Reel manualmente y usar el link exclusivo de Instagram en el texto editado; no atribuirle adjunción nativa.
-4. Guardar permalink, ID nativo, hora exacta y la ruta/nombre del clip en el registro maestro; añadir cualquier ID de adjunción de Facebook al ledger.
+1. Recuperar hora efectiva, permalink e ID nativo de ambos Reels una vez que se publiquen.
+2. Confirmar en Facebook si el producto nativo quedó adjunto y registrar su ID de adjunción; no inferirlo solo porque el link aparezca en el texto.
+3. Registrar la ruta/nombre del clip del tráiler cuando se concilie el asset fuente.
+4. Guardar los IDs y permalinks en el registro maestro y actualizar el ledger.
 5. Tomar el primer snapshot de Mercado Libre a las 24 horas desde la hora efectiva de publicación; no interpretar clics como ventas ni comisiones confirmadas.
 
-No hay publicación automática, programación ni adjunción nativa ejecutadas por este paquete.
+La programación fue ejecutada manualmente por Fernando. No se ha verificado aún la publicación efectiva ni la adjunción nativa de Facebook.
