@@ -15,6 +15,7 @@ related_documents:
   - "Operations/Research/2026-08-19_Analisis_Lote_Dialogo_Transformacion.md"
   - "Operations/Research/2026-08-19_Analisis_Subgrupos_Humor_Acido.md"
   - "Operations/Research/2026-08-19_Analisis_Ampliacion_Humor_Sexual.md"
+  - "Operations/Research/2026-08-20_Expansion_Visual_Findings_01.md"
   - "Operations/Research/2026-08-18_Filtro_Expansion_58_Casos_GrowthOS.md"
   - "GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md"
 organization: "Operations/Research"
@@ -34,9 +35,9 @@ La regla de muestra queda separada en dos niveles. Una celda alcanza una **seña
 |---|---:|---:|---:|---:|---:|
 | Microhistoria secuencial | 1 | 0 | 2 borderlines | 2 | 4 |
 | Transformación visual | 2 | 0 | 0 | 1 | 3 |
-| Humor observacional | 2 | 2 | 0 | 1 | 3 |
-| Diálogo ácido | 1 | 1 | 2 borderlines | 2 | 4 |
-| Autodesprecio / antihéroe | 2 | 2 | 0 | 1 | 3 |
+| Humor observacional | 3 | 1 | 0 | 0 | 2 |
+| Diálogo ácido | 2 | 0 | 2 borderlines | 1 | 3 |
+| Autodesprecio / antihéroe | 2 | 1 | 0 | 1 | 3 |
 
 Los conteos anteriores son deliberadamente conservadores. Un candidato no se incorpora solo porque tenga muchas interacciones: debe existir evidencia visual y una justificación funcional. Los outliers se conservan dentro de la muestra, pero se reportan también con análisis de sensibilidad para que no se conviertan en benchmark normal.
 
@@ -46,9 +47,9 @@ Los conteos anteriores son deliberadamente conservadores. Un candidato no se inc
 |---|---|---|---|
 | Microhistoria secuencial | `122129404893072582` — 155 interacciones, 19 shares | No hay candidato elegible todavía; `122130232503072582` y `122130032151072582` quedan como borderlines | Revisar solo para confirmar exclusión; buscar dos casos nuevos con turnos visuales claros. |
 | Transformación visual | `122130196011072582` — 164/42; `122130324285072582` — 7/0 | No hay candidato elegible; `122130411897072582` queda excluido porque no confirma transformación de Universe | Buscar al menos un caso nuevo de transformación de Universe y registrar preservación de gafas/marcadores. |
-| Humor observacional | `122132375181072582` — 24/4; `122132371125072582` — 36/8 | `122129214813072582` — 924/214; `122133575895072582` — 393/87 | Revisar función del remate y sensibilidad contextual; no mezclar observacional oscuro con observacional social sin nota. |
-| Diálogo ácido | `122134161303072582` — 521/185 | `122132365443072582` — 394/70; `122130032151072582` y `122130232503072582` quedan como borderlines | Revisar Universe/Fantasma; no incorporar los borderlines sin evidencia del mecanismo ácido. |
-| Autodesprecio / antihéroe | `122134136793072582` — 1,308/392; `122132350563072582` — 351/109 | `122132711259072582` — 20/3; `122132695779072582` — 9/0 | Confirmar si el remate es autodesprecio o solo ansiedad/relación. Mantener outliers separados en el reporte. |
+| Humor observacional | `122132375181072582` — 24/4; `122132371125072582` — 36/8; `122133575895072582` — 393/87 | `122129214813072582` — 924/214 | La revisión visual ya confirma tres casos comparables; revisar sensibilidad de `260740` antes de incorporarlo. |
+| Diálogo ácido | `122134161303072582` — 521/185; `122132365443072582` — 394/70 | No hay candidatos elegibles adicionales; `122130032151072582` y `122130232503072582` quedan como borderlines | Falta un caso para señal `n=3`; no incorporar los borderlines sin evidencia del mecanismo ácido. |
+| Autodesprecio / antihéroe | `122134136793072582` — 1,308/392; `122132350563072582` — 351/109 | `122134169481072582` — 15/1 | La revisión visual excluyó Silvio y ansiedad relacional; queda Ganso como autopercepción absurda/antihéroe, con discrepancia local `2607828` vs histórico `2607833`. |
 
 Los números `interacciones/shares` son lifetime históricos. No deben mezclarse con snapshots 24/72 horas de agosto ni utilizarse para reabrir el ciclo P0.
 
@@ -81,7 +82,7 @@ El primer lote debe ser de **revisión y codificación**, no de publicación:
 
 | Fase | Trabajo | Criterio de cierre |
 |---|---|---|
-| A | Revisar visualmente los cinco candidatos `Candidate_Review` y, si es necesario, las cuatro filas borderline | Cada caso tiene `Included`, `Excluded` o `Borderline`, con razón explícita |
+| A | Revisar visualmente los dos candidatos restantes `Candidate_Review` y, si es necesario, las cuatro filas borderline | Cada caso tiene `Included`, `Excluded` o `Borderline`, con razón explícita; dos casos ya fueron promovidos en el corte 01 |
 | B | Completar la cobertura mínima de cinco celdas | No contar más de tres casos para señal preliminar hasta confirmar evidencia |
 | C | Recuperar captions verificables de los casos incluidos | Cada fila tiene tratamiento, texto, fuente y confianza; si no, `historical_unavailable` |
 | D | Analizar medianas, shares y sensibilidad a outliers | Reportar resultado con y sin outliers cuando un caso concentre la celda |
@@ -91,7 +92,7 @@ En la fase E, si la revisión histórica no aporta suficientes casos, se diseña
 
 ## 7. Estado recomendado
 
-La propuesta queda en `Review`. No se crean CNT, no se modifica el calendario y no se publican piezas con base en esta selección. La siguiente acción concreta es aprobar el lote de revisión visual y codificación; después se actualizará la cola con los casos incluidos y excluidos.
+La propuesta sigue en `Review`. El corte visual 01 promovió `2607787` a diálogo ácido comparable y `2607816` a observacional comparable; añadió `2607828`/Meta ID `1036844829507460_122134169481072582` como candidato de autopercepción/antihéroe y excluyó Silvio y ansiedad relacional de esa celda. Se conserva la discrepancia de asset ref. No autoriza publicación, creación de CNT, modificación de calendario ni reuse. La siguiente acción requiere revisar los dos candidatos restantes y, si procede, los cuatro borderlines documentados en `Operations/Research/2026-08-20_Expansion_Celdas_Comparables_Candidatos.csv`.
 
 ## Referencias
 
