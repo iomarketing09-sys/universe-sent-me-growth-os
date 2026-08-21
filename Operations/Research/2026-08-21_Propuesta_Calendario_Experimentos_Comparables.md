@@ -32,6 +32,10 @@ El documento está en `Review`. Todavía no modifica `2026-08-16_Calendario_Oper
 | 2026-08-24 | 10:00 | `FUT-MICRO-006` / `HB-007` | `FUT-MICRO-006_HB-007_Microhistoria_Cotidiana_3P_v3.png` | `Universe - Existencial 260661.png` | Franja de 10:00, contenido de humor cotidiano/irreverente y separación de la prueba romántica del mismo día. | Personaje y tono del slot original; la microhistoria debe conservar `caption_refuerzo` y no heredar el caption anterior. |
 | 2026-08-27 | 16:00 | `FUT-ACID-003` / `HB-009` | `FUT-ACID-003_HB-009_Dialogo_Acido_Situacional_v3.png` | `2608064 - Universe - Quieren hacer pendejo al que nacio asi.jpeg` | El slot original ya tiene clasificación lenguaje fuerte/ácido; es el alineamiento semántico más directo disponible en el calendario futuro. | La hora 16:00 no es la ventana nocturna preferida; registrar `Hora_Test=16:00` y no comparar directamente con casos de 19:00/22:00. |
 
+## Alerta de integridad del calendario
+
+El CSV fuente contiene algunas etiquetas de día que no coinciden con la fecha ISO, por ejemplo `2026-08-24` aparece como `Jueves` en el slot de 13:30 aunque la fecha corresponde a lunes. Las fechas ISO y la zona `America/Matamoros` deben considerarse la fuente primaria; antes de editar el calendario maestro se debe normalizar o verificar el campo `Día` en las tres filas afectadas. Esta alerta no cambia los slots propuestos, pero bloquea una ejecución automática basada únicamente en el nombre del día.
+
 ## Tratamiento operativo propuesto
 
 Si Fernando aprueba los tres reemplazos, el siguiente cambio será actualizar únicamente estas tres filas del calendario maestro. El `Experiment_ID` será `EXP-2026-08-COMP-GAPS-01`, con `Hypothesis_ID` `HB-006`, `HB-007` y `HB-009`; se conservarán `Cell_ID`, `Caption_Treatment`, `Caption_Function`, `Narrative_Structure`, `Humor_Function`, `Character_Presence`, `Hora_Test`, `Theme_Confound` y `Reuse_Status=New_Asset_Proposed`.
