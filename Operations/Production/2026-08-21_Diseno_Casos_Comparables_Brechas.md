@@ -4,7 +4,7 @@ purpose: "Definir las piezas históricas/futuras mínimas necesarias para comple
 status: Active
 created: 2026-08-21
 updated: 2026-08-21
-version: "1.7"
+version: "1.8"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-20_Propuesta_Expansion_Celdas_Comparables.md"
@@ -14,6 +14,9 @@ related_documents:
   - "Operations/Production/2026-08-20_Plan_Experimentos_Agosto_5_Familias.md"
   - "Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md"
   - "Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv"
+  - "Operations/Research/2026-08-21_Autorizacion_Generacion_Briefs_Comparables.csv"
+  - "Operations/Production/validate_generation_authorization_matrix.py"
+  - "Operations/Production/approve_generation_briefs.py"
   - "Operations/Production/2026-08-21_Preflight_Briefs_Comparables.md"
   - "Operations/Production/run_comparable_briefs_preflight.py"
   - "Operations/Production/populate_comparable_brief_metadata.py"
@@ -31,17 +34,17 @@ organization: "Operations/Production"
 
 ## Paquete de revisión humana y aprobación de preflight
 
-Los cuatro briefs están registrados en `Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md`, con la matriz estructurada en `Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`. Cada brief tiene estado `Approved_for_Preflight`. El ejecutor `run_comparable_briefs_preflight.py` confirmó `4/4` especificaciones en `PASS`. La aprobación de Fernando y el resultado del preflight no autorizan generar assets finales, mover calendario, publicar ni crear CNT.
+Los cuatro briefs están registrados en `Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md`, con la matriz estructurada en `Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`. Cada brief tiene estado `Approved_for_Preflight` y autorización separada `Approved_Generation_Only`, registrada por Fernando el 2026-08-21. El ejecutor `run_comparable_briefs_preflight.py` confirmó `4/4` especificaciones en `PASS`. La autorización permite generar los cuatro assets, pero no mover calendario, publicar, crear CNT, adjuntar afiliados ni reutilizar.
 
 ## Resultado del preflight y alcance vigente
 
-El preflight de especificación y metadatos propuestos pasó para los cuatro briefs (`4/4`). El resultado es `preflight_specification_pass`, no `generation_approved`: todavía no existe asset y los valores de `Experiment_ID`, `Hypothesis_ID`, `Caption_Function`, `Hora_Test`, `Theme_Confound` y demás campos están registrados como propuestas previas. Todos permanecen bloqueados para promoción hasta obtener aprobación humana separada.
+El preflight de especificación y metadatos pasó para los cuatro briefs (`4/4`) y la matriz de autorización confirma `Approved_Generation_Only` para los cuatro. Todavía no existe asset: los valores de `Experiment_ID`, `Hypothesis_ID`, `Caption_Function`, `Hora_Test`, `Theme_Confound` y demás campos deberán verificarse contra el resultado visual. Los assets generados permanecerán bloqueados para calendario, CNT, reuse, afiliados y publicación hasta una aprobación humana posterior.
 
 ## Alcance y decisión previa
 
 La matriz actual tiene tres celdas que siguen bajo `n=3`: **microhistoria estricta de tres paneles** (`n=1`), **transformación visual de Universe** (`n=2`) y **diálogo ácido** (`n=2`). La cola de junio aportó `1036844829507460_122127951885072582`, pero la validación confirmó cuatro paneles. Por tanto, se excluye de la celda estricta y la necesidad de producción se mantiene en dos casos nuevos de tres paneles.
 
-Los diseños siguientes son briefs de prueba aprobados para preflight, no publicaciones aprobadas. El preflight puede preparar especificaciones y validar riesgos, pero no genera assets finales, no modifica calendario y no asigna CNT. Su función es que la próxima pieza que se cree responda una brecha estadística concreta.
+Los diseños siguientes son briefs de prueba aprobados para generación exclusiva, no publicaciones aprobadas. La generación puede producir los cuatro assets autorizados y validar riesgos, pero no modifica calendario ni asigna CNT. Su función es que las próximas piezas respondan brechas estadísticas concretas.
 
 ## Estado actual de las celdas comparables
 
@@ -54,11 +57,11 @@ Los diseños siguientes son briefs de prueba aprobados para preflight, no public
 | `ACID-DIALOGUE` | `n=2` | Bajo `n=3` | Un diálogo ácido nuevo con destinatario claro y remate seguro | `FUT-ACID-003` aprobado para preflight |
 | `SELF-DEPRECATION/ANTIHERO` | `n=3` | Señal preliminar heterogénea | Dos casos adicionales para `n=5`; separar autodesprecio de simple tristeza o roast | Sin brief activo |
 
-Los cuatro briefs aprobados no cierran ninguna celda por sí solos: autorizan únicamente preflight. La matriz CSV ya contiene propuestas para `Experiment_ID`, `Hypothesis_ID`, `Cell_ID`, `Narrative_Structure`, `Caption_Treatment`, `Caption_Function`, `Humor_Function`, `Character_Presence`, `Theme_Confound`, `Hora_Test`, `Reuse_Status=New_Asset_Proposed` y la zona horaria `America/Matamoros`. La validación cruzada no detectó colisiones directas de IDs (`4/4` sin conflicto duro) y ahora confirma `4/4` en `PASS`: `HB-006` a `HB-009` están registrados en el `HypothesisBank` con formato formal único. La promoción de cada pieza todavía requerirá revisar los valores con el asset real, confirmar seguridad y ausencia de confusores excluidos, y obtener una aprobación humana separada para generar. Para una señal preliminar se mantiene `n=3`; para un veredicto operativo, `n=5`.
+Los cuatro briefs aprobados no cierran ninguna celda por sí solos: autorizan únicamente generación de un asset nuevo por brief. La matriz CSV ya contiene propuestas para `Experiment_ID`, `Hypothesis_ID`, `Cell_ID`, `Narrative_Structure`, `Caption_Treatment`, `Caption_Function`, `Humor_Function`, `Character_Presence`, `Theme_Confound`, `Hora_Test`, `Reuse_Status=New_Asset_Proposed` y la zona horaria `America/Matamoros`. La validación cruzada no detectó colisiones directas de IDs (`4/4` sin conflicto duro) y ahora confirma `4/4` en `PASS`: `HB-006` a `HB-009` están registrados en el `HypothesisBank` con formato formal único. La promoción de cada pieza todavía requerirá revisar los valores con el asset real, confirmar seguridad y ausencia de confusores excluidos, y obtener una aprobación humana posterior para calendario, CNT o publicación. Para una señal preliminar se mantiene `n=3`; para un veredicto operativo, `n=5`.
 
 ## Resultado de la validación cruzada de hipótesis
 
-El reporte `Operations/Research/2026-08-21_Validacion_Cruzada_Hipotesis_Briefs_Comparables.md` confirma que `EXP-2026-08-COMP-GAPS-01` no colisiona con `EXP-2026-08-BASELINE-01`, `EXP-2026-08-BASELINE-02`, `EXP-2026-08-BASELINE-03`, `EXP-2026-08-CAL-01` ni `EXP-2026-08-FAM01-W1` a `EXP-2026-08-FAM05-W1`. Los riesgos restantes son solapamientos semánticos controlables: ácido con FAM-04, identidad de Universe con FAM-05/HB-002 y microhistorias con FAM-02/FAM-03. No se deben combinar denominadores automáticamente. Las hipótesis ya están registradas como `HB-006` a `HB-009`; este registro no autoriza generación. La simulación de impacto confirmó que una doble asignación a una familia Wave 1 de `n=3` inflaría el denominador en `33.33%`; por ello no se deben combinar familias por parecido temático.
+El reporte `Operations/Research/2026-08-21_Validacion_Cruzada_Hipotesis_Briefs_Comparables.md` confirma que `EXP-2026-08-COMP-GAPS-01` no colisiona con `EXP-2026-08-BASELINE-01`, `EXP-2026-08-BASELINE-02`, `EXP-2026-08-BASELINE-03`, `EXP-2026-08-CAL-01` ni `EXP-2026-08-FAM01-W1` a `EXP-2026-08-FAM05-W1`. Los riesgos restantes son solapamientos semánticos controlables: ácido con FAM-04, identidad de Universe con FAM-05/HB-002 y microhistorias con FAM-02/FAM-03. No se deben combinar denominadores automáticamente. Las hipótesis ya están registradas como `HB-006` a `HB-009` y la generación exclusiva fue aprobada por Fernando; esto no autoriza calendario, CNT, reuse, afiliados ni publicación. La simulación de impacto confirmó que una doble asignación a una familia Wave 1 de `n=3` inflaría el denominador en `33.33%`; por ello no se deben combinar familias por parecido temático.
 
 ## Aprobación de análisis selectivo
 

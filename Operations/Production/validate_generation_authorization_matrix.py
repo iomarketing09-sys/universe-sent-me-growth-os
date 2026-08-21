@@ -53,14 +53,14 @@ for row in rows:
         "hypothesis_id": row["Hypothesis_ID"] == EXPECTED_BRIEFS[brief_id],
         "generation_request": row["Generation_Request"] == "Approve_Generation_Only",
         "asset_count": row["Proposed_Asset_Count"] == "1",
-        "generation_pending": row["Generation_Authorization"] == "Pending_Human_Approval",
+        "generation_approved": row["Generation_Authorization"] == "Approved_Generation_Only",
         "calendar_block": row["Calendar_Change"] == "No",
         "cnt_block": row["CNT_Creation"] == "No",
         "publication_block": row["Publication"] == "No",
         "affiliate_block": row["Affiliate_Attachment"] == "No",
-        "decision_pending": row["Decision"] == "Pending",
-        "decision_by_empty": row["Decision_By"] == "",
-        "decision_date_empty": row["Decision_Date"] == "",
+        "decision_approved": row["Decision"] == "Approved",
+        "decision_by": row["Decision_By"] == "Fernando",
+        "decision_date": row["Decision_Date"] == "2026-08-21",
     }
     failed = [name for name, passed in checks.items() if not passed]
     if failed:
@@ -69,4 +69,4 @@ for row in rows:
 print(f"authorization_matrix_pass={len(rows)}/{len(EXPECTED_BRIEFS)}")
 print("scope=Approve_Generation_Only")
 print("calendar_change=No cnt_creation=No publication=No affiliate_attachment=No")
-print("human_decision=Pending")
+print("human_decision=Approved by Fernando on 2026-08-21")

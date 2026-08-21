@@ -4,9 +4,13 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-21
-**Versión:** 2.47
+**Versión:** 2.49
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.49.00] — 2026-08-21 (Manus): Generación y control visual preliminar de los cuatro assets comparables.** Se generó un PNG nuevo para cada brief en `Operations/Production/Generated_Comparable_Assets/`. `FUT-MICRO-005`, `FUT-MICRO-006` y `FUT-ACID-003` pasaron control visual preliminar; `FUT-TRANS-003` pasó con identidad consistente tras comparar el mismo gato y gafas con la referencia compartida. Ledger: `Operations/Production/2026-08-21_Generated_Comparable_Assets.csv`; control: `Operations/Production/2026-08-21_Control_Visual_Assets_Comparables.md`; prompts: `Operations/Production/2026-08-21_Prompts_Assets_Comparables.md`. No se modificó calendario, CNT, reuse, afiliados, `ExperimentLog` ni publicación. Requiere decisión humana posterior para cualquier uso operativo.
+
+- **[2.48.00] — 2026-08-21 (Manus): Aprobación humana para generar los cuatro assets comparables.** Fernando aprobó `FUT-MICRO-005`, `FUT-MICRO-006`, `FUT-TRANS-003` y `FUT-ACID-003` para `Approved_Generation_Only` el 2026-08-21. La matriz queda validada `4/4` por `Operations/Production/validate_generation_authorization_matrix.py`; `Calendar_Change=No`, `CNT_Creation=No`, `Publication=No` y `Affiliate_Attachment=No`. La autorización permite producir un asset nuevo por brief y ejecutar control visual posterior, pero no autoriza calendario, reuse, afiliados, CNT ni publicación. Scripts: `Operations/Production/approve_generation_briefs.py` y `Operations/Production/validate_generation_authorization_matrix.py`. Assets todavía no generados.
 
 - **[2.47.00] — 2026-08-21 (Manus): Paquete de revisión humana para autorización exclusiva de generación.** Se creó `Operations/Research/2026-08-21_Autorizacion_Generacion_Briefs_Comparables.csv` con cuatro solicitudes `Approve_Generation_Only`, una por brief, todas en `Decision=Pending` y `Generation_Authorization=Pending_Human_Approval`. Los bloqueos `Calendar_Change=No`, `CNT_Creation=No`, `Publication=No` y `Affiliate_Attachment=No` quedaron validados por `Operations/Production/validate_generation_authorization_matrix.py` con `4/4 PASS`. El paquete narrativo actualizado es `Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md`. No se generaron assets, no se modificó el calendario y no se actualizó `ExperimentLog`.
 
