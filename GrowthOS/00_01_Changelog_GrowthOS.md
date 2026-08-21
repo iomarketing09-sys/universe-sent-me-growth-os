@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-21
-**Versión:** 2.34
+**Versión:** 2.35
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.35.00] — 2026-08-21 (Manus): Corte cuantitativo de personajes y resolución del candidato de cuatro paneles.** Los 17 casos aprobados suman 300 interacciones, 53 shares y 13 comentarios; el caso Universe `1036844829507460_122130196011072582` concentra 54.7% de las interacciones y 79.2% de los shares del subconjunto. Sin ese outlier, la mediana baja a 8 interacciones y 0.5 shares. No se infiere efecto causal ni ranking de personajes. El candidato `1036844829507460_122127951885072582` queda con `validation_status=Excluded_3P_Retain_4P_Candidate`: cuatro paneles confirmados, fuera de `MICRO-STRICT-3P`, retenido solo para una futura `MICRO-SEQ-4P` que no se abrirá sin tres casos comparables y definición aprobada. Documentos: `Operations/Research/2026-08-21_Junio_57_Approved_Character_Analysis.md`, `Operations/Research/2026-08-21_Junio_57_Approved_Character_Analysis.json` y `Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`. No se modifican CNT, canon, calendario ni publicaciones.
 
 - **[2.34.00] — 2026-08-21 (Manus): Aprobación de los 17 casos de personaje y validación del candidato de microhistoria.** Fernando aprobó incorporar 17 casos visuales de junio a la capa de análisis selectivo, con alcance limitado a presencia visual, rol narrativo, potencial de etiquetado y relación con celdas. No se autorizaron CNT, canon, reuse, calendario ni publicación. El candidato `1036844829507460_122127951885072582` fue validado como microhistoria de cuatro paneles con turnos, continuidad y remate, pero queda fuera de `MICRO-STRICT-3P` porque esa celda exige exactamente tres paneles. Se conserva como `Pending_Cell_Validation` para una eventual subcelda `MICRO-SEQ-4P`, que no se abrirá sin al menos tres casos comparables y una definición aprobada. Documentos: `Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md`, `Operations/Research/2026-08-21_Junio_57_Unmatched_Character_Utility.csv` y `Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`.
 

@@ -55,7 +55,7 @@ Los conteos anteriores son deliberadamente conservadores. Un candidato no se inc
 
 | Celda | Caso base ya comparable | Candidatos de revisión prioritarios | Decisión de revisión |
 |---|---|---|---|
-| Microhistoria secuencial | `122129404893072582` — 155 interacciones, 19 shares | `122127951885072582` — cuatro paneles con turnos telefónicos y baile; `122130232503072582` y `122130032151072582` quedan como borderlines | `Pending_Cell_Validation`: excluido de `MICRO-STRICT-3P` por contar cuatro paneles; retener como posible subcelda 4P y no reducir todavía el diseño de dos casos estrictos. |
+| Microhistoria secuencial | `122129404893072582` — 155 interacciones, 19 shares | `122127951885072582` — cuatro paneles con turnos telefónicos y baile; `122130232503072582` y `122130032151072582` quedan como borderlines | `Excluded_3P_Retain_4P_Candidate`: cuatro paneles confirmados; queda fuera de `MICRO-STRICT-3P`, se retiene para una posible subcelda 4P y no reduce el diseño de dos casos estrictos. |
 | Transformación visual | `122130196011072582` — 164/42; `122130324285072582` — 7/0 | No hay candidato elegible; `122130411897072582` queda excluido porque no confirma transformación de Universe | Buscar al menos un caso nuevo de transformación de Universe y registrar preservación de gafas/marcadores. |
 | Humor observacional | `122132375181072582` — 24/4; `122132371125072582` — 36/8; `122133575895072582` — 393/87 | `122129214813072582` — 924/214 | La revisión visual ya confirma tres casos comparables; revisar sensibilidad de `260740` antes de incorporarlo. |
 | Diálogo ácido | `122134161303072582` — 521/185; `122132365443072582` — 394/70 | No hay candidatos elegibles adicionales; `122130032151072582` y `122130232503072582` quedan como borderlines | Falta un caso para señal `n=3`; no incorporar los borderlines sin evidencia del mecanismo ácido. |
@@ -92,7 +92,7 @@ El primer lote debe ser de **revisión y codificación**, no de publicación:
 
 | Fase | Trabajo | Criterio de cierre |
 |---|---|---|
-| A | Revisar visualmente los dos candidatos restantes `Candidate_Review` y, si es necesario, las cuatro filas borderline | Cada caso tiene `Included`, `Excluded` o `Borderline`, con razón explícita; dos casos ya fueron promovidos en el corte 01 |
+| A | Revisar los candidatos que aún no tengan decisión funcional y las filas borderline | Cada caso tiene `Included`, `Excluded` o `Borderline`, con razón explícita; el candidato 4P ya quedó excluido de la celda 3P |
 | B | Completar la cobertura mínima de cinco celdas | No contar más de tres casos para señal preliminar hasta confirmar evidencia |
 | C | Recuperar captions verificables de los casos incluidos | Cada fila tiene tratamiento, texto, fuente y confianza; si no, `historical_unavailable` |
 | D | Analizar medianas, shares y sensibilidad a outliers | Reportar resultado con y sin outliers cuando un caso concentre la celda |
@@ -114,7 +114,7 @@ La propuesta sigue en `Review`. El corte visual 01 promovió `2607787` a diálog
 
 ## 9. Diseño de casos futuros para las brechas
 
-El documento `Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md` define cuatro briefs condicionales: dos microhistorias estrictas de tres paneles como respaldo, una transformación de Universe con gafas y marcadores preservados, y un diálogo ácido interpersonal. La validación actual de `122127951885072582` confirma una microhistoria de cuatro paneles, pero no la promueve a la celda estricta; por prudencia se mantienen los dos briefs de tres paneles hasta que exista una definición separada de 4P. Estos casos no están aprobados para publicación y deben registrarse con `Cell_ID`, `Caption_Treatment`, `Hora_Test`, `Theme_Confound` y salvaguardas de identidad antes de entrar a calendario.
+El documento `Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md` define cuatro briefs condicionales: dos microhistorias estrictas de tres paneles como respaldo, una transformación de Universe con gafas y marcadores preservados, y un diálogo ácido interpersonal. La validación final de `122127951885072582` confirma una microhistoria de cuatro paneles, pero la excluye de la celda estricta; por prudencia se mantienen los dos briefs de tres paneles y no se abre una definición 4P hasta reunir tres casos comparables. Estos casos no están aprobados para publicación y deben registrarse con `Cell_ID`, `Caption_Treatment`, `Hora_Test`, `Theme_Confound` y salvaguardas de identidad antes de entrar a calendario.
 
 ## Referencias
 

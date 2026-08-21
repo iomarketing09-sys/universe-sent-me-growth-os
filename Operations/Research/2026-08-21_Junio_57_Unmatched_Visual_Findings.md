@@ -10,6 +10,7 @@ related_documents:
   - "Operations/Research/2026-08-17_Cola_Reconciliacion_Assets_Junio.csv"
   - "Operations/Research/2026-08-21_Junio_57_Unmatched_Meta_Raw.json"
   - "Operations/Research/2026-08-21_Junio_57_Unmatched_Character_Utility.csv"
+  - "Operations/Research/2026-08-21_Junio_57_Approved_Character_Analysis.md"
   - "Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Findings.md"
   - "Operations/Research/2026-08-20_Expansion_Celdas_Comparables_Candidatos.csv"
   - "Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md"
@@ -72,10 +73,10 @@ El único caso sin imagen, `1036844829507460_122129194233072582`, tampoco debe c
 
 El **21 de agosto de 2026**, Fernando aprobó incorporar los 17 casos de personaje a la capa de análisis selectivo. La autorización cubre descripción visual, hipótesis de personaje, rol narrativo, potencial de etiquetado y relación con celdas. No cubre la creación de CNT, la modificación del canon, el reuse, el calendario ni la publicación de contenido. El ledger registra la autorización con `approval_status=Approved_Character_Analysis`, `approval_by=Fernando` y `approval_scope=Selective_character_analysis_only`.
 
-El candidato `1036844829507460_122127951885072582` no queda aprobado automáticamente como comparable. Su estado es `Pending_Cell_Validation` y se aplican los parámetros definidos en `Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`.
+El candidato `1036844829507460_122127951885072582` fue validado estructuralmente como una secuencia de cuatro paneles. Su estado pasa a `Excluded_3P_Retain_4P_Candidate`: queda fuera de `MICRO-STRICT-3P` por no cumplir el conteo exacto de tres paneles, y se conserva únicamente como candidato potencial de una futura `MICRO-SEQ-4P`. Esa subcelda no se abre todavía.
 
 ## Decisión operativa
 
-La cola de junio sí contiene material necesario para el análisis de personajes, pero solo en una capa selectiva de **17 casos inmediatos** y **2 reservas**. No se crean CNT, no se agregan los casos al canon y no se modifican calendario ni reuse. La integración individual solo debe realizarse después de confirmar Meta→Drive visualmente; mientras tanto, este documento y el CSV de utilidad son la fuente de la hipótesis visual.
+La cola de junio sí contiene material necesario para el análisis de personajes, pero solo en una capa selectiva de **17 casos aprobados** y **2 reservas visuales**. El corte cuantitativo conserva 300 interacciones y 53 shares en los 17 casos, pero el caso Universe de 164 interacciones y 42 shares concentra 54.7% de las interacciones y 79.2% de los shares; sin él, la mediana baja a 8 interacciones y 0.5 shares. No se crea un ranking de personajes ni se infiere causalidad. No se crean CNT, no se agregan los casos al canon y no se modifican calendario ni reuse.
 
 Las transformaciones de Universe deben registrar `preserva_gafas_universe` y `preserva_marcadores_identidad`. Un gato con gafas se registra como marcador visual candidato; no demuestra por sí solo identidad canónica.

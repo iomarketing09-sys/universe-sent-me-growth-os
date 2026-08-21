@@ -4,12 +4,13 @@ purpose: "Definir las piezas históricas/futuras mínimas necesarias para comple
 status: Review
 created: 2026-08-21
 updated: 2026-08-21
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-20_Propuesta_Expansion_Celdas_Comparables.md"
   - "Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md"
   - "Operations/Research/2026-08-21_Junio_57_Unmatched_Character_Utility.csv"
+  - "Operations/Research/2026-08-21_Junio_57_Approved_Character_Analysis.md"
   - "Operations/Production/2026-08-20_Plan_Experimentos_Agosto_5_Familias.md"
   - "GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md"
 organization: "Operations/Production"
@@ -19,7 +20,7 @@ organization: "Operations/Production"
 
 ## Alcance y decisión previa
 
-La matriz actual tiene tres celdas que siguen bajo `n=3`: **microhistoria estricta de tres paneles** (`n=1`), **transformación visual de Universe** (`n=2`) y **diálogo ácido** (`n=2`). La cola de junio aporta un candidato visual de microhistoria estricta, `1036844829507460_122127951885072582`, con cuatro paneles y turnos claros. Primero debe revisarse y, si se confirma como comparable, la necesidad de producción se reduce de dos casos estrictos a uno.
+La matriz actual tiene tres celdas que siguen bajo `n=3`: **microhistoria estricta de tres paneles** (`n=1`), **transformación visual de Universe** (`n=2`) y **diálogo ácido** (`n=2`). La cola de junio aportó `1036844829507460_122127951885072582`, pero la validación confirmó cuatro paneles. Por tanto, se excluye de la celda estricta y la necesidad de producción se mantiene en dos casos nuevos de tres paneles.
 
 Los diseños siguientes son briefs de prueba, no publicaciones aprobadas. No generan assets, no modifican calendario y no asignan CNT. Su función es que la próxima pieza que se cree responda una brecha estadística concreta.
 
@@ -29,7 +30,7 @@ Fernando aprobó la incorporación de los 17 casos visuales de personaje a la ca
 
 ## Protocolo de validación del candidato `122127951885072582`
 
-El candidato muestra cuatro paneles, dos interlocutores humanos visualmente consistentes, turnos telefónicos claros y un remate de baile en el último panel. Por esa razón **no debe entrar automáticamente a la celda estricta de tres paneles**, cuya definición exige exactamente tres paneles. Se conserva como candidato para una eventual subcelda `MICRO-SEQ-4P`, pero esa subcelda no se abre ni se mezcla con `MICRO-STRICT-3P` sin al menos tres casos comparables y una definición aprobada.
+El candidato muestra cuatro paneles, dos interlocutores humanos visualmente consistentes, turnos telefónicos claros y un remate de baile en el último panel. Por esa razón **no debe entrar automáticamente a la celda estricta de tres paneles**, cuya definición exige exactamente tres paneles. Se conserva como candidato para una eventual subcelda `MICRO-SEQ-4P`, pero esa subcelda no se abre ni se mezcla con `MICRO-STRICT-3P` sin al menos tres casos comparables y una definición aprobada. Estado final: `Excluded_3P_Retain_4P_Candidate`.
 
 | Parámetro | Regla de validación | Resultado actual |
 |---|---|---|
@@ -42,7 +43,7 @@ El candidato muestra cuatro paneles, dos interlocutores humanos visualmente cons
 | Caption histórico | No inferir tratamiento; usar `historical_unavailable` si no hay fuente | `historical_unavailable` |
 | Métricas | Conservar lifetime, aunque sea cero; no eliminar por bajo rendimiento | Válidas; 0 interacciones en la cola |
 | Asset/Drive | Requerido para integración de inventario/CNT, no para observar estructura narrativa | Pendiente; no se crea CNT |
-| Promoción | Solo si coincide con la definición de la celda elegida | Excluir de `MICRO-STRICT-3P`; retener como `Candidate_Review` de 4P |
+| Promoción | Solo si coincide con la definición de la celda elegida | `Excluded_3P_Retain_4P_Candidate`; no abrir 4P todavía |
 
 La decisión metodológica es conservar la estructura de cuatro paneles como aprendizaje negativo para la celda estricta: **una pieza puede ser una microhistoria válida y, aun así, no ser comparable con una celda definida por tres paneles**. Esto evita ampliar la definición después de ver el rendimiento o de necesitar completar `n=3`.
 

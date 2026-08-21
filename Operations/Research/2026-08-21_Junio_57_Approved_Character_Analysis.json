@@ -1,0 +1,356 @@
+{
+  "method": "Descriptive lifetime comparison of the approved visual-character subset; no causal attribution.",
+  "source": "Operations/Research/2026-08-21_Junio_57_Unmatched_Character_Utility.csv",
+  "approved_scope": "Selective character analysis only; no CNT, canon, reuse, calendar or publication.",
+  "group_stats": {
+    "approved_character_analysis": {
+      "n": 17,
+      "interactions_total": 300,
+      "interactions_median": 9,
+      "shares_total": 53,
+      "shares_median": 1,
+      "comments_total": 13,
+      "comments_median": 0
+    },
+    "character_reserve": {
+      "n": 2,
+      "interactions_total": 5,
+      "interactions_median": 2.5,
+      "shares_total": 0,
+      "shares_median": 0.0,
+      "comments_total": 1,
+      "comments_median": 0.5
+    },
+    "format_controls": {
+      "n": 36,
+      "interactions_total": 471,
+      "interactions_median": 6.0,
+      "shares_total": 85,
+      "shares_median": 0.0,
+      "comments_total": 21,
+      "comments_median": 0.0
+    },
+    "all_reserve_not_approved": {
+      "n": 39,
+      "interactions_total": 481,
+      "interactions_median": 5,
+      "shares_total": 86,
+      "shares_median": 0,
+      "comments_total": 22,
+      "comments_median": 0
+    },
+    "pending_cell_candidate": {
+      "n": 1,
+      "interactions_total": 0,
+      "interactions_median": 0,
+      "shares_total": 0,
+      "shares_median": 0,
+      "comments_total": 0,
+      "comments_median": 0
+    }
+  },
+  "approved_without_outlier": {
+    "n": 16,
+    "interactions_total": 136,
+    "interactions_median": 8.0,
+    "shares_total": 11,
+    "shares_median": 0.5,
+    "comments_total": 11,
+    "comments_median": 0.0
+  },
+  "hypothesis_stats": {
+    "Universe visual candidate": {
+      "n": 5,
+      "interactions_total": 201,
+      "interactions_median": 11,
+      "shares_total": 44,
+      "shares_median": 1,
+      "comments_total": 5,
+      "comments_median": 1,
+      "meta_ids": [
+        "1036844829507460_122130196011072582",
+        "1036844829507460_122125520661072582",
+        "1036844829507460_122128989885072582",
+        "1036844829507460_122130324285072582",
+        "1036844829507460_122133558903072582"
+      ],
+      "ranks": [
+        25,
+        87,
+        108,
+        149,
+        179
+      ]
+    },
+    "Wilfred visual candidate": {
+      "n": 5,
+      "interactions_total": 41,
+      "interactions_median": 6,
+      "shares_total": 5,
+      "shares_median": 1,
+      "comments_total": 3,
+      "comments_median": 0,
+      "meta_ids": [
+        "1036844829507460_122125544019072582",
+        "1036844829507460_122134065975072582",
+        "1036844829507460_122130309663072582",
+        "1036844829507460_122130032151072582",
+        "1036844829507460_122126670549072582"
+      ],
+      "ranks": [
+        74,
+        120,
+        161,
+        177,
+        184
+      ]
+    },
+    "Fantasma visual candidate": {
+      "n": 2,
+      "interactions_total": 15,
+      "interactions_median": 7.5,
+      "shares_total": 1,
+      "shares_median": 0.5,
+      "comments_total": 0,
+      "comments_median": 0.0,
+      "meta_ids": [
+        "1036844829507460_122130329817072582",
+        "1036844829507460_122125895013072582"
+      ],
+      "ranks": [
+        99,
+        195
+      ]
+    },
+    "Ganso visual candidate": {
+      "n": 1,
+      "interactions_total": 14,
+      "interactions_median": 14,
+      "shares_total": 2,
+      "shares_median": 2,
+      "comments_total": 3,
+      "comments_median": 3,
+      "meta_ids": [
+        "1036844829507460_122134608507072582"
+      ],
+      "ranks": [
+        98
+      ]
+    },
+    "Mixed roster candidate; identities unconfirmed": {
+      "n": 1,
+      "interactions_total": 9,
+      "interactions_median": 9,
+      "shares_total": 0,
+      "shares_median": 0,
+      "comments_total": 0,
+      "comments_median": 0,
+      "meta_ids": [
+        "1036844829507460_122131071243072582"
+      ],
+      "ranks": [
+        126
+      ]
+    },
+    "Unidentified magical woman": {
+      "n": 1,
+      "interactions_total": 9,
+      "interactions_median": 9,
+      "shares_total": 0,
+      "shares_median": 0,
+      "comments_total": 1,
+      "comments_median": 1,
+      "meta_ids": [
+        "1036844829507460_122134055109072582"
+      ],
+      "ranks": [
+        128
+      ]
+    },
+    "Unknown woman + cat": {
+      "n": 1,
+      "interactions_total": 6,
+      "interactions_median": 6,
+      "shares_total": 0,
+      "shares_median": 0,
+      "comments_total": 1,
+      "comments_median": 1,
+      "meta_ids": [
+        "1036844829507460_122126239515072582"
+      ],
+      "ranks": [
+        155
+      ]
+    },
+    "Silvio visual candidate": {
+      "n": 1,
+      "interactions_total": 5,
+      "interactions_median": 5,
+      "shares_total": 1,
+      "shares_median": 1,
+      "comments_total": 0,
+      "comments_median": 0,
+      "meta_ids": [
+        "1036844829507460_122133424479072582"
+      ],
+      "ranks": [
+        170
+      ]
+    }
+  },
+  "confounder_summary": {
+    "approved_interactions_share_from_universe": 0.67,
+    "approved_shares_share_from_universe": 0.8302,
+    "approved_shares_per_interaction": 0.1767,
+    "format_control_shares_per_interaction": 0.1805,
+    "outlier_meta_id": "1036844829507460_122130196011072582",
+    "outlier_interactions_share": 0.5467,
+    "outlier_shares_share": 0.7925,
+    "selection_bias_warning": "Universe visual candidate subgroup is dominated by one high-performing transformation-like case; no character effect inferred."
+  },
+  "top_approved_by_interactions": [
+    {
+      "meta_id": "1036844829507460_122130196011072582",
+      "rank": 25,
+      "hypothesis": "Universe visual candidate",
+      "interactions": 164,
+      "shares": 42,
+      "comments": 2
+    },
+    {
+      "meta_id": "1036844829507460_122125544019072582",
+      "rank": 74,
+      "hypothesis": "Wilfred visual candidate",
+      "interactions": 18,
+      "shares": 2,
+      "comments": 0
+    },
+    {
+      "meta_id": "1036844829507460_122125520661072582",
+      "rank": 87,
+      "hypothesis": "Universe visual candidate",
+      "interactions": 15,
+      "shares": 1,
+      "comments": 1
+    },
+    {
+      "meta_id": "1036844829507460_122134608507072582",
+      "rank": 98,
+      "hypothesis": "Ganso visual candidate",
+      "interactions": 14,
+      "shares": 2,
+      "comments": 3
+    },
+    {
+      "meta_id": "1036844829507460_122130329817072582",
+      "rank": 99,
+      "hypothesis": "Fantasma visual candidate",
+      "interactions": 13,
+      "shares": 1,
+      "comments": 0
+    },
+    {
+      "meta_id": "1036844829507460_122128989885072582",
+      "rank": 108,
+      "hypothesis": "Universe visual candidate",
+      "interactions": 11,
+      "shares": 0,
+      "comments": 2
+    },
+    {
+      "meta_id": "1036844829507460_122134065975072582",
+      "rank": 120,
+      "hypothesis": "Wilfred visual candidate",
+      "interactions": 10,
+      "shares": 1,
+      "comments": 3
+    },
+    {
+      "meta_id": "1036844829507460_122131071243072582",
+      "rank": 126,
+      "hypothesis": "Mixed roster candidate; identities unconfirmed",
+      "interactions": 9,
+      "shares": 0,
+      "comments": 0
+    },
+    {
+      "meta_id": "1036844829507460_122134055109072582",
+      "rank": 128,
+      "hypothesis": "Unidentified magical woman",
+      "interactions": 9,
+      "shares": 0,
+      "comments": 1
+    },
+    {
+      "meta_id": "1036844829507460_122130324285072582",
+      "rank": 149,
+      "hypothesis": "Universe visual candidate",
+      "interactions": 7,
+      "shares": 0,
+      "comments": 0
+    },
+    {
+      "meta_id": "1036844829507460_122130309663072582",
+      "rank": 161,
+      "hypothesis": "Wilfred visual candidate",
+      "interactions": 6,
+      "shares": 2,
+      "comments": 0
+    },
+    {
+      "meta_id": "1036844829507460_122126239515072582",
+      "rank": 155,
+      "hypothesis": "Unknown woman + cat",
+      "interactions": 6,
+      "shares": 0,
+      "comments": 1
+    },
+    {
+      "meta_id": "1036844829507460_122133424479072582",
+      "rank": 170,
+      "hypothesis": "Silvio visual candidate",
+      "interactions": 5,
+      "shares": 1,
+      "comments": 0
+    },
+    {
+      "meta_id": "1036844829507460_122133558903072582",
+      "rank": 179,
+      "hypothesis": "Universe visual candidate",
+      "interactions": 4,
+      "shares": 1,
+      "comments": 0
+    },
+    {
+      "meta_id": "1036844829507460_122130032151072582",
+      "rank": 177,
+      "hypothesis": "Wilfred visual candidate",
+      "interactions": 4,
+      "shares": 0,
+      "comments": 0
+    },
+    {
+      "meta_id": "1036844829507460_122126670549072582",
+      "rank": 184,
+      "hypothesis": "Wilfred visual candidate",
+      "interactions": 3,
+      "shares": 0,
+      "comments": 0
+    },
+    {
+      "meta_id": "1036844829507460_122125895013072582",
+      "rank": 195,
+      "hypothesis": "Fantasma visual candidate",
+      "interactions": 2,
+      "shares": 0,
+      "comments": 0
+    }
+  ],
+  "limits": [
+    "Selection was based on visual utility, not random sampling.",
+    "Character hypotheses are not canonical identity assignments.",
+    "Lifetime metrics are descriptive and include low/zero values.",
+    "No timing, caption or asset-match control is available for this queue.",
+    "The subset is too small and selected to infer character causality or a ranking."
+  ]
+}

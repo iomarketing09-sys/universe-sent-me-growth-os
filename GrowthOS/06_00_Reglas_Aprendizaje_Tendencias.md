@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-21
-**Versión:** 3.12
+**Versión:** 3.13
 **Autor:** Manus AI (CGO); Sección 6 añadida por Claude
 **Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`, `../Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`, `../Operations/Research/2026-08-21_Julio_Expansion_Lote01_Analysis.md`, `../Operations/Research/2026-08-21_Expansion_Celdas_Comparables_Post_Julio_Lote01.json`, `../Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Findings.md`, `../Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md`, `../Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`
 
@@ -311,7 +311,7 @@ En junio, solo el caso `122129404893072582` de los tres primeros `Needs_Asset_Ma
 
 La cola `Needs_Asset_Match` de junio se revisó visualmente como una reserva analítica, no como una reconciliación masiva. De 57 casos, 36 funcionan como controles de formato sin evidencia de personaje, 19 contienen candidatos visuales de Universe, Wilfred, Ganso, Fantasma, Silvio o un roster mixto, uno es candidato de microhistoria estricta y uno no tiene `full_picture`. Se seleccionan 17 casos para análisis de personaje sin crear CNT; dos candidatos visuales quedan como reserva.
 
-El caso `1036844829507460_122127951885072582` muestra cuatro paneles con turnos telefónicos y baile. Se mantiene como `Candidate_Review` de microhistoria estricta hasta confirmar que la definición de la celda acepta cuatro paneles y que existe evidencia Meta→Drive. No se cuenta automáticamente ni se usa para modificar la matriz.
+El caso `1036844829507460_122127951885072582` mostró cuatro paneles con turnos telefónicos y baile. La revisión posterior lo resolvió como `Excluded_3P_Retain_4P_Candidate`: no se cuenta en la celda estricta de tres paneles y no se usa para modificar la matriz; solo se conserva como reserva potencial de una subcelda 4P aún no abierta.
 
 La utilidad de personajes no equivale a rendimiento. Los gatos con gafas son marcadores visuales candidatos para Universe; los gnomos de barba blanca y gorro rojo son candidatos visuales para Wilfred; el pato/ave formal es candidato de Ganso; la figura blanca del bosque es candidata de Fantasma; la figura clown de pelo morado es candidata de Silvio. Ninguno se canoniza por una sola imagen, y cualquier transformación de Universe debe conservar gafas y marcadores de identidad.
 
@@ -319,9 +319,11 @@ Los briefs `FUT-MICRO-005`, `FUT-MICRO-006`, `FUT-TRANS-003` y `FUT-ACID-003` qu
 
 ### 18.3 Aprobación y validación de la cola de junio — 2026-08-21
 
-Fernando aprobó los 17 casos visuales de personaje para análisis selectivo. El alcance es descriptivo y comparativo: presencia visual, rol narrativo, potencial de etiquetado y relación con celdas. No autoriza CNT, canon, reuse, calendario ni publicación. Los 39 casos restantes permanecen como `Reserve_Not_Approved` y el candidato `1036844829507460_122127951885072582` queda como `Pending_Cell_Validation`.
+Fernando aprobó los 17 casos visuales de personaje para análisis selectivo. El alcance es descriptivo y comparativo: presencia visual, rol narrativo, potencial de etiquetado y relación con celdas. No autoriza CNT, canon, reuse, calendario ni publicación. Los 39 casos restantes permanecen como `Reserve_Not_Approved`; el candidato `1036844829507460_122127951885072582` conserva autorización `Pending_Cell_Validation` para una eventual subcelda, pero su validación estructural actual es `Excluded_3P_Retain_4P_Candidate`.
 
-El candidato tiene cuatro paneles y, por tanto, **falla la celda `MICRO-STRICT-3P`**, que exige exactamente tres. Pasa provisionalmente los criterios de evidencia visual, turnos, continuidad y remate para una posible subcelda `MICRO-SEQ-4P`, pero esta subcelda no se abre ni se mezcla con la estricta hasta reunir al menos tres casos comparables y aprobar su definición. Los captions se mantienen como `historical_unavailable` y el asset Drive sigue pendiente porque no hay autorización para crear CNT.
+El candidato tiene cuatro paneles y, por tanto, **falla la celda `MICRO-STRICT-3P`**, que exige exactamente tres. Pasa los criterios de evidencia visual, turnos, continuidad y remate para una posible subcelda `MICRO-SEQ-4P`, pero su estado final es `Excluded_3P_Retain_4P_Candidate`: la subcelda no se abre ni se mezcla con la estricta hasta reunir al menos tres casos comparables y aprobar su definición. Los captions se mantienen como `historical_unavailable` y el asset Drive sigue pendiente porque no hay autorización para crear CNT.
+
+El análisis cuantitativo de los 17 casos aprobados suma 300 interacciones y 53 shares, pero el caso Universe de 164 interacciones y 42 shares concentra 54.7% y 79.2%, respectivamente. Sin ese outlier, la mediana queda en 8 interacciones y 0.5 shares. Esta sensibilidad impide inferir un efecto causal de personaje y obliga a usar los casos para validación de identidad/estructura, no para rankings.
 
 ## 19. Síntesis histórica junio–julio — 2026-08-20
 

@@ -140,7 +140,9 @@ La segunda ampliación visual ya dejó la matriz en este estado: microhistoria e
 
 La tercera ampliación, de menor prioridad, es la capa de conversación. El lote 01 de julio ya tiene una extracción de 284 comentarios; 57 señales se clasifican como humor/juego, identificación o preguntas, pero no justifican leer manualmente los 284 casos. En junio, la revisión de los tres casos prioritarios sin match confirmó solo `260746`; los otros dos permanecen como reserva. Solo deben abrirse hilos cualitativos si existe una decisión de community management asociada. `CNT-068` debe mantenerse como caso de difusión con conversación no verificable en la extracción actual, no como evidencia de ausencia de conversación.
 
-La revisión de la cola de 57 casos confirma que sí hay una reserva útil para personajes, pero no para una reconciliación masiva: 17 casos pasan a análisis visual selectivo, 2 quedan como reserva, 36 funcionan como controles de formato y 1 permanece sin imagen Meta. El único candidato de celda nuevo es `122127951885072582`, que muestra cuatro paneles con turnos claros y queda en `Candidate_Review` para microhistoria estricta. Los briefs futuros `FUT-MICRO-005`, `FUT-MICRO-006`, `FUT-TRANS-003` y `FUT-ACID-003` están diseñados de forma condicional y requieren aprobación humana antes de convertirse en producción.
+La revisión de la cola de 57 casos confirma que sí hay una reserva útil para personajes, pero no para una reconciliación masiva: 17 casos pasan a análisis visual selectivo, 2 quedan como reserva, 36 funcionan como controles de formato y 1 permanece sin imagen Meta. El corte aprobado suma 300 interacciones y 53 shares, pero el caso Universe principal concentra 54.7% y 79.2%; sin ese outlier, la mediana queda en 8 interacciones y 0.5 shares. Por tanto, no se crea un ranking causal de personajes.
+
+El único candidato de celda nuevo es `122127951885072582`, que muestra cuatro paneles con turnos claros. Queda con `Excluded_3P_Retain_4P_Candidate`: no entra a la microhistoria estricta de tres paneles y no abre una subcelda 4P hasta reunir tres casos comparables. Los briefs futuros `FUT-MICRO-005`, `FUT-MICRO-006`, `FUT-TRANS-003` y `FUT-ACID-003` están diseñados de forma condicional y requieren aprobación humana antes de convertirse en producción.
 
 ### Qué no debe ampliarse ahora
 
@@ -172,3 +174,5 @@ La auditoría queda clasificada como **cobertura histórica suficiente para oper
 [15]: `Operations/Research/2026-08-21_Julio_Expansion_Lote01_Comments_Analysis.md` — conversación histórica del lote ampliado de julio.
 [16]: `Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md` — utilidad visual y de personajes de los 57 casos sin match.
 [17]: `Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md` — briefs condicionales para completar las celdas bajo `n=3`.
+[18]: `Operations/Research/2026-08-21_Junio_57_Approved_Character_Analysis.md` — corte cuantitativo y sensibilidad del subconjunto de personajes.
+[19]: `Operations/Production/2026-08-21_approve_june_57_character_subset.py` — script de aprobación del análisis selectivo.
