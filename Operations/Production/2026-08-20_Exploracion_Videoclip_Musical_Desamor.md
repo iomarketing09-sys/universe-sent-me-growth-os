@@ -2,13 +2,13 @@
 
 **Propósito:** Definir una posible nueva familia de Reels musicales de Universe Sent Me, donde una canción licenciada guía una microhistoria emocional antes de seleccionar personajes, escenas o producción.
 
-**Estado:** Active — máster publicado en cascada completa; lectura temprana direccional registrada y propuesta de segundo videoclip en revisión.
+**Estado:** Active — máster publicado en cascada completa; exploración abierta a rutas musicales no románticas y de transición.
 
 **Fecha de creación:** 2026-08-20
 
 **Última actualización:** 2026-08-21
 
-**Versión:** 3.0
+**Versión:** 3.1
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -446,6 +446,35 @@ La producción de `Videoclip musical 02` solo inicia al confirmar la disponibili
 
 Esta actualización no cambia aún el calendario ni el backlog porque no existe una aprobación de producción. Si Fernando aprueba `Videoclip musical 02`, actualizar `GrowthOS/01_02_Content_Backlog.md`, el calendario operativo vigente dentro de `GrowthOS/05_XX`, `GrowthOS/07_00_Registro_Maestro_Reels.md` y el documento `Operations/Production/CNT023_Episodio2_QueMeLlego_Universe_Elara.md` para reflejar el estado `HOLD_PENDING_24H_REVIEW` de Wilfred.
 
+## Revisión de dirección musical — 2026-08-21
+
+Fernando descartó **Porter** y la propuesta de librería con Evan + Elara. La candidata `Videoclip musical 02 — Lo que no dijimos en la librería` queda **`ARCHIVED — no producir`**. No representa un fallo del primer videoclip: es una corrección deliberada del terreno creativo. La siguiente exploración evita depender de la serie romántica y conserva únicamente la hipótesis de formato: música nativa, historia visual original, sin diálogo y sin audio incrustado.
+
+> **Principio operativo:** la canción debe abrir una acción, una transformación o un remate de personaje; no se elige para ilustrar una letra ni para volver a contar el mismo conflicto amoroso.
+
+La investigación de tendencias sugiere tratar los audios de transición como **mecánicas de edición**, no como una lista fija de canciones. Los formatos más transferibles son cambio on/off, barrido que tapa la lente, golpe vertical para revelar espacio nuevo, flicker entre dos estados y objeto que se acerca a cámara para ocultar el corte. Las listas de tendencia cambian por semana, región y cuenta; Instagram y TikTok recomiendan comprobar el catálogo nativo y sus indicadores dentro de la aplicación antes de comprometer cualquier audio. [12] [13] [14]
+
+La inspección de tres videoclips de referencia también indica tres gramáticas que USM puede adaptar sin copiar planos, diseños, personajes ni letras: una transformación gradual de ambiente con un punto de ignición electrónico, una secuencia de cortes rítmicos que enmarca a un outsider en arquitectura vertical, y una transición mediante objeto, sombra o destello. [15] [16] [17]
+
+| Ruta | Canción o familia de referencia | Personaje / premisa original | Mecánica visual | Score | Estado |
+|---|---|---|---|---:|---|
+| **A. Fuerza natural** | Gustavo Cerati — `Fuerza Natural` como primera búsqueda; `Rapto` como alternativa de tono. | Universe intenta tomarse un día sin notificaciones. Cada vez que apaga un interruptor analógico, el mismo pasillo cambia de realidad: elevador lluvioso, azotea de nubes, invernadero nocturno y cocina silenciosa. Universe no sabe qué causó la cadena; solo quería descansar. | Interruptor on/off y destello de luz como transición de mundo. | **8.85/10** | `REVIEW` |
+| **B. Ciudad imposible** | The Strokes — buscar un fragmento de energía de 2010–2015; `Under Cover of Darkness` es referencia de ritmo, no elección confirmada. | Wilfred sigue una app imaginaria que promete el lugar más silencioso de la ciudad. Cada giro de cámara lo deja en un sitio aún más absurdo: escalera de metro, oficina de madrugada, azotea con antenas. Abre una puerta y sale al bosque que estaba junto a él. | Match-cut vertical de puerta, poste o bastón; snap zooms contenidos y cortes a golpe de frase musical. | **8.80/10** | `REVIEW` |
+| **C. Ciudad suspendida** | Gorillaz — buscar un corte electro-indie/house; `Empire Ants` y `Stylo` orientan energía y contraste, no son audio aprobado. | Kiri atraviesa una estación suspendida para recuperar una estrella de papel que se le escapó. Con cada beat, cambia de piso y de clima: niebla, luz coral, neón verde y amanecer azul. La estrella termina iluminando a alguien perdido, sin romance ni lección verbal. | El objeto se acerca a lente, oculta el encuadre y revela otro nivel; la luz cambia con el beat. | **8.72/10** | `REVIEW` |
+| **D. Cambio de mundo** | Audio nativo en tendencia de TikTok/Instagram, seleccionado al momento de publicar. | Universe cruza cuatro puertas en doce segundos y aterriza, alternativamente, en el mundo de Wilfred, Kiri, Fantasma y Silvio. Cada uno cambia un detalle de su apariencia antes de devolverlo al siguiente lugar. El remate no explica el viaje: Universe vuelve a su punto de partida con los lentes ligeramente torcidos. | Lens wipe, stomp reveal, shadow cloak y objeto-máscara. Ningún corte depende de un personaje romántico. | **9.05/10** | **`RECOMMENDED_FIRST_TEST`** |
+
+La ruta D es la recomendación principal porque prueba una mecánica nativa de Reels/TikTok, presenta varios personajes y permite cambiar el audio si una pista no aparece en una plataforma, sin rehacer la historia. La ruta A es la alternativa de autor: conserva el territorio latino y la sensibilidad que Fernando busca, pero debe demostrar que el fragmento elegido ofrece una transición nítida en menos de veinte segundos. Las rutas B y C se preservan como direcciones de energía, no como autorizaciones para usar los temas nombrados.
+
+### Reglas de selección de audio y producción
+
+Antes de escribir storyboard, Fernando verifica en los selectores nativos de Instagram Reels, Facebook Reels, TikTok y YouTube Shorts que el sonido exacto aparezca para la cuenta y territorio. Para TikTok, si Universe Sent Me opera como negocio, el audio debe estar disponible en su Commercial Music Library o contar con una licencia específica; no se extrae, descarga ni incrusta audio ajeno para simular disponibilidad. [8]
+
+La prueba más eficiente es producir una historia de **12–16 segundos**, máximo cuatro transiciones y una sola regla de continuidad: cada cambio debe conservar dirección de movimiento, objeto-máscara o posición de cámara. Se evita el exceso de efectos, las transformaciones corporales complejas, los crowds, los paneos horizontales violentos y el texto explicativo. Si una ruta se aprueba, se crea un documento de producción independiente con canción confirmada, tramo exacto, storyboard, permisos de audio y matriz de publicación.
+
+### Coherencia documental después de una decisión
+
+El backlog fue actualizado para reemplazar la candidata de Porter por las cuatro rutas de revisión. Si Fernando aprueba una ruta, actualizar el calendario operativo dentro de `GrowthOS/05_XX`, el registro maestro `GrowthOS/07_00_Registro_Maestro_Reels.md` y `Operations/Production/CNT023_Episodio2_QueMeLlego_Universe_Elara.md` antes de iniciar producción. La pausa de Wilfred permanece activa hasta esa decisión y el corte de 24 horas de `Remote Control`.
+
 ### Contingencia
 
 Si la pista solo está disponible en una plataforma, se publica el videoclip exclusivamente allí y se documenta como prueba de formato musical. No se toma la decisión de crear versiones con otra canción, silencio o una pista de reemplazo hasta medir si la historia funciona: eso agregaría una variable y convertiría cada publicación en una pieza distinta.
@@ -465,3 +494,15 @@ Si la pista solo está disponible en una plataforma, se publica el videoclip exc
 [10] [Instagram Reels — `Remote Control`, permalink del post](https://www.instagram.com/reel/DcR29-aRRXN/). Insights leídos mediante la cuenta autorizada de Universe Sent Me el 2026-08-21.
 
 [11] [YouTube Shorts — `Remote Control`, metadatos públicos del Short](https://youtube.com/shorts/nb6om1LhOMc), consultados el 2026-08-21.
+
+[12] [Buffer — 13 Trending Sounds on Instagram in August 2026](https://buffer.com/resources/trending-audio-instagram/), consultado el 2026-08-21.
+
+[13] [Later — The top Instagram trends to try this week](https://later.com/blog/instagram-reels-trends/), actualizado el 2026-08-14 y consultado el 2026-08-21.
+
+[14] [HeyOrca — 2026 trending TikTok and Instagram Reels audio](https://www.heyorca.com/blog/trending-audio-for-reels-tiktok), actualizado el 2026-08-14 y consultado el 2026-08-21.
+
+[15] [Gorillaz — Empire Ants, video de referencia](https://www.youtube.com/watch?v=GNth4yhlffU), analizado el 2026-08-21 únicamente para gramática visual no infractora.
+
+[16] [The Strokes — Under Cover of Darkness, video de referencia](https://www.youtube.com/watch?v=_l09H-3zzgA), analizado el 2026-08-21 únicamente para gramática visual no infractora.
+
+[17] [Gustavo Cerati — Rapto, video de referencia](https://www.youtube.com/watch?v=vNhiYAmishs), analizado el 2026-08-21 únicamente para gramática visual no infractora.
