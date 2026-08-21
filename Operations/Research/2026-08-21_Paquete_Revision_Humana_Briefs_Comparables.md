@@ -1,16 +1,19 @@
 ---
 title: "Paquete de revisión y preflight — briefs comparables aprobados"
-purpose: "Registrar la aprobación de Fernando para el preflight de los briefs comparables sin autorizar generación final, calendario, publicación o CNT."
-status: Active
+purpose: "Registrar la aprobación de preflight y presentar una solicitud separada de autorización exclusiva para generar los cuatro assets comparables, manteniendo bloqueados calendario, publicación y CNT."
+status: Review
 created: 2026-08-21
 updated: 2026-08-21
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md"
   - "Operations/Production/2026-08-20_Plan_Experimentos_Agosto_5_Familias.md"
   - "Operations/Research/2026-08-20_Propuesta_Expansion_Celdas_Comparables.md"
   - "GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md"
+  - "Operations/Research/2026-08-21_Autorizacion_Generacion_Briefs_Comparables.csv"
+  - "Operations/Production/validate_generation_authorization_matrix.py"
+  - "GrowthOS/Integracion_Growth_OS.md"
 organization: "Operations/Research"
 ---
 
@@ -18,11 +21,11 @@ organization: "Operations/Research"
 
 ## Estado de autorización
 
-Este paquete contiene cuatro briefs aprobados para **preflight**, no assets terminados. La decisión de Fernando queda registrada en la matriz como `Approved_for_Preflight` y `Approve_Preflight_Only`. Ninguno está aprobado para generación final, calendario, publicación, reuse o creación de CNT.
+Este paquete contiene cuatro briefs aprobados para **preflight** y ahora presenta una solicitud separada para autorizar exclusivamente su generación. La decisión previa de Fernando queda registrada como `Approved_for_Preflight` y `Approve_Preflight_Only`; todavía no existe autorización de generación final, calendario, publicación, reuse ni creación de CNT.
 
-> Aprobar un brief solo autoriza continuar a la fase de desarrollo y preflight. No autoriza publicar, programar ni modificar una publicación existente.
+> La decisión solicitada en este paquete es únicamente `Approve_Generation_Only`: producir un asset nuevo por brief. No autoriza programar, publicar, crear CNT, adjuntar afiliados ni modificar una publicación existente.
 
-La microhistoria estricta permanece en `n=1`, la transformación de Universe en `n=2` y el diálogo ácido en `n=2`. Estos cuatro briefs cubren las brechas mínimas, pero los tratamientos de caption se mantienen como covariables y no como una prueba causal independiente.
+La microhistoria estricta permanece en `n=1`, la transformación de Universe en `n=2` y el diálogo ácido en `n=2`. Estos cuatro briefs cubren las brechas mínimas, pero los tratamientos de caption se mantienen como covariables y no como una prueba causal independiente. Las hipótesis formales son `HB-006` a `HB-009` y la validación cruzada está en `4/4 PASS`.
 
 ## Resumen para decisión
 
@@ -32,6 +35,19 @@ La microhistoria estricta permanece en `n=1`, la transformación de Universe en 
 | `FUT-MICRO-006` | `MICRO-STRICT-3P` | `caption_refuerzo` | Conflicto cotidiano no romántico en tres paneles | `Approved_for_Preflight` |
 | `FUT-TRANS-003` | `TRANS-UNIVERSE` | `caption_conversacional` | Transformación única del mismo Universe, con gafas preservadas | `Approved_for_Preflight` |
 | `FUT-ACID-003` | `ACID-DIALOGUE` | `caption_minimo` | Diálogo ácido interpersonal con destinatario claro | `Approved_for_Preflight` |
+
+## Solicitud de autorización de generación
+
+La matriz `Operations/Research/2026-08-21_Autorizacion_Generacion_Briefs_Comparables.csv` contiene una fila por brief y deja la decisión en `Pending`. La solicitud propone **cuatro assets nuevos en total**, uno por brief, con `Generation_Authorization=Pending_Human_Approval`, `Calendar_Change=No`, `CNT_Creation=No`, `Publication=No` y `Affiliate_Attachment=No`. Fernando debe aprobar o ajustar cada fila antes de entrar en generación.
+
+| Brief_ID | Hypothesis_ID | Solicitud | Asset propuesto | Bloqueos que permanecen |
+|---|---|---|---|---|
+| `FUT-MICRO-005` | `HB-006` | `Approve_Generation_Only` | 1 asset de exactamente 3 paneles | Sin calendario, CNT, publicación, reuse o afiliados |
+| `FUT-MICRO-006` | `HB-007` | `Approve_Generation_Only` | 1 asset de exactamente 3 paneles | Sin calendario, CNT, publicación, reuse o afiliados |
+| `FUT-TRANS-003` | `HB-008` | `Approve_Generation_Only` | 1 asset before/after del mismo Universe | Sin calendario, CNT, publicación, reuse o afiliados |
+| `FUT-ACID-003` | `HB-009` | `Approve_Generation_Only` | 1 asset de diálogo ácido seguro | Sin calendario, CNT, publicación, reuse o afiliados |
+
+La decisión puede ser `Approve`, `Request_Adjustment` o `Reject` por brief. Una aprobación parcial solo autoriza los briefs marcados como `Approve`; no se interpretará como aprobación global.
 
 ## Brief `FUT-MICRO-005`
 
@@ -92,9 +108,9 @@ La escena puede tener un panel con dos globos o dos paneles, siempre que los tur
 | `FUT-TRANS-003` | ☐ | ☐ | ☐ | ______________________________ |
 | `FUT-ACID-003` | ☐ | ☐ | ☐ | ______________________________ |
 
-## Secuencia posterior a la aprobación de preflight
+## Secuencia posterior a la autorización de generación
 
-Como los cuatro briefs fueron aprobados para preflight, el siguiente paso es convertir cada uno en un asset brief visual con referencias, composición y copy candidato. Después se ejecutará un preflight de identidad, texto, seguridad, `Cell_ID`, tratamiento de caption y hora experimental. Solo una aprobación humana posterior podrá autorizar su inclusión en calendario o publicación.
+Después de una aprobación humana explícita de `Approve_Generation_Only`, se convertirán únicamente los briefs aprobados en assets visuales. Cada asset pasará por control de identidad, texto, seguridad, `Cell_ID`, tratamiento de caption y hora experimental. La generación no modificará calendario, CNT ni plataformas. Solo una aprobación humana posterior e independiente podrá autorizar su inclusión en calendario, creación de CNT o publicación.
 
 Si un brief recibe ajustes, se actualizará este paquete y se conservará la versión anterior en el historial del repositorio. Si se rechaza, quedará como `Rejected_Brief` y no se reutilizará la idea automáticamente.
 
@@ -104,3 +120,5 @@ Si un brief recibe ajustes, se actualizará este paquete y se conservará la ver
 [2]: `Operations/Production/2026-08-20_Plan_Experimentos_Agosto_5_Familias.md` — arquitectura experimental de agosto.
 [3]: `Operations/Research/2026-08-20_Propuesta_Expansion_Celdas_Comparables.md` — brechas y umbrales de comparabilidad.
 [4]: `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md` — reglas de evidencia y salvaguardas de identidad.
+[5]: `Operations/Research/2026-08-21_Autorizacion_Generacion_Briefs_Comparables.csv` — matriz de decisión limitada a generación.
+[6]: `Operations/Production/validate_generation_authorization_matrix.py` — validador de bloqueos operativos.

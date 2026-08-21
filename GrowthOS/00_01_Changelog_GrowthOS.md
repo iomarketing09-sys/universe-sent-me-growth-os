@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-21
-**Versión:** 2.46
+**Versión:** 2.47
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.47.00] — 2026-08-21 (Manus): Paquete de revisión humana para autorización exclusiva de generación.** Se creó `Operations/Research/2026-08-21_Autorizacion_Generacion_Briefs_Comparables.csv` con cuatro solicitudes `Approve_Generation_Only`, una por brief, todas en `Decision=Pending` y `Generation_Authorization=Pending_Human_Approval`. Los bloqueos `Calendar_Change=No`, `CNT_Creation=No`, `Publication=No` y `Affiliate_Attachment=No` quedaron validados por `Operations/Production/validate_generation_authorization_matrix.py` con `4/4 PASS`. El paquete narrativo actualizado es `Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md`. No se generaron assets, no se modificó el calendario y no se actualizó `ExperimentLog`.
 
 - **[2.46.00] — 2026-08-21 (Manus): Registro formal de hipótesis comparables en el HypothesisBank.** Se sustituyeron los IDs provisionales `H-COMP-*` por `HB-006` (`FUT-MICRO-005`), `HB-007` (`FUT-MICRO-006`), `HB-008` (`FUT-TRANS-003`) y `HB-009` (`FUT-ACID-003`) en `GrowthOS/Integracion_Growth_OS.md` y en la matriz `Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`. La validación cruzada queda en `4/4 PASS` y `0` colisiones directas. La simulación de solapamientos se mantiene vigente: no combinar celdas con familias Wave 1 y conservar hora/caption como covariables. El registro formal no autoriza generación, calendario, CNT ni publicación; `ExperimentLog` permanece sin nuevas observaciones porque no hay assets ni outcomes.
 
