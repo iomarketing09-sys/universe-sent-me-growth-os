@@ -2,13 +2,13 @@
 
 **Propósito:** Definir una posible nueva familia de Reels musicales de Universe Sent Me, donde una canción licenciada guía una microhistoria emocional antes de seleccionar personajes, escenas o producción.
 
-**Estado:** Active — máster publicado en cascada completa; exploración abierta a rutas musicales no románticas y de transición.
+**Estado:** Active — máster publicado en cascada completa; shortlist musical directo de Fernando en revisión.
 
 **Fecha de creación:** 2026-08-20
 
 **Última actualización:** 2026-08-21
 
-**Versión:** 3.1
+**Versión:** 3.2
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -475,6 +475,32 @@ La prueba más eficiente es producir una historia de **12–16 segundos**, máxi
 
 El backlog fue actualizado para reemplazar la candidata de Porter por las cuatro rutas de revisión. Si Fernando aprueba una ruta, actualizar el calendario operativo dentro de `GrowthOS/05_XX`, el registro maestro `GrowthOS/07_00_Registro_Maestro_Reels.md` y `Operations/Production/CNT023_Episodio2_QueMeLlego_Universe_Elara.md` antes de iniciar producción. La pausa de Wilfred permanece activa hasta esa decisión y el corte de 24 horas de `Remote Control`.
 
+## Shortlist musical propuesto por Fernando — 2026-08-21
+
+Fernando propuso tres canciones como pool prioritario: **“Crave You” — Flight Facilities ft. Giselle**, **“Baby I’m Yours” — Breakbot ft. Irfane** y **“Jet Black Heart” — Young & Sick**. Este shortlist reemplaza las rutas genéricas de Cerati, The Strokes y Gorillaz como punto de partida para la próxima decisión; esas referencias permanecen únicamente como vocabulario de energía, color y montaje.
+
+La evaluación se centra en qué tipo de historia visual original puede abrir cada canción **sin ilustrar la letra ni construir una relación romántica**. Los videos oficiales se analizaron solo como referencias abstractas de ritmo, transición y densidad de edición; no se reutilizan planos, diseños, personajes, vestuario, arte ni audio incrustado. [18] [19] [20]
+
+| Canción | Lectura de energía y edición | Premisa USM no romántica | Riesgo creativo | Score | Estado |
+|---|---|---|---|---:|---|
+| **Crave You** | Electro-indie con construcción sostenida y puntos claros para match-cuts y cambios de contexto. Funciona mejor con cuatro transiciones legibles y un payoff visual en los últimos segundos. | **Universe busca las coordenadas correctas.** Un mapa cósmico lo manda a una azotea, un elevador vacío, un bosque invertido y de vuelta a casa. Cada tránsito usa el mapa, una puerta o un objeto que tapa la lente. Universe conoce el mecanismo, pero no el destino. | El título puede empujar a una lectura amorosa; el montaje debe mantener el foco en exploración, orientación perdida y asombro. | **8.97/10** | **`RECOMMENDED_FIRST_TEST`** |
+| **Baby I’m Yours** | Pulso disco/house de escalera ascendente, ideal para transformación gráfica, objetos que se convierten en otros y cortes coreografiados. | **Silvio construye una ciudad para bailar.** Un plano, una llave y una pelota de luz se convierten sucesivamente en calles, faroles y una plaza; cuando todo parece perfecto, la ciudad solo existe dentro de una caja de música que Silvio debía reparar. | La estética festiva puede desviar a algo genérico o infantil; necesita humor seco y una regla visual simple, no una sucesión caótica de morphs. | **8.85/10** | `REVIEW` |
+| **Jet Black Heart** | Construcción lenta con liberación intensa; favorece contraste de quietud inicial y revelación de color, no transiciones veloces desde el primer segundo. | **Fantasma recibe una señal de color.** En una habitación gris, una luz atraviesa su máscara y convierte objetos inmóviles en constelaciones de papel; al final, la luz se apaga, pero una sola estrella queda encendida. | Puede volverse melodramático o sugerir una resolución completa del arco del Fantasma. La señal debe ser temporal, no una curación. | **8.57/10** | `REVIEW` |
+
+### Recomendación editorial
+
+La primera opción es **“Crave You”** porque combina el pulso electro-indie que Fernando busca con una historia de aventura y desorientación, no de pareja. Además, permite conservar un formato breve de 12–16 segundos, presentar varios mundos de USM y probar transiciones de escena sin exigir acción corporal compleja al generador. La segunda opción es **“Baby I’m Yours”** si la prioridad es reintroducir a Silvio con una pieza alegre, gráfica y más excéntrica. **“Jet Black Heart”** debe reservarse para una pieza de Fantasma más lenta y de alta sensibilidad visual, no para el primer test de transiciones.
+
+> **Regla de selección:** una canción se aprueba solo cuando su audio y tramo exacto aparecen de forma nativa en los selectores de Instagram Reels, Facebook Reels, TikTok y YouTube Shorts para la cuenta y territorio. La disponibilidad no se presume por su presencia en streaming o en YouTube; el máster de video se exporta siempre sin música incrustada. [6] [7] [8]
+
+### Próximo paso si Fernando elige “Crave You”
+
+Primero se verifica el audio nativo y se fija un tramo de 12–16 segundos con cuatro marcas de corte. Después se redacta un storyboard mínimo de cuatro paneles: mapa a cámara, azotea, elevador, bosque invertido y regreso con una coordenada nueva. No se generan clips ni se publica hasta que esa verificación se complete y Fernando apruebe el storyboard.
+
+### Coherencia documental requerida
+
+El backlog se actualizó para reflejar este shortlist. Cuando una canción se apruebe, sustituir la fila de exploración por `Concept_ID`, personaje, audio confirmado y estado de producción; después actualizar el calendario operativo `GrowthOS/05_XX`, el registro maestro `GrowthOS/07_00_Registro_Maestro_Reels.md` y la ficha de Wilfred si la prioridad del Reel afiliado continúa pausada.
+
 ### Contingencia
 
 Si la pista solo está disponible en una plataforma, se publica el videoclip exclusivamente allí y se documenta como prueba de formato musical. No se toma la decisión de crear versiones con otra canción, silencio o una pista de reemplazo hasta medir si la historia funciona: eso agregaría una variable y convertiría cada publicación en una pieza distinta.
@@ -506,3 +532,9 @@ Si la pista solo está disponible en una plataforma, se publica el videoclip exc
 [16] [The Strokes — Under Cover of Darkness, video de referencia](https://www.youtube.com/watch?v=_l09H-3zzgA), analizado el 2026-08-21 únicamente para gramática visual no infractora.
 
 [17] [Gustavo Cerati — Rapto, video de referencia](https://www.youtube.com/watch?v=vNhiYAmishs), analizado el 2026-08-21 únicamente para gramática visual no infractora.
+
+[18] [Flight Facilities — Crave You ft. Giselle, video oficial](https://www.youtube.com/watch?v=r0bS-YnLf4s), analizado el 2026-08-21 únicamente para gramática visual no infractora.
+
+[19] [Breakbot — Baby I’m Yours ft. Irfane, video oficial](https://www.youtube.com/watch?v=3vVSBLkpO-8), analizado el 2026-08-21 únicamente para gramática visual no infractora.
+
+[20] [Young & Sick — Jet Black Heart, audio oficial](https://www.youtube.com/watch?v=am6A6xLRKlM), analizado el 2026-08-21 únicamente para energía y estructura de edición no infractora.
