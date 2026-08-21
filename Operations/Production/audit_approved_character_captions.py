@@ -80,6 +80,40 @@ for row in approved:
         "notes": "Do not update ExperimentLog treatment until manual review confirms the proposal.",
     })
 
+manual_decisions = {
+    "1036844829507460_122130196011072582": {
+        "proposed_caption_treatment": "caption_refuerzo",
+        "treatment_confidence": "Medium",
+        "manual_review_status": "Analyst_Reviewed",
+        "caption_confidence_final": "Medium",
+        "notes": "Visual review confirms a short self-description that reinforces the image; outlier remains excluded from causal caption inference.",
+    },
+    "1036844829507460_122134608507072582": {
+        "proposed_caption_treatment": "caption_minimo",
+        "treatment_confidence": "High",
+        "manual_review_status": "Analyst_Reviewed",
+        "caption_confidence_final": "High",
+        "notes": "Caption repeats the visual text and adds hashtags; reclassified from caption_refuerzo to caption_minimo.",
+    },
+    "1036844829507460_122130309663072582": {
+        "proposed_caption_treatment": "caption_refuerzo",
+        "treatment_confidence": "Medium",
+        "manual_review_status": "Analyst_Reviewed",
+        "caption_confidence_final": "Medium",
+        "notes": "Visual review confirms reinforcement; retain ambiguity note Short_reinforcement_vs_minimal.",
+    },
+    "1036844829507460_122125895013072582": {
+        "proposed_caption_treatment": "historical_unavailable",
+        "treatment_confidence": "High",
+        "manual_review_status": "Analyst_Reviewed",
+        "caption_confidence_final": "High",
+        "notes": "No Meta message exists; do not infer a caption from the text embedded in the image.",
+    },
+}
+for row in rows:
+    if row["meta_id"] in manual_decisions:
+        row.update(manual_decisions[row["meta_id"]])
+
 with OUT.open("w", newline="", encoding="utf-8") as handle:
     writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
     writer.writeheader()
@@ -89,8 +123,8 @@ summary = {
     "n_approved": len(rows),
     "caption_source_counts": {},
     "proposed_treatment_counts": {},
-    "manual_review_status": "Pending_Manual_Caption_Review",
-    "classification_method": "Rule_based_proposal_v1",
+    "manual_review_status_counts": {},
+    "classification_method": "Rule_based_proposal_v1_plus_manual_review",
     "limits": [
         "The rule-based treatment is a proposal, not a verified historical label.",
         "The exact Meta message is preserved and must be reviewed before changing any experiment ledger.",
@@ -101,5 +135,6 @@ summary = {
 for row in rows:
     summary["caption_source_counts"][row["caption_source"]] = summary["caption_source_counts"].get(row["caption_source"], 0) + 1
     summary["proposed_treatment_counts"][row["proposed_caption_treatment"]] = summary["proposed_treatment_counts"].get(row["proposed_caption_treatment"], 0) + 1
+    summary["manual_review_status_counts"][row["manual_review_status"]] = summary["manual_review_status_counts"].get(row["manual_review_status"], 0) + 1
 SUMMARY.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(json.dumps({"output": str(OUT), "summary": str(SUMMARY), **summary}, ensure_ascii=False, indent=2))

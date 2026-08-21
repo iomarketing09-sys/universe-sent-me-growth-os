@@ -42,15 +42,18 @@ for row in rows:
 treatment_stats = {key: stats(group) for key, group in sorted(by_treatment.items())}
 source_stats = {key: stats(group) for key, group in sorted(by_source.items())}
 
-ambiguous = [r for r in rows if r["treatment_confidence"] == "Low" or r["proposed_caption_treatment"] == "historical_unavailable"]
+manual_reviewed = [r for r in rows if r["manual_review_status"] == "Analyst_Reviewed"]
+pending_review = [r for r in rows if r["manual_review_status"] != "Analyst_Reviewed"]
 payload = {
     "method": "Descriptive analysis of rule-based caption-treatment proposals on the approved character subset; no causal attribution.",
     "source": str(INPUT.relative_to(ROOT)),
     "treatment_stats": treatment_stats,
     "source_stats": source_stats,
-    "ambiguous_or_unavailable_count": len(ambiguous),
-    "ambiguous_or_unavailable_meta_ids": [r["meta_id"] for r in ambiguous],
-    "manual_review_status": "Pending_Manual_Caption_Review",
+    "manual_reviewed_count": len(manual_reviewed),
+    "pending_review_count": len(pending_review),
+    "manual_reviewed_meta_ids": [r["meta_id"] for r in manual_reviewed],
+    "pending_review_meta_ids": [r["meta_id"] for r in pending_review],
+    "manual_review_status": "Partial_Manual_Review_Complete",
     "limits": [
         "Treatment labels are rule-based proposals and are not final historical labels.",
         "The 17-case subset was selected for visual character utility, not randomly.",
@@ -90,16 +93,16 @@ for treatment, s in treatment_stats.items():
     lines.append(f"| `{treatment}` | {s['n']} | {s['interactions_total']} | {s['interactions_median']} | {s['shares_total']} | {s['shares_median']} | {s['comments_total']} |")
 lines += [
     "",
-    "La propuesta automática distribuye los casos en siete `caption_minimo`, seis `caption_conversacional`, tres `caption_refuerzo` y uno `historical_unavailable`. Sin embargo, la confianza final permanece sin confirmar: varias etiquetas dependen de si el caption ilumina la imagen, repite el texto visual o solo añade hashtags.",
+    "Tras la revisión manual de cuatro casos, el corte queda distribuido en ocho `caption_minimo`, seis `caption_conversacional`, dos `caption_refuerzo` y uno `historical_unavailable`. Los otros 13 casos siguen pendientes porque varias etiquetas dependen de si el caption ilumina la imagen, repite el texto visual o solo añade hashtags.",
     "",
     "## Casos que requieren revisión manual prioritaria",
     "",
-    "Los tres casos propuestos como `caption_refuerzo` tienen confianza baja porque una frase breve puede estar reforzando la lectura o simplemente acompañando una imagen ya autosuficiente. Los seis casos propuestos como `caption_conversacional` requieren comprobar que existe una invitación real y no solo una pregunta retórica o una palabra interrogativa. El caso `historical_unavailable` no debe ser rellenado por inferencia.",
+    "La revisión manual confirmó cuatro casos: el outlier de Universe queda como `caption_refuerzo`, el caso de Ganso pasa a `caption_minimo`, el Wilfred corto conserva `caption_refuerzo` con ambigüedad y el Fantasma sin mensaje queda como `historical_unavailable`. Los 13 restantes siguen pendientes; en particular, las propuestas `caption_conversacional` requieren comprobar que existe una invitación real y no solo una pregunta retórica o una palabra interrogativa.",
     "",
     "| Meta_ID | Propuesta | Confianza | Interacciones | Shares | Motivo de revisión |",
     "|---|---|---|---:|---:|---|",
 ]
-for row in ambiguous:
+for row in manual_reviewed:
     lines.append(f"| `{row['meta_id']}` | `{row['proposed_caption_treatment']}` | {row['treatment_confidence']} | {row['interactions']} | {row['shares']} | {row['rationale']} |")
 lines += [
     "",
@@ -107,11 +110,11 @@ lines += [
     "",
     "El grupo `caption_minimo` puede mostrar una mediana distinta de `caption_conversacional`, pero esa comparación está contaminada por la selección visual de personajes, fechas, temas y posibles diferencias de formato. No se debe concluir que un tratamiento funciona mejor. Para comparar tratamientos dentro de una celda se requieren al menos dos casos por tratamiento y una estructura comparable; estos 17 casos no cumplen ese balance.",
     "",
-    "La única decisión válida en este momento es de priorización: revisar primero los casos de confianza baja y conservar el texto Meta exacto. Una vez confirmadas manualmente las etiquetas, podrán usarse como covariable descriptiva en el análisis de personajes, pero no como resultado causal.",
+    "La única decisión válida en este momento es descriptiva: cuatro casos ya tienen revisión manual documentada y 13 permanecen pendientes. Las etiquetas confirmadas podrán usarse como covariable descriptiva en el análisis de personajes, pero no como resultado causal.",
     "",
     "## Estado de los datos",
     "",
-    "Todos los registros permanecen en `Pending_Manual_Caption_Review` y `caption_confidence_final=Unconfirmed`. El tratamiento no se copia al ledger experimental principal hasta que exista una revisión humana o una regla documental aprobada para el histórico.",
+    "Cuatro registros tienen `manual_review_status=Analyst_Reviewed`; los otros 13 permanecen en `Pending_Manual_Caption_Review`. El tratamiento no se copia al ledger experimental principal hasta que exista una revisión humana completa o una regla documental aprobada para el histórico.",
 ]
 OUT_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
-print(json.dumps({"n": len(rows), "treatment_stats": treatment_stats, "ambiguous": len(ambiguous), "json": str(OUT_JSON), "markdown": str(OUT_MD)}, ensure_ascii=False, indent=2))
+print(json.dumps({"n": len(rows), "treatment_stats": treatment_stats, "pending_review": len(pending_review), "json": str(OUT_JSON), "markdown": str(OUT_MD)}, ensure_ascii=False, indent=2))

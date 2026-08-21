@@ -144,7 +144,7 @@ La revisión de la cola de 57 casos confirma que sí hay una reserva útil para 
 
 El único candidato de celda nuevo es `122127951885072582`, que muestra cuatro paneles con turnos claros. Queda con `Excluded_3P_Retain_4P_Candidate`: no entra a la microhistoria estricta de tres paneles y no abre una subcelda 4P hasta reunir tres casos comparables. Los briefs futuros `FUT-MICRO-005`, `FUT-MICRO-006`, `FUT-TRANS-003` y `FUT-ACID-003` están diseñados de forma condicional y requieren aprobación humana antes de convertirse en producción.
 
-La siguiente capa de captions recuperó texto exacto de Meta para 16 de los 17 casos aprobados; un caso usa fallback de la cola. La propuesta rule-based queda distribuida en 7 `caption_minimo`, 6 `caption_conversacional`, 3 `caption_refuerzo` y 1 `historical_unavailable`. Cuatro casos requieren revisión manual prioritaria —los tres `caption_refuerzo` y el caso sin mensaje—. Ninguna propuesta se copia al ExperimentLog hasta confirmar el tratamiento.
+La siguiente capa de captions recuperó texto exacto de Meta para 16 de los 17 casos aprobados; un caso usa fallback de la cola. La revisión manual de cuatro casos deja el corte en 8 `caption_minimo`, 6 `caption_conversacional`, 2 `caption_refuerzo` y 1 `historical_unavailable`; 13 casos permanecen pendientes. El caption de Ganso se reclasifica como mínimo porque repite el texto visual y añade hashtags; Universe y Wilfred conservan refuerzo con confianza media; Fantasma permanece como `historical_unavailable`. Ninguna etiqueta se copia al ExperimentLog hasta completar la revisión y confirmar comparabilidad.
 
 ### Qué no debe ampliarse ahora
 
@@ -180,3 +180,4 @@ La auditoría queda clasificada como **cobertura histórica suficiente para oper
 [19]: `Operations/Production/2026-08-21_approve_june_57_character_subset.py` — script de aprobación del análisis selectivo.
 [20]: `Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Audit.csv` — captions exactos de Meta y tratamientos propuestos.
 [21]: `Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Analysis.md` — análisis descriptivo de captions y límites de inferencia.
+[22]: `Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Manual_Findings.md` — revisión visual y semántica de los cuatro overrides manuales.

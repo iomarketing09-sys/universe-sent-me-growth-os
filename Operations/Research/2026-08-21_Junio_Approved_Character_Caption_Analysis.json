@@ -12,22 +12,22 @@
       "comments_median": 0.0
     },
     "caption_minimo": {
-      "n": 7,
-      "interactions_total": 65,
-      "interactions_median": 10,
-      "shares_total": 5,
-      "shares_median": 1,
-      "comments_total": 6,
-      "comments_median": 0
+      "n": 8,
+      "interactions_total": 79,
+      "interactions_median": 10.5,
+      "shares_total": 7,
+      "shares_median": 1.0,
+      "comments_total": 9,
+      "comments_median": 0.5
     },
     "caption_refuerzo": {
-      "n": 3,
-      "interactions_total": 184,
-      "interactions_median": 14,
-      "shares_total": 46,
-      "shares_median": 2,
-      "comments_total": 5,
-      "comments_median": 2
+      "n": 2,
+      "interactions_total": 170,
+      "interactions_median": 85.0,
+      "shares_total": 44,
+      "shares_median": 22.0,
+      "comments_total": 2,
+      "comments_median": 1.0
     },
     "historical_unavailable": {
       "n": 1,
@@ -59,14 +59,30 @@
       "comments_median": 0
     }
   },
-  "ambiguous_or_unavailable_count": 4,
-  "ambiguous_or_unavailable_meta_ids": [
+  "manual_reviewed_count": 4,
+  "pending_review_count": 13,
+  "manual_reviewed_meta_ids": [
     "1036844829507460_122130196011072582",
     "1036844829507460_122134608507072582",
     "1036844829507460_122130309663072582",
     "1036844829507460_122125895013072582"
   ],
-  "manual_review_status": "Pending_Manual_Caption_Review",
+  "pending_review_meta_ids": [
+    "1036844829507460_122125544019072582",
+    "1036844829507460_122125520661072582",
+    "1036844829507460_122130329817072582",
+    "1036844829507460_122128989885072582",
+    "1036844829507460_122134065975072582",
+    "1036844829507460_122131071243072582",
+    "1036844829507460_122134055109072582",
+    "1036844829507460_122130324285072582",
+    "1036844829507460_122126239515072582",
+    "1036844829507460_122133424479072582",
+    "1036844829507460_122130032151072582",
+    "1036844829507460_122133558903072582",
+    "1036844829507460_122126670549072582"
+  ],
+  "manual_review_status": "Partial_Manual_Review_Complete",
   "limits": [
     "Treatment labels are rule-based proposals and are not final historical labels.",
     "The 17-case subset was selected for visual character utility, not randomly.",

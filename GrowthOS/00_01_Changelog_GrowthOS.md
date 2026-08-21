@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-21
-**Versión:** 2.37
+**Versión:** 2.38
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.38.00] — 2026-08-21 (Manus): Revisión manual parcial de captions históricos.** Se revisaron cuatro de los 17 captions ambiguos. El caso Ganso `1036844829507460_122134608507072582` se reclasificó de `caption_refuerzo` a `caption_minimo` porque repite el texto visual y añade hashtags. Universe `1036844829507460_122130196011072582` y Wilfred `1036844829507460_122130309663072582` conservan `caption_refuerzo` con confianza media; Fantasma `1036844829507460_122125895013072582` queda como `historical_unavailable` porque Meta no devolvió mensaje. El corte queda en 8 mínimos, 6 conversacionales, 2 de refuerzo y 1 no disponible; 13 permanecen pendientes. No se actualiza el ExperimentLog ni se declara causalidad. Documento de hallazgos: `Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Manual_Findings.md`.
 
 - **[2.37.00] — 2026-08-21 (Manus): Auditoría histórica de captions de los 17 casos aprobados.** Meta devolvió el texto exacto para 16 de los 17 casos; uno usa fallback de la cola. La propuesta rule-based distribuye los casos en 7 `caption_minimo`, 6 `caption_conversacional`, 3 `caption_refuerzo` y 1 `historical_unavailable`. Los tres casos de `caption_refuerzo` y el caso sin mensaje quedan como prioridad de revisión manual. Todos permanecen con `manual_review_status=Pending_Manual_Caption_Review`; no se actualiza el ExperimentLog ni se atribuye efecto causal. Documentos: `Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Audit.csv` y `Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Analysis.md`.
 
