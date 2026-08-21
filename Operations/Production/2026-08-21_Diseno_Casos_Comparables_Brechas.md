@@ -4,7 +4,7 @@ purpose: "Definir las piezas históricas/futuras mínimas necesarias para comple
 status: Active
 created: 2026-08-21
 updated: 2026-08-21
-version: "1.5"
+version: "1.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-20_Propuesta_Expansion_Celdas_Comparables.md"
@@ -19,6 +19,9 @@ related_documents:
   - "Operations/Production/populate_comparable_brief_metadata.py"
   - "Operations/Research/2026-08-21_Validacion_Cruzada_Hipotesis_Briefs_Comparables.md"
   - "Operations/Production/validate_comparable_hypothesis_conflicts.py"
+  - "Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.md"
+  - "Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.csv"
+  - "Operations/Research/simulate_comparable_overlap_impact.py"
   - "GrowthOS/Integracion_Growth_OS.md"
   - "GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md"
 organization: "Operations/Production"
@@ -55,7 +58,7 @@ Los cuatro briefs aprobados no cierran ninguna celda por sí solos: autorizan ú
 
 ## Resultado de la validación cruzada de hipótesis
 
-El reporte `Operations/Research/2026-08-21_Validacion_Cruzada_Hipotesis_Briefs_Comparables.md` confirma que `EXP-2026-08-COMP-GAPS-01` no colisiona con `EXP-2026-08-BASELINE-01`, `EXP-2026-08-BASELINE-02`, `EXP-2026-08-BASELINE-03`, `EXP-2026-08-CAL-01` ni `EXP-2026-08-FAM01-W1` a `EXP-2026-08-FAM05-W1`. Los riesgos restantes son solapamientos semánticos controlables: ácido con FAM-04, identidad de Universe con FAM-05/HB-002 y microhistorias con FAM-02/FAM-03. No se deben combinar denominadores automáticamente. Antes de generación se debe registrar cada hipótesis en el HypothesisBank y resolver el prefijo `H-COMP-*` frente a la convención `HB-###`.
+El reporte `Operations/Research/2026-08-21_Validacion_Cruzada_Hipotesis_Briefs_Comparables.md` confirma que `EXP-2026-08-COMP-GAPS-01` no colisiona con `EXP-2026-08-BASELINE-01`, `EXP-2026-08-BASELINE-02`, `EXP-2026-08-BASELINE-03`, `EXP-2026-08-CAL-01` ni `EXP-2026-08-FAM01-W1` a `EXP-2026-08-FAM05-W1`. Los riesgos restantes son solapamientos semánticos controlables: ácido con FAM-04, identidad de Universe con FAM-05/HB-002 y microhistorias con FAM-02/FAM-03. No se deben combinar denominadores automáticamente. Antes de generación se debe registrar cada hipótesis en el HypothesisBank y resolver el prefijo `H-COMP-*` frente a la convención `HB-###`. La simulación de impacto confirmó que una doble asignación a una familia Wave 1 de `n=3` inflaría el denominador en `33.33%`; por ello no se deben combinar familias por parecido temático.
 
 ## Aprobación de análisis selectivo
 

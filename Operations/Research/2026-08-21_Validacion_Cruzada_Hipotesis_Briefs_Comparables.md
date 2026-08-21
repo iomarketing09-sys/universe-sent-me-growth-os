@@ -4,7 +4,7 @@ purpose: "Verificar colisiones de identificadores, solapamientos semánticos y c
 status: Review
 created: 2026-08-21
 updated: 2026-08-21
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv"
@@ -13,6 +13,9 @@ related_documents:
   - "Operations/Research/2026-08-15_ExperimentLog.csv"
   - "GrowthOS/Integracion_Growth_OS.md"
   - "Operations/Production/validate_comparable_hypothesis_conflicts.py"
+  - "Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.md"
+  - "Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.csv"
+  - "Operations/Research/simulate_comparable_overlap_impact.py"
 organization: "Operations/Research"
 ---
 
@@ -50,6 +53,10 @@ El principal riesgo no es una colisión de ID sino un solapamiento de variables.
 
 El horario propuesto (`16:00`, `18:00`, `20:00`, `22:00`) se superpone con franjas usadas por Wave 1 y con la hipótesis histórica de horario `HB-003`. Por ello `Hora_Test` debe tratarse como covariable, no como resultado de estas hipótesis, y las piezas no deben presentarse como una prueba aislada del efecto horario.
 
+## Impacto simulado del solapamiento
+
+La simulación `Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.md` muestra que una doble asignación de un brief a una familia Wave 1 de `n=3` inflaría el denominador a `n=4` (`+33.33%`) y haría que el caso duplicado representara `25.00%` de la muestra contaminada. En las celdas históricas, la mediana permanece estable en los escenarios de duplicación modelados, pero la media puede moverse cuando se duplica un caso extremo: hasta `+11.72%` en interacciones y `+12.50%` en shares para `TRANS-UNIVERSE` bajo escenario máximo; en `ACID-DIALOGUE`, hasta `+2.21%` y `+6.53%`, respectivamente. Estos cambios son sensibilidad descriptiva, no estimaciones causales ni outcomes futuros.
+
 ## Acción requerida antes de generación
 
 1. Resolver la nomenclatura de `H-COMP-*` frente a la regla `HB-###` y registrar las cuatro hipótesis en el `HypothesisBank`; no reutilizar un ID existente.
@@ -68,3 +75,4 @@ El validador comparó 9 identificadores de experimento conocidos, 11 identificad
 [3]: `Operations/Production/2026-08-20_Wave1_Signal_Experiment_Design.csv` — matriz conceptual de Wave 1.
 [4]: `GrowthOS/Integracion_Growth_OS.md` — HypothesisBank y ExperimentLog condensados.
 [5]: `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md` — convención de IDs y reglas de evidencia.
+[6]: `Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.md` — escenarios de sensibilidad y reglas de separación.

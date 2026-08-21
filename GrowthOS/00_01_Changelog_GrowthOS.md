@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-21
-**Versión:** 2.44
+**Versión:** 2.45
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.45.00] — 2026-08-21 (Manus): Simulación de impacto de solapamientos semánticos.** La simulación usó outcomes históricos de las celdas comparables y escenarios de doble asignación. Una familia Wave 1 de `n=3` pasaría artificialmente a `n=4` (`+33.33%` de denominador) y el caso duplicado representaría `25.00%` de la muestra contaminada. Bajo escenario máximo, la media simulada se mueve hasta `+11.72%` en interacciones y `+12.50%` en shares para `TRANS-UNIVERSE`; en `ACID-DIALOGUE`, hasta `+2.21%` y `+6.53%`. La mediana no cambió en los escenarios modelados, pero no se declara inmune con muestras pequeñas. Regla operativa: mantener cada brief en su `Cell_ID`, no combinarlo con FAM-02/FAM-03/FAM-04/FAM-05 y tratar hora/caption como covariables compartidas. Reporte: `Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.md`; datos: `Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.csv`. No se generaron assets ni se autorizó calendario o publicación.
 
 - **[2.44.00] — 2026-08-21 (Manus): Validación cruzada de hipótesis comparables contra experimentos previos.** Se cruzaron los cuatro briefs contra `ExperimentLog`, la matriz `Wave_1_Signal_Experiment_Design.csv` y el `HypothesisBank` documentado. Resultado: `0` colisiones directas de `Experiment_ID` o `Hypothesis_ID`; los cuatro quedan en `PASS_WITH_WARNINGS` porque `H-COMP-*` aún no está registrado en el `HypothesisBank` local y no cumple la convención formal `HB-###`. Se documentaron solapamientos controlables: `FUT-ACID-003` con FAM-04, `FUT-TRANS-003` con FAM-05/HB-002 y las microhistorias con FAM-02/FAM-03. No se deben combinar denominadores automáticamente. Reporte: `Operations/Research/2026-08-21_Validacion_Cruzada_Hipotesis_Briefs_Comparables.md`; validador: `Operations/Production/validate_comparable_hypothesis_conflicts.py`. No se generaron assets, no se actualizó `ExperimentLog` y no se autorizó calendario ni publicación.
 
