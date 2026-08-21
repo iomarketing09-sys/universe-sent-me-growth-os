@@ -17,6 +17,8 @@ related_documents:
   - "Operations/Production/2026-08-21_Prompts_Assets_Comparables.md"
   - "Operations/Production/2026-08-21_Generated_Comparable_Assets.csv"
   - "Operations/Production/2026-08-21_Control_Visual_Assets_Comparables.md"
+  - "Operations/Production/2026-08-21_Prompts_Assets_Comparables_v3.md"
+  - "Operations/Production/2026-08-21_Comparable_Identity_V3_Proposals.csv"
   - "GrowthOS/Integracion_Growth_OS.md"
 organization: "Operations/Research"
 ---
@@ -114,9 +116,9 @@ La escena puede tener un panel con dos globos o dos paneles, siempre que los tur
 
 ## Resultado de generación y secuencia posterior
 
-La generación produjo cuatro archivos PNG, uno por brief. El control visual preliminar marca `Pass_visual_preliminar` para `FUT-MICRO-005`, `FUT-MICRO-006` y `FUT-ACID-003`. `FUT-TRANS-003` marca `Pass_visual_preliminar_con_identidad_consistente` porque las gafas son visibles en ambos estados y la comparación con la referencia compartida confirmó identidad consistente.
+La generación inicial produjo cuatro archivos PNG, uno por brief. La tercera iteración aprobada produjo además tres variantes v3 con la referencia oficial de Evan. El control visual preliminar marca `Pass_visual_preliminar` para `FUT-MICRO-005`, `FUT-MICRO-006` y `FUT-ACID-003`. `FUT-TRANS-003` marca `Pass_visual_preliminar_con_identidad_consistente` porque las gafas son visibles en ambos estados y la comparación con la referencia compartida confirmó identidad consistente.
 
-Cada asset pasará por control de identidad, texto, seguridad, `Cell_ID`, tratamiento de caption y hora experimental. La generación no modificó calendario, CNT ni plataformas. Solo una aprobación humana posterior e independiente podrá autorizar su inclusión en calendario, creación de CNT o publicación.
+Cada asset y variante pasará por control de identidad, texto, seguridad, `Cell_ID`, tratamiento de caption y hora experimental. Las v3 mejoran la identidad de Evan frente a v2, pero quedan pendientes de selección humana entre original, v2 y v3. La generación no modificó calendario, CNT ni plataformas. Solo una aprobación humana posterior e independiente podrá autorizar su inclusión en calendario, creación de CNT o publicación.
 
 Si un brief recibe ajustes, se actualizará este paquete y se conservará la versión anterior en el historial del repositorio. Si se rechaza, quedará como `Rejected_Brief` y no se reutilizará la idea automáticamente.
 

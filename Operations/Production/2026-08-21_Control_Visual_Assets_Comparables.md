@@ -10,6 +10,8 @@ related_documents:
   - "Operations/Production/2026-08-21_Prompts_Assets_Comparables.md"
   - "Operations/Research/2026-08-21_Autorizacion_Generacion_Briefs_Comparables.csv"
   - "Operations/Production/2026-08-21_Comparable_Identity_V2_Proposals.csv"
+  - "Operations/Production/2026-08-21_Comparable_Identity_V3_Proposals.csv"
+  - "Operations/Production/2026-08-21_Prompts_Assets_Comparables_v3.md"
   - "Operations/Production/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md"
 organization: "Operations/Production"
 ---
@@ -57,6 +59,24 @@ Las variantes v2 preservan correctamente el suéter café y el cabello oscuro, p
 ## Veredicto de la propuesta v2
 
 Las tres propuestas v2 corrigen parcialmente el problema señalado: los personajes ya no son genéricos y conservan anclas de vestuario, pero Evan todavía no alcanza fidelidad completa frente a la nueva referencia. Las tres pasan a `Proposal_Review_Identity_Partial` y no deben reemplazar a los originales todavía. No se actualiza la celda experimental, el calendario, CNT, reuse, afiliados ni publicación con estas propuestas.
+
+## Tercera iteración con referencia oficial de Evan
+
+### `FUT-MICRO-005` / `HB-006` — v3
+
+**Resultado provisional:** `Pass_visual_v3_preliminar`. Conserva exactamente tres paneles, todos los globos y el texto original. Evan ahora muestra cabello oscuro despeinado, cejas marcadas, rostro cansado, expresión ensimismada y hoodie café/taupe, mucho más cercano al tríptico oficial. Elara y el escenario permanecen intactos.
+
+### `FUT-MICRO-006` / `HB-007` — v3
+
+**Resultado provisional:** `Pass_visual_v3_preliminar`. Conserva la historia cotidiana original y exactamente tres paneles. Evan mantiene el cabello despeinado, las cejas marcadas, la expresión cansada y el hoodie café/taupe en los tres paneles. No heredó el texto romántico de la iteración fallida anterior.
+
+### `FUT-ACID-003` / `HB-009` — v3
+
+**Resultado provisional:** `Pass_visual_v3_preliminar`. Universe conserva el gato blanco y sus lentes redondos; Evan ahora presenta cabello despeinado, cejas marcadas, rostro cansado, hoodie café/taupe y una actitud seca más cercana al tríptico oficial. El texto, la composición, el diálogo y el remate permanecen intactos.
+
+## Veredicto de la tercera iteración
+
+Las tres variantes v3 mejoran materialmente la fidelidad de Evan frente a las v2. Las tres conservan el texto y la estructura experimental; `FUT-MICRO-005` y `FUT-MICRO-006` mantienen exactamente tres paneles. El estado queda como `Pass_visual_v3_preliminar`, pendiente de selección humana entre original, v2 y v3. Ninguna versión reemplaza automáticamente a otra.
 
 ## Alcance del control
 

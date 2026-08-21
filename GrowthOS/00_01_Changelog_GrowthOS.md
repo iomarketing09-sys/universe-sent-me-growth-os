@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-21
-**Versión:** 2.51
+**Versión:** 2.52
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.52.00] — 2026-08-21 (Manus): Tercera iteración aprobada con tríptico oficial de Evan.** Fernando aprobó regenerar `FUT-MICRO-005`, `FUT-MICRO-006` y `FUT-ACID-003` usando `Operations/Production/Character_References/Evan/Evan_full_body_triptych_20260730.jpeg` como referencia principal. Las v3 conservan texto y composición experimental, y mejoran cabello despeinado, cejas marcadas, rostro cansado, expresión ensimismada y hoodie café/taupe. Resultado preliminar: `Pass_visual_v3_preliminar` para los tres. Ledger: `Operations/Production/2026-08-21_Comparable_Identity_V3_Proposals.csv`; prompts: `Operations/Production/2026-08-21_Prompts_Assets_Comparables_v3.md`. Quedan pendientes de selección humana entre original, v2 y v3; no se modificó calendario, CNT, reuse, afiliados, `ExperimentLog` ni publicación.
 
 - **[2.51.00] — 2026-08-21 (Manus): Revisión de referencia ampliada de Evan.** Fernando añadió referencias directas de Evan (`Operations/Production/Character_References/Evan/2608062_Kiri_Evan.jpg` y `Operations/Production/Character_References/Evan/2608052_Evan.jpg`). La comparación confirma que sus anclas incluyen cabello oscuro despeinado, rostro juvenil/cansado, cejas marcadas, paleta marrón/taupe, actitud ensimismada y suéter café. Las tres variantes v2 preservan vestuario y composición, pero alcanzan únicamente `Identity_Partial`: Evan aparece más joven y expresivo que en la referencia. Las tres pasan a `Proposal_Review_Identity_Partial`; no reemplazan los originales. Si se busca fidelidad alta, se recomienda una tercera iteración con la referencia ampliada. No se modificó calendario, CNT, reuse, afiliados, `ExperimentLog` ni publicación.
 
