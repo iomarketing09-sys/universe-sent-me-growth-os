@@ -3,8 +3,8 @@ title: "Síntesis histórica de crecimiento — junio y julio 2026"
 purpose: "Aprovechar la evidencia histórica de junio y julio para orientar la operación y los experimentos de agosto sin mezclar métricas lifetime, agregados consolidados ni ventanas 24/72 horas."
 status: Review
 created: 2026-08-20
-updated: 2026-08-20
-version: "1.0"
+updated: 2026-08-21
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-20_Comparativo_Crecimiento_Junio_Julio.json"
@@ -117,6 +117,39 @@ Sí conviene aprovechar toda la información de junio y julio. La acción correc
 
 La fuente histórica queda suficientemente integrada para alimentar briefs, taxonomía y experimentos. No hace falta ampliar masivamente la reconciliación individual de todos los posts de julio antes de usar estos aprendizajes; sí conviene ampliar casos individuales cuando una pieza pueda responder una pregunta concreta sobre shares, comentarios, etiquetabilidad o personaje.
 
+## 9. Auditoría de cobertura y partes todavía analizables
+
+La base histórica está suficientemente integrada para orientar el Growth OS, pero no está igualmente completa en todas sus capas. La diferencia principal es esta: **junio tiene una cobertura individual amplia pero una taxonomía visual todavía parcial; julio tiene agregados completos y solo seis publicaciones reconciliadas individualmente**. Por tanto, sí existen partes de junio y julio que pueden ampliarse, aunque no conviene reabrir la recopilación básica ni intentar reconstruir ventanas históricas de 24/72 horas.
+
+| Capa de conocimiento | Junio | Julio | Brecha real | Prioridad |
+|---|---|---|---|---|
+| Agregado comparable de rendimiento | 230 publicaciones en la base homogénea | 207 publicaciones | No existe una brecha mensual crítica | Cerrada |
+| Vista histórica consolidada | 172 publicaciones lógicas y 17,334 interacciones | 207 publicaciones en la referencia mensual | Mantener ambas capas separadas por diferencias de extracción | Cerrada con control |
+| Reconciliación individual asset → Meta → CNT | 172 relaciones confirmadas; 171 con `Asset_Ref`; 17 registros sin referencia utilizable y 58 casos en cola sin match | 6 publicaciones reconciliadas de 207; 201 permanecen solo en la capa comparable | Julio necesita ampliación individual; junio solo requiere resolver reservas si una pregunta lo justifica | Julio P1; junio P2/P1 bajo demanda |
+| Taxonomía editorial | 172 filas con campos normalizados, pero la identidad visual fue revisada solo en un subconjunto reducido y `Universe` domina por convención de filename | 6 de 6 top posts revisados visualmente | Falta una muestra visual ampliada, especialmente en julio y en los casos de junio con alto share | P1 analítico |
+| Celdas narrativas comparables | Microhistoria estricta `n=1`; transformación `n=2`; observacional `n=3`; diálogo ácido `n=2`; autodesprecio/antihéroe `n=2` | Las celdas usan principalmente evidencia histórica combinada de ambos meses | Solo observacional alcanza señal preliminar; las otras celdas aún necesitan casos comparables | P1 selectivo |
+| Caption histórico | Clasificación parcial; la matriz comparable usa `Needs_Reconstruction` cuando no hay fuente verificable | La muestra individual de seis top no permite comparar tratamientos | No existe base suficiente para atribuir rendimiento al caption mínimo, de refuerzo o conversacional por sí solo | P2 / no inferir causalidad |
+| Comentarios y conversación | 72 comentarios recuperados en cinco posts prioritarios; no es una lectura de todo junio | Análisis de comentarios concentrado en los seis top posts integrados | Puede ampliarse para shares altos con conversación inusual, no como extracción masiva | P2 bajo pregunta concreta |
+| Horarios y días | Agregados completos; media mañana y noche temprana aparecen como ventanas prioritarias, con sensibilidad a outliers | Agregados completos; tarde-noche y algunos días fuertes, también sensibles a outliers | Falta cruzar horario con celdas visuales comparables, no volver a calcular promedios generales | P1 si se cruza con contenido |
+
+### Qué conviene ampliar primero
+
+El siguiente lote histórico de mayor valor es una **ampliación individual de julio**, no una nueva auditoría mensual. Julio tiene 207 publicaciones en la base comparable, pero únicamente seis disponen actualmente de asset confirmado, Drive ID, Meta ID y CNT editorial. La ampliación debería seleccionar un lote pequeño y ordenado por una pregunta concreta: primero publicaciones con muchos shares que no sean los seis top ya integrados; después publicaciones con comentarios altos; finalmente casos que puedan completar las celdas de microhistoria, transformación, diálogo ácido o autodesprecio/antihéroe. Cada fila debe pasar por evidencia visual antes de recibir una clasificación o CNT.
+
+La segunda ampliación recomendable es **visual y comparativa**, utilizando junio y julio juntos, pero no mezclando categorías incompatibles. Las metas mínimas siguen siendo: dos casos adicionales para microhistoria estricta, uno para transformación de Universe, uno para diálogo ácido y uno para autodesprecio/antihéroe. Humor observacional ya tiene `n=3`, aunque la mediana de 36 interacciones frente a una media de 151 muestra sensibilidad al caso de 393 interacciones; debe conservarse como señal preliminar y reportarse con y sin ese caso.
+
+La tercera ampliación, de menor prioridad, es la capa de conversación. Puede estudiarse un lote reducido de publicaciones que combinen shares altos con comentarios altos o con replies anidados. No tiene sentido extraer comentarios de las 437 publicaciones históricas restantes si no existe una decisión de community management asociada. `CNT-068` debe mantenerse como caso de difusión con conversación no verificable en la extracción actual, no como evidencia de ausencia de conversación.
+
+### Qué no debe ampliarse ahora
+
+No conviene intentar reconstruir las ventanas históricas exactas de 24/72 horas: la evidencia disponible no permite hacerlo de forma válida y el Growth OS ya separa lifetime histórico de los cortes operativos de agosto. Tampoco conviene crear CNT para los 201 posts de julio pendientes ni para los 58 casos de junio sin match únicamente para mejorar el conteo. La creación de CNT debe seguir subordinada a una relación Meta/Drive verificable y a un uso futuro concreto.
+
+Tampoco debe ampliarse la comparación por personaje sin revisión visual. En junio, 167 de las filas taxonómicas llevan `Universe` como etiqueta de inventario y en julio tres de los seis top posts no permiten asignar un personaje canónico concreto; esa distribución no puede sostener un ranking de personajes. El análisis debe priorizar rol narrativo, estructura del chiste, emoción legible y potencial de compartir/etiquetar.
+
+### Decisión recomendada
+
+La auditoría queda clasificada como **cobertura histórica suficiente para operación, con ampliación analítica selectiva pendiente**. Si Fernando aprueba continuar, el orden recomendado es: **(1) julio individual por shares y comentarios; (2) completar las celdas comparables que siguen bajo `n=3`; (3) solo después ampliar comentarios o reservas de junio cuando respondan una pregunta concreta**. Esta secuencia aprovecha la mayor señal de julio sin reabrir trabajo de inventario que ya está cerrado.
+
 ## Referencias
 
 [1]: `2026-08-14_Comparativo_Desempeno_Junio_Julio_Agosto_Datos.csv` — base comparable de 509 publicaciones.
@@ -127,3 +160,8 @@ La fuente histórica queda suficientemente integrada para alimentar briefs, taxo
 [6]: `2026-08-17_Analisis_Julio_Taxonomia_y_Pendientes_Growth_OS.md` — estado y limitaciones de la integración individual de julio.
 [7]: `2026-08-14_Analisis_Copys_Rendimiento.md` — buckets históricos de copy mínimo, frase corta y conversación.
 [8]: `2026-08-20_Expansion_Celdas_Comparables_Candidatos.csv` — celdas comparables y cautelas de identidad.
+
+[9]: `Operations/Research/2026-08-17_Reporte_Final_Recopilacion_Junio.md` — cobertura individual y reservas de reconciliación de junio.
+[10]: `Operations/Research/2026-08-17_Analisis_Julio_Taxonomia_y_Pendientes_Growth_OS.md` — cobertura individual y brechas de julio.
+[11]: `Operations/Research/2026-08-20_Propuesta_Expansion_Celdas_Comparables.md` — umbrales y estado de las cinco celdas comparables.
+[12]: `Operations/Research/2026-08-20_Expansion_Round2_Combined_Summary.json` — medianas, sensibilidad a outliers y tratamientos de caption.

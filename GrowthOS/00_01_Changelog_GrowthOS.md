@@ -3,10 +3,12 @@
 **Propósito:** Registro centralizado de hitos, integraciones, cambios estratégicos y actualizaciones de arquitectura. Este documento permite a los agentes (Manus, Claude, etc.) sincronizar contexto rápidamente sin re-leer todo el repositorio.
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
-**Última actualización:** 2026-08-18
-**Versión:** 2.30
+**Última actualización:** 2026-08-21
+**Versión:** 2.31
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.31.00] — 2026-08-21 (Manus): Auditoría de cobertura histórica de junio y julio.** La base comparable queda cerrada a nivel agregado: 230 publicaciones de junio y 207 de julio. Junio mantiene 172 relaciones publicación→asset confirmadas, con 17 registros sin `Asset_Ref` utilizable y 58 casos sin match como reserva; no se reabre la reconciliación masiva. Julio mantiene solo seis publicaciones reconciliadas individualmente de 207, por lo que la ampliación de mayor valor es un lote pequeño ordenado por shares, comentarios y potencial para completar celdas comparables. Las celdas siguen en microhistoria estricta `n=1`, transformación `n=2`, observacional `n=3` preliminar, diálogo ácido `n=2` y autodesprecio/antihéroe `n=2`; los captions históricos no permiten atribución causal suficiente. Se actualizó `Operations/Research/2026-08-20_Sintesis_Historica_Crecimiento_Junio_Julio.md` a v1.1. No se modifican calendario, CNT, canon ni métricas operativas de agosto.
 
 - **[2.30.00] — 2026-08-18 (Manus): Cierre de la creación de etiquetas granulares del piloto afiliado.** Se completaron las diez etiquetas, una por oportunidad/publicación, para AFF-01–AFF-10: `usmfb2606440818`, `usmfb2605600819`, `usmfb2606590820`, `usmfb2606350821`, `usmfb2605100822`, `usmfb2605180824`, `usmfb2605400826`, `usmfb2605900828`, `usmfb7410829` y `usmfb2605280830`. AFF-01 conserva el único link afiliado generado hasta ahora (`https://meli.la/2zCoRix`); los otros nueve links, la selección final de productos y la adjunción nativa en Facebook siguen pendientes. No se publicó ni modificó ninguna publicación. Documentos: `Operations/Research/Affiliate_Pilot_Assignments.csv`, `Operations/Research/Affiliate_Link_Ledger.csv` y `Operations/Research/2026-08-19_Candidatas_Afiliacion_Facebook_18_30_Observacion.md`.
 
