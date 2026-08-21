@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-21
-**Versión:** 2.41
+**Versión:** 2.42
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.42.00] — 2026-08-21 (Manus): Preflight técnico de briefs comparables completado.** El ejecutor `Operations/Production/run_comparable_briefs_preflight.py` validó `4/4` especificaciones en `PASS` para `FUT-MICRO-005`, `FUT-MICRO-006`, `FUT-TRANS-003` y `FUT-ACID-003`. El resultado `preflight_specification_pass` no equivale a `generation_approved`: no existen assets generados, siguen pendientes los metadatos `Experiment_ID`, `Hypothesis_ID`, `Caption_Function`, `Hora_Test` y demás campos previos a generación, y la promoción permanece bloqueada hasta una aprobación humana separada. Reporte: `Operations/Production/2026-08-21_Preflight_Briefs_Comparables.md`.
 
 - **[2.41.00] — 2026-08-21 (Manus): Aprobación de cuatro briefs para preflight y estado de celdas comparables.** Fernando aprobó `FUT-MICRO-005`, `FUT-MICRO-006`, `FUT-TRANS-003` y `FUT-ACID-003` con `Status=Approved_for_Preflight` y `Requested_Decision=Approve_Preflight_Only`. La aprobación no autoriza generación final, calendario, publicación ni CNT. Estado actual: `MICRO-STRICT-3P n=1` y requiere dos piezas nuevas de tres paneles; `TRANS-UNIVERSE n=2` y requiere una transformación de Universe con gafas preservadas; `ACID-DIALOGUE n=2` y requiere un diálogo ácido nuevo; `MICRO-SEQ-2P`, observacional y autodesprecio/antihéroe están en `n=3` preliminar y requieren dos casos adicionales para `n=5`. Documento actualizado: `Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`.
 

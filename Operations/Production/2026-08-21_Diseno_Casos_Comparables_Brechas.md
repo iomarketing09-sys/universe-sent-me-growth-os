@@ -1,10 +1,10 @@
 ---
 title: "Diseño de casos comparables para completar celdas bajo n=3"
 purpose: "Definir las piezas históricas/futuras mínimas necesarias para completar microhistoria estricta, transformación visual de Universe y diálogo ácido, con criterios de inclusión y tratamientos de caption separados."
-status: Review
+status: Active
 created: 2026-08-21
 updated: 2026-08-21
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-20_Propuesta_Expansion_Celdas_Comparables.md"
@@ -14,6 +14,8 @@ related_documents:
   - "Operations/Production/2026-08-20_Plan_Experimentos_Agosto_5_Familias.md"
   - "Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md"
   - "Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv"
+  - "Operations/Production/2026-08-21_Preflight_Briefs_Comparables.md"
+  - "Operations/Production/run_comparable_briefs_preflight.py"
   - "GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md"
 organization: "Operations/Production"
 ---
@@ -22,7 +24,11 @@ organization: "Operations/Production"
 
 ## Paquete de revisión humana y aprobación de preflight
 
-Los cuatro briefs están preparados para revisión en `Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md`, con la matriz estructurada en `Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`. Cada brief tiene estado `Approved_for_Preflight`. La aprobación de Fernando autoriza pasar a preflight, pero no autoriza generar assets finales, mover calendario, publicar ni crear CNT.
+Los cuatro briefs están registrados en `Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md`, con la matriz estructurada en `Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`. Cada brief tiene estado `Approved_for_Preflight`. El ejecutor `run_comparable_briefs_preflight.py` confirmó `4/4` especificaciones en `PASS`. La aprobación de Fernando y el resultado del preflight no autorizan generar assets finales, mover calendario, publicar ni crear CNT.
+
+## Resultado del preflight y alcance vigente
+
+El preflight de especificación pasó para los cuatro briefs (`4/4`). El resultado es `preflight_specification_pass`, no `generation_approved`: todavía no existe asset, no se han asignado valores finales de `Experiment_ID`, `Hypothesis_ID`, `Caption_Function`, `Hora_Test` ni otros metadatos de generación, y todos permanecen bloqueados para promoción hasta obtener aprobación humana separada.
 
 ## Alcance y decisión previa
 
@@ -118,9 +124,9 @@ Para una señal preliminar, cada celda debe alcanzar `n=3`. Para un veredicto op
 
 ## Orden de ejecución
 
-Primero debe confirmarse visualmente `1036844829507460_122127951885072582`. Después se diseña `FUT-TRANS-003` y `FUT-ACID-003`, porque cada uno requiere solo un caso nuevo. La microhistoria estricta se resuelve con `FUT-MICRO-006` si el candidato histórico entra; si queda fuera, se producen tanto `FUT-MICRO-005` como `FUT-MICRO-006`.
+El candidato `1036844829507460_122127951885072582` ya fue confirmado como caso de cuatro paneles y permanece excluido de `MICRO-STRICT-3P`. El siguiente orden es: completar los metadatos obligatorios de los cuatro briefs; solicitar autorización humana separada para generar los assets; ejecutar una revisión visual de los assets generados; y solo después solicitar autorización independiente para calendario, publicación o CNT.
 
-Ningún caso se publica sin aprobación humana de Fernando. Antes de cualquier uso en calendario, el brief debe pasar por la revisión de assets, identidad visual y tratamientos de caption descrita en el plan de cinco familias.
+Ningún caso se publica sin aprobación humana de Fernando. La aprobación de preflight no se reutiliza como aprobación de generación o publicación.
 
 ## Referencias
 
