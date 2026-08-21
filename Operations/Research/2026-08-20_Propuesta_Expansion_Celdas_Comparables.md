@@ -55,7 +55,7 @@ Los conteos anteriores son deliberadamente conservadores. Un candidato no se inc
 
 | Celda | Caso base ya comparable | Candidatos de revisión prioritarios | Decisión de revisión |
 |---|---|---|---|
-| Microhistoria secuencial | `122129404893072582` — 155 interacciones, 19 shares | `122127951885072582` — cuatro paneles con turnos telefónicos y baile; `122130232503072582` y `122130032151072582` quedan como borderlines | Revisar `122127951885072582` como candidato de cuatro paneles; si entra, diseñar solo un caso nuevo para llegar a `n=3`. |
+| Microhistoria secuencial | `122129404893072582` — 155 interacciones, 19 shares | `122127951885072582` — cuatro paneles con turnos telefónicos y baile; `122130232503072582` y `122130032151072582` quedan como borderlines | `Pending_Cell_Validation`: excluido de `MICRO-STRICT-3P` por contar cuatro paneles; retener como posible subcelda 4P y no reducir todavía el diseño de dos casos estrictos. |
 | Transformación visual | `122130196011072582` — 164/42; `122130324285072582` — 7/0 | No hay candidato elegible; `122130411897072582` queda excluido porque no confirma transformación de Universe | Buscar al menos un caso nuevo de transformación de Universe y registrar preservación de gafas/marcadores. |
 | Humor observacional | `122132375181072582` — 24/4; `122132371125072582` — 36/8; `122133575895072582` — 393/87 | `122129214813072582` — 924/214 | La revisión visual ya confirma tres casos comparables; revisar sensibilidad de `260740` antes de incorporarlo. |
 | Diálogo ácido | `122134161303072582` — 521/185; `122132365443072582` — 394/70 | No hay candidatos elegibles adicionales; `122130032151072582` y `122130232503072582` quedan como borderlines | Falta un caso para señal `n=3`; no incorporar los borderlines sin evidencia del mecanismo ácido. |
@@ -114,7 +114,7 @@ La propuesta sigue en `Review`. El corte visual 01 promovió `2607787` a diálog
 
 ## 9. Diseño de casos futuros para las brechas
 
-El documento `Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md` define cuatro briefs condicionales: dos microhistorias estrictas de tres paneles como respaldo, una transformación de Universe con gafas y marcadores preservados, y un diálogo ácido interpersonal. La revisión de `122127951885072582` determina si se necesita uno o dos briefs de microhistoria. Estos casos no están aprobados para publicación y deben registrarse con `Cell_ID`, `Caption_Treatment`, `Hora_Test`, `Theme_Confound` y salvaguardas de identidad antes de entrar a calendario.
+El documento `Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md` define cuatro briefs condicionales: dos microhistorias estrictas de tres paneles como respaldo, una transformación de Universe con gafas y marcadores preservados, y un diálogo ácido interpersonal. La validación actual de `122127951885072582` confirma una microhistoria de cuatro paneles, pero no la promueve a la celda estricta; por prudencia se mantienen los dos briefs de tres paneles hasta que exista una definición separada de 4P. Estos casos no están aprobados para publicación y deben registrarse con `Cell_ID`, `Caption_Treatment`, `Hora_Test`, `Theme_Confound` y salvaguardas de identidad antes de entrar a calendario.
 
 ## Referencias
 

@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-21
-**Versión:** 2.33
+**Versión:** 2.34
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.34.00] — 2026-08-21 (Manus): Aprobación de los 17 casos de personaje y validación del candidato de microhistoria.** Fernando aprobó incorporar 17 casos visuales de junio a la capa de análisis selectivo, con alcance limitado a presencia visual, rol narrativo, potencial de etiquetado y relación con celdas. No se autorizaron CNT, canon, reuse, calendario ni publicación. El candidato `1036844829507460_122127951885072582` fue validado como microhistoria de cuatro paneles con turnos, continuidad y remate, pero queda fuera de `MICRO-STRICT-3P` porque esa celda exige exactamente tres paneles. Se conserva como `Pending_Cell_Validation` para una eventual subcelda `MICRO-SEQ-4P`, que no se abrirá sin al menos tres casos comparables y una definición aprobada. Documentos: `Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md`, `Operations/Research/2026-08-21_Junio_57_Unmatched_Character_Utility.csv` y `Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`.
 
 - **[2.33.00] — 2026-08-21 (Manus): Revisión visual de los 57 posts de junio sin match y diseño de celdas comparables pendientes.** La cola de 57 casos se clasificó como 36 controles de formato, 19 candidatos visuales de personaje, un candidato de microhistoria estricta (`1036844829507460_122127951885072582`) y un caso sin `full_picture`. Se seleccionaron 17 casos de personaje para análisis sin crear CNT; dos quedaron como reserva. Los gatos con gafas, gnomos, Ganso, Fantasma, Silvio y el roster mixto se mantienen como hipótesis visuales, nunca como canon automático. Se diseñaron `FUT-MICRO-005`, `FUT-MICRO-006`, `FUT-TRANS-003` y `FUT-ACID-003` para completar las celdas que siguen bajo `n=3`; son briefs condicionales sin aprobación de publicación. Documentos: `Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md`, `Operations/Research/2026-08-21_Junio_57_Unmatched_Character_Utility.csv` y `Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`. No se modifican calendario, CNT, canon ni métricas operativas de agosto.
 

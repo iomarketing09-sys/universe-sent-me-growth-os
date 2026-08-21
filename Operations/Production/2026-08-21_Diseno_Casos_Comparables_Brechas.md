@@ -4,7 +4,7 @@ purpose: "Definir las piezas históricas/futuras mínimas necesarias para comple
 status: Review
 created: 2026-08-21
 updated: 2026-08-21
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-20_Propuesta_Expansion_Celdas_Comparables.md"
@@ -22,6 +22,29 @@ organization: "Operations/Production"
 La matriz actual tiene tres celdas que siguen bajo `n=3`: **microhistoria estricta de tres paneles** (`n=1`), **transformación visual de Universe** (`n=2`) y **diálogo ácido** (`n=2`). La cola de junio aporta un candidato visual de microhistoria estricta, `1036844829507460_122127951885072582`, con cuatro paneles y turnos claros. Primero debe revisarse y, si se confirma como comparable, la necesidad de producción se reduce de dos casos estrictos a uno.
 
 Los diseños siguientes son briefs de prueba, no publicaciones aprobadas. No generan assets, no modifican calendario y no asignan CNT. Su función es que la próxima pieza que se cree responda una brecha estadística concreta.
+
+## Aprobación de análisis selectivo
+
+Fernando aprobó la incorporación de los 17 casos visuales de personaje a la capa de análisis selectivo. La aprobación tiene alcance limitado: permite comparar presencia visual, rol narrativo, potencial de etiquetado y relación con celdas, pero no autoriza crear CNT, modificar canon, reutilizar assets ni mover publicaciones. El estado quedó registrado en `2026-08-21_Junio_57_Unmatched_Character_Utility.csv` con `approval_status=Approved_Character_Analysis`.
+
+## Protocolo de validación del candidato `122127951885072582`
+
+El candidato muestra cuatro paneles, dos interlocutores humanos visualmente consistentes, turnos telefónicos claros y un remate de baile en el último panel. Por esa razón **no debe entrar automáticamente a la celda estricta de tres paneles**, cuya definición exige exactamente tres paneles. Se conserva como candidato para una eventual subcelda `MICRO-SEQ-4P`, pero esa subcelda no se abre ni se mezcla con `MICRO-STRICT-3P` sin al menos tres casos comparables y una definición aprobada.
+
+| Parámetro | Regla de validación | Resultado actual |
+|---|---|---|
+| `Meta_ID` único | El identificador debe existir en la cola y no duplicarse en la matriz | Pasa: `1036844829507460_122127951885072582` |
+| Evidencia visual | Imagen Meta disponible y legible | Pasa |
+| Conteo de paneles | `MICRO-STRICT-3P` exige exactamente 3; `MICRO-SEQ-4P` exige exactamente 4 | Pasa para 4P; falla para 3P |
+| Turnos narrativos | Cada panel debe avanzar la conversación/acción, no solo repetir composición | Pasa: llamada, respuesta, transición y baile |
+| Remate | El último panel debe cambiar o completar la lectura | Pasa provisionalmente: el diálogo culmina en baile |
+| Continuidad visual | Los interlocutores deben ser distinguibles y consistentes | Pasa provisionalmente |
+| Caption histórico | No inferir tratamiento; usar `historical_unavailable` si no hay fuente | `historical_unavailable` |
+| Métricas | Conservar lifetime, aunque sea cero; no eliminar por bajo rendimiento | Válidas; 0 interacciones en la cola |
+| Asset/Drive | Requerido para integración de inventario/CNT, no para observar estructura narrativa | Pendiente; no se crea CNT |
+| Promoción | Solo si coincide con la definición de la celda elegida | Excluir de `MICRO-STRICT-3P`; retener como `Candidate_Review` de 4P |
+
+La decisión metodológica es conservar la estructura de cuatro paneles como aprendizaje negativo para la celda estricta: **una pieza puede ser una microhistoria válida y, aun así, no ser comparable con una celda definida por tres paneles**. Esto evita ampliar la definición después de ver el rendimiento o de necesitar completar `n=3`.
 
 ## Casos mínimos diseñados
 

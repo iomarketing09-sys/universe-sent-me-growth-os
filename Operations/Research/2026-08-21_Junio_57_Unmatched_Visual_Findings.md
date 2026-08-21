@@ -1,10 +1,10 @@
 ---
 title: "Hallazgos visuales — 57 posts de junio sin match"
 purpose: "Determinar qué reservas de junio aportan evidencia útil para personajes o celdas comparables sin convertir la cola completa en CNT ni en canon."
-status: Review
+status: Active
 created: 2026-08-21
 updated: 2026-08-21
-version: "0.2"
+version: "0.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-17_Cola_Reconciliacion_Assets_Junio.csv"
@@ -12,6 +12,7 @@ related_documents:
   - "Operations/Research/2026-08-21_Junio_57_Unmatched_Character_Utility.csv"
   - "Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Findings.md"
   - "Operations/Research/2026-08-20_Expansion_Celdas_Comparables_Candidatos.csv"
+  - "Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md"
 organization: "Operations/Research"
 ---
 
@@ -66,6 +67,12 @@ El post `1036844829507460_122127951885072582` (`r229`, 0 interacciones lifetime 
 Los 36 `Format_Control` son principalmente fotografías de naturaleza o carretera con texto, cielos con captions, composiciones motivacionales, parejas o personas genéricas, infográficos sexuales y referencias de plataforma. Pueden servir como controles de formato o de confusión, pero no deben entrar en rankings de Universe, Wilfred, Elara, Kiri, Silvio, Fantasma o Ganso.
 
 El único caso sin imagen, `1036844829507460_122129194233072582`, tampoco debe clasificarse por caption. La ausencia de `full_picture` es una limitación de evidencia y no una señal de que carezca de personaje.
+
+## Aprobación de Fernando
+
+El **21 de agosto de 2026**, Fernando aprobó incorporar los 17 casos de personaje a la capa de análisis selectivo. La autorización cubre descripción visual, hipótesis de personaje, rol narrativo, potencial de etiquetado y relación con celdas. No cubre la creación de CNT, la modificación del canon, el reuse, el calendario ni la publicación de contenido. El ledger registra la autorización con `approval_status=Approved_Character_Analysis`, `approval_by=Fernando` y `approval_scope=Selective_character_analysis_only`.
+
+El candidato `1036844829507460_122127951885072582` no queda aprobado automáticamente como comparable. Su estado es `Pending_Cell_Validation` y se aplican los parámetros definidos en `Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`.
 
 ## Decisión operativa
 

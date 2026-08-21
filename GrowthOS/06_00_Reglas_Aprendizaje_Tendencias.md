@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-21
-**Versión:** 3.11
+**Versión:** 3.12
 **Autor:** Manus AI (CGO); Sección 6 añadida por Claude
 **Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`, `../Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`, `../Operations/Research/2026-08-21_Julio_Expansion_Lote01_Analysis.md`, `../Operations/Research/2026-08-21_Expansion_Celdas_Comparables_Post_Julio_Lote01.json`, `../Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Findings.md`, `../Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md`, `../Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`
 
@@ -316,6 +316,12 @@ El caso `1036844829507460_122127951885072582` muestra cuatro paneles con turnos 
 La utilidad de personajes no equivale a rendimiento. Los gatos con gafas son marcadores visuales candidatos para Universe; los gnomos de barba blanca y gorro rojo son candidatos visuales para Wilfred; el pato/ave formal es candidato de Ganso; la figura blanca del bosque es candidata de Fantasma; la figura clown de pelo morado es candidata de Silvio. Ninguno se canoniza por una sola imagen, y cualquier transformación de Universe debe conservar gafas y marcadores de identidad.
 
 Los briefs `FUT-MICRO-005`, `FUT-MICRO-006`, `FUT-TRANS-003` y `FUT-ACID-003` quedan documentados en `Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`. Son diseños condicionales, no aprobaciones de publicación. La próxima creación debe registrar `Cell_ID`, `Caption_Treatment`, `Hora_Test`, `Theme_Confound` y las salvaguardas de identidad antes de entrar al calendario.
+
+### 18.3 Aprobación y validación de la cola de junio — 2026-08-21
+
+Fernando aprobó los 17 casos visuales de personaje para análisis selectivo. El alcance es descriptivo y comparativo: presencia visual, rol narrativo, potencial de etiquetado y relación con celdas. No autoriza CNT, canon, reuse, calendario ni publicación. Los 39 casos restantes permanecen como `Reserve_Not_Approved` y el candidato `1036844829507460_122127951885072582` queda como `Pending_Cell_Validation`.
+
+El candidato tiene cuatro paneles y, por tanto, **falla la celda `MICRO-STRICT-3P`**, que exige exactamente tres. Pasa provisionalmente los criterios de evidencia visual, turnos, continuidad y remate para una posible subcelda `MICRO-SEQ-4P`, pero esta subcelda no se abre ni se mezcla con la estricta hasta reunir al menos tres casos comparables y aprobar su definición. Los captions se mantienen como `historical_unavailable` y el asset Drive sigue pendiente porque no hay autorización para crear CNT.
 
 ## 19. Síntesis histórica junio–julio — 2026-08-20
 
