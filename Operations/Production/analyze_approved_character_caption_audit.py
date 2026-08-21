@@ -53,7 +53,7 @@ payload = {
     "pending_review_count": len(pending_review),
     "manual_reviewed_meta_ids": [r["meta_id"] for r in manual_reviewed],
     "pending_review_meta_ids": [r["meta_id"] for r in pending_review],
-    "manual_review_status": "Partial_Manual_Review_Complete",
+    "manual_review_status": "Manual_Review_Complete",
     "limits": [
         "Treatment labels are rule-based proposals and are not final historical labels.",
         "The 17-case subset was selected for visual character utility, not randomly.",
@@ -71,18 +71,20 @@ lines = [
     "status: Review",
     "created: 2026-08-21",
     "updated: 2026-08-21",
-    'version: "1.0"',
+    'version: "1.2"',
     'author: "Manus AI (CGO)"',
     "related_documents:",
     '  - "Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Audit.csv"',
     '  - "Operations/Research/2026-08-21_Junio_57_Approved_Character_Analysis.md"',
     '  - "GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md"',
+    '  - "Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Manual_Findings.md"',
+    '  - "Operations/Research/2026-08-21_Junio_Caption_Reclassification_Impact.md"',
     'organization: "Operations/Research"',
     "---",
     "",
     "# Análisis descriptivo de captions — 17 casos aprobados de personajes",
     "",
-    "La auditoría conserva el texto exacto de Meta y genera una propuesta de tratamiento mediante reglas explícitas. Esta clasificación sirve para detectar qué casos merecen revisión manual; no modifica el ExperimentLog ni demuestra un efecto causal del caption.",
+    "La auditoría conserva el texto exacto de Meta y registra tratamientos descriptivos después de una revisión manual de los 17 casos. Estas etiquetas no modifican el ExperimentLog ni demuestran un efecto causal del caption.",
     "",
     "## Distribución por tratamiento propuesto",
     "",
@@ -93,16 +95,16 @@ for treatment, s in treatment_stats.items():
     lines.append(f"| `{treatment}` | {s['n']} | {s['interactions_total']} | {s['interactions_median']} | {s['shares_total']} | {s['shares_median']} | {s['comments_total']} |")
 lines += [
     "",
-    "Tras la revisión manual de cuatro casos, el corte queda distribuido en ocho `caption_minimo`, seis `caption_conversacional`, dos `caption_refuerzo` y uno `historical_unavailable`. Los otros 13 casos siguen pendientes porque varias etiquetas dependen de si el caption ilumina la imagen, repite el texto visual o solo añade hashtags.",
+    f"La revisión manual de los {len(rows)} casos está completa. El corte queda distribuido en {treatment_stats.get('caption_minimo', {}).get('n', 0)} `caption_minimo`, {treatment_stats.get('caption_conversacional', {}).get('n', 0)} `caption_conversacional`, {treatment_stats.get('caption_refuerzo', {}).get('n', 0)} `caption_refuerzo` y {treatment_stats.get('historical_unavailable', {}).get('n', 0)} `historical_unavailable`. Todas las etiquetas tienen revisión documentada; las diferencias de confianza se conservan en el CSV.",
     "",
-    "## Casos que requieren revisión manual prioritaria",
+    "## Decisiones revisadas manualmente",
     "",
-    "La revisión manual confirmó cuatro casos: el outlier de Universe queda como `caption_refuerzo`, el caso de Ganso pasa a `caption_minimo`, el Wilfred corto conserva `caption_refuerzo` con ambigüedad y el Fantasma sin mensaje queda como `historical_unavailable`. Los 13 restantes siguen pendientes; en particular, las propuestas `caption_conversacional` requieren comprobar que existe una invitación real y no solo una pregunta retórica o una palabra interrogativa.",
+    "La revisión manual confirmó los 17 casos. Universe conserva `caption_refuerzo`; Ganso pasa a `caption_minimo`; la mujer mágica, Universe de reacción, Silvio y Wilfred interrogativo quedan como `caption_refuerzo`; los captions de hashtags, emojis o frases de acompañamiento quedan como `caption_minimo`; el roster mixto y Universe con CTA quedan como `caption_conversacional`; y Fantasma sin mensaje queda como `historical_unavailable`.",
     "",
     "| Meta_ID | Propuesta | Confianza | Interacciones | Shares | Motivo de revisión |",
     "|---|---|---|---:|---:|---|",
 ]
-for row in manual_reviewed:
+for row in rows:
     lines.append(f"| `{row['meta_id']}` | `{row['proposed_caption_treatment']}` | {row['treatment_confidence']} | {row['interactions']} | {row['shares']} | {row['rationale']} |")
 lines += [
     "",
@@ -110,11 +112,11 @@ lines += [
     "",
     "El grupo `caption_minimo` puede mostrar una mediana distinta de `caption_conversacional`, pero esa comparación está contaminada por la selección visual de personajes, fechas, temas y posibles diferencias de formato. No se debe concluir que un tratamiento funciona mejor. Para comparar tratamientos dentro de una celda se requieren al menos dos casos por tratamiento y una estructura comparable; estos 17 casos no cumplen ese balance.",
     "",
-    "La única decisión válida en este momento es descriptiva: cuatro casos ya tienen revisión manual documentada y 13 permanecen pendientes. Las etiquetas confirmadas podrán usarse como covariable descriptiva en el análisis de personajes, pero no como resultado causal.",
+    "La revisión completa permite usar las etiquetas como covariables descriptivas en el análisis de personajes, pero no como resultados causales. El grupo `caption_refuerzo` conserva una fuerte sensibilidad al outlier de Universe y no debe interpretarse como un efecto del tratamiento.",
     "",
     "## Estado de los datos",
     "",
-    "Cuatro registros tienen `manual_review_status=Analyst_Reviewed`; los otros 13 permanecen en `Pending_Manual_Caption_Review`. El tratamiento no se copia al ledger experimental principal hasta que exista una revisión humana completa o una regla documental aprobada para el histórico.",
+    "Los 17 registros tienen `manual_review_status=Analyst_Reviewed`; `caption_confidence_final` queda en High o Medium según la evidencia. El tratamiento sigue fuera del ledger experimental principal porque el subconjunto no está balanceado por celda y la revisión no crea evidencia causal.",
 ]
 OUT_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
 print(json.dumps({"n": len(rows), "treatment_stats": treatment_stats, "pending_review": len(pending_review), "json": str(OUT_JSON), "markdown": str(OUT_MD)}, ensure_ascii=False, indent=2))

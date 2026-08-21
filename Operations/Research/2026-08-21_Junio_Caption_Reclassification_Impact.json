@@ -1,0 +1,187 @@
+{
+  "period": "June approved character subset",
+  "n": 17,
+  "metrics_total": {
+    "n": 17,
+    "interactions_total": 300,
+    "interactions_median": 9,
+    "shares_total": 53,
+    "shares_median": 1,
+    "comments_total": 13,
+    "comments_median": 0,
+    "share_rate": 0.1767
+  },
+  "pre_override": {
+    "caption_conversacional": {
+      "n": 6,
+      "interactions_total": 49,
+      "interactions_median": 8.0,
+      "shares_total": 2,
+      "shares_median": 0.0,
+      "comments_total": 2,
+      "comments_median": 0.0,
+      "share_rate": 0.0408
+    },
+    "caption_minimo": {
+      "n": 7,
+      "interactions_total": 65,
+      "interactions_median": 10,
+      "shares_total": 5,
+      "shares_median": 1,
+      "comments_total": 6,
+      "comments_median": 0,
+      "share_rate": 0.0769
+    },
+    "caption_refuerzo": {
+      "n": 3,
+      "interactions_total": 184,
+      "interactions_median": 14,
+      "shares_total": 46,
+      "shares_median": 2,
+      "comments_total": 5,
+      "comments_median": 2,
+      "share_rate": 0.25
+    },
+    "historical_unavailable": {
+      "n": 1,
+      "interactions_total": 2,
+      "interactions_median": 2,
+      "shares_total": 0,
+      "shares_median": 0,
+      "comments_total": 0,
+      "comments_median": 0,
+      "share_rate": 0.0
+    }
+  },
+  "post_manual_review": {
+    "caption_conversacional": {
+      "n": 2,
+      "interactions_total": 24,
+      "interactions_median": 12.0,
+      "shares_total": 1,
+      "shares_median": 0.5,
+      "comments_total": 1,
+      "comments_median": 0.5,
+      "share_rate": 0.0417
+    },
+    "caption_minimo": {
+      "n": 8,
+      "interactions_total": 79,
+      "interactions_median": 10.5,
+      "shares_total": 7,
+      "shares_median": 1.0,
+      "comments_total": 9,
+      "comments_median": 0.5,
+      "share_rate": 0.0886
+    },
+    "caption_refuerzo": {
+      "n": 6,
+      "interactions_total": 195,
+      "interactions_median": 6.5,
+      "shares_total": 45,
+      "shares_median": 0.5,
+      "comments_total": 3,
+      "comments_median": 0.0,
+      "share_rate": 0.2308
+    },
+    "historical_unavailable": {
+      "n": 1,
+      "interactions_total": 2,
+      "interactions_median": 2,
+      "shares_total": 0,
+      "shares_median": 0,
+      "comments_total": 0,
+      "comments_median": 0,
+      "share_rate": 0.0
+    }
+  },
+  "changed_assignments": [
+    {
+      "meta_id": "1036844829507460_122134608507072582",
+      "character_hypothesis": "Ganso visual candidate",
+      "before": "caption_refuerzo",
+      "after": "caption_minimo",
+      "interactions": 14,
+      "shares": 2,
+      "comments": 3
+    },
+    {
+      "meta_id": "1036844829507460_122134055109072582",
+      "character_hypothesis": "Unidentified magical woman",
+      "before": "caption_conversacional",
+      "after": "caption_refuerzo",
+      "interactions": 9,
+      "shares": 0,
+      "comments": 1
+    },
+    {
+      "meta_id": "1036844829507460_122130324285072582",
+      "character_hypothesis": "Universe visual candidate",
+      "before": "caption_conversacional",
+      "after": "caption_refuerzo",
+      "interactions": 7,
+      "shares": 0,
+      "comments": 0
+    },
+    {
+      "meta_id": "1036844829507460_122133424479072582",
+      "character_hypothesis": "Silvio visual candidate",
+      "before": "caption_conversacional",
+      "after": "caption_refuerzo",
+      "interactions": 5,
+      "shares": 1,
+      "comments": 0
+    },
+    {
+      "meta_id": "1036844829507460_122130032151072582",
+      "character_hypothesis": "Wilfred visual candidate",
+      "before": "caption_conversacional",
+      "after": "caption_refuerzo",
+      "interactions": 4,
+      "shares": 0,
+      "comments": 0
+    }
+  ],
+  "confirmed_unchanged": [
+    {
+      "meta_id": "1036844829507460_122130196011072582",
+      "character_hypothesis": "Universe visual candidate",
+      "treatment": "caption_refuerzo",
+      "interactions": 164,
+      "shares": 42,
+      "comments": 2
+    }
+  ],
+  "requested_focus": {
+    "ganso": {
+      "meta_id": "1036844829507460_122134608507072582",
+      "character_hypothesis": "Ganso visual candidate",
+      "before": "caption_refuerzo",
+      "after": "caption_minimo",
+      "interactions": 14,
+      "shares": 2,
+      "comments": 3
+    },
+    "universe": {
+      "meta_id": "1036844829507460_122130196011072582",
+      "character_hypothesis": "Universe visual candidate",
+      "treatment": "caption_refuerzo",
+      "interactions": 164,
+      "shares": 42,
+      "comments": 2
+    },
+    "direct_effect": "Ganso moves between descriptive groups; Universe remains in caption_refuerzo. Neither post-level metrics nor total-period metrics change."
+  },
+  "interpretation": [
+    "Reclassification does not change any post-level interaction, share or comment value; it only moves a row between descriptive treatment groups.",
+    "Ganso is the only treatment assignment that changed from caption_refuerzo to caption_minimo; four additional conversational cases moved to caption_refuerzo during full manual review.",
+    "Universe was manually confirmed as caption_refuerzo, so its metrics remain in that group.",
+    "The final caption_refuerzo median is compositional: four conversational rows enter while Ganso exits, and the Universe outlier remains; this is not causal evidence.",
+    "The total subset remains 300 interactions, 53 shares and 13 comments."
+  ],
+  "limits": [
+    "The pre-override distribution reconstructs the documented rule-based state; it is not a new Meta measurement.",
+    "The subset is selected for character utility and is not a balanced caption experiment.",
+    "No ExperimentLog or editorial metric ledger was changed."
+  ]
+}

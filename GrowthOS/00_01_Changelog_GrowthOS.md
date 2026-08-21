@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-21
-**Versión:** 2.38
+**Versión:** 2.39
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.39.00] — 2026-08-21 (Manus): Cierre manual de los 13 captions pendientes e impacto de reclasificaciones.** Se completó la revisión manual de los 17 casos aprobados. El corte final queda en 8 `caption_minimo`, 2 `caption_conversacional`, 6 `caption_refuerzo` y 1 `historical_unavailable`; 12 confianzas altas y 5 medias. Se reclasificaron cuatro casos conversacionales a refuerzo y se confirmaron mínimos/conversacionales según el contexto visual; no se modificó el ExperimentLog. El cambio de Ganso mueve 14 interacciones, 2 shares y 3 comentarios de `caption_refuerzo` a `caption_minimo`; Universe conserva `caption_refuerzo`. El total permanece en 300 interacciones, 53 shares y 13 comentarios. Documentos: `Operations/Research/2026-08-21_Junio_Caption_Reclassification_Impact.md` y `Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Manual_Findings.md`.
 
 - **[2.38.00] — 2026-08-21 (Manus): Revisión manual parcial de captions históricos.** Se revisaron cuatro de los 17 captions ambiguos. El caso Ganso `1036844829507460_122134608507072582` se reclasificó de `caption_refuerzo` a `caption_minimo` porque repite el texto visual y añade hashtags. Universe `1036844829507460_122130196011072582` y Wilfred `1036844829507460_122130309663072582` conservan `caption_refuerzo` con confianza media; Fantasma `1036844829507460_122125895013072582` queda como `historical_unavailable` porque Meta no devolvió mensaje. El corte queda en 8 mínimos, 6 conversacionales, 2 de refuerzo y 1 no disponible; 13 permanecen pendientes. No se actualiza el ExperimentLog ni se declara causalidad. Documento de hallazgos: `Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Manual_Findings.md`.
 

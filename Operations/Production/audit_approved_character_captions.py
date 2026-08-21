@@ -45,7 +45,7 @@ def propose_treatment(text: str):
 fields = [
     "meta_id", "date", "character_hypothesis", "interactions", "shares", "comments",
     "caption_queue", "caption_meta_exact", "caption_source", "meta_created_time", "permalink_url",
-    "proposed_caption_treatment", "treatment_confidence", "classification_method", "rationale",
+    "rule_based_treatment", "proposed_caption_treatment", "treatment_confidence", "classification_method", "rationale",
     "manual_review_status", "caption_confidence_final", "notes",
 ]
 rows = []
@@ -71,6 +71,7 @@ for row in approved:
         "caption_source": source,
         "meta_created_time": body.get("created_time", ""),
         "permalink_url": body.get("permalink_url", ""),
+        "rule_based_treatment": treatment,
         "proposed_caption_treatment": treatment,
         "treatment_confidence": confidence,
         "classification_method": "Rule_based_proposal_v1",
@@ -109,10 +110,102 @@ manual_decisions = {
         "caption_confidence_final": "High",
         "notes": "No Meta message exists; do not infer a caption from the text embedded in the image.",
     },
+    "1036844829507460_122125544019072582": {
+        "proposed_caption_treatment": "caption_minimo",
+        "treatment_confidence": "High",
+        "manual_review_status": "Analyst_Reviewed",
+        "caption_confidence_final": "High",
+        "notes": "Hashtags only; no semantic addition beyond the visual remate.",
+    },
+    "1036844829507460_122125520661072582": {
+        "proposed_caption_treatment": "caption_conversacional",
+        "treatment_confidence": "High",
+        "manual_review_status": "Analyst_Reviewed",
+        "caption_confidence_final": "High",
+        "notes": "Explicit Síguenos CTA and humorous conditional; conversational treatment confirmed.",
+    },
+    "1036844829507460_122130329817072582": {
+        "proposed_caption_treatment": "caption_minimo",
+        "treatment_confidence": "High",
+        "manual_review_status": "Analyst_Reviewed",
+        "caption_confidence_final": "High",
+        "notes": "Short reaction plus hashtags; minimal accompaniment confirmed.",
+    },
+    "1036844829507460_122128989885072582": {
+        "proposed_caption_treatment": "caption_minimo",
+        "treatment_confidence": "High",
+        "manual_review_status": "Analyst_Reviewed",
+        "caption_confidence_final": "High",
+        "notes": "Emoji-only reaction; visual carries the full meaning.",
+    },
+    "1036844829507460_122134065975072582": {
+        "proposed_caption_treatment": "caption_minimo",
+        "treatment_confidence": "High",
+        "manual_review_status": "Analyst_Reviewed",
+        "caption_confidence_final": "High",
+        "notes": "Hashtags only; radio/music theme retained as a confounder.",
+    },
+    "1036844829507460_122131071243072582": {
+        "proposed_caption_treatment": "caption_conversacional",
+        "treatment_confidence": "High",
+        "manual_review_status": "Analyst_Reviewed",
+        "caption_confidence_final": "High",
+        "notes": "Follower thank-you and explicit roster; conversational caption confirmed, but content is a mixed-roster control.",
+    },
+    "1036844829507460_122134055109072582": {
+        "proposed_caption_treatment": "caption_refuerzo",
+        "treatment_confidence": "Medium",
+        "manual_review_status": "Analyst_Reviewed",
+        "caption_confidence_final": "Medium",
+        "notes": "Interrogative label reads as reaction/semantic reinforcement, not an invitation to reply; identity remains unconfirmed.",
+    },
+    "1036844829507460_122130324285072582": {
+        "proposed_caption_treatment": "caption_refuerzo",
+        "treatment_confidence": "Medium",
+        "manual_review_status": "Analyst_Reviewed",
+        "caption_confidence_final": "Medium",
+        "notes": "Colloquial interpersonal reaction adds tone but no CTA; reinforcement confirmed.",
+    },
+    "1036844829507460_122126239515072582": {
+        "proposed_caption_treatment": "caption_minimo",
+        "treatment_confidence": "High",
+        "manual_review_status": "Analyst_Reviewed",
+        "caption_confidence_final": "High",
+        "notes": "Emoji-only reaction; mixed subjects prevent primary-character inference.",
+    },
+    "1036844829507460_122133424479072582": {
+        "proposed_caption_treatment": "caption_refuerzo",
+        "treatment_confidence": "Medium",
+        "manual_review_status": "Analyst_Reviewed",
+        "caption_confidence_final": "Medium",
+        "notes": "Resigned interpersonal phrase reinforces the visual self-deprecating remate; no CTA.",
+    },
+    "1036844829507460_122130032151072582": {
+        "proposed_caption_treatment": "caption_refuerzo",
+        "treatment_confidence": "High",
+        "manual_review_status": "Analyst_Reviewed",
+        "caption_confidence_final": "High",
+        "notes": "Interrogative repeats and reinforces Wilfred's visual voice; not a public CTA.",
+    },
+    "1036844829507460_122133558903072582": {
+        "proposed_caption_treatment": "caption_minimo",
+        "treatment_confidence": "High",
+        "manual_review_status": "Analyst_Reviewed",
+        "caption_confidence_final": "High",
+        "notes": "Hashtag only; visual text is self-contained.",
+    },
+    "1036844829507460_122126670549072582": {
+        "proposed_caption_treatment": "caption_minimo",
+        "treatment_confidence": "High",
+        "manual_review_status": "Analyst_Reviewed",
+        "caption_confidence_final": "High",
+        "notes": "Short phrase, emoji and music hashtag add no new semantic layer; music retained as a confounder.",
+    },
 }
 for row in rows:
     if row["meta_id"] in manual_decisions:
         row.update(manual_decisions[row["meta_id"]])
+        row["classification_method"] = "Rule_based_proposal_v1_plus_manual_review"
 
 with OUT.open("w", newline="", encoding="utf-8") as handle:
     writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
@@ -127,7 +220,7 @@ summary = {
     "classification_method": "Rule_based_proposal_v1_plus_manual_review",
     "limits": [
         "The rule-based treatment is a proposal, not a verified historical label.",
-        "The exact Meta message is preserved and must be reviewed before changing any experiment ledger.",
+        "The exact Meta message is preserved; treatment changes remain descriptive and no experiment ledger is updated.",
         "The selected character subset is not random and cannot support caption causality.",
         "historical_unavailable remains valid when the source is empty or ambiguous."
     ],
