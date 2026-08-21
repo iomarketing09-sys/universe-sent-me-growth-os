@@ -1,0 +1,47 @@
+{
+  "title": "Snapshot de auditoría Meta de Reels",
+  "purpose": "Registrar el estado de solo lectura de los Reels publicados y programados de Universe Sent Me sin conservar URLs firmadas de medios.",
+  "status": "Active",
+  "created_at": "2026-08-21",
+  "last_updated": "2026-08-21",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "GrowthOS/07_00_Registro_Maestro_Reels.md",
+    "Operations/Research/2026-08-19_Auditoria_Reels_y_Monetizacion.md",
+    "Operations/Research/2026-08-19_Historial_Reels_Consolidado.json",
+    "Operations/Research/2026-08-21_Reels_Audit_Coverage_Summary.json"
+  ],
+  "fetched_at_utc": "2026-08-21T23:43:53.374166+00:00",
+  "page": {
+    "id": "1036844829507460",
+    "name": "Universe Sent Me",
+    "page_token_derived_from_me_accounts": true
+  },
+  "scheduled_posts": {
+    "count": 47,
+    "attachment_type_counts": {
+      "photo": 47,
+      "video": 0
+    },
+    "interpretation": "El scheduler consultado no contiene un Reel/video pendiente en el momento del corte."
+  },
+  "latest_reel": {
+    "title_or_caption": "Universe viéndote Farmear Aura",
+    "page_post_id": "1036844829507460_122154017667072582",
+    "reel_id": "2005557463434064",
+    "permalink_url": "https://www.facebook.com/reel/2005557463434064/",
+    "created_time_utc": "2026-08-21T21:30:59+0000",
+    "is_published": true,
+    "attachment_type": "video_inline",
+    "comments_returned": 1,
+    "comments_from_page": 1,
+    "insights_status": "HTTP_400_INVALID_METRIC",
+    "metrics_status": "Snapshot_pendiente"
+  },
+  "limitations": [
+    "La consulta de Insights no devolvió views, reach, retención, tiempo promedio visto, completaciones ni seguidores ganados.",
+    "La consulta /page_id/videos respondió HTTP 500 por volumen de datos solicitado; no se utiliza como evidencia de ausencia de videos.",
+    "El snapshot es de identidad, estado y disponibilidad de métricas; no es un veredicto de rendimiento."
+  ]
+}

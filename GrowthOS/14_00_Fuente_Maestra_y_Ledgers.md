@@ -3,8 +3,8 @@ title: "Fuente maestra y ledgers del Growth OS"
 purpose: "Definir una arquitectura mínima y unificada para que inventario, publicaciones, calendarios y aprendizaje compartan IDs sin duplicar datos ni repetir consultas innecesarias."
 status: Active
 created: 2026-08-15
-updated: 2026-08-20
-version: "2.8"
+updated: 2026-08-21
+version: "2.9"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -30,6 +30,9 @@ related_documents:
   - "Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md"
   - "Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json"
   - "Operations/Research/2026-08-19_Historial_Reels_Consolidado.json"
+  - "Operations/Research/2026-08-21_Reels_Publication_Inventory.csv"
+  - "Operations/Research/2026-08-21_Reels_Audit_Coverage_Summary.json"
+  - "Operations/Research/2026-08-21_Meta_Reels_Live_Audit_Summary.json"
   - "Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json"
   - "Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json"
   - "Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json"

@@ -3,8 +3,8 @@ title: "Auditoría de Reels y monetización"
 purpose: "Separar el rendimiento histórico de Reels del experimento P0 de imágenes, verificar qué vías de monetización tienen evidencia real y establecer la cobertura documental del video corto en Instagram, Facebook, TikTok y YouTube."
 status: "Active"
 created: 2026-08-19
-updated: 2026-08-20
-version: "1.5"
+updated: 2026-08-21
+version: "1.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -147,7 +147,59 @@ El resultado actual es una señal de instrumentación, no de conversión: el pan
 ---
 
 
-## 9. Puente de transferencia Facebook → Reels — 2026-08-21
+## 10. Auditoría del inventario y operación de Reels — 2026-08-21
+
+### 10.1 Resultado ejecutivo
+
+La auditoría confirma que **sí existe una base histórica de Reels**, pero estaba fragmentada y desactualizada como vista operativa. El historial estructurado se actualizó de 45 a **48 registros por plataforma**: Facebook 19, Instagram 16, TikTok 7 y YouTube 6. Estos registros representan publicaciones, no piezas únicas; corresponden a **21 conceptos identificables** y **17 grupos cross-platform**.
+
+| Área auditada | Estado |
+|---|---|
+| Inventario histórico | **Integrado y actualizado** a `2026-08-21` en `Historial_Reels_Consolidado.json` v1.5 |
+| Lista operativa visible | **Actualizada** en `GrowthOS/07_00_Registro_Maestro_Reels.md` v2.6 |
+| Reel más reciente de Meta | **Publicado y verificado:** `Universe viéndote Farmear Aura` |
+| Reels programados en Facebook | **47 posts programados**, todos de imagen; **0 videos/Reels** en el scheduler consultado |
+| Maeve | **En revisión de producción**, no publicado como Reel verificable |
+| Experimentación formal | Solo 1 de 48 registros tiene `Experiment_ID` y `Hypothesis_ID` explícitos |
+| Métricas de video | Parciales; Facebook no devolvió views/reach/retención en el corte actual |
+
+### 10.2 Reel publicado hoy
+
+Meta devolvió el Reel **`Universe viéndote Farmear Aura`** con Page Post ID `1036844829507460_122154017667072582`, Reel ID `2005557463434064`, permalink `https://www.facebook.com/reel/2005557463434064/`, hora de publicación `2026-08-21 21:30:59 UTC` y `is_published=true`. Esto equivale aproximadamente a las 16:30 en `America/Matamoros`. La consulta de comentarios devolvió un único comentario de la propia Página (`@seguidores Universe Sent Me`), no una conversación de comunidad.
+
+El Reel está publicado, pero **todavía no está medido**: la consulta de Insights devolvió HTTP 400 con `The value must be a valid insights metric`, y no se deben convertir las interacciones actuales en una ventana 24/72 horas. El estado correcto es `Publicado_Metricas_Pendientes`, no `Programado` ni `ExperimentLog_Cerrado`.
+
+La consulta de `/{page_id}/scheduled_posts` devolvió 47 registros, todos con attachment `photo` y `is_published=false`; ninguno era un video. Por ello, el Reel de hoy no quedó en el scheduler de Facebook en el momento del corte: ya estaba publicado en el feed. Si Fernando lo programó previamente, Meta ya lo convirtió en publicación real y el registro debe conservar ambas etapas solo si existe evidencia de programación anterior.
+
+### 10.3 Reels recientes incorporados al inventario
+
+Se integraron tres publicaciones de Facebook que no estaban en el corte estructurado anterior:
+
+| Concepto | Meta Post / Reel | Estado documental |
+|---|---|---|
+| `Doble Check → Universe` | `1036844829507460_122153090559072582` / `2210896633022235` | Publicado en cascada; `EXP-202608-REALUNIVERSE-01`, `HB-REEL-01`; métricas separadas de imágenes |
+| `Remote Control` | `1036844829507460_122153750763072582` / `2815726225473165` | Cascada completa confirmada; snapshot 24h pendiente |
+| `Farmear Aura` | `1036844829507460_122154017667072582` / `2005557463434064` | Facebook confirmado; crosspost y asset fuente pendientes de evidencia |
+
+`Remote Control` y `Doble Check` ya tienen documentación de producción/cascada. `Farmear Aura` solo tiene por ahora evidencia de Meta; no se crea CNT ni se infiere una relación con un asset de Drive o con una publicación en otra plataforma.
+
+### 10.4 Estado de Maeve
+
+El proyecto de Maeve localizado en el repositorio es `Crave You — Maeve entre todas las miradas` y su variante `La habitación de las plumas`. El documento de producción permanece en `REVIEW`; no existe un export de video ni un `Platform_Content_ID` asociado dentro del Growth OS actual. Por lo tanto, se registra como **`En_Produccion/Pendiente_Revision`**, no como Reel publicado, programado ni medido.
+
+Si el Reel de Maeve que Fernando menciona es otro archivo o una producción iniciada fuera del repositorio, el próximo dato mínimo necesario será uno de estos tres elementos: nombre exacto del archivo, fecha/hora de publicación o ID nativo de la plataforma. Con cualquiera de ellos se puede reconciliar sin crear un duplicado.
+
+### 10.5 Diagnóstico de cobertura
+
+La cobertura histórica es suficiente para afirmar que el estudio lleva meses produciendo y publicando video corto, pero todavía no es suficiente para un análisis de Growth OS plenamente comparable. De los 48 registros, 29 tienen evidencia de asset en Drive, 33 tienen alguna cifra de engagement, 27 tienen views, 14 tienen reach y ninguno tiene una serie completa y uniforme de views, retención, tiempo promedio visto, completaciones y seguidores ganados en las cuatro plataformas. Facebook concentra 19 registros, pero el corte actual tiene 0/19 con views o reach recuperables.
+
+La principal deuda no es “crear más Reels”, sino formalizar el estado y la medición de cada publicación. El inventario debe separar cinco estados: `Idea`, `En_Produccion`, `Pendiente_Revision`, `Programada`, `Publicada_Metricas_Pendientes` y `Medida_24_72h`. El `ExperimentLog` solo se actualiza cuando exista una hipótesis explícita y una ventana de métricas verificable.
+
+### 10.6 Próxima corrección operativa
+
+A partir de este corte, cada Reel nuevo debe registrarse antes de producirse con `Concept_ID`, `Primary_Asset_ID`, `Platform`, `Experiment_ID` si aplica, `Hypothesis_ID` si aplica, `Production_Status`, `Publication_Status`, `Platform_Content_ID`, `Publication_Local`, `Crosspost_Status`, `Source_Window` y `Metrics_Status`. El Reel de Maeve debe permanecer en la cola de producción hasta que Fernando apruebe la dirección y exista un export; el Reel de hoy debe entrar a la cola de medición, no a una nueva cola creativa.
+
+## 11. Puente de transferencia Facebook → Reels — 2026-08-21
 
 Los experimentos comparables de imágenes sí pueden alimentar el carril de Reels, pero únicamente como **fuente de hipótesis editoriales y de diseño**. Sus interacciones, shares, medianas, horarios y veredictos no se trasladan como resultados de video. La plataforma, el formato y la unidad de consumo son distintos; por eso la transferencia correcta convierte una señal visual o narrativa en una hipótesis nueva, con un `Experiment_ID`, un `Hypothesis_ID` y métricas nativas de video propios.
 

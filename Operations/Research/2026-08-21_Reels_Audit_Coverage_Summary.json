@@ -1,0 +1,63 @@
+{
+  "title": "Resumen de cobertura de auditoría del Growth OS de Reels",
+  "purpose": "Cuantificar la cobertura histórica, la reconciliación cross-platform y las brechas de instrumentación del inventario de Reels.",
+  "status": "Active",
+  "created_at": "2026-08-21",
+  "last_updated": "2026-08-21",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "GrowthOS/07_00_Registro_Maestro_Reels.md",
+    "Operations/Research/2026-08-19_Auditoria_Reels_y_Monetizacion.md",
+    "Operations/Research/2026-08-19_Historial_Reels_Consolidado.json",
+    "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
+  ],
+  "source": {
+    "file": "Operations/Research/2026-08-19_Historial_Reels_Consolidado.json",
+    "version": "1.5",
+    "last_updated": "2026-08-21",
+    "period": {
+      "start": "2026-07-05",
+      "end": "2026-08-21"
+    }
+  },
+  "inventory": {
+    "publication_records": 48,
+    "by_platform": {
+      "Facebook": 19,
+      "Instagram": 16,
+      "TikTok": 7,
+      "YouTube": 6
+    },
+    "unique_concepts": 21,
+    "crosspost_groups": 17
+  },
+  "field_coverage": {
+    "drive_asset_evidence": {"populated": 29, "total": 48},
+    "engagement": {"populated": 33, "total": 48},
+    "views": {"populated": 27, "total": 48},
+    "reach": {"populated": 14, "total": 48},
+    "experiment_id": {"populated": 1, "total": 48},
+    "hypothesis_id": {"populated": 1, "total": 48}
+  },
+  "metric_summary": {
+    "engagement_sum_available_rows": 280,
+    "engagement_median_available_rows": 5,
+    "warning": "No usar como mediana multicanal: las filas mezclan plataformas, ventanas y definiciones nativas distintas."
+  },
+  "platform_gaps": {
+    "Facebook": "19 registros; 0 con views/reach recuperables en este corte; Insights de video requiere resolver métricas válidas o una fuente alternativa.",
+    "Instagram": "16 registros; 14 con views y reach provenientes de Windsor; requiere ledger append-only y snapshots uniformes.",
+    "TikTok": "7 registros; views y engagement disponibles; reach no disponible en la capa actual; deduplicar por video_id.",
+    "YouTube": "6 registros; views disponibles; separar actividad diaria de lifetime y distinguir Shorts de videos largos."
+  },
+  "operational_states": [
+    "Idea",
+    "En_Produccion",
+    "Pendiente_Revision",
+    "Programada",
+    "Publicada_Metricas_Pendientes",
+    "Medida_24_72h"
+  ],
+  "conclusion": "Existe suficiente evidencia para construir una lista maestra histórica de Reels, pero no para declarar todavía una regla de rendimiento multicanal. La prioridad es completar identidad, estado y snapshots, no generar más piezas sin registro."
+}

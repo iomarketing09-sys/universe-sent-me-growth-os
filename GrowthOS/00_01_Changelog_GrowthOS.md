@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-21
-**Versión:** 2.57
+**Versión:** 2.58
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.58.00] — 2026-08-21 (Manus): Auditoría del inventario y operación de Reels.** Se reconstruyó y sincronizó la lista histórica de video corto: 48 registros por plataforma — Facebook 19, Instagram 16, TikTok 7 y YouTube 6 — correspondientes a 21 conceptos y 17 grupos cross-platform. Se añadieron al historial los Reels recientes `Doble Check → Universe` (`2210896633022235`), `Remote Control` (`2815726225473165`) y `Universe viéndote Farmear Aura` (`2005557463434064`). El Reel de Farmear Aura fue verificado como publicado el 21 de agosto, mientras que la consulta de 47 posts programados devolvió únicamente imágenes y ningún Reel/video pendiente. Maeve permanece como dirección de producción `Crave You — Maeve entre todas las miradas` en `REVIEW`, sin export ni ID nativo confirmado. Se creó `Operations/Research/2026-08-21_Reels_Publication_Inventory.csv`, se actualizaron `GrowthOS/07_00_Registro_Maestro_Reels.md` v2.6, `Operations/Research/2026-08-19_Auditoria_Reels_y_Monetizacion.md` v1.6 y `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` v2.9. Las métricas de Reels siguen separadas de imágenes, afiliados y P0; no se cerró ningún veredicto ni se inventaron snapshots.
 
 - **[2.57.00] — 2026-08-21 (Manus): Se documenta el puente de aprendizaje Facebook → Reels.** Los experimentos comparables de imágenes alimentarán Reels únicamente como `Design_Input`/hipótesis editorial, nunca como métricas o veredictos de video. Se definieron tres traducciones futuras: `FUT-TRANS-003` hacia transformación real → Universe, `FUT-MICRO-005/006` hacia microhistoria audiovisual y `FUT-ACID-003` hacia diálogo ácido breve. Cada Reel requiere `Concept_ID`, `Experiment_ID`, `Hypothesis_ID`, `hook_0_3s`, duración, estructura narrativa, tratamiento/función de caption, IDs nativos y snapshots 24/72h. Las plataformas permanecen separadas, la afiliación conserva su ledger propio y la reutilización de memes respeta la antigüedad mínima de 30 días. No se programó una nueva ola de Reels ni se actualizaron métricas de video. Documento: `Operations/Research/2026-08-19_Auditoria_Reels_y_Monetizacion.md`.
 

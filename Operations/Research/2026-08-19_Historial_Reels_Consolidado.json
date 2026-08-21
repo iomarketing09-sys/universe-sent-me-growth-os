@@ -3,8 +3,8 @@
   "purpose": "Inventario reconciliable de Reels y videos cortos publicados; no infiere cross-posts sin evidencia explícita.",
   "status": "Active",
   "created_at": "2026-08-19",
-  "last_updated": "2026-08-19",
-  "version": "1.4",
+  "last_updated": "2026-08-21",
+  "version": "1.5",
   "author": "Manus AI",
   "related_documents": [
     "2026-08-19_Relaciones_Reels_Alta_Evidencia.json",
@@ -16,10 +16,87 @@
     "../../GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
   ],
   "period": {
-    "start": "2026-07-22",
-    "end": "2026-08-18"
+    "start": "2026-07-05",
+    "end": "2026-08-21"
   },
   "records": [
+    {
+      "platform": "Facebook",
+      "content_id": "1036844829507460_122153090559072582",
+      "published_at": "2026-08-20T00:03:50+0000",
+      "content_type": "Reel",
+      "title_or_caption": "Yo: “no pasa nada”. Universe, dos segundos después: 🟣",
+      "character": "Universe",
+      "canonical_concept_id": "CON-2026-08-19-DobleCheck-Universe",
+      "engagement": null,
+      "views": null,
+      "reach": null,
+      "source": "Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md; Meta live feed audit",
+      "evidence_status": "Confirmado_por_Meta_API_y_brief_de_produccion",
+      "drive_asset_evidence": null,
+      "content_asset_id": null,
+      "experiment_id": "EXP-202608-REALUNIVERSE-01",
+      "hypothesis_ids": [
+        "HB-REEL-01"
+      ],
+      "experiment_evidence": "Brief de producción explícito; no se mezcla con experimentos de imágenes.",
+      "reconciliation_decision": "Cascada_completa_confirmada",
+      "crosspost_status": "Cascada_completa_confirmada",
+      "meta_reel_id": "2210896633022235",
+      "permalink_url": "https://www.facebook.com/reel/2210896633022235/",
+      "is_published": true,
+      "metrics_status": "Snapshot_pendiente; auditoria anterior devolvio solo 1 reaccion y 0 comentarios en corte lifetime consultado"
+    },
+    {
+      "platform": "Facebook",
+      "content_id": "1036844829507460_122153750763072582",
+      "published_at": "2026-08-20T23:04:21+0000",
+      "content_type": "Reel",
+      "title_or_caption": "Hay personas que se quedan en el retrovisor aunque ya no vayan contigo. Remote Control — Sussie 4 ft. León Larregui.",
+      "character": "Evan + Elara",
+      "canonical_concept_id": "CON-2026-08-20-RemoteControl-EvanElara",
+      "engagement": null,
+      "views": null,
+      "reach": null,
+      "source": "Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Desamor.md; Meta live feed audit",
+      "evidence_status": "Confirmado_por_Meta_API_y_documento_de_produccion",
+      "drive_asset_evidence": null,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "Videoclip musical publicado en cascada completa; no se atribuye automáticamente a HB-REEL-01.",
+      "reconciliation_decision": "Cascada_completa_confirmada",
+      "crosspost_status": "Cascada_completa_confirmada",
+      "meta_reel_id": "2815726225473165",
+      "permalink_url": "https://www.facebook.com/reel/2815726225473165/",
+      "is_published": true,
+      "metrics_status": "Snapshot_24h_pendiente"
+    },
+    {
+      "platform": "Facebook",
+      "content_id": "1036844829507460_122154017667072582",
+      "published_at": "2026-08-21T21:30:59+0000",
+      "content_type": "Reel",
+      "title_or_caption": "Universe viéndote Farmear Aura",
+      "character": "Universe",
+      "canonical_concept_id": "CON-2026-08-21-Farmear_Aura",
+      "engagement": null,
+      "views": null,
+      "reach": null,
+      "source": "2026-08-21 Meta live read-only audit",
+      "evidence_status": "Confirmado_por_Meta_API",
+      "drive_asset_evidence": null,
+      "content_asset_id": null,
+      "experiment_id": "Sin_etiqueta_historica",
+      "hypothesis_ids": [],
+      "experiment_evidence": "No existe Experiment_ID o Hypothesis_ID explícito en las fuentes auditadas; no se infiere.",
+      "reconciliation_decision": "Publicacion_Facebook_confirmada; crosspost_pendiente",
+      "crosspost_status": "Facebook_confirmado; otras_plataformas_no_verificadas",
+      "meta_reel_id": "2005557463434064",
+      "permalink_url": "https://www.facebook.com/reel/2005557463434064/",
+      "is_published": true,
+      "metrics_status": "Snapshot_pendiente"
+    },
     {
       "platform": "Facebook",
       "content_id": "1036844829507460_122148560799072582",
@@ -1847,5 +1924,6 @@
     "Facebook audit identifica Reels por attachment_type=video/video_inline; no se infiere formato para posts estáticos.",
     "Los conceptos entre plataformas solo se agrupan mediante frase o título explícitamente coincidente, por relación de alta evidencia documentada, o por confirmación explícita de Fernando vinculada a un asset identificable de Drive.",
     "Las seis piezas de YouTube incluidas en este corte ya tienen fecha nativa confirmada; futuras piezas deben recuperar el mismo campo antes de la reconciliación."
-  ]
+  ],
+  "audit_note": "Se añadieron tres Reels recientes de Facebook con IDs y estado de publicación confirmados. Las métricas permanecen nulas cuando no existe una ventana/snapshot comparable."
 }
