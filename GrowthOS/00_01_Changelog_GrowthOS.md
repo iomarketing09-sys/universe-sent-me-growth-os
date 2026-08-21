@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-21
-**Versión:** 2.40
+**Versión:** 2.41
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.41.00] — 2026-08-21 (Manus): Aprobación de cuatro briefs para preflight y estado de celdas comparables.** Fernando aprobó `FUT-MICRO-005`, `FUT-MICRO-006`, `FUT-TRANS-003` y `FUT-ACID-003` con `Status=Approved_for_Preflight` y `Requested_Decision=Approve_Preflight_Only`. La aprobación no autoriza generación final, calendario, publicación ni CNT. Estado actual: `MICRO-STRICT-3P n=1` y requiere dos piezas nuevas de tres paneles; `TRANS-UNIVERSE n=2` y requiere una transformación de Universe con gafas preservadas; `ACID-DIALOGUE n=2` y requiere un diálogo ácido nuevo; `MICRO-SEQ-2P`, observacional y autodesprecio/antihéroe están en `n=3` preliminar y requieren dos casos adicionales para `n=5`. Documento actualizado: `Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`.
 
 - **[2.40.00] — 2026-08-21 (Manus): Implicaciones estratégicas de captions y siguiente paso analítico.** La revisión histórica de captions queda cerrada: no se abrirá otra ronda de clasificación de junio. El siguiente paso es obtener la decisión humana sobre `FUT-MICRO-005`, `FUT-MICRO-006`, `FUT-TRANS-003` y `FUT-ACID-003`; si se aprueban, pasarán a preflight, no directamente a publicación. Se añade la regla de separar `Caption_Treatment` de `Caption_Function`, distinguir pregunta retórica de conversación real, usar controles visuales comparables, rotar horarios y elegir métricas primarias por hipótesis. No se actualiza el ExperimentLog con las etiquetas históricas.
 

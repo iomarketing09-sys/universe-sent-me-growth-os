@@ -20,15 +20,28 @@ organization: "Operations/Production"
 
 # Diseño de casos comparables para completar celdas bajo n=3
 
-## Paquete de revisión humana
+## Paquete de revisión humana y aprobación de preflight
 
-Los cuatro briefs están preparados para revisión en `Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md`, con la matriz estructurada en `Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`. Cada brief tiene estado `Pending_Fernando_Review`. La aprobación del brief solo autoriza pasar a desarrollo/preflight; no autoriza generar assets, mover calendario, publicar ni crear CNT.
+Los cuatro briefs están preparados para revisión en `Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md`, con la matriz estructurada en `Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`. Cada brief tiene estado `Approved_for_Preflight`. La aprobación de Fernando autoriza pasar a preflight, pero no autoriza generar assets finales, mover calendario, publicar ni crear CNT.
 
 ## Alcance y decisión previa
 
 La matriz actual tiene tres celdas que siguen bajo `n=3`: **microhistoria estricta de tres paneles** (`n=1`), **transformación visual de Universe** (`n=2`) y **diálogo ácido** (`n=2`). La cola de junio aportó `1036844829507460_122127951885072582`, pero la validación confirmó cuatro paneles. Por tanto, se excluye de la celda estricta y la necesidad de producción se mantiene en dos casos nuevos de tres paneles.
 
-Los diseños siguientes son briefs de prueba, no publicaciones aprobadas. No generan assets, no modifican calendario y no asignan CNT. Su función es que la próxima pieza que se cree responda una brecha estadística concreta.
+Los diseños siguientes son briefs de prueba aprobados para preflight, no publicaciones aprobadas. El preflight puede preparar especificaciones y validar riesgos, pero no genera assets finales, no modifica calendario y no asigna CNT. Su función es que la próxima pieza que se cree responda una brecha estadística concreta.
+
+## Estado actual de las celdas comparables
+
+| Cell_ID | Casos válidos actuales | Estado de evidencia | Requerimiento pendiente | Brief/preflight asociado |
+|---|---:|---|---|---|
+| `MICRO-STRICT-3P` | `n=1` | Insuficiente para señal preliminar; el candidato 4P está excluido | Dos piezas nuevas de exactamente tres paneles; una romántico-absurda y una cotidiana no romántica | `FUT-MICRO-005`, `FUT-MICRO-006` aprobados para preflight |
+| `MICRO-SEQ-2P` | `n=3` | Señal preliminar estructural; aún no veredicto operativo | Dos casos adicionales para llegar a `n=5`, sin mezclar con 3P | Sin brief activo |
+| `TRANS-UNIVERSE` | `n=2` | Bajo `n=3`; no hay señal preliminar | Una transformación nueva del mismo Universe, con gafas y marcadores preservados | `FUT-TRANS-003` aprobado para preflight |
+| `OBSERVACIONAL` | `n=3` | Señal preliminar; sensible a outliers y tema | Dos casos adicionales para veredicto operativo `n=5`; mantener tema y estructura comparables | Sin brief activo |
+| `ACID-DIALOGUE` | `n=2` | Bajo `n=3` | Un diálogo ácido nuevo con destinatario claro y remate seguro | `FUT-ACID-003` aprobado para preflight |
+| `SELF-DEPRECATION/ANTIHERO` | `n=3` | Señal preliminar heterogénea | Dos casos adicionales para `n=5`; separar autodesprecio de simple tristeza o roast | Sin brief activo |
+
+Los cuatro briefs aprobados no cierran ninguna celda por sí solos: autorizan únicamente preflight. La promoción de cada pieza requerirá confirmar `Cell_ID`, `Narrative_Structure`, `Caption_Treatment`, `Caption_Function`, `Character_Presence`, `Theme_Confound`, `Hora_Test`, seguridad y ausencia de confusores excluidos. Para una señal preliminar se mantiene `n=3`; para un veredicto operativo, `n=5`.
 
 ## Aprobación de análisis selectivo
 

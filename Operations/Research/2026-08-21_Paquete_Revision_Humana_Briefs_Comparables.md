@@ -1,10 +1,10 @@
 ---
-title: "Paquete de revisión humana — briefs comparables pendientes"
-purpose: "Presentar a Fernando los briefs FUT-MICRO-005, FUT-MICRO-006, FUT-TRANS-003 y FUT-ACID-003 para aprobación, revisión o rechazo antes de crear assets o modificar el calendario."
-status: Review
+title: "Paquete de revisión y preflight — briefs comparables aprobados"
+purpose: "Registrar la aprobación de Fernando para el preflight de los briefs comparables sin autorizar generación final, calendario, publicación o CNT."
+status: Active
 created: 2026-08-21
 updated: 2026-08-21
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md"
@@ -14,11 +14,11 @@ related_documents:
 organization: "Operations/Research"
 ---
 
-# Paquete de revisión humana — briefs comparables pendientes
+# Paquete de revisión y preflight — briefs comparables aprobados
 
 ## Estado de autorización
 
-Este paquete contiene cuatro **briefs propuestos**, no assets terminados. Ninguno está aprobado para generación, calendario, publicación, reuse o creación de CNT. La decisión solicitada a Fernando es independiente para cada brief: `Approve_Brief`, `Revise_Brief`, `Reject_Brief` o `Hold`.
+Este paquete contiene cuatro briefs aprobados para **preflight**, no assets terminados. La decisión de Fernando queda registrada en la matriz como `Approved_for_Preflight` y `Approve_Preflight_Only`. Ninguno está aprobado para generación final, calendario, publicación, reuse o creación de CNT.
 
 > Aprobar un brief solo autoriza continuar a la fase de desarrollo y preflight. No autoriza publicar, programar ni modificar una publicación existente.
 
@@ -26,16 +26,16 @@ La microhistoria estricta permanece en `n=1`, la transformación de Universe en 
 
 ## Resumen para decisión
 
-| Brief_ID | Celda | Tratamiento de caption | Caso propuesto | Decisión solicitada |
+| Brief_ID | Celda | Tratamiento de caption | Caso propuesto | Estado actual |
 |---|---|---|---|---|
-| `FUT-MICRO-005` | `MICRO-STRICT-3P` | `caption_minimo` | Romance absurdo en tres paneles, dos personajes no canónicos | Aprobar, revisar o rechazar |
-| `FUT-MICRO-006` | `MICRO-STRICT-3P` | `caption_refuerzo` | Conflicto cotidiano no romántico en tres paneles | Aprobar, revisar o rechazar |
-| `FUT-TRANS-003` | `TRANS-UNIVERSE` | `caption_conversacional` | Transformación única del mismo Universe, con gafas preservadas | Aprobar, revisar o rechazar |
-| `FUT-ACID-003` | `ACID-DIALOGUE` | `caption_minimo` | Diálogo ácido interpersonal con destinatario claro | Aprobar, revisar o rechazar |
+| `FUT-MICRO-005` | `MICRO-STRICT-3P` | `caption_minimo` | Romance absurdo en tres paneles, dos personajes no canónicos | `Approved_for_Preflight` |
+| `FUT-MICRO-006` | `MICRO-STRICT-3P` | `caption_refuerzo` | Conflicto cotidiano no romántico en tres paneles | `Approved_for_Preflight` |
+| `FUT-TRANS-003` | `TRANS-UNIVERSE` | `caption_conversacional` | Transformación única del mismo Universe, con gafas preservadas | `Approved_for_Preflight` |
+| `FUT-ACID-003` | `ACID-DIALOGUE` | `caption_minimo` | Diálogo ácido interpersonal con destinatario claro | `Approved_for_Preflight` |
 
 ## Brief `FUT-MICRO-005`
 
-**Celda:** `MICRO-STRICT-3P`. **Hipótesis:** una microhistoria romántico-absurda con exactamente tres paneles, dos turnos y un remate de reencuadre puede producir una señal comparable sin depender de una identidad canónica. **Tratamiento:** `caption_minimo`. **Estado:** `Pending_Fernando_Review`.
+**Celda:** `MICRO-STRICT-3P`. **Hipótesis:** una microhistoria romántico-absurda con exactamente tres paneles, dos turnos y un remate de reencuadre puede producir una señal comparable sin depender de una identidad canónica. **Tratamiento:** `caption_minimo`. **Estado:** `Approved_for_Preflight`; alcance `Approve_Preflight_Only`.
 
 El primer panel debe presentar una intención afectiva o una expectativa reconocible. El segundo debe mostrar una respuesta literal, excesivamente seria o inesperadamente práctica del segundo personaje. El tercer panel debe invertir la lectura y cerrar el chiste. La pieza debe tener exactamente tres paneles; no se acepta un cuarto panel, una tira de dos paneles ni una imagen única con globos superpuestos.
 
@@ -47,7 +47,7 @@ Los personajes deben ser genéricos o nuevos y no deben nombrar a Universe, Wilf
 
 ## Brief `FUT-MICRO-006`
 
-**Celda:** `MICRO-STRICT-3P`. **Hipótesis:** una microhistoria cotidiana no romántica puede generar comparabilidad estructural sin confundir el efecto de la secuencia con el tema amoroso. **Tratamiento:** `caption_refuerzo`. **Estado:** `Pending_Fernando_Review`.
+**Celda:** `MICRO-STRICT-3P`. **Hipótesis:** una microhistoria cotidiana no romántica puede generar comparabilidad estructural sin confundir el efecto de la secuencia con el tema amoroso. **Tratamiento:** `caption_refuerzo`. **Estado:** `Approved_for_Preflight`; alcance `Approve_Preflight_Only`.
 
 El primer panel debe introducir un conflicto cotidiano, como llegar tarde, olvidar una tarea o responder mal un mensaje. El segundo debe ofrecer una justificación literal que parezca razonable. El tercer panel debe revelar que el problema real era una interpretación social inesperada. La construcción debe mantener exactamente tres paneles, turnos claros y un remate autosuficiente.
 
@@ -59,7 +59,7 @@ No debe utilizar un personaje canónico como vehículo principal, ni depender de
 
 ## Brief `FUT-TRANS-003`
 
-**Celda:** `TRANS-UNIVERSE`. **Hipótesis:** una transformación visual única del mismo Universe puede ser comparable si preserva gafas y marcadores de identidad en los estados antes/después. **Tratamiento:** `caption_conversacional`. **Estado:** `Pending_Fernando_Review`.
+**Celda:** `TRANS-UNIVERSE`. **Hipótesis:** una transformación visual única del mismo Universe puede ser comparable si preserva gafas y marcadores de identidad en los estados antes/después. **Tratamiento:** `caption_conversacional`. **Estado:** `Approved_for_Preflight`; alcance `Approve_Preflight_Only`.
 
 La composición debe mostrar el mismo gato con gafas en un estado A y un estado B. El cambio debe ser único y visualmente verificable: transformación corporal, material o de escala. No se deben combinar mutación, cambio de vestuario, cambio de escenario y cambio de especie como si fueran una sola transformación.
 
@@ -73,7 +73,7 @@ El caption conversacional debe abrir una invitación natural breve sin describir
 
 ## Brief `FUT-ACID-003`
 
-**Celda:** `ACID-DIALOGUE`. **Hipótesis:** un diálogo ácido con dos voces distinguibles, destinatario comprensible y remate interpersonal puede añadir una tercera observación comparable sin convertir cualquier conversación relacional en humor ácido. **Tratamiento:** `caption_minimo`. **Estado:** `Pending_Fernando_Review`.
+**Celda:** `ACID-DIALOGUE`. **Hipótesis:** un diálogo ácido con dos voces distinguibles, destinatario comprensible y remate interpersonal puede añadir una tercera observación comparable sin convertir cualquier conversación relacional en humor ácido. **Tratamiento:** `caption_minimo`. **Estado:** `Approved_for_Preflight`; alcance `Approve_Preflight_Only`.
 
 La primera voz debe establecer una conducta, contradicción o afirmación reconocible. La segunda debe responder con un remate que pinche esa conducta. El ácido debe dirigirse a una situación, hábito o contradicción, no a una característica protegida, una amenaza, una humillación degradante o una dinámica de dominación.
 
@@ -83,7 +83,7 @@ La escena puede tener un panel con dos globos o dos paneles, siempre que los tur
 
 **Campos de preflight:** `Narrative_Structure=interpersonal_dialogue`; `Theme=acid_interpersonal`; `Character_Presence=generic_pair_or_confirmed_character`; `Caption_Treatment=caption_minimo`; `Acid_Target=Situation_or_habit`; `Safety_Flag=No_coercion_no_protected_trait_attack`; `Reuse_Status=New_Asset_Proposed`.
 
-## Matriz de aprobación solicitada
+## Matriz de aprobación registrada
 
 | Brief_ID | Aprobar brief | Solicitud de ajuste | Rechazar | Comentario de Fernando |
 |---|---|---|---|---|
@@ -92,9 +92,9 @@ La escena puede tener un panel con dos globos o dos paneles, siempre que los tur
 | `FUT-TRANS-003` | ☐ | ☐ | ☐ | ______________________________ |
 | `FUT-ACID-003` | ☐ | ☐ | ☐ | ______________________________ |
 
-## Secuencia posterior a la revisión
+## Secuencia posterior a la aprobación de preflight
 
-Si un brief es aprobado, el siguiente paso será convertirlo en un asset brief visual con referencias, composición y copy candidato. Después se ejecutará un preflight de identidad, texto, seguridad, `Cell_ID`, tratamiento de caption y hora experimental. Solo una aprobación humana posterior podrá autorizar su inclusión en calendario o publicación.
+Como los cuatro briefs fueron aprobados para preflight, el siguiente paso es convertir cada uno en un asset brief visual con referencias, composición y copy candidato. Después se ejecutará un preflight de identidad, texto, seguridad, `Cell_ID`, tratamiento de caption y hora experimental. Solo una aprobación humana posterior podrá autorizar su inclusión en calendario o publicación.
 
 Si un brief recibe ajustes, se actualizará este paquete y se conservará la versión anterior en el historial del repositorio. Si se rechaza, quedará como `Rejected_Brief` y no se reutilizará la idea automáticamente.
 
