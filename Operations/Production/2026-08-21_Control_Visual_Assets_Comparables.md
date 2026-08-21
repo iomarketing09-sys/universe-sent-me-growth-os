@@ -1,14 +1,15 @@
 ---
 title: "Control visual de assets comparables"
 purpose: "Registrar el control visual ligero de los assets generados y separar los resultados visuales de cualquier autorización operativa posterior."
-status: Active
+status: Review
 created: 2026-08-21
 updated: 2026-08-21
-version: "0.3"
+version: "0.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-21_Prompts_Assets_Comparables.md"
   - "Operations/Research/2026-08-21_Autorizacion_Generacion_Briefs_Comparables.csv"
+  - "Operations/Production/2026-08-21_Comparable_Identity_V2_Proposals.csv"
   - "Operations/Production/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md"
 organization: "Operations/Production"
 ---
@@ -32,6 +33,24 @@ organization: "Operations/Production"
 ### `FUT-ACID-003` / `HB-009`
 
 **Resultado provisional:** `Pass_visual_preliminar`. El asset tiene dos voces visualmente distinguibles, el objetivo es una contradicción situacional y el remate es legible en una sola lectura. No se observan coerción, ataque a rasgos protegidos ni dominación sexual. El texto visual coincide de forma aparente con el prompt y el caption propuesto no explica el chiste.
+
+## Segunda propuesta con identidad de personajes
+
+### `FUT-MICRO-005` / `HB-006` — v2
+
+**Resultado:** `Pass_visual_propuesta_v2`. La composición conserva exactamente tres paneles, el texto original y el remate. Elara aparece de manera consistente con su sombrero puntiagudo, cabello claro y cardigan café; Evan conserva el suéter café y una apariencia estable en los tres paneles. Esta versión responde mejor a la observación de pérdida de identidad de la primera generación.
+
+### `FUT-MICRO-006` / `HB-007` — v2
+
+**Resultado:** `Pass_visual_propuesta_v2`. La segunda generación corregida conserva la historia cotidiana original, sus tres paneles y todos los globos de texto. Elara mantiene el sombrero puntiagudo y Evan el suéter café en los tres paneles. La primera variación fue descartada porque heredó por error el texto romántico de `FUT-MICRO-005`; el archivo v2 actual sí corresponde al brief cotidiano.
+
+### `FUT-ACID-003` / `HB-009` — v2
+
+**Resultado:** `Pass_visual_propuesta_v2`. La composición y el texto original se conservan. Universe aparece como el gato blanco con sus lentes redondos distintivos, y Evan conserva el suéter café. El objetivo sigue siendo una contradicción situacional segura, con dos voces distinguibles y un remate claro.
+
+## Veredicto de la propuesta v2
+
+Las tres propuestas v2 corrigen el problema señalado: los personajes ya no son genéricos. `FUT-MICRO-005` y `FUT-MICRO-006` usan Elara y Evan; `FUT-ACID-003` usa Universe y Evan. Se mantienen como `Proposal_Not_Selected` hasta que Fernando elija si reemplazan a las versiones originales. No se actualiza la celda experimental, el calendario, CNT, reuse, afiliados ni publicación con estas propuestas.
 
 ## Alcance del control
 

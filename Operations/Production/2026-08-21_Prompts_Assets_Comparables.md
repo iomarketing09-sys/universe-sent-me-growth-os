@@ -4,13 +4,14 @@ purpose: "Definir la composición, el texto visual, el caption propuesto y las r
 status: Active
 created: 2026-08-21
 updated: 2026-08-21
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-21_Autorizacion_Generacion_Briefs_Comparables.csv"
   - "Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md"
   - "Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md"
   - "Operations/Production/2026-08-21_Generated_Comparable_Assets.csv"
+  - "Operations/Production/2026-08-21_Comparable_Identity_V2_Proposals.csv"
   - "Operations/Production/2026-08-21_Control_Visual_Assets_Comparables.md"
   - "GrowthOS/Integracion_Growth_OS.md"
 organization: "Operations/Production"
@@ -73,6 +74,16 @@ La autorización de Fernando cubre únicamente la generación de un asset nuevo 
 ## Assets generados
 
 Los cuatro prompts autorizados produjeron cuatro PNG en `Operations/Production/Generated_Comparable_Assets/`. Sus paths, controles y bloqueos operativos están registrados en `Operations/Production/2026-08-21_Generated_Comparable_Assets.csv`.
+
+## Segunda propuesta de identidad visual
+
+A petición de Fernando, se generaron variantes v2 de `FUT-MICRO-005`, `FUT-MICRO-006` y `FUT-ACID-003` usando personajes con anclas visuales estables. Elara conserva el sombrero puntiagudo y cabello claro; Evan conserva el suéter café; Universe conserva sus lentes redondos. Las variantes v2 preservan la composición y el texto de sus briefs originales y están registradas como `Proposal_Not_Selected` hasta decisión humana. No reemplazan automáticamente los primeros assets.
+
+| Brief | Personajes v2 | Archivo | Estado |
+|---|---|---|---|
+| `FUT-MICRO-005` | Elara + Evan | `FUT-MICRO-005_HB-006_Microhistoria_Romantico_Absurd_3P_v2.png` | `Pass_visual_propuesta_v2` |
+| `FUT-MICRO-006` | Elara + Evan | `FUT-MICRO-006_HB-007_Microhistoria_Cotidiana_3P_v2.png` | `Pass_visual_propuesta_v2` |
+| `FUT-ACID-003` | Universe + Evan | `FUT-ACID-003_HB-009_Dialogo_Acido_Situacional_v2.png` | `Pass_visual_propuesta_v2` |
 
 ## Post-generación
 
