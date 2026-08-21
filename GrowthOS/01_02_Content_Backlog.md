@@ -3,8 +3,8 @@
 **Propósito:** Lista maestra de todo el contenido pendiente ordenado por prioridad estratégica.
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-16
-**Versión:** 1.4
+**Última actualización:** 2026-08-21
+**Versión:** 1.5
 **Autor:** Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_01_Calendario_Semanal.md`
 
@@ -18,7 +18,8 @@
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | CNT-006 | Tarot de Universe (contenido evergreen) | @char_USM_universe | Foto / Carrusel / Reel | Reutilizable | No |
 | CNT-002 | Wilfred reseña su propio peluche | @char_USM_wilfred | Reel (~14s) | **Publicado** (FB, 30-Jul 9:16 AM) | No |
-| CNT-023 | Sección recurrente '¿Qué me llegó?' (Mercado Libre) | Rotativo | Reel recurrente | Producción Activa | No |
+| CNT-023 | Sección recurrente '¿Qué me llegó?' (Mercado Libre) | Rotativo | Reel recurrente | Episodio 2 con bloqueante histórico; Episodio 3 Wilfred en `HOLD_PENDING_24H_REVIEW` | No |
+| CON-2026-08-24-MusicVideo02-EvanElara | Videoclip musical 02 — Lo que no dijimos en la librería | Evan + Elara | Reel / Short musical 18–24s | `Review` — candidata prioritaria, score 8.75/10; requiere disponibilidad nativa de Porter y decisión de Fernando antes de producción | No |
 | CNT-024 | Frase del día — personaje + principio filosófico | Rotativo | Foto / Historia | En producción (5 variantes propuestas) — ver `Operations/Production/CNT024_Frase_del_Dia_Propuesta_Cinco_Variantes.md` | No |
 | CNT-026 | Banco de memes fin de semana 16–17 de agosto (Fantasma, Wilfred, Universe, Pareja Maeve, minimalista) | Multichar | Foto (frase en copy) | Draft — 5 propuestas con score ≥ 8.5 (ver `Operations/Production/CNT026_Memes_FinDeSemana_16_17_Ago.md`); pendiente de aprobación de Fernando y producción de imágenes en Flow | No |
 | CNT-027 | Meme Fantasma "Ghosting eterno" (derivado de Drive Ideas-Memes) | @char_USM_fantasma | Foto (frase en copy) | Draft — propuesta con score 9.10/10 (ver `Operations/Production/CNT027_Meme_Fantasma_Ghosting_DriveIdeas.md`); pendiente de aprobación de Fernando | No |

@@ -2,10 +2,10 @@
 
 **Título:** ¿Qué me llegó? — Episodios 2 y 3
 **Propósito:** Documentar el Episodio 2 del formato recurrente de afiliación "¿Qué me llegó?" (Mercado Libre), objetivo de monetización directa, y preservar la siguiente propuesta de continuidad: Episodio 3 con Wilfred. La versión final del Episodio 2 fue producida por Fernando: producto y guion cambiados respecto a la propuesta original de Manus (difusor de aromas → **Lámpara Luna 3D Decorativa**), storyboard de 9 escenas ya generado.
-**Estado:** Episodio 2 en producción completa con bloqueante de afiliación histórico; Episodio 3 `DRAFT — pendiente de aprobación de Fernando`.
+**Estado:** Episodio 2 en producción completa con bloqueante de afiliación histórico; Episodio 3 `HOLD_PENDING_24H_REVIEW — depriorizado por decisión editorial`.
 **Fecha de creación:** 2026-08-07
-**Última actualización:** 2026-08-20
-**Versión:** 2.1
+**Última actualización:** 2026-08-21
+**Versión:** 2.2
 **Autor:** Manus AI (CGO) — v1.0 original; Fernando — guion y producto final; Claude — registro v2.0
 **Documentos relacionados:** `Operations/Production/ML_Reel_01_Storyboard_Blueprint.md`, `Operations/Production/12_00_Catalogo_Productos_MercadoLibre.md`, `Operations/Production/2026-08-19_Playbook_Tracking_Afiliados_MercadoLibre.md`, `GrowthOS/11_00_Estrategia_Monetizacion_MercadoLibre.md`, `GrowthOS/01_02_Content_Backlog.md`
 **Organización:** Operations/Production
@@ -121,9 +121,15 @@ La regla fija de la franquicia: **el mensajero nunca sabe qué hay dentro** (can
 
 ## 7. Propuesta siguiente — Episodio 3: Wilfred quería ver a alguien de cerca
 
-**Estado:** `DRAFT — pendiente de aprobación de Fernando`
+**Estado:** `HOLD_PENDING_24H_REVIEW — depriorizado por decisión editorial de Fernando`
 **Identidad propuesta:** `CON-2026-08-24-QueMeLlego-Wilfred-Telescopio` / `EXP-202608-AFF-QML-03` / `HB-AFF-QML-03`
 **Producto-categoría:** telescopio refractor compacto de 70 mm con trípode, apto para principiantes. La ficha individual se selecciona y verifica en Mercado Libre **antes** de construir los assets o generar el enlace; las dos fichas preliminares revisadas no estaban disponibles y no deben usarse como referencia comercial activa.
+
+### Decisión editorial del 2026-08-21
+
+Fernando indicó que la propuesta no genera suficiente convicción creativa frente a la señal inicial observada en el videoclip `Remote Control`, especialmente en YouTube Shorts y TikTok. Por ello, este Episodio 3 **no se cancela ni se produce todavía**: queda pausado hasta cerrar el snapshot multicanal de 24 horas y decidir si Universe Sent Me prioriza un segundo test de videoclip musical.
+
+Durante la pausa están prohibidas tres acciones: buscar una ficha comercial para el telescopio, crear un nuevo enlace afiliado y desarrollar el storyboard. La hipótesis `HB-AFF-QML-03` y su score de 9.00/10 se conservan como evidencia para una futura reactivación, no como compromiso de calendario.
 
 La siguiente pieza recomendada no debe repetir lámparas, soportes, audífonos ni decoración LED. Continúa la franquicia que ya tiene una mecánica clara —Universe entrega sin saber qué contiene la caja y el receptor descubre el objeto desde su propia voz— y atiende directamente el siguiente paso de la estrategia de monetización: Wilfred recibiendo una tecnología humana. El telescopio es visual, funciona en el bosque y permite un remate seco propio del guardián. Además, incorpora de manera explícita el mecanismo observado en el post outlier de Wilfred: gancho coloquial ambiguo, reencuadre inocente, una situación de descanso deseable y lectura en una sola escena. No se trata de copiar “lokiar”, sino de probar la estructura con una situación nueva y trazable.
 
@@ -166,4 +172,4 @@ Primero se confirma una ficha individual disponible de telescopio compacto con t
 
 ---
 
-*Nota de coherencia: una vez resuelto el bloqueante de link de afiliado, actualizar `GrowthOS/05_02_Calendario_04_09_Agosto.md` (fila CNT-023), `GrowthOS/01_02_Content_Backlog.md` (estado de CNT-023) y `Operations/Production/12_00_Catalogo_Productos_MercadoLibre.md` (marcar Lámpara Luna 3D como "usada — Episodio 2" en vez de "Aprobado" genérico, y resolver el producto pendiente del Episodio 3).*
+*Nota de coherencia: si el Episodio 3 se reactiva, actualizar `GrowthOS/01_02_Content_Backlog.md`, el calendario operativo vigente dentro de `GrowthOS/05_XX` y `Operations/Production/12_00_Catalogo_Productos_MercadoLibre.md`. Si se aprueba el segundo test de videoclip musical, reflejar la prioridad de esa pieza en los mismos documentos antes de iniciar producción.*

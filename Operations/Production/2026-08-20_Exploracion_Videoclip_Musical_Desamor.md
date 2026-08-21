@@ -2,13 +2,13 @@
 
 **Propósito:** Definir una posible nueva familia de Reels musicales de Universe Sent Me, donde una canción licenciada guía una microhistoria emocional antes de seleccionar personajes, escenas o producción.
 
-**Estado:** Active — máster publicado en cascada completa; IDs nativos y primeras métricas en conciliación.
+**Estado:** Active — máster publicado en cascada completa; lectura temprana direccional registrada y propuesta de segundo videoclip en revisión.
 
 **Fecha de creación:** 2026-08-20
 
-**Última actualización:** 2026-08-20
+**Última actualización:** 2026-08-21
 
-**Versión:** 2.9
+**Versión:** 3.0
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -391,6 +391,61 @@ El copy principal obtuvo **8.70/10 — PASS** en la rúbrica de `usm-content-pro
 
 La cascada completa ya fue confirmada por Fernando y el registro maestro incorporó sus cuatro IDs/permalinks. Permanecen pendientes la URL individual del producto y su ID de adjunción nativo. Para el primer snapshot multicanal común, usar como ancla la publicación verificable más tardía de Meta: Facebook, **2026-08-20 18:02:04 CDT**. Los cortes operativos son **2026-08-21 18:02:04 CDT (24 h)** y **2026-08-23 18:02:04 CDT (72 h)**. YouTube no expone todavía un timestamp nativo en las fuentes disponibles, por lo que esos cortes se registran como snapshots comparables de cascada y no como una edad exacta individual del Short. Mientras tanto, no se atribuyen resultados a la familia musical hasta acumular una cohorte de 5–10 piezas bajo `EXP-202608-MUSICVIDEO-01`.
 
+## Lectura temprana y decisión editorial — 2026-08-21
+
+El corte disponible es **demasiado temprano para declarar ganadora** la familia de videoclips musicales. Aun así, la señal inicial justifica priorizar un segundo test controlado antes de invertir más tiempo en el siguiente Reel afiliado de Wilfred. Fernando reporta que el movimiento inicial se percibe con mayor claridad en YouTube Shorts y TikTok; esa observación es una hipótesis de distribución y debe convertirse en snapshots cuantitativos comparables durante el corte de 24 horas.
+
+| Plataforma | Snapshot temprano disponible | Calidad de evidencia | Lectura correcta |
+|---|---:|---|---|
+| Instagram Reels | 29 reproducciones, alcance 21, 3 likes, 0 comentarios, 0 compartidos y 0 guardados. | Consulta directa de insights del post. [10] | No permite concluir rechazo del concepto: el alcance es aún muy bajo. |
+| YouTube Shorts | 860 vistas y 10 likes; tasa visible de likes de **1.16%**. | Página pública, que lo presenta como publicado hace 6 horas. [11] | Es la señal cuantitativa inicial más clara y respalda revisar la familia en Shorts. No es comparable de forma directa con Instagram por edad, audiencia y distribución distintas. |
+| TikTok | Fernando observa mayor movimiento inicial; sin snapshot numérico confirmado en este corte. | Observación operativa de Fernando. | Señal direccional suficiente para priorizar verificación, no para atribuir rendimiento ni calcular tasas. |
+
+> **Aprendizaje provisional:** la música reconocible, el montaje emocional y la lectura ambigua de Evan + Elara merecen una segunda prueba. Todavía no hay base para sustituir de forma permanente el humor, las fotos de frase ni el embudo afiliado.
+
+### Repriorización de `¿Qué me llegó?` Episodio 3 — Wilfred
+
+La propuesta del telescopio conserva una puntuación de 9.00/10 y permanece documentada, pero se mueve operativamente a **`HOLD_PENDING_24H_REVIEW`**. No se buscará ficha de Mercado Libre, no se generará enlace afiliado y no se producirá storyboard hasta cerrar el snapshot de 24 horas de `Remote Control` y recibir una confirmación explícita de Fernando para reactivarla. Esta pausa evita tratar como obligatoria una propuesta que ya no genera convicción creativa, sin borrar un experimento afiliado que aún puede ser útil en otra ventana.
+
+### Propuesta prioritaria de seguimiento — Videoclip musical 02
+
+La siguiente pieza recomendada es una **segunda observación controlada de la familia musical**, no una secuela literal de `Remote Control`. Mantiene los anclajes que parecen estar generando interés —canción nativa reconocible, microhistoria emocional, cero diálogo y Evan + Elara como lectura editorial ambigua— y cambia la paleta, el lugar y el conflicto visible para evitar repetición de lluvia, auto, noche, bosque, fuego o audífonos.
+
+| Campo | Propuesta de trabajo |
+|---|---|
+| Título de desarrollo | `Videoclip musical 02 — Lo que no dijimos en la librería` |
+| `Concept_ID` propuesto | `CON-2026-08-24-MusicVideo02-EvanElara` |
+| `Campaign_Label` propuesto | `VIDECLIP_MUSICAL_PORTER_202608` |
+| `Experiment_ID` propuesto | `EXP-202608-MUSICVIDEO-02` |
+| Hipótesis compartida | `HB-MUSICVIDEO-01`: una microhistoria sin diálogo, sostenida por audio nativo reconocible, eleva las respuestas de identificación y compartido. |
+| Canción candidata | **Porter — “¿Qué Es El Amor?”**, únicamente si Fernando confirma su disponibilidad nativa para cada cuenta y territorio. [1] |
+| Relación editorial | Evan + Elara. La escena no confirma pareja, ruptura ni reconciliación. |
+| Duración objetivo | 18–24 segundos, definida solo después de fijar el fragmento de audio nativo con giro emocional. |
+| Tratamiento visual | Librería de segunda mano al final de la tarde, tonos papel, terracota y azul empolvado; 2D pictórico USM, sin logos ni marcas. |
+
+La microhistoria ocurre en una librería pequeña sin marca. Evan y Elara entran desde calles distintas, hojean ejemplares en estantes enfrentados y llegan a la misma copia gastada sin tocarse. Comparten una mirada breve; cada uno deja el libro en una pila diferente y sale por una puerta distinta. La letra y el montaje sostienen la pregunta, mientras que la acción impide que el Reel responda por ellos. El copy propuesto es: **“Hay preguntas que se repiten aunque cambies de página.”** El paquete conserva hashtags de marca y personajes, sin etiquetas genéricas: `#UniverseSentMe #EvanUSM #ElaraUSM #MomentosUSM #Porter` donde la plataforma admita el audio.
+
+### Puntuación reproducible de la propuesta
+
+| Criterio | Puntuación | Razón resumida |
+|---|---:|---|
+| Relatability | 9.0/10 | La experiencia de encontrar a alguien en una historia que ya creías cerrada es reconocible. |
+| Emoción | 9.5/10 | La cercanía no resuelta sostiene una lectura fuerte sin necesidad de diálogo. |
+| Gancho de compartido | 8.5/10 | La pregunta central y el copy invitan a la identificación sin explicar el canon. |
+| Giro moderno | 7.0/10 | La librería física funciona como contraste cotidiano, pero no depende de una tendencia pasajera. |
+| Voz / seguridad de canon | 7.0/10 | Evan + Elara conservan voz editorial hipotética; se mantiene la ambigüedad. |
+| Encaje horario | 10.0/10 | Proponer domingo o lunes, 19:00–21:00 CDT. |
+| Formato y canon | PASS | Videoclip visual, sin texto explicativo en pantalla, moralización ni resolución romántica. |
+| **Resultado** | **8.75/10 — PASS** | Evaluado el 2026-08-21 con `usm-content-proposer`. |
+
+### Condiciones antes de producir
+
+La producción de `Videoclip musical 02` solo inicia al confirmar la disponibilidad nativa de la canción y del fragmento exacto en Instagram Reels, TikTok, Facebook Reels y YouTube Shorts. El máster debe continuar exportándose sin música incrustada, y la publicación no incorpora afiliación ni CTA comercial: el propósito del segundo test es aislar la familia editorial. Al completar 24 horas, registrar las métricas por plataforma y decidir si este segundo Reel avanza de `DRAFT` a producción o si se reactiva el Episodio 3 de Wilfred.
+
+### Coherencia documental requerida
+
+Esta actualización no cambia aún el calendario ni el backlog porque no existe una aprobación de producción. Si Fernando aprueba `Videoclip musical 02`, actualizar `GrowthOS/01_02_Content_Backlog.md`, el calendario operativo vigente dentro de `GrowthOS/05_XX`, `GrowthOS/07_00_Registro_Maestro_Reels.md` y el documento `Operations/Production/CNT023_Episodio2_QueMeLlego_Universe_Elara.md` para reflejar el estado `HOLD_PENDING_24H_REVIEW` de Wilfred.
+
 ### Contingencia
 
 Si la pista solo está disponible en una plataforma, se publica el videoclip exclusivamente allí y se documenta como prueba de formato musical. No se toma la decisión de crear versiones con otra canción, silencio o una pista de reemplazo hasta medir si la historia funciona: eso agregaría una variable y convertiría cada publicación en una pieza distinta.
@@ -406,3 +461,7 @@ Si la pista solo está disponible en una plataforma, se publica el videoclip exc
 [8] [TikTok for Business — Commercial Music Library](https://ads.tiktok.com/help/article/commercial-music-library?lang=en), actualizado en julio de 2025.
 
 [9] [Mercado Libre México — listado de QCY H3 Lite ANC](https://listado.mercadolibre.com.mx/qcy-h3-lite), consultado el 2026-08-20. La disponibilidad, precio y ficha individual se verifican en el momento de generar el enlace afiliado.
+
+[10] [Instagram Reels — `Remote Control`, permalink del post](https://www.instagram.com/reel/DcR29-aRRXN/). Insights leídos mediante la cuenta autorizada de Universe Sent Me el 2026-08-21.
+
+[11] [YouTube Shorts — `Remote Control`, metadatos públicos del Short](https://youtube.com/shorts/nb6om1LhOMc), consultados el 2026-08-21.
