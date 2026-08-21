@@ -1,0 +1,21 @@
+{
+  "source": "Operations/Research/2026-08-20_Overlay_Wave1_Calendario_17_30.csv",
+  "subset": "Operations/Research/2026-08-20_Wave1_Eligible_Operational_Subset.csv",
+  "eligible_rows": 9,
+  "excluded_hold_rows": 2,
+  "candidate_review_rows": 4,
+  "family_counts": {
+    "FAM-01": 1,
+    "FAM-02": 4,
+    "FAM-03": 1,
+    "FAM-04": 1,
+    "FAM-05": 2
+  },
+  "caption_treatment_counts": {
+    "caption_minimo": 3,
+    "caption_refuerzo": 4,
+    "caption_conversacional": 2
+  },
+  "publication_authorized": false,
+  "calendar_modified": false
+}

@@ -15,7 +15,10 @@ for r in rows:
     if r['P0_Eligible'] != 'No': errors.append(f"p0_guard_failed:{r['Overlay_ID']}")
     if r['Affiliate_Attachment'] != 'No': errors.append(f"affiliate_guard_failed:{r['Overlay_ID']}")
     if r['Reuse_Status'] != 'New_Test': errors.append(f"reuse_guard_failed:{r['Overlay_ID']}")
-    if r['Approval_Status'] != 'Pending': errors.append(f"approval_state_changed:{r['Overlay_ID']}")
+    if r['Overlay_Eligibility'] == 'Hold':
+        if r['Approval_Status'] != 'Approved_Excluded': errors.append(f"hold_not_approved_excluded:{r['Overlay_ID']}")
+    elif r['Approval_Status'] != 'Pending':
+        errors.append(f"approval_state_changed:{r['Overlay_ID']}")
 summary = {
     'validation': 'PASS' if not errors else 'FAIL',
     'rows': len(rows),

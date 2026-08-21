@@ -56,7 +56,7 @@ Se seleccionaron **15 slots `Nueva` futuros**, sin crear filas nuevas en el cale
 | `Editorial_Hold` | 2 | Requiere decisión explícita por coerción/sexualidad dominante |
 | Total | 15 | La matriz conserva todos los casos para trazabilidad |
 
-La matriz detallada conserva los 15 `Overlay_ID`. `2608053` y `2608059` quedaron en `Editorial_Hold`. `2608054`, `2608049`, `2608045` y `2608065` requieren revisión de subcelda porque son escenas textuales, monólogos, romance o humor observacional, no ejemplos puros de la familia inicialmente asignada. `2608035` quedó elegible, pero se reasignó de `Difusión_Minimal` a `Relatable_Social` por su función visual de estrés cotidiano. El corte visual completo está en `Operations/Research/2026-08-20_Overlay_Wave1_Visual_Findings.md`.
+La matriz detallada conserva los 15 `Overlay_ID`. `2608053` y `2608059` quedaron en `Editorial_Hold` y Fernando aprobó mantenerlos fuera de Wave 1. `2608054`, `2608049`, `2608045` y `2608065` requieren revisión de subcelda porque son escenas textuales, monólogos, romance o humor observacional, no ejemplos puros de la familia inicialmente asignada. `2608035` quedó elegible, pero se reasignó de `Difusión_Minimal` a `Relatable_Social` por su función visual de estrés cotidiano. El corte visual completo está en `Operations/Research/2026-08-20_Overlay_Wave1_Visual_Findings.md`.
 
 Los 15 casos seleccionados están en `Operations/Research/2026-08-20_Overlay_Wave1_Calendario_17_30.csv`. La selección ya tiene un corte visual inicial documentado, pero sigue en Review para aprobación humana. `Overlay_Eligibility=Eligible` identifica nueve casos; cuatro quedan como `Candidate_Review` y dos como `Hold`. La validación reproducible está en `Operations/Research/2026-08-20_Overlay_Wave1_Review_Summary.json` y devuelve `validation=PASS`.
 
@@ -68,7 +68,7 @@ En esta primera integración, la hora real queda como **covariable observada**. 
 
 ## Qué debe cambiar después de aprobación
 
-La aprobación no implica publicar inmediatamente. Solo autoriza completar, para los 15 slots, los campos experimentales en una copia de trabajo o ledger overlay: `Family_ID`, `Hypothesis_ID`, `Caption_Treatment`, `Primary_Metric`, `Visual_Identity_Confirmed`, `P0_Eligible`, `Affiliate_Attachment`, `Reuse_Status` y `Approval_Status`.
+La aprobación de Fernando sobre los dos holds no implica publicar inmediatamente. Solo confirma que `2608053` y `2608059` quedan fuera del cálculo de Wave 1. Los nueve casos `Eligible` están disponibles como candidatos operativos en `Operations/Research/2026-08-20_Wave1_Eligible_Operational_Subset.csv`, pero conservan `Approval_Status=Pending` para cualquier decisión posterior de caption o publicación. Los cuatro `Candidate_Review` también permanecen fuera del cálculo principal.
 
 Después de la aprobación editorial de cada asset, Fernando decide si se conserva el caption actual del calendario o se adopta el treatment propuesto. Cualquier cambio de caption debe documentarse antes de la programación y no debe modificar retrospectivamente posts ya publicados.
 
