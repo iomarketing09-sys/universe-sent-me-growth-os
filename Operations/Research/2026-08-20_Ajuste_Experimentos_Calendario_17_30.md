@@ -60,6 +60,14 @@ La matriz detallada conserva los 15 `Overlay_ID`. `2608053` y `2608059` quedaron
 
 Los 15 casos seleccionados están en `Operations/Research/2026-08-20_Overlay_Wave1_Calendario_17_30.csv`. La selección ya tiene un corte visual inicial documentado, pero sigue en Review para aprobación humana. `Overlay_Eligibility=Eligible` identifica nueve casos; cuatro quedan como `Candidate_Review` y dos como `Hold`. La validación reproducible está en `Operations/Research/2026-08-20_Overlay_Wave1_Review_Summary.json` y devuelve `validation=PASS`.
 
+## Distribución de treatments de caption
+
+La distribución de los nueve candidatos elegibles es: **3 `caption_minimo`**, **4 `caption_refuerzo`** y **2 `caption_conversacional`**. La muestra no está balanceada entre familias: `Relatable_Social` concentra cuatro casos, `Personaje_Marcador` dos, y `Difusión_Minimal`, `Conversación_Relacional` y `Ácido_Interpersonal` tienen un caso cada una.
+
+![Distribución de treatments de caption de Wave 1](2026-08-20_Wave1_Caption_Treatment_Distribution.png)
+
+La concentración no invalida la prueba, pero limita su lectura: el resultado global de captions estará más influido por `Relatable_Social` que por las otras familias. Por eso, los veredictos deben calcularse por familia y no únicamente sobre los nueve posts agregados. La gráfica reproducible fue generada por `Operations/Production/build_wave1_caption_distribution_chart.py`.
+
 ## Por qué no se mueven las horas
 
 El calendario actual no está distribuido principalmente en 18:00–22:00; utiliza 10:00, 11:00, 13:30, 16:00, 17:00 y 19:00, con algunos slots de 22:00. Mover ahora 15 publicaciones para perseguir el corredor histórico introduciría un nuevo cambio de calendario y confundiría la lectura con la ola ya aprobada.
