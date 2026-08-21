@@ -9,6 +9,9 @@ author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-16_Calendario_Operativo_17_30_Agosto.csv"
   - "Operations/Research/2026-08-20_Overlay_Wave1_Calendario_17_30.csv"
+  - "Operations/Research/2026-08-20_Overlay_Wave1_Visual_Findings.md"
+  - "Operations/Research/2026-08-20_Overlay_Wave1_Contact_Sheet.jpg"
+  - "Operations/Research/2026-08-20_Overlay_Wave1_Review_Summary.json"
   - "Operations/Research/2026-08-20_Auditoria_Alineacion_Calendario_17_30_Familias.json"
   - "Operations/Production/2026-08-20_Plan_Experimentos_Agosto_5_Familias.md"
   - "Operations/Production/2026-08-20_Wave1_Signal_Experiment_Design.csv"
@@ -34,7 +37,7 @@ También queda fuera el baseline P0 del 17 de agosto. La cohorte actual ya regis
 
 ## Overlay propuesto
 
-Se seleccionaron **15 slots `Nueva` futuros**, tres por familia, sin crear filas nuevas en el calendario. Los tratamientos propuestos son uno `caption_minimo`, uno `caption_refuerzo` y uno `caption_conversacional` por familia. Todos permanecen con `P0_Eligible=No`, `Affiliate_Attachment=No`, `Reuse_Status=New_Test` y `Approval_Status=Pending` hasta revisión humana.
+Se seleccionaron **15 slots `Nueva` futuros**, sin crear filas nuevas en el calendario. Después de la revisión visual, la clasificación final no conserva exactamente tres casos por familia porque se corrigieron errores de categoría y se aplicaron holds editoriales. Todos permanecen con `P0_Eligible=No`, `Affiliate_Attachment=No`, `Reuse_Status=New_Test` y `Approval_Status=Pending` hasta revisión humana.
 
 | Familia | Slots overlay | Treatments | Métrica primaria |
 |---|---:|---|---|
@@ -44,7 +47,18 @@ Se seleccionaron **15 slots `Nueva` futuros**, tres por familia, sin crear filas
 | `FAM-04 Ácido_Interpersonal` | 3 | Mínimo, refuerzo, conversacional | Shares y comentarios |
 | `FAM-05 Personaje_Marcador` | 3 | Mínimo, refuerzo, conversacional | Shares |
 
-Los 15 casos seleccionados están en `Operations/Research/2026-08-20_Overlay_Wave1_Calendario_17_30.csv`. La selección es provisional y requiere revisión visual. En particular, se deben confirmar las piezas con doble sentido sexual, lenguaje fuerte, ansiedad, armas de juguete y personajes asignados desde filenames.
+### Resultado del corte visual
+
+| Estado del overlay | Cantidad | Lectura |
+|---|---:|---|
+| `Reviewed_Eligible` | 9 | Puede entrar a la primera ola si se aprueba el tono |
+| `Candidate_Review` | 4 | La familia provisional no coincide completamente con la función visual |
+| `Editorial_Hold` | 2 | Requiere decisión explícita por coerción/sexualidad dominante |
+| Total | 15 | La matriz conserva todos los casos para trazabilidad |
+
+La matriz detallada conserva los 15 `Overlay_ID`. `2608053` y `2608059` quedaron en `Editorial_Hold`. `2608054`, `2608049`, `2608045` y `2608065` requieren revisión de subcelda porque son escenas textuales, monólogos, romance o humor observacional, no ejemplos puros de la familia inicialmente asignada. `2608035` quedó elegible, pero se reasignó de `Difusión_Minimal` a `Relatable_Social` por su función visual de estrés cotidiano. El corte visual completo está en `Operations/Research/2026-08-20_Overlay_Wave1_Visual_Findings.md`.
+
+Los 15 casos seleccionados están en `Operations/Research/2026-08-20_Overlay_Wave1_Calendario_17_30.csv`. La selección ya tiene un corte visual inicial documentado, pero sigue en Review para aprobación humana. `Overlay_Eligibility=Eligible` identifica nueve casos; cuatro quedan como `Candidate_Review` y dos como `Hold`. La validación reproducible está en `Operations/Research/2026-08-20_Overlay_Wave1_Review_Summary.json` y devuelve `validation=PASS`.
 
 ## Por qué no se mueven las horas
 
