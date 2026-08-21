@@ -1,10 +1,10 @@
 ---
 title: "Evaluación de Content Rewards como capa complementaria de monetización"
 purpose: "Determinar si Content Rewards puede aportar ingresos incrementales a Universe Sent Me sin contaminar las cuentas oficiales, el IP de los personajes ni la atribución de Mercado Libre."
-status: "Review"
+status: "Active — deferred pending Bam in a Can audience growth"
 created: 2026-08-20
 updated: 2026-08-20
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/11_00_Estrategia_Monetizacion_MercadoLibre.md"
@@ -19,6 +19,8 @@ organization: "Operations/Research"
 ## Veredicto ejecutivo
 
 Content Rewards **no debe operar dentro de las cuentas oficiales de Universe Sent Me**. Sin embargo, se puede explorar como un **piloto de ingresos operativos separado**, utilizando una cuenta pública, real y transparentemente diferenciada, manejada por Fernando y vinculada legítimamente a su perfil de creador. Este carril no monetiza el IP de Universe Sent Me: monetiza trabajo de edición y publicación para campañas de terceros que tengan encaje ético y editorial.
+
+**Actualización operativa, 20 de agosto:** los canales separados de Bam in a Can acaban de crearse. La recomendación anterior de piloto queda diferida: primero se construye audiencia propia y se valida el formato editorial de Bam. No se abrirán ni vincularán cuentas de Content Rewards, ni se aceptarán campañas, antes de ese hito.
 
 La recomendación es un **GO condicional para un piloto de creador sin gasto de medios**, no para lanzar una campaña de marca. La modalidad de marca es adquisición pagada: exige un presupuesto mínimo de USD 500 en campañas CPM, más una tarifa de plataforma de 8% para marcas verificadas o 10% para no verificadas. Por ello, no es una nueva fuente de ingresos; es una inversión publicitaria futura que debe evaluarse por separado.[1]
 

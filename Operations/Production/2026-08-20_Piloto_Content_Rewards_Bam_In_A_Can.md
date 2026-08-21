@@ -1,10 +1,10 @@
 ---
 title: "Piloto Content Rewards — Bam in a Can"
 purpose: "Definir la identidad, alcance, controles y secuencia de activación del piloto de Content Rewards operado por Bam in a Can, independiente de Universe Sent Me."
-status: "Active"
+status: "Active — Audience Bootstrap; third-party campaigns paused"
 created: 2026-08-20
 updated: 2026-08-20
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-20_Evaluacion_Content_Rewards_Capa_Monetizacion.md"
@@ -15,6 +15,12 @@ organization: "Operations/Production"
 ---
 
 # Piloto Content Rewards — Bam in a Can
+
+## 0. Decisión operativa vigente — construir antes de monetizar
+
+El 20 de agosto Fernando confirmó que los tres perfiles `@bam_in_a_can` se acaban de crear. Por tanto, **Bam in a Can no inicia todavía ninguna campaña de Content Rewards**. La ruta de Klap permanece archivada como candidata evaluada, pero no se vinculan cuentas, no se aceptan briefs, no se descargan assets ni se publica contenido de terceros.
+
+La prioridad inmediata es construir audiencia propia, lenguaje editorial y consistencia de formato. Content Rewards se reconsidera cuando Bam cuente con una base de seguidores y una distribución de audiencia que permita competir por campañas sin convertir la marca en una cuenta exclusiva de un anunciante.
 
 ## 1. Mandato y separación de marca
 
@@ -28,10 +34,10 @@ El logo de referencia aprobado por Fernando se conserva en `Operations/Productio
 
 | Plataforma | Identidad | Estado de piloto | Uso permitido |
 |---|---|---|---|
-| YouTube | `@bam_in_a_can` | Disponible | Shorts autorizados por cada campaña. |
-| Instagram | `@bam_in_a_can` | Disponible | Reels autorizados por cada campaña. |
-| TikTok | `@bam_in_a_can` | Disponible | Videos autorizados por cada campaña. |
-| Facebook | Pendiente de crear | Fuera de la fase inicial | Considerar solo después de validar el piloto; no bloquea la activación. |
+| YouTube | `@bam_in_a_can` | Recién creado | Prioridad: construir catálogo propio de Shorts. |
+| Instagram | `@bam_in_a_can` | Recién creado | Prioridad: construir catálogo propio de Reels. |
+| TikTok | `@bam_in_a_can` | Recién creado | Prioridad: construir catálogo propio de videos. |
+| Facebook | Pendiente de crear | No prioritario | Evaluar tras validar los tres canales principales. |
 
 Los canales deben ser públicos, pertenecer realmente a Fernando y vincularse a su perfil de Content Rewards conforme a las condiciones de la plataforma. No se crean cuentas ficticias, duplicadas ni automatizadas.
 
@@ -56,7 +62,7 @@ Cada pieza puede ser tratada como una unidad de colección `CAN 001`, `CAN 002`,
 5. **Derechos primero:** no iniciar edición hasta comprobar que el brief permite el uso de los assets y que Fernando acepta la licencia de contenido asociada.
 6. **Una campaña, una decisión:** no publicar un asset idéntico en cascada por defecto. Se siguen las plataformas autorizadas, el límite de reutilización y la modalidad de envío de la campaña concreta.
 
-## 5. Diseño del piloto de 21 días
+## 5. Diseño del piloto de 21 días — **pausado hasta la madurez de audiencia**
 
 | Variable | Definición |
 |---|---|
@@ -81,7 +87,7 @@ Al iniciar el piloto se crea el ledger indicado y se actualiza este brief con la
 
 ## 8. Primera candidata bajo revisión — Klap Viral Clipping
 
-**Estado:** `CANDIDATE_AUDITED_HOLD — no unido, no enviado, no publicado`
+**Estado:** `CANDIDATE_PAUSED — cuentas de Bam recién creadas; no unido, no enviado, no publicado`
 **URL pública:** https://contentrewards.com/discover/2b523257-cb89-4faf-90c2-770aea3db60a
 
 Klap es una herramienta de IA que convierte videos largos, podcasts y webinars en clips cortos con captions. La campaña pide piezas con gancho viral a partir de UGC proporcionado que muestre Klap y anuncia libertad creativa condicionada a promover la herramienta y respetar las reglas del brief. La guía compartida por Fernando confirma TikTok, Instagram y YouTube Shorts como destinos, con CPM de USD 2, mínimo de USD 2, máximo de USD 500 por post y presupuesto total de USD 7,000. Los clips se envían exclusivamente por Content Rewards y deben mantenerse publicados durante 30 días.[4] [5]
@@ -108,7 +114,7 @@ Klap es una herramienta de IA que convierte videos largos, podcasts y webinars e
 | Calidad | Sin money claims; subtítulos limpios, correctos, sin IA, sin animaciones/glow excesivos, sin skull edits ni reposts perezosos. | Compatible con la marca, pero requiere edición manual de subtítulos. |
 | Watermarks | No usar watermark de otra marca ni del propio canal. | El avatar y la bio de Bam pueden permanecer; **no** incrustar el logo BAM dentro de los clips de Klap. |
 
-La campaña puede encajar en el pilar de IA editorial de Bam, pero no debe forzar la marca a convertirse en una cuenta exclusiva de Klap. Si ningún canal cumple el umbral de 1,000 seguidores y la condición de audiencia, se descarta esta campaña específica y se busca una alternativa sin ese gate. No se adopta la sugerencia del brief de abrir una página dedicada a Klap porque rompería la independencia de Bam y añadiría una cuenta cuyo único propósito sería una campaña de tercero.
+La campaña puede encajar en el pilar de IA editorial de Bam, pero no debe forzar la marca a convertirse en una cuenta exclusiva de Klap. Como los perfiles están recién creados, esta campaña queda pausada de forma explícita. No se adopta la sugerencia del brief de abrir una página dedicada a Klap porque rompería la independencia de Bam y añadiría una cuenta cuyo único propósito sería una campaña de tercero. La evaluación se retoma únicamente después de completar la fase de audiencia propia.
 
 La campaña de CapCut/Seedance se mantiene como observación secundaria, no como primera prueba: aunque el CPM público era de USD 3, la interfaz mostraba una tasa visible de aprobación de 8%, un riesgo innecesario para el primer test. No se eligen campañas de apuestas, predicción, cripto, trading o categorías restringidas aunque tengan CPM superior.
 
