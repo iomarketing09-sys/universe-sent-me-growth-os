@@ -2,13 +2,13 @@
 
 **Propósito:** Definir una posible nueva familia de Reels musicales de Universe Sent Me, donde una canción licenciada guía una microhistoria emocional antes de seleccionar personajes, escenas o producción.
 
-**Estado:** Active — máster publicado en cascada completa; shortlist musical directo de Fernando en revisión.
+**Estado:** Active — máster publicado en cascada completa; tratamiento cinematográfico de Crave You en revisión de Fernando.
 
 **Fecha de creación:** 2026-08-20
 
 **Última actualización:** 2026-08-21
 
-**Versión:** 3.2
+**Versión:** 3.3
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -501,6 +501,50 @@ Primero se verifica el audio nativo y se fija un tramo de 12–16 segundos con c
 
 El backlog se actualizó para reflejar este shortlist. Cuando una canción se apruebe, sustituir la fila de exploración por `Concept_ID`, personaje, audio confirmado y estado de producción; después actualizar el calendario operativo `GrowthOS/05_XX`, el registro maestro `GrowthOS/07_00_Registro_Maestro_Reels.md` y la ficha de Wilfred si la prioridad del Reel afiliado continúa pausada.
 
+## Crave You — tratamiento cinematográfico revisado — 2026-08-21
+
+Fernando identificó correctamente que la primera premisa de Universe y coordenadas no nacía de la canción: resultaba genérica y no traducía su tensión central de atención no correspondida. El tratamiento se reformula como un videoclip cinematográfico de **mirada, espera y deseo de ser visto**, conservando la animación 2D pictórica de Universe Sent Me y evitando cualquier sexualidad explícita, desnudez, contacto sexual o cosificación.
+
+### Reparto y seguridad de canon
+
+Kiri queda **excluida** de esta dirección sensual. El bridge canónico confirma su asombro genuino y su varita como rasgo identitario, pero no aporta una confirmación de edad adulta ni un territorio romántico cerrado; no se le asigna un tratamiento sensual por inferencia. Maeve y Kael son, en cambio, una pareja establecida en canon. [21]
+
+El reparto recomendado es **Maeve + Kael**. La historia no implica infidelidad ni una relación nueva: dramatiza por segundos la frustración cotidiana de Maeve porque otros la notan mientras Kael está absorto en algo que no es ella; el giro final es una mirada recuperada, no una reconciliación ni una resolución romántica total. La sensualidad se construye con composición, vestuario ya establecido, distancia, luz, reflejos y timing; no con exposición corporal ni contacto.
+
+| Campo | Decisión de trabajo |
+|---|---|
+| Título de desarrollo | `Crave You — Maeve entre todas las miradas` |
+| `Concept_ID` propuesto | `CON-2026-08-24-CraveYou-MaeveKael` |
+| `Campaign_Label` propuesto | `VIDECLIP_MUSICAL_CRAVE_YOU_202608` |
+| `Experiment_ID` propuesto | `EXP-202608-MUSICVIDEO-02` |
+| `Hypothesis_ID` propuesto | `HB-MUSICVIDEO-02` |
+| Hipótesis | Un videoclip breve que traduce la tensión de “ser vista por todos salvo por quien importa”, con tensión cinematográfica no explícita, genera identificación, comentarios y compartidos sin depender de diálogo o de un final de pareja cerrado. |
+| Formato | Vertical 9:16, 14–16 segundos, máximo cuatro cortes/transiciones. |
+| Estado | `REVIEW — no producir hasta aprobar storyboard y confirmar audio nativo`. |
+
+### Dirección visual
+
+La escena transcurre en el lobby de un cine antiguo sin marca, una noche de lluvia. El lugar no existe como nuevo sitio de canon: es una **locación editorial** para el videoclip. El look usa verde botella, ámbar, reflejos de calle mojada y rojo vino muy contenido. Maeve conserva su identidad visual establecida; Kael conserva la suya. Ambos deben trabajarse con referencias de personaje antes de generar un frame o clip.
+
+| Beat | Imagen / acción | Recurso cinematográfico | Límite no explícito |
+|---:|---|---|---|
+| 0–3 s | Maeve entra al lobby, se detiene frente a un panel de vidrio con lluvia. Tres siluetas adultas, fuera de foco y sin rasgos, voltean de manera breve; ella no les responde. | Dolly-in lento, silueta y reflejo; sonido de ciudad solo como SFX de guía. | Sin poses sugerentes, sin acercamientos al cuerpo, sin interacción física. |
+| 3–6 s | Al fondo, Kael observa absorto una proyección muda de constelaciones sobre una pared. No ve la llegada de Maeve. | Composición profunda; Maeve en primer plano y Kael separado por luz/pasillo. | La distancia expresa conflicto; no hay terceros que la toquen ni cámara voyeurista. |
+| 6–10 s | Maeve gira hacia un espejo vertical; el ámbar se vuelve verde botella cuando una figura pasa ante la lente y oculta el corte. Kael aparece en el reflejo, todavía mirando la proyección. | Transición objeto-máscara con figura desenfocada; cambio de paleta a golpe de música. | El cambio visual no altera rostro, vestuario o cuerpo de los personajes. |
+| 10–16 s | La proyección se apaga; por primera vez Kael levanta la vista y encuentra a Maeve en el reflejo. No se acercan. Maeve sostiene la mirada un instante y sale de cuadro; Kael permanece quieto bajo la luz que vuelve. | Rack focus de reflejo a mirada y corte final seco en el beat. | Sin beso, abrazo, contacto ni cierre explicativo. |
+
+La emoción no es “ella consigue validación de otros hombres”. Es el contraste entre la atención ambiental, que no significa nada, y la única mirada que tiene peso. Esto conecta con la premisa de la canción sin hacer que el lore dependa de su letra ni convertir a Maeve en objeto de la escena.
+
+### Criterio de aprobación y puntuación
+
+El tratamiento obtuvo **9.10/10 — PASS** con la rúbrica `usm-content-proposer`: relatability 9.0, emoción 9.5, gancho de compartido 9.5, giro moderno 8.0, voz/canon 8.0 y encaje horario 10.0. El punto más frágil es la voz de Maeve y Kael: por eso el storyboard debe conservar su pareja establecida sin afirmar que el conflicto amenaza la relación.
+
+La pieza solo avanza si Fernando aprueba estas cuatro condiciones: el audio exacto aparece nativamente en Instagram Reels, Facebook Reels, TikTok y YouTube Shorts; se decide el tramo de 14–16 segundos; se aprueba un keyframe de identidad para Maeve y Kael; y el storyboard mantiene los límites de sensualidad no explícita anteriores. El máster continúa sin música incrustada. [6] [7] [8]
+
+### Coherencia documental requerida
+
+El backlog fue actualizado para reemplazar la recomendación abstracta de `Crave You` por este tratamiento. Tras aprobación formal, actualizar el calendario vigente `GrowthOS/05_XX`, crear un paquete de producción específico, registrar el experimento en `GrowthOS/07_00_Registro_Maestro_Reels.md` y conservar `CNT-023` de Wilfred en pausa hasta que se decida su reactivación.
+
 ### Contingencia
 
 Si la pista solo está disponible en una plataforma, se publica el videoclip exclusivamente allí y se documenta como prueba de formato musical. No se toma la decisión de crear versiones con otra canción, silencio o una pista de reemplazo hasta medir si la historia funciona: eso agregaría una variable y convertiría cada publicación en una pieza distinta.
@@ -538,3 +582,5 @@ Si la pista solo está disponible en una plataforma, se publica el videoclip exc
 [19] [Breakbot — Baby I’m Yours ft. Irfane, video oficial](https://www.youtube.com/watch?v=3vVSBLkpO-8), analizado el 2026-08-21 únicamente para gramática visual no infractora.
 
 [20] [Young & Sick — Jet Black Heart, audio oficial](https://www.youtube.com/watch?v=am6A6xLRKlM), analizado el 2026-08-21 únicamente para energía y estructura de edición no infractora.
+
+[21] [Growth OS — Integración Growth OS ↔ Canon](../../GrowthOS/Integracion_Growth_OS.md), última sincronización canónica registrada el 2026-08-15; confirma a Maeve + Kael como pareja establecida y limita a Kiri a su territorio de asombro y varita canonizada.
