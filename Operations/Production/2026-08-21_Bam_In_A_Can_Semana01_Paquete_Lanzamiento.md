@@ -4,7 +4,7 @@ purpose: "Organizar el primer bloque de cuatro piezas originales de Bam in a Can
 status: "Draft — preproducción; ninguna pieza de la semana está publicada"
 created: 2026-08-21
 updated: 2026-08-21
-version: "1.5"
+version: "1.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_Plan_Lanzamiento_Audiencia_Bam_In_A_Can.md"
@@ -29,7 +29,7 @@ No se asignan todavía fechas ni horas. Se publica únicamente cuando los cuatro
 | Orden | ID | Pilar | Función de marca | Estado actual |
 |---:|---|---|---|---|
 | 1 | `CAN-001` | CAN FOUND | Manifiesto: algo vivo dentro de la lata. | Corte final recibido; pendiente selección de audio nativo para TikTok/Instagram y publicación. |
-| 2 | `CAN-002` | CAN FAKE TRAILER | Demostrar que Bam también fabrica productos de archivo que nunca debieron existir. | Render generado; requiere corte antes de que aparezcan código de barras/números al final. No regenerar aún. |
+| 2 | `CAN-002` | CAN FAKE TRAILER | Demostrar que Bam también fabrica productos de archivo que nunca debieron existir. | Corte final validado por Fernando: el recibo permanece vacío, sin números ni códigos de barras legibles. |
 | 3 | `CAN-003` | CAN FOUND | Mostrar que la anomalía puede ocurrir fuera de la lata, manteniendo una sola regla visual imposible. | Montaje cinematográfico de 10 s aprobado para edición: moneda, mecanismos, abolladuras desde dentro y espirales vacíos. |
 | 4 | `CAN-004` | CAN MEME | Abrir una vía más ligera y compartible sin abandonar la estética extraña. | Corte integrado final `Can004.mp4` aprobado para el lote: progresión de miniaturas, cursor, parpadeo y corte negro. |
 
@@ -62,7 +62,7 @@ No se asignan todavía fechas ni horas. Se publica únicamente cuando los cuatro
 
 **Premisa:** un infomercial de 1997 presenta una impresora térmica color hueso que produce un recibo vacío. La cámara se acerca y el papel se mueve como si estuviera recordando algo. Todo el producto parece funcional, pero nadie explica por qué necesita imprimir recuerdos.
 
-**Estado de render (21 Ago):** `Thermal_printer_advancing_blank_can002.mp4` mantiene bien el objeto, la textura, la iluminación y el avance de papel. La tira, sin embargo, revela números/código de barras hacia el final, lo cual contradice el recibo vacío. Solución preferida: en edición, cortar a negro antes de que aparezca cualquier marca —aproximadamente antes del segundo 7— y conservar el clip como pieza de 6–7 s. No gastar un nuevo render si el corte puede garantizar papel completamente blanco.
+**Estado final (21 Ago):** Fernando revisó el corte de edición y confirmó que el recibo permanece vacío: no se ven números ni códigos de barras. CAN-002 queda **APPROVED_FOR_BATCH**. El render original se conserva como fuente; el corte final es la versión canónica de publicación y no requiere otro render.
 
 **Guion de 10 s:**
 
@@ -223,9 +223,9 @@ Use only the attached initial keyframe as the visual anchor. Vertical 9:16, 6 se
 
 | Entregable | CAN-001 | CAN-002 | CAN-003 | CAN-004 |
 |---|---:|---:|---:|---:|
-| Keyframe vertical aprobado | Hecho en el flujo previo | Pendiente | Pendiente | Pendiente |
-| Clip final sin audio nativo | Hecho | Pendiente | Pendiente | Pendiente |
-| Proyecto de edición | Pendiente | Pendiente | Pendiente | Pendiente |
+| Keyframe/storyboard aprobado | Hecho en el flujo previo | Hecho | Hecho | Hecho |
+| Clip final sin audio nativo | Hecho | Hecho | Hecho | Hecho |
+| Proyecto de edición / corte final | Hecho | Hecho | Hecho | Hecho |
 | Caption y disclosure | Listo | Listo | Listo | Listo |
 | Audio TikTok elegido | Pendiente | Pendiente | Pendiente | Pendiente |
 | Audio Instagram elegido | Pendiente | Pendiente | Pendiente | Pendiente |
@@ -234,7 +234,7 @@ Use only the attached initial keyframe as the visual anchor. Vertical 9:16, 6 se
 
 ## 6. Condición para empezar a publicar
 
-No publicar CAN-001 hasta que los clips finales de CAN-002, CAN-003 y CAN-004 estén aprobados, los cuatro projects de edición tengan el copy manual preparado y se haya definido el registro de cada pieza. Este límite protege la consistencia del lanzamiento y evita que una semana de contenido dependa de generar el siguiente video a contrarreloj.
+Los cuatro clips finales están aprobados y el lote puede pasar a preparación de plataforma. Antes de abrir publicación, elegir y registrar el audio nativo de TikTok/Instagram por pieza, cargar el copy/disclosure y abrir el registro de IDs, permalinks y métricas. Este límite protege la consistencia del lanzamiento y evita que una semana de contenido dependa de generar el siguiente video a contrarreloj.
 
 Cuando el batch esté listo, publicar con 36–48 horas de separación, primero CAN-001 y después en el orden indicado. Elegir los audios nativos de TikTok e Instagram dentro de la aplicación justo antes de cada publicación, respetando el filtro de audio definido en el plan de distribución de CAN-001.
 
