@@ -1,12 +1,14 @@
 # CNT-023 Episodio 2: "¿Qué me llegó?" — Universe le entrega el paquete a Elara
 
-**Propósito:** Documentar el Episodio 2 del formato recurrente de afiliación "¿Qué me llegó?" (Mercado Libre), objetivo de monetización directa. Versión final producida por Fernando: producto y guion cambiados respecto a la propuesta original de Manus (difusor de aromas → **Lámpara Luna 3D Decorativa**), storyboard de 9 escenas ya generado.
-**Estado:** Producción completa — **bloqueado para publicación hasta confirmar link de afiliado**
+**Título:** ¿Qué me llegó? — Episodios 2 y 3
+**Propósito:** Documentar el Episodio 2 del formato recurrente de afiliación "¿Qué me llegó?" (Mercado Libre), objetivo de monetización directa, y preservar la siguiente propuesta de continuidad: Episodio 3 con Wilfred. La versión final del Episodio 2 fue producida por Fernando: producto y guion cambiados respecto a la propuesta original de Manus (difusor de aromas → **Lámpara Luna 3D Decorativa**), storyboard de 9 escenas ya generado.
+**Estado:** Episodio 2 en producción completa con bloqueante de afiliación histórico; Episodio 3 `DRAFT — pendiente de aprobación de Fernando`.
 **Fecha de creación:** 2026-08-07
-**Última actualización:** 2026-08-08
-**Versión:** 2.0
+**Última actualización:** 2026-08-20
+**Versión:** 2.1
 **Autor:** Manus AI (CGO) — v1.0 original; Fernando — guion y producto final; Claude — registro v2.0
-**Documentos relacionados:** `Operations/Production/ML_Reel_01_Storyboard_Blueprint.md`, `Operations/Production/12_00_Catalogo_Productos_MercadoLibre.md`, `GrowthOS/11_00_Estrategia_Monetizacion_MercadoLibre.md`, `GrowthOS/01_02_Content_Backlog.md`
+**Documentos relacionados:** `Operations/Production/ML_Reel_01_Storyboard_Blueprint.md`, `Operations/Production/12_00_Catalogo_Productos_MercadoLibre.md`, `Operations/Production/2026-08-19_Playbook_Tracking_Afiliados_MercadoLibre.md`, `GrowthOS/11_00_Estrategia_Monetizacion_MercadoLibre.md`, `GrowthOS/01_02_Content_Backlog.md`
+**Organización:** Operations/Production
 
 ---
 
@@ -116,6 +118,52 @@ La regla fija de la franquicia: **el mensajero nunca sabe qué hay dentro** (can
 2. **Confirmar que la automatización de Make ya está activa** con la palabra clave `LUNA`.
 3. **Producto de reemplazo para el Episodio 3** (Wilfred), ya que la Lámpara Luna se usó adelantada en el Episodio 2.
 4. Slot de publicación: ¿se mantiene el viernes 7:00 PM ya reservado a CNT-023, o cambia por ser una pieza distinta a la calendarizada?
+
+## 7. Propuesta siguiente — Episodio 3: Wilfred y el cielo que los humanos perdieron
+
+**Estado:** `DRAFT — pendiente de aprobación de Fernando`
+**Identidad propuesta:** `CON-2026-08-24-QueMeLlego-Wilfred-Telescopio` / `EXP-202608-AFF-QML-03` / `HB-AFF-QML-03`
+**Producto-categoría:** telescopio refractor compacto de 70 mm con trípode, apto para principiantes. La ficha individual se selecciona y verifica en Mercado Libre **antes** de construir los assets o generar el enlace; las dos fichas preliminares revisadas no estaban disponibles y no deben usarse como referencia comercial activa.
+
+La siguiente pieza recomendada no debe repetir lámparas, soportes, audífonos ni decoración LED. Continúa la franquicia que ya tiene una mecánica clara —Universe entrega sin saber qué contiene la caja y el receptor descubre el objeto desde su propia voz— y atiende directamente el siguiente paso de la estrategia de monetización: Wilfred recibiendo una tecnología humana. El telescopio es visual, funciona en el bosque y permite un remate seco propio del guardián: los humanos necesitan una herramienta para mirar lo que tenían sobre la cabeza.
+
+| Tramo | Acción visual y emoción | Dirección de diálogo o texto |
+|---|---|---|
+| 0–3 s | Universe llega al claro nocturno arrastrando una caja sencilla; Wilfred lo mira con sospecha amable. | Wilfred: “Si ahí cabe otro cielo, lo devuelves.” |
+| 3–7 s | Universe deja la caja y se sienta. Wilfred la abre: aparece el telescopio compacto y su trípode. | Universe no explica ni conoce el contenido. |
+| 7–12 s | Wilfred arma el trípode con incredulidad y mira por primera vez. El bosque queda quieto; se revela una luna grande entre ramas. | Wilfred, más bajo: “Ah. Un atajo para quienes olvidaron mirar arriba.” |
+| 12–17 s | Wilfred vuelve a mirar por el telescopio. Universe se sube a la caja vacía, ocupando el encuadre. | Remate: “Bueno. Al menos este no pide Wi‑Fi.” |
+
+### Copy y distribución de afiliación
+
+> Wilfred recibió un aparato para mirar lo que tenía encima. 🔭🌲
+> Dice que los humanos convierten cualquier cosa en una tarea.
+>
+> Bueno. Al menos este no pide Wi‑Fi.
+
+**Hashtags:** Facebook `#UniverseSentMe #WilfredUSM #QueMeLlegoUSM`; Instagram/TikTok añaden `#BosqueUSM` si el copy conserva esta misma versión. No usar `#fyp`, `#parati` ni etiquetas de producto genéricas.
+
+En Facebook, el producto se adjunta como `FACEBOOK_NATIVE_PRODUCT` y se genera un link nuevo con etiqueta propuesta `usmfb20260824qml03` solo después de que la ficha exacta esté disponible. No incluir un link manual ni un CTA de comentarios hasta comprobar que el flujo de respuesta autorizado está operativo. En Instagram, TikTok y YouTube la pieza se distribuye como historia editorial sin venta directa; esa separación permite medir si la adjunción nativa reduce, preserva o mejora el rendimiento del mismo concepto en Facebook.
+
+### Hipótesis y criterio de lectura
+
+`HB-AFF-QML-03`: una escena de descubrimiento con producto visual, humor seco de Wilfred y una observación cotidiana sobre tecnología humana logrará compartidos y comentarios sin hacer que el objeto parezca un anuncio. La conversión afiliada se observa exclusivamente mediante el link/etiqueta de Facebook; no se declara ganadora la categoría hasta contar con al menos 7 días de cortes diarios de clics y después la validación de ventas aprobadas.
+
+| Criterio de la rúbrica | Score | Justificación |
+|---|---:|---|
+| Relatable | 9.0 | La contradicción de necesitar un aparato para observar el cielo conecta con hábito cotidiano y distancia de la naturaleza. |
+| Humor o emoción | 9.0 | La ternura de Universe como mensajero contrasta con el cinismo apacible de Wilfred. |
+| Giro moderno | 8.0 | Tecnología óptica doméstica dentro de un bosque mágico, sin depender de un meme efímero. |
+| Voz de personaje | 9.0 | Humor seco, protección del bosque y curiosidad contenida de Wilfred. |
+| Gancho de compartido | 8.5 | “Al menos este no pide Wi‑Fi” da una salida breve y etiquetable. |
+| Encaje de horario | 10.0 | Propuesta para domingo o lunes, 19:00–21:00 CDT. |
+| Formato / canon | PASS | Reel de producto con mini-historia; Universe no es omnisciente y Wilfred no es ridiculizado. |
+
+**Resultado de rúbrica:** **8.92/10 — PASS**. La evaluación reproducible está en `wilfred_telescope_affiliate_score.json`.
+
+### Dependencias antes de producir
+
+Primero se confirma una ficha individual disponible de telescopio compacto con trípode, se genera su link afiliado nuevo y se crea la fila en `Affiliate_Link_Ledger.csv`. Después se produce el storyboard usando esa ficha como referencia del objeto, sin marcas visibles. La adjunción nativa de Facebook requiere aprobación humana específica antes de cualquier publicación. Las métricas se comparan con el control editorial multicanal y se concilian diariamente durante siete días.
 
 ---
 
