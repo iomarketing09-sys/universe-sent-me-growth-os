@@ -12,11 +12,17 @@ related_documents:
   - "Operations/Research/2026-08-21_Junio_57_Unmatched_Character_Utility.csv"
   - "Operations/Research/2026-08-21_Junio_57_Approved_Character_Analysis.md"
   - "Operations/Production/2026-08-20_Plan_Experimentos_Agosto_5_Familias.md"
+  - "Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md"
+  - "Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv"
   - "GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md"
 organization: "Operations/Production"
 ---
 
 # Diseño de casos comparables para completar celdas bajo n=3
+
+## Paquete de revisión humana
+
+Los cuatro briefs están preparados para revisión en `Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md`, con la matriz estructurada en `Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`. Cada brief tiene estado `Pending_Fernando_Review`. La aprobación del brief solo autoriza pasar a desarrollo/preflight; no autoriza generar assets, mover calendario, publicar ni crear CNT.
 
 ## Alcance y decisión previa
 

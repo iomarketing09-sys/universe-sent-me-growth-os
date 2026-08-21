@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-21
-**Versión:** 2.35
+**Versión:** 2.36
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.36.00] — 2026-08-21 (Manus): Paquete de revisión humana de cuatro briefs comparables.** Se prepararon `FUT-MICRO-005`, `FUT-MICRO-006`, `FUT-TRANS-003` y `FUT-ACID-003` con hipótesis, estructura visual, tratamiento de caption, confusores, criterios de inclusión/exclusión, preflight y salvaguardas. Todos quedan como `Pending_Fernando_Review`. Se añadió el paquete `Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md` y la matriz `Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`. La aprobación de un brief solo autoriza desarrollo/preflight; no autoriza generar assets, modificar calendario, publicar ni crear CNT.
 
 - **[2.35.00] — 2026-08-21 (Manus): Corte cuantitativo de personajes y resolución del candidato de cuatro paneles.** Los 17 casos aprobados suman 300 interacciones, 53 shares y 13 comentarios; el caso Universe `1036844829507460_122130196011072582` concentra 54.7% de las interacciones y 79.2% de los shares del subconjunto. Sin ese outlier, la mediana baja a 8 interacciones y 0.5 shares. No se infiere efecto causal ni ranking de personajes. El candidato `1036844829507460_122127951885072582` queda con `validation_status=Excluded_3P_Retain_4P_Candidate`: cuatro paneles confirmados, fuera de `MICRO-STRICT-3P`, retenido solo para una futura `MICRO-SEQ-4P` que no se abrirá sin tres casos comparables y definición aprobada. Documentos: `Operations/Research/2026-08-21_Junio_57_Approved_Character_Analysis.md`, `Operations/Research/2026-08-21_Junio_57_Approved_Character_Analysis.json` y `Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`. No se modifican CNT, canon, calendario ni publicaciones.
 
