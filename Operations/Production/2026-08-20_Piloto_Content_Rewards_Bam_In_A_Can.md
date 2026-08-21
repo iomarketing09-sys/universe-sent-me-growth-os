@@ -4,7 +4,7 @@ purpose: "Definir la identidad, alcance, controles y secuencia de activación de
 status: "Active"
 created: 2026-08-20
 updated: 2026-08-20
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-20_Evaluacion_Content_Rewards_Capa_Monetizacion.md"
@@ -81,19 +81,34 @@ Al iniciar el piloto se crea el ledger indicado y se actualiza este brief con la
 
 ## 8. Primera candidata bajo revisión — Klap Viral Clipping
 
-**Estado:** `CANDIDATE_REVIEWED — no unido, no enviado, no publicado`  
+**Estado:** `CANDIDATE_AUDITED_HOLD — no unido, no enviado, no publicado`
 **URL pública:** https://contentrewards.com/discover/2b523257-cb89-4faf-90c2-770aea3db60a
 
-Klap es una herramienta de IA que convierte videos largos, podcasts y webinars en clips cortos con captions. La campaña pública pide piezas con gancho viral a partir de UGC proporcionado que muestre Klap y anuncia libertad creativa condicionada a promover la herramienta y respetar las reglas del brief. La ficha pública indica TikTok, Instagram y YouTube Shorts como los destinos previstos, con un CPM de USD 2 y un presupuesto de USD 7,000; la interfaz visible mostraba USD 189 comprometidos, por lo que no se interpreta ese importe como presupuesto restante hasta la revisión autenticada.[4]
+Klap es una herramienta de IA que convierte videos largos, podcasts y webinars en clips cortos con captions. La campaña pide piezas con gancho viral a partir de UGC proporcionado que muestre Klap y anuncia libertad creativa condicionada a promover la herramienta y respetar las reglas del brief. La guía compartida por Fernando confirma TikTok, Instagram y YouTube Shorts como destinos, con CPM de USD 2, mínimo de USD 2, máximo de USD 500 por post y presupuesto total de USD 7,000. Los clips se envían exclusivamente por Content Rewards y deben mantenerse publicados durante 30 días.[4] [5]
 
 | Criterio | Lectura inicial |
 |---|---|
 | Encaje editorial | Alto: IA creativa, edición, cultura de clips y estética de internet son pilares de Bam. |
 | Encaje de canales | Alto: coincide con los tres canales existentes `@bam_in_a_can`. Facebook no es requisito inicial. |
 | Riesgo de marca | Medio-bajo, sujeto al brief: no pertenece a categorías excluidas, pero requiere disclosure y verificación de claims. |
-| Riesgo de derechos | Pendiente: confirmar en el brief autenticado el alcance de los UGC, la licencia y si el material se puede editar bajo los términos del piloto. |
-| Riesgo de operación | Pendiente: confirmar máximo por video, mínimo de pago, reglas de submit, límites de cross-post y cualquier limitación geográfica. |
-| Decisión | **Candidata recomendada para auditar primero; no autoriza unirse todavía.** |
+| Riesgo de derechos | UGC y formatos entregados por campaña. Antes de aceptar, confirmar dentro de Content Rewards el alcance de licencia aplicable a assets y clips finales. |
+| Riesgo de operación | Alto hasta validar que al menos un canal de Bam cumple el mínimo de 1,000 seguidores y que su audiencia es compatible con el objetivo de 70% Tier 1/EE. UU. |
+| Decisión | **Hold condicional.** Es candidata apta solo después de pasar los gates de entrada siguientes. |
+
+### Gates de entrada verificados por la guía
+
+| Gate | Requisito de Klap | Decisión para Bam in a Can |
+|---|---|---|
+| Nicho | Página relevante de IA/tech, edición, marketing, meme o tema compatible. | **PASS conceptual:** Bam opera en IA, memes e internet culture. |
+| Seguidores | Página de nicho relevante con **1,000+ seguidores**; si no existe, el brief sugiere crear una página dedicada a Klap. | **PENDIENTE:** confirmar seguidores por canal. No crear una página paralela de Klap que diluya Bam. |
+| Audiencia | Enfoque principal en mercado de EE. UU., 70% audiencia Tier 1. | **PENDIENTE:** confirmar audiencia disponible y producir en inglés si se entra. |
+| Formatos | Revisar el documento obligatorio de formatos de edición antes de producir. | **PENDIENTE:** no descargar ni editar assets hasta revisarlo. |
+| CTA | Etiquetar `@klap_ai`, usar `#klapaipropgda`, poner `https://klap.app/` en bio y dirigir el caption al enlace. | Compatible solo en el canal que se asigne al piloto. |
+| Retención | Dejar cada clip publicado al menos 30 días. | Aceptar únicamente si Bam puede mantener la pieza visible. |
+| Calidad | Sin money claims; subtítulos limpios, correctos, sin IA, sin animaciones/glow excesivos, sin skull edits ni reposts perezosos. | Compatible con la marca, pero requiere edición manual de subtítulos. |
+| Watermarks | No usar watermark de otra marca ni del propio canal. | El avatar y la bio de Bam pueden permanecer; **no** incrustar el logo BAM dentro de los clips de Klap. |
+
+La campaña puede encajar en el pilar de IA editorial de Bam, pero no debe forzar la marca a convertirse en una cuenta exclusiva de Klap. Si ningún canal cumple el umbral de 1,000 seguidores y la condición de audiencia, se descarta esta campaña específica y se busca una alternativa sin ese gate. No se adopta la sugerencia del brief de abrir una página dedicada a Klap porque rompería la independencia de Bam y añadiría una cuenta cuyo único propósito sería una campaña de tercero.
 
 La campaña de CapCut/Seedance se mantiene como observación secundaria, no como primera prueba: aunque el CPM público era de USD 3, la interfaz mostraba una tasa visible de aprobación de 8%, un riesgo innecesario para el primer test. No se eligen campañas de apuestas, predicción, cripto, trading o categorías restringidas aunque tengan CPM superior.
 
@@ -106,3 +121,5 @@ La campaña de CapCut/Seedance se mantiene como observación secundaria, no como
 [3]: https://www.contentrewards.com/faqs "Content Rewards — Frequently Asked Questions"
 
 [4]: https://contentrewards.com/discover/2b523257-cb89-4faf-90c2-770aea3db60a "Content Rewards — Klap Viral Clipping"
+
+[5]: https://docs.google.com/document/d/1N6h5axvtkMlpNVBdB18sTf0ylo7UVKoT/edit "Klap UGC Clipping — Full Guide by Propaganda"
