@@ -119,35 +119,34 @@ La regla fija de la franquicia: **el mensajero nunca sabe qué hay dentro** (can
 3. **Producto de reemplazo para el Episodio 3** (Wilfred), ya que la Lámpara Luna se usó adelantada en el Episodio 2.
 4. Slot de publicación: ¿se mantiene el viernes 7:00 PM ya reservado a CNT-023, o cambia por ser una pieza distinta a la calendarizada?
 
-## 7. Propuesta siguiente — Episodio 3: Wilfred y el cielo que los humanos perdieron
+## 7. Propuesta siguiente — Episodio 3: Wilfred quería ver a alguien de cerca
 
 **Estado:** `DRAFT — pendiente de aprobación de Fernando`
 **Identidad propuesta:** `CON-2026-08-24-QueMeLlego-Wilfred-Telescopio` / `EXP-202608-AFF-QML-03` / `HB-AFF-QML-03`
 **Producto-categoría:** telescopio refractor compacto de 70 mm con trípode, apto para principiantes. La ficha individual se selecciona y verifica en Mercado Libre **antes** de construir los assets o generar el enlace; las dos fichas preliminares revisadas no estaban disponibles y no deben usarse como referencia comercial activa.
 
-La siguiente pieza recomendada no debe repetir lámparas, soportes, audífonos ni decoración LED. Continúa la franquicia que ya tiene una mecánica clara —Universe entrega sin saber qué contiene la caja y el receptor descubre el objeto desde su propia voz— y atiende directamente el siguiente paso de la estrategia de monetización: Wilfred recibiendo una tecnología humana. El telescopio es visual, funciona en el bosque y permite un remate seco propio del guardián: los humanos necesitan una herramienta para mirar lo que tenían sobre la cabeza.
+La siguiente pieza recomendada no debe repetir lámparas, soportes, audífonos ni decoración LED. Continúa la franquicia que ya tiene una mecánica clara —Universe entrega sin saber qué contiene la caja y el receptor descubre el objeto desde su propia voz— y atiende directamente el siguiente paso de la estrategia de monetización: Wilfred recibiendo una tecnología humana. El telescopio es visual, funciona en el bosque y permite un remate seco propio del guardián. Además, incorpora de manera explícita el mecanismo observado en el post outlier de Wilfred: gancho coloquial ambiguo, reencuadre inocente, una situación de descanso deseable y lectura en una sola escena. No se trata de copiar “lokiar”, sino de probar la estructura con una situación nueva y trazable.
 
 | Tramo | Acción visual y emoción | Dirección de diálogo o texto |
 |---|---|---|
-| 0–3 s | Universe llega al claro nocturno arrastrando una caja sencilla; Wilfred lo mira con sospecha amable. | Wilfred: “Si ahí cabe otro cielo, lo devuelves.” |
+| 0–3 s | Universe llega al claro nocturno arrastrando una caja sencilla; Wilfred la recibe en su manta, frente a un bosque quieto y cielo despejado. | Texto de gancho: “Quería ver a alguien de cerca.” |
 | 3–7 s | Universe deja la caja y se sienta. Wilfred la abre: aparece el telescopio compacto y su trípode. | Universe no explica ni conoce el contenido. |
-| 7–12 s | Wilfred arma el trípode con incredulidad y mira por primera vez. El bosque queda quieto; se revela una luna grande entre ramas. | Wilfred, más bajo: “Ah. Un atajo para quienes olvidaron mirar arriba.” |
-| 12–17 s | Wilfred vuelve a mirar por el telescopio. Universe se sube a la caja vacía, ocupando el encuadre. | Remate: “Bueno. Al menos este no pide Wi‑Fi.” |
+| 7–12 s | Wilfred mira por primera vez. La cámara conserva el mismo claro, la luna entre ramas y a Universe sobre la caja vacía. | Reencuadre inocente: “Era la luna. No empieces.” |
+| 12–17 s | Wilfred se recuesta con el telescopio a un lado; vuelve a mirar al cielo sin otra acción ni cambio de contexto. | Remate: “Ya estaba ahí. Solo que los humanos necesitaban un tubo.” |
 
 ### Copy y distribución de afiliación
 
-> Wilfred recibió un aparato para mirar lo que tenía encima. 🔭🌲
-> Dice que los humanos convierten cualquier cosa en una tarea.
+> Quería ver a alguien de cerca.
 >
-> Bueno. Al menos este no pide Wi‑Fi.
+> Era la luna. No empieces. 🌙🔭
 
 **Hashtags:** Facebook `#UniverseSentMe #WilfredUSM #QueMeLlegoUSM`; Instagram/TikTok añaden `#BosqueUSM` si el copy conserva esta misma versión. No usar `#fyp`, `#parati` ni etiquetas de producto genéricas.
 
-En Facebook, el producto se adjunta como `FACEBOOK_NATIVE_PRODUCT` y se genera un link nuevo con etiqueta propuesta `usmfb20260824qml03` solo después de que la ficha exacta esté disponible. No incluir un link manual ni un CTA de comentarios hasta comprobar que el flujo de respuesta autorizado está operativo. En Instagram, TikTok y YouTube la pieza se distribuye como historia editorial sin venta directa; esa separación permite medir si la adjunción nativa reduce, preserva o mejora el rendimiento del mismo concepto en Facebook.
+El tratamiento de caption es `caption_minimo`: no explica el chiste ni introduce una llamada comercial. En Facebook, el producto se adjunta como `FACEBOOK_NATIVE_PRODUCT` y se genera un link nuevo con etiqueta propuesta `usmfb20260824qml03` solo después de que la ficha exacta esté disponible. No incluir un link manual ni un CTA de comentarios hasta comprobar que el flujo de respuesta autorizado está operativo. En Instagram, TikTok y YouTube la pieza se distribuye como historia editorial sin venta directa; esa separación permite medir si la adjunción nativa reduce, preserva o mejora el rendimiento del mismo concepto en Facebook.
 
 ### Hipótesis y criterio de lectura
 
-`HB-AFF-QML-03`: una escena de descubrimiento con producto visual, humor seco de Wilfred y una observación cotidiana sobre tecnología humana logrará compartidos y comentarios sin hacer que el objeto parezca un anuncio. La conversión afiliada se observa exclusivamente mediante el link/etiqueta de Facebook; no se declara ganadora la categoría hasta contar con al menos 7 días de cortes diarios de clics y después la validación de ventas aprobadas.
+`HB-AFF-QML-03`: una escena de descubrimiento con producto visual, gancho ambiguo que se reencuadra de forma inocente, estado de descanso deseable y humor seco de Wilfred elevará los compartidos sin hacer que el objeto parezca un anuncio. Campos de lectura obligatorios: `Wilfred_Stack_Fidelity=High`, `Hook_Type=Colloquial_Ambiguous`, `Reframe_Type=Innocent_Literal`, `Desirable_State=Rest`, `Narrative_Structure=Single_Scene_Product_Microstory`, `Caption_Treatment=caption_minimo` y `Primary_Metric=Shares`. La conversión afiliada se observa exclusivamente mediante el link/etiqueta de Facebook; no se declara ganadora la categoría hasta contar con al menos 7 días de cortes diarios de clics y después la validación de ventas aprobadas.
 
 | Criterio de la rúbrica | Score | Justificación |
 |---|---:|---|
@@ -155,11 +154,11 @@ En Facebook, el producto se adjunta como `FACEBOOK_NATIVE_PRODUCT` y se genera u
 | Humor o emoción | 9.0 | La ternura de Universe como mensajero contrasta con el cinismo apacible de Wilfred. |
 | Giro moderno | 8.0 | Tecnología óptica doméstica dentro de un bosque mágico, sin depender de un meme efímero. |
 | Voz de personaje | 9.0 | Humor seco, protección del bosque y curiosidad contenida de Wilfred. |
-| Gancho de compartido | 8.5 | “Al menos este no pide Wi‑Fi” da una salida breve y etiquetable. |
+| Gancho de compartido | 9.0 | “Era la luna. No empieces.” produce relectura, se entiende sin contexto y conserva un remate compartible. |
 | Encaje de horario | 10.0 | Propuesta para domingo o lunes, 19:00–21:00 CDT. |
 | Formato / canon | PASS | Reel de producto con mini-historia; Universe no es omnisciente y Wilfred no es ridiculizado. |
 
-**Resultado de rúbrica:** **8.92/10 — PASS**. La evaluación reproducible está en `wilfred_telescope_affiliate_score.json`.
+**Resultado de rúbrica:** **9.00/10 — PASS**. La evaluación reproducible está en `wilfred_telescope_affiliate_score.json`.
 
 ### Dependencias antes de producir
 
