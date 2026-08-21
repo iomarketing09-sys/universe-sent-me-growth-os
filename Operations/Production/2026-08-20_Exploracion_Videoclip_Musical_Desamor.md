@@ -2,13 +2,13 @@
 
 **Propósito:** Definir una posible nueva familia de Reels musicales de Universe Sent Me, donde una canción licenciada guía una microhistoria emocional antes de seleccionar personajes, escenas o producción.
 
-**Estado:** Active — máster publicado en cascada completa; tratamiento cinematográfico de Crave You en revisión de Fernando.
+**Estado:** Active — máster publicado en cascada completa; fashion film metafórico de Crave You en revisión de Fernando.
 
 **Fecha de creación:** 2026-08-20
 
 **Última actualización:** 2026-08-21
 
-**Versión:** 3.3
+**Versión:** 3.4
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -544,6 +544,37 @@ La pieza solo avanza si Fernando aprueba estas cuatro condiciones: el audio exac
 ### Coherencia documental requerida
 
 El backlog fue actualizado para reemplazar la recomendación abstracta de `Crave You` por este tratamiento. Tras aprobación formal, actualizar el calendario vigente `GrowthOS/05_XX`, crear un paquete de producción específico, registrar el experimento en `GrowthOS/07_00_Registro_Maestro_Reels.md` y conservar `CNT-023` de Wilfred en pausa hasta que se decida su reactivación.
+
+## Crave You — fashion film metafórico: *La habitación de las plumas* — 2026-08-21
+
+El tratamiento anterior de Maeve + Kael en el lobby de cine queda **`ARCHIVED — demasiado literal`**. Interpretaba la idea de atención no correspondida de forma descriptiva y, por ello, reducía la canción a una pequeña escena explicada. Esta versión no narra quién mira a Maeve, quién no la mira, ni qué relación existe: la canción se traduce como una sensación de atracción suspendida, presencia y gravedad visual.
+
+> **Metáfora central:** las plumas no caen hacia Maeve; orbitan a su alrededor. Ella nunca intenta atraparlas. La habitación parece mirar, pero está vacía.
+
+Maeve aparece sola en un salón antiguo de escala íntima: paredes de verde petróleo oscuro, terciopelo vino, molduras doradas opacas, un espejo alto y una sola lámpara cálida. Es una **locación editorial temporal**, no un lugar nuevo de canon. Se preservan el rostro, cabello, silueta y vestuario identificable de Maeve mediante referencias de identidad; la puesta la vuelve elegante y magnética por luz, tela, plumas, postura y mirada, no por desnudez, poses sexuales, enfoque corporal o contacto. Kael no aparece: la pieza es un retrato de Maeve, no una historia de pareja.
+
+| Beat | Imagen / movimiento | Transición cinematográfica | Función metafórica |
+|---:|---|---|---|
+| 0–3 s | Oscuridad azul. Un haz de luz revela a Maeve de perfil; una pluma blanca asciende lentamente junto a ella. Ella gira apenas la mirada hacia cámara, sin sonreír. | Entrada por fade desde negro, con movimiento lento de cámara hacia ella. | La presencia se instala antes de que exista acción. |
+| 3–6 s | Maeve cruza el salón y roza una cortina de terciopelo; detrás de la tela pasan sombras de plumas, no siluetas humanas. | La cortina llena el cuadro y oculta el corte. | La atención es ambiente, no personajes que la reclaman. |
+| 6–10 s | Frente al espejo alto, su reflejo no aparece al instante: primero se ven plumas girando, luego su rostro en el cristal con luz ámbar. | La pluma más cercana cubre brevemente la lente y cambia la paleta azul a ámbar. | La mirada importante no viene de fuera; el espejo devuelve su propio centro. |
+| 10–15 s | Maeve permanece quieta mientras las plumas forman una órbita amplia. Ella abre la mano; una se posa y las demás se apagan como puntos de luz. Corte seco antes de que salga de cuadro. | Rack focus de la pluma en mano al rostro; corte final al beat. | No pide ser elegida: decide qué atención conserva. |
+
+### Lenguaje de dirección y límites
+
+La cámara no observa a Maeve como objeto: trabaja retrato, no voyeurismo. Los planos prioritarios son rostro, silueta completa, manos y reflejo, con espacio negativo y profundidad de escenario. Se permiten gestos contenidos —giro, respiración, mano sobre cortina, mirada a espejo— y movimiento leve de tela/plumas. Se prohíben desnudez, ropa transparente, énfasis anatómico, baile sugerente, contacto sexual, terceros identificables, alcohol, texto explicativo y una moraleja verbal.
+
+La paleta evoluciona de azul petróleo a ámbar y rojo vino; el movimiento parte de la inmovilidad y se vuelve orbital, no frenético. El clip debe conservar la animación 2D digital pictórica existente de USM, con grano de película muy sutil añadido en edición, sin copiar diseños, planos o arte de referencias externas. El punto de corte musical se elige por ascenso y liberación de textura, no por una frase literal de la letra.
+
+### Puntuación y decisión de producción
+
+El fashion film obtiene **8.65/10 — PASS** en la rúbrica: relatability 8.5, emoción 9.0, gancho de compartido 9.0, giro moderno 7.5, voz de personaje 7.5 y encaje horario 10.0. La voz recibe cautela porque Maeve aún tiene menos territorio expresivo documentado que personajes del Primer Círculo; por ello, el tratamiento prescinde de diálogo y no afirma una nueva regla de personalidad.
+
+El estado permanece `REVIEW`. Antes de crear keyframe o clips, Fernando debe aprobar la metáfora, el rango de 14–15 segundos y la paleta; después se verifica que `Crave You` aparezca de forma nativa en las cuatro plataformas. El máster se exporta sin música incrustada y no se publica ningún contenido sin aprobación formal. [6] [7] [8]
+
+### Coherencia documental requerida
+
+El backlog se ajustó a este fashion film como candidata vigente. Si Fernando lo aprueba, crear un paquete de producción independiente con referencias visuales autorizadas, storyboard, tramo confirmado de audio y prompts por clip; actualizar después el calendario `GrowthOS/05_XX`, el registro maestro `GrowthOS/07_00_Registro_Maestro_Reels.md` y el estado de pausa de Wilfred.
 
 ### Contingencia
 
