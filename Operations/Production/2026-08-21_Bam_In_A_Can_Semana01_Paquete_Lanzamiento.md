@@ -4,7 +4,7 @@ purpose: "Organizar el primer bloque de cuatro piezas originales de Bam in a Can
 status: "Draft — preproducción; ninguna pieza de la semana está publicada"
 created: 2026-08-21
 updated: 2026-08-21
-version: "1.3"
+version: "1.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_Plan_Lanzamiento_Audiencia_Bam_In_A_Can.md"
@@ -31,7 +31,7 @@ No se asignan todavía fechas ni horas. Se publica únicamente cuando los cuatro
 | 1 | `CAN-001` | CAN FOUND | Manifiesto: algo vivo dentro de la lata. | Corte final recibido; pendiente selección de audio nativo para TikTok/Instagram y publicación. |
 | 2 | `CAN-002` | CAN FAKE TRAILER | Demostrar que Bam también fabrica productos de archivo que nunca debieron existir. | Render generado; requiere corte antes de que aparezcan código de barras/números al final. No regenerar aún. |
 | 3 | `CAN-003` | CAN FOUND | Mostrar que la anomalía puede ocurrir fuera de la lata, manteniendo una sola regla visual imposible. | Montaje cinematográfico de 10 s aprobado para edición: moneda, mecanismos, abolladuras desde dentro y espirales vacíos. |
-| 4 | `CAN-004` | CAN MEME | Abrir una vía más ligera y compartible sin abandonar la estética extraña. | Render base aprobado para edición; la proliferación de ventanas debe construirse manualmente sobre la pantalla CRT. |
+| 4 | `CAN-004` | CAN MEME | Abrir una vía más ligera y compartible sin abandonar la estética extraña. | Composición `v1` renderizada y lista para revisión: progresión de 1→4→7 paneles, cursor, parpadeo y corte negro. |
 
 ## 3. Sistema técnico común
 
@@ -187,6 +187,8 @@ Audio only: empty laundromat hum, a quiet compressor, one very soft muffled exha
 | 00:05.2–00:06.0 | Flecha/cursor manual intenta cerrar un panel; las siete miniaturas parpadean una vez y se corta a negro. |
 
 No distorsionar las copias fuera del borde curvo del CRT. El efecto debe sentirse como una interfaz imposible, no como una captura real de Windows/macOS. Los clics de mouse y el chirp pueden añadirse en edición; el hum del render se conserva bajo ellos.
+
+**Asset compuesto (21 Ago):** `Bam_In_A_Can_CAN004_A_Normal_Amount_of_Internet_v1.mp4`. La versión se construyó de forma no destructiva sobre el render original: un plano amplio inicial preservado, seguido por una placa frontal del CRT con una miniatura de lata, cuatro paneles, siete paneles, cursor, flash y corte a negro. La revisión técnica confirmó que todos los paneles permanecen dentro del monitor, no contienen texto legible y ejecutan la progresión de meme requerida. Estado: **READY_TO_REVIEW**.
 
 **Guion de 6 s:**
 
