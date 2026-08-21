@@ -14,6 +14,8 @@ related_documents:
   - "Operations/Research/2026-08-20_Expansion_Celdas_Comparables_Candidatos.csv"
   - "Operations/Research/2026-08-20_Propuesta_Expansion_Celdas_Comparables.md"
   - "Operations/Production/2026-08-20_Wave1_Signal_Experiment_Design.csv"
+  - "Operations/Research/2026-08-20_Ajuste_Experimentos_Calendario_17_30.md"
+  - "Operations/Research/2026-08-20_Overlay_Wave1_Calendario_17_30.csv"
   - "Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md"
 organization: "Operations/Production"
 ---
@@ -133,7 +135,7 @@ Al cerrar las 15 piezas, se realiza el veredicto preliminar por familia. Solo la
 
 ## Estado
 
-Este documento queda en `Review`. No autoriza programación, publicación, modificación del calendario, adjuntar productos afiliados ni alterar P0. La siguiente acción requiere aprobación humana de la arquitectura de `Wave_1_Signal` y de las 15 asignaciones concretas. La matriz inicial se encuentra en `Operations/Production/2026-08-20_Wave1_Signal_Experiment_Design.csv`; todos los assets, fechas y aprobaciones permanecen en `TBD`/`Pending`.
+Este documento queda en `Review`. No autoriza programación, publicación, modificación del calendario, adjuntar productos afiliados ni alterar P0. La arquitectura se integra sobre el calendario existente mediante el overlay `Operations/Research/2026-08-20_Overlay_Wave1_Calendario_17_30.csv`; no se crea una programación paralela. La matriz conceptual `Operations/Production/2026-08-20_Wave1_Signal_Experiment_Design.csv` sigue siendo la referencia de diseño, mientras los assets, fechas y aprobaciones concretas permanecen en `TBD`/`Pending`.
 
 ## Referencias
 

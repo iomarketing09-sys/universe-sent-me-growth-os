@@ -1,0 +1,309 @@
+{
+  "source": "Operations/Research/2026-08-16_Calendario_Operativo_17_30_Agosto.csv",
+  "rows_read": 74,
+  "clean_rows": 74,
+  "issues": [],
+  "type_counts": {
+    "Reuse_Top": 36,
+    "Nueva": 35,
+    "Reuse_Reserve": 3
+  },
+  "alignment_counts": {
+    "REUSE_NOT_EXPERIMENTAL": 39,
+    "FAM-03_CONVERSACION_RELACIONAL": 10,
+    "FAM-04_ACIDO_INTERPERSONAL": 6,
+    "UNCLASSIFIED_NEW": 6,
+    "FAM-05_PERSONAJE_MARCADOR": 12,
+    "FAM-02_RELATABLE_SOCIAL": 1
+  },
+  "caption_counts": {
+    "Emoji_Minimo": 23,
+    "Secuencia_Emojis_Kit_USM": 46,
+    "Frase_Corta": 5
+  },
+  "experiment_ids": {
+    "EXP-2026-08-CAL-01": 74
+  },
+  "dates": {
+    "2026-08-17": {
+      "slots": 6,
+      "types": {
+        "Reuse_Top": 2,
+        "Nueva": 4
+      },
+      "families": {
+        "REUSE_NOT_EXPERIMENTAL": 2,
+        "FAM-03_CONVERSACION_RELACIONAL": 1,
+        "FAM-04_ACIDO_INTERPERSONAL": 3
+      },
+      "hours": [
+        "10:00",
+        "11:00",
+        "13:30",
+        "16:00",
+        "17:00",
+        "19:00"
+      ]
+    },
+    "2026-08-18": {
+      "slots": 6,
+      "types": {
+        "Reuse_Top": 3,
+        "Nueva": 3
+      },
+      "families": {
+        "REUSE_NOT_EXPERIMENTAL": 3,
+        "UNCLASSIFIED_NEW": 1,
+        "FAM-05_PERSONAJE_MARCADOR": 1,
+        "FAM-03_CONVERSACION_RELACIONAL": 1
+      },
+      "hours": [
+        "10:00",
+        "11:00",
+        "13:30",
+        "16:00",
+        "17:00",
+        "19:00"
+      ]
+    },
+    "2026-08-19": {
+      "slots": 6,
+      "types": {
+        "Reuse_Top": 3,
+        "Nueva": 3
+      },
+      "families": {
+        "REUSE_NOT_EXPERIMENTAL": 3,
+        "FAM-05_PERSONAJE_MARCADOR": 2,
+        "FAM-03_CONVERSACION_RELACIONAL": 1
+      },
+      "hours": [
+        "10:00",
+        "11:00",
+        "13:30",
+        "16:00",
+        "17:00",
+        "19:00"
+      ]
+    },
+    "2026-08-20": {
+      "slots": 6,
+      "types": {
+        "Reuse_Top": 3,
+        "Nueva": 3
+      },
+      "families": {
+        "REUSE_NOT_EXPERIMENTAL": 3,
+        "FAM-05_PERSONAJE_MARCADOR": 1,
+        "FAM-04_ACIDO_INTERPERSONAL": 1,
+        "FAM-03_CONVERSACION_RELACIONAL": 1
+      },
+      "hours": [
+        "10:00",
+        "11:00",
+        "13:30",
+        "16:00",
+        "17:00",
+        "19:00"
+      ]
+    },
+    "2026-08-21": {
+      "slots": 4,
+      "types": {
+        "Reuse_Top": 3,
+        "Nueva": 1
+      },
+      "families": {
+        "REUSE_NOT_EXPERIMENTAL": 3,
+        "FAM-03_CONVERSACION_RELACIONAL": 1
+      },
+      "hours": [
+        "10:00",
+        "11:00",
+        "13:30",
+        "19:00"
+      ]
+    },
+    "2026-08-22": {
+      "slots": 4,
+      "types": {
+        "Nueva": 2,
+        "Reuse_Top": 2
+      },
+      "families": {
+        "FAM-02_RELATABLE_SOCIAL": 1,
+        "REUSE_NOT_EXPERIMENTAL": 2,
+        "UNCLASSIFIED_NEW": 1
+      },
+      "hours": [
+        "10:00",
+        "11:00",
+        "13:30",
+        "19:00"
+      ]
+    },
+    "2026-08-23": {
+      "slots": 5,
+      "types": {
+        "Nueva": 2,
+        "Reuse_Top": 3
+      },
+      "families": {
+        "FAM-05_PERSONAJE_MARCADOR": 2,
+        "REUSE_NOT_EXPERIMENTAL": 3
+      },
+      "hours": [
+        "10:00",
+        "13:30",
+        "16:00",
+        "19:00",
+        "22:00"
+      ]
+    },
+    "2026-08-24": {
+      "slots": 6,
+      "types": {
+        "Nueva": 3,
+        "Reuse_Top": 3
+      },
+      "families": {
+        "UNCLASSIFIED_NEW": 2,
+        "REUSE_NOT_EXPERIMENTAL": 3,
+        "FAM-03_CONVERSACION_RELACIONAL": 1
+      },
+      "hours": [
+        "10:00",
+        "11:00",
+        "13:30",
+        "16:00",
+        "17:00",
+        "19:00"
+      ]
+    },
+    "2026-08-25": {
+      "slots": 6,
+      "types": {
+        "Nueva": 3,
+        "Reuse_Top": 3
+      },
+      "families": {
+        "UNCLASSIFIED_NEW": 1,
+        "REUSE_NOT_EXPERIMENTAL": 3,
+        "FAM-03_CONVERSACION_RELACIONAL": 1,
+        "FAM-05_PERSONAJE_MARCADOR": 1
+      },
+      "hours": [
+        "10:00",
+        "11:00",
+        "13:30",
+        "16:00",
+        "17:00",
+        "19:00"
+      ]
+    },
+    "2026-08-26": {
+      "slots": 6,
+      "types": {
+        "Reuse_Top": 3,
+        "Nueva": 3
+      },
+      "families": {
+        "REUSE_NOT_EXPERIMENTAL": 3,
+        "FAM-04_ACIDO_INTERPERSONAL": 1,
+        "FAM-05_PERSONAJE_MARCADOR": 2
+      },
+      "hours": [
+        "10:00",
+        "11:00",
+        "13:30",
+        "16:00",
+        "17:00",
+        "19:00"
+      ]
+    },
+    "2026-08-27": {
+      "slots": 6,
+      "types": {
+        "Reuse_Reserve": 1,
+        "Nueva": 3,
+        "Reuse_Top": 2
+      },
+      "families": {
+        "REUSE_NOT_EXPERIMENTAL": 3,
+        "FAM-03_CONVERSACION_RELACIONAL": 1,
+        "FAM-04_ACIDO_INTERPERSONAL": 1,
+        "FAM-05_PERSONAJE_MARCADOR": 1
+      },
+      "hours": [
+        "10:00",
+        "11:00",
+        "13:30",
+        "16:00",
+        "17:00",
+        "19:00"
+      ]
+    },
+    "2026-08-28": {
+      "slots": 4,
+      "types": {
+        "Reuse_Top": 2,
+        "Reuse_Reserve": 1,
+        "Nueva": 1
+      },
+      "families": {
+        "REUSE_NOT_EXPERIMENTAL": 3,
+        "FAM-05_PERSONAJE_MARCADOR": 1
+      },
+      "hours": [
+        "10:00",
+        "11:00",
+        "13:30",
+        "19:00"
+      ]
+    },
+    "2026-08-29": {
+      "slots": 4,
+      "types": {
+        "Nueva": 2,
+        "Reuse_Top": 2
+      },
+      "families": {
+        "FAM-03_CONVERSACION_RELACIONAL": 1,
+        "REUSE_NOT_EXPERIMENTAL": 2,
+        "FAM-05_PERSONAJE_MARCADOR": 1
+      },
+      "hours": [
+        "10:00",
+        "11:00",
+        "13:30",
+        "19:00"
+      ]
+    },
+    "2026-08-30": {
+      "slots": 5,
+      "types": {
+        "Nueva": 2,
+        "Reuse_Top": 2,
+        "Reuse_Reserve": 1
+      },
+      "families": {
+        "FAM-03_CONVERSACION_RELACIONAL": 1,
+        "REUSE_NOT_EXPERIMENTAL": 3,
+        "UNCLASSIFIED_NEW": 1
+      },
+      "hours": [
+        "10:00",
+        "13:30",
+        "16:00",
+        "19:00",
+        "22:00"
+      ]
+    }
+  },
+  "guardrail_findings": {
+    "reuse_rows_must_not_enter_wave1": 39,
+    "new_rows_candidate_overlay": 35,
+    "all_rows_share_single_calendar_experiment": true,
+    "calendar_has_no_caption_treatment_field": true
+  }
+}
