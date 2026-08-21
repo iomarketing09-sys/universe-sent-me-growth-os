@@ -4,7 +4,7 @@ purpose: "Consolidar y registrar 35 assets nuevos, 36 reuse Top y 3 reuse Reserv
 status: Active
 created: 2026-08-16
 updated: 2026-08-16
-version: "1.4"
+version: "1.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-16_Revision_Visual_Asignacion_35_Memes_Nuevos.md"
@@ -20,9 +20,9 @@ organization: "Operations/Research"
 
 # Calendario operativo 17–30 de agosto
 
-> **Estado:** Active. Fernando aprobó la completación del calendario y los 74 slots quedaron programados y verificados en Facebook mediante Meta Graph API v26. Los 46 archivos del manifiesto fueron movidos manualmente y verificados en `08 Agosto` sin copias. Instagram permanece pendiente y no se modifica en este documento.
+> **Estado:** Active. El calendario conserva 74 slots y tres sustituciones aprobadas por Fernando para los experimentos comparables. Las tres filas fueron actualizadas en el CSV maestro con estado `Aprobado_Sustitucion_Pendiente_Meta`; todavía no se cancelaron programaciones existentes ni se ejecutó una nueva acción en Meta. Los 46 archivos del manifiesto fueron movidos manualmente y verificados en `08 Agosto` sin copias. Instagram permanece separado.
 
-La versión consolida **35 assets nuevos aprobados**, **36 reuse Top**, **3 reuse Reserve** y **74 slots asignados**, sin placeholders `PENDIENTE_GENERAR`. Los 35 nuevos conservan sus captions de secuencias de múltiples emojis; los 11 reuse incorporados usan captions aprobados con secuencias de emojis del kit USM. La proporción final es 35 nuevos y 39 reuse.
+La versión consolida **35 assets nuevos aprobados**, **36 reuse Top**, **3 reuse Reserve**, **74 slots asignados** y **3 sustituciones experimentales aprobadas documentalmente**. Las sustituciones no crean slots adicionales y permanecen pendientes de actualización en Meta. Los 35 nuevos conservan sus captions de secuencias de múltiples emojis; los 11 reuse incorporados usan captions aprobados con secuencias de emojis del kit USM. La proporción final es 35 nuevos y 39 reuse.
 
 ## Regla operativa de caption
 
@@ -34,7 +34,7 @@ El destino verificado es `08 Agosto`, folder ID `11nuEUoU2Or8uc0oxXLu7-k6LChk8zQ
 
 ## Siguiente control
 
-El movimiento de Drive está cerrado y verificado. El siguiente control es esperar la publicación real de Facebook, extraer las métricas 24/72 horas en lote y cerrar el ciclo de aprendizaje. Instagram permanece separado y requiere una decisión operativa independiente.
+El movimiento de Drive está cerrado y verificado. El siguiente control es confirmar captions finales, preparar el payload de sustitución y solicitar aprobación humana explícita para cancelar las tres programaciones existentes y programar/publicar las tres variantes en Facebook. Después se extraerán métricas 24/72 horas. Instagram, CNT, afiliados y reuse permanecen separados.
 
 ## Referencias
 

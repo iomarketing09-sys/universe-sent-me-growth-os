@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-21
-**Versión:** 2.54
+**Versión:** 2.55
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.55.00] — 2026-08-21 (Manus): Reemplazos de calendario aprobados y aplicados al CSV maestro.** Fernando aprobó los tres cambios: `2026-08-24 10:00` → `FUT-MICRO-006/HB-007`, `2026-08-24 13:30` → `FUT-MICRO-005/HB-006` y `2026-08-27 16:00` → `FUT-ACID-003/HB-009`. Las tres filas fueron actualizadas con `Aprobado_Sustitucion_Pendiente_Meta`; el staging registra `Meta_Action=Not_Executed`, `CNT_Status=Not_Created`, `Affiliate_Attachment=No` e Instagram separado. El siguiente gate es confirmar captions finales y solicitar autorización explícita para cancelar las tres programaciones existentes y programar/publicar en Facebook. No se modificó `Publication_Log`, `ExperimentLog`, CNT, reuse, afiliados, Instagram ni Meta.
 
 - **[2.54.00] — 2026-08-21 (Manus): Propuesta de sustitución de slots para los tres experimentos comparables.** Se creó `Operations/Research/2026-08-21_Propuesta_Calendario_Experimentos_Comparables.md` usando el calendario 17–30 como base, sin crear programación paralela. La propuesta sugiere sustituir `2026-08-24 13:30` por `FUT-MICRO-005`, `2026-08-24 10:00` por `FUT-MICRO-006` y `2026-08-27 16:00` por `FUT-ACID-003`. Estado `Review`: requiere aprobación humana de los tres reemplazos antes de modificar el calendario, programar en Meta o publicar. No se modificó calendario, `Publication_Log`, `ExperimentLog`, CNT, reuse, afiliados ni Instagram.
 
