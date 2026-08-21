@@ -55,4 +55,4 @@ La revisión visual preliminar confirma una mejora de identidad de Evan frente a
 
 ## Gate posterior
 
-Las tres v3 se registrarán como `Proposal_Review_Identity_V3` hasta revisión visual. No sustituyen las v2 automáticamente. La aprobación de generación no autoriza calendario, CNT, reuse, afiliados ni publicación.
+Las tres v3 quedan registradas como `Proposal_Not_Selected` hasta que Fernando elija entre original, v2 y v3. No sustituyen las v2 automáticamente. La aprobación de generación no autoriza calendario, CNT, reuse, afiliados ni publicación.
