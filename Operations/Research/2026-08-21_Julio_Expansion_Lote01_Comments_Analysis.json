@@ -1,0 +1,1015 @@
+{
+  "input_posts": 16,
+  "comments_total": 284,
+  "categories_total": {
+    "mention": 9,
+    "laughter_or_play": 57,
+    "identification": 28,
+    "question": 14,
+    "other": 189,
+    "social_tagging": 2
+  },
+  "per_post": [
+    {
+      "Meta_ID": "1036844829507460_122139232911072582",
+      "comments": 30,
+      "categories": {
+        "mention": 1,
+        "laughter_or_play": 8,
+        "identification": 8,
+        "question": 1,
+        "other": 16
+      },
+      "top_liked_comments": [
+        {
+          "id": "122139232911072582_4005383823103843",
+          "message": "Parece chiste pero es verdad 😂",
+          "labels": [
+            "laughter_or_play"
+          ],
+          "like_count": 5
+        },
+        {
+          "id": "122139232911072582_1045151035118773",
+          "message": "Asi mero!",
+          "labels": [
+            "other"
+          ],
+          "like_count": 2
+        },
+        {
+          "id": "122139232911072582_3391742890995821",
+          "message": "Impagable!! 🇺🇾🌸🌺💞",
+          "labels": [
+            "other"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122139232911072582_2308653919888514",
+          "message": "Calidad así es mejor",
+          "labels": [
+            "identification"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122139232911072582_1685917582695222",
+          "message": "Soy🤣",
+          "labels": [
+            "laughter_or_play",
+            "identification"
+          ],
+          "like_count": 1
+        }
+      ]
+    },
+    {
+      "Meta_ID": "1036844829507460_122135607981072582",
+      "comments": 15,
+      "categories": {
+        "other": 8,
+        "identification": 4,
+        "laughter_or_play": 2,
+        "question": 2
+      },
+      "top_liked_comments": [
+        {
+          "id": "122135607981072582_1911013589585915",
+          "message": "Si soy",
+          "labels": [
+            "identification"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122135607981072582_2648699705645604",
+          "message": "Tal cual 😸",
+          "labels": [
+            "other"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122135607981072582_1458320892982125",
+          "message": "Si soy!! ☺️",
+          "labels": [
+            "identification"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122135607981072582_1002897582720123",
+          "message": "Yo lo he tenido desde siempre jajaja",
+          "labels": [
+            "laughter_or_play",
+            "identification"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122135607981072582_1380864403945335",
+          "message": "¡y qué !        ☝🏽🤩",
+          "labels": [
+            "question"
+          ],
+          "like_count": 0
+        }
+      ]
+    },
+    {
+      "Meta_ID": "1036844829507460_122135586723072582",
+      "comments": 9,
+      "categories": {
+        "mention": 1,
+        "laughter_or_play": 5,
+        "other": 2,
+        "identification": 2,
+        "question": 1
+      },
+      "top_liked_comments": [
+        {
+          "id": "122135586723072582_999817826209030",
+          "message": "@seguidores Universe Sent Me",
+          "labels": [
+            "mention"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122135586723072582_1036793762021361",
+          "message": "🙋‍♀️",
+          "labels": [
+            "other"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122135586723072582_1720338886060699",
+          "message": "Total ya no te piensas ir ojete...🤣",
+          "labels": [
+            "laughter_or_play"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122135586723072582_1371032574953757",
+          "message": "",
+          "labels": [
+            "other"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122135586723072582_1074709831551189",
+          "message": "😂😂😂 dan ganas",
+          "labels": [
+            "laughter_or_play"
+          ],
+          "like_count": 0
+        }
+      ]
+    },
+    {
+      "Meta_ID": "1036844829507460_122141376093072582",
+      "comments": 40,
+      "categories": {
+        "mention": 1,
+        "identification": 3,
+        "other": 19,
+        "laughter_or_play": 19,
+        "question": 2
+      },
+      "top_liked_comments": [
+        {
+          "id": "122141376093072582_3568495176636243",
+          "message": "Obvio k tu eres el culpable !! Siempre la traes contra mi !! Upss",
+          "labels": [
+            "other"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122141376093072582_1015832888026306",
+          "message": "Yo diciendo que no se alinearon a mi favor Carlos A. Culebro 🤣",
+          "labels": [
+            "laughter_or_play",
+            "identification"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122141376093072582_2555536918237985",
+          "message": "JAJAJAJAJA",
+          "labels": [
+            "laughter_or_play"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122141376093072582_1364039425315682",
+          "message": "Jll Jessie",
+          "labels": [
+            "other"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122141376093072582_1048664544172912",
+          "message": "@fansdestacados",
+          "labels": [
+            "mention"
+          ],
+          "like_count": 0
+        }
+      ]
+    },
+    {
+      "Meta_ID": "1036844829507460_122135016567072582",
+      "comments": 10,
+      "categories": {
+        "mention": 1,
+        "laughter_or_play": 3,
+        "other": 3,
+        "question": 1,
+        "identification": 2
+      },
+      "top_liked_comments": [
+        {
+          "id": "122135016567072582_2895778684097392",
+          "message": "@seguidores Universe Sent Me",
+          "labels": [
+            "mention"
+          ],
+          "like_count": 2
+        },
+        {
+          "id": "122135016567072582_1722531605444753",
+          "message": "Antes no dijo que se compraba un melón XD jajajaja 🤣🤣🤣",
+          "labels": [
+            "laughter_or_play"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122135016567072582_1782896419756017",
+          "message": "Tomas agua, inhalas 2, retienes 4 y exhalas 6...😇🌀",
+          "labels": [
+            "other"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122135016567072582_880615711309773",
+          "message": "Eso es ser pansexual jajajaajajjaaj",
+          "labels": [
+            "laughter_or_play"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122135016567072582_1062418846344594",
+          "message": "Cuál debe ser 😎😎😎",
+          "labels": [
+            "other"
+          ],
+          "like_count": 0
+        }
+      ]
+    },
+    {
+      "Meta_ID": "1036844829507460_122139161997072582",
+      "comments": 7,
+      "categories": {
+        "other": 7
+      },
+      "top_liked_comments": [
+        {
+          "id": "122139161997072582_2650338635360867",
+          "message": "Ivan Lopez ❤️😘",
+          "labels": [
+            "other"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122139161997072582_1600375534869199",
+          "message": "Sii, que ganotas😁",
+          "labels": [
+            "other"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122139161997072582_1357046265752699",
+          "message": "",
+          "labels": [
+            "other"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122139161997072582_1050705937446767",
+          "message": "😵‍💫😵‍💫😵‍💫DIOS!!!",
+          "labels": [
+            "other"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122139161997072582_1743755123296126",
+          "message": "Ahuevo",
+          "labels": [
+            "other"
+          ],
+          "like_count": 0
+        }
+      ]
+    },
+    {
+      "Meta_ID": "1036844829507460_122140439079072582",
+      "comments": 12,
+      "categories": {
+        "mention": 1,
+        "other": 8,
+        "laughter_or_play": 1,
+        "identification": 2
+      },
+      "top_liked_comments": [
+        {
+          "id": "122140439079072582_1806818817341281",
+          "message": "@seguidores Universe Sent Me",
+          "labels": [
+            "mention"
+          ],
+          "like_count": 2
+        },
+        {
+          "id": "122140439079072582_1551940286475014",
+          "message": "Solo eres un holograma 😀nada es Real 😘✨",
+          "labels": [
+            "other"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122140439079072582_1918916075455545",
+          "message": "🫣🤭🤭",
+          "labels": [
+            "other"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122140439079072582_1942836149709915",
+          "message": "Y pensar que todo esté tiempo pensé que era un humano 🤣",
+          "labels": [
+            "laughter_or_play"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122140439079072582_1352661689669249",
+          "message": "🤭😒😊asi es",
+          "labels": [
+            "other"
+          ],
+          "like_count": 0
+        }
+      ]
+    },
+    {
+      "Meta_ID": "1036844829507460_122140751031072582",
+      "comments": 6,
+      "categories": {
+        "question": 1,
+        "other": 4,
+        "identification": 1
+      },
+      "top_liked_comments": [
+        {
+          "id": "122140751031072582_1299206165381641",
+          "message": "No sabía, son buenos datos",
+          "labels": [
+            "other"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122140751031072582_1546081423592193",
+          "message": "A muchos nos amenazan vía   telepatía y se puso a entrenar eso le dió fama ok no?",
+          "labels": [
+            "question"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122140751031072582_1440343001476586",
+          "message": "A partir de ahora, me gusta mucho más 😃",
+          "labels": [
+            "other"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122140751031072582_1803462587731399",
+          "message": "Yo de chikita amaba sus películas 🤭🤭",
+          "labels": [
+            "identification"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122140751031072582_1719196806038217",
+          "message": "Eso es excelente..",
+          "labels": [
+            "other"
+          ],
+          "like_count": 0
+        }
+      ]
+    },
+    {
+      "Meta_ID": "1036844829507460_122138831577072582",
+      "comments": 16,
+      "categories": {
+        "mention": 1,
+        "other": 11,
+        "laughter_or_play": 3,
+        "question": 1
+      },
+      "top_liked_comments": [
+        {
+          "id": "122138831577072582_886797053990141",
+          "message": "Yessi Jons aceptas? ❤️",
+          "labels": [
+            "question"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122138831577072582_1013111214918451",
+          "message": "Israel Pereyra ✨",
+          "labels": [
+            "other"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122138831577072582_2297100110822947",
+          "message": "Paula Hernández ❤️",
+          "labels": [
+            "other"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122138831577072582_1353671303388439",
+          "message": "Aless Gavilanez ♥️🥺",
+          "labels": [
+            "other"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122138831577072582_1020035604111489",
+          "message": "@seguidores Universe Sent Me",
+          "labels": [
+            "mention"
+          ],
+          "like_count": 0
+        }
+      ]
+    },
+    {
+      "Meta_ID": "1036844829507460_122138846193072582",
+      "comments": 15,
+      "categories": {
+        "laughter_or_play": 4,
+        "other": 10,
+        "question": 1
+      },
+      "top_liked_comments": [
+        {
+          "id": "122138846193072582_1355423752616781",
+          "message": "Eso se acabará hasta que uno de los dos géneros tenga un cambio radical y se de cuenta que sin uno el otro no sobrevive o perfección en la tecnología reproductiva y la implanten en robots",
+          "labels": [
+            "other"
+          ],
+          "like_count": 2
+        },
+        {
+          "id": "122138846193072582_1328178739472301",
+          "message": "ya me acordé,porque estoy soltera jajaja",
+          "labels": [
+            "laughter_or_play"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122138846193072582_1063644613008991",
+          "message": "",
+          "labels": [
+            "other"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122138846193072582_1674824927141242",
+          "message": "Jackeline Trinidad 🤭",
+          "labels": [
+            "other"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122138846193072582_2075080853116306",
+          "message": "Nel apenas saliendo de eso.aguanto unos 4 años jajsjj",
+          "labels": [
+            "laughter_or_play"
+          ],
+          "like_count": 0
+        }
+      ]
+    },
+    {
+      "Meta_ID": "1036844829507460_122136954147072582",
+      "comments": 8,
+      "categories": {
+        "laughter_or_play": 4,
+        "question": 2,
+        "other": 2
+      },
+      "top_liked_comments": [
+        {
+          "id": "122136954147072582_3988990201402405",
+          "message": "Eder Ruiz ya te voy anexar jajaja",
+          "labels": [
+            "laughter_or_play"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122136954147072582_2076739769885654",
+          "message": "Eres tú Olaf? Te pasas de veras mira como me la dejaste cabron.",
+          "labels": [
+            "question"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122136954147072582_1747451796261564",
+          "message": "Y la imagen sin texto",
+          "labels": [
+            "other"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122136954147072582_1484409683704072",
+          "message": "JuLy XaYide RiVas Adael Vallejo nosotros 😂😂",
+          "labels": [
+            "laughter_or_play"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122136954147072582_1547432900292771",
+          "message": "No se xq pero llego a mi x algo jsjajsjsj",
+          "labels": [
+            "laughter_or_play"
+          ],
+          "like_count": 0
+        }
+      ]
+    },
+    {
+      "Meta_ID": "1036844829507460_122137968789072582",
+      "comments": 7,
+      "categories": {
+        "mention": 1,
+        "other": 6
+      },
+      "top_liked_comments": [
+        {
+          "id": "122137968789072582_1562755522184819",
+          "message": "@seguidores Universe Sent Me",
+          "labels": [
+            "mention"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122137968789072582_1021546660860861",
+          "message": "I si🫤🫤🫤",
+          "labels": [
+            "other"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122137968789072582_1745791119931123",
+          "message": "Jenny Cobos Mendoza es la única forma",
+          "labels": [
+            "other"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122137968789072582_1394814179375221",
+          "message": "",
+          "labels": [
+            "other"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122137968789072582_1158743373998086",
+          "message": "Elizabeth Sev",
+          "labels": [
+            "other"
+          ],
+          "like_count": 0
+        }
+      ]
+    },
+    {
+      "Meta_ID": "1036844829507460_122142625983072582",
+      "comments": 12,
+      "categories": {
+        "other": 12
+      },
+      "top_liked_comments": [
+        {
+          "id": "122142625983072582_2065781387658247",
+          "message": "Norberto Cruz  ocupó baby 🥰",
+          "labels": [
+            "other"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122142625983072582_1594831628841077",
+          "message": "Victor Manuel Garcia 🥰🫠✨",
+          "labels": [
+            "other"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122142625983072582_1379689774126541",
+          "message": "Icar",
+          "labels": [
+            "other"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122142625983072582_2004545110176551",
+          "message": "Arturo MorSal",
+          "labels": [
+            "other"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122142625983072582_2001627774560446",
+          "message": "Erick Alx Alvarado",
+          "labels": [
+            "other"
+          ],
+          "like_count": 1
+        }
+      ]
+    },
+    {
+      "Meta_ID": "1036844829507460_122143527921072582",
+      "comments": 14,
+      "categories": {
+        "mention": 1,
+        "laughter_or_play": 5,
+        "question": 1,
+        "identification": 1,
+        "other": 8
+      },
+      "top_liked_comments": [
+        {
+          "id": "122143527921072582_1352622873520284",
+          "message": "Ya asi nos llevamos vez Adita andas bien agresiva 😂😂😂😍🥰",
+          "labels": [
+            "laughter_or_play"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122143527921072582_1598176238481996",
+          "message": "La verdad te ara libre!!!❤️🦋☀️",
+          "labels": [
+            "other"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122143527921072582_4416477865267431",
+          "message": "@seguidores Universe Sent Me",
+          "labels": [
+            "mention"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122143527921072582_1066913935764679",
+          "message": "Jajajaja crees?",
+          "labels": [
+            "question",
+            "laughter_or_play"
+          ],
+          "like_count": 0
+        },
+        {
+          "id": "122143527921072582_2958015227876435",
+          "message": "Backnow Akm 🤭🤭🤣...eres  mi hada🤣",
+          "labels": [
+            "laughter_or_play"
+          ],
+          "like_count": 0
+        }
+      ]
+    },
+    {
+      "Meta_ID": "1036844829507460_122135577327072582",
+      "comments": 13,
+      "categories": {
+        "other": 8,
+        "question": 1,
+        "social_tagging": 2,
+        "identification": 3
+      },
+      "top_liked_comments": [
+        {
+          "id": "122135577327072582_973702925705089",
+          "message": "Es tan difícil porque cuando uno abraza entrega todo pero cuando nos abrazan se siente tan vacío,tan hueco,tan simple...",
+          "labels": [
+            "other"
+          ],
+          "like_count": 3
+        },
+        {
+          "id": "122135577327072582_995053623516663",
+          "message": "Estoy empezando a mandar las invitaciones pero creo que la fiesta será sin invitados. Nomas yo, mi bocina y unas chelas.",
+          "labels": [
+            "identification"
+          ],
+          "like_count": 2
+        },
+        {
+          "id": "122135577327072582_2035910930360050",
+          "message": "Como lo comparto sin compartir 😭😭😭",
+          "labels": [
+            "question",
+            "social_tagging"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122135577327072582_1343709937965312",
+          "message": "Claro que sii ahi estaré. .para decirte\nQue eres especial y único ..te abrazaré y será tan fuerte q te voy a trasmitir todo mi cariño y amor. \nY te voy a decir al oído ..mereces ser feliz y vas a lograr tus sueños .. confía,lo mejor está por llegar.",
+          "labels": [
+            "other"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122135577327072582_2547099199036431",
+          "message": "Si soy mañana 🥲",
+          "labels": [
+            "identification"
+          ],
+          "like_count": 1
+        }
+      ]
+    },
+    {
+      "Meta_ID": "1036844829507460_122136562323072582",
+      "comments": 70,
+      "categories": {
+        "mention": 1,
+        "other": 65,
+        "laughter_or_play": 3,
+        "identification": 2
+      },
+      "top_liked_comments": [
+        {
+          "id": "122136562323072582_1327166122902646",
+          "message": "Adelante, juzguen!!",
+          "labels": [
+            "other"
+          ],
+          "like_count": 3
+        },
+        {
+          "id": "122136562323072582_1369030518442441",
+          "message": "Espero les guste el fut! 😅",
+          "labels": [
+            "laughter_or_play"
+          ],
+          "like_count": 2
+        },
+        {
+          "id": "122136562323072582_2089028075044026",
+          "message": "",
+          "labels": [
+            "other"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122136562323072582_2221269625392041",
+          "message": "🤭🫣",
+          "labels": [
+            "other"
+          ],
+          "like_count": 1
+        },
+        {
+          "id": "122136562323072582_2189291064949764",
+          "message": "",
+          "labels": [
+            "other"
+          ],
+          "like_count": 1
+        }
+      ]
+    }
+  ],
+  "top_social_comments": [
+    {
+      "Meta_ID": "1036844829507460_122135577327072582",
+      "message": "Estoy empezando a mandar las invitaciones pero creo que la fiesta será sin invitados. Nomas yo, mi bocina y unas chelas.",
+      "labels": [
+        "identification"
+      ],
+      "like_count": 2
+    },
+    {
+      "Meta_ID": "1036844829507460_122139232911072582",
+      "message": "Calidad así es mejor",
+      "labels": [
+        "identification"
+      ],
+      "like_count": 1
+    },
+    {
+      "Meta_ID": "1036844829507460_122139232911072582",
+      "message": "Soy🤣",
+      "labels": [
+        "laughter_or_play",
+        "identification"
+      ],
+      "like_count": 1
+    },
+    {
+      "Meta_ID": "1036844829507460_122139232911072582",
+      "message": "Si soy!!",
+      "labels": [
+        "identification"
+      ],
+      "like_count": 1
+    },
+    {
+      "Meta_ID": "1036844829507460_122135607981072582",
+      "message": "Si soy",
+      "labels": [
+        "identification"
+      ],
+      "like_count": 1
+    },
+    {
+      "Meta_ID": "1036844829507460_122141376093072582",
+      "message": "Yo diciendo que no se alinearon a mi favor Carlos A. Culebro 🤣",
+      "labels": [
+        "laughter_or_play",
+        "identification"
+      ],
+      "like_count": 1
+    },
+    {
+      "Meta_ID": "1036844829507460_122138831577072582",
+      "message": "Yessi Jons aceptas? ❤️",
+      "labels": [
+        "question"
+      ],
+      "like_count": 1
+    },
+    {
+      "Meta_ID": "1036844829507460_122135577327072582",
+      "message": "Como lo comparto sin compartir 😭😭😭",
+      "labels": [
+        "question",
+        "social_tagging"
+      ],
+      "like_count": 1
+    },
+    {
+      "Meta_ID": "1036844829507460_122135577327072582",
+      "message": "Si soy mañana 🥲",
+      "labels": [
+        "identification"
+      ],
+      "like_count": 1
+    },
+    {
+      "Meta_ID": "1036844829507460_122135577327072582",
+      "message": "Tengo ganas de una fiesta así ahorita 🥹😭",
+      "labels": [
+        "identification"
+      ],
+      "like_count": 1
+    },
+    {
+      "Meta_ID": "1036844829507460_122135577327072582",
+      "message": "Es lo más deprimente que he leído últimamente y lamentablemente es la situación de muchas personas a lo mejor hasta de mi.\nPero siempre hay una lucha dentro de mi, esa parte que quiere compañía y la otra que no soporta a la gente.",
+      "labels": [
+        "social_tagging"
+      ],
+      "like_count": 1
+    },
+    {
+      "Meta_ID": "1036844829507460_122139232911072582",
+      "message": "Pensé que solo yo 😅😂🤭",
+      "labels": [
+        "laughter_or_play",
+        "identification"
+      ],
+      "like_count": 0
+    },
+    {
+      "Meta_ID": "1036844829507460_122139232911072582",
+      "message": "Idéntica, me estás vigilando????🤣🤣🤣🤣",
+      "labels": [
+        "question",
+        "laughter_or_play"
+      ],
+      "like_count": 0
+    },
+    {
+      "Meta_ID": "1036844829507460_122139232911072582",
+      "message": "Si soy ☺️",
+      "labels": [
+        "identification"
+      ],
+      "like_count": 0
+    },
+    {
+      "Meta_ID": "1036844829507460_122139232911072582",
+      "message": "Yo",
+      "labels": [
+        "identification"
+      ],
+      "like_count": 0
+    },
+    {
+      "Meta_ID": "1036844829507460_122139232911072582",
+      "message": "David Ramirez yo mera con 500 inciensos 😅",
+      "labels": [
+        "laughter_or_play",
+        "identification"
+      ],
+      "like_count": 0
+    },
+    {
+      "Meta_ID": "1036844829507460_122139232911072582",
+      "message": "Es mejor así ...",
+      "labels": [
+        "identification"
+      ],
+      "like_count": 0
+    },
+    {
+      "Meta_ID": "1036844829507460_122135607981072582",
+      "message": "Si soy!! ☺️",
+      "labels": [
+        "identification"
+      ],
+      "like_count": 0
+    },
+    {
+      "Meta_ID": "1036844829507460_122135607981072582",
+      "message": "Yo lo he tenido desde siempre jajaja",
+      "labels": [
+        "laughter_or_play",
+        "identification"
+      ],
+      "like_count": 0
+    },
+    {
+      "Meta_ID": "1036844829507460_122135607981072582",
+      "message": "¡y qué !        ☝🏽🤩",
+      "labels": [
+        "question"
+      ],
+      "like_count": 0
+    }
+  ],
+  "decision": "Only extract deeper comment threads for posts whose comments add a concrete community-learning question; do not process all 16 as a moderation queue."
+}

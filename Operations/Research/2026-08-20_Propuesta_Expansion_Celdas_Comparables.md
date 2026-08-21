@@ -3,8 +3,8 @@ title: "Propuesta de expansión — celdas comparables de narrativa y humor"
 purpose: "Diseñar el siguiente lote de análisis del Growth OS para completar cinco celdas comparables y registrar por separado los tratamientos de caption."
 status: Review
 created: 2026-08-20
-updated: 2026-08-20
-version: "1.0"
+updated: 2026-08-21
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-20_Expansion_Celdas_Comparables_Candidatos.csv"
@@ -39,11 +39,12 @@ La regla de muestra queda separada en dos niveles. Una celda alcanza una **seña
 
 | Celda | Casos comparables actuales | Candidatos para revisión | No contar todavía | Faltan para señal `n=3` | Faltan para veredicto `n=5` |
 |---|---:|---:|---:|---:|---:|
-| Microhistoria secuencial | 1 | 0 | 2 borderlines | 2 | 4 |
+| Microhistoria estricta de tres paneles | 1 | 0 | 2 borderlines | 2 | 4 |
+| Microhistoria secuencial — dos paneles | 3 | 0 | 0 | 0 | 2 |
 | Transformación visual | 2 | 0 | 0 | 1 | 3 |
-| Humor observacional | 3 | 1 | 0 | 0 | 2 |
+| Humor observacional | 3 | 2 | 0 | 0 | 2 |
 | Diálogo ácido | 2 | 0 | 2 borderlines | 1 | 3 |
-| Autodesprecio / antihéroe | 2 | 1 | 0 | 1 | 3 |
+| Autodesprecio / antihéroe | 3 | 2 | 0 | 0 | 2 |
 
 Los conteos anteriores son deliberadamente conservadores. Un candidato no se incorpora solo porque tenga muchas interacciones: debe existir evidencia visual y una justificación funcional. Los outliers se conservan dentro de la muestra, pero se reportan también con análisis de sensibilidad para que no se conviertan en benchmark normal.
 
@@ -106,7 +107,7 @@ El informe completo y la matriz de ronda 2 están en `Operations/Research/2026-0
 
 ## 8. Estado recomendado
 
-La propuesta sigue en `Review`. El corte visual 01 promovió `2607787` a diálogo ácido comparable y `2607816` a observacional comparable; añadió `2607828`/Meta ID `1036844829507460_122134169481072582` como candidato de autopercepción/antihéroe y excluyó Silvio y ansiedad relacional de esa celda. La ronda 2 añadió dos casos de microhistoria de dos paneles como subcelda separada y dejó Ganso-vestuario como candidato independiente. Se conserva la discrepancia de asset ref. No autoriza publicación, creación de CNT, modificación de calendario ni reuse. La siguiente acción es diseñar casos comparables futuros si no aparece más evidencia histórica, registrando los tres tratamientos de caption antes de publicar.
+La propuesta sigue en `Review`. El corte visual 01 promovió `2607787` a diálogo ácido comparable y `2607816` a observacional comparable; añadió `2607828`/Meta ID `1036844829507460_122134169481072582` como candidato de autopercepción/antihéroe y excluyó Silvio y ansiedad relacional de esa celda. La ronda 2 añadió dos casos de microhistoria de dos paneles como subcelda separada. El lote 01 de julio añadió cuatro candidatos: `MICRO-004` fue promovido y la subcelda de dos paneles llegó a `n=3`; `OBS-005` quedó en revisión para sensibilidad observacional; `SELF-006`/`SELF-007` permanecen en revisión y Ganso fue promovido a la celda amplia de autodesprecio/antihéroe, que llegó a `n=3`. La microhistoria estricta de tres paneles, transformación de Universe y diálogo ácido siguen bajo `n=3`; se conserva la discrepancia de asset ref. No autoriza publicación, creación de CNT, modificación de calendario ni reuse. La siguiente acción es revisar funcionalmente estos candidatos y diseñar casos comparables futuros si siguen faltando ejemplos, registrando los tres tratamientos de caption antes de publicar.
 
 ## Referencias
 

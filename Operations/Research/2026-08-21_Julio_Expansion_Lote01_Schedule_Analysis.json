@@ -1,0 +1,220 @@
+{
+  "expanded_individual": {
+    "n": 22,
+    "by_hour": {
+      "09": {
+        "n": 1,
+        "median_interactions": 3002,
+        "median_shares": 625,
+        "total_interactions": 3002,
+        "total_shares": 625
+      },
+      "11": {
+        "n": 1,
+        "median_interactions": 122,
+        "median_shares": 13,
+        "total_interactions": 122,
+        "total_shares": 13
+      },
+      "13": {
+        "n": 1,
+        "median_interactions": 3726,
+        "median_shares": 1341,
+        "total_interactions": 3726,
+        "total_shares": 1341
+      },
+      "14": {
+        "n": 3,
+        "median_interactions": 1338,
+        "median_shares": 422,
+        "total_interactions": 5991,
+        "total_shares": 1960
+      },
+      "15": {
+        "n": 2,
+        "median_interactions": 2289.0,
+        "median_shares": 824.0,
+        "total_interactions": 4578,
+        "total_shares": 1648
+      },
+      "16": {
+        "n": 2,
+        "median_interactions": 1790.5,
+        "median_shares": 442.5,
+        "total_interactions": 3581,
+        "total_shares": 885
+      },
+      "17": {
+        "n": 1,
+        "median_interactions": 2280,
+        "median_shares": 738,
+        "total_interactions": 2280,
+        "total_shares": 738
+      },
+      "18": {
+        "n": 4,
+        "median_interactions": 1364.0,
+        "median_shares": 388.5,
+        "total_interactions": 5376,
+        "total_shares": 1424
+      },
+      "20": {
+        "n": 4,
+        "median_interactions": 2710.0,
+        "median_shares": 744.0,
+        "total_interactions": 9944,
+        "total_shares": 2616
+      },
+      "22": {
+        "n": 2,
+        "median_interactions": 4114.5,
+        "median_shares": 1663.5,
+        "total_interactions": 8229,
+        "total_shares": 3327
+      },
+      "23": {
+        "n": 1,
+        "median_interactions": 1076,
+        "median_shares": 322,
+        "total_interactions": 1076,
+        "total_shares": 322
+      }
+    }
+  },
+  "july_comparable": {
+    "n": 207,
+    "by_hour": {
+      "02": {
+        "n": 1,
+        "median_interactions": 10,
+        "median_shares": 2,
+        "total_interactions": 10,
+        "total_shares": 2
+      },
+      "07": {
+        "n": 1,
+        "median_interactions": 13,
+        "median_shares": 0,
+        "total_interactions": 13,
+        "total_shares": 0
+      },
+      "08": {
+        "n": 9,
+        "median_interactions": 38,
+        "median_shares": 5,
+        "total_interactions": 404,
+        "total_shares": 57
+      },
+      "09": {
+        "n": 12,
+        "median_interactions": 51.0,
+        "median_shares": 8.0,
+        "total_interactions": 4577,
+        "total_shares": 961
+      },
+      "10": {
+        "n": 11,
+        "median_interactions": 68,
+        "median_shares": 8,
+        "total_interactions": 2088,
+        "total_shares": 398
+      },
+      "11": {
+        "n": 11,
+        "median_interactions": 66,
+        "median_shares": 11,
+        "total_interactions": 1602,
+        "total_shares": 255
+      },
+      "12": {
+        "n": 12,
+        "median_interactions": 67.0,
+        "median_shares": 8.5,
+        "total_interactions": 1517,
+        "total_shares": 285
+      },
+      "13": {
+        "n": 13,
+        "median_interactions": 28,
+        "median_shares": 3,
+        "total_interactions": 4737,
+        "total_shares": 1512
+      },
+      "14": {
+        "n": 12,
+        "median_interactions": 20.0,
+        "median_shares": 2.5,
+        "total_interactions": 6159,
+        "total_shares": 1975
+      },
+      "15": {
+        "n": 23,
+        "median_interactions": 68,
+        "median_shares": 19,
+        "total_interactions": 7849,
+        "total_shares": 2169
+      },
+      "16": {
+        "n": 23,
+        "median_interactions": 54,
+        "median_shares": 9,
+        "total_interactions": 5870,
+        "total_shares": 1343
+      },
+      "17": {
+        "n": 8,
+        "median_interactions": 31.5,
+        "median_shares": 4.0,
+        "total_interactions": 2789,
+        "total_shares": 805
+      },
+      "18": {
+        "n": 19,
+        "median_interactions": 136,
+        "median_shares": 26,
+        "total_interactions": 7214,
+        "total_shares": 1853
+      },
+      "19": {
+        "n": 5,
+        "median_interactions": 23,
+        "median_shares": 1,
+        "total_interactions": 126,
+        "total_shares": 17
+      },
+      "20": {
+        "n": 22,
+        "median_interactions": 46.0,
+        "median_shares": 7.0,
+        "total_interactions": 11684,
+        "total_shares": 2990
+      },
+      "21": {
+        "n": 5,
+        "median_interactions": 41,
+        "median_shares": 4,
+        "total_interactions": 197,
+        "total_shares": 37
+      },
+      "22": {
+        "n": 18,
+        "median_interactions": 107.0,
+        "median_shares": 14.5,
+        "total_interactions": 10101,
+        "total_shares": 3695
+      },
+      "23": {
+        "n": 2,
+        "median_interactions": 543.5,
+        "median_shares": 161.0,
+        "total_interactions": 1087,
+        "total_shares": 322
+      }
+    }
+  },
+  "interpretation": [
+    "The expanded individual sample is selected by shares/comments and is not suitable for estimating hourly uplift.",
+    "Use the full July comparable dataset for schedule distributions; use the individual layer only to cross-check visual/content cells.",
+    "Do not infer that an hour caused performance without content balancing."
+  ]
+}

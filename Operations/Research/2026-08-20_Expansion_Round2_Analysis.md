@@ -3,13 +3,15 @@ title: "Análisis de ampliación de celdas comparables — ronda 2"
 purpose: "Integrar dos nuevas microhistorias de dos paneles, evaluar la transformación de vestuario de Ganso y actualizar las señales comparables sin mezclar categorías no equivalentes."
 status: Review
 created: 2026-08-20
-updated: 2026-08-20
-version: "1.0"
+updated: 2026-08-21
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-20_Expansion_Round2_Candidatos.csv"
   - "Operations/Research/2026-08-20_Expansion_Round2_Summary.json"
   - "Operations/Research/2026-08-20_Expansion_Round2_Combined_Summary.json"
+  - "Operations/Research/2026-08-21_Expansion_Celdas_Comparables_Post_Julio_Lote01.json"
+  - "Operations/Research/2026-08-21_Julio_Expansion_Lote01_Analysis.md"
   - "Operations/Research/2026-08-20_Expansion_Round2_Visual_Findings.md"
   - "Operations/Research/2026-08-20_Expansion_Celdas_Comparables_Candidatos.csv"
   - "Operations/Research/2026-08-20_Propuesta_Expansion_Celdas_Comparables.md"
@@ -65,6 +67,23 @@ La celda observacional conserva `n=3`, pero combina dos casos de 24 y 36 interac
 Los dos casos nuevos de microhistoria no tienen caption histórico recuperable en el Publication Log ni en el dataset de captions consultado. El análisis no estima ningún efecto de `caption_minimo`, `caption_refuerzo` o `caption_conversacional`. Para futuras publicaciones, estos tratamientos deben asignarse antes de publicar y mantenerse como una variable independiente de estructura, personaje y humor.
 
 La ronda 2 confirma una regla operativa: **cuando aparece una nueva forma visual, primero debe abrirse una subcelda antes de incorporarla a una categoría existente**. Esto evita que una secuencia de dos paneles se convierta artificialmente en una secuencia de tres paneles o que una transformación de vestuario de Ganso se use como evidencia sobre la elasticidad visual de Universe.
+
+## Estado posterior al lote 01 de julio
+
+La ampliación individual de julio produjo cuatro candidatos funcionales para las celdas: `MICRO-004`, `OBS-005`, `SELF-006` y `SELF-007`. Solo `MICRO-004` se promovió a la subcelda de microhistoria de dos paneles, que ahora cuenta con tres casos comparables. `SELF-005` (Ganso) se promovió a la celda amplia de autodesprecio/antihéroe como subvariante de autopercepción absurda; la celda alcanza `n=3`, pero debe reportarse con sensibilidad porque sus casos son heterogéneos y uno tiene solo 15 interacciones.
+
+`OBS-005` no se añade al denominador principal porque la celda observacional ya tiene `n=3`; se conserva para sensibilidad y comparación de escala. `SELF-006` y `SELF-007` permanecen como `Candidate_Review` porque podrían ser aislamiento o humor relacional, pero no demuestran por sí solos autodesprecio/antihéroe. Ningún candidato del lote 01 aportó evidencia suficiente para elevar transformación de Universe o diálogo ácido a `n=3`.
+
+| Celda | Estado actual | Lectura operativa |
+|---|---:|---|
+| Microhistoria estricta de tres paneles | `n=1` | Sigue inconclusa; faltan dos casos comparables |
+| Microhistoria de dos paneles | `n=3` | Señal preliminar descriptiva; no mezclar con tres paneles |
+| Transformación corporal/material de Universe | `n=2` | Falta un caso; la búsqueda histórica revisada no produjo otro caso elegible |
+| Humor observacional | `n=3` | Señal preliminar, sensible al outlier de 393 interacciones; `OBS-005` queda fuera del denominador |
+| Diálogo ácido | `n=2` | Falta un caso; no se fuerza con escenas relacionales o captions sexuales |
+| Autodesprecio/antihéroe | `n=3` | Señal preliminar heterogénea; Ganso se separa como autopercepción/antihéroe |
+
+El snapshot reproducible de este corte está en `2026-08-21_Expansion_Celdas_Comparables_Post_Julio_Lote01.json`. La evidencia sigue siendo histórica y lifetime; no cambia calendario, CNT, canon ni la prueba de agosto.
 
 ## Decisión
 

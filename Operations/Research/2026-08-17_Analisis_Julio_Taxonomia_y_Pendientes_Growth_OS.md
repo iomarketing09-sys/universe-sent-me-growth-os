@@ -3,11 +3,15 @@ title: "Análisis de julio con taxonomía normalizada y pendientes del Growth OS
 purpose: "Aplicar la taxonomía editorial a la muestra histórica disponible de julio y priorizar los pendientes operativos, de aprendizaje y de canon."
 status: Active
 created: 2026-08-17
-updated: 2026-08-20
-version: "1.2"
+updated: 2026-08-21
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-17_Julio_Analisis_Taxonomia.csv"
+  - "Operations/Research/2026-08-21_Julio_Expansion_Lote01_Analysis.md"
+  - "Operations/Research/2026-08-21_Julio_Expansion_Lote01_Visual_Findings.md"
+  - "Operations/Research/2026-08-21_Julio_Expansion_Lote01_Taxonomy_Reviewed.csv"
+  - "Operations/Research/2026-08-21_Julio_Expansion_Lote01_Visual_Matches.csv"
   - "Operations/Research/2026-08-17_Analisis_Top_Posts_Junio_Julio.md"
   - "Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md"
   - "Operations/Research/2026-08-15_Deuda_Documental_P2.md"
@@ -19,9 +23,9 @@ organization: "Operations/Research"
 
 ## Alcance y limitación
 
-La taxonomía se aplicó a los **seis posts top de julio** que ya tienen relación individual con asset y Meta ID. Esta no es todavía una muestra completa de todas las publicaciones de julio. Por tanto, el análisis sirve para revisar la calidad de la clasificación y detectar señales iniciales, pero no para declarar que un personaje o tipo de humor domina todo el mes.
+La taxonomía se aplicó inicialmente a los **seis posts top de julio** y, en la ampliación del 21 de agosto, a 16 publicaciones adicionales seleccionadas por shares y comentarios y confirmadas visualmente contra Drive. El ledger contiene ahora 22 publicaciones de julio con relación individual; la cobertura sigue siendo selectiva y no representa todo el mes. Por tanto, el análisis sirve para ampliar señales y construir comparables, pero no para declarar que un personaje o tipo de humor domina julio.
 
-Los seis posts acumulan **22,840 interacciones, 14,272 reacciones, 216 comentarios y 8,352 shares**. La métrica es lifetime historical y no debe mezclarse con ventanas de 24/72 horas.
+Los seis posts originales acumulan **22,840 interacciones, 14,272 reacciones, 216 comentarios y 8,352 shares**. Los 16 nuevos matches acumulan **25,065 interacciones, 18,229 reacciones, 289 comentarios y 6,547 shares**. Todas las métricas son lifetime historical y no deben mezclarse con ventanas de 24/72 horas.
 
 ## Resultado de la taxonomía
 
@@ -112,3 +116,26 @@ La revisión directa de las imágenes corrigió la taxonomía provisional basada
 La revisión visual confirma que el filename `Universe - Existencial` no puede utilizarse como sustituto del personaje visible. La evidencia cambia el aprendizaje: los posts más fuertes de julio no forman un grupo homogéneo de Universe ni demuestran que un personaje específico sea la causa del rendimiento. La señal más defendible es la combinación de una situación clara, una emoción reconocible y potencial de compartir o etiquetar.
 
 La taxonomía de estos seis registros se considera ahora de confianza alta porque se apoya en observación visual directa. Las clasificaciones no modifican el canon y deben revisarse con Claude únicamente como evidencia de aprendizaje.
+
+## Ampliación individual de julio — lote 01
+
+El lote 01 seleccionó la unión de las 12 publicaciones con más shares y las 12 con más comentarios, excluyendo los seis top posts ya integrados. De 17 candidatos iniciales, 16 obtuvieron coincidencia visual Meta→Drive de alta confianza y uno quedó en `Candidate_Review`. Las 16 filas confirmadas se integraron al `Historical_Performance_Individuals.csv` con asset, filename y métricas lifetime; no se crearon CNT.
+
+| Indicador | Resultado |
+|---|---:|
+| Publicaciones comparables de julio | 207 |
+| Publicaciones de julio reconciliadas individualmente | 22 |
+| Cobertura individual aproximada | 10.6% |
+| Nuevos matches visuales confirmados | 16 |
+| Caso borderline fuera de integración | 1 |
+| Nuevos CNT | 0 |
+
+La muestra individual ampliada acumula 47,905 interacciones y tiene una mediana de 1,977 interacciones y 527.5 shares. Esta cifra no representa la mediana de julio, porque el lote fue seleccionado precisamente por shares y comentarios; su función es ampliar la evidencia visual, localizar comparables y mejorar la taxonomía, no estimar el rendimiento típico.
+
+La taxonomía revisada conserva `Universe` únicamente cuando existen marcadores visuales suficientes, como las gafas y la morfología recurrente del gato. Los gatos genéricos, hongos, elementos conceptuales, figuras humanas y escenas sin marcadores quedan como `No identificado`. El caso de Kiri se apoya en la mención explícita `#KiriUSM` del caption y se mantiene como evidencia analítica, no como modificación de canon.
+
+La distribución del lote contiene 15 casos con humor `Relatable cotidiano`, siete con `Humor ácido o negro`, seis con `Existencial o absurdo`, dos observacionales y uno sexual o insinuante. Estas categorías pueden solaparse y no deben convertirse en un ranking causal. La estructura visual tampoco completa automáticamente las celdas comparables: una composición de dos paneles puede quedar en la subcelda exploratoria de microhistoria, pero no cuenta como microhistoria estricta de tres paneles sin revisión conforme a la definición vigente.
+
+El pendiente de julio cambia de naturaleza: ya no es una búsqueda abierta de los primeros posts de alto rendimiento, sino una selección más amplia de casos que respondan preguntas concretas. La siguiente fase debe usar los 22 casos individuales para completar celdas comparables bajo `n=3`, reportar sensibilidad a outliers y mantener `caption_treatment=historical_unavailable` cuando no exista una fuente verificable del caption histórico.
+
+Documentos de evidencia: `2026-08-21_Julio_Expansion_Lote01_Visual_Findings.md`, `2026-08-21_Julio_Expansion_Lote01_Visual_Matches.csv`, `2026-08-21_Julio_Expansion_Lote01_Taxonomy_Reviewed.csv` y `2026-08-21_Julio_Expansion_Lote01_Analysis.md`.

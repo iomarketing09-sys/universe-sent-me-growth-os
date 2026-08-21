@@ -1,0 +1,224 @@
+{
+  "created": "2026-08-21",
+  "coverage": {
+    "july_comparable": 207,
+    "july_individual_before": 6,
+    "july_individual_after": 22,
+    "confirmed_new_matches": 16,
+    "borderline_excluded": 1
+  },
+  "original_six": {
+    "n": 6,
+    "interactions_total": 22840,
+    "interactions_median": 3819.5,
+    "interactions_mean": 3806.67,
+    "shares_total": 8352,
+    "shares_median": 1395.0,
+    "comments_total": 216,
+    "comments_median": 17.0,
+    "share_rate_median": 0.36619999999999997
+  },
+  "expanded_lot": {
+    "n": 16,
+    "interactions_total": 25065,
+    "interactions_median": 1473.5,
+    "interactions_mean": 1566.56,
+    "shares_total": 6547,
+    "shares_median": 388.5,
+    "comments_total": 289,
+    "comments_median": 13.0,
+    "share_rate_median": 0.24825000000000003
+  },
+  "all_individual_july": {
+    "n": 22,
+    "interactions_total": 47905,
+    "interactions_median": 1977.0,
+    "interactions_mean": 2177.5,
+    "shares_total": 14899,
+    "shares_median": 527.5,
+    "comments_total": 505,
+    "comments_median": 13.5,
+    "share_rate_median": 0.2823
+  },
+  "july_comparable": {
+    "n": 207,
+    "interactions_total": 68024,
+    "interactions_median": 43,
+    "interactions_mean": 328.62,
+    "shares_total": 18676,
+    "shares_median": 7,
+    "comments_total": 929,
+    "comments_median": 2,
+    "share_rate_median": 0.15
+  },
+  "by_character": {
+    "Kiri": {
+      "n": 1,
+      "interactions_total": 665,
+      "interactions_median": 665,
+      "interactions_mean": 665.0,
+      "shares_total": 127,
+      "shares_median": 127,
+      "comments_total": 14,
+      "comments_median": 14,
+      "share_rate_median": 0.191
+    },
+    "No identificado": {
+      "n": 8,
+      "interactions_total": 14038,
+      "interactions_median": 1977.0,
+      "interactions_mean": 1754.75,
+      "shares_total": 3791,
+      "shares_median": 527.5,
+      "comments_total": 123,
+      "comments_median": 12.5,
+      "share_rate_median": 0.26685000000000003
+    },
+    "Universe": {
+      "n": 7,
+      "interactions_total": 10362,
+      "interactions_median": 1338,
+      "interactions_mean": 1480.29,
+      "shares_total": 2629,
+      "shares_median": 335,
+      "comments_total": 152,
+      "comments_median": 13,
+      "share_rate_median": 0.2417
+    }
+  },
+  "by_role": {
+    "Dúo o pareja": {
+      "n": 5,
+      "interactions_total": 7128,
+      "interactions_median": 1076,
+      "interactions_mean": 1425.6,
+      "shares_total": 2103,
+      "shares_median": 322,
+      "comments_total": 58,
+      "comments_median": 12,
+      "share_rate_median": 0.2993
+    },
+    "Escena observacional": {
+      "n": 3,
+      "interactions_total": 4697,
+      "interactions_median": 1035,
+      "interactions_mean": 1565.67,
+      "shares_total": 1082,
+      "shares_median": 368,
+      "comments_total": 70,
+      "comments_median": 16,
+      "share_rate_median": 0.2082
+    },
+    "Protagonista": {
+      "n": 8,
+      "interactions_total": 13240,
+      "interactions_median": 1651.0,
+      "interactions_mean": 1655.0,
+      "shares_total": 3362,
+      "shares_median": 415.5,
+      "comments_total": 161,
+      "comments_median": 11.5,
+      "share_rate_median": 0.24825000000000003
+    }
+  },
+  "by_humor": {
+    "Existencial o absurdo": {
+      "n": 6,
+      "interactions_total": 8218,
+      "interactions_median": 1001.5,
+      "interactions_mean": 1369.67,
+      "shares_total": 1964,
+      "shares_median": 268.0,
+      "comments_total": 149,
+      "comments_median": 13.5,
+      "share_rate_median": 0.2163
+    },
+    "Fandom o referencia": {
+      "n": 1,
+      "interactions_total": 1035,
+      "interactions_median": 1035,
+      "interactions_mean": 1035.0,
+      "shares_total": 368,
+      "shares_median": 368,
+      "comments_total": 16,
+      "comments_median": 16,
+      "share_rate_median": 0.3556
+    },
+    "Humor ácido o negro": {
+      "n": 7,
+      "interactions_total": 10079,
+      "interactions_median": 1609,
+      "interactions_mean": 1439.86,
+      "shares_total": 2705,
+      "shares_median": 335,
+      "comments_total": 69,
+      "comments_median": 9,
+      "share_rate_median": 0.2789
+    },
+    "Observacional social": {
+      "n": 2,
+      "interactions_total": 5443,
+      "interactions_median": 2721.5,
+      "interactions_mean": 2721.5,
+      "shares_total": 1399,
+      "shares_median": 699.5,
+      "comments_total": 56,
+      "comments_median": 28.0,
+      "share_rate_median": 0.26265
+    },
+    "Relatable cotidiano": {
+      "n": 15,
+      "interactions_total": 23372,
+      "interactions_median": 1338,
+      "interactions_mean": 1558.13,
+      "shares_total": 6138,
+      "shares_median": 368,
+      "comments_total": 283,
+      "comments_median": 13,
+      "share_rate_median": 0.2548
+    },
+    "Sexual o insinuación": {
+      "n": 1,
+      "interactions_total": 1982,
+      "interactions_median": 1982,
+      "interactions_mean": 1982.0,
+      "shares_total": 505,
+      "shares_median": 505,
+      "comments_total": 7,
+      "comments_median": 7,
+      "share_rate_median": 0.2548
+    }
+  },
+  "by_tagging": {
+    "Alto": {
+      "n": 14,
+      "interactions_total": 22417,
+      "interactions_median": 1473.5,
+      "interactions_mean": 1601.21,
+      "shares_total": 5900,
+      "shares_median": 388.5,
+      "comments_total": 270,
+      "comments_median": 13.5,
+      "share_rate_median": 0.2603
+    },
+    "Medio": {
+      "n": 2,
+      "interactions_total": 2648,
+      "interactions_median": 1324.0,
+      "interactions_mean": 1324.0,
+      "shares_total": 647,
+      "shares_median": 323.5,
+      "comments_total": 19,
+      "comments_median": 9.5,
+      "share_rate_median": 0.234
+    }
+  },
+  "reviewed_taxonomy_rows": 16,
+  "guardrails": [
+    "Lifetime only",
+    "Selected by shares/comments",
+    "No CNT created",
+    "No canon change",
+    "Caption treatment historical_unavailable"
+  ]
+}

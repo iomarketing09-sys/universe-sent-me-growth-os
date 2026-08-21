@@ -1,0 +1,400 @@
+{
+  "source": "/home/ubuntu/universe-sent-me-growth-os/Operations/Research/2026-08-21_Julio_Expansion_Lote01_Taxonomy_Assist.json",
+  "results": [
+    {
+      "personaje_principal_observado": "No identificado",
+      "personajes_secundarios_observados": [],
+      "rol_narrativo": "Protagonista",
+      "tipo_humor_normalizado": [
+        "Relatable_cotidiano",
+        "Humor_acido_o_negro"
+      ],
+      "potencial_etiquetado": "Alto",
+      "estructura_narrativa": "Microhistoria_dos_paneles",
+      "caption_treatment": "historical_unavailable",
+      "preserva_marcadores_identidad": "Yes",
+      "confianza_taxonomia": "Media",
+      "evidencia_visual_breve": "Secuencia de cuatro paneles donde Evan satisface deseos simples de comida y bebida, pero ante el deseo sexual vuelve a comer pan.",
+      "cautela": "La secuencia contiene figuras humanas y un gato, pero no confirma un personaje canónico por marcadores visuales.",
+      "Meta_ID": "1036844829507460_122135016567072582",
+      "Caption": "😉",
+      "Interacciones": "1972",
+      "Shares": "550",
+      "Comentarios": "10",
+      "model": "gemini-3-flash-preview",
+      "review_status": "Reviewed_Conservative",
+      "review_note": "Vision model used as assistive evidence; final identity labels follow visual markers and the TAX-01 process rule."
+    },
+    {
+      "personaje_principal_observado": "No identificado",
+      "personajes_secundarios_observados": [],
+      "rol_narrativo": "Escena_observacional",
+      "tipo_humor_normalizado": [
+        "Relatable_cotidiano",
+        "Existencial_o_absurdo"
+      ],
+      "potencial_etiquetado": "Alto",
+      "estructura_narrativa": "Escena_unica",
+      "caption_treatment": "historical_unavailable",
+      "preserva_marcadores_identidad": "No",
+      "confianza_taxonomia": "Media",
+      "evidencia_visual_breve": "Gato con maquillaje de payaso y gorro de fiesta sentado solo frente a un pastel con una vela, bajo un texto que pide afecto y validación.",
+      "cautela": "Aunque el pelaje es morado y blanco, el personaje es un gato y no la protagonista humana Universe; se clasifica como no identificado por ser un recurso visual único para el mensaje.",
+      "Meta_ID": "1036844829507460_122135577327072582",
+      "Caption": "🤡 están todos invitados...",
+      "Interacciones": "660",
+      "Shares": "89",
+      "Comentarios": "13",
+      "model": "gemini-3-flash-preview",
+      "review_status": "Reviewed_Conservative",
+      "review_note": "Vision model used as assistive evidence; final identity labels follow visual markers and the TAX-01 process rule."
+    },
+    {
+      "personaje_principal_observado": "No identificado",
+      "personajes_secundarios_observados": [
+        "Problema (bola de pelo negra)"
+      ],
+      "rol_narrativo": "Duo_o_pareja",
+      "tipo_humor_normalizado": [
+        "Relatable_cotidiano",
+        "Humor_acido_o_negro"
+      ],
+      "potencial_etiquetado": "Alto",
+      "estructura_narrativa": "Escena_unica",
+      "caption_treatment": "historical_unavailable",
+      "preserva_marcadores_identidad": "No",
+      "confianza_taxonomia": "Media",
+      "evidencia_visual_breve": "Un gato gris con gafas de sol sirve té a una criatura negra redonda con ojos grandes, sentados a una mesa sobre nubes.",
+      "cautela": "El personaje principal es un gato antropomorfizado que no coincide con el diseño visual canónico de Universe, a pesar de la firma de la cuenta.",
+      "Meta_ID": "1036844829507460_122135586723072582",
+      "Caption": "Ya va ser la hora del tecito 😇 #UniverseSentMe #vidareal #relatable #problemas",
+      "Interacciones": "2280",
+      "Shares": "738",
+      "Comentarios": "9",
+      "model": "gemini-3-flash-preview",
+      "review_status": "Reviewed_Conservative",
+      "review_note": "Vision model used as assistive evidence; final identity labels follow visual markers and the TAX-01 process rule."
+    },
+    {
+      "personaje_principal_observado": "No identificado",
+      "personajes_secundarios_observados": [
+        "No_identificado"
+      ],
+      "rol_narrativo": "Duo_o_pareja",
+      "tipo_humor_normalizado": [
+        "Relatable_cotidiano",
+        "Observacional_social"
+      ],
+      "potencial_etiquetado": "Alto",
+      "estructura_narrativa": "Microhistoria_dos_paneles",
+      "caption_treatment": "historical_unavailable",
+      "preserva_marcadores_identidad": "Not_applicable",
+      "confianza_taxonomia": "Media",
+      "evidencia_visual_breve": "Dos paneles que muestran una sesión de terapia entre un hombre joven y un gato psicólogo; el remate es la nota del gato sobre el envejecimiento prematuro del paciente.",
+      "cautela": "Aunque el estilo visual es consistente con la marca, los personajes son genéricos y no corresponden a Universe, Wilfred u otros miembros del elenco principal.",
+      "Meta_ID": "1036844829507460_122135607981072582",
+      "Caption": "😋",
+      "Interacciones": "2441",
+      "Shares": "774",
+      "Comentarios": "15",
+      "model": "gemini-3-flash-preview",
+      "review_status": "Reviewed_Conservative",
+      "review_note": "Vision model used as assistive evidence; final identity labels follow visual markers and the TAX-01 process rule."
+    },
+    {
+      "personaje_principal_observado": "Universe",
+      "personajes_secundarios_observados": [
+        "No_identificado"
+      ],
+      "rol_narrativo": "Protagonista",
+      "tipo_humor_normalizado": [
+        "Relatable_cotidiano",
+        "Existencial_o_absurdo"
+      ],
+      "potencial_etiquetado": "Alto",
+      "estructura_narrativa": "Escena_unica",
+      "caption_treatment": "historical_unavailable",
+      "preserva_marcadores_identidad": "Yes",
+      "confianza_taxonomia": "Alta",
+      "evidencia_visual_breve": "Gato blanco con lentes oscuros (Universe) sentado en una silla frente a un tribunal de tres aves vestidas con togas de juez en un entorno celestial.",
+      "cautela": "Las aves que componen el tribunal no corresponden a personajes secundarios recurrentes identificables.",
+      "Meta_ID": "1036844829507460_122136562323072582",
+      "Caption": "a ver.. 👀 Universe Sent Me #memes #HumorRelatable #memedeldia #UniverseSentMe",
+      "Interacciones": "122",
+      "Shares": "13",
+      "Comentarios": "72",
+      "model": "gemini-3-flash-preview",
+      "review_status": "Reviewed_Conservative",
+      "review_note": "Vision model used as assistive evidence; final identity labels follow visual markers and the TAX-01 process rule."
+    },
+    {
+      "personaje_principal_observado": "Universe",
+      "personajes_secundarios_observados": [
+        "No_identificado"
+      ],
+      "rol_narrativo": "Duo_o_pareja",
+      "tipo_humor_normalizado": [
+        "Relatable_cotidiano",
+        "Humor_acido_o_negro"
+      ],
+      "potencial_etiquetado": "Alto",
+      "estructura_narrativa": "Escena_unica",
+      "caption_treatment": "historical_unavailable",
+      "preserva_marcadores_identidad": "Yes",
+      "confianza_taxonomia": "Alta",
+      "evidencia_visual_breve": "Universe es cargada por un alienígena en un entorno onírico de nubes y castillos flotantes con texto sobre burlarse de la gente.",
+      "cautela": "El alienígena es un elemento de composición visual y no corresponde a un personaje secundario con nombre en el canon habitual.",
+      "Meta_ID": "1036844829507460_122136954147072582",
+      "Caption": "🫣🫣",
+      "Interacciones": "1076",
+      "Shares": "322",
+      "Comentarios": "8",
+      "model": "gemini-3-flash-preview",
+      "review_status": "Reviewed_Conservative",
+      "review_note": "Vision model used as assistive evidence; final identity labels follow visual markers and the TAX-01 process rule."
+    },
+    {
+      "personaje_principal_observado": "Universe",
+      "personajes_secundarios_observados": [],
+      "rol_narrativo": "Protagonista",
+      "tipo_humor_normalizado": [
+        "Humor_acido_o_negro",
+        "Relatable_cotidiano"
+      ],
+      "potencial_etiquetado": "Alto",
+      "estructura_narrativa": "Escena_unica",
+      "caption_treatment": "historical_unavailable",
+      "preserva_marcadores_identidad": "Yes",
+      "confianza_taxonomia": "Alta",
+      "evidencia_visual_breve": "Gato blanco con gafas de sol redondas sosteniendo un cuchillo con el grabado 'empatía' en la boca sobre un fondo de nubes.",
+      "cautela": "Las gafas y la morfología del gato aportan un marcador visual suficiente para Universe.",
+      "Meta_ID": "1036844829507460_122137968789072582",
+      "Caption": "Por fin alguien que resuelve. 😝 #UniverseSentMe #empatia #Resuelve #vidareal",
+      "Interacciones": "784",
+      "Shares": "224",
+      "Comentarios": "7",
+      "model": "gemini-3-flash-preview",
+      "review_status": "Reviewed_Conservative",
+      "review_note": "Vision model used as assistive evidence; final identity labels follow visual markers and the TAX-01 process rule."
+    },
+    {
+      "personaje_principal_observado": "No identificado",
+      "personajes_secundarios_observados": [],
+      "rol_narrativo": "Escena_observacional",
+      "tipo_humor_normalizado": [
+        "Relatable_cotidiano",
+        "Fandom_o_referencia"
+      ],
+      "potencial_etiquetado": "Alto",
+      "estructura_narrativa": "Escena_unica",
+      "caption_treatment": "historical_unavailable",
+      "preserva_marcadores_identidad": "Yes",
+      "confianza_taxonomia": "Media",
+      "evidencia_visual_breve": "Manos entrelazadas, joyas ornamentales en muñeca y hombro, fondo de fantasía con castillos y cristales.",
+      "cautela": "Solo se observan manos y accesorios; no hay evidencia suficiente para asignar personaje.",
+      "Meta_ID": "1036844829507460_122138831577072582",
+      "Caption": "ufff... 🥴",
+      "Interacciones": "1035",
+      "Shares": "368",
+      "Comentarios": "16",
+      "model": "gemini-3-flash-preview",
+      "review_status": "Reviewed_Conservative",
+      "review_note": "Vision model used as assistive evidence; final identity labels follow visual markers and the TAX-01 process rule."
+    },
+    {
+      "personaje_principal_observado": "Universe",
+      "personajes_secundarios_observados": [],
+      "rol_narrativo": "Protagonista",
+      "tipo_humor_normalizado": [
+        "Relatable_cotidiano",
+        "Humor_acido_o_negro"
+      ],
+      "potencial_etiquetado": "Alto",
+      "estructura_narrativa": "Escena_unica",
+      "caption_treatment": "historical_unavailable",
+      "preserva_marcadores_identidad": "Yes",
+      "confianza_taxonomia": "Alta",
+      "evidencia_visual_breve": "Gato blanco con lentes de sol circulares sobre nubes, proyectando una sombra de diablo con llamas.",
+      "cautela": "La figura del diablo es una sombra proyectada que representa el estado interno o el deseo expresado en el texto, no un personaje secundario independiente.",
+      "Meta_ID": "1036844829507460_122138846193072582",
+      "Caption": "😈 Ya fue mucha solteria",
+      "Interacciones": "1609",
+      "Shares": "335",
+      "Comentarios": "15",
+      "model": "gemini-3-flash-preview",
+      "review_status": "Reviewed_Conservative",
+      "review_note": "Vision model used as assistive evidence; final identity labels follow visual markers and the TAX-01 process rule."
+    },
+    {
+      "personaje_principal_observado": "No identificado",
+      "personajes_secundarios_observados": [],
+      "rol_narrativo": "Protagonista",
+      "tipo_humor_normalizado": [
+        "Relatable_cotidiano",
+        "Sexual_o_insinuacion"
+      ],
+      "potencial_etiquetado": "Medio",
+      "estructura_narrativa": "Escena_unica",
+      "caption_treatment": "historical_unavailable",
+      "preserva_marcadores_identidad": "Not_applicable",
+      "confianza_taxonomia": "Alta",
+      "evidencia_visual_breve": "Personaje de hongo con sombrero azul y mejillas rosadas asomándose tras un árbol en un entorno de bosque fantástico con destellos estelares.",
+      "cautela": "El personaje es un hongo antropomorfizado sin rasgos visuales que permitan identificarlo como Universe u otro miembro del elenco principal.",
+      "Meta_ID": "1036844829507460_122139161997072582",
+      "Caption": "Un honguirijillo...",
+      "Interacciones": "1982",
+      "Shares": "505",
+      "Comentarios": "7",
+      "model": "gemini-3-flash-preview",
+      "review_status": "Reviewed_Conservative",
+      "review_note": "Vision model used as assistive evidence; final identity labels follow visual markers and the TAX-01 process rule."
+    },
+    {
+      "personaje_principal_observado": "Universe",
+      "personajes_secundarios_observados": [],
+      "rol_narrativo": "Protagonista",
+      "tipo_humor_normalizado": [
+        "Relatable_cotidiano",
+        "Existencial_o_absurdo"
+      ],
+      "potencial_etiquetado": "Alto",
+      "estructura_narrativa": "Escena_unica",
+      "caption_treatment": "historical_unavailable",
+      "preserva_marcadores_identidad": "Yes",
+      "confianza_taxonomia": "Alta",
+      "evidencia_visual_breve": "Gato blanco con lentes oscuros acostado en cama viendo el celular, rodeado de inciensos y lámparas orientales.",
+      "cautela": "Ninguna",
+      "Meta_ID": "1036844829507460_122139232911072582",
+      "Caption": "😮‍💨",
+      "Interacciones": "3740",
+      "Shares": "904",
+      "Comentarios": "31",
+      "model": "gemini-3-flash-preview",
+      "review_status": "Reviewed_Conservative",
+      "review_note": "Vision model used as assistive evidence; final identity labels follow visual markers and the TAX-01 process rule."
+    },
+    {
+      "personaje_principal_observado": "Universe",
+      "personajes_secundarios_observados": [],
+      "rol_narrativo": "Protagonista",
+      "tipo_humor_normalizado": [
+        "Existencial_o_absurdo",
+        "Relatable_cotidiano"
+      ],
+      "potencial_etiquetado": "Alto",
+      "estructura_narrativa": "Escena_unica",
+      "caption_treatment": "historical_unavailable",
+      "preserva_marcadores_identidad": "Yes",
+      "confianza_taxonomia": "Alta",
+      "evidencia_visual_breve": "Gato blanco con gafas de sol sentado sobre una alfombra en un entorno arquitectónico de estilo árabe; el texto declara que solo existe en redes.",
+      "cautela": "La identificación como Universe se apoya en la morfología del gato blanco y el uso del hashtag de marca, reforzado por el humor meta-referencial sobre su propia existencia digital.",
+      "Meta_ID": "1036844829507460_122140439079072582",
+      "Caption": "😌 lo siento vv #UniverseSentMe #humor",
+      "Interacciones": "1338",
+      "Shares": "422",
+      "Comentarios": "13",
+      "model": "gemini-3-flash-preview",
+      "review_status": "Reviewed_Conservative",
+      "review_note": "Vision model used as assistive evidence; final identity labels follow visual markers and the TAX-01 process rule."
+    },
+    {
+      "personaje_principal_observado": "Universe",
+      "personajes_secundarios_observados": [],
+      "rol_narrativo": "Protagonista",
+      "tipo_humor_normalizado": [
+        "Humor_acido_o_negro",
+        "Existencial_o_absurdo"
+      ],
+      "potencial_etiquetado": "Alto",
+      "estructura_narrativa": "Escena_unica",
+      "caption_treatment": "historical_unavailable",
+      "preserva_marcadores_identidad": "Yes",
+      "confianza_taxonomia": "Alta",
+      "evidencia_visual_breve": "Gato blanco con lentes de sol (Universe) vestido con gi de artes marciales sobre nubes, con texto sobre Bruce Lee.",
+      "cautela": "",
+      "Meta_ID": "1036844829507460_122140751031072582",
+      "Caption": "Me encanta bruce lee.. c: #UniverseSentMe",
+      "Interacciones": "1693",
+      "Shares": "409",
+      "Comentarios": "6",
+      "model": "gemini-3-flash-preview",
+      "review_status": "Reviewed_Conservative",
+      "review_note": "Vision model used as assistive evidence; final identity labels follow visual markers and the TAX-01 process rule."
+    },
+    {
+      "personaje_principal_observado": "No identificado",
+      "personajes_secundarios_observados": [],
+      "rol_narrativo": "Escena_observacional",
+      "tipo_humor_normalizado": [
+        "Relatable_cotidiano",
+        "Observacional_social"
+      ],
+      "potencial_etiquetado": "Alto",
+      "estructura_narrativa": "Composicion_mundo",
+      "caption_treatment": "historical_unavailable",
+      "preserva_marcadores_identidad": "Not_applicable",
+      "confianza_taxonomia": "Alta",
+      "evidencia_visual_breve": "Representación ilustrada del sistema solar con texto superpuesto en los planetas increpando al espectador sobre el uso de la astrología como excusa.",
+      "cautela": "No aparecen personajes del elenco recurrente; es una pieza de humor gráfico conceptual basada en elementos astronómicos.",
+      "Meta_ID": "1036844829507460_122141376093072582",
+      "Caption": "🫣🫣 #UniverseSentMe #humor #relatable #astrologia #retrogrado",
+      "Interacciones": "3002",
+      "Shares": "625",
+      "Comentarios": "41",
+      "model": "gemini-3-flash-preview",
+      "review_status": "Reviewed_Conservative",
+      "review_note": "Vision model used as assistive evidence; final identity labels follow visual markers and the TAX-01 process rule."
+    },
+    {
+      "personaje_principal_observado": "No identificado",
+      "personajes_secundarios_observados": [],
+      "rol_narrativo": "Duo_o_pareja",
+      "tipo_humor_normalizado": [
+        "Relatable_cotidiano"
+      ],
+      "potencial_etiquetado": "Medio",
+      "estructura_narrativa": "Escena_unica",
+      "caption_treatment": "historical_unavailable",
+      "preserva_marcadores_identidad": "No",
+      "confianza_taxonomia": "Alta",
+      "evidencia_visual_breve": "Dos pares de pies entrelazados entre nubes rosadas con pequeños corazones y una definición textual inventada sobre el acto de abrazarse con los pies.",
+      "cautela": "No existen rasgos anatómicos o accesorios distintivos para identificar a los personajes de la serie; solo se observan extremidades inferiores en un contexto romántico o íntimo.",
+      "Meta_ID": "1036844829507460_122142625983072582",
+      "Caption": "Abrazos que curan el alma #UniverseSentMe #Abrazarte #MomentosUSM",
+      "Interacciones": "666",
+      "Shares": "142",
+      "Comentarios": "12",
+      "model": "gemini-3-flash-preview",
+      "review_status": "Reviewed_Conservative",
+      "review_note": "Vision model used as assistive evidence; final identity labels follow visual markers and the TAX-01 process rule."
+    },
+    {
+      "personaje_principal_observado": "Kiri",
+      "personajes_secundarios_observados": [
+        "Universe"
+      ],
+      "rol_narrativo": "Duo_o_pareja",
+      "tipo_humor_normalizado": [
+        "Humor_acido_o_negro",
+        "Existencial_o_absurdo",
+        "Relatable_cotidiano"
+      ],
+      "potencial_etiquetado": "Alto",
+      "estructura_narrativa": "Escena_unica",
+      "caption_treatment": "historical_unavailable",
+      "preserva_marcadores_identidad": "Yes",
+      "confianza_taxonomia": "Alta",
+      "evidencia_visual_breve": "El hada Kiri, identificada por el caption, flota frente a Universe, quien está sentada junto a una fogata en el bosque. El texto en la imagen refuerza un tono de verdad cruda.",
+      "cautela": "Se asigna el nombre Kiri basándose estrictamente en la mención explícita del caption y el hashtag #KiriUSM.",
+      "Meta_ID": "1036844829507460_122143527921072582",
+      "Caption": "No todos los hadas dan flores y mariposas. Algunas te dan la verdad y te dejan sentada frente a la hoguera procesándola. Kiri no vino a consolarte. Vino a recordarte que lo que no entiendes te controla. Y hoy, por fin, algo hizo click. El bosque no miente. Las preguntas correctas duelen al principio, pero te liberan al final. ¿Qué fue eso que recién entendiste? Cuéntamelo en los comentarios. 👇 #KiriUSM #LoresUSM #MomentosUSM #UniverseSentMe #relatable #humor",
+      "Interacciones": "665",
+      "Shares": "127",
+      "Comentarios": "14",
+      "model": "gemini-3-flash-preview",
+      "review_status": "Reviewed_Conservative",
+      "review_note": "Vision model used as assistive evidence; final identity labels follow visual markers and the TAX-01 process rule."
+    }
+  ],
+  "canon_status": "No canon change"
+}

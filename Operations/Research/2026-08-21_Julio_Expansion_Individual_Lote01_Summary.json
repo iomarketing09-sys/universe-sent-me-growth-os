@@ -1,0 +1,19 @@
+{
+  "created": "2026-08-21",
+  "source_comparable_rows_july": 207,
+  "already_reconciled_individual_july": 6,
+  "remaining_july_rows_before_selection": 201,
+  "selected_lote01_rows": 17,
+  "selection_rule": "Union of top 12 by shares and top 12 by comments, excluding the six individually reconciled July posts.",
+  "drive_folder_inventory": {
+    "folder_id": "1apek-EqSsM5DI7wUcRkzJpbs9HUWQxeg",
+    "image_files_available_for_visual_matching": 189,
+    "note": "Drive files are not assigned to posts by filename or date in this phase."
+  },
+  "guardrails": [
+    "No Asset_Ref assigned automatically.",
+    "No CNT created.",
+    "Visual match required before taxonomy or inventory integration.",
+    "Lifetime historical metrics remain separate from August 24/72-hour metrics."
+  ]
+}

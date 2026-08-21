@@ -3,8 +3,8 @@ title: "Reporte final de recopilación histórica de junio"
 purpose: "Consolidar los assets publicados, sus objetos multimedia de Facebook, publicaciones editoriales, métricas lifetime y aprendizajes documentados para alimentar la Biblia y el Growth OS."
 status: "Review"
 created: 2026-08-17
-updated: 2026-08-18
-version: "1.2"
+updated: 2026-08-21
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-17_Revision_Excel_Assets_Junio.md"
@@ -13,6 +13,8 @@ related_documents:
   - "Operations/Research/Historical_Asset_Performance.csv"
   - "Operations/Research/Historical_Performance_Individuals.csv"
   - "Operations/Research/2026-08-17_Analisis_Top_Posts_Junio_Julio.md"
+  - "Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Findings.md"
+  - "Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Matches.csv"
 organization: "Operations/Research"
 ---
 
@@ -82,12 +84,12 @@ La siguiente fase recomendada es asignar CNT únicamente a los assets prioritari
 
 ## Auditoría de pendientes actualizada
 
-Junio queda ampliamente integrado a nivel histórico individual: `Historical_Performance_Individuals.csv` contiene 177 filas del periodo `Junio_2026`, compuestas por los 172 cruces del lote de junio y los registros destacados ya existentes. El índice visual contiene 196 assets de Drive. La relación entre publicación y asset está confirmada para 172 registros; 17 registros del Excel original no tienen una referencia de asset utilizable y un caso mantiene relación editorial confirmada pero `Asset_Ref` pendiente.
+Junio queda ampliamente integrado a nivel histórico individual. En el corte actual, `Historical_Performance_Individuals.csv` contiene 178 filas del periodo `Junio_2026` y 173 `Meta_ID` únicos con `Asset_Ref`; las filas incluyen los 172 cruces del lote original, registros destacados ya existentes y un match suplementario confirmado el 21 de agosto. El índice visual contiene 196 assets de Drive. La cola de posts todavía sin match baja de 58 a 57 después de confirmar `122129404893072582` con `Asset_Ref=260746`.
 
 | Pendiente | Estado | Prioridad |
 |---|---|---|
 | Reconciliar los 17 registros sin Asset_Ref utilizable | Pendiente; contienen referencias internas, vacío o `N/A` | P2 / bajo demanda |
-| Revisar los 58 posts de la cola todavía sin asset match | Reserva de investigación; no crear CNT automáticamente | P1 histórico si se busca cobertura completa |
+| Revisar los 57 posts de la cola todavía sin asset match | Reserva de investigación; no crear CNT automáticamente | P1 histórico si se busca cobertura completa |
 | Convertir todos los assets confirmados en CNT | No recomendado; solo asignar CNT a piezas prioritarias o reutilizables | P2 / bajo demanda |
 | Completar taxonomía editorial | Parcial; aplicada en los casos enriquecidos, no como clasificación exhaustiva de todo junio | P1 analítico |
 | Analizar comentarios y replies | Pendiente como capa de conversación | P2 |
@@ -101,8 +103,8 @@ Los seis candidatos aprobados ya fueron integrados como `CNT-080`–`CNT-085` y 
 
 | Capa | Estado al 18 de agosto | Pendiente real |
 |---|---|---|
-| Publicaciones individuales | 177 filas de junio; 172 Meta IDs únicos | No falta integración básica de publicaciones confirmadas |
-| Assets de Drive | 196 assets indexados; 172 relaciones publicación→asset confirmadas | Resolver 17 registros sin `Asset_Ref` utilizable y 58 casos de cola sin match si se busca cobertura completa |
+| Publicaciones individuales | 178 filas de junio; 173 Meta IDs únicos | No falta integración básica de publicaciones confirmadas |
+| Assets de Drive | 196 assets indexados; 173 relaciones publicación→asset confirmadas en el ledger actual | Resolver 17 registros sin `Asset_Ref` utilizable y 57 casos de cola sin match si se busca cobertura completa |
 | CNT prioritarios | `CNT-080`–`CNT-085` creados | No crear más CNT hasta seleccionar otro lote útil |
 | Taxonomía visual | 17 assets revisados; seis enriquecidos como CNT | Ampliar solo a lotes con valor analítico o de reuse |
 | Comentarios | 72 comentarios extraídos de cinco posts prioritarios | Hacer análisis cualitativo profundo solo si aporta decisiones de comunidad |
@@ -112,9 +114,17 @@ Los seis candidatos aprobados ya fueron integrados como `CNT-080`–`CNT-085` y 
 
 ## Estado
 
-Junio queda **integrado a nivel suficiente para el Growth OS**. Lo pendiente se divide en dos reservas: una reserva de reconciliación —17 registros sin `Asset_Ref` utilizable y 58 casos sin match— y una reserva analítica —taxonomía, comentarios y selección adicional de reuse—. Ninguna bloquea la prueba activa de agosto.
+Junio queda **integrado a nivel suficiente para el Growth OS**. Lo pendiente se divide en dos reservas: una reserva de reconciliación —17 registros sin `Asset_Ref` utilizable y 57 casos sin match— y una reserva analítica —taxonomía, comentarios y selección adicional de reuse—. Ninguna bloquea la prueba activa de agosto.
 
 La recomendación CGO es congelar la programación de estos seis CNT hasta el cierre del experimento del 30 de agosto. Después se podrá comparar su evidencia histórica con el veredicto P0 y decidir si alguno merece una nueva prueba controlada.
+
+## Corte suplementario del 21 de agosto
+
+La revisión selectiva de los tres casos de mayor prioridad en `Needs_Asset_Match` produjo una sola confirmación adicional. El post `122129404893072582` coincide visualmente con `Universe - Existencial 260746.png` (`Drive_ID=1CYrpRf4KUOClP_Qvcc65yDx0Sq-JIguk`) y se integró al ledger individual con 155 interacciones, 19 shares y la estructura de microhistoria de tres paneles. Los candidatos `122134147251072582` y `122130196011072582` no coincidieron con los archivos sugeridos por similitud y permanecen sin match.
+
+Este corte no cambia el total histórico del lote original —172 relaciones—; añade una evidencia suplementaria al ledger operativo, eleva los Meta IDs únicos integrados a 173 y reduce la cola abierta a 57. No se creó CNT, no se modificó calendario y no se consideró el filename como prueba independiente de la coincidencia.
+
+La decisión es congelar las 57 reservas restantes. Solo deben reabrirse si una pregunta concreta requiere cerrar una celda comparativa, elegir un reuse o validar una hipótesis de personaje/formato.
 
 ## Referencias
 

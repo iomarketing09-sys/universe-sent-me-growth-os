@@ -1,0 +1,726 @@
+{
+  "extraction_meta": {
+    "extracted_at_utc": "2026-08-21T04:16:47.019087+00:00",
+    "endpoint": "https://graph.facebook.com/v26.0",
+    "page_id": "1036844829507460",
+    "batch_size": 17,
+    "fields": "id,created_time,message,permalink_url,full_picture,attachments.limit(10){media,type,url,target},shares,reactions.limit(0).summary(true),comments.limit(0).summary(true)",
+    "source": "Meta Graph API v26.0"
+  },
+  "data": [
+    {
+      "code": 200,
+      "headers": [
+        {
+          "name": "Expires",
+          "value": "Sat, 01 Jan 2000 00:00:00 GMT"
+        },
+        {
+          "name": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "name": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "name": "Strict-Transport-Security",
+          "value": "max-age=15552000; preload"
+        },
+        {
+          "name": "Facebook-API-Version",
+          "value": "v26.0"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "name": "X-Business-Use-Case-Usage",
+          "value": "{\"1036844829507460\":[{\"type\":\"pages\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+        },
+        {
+          "name": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/javascript; charset=UTF-8"
+        }
+      ],
+      "body": "{\"id\":\"1036844829507460_122139232911072582\",\"created_time\":\"2026-07-17T02:00:14+0000\",\"message\":\"\\ud83d\\ude2e\\u200d\\ud83d\\udca8\",\"permalink_url\":\"https:\\/\\/www.facebook.com\\/122146890051072582\\/posts\\/122139232911072582\",\"full_picture\":\"https:\\/\\/scontent-iad3-1.xx.fbcdn.net\\/v\\/t39.30808-6\\/748216107_122139232815072582_306916991510709756_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeF9kd8I38WwouysglBQnm6WSoxfADo5lVVKjF8AOjmVVXBZ6_jy6KqqvjP-p1cir-VMBHK8g9ylAS0DTlUJ0QrT&_nc_ohc=iRRNxyjhEo0Q7kNvwE6Iqfo&_nc_oc=AdoEFn3vSTr13Q2rx9k7mEkkPjmuKkIwSNKCMzSA9PgV2n19NhdXsOkhMgtXlXieFMs&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQJWs_rq89wbaPjCjSfWK3z--xi0H57Fynt0NErZXGMb6Vi1uvzJoKJ4XnYOmMPgKM8z-Z6xt9siw-Q&oh=00_AQHME6s9DOoPWZrgb_iw7aFBS7lHhsbFf5rKMflJ3cQg3g&oe=6A8D8DBA\",\"attachments\":{\"data\":[{\"media\":{\"image\":{\"height\":964,\"src\":\"https:\\/\\/scontent-iad3-1.xx.fbcdn.net\\/v\\/t39.30808-6\\/748216107_122139232815072582_306916991510709756_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeF9kd8I38WwouysglBQnm6WSoxfADo5lVVKjF8AOjmVVXBZ6_jy6KqqvjP-p1cir-VMBHK8g9ylAS0DTlUJ0QrT&_nc_ohc=iRRNxyjhEo0Q7kNvwE6Iqfo&_nc_oc=AdoEFn3vSTr13Q2rx9k7mEkkPjmuKkIwSNKCMzSA9PgV2n19NhdXsOkhMgtXlXieFMs&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQLXyW4y6Ne_mzXJ-ko6dM_kkIh9Pomy_bWOujtEgI1BKRPOdS769P9osKO4L53IoSLPSHL8VW6U_vg&oh=00_AQG8IdBzV5JGvptsoiEtLaXO3HcLBGn3HM-yaM4vmmZASw&oe=6A8D8DBA\",\"width\":720}},\"type\":\"photo\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122139232809072582&set=a.122095282845072582&type=3\",\"target\":{\"id\":\"122139232809072582\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122139232809072582&set=a.122095282845072582&type=3\"}}]},\"shares\":{\"count\":884},\"reactions\":{\"data\":[],\"summary\":{\"total_count\":2804,\"viewer_reaction\":\"NONE\"}},\"comments\":{\"data\":[],\"summary\":{\"order\":\"ranked\",\"total_count\":31,\"can_comment\":true}}}"
+    },
+    {
+      "code": 200,
+      "headers": [
+        {
+          "name": "Expires",
+          "value": "Sat, 01 Jan 2000 00:00:00 GMT"
+        },
+        {
+          "name": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "name": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "name": "Strict-Transport-Security",
+          "value": "max-age=15552000; preload"
+        },
+        {
+          "name": "Facebook-API-Version",
+          "value": "v26.0"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "name": "X-Business-Use-Case-Usage",
+          "value": "{\"1036844829507460\":[{\"type\":\"pages\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+        },
+        {
+          "name": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/javascript; charset=UTF-8"
+        }
+      ],
+      "body": "{\"id\":\"1036844829507460_122135607981072582\",\"created_time\":\"2026-07-04T02:01:00+0000\",\"message\":\"\\ud83d\\ude0b\",\"permalink_url\":\"https:\\/\\/www.facebook.com\\/122146890051072582\\/posts\\/122135607981072582\",\"full_picture\":\"https:\\/\\/scontent-iad3-2.xx.fbcdn.net\\/v\\/t39.30808-6\\/734367324_122135607843072582_5461130250440777686_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGZpaiGCRaYTj2lsfOw73c3IXYEbZc_ghwhdgRtlz-CHOnYJduAOQKmyp2Xbq0c8sgQB_ivOxshiUqCPw9McENA&_nc_ohc=VmwknDwtDFoQ7kNvwHO1xYu&_nc_oc=AdoIy7tTZ2uU0gvIspKBntI6rxZxR4sbnnhzkNSFWxKlHc7ehXwrr6ARTRvmegJioqU&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQJ8DZmJzB5w6YPMLU4iVsgLvKbJt3XO6tI_0fqgpAskbKn3C1xjWVpa9Mk2lZH4E4UQDq1LQlmTDms&oh=00_AQEUv05pSNjLtpESfynLfss8wEmYVQk2leUl-qpYW_jAWA&oe=6A8D922C\",\"attachments\":{\"data\":[{\"media\":{\"image\":{\"height\":900,\"src\":\"https:\\/\\/scontent-iad3-2.xx.fbcdn.net\\/v\\/t39.30808-6\\/734367324_122135607843072582_5461130250440777686_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGZpaiGCRaYTj2lsfOw73c3IXYEbZc_ghwhdgRtlz-CHOnYJduAOQKmyp2Xbq0c8sgQB_ivOxshiUqCPw9McENA&_nc_ohc=VmwknDwtDFoQ7kNvwHO1xYu&_nc_oc=AdoIy7tTZ2uU0gvIspKBntI6rxZxR4sbnnhzkNSFWxKlHc7ehXwrr6ARTRvmegJioqU&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQLUi_GhB5Qbkv_lyKTy-q35vPJTo2f9hBF-LNAS2Au7uTbey3zauwHbXq2Kl2enH46jitgFUFGhZGE&oh=00_AQELm9w4bE4cQUWo6hgXW8Z9hONUP3PtrPGAhw0wJ-fFxQ&oe=6A8D922C\",\"width\":720}},\"type\":\"photo\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122135607837072582&set=a.122095282845072582&type=3\",\"target\":{\"id\":\"122135607837072582\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122135607837072582&set=a.122095282845072582&type=3\"}}]},\"shares\":{\"count\":771},\"reactions\":{\"data\":[],\"summary\":{\"total_count\":1652,\"viewer_reaction\":\"NONE\"}},\"comments\":{\"data\":[],\"summary\":{\"order\":\"ranked\",\"total_count\":15,\"can_comment\":true}}}"
+    },
+    {
+      "code": 200,
+      "headers": [
+        {
+          "name": "Expires",
+          "value": "Sat, 01 Jan 2000 00:00:00 GMT"
+        },
+        {
+          "name": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "name": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "name": "Strict-Transport-Security",
+          "value": "max-age=15552000; preload"
+        },
+        {
+          "name": "Facebook-API-Version",
+          "value": "v26.0"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "name": "X-Business-Use-Case-Usage",
+          "value": "{\"1036844829507460\":[{\"type\":\"pages\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+        },
+        {
+          "name": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/javascript; charset=UTF-8"
+        }
+      ],
+      "body": "{\"id\":\"1036844829507460_122135586723072582\",\"created_time\":\"2026-07-03T23:16:54+0000\",\"message\":\"Ya va ser la hora del tecito \\ud83d\\ude07\\n#UniverseSentMe #vidareal #relatable #problemas\",\"permalink_url\":\"https:\\/\\/www.facebook.com\\/122146890051072582\\/posts\\/122135586723072582\",\"full_picture\":\"https:\\/\\/scontent-iad3-2.xx.fbcdn.net\\/v\\/t39.30808-6\\/735067769_122135586675072582_5654499048037639949_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGU56yfNd-Wchz4a52vTTj6J7HyKUwyP24nsfIpTDI_bpQ5gWiwksHzI0DslYQLR8jZIRgfmpKSrmuJqwrX3JX2&_nc_ohc=C251Mo7daecQ7kNvwFhDk4k&_nc_oc=AdrWd--TxUfIp8ilKyrKOEvHHo0NMeeaMDkN_IxqNwO4ifmWFylZS-2lnHLV8DJiFpk&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQJERv4PIQ4bgcBeCh8ceAvSFu7F2EVnU_fTcm8YqY6Z1pXY9-HGxerRIJytqzxWBMSiFYZgCoepIV8&oh=00_AQE54bTPrujry-iS5FqeefbP39Jwg3lAI1UCp0B88heNCg&oe=6A8D94D1\",\"attachments\":{\"data\":[{\"media\":{\"image\":{\"height\":720,\"src\":\"https:\\/\\/scontent-iad3-2.xx.fbcdn.net\\/v\\/t39.30808-6\\/735067769_122135586675072582_5654499048037639949_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGU56yfNd-Wchz4a52vTTj6J7HyKUwyP24nsfIpTDI_bpQ5gWiwksHzI0DslYQLR8jZIRgfmpKSrmuJqwrX3JX2&_nc_ohc=C251Mo7daecQ7kNvwFhDk4k&_nc_oc=AdrWd--TxUfIp8ilKyrKOEvHHo0NMeeaMDkN_IxqNwO4ifmWFylZS-2lnHLV8DJiFpk&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQLHrFajPEMLQqillcowLh6TmQtJkeMXer0ZF9SuFXbxeVJSWmpQTghhZ619GyAky9E9IZRAi3VjBCQ&oh=00_AQG3i4BbcHtinB6oAiz1RxB16KFkcdCCxkcAmXueNT-wnw&oe=6A8D94D1\",\"width\":720}},\"type\":\"photo\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122135586669072582&set=a.122095282845072582&type=3\",\"target\":{\"id\":\"122135586669072582\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122135586669072582&set=a.122095282845072582&type=3\"}}]},\"shares\":{\"count\":738},\"reactions\":{\"data\":[],\"summary\":{\"total_count\":1533,\"viewer_reaction\":\"NONE\"}},\"comments\":{\"data\":[],\"summary\":{\"order\":\"ranked\",\"total_count\":9,\"can_comment\":true}}}"
+    },
+    {
+      "code": 200,
+      "headers": [
+        {
+          "name": "Expires",
+          "value": "Sat, 01 Jan 2000 00:00:00 GMT"
+        },
+        {
+          "name": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "name": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "name": "Strict-Transport-Security",
+          "value": "max-age=15552000; preload"
+        },
+        {
+          "name": "Facebook-API-Version",
+          "value": "v26.0"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "name": "X-Business-Use-Case-Usage",
+          "value": "{\"1036844829507460\":[{\"type\":\"pages\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+        },
+        {
+          "name": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/javascript; charset=UTF-8"
+        }
+      ],
+      "body": "{\"id\":\"1036844829507460_122141376093072582\",\"created_time\":\"2026-07-24T15:39:53+0000\",\"message\":\"\\ud83e\\udee3\\ud83e\\udee3\\n#UniverseSentMe #humor #relatable #astrologia #retrogrado\",\"permalink_url\":\"https:\\/\\/www.facebook.com\\/122146890051072582\\/posts\\/122141376093072582\",\"full_picture\":\"https:\\/\\/scontent-iad3-1.xx.fbcdn.net\\/v\\/t39.30808-6\\/752488684_122141376039072582_3807222520578310023_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeE2v7wqebwJbHXdd5n7-AJRS6OdBUX2PV1Lo50FRfY9XfVent_sIYix0EpMVYdQqz_9jIFHlnEh1QoiDWCiT-6q&_nc_ohc=YVpRKSCYW-8Q7kNvwFohrek&_nc_oc=AdqfsEVAamHLnIMZcS5w2OML0sTPBk-EloVrzzitD-KWoXmkJAuhFDkjm9sWCP_0qrc&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQLZ0yyei_9TdQ7JB5UuNcSQSTmGGJLSUF80KH-obNFIvlKd3evD2I64TVXC4V8MyAtunxoQK7J9VGg&oh=00_AQFxszCXg2ysVV-xkaLPUzCoUVZqpRG5v2PWAiFLC5rm1A&oe=6A8D8AAC\",\"attachments\":{\"data\":[{\"media\":{\"image\":{\"height\":720,\"src\":\"https:\\/\\/scontent-iad3-1.xx.fbcdn.net\\/v\\/t39.30808-6\\/752488684_122141376039072582_3807222520578310023_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeE2v7wqebwJbHXdd5n7-AJRS6OdBUX2PV1Lo50FRfY9XfVent_sIYix0EpMVYdQqz_9jIFHlnEh1QoiDWCiT-6q&_nc_ohc=YVpRKSCYW-8Q7kNvwFohrek&_nc_oc=AdqfsEVAamHLnIMZcS5w2OML0sTPBk-EloVrzzitD-KWoXmkJAuhFDkjm9sWCP_0qrc&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQJA5bUXwZa0ffy3S1NzYuQgCWus6TVeQRrHRLwJqq8zaHLAlmzu_RzkgoxirFG-YyPe3jJ9c2AVElM&oh=00_AQGhLmaPqSFhaDMEXMWbdwIFH01786vhxj_IOKj4RKVfzw&oe=6A8D8AAC\",\"width\":720}},\"type\":\"photo\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122141376033072582&set=a.122095282845072582&type=3\",\"target\":{\"id\":\"122141376033072582\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122141376033072582&set=a.122095282845072582&type=3\"}}]},\"shares\":{\"count\":625},\"reactions\":{\"data\":[],\"summary\":{\"total_count\":2336,\"viewer_reaction\":\"NONE\"}},\"comments\":{\"data\":[],\"summary\":{\"order\":\"ranked\",\"total_count\":41,\"can_comment\":true}}}"
+    },
+    {
+      "code": 200,
+      "headers": [
+        {
+          "name": "Expires",
+          "value": "Sat, 01 Jan 2000 00:00:00 GMT"
+        },
+        {
+          "name": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "name": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "name": "Strict-Transport-Security",
+          "value": "max-age=15552000; preload"
+        },
+        {
+          "name": "Facebook-API-Version",
+          "value": "v26.0"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "name": "X-Business-Use-Case-Usage",
+          "value": "{\"1036844829507460\":[{\"type\":\"pages\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+        },
+        {
+          "name": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/javascript; charset=UTF-8"
+        }
+      ],
+      "body": "{\"id\":\"1036844829507460_122135016567072582\",\"created_time\":\"2026-07-01T22:42:56+0000\",\"message\":\"\\ud83d\\ude09\",\"permalink_url\":\"https:\\/\\/www.facebook.com\\/122146890051072582\\/posts\\/122135016567072582\",\"full_picture\":\"https:\\/\\/scontent-iad6-1.xx.fbcdn.net\\/v\\/t39.30808-6\\/734384461_122135016531072582_6737706079925304662_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEbxFbJXoGlzAXAhAV88Z42jQ5WEiHFYPiNDlYSIcVg-HHBQbGbGuVP2UJhXsPZXZo_iknZdGqKaqLiRxInuKeC&_nc_ohc=WRw652gQTH0Q7kNvwFAlBdq&_nc_oc=AdqxLNg_Lksa0bLwFn99zmkA9HOyLYACmBGF4Kj_vfshbb_hYIBoyxVPgAIz5foPI8g&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQK4yFBg69OIgjSZmu_KymzVCY0KK9WstRKDMAooHNQqAhaTj2HZIPAZEz61FNwaX_M0R_H8C3SIGw4&oh=00_AQEgHfFw3rlsJEsstGVAKBvjyKuryRxrBF0EbYxDGgZtvA&oe=6A8DA3AC\",\"attachments\":{\"data\":[{\"media\":{\"image\":{\"height\":858,\"src\":\"https:\\/\\/scontent-iad6-1.xx.fbcdn.net\\/v\\/t39.30808-6\\/734384461_122135016531072582_6737706079925304662_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEbxFbJXoGlzAXAhAV88Z42jQ5WEiHFYPiNDlYSIcVg-HHBQbGbGuVP2UJhXsPZXZo_iknZdGqKaqLiRxInuKeC&_nc_ohc=WRw652gQTH0Q7kNvwFAlBdq&_nc_oc=AdqxLNg_Lksa0bLwFn99zmkA9HOyLYACmBGF4Kj_vfshbb_hYIBoyxVPgAIz5foPI8g&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQImcGD671yyq7gp9rVri87QarwpjXQ3la5V8ztHJoEH4kntL_H2reKDg_cRFlKSXFLH84W8xs75qto&oh=00_AQFEo_q6z8OgFVHXo_TjyXUwYmsTaXxCONwJbyB10eCK1g&oe=6A8DA3AC\",\"width\":720}},\"type\":\"photo\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122135016525072582&set=a.122095282845072582&type=3\",\"target\":{\"id\":\"122135016525072582\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122135016525072582&set=a.122095282845072582&type=3\"}}]},\"shares\":{\"count\":559},\"reactions\":{\"data\":[],\"summary\":{\"total_count\":1412,\"viewer_reaction\":\"NONE\"}},\"comments\":{\"data\":[],\"summary\":{\"order\":\"ranked\",\"total_count\":10,\"can_comment\":true}}}"
+    },
+    {
+      "code": 200,
+      "headers": [
+        {
+          "name": "Expires",
+          "value": "Sat, 01 Jan 2000 00:00:00 GMT"
+        },
+        {
+          "name": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "name": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "name": "Strict-Transport-Security",
+          "value": "max-age=15552000; preload"
+        },
+        {
+          "name": "Facebook-API-Version",
+          "value": "v26.0"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "name": "X-Business-Use-Case-Usage",
+          "value": "{\"1036844829507460\":[{\"type\":\"pages\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+        },
+        {
+          "name": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/javascript; charset=UTF-8"
+        }
+      ],
+      "body": "{\"id\":\"1036844829507460_122139161997072582\",\"created_time\":\"2026-07-16T00:00:01+0000\",\"message\":\"Un honguirijillo...\",\"permalink_url\":\"https:\\/\\/www.facebook.com\\/122146890051072582\\/posts\\/122139161997072582\",\"full_picture\":\"https:\\/\\/scontent-iad3-1.xx.fbcdn.net\\/v\\/t39.30808-6\\/746294958_122139161949072582_2513168602131102343_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeH6vDCFOLXnd_4oX0fvbLGT-Y9944onUAf5j33jiidQB2eGjNhxvMTJDw-oztAe2o49zR-7CPdAj0IbYxCF8MXu&_nc_ohc=QmiUR4fQ4pgQ7kNvwHHQ6k0&_nc_oc=AdqVqfoxU7wjg97zSzb-GrfDrvfQY5JhFbd4KqZNoFrEvJQCz9P1MgPvEwfU5VYBBow&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQK-k3xj9zyVygHFRizfhQP7r3YY5yc31I7tKZl1_zdyRDCR057SEz8oYC-asnPjfmmvDh8rSJYWsbY&oh=00_AQExOtEIOYwK6eO4_rmQ4czo1XYz5HS5phc6ZOipUHDwxA&oe=6A8D886B\",\"attachments\":{\"data\":[{\"media\":{\"image\":{\"height\":720,\"src\":\"https:\\/\\/scontent-iad3-1.xx.fbcdn.net\\/v\\/t39.30808-6\\/746294958_122139161949072582_2513168602131102343_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeH6vDCFOLXnd_4oX0fvbLGT-Y9944onUAf5j33jiidQB2eGjNhxvMTJDw-oztAe2o49zR-7CPdAj0IbYxCF8MXu&_nc_ohc=QmiUR4fQ4pgQ7kNvwHHQ6k0&_nc_oc=AdqVqfoxU7wjg97zSzb-GrfDrvfQY5JhFbd4KqZNoFrEvJQCz9P1MgPvEwfU5VYBBow&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQJEpCKCkyt7e6XJxeL1gfQ61uAltUNaZD96-kTCsarpA850nHx5vfiTCYNBwYqw2DkUG7N71JKPzFU&oh=00_AQGz2Svn1sZX2_IyFgBEeDxExbyyIJb9pcQSgOdhUHeHXg&oe=6A8D886B\",\"width\":720}},\"type\":\"photo\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122139161943072582&set=a.122095282845072582&type=3\",\"target\":{\"id\":\"122139161943072582\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122139161943072582&set=a.122095282845072582&type=3\"}}]},\"shares\":{\"count\":496},\"reactions\":{\"data\":[],\"summary\":{\"total_count\":1470,\"viewer_reaction\":\"NONE\"}},\"comments\":{\"data\":[],\"summary\":{\"order\":\"ranked\",\"total_count\":7,\"can_comment\":true}}}"
+    },
+    {
+      "code": 200,
+      "headers": [
+        {
+          "name": "Expires",
+          "value": "Sat, 01 Jan 2000 00:00:00 GMT"
+        },
+        {
+          "name": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "name": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "name": "Strict-Transport-Security",
+          "value": "max-age=15552000; preload"
+        },
+        {
+          "name": "Facebook-API-Version",
+          "value": "v26.0"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "name": "X-Business-Use-Case-Usage",
+          "value": "{\"1036844829507460\":[{\"type\":\"pages\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+        },
+        {
+          "name": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/javascript; charset=UTF-8"
+        }
+      ],
+      "body": "{\"id\":\"1036844829507460_122140439079072582\",\"created_time\":\"2026-07-19T20:00:08+0000\",\"message\":\"\\ud83d\\ude0c lo siento vv\\n#UniverseSentMe #humor\",\"permalink_url\":\"https:\\/\\/www.facebook.com\\/122146890051072582\\/posts\\/122140439079072582\",\"full_picture\":\"https:\\/\\/scontent-iad6-1.xx.fbcdn.net\\/v\\/t39.30808-6\\/752022597_122140438905072582_4378602066057536690_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEdTlTM1RZDItuxKFmNNwBcRXqS7sIbNqZFepLuwhs2poGpdGxAjgGowBWV0ZlxiESeco9mx-V1a_rIDq9I-xMI&_nc_ohc=o4PIbf82UrgQ7kNvwF4JNVU&_nc_oc=AdrgeU3Mt1tSL8JHnt4MzGG9tGgVOnjUgqMRFOLOQBFFiD2oOeN-1E-ufn8mOE71fWI&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQKTICEJmZnsmU9wEWIfFgHk33S5aFejs3vumN8ZqsuGwkXEyaa2iDz_rwe5dEJGN3YDQb1vEtgoyxA&oh=00_AQF3el_eIbk0DwYLLD6tqqu-o0A1u61QEl-nfWohk1_CpA&oe=6A8DBD71\",\"attachments\":{\"data\":[{\"media\":{\"image\":{\"height\":964,\"src\":\"https:\\/\\/scontent-iad6-1.xx.fbcdn.net\\/v\\/t39.30808-6\\/752022597_122140438905072582_4378602066057536690_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEdTlTM1RZDItuxKFmNNwBcRXqS7sIbNqZFepLuwhs2poGpdGxAjgGowBWV0ZlxiESeco9mx-V1a_rIDq9I-xMI&_nc_ohc=o4PIbf82UrgQ7kNvwF4JNVU&_nc_oc=AdrgeU3Mt1tSL8JHnt4MzGG9tGgVOnjUgqMRFOLOQBFFiD2oOeN-1E-ufn8mOE71fWI&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQK5Be0T4_m2VeXwdcTRTM3eT_EFWGyrl7kKd-Of92RuEcCJhoENkzvLjiQfoiWjHJSqchNgFZceV4U&oh=00_AQGGCjddEJVksrivZDMeN1bjmHqrYpU1etABgvzfSx6BTg&oe=6A8DBD71\",\"width\":720}},\"type\":\"photo\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122140438899072582&set=a.122095282845072582&type=3\",\"target\":{\"id\":\"122140438899072582\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122140438899072582&set=a.122095282845072582&type=3\"}}]},\"shares\":{\"count\":413},\"reactions\":{\"data\":[],\"summary\":{\"total_count\":903,\"viewer_reaction\":\"NONE\"}},\"comments\":{\"data\":[],\"summary\":{\"order\":\"ranked\",\"total_count\":13,\"can_comment\":true}}}"
+    },
+    {
+      "code": 200,
+      "headers": [
+        {
+          "name": "Expires",
+          "value": "Sat, 01 Jan 2000 00:00:00 GMT"
+        },
+        {
+          "name": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "name": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "name": "Strict-Transport-Security",
+          "value": "max-age=15552000; preload"
+        },
+        {
+          "name": "Facebook-API-Version",
+          "value": "v26.0"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "name": "X-Business-Use-Case-Usage",
+          "value": "{\"1036844829507460\":[{\"type\":\"pages\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+        },
+        {
+          "name": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/javascript; charset=UTF-8"
+        }
+      ],
+      "body": "{\"id\":\"1036844829507460_122140751031072582\",\"created_time\":\"2026-07-21T00:03:22+0000\",\"message\":\"Me encanta bruce lee.. c:\\n#UniverseSentMe\",\"permalink_url\":\"https:\\/\\/www.facebook.com\\/122146890051072582\\/posts\\/122140751031072582\",\"full_picture\":\"https:\\/\\/scontent-iad3-1.xx.fbcdn.net\\/v\\/t39.30808-6\\/749343345_122140750971072582_2666425530052143729_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHu12HHwuEG3OhgnFTi1LvVOf2TAe56AhY5_ZMB7noCFtQ_XsGt_ESxWFjWEpIWYCL3YdxIqqUA5SxRwDeIAQxP&_nc_ohc=5v8nl6GFFmsQ7kNvwFH0yCR&_nc_oc=AdqJUsXB69a3hYstHO9e0dcSvRtp66nyNaY1OEPwE9CbnWvXX49BRuLouFqCGiFtqyY&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQKq6nwtnJAVa00_A-J9T-BTfKS0DeFuQDKY1bcgUzs3KJF8wos8kpiT0ybRJt2GhhJlIgF6HxksY-k&oh=00_AQGNJUqsuGFakRW2debN374kFt2GpEKqSD5c9INuGqeQUQ&oe=6A8DA4AF\",\"attachments\":{\"data\":[{\"media\":{\"image\":{\"height\":964,\"src\":\"https:\\/\\/scontent-iad3-1.xx.fbcdn.net\\/v\\/t39.30808-6\\/749343345_122140750971072582_2666425530052143729_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHu12HHwuEG3OhgnFTi1LvVOf2TAe56AhY5_ZMB7noCFtQ_XsGt_ESxWFjWEpIWYCL3YdxIqqUA5SxRwDeIAQxP&_nc_ohc=5v8nl6GFFmsQ7kNvwFH0yCR&_nc_oc=AdqJUsXB69a3hYstHO9e0dcSvRtp66nyNaY1OEPwE9CbnWvXX49BRuLouFqCGiFtqyY&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQKM5VguVohWfPFV-TPO3KQ0wr3xsRD6xb02wvPDG44dZ7c5KikOrJhayvaA621eqHuFnWgHB4K5SJI&oh=00_AQEasjR3jcnCdpkFX0QK3NeORO1LTvcPE-LaaDgtNAdgbA&oe=6A8DA4AF\",\"width\":720}},\"type\":\"photo\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122140750965072582&set=a.122095282845072582&type=3\",\"target\":{\"id\":\"122140750965072582\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122140750965072582&set=a.122095282845072582&type=3\"}}]},\"shares\":{\"count\":408},\"reactions\":{\"data\":[],\"summary\":{\"total_count\":1278,\"viewer_reaction\":\"NONE\"}},\"comments\":{\"data\":[],\"summary\":{\"order\":\"ranked\",\"total_count\":6,\"can_comment\":true}}}"
+    },
+    {
+      "code": 200,
+      "headers": [
+        {
+          "name": "Expires",
+          "value": "Sat, 01 Jan 2000 00:00:00 GMT"
+        },
+        {
+          "name": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "name": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "name": "Strict-Transport-Security",
+          "value": "max-age=15552000; preload"
+        },
+        {
+          "name": "Facebook-API-Version",
+          "value": "v26.0"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "name": "X-Business-Use-Case-Usage",
+          "value": "{\"1036844829507460\":[{\"type\":\"pages\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+        },
+        {
+          "name": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/javascript; charset=UTF-8"
+        }
+      ],
+      "body": "{\"id\":\"1036844829507460_122138831577072582\",\"created_time\":\"2026-07-13T00:33:22+0000\",\"message\":\"ufff... \\ud83e\\udd74\",\"permalink_url\":\"https:\\/\\/www.facebook.com\\/122146890051072582\\/posts\\/122138831577072582\",\"full_picture\":\"https:\\/\\/scontent-iad6-1.xx.fbcdn.net\\/v\\/t39.30808-6\\/743967511_122138831547072582_3915612612788419139_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFoY__AvrisxKLXoK-jQ6QUK9ialWfPF3Ir2JqVZ88XclXH5ddmWCKzXTCP7pf_bbrIpKaBJnI3AU1r8ls5uAqU&_nc_ohc=TB2Hu1Qd9D8Q7kNvwGN6rsm&_nc_oc=Adr3XIvXGWTESByCLrQtcoZfSMDymIbaxnREdF4EfawehTTNtqkP7-K7ckdQlZFyotM&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQLxr8zdX_2vBmsGSNRtKu-LX-TLYyISKUhEkQ_3ncLgUvy2PY0z5MJND_vSHWc2MpEBDEOlH9JNP9k&oh=00_AQFRZlxoniCAnhcN2RK-7nldsZBJIRzTeD0i8mz3j4id2A&oe=6A8DA163\",\"attachments\":{\"data\":[{\"media\":{\"image\":{\"height\":722,\"src\":\"https:\\/\\/scontent-iad6-1.xx.fbcdn.net\\/v\\/t39.30808-6\\/743967511_122138831547072582_3915612612788419139_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFoY__AvrisxKLXoK-jQ6QUK9ialWfPF3Ir2JqVZ88XclXH5ddmWCKzXTCP7pf_bbrIpKaBJnI3AU1r8ls5uAqU&_nc_ohc=TB2Hu1Qd9D8Q7kNvwGN6rsm&_nc_oc=Adr3XIvXGWTESByCLrQtcoZfSMDymIbaxnREdF4EfawehTTNtqkP7-K7ckdQlZFyotM&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQKIEGOJiCMlmEiLwFAr3RMNRPHCd6FkMhu9EV1XK9J7SbkjJdMDBTwYUGrnduAFdaeLv_QlORW4-Ko&oh=00_AQHiRUCTKYXk27XhaGmEOKN-DX-8mXqMDCqPL61XWow1fQ&oe=6A8DA163\",\"width\":720}},\"type\":\"photo\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122138831541072582&set=a.122095282845072582&type=3\",\"target\":{\"id\":\"122138831541072582\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122138831541072582&set=a.122095282845072582&type=3\"}}]},\"shares\":{\"count\":359},\"reactions\":{\"data\":[],\"summary\":{\"total_count\":650,\"viewer_reaction\":\"NONE\"}},\"comments\":{\"data\":[],\"summary\":{\"order\":\"ranked\",\"total_count\":16,\"can_comment\":true}}}"
+    },
+    {
+      "code": 200,
+      "headers": [
+        {
+          "name": "Expires",
+          "value": "Sat, 01 Jan 2000 00:00:00 GMT"
+        },
+        {
+          "name": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "name": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "name": "Strict-Transport-Security",
+          "value": "max-age=15552000; preload"
+        },
+        {
+          "name": "Facebook-API-Version",
+          "value": "v26.0"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "name": "X-Business-Use-Case-Usage",
+          "value": "{\"1036844829507460\":[{\"type\":\"pages\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+        },
+        {
+          "name": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/javascript; charset=UTF-8"
+        }
+      ],
+      "body": "{\"id\":\"1036844829507460_122138846193072582\",\"created_time\":\"2026-07-13T22:00:06+0000\",\"message\":\"\\ud83d\\ude08 Ya fue mucha solteria\",\"permalink_url\":\"https:\\/\\/www.facebook.com\\/122146890051072582\\/posts\\/122138846193072582\",\"full_picture\":\"https:\\/\\/scontent-iad6-1.xx.fbcdn.net\\/v\\/t39.30808-6\\/743841401_122138846145072582_8552554125105303820_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFqqVj1XWKekdI3UI5y6DLoA7HiFiw_KocDseIWLD8qhwVgiUM_O2ZxCFk_dngb3Z6My5-DkD5mBc_fEEMAnQ3p&_nc_ohc=E0XD1UGVRHYQ7kNvwEev2fv&_nc_oc=AdrVZNqhAETeY7eAhRfZmIbbH3O1bTexl7K7AtR-bi0h8Y618jEZAjgTU5QKqM2nOV8&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQI1Q13ep3pvbHZkgEk7MDFgtCdeEPiTLj2lUk8-CslJDqT_l4HY8xwCjNKI12iJtlq3Uzf4iis-PGo&oh=00_AQG6D1VnhCQKgwayZ6mcCJXS-2Tjj4f6eXpQmOlcDGMEPA&oe=6A8D8DB2\",\"attachments\":{\"data\":[{\"media\":{\"image\":{\"height\":964,\"src\":\"https:\\/\\/scontent-iad6-1.xx.fbcdn.net\\/v\\/t39.30808-6\\/743841401_122138846145072582_8552554125105303820_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFqqVj1XWKekdI3UI5y6DLoA7HiFiw_KocDseIWLD8qhwVgiUM_O2ZxCFk_dngb3Z6My5-DkD5mBc_fEEMAnQ3p&_nc_ohc=E0XD1UGVRHYQ7kNvwEev2fv&_nc_oc=AdrVZNqhAETeY7eAhRfZmIbbH3O1bTexl7K7AtR-bi0h8Y618jEZAjgTU5QKqM2nOV8&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQJAt0DsDnQ2ALUl_nTM4_4eSs3Ra1lTnD1MhM9_kxo7GtR7ZfULifsJ-6aprBQA7907Hyl5hpfeG_4&oh=00_AQF-nzuaz2aA43lpSN1dbL_-42CcBpsEK9zl6QYD7tEuxA&oe=6A8D8DB2\",\"width\":720}},\"type\":\"photo\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122138846133072582&set=a.122095282845072582&type=3\",\"target\":{\"id\":\"122138846133072582\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122138846133072582&set=a.122095282845072582&type=3\"}}]},\"shares\":{\"count\":338},\"reactions\":{\"data\":[],\"summary\":{\"total_count\":1259,\"viewer_reaction\":\"NONE\"}},\"comments\":{\"data\":[],\"summary\":{\"order\":\"ranked\",\"total_count\":15,\"can_comment\":true}}}"
+    },
+    {
+      "code": 200,
+      "headers": [
+        {
+          "name": "Expires",
+          "value": "Sat, 01 Jan 2000 00:00:00 GMT"
+        },
+        {
+          "name": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "name": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "name": "Strict-Transport-Security",
+          "value": "max-age=15552000; preload"
+        },
+        {
+          "name": "Facebook-API-Version",
+          "value": "v26.0"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "name": "X-Business-Use-Case-Usage",
+          "value": "{\"1036844829507460\":[{\"type\":\"pages\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+        },
+        {
+          "name": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/javascript; charset=UTF-8"
+        }
+      ],
+      "body": "{\"id\":\"1036844829507460_122136954147072582\",\"created_time\":\"2026-07-07T05:01:58+0000\",\"message\":\"\\ud83e\\udee3\\ud83e\\udee3\",\"permalink_url\":\"https:\\/\\/www.facebook.com\\/122146890051072582\\/posts\\/122136954147072582\",\"full_picture\":\"https:\\/\\/scontent-iad3-2.xx.fbcdn.net\\/v\\/t39.30808-6\\/739786356_122136954099072582_4802597045609461945_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeElab68TpwoJlVbLOAUuxPuF9M_Ief1G_YX0z8h5_Ub9nFhcZTHO8KrZe6KPQwpzv_nUICMtBwxO1R_JUHbCHMP&_nc_ohc=djskqnkatvkQ7kNvwEXBBoG&_nc_oc=Adr04My6SJ8q01FmWf5Zbv_Ucv89uEu64Ed0ZwY3OLPVLTiPuL-kUpJNu67WFZJiNkc&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQJ2vKp0DVojYNLHYzLE-ym3r2ifFztvkbbg_ewPCwX4gFsKQ4FIlX77o1D-qUJmrC9DWefEoYrnN0E&oh=00_AQGwhinVMLxqwY6V4d7bFbuWDAVqylvARCvzuXZeTSbFHQ&oe=6A8D89F4\",\"attachments\":{\"data\":[{\"media\":{\"image\":{\"height\":720,\"src\":\"https:\\/\\/scontent-iad3-2.xx.fbcdn.net\\/v\\/t39.30808-6\\/739786356_122136954099072582_4802597045609461945_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeElab68TpwoJlVbLOAUuxPuF9M_Ief1G_YX0z8h5_Ub9nFhcZTHO8KrZe6KPQwpzv_nUICMtBwxO1R_JUHbCHMP&_nc_ohc=djskqnkatvkQ7kNvwEXBBoG&_nc_oc=Adr04My6SJ8q01FmWf5Zbv_Ucv89uEu64Ed0ZwY3OLPVLTiPuL-kUpJNu67WFZJiNkc&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQIbhMb-_Y-p4kfLUKyFNQkMOHUyFmxai5Q7UBWxrgCzq2KEuYu_DO3XUpMtuKd1uDI0nykPuacRZJg&oh=00_AQF2F-fWEdHM-uELPdyHaxqmRSo3U0_8b8lXWx9iP5gSlQ&oe=6A8D89F4\",\"width\":867}},\"type\":\"photo\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122136954093072582&set=a.122095282845072582&type=3\",\"target\":{\"id\":\"122136954093072582\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122136954093072582&set=a.122095282845072582&type=3\"}}]},\"shares\":{\"count\":322},\"reactions\":{\"data\":[],\"summary\":{\"total_count\":745,\"viewer_reaction\":\"NONE\"}},\"comments\":{\"data\":[],\"summary\":{\"order\":\"ranked\",\"total_count\":8,\"can_comment\":true}}}"
+    },
+    {
+      "code": 200,
+      "headers": [
+        {
+          "name": "Expires",
+          "value": "Sat, 01 Jan 2000 00:00:00 GMT"
+        },
+        {
+          "name": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "name": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "name": "Strict-Transport-Security",
+          "value": "max-age=15552000; preload"
+        },
+        {
+          "name": "Facebook-API-Version",
+          "value": "v26.0"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "name": "X-Business-Use-Case-Usage",
+          "value": "{\"1036844829507460\":[{\"type\":\"pages\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+        },
+        {
+          "name": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/javascript; charset=UTF-8"
+        }
+      ],
+      "body": "{\"id\":\"1036844829507460_122137968789072582\",\"created_time\":\"2026-07-10T02:00:03+0000\",\"message\":\"Por fin alguien que resuelve. \\ud83d\\ude1d\\n\\n#UniverseSentMe #empatia #Resuelve #vidareal\",\"permalink_url\":\"https:\\/\\/www.facebook.com\\/122146890051072582\\/posts\\/122137968789072582\",\"full_picture\":\"https:\\/\\/scontent-iad3-2.xx.fbcdn.net\\/v\\/t39.30808-6\\/740836371_122137968741072582_5555004266523161046_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGuDBIVkDp3BtnqNeiVB19zD4zgIg9ZTLEPjOAiD1lMsUal6YsJ7oBD_q3zn3H96GuAWC_0xMsoQ4mgAbDgATCG&_nc_ohc=E9ksKDGhzckQ7kNvwERF285&_nc_oc=Adq8dcQRo_dSHqUq1RB79lt1ZPC0x62VfWpTdeqB4jm9E4iq0MPrU6Unif_N1JO4rac&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQL9WF5QBTjnwxQADHkSOb0hRh4kMGeTOyilV0zKJyTAauuokpPq9DQIYXr4DjE-mbONscoZFmTZr3Q&oh=00_AQGkgnPflNmgYNwPvmqsWKaJ9TtTTkxTJQBFeVuK07INVw&oe=6A8DBD74\",\"attachments\":{\"data\":[{\"media\":{\"image\":{\"height\":720,\"src\":\"https:\\/\\/scontent-iad3-2.xx.fbcdn.net\\/v\\/t39.30808-6\\/740836371_122137968741072582_5555004266523161046_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGuDBIVkDp3BtnqNeiVB19zD4zgIg9ZTLEPjOAiD1lMsUal6YsJ7oBD_q3zn3H96GuAWC_0xMsoQ4mgAbDgATCG&_nc_ohc=E9ksKDGhzckQ7kNvwERF285&_nc_oc=Adq8dcQRo_dSHqUq1RB79lt1ZPC0x62VfWpTdeqB4jm9E4iq0MPrU6Unif_N1JO4rac&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQKiHSazBAQGDO7hWT3lVJtf5gTrgxdmP-avqwLO03iL82R3MLSgNFtco787xKEBkOve-nZc3tbw-Cw&oh=00_AQEFl-vYDUrKr5TNHeLuFTOuoFG65RT-T0mv_rSPkf11Ng&oe=6A8DBD74\",\"width\":720}},\"type\":\"photo\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122137968735072582&set=a.122095282845072582&type=3\",\"target\":{\"id\":\"122137968735072582\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122137968735072582&set=a.122095282845072582&type=3\"}}]},\"shares\":{\"count\":224},\"reactions\":{\"data\":[],\"summary\":{\"total_count\":553,\"viewer_reaction\":\"NONE\"}},\"comments\":{\"data\":[],\"summary\":{\"order\":\"ranked\",\"total_count\":7,\"can_comment\":true}}}"
+    },
+    {
+      "code": 200,
+      "headers": [
+        {
+          "name": "Expires",
+          "value": "Sat, 01 Jan 2000 00:00:00 GMT"
+        },
+        {
+          "name": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "name": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "name": "Strict-Transport-Security",
+          "value": "max-age=15552000; preload"
+        },
+        {
+          "name": "Facebook-API-Version",
+          "value": "v26.0"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "name": "X-Business-Use-Case-Usage",
+          "value": "{\"1036844829507460\":[{\"type\":\"pages\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+        },
+        {
+          "name": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/javascript; charset=UTF-8"
+        }
+      ],
+      "body": "{\"id\":\"1036844829507460_122142625983072582\",\"created_time\":\"2026-07-28T00:00:00+0000\",\"message\":\"Abrazos que curan el alma \\n#UniverseSentMe #Abrazarte #MomentosUSM\",\"permalink_url\":\"https:\\/\\/www.facebook.com\\/122146890051072582\\/posts\\/122142625983072582\",\"full_picture\":\"https:\\/\\/scontent-iad3-1.xx.fbcdn.net\\/v\\/t39.30808-6\\/758636037_122142625737072582_6254206884381762169_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEX9d9QrEyd0dGoHzjzUs_UdgC1msQ8AM12ALWaxDwAzc3C_wa_ZbIuAf20w5sF1ZI3xyp381oWgPASjeZPBBQJ&_nc_ohc=NpIPBzPwiycQ7kNvwHOOJL4&_nc_oc=AdqgQ7teq-Ep18kW11Gq9lLU5RNJvgIaPVg2zJwBpoOeoymExfljrjbc5Dg0BCuSDQc&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQIrhhQ9cVvt7qNHRZRc8NOYgzeP26wp2i2fud_t8haLricCpT6J6n415BtzQ1GIVdbaKpSXCLzK0N0&oh=00_AQFh7lZA7m7xtOqyxhucXL7vjyI_hDsrVoC4e1_2__jXbg&oe=6A8DB5E9\",\"attachments\":{\"data\":[{\"media\":{\"image\":{\"height\":964,\"src\":\"https:\\/\\/scontent-iad3-1.xx.fbcdn.net\\/v\\/t39.30808-6\\/758636037_122142625737072582_6254206884381762169_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEX9d9QrEyd0dGoHzjzUs_UdgC1msQ8AM12ALWaxDwAzc3C_wa_ZbIuAf20w5sF1ZI3xyp381oWgPASjeZPBBQJ&_nc_ohc=NpIPBzPwiycQ7kNvwHOOJL4&_nc_oc=AdqgQ7teq-Ep18kW11Gq9lLU5RNJvgIaPVg2zJwBpoOeoymExfljrjbc5Dg0BCuSDQc&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQKkydLmjbSQByXKD2-e5S-eEzMkJvLa914ubb9B72CgPdUpY_F1R2Zdmm5CuEUI72hME9i1NL_1tIc&oh=00_AQH7fUHr6R8u-Fk0KeCc2DbYGPvBrwb0rOAZUioZzE-ekQ&oe=6A8DB5E9\",\"width\":720}},\"type\":\"photo\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122142625731072582&set=a.122095282845072582&type=3\",\"target\":{\"id\":\"122142625731072582\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122142625731072582&set=a.122095282845072582&type=3\"}}]},\"shares\":{\"count\":142},\"reactions\":{\"data\":[],\"summary\":{\"total_count\":511,\"viewer_reaction\":\"NONE\"}},\"comments\":{\"data\":[],\"summary\":{\"order\":\"ranked\",\"total_count\":12,\"can_comment\":true}}}"
+    },
+    {
+      "code": 200,
+      "headers": [
+        {
+          "name": "Expires",
+          "value": "Sat, 01 Jan 2000 00:00:00 GMT"
+        },
+        {
+          "name": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "name": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "name": "Strict-Transport-Security",
+          "value": "max-age=15552000; preload"
+        },
+        {
+          "name": "Facebook-API-Version",
+          "value": "v26.0"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "name": "X-Business-Use-Case-Usage",
+          "value": "{\"1036844829507460\":[{\"type\":\"pages\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+        },
+        {
+          "name": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/javascript; charset=UTF-8"
+        }
+      ],
+      "body": "{\"id\":\"1036844829507460_122143527921072582\",\"created_time\":\"2026-07-31T21:00:00+0000\",\"message\":\"No todos los hadas dan flores y mariposas. Algunas te dan la verdad y te dejan sentada frente a la hoguera proces\\u00e1ndola.\\n\\nKiri no vino a consolarte. Vino a recordarte que lo que no entiendes te controla. Y hoy, por fin, algo hizo click.\\n\\nEl bosque no miente. \\nLas preguntas correctas duelen al principio,\\npero te liberan al final.\\n\\n\\u00bfQu\\u00e9 fue eso que reci\\u00e9n entendiste? \\nCu\\u00e9ntamelo en los comentarios. \\ud83d\\udc47\\n\\n#KiriUSM #LoresUSM #MomentosUSM #UniverseSentMe #relatable #humor\",\"permalink_url\":\"https:\\/\\/www.facebook.com\\/122146890051072582\\/posts\\/122143527921072582\",\"full_picture\":\"https:\\/\\/scontent-iad3-2.xx.fbcdn.net\\/v\\/t39.30808-6\\/763119646_122143527585072582_7633109206345673122_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEVs2i0gZ-eCoh-oa8yFAMubNEn1_dSa6Fs0SfX91JroZuXZ5sxZfOXJzkVvSk7RShxqkliqDJXZQ_4ScFdUumj&_nc_ohc=tW0mLGwVMD8Q7kNvwHNNKkU&_nc_oc=AdqFrHS4SJOEQXpC_ee7PMcmUro_UDOvrYk1odQEQ1g8zWUq8pmZ5X9N3Hol3w6PRYE&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQLLsbnoQEDwzjyYMyhE3qE8dHR8yOVO-i9Ucrvl7PcMoFWekSP5CHYBEM65JnXXB553FH_CNnpjqpQ&oh=00_AQFiwhNUqWWxDFGiFTsuSIEbeoWyPfhn3Bcu-_nV7orymA&oe=6A8DAF6D\",\"attachments\":{\"data\":[{\"media\":{\"image\":{\"height\":964,\"src\":\"https:\\/\\/scontent-iad3-2.xx.fbcdn.net\\/v\\/t39.30808-6\\/763119646_122143527585072582_7633109206345673122_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEVs2i0gZ-eCoh-oa8yFAMubNEn1_dSa6Fs0SfX91JroZuXZ5sxZfOXJzkVvSk7RShxqkliqDJXZQ_4ScFdUumj&_nc_ohc=tW0mLGwVMD8Q7kNvwHNNKkU&_nc_oc=AdqFrHS4SJOEQXpC_ee7PMcmUro_UDOvrYk1odQEQ1g8zWUq8pmZ5X9N3Hol3w6PRYE&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQL6VwDzH9xXGenTdHmX8UY0vpuhUxDTZwmjq5531RE9Xo8xvzmTmHJXTePj9zjjxrjELSmEqnyW644&oh=00_AQHvso-XDTwCet5-p0MyHCtgmYksvbP_WNo2MeJK5wCC3Q&oe=6A8DAF6D\",\"width\":720}},\"type\":\"photo\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122143527579072582&set=a.122095282845072582&type=3\",\"target\":{\"id\":\"122143527579072582\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122143527579072582&set=a.122095282845072582&type=3\"}}]},\"shares\":{\"count\":126},\"reactions\":{\"data\":[],\"summary\":{\"total_count\":524,\"viewer_reaction\":\"NONE\"}},\"comments\":{\"data\":[],\"summary\":{\"order\":\"ranked\",\"total_count\":14,\"can_comment\":true}}}"
+    },
+    {
+      "code": 200,
+      "headers": [
+        {
+          "name": "Expires",
+          "value": "Sat, 01 Jan 2000 00:00:00 GMT"
+        },
+        {
+          "name": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "name": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "name": "Strict-Transport-Security",
+          "value": "max-age=15552000; preload"
+        },
+        {
+          "name": "Facebook-API-Version",
+          "value": "v26.0"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "name": "X-Business-Use-Case-Usage",
+          "value": "{\"1036844829507460\":[{\"type\":\"pages\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+        },
+        {
+          "name": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/javascript; charset=UTF-8"
+        }
+      ],
+      "body": "{\"id\":\"1036844829507460_122142624879072582\",\"created_time\":\"2026-07-27T21:20:01+0000\",\"message\":\"\\u263a\\ufe0f\\ud83d\\ude0a\\n#UniverseSentMe #memesUSM #humor\",\"permalink_url\":\"https:\\/\\/www.facebook.com\\/122146890051072582\\/posts\\/122142624879072582\",\"full_picture\":\"https:\\/\\/scontent-iad3-2.xx.fbcdn.net\\/v\\/t39.30808-6\\/758444641_122142623571072582_7237803096469495519_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFcHODgBD60cMiWK7AC1sTho3QKqgOwJQyjdAqqA7AlDNO8rNZUzza1wEP67oe6oGtY2WcsnxOAoP3cHNmNKfCQ&_nc_ohc=8aYqOPLWUGEQ7kNvwGypops&_nc_oc=AdrRq-hHBqUxcbPiFjK5iWg6eAF2cqSrjzL_BJHWUkDiV-Op-0e7Nhc1lqMTwQ0VPWM&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQJbMKaqNfHC9XfSr5nqTdL7KvzHzKaj_Vg_W-qXRCjZDLfTi-dDutPh6b4spVC0Tkt-v9rTjdnGZfM&oh=00_AQGvwkTTEYLCbLC_1nSDb5SzpppxjTBR8s4U1SYTZnHhhQ&oe=6A8D8C80\",\"attachments\":{\"data\":[{\"media\":{\"image\":{\"height\":1224,\"src\":\"https:\\/\\/scontent-iad3-2.xx.fbcdn.net\\/v\\/t39.30808-6\\/758444641_122142623571072582_7237803096469495519_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFcHODgBD60cMiWK7AC1sTho3QKqgOwJQyjdAqqA7AlDNO8rNZUzza1wEP67oe6oGtY2WcsnxOAoP3cHNmNKfCQ&_nc_ohc=8aYqOPLWUGEQ7kNvwGypops&_nc_oc=AdrRq-hHBqUxcbPiFjK5iWg6eAF2cqSrjzL_BJHWUkDiV-Op-0e7Nhc1lqMTwQ0VPWM&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQIPFzwt4EnkbtaNISL6yOaj1upUkKcnvFPOOuQCoJ0R5PMc5dSC4HXhVyJVuiqiD40WegfjqLNc3yY&oh=00_AQGaOkB3QrXw1J2Zb4hqyZGUGtyIKGNXAwMw-s0peQ6d1A&oe=6A8D8C80\",\"width\":720}},\"type\":\"photo\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122142623565072582&set=a.122095282845072582&type=3\",\"target\":{\"id\":\"122142623565072582\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122142623565072582&set=a.122095282845072582&type=3\"}}]},\"shares\":{\"count\":94},\"reactions\":{\"data\":[],\"summary\":{\"total_count\":900,\"viewer_reaction\":\"NONE\"}},\"comments\":{\"data\":[],\"summary\":{\"order\":\"ranked\",\"total_count\":23,\"can_comment\":true}}}"
+    },
+    {
+      "code": 200,
+      "headers": [
+        {
+          "name": "Expires",
+          "value": "Sat, 01 Jan 2000 00:00:00 GMT"
+        },
+        {
+          "name": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "name": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "name": "Strict-Transport-Security",
+          "value": "max-age=15552000; preload"
+        },
+        {
+          "name": "Facebook-API-Version",
+          "value": "v26.0"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "name": "X-Business-Use-Case-Usage",
+          "value": "{\"1036844829507460\":[{\"type\":\"pages\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+        },
+        {
+          "name": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/javascript; charset=UTF-8"
+        }
+      ],
+      "body": "{\"id\":\"1036844829507460_122135577327072582\",\"created_time\":\"2026-07-03T20:20:43+0000\",\"message\":\"\\ud83e\\udd21 est\\u00e1n todos invitados...\",\"permalink_url\":\"https:\\/\\/www.facebook.com\\/122146890051072582\\/posts\\/122135577327072582\",\"full_picture\":\"https:\\/\\/scontent-iad6-1.xx.fbcdn.net\\/v\\/t39.30808-6\\/736630157_122135577249072582_1254770204236727444_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEpw-rbFyE_6yKaxmdqfyy-CfgElpxMxIYJ-ASWnEzEhnNYLbbnl-Im3MwVnAn2stKBeDvs1IGxLs_lmExkMZNr&_nc_ohc=yvJizsTMNi0Q7kNvwEPLkWI&_nc_oc=Adqx-W7bPicfZxQXRTxyV2STVOa-c80i9Dowh9ojbHRYvfUT2MQNXx-C0EqTXTDuHIA&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQJslbRISZ34beYJAiqpDG0qTSjehoIb04zQeKUQBZZdGj5jvcoy4qCFdbyWdu2d6O7mXSZoUUD9_9I&oh=00_AQFLN-3nEe2wL4N2jWKP-RznCwerZQDKoVEgdCNU6M8Ghg&oe=6A8DB2CB\",\"attachments\":{\"data\":[{\"media\":{\"image\":{\"height\":900,\"src\":\"https:\\/\\/scontent-iad6-1.xx.fbcdn.net\\/v\\/t39.30808-6\\/736630157_122135577249072582_1254770204236727444_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEpw-rbFyE_6yKaxmdqfyy-CfgElpxMxIYJ-ASWnEzEhnNYLbbnl-Im3MwVnAn2stKBeDvs1IGxLs_lmExkMZNr&_nc_ohc=yvJizsTMNi0Q7kNvwEPLkWI&_nc_oc=Adqx-W7bPicfZxQXRTxyV2STVOa-c80i9Dowh9ojbHRYvfUT2MQNXx-C0EqTXTDuHIA&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQI-vcGnsUaBZlVi3lh8K-Rz9zZMfBb_Yx07NzcEH7Eg8849Btp4TLklte-3K40k14J21y4huZ7fglw&oh=00_AQEGNIhHwKCisjNM6Y0TR7UdTL-VDrPwZrQi6nAQqEwvGg&oe=6A8DB2CB\",\"width\":720}},\"type\":\"photo\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122135577243072582&set=a.122095282845072582&type=3\",\"target\":{\"id\":\"122135577243072582\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122135577243072582&set=a.122095282845072582&type=3\"}}]},\"shares\":{\"count\":88},\"reactions\":{\"data\":[],\"summary\":{\"total_count\":558,\"viewer_reaction\":\"NONE\"}},\"comments\":{\"data\":[],\"summary\":{\"order\":\"ranked\",\"total_count\":13,\"can_comment\":true}}}"
+    },
+    {
+      "code": 200,
+      "headers": [
+        {
+          "name": "Expires",
+          "value": "Sat, 01 Jan 2000 00:00:00 GMT"
+        },
+        {
+          "name": "Cache-Control",
+          "value": "private, no-cache, no-store, must-revalidate"
+        },
+        {
+          "name": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "name": "Strict-Transport-Security",
+          "value": "max-age=15552000; preload"
+        },
+        {
+          "name": "Facebook-API-Version",
+          "value": "v26.0"
+        },
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "name": "X-Business-Use-Case-Usage",
+          "value": "{\"1036844829507460\":[{\"type\":\"pages\",\"call_count\":1,\"total_cputime\":1,\"total_time\":1,\"estimated_time_to_regain_access\":0}]}"
+        },
+        {
+          "name": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/javascript; charset=UTF-8"
+        }
+      ],
+      "body": "{\"id\":\"1036844829507460_122136562323072582\",\"created_time\":\"2026-07-05T17:55:11+0000\",\"message\":\"a ver.. \\ud83d\\udc40\\n\\nUniverse Sent Me\\n\\n#memes #HumorRelatable #memedeldia #UniverseSentMe\",\"permalink_url\":\"https:\\/\\/www.facebook.com\\/122146890051072582\\/posts\\/122136562323072582\",\"full_picture\":\"https:\\/\\/scontent-iad3-1.xx.fbcdn.net\\/v\\/t39.30808-6\\/738638689_122136562149072582_260074981997484807_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeF4LO588vZEGF1fxTOgVHuwR6tD0LFI-OFHq0PQsUj44akrZm8Lu9pX4D5UjWZRZQK9yfZ6XQjrjIxd791LPfQF&_nc_ohc=msCqs2HzGeUQ7kNvwGHLIWv&_nc_oc=Adq9UeJqdCBoqkDGsc5SC_6f2EsXYXrdbtDlpmzN8_uZEkpn40ts7b8jjmnOTQrRXsk&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQIEMhU9cQNngCNypEzoyJLBdEBvYiw7fAASbwMt3t4OpHh1NRSUU5491ROZeFgmH-x7AvX4FRlHqMI&oh=00_AQHo2QtU9Whd3ElIgR0nlBgwoQiO5XQbm6KJo0fjBo2wkg&oe=6A8DA743\",\"attachments\":{\"data\":[{\"media\":{\"image\":{\"height\":720,\"src\":\"https:\\/\\/scontent-iad3-1.xx.fbcdn.net\\/v\\/t39.30808-6\\/738638689_122136562149072582_260074981997484807_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeF4LO588vZEGF1fxTOgVHuwR6tD0LFI-OFHq0PQsUj44akrZm8Lu9pX4D5UjWZRZQK9yfZ6XQjrjIxd791LPfQF&_nc_ohc=msCqs2HzGeUQ7kNvwGHLIWv&_nc_oc=Adq9UeJqdCBoqkDGsc5SC_6f2EsXYXrdbtDlpmzN8_uZEkpn40ts7b8jjmnOTQrRXsk&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=kP4qZP_U0TMoZNtoYruRQg&_nc_tpa=Q5bMBQI2SOx0IsE6ahIghtNk59o7VyleXl5esw1MxyCnpxkYLBwoZvP4PFaG_2MfDxqghk0rwK5T6tMTHmw&oh=00_AQFZ8ZTPC6vMsK3FmhJpInMpBS5addP4YOi0HgoYJYhukA&oe=6A8DA743\",\"width\":771}},\"type\":\"photo\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122136562143072582&set=a.122095282845072582&type=3\",\"target\":{\"id\":\"122136562143072582\",\"url\":\"https:\\/\\/www.facebook.com\\/photo.php?fbid=122136562143072582&set=a.122095282845072582&type=3\"}}]},\"shares\":{\"count\":13},\"reactions\":{\"data\":[],\"summary\":{\"total_count\":37,\"viewer_reaction\":\"NONE\"}},\"comments\":{\"data\":[],\"summary\":{\"order\":\"ranked\",\"total_count\":72,\"can_comment\":true}}}"
+    }
+  ]
+}

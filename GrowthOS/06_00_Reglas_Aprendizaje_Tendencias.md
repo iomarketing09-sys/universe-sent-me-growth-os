@@ -3,10 +3,10 @@
 **Propósito:** Definir los criterios de decisión para la programación, reutilización, análisis y creación de contenido en Universe Sent Me.
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
-**Última actualización:** 2026-08-20
-**Versión:** 3.9
+**Última actualización:** 2026-08-21
+**Versión:** 3.10
 **Autor:** Manus AI (CGO); Sección 6 añadida por Claude
-**Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`, `../Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`
+**Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`, `../Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`, `../Operations/Research/2026-08-21_Julio_Expansion_Lote01_Analysis.md`, `../Operations/Research/2026-08-21_Expansion_Celdas_Comparables_Post_Julio_Lote01.json`, `../Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Findings.md`
 
 ---
 
@@ -296,6 +296,16 @@ La propuesta `Operations/Research/2026-08-20_Propuesta_Expansion_Celdas_Comparab
 La propuesta está en `Review`. No autoriza publicación, creación de CNT, modificación de calendario ni reuse. La primera acción requiere aprobación humana para la revisión visual/codificación de los candidatos y borderlines documentados en `Operations/Research/2026-08-20_Expansion_Celdas_Comparables_Candidatos.csv`.
 
 La ronda 2 quedó documentada en `Operations/Research/2026-08-20_Expansion_Round2_Analysis.md`. Se permite registrar una subcelda de `Microhistoria secuencial — dos paneles` separada de la microhistoria estricta de tres paneles; no se deben combinar hasta contar con una definición aprobada y muestras comparables. La transformación de vestuario de Ganso se registra como subcelda de personaje secundario y no como evidencia de transformación de Universe. Los casos nuevos conservan `Caption_Treatment=historical_unavailable`; no se atribuye rendimiento a ningún tratamiento de caption sin copy histórico verificable.
+
+### 18.1 Estado posterior al lote individual de julio — 2026-08-21
+
+El lote individual 01 de julio confirmó visualmente 16 de 17 candidatos seleccionados por shares y comentarios. Los 16 se integraron al ledger histórico sin CNT. La taxonomía conserva `No identificado` cuando no hay marcadores visuales suficientes y nunca utiliza `Universe - Existencial` como sustituto automático del personaje.
+
+La matriz comparable queda con microhistoria estricta de tres paneles `n=1`, microhistoria de dos paneles `n=3`, transformación corporal/material de Universe `n=2`, observacional `n=3` preliminar, diálogo ácido `n=2` y autodesprecio/antihéroe `n=3` heterogéneo. La señal de las subceldas con `n=3` no es un veredicto operativo: debe reportarse con sensibilidad a outliers y con personajes, estructura y horario separados.
+
+La conversación de las 16 filas nuevas se conserva como evidencia: 284 comentarios recuperados, sin autorización para responder. Los tratamientos históricos de caption permanecen como `historical_unavailable`. El horario de la muestra individual es un confusor porque el lote fue seleccionado por rendimiento; los análisis de horario deben usar la base completa de julio y registrar la hora como covariable.
+
+En junio, solo el caso `122129404893072582` de los tres primeros `Needs_Asset_Match` obtuvo match visual, con `Asset_Ref=260746`. La cola restante de 57 casos se congela como reserva. No se reabre la reconciliación masiva, no se crean CNT masivos y no se modifican calendario, canon ni la prueba de agosto.
 
 ## 19. Síntesis histórica junio–julio — 2026-08-20
 

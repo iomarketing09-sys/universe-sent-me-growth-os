@@ -1,0 +1,170 @@
+{
+  "created": "2026-08-21",
+  "changed_meta_ids": [
+    "1036844829507460_122134169481072582",
+    "1036844829507460_122135607981072582"
+  ],
+  "cells": {
+    "Microhistoria secuencial": {
+      "current": {
+        "n": 1,
+        "interactions": [
+          155
+        ],
+        "shares": [
+          19
+        ],
+        "median_interactions": 155,
+        "median_shares": 19
+      },
+      "candidates": {
+        "n": 0,
+        "interactions": [],
+        "shares": [],
+        "median_interactions": 0,
+        "median_shares": 0
+      },
+      "excluded_or_borderline": 2
+    },
+    "Transformación visual": {
+      "current": {
+        "n": 2,
+        "interactions": [
+          164,
+          7
+        ],
+        "shares": [
+          42,
+          0
+        ],
+        "median_interactions": 85.5,
+        "median_shares": 21.0
+      },
+      "candidates": {
+        "n": 0,
+        "interactions": [],
+        "shares": [],
+        "median_interactions": 0,
+        "median_shares": 0
+      },
+      "excluded_or_borderline": 1
+    },
+    "Humor observacional": {
+      "current": {
+        "n": 3,
+        "interactions": [
+          24,
+          36,
+          393
+        ],
+        "shares": [
+          4,
+          8,
+          87
+        ],
+        "median_interactions": 36,
+        "median_shares": 8
+      },
+      "candidates": {
+        "n": 2,
+        "interactions": [
+          924,
+          3002
+        ],
+        "shares": [
+          214,
+          625
+        ],
+        "median_interactions": 1963.0,
+        "median_shares": 419.5
+      },
+      "excluded_or_borderline": 0
+    },
+    "Diálogo ácido": {
+      "current": {
+        "n": 2,
+        "interactions": [
+          521,
+          394
+        ],
+        "shares": [
+          185,
+          70
+        ],
+        "median_interactions": 457.5,
+        "median_shares": 127.5
+      },
+      "candidates": {
+        "n": 0,
+        "interactions": [],
+        "shares": [],
+        "median_interactions": 0,
+        "median_shares": 0
+      },
+      "excluded_or_borderline": 2
+    },
+    "Autodesprecio / antihéroe": {
+      "current": {
+        "n": 3,
+        "interactions": [
+          1308,
+          351,
+          15
+        ],
+        "shares": [
+          392,
+          109,
+          1
+        ],
+        "median_interactions": 351,
+        "median_shares": 109
+      },
+      "candidates": {
+        "n": 2,
+        "interactions": [
+          3740,
+          1609
+        ],
+        "shares": [
+          904,
+          335
+        ],
+        "median_interactions": 2674.5,
+        "median_shares": 619.5
+      },
+      "excluded_or_borderline": 2
+    },
+    "Microhistoria secuencial — dos paneles": {
+      "current": {
+        "n": 3,
+        "interactions": [
+          2441,
+          226,
+          497
+        ],
+        "shares": [
+          774,
+          26,
+          53
+        ],
+        "median_interactions": 497,
+        "median_shares": 53
+      },
+      "candidates": {
+        "n": 0,
+        "interactions": [],
+        "shares": [],
+        "median_interactions": 0,
+        "median_shares": 0
+      },
+      "excluded_or_borderline": 0
+    }
+  },
+  "guardrails": [
+    "Microhistoria estricta de tres paneles permanece n=1.",
+    "Microhistoria de dos paneles se mantiene separada.",
+    "Autodesprecio directo y antihéroe/autopercepción se reportan con sensibilidad.",
+    "No se promovieron transformación ni diálogo ácido.",
+    "No canon, no calendario, no CNT."
+  ]
+}
