@@ -4,9 +4,9 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-21
-**Versión:** 3.10
+**Versión:** 3.11
 **Autor:** Manus AI (CGO); Sección 6 añadida por Claude
-**Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`, `../Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`, `../Operations/Research/2026-08-21_Julio_Expansion_Lote01_Analysis.md`, `../Operations/Research/2026-08-21_Expansion_Celdas_Comparables_Post_Julio_Lote01.json`, `../Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Findings.md`
+**Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`, `../Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`, `../Operations/Research/2026-08-21_Julio_Expansion_Lote01_Analysis.md`, `../Operations/Research/2026-08-21_Expansion_Celdas_Comparables_Post_Julio_Lote01.json`, `../Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Findings.md`, `../Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md`, `../Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`
 
 ---
 
@@ -306,6 +306,16 @@ La matriz comparable queda con microhistoria estricta de tres paneles `n=1`, mic
 La conversación de las 16 filas nuevas se conserva como evidencia: 284 comentarios recuperados, sin autorización para responder. Los tratamientos históricos de caption permanecen como `historical_unavailable`. El horario de la muestra individual es un confusor porque el lote fue seleccionado por rendimiento; los análisis de horario deben usar la base completa de julio y registrar la hora como covariable.
 
 En junio, solo el caso `122129404893072582` de los tres primeros `Needs_Asset_Match` obtuvo match visual, con `Asset_Ref=260746`. La cola restante de 57 casos se congela como reserva. No se reabre la reconciliación masiva, no se crean CNT masivos y no se modifican calendario, canon ni la prueba de agosto.
+
+### 18.2 Revisión de los 57 posts de junio sin match — 2026-08-21
+
+La cola `Needs_Asset_Match` de junio se revisó visualmente como una reserva analítica, no como una reconciliación masiva. De 57 casos, 36 funcionan como controles de formato sin evidencia de personaje, 19 contienen candidatos visuales de Universe, Wilfred, Ganso, Fantasma, Silvio o un roster mixto, uno es candidato de microhistoria estricta y uno no tiene `full_picture`. Se seleccionan 17 casos para análisis de personaje sin crear CNT; dos candidatos visuales quedan como reserva.
+
+El caso `1036844829507460_122127951885072582` muestra cuatro paneles con turnos telefónicos y baile. Se mantiene como `Candidate_Review` de microhistoria estricta hasta confirmar que la definición de la celda acepta cuatro paneles y que existe evidencia Meta→Drive. No se cuenta automáticamente ni se usa para modificar la matriz.
+
+La utilidad de personajes no equivale a rendimiento. Los gatos con gafas son marcadores visuales candidatos para Universe; los gnomos de barba blanca y gorro rojo son candidatos visuales para Wilfred; el pato/ave formal es candidato de Ganso; la figura blanca del bosque es candidata de Fantasma; la figura clown de pelo morado es candidata de Silvio. Ninguno se canoniza por una sola imagen, y cualquier transformación de Universe debe conservar gafas y marcadores de identidad.
+
+Los briefs `FUT-MICRO-005`, `FUT-MICRO-006`, `FUT-TRANS-003` y `FUT-ACID-003` quedan documentados en `Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`. Son diseños condicionales, no aprobaciones de publicación. La próxima creación debe registrar `Cell_ID`, `Caption_Treatment`, `Hora_Test`, `Theme_Confound` y las salvaguardas de identidad antes de entrar al calendario.
 
 ## 19. Síntesis histórica junio–julio — 2026-08-20
 

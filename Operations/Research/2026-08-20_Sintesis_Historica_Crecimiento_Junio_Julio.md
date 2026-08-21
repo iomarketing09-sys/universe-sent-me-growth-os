@@ -140,6 +140,8 @@ La segunda ampliación visual ya dejó la matriz en este estado: microhistoria e
 
 La tercera ampliación, de menor prioridad, es la capa de conversación. El lote 01 de julio ya tiene una extracción de 284 comentarios; 57 señales se clasifican como humor/juego, identificación o preguntas, pero no justifican leer manualmente los 284 casos. En junio, la revisión de los tres casos prioritarios sin match confirmó solo `260746`; los otros dos permanecen como reserva. Solo deben abrirse hilos cualitativos si existe una decisión de community management asociada. `CNT-068` debe mantenerse como caso de difusión con conversación no verificable en la extracción actual, no como evidencia de ausencia de conversación.
 
+La revisión de la cola de 57 casos confirma que sí hay una reserva útil para personajes, pero no para una reconciliación masiva: 17 casos pasan a análisis visual selectivo, 2 quedan como reserva, 36 funcionan como controles de formato y 1 permanece sin imagen Meta. El único candidato de celda nuevo es `122127951885072582`, que muestra cuatro paneles con turnos claros y queda en `Candidate_Review` para microhistoria estricta. Los briefs futuros `FUT-MICRO-005`, `FUT-MICRO-006`, `FUT-TRANS-003` y `FUT-ACID-003` están diseñados de forma condicional y requieren aprobación humana antes de convertirse en producción.
+
 ### Qué no debe ampliarse ahora
 
 No conviene intentar reconstruir las ventanas históricas exactas de 24/72 horas: la evidencia disponible no permite hacerlo de forma válida y el Growth OS ya separa lifetime histórico de los cortes operativos de agosto. Tampoco conviene crear CNT para los 185 posts de julio pendientes ni para los 57 casos de junio sin match únicamente para mejorar el conteo. La creación de CNT debe seguir subordinada a una relación Meta/Drive verificable y a un uso futuro concreto.
@@ -168,3 +170,5 @@ La auditoría queda clasificada como **cobertura histórica suficiente para oper
 [13]: `Operations/Research/2026-08-21_Julio_Expansion_Lote01_Analysis.md` — cobertura individual ampliada, métricas y taxonomía revisada de julio.
 [14]: `Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Findings.md` — cierre selectivo de la cola prioritaria de junio.
 [15]: `Operations/Research/2026-08-21_Julio_Expansion_Lote01_Comments_Analysis.md` — conversación histórica del lote ampliado de julio.
+[16]: `Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md` — utilidad visual y de personajes de los 57 casos sin match.
+[17]: `Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md` — briefs condicionales para completar las celdas bajo `n=3`.

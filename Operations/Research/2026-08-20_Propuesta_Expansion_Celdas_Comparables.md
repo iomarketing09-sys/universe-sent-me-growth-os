@@ -23,6 +23,9 @@ related_documents:
   - "Operations/Research/2026-08-20_Expansion_Round2_Analysis.md"
   - "Operations/Research/2026-08-20_Expansion_Round2_Visual_Findings.md"
   - "Operations/Research/2026-08-20_Filtro_Expansion_58_Casos_GrowthOS.md"
+  - "Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md"
+  - "Operations/Research/2026-08-21_Junio_57_Unmatched_Character_Utility.csv"
+  - "Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md"
   - "GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md"
 organization: "Operations/Research"
 ---
@@ -39,7 +42,7 @@ La regla de muestra queda separada en dos niveles. Una celda alcanza una **seña
 
 | Celda | Casos comparables actuales | Candidatos para revisión | No contar todavía | Faltan para señal `n=3` | Faltan para veredicto `n=5` |
 |---|---:|---:|---:|---:|---:|
-| Microhistoria estricta de tres paneles | 1 | 0 | 2 borderlines | 2 | 4 |
+| Microhistoria estricta de tres paneles | 1 | 1 | 2 borderlines | 2 | 4 |
 | Microhistoria secuencial — dos paneles | 3 | 0 | 0 | 0 | 2 |
 | Transformación visual | 2 | 0 | 0 | 1 | 3 |
 | Humor observacional | 3 | 2 | 0 | 0 | 2 |
@@ -52,7 +55,7 @@ Los conteos anteriores son deliberadamente conservadores. Un candidato no se inc
 
 | Celda | Caso base ya comparable | Candidatos de revisión prioritarios | Decisión de revisión |
 |---|---|---|---|
-| Microhistoria secuencial | `122129404893072582` — 155 interacciones, 19 shares | No hay candidato elegible todavía; `122130232503072582` y `122130032151072582` quedan como borderlines | Revisar solo para confirmar exclusión; buscar dos casos nuevos con turnos visuales claros. |
+| Microhistoria secuencial | `122129404893072582` — 155 interacciones, 19 shares | `122127951885072582` — cuatro paneles con turnos telefónicos y baile; `122130232503072582` y `122130032151072582` quedan como borderlines | Revisar `122127951885072582` como candidato de cuatro paneles; si entra, diseñar solo un caso nuevo para llegar a `n=3`. |
 | Transformación visual | `122130196011072582` — 164/42; `122130324285072582` — 7/0 | No hay candidato elegible; `122130411897072582` queda excluido porque no confirma transformación de Universe | Buscar al menos un caso nuevo de transformación de Universe y registrar preservación de gafas/marcadores. |
 | Humor observacional | `122132375181072582` — 24/4; `122132371125072582` — 36/8; `122133575895072582` — 393/87 | `122129214813072582` — 924/214 | La revisión visual ya confirma tres casos comparables; revisar sensibilidad de `260740` antes de incorporarlo. |
 | Diálogo ácido | `122134161303072582` — 521/185; `122132365443072582` — 394/70 | No hay candidatos elegibles adicionales; `122130032151072582` y `122130232503072582` quedan como borderlines | Falta un caso para señal `n=3`; no incorporar los borderlines sin evidencia del mecanismo ácido. |
@@ -107,7 +110,11 @@ El informe completo y la matriz de ronda 2 están en `Operations/Research/2026-0
 
 ## 8. Estado recomendado
 
-La propuesta sigue en `Review`. El corte visual 01 promovió `2607787` a diálogo ácido comparable y `2607816` a observacional comparable; añadió `2607828`/Meta ID `1036844829507460_122134169481072582` como candidato de autopercepción/antihéroe y excluyó Silvio y ansiedad relacional de esa celda. La ronda 2 añadió dos casos de microhistoria de dos paneles como subcelda separada. El lote 01 de julio añadió cuatro candidatos: `MICRO-004` fue promovido y la subcelda de dos paneles llegó a `n=3`; `OBS-005` quedó en revisión para sensibilidad observacional; `SELF-006`/`SELF-007` permanecen en revisión y Ganso fue promovido a la celda amplia de autodesprecio/antihéroe, que llegó a `n=3`. La microhistoria estricta de tres paneles, transformación de Universe y diálogo ácido siguen bajo `n=3`; se conserva la discrepancia de asset ref. No autoriza publicación, creación de CNT, modificación de calendario ni reuse. La siguiente acción es revisar funcionalmente estos candidatos y diseñar casos comparables futuros si siguen faltando ejemplos, registrando los tres tratamientos de caption antes de publicar.
+La propuesta sigue en `Review`. El corte visual 01 promovió `2607787` a diálogo ácido comparable y `2607816` a observacional comparable; añadió `2607828`/Meta ID `1036844829507460_122134169481072582` como candidato de autopercepción/antihéroe y excluyó Silvio y ansiedad relacional de esa celda. La ronda 2 añadió dos casos de microhistoria de dos paneles como subcelda separada. El lote 01 de julio añadió cuatro candidatos: `MICRO-004` fue promovido y la subcelda de dos paneles llegó a `n=3`; `OBS-005` quedó en revisión para sensibilidad observacional; `SELF-006`/`SELF-007` permanecen en revisión y Ganso fue promovido a la celda amplia de autodesprecio/antihéroe, que llegó a `n=3`. La revisión de los 57 posts sin match añadió `122127951885072582` como candidato de microhistoria estricta de cuatro paneles, sujeto a revisión funcional. La microhistoria estricta de tres paneles, transformación de Universe y diálogo ácido siguen bajo `n=3`; el diseño de casos mínimos está en `Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`. No autoriza publicación, creación de CNT, modificación de calendario ni reuse.
+
+## 9. Diseño de casos futuros para las brechas
+
+El documento `Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md` define cuatro briefs condicionales: dos microhistorias estrictas de tres paneles como respaldo, una transformación de Universe con gafas y marcadores preservados, y un diálogo ácido interpersonal. La revisión de `122127951885072582` determina si se necesita uno o dos briefs de microhistoria. Estos casos no están aprobados para publicación y deben registrarse con `Cell_ID`, `Caption_Treatment`, `Hora_Test`, `Theme_Confound` y salvaguardas de identidad antes de entrar a calendario.
 
 ## Referencias
 
