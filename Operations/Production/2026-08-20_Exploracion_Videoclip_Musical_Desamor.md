@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-21
 
-**Versión:** 3.5
+**Versión:** 3.6
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -586,6 +586,20 @@ Fernando pidió ver la escena del espejo antes de aprobar keyframes finales y co
 | **B — Kiri, espejo y constelaciones** | [`crave-you-kiri-mirror-feathers_343714a9.png`](/manus-storage/crave-you-kiri-mirror-feathers_343714a9.png) | Probar el mismo motivo de espejo desde asombro genuino: varita, alas, plumas convertidas en constelaciones. | Kiri se trata como personaje de fantasía no sexualizado; ropa modesta, sin romance ni tono sensual. | `REVIEW` |
 
 Las pruebas no modifican el tratamiento de Maeve ni declaran a Kiri alternativa de reparto. La decisión pendiente es únicamente visual: escoger una dirección, combinar elementos permitidos o pedir un ajuste concreto. Si se elige la prueba A, el siguiente arte debe conservar el mismo diseño de Maeve mediante una referencia de identidad aprobada. Si se elige B, se crea un tratamiento distinto de asombro y no se le transfiere la premisa sensual de Maeve.
+
+### Selección visual A — variante de iluminación dramática
+
+Fernando seleccionó la prueba A de Maeve y pidió incrementar su dramatismo cinematográfico. La variante resultante se guarda en `/home/ubuntu/webdev-static-assets/crave-you-maeve-mirror-feathers-dramatic.png` y mantiene el espejo, las plumas, la identidad adulta de Maeve, su pose y el vestuario opaco de terciopelo vino. Sigue siendo una **referencia visual en revisión**, no un keyframe final aprobado.
+
+| Ajuste | Decisión visual |
+|---|---|
+| Sombras | Azul petróleo mucho más profundo en bordes, techo y cortinas; detalle de terciopelo conservado. |
+| Luz principal | Haz ámbar estrecho sobre el lado derecho de rostro y silueta de Maeve; lámpara práctica cálida como motivación de escena. |
+| Contraluz | Borde azul lunar sobre el hombro opuesto y el canto del espejo. |
+| Espejo / plumas | Reflejo de alto contraste; tres plumas reciben ámbar focal y el resto permanece en penumbra. |
+| Límite | Se preservan pose, encuadre, ropa, ausencia de terceros y sensualidad no explícita. |
+
+El siguiente paso queda condicionado a la revisión de Fernando: aprobar esta dirección de luz o pedir un ajuste puntual antes de convertirla en un keyframe de producción y antes de generar cualquier clip.
 
 ### Contingencia
 
