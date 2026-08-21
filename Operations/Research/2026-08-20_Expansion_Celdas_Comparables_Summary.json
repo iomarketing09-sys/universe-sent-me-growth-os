@@ -1,0 +1,81 @@
+{
+  "Microhistoria secuencial": {
+    "current_comparable": 1,
+    "candidate_review": 0,
+    "borderline_not_comparable": 2,
+    "needed_for_signal_n3": 2,
+    "needed_for_operational_n5": 4,
+    "current_meta_ids": [
+      "1036844829507460_122129404893072582"
+    ],
+    "candidate_meta_ids": [],
+    "candidate_interactions": []
+  },
+  "Transformación visual": {
+    "current_comparable": 2,
+    "candidate_review": 0,
+    "borderline_not_comparable": 0,
+    "needed_for_signal_n3": 1,
+    "needed_for_operational_n5": 3,
+    "current_meta_ids": [
+      "1036844829507460_122130196011072582",
+      "1036844829507460_122130324285072582"
+    ],
+    "candidate_meta_ids": [],
+    "candidate_interactions": []
+  },
+  "Humor observacional": {
+    "current_comparable": 2,
+    "candidate_review": 2,
+    "borderline_not_comparable": 0,
+    "needed_for_signal_n3": 1,
+    "needed_for_operational_n5": 3,
+    "current_meta_ids": [
+      "1036844829507460_122132375181072582",
+      "1036844829507460_122132371125072582"
+    ],
+    "candidate_meta_ids": [
+      "1036844829507460_122129214813072582",
+      "1036844829507460_122133575895072582"
+    ],
+    "candidate_interactions": [
+      "924",
+      "393"
+    ]
+  },
+  "Diálogo ácido": {
+    "current_comparable": 1,
+    "candidate_review": 1,
+    "borderline_not_comparable": 2,
+    "needed_for_signal_n3": 2,
+    "needed_for_operational_n5": 4,
+    "current_meta_ids": [
+      "1036844829507460_122134161303072582"
+    ],
+    "candidate_meta_ids": [
+      "1036844829507460_122132365443072582"
+    ],
+    "candidate_interactions": [
+      "394"
+    ]
+  },
+  "Autodesprecio / antihéroe": {
+    "current_comparable": 2,
+    "candidate_review": 2,
+    "borderline_not_comparable": 0,
+    "needed_for_signal_n3": 1,
+    "needed_for_operational_n5": 3,
+    "current_meta_ids": [
+      "1036844829507460_122134136793072582",
+      "1036844829507460_122132350563072582"
+    ],
+    "candidate_meta_ids": [
+      "1036844829507460_122132711259072582",
+      "1036844829507460_122132695779072582"
+    ],
+    "candidate_interactions": [
+      "20",
+      "9"
+    ]
+  }
+}
