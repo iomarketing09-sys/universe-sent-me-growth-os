@@ -1,10 +1,10 @@
 ---
 title: "CAN 001 — It Was Making Noise From the Inside: paquete de producción"
 purpose: "Definir el guion, la dirección visual, la imagen ancla y el prompt de Flow de la primera pieza original de Bam in a Can."
-status: "Draft — creative direction confirmed; pending production approval"
+status: "Active — cut produced; distribution pending"
 created: 2026-08-20
 updated: 2026-08-20
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_Plan_Lanzamiento_Audiencia_Bam_In_A_Can.md"
@@ -22,7 +22,8 @@ organization: "Operations/Production"
 | Identificador | `CAN-001` |
 | Pilar | `CAN FOUND` |
 | Objetivo | Presentar la lata como contenedor/anomalía y establecer el lenguaje de Bam en una sola escena. |
-| Duración | 8 segundos. |
+| Duración prevista | 8 segundos. |
+| Duración del corte recibido | 7 segundos. No requiere re-render; usar esta duración real en publicación y medición. |
 | Formato | Vertical 9:16, 1080 × 1920. |
 | Herramienta | Flow, un solo clip. |
 | Estilo | Archivo práctico retro: objeto físico envejecido, no caricatura y no 3D limpio. |
@@ -119,3 +120,7 @@ El logo de Bam puede ser avatar y cierre editorial futuro, pero no debe aparecer
 ## 8. Dependencias y actualización posterior
 
 Al producir el primer render, añadir al registro de Bam: herramienta, modelo/modo, duración, coste si aplica, keyframe aprobado, archivo final, fecha de publicación, enlaces por plataforma y señales iniciales. Actualizar `2026-08-20_Plan_Lanzamiento_Audiencia_Bam_In_A_Can.md` con el estado de `CAN-001` y su primera lectura de shares, saves y visitas al perfil.
+
+### Actualización de corte — 20 de agosto
+
+Fernando aportó el archivo `Can001.mp4`. El corte recibido dura 7 segundos: la tapa abre durante los primeros 2 segundos, la criatura aparece entre los segundos 2 y 4 y el blink ocurre alrededor del segundo 5.2. El primer frame ya muestra la lata con identidad visual de Bam y existe una marca `Can 001` en la zona inferior. Por lo tanto, no agregar un segundo `CAN 001` como overlay superior; reservar el tercio superior negro para texto editorial opcional. El plan de distribución y audio se documenta en `2026-08-20_CAN001_Distribucion_Inicial.md`.
