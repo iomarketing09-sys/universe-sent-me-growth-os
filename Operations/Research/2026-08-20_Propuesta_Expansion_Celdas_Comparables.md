@@ -11,12 +11,18 @@ related_documents:
   - "Operations/Research/2026-08-20_Expansion_Celdas_Comparables_Summary.json"
   - "Operations/Production/enrich_expansion_candidates.py"
   - "Operations/Production/summarize_expansion_cells.py"
+  - "Operations/Production/build_expansion_round2_contact_sheet.py"
+  - "Operations/Production/analyze_expansion_round2.py"
+  - "Operations/Production/analyze_expansion_round2_combined.py"
   - "Operations/Research/2026-08-18_Analisis_Lote_A_Estructuras_Narrativas.md"
   - "Operations/Research/2026-08-19_Analisis_Lote_Dialogo_Transformacion.md"
   - "Operations/Research/2026-08-19_Analisis_Subgrupos_Humor_Acido.md"
   - "Operations/Research/2026-08-19_Analisis_Ampliacion_Humor_Sexual.md"
   - "Operations/Research/2026-08-20_Expansion_Visual_Findings_01.md"
-  - "Operations/Research/2026-08-18_Filtro_Expansion_58_Casos_GrowthOS.md"
+  - "Operations/Research/2026-08-20_Expansion_Round2_Candidatos.csv"
+  - "Operations/Research/2026-08-20_Expansion_Round2_Analysis.md"
+  - "Operations/Research/2026-08-20_Expansion_Round2_Visual_Findings.md"
+  - "Operations/Research/2026-08-20_Filtro_Expansion_58_Casos_GrowthOS.md"
   - "GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md"
 organization: "Operations/Research"
 ---
@@ -90,9 +96,17 @@ El primer lote debe ser de **revisión y codificación**, no de publicación:
 
 En la fase E, si la revisión histórica no aporta suficientes casos, se diseñarán nuevas piezas como tests explícitos. Cada pieza deberá recibir antes de publicarse `Experiment_ID`, `Hypothesis_ID`, `Cell_ID`, `Caption_Treatment`, estructura narrativa, tipo de humor y campos de identidad canónica cuando corresponda.
 
-## 7. Estado recomendado
+## 7. Resultado de la ronda 2
 
-La propuesta sigue en `Review`. El corte visual 01 promovió `2607787` a diálogo ácido comparable y `2607816` a observacional comparable; añadió `2607828`/Meta ID `1036844829507460_122134169481072582` como candidato de autopercepción/antihéroe y excluyó Silvio y ansiedad relacional de esa celda. Se conserva la discrepancia de asset ref. No autoriza publicación, creación de CNT, modificación de calendario ni reuse. La siguiente acción requiere revisar los dos candidatos restantes y, si procede, los cuatro borderlines documentados en `Operations/Research/2026-08-20_Expansion_Celdas_Comparables_Candidatos.csv`.
+La ronda 2 incorporó una subcelda de `Microhistoria secuencial — dos paneles` con dos casos comparables: `260731` y `260775`. Su mediana descriptiva es de 361.5 interacciones y 39.5 shares. No se mezclan con la celda estricta de tres paneles, que permanece en `n=1`.
+
+También se registró `TRANS2-001` como candidato de transformación de vestuario secundario para Ganso. No se considera evidencia de transformación de Universe. `260766` quedó excluido porque presenta dualidad simultánea, no transformación temporal, y `260728` quedó excluido por ser una escena de un solo panel.
+
+El informe completo y la matriz de ronda 2 están en `Operations/Research/2026-08-20_Expansion_Round2_Analysis.md` y `Operations/Research/2026-08-20_Expansion_Round2_Candidatos.csv`. Los tratamientos de caption de los casos nuevos permanecen como `historical_unavailable`; no se estimó efecto de caption.
+
+## 8. Estado recomendado
+
+La propuesta sigue en `Review`. El corte visual 01 promovió `2607787` a diálogo ácido comparable y `2607816` a observacional comparable; añadió `2607828`/Meta ID `1036844829507460_122134169481072582` como candidato de autopercepción/antihéroe y excluyó Silvio y ansiedad relacional de esa celda. La ronda 2 añadió dos casos de microhistoria de dos paneles como subcelda separada y dejó Ganso-vestuario como candidato independiente. Se conserva la discrepancia de asset ref. No autoriza publicación, creación de CNT, modificación de calendario ni reuse. La siguiente acción es diseñar casos comparables futuros si no aparece más evidencia histórica, registrando los tres tratamientos de caption antes de publicar.
 
 ## Referencias
 

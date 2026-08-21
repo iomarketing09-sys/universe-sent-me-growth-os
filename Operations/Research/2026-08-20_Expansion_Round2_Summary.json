@@ -1,0 +1,82 @@
+{
+  "Microhistoria secuencial — dos paneles": {
+    "rows": 2,
+    "current_comparable": 2,
+    "candidate_review": 0,
+    "excluded_or_borderline": 0,
+    "interactions": [
+      226.0,
+      497.0
+    ],
+    "shares": [
+      26.0,
+      53.0
+    ],
+    "median_interactions": 361.5,
+    "median_shares": 39.5,
+    "caption_treatments": [
+      "historical_unavailable"
+    ],
+    "meta_ids": [
+      "1036844829507460_122128536909072582",
+      "1036844829507460_122131482621072582"
+    ]
+  },
+  "Microhistoria secuencial — un panel": {
+    "rows": 1,
+    "current_comparable": 0,
+    "candidate_review": 0,
+    "excluded_or_borderline": 1,
+    "interactions": [],
+    "shares": [],
+    "median_interactions": null,
+    "median_shares": null,
+    "caption_treatments": [],
+    "meta_ids": []
+  },
+  "Transformación visual — dualidad simultánea": {
+    "rows": 1,
+    "current_comparable": 0,
+    "candidate_review": 0,
+    "excluded_or_borderline": 1,
+    "interactions": [],
+    "shares": [],
+    "median_interactions": null,
+    "median_shares": null,
+    "caption_treatments": [],
+    "meta_ids": []
+  },
+  "Transformación visual — vestuario secundario": {
+    "rows": 1,
+    "current_comparable": 0,
+    "candidate_review": 1,
+    "excluded_or_borderline": 0,
+    "interactions": [],
+    "shares": [],
+    "median_interactions": null,
+    "median_shares": null,
+    "caption_treatments": [],
+    "meta_ids": []
+  },
+  "comparison_microstory_panel_count": {
+    "strict_three_panel_n": 1,
+    "strict_three_panel_interactions": [
+      155
+    ],
+    "strict_three_panel_shares": [
+      19
+    ],
+    "two_panel_n": 2,
+    "two_panel_interactions": [
+      226.0,
+      497.0
+    ],
+    "two_panel_shares": [
+      26.0,
+      53.0
+    ],
+    "two_panel_median_interactions": 361.5,
+    "two_panel_median_shares": 39.5,
+    "interpretation": "Descriptive subcell only; do not pool with three-panel microstory until definition is approved."
+  }
+}
