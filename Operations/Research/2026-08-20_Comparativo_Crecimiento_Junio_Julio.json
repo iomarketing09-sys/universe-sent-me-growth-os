@@ -1,0 +1,726 @@
+{
+  "2026-06": {
+    "posts": 230,
+    "reactions": {
+      "total": 13940.0,
+      "mean": 60.608695652173914,
+      "median": 8.0,
+      "p90": 135.0
+    },
+    "comments": {
+      "total": 420.0,
+      "mean": 1.826086956521739,
+      "median": 1.0,
+      "p90": 3.0
+    },
+    "shares": {
+      "total": 3910.0,
+      "mean": 17.0,
+      "median": 1.0,
+      "p90": 32.0
+    },
+    "interactions": {
+      "total": 18270.0,
+      "mean": 79.43478260869566,
+      "median": 10.0,
+      "p90": 171.0
+    },
+    "minimal_copy": {
+      "n": 123,
+      "share_of_posts": 0.5347826086956522,
+      "median_interactions": 11.0,
+      "median_shares": 1.0
+    },
+    "non_minimal_copy": {
+      "n": 107,
+      "share_of_posts": 0.4652173913043478,
+      "median_interactions": 10.0,
+      "median_shares": 1.0
+    },
+    "top_posts": [
+      {
+        "id": "1036844829507460_122134136793072582",
+        "date": "2026-06-28",
+        "hour": "10.7",
+        "message": "Me da miedo ser el malo de la historia... #UniverseSentMe #vidareal #pazmental #humor #memes",
+        "interactions": 1308.0,
+        "reactions": 912.0,
+        "comments": 4.0,
+        "shares": 392.0,
+        "minimal_copy_proxy": "False"
+      },
+      {
+        "id": "1036844829507460_122130287907072582",
+        "date": "2026-06-14",
+        "hour": "9.216666666666667",
+        "message": "No sean asi.. 😆",
+        "interactions": 1181.0,
+        "reactions": 985.0,
+        "comments": 8.0,
+        "shares": 188.0,
+        "minimal_copy_proxy": "True"
+      },
+      {
+        "id": "1036844829507460_122132599809072582",
+        "date": "2026-06-21",
+        "hour": "20.15",
+        "message": "El gato: 😧 #UniverseSentMe #cosasquepasan #vidagatuna",
+        "interactions": 1128.0,
+        "reactions": 999.0,
+        "comments": 2.0,
+        "shares": 127.0,
+        "minimal_copy_proxy": "False"
+      },
+      {
+        "id": "1036844829507460_122128723341072582",
+        "date": "2026-06-09",
+        "hour": "20.733333333333334",
+        "message": "yo Aura Fuerte 😏",
+        "interactions": 1127.0,
+        "reactions": 896.0,
+        "comments": 20.0,
+        "shares": 211.0,
+        "minimal_copy_proxy": "True"
+      },
+      {
+        "id": "1036844829507460_122134374249072582",
+        "date": "2026-06-29",
+        "hour": "18.433333333333334",
+        "message": "😏",
+        "interactions": 1069.0,
+        "reactions": 858.0,
+        "comments": 11.0,
+        "shares": 200.0,
+        "minimal_copy_proxy": "True"
+      },
+      {
+        "id": "1036844829507460_122132690157072582",
+        "date": "2026-06-22",
+        "hour": "10.033333333333333",
+        "message": "a ver... a ver... 🤨 #UniverseSentMe #vidagatuna #cosasquepasan #vidareal",
+        "interactions": 975.0,
+        "reactions": 696.0,
+        "comments": 2.0,
+        "shares": 277.0,
+        "minimal_copy_proxy": "False"
+      },
+      {
+        "id": "1036844829507460_122129214813072582",
+        "date": "2026-06-11",
+        "hour": "12.983333333333333",
+        "message": "😎",
+        "interactions": 924.0,
+        "reactions": 696.0,
+        "comments": 14.0,
+        "shares": 214.0,
+        "minimal_copy_proxy": "True"
+      },
+      {
+        "id": "1036844829507460_122129013585072582",
+        "date": "2026-06-10",
+        "hour": "14.533333333333333",
+        "message": "🤡",
+        "interactions": 785.0,
+        "reactions": 509.0,
+        "comments": 13.0,
+        "shares": 263.0,
+        "minimal_copy_proxy": "True"
+      },
+      {
+        "id": "1036844829507460_122129231601072582",
+        "date": "2026-06-11",
+        "hour": "18.433333333333334",
+        "message": "o pedir follows 🫣",
+        "interactions": 547.0,
+        "reactions": 327.0,
+        "comments": 8.0,
+        "shares": 212.0,
+        "minimal_copy_proxy": "True"
+      },
+      {
+        "id": "1036844829507460_122134070943072582",
+        "date": "2026-06-27",
+        "hour": "22.166666666666668",
+        "message": "😎",
+        "interactions": 547.0,
+        "reactions": 348.0,
+        "comments": 0.0,
+        "shares": 199.0,
+        "minimal_copy_proxy": "True"
+      }
+    ],
+    "hours": [
+      {
+        "hour": 10,
+        "posts": 17,
+        "mean_interactions": 159.88235294117646,
+        "median_interactions": 16.0,
+        "total_shares": 766.0
+      },
+      {
+        "hour": 20,
+        "posts": 20,
+        "mean_interactions": 142.05,
+        "median_interactions": 11.5,
+        "total_shares": 447.0
+      },
+      {
+        "hour": 18,
+        "posts": 23,
+        "mean_interactions": 125.69565217391305,
+        "median_interactions": 14.0,
+        "total_shares": 754.0
+      },
+      {
+        "hour": 22,
+        "posts": 11,
+        "mean_interactions": 104.54545454545455,
+        "median_interactions": 13.0,
+        "total_shares": 266.0
+      },
+      {
+        "hour": 12,
+        "posts": 16,
+        "mean_interactions": 98.6875,
+        "median_interactions": 6.5,
+        "total_shares": 290.0
+      },
+      {
+        "hour": 9,
+        "posts": 19,
+        "mean_interactions": 96.73684210526316,
+        "median_interactions": 12.0,
+        "total_shares": 301.0
+      },
+      {
+        "hour": 17,
+        "posts": 14,
+        "mean_interactions": 70.28571428571429,
+        "median_interactions": 7.5,
+        "total_shares": 153.0
+      },
+      {
+        "hour": 14,
+        "posts": 17,
+        "mean_interactions": 57.705882352941174,
+        "median_interactions": 6.0,
+        "total_shares": 303.0
+      },
+      {
+        "hour": 23,
+        "posts": 4,
+        "mean_interactions": 52.5,
+        "median_interactions": 21.5,
+        "total_shares": 34.0
+      },
+      {
+        "hour": 15,
+        "posts": 18,
+        "mean_interactions": 50.833333333333336,
+        "median_interactions": 10.5,
+        "total_shares": 195.0
+      },
+      {
+        "hour": 16,
+        "posts": 17,
+        "mean_interactions": 48.05882352941177,
+        "median_interactions": 8.0,
+        "total_shares": 116.0
+      },
+      {
+        "hour": 11,
+        "posts": 16,
+        "mean_interactions": 37.6875,
+        "median_interactions": 8.5,
+        "total_shares": 139.0
+      },
+      {
+        "hour": 8,
+        "posts": 2,
+        "mean_interactions": 35.5,
+        "median_interactions": 35.5,
+        "total_shares": 22.0
+      },
+      {
+        "hour": 13,
+        "posts": 9,
+        "mean_interactions": 28.88888888888889,
+        "median_interactions": 7.0,
+        "total_shares": 66.0
+      },
+      {
+        "hour": 21,
+        "posts": 8,
+        "mean_interactions": 27.5,
+        "median_interactions": 26.5,
+        "total_shares": 35.0
+      },
+      {
+        "hour": 19,
+        "posts": 15,
+        "mean_interactions": 11.4,
+        "median_interactions": 8.0,
+        "total_shares": 18.0
+      },
+      {
+        "hour": 0,
+        "posts": 2,
+        "mean_interactions": 7.0,
+        "median_interactions": 7.0,
+        "total_shares": 5.0
+      },
+      {
+        "hour": 7,
+        "posts": 2,
+        "mean_interactions": 3.5,
+        "median_interactions": 3.5,
+        "total_shares": 0.0
+      }
+    ],
+    "weekdays": [
+      {
+        "weekday": "Sunday",
+        "posts": 37,
+        "mean_interactions": 140.13513513513513,
+        "median_interactions": 10.0,
+        "total_shares": 1056.0
+      },
+      {
+        "weekday": "Monday",
+        "posts": 39,
+        "mean_interactions": 96.51282051282051,
+        "median_interactions": 14.0,
+        "total_shares": 772.0
+      },
+      {
+        "weekday": "Saturday",
+        "posts": 32,
+        "mean_interactions": 85.5,
+        "median_interactions": 16.0,
+        "total_shares": 668.0
+      },
+      {
+        "weekday": "Thursday",
+        "posts": 26,
+        "mean_interactions": 73.46153846153847,
+        "median_interactions": 9.0,
+        "total_shares": 483.0
+      },
+      {
+        "weekday": "Tuesday",
+        "posts": 37,
+        "mean_interactions": 60.54054054054054,
+        "median_interactions": 10.0,
+        "total_shares": 392.0
+      },
+      {
+        "weekday": "Wednesday",
+        "posts": 28,
+        "mean_interactions": 54.92857142857143,
+        "median_interactions": 8.5,
+        "total_shares": 352.0
+      },
+      {
+        "weekday": "Friday",
+        "posts": 31,
+        "mean_interactions": 28.93548387096774,
+        "median_interactions": 8.0,
+        "total_shares": 187.0
+      }
+    ]
+  },
+  "2026-07": {
+    "posts": 207,
+    "reactions": {
+      "total": 48419.0,
+      "mean": 233.90821256038646,
+      "median": 35.0,
+      "p90": 553.0
+    },
+    "comments": {
+      "total": 929.0,
+      "mean": 4.48792270531401,
+      "median": 2.0,
+      "p90": 8.0
+    },
+    "shares": {
+      "total": 18676.0,
+      "mean": 90.22222222222223,
+      "median": 7.0,
+      "p90": 142.0
+    },
+    "interactions": {
+      "total": 68024.0,
+      "mean": 328.6183574879227,
+      "median": 43.0,
+      "p90": 677.0
+    },
+    "minimal_copy": {
+      "n": 51,
+      "share_of_posts": 0.2463768115942029,
+      "median_interactions": 66.0,
+      "median_shares": 12.0
+    },
+    "non_minimal_copy": {
+      "n": 156,
+      "share_of_posts": 0.7536231884057971,
+      "median_interactions": 41.5,
+      "median_shares": 6.5
+    },
+    "top_posts": [
+      {
+        "id": "1036844829507460_122140003413072582",
+        "date": "2026-07-18",
+        "hour": "22.0",
+        "message": "🫣🫣 #UniverseSentMe",
+        "interactions": 5482.0,
+        "reactions": 3108.0,
+        "comments": 62.0,
+        "shares": 2312.0,
+        "minimal_copy_proxy": "True"
+      },
+      {
+        "id": "1036844829507460_122139999861072582",
+        "date": "2026-07-18",
+        "hour": "14.0",
+        "message": "😐",
+        "interactions": 3993.0,
+        "reactions": 2536.0,
+        "comments": 8.0,
+        "shares": 1449.0,
+        "minimal_copy_proxy": "True"
+      },
+      {
+        "id": "1036844829507460_122140844349072582",
+        "date": "2026-07-21",
+        "hour": "15.333333333333334",
+        "message": "🥴🤯 escucho borroso.... #UniverseSentMe #humor #memesenespañol #conversacion #relatable #vidareal #meditacion",
+        "interactions": 3913.0,
+        "reactions": 2290.0,
+        "comments": 102.0,
+        "shares": 1521.0,
+        "minimal_copy_proxy": "False"
+      },
+      {
+        "id": "1036844829507460_122139232911072582",
+        "date": "2026-07-16",
+        "hour": "20.0",
+        "message": "😮‍💨",
+        "interactions": 3740.0,
+        "reactions": 2805.0,
+        "comments": 31.0,
+        "shares": 904.0,
+        "minimal_copy_proxy": "True"
+      },
+      {
+        "id": "1036844829507460_122142779757072582",
+        "date": "2026-07-28",
+        "hour": "13.95",
+        "message": "No es desinterés... #UnvierseSentMe #FantasmaUSM #humor #memesUSM",
+        "interactions": 3726.0,
+        "reactions": 2367.0,
+        "comments": 18.0,
+        "shares": 1341.0,
+        "minimal_copy_proxy": "False"
+      },
+      {
+        "id": "1036844829507460_122141376093072582",
+        "date": "2026-07-24",
+        "hour": "9.65",
+        "message": "🫣🫣 #UniverseSentMe #humor #relatable #astrologia #retrogrado",
+        "interactions": 3002.0,
+        "reactions": 2336.0,
+        "comments": 41.0,
+        "shares": 625.0,
+        "minimal_copy_proxy": "False"
+      },
+      {
+        "id": "1036844829507460_122142627051072582",
+        "date": "2026-07-27",
+        "hour": "20.0",
+        "message": "😭🫣 #UniverseSentMe #humoracido #memesUSM",
+        "interactions": 2979.0,
+        "reactions": 2249.0,
+        "comments": 16.0,
+        "shares": 714.0,
+        "minimal_copy_proxy": "False"
+      },
+      {
+        "id": "1036844829507460_122141207841072582",
+        "date": "2026-07-22",
+        "hour": "22.433333333333334",
+        "message": "🙂‍↕️ #UniverseSentMe #humor #memesenespañol #relatable #vidareal #meditacion",
+        "interactions": 2747.0,
+        "reactions": 1722.0,
+        "comments": 10.0,
+        "shares": 1015.0,
+        "minimal_copy_proxy": "False"
+      },
+      {
+        "id": "1036844829507460_122135607981072582",
+        "date": "2026-07-03",
+        "hour": "20.016666666666666",
+        "message": "😋",
+        "interactions": 2441.0,
+        "reactions": 1652.0,
+        "comments": 15.0,
+        "shares": 774.0,
+        "minimal_copy_proxy": "True"
+      },
+      {
+        "id": "1036844829507460_122135586723072582",
+        "date": "2026-07-03",
+        "hour": "17.266666666666666",
+        "message": "Ya va ser la hora del tecito 😇 #UniverseSentMe #vidareal #relatable #problemas",
+        "interactions": 2280.0,
+        "reactions": 1533.0,
+        "comments": 9.0,
+        "shares": 738.0,
+        "minimal_copy_proxy": "False"
+      }
+    ],
+    "hours": [
+      {
+        "hour": 22,
+        "posts": 18,
+        "mean_interactions": 561.1666666666666,
+        "median_interactions": 107.0,
+        "total_shares": 3695.0
+      },
+      {
+        "hour": 23,
+        "posts": 2,
+        "mean_interactions": 543.5,
+        "median_interactions": 543.5,
+        "total_shares": 322.0
+      },
+      {
+        "hour": 20,
+        "posts": 22,
+        "mean_interactions": 531.0909090909091,
+        "median_interactions": 46.0,
+        "total_shares": 2990.0
+      },
+      {
+        "hour": 14,
+        "posts": 12,
+        "mean_interactions": 513.25,
+        "median_interactions": 20.0,
+        "total_shares": 1975.0
+      },
+      {
+        "hour": 9,
+        "posts": 12,
+        "mean_interactions": 381.4166666666667,
+        "median_interactions": 51.0,
+        "total_shares": 961.0
+      },
+      {
+        "hour": 18,
+        "posts": 19,
+        "mean_interactions": 379.6842105263158,
+        "median_interactions": 136.0,
+        "total_shares": 1853.0
+      },
+      {
+        "hour": 13,
+        "posts": 13,
+        "mean_interactions": 364.38461538461536,
+        "median_interactions": 28.0,
+        "total_shares": 1512.0
+      },
+      {
+        "hour": 17,
+        "posts": 8,
+        "mean_interactions": 348.625,
+        "median_interactions": 31.5,
+        "total_shares": 805.0
+      },
+      {
+        "hour": 15,
+        "posts": 23,
+        "mean_interactions": 341.2608695652174,
+        "median_interactions": 68.0,
+        "total_shares": 2169.0
+      },
+      {
+        "hour": 16,
+        "posts": 23,
+        "mean_interactions": 255.2173913043478,
+        "median_interactions": 54.0,
+        "total_shares": 1343.0
+      },
+      {
+        "hour": 10,
+        "posts": 11,
+        "mean_interactions": 189.8181818181818,
+        "median_interactions": 68.0,
+        "total_shares": 398.0
+      },
+      {
+        "hour": 11,
+        "posts": 11,
+        "mean_interactions": 145.63636363636363,
+        "median_interactions": 66.0,
+        "total_shares": 255.0
+      },
+      {
+        "hour": 12,
+        "posts": 12,
+        "mean_interactions": 126.41666666666667,
+        "median_interactions": 67.0,
+        "total_shares": 285.0
+      },
+      {
+        "hour": 8,
+        "posts": 9,
+        "mean_interactions": 44.888888888888886,
+        "median_interactions": 38.0,
+        "total_shares": 57.0
+      },
+      {
+        "hour": 21,
+        "posts": 5,
+        "mean_interactions": 39.4,
+        "median_interactions": 41.0,
+        "total_shares": 37.0
+      },
+      {
+        "hour": 19,
+        "posts": 5,
+        "mean_interactions": 25.2,
+        "median_interactions": 23.0,
+        "total_shares": 17.0
+      },
+      {
+        "hour": 7,
+        "posts": 1,
+        "mean_interactions": 13.0,
+        "median_interactions": 13.0,
+        "total_shares": 0.0
+      },
+      {
+        "hour": 2,
+        "posts": 1,
+        "mean_interactions": 10.0,
+        "median_interactions": 10.0,
+        "total_shares": 2.0
+      }
+    ],
+    "weekdays": [
+      {
+        "weekday": "Saturday",
+        "posts": 30,
+        "mean_interactions": 480.73333333333335,
+        "median_interactions": 66.0,
+        "total_shares": 4807.0
+      },
+      {
+        "weekday": "Monday",
+        "posts": 25,
+        "mean_interactions": 410.24,
+        "median_interactions": 40.0,
+        "total_shares": 2259.0
+      },
+      {
+        "weekday": "Tuesday",
+        "posts": 25,
+        "mean_interactions": 380.56,
+        "median_interactions": 33.0,
+        "total_shares": 3261.0
+      },
+      {
+        "weekday": "Friday",
+        "posts": 36,
+        "mean_interactions": 333.44444444444446,
+        "median_interactions": 58.5,
+        "total_shares": 2929.0
+      },
+      {
+        "weekday": "Wednesday",
+        "posts": 29,
+        "mean_interactions": 326.6896551724138,
+        "median_interactions": 38.0,
+        "total_shares": 2557.0
+      },
+      {
+        "weekday": "Thursday",
+        "posts": 36,
+        "mean_interactions": 228.94444444444446,
+        "median_interactions": 60.5,
+        "total_shares": 1814.0
+      },
+      {
+        "weekday": "Sunday",
+        "posts": 26,
+        "mean_interactions": 158.15384615384616,
+        "median_interactions": 37.5,
+        "total_shares": 1049.0
+      }
+    ]
+  },
+  "comparison": {
+    "posts_growth_july_vs_june": -0.09999999999999998,
+    "total_interactions_growth_july_vs_june": 2.723262178434592,
+    "median_interactions_change_july_vs_june": 3.3,
+    "median_shares_change_july_vs_june": 6.0,
+    "minimal_share_of_posts_change": -0.2884057971014493
+  },
+  "june_taxonomy": {
+    "rows": 172,
+    "humor_counts": {
+      "Existencial o absurdo": 136,
+      "Existencial o absurdo;Relatable cotidiano": 13,
+      "Existencial o absurdo;Fandom o referencia": 1,
+      "Existencial o absurdo;Humor ácido o negro;Relatable cotidiano": 2,
+      "Existencial o absurdo;Humor ácido o negro;Fandom o referencia": 1,
+      "Existencial o absurdo;Humor ácido o negro": 7,
+      "No determinado": 8,
+      "Existencial o absurdo;Humor ácido o negro;Sexual o insinuación": 1,
+      "Existencial o absurdo;Relatable cotidiano;Fandom o referencia": 1,
+      "Existencial o absurdo;Reacción o emoji": 1,
+      "Humor ácido o negro": 1
+    },
+    "character_counts": {
+      "Universe": 167,
+      "Evan": 1,
+      "No identificado": 2,
+      "Maeve": 1,
+      "Kael": 1
+    },
+    "role_counts": {
+      "Protagonista": 168,
+      "Dúo o pareja": 2,
+      "No determinado": 2
+    },
+    "tagging_counts": {
+      "Bajo": 140,
+      "Medio": 30,
+      "Alto": 2
+    }
+  },
+  "july_taxonomy": {
+    "rows": 6,
+    "humor_counts": {
+      "Relatable cotidiano;Existencial o absurdo": 2,
+      "Humor ácido o negro;Relatable cotidiano": 1,
+      "Observacional social": 1,
+      "Sexual o insinuación;Observacional social": 1,
+      "Existencial o absurdo;Relatable cotidiano": 1
+    },
+    "character_counts": {
+      "No identificado": 3,
+      "Fantasma": 1,
+      "Universe": 2
+    },
+    "role_counts": {
+      "Protagonista": 4,
+      "Dúo o pareja": 1,
+      "Reparto coral": 1
+    },
+    "tagging_counts": {
+      "Alto": 3,
+      "Medio": 3
+    }
+  }
+}
