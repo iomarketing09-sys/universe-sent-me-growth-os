@@ -4,7 +4,7 @@ purpose: "Organizar el primer bloque de cuatro piezas originales de Bam in a Can
 status: "Draft — preproducción; ninguna pieza de la semana está publicada"
 created: 2026-08-21
 updated: 2026-08-21
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_Plan_Lanzamiento_Audiencia_Bam_In_A_Can.md"
@@ -31,7 +31,7 @@ No se asignan todavía fechas ni horas. Se publica únicamente cuando los cuatro
 | 1 | `CAN-001` | CAN FOUND | Manifiesto: algo vivo dentro de la lata. | Corte final recibido; pendiente selección de audio nativo para TikTok/Instagram y publicación. |
 | 2 | `CAN-002` | CAN FAKE TRAILER | Demostrar que Bam también fabrica productos de archivo que nunca debieron existir. | Render generado; requiere corte antes de que aparezcan código de barras/números al final. No regenerar aún. |
 | 3 | `CAN-003` | CAN FOUND | Mostrar que la anomalía puede ocurrir fuera de la lata, manteniendo una sola regla visual imposible. | Montaje cinematográfico de 10 s aprobado para edición: moneda, mecanismos, abolladuras desde dentro y espirales vacíos. |
-| 4 | `CAN-004` | CAN MEME | Abrir una vía más ligera y compartible sin abandonar la estética extraña. | Brief listo para asset y edición manual. |
+| 4 | `CAN-004` | CAN MEME | Abrir una vía más ligera y compartible sin abandonar la estética extraña. | Render base aprobado para edición; la proliferación de ventanas debe construirse manualmente sobre la pantalla CRT. |
 
 ## 3. Sistema técnico común
 
@@ -174,6 +174,19 @@ Audio only: empty laundromat hum, a quiet compressor, one very soft muffled exha
 ### CAN-004 — *A Normal Amount of Internet*
 
 **Premisa:** meme original en forma de clip. Un monitor CRT beige reproduce una ventana de video vacía. Con cada *click*, aparecen más ventanas pequeñas, pero todas muestran la misma lata cerrada. Se corta antes de que cubran completamente el monitor.
+
+**Estado de render (21 Ago):** `Generate_storyboard_video_animation_can004.mp4` preserva con calidad la lámpara, escritorio negro, CRT beige y lata con marca Bam. Es una buena placa base, pero no ejecuta la mecánica central: la pantalla se queda con un punto blanco y no aparecen ventanas ni cursor. **No regenerar**: la pantalla CRT es un área plana y delimitada; la réplica de ventanas se debe componer en edición para que sea exacta y repetible.
+
+**Receta de edición obligatoria:** usar el plano frontal del CRT como base y enmascarar solo el rectángulo de la pantalla. Sobre esa máscara, colocar una imagen/recorte de la lata limpia sin texto adicional en siete paneles sin borde ni interfaz:
+
+| Tiempo | Composición determinista |
+|---|---|
+| 00:00–00:01.5 | Una sola miniatura de la lata en el centro de la pantalla. |
+| 00:01.5–00:03.5 | Añadir cuatro copias escalonadas; conservar el punto blanco como detalle secundario o cubrirlo. |
+| 00:03.5–00:05.2 | Llegar a siete paneles irregulares que llenan la pantalla, sin texto ni iconos de sistema. |
+| 00:05.2–00:06.0 | Flecha/cursor manual intenta cerrar un panel; las siete miniaturas parpadean una vez y se corta a negro. |
+
+No distorsionar las copias fuera del borde curvo del CRT. El efecto debe sentirse como una interfaz imposible, no como una captura real de Windows/macOS. Los clics de mouse y el chirp pueden añadirse en edición; el hum del render se conserva bajo ellos.
 
 **Guion de 6 s:**
 
