@@ -4,7 +4,7 @@ purpose: "Definir las piezas históricas/futuras mínimas necesarias para comple
 status: Active
 created: 2026-08-21
 updated: 2026-08-21
-version: "1.3"
+version: "1.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-20_Propuesta_Expansion_Celdas_Comparables.md"
@@ -16,6 +16,7 @@ related_documents:
   - "Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv"
   - "Operations/Production/2026-08-21_Preflight_Briefs_Comparables.md"
   - "Operations/Production/run_comparable_briefs_preflight.py"
+  - "Operations/Production/populate_comparable_brief_metadata.py"
   - "GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md"
 organization: "Operations/Production"
 ---
@@ -28,7 +29,7 @@ Los cuatro briefs están registrados en `Operations/Research/2026-08-21_Paquete_
 
 ## Resultado del preflight y alcance vigente
 
-El preflight de especificación pasó para los cuatro briefs (`4/4`). El resultado es `preflight_specification_pass`, no `generation_approved`: todavía no existe asset, no se han asignado valores finales de `Experiment_ID`, `Hypothesis_ID`, `Caption_Function`, `Hora_Test` ni otros metadatos de generación, y todos permanecen bloqueados para promoción hasta obtener aprobación humana separada.
+El preflight de especificación y metadatos propuestos pasó para los cuatro briefs (`4/4`). El resultado es `preflight_specification_pass`, no `generation_approved`: todavía no existe asset y los valores de `Experiment_ID`, `Hypothesis_ID`, `Caption_Function`, `Hora_Test`, `Theme_Confound` y demás campos están registrados como propuestas previas. Todos permanecen bloqueados para promoción hasta obtener aprobación humana separada.
 
 ## Alcance y decisión previa
 
@@ -47,7 +48,7 @@ Los diseños siguientes son briefs de prueba aprobados para preflight, no public
 | `ACID-DIALOGUE` | `n=2` | Bajo `n=3` | Un diálogo ácido nuevo con destinatario claro y remate seguro | `FUT-ACID-003` aprobado para preflight |
 | `SELF-DEPRECATION/ANTIHERO` | `n=3` | Señal preliminar heterogénea | Dos casos adicionales para `n=5`; separar autodesprecio de simple tristeza o roast | Sin brief activo |
 
-Los cuatro briefs aprobados no cierran ninguna celda por sí solos: autorizan únicamente preflight. La promoción de cada pieza requerirá confirmar `Cell_ID`, `Narrative_Structure`, `Caption_Treatment`, `Caption_Function`, `Character_Presence`, `Theme_Confound`, `Hora_Test`, seguridad y ausencia de confusores excluidos. Para una señal preliminar se mantiene `n=3`; para un veredicto operativo, `n=5`.
+Los cuatro briefs aprobados no cierran ninguna celda por sí solos: autorizan únicamente preflight. La matriz CSV ya contiene propuestas para `Experiment_ID`, `Hypothesis_ID`, `Cell_ID`, `Narrative_Structure`, `Caption_Treatment`, `Caption_Function`, `Humor_Function`, `Character_Presence`, `Theme_Confound`, `Hora_Test`, `Reuse_Status=New_Asset_Proposed` y la zona horaria `America/Matamoros`. La promoción de cada pieza requerirá revisar esos valores con el asset real, confirmar seguridad y ausencia de confusores excluidos, y obtener una aprobación humana separada para generar. Para una señal preliminar se mantiene `n=3`; para un veredicto operativo, `n=5`.
 
 ## Aprobación de análisis selectivo
 

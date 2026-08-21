@@ -339,7 +339,7 @@ A partir de esta revisión, `Caption_Treatment` debe separarse de `Caption_Funct
 
 Para las próximas iteraciones, cada celda debe probar el tratamiento junto con un control visual comparable y registrar `Character_Presence`, `Theme_Confound`, `Hora_Test`, `Narrative_Structure` y `Caption_Function`. La métrica primaria debe corresponder a la hipótesis: shares para `Difusión_Minimal`, comentarios raíz y replies para `Conversación_Relacional`, y mediana de interacciones con sensibilidad a outliers para las demás familias. No se declarará un ganador con los 17 históricos; se requiere una matriz equilibrada y al menos `n=3` por celda para señal preliminar y `n=5` para veredicto operativo.
 
-El preflight de `FUT-MICRO-005`, `FUT-MICRO-006`, `FUT-TRANS-003` y `FUT-ACID-003` pasó con `4/4` especificaciones en `PASS`. La siguiente acción es completar los metadatos obligatorios y solicitar aprobación humana separada para generar assets; el resultado no autoriza generación final, calendario, publicación ni CNT. No se abrirá otra ronda histórica de captions ni se actualizará el ExperimentLog con estas etiquetas descriptivas.
+El preflight de `FUT-MICRO-005`, `FUT-MICRO-006`, `FUT-TRANS-003` y `FUT-ACID-003` pasó con `4/4` especificaciones en `PASS`, y la matriz ya contiene propuestas completas para los metadatos obligatorios. La siguiente acción es revisar esas propuestas y solicitar aprobación humana separada para generar assets; el resultado no autoriza generación final, calendario, publicación ni CNT. No se abrirá otra ronda histórica de captions ni se actualizará el ExperimentLog con estas etiquetas descriptivas.
 
 ## 19. Síntesis histórica junio–julio — 2026-08-20
 

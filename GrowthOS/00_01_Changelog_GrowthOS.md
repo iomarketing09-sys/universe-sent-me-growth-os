@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-21
-**Versión:** 2.42
+**Versión:** 2.43
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.43.00] — 2026-08-21 (Manus): Metadatos obligatorios de briefs comparables completados como propuesta.** Se añadieron a `Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv` los campos `Experiment_ID`, `Hypothesis_ID`, `Caption_Function`, `Humor_Function`, `Hora_Test`, `Hora_Test_TZ`, `Theme_Confound`, `Reuse_Status`, `Metadata_Status`, `Generation_Authorization` y `Metadata_Notes`. Los cuatro briefs comparten `EXP-2026-08-COMP-GAPS-01`, tienen hipótesis individuales `H-COMP-*`, horas propuestas en `America/Matamoros`, `Reuse_Status=New_Asset_Proposed`, `Metadata_Status=Complete_Proposed_Not_Authorized` y `Generation_Authorization=Pending_Human_Approval`. `Caption_Treatment` permanece separado de `Caption_Function`. No se actualizó `ExperimentLog`, no se generaron assets y no se autorizó calendario, publicación ni CNT. Scripts: `Operations/Production/populate_comparable_brief_metadata.py` y `Operations/Production/run_comparable_briefs_preflight.py`.
 
 - **[2.42.00] — 2026-08-21 (Manus): Preflight técnico de briefs comparables completado.** El ejecutor `Operations/Production/run_comparable_briefs_preflight.py` validó `4/4` especificaciones en `PASS` para `FUT-MICRO-005`, `FUT-MICRO-006`, `FUT-TRANS-003` y `FUT-ACID-003`. El resultado `preflight_specification_pass` no equivale a `generation_approved`: no existen assets generados, siguen pendientes los metadatos `Experiment_ID`, `Hypothesis_ID`, `Caption_Function`, `Hora_Test` y demás campos previos a generación, y la promoción permanece bloqueada hasta una aprobación humana separada. Reporte: `Operations/Production/2026-08-21_Preflight_Briefs_Comparables.md`.
 

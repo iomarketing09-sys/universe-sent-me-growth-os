@@ -21,6 +21,17 @@ REQUIRED_MATRIX_FIELDS = {
     "Requested_Decision",
     "Decision_By",
     "Decision_Date",
+    "Experiment_ID",
+    "Hypothesis_ID",
+    "Caption_Function",
+    "Humor_Function",
+    "Hora_Test",
+    "Hora_Test_TZ",
+    "Theme_Confound",
+    "Reuse_Status",
+    "Metadata_Status",
+    "Generation_Authorization",
+    "Metadata_Notes",
 }
 
 REQUIRED_PRE_GENERATION_FIELDS = [
@@ -92,6 +103,19 @@ def validate(rows: list[dict[str, str]]) -> list[dict[str, str]]:
     results: list[dict[str, str]] = []
     for brief_id, expected in EXPECTED.items():
         row = selected[brief_id]
+        metadata_fields = [
+            "Experiment_ID",
+            "Hypothesis_ID",
+            "Caption_Function",
+            "Humor_Function",
+            "Hora_Test",
+            "Hora_Test_TZ",
+            "Theme_Confound",
+            "Reuse_Status",
+            "Metadata_Status",
+            "Generation_Authorization",
+            "Metadata_Notes",
+        ]
         checks = {
             "status": row["Status"] == "Approved_for_Preflight",
             "decision": row["Requested_Decision"] == "Approve_Preflight_Only",
@@ -102,6 +126,10 @@ def validate(rows: list[dict[str, str]]) -> list[dict[str, str]]:
             "caption": row["Caption_Treatment"] == expected["caption"],
             "character": row["Character_Presence"] == expected["character"],
             "identity_spec": expected["identity_token"] in row["Required_Identity_Checks"],
+            "metadata_complete": all(row[field].strip() for field in metadata_fields),
+            "metadata_status": row["Metadata_Status"] == "Complete_Proposed_Not_Authorized",
+            "reuse_status": row["Reuse_Status"] == "New_Asset_Proposed",
+            "generation_block": row["Generation_Authorization"] == "Pending_Human_Approval",
         }
         failed = [name for name, passed in checks.items() if not passed]
         results.append(
@@ -111,8 +139,17 @@ def validate(rows: list[dict[str, str]]) -> list[dict[str, str]]:
                 "caption": row["Caption_Treatment"],
                 "spec_status": "PASS" if not failed else "FAIL",
                 "failed_checks": ", ".join(failed) if failed else "—",
+                "experiment_id": row["Experiment_ID"],
+                "hypothesis_id": row["Hypothesis_ID"],
+                "caption_function": row["Caption_Function"],
+                "humor_function": row["Humor_Function"],
+                "hora_test": row["Hora_Test"],
+                "hora_test_tz": row["Hora_Test_TZ"],
+                "theme_confound": row["Theme_Confound"],
+                "reuse_status": row["Reuse_Status"],
+                "generation_authorization": row["Generation_Authorization"],
                 "asset_status": "PENDING — no asset generated",
-                "metadata_status": "PENDING — required before generation",
+                "metadata_status": "PASS — complete proposal" if not failed else "FAIL — review required",
                 "promotion_status": "BLOCKED — requires separate human approval",
             }
         )
@@ -129,7 +166,7 @@ def write_report(results: list[dict[str, str]]) -> None:
         f"status: {report_status}",
         "created: 2026-08-21",
         "updated: 2026-08-21",
-        'version: "1.0"',
+        'version: "1.1"',
         'author: "Manus AI (CGO)"',
         "related_documents:",
         '  - "Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md"',
@@ -143,18 +180,18 @@ def write_report(results: list[dict[str, str]]) -> None:
         "",
         "## Resultado ejecutivo",
         "",
-        f"Los cuatro briefs pasan la validación de especificación: `{len(results)}/4` con `spec_status=PASS`. Esta salida confirma coherencia entre la matriz de aprobación y el diseño técnico; **no confirma que exista un asset**, no genera imágenes y no autoriza calendario, publicación, reuse ni creación de CNT.",
+        f"Los cuatro briefs pasan la validación de especificación y metadatos propuestos: `{len(results)}/4` con `spec_status=PASS`. Esta salida confirma coherencia entre la matriz de aprobación, el diseño técnico y los campos previos a generación; **no confirma que exista un asset**, no genera imágenes y no autoriza calendario, publicación, reuse ni creación de CNT.",
         "",
         "> La aprobación de Fernando es `Approve_Preflight_Only`. Cualquier paso que produzca un asset o lo acerque a publicación requiere una decisión humana separada.",
         "",
         "## Matriz de preflight",
         "",
-        "| Brief_ID | Cell_ID | Caption_Treatment | Especificación | Asset | Metadatos | Promoción |",
-        "|---|---|---|---|---|---|---|",
+        "| Brief_ID | Cell_ID | Experiment_ID | Hypothesis_ID | Caption_Treatment | Caption_Function | Humor_Function | Hora_Test | Theme_Confound | Reuse_Status | Especificación | Asset | Metadatos | Generación | Promoción |",
+        "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|",
     ]
     for item in results:
         lines.append(
-            f"| `{item['brief_id']}` | `{item['cell']}` | `{item['caption']}` | `{item['spec_status']}` | {item['asset_status']} | {item['metadata_status']} | {item['promotion_status']} |"
+            f"| `{item['brief_id']}` | `{item['cell']}` | `{item['experiment_id']}` | `{item['hypothesis_id']}` | `{item['caption']}` | `{item['caption_function']}` | `{item['humor_function']}` | `{item['hora_test']} ({item['hora_test_tz']})` | `{item['theme_confound']}` | `{item['reuse_status']}` | `{item['spec_status']}` | {item['asset_status']} | {item['metadata_status']} | `{item['generation_authorization']}` | {item['promotion_status']} |"
         )
 
     lines.extend(
@@ -162,17 +199,17 @@ def write_report(results: list[dict[str, str]]) -> None:
             "",
             "## Campos obligatorios antes de generar cualquier asset",
             "",
-            "Cada brief debe completar los siguientes campos antes de una solicitud de generación. El preflight actual los marca como requisitos, pero no inventa valores de hora, función de caption ni identificadores experimentales:",
+            "Cada brief ya contiene una propuesta para los siguientes campos. Los valores son de diseño previo y deben revisarse antes de cualquier solicitud de generación; no constituyen autorización. La hora es una hora de prueba propuesta en `America/Matamoros`, no un slot reservado:",
             "",
             "| Campo | Regla | Estado en este preflight |",
             "|---|---|---|",
         ]
     )
     for field in REQUIRED_PRE_GENERATION_FIELDS:
-        rule = "Separado de Caption_Treatment; no asumir que una pregunta retórica es conversacional." if field == "Caption_Function" else "Completar y revisar antes de generación."
+        rule = "Separado de Caption_Treatment; no asumir que una pregunta retórica es conversacional." if field == "Caption_Function" else "Propuesta completada; revisar antes de generación."
         if field == "Reuse_Status":
             rule = "Debe registrar `New_Asset_Proposed`; no mezclar con reuse."
-        lines.append(f"| `{field}` | {rule} | `PENDING_BEFORE_GENERATION` |")
+        lines.append(f"| `{field}` | {rule} | `PROPOSED_COMPLETE_NOT_AUTHORIZED` |")
 
     lines.extend(
         [
@@ -187,18 +224,19 @@ def write_report(results: list[dict[str, str]]) -> None:
             "",
             "## Condiciones de promoción",
             "",
-            "El resultado de este documento es `preflight_specification_pass`, no `generation_approved`. Antes de cualquier generación se necesita completar los campos obligatorios y obtener aprobación humana explícita para producir assets. Antes de calendario, publicación o CNT se necesita una aprobación posterior e independiente.",
+            "El resultado de este documento es `preflight_specification_pass` con metadatos propuestos completos, no `generation_approved`. Antes de cualquier generación se necesita revisar estos valores y obtener aprobación humana explícita para producir assets. Antes de calendario, publicación o CNT se necesita una aprobación posterior e independiente.",
             "",
             "## Reproducibilidad",
             "",
-            "Este reporte fue generado por `Operations/Production/run_comparable_briefs_preflight.py` a partir de la matriz CSV y de los criterios del diseño técnico. No se consultaron APIs, no se modificó Facebook o Instagram y no se usó navegación externa.",
+            "Este reporte fue generado por `Operations/Production/run_comparable_briefs_preflight.py` a partir de la matriz CSV y de los criterios del diseño técnico. Los metadatos fueron completados por `Operations/Production/populate_comparable_brief_metadata.py`. No se consultaron APIs, no se modificó Facebook o Instagram y no se usó navegación externa.",
             "",
             "## Referencias",
             "",
             "[1]: `Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md` — criterios técnicos y estado de celdas.",
             "[2]: `Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md` — alcance de la aprobación humana.",
-            "[3]: `Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv` — matriz reproducible de decisiones.",
-            "[4]: `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md` — reglas de evidencia y captions.",
+            "[3]: `Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv` — matriz reproducible de decisiones y metadatos propuestos.",
+            "[4]: `Operations/Production/populate_comparable_brief_metadata.py` — llenado reproducible de los valores propuestos.",
+            "[5]: `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md` — reglas de evidencia y captions.",
         ]
     )
     REPORT.write_text("\n".join(lines) + "\n", encoding="utf-8")

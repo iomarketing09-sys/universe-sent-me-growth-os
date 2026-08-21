@@ -4,7 +4,7 @@ purpose: "Validar reproduciblemente las especificaciones de los cuatro briefs ap
 status: Active
 created: 2026-08-21
 updated: 2026-08-21
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md"
@@ -18,36 +18,36 @@ organization: "Operations/Production"
 
 ## Resultado ejecutivo
 
-Los cuatro briefs pasan la validación de especificación: `4/4` con `spec_status=PASS`. Esta salida confirma coherencia entre la matriz de aprobación y el diseño técnico; **no confirma que exista un asset**, no genera imágenes y no autoriza calendario, publicación, reuse ni creación de CNT.
+Los cuatro briefs pasan la validación de especificación y metadatos propuestos: `4/4` con `spec_status=PASS`. Esta salida confirma coherencia entre la matriz de aprobación, el diseño técnico y los campos previos a generación; **no confirma que exista un asset**, no genera imágenes y no autoriza calendario, publicación, reuse ni creación de CNT.
 
 > La aprobación de Fernando es `Approve_Preflight_Only`. Cualquier paso que produzca un asset o lo acerque a publicación requiere una decisión humana separada.
 
 ## Matriz de preflight
 
-| Brief_ID | Cell_ID | Caption_Treatment | Especificación | Asset | Metadatos | Promoción |
-|---|---|---|---|---|---|---|
-| `FUT-MICRO-005` | `MICRO-STRICT-3P` | `caption_minimo` | `PASS` | PENDING — no asset generated | PENDING — required before generation | BLOCKED — requires separate human approval |
-| `FUT-MICRO-006` | `MICRO-STRICT-3P` | `caption_refuerzo` | `PASS` | PENDING — no asset generated | PENDING — required before generation | BLOCKED — requires separate human approval |
-| `FUT-TRANS-003` | `TRANS-UNIVERSE` | `caption_conversacional` | `PASS` | PENDING — no asset generated | PENDING — required before generation | BLOCKED — requires separate human approval |
-| `FUT-ACID-003` | `ACID-DIALOGUE` | `caption_minimo` | `PASS` | PENDING — no asset generated | PENDING — required before generation | BLOCKED — requires separate human approval |
+| Brief_ID | Cell_ID | Experiment_ID | Hypothesis_ID | Caption_Treatment | Caption_Function | Humor_Function | Hora_Test | Theme_Confound | Reuse_Status | Especificación | Asset | Metadatos | Generación | Promoción |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| `FUT-MICRO-005` | `MICRO-STRICT-3P` | `EXP-2026-08-COMP-GAPS-01` | `H-COMP-MICRO3P-005` | `caption_minimo` | `reaccion` | `romantic_absurd_reframe` | `18:00 (America/Matamoros)` | `romantic_context; character_novelty; panel_count; caption_treatment` | `New_Asset_Proposed` | `PASS` | PENDING — no asset generated | PASS — complete proposal | `Pending_Human_Approval` | BLOCKED — requires separate human approval |
+| `FUT-MICRO-006` | `MICRO-STRICT-3P` | `EXP-2026-08-COMP-GAPS-01` | `H-COMP-MICRO3P-006` | `caption_refuerzo` | `refuerzo_semantico` | `everyday_social_reframe` | `20:00 (America/Matamoros)` | `everyday_social_context; relational_or_anxiety_risk; panel_count; caption_treatment` | `New_Asset_Proposed` | `PASS` | PENDING — no asset generated | PASS — complete proposal | `Pending_Human_Approval` | BLOCKED — requires separate human approval |
+| `FUT-TRANS-003` | `TRANS-UNIVERSE` | `EXP-2026-08-COMP-GAPS-01` | `H-COMP-TRANS-003` | `caption_conversacional` | `pregunta_abierta` | `visual_identity_contrast` | `16:00 (America/Matamoros)` | `transformation_type; identity_legibility; background_dominance; caption_treatment` | `New_Asset_Proposed` | `PASS` | PENDING — no asset generated | PASS — complete proposal | `Pending_Human_Approval` | BLOCKED — requires separate human approval |
+| `FUT-ACID-003` | `ACID-DIALOGUE` | `EXP-2026-08-COMP-GAPS-01` | `H-COMP-ACID-003` | `caption_minimo` | `reaccion` | `interpersonal_contradiction` | `22:00 (America/Matamoros)` | `acid_target; voice_clarity; relationship_context; caption_treatment` | `New_Asset_Proposed` | `PASS` | PENDING — no asset generated | PASS — complete proposal | `Pending_Human_Approval` | BLOCKED — requires separate human approval |
 
 ## Campos obligatorios antes de generar cualquier asset
 
-Cada brief debe completar los siguientes campos antes de una solicitud de generación. El preflight actual los marca como requisitos, pero no inventa valores de hora, función de caption ni identificadores experimentales:
+Cada brief ya contiene una propuesta para los siguientes campos. Los valores son de diseño previo y deben revisarse antes de cualquier solicitud de generación; no constituyen autorización. La hora es una hora de prueba propuesta en `America/Matamoros`, no un slot reservado:
 
 | Campo | Regla | Estado en este preflight |
 |---|---|---|
-| `Experiment_ID` | Completar y revisar antes de generación. | `PENDING_BEFORE_GENERATION` |
-| `Hypothesis_ID` | Completar y revisar antes de generación. | `PENDING_BEFORE_GENERATION` |
-| `Cell_ID` | Completar y revisar antes de generación. | `PENDING_BEFORE_GENERATION` |
-| `Caption_Treatment` | Completar y revisar antes de generación. | `PENDING_BEFORE_GENERATION` |
-| `Caption_Function` | Separado de Caption_Treatment; no asumir que una pregunta retórica es conversacional. | `PENDING_BEFORE_GENERATION` |
-| `Narrative_Structure` | Completar y revisar antes de generación. | `PENDING_BEFORE_GENERATION` |
-| `Humor_Function` | Completar y revisar antes de generación. | `PENDING_BEFORE_GENERATION` |
-| `Character_Presence` | Completar y revisar antes de generación. | `PENDING_BEFORE_GENERATION` |
-| `Hora_Test` | Completar y revisar antes de generación. | `PENDING_BEFORE_GENERATION` |
-| `Theme_Confound` | Completar y revisar antes de generación. | `PENDING_BEFORE_GENERATION` |
-| `Reuse_Status` | Debe registrar `New_Asset_Proposed`; no mezclar con reuse. | `PENDING_BEFORE_GENERATION` |
+| `Experiment_ID` | Propuesta completada; revisar antes de generación. | `PROPOSED_COMPLETE_NOT_AUTHORIZED` |
+| `Hypothesis_ID` | Propuesta completada; revisar antes de generación. | `PROPOSED_COMPLETE_NOT_AUTHORIZED` |
+| `Cell_ID` | Propuesta completada; revisar antes de generación. | `PROPOSED_COMPLETE_NOT_AUTHORIZED` |
+| `Caption_Treatment` | Propuesta completada; revisar antes de generación. | `PROPOSED_COMPLETE_NOT_AUTHORIZED` |
+| `Caption_Function` | Separado de Caption_Treatment; no asumir que una pregunta retórica es conversacional. | `PROPOSED_COMPLETE_NOT_AUTHORIZED` |
+| `Narrative_Structure` | Propuesta completada; revisar antes de generación. | `PROPOSED_COMPLETE_NOT_AUTHORIZED` |
+| `Humor_Function` | Propuesta completada; revisar antes de generación. | `PROPOSED_COMPLETE_NOT_AUTHORIZED` |
+| `Character_Presence` | Propuesta completada; revisar antes de generación. | `PROPOSED_COMPLETE_NOT_AUTHORIZED` |
+| `Hora_Test` | Propuesta completada; revisar antes de generación. | `PROPOSED_COMPLETE_NOT_AUTHORIZED` |
+| `Theme_Confound` | Propuesta completada; revisar antes de generación. | `PROPOSED_COMPLETE_NOT_AUTHORIZED` |
+| `Reuse_Status` | Debe registrar `New_Asset_Proposed`; no mezclar con reuse. | `PROPOSED_COMPLETE_NOT_AUTHORIZED` |
 
 ## Salvaguardas específicas
 
@@ -59,15 +59,16 @@ Cada brief debe completar los siguientes campos antes de una solicitud de genera
 
 ## Condiciones de promoción
 
-El resultado de este documento es `preflight_specification_pass`, no `generation_approved`. Antes de cualquier generación se necesita completar los campos obligatorios y obtener aprobación humana explícita para producir assets. Antes de calendario, publicación o CNT se necesita una aprobación posterior e independiente.
+El resultado de este documento es `preflight_specification_pass` con metadatos propuestos completos, no `generation_approved`. Antes de cualquier generación se necesita revisar estos valores y obtener aprobación humana explícita para producir assets. Antes de calendario, publicación o CNT se necesita una aprobación posterior e independiente.
 
 ## Reproducibilidad
 
-Este reporte fue generado por `Operations/Production/run_comparable_briefs_preflight.py` a partir de la matriz CSV y de los criterios del diseño técnico. No se consultaron APIs, no se modificó Facebook o Instagram y no se usó navegación externa.
+Este reporte fue generado por `Operations/Production/run_comparable_briefs_preflight.py` a partir de la matriz CSV y de los criterios del diseño técnico. Los metadatos fueron completados por `Operations/Production/populate_comparable_brief_metadata.py`. No se consultaron APIs, no se modificó Facebook o Instagram y no se usó navegación externa.
 
 ## Referencias
 
 [1]: `Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md` — criterios técnicos y estado de celdas.
 [2]: `Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md` — alcance de la aprobación humana.
-[3]: `Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv` — matriz reproducible de decisiones.
-[4]: `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md` — reglas de evidencia y captions.
+[3]: `Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv` — matriz reproducible de decisiones y metadatos propuestos.
+[4]: `Operations/Production/populate_comparable_brief_metadata.py` — llenado reproducible de los valores propuestos.
+[5]: `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md` — reglas de evidencia y captions.
