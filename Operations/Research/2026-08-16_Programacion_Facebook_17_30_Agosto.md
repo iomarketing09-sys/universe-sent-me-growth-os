@@ -4,8 +4,8 @@
 
 **Estado:** Active
 **Fecha de creación:** 2026-08-16
-**Última actualización:** 2026-08-16
-**Versión:** 1.1
+**Última actualización:** 2026-08-21
+**Versión:** 1.2
 **Autor:** Manus AI
 **Documentos relacionados:** `2026-08-16_Calendario_Operativo_17_30_Agosto.csv`, `2026-08-16_Asignacion_Visual_Calendario_17_30_Agosto.csv`, `2026-08-15_Publication_Log.csv`, `2026-08-15_ExperimentLog.csv`, `2026-08-16_Manifiesto_Movimiento_35_Memes_Agosto.csv`, `GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`
 
@@ -46,6 +46,18 @@ El log técnico bruto de las respuestas de Meta se conserva fuera del repositori
 Durante la programación, los archivos permanecieron en sus carpetas originales: no se movieron ni copiaron archivos en esa fase. Posteriormente, Fernando ejecutó el movimiento `MOVE_ONLY` de los 46 archivos a `08 Agosto`. La consulta posterior a Drive verificó 46/46 IDs en la carpeta destino y 0/46 restantes en las carpetas de origen; no se crearon copias. El manifiesto quedó en `MOVED_MANUALLY_VERIFIED`.
 
 Instagram quedó fuera del alcance. No se llamó a la API de publicación de Instagram, no se modificó el scheduler `USM Instagram 15-16 Agosto` y no se generaron publicaciones para esa plataforma.
+
+## Sustituciones comparables — 2026-08-21
+
+Fernando autorizó los tres captions, la cancelación de las tres programaciones antiguas y la programación/publicación futura de los experimentos comparables en Facebook. Las tres programaciones antiguas fueron eliminadas y verificadas antes de crear los nuevos posts.
+
+| Brief | Fecha/hora local | Meta Post ID | Meta Photo ID | Verificación |
+|---|---|---|---|---|
+| `FUT-MICRO-006` / `HB-007` | 2026-08-24 10:00, `America/Matamoros` | `1036844829507460_122154023721072582` | `122154023691072582` | `is_published=false`; horario confirmado |
+| `FUT-MICRO-005` / `HB-006` | 2026-08-24 13:30, `America/Matamoros` | `1036844829507460_122154023781072582` | `122154023757072582` | `is_published=false`; horario confirmado |
+| `FUT-ACID-003` / `HB-009` | 2026-08-27 16:00, `America/Matamoros` | `1036844829507460_122154023841072582` | `122154023817072582` | `is_published=false`; horario confirmado |
+
+Los tres posts fueron añadidos a `2026-08-15_Publication_Log.csv` y al staging experimental. No se añadieron métricas, no se actualizó `ExperimentLog`, no se creó CNT y no se ejecutó Instagram, reuse ni afiliados.
 
 ## Próximas acciones
 

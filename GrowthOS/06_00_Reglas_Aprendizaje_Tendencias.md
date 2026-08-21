@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-21
-**Versión:** 3.21
+**Versión:** 3.22
 **Autor:** Manus AI (CGO); Sección 6 añadida por Claude
 **Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`, `../Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`, `../Operations/Research/2026-08-21_Julio_Expansion_Lote01_Analysis.md`, `../Operations/Research/2026-08-21_Expansion_Celdas_Comparables_Post_Julio_Lote01.json`, `../Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Findings.md`, `../Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md`, `../Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`, `../Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Audit.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Analysis.md`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Manual_Findings.md`, `../Operations/Research/2026-08-21_Junio_Caption_Reclassification_Impact.md`, `../Operations/Research/2026-08-21_Validacion_Cruzada_Hipotesis_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.md`
 
@@ -354,3 +354,16 @@ El plan operativo se encuentra en `Operations/Production/2026-08-20_Plan_Experim
 La matriz está en `Review`: assets, fechas, Meta IDs y aprobaciones permanecen en `TBD`/`Pending`. La propuesta se adapta al calendario 17–30 mediante el overlay `Operations/Research/2026-08-20_Overlay_Wave1_Calendario_17_30.csv`; no se crea una programación paralela, no se mueven slots y no se modifica el calendario sin aprobación. Los reuse y P0 permanecen fuera de Wave 1. Una familia solo puede pasar a una segunda ola después de contar con al menos tres casos comparables y una señal preliminar; no se deben declarar reglas universales a partir de una sola pieza o un outlier.
 
 El análisis de `2608029 — Wilfred — Quiero ir a lokiar` está documentado en `Operations/Research/2026-08-20_Analisis_Wilfred_Outlier_Replicacion_5_Familias.md`. La señal se codifica como un stack experimental —`gancho coloquial`, `reencuadre inesperado`, `situación deseable`, `estado emocional legible`, `foco visual único` y `personaje visualmente confirmado`— que puede probarse dentro de las cinco familias. Debe registrarse `Wilfred_Stack_Fidelity`, `Hook_Type`, `Reframe_Type`, `Desirable_State` y `Theme_Confound`; no se atribuye causalidad al personaje, a las 19:00, al fondo fantástico ni al caption mínimo sin controles comparables.
+
+
+## 18.7 Programación verificada de comparables — 2026-08-21
+
+Fernando confirmó los captions y autorizó cancelar las tres programaciones futuras sustituidas y programar/publicar los tres experimentos en Facebook. Las programaciones anteriores fueron canceladas y verificadas mediante Meta Graph API v26 antes de crear los nuevos posts.
+
+| Brief | Hipótesis | Fecha/hora local | Meta_Post_ID | Estado |
+|---|---|---|---|---|
+| `FUT-MICRO-006` | `HB-007` | 2026-08-24 10:00, `America/Matamoros` | `1036844829507460_122154023721072582` | `Programado_Meta_Verificado`, `is_published=false` |
+| `FUT-MICRO-005` | `HB-006` | 2026-08-24 13:30, `America/Matamoros` | `1036844829507460_122154023781072582` | `Programado_Meta_Verificado`, `is_published=false` |
+| `FUT-ACID-003` | `HB-009` | 2026-08-27 16:00, `America/Matamoros` | `1036844829507460_122154023841072582` | `Programado_Meta_Verificado`, `is_published=false` |
+
+No se registran métricas 24/72 horas antes de verificar la publicación real y la ventana correspondiente. Los tres posts permanecen separados de P0, Wave 1, afiliados, reuse, CNT e Instagram. Después de cada publicación se debe registrar el `Platform_Content_ID`, permalink, hora real, fuente de métricas y snapshot temporal antes de actualizar cualquier hipótesis.
