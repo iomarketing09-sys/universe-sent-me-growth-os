@@ -4,7 +4,7 @@ purpose: "Organizar el primer bloque de cuatro piezas originales de Bam in a Can
 status: "Draft — preproducción; ninguna pieza de la semana está publicada"
 created: 2026-08-21
 updated: 2026-08-21
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_Plan_Lanzamiento_Audiencia_Bam_In_A_Can.md"
@@ -29,8 +29,8 @@ No se asignan todavía fechas ni horas. Se publica únicamente cuando los cuatro
 | Orden | ID | Pilar | Función de marca | Estado actual |
 |---:|---|---|---|---|
 | 1 | `CAN-001` | CAN FOUND | Manifiesto: algo vivo dentro de la lata. | Corte final recibido; pendiente selección de audio nativo para TikTok/Instagram y publicación. |
-| 2 | `CAN-002` | CAN FAKE TRAILER | Demostrar que Bam también fabrica productos de archivo que nunca debieron existir. | Brief listo para keyframe y Flow. |
-| 3 | `CAN-003` | CAN FOUND | Mostrar que la anomalía puede ocurrir fuera de la lata, manteniendo una sola regla visual imposible. | Brief listo para keyframe y Flow. |
+| 2 | `CAN-002` | CAN FAKE TRAILER | Demostrar que Bam también fabrica productos de archivo que nunca debieron existir. | Render generado; requiere corte antes de que aparezcan código de barras/números al final. No regenerar aún. |
+| 3 | `CAN-003` | CAN FOUND | Mostrar que la anomalía puede ocurrir fuera de la lata, manteniendo una sola regla visual imposible. | Un render de toma única es candidato; un segundo render queda rechazado por convertir el storyboard en una cuadrícula. |
 | 4 | `CAN-004` | CAN MEME | Abrir una vía más ligera y compartible sin abandonar la estética extraña. | Brief listo para asset y edición manual. |
 
 ## 3. Sistema técnico común
@@ -61,6 +61,8 @@ No se asignan todavía fechas ni horas. Se publica únicamente cuando los cuatro
 ### CAN-002 — *The Memory Printer*
 
 **Premisa:** un infomercial de 1997 presenta una impresora térmica color hueso que produce un recibo vacío. La cámara se acerca y el papel se mueve como si estuviera recordando algo. Todo el producto parece funcional, pero nadie explica por qué necesita imprimir recuerdos.
+
+**Estado de render (21 Ago):** `Thermal_printer_advancing_blank_can002.mp4` mantiene bien el objeto, la textura, la iluminación y el avance de papel. La tira, sin embargo, revela números/código de barras hacia el final, lo cual contradice el recibo vacío. Solución preferida: en edición, cortar a negro antes de que aparezca cualquier marca —aproximadamente antes del segundo 7— y conservar el clip como pieza de 6–7 s. No gastar un nuevo render si el corte puede garantizar papel completamente blanco.
 
 **Guion de 10 s:**
 
@@ -94,6 +96,15 @@ Use only the attached initial keyframe as the visual anchor. Vertical 9:16, 10 s
 
 **Premisa:** un único plano en una lavandería vacía de madrugada. Una máquina expendedora vieja expulsa una respiración visible detrás del vidrio y vuelve a quedar quieta. No habla, no muestra un monstruo y no se mueve por completo.
 
+**Diagnóstico de renders (21 Ago):**
+
+| Archivo | Lectura | Decisión |
+|---|---|---|
+| `Condensation_forms_inside_vendin…_202608211506.mp4` | Toma frontal única de 8 s. La condensación aparece al centro, se disipa y una sola lata avanza al final. Aunque el entorno no comunica lavandería con fuerza, la secuencia principal sí funciona. | **Candidato a edición.** Añadir el texto manual y revisar a velocidad real antes de regenerar. |
+| `Condensation_forms_on_vending_ma…_202608211506.mp4` | Convierte la referencia en una composición de nueve paneles/detalles. Ya no hay un plano único legible. | **Rechazado.** No usar como Reel ni como referencia de video. |
+
+El error no es la idea de la secuencia sino el uso de la cuadrícula como referencia de movimiento. Un storyboard es dirección, no el frame de entrada del agente. Para cualquier reintento, usar **un solo panel vertical de la máquina completa**, preferiblemente el panel frontal central de la cuadrícula, como único keyframe. No adjuntar la cuadrícula completa al generador de video.
+
 **Guion de 8 s:**
 
 | Tiempo | Acción |
@@ -108,10 +119,16 @@ Use only the attached initial keyframe as the visual anchor. Vertical 9:16, 10 s
 Create a vertical 9:16 original-fiction practical archive still. One old snack vending machine stands alone in a dim 24-hour laundromat with pale mint-green tile walls, black rubber floor and one fluorescent ceiling light. The glass is clean at frame one and shows a few generic unlabeled cans and snacks; no real brands, no readable labels. The machine is slightly dented, its inner light is weak warm yellow, and the laundromat is empty. Static medium-wide eye-level framing, tangible documentary realism, restrained film grain, no people, no text, no logo, no watermark, no gore, no cartoon rendering.
 ```
 
-**Prompt de Flow (inglés):**
+**Prompt de Flow corregido (inglés; usar una sola imagen de máquina, nunca la cuadrícula):**
 
 ```text
-Use only the attached initial keyframe as the visual anchor. Vertical 9:16, 8 seconds, one continuous static practical-effects documentary shot, original fiction. Keep the same vending machine, green tiled laundromat, dim fluorescent ceiling light, generic unlabeled cans and empty room visible throughout. At first nothing moves. Beginning around the second second, a slow patch of condensation forms on the inside of the vending-machine glass and spreads outward like one quiet breath; it fades naturally after a moment. Near the final two seconds, exactly one unlabeled can shifts forward by one centimeter inside its spiral and stops. The machine never walks, opens, talks or transforms; no person enters. Camera remains locked. Audio only: distant laundry-room hum, refrigerator compressor, a soft interior exhale, one metal spiral tick, then room tone. No music, no dialogue, no text, no logos, no labels, no watermarks, no jump scares, no creature, no gore, no smoke, no portal.
+Use only the attached SINGLE vertical keyframe of the complete vending machine as the visual anchor. Do not animate a storyboard, contact sheet, collage, split screen, multi-panel layout or close-up montage. Render one full-frame, eye-level, locked 9:16 documentary shot of the same complete vending machine in the empty mint-green tiled laundromat for the entire 8 seconds.
+
+At frame one the front glass is transparent and dry. Nothing moves for the first 1.5 seconds. Then one soft oval patch of moisture blooms BEHIND the front glass, inside the cabinet, at the center of the product shelves. The exterior glass reflections and the metal frame remain crisp and dry; only the products behind the glass become softly obscured, so the viewer can clearly tell the condensation comes from inside the machine. The moisture expands only once, like a slow quiet exhale, and fully fades by second 5.
+
+During the final 1.5 seconds, exactly one unlabelled silver can on the lowest visible spiral moves forward by one centimetre and stops before falling. All other cans, spirals, room objects and lights remain still. No person enters. The machine never opens, talks, walks or transforms. Camera remains completely locked; no zoom, no pan, no cut.
+
+Audio only: empty laundromat hum, a quiet compressor, one very soft muffled exhale from inside the cabinet, then one dry spiral tick. No music, no dialogue, no text, no logos, no labels, no watermark, no jump scare, no creature, no gore, no smoke, no portal.
 ```
 
 | Publicación | Propuesta |
