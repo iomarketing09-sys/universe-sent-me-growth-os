@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-21
 
-**Versión:** 3.4
+**Versión:** 3.5
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -575,6 +575,17 @@ El estado permanece `REVIEW`. Antes de crear keyframe o clips, Fernando debe apr
 ### Coherencia documental requerida
 
 El backlog se ajustó a este fashion film como candidata vigente. Si Fernando lo aprueba, crear un paquete de producción independiente con referencias visuales autorizadas, storyboard, tramo confirmado de audio y prompts por clip; actualizar después el calendario `GrowthOS/05_XX`, el registro maestro `GrowthOS/07_00_Registro_Maestro_Reels.md` y el estado de pausa de Wilfred.
+
+## Pruebas visuales de dirección — espejo y plumas — 2026-08-21
+
+Fernando pidió ver la escena del espejo antes de aprobar keyframes finales y contrastarla con una alternativa de Kiri. Se generaron dos pruebas verticales 9:16 para evaluar **dirección**, no continuidad de video ni keyframes de producción.
+
+| Prueba | URL de revisión | Objetivo | Límites vigentes | Estado |
+|---|---|---|---|---|
+| **A — Maeve, espejo y plumas** | [`crave-you-maeve-mirror-feathers_694dce92.png`](/manus-storage/crave-you-maeve-mirror-feathers_694dce92.png) | Probar el retrato editorial oscuro: espejo alto, terciopelo, luz ámbar y plumas en órbita. | Sensualidad no explícita: sin desnudez, encuadre anatómico, ropa transparente, terceros ni contacto. | `REVIEW` |
+| **B — Kiri, espejo y constelaciones** | [`crave-you-kiri-mirror-feathers_343714a9.png`](/manus-storage/crave-you-kiri-mirror-feathers_343714a9.png) | Probar el mismo motivo de espejo desde asombro genuino: varita, alas, plumas convertidas en constelaciones. | Kiri se trata como personaje de fantasía no sexualizado; ropa modesta, sin romance ni tono sensual. | `REVIEW` |
+
+Las pruebas no modifican el tratamiento de Maeve ni declaran a Kiri alternativa de reparto. La decisión pendiente es únicamente visual: escoger una dirección, combinar elementos permitidos o pedir un ajuste concreto. Si se elige la prueba A, el siguiente arte debe conservar el mismo diseño de Maeve mediante una referencia de identidad aprobada. Si se elige B, se crea un tratamiento distinto de asombro y no se le transfiere la premisa sensual de Maeve.
 
 ### Contingencia
 
