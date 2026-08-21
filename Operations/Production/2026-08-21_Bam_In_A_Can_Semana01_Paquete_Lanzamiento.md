@@ -8,6 +8,7 @@ version: "1.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_Plan_Lanzamiento_Audiencia_Bam_In_A_Can.md"
+  - "Operations/Production/2026-08-21_Bam_In_A_Can_Semana01_Calendario_Publicacion.md"
   - "Operations/Production/2026-08-20_CAN001_It_Was_Making_Noise_Production_Package.md"
   - "Operations/Production/2026-08-20_CAN001_Distribucion_Inicial.md"
   - "Operations/Production/2026-08-20_Piloto_Content_Rewards_Bam_In_A_Can.md"
@@ -24,7 +25,7 @@ La línea base está verificada por Windsor.ai el 21 de agosto: Instagram `bam_i
 
 ## 2. Cadencia y orden editorial
 
-No se asignan todavía fechas ni horas. Se publica únicamente cuando los cuatro exports, copy y metadatos estén listos. Dejar por lo menos 36–48 horas entre cada pieza para responder, observar y no convertir el perfil en un dump de clips.
+El calendario operativo se documenta en `2026-08-21_Bam_In_A_Can_Semana01_Calendario_Publicacion.md`. La propuesta inicia el viernes 21 de agosto y mantiene una separación de 48 horas entre piezas. La hora de salida sigue siendo condicional: ningún clip se publica sin export, copy, disclosure y audio verificados de forma manual.
 
 | Orden | ID | Pilar | Función de marca | Estado actual |
 |---:|---|---|---|---|

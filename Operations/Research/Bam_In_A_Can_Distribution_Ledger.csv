@@ -1,0 +1,13 @@
+Record_ID,Content_ID,Sequence,Planned_Date_Local,Planned_Time_Local,Timezone,Platform,Asset_File,Caption_Version,Disclosure_Required,Native_Audio_Title,Native_Audio_Creator,Native_Audio_Volume,Actual_Published_At,Native_Post_ID,Permalink,Snapshot_3h,Snapshot_24h,Snapshot_72h,Snapshot_7d,Status,Notes
+BAM-W1-001-TT,CAN-001,1,2026-08-21,19:00,America/Chicago,TikTok,Can001.mp4,CAN001-v1,Yes,,,,,,,,,,,Planned,Choose audio natively at upload; record exact title creator and volume.
+BAM-W1-001-IG,CAN-001,1,2026-08-21,19:20,America/Chicago,Instagram Reels,Can001.mp4,CAN001-v1,Yes,,,,,,,,,,,Planned,Choose audio natively at upload; record exact title creator and volume.
+BAM-W1-001-YT,CAN-001,1,2026-08-21,19:45,America/Chicago,YouTube Shorts,Can001.mp4,CAN001-v1,Yes,Original SFX,Bam in a Can,100%,,,,,,,,Planned,Control version with original SFX; no native music.
+BAM-W1-002-TT,CAN-002,2,2026-08-23,19:00,America/Chicago,TikTok,CAN-002-final.mp4,CAN002-v1,Yes,,,,,,,,,,,Planned,Choose audio natively at upload; preserve printer SFX.
+BAM-W1-002-IG,CAN-002,2,2026-08-23,19:20,America/Chicago,Instagram Reels,CAN-002-final.mp4,CAN002-v1,Yes,,,,,,,,,,,Planned,Choose audio natively at upload; preserve printer SFX.
+BAM-W1-002-YT,CAN-002,2,2026-08-23,19:45,America/Chicago,YouTube Shorts,CAN-002-final.mp4,CAN002-v1,Yes,Original SFX,Bam in a Can,100%,,,,,,,,Planned,Control version with original SFX; no native music.
+BAM-W1-003-TT,CAN-003,3,2026-08-25,19:00,America/Chicago,TikTok,Vintage_vending_machine_video_sequence_can003.mp4,CAN003-v1,Yes,,,,,,,,,,,Planned,Choose audio natively at upload; preserve coin motor and impact SFX.
+BAM-W1-003-IG,CAN-003,3,2026-08-25,19:20,America/Chicago,Instagram Reels,Vintage_vending_machine_video_sequence_can003.mp4,CAN003-v1,Yes,,,,,,,,,,,Planned,Choose audio natively at upload; preserve coin motor and impact SFX.
+BAM-W1-003-YT,CAN-003,3,2026-08-25,19:45,America/Chicago,YouTube Shorts,Vintage_vending_machine_video_sequence_can003.mp4,CAN003-v1,Yes,Original SFX,Bam in a Can,100%,,,,,,,,Planned,Control version with original SFX; no native music.
+BAM-W1-004-TT,CAN-004,4,2026-08-27,19:00,America/Chicago,TikTok,Can004.mp4,CAN004-v1,Yes,,,,,,,,,,,Planned,Choose audio natively at upload; preserve clicks hum and cursor remate.
+BAM-W1-004-IG,CAN-004,4,2026-08-27,19:20,America/Chicago,Instagram Reels,Can004.mp4,CAN004-v1,Yes,,,,,,,,,,,Planned,Choose audio natively at upload; preserve clicks hum and cursor remate.
+BAM-W1-004-YT,CAN-004,4,2026-08-27,19:45,America/Chicago,YouTube Shorts,Can004.mp4,CAN004-v1,Yes,Original SFX,Bam in a Can,100%,,,,,,,,Planned,Control version with original SFX; no native music.
