@@ -48,9 +48,15 @@ organization: "Operations/Production"
 
 **Resultado:** `Pass_visual_propuesta_v2`. La composición y el texto original se conservan. Universe aparece como el gato blanco con sus lentes redondos distintivos, y Evan conserva el suéter café. El objetivo sigue siendo una contradicción situacional segura, con dos voces distinguibles y un remate claro.
 
+## Revisión de la referencia ampliada de Evan
+
+La nueva referencia visual disponible en `Operations/Production/Character_References/Evan/2608062_Kiri_Evan.jpg` muestra que el ancla de Evan no es únicamente un suéter café genérico. También son importantes su cabello oscuro despeinado, rostro juvenil y cansado, cejas marcadas, paleta marrón/taupe y una actitud cotidiana algo agotada o ensimismada. La referencia individual `Operations/Production/Character_References/Evan/2608052_Evan.jpg` confirma la silueta de espalda con cabello oscuro y prenda café, aunque no permite revisar el rostro frontal.
+
+Las variantes v2 preservan correctamente el suéter café y el cabello oscuro, pero el Evan de `FUT-MICRO-005` y `FUT-MICRO-006` aparece más joven, limpio y expresivo que la referencia ampliada; falta el gesto cansado/ensimismado y la paleta taupe más apagada. `FUT-ACID-003` v2 conserva mejor la actitud seca y el suéter, pero todavía estiliza el rostro y no reproduce completamente el cansancio de la referencia. El diagnóstico es `Identity_Partial`, no `Identity_Full`: conviene una tercera iteración si la prioridad es que Evan sea reconocible por rasgos y no solo por vestuario.
+
 ## Veredicto de la propuesta v2
 
-Las tres propuestas v2 corrigen el problema señalado: los personajes ya no son genéricos. `FUT-MICRO-005` y `FUT-MICRO-006` usan Elara y Evan; `FUT-ACID-003` usa Universe y Evan. Se mantienen como `Proposal_Not_Selected` hasta que Fernando elija si reemplazan a las versiones originales. No se actualiza la celda experimental, el calendario, CNT, reuse, afiliados ni publicación con estas propuestas.
+Las tres propuestas v2 corrigen parcialmente el problema señalado: los personajes ya no son genéricos y conservan anclas de vestuario, pero Evan todavía no alcanza fidelidad completa frente a la nueva referencia. Las tres pasan a `Proposal_Review_Identity_Partial` y no deben reemplazar a los originales todavía. No se actualiza la celda experimental, el calendario, CNT, reuse, afiliados ni publicación con estas propuestas.
 
 ## Alcance del control
 

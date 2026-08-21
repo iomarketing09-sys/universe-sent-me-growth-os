@@ -77,13 +77,13 @@ Los cuatro prompts autorizados produjeron cuatro PNG en `Operations/Production/G
 
 ## Segunda propuesta de identidad visual
 
-A petición de Fernando, se generaron variantes v2 de `FUT-MICRO-005`, `FUT-MICRO-006` y `FUT-ACID-003` usando personajes con anclas visuales estables. Elara conserva el sombrero puntiagudo y cabello claro; Evan conserva el suéter café; Universe conserva sus lentes redondos. Las variantes v2 preservan la composición y el texto de sus briefs originales y están registradas como `Proposal_Not_Selected` hasta decisión humana. No reemplazan automáticamente los primeros assets.
+A petición de Fernando, se generaron variantes v2 de `FUT-MICRO-005`, `FUT-MICRO-006` y `FUT-ACID-003` usando personajes con anclas visuales estables. Elara conserva el sombrero puntiagudo y cabello claro; Evan conserva el suéter café; Universe conserva sus lentes redondos. Las variantes v2 preservan la composición y el texto de sus briefs originales, pero la nueva referencia de Evan muestra que su fidelidad facial y actitudinal es todavía parcial. Quedan registradas como `Proposal_Review_Identity_Partial` y no reemplazan automáticamente los primeros assets. Si se requiere fidelidad alta, debe hacerse una tercera iteración usando la referencia ampliada de Evan.
 
 | Brief | Personajes v2 | Archivo | Estado |
 |---|---|---|---|
-| `FUT-MICRO-005` | Elara + Evan | `FUT-MICRO-005_HB-006_Microhistoria_Romantico_Absurd_3P_v2.png` | `Pass_visual_propuesta_v2` |
-| `FUT-MICRO-006` | Elara + Evan | `FUT-MICRO-006_HB-007_Microhistoria_Cotidiana_3P_v2.png` | `Pass_visual_propuesta_v2` |
-| `FUT-ACID-003` | Universe + Evan | `FUT-ACID-003_HB-009_Dialogo_Acido_Situacional_v2.png` | `Pass_visual_propuesta_v2` |
+| `FUT-MICRO-005` | Elara + Evan | `FUT-MICRO-005_HB-006_Microhistoria_Romantico_Absurd_3P_v2.png` | `Identity_Partial` |
+| `FUT-MICRO-006` | Elara + Evan | `FUT-MICRO-006_HB-007_Microhistoria_Cotidiana_3P_v2.png` | `Identity_Partial` |
+| `FUT-ACID-003` | Universe + Evan | `FUT-ACID-003_HB-009_Dialogo_Acido_Situacional_v2.png` | `Identity_Partial` |
 
 ## Post-generación
 

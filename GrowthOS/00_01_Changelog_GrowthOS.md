@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-21
-**Versión:** 2.50
+**Versión:** 2.51
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.51.00] — 2026-08-21 (Manus): Revisión de referencia ampliada de Evan.** Fernando añadió referencias directas de Evan (`Operations/Production/Character_References/Evan/2608062_Kiri_Evan.jpg` y `Operations/Production/Character_References/Evan/2608052_Evan.jpg`). La comparación confirma que sus anclas incluyen cabello oscuro despeinado, rostro juvenil/cansado, cejas marcadas, paleta marrón/taupe, actitud ensimismada y suéter café. Las tres variantes v2 preservan vestuario y composición, pero alcanzan únicamente `Identity_Partial`: Evan aparece más joven y expresivo que en la referencia. Las tres pasan a `Proposal_Review_Identity_Partial`; no reemplazan los originales. Si se busca fidelidad alta, se recomienda una tercera iteración con la referencia ampliada. No se modificó calendario, CNT, reuse, afiliados, `ExperimentLog` ni publicación.
 
 - **[2.50.00] — 2026-08-21 (Manus): Segunda propuesta de identidad para tres assets comparables.** A solicitud de Fernando, se generaron variantes v2 de `FUT-MICRO-005` y `FUT-MICRO-006` con Elara y Evan, preservando el sombrero puntiagudo de Elara, el cabello claro, el suéter café de Evan, la composición de tres paneles y el texto original. `FUT-ACID-003` v2 usa Universe con sus lentes redondos y Evan con su suéter café, preservando el diálogo y el remate. Las tres variantes pasan `Pass_visual_propuesta_v2` y quedan como `Proposal_Not_Selected`; no reemplazan los originales automáticamente. Registro: `Operations/Production/2026-08-21_Comparable_Identity_V2_Proposals.csv`; control: `Operations/Production/2026-08-21_Control_Visual_Assets_Comparables.md`. No se modificó calendario, CNT, reuse, afiliados, `ExperimentLog` ni publicación.
 
