@@ -1,0 +1,65 @@
+{
+  "source": "Operations/Research/2026-08-20_Cohorte_17_30_Current_Cut.json",
+  "snapshot_extraction_time_utc": "2026-08-21T03:22:33.978300+00:00",
+  "wilfred": {
+    "meta_post_id": "1036844829507460_122151374019072582",
+    "created_time_utc": "2026-08-18T00:00:01+0000",
+    "created_time_local": "2026-08-17T19:00:01-05:00",
+    "date_local": "2026-08-17",
+    "slot_local": "19:00",
+    "message": "🌲🤪😂 #WilfredUSM #MemesUSM #UniverseSentMe",
+    "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151374019072582",
+    "is_published": true,
+    "asset_ref": "2608029 - Wilfred - Quiero loquiar.jpeg",
+    "publication_id": "PUB-FB-17_30-06",
+    "reactions": 235,
+    "comments": 4,
+    "shares": 100,
+    "interactions": 339,
+    "content_format": "Image",
+    "share_rate_of_interactions": 0.2949852507374631
+  },
+  "cohort": {
+    "n": 19,
+    "interactions": 1095,
+    "reactions": 811,
+    "comments": 44,
+    "shares": 240,
+    "mean_interactions": 57.63157894736842,
+    "median_interactions": 35,
+    "mean_shares": 12.631578947368421,
+    "median_shares": 8
+  },
+  "rest_without_wilfred": {
+    "n": 18,
+    "interactions": 756,
+    "reactions": 576,
+    "comments": 40,
+    "shares": 140,
+    "mean_interactions": 42,
+    "median_interactions": 35.0,
+    "mean_shares": 7.777777777777778,
+    "median_shares": 7.5
+  },
+  "same_slot_other_images": {
+    "n": 3,
+    "interactions": 44,
+    "reactions": 38,
+    "comments": 3,
+    "shares": 3,
+    "mean_interactions": 14.666666666666666,
+    "median_interactions": 18,
+    "mean_shares": 1,
+    "median_shares": 1
+  },
+  "concentration": {
+    "wilfred_share_of_cohort_interactions": 0.3095890410958904,
+    "wilfred_share_of_cohort_shares": 0.4166666666666667,
+    "wilfred_vs_rest_mean_interactions_multiple": 8.071428571428571,
+    "wilfred_vs_rest_median_interactions_multiple": 9.685714285714285,
+    "wilfred_vs_same_slot_mean_multiple": 23.113636363636363,
+    "rest_share_rate_of_interactions": 0.18518518518518517,
+    "same_slot_share_rate_of_interactions": 0.06818181818181818
+  },
+  "interpretation_guard": "Observational outlier; no causal attribution to Wilfred, 19:00, one-scene format, or caption without comparable controls."
+}

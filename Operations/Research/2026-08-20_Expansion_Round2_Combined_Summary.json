@@ -1,0 +1,174 @@
+{
+  "primary_cells": {
+    "Microhistoria secuencial": {
+      "n": 1,
+      "median_interactions": 155.0,
+      "mean_interactions": 155.0,
+      "median_shares": 19.0,
+      "mean_shares": 19.0,
+      "interactions": [
+        155.0
+      ],
+      "shares": [
+        19.0
+      ]
+    },
+    "Transformación visual": {
+      "n": 2,
+      "median_interactions": 85.5,
+      "mean_interactions": 85.5,
+      "median_shares": 21.0,
+      "mean_shares": 21.0,
+      "interactions": [
+        164.0,
+        7.0
+      ],
+      "shares": [
+        42.0,
+        0.0
+      ]
+    },
+    "Humor observacional": {
+      "n": 3,
+      "median_interactions": 36.0,
+      "mean_interactions": 151.0,
+      "median_shares": 8.0,
+      "mean_shares": 33.0,
+      "interactions": [
+        24.0,
+        36.0,
+        393.0
+      ],
+      "shares": [
+        4.0,
+        8.0,
+        87.0
+      ]
+    },
+    "Diálogo ácido": {
+      "n": 2,
+      "median_interactions": 457.5,
+      "mean_interactions": 457.5,
+      "median_shares": 127.5,
+      "mean_shares": 127.5,
+      "interactions": [
+        521.0,
+        394.0
+      ],
+      "shares": [
+        185.0,
+        70.0
+      ]
+    },
+    "Autodesprecio / antihéroe": {
+      "n": 2,
+      "median_interactions": 829.5,
+      "mean_interactions": 829.5,
+      "median_shares": 250.5,
+      "mean_shares": 250.5,
+      "interactions": [
+        1308.0,
+        351.0
+      ],
+      "shares": [
+        392.0,
+        109.0
+      ]
+    }
+  },
+  "secondary_cells": {
+    "Microhistoria secuencial — dos paneles": {
+      "n": 2,
+      "median_interactions": 361.5,
+      "mean_interactions": 361.5,
+      "median_shares": 39.5,
+      "mean_shares": 39.5,
+      "interactions": [
+        226.0,
+        497.0
+      ],
+      "shares": [
+        26.0,
+        53.0
+      ]
+    }
+  },
+  "sensitivity": {
+    "Diálogo ácido": {
+      "all": {
+        "n": 2,
+        "median_interactions": 457.5,
+        "mean_interactions": 457.5,
+        "median_shares": 127.5,
+        "mean_shares": 127.5,
+        "interactions": [
+          521.0,
+          394.0
+        ],
+        "shares": [
+          185.0,
+          70.0
+        ]
+      },
+      "excluding_flagged_outlier": {
+        "n": 1,
+        "median_interactions": 394.0,
+        "mean_interactions": 394.0,
+        "median_shares": 70.0,
+        "mean_shares": 70.0,
+        "interactions": [
+          394.0
+        ],
+        "shares": [
+          70.0
+        ]
+      }
+    },
+    "Autodesprecio / antihéroe": {
+      "all": {
+        "n": 2,
+        "median_interactions": 829.5,
+        "mean_interactions": 829.5,
+        "median_shares": 250.5,
+        "mean_shares": 250.5,
+        "interactions": [
+          1308.0,
+          351.0
+        ],
+        "shares": [
+          392.0,
+          109.0
+        ]
+      },
+      "excluding_flagged_outlier": {
+        "n": 1,
+        "median_interactions": 351.0,
+        "mean_interactions": 351.0,
+        "median_shares": 109.0,
+        "mean_shares": 109.0,
+        "interactions": [
+          351.0
+        ],
+        "shares": [
+          109.0
+        ]
+      }
+    }
+  },
+  "caption_counts": {
+    "primary_matrix": {
+      "Needs_Reconstruction": 19
+    },
+    "round2": {
+      "historical_unavailable": 5
+    }
+  },
+  "interpretation": {
+    "microstory": "Keep strict three-panel and two-panel subcells separate; do not pool yet.",
+    "transformation": "Universe transformation remains n=2; Ganso vestuario is a separate exploratory subcell and not evidence for Universe.",
+    "observational": "Reaches preliminary n=3, but the 924-interaction candidate remains under sensitivity/editorial review.",
+    "dialogue_acid": "Reaches n=2 only; the signal is highly sensitive to the 521-interaction outlier.",
+    "self_antih ero": "Reaches n=2 only; the signal is highly sensitive to the 1,308-interaction outlier and Ganso is not yet included.",
+    "captions": "Historical caption treatments remain unavailable for the round2 cases; no effect is estimated."
+  }
+}

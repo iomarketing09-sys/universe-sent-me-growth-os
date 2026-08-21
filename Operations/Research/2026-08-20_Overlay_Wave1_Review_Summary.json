@@ -1,0 +1,39 @@
+{
+  "validation": "PASS",
+  "rows": 15,
+  "overlay_status_counts": {
+    "Eligible": 9,
+    "Candidate_Review": 4,
+    "Hold": 2
+  },
+  "family_counts": {
+    "FAM-01": 1,
+    "FAM-02": 5,
+    "FAM-03": 3,
+    "FAM-05": 5,
+    "FAM-04": 1
+  },
+  "risk_counts": {
+    "None": 1,
+    "Text_Dense": 1,
+    "Romantic_Text_Dense": 2,
+    "Coercive_Romance_Prop_Weapon": 1,
+    "Dark_Comedy": 1,
+    "Anxiety_Comedy": 1,
+    "Monologue_Text_Dense": 1,
+    "Romantic_Sexual_Low": 1,
+    "Existential_Observation": 1,
+    "Strong_Language": 1,
+    "Anxiety_Dark": 1,
+    "Sexual_Double_Entendre": 1,
+    "Romantic_Sexual_Reference": 1,
+    "Explicit_Sexual_Double_Entendre": 1
+  },
+  "caption_treatment_counts": {
+    "caption_minimo": 6,
+    "caption_refuerzo": 5,
+    "caption_conversacional": 4
+  },
+  "errors": [],
+  "source": "Operations/Research/2026-08-20_Overlay_Wave1_Calendario_17_30.csv"
+}

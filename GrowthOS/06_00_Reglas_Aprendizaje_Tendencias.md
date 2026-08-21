@@ -4,9 +4,9 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-20
-**Versión:** 3.8
+**Versión:** 3.9
 **Autor:** Manus AI (CGO); Sección 6 añadida por Claude
-**Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`
+**Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`, `../Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`
 
 ---
 
@@ -282,3 +282,31 @@ Se recomienda reservar una parte de P1 para replicar la estructura de **gancho c
 ### 16.8 Qué no canonizar todavía
 
 No convertir en regla cerrada que los captions de un emoji, los posts de las 19:00, el humor sexual o los fondos fantásticos sean ganadores por sí mismos. Las señales actuales son hipótesis respaldadas por outliers y cohortes pequeñas. El criterio de cierre será la repetición del patrón en al menos tres casos codificados y comparables.
+
+## 17. Paquete de revisión para Claude — 2026-08-20
+
+Las hipótesis de taxonomía, estructura narrativa y humor están integradas en `Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`, con la respuesta completa archivada en `Operations/Research/2026-08-20_Respuesta_Claude_Hipotesis_Taxonomia_Humor.md`. Claude confirmó que TAX-01 puede fijarse como regla de proceso, clasificó HUM-01 como contradicha por evidencia cuando se trata del humor ácido como categoría amplia y mantuvo el resto como hipótesis, señales editoriales o celdas experimentales. Las hipótesis integradas pueden alimentar la taxonomía, el diseño de experimentos y briefs creativos acotados, pero no modifican Biblia, canon, calendario, inventario protegido ni cola automática de reuse sin aprobación explícita.
+
+Para toda futura transformación visual de Universe, el registro debe incluir `preserva_gafas_universe` y `preserva_marcadores_identidad`. Si alguno vale `No`, el caso requiere revisión canónica antes de interpretarse como resultado de rendimiento.
+
+## 18. Expansión de celdas comparables — 2026-08-20
+
+La propuesta `Operations/Research/2026-08-20_Propuesta_Expansion_Celdas_Comparables.md` define la siguiente ampliación histórica: microhistorias secuenciales, transformaciones visuales, humor observacional, diálogo ácido y autodesprecio/antihéroe. Cada celda requiere al menos tres casos comparables para una señal preliminar y cinco para un veredicto operativo. Los tratamientos `caption_minimo`, `caption_refuerzo` y `caption_conversacional` se registran como variable separada; no se atribuye su efecto hasta contar con una muestra balanceada dentro de cada celda.
+
+La propuesta está en `Review`. No autoriza publicación, creación de CNT, modificación de calendario ni reuse. La primera acción requiere aprobación humana para la revisión visual/codificación de los candidatos y borderlines documentados en `Operations/Research/2026-08-20_Expansion_Celdas_Comparables_Candidatos.csv`.
+
+La ronda 2 quedó documentada en `Operations/Research/2026-08-20_Expansion_Round2_Analysis.md`. Se permite registrar una subcelda de `Microhistoria secuencial — dos paneles` separada de la microhistoria estricta de tres paneles; no se deben combinar hasta contar con una definición aprobada y muestras comparables. La transformación de vestuario de Ganso se registra como subcelda de personaje secundario y no como evidencia de transformación de Universe. Los casos nuevos conservan `Caption_Treatment=historical_unavailable`; no se atribuye rendimiento a ningún tratamiento de caption sin copy histórico verificable.
+
+## 19. Síntesis histórica junio–julio — 2026-08-20
+
+La síntesis `Operations/Research/2026-08-20_Sintesis_Historica_Crecimiento_Junio_Julio.md` establece una biblioteca de pruebas para aprovechar junio y julio sin mezclarlos con ventanas 24/72 horas de agosto. La base comparable indica que julio tuvo una mediana de 43 interacciones y 7 shares por publicación frente a 10 y 1 en junio, pero el copy mínimo no es una explicación universal: también mejoraron las publicaciones no mínimas. Los briefs futuros pueden utilizar las familias `Difusión_Minimal`, `Relatable_Social`, `Conversación_Relacional`, `Ácido_Interpersonal` y `Personaje_Marcador`, registrando siempre `Hypothesis_ID`, `Cell_ID`, `Caption_Treatment`, `Tipo_Humor`, `Potencial_Etiquetado` y `Hora_Test`.
+
+Estos patrones son hipótesis reutilizables, no reglas canónicas ni decisiones automáticas de calendario. Las pruebas deben separar `caption_minimo`, `caption_refuerzo` y `caption_conversacional`, y deben mantener fuera de la atribución de personajes cualquier filename no confirmado visualmente.
+
+## 20. Plan de experimentos de agosto — cinco familias
+
+El plan operativo se encuentra en `Operations/Production/2026-08-20_Plan_Experimentos_Agosto_5_Familias.md` y su matriz inicial en `Operations/Production/2026-08-20_Wave1_Signal_Experiment_Design.csv`. La primera ola propone 15 publicaciones, tres por familia: `Difusión_Minimal`, `Relatable_Social`, `Conversación_Relacional`, `Ácido_Interpersonal` y `Personaje_Marcador`. Cada familia rota `caption_minimo`, `caption_refuerzo` y `caption_conversacional` entre franjas, manteniendo `P0_Eligible=No`, `Affiliate_Attachment=No` y `Reuse_Status=New_Test`.
+
+La matriz está en `Review`: assets, fechas, Meta IDs y aprobaciones permanecen en `TBD`/`Pending`. La propuesta se adapta al calendario 17–30 mediante el overlay `Operations/Research/2026-08-20_Overlay_Wave1_Calendario_17_30.csv`; no se crea una programación paralela, no se mueven slots y no se modifica el calendario sin aprobación. Los reuse y P0 permanecen fuera de Wave 1. Una familia solo puede pasar a una segunda ola después de contar con al menos tres casos comparables y una señal preliminar; no se deben declarar reglas universales a partir de una sola pieza o un outlier.
+
+El análisis de `2608029 — Wilfred — Quiero ir a lokiar` está documentado en `Operations/Research/2026-08-20_Analisis_Wilfred_Outlier_Replicacion_5_Familias.md`. La señal se codifica como un stack experimental —`gancho coloquial`, `reencuadre inesperado`, `situación deseable`, `estado emocional legible`, `foco visual único` y `personaje visualmente confirmado`— que puede probarse dentro de las cinco familias. Debe registrarse `Wilfred_Stack_Fidelity`, `Hook_Type`, `Reframe_Type`, `Desirable_State` y `Theme_Confound`; no se atribuye causalidad al personaje, a las 19:00, al fondo fantástico ni al caption mínimo sin controles comparables.
