@@ -4,7 +4,7 @@ purpose: "Aprovechar la evidencia histórica de junio y julio para orientar la o
 status: Review
 created: 2026-08-20
 updated: 2026-08-21
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-20_Comparativo_Crecimiento_Junio_Julio.json"
@@ -154,7 +154,24 @@ Tampoco debe ampliarse la comparación por personaje sin revisión visual. En ju
 
 ### Decisión recomendada
 
-La auditoría queda clasificada como **cobertura histórica suficiente para operación, con ampliación analítica selectiva pendiente**. Si Fernando aprueba continuar, el orden recomendado es: **(1) julio individual por shares y comentarios; (2) completar las celdas comparables que siguen bajo `n=3`; (3) solo después ampliar comentarios o reservas de junio cuando respondan una pregunta concreta**. Esta secuencia aprovecha la mayor señal de julio sin reabrir trabajo de inventario que ya está cerrado.
+La auditoría queda clasificada como **cobertura histórica suficiente para operación, con ampliación de producción experimental pendiente**. Julio individual, personajes y captions ya fueron ampliados hasta el límite útil de la evidencia disponible. El orden vigente es: **(1) obtener la decisión humana sobre los cuatro briefs comparables; (2) si se aprueban, ejecutar preflight y generar únicamente los assets aprobados; (3) medir una matriz balanceada por celda, tratamiento y horario; (4) solo después abrir comentarios o reservas de junio si responden una pregunta concreta**. Esta secuencia evita reabrir inventario histórico cerrado.
+
+## 10. Implicaciones estratégicas y siguiente paso recomendado
+
+La auditoría de captions cierra la revisión histórica de esta capa. El siguiente paso pendiente ya no es seguir clasificando captions de junio: es **obtener decisión humana sobre los cuatro briefs comparables** y, solo si se aprueban, pasar a preflight y producción controlada. El candidato histórico de cuatro paneles está excluido de `MICRO-STRICT-3P`; por tanto, la microhistoria estricta mantiene `n=1` y necesita los dos casos nuevos `FUT-MICRO-005` y `FUT-MICRO-006`. Transformación de Universe y diálogo ácido permanecen en `n=2` y necesitan `FUT-TRANS-003` y `FUT-ACID-003`, respectivamente.
+
+| Hallazgo | Implicación para el Growth OS | Regla para próximas iteraciones |
+|---|---|---|
+| Ganso movió 14 interacciones, 2 shares y 3 comentarios entre grupos; Universe no cambió de tratamiento | Una reclasificación altera agregados descriptivos, no el rendimiento del post | Conservar `rule_based_treatment` y `treatment_final`; nunca sobrescribir el histórico original |
+| Universe concentra 164 interacciones y 42 shares en el grupo de refuerzo | El grupo `caption_refuerzo` es sensible al outlier y no puede leerse como efecto del tratamiento | Reportar siempre mediana, shares, sensibilidad sin outlier y composición por personaje/tema |
+| Los captions mínimos suelen dejar que la imagen haga el trabajo | La fricción baja funciona cuando el remate visual es autosuficiente, no como sustituto de un concepto débil | Probar `caption_minimo` junto con un control visual comparable |
+| Una pregunta no siempre es conversación; `Síguenos` y agradecimientos sí abren relación, pero el roster mixto es un control | `caption_conversacional` debe describir una función, no solo detectar `?` | Registrar `Caption_Function` además de `Caption_Treatment` |
+| Frases breves como “No te tenías que pasar” o “De qué me hablas?” añaden voz interpersonal sin CTA | Existe una capa intermedia entre mínimo y conversación | Usar `caption_refuerzo` para tono/reencuadre, no para cualquier texto corto |
+| Los 17 casos están seleccionados por utilidad visual de personaje | No son un experimento equilibrado de captions | No actualizar `ExperimentLog` ni declarar ganadores a partir de esta muestra |
+
+Para las próximas pruebas, el Growth OS debería separar dos campos: `Caption_Treatment` —mínimo, refuerzo, conversacional— y `Caption_Function` —hashtag/acompañamiento, reacción, refuerzo semántico, CTA/agradecimiento o pregunta abierta—. Esta separación evitará que una CTA de seguimiento, una pregunta retórica y un emoji aislado terminen en la misma categoría solo por su forma superficial.
+
+La decisión operativa recomendada es **no abrir otra ronda histórica de captions**. Primero debe resolverse la revisión humana de los cuatro briefs. Después, las piezas nuevas deben probarse con una matriz balanceada, rotación horaria y métricas primarias distintas por familia: shares para difusión mínima, comentarios raíz/replies para conversación, y mediana de interacciones con sensibilidad a outliers como métrica transversal.
 
 ## Referencias
 

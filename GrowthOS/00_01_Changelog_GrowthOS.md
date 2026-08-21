@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-21
-**Versión:** 2.39
+**Versión:** 2.40
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.40.00] — 2026-08-21 (Manus): Implicaciones estratégicas de captions y siguiente paso analítico.** La revisión histórica de captions queda cerrada: no se abrirá otra ronda de clasificación de junio. El siguiente paso es obtener la decisión humana sobre `FUT-MICRO-005`, `FUT-MICRO-006`, `FUT-TRANS-003` y `FUT-ACID-003`; si se aprueban, pasarán a preflight, no directamente a publicación. Se añade la regla de separar `Caption_Treatment` de `Caption_Function`, distinguir pregunta retórica de conversación real, usar controles visuales comparables, rotar horarios y elegir métricas primarias por hipótesis. No se actualiza el ExperimentLog con las etiquetas históricas.
 
 - **[2.39.00] — 2026-08-21 (Manus): Cierre manual de los 13 captions pendientes e impacto de reclasificaciones.** Se completó la revisión manual de los 17 casos aprobados. El corte final queda en 8 `caption_minimo`, 2 `caption_conversacional`, 6 `caption_refuerzo` y 1 `historical_unavailable`; 12 confianzas altas y 5 medias. Se reclasificaron cuatro casos conversacionales a refuerzo y se confirmaron mínimos/conversacionales según el contexto visual; no se modificó el ExperimentLog. El cambio de Ganso mueve 14 interacciones, 2 shares y 3 comentarios de `caption_refuerzo` a `caption_minimo`; Universe conserva `caption_refuerzo`. El total permanece en 300 interacciones, 53 shares y 13 comentarios. Documentos: `Operations/Research/2026-08-21_Junio_Caption_Reclassification_Impact.md` y `Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Manual_Findings.md`.
 
