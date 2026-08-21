@@ -144,6 +144,8 @@ La revisión de la cola de 57 casos confirma que sí hay una reserva útil para 
 
 El único candidato de celda nuevo es `122127951885072582`, que muestra cuatro paneles con turnos claros. Queda con `Excluded_3P_Retain_4P_Candidate`: no entra a la microhistoria estricta de tres paneles y no abre una subcelda 4P hasta reunir tres casos comparables. Los briefs futuros `FUT-MICRO-005`, `FUT-MICRO-006`, `FUT-TRANS-003` y `FUT-ACID-003` están diseñados de forma condicional y requieren aprobación humana antes de convertirse en producción.
 
+La siguiente capa de captions recuperó texto exacto de Meta para 16 de los 17 casos aprobados; un caso usa fallback de la cola. La propuesta rule-based queda distribuida en 7 `caption_minimo`, 6 `caption_conversacional`, 3 `caption_refuerzo` y 1 `historical_unavailable`. Cuatro casos requieren revisión manual prioritaria —los tres `caption_refuerzo` y el caso sin mensaje—. Ninguna propuesta se copia al ExperimentLog hasta confirmar el tratamiento.
+
 ### Qué no debe ampliarse ahora
 
 No conviene intentar reconstruir las ventanas históricas exactas de 24/72 horas: la evidencia disponible no permite hacerlo de forma válida y el Growth OS ya separa lifetime histórico de los cortes operativos de agosto. Tampoco conviene crear CNT para los 185 posts de julio pendientes ni para los 57 casos de junio sin match únicamente para mejorar el conteo. La creación de CNT debe seguir subordinada a una relación Meta/Drive verificable y a un uso futuro concreto.
@@ -176,3 +178,5 @@ La auditoría queda clasificada como **cobertura histórica suficiente para oper
 [17]: `Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md` — briefs condicionales para completar las celdas bajo `n=3`.
 [18]: `Operations/Research/2026-08-21_Junio_57_Approved_Character_Analysis.md` — corte cuantitativo y sensibilidad del subconjunto de personajes.
 [19]: `Operations/Production/2026-08-21_approve_june_57_character_subset.py` — script de aprobación del análisis selectivo.
+[20]: `Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Audit.csv` — captions exactos de Meta y tratamientos propuestos.
+[21]: `Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Analysis.md` — análisis descriptivo de captions y límites de inferencia.

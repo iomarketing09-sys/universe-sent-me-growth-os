@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-21
-**Versión:** 2.36
+**Versión:** 2.37
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.37.00] — 2026-08-21 (Manus): Auditoría histórica de captions de los 17 casos aprobados.** Meta devolvió el texto exacto para 16 de los 17 casos; uno usa fallback de la cola. La propuesta rule-based distribuye los casos en 7 `caption_minimo`, 6 `caption_conversacional`, 3 `caption_refuerzo` y 1 `historical_unavailable`. Los tres casos de `caption_refuerzo` y el caso sin mensaje quedan como prioridad de revisión manual. Todos permanecen con `manual_review_status=Pending_Manual_Caption_Review`; no se actualiza el ExperimentLog ni se atribuye efecto causal. Documentos: `Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Audit.csv` y `Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Analysis.md`.
 
 - **[2.36.00] — 2026-08-21 (Manus): Paquete de revisión humana de cuatro briefs comparables.** Se prepararon `FUT-MICRO-005`, `FUT-MICRO-006`, `FUT-TRANS-003` y `FUT-ACID-003` con hipótesis, estructura visual, tratamiento de caption, confusores, criterios de inclusión/exclusión, preflight y salvaguardas. Todos quedan como `Pending_Fernando_Review`. Se añadió el paquete `Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md` y la matriz `Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`. La aprobación de un brief solo autoriza desarrollo/preflight; no autoriza generar assets, modificar calendario, publicar ni crear CNT.
 

@@ -4,9 +4,9 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-21
-**Versión:** 3.13
+**Versión:** 3.14
 **Autor:** Manus AI (CGO); Sección 6 añadida por Claude
-**Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`, `../Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`, `../Operations/Research/2026-08-21_Julio_Expansion_Lote01_Analysis.md`, `../Operations/Research/2026-08-21_Expansion_Celdas_Comparables_Post_Julio_Lote01.json`, `../Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Findings.md`, `../Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md`, `../Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`, `../Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`
+**Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`, `../Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`, `../Operations/Research/2026-08-21_Julio_Expansion_Lote01_Analysis.md`, `../Operations/Research/2026-08-21_Expansion_Celdas_Comparables_Post_Julio_Lote01.json`, `../Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Findings.md`, `../Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md`, `../Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`, `../Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Audit.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Analysis.md`
 
 ---
 
@@ -324,6 +324,12 @@ Fernando aprobó los 17 casos visuales de personaje para análisis selectivo. El
 El candidato tiene cuatro paneles y, por tanto, **falla la celda `MICRO-STRICT-3P`**, que exige exactamente tres. Pasa los criterios de evidencia visual, turnos, continuidad y remate para una posible subcelda `MICRO-SEQ-4P`, pero su estado final es `Excluded_3P_Retain_4P_Candidate`: la subcelda no se abre ni se mezcla con la estricta hasta reunir al menos tres casos comparables y aprobar su definición. Los captions se mantienen como `historical_unavailable` y el asset Drive sigue pendiente porque no hay autorización para crear CNT.
 
 El análisis cuantitativo de los 17 casos aprobados suma 300 interacciones y 53 shares, pero el caso Universe de 164 interacciones y 42 shares concentra 54.7% y 79.2%, respectivamente. Sin ese outlier, la mediana queda en 8 interacciones y 0.5 shares. Esta sensibilidad impide inferir un efecto causal de personaje y obliga a usar los casos para validación de identidad/estructura, no para rankings.
+
+### 18.4 Auditoría histórica de captions — 2026-08-21
+
+Se recuperó el texto exacto de Meta para 16 de los 17 casos aprobados de personajes; un caso usa fallback de la cola porque Meta no devolvió mensaje. La propuesta rule-based distribuye los casos en 7 `caption_minimo`, 6 `caption_conversacional`, 3 `caption_refuerzo` y 1 `historical_unavailable`. Estas etiquetas son provisionales y permanecen con `manual_review_status=Pending_Manual_Caption_Review`.
+
+Los tres casos propuestos como `caption_refuerzo` y el caso `historical_unavailable` son la prioridad de revisión humana. No se debe actualizar el ExperimentLog ni declarar efecto de tratamiento. Para comparar captions dentro de una celda se requieren al menos dos casos por tratamiento, estructura comparable y control de confusores; este subconjunto fue seleccionado por utilidad visual y no cumple ese balance.
 
 ## 19. Síntesis histórica junio–julio — 2026-08-20
 

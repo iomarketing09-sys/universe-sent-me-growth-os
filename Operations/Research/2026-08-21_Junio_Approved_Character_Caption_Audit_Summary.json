@@ -1,0 +1,21 @@
+{
+  "n_approved": 17,
+  "caption_source_counts": {
+    "Meta_Raw_message": 16,
+    "Queue_caption_fallback": 1
+  },
+  "proposed_treatment_counts": {
+    "caption_refuerzo": 3,
+    "caption_minimo": 7,
+    "caption_conversacional": 6,
+    "historical_unavailable": 1
+  },
+  "manual_review_status": "Pending_Manual_Caption_Review",
+  "classification_method": "Rule_based_proposal_v1",
+  "limits": [
+    "The rule-based treatment is a proposal, not a verified historical label.",
+    "The exact Meta message is preserved and must be reviewed before changing any experiment ledger.",
+    "The selected character subset is not random and cannot support caption causality.",
+    "historical_unavailable remains valid when the source is empty or ambiguous."
+  ]
+}

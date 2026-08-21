@@ -1,0 +1,77 @@
+{
+  "method": "Descriptive analysis of rule-based caption-treatment proposals on the approved character subset; no causal attribution.",
+  "source": "Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Audit.csv",
+  "treatment_stats": {
+    "caption_conversacional": {
+      "n": 6,
+      "interactions_total": 49,
+      "interactions_median": 8.0,
+      "shares_total": 2,
+      "shares_median": 0.0,
+      "comments_total": 2,
+      "comments_median": 0.0
+    },
+    "caption_minimo": {
+      "n": 7,
+      "interactions_total": 65,
+      "interactions_median": 10,
+      "shares_total": 5,
+      "shares_median": 1,
+      "comments_total": 6,
+      "comments_median": 0
+    },
+    "caption_refuerzo": {
+      "n": 3,
+      "interactions_total": 184,
+      "interactions_median": 14,
+      "shares_total": 46,
+      "shares_median": 2,
+      "comments_total": 5,
+      "comments_median": 2
+    },
+    "historical_unavailable": {
+      "n": 1,
+      "interactions_total": 2,
+      "interactions_median": 2,
+      "shares_total": 0,
+      "shares_median": 0,
+      "comments_total": 0,
+      "comments_median": 0
+    }
+  },
+  "source_stats": {
+    "Meta_Raw_message": {
+      "n": 16,
+      "interactions_total": 298,
+      "interactions_median": 9.0,
+      "shares_total": 53,
+      "shares_median": 1.0,
+      "comments_total": 13,
+      "comments_median": 0.0
+    },
+    "Queue_caption_fallback": {
+      "n": 1,
+      "interactions_total": 2,
+      "interactions_median": 2,
+      "shares_total": 0,
+      "shares_median": 0,
+      "comments_total": 0,
+      "comments_median": 0
+    }
+  },
+  "ambiguous_or_unavailable_count": 4,
+  "ambiguous_or_unavailable_meta_ids": [
+    "1036844829507460_122130196011072582",
+    "1036844829507460_122134608507072582",
+    "1036844829507460_122130309663072582",
+    "1036844829507460_122125895013072582"
+  ],
+  "manual_review_status": "Pending_Manual_Caption_Review",
+  "limits": [
+    "Treatment labels are rule-based proposals and are not final historical labels.",
+    "The 17-case subset was selected for visual character utility, not randomly.",
+    "Treatments are confounded with character, topic, date, format and likely creative intent.",
+    "No ExperimentLog treatment field is updated by this analysis.",
+    "A minimum of two cases per treatment within the same cell is required before treatment comparison; this subset is not balanced by cell."
+  ]
+}
