@@ -4,7 +4,7 @@ purpose: "Organizar el primer bloque de cuatro piezas originales de Bam in a Can
 status: "Draft — preproducción; ninguna pieza de la semana está publicada"
 created: 2026-08-21
 updated: 2026-08-21
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_Plan_Lanzamiento_Audiencia_Bam_In_A_Can.md"
@@ -30,7 +30,7 @@ No se asignan todavía fechas ni horas. Se publica únicamente cuando los cuatro
 |---:|---|---|---|---|
 | 1 | `CAN-001` | CAN FOUND | Manifiesto: algo vivo dentro de la lata. | Corte final recibido; pendiente selección de audio nativo para TikTok/Instagram y publicación. |
 | 2 | `CAN-002` | CAN FAKE TRAILER | Demostrar que Bam también fabrica productos de archivo que nunca debieron existir. | Render generado; requiere corte antes de que aparezcan código de barras/números al final. No regenerar aún. |
-| 3 | `CAN-003` | CAN FOUND | Mostrar que la anomalía puede ocurrir fuera de la lata, manteniendo una sola regla visual imposible. | Un render de toma única es candidato; un segundo render queda rechazado por convertir el storyboard en una cuadrícula. |
+| 3 | `CAN-003` | CAN FOUND | Mostrar que la anomalía puede ocurrir fuera de la lata, manteniendo una sola regla visual imposible. | Montaje cinematográfico de 10 s aprobado para edición: moneda, mecanismos, abolladuras desde dentro y espirales vacíos. |
 | 4 | `CAN-004` | CAN MEME | Abrir una vía más ligera y compartible sin abandonar la estética extraña. | Brief listo para asset y edición manual. |
 
 ## 3. Sistema técnico común
@@ -92,9 +92,40 @@ Use only the attached initial keyframe as the visual anchor. Vertical 9:16, 10 s
 | Audio | SFX + audio nativo que sugiera tecnología nostálgica/lenta; no letra explicativa. |
 | Hashtags de base | `#BamInACan #Weirdcore #FakeCommercial #AIVideo` |
 
-### CAN-003 — *The Vending Machine Breathed Back*
+### CAN-003 — *Do Not Insert Coins After Midnight*
 
-**Premisa:** un único plano en una lavandería vacía de madrugada. Una máquina expendedora vieja expulsa una respiración visible detrás del vidrio y vuelve a quedar quieta. No habla, no muestra un monstruo y no se mueve por completo.
+**Premisa aprobada:** una máquina expendedora de una lavandería vacía recibe una moneda y responde con un proceso mecánico anómalo: los espirales giran, el metal se abolla desde dentro y el interior termina vacío. No explica qué tomó la máquina ni muestra una criatura. La anomalía se lee por causa y efecto, no por diálogo.
+
+**Estado de render (21 Ago):** el montaje `Vintage_vending_machine_video_se…_can003.mp4` dura 10 s y está **READY_TO_EDIT**. Mantiene de forma coherente la máquina beige, los azulejos verdes, las latas plateadas y la luz industrial entre cinco cortes. Ningún error bloquea la edición. Sustituye tanto el candidato de toma única como el intento en cuadrícula.
+
+**Lección de dirección:** un storyboard puede cumplir dos funciones distintas. Si se busca un único plano continuo, se extrae un solo panel como keyframe y se prohíbe cuadrícula/cortes. Si se busca una secuencia editorial, la cuadrícula se entrega como storyboard completo y se solicita explícitamente una sucesión de escenas con libertad de montaje. CAN-003 pertenece al segundo caso: el storyboard ya resolvía los planos, por lo que una instrucción breve preservó mejor la inteligencia de la secuencia que un prompt que coreografiaba una toma estática.
+
+**Guion final de 10 s:**
+
+| Tiempo | Acción |
+|---|---|
+| 00:00–00:01 | Máquina sola bajo fluorescente industrial. |
+| 00:01–00:03 | Primer plano de moneda entrando en la ranura. |
+| 00:03–00:05 | Espirales giran y desplazan las latas. |
+| 00:05–00:07 | Abolladuras fuertes presionan el lateral desde el interior. |
+| 00:07–00:10 | Interior vacío; espirales vibran y la máquina tiembla antes del corte. |
+
+**Instrucción de Flow que resolvió el montaje (inglés; usar la cuadrícula como storyboard):**
+
+```text
+Can you make a video with the sequence of images in the attached Vintage vending machine grid photos as the approved storyboard? Not a static video: create the proposed sequence of scenes with cinematic cuts. The video must be 10 seconds. Preserve the same vintage vending machine, empty green-tiled laundromat, industrial light, worn texture and practical archive realism. No text, logos or watermark.
+```
+
+**Preparación de publicación del montaje aprobado:**
+
+| Elemento | Decisión |
+|---|---|
+| Overlay manual | `DO NOT INSERT COINS AFTER MIDNIGHT.` de 00:00–00:01.5. |
+| Copy | `It took the coin. It didn't give anything back.` + `Original fiction. AI-made.` |
+| Audio | SFX de moneda, motor/espirales y abolladuras deben liderar; audio nativo solo si no los tapa. |
+| Hashtags de base | `#BamInACan #LiminalSpace #WeirdTok #AIVideo` |
+
+#### Concepto de toma única archivado
 
 **Diagnóstico de renders (21 Ago):**
 
@@ -104,6 +135,8 @@ Use only the attached initial keyframe as the visual anchor. Vertical 9:16, 10 s
 | `Condensation_forms_on_vending_ma…_202608211506.mp4` | Convierte la referencia en una composición de nueve paneles/detalles. Ya no hay un plano único legible. | **Rechazado.** No usar como Reel ni como referencia de video. |
 
 El error no es la idea de la secuencia sino el uso de la cuadrícula como referencia de movimiento. Un storyboard es dirección, no el frame de entrada del agente. Para cualquier reintento, usar **un solo panel vertical de la máquina completa**, preferiblemente el panel frontal central de la cuadrícula, como único keyframe. No adjuntar la cuadrícula completa al generador de video.
+
+El siguiente guion y prompt de 8 s se conservan solo como referencia histórica del intento de condensación. No usarlos para producir CAN-003.
 
 **Guion de 8 s:**
 
