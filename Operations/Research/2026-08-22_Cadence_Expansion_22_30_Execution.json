@@ -4,7 +4,7 @@
   "status": "Active",
   "created": "2026-08-22",
   "updated": "2026-08-22",
-  "version": "1.0",
+  "version": "1.1",
   "author": "Manus AI (CGO)",
   "organization": "Operations/Research",
   "related_documents": [
@@ -113,6 +113,24 @@
     "all_four_is_published_false": true,
     "all_four_local_times_match": true,
     "target_slots_previously_free": true
+  },
+  "sunday_23_full_sync_verification": {
+    "checked_at_utc": "2026-08-22T21:53:18Z",
+    "source": "Meta Graph API v26.0: direct post reads and /scheduled_posts",
+    "scheduled_posts_http_status": 200,
+    "posts_checked": 6,
+    "all_six_direct_reads_ok": true,
+    "all_six_present_in_scheduled_posts": true,
+    "all_six_local_times_match": true,
+    "all_six_is_published_false": true,
+    "slots": [
+      {"local_time": "2026-08-23 10:00", "meta_post_id": "1036844829507460_122151376281072582", "meta_photo_id": "122151376245072582"},
+      {"local_time": "2026-08-23 13:30", "meta_post_id": "1036844829507460_122151376365072582", "meta_photo_id": "122151376329072582"},
+      {"local_time": "2026-08-23 16:00", "meta_post_id": "1036844829507460_122151376455072582", "meta_photo_id": "122151376413072582"},
+      {"local_time": "2026-08-23 17:00", "meta_post_id": "1036844829507460_122154733665072582", "meta_photo_id": "122154733635072582"},
+      {"local_time": "2026-08-23 19:00", "meta_post_id": "1036844829507460_122151376539072582", "meta_photo_id": "122151376503072582"},
+      {"local_time": "2026-08-23 22:00", "meta_post_id": "1036844829507460_122151376629072582", "meta_photo_id": "122151376581072582"}
+    ]
   },
   "notes": [
     "The two approved MEME-CAD assets were used in the 28 and 29 additional slots.",
