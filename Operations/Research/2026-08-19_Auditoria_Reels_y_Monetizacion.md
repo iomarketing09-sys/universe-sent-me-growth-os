@@ -4,7 +4,7 @@ purpose: "Separar el rendimiento histórico de Reels del experimento P0 de imág
 status: "Active"
 created: 2026-08-19
 updated: 2026-08-22
-version: "1.13"
+version: "1.14"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -22,6 +22,7 @@ related_documents:
   - "Operations/Research/2026-08-22_Reels_Tier2A_Visual_Review_Batch.csv"
   - "Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv"
   - "Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json"
+  - "Operations/Production/2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md"
   - "Operations/Research/2026-08-21_Reels_Audit_Coverage_Summary.json"
   - "Operations/Research/2026-08-20_MercadoLibre_Snapshot_7d_Etiquetas.png"
   - "Operations/Research/2026-08-20_MercadoLibre_Snapshot_Fecha.png"
@@ -255,7 +256,7 @@ Los seis Reels con asset Drive↔Meta confirmado siguen clasificados en cuatro f
 
 La señal de mayor valor está en dos rutas de consumo más visuales. Primero, `Fantasma caminando con gatos` conserva evidencia fuerte de descubrimiento: el deep dive de Facebook registra 6,640 views, 5,750 espectadores únicos, 260 interacciones, 32 shares y 93.8% de audiencia no seguidora; otra tabla histórica del registro maestro conserva un snapshot distinto de 6,878 views y 128 interacciones. Como las capturas no son la misma ventana, ambas cifras se conservan como snapshots separados y no se promedian. El inventario además registra el concepto con Facebook, Instagram y YouTube, y enlaza los assets `Ghost_walks_cats_through_forest_202607240113.mp4` y `Ghost_walks_cats_through_forest_202607251436.mp4`. La lectura robusta es la magnitud relativa de la señal, no una cifra única canónica. [4] [5]
 
-Segundo, Fernando reporta que el Reel de Elara caminando en el bosque, con Wilfred siguiéndola y el texto `POV: Eres Piscis`, tuvo mayor impacto que los Reels tipo podcast. Esta afirmación se incorpora como **evidencia humana de alto valor, pendiente de reconciliación nativa**, porque el inventario actual todavía no contiene el ID exacto ni una fila con ese texto; no se debe sustituir el registro por el asset cercano `Elara y Evan en el Bosque.mp4` sin confirmar personajes y publicación. La revisión visual de ese asset cercano muestra una pareja joven con hoodie café y una mujer con sombrero puntiagudo, no evidencia suficiente para relabelarlo como Wilfred.
+Segundo, Fernando reporta que el Reel de Elara caminando en el bosque, usando audífonos, mientras Wilfred aparece detrás hablándole y ella lo ignora, con el texto `POV: Eres Piscis`, tuvo mayor impacto que los Reels tipo podcast. Esta afirmación se incorpora como **evidencia humana de alto valor, pendiente de reconciliación nativa**, porque el inventario actual todavía no contiene el ID exacto ni una fila con ese texto. El asset `Elara y Evan en el Bosque.mp4` pertenece a otro Reel más reciente de Elara y Evan juntos en el bosque/campamento; la asociación anterior fue retirada de los ledgers y no debe usarse como fuente del caso Piscis. El caso Piscis necesita su propio export, `Meta_Post_ID` y `Primary_Asset_ID`.
 
 La nueva hipótesis candidata es `HB-REEL-MOTION-POV-MEME-01`: los Reels con movimiento físico inmediatamente legible, texto POV o meme reconocible y una situación visual absurda pueden generar más descubrimiento y compartidos que una conversación de estudio que exige escuchar o leer varios turnos. Esta hipótesis todavía no es un veredicto. Debe probarse en una celda separada con al menos tres casos comparables, cinco para una decisión operativa, controlando duración, hook de 0–3 segundos, presencia de texto, tratamiento de caption y plataforma.
 

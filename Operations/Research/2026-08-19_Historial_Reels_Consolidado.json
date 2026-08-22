@@ -4,7 +4,7 @@
   "status": "Active",
   "created_at": "2026-08-19",
   "last_updated": "2026-08-22",
-  "version": "2.1",
+  "version": "2.2",
   "author": "Manus AI",
   "related_documents": [
     "2026-08-19_Relaciones_Reels_Alta_Evidencia.json",
@@ -13,7 +13,9 @@
     "2026-08-19_Publicaciones_Historicas_Adjudicadas.json",
     "2026-08-19_Decisiones_Reconciliacion_Reels.json",
     "../../GrowthOS/07_00_Registro_Maestro_Reels.md",
-    "../../GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
+    "../../GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md",
+    "../Production/2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md",
+    "2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md"
   ],
   "period": {
     "start": "2026-05-01",
@@ -188,13 +190,13 @@
       "cost_mxn": null,
       "drive_asset_evidence": {
         "canonical_concept_id": "CON-2026-08-09-Elara_Evan_Estrellas",
-        "strength": "Directa",
-        "evidence": "La carpeta `Elara y Evan` contiene el export final titulado `Elara y Evan en el Bosque` y respalda la relación FB/IG ya confirmada por copy y timestamp.",
+        "strength": "Pending_reassignment_after_human_correction",
+        "evidence": "Fernando corrigió la atribución: este asset pertenece a otro Reel más reciente de Elara y Evan juntos en el bosque/campamento. No es el Reel de Piscis con Elara usando audífonos y Wilfred siguiéndola. La relación cross-platform del concepto antiguo se conserva, pero el asset queda fuera de ella hasta una reasignación por ID nativo.",
         "platform_content_ids": [
-          "1036844829507460_122147211939072582",
-          "17940860565300063"
+          "1036844829507460_122147211939072582"
         ],
-        "drive_assets": [
+        "drive_assets": [],
+        "previously_attributed_drive_assets": [
           {
             "id": "1CELb0iwDuuKEiEJj2n-vuutjUMIYlHA2",
             "name": "Elara y Evan en el Bosque.mp4",
@@ -1096,13 +1098,13 @@
       "cost_mxn": 15,
       "drive_asset_evidence": {
         "canonical_concept_id": "CON-2026-08-09-Elara_Evan_Estrellas",
-        "strength": "Directa",
-        "evidence": "La carpeta `Elara y Evan` contiene el export final titulado `Elara y Evan en el Bosque` y respalda la relación FB/IG ya confirmada por copy y timestamp.",
+        "strength": "Pending_reassignment_after_human_correction",
+        "evidence": "Fernando corrigió la atribución: este asset pertenece a otro Reel más reciente de Elara y Evan juntos en el bosque/campamento. No es el Reel de Piscis con Elara usando audífonos y Wilfred siguiéndola. La relación cross-platform del concepto antiguo se conserva, pero el asset queda fuera de ella hasta una reasignación por ID nativo.",
         "platform_content_ids": [
-          "1036844829507460_122147211939072582",
           "17940860565300063"
         ],
-        "drive_assets": [
+        "drive_assets": [],
+        "previously_attributed_drive_assets": [
           {
             "id": "1CELb0iwDuuKEiEJj2n-vuutjUMIYlHA2",
             "name": "Elara y Evan en el Bosque.mp4",

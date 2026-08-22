@@ -4,7 +4,7 @@
   "status": "Active",
   "created": "2026-08-22",
   "updated": "2026-08-22",
-  "version": "1.1",
+  "version": "1.2",
   "author": "Manus AI",
   "related_documents": [
     "Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv",
@@ -126,12 +126,14 @@
         "Family_Candidate": "POV_character_movement",
         "Platform": "Facebook",
         "Meta_Post_ID": "Pending_native_ID_confirmation",
-        "Description": "Elara walking in a forest with Wilfred following her; on-screen text reported by Fernando as POV: Eres Piscis.",
+        "Description": "Elara walks through the forest wearing headphones while Wilfred appears behind her, talks to her and is ignored; on-screen text reported by Fernando as POV: Eres Piscis.",
         "Reported_Performance": "Fernando reports higher impact than the podcast-style Reels.",
         "Evidence_Level": "Human_report_high_signal_pending_native_ID_and_metric_window",
-        "Interpretation": "Priority design input for the next test cell, not yet a quantified record. Do not map it to the nearby Elara y Evan asset without native/visual confirmation."
+        "Identity_Correction": "This is not the Elara+Evan camping/forest asset. The nearby asset Elara y Evan en el Bosque belongs to a separate, more recent Reel and has been removed from the previous mapping.",
+        "Interpretation": "Priority design input for the next test cell, not yet a quantified record. The case needs its own native ID and source export before it can be measured."
       }
     ],
+    "source_note": "The high-signal case descriptions and identity correction are based on Fernando's direct project confirmation on 2026-08-22; native Meta ID and export remain pending.",
     "minimum_next_cell": {
       "Hypothesis_ID": "HB-REEL-MOTION-POV-MEME-01",
       "minimum_cases": 3,
