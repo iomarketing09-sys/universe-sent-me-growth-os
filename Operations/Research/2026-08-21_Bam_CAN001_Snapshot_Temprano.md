@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — CAN-001: snapshot temprano consolidado"
 purpose: "Conservar las métricas públicas observables de la primera cascada de CAN-001 y distinguir datos medidos de campos no expuestos sin autenticación."
-status: "Active — lectura autenticada por Windsor.ai; YouTube sigue pendiente de indexación"
+status: "Active — evidencia directa confirma baja distribución en YouTube; Windsor sigue pendiente de indexación"
 created: 2026-08-21
 updated: 2026-08-21
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
@@ -45,10 +45,14 @@ Windsor.ai devolvió registros autenticados para TikTok e Instagram aproximadame
 
 Con Windsor.ai habilitado y el conector de YouTube confirmado, se repitió la consulta a las **14:14:25 CDT** del 22 de agosto, cuando el Short tenía **18 h 24 min 25 s** de antigüedad. La consulta de video y de metadatos siguió devolviendo una lista vacía para el canal `baminacan@gmail.com`; el conector no mostró opciones adicionales ni filtros de fecha específicos que modificaran ese resultado. Por tanto, el Short continúa publicado y visible, pero **no está disponible aún como fila autenticada dentro de Windsor.ai**. Esta condición se conserva como atraso de indexación, no como cero rendimiento.
 
+### Evidencia directa de YouTube Studio
+
+Fernando aportó una captura de YouTube Studio del Short, marcada como publicada hace aproximadamente 18 horas. La interfaz muestra **2 vistas** y **1 vez compartido**. Este es el conteo manual más reciente y confirma que la distribución inicial de YouTube es muy baja; no permite atribuir la falta de fila en Windsor.ai a esa baja distribución, porque el mecanismo de indexación del conector no se ha observado directamente. Tampoco se calcula una tasa de compartidos sobre dos vistas: el denominador es demasiado pequeño para una lectura útil.
+
 ## Límites de comparación
 
 El diferencial temprano de views entre TikTok e Instagram no demuestra un efecto del audio porque las plataformas tienen sistemas de distribución y edades distintas. El único contraste operativo ya disponible es de formato de consumo: Instagram registra un watch time medio superior al de TikTok, pero ambos valores proceden de muestras tempranas y ninguno alcanza una ventana de 24 horas. YouTube queda fuera de comparaciones cuantitativas hasta que Windsor entregue una fila del video.
 
 ## Lectura temprana
 
-La lectura ahora usa Windsor.ai como fuente preferente para TikTok e Instagram. Aun así, no hay base suficiente para evaluar la hipótesis de distribución de CAN-001: el periodo es inferior a cuatro horas, TikTok e Instagram no son directamente equivalentes y YouTube no está indexado. El corte confirma que la próxima medición a 24 horas debe repetir las tres consultas autenticadas y conservar la diferencia entre `views`, `reach`, `interacciones` y retención.
+La lectura ahora usa Windsor.ai como fuente preferente para TikTok e Instagram y YouTube Studio como evidencia directa provisional para YouTube. Aun así, no hay base suficiente para evaluar la hipótesis de distribución de CAN-001: TikTok e Instagram no son directamente equivalentes, YouTube tiene volumen demasiado bajo para análisis y su fila autenticada aún no aparece. El siguiente corte debe repetir las tres consultas autenticadas y conservar la diferencia entre `views`, `reach`, `interacciones` y retención.
