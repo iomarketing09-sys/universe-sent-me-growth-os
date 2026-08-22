@@ -4,7 +4,7 @@ purpose: "Evaluar el estado operativo y comercial del piloto de productos afilia
 status: "Review"
 created: 2026-08-22
 updated: 2026-08-22
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/11_00_Estrategia_Monetizacion_MercadoLibre.md"
@@ -120,3 +120,36 @@ La ejecución de este informe requiere mantener sincronizados `Affiliate_Link_Le
 4. `Operations/Research/2026-08-19_MercadoLibre_Facebook_Afiliados_Observacion.md`
 5. `GrowthOS/11_00_Estrategia_Monetizacion_MercadoLibre.md`
 6. `Operations/Production/2026-08-19_Playbook_Tracking_Afiliados_MercadoLibre.md`
+
+
+## Addendum de reconciliación — 2026-08-22
+
+La revisión ampliada confirmó que el trabajo de afiliación no se limita a las diez oportunidades AFF-01–AFF-10. El ledger contiene actualmente **18 enlaces individuales y 18 etiquetas únicas**, distribuidos así:
+
+| Capa / campaña | Enlaces | Estado documentado | Lectura |
+|---|---:|---|---|
+| Piloto calendario AFF-01–AFF-10 | 10 | 10 `Native_Product_Attached_User_Confirmed` | Cobertura completa del piloto. |
+| Capa 2 posts ganadores | 2 | 2 `Native_Product_Attached_User_Confirmed` | Wilfred/Xhp360 y Evan+Kiri/tiras LED. |
+| Reel nativo adicional | 1 | `Published` + `Native_Product_Attached_User_Confirmed` | Universe, soporte de celular; etiqueta `usmfb20260819p01`. |
+| Universe/Senales multicanal | 4 | Facebook e Instagram programados; TikTok y YouTube en espera | El link existe, pero no todas las superficies están activas o verificadas. |
+| Histórico agregado | 1 registro sin link individual | 3 clics, 2 unidades, $322.65 MXN brutos, $28.84 MXN estimados | No atribuible a una publicación específica. |
+
+La cifra correcta de cobertura operativa documentada es **14 de 18 enlaces individuales con publicación o adjunción confirmada**, mientras que cuatro filas de Universe/Senales permanecen programadas, en espera o sin publicación según la superficie. Esto corrige la lectura anterior de 1/10: esa cifra correspondía a un corte local anterior y quedó superada por las confirmaciones registradas posteriormente en GitHub.
+
+## Evidencia de clics disponible
+
+El archivo `Affiliate_Metrics_Snapshots.csv` contiene seis snapshots. El histórico agregado conserva 3 clics. Un corte manual de fecha registra 2 clics agregados para las etiquetas visibles del 18 de agosto, pero no los atribuye a un link individual. Otro corte registra **1 clic para AFF-07 / Elara / lámpara LED de lectura**. La etiqueta del Reel nativo adicional no fue visible en la tabla; su estado correcto es `Not_Visible_No_Inference`, no cero clics. No hay todavía una serie de CTR comparable por capa.
+
+## Lectura actual de Growth
+
+La conclusión estratégica cambia de “activar los enlaces” a **medir y optimizar una cartera ya activada**. La cobertura técnica y editorial es suficiente para iniciar aprendizaje, pero los datos siguen siendo escasos. La prioridad es capturar cortes de 24 horas, 48 horas y 7 días por etiqueta; separar Facebook, Instagram, TikTok y YouTube; y no mezclar el histórico agregado con los registros granulares.
+
+También debe mantenerse separado el estado de una publicación programada, una publicación publicada y una adjunción nativa confirmada. Para cada fila se requiere `Content_ID`, superficie, fecha de publicación, fecha de adjunción, permalink o ID nativo, etiqueta, clics, ventas aprobadas y comisión confirmada.
+
+## Inconsistencias pendientes
+
+El catálogo visual conserva nombres que aparentemente no coinciden con algunos productos del ledger, especialmente `AFF-06_rose_gift.webp` frente al soporte de taza con abrazadera y `AFF-07_earbuds.webp` frente a la lámpara de lectura. Antes de reutilizar imágenes de producto, se debe verificar la correspondencia visual contra el producto afiliado real.
+
+La estrategia de crecimiento debe priorizar ahora: **(1)** reconciliar los 18 enlaces por superficie; **(2)** obtener snapshots comparables; **(3)** repetir el análisis de AFF-07, que tiene la primera señal individual visible; **(4)** proteger al menos un post ganador como control sin producto en la Capa 2; y **(5)** probar hooks y CTA que hagan explícita la acción “toca el producto” sin alterar retroactivamente el contenido que ya demostró rendimiento.
+
+Este addendum actualiza el diagnóstico operativo del 22 de agosto. El análisis histórico de la observación del 19 de agosto se conserva como evidencia de su fecha y no debe interpretarse como el estado actual completo.
