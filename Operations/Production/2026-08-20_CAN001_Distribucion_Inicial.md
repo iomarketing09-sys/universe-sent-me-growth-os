@@ -4,13 +4,14 @@ purpose: "Definir la publicación de lanzamiento de CAN 001 por plataforma, incl
 status: "Active — first three-platform CAN-001 cascade published; measurement pending"
 created: 2026-08-20
 updated: 2026-08-21
-version: "1.3"
+version: "1.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_CAN001_It_Was_Making_Noise_Production_Package.md"
   - "Operations/Production/2026-08-20_Plan_Lanzamiento_Audiencia_Bam_In_A_Can.md"
   - "Operations/Production/2026-08-20_Piloto_Content_Rewards_Bam_In_A_Can.md"
   - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
+  - "Operations/Research/2026-08-21_Bam_CAN001_Snapshot_Temprano.md"
 organization: "Operations/Production"
 ---
 
