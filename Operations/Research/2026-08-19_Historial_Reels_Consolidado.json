@@ -4,7 +4,7 @@
   "status": "Active",
   "created_at": "2026-08-19",
   "last_updated": "2026-08-22",
-  "version": "1.9",
+  "version": "2.0",
   "author": "Manus AI",
   "related_documents": [
     "2026-08-19_Relaciones_Reels_Alta_Evidencia.json",
@@ -1804,7 +1804,12 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Pending_Drive_or_local_asset_match",
+      "review_batch_id": "NEXT10",
+      "reviewed_on": "2026-08-22",
+      "asset_review_status": "No_Match_In_Reviewed_Set",
+      "reconciliation_review_status": "Reviewed_No_Match_In_TOP1",
+      "review_note": "Fantasma source reviewed; Reel is a highway POV and not the forest ghost."
     },
     {
       "platform": "Facebook",
@@ -1885,7 +1890,12 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Pending_Drive_or_local_asset_match",
+      "review_batch_id": "NEXT10",
+      "reviewed_on": "2026-08-22",
+      "asset_review_status": "No_Match_In_Reviewed_Set",
+      "reconciliation_review_status": "Reviewed_No_Match_In_TOP1",
+      "review_note": "Fantasma source reviewed; Reel is a blue-sky/cloud meme and not the forest ghost."
     },
     {
       "platform": "Facebook",
@@ -1966,7 +1976,12 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Pending_Drive_or_local_asset_match",
+      "review_batch_id": "NEXT10",
+      "reviewed_on": "2026-08-22",
+      "asset_review_status": "No_Match_In_Reviewed_Set",
+      "reconciliation_review_status": "Reviewed_No_Match_In_TOP1",
+      "review_note": "Fantasma source reviewed; Reel is the stream/roots scene."
     },
     {
       "platform": "Facebook",
@@ -2155,7 +2170,12 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Pending_Drive_or_local_asset_match",
+      "review_batch_id": "NEXT10",
+      "reviewed_on": "2026-08-22",
+      "asset_review_status": "No_Match_In_Reviewed_Set",
+      "reconciliation_review_status": "Reviewed_No_Match_In_TOP1",
+      "review_note": "Elara/Evan hug source reviewed; Reel is a multi-character campfire gathering."
     },
     {
       "platform": "Facebook",
@@ -2437,7 +2457,12 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Pending_Drive_or_local_asset_match",
+      "review_batch_id": "NEXT10",
+      "reviewed_on": "2026-08-22",
+      "asset_review_status": "No_Match_In_Reviewed_Set",
+      "reconciliation_review_status": "Reviewed_No_Match_In_TOP1",
+      "review_note": "Wilfred potion family reviewed; standing Wilfred Reel and crouched potion source are different scenes."
     },
     {
       "platform": "Facebook",
@@ -2653,7 +2678,12 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Pending_Drive_or_local_asset_match",
+      "review_batch_id": "NEXT10",
+      "reviewed_on": "2026-08-22",
+      "asset_review_status": "No_Match_In_Reviewed_Set",
+      "reconciliation_review_status": "Reviewed_No_Match_In_TOP1",
+      "review_note": "Universe Real 004 reviewed; Reel is the stream/roots scene."
     },
     {
       "platform": "Facebook",
@@ -2720,7 +2750,12 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Pending_Drive_or_local_asset_match",
+      "review_batch_id": "NEXT10",
+      "reviewed_on": "2026-08-22",
+      "asset_review_status": "No_Match_In_Reviewed_Set",
+      "reconciliation_review_status": "Reviewed_No_Match_In_TOP1",
+      "review_note": "Universe Real 005 reviewed; Reel is the static fairy/gnome spiritual-friends illustration."
     },
     {
       "platform": "Facebook",
@@ -2814,7 +2849,12 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Pending_Drive_or_local_asset_match",
+      "review_batch_id": "NEXT10",
+      "reviewed_on": "2026-08-22",
+      "asset_review_status": "No_Match_In_Reviewed_Set",
+      "reconciliation_review_status": "Reviewed_No_Match_In_TOP1",
+      "review_note": "Catedral image reviewed; street/cathedral, sky, person, and overlay differ from the Reel."
     },
     {
       "platform": "Facebook",
@@ -2841,7 +2881,12 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Pending_Drive_or_local_asset_match",
+      "review_batch_id": "NEXT10",
+      "reviewed_on": "2026-08-22",
+      "asset_review_status": "No_Match_In_Reviewed_Set",
+      "reconciliation_review_status": "Reviewed_No_Match_In_TOP1",
+      "review_note": "Universe Real 008 reviewed; Reel shows a woman in front of clouds, not a bedroom selfie."
     },
     {
       "platform": "Facebook",
@@ -2976,7 +3021,16 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Match_Visual_Exact",
+      "review_batch_id": "NEXT10",
+      "reviewed_on": "2026-08-22",
+      "asset_review_status": "Match_Visual_Exact",
+      "reconciliation_review_status": "Reviewed_Exact_Match",
+      "review_note": "Exact composition match confirmed against Fantasma_tranquilo_con_viento_202605241629.mp4.",
+      "asset_relationship": "Single_asset_match",
+      "drive_file_id": "175XnmOVnBPgVCFlwyDWCZ3jCAmB2MOjO",
+      "drive_file_name": "Fantasma_tranquilo_con_viento_202605241629.mp4",
+      "asset_review_confidence": "High"
     },
     {
       "platform": "Facebook",
@@ -3462,5 +3516,6 @@
   "historical_extension_note": "Three exact visual Drive↔Meta matches were integrated from May/June. Wilfred potion remains pending visual review; date proximity alone never creates a match.",
   "historical_candidate_note": "All 54 Meta video candidates from May/June are now represented as publication-identity rows. Only exact Drive matches receive Drive evidence; unresolved assets remain pending and are not converted into CNT or canonical concepts.",
   "match_status_correction": "Exact Drive↔Meta matches are explicitly excluded from the pending asset queue.",
-  "top5_review_note": "Five high-interaction Facebook Reels were visually reviewed against their top five Drive candidates; all five remain unresolved globally, with no match inferred from date proximity."
+  "top5_review_note": "Five high-interaction Facebook Reels were visually reviewed against their top five Drive candidates; all five remain unresolved globally, with no match inferred from date proximity.",
+  "next10_review_note": "NEXT10 visual review produced one exact Fantasma match and nine no-match results within the primary candidate review set."
 }

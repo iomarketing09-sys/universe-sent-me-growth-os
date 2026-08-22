@@ -3,8 +3,8 @@ title: "Auditoría de Reels y monetización"
 purpose: "Separar el rendimiento histórico de Reels del experimento P0 de imágenes, verificar qué vías de monetización tienen evidencia real y establecer la cobertura documental del video corto en Instagram, Facebook, TikTok y YouTube."
 status: "Active"
 created: 2026-08-19
-updated: 2026-08-21
-version: "1.9"
+updated: 2026-08-22
+version: "1.10"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -223,6 +223,18 @@ Para optimizar el coste de revisión se priorizaron los cinco Reels pendientes c
 Los cinco Reels quedaron en `No_Match_In_Reviewed_Set`. El resultado no significa que estén excluidos de todo Drive; significa únicamente que no coincidieron con los cinco candidatos priorizados. Los controles decisivos fueron: el Reel de 35 interacciones muestra un arroyo y raíces expuestas, mientras el candidato principal era Wilfred con una poción; el Reel de 24 muestra una carretera nocturna con luna, mientras `Universe Real 001–008` contiene selfies, brindis cyberpunk, una mujer y gatos alados; el Reel de 20 muestra cielo con `DESAPENDEJATE`, sin coincidencia en los videos o la imagen `Universe sent me - 022`; el Reel de 19 muestra cielo con una frase sobre gente que no habla, no el Fantasma de agosto; y el Reel de 19 muestra un fondo circular de colores, no la poción de Wilfred.
 
 La matriz ampliada de evidencia se conserva en `Operations/Research/2026-08-21_Reels_Drive_Meta_Crossmatch_Review.csv`. La cola operativa está en `Operations/Research/2026-08-22_Reels_Pending_Asset_Reconciliation_Queue.csv`; el triage completo fecha/filename está en `Operations/Research/2026-08-22_Reels_Pending_Drive_Triage.csv`. No se asignaron CNT ni conceptos canónicos a estos cinco casos.
+
+### 10.9 Revisión visual NEXT10
+
+El segundo bloque cubrió los diez Reels Tier 1 restantes, con interacciones entre 11 y 18. Se analizó la huella visual de cada Reel y se contrastó con su candidato principal de Drive. Nueve quedaron como `No_Match_In_Reviewed_Set` o `No_Match_In_NEXT10_Primary`; el único match exacto fue el Reel `1518053389684402`, cuyo Fantasma con lentes, cerca de madera, bosque azul/morado, composición y movimiento coinciden con `Fantasma_tranquilo_con_viento_202605241629.mp4`.
+
+La comparación directa de frames confirmó que el asset de Fantasma es la fuente visual de la publicación; el Reel añade el tratamiento de texto `Antes de mandar ese mensaje arriesgado... / Piensa en cómo se va a ver la captura...`. El match se integró al historial como `Match_Visual_Exact`, sin crear CNT nuevo ni asignar una hipótesis experimental.
+
+El caso de Wilfred se revisó de forma directa y quedó descartado como match exacto: el Reel `1906363553379974` muestra a Wilfred de pie lanzando un hechizo, mientras `Wilfred realista haciendo una posion.mp4` muestra otra escena de Wilfred agachado frente a un caldero. La relación de personaje/estilo no es suficiente para asignar el asset.
+
+El Reel `991640670312120` y `Universe sent me - 022.png` también fueron comparados por frames. Ambos comparten una atmósfera de calle/catedral, pero son escenas distintas y tienen textos diferentes; el estado correcto es relación temática parcial, no match.
+
+El inventario ahora contiene cuatro matches visuales exactos entre Drive y Meta dentro de esta extensión histórica. Los casos restantes solo deben pasar a búsqueda ampliada si su valor editorial justifica el coste; la proximidad temporal y la coincidencia de personaje no son evidencia suficiente.
 
 ## 11. Puente de transferencia Facebook → Reels — 2026-08-21
 

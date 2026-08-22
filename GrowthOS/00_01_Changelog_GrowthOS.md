@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-21
-**Versión:** 2.61
+**Versión:** 2.62
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.62.00] — 2026-08-21 (Manus): Revisión visual del bloque NEXT10 e integración de un cuarto match exacto.** Se revisaron los diez candidatos Tier 1 siguientes a la cola TOP5. El Reel `1518053389684402` coincide exactamente con `Fantasma_tranquilo_con_viento_202605241629.mp4` — mismo Fantasma con lentes, cerca, bosque azul/morado, composición y movimiento — y fue integrado al historial sin crear CNT. Los nueve restantes quedaron sin match dentro de su candidato primario. La comparación directa descartó `Wilfred realista haciendo una posion.mp4` como fuente del Reel `1906363553379974`: comparten personaje/estilo, pero no escena ni secuencia. También se descartó `Universe sent me - 022.png` como fuente del Reel `991640670312120`: comparten atmósfera de catedral, pero no composición ni texto. El historial queda en v2.0, el registro maestro en v2.9, la auditoría en v1.10, la fuente maestra en v2.13 y la cobertura en v1.4; hay cuatro matches exactos y 50 casos históricos aún pendientes de asset.
 
 - **[2.61.00] — 2026-08-21 (Manus): Priorización y revisión visual del lote pendiente de assets.** Se corrigieron los estados de los tres matches exactos para excluirlos de la cola pendiente. Se creó `Operations/Research/2026-08-22_Reels_Pending_Asset_Reconciliation_Queue.csv` con 51 casos pendientes, ordenados por interacción y divididos en Tier 1 (15) y Tier 2 (36). El rastreo recursivo de Drive encontró 202 archivos de imagen/video. Se generó el triage `2026-08-22_Reels_Pending_Drive_Triage.csv` y se revisaron visualmente los cinco Reels pendientes con mayor interacción — 25 candidatos de Drive en total — sin match dentro del lote TOP5: arroyo/raíces, carretera nocturna con luna, cielo con `DESAPENDEJATE`, cielo con frase social y fondo circular de colores. Los cinco permanecen pendientes globales; `No_Match_In_Reviewed_Set` no significa exclusión total de Drive. Se actualizan historial v1.9, registro maestro v2.8, auditoría v1.9, fuente maestra v2.12 y cobertura v1.3. No se asignaron CNT, Concept_ID ni hipótesis.
 
