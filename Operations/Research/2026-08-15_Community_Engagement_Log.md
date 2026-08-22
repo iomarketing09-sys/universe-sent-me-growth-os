@@ -3,8 +3,8 @@ title: "Community Engagement Log — Universe Sent Me"
 purpose: "Registrar de forma ligera, append-only y anonimizada las señales cualitativas de comentarios, las respuestas humanas y los aprendizajes editoriales de la comunidad."
 status: Active
 created: 2026-08-15
-updated: 2026-08-17
-version: "1.6"
+updated: 2026-08-22
+version: "1.7"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -113,6 +113,24 @@ El 15 de agosto se recuperaron nueve comentarios de la publicación de Silvio co
 | Generalización humorística no dirigida | 0 | No escalar; mantener el remate ácido sin personalizar contra quien comenta. |
 
 El lote se conserva sin nombres ni perfiles. La publicación no está vinculada automáticamente a un `CNT-####` porque la consulta proporcionó un Meta Post ID, no una identidad de pieza reconciliada. Las cuatro respuestas del primer lote fueron aprobadas por Fernando y publicadas mediante Meta Graph API el 2026-08-16 a las 01:45 UTC. Sus IDs de respuesta se registran en `Respuesta_Meta_ID`; el cuarto comentario conserva la clasificación de humor ácido contextual y su respuesta mantiene el remate sin atacar a la persona que comentó.
+
+## 13. Lote de respuestas de Facebook — 22 de agosto de 2026
+
+La revisión de publicaciones recientes recuperó siete comentarios de audiencia que no tenían respuesta de la Página. Fernando aprobó el lote completo y se publicaron siete respuestas mediante Meta Graph API v26; cada respuesta fue verificada con una lectura posterior y quedó asociada a su `Respuesta_Meta_ID` en el CSV. El comentario “Elias Delgado yo” quedó fuera porque probablemente etiquetaba a otra persona y no constituía una solicitud dirigida a Universe Sent Me.
+
+| Tipo de interacción | Casos | Tratamiento aplicado |
+|---|---:|---|
+| Crítica/insulto aislado | 1 | Cierre juguetón, sin discutir ni activar moderación. |
+| Comentario contextual o acuerdo incompleto | 2 | Respuesta breve que completa el sentido y mantiene la complicidad. |
+| Elogio sobre una canción | 1 | Agradecimiento específico y pregunta sobre la experiencia musical. |
+| Complicidad con el tema de los michis | 2 | Remate corto desde el mundo compartido de la marca. |
+| Reacciones de emoji | 2 | Respuestas concisas con personalidad; sin sobreexplicar. |
+
+### 13.1 Regla editorial aprendida
+
+Las mejores respuestas no son necesariamente las más ingeniosas: son las que demuestran que se leyó exactamente lo que la persona escribió. En comentarios musicales, la respuesta debe reaccionar a la canción, a la memoria o al significado que la persona compartió; se debe evitar repetir fórmulas genéricas como “qué hermosa elección”. Cuando el comentario incluye una historia de duelo o pérdida, se conserva un tono sencillo y empático, sin humor. Cuando comparte un enlace, no se afirma que la página añadió la canción a una playlist real si esa playlist no existe; puede usarse una “playlist imaginaria” como recurso explícito de humor.
+
+La respuesta a una reacción de emojis puede ser de una sola línea y con voz de marca. Una respuesta a un insulto aislado puede mantenerse en tono juguetón cuando no hay patrón de abuso, pero no debe premiar el conflicto con una discusión. Estas respuestas siguen requiriendo aprobación humana antes de publicar; el lote no convierte ninguna plantilla en automatización.
 
 ## Referencias
 

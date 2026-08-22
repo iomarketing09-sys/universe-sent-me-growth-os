@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 2.83
+**Versión:** 2.84
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.84.00] — 2026-08-22 (Manus): Refinamiento de respuestas comunitarias específicas por comentario.** Se actualizó `Operations/Research/2026-08-15_Community_Engagement_Log.md` a v1.7 y su CSV con siete comentarios de Facebook y siete respuestas aprobadas, publicadas y verificadas mediante Meta Graph API v26; el comentario que probablemente etiquetaba a otra persona quedó fuera. `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` pasa a v1.8 y `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md` a v3.23. El aprendizaje operativo es priorizar la especificidad: responder a la canción, recuerdo, emoción o remate exacto del comentario; tratar historias de duelo con empatía sencilla; no inventar acciones como añadir canciones a playlists inexistentes; y mantener respuestas breves para emojis. No se modificaron canon, calendario, CNT, inventario ni automatizaciones.
 
 - **[2.83.00] — 2026-08-22 (Manus): Corrección de fuente del bloque de cadencia.** Fernando confirmó que `2608030`, `2608033`, `2608036`, `2608037` y `2608060` ya estaban publicados y no podían tratarse como contenido nuevo. Las filas nuevas del bloque de revisión quedan reconstruidas a partir del target de Drive `Memes` (`1BpKZpUBIT5jBjkvw7epymlsD3Gp4lwzE`), documentado en `Operations/Research/2026-08-22_Drive_Memes_Seed_Inventory.csv` y `Operations/Research/2026-08-22_Drive_Memes_Visual_Review_Notes.md`. Las 10 filas nuevas son semillas que requieren adaptación original con assets oficiales USM; no son capturas publicables. Se mantuvieron cinco reuse de la cola compacta de junio, todos con revisión de filename/copy. El bloque conserva 15 filas, 10 nuevas/semillas y 5 reuse, todas `Human_Approval=PENDING`; no se programó ni publicó contenido.
 

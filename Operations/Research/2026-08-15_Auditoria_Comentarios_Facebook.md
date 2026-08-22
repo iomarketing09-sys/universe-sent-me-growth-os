@@ -3,8 +3,8 @@ title: "Auditoría de comentarios de Facebook y propuesta de Community Growth"
 purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y definir un sistema de escucha, respuesta y aprendizaje para Universe Sent Me."
 status: Active
 created: 2026-08-15
-updated: 2026-08-20
-version: "1.7"
+updated: 2026-08-22
+version: "1.8"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -422,3 +422,35 @@ Estado: **Publicado y verificado**. Meta devolvió el ID `122151374823072582_141
 ## 25. Limitación técnica de la revisión — 2026-08-20
 
 La lectura de comentarios de publicaciones propias funcionó mediante Meta Graph API v26. La consulta específica del endpoint de contenido etiquetado fue rechazada por Meta con el permiso `pages_read_user_content`/Page Public Content Access, por lo que las menciones externas deben verificarse mediante el enlace proporcionado por Fernando o mediante evidencia visible en su sesión. No se introdujeron credenciales, no se publicó contenido y no se modificó Facebook.
+
+## 26. Refinamiento de respuestas por comentario — 2026-08-22
+
+La revisión de 20 publicaciones recientes de Facebook recuperó siete comentarios de audiencia sin respuesta. Fernando aprobó el lote y las siete respuestas fueron publicadas y verificadas mediante Meta Graph API v26. El comentario “Elias Delgado yo” quedó fuera porque probablemente etiquetaba a otra persona y no constituía una solicitud dirigida a Universe Sent Me. La evidencia operativa y los `Respuesta_Meta_ID` se conservan en `Operations/Research/2026-08-15_Community_Engagement_Log.csv`.
+
+| Señal del comentario | Tratamiento aprendido | Estado de la evidencia |
+|---|---|---|
+| Crítica o insulto aislado | Puede cerrarse con humor breve cuando no hay patrón de abuso; no se debe entrar en discusión ni moderar automáticamente. | Aplicado y verificado en un caso. |
+| Comentario musical específico | Responder a la canción, al recuerdo o al significado expresado; evitar elogios intercambiables. | Propuesta refinada a partir de revisión humana. |
+| Historia de duelo o pérdida | Usar una frase sencilla y empática, sin humor ni lenguaje de tarjeta. | Propuesta refinada a partir de revisión humana. |
+| Enlace musical | No afirmar que la Página añadió la canción a una playlist real si esa acción no existe; puede usarse una “playlist imaginaria” como recurso explícito. | Propuesta refinada a partir de revisión humana. |
+| Reacción breve o emoji | Una línea con personalidad es suficiente; no forzar preguntas ni explicaciones. | Aplicado y verificado en varios casos. |
+
+### 26.1 Biblioteca de respuestas refinadas para uso futuro
+
+Las siguientes formulaciones son propuestas de estilo derivadas de la revisión humana del lote. No sustituyen los textos publicados el 22 de agosto ni modifican retroactivamente el ledger; sirven como referencias para futuras respuestas.
+
+| Comentario de referencia | Respuesta refinada |
+|---|---|
+| “No todas hacen eso? 😅” | “No todas… pero algunas vienen con el modo travesura activado. 😅🙈” |
+| “-Agradezco- 🎙️ xuqutopi” | “Ufff, esa canción desbloquea recuerdos que uno ni sabía que tenía. 🎙️😂” |
+| “Amor eterno — Rocío Dúrcal…” | “Hay canciones que se convierten en un abrazo cuando alguien ya no está. ❤️‍🩹” |
+| “Estocolmo — Arawato… y podría seguir con mil más” | “¿Mil más? Entonces claramente esta publicación abrió una playlist que no vamos a poder cerrar. 😂🎶” |
+| Enlace de YouTube Music | “Recibida. Esa playlist imaginaria ya se nos está saliendo de control. 😂🎶” |
+| “sí parfavar” | “¡Sí, por favor! 😂💪✨” |
+| Reacción “😁😁😆😆😁” | “No sabemos qué pasó, pero aprobamos esa reacción. 😂” |
+
+> **Regla editorial refinada:** una respuesta debe demostrar que leyó el comentario concreto. En música, debe reaccionar a la canción o a lo que representa para la persona; en historias personales debe conservar el registro emocional; en reacciones breves debe evitar sobreescribir el momento. La especificidad y la naturalidad tienen prioridad sobre la ingeniosidad.
+
+## 27. Coherencia documental
+
+Este corte actualiza también `Operations/Research/2026-08-15_Community_Engagement_Log.md` a v1.7 y su CSV asociado con las siete respuestas verificadas. `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md` requiere una nota equivalente en su sección de aprendizaje de comunidad. El changelog debe registrar el cambio; no se requiere modificar canon, calendario, CNT ni inventario de assets.
