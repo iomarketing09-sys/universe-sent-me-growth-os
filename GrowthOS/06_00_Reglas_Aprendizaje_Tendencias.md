@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-22
-**Versión:** 3.23
+**Versión:** 3.24
 **Autor:** Manus AI (CGO); Sección 6 añadida por Claude
 **Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`, `../Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`, `../Operations/Research/2026-08-21_Julio_Expansion_Lote01_Analysis.md`, `../Operations/Research/2026-08-21_Expansion_Celdas_Comparables_Post_Julio_Lote01.json`, `../Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Findings.md`, `../Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md`, `../Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`, `../Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Audit.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Analysis.md`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Manual_Findings.md`, `../Operations/Research/2026-08-21_Junio_Caption_Reclassification_Impact.md`, `../Operations/Research/2026-08-21_Validacion_Cruzada_Hipotesis_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.md`, `../Operations/Research/2026-08-15_Community_Engagement_Log.md`, `../Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`
 
@@ -390,3 +390,12 @@ La revisión humana de un lote real de comentarios de Facebook y sus respuestas 
 La especificidad debe prevalecer sobre la ornamentación. Antes de proponer una respuesta, el revisor debe identificar qué elemento exacto del comentario merece ser recogido: canción, recuerdo, emoción, remate, referencia o reacción. La respuesta puede usar personajes como condimento, pero no necesita mencionarlos para sonar a Universe Sent Me; el tono, el ritmo y la complicidad también construyen identidad.
 
 Esta regla es una guía de respuesta humana, no una autorización para automatizar publicaciones. Toda respuesta pública sigue requiriendo aprobación explícita y debe registrarse con `Comentario_ID`, `Respuesta_Estado`, `Respuesta_Fecha` y `Respuesta_Meta_ID` en el ledger comunitario.
+
+
+## 20. Verificación posterior de respuestas comunitarias — 2026-08-22
+
+La publicación de respuestas comunitarias debe cerrar con una comprobación determinista, no únicamente con el HTTP 200 del POST. Para cada respuesta, la revisión posterior debe confirmar cuatro condiciones: `from` corresponde a Universe Sent Me, `parent.id` corresponde al `Comentario_ID` original, `message` coincide con el texto aprobado e `is_hidden=False` en la respuesta.
+
+El estado del comentario original debe registrarse por separado. Si el comentario padre aparece como `is_hidden=True`, la respuesta puede estar publicada y visible para la API, pero eso no demuestra que el hilo sea visible para el público. No se debe desocultar, eliminar ni modificar el comentario padre sin una decisión de moderación independiente. Esta distinción evita declarar “visible” un intercambio cuyo comentario original sigue oculto.
+
+El lote del 22 de agosto verificó siete respuestas con esta comprobación: las siete pertenecen al hilo correcto, fueron publicadas por Universe Sent Me, conservaron el texto aprobado y devolvieron `is_hidden=False`. Uno de los comentarios originales, el que contenía un enlace musical, devolvió `is_hidden=True`; no se cambió su estado y quedó marcado para revisión separada. La evidencia completa se conserva en `Operations/Research/2026-08-15_Community_Engagement_Log.csv` y en la auditoría de Facebook.

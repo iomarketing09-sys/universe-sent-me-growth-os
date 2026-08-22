@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "1.7"
+version: "1.8"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -21,7 +21,7 @@ organization: "Operations/Research"
 
 Este documento define el uso del ledger `2026-08-15_Community_Engagement_Log.csv`. El registro convierte los comentarios en señales de aprendizaje sin transformarlos en un sistema de vigilancia ni en un bot de respuestas. La unidad de registro es un comentario real recuperado desde una publicación propia; cada comentario se identifica por su `Comentario_ID` y solo puede aparecer una vez.
 
-El ledger se creó vacío de forma intencional. Después de extracciones verificables, ahora contiene 18 comentarios reales: nueve del primer lote, seis del delta del 16 de agosto, dos del delta del 17 de agosto y una revisión puntual de publicación. La auditoría histórica de 67 comentarios de las 20 publicaciones recientes permanece como evidencia agregada y no se reconstruyen sus filas individuales. No se inventan nombres, perfiles, IDs personales, intenciones ni respuestas históricas.
+El ledger se creó vacío de forma intencional. Después de extracciones verificables, ahora contiene 39 comentarios reales registrados en el CSV, incluyendo el lote de siete comentarios del 22 de agosto. La auditoría histórica de 67 comentarios de las 20 publicaciones recientes permanece como evidencia agregada y no se reconstruyen sus filas individuales. No se inventan nombres, perfiles, IDs personales, intenciones ni respuestas históricas.
 
 ## 2. Fuente y privacidad
 
@@ -131,6 +131,24 @@ La revisión de publicaciones recientes recuperó siete comentarios de audiencia
 Las mejores respuestas no son necesariamente las más ingeniosas: son las que demuestran que se leyó exactamente lo que la persona escribió. En comentarios musicales, la respuesta debe reaccionar a la canción, a la memoria o al significado que la persona compartió; se debe evitar repetir fórmulas genéricas como “qué hermosa elección”. Cuando el comentario incluye una historia de duelo o pérdida, se conserva un tono sencillo y empático, sin humor. Cuando comparte un enlace, no se afirma que la página añadió la canción a una playlist real si esa playlist no existe; puede usarse una “playlist imaginaria” como recurso explícito de humor.
 
 La respuesta a una reacción de emojis puede ser de una sola línea y con voz de marca. Una respuesta a un insulto aislado puede mantenerse en tono juguetón cuando no hay patrón de abuso, pero no debe premiar el conflicto con una discusión. Estas respuestas siguen requiriendo aprobación humana antes de publicar; el lote no convierte ninguna plantilla en automatización.
+
+## 14. Lote de comentarios del 22 de agosto — publicación y verificación
+
+La revisión del 22 de agosto recuperó siete comentarios de audiencia sin respuesta de la Página. Fernando solicitó responderlos y las siete respuestas fueron publicadas mediante Meta Graph API v26. La verificación posterior confirmó en cada caso que el autor era Universe Sent Me, que el `parent` coincidía con el comentario original, que el texto correspondía al aprobado y que la respuesta devolvía `is_hidden=False`.
+
+| Comentario_ID | Señal anonimizada | Respuesta_Meta_ID | Estado del comentario original |
+|---|---|---|---|
+| `122151376083072582_1530994081656231` | Pregunta retórica sobre el remate | `122151376083072582_1093298379810084` | Visible |
+| `122151376011072582_1532233575372330` | Referencia musical | `122151376011072582_1079039618000758` | Visible |
+| `122151376011072582_1375843447402127` | Canción asociada a duelo y memoria | `122151376011072582_1733939491129353` | Visible |
+| `122151376011072582_2266086837529052` | Lista de canciones y recuerdos | `122151376011072582_867448132965690` | Visible |
+| `122151376011072582_1681568486266668` | Enlace de recomendación musical | `122151376011072582_1069736658889220` | `is_hidden=True`; no se modificó |
+| `122151375927072582_1044974971855869` | Aprobación breve de la invitación | `122151375927072582_3819536438198039` | Visible |
+| `122151375627072582_1598637755260672` | Risa y aprobación | `122151375627072582_1048518020894970` | Visible |
+
+El comentario con enlace permaneció oculto según el campo devuelto por Meta; la respuesta de la Página sí quedó visible para la API. No se ejecutó ninguna acción de desocultamiento. El comentario “Elias Delgado yo” quedó fuera porque probablemente etiquetaba a otra persona y no era una solicitud dirigida a Universe Sent Me.
+
+El lote confirma una regla de integridad: un POST exitoso no basta para declarar una respuesta visible. Cada publicación debe verificarse con una lectura posterior que compruebe autoría, relación padre-hijo, texto exacto y estado de ocultamiento. Los siete registros y sus timestamps se conservan en el CSV.
 
 ## Referencias
 

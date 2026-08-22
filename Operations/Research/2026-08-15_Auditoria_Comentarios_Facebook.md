@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "1.8"
+version: "1.9"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -453,4 +453,17 @@ Las siguientes formulaciones son propuestas de estilo derivadas de la revisión 
 
 ## 27. Coherencia documental
 
-Este corte actualiza también `Operations/Research/2026-08-15_Community_Engagement_Log.md` a v1.7 y su CSV asociado con las siete respuestas verificadas. `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md` requiere una nota equivalente en su sección de aprendizaje de comunidad. El changelog debe registrar el cambio; no se requiere modificar canon, calendario, CNT ni inventario de assets.
+Este corte actualiza también `Operations/Research/2026-08-15_Community_Engagement_Log.md` a v1.8 y su CSV asociado con las siete respuestas verificadas. `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md` queda actualizado a v3.24 con la regla de verificación posterior. El changelog registra el cambio; no se requiere modificar canon, calendario, CNT ni inventario de assets.
+
+## 28. Publicación verificada del lote de comentarios del 22 de agosto
+
+Fernando solicitó responder los siete comentarios nuevos detectados el 22 de agosto. Antes de escribir, Meta confirmó que los siete comentarios tenían `PAGE_REPLIES=0`; después del POST, una lectura individual verificó que cada respuesta pertenecía al comentario padre correcto, tenía autoría de Universe Sent Me, conservaba el texto aprobado y devolvía `is_hidden=False`.
+
+| Grupo | Casos | Resultado |
+|---|---:|---|
+| Pregunta retórica y aprobaciones breves | 2 | Respuestas publicadas y verificadas. |
+| Referencias musicales y memoria | 3 | Respuestas publicadas y verificadas; el caso de duelo recibió tono empático. |
+| Reacción de emojis | 1 | Respuesta breve publicada y verificada. |
+| Comentario con enlace musical | 1 | Respuesta publicada y verificada; el comentario original aparecía con `is_hidden=True` y no se desocultó. |
+
+Los siete `Respuesta_Meta_ID` y sus timestamps quedan registrados en `Operations/Research/2026-08-15_Community_Engagement_Log.csv`. No se publicaron duplicados, no se modificó el comentario de Elias Delgado y no se realizó ninguna acción adicional de moderación. El estado `is_hidden=True` del comentario con enlace debe revisarse en una futura sesión de moderación si Fernando desea que también sea visible; la respuesta de la Página no se considera sustituto de desocultar el comentario original.
