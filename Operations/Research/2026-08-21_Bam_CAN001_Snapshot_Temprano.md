@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — CAN-001: snapshot temprano consolidado"
 purpose: "Conservar las métricas públicas observables de la primera cascada de CAN-001 y distinguir datos medidos de campos no expuestos sin autenticación."
-status: "Active — lectura autenticada por Windsor.ai; YouTube pendiente de indexación"
+status: "Active — lectura autenticada por Windsor.ai; YouTube sigue pendiente de indexación"
 created: 2026-08-21
 updated: 2026-08-21
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
@@ -40,6 +40,10 @@ Windsor.ai devolvió registros autenticados para TikTok e Instagram aproximadame
 | TikTok | Windsor.ai, `data_fetched_at` 03:59:22 UTC / 22:59:22 CDT; 3 h 55 min 02 s | 93 views; 0 likes; 0 comentarios; 0 shares; 0 favoritos; avg. watch time 2.15 s; full-watched rate 6 %. | El alcance devuelve 0 pese a tener views; no se usa para tasa de engagement. El avg. watch representa 30.71 % de un clip de 7 s. |
 | Instagram Reels | Windsor.ai, `data_fetched_at` 03:59:54 UTC / 22:59:54 CDT; 3 h 39 min 54 s | 198 views; reach 161; 1 like; 0 comentarios; 0 shares; 0 saves; 1 interacción; avg. watch time 3.744 s; total watch 602.838 s. | El avg. watch representa 53.48 % de 7 s. La tasa de interacción es 0.62 % sobre reach y 0.50 % sobre views. |
 | YouTube Shorts | Windsor.ai consultado cerca de 23:00 CDT; 3 h 10 min 39 s | Sin fila devuelta para `iuHT1kN0Uow`. | El conector todavía no indexa este Short de la fecha actual; no registrar 0 views ni 0 likes como dato autenticado. |
+
+### Reintento de indexación — 22 de agosto
+
+Con Windsor.ai habilitado y el conector de YouTube confirmado, se repitió la consulta a las **14:14:25 CDT** del 22 de agosto, cuando el Short tenía **18 h 24 min 25 s** de antigüedad. La consulta de video y de metadatos siguió devolviendo una lista vacía para el canal `baminacan@gmail.com`; el conector no mostró opciones adicionales ni filtros de fecha específicos que modificaran ese resultado. Por tanto, el Short continúa publicado y visible, pero **no está disponible aún como fila autenticada dentro de Windsor.ai**. Esta condición se conserva como atraso de indexación, no como cero rendimiento.
 
 ## Límites de comparación
 
