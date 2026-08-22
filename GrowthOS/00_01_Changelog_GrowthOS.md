@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 2.82
+**Versión:** 2.83
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.83.00] — 2026-08-22 (Manus): Corrección de fuente del bloque de cadencia.** Fernando confirmó que `2608030`, `2608033`, `2608036`, `2608037` y `2608060` ya estaban publicados y no podían tratarse como contenido nuevo. Las filas nuevas del bloque de revisión quedan reconstruidas a partir del target de Drive `Memes` (`1BpKZpUBIT5jBjkvw7epymlsD3Gp4lwzE`), documentado en `Operations/Research/2026-08-22_Drive_Memes_Seed_Inventory.csv` y `Operations/Research/2026-08-22_Drive_Memes_Visual_Review_Notes.md`. Las 10 filas nuevas son semillas que requieren adaptación original con assets oficiales USM; no son capturas publicables. Se mantuvieron cinco reuse de la cola compacta de junio, todos con revisión de filename/copy. El bloque conserva 15 filas, 10 nuevas/semillas y 5 reuse, todas `Human_Approval=PENDING`; no se programó ni publicó contenido.
 
 - **[2.82.00] — 2026-08-22 (Manus): Bloque piloto de revisión humana para recuperar cadencia.** Fernando aprobó iniciar con 5–6 publicaciones reales por día, una mezcla objetivo de 65%–70% nuevas y 30%–35% reuse, y denominadores separados para imágenes, Reels, Instagram y afiliados. Se creó `Operations/Research/2026-08-31_Propuesta_Cadencia_5_6_Review.md` y su CSV asociado para el bloque del 31 de agosto al 2 de septiembre: 15 filas, 10 nuevas y 5 reuse, todas en `Review`/`Human_Approval=PENDING`. Los cinco assets nuevos restantes requieren revisión visual; CNT-028 requiere asset exacto y aprobación; los cinco reuse requieren filename y copy verificables. El CSV fue validado con 15 filas únicas, mezcla 10/5 y ningún estado de publicación autorizado. No se programó, publicó ni modificó el calendario activo.
 
