@@ -1,10 +1,10 @@
 ---
 title: "Brief de celda Reels Motion + POV/Meme 001"
-purpose: "Diseñar los tres primeros casos controlados para probar si el movimiento físico inmediatamente legible, combinado con un hook POV o un meme reconocible, supera en descubrimiento y compartidos al formato tipo podcast/radio."
+purpose: "Diseñar los tres primeros casos controlados para probar si el movimiento físico inmediatamente legible, combinado con un hook situacional o un meme reconocible, supera en descubrimiento y compartidos al formato tipo podcast/radio; MPM-001 abre además una serie musical recurrente de Elara caminando con audífonos."
 status: Review
 created: 2026-08-22
 updated: 2026-08-22
-version: "1.4"
+version: "1.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "../../GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -25,13 +25,13 @@ Este documento está en **Review** y requiere aprobación humana antes de prepar
 
 La celda reemplaza temporalmente a `Dialogue_radio` como prioridad de adaptación. La familia de radio no se elimina del historial: queda como observación secundaria y su brief anterior permanece archivado. La hipótesis activa de diseño es `HB-REEL-MOTION-POV-MEME-01`.
 
-## 2. Corrección editorial del caso Piscis
+## 2. Nueva premisa editorial de MPM-001
 
 El caso de referencia no utiliza a Evan. La escena correcta es:
 
-> **Elara camina por el bosque usando audífonos. Wilfred aparece detrás, la sigue y le habla, pero Elara lo ignora porque viene concentrada en sus audífonos. El texto visible es `POV: Eres Piscis`.**
+> **Elara camina por el bosque usando audífonos. Wilfred aparece detrás, la sigue y le habla, pero Elara lo ignora porque está completamente dentro de su experiencia auditiva. El hook visible es `¿De cuánto te hablan…?`; no se identifica en pantalla qué está escuchando.**
 
-El asset `Elara y Evan en el Bosque.mp4` pertenece a otro Reel más reciente de Elara y Evan juntos en el bosque/campamento. La asociación anterior con `CON-2026-08-09-Elara_Evan_Estrellas` fue retirada y queda pendiente de reasignación al ID nativo correcto. No se debe reutilizar como referencia de personajes para el caso Piscis ni relabelarlo como Wilfred. El caso Piscis permanece pendiente de `Meta_Post_ID`, `Primary_Asset_ID` y reconciliación visual propios.
+El asset `Elara y Evan en el Bosque.mp4` pertenece a otro Reel más reciente de Elara y Evan juntos en el bosque/campamento. La asociación anterior con `CON-2026-08-09-Elara_Evan_Estrellas` fue retirada y queda pendiente de reasignación al ID nativo correcto. No se debe reutilizar como referencia de personajes para MPM-001 ni relabelarlo como Wilfred. MPM-001 permanece pendiente de `Meta_Post_ID`, `Primary_Asset_ID` y reconciliación visual propios.
 
 Las anclas obligatorias del nuevo caso son las siguientes:
 
@@ -43,7 +43,9 @@ Las anclas obligatorias del nuevo caso son las siguientes:
 
 ## 3. Hipótesis y unidad de comparación
 
-> **HB-REEL-MOTION-POV-MEME-01:** los Reels con movimiento físico inmediatamente legible, un hook POV o meme reconocible durante los primeros tres segundos y un payoff visual claro pueden generar más descubrimiento y compartidos que una conversación de estudio que exige escuchar o leer varios turnos.
+> **HB-REEL-MOTION-POV-MEME-01:** los Reels con movimiento físico inmediatamente legible, un hook situacional o meme reconocible durante los primeros tres segundos y un payoff visual claro pueden generar más descubrimiento y compartidos que una conversación de estudio que exige escuchar o leer varios turnos.
+>
+> **Subhipótesis propuesta `HB-REEL-MUSIC-WALK-01`:** una serie de caminatas de Elara con audífonos, donde el audio funciona como identidad emocional pero no se explica en el video, puede crear variantes repetibles de humor visual y abrir una superficie editorial para proponer música sin sacrificar comprensión silenciosa.
 
 La unidad de análisis será **una publicación de Reel por plataforma**, no un asset abstracto. Los tres casos deben publicarse primero en la misma plataforma primaria —Facebook—, sin producto afiliado, sin pauta y sin mezclar sus métricas con imágenes, P0, Wave 1 o afiliación. Si después se hace crosspost, cada plataforma conservará su propio ID y snapshot.
 
@@ -61,7 +63,7 @@ La celda debe tener tres casos comparables para una señal preliminar. Cinco cas
 | Texto en pantalla | Una frase principal; legible en móvil y sin bloques extensos. |
 | `Caption_Treatment` | `caption_minimo`: una línea externa, 0–2 emojis como máximo, sin repetir literalmente todo el texto sobreimpreso. |
 | `Caption_Function` | `reforzar_remate`: el caption agrega complicidad o contexto breve, pero no explica la escena. |
-| Audio | Ambiente o música discreta; el chiste debe entenderse sin audio. No usar diálogo como requisito de comprensión. |
+| Audio | Música o ambiente discreto seleccionado en post; el chiste debe entenderse sin audio. No usar diálogo como requisito de comprensión ni revelar la canción en texto. |
 | Watermark | Ausente o registrado explícitamente; no debe variar entre casos. |
 | Afiliación | Excluida. No agregar productos ni enlaces nativos. |
 | Reuse | Caso nuevo o adaptación con edad mínima de 30 días; no repost idéntico. |
@@ -71,6 +73,25 @@ La celda debe tener tres casos comparables para una señal preliminar. Cinco cas
 
 La igualdad de caption se controla por tratamiento y función, no por copiar la misma frase en los tres casos. `Caption_Treatment` y `Caption_Function` deben registrarse como campos separados en el ledger de cada publicación.
 
+### 4.1 Capa musical de la serie Elara Walk
+
+MPM-001 inaugura una serie opcional de variantes de Elara caminando con audífonos en situaciones distintas. La música no se menciona ni se explica en el hook, en los subtítulos ni en el caption. Puede existir como audio de fondo o como referencia editorial para elegir un sonido, pero la escena debe conservar su comprensión en silencio.
+
+| Campo | Regla para la serie |
+|---|---|
+| `Series_ID` | `ELARA-WALK-MUSIC-01` |
+| `Music_Variant_ID` | Identificador interno de la pista o dirección sonora usada en cada variante |
+| `Music_Reference` | Género, mood o referencia de grupo/artista/canción para curaduría; no se imprime automáticamente en el Reel |
+| `Audio_Source` | Sonido original, pista licenciada o audio disponible en la biblioteca de la plataforma; debe registrarse explícitamente |
+| `Music_Hashtag` | Opcional; máximo uno o dos hashtags relevantes, solo después de validar que describen el audio realmente usado |
+| `Visible_Music_Explanation` | `No` |
+| `Silent_Comprehension` | `Required` |
+| `Character_Anchor` | Sombrero puntiagudo, cabello claro, cardigan café y audífonos visibles |
+
+Las primeras direcciones sonoras que se pueden explorar son: **indie dream-pop suave** para una caminata de desconexión; **alt-pop con pulso firme** para una caminata de indiferencia segura; y **folk etéreo o dark-folk ligero** para una caminata nocturna en el bosque. Estas son direcciones creativas, no canciones aprobadas. El grupo, artista, canción o hashtag concreto se registra solo cuando se haya elegido la pista y se haya comprobado que la publicación puede usarla.
+
+Las variantes futuras pueden cambiar la situación —Wilfred hablando, una reunión incómoda, una caminata nocturna, una entrada triunfal o una reacción a otros personajes— sin cambiar la ancla visual de Elara ni convertir el audio en explicación narrativa. Cada variante debe registrar `Music_Variant_ID`, `Hook_Text`, `Situation_Type`, `Audio_Source` y `Hashtag_Set` por separado.
+
 ## 5. Casos propuestos
 
 ### Caso MPM-001 — Elara ignora a Wilfred
@@ -78,21 +99,27 @@ La igualdad de caption se controla por tratamiento y función, no por copiar la 
 | Campo | Especificación |
 |---|---|
 | `Case_ID` | `MPM-001` |
-| `Family_Candidate` | `POV_character_movement` |
+| `Series_ID` | `ELARA-WALK-MUSIC-01` |
+| `Music_Variant_ID` | `ELARA-WALK-MUSIC-01-V01` |
+| `Audio_Source` | Pendiente de selección: pista original, licenciada o disponible en biblioteca de plataforma. |
+| `Music_Reference` | `Indie dream-pop suave` como dirección inicial; no se menciona en el Reel. |
+| `Music_Hashtag` | Pendiente; máximo uno o dos hashtags después de confirmar la pista usada. |
+| `Visible_Music_Explanation` | `No` |
+| `Family_Candidate` | `Music_walk_situational` |
 | `Concept_ID` | Nuevo concepto; no asignar el concepto de Evan/Elara. |
 | `Experiment_ID` | `EXP-202608-REEL-MOTION-POV-MEME-001` |
 | `Hypothesis_ID` | `HB-REEL-MOTION-POV-MEME-01` |
-| `Hook_Type` | `POV_zodiac_situation` |
-| `On_Screen_Text` | `POV: Eres Piscis` |
+| `Hook_Type` | `direct_question_situational` |
+| `On_Screen_Text` | `¿De cuánto te hablan…?` — no identificar canción, artista o grupo. |
 | `Caption_Treatment` | `caption_minimo` |
 | `Caption_Function` | `reforzar_remate` |
-| `Caption_Proposed` | `No es que no lo escuche… es que trae su propio universo. 👀` |
+| `Caption_Proposed` | `Ella no está disponible en este plano. 👀` — propuesta pendiente de aprobación. |
 | `Characters` | Elara + Wilfred |
-| `Motion_Beat` | Elara camina hacia cámara o en plano lateral; Wilfred la sigue detrás, mueve la boca y gesticula; ella nunca se vuelve. |
+| `Motion_Beat` | Elara camina hacia cámara o en plano lateral con los audífonos visibles; Wilfred la sigue detrás, mueve la boca y gesticula; ella nunca se vuelve ni revela qué audio está escuchando. |
 | `Payoff` | Wilfred se queda un paso atrás y mira a cámara mientras Elara continúa caminando sin enterarse. |
 | `Duration_Target` | 8–9 segundos |
 
-La acción debe comunicar la broma incluso en silencio: los audífonos de Elara son la causa visible de la desconexión, no una explicación posterior. No incluir a Evan, camping, tienda de campaña ni elementos del Reel `CON-2026-08-09-Elara_Evan_Estrellas`.
+La acción debe comunicar la broma incluso en silencio: los audífonos de Elara son la causa visible de la desconexión, no una explicación posterior. No incluir a Evan, camping, tienda de campaña ni elementos del Reel `CON-2026-08-09-Elara_Evan_Estrellas`. La música debe existir solo como pista de audio o referencia editorial externa; no debe convertirse en texto explicativo dentro del video.
 
 ### Caso MPM-002 — Fantasma y los gatos saben algo que él no
 
@@ -140,11 +167,11 @@ El caso prueba si la combinación de hábito digital reconocible y movimiento pu
 
 No se debe interpretar el orden como ranking creativo. Una vez aprobados los tres casos, se recomienda asignar los tres a slots de fuerza equivalente —10:00–11:00, 16:00–17:00 o 19:00–21:00— y registrar el horario exacto. Si la operación lo permite, el orden de publicación debe sortearse entre los tres casos después de verificar identidad y export. No se deben agregar links de Mercado Libre, CTA de producto, boosts ni cambios de caption después de publicar.
 
-El caso MPM-001 no depende de encontrar primero el ID histórico de Piscis para poder producirlo; el ID histórico sirve para reconciliar la evidencia y evitar atribuir el asset de Evan. La pieza nueva debe recibir su propio `Concept_ID`, `Primary_Asset_ID`, `Experiment_ID` e ID nativo después de publicar.
+El caso MPM-001 no depende de encontrar primero el ID histórico de la publicación de referencia para poder producirlo; cualquier ID histórico sirve únicamente para reconciliar evidencia y evitar atribuirle el asset de Evan. La pieza nueva debe recibir su propio `Concept_ID`, `Primary_Asset_ID`, `Experiment_ID` e ID nativo después de publicar.
 
 ## 7. Gate de aprobación
 
-Fernando debe aprobar por separado: el texto `POV: Eres Piscis`, la identidad visual de Elara y Wilfred, la ausencia de Evan, la estructura del meme de Fantasma, la preservación de las gafas de Universe, los tres captions externos, la duración y la exclusión de afiliación. La aprobación de este brief no autoriza generación automática, programación ni publicación.
+Fernando debe aprobar por separado: el hook `¿De cuánto te hablan…?`, la identidad visual de Elara y Wilfred, la ausencia de Evan, la capa musical sin explicación visible, la estructura del meme de Fantasma, la preservación de las gafas de Universe, los tres captions externos, la duración y la exclusión de afiliación. La aprobación de este brief no autoriza generación automática, programación ni publicación.
 
 Después de generar, cada export pasa por revisión de identidad, legibilidad, movimiento, ausencia de watermark no registrado y comprensión sin audio. Después de publicar, el reporte diario registra primero identidad y engagement básico como `L1_Engagement_Observable`; cuando una fuente autorizada exponga views, reach o retención, se añade `L2_Discovery` o `L3_Video_Retention`. Las ventanas exactas de 24/72 horas son opcionales y solo se usan para un cierre contractual comparable. El protocolo completo está en `Operations/Research/2026-08-22_Reels_Metric_Instrumentation_Protocol.md`. No se declara `WIN` con un solo caso; el mínimo es n=3 y la decisión operativa requiere llegar a n=5.
 
@@ -162,7 +189,7 @@ Los puntajes fueron ejecutados con la rúbrica vigente de propuestas de Growth O
 
 Al aprobarse este brief, deberán actualizarse el ledger de publicaciones de Reels, el staging de producción y la evaluación de la hipótesis. Hasta entonces, no se crea CNT, no se modifica el calendario y no se actualiza `ExperimentLog`.
 
-La corrección del caso Piscis y la separación del asset de Evan/Elara quedan enlazadas con el registro maestro, la fuente maestra y la evaluación estructurada. No se requiere crear otro documento conceptual mientras esta celda permanezca en Review.
+La corrección de MPM-001 y la separación del asset de Evan/Elara quedan enlazadas con el registro maestro, la fuente maestra y la evaluación estructurada. La serie musical se documenta dentro de este brief y no requiere otro documento conceptual mientras esta celda permanezca en Review.
 
 ## 10. Paquete técnico de generación visual
 
@@ -218,14 +245,14 @@ Los tres clips deben generarse como piezas independientes de una sola toma conti
 
 | Tiempo | Acción y encuadre | Texto añadido en edición |
 |---|---|---|
-| 0.0–1.2 s | Plano medio vertical. Elara ya camina en primer término; Wilfred entra detrás y abre la boca para hablar. | `POV: Eres Piscis` |
-| 1.2–5.8 s | Tracking lateral suave. Wilfred gesticula y acelera un poco; Elara mantiene el paso, la mirada al frente y los audífonos visibles. | Sin texto adicional. |
+| 0.0–1.2 s | Plano medio vertical. Elara ya camina en primer término; Wilfred entra detrás y abre la boca para hablar; los audífonos están visibles desde el primer cuadro. | `¿De cuánto te hablan…?` |
+| 1.2–5.8 s | Tracking lateral suave. Wilfred gesticula y acelera un poco; Elara mantiene el paso, la mirada al frente y los audífonos visibles, como si estuviera completamente absorbida por una canción no identificada. | Sin texto adicional. |
 | 5.8–8.5 s | Wilfred se detiene, mira a cámara con derrota; Elara sale parcialmente del encuadre sin haberse girado. | Mantener el hook; no añadir explicación. |
 
 **Video prompt in English:**
 
 ```text
-Vertical 9:16 comedic fantasy scene in the established Universe Sent Me 2D painterly style. Elara is a petite young woman with light wavy hair, a pointed brown witch hat, brown knitted cardigan and clearly visible white over-ear headphones. Wilfred is an elderly forest guardian gnome with a pointed red hat, long white beard and green tunic. Elara starts walking calmly through a deep green magical forest in the foreground while Wilfred follows several steps behind her and visibly tries to talk with mouth movement and hand gestures. The camera performs a gentle lateral tracking movement that keeps both characters readable. Elara never turns her head, never makes eye contact and never reacts; the headphones remain visible throughout. By the final beat Wilfred stops, looks directly at the camera with dry defeat, and Elara continues out of the frame. The forest, both characters, their clothing and the headphones exist continuously from the first frame to the last; no character pops in or disappears. Keep the upper third clean for text to be added in post. No dialogue, no narration, no background music, no readable generated text, no logo, no watermark.
+Vertical 9:16 comedic fantasy scene in the established Universe Sent Me 2D painterly style. Elara is a petite young woman with light wavy hair, a pointed brown witch hat, brown knitted cardigan and clearly visible white over-ear headphones. Wilfred is an elderly forest guardian gnome with a pointed red hat, long white beard and green tunic. Elara starts walking calmly through a deep green magical forest in the foreground while Wilfred follows several steps behind her and visibly tries to talk with mouth movement and hand gestures. The camera performs a gentle lateral tracking movement that keeps both characters readable. Elara never turns her head, never makes eye contact and never reacts; the headphones remain visible throughout, and her behavior suggests she is fully absorbed in an unseen song. By the final beat Wilfred stops, looks directly at the camera with dry defeat, and Elara continues out of the frame. The forest, both characters, their clothing and the headphones exist continuously from the first frame to the last; no character pops in or disappears. Keep the upper third clean for the hook to be added in post. Do not generate readable text, lyrics, artist names or song titles. No dialogue, no narration, no logo, no watermark. Use only subtle neutral environmental ambience if audio is generated; the specific music track will be selected and mixed in post.
 ```
 
 ### MPM-002 — Fantasma y los gatos

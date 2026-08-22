@@ -4,7 +4,7 @@ purpose: "Registrar la verificación visual de las referencias generadas para MP
 status: Review
 created: 2026-08-22
 updated: 2026-08-22
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "../../2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md"
@@ -26,13 +26,17 @@ La imagen es vertical 9:16, sin texto, logo ni watermark. Fantasma aparece camin
 
 La primera referencia de Universe mostraba principalmente la espalda y una sola lente parcialmente visible; se descartó y fue movida a `Rejected_References/`. La referencia oficial regenerada `MPM-003_primary_reference_official_style_v2.png` coincide con `Universe_Reference_Sheet.jpeg`: Universe es un gato blanco peludo, las dos gafas redondas doradas ornamentadas están claramente visibles y el teléfono, portal y recorrido siguen legibles. Esta versión es la única referencia válida para la siguiente fase; mantiene el tercio superior limpio y no contiene texto, logos ni watermark.
 
+## Reencuadre musical de MPM-001
+
+La referencia visual oficial de MPM-001 permanece aprobada porque el cambio solicitado no altera la identidad de Elara, Wilfred, el bosque ni la trayectoria base. El caso deja de usar el texto zodiacal `POV: Eres Piscis` y pasa a la serie `ELARA-WALK-MUSIC-01`, con el hook `¿De cuánto te hablan…?`. La música se seleccionará o mezclará en postproducción; no se identifica la canción, el grupo o el artista dentro del Reel. El hashtag musical es opcional y solo se registra después de confirmar el audio realmente utilizado.
+
 ## Estado de archivos
 
 Los archivos en `Rejected_References/` son renders anteriores que no respetaban el estilo ni los personajes de `Elementos`; se conservan solo para trazabilidad y no deben volver a usarse. Las referencias oficiales válidas son las tres que terminan en `_official_style_v2.png` en la carpeta principal.
 
 ## Resultado provisional de referencias
 
-MPM-001: la versión `MPM-001_primary_reference_official_style_v2.png` es visualmente apta como referencia primaria. MPM-002: la versión `MPM-002_primary_reference_official_style_v2.png` es visualmente apta como referencia primaria, con revisión de continuidad de Fantasma y gatos pendiente durante video. MPM-003: solo `MPM-003_primary_reference_official_style_v2.png` es apta. Estas imágenes todavía no son videos finales y no autorizan publicación.
+MPM-001: la versión `MPM-001_primary_reference_official_style_v2.png` es visualmente apta como referencia primaria y sigue siendo válida para la variante musical; el hook y el audio se resolverán en edición/postproducción. MPM-002: la versión `MPM-002_primary_reference_official_style_v2.png` es visualmente apta como referencia primaria, con revisión de continuidad de Fantasma y gatos pendiente durante video. MPM-003: solo `MPM-003_primary_reference_official_style_v2.png` es apta. Estas imágenes todavía no son videos finales y no autorizan publicación.
 
 ## Revisión de elementos oficiales de My Drive
 
@@ -68,7 +72,7 @@ La consulta se realizó sobre `My Drive/Universe sent me/USM/Elementos` con esto
 | `Official_Element_Refs/Universe_Reference_Sheet.jpeg` | `Elementos/PERSONAJES/UNIVERSE/Universe Reference Sheet.jpeg` | `1qAm2-UCHyQDPylskRRz6Om9Gd6O4Aqm4` | Pelaje, proporciones y gafas de Universe. |
 | `Official_Element_Refs/Bosque_Ancestral_1.jpeg` | `Elementos/LUGARES/Bosque Ancestral 1.jpeg` | `19lBd3RGBYbieOQ-Mpr_26HSTuqjw_hjQ` | Fondo y lenguaje visual del bosque. |
 
-Estas copias locales son referencias de trabajo del paquete de producción; la fuente de verdad de identidad continúa siendo My Drive/Elementos. Si los archivos cambian en Drive, debe repetirse la verificación visual antes de generar video.
+Estas copias locales son referencias de trabajo del paquete de producción; la fuente de verdad de identidad continúa siendo My Drive/Elementos. La actualización musical de MPM-001 no cambia la procedencia de sus referencias ni autoriza generación, publicación o programación. Si los archivos cambian en Drive, debe repetirse la verificación visual antes de generar video.
 
 ## Almacenamiento operativo en Drive
 

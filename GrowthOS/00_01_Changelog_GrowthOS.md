@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 2.78
+**Versión:** 2.79
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.79.00] — 2026-08-22 (Manus): Reencuadre de MPM-001 como serie musical de Elara.** Por confirmación de Fernando, MPM-001 ya no debe usar ni volver a publicar el texto `POV: Eres Piscis`. La escena conserva a Elara caminando con audífonos y a Wilfred siguiéndola, pero el nuevo hook es `¿De cuánto te hablan…?`. La canción, grupo o artista que escucha Elara no se explica en pantalla ni en el caption; se registra como `Series_ID=ELARA-WALK-MUSIC-01`, `Music_Variant_ID`, `Audio_Source`, `Music_Reference` y `Music_Hashtag` opcional. Se actualizó el brief de la celda a v1.5, las notas de referencias a v1.2, la evaluación estructurada a v1.4, el protocolo L0–L4 a v1.2, el Registro Maestro de Reels a v3.5 y la fuente maestra a v2.24. La referencia histórica de Piscis permanece como evidencia reportada, no como copy vigente. MPM-001 sigue sin CNT, calendario, programación o publicación; MPM-002 y MPM-003 siguen pendientes de generación por cuota de video.
 
 - **[2.78.00] — 2026-08-22 (Manus): Playbook operativo de cadencia diaria de 5–7 piezas.** Se actualizó `Operations/Research/2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md` a v1.3 y se renombró funcionalmente como playbook de cadencia diaria. La matriz propuesta establece seis publicaciones de lunes a jueves, cinco viernes y sábado y seis el domingo, con un séptimo slot exploratorio opcional; el promedio base es 5.7 piezas por día y la mezcla objetivo es 65%–70% contenido nuevo y 30%–35% reuse, con máximo ordinario de dos reuse diarios. Se añadieron cartera por función editorial, tratamientos de caption, reserva aprobada, `Slot_No_Publicado`, preflight por fila, gates de aprobación, trazabilidad de Meta/Drive, medición diaria y reglas de ajuste. Reels, Instagram y afiliados permanecen fuera del denominador principal de imágenes. La propuesta no modifica el calendario activo 17–30, no programa ni publica contenido y requiere aprobación humana antes de cualquier aplicación. Se actualizó `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` a v2.23 y `GrowthOS/00_Índice.md` a v6.1.
 

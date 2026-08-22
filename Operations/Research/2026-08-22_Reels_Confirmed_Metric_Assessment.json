@@ -4,7 +4,7 @@
   "status": "Active",
   "created": "2026-08-22",
   "updated": "2026-08-22",
-  "version": "1.3",
+  "version": "1.4",
   "author": "Manus AI",
   "related_documents": [
     "Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv",
@@ -127,16 +127,17 @@
         "Family_Candidate": "POV_character_movement",
         "Platform": "Facebook",
         "Meta_Post_ID": "Pending_native_ID_confirmation",
-        "Description": "Elara walks through the forest wearing headphones while Wilfred appears behind her, talks to her and is ignored; on-screen text reported by Fernando as POV: Eres Piscis.",
+        "Description": "Elara walks through the forest wearing headphones while Wilfred appears behind her, talks to her and is ignored; the new MPM-001 hook is ¿De cuánto te hablan…? and the music remains unidentified in the Reel.",
         "Reported_Performance": "Fernando reports higher impact than the podcast-style Reels.",
         "Evidence_Level": "Human_report_high_signal_pending_native_ID_and_metric_window",
         "Identity_Correction": "This is not the Elara+Evan camping/forest asset. The nearby asset Elara y Evan en el Bosque belongs to a separate, more recent Reel and has been removed from the previous mapping.",
-        "Interpretation": "Priority design input for the next test cell, not yet a quantified record. The case needs its own native ID and source export before it can be measured."
+        "Interpretation": "Priority design input for the next test cell and first candidate in ELARA-WALK-MUSIC-01, not yet a quantified record. The case needs its own native ID, source export and Music_Variant_ID before it can be measured."
       }
     ],
-    "source_note": "The high-signal case descriptions and identity correction are based on Fernando's direct project confirmation on 2026-08-22; native Meta ID and export remain pending.",
+    "source_note": "The high-signal case descriptions and identity correction are based on Fernando's direct project confirmation on 2026-08-22. The MPM-001 hook and music-series reframing are also based on Fernando's follow-up confirmation; native Meta ID, export and final audio selection remain pending.",
     "minimum_next_cell": {
       "Hypothesis_ID": "HB-REEL-MOTION-POV-MEME-01",
+      "Related_Hypothesis_ID": "HB-REEL-MUSIC-WALK-01",
       "minimum_cases": 3,
       "operational_cases": 5,
     "required_controls": ["platform", "duration_seconds", "hook_0_3s", "motion_legibility", "on_screen_text", "Caption_Treatment", "Caption_Function", "CTA", "reuse_age_days", "Export_SHA256", "Metric_Source", "Metric_Window_Type", "Video_Metrics_Status"],

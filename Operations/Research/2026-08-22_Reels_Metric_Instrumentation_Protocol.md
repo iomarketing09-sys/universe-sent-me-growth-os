@@ -4,7 +4,7 @@ purpose: "Resolver la ausencia intermitente de views, reach y retención en Meta
 status: Active
 created: 2026-08-22
 updated: 2026-08-22
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md"
@@ -80,6 +80,12 @@ Cada Reel debe tener una fila de identidad y producción, aunque algunas métric
 | `Caption_Function` | Función del caption, separada del tratamiento. |
 | `CTA` | `None` para esta celda; no añadir afiliados. |
 | `Reuse_Status` | Nuevo o adaptación con edad documentada; nunca repost idéntico. |
+| `Series_ID` | Identificador de serie cuando aplique; para MPM-001: `ELARA-WALK-MUSIC-01`. |
+| `Music_Variant_ID` | Identificador de la pista o dirección sonora; obligatorio si el Reel usa la capa musical. |
+| `Audio_Source` | Original, licenciada, biblioteca de plataforma, ambiente o `Unavailable`; no inferir. |
+| `Music_Reference` | Género, mood o referencia editorial usada para curar el audio; no equivale a una canción confirmada. |
+| `Music_Hashtag` | Cero, uno o dos hashtags realmente vinculados con el audio usado; no llenar por costumbre. |
+| `Visible_Music_Explanation` | `No` para la serie Elara Walk: el video no identifica artista, grupo o canción. |
 
 ## 5. Campos de métricas por corte diario
 
@@ -144,7 +150,7 @@ Los siguientes controles deben mantenerse constantes para que, cuando aparezcan 
 | Hook | Texto antes de 0.8 segundos y acción visible antes de 1.5 segundos. |
 | Duración | 7–10 segundos, registrando duración real. |
 | Payoff | Remate visual antes del final; no depender del caption. |
-| Audio | No necesario para comprender; evitar que el audio sea el único hook. |
+| Audio | Debe entenderse sin audio; MPM-001 puede usar música en post como capa emocional, pero el audio no debe ser el único hook ni revelar la canción en texto. |
 | Texto | Un template común; el texto exacto se añade en postproducción. |
 | Caption | Mismo tratamiento y función; no introducir CTA o afiliación. |
 | Plataforma | Facebook primero; crossposts medidos como publicaciones independientes. |
@@ -158,11 +164,11 @@ El estado histórico de la familia continúa siendo `L1_Engagement_Observable` h
 
 La próxima acción operativa para cualquier Reel publicado es ejecutar, en este orden, el corte diario de engagement, la lectura de Windsor para el canal correspondiente y la lectura integrada de Instagram cuando exista crosspost o publicación nativa. Para Facebook, el conjunto mínimo recomendado es `Reel_ID`, `created_time`, `reels_post_type`, `reels_permalink_url`, `blue_reels_play_count`, `fb_reels_total_plays`, `fb_reels_replay_count`, `reels_post_impressions_unique`, `post_video_avg_time_watched`, `post_video_complete_views_organic`, `post_video_view_time`, `post_video_social_actions_comment`, `post_video_social_actions_share`, `post_video_total_reactions`, `length` y `data_fetched_at`. Para Instagram, el conjunto mínimo es `media_id`, `timestamp`, `media_type`, `media_product_type`, `media_permalink`, `media_reach`, `media_reel_avg_watch_time`, `media_reel_total_watch_time`, `media_reel_total_interactions`, `media_like_count`, `media_comments_count`, `media_shares`, `media_saved`, `media_follows` y `data_fetched_at`.
 
-MPM-001 debe registrar su identidad nativa cuando Fernando autorice la publicación; después se debe capturar primero `L1` y, en el mismo corte diario, intentar `L2`/`L3` por Windsor. MPM-002 y MPM-003 deben seguir exactamente la misma plantilla cuando se generen y publiquen. La captura no autoriza ninguna publicación ni modificación del calendario.
+MPM-001 debe registrar su identidad nativa cuando Fernando autorice la publicación; además debe conservar `Series_ID=ELARA-WALK-MUSIC-01`, `Music_Variant_ID`, `Audio_Source` y `Music_Hashtag` aunque el hashtag sea `None`. Después se debe capturar primero `L1` y, en el mismo corte diario, intentar `L2`/`L3` por Windsor. MPM-002 y MPM-003 deben seguir exactamente la misma plantilla cuando se generen y publiquen. La captura no autoriza ninguna publicación ni modificación del calendario.
 
 ## 10. Coherencia documental
 
-Esta actualización modifica la disponibilidad operativa de las fuentes de medición, no el calendario, el CNT, el canon, la taxonomía de personajes ni el ledger de afiliados. `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/07_00_Registro_Maestro_Reels.md` ya enlazan el protocolo y no requieren cambios estructurales en esta revisión; solo deberán recibir una actualización futura si se incorpora un nuevo campo permanente al esquema de sus ledgers. El changelog se actualiza con la evidencia de acceso y las reglas de prioridad de fuentes.
+Esta actualización añade campos de audio y serie musical para Reels, pero no modifica el calendario, el CNT, el canon, la taxonomía de personajes ni el ledger de afiliados. `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/07_00_Registro_Maestro_Reels.md` ya enlazan el protocolo y no requieren cambios estructurales en esta revisión; solo deberán recibir una actualización futura si se incorpora un nuevo campo permanente al esquema de sus ledgers. El changelog se actualiza con la evidencia de acceso y las reglas de prioridad de fuentes.
 
 No se modifica calendario, no se crea CNT y no se publica contenido como parte de este protocolo. La programación o publicación requiere su aprobación humana separada.
 
