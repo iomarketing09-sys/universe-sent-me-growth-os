@@ -4,7 +4,7 @@ purpose: "Diseñar los tres primeros casos controlados para probar si el movimie
 status: Review
 created: 2026-08-22
 updated: 2026-08-22
-version: "1.3"
+version: "1.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "../../GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -165,7 +165,7 @@ La corrección del caso Piscis y la separación del asset de Evan/Elara quedan e
 
 ## 10. Paquete técnico de generación visual
 
-El primer set de referencias fue descartado porque no coincidía con el estilo ni los diseños de personaje oficiales de `My Drive/Universe sent me/USM/Elementos`. Se consultaron directamente las carpetas oficiales de `PERSONAJES` y `LUGARES`, y se regeneró un set nuevo con ese material como fuente de verdad. MPM-003 también fue refinada a v2 para asegurar la visibilidad de las gafas. La ejecución debe seguir el orden: referencia primaria oficial → variaciones de encuadre → clip de video → revisión visual → edición exacta del texto → aprobación de export. Todavía no se ha generado ningún video, creado CNT, modificado calendario ni publicado contenido.
+El primer set de referencias fue descartado porque no coincidía con el estilo ni los diseños de personaje oficiales de `My Drive/Universe sent me/USM/Elementos`. Se consultaron directamente las carpetas oficiales de `PERSONAJES` y `LUGARES`, y se regeneró un set nuevo con ese material como fuente de verdad. MPM-003 también fue refinada a v2 para asegurar la visibilidad de las gafas. La ejecución debe seguir el orden: referencia primaria oficial → variaciones de encuadre → clip de video → revisión visual → edición exacta del texto → aprobación de export. Los binarios generados se guardan en paralelo en `My Drive/Universe sent me/USM/Reels/08 Agosto/EXP-202608-REEL-MOTION-POV-MEME-001`; GitHub conserva la fuente documental. MPM-001 ya fue cargado allí. Todavía no se ha creado CNT, modificado calendario ni publicado contenido.
 
 ### 10.1 Definiciones globales
 
@@ -263,7 +263,7 @@ Antes de publicar, cada export debe pasar por cuatro controles: identidad de per
 
 ## 13. Gate siguiente
 
-Las primeras referencias fueron rechazadas por no respetar el estilo de `Elementos`. Las tres referencias regeneradas con los archivos oficiales ya están disponibles: MPM-001, MPM-002 y MPM-003, esta última únicamente en su versión `official_style_v2`. MPM-001 y MPM-002 pasan la revisión preliminar; MPM-003 pasa por identidad de Universe y visibilidad de gafas. La generación de referencias no equivale a aprobar los videos finales. El siguiente gate es aprobar visualmente este set oficial y autorizar la generación de los tres clips. Después se editará el texto exacto y se presentarán los exports para una revisión visual separada. No se crean CNT, no se asignan slots, no se programa y no se publica hasta una aprobación operativa posterior..
+Las primeras referencias fueron rechazadas por no respetar el estilo de `Elementos`. Las tres referencias regeneradas con los archivos oficiales ya están disponibles: MPM-001, MPM-002 y MPM-003, esta última únicamente en su versión `official_style_v2`. MPM-001 y MPM-002 pasan la revisión preliminar; MPM-003 pasa por identidad de Universe y visibilidad de gafas. Las referencias y el video generado de MPM-001 están cargados en [la carpeta operativa de Drive](https://drive.google.com/drive/folders/1NAyNNUnkNF5QGO7oYDgpw4b5poEPTuhX). La generación de referencias no equivale a aprobar los videos finales. El siguiente gate es revisar MPM-001 y, cuando se restablezca la cuota, generar MPM-002 y MPM-003. Después se editará el texto exacto y se presentarán los exports para una revisión visual separada. No se crean CNT, no se asignan slots, no se programa y no se publica hasta una aprobación operativa posterior..
 
 ## Referencias
 

@@ -69,3 +69,16 @@ La consulta se realizó sobre `My Drive/Universe sent me/USM/Elementos` con esto
 | `Official_Element_Refs/Bosque_Ancestral_1.jpeg` | `Elementos/LUGARES/Bosque Ancestral 1.jpeg` | `19lBd3RGBYbieOQ-Mpr_26HSTuqjw_hjQ` | Fondo y lenguaje visual del bosque. |
 
 Estas copias locales son referencias de trabajo del paquete de producción; la fuente de verdad de identidad continúa siendo My Drive/Elementos. Si los archivos cambian en Drive, debe repetirse la verificación visual antes de generar video.
+
+## Almacenamiento operativo en Drive
+
+Por la nueva regla operativa, los assets generados se guardan también en Drive bajo `My Drive/Universe sent me/USM/Reels/08 Agosto/EXP-202608-REEL-MOTION-POV-MEME-001`. La carpeta creada tiene ID `1NAyNNUnkNF5QGO7oYDgpw4b5poEPTuhX` y enlace [abrir carpeta en Drive](https://drive.google.com/drive/folders/1NAyNNUnkNF5QGO7oYDgpw4b5poEPTuhX).
+
+| Archivo | Tipo | ID de Drive | Estado |
+|---|---|---|---|
+| `MPM-001_primary_reference_official_style_v2.png` | Imagen | `1FqRCLNbcpXgkndXp3NRvhyKcpnm5hwYr` | Cargado y verificado. |
+| `MPM-002_primary_reference_official_style_v2.png` | Imagen | `1XrYVfyAY1SrLFQbwBo2MrbBhOTgrZz7w` | Cargado y verificado. |
+| `MPM-003_primary_reference_official_style_v2.png` | Imagen | `1TJN40tg_M8996z-MdiziHBQOfG3yDVkH` | Cargado y verificado. |
+| `MPM-001_motion_pov_v1.mp4` | Video | `17LEIdGGwFhLXzOHJFk4Ec_mAwK1kx2nl` | Cargado y verificado; pendiente de revisión operativa. |
+
+Los elementos oficiales originales permanecen en `Elementos` y no se duplican en esta carpeta experimental. Las referencias rechazadas tampoco se suben a Drive. GitHub conserva el brief, los prompts, la trazabilidad y la fuente oficial documental; Drive conserva los binarios operativos.
