@@ -10,6 +10,7 @@ fields = [
     'Reel_Record_ID', 'Platform', 'Platform_Content_ID', 'Meta_Reel_ID',
     'Publication_UTC', 'Concept_ID', 'Title_or_Caption', 'Character',
     'Content_Type', 'Evidence_Status', 'Drive_Evidence_Status',
+    'Asset_Match_Status', 'Asset_Relationship', 'Editorial_Qualification',
     'Experiment_ID', 'Hypothesis_ID', 'Crosspost_Status',
     'Production_Status', 'Publication_Status', 'Metrics_Status',
     'Views', 'Reach', 'Engagement', 'Source', 'Last_Sync'
@@ -33,6 +34,9 @@ for idx, record in enumerate(data.get('records', []), start=1):
         'Content_Type': record.get('content_type', ''),
         'Evidence_Status': record.get('evidence_status', ''),
         'Drive_Evidence_Status': drive_status,
+        'Asset_Match_Status': record.get('asset_match_status', ''),
+        'Asset_Relationship': record.get('asset_relationship', ''),
+        'Editorial_Qualification': record.get('editorial_qualification', ''),
         'Experiment_ID': experiment_id if experiment_id != 'Sin_etiqueta_historica' else '',
         'Hypothesis_ID': '|'.join(hypothesis_ids),
         'Crosspost_Status': record.get('crosspost_status', '') or '',

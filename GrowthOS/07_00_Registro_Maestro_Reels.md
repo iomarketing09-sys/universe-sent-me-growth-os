@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-21
-**Versión:** 2.7
+**Versión:** 2.8
 **Autor:** Manus AI (CGO)
 **Documentos relacionados:** `05_00_Calendario_01_02_Ago.md`, `Operations/Memories/deep_dive_reels_comparativo.md`, `../Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`, `../Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json`, `../Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json`, `../Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json`, `../Operations/Research/2026-08-19_Decisiones_Reconciliacion_Reels.json`, `../Operations/Research/2026-08-19_Piezas_Sin_Cascada_Revision.json`, `../Operations/Research/2026-08-19_Auditoria_Assets_Drive_Reels.md`, `../Operations/Research/2026-08-19_Meta_Reels_Audit.json`, `../Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json`, `../Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json`, `../Operations/Research/Affiliate_Link_Ledger.csv`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Desamor.md`, `14_00_Fuente_Maestra_y_Ledgers.md`
 
@@ -87,7 +87,7 @@ Se ha detectado que varios Reels recientes solo se publicaron en Instagram. Seg�
 
 ## Auditoría operativa de Reels — 2026-08-21
 
-La reconciliación del historial estructurado `Operations/Research/2026-08-19_Historial_Reels_Consolidado.json` queda actualizada a v1.7 y contiene **102 registros de publicaciones de video corto**, distribuidos en Facebook 73, Instagram 16, TikTok 7 y YouTube 6. Estos registros representan publicaciones por plataforma, no piezas únicas: hay 24 conceptos identificables y 17 grupos de crosspost o relación multicanal. Los 51 nuevos registros históricos restantes tienen identidad de publicación Meta confirmada, pero permanecen sin `Concept_ID` o asset de Drive hasta reconciliación posterior. Las métricas no se suman entre plataformas.
+La reconciliación del historial estructurado `Operations/Research/2026-08-19_Historial_Reels_Consolidado.json` queda actualizada a v1.9 y contiene **102 registros de publicaciones de video corto**, distribuidos en Facebook 73, Instagram 16, TikTok 7 y YouTube 6. Estos registros representan publicaciones por plataforma, no piezas únicas: hay 24 conceptos identificables y 17 grupos de crosspost o relación multicanal. Los 51 nuevos registros históricos restantes tienen identidad de publicación Meta confirmada, pero permanecen sin `Concept_ID` o asset de Drive hasta reconciliación posterior. Las métricas no se suman entre plataformas.
 
 | Control | Resultado actual |
 |---|---|
@@ -109,13 +109,15 @@ También se incorporaron al historial los Reels recientes `Remote Control` (`281
 
 La ampliación histórica de mayo/junio añadió 54 publicaciones de video identificadas por Meta. Tres tienen match visual exacto con Drive y fueron integradas con evidencia de asset; las otras 51 quedaron como identidad de publicación con `Asset_Match_Status=Pending_Drive_or_local_asset_match`. Además, se conservaron tres matches exactos entre Drive y Meta: `Fantasma_tranquilo_con_viento_202605241629.mp4` → Reel `1877535942934184`; el asset set de los dos clips `Man_*_20260613` → Reel `2417378928740605`; y `Pato_villano_mirando_cámara_POV_EresAries.mp4` → Reel `1049041731412120`. El archivo `Wilfred realista haciendo una posion.mp4` permanece sin match confirmado después de dos controles visuales negativos; la matriz completa está en `Operations/Research/2026-08-21_Reels_Drive_Meta_Crossmatch_Review.csv`.
 
+La primera revisión visual priorizada cubrió los cinco Reels de Facebook con mayor interacción entre los 51 pendientes: `1020271167128162`, `1303110198700919`, `1014879604586494`, `4244177002465660` y `1314043717583273`. Se compararon sus cinco candidatos principales de Drive. El resultado fue `No_Match_In_Reviewed_Set` para los cinco; esto no es una exclusión global del inventario de Drive. Los registros quedan en cola para una búsqueda más amplia únicamente si su valor analítico justifica el coste de revisión.
+
 ### Estado de Maeve
 
 El documento `Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Desamor.md` conserva el proyecto de Maeve como **dirección de producción en revisión**, no como Reel publicado. El tratamiento `Crave You — Maeve entre todas las miradas` y su variante `La habitación de las plumas` permanecen en `REVIEW`; no existe todavía un `Platform_Content_ID` ni un export de video incorporado al historial de Reels. Debe tratarse como `En_Produccion/Pendiente_Revision`, no como publicación, métrica o experimento cerrado. Si Fernando se refiere a otro Reel de Maeve distinto, habrá que vincularlo mediante nombre exacto del archivo, fecha o ID nativo antes de añadirlo.
 
 ### Brecha principal
 
-Sí existe información histórica de Reels, pero estaba repartida entre el historial multicanal, auditorías de Meta/Windsor, documentos de producción y el registro maestro. El problema no era ausencia total de publicaciones; era que no había una vista operativa actualizada que distinguiera **publicado**, **programado**, **en producción**, **en revisión** y **medido**. La auditoría actual establece esa separación y deja las métricas faltantes como pendientes explícitos. De los 102 registros actuales, 32 tienen evidencia de asset en Drive, 87 tienen engagement, 27 tienen views y 14 tienen reach; el caso de Wilfred permanece en revisión y los 51 candidatos Meta adicionales no reciben vínculos inventados.
+Sí existe información histórica de Reels, pero estaba repartida entre el historial multicanal, auditorías de Meta/Windsor, documentos de producción y el registro maestro. El problema no era ausencia total de publicaciones; era que no había una vista operativa actualizada que distinguiera **publicado**, **programado**, **en producción**, **en revisión** y **medido**. La auditoría actual establece esa separación y deja las métricas faltantes como pendientes explícitos. De los 102 registros actuales, 32 tienen evidencia de asset en Drive, 87 tienen engagement, 27 tienen views y 14 tienen reach; el caso de Wilfred permanece en revisión, cinco candidatos prioritarios ya tienen revisión TOP5 sin match y los 51 candidatos Meta adicionales no reciben vínculos inventados.
 
 ## Actualización operativa — 2026-08-20
 

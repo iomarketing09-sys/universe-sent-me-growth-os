@@ -3,8 +3,8 @@
   "purpose": "Inventario reconciliable de Reels y videos cortos publicados; no infiere cross-posts sin evidencia explícita.",
   "status": "Active",
   "created_at": "2026-08-19",
-  "last_updated": "2026-08-21",
-  "version": "1.7",
+  "last_updated": "2026-08-22",
+  "version": "1.9",
   "author": "Manus AI",
   "related_documents": [
     "2026-08-19_Relaciones_Reels_Alta_Evidencia.json",
@@ -1633,7 +1633,9 @@
       "permalink_url": "https://www.facebook.com/reel/1877535942934184/",
       "is_published": true,
       "metrics_status": "Meta_interactions_lifetime_consulted; views_reach_pendientes",
-      "editorial_qualification": "Exclude_from_clean_editorial_comparables_until_external_url_treatment_is_coded"
+      "editorial_qualification": "Exclude_from_clean_editorial_comparables_until_external_url_treatment_is_coded",
+      "asset_match_status": "Match_Visual_Exact",
+      "asset_relationship": "Single_asset_match"
     },
     {
       "platform": "Facebook",
@@ -1663,7 +1665,8 @@
       "permalink_url": "https://www.facebook.com/reel/2417378928740605/",
       "is_published": true,
       "metrics_status": "Meta_interactions_lifetime_consulted; views_reach_pendientes",
-      "editorial_qualification": "Historical_editorial_record; character_not_canonized_from_filename"
+      "editorial_qualification": "Historical_editorial_record; character_not_canonized_from_filename",
+      "asset_match_status": "Match_Visual_Exact_Asset_Set"
     },
     {
       "platform": "Facebook",
@@ -1691,7 +1694,9 @@
       "permalink_url": "https://www.facebook.com/reel/1049041731412120/",
       "is_published": true,
       "metrics_status": "Meta_interactions_lifetime_consulted; views_reach_pendientes",
-      "editorial_qualification": "Exclude_from_clean_comparables_until_AI_watermark_and_external_character_treatment_are_coded"
+      "editorial_qualification": "Exclude_from_clean_comparables_until_AI_watermark_and_external_character_treatment_are_coded",
+      "asset_match_status": "Match_Visual_Exact",
+      "asset_relationship": "Single_asset_match"
     },
     {
       "platform": "Facebook",
@@ -2204,7 +2209,20 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Pending_Drive_or_local_asset_match",
+      "asset_review_status": "No_Match_In_Reviewed_Set",
+      "reconciliation_review_status": "Reviewed_Top5_No_Match",
+      "reviewed_on": "2026-08-22",
+      "review_batch_id": "TOP5",
+      "reviewed_drive_candidate_ids": [
+        "188pysIihyxZloBCq62C76fRU_njNkvhF",
+        "1BCD-xZXdt3ZEfQUWmPJXBcwc4tPRfOjB",
+        "1HFzRgE6keLuzBsH7LXFGhVi-cRxiqEAq",
+        "1QNH3xKYkgVeXfSNbokAWEOlGwVqcl-BM",
+        "1gMzgUTWj6pjSk1Ly302uu60oIec4pTs1"
+      ],
+      "reviewed_drive_candidate_count": 5,
+      "review_note": "No visual match in the five highest-ranked Drive candidates; global asset match remains pending and no global exclusion is declared."
     },
     {
       "platform": "Facebook",
@@ -2339,7 +2357,20 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Pending_Drive_or_local_asset_match",
+      "asset_review_status": "No_Match_In_Reviewed_Set",
+      "reconciliation_review_status": "Reviewed_Top5_No_Match",
+      "reviewed_on": "2026-08-22",
+      "review_batch_id": "TOP5",
+      "reviewed_drive_candidate_ids": [
+        "11R4SnZUnPc63fj-Gqbu2TtphiBOa357q",
+        "12gK6J-SwKYMisEpSAV31DCJGl_mW2uZ_",
+        "1LYnpKq7qqjOGSK6AaWJWP7vWJBaX561c",
+        "1bHcZ24HjBewz2l0bt1XNf2wk6kdhDKoM",
+        "1tE84FJLyLNwqELa5E23_7Tn5dvDwN_WI"
+      ],
+      "reviewed_drive_candidate_count": 5,
+      "review_note": "No visual match in the five highest-ranked Drive candidates; global asset match remains pending and no global exclusion is declared."
     },
     {
       "platform": "Facebook",
@@ -2366,7 +2397,20 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Pending_Drive_or_local_asset_match",
+      "asset_review_status": "No_Match_In_Reviewed_Set",
+      "reconciliation_review_status": "Reviewed_Top5_No_Match",
+      "reviewed_on": "2026-08-22",
+      "review_batch_id": "TOP5",
+      "reviewed_drive_candidate_ids": [
+        "11R4SnZUnPc63fj-Gqbu2TtphiBOa357q",
+        "12gK6J-SwKYMisEpSAV31DCJGl_mW2uZ_",
+        "1LYnpKq7qqjOGSK6AaWJWP7vWJBaX561c",
+        "1bHcZ24HjBewz2l0bt1XNf2wk6kdhDKoM",
+        "1tE84FJLyLNwqELa5E23_7Tn5dvDwN_WI"
+      ],
+      "reviewed_drive_candidate_count": 5,
+      "review_note": "No visual match in the five highest-ranked Drive candidates; global asset match remains pending and no global exclusion is declared."
     },
     {
       "platform": "Facebook",
@@ -2636,7 +2680,20 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Pending_Drive_or_local_asset_match",
+      "asset_review_status": "No_Match_In_Reviewed_Set",
+      "reconciliation_review_status": "Reviewed_Top5_No_Match",
+      "reviewed_on": "2026-08-22",
+      "review_batch_id": "TOP5",
+      "reviewed_drive_candidate_ids": [
+        "10SjQf6tIHVDR8lW7ZmH-vl4FRjzNrAaz",
+        "1JT036FJRCxnMH-DXqJ5EUzfJOlQ0YJZc",
+        "1MswyZYpOUp7-CCjiQLzcCmyNXOXUxW89",
+        "1rimI-m7w0FcodKXWE2z0_7Hm0c7LHKEO",
+        "1wL0wmEoJzEE6QB65xXUwcQethEYGbUKf"
+      ],
+      "reviewed_drive_candidate_count": 5,
+      "review_note": "No visual match in the five highest-ranked Drive candidates; global asset match remains pending and no global exclusion is declared."
     },
     {
       "platform": "Facebook",
@@ -2717,7 +2774,20 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Pending_Drive_or_local_asset_match",
+      "asset_review_status": "No_Match_In_Reviewed_Set",
+      "reconciliation_review_status": "Reviewed_Top5_No_Match",
+      "reviewed_on": "2026-08-22",
+      "review_batch_id": "TOP5",
+      "reviewed_drive_candidate_ids": [
+        "15nHZZftnESgshlLevc0gK8N0zSqEq6Pp",
+        "1Ehu7kSMzKMxlPGJVGkiyGoJLnyYHv_B0",
+        "1PnBZqU9JhJYVjHgLpfek-mqZQoyToy-I",
+        "1trt7UB5c9HRNU-wy_pFWcQzbQ3mIombJ",
+        "1tuyTmU-a6TLpfceGiKH9fQXmDi1aur7u"
+      ],
+      "reviewed_drive_candidate_count": 5,
+      "review_note": "No visual match in the five highest-ranked Drive candidates; global asset match remains pending and no global exclusion is declared."
     },
     {
       "platform": "Facebook",
@@ -3390,5 +3460,7 @@
   ],
   "audit_note": "Se añadieron tres Reels recientes de Facebook con IDs y estado de publicación confirmados. Las métricas permanecen nulas cuando no existe una ventana/snapshot comparable.",
   "historical_extension_note": "Three exact visual Drive↔Meta matches were integrated from May/June. Wilfred potion remains pending visual review; date proximity alone never creates a match.",
-  "historical_candidate_note": "All 54 Meta video candidates from May/June are now represented as publication-identity rows. Only exact Drive matches receive Drive evidence; unresolved assets remain pending and are not converted into CNT or canonical concepts."
+  "historical_candidate_note": "All 54 Meta video candidates from May/June are now represented as publication-identity rows. Only exact Drive matches receive Drive evidence; unresolved assets remain pending and are not converted into CNT or canonical concepts.",
+  "match_status_correction": "Exact Drive↔Meta matches are explicitly excluded from the pending asset queue.",
+  "top5_review_note": "Five high-interaction Facebook Reels were visually reviewed against their top five Drive candidates; all five remain unresolved globally, with no match inferred from date proximity."
 }

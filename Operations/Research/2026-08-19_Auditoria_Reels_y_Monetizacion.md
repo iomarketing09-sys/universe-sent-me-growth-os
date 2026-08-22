@@ -4,7 +4,7 @@ purpose: "Separar el rendimiento histórico de Reels del experimento P0 de imág
 status: "Active"
 created: 2026-08-19
 updated: 2026-08-21
-version: "1.8"
+version: "1.9"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -215,6 +215,14 @@ La consulta histórica de solo lectura a Meta recuperó 438 publicaciones de Pá
 El asset de Fantasma se confirmó como el mismo loop del fantasma con sábana y lentes redondos; el asset set del hombre con hoodie coincide con la secuencia de presión en las sienes y anillos de energía; el pato coincide con el traje, fondo cósmico, ajuste de vestuario y relámpagos rojos. El caso de Wilfred no se asignó porque dos candidatos temporalmente cercanos resultaron ser un Reel de cielo y un Reel de carretera nocturna. La fecha cercana por sí sola no crea un match. La matriz completa, incluidos los controles negativos, vive en `Operations/Research/2026-08-21_Reels_Drive_Meta_Crossmatch_Review.csv`.
 
 Los tres matches fueron integrados al historial estructurado y a la lista CSV de publicaciones. Además, las otras 51 publicaciones de video detectadas en Meta quedaron integradas con estado `Pending_Drive_or_local_asset_match`. Todos estos registros son identidad histórica, no experimentos comparables: el Fantasma contiene una URL externa de una app, el pato contiene watermark/tratamiento de IA y el asset set del hoodie todavía no tiene personaje canonizado por filename. Las métricas de Meta se conservan como interacción histórica disponible, pero views, reach y retención permanecen pendientes.
+
+### 10.8 Revisión visual priorizada TOP5
+
+Para optimizar el coste de revisión se priorizaron los cinco Reels pendientes con mayor interacción: `1020271167128162` — 35 interacciones; `1303110198700919` — 24; `1014879604586494` — 20; `4244177002465660` — 19; y `1314043717583273` — 19. Se revisaron cinco candidatos de Drive por Reel, para un total de 25 comparaciones visuales.
+
+Los cinco Reels quedaron en `No_Match_In_Reviewed_Set`. El resultado no significa que estén excluidos de todo Drive; significa únicamente que no coincidieron con los cinco candidatos priorizados. Los controles decisivos fueron: el Reel de 35 interacciones muestra un arroyo y raíces expuestas, mientras el candidato principal era Wilfred con una poción; el Reel de 24 muestra una carretera nocturna con luna, mientras `Universe Real 001–008` contiene selfies, brindis cyberpunk, una mujer y gatos alados; el Reel de 20 muestra cielo con `DESAPENDEJATE`, sin coincidencia en los videos o la imagen `Universe sent me - 022`; el Reel de 19 muestra cielo con una frase sobre gente que no habla, no el Fantasma de agosto; y el Reel de 19 muestra un fondo circular de colores, no la poción de Wilfred.
+
+La matriz ampliada de evidencia se conserva en `Operations/Research/2026-08-21_Reels_Drive_Meta_Crossmatch_Review.csv`. La cola operativa está en `Operations/Research/2026-08-22_Reels_Pending_Asset_Reconciliation_Queue.csv`; el triage completo fecha/filename está en `Operations/Research/2026-08-22_Reels_Pending_Drive_Triage.csv`. No se asignaron CNT ni conceptos canónicos a estos cinco casos.
 
 ## 11. Puente de transferencia Facebook → Reels — 2026-08-21
 
