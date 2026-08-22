@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 2.69
+**Versión:** 2.70
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.70.00] — 2026-08-22 (Manus): Corrección visual contra los elementos oficiales de My Drive.** Fernando indicó que las primeras referencias no coincidían con el estilo de animación ni con los personajes guardados en `My Drive/Universe sent me/USM/Elementos`. Se consultó la carpeta oficial `Elementos` y se descargaron las fuentes de verdad `Elara.jpeg`, `Wilfred.png`, `Fantasma_Reference_Sheet.jpeg`, `Universe_Reference_Sheet.jpeg` y `Bosque Ancestral 1.jpeg` desde `PERSONAJES` y `LUGARES`. Se rechazó y movió a `Rejected_References/` el primer set. Se regeneraron `MPM-001_primary_reference_official_style_v2.png`, `MPM-002_primary_reference_official_style_v2.png` y `MPM-003_primary_reference_official_style_v2.png` con linework oscuro, sombreado gráfico, proporciones 2D y diseños oficiales. La revisión confirma a Elara con sombrero café y cinta morada, cardigan, audífonos y cabello claro; a Wilfred como gnome de sombrero rojo, barba blanca y túnica verde; a Fantasma con sábana blanca, lentes redondos dorados, manos y botas; y a Universe como gato blanco con gafas grandes doradas ornamentadas. Se actualizó el brief a v1.3 y `reference_review_notes.md` a v1.1. No se ha generado video, creado CNT, modificado calendario ni publicado.
 
 - **[2.69.00] — 2026-08-22 (Manus): Referencias primarias generadas y revisadas para Motion + POV/Meme.** Con la aprobación de Fernando, se generaron `MPM-001_primary_reference.png`, `MPM-002_primary_reference.png` y `MPM-003_primary_reference.png` en `Operations/Production/Generated_Reels/Motion_POV_Meme_001/`. MPM-001 cumple identidad de Elara/Wilfred, audífonos, bosque y ausencia de Evan; MPM-002 presenta a Fantasma y tres gatos en un invernadero nuevo, sin copiar el Reel histórico; MPM-003 fue refinado a `MPM-003_primary_reference_v2.png` porque la primera versión no mostraba las dos gafas redondas de Universe con suficiente claridad. El registro `reference_review_notes.md` conserva la revisión. El siguiente gate es aprobar visualmente las referencias y autorizar la generación de los tres clips; no se ha generado video, creado CNT, modificado calendario ni publicado.
 

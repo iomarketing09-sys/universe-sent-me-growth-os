@@ -4,7 +4,7 @@ purpose: "Diseñar los tres primeros casos controlados para probar si el movimie
 status: Review
 created: 2026-08-22
 updated: 2026-08-22
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "../../GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -165,7 +165,7 @@ La corrección del caso Piscis y la separación del asset de Evan/Elara quedan e
 
 ## 10. Paquete técnico de generación visual
 
-El paquete técnico se encuentra en revisión de referencias. Ya se generaron las tres referencias primarias; MPM-003 fue refinada a v2 porque la primera vista no mostraba claramente las dos gafas redondas de Universe. La ejecución debe seguir el orden: referencia primaria → variaciones de encuadre → clip de video → revisión visual → edición exacta del texto → aprobación de export. Todavía no se ha generado ningún video, creado CNT, modificado calendario ni publicado contenido.
+El primer set de referencias fue descartado porque no coincidía con el estilo ni los diseños de personaje oficiales de `My Drive/Universe sent me/USM/Elementos`. Se consultaron directamente las carpetas oficiales de `PERSONAJES` y `LUGARES`, y se regeneró un set nuevo con ese material como fuente de verdad. MPM-003 también fue refinada a v2 para asegurar la visibilidad de las gafas. La ejecución debe seguir el orden: referencia primaria oficial → variaciones de encuadre → clip de video → revisión visual → edición exacta del texto → aprobación de export. Todavía no se ha generado ningún video, creado CNT, modificado calendario ni publicado contenido.
 
 ### 10.1 Definiciones globales
 
@@ -185,11 +185,11 @@ El paquete técnico se encuentra en revisión de referencias. Ya se generaron la
 
 | Caso | Referencias permitidas | Uso | Exclusiones críticas |
 |---|---|---|---|
-| MPM-001 | Referencias compartidas de Elara y Wilfred; `4 - Wilfred_walking_through_forest_2K_202608060317.jpeg`; `5 - Elara_sitting_by_campfire_2K_202608060321.jpeg` solo para identidad y vestuario. | Fijar rostro, sombrero, barba, túnica, cardigan, cabello y proporciones. | No usar `Elara y Evan en el Bosque.mp4`; no incluir a Evan, camping, tienda, mochilas, fogata compartida ni escena de pareja. |
-| MPM-002 | `8 - Fantasma_levitating_above_woods_2K_202608060333.jpeg` como ancla de Fantasma; `3 - Cat_sitting_in_cozy_space_2K_202608060312.jpeg` para lenguaje felino. | Fijar silueta, tono y tratamiento de los gatos sin copiar el Reel histórico. | No reutilizar `Ghost_walks_cats_through_forest_202607240113.mp4` ni `...202607251436.mp4`; no repetir su recorrido ni encuadre. |
-| MPM-003 | `Operations/Production/Generated_Comparable_Assets/FUT-TRANS-003_HB-008_Transformacion_Universe.png`; `3 - Cat_sitting_in_cozy_space_2K_202608060312.jpeg`. | Fijar gato blanco, gafas redondas y proporción de Universe. | Las gafas deben permanecer visibles; no sustituir a Universe por otro gato ni copiar la transformación de `FUT-TRANS-003`. Referencia generada válida: `MPM-003_primary_reference_v2.png`. |
+| MPM-001 | `Official_Element_Refs/Elara.jpeg`, `Official_Element_Refs/Wilfred.png` y `Official_Element_Refs/Bosque_Ancestral_1.jpeg`, descargados de `Elementos/PERSONAJES` y `Elementos/LUGARES`. | Fijar diseño 2D, proporciones, sombrero, audífonos, cardigan, barba, túnica, bastón y bosque oficial. | No usar `Elara y Evan en el Bosque.mp4`; no incluir a Evan, camping, tienda, mochilas, fogata compartida ni escena de pareja. |
+| MPM-002 | `Official_Element_Refs/Fantasma_Reference_Sheet.jpeg`, descargado de `Elementos/PERSONAJES/FANTASMA`; el estilo se alinea con `MPM-001_primary_reference_official_style_v2.png`. | Fijar sábana blanca con pliegues, lentes oscuros redondos con marco dorado, manos, botas y linework oficial. | No convertirlo en un fantasma de ojos negros; no reutilizar `Ghost_walks_cats_through_forest_202607240113.mp4` ni `...202607251436.mp4`; no repetir su recorrido ni encuadre. |
+| MPM-003 | `Official_Element_Refs/Universe_Reference_Sheet.jpeg`, descargado de `Elementos/PERSONAJES/UNIVERSE`; el estilo se alinea con `MPM-001_primary_reference_official_style_v2.png`. | Fijar gato blanco peludo, orejas, gafas grandes redondas doradas ornamentadas, lentes oscuros y correas laterales. | Las gafas deben permanecer visibles; no sustituir a Universe por otro gato ni copiar la transformación de `FUT-TRANS-003`. Referencia generada válida: `MPM-003_primary_reference_official_style_v2.png`. |
 
-Las referencias de personajes se utilizarán únicamente para identidad. La composición, acción, fondo y recorrido se generarán de nuevo para que ningún caso sea un repost o una duplicación de asset. El registro de revisión visual está en `reference_review_notes.md`; MPM-003 solo se considera válido en su versión v2.
+Las referencias de My Drive se utilizarán como fuente de verdad de identidad y estilo. La composición, acción, fondo y recorrido se generarán de nuevo para que ningún caso sea un repost o una duplicación de asset. El registro de revisión visual está en `Generated_Reels/Motion_POV_Meme_001/reference_review_notes.md`. Las primeras referencias generadas quedan descartadas; las únicas válidas son `MPM-001_primary_reference_official_style_v2.png`, `MPM-002_primary_reference_official_style_v2.png` y `MPM-003_primary_reference_official_style_v2.png`.
 
 ### 10.3 Prompt de referencia primaria — MPM-001
 
@@ -263,7 +263,7 @@ Antes de publicar, cada export debe pasar por cuatro controles: identidad de per
 
 ## 13. Gate siguiente
 
-Las tres referencias primarias ya fueron generadas bajo la autorización recibida. MPM-001 y MPM-002 pasan la revisión preliminar; MPM-003 queda aprobado para continuidad únicamente en `MPM-003_primary_reference_v2.png`. La generación de referencias no equivale a aprobar los videos finales. El siguiente gate es aprobar visualmente estas referencias y autorizar la generación de los tres clips. Después se editará el texto exacto y se presentarán los exports para una revisión visual separada. No se crean CNT, no se asignan slots, no se programa y no se publica hasta una aprobación operativa posterior..
+Las primeras referencias fueron rechazadas por no respetar el estilo de `Elementos`. Las tres referencias regeneradas con los archivos oficiales ya están disponibles: MPM-001, MPM-002 y MPM-003, esta última únicamente en su versión `official_style_v2`. MPM-001 y MPM-002 pasan la revisión preliminar; MPM-003 pasa por identidad de Universe y visibilidad de gafas. La generación de referencias no equivale a aprobar los videos finales. El siguiente gate es aprobar visualmente este set oficial y autorizar la generación de los tres clips. Después se editará el texto exacto y se presentarán los exports para una revisión visual separada. No se crean CNT, no se asignan slots, no se programa y no se publica hasta una aprobación operativa posterior..
 
 ## Referencias
 
