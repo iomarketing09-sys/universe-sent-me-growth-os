@@ -1,15 +1,16 @@
 ---
 title: "CAN 001 — Distribución inicial en TikTok, Instagram Reels y YouTube Shorts"
 purpose: "Definir la publicación de lanzamiento de CAN 001 por plataforma, incluyendo una prueba controlada de audio nativo y el protocolo de medición inicial."
-status: "Draft — pending audio selection in each native app"
+status: "Active — TikTok published; Instagram Reels and YouTube Shorts pending"
 created: 2026-08-20
-updated: 2026-08-20
-version: "1.0"
+updated: 2026-08-21
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_CAN001_It_Was_Making_Noise_Production_Package.md"
   - "Operations/Production/2026-08-20_Plan_Lanzamiento_Audiencia_Bam_In_A_Can.md"
   - "Operations/Production/2026-08-20_Piloto_Content_Rewards_Bam_In_A_Can.md"
+  - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
 organization: "Operations/Production"
 ---
 
@@ -60,6 +61,28 @@ No existe aún una base de audiencia que justifique una hora “óptima” decla
 | TikTok | T0, por ejemplo 18:30 | Primer test de audio nativo y alcance. |
 | Instagram Reels | T0 + 20–30 min | Evita publicar idénticamente al mismo segundo y mantiene la ventana comparable. |
 | YouTube Shorts | T0 + 45–60 min | Publica el control con SFX originales antes de cerrar la sesión de comentarios. |
+
+### Registro real — TikTok
+
+| Campo | Dato confirmado |
+|---|---|
+| Estado | Publicado. |
+| Fecha y hora | 21 Ago 2026, 19:04:20 CDT. |
+| ID canónico | `7676640119222209813` |
+| Permalink | `https://www.tiktok.com/@bam_in_a_can/video/7676640119222209813` |
+| Audio nativo | `Do It` — Infraction Music. |
+| Volumen de audio | Pendiente de confirmar. |
+| Copy visible públicamente | `CAN 001 / IT WAS MAKING NOISE FROM THE INSIDE. #BamInACan` |
+| Disclosure | Pendiente de verificar o corregir: el texto `Original fiction. AI-made.` no aparece en la vista pública recuperada. |
+
+La hora se deriva de la marca temporal del ID canónico de TikTok y debe usarse para calcular los snapshots. El detalle definitivo de la publicación y sus métricas queda en `Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv`.
+
+| Hito | Ventana exacta de CAN-001 TikTok |
+|---|---|
+| T+3 h | 21 Ago 2026, 22:04:20 CDT |
+| T+24 h | 22 Ago 2026, 19:04:20 CDT |
+| T+72 h | 24 Ago 2026, 19:04:20 CDT |
+| T+7 d | 28 Ago 2026, 19:04:20 CDT |
 
 ## 5. Respuesta y medición
 

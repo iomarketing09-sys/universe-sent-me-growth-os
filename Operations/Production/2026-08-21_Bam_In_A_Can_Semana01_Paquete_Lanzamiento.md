@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — Semana 01: paquete de lanzamiento"
 purpose: "Organizar el primer bloque de cuatro piezas originales de Bam in a Can antes de publicar, con orden editorial, producción, copy, audio y medición."
-status: "Draft — preproducción; ninguna pieza de la semana está publicada"
+status: "Active — CAN-001 publicado en TikTok; restantes publicaciones pendientes"
 created: 2026-08-21
 updated: 2026-08-21
-version: "1.6"
+version: "1.7"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_Plan_Lanzamiento_Audiencia_Bam_In_A_Can.md"
@@ -29,7 +29,7 @@ El calendario operativo se documenta en `2026-08-21_Bam_In_A_Can_Semana01_Calend
 
 | Orden | ID | Pilar | Función de marca | Estado actual |
 |---:|---|---|---|---|
-| 1 | `CAN-001` | CAN FOUND | Manifiesto: algo vivo dentro de la lata. | Corte final recibido; pendiente selección de audio nativo para TikTok/Instagram y publicación. |
+| 1 | `CAN-001` | CAN FOUND | Manifiesto: algo vivo dentro de la lata. | Publicado en TikTok el 21 Ago a las 19:04 CDT con `Do It` — Infraction Music; Instagram y YouTube pendientes. |
 | 2 | `CAN-002` | CAN FAKE TRAILER | Demostrar que Bam también fabrica productos de archivo que nunca debieron existir. | Corte final validado por Fernando: el recibo permanece vacío, sin números ni códigos de barras legibles. |
 | 3 | `CAN-003` | CAN FOUND | Mostrar que la anomalía puede ocurrir fuera de la lata, manteniendo una sola regla visual imposible. | Montaje cinematográfico de 10 s aprobado para edición: moneda, mecanismos, abolladuras desde dentro y espirales vacíos. |
 | 4 | `CAN-004` | CAN MEME | Abrir una vía más ligera y compartible sin abandonar la estética extraña. | Corte integrado final `Can004.mp4` aprobado para el lote: progresión de miniaturas, cursor, parpadeo y corte negro. |
@@ -58,6 +58,8 @@ El calendario operativo se documenta en `2026-08-21_Bam_In_A_Can_Semana01_Calend
 | Overlay | No agregar otro `CAN 001`; el corte ya tiene marca inferior. |
 | Audio | TikTok e Instagram: audio nativo de tensión a 6–10% solo si conserva el pop y el blink. YouTube: SFX originales como control. |
 | Señal a observar | Shares, rewatch/reproducción y comentarios que repitan la situación sin necesitar lore. |
+
+**Registro de salida TikTok (21 Ago):** ID `7676640119222209813`; permalink `https://www.tiktok.com/@bam_in_a_can/video/7676640119222209813`; audio nativo `Do It` — Infraction Music. El copy visible públicamente muestra `CAN 001 / IT WAS MAKING NOISE FROM THE INSIDE. #BamInACan`. La presencia del disclosure obligatorio `Original fiction. AI-made.` no pudo verificarse en la vista pública y debe confirmarse o corregirse antes del siguiente corte.
 
 ### CAN-002 — *The Memory Printer*
 
