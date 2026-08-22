@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.24"
+version: "2.25"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -117,7 +117,7 @@ La ampliación histórica de mayo/junio integró seis matches visuales exactos D
 
 La corrección humana del 2026-08-22 separa el asset `Elara y Evan en el Bosque.mp4` del caso Piscis. Ese archivo pertenece a otro Reel más reciente de Elara y Evan juntos en el bosque/campamento y queda en `Pending_reassignment_after_human_correction` hasta vincularlo con su publicación exacta. El concepto cross-platform `CON-2026-08-09-Elara_Evan_Estrellas` conserva sus IDs y copy, pero deja de tener ese asset como evidencia directa.
 
-El 2026-08-22 Fernando reencuadró MPM-001: ya no debe volver a producirse ni publicarse con el texto `POV: Eres Piscis`. La pieza se convierte en la primera variante de la serie `ELARA-WALK-MUSIC-01`, con el hook `¿De cuánto te hablan…?`. Elara seguirá caminando con audífonos y Wilfred detrás, pero la canción, artista o grupo no se explicará en pantalla ni en el caption; el audio y cualquier hashtag musical se registrarán como campos operativos después de seleccionar la pista. La referencia histórica de Piscis permanece como evidencia de comportamiento reportado, no como copy vigente de MPM-001.
+El 2026-08-22 Fernando reencuadró MPM-001: ya no debe volver a producirse ni publicarse con el texto `POV: Eres Piscis`. La pieza se convierte en la primera variante de la serie `ELARA-WALK-MUSIC-01`, sin texto sobre la imagen. La idea `cuando te hablan pero tú sigues en tu mundo` funciona como dirección conceptual del hook visual, no como overlay. Elara seguirá caminando con audífonos y Wilfred detrás, pero la canción, artista o grupo no se explicará en pantalla ni en el caption; el audio y cualquier hashtag musical se registrarán como campos operativos después de seleccionar la pista. La referencia histórica de Piscis permanece como evidencia de comportamiento reportado, no como copy vigente de MPM-001.
 
 El playbook operativo actualizado el 2026-08-22 establece una banda de 5–7 publicaciones diarias: seis de lunes a jueves, cinco viernes y sábado, y seis el domingo con un séptimo slot exploratorio opcional. La mezcla objetivo es 65%–70% contenido nuevo y 30%–35% reuse, con máximo ordinario de dos reuse diarios, preflight por fila, reserva aprobada y `Slot_No_Publicado` cuando no exista una pieza válida. La cadencia propuesta no modifica el calendario activo ni autoriza publicaciones; requiere aprobación humana y mantiene Reels, Instagram y afiliados fuera del denominador principal de imágenes.
 

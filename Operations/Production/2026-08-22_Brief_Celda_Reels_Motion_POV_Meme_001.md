@@ -4,7 +4,7 @@ purpose: "Diseñar los tres primeros casos controlados para probar si el movimie
 status: Review
 created: 2026-08-22
 updated: 2026-08-22
-version: "1.5"
+version: "1.7"
 author: "Manus AI (CGO)"
 related_documents:
   - "../../GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -29,7 +29,7 @@ La celda reemplaza temporalmente a `Dialogue_radio` como prioridad de adaptació
 
 El caso de referencia no utiliza a Evan. La escena correcta es:
 
-> **Elara camina por el bosque usando audífonos. Wilfred aparece detrás, la sigue y le habla, pero Elara lo ignora porque está completamente dentro de su experiencia auditiva. El hook visible es `¿De cuánto te hablan…?`; no se identifica en pantalla qué está escuchando.**
+> **Elara camina por el bosque usando audífonos. Wilfred aparece detrás, la sigue y le habla, pero Elara lo ignora porque está completamente dentro de su experiencia auditiva. No habrá texto sobre la imagen: el hook será la situación visual y la música funcionará como capa emocional no explicada.**
 
 El asset `Elara y Evan en el Bosque.mp4` pertenece a otro Reel más reciente de Elara y Evan juntos en el bosque/campamento. La asociación anterior con `CON-2026-08-09-Elara_Evan_Estrellas` fue retirada y queda pendiente de reasignación al ID nativo correcto. No se debe reutilizar como referencia de personajes para MPM-001 ni relabelarlo como Wilfred. MPM-001 permanece pendiente de `Meta_Post_ID`, `Primary_Asset_ID` y reconciliación visual propios.
 
@@ -57,10 +57,10 @@ La celda debe tener tres casos comparables para una señal preliminar. Cinco cas
 |---|---|
 | Plataforma primaria | Facebook; Instagram/TikTok/YouTube solo como crosspost posterior y separado. |
 | Duración | 7–10 segundos por Reel; ningún caso debe superar 12 segundos. |
-| Hook | Texto visible antes de 0.8 s; acción física identificable antes de 1.5 s; sin logo introductorio. |
+| Hook | El hook puede ser textual o puramente visual; en MPM-001 no habrá texto y la acción física debe ser identificable antes de 1.5 s, sin logo introductorio. |
 | Movimiento | Caminar, seguir, cruzar, entrar o salir de una escena; no limitarse a zoom, parpadeo o paneo sobre una imagen fija. |
 | Payoff | Debe entenderse por la imagen final sin depender de explicación en caption. |
-| Texto en pantalla | Una frase principal; legible en móvil y sin bloques extensos. |
+| Texto en pantalla | Por caso: MPM-001 usa `None`; no añadir texto sobre la imagen. Los otros casos pueden usar una sola frase breve si su ficha lo conserva. |
 | `Caption_Treatment` | `caption_minimo`: una línea externa, 0–2 emojis como máximo, sin repetir literalmente todo el texto sobreimpreso. |
 | `Caption_Function` | `reforzar_remate`: el caption agrega complicidad o contexto breve, pero no explica la escena. |
 | Audio | Música o ambiente discreto seleccionado en post; el chiste debe entenderse sin audio. No usar diálogo como requisito de comprensión ni revelar la canción en texto. |
@@ -102,18 +102,18 @@ Las variantes futuras pueden cambiar la situación —Wilfred hablando, una reun
 | `Series_ID` | `ELARA-WALK-MUSIC-01` |
 | `Music_Variant_ID` | `ELARA-WALK-MUSIC-01-V01` |
 | `Audio_Source` | Pendiente de selección: pista original, licenciada o disponible en biblioteca de plataforma. |
-| `Music_Reference` | `Indie dream-pop suave` como dirección inicial; no se menciona en el Reel. |
+| `Music_Reference` | Psicodelia indie/indie-rock; brújula de ambiente proporcionada por Fernando: Tame Impala y Arctic Monkeys — `505`. No se imita ninguna melodía, letra, interpretación ni grabación. |
 | `Music_Hashtag` | Pendiente; máximo uno o dos hashtags después de confirmar la pista usada. |
 | `Visible_Music_Explanation` | `No` |
 | `Family_Candidate` | `Music_walk_situational` |
 | `Concept_ID` | Nuevo concepto; no asignar el concepto de Evan/Elara. |
 | `Experiment_ID` | `EXP-202608-REEL-MOTION-POV-MEME-001` |
 | `Hypothesis_ID` | `HB-REEL-MOTION-POV-MEME-01` |
-| `Hook_Type` | `direct_question_situational` |
-| `On_Screen_Text` | `¿De cuánto te hablan…?` — no identificar canción, artista o grupo. |
+| `Hook_Type` | `visual_situation_no_text` — Elara sigue en su mundo mientras Wilfred intenta hablarle. |
+| `On_Screen_Text` | `None` — no colocar texto sobre la imagen ni identificar canción, artista o grupo. |
 | `Caption_Treatment` | `caption_minimo` |
 | `Caption_Function` | `reforzar_remate` |
-| `Caption_Proposed` | `Ella no está disponible en este plano. 👀` — propuesta pendiente de aprobación. |
+| `Caption_Proposed` | `Ella no está disponible en este plano. 👀` — seleccionado por Fernando; pendiente únicamente de autorización de publicación. |
 | `Characters` | Elara + Wilfred |
 | `Motion_Beat` | Elara camina hacia cámara o en plano lateral con los audífonos visibles; Wilfred la sigue detrás, mueve la boca y gesticula; ella nunca se vuelve ni revela qué audio está escuchando. |
 | `Payoff` | Wilfred se queda un paso atrás y mira a cámara mientras Elara continúa caminando sin enterarse. |
@@ -245,14 +245,14 @@ Los tres clips deben generarse como piezas independientes de una sola toma conti
 
 | Tiempo | Acción y encuadre | Texto añadido en edición |
 |---|---|---|
-| 0.0–1.2 s | Plano medio vertical. Elara ya camina en primer término; Wilfred entra detrás y abre la boca para hablar; los audífonos están visibles desde el primer cuadro. | `¿De cuánto te hablan…?` |
-| 1.2–5.8 s | Tracking lateral suave. Wilfred gesticula y acelera un poco; Elara mantiene el paso, la mirada al frente y los audífonos visibles, como si estuviera completamente absorbida por una canción no identificada. | Sin texto adicional. |
-| 5.8–8.5 s | Wilfred se detiene, mira a cámara con derrota; Elara sale parcialmente del encuadre sin haberse girado. | Mantener el hook; no añadir explicación. |
+| 0.0–1.2 s | Plano medio vertical. Elara ya camina en primer término; Wilfred entra detrás y abre la boca para hablar; los audífonos están visibles desde el primer cuadro. | Sin texto. |
+| 1.2–5.8 s | Tracking lateral suave. Wilfred gesticula y acelera un poco; Elara mantiene el paso, la mirada al frente y los audífonos visibles, completamente absorbida por una canción no identificada. | Sin texto. |
+| 5.8–8.5 s | Wilfred se detiene, mira a cámara con derrota; Elara sale parcialmente del encuadre sin haberse girado. | Sin texto; el remate vive en la acción, la música y el caption. |
 
 **Video prompt in English:**
 
 ```text
-Vertical 9:16 comedic fantasy scene in the established Universe Sent Me 2D painterly style. Elara is a petite young woman with light wavy hair, a pointed brown witch hat, brown knitted cardigan and clearly visible white over-ear headphones. Wilfred is an elderly forest guardian gnome with a pointed red hat, long white beard and green tunic. Elara starts walking calmly through a deep green magical forest in the foreground while Wilfred follows several steps behind her and visibly tries to talk with mouth movement and hand gestures. The camera performs a gentle lateral tracking movement that keeps both characters readable. Elara never turns her head, never makes eye contact and never reacts; the headphones remain visible throughout, and her behavior suggests she is fully absorbed in an unseen song. By the final beat Wilfred stops, looks directly at the camera with dry defeat, and Elara continues out of the frame. The forest, both characters, their clothing and the headphones exist continuously from the first frame to the last; no character pops in or disappears. Keep the upper third clean for the hook to be added in post. Do not generate readable text, lyrics, artist names or song titles. No dialogue, no narration, no logo, no watermark. Use only subtle neutral environmental ambience if audio is generated; the specific music track will be selected and mixed in post.
+Vertical 9:16 comedic fantasy scene in the established Universe Sent Me 2D painterly style. Elara is a petite young woman with light wavy hair, a pointed brown witch hat, brown knitted cardigan and clearly visible white over-ear headphones. Wilfred is an elderly forest guardian gnome with a pointed red hat, long white beard and green tunic. Elara starts walking calmly through a deep green magical forest in the foreground while Wilfred follows several steps behind her and visibly tries to talk with mouth movement and hand gestures. The camera performs a gentle lateral tracking movement that keeps both characters readable. Elara never turns her head, never makes eye contact and never reacts; the headphones remain visible throughout, and her behavior suggests she is fully absorbed in an unseen song. By the final beat Wilfred stops, looks directly at the camera with dry defeat, and Elara continues out of the frame. The forest, both characters, their clothing and the headphones exist continuously from the first frame to the last; no character pops in or disappears. Keep the upper third and both characters' faces clean; no text will be added to the image or in post. Do not generate readable text, lyrics, artist names or song titles. No dialogue, no narration, no logo, no watermark. Use only subtle neutral environmental ambience if audio is generated; the specific music track will be selected and mixed in post.
 ```
 
 ### MPM-002 — Fantasma y los gatos
@@ -289,7 +289,30 @@ Para no introducir una variable oculta, los tres exports deben usar el mismo mar
 
 Antes de publicar, cada export debe pasar por cuatro controles: identidad de personajes, trayectoria de movimiento, legibilidad del hook sin audio y ausencia de watermark o producto. Después de publicar, se guardarán snapshots de 24 y 72 horas con la misma definición de views, reach, no seguidores, retención inicial, tiempo medio, completación, shares, comentarios, respuestas y seguidores ganados.
 
-## 13. Gate siguiente
+## 13. Plan de publicación manual de MPM-001
+
+MPM-001 se recomienda como publicación primaria en **Facebook**, con una subida separada a **Instagram** si el mismo audio está disponible o puede incorporarse legalmente desde la biblioteca de la plataforma. La primera prueba no debe dispersarse simultáneamente en TikTok y YouTube: esos crossposts pueden ejecutarse después como publicaciones independientes, con sus propios IDs y métricas, pero no son necesarios para responder la pregunta inicial.
+
+La ventana recomendada es **17:00–18:00 en `America/Matamoros`**, con 17:00 como punto central. La evidencia histórica considera 15:00 y 18:00 franjas prometedoras, pero no demuestra un horario ganador; por eso esta hora se trata como una elección operativa razonable y no como una conclusión causal. Si la subida ocurre fuera de esa ventana, debe conservarse la hora real y no modificarse después para aparentar equivalencia.
+
+| Orden | Acción manual | Regla de control |
+|---:|---|---|
+| 1 | Subir a Facebook | Video vertical sin texto sobre la imagen; usar el export aprobado después de añadir el audio elegido. |
+| 2 | Caption | `Ella no está disponible en este plano. 👀` exactamente; no agregar explicación de la canción. |
+| 3 | Audio | Registrar pista/audio nativo, ID o nombre disponible, fuente y duración; no usar una imitación generada de una canción existente. |
+| 4 | Hashtags | Para la primera prueba: ninguno, salvo que Fernando decida usar uno o dos hashtags que correspondan exactamente al audio elegido. |
+| 5 | Instagram | Subir como publicación independiente, idealmente 10–20 minutos después, usando el mismo export y audio equivalente; registrar `IG_Media_ID` y permalink separados. |
+| 6 | TikTok/YouTube | Posponer para no abrir variables adicionales en la primera lectura; si se ejecutan, tratarlos como crossposts independientes. |
+
+### Afiliación
+
+**No agregaría un producto de afiliado a MPM-001.** El objetivo de esta pieza es medir si la combinación de movimiento, situación visual y atmósfera musical funciona. Un producto nativo añadiría una variable comercial y podría cambiar el comportamiento de la audiencia, el caption, el audio o la intención de la publicación. Si se quiere monetizar otra pieza, debe seleccionarse fuera de esta celda y registrarse en el ledger de afiliados con su propio enlace, etiqueta, producto y snapshot; no debe entrar en el rendimiento de MPM-001.
+
+### Medición posterior
+
+Después de la subida manual, Fernando debe proporcionar o confirmar los IDs nativos. El corte diario registrará primero `L1_Engagement_Observable` y luego intentará `L2/L3` mediante Windsor o Instagram integrado. La fila debe conservar `Series_ID=ELARA-WALK-MUSIC-01`, `Music_Variant_ID=ELARA-WALK-MUSIC-01-V01`, `Audio_Source`, `Music_Reference`, `Music_Hashtag=None` si no se usa hashtag, `Published_At_Local`, `Export_SHA256`, `Platform_Content_ID` y permalink. Esta publicación no recibe un veredicto de éxito con un solo corte.
+
+## 14. Gate siguiente
 
 Las primeras referencias fueron rechazadas por no respetar el estilo de `Elementos`. Las tres referencias regeneradas con los archivos oficiales ya están disponibles: MPM-001, MPM-002 y MPM-003, esta última únicamente en su versión `official_style_v2`. MPM-001 y MPM-002 pasan la revisión preliminar; MPM-003 pasa por identidad de Universe y visibilidad de gafas. Las referencias y el video generado de MPM-001 están cargados en [la carpeta operativa de Drive](https://drive.google.com/drive/folders/1NAyNNUnkNF5QGO7oYDgpw4b5poEPTuhX). La generación de referencias no equivale a aprobar los videos finales. El siguiente gate es revisar MPM-001 y, cuando se restablezca la cuota, generar MPM-002 y MPM-003. Después se editará el texto exacto y se presentarán los exports para una revisión visual separada. No se crean CNT, no se asignan slots, no se programa y no se publica hasta una aprobación operativa posterior..
 

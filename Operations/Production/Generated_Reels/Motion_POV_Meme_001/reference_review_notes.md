@@ -28,7 +28,7 @@ La primera referencia de Universe mostraba principalmente la espalda y una sola 
 
 ## Reencuadre musical de MPM-001
 
-La referencia visual oficial de MPM-001 permanece aprobada porque el cambio solicitado no altera la identidad de Elara, Wilfred, el bosque ni la trayectoria base. El caso deja de usar el texto zodiacal `POV: Eres Piscis` y pasa a la serie `ELARA-WALK-MUSIC-01`, con el hook `¿De cuánto te hablan…?`. La música se seleccionará o mezclará en postproducción; no se identifica la canción, el grupo o el artista dentro del Reel. El hashtag musical es opcional y solo se registra después de confirmar el audio realmente utilizado.
+La referencia visual oficial de MPM-001 permanece aprobada porque el cambio solicitado no altera la identidad de Elara, Wilfred, el bosque ni la trayectoria base. El caso deja de usar el texto zodiacal `POV: Eres Piscis` y pasa a la serie `ELARA-WALK-MUSIC-01`, sin texto sobre la imagen. La idea `¿De cuánto te hablan pero tú sigues en tu mundo?` queda como guía conceptual del hook visual, no como overlay. La música se seleccionará o mezclará en postproducción; no se identifica la canción, el grupo o el artista dentro del Reel. El hashtag musical es opcional y solo se registra después de confirmar el audio realmente utilizado.
 
 ## Estado de archivos
 
@@ -36,7 +36,7 @@ Los archivos en `Rejected_References/` son renders anteriores que no respetaban 
 
 ## Resultado provisional de referencias
 
-MPM-001: la versión `MPM-001_primary_reference_official_style_v2.png` es visualmente apta como referencia primaria y sigue siendo válida para la variante musical; el hook y el audio se resolverán en edición/postproducción. MPM-002: la versión `MPM-002_primary_reference_official_style_v2.png` es visualmente apta como referencia primaria, con revisión de continuidad de Fantasma y gatos pendiente durante video. MPM-003: solo `MPM-003_primary_reference_official_style_v2.png` es apta. Estas imágenes todavía no son videos finales y no autorizan publicación.
+MPM-001: la versión `MPM-001_primary_reference_official_style_v2.png` es visualmente apta como referencia primaria y sigue siendo válida para la variante musical; no se añadirá texto sobre la imagen y el audio se resolverá en edición/postproducción. MPM-002: la versión `MPM-002_primary_reference_official_style_v2.png` es visualmente apta como referencia primaria, con revisión de continuidad de Fantasma y gatos pendiente durante video. MPM-003: solo `MPM-003_primary_reference_official_style_v2.png` es apta. Estas imágenes todavía no son videos finales y no autorizan publicación.
 
 ## Revisión de elementos oficiales de My Drive
 
