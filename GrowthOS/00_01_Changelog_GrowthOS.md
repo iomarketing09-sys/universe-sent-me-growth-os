@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 2.72
+**Versión:** 2.73
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.73.00] — 2026-08-21 (Manus): Reportes diarios adoptados como fuente principal de aprendizaje.** Fernando aclaró que no estamos operando con ventanas exactas de 24 horas y que la información estratégica debe salir de los análisis diarios. Se actualizó `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` a v2.19, `GrowthOS/01_00_Arquitectura_Calendario_Escalable.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md` y `GrowthOS/00_Índice.md`. El `ExperimentLog.csv` ahora contiene la observación `OBS-DAILY-20260821-2200` con `Corte_Diario`, 12 publicaciones, 495 interacciones observables y 132 shares. La ventana diaria permite aprender de rankings, formatos, personajes, horarios, shares, comentarios, captions y Reels usando acumulados observables etiquetados como `Corte_Observado`; no se presentan como delta diario. Las ventanas 24/72 horas quedan solo como capa opcional para cierres contractuales de celdas comparables. Afiliados permanece separado.
 
 - **[2.72.00] — 2026-08-21 (Manus): Corte diario de métricas editoriales a las 22:00 local.** Se consultó Meta Graph API v26 con token de Página derivado de `/me/accounts` y se recuperaron 12 publicaciones reales entre el 20 de agosto a las 00:00 y el 21 de agosto a las 22:03 en `America/Matamoros`: 10 imágenes/posts y 2 Reels. Las imágenes acumularon 475 interacciones básicas y los Reels 20; el total editorial fue 495 interacciones. Los líderes fueron los assets `2607794` con 79, `2608038` con 78, `260635` con 63 y `2607838` con 57. Meta no expuso views, reach, retención ni tiempo medio de los Reels en esta extracción, por lo que no se concluye inferioridad del video. Afiliados se mantuvo en capa separada; el último snapshot disponible fue `MANUAL-20260820-7D-AFF07`, sin ventas visibles. Se creó `Operations/Research/2026-08-21_Corte_Diario_Metricas_2200.md`, su JSON estructurado, CSV operativo y copia raw. No se actualizó `ExperimentLog` porque este corte contiene acumulados lifetime, no snapshots exactos de 24/72 horas. No se modificó calendario ni se publicó contenido.
 

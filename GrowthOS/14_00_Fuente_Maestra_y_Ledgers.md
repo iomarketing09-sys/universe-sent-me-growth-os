@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.18"
+version: "2.19"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -33,6 +33,9 @@ related_documents:
   - "Operations/Research/2026-08-21_Reels_Publication_Inventory.csv"
   - "Operations/Research/2026-08-21_Reels_Audit_Coverage_Summary.json"
   - "Operations/Research/2026-08-21_Meta_Reels_Live_Audit_Summary.json"
+  - "Operations/Research/2026-08-21_Corte_Diario_Metricas_2200.md"
+  - "Operations/Research/2026-08-21_Corte_Diario_Metricas_2200.json"
+  - "Operations/Research/2026-08-21_Corte_Diario_Metricas_2200.csv"
   - "Operations/Research/2026-08-21_Reels_Drive_Meta_Crossmatch_Review.csv"
   - "Operations/Research/2026-08-22_Reels_Pending_Asset_Reconciliation_Queue.csv"
   - "Operations/Research/2026-08-22_Reels_Pending_Drive_Triage.csv"
@@ -182,19 +185,25 @@ El flujo económico es el siguiente:
 
 1. **Antes de publicar:** leer `Content_Inventory.csv` y el calendario aprobado; validar solamente las filas del lote actual.
 2. **Durante la publicación:** registrar el resultado en `Publication_Log.csv`; no volver a inspeccionar todo el inventario.
-3. **A las 24 y 72 horas:** consultar métricas solo para los `Meta_ID` nuevos del lote, idealmente en una llamada paginada o agrupada; no volver a pedir publicaciones históricas completas.
+3. **En cada corte diario:** consultar solo las publicaciones nuevas o modificadas desde el último corte, guardar el snapshot observado y extraer aprendizajes de formato, personaje, horario, shares, comentarios, captions y Reels. Las métricas de afiliados permanecen en su ledger independiente.
 4. **Al cierre del ciclo:** agregar una observación consolidada a `ExperimentLog.csv`, actualizar el veredicto de la hipótesis y generar las colas como vistas.
 5. **Para comentarios:** leer solo comentarios nuevos desde el último cursor o ventana; no revisar cada cinco minutos, deduplicar por `Comentario_ID` y no conservar identidades personales. Registrar las señales en `Community_Engagement_Log.csv`.
 
 Esta arquitectura reduce llamadas repetidas, evita que el agente relea documentos largos y permite que cada sesión trabaje con un delta pequeño. El ahorro no proviene de eliminar el aprendizaje; proviene de **no recalcular ni volver a descargar lo que ya está registrado**.
 
-### 5.1 Cadencia recomendada para métricas
+### 5.1 Cadencia recomendada para reportes diarios
 
-La revisión operativa de métricas se hará **cada dos días** como lote, en lugar de consultar cada publicación diariamente. Para el experimento `EXP-2026-08-CAL-01`, la hora recomendada es **22:15 de America/Matamoros**, comenzando el 2026-08-16, porque a esa hora ya maduró el último slot del día anterior y se evita despertar durante la ventana activa de publicaciones. La ejecución debe leer únicamente las filas de `Publication_Log.csv` cuyo timestamp real ya haya alcanzado una ventana de 24 o 72 horas, agrupar los Meta Post IDs pendientes y actualizar ambos ledgers en una sola pasada.
+La revisión operativa de métricas se hará **diariamente**, idealmente cerca de las **22:00 de America/Matamoros**, porque el corte incluye las publicaciones reales acumuladas durante el día y permite extraer aprendizaje sin esperar una ventana contractual. El reporte diario `Operations/Research/2026-08-21_Corte_Diario_Metricas_2200.md` es la plantilla de referencia: registra fecha/hora de captura, rango cubierto, publicaciones reales, formato, reacciones, comentarios, shares, interacciones observables, cruces con `Publication_Log`, Reels y limitaciones de la fuente.
 
-La cadencia de 48 horas reduce despertares y lecturas repetidas, pero no cambia la definición de las ventanas. Cada fila conserva su hora real de publicación; no se sustituye una medición de 24 horas por el total acumulado disponible al segundo día. Cuando Meta permita una consulta temporal con `since`/`until`, se usará esa ventana; si el metric solicitado solo devuelve un total de lifetime o no permite reconstruir el snapshot, se registrará `24h_snapshot_unavailable` o `72h_snapshot_unavailable` en la nota y no se inventará el valor [7] [8].
+Cada reporte diario debe producir una lectura estratégica breve: qué piezas lideraron, qué proporción corresponde a shares, qué personajes o tratamientos aparecen en los líderes, qué formatos tienen señales de descubrimiento, qué comentarios requieren atención y qué hipótesis merecen una nueva prueba. Estas lecturas se incorporan al `ExperimentLog.csv` como observaciones `Corte_Diario` cuando respondan una pregunta concreta, conservando `ventana_comparabilidad=Corte_Observado` en la nota y sin presentarlas como incrementos entre días.
 
-El mismo procedimiento aplica a las publicaciones posteriores: registrar primero el Meta ID y la hora real, calcular `+24h` y `+72h`, seleccionar solo las filas vencidas en la siguiente revisión de dos días y mantener separadas las métricas de Facebook e Instagram. **Un solo despertar es suficiente para la operación del Growth OS**: el script procesa todas las filas vencidas en lote, no solo una publicación. Esto minimiza sesiones y consultas, aunque retrasa algunos snapshots respecto a la hora exacta; si se necesitara exactitud estricta a 24/72 horas, habría que usar dos ejecuciones o un proceso persistente determinista. Si Meta no permite reconstruir retrospectivamente el snapshot, se conserva la limitación y no se inventa el valor.
+Los cortes diarios **no requieren ventanas exactas de 24/72 horas**. Sus acumulados lifetime observables son válidos para seguimiento operativo, ranking y aprendizaje direccional, siempre que se conserve la fecha de extracción y no se calculen como delta diario. Facebook, Instagram, Reels y afiliados deben permanecer en capas separadas; las métricas no disponibles se registran como ausentes, nunca se estiman.
+
+### 5.2 Ventanas exactas como capa contractual opcional
+
+Las ventanas exactas de 24 y 72 horas se mantienen únicamente cuando un experimento comparable las necesite para un cierre contractual o para comparar publicaciones con una definición temporal idéntica. En ese caso, se consultan solo los `Meta_ID` vencidos, idealmente en lote. Cada fila conserva su hora real y, si Meta no permite reconstruir el snapshot, se registra `24h_snapshot_unavailable` o `72h_snapshot_unavailable` sin inventar el valor [7] [8]. La ausencia de una ventana exacta no bloquea el reporte diario ni elimina sus aprendizajes; solo limita el veredicto formal de esa celda experimental.
+
+El flujo económico queda así: un corte diario alimenta el aprendizaje operativo y las decisiones de contenido; una consulta adicional de 24/72 horas se ejecuta solo cuando una celda comparable, P0 u otra revisión formal la requiera. De este modo, el Growth OS aprende de los datos disponibles cada día sin confundir `Corte_Observado`, `lifetime_actual` y `snapshot_24_72h`.
 
 ## 6. Primer estado implementado
 

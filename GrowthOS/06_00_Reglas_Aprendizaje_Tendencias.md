@@ -367,3 +367,9 @@ Fernando confirmó los captions y autorizó cancelar las tres programaciones fut
 | `FUT-ACID-003` | `HB-009` | 2026-08-27 16:00, `America/Matamoros` | `1036844829507460_122154023841072582` | `Programado_Meta_Verificado`, `is_published=false` |
 
 No se registran métricas 24/72 horas antes de verificar la publicación real y la ventana correspondiente. Los tres posts permanecen separados de P0, Wave 1, afiliados, reuse, CNT e Instagram. Después de cada publicación se debe registrar el `Platform_Content_ID`, permalink, hora real, fuente de métricas y snapshot temporal antes de actualizar cualquier hipótesis.
+
+### Regla operativa actualizada — reportes diarios como fuente de aprendizaje
+
+Los reportes diarios son la fuente principal para extraer información operativa del Growth OS. No se debe esperar una ventana exacta de 24/72 horas para leer señales de formatos, personajes, horarios, shares, comentarios, captions, Reels o distribución de la audiencia. Cada corte diario conserva sus acumulados observables, fecha/hora de extracción, rango cubierto y limitaciones, y puede producir una observación `Corte_Diario` en `ExperimentLog.csv` cuando responda una pregunta concreta.
+
+Las ventanas exactas de 24/72 horas quedan como una capa adicional para cerrar una celda comparable con denominador temporal idéntico o emitir un veredicto contractual. No reemplazan al reporte diario, no invalidan sus aprendizajes direccionales y no deben utilizarse para impedir que una señal útil entre al proceso de hipótesis. Nunca se debe presentar un acumulado lifetime como delta diario; la distinción correcta es `Corte_Observado`, `lifetime_actual` o `snapshot_24_72h`. Afiliados permanece fuera de los totales editoriales y de las hipótesis no monetarias. El reporte de referencia es `Operations/Research/2026-08-21_Corte_Diario_Metricas_2200.md`.

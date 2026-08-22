@@ -150,8 +150,9 @@ Para que este sistema sea escalable y trazable, Manus leerá la fuente editorial
    - *Acción:* registrar ID devuelto, timestamp, permalink o error y actualizar el estado de la pieza.
 
 3. **Registro post-publicación:**
-   - *Trigger:* Publicación confirmada o ventana de métricas de 24/72 horas.
-   - *Acción:* consultar únicamente métricas nuevas por `Meta_ID`, actualizar `Publication_Log`, agregar la observación al `ExperimentLog` y actualizar el `HypothesisBank`. No volver a descargar el histórico completo.
+   - *Trigger principal:* Corte diario posterior a publicaciones confirmadas; la publicación real también activa la sincronización del `Publication_Log`.
+   - *Trigger opcional:* Ventana exacta de 24/72 horas cuando una celda comparable o un cierre contractual la requiera.
+   - *Acción:* consultar únicamente métricas nuevas por `Meta_ID`, guardar el snapshot observado en el reporte diario, agregar una observación `Corte_Diario` al `ExperimentLog` cuando responda una pregunta concreta y actualizar el `HypothesisBank` con cautela. No volver a descargar el histórico completo.
 
 ### Procesos heredados
 
