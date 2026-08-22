@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 2.81
+**Versión:** 2.82
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.82.00] — 2026-08-22 (Manus): Bloque piloto de revisión humana para recuperar cadencia.** Fernando aprobó iniciar con 5–6 publicaciones reales por día, una mezcla objetivo de 65%–70% nuevas y 30%–35% reuse, y denominadores separados para imágenes, Reels, Instagram y afiliados. Se creó `Operations/Research/2026-08-31_Propuesta_Cadencia_5_6_Review.md` y su CSV asociado para el bloque del 31 de agosto al 2 de septiembre: 15 filas, 10 nuevas y 5 reuse, todas en `Review`/`Human_Approval=PENDING`. Los cinco assets nuevos restantes requieren revisión visual; CNT-028 requiere asset exacto y aprobación; los cinco reuse requieren filename y copy verificables. El CSV fue validado con 15 filas únicas, mezcla 10/5 y ningún estado de publicación autorizado. No se programó, publicó ni modificó el calendario activo.
 
 - **[2.81.00] — 2026-08-22 (Manus): Aplicación de transición del playbook de cadencia diaria.** La auditoría del calendario activo 17–30 confirma 74 slots en 14 días, equivalentes a 5.28 publicaciones asignadas por día; por tanto, ya se encuentra dentro de la banda mínima de recuperación y no debe recibir slots adicionales ni cirugía retrospectiva. Su mezcla actual es 35 nuevas y 39 reuse —47.3%/52.7%—, por debajo de la siguiente ola objetivo de 65%–70% nuevas y 30%–35% reuse. La aplicación correcta es medir la ejecución real, documentar slots vacíos y comenzar la mezcla objetivo en el siguiente bloque con reserva aprobada y CSV de revisión humana. Se actualizó `Operations/Research/2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md` a v1.4, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` a v2.26 y `GrowthOS/00_Índice.md` a v6.4. No se modificó, canceló ni reprogramó el calendario activo.
 

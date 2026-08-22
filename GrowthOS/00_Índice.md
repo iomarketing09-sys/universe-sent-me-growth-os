@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-22
-**Versión:** 6.4
+**Versión:** 6.5
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -61,6 +61,7 @@
 | [Comparativo Junio–Julio–Agosto — 14 de agosto](../Operations/Research/2026-08-14_Comparativo_Desempeno_Junio_Julio_Agosto.md) | Determina si la caída de agosto proviene de frecuencia, reuse, horarios o mezcla editorial; conserva la vista all-format original y enlaza la corrección image-only. | Review |
 | [Comparativa Junio–Julio–Agosto y brechas de integración — 22 de agosto](../Operations/Research/2026-08-22_Comparativa_Junio_Julio_Agosto_y_Brechas_Integracion.md) | Compara imágenes/posts de junio, julio y agosto hasta el 21 de agosto, separa Reels y documenta qué falta por integrar de los históricos. | Review |
 | [Playbook de Cadencia Diaria — 5–7 piezas](../Operations/Research/2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md) | Define la cartera diaria, mezcla nueva/reuse, preflight, gates de aprobación, medición diaria y reglas de ajuste sin tocar el calendario activo; documenta que los 74 slots vigentes ya equivalen a 5.28 por día, pero requieren una mejor mezcla nueva/reuse en el siguiente bloque. | Review |
+| [Propuesta de Cadencia 5–6 — Bloque de revisión 31 agosto–2 septiembre](../Operations/Research/2026-08-31_Propuesta_Cadencia_5_6_Review.md) | CSV de revisión humana con 15 slots, 10 piezas nuevas y 5 reuse; todos permanecen pendientes de aprobación y sin autorización de programación. | Review |
 | [Propuesta de Calendario Experimental — 17–30 agosto](../Operations/Research/2026-08-14_Propuesta_Calendario_17_30_Agosto.md) | Borrador de 74 slots con 28 reuse y 46 espacios para memes nuevos; seis slots de lunes a jueves y domingo estelar. | Draft |
 | [Análisis de Copys y Rendimiento — 14 de agosto](../Operations/Research/2026-08-14_Analisis_Copys_Rendimiento.md) | Evidencia histórica sobre emojis, copy mínimo, frases cortas y copy conversacional. | Review |
 | [Calendario Experimental con Copys — 17–30 agosto](../Operations/Research/2026-08-14_Propuesta_Calendario_17_30_Agosto_con_Copys.md) | Versión operativa de 74 slots con caption propuesto y criterio de distribución en Instagram. | Draft |

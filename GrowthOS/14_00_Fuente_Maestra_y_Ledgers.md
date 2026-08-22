@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.26"
+version: "2.27"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -120,6 +120,8 @@ La corrección humana del 2026-08-22 separa el asset `Elara y Evan en el Bosque.
 El 2026-08-22 Fernando reencuadró MPM-001: ya no debe volver a producirse ni publicarse con el texto `POV: Eres Piscis`. La pieza se convierte en la primera variante de la serie `ELARA-WALK-MUSIC-01`, sin texto sobre la imagen. La idea `cuando te hablan pero tú sigues en tu mundo` funciona como dirección conceptual del hook visual, no como overlay. Elara seguirá caminando con audífonos y Wilfred detrás, pero la canción, artista o grupo no se explicará en pantalla ni en el caption; el audio y cualquier hashtag musical se registrarán como campos operativos después de seleccionar la pista. La referencia histórica de Piscis permanece como evidencia de comportamiento reportado, no como copy vigente de MPM-001.
 
 El playbook operativo actualizado el 2026-08-22 establece una banda de 5–7 publicaciones diarias: seis de lunes a jueves, cinco viernes y sábado, y seis el domingo con un séptimo slot exploratorio opcional. La mezcla objetivo es 65%–70% contenido nuevo y 30%–35% reuse, con máximo ordinario de dos reuse diarios, preflight por fila, reserva aprobada y `Slot_No_Publicado` cuando no exista una pieza válida. El calendario activo 17–30 ya contiene 74 slots para 14 días —5.28 asignados por día—, pero con 35 nuevas y 39 reuse, aproximadamente 47.3%/52.7%; por ello la transición no requiere añadir slots ni reescribir el calendario, sino medir su ejecución y aplicar la mezcla objetivo en el siguiente bloque. La cadencia propuesta no modifica el calendario activo ni autoriza publicaciones; requiere aprobación humana y mantiene Reels, Instagram y afiliados fuera del denominador principal de imágenes.
+
+La propuesta de aplicación aprobada el 2026-08-22 queda en `Operations/Research/2026-08-31_Propuesta_Cadencia_5_6_Review.md` y su CSV asociado. El bloque piloto del 31 de agosto al 2 de septiembre contiene 15 filas —cinco por día—, 10 nuevas y cinco reuse, equivalente a 66.7%/33.3%. Las filas siguen en `Review` y no autorizan programación; los cinco assets nuevos restantes requieren revisión visual, las propuestas CNT-028 requieren asset exacto y aprobación, y los cinco reuse requieren filename y copy verificables. El calendario activo 17–30 no se reescribe ni recibe slots adicionales.
 
 La comparación documentada el 2026-08-22 entre junio, julio y agosto hasta el día 21 confirma que las filas históricas que coinciden con el inventario de Facebook Reels deben excluirse de las tablas estrictamente image-only: 29 en junio, 8 en julio y 8 en agosto 1–14. La nueva unión de agosto contiene 93 imágenes/posts y 11 Reels, deduplicados por Meta Post ID. La vista image-only deja junio en 201 publicaciones y 17,985 interacciones, julio en 199 y 67,727, y agosto 1–21 en 93 y 14,812; las cifras de agosto son cortes observados acumulados, no ventanas exactas. El detalle reproducible está en `Operations/Research/2026-08-22_Comparativa_Junio_Julio_Agosto_y_Brechas_Integracion.md` y sus artefactos. La conclusión operativa es que julio lidera el rendimiento típico, agosto supera a junio pero depende más de pocos outliers, y las brechas pendientes de junio/julio deben resolverse selectivamente, no mediante reconciliación masiva.
 
