@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-21
-**Versión:** 2.6
+**Versión:** 2.7
 **Autor:** Manus AI (CGO)
 **Documentos relacionados:** `05_00_Calendario_01_02_Ago.md`, `Operations/Memories/deep_dive_reels_comparativo.md`, `../Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`, `../Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json`, `../Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json`, `../Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json`, `../Operations/Research/2026-08-19_Decisiones_Reconciliacion_Reels.json`, `../Operations/Research/2026-08-19_Piezas_Sin_Cascada_Revision.json`, `../Operations/Research/2026-08-19_Auditoria_Assets_Drive_Reels.md`, `../Operations/Research/2026-08-19_Meta_Reels_Audit.json`, `../Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json`, `../Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json`, `../Operations/Research/Affiliate_Link_Ledger.csv`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Desamor.md`, `14_00_Fuente_Maestra_y_Ledgers.md`
 
@@ -87,19 +87,19 @@ Se ha detectado que varios Reels recientes solo se publicaron en Instagram. Seg�
 
 ## Auditoría operativa de Reels — 2026-08-21
 
-La reconciliación del historial estructurado `Operations/Research/2026-08-19_Historial_Reels_Consolidado.json` queda actualizada a v1.6 y contiene **51 registros de publicaciones de video corto**, distribuidos en Facebook 22, Instagram 16, TikTok 7 y YouTube 6. Estos registros representan publicaciones por plataforma, no piezas únicas: hay 24 conceptos identificables y 17 grupos de crosspost o relación multicanal. Las métricas no se suman entre plataformas.
+La reconciliación del historial estructurado `Operations/Research/2026-08-19_Historial_Reels_Consolidado.json` queda actualizada a v1.7 y contiene **102 registros de publicaciones de video corto**, distribuidos en Facebook 73, Instagram 16, TikTok 7 y YouTube 6. Estos registros representan publicaciones por plataforma, no piezas únicas: hay 24 conceptos identificables y 17 grupos de crosspost o relación multicanal. Los 51 nuevos registros históricos restantes tienen identidad de publicación Meta confirmada, pero permanecen sin `Concept_ID` o asset de Drive hasta reconciliación posterior. Las métricas no se suman entre plataformas.
 
 | Control | Resultado actual |
 |---|---|
-| Registros por plataforma | Facebook 22; Instagram 16; TikTok 7; YouTube 6 |
+| Registros por plataforma | Facebook 73; Instagram 16; TikTok 7; YouTube 6 |
 | Conceptos identificables | 24 |
 | Grupos con relación cross-platform | 17 |
-| Assets con evidencia Drive | 32/51 en el historial estructurado |
-| Publicaciones con `Experiment_ID` explícito | 1/51 — el Reel Doble Check |
-| Publicaciones con `Hypothesis_ID` explícito | 1/51 — `HB-REEL-01` |
-| Reels con views disponibles | 27/51; las fuentes no son uniformes |
-| Reels con reach disponible | 14/51 |
-| Facebook Reels con views/reach recuperables en este corte | 0/22 |
+| Assets con evidencia Drive | 32/102 en el historial estructurado |
+| Publicaciones con `Experiment_ID` explícito | 1/102 — el Reel Doble Check |
+| Publicaciones con `Hypothesis_ID` explícito | 1/102 — `HB-REEL-01` |
+| Reels con views disponibles | 27/102; las fuentes no son uniformes |
+| Reels con reach disponible | 14/102 |
+| Facebook Reels con views/reach recuperables en este corte | 0/73 |
 
 El Reel más reciente detectado en Meta es **`Universe viéndote Farmear Aura`**, Page Post ID `1036844829507460_122154017667072582`, Reel ID `2005557463434064`, publicado el 2026-08-21 21:30:59 UTC y verificado como `is_published=true`. La consulta de solo lectura devolvió el permalink `https://www.facebook.com/reel/2005557463434064/` y un comentario de la propia Página; la consulta de Insights devolvió HTTP 400 porque la solicitud no contenía una métrica válida para este objeto. No se registran views, reach, retención, completaciones ni seguidores ganados.
 
@@ -107,7 +107,7 @@ La consulta de `/{page_id}/scheduled_posts` del mismo corte devolvió 47 posts p
 
 También se incorporaron al historial los Reels recientes `Remote Control` (`2815726225473165`) y `Doble Check → Universe` (`2210896633022235`). `Remote Control` tiene cascada completa confirmada en Instagram, Facebook, TikTok y YouTube; `Doble Check` conserva `EXP-202608-REALUNIVERSE-01` y `HB-REEL-01`. Ambos necesitan snapshots propios antes de recibir un veredicto de aprendizaje.
 
-La ampliación histórica de mayo/junio añadió tres matches exactos entre Drive y Meta: `Fantasma_tranquilo_con_viento_202605241629.mp4` → Reel `1877535942934184`; el asset set de los dos clips `Man_*_20260613` → Reel `2417378928740605`; y `Pato_villano_mirando_cámara_POV_EresAries.mp4` → Reel `1049041731412120`. El archivo `Wilfred realista haciendo una posion.mp4` permanece sin match confirmado después de dos controles visuales negativos; la matriz completa está en `Operations/Research/2026-08-21_Reels_Drive_Meta_Crossmatch_Review.csv`.
+La ampliación histórica de mayo/junio añadió 54 publicaciones de video identificadas por Meta. Tres tienen match visual exacto con Drive y fueron integradas con evidencia de asset; las otras 51 quedaron como identidad de publicación con `Asset_Match_Status=Pending_Drive_or_local_asset_match`. Además, se conservaron tres matches exactos entre Drive y Meta: `Fantasma_tranquilo_con_viento_202605241629.mp4` → Reel `1877535942934184`; el asset set de los dos clips `Man_*_20260613` → Reel `2417378928740605`; y `Pato_villano_mirando_cámara_POV_EresAries.mp4` → Reel `1049041731412120`. El archivo `Wilfred realista haciendo una posion.mp4` permanece sin match confirmado después de dos controles visuales negativos; la matriz completa está en `Operations/Research/2026-08-21_Reels_Drive_Meta_Crossmatch_Review.csv`.
 
 ### Estado de Maeve
 
@@ -115,7 +115,7 @@ El documento `Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Des
 
 ### Brecha principal
 
-Sí existe información histórica de Reels, pero estaba repartida entre el historial multicanal, auditorías de Meta/Windsor, documentos de producción y el registro maestro. El problema no era ausencia total de publicaciones; era que no había una vista operativa actualizada que distinguiera **publicado**, **programado**, **en producción**, **en revisión** y **medido**. La auditoría actual establece esa separación y deja las métricas faltantes como pendientes explícitos. De los 51 registros actuales, 32 tienen evidencia de asset en Drive, 36 tienen engagement, 27 tienen views y 14 tienen reach; el caso de Wilfred permanece en revisión y no se inventa un vínculo.
+Sí existe información histórica de Reels, pero estaba repartida entre el historial multicanal, auditorías de Meta/Windsor, documentos de producción y el registro maestro. El problema no era ausencia total de publicaciones; era que no había una vista operativa actualizada que distinguiera **publicado**, **programado**, **en producción**, **en revisión** y **medido**. La auditoría actual establece esa separación y deja las métricas faltantes como pendientes explícitos. De los 102 registros actuales, 32 tienen evidencia de asset en Drive, 87 tienen engagement, 27 tienen views y 14 tienen reach; el caso de Wilfred permanece en revisión y los 51 candidatos Meta adicionales no reciben vínculos inventados.
 
 ## Actualización operativa — 2026-08-20
 

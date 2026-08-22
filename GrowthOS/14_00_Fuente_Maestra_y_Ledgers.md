@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-21
-version: "2.10"
+version: "2.11"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -94,7 +94,7 @@ La comparación entre el snapshot inicial y el renovado del mismo rango se conse
 
 Para TikTok y YouTube, el dashboard debe conservar una capa común sin forzar equivalencia semántica: `views` se muestra como views nativas de cada plataforma, `reach` solo se muestra cuando la fuente lo entrega, y `engagement` se calcula como suma documentada de acciones disponibles si no existe una métrica nativa. YouTube debe mostrar por separado la actividad diaria y el snapshot lifetime; TikTok debe eliminar filas repetidas por `video_id` y priorizar la fila con mayor cobertura de métricas.
 
-La ampliación histórica de mayo/junio integró tres matches visuales exactos Drive↔Meta en `Operations/Research/2026-08-21_Reels_Drive_Meta_Crossmatch_Review.csv`: un Reel individual de Fantasma, un asset set de dos clips del hombre con hoodie y un Reel individual del pato en traje. El video de Wilfred con la poción permanece en `Pending_Visual_Review` después de controles negativos; la proximidad de fechas nunca crea una relación de publicación. El historial estructurado contiene ahora 51 registros por plataforma y la lista CSV derivada conserva una fila por publicación, no por clip de producción.
+La ampliación histórica de mayo/junio integró tres matches visuales exactos Drive↔Meta en `Operations/Research/2026-08-21_Reels_Drive_Meta_Crossmatch_Review.csv`: un Reel individual de Fantasma, un asset set de dos clips del hombre con hoodie y un Reel individual del pato en traje. El video de Wilfred con la poción permanece en `Pending_Visual_Review` después de controles negativos; la proximidad de fechas nunca crea una relación de publicación. El historial estructurado contiene ahora 102 registros por plataforma — Facebook 73, Instagram 16, TikTok 7 y YouTube 6 — y la lista CSV derivada conserva una fila por publicación, no por clip de producción. De los 54 candidatos Meta de mayo/junio, tres tienen match visual exacto con Drive y 51 permanecen con asset pendiente.
 
 La arquitectura también separa **fuente de identidad** y **fuente de rendimiento**. Que una publicación aparezca en Windsor o en el conector no autoriza a publicarla ni cambia su estado de calendario. Que Graph API confirme un ID no convierte automáticamente el total acumulado en una ventana 24/72 horas. Cada snapshot debe conservar su propia fecha y estado de comparabilidad.
 

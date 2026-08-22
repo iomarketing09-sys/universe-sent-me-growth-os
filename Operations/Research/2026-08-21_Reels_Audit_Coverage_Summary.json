@@ -4,7 +4,7 @@
   "status": "Active",
   "created_at": "2026-08-21",
   "last_updated": "2026-08-21",
-  "version": "1.1",
+  "version": "1.2",
   "author": "Manus AI",
   "related_documents": [
     "GrowthOS/07_00_Registro_Maestro_Reels.md",
@@ -15,30 +15,33 @@
   ],
   "source": {
     "file": "Operations/Research/2026-08-19_Historial_Reels_Consolidado.json",
-    "version": "1.6",
+    "version": "1.7",
     "last_updated": "2026-08-21",
     "period": {
-      "start": "2026-05-24",
+      "start": "2026-05-01",
       "end": "2026-08-21"
     }
   },
   "inventory": {
-    "publication_records": 51,
+    "publication_records": 102,
     "by_platform": {
-      "Facebook": 22,
+      "Facebook": 73,
       "Instagram": 16,
       "TikTok": 7,
       "YouTube": 6
     },
     "unique_concepts": 24,
-    "crosspost_groups": 17
+    "crosspost_groups": 17,
+    "note": "Los 51 nuevos rows Meta históricos tienen identidad de publicación confirmada pero no necesariamente Concept_ID, asset o crosspost; no se inventan relaciones."
   },
   "historical_extension": {
-    "meta_video_candidates_reviewed": 54,
+    "meta_page_rows_scanned": 438,
+    "meta_video_candidates": 54,
+    "meta_video_candidates_integrated_as_publication_identity": 54,
     "drive_pre_july_videos_reviewed": 5,
     "exact_visual_matches_integrated": 3,
     "pending_visual_review": 1,
-    "negative_visual_checks": 1,
+    "negative_visual_checks": 2,
     "integrated_exact_matches": [
       "2026-05-24 Fantasma_tranquilo_con_viento → Meta Reel 1877535942934184",
       "2026-06-14 Hoodie_Anillos_Energia asset set → Meta Reel 2417378928740605",
@@ -47,20 +50,20 @@
     "pending_case": "Wilfred realista haciendo una posion.mp4; date-proximate candidates checked were not matches; no exact Meta Reel assigned."
   },
   "field_coverage": {
-    "drive_asset_evidence": {"populated": 32, "total": 51},
-    "engagement": {"populated": 36, "total": 51},
-    "views": {"populated": 27, "total": 51},
-    "reach": {"populated": 14, "total": 51},
-    "experiment_id": {"populated": 1, "total": 51},
-    "hypothesis_id": {"populated": 1, "total": 51}
+    "drive_asset_evidence": {"populated": 32, "total": 102},
+    "engagement": {"populated": 87, "total": 102},
+    "views": {"populated": 27, "total": 102},
+    "reach": {"populated": 14, "total": 102},
+    "experiment_id": {"populated": 1, "total": 102},
+    "hypothesis_id": {"populated": 1, "total": 102}
   },
   "metric_summary": {
-    "engagement_sum_available_rows": 291,
-    "engagement_median_available_rows": 5,
-    "warning": "No usar como mediana multicanal: las filas mezclan plataformas, ventanas y definiciones nativas distintas."
+    "engagement_sum_available_rows": 738,
+    "engagement_median_available_rows": 7,
+    "warning": "No usar como mediana multicanal ni como tendencia: las filas mezclan plataformas, ventanas, snapshots y definiciones nativas distintas."
   },
   "platform_gaps": {
-    "Facebook": "22 registros; 0 con views/reach recuperables en este corte; Insights de video requiere resolver métricas válidas o una fuente alternativa.",
+    "Facebook": "73 registros; 0 con views/reach recuperables en este corte; los 54 candidatos históricos tienen identidad de video confirmada pero requieren asset/crosspost y métricas nativas adicionales.",
     "Instagram": "16 registros; 14 con views y reach provenientes de Windsor; requiere ledger append-only y snapshots uniformes.",
     "TikTok": "7 registros; views y engagement disponibles; reach no disponible en la capa actual; deduplicar por video_id.",
     "YouTube": "6 registros; views disponibles; separar actividad diaria de lifetime y distinguir Shorts de videos largos."
@@ -73,5 +76,5 @@
     "Publicada_Metricas_Pendientes",
     "Medida_24_72h"
   ],
-  "conclusion": "Existe una lista histórica verificable de 51 publicaciones por plataforma, con tres matches exactos adicionales de mayo/junio. El inventario histórico está ampliado, pero el caso de Wilfred y las métricas de Facebook siguen pendientes; no se deben declarar aprendizajes comparables a partir de los nuevos matches hasta completar ventanas y codificación editorial."
+  "conclusion": "El inventario histórico ya incluye las 54 publicaciones de video identificadas por Meta en mayo/junio. Solo tres tienen match visual exacto con assets de Drive en esta pasada; las demás quedan como identidad de publicación con asset pendiente. El siguiente trabajo debe ser priorizar los candidatos con mayor valor analítico, no tratar los 102 registros como una cohorte comparable."
 }

@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-21
-**Versión:** 2.59
+**Versión:** 2.60
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.60.00] — 2026-08-21 (Manus): Integración completa de candidatos históricos de video de Meta.** Las 54 publicaciones con attachment `video` recuperadas del feed de Meta para mayo/junio quedaron representadas en el historial estructurado y en la lista CSV como identidad de publicación: 23 de mayo y 31 de junio. Los registros nuevos no reciben `Concept_ID`, CNT, asset de Drive, crosspost o hipótesis por inferencia; conservan `Asset_Match_Status=Pending_Drive_or_local_asset_match`. Los tres matches visuales exactos ya confirmados permanecen vinculados a sus assets de Drive y el caso de Wilfred continúa pendiente después de controles negativos. El inventario histórico asciende a 102 registros por plataforma — Facebook 73, Instagram 16, TikTok 7 y YouTube 6 — y los documentos quedan actualizados: historial v1.7, registro maestro v2.7, auditoría v1.8, fuente maestra v2.11 y cobertura v1.2. No se actualizaron `ExperimentLog` ni se declararon aprendizajes comparables; las métricas siguen separadas por plataforma y ventana.
 
 - **[2.59.00] — 2026-08-21 (Manus): Extensión histórica de Reels a mayo y junio.** Meta devolvió 438 publicaciones de Página entre mayo y junio y 54 candidatos con attachment de video — 23 de mayo y 31 de junio. La carpeta raíz de Reels en Drive contenía cinco videos creados antes de julio; la revisión visual directa confirmó tres matches exactos: `Fantasma_tranquilo_con_viento_202605241629.mp4` → Reel `1877535942934184`; el asset set de los dos clips `Man_*_20260613` → Reel `2417378928740605`; y `Pato_villano_mirando_cámara_POV_EresAries.mp4` → Reel `1049041731412120`. `Wilfred realista haciendo una posion.mp4` queda `Pending_Visual_Review` después de dos controles negativos. El historial pasa a 51 registros por plataforma — Facebook 22, Instagram 16, TikTok 7 y YouTube 6 — y se crea `Operations/Research/2026-08-21_Reels_Drive_Meta_Crossmatch_Review.csv`. Se actualizan el registro maestro v2.6, la auditoría v1.7, la fuente maestra v2.10 y los resúmenes de cobertura. Los matches se integran como identidad histórica, no como experimentos comparables ni como veredictos de rendimiento.
 

@@ -4,7 +4,7 @@ purpose: "Separar el rendimiento histórico de Reels del experimento P0 de imág
 status: "Active"
 created: 2026-08-19
 updated: 2026-08-21
-version: "1.7"
+version: "1.8"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -153,16 +153,16 @@ El resultado actual es una señal de instrumentación, no de conversión: el pan
 
 ### 10.1 Resultado ejecutivo
 
-La auditoría confirma que **sí existe una base histórica de Reels**, pero estaba fragmentada y desactualizada como vista operativa. El historial estructurado se actualizó de 48 a **51 registros por plataforma**: Facebook 22, Instagram 16, TikTok 7 y YouTube 6. Estos registros representan publicaciones, no piezas únicas; corresponden a **24 conceptos identificables** y **17 grupos cross-platform**.
+La auditoría confirma que **sí existe una base histórica de Reels**, pero estaba fragmentada y desactualizada como vista operativa. El historial estructurado se actualizó de 51 a **102 registros por plataforma**: Facebook 73, Instagram 16, TikTok 7 y YouTube 6. Estos registros representan publicaciones, no piezas únicas; corresponden a **24 conceptos identificables** y **17 grupos cross-platform**. Los 51 registros Meta adicionales tienen identidad de publicación confirmada, pero no reciben `Concept_ID`, asset de Drive ni crosspost inventado.
 
 | Área auditada | Estado |
 |---|---|
-| Inventario histórico | **Integrado y actualizado** a `2026-08-21` en `Historial_Reels_Consolidado.json` v1.6 |
+| Inventario histórico | **Integrado y actualizado** a `2026-08-21` en `Historial_Reels_Consolidado.json` v1.7 |
 | Lista operativa visible | **Actualizada** en `GrowthOS/07_00_Registro_Maestro_Reels.md` v2.6 |
 | Reel más reciente de Meta | **Publicado y verificado:** `Universe viéndote Farmear Aura` |
 | Reels programados en Facebook | **47 posts programados**, todos de imagen; **0 videos/Reels** en el scheduler consultado |
 | Maeve | **En revisión de producción**, no publicado como Reel verificable |
-| Experimentación formal | Solo 1 de 51 registros tiene `Experiment_ID` y `Hypothesis_ID` explícitos |
+| Experimentación formal | Solo 1 de 102 registros tiene `Experiment_ID` y `Hypothesis_ID` explícitos |
 | Métricas de video | Parciales; Facebook no devolvió views/reach/retención en el corte actual |
 
 ### 10.2 Reel publicado hoy
@@ -193,7 +193,7 @@ Si el Reel de Maeve que Fernando menciona es otro archivo o una producción inic
 
 ### 10.5 Diagnóstico de cobertura
 
-La cobertura histórica es suficiente para afirmar que el estudio lleva meses produciendo y publicando video corto, pero todavía no es suficiente para un análisis de Growth OS plenamente comparable. De los 51 registros, 32 tienen evidencia de asset en Drive, 36 tienen alguna cifra de engagement, 27 tienen views, 14 tienen reach y ninguno tiene una serie completa y uniforme de views, retención, tiempo promedio visto, completaciones y seguidores ganados en las cuatro plataformas. Facebook concentra 22 registros, pero el corte actual tiene 0/22 con views o reach recuperables.
+La cobertura histórica es suficiente para afirmar que el estudio lleva meses produciendo y publicando video corto, pero todavía no es suficiente para un análisis de Growth OS plenamente comparable. De los 102 registros, 32 tienen evidencia de asset en Drive, 87 tienen alguna cifra de engagement, 27 tienen views, 14 tienen reach y ninguno tiene una serie completa y uniforme de views, retención, tiempo promedio visto, completaciones y seguidores ganados en las cuatro plataformas. Facebook concentra 73 registros, pero el corte actual tiene 0/73 con views o reach recuperables.
 
 La principal deuda no es “crear más Reels”, sino formalizar el estado y la medición de cada publicación. El inventario debe separar cinco estados: `Idea`, `En_Produccion`, `Pendiente_Revision`, `Programada`, `Publicada_Metricas_Pendientes` y `Medida_24_72h`. El `ExperimentLog` solo se actualiza cuando exista una hipótesis explícita y una ventana de métricas verificable.
 
@@ -214,7 +214,7 @@ La consulta histórica de solo lectura a Meta recuperó 438 publicaciones de Pá
 
 El asset de Fantasma se confirmó como el mismo loop del fantasma con sábana y lentes redondos; el asset set del hombre con hoodie coincide con la secuencia de presión en las sienes y anillos de energía; el pato coincide con el traje, fondo cósmico, ajuste de vestuario y relámpagos rojos. El caso de Wilfred no se asignó porque dos candidatos temporalmente cercanos resultaron ser un Reel de cielo y un Reel de carretera nocturna. La fecha cercana por sí sola no crea un match. La matriz completa, incluidos los controles negativos, vive en `Operations/Research/2026-08-21_Reels_Drive_Meta_Crossmatch_Review.csv`.
 
-Los tres matches fueron integrados al historial estructurado y a la lista CSV de publicaciones. Se mantienen como registros históricos de identidad y no como experimentos comparables: el Fantasma contiene una URL externa de una app, el pato contiene watermark/tratamiento de IA y el asset set del hoodie todavía no tiene personaje canonizado por filename. Las métricas de Meta se conservan como interacción histórica disponible, pero views, reach y retención permanecen pendientes.
+Los tres matches fueron integrados al historial estructurado y a la lista CSV de publicaciones. Además, las otras 51 publicaciones de video detectadas en Meta quedaron integradas con estado `Pending_Drive_or_local_asset_match`. Todos estos registros son identidad histórica, no experimentos comparables: el Fantasma contiene una URL externa de una app, el pato contiene watermark/tratamiento de IA y el asset set del hoodie todavía no tiene personaje canonizado por filename. Las métricas de Meta se conservan como interacción histórica disponible, pero views, reach y retención permanecen pendientes.
 
 ## 11. Puente de transferencia Facebook → Reels — 2026-08-21
 
