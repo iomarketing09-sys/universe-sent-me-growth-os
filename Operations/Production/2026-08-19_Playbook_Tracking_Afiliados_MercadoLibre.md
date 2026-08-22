@@ -3,8 +3,8 @@ title: "Playbook de tracking de afiliados Mercado Libre"
 purpose: "Definir una configuración reproducible para atribuir enlaces, clics, ventas y comisiones de Mercado Libre a publicaciones concretas de Universe Sent Me."
 status: "Active"
 created: 2026-08-19
-updated: 2026-08-20
-version: "1.5"
+updated: 2026-08-22
+version: "1.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/11_00_Estrategia_Monetizacion_MercadoLibre.md"
@@ -73,7 +73,18 @@ Como el producto puede agregarse después de publicar, `Published_Local` y `Nati
 
 ### Flujo alternativo: link manual aprobado
 
-Si el catálogo nativo no está disponible, se puede usar un comentario o copy con el link generado en Mercado Libre, pero solo después de registrar la fila del ledger y obtener aprobación humana. La superficie será `POST_COMMENT` o `POST_COPY`, nunca `FACEBOOK_NATIVE_PRODUCT`.
+Si el catálogo nativo no está disponible, se puede usar un comentario o copy con el link generado en Mercado Libre **solo si la superficie es clicable, está declarada en el ledger y cuenta con aprobación humana**. La superficie será `POST_COMMENT` o `POST_COPY`, nunca `FACEBOOK_NATIVE_PRODUCT`. Una URL escrita en texto en pantalla o caption sin comportamiento clicable verificable no sustituye una superficie comercial.
+
+### Matriz de superficies — corrección CGO del 22 de agosto
+
+| Plataforma / superficie | Uso para nuevas pruebas | Control obligatorio |
+|---|---|---|
+| Facebook / `FACEBOOK_NATIVE_PRODUCT` | Ruta preferida si el editor muestra la asociación de producto. | Evidencia de adjunción, permalink, hora y etiqueta exclusiva. |
+| Facebook / `POST_COMMENT` | Alternativa experimental cuando no existe producto nativo. | Link y etiqueta exclusivos; no coexistir con producto nativo en el mismo post. |
+| Instagram / `INSTAGRAM_REEL_TEXT_LINK` | No crear nuevas pruebas basadas en URL escrita si no hay ruta clicable y medible. | Si se habilita Story, bio u otra superficie funcional, usar nueva etiqueta y fila. |
+| TikTok / perfil o YouTube / descripción-comentario | Mantener en espera hasta verificar la ruta de enlace y su observabilidad por etiqueta. | No presentar un link reservado como adjunción nativa. |
+
+Las filas existentes de `INSTAGRAM_REEL_TEXT_LINK`, incluida Universe/Senales, se conservan como hecho histórico y se medirán por separado; esta corrección no cambia contenido ya publicado o programado.
 
 
 ### 1. Crear el link
@@ -154,6 +165,12 @@ El estado anterior de esta sección era obsoleto: describía los diez links como
 
 Además, se registró un Reel nuevo `2210896633022235` con producto nativo afiliado. Su link exclusivo es `https://meli.la/1AQ2upG`, etiqueta `usmfb20260819p01` y producto `MLMU3833350067` (soporte para celular con forma de gato). El Reel queda como `Published` y `Native_Product_Attached_User_Confirmed`, pendiente de medir clics y conversiones.
 
+## Gate de expansión — 2026-08-22
+
+No se aprueba un nuevo concepto, producto o link afiliado mientras la cartera activa no tenga una conciliación suficiente. Antes de ampliar, se deben capturar los cortes de 24 horas, 48 horas y 7 días de las etiquetas observables; reconciliar hora, permalink/ID y superficie de los casos medibles; y registrar una etiqueta ausente como `Not_Visible_No_Inference`.
+
+El mínimo recomendado es reunir tres etiquetas comparables con corte visible, incluyendo una de Capa 2 cuando el panel lo permita. Esa muestra permite cambiar una sola variable para la siguiente prueba y evita concluir que un personaje, producto o CTA funciona por un clic aislado. Los Reels editoriales sin afiliación, incluida la celda MPM, no están sujetos a esta pausa comercial.
+
 ## Primer piloto recomendado
 
 El primer piloto debe usar el Reel de la lámpara de luna de Elara, porque ya existe una pieza con CTA `LUNA`. La prueba debe crear una etiqueta única para el Reel y otra para cualquier comentario aprobado que contenga el link. No se deben utilizar todavía listas genéricas ni el mismo link en todas las publicaciones.
@@ -175,3 +192,11 @@ La selección debe partir de rendimiento observado y compartibilidad, pero debe 
 [3]: https://www.mercadolibre.com.mx/l/haz-un-seguimiento-de-tus-metricas "Métricas del Afiliado — Mercado Libre México"
 
 [4]: https://www.mercadolibre.com.mx/l/preguntas-frecuentes-afiliados "Preguntas Frecuentes — Mercado Libre México"
+
+## Historial de versiones
+
+| Fecha | Versión | Cambio | Autor |
+|---|---|---|---|
+| 2026-08-19 | 1.0 | Creación del playbook de tracking granular de afiliados. | Manus AI (CGO) |
+| 2026-08-20 | 1.5 | Consolidación de la Capa 1, el Reel nativo adicional y la Capa 2 con snapshots separados. | Manus AI (CGO) |
+| 2026-08-22 | 1.6 | Se exige una superficie clicable verificable para nuevos links manuales y se añade el gate de expansión comercial. | Manus AI (CGO) |

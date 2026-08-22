@@ -3,8 +3,8 @@
 **Propósito:** Catálogo de productos para campañas de afiliación en Mercado Libre, estructurado por historia narrativa. Cada producto se selecciona primero por el potencial de generar una historia entretenida, y solo después se vincula a un personaje y a un producto comercial.
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
-**Última actualización:** 2026-08-07
-**Versión:** 2.0
+**Última actualización:** 2026-08-22
+**Versión:** 2.1
 **Autor:** Manus AI (CGO)
 **Documentos relacionados:** `GrowthOS/11_00_Estrategia_Monetizacion_MercadoLibre.md`, `Operations/Production/ML_Reel_01_Storyboard_Blueprint.md`
 
@@ -25,6 +25,14 @@ El catálogo sigue la estructura **"Historia → Personaje → Producto"**. Prim
 3. **Potencial Visual:** ¿El producto permite un "gancho" visual fuerte (movimiento, iluminación, humo, efecto)?
 4. **Ticket Impulsivo:** Rango de $150 a $700 MXN para maximizar la conversión desde redes sociales.
 5. **Demanda ML:** Categoría con tendencia vigente en Mercado Libre México para Q3 2026 [1] [2].
+
+## Estado de uso y prioridad — revisión CGO
+
+Este catálogo es un **banco de posibilidades narrativas**, no un calendario de publicaciones ni una autorización de enlaces. Cada SKU real debe verificarse de nuevo por disponibilidad, envío, ficha vigente, encaje de escena y superficie comercial antes de crear su etiqueta.
+
+La cartera actual de Capa 1, Reel nativo adicional y Capa 2 permanece en conciliación. Por ello, ninguna ficha de este catálogo se convierte en próxima pieza afiliada hasta que se cumpla el gate de medición de `GrowthOS/11_00_Estrategia_Monetizacion_MercadoLibre.md`. Las familias de productos sí continúan como insumo creativo, pero nunca entran a la celda MPM, que excluye afiliación y pauta.
+
+Una vez superado el gate, se priorizará el producto que sea necesario para el remate: luz/ambiente y artefactos de bosque para Wilfred, Elara, Kiri o Fantasma; gadgets visuales para Universe; y dispositivos que creen caos físico para Silvio. La presencia de una categoría en esta lista no justifica por sí sola una adjunción.
 
 ---
 
@@ -187,12 +195,23 @@ El catálogo sigue la estructura **"Historia → Personaje → Producto"**. Prim
 ---
 
 ## Próximos Pasos Operativos
-1. **Generación de Links:** Ingresar al dashboard de Mercado Libre Afiliados para generar los `Deep Links` de los productos aprobados.
-2. **Prioridad de Producción:** Iniciar con el Proyector LED Galaxia (CNT-023 / Reel 01) ya que cuenta con blueprint aprobado.
-3. **Siguiente Reel:** Lámpara Luna 3D con Universe (historia "La Luna que Nadie Mira").
+1. **Conciliación antes de expansión:** Completar cortes de 24 horas, 48 horas y 7 días de la cartera activa, con IDs/permalinks y superficies reales cuando estén disponibles.
+2. **Selección posterior al gate:** Elegir un único producto vigente que supere historia autónoma, personaje natural, potencial visual, ticket impulsivo, stock/envío y superficie comercial funcional.
+3. **Producción de una pregunta:** Redactar un brief que mantenga una sola variable comercial a probar. El producto no se agrega a un meme o Reel editorial cerrado salvo que pase el flujo de Capa 2.
+4. **Links solo con aprobación:** Generar el deep link, etiqueta y fila de ledger únicamente tras la aprobación humana del contenido y de la superficie concreta.
 
 ---
 
 ### Referencias
 [1] Mercado Libre Tendencias. "Tendencias de búsqueda en Mercado Libre - Última semana". https://tendencias.mercadolibre.com.mx/
 [2] PhaseV. "Top 10 Trending Products to Sell in 2026". https://phasev.com/blog/popular-trending-products-to-sell/
+
+---
+
+## Historial de Versiones
+
+| Fecha | Versión | Cambio | Autor |
+|---|---|---|---|
+| 2026-08-05 | 1.0 | Creación del catálogo Story-Commerce. | Manus AI (CGO) |
+| 2026-08-07 | 2.0 | Organización por historias y personajes; depuración de productos genéricos. | Manus AI (CGO) |
+| 2026-08-22 | 2.1 | El catálogo pasa a funcionar explícitamente como banco creativo subordinado al gate de medición afiliada; se eliminan prioridades de producción automáticas. | Manus AI (CGO) |
