@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.21"
+version: "2.22"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -68,6 +68,10 @@ related_documents:
   - "Operations/Research/2026-08-20_Junio_Duplicate_Groups.md"
   - "Operations/Research/2026-08-20_Alias_Impact_June.md"
   - "Operations/Research/2026-08-20_Alias_Impact_June.json"
+  - "Operations/Research/2026-08-22_Comparativa_Junio_Julio_Agosto_y_Brechas_Integracion.md"
+  - "Operations/Research/2026-08-22_Comparativa_Junio_Julio_Agosto_Datos.json"
+  - "Operations/Research/2026-08-22_Comparativa_Junio_Julio_Agosto_Resumen.csv"
+  - "Operations/Research/2026-08-22_Comparativa_Junio_Julio_Agosto_Integracion.csv"
 organization: "GrowthOS"
 ---
 
@@ -111,6 +115,8 @@ Para TikTok y YouTube, el dashboard debe conservar una capa común sin forzar eq
 La ampliación histórica de mayo/junio integró seis matches visuales exactos Drive↔Meta en `Operations/Research/2026-08-21_Reels_Drive_Meta_Crossmatch_Review.csv`: dos Reels individuales de Fantasma, un asset set de dos clips del hombre con hoodie, dos Reels distintos de radio/diálogo y un Reel individual del pato en traje. El video de Wilfred con la poción permanece sin match exacto después de controles negativos; la proximidad de fechas nunca crea una relación de publicación. El historial estructurado contiene ahora 102 registros por plataforma — Facebook 73, Instagram 16, TikTok 7 y YouTube 6 — y la lista CSV derivada conserva una fila por publicación, no por clip de producción. De los 54 candidatos Meta de mayo/junio, seis tienen match visual exacto con Drive y 48 permanecen con asset pendiente. La cola de reconciliación prioriza esos 48 casos restantes; el lote TOP5 revisó 25 candidatos sin match dentro del conjunto analizado, el bloque NEXT10 añadió un match exacto y nueve no-match primarios, y TIER2A añadió dos matches exactos de radio/diálogo y ocho no-match primarios. La clasificación de los seis matches identifica cuatro familias operativas. La prioridad de `Dialogue_radio` fue corregida el 2026-08-22: sus dos assets distintos quedan como observación secundaria porque Fernando reportó menor atención para el formato tipo podcast. La evidencia de mayor valor para la siguiente celda es `Fantasma caminando con gatos`, con snapshots históricos separados de 6,640 y 6,878 views, y el caso reportado de Elara/Wilfred con `POV: Eres Piscis`, pendiente de ID nativo. La nueva celda candidata es `HB-REEL-MOTION-POV-MEME-01`, basada en movimiento físico legible, hook POV o meme reconocible y payoff visual; requiere n≥3 para señal preliminar y n=5 para decisión operativa. El brief operativo de la celda está en `Operations/Production/2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md` y queda en `Review`; no genera CNT, no modifica calendarios y no autoriza publicación.
 
 La corrección humana del 2026-08-22 separa el asset `Elara y Evan en el Bosque.mp4` del caso Piscis. Ese archivo pertenece a otro Reel más reciente de Elara y Evan juntos en el bosque/campamento y queda en `Pending_reassignment_after_human_correction` hasta vincularlo con su publicación exacta. El concepto cross-platform `CON-2026-08-09-Elara_Evan_Estrellas` conserva sus IDs y copy, pero deja de tener ese asset como evidencia directa.
+
+La comparación documentada el 2026-08-22 entre junio, julio y agosto hasta el día 21 confirma que las filas históricas que coinciden con el inventario de Facebook Reels deben excluirse de las tablas estrictamente image-only: 29 en junio, 8 en julio y 8 en agosto 1–14. La nueva unión de agosto contiene 93 imágenes/posts y 11 Reels, deduplicados por Meta Post ID. La vista image-only deja junio en 201 publicaciones y 17,985 interacciones, julio en 199 y 67,727, y agosto 1–21 en 93 y 14,812; las cifras de agosto son cortes observados acumulados, no ventanas exactas. El detalle reproducible está en `Operations/Research/2026-08-22_Comparativa_Junio_Julio_Agosto_y_Brechas_Integracion.md` y sus artefactos. La conclusión operativa es que julio lidera el rendimiento típico, agosto supera a junio pero depende más de pocos outliers, y las brechas pendientes de junio/julio deben resolverse selectivamente, no mediante reconciliación masiva.
 
 La arquitectura también separa **fuente de identidad** y **fuente de rendimiento**. Que una publicación aparezca en Windsor o en el conector no autoriza a publicarla ni cambia su estado de calendario. Que Graph API confirme un ID no convierte automáticamente el total acumulado en una ventana 24/72 horas. Cada snapshot debe conservar su propia fecha y estado de comparabilidad.
 

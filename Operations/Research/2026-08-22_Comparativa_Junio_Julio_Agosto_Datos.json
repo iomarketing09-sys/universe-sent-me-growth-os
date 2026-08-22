@@ -1,0 +1,4773 @@
+{
+  "metadata": {
+    "created": "2026-08-22",
+    "purpose": "Comparar junio, julio y agosto hasta 2026-08-21 usando interacciones observadas y separar Reels de imágenes.",
+    "method": "Base homogénea 2026-08-14 para junio/julio/agosto 1–14; cortes observados 15–21 de agosto unidos y deduplicados por Meta post ID.",
+    "timezone": "America/Matamoros for current August reports; historical CSV retains its local date field.",
+    "metric_definition": "interactions = reactions + comments + shares",
+    "window_warning": "Todas las cifras son acumulados lifetime/Corte_Observado al momento de extracción; no son deltas exactos ni ventanas 24/72h.",
+    "reel_classification_note": "Los IDs coincidentes con Facebook Reels_Publication_Inventory se excluyen de las tablas image_only; Reels se reportan aparte.",
+    "dedupe": {
+      "raw_rows": 104,
+      "unique_rows": 104,
+      "duplicate_rows_removed": 0,
+      "blank_id_rows_skipped": 0,
+      "duplicate_ids": []
+    },
+    "source_files": [
+      "2026-08-14_Comparativo_Desempeno_Junio_Julio_Agosto_Datos.csv",
+      "2026-08-21_Reels_Publication_Inventory.csv",
+      "2026-08-17_Corte_Observado_15_16.json",
+      "2026-08-19_P0_17_Agosto_Current_Summary.json",
+      "2026-08-20_Cohorte_17_30_Current_Cut.json",
+      "2026-08-21_Corte_Diario_Metricas_2200.json",
+      "Historical_Performance_Individuals.csv",
+      "2026-08-21_Junio_57_Unmatched_Character_Utility.csv",
+      "2026-08-21_Julio_Expansion_Individual_Lote01.csv",
+      "2026-08-21_Julio_Expansion_Lote01_Taxonomy_Reviewed.csv"
+    ]
+  },
+  "known_facebook_reel_overlap_in_historical_base": {
+    "2026-06": {
+      "rows": 230,
+      "reels": 29,
+      "images_or_nonreel": 201
+    },
+    "2026-07": {
+      "rows": 207,
+      "reels": 8,
+      "images_or_nonreel": 199
+    },
+    "2026-08": {
+      "rows": 64,
+      "reels": 8,
+      "images_or_nonreel": 56
+    }
+  },
+  "summaries": {
+    "2026-06_all": {
+      "period": "2026-06_all",
+      "scope": "all_or_reels",
+      "posts": 230,
+      "date_min": "2026-06-01",
+      "date_max": "2026-06-30",
+      "active_days": 30,
+      "posts_per_active_day": 7.666666666666667,
+      "interactions_total": 18270.0,
+      "interactions_per_active_day": 609.0,
+      "interactions_mean": 79.43478260869566,
+      "interactions_median": 10.0,
+      "interactions_p90": 171.0,
+      "reactions_total": 13940.0,
+      "comments_total": 420.0,
+      "shares_total": 3910.0,
+      "reactions_median": 8.0,
+      "comments_median": 1.0,
+      "shares_median": 1.0,
+      "shares_per_interaction": 0.2140120415982485,
+      "comments_per_interaction": 0.022988505747126436
+    },
+    "2026-07_all": {
+      "period": "2026-07_all",
+      "scope": "all_or_reels",
+      "posts": 207,
+      "date_min": "2026-07-01",
+      "date_max": "2026-07-31",
+      "active_days": 31,
+      "posts_per_active_day": 6.67741935483871,
+      "interactions_total": 68024.0,
+      "interactions_per_active_day": 2194.3225806451615,
+      "interactions_mean": 328.6183574879227,
+      "interactions_median": 43.0,
+      "interactions_p90": 677.0,
+      "reactions_total": 48419.0,
+      "comments_total": 929.0,
+      "shares_total": 18676.0,
+      "reactions_median": 35.0,
+      "comments_median": 2.0,
+      "shares_median": 7.0,
+      "shares_per_interaction": 0.27455015876749383,
+      "comments_per_interaction": 0.013656944607785488
+    },
+    "2026-08_1_14_all": {
+      "period": "2026-08_1_14_all",
+      "scope": "all_or_reels",
+      "posts": 64,
+      "date_min": "2026-08-01",
+      "date_max": "2026-08-14",
+      "active_days": 14,
+      "posts_per_active_day": 4.571428571428571,
+      "interactions_total": 12293.0,
+      "interactions_per_active_day": 878.0714285714286,
+      "interactions_mean": 192.078125,
+      "interactions_median": 29.0,
+      "interactions_p90": 297.0,
+      "reactions_total": 8539.0,
+      "comments_total": 237.0,
+      "shares_total": 3517.0,
+      "reactions_median": 23.0,
+      "comments_median": 2.0,
+      "shares_median": 5.0,
+      "shares_per_interaction": 0.2860977792239486,
+      "comments_per_interaction": 0.019279264622142682
+    },
+    "2026-06_images": {
+      "period": "2026-06_images",
+      "scope": "image_or_post",
+      "posts": 201,
+      "date_min": "2026-06-01",
+      "date_max": "2026-06-30",
+      "active_days": 30,
+      "posts_per_active_day": 6.7,
+      "interactions_total": 17985.0,
+      "interactions_per_active_day": 599.5,
+      "interactions_mean": 89.4776119402985,
+      "interactions_median": 11.0,
+      "interactions_p90": 351.0,
+      "reactions_total": 13698.0,
+      "comments_total": 405.0,
+      "shares_total": 3882.0,
+      "reactions_median": 8.0,
+      "comments_median": 1.0,
+      "shares_median": 1.0,
+      "shares_per_interaction": 0.2158465387823186,
+      "comments_per_interaction": 0.022518765638031693
+    },
+    "2026-07_images": {
+      "period": "2026-07_images",
+      "scope": "image_or_post",
+      "posts": 199,
+      "date_min": "2026-07-01",
+      "date_max": "2026-07-31",
+      "active_days": 31,
+      "posts_per_active_day": 6.419354838709677,
+      "interactions_total": 67727.0,
+      "interactions_per_active_day": 2184.7419354838707,
+      "interactions_mean": 340.33668341708545,
+      "interactions_median": 49.0,
+      "interactions_p90": 692.0,
+      "reactions_total": 48188.0,
+      "comments_total": 910.0,
+      "shares_total": 18629.0,
+      "reactions_median": 37.0,
+      "comments_median": 2.0,
+      "shares_median": 8.0,
+      "shares_per_interaction": 0.27506016802752226,
+      "comments_per_interaction": 0.013436295716627047
+    },
+    "2026-08_1_14_images": {
+      "period": "2026-08_1_14_images",
+      "scope": "image_or_post",
+      "posts": 56,
+      "date_min": "2026-08-01",
+      "date_max": "2026-08-14",
+      "active_days": 14,
+      "posts_per_active_day": 4.0,
+      "interactions_total": 12170.0,
+      "interactions_per_active_day": 869.2857142857143,
+      "interactions_mean": 217.32142857142858,
+      "interactions_median": 35.0,
+      "interactions_p90": 397.0,
+      "reactions_total": 8442.0,
+      "comments_total": 223.0,
+      "shares_total": 3505.0,
+      "reactions_median": 26.0,
+      "comments_median": 2.0,
+      "shares_median": 6.5,
+      "shares_per_interaction": 0.2880032867707477,
+      "comments_per_interaction": 0.018323746918652423
+    },
+    "2026-06_reels": {
+      "period": "2026-06_reels",
+      "scope": "all_or_reels",
+      "posts": 29,
+      "date_min": "2026-06-01",
+      "date_max": "2026-06-30",
+      "active_days": 18,
+      "posts_per_active_day": 1.6111111111111112,
+      "interactions_total": 285.0,
+      "interactions_per_active_day": 15.833333333333334,
+      "interactions_mean": 9.827586206896552,
+      "interactions_median": 8.0,
+      "interactions_p90": 20.0,
+      "reactions_total": 242.0,
+      "comments_total": 15.0,
+      "shares_total": 28.0,
+      "reactions_median": 7.0,
+      "comments_median": 0.0,
+      "shares_median": 1.0,
+      "shares_per_interaction": 0.09824561403508772,
+      "comments_per_interaction": 0.05263157894736842
+    },
+    "2026-07_reels": {
+      "period": "2026-07_reels",
+      "scope": "all_or_reels",
+      "posts": 8,
+      "date_min": "2026-07-04",
+      "date_max": "2026-07-30",
+      "active_days": 7,
+      "posts_per_active_day": 1.1428571428571428,
+      "interactions_total": 297.0,
+      "interactions_per_active_day": 42.42857142857143,
+      "interactions_mean": 37.125,
+      "interactions_median": 25.5,
+      "interactions_p90": 164.0,
+      "reactions_total": 231.0,
+      "comments_total": 19.0,
+      "shares_total": 47.0,
+      "reactions_median": 20.5,
+      "comments_median": 2.5,
+      "shares_median": 1.5,
+      "shares_per_interaction": 0.15824915824915825,
+      "comments_per_interaction": 0.06397306397306397
+    },
+    "2026-08_1_14_reels": {
+      "period": "2026-08_1_14_reels",
+      "scope": "all_or_reels",
+      "posts": 8,
+      "date_min": "2026-08-01",
+      "date_max": "2026-08-11",
+      "active_days": 7,
+      "posts_per_active_day": 1.1428571428571428,
+      "interactions_total": 123.0,
+      "interactions_per_active_day": 17.571428571428573,
+      "interactions_mean": 15.375,
+      "interactions_median": 16.5,
+      "interactions_p90": 24.0,
+      "reactions_total": 97.0,
+      "comments_total": 14.0,
+      "shares_total": 12.0,
+      "reactions_median": 13.0,
+      "comments_median": 1.5,
+      "shares_median": 1.0,
+      "shares_per_interaction": 0.0975609756097561,
+      "comments_per_interaction": 0.11382113821138211
+    },
+    "2026-08_1_21_images": {
+      "period": "2026-08_1_21_images",
+      "scope": "image_or_post",
+      "posts": 93,
+      "date_min": "2026-08-01",
+      "date_max": "2026-08-21",
+      "active_days": 21,
+      "posts_per_active_day": 4.428571428571429,
+      "interactions_total": 14812.0,
+      "interactions_per_active_day": 705.3333333333334,
+      "interactions_mean": 159.2688172043011,
+      "interactions_median": 40.0,
+      "interactions_p90": 273.0,
+      "reactions_total": 10379.0,
+      "comments_total": 304.0,
+      "shares_total": 4129.0,
+      "reactions_median": 29.0,
+      "comments_median": 2.0,
+      "shares_median": 8.0,
+      "shares_per_interaction": 0.27876046448825276,
+      "comments_per_interaction": 0.020523899540912775
+    },
+    "2026-08_1_21_reels": {
+      "period": "2026-08_1_21_reels",
+      "scope": "all_or_reels",
+      "posts": 11,
+      "date_min": "2026-08-01",
+      "date_max": "2026-08-21",
+      "active_days": 10,
+      "posts_per_active_day": 1.1,
+      "interactions_total": 145.0,
+      "interactions_per_active_day": 14.5,
+      "interactions_mean": 13.181818181818182,
+      "interactions_median": 11.0,
+      "interactions_p90": 22.0,
+      "reactions_total": 113.0,
+      "comments_total": 16.0,
+      "shares_total": 16.0,
+      "reactions_median": 8.0,
+      "comments_median": 1.0,
+      "shares_median": 1.0,
+      "shares_per_interaction": 0.1103448275862069,
+      "comments_per_interaction": 0.1103448275862069
+    },
+    "2026-06_first14_images": {
+      "period": "2026-06_first14_images",
+      "scope": "image_or_post",
+      "posts": 111,
+      "date_min": "2026-06-01",
+      "date_max": "2026-06-14",
+      "active_days": 14,
+      "posts_per_active_day": 7.928571428571429,
+      "interactions_total": 6630.0,
+      "interactions_per_active_day": 473.57142857142856,
+      "interactions_mean": 59.729729729729726,
+      "interactions_median": 6.0,
+      "interactions_p90": 47.0,
+      "reactions_total": 5069.0,
+      "comments_total": 178.0,
+      "shares_total": 1383.0,
+      "reactions_median": 5.0,
+      "comments_median": 1.0,
+      "shares_median": 0.0,
+      "shares_per_interaction": 0.2085972850678733,
+      "comments_per_interaction": 0.026847662141779787
+    },
+    "2026-07_first14_images": {
+      "period": "2026-07_first14_images",
+      "scope": "image_or_post",
+      "posts": 93,
+      "date_min": "2026-07-01",
+      "date_max": "2026-07-14",
+      "active_days": 14,
+      "posts_per_active_day": 6.642857142857143,
+      "interactions_total": 22320.0,
+      "interactions_per_active_day": 1594.2857142857142,
+      "interactions_mean": 240.0,
+      "interactions_median": 41.0,
+      "interactions_p90": 639.0,
+      "reactions_total": 16624.0,
+      "comments_total": 372.0,
+      "shares_total": 5324.0,
+      "reactions_median": 33.0,
+      "comments_median": 2.0,
+      "shares_median": 7.0,
+      "shares_per_interaction": 0.23853046594982077,
+      "comments_per_interaction": 0.016666666666666666
+    },
+    "2026-08_first14_images": {
+      "period": "2026-08_first14_images",
+      "scope": "image_or_post",
+      "posts": 56,
+      "date_min": "2026-08-01",
+      "date_max": "2026-08-14",
+      "active_days": 14,
+      "posts_per_active_day": 4.0,
+      "interactions_total": 12170.0,
+      "interactions_per_active_day": 869.2857142857143,
+      "interactions_mean": 217.32142857142858,
+      "interactions_median": 35.0,
+      "interactions_p90": 397.0,
+      "reactions_total": 8442.0,
+      "comments_total": 223.0,
+      "shares_total": 3505.0,
+      "reactions_median": 26.0,
+      "comments_median": 2.0,
+      "shares_median": 6.5,
+      "shares_per_interaction": 0.2880032867707477,
+      "comments_per_interaction": 0.018323746918652423
+    }
+  },
+  "details": {
+    "2026-06_all": {
+      "top_posts": [
+        {
+          "id": "1036844829507460_122134136793072582",
+          "date": "2026-06-28",
+          "type": "Image_or_post",
+          "interactions": 1308.0,
+          "reactions": 912.0,
+          "comments": 4.0,
+          "shares": 392.0,
+          "message": "Me da miedo ser el malo de la historia... #UniverseSentMe #vidareal #pazmental #humor #memes"
+        },
+        {
+          "id": "1036844829507460_122130287907072582",
+          "date": "2026-06-14",
+          "type": "Image_or_post",
+          "interactions": 1181.0,
+          "reactions": 985.0,
+          "comments": 8.0,
+          "shares": 188.0,
+          "message": "No sean asi.. 😆"
+        },
+        {
+          "id": "1036844829507460_122132599809072582",
+          "date": "2026-06-21",
+          "type": "Image_or_post",
+          "interactions": 1128.0,
+          "reactions": 999.0,
+          "comments": 2.0,
+          "shares": 127.0,
+          "message": "El gato: 😧 #UniverseSentMe #cosasquepasan #vidagatuna"
+        },
+        {
+          "id": "1036844829507460_122128723341072582",
+          "date": "2026-06-09",
+          "type": "Image_or_post",
+          "interactions": 1127.0,
+          "reactions": 896.0,
+          "comments": 20.0,
+          "shares": 211.0,
+          "message": "yo Aura Fuerte 😏"
+        },
+        {
+          "id": "1036844829507460_122134374249072582",
+          "date": "2026-06-29",
+          "type": "Image_or_post",
+          "interactions": 1069.0,
+          "reactions": 858.0,
+          "comments": 11.0,
+          "shares": 200.0,
+          "message": "😏"
+        },
+        {
+          "id": "1036844829507460_122132690157072582",
+          "date": "2026-06-22",
+          "type": "Image_or_post",
+          "interactions": 975.0,
+          "reactions": 696.0,
+          "comments": 2.0,
+          "shares": 277.0,
+          "message": "a ver... a ver... 🤨 #UniverseSentMe #vidagatuna #cosasquepasan #vidareal"
+        },
+        {
+          "id": "1036844829507460_122129214813072582",
+          "date": "2026-06-11",
+          "type": "Image_or_post",
+          "interactions": 924.0,
+          "reactions": 696.0,
+          "comments": 14.0,
+          "shares": 214.0,
+          "message": "😎"
+        },
+        {
+          "id": "1036844829507460_122129013585072582",
+          "date": "2026-06-10",
+          "type": "Image_or_post",
+          "interactions": 785.0,
+          "reactions": 509.0,
+          "comments": 13.0,
+          "shares": 263.0,
+          "message": "🤡"
+        },
+        {
+          "id": "1036844829507460_122129231601072582",
+          "date": "2026-06-11",
+          "type": "Image_or_post",
+          "interactions": 547.0,
+          "reactions": 327.0,
+          "comments": 8.0,
+          "shares": 212.0,
+          "message": "o pedir follows 🫣"
+        },
+        {
+          "id": "1036844829507460_122134070943072582",
+          "date": "2026-06-27",
+          "type": "Image_or_post",
+          "interactions": 547.0,
+          "reactions": 348.0,
+          "comments": 0.0,
+          "shares": 199.0,
+          "message": "😎"
+        }
+      ],
+      "daily": [
+        {
+          "date": "2026-06-01",
+          "posts": 13,
+          "interactions_total": 129.0,
+          "interactions_mean": 9.923076923076923,
+          "interactions_median": 7.0,
+          "shares_total": 16.0,
+          "comments_total": 10.0
+        },
+        {
+          "date": "2026-06-02",
+          "posts": 12,
+          "interactions_total": 35.0,
+          "interactions_mean": 2.9166666666666665,
+          "interactions_median": 2.0,
+          "shares_total": 4.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-06-03",
+          "posts": 12,
+          "interactions_total": 34.0,
+          "interactions_mean": 2.8333333333333335,
+          "interactions_median": 2.5,
+          "shares_total": 2.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-06-04",
+          "posts": 10,
+          "interactions_total": 54.0,
+          "interactions_mean": 5.4,
+          "interactions_median": 6.5,
+          "shares_total": 6.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-06-05",
+          "posts": 10,
+          "interactions_total": 40.0,
+          "interactions_mean": 4.0,
+          "interactions_median": 2.0,
+          "shares_total": 3.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-06-06",
+          "posts": 11,
+          "interactions_total": 76.0,
+          "interactions_mean": 6.909090909090909,
+          "interactions_median": 3.0,
+          "shares_total": 9.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-06-07",
+          "posts": 14,
+          "interactions_total": 85.0,
+          "interactions_mean": 6.071428571428571,
+          "interactions_median": 2.5,
+          "shares_total": 10.0,
+          "comments_total": 6.0
+        },
+        {
+          "date": "2026-06-08",
+          "posts": 5,
+          "interactions_total": 194.0,
+          "interactions_mean": 38.8,
+          "interactions_median": 15.0,
+          "shares_total": 34.0,
+          "comments_total": 7.0
+        },
+        {
+          "date": "2026-06-09",
+          "posts": 5,
+          "interactions_total": 1461.0,
+          "interactions_mean": 292.2,
+          "interactions_median": 61.0,
+          "shares_total": 256.0,
+          "comments_total": 31.0
+        },
+        {
+          "date": "2026-06-10",
+          "posts": 8,
+          "interactions_total": 895.0,
+          "interactions_mean": 111.875,
+          "interactions_median": 13.5,
+          "shares_total": 280.0,
+          "comments_total": 22.0
+        },
+        {
+          "date": "2026-06-11",
+          "posts": 8,
+          "interactions_total": 1657.0,
+          "interactions_mean": 207.125,
+          "interactions_median": 10.0,
+          "shares_total": 447.0,
+          "comments_total": 27.0
+        },
+        {
+          "date": "2026-06-12",
+          "posts": 8,
+          "interactions_total": 171.0,
+          "interactions_mean": 21.375,
+          "interactions_median": 17.0,
+          "shares_total": 29.0,
+          "comments_total": 10.0
+        },
+        {
+          "date": "2026-06-13",
+          "posts": 6,
+          "interactions_total": 244.0,
+          "interactions_mean": 40.666666666666664,
+          "interactions_median": 19.5,
+          "shares_total": 52.0,
+          "comments_total": 6.0
+        },
+        {
+          "date": "2026-06-14",
+          "posts": 11,
+          "interactions_total": 1790.0,
+          "interactions_mean": 162.72727272727272,
+          "interactions_median": 9.0,
+          "shares_total": 258.0,
+          "comments_total": 41.0
+        },
+        {
+          "date": "2026-06-15",
+          "posts": 6,
+          "interactions_total": 783.0,
+          "interactions_mean": 130.5,
+          "interactions_median": 36.0,
+          "shares_total": 142.0,
+          "comments_total": 29.0
+        },
+        {
+          "date": "2026-06-16",
+          "posts": 7,
+          "interactions_total": 137.0,
+          "interactions_mean": 19.571428571428573,
+          "interactions_median": 16.0,
+          "shares_total": 21.0,
+          "comments_total": 7.0
+        },
+        {
+          "date": "2026-06-17",
+          "posts": 4,
+          "interactions_total": 540.0,
+          "interactions_mean": 135.0,
+          "interactions_median": 16.5,
+          "shares_total": 59.0,
+          "comments_total": 12.0
+        },
+        {
+          "date": "2026-06-18",
+          "posts": 4,
+          "interactions_total": 89.0,
+          "interactions_mean": 22.25,
+          "interactions_median": 15.0,
+          "shares_total": 10.0,
+          "comments_total": 6.0
+        },
+        {
+          "date": "2026-06-19",
+          "posts": 5,
+          "interactions_total": 181.0,
+          "interactions_mean": 36.2,
+          "interactions_median": 30.0,
+          "shares_total": 40.0,
+          "comments_total": 6.0
+        },
+        {
+          "date": "2026-06-20",
+          "posts": 6,
+          "interactions_total": 1282.0,
+          "interactions_mean": 213.66666666666666,
+          "interactions_median": 193.5,
+          "shares_total": 279.0,
+          "comments_total": 23.0
+        },
+        {
+          "date": "2026-06-21",
+          "posts": 3,
+          "interactions_total": 1170.0,
+          "interactions_mean": 390.0,
+          "interactions_median": 34.0,
+          "shares_total": 134.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-06-22",
+          "posts": 7,
+          "interactions_total": 1142.0,
+          "interactions_mean": 163.14285714285714,
+          "interactions_median": 20.0,
+          "shares_total": 299.0,
+          "comments_total": 17.0
+        },
+        {
+          "date": "2026-06-23",
+          "posts": 4,
+          "interactions_total": 77.0,
+          "interactions_mean": 19.25,
+          "interactions_median": 17.5,
+          "shares_total": 15.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-06-24",
+          "posts": 4,
+          "interactions_total": 69.0,
+          "interactions_mean": 17.25,
+          "interactions_median": 13.5,
+          "shares_total": 11.0,
+          "comments_total": 7.0
+        },
+        {
+          "date": "2026-06-25",
+          "posts": 4,
+          "interactions_total": 110.0,
+          "interactions_mean": 27.5,
+          "interactions_median": 24.5,
+          "shares_total": 20.0,
+          "comments_total": 6.0
+        },
+        {
+          "date": "2026-06-26",
+          "posts": 8,
+          "interactions_total": 505.0,
+          "interactions_mean": 63.125,
+          "interactions_median": 7.5,
+          "shares_total": 115.0,
+          "comments_total": 10.0
+        },
+        {
+          "date": "2026-06-27",
+          "posts": 9,
+          "interactions_total": 1134.0,
+          "interactions_mean": 126.0,
+          "interactions_median": 16.0,
+          "shares_total": 328.0,
+          "comments_total": 36.0
+        },
+        {
+          "date": "2026-06-28",
+          "posts": 9,
+          "interactions_total": 2140.0,
+          "interactions_mean": 237.77777777777777,
+          "interactions_median": 40.0,
+          "shares_total": 654.0,
+          "comments_total": 16.0
+        },
+        {
+          "date": "2026-06-29",
+          "posts": 8,
+          "interactions_total": 1516.0,
+          "interactions_mean": 189.5,
+          "interactions_median": 14.0,
+          "shares_total": 281.0,
+          "comments_total": 33.0
+        },
+        {
+          "date": "2026-06-30",
+          "posts": 9,
+          "interactions_total": 530.0,
+          "interactions_mean": 58.888888888888886,
+          "interactions_median": 16.0,
+          "shares_total": 96.0,
+          "comments_total": 17.0
+        }
+      ],
+      "top1_share_of_interactions": 0.07159277504105091,
+      "top5_share_of_interactions": 0.3181718664477285,
+      "without_top1": {
+        "period": "2026-06_all_without_top1",
+        "scope": "image_or_post",
+        "posts": 229,
+        "date_min": "2026-06-01",
+        "date_max": "2026-06-30",
+        "active_days": 30,
+        "posts_per_active_day": 7.633333333333334,
+        "interactions_total": 16962.0,
+        "interactions_per_active_day": 565.4,
+        "interactions_mean": 74.06986899563319,
+        "interactions_median": 10.0,
+        "interactions_p90": 171.0,
+        "reactions_total": 13028.0,
+        "comments_total": 416.0,
+        "shares_total": 3518.0,
+        "reactions_median": 8.0,
+        "comments_median": 1.0,
+        "shares_median": 1.0,
+        "shares_per_interaction": 0.20740478717132413,
+        "comments_per_interaction": 0.024525409739417522
+      },
+      "threshold_counts": {
+        "50": 36,
+        "100": 27,
+        "300": 22,
+        "500": 12,
+        "1000": 5
+      }
+    },
+    "2026-07_all": {
+      "top_posts": [
+        {
+          "id": "1036844829507460_122140003413072582",
+          "date": "2026-07-18",
+          "type": "Image_or_post",
+          "interactions": 5482.0,
+          "reactions": 3108.0,
+          "comments": 62.0,
+          "shares": 2312.0,
+          "message": "🫣🫣 #UniverseSentMe"
+        },
+        {
+          "id": "1036844829507460_122139999861072582",
+          "date": "2026-07-18",
+          "type": "Image_or_post",
+          "interactions": 3993.0,
+          "reactions": 2536.0,
+          "comments": 8.0,
+          "shares": 1449.0,
+          "message": "😐"
+        },
+        {
+          "id": "1036844829507460_122140844349072582",
+          "date": "2026-07-21",
+          "type": "Image_or_post",
+          "interactions": 3913.0,
+          "reactions": 2290.0,
+          "comments": 102.0,
+          "shares": 1521.0,
+          "message": "🥴🤯 escucho borroso.... #UniverseSentMe #humor #memesenespañol #conversacion #relatable #vidareal #meditacion"
+        },
+        {
+          "id": "1036844829507460_122139232911072582",
+          "date": "2026-07-16",
+          "type": "Image_or_post",
+          "interactions": 3740.0,
+          "reactions": 2805.0,
+          "comments": 31.0,
+          "shares": 904.0,
+          "message": "😮‍💨"
+        },
+        {
+          "id": "1036844829507460_122142779757072582",
+          "date": "2026-07-28",
+          "type": "Image_or_post",
+          "interactions": 3726.0,
+          "reactions": 2367.0,
+          "comments": 18.0,
+          "shares": 1341.0,
+          "message": "No es desinterés... #UnvierseSentMe #FantasmaUSM #humor #memesUSM"
+        },
+        {
+          "id": "1036844829507460_122141376093072582",
+          "date": "2026-07-24",
+          "type": "Image_or_post",
+          "interactions": 3002.0,
+          "reactions": 2336.0,
+          "comments": 41.0,
+          "shares": 625.0,
+          "message": "🫣🫣 #UniverseSentMe #humor #relatable #astrologia #retrogrado"
+        },
+        {
+          "id": "1036844829507460_122142627051072582",
+          "date": "2026-07-27",
+          "type": "Image_or_post",
+          "interactions": 2979.0,
+          "reactions": 2249.0,
+          "comments": 16.0,
+          "shares": 714.0,
+          "message": "😭🫣 #UniverseSentMe #humoracido #memesUSM"
+        },
+        {
+          "id": "1036844829507460_122141207841072582",
+          "date": "2026-07-22",
+          "type": "Image_or_post",
+          "interactions": 2747.0,
+          "reactions": 1722.0,
+          "comments": 10.0,
+          "shares": 1015.0,
+          "message": "🙂‍↕️ #UniverseSentMe #humor #memesenespañol #relatable #vidareal #meditacion"
+        },
+        {
+          "id": "1036844829507460_122135607981072582",
+          "date": "2026-07-03",
+          "type": "Image_or_post",
+          "interactions": 2441.0,
+          "reactions": 1652.0,
+          "comments": 15.0,
+          "shares": 774.0,
+          "message": "😋"
+        },
+        {
+          "id": "1036844829507460_122135586723072582",
+          "date": "2026-07-03",
+          "type": "Image_or_post",
+          "interactions": 2280.0,
+          "reactions": 1533.0,
+          "comments": 9.0,
+          "shares": 738.0,
+          "message": "Ya va ser la hora del tecito 😇 #UniverseSentMe #vidareal #relatable #problemas"
+        }
+      ],
+      "daily": [
+        {
+          "date": "2026-07-01",
+          "posts": 8,
+          "interactions_total": 2936.0,
+          "interactions_mean": 367.0,
+          "interactions_median": 58.0,
+          "shares_total": 714.0,
+          "comments_total": 23.0
+        },
+        {
+          "date": "2026-07-02",
+          "posts": 6,
+          "interactions_total": 299.0,
+          "interactions_mean": 49.833333333333336,
+          "interactions_median": 46.5,
+          "shares_total": 46.0,
+          "comments_total": 10.0
+        },
+        {
+          "date": "2026-07-03",
+          "posts": 6,
+          "interactions_total": 5892.0,
+          "interactions_mean": 982.0,
+          "interactions_median": 528.5,
+          "shares_total": 1687.0,
+          "comments_total": 43.0
+        },
+        {
+          "date": "2026-07-04",
+          "posts": 7,
+          "interactions_total": 1221.0,
+          "interactions_mean": 174.42857142857142,
+          "interactions_median": 41.0,
+          "shares_total": 218.0,
+          "comments_total": 18.0
+        },
+        {
+          "date": "2026-07-05",
+          "posts": 5,
+          "interactions_total": 1019.0,
+          "interactions_mean": 203.8,
+          "interactions_median": 122.0,
+          "shares_total": 156.0,
+          "comments_total": 78.0
+        },
+        {
+          "date": "2026-07-06",
+          "posts": 5,
+          "interactions_total": 1571.0,
+          "interactions_mean": 314.2,
+          "interactions_median": 37.0,
+          "shares_total": 424.0,
+          "comments_total": 20.0
+        },
+        {
+          "date": "2026-07-07",
+          "posts": 4,
+          "interactions_total": 414.0,
+          "interactions_mean": 103.5,
+          "interactions_median": 30.5,
+          "shares_total": 118.0,
+          "comments_total": 11.0
+        },
+        {
+          "date": "2026-07-08",
+          "posts": 5,
+          "interactions_total": 870.0,
+          "interactions_mean": 174.0,
+          "interactions_median": 63.0,
+          "shares_total": 167.0,
+          "comments_total": 18.0
+        },
+        {
+          "date": "2026-07-09",
+          "posts": 7,
+          "interactions_total": 2070.0,
+          "interactions_mean": 295.7142857142857,
+          "interactions_median": 351.0,
+          "shares_total": 449.0,
+          "comments_total": 31.0
+        },
+        {
+          "date": "2026-07-10",
+          "posts": 8,
+          "interactions_total": 1117.0,
+          "interactions_mean": 139.625,
+          "interactions_median": 80.0,
+          "shares_total": 225.0,
+          "comments_total": 21.0
+        },
+        {
+          "date": "2026-07-11",
+          "posts": 8,
+          "interactions_total": 1007.0,
+          "interactions_mean": 125.875,
+          "interactions_median": 43.0,
+          "shares_total": 219.0,
+          "comments_total": 19.0
+        },
+        {
+          "date": "2026-07-12",
+          "posts": 10,
+          "interactions_total": 1315.0,
+          "interactions_mean": 131.5,
+          "interactions_median": 22.0,
+          "shares_total": 398.0,
+          "comments_total": 30.0
+        },
+        {
+          "date": "2026-07-13",
+          "posts": 7,
+          "interactions_total": 1725.0,
+          "interactions_mean": 246.42857142857142,
+          "interactions_median": 17.0,
+          "shares_total": 353.0,
+          "comments_total": 26.0
+        },
+        {
+          "date": "2026-07-14",
+          "posts": 8,
+          "interactions_total": 868.0,
+          "interactions_mean": 108.5,
+          "interactions_median": 32.0,
+          "shares_total": 150.0,
+          "comments_total": 24.0
+        },
+        {
+          "date": "2026-07-15",
+          "posts": 10,
+          "interactions_total": 2770.0,
+          "interactions_mean": 277.0,
+          "interactions_median": 48.0,
+          "shares_total": 645.0,
+          "comments_total": 25.0
+        },
+        {
+          "date": "2026-07-16",
+          "posts": 10,
+          "interactions_total": 4499.0,
+          "interactions_mean": 449.9,
+          "interactions_median": 69.5,
+          "shares_total": 1059.0,
+          "comments_total": 41.0
+        },
+        {
+          "date": "2026-07-17",
+          "posts": 10,
+          "interactions_total": 664.0,
+          "interactions_mean": 66.4,
+          "interactions_median": 19.5,
+          "shares_total": 131.0,
+          "comments_total": 10.0
+        },
+        {
+          "date": "2026-07-18",
+          "posts": 10,
+          "interactions_total": 11513.0,
+          "interactions_mean": 1151.3,
+          "interactions_median": 280.5,
+          "shares_total": 4217.0,
+          "comments_total": 101.0
+        },
+        {
+          "date": "2026-07-19",
+          "posts": 5,
+          "interactions_total": 1432.0,
+          "interactions_mean": 286.4,
+          "interactions_median": 23.0,
+          "shares_total": 432.0,
+          "comments_total": 20.0
+        },
+        {
+          "date": "2026-07-20",
+          "posts": 6,
+          "interactions_total": 2044.0,
+          "interactions_mean": 340.6666666666667,
+          "interactions_median": 71.0,
+          "shares_total": 489.0,
+          "comments_total": 16.0
+        },
+        {
+          "date": "2026-07-21",
+          "posts": 7,
+          "interactions_total": 4342.0,
+          "interactions_mean": 620.2857142857143,
+          "interactions_median": 97.0,
+          "shares_total": 1625.0,
+          "comments_total": 113.0
+        },
+        {
+          "date": "2026-07-22",
+          "posts": 1,
+          "interactions_total": 2747.0,
+          "interactions_mean": 2747.0,
+          "interactions_median": 2747.0,
+          "shares_total": 1015.0,
+          "comments_total": 10.0
+        },
+        {
+          "date": "2026-07-23",
+          "posts": 6,
+          "interactions_total": 586.0,
+          "interactions_mean": 97.66666666666667,
+          "interactions_median": 72.0,
+          "shares_total": 123.0,
+          "comments_total": 11.0
+        },
+        {
+          "date": "2026-07-24",
+          "posts": 9,
+          "interactions_total": 3514.0,
+          "interactions_mean": 390.44444444444446,
+          "interactions_median": 66.0,
+          "shares_total": 737.0,
+          "comments_total": 56.0
+        },
+        {
+          "date": "2026-07-25",
+          "posts": 5,
+          "interactions_total": 681.0,
+          "interactions_mean": 136.2,
+          "interactions_median": 43.0,
+          "shares_total": 153.0,
+          "comments_total": 7.0
+        },
+        {
+          "date": "2026-07-26",
+          "posts": 6,
+          "interactions_total": 346.0,
+          "interactions_mean": 57.666666666666664,
+          "interactions_median": 41.0,
+          "shares_total": 63.0,
+          "comments_total": 10.0
+        },
+        {
+          "date": "2026-07-27",
+          "posts": 7,
+          "interactions_total": 4916.0,
+          "interactions_mean": 702.2857142857143,
+          "interactions_median": 176.0,
+          "shares_total": 993.0,
+          "comments_total": 59.0
+        },
+        {
+          "date": "2026-07-28",
+          "posts": 6,
+          "interactions_total": 3890.0,
+          "interactions_mean": 648.3333333333334,
+          "interactions_median": 37.0,
+          "shares_total": 1368.0,
+          "comments_total": 22.0
+        },
+        {
+          "date": "2026-07-29",
+          "posts": 5,
+          "interactions_total": 151.0,
+          "interactions_mean": 30.2,
+          "interactions_median": 32.0,
+          "shares_total": 16.0,
+          "comments_total": 14.0
+        },
+        {
+          "date": "2026-07-30",
+          "posts": 7,
+          "interactions_total": 788.0,
+          "interactions_mean": 112.57142857142857,
+          "interactions_median": 44.0,
+          "shares_total": 137.0,
+          "comments_total": 21.0
+        },
+        {
+          "date": "2026-07-31",
+          "posts": 3,
+          "interactions_total": 817.0,
+          "interactions_mean": 272.3333333333333,
+          "interactions_median": 127.0,
+          "shares_total": 149.0,
+          "comments_total": 21.0
+        }
+      ],
+      "top1_share_of_interactions": 0.08058920381041985,
+      "top5_share_of_interactions": 0.30656827002234505,
+      "without_top1": {
+        "period": "2026-07_all_without_top1",
+        "scope": "image_or_post",
+        "posts": 206,
+        "date_min": "2026-07-01",
+        "date_max": "2026-07-31",
+        "active_days": 31,
+        "posts_per_active_day": 6.645161290322581,
+        "interactions_total": 62542.0,
+        "interactions_per_active_day": 2017.483870967742,
+        "interactions_mean": 303.6019417475728,
+        "interactions_median": 42.5,
+        "interactions_p90": 666.0,
+        "reactions_total": 45311.0,
+        "comments_total": 867.0,
+        "shares_total": 16364.0,
+        "reactions_median": 34.5,
+        "comments_median": 2.0,
+        "shares_median": 7.0,
+        "shares_per_interaction": 0.2616481724281283,
+        "comments_per_interaction": 0.013862684276166416
+      },
+      "threshold_counts": {
+        "50": 100,
+        "100": 74,
+        "300": 46,
+        "500": 28,
+        "1000": 18
+      }
+    },
+    "2026-08_1_14_all": {
+      "top_posts": [
+        {
+          "id": "1036844829507460_122145025611072582",
+          "date": "2026-08-04",
+          "type": "Image_or_post",
+          "interactions": 4103.0,
+          "reactions": 2858.0,
+          "comments": 30.0,
+          "shares": 1215.0,
+          "message": "😒"
+        },
+        {
+          "id": "1036844829507460_122144684943072582",
+          "date": "2026-08-03",
+          "type": "Image_or_post",
+          "interactions": 1702.0,
+          "reactions": 1111.0,
+          "comments": 5.0,
+          "shares": 586.0,
+          "message": "𝑳𝒖𝒏𝒆𝒔 𝒅𝒆 𝒆𝒏𝒇𝒐𝒒𝒖𝒆. No olvides la santísima trinidad para sobrevivir a la semana con estilo. 🕶️✨ - Ser la vrg. - Andar bien vrg. - Que te valga vrg. (La más importante). ¿𝑬𝒏 𝒄𝒖𝒂́𝒍 𝒅𝒆"
+        },
+        {
+          "id": "1036844829507460_122143924209072582",
+          "date": "2026-08-01",
+          "type": "Image_or_post",
+          "interactions": 1319.0,
+          "reactions": 806.0,
+          "comments": 60.0,
+          "shares": 453.0,
+          "message": "Si estás leyendo esto, ¡felicidades! Has sobrevivido a otro microinstante del caos universal. Sig #UniverseSentMe #HumorExistencial #MemesUSM"
+        },
+        {
+          "id": "1036844829507460_122148555549072582",
+          "date": "2026-08-11",
+          "type": "Image_or_post",
+          "interactions": 669.0,
+          "reactions": 465.0,
+          "comments": 11.0,
+          "shares": 193.0,
+          "message": "Tus únicas amigas son estas 😳 #UniverseSentMe #KaelUSM #humor #memes"
+        },
+        {
+          "id": "1036844829507460_122148868341072582",
+          "date": "2026-08-12",
+          "type": "Image_or_post",
+          "interactions": 494.0,
+          "reactions": 373.0,
+          "comments": 8.0,
+          "shares": 113.0,
+          "message": "¿Qué quieres desayunar? 😳 #UniverseSentMe #EvanUSM #KiriUSM #relatable"
+        },
+        {
+          "id": "1036844829507460_122144694213072582",
+          "date": "2026-08-03",
+          "type": "Image_or_post",
+          "interactions": 397.0,
+          "reactions": 286.0,
+          "comments": 4.0,
+          "shares": 107.0,
+          "message": "𝑲𝒊𝒓𝒊 no acepta lo ordinario, y tú tampoco deberías. ✨🦋 Hay un mundo entero de posibilidades entre lo que ves y lo que imaginas. Comparte si hoy también eliges creer en la magia. #U"
+        },
+        {
+          "id": "1036844829507460_122147826357072582",
+          "date": "2026-08-10",
+          "type": "Image_or_post",
+          "interactions": 297.0,
+          "reactions": 216.0,
+          "comments": 2.0,
+          "shares": 79.0,
+          "message": "imaginate... jsjs"
+        },
+        {
+          "id": "1036844829507460_122144992809072582",
+          "date": "2026-08-04",
+          "type": "Image_or_post",
+          "interactions": 273.0,
+          "reactions": 174.0,
+          "comments": 4.0,
+          "shares": 95.0,
+          "message": "Ronroneo para el amigo 😌🥰 #UniverseSentMe #UniverseUSM #memes #humoracido"
+        },
+        {
+          "id": "1036844829507460_122144976705072582",
+          "date": "2026-08-04",
+          "type": "Image_or_post",
+          "interactions": 264.0,
+          "reactions": 207.0,
+          "comments": 11.0,
+          "shares": 46.0,
+          "message": "La evolución no fue un accidente, fue un diseño de alta costura. 🎩🦢 Mientras unos intentan procesar, el Ganso simplemente es. Dios sabía lo que hacía cuando creó al animal que domi"
+        },
+        {
+          "id": "1036844829507460_122147825499072582",
+          "date": "2026-08-10",
+          "type": "Image_or_post",
+          "interactions": 262.0,
+          "reactions": 207.0,
+          "comments": 5.0,
+          "shares": 50.0,
+          "message": "🫢 #UniverseSentMe #humor #relatable #UniverseUSM"
+        }
+      ],
+      "daily": [
+        {
+          "date": "2026-08-01",
+          "posts": 5,
+          "interactions_total": 1388.0,
+          "interactions_mean": 277.6,
+          "interactions_median": 22.0,
+          "shares_total": 464.0,
+          "comments_total": 62.0
+        },
+        {
+          "date": "2026-08-02",
+          "posts": 5,
+          "interactions_total": 338.0,
+          "interactions_mean": 67.6,
+          "interactions_median": 23.0,
+          "shares_total": 86.0,
+          "comments_total": 6.0
+        },
+        {
+          "date": "2026-08-03",
+          "posts": 4,
+          "interactions_total": 2135.0,
+          "interactions_mean": 533.75,
+          "interactions_median": 208.5,
+          "shares_total": 698.0,
+          "comments_total": 15.0
+        },
+        {
+          "date": "2026-08-04",
+          "posts": 5,
+          "interactions_total": 4685.0,
+          "interactions_mean": 937.0,
+          "interactions_median": 264.0,
+          "shares_total": 1365.0,
+          "comments_total": 48.0
+        },
+        {
+          "date": "2026-08-05",
+          "posts": 5,
+          "interactions_total": 94.0,
+          "interactions_mean": 18.8,
+          "interactions_median": 21.0,
+          "shares_total": 22.0,
+          "comments_total": 6.0
+        },
+        {
+          "date": "2026-08-06",
+          "posts": 4,
+          "interactions_total": 254.0,
+          "interactions_mean": 63.5,
+          "interactions_median": 65.5,
+          "shares_total": 41.0,
+          "comments_total": 9.0
+        },
+        {
+          "date": "2026-08-07",
+          "posts": 6,
+          "interactions_total": 131.0,
+          "interactions_mean": 21.833333333333332,
+          "interactions_median": 20.0,
+          "shares_total": 21.0,
+          "comments_total": 8.0
+        },
+        {
+          "date": "2026-08-08",
+          "posts": 7,
+          "interactions_total": 350.0,
+          "interactions_mean": 50.0,
+          "interactions_median": 18.0,
+          "shares_total": 92.0,
+          "comments_total": 14.0
+        },
+        {
+          "date": "2026-08-09",
+          "posts": 6,
+          "interactions_total": 384.0,
+          "interactions_mean": 64.0,
+          "interactions_median": 33.5,
+          "shares_total": 107.0,
+          "comments_total": 12.0
+        },
+        {
+          "date": "2026-08-10",
+          "posts": 3,
+          "interactions_total": 596.0,
+          "interactions_mean": 198.66666666666666,
+          "interactions_median": 262.0,
+          "shares_total": 138.0,
+          "comments_total": 9.0
+        },
+        {
+          "date": "2026-08-11",
+          "posts": 5,
+          "interactions_total": 1092.0,
+          "interactions_mean": 218.4,
+          "interactions_median": 143.0,
+          "shares_total": 295.0,
+          "comments_total": 25.0
+        },
+        {
+          "date": "2026-08-12",
+          "posts": 3,
+          "interactions_total": 687.0,
+          "interactions_mean": 229.0,
+          "interactions_median": 180.0,
+          "shares_total": 152.0,
+          "comments_total": 16.0
+        },
+        {
+          "date": "2026-08-13",
+          "posts": 4,
+          "interactions_total": 94.0,
+          "interactions_mean": 23.5,
+          "interactions_median": 25.0,
+          "shares_total": 18.0,
+          "comments_total": 4.0
+        },
+        {
+          "date": "2026-08-14",
+          "posts": 2,
+          "interactions_total": 65.0,
+          "interactions_mean": 32.5,
+          "interactions_median": 32.5,
+          "shares_total": 18.0,
+          "comments_total": 3.0
+        }
+      ],
+      "top1_share_of_interactions": 0.3337671845765883,
+      "top5_share_of_interactions": 0.6741234849101114,
+      "without_top1": {
+        "period": "2026-08_1_14_all_without_top1",
+        "scope": "image_or_post",
+        "posts": 63,
+        "date_min": "2026-08-01",
+        "date_max": "2026-08-14",
+        "active_days": 14,
+        "posts_per_active_day": 4.5,
+        "interactions_total": 8190.0,
+        "interactions_per_active_day": 585.0,
+        "interactions_mean": 130.0,
+        "interactions_median": 27.0,
+        "interactions_p90": 273.0,
+        "reactions_total": 5681.0,
+        "comments_total": 207.0,
+        "shares_total": 2302.0,
+        "reactions_median": 23.0,
+        "comments_median": 2.0,
+        "shares_median": 5.0,
+        "shares_per_interaction": 0.2810744810744811,
+        "comments_per_interaction": 0.025274725274725275
+      },
+      "threshold_counts": {
+        "50": 23,
+        "100": 16,
+        "300": 6,
+        "500": 4,
+        "1000": 3
+      }
+    },
+    "2026-06_images": {
+      "top_posts": [
+        {
+          "id": "1036844829507460_122134136793072582",
+          "date": "2026-06-28",
+          "type": "Image_or_post",
+          "interactions": 1308.0,
+          "reactions": 912.0,
+          "comments": 4.0,
+          "shares": 392.0,
+          "message": "Me da miedo ser el malo de la historia... #UniverseSentMe #vidareal #pazmental #humor #memes"
+        },
+        {
+          "id": "1036844829507460_122130287907072582",
+          "date": "2026-06-14",
+          "type": "Image_or_post",
+          "interactions": 1181.0,
+          "reactions": 985.0,
+          "comments": 8.0,
+          "shares": 188.0,
+          "message": "No sean asi.. 😆"
+        },
+        {
+          "id": "1036844829507460_122132599809072582",
+          "date": "2026-06-21",
+          "type": "Image_or_post",
+          "interactions": 1128.0,
+          "reactions": 999.0,
+          "comments": 2.0,
+          "shares": 127.0,
+          "message": "El gato: 😧 #UniverseSentMe #cosasquepasan #vidagatuna"
+        },
+        {
+          "id": "1036844829507460_122128723341072582",
+          "date": "2026-06-09",
+          "type": "Image_or_post",
+          "interactions": 1127.0,
+          "reactions": 896.0,
+          "comments": 20.0,
+          "shares": 211.0,
+          "message": "yo Aura Fuerte 😏"
+        },
+        {
+          "id": "1036844829507460_122134374249072582",
+          "date": "2026-06-29",
+          "type": "Image_or_post",
+          "interactions": 1069.0,
+          "reactions": 858.0,
+          "comments": 11.0,
+          "shares": 200.0,
+          "message": "😏"
+        },
+        {
+          "id": "1036844829507460_122132690157072582",
+          "date": "2026-06-22",
+          "type": "Image_or_post",
+          "interactions": 975.0,
+          "reactions": 696.0,
+          "comments": 2.0,
+          "shares": 277.0,
+          "message": "a ver... a ver... 🤨 #UniverseSentMe #vidagatuna #cosasquepasan #vidareal"
+        },
+        {
+          "id": "1036844829507460_122129214813072582",
+          "date": "2026-06-11",
+          "type": "Image_or_post",
+          "interactions": 924.0,
+          "reactions": 696.0,
+          "comments": 14.0,
+          "shares": 214.0,
+          "message": "😎"
+        },
+        {
+          "id": "1036844829507460_122129013585072582",
+          "date": "2026-06-10",
+          "type": "Image_or_post",
+          "interactions": 785.0,
+          "reactions": 509.0,
+          "comments": 13.0,
+          "shares": 263.0,
+          "message": "🤡"
+        },
+        {
+          "id": "1036844829507460_122129231601072582",
+          "date": "2026-06-11",
+          "type": "Image_or_post",
+          "interactions": 547.0,
+          "reactions": 327.0,
+          "comments": 8.0,
+          "shares": 212.0,
+          "message": "o pedir follows 🫣"
+        },
+        {
+          "id": "1036844829507460_122134070943072582",
+          "date": "2026-06-27",
+          "type": "Image_or_post",
+          "interactions": 547.0,
+          "reactions": 348.0,
+          "comments": 0.0,
+          "shares": 199.0,
+          "message": "😎"
+        }
+      ],
+      "daily": [
+        {
+          "date": "2026-06-01",
+          "posts": 11,
+          "interactions_total": 76.0,
+          "interactions_mean": 6.909090909090909,
+          "interactions_median": 7.0,
+          "shares_total": 6.0,
+          "comments_total": 9.0
+        },
+        {
+          "date": "2026-06-02",
+          "posts": 11,
+          "interactions_total": 33.0,
+          "interactions_mean": 3.0,
+          "interactions_median": 2.0,
+          "shares_total": 4.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-06-03",
+          "posts": 10,
+          "interactions_total": 26.0,
+          "interactions_mean": 2.6,
+          "interactions_median": 2.5,
+          "shares_total": 2.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-06-04",
+          "posts": 8,
+          "interactions_total": 45.0,
+          "interactions_mean": 5.625,
+          "interactions_median": 7.5,
+          "shares_total": 5.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-06-05",
+          "posts": 9,
+          "interactions_total": 32.0,
+          "interactions_mean": 3.5555555555555554,
+          "interactions_median": 2.0,
+          "shares_total": 2.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-06-06",
+          "posts": 8,
+          "interactions_total": 37.0,
+          "interactions_mean": 4.625,
+          "interactions_median": 2.5,
+          "shares_total": 6.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-06-07",
+          "posts": 12,
+          "interactions_total": 60.0,
+          "interactions_mean": 5.0,
+          "interactions_median": 2.0,
+          "shares_total": 9.0,
+          "comments_total": 4.0
+        },
+        {
+          "date": "2026-06-08",
+          "posts": 5,
+          "interactions_total": 194.0,
+          "interactions_mean": 38.8,
+          "interactions_median": 15.0,
+          "shares_total": 34.0,
+          "comments_total": 7.0
+        },
+        {
+          "date": "2026-06-09",
+          "posts": 4,
+          "interactions_total": 1441.0,
+          "interactions_mean": 360.25,
+          "interactions_median": 143.5,
+          "shares_total": 255.0,
+          "comments_total": 30.0
+        },
+        {
+          "date": "2026-06-10",
+          "posts": 6,
+          "interactions_total": 865.0,
+          "interactions_mean": 144.16666666666666,
+          "interactions_median": 13.5,
+          "shares_total": 277.0,
+          "comments_total": 20.0
+        },
+        {
+          "date": "2026-06-11",
+          "posts": 7,
+          "interactions_total": 1657.0,
+          "interactions_mean": 236.71428571428572,
+          "interactions_median": 11.0,
+          "shares_total": 447.0,
+          "comments_total": 27.0
+        },
+        {
+          "date": "2026-06-12",
+          "posts": 7,
+          "interactions_total": 167.0,
+          "interactions_mean": 23.857142857142858,
+          "interactions_median": 27.0,
+          "shares_total": 29.0,
+          "comments_total": 10.0
+        },
+        {
+          "date": "2026-06-13",
+          "posts": 5,
+          "interactions_total": 233.0,
+          "interactions_mean": 46.6,
+          "interactions_median": 23.0,
+          "shares_total": 52.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-06-14",
+          "posts": 8,
+          "interactions_total": 1764.0,
+          "interactions_mean": 220.5,
+          "interactions_median": 9.5,
+          "shares_total": 255.0,
+          "comments_total": 41.0
+        },
+        {
+          "date": "2026-06-15",
+          "posts": 5,
+          "interactions_total": 780.0,
+          "interactions_mean": 156.0,
+          "interactions_median": 61.0,
+          "shares_total": 142.0,
+          "comments_total": 29.0
+        },
+        {
+          "date": "2026-06-16",
+          "posts": 6,
+          "interactions_total": 131.0,
+          "interactions_mean": 21.833333333333332,
+          "interactions_median": 22.5,
+          "shares_total": 21.0,
+          "comments_total": 7.0
+        },
+        {
+          "date": "2026-06-17",
+          "posts": 4,
+          "interactions_total": 540.0,
+          "interactions_mean": 135.0,
+          "interactions_median": 16.5,
+          "shares_total": 59.0,
+          "comments_total": 12.0
+        },
+        {
+          "date": "2026-06-18",
+          "posts": 4,
+          "interactions_total": 89.0,
+          "interactions_mean": 22.25,
+          "interactions_median": 15.0,
+          "shares_total": 10.0,
+          "comments_total": 6.0
+        },
+        {
+          "date": "2026-06-19",
+          "posts": 5,
+          "interactions_total": 181.0,
+          "interactions_mean": 36.2,
+          "interactions_median": 30.0,
+          "shares_total": 40.0,
+          "comments_total": 6.0
+        },
+        {
+          "date": "2026-06-20",
+          "posts": 6,
+          "interactions_total": 1282.0,
+          "interactions_mean": 213.66666666666666,
+          "interactions_median": 193.5,
+          "shares_total": 279.0,
+          "comments_total": 23.0
+        },
+        {
+          "date": "2026-06-21",
+          "posts": 3,
+          "interactions_total": 1170.0,
+          "interactions_mean": 390.0,
+          "interactions_median": 34.0,
+          "shares_total": 134.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-06-22",
+          "posts": 7,
+          "interactions_total": 1142.0,
+          "interactions_mean": 163.14285714285714,
+          "interactions_median": 20.0,
+          "shares_total": 299.0,
+          "comments_total": 17.0
+        },
+        {
+          "date": "2026-06-23",
+          "posts": 4,
+          "interactions_total": 77.0,
+          "interactions_mean": 19.25,
+          "interactions_median": 17.5,
+          "shares_total": 15.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-06-24",
+          "posts": 4,
+          "interactions_total": 69.0,
+          "interactions_mean": 17.25,
+          "interactions_median": 13.5,
+          "shares_total": 11.0,
+          "comments_total": 7.0
+        },
+        {
+          "date": "2026-06-25",
+          "posts": 4,
+          "interactions_total": 110.0,
+          "interactions_mean": 27.5,
+          "interactions_median": 24.5,
+          "shares_total": 20.0,
+          "comments_total": 6.0
+        },
+        {
+          "date": "2026-06-26",
+          "posts": 7,
+          "interactions_total": 501.0,
+          "interactions_mean": 71.57142857142857,
+          "interactions_median": 8.0,
+          "shares_total": 114.0,
+          "comments_total": 10.0
+        },
+        {
+          "date": "2026-06-27",
+          "posts": 6,
+          "interactions_total": 1111.0,
+          "interactions_mean": 185.16666666666666,
+          "interactions_median": 72.0,
+          "shares_total": 326.0,
+          "comments_total": 31.0
+        },
+        {
+          "date": "2026-06-28",
+          "posts": 9,
+          "interactions_total": 2140.0,
+          "interactions_mean": 237.77777777777777,
+          "interactions_median": 40.0,
+          "shares_total": 654.0,
+          "comments_total": 16.0
+        },
+        {
+          "date": "2026-06-29",
+          "posts": 8,
+          "interactions_total": 1516.0,
+          "interactions_mean": 189.5,
+          "interactions_median": 14.0,
+          "shares_total": 281.0,
+          "comments_total": 33.0
+        },
+        {
+          "date": "2026-06-30",
+          "posts": 8,
+          "interactions_total": 516.0,
+          "interactions_mean": 64.5,
+          "interactions_median": 18.5,
+          "shares_total": 94.0,
+          "comments_total": 14.0
+        }
+      ],
+      "top1_share_of_interactions": 0.07272727272727272,
+      "top5_share_of_interactions": 0.32321378926883515,
+      "without_top1": {
+        "period": "2026-06_images_without_top1",
+        "scope": "image_or_post",
+        "posts": 200,
+        "date_min": "2026-06-01",
+        "date_max": "2026-06-30",
+        "active_days": 30,
+        "posts_per_active_day": 6.666666666666667,
+        "interactions_total": 16677.0,
+        "interactions_per_active_day": 555.9,
+        "interactions_mean": 83.385,
+        "interactions_median": 11.0,
+        "interactions_p90": 340.0,
+        "reactions_total": 12786.0,
+        "comments_total": 401.0,
+        "shares_total": 3490.0,
+        "reactions_median": 8.0,
+        "comments_median": 1.0,
+        "shares_median": 1.0,
+        "shares_per_interaction": 0.20927025244348504,
+        "comments_per_interaction": 0.02404509204293338
+      },
+      "threshold_counts": {
+        "50": 36,
+        "100": 27,
+        "300": 22,
+        "500": 12,
+        "1000": 5
+      }
+    },
+    "2026-07_images": {
+      "top_posts": [
+        {
+          "id": "1036844829507460_122140003413072582",
+          "date": "2026-07-18",
+          "type": "Image_or_post",
+          "interactions": 5482.0,
+          "reactions": 3108.0,
+          "comments": 62.0,
+          "shares": 2312.0,
+          "message": "🫣🫣 #UniverseSentMe"
+        },
+        {
+          "id": "1036844829507460_122139999861072582",
+          "date": "2026-07-18",
+          "type": "Image_or_post",
+          "interactions": 3993.0,
+          "reactions": 2536.0,
+          "comments": 8.0,
+          "shares": 1449.0,
+          "message": "😐"
+        },
+        {
+          "id": "1036844829507460_122140844349072582",
+          "date": "2026-07-21",
+          "type": "Image_or_post",
+          "interactions": 3913.0,
+          "reactions": 2290.0,
+          "comments": 102.0,
+          "shares": 1521.0,
+          "message": "🥴🤯 escucho borroso.... #UniverseSentMe #humor #memesenespañol #conversacion #relatable #vidareal #meditacion"
+        },
+        {
+          "id": "1036844829507460_122139232911072582",
+          "date": "2026-07-16",
+          "type": "Image_or_post",
+          "interactions": 3740.0,
+          "reactions": 2805.0,
+          "comments": 31.0,
+          "shares": 904.0,
+          "message": "😮‍💨"
+        },
+        {
+          "id": "1036844829507460_122142779757072582",
+          "date": "2026-07-28",
+          "type": "Image_or_post",
+          "interactions": 3726.0,
+          "reactions": 2367.0,
+          "comments": 18.0,
+          "shares": 1341.0,
+          "message": "No es desinterés... #UnvierseSentMe #FantasmaUSM #humor #memesUSM"
+        },
+        {
+          "id": "1036844829507460_122141376093072582",
+          "date": "2026-07-24",
+          "type": "Image_or_post",
+          "interactions": 3002.0,
+          "reactions": 2336.0,
+          "comments": 41.0,
+          "shares": 625.0,
+          "message": "🫣🫣 #UniverseSentMe #humor #relatable #astrologia #retrogrado"
+        },
+        {
+          "id": "1036844829507460_122142627051072582",
+          "date": "2026-07-27",
+          "type": "Image_or_post",
+          "interactions": 2979.0,
+          "reactions": 2249.0,
+          "comments": 16.0,
+          "shares": 714.0,
+          "message": "😭🫣 #UniverseSentMe #humoracido #memesUSM"
+        },
+        {
+          "id": "1036844829507460_122141207841072582",
+          "date": "2026-07-22",
+          "type": "Image_or_post",
+          "interactions": 2747.0,
+          "reactions": 1722.0,
+          "comments": 10.0,
+          "shares": 1015.0,
+          "message": "🙂‍↕️ #UniverseSentMe #humor #memesenespañol #relatable #vidareal #meditacion"
+        },
+        {
+          "id": "1036844829507460_122135607981072582",
+          "date": "2026-07-03",
+          "type": "Image_or_post",
+          "interactions": 2441.0,
+          "reactions": 1652.0,
+          "comments": 15.0,
+          "shares": 774.0,
+          "message": "😋"
+        },
+        {
+          "id": "1036844829507460_122135586723072582",
+          "date": "2026-07-03",
+          "type": "Image_or_post",
+          "interactions": 2280.0,
+          "reactions": 1533.0,
+          "comments": 9.0,
+          "shares": 738.0,
+          "message": "Ya va ser la hora del tecito 😇 #UniverseSentMe #vidareal #relatable #problemas"
+        }
+      ],
+      "daily": [
+        {
+          "date": "2026-07-01",
+          "posts": 8,
+          "interactions_total": 2936.0,
+          "interactions_mean": 367.0,
+          "interactions_median": 58.0,
+          "shares_total": 714.0,
+          "comments_total": 23.0
+        },
+        {
+          "date": "2026-07-02",
+          "posts": 6,
+          "interactions_total": 299.0,
+          "interactions_mean": 49.833333333333336,
+          "interactions_median": 46.5,
+          "shares_total": 46.0,
+          "comments_total": 10.0
+        },
+        {
+          "date": "2026-07-03",
+          "posts": 6,
+          "interactions_total": 5892.0,
+          "interactions_mean": 982.0,
+          "interactions_median": 528.5,
+          "shares_total": 1687.0,
+          "comments_total": 43.0
+        },
+        {
+          "date": "2026-07-04",
+          "posts": 6,
+          "interactions_total": 1217.0,
+          "interactions_mean": 202.83333333333334,
+          "interactions_median": 57.0,
+          "shares_total": 218.0,
+          "comments_total": 18.0
+        },
+        {
+          "date": "2026-07-05",
+          "posts": 5,
+          "interactions_total": 1019.0,
+          "interactions_mean": 203.8,
+          "interactions_median": 122.0,
+          "shares_total": 156.0,
+          "comments_total": 78.0
+        },
+        {
+          "date": "2026-07-06",
+          "posts": 5,
+          "interactions_total": 1571.0,
+          "interactions_mean": 314.2,
+          "interactions_median": 37.0,
+          "shares_total": 424.0,
+          "comments_total": 20.0
+        },
+        {
+          "date": "2026-07-07",
+          "posts": 4,
+          "interactions_total": 414.0,
+          "interactions_mean": 103.5,
+          "interactions_median": 30.5,
+          "shares_total": 118.0,
+          "comments_total": 11.0
+        },
+        {
+          "date": "2026-07-08",
+          "posts": 5,
+          "interactions_total": 870.0,
+          "interactions_mean": 174.0,
+          "interactions_median": 63.0,
+          "shares_total": 167.0,
+          "comments_total": 18.0
+        },
+        {
+          "date": "2026-07-09",
+          "posts": 7,
+          "interactions_total": 2070.0,
+          "interactions_mean": 295.7142857142857,
+          "interactions_median": 351.0,
+          "shares_total": 449.0,
+          "comments_total": 31.0
+        },
+        {
+          "date": "2026-07-10",
+          "posts": 8,
+          "interactions_total": 1117.0,
+          "interactions_mean": 139.625,
+          "interactions_median": 80.0,
+          "shares_total": 225.0,
+          "comments_total": 21.0
+        },
+        {
+          "date": "2026-07-11",
+          "posts": 8,
+          "interactions_total": 1007.0,
+          "interactions_mean": 125.875,
+          "interactions_median": 43.0,
+          "shares_total": 219.0,
+          "comments_total": 19.0
+        },
+        {
+          "date": "2026-07-12",
+          "posts": 10,
+          "interactions_total": 1315.0,
+          "interactions_mean": 131.5,
+          "interactions_median": 22.0,
+          "shares_total": 398.0,
+          "comments_total": 30.0
+        },
+        {
+          "date": "2026-07-13",
+          "posts": 7,
+          "interactions_total": 1725.0,
+          "interactions_mean": 246.42857142857142,
+          "interactions_median": 17.0,
+          "shares_total": 353.0,
+          "comments_total": 26.0
+        },
+        {
+          "date": "2026-07-14",
+          "posts": 8,
+          "interactions_total": 868.0,
+          "interactions_mean": 108.5,
+          "interactions_median": 32.0,
+          "shares_total": 150.0,
+          "comments_total": 24.0
+        },
+        {
+          "date": "2026-07-15",
+          "posts": 10,
+          "interactions_total": 2770.0,
+          "interactions_mean": 277.0,
+          "interactions_median": 48.0,
+          "shares_total": 645.0,
+          "comments_total": 25.0
+        },
+        {
+          "date": "2026-07-16",
+          "posts": 10,
+          "interactions_total": 4499.0,
+          "interactions_mean": 449.9,
+          "interactions_median": 69.5,
+          "shares_total": 1059.0,
+          "comments_total": 41.0
+        },
+        {
+          "date": "2026-07-17",
+          "posts": 10,
+          "interactions_total": 664.0,
+          "interactions_mean": 66.4,
+          "interactions_median": 19.5,
+          "shares_total": 131.0,
+          "comments_total": 10.0
+        },
+        {
+          "date": "2026-07-18",
+          "posts": 10,
+          "interactions_total": 11513.0,
+          "interactions_mean": 1151.3,
+          "interactions_median": 280.5,
+          "shares_total": 4217.0,
+          "comments_total": 101.0
+        },
+        {
+          "date": "2026-07-19",
+          "posts": 5,
+          "interactions_total": 1432.0,
+          "interactions_mean": 286.4,
+          "interactions_median": 23.0,
+          "shares_total": 432.0,
+          "comments_total": 20.0
+        },
+        {
+          "date": "2026-07-20",
+          "posts": 6,
+          "interactions_total": 2044.0,
+          "interactions_mean": 340.6666666666667,
+          "interactions_median": 71.0,
+          "shares_total": 489.0,
+          "comments_total": 16.0
+        },
+        {
+          "date": "2026-07-21",
+          "posts": 6,
+          "interactions_total": 4326.0,
+          "interactions_mean": 721.0,
+          "interactions_median": 106.5,
+          "shares_total": 1623.0,
+          "comments_total": 111.0
+        },
+        {
+          "date": "2026-07-22",
+          "posts": 1,
+          "interactions_total": 2747.0,
+          "interactions_mean": 2747.0,
+          "interactions_median": 2747.0,
+          "shares_total": 1015.0,
+          "comments_total": 10.0
+        },
+        {
+          "date": "2026-07-23",
+          "posts": 6,
+          "interactions_total": 586.0,
+          "interactions_mean": 97.66666666666667,
+          "interactions_median": 72.0,
+          "shares_total": 123.0,
+          "comments_total": 11.0
+        },
+        {
+          "date": "2026-07-24",
+          "posts": 9,
+          "interactions_total": 3514.0,
+          "interactions_mean": 390.44444444444446,
+          "interactions_median": 66.0,
+          "shares_total": 737.0,
+          "comments_total": 56.0
+        },
+        {
+          "date": "2026-07-25",
+          "posts": 4,
+          "interactions_total": 517.0,
+          "interactions_mean": 129.25,
+          "interactions_median": 28.0,
+          "shares_total": 115.0,
+          "comments_total": 3.0
+        },
+        {
+          "date": "2026-07-26",
+          "posts": 6,
+          "interactions_total": 346.0,
+          "interactions_mean": 57.666666666666664,
+          "interactions_median": 41.0,
+          "shares_total": 63.0,
+          "comments_total": 10.0
+        },
+        {
+          "date": "2026-07-27",
+          "posts": 6,
+          "interactions_total": 4889.0,
+          "interactions_mean": 814.8333333333334,
+          "interactions_median": 421.0,
+          "shares_total": 989.0,
+          "comments_total": 56.0
+        },
+        {
+          "date": "2026-07-28",
+          "posts": 5,
+          "interactions_total": 3883.0,
+          "interactions_mean": 776.6,
+          "interactions_median": 43.0,
+          "shares_total": 1368.0,
+          "comments_total": 21.0
+        },
+        {
+          "date": "2026-07-29",
+          "posts": 3,
+          "interactions_total": 98.0,
+          "interactions_mean": 32.666666666666664,
+          "interactions_median": 33.0,
+          "shares_total": 14.0,
+          "comments_total": 9.0
+        },
+        {
+          "date": "2026-07-30",
+          "posts": 6,
+          "interactions_total": 762.0,
+          "interactions_mean": 127.0,
+          "interactions_median": 82.0,
+          "shares_total": 136.0,
+          "comments_total": 17.0
+        },
+        {
+          "date": "2026-07-31",
+          "posts": 3,
+          "interactions_total": 817.0,
+          "interactions_mean": 272.3333333333333,
+          "interactions_median": 127.0,
+          "shares_total": 149.0,
+          "comments_total": 21.0
+        }
+      ],
+      "top1_share_of_interactions": 0.08094260782258184,
+      "top5_share_of_interactions": 0.3079126493126818,
+      "without_top1": {
+        "period": "2026-07_images_without_top1",
+        "scope": "image_or_post",
+        "posts": 198,
+        "date_min": "2026-07-01",
+        "date_max": "2026-07-31",
+        "active_days": 31,
+        "posts_per_active_day": 6.387096774193548,
+        "interactions_total": 62245.0,
+        "interactions_per_active_day": 2007.9032258064517,
+        "interactions_mean": 314.3686868686869,
+        "interactions_median": 46.5,
+        "interactions_p90": 677.0,
+        "reactions_total": 45080.0,
+        "comments_total": 848.0,
+        "shares_total": 16317.0,
+        "reactions_median": 36.5,
+        "comments_median": 2.0,
+        "shares_median": 7.5,
+        "shares_per_interaction": 0.2621415374728894,
+        "comments_per_interaction": 0.013623584223632421
+      },
+      "threshold_counts": {
+        "50": 99,
+        "100": 73,
+        "300": 46,
+        "500": 28,
+        "1000": 18
+      }
+    },
+    "2026-08_1_14_images": {
+      "top_posts": [
+        {
+          "id": "1036844829507460_122145025611072582",
+          "date": "2026-08-04",
+          "type": "Image_or_post",
+          "interactions": 4103.0,
+          "reactions": 2858.0,
+          "comments": 30.0,
+          "shares": 1215.0,
+          "message": "😒"
+        },
+        {
+          "id": "1036844829507460_122144684943072582",
+          "date": "2026-08-03",
+          "type": "Image_or_post",
+          "interactions": 1702.0,
+          "reactions": 1111.0,
+          "comments": 5.0,
+          "shares": 586.0,
+          "message": "𝑳𝒖𝒏𝒆𝒔 𝒅𝒆 𝒆𝒏𝒇𝒐𝒒𝒖𝒆. No olvides la santísima trinidad para sobrevivir a la semana con estilo. 🕶️✨ - Ser la vrg. - Andar bien vrg. - Que te valga vrg. (La más importante). ¿𝑬𝒏 𝒄𝒖𝒂́𝒍 𝒅𝒆"
+        },
+        {
+          "id": "1036844829507460_122143924209072582",
+          "date": "2026-08-01",
+          "type": "Image_or_post",
+          "interactions": 1319.0,
+          "reactions": 806.0,
+          "comments": 60.0,
+          "shares": 453.0,
+          "message": "Si estás leyendo esto, ¡felicidades! Has sobrevivido a otro microinstante del caos universal. Sig #UniverseSentMe #HumorExistencial #MemesUSM"
+        },
+        {
+          "id": "1036844829507460_122148555549072582",
+          "date": "2026-08-11",
+          "type": "Image_or_post",
+          "interactions": 669.0,
+          "reactions": 465.0,
+          "comments": 11.0,
+          "shares": 193.0,
+          "message": "Tus únicas amigas son estas 😳 #UniverseSentMe #KaelUSM #humor #memes"
+        },
+        {
+          "id": "1036844829507460_122148868341072582",
+          "date": "2026-08-12",
+          "type": "Image_or_post",
+          "interactions": 494.0,
+          "reactions": 373.0,
+          "comments": 8.0,
+          "shares": 113.0,
+          "message": "¿Qué quieres desayunar? 😳 #UniverseSentMe #EvanUSM #KiriUSM #relatable"
+        },
+        {
+          "id": "1036844829507460_122144694213072582",
+          "date": "2026-08-03",
+          "type": "Image_or_post",
+          "interactions": 397.0,
+          "reactions": 286.0,
+          "comments": 4.0,
+          "shares": 107.0,
+          "message": "𝑲𝒊𝒓𝒊 no acepta lo ordinario, y tú tampoco deberías. ✨🦋 Hay un mundo entero de posibilidades entre lo que ves y lo que imaginas. Comparte si hoy también eliges creer en la magia. #U"
+        },
+        {
+          "id": "1036844829507460_122147826357072582",
+          "date": "2026-08-10",
+          "type": "Image_or_post",
+          "interactions": 297.0,
+          "reactions": 216.0,
+          "comments": 2.0,
+          "shares": 79.0,
+          "message": "imaginate... jsjs"
+        },
+        {
+          "id": "1036844829507460_122144992809072582",
+          "date": "2026-08-04",
+          "type": "Image_or_post",
+          "interactions": 273.0,
+          "reactions": 174.0,
+          "comments": 4.0,
+          "shares": 95.0,
+          "message": "Ronroneo para el amigo 😌🥰 #UniverseSentMe #UniverseUSM #memes #humoracido"
+        },
+        {
+          "id": "1036844829507460_122144976705072582",
+          "date": "2026-08-04",
+          "type": "Image_or_post",
+          "interactions": 264.0,
+          "reactions": 207.0,
+          "comments": 11.0,
+          "shares": 46.0,
+          "message": "La evolución no fue un accidente, fue un diseño de alta costura. 🎩🦢 Mientras unos intentan procesar, el Ganso simplemente es. Dios sabía lo que hacía cuando creó al animal que domi"
+        },
+        {
+          "id": "1036844829507460_122147825499072582",
+          "date": "2026-08-10",
+          "type": "Image_or_post",
+          "interactions": 262.0,
+          "reactions": 207.0,
+          "comments": 5.0,
+          "shares": 50.0,
+          "message": "🫢 #UniverseSentMe #humor #relatable #UniverseUSM"
+        }
+      ],
+      "daily": [
+        {
+          "date": "2026-08-01",
+          "posts": 4,
+          "interactions_total": 1366.0,
+          "interactions_mean": 341.5,
+          "interactions_median": 21.5,
+          "shares_total": 460.0,
+          "comments_total": 61.0
+        },
+        {
+          "date": "2026-08-02",
+          "posts": 4,
+          "interactions_total": 329.0,
+          "interactions_mean": 82.25,
+          "interactions_median": 40.0,
+          "shares_total": 86.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-08-03",
+          "posts": 3,
+          "interactions_total": 2115.0,
+          "interactions_mean": 705.0,
+          "interactions_median": 397.0,
+          "shares_total": 695.0,
+          "comments_total": 13.0
+        },
+        {
+          "date": "2026-08-04",
+          "posts": 5,
+          "interactions_total": 4685.0,
+          "interactions_mean": 937.0,
+          "interactions_median": 264.0,
+          "shares_total": 1365.0,
+          "comments_total": 48.0
+        },
+        {
+          "date": "2026-08-05",
+          "posts": 4,
+          "interactions_total": 70.0,
+          "interactions_mean": 17.5,
+          "interactions_median": 20.5,
+          "shares_total": 20.0,
+          "comments_total": 3.0
+        },
+        {
+          "date": "2026-08-06",
+          "posts": 4,
+          "interactions_total": 254.0,
+          "interactions_mean": 63.5,
+          "interactions_median": 65.5,
+          "shares_total": 41.0,
+          "comments_total": 9.0
+        },
+        {
+          "date": "2026-08-07",
+          "posts": 6,
+          "interactions_total": 131.0,
+          "interactions_mean": 21.833333333333332,
+          "interactions_median": 20.0,
+          "shares_total": 21.0,
+          "comments_total": 8.0
+        },
+        {
+          "date": "2026-08-08",
+          "posts": 5,
+          "interactions_total": 324.0,
+          "interactions_mean": 64.8,
+          "interactions_median": 88.0,
+          "shares_total": 90.0,
+          "comments_total": 11.0
+        },
+        {
+          "date": "2026-08-09",
+          "posts": 5,
+          "interactions_total": 377.0,
+          "interactions_mean": 75.4,
+          "interactions_median": 41.0,
+          "shares_total": 107.0,
+          "comments_total": 11.0
+        },
+        {
+          "date": "2026-08-10",
+          "posts": 3,
+          "interactions_total": 596.0,
+          "interactions_mean": 198.66666666666666,
+          "interactions_median": 262.0,
+          "shares_total": 138.0,
+          "comments_total": 9.0
+        },
+        {
+          "date": "2026-08-11",
+          "posts": 4,
+          "interactions_total": 1077.0,
+          "interactions_mean": 269.25,
+          "interactions_median": 188.5,
+          "shares_total": 294.0,
+          "comments_total": 22.0
+        },
+        {
+          "date": "2026-08-12",
+          "posts": 3,
+          "interactions_total": 687.0,
+          "interactions_mean": 229.0,
+          "interactions_median": 180.0,
+          "shares_total": 152.0,
+          "comments_total": 16.0
+        },
+        {
+          "date": "2026-08-13",
+          "posts": 4,
+          "interactions_total": 94.0,
+          "interactions_mean": 23.5,
+          "interactions_median": 25.0,
+          "shares_total": 18.0,
+          "comments_total": 4.0
+        },
+        {
+          "date": "2026-08-14",
+          "posts": 2,
+          "interactions_total": 65.0,
+          "interactions_mean": 32.5,
+          "interactions_median": 32.5,
+          "shares_total": 18.0,
+          "comments_total": 3.0
+        }
+      ],
+      "top1_share_of_interactions": 0.3371405094494659,
+      "top5_share_of_interactions": 0.680936729663106,
+      "without_top1": {
+        "period": "2026-08_1_14_images_without_top1",
+        "scope": "image_or_post",
+        "posts": 55,
+        "date_min": "2026-08-01",
+        "date_max": "2026-08-14",
+        "active_days": 14,
+        "posts_per_active_day": 3.9285714285714284,
+        "interactions_total": 8067.0,
+        "interactions_per_active_day": 576.2142857142857,
+        "interactions_mean": 146.6727272727273,
+        "interactions_median": 33.0,
+        "interactions_p90": 297.0,
+        "reactions_total": 5584.0,
+        "comments_total": 193.0,
+        "shares_total": 2290.0,
+        "reactions_median": 26.0,
+        "comments_median": 2.0,
+        "shares_median": 6.0,
+        "shares_per_interaction": 0.2838725672492872,
+        "comments_per_interaction": 0.023924631213586216
+      },
+      "threshold_counts": {
+        "50": 23,
+        "100": 16,
+        "300": 6,
+        "500": 4,
+        "1000": 3
+      }
+    },
+    "2026-06_reels": {
+      "top_posts": [
+        {
+          "id": "1036844829507460_122125528653072582",
+          "date": "2026-06-01",
+          "type": "Reel",
+          "interactions": 35.0,
+          "reactions": 26.0,
+          "comments": 1.0,
+          "shares": 8.0,
+          "message": "#universesentme #bonita"
+        },
+        {
+          "id": "1036844829507460_122127661851072582",
+          "date": "2026-06-06",
+          "type": "Reel",
+          "interactions": 24.0,
+          "reactions": 24.0,
+          "comments": 0.0,
+          "shares": 0.0,
+          "message": ""
+        },
+        {
+          "id": "1036844829507460_122128512777072582",
+          "date": "2026-06-09",
+          "type": "Reel",
+          "interactions": 20.0,
+          "reactions": 18.0,
+          "comments": 1.0,
+          "shares": 1.0,
+          "message": "Consejo del día"
+        },
+        {
+          "id": "1036844829507460_122125544019072582",
+          "date": "2026-06-01",
+          "type": "Reel",
+          "interactions": 18.0,
+          "reactions": 16.0,
+          "comments": 0.0,
+          "shares": 2.0,
+          "message": "#universesentme #relatable #fblifestyle #vidareal #rockstar"
+        },
+        {
+          "id": "1036844829507460_122129015739072582",
+          "date": "2026-06-10",
+          "type": "Reel",
+          "interactions": 18.0,
+          "reactions": 16.0,
+          "comments": 0.0,
+          "shares": 2.0,
+          "message": "🫠🫠🫠 #universesentme #relatable #vidareal #insight"
+        },
+        {
+          "id": "1036844829507460_122134608507072582",
+          "date": "2026-06-30",
+          "type": "Reel",
+          "interactions": 14.0,
+          "reactions": 9.0,
+          "comments": 3.0,
+          "shares": 2.0,
+          "message": "Ya le entendí a la vida banda... #universesentme #merlin #fifaworldcup"
+        },
+        {
+          "id": "1036844829507460_122127916017072582",
+          "date": "2026-06-07",
+          "type": "Reel",
+          "interactions": 14.0,
+          "reactions": 11.0,
+          "comments": 2.0,
+          "shares": 1.0,
+          "message": ""
+        },
+        {
+          "id": "1036844829507460_122130329817072582",
+          "date": "2026-06-14",
+          "type": "Reel",
+          "interactions": 13.0,
+          "reactions": 12.0,
+          "comments": 0.0,
+          "shares": 1.0,
+          "message": "Piensalo bien... #universesentme #fun #humorácido #humornegro"
+        },
+        {
+          "id": "1036844829507460_122127654273072582",
+          "date": "2026-06-06",
+          "type": "Reel",
+          "interactions": 12.0,
+          "reactions": 9.0,
+          "comments": 0.0,
+          "shares": 3.0,
+          "message": ""
+        },
+        {
+          "id": "1036844829507460_122129025387072582",
+          "date": "2026-06-10",
+          "type": "Reel",
+          "interactions": 12.0,
+          "reactions": 9.0,
+          "comments": 2.0,
+          "shares": 1.0,
+          "message": "#universesentme true killer"
+        }
+      ],
+      "daily": [
+        {
+          "date": "2026-06-01",
+          "posts": 2,
+          "interactions_total": 53.0,
+          "interactions_mean": 26.5,
+          "interactions_median": 26.5,
+          "shares_total": 10.0,
+          "comments_total": 1.0
+        },
+        {
+          "date": "2026-06-02",
+          "posts": 1,
+          "interactions_total": 2.0,
+          "interactions_mean": 2.0,
+          "interactions_median": 2.0,
+          "shares_total": 0.0,
+          "comments_total": 0.0
+        },
+        {
+          "date": "2026-06-03",
+          "posts": 2,
+          "interactions_total": 8.0,
+          "interactions_mean": 4.0,
+          "interactions_median": 4.0,
+          "shares_total": 0.0,
+          "comments_total": 0.0
+        },
+        {
+          "date": "2026-06-04",
+          "posts": 2,
+          "interactions_total": 9.0,
+          "interactions_mean": 4.5,
+          "interactions_median": 4.5,
+          "shares_total": 1.0,
+          "comments_total": 0.0
+        },
+        {
+          "date": "2026-06-05",
+          "posts": 1,
+          "interactions_total": 8.0,
+          "interactions_mean": 8.0,
+          "interactions_median": 8.0,
+          "shares_total": 1.0,
+          "comments_total": 0.0
+        },
+        {
+          "date": "2026-06-06",
+          "posts": 3,
+          "interactions_total": 39.0,
+          "interactions_mean": 13.0,
+          "interactions_median": 12.0,
+          "shares_total": 3.0,
+          "comments_total": 0.0
+        },
+        {
+          "date": "2026-06-07",
+          "posts": 2,
+          "interactions_total": 25.0,
+          "interactions_mean": 12.5,
+          "interactions_median": 12.5,
+          "shares_total": 1.0,
+          "comments_total": 2.0
+        },
+        {
+          "date": "2026-06-09",
+          "posts": 1,
+          "interactions_total": 20.0,
+          "interactions_mean": 20.0,
+          "interactions_median": 20.0,
+          "shares_total": 1.0,
+          "comments_total": 1.0
+        },
+        {
+          "date": "2026-06-10",
+          "posts": 2,
+          "interactions_total": 30.0,
+          "interactions_mean": 15.0,
+          "interactions_median": 15.0,
+          "shares_total": 3.0,
+          "comments_total": 2.0
+        },
+        {
+          "date": "2026-06-11",
+          "posts": 1,
+          "interactions_total": 0.0,
+          "interactions_mean": 0.0,
+          "interactions_median": 0.0,
+          "shares_total": 0.0,
+          "comments_total": 0.0
+        },
+        {
+          "date": "2026-06-12",
+          "posts": 1,
+          "interactions_total": 4.0,
+          "interactions_mean": 4.0,
+          "interactions_median": 4.0,
+          "shares_total": 0.0,
+          "comments_total": 0.0
+        },
+        {
+          "date": "2026-06-13",
+          "posts": 1,
+          "interactions_total": 11.0,
+          "interactions_mean": 11.0,
+          "interactions_median": 11.0,
+          "shares_total": 0.0,
+          "comments_total": 1.0
+        },
+        {
+          "date": "2026-06-14",
+          "posts": 3,
+          "interactions_total": 26.0,
+          "interactions_mean": 8.666666666666666,
+          "interactions_median": 7.0,
+          "shares_total": 3.0,
+          "comments_total": 0.0
+        },
+        {
+          "date": "2026-06-15",
+          "posts": 1,
+          "interactions_total": 3.0,
+          "interactions_mean": 3.0,
+          "interactions_median": 3.0,
+          "shares_total": 0.0,
+          "comments_total": 0.0
+        },
+        {
+          "date": "2026-06-16",
+          "posts": 1,
+          "interactions_total": 6.0,
+          "interactions_mean": 6.0,
+          "interactions_median": 6.0,
+          "shares_total": 0.0,
+          "comments_total": 0.0
+        },
+        {
+          "date": "2026-06-26",
+          "posts": 1,
+          "interactions_total": 4.0,
+          "interactions_mean": 4.0,
+          "interactions_median": 4.0,
+          "shares_total": 1.0,
+          "comments_total": 0.0
+        },
+        {
+          "date": "2026-06-27",
+          "posts": 3,
+          "interactions_total": 23.0,
+          "interactions_mean": 7.666666666666667,
+          "interactions_median": 9.0,
+          "shares_total": 2.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-06-30",
+          "posts": 1,
+          "interactions_total": 14.0,
+          "interactions_mean": 14.0,
+          "interactions_median": 14.0,
+          "shares_total": 2.0,
+          "comments_total": 3.0
+        }
+      ],
+      "top1_share_of_interactions": 0.12280701754385964,
+      "top5_share_of_interactions": 0.40350877192982454,
+      "without_top1": {
+        "period": "2026-06_reels_without_top1",
+        "scope": "image_or_post",
+        "posts": 28,
+        "date_min": "2026-06-01",
+        "date_max": "2026-06-30",
+        "active_days": 18,
+        "posts_per_active_day": 1.5555555555555556,
+        "interactions_total": 250.0,
+        "interactions_per_active_day": 13.88888888888889,
+        "interactions_mean": 8.928571428571429,
+        "interactions_median": 7.5,
+        "interactions_p90": 18.0,
+        "reactions_total": 216.0,
+        "comments_total": 14.0,
+        "shares_total": 20.0,
+        "reactions_median": 7.0,
+        "comments_median": 0.0,
+        "shares_median": 0.5,
+        "shares_per_interaction": 0.08,
+        "comments_per_interaction": 0.056
+      },
+      "threshold_counts": {
+        "50": 0,
+        "100": 0,
+        "300": 0,
+        "500": 0,
+        "1000": 0
+      }
+    },
+    "2026-07_reels": {
+      "top_posts": [
+        {
+          "id": "1036844829507460_122141842839072582",
+          "date": "2026-07-25",
+          "type": "Reel",
+          "interactions": 164.0,
+          "reactions": 122.0,
+          "comments": 4.0,
+          "shares": 38.0,
+          "message": "Dicen que si lo ves caminando, no lo sigas... Los gatos sí saben a dónde va 👻 🌲 #universesentme #fantasmaUSM #MomentosUSM #darkfantasy #fyp"
+        },
+        {
+          "id": "1036844829507460_122143033293072582",
+          "date": "2026-07-29",
+          "type": "Reel",
+          "interactions": 28.0,
+          "reactions": 25.0,
+          "comments": 3.0,
+          "shares": 0.0,
+          "message": "Un rock bien gótico Vs una canción de Juan Gabriel #UniverseSentMe #UniverseUSM #vidagatuna #humor"
+        },
+        {
+          "id": "1036844829507460_122142469383072582",
+          "date": "2026-07-27",
+          "type": "Reel",
+          "interactions": 27.0,
+          "reactions": 20.0,
+          "comments": 3.0,
+          "shares": 4.0,
+          "message": "Mi ascenso a la locura 😵‍💫 #universesentme #hadaUSM #MomentosUSM #reflexiones"
+        },
+        {
+          "id": "1036844829507460_122143141185072582",
+          "date": "2026-07-30",
+          "type": "Reel",
+          "interactions": 26.0,
+          "reactions": 21.0,
+          "comments": 4.0,
+          "shares": 1.0,
+          "message": "🤭 #UniverseSentMe #WilfredUSM #humor #MercadoLibre #plush"
+        },
+        {
+          "id": "1036844829507460_122143048701072582",
+          "date": "2026-07-29",
+          "type": "Reel",
+          "interactions": 25.0,
+          "reactions": 21.0,
+          "comments": 2.0,
+          "shares": 2.0,
+          "message": "Mi gato sabe hacer de todo... #universesentme #vidagatuna #UniverseUSM #humor"
+        },
+        {
+          "id": "1036844829507460_122140853631072582",
+          "date": "2026-07-21",
+          "type": "Reel",
+          "interactions": 16.0,
+          "reactions": 12.0,
+          "comments": 2.0,
+          "shares": 2.0,
+          "message": "El verdadero terror psicológico... #universesentme #relatable #vidareal #rockstar"
+        },
+        {
+          "id": "1036844829507460_122142839523072582",
+          "date": "2026-07-28",
+          "type": "Reel",
+          "interactions": 7.0,
+          "reactions": 6.0,
+          "comments": 1.0,
+          "shares": 0.0,
+          "message": "#universesentme #universo #WilfredUSM #humor #MomentosUSM"
+        },
+        {
+          "id": "1036844829507460_122136156675072582",
+          "date": "2026-07-04",
+          "type": "Reel",
+          "interactions": 4.0,
+          "reactions": 4.0,
+          "comments": 0.0,
+          "shares": 0.0,
+          "message": "Yo después de comprar cosas para mi gato a las 2 am..."
+        }
+      ],
+      "daily": [
+        {
+          "date": "2026-07-04",
+          "posts": 1,
+          "interactions_total": 4.0,
+          "interactions_mean": 4.0,
+          "interactions_median": 4.0,
+          "shares_total": 0.0,
+          "comments_total": 0.0
+        },
+        {
+          "date": "2026-07-21",
+          "posts": 1,
+          "interactions_total": 16.0,
+          "interactions_mean": 16.0,
+          "interactions_median": 16.0,
+          "shares_total": 2.0,
+          "comments_total": 2.0
+        },
+        {
+          "date": "2026-07-25",
+          "posts": 1,
+          "interactions_total": 164.0,
+          "interactions_mean": 164.0,
+          "interactions_median": 164.0,
+          "shares_total": 38.0,
+          "comments_total": 4.0
+        },
+        {
+          "date": "2026-07-27",
+          "posts": 1,
+          "interactions_total": 27.0,
+          "interactions_mean": 27.0,
+          "interactions_median": 27.0,
+          "shares_total": 4.0,
+          "comments_total": 3.0
+        },
+        {
+          "date": "2026-07-28",
+          "posts": 1,
+          "interactions_total": 7.0,
+          "interactions_mean": 7.0,
+          "interactions_median": 7.0,
+          "shares_total": 0.0,
+          "comments_total": 1.0
+        },
+        {
+          "date": "2026-07-29",
+          "posts": 2,
+          "interactions_total": 53.0,
+          "interactions_mean": 26.5,
+          "interactions_median": 26.5,
+          "shares_total": 2.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-07-30",
+          "posts": 1,
+          "interactions_total": 26.0,
+          "interactions_mean": 26.0,
+          "interactions_median": 26.0,
+          "shares_total": 1.0,
+          "comments_total": 4.0
+        }
+      ],
+      "top1_share_of_interactions": 0.5521885521885522,
+      "top5_share_of_interactions": 0.9090909090909091,
+      "without_top1": {
+        "period": "2026-07_reels_without_top1",
+        "scope": "image_or_post",
+        "posts": 7,
+        "date_min": "2026-07-04",
+        "date_max": "2026-07-30",
+        "active_days": 6,
+        "posts_per_active_day": 1.1666666666666667,
+        "interactions_total": 133.0,
+        "interactions_per_active_day": 22.166666666666668,
+        "interactions_mean": 19.0,
+        "interactions_median": 25.0,
+        "interactions_p90": 28.0,
+        "reactions_total": 109.0,
+        "comments_total": 15.0,
+        "shares_total": 9.0,
+        "reactions_median": 20.0,
+        "comments_median": 2.0,
+        "shares_median": 1.0,
+        "shares_per_interaction": 0.06766917293233082,
+        "comments_per_interaction": 0.11278195488721804
+      },
+      "threshold_counts": {
+        "50": 1,
+        "100": 1,
+        "300": 0,
+        "500": 0,
+        "1000": 0
+      }
+    },
+    "2026-08_1_14_reels": {
+      "top_posts": [
+        {
+          "id": "1036844829507460_122145545163072582",
+          "date": "2026-08-05",
+          "type": "Reel",
+          "interactions": 24.0,
+          "reactions": 19.0,
+          "comments": 3.0,
+          "shares": 2.0,
+          "message": "Me hace falta vitamina B (besos). El Bosque tiene sus propios fantasmas. Algunos observan desde la niebla, esperando algo que nunca llega. No porque no puedan moverse — sino porque"
+        },
+        {
+          "id": "1036844829507460_122143966461072582",
+          "date": "2026-08-01",
+          "type": "Reel",
+          "interactions": 22.0,
+          "reactions": 17.0,
+          "comments": 1.0,
+          "shares": 4.0,
+          "message": "La sabiduría del bosque es clara: lo que ves en el muro es solo la punta del iceberg. El verdadero caos está en el mensaje directo 🌲🤐 #universesentme #WilfredUSM #humorsarcástico #"
+        },
+        {
+          "id": "1036844829507460_122144700573072582",
+          "date": "2026-08-03",
+          "type": "Reel",
+          "interactions": 20.0,
+          "reactions": 15.0,
+          "comments": 2.0,
+          "shares": 3.0,
+          "message": "Dicen que si te sales de la realidad en el lugar equivocado, terminas aquí. Fantasma no se perdió, su lógica de supervivencia lo llevó al espacio liminal definitivo. 👻🚪 Etiqueta a "
+        },
+        {
+          "id": "1036844829507460_122147352825072582",
+          "date": "2026-08-08",
+          "type": "Reel",
+          "interactions": 18.0,
+          "reactions": 15.0,
+          "comments": 2.0,
+          "shares": 1.0,
+          "message": "Universe no sabe qué trae en la caja. Nunca sabe. 🌙📦 Pero sí sabe quedarse a ver la cara que pone Elara cuando la abre. 👇 Comenta \"LUNA\" y te mandamos el link directo a la lámpara "
+        },
+        {
+          "id": "1036844829507460_122148560799072582",
+          "date": "2026-08-11",
+          "type": "Reel",
+          "interactions": 15.0,
+          "reactions": 11.0,
+          "comments": 3.0,
+          "shares": 1.0,
+          "message": "#UniverseSentMe"
+        },
+        {
+          "id": "1036844829507460_122144459607072582",
+          "date": "2026-08-02",
+          "type": "Reel",
+          "interactions": 9.0,
+          "reactions": 8.0,
+          "comments": 1.0,
+          "shares": 0.0,
+          "message": "Hay conversaciones que no llegan a ningun lado 👻 🐱 Universe lo intentó. ¿A quien le tienes que explicar tu vida como tres veces porque sigue atorado en el mismo tema? 👇 #UniverseSe"
+        },
+        {
+          "id": "1036844829507460_122147211939072582",
+          "date": "2026-08-08",
+          "type": "Reel",
+          "interactions": 8.0,
+          "reactions": 6.0,
+          "comments": 1.0,
+          "shares": 1.0,
+          "message": "Elara pasó toda la noche tratando de leerlo. Evan solo quería ver las estrellas. 🌲✨ #UniverseSentMe #ElaraUSM #EvanUSM #ElBosque #MomentosUSM"
+        },
+        {
+          "id": "1036844829507460_122147749683072582",
+          "date": "2026-08-09",
+          "type": "Reel",
+          "interactions": 7.0,
+          "reactions": 6.0,
+          "comments": 1.0,
+          "shares": 0.0,
+          "message": "Les dije que no eran cartones pintados #UniverseSentMe #memes #humor #UniverseUSM"
+        }
+      ],
+      "daily": [
+        {
+          "date": "2026-08-01",
+          "posts": 1,
+          "interactions_total": 22.0,
+          "interactions_mean": 22.0,
+          "interactions_median": 22.0,
+          "shares_total": 4.0,
+          "comments_total": 1.0
+        },
+        {
+          "date": "2026-08-02",
+          "posts": 1,
+          "interactions_total": 9.0,
+          "interactions_mean": 9.0,
+          "interactions_median": 9.0,
+          "shares_total": 0.0,
+          "comments_total": 1.0
+        },
+        {
+          "date": "2026-08-03",
+          "posts": 1,
+          "interactions_total": 20.0,
+          "interactions_mean": 20.0,
+          "interactions_median": 20.0,
+          "shares_total": 3.0,
+          "comments_total": 2.0
+        },
+        {
+          "date": "2026-08-05",
+          "posts": 1,
+          "interactions_total": 24.0,
+          "interactions_mean": 24.0,
+          "interactions_median": 24.0,
+          "shares_total": 2.0,
+          "comments_total": 3.0
+        },
+        {
+          "date": "2026-08-08",
+          "posts": 2,
+          "interactions_total": 26.0,
+          "interactions_mean": 13.0,
+          "interactions_median": 13.0,
+          "shares_total": 2.0,
+          "comments_total": 3.0
+        },
+        {
+          "date": "2026-08-09",
+          "posts": 1,
+          "interactions_total": 7.0,
+          "interactions_mean": 7.0,
+          "interactions_median": 7.0,
+          "shares_total": 0.0,
+          "comments_total": 1.0
+        },
+        {
+          "date": "2026-08-11",
+          "posts": 1,
+          "interactions_total": 15.0,
+          "interactions_mean": 15.0,
+          "interactions_median": 15.0,
+          "shares_total": 1.0,
+          "comments_total": 3.0
+        }
+      ],
+      "top1_share_of_interactions": 0.1951219512195122,
+      "top5_share_of_interactions": 0.8048780487804879,
+      "without_top1": {
+        "period": "2026-08_1_14_reels_without_top1",
+        "scope": "image_or_post",
+        "posts": 7,
+        "date_min": "2026-08-01",
+        "date_max": "2026-08-11",
+        "active_days": 6,
+        "posts_per_active_day": 1.1666666666666667,
+        "interactions_total": 99.0,
+        "interactions_per_active_day": 16.5,
+        "interactions_mean": 14.142857142857142,
+        "interactions_median": 15.0,
+        "interactions_p90": 22.0,
+        "reactions_total": 78.0,
+        "comments_total": 11.0,
+        "shares_total": 10.0,
+        "reactions_median": 11.0,
+        "comments_median": 1.0,
+        "shares_median": 1.0,
+        "shares_per_interaction": 0.10101010101010101,
+        "comments_per_interaction": 0.1111111111111111
+      },
+      "threshold_counts": {
+        "50": 0,
+        "100": 0,
+        "300": 0,
+        "500": 0,
+        "1000": 0
+      }
+    },
+    "2026-08_1_21_images": {
+      "top_posts": [
+        {
+          "id": "1036844829507460_122145025611072582",
+          "date": "2026-08-04",
+          "type": "Image_or_post",
+          "interactions": 4103.0,
+          "reactions": 2858.0,
+          "comments": 30.0,
+          "shares": 1215.0,
+          "message": "😒"
+        },
+        {
+          "id": "1036844829507460_122144684943072582",
+          "date": "2026-08-03",
+          "type": "Image_or_post",
+          "interactions": 1702.0,
+          "reactions": 1111.0,
+          "comments": 5.0,
+          "shares": 586.0,
+          "message": "𝑳𝒖𝒏𝒆𝒔 𝒅𝒆 𝒆𝒏𝒇𝒐𝒒𝒖𝒆. No olvides la santísima trinidad para sobrevivir a la semana con estilo. 🕶️✨ - Ser la vrg. - Andar bien vrg. - Que te valga vrg. (La más importante). ¿𝑬𝒏 𝒄𝒖𝒂́𝒍 𝒅𝒆"
+        },
+        {
+          "id": "1036844829507460_122143924209072582",
+          "date": "2026-08-01",
+          "type": "Image_or_post",
+          "interactions": 1319.0,
+          "reactions": 806.0,
+          "comments": 60.0,
+          "shares": 453.0,
+          "message": "Si estás leyendo esto, ¡felicidades! Has sobrevivido a otro microinstante del caos universal. Sig #UniverseSentMe #HumorExistencial #MemesUSM"
+        },
+        {
+          "id": "1036844829507460_122148555549072582",
+          "date": "2026-08-11",
+          "type": "Image_or_post",
+          "interactions": 669.0,
+          "reactions": 465.0,
+          "comments": 11.0,
+          "shares": 193.0,
+          "message": "Tus únicas amigas son estas 😳 #UniverseSentMe #KaelUSM #humor #memes"
+        },
+        {
+          "id": "1036844829507460_122151373761072582",
+          "date": "2026-08-17",
+          "type": "Image_or_post",
+          "interactions": 636.0,
+          "reactions": 462.0,
+          "comments": 2.0,
+          "shares": 172.0,
+          "message": ""
+        },
+        {
+          "id": "1036844829507460_122148868341072582",
+          "date": "2026-08-12",
+          "type": "Image_or_post",
+          "interactions": 494.0,
+          "reactions": 373.0,
+          "comments": 8.0,
+          "shares": 113.0,
+          "message": "¿Qué quieres desayunar? 😳 #UniverseSentMe #EvanUSM #KiriUSM #relatable"
+        },
+        {
+          "id": "1036844829507460_122144694213072582",
+          "date": "2026-08-03",
+          "type": "Image_or_post",
+          "interactions": 397.0,
+          "reactions": 286.0,
+          "comments": 4.0,
+          "shares": 107.0,
+          "message": "𝑲𝒊𝒓𝒊 no acepta lo ordinario, y tú tampoco deberías. ✨🦋 Hay un mundo entero de posibilidades entre lo que ves y lo que imaginas. Comparte si hoy también eliges creer en la magia. #U"
+        },
+        {
+          "id": "1036844829507460_122151374019072582",
+          "date": "2026-08-17",
+          "type": "Image_or_post",
+          "interactions": 339.0,
+          "reactions": 235.0,
+          "comments": 4.0,
+          "shares": 100.0,
+          "message": ""
+        },
+        {
+          "id": "1036844829507460_122147826357072582",
+          "date": "2026-08-10",
+          "type": "Image_or_post",
+          "interactions": 297.0,
+          "reactions": 216.0,
+          "comments": 2.0,
+          "shares": 79.0,
+          "message": "imaginate... jsjs"
+        },
+        {
+          "id": "1036844829507460_122144992809072582",
+          "date": "2026-08-04",
+          "type": "Image_or_post",
+          "interactions": 273.0,
+          "reactions": 174.0,
+          "comments": 4.0,
+          "shares": 95.0,
+          "message": "Ronroneo para el amigo 😌🥰 #UniverseSentMe #UniverseUSM #memes #humoracido"
+        }
+      ],
+      "daily": [
+        {
+          "date": "2026-08-01",
+          "posts": 4,
+          "interactions_total": 1366.0,
+          "interactions_mean": 341.5,
+          "interactions_median": 21.5,
+          "shares_total": 460.0,
+          "comments_total": 61.0
+        },
+        {
+          "date": "2026-08-02",
+          "posts": 4,
+          "interactions_total": 329.0,
+          "interactions_mean": 82.25,
+          "interactions_median": 40.0,
+          "shares_total": 86.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-08-03",
+          "posts": 3,
+          "interactions_total": 2115.0,
+          "interactions_mean": 705.0,
+          "interactions_median": 397.0,
+          "shares_total": 695.0,
+          "comments_total": 13.0
+        },
+        {
+          "date": "2026-08-04",
+          "posts": 5,
+          "interactions_total": 4685.0,
+          "interactions_mean": 937.0,
+          "interactions_median": 264.0,
+          "shares_total": 1365.0,
+          "comments_total": 48.0
+        },
+        {
+          "date": "2026-08-05",
+          "posts": 4,
+          "interactions_total": 70.0,
+          "interactions_mean": 17.5,
+          "interactions_median": 20.5,
+          "shares_total": 20.0,
+          "comments_total": 3.0
+        },
+        {
+          "date": "2026-08-06",
+          "posts": 4,
+          "interactions_total": 254.0,
+          "interactions_mean": 63.5,
+          "interactions_median": 65.5,
+          "shares_total": 41.0,
+          "comments_total": 9.0
+        },
+        {
+          "date": "2026-08-07",
+          "posts": 6,
+          "interactions_total": 131.0,
+          "interactions_mean": 21.833333333333332,
+          "interactions_median": 20.0,
+          "shares_total": 21.0,
+          "comments_total": 8.0
+        },
+        {
+          "date": "2026-08-08",
+          "posts": 5,
+          "interactions_total": 324.0,
+          "interactions_mean": 64.8,
+          "interactions_median": 88.0,
+          "shares_total": 90.0,
+          "comments_total": 11.0
+        },
+        {
+          "date": "2026-08-09",
+          "posts": 5,
+          "interactions_total": 377.0,
+          "interactions_mean": 75.4,
+          "interactions_median": 41.0,
+          "shares_total": 107.0,
+          "comments_total": 11.0
+        },
+        {
+          "date": "2026-08-10",
+          "posts": 3,
+          "interactions_total": 596.0,
+          "interactions_mean": 198.66666666666666,
+          "interactions_median": 262.0,
+          "shares_total": 138.0,
+          "comments_total": 9.0
+        },
+        {
+          "date": "2026-08-11",
+          "posts": 4,
+          "interactions_total": 1077.0,
+          "interactions_mean": 269.25,
+          "interactions_median": 188.5,
+          "shares_total": 294.0,
+          "comments_total": 22.0
+        },
+        {
+          "date": "2026-08-12",
+          "posts": 3,
+          "interactions_total": 687.0,
+          "interactions_mean": 229.0,
+          "interactions_median": 180.0,
+          "shares_total": 152.0,
+          "comments_total": 16.0
+        },
+        {
+          "date": "2026-08-13",
+          "posts": 4,
+          "interactions_total": 94.0,
+          "interactions_mean": 23.5,
+          "interactions_median": 25.0,
+          "shares_total": 18.0,
+          "comments_total": 4.0
+        },
+        {
+          "date": "2026-08-14",
+          "posts": 2,
+          "interactions_total": 65.0,
+          "interactions_mean": 32.5,
+          "interactions_median": 32.5,
+          "shares_total": 18.0,
+          "comments_total": 3.0
+        },
+        {
+          "date": "2026-08-15",
+          "posts": 4,
+          "interactions_total": 317.0,
+          "interactions_mean": 79.25,
+          "interactions_median": 71.5,
+          "shares_total": 67.0,
+          "comments_total": 13.0
+        },
+        {
+          "date": "2026-08-16",
+          "posts": 5,
+          "interactions_total": 185.0,
+          "interactions_mean": 37.0,
+          "interactions_median": 34.0,
+          "shares_total": 42.0,
+          "comments_total": 10.0
+        },
+        {
+          "date": "2026-08-17",
+          "posts": 6,
+          "interactions_total": 1124.0,
+          "interactions_mean": 187.33333333333334,
+          "interactions_median": 54.0,
+          "shares_total": 297.0,
+          "comments_total": 14.0
+        },
+        {
+          "date": "2026-08-18",
+          "posts": 6,
+          "interactions_total": 196.0,
+          "interactions_mean": 32.666666666666664,
+          "interactions_median": 31.5,
+          "shares_total": 41.0,
+          "comments_total": 10.0
+        },
+        {
+          "date": "2026-08-19",
+          "posts": 6,
+          "interactions_total": 345.0,
+          "interactions_mean": 57.5,
+          "interactions_median": 41.5,
+          "shares_total": 49.0,
+          "comments_total": 16.0
+        },
+        {
+          "date": "2026-08-20",
+          "posts": 6,
+          "interactions_total": 305.0,
+          "interactions_mean": 50.833333333333336,
+          "interactions_median": 42.5,
+          "shares_total": 79.0,
+          "comments_total": 14.0
+        },
+        {
+          "date": "2026-08-21",
+          "posts": 4,
+          "interactions_total": 170.0,
+          "interactions_mean": 42.5,
+          "interactions_median": 43.5,
+          "shares_total": 49.0,
+          "comments_total": 4.0
+        }
+      ],
+      "top1_share_of_interactions": 0.2770051309748852,
+      "top5_share_of_interactions": 0.569065622468269,
+      "without_top1": {
+        "period": "2026-08_1_21_images_without_top1",
+        "scope": "image_or_post",
+        "posts": 92,
+        "date_min": "2026-08-01",
+        "date_max": "2026-08-21",
+        "active_days": 21,
+        "posts_per_active_day": 4.380952380952381,
+        "interactions_total": 10709.0,
+        "interactions_per_active_day": 509.95238095238096,
+        "interactions_mean": 116.40217391304348,
+        "interactions_median": 38.5,
+        "interactions_p90": 264.0,
+        "reactions_total": 7521.0,
+        "comments_total": 274.0,
+        "shares_total": 2914.0,
+        "reactions_median": 28.5,
+        "comments_median": 2.0,
+        "shares_median": 8.0,
+        "shares_per_interaction": 0.2721075730693809,
+        "comments_per_interaction": 0.025585955738164162
+      },
+      "threshold_counts": {
+        "50": 40,
+        "100": 20,
+        "300": 8,
+        "500": 5,
+        "1000": 3
+      }
+    },
+    "2026-08_1_21_reels": {
+      "top_posts": [
+        {
+          "id": "1036844829507460_122145545163072582",
+          "date": "2026-08-05",
+          "type": "Reel",
+          "interactions": 24.0,
+          "reactions": 19.0,
+          "comments": 3.0,
+          "shares": 2.0,
+          "message": "Me hace falta vitamina B (besos). El Bosque tiene sus propios fantasmas. Algunos observan desde la niebla, esperando algo que nunca llega. No porque no puedan moverse — sino porque"
+        },
+        {
+          "id": "1036844829507460_122143966461072582",
+          "date": "2026-08-01",
+          "type": "Reel",
+          "interactions": 22.0,
+          "reactions": 17.0,
+          "comments": 1.0,
+          "shares": 4.0,
+          "message": "La sabiduría del bosque es clara: lo que ves en el muro es solo la punta del iceberg. El verdadero caos está en el mensaje directo 🌲🤐 #universesentme #WilfredUSM #humorsarcástico #"
+        },
+        {
+          "id": "1036844829507460_122144700573072582",
+          "date": "2026-08-03",
+          "type": "Reel",
+          "interactions": 20.0,
+          "reactions": 15.0,
+          "comments": 2.0,
+          "shares": 3.0,
+          "message": "Dicen que si te sales de la realidad en el lugar equivocado, terminas aquí. Fantasma no se perdió, su lógica de supervivencia lo llevó al espacio liminal definitivo. 👻🚪 Etiqueta a "
+        },
+        {
+          "id": "1036844829507460_122147352825072582",
+          "date": "2026-08-08",
+          "type": "Reel",
+          "interactions": 18.0,
+          "reactions": 15.0,
+          "comments": 2.0,
+          "shares": 1.0,
+          "message": "Universe no sabe qué trae en la caja. Nunca sabe. 🌙📦 Pero sí sabe quedarse a ver la cara que pone Elara cuando la abre. 👇 Comenta \"LUNA\" y te mandamos el link directo a la lámpara "
+        },
+        {
+          "id": "1036844829507460_122148560799072582",
+          "date": "2026-08-11",
+          "type": "Reel",
+          "interactions": 15.0,
+          "reactions": 11.0,
+          "comments": 3.0,
+          "shares": 1.0,
+          "message": "#UniverseSentMe"
+        },
+        {
+          "id": "1036844829507460_122153750763072582",
+          "date": "2026-08-20",
+          "type": "Reel",
+          "interactions": 11.0,
+          "reactions": 7.0,
+          "comments": 1.0,
+          "shares": 3.0,
+          "message": ""
+        },
+        {
+          "id": "1036844829507460_122154017667072582",
+          "date": "2026-08-21",
+          "type": "Reel",
+          "interactions": 9.0,
+          "reactions": 7.0,
+          "comments": 1.0,
+          "shares": 1.0,
+          "message": ""
+        },
+        {
+          "id": "1036844829507460_122144459607072582",
+          "date": "2026-08-02",
+          "type": "Reel",
+          "interactions": 9.0,
+          "reactions": 8.0,
+          "comments": 1.0,
+          "shares": 0.0,
+          "message": "Hay conversaciones que no llegan a ningun lado 👻 🐱 Universe lo intentó. ¿A quien le tienes que explicar tu vida como tres veces porque sigue atorado en el mismo tema? 👇 #UniverseSe"
+        },
+        {
+          "id": "1036844829507460_122147211939072582",
+          "date": "2026-08-08",
+          "type": "Reel",
+          "interactions": 8.0,
+          "reactions": 6.0,
+          "comments": 1.0,
+          "shares": 1.0,
+          "message": "Elara pasó toda la noche tratando de leerlo. Evan solo quería ver las estrellas. 🌲✨ #UniverseSentMe #ElaraUSM #EvanUSM #ElBosque #MomentosUSM"
+        },
+        {
+          "id": "1036844829507460_122147749683072582",
+          "date": "2026-08-09",
+          "type": "Reel",
+          "interactions": 7.0,
+          "reactions": 6.0,
+          "comments": 1.0,
+          "shares": 0.0,
+          "message": "Les dije que no eran cartones pintados #UniverseSentMe #memes #humor #UniverseUSM"
+        }
+      ],
+      "daily": [
+        {
+          "date": "2026-08-01",
+          "posts": 1,
+          "interactions_total": 22.0,
+          "interactions_mean": 22.0,
+          "interactions_median": 22.0,
+          "shares_total": 4.0,
+          "comments_total": 1.0
+        },
+        {
+          "date": "2026-08-02",
+          "posts": 1,
+          "interactions_total": 9.0,
+          "interactions_mean": 9.0,
+          "interactions_median": 9.0,
+          "shares_total": 0.0,
+          "comments_total": 1.0
+        },
+        {
+          "date": "2026-08-03",
+          "posts": 1,
+          "interactions_total": 20.0,
+          "interactions_mean": 20.0,
+          "interactions_median": 20.0,
+          "shares_total": 3.0,
+          "comments_total": 2.0
+        },
+        {
+          "date": "2026-08-05",
+          "posts": 1,
+          "interactions_total": 24.0,
+          "interactions_mean": 24.0,
+          "interactions_median": 24.0,
+          "shares_total": 2.0,
+          "comments_total": 3.0
+        },
+        {
+          "date": "2026-08-08",
+          "posts": 2,
+          "interactions_total": 26.0,
+          "interactions_mean": 13.0,
+          "interactions_median": 13.0,
+          "shares_total": 2.0,
+          "comments_total": 3.0
+        },
+        {
+          "date": "2026-08-09",
+          "posts": 1,
+          "interactions_total": 7.0,
+          "interactions_mean": 7.0,
+          "interactions_median": 7.0,
+          "shares_total": 0.0,
+          "comments_total": 1.0
+        },
+        {
+          "date": "2026-08-11",
+          "posts": 1,
+          "interactions_total": 15.0,
+          "interactions_mean": 15.0,
+          "interactions_median": 15.0,
+          "shares_total": 1.0,
+          "comments_total": 3.0
+        },
+        {
+          "date": "2026-08-19",
+          "posts": 1,
+          "interactions_total": 2.0,
+          "interactions_mean": 2.0,
+          "interactions_median": 2.0,
+          "shares_total": 0.0,
+          "comments_total": 0.0
+        },
+        {
+          "date": "2026-08-20",
+          "posts": 1,
+          "interactions_total": 11.0,
+          "interactions_mean": 11.0,
+          "interactions_median": 11.0,
+          "shares_total": 3.0,
+          "comments_total": 1.0
+        },
+        {
+          "date": "2026-08-21",
+          "posts": 1,
+          "interactions_total": 9.0,
+          "interactions_mean": 9.0,
+          "interactions_median": 9.0,
+          "shares_total": 1.0,
+          "comments_total": 1.0
+        }
+      ],
+      "top1_share_of_interactions": 0.16551724137931034,
+      "top5_share_of_interactions": 0.6827586206896552,
+      "without_top1": {
+        "period": "2026-08_1_21_reels_without_top1",
+        "scope": "image_or_post",
+        "posts": 10,
+        "date_min": "2026-08-01",
+        "date_max": "2026-08-21",
+        "active_days": 9,
+        "posts_per_active_day": 1.1111111111111112,
+        "interactions_total": 121.0,
+        "interactions_per_active_day": 13.444444444444445,
+        "interactions_mean": 12.1,
+        "interactions_median": 10.0,
+        "interactions_p90": 20.0,
+        "reactions_total": 94.0,
+        "comments_total": 13.0,
+        "shares_total": 14.0,
+        "reactions_median": 7.5,
+        "comments_median": 1.0,
+        "shares_median": 1.0,
+        "shares_per_interaction": 0.11570247933884298,
+        "comments_per_interaction": 0.10743801652892562
+      },
+      "threshold_counts": {
+        "50": 0,
+        "100": 0,
+        "300": 0,
+        "500": 0,
+        "1000": 0
+      }
+    },
+    "2026-06_first14_images": {
+      "top_posts": [
+        {
+          "id": "1036844829507460_122130287907072582",
+          "date": "2026-06-14",
+          "type": "Image_or_post",
+          "interactions": 1181.0,
+          "reactions": 985.0,
+          "comments": 8.0,
+          "shares": 188.0,
+          "message": "No sean asi.. 😆"
+        },
+        {
+          "id": "1036844829507460_122128723341072582",
+          "date": "2026-06-09",
+          "type": "Image_or_post",
+          "interactions": 1127.0,
+          "reactions": 896.0,
+          "comments": 20.0,
+          "shares": 211.0,
+          "message": "yo Aura Fuerte 😏"
+        },
+        {
+          "id": "1036844829507460_122129214813072582",
+          "date": "2026-06-11",
+          "type": "Image_or_post",
+          "interactions": 924.0,
+          "reactions": 696.0,
+          "comments": 14.0,
+          "shares": 214.0,
+          "message": "😎"
+        },
+        {
+          "id": "1036844829507460_122129013585072582",
+          "date": "2026-06-10",
+          "type": "Image_or_post",
+          "interactions": 785.0,
+          "reactions": 509.0,
+          "comments": 13.0,
+          "shares": 263.0,
+          "message": "🤡"
+        },
+        {
+          "id": "1036844829507460_122129231601072582",
+          "date": "2026-06-11",
+          "type": "Image_or_post",
+          "interactions": 547.0,
+          "reactions": 327.0,
+          "comments": 8.0,
+          "shares": 212.0,
+          "message": "o pedir follows 🫣"
+        },
+        {
+          "id": "1036844829507460_122130302793072582",
+          "date": "2026-06-14",
+          "type": "Image_or_post",
+          "interactions": 529.0,
+          "reactions": 443.0,
+          "comments": 28.0,
+          "shares": 58.0,
+          "message": "😏 obvio..."
+        },
+        {
+          "id": "1036844829507460_122128536909072582",
+          "date": "2026-06-09",
+          "type": "Image_or_post",
+          "interactions": 226.0,
+          "reactions": 190.0,
+          "comments": 10.0,
+          "shares": 26.0,
+          "message": "🥴🫠🫠"
+        },
+        {
+          "id": "1036844829507460_122130196011072582",
+          "date": "2026-06-13",
+          "type": "Image_or_post",
+          "interactions": 164.0,
+          "reactions": 120.0,
+          "comments": 2.0,
+          "shares": 42.0,
+          "message": "Alguna ligueme... Yo no sé 😔"
+        },
+        {
+          "id": "1036844829507460_122129404893072582",
+          "date": "2026-06-11",
+          "type": "Image_or_post",
+          "interactions": 155.0,
+          "reactions": 135.0,
+          "comments": 1.0,
+          "shares": 19.0,
+          "message": "Y si... u.u Universe Sent Me"
+        },
+        {
+          "id": "1036844829507460_122128196421072582",
+          "date": "2026-06-08",
+          "type": "Image_or_post",
+          "interactions": 144.0,
+          "reactions": 116.0,
+          "comments": 4.0,
+          "shares": 24.0,
+          "message": "pero tienes que estar conmig... u.u"
+        }
+      ],
+      "daily": [
+        {
+          "date": "2026-06-01",
+          "posts": 11,
+          "interactions_total": 76.0,
+          "interactions_mean": 6.909090909090909,
+          "interactions_median": 7.0,
+          "shares_total": 6.0,
+          "comments_total": 9.0
+        },
+        {
+          "date": "2026-06-02",
+          "posts": 11,
+          "interactions_total": 33.0,
+          "interactions_mean": 3.0,
+          "interactions_median": 2.0,
+          "shares_total": 4.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-06-03",
+          "posts": 10,
+          "interactions_total": 26.0,
+          "interactions_mean": 2.6,
+          "interactions_median": 2.5,
+          "shares_total": 2.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-06-04",
+          "posts": 8,
+          "interactions_total": 45.0,
+          "interactions_mean": 5.625,
+          "interactions_median": 7.5,
+          "shares_total": 5.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-06-05",
+          "posts": 9,
+          "interactions_total": 32.0,
+          "interactions_mean": 3.5555555555555554,
+          "interactions_median": 2.0,
+          "shares_total": 2.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-06-06",
+          "posts": 8,
+          "interactions_total": 37.0,
+          "interactions_mean": 4.625,
+          "interactions_median": 2.5,
+          "shares_total": 6.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-06-07",
+          "posts": 12,
+          "interactions_total": 60.0,
+          "interactions_mean": 5.0,
+          "interactions_median": 2.0,
+          "shares_total": 9.0,
+          "comments_total": 4.0
+        },
+        {
+          "date": "2026-06-08",
+          "posts": 5,
+          "interactions_total": 194.0,
+          "interactions_mean": 38.8,
+          "interactions_median": 15.0,
+          "shares_total": 34.0,
+          "comments_total": 7.0
+        },
+        {
+          "date": "2026-06-09",
+          "posts": 4,
+          "interactions_total": 1441.0,
+          "interactions_mean": 360.25,
+          "interactions_median": 143.5,
+          "shares_total": 255.0,
+          "comments_total": 30.0
+        },
+        {
+          "date": "2026-06-10",
+          "posts": 6,
+          "interactions_total": 865.0,
+          "interactions_mean": 144.16666666666666,
+          "interactions_median": 13.5,
+          "shares_total": 277.0,
+          "comments_total": 20.0
+        },
+        {
+          "date": "2026-06-11",
+          "posts": 7,
+          "interactions_total": 1657.0,
+          "interactions_mean": 236.71428571428572,
+          "interactions_median": 11.0,
+          "shares_total": 447.0,
+          "comments_total": 27.0
+        },
+        {
+          "date": "2026-06-12",
+          "posts": 7,
+          "interactions_total": 167.0,
+          "interactions_mean": 23.857142857142858,
+          "interactions_median": 27.0,
+          "shares_total": 29.0,
+          "comments_total": 10.0
+        },
+        {
+          "date": "2026-06-13",
+          "posts": 5,
+          "interactions_total": 233.0,
+          "interactions_mean": 46.6,
+          "interactions_median": 23.0,
+          "shares_total": 52.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-06-14",
+          "posts": 8,
+          "interactions_total": 1764.0,
+          "interactions_mean": 220.5,
+          "interactions_median": 9.5,
+          "shares_total": 255.0,
+          "comments_total": 41.0
+        }
+      ],
+      "top1_share_of_interactions": 0.17812971342383108,
+      "top5_share_of_interactions": 0.6883861236802413,
+      "without_top1": {
+        "period": "2026-06_first14_images_without_top1",
+        "scope": "image_or_post",
+        "posts": 110,
+        "date_min": "2026-06-01",
+        "date_max": "2026-06-14",
+        "active_days": 14,
+        "posts_per_active_day": 7.857142857142857,
+        "interactions_total": 5449.0,
+        "interactions_per_active_day": 389.2142857142857,
+        "interactions_mean": 49.53636363636364,
+        "interactions_median": 6.0,
+        "interactions_p90": 41.0,
+        "reactions_total": 4084.0,
+        "comments_total": 170.0,
+        "shares_total": 1195.0,
+        "reactions_median": 5.0,
+        "comments_median": 1.0,
+        "shares_median": 0.0,
+        "shares_per_interaction": 0.21930629473297852,
+        "comments_per_interaction": 0.031198385024775187
+      },
+      "threshold_counts": {
+        "50": 11,
+        "100": 10,
+        "300": 6,
+        "500": 6,
+        "1000": 2
+      }
+    },
+    "2026-07_first14_images": {
+      "top_posts": [
+        {
+          "id": "1036844829507460_122135607981072582",
+          "date": "2026-07-03",
+          "type": "Image_or_post",
+          "interactions": 2441.0,
+          "reactions": 1652.0,
+          "comments": 15.0,
+          "shares": 774.0,
+          "message": "😋"
+        },
+        {
+          "id": "1036844829507460_122135586723072582",
+          "date": "2026-07-03",
+          "type": "Image_or_post",
+          "interactions": 2280.0,
+          "reactions": 1533.0,
+          "comments": 9.0,
+          "shares": 738.0,
+          "message": "Ya va ser la hora del tecito 😇 #UniverseSentMe #vidareal #relatable #problemas"
+        },
+        {
+          "id": "1036844829507460_122135016567072582",
+          "date": "2026-07-01",
+          "type": "Image_or_post",
+          "interactions": 1972.0,
+          "reactions": 1412.0,
+          "comments": 10.0,
+          "shares": 550.0,
+          "message": "😉"
+        },
+        {
+          "id": "1036844829507460_122138846193072582",
+          "date": "2026-07-13",
+          "type": "Image_or_post",
+          "interactions": 1609.0,
+          "reactions": 1259.0,
+          "comments": 15.0,
+          "shares": 335.0,
+          "message": "😈 Ya fue mucha solteria"
+        },
+        {
+          "id": "1036844829507460_122136954147072582",
+          "date": "2026-07-06",
+          "type": "Image_or_post",
+          "interactions": 1076.0,
+          "reactions": 746.0,
+          "comments": 8.0,
+          "shares": 322.0,
+          "message": "🫣🫣"
+        },
+        {
+          "id": "1036844829507460_122138831577072582",
+          "date": "2026-07-12",
+          "type": "Image_or_post",
+          "interactions": 1035.0,
+          "reactions": 651.0,
+          "comments": 16.0,
+          "shares": 368.0,
+          "message": "ufff... 🥴"
+        },
+        {
+          "id": "1036844829507460_122137968789072582",
+          "date": "2026-07-09",
+          "type": "Image_or_post",
+          "interactions": 784.0,
+          "reactions": 553.0,
+          "comments": 7.0,
+          "shares": 224.0,
+          "message": "Por fin alguien que resuelve. 😝 #UniverseSentMe #empatia #Resuelve #vidareal"
+        },
+        {
+          "id": "1036844829507460_122135577327072582",
+          "date": "2026-07-03",
+          "type": "Image_or_post",
+          "interactions": 660.0,
+          "reactions": 558.0,
+          "comments": 13.0,
+          "shares": 89.0,
+          "message": "🤡 están todos invitados..."
+        },
+        {
+          "id": "1036844829507460_122136104955072582",
+          "date": "2026-07-04",
+          "type": "Image_or_post",
+          "interactions": 652.0,
+          "reactions": 563.0,
+          "comments": 9.0,
+          "shares": 80.0,
+          "message": "Obvio... 🫠"
+        },
+        {
+          "id": "1036844829507460_122136725727072582",
+          "date": "2026-07-05",
+          "type": "Image_or_post",
+          "interactions": 639.0,
+          "reactions": 535.0,
+          "comments": 1.0,
+          "shares": 103.0,
+          "message": "conque los chicos del campo.. aja..."
+        }
+      ],
+      "daily": [
+        {
+          "date": "2026-07-01",
+          "posts": 8,
+          "interactions_total": 2936.0,
+          "interactions_mean": 367.0,
+          "interactions_median": 58.0,
+          "shares_total": 714.0,
+          "comments_total": 23.0
+        },
+        {
+          "date": "2026-07-02",
+          "posts": 6,
+          "interactions_total": 299.0,
+          "interactions_mean": 49.833333333333336,
+          "interactions_median": 46.5,
+          "shares_total": 46.0,
+          "comments_total": 10.0
+        },
+        {
+          "date": "2026-07-03",
+          "posts": 6,
+          "interactions_total": 5892.0,
+          "interactions_mean": 982.0,
+          "interactions_median": 528.5,
+          "shares_total": 1687.0,
+          "comments_total": 43.0
+        },
+        {
+          "date": "2026-07-04",
+          "posts": 6,
+          "interactions_total": 1217.0,
+          "interactions_mean": 202.83333333333334,
+          "interactions_median": 57.0,
+          "shares_total": 218.0,
+          "comments_total": 18.0
+        },
+        {
+          "date": "2026-07-05",
+          "posts": 5,
+          "interactions_total": 1019.0,
+          "interactions_mean": 203.8,
+          "interactions_median": 122.0,
+          "shares_total": 156.0,
+          "comments_total": 78.0
+        },
+        {
+          "date": "2026-07-06",
+          "posts": 5,
+          "interactions_total": 1571.0,
+          "interactions_mean": 314.2,
+          "interactions_median": 37.0,
+          "shares_total": 424.0,
+          "comments_total": 20.0
+        },
+        {
+          "date": "2026-07-07",
+          "posts": 4,
+          "interactions_total": 414.0,
+          "interactions_mean": 103.5,
+          "interactions_median": 30.5,
+          "shares_total": 118.0,
+          "comments_total": 11.0
+        },
+        {
+          "date": "2026-07-08",
+          "posts": 5,
+          "interactions_total": 870.0,
+          "interactions_mean": 174.0,
+          "interactions_median": 63.0,
+          "shares_total": 167.0,
+          "comments_total": 18.0
+        },
+        {
+          "date": "2026-07-09",
+          "posts": 7,
+          "interactions_total": 2070.0,
+          "interactions_mean": 295.7142857142857,
+          "interactions_median": 351.0,
+          "shares_total": 449.0,
+          "comments_total": 31.0
+        },
+        {
+          "date": "2026-07-10",
+          "posts": 8,
+          "interactions_total": 1117.0,
+          "interactions_mean": 139.625,
+          "interactions_median": 80.0,
+          "shares_total": 225.0,
+          "comments_total": 21.0
+        },
+        {
+          "date": "2026-07-11",
+          "posts": 8,
+          "interactions_total": 1007.0,
+          "interactions_mean": 125.875,
+          "interactions_median": 43.0,
+          "shares_total": 219.0,
+          "comments_total": 19.0
+        },
+        {
+          "date": "2026-07-12",
+          "posts": 10,
+          "interactions_total": 1315.0,
+          "interactions_mean": 131.5,
+          "interactions_median": 22.0,
+          "shares_total": 398.0,
+          "comments_total": 30.0
+        },
+        {
+          "date": "2026-07-13",
+          "posts": 7,
+          "interactions_total": 1725.0,
+          "interactions_mean": 246.42857142857142,
+          "interactions_median": 17.0,
+          "shares_total": 353.0,
+          "comments_total": 26.0
+        },
+        {
+          "date": "2026-07-14",
+          "posts": 8,
+          "interactions_total": 868.0,
+          "interactions_mean": 108.5,
+          "interactions_median": 32.0,
+          "shares_total": 150.0,
+          "comments_total": 24.0
+        }
+      ],
+      "top1_share_of_interactions": 0.10936379928315412,
+      "top5_share_of_interactions": 0.42016129032258065,
+      "without_top1": {
+        "period": "2026-07_first14_images_without_top1",
+        "scope": "image_or_post",
+        "posts": 92,
+        "date_min": "2026-07-01",
+        "date_max": "2026-07-14",
+        "active_days": 14,
+        "posts_per_active_day": 6.571428571428571,
+        "interactions_total": 19879.0,
+        "interactions_per_active_day": 1419.9285714285713,
+        "interactions_mean": 216.07608695652175,
+        "interactions_median": 41.0,
+        "interactions_p90": 607.0,
+        "reactions_total": 14972.0,
+        "comments_total": 357.0,
+        "shares_total": 4550.0,
+        "reactions_median": 32.5,
+        "comments_median": 2.0,
+        "shares_median": 7.0,
+        "shares_per_interaction": 0.22888475275416267,
+        "comments_per_interaction": 0.017958649831480458
+      },
+      "threshold_counts": {
+        "50": 46,
+        "100": 34,
+        "300": 25,
+        "500": 12,
+        "1000": 6
+      }
+    },
+    "2026-08_first14_images": {
+      "top_posts": [
+        {
+          "id": "1036844829507460_122145025611072582",
+          "date": "2026-08-04",
+          "type": "Image_or_post",
+          "interactions": 4103.0,
+          "reactions": 2858.0,
+          "comments": 30.0,
+          "shares": 1215.0,
+          "message": "😒"
+        },
+        {
+          "id": "1036844829507460_122144684943072582",
+          "date": "2026-08-03",
+          "type": "Image_or_post",
+          "interactions": 1702.0,
+          "reactions": 1111.0,
+          "comments": 5.0,
+          "shares": 586.0,
+          "message": "𝑳𝒖𝒏𝒆𝒔 𝒅𝒆 𝒆𝒏𝒇𝒐𝒒𝒖𝒆. No olvides la santísima trinidad para sobrevivir a la semana con estilo. 🕶️✨ - Ser la vrg. - Andar bien vrg. - Que te valga vrg. (La más importante). ¿𝑬𝒏 𝒄𝒖𝒂́𝒍 𝒅𝒆"
+        },
+        {
+          "id": "1036844829507460_122143924209072582",
+          "date": "2026-08-01",
+          "type": "Image_or_post",
+          "interactions": 1319.0,
+          "reactions": 806.0,
+          "comments": 60.0,
+          "shares": 453.0,
+          "message": "Si estás leyendo esto, ¡felicidades! Has sobrevivido a otro microinstante del caos universal. Sig #UniverseSentMe #HumorExistencial #MemesUSM"
+        },
+        {
+          "id": "1036844829507460_122148555549072582",
+          "date": "2026-08-11",
+          "type": "Image_or_post",
+          "interactions": 669.0,
+          "reactions": 465.0,
+          "comments": 11.0,
+          "shares": 193.0,
+          "message": "Tus únicas amigas son estas 😳 #UniverseSentMe #KaelUSM #humor #memes"
+        },
+        {
+          "id": "1036844829507460_122148868341072582",
+          "date": "2026-08-12",
+          "type": "Image_or_post",
+          "interactions": 494.0,
+          "reactions": 373.0,
+          "comments": 8.0,
+          "shares": 113.0,
+          "message": "¿Qué quieres desayunar? 😳 #UniverseSentMe #EvanUSM #KiriUSM #relatable"
+        },
+        {
+          "id": "1036844829507460_122144694213072582",
+          "date": "2026-08-03",
+          "type": "Image_or_post",
+          "interactions": 397.0,
+          "reactions": 286.0,
+          "comments": 4.0,
+          "shares": 107.0,
+          "message": "𝑲𝒊𝒓𝒊 no acepta lo ordinario, y tú tampoco deberías. ✨🦋 Hay un mundo entero de posibilidades entre lo que ves y lo que imaginas. Comparte si hoy también eliges creer en la magia. #U"
+        },
+        {
+          "id": "1036844829507460_122147826357072582",
+          "date": "2026-08-10",
+          "type": "Image_or_post",
+          "interactions": 297.0,
+          "reactions": 216.0,
+          "comments": 2.0,
+          "shares": 79.0,
+          "message": "imaginate... jsjs"
+        },
+        {
+          "id": "1036844829507460_122144992809072582",
+          "date": "2026-08-04",
+          "type": "Image_or_post",
+          "interactions": 273.0,
+          "reactions": 174.0,
+          "comments": 4.0,
+          "shares": 95.0,
+          "message": "Ronroneo para el amigo 😌🥰 #UniverseSentMe #UniverseUSM #memes #humoracido"
+        },
+        {
+          "id": "1036844829507460_122144976705072582",
+          "date": "2026-08-04",
+          "type": "Image_or_post",
+          "interactions": 264.0,
+          "reactions": 207.0,
+          "comments": 11.0,
+          "shares": 46.0,
+          "message": "La evolución no fue un accidente, fue un diseño de alta costura. 🎩🦢 Mientras unos intentan procesar, el Ganso simplemente es. Dios sabía lo que hacía cuando creó al animal que domi"
+        },
+        {
+          "id": "1036844829507460_122147825499072582",
+          "date": "2026-08-10",
+          "type": "Image_or_post",
+          "interactions": 262.0,
+          "reactions": 207.0,
+          "comments": 5.0,
+          "shares": 50.0,
+          "message": "🫢 #UniverseSentMe #humor #relatable #UniverseUSM"
+        }
+      ],
+      "daily": [
+        {
+          "date": "2026-08-01",
+          "posts": 4,
+          "interactions_total": 1366.0,
+          "interactions_mean": 341.5,
+          "interactions_median": 21.5,
+          "shares_total": 460.0,
+          "comments_total": 61.0
+        },
+        {
+          "date": "2026-08-02",
+          "posts": 4,
+          "interactions_total": 329.0,
+          "interactions_mean": 82.25,
+          "interactions_median": 40.0,
+          "shares_total": 86.0,
+          "comments_total": 5.0
+        },
+        {
+          "date": "2026-08-03",
+          "posts": 3,
+          "interactions_total": 2115.0,
+          "interactions_mean": 705.0,
+          "interactions_median": 397.0,
+          "shares_total": 695.0,
+          "comments_total": 13.0
+        },
+        {
+          "date": "2026-08-04",
+          "posts": 5,
+          "interactions_total": 4685.0,
+          "interactions_mean": 937.0,
+          "interactions_median": 264.0,
+          "shares_total": 1365.0,
+          "comments_total": 48.0
+        },
+        {
+          "date": "2026-08-05",
+          "posts": 4,
+          "interactions_total": 70.0,
+          "interactions_mean": 17.5,
+          "interactions_median": 20.5,
+          "shares_total": 20.0,
+          "comments_total": 3.0
+        },
+        {
+          "date": "2026-08-06",
+          "posts": 4,
+          "interactions_total": 254.0,
+          "interactions_mean": 63.5,
+          "interactions_median": 65.5,
+          "shares_total": 41.0,
+          "comments_total": 9.0
+        },
+        {
+          "date": "2026-08-07",
+          "posts": 6,
+          "interactions_total": 131.0,
+          "interactions_mean": 21.833333333333332,
+          "interactions_median": 20.0,
+          "shares_total": 21.0,
+          "comments_total": 8.0
+        },
+        {
+          "date": "2026-08-08",
+          "posts": 5,
+          "interactions_total": 324.0,
+          "interactions_mean": 64.8,
+          "interactions_median": 88.0,
+          "shares_total": 90.0,
+          "comments_total": 11.0
+        },
+        {
+          "date": "2026-08-09",
+          "posts": 5,
+          "interactions_total": 377.0,
+          "interactions_mean": 75.4,
+          "interactions_median": 41.0,
+          "shares_total": 107.0,
+          "comments_total": 11.0
+        },
+        {
+          "date": "2026-08-10",
+          "posts": 3,
+          "interactions_total": 596.0,
+          "interactions_mean": 198.66666666666666,
+          "interactions_median": 262.0,
+          "shares_total": 138.0,
+          "comments_total": 9.0
+        },
+        {
+          "date": "2026-08-11",
+          "posts": 4,
+          "interactions_total": 1077.0,
+          "interactions_mean": 269.25,
+          "interactions_median": 188.5,
+          "shares_total": 294.0,
+          "comments_total": 22.0
+        },
+        {
+          "date": "2026-08-12",
+          "posts": 3,
+          "interactions_total": 687.0,
+          "interactions_mean": 229.0,
+          "interactions_median": 180.0,
+          "shares_total": 152.0,
+          "comments_total": 16.0
+        },
+        {
+          "date": "2026-08-13",
+          "posts": 4,
+          "interactions_total": 94.0,
+          "interactions_mean": 23.5,
+          "interactions_median": 25.0,
+          "shares_total": 18.0,
+          "comments_total": 4.0
+        },
+        {
+          "date": "2026-08-14",
+          "posts": 2,
+          "interactions_total": 65.0,
+          "interactions_mean": 32.5,
+          "interactions_median": 32.5,
+          "shares_total": 18.0,
+          "comments_total": 3.0
+        }
+      ],
+      "top1_share_of_interactions": 0.3371405094494659,
+      "top5_share_of_interactions": 0.680936729663106,
+      "without_top1": {
+        "period": "2026-08_first14_images_without_top1",
+        "scope": "image_or_post",
+        "posts": 55,
+        "date_min": "2026-08-01",
+        "date_max": "2026-08-14",
+        "active_days": 14,
+        "posts_per_active_day": 3.9285714285714284,
+        "interactions_total": 8067.0,
+        "interactions_per_active_day": 576.2142857142857,
+        "interactions_mean": 146.6727272727273,
+        "interactions_median": 33.0,
+        "interactions_p90": 297.0,
+        "reactions_total": 5584.0,
+        "comments_total": 193.0,
+        "shares_total": 2290.0,
+        "reactions_median": 26.0,
+        "comments_median": 2.0,
+        "shares_median": 6.0,
+        "shares_per_interaction": 0.2838725672492872,
+        "comments_per_interaction": 0.023924631213586216
+      },
+      "threshold_counts": {
+        "50": 23,
+        "100": 16,
+        "300": 6,
+        "500": 4,
+        "1000": 3
+      }
+    }
+  },
+  "comparison": {
+    "first14_image_only": {
+      "2026-06": {
+        "period": "2026-06_first14_images",
+        "scope": "image_or_post",
+        "posts": 111,
+        "date_min": "2026-06-01",
+        "date_max": "2026-06-14",
+        "active_days": 14,
+        "posts_per_active_day": 7.928571428571429,
+        "interactions_total": 6630.0,
+        "interactions_per_active_day": 473.57142857142856,
+        "interactions_mean": 59.729729729729726,
+        "interactions_median": 6.0,
+        "interactions_p90": 47.0,
+        "reactions_total": 5069.0,
+        "comments_total": 178.0,
+        "shares_total": 1383.0,
+        "reactions_median": 5.0,
+        "comments_median": 1.0,
+        "shares_median": 0.0,
+        "shares_per_interaction": 0.2085972850678733,
+        "comments_per_interaction": 0.026847662141779787
+      },
+      "2026-07": {
+        "period": "2026-07_first14_images",
+        "scope": "image_or_post",
+        "posts": 93,
+        "date_min": "2026-07-01",
+        "date_max": "2026-07-14",
+        "active_days": 14,
+        "posts_per_active_day": 6.642857142857143,
+        "interactions_total": 22320.0,
+        "interactions_per_active_day": 1594.2857142857142,
+        "interactions_mean": 240.0,
+        "interactions_median": 41.0,
+        "interactions_p90": 639.0,
+        "reactions_total": 16624.0,
+        "comments_total": 372.0,
+        "shares_total": 5324.0,
+        "reactions_median": 33.0,
+        "comments_median": 2.0,
+        "shares_median": 7.0,
+        "shares_per_interaction": 0.23853046594982077,
+        "comments_per_interaction": 0.016666666666666666
+      },
+      "2026-08": {
+        "period": "2026-08_first14_images",
+        "scope": "image_or_post",
+        "posts": 56,
+        "date_min": "2026-08-01",
+        "date_max": "2026-08-14",
+        "active_days": 14,
+        "posts_per_active_day": 4.0,
+        "interactions_total": 12170.0,
+        "interactions_per_active_day": 869.2857142857143,
+        "interactions_mean": 217.32142857142858,
+        "interactions_median": 35.0,
+        "interactions_p90": 397.0,
+        "reactions_total": 8442.0,
+        "comments_total": 223.0,
+        "shares_total": 3505.0,
+        "reactions_median": 26.0,
+        "comments_median": 2.0,
+        "shares_median": 6.5,
+        "shares_per_interaction": 0.2880032867707477,
+        "comments_per_interaction": 0.018323746918652423
+      }
+    },
+    "full_month_reference_vs_august_mtd_images": {
+      "2026-06": {
+        "period": "2026-06_images",
+        "scope": "image_or_post",
+        "posts": 201,
+        "date_min": "2026-06-01",
+        "date_max": "2026-06-30",
+        "active_days": 30,
+        "posts_per_active_day": 6.7,
+        "interactions_total": 17985.0,
+        "interactions_per_active_day": 599.5,
+        "interactions_mean": 89.4776119402985,
+        "interactions_median": 11.0,
+        "interactions_p90": 351.0,
+        "reactions_total": 13698.0,
+        "comments_total": 405.0,
+        "shares_total": 3882.0,
+        "reactions_median": 8.0,
+        "comments_median": 1.0,
+        "shares_median": 1.0,
+        "shares_per_interaction": 0.2158465387823186,
+        "comments_per_interaction": 0.022518765638031693
+      },
+      "2026-07": {
+        "period": "2026-07_images",
+        "scope": "image_or_post",
+        "posts": 199,
+        "date_min": "2026-07-01",
+        "date_max": "2026-07-31",
+        "active_days": 31,
+        "posts_per_active_day": 6.419354838709677,
+        "interactions_total": 67727.0,
+        "interactions_per_active_day": 2184.7419354838707,
+        "interactions_mean": 340.33668341708545,
+        "interactions_median": 49.0,
+        "interactions_p90": 692.0,
+        "reactions_total": 48188.0,
+        "comments_total": 910.0,
+        "shares_total": 18629.0,
+        "reactions_median": 37.0,
+        "comments_median": 2.0,
+        "shares_median": 8.0,
+        "shares_per_interaction": 0.27506016802752226,
+        "comments_per_interaction": 0.013436295716627047
+      },
+      "2026-08_mtd_1_21": {
+        "period": "2026-08_1_21_images",
+        "scope": "image_or_post",
+        "posts": 93,
+        "date_min": "2026-08-01",
+        "date_max": "2026-08-21",
+        "active_days": 21,
+        "posts_per_active_day": 4.428571428571429,
+        "interactions_total": 14812.0,
+        "interactions_per_active_day": 705.3333333333334,
+        "interactions_mean": 159.2688172043011,
+        "interactions_median": 40.0,
+        "interactions_p90": 273.0,
+        "reactions_total": 10379.0,
+        "comments_total": 304.0,
+        "shares_total": 4129.0,
+        "reactions_median": 29.0,
+        "comments_median": 2.0,
+        "shares_median": 8.0,
+        "shares_per_interaction": 0.27876046448825276,
+        "comments_per_interaction": 0.020523899540912775
+      }
+    },
+    "first14_august_vs_prior_image_only": {
+      "posts_per_active_day_vs_june": -0.49549549549549554,
+      "posts_per_active_day_vs_july": -0.3978494623655914,
+      "interactions_per_active_day_vs_june": 0.8355957767722475,
+      "interactions_per_active_day_vs_july": -0.4547491039426522,
+      "median_interactions_vs_june": 4.833333333333333,
+      "median_interactions_vs_july": -0.14634146341463417,
+      "shares_per_interaction_change_pp_vs_june": 7.94060017028744,
+      "shares_per_interaction_change_pp_vs_july": 4.947282082092694
+    },
+    "july_vs_june_image_only": {
+      "posts_change": -0.00995024875621886,
+      "total_interactions_change": 2.765749235474006,
+      "median_interactions_change": 3.454545454545454,
+      "median_shares_change": 7.0
+    },
+    "august_mtd_vs_full_month_rate": {
+      "posts_per_active_day_vs_june": -0.3390191897654584,
+      "posts_per_active_day_vs_july": -0.3101220387652548,
+      "interactions_per_active_day_vs_june": 0.17653600222407562,
+      "interactions_per_active_day_vs_july": -0.677154852077704,
+      "median_interactions_vs_june": 2.6363636363636362,
+      "median_interactions_vs_july": -0.18367346938775508
+    }
+  },
+  "august_current_union": {
+    "raw_current_rows": 47,
+    "current_unique_rows": 40,
+    "all_august_unique_rows": 104,
+    "images": 93,
+    "reels": 11,
+    "reels_interactions": {
+      "period": "2026-08_1_21",
+      "scope": "reels",
+      "posts": 11,
+      "date_min": "2026-08-01",
+      "date_max": "2026-08-21",
+      "active_days": 10,
+      "posts_per_active_day": 1.1,
+      "interactions_total": 145.0,
+      "interactions_per_active_day": 14.5,
+      "interactions_mean": 13.181818181818182,
+      "interactions_median": 11.0,
+      "interactions_p90": 22.0,
+      "reactions_total": 113.0,
+      "comments_total": 16.0,
+      "shares_total": 16.0,
+      "reactions_median": 8.0,
+      "comments_median": 1.0,
+      "shares_median": 1.0,
+      "shares_per_interaction": 0.1103448275862069,
+      "comments_per_interaction": 0.1103448275862069
+    },
+    "source_counts_current_only": {
+      "2026-08-17_Corte_Observado_15_16.json": 9,
+      "2026-08-19_P0_17_Agosto_Current_Summary.json": 5,
+      "2026-08-20_Cohorte_17_30_Current_Cut.json": 14,
+      "2026-08-21_Corte_Diario_Metricas_2200.json": 12
+    }
+  },
+  "integration": [
+    {
+      "period": "Junio 2026",
+      "performance_scope": "230 filas base; 201 no-Reel tras excluir 29 IDs que coinciden con el inventario de Reels",
+      "individual_rows": 178,
+      "unique_meta_individual": 173,
+      "unique_meta_with_asset_ref": 173,
+      "unique_nonreel_meta_with_asset_ref": 172,
+      "individual_coverage_vs_nonreel_base": 0.8557213930348259,
+      "open_unmatched_queue": 57,
+      "queue_approved_or_validated": 17,
+      "taxonomy_scope": "172 filas base taxonómica más revisión selectiva de 17 casos; no exhaustiva por identidad visual",
+      "comments_scope": "72 comentarios en cinco posts prioritarios; no lectura completa del mes",
+      "historical_windows_24_72h": "No reconstruibles"
+    },
+    {
+      "period": "Julio 2026",
+      "performance_scope": "207 filas base; 199 no-Reel tras excluir 8 IDs que coinciden con el inventario de Reels",
+      "individual_rows": 22,
+      "unique_meta_individual": 22,
+      "unique_meta_with_asset_ref": 22,
+      "unique_nonreel_meta_with_asset_ref": 22,
+      "individual_coverage_vs_nonreel_base": 0.11055276381909548,
+      "open_unmatched_queue": "185 publicaciones permanecen en la capa comparable mensual; 1 caso borderline fuera del lote ampliado",
+      "queue_approved_or_validated": 0,
+      "taxonomy_scope": "16 casos con taxonomía visual revisada en el lote ampliado; 22 casos individuales totales",
+      "comments_scope": "284 comentarios extraídos en 16 matches nuevos; priorización cualitativa, no lectura manual completa",
+      "historical_windows_24_72h": "No reconstruibles"
+    },
+    {
+      "period": "Agosto 2026 hasta 21 ago",
+      "performance_scope": "93 imágenes/posts y 11 Reels en la unión de base 1–14 más cortes 15–21",
+      "individual_rows": "Operación distribuida entre Publication_Log, cortes diarios y Reels_Publication_Inventory; no existe aún una taxonomía MTD exhaustiva equivalente a junio/julio",
+      "unique_meta_individual": 104,
+      "unique_meta_with_asset_ref": "Parcial; depende del ledger operativo y de cada caso",
+      "unique_nonreel_meta_with_asset_ref": null,
+      "individual_coverage_vs_nonreel_base": null,
+      "open_unmatched_queue": "No comparable con la cola histórica; prioridad actual es captura diaria y reconciliación nativa",
+      "queue_approved_or_validated": null,
+      "taxonomy_scope": "Solo el corte diario más reciente tiene desglose provisional completo por familia/personaje; no canonizar",
+      "comments_scope": "Cortes diarios y moderación incremental; no lectura MTD completa",
+      "historical_windows_24_72h": "No usar como sustituto; reportes diarios son fuente principal"
+    }
+  ]
+}

@@ -3,8 +3,8 @@
 **Propósito:** Punto de entrada a toda la documentación operativa del Growth OS (calendario editorial, colas, automatizaciones, governance).
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-17
-**Versión:** 6.0
+**Última actualización:** 2026-08-22
+**Versión:** 6.1
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -57,7 +57,8 @@
 | [Auditoría del Growth OS — 14 de agosto](../Operations/Research/2026-08-14_Auditoria_Growth_OS.md) | Evalúa la programación modificada, las integraciones, la automatización y el ciclo de aprendizaje. | Superseded |
 | [Auditoría general del Growth OS — 16 de agosto](../Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md) | Estado actualizado: Facebook 74/74 programado, Drive 46/46 movido y verificado, CNT-004 diferido, P2 documentados, Instagram confirmado y P0 de métricas ejecutado sin snapshots exactos. | Review |
 | [Ciclo de Aprendizaje de Horarios — 14 de agosto](../Operations/Research/2026-08-14_Ciclo_Aprendizaje_Horarios.md) | Reconstruye la hipótesis y la evidencia detrás del cambio de horarios. | Review |
-| [Comparativo Junio–Julio–Agosto — 14 de agosto](../Operations/Research/2026-08-14_Comparativo_Desempeno_Junio_Julio_Agosto.md) | Determina si la caída de agosto proviene de frecuencia, reuse, horarios o mezcla editorial. | Review |
+| [Comparativo Junio–Julio–Agosto — 14 de agosto](../Operations/Research/2026-08-14_Comparativo_Desempeno_Junio_Julio_Agosto.md) | Determina si la caída de agosto proviene de frecuencia, reuse, horarios o mezcla editorial; conserva la vista all-format original y enlaza la corrección image-only. | Review |
+| [Comparativa Junio–Julio–Agosto y brechas de integración — 22 de agosto](../Operations/Research/2026-08-22_Comparativa_Junio_Julio_Agosto_y_Brechas_Integracion.md) | Compara imágenes/posts de junio, julio y agosto hasta el 21 de agosto, separa Reels y documenta qué falta por integrar de los históricos. | Review |
 | [Diseño de Prueba de Calendario — 2 semanas](../Operations/Research/2026-08-14_Diseno_Prueba_Calendario_2_Semanas.md) | Protocolo para controlar frecuencia, contenido nuevo/reuse y franjas horarias. | Review |
 | [Propuesta de Calendario Experimental — 17–30 agosto](../Operations/Research/2026-08-14_Propuesta_Calendario_17_30_Agosto.md) | Borrador de 74 slots con 28 reuse y 46 espacios para memes nuevos; seis slots de lunes a jueves y domingo estelar. | Draft |
 | [Análisis de Copys y Rendimiento — 14 de agosto](../Operations/Research/2026-08-14_Analisis_Copys_Rendimiento.md) | Evidencia histórica sobre emojis, copy mínimo, frases cortas y copy conversacional. | Review |

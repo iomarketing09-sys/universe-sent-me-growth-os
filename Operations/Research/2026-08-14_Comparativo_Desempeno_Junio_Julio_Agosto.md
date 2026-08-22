@@ -4,10 +4,10 @@
 
 **Estado:** Review  
 **Fecha de creación:** 2026-08-14  
-**Última actualización:** 2026-08-14  
-**Versión:** 1.0  
+**Última actualización:** 2026-08-22
+**Versión:** 1.1
 **Autor:** Manus AI  
-**Documentos relacionados:** [`GrowthOS/08_00_Metricas_Baseline_Plataformas.md`](../../GrowthOS/08_00_Metricas_Baseline_Plataformas.md), [`Operations/Research/2026-08-08_Reporte_Mensual_Junio_Julio_2026.md`](2026-08-08_Reporte_Mensual_Junio_Julio_2026.md), [`GrowthOS/05_02_Calendario_04_09_Agosto.md`](../../GrowthOS/05_02_Calendario_04_09_Agosto.md), [`GrowthOS/05_03_Calendario_10_16_Agosto.md`](../../GrowthOS/05_03_Calendario_10_16_Agosto.md), [`Operations/Research/2026-08-14_Ciclo_Aprendizaje_Horarios.md`](2026-08-14_Ciclo_Aprendizaje_Horarios.md), [`GrowthOS/Integracion_Growth_OS.md`](../../GrowthOS/Integracion_Growth_OS.md), [`Operations/Research/2026-08-14_Comparativo_Desempeno_Junio_Julio_Agosto_Datos.csv`](2026-08-14_Comparativo_Desempeno_Junio_Julio_Agosto_Datos.csv)
+**Documentos relacionados:** [`GrowthOS/08_00_Metricas_Baseline_Plataformas.md`](../../GrowthOS/08_00_Metricas_Baseline_Plataformas.md), [`Operations/Research/2026-08-08_Reporte_Mensual_Junio_Julio_2026.md`](2026-08-08_Reporte_Mensual_Junio_Julio_2026.md), [`GrowthOS/05_02_Calendario_04_09_Agosto.md`](../../GrowthOS/05_02_Calendario_04_09_Agosto.md), [`GrowthOS/05_03_Calendario_10_16_Agosto.md`](../../GrowthOS/05_03_Calendario_10_16_Agosto.md), [`Operations/Research/2026-08-14_Ciclo_Aprendizaje_Horarios.md`](2026-08-14_Ciclo_Aprendizaje_Horarios.md), [`GrowthOS/Integracion_Growth_OS.md`](../../GrowthOS/Integracion_Growth_OS.md), [`Operations/Research/2026-08-14_Comparativo_Desempeno_Junio_Julio_Agosto_Datos.csv`](2026-08-14_Comparativo_Desempeno_Junio_Julio_Agosto_Datos.csv), `Operations/Research/2026-08-22_Comparativa_Junio_Julio_Agosto_y_Brechas_Integracion.md`
 
 ---
 
@@ -20,6 +20,8 @@ La caída de agosto parece tener **dos causas principales y una tercera causa as
 La teoría de que los huecos de publicación redujeron la superficie de descubrimiento es **plausible y compatible con los datos**, pero aún no está demostrada. Lo que sí puede afirmarse es que al bajar de 6.71 a 4.57 publicaciones diarias se redujeron las oportunidades de que una pieza encontrara distribución. No puede afirmarse todavía que Facebook “rellenara” esos huecos con otros contenidos ni que cada post adicional produzca crecimiento incremental; eso requiere datos de alcance, seguidores, impresiones por hora y un diseño de frecuencia controlado.
 
 ## 2. Métrica comparable
+
+> **Actualización de alcance — 2026-08-22:** Las tablas originales de este documento conservan la comparación all-format del snapshot del 14 de agosto. La auditoría posterior identificó filas que coinciden con el inventario de Facebook Reels; por ello, la comparación estricta de imágenes/posts y el corte ampliado de agosto hasta el 21 de agosto se encuentran en `2026-08-22_Comparativa_Junio_Julio_Agosto_y_Brechas_Integracion.md`, con sus artefactos JSON/CSV y gráficas. No se sobrescriben aquí las cifras históricas originales.
 
 La comparación usa publicaciones de Facebook extraídas mediante Graph API el 14 de agosto de 2026. La métrica homogénea es `interacciones = reacciones + comentarios + shares`, porque el alcance y las impresiones no están disponibles de manera consistente para este histórico. Las fechas se convierten a `America/Mexico_City` antes de agrupar por mes y día.
 
