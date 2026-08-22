@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-22
-**Versión:** 6.7
+**Versión:** 6.8
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -45,8 +45,8 @@
 | [Análisis diario por familias y personajes — 21 de agosto](../Operations/Research/2026-08-21_Analisis_Corte_Diario_Familias_Personajes.md) | Desglose primario por familia, personaje, shares y comentarios; revisa TAX-02, HUM-06, HUM-02 y Motion + POV/Meme sin canonizar resultados. | Active |
 | [Protocolo de instrumentación de métricas de Reels](../Operations/Research/2026-08-22_Reels_Metric_Instrumentation_Protocol.md) | Medición por niveles L0–L4 para resolver la falta de views, reach y retención; L1 diario como base y 24/72 solo como cierre contractual opcional. Incluye campos de audio y variante para la serie Elara Walk. | Active |
 | [Brief Celda Reels Motion + POV/Meme 001](../Operations/Production/2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md) | Tres casos controlados; MPM-001 reencuadrado como primera variante musical de Elara Walk, sin texto sobre la imagen y con situación visual de desconexión. | Review |
-| [Briefs de adaptación original — cinco semillas Drive/Memes](../Operations/Production/2026-08-22_Briefs_Cadence_Memes_Seed_Adaptations.md) | Cinco adaptaciones originales aprobadas desde Drive/Memes; renders v1 producidos y pendientes de revisión humana antes de preflight y calendario. | Review |
-| [Inventario de semillas Drive/Memes](../Operations/Research/2026-08-22_Drive_Memes_Seed_Inventory.csv) | Fuente de trazabilidad de las 14 semillas: cinco aprobadas y producidas como adaptaciones USM; capturas fuente no publicables directamente. | Active |
+| [Briefs de adaptación original — cinco semillas Drive/Memes](../Operations/Production/2026-08-22_Briefs_Cadence_Memes_Seed_Adaptations.md) | Cinco adaptaciones originales desde Drive/Memes; MEME-CAD-003/004/005 corregidos a v2 con lugares, props y personajes oficiales. Todo el lote sigue pendiente de revisión humana antes de preflight y calendario. | Review |
+| [Inventario de semillas Drive/Memes](../Operations/Research/2026-08-22_Drive_Memes_Seed_Inventory.csv) | Fuente de trazabilidad de las 14 semillas: cinco aprobadas, tres corregidas a v2 y todas producidas como adaptaciones USM; capturas fuente no publicables directamente. | Active |
 | [Community Engagement Log — datos](../Operations/Research/2026-08-15_Community_Engagement_Log.csv) | Ledger append-only de comunidad; 18 comentarios reales registrados y 5 respuestas publicadas con IDs Meta. La última verificación GET devolvió 403 por permisos. | Active |
 | [Delta P2 de comunidad — 16 de agosto](../Operations/Research/2026-08-16_P2_Comunidad_Delta_01.json) | Evidencia anonimizada de 3 publicaciones, 6 comentarios nuevos, 0 respuestas requeridas y 0 escrituras en Meta. | Active |
 | [Delta P2 de comunidad — 17 de agosto](../Operations/Research/2026-08-17_P2_Comunidad_Delta_02.json) | Evidencia anonimizada de 1 publicación, 2 comentarios nuevos, 0 respuestas requeridas y 0 escrituras en Meta. | Active |
