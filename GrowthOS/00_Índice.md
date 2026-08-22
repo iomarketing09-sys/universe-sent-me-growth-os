@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-22
-**Versión:** 7.0
+**Versión:** 7.1
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -47,6 +47,8 @@
 | [Brief Celda Reels Motion + POV/Meme 001](../Operations/Production/2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md) | Tres casos controlados; MPM-001 reencuadrado como primera variante musical de Elara Walk, sin texto sobre la imagen y con situación visual de desconexión. | Review |
 | [Briefs de adaptación original — cinco semillas Drive/Memes](../Operations/Production/2026-08-22_Briefs_Cadence_Memes_Seed_Adaptations.md) | Cinco adaptaciones originales desde Drive/Memes; MEME-CAD-003/004 siguen en v3 y MEME-CAD-005 pasa a v4 con la pregunta `¿Cómo voy a saber si la indirecta es para mí?`; todo el lote sigue pendiente de revisión humana antes de preflight y calendario. | Review |
 | [Inventario de semillas Drive/Memes](../Operations/Research/2026-08-22_Drive_Memes_Seed_Inventory.csv) | Fuente de trazabilidad de las 14 semillas: cinco aprobadas y producidas como adaptaciones USM; MEME-CAD-003/004 están en v3, MEME-CAD-005 en v4 y las versiones anteriores quedan históricas; las capturas fuente no son publicables directamente. | Active |
+| [Propuesta de cadencia 23–30 — MEME-CAD](../Operations/Research/2026-08-23_Propuesta_Cadencia_23_30_MEME-CAD_Review.md) | Auditoría del tramo activo: 42 filas actuales, propuesta de 5 incorporaciones con 3 reemplazos y 2 slots adicionales; todo queda pendiente de aprobación, sin modificar el calendario. | Review |
+| [CSV de revisión 23–30 — MEME-CAD](../Operations/Research/2026-08-23_Propuesta_Cadencia_23_30_MEME-CAD_Review.csv) | Cinco filas propuestas con asset, fecha, hora, copy, operación y aprobación humana; no es una orden de programación. | Review |
 | [Community Engagement Log — datos](../Operations/Research/2026-08-15_Community_Engagement_Log.csv) | Ledger append-only de comunidad; 18 comentarios reales registrados y 5 respuestas publicadas con IDs Meta. La última verificación GET devolvió 403 por permisos. | Active |
 | [Delta P2 de comunidad — 16 de agosto](../Operations/Research/2026-08-16_P2_Comunidad_Delta_01.json) | Evidencia anonimizada de 3 publicaciones, 6 comentarios nuevos, 0 respuestas requeridas y 0 escrituras en Meta. | Active |
 | [Delta P2 de comunidad — 17 de agosto](../Operations/Research/2026-08-17_P2_Comunidad_Delta_02.json) | Evidencia anonimizada de 1 publicación, 2 comentarios nuevos, 0 respuestas requeridas y 0 escrituras en Meta. | Active |

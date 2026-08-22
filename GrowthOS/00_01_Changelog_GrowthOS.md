@@ -4,11 +4,14 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 2.93
+**Versión:** 2.94
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
 
+- **[2.94.00] — 2026-08-22 (Manus): Auditoría del bloque 23–30 y propuesta de incorporación de MEME-CAD.** El calendario activo contiene 42 filas en el tramo: 19 nuevas, 20 `Reuse_Top` y 3 `Reuse_Reserve`, equivalente a 5.25 slots diarios. La propuesta `Operations/Research/2026-08-23_Propuesta_Cadencia_23_30_MEME-CAD_Review.md` y su CSV incorporan los cinco memes MEME-CAD como tres reemplazos y dos slots adicionales en los días 28 y 29, que tienen cuatro piezas; el escenario resultante sería 44 slots, 24 nuevas, 20 reuse y 5.5 slots diarios, pero solo 54.5% nuevas. Todas las filas quedan `Human_Approval=PENDING`. Se confirmaron los nombres exactos de CNT-080–085 en Drive como alternativas de reuse. Se detectaron etiquetas de día de semana inconsistentes en el CSV activo; no se corrigió el calendario. No se canceló, reprogramó ni publicó contenido, y se mantienen separados Instagram, Reels y afiliados.
+
 - **[2.93.00] — 2026-08-22 (Manus): Nuevo corte API de comentarios de Facebook.** La consulta exclusiva mediante Meta Graph API v26 detectó tres comentarios de usuarios sin respuesta posteriores al último lote: recomendación de “Sweet Child O’ Mine”, reflexión sobre transformación y energía, y el remate “Que se arme el farmeo”. Se prepararon respuestas específicas, pero no se publicaron. Las menciones automáticas quedaron fuera. La auditoría de Facebook pasa a v2.5 y el ledger comunitario a v2.2. La publicación de grupos compartidos queda separada y requiere enlaces directos; no se usó My Browser para este corte.
+
 
 - **[2.92.00] — 2026-08-22 (Manus): Corrección final de texto para MEME-CAD-005.** Fernando propuso sustituir la frase central `Si tiene 7 me importas` por `¿Cómo voy a saber si la indirecta es para mí?`, porque la pregunta activa mejor la situación cómica. Se preservaron Evan, la publicación anónima, las siete reacciones, los siete lectores y el pensamiento repetido `Es para mí`. La nueva imagen `MEME-CAD-005_Evan_Indirecta_Pregunta_v4.png` quedó en Drive como `Produced_v4_Pending_Human_Review`; la v3 se conserva como histórico supersedido. Se actualizaron el brief a v1.4, el inventario, la Production Queue a v1.8 y la fuente maestra a v2.32. No se creó CNT, no se modificó el calendario, no se publicó contenido ni se añadieron afiliados.
 

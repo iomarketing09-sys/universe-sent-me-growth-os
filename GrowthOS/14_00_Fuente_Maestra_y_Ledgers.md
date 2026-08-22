@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.32"
+version: "2.34"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -264,9 +264,15 @@ Los estados y los IDs de producción están registrados en `Operations/Research/
 
 La máquina de estados permanece bloqueada antes de calendario: `CNT_Status=Not_Created`, `Calendar_Status=Not_Entered`, `Publication_Status=Not_Authorized`, `Affiliate_Attachment=No` e Instagram separado. Las capturas fuente no son publicables; los renders v1/v2/v3 previos de MEME-CAD-005 quedan supersedidos, y la v4 no debe tratarse como asset final hasta que Fernando complete la revisión creativa y el preflight.
 
+## Propuesta de cadencia 23–30 de agosto
+
+La auditoría del calendario activo encontró 42 filas entre el 23 y el 30 de agosto: 19 `Nueva`, 20 `Reuse_Top` y 3 `Reuse_Reserve`, para un promedio de 5.25 slots diarios. El calendario activo no se modifica. La propuesta documentada en `Operations/Research/2026-08-23_Propuesta_Cadencia_23_30_MEME-CAD_Review.md` y su CSV asociado utiliza los cinco assets MEME-CAD como tres reemplazos de reuse y dos slots adicionales en los días 28 y 29, que actualmente tienen cuatro piezas. El resultado sería una revisión de 44 slots, 24 nuevas y 20 reuse, 5.5 slots diarios y 54.5% de piezas nuevas.
+
+La propuesta es exclusivamente para revisión humana: `Human_Approval=PENDING`, Facebook como única plataforma, Instagram/Reels/afiliados separados, `CNT_Status=Not_Created` y ninguna cancelación o programación ejecutada. Los tres reemplazos requieren identificar y aprobar las filas salientes; los dos slots adicionales requieren aprobación independiente. Si no se aprueban, deben permanecer como `Slot_No_Publicado` y no rellenarse con capturas fuente o reuse improvisado. El análisis también detectó etiquetas de día de semana inconsistentes en el CSV activo; la propuesta usa el día calculado a partir de la fecha sin alterar el archivo activo.
+
 ### Dependencias de coherencia
 
-El brief de producción y el inventario de semillas son los registros detallados. El changelog y esta fuente maestra son las vistas de sincronización. Si se aprueba una pieza para calendario, deberán actualizarse el inventario, la cola de producción, el CSV de revisión humana y el `ExperimentLog` solo después de que exista un asset final y se emita una autorización explícita por fila.
+El brief de producción y el inventario de semillas son los registros detallados. La propuesta 23–30 en `Operations/Research/2026-08-23_Propuesta_Cadencia_23_30_MEME-CAD_Review.md` y su CSV asociado son una vista de revisión humana; no sustituyen el calendario activo. El changelog y esta fuente maestra son las vistas de sincronización. Si se aprueba una pieza para calendario, deberán actualizarse el inventario, la cola de producción, el CSV de revisión humana y el `ExperimentLog` solo después de que exista un asset final y se emita una autorización explícita por fila.
 
 ## 8. Reglas de gobernanza
 
