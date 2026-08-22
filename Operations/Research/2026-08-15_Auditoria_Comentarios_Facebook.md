@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.3"
+version: "2.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -518,3 +518,14 @@ Fernando proporcionó el enlace `https://www.facebook.com/groups/869804975207942
 La prueba de solo lectura mediante Meta Graph API v26 no pudo cargar el objeto del comentario: Meta devolvió HTTP 400, código 100, con el mensaje de que el objeto no existe, no puede cargarse por permisos insuficientes o no admite la operación. La consulta del objeto de publicación y de sus comentarios devolvió HTTP 400, código 10, indicando que el uso del endpoint requiere revisión y aprobación de Facebook. Por tanto, el token actual de Universe Sent Me no tiene acceso suficiente para leer este hilo de grupo mediante API.
 
 El hilo queda clasificado como `No verificado por API`. No se preparó una respuesta basada en suposiciones y no se publicó nada. Para revisarlo se necesita otro token o integración con permisos de grupos aprobados por Meta, o que Fernando proporcione el texto/captura del comentario por un canal que no requiera acceso adicional; esta última opción permitiría redactar una respuesta, pero no verificar automáticamente si ya existe una respuesta de la Página.
+
+
+## 33. Revisión visual de grupo con enlace directo — 22 de agosto de 2026
+
+Fernando proporcionó un enlace directo al comentario `1435811675273933` de la publicación `1435125462009221` en el grupo `869804975207942`. A diferencia de la consulta API, la vista autenticada del hilo permitió leer el comentario y comprobar que no aparece una respuesta previa de Universe Sent Me.
+
+El comentario, publicado por Sara Gonzalez y visible como reciente, describe análisis personal de conducta y aislamiento, crecimiento espiritual, falta de apoyo, una supuesta campaña de difamación, brujería, intentos de asesinato y traumatismos. Por la naturaleza sensible del contenido, la respuesta recomendada debe ser empática y neutral, sin confirmar como hechos las afirmaciones de difamación, brujería o intentos de asesinato y sin convertir la página en fuente de diagnóstico o investigación. Sugerencia de respuesta para aprobación:
+
+> Gracias por compartir tu experiencia. Lamento que hayas atravesado situaciones tan difíciles. Te mando mucha fuerza y deseo que puedas contar con personas de confianza y apoyo profesional cercano.
+
+El comentario queda como `Pendiente_Aprobacion_Humana`. No se publicó ninguna respuesta ni se modificó el estado del comentario. El texto completo y la evidencia de navegación se conservan en la nota de trabajo `facebook_group_posts_review_2026-08-22.md`; este documento mantiene la clasificación y el criterio permanente.
