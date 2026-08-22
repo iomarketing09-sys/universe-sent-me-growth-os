@@ -4,7 +4,7 @@ purpose: "Separar el rendimiento histórico de Reels del experimento P0 de imág
 status: "Active"
 created: 2026-08-19
 updated: 2026-08-22
-version: "1.11"
+version: "1.12"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -20,6 +20,8 @@ related_documents:
   - "Operations/Research/2026-08-20_Meta_Reel_2210896633022235_Metrics.json"
   - "Operations/Research/2026-08-21_Reels_Drive_Meta_Crossmatch_Review.csv"
   - "Operations/Research/2026-08-22_Reels_Tier2A_Visual_Review_Batch.csv"
+  - "Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv"
+  - "Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json"
   - "Operations/Research/2026-08-21_Reels_Audit_Coverage_Summary.json"
   - "Operations/Research/2026-08-20_MercadoLibre_Snapshot_7d_Etiquetas.png"
   - "Operations/Research/2026-08-20_MercadoLibre_Snapshot_Fecha.png"
@@ -244,6 +246,14 @@ El lote TIER2A cubrió los diez siguientes casos Tier 2 con mayor interacción, 
 Los otros ocho quedaron como `No_Match_In_TIER2A_Primary`. Entre ellos, el Reel de la hada corriendo sobre un lago no coincide con el asset de Wilfred; el avión y los Reels de cielo no coinciden con el Fantasma; el payaso triste no coincide con la familia de escenas revisada; y el Reel de campamento con dos personas no coincide con el asset de abrazo de Elara y Evan. Estos estados son controles de revisión del candidato primario, no exclusiones globales de Drive.
 
 El historial estructurado queda en v2.1, con seis matches visuales exactos y 48 publicaciones históricas aún pendientes de asset. Ninguno de los dos matches se convierte automáticamente en CNT, experimento o canon; primero deben clasificarse editorialmente y, si procede, relacionarse con una pregunta concreta del Growth OS.
+
+### 10.11 Clasificación operativa y evidencia de rendimiento
+
+Los seis Reels con asset Drive↔Meta confirmado se clasificaron en cuatro familias. `Dialogue_radio` tiene dos publicaciones distintas, dos assets fuente distintos y 9/10 interacciones en el snapshot actual de Meta; es la señal más útil para diseñar la siguiente adaptación, pero todavía necesita un tercer caso y una ventana de métricas normalizada. `Character_loop_meme` tiene dos publicaciones con el mismo asset de Fantasma — 3 y 13 interacciones — y mezcla lifetime con snapshot actual; se conserva como señal de reuse, no como dos casos independientes. `Sequential_visual_reaction` y `Character_POV_reveal` tienen un solo caso cada una — 11 y 14 interacciones lifetime, respectivamente — y solo funcionan como referencias creativas hasta reunir al menos tres casos comparables.
+
+Ninguno de los seis registros tiene views o reach en el inventario actual. Tres tienen interacción lifetime consultada y tres tienen interacción del snapshot actual; por ello la mediana bruta de todos los casos no es un veredicto multiformato. Tampoco hay una hipótesis experimental activa asociada a estos seis registros. La evaluación reproducible se conserva en `Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json` y la taxonomía en `Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv`.
+
+La oportunidad operativa prioritaria es construir un tercer Reel de la familia `Dialogue_radio` con personajes y lógica de conversación claramente registrados. La celda debe medirse con métricas nativas de video — views, reach, retención inicial, completación, shares y comentarios — y mantenerse separada de los resultados históricos de imagen y de afiliación. No se debe declarar ganadora la familia hasta completar la celda mínima de tres casos.
 
 ## 11. Puente de transferencia Facebook → Reels — 2026-08-21
 

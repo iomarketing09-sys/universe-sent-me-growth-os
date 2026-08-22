@@ -1,0 +1,193 @@
+{
+  "title": "Evaluación de evidencia de métricas de Reels confirmados",
+  "purpose": "Separar observaciones de engagement de ventanas y unidades no comparables antes de definir adaptaciones futuras.",
+  "status": "Active",
+  "created": "2026-08-22",
+  "updated": "2026-08-22",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv",
+    "Operations/Research/2026-08-21_Reels_Publication_Inventory.csv",
+    "Operations/Research/2026-08-19_Auditoria_Reels_y_Monetizacion.md",
+    "GrowthOS/07_00_Registro_Maestro_Reels.md"
+  ],
+  "inventory_scope": {
+    "confirmed_reels": 6,
+    "raw_engagement_median_non_verdict": 10.5,
+    "views_reach_populated": 0,
+    "experiment_linked_records": 0,
+    "warning": "Los seis registros no tienen views/reach en este corte; el engagement mezcla lifetime y snapshot actual. El valor agregado no es un veredicto multiformato."
+  },
+  "family_summary": [
+    {
+      "Family": "Character_POV_reveal",
+      "Posts": 1,
+      "Distinct_Asset_Reuse_Groups": 1,
+      "Distinct_Assets": 1,
+      "Asset_Filenames": [
+        "Pato_villano_mirando_cámara_POV_EresAries.mp4"
+      ],
+      "Engagement_Values": [
+        14
+      ],
+      "Raw_Engagement_Median": 14,
+      "Metric_Window_Statuses": [
+        "Meta_lifetime_interactions"
+      ],
+      "Views_Reach_Populated": 0,
+      "Evidence_Level": "Observed_only_not_verdict"
+    },
+    {
+      "Family": "Character_loop_meme",
+      "Posts": 2,
+      "Distinct_Asset_Reuse_Groups": 1,
+      "Distinct_Assets": 1,
+      "Asset_Filenames": [
+        "Fantasma_tranquilo_con_viento_202605241629.mp4"
+      ],
+      "Engagement_Values": [
+        3,
+        13
+      ],
+      "Raw_Engagement_Median": 8.0,
+      "Metric_Window_Statuses": [
+        "Meta_current_feed_snapshot_interactions",
+        "Meta_lifetime_interactions"
+      ],
+      "Views_Reach_Populated": 0,
+      "Evidence_Level": "Reuse_signal_not_independent_comparable"
+    },
+    {
+      "Family": "Dialogue_radio",
+      "Posts": 2,
+      "Distinct_Asset_Reuse_Groups": 1,
+      "Distinct_Assets": 2,
+      "Asset_Filenames": [
+        "Elara_and_Wilfred_dialogue_anima…_202606271715.mp4",
+        "Wilfred_and_Elara_cosmic_radio_202606272110.mp4"
+      ],
+      "Engagement_Values": [
+        9,
+        10
+      ],
+      "Raw_Engagement_Median": 9.5,
+      "Metric_Window_Statuses": [
+        "Meta_current_feed_snapshot_interactions"
+      ],
+      "Views_Reach_Populated": 0,
+      "Evidence_Level": "Promising_pattern_needs_one_more_case"
+    },
+    {
+      "Family": "Sequential_visual_reaction",
+      "Posts": 1,
+      "Distinct_Asset_Reuse_Groups": 1,
+      "Distinct_Assets": 1,
+      "Asset_Filenames": [
+        "Man_pressing_hands_temples_202606131832.mp4|Man_exerting_intense_physical_ef…_202606131851.mp4"
+      ],
+      "Engagement_Values": [
+        11
+      ],
+      "Raw_Engagement_Median": 11,
+      "Metric_Window_Statuses": [
+        "Meta_lifetime_interactions"
+      ],
+      "Views_Reach_Populated": 0,
+      "Evidence_Level": "Observed_only_not_verdict"
+    }
+  ],
+  "records": [
+    {
+      "Meta_Reel_ID": "1877535942934184",
+      "Publication_UTC": "2026-05-24T21:33:33+0000",
+      "Engagement": 3,
+      "Views": null,
+      "Reach": null,
+      "Metric_Window_Status": "Meta_lifetime_interactions",
+      "Views_Reach_Status": "Missing_in_current_inventory",
+      "Family": "Character_loop_meme",
+      "Asset_Filename": "Fantasma_tranquilo_con_viento_202605241629.mp4",
+      "Asset_Reuse_Group": "GHOST-FENCE-20260524",
+      "Clean_Comparability": "Exclude_until_external_URL_treatment_coded",
+      "Experiment_ID": "",
+      "Hypothesis_ID": ""
+    },
+    {
+      "Meta_Reel_ID": "2417378928740605",
+      "Publication_UTC": "2026-06-14T00:13:49+0000",
+      "Engagement": 11,
+      "Views": null,
+      "Reach": null,
+      "Metric_Window_Status": "Meta_lifetime_interactions",
+      "Views_Reach_Status": "Missing_in_current_inventory",
+      "Family": "Sequential_visual_reaction",
+      "Asset_Filename": "Man_pressing_hands_temples_202606131832.mp4|Man_exerting_intense_physical_ef…_202606131851.mp4",
+      "Asset_Reuse_Group": "HOODIE-ENERGY-20260613",
+      "Clean_Comparability": "Conditional_watermark_and_character_treatment_review",
+      "Experiment_ID": "",
+      "Hypothesis_ID": ""
+    },
+    {
+      "Meta_Reel_ID": "1518053389684402",
+      "Publication_UTC": "2026-06-15T04:05:45+0000",
+      "Engagement": 13,
+      "Views": null,
+      "Reach": null,
+      "Metric_Window_Status": "Meta_current_feed_snapshot_interactions",
+      "Views_Reach_Status": "Missing_in_current_inventory",
+      "Family": "Character_loop_meme",
+      "Asset_Filename": "Fantasma_tranquilo_con_viento_202605241629.mp4",
+      "Asset_Reuse_Group": "GHOST-FENCE-20260524",
+      "Clean_Comparability": "Conditional_same_asset_reuse_not_independent_case",
+      "Experiment_ID": "",
+      "Hypothesis_ID": ""
+    },
+    {
+      "Meta_Reel_ID": "1339119487723234",
+      "Publication_UTC": "2026-06-27T22:39:21+0000",
+      "Engagement": 9,
+      "Views": null,
+      "Reach": null,
+      "Metric_Window_Status": "Meta_current_feed_snapshot_interactions",
+      "Views_Reach_Status": "Missing_in_current_inventory",
+      "Family": "Dialogue_radio",
+      "Asset_Filename": "Elara_and_Wilfred_dialogue_anima…_202606271715.mp4",
+      "Asset_Reuse_Group": "RADIO-20260627",
+      "Clean_Comparability": "Candidate_for_dialogue_family_n2",
+      "Experiment_ID": "",
+      "Hypothesis_ID": ""
+    },
+    {
+      "Meta_Reel_ID": "2159954351459805",
+      "Publication_UTC": "2026-06-28T02:24:16+0000",
+      "Engagement": 10,
+      "Views": null,
+      "Reach": null,
+      "Metric_Window_Status": "Meta_current_feed_snapshot_interactions",
+      "Views_Reach_Status": "Missing_in_current_inventory",
+      "Family": "Dialogue_radio",
+      "Asset_Filename": "Wilfred_and_Elara_cosmic_radio_202606272110.mp4",
+      "Asset_Reuse_Group": "RADIO-20260627",
+      "Clean_Comparability": "Candidate_for_dialogue_family_n2",
+      "Experiment_ID": "",
+      "Hypothesis_ID": ""
+    },
+    {
+      "Meta_Reel_ID": "1049041731412120",
+      "Publication_UTC": "2026-06-30T18:45:55+0000",
+      "Engagement": 14,
+      "Views": null,
+      "Reach": null,
+      "Metric_Window_Status": "Meta_lifetime_interactions",
+      "Views_Reach_Status": "Missing_in_current_inventory",
+      "Family": "Character_POV_reveal",
+      "Asset_Filename": "Pato_villano_mirando_cámara_POV_EresAries.mp4",
+      "Asset_Reuse_Group": "DUCK-ARIES-20260630",
+      "Clean_Comparability": "Exclude_until_AI_watermark_and_character_treatment_coded",
+      "Experiment_ID": "",
+      "Hypothesis_ID": ""
+    }
+  ],
+  "recommendation": "Use Dialogue_radio as the first adaptation candidate after adding one more distinct case. Treat Character_loop_meme as reuse evidence only because both publications use the same asset group. Keep Sequential_visual_reaction and Character_POV_reveal as observed examples requiring at least two to four additional comparable cases."
+}

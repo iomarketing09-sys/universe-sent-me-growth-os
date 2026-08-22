@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.14"
+version: "2.15"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -37,6 +37,8 @@ related_documents:
   - "Operations/Research/2026-08-22_Reels_Pending_Asset_Reconciliation_Queue.csv"
   - "Operations/Research/2026-08-22_Reels_Pending_Drive_Triage.csv"
   - "Operations/Research/2026-08-22_Reels_Tier2A_Visual_Review_Batch.csv"
+  - "Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv"
+  - "Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json"
   - "Operations/Research/2026-08-22_Reels_Top5_Visual_Review_Batch.csv"
   - "Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json"
   - "Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json"
@@ -98,7 +100,7 @@ La comparación entre el snapshot inicial y el renovado del mismo rango se conse
 
 Para TikTok y YouTube, el dashboard debe conservar una capa común sin forzar equivalencia semántica: `views` se muestra como views nativas de cada plataforma, `reach` solo se muestra cuando la fuente lo entrega, y `engagement` se calcula como suma documentada de acciones disponibles si no existe una métrica nativa. YouTube debe mostrar por separado la actividad diaria y el snapshot lifetime; TikTok debe eliminar filas repetidas por `video_id` y priorizar la fila con mayor cobertura de métricas.
 
-La ampliación histórica de mayo/junio integró seis matches visuales exactos Drive↔Meta en `Operations/Research/2026-08-21_Reels_Drive_Meta_Crossmatch_Review.csv`: un Reel individual de Fantasma, un asset set de dos clips del hombre con hoodie y un Reel individual del pato en traje. El video de Wilfred con la poción permanece sin match exacto después de controles negativos; la proximidad de fechas nunca crea una relación de publicación. El historial estructurado contiene ahora 102 registros por plataforma — Facebook 73, Instagram 16, TikTok 7 y YouTube 6 — y la lista CSV derivada conserva una fila por publicación, no por clip de producción. De los 54 candidatos Meta de mayo/junio, seis tienen match visual exacto con Drive y 48 permanecen con asset pendiente. La cola de reconciliación prioriza esos 48 casos restantes; el lote TOP5 revisó 25 candidatos sin match dentro del conjunto analizado, el bloque NEXT10 añadió un match exacto y nueve no-match primarios, y TIER2A añadió dos matches exactos de radio/diálogo y ocho no-match primarios.
+La ampliación histórica de mayo/junio integró seis matches visuales exactos Drive↔Meta en `Operations/Research/2026-08-21_Reels_Drive_Meta_Crossmatch_Review.csv`: dos Reels individuales de Fantasma, un asset set de dos clips del hombre con hoodie, dos Reels distintos de radio/diálogo y un Reel individual del pato en traje. El video de Wilfred con la poción permanece sin match exacto después de controles negativos; la proximidad de fechas nunca crea una relación de publicación. El historial estructurado contiene ahora 102 registros por plataforma — Facebook 73, Instagram 16, TikTok 7 y YouTube 6 — y la lista CSV derivada conserva una fila por publicación, no por clip de producción. De los 54 candidatos Meta de mayo/junio, seis tienen match visual exacto con Drive y 48 permanecen con asset pendiente. La cola de reconciliación prioriza esos 48 casos restantes; el lote TOP5 revisó 25 candidatos sin match dentro del conjunto analizado, el bloque NEXT10 añadió un match exacto y nueve no-match primarios, y TIER2A añadió dos matches exactos de radio/diálogo y ocho no-match primarios. La clasificación de los seis matches identifica cuatro familias operativas. `Dialogue_radio` tiene dos assets fuente distintos y es la primera candidata para una tercera pieza; `Character_loop_meme` es reuse del mismo asset y no debe tratarse como dos casos independientes; `Sequential_visual_reaction` y `Character_POV_reveal` permanecen como observaciones aisladas. La evaluación de métricas confirma que los seis registros carecen de views/reach en el corte actual y mezclan snapshots lifetime con snapshot actual, por lo que no existe todavía un veredicto de rendimiento comparable.
 
 La arquitectura también separa **fuente de identidad** y **fuente de rendimiento**. Que una publicación aparezca en Windsor o en el conector no autoriza a publicarla ni cambia su estado de calendario. Que Graph API confirme un ID no convierte automáticamente el total acumulado en una ventana 24/72 horas. Cada snapshot debe conservar su propia fecha y estado de comparabilidad.
 

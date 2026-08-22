@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-22
-**Versión:** 3.0
+**Versión:** 3.1
 **Autor:** Manus AI (CGO)
 **Documentos relacionados:** `05_00_Calendario_01_02_Ago.md`, `Operations/Memories/deep_dive_reels_comparativo.md`, `../Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`, `../Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json`, `../Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json`, `../Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json`, `../Operations/Research/2026-08-19_Decisiones_Reconciliacion_Reels.json`, `../Operations/Research/2026-08-19_Piezas_Sin_Cascada_Revision.json`, `../Operations/Research/2026-08-19_Auditoria_Assets_Drive_Reels.md`, `../Operations/Research/2026-08-19_Meta_Reels_Audit.json`, `../Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json`, `../Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json`, `../Operations/Research/Affiliate_Link_Ledger.csv`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Desamor.md`, `14_00_Fuente_Maestra_y_Ledgers.md`
 
@@ -112,6 +112,8 @@ La ampliación histórica de mayo/junio añadió 54 publicaciones de video ident
 La primera revisión visual priorizada cubrió los cinco Reels de Facebook con mayor interacción entre los 51 pendientes: `1020271167128162`, `1303110198700919`, `1014879604586494`, `4244177002465660` y `1314043717583273`. Se compararon sus cinco candidatos principales de Drive. El resultado fue `No_Match_In_Reviewed_Set` para los cinco; esto no es una exclusión global del inventario de Drive. Los registros quedan en cola para una búsqueda más amplia únicamente si su valor analítico justifica el coste de revisión.
 
 El bloque NEXT10 revisó los diez candidatos Tier 1 siguientes. El Reel `1518053389684402` obtuvo match visual exacto con `Fantasma_tranquilo_con_viento_202605241629.mp4`; el match fue integrado al historial y no generó CNT nuevo. Los nueve restantes permanecen sin match dentro de su candidato principal. También se descartó directamente `Wilfred realista haciendo una posion.mp4` como fuente del Reel `1906363553379974`: comparten personaje y estilo, pero muestran escenas diferentes. El bloque TIER2A añadió dos matches exactos de radio/diálogo — `2159954351459805` y `1339119487723234` — y ocho no-match primarios. El historial estructurado queda en v2.1, con seis matches visuales exactos Drive↔Meta y 48 publicaciones históricas todavía pendientes de asset.
+
+La clasificación de los seis matches confirmó cuatro familias operativas: `Character_loop_meme`, `Sequential_visual_reaction`, `Dialogue_radio` y `Character_POV_reveal`. `Dialogue_radio` es la primera candidata para una nueva celda, con dos assets distintos y una tercera pieza necesaria; `Character_loop_meme` se conserva como reuse y no como dos casos independientes porque reutiliza el mismo Fantasma. Las otras dos familias siguen siendo observaciones aisladas. La evaluación de métricas está en `../Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json`; no hay views ni reach disponibles para estos seis registros en el corte actual.
 
 ### Estado de Maeve
 
