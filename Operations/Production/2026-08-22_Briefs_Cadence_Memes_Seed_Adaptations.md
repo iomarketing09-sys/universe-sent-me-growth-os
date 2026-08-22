@@ -4,7 +4,7 @@ purpose: "Convertir cinco referencias aprobadas de Drive/Memes en conceptos de m
 status: Review
 created: 2026-08-22
 updated: 2026-08-22
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "../Research/2026-08-22_Drive_Memes_Seed_Inventory.csv"
@@ -135,9 +135,25 @@ Puede aparecer un segundo remate visual breve, sin alterar la frase de la public
 
 **Riesgos:** mantener hoodie café/taupe y rostro cansado de Evan; no volver al tablero de flechas como concepto principal, no copiar el anime ni sus textos, no usar nombres o perfiles reales y hacer visibles las siete reacciones sin convertirlas en siete personajes de la biblia.
 
+## Correcciones v3 solicitadas por Fernando
+
+La revisión humana posterior a las v2 identificó tres problemas adicionales de lectura. Las v1 y v2 se conservan como histórico, pero las v3 son las únicas candidatas activas para revisión editorial.
+
+### MEME-CAD-003 v3 — Silvio molesto y piedra-kármica
+
+Silvio conserva el escenario tarotista, el vestuario y la frase `Aquí te va un pedacito de mi aura.`, pero cambia a una expresión claramente molesta y confrontativa. La piedra debe estar agarrada y levantada, o en un movimiento directo hacia cámara, como si quisiera pegarle al espectador con ella. No debe parecer que la está pasando, ofreciendo o entregando. La intención es una amenaza cómica de karma, sin sangre, heridas ni violencia gráfica.
+
+### MEME-CAD-004 v3 — Wilfred y el tablero de discusión
+
+Wilfred conserva la identidad aprobada de la v2: alto, muy delgado, adulto, con sombrero rojo, barba blanca, túnica verde y bastón oficial completo con gema visible. Se recupera el escenario de la v1: estudio cálido con libreros, lámparas, mesa de trabajo y tablero grande lleno de notas, dibujos, diagramas y flechas. El tablero debe explicar visualmente que Wilfred lleva toda la semana acumulando energía y argumentos para discutir.
+
+### MEME-CAD-005 v3 — Siete personas reclamando la misma indirecta
+
+La v2 tenía el remate, pero no hacía suficientemente visible la situación. La v3 debe mostrar una sola publicación anónima con `Si tiene 7 me importas` conectada a siete escenas o burbujas de hombres distintos. Evan es uno de los siete; los otros seis son avatares anónimos. Los siete deben pensar o decir `Es para mí`, cada uno convencido de que la misma indirecta fue escrita para él. El chiste es la repetición absurda de la certeza equivocada; el número siete es solo la condición que activa la publicación.
+
 ## Orden de producción
 
-La primera imagen generada funcionará como referencia de consistencia visual para las cuatro siguientes. Para esta corrección, `MEME-CAD-001` y `MEME-CAD-002` conservan sus renders v1 como históricos; se regeneran `MEME-CAD-003-v2`, `MEME-CAD-004-v2` y `MEME-CAD-005-v2`. Los tres nuevos renders se guardarán como referencias de producción, no como archivos autorizados para publicar.
+La producción inicial conserva `MEME-CAD-001` y `MEME-CAD-002` como v1. `MEME-CAD-003`, `MEME-CAD-004` y `MEME-CAD-005` pasan por v1, v2 y v3; solo la v3 queda como candidata actual. Todos los renders son referencias de producción y no archivos autorizados para publicar.
 
 ## Registro de producción v1
 
@@ -161,9 +177,15 @@ Fernando señaló que tres renders v1 habían desplazado la mecánica o la ident
 | `MEME-CAD-004_Wilfred_Baston_v2.png` | Wilfred alto, muy delgado y adulto; bastón oficial completo con gema; Bosque Ancestral oficial. | `DRIVE-MEME-006` | `1DkGtc2EMWUs9MeLKUhLWO0yld9e5JNEr` | `a30dec80af9a0b1f48921af58fabe05839d4a27995a6cf9e053cc8176fa25a80` | `Produced_v2_Pending_Human_Review` |
 | `MEME-CAD-005_Evan_Siete_Reacciones_v2.png` | Publicación social anónima con `Si tiene 7 me importas`, siete reacciones y seis personas adicionales que creen que es para ellas; Estudio oficial. | `DRIVE-MEME-005` | `1JzhlbCkKzefE-Ov512-DHumh-YViAfJm` | `7c3fca8b03ca5ad2c75afd1e965b2ab7273ae59feb23a424a9c65f5103f8cf89` | `Produced_v2_Pending_Human_Review` |
 
-## Gate posterior
+## Registro de producción v3
 
-La revisión técnica ligera de las v2 confirma 2176×1632 px, PNG RGB y archivos íntegros. `MEME-CAD-003-v2` recupera la lectura de piedra-kármica sin violencia; `MEME-CAD-004-v2` muestra la estatura alta/delgada de Wilfred y el bastón completo; `MEME-CAD-005-v2` muestra la publicación, el número 7 y las reacciones múltiples. Las tres siguen pendientes de revisión humana creativa. No deben entrar al calendario ni reemplazar slots hasta aprobación editorial y preflight.
+| Asset v3 | Corrección aplicada | Seed fuente | Drive ID | SHA256 local | Estado |
+|---|---|---|---|---|---|
+| `MEME-CAD-003_Silvio_Karma_v3.png` | Silvio molesto, piedra agarrada/levantada como golpe cómico inminente, sin violencia gráfica. | `DRIVE-MEME-003` | `15Wq0GszU7138Ug6zozKlADRR67Yv5el1` | `244ff799cf1598556bdbcd9c7c5893c1c8a97f9a52fb84cf21cca6dd697ad34b` | `Produced_v3_Pending_Human_Review` |
+| `MEME-CAD-004_Wilfred_Tablero_v3.png` | Wilfred v2 preservado; escenario de tablero y estudio recuperado de la v1. | `DRIVE-MEME-006` | `1MeIjKUb7AgnDvF79k8DVBWCRC7Et0W_7` | `81ac10f6147a291c052f60580e5964441099e88a606e025e9874d9f896c5a623` | `Produced_v3_Pending_Human_Review` |
+| `MEME-CAD-005_Evan_Siete_Reacciones_v3.png` | Una publicación, siete hombres conectados y el mismo pensamiento `Es para mí`; el chiste queda visual, no solo textual. | `DRIVE-MEME-005` | `16AHBiwiRxyz4dvTIouWrzt-XSS6wthDi` | `a24f118f417b31ac6c0a9544b99c4be98568a1e78bb680a5189095e94dd306f0` | `Produced_v3_Pending_Human_Review` |
+
+La revisión técnica ligera confirma 2176×1632 px, PNG RGB y archivos íntegros. No se creó CNT, no se modificó el calendario, no se publicó contenido y no se añadió afiliado. Las tres v3 siguen pendientes de revisión humana creativa y preflight.
 
 ## Referencias
 

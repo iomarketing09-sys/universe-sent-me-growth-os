@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 2.90
+**Versión:** 2.91
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.91.00] — 2026-08-22 (Manus): Tercera iteración de las adaptaciones MEME-CAD tras revisión humana.** Fernando pidió que `MEME-CAD-003` dejara de parecer una entrega de piedra: la v3 muestra a Silvio molesto, con la piedra levantada como golpe cómico inminente, sin violencia gráfica. `MEME-CAD-004` conserva el Wilfred alto, delgado y con bastón oficial de la v2, pero recupera el estudio con tablero de notas, dibujos y flechas de la v1. `MEME-CAD-005` deja de ser solo un remate: la v3 muestra una sola publicación con `Si tiene 7 me importas` conectada a siete hombres distintos, incluido Evan, todos pensando `Es para mí`. Las tres v3 quedaron en Drive como `Produced_v3_Pending_Human_Review`. Se actualizaron el brief a v1.3, el inventario, la Production Queue a v1.7 y la fuente maestra a v2.31. No se creó CNT, no se modificó el calendario, no se publicó contenido ni se añadieron afiliados.
 
 - **[2.87.00] — 2026-08-22 (Manus): Corrección conceptual y de identidad de tres adaptaciones MEME-CAD.** Fernando señaló que `MEME-CAD-003`, `MEME-CAD-004` y `MEME-CAD-005` habían desplazado la mecánica o los rasgos oficiales. `MEME-CAD-003` se regeneró con Silvio —no Elara— lanzando una piedra luminosa como metáfora visual de karma/sarcasmo, en `Escenario tarotista`. `MEME-CAD-004` se regeneró con Wilfred alto y muy delgado, con el bastón oficial completo y su gema visible, en `Bosque Ancestral 1`. `MEME-CAD-005` se reconstruyó alrededor de una publicación anónima con el texto `Si tiene 7 me importas`, siete reacciones y seis personas adicionales que creen que la indirecta es para ellas, en `Estudio - cuarto`. Las referencias oficiales proceden de `Elementos/LUGARES`, `Elementos/PROPS` y `Elementos/PERSONAJES`. Las v1 quedan conservadas como histórico y supersedidas para uso editorial; las v2 quedan en `Produced_v2_Pending_Human_Review`. Se actualizaron el brief a v1.2, el inventario de semillas, la Production Queue a v1.6 y la fuente maestra a v2.30. No se creó CNT, no se modificó el calendario, no se publicó contenido ni se añadieron afiliados.
 

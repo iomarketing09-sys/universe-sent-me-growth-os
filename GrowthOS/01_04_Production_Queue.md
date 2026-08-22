@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-22
-**Versión:** 1.6
+**Versión:** 1.7
 **Autor:** Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_02_Content_Backlog.md`, `../Operations/Production/2026-08-22_Briefs_Cadence_Memes_Seed_Adaptations.md`, `../Operations/Research/2026-08-22_Drive_Memes_Seed_Inventory.csv`
 
@@ -28,15 +28,15 @@
 
 ### Lote MEME-CAD-001–005 — producción desde semillas Drive/Memes
 
-Fernando aprobó el 22 de agosto cinco semillas para adaptación original. `MEME-CAD-001` y `MEME-CAD-002` conservan sus renders v1; `MEME-CAD-003`, `MEME-CAD-004` y `MEME-CAD-005` fueron corregidos a v2 después de una revisión conceptual y de identidad. Los assets permanecen en revisión humana y no entran al calendario ni generan CNT de publicación hasta completar el preflight.
+Fernando aprobó el 22 de agosto cinco semillas para adaptación original. `MEME-CAD-001` y `MEME-CAD-002` conservan sus renders v1. `MEME-CAD-003`, `MEME-CAD-004` y `MEME-CAD-005` pasaron por correcciones v2 y v3 después de la revisión humana; las v3 son las candidatas activas. Los assets permanecen en revisión humana y no entran al calendario ni generan CNT de publicación hasta completar el preflight.
 
 | ID_Pieza | Título | Personaje Principal | Formato | Dificultad | Estado Actual | Dependencias / Notas |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | MEME-CAD-001 | Envidia social con Universe | Universe | Imagen meme 4:3 | Baja | **Render v1 producido — revisión humana pendiente** | Seed `DRIVE-MEME-001`; Drive asset `1UVoc0xR2lrZ-Tz9HCpTorC7VWm3Adiv1`; brief en `Operations/Production/2026-08-22_Briefs_Cadence_Memes_Seed_Adaptations.md`. |
 | MEME-CAD-002 | Conducta sospechosamente sobria | Fantasma | Imagen meme 4:3 | Baja | **Render v1 producido — revisión humana pendiente** | Seed `DRIVE-MEME-002`; Drive asset `1YhMuK4W_SeYo4gadhB1bPW06HHk4utMh`; recreación original, sin publicación directa de la captura. |
-| MEME-CAD-003 | Karma con Silvio | Silvio | Imagen meme 4:3 | Baja | **Render v2 producido — revisión humana pendiente** | Seed `DRIVE-MEME-003`; Drive asset `1cuUPN50Le409dMWG13pc-StEvdalRT9k`; piedra luminosa como karma/sarcasmo visual en `Escenario tarotista`; v1 Elara supersedida. |
-| MEME-CAD-004 | Energía reservada para discutir con bastón | Wilfred | Imagen meme 4:3 | Baja | **Render v2 producido — revisión humana pendiente** | Seed `DRIVE-MEME-006`; Drive asset `1DkGtc2EMWUs9MeLKUhLWO0yld9e5JNEr`; Wilfred alto y muy delgado, bastón oficial completo con gema y `Bosque Ancestral`; v1 supersedida. |
-| MEME-CAD-005 | La indirecta y las siete reacciones | Evan | Imagen meme 4:3 | Baja | **Render v2 producido — revisión humana pendiente** | Seed `DRIVE-MEME-005`; Drive asset `1JzhlbCkKzefE-Ov512-DHumh-YViAfJm`; publicación anónima `Si tiene 7 me importas`, siete reacciones y seis lectores adicionales; v1 supersedida. |
+| MEME-CAD-003 | Karma con Silvio molesto | Silvio | Imagen meme 4:3 | Baja | **Render v3 producido — revisión humana pendiente** | Seed `DRIVE-MEME-003`; Drive asset `15Wq0GszU7138Ug6zozKlADRR67Yv5el1`; piedra levantada como golpe cómico inminente en `Escenario tarotista`; v1 y v2 supersedidas. |
+| MEME-CAD-004 | Energía reservada para discutir con tablero | Wilfred | Imagen meme 4:3 | Baja | **Render v3 producido — revisión humana pendiente** | Seed `DRIVE-MEME-006`; Drive asset `1MeIjKUb7AgnDvF79k8DVBWCRC7Et0W_7`; Wilfred alto y muy delgado con bastón oficial completo; escenario de estudio y tablero recuperado de v1; v1 y v2 supersedidas. |
+| MEME-CAD-005 | Siete personas reclamando la misma indirecta | Evan | Imagen meme 4:3 | Baja | **Render v3 producido — revisión humana pendiente** | Seed `DRIVE-MEME-005`; Drive asset `16AHBiwiRxyz4dvTIouWrzt-XSS6wthDi`; una publicación `Si tiene 7 me importas` conectada a siete hombres, incluido Evan, todos pensando `Es para mí`; v1 y v2 supersedidas. |
 
 ### Ingreso de Drive — 15 de agosto de 2026
 
