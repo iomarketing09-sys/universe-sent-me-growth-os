@@ -3,10 +3,10 @@
 **Propósito:** Lista de contenido que requiere producción nueva (generación de assets, edición, redacción de guiones) antes de poder ser programado.
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-16
-**Versión:** 1.4
+**Última actualización:** 2026-08-22
+**Versión:** 1.5
 **Autor:** Manus AI
-**Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_02_Content_Backlog.md`
+**Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_02_Content_Backlog.md`, `../Operations/Production/2026-08-22_Briefs_Cadence_Memes_Seed_Adaptations.md`, `../Operations/Research/2026-08-22_Drive_Memes_Seed_Inventory.csv`
 
 ---
 
@@ -25,6 +25,18 @@
 | CNT-025 | Experimentos Growth OS — tests A/B | Variable | Reel (parejas) | Media-Alta | Pendiente de aprobación | Requiere aprobación de Fernando. |
 | CNT-027 | Meme Fantasma "Ghosting eterno" (derivado de Drive Ideas-Memes) | @char_USM_fantasma | Foto (frase en copy) | Baja | **Propuesta lista** — Draft, pendiente de aprobación de Fernando | Score 9.10/10 (`Operations/Production/CNT027_Meme_Fantasma_Ghosting_DriveIdeas.md`). Base visual: asset 2K existente del proyecto (Fantasma levitando sobre el bosque); solo requiere copy en publicación. Slot sugerido 4:00–5:00 PM. |
 | CNT-028 | Banco de 5 memes adaptados de Drive (frase intacta + marca en imagen) | Multichar (Fantasma, Kael+Maeve, Silvio, Wilfred, Universe) | Foto adaptada | Baja | **Imágenes listas** — Draft, pendientes de aprobación de Fernando | 5 imágenes ya generadas y verificadas palabra por palabra (`Operations/Production/CNT028_Memes_Adaptados_Drive_Frase_Intacta.md`). Modo "Adaptado" formalizado en `03_00`. Assets: 01–05 en archivos compartidos del proyecto.
+
+### Lote MEME-CAD-001–005 — producción desde semillas Drive/Memes
+
+Fernando aprobó el 22 de agosto cinco semillas para adaptación original. Los renders v1 ya existen y están guardados en Drive, pero permanecen en revisión humana y no entran al calendario ni generan CNT de publicación hasta completar el preflight.
+
+| ID_Pieza | Título | Personaje Principal | Formato | Dificultad | Estado Actual | Dependencias / Notas |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| MEME-CAD-001 | Envidia social con Universe | Universe | Imagen meme 4:3 | Baja | **Render v1 producido — revisión humana pendiente** | Seed `DRIVE-MEME-001`; Drive asset `1UVoc0xR2lrZ-Tz9HCpTorC7VWm3Adiv1`; brief en `Operations/Production/2026-08-22_Briefs_Cadence_Memes_Seed_Adaptations.md`. |
+| MEME-CAD-002 | Conducta sospechosamente sobria | Fantasma | Imagen meme 4:3 | Baja | **Render v1 producido — revisión humana pendiente** | Seed `DRIVE-MEME-002`; Drive asset `1YhMuK4W_SeYo4gadhB1bPW06HHk4utMh`; recreación original, sin publicación directa de la captura. |
+| MEME-CAD-003 | Aura administrada | Elara | Imagen meme 4:3 | Baja | **Render v1 producido — revisión humana pendiente** | Seed `DRIVE-MEME-003`; Drive asset `1gCorbX_0SAZSj9XOjIt4pQtTEt-5KwN_`; caption separado del texto de imagen. |
+| MEME-CAD-004 | Energía reservada para discutir | Wilfred | Imagen meme 4:3 | Baja | **Render v1 producido — revisión humana pendiente** | Seed `DRIVE-MEME-006`; Drive asset `17teBcGZ9n2Yliv1Bx7ocDSb3pNBOjRkY`; conservar estatura adulta normal. |
+| MEME-CAD-005 | Indirecta con documentación formal | Evan | Imagen meme 4:3 | Baja | **Render v1 producido — revisión humana pendiente** | Seed `DRIVE-MEME-005`; Drive asset `1U_oEdRM_FJPVuEtBGyWr86xhTPCVE9vH`; usar la captura anime solo como inspiración de situación. |
 
 ### Ingreso de Drive — 15 de agosto de 2026
 

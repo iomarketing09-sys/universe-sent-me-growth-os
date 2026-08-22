@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.28"
+version: "2.29"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -255,6 +255,16 @@ El 15 de agosto de 2026 se aplicó el primer lote de unificación al inventario 
 La validación posterior al lote reconcilió 39 IDs únicos, 11 piezas con publicación Meta enlazada (`CNT-002`, `CNT-023` y `CNT-031`–`CNT-039`) y 28 piezas sin publicación confirmada. Se preservaron los estados históricos y no se confirmó ningún asset `260####` sin evidencia.
 
 La unificación todavía no está completa. Los siguientes trabajos quedan explícitamente separados para evitar una migración riesgosa: completar métricas 24/72 horas en `Publication_Log`, cerrar el aprendizaje de `HB-003`, `HB-004` y `HB-005`, convertir calendarios/colas en exportaciones verificables del inventario y poblar progresivamente el `Community_Engagement_Log` con comentarios reales. `CNT-004` queda diferido y no forma parte del lote activo de desarrollo; si se retoma, requerirá revisión canónica y aprobación. El mapeo de las nueve órdenes del calendario 15–16 ya está cerrado mediante `CNT-031`–`CNT-039`. Estos pendientes restantes son de medición, integración, comunidad y aprobación; no deben resolverse inventando IDs.
+
+## Estado operativo del lote MEME-CAD-001–005
+
+El 22 de agosto de 2026 Fernando aprobó cinco semillas del target Drive/Memes para adaptación original: `DRIVE-MEME-001`, `DRIVE-MEME-002`, `DRIVE-MEME-003`, `DRIVE-MEME-005` y `DRIVE-MEME-006`. Sus renders v1 están registrados en `Operations/Research/2026-08-22_Drive_Memes_Seed_Inventory.csv` y documentados en `Operations/Production/2026-08-22_Briefs_Cadence_Memes_Seed_Adaptations.md`. Los cinco se encuentran en `Produced_v1_Pending_Human_Review` dentro de Drive, carpeta `Produccion_Memes_Cadencia_2026-08-22` (ID `10vtYpPfcRnV3RnlAt9mshLRKv78dOS53`).
+
+La máquina de estados permanece bloqueada antes de calendario: `CNT_Status=Not_Created`, `Calendar_Status=Not_Entered`, `Publication_Status=Not_Authorized`, `Affiliate_Attachment=No` e Instagram separado. Las capturas fuente no son publicables y los renders v1 no deben tratarse como assets finales hasta que Fernando complete la revisión creativa y el preflight.
+
+### Dependencias de coherencia
+
+El brief de producción y el inventario de semillas son los registros detallados. El changelog y esta fuente maestra son las vistas de sincronización. Si se aprueba una pieza para calendario, deberán actualizarse el inventario, la cola de producción, el CSV de revisión humana y el `ExperimentLog` solo después de que exista un asset final y se emita una autorización explícita por fila.
 
 ## 8. Reglas de gobernanza
 
