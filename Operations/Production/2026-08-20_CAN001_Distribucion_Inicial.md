@@ -1,10 +1,10 @@
 ---
 title: "CAN 001 — Distribución inicial en TikTok, Instagram Reels y YouTube Shorts"
 purpose: "Definir la publicación de lanzamiento de CAN 001 por plataforma, incluyendo una prueba controlada de audio nativo y el protocolo de medición inicial."
-status: "Active — TikTok and Instagram Reels published; YouTube Shorts pending"
+status: "Active — first three-platform CAN-001 cascade published; measurement pending"
 created: 2026-08-20
 updated: 2026-08-21
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_CAN001_It_Was_Making_Noise_Production_Package.md"
@@ -104,6 +104,26 @@ El shortcode se conserva como identificador público accesible hasta recuperar e
 | T+24 h | 22 Ago 2026, 19:20:00 CDT |
 | T+72 h | 24 Ago 2026, 19:20:00 CDT |
 | T+7 d | 28 Ago 2026, 19:20:00 CDT |
+
+### Registro real — YouTube Shorts
+
+| Campo | Dato confirmado |
+|---|---|
+| Estado | Publicado. |
+| ID nativo | `iuHT1kN0Uow` |
+| Permalink | `https://youtube.com/shorts/iuHT1kN0Uow` |
+| Hora exacta de publicación | 21 Ago 2026, 19:50:00 CDT; declarada por Fernando. |
+| Audio | SFX originales de CAN-001 al 100 %; sin música nativa. |
+| Canal observado | `@Bam_in_a_can` |
+| Título público observado | `CAN 001 / IT WAS MAKING NOISE FROM THE INSIDE. #BamInACan #BamInACan` |
+| Disclosure | Pendiente de verificar en descripción o mediante la etiqueta de contenido alterado/generado; no aparece en el título público recuperado. |
+
+| Hito | Ventana exacta de CAN-001 YouTube Shorts |
+|---|---|
+| T+3 h | 21 Ago 2026, 22:50:00 CDT |
+| T+24 h | 22 Ago 2026, 19:50:00 CDT |
+| T+72 h | 24 Ago 2026, 19:50:00 CDT |
+| T+7 d | 28 Ago 2026, 19:50:00 CDT |
 
 ## 5. Respuesta y medición
 

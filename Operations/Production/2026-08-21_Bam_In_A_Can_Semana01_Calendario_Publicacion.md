@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — Semana 01: calendario de publicación"
 purpose: "Coordinar la salida del primer lote de cuatro piezas de Bam in a Can, sus metadatos por plataforma y las ventanas mínimas de medición sin programar publicaciones automáticas."
-status: "Active — CAN-001 inició la Semana 01 en TikTok e Instagram Reels; demás salidas pendientes"
+status: "Active — primera cascada CAN-001 completa; CAN-002 a CAN-004 pendientes"
 created: 2026-08-21
 updated: 2026-08-21
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-21_Bam_In_A_Can_Semana01_Paquete_Lanzamiento.md"
@@ -35,7 +35,7 @@ TikTok e Instagram usarán audio nativo únicamente cuando el primer loop añada
 
 ## Salida registrada
 
-CAN-001 ya se publicó en TikTok el 21 de agosto de 2026 a las 19:04:20 CDT. El ID canónico es `7676640119222209813` y el audio declarado por Fernando es `Do It` — Infraction Music. También salió en Instagram Reels a las 19:20:00 CDT con shortcode `DcUnEVnsoaV`, el mismo audio al 80 % y el disclosure verificado en el caption público. La publicación real queda en el ledger; YouTube Shorts continúa pendiente. El disclosure de TikTok aún requiere verificación porque no se observó en la vista pública recuperada.
+CAN-001 ya se publicó en TikTok el 21 de agosto de 2026 a las 19:04:20 CDT. El ID canónico es `7676640119222209813` y el audio declarado por Fernando es `Do It` — Infraction Music. También salió en Instagram Reels a las 19:20:00 CDT con shortcode `DcUnEVnsoaV`, el mismo audio al 80 % y el disclosure verificado en el caption público. YouTube Shorts cerró la cascada a las 19:50:00 CDT con ID `iuHT1kN0Uow` y SFX originales sin música nativa. La publicación real queda en el ledger. El disclosure de TikTok y YouTube aún requiere verificación porque no se observó en las vistas públicas recuperadas.
 
 ## Go/no-go por cada día
 
