@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — CAN-001: snapshot temprano consolidado"
 purpose: "Conservar las métricas públicas observables de la primera cascada de CAN-001 y distinguir datos medidos de campos no expuestos sin autenticación."
-status: "Active — snapshot temprano completo; no concluyente"
+status: "Active — lectura autenticada por Windsor.ai; YouTube pendiente de indexación"
 created: 2026-08-21
 updated: 2026-08-21
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
@@ -19,7 +19,7 @@ organization: "Operations/Research"
 
 El corte se inició a las **22:51:21 CDT del 21 de agosto de 2026**, aproximadamente 3 h 47 min después de TikTok, 3 h 31 min después de Instagram Reels y 3 h 1 min después de YouTube Shorts. Las métricas son un snapshot temprano de disponibilidad pública; no permiten atribuir un resultado al audio ni comparar plataformas como si compartieran la misma edad, algoritmo o definición de interacción.
 
-## Observaciones del corte
+## Observaciones públicas iniciales
 
 | Plataforma | Edad en el corte | Datos públicos visibles | Campos no expuestos / límite |
 |---|---:|---|---|
@@ -31,6 +31,20 @@ El corte se inició a las **22:51:21 CDT del 21 de agosto de 2026**, aproximadam
 
 Un valor público ausente se registra como **no disponible**, nunca como cero. Los únicos conteos observables en esta etapa son 1 like público en Instagram y 0 likes públicos en YouTube. No se infiere retención, alcance, compartidos, guardados o performance relativo a partir de esos datos aislados.
 
+## Corrección autenticada — Windsor.ai
+
+Windsor.ai devolvió registros autenticados para TikTok e Instagram aproximadamente ocho minutos después de la revisión pública. Los tiempos `data_fetched_at` se entregan en UTC; se convirtieron a CDT para expresar la edad de las publicaciones. La consulta de YouTube no devolvió todavía una fila para el Short publicado el mismo día, por lo que su ausencia es de **indexación pendiente** y no una métrica de cero.
+
+| Plataforma | Fuente y edad del post | Métricas recuperadas | Lectura de calidad de datos |
+|---|---:|---|---|
+| TikTok | Windsor.ai, `data_fetched_at` 03:59:22 UTC / 22:59:22 CDT; 3 h 55 min 02 s | 93 views; 0 likes; 0 comentarios; 0 shares; 0 favoritos; avg. watch time 2.15 s; full-watched rate 6 %. | El alcance devuelve 0 pese a tener views; no se usa para tasa de engagement. El avg. watch representa 30.71 % de un clip de 7 s. |
+| Instagram Reels | Windsor.ai, `data_fetched_at` 03:59:54 UTC / 22:59:54 CDT; 3 h 39 min 54 s | 198 views; reach 161; 1 like; 0 comentarios; 0 shares; 0 saves; 1 interacción; avg. watch time 3.744 s; total watch 602.838 s. | El avg. watch representa 53.48 % de 7 s. La tasa de interacción es 0.62 % sobre reach y 0.50 % sobre views. |
+| YouTube Shorts | Windsor.ai consultado cerca de 23:00 CDT; 3 h 10 min 39 s | Sin fila devuelta para `iuHT1kN0Uow`. | El conector todavía no indexa este Short de la fecha actual; no registrar 0 views ni 0 likes como dato autenticado. |
+
+## Límites de comparación
+
+El diferencial temprano de views entre TikTok e Instagram no demuestra un efecto del audio porque las plataformas tienen sistemas de distribución y edades distintas. El único contraste operativo ya disponible es de formato de consumo: Instagram registra un watch time medio superior al de TikTok, pero ambos valores proceden de muestras tempranas y ninguno alcanza una ventana de 24 horas. YouTube queda fuera de comparaciones cuantitativas hasta que Windsor entregue una fila del video.
+
 ## Lectura temprana
 
-No hay señal suficiente para evaluar la hipótesis de distribución de CAN-001. TikTok no expuso métricas sin sesión, Instagram solo mostró una interacción visible y YouTube solo mostró likes. El corte sirve como prueba de trazabilidad y de disponibilidad de fuentes: la siguiente medición a 24 horas debe priorizar una fuente autenticada o los conectores de cada cuenta, porque las páginas públicas no entregan el conjunto de métricas necesario.
+La lectura ahora usa Windsor.ai como fuente preferente para TikTok e Instagram. Aun así, no hay base suficiente para evaluar la hipótesis de distribución de CAN-001: el periodo es inferior a cuatro horas, TikTok e Instagram no son directamente equivalentes y YouTube no está indexado. El corte confirma que la próxima medición a 24 horas debe repetir las tres consultas autenticadas y conservar la diferencia entre `views`, `reach`, `interacciones` y retención.

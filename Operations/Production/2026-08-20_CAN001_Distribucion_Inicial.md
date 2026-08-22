@@ -4,7 +4,7 @@ purpose: "Definir la publicación de lanzamiento de CAN 001 por plataforma, incl
 status: "Active — first three-platform CAN-001 cascade published; measurement pending"
 created: 2026-08-20
 updated: 2026-08-21
-version: "1.4"
+version: "1.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_CAN001_It_Was_Making_Noise_Production_Package.md"
@@ -125,6 +125,10 @@ El shortcode se conserva como identificador público accesible hasta recuperar e
 | T+24 h | 22 Ago 2026, 19:50:00 CDT |
 | T+72 h | 24 Ago 2026, 19:50:00 CDT |
 | T+7 d | 28 Ago 2026, 19:50:00 CDT |
+
+### Corrección de fuente — Windsor.ai
+
+El snapshot público temprano fue complementado con Windsor.ai. A las 22:59 CDT, TikTok registró 93 views, 0 interacciones visibles y 2.15 s de watch time medio; Instagram registró 198 views, reach 161, una interacción total y 3.744 s de watch time medio. YouTube aún no devolvió una fila del Short de la fecha actual. El análisis completo y sus límites se conservan en `Operations/Research/2026-08-21_Bam_CAN001_Snapshot_Temprano.md`; estas cifras son tempranas y no autorizan una decisión sobre audio, formato ni plataforma.
 
 ## 5. Respuesta y medición
 
