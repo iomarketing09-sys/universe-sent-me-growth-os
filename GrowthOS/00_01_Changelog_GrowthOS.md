@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 2.73
+**Versión:** 2.74
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.74.00] — 2026-08-21 (Manus): Desglose diario por familias, personajes, shares y comentarios.** Se creó `Operations/Research/2026-08-21_Analisis_Corte_Diario_Familias_Personajes.md`, junto con JSON y CSV. El corte de 12 publicaciones se clasificó de forma primaria y no canónica: `Relatable_Social` n=3 con 156 interacciones/52 shares; `Difusión_Minimal` n=3 con 148/33; `Ácido_Interpersonal` n=2 con 64/16; y familias de observación única para `Personaje_Marcador`, `Conversación_Relacional`, `Sequential_visual_reaction` y `Character_POV_reveal`. Universe aparece en seis piezas con 256 interacciones/67 shares, pero la señal también atraviesa Ganso y una pieza sin personaje identificado; no se atribuye causalidad al personaje. TAX-02 queda reforzada direccionalmente; HUM-06 queda compatible pero no universal; HUM-02 permanece exploratoria; `HB-REEL-MOTION-POV-MEME-01` no es evaluable por falta de views/reach/retención de video. La observación `OBS-DAILY-20260821-2200` del `ExperimentLog` fue ampliada con estos hallazgos. No se modificaron canon, calendario, publicación ni afiliados.
 
 - **[2.73.00] — 2026-08-21 (Manus): Reportes diarios adoptados como fuente principal de aprendizaje.** Fernando aclaró que no estamos operando con ventanas exactas de 24 horas y que la información estratégica debe salir de los análisis diarios. Se actualizó `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` a v2.19, `GrowthOS/01_00_Arquitectura_Calendario_Escalable.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md` y `GrowthOS/00_Índice.md`. El `ExperimentLog.csv` ahora contiene la observación `OBS-DAILY-20260821-2200` con `Corte_Diario`, 12 publicaciones, 495 interacciones observables y 132 shares. La ventana diaria permite aprender de rankings, formatos, personajes, horarios, shares, comentarios, captions y Reels usando acumulados observables etiquetados como `Corte_Observado`; no se presentan como delta diario. Las ventanas 24/72 horas quedan solo como capa opcional para cierres contractuales de celdas comparables. Afiliados permanece separado.
 
