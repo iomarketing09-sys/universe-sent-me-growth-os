@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 2.64
+**Versión:** 2.65
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.65.00] — 2026-08-22 (Manus): Brief Draft para el tercer Reel Dialogue_radio.** Se creó `Operations/Production/2026-08-22_Brief_Reel_Dialogue_Radio_003.md` con la propuesta `Afirmación → mala interpretación → corrección seca → reacción`, protagonizada por Elara y Wilfred. El brief mantiene separados `Caption_Treatment`, `Caption_Function`, subtítulos, audio, duración, watermark, reuse y afiliación. Propone `HB-REEL-DIALOGUE-01` como hipótesis provisional, pero no la registra como aprendizaje validado. No autoriza generación, CNT, programación ni publicación; cualquier acción operativa requiere aprobación humana separada.
 
 - **[2.64.00] — 2026-08-22 (Manus): Clasificación operativa de los seis Reels con asset confirmado.** Se creó `Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv` y su evaluación `Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json`. Los seis casos se agruparon en `Character_loop_meme`, `Sequential_visual_reaction`, `Dialogue_radio` y `Character_POV_reveal`. `Dialogue_radio` cuenta con dos assets fuente distintos y 9/10 interacciones en snapshots actuales de Meta; es la primera candidata para crear un tercer caso, pero todavía no es un veredicto. `Character_loop_meme` reutiliza el mismo asset de Fantasma y no debe tratarse como dos casos independientes. `Sequential_visual_reaction` y `Character_POV_reveal` son observaciones aisladas. Los seis registros carecen de views/reach en el corte actual y mezclan métricas lifetime con snapshot actual; no se actualizó `ExperimentLog` ni se declaró una familia ganadora.
 
