@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.2"
+version: "2.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -509,3 +509,12 @@ Fernando aprobó responder los tres pendientes detectados en el corte anterior. 
 | Seguimiento: “Universe Sent Me un playlist para el amor de la vida de uno o para tu próxim@ espos@ ❤️❤️❤️❤️🥹” | `122151376011072582_1904364794302463` | Publicada y visible para la API; el padre directo es la respuesta previa de Universe Sent Me. |
 
 El seguimiento se registró como un turno independiente porque la respuesta a un comentario raíz no cubre automáticamente los nuevos mensajes dentro del hilo. Se corrigió el ledger para no usar el ID de comentario padre como `CNT_ID`; la relación queda respaldada por el endpoint de Meta y por la auditoría. No se usó My Browser.
+
+
+## 32. Prueba API de publicación en grupo proporcionada por Fernando — 22 de agosto de 2026
+
+Fernando proporcionó el enlace `https://www.facebook.com/groups/869804975207942/posts/1435125462009221/?comment_id=1435811675273933&notif_id=1787425261146337&notif_t=group_comment`. Se extrajeron los identificadores `group_id=869804975207942`, `post_id=1435125462009221` y `comment_id=1435811675273933`.
+
+La prueba de solo lectura mediante Meta Graph API v26 no pudo cargar el objeto del comentario: Meta devolvió HTTP 400, código 100, con el mensaje de que el objeto no existe, no puede cargarse por permisos insuficientes o no admite la operación. La consulta del objeto de publicación y de sus comentarios devolvió HTTP 400, código 10, indicando que el uso del endpoint requiere revisión y aprobación de Facebook. Por tanto, el token actual de Universe Sent Me no tiene acceso suficiente para leer este hilo de grupo mediante API.
+
+El hilo queda clasificado como `No verificado por API`. No se preparó una respuesta basada en suposiciones y no se publicó nada. Para revisarlo se necesita otro token o integración con permisos de grupos aprobados por Meta, o que Fernando proporcione el texto/captura del comentario por un canal que no requiera acceso adicional; esta última opción permitiría redactar una respuesta, pero no verificar automáticamente si ya existe una respuesta de la Página.
