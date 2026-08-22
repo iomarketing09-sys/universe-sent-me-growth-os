@@ -4,7 +4,7 @@ purpose: "Separar el rendimiento histórico de Reels del experimento P0 de imág
 status: "Active"
 created: 2026-08-19
 updated: 2026-08-22
-version: "1.10"
+version: "1.11"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -19,6 +19,7 @@ related_documents:
   - "Operations/Research/Affiliate_Metrics_Snapshots.csv"
   - "Operations/Research/2026-08-20_Meta_Reel_2210896633022235_Metrics.json"
   - "Operations/Research/2026-08-21_Reels_Drive_Meta_Crossmatch_Review.csv"
+  - "Operations/Research/2026-08-22_Reels_Tier2A_Visual_Review_Batch.csv"
   - "Operations/Research/2026-08-21_Reels_Audit_Coverage_Summary.json"
   - "Operations/Research/2026-08-20_MercadoLibre_Snapshot_7d_Etiquetas.png"
   - "Operations/Research/2026-08-20_MercadoLibre_Snapshot_Fecha.png"
@@ -234,7 +235,15 @@ El caso de Wilfred se revisó de forma directa y quedó descartado como match ex
 
 El Reel `991640670312120` y `Universe sent me - 022.png` también fueron comparados por frames. Ambos comparten una atmósfera de calle/catedral, pero son escenas distintas y tienen textos diferentes; el estado correcto es relación temática parcial, no match.
 
-El inventario ahora contiene cuatro matches visuales exactos entre Drive y Meta dentro de esta extensión histórica. Los casos restantes solo deben pasar a búsqueda ampliada si su valor editorial justifica el coste; la proximidad temporal y la coincidencia de personaje no son evidencia suficiente.
+El inventario ahora contiene seis matches visuales exactos entre Drive y Meta dentro de esta extensión histórica. Los casos restantes solo deben pasar a búsqueda ampliada si su valor editorial justifica el coste; la proximidad temporal y la coincidencia de personaje no son evidencia suficiente.
+
+### 10.10 Revisión visual TIER2A
+
+El lote TIER2A cubrió los diez siguientes casos Tier 2 con mayor interacción, entre 7 y 10 interacciones. Se analizaron los diez Reels de Meta y sus candidatos principales de Drive. Se confirmaron dos matches exactos: `2159954351459805` con `Wilfred_and_Elara_cosmic_radio_202606272110.mp4`, y `1339119487723234` con `Elara_and_Wilfred_dialogue_animation_202606271715.mp4`. Las comparaciones de frames verificaron la misma cabina de radio, ventana cósmica, consola, iluminación y composición de los personajes; el Reel añade el tratamiento de audio, diálogo o texto de publicación.
+
+Los otros ocho quedaron como `No_Match_In_TIER2A_Primary`. Entre ellos, el Reel de la hada corriendo sobre un lago no coincide con el asset de Wilfred; el avión y los Reels de cielo no coinciden con el Fantasma; el payaso triste no coincide con la familia de escenas revisada; y el Reel de campamento con dos personas no coincide con el asset de abrazo de Elara y Evan. Estos estados son controles de revisión del candidato primario, no exclusiones globales de Drive.
+
+El historial estructurado queda en v2.1, con seis matches visuales exactos y 48 publicaciones históricas aún pendientes de asset. Ninguno de los dos matches se convierte automáticamente en CNT, experimento o canon; primero deben clasificarse editorialmente y, si procede, relacionarse con una pregunta concreta del Growth OS.
 
 ## 11. Puente de transferencia Facebook → Reels — 2026-08-21
 

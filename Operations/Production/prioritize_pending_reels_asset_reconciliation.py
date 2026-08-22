@@ -14,6 +14,7 @@ for row in rows:
     if row.get('Platform') != 'Facebook':
         continue
     if row.get('Asset_Match_Status') not in {'Pending_Drive_or_local_asset_match', ''}:
+        # Exact or accepted asset matches are no longer pending reconciliation.
         continue
     date = row.get('Publication_UTC', '')[:10]
     if not ('2026-05-01' <= date <= '2026-06-30'):

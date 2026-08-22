@@ -3,10 +3,12 @@
 **Propósito:** Registro centralizado de hitos, integraciones, cambios estratégicos y actualizaciones de arquitectura. Este documento permite a los agentes (Manus, Claude, etc.) sincronizar contexto rápidamente sin re-leer todo el repositorio.
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
-**Última actualización:** 2026-08-21
-**Versión:** 2.62
+**Última actualización:** 2026-08-22
+**Versión:** 2.63
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.63.00] — 2026-08-22 (Manus): Revisión visual del lote TIER2A e integración de dos matches exactos.** Se revisaron diez Reels Tier 2 y sus candidatos principales de Drive. `2159954351459805` coincide exactamente con `Wilfred_and_Elara_cosmic_radio_202606272110.mp4`; `1339119487723234` coincide exactamente con `Elara_and_Wilfred_dialogue_animation_202606271715.mp4`. Las comparaciones confirmaron la misma cabina de radio, ventana cósmica, consola, iluminación y composición de personajes; los Reels agregan diálogo, audio o texto de publicación. Los otros ocho quedaron como `No_Match_In_TIER2A_Primary`, sin exclusión global del inventario. La cola pendiente fue regenerada para excluir estos matches y queda en 48 casos. El historial queda en v2.1, el registro maestro en v3.0, la auditoría en v1.11, la fuente maestra en v2.14 y la cobertura en v1.5; hay seis matches exactos Drive↔Meta.
 
 - **[2.62.00] — 2026-08-21 (Manus): Revisión visual del bloque NEXT10 e integración de un cuarto match exacto.** Se revisaron los diez candidatos Tier 1 siguientes a la cola TOP5. El Reel `1518053389684402` coincide exactamente con `Fantasma_tranquilo_con_viento_202605241629.mp4` — mismo Fantasma con lentes, cerca, bosque azul/morado, composición y movimiento — y fue integrado al historial sin crear CNT. Los nueve restantes quedaron sin match dentro de su candidato primario. La comparación directa descartó `Wilfred realista haciendo una posion.mp4` como fuente del Reel `1906363553379974`: comparten personaje/estilo, pero no escena ni secuencia. También se descartó `Universe sent me - 022.png` como fuente del Reel `991640670312120`: comparten atmósfera de catedral, pero no composición ni texto. El historial queda en v2.0, el registro maestro en v2.9, la auditoría en v1.10, la fuente maestra en v2.13 y la cobertura en v1.4; hay cuatro matches exactos y 50 casos históricos aún pendientes de asset.
 

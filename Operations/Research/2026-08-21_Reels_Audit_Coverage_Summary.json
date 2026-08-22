@@ -4,7 +4,7 @@
   "status": "Active",
   "created_at": "2026-08-21",
   "last_updated": "2026-08-22",
-  "version": "1.4",
+  "version": "1.5",
   "author": "Manus AI",
   "related_documents": [
     "GrowthOS/07_00_Registro_Maestro_Reels.md",
@@ -15,7 +15,7 @@
   ],
   "source": {
     "file": "Operations/Research/2026-08-19_Historial_Reels_Consolidado.json",
-    "version": "2.0",
+    "version": "2.1",
     "last_updated": "2026-08-22",
     "period": {
       "start": "2026-05-01",
@@ -39,14 +39,16 @@
     "meta_video_candidates": 54,
     "meta_video_candidates_integrated_as_publication_identity": 54,
     "drive_pre_july_videos_reviewed": 5,
-    "exact_visual_matches_integrated": 4,
+    "exact_visual_matches_integrated": 6,
     "pending_visual_review": 0,
     "negative_visual_checks": 2,
     "integrated_exact_matches": [
       "2026-05-24 Fantasma_tranquilo_con_viento → Meta Reel 1877535942934184",
       "2026-06-14 Hoodie_Anillos_Energia asset set → Meta Reel 2417378928740605",
       "2026-06-30 Pato_Villano_EresAries → Meta Reel 1049041731412120",
-      "2026-06-15 Fantasma_tranquilo_con_viento → Meta Reel 1518053389684402"
+      "2026-06-15 Fantasma_tranquilo_con_viento → Meta Reel 1518053389684402",
+      "2026-06-28 Wilfred_and_Elara_cosmic_radio → Meta Reel 2159954351459805",
+      "2026-06-27 Elara_and_Wilfred_dialogue → Meta Reel 1339119487723234"
     ],
     "pending_case": "Wilfred realista haciendo una posion.mp4 remains unresolved as a source for the reviewed Reels; the visually similar Wilfred Reel was a different standing scene."
   },
@@ -58,6 +60,14 @@
     "global_asset_status": "Pending_for_all_five",
     "meta_reel_ids": ["1020271167128162", "1303110198700919", "1014879604586494", "4244177002465660", "1314043717583273"]
   },
+  "tier2a_visual_review": {
+    "review_batch_id": "TIER2A",
+    "posts_reviewed": 10,
+    "primary_candidates_reviewed": 10,
+    "exact_visual_matches_integrated": 2,
+    "no_match_in_primary_set": 8,
+    "exact_match_meta_reel_ids": ["2159954351459805", "1339119487723234"]
+  },
   "next10_visual_review": {
     "review_batch_id": "NEXT10",
     "posts_reviewed": 10,
@@ -67,7 +77,7 @@
     "exact_match_meta_reel_ids": ["1518053389684402"]
   },
   "field_coverage": {
-    "drive_asset_evidence": {"populated": 33, "total": 102},
+    "drive_asset_evidence": {"populated": 35, "total": 102},
     "engagement": {"populated": 87, "total": 102},
     "views": {"populated": 27, "total": 102},
     "reach": {"populated": 14, "total": 102},
@@ -93,5 +103,5 @@
     "Publicada_Metricas_Pendientes",
     "Medida_24_72h"
   ],
-  "conclusion": "El inventario histórico ya incluye las 54 publicaciones de video identificadas por Meta en mayo/junio. Cuatro matches visuales exactos están integrados con Drive. En el bloque TOP5, cinco Reels quedaron sin match dentro de 25 candidatos revisados. En el bloque NEXT10, un Reel de Fantasma obtuvo match exacto y nueve quedaron sin match dentro de su candidato primario; estos no-match no equivalen a exclusión global. El siguiente trabajo debe continuar solo con candidatos cuyo valor analítico justifique una búsqueda más amplia, sin tratar los 102 registros como una cohorte comparable."
+  "conclusion": "El inventario histórico ya incluye las 54 publicaciones de video identificadas por Meta en mayo/junio. Seis matches visuales exactos están integrados con Drive. En el bloque TOP5, cinco Reels quedaron sin match dentro de 25 candidatos revisados. En NEXT10, un Reel de Fantasma obtuvo match exacto y nueve quedaron sin match dentro de su candidato primario. En TIER2A, dos Reels de radio/diálogo obtuvieron match exacto y ocho quedaron sin match dentro de su candidato primario. Estos no-match no equivalen a exclusión global. El siguiente trabajo debe continuar solo con candidatos cuyo valor analítico justifique una búsqueda más amplia, sin tratar los 102 registros como una cohorte comparable."
 }

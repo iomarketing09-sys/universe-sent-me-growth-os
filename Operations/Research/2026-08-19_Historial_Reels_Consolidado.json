@@ -4,7 +4,7 @@
   "status": "Active",
   "created_at": "2026-08-19",
   "last_updated": "2026-08-22",
-  "version": "2.0",
+  "version": "2.1",
   "author": "Manus AI",
   "related_documents": [
     "2026-08-19_Relaciones_Reels_Alta_Evidencia.json",
@@ -1750,7 +1750,14 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Pending_Drive_or_local_asset_match",
+      "review_batch_id": "TIER2A",
+      "reviewed_on": "2026-08-22",
+      "asset_review_status": "No_Match_In_TIER2A_Primary",
+      "reconciliation_review_status": "Reviewed_No_Match_In_TIER2A_Primary",
+      "review_note": "Primary Drive candidate reviewed; visual fingerprint differs from the Meta Reel. Global asset match remains pending.",
+      "reviewed_drive_candidate_id": "175XnmOVnBPgVCFlwyDWCZ3jCAmB2MOjO",
+      "reviewed_drive_candidate_name": "Fantasma_tranquilo_con_viento_202605241629.mp4"
     },
     {
       "platform": "Facebook",
@@ -1777,7 +1784,14 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Pending_Drive_or_local_asset_match",
+      "review_batch_id": "TIER2A",
+      "reviewed_on": "2026-08-22",
+      "asset_review_status": "No_Match_In_TIER2A_Primary",
+      "reconciliation_review_status": "Reviewed_No_Match_In_TIER2A_Primary",
+      "review_note": "Primary Drive candidate reviewed; visual fingerprint differs from the Meta Reel. Global asset match remains pending.",
+      "reviewed_drive_candidate_id": "1kH_OQbWvyBiWJgjzRJy6L_gD9hsO845w",
+      "reviewed_drive_candidate_name": "Sad_clown_fiery_explosion_dramatic_Yo despues de comprar cosas para mi gato.mp4"
     },
     {
       "platform": "Facebook",
@@ -1836,7 +1850,14 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Pending_Drive_or_local_asset_match",
+      "review_batch_id": "TIER2A",
+      "reviewed_on": "2026-08-22",
+      "asset_review_status": "No_Match_In_TIER2A_Primary",
+      "reconciliation_review_status": "Reviewed_No_Match_In_TIER2A_Primary",
+      "review_note": "Primary Drive candidate reviewed; visual fingerprint differs from the Meta Reel. Global asset match remains pending.",
+      "reviewed_drive_candidate_id": "175XnmOVnBPgVCFlwyDWCZ3jCAmB2MOjO",
+      "reviewed_drive_candidate_name": "Fantasma_tranquilo_con_viento_202605241629.mp4"
     },
     {
       "platform": "Facebook",
@@ -1863,7 +1884,14 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Pending_Drive_or_local_asset_match",
+      "review_batch_id": "TIER2A",
+      "reviewed_on": "2026-08-22",
+      "asset_review_status": "No_Match_In_TIER2A_Primary",
+      "reconciliation_review_status": "Reviewed_No_Match_In_TIER2A_Primary",
+      "review_note": "Primary Drive candidate reviewed; visual fingerprint differs from the Meta Reel. Global asset match remains pending.",
+      "reviewed_drive_candidate_id": "175XnmOVnBPgVCFlwyDWCZ3jCAmB2MOjO",
+      "reviewed_drive_candidate_name": "Fantasma_tranquilo_con_viento_202605241629.mp4"
     },
     {
       "platform": "Facebook",
@@ -2143,7 +2171,14 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Pending_Drive_or_local_asset_match",
+      "review_batch_id": "TIER2A",
+      "reviewed_on": "2026-08-22",
+      "asset_review_status": "No_Match_In_TIER2A_Primary",
+      "reconciliation_review_status": "Reviewed_No_Match_In_TIER2A_Primary",
+      "review_note": "Primary Drive candidate reviewed; visual fingerprint differs from the Meta Reel. Global asset match remains pending.",
+      "reviewed_drive_candidate_id": "175XnmOVnBPgVCFlwyDWCZ3jCAmB2MOjO",
+      "reviewed_drive_candidate_name": "Fantasma_tranquilo_con_viento_202605241629.mp4"
     },
     {
       "platform": "Facebook",
@@ -2323,7 +2358,14 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Pending_Drive_or_local_asset_match",
+      "review_batch_id": "TIER2A",
+      "reviewed_on": "2026-08-22",
+      "asset_review_status": "No_Match_In_TIER2A_Primary",
+      "reconciliation_review_status": "Reviewed_No_Match_In_TIER2A_Primary",
+      "review_note": "Primary Drive candidate reviewed; visual fingerprint differs from the Meta Reel. Global asset match remains pending.",
+      "reviewed_drive_candidate_id": "1tE84FJLyLNwqELa5E23_7Tn5dvDwN_WI",
+      "reviewed_drive_candidate_name": "Wilfred realista haciendo una posion.mp4"
     },
     {
       "platform": "Facebook",
@@ -2543,7 +2585,14 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Pending_Drive_or_local_asset_match",
+      "review_batch_id": "TIER2A",
+      "reviewed_on": "2026-08-22",
+      "asset_review_status": "No_Match_In_TIER2A_Primary",
+      "reconciliation_review_status": "Reviewed_No_Match_In_TIER2A_Primary",
+      "review_note": "Primary Drive candidate reviewed; visual fingerprint differs from the Meta Reel. Global asset match remains pending.",
+      "reviewed_drive_candidate_id": "1tE84FJLyLNwqELa5E23_7Tn5dvDwN_WI",
+      "reviewed_drive_candidate_name": "Wilfred realista haciendo una posion.mp4"
     },
     {
       "platform": "Facebook",
@@ -2624,7 +2673,14 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Pending_Drive_or_local_asset_match",
+      "review_batch_id": "TIER2A",
+      "reviewed_on": "2026-08-22",
+      "asset_review_status": "No_Match_In_TIER2A_Primary",
+      "reconciliation_review_status": "Reviewed_No_Match_In_TIER2A_Primary",
+      "review_note": "Primary Drive candidate reviewed; visual fingerprint differs from the Meta Reel. Global asset match remains pending.",
+      "reviewed_drive_candidate_id": "1tE84FJLyLNwqELa5E23_7Tn5dvDwN_WI",
+      "reviewed_drive_candidate_name": "Wilfred realista haciendo una posion.mp4"
     },
     {
       "platform": "Facebook",
@@ -3138,7 +3194,18 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Match_Visual_Exact",
+      "review_batch_id": "TIER2A",
+      "reviewed_on": "2026-08-22",
+      "asset_review_status": "Match_Visual_Exact",
+      "reconciliation_review_status": "Reviewed_Exact_Match",
+      "review_note": "Direct frame comparison confirms the same radio studio, Elara/Wilfred composition and dialogue sequence; Reel adds text treatment.",
+      "reviewed_drive_candidate_id": "1ujbbAL9mAm7OCdHrlXeQ8OeIAodzFbZC",
+      "reviewed_drive_candidate_name": "Elara_and_Wilfred_dialogue_anima…_202606271715.mp4",
+      "asset_relationship": "Single_asset_match",
+      "drive_file_id": "1ujbbAL9mAm7OCdHrlXeQ8OeIAodzFbZC",
+      "drive_file_name": "Elara_and_Wilfred_dialogue_animation_202606271715.mp4",
+      "asset_review_confidence": "High"
     },
     {
       "platform": "Facebook",
@@ -3192,7 +3259,18 @@
       "is_published": true,
       "metrics_status": "Meta_interactions_current_feed_snapshot; views_reach_retention_pending",
       "editorial_qualification": "Historical_identity_only; no_clean_comparable_verdict",
-      "asset_match_status": "Pending_Drive_or_local_asset_match"
+      "asset_match_status": "Match_Visual_Exact",
+      "review_batch_id": "TIER2A",
+      "reviewed_on": "2026-08-22",
+      "asset_review_status": "Match_Visual_Exact",
+      "reconciliation_review_status": "Reviewed_Exact_Match",
+      "review_note": "Direct frame comparison confirms the same cosmic radio studio, console, hanging bulbs, Wilfred composition and Elara/Wilfred source sequence; Reel adds dialogue treatment.",
+      "reviewed_drive_candidate_id": "1hduudZ2UhqzrwFVoxs4gJryxPoBAVU1W",
+      "reviewed_drive_candidate_name": "Wilfred_and_Elara_cosmic_radio_202606272110.mp4",
+      "asset_relationship": "Single_asset_match",
+      "drive_file_id": "1hduudZ2UhqzrwFVoxs4gJryxPoBAVU1W",
+      "drive_file_name": "Wilfred_and_Elara_cosmic_radio_202606272110.mp4",
+      "asset_review_confidence": "High"
     }
   ],
   "explicit_cross_platform_concepts": [
@@ -3517,5 +3595,6 @@
   "historical_candidate_note": "All 54 Meta video candidates from May/June are now represented as publication-identity rows. Only exact Drive matches receive Drive evidence; unresolved assets remain pending and are not converted into CNT or canonical concepts.",
   "match_status_correction": "Exact Drive↔Meta matches are explicitly excluded from the pending asset queue.",
   "top5_review_note": "Five high-interaction Facebook Reels were visually reviewed against their top five Drive candidates; all five remain unresolved globally, with no match inferred from date proximity.",
-  "next10_review_note": "NEXT10 visual review produced one exact Fantasma match and nine no-match results within the primary candidate review set."
+  "next10_review_note": "NEXT10 visual review produced one exact Fantasma match and nine no-match results within the primary candidate review set.",
+  "tier2a_review_note": "TIER2A reviewed 10 Tier 2 historical Reels; two exact Drive matches and eight no-match results within primary candidates."
 }
