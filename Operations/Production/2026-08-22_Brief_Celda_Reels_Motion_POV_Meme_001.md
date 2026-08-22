@@ -1,10 +1,10 @@
 ---
 title: "Brief de celda Reels Motion + POV/Meme 001"
 purpose: "Diseñar los tres primeros casos controlados para probar si el movimiento físico inmediatamente legible, combinado con un hook situacional o un meme reconocible, supera en descubrimiento y compartidos al formato tipo podcast/radio; MPM-001 abre además una serie musical recurrente de Elara caminando con audífonos."
-status: Review
+status: Active
 created: 2026-08-22
 updated: 2026-08-22
-version: "1.7"
+version: "1.8"
 author: "Manus AI (CGO)"
 related_documents:
   - "../../GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -21,7 +21,7 @@ organization: "Operations/Production"
 
 ## 1. Estado y decisión de producción
 
-Este documento está en **Review** y requiere aprobación humana antes de preparar referencias finales, generar video, crear CNT, asignar slots o publicar. No autoriza ninguna acción en Facebook, Instagram, TikTok o YouTube.
+Este documento está **Active** porque MPM-001 ya fue publicado y entra a medición. La producción, programación o publicación de MPM-002 y MPM-003 sigue requiriendo aprobación humana separada; este estado no autoriza acciones adicionales en Facebook, Instagram, TikTok o YouTube.
 
 La celda reemplaza temporalmente a `Dialogue_radio` como prioridad de adaptación. La familia de radio no se elimina del historial: queda como observación secundaria y su brief anterior permanece archivado. La hipótesis activa de diseño es `HB-REEL-MOTION-POV-MEME-01`.
 
@@ -101,9 +101,9 @@ Las variantes futuras pueden cambiar la situación —Wilfred hablando, una reun
 | `Case_ID` | `MPM-001` |
 | `Series_ID` | `ELARA-WALK-MUSIC-01` |
 | `Music_Variant_ID` | `ELARA-WALK-MUSIC-01-V01` |
-| `Audio_Source` | Pendiente de selección: pista original, licenciada o disponible en biblioteca de plataforma. |
-| `Music_Reference` | Psicodelia indie/indie-rock; brújula de ambiente proporcionada por Fernando: Tame Impala y Arctic Monkeys — `505`. No se imita ninguna melodía, letra, interpretación ni grabación. |
-| `Music_Hashtag` | Pendiente; máximo uno o dos hashtags después de confirmar la pista usada. |
+| `Audio_Source` | Biblioteca nativa de Facebook e Instagram; seleccionado al publicar. |
+| `Music_Reference` | `Let It Happen — Tame Impala`, disponible en ambos catálogos nativos al momento de la publicación. No se imita ninguna melodía, letra, interpretación ni grabación. |
+| `Music_Hashtag` | `#letithappen #tameimpala`, usados en el caption publicado. |
 | `Visible_Music_Explanation` | `No` |
 | `Family_Candidate` | `Music_walk_situational` |
 | `Concept_ID` | Nuevo concepto; no asignar el concepto de Evan/Elara. |
@@ -113,7 +113,7 @@ Las variantes futuras pueden cambiar la situación —Wilfred hablando, una reun
 | `On_Screen_Text` | `None` — no colocar texto sobre la imagen ni identificar canción, artista o grupo. |
 | `Caption_Treatment` | `caption_minimo` |
 | `Caption_Function` | `reforzar_remate` |
-| `Caption_Proposed` | `Ella no está disponible en este plano. 👀` — seleccionado por Fernando; pendiente únicamente de autorización de publicación. |
+| `Caption_Proposed` | `Ella no está disponible en este plano. 👀` — publicado por Fernando en Facebook e Instagram, junto con `#UniverseSentMe #ElaraUSM #letithappen #tameimpala`. |
 | `Characters` | Elara + Wilfred |
 | `Motion_Beat` | Elara camina hacia cámara o en plano lateral con los audífonos visibles; Wilfred la sigue detrás, mueve la boca y gesticula; ella nunca se vuelve ni revela qué audio está escuchando. |
 | `Payoff` | Wilfred se queda un paso atrás y mira a cámara mientras Elara continúa caminando sin enterarse. |
@@ -312,9 +312,15 @@ La ventana recomendada es **17:00–18:00 en `America/Matamoros`**, con 17:00 co
 
 Después de la subida manual, Fernando debe proporcionar o confirmar los IDs nativos. El corte diario registrará primero `L1_Engagement_Observable` y luego intentará `L2/L3` mediante Windsor o Instagram integrado. La fila debe conservar `Series_ID=ELARA-WALK-MUSIC-01`, `Music_Variant_ID=ELARA-WALK-MUSIC-01-V01`, `Audio_Source`, `Music_Reference`, `Music_Hashtag=None` si no se usa hashtag, `Published_At_Local`, `Export_SHA256`, `Platform_Content_ID` y permalink. Esta publicación no recibe un veredicto de éxito con un solo corte.
 
+### 13.1 Estado de publicación confirmado — MPM-001
+
+MPM-001 se publicó manualmente en Facebook e Instagram el 22 de agosto de 2026 con el caption `Ella no está disponible en este plano. 👀`, los hashtags `#UniverseSentMe #ElaraUSM #letithappen #tameimpala` y `Let It Happen — Tame Impala` elegido desde la biblioteca nativa en ambas plataformas. Los permalinks son [Facebook](https://www.facebook.com/share/r/1FF3rq76yg/) e [Instagram](https://www.instagram.com/reel/DcW-pUnxqGG/?igsi=eXU5YzF0cHkwNjFj). La publicación es `Crosspost_At_Launch`: se registrará como una unidad de celda con métricas estrictamente separadas por plataforma.
+
+Las horas exactas, el Page Post/Reel ID de Facebook, el Instagram Media ID y los snapshots L1/L2/L3 siguen pendientes. No se añaden afiliación, pauta ni una inferencia de rendimiento por haber completado la publicación.
+
 ## 14. Gate siguiente
 
-Las primeras referencias fueron rechazadas por no respetar el estilo de `Elementos`. Las tres referencias regeneradas con los archivos oficiales ya están disponibles: MPM-001, MPM-002 y MPM-003, esta última únicamente en su versión `official_style_v2`. MPM-001 y MPM-002 pasan la revisión preliminar; MPM-003 pasa por identidad de Universe y visibilidad de gafas. Las referencias y el video generado de MPM-001 están cargados en [la carpeta operativa de Drive](https://drive.google.com/drive/folders/1NAyNNUnkNF5QGO7oYDgpw4b5poEPTuhX). La generación de referencias no equivale a aprobar los videos finales. El siguiente gate es revisar MPM-001 y, cuando se restablezca la cuota, generar MPM-002 y MPM-003. Después se editará el texto exacto y se presentarán los exports para una revisión visual separada. No se crean CNT, no se asignan slots, no se programa y no se publica hasta una aprobación operativa posterior..
+Las primeras referencias fueron rechazadas por no respetar el estilo de `Elementos`. Las tres referencias regeneradas con los archivos oficiales ya están disponibles: MPM-001, MPM-002 y MPM-003, esta última únicamente en su versión `official_style_v2`. MPM-001 completó su preflight y publicación; sus próximos datos son hora local, IDs y snapshots separados. MPM-002 permanece `Reference_Ready_Quota_Wait` y MPM-003 aún no se genera. Las referencias y el video generado de MPM-001 están cargados en [la carpeta operativa de Drive](https://drive.google.com/drive/folders/1NAyNNUnkNF5QGO7oYDgpw4b5poEPTuhX). La generación de referencias no equivale a aprobar los videos finales de los casos restantes. El siguiente gate de producción es esperar cuota y aprobación explícita para MPM-002; no se crean CNT, no se asignan slots, no se programa y no se publica MPM-002/003 hasta completar su revisión operativa.
 
 ## Referencias
 
@@ -330,3 +336,10 @@ Las primeras referencias fueron rechazadas por no respetar el estilo de `Element
 ## Nota de actualización
 
 Este brief reemplaza la prioridad anterior de Dialogue_radio, pero no borra sus registros históricos. Si Fernando aprueba los tres casos, el siguiente documento operativo será el paquete de referencias y generación visual; la producción seguirá bloqueada hasta esa aprobación.
+
+## Historial de versiones
+
+| Fecha | Versión | Cambio | Autor |
+|---|---|---|---|
+| 2026-08-22 | 1.7 | Se consolida MPM-001 como serie musical sin texto sobre la imagen y con caption mínimo. | Manus AI (CGO) |
+| 2026-08-22 | 1.8 | MPM-001 pasa a publicado en Facebook e Instagram; se registran caption, hashtags, audio nativo y permalinks, con métricas por plataforma aún pendientes. | Manus AI (CGO) |
