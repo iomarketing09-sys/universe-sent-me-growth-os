@@ -4,7 +4,7 @@
   "status": "Active",
   "created": "2026-08-22",
   "updated": "2026-08-22",
-  "version": "1.0",
+  "version": "1.1",
   "author": "Manus AI",
   "related_documents": [
     "Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv",
@@ -97,6 +97,50 @@
       "Evidence_Level": "Observed_only_not_verdict"
     }
   ],
+  "candidate_signal_summary": {
+    "status": "Active_candidate_priority; not a clean comparable cell",
+    "decision": "Deprioritize Dialogue_radio as default next adaptation. Prioritize motion-led meme adaptation and POV character movement for the next Reels cell.",
+    "evidence": [
+      {
+        "Concept_ID": "CON-2026-07-25-Fantasma_Camina_Gatos",
+        "Family_Candidate": "Motion_meme_adaptation",
+        "Platform": "Facebook",
+        "Meta_Post_ID": "1036844829507460_122141842839072582",
+        "Reel_ID": "Pending_native_reel_id_in_current_inventory",
+        "Drive_Assets": ["Ghost_walks_cats_through_forest_202607240113.mp4", "Ghost_walks_cats_through_forest_202607251436.mp4"],
+        "Reported_Performance": {
+          "views_snapshot_a": 6640,
+          "unique_viewers_snapshot_a": 5750,
+          "interactions_snapshot_a": 260,
+          "shares_snapshot_a": 32,
+          "non_follower_share_snapshot_a": 0.938,
+          "views_snapshot_b": 6878,
+          "interactions_snapshot_b": 128
+        },
+        "Metric_Caveat": "Snapshots come from separate historical captures and must not be averaged. The current inventory has Instagram views=145, reach=127, engagement=7 and YouTube views=13 for related cross-platform records; platform metrics remain separate.",
+        "Evidence_Level": "High_signal_reference_not_clean_comparable",
+        "Interpretation": "Strong acquisition/discovery signal associated with recognizable meme logic plus visible walking motion; not a family verdict by itself."
+      },
+      {
+        "Concept_ID": "Pending_native_reconciliation",
+        "Family_Candidate": "POV_character_movement",
+        "Platform": "Facebook",
+        "Meta_Post_ID": "Pending_native_ID_confirmation",
+        "Description": "Elara walking in a forest with Wilfred following her; on-screen text reported by Fernando as POV: Eres Piscis.",
+        "Reported_Performance": "Fernando reports higher impact than the podcast-style Reels.",
+        "Evidence_Level": "Human_report_high_signal_pending_native_ID_and_metric_window",
+        "Interpretation": "Priority design input for the next test cell, not yet a quantified record. Do not map it to the nearby Elara y Evan asset without native/visual confirmation."
+      }
+    ],
+    "minimum_next_cell": {
+      "Hypothesis_ID": "HB-REEL-MOTION-POV-MEME-01",
+      "minimum_cases": 3,
+      "operational_cases": 5,
+      "required_controls": ["platform", "duration_seconds", "hook_0_3s", "motion_legibility", "on_screen_text", "Caption_Treatment", "Caption_Function", "CTA", "reuse_age_days"],
+      "primary_metrics": ["views", "reach", "non_follower_share", "retention_3s", "avg_watch_time_seconds", "completion_rate", "shares"],
+      "secondary_metrics": ["comments", "replies", "followers_gained"]
+    }
+  },
   "records": [
     {
       "Meta_Reel_ID": "1877535942934184",
@@ -189,5 +233,5 @@
       "Hypothesis_ID": ""
     }
   ],
-  "recommendation": "Use Dialogue_radio as the first adaptation candidate after adding one more distinct case. Treat Character_loop_meme as reuse evidence only because both publications use the same asset group. Keep Sequential_visual_reaction and Character_POV_reveal as observed examples requiring at least two to four additional comparable cases."
+  "recommendation": "Do not use Dialogue_radio as the first adaptation candidate or default format. Keep it as a secondary observation because Fernando reports weaker attention for the podcast-style pieces. Prioritize a new cell under HB-REEL-MOTION-POV-MEME-01 combining visible physical motion, a recognizable meme or POV hook, and a clear visual payoff. Treat Character_loop_meme as reuse evidence only because both confirmed publications use the same asset group; retain Fantasma_Camina_Gatos as a high-signal reference rather than a clean comparable verdict. The Elara/Wilfred Piscis Reel remains pending native ID and metric reconciliation. Require at least three comparable cases for a preliminary signal and five for an operational decision."
 }

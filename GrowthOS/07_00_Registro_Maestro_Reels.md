@@ -4,9 +4,9 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-22
-**Versión:** 3.2
+**Versión:** 3.3
 **Autor:** Manus AI (CGO)
-**Documentos relacionados:** `05_00_Calendario_01_02_Ago.md`, `Operations/Memories/deep_dive_reels_comparativo.md`, `../Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`, `../Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json`, `../Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json`, `../Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json`, `../Operations/Research/2026-08-19_Decisiones_Reconciliacion_Reels.json`, `../Operations/Research/2026-08-19_Piezas_Sin_Cascada_Revision.json`, `../Operations/Research/2026-08-19_Auditoria_Assets_Drive_Reels.md`, `../Operations/Research/2026-08-19_Meta_Reels_Audit.json`, `../Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json`, `../Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json`, `../Operations/Research/Affiliate_Link_Ledger.csv`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Desamor.md`, `14_00_Fuente_Maestra_y_Ledgers.md`
+**Documentos relacionados:** `05_00_Calendario_01_02_Ago.md`, `Operations/Memories/deep_dive_reels_comparativo.md`, `../Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`, `../Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json`, `../Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json`, `../Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json`, `../Operations/Research/2026-08-19_Decisiones_Reconciliacion_Reels.json`, `../Operations/Research/2026-08-19_Piezas_Sin_Cascada_Revision.json`, `../Operations/Research/2026-08-19_Auditoria_Assets_Drive_Reels.md`, `../Operations/Research/2026-08-19_Meta_Reels_Audit.json`, `../Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json`, `../Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json`, `../Operations/Research/Affiliate_Link_Ledger.csv`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Desamor.md`, `../Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv`, `../Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json`, `../Operations/Production/2026-08-22_Brief_Reel_Dialogue_Radio_003.md`, `14_00_Fuente_Maestra_y_Ledgers.md`
 
 ---
 
@@ -54,9 +54,11 @@ La evidencia por publicación, las relaciones confirmadas y las limitaciones se 
 | **2026-07-29** | Wilfred en el bosque (Humor) | Wilfred | FB | 493 | N/A | 7 (6/1/N/A/N/A) | N/A | **5.0** (Rendimiento moderado en FB) |
 | **2026-07-27** | Mi ascenso a la locura | Universe / Hada | IG | 106 | 91.9% | 2 (2/0/0/0) | 0 | **7.5** (Alto % No Seguidores, pero bajo engagement) |
 | **2026-07-27** | Mi ascenso a la locura | Universe / Hada | FB | 603 | N/A | 23 (20/3/N/A/N/A) | N/A | **6.0** (Rendimiento moderado en FB) |
-| **Mayo 2026** | Fantasma paseando gatos | Fantasma | IG | 124 | 92.2% | 7 (7/0/0/0) | 0 | **8.0** (Alto % No Seguidores, buen potencial) |
-| **Mayo 2026** | Fantasma paseando gatos | Fantasma | FB | 6878 | N/A | 128 (122/6/N/A/N/A) | N/A | **9.5** (Excelente rendimiento en FB) |
+| **2026-07-25** | Fantasma caminando con gatos | Fantasma | IG | 124 | 92.2% | 7 (7/0/0/0) | 0 | **8.0** (Alto % No Seguidores, buen potencial) |
+| **2026-07-25** | Fantasma caminando con gatos | Fantasma | FB | 6878 | N/A | 128 (122/6/N/A/N/A) | N/A | **9.5** (Excelente rendimiento en FB) |
 | **2026-06-14** | No corras por correr | Wilfred | IG | *(No hay datos)* | *(No hay datos)* | *(No hay datos)* | *(No hay datos)* | *(No hay datos)* |
+
+> **Nota de snapshots:** la identidad de `Fantasma caminando con gatos` está documentada como publicación del 25 de julio. La tabla conserva un snapshot histórico de 6,878 views y 128 interacciones; el deep dive conserva otra captura de 6,640 views, 5,750 espectadores únicos, 260 interacciones y 32 shares. No son ventanas idénticas y no deben promediarse.
 
 ---
 
@@ -113,7 +115,11 @@ La primera revisión visual priorizada cubrió los cinco Reels de Facebook con m
 
 El bloque NEXT10 revisó los diez candidatos Tier 1 siguientes. El Reel `1518053389684402` obtuvo match visual exacto con `Fantasma_tranquilo_con_viento_202605241629.mp4`; el match fue integrado al historial y no generó CNT nuevo. Los nueve restantes permanecen sin match dentro de su candidato principal. También se descartó directamente `Wilfred realista haciendo una posion.mp4` como fuente del Reel `1906363553379974`: comparten personaje y estilo, pero muestran escenas diferentes. El bloque TIER2A añadió dos matches exactos de radio/diálogo — `2159954351459805` y `1339119487723234` — y ocho no-match primarios. El historial estructurado queda en v2.1, con seis matches visuales exactos Drive↔Meta y 48 publicaciones históricas todavía pendientes de asset.
 
-La clasificación de los seis matches confirmó cuatro familias operativas: `Character_loop_meme`, `Sequential_visual_reaction`, `Dialogue_radio` y `Character_POV_reveal`. `Dialogue_radio` es la primera candidata para una nueva celda, con dos assets distintos y una tercera pieza necesaria; `Character_loop_meme` se conserva como reuse y no como dos casos independientes porque reutiliza el mismo Fantasma. Las otras dos familias siguen siendo observaciones aisladas. La evaluación de métricas está en `../Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json`; no hay views ni reach disponibles para estos seis registros en el corte actual. El brief Draft para la tercera pieza de diálogo está en `../Operations/Production/2026-08-22_Brief_Reel_Dialogue_Radio_003.md`; no autoriza generación, programación ni publicación.
+La clasificación de los seis matches confirmó cuatro familias operativas: `Character_loop_meme`, `Sequential_visual_reaction`, `Dialogue_radio` y `Character_POV_reveal`. La prioridad anterior de `Dialogue_radio` queda corregida: los dos casos históricos de radio se conservan como **observación secundaria**, no como default creativo, porque Fernando reporta menor atención frente a Reels de movimiento y POV. `Character_loop_meme` se conserva como reuse y no como dos casos independientes porque reutiliza el mismo Fantasma. Las otras dos familias siguen siendo observaciones aisladas.
+
+La evidencia histórica de mayor valor para la siguiente celda es `Fantasma caminando con gatos`: meme reconocible, movimiento físico inmediatamente legible y situación visual absurda. El deep dive conserva un snapshot de 6,640 views, 5,750 espectadores únicos, 260 interacciones, 32 shares y 93.8% de audiencia no seguidora; otra tabla histórica conserva 6,878 views y 128 interacciones. Son snapshots distintos y no deben promediarse. La corrección estratégica registra el caso de Elara en bosque con texto `POV: Eres Piscis` como señal reportada por Fernando, pendiente de ID nativo y reconciliación de asset; todavía no es una fila confirmada del inventario y no debe confundirse con el asset cercano `Elara y Evan en el Bosque.mp4`.
+
+La celda candidata vigente es `HB-REEL-MOTION-POV-MEME-01`: movimiento visible, hook POV o meme reconocible y payoff visual claro. Requiere al menos tres casos comparables para una señal preliminar y cinco para una decisión operativa. La evaluación estructurada está en `../Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json`. El brief de Dialogue_radio se conserva en `../Operations/Production/2026-08-22_Brief_Reel_Dialogue_Radio_003.md` con estado `Archived`; no autoriza generación, programación ni publicación.
 
 ### Estado de Maeve
 

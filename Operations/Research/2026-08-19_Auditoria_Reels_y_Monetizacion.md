@@ -4,7 +4,7 @@ purpose: "Separar el rendimiento histórico de Reels del experimento P0 de imág
 status: "Active"
 created: 2026-08-19
 updated: 2026-08-22
-version: "1.12"
+version: "1.13"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -138,6 +138,8 @@ La extracción de Meta permanece separada: el post de página `1036844829507460_
 [2]: https://www.facebook.com/business/learn/lessons/understand-monetization-eligibility-status "Check and maintain your monetization eligibility status — Meta Blueprint"
 
 [3]: https://creators.facebook.com/tools/facebook-content-monetization/ "Facebook Content Monetization — Facebook for Creators"
+[4]: ../Memories/deep_dive_reels_comparativo.md "Deep Dive: Análisis Comparativo de Reels (Fantasma vs. Ascenso a la Locura)"
+[5]: ../../GrowthOS/07_00_Registro_Maestro_Reels.md "Registro Maestro de Reels — snapshots históricos"
 
 ## Optimización del tracking del Reel con producto nativo — 2026-08-20
 
@@ -247,15 +249,19 @@ Los otros ocho quedaron como `No_Match_In_TIER2A_Primary`. Entre ellos, el Reel 
 
 El historial estructurado queda en v2.1, con seis matches visuales exactos y 48 publicaciones históricas aún pendientes de asset. Ninguno de los dos matches se convierte automáticamente en CNT, experimento o canon; primero deben clasificarse editorialmente y, si procede, relacionarse con una pregunta concreta del Growth OS.
 
-### 10.11 Clasificación operativa y evidencia de rendimiento
+### 10.11 Clasificación operativa y corrección estratégica — 2026-08-22
 
-Los seis Reels con asset Drive↔Meta confirmado se clasificaron en cuatro familias. `Dialogue_radio` tiene dos publicaciones distintas, dos assets fuente distintos y 9/10 interacciones en el snapshot actual de Meta; es la señal más útil para diseñar la siguiente adaptación, pero todavía necesita un tercer caso y una ventana de métricas normalizada. `Character_loop_meme` tiene dos publicaciones con el mismo asset de Fantasma — 3 y 13 interacciones — y mezcla lifetime con snapshot actual; se conserva como señal de reuse, no como dos casos independientes. `Sequential_visual_reaction` y `Character_POV_reveal` tienen un solo caso cada una — 11 y 14 interacciones lifetime, respectivamente — y solo funcionan como referencias creativas hasta reunir al menos tres casos comparables.
+Los seis Reels con asset Drive↔Meta confirmado siguen clasificados en cuatro familias, pero la prioridad operativa anterior queda corregida. `Dialogue_radio` tiene dos publicaciones distintas y dos assets fuente distintos; sus interacciones disponibles son 9 y 10, ambas en snapshots actuales de Meta sin views ni reach. Esto basta para conservarlo como **familia secundaria en observación**, pero no para convertirlo en la siguiente adaptación prioritaria. El hecho de tener dos assets y una señal de interacción no compensa la evidencia editorial aportada por Fernando de que el formato tipo podcast no estaba llamando la atención.
 
-Ninguno de los seis registros tiene views o reach en el inventario actual. Tres tienen interacción lifetime consultada y tres tienen interacción del snapshot actual; por ello la mediana bruta de todos los casos no es un veredicto multiformato. Tampoco hay una hipótesis experimental activa asociada a estos seis registros. La evaluación reproducible se conserva en `Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json` y la taxonomía en `Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv`.
+La señal de mayor valor está en dos rutas de consumo más visuales. Primero, `Fantasma caminando con gatos` conserva evidencia fuerte de descubrimiento: el deep dive de Facebook registra 6,640 views, 5,750 espectadores únicos, 260 interacciones, 32 shares y 93.8% de audiencia no seguidora; otra tabla histórica del registro maestro conserva un snapshot distinto de 6,878 views y 128 interacciones. Como las capturas no son la misma ventana, ambas cifras se conservan como snapshots separados y no se promedian. El inventario además registra el concepto con Facebook, Instagram y YouTube, y enlaza los assets `Ghost_walks_cats_through_forest_202607240113.mp4` y `Ghost_walks_cats_through_forest_202607251436.mp4`. La lectura robusta es la magnitud relativa de la señal, no una cifra única canónica. [4] [5]
 
-La oportunidad operativa prioritaria es construir un tercer Reel de la familia `Dialogue_radio` con personajes y lógica de conversación claramente registrados. La celda debe medirse con métricas nativas de video — views, reach, retención inicial, completación, shares y comentarios — y mantenerse separada de los resultados históricos de imagen y de afiliación. No se debe declarar ganadora la familia hasta completar la celda mínima de tres casos.
+Segundo, Fernando reporta que el Reel de Elara caminando en el bosque, con Wilfred siguiéndola y el texto `POV: Eres Piscis`, tuvo mayor impacto que los Reels tipo podcast. Esta afirmación se incorpora como **evidencia humana de alto valor, pendiente de reconciliación nativa**, porque el inventario actual todavía no contiene el ID exacto ni una fila con ese texto; no se debe sustituir el registro por el asset cercano `Elara y Evan en el Bosque.mp4` sin confirmar personajes y publicación. La revisión visual de ese asset cercano muestra una pareja joven con hoodie café y una mujer con sombrero puntiagudo, no evidencia suficiente para relabelarlo como Wilfred.
 
-## 11. Puente de transferencia Facebook → Reels — 2026-08-21
+La nueva hipótesis candidata es `HB-REEL-MOTION-POV-MEME-01`: los Reels con movimiento físico inmediatamente legible, texto POV o meme reconocible y una situación visual absurda pueden generar más descubrimiento y compartidos que una conversación de estudio que exige escuchar o leer varios turnos. Esta hipótesis todavía no es un veredicto. Debe probarse en una celda separada con al menos tres casos comparables, cinco para una decisión operativa, controlando duración, hook de 0–3 segundos, presencia de texto, tratamiento de caption y plataforma.
+
+Ninguno de los seis registros clasificados cambia sus métricas por esta corrección. La evaluación reproducible de esos seis casos permanece en `Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json` y la taxonomía en `Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv`; la nueva señal reportada se mantiene en una capa de candidato hasta disponer del ID nativo y su ventana de métricas.
+
+## 11. Puente de transferencia Facebook → Reels — 2026-08-21, corregido 2026-08-22
 
 Los experimentos comparables de imágenes sí pueden alimentar el carril de Reels, pero únicamente como **fuente de hipótesis editoriales y de diseño**. Sus interacciones, shares, medianas, horarios y veredictos no se trasladan como resultados de video. La plataforma, el formato y la unidad de consumo son distintos; por eso la transferencia correcta convierte una señal visual o narrativa en una hipótesis nueva, con un `Experiment_ID`, un `Hypothesis_ID` y métricas nativas de video propios.
 
@@ -274,7 +280,7 @@ El flujo recomendado es de **traducción, no de mezcla**. Primero se registra el
 
 El Reel debe recibir antes de producción su propio `Concept_ID`, `Campaign_Label`, `Experiment_ID`, `Hypothesis_ID`, `Primary_Asset_ID`, duración, hook de 0–3 segundos, `Narrative_Structure`, `Caption_Treatment`, `Caption_Function`, `Character_Presence`, `Crosspost_Status` y estado de reuse. Si se convierte un meme histórico en Reel, debe respetarse la regla de reutilización de al menos 30 días desde la última publicación y debe registrarse como adaptación, no como repost idéntico.
 
-La primera traducción recomendada, una vez que existan resultados de los comparables, es `FUT-TRANS-003` hacia una subfamilia de **transformación visual real → Universe**. La segunda es convertir `FUT-MICRO-005` o `FUT-MICRO-006` en una microhistoria audiovisual de tres beats. La tercera es traducir `FUT-ACID-003` a un diálogo ácido de 5–7 segundos. Estas tres rutas no deben entrar automáticamente en `HB-REEL-01`, que actualmente prueba la familia `REAL → UNIVERSE / REACCIÓN`; cada ruta debe tener hipótesis propia o una ampliación aprobada de la celda.
+La prioridad revisada no es producir un tercer podcast. Primero deben diseñarse casos de la celda candidata `HB-REEL-MOTION-POV-MEME-01`: una adaptación meme-to-Reel con movimiento explícito, una escena POV con personaje reconocible y un tercer caso nuevo que mantenga el mismo hook visual pero cambie personaje o situación. `FUT-TRANS-003` puede servir como insumo de diseño para la ruta de transformación real → Universe, siempre conservando las gafas en ambos estados, pero no debe heredar métricas de imágenes. `FUT-MICRO-005/006` siguen siendo insumos posibles para microhistorias audiovisuales y `FUT-ACID-003` para humor ácido breve; cada ruta necesita hipótesis y métricas propias. `Dialogue_radio` queda disponible como carril secundario, no como default creativo.
 
 ### 9.2 Instrumentación mínima del puente
 

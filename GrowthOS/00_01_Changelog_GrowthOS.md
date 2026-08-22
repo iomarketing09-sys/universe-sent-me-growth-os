@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 2.65
+**Versión:** 2.66
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.66.00] — 2026-08-22 (Manus): Corrección estratégica de la prioridad de Reels.** Fernando reportó que los Reels tipo podcast/radio no estaban llamando la atención, mientras que el Reel de Elara caminando en el bosque con Wilfred siguiéndola y texto `POV: Eres Piscis`, y `Fantasma caminando con gatos` —meme animado con movimiento visible y texto conservado— tuvieron mayor impacto. La evidencia documentada de Fantasma incluye snapshots históricos separados de 6,640 y 6,878 views; no se promedian. La prioridad cambia a la celda candidata `HB-REEL-MOTION-POV-MEME-01`, con mínimo n=3 para señal y n=5 para decisión operativa. `Dialogue_radio` queda como observación secundaria y el brief `Operations/Production/2026-08-22_Brief_Reel_Dialogue_Radio_003.md` pasa a `Archived`; no se genera, programa ni publica esa pieza. Se actualizaron `GrowthOS/07_00_Registro_Maestro_Reels.md` v3.3, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` v2.17, `Operations/Research/2026-08-19_Auditoria_Reels_y_Monetizacion.md` v1.13 y `Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json` v1.1. El Reel de Piscis queda pendiente de ID nativo y reconciliación de asset; no se confunde con `Elara y Evan en el Bosque.mp4`.
 
 - **[2.65.00] — 2026-08-22 (Manus): Brief Draft para el tercer Reel Dialogue_radio.** Se creó `Operations/Production/2026-08-22_Brief_Reel_Dialogue_Radio_003.md` con la propuesta `Afirmación → mala interpretación → corrección seca → reacción`, protagonizada por Elara y Wilfred. El brief mantiene separados `Caption_Treatment`, `Caption_Function`, subtítulos, audio, duración, watermark, reuse y afiliación. Propone `HB-REEL-DIALOGUE-01` como hipótesis provisional, pero no la registra como aprendizaje validado. No autoriza generación, CNT, programación ni publicación; cualquier acción operativa requiere aprobación humana separada.
 
