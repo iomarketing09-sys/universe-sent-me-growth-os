@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.31"
+version: "2.32"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -258,11 +258,11 @@ La unificación todavía no está completa. Los siguientes trabajos quedan expl�
 
 ## Estado operativo del lote MEME-CAD-001–005
 
-El 22 de agosto de 2026 Fernando aprobó cinco semillas del target Drive/Memes para adaptación original: `DRIVE-MEME-001`, `DRIVE-MEME-002`, `DRIVE-MEME-003`, `DRIVE-MEME-005` y `DRIVE-MEME-006`. `MEME-CAD-001` y `MEME-CAD-002` conservan sus renders v1. `MEME-CAD-003`, `MEME-CAD-004` y `MEME-CAD-005` pasaron por v1, v2 y v3 después de la revisión humana; las v3 son las candidatas activas: Silvio molesto con piedra-kármica en el escenario tarotista, Wilfred alto/delgado con bastón oficial frente al tablero de discusión y Evan conectado a seis hombres más que interpretan la misma indirecta.
+El 22 de agosto de 2026 Fernando aprobó cinco semillas del target Drive/Memes para adaptación original: `DRIVE-MEME-001`, `DRIVE-MEME-002`, `DRIVE-MEME-003`, `DRIVE-MEME-005` y `DRIVE-MEME-006`. `MEME-CAD-001` y `MEME-CAD-002` conservan sus renders v1. `MEME-CAD-003` y `MEME-CAD-004` mantienen como candidatas activas las v3: Silvio molesto con piedra-kármica en el escenario tarotista y Wilfred alto/delgado con bastón oficial frente al tablero de discusión. `MEME-CAD-005` pasa a v4 para corregir la frase central de la publicación: Evan queda conectado a seis hombres más que interpretan la misma indirecta y todos piensan que es para ellos.
 
-Los estados y los IDs de producción están registrados en `Operations/Research/2026-08-22_Drive_Memes_Seed_Inventory.csv` y documentados en `Operations/Production/2026-08-22_Briefs_Cadence_Memes_Seed_Adaptations.md`. Los tres renders v3 se encuentran en `Produced_v3_Pending_Human_Review` dentro de Drive, carpeta `Produccion_Memes_Cadencia_2026-08-22` (ID `10vtYpPfcRnV3RnlAt9mshLRKv78dOS53`). Las referencias oficiales consultadas proceden de `Elementos/LUGARES`, `Elementos/PROPS` y `Elementos/PERSONAJES`.
+Los estados y los IDs de producción están registrados en `Operations/Research/2026-08-22_Drive_Memes_Seed_Inventory.csv` y documentados en `Operations/Production/2026-08-22_Briefs_Cadence_Memes_Seed_Adaptations.md`. `MEME-CAD-003` y `MEME-CAD-004` siguen en `Produced_v3_Pending_Human_Review`; `MEME-CAD-005` está en `Produced_v4_Pending_Human_Review`, dentro de Drive, carpeta `Produccion_Memes_Cadencia_2026-08-22` (ID `10vtYpPfcRnV3RnlAt9mshLRKv78dOS53`). La nueva pregunta exacta de MEME-CAD-005 es `¿Cómo voy a saber si la indirecta es para mí?`. Las referencias oficiales consultadas proceden de `Elementos/LUGARES`, `Elementos/PROPS` y `Elementos/PERSONAJES`.
 
-La máquina de estados permanece bloqueada antes de calendario: `CNT_Status=Not_Created`, `Calendar_Status=Not_Entered`, `Publication_Status=Not_Authorized`, `Affiliate_Attachment=No` e Instagram separado. Las capturas fuente no son publicables y los renders v1/v2 de 003–005 quedan supersedidos; las v3 no deben tratarse como assets finales hasta que Fernando complete la revisión creativa y el preflight.
+La máquina de estados permanece bloqueada antes de calendario: `CNT_Status=Not_Created`, `Calendar_Status=Not_Entered`, `Publication_Status=Not_Authorized`, `Affiliate_Attachment=No` e Instagram separado. Las capturas fuente no son publicables; los renders v1/v2/v3 previos de MEME-CAD-005 quedan supersedidos, y la v4 no debe tratarse como asset final hasta que Fernando complete la revisión creativa y el preflight.
 
 ### Dependencias de coherencia
 

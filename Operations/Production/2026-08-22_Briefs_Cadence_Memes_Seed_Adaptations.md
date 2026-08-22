@@ -4,7 +4,7 @@ purpose: "Convertir cinco referencias aprobadas de Drive/Memes en conceptos de m
 status: Review
 created: 2026-08-22
 updated: 2026-08-22
-version: "1.3"
+version: "1.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "../Research/2026-08-22_Drive_Memes_Seed_Inventory.csv"
@@ -151,9 +151,13 @@ Wilfred conserva la identidad aprobada de la v2: alto, muy delgado, adulto, con 
 
 La v2 tenía el remate, pero no hacía suficientemente visible la situación. La v3 debe mostrar una sola publicación anónima con `Si tiene 7 me importas` conectada a siete escenas o burbujas de hombres distintos. Evan es uno de los siete; los otros seis son avatares anónimos. Los siete deben pensar o decir `Es para mí`, cada uno convencido de que la misma indirecta fue escrita para él. El chiste es la repetición absurda de la certeza equivocada; el número siete es solo la condición que activa la publicación.
 
+### MEME-CAD-005 v4 — Pregunta que activa la misma indirecta
+
+Fernando propuso sustituir únicamente la frase central de la publicación por `¿Cómo voy a saber si la indirecta es para mí?`. Esta pregunta debe leerse como la duda que desencadena la situación: siete hombres distintos interpretan la misma indirecta como si fuera personal. Se conservan Evan, los otros seis lectores, la etiqueta `la misma indirecta`, el contador `7 reacciones` y los siete pensamientos `Es para mí`. No se modifica el concepto visual ni se agregan personajes oficiales adicionales.
+
 ## Orden de producción
 
-La producción inicial conserva `MEME-CAD-001` y `MEME-CAD-002` como v1. `MEME-CAD-003`, `MEME-CAD-004` y `MEME-CAD-005` pasan por v1, v2 y v3; solo la v3 queda como candidata actual. Todos los renders son referencias de producción y no archivos autorizados para publicar.
+La producción inicial conserva `MEME-CAD-001` y `MEME-CAD-002` como v1. `MEME-CAD-003` y `MEME-CAD-004` tienen como candidatas activas las v3. `MEME-CAD-005` pasa por v1, v2, v3 y v4; solo la v4 queda como candidata actual. Todos los renders son referencias de producción y no archivos autorizados para publicar.
 
 ## Registro de producción v1
 
@@ -183,9 +187,15 @@ Fernando señaló que tres renders v1 habían desplazado la mecánica o la ident
 |---|---|---|---|---|---|
 | `MEME-CAD-003_Silvio_Karma_v3.png` | Silvio molesto, piedra agarrada/levantada como golpe cómico inminente, sin violencia gráfica. | `DRIVE-MEME-003` | `15Wq0GszU7138Ug6zozKlADRR67Yv5el1` | `244ff799cf1598556bdbcd9c7c5893c1c8a97f9a52fb84cf21cca6dd697ad34b` | `Produced_v3_Pending_Human_Review` |
 | `MEME-CAD-004_Wilfred_Tablero_v3.png` | Wilfred v2 preservado; escenario de tablero y estudio recuperado de la v1. | `DRIVE-MEME-006` | `1MeIjKUb7AgnDvF79k8DVBWCRC7Et0W_7` | `81ac10f6147a291c052f60580e5964441099e88a606e025e9874d9f896c5a623` | `Produced_v3_Pending_Human_Review` |
-| `MEME-CAD-005_Evan_Siete_Reacciones_v3.png` | Una publicación, siete hombres conectados y el mismo pensamiento `Es para mí`; el chiste queda visual, no solo textual. | `DRIVE-MEME-005` | `16AHBiwiRxyz4dvTIouWrzt-XSS6wthDi` | `a24f118f417b31ac6c0a9544b99c4be98568a1e78bb680a5189095e94dd306f0` | `Produced_v3_Pending_Human_Review` |
+| `MEME-CAD-005_Evan_Siete_Reacciones_v3.png` | Una publicación, siete hombres conectados y el mismo pensamiento `Es para mí`; el chiste queda visual, no solo textual. | `DRIVE-MEME-005` | `16AHBiwiRxyz4dvTIouWrzt-XSS6wthDi` | `a24f118f417b31ac6c0a9544b99c4be98568a1e78bb680a5189095e94dd306f0` | `Superseded_by_v4_Text_Correction` |
 
-La revisión técnica ligera confirma 2176×1632 px, PNG RGB y archivos íntegros. No se creó CNT, no se modificó el calendario, no se publicó contenido y no se añadió afiliado. Las tres v3 siguen pendientes de revisión humana creativa y preflight.
+## Registro de producción v4
+
+| Asset v4 | Corrección aplicada | Seed fuente | Drive ID | SHA256 local | Estado |
+|---|---|---|---|---|---|
+| `MEME-CAD-005_Evan_Indirecta_Pregunta_v4.png` | Sustitución del texto central por `¿Cómo voy a saber si la indirecta es para mí?`; se conservan los siete lectores, la misma indirecta y los siete pensamientos `Es para mí`. | `DRIVE-MEME-005` | `1THKjjX4CewAjGgZ72jAxpI8DARy-Gzi7` | `3cab6132da0d74be6d67dddf8ddc7f182cc66989a34d691b68fec0d5595d4f91` | `Produced_v4_Pending_Human_Review` |
+
+La revisión técnica ligera confirma 2176×1632 px, PNG RGB y archivo íntegro. `MEME-CAD-005-v4` es la candidata activa; la v3 queda conservada como histórico supersedido por corrección de texto. No se creó CNT, no se modificó el calendario, no se publicó contenido y no se añadió afiliado. La v4 sigue pendiente de revisión humana creativa y preflight.
 
 ## Referencias
 

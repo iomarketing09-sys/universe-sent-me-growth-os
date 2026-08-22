@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 2.91
+**Versión:** 2.92
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.92.00] — 2026-08-22 (Manus): Corrección final de texto para MEME-CAD-005.** Fernando propuso sustituir la frase central `Si tiene 7 me importas` por `¿Cómo voy a saber si la indirecta es para mí?`, porque la pregunta activa mejor la situación cómica. Se preservaron Evan, la publicación anónima, las siete reacciones, los siete lectores y el pensamiento repetido `Es para mí`. La nueva imagen `MEME-CAD-005_Evan_Indirecta_Pregunta_v4.png` quedó en Drive como `Produced_v4_Pending_Human_Review`; la v3 se conserva como histórico supersedido. Se actualizaron el brief a v1.4, el inventario, la Production Queue a v1.8 y la fuente maestra a v2.32. No se creó CNT, no se modificó el calendario, no se publicó contenido ni se añadieron afiliados.
 
 - **[2.91.00] — 2026-08-22 (Manus): Tercera iteración de las adaptaciones MEME-CAD tras revisión humana.** Fernando pidió que `MEME-CAD-003` dejara de parecer una entrega de piedra: la v3 muestra a Silvio molesto, con la piedra levantada como golpe cómico inminente, sin violencia gráfica. `MEME-CAD-004` conserva el Wilfred alto, delgado y con bastón oficial de la v2, pero recupera el estudio con tablero de notas, dibujos y flechas de la v1. `MEME-CAD-005` deja de ser solo un remate: la v3 muestra una sola publicación con `Si tiene 7 me importas` conectada a siete hombres distintos, incluido Evan, todos pensando `Es para mí`. Las tres v3 quedaron en Drive como `Produced_v3_Pending_Human_Review`. Se actualizaron el brief a v1.3, el inventario, la Production Queue a v1.7 y la fuente maestra a v2.31. No se creó CNT, no se modificó el calendario, no se publicó contenido ni se añadieron afiliados.
 
