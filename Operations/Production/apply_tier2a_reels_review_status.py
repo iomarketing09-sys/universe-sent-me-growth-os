@@ -11,7 +11,7 @@ meta_rows={}
 for r in triage: meta_rows.setdefault(r['Meta_Reel_ID'], r)
 exact={
  '2159954351459805':('1hduudZ2UhqzrwFVoxs4gJryxPoBAVU1W','Wilfred_and_Elara_cosmic_radio_202606272110.mp4'),
- '1339119487723234':('1ujbbAL9mAm7OCdHrlXeQ8OeIAodzFbZC','Elara_and_Wilfred_dialogue_animation_202606271715.mp4'),
+ '1339119487723234':('1ujbbAL9mAm7OCdHrlXeQ8OeIAodzFbZC','Elara_and_Wilfred_dialogue_anima…_202606271715.mp4'),
 }
 statuses={rid:('Match_Visual_Exact' if rid in exact else 'No_Match_In_TIER2A_Primary') for rid in meta_rows}
 notes={
@@ -27,7 +27,7 @@ for r in history.get('records',[]):
  if rid not in statuses: continue
  status=statuses[rid]; r['review_batch_id']='TIER2A'; r['reviewed_on']='2026-08-22'; r['asset_review_status']=status; r['reconciliation_review_status']='Reviewed_Exact_Match' if status=='Match_Visual_Exact' else 'Reviewed_No_Match_In_TIER2A_Primary'; r['review_note']=notes[rid]; r['reviewed_drive_candidate_id']=meta_rows[rid]['Drive_File_ID']; r['reviewed_drive_candidate_name']=meta_rows[rid]['Drive_File_Name']; changed.append(rid)
  if status=='Match_Visual_Exact':
-  r['asset_match_status']='Match_Visual_Exact'; r['asset_relationship']='Single_asset_match'; r['drive_file_id'],r['drive_file_name']=exact[rid]; r['asset_review_confidence']='High'
+  r['asset_match_status']='Match_Visual_Exact'; r['asset_relationship']='Single_asset_match'; r['drive_file_id'],r['drive_file_name']=exact[rid]; r['asset_review_confidence']='High'; r['evidence_status']='Confirmado_por_Meta_API_y_revision_visual_Drive'; r['drive_asset_evidence']='Confirmed_or_documented'; r['content_asset_id']=exact[rid][0]; r['reconciliation_decision']='Meta_Publicacion_Confirmada_Asset_Match_Exacto'; r['source']=r.get('source','')+'; Drive exact crossmatch TIER2A'
 history['last_updated']='2026-08-22'; history['version']='2.1'; history['tier2a_review_note']='TIER2A reviewed 10 Tier 2 historical Reels; two exact Drive matches and eight no-match results within primary candidates.'
 history_path.write_text(json.dumps(history,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 
