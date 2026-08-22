@@ -1,7 +1,7 @@
 ---
 title: "CAN 001 — Distribución inicial en TikTok, Instagram Reels y YouTube Shorts"
 purpose: "Definir la publicación de lanzamiento de CAN 001 por plataforma, incluyendo una prueba controlada de audio nativo y el protocolo de medición inicial."
-status: "Active — TikTok published; Instagram Reels and YouTube Shorts pending"
+status: "Active — TikTok and Instagram Reels published; YouTube Shorts pending"
 created: 2026-08-20
 updated: 2026-08-21
 version: "1.1"
@@ -83,6 +83,20 @@ La hora se deriva de la marca temporal del ID canónico de TikTok y debe usarse 
 | T+24 h | 22 Ago 2026, 19:04:20 CDT |
 | T+72 h | 24 Ago 2026, 19:04:20 CDT |
 | T+7 d | 28 Ago 2026, 19:04:20 CDT |
+
+### Registro real — Instagram Reels
+
+| Campo | Dato confirmado |
+|---|---|
+| Estado | Publicado. |
+| Shortcode público | `DcUnEVnsoaV` |
+| Permalink | `https://www.instagram.com/reel/DcUnEVnsoaV/` |
+| Audio nativo | `Do It` — Infraction Music, **80 %** de volumen. |
+| Copy público | `CAN 001 / IT WAS MAKING NOISE FROM THE INSIDE.`<br>`Original fiction. AI-made`<br>`#BamInACan` |
+| Disclosure | Verificado en el caption público. |
+| Hora exacta de publicación | Pendiente de confirmar; la vista pública solo indicó que el Reel tenía aproximadamente cuatro minutos al momento de la lectura. |
+
+El shortcode se conserva como identificador público accesible hasta recuperar el Media ID de Graph. Las ventanas de T+3 h, T+24 h, T+72 h y T+7 d para Instagram se fijarán desde la hora real, no desde la hora planificada.
 
 ## 5. Respuesta y medición
 

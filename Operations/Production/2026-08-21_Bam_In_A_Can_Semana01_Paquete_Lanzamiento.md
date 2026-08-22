@@ -1,7 +1,7 @@
 ---
 title: "Bam in a Can — Semana 01: paquete de lanzamiento"
 purpose: "Organizar el primer bloque de cuatro piezas originales de Bam in a Can antes de publicar, con orden editorial, producción, copy, audio y medición."
-status: "Active — CAN-001 publicado en TikTok; restantes publicaciones pendientes"
+status: "Active — CAN-001 publicado en TikTok e Instagram Reels; restantes publicaciones pendientes"
 created: 2026-08-21
 updated: 2026-08-21
 version: "1.7"
@@ -29,7 +29,7 @@ El calendario operativo se documenta en `2026-08-21_Bam_In_A_Can_Semana01_Calend
 
 | Orden | ID | Pilar | Función de marca | Estado actual |
 |---:|---|---|---|---|
-| 1 | `CAN-001` | CAN FOUND | Manifiesto: algo vivo dentro de la lata. | Publicado en TikTok el 21 Ago a las 19:04 CDT con `Do It` — Infraction Music; Instagram y YouTube pendientes. |
+| 1 | `CAN-001` | CAN FOUND | Manifiesto: algo vivo dentro de la lata. | Publicado en TikTok el 21 Ago a las 19:04 CDT y en Instagram Reels con `Do It` — Infraction Music al 80 %; YouTube pendiente. |
 | 2 | `CAN-002` | CAN FAKE TRAILER | Demostrar que Bam también fabrica productos de archivo que nunca debieron existir. | Corte final validado por Fernando: el recibo permanece vacío, sin números ni códigos de barras legibles. |
 | 3 | `CAN-003` | CAN FOUND | Mostrar que la anomalía puede ocurrir fuera de la lata, manteniendo una sola regla visual imposible. | Montaje cinematográfico de 10 s aprobado para edición: moneda, mecanismos, abolladuras desde dentro y espirales vacíos. |
 | 4 | `CAN-004` | CAN MEME | Abrir una vía más ligera y compartible sin abandonar la estética extraña. | Corte integrado final `Can004.mp4` aprobado para el lote: progresión de miniaturas, cursor, parpadeo y corte negro. |
@@ -60,6 +60,8 @@ El calendario operativo se documenta en `2026-08-21_Bam_In_A_Can_Semana01_Calend
 | Señal a observar | Shares, rewatch/reproducción y comentarios que repitan la situación sin necesitar lore. |
 
 **Registro de salida TikTok (21 Ago):** ID `7676640119222209813`; permalink `https://www.tiktok.com/@bam_in_a_can/video/7676640119222209813`; audio nativo `Do It` — Infraction Music. El copy visible públicamente muestra `CAN 001 / IT WAS MAKING NOISE FROM THE INSIDE. #BamInACan`. La presencia del disclosure obligatorio `Original fiction. AI-made.` no pudo verificarse en la vista pública y debe confirmarse o corregirse antes del siguiente corte.
+
+**Registro de salida Instagram Reels:** shortcode `DcUnEVnsoaV`; permalink `https://www.instagram.com/reel/DcUnEVnsoaV/`; audio nativo `Do It` — Infraction Music al 80 %. El caption público confirma el gancho, `Original fiction. AI-made` y `#BamInACan`. La hora exacta queda pendiente de confirmar antes de fechar sus ventanas de medición.
 
 ### CAN-002 — *The Memory Printer*
 
