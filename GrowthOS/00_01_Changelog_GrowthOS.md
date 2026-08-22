@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 2.71
+**Versión:** 2.72
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.72.00] — 2026-08-21 (Manus): Corte diario de métricas editoriales a las 22:00 local.** Se consultó Meta Graph API v26 con token de Página derivado de `/me/accounts` y se recuperaron 12 publicaciones reales entre el 20 de agosto a las 00:00 y el 21 de agosto a las 22:03 en `America/Matamoros`: 10 imágenes/posts y 2 Reels. Las imágenes acumularon 475 interacciones básicas y los Reels 20; el total editorial fue 495 interacciones. Los líderes fueron los assets `2607794` con 79, `2608038` con 78, `260635` con 63 y `2607838` con 57. Meta no expuso views, reach, retención ni tiempo medio de los Reels en esta extracción, por lo que no se concluye inferioridad del video. Afiliados se mantuvo en capa separada; el último snapshot disponible fue `MANUAL-20260820-7D-AFF07`, sin ventas visibles. Se creó `Operations/Research/2026-08-21_Corte_Diario_Metricas_2200.md`, su JSON estructurado, CSV operativo y copia raw. No se actualizó `ExperimentLog` porque este corte contiene acumulados lifetime, no snapshots exactos de 24/72 horas. No se modificó calendario ni se publicó contenido.
 
 - **[2.71.00] — 2026-08-22 (Manus): Regla de almacenamiento operativo en Drive.** Fernando indicó que todas las imágenes y videos generados deben guardarse en sus carpetas correspondientes de My Drive. Para la celda `EXP-202608-REEL-MOTION-POV-MEME-001` se creó `My Drive/Universe sent me/USM/Reels/08 Agosto/EXP-202608-REEL-MOTION-POV-MEME-001` con ID `1NAyNNUnkNF5QGO7oYDgpw4b5poEPTuhX`. Se cargaron y verificaron las tres referencias oficiales `MPM-001_primary_reference_official_style_v2.png`, `MPM-002_primary_reference_official_style_v2.png`, `MPM-003_primary_reference_official_style_v2.png` y el video `MPM-001_motion_pov_v1.mp4`. El mapeo permanente quedó documentado en `Operations/Production/Generated_Reels/Motion_POV_Meme_001/reference_review_notes.md` v1.2 y en el brief v1.4. GitHub continúa siendo la fuente documental oficial; Drive conserva los binarios operativos. MPM-002 y MPM-003 siguen pendientes por límite diario de video. No se publicó ni se modificó el calendario.
 
