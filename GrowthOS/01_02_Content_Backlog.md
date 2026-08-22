@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-21
-**Versión:** 2.4
+**Versión:** 2.5
 **Autor:** Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_01_Calendario_Semanal.md`
 
@@ -21,6 +21,8 @@
 | CNT-023 | Sección recurrente '¿Qué me llegó?' (Mercado Libre) | Rotativo | Reel recurrente | Episodio 2 con bloqueante histórico; Episodio 3 Wilfred en `HOLD_PENDING_24H_REVIEW` | No |
 | CON-2026-08-24-CraveYou-MaeveFeathers | Crave You — Maeve: espejo, destellos y órbita | Maeve | Reel / Short musical 14–15s | `Review` — estructura de tres capas, score 8.88; Maeve es el único personaje; base de espejo, flashes editoriales no explícitos y cierre de órbita. Requiere audio nativo y storyboard aprobado. | No |
 | CON-2026-08-21-UniverseSenales | Meme rápido — Universe y las señales ignoradas | Universe | Reel cómico con clip del tráiler | `Active` — Fernando programó Facebook e Instagram con copys reales `universe viendote farmear aura` y `farmenado aura`; texto de las ocho señales dentro del clip. Producto nativo solo en Facebook; pendiente confirmar IDs, horarios, permalink y adjunción. TikTok y YouTube en hold. | No |
+| MPM-001 | Paseo forestal — motion POV | Figura de fantasía urbana + Wilfred | Reel vertical de 8s | `Asset_Ready` — MP4 9:16 disponible en Drive; falta definir copy, audio, posición canónica y paquete de programación. | Por revisar |
+| MPM-002 | Fantasma y gatos — invernadero nocturno | Fantasma | Reel vertical candidato | `Reference_Ready` — imagen oficial 9:16 disponible; no generar sin una variación narrativa que lo diferencie de `Fantasma caminando con gatos` ya publicado. | No, con diferenciación editorial obligatoria |
 | CNT-024 | Frase del día — personaje + principio filosófico | Rotativo | Foto / Historia | En producción (5 variantes propuestas) — ver `Operations/Production/CNT024_Frase_del_Dia_Propuesta_Cinco_Variantes.md` | No |
 | CNT-026 | Banco de memes fin de semana 16–17 de agosto (Fantasma, Wilfred, Universe, Pareja Maeve, minimalista) | Multichar | Foto (frase en copy) | Draft — 5 propuestas con score ≥ 8.5 (ver `Operations/Production/CNT026_Memes_FinDeSemana_16_17_Ago.md`); pendiente de aprobación de Fernando y producción de imágenes en Flow | No |
 | CNT-027 | Meme Fantasma "Ghosting eterno" (derivado de Drive Ideas-Memes) | @char_USM_fantasma | Foto (frase en copy) | Draft — propuesta con score 9.10/10 (ver `Operations/Production/CNT027_Meme_Fantasma_Ghosting_DriveIdeas.md`); pendiente de aprobación de Fernando | No |
