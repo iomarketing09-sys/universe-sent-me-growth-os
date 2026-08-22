@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.5"
+version: "2.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -542,3 +542,17 @@ La consulta exclusiva mediante Meta Graph API v26 detectó tres comentarios de u
 | `122151374823072582` | “Que se arme el farmeo” | Remate humorístico; pendiente. |
 
 Se prepararon respuestas específicas, pero no se publicaron porque el usuario solo solicitó revisión. Las menciones automáticas a `@seguidores` y `@fansdestacados` permanecen fuera de la cola cualitativa. Las publicaciones compartidas en grupos no forman parte de este corte API y se revisan únicamente mediante los enlaces directos que proporcione Fernando.
+
+
+## 35. Publicación de cuatro respuestas aprobadas — 22 de agosto de 2026
+
+Fernando confirmó la publicación de cuatro respuestas: tres comentarios de publicaciones propias detectados por Meta Graph API y un comentario de una publicación compartida en grupo revisado con el navegador autenticado.
+
+| Canal | Comentario | Método | Estado verificado |
+|---|---|---|---|
+| Publicación propia | “Sweet Child O’ Mine - Gunsa and Roses.” | Meta Graph API v26 | Respuesta `122151376011072582_1500811042070175`, publicada por Universe Sent Me, padre correcto, `is_hidden=False`. |
+| Publicación propia | “La energía no se crea ni se destruye, solo se transforma. ✍🏻” | Meta Graph API v26 | Respuesta `122151375549072582_4046718525622147`, publicada por Universe Sent Me, padre correcto, `is_hidden=False`. |
+| Publicación propia | “Que se arme el farmeo” | Meta Graph API v26 | Respuesta `122151374823072582_1536180381579985`, publicada por Universe Sent Me, padre correcto, `is_hidden=False`. |
+| Grupo `♠️ᴇɴꜱᴜᴇɴ̃ᴏ ᴏꜱᴄᴜʀᴏ♠️` | Comentario de Sara Gonzalez sobre experiencias difíciles | Navegador autenticado | Facebook mostró la respuesta de Universe Sent Me publicada dentro del hilo aproximadamente un minuto después del envío. La API no permite verificar este objeto de grupo con el token actual. |
+
+La respuesta del grupo fue deliberadamente neutral y empática: “Gracias por compartir tu experiencia. Lamento que hayas atravesado situaciones tan difíciles. Te mando mucha fuerza y deseo que puedas contar con personas de confianza y apoyo profesional cercano.” No valida como hechos las afirmaciones sensibles del comentario ni ofrece diagnóstico. El comentario de grupo no se incorpora al ledger CSV de publicaciones propias porque la API de la Página no lo expone de forma fiable.
