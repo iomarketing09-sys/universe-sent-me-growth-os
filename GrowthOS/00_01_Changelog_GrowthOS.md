@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 2.68
+**Versión:** 2.69
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.69.00] — 2026-08-22 (Manus): Referencias primarias generadas y revisadas para Motion + POV/Meme.** Con la aprobación de Fernando, se generaron `MPM-001_primary_reference.png`, `MPM-002_primary_reference.png` y `MPM-003_primary_reference.png` en `Operations/Production/Generated_Reels/Motion_POV_Meme_001/`. MPM-001 cumple identidad de Elara/Wilfred, audífonos, bosque y ausencia de Evan; MPM-002 presenta a Fantasma y tres gatos en un invernadero nuevo, sin copiar el Reel histórico; MPM-003 fue refinado a `MPM-003_primary_reference_v2.png` porque la primera versión no mostraba las dos gafas redondas de Universe con suficiente claridad. El registro `reference_review_notes.md` conserva la revisión. El siguiente gate es aprobar visualmente las referencias y autorizar la generación de los tres clips; no se ha generado video, creado CNT, modificado calendario ni publicado.
 
 - **[2.68.00] — 2026-08-22 (Manus): Paquete técnico de generación para la celda Motion + POV/Meme.** Tras la aprobación de Fernando de los tres conceptos y captions, se amplió `Operations/Production/2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md` a v1.1. El paquete fija los controles comunes —Facebook primario, 7–10 segundos, hook antes de 0.8 s, movimiento físico legible, comprensión sin audio, `Caption_Treatment=caption_minimo`, `Caption_Function=reforzar_remate`, sin afiliación— y añade prompts detallados para MPM-001 Elara/Wilfred Piscis, MPM-002 Fantasma/gatos y MPM-003 Universe/portal. El caso Piscis queda definido como Elara con audífonos ignorando a Wilfred detrás; el asset `Elara y Evan en el Bosque.mp4` no se usa y permanece pendiente de reasignación al Reel reciente de campamento. Los tres puntajes pasan la rúbrica: 9.00, 9.20 y 9.50/10. El siguiente gate es autorización para generar las referencias primarias; no se ha generado imagen/video, creado CNT, modificado calendario ni publicado.
 
