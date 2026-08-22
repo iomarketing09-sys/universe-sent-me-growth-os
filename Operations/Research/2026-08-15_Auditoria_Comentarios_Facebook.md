@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.1"
+version: "2.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -496,3 +496,16 @@ La consulta más reciente mediante Meta Graph API v26 confirmó que las siete re
 | `122151376011072582` | “Universe Sent Me un playlist para el amor de la vida de uno o para tu próxim@ espos@ ❤️❤️❤️❤️🥹” | Seguimiento pendiente | Responder al nuevo turno, sin duplicar la respuesta previa de la Página al comentario raíz. |
 
 Las menciones automáticas de `@seguidores` y `@fansdestacados` permanecen fuera de la cola cualitativa. El corte se hizo solo por API y no incluyó publicaciones compartidas en grupos; para estas últimas se requieren los enlaces o IDs exactos que proporcione Fernando y una prueba separada de permisos del token.
+
+
+## 31. Resolución del corte API posterior — 22 de agosto de 2026
+
+Fernando aprobó responder los tres pendientes detectados en el corte anterior. Meta Graph API v26 publicó las tres respuestas y una lectura posterior verificó en cada caso autoría de Universe Sent Me, relación con el comentario padre directo, texto exacto e `is_hidden=False`.
+
+| Comentario | Respuesta_Meta_ID | Estado verificado |
+|---|---|---|
+| “La complicidad — Cultura Profética” | `122151376011072582_1030155450021401` | Publicada y visible para la API. |
+| “Arremángala Arrempújala sí.” | `122151376011072582_1747114456872508` | Publicada y visible para la API. |
+| Seguimiento: “Universe Sent Me un playlist para el amor de la vida de uno o para tu próxim@ espos@ ❤️❤️❤️❤️🥹” | `122151376011072582_1904364794302463` | Publicada y visible para la API; el padre directo es la respuesta previa de Universe Sent Me. |
+
+El seguimiento se registró como un turno independiente porque la respuesta a un comentario raíz no cubre automáticamente los nuevos mensajes dentro del hilo. Se corrigió el ledger para no usar el ID de comentario padre como `CNT_ID`; la relación queda respaldada por el endpoint de Meta y por la auditoría. No se usó My Browser.
