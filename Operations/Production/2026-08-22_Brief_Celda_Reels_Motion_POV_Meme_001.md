@@ -4,7 +4,7 @@ purpose: "Diseñar los tres primeros casos controlados para probar si el movimie
 status: Review
 created: 2026-08-22
 updated: 2026-08-22
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "../../GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -162,6 +162,108 @@ Los puntajes fueron ejecutados con la rúbrica vigente de propuestas de Growth O
 Al aprobarse este brief, deberán actualizarse el ledger de publicaciones de Reels, el staging de producción y la evaluación de la hipótesis. Hasta entonces, no se crea CNT, no se modifica el calendario y no se actualiza `ExperimentLog`.
 
 La corrección del caso Piscis y la separación del asset de Evan/Elara quedan enlazadas con el registro maestro, la fuente maestra y la evaluación estructurada. No se requiere crear otro documento conceptual mientras esta celda permanezca en Review.
+
+## 10. Paquete técnico de generación visual
+
+El paquete queda preparado para la siguiente fase, pero **no se ha generado ninguna imagen ni ningún video**. La ejecución deberá seguir el orden: referencia primaria → variaciones de encuadre → clip de video → revisión visual → edición exacta del texto → aprobación de export. La celda se mantiene en `Review` hasta que Fernando autorice la generación de las referencias visuales.
+
+### 10.1 Definiciones globales
+
+| Dimensión | Especificación bloqueada |
+|---|---|
+| Subgénero | Fantasía cotidiana cinematográfica de Universe Sent Me; humor seco y reconocible, no fantasía épica solemne. |
+| Rendering | Ilustración 2D digital pictórica, linework suave, textura de pincel, animación contenida pero con trayectoria física clara. |
+| Color | Bosques y escenas exteriores en azul petróleo, verde profundo y violeta suave; acentos cálidos solo para separar sujetos. |
+| Cámara | Vertical 9:16, composición móvil con primer plano legible y espacio seguro superior para texto añadido en post. |
+| Duración | MPM-001: 8–9 s; MPM-002: 7–8 s; MPM-003: 8–10 s. |
+| Audio | Sin diálogo ni narración necesarios. El chiste debe funcionar sin audio; si se añade ambiente, debe ser neutro y equivalente entre casos. |
+| Texto | El texto exacto se añadirá en edición, no dentro de la imagen de referencia ni mediante texto generado por IA. Esto evita errores de letras y mantiene `Caption_Treatment` controlado. |
+| Logo y watermark | Ninguno durante la generación. Si aparece un watermark no previsto, el export falla revisión. |
+| Afiliación | Excluida. No incluir productos, enlaces, catálogos ni CTA comercial. |
+
+### 10.2 Mapa de referencias de identidad
+
+| Caso | Referencias permitidas | Uso | Exclusiones críticas |
+|---|---|---|---|
+| MPM-001 | Referencias compartidas de Elara y Wilfred; `4 - Wilfred_walking_through_forest_2K_202608060317.jpeg`; `5 - Elara_sitting_by_campfire_2K_202608060321.jpeg` solo para identidad y vestuario. | Fijar rostro, sombrero, barba, túnica, cardigan, cabello y proporciones. | No usar `Elara y Evan en el Bosque.mp4`; no incluir a Evan, camping, tienda, mochilas, fogata compartida ni escena de pareja. |
+| MPM-002 | `8 - Fantasma_levitating_above_woods_2K_202608060333.jpeg` como ancla de Fantasma; `3 - Cat_sitting_in_cozy_space_2K_202608060312.jpeg` para lenguaje felino. | Fijar silueta, tono y tratamiento de los gatos sin copiar el Reel histórico. | No reutilizar `Ghost_walks_cats_through_forest_202607240113.mp4` ni `...202607251436.mp4`; no repetir su recorrido ni encuadre. |
+| MPM-003 | `Operations/Production/Generated_Comparable_Assets/FUT-TRANS-003_HB-008_Transformacion_Universe.png`; `3 - Cat_sitting_in_cozy_space_2K_202608060312.jpeg`. | Fijar gato blanco, gafas redondas y proporción de Universe. | Las gafas deben permanecer visibles; no sustituir a Universe por otro gato ni copiar la transformación de `FUT-TRANS-003`. |
+
+Las referencias de personajes se utilizarán únicamente para identidad. La composición, acción, fondo y recorrido se generarán de nuevo para que ningún caso sea un repost o una duplicación de asset.
+
+### 10.3 Prompt de referencia primaria — MPM-001
+
+```text
+Create a vertical 9:16 primary visual reference for a short comedic fantasy Reel in the Universe Sent Me world. Use a 2D digital painterly illustration style with soft linework, subtle brush texture, cinematic depth, deep green and blue forest light, and readable character silhouettes. Elara is in the foreground, a petite young woman with light wavy hair, a pointed brown witch hat, a brown knitted cardigan, light top and visible white over-ear headphones. She walks calmly through a magical forest and looks straight ahead, completely absorbed in her headphones. Wilfred is behind her in the same frame, an elderly forest guardian gnome with a pointed red hat, long white beard and green tunic; he is visibly trying to speak to her while following her. Elara must not turn around. Keep the upper third and lower center visually clean for later editorial text. No Evan, no camping, no tent, no backpacks, no shared campfire, no props, no readable text, no logos, no watermarks, no labels, no annotations.
+```
+
+### 10.4 Prompt de referencia primaria — MPM-002
+
+```text
+Create a vertical 9:16 primary visual reference for a new Universe Sent Me comedic fantasy Reel. Use a 2D digital painterly illustration style, soft linework, deep violet moonlight and muted teal shadows. Show Fantasma as a mysterious ghostly character walking across a moonlit abandoned greenhouse walkway, with three expressive black cats following in a staggered line. This is a new location and new composition, not a recreation of a forest path. Fantasma is already moving at the front of the group; the cats are visibly closing the distance and subtly pulling the group in different directions. Make the physical walking direction immediately readable and leave clean space for text added later. No exact copied frame from any existing Reel, no readable text, no logos, no watermarks, no labels, no annotations.
+```
+
+### 10.5 Prompt de referencia primaria — MPM-003
+
+```text
+Create a vertical 9:16 primary visual reference for a short comedic fantasy Reel in the Universe Sent Me world. Use a 2D digital painterly style with soft linework, subtle brush texture, cinematic magical realism, cool blue corridor light and a warm violet portal glow. Universe is a white cat with clearly visible round glasses, holding a phone while walking toward a small glowing portal in a cosmic hallway. The cat must remain recognizable and the round glasses must be unobstructed. Show a clean, simple action path from the lower foreground toward the portal, with empty safe space at the top for later editorial text. No other characters, no readable text, no logos, no watermarks, no labels, no annotations.
+```
+
+## 11. Blueprints de video
+
+Los tres clips deben generarse como piezas independientes de una sola toma continua, no como una conversación ni como una sucesión de imágenes estáticas. El texto será compuesto posteriormente con el mismo template editorial; el modelo de video debe priorizar movimiento corporal, dirección y reacción final.
+
+### MPM-001 — Elara ignora a Wilfred
+
+| Tiempo | Acción y encuadre | Texto añadido en edición |
+|---|---|---|
+| 0.0–1.2 s | Plano medio vertical. Elara ya camina en primer término; Wilfred entra detrás y abre la boca para hablar. | `POV: Eres Piscis` |
+| 1.2–5.8 s | Tracking lateral suave. Wilfred gesticula y acelera un poco; Elara mantiene el paso, la mirada al frente y los audífonos visibles. | Sin texto adicional. |
+| 5.8–8.5 s | Wilfred se detiene, mira a cámara con derrota; Elara sale parcialmente del encuadre sin haberse girado. | Mantener el hook; no añadir explicación. |
+
+**Video prompt in English:**
+
+```text
+Vertical 9:16 comedic fantasy scene in the established Universe Sent Me 2D painterly style. Elara is a petite young woman with light wavy hair, a pointed brown witch hat, brown knitted cardigan and clearly visible white over-ear headphones. Wilfred is an elderly forest guardian gnome with a pointed red hat, long white beard and green tunic. Elara starts walking calmly through a deep green magical forest in the foreground while Wilfred follows several steps behind her and visibly tries to talk with mouth movement and hand gestures. The camera performs a gentle lateral tracking movement that keeps both characters readable. Elara never turns her head, never makes eye contact and never reacts; the headphones remain visible throughout. By the final beat Wilfred stops, looks directly at the camera with dry defeat, and Elara continues out of the frame. The forest, both characters, their clothing and the headphones exist continuously from the first frame to the last; no character pops in or disappears. Keep the upper third clean for text to be added in post. No dialogue, no narration, no background music, no readable generated text, no logo, no watermark.
+```
+
+### MPM-002 — Fantasma y los gatos
+
+| Tiempo | Acción y encuadre | Texto añadido en edición |
+|---|---|---|
+| 0.0–1.0 s | Plano frontal corto. Fantasma avanza por la pasarela del invernadero abandonado y los tres gatos aparecen detrás en cadena. | `No lo sigas` sobre Fantasma. |
+| 1.0–5.5 s | Dolly backward. Cada gato cruza una marca del suelo y conserva el mismo tratamiento de texto, creando una cadena visual. | Repetir `No lo sigas` sobre cada gato al entrar. |
+| 5.5–7.8 s | Fantasma intenta detenerse; los gatos siguen avanzando y él termina caminando detrás de ellos. | No añadir explicación. |
+
+**Video prompt in English:**
+
+```text
+Vertical 9:16 comedic fantasy Reel in the established Universe Sent Me 2D painterly style. Fantasma walks forward on a moonlit abandoned greenhouse walkway, with three expressive black cats following in a visible staggered line. Use a gentle dolly backward so the group remains readable from the waist up and the walking direction is unmistakable. Fantasma begins confidently, then slows and tries to stop; the cats continue forward with independent small steps and pull the group toward the far end of the walkway. By the final beat Fantasma gives up and follows the cats, creating a clear visual reversal. Fantasma, all three cats, the greenhouse structure and the moonlit background exist continuously throughout the clip; no extra cats appear and none disappear. Leave the upper and mid-frame areas clean for identical text labels to be added in post above Fantasma and each cat. No readable generated text, no dialogue, no narration, no background music, no logo, no watermark.
+```
+
+### MPM-003 — Universe dijo “solo cinco minutos”
+
+| Tiempo | Acción y encuadre | Texto añadido en edición |
+|---|---|---|
+| 0.0–1.2 s | Plano medio. Universe, gato blanco con gafas redondas visibles, camina con el teléfono hacia el portal. | `POV: Dijiste “solo cinco minutos”` |
+| 1.2–7.0 s | Tracking backward. Universe cruza el umbral; la iluminación pasa suavemente de azul nocturno a amanecer mientras continúa caminando. | Mantener el hook. |
+| 7.0–9.5 s | Sale del portal con la misma expresión; el fondo revela que pasó mucho más tiempo. Las gafas siguen visibles. | Sin explicación adicional. |
+
+**Video prompt in English:**
+
+```text
+Vertical 9:16 comedic magical-realism Reel in the established Universe Sent Me 2D painterly style. Universe is a white cat with clearly visible round glasses and a phone in one paw. Universe walks steadily through a cool blue cosmic hallway toward a small violet glowing portal. The camera tracks backward smoothly while the cat crosses the threshold without stopping; the lighting gradually changes from deep night blue to pale sunrise gold as the background shifts from stars to dawn. Universe keeps the same mildly tired expression and continues walking as if only five minutes passed. In the final beat Universe exits the portal into a dawn-lit corridor, still wearing the same unobstructed round glasses, revealing that much more time has passed. Universe, the phone, the glasses, the portal and the corridor exist continuously; do not hide or replace the glasses and do not add other characters. Keep the upper third clean for text added in post. No readable generated text, no dialogue, no narration, no background music, no logo, no watermark.
+```
+
+## 12. Template de edición y medición
+
+Para no introducir una variable oculta, los tres exports deben usar el mismo margen superior, familia tipográfica, tamaño aproximado, contraste, animación de entrada y duración del hook. En MPM-002 se repetirá literalmente la frase `No lo sigas` sobre Fantasma y cada gato, con el mismo estilo y solo desplazando la posición según el sujeto. El caption externo seguirá siendo `caption_minimo` con función `reforzar_remate`; no se copiará todo el texto sobreimpreso en el caption.
+
+Antes de publicar, cada export debe pasar por cuatro controles: identidad de personajes, trayectoria de movimiento, legibilidad del hook sin audio y ausencia de watermark o producto. Después de publicar, se guardarán snapshots de 24 y 72 horas con la misma definición de views, reach, no seguidores, retención inicial, tiempo medio, completación, shares, comentarios, respuestas y seguidores ganados.
+
+## 13. Gate siguiente
+
+El paquete técnico está listo. La aprobación anterior cubre los tres conceptos y sus captions; el siguiente gate es autorizar la **generación de las tres referencias primarias**. Esa generación no equivale a aprobar los videos finales. Después de revisar las referencias, se generarán los clips, se editará el texto exacto y se presentarán los exports para una revisión visual separada. No se crean CNT, no se asignan slots, no se programa y no se publica hasta una aprobación operativa posterior.
 
 ## Referencias
 
