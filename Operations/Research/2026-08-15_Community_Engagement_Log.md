@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "1.8"
+version: "2.0"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -21,7 +21,7 @@ organization: "Operations/Research"
 
 Este documento define el uso del ledger `2026-08-15_Community_Engagement_Log.csv`. El registro convierte los comentarios en señales de aprendizaje sin transformarlos en un sistema de vigilancia ni en un bot de respuestas. La unidad de registro es un comentario real recuperado desde una publicación propia; cada comentario se identifica por su `Comentario_ID` y solo puede aparecer una vez.
 
-El ledger se creó vacío de forma intencional. Después de extracciones verificables, ahora contiene 39 comentarios reales registrados en el CSV, incluyendo el lote de siete comentarios del 22 de agosto. La auditoría histórica de 67 comentarios de las 20 publicaciones recientes permanece como evidencia agregada y no se reconstruyen sus filas individuales. No se inventan nombres, perfiles, IDs personales, intenciones ni respuestas históricas.
+El ledger se creó vacío de forma intencional. Después de extracciones verificables, ahora contiene 42 comentarios reales registrados en el CSV, incluyendo el lote de siete comentarios del 22 de agosto. La auditoría histórica de 67 comentarios de las 20 publicaciones recientes permanece como evidencia agregada y no se reconstruyen sus filas individuales. No se inventan nombres, perfiles, IDs personales, intenciones ni respuestas históricas.
 
 ## 2. Fuente y privacidad
 
@@ -154,3 +154,18 @@ El lote confirma una regla de integridad: un POST exitoso no basta para declarar
 
 [1]: https://developers.facebook.com/documentation/pages-api/comments-mentions "Meta for Developers — Comments and @mentions"
 [2]: https://developers.facebook.com/docs/graph-api/reference/comment/ "Meta for Developers — Graph API Comment reference"
+
+
+## 15. Revisión posterior del 22 de agosto — nuevos pendientes de la página
+
+Una consulta posterior a la publicación del lote anterior encontró dos comentarios nuevos de audiencia en la publicación `1036844829507460_122151376011072582`. Ambos siguen sin respuesta de Universe Sent Me y quedan pendientes de aprobación humana.
+
+| Comentario_ID | Señal anonimizada | Respuesta sugerida | Estado |
+|---|---|---|---|
+| `122151376011072582_1668606787566268` | Recomendación musical: “La complicidad — Cultura Profética” | `Cultura Profética siempre llega con esa vibra que se siente antes de explicarse. 🎶✨` | `Pendiente_Respuesta` |
+| `122151376011072582_2118843022317675` | Reconocimiento de una canción: “Arremángala, Arrempújala sí.” | `Jajaja, esa sí es de las que ponen el ambiente sin pedir permiso. 😂🎶` | `Pendiente_Respuesta` |
+| `122151376011072582_1641980520754995` | Seguimiento musical con petición implícita de playlist | `Jajaja, ya tenemos el soundtrack del amor de la vida y del próximo capítulo. ❤️🎶` | `Pendiente_Respuesta` |
+
+La misma consulta confirmó que el comentario de “No todas hacen eso? 😅” ya tiene una respuesta de la Página y no debe duplicarse. También apareció un seguimiento nuevo dentro del hilo de la lista musical: “Universe Sent Me un playlist para el amor de la vida de uno o para tu próxim@ espos@ ❤️❤️❤️❤️🥹”. Ese turno sí queda como pendiente independiente, porque la respuesta de la Página fue anterior y no responde al nuevo mensaje. Las menciones automáticas `@fansdestacados` y `@seguidores` permanecen fuera de la cola cualitativa.
+
+Las publicaciones compartidas en grupos no se añaden a este CSV porque la API de la Página no las expone de forma fiable. Sus candidatos y estados se documentan en `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, que registra la limitación de acceso y evita mezclar IDs de hilos de grupo con el ledger de publicaciones propias.

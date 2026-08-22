@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "1.9"
+version: "2.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -467,3 +467,32 @@ Fernando solicitó responder los siete comentarios nuevos detectados el 22 de ag
 | Comentario con enlace musical | 1 | Respuesta publicada y verificada; el comentario original aparecía con `is_hidden=True` y no se desocultó. |
 
 Los siete `Respuesta_Meta_ID` y sus timestamps quedan registrados en `Operations/Research/2026-08-15_Community_Engagement_Log.csv`. No se publicaron duplicados, no se modificó el comentario de Elias Delgado y no se realizó ninguna acción adicional de moderación. El estado `is_hidden=True` del comentario con enlace debe revisarse en una futura sesión de moderación si Fernando desea que también sea visible; la respuesta de la Página no se considera sustituto de desocultar el comentario original.
+
+
+## 29. Revisión de publicaciones compartidas en grupos — 22 de agosto de 2026
+
+Se realizó una búsqueda autenticada de publicaciones que contienen “Universe Sent Me” y se abrieron los hilos que Facebook identificó dentro de grupos. Esta revisión no se incorporó al flujo normal de Meta Graph API porque los comentarios de publicaciones compartidas en grupos no están expuestos de forma fiable por el token de la Página. No se publicó ninguna respuesta durante esta revisión.
+
+| Grupo | Publicación | Señales observadas | Clasificación operativa |
+|---|---|---|---|
+| `En Los Jueguitos` | `Eres genial` | Publicada por Fernando Gdlr; 8 comentarios y 110 compartidos. Se observó una mención automática `@seguidores` y un comentario sustantivo de Melissa Muñoz con una respuesta posterior de Universe Sent Me. | No se identificó un pendiente nuevo en la vista disponible. La mención automática no requiere respuesta. |
+| `Polvo de estrellas` | `yo Aura Fuerte` | Publicación dentro de grupo público; fecha visible 7 de junio de 2026; aproximadamente 143 comentarios y 1,4 mil compartidos. | Hilo de alto volumen que requiere revisión por conversación, no respuesta indiscriminada. |
+
+En `Polvo de estrellas`, los hilos de Adriana Ayala (“Activado”) y MemorableRabbit4910 (“Pues que rico jajaja”) mostraron una respuesta de Universe Sent Me al expandirlos, por lo que no deben duplicarse. El comentario de Hans Drexler sobre que la imagen es totalmente verídica aparece con varias respuestas y debe revisarse por autoría antes de actuar. El hilo de Héctor Jesus Pica (“Ósea si, pero no con cualquiera…”) tiene diez respuestas visibles principalmente entre miembros; no se debe interrumpir sin comprobar si la Página ya participó. Rom Mari y Valery Alderete también tienen conversaciones entre usuarios con respuestas existentes, por lo que requieren la misma comprobación antes de intervenir.
+
+El candidato prioritario es el comentario de Ea Mandala: “IA UTILIZA MUCHA AGUA ENTONCES DONDE QUEDA LA CONCIENCIA”. En la captura disponible no aparece un contador de respuestas. Se clasifica como posible pendiente de alta prioridad, pero no debe recibir una respuesta defensiva ni una afirmación factual improvisada; necesita aprobación humana y una postura clara sobre el impacto ambiental de la IA. El comentario de María Hernandez Zuniga sobre su alma gemela aparece dentro de un hilo con cinco respuestas y también requiere verificación de autoría antes de clasificarlo como pendiente.
+
+La vista estaba ordenada por “Más relevantes” y no por fecha, y Facebook cargó solo una parte del hilo de 143 comentarios. Por tanto, esta revisión identifica candidatos y confirma algunos hilos atendidos, pero no constituye un inventario exhaustivo de los 143 comentarios. La nota de trabajo con la evidencia de navegación se conserva en `facebook_group_posts_review_2026-08-22.md` fuera del repositorio; los hallazgos permanentes de esta sección son la fuente oficial. Para una revisión completa se necesitarían enlaces directos adicionales, la carga íntegra del hilo o acceso de moderación dentro del grupo.
+
+
+## 30. Corte API posterior — comentarios pendientes de la página
+
+La consulta más reciente mediante Meta Graph API v26 confirmó que las siete respuestas publicadas el 22 de agosto siguen asociadas a sus comentarios correctos. También detectó dos comentarios raíz nuevos sin respuesta y un seguimiento nuevo dentro de un hilo ya atendido.
+
+| Publicación | Comentario | Estado | Tratamiento |
+|---|---|---|---|
+| `122151376011072582` | “La complicidad — Cultura Profética” | Pendiente | Proponer una respuesta específica a la identidad musical. |
+| `122151376011072582` | “Arremángala, Arrempújala sí.” | Pendiente | Proponer un remate breve que reconozca la canción y el ambiente. |
+| `122151376011072582` | “Universe Sent Me un playlist para el amor de la vida de uno o para tu próxim@ espos@ ❤️❤️❤️❤️🥹” | Seguimiento pendiente | Responder al nuevo turno, sin duplicar la respuesta previa de la Página al comentario raíz. |
+
+Las menciones automáticas de `@seguidores` y `@fansdestacados` permanecen fuera de la cola cualitativa. El corte se hizo solo por API y no incluyó publicaciones compartidas en grupos; para estas últimas se requieren los enlaces o IDs exactos que proporcione Fernando y una prueba separada de permisos del token.
