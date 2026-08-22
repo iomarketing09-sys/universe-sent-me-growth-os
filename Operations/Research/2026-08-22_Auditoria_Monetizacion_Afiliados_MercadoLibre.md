@@ -4,7 +4,7 @@ purpose: "Evaluar el estado operativo y comercial del piloto de productos afilia
 status: "Review"
 created: 2026-08-22
 updated: 2026-08-22
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/11_00_Estrategia_Monetizacion_MercadoLibre.md"
@@ -153,3 +153,22 @@ El catálogo visual conserva nombres que aparentemente no coinciden con algunos 
 La estrategia de crecimiento debe priorizar ahora: **(1)** reconciliar los 18 enlaces por superficie; **(2)** obtener snapshots comparables; **(3)** repetir el análisis de AFF-07, que tiene la primera señal individual visible; **(4)** proteger al menos un post ganador como control sin producto en la Capa 2; y **(5)** probar hooks y CTA que hagan explícita la acción “toca el producto” sin alterar retroactivamente el contenido que ya demostró rendimiento.
 
 Este addendum actualiza el diagnóstico operativo del 22 de agosto. El análisis histórico de la observación del 19 de agosto se conserva como evidencia de su fecha y no debe interpretarse como el estado actual completo.
+
+
+## Addendum de métricas — corte de Últimos 7 días
+
+El corte visible en la Central de Afiliados, actualizado a las **13:49**, muestra una realidad comercial muy distinta del histórico agregado. Durante los últimos siete días se registraron **3 clics, 0 compradores, 0 órdenes estimadas, 0 productos vendidos, $0 MXN en ventas brutas, $0 MXN en ventas estimadas y $0 MXN de comisión**.
+
+| Fecha | Clics | Resultado |
+|---|---:|---|
+| 18/ago | 2 | 0 unidades, 0% conversión, $0 MXN |
+| 21/ago | 1 | 0 unidades, 0% conversión, $0 MXN |
+| **Total** | **3** | **0 unidades, $0 MXN** |
+
+El desglose por etiqueta muestra un clic en cada una de estas tres etiquetas: `Links de facebook - universesentme`, `usmfb2605400826` y `usmfbuniverse0821`. Ninguna generó ventas dentro del periodo. El registro se incorpora a `Affiliate_Metrics_Snapshots.csv` como evidencia manual y reemplaza cualquier lectura anterior del corte de siete días; no reemplaza el histórico agregado de 4–18 de agosto, que conserva una ventana y una definición diferentes.
+
+## Revisión del diagnóstico
+
+La señal actual debe clasificarse como **tráfico mínimo sin monetización observada**, no como validación comercial. El embudo tiene una fuga antes de la compra: incluso las etiquetas que recibieron clic no produjeron unidades. Con solo tres clics no es posible distinguir si el problema principal está en el producto, el precio, la página de destino, la confianza, la ventana de atribución o el volumen insuficiente.
+
+La prioridad cambia a generar más **clics cualificados** y medirlos con consistencia antes de optimizar conversión. La siguiente prueba debe comparar hooks y CTAs explícitos, mantener un producto por publicación, verificar que el producto sea coherente con la escena y registrar si el clic proviene de Facebook, Instagram u otra superficie. El objetivo inmediato no debe ser declarar ingresos, sino alcanzar una muestra de clics suficiente para diagnosticar.
