@@ -4,12 +4,13 @@
   "status": "Active",
   "created": "2026-08-22",
   "updated": "2026-08-22",
-  "version": "1.2",
+  "version": "1.3",
   "author": "Manus AI",
   "related_documents": [
     "Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv",
     "Operations/Research/2026-08-21_Reels_Publication_Inventory.csv",
     "Operations/Research/2026-08-19_Auditoria_Reels_y_Monetizacion.md",
+    "Operations/Research/2026-08-22_Reels_Metric_Instrumentation_Protocol.md",
     "GrowthOS/07_00_Registro_Maestro_Reels.md"
   ],
   "inventory_scope": {
@@ -138,9 +139,12 @@
       "Hypothesis_ID": "HB-REEL-MOTION-POV-MEME-01",
       "minimum_cases": 3,
       "operational_cases": 5,
-      "required_controls": ["platform", "duration_seconds", "hook_0_3s", "motion_legibility", "on_screen_text", "Caption_Treatment", "Caption_Function", "CTA", "reuse_age_days"],
-      "primary_metrics": ["views", "reach", "non_follower_share", "retention_3s", "avg_watch_time_seconds", "completion_rate", "shares"],
-      "secondary_metrics": ["comments", "replies", "followers_gained"]
+    "required_controls": ["platform", "duration_seconds", "hook_0_3s", "motion_legibility", "on_screen_text", "Caption_Treatment", "Caption_Function", "CTA", "reuse_age_days", "Export_SHA256", "Metric_Source", "Metric_Window_Type", "Video_Metrics_Status"],
+    "primary_metrics": ["views", "reach", "non_follower_share", "retention_3s", "avg_watch_time_seconds", "completion_rate", "shares"],
+    "secondary_metrics": ["comments", "replies", "followers_gained"],
+    "measurement_levels": ["L0_Identidad", "L1_Engagement_Observable", "L2_Discovery", "L3_Video_Retention", "L4_Comparable_Cell"],
+    "default_daily_learning_level": "L1_Engagement_Observable",
+    "exact_24_72h_role": "Optional_contractual_closure_only"
     }
   },
   "records": [

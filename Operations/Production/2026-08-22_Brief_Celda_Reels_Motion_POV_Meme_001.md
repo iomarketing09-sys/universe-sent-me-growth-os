@@ -12,6 +12,7 @@ related_documents:
   - "../Research/2026-08-19_Auditoria_Reels_y_Monetizacion.md"
   - "../Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json"
   - "../Research/2026-08-22_Reels_Confirmed_Classification.csv"
+  - "../Research/2026-08-22_Reels_Metric_Instrumentation_Protocol.md"
   - "2026-08-22_Brief_Reel_Dialogue_Radio_003.md"
 organization: "Operations/Production"
 ---
@@ -64,7 +65,7 @@ La celda debe tener tres casos comparables para una señal preliminar. Cinco cas
 | Watermark | Ausente o registrado explícitamente; no debe variar entre casos. |
 | Afiliación | Excluida. No agregar productos ni enlaces nativos. |
 | Reuse | Caso nuevo o adaptación con edad mínima de 30 días; no repost idéntico. |
-| Ventana | Snapshot de 24 h y 72 h por publicación; registrar hora local, fuente y definición. |
+| Ventana | Reporte diario como fuente operativa; niveles L1/L2/L3 por publicación. Snapshot 24/72 solo como capa contractual opcional. |
 | Métricas primarias | Views, reach, porcentaje de no seguidores, retención inicial, tiempo medio de reproducción, completación y shares. |
 | Métricas secundarias | Comentarios, respuestas y seguidores ganados. Likes se conservan, pero no son criterio principal. |
 
@@ -145,7 +146,7 @@ El caso MPM-001 no depende de encontrar primero el ID histórico de Piscis para 
 
 Fernando debe aprobar por separado: el texto `POV: Eres Piscis`, la identidad visual de Elara y Wilfred, la ausencia de Evan, la estructura del meme de Fantasma, la preservación de las gafas de Universe, los tres captions externos, la duración y la exclusión de afiliación. La aprobación de este brief no autoriza generación automática, programación ni publicación.
 
-Después de generar, cada export pasa por revisión de identidad, legibilidad, movimiento, ausencia de watermark no registrado y comprensión sin audio. Después de publicar, se registran snapshots de 24 h y 72 h. No se declara `WIN` con un solo caso; el mínimo es n=3 y la decisión operativa requiere llegar a n=5.
+Después de generar, cada export pasa por revisión de identidad, legibilidad, movimiento, ausencia de watermark no registrado y comprensión sin audio. Después de publicar, el reporte diario registra primero identidad y engagement básico como `L1_Engagement_Observable`; cuando una fuente autorizada exponga views, reach o retención, se añade `L2_Discovery` o `L3_Video_Retention`. Las ventanas exactas de 24/72 horas son opcionales y solo se usan para un cierre contractual comparable. El protocolo completo está en `Operations/Research/2026-08-22_Reels_Metric_Instrumentation_Protocol.md`. No se declara `WIN` con un solo caso; el mínimo es n=3 y la decisión operativa requiere llegar a n=5.
 
 ## 8. Evaluación de calidad de las propuestas
 

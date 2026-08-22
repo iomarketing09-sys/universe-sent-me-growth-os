@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 2.74
+**Versión:** 2.75
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.75.00] — 2026-08-22 (Manus): Protocolo de instrumentación para HB-REEL-MOTION-POV-MEME-01.** La falta de views, reach y retención en Meta no cancela la celda ni permite escribir ceros. Se creó `Operations/Research/2026-08-22_Reels_Metric_Instrumentation_Protocol.md` con niveles `L0_Identidad`, `L1_Engagement_Observable`, `L2_Discovery`, `L3_Video_Retention` y `L4_Comparable_Cell`. El reporte diario es la base operativa; 24/72 horas quedan como cierre contractual opcional. Cada Reel nuevo debe conservar Page Post ID, Reel ID, permalink, hora real, hash del export, duración, fuente de métricas, tipo de ventana y estado de video. MPM-001, MPM-002 y MPM-003 se medirán primero en L1 y subirán a L2/L3 solo si Meta Business Suite o un conector validado entrega las métricas. Se actualizó el brief de la celda a v1.5 y `Reels_Confirmed_Metric_Assessment.json` a v1.3. No se modificaron calendario, CNT, canon, afiliados ni publicaciones.
 
 - **[2.74.00] — 2026-08-21 (Manus): Desglose diario por familias, personajes, shares y comentarios.** Se creó `Operations/Research/2026-08-21_Analisis_Corte_Diario_Familias_Personajes.md`, junto con JSON y CSV. El corte de 12 publicaciones se clasificó de forma primaria y no canónica: `Relatable_Social` n=3 con 156 interacciones/52 shares; `Difusión_Minimal` n=3 con 148/33; `Ácido_Interpersonal` n=2 con 64/16; y familias de observación única para `Personaje_Marcador`, `Conversación_Relacional`, `Sequential_visual_reaction` y `Character_POV_reveal`. Universe aparece en seis piezas con 256 interacciones/67 shares, pero la señal también atraviesa Ganso y una pieza sin personaje identificado; no se atribuye causalidad al personaje. TAX-02 queda reforzada direccionalmente; HUM-06 queda compatible pero no universal; HUM-02 permanece exploratoria; `HB-REEL-MOTION-POV-MEME-01` no es evaluable por falta de views/reach/retención de video. La observación `OBS-DAILY-20260821-2200` del `ExperimentLog` fue ampliada con estos hallazgos. No se modificaron canon, calendario, publicación ni afiliados.
 
