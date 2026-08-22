@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.4"
+version: "2.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -529,3 +529,16 @@ El comentario, publicado por Sara Gonzalez y visible como reciente, describe an�
 > Gracias por compartir tu experiencia. Lamento que hayas atravesado situaciones tan difíciles. Te mando mucha fuerza y deseo que puedas contar con personas de confianza y apoyo profesional cercano.
 
 El comentario queda como `Pendiente_Aprobacion_Humana`. No se publicó ninguna respuesta ni se modificó el estado del comentario. El texto completo y la evidencia de navegación se conservan en la nota de trabajo `facebook_group_posts_review_2026-08-22.md`; este documento mantiene la clasificación y el criterio permanente.
+
+
+## 34. Nuevo corte API — 22 de agosto de 2026
+
+La consulta exclusiva mediante Meta Graph API v26 detectó tres comentarios de usuarios posteriores al último lote respondido y sin respuesta de Universe Sent Me en el momento del corte:
+
+| Publicación | Comentario | Clasificación |
+|---|---|---|
+| `122151376011072582` | “Sweet Child O’ Mine - Gunsa and Roses.” | Recomendación musical; pendiente. |
+| `122151375549072582` | “La energía no se crea ni se destruye, solo se transforma. ✍🏻” | Reflexión breve; pendiente. |
+| `122151374823072582` | “Que se arme el farmeo” | Remate humorístico; pendiente. |
+
+Se prepararon respuestas específicas, pero no se publicaron porque el usuario solo solicitó revisión. Las menciones automáticas a `@seguidores` y `@fansdestacados` permanecen fuera de la cola cualitativa. Las publicaciones compartidas en grupos no forman parte de este corte API y se revisan únicamente mediante los enlaces directos que proporcione Fernando.

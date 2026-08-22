@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.1"
+version: "2.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -169,3 +169,16 @@ Una consulta posterior a la publicación del lote anterior encontró dos comenta
 La misma consulta confirmó que el comentario de “No todas hacen eso? 😅” ya tenía una respuesta de la Página y no debía duplicarse. El seguimiento dentro del hilo de la lista musical fue tratado como un turno independiente y también recibió respuesta. Las menciones automáticas `@fansdestacados` y `@seguidores` permanecen fuera de la cola cualitativa.
 
 Las publicaciones compartidas en grupos no se añaden a este CSV porque la API de la Página no las expone de forma fiable. Sus candidatos y estados se documentan en `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, que registra la limitación de acceso y evita mezclar IDs de hilos de grupo con el ledger de publicaciones propias.
+
+
+## 16. Nuevo corte API — tres comentarios pendientes del 22 de agosto
+
+La revisión exclusiva mediante Meta Graph API v26 encontró tres comentarios de usuarios posteriores al último lote respondido. Ninguno tenía respuesta de Universe Sent Me al momento del corte; no se publicaron respuestas en esta revisión.
+
+| Comentario_ID | Publicación | Señal anonimizada | Respuesta sugerida | Estado |
+|---|---|---|---|---|
+| `122151376011072582_1064651972727596` | `122151376011072582` | Recomendación de “Sweet Child O’ Mine” | `Sweet Child O’ Mine es de esas canciones que entran con guitarra y salen convertidas en recuerdo. 🎸✨` | `Pendiente_Respuesta` |
+| `122151375549072582_4590382837949041` | `122151375549072582` | Reflexión sobre transformación y energía | `Y a veces también cambia de forma cuando menos lo esperamos. ✨` | `Pendiente_Respuesta` |
+| `122151374823072582_29175971021989551` | `122151374823072582` | Remate humorístico sobre “farmeo” | `¡Que se arme el farmeo entonces! 😂✨` | `Pendiente_Respuesta` |
+
+Las menciones automáticas de `@seguidores` y `@fansdestacados` permanecen fuera de la cola de conversación. El seguimiento anterior sobre la playlist ya fue respondido y no debe duplicarse.
