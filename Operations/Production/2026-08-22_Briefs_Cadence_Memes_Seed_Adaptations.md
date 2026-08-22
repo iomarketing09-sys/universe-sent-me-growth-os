@@ -1,10 +1,10 @@
 ---
 title: "Briefs de adaptación original — cinco semillas Drive/Memes"
-purpose: "Convertir cinco referencias aprobadas de Drive/Memes en conceptos de meme originales de Universe Sent Me, respetando identidad visual, evitando publicación directa de capturas y preparando assets para revisión humana."
+purpose: "Convertir cinco referencias aprobadas de Drive/Memes en conceptos de meme originales de Universe Sent Me, respetando identidad visual, evitando publicación directa de capturas y registrando su producción, aprobación y eventual programación."
 status: Review
 created: 2026-08-22
 updated: 2026-08-22
-version: "1.4"
+version: "1.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "../Research/2026-08-22_Drive_Memes_Seed_Inventory.csv"
@@ -12,6 +12,8 @@ related_documents:
   - "../Research/2026-08-31_Propuesta_Cadencia_5_6_Review.md"
   - "../../GrowthOS/01_04_Production_Queue.md"
   - "../../GrowthOS/00_01_Changelog_GrowthOS.md"
+  - "../Research/2026-08-22_MEME_CAD_Replacements_Execution.json"
+  - "../Research/2026-08-16_Programacion_Facebook_17_30_Agosto.md"
 organization: "Operations/Production"
 ---
 
@@ -157,7 +159,7 @@ Fernando propuso sustituir únicamente la frase central de la publicación por `
 
 ## Orden de producción
 
-La producción inicial conserva `MEME-CAD-001` y `MEME-CAD-002` como v1. `MEME-CAD-003` y `MEME-CAD-004` tienen como candidatas activas las v3. `MEME-CAD-005` pasa por v1, v2, v3 y v4; solo la v4 queda como candidata actual. Todos los renders son referencias de producción y no archivos autorizados para publicar.
+La producción inicial conserva `MEME-CAD-001` y `MEME-CAD-002` como v1. `MEME-CAD-003` y `MEME-CAD-004` tienen como candidatas activas las v3. `MEME-CAD-005` pasa por v1, v2, v3 y v4; solo la v4 queda como candidata actual. Fernando aprobó los cinco assets el 22 de agosto. `MEME-CAD-002`, `MEME-CAD-003` y `MEME-CAD-004` quedaron programados en Facebook mediante reemplazos autorizados; `MEME-CAD-001` y `MEME-CAD-005` permanecen aprobados como assets, pero sin slot adicional autorizado.
 
 ## Registro de producción v1
 
@@ -170,6 +172,20 @@ La aprobación humana del 22 de agosto de 2026 permitió producir las cinco adap
 | `MEME-CAD-003_Elara_Aura_v1.png` | `DRIVE-MEME-003` | Elara | `1gCorbX_0SAZSj9XOjIt4pQtTEt-5KwN_` | `0b2ab7265f49314cc877497e88d6c0617a710828644142dc74163cdb26b4c282` | `Superseded_by_v2_Concept_Correction` |
 | `MEME-CAD-004_Wilfred_Discutir_v1.png` | `DRIVE-MEME-006` | Wilfred | `17teBcGZ9n2Yliv1Bx7ocDSb3pNBOjRkY` | `dca03b92fc519183ed2fd403a3d2dd86965902db7d4e33c49fba27b734ad30c5` | `Superseded_by_v2_Identity_Correction` |
 | `MEME-CAD-005_Evan_Indirecta_v1.png` | `DRIVE-MEME-005` | Evan | `1U_oEdRM_FJPVuEtBGyWr86xhTPCVE9vH` | `79f956019ad0d40bdfa59b95fac88d764fb9d82e1d140659b5be760e5a4e744b` | `Superseded_by_v2_Concept_Correction` |
+
+## Registro de aprobación y programación — 22 de agosto de 2026
+
+Fernando aprobó los cinco assets MEME-CAD y confirmó el reemplazo de tres reuse en Facebook. Los estados operativos quedan separados por alcance:
+
+| Asset | Aprobación | Programación | Meta Post ID | Estado |
+|---|---|---|---|---|
+| `MEME-CAD-001_Universe_Envidia_v1.png` | Aprobado | Sin slot autorizado | — | `Approved_Asset_Pending_Slot` |
+| `MEME-CAD-002_Fantasma_Sobrio_v1.png` | Aprobado | 26 ago, 17:00 `America/Matamoros` | `1036844829507460_122154732501072582` | `Scheduled_Meta_Verified` |
+| `MEME-CAD-003_Silvio_Karma_v3.png` | Aprobado | 27 ago, 17:00 `America/Matamoros` | `1036844829507460_122154732567072582` | `Scheduled_Meta_Verified` |
+| `MEME-CAD-004_Wilfred_Tablero_v3.png` | Aprobado | 24 ago, 16:00 `America/Matamoros` | `1036844829507460_122154732441072582` | `Scheduled_Meta_Verified` |
+| `MEME-CAD-005_Evan_Indirecta_Pregunta_v4.png` | Aprobado | Sin slot autorizado | — | `Approved_Asset_Pending_Slot` |
+
+Las tres programaciones sustituyeron a `260590 - Maeve.png`, `260542 - Universe.png` y `260607 - Universe.png`, respectivamente. Los posts salientes quedaron cancelados y ausentes de `scheduled_posts`; los nuevos están verificados con `is_published=false`. No se creó CNT, no se movió Drive y no se ejecutó Instagram, Reels ni afiliación.
 
 ## Registro de correcciones v2
 

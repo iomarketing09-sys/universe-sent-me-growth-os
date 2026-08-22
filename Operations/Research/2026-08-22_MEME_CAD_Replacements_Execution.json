@@ -1,0 +1,99 @@
+{
+  "title": "Ejecución de reemplazos MEME-CAD en Facebook",
+  "purpose": "Registrar los tres reemplazos autorizados del calendario 17–30 sin confundir programación futura con publicación real.",
+  "status": "Active",
+  "created": "2026-08-22",
+  "updated": "2026-08-22",
+  "version": "1.0",
+  "author": "Manus AI (CGO)",
+  "organization": "Operations/Research",
+  "related_documents": [
+    "2026-08-16_Calendario_Operativo_17_30_Agosto.md",
+    "2026-08-16_Calendario_Operativo_17_30_Agosto.csv",
+    "2026-08-23_Propuesta_Cadencia_23_30_MEME-CAD_Review.md",
+    "2026-08-23_Propuesta_Cadencia_23_30_MEME-CAD_Review.csv",
+    "2026-08-15_Publication_Log.csv",
+    "2026-08-15_ExperimentLog.csv",
+    "../../GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
+  ],
+  "authorization": {
+    "approved_by": "Fernando",
+    "approved_scope": "Approve MEME-CAD-001 through MEME-CAD-005; replace three reuse rows",
+    "not_approved": "Additional slots on 2026-08-28 and 2026-08-29"
+  },
+  "platform": "Facebook",
+  "page_id": "1036844829507460",
+  "timezone": "America/Matamoros",
+  "summary": {
+    "authorized_replacements": 3,
+    "successful_replacements": 3,
+    "additional_slots_touched": 0,
+    "instagram_touched": 0,
+    "reels_touched": 0,
+    "affiliate_touched": 0,
+    "cnt_created": 0,
+    "new_posts_is_published_false": 3,
+    "old_posts_absent_from_scheduled_posts": 3
+  },
+  "replacements": [
+    {
+      "proposal_id": "MEME-CAD-PLAN-001",
+      "date_local": "2026-08-24",
+      "time_local": "16:00",
+      "old_asset": "260607 - Universe.png",
+      "old_meta_post_id": "1036844829507460_122151376941072582",
+      "old_meta_photo_id": "122151376911072582",
+      "old_status": "Deleted_and_absent_from_scheduled_posts",
+      "new_asset_id": "MEME-CAD-004",
+      "new_asset": "MEME-CAD-004_Wilfred_Tablero_v3.png",
+      "drive_id": "1MeIjKUb7AgnDvF79k8DVBWCRC7Et0W_7",
+      "new_meta_photo_id": "122154732411072582",
+      "new_meta_post_id": "1036844829507460_122154732441072582",
+      "permalink": "https://www.facebook.com/122146890051072582/posts/122154732441072582",
+      "new_status": "Scheduled_Meta_Verified",
+      "is_published": false,
+      "drive_moved": false
+    },
+    {
+      "proposal_id": "MEME-CAD-PLAN-002",
+      "date_local": "2026-08-26",
+      "time_local": "17:00",
+      "old_asset": "260590 - Maeve.png",
+      "old_meta_post_id": "1036844829507460_122151378063072582",
+      "old_meta_photo_id": "122151378033072582",
+      "old_status": "Deleted_and_absent_from_scheduled_posts",
+      "new_asset_id": "MEME-CAD-002",
+      "new_asset": "MEME-CAD-002_Fantasma_Sobrio_v1.png",
+      "drive_id": "1YhMuK4W_SeYo4gadhB1bPW06HHk4utMh",
+      "new_meta_photo_id": "122154732477072582",
+      "new_meta_post_id": "1036844829507460_122154732501072582",
+      "permalink": "https://www.facebook.com/122146890051072582/posts/122154732501072582",
+      "new_status": "Scheduled_Meta_Verified",
+      "is_published": false,
+      "drive_moved": false
+    },
+    {
+      "proposal_id": "MEME-CAD-PLAN-003",
+      "date_local": "2026-08-27",
+      "time_local": "17:00",
+      "old_asset": "260542 - Universe.png",
+      "old_meta_post_id": "1036844829507460_122151378573072582",
+      "old_meta_photo_id": "122151378531072582",
+      "old_status": "Deleted_and_absent_from_scheduled_posts",
+      "new_asset_id": "MEME-CAD-003",
+      "new_asset": "MEME-CAD-003_Silvio_Karma_v3.png",
+      "drive_id": "15Wq0GszU7138Ug6zozKlADRR67Yv5el1",
+      "new_meta_photo_id": "122154732543072582",
+      "new_meta_post_id": "1036844829507460_122154732567072582",
+      "permalink": "https://www.facebook.com/122146890051072582/posts/122154732567072582",
+      "new_status": "Scheduled_Meta_Verified",
+      "is_published": false,
+      "drive_moved": false
+    }
+  ],
+  "notes": [
+    "The original Publication_Log rows remain immutable; correction events and new scheduled facts are appended.",
+    "The two approved assets MEME-CAD-001 and MEME-CAD-005 remain outside the calendar because their additional slots were not authorized.",
+    "The three new scheduled posts are not counted as published content and have no 24/72-hour metrics yet."
+  ]
+}

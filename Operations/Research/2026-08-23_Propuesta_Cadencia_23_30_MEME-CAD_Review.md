@@ -1,10 +1,10 @@
 ---
 title: "Propuesta de cadencia 23–30 de agosto — MEME-CAD"
-purpose: "Auditar el calendario activo del 23 al 30 de agosto y proponer cómo incorporar cinco memes producidos sin programar, publicar ni modificar el calendario hasta contar con aprobación humana por fila."
+purpose: "Auditar el calendario activo del 23 al 30 de agosto y registrar la incorporación parcial de cinco memes producidos, distinguiendo tres reemplazos ejecutados de dos slots adicionales aún pendientes de autorización."
 status: Review
 created: 2026-08-22
 updated: 2026-08-22
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "2026-08-16_Calendario_Operativo_17_30_Agosto.md"
@@ -21,9 +21,9 @@ organization: "Operations/Research"
 
 ## Veredicto ejecutivo
 
-El lote completo de cinco memes **sí puede alimentar la siguiente ola del playbook**, pero no debe entrar automáticamente al calendario como si ya estuviera aprobado para publicación. El calendario activo del 23 al 30 ya contiene 42 filas, equivalentes a 5.25 slots diarios. Por lo tanto, no requiere una expansión masiva; solo presenta dos días por debajo de la banda objetivo: el 28 y el 29 tienen cuatro slots cada uno.
+El lote completo de cinco memes **sí puede alimentar la siguiente ola del playbook**, pero no debe entrar automáticamente al calendario como si ya estuviera aprobado para publicación. El calendario activo del 23 al 30 contenía 42 filas, equivalentes a 5.25 slots diarios. Por lo tanto, no requería una expansión masiva; solo presentaba dos días por debajo de la banda objetivo: el 28 y el 29 tenían cuatro slots cada uno.
 
-La propuesta de revisión humana utiliza los cinco assets producidos una sola vez: tres reemplazos de reuse y dos slots adicionales en los días de cuatro piezas. El bloque resultante tendría 44 slots, 5.5 por día, y mantendría Facebook como única plataforma. Esta operación **no se ha ejecutado**.
+La propuesta de revisión humana utilizó los cinco assets producidos una sola vez: tres reemplazos de reuse y dos slots adicionales en los días de cuatro piezas. Fernando aprobó los cinco assets y confirmó únicamente los tres reemplazos. Los tres reemplazos ya fueron ejecutados y verificados en Facebook; los dos slots adicionales permanecen sin programar. El tramo ejecutado conserva 42 slots y mantiene Facebook como única plataforma.
 
 La mezcla no alcanza todavía el objetivo futuro de 65–70% de piezas nuevas: al incorporar los cinco assets al tramo de 44 filas, la proporción estimada sería 24 nuevas y 20 reuse, aproximadamente 54.5% nuevas. Para alcanzar 65% en este mismo bloque harían falta más assets nuevos; no se deben fabricar slots conceptuales ni contar Reels como imágenes.
 
@@ -90,12 +90,24 @@ Antes de cualquier aplicación, cada fila debe pasar los siguientes gates:
 | Reels | Separados; no incluidos |
 | Afiliados | No incluidos |
 | CNT | No creado |
-| Cancelación o programación Meta | No ejecutada |
-| Aprobación humana por fila | Pendiente |
+| Cancelación o programación Meta | 3 reemplazos ejecutados y verificados; 2 slots adicionales sin ejecutar |
+| Aprobación humana por fila | 3 filas `APPROVED_REPLACEMENT`; 2 filas `PENDING_ADDITIONAL_SLOT` |
 
-## Decisión solicitada
+## Registro de ejecución
 
-La aprobación necesaria no es “publicar todo”, sino aprobar o rechazar cada una de las cinco filas del CSV. Si se aprueban, todavía se debe ejecutar un preflight final y confirmar, para las tres sustituciones, qué filas salientes se cancelan. Si no se aprueban los slots adicionales del 28 y 29, esas fechas conservarán cuatro piezas y se registrarán como `Slot_No_Publicado`; no se rellenarán con capturas fuente ni reuse improvisado.
+El 22 de agosto de 2026 Fernando aprobó los cinco assets MEME-CAD y confirmó el reemplazo de las tres filas `MEME-CAD-PLAN-001` a `MEME-CAD-PLAN-003`. Se cancelaron los posts salientes `1036844829507460_122151376941072582`, `1036844829507460_122151378063072582` y `1036844829507460_122151378573072582`; una consulta posterior confirmó que los tres quedaron ausentes de `scheduled_posts`. En sus mismos horarios se programaron y verificaron los nuevos posts, todos con `is_published=false`:
+
+| Fecha/hora local | Asset | Nuevo Meta Post ID | Meta Photo ID | Estado |
+|---|---|---|---|---|
+| 24 ago, 16:00 | `MEME-CAD-004_Wilfred_Tablero_v3.png` | `1036844829507460_122154732441072582` | `122154732411072582` | `Scheduled_Meta_Verified` |
+| 26 ago, 17:00 | `MEME-CAD-002_Fantasma_Sobrio_v1.png` | `1036844829507460_122154732501072582` | `122154732477072582` | `Scheduled_Meta_Verified` |
+| 27 ago, 17:00 | `MEME-CAD-003_Silvio_Karma_v3.png` | `1036844829507460_122154732567072582` | `122154732543072582` | `Scheduled_Meta_Verified` |
+
+Los slots adicionales propuestos para el 28 (`MEME-CAD-001`) y el 29 (`MEME-CAD-005`) no fueron aprobados para ejecución y permanecen como `PENDING_ADDITIONAL_SLOT`. No se modificaron esos días, no se movieron originales en Drive, no se creó CNT, no se ejecutó Instagram, Reels ni afiliación.
+
+## Decisión pendiente
+
+La única decisión que permanece abierta en esta propuesta es si se desea añadir posteriormente `MEME-CAD-001` el 28 de agosto y `MEME-CAD-005` el 29 de agosto. Mientras no exista esa autorización específica, esas fechas conservan sus cuatro piezas actuales y no se rellenarán con capturas fuente ni reuse improvisado.
 
 ## Referencias
 

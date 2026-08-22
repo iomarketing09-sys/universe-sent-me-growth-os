@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.34"
+version: "2.35"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -269,6 +269,12 @@ La máquina de estados permanece bloqueada antes de calendario: `CNT_Status=Not_
 La auditoría del calendario activo encontró 42 filas entre el 23 y el 30 de agosto: 19 `Nueva`, 20 `Reuse_Top` y 3 `Reuse_Reserve`, para un promedio de 5.25 slots diarios. El calendario activo no se modifica. La propuesta documentada en `Operations/Research/2026-08-23_Propuesta_Cadencia_23_30_MEME-CAD_Review.md` y su CSV asociado utiliza los cinco assets MEME-CAD como tres reemplazos de reuse y dos slots adicionales en los días 28 y 29, que actualmente tienen cuatro piezas. El resultado sería una revisión de 44 slots, 24 nuevas y 20 reuse, 5.5 slots diarios y 54.5% de piezas nuevas.
 
 La propuesta es exclusivamente para revisión humana: `Human_Approval=PENDING`, Facebook como única plataforma, Instagram/Reels/afiliados separados, `CNT_Status=Not_Created` y ninguna cancelación o programación ejecutada. Los tres reemplazos requieren identificar y aprobar las filas salientes; los dos slots adicionales requieren aprobación independiente. Si no se aprueban, deben permanecer como `Slot_No_Publicado` y no rellenarse con capturas fuente o reuse improvisado. El análisis también detectó etiquetas de día de semana inconsistentes en el CSV activo; la propuesta usa el día calculado a partir de la fecha sin alterar el archivo activo.
+
+## Ejecución autorizada de reemplazos MEME-CAD — 22 de agosto de 2026
+
+Fernando aprobó los cinco assets MEME-CAD y confirmó el reemplazo de tres reuse en Facebook. Se cancelaron y verificaron ausentes de `scheduled_posts` los posts salientes de `2026-08-24 16:00`, `2026-08-26 17:00` y `2026-08-27 17:00`. En sus mismos horarios se programaron `MEME-CAD-004`, `MEME-CAD-002` y `MEME-CAD-003`; los tres nuevos posts tienen `is_published=false` y Meta confirmó sus horarios. La evidencia permanente está en `Operations/Research/2026-08-22_MEME_CAD_Replacements_Execution.json`, con los IDs de Page Post y Photo.
+
+La máquina de estados queda: `CNT_Status=Not_Created`, `Calendar_Status=Updated_Replacements_Only`, `Publication_Status=Scheduled_Meta_Verified` para los tres reemplazos, `Affiliate_Attachment=No`, Instagram/Reels separados y `Drive_Moved=No`. `MEME-CAD-001` y `MEME-CAD-005` siguen aprobados como assets, pero sus slots adicionales del 28 y 29 permanecen `PENDING_ADDITIONAL_SLOT`; no se programaron.
 
 ### Dependencias de coherencia
 

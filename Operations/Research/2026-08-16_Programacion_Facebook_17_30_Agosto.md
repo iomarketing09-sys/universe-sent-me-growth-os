@@ -4,8 +4,8 @@
 
 **Estado:** Active
 **Fecha de creación:** 2026-08-16
-**Última actualización:** 2026-08-21
-**Versión:** 1.2
+**Última actualización:** 2026-08-22
+**Versión:** 1.3
 **Autor:** Manus AI
 **Documentos relacionados:** `2026-08-16_Calendario_Operativo_17_30_Agosto.csv`, `2026-08-16_Asignacion_Visual_Calendario_17_30_Agosto.csv`, `2026-08-15_Publication_Log.csv`, `2026-08-15_ExperimentLog.csv`, `2026-08-16_Manifiesto_Movimiento_35_Memes_Agosto.csv`, `GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`
 
@@ -58,6 +58,18 @@ Fernando autorizó los tres captions, la cancelación de las tres programaciones
 | `FUT-ACID-003` / `HB-009` | 2026-08-27 16:00, `America/Matamoros` | `1036844829507460_122154023841072582` | `122154023817072582` | `is_published=false`; horario confirmado |
 
 Los tres posts fueron añadidos a `2026-08-15_Publication_Log.csv` y al staging experimental. No se añadieron métricas, no se actualizó `ExperimentLog`, no se creó CNT y no se ejecutó Instagram, reuse ni afiliados.
+
+## Sustituciones MEME-CAD — 22 de agosto de 2026
+
+Fernando aprobó los cinco assets MEME-CAD y confirmó el reemplazo de tres reuse del calendario. Se cancelaron y verificaron como ausentes de `scheduled_posts` las tres publicaciones salientes; después se programaron los nuevos posts en Facebook con el mismo horario local y se verificó `is_published=false`.
+
+| Fecha/hora local | Asset nuevo | Post saliente cancelado | Nuevo Meta Post ID | Nuevo Photo ID | Verificación |
+|---|---|---|---|---|---|
+| 2026-08-24 16:00 | `MEME-CAD-004_Wilfred_Tablero_v3.png` | `1036844829507460_122151376941072582` | `1036844829507460_122154732441072582` | `122154732411072582` | Horario correcto; `is_published=false`; saliente ausente |
+| 2026-08-26 17:00 | `MEME-CAD-002_Fantasma_Sobrio_v1.png` | `1036844829507460_122151378063072582` | `1036844829507460_122154732501072582` | `122154732477072582` | Horario correcto; `is_published=false`; saliente ausente |
+| 2026-08-27 17:00 | `MEME-CAD-003_Silvio_Karma_v3.png` | `1036844829507460_122151378573072582` | `1036844829507460_122154732567072582` | `122154732543072582` | Horario correcto; `is_published=false`; saliente ausente |
+
+Los dos slots adicionales propuestos para el 28 (`MEME-CAD-001`) y el 29 (`MEME-CAD-005`) no fueron programados. Instagram, Reels y afiliados permanecen fuera de esta ejecución. La evidencia append-only completa está en `2026-08-22_MEME_CAD_Replacements_Execution.json`.
 
 ## Próximas acciones
 
