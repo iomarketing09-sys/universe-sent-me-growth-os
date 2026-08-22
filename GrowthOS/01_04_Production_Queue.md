@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-22
-**Versión:** 1.9
+**Versión:** 2.0
 **Autor:** Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_02_Content_Backlog.md`, `../Operations/Production/2026-08-22_Briefs_Cadence_Memes_Seed_Adaptations.md`, `../Operations/Research/2026-08-22_Drive_Memes_Seed_Inventory.csv`
 
@@ -28,15 +28,15 @@
 
 ### Lote MEME-CAD-001–005 — producción desde semillas Drive/Memes
 
-Fernando aprobó el 22 de agosto cinco semillas para adaptación original. `MEME-CAD-001` y `MEME-CAD-005` están aprobados como assets, pero permanecen fuera del calendario porque sus slots adicionales del 28 y 29 no fueron autorizados. `MEME-CAD-002`, `MEME-CAD-003` y `MEME-CAD-004` fueron aprobados para reemplazar tres reuse y quedaron programados y verificados en Facebook después del preflight.
+Fernando aprobó el 22 de agosto cinco semillas para adaptación original y después autorizó aumentar la cadencia del 22 al 30. Los cinco assets están programados y verificados en Facebook: `MEME-CAD-002`, `MEME-CAD-003` y `MEME-CAD-004` reemplazaron tres reuse; `MEME-CAD-001` y `MEME-CAD-005` ocuparon slots adicionales el 28 y 29. Los cuatro nuevos slots se añadieron sin cancelar filas existentes.
 
 | ID_Pieza | Título | Personaje Principal | Formato | Dificultad | Estado Actual | Dependencias / Notas |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| MEME-CAD-001 | Envidia social con Universe | Universe | Imagen meme 4:3 | Baja | **Aprobado como asset — slot adicional pendiente** | Seed `DRIVE-MEME-001`; Drive asset `1UVoc0xR2lrZ-Tz9HCpTorC7VWm3Adiv1`; slot adicional propuesto para 2026-08-28 no autorizado; no se programó ni creó CNT. |
+| MEME-CAD-001 | Envidia social con Universe | Universe | Imagen meme 4:3 | Baja | **Programado en Facebook — Meta verificado** | Seed `DRIVE-MEME-001`; Drive asset `1UVoc0xR2lrZ-Tz9HCpTorC7VWm3Adiv1`; post `1036844829507460_122154733719072582`, photo `122154733695072582`, 2026-08-28 16:00 `America/Matamoros`; slot adicional, sin CNT. |
 | MEME-CAD-002 | Conducta sospechosamente sobria | Fantasma | Imagen meme 4:3 | Baja | **Programado en Facebook — Meta verificado** | Seed `DRIVE-MEME-002`; Drive asset `1YhMuK4W_SeYo4gadhB1bPW06HHk4utMh`; post `1036844829507460_122154732501072582`, photo `122154732477072582`, 2026-08-26 17:00 `America/Matamoros`; reemplazó `260590 - Maeve.png`. |
 | MEME-CAD-003 | Karma con Silvio molesto | Silvio | Imagen meme 4:3 | Baja | **Programado en Facebook — Meta verificado** | Seed `DRIVE-MEME-003`; Drive asset `15Wq0GszU7138Ug6zozKlADRR67Yv5el1`; post `1036844829507460_122154732567072582`, photo `122154732543072582`, 2026-08-27 17:00 `America/Matamoros`; reemplazó `260542 - Universe.png`. |
 | MEME-CAD-004 | Energía reservada para discutir con tablero | Wilfred | Imagen meme 4:3 | Baja | **Programado en Facebook — Meta verificado** | Seed `DRIVE-MEME-006`; Drive asset `1MeIjKUb7AgnDvF79k8DVBWCRC7Et0W_7`; post `1036844829507460_122154732441072582`, photo `122154732411072582`, 2026-08-24 16:00 `America/Matamoros`; reemplazó `260607 - Universe.png`. |
-| MEME-CAD-005 | Siete personas reclamando la misma indirecta | Evan | Imagen meme 4:3 | Baja | **Aprobado como asset — slot adicional pendiente** | Seed `DRIVE-MEME-005`; Drive asset `1THKjjX4CewAjGgZ72jAxpI8DARy-Gzi7`; publicación con `¿Cómo voy a saber si la indirecta es para mí?` conectada a siete hombres, incluido Evan, todos pensando `Es para mí`; slot adicional propuesto para 2026-08-29 no autorizado; no se programó ni creó CNT. |
+| MEME-CAD-005 | Siete personas reclamando la misma indirecta | Evan | Imagen meme 4:3 | Baja | **Programado en Facebook — Meta verificado** | Seed `DRIVE-MEME-005`; Drive asset `1THKjjX4CewAjGgZ72jAxpI8DARy-Gzi7`; post `1036844829507460_122154733797072582`, photo `122154733755072582`, 2026-08-29 16:00 `America/Matamoros`; pregunta `¿Cómo voy a saber si la indirecta es para mí?`; slot adicional, sin CNT. |
 
 ### Ingreso de Drive — 15 de agosto de 2026
 

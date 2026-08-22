@@ -1,0 +1,123 @@
+{
+  "title": "Ejecución de ampliación de cadencia Facebook 22–30 de agosto",
+  "purpose": "Registrar los cuatro slots adicionales autorizados para llevar cada día del tramo 22–30 a 5 o 6 publicaciones, sin confundir programación futura con publicación real.",
+  "status": "Active",
+  "created": "2026-08-22",
+  "updated": "2026-08-22",
+  "version": "1.0",
+  "author": "Manus AI (CGO)",
+  "organization": "Operations/Research",
+  "related_documents": [
+    "2026-08-16_Calendario_Operativo_17_30_Agosto.md",
+    "2026-08-16_Calendario_Operativo_17_30_Agosto.csv",
+    "2026-08-23_Propuesta_Cadencia_23_30_MEME-CAD_Review.md",
+    "2026-08-15_Publication_Log.csv",
+    "2026-08-15_ExperimentLog.csv",
+    "../../GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
+  ],
+  "authorization": {
+    "approved_by": "Fernando",
+    "approved_scope": "Increase Facebook cadence from 2026-08-22 through 2026-08-30 to 5–6 real posts per day",
+    "platform": "Facebook only",
+    "instagram_reels_affiliates": "Not authorized and not touched"
+  },
+  "page": {
+    "id": "1036844829507460",
+    "name": "Universe Sent Me",
+    "timezone": "America/Matamoros"
+  },
+  "summary": {
+    "active_calendar_rows_before": 46,
+    "additional_slots_requested": 4,
+    "additional_slots_scheduled_verified": 4,
+    "active_calendar_rows_after": 50,
+    "daily_counts_after": {
+      "2026-08-22": 5,
+      "2026-08-23": 6,
+      "2026-08-24": 6,
+      "2026-08-25": 6,
+      "2026-08-26": 6,
+      "2026-08-27": 6,
+      "2026-08-28": 5,
+      "2026-08-29": 5,
+      "2026-08-30": 5
+    },
+    "additional_slots_touched": 4,
+    "existing_posts_cancelled": 0,
+    "instagram_touched": 0,
+    "reels_touched": 0,
+    "affiliate_touched": 0,
+    "cnt_created": 0
+  },
+  "slots": [
+    {
+      "slot_id": "CAD-EXTRA-20260822-2200",
+      "date_local": "2026-08-22",
+      "time_local": "22:00",
+      "asset_type": "Reuse_Candidate",
+      "cnt_id": "CNT-083",
+      "asset_ref": "Universe - Existencial 2607828.png",
+      "drive_id": "1Uk62iNYZ4mQQyZFe8ULVLCBcr6NzxdoR",
+      "meta_photo_id": "122154733581072582",
+      "meta_post_id": "1036844829507460_122154733605072582",
+      "permalink": "https://www.facebook.com/122146890051072582/posts/122154733605072582",
+      "is_published": false,
+      "scheduled_local_verified": "2026-08-22 22:00"
+    },
+    {
+      "slot_id": "CAD-EXTRA-20260823-1700",
+      "date_local": "2026-08-23",
+      "time_local": "17:00",
+      "asset_type": "Reuse_Candidate",
+      "cnt_id": "CNT-081",
+      "asset_ref": "Universe - Existencial 2607787.png",
+      "drive_id": "1_GbN_fXvFCIrxfHqRoDMMF505injvLTF",
+      "meta_photo_id": "122154733635072582",
+      "meta_post_id": "1036844829507460_122154733665072582",
+      "permalink": "https://www.facebook.com/122146890051072582/posts/122154733665072582",
+      "is_published": false,
+      "scheduled_local_verified": "2026-08-23 17:00"
+    },
+    {
+      "slot_id": "CAD-EXTRA-20260828-1600",
+      "date_local": "2026-08-28",
+      "time_local": "16:00",
+      "asset_type": "MEME-CAD",
+      "cad_id": "MEME-CAD-001",
+      "asset_ref": "MEME-CAD-001_Universe_Envidia_v1.png",
+      "drive_id": "1UVoc0xR2lrZ-Tz9HCpTorC7VWm3Adiv1",
+      "meta_photo_id": "122154733695072582",
+      "meta_post_id": "1036844829507460_122154733719072582",
+      "permalink": "https://www.facebook.com/122146890051072582/posts/122154733719072582",
+      "is_published": false,
+      "scheduled_local_verified": "2026-08-28 16:00"
+    },
+    {
+      "slot_id": "CAD-EXTRA-20260829-1600",
+      "date_local": "2026-08-29",
+      "time_local": "16:00",
+      "asset_type": "MEME-CAD",
+      "cad_id": "MEME-CAD-005",
+      "asset_ref": "MEME-CAD-005_Evan_Indirecta_Pregunta_v4.png",
+      "drive_id": "1THKjjX4CewAjGgZ72jAxpI8DARy-Gzi7",
+      "meta_photo_id": "122154733755072582",
+      "meta_post_id": "1036844829507460_122154733797072582",
+      "permalink": "https://www.facebook.com/122146890051072582/posts/122154733797072582",
+      "is_published": false,
+      "scheduled_local_verified": "2026-08-29 16:00"
+    }
+  ],
+  "verification": {
+    "scheduled_posts_query": "PASS",
+    "all_four_posts_present": true,
+    "all_four_is_published_false": true,
+    "all_four_local_times_match": true,
+    "target_slots_previously_free": true
+  },
+  "notes": [
+    "The two approved MEME-CAD assets were used in the 28 and 29 additional slots.",
+    "CNT-083 and CNT-081 were reused after confirming exact Drive filenames, source posts, visual context, no duplicate calendar occurrence, and more than 30 days since last publication.",
+    "No existing post was cancelled; this operation added four future posts.",
+    "No metrics are recorded yet because these posts are scheduled, not published."
+  ]
+}

@@ -1,11 +1,11 @@
 # Programación Facebook 17–30 de agosto — Meta Graph API
 
-**Propósito:** Registrar la programación real de los 74 slots aprobados del calendario operativo de Universe Sent Me mediante la Meta Graph API y dejar trazabilidad de los Page Post IDs, Photo IDs, verificaciones, estado de Drive y alcance de Instagram.
+**Propósito:** Registrar la programación real de los 78 slots aprobados del calendario operativo de Universe Sent Me mediante la Meta Graph API y dejar trazabilidad de los Page Post IDs, Photo IDs, verificaciones, estado de Drive y alcance de Instagram.
 
 **Estado:** Active
 **Fecha de creación:** 2026-08-16
 **Última actualización:** 2026-08-22
-**Versión:** 1.3
+**Versión:** 1.4
 **Autor:** Manus AI
 **Documentos relacionados:** `2026-08-16_Calendario_Operativo_17_30_Agosto.csv`, `2026-08-16_Asignacion_Visual_Calendario_17_30_Agosto.csv`, `2026-08-15_Publication_Log.csv`, `2026-08-15_ExperimentLog.csv`, `2026-08-16_Manifiesto_Movimiento_35_Memes_Agosto.csv`, `GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`
 
@@ -13,21 +13,21 @@
 
 ## Resultado ejecutivo
 
-El 16 de agosto de 2026 se programaron **74 publicaciones de Facebook** para el periodo del 17 al 30 de agosto, usando la Página `Universe Sent Me` (`1036844829507460`) y la API Graph v26.0. Meta documenta la programación mediante `published=false` y `scheduled_publish_time` en Pages API [1], el flujo de foto temporal y `temporary=true` en Page Photos [2], y la lectura de posts programados mediante `/scheduled_posts` [3]. Meta devolvió un Page Post ID y un Photo ID para cada slot; las 74 verificaciones posteriores confirmaron el `scheduled_publish_time` esperado, el mensaje correspondiente y `is_published=false`.
+El 16 de agosto de 2026 se programaron **74 publicaciones de Facebook** para el periodo del 17 al 30 de agosto. El 22 de agosto se añadieron **4 slots** para recuperar la cadencia del 22 al 30, usando la Página `Universe Sent Me` (`1036844829507460`) y la API Graph v26.0. Meta documenta la programación mediante `published=false` y `scheduled_publish_time` en Pages API [1], el flujo de foto temporal y `temporary=true` en Page Photos [2], y la lectura de posts programados mediante `/scheduled_posts` [3]. Meta devolvió un Page Post ID y un Photo ID para cada slot; las 78 verificaciones posteriores confirmaron el `scheduled_publish_time` esperado, el mensaje correspondiente y `is_published=false`.
 
 | Control | Resultado |
 |---|---:|
-| Slots programados | **74/74** |
-| Page Post IDs reales | **74/74** |
-| Photo IDs reales | **74/74** |
-| Verificaciones de lectura posteriores | **74/74** |
+| Slots programados | **78/78** |
+| Page Post IDs reales | **78/78** |
+| Photo IDs reales | **78/78** |
+| Verificaciones de lectura posteriores | **78/78** |
 | Errores finales | **0** |
 | Assets excluidos | `260583` — no apareció en el lote |
 | Movimientos en Drive | **0** |
 | Copias creadas en Drive | **0** |
 | Cambios en Instagram | **0** |
 
-La distribución diaria quedó documentada en el calendario maestro: 6 posts el 17, 6 el 18, 6 el 19, 6 el 20, 4 el 21, 4 el 22, 5 el 23, 6 el 24, 6 el 25, 6 el 26, 6 el 27, 4 el 28, 4 el 29 y 5 el 30 de agosto.
+La distribución diaria quedó documentada en el calendario maestro: 6 posts el 17, 6 el 18, 6 el 19, 6 el 20, 4 el 21, 5 el 22, 6 el 23, 6 el 24, 6 el 25, 6 el 26, 6 el 27, 5 el 28, 5 el 29 y 5 el 30 de agosto. En el tramo 22–30 cada día queda dentro de la banda operativa de 5–6 publicaciones.
 
 ## Flujo técnico ejecutado
 
@@ -69,11 +69,22 @@ Fernando aprobó los cinco assets MEME-CAD y confirmó el reemplazo de tres reus
 | 2026-08-26 17:00 | `MEME-CAD-002_Fantasma_Sobrio_v1.png` | `1036844829507460_122151378063072582` | `1036844829507460_122154732501072582` | `122154732477072582` | Horario correcto; `is_published=false`; saliente ausente |
 | 2026-08-27 17:00 | `MEME-CAD-003_Silvio_Karma_v3.png` | `1036844829507460_122151378573072582` | `1036844829507460_122154732567072582` | `122154732543072582` | Horario correcto; `is_published=false`; saliente ausente |
 
-Los dos slots adicionales propuestos para el 28 (`MEME-CAD-001`) y el 29 (`MEME-CAD-005`) no fueron programados. Instagram, Reels y afiliados permanecen fuera de esta ejecución. La evidencia append-only completa está en `2026-08-22_MEME_CAD_Replacements_Execution.json`.
+## Ampliación de cadencia 22–30 — 22 de agosto
+
+Fernando aprobó aumentar la cadencia sin esperar al cierre mensual. Se añadieron cuatro slots sin cancelar filas existentes y Meta los verificó con `is_published=false`:
+
+| Fecha/hora local | Asset | Tipo | Nuevo Meta Post ID | Nuevo Photo ID |
+|---|---|---|---|---|
+| 2026-08-22 22:00 | `Universe - Existencial 2607828.png` / `CNT-083` | Reuse adicional | `1036844829507460_122154733605072582` | `122154733581072582` |
+| 2026-08-23 17:00 | `Universe - Existencial 2607787.png` / `CNT-081` | Reuse adicional | `1036844829507460_122154733665072582` | `122154733635072582` |
+| 2026-08-28 16:00 | `MEME-CAD-001_Universe_Envidia_v1.png` | Nueva adicional | `1036844829507460_122154733719072582` | `122154733695072582` |
+| 2026-08-29 16:00 | `MEME-CAD-005_Evan_Indirecta_Pregunta_v4.png` | Nueva adicional | `1036844829507460_122154733797072582` | `122154733755072582` |
+
+La evidencia append-only completa está en `2026-08-22_Cadence_Expansion_22_30_Execution.json`. Instagram, Reels y afiliados permanecen fuera de esta ejecución.
 
 ## Próximas acciones
 
-Después de que cada post se publique realmente, se debe completar `Fecha_Publicacion_Local` y `Hora_Publicacion_Local` en `Publication_Log.csv`, cambiar `Estado_Publicacion` a `Publicado`, registrar la hora real en `ExperimentLog.csv` y dejar que la extracción 24/72 horas procese únicamente las filas elegibles. El extractor fue actualizado para reconocer observaciones `OBS-FB-17_30-*`; no debe tratar el timestamp programado como una publicación ya realizada.
+Después de que cada post se publique realmente, se debe completar `Fecha_Publicacion_Local` y `Hora_Publicacion_Local` en `Publication_Log.csv`, cambiar `Estado_Publicacion` a `Publicado`, registrar la hora real en `ExperimentLog.csv` y dejar que el reporte diario procese únicamente las filas elegibles. No se debe tratar el timestamp programado como una publicación ya realizada; las métricas de las cuatro adiciones se incorporarán desde el primer reporte diario posterior a su publicación.
 
 ## Referencias externas
 

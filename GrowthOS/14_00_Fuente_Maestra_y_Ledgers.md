@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.35"
+version: "2.37"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -260,25 +260,25 @@ La unificación todavía no está completa. Los siguientes trabajos quedan expl�
 
 El 22 de agosto de 2026 Fernando aprobó cinco semillas del target Drive/Memes para adaptación original: `DRIVE-MEME-001`, `DRIVE-MEME-002`, `DRIVE-MEME-003`, `DRIVE-MEME-005` y `DRIVE-MEME-006`. `MEME-CAD-001` y `MEME-CAD-002` conservan sus renders v1. `MEME-CAD-003` y `MEME-CAD-004` mantienen como candidatas activas las v3: Silvio molesto con piedra-kármica en el escenario tarotista y Wilfred alto/delgado con bastón oficial frente al tablero de discusión. `MEME-CAD-005` pasa a v4 para corregir la frase central de la publicación: Evan queda conectado a seis hombres más que interpretan la misma indirecta y todos piensan que es para ellos.
 
-Los estados y los IDs de producción están registrados en `Operations/Research/2026-08-22_Drive_Memes_Seed_Inventory.csv` y documentados en `Operations/Production/2026-08-22_Briefs_Cadence_Memes_Seed_Adaptations.md`. `MEME-CAD-003` y `MEME-CAD-004` siguen en `Produced_v3_Pending_Human_Review`; `MEME-CAD-005` está en `Produced_v4_Pending_Human_Review`, dentro de Drive, carpeta `Produccion_Memes_Cadencia_2026-08-22` (ID `10vtYpPfcRnV3RnlAt9mshLRKv78dOS53`). La nueva pregunta exacta de MEME-CAD-005 es `¿Cómo voy a saber si la indirecta es para mí?`. Las referencias oficiales consultadas proceden de `Elementos/LUGARES`, `Elementos/PROPS` y `Elementos/PERSONAJES`.
+Los estados y los IDs de producción están registrados en `Operations/Research/2026-08-22_Drive_Memes_Seed_Inventory.csv` y documentados en `Operations/Production/2026-08-22_Briefs_Cadence_Memes_Seed_Adaptations.md`. Los cinco assets están aprobados y viven en Drive, carpeta `Produccion_Memes_Cadencia_2026-08-22` (ID `10vtYpPfcRnV3RnlAt9mshLRKv78dOS53`). `MEME-CAD-003` y `MEME-CAD-004` usan sus v3; `MEME-CAD-005` usa v4 con la pregunta exacta `¿Cómo voy a saber si la indirecta es para mí?`. Las referencias oficiales consultadas proceden de `Elementos/LUGARES`, `Elementos/PROPS` y `Elementos/PERSONAJES`. `MEME-CAD-002`, `MEME-CAD-003` y `MEME-CAD-004` están programados como reemplazos verificados; `MEME-CAD-001` y `MEME-CAD-005` están programados como slots adicionales verificados.
 
-La máquina de estados permanece bloqueada antes de calendario: `CNT_Status=Not_Created`, `Calendar_Status=Not_Entered`, `Publication_Status=Not_Authorized`, `Affiliate_Attachment=No` e Instagram separado. Las capturas fuente no son publicables; los renders v1/v2/v3 previos de MEME-CAD-005 quedan supersedidos, y la v4 no debe tratarse como asset final hasta que Fernando complete la revisión creativa y el preflight.
+La máquina de estados queda: `CNT_Status=Not_Created`, `Calendar_Status=Cadence_Expanded_22_30`, `Publication_Status=Scheduled_Meta_Verified` para los cinco MEME-CAD, `Affiliate_Attachment=No` e Instagram/Reels separados. Las capturas fuente no son publicables; los renders históricos supersedidos se conservan solo para trazabilidad. Los cuatro slots adicionales fueron verificados con `is_published=false`.
 
-## Propuesta de cadencia 23–30 de agosto
+## Ejecución de ampliación de cadencia 22–30 de agosto
 
-La auditoría del calendario activo encontró 42 filas entre el 23 y el 30 de agosto: 19 `Nueva`, 20 `Reuse_Top` y 3 `Reuse_Reserve`, para un promedio de 5.25 slots diarios. El calendario activo no se modifica. La propuesta documentada en `Operations/Research/2026-08-23_Propuesta_Cadencia_23_30_MEME-CAD_Review.md` y su CSV asociado utiliza los cinco assets MEME-CAD como tres reemplazos de reuse y dos slots adicionales en los días 28 y 29, que actualmente tienen cuatro piezas. El resultado sería una revisión de 44 slots, 24 nuevas y 20 reuse, 5.5 slots diarios y 54.5% de piezas nuevas.
+La auditoría y ampliación del calendario encontró 50 filas entre el 22 y el 30 de agosto: 26 `Nueva`, 21 `Reuse_Top` y 3 `Reuse_Reserve`, para un promedio de 5.56 slots diarios. La operación añadió cuatro slots y llevó cada día del tramo a 5 o 6 publicaciones. La evidencia permanente está en `Operations/Research/2026-08-22_Cadence_Expansion_22_30_Execution.json`; los cuatro posts fueron verificados en Meta con `is_published=false`.
 
-La propuesta es exclusivamente para revisión humana: `Human_Approval=PENDING`, Facebook como única plataforma, Instagram/Reels/afiliados separados, `CNT_Status=Not_Created` y ninguna cancelación o programación ejecutada. Los tres reemplazos requieren identificar y aprobar las filas salientes; los dos slots adicionales requieren aprobación independiente. Si no se aprueban, deben permanecer como `Slot_No_Publicado` y no rellenarse con capturas fuente o reuse improvisado. El análisis también detectó etiquetas de día de semana inconsistentes en el CSV activo; la propuesta usa el día calculado a partir de la fecha sin alterar el archivo activo.
+La ampliación fue autorizada por Fernando como decisión operativa de recuperación de cadencia, sin esperar al cierre mensual. Facebook quedó como única plataforma; Instagram, Reels y afiliados permanecen separados. `CNT_Status=Not_Created`, no se cancelaron posts en esta ampliación, no se movieron originales en Drive y los cuatro nuevos slots quedaron `Programada_Meta_Verificado`. El análisis conserva la cautela metodológica: la caída de agosto frente a julio justifica actuar, pero no se registra como causalidad absoluta aislada de mezcla, frecuencia y concentración de outliers.
 
 ## Ejecución autorizada de reemplazos MEME-CAD — 22 de agosto de 2026
 
 Fernando aprobó los cinco assets MEME-CAD y confirmó el reemplazo de tres reuse en Facebook. Se cancelaron y verificaron ausentes de `scheduled_posts` los posts salientes de `2026-08-24 16:00`, `2026-08-26 17:00` y `2026-08-27 17:00`. En sus mismos horarios se programaron `MEME-CAD-004`, `MEME-CAD-002` y `MEME-CAD-003`; los tres nuevos posts tienen `is_published=false` y Meta confirmó sus horarios. La evidencia permanente está en `Operations/Research/2026-08-22_MEME_CAD_Replacements_Execution.json`, con los IDs de Page Post y Photo.
 
-La máquina de estados queda: `CNT_Status=Not_Created`, `Calendar_Status=Updated_Replacements_Only`, `Publication_Status=Scheduled_Meta_Verified` para los tres reemplazos, `Affiliate_Attachment=No`, Instagram/Reels separados y `Drive_Moved=No`. `MEME-CAD-001` y `MEME-CAD-005` siguen aprobados como assets, pero sus slots adicionales del 28 y 29 permanecen `PENDING_ADDITIONAL_SLOT`; no se programaron.
+La máquina de estados queda: `CNT_Status=Not_Created`, `Calendar_Status=Cadence_Expanded_22_30`, `Publication_Status=Scheduled_Meta_Verified` para los tres reemplazos y los cuatro slots adicionales, `Affiliate_Attachment=No`, Instagram/Reels separados y `Drive_Moved=No`. `MEME-CAD-001` y `MEME-CAD-005` quedaron programados en los slots adicionales del 28 y 29.
 
 ### Dependencias de coherencia
 
-El brief de producción y el inventario de semillas son los registros detallados. La propuesta 23–30 en `Operations/Research/2026-08-23_Propuesta_Cadencia_23_30_MEME-CAD_Review.md` y su CSV asociado son una vista de revisión humana; no sustituyen el calendario activo. El changelog y esta fuente maestra son las vistas de sincronización. Si se aprueba una pieza para calendario, deberán actualizarse el inventario, la cola de producción, el CSV de revisión humana y el `ExperimentLog` solo después de que exista un asset final y se emita una autorización explícita por fila.
+El brief de producción y el inventario de semillas son los registros detallados. La propuesta 23–30 en `Operations/Research/2026-08-23_Propuesta_Cadencia_23_30_MEME-CAD_Review.md` y su CSV asociado conservaron la vista de revisión y ahora registran la ejecución parcial/completa del bloque. El calendario activo y `2026-08-22_Cadence_Expansion_22_30_Execution.json` son la evidencia operativa; el changelog y esta fuente maestra son las vistas de sincronización. Las filas fueron actualizadas después de existir assets finales y autorización explícita por fila.
 
 ## 8. Reglas de gobernanza
 

@@ -4,7 +4,7 @@ purpose: "Convertir cinco referencias aprobadas de Drive/Memes en conceptos de m
 status: Review
 created: 2026-08-22
 updated: 2026-08-22
-version: "1.5"
+version: "1.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "../Research/2026-08-22_Drive_Memes_Seed_Inventory.csv"
@@ -159,7 +159,7 @@ Fernando propuso sustituir únicamente la frase central de la publicación por `
 
 ## Orden de producción
 
-La producción inicial conserva `MEME-CAD-001` y `MEME-CAD-002` como v1. `MEME-CAD-003` y `MEME-CAD-004` tienen como candidatas activas las v3. `MEME-CAD-005` pasa por v1, v2, v3 y v4; solo la v4 queda como candidata actual. Fernando aprobó los cinco assets el 22 de agosto. `MEME-CAD-002`, `MEME-CAD-003` y `MEME-CAD-004` quedaron programados en Facebook mediante reemplazos autorizados; `MEME-CAD-001` y `MEME-CAD-005` permanecen aprobados como assets, pero sin slot adicional autorizado.
+La producción inicial conserva `MEME-CAD-001` y `MEME-CAD-002` como v1. `MEME-CAD-003` y `MEME-CAD-004` tienen como candidatas activas las v3. `MEME-CAD-005` pasa por v1, v2, v3 y v4; solo la v4 queda como candidata actual. Fernando aprobó los cinco assets el 22 de agosto y autorizó ampliar la cadencia del 22 al 30. `MEME-CAD-002`, `MEME-CAD-003` y `MEME-CAD-004` quedaron programados en Facebook mediante reemplazos autorizados; `MEME-CAD-001` y `MEME-CAD-005` ocuparon slots adicionales el 28 y 29. Los cinco quedaron programados y verificados, sin crear CNT.
 
 ## Registro de producción v1
 
@@ -179,13 +179,13 @@ Fernando aprobó los cinco assets MEME-CAD y confirmó el reemplazo de tres reus
 
 | Asset | Aprobación | Programación | Meta Post ID | Estado |
 |---|---|---|---|---|
-| `MEME-CAD-001_Universe_Envidia_v1.png` | Aprobado | Sin slot autorizado | — | `Approved_Asset_Pending_Slot` |
+| `MEME-CAD-001_Universe_Envidia_v1.png` | Aprobado | 28 ago, 16:00 `America/Matamoros` | `1036844829507460_122154733719072582` | `Scheduled_Meta_Verified` |
 | `MEME-CAD-002_Fantasma_Sobrio_v1.png` | Aprobado | 26 ago, 17:00 `America/Matamoros` | `1036844829507460_122154732501072582` | `Scheduled_Meta_Verified` |
 | `MEME-CAD-003_Silvio_Karma_v3.png` | Aprobado | 27 ago, 17:00 `America/Matamoros` | `1036844829507460_122154732567072582` | `Scheduled_Meta_Verified` |
 | `MEME-CAD-004_Wilfred_Tablero_v3.png` | Aprobado | 24 ago, 16:00 `America/Matamoros` | `1036844829507460_122154732441072582` | `Scheduled_Meta_Verified` |
-| `MEME-CAD-005_Evan_Indirecta_Pregunta_v4.png` | Aprobado | Sin slot autorizado | — | `Approved_Asset_Pending_Slot` |
+| `MEME-CAD-005_Evan_Indirecta_Pregunta_v4.png` | Aprobado | 29 ago, 16:00 `America/Matamoros` | `1036844829507460_122154733797072582` | `Scheduled_Meta_Verified` |
 
-Las tres programaciones sustituyeron a `260590 - Maeve.png`, `260542 - Universe.png` y `260607 - Universe.png`, respectivamente. Los posts salientes quedaron cancelados y ausentes de `scheduled_posts`; los nuevos están verificados con `is_published=false`. No se creó CNT, no se movió Drive y no se ejecutó Instagram, Reels ni afiliación.
+Las tres programaciones de reemplazo sustituyeron a `260590 - Maeve.png`, `260542 - Universe.png` y `260607 - Universe.png`, respectivamente. Los cuatro slots adicionales no cancelaron filas existentes. Los siete posts nuevos están verificados con `is_published=false`. No se creó CNT, no se movió Drive y no se ejecutó Instagram, Reels ni afiliación.
 
 ## Registro de correcciones v2
 

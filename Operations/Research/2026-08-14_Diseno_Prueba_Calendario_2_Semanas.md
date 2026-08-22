@@ -4,7 +4,7 @@ purpose: "Definir cómo recuperar una cadencia diaria de 5–7 publicaciones sin
 status: Review
 created: 2026-08-14
 updated: 2026-08-22
-version: "1.4"
+version: "1.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/05_03_Calendario_10_16_Agosto.md"
@@ -28,13 +28,13 @@ La meta de esta estructura no es regresar mecánicamente al volumen de julio. Es
 
 > **Principio rector:** cada slot debe tener una función editorial identificable. Si no existe una pieza aprobada que cumpla esa función, el slot se deja vacío y se registra `Slot_No_Publicado`; no se rellena con un asset improvisado.
 
-Este playbook es una propuesta para la siguiente ola. **No modifica por sí mismo el calendario activo 17–30 de agosto**, que conserva sus propios estados, proporciones y aprobaciones. Cualquier cambio de fecha, hora, asset, caption o plataforma requiere una orden y aprobación humana separada.
+Este playbook no modifica por sí mismo el calendario activo 17–30 de agosto. Sin embargo, el 22 de agosto Fernando autorizó explícitamente aplicar la ampliación al tramo 22–30; esa excepción operativa quedó registrada en `Operations/Research/2026-08-22_Cadence_Expansion_22_30_Execution.json`. Para cualquier cambio futuro de fecha, hora, asset, caption o plataforma se mantiene la exigencia de orden y aprobación humana separada.
 
 ### 1.1 Lectura de transición del calendario activo
 
-El calendario activo 17–30 ya contiene 74 slots para 14 días, equivalentes a **5.28 publicaciones asignadas por día**. Por tanto, la recuperación de cadencia no requiere añadir publicaciones retrospectivamente ni forzar un séptimo slot sobre este calendario. Su mezcla actual es de 35 piezas nuevas y 39 reuse, aproximadamente **47.3% nuevas y 52.7% reuse**, por debajo de la mezcla objetivo de la siguiente ola —65%–70% nuevas y 30%–35% reuse—. Esta diferencia se registra como línea base de transición, no como error que deba corregirse cancelando o reprogramando filas ya aprobadas.
+El calendario activo 17–30 partió de 74 slots para 14 días, equivalentes a **5.28 publicaciones asignadas por día**. Tras la autorización del 22 de agosto se añadieron cuatro slots en el tramo 22–30, por lo que el calendario vigente contiene 78 slots. Cada día del 22 al 30 queda en la banda de **5–6 publicaciones**; el tramo suma 50 filas y 5.56 publicaciones promedio por día. La mezcla vigente del calendario es de 40 piezas nuevas, 35 `Reuse_Top` y 3 `Reuse_Reserve`; se registra como transición operativa y no se presenta como cumplimiento automático del objetivo futuro de 65%–70% nuevas.
 
-Durante el calendario activo, la operación correcta es medir cuántas publicaciones reales se ejecutan, documentar slots vacíos y preservar los estados de Facebook, Instagram, Reels y afiliados. La primera aplicación completa del playbook debe comenzar en un bloque posterior con cartera nueva, reserva aprobada y un CSV específico para revisión humana. No se deben añadir piezas solo para alcanzar siete por día ni convertir el reuse existente en contenido nuevo por etiqueta administrativa.
+Durante el calendario activo, la operación correcta es medir cuántas publicaciones reales se ejecutan, documentar slots vacíos y preservar los estados de Facebook, Instagram, Reels y afiliados. La aplicación autorizada del 22–30 es la primera ejecución documentada de esta recuperación: añadió solo assets exactos, mantuvo Facebook como plataforma y dejó un ledger reproducible. En adelante no se deben añadir piezas solo para alcanzar siete por día ni convertir el reuse existente en contenido nuevo por etiqueta administrativa.
 
 ## 2. Objetivos y límites de operación
 
@@ -99,7 +99,7 @@ El séptimo slot de las 17:00 solo se habilita si existe una pieza **nueva, apro
 
 ## 5. Mezcla de contenido y reglas de reuse
 
-La cartera objetivo para la siguiente ola será aproximadamente **65%–70% contenido nuevo y 30%–35% reuse**, con un máximo ordinario de dos reuse por día. Esta proporción corrige la dependencia observada en el calendario activo de 17–30, que conserva 35 piezas nuevas y 39 reuse, sin reescribir ese calendario. [2] La transición se considera correcta cuando el nuevo bloque alcance al menos cinco publicaciones reales por día y mantenga esta mezcla sin rellenar huecos con reuse no validado.
+La cartera objetivo de los próximos bloques sigue siendo aproximadamente **65%–70% contenido nuevo y 30%–35% reuse**, con un máximo ordinario de dos reuse por día. La aplicación 22–30 priorizó recuperar el piso de volumen con assets reales: el tramo quedó en 26 filas `Nueva`, 21 `Reuse_Top` y 3 `Reuse_Reserve`, sin rellenar huecos con reuse no validado. La transición se considera correcta en su primera dimensión cuando cada día alcanza al menos cinco publicaciones reales; la mezcla objetivo se optimizará en los siguientes bloques con más producción nueva.
 
 | Banda diaria | Nuevas | Reuse permitido | Exploratorio | Regla |
 |---|---:|---:|---:|---|
@@ -203,13 +203,13 @@ Como regla de continuidad, una familia puede recibir más slots solo si tiene al
 
 No se debe publicar siete piezas solo para alcanzar una cifra, colocar reuse al final del mes por comodidad, asignar personajes por filename, cambiar captions después de ver resultados, mezclar imágenes con Reels, sumar afiliados al engagement editorial, rellenar huecos con assets no aprobados, ni convertir el rendimiento de un outlier en canon.
 
-Tampoco se debe modificar el calendario activo, cancelar programaciones, mover assets en Drive o publicar en Facebook/Instagram solo porque este playbook recomiende una banda de frecuencia. Esas son acciones operativas separadas y requieren aprobación humana explícita.
+Tampoco se debe modificar el calendario activo, cancelar programaciones, mover assets en Drive o publicar en Facebook/Instagram solo porque este playbook recomiende una banda de frecuencia. Esas son acciones operativas separadas y requieren aprobación humana explícita. En la aplicación del 22 de agosto sí existió esa autorización: se añadieron cuatro slots sin cancelar filas, mientras que los tres reemplazos MEME-CAD se ejecutaron bajo una autorización específica separada.
 
 ## 12. Gate antes de aplicar
 
-Antes de aplicar esta matriz a un calendario nuevo, Fernando debe confirmar tres cosas: que existe capacidad para producir al menos cinco piezas aprobadas por día; que la reserva de assets exactos está disponible sin depender de reuse improvisado; y que acepta mantener Reels, Instagram y afiliados fuera del denominador principal de imágenes.
+Antes de aplicar esta matriz a un calendario nuevo, Fernando debe confirmar tres cosas: que existe capacidad para producir al menos cinco piezas aprobadas por día; que la reserva de assets exactos está disponible sin depender de reuse improvisado; y que acepta mantener Reels, Instagram y afiliados fuera del denominador principal de imágenes. Para la aplicación 22–30, Fernando confirmó expresamente la ampliación, y el preflight verificó los cuatro assets adicionales y sus horarios.
 
-Después de la aprobación, se prepara un CSV de revisión humana con una fila por slot. Solo tras la aprobación del CSV se puede programar o publicar. El calendario activo 17–30 no se sobrescribe; cualquier transición debe quedar en un documento y un ledger nuevos o en una versión de trabajo claramente enlazada.
+Después de la aprobación, se prepara un CSV de revisión humana con una fila por slot. Solo tras la aprobación del CSV o una autorización equivalente, explícita y acotada por alcance, se puede programar o publicar. La aplicación 22–30 quedó en un documento y un ledger nuevos, enlazados desde el calendario activo; no se sobrescribieron las filas existentes y los cuatro slots se añadieron como registros verificables.
 
 ## Referencias
 
