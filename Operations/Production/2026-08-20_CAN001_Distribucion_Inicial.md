@@ -4,7 +4,7 @@ purpose: "Definir la publicación de lanzamiento de CAN 001 por plataforma, incl
 status: "Active — TikTok and Instagram Reels published; YouTube Shorts pending"
 created: 2026-08-20
 updated: 2026-08-21
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_CAN001_It_Was_Making_Noise_Production_Package.md"
@@ -94,9 +94,16 @@ La hora se deriva de la marca temporal del ID canónico de TikTok y debe usarse 
 | Audio nativo | `Do It` — Infraction Music, **80 %** de volumen. |
 | Copy público | `CAN 001 / IT WAS MAKING NOISE FROM THE INSIDE.`<br>`Original fiction. AI-made`<br>`#BamInACan` |
 | Disclosure | Verificado en el caption público. |
-| Hora exacta de publicación | Pendiente de confirmar; la vista pública solo indicó que el Reel tenía aproximadamente cuatro minutos al momento de la lectura. |
+| Hora exacta de publicación | 21 Ago 2026, 19:20:00 CDT; declarada por Fernando. |
 
-El shortcode se conserva como identificador público accesible hasta recuperar el Media ID de Graph. Las ventanas de T+3 h, T+24 h, T+72 h y T+7 d para Instagram se fijarán desde la hora real, no desde la hora planificada.
+El shortcode se conserva como identificador público accesible hasta recuperar el Media ID de Graph. Las ventanas de medición se fijan desde el T0 declarado por Fernando, no desde una hora inferida de la vista pública.
+
+| Hito | Ventana exacta de CAN-001 Instagram Reels |
+|---|---|
+| T+3 h | 21 Ago 2026, 22:20:00 CDT |
+| T+24 h | 22 Ago 2026, 19:20:00 CDT |
+| T+72 h | 24 Ago 2026, 19:20:00 CDT |
+| T+7 d | 28 Ago 2026, 19:20:00 CDT |
 
 ## 5. Respuesta y medición
 
