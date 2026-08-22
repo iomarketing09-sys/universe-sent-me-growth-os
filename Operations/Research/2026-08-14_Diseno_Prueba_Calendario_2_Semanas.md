@@ -4,7 +4,7 @@ purpose: "Definir cómo recuperar una cadencia diaria de 5–7 publicaciones sin
 status: Review
 created: 2026-08-14
 updated: 2026-08-22
-version: "1.3"
+version: "1.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/05_03_Calendario_10_16_Agosto.md"
@@ -29,6 +29,12 @@ La meta de esta estructura no es regresar mecánicamente al volumen de julio. Es
 > **Principio rector:** cada slot debe tener una función editorial identificable. Si no existe una pieza aprobada que cumpla esa función, el slot se deja vacío y se registra `Slot_No_Publicado`; no se rellena con un asset improvisado.
 
 Este playbook es una propuesta para la siguiente ola. **No modifica por sí mismo el calendario activo 17–30 de agosto**, que conserva sus propios estados, proporciones y aprobaciones. Cualquier cambio de fecha, hora, asset, caption o plataforma requiere una orden y aprobación humana separada.
+
+### 1.1 Lectura de transición del calendario activo
+
+El calendario activo 17–30 ya contiene 74 slots para 14 días, equivalentes a **5.28 publicaciones asignadas por día**. Por tanto, la recuperación de cadencia no requiere añadir publicaciones retrospectivamente ni forzar un séptimo slot sobre este calendario. Su mezcla actual es de 35 piezas nuevas y 39 reuse, aproximadamente **47.3% nuevas y 52.7% reuse**, por debajo de la mezcla objetivo de la siguiente ola —65%–70% nuevas y 30%–35% reuse—. Esta diferencia se registra como línea base de transición, no como error que deba corregirse cancelando o reprogramando filas ya aprobadas.
+
+Durante el calendario activo, la operación correcta es medir cuántas publicaciones reales se ejecutan, documentar slots vacíos y preservar los estados de Facebook, Instagram, Reels y afiliados. La primera aplicación completa del playbook debe comenzar en un bloque posterior con cartera nueva, reserva aprobada y un CSV específico para revisión humana. No se deben añadir piezas solo para alcanzar siete por día ni convertir el reuse existente en contenido nuevo por etiqueta administrativa.
 
 ## 2. Objetivos y límites de operación
 
@@ -93,7 +99,7 @@ El séptimo slot de las 17:00 solo se habilita si existe una pieza **nueva, apro
 
 ## 5. Mezcla de contenido y reglas de reuse
 
-La cartera objetivo para la siguiente ola será aproximadamente **65%–70% contenido nuevo y 30%–35% reuse**, con un máximo ordinario de dos reuse por día. Esta proporción corrige la dependencia observada en el calendario activo de 17–30, que conserva 35 piezas nuevas y 39 reuse, sin reescribir ese calendario. [2]
+La cartera objetivo para la siguiente ola será aproximadamente **65%–70% contenido nuevo y 30%–35% reuse**, con un máximo ordinario de dos reuse por día. Esta proporción corrige la dependencia observada en el calendario activo de 17–30, que conserva 35 piezas nuevas y 39 reuse, sin reescribir ese calendario. [2] La transición se considera correcta cuando el nuevo bloque alcance al menos cinco publicaciones reales por día y mantenga esta mezcla sin rellenar huecos con reuse no validado.
 
 | Banda diaria | Nuevas | Reuse permitido | Exploratorio | Regla |
 |---|---:|---:|---:|---|
