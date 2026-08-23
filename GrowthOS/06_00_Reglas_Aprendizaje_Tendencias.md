@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-22
-**Versión:** 3.24
+**Versión:** 3.25
 **Autor:** Manus AI (CGO); Sección 6 añadida por Claude
 **Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`, `../Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`, `../Operations/Research/2026-08-21_Julio_Expansion_Lote01_Analysis.md`, `../Operations/Research/2026-08-21_Expansion_Celdas_Comparables_Post_Julio_Lote01.json`, `../Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Findings.md`, `../Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md`, `../Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`, `../Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Audit.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Analysis.md`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Manual_Findings.md`, `../Operations/Research/2026-08-21_Junio_Caption_Reclassification_Impact.md`, `../Operations/Research/2026-08-21_Validacion_Cruzada_Hipotesis_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.md`, `../Operations/Research/2026-08-15_Community_Engagement_Log.md`, `../Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`
 
@@ -388,6 +388,10 @@ La revisión humana de un lote real de comentarios de Facebook y sus respuestas 
 | Crítica o insulto aislado | Puede cerrarse con humor breve si no hay patrón de abuso. | Discutir extensamente o activar moderación automática por un solo comentario. |
 
 La especificidad debe prevalecer sobre la ornamentación. Antes de proponer una respuesta, el revisor debe identificar qué elemento exacto del comentario merece ser recogido: canción, recuerdo, emoción, remate, referencia o reacción. La respuesta puede usar personajes como condimento, pero no necesita mencionarlos para sonar a Universe Sent Me; el tono, el ritmo y la complicidad también construyen identidad.
+
+Cuando una persona menciona una canción, USM no necesita demostrar que conoce toda la canción. Necesita demostrar que entendió por qué la persona la eligió. El copy puede jugar con el título —por ejemplo, “After all these years… y todavía funciona”—, reconocer la estructura de una selección —amor, amistad y conversación consigo mismo— o responder a la energía específica de la referencia —“The Beautiful People: porque aparentemente hoy tocaba subirle dos rayitas al caos”—. El objetivo es que la respuesta parezca escrita para ese comentario y no extraída de una biblioteca de frases bonitas.
+
+Como control editorial, el revisor debe preguntarse antes de aprobar: “¿Qué parte exacta de este comentario estoy devolviendo?”. Si la respuesta podría pegarse sin cambios bajo cualquier otra canción, debe reescribirse con una referencia concreta, un giro conversacional o un remate propio de USM.
 
 Esta regla es una guía de respuesta humana, no una autorización para automatizar publicaciones. Toda respuesta pública sigue requiriendo aprobación explícita y debe registrarse con `Comentario_ID`, `Respuesta_Estado`, `Respuesta_Fecha` y `Respuesta_Meta_ID` en el ledger comunitario.
 

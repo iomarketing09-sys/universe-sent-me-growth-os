@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.7"
+version: "2.8"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -572,3 +572,19 @@ La revisión exclusiva mediante Meta Graph API v26, posterior al último lote pu
 | `122151375549072582` | “Y se hizo el BigBang jajajaja” | Remate cósmico; mantener el humor sin explicación científica innecesaria. |
 
 Las seis respuestas quedan `Pendiente_Respuesta` hasta aprobación de Fernando. Las menciones automáticas de la página continúan fuera de la cola cualitativa. No se revisaron publicaciones de grupos en este corte.
+
+
+## 37. Publicación de seis respuestas refinadas — 23 de agosto de 2026
+
+Fernando aprobó los cambios de copy del archivo `pasted_content_2.txt`. Las seis respuestas se publicaron mediante Meta Graph API v26 después de comprobar que los comentarios seguían sin respuesta. La verificación confirmó que cada respuesta pertenece al hilo correcto, fue publicada por Universe Sent Me, conserva el texto refinado aprobado y devuelve `is_hidden=False`.
+
+| Comentario | Respuesta publicada | Respuesta_Meta_ID |
+|---|---|---|
+| “de mis ejercicios de Kegel no van a estar hablando.” | `Jajaja, hay temas que mejor se quedan fuera del informe oficial. 😂🙈` | `122151376083072582_1630977451714964` |
+| “Desde que te tengo” | `Ufff… esa sí suena a “desde que llegaste, todo cambió”. ❤️🎶` | `122151376011072582_1061347996593472` |
+| “After all these years” — Journey | `After all these years… y todavía funciona. Hay canciones que se niegan a envejecer. 🎶✨` | `122151376011072582_1081351651501823` |
+| “Unintended / Roads Untraveled / Waiting for the End” | `Eso ya es un mapa emocional completo: amor, amistad y conversación contigo mismo. 🎶✨` | `122151376011072582_2470807813430212` |
+| “The Beautiful People” | `The Beautiful People: porque aparentemente hoy tocaba subirle dos rayitas al caos. 🤘😂` | `122151376011072582_2329237607482843` |
+| “Y se hizo el BigBang jajajaja” | `Jajaja, así empiezan los grandes desórdenes cósmicos… y luego nadie sabe quién fue. 💥😂` | `122151375549072582_4103837726583284` |
+
+El aprendizaje editorial asociado es que una respuesta musical no tiene que demostrar conocimiento enciclopédico de la canción: debe demostrar que entendió por qué la persona la eligió. Se prioriza jugar con el título, reconocer la estructura de una selección o responder a la energía concreta de la referencia. Si una respuesta pudiera pegarse sin cambios bajo otra canción, debe reescribirse.

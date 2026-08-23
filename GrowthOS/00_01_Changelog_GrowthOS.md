@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 2.98
+**Versión:** 2.99
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[2.99.00] — 2026-08-23 (Manus): Publicación de seis respuestas refinadas en Facebook.** Fernando aprobó los cambios de copy del archivo adjunto para los comentarios sobre ejercicios de Kegel, “Desde que te tengo”, “After all these years” de Journey, la selección de tres canciones, “The Beautiful People” y el Big Bang. Las seis respuestas se publicaron mediante Meta Graph API v26 y se verificaron con autoría de Universe Sent Me, padre correcto, texto exacto e `is_hidden=False`. Growth OS pasa a v3.25, el ledger a v2.5 y la auditoría de Facebook a v2.8. El aprendizaje permanente es responder al motivo por el que la persona eligió la canción —jugando con el título, la estructura o la energía— en lugar de usar elogios musicales intercambiables.
 
 - **[2.98.01] — 2026-08-23 (Manus): Nuevo corte API de comentarios pendientes.** La consulta exclusiva mediante Meta Graph API v26 detectó seis comentarios de usuarios posteriores al último lote respondido: un remate humorístico con insinuación, una frase musical sobre vínculo, dos recomendaciones musicales —Journey y The Beautiful People—, una playlist con tres contextos emocionales y un remate sobre el Big Bang. Se prepararon respuestas específicas, pero no se publicaron. La auditoría de Facebook pasa a v2.7 y el ledger comunitario a v2.4. Las menciones automáticas y las publicaciones de grupos quedaron fuera del corte.
 

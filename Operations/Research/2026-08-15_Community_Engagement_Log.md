@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.4"
+version: "2.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -184,17 +184,17 @@ La revisión exclusiva mediante Meta Graph API v26 encontró tres comentarios de
 Las menciones automáticas de `@seguidores` y `@fansdestacados` permanecen fuera de la cola de conversación. El seguimiento anterior sobre la playlist ya fue respondido y no debe duplicarse.
 
 
-## 17. Nuevo corte API — seis comentarios pendientes posteriores al 22 de agosto
+## 17. Nuevo corte API — seis comentarios respondidos con copy refinado
 
-La consulta exclusiva mediante Meta Graph API v26 detectó seis comentarios de usuarios posteriores a la última respuesta publicada (`2026-08-22T21:23:54+0000`). En el corte, ninguno tenía respuesta de Universe Sent Me. Las menciones automáticas no se incluyeron.
+La consulta exclusiva mediante Meta Graph API v26 detectó seis comentarios de usuarios posteriores a la última respuesta publicada (`2026-08-22T21:23:54+0000`). Fernando aprobó los refinamientos del archivo adjunto y las seis respuestas se publicaron mediante Meta Graph API v26. La verificación confirmó autoría de Universe Sent Me, relación con el comentario padre directo, texto exacto e `is_hidden=False`. Las menciones automáticas no se incluyeron.
 
 | Comentario_ID | Señal anonimizada | Respuesta sugerida | Estado |
 |---|---|---|---|
-| `122151376083072582_1645620013842129` | Remate humorístico con insinuación | `Jajaja, hay temas que mejor se quedan fuera del informe oficial. 😂🙈` | `Pendiente_Respuesta` |
-| `122151376011072582_2264341507649153` | Frase musical sobre vínculo | `Esa frase suena a canción que convierte una persona en hogar. ❤️🎶` | `Pendiente_Respuesta` |
-| `122151376011072582_1388537403384828` | Recomendación musical de Journey | `Un clásico para cuando los años pasan, pero ciertas canciones siguen encontrando el mismo lugar. 🎶✨` | `Pendiente_Respuesta` |
-| `122151376011072582_1035056722682494` | Playlist con tres contextos emocionales | `Eso ya es un mapa emocional completo: amor, amistad y conversación contigo mismo. 🎶✨` | `Pendiente_Respuesta` |
-| `122151376011072582_1359177262629611` | Recomendación de “The Beautiful People” | `The Beautiful People siempre llega con esa energía rebelde que no pide permiso. 🤘🎶` | `Pendiente_Respuesta` |
-| `122151375549072582_2632055060570783` | Remate sobre energía y Big Bang | `Jajaja, así empiezan los grandes desórdenes cósmicos. 💥✨` | `Pendiente_Respuesta` |
+| `122151376083072582_1645620013842129` | Remate humorístico con insinuación | `Jajaja, hay temas que mejor se quedan fuera del informe oficial. 😂🙈` | `Respondido` |
+| `122151376011072582_2264341507649153` | Frase musical sobre vínculo | `Ufff… esa sí suena a “desde que llegaste, todo cambió”. ❤️🎶` | `Respondido` |
+| `122151376011072582_1388537403384828` | Recomendación musical de Journey | `After all these years… y todavía funciona. Hay canciones que se niegan a envejecer. 🎶✨` | `Respondido` |
+| `122151376011072582_1035056722682494` | Playlist con tres contextos emocionales | `Eso ya es un mapa emocional completo: amor, amistad y conversación contigo mismo. 🎶✨` | `Respondido` |
+| `122151376011072582_1359177262629611` | Recomendación de “The Beautiful People” | `The Beautiful People: porque aparentemente hoy tocaba subirle dos rayitas al caos. 🤘😂` | `Respondido` |
+| `122151375549072582_2632055060570783` | Remate sobre energía y Big Bang | `Jajaja, así empiezan los grandes desórdenes cósmicos… y luego nadie sabe quién fue. 💥😂` | `Respondido` |
 
-La primera respuesta mantiene el humor sin repetir ni amplificar el contenido íntimo del comentario. Las respuestas musicales reconocen la referencia concreta y los dos remates mantienen la complicidad del contenido original. No se publicó ninguna respuesta en esta revisión.
+La primera respuesta mantiene el humor sin repetir ni amplificar el contenido íntimo del comentario. Las respuestas musicales refinadas juegan con el título o reconocen por qué la persona eligió la canción; la playlist se responde reconociendo su estructura; y los remates mantienen la complicidad del contenido original. Las seis respuestas fueron publicadas y verificadas el 23 de agosto de 2026.
