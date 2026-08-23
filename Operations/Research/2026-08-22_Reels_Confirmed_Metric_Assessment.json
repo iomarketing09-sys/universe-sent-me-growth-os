@@ -4,7 +4,7 @@
   "status": "Active",
   "created": "2026-08-22",
   "updated": "2026-08-22",
-  "version": "1.9",
+  "version": "2.0",
   "author": "Manus AI",
   "related_documents": [
     "Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv",
@@ -129,6 +129,50 @@
       "notes": "Instagram crosspost visually coincides at 17:25 but lacks native Instagram ID; do not merge metrics."
     }
   ],
+  "mpm001_deep_metrics": {
+    "facebook": {
+      "page_post_id": "1036844829507460_122154842337072582",
+      "reel_id": "1581447113440863",
+      "visualizations": 411,
+      "viewers": 350,
+      "interactions": 22,
+      "reactions": {"total": 14, "like": 10, "love": 5, "haha": 1, "wow": 0, "sad": 0, "angry": 0},
+      "comments": 2,
+      "shares": 2,
+      "saves": 2,
+      "follows": 0,
+      "avg_watch_seconds": 6,
+      "watch_time_display": "33m31s",
+      "views_15_seconds": 34,
+      "views_3_seconds": 113,
+      "retention_observation": "Largest visible drop around 0:03; exact final retention percentage not exposed.",
+      "audience_gender": {"women_percent": 55.3, "men_percent": 44.7},
+      "audience_age_observation": "35-44 is the highest visible age band; exact percentages not exposed.",
+      "top_countries_visible": {"Mexico": 62, "Colombia": 7, "Chile": 6, "Bolivia": 4, "Peru": 3},
+      "top_regions_visible": {"Puebla": 6, "State_of_Mexico": 6, "Coahuila_de_Zaragoza": 6, "Veracruz": 6, "Jalisco": 5},
+      "evidence_level": "L2_partial_facebook"
+    },
+    "instagram": {
+      "native_id": null,
+      "crosspost_title_date_match": true,
+      "published_at_visible": "2026-08-22 17:25",
+      "visualizations": 29,
+      "reach": 22,
+      "interactions": 0,
+      "reactions": 0,
+      "comments": 0,
+      "shares": 0,
+      "saves": 0,
+      "follows": 0,
+      "avg_watch_seconds": 15,
+      "watch_time_display": "6m",
+      "views_3_seconds": null,
+      "reach_panel_note": "No hay actividad en el intervalo de fechas seleccionado; summary card shows 22 reach.",
+      "evidence_level": "L1_crosspost_visual_match_native_id_pending"
+    },
+    "comparability_status": "Keep platform metrics separate; do not merge totals or calculate combined ER.",
+    "retention_status": "Partial: Facebook 3-second and 15-second thresholds visible; full retention/completion curve not numerically exposed."
+  },
   "inventory_scope": {
     "confirmed_reels": 6,
     "raw_engagement_median_non_verdict": 10.5,

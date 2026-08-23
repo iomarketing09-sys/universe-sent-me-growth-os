@@ -198,3 +198,60 @@ La tabla confirma una ventaja relativa de Facebook en alcance y volumen de visua
 En Instagram, `yo después de mandar “no pasa nada”` aporta el único seguimiento visible y 129 visualizaciones, mientras `Ella no está disponible en este plano...` muestra 15 segundos promedio con solo 28 visualizaciones. Esto refuerza que el tiempo promedio aislado no debe usarse como criterio único para seleccionar ganadores.
 
 Los títulos y fechas permiten proponer asociaciones editoriales con los casos reconciliados, pero la captura no muestra los Page Post IDs ni Reel IDs. No se actualizan automáticamente las métricas individuales de `MPM-001` u otros casos sin una asociación de título, fecha y ID nativo confirmada.
+
+## 11. MPM-001 — desglose individual de Facebook e Instagram
+
+Fernando proporcionó capturas específicas del Reel `MPM-001`, **Ella no está disponible en este plano**, con datos separados para Facebook e Instagram. Las capturas muestran una diferencia de aproximadamente dos minutos entre ambas superficies: Facebook registra 17:23 y el crosspost de Instagram 17:25. Se conservan como publicaciones de plataforma separadas, aunque el contenido visual es el mismo.
+
+### 11.1 Facebook — MPM-001
+
+| Métrica | Valor visible |
+|---|---:|
+| Visualizaciones | **411** |
+| Espectadores | **350** |
+| Interacciones | **22** |
+| Reacciones | 14: 10 Me gusta, 5 Me encanta, 1 Me divierte |
+| Comentarios | 2 |
+| Shares | 2 |
+| Guardados | 2 |
+| Seguimientos | 0 |
+| Tiempo promedio de reproducción | **6 s** |
+| Tiempo total de reproducción | **33 min 31 s** |
+| Reproducciones de 15 segundos | **34** |
+| Clics en enlace | No expuestos |
+
+El panel de retención indica que la mayor parte del público deja de ver el Reel alrededor de **0:03**, mientras que el tiempo promedio de reproducción es de **0:06**. La curva comienza cercana al 100%, desciende con fuerza entre 0:03 y 0:07 y continúa bajando gradualmente hasta estabilizarse aproximadamente entre 0:18 y 0:23. El panel no muestra un porcentaje final textual exacto; por tanto, no se inventa una tasa de retención final.
+
+La captura muestra además una referencia de 350 espectadores frente a 411 visualizaciones. La diferencia de 61 visualizaciones no se convierte automáticamente en una tasa de repetición, porque la relación entre espectadores y visualizaciones puede usar definiciones internas del panel; se conserva como señal de posible reproducción adicional, no como repetición validada.
+
+La audiencia asociada a reproducciones de 3 segundos muestra **55.3% mujeres y 44.7% hombres**. En el desglose por edades, el grupo 35–44 concentra la barra más alta visible, seguido por 25–34 y 45–54; no se transcriben porcentajes por edad porque las etiquetas de la gráfica no muestran valores numéricos completos. Los países principales visibles son México (62), Colombia (7), Chile (6), Bolivia (4) y Perú (3). Las regiones principales visibles son Puebla (6), Estado de México (6), Coahuila de Zaragoza (6), Veracruz (6) y Jalisco (5). Estas cifras son el conteo visible en los paneles, no una proporción del total de espectadores.
+
+### 11.2 Instagram — crosspost de MPM-001
+
+| Métrica | Valor visible |
+|---|---:|
+| Visualizaciones | **29** |
+| Alcance | **22** |
+| Interacciones | **0** |
+| Reacciones | 0 |
+| Comentarios | 0 |
+| Shares | 0 |
+| Guardados | 0 |
+| Seguimientos | 0 |
+| Tiempo promedio de reproducción | **15 s** |
+| Tiempo total de reproducción | **6 min** |
+| Reproducciones adicionales | 0 |
+| Clics en enlace | No expuestos |
+| Reproducciones de 3 segundos | No expuestas |
+
+El panel de Instagram muestra una curva de visualizaciones que llega aproximadamente a 25 en las primeras horas y se estabiliza cerca de 29. En el panel de alcance aparece el mensaje **“No hay actividad en el intervalo de fechas seleccionado”**; esto debe conservarse como limitación de esa vista, no interpretarse como alcance cero, aunque la tarjeta resumen sí muestra alcance 22. La imagen de Instagram confirma la publicación cruzada en el perfil `universe_sent_me_0326` y el caption visible comienza con `Ella no está disponible en este plano.`
+
+### 11.3 Comparación de superficies
+
+Facebook aporta mucha más distribución observable para MPM-001: 411 visualizaciones y 350 espectadores frente a 29 visualizaciones y 22 de alcance en Instagram. No se calcula un ER conjunto. La diferencia puede reflejar audiencia, distribución, hora de publicación, definición de métrica o madurez de cada plataforma.
+
+El tiempo promedio visible de Instagram, 15 segundos, no es directamente comparable con el de Facebook, 6 segundos, sin conocer si ambas superficies usan la misma definición, si el Reel tiene la misma duración reproducible en cada entorno y si el denominador de espectadores es equivalente. El tiempo total de Instagram, 6 minutos, tampoco se suma con Facebook porque Facebook muestra 33 min 31 s y la unidad interna de algunas tarjetas puede variar.
+
+La captura de Facebook confirma que **34 reproducciones alcanzaron 15 segundos**, mientras que la mayoría del público abandona alrededor de 3 segundos. Esto sugiere una distribución bifurcada: existe un grupo pequeño que supera el inicio, pero el hook no retiene a la mayoría durante los primeros tres segundos. MPM-001 permanece como **L2 parcial por publicación en Facebook**, con retención cualitativa visible y una métrica de 15 segundos, pero sin tasa completa de finalización ni una definición comparable de retención entre plataformas.
+
+La evidencia no muestra datos de conversiones, clics, producto afiliado ni seguidores ganados. No se atribuye ningún resultado comercial a MPM-001.

@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-22
-**Versión:** 3.9
+**Versión:** 4.0
 **Autor:** Manus AI (CGO)
 **Documentos relacionados:** `05_00_Calendario_01_02_Ago.md`, `Operations/Memories/deep_dive_reels_comparativo.md`, `../Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`, `../Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json`, `../Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json`, `../Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json`, `../Operations/Research/2026-08-19_Decisiones_Reconciliacion_Reels.json`, `../Operations/Research/2026-08-19_Piezas_Sin_Cascada_Revision.json`, `../Operations/Research/2026-08-19_Auditoria_Assets_Drive_Reels.md`, `../Operations/Research/2026-08-19_Meta_Reels_Audit.json`, `../Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json`, `../Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json`, `../Operations/Research/Affiliate_Link_Ledger.csv`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Desamor.md`, `../Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv`, `../Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json`, `../Operations/Research/2026-08-22_Reels_Meta_Readonly_Reconciliation.json`, `../Operations/Research/2026-08-22_Meta_Business_Suite_28D_Reels_Visual_Evidence.md`, `../Operations/Production/2026-08-22_Brief_Reel_Dialogue_Radio_003.md`, `../Operations/Production/2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md`, `14_00_Fuente_Maestra_y_Ledgers.md`
 
@@ -155,6 +155,23 @@ La captura panorámica de los últimos 7 días muestra una fila de Facebook cuyo
 La captura también muestra una fila de Instagram con el mismo título y fecha `22 de agosto, 17:25`, que registra 22 de alcance, 28 visualizaciones, 0 reacciones, 15 segundos promedio y 6 minutos de tiempo total; no se expone un ID nativo de Instagram, por lo que esta fila queda como **crosspost visualmente coincidente, ID pendiente**. Los valores no se suman al Page Post de Facebook ni se presentan como un único rendimiento multicanal.
 
 Esta asociación eleva `MPM-001` de L1 básico a **L2 parcial por publicación en Facebook** para views/alcance/tiempo promedio/3-second views, pero no aporta retención completa, completions ni seguidores ganados. El tiempo total de Facebook conserva formato numérico sin unidad explícita; no se convierte a segundos.
+
+### Desglose profundo de MPM-001 por plataforma
+
+Las capturas específicas proporcionadas por Fernando permiten ampliar la evidencia de `MPM-001` más allá del match de título y fecha.
+
+| Plataforma | Visualizaciones | Espectadores | Alcance | Interacciones | Tiempo promedio | Tiempo total | Métrica inicial adicional |
+|---|---:|---:|---:|---:|---:|---:|---|
+| Facebook | 411 | 350 | No mostrado en resumen individual | 22 | 6 s | 33 min 31 s | 34 reproducciones de 15 s; 113 reproducciones de 3 s |
+| Instagram | 29 | No expuesto | 22 | 0 | 15 s | 6 min | Reproducciones de 3 s no expuestas |
+
+En Facebook, el desglose de interacciones es 14 reacciones, 2 comentarios, 2 shares y 2 guardados; no hay seguimientos y los clics en enlace no están expuestos. La curva de retención muestra la mayor caída alrededor de 0:03, con tiempo promedio de 0:06. El panel de audiencia de reproducciones de 3 segundos muestra 55.3% mujeres y 44.7% hombres; el grupo de edad 35–44 es el más alto visualmente. Países principales visibles: México 62, Colombia 7, Chile 6, Bolivia 4 y Perú 3. Regiones principales visibles: Puebla, Estado de México, Coahuila de Zaragoza y Veracruz con 6 cada una, y Jalisco con 5.
+
+En Instagram, el crosspost de las 17:25 muestra 29 visualizaciones, 22 de alcance, 0 interacciones, 0 guardados, 0 seguimientos, 15 segundos promedio y 6 minutos de tiempo total. La vista de alcance indica que no hay actividad en el intervalo seleccionado, aunque la tarjeta resumen muestra 22; se conserva la discrepancia y no se transforma en cero.
+
+La comparación confirma una diferencia de distribución favorable a Facebook, pero no permite calcular un rendimiento conjunto: las definiciones de visualización, alcance, espectadores y tiempo promedio pueden no ser equivalentes entre superficies. El dato operativo más importante es que la mayoría de la audiencia de Facebook abandona alrededor de los 3 segundos, aunque 34 reproducciones alcanzan 15 segundos. Esto sugiere que el hook inicial necesita revisión, mientras que existe un segmento pequeño que sí supera el umbral de 15 segundos. `MPM-001` queda en **L2 parcial por publicación en Facebook**; retención final, completions, seguidores ganados y atribución de Instagram por ID nativo permanecen pendientes.
+
+La evidencia completa está en `Operations/Research/2026-08-22_Meta_Business_Suite_28D_Reels_Visual_Evidence.md` y el assessment estructurado en `Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json`.
 
 ### Estado de Maeve
 

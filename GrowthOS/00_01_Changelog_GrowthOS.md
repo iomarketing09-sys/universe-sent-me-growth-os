@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 3.08
+**Versión:** 3.09
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.09.00] — 2026-08-22 (Manus): Desglose profundo de MPM-001 en Facebook e Instagram.** Las capturas específicas muestran para Facebook 411 visualizaciones, 350 espectadores, 22 interacciones, 33 min 31 s de reproducción, 6 s promedio, 34 reproducciones de 15 s, 113 reproducciones de 3 s y una caída principal de retención alrededor de 0:03; también muestran 55.3% mujeres, 44.7% hombres y audiencia principal visible de México. El crosspost de Instagram registra 29 visualizaciones, 22 de alcance, 0 interacciones, 15 s promedio y 6 min de reproducción, pero sin ID nativo. MPM-001 queda en L2 parcial en Facebook; se mantienen separadas ambas plataformas y no se atribuyen conversiones.
 
 - **[3.08.00] — 2026-08-22 (Manus): Primer match individual de MPM-001 en la tabla detallada de Meta Business Suite.** La fila `Ella no está disponible en este plano...` del 22 de agosto a las 17:23 coincide por título, fecha y minuto con `MPM-001`, Page Post `1036844829507460_122154842337072582` y Reel ID `1581447113440863`. Se registraron 361 de alcance, 350 espectadores, 406 visualizaciones, 14 reacciones, 6 s promedio, 2 reproducciones, 2 guardados y 113 reproducciones de 3 s. El crosspost de Instagram a las 17:25 queda visualmente coincidente pero sin ID nativo. `MPM-001` sube a L2 parcial en Facebook; retención completa, completions y unidad del tiempo total siguen pendientes. Se actualizó el Registro Maestro, el assessment v1.9 y la evidencia visual.
 
