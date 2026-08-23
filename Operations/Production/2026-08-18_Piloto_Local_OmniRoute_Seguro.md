@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 2.1
+**Versión:** 2.2
 
 **Autor:** Manus AI
 
@@ -283,6 +283,25 @@ En las cinco pruebas, los headers indicaron `strategy=single`, `provider=groq`, 
 La captura del panel proporcionada el 2026-08-23 muestra cinco filas visibles, todas con estado `200` y origen `UPSTREAM`. Tres filas son `connection-test` sin tokens —`152 ms`, `209 ms` y `233 ms`— y dos filas son solicitudes `OPENAI-CHAT` a `groq/openai/gpt-oss-20b`: una con `134` tokens de entrada y `182` de salida, `368` TPS y `494 ms`; otra con `117` tokens de entrada y `24` de salida, `72.9` TPS y `329 ms`. El provider aparece como `GROQ` en las cinco filas y la cuenta se muestra enmascarada como `Unive***`.
 
 La captura no contiene una columna de costo legible y no demuestra por sí sola que esas cinco filas sean exactamente las cinco pruebas funcionales; combina dos chats con tres comprobaciones de conexión. La evidencia principal de las cinco pruebas es la salida de terminal, mientras que el panel confirma que no hubo errores HTTP, que el provider fue Groq y que el routing ocurrió aguas arriba. No se documentan identificadores completos de API key, aunque el panel mostraba uno truncado.
+
+### Wrapper diario seguro
+
+El script [`omniroute-daily-wrapper.sh`](omniroute-daily-wrapper.sh) permite usar el gateway desde la Terminal sin guardar la API key. Solicita la clave en modo silencioso, crea un payload temporal, utiliza el model ID explícito `groq/openai/gpt-oss-20b`, envía `reasoning_effort: low` y `stream: false`, muestra la respuesta y elimina el payload, los headers y la variable de entorno al terminar. El wrapper no publica contenido ni escribe en los ledgers del Growth OS.
+
+En el iMac, después de copiar el script a una ubicación local, aplicar permisos restrictivos y ejecutarlo:
+
+```bash
+chmod 700 ~/omniroute-daily-wrapper.sh
+~/omniroute-daily-wrapper.sh
+```
+
+El prompt debe ser sintético o anonimizado. Para una tarea que requiera más salida, puede aumentarse temporalmente el límite sin guardar configuración permanente:
+
+```bash
+OMNIROUTE_MAX_TOKENS=600 ~/omniroute-daily-wrapper.sh
+```
+
+No establecer la API key en `.bashrc`, `.profile`, Git, archivos de texto, historial de comandos ni servicios automáticos. El wrapper es una herramienta manual y reversible; no debe utilizarse todavía para publicación automática, actualización de métricas o envío de datos crudos de Windsor. Si el contenedor está detenido, primero iniciarlo con `sudo docker start omniroute`; si está activo, no recrearlo solo para usar el wrapper.
 
 El piloto puede comparar un segundo model ID cloud solo si el provider lo ofrece dentro de la cuota gratuita. La calidad debe juzgarse con criterios definidos por el estudio —fidelidad al prompt, claridad, tono, repetición y latencia— y no únicamente por una respuesta llamativa. Si OmniRoute ralentiza demasiado el equipo, continuar la comparación directamente en el Playground del provider y registrar que el gateway fue omitido por limitación de hardware.
 
