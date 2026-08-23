@@ -172,3 +172,28 @@ El desglose por etiqueta muestra un clic en cada una de estas tres etiquetas: `L
 La señal actual debe clasificarse como **tráfico mínimo sin monetización observada**, no como validación comercial. El embudo tiene una fuga antes de la compra: incluso las etiquetas que recibieron clic no produjeron unidades. Con solo tres clics no es posible distinguir si el problema principal está en el producto, el precio, la página de destino, la confianza, la ventana de atribución o el volumen insuficiente.
 
 La prioridad cambia a generar más **clics cualificados** y medirlos con consistencia antes de optimizar conversión. La siguiente prueba debe comparar hooks y CTAs explícitos, mantener un producto por publicación, verificar que el producto sea coherente con la escena y registrar si el clic proviene de Facebook, Instagram u otra superficie. El objetivo inmediato no debe ser declarar ingresos, sino alcanzar una muestra de clics suficiente para diagnosticar.
+
+
+## Addendum de cadencia diaria de productos afiliados
+
+El conteo correcto depende de si se cuentan **productos-publicación** o **colocaciones por superficie**. El piloto principal aporta un producto en cada fecha seleccionada del 18 al 30 de agosto; no hay producto del piloto los días 23, 25 y 27. Las capas adicionales agregan publicaciones ya activadas el 19 y 20 de agosto y una campaña multicanal del 21 de agosto.
+
+| Fecha | Productos-publicación registrados | Colocaciones por superficie | Composición |
+|---|---:|---:|---|
+| 18 ago | 1 | 1 | AFF-01 |
+| 19 ago | 2 | 2 | AFF-02 + Reel nativo Universe |
+| 20 ago | 4 | 4 | AFF-03 + 2 posts ganadores + Reel/Video de audífonos |
+| 21 ago | 2 | 3 | AFF-04 + Universe/Senales en Facebook e Instagram |
+| 22 ago | 1 | 1 | AFF-05 |
+| 23 ago | 0 | 0 | Sin producto afiliado registrado |
+| 24 ago | 1 | 1 | AFF-06 |
+| 25 ago | 0 | 0 | Sin producto afiliado registrado |
+| 26 ago | 1 | 1 | AFF-07 |
+| 27 ago | 0 | 0 | Sin producto afiliado registrado |
+| 28 ago | 1 | 1 | AFF-08 |
+| 29 ago | 1 | 1 | AFF-09 |
+| 30 ago | 1 | 1 | AFF-10 |
+
+El total es **16 productos-publicación registrados** durante el tramo, de los cuales 10 pertenecen al piloto principal y 6 a capas adicionales. En colocaciones por superficie son **17**, porque Universe/Senales usa el mismo producto en Facebook e Instagram. TikTok y YouTube quedan fuera del conteo activo porque sus enlaces están en `Hold` y no publicados.
+
+Estas cifras describen el calendario y los registros operativos, no garantizan que cada pieza haya sido publicada ni que haya generado clics. Para medir la cadencia comercial real, cada fila debe reconciliarse con permalink, fecha efectiva y snapshot de Mercado Libre.
