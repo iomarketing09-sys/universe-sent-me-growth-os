@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 1.9
+**Versión:** 2.0
 
 **Autor:** Manus AI
 
@@ -117,6 +117,8 @@ La recomendación actual es no aceptar `VM.Standard.E5.Flex` ni `VM.Standard3.Fl
 ## Piloto propuesto
 
 El piloto debe responder una sola pregunta: **¿una lectura asistida por IA mejora la velocidad o la claridad de interpretación de un corte normalizado sin degradar la trazabilidad?**
+
+La validación inicial del gateway local quedó cumplida el 2026-08-23 en el iMac con Xubuntu: OmniRoute `3.8.49` dirigió una solicitud al provider `groq` con el modelo `openai/gpt-oss-20b`, reportó `1214 ms`, `99` tokens de entrada, `80` de salida, decisión `provider=groq` y finalización SSE `data: [DONE]`. OmniRoute reportó costo `0.0000000000` para esa respuesta; este valor es evidencia del gateway, no una garantía de cuota gratuita futura ni una sustitución de la revisión del panel de Groq. Fuente: salida de terminal proporcionada por Fernando el 2026-08-23.
 
 | Fase | Acción | Criterio de salida |
 |---|---|---|

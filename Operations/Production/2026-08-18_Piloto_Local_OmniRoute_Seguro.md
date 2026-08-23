@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 1.9
+**Versión:** 2.0
 
 **Autor:** Manus AI
 
@@ -235,6 +235,28 @@ curl http://127.0.0.1:20128/v1/chat/completions \
 La respuesta debe incluir `choices[0].message.content`. En el dashboard, revisar **Monitoring/Logs** y confirmar que el provider elegido sea únicamente el provider cloud aprobado. OmniRoute documenta que los logs permiten revisar qué información se envió y qué provider atendió la solicitud. [8]
 
 Para reducir consumo y cuota durante la prueba, utilizar `max_tokens` bajo, prompts cortos y no más de una solicitud simultánea. Groq documenta límites por RPM, RPD, TPM y TPD; los valores exactos deben verificarse en el panel de la cuenta. [11]
+
+## Resultado de validación inicial — 2026-08-23
+
+La primera solicitud real del piloto completó correctamente el recorrido local hacia Groq. OmniRoute reportó la siguiente evidencia técnica:
+
+| Campo | Resultado |
+|---|---|
+| Versión de OmniRoute | `3.8.49` |
+| Provider | `groq` |
+| Model ID solicitado | `groq/openai/gpt-oss-20b` |
+| Model ID normalizado en la respuesta | `openai/gpt-oss-20b` |
+| Decisión de routing | `provider=groq` |
+| Latencia reportada | `1214 ms` |
+| Tokens de entrada | `99` |
+| Tokens de salida | `80` |
+| Cache hit | `false` |
+| Costo reportado por OmniRoute | `0.0000000000` |
+| Finalización SSE | `data: [DONE]` |
+
+Este resultado confirma que el iMac ejecuta el gateway local y que Groq procesa la inferencia remota. El costo cero es el valor reportado por OmniRoute para esa respuesta; no constituye una garantía de permanencia de la cuota gratuita ni sustituye la revisión del panel y los límites de Groq. La API key de Groq no debe registrarse en el repositorio ni en los artefactos de evaluación. Fuente del resultado: salida de terminal proporcionada por Fernando el 2026-08-23.
+
+El criterio de aceptación de esta etapa queda cumplido: **gateway local operativo, provider oficial de Groq, modelo remoto, respuesta SSE completa y sin inferencia local**. La siguiente etapa es evaluar cinco prompts sintéticos y revisar consumo/errores en el dashboard antes de usar cualquier dato del proyecto.
 
 ## Paso 8: probar el caso de Universe Sent Me sin datos reales
 
