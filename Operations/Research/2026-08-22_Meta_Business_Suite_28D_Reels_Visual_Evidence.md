@@ -162,3 +162,39 @@ La tabla individual de 28 días confirma el patrón ya observado: `Dicen que si 
 ## 9. Requisitos de coherencia posteriores
 
 La nueva evidencia debe mantenerse vinculada con `GrowthOS/07_00_Registro_Maestro_Reels.md`, `Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json`, `Operations/Research/2026-08-22_Reels_Meta_Readonly_Reconciliation.json` y `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`. Los agregados de 7 y 28 días son evidencia de panel; los datos individuales solo deben atribuirse a un Reel cuando el título, fecha y publicación permitan una asociación verificable con el ID nativo.
+
+## 10. Tabla detallada del corte reciente de 7 días
+
+La captura panorámica adicional presenta ocho filas de Reels de Facebook e Instagram con métricas individuales. Aunque Fernando la identifica como el reporte de los últimos 7 días, el rango exacto no aparece en la parte visible de la tabla y se observan publicaciones fechadas el 22 de agosto. Por ello, se registra como **corte reciente de 7 días según la etiqueta del usuario, con intervalo exacto no verificable en la captura**. La tabla debe interpretarse como una selección visible, no como el total del periodo.
+
+### 10.1 Facebook
+
+| Reel visible | Fecha/hora visible | Reacciones | Alcance | Espectadores | Visualizaciones | Seguimientos | Clics en enlace | Tiempo promedio | Tiempo total visible | Reproducciones | Guardados | Reproducciones de 3 s |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---|---:|---:|---:|
+| `Ella no está disponible en este plano...` | 22 ago, 17:23 | 14 | 361 | 350 | 406 | 0 | No expuesto | 6 s | `2.011.438` | 2 | 2 | 113 |
+| `Hay personas que se quedan en el retrovisor...` | 20 ago, 18:03 | 7 | 348 | 344 | 397 | 0 | No expuesto | 5 s | `1.652.905` | 3 | 0 | 81 |
+| `Universe viéndote Farmeando Aura...` | 21 ago, 16:30 | 10 | 190 | 183 | 259 | 0 | 2 | 6 s | `1.225.248` | 1 | 3 | 86 |
+| `Yo: “no pasa nada”. Universe, dos se...` | 19 ago, 19:03 | 2 | 154 | 139 | 171 | 0 | No expuesto | 13 s | `1.862.354` | 0 | 0 | 51 |
+
+Los cuatro Reels de Facebook visibles suman, únicamente como subtotal de la selección mostrada, **1,233 visualizaciones, 1,053 de alcance y 33 reacciones**. Este subtotal no sustituye el total agregado de 1,440 visualizaciones del panel porque la tabla visible puede no contener todas las filas del corte.
+
+### 10.2 Instagram
+
+| Reel visible | Fecha/hora visible | Reacciones | Alcance | Espectadores | Visualizaciones | Seguimientos | Clics en enlace | Tiempo promedio | Tiempo total visible | Reproducciones | Guardados | Reproducciones de 3 s |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---|---:|---:|---:|
+| `yo después de mandar “no pasa nada”` | 19 ago, 18:40 | 2 | 108 | No expuesto | 129 | 1 | No expuesto | 6 s | `9m 57s` | 0 | 0 | No expuesto |
+| `Hay personas que se quedan en el retrovisor...` | 20 ago, 17:41 | 5 | 75 | No expuesto | 86 | 0 | No expuesto | 8 s | `11m 13s` | 0 | 0 | No expuesto |
+| `Ella no está disponible en este plano...` | 22 ago, 17:25 | 0 | 22 | No expuesto | 28 | 0 | No expuesto | 15 s | `6m` | 0 | 0 | No expuesto |
+| `Farmeando Aura #UniverseSentMe` | 21 ago, 19:20 | 1 | 18 | No expuesto | 24 | 0 | No expuesto | 7 s | `2m 13s` | 0 | 0 | No expuesto |
+
+Los cuatro Reels de Instagram visibles suman, únicamente como subtotal de la selección mostrada, **267 de alcance y 5 reacciones**, y sus visualizaciones visibles suman **267**. Este subtotal no sustituye el agregado específico de Instagram de 365 visualizaciones del panel, porque las filas visibles pueden ser una selección y el rango exacto del detalle no está confirmado.
+
+### 10.3 Nota de lectura y límites
+
+La columna de tiempo total de reproducción de Facebook muestra valores numéricos con separadores de miles (`2.011.438`, `1.652.905`, `1.225.248`, `1.862.354`) cuya unidad no aparece explícita; se conservan como cadenas y no se convierten a segundos. Instagram muestra esa columna en minutos y segundos. La diferencia de representación impide sumar ambos formatos sin una unidad confirmada.
+
+La tabla confirma una ventaja relativa de Facebook en alcance y volumen de visualizaciones dentro de las filas visibles. En Facebook, `Ella no está disponible en este plano...` lidera la selección con 406 visualizaciones, 361 de alcance, 6 segundos promedio, 2 guardados y 113 reproducciones de 3 segundos. `Yo: “no pasa nada”. Universe, dos se...` registra 13 segundos promedio, pero solo 171 visualizaciones y 154 de alcance; el promedio de reproducción no explica por sí solo la distribución.
+
+En Instagram, `yo después de mandar “no pasa nada”` aporta el único seguimiento visible y 129 visualizaciones, mientras `Ella no está disponible en este plano...` muestra 15 segundos promedio con solo 28 visualizaciones. Esto refuerza que el tiempo promedio aislado no debe usarse como criterio único para seleccionar ganadores.
+
+Los títulos y fechas permiten proponer asociaciones editoriales con los casos reconciliados, pero la captura no muestra los Page Post IDs ni Reel IDs. No se actualizan automáticamente las métricas individuales de `MPM-001` u otros casos sin una asociación de título, fecha y ID nativo confirmada.

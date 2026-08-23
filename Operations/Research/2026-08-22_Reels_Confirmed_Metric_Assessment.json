@@ -4,7 +4,7 @@
   "status": "Active",
   "created": "2026-08-22",
   "updated": "2026-08-22",
-  "version": "1.7",
+  "version": "1.9",
   "author": "Manus AI",
   "related_documents": [
     "Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv",
@@ -94,11 +94,46 @@
     "attribution_status": "Title_and_date_visible_but_native_ids_not_exposed_in_screenshot",
     "total_watch_time_column": "Visible_but_not_transcribed_because_unit/label_is_truncated"
   },
+  "meta_business_suite_recent_7d_detail": {
+    "period_label": "Last_7_days_as_identified_by_user",
+    "exact_interval_status": "Not_visible_in_screenshot",
+    "source_type": "User_provided_panorama_screenshot",
+    "attribution_status": "Title_and_date_visible_native_ids_not_exposed",
+    "facebook_rows": [
+      {"title": "Ella no está disponible en este plano...", "published_at_visible": "2026-08-22 17:23", "reactions": 14, "reach": 361, "viewers": 350, "views": 406, "follows": 0, "link_clicks": null, "avg_watch_seconds": 6, "watch_time_display": "2.011.438", "replays": 2, "saves": 2, "three_second_views": 113},
+      {"title": "Hay personas que se quedan en el retrovisor...", "published_at_visible": "2026-08-20 18:03", "reactions": 7, "reach": 348, "viewers": 344, "views": 397, "follows": 0, "link_clicks": null, "avg_watch_seconds": 5, "watch_time_display": "1.652.905", "replays": 3, "saves": 0, "three_second_views": 81},
+      {"title": "Universe viéndote Farmeando Aura...", "published_at_visible": "2026-08-21 16:30", "reactions": 10, "reach": 190, "viewers": 183, "views": 259, "follows": 0, "link_clicks": 2, "avg_watch_seconds": 6, "watch_time_display": "1.225.248", "replays": 1, "saves": 3, "three_second_views": 86},
+      {"title": "Yo: no pasa nada. Universe, dos se...", "published_at_visible": "2026-08-19 19:03", "reactions": 2, "reach": 154, "viewers": 139, "views": 171, "follows": 0, "link_clicks": null, "avg_watch_seconds": 13, "watch_time_display": "1.862.354", "replays": 0, "saves": 0, "three_second_views": 51}
+    ],
+    "instagram_rows": [
+      {"title": "yo después de mandar no pasa nada", "published_at_visible": "2026-08-19 18:40", "reactions": 2, "reach": 108, "viewers": null, "views": 129, "follows": 1, "link_clicks": null, "avg_watch_seconds": 6, "watch_time_display": "9m57s", "replays": 0, "saves": 0, "three_second_views": null},
+      {"title": "Hay personas que se quedan en el retrovisor...", "published_at_visible": "2026-08-20 17:41", "reactions": 5, "reach": 75, "viewers": null, "views": 86, "follows": 0, "link_clicks": null, "avg_watch_seconds": 8, "watch_time_display": "11m13s", "replays": 0, "saves": 0, "three_second_views": null},
+      {"title": "Ella no está disponible en este plano...", "published_at_visible": "2026-08-22 17:25", "reactions": 0, "reach": 22, "viewers": null, "views": 28, "follows": 0, "link_clicks": null, "avg_watch_seconds": 15, "watch_time_display": "6m", "replays": 0, "saves": 0, "three_second_views": null},
+      {"title": "Farmeando Aura #UniverseSentMe", "published_at_visible": "2026-08-21 19:20", "reactions": 1, "reach": 18, "viewers": null, "views": 24, "follows": 0, "link_clicks": null, "avg_watch_seconds": 7, "watch_time_display": "2m13s", "replays": 0, "saves": 0, "three_second_views": null}
+    ],
+    "facebook_visible_subtotal": {"views": 1233, "reach": 1053, "reactions": 33, "warning": "Visible-row subtotal only; not the panel total."},
+    "instagram_visible_subtotal": {"views": 267, "reach": 223, "reactions": 8, "warning": "Visible-row subtotal only; not the panel total."},
+    "time_unit_status": "Facebook_total_watch_time_unit_not_explicit; Instagram_minutes_seconds_visible"
+  },
+  "individual_id_matches": [
+    {
+      "case_id": "MPM-001",
+      "platform": "Facebook",
+      "match_basis": ["title", "published_date", "published_minute"],
+      "page_post_id": "1036844829507460_122154842337072582",
+      "reel_id": "1581447113440863",
+      "metrics": {"reach": 361, "viewers": 350, "views": 406, "reactions": 14, "avg_watch_seconds": 6, "replays": 2, "saves": 2, "three_second_views": 113, "follows": 0},
+      "watch_time_display": "2.011.438",
+      "watch_time_unit_status": "not_explicit_in_screenshot",
+      "evidence_level": "L2_partial_facebook",
+      "notes": "Instagram crosspost visually coincides at 17:25 but lacks native Instagram ID; do not merge metrics."
+    }
+  ],
   "inventory_scope": {
     "confirmed_reels": 6,
     "raw_engagement_median_non_verdict": 10.5,
-    "views_reach_populated": 0,
-    "experiment_linked_records": 0,
+    "views_reach_populated": 1,
+    "experiment_linked_records": 1,
     "warning": "Los seis registros no tienen views/reach en este corte; el engagement mezcla lifetime y snapshot actual. El valor agregado no es un veredicto multiformato."
   },
   "family_summary": [

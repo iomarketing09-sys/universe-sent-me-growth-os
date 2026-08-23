@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 3.07
+**Versión:** 3.08
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.08.00] — 2026-08-22 (Manus): Primer match individual de MPM-001 en la tabla detallada de Meta Business Suite.** La fila `Ella no está disponible en este plano...` del 22 de agosto a las 17:23 coincide por título, fecha y minuto con `MPM-001`, Page Post `1036844829507460_122154842337072582` y Reel ID `1581447113440863`. Se registraron 361 de alcance, 350 espectadores, 406 visualizaciones, 14 reacciones, 6 s promedio, 2 reproducciones, 2 guardados y 113 reproducciones de 3 s. El crosspost de Instagram a las 17:25 queda visualmente coincidente pero sin ID nativo. `MPM-001` sube a L2 parcial en Facebook; retención completa, completions y unidad del tiempo total siguen pendientes. Se actualizó el Registro Maestro, el assessment v1.9 y la evidencia visual.
 
 - **[3.07.00] — 2026-08-22 (Manus): Integración de cortes de 7 y 28 días de Meta Business Suite.** Fernando proporcionó capturas con el corte 15–21 de agosto: Facebook Reels registró 1,440 visualizaciones, 2 h 1 min y 29 interacciones, con variaciones visibles de -42.7%, -29.0% y -45.3%; Instagram específico registró 365 visualizaciones orgánicas, 188 de alcance y 15 interacciones, mientras el encabezado agregado mostró 745 visualizaciones de Facebook y 365 de Instagram. La tabla detallada de 28 días aportó alcance, espectadores, visualizaciones, seguimiento, tiempo promedio y shares para 13 filas visibles; el Reel líder registró 7,037 de alcance, 7,116 visualizaciones, 5 s promedio y 38 shares. Se amplió `Operations/Research/2026-08-22_Meta_Business_Suite_28D_Reels_Visual_Evidence.md` a v1.1, se actualizó el assessment y el cierre semanal. Los datos de canal no se atribuyen automáticamente a IDs individuales.
 

@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-22
-**Versión:** 3.8
+**Versión:** 3.9
 **Autor:** Manus AI (CGO)
 **Documentos relacionados:** `05_00_Calendario_01_02_Ago.md`, `Operations/Memories/deep_dive_reels_comparativo.md`, `../Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`, `../Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json`, `../Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json`, `../Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json`, `../Operations/Research/2026-08-19_Decisiones_Reconciliacion_Reels.json`, `../Operations/Research/2026-08-19_Piezas_Sin_Cascada_Revision.json`, `../Operations/Research/2026-08-19_Auditoria_Assets_Drive_Reels.md`, `../Operations/Research/2026-08-19_Meta_Reels_Audit.json`, `../Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json`, `../Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json`, `../Operations/Research/Affiliate_Link_Ledger.csv`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Desamor.md`, `../Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv`, `../Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json`, `../Operations/Research/2026-08-22_Reels_Meta_Readonly_Reconciliation.json`, `../Operations/Research/2026-08-22_Meta_Business_Suite_28D_Reels_Visual_Evidence.md`, `../Operations/Production/2026-08-22_Brief_Reel_Dialogue_Radio_003.md`, `../Operations/Production/2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md`, `14_00_Fuente_Maestra_y_Ledgers.md`
 
@@ -143,6 +143,18 @@ Fernando proporcionó capturas del resumen de contenido de Meta Business Suite. 
 La captura de Instagram muestra **1,841 visualizaciones orgánicas específicas**, aproximadamente 1,100 de alcance y 70 interacciones, con variaciones visibles de -23.3%, -28.9% y -7.9%. El encabezado agregado muestra aproximadamente 137,300 visualizaciones, desglosadas en 135,471 de Facebook y 1,841 de Instagram; ese total agregado no se suma otra vez al denominador específico de Instagram.
 
 Estos datos elevan la evidencia de Reels a nivel de canal, pero no resuelven la atribución individual de `MPM-001` ni de los demás IDs. Las capturas no muestran views, reach, retención, tiempo promedio o completions por publicación. Por tanto, el estado correcto sigue siendo L1 para los casos reconciliados por Meta y `Channel_aggregate_only_not_assignable_to_individual_reels` para este corte. La evidencia estructurada está en `Operations/Research/2026-08-22_Meta_Business_Suite_28D_Reels_Visual_Evidence.md`.
+
+### Match individual de MPM-001 en el corte reciente
+
+La captura panorámica de los últimos 7 días muestra una fila de Facebook cuyo título `Ella no está disponible en este plano...` y fecha `22 de agosto, 17:23` coinciden con el Page Post y Reel ID ya reconciliados para `MPM-001` (`1036844829507460_122154842337072582`, Reel `1581447113440863`). Por coincidencia de título, fecha y minuto de publicación, se puede asociar esa fila al caso con evidencia suficiente de identidad temporal:
+
+| Plataforma | Alcance | Espectadores | Visualizaciones | Reacciones | Tiempo promedio | Tiempo total visible | Reproducciones | Guardados | Reproducciones de 3 s |
+|---|---:|---:|---:|---:|---:|---|---:|---:|---:|
+| Facebook / `MPM-001` | 361 | 350 | 406 | 14 | 6 s | `2.011.438` | 2 | 2 | 113 |
+
+La captura también muestra una fila de Instagram con el mismo título y fecha `22 de agosto, 17:25`, que registra 22 de alcance, 28 visualizaciones, 0 reacciones, 15 segundos promedio y 6 minutos de tiempo total; no se expone un ID nativo de Instagram, por lo que esta fila queda como **crosspost visualmente coincidente, ID pendiente**. Los valores no se suman al Page Post de Facebook ni se presentan como un único rendimiento multicanal.
+
+Esta asociación eleva `MPM-001` de L1 básico a **L2 parcial por publicación en Facebook** para views/alcance/tiempo promedio/3-second views, pero no aporta retención completa, completions ni seguidores ganados. El tiempo total de Facebook conserva formato numérico sin unidad explícita; no se convierte a segundos.
 
 ### Estado de Maeve
 
