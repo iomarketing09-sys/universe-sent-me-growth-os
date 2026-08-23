@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 2.0
+**Versión:** 2.1
 
 **Autor:** Manus AI
 
@@ -119,6 +119,8 @@ La recomendación actual es no aceptar `VM.Standard.E5.Flex` ni `VM.Standard3.Fl
 El piloto debe responder una sola pregunta: **¿una lectura asistida por IA mejora la velocidad o la claridad de interpretación de un corte normalizado sin degradar la trazabilidad?**
 
 La validación inicial del gateway local quedó cumplida el 2026-08-23 en el iMac con Xubuntu: OmniRoute `3.8.49` dirigió una solicitud al provider `groq` con el modelo `openai/gpt-oss-20b`, reportó `1214 ms`, `99` tokens de entrada, `80` de salida, decisión `provider=groq` y finalización SSE `data: [DONE]`. OmniRoute reportó costo `0.0000000000` para esa respuesta; este valor es evidencia del gateway, no una garantía de cuota gratuita futura ni una sustitución de la revisión del panel de Groq. Fuente: salida de terminal proporcionada por Fernando el 2026-08-23.
+
+La batería sintética posterior quedó aprobada para el objetivo técnico del piloto: cinco prompts sin datos privados devolvieron HTTP 200 mediante `strategy=single` y `provider=groq`; cuatro terminaron con `finish_reason: stop` y una quedó registrada como truncada por un límite de tokens deliberadamente bajo. La prueba de Monitoring/Logs aportada el mismo día mostró cinco filas visibles sin errores —tres `connection-test` y dos `OPENAI-CHAT`—, todas con estado 200, provider GROQ y cuenta enmascarada. Esta evidencia valida el gateway, pero no convierte las respuestas en evidencia canónica de Growth OS ni autoriza todavía el envío de datos reales.
 
 | Fase | Acción | Criterio de salida |
 |---|---|---|

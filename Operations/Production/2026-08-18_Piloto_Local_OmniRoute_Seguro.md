@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 2.0
+**Versión:** 2.1
 
 **Autor:** Manus AI
 
@@ -263,6 +263,26 @@ El criterio de aceptación de esta etapa queda cumplido: **gateway local operati
 Durante la primera sesión, utilizar únicamente prompts sintéticos. No pegar capturas privadas, datos de Windsor, tokens de Meta, nombres de seguidores, comentarios reales, IDs de publicaciones ni documentos internos.
 
 Una batería mínima puede contener cinco prompts: una variante de copy breve, una clasificación de formato, una lectura narrativa de números inventados, una traducción y una petición de ideas para una escena de Universe. Para cada prueba registrar fecha, versión de OmniRoute, provider, model ID, tiempo aproximado, resultado y observaciones en un archivo de evaluación dentro de `Operations/Research/`; no registrar secretos ni datos personales.
+
+### Resultado de la batería sintética — 2026-08-23
+
+La batería se ejecutó desde el iMac con `stream: false`, provider explícito `groq`, model ID `groq/openai/gpt-oss-20b` y sin datos privados. La respuesta normalizó el modelo a `openai/gpt-oss-20b` en los headers de OmniRoute. La Prueba 1 fue técnicamente exitosa pero se truncó por `max_tokens: 120`; la Prueba 3 se repitió y quedó aprobada al usar `reasoning_effort: low`.
+
+| Prueba | Tipo de prompt sintético | HTTP | Finalización | Latencia | Tokens entrada/salida | Resultado |
+|---:|---|---:|---|---:|---:|---|
+| 1 | Tres frases creativas | 200 | `length` | 514 ms | 106 / 120 | Routing correcto; contenido truncado por límite bajo. |
+| 2 | Clasificación en JSON | 200 | `stop` | 948 ms | 146 / 264 | Completada correctamente. |
+| 3 | Cálculo de tasas inventadas | 200 | `stop` | 735 ms | 188 / 394 | Completada correctamente con razonamiento bajo; cálculos verificados. |
+| 4 | Traducción breve | 200 | `stop` | 335 ms | 117 / 24 | Completada correctamente. |
+| 5 | Microescena de cuatro pasos | 200 | `stop` | 500 ms | 134 / 182 | Completada correctamente. |
+
+En las cinco pruebas, los headers indicaron `strategy=single`, `provider=groq`, model ID normalizado `openai/gpt-oss-20b` y versión OmniRoute `3.8.49`. En las solicitudes donde se extrajo el header, OmniRoute reportó `x-omniroute-response-cost: 0.0000000000`; este dato es un cálculo del gateway para esas respuestas y no debe interpretarse como garantía de cuota gratuita futura de Groq.
+
+### Verificación visual de Monitoring/Logs
+
+La captura del panel proporcionada el 2026-08-23 muestra cinco filas visibles, todas con estado `200` y origen `UPSTREAM`. Tres filas son `connection-test` sin tokens —`152 ms`, `209 ms` y `233 ms`— y dos filas son solicitudes `OPENAI-CHAT` a `groq/openai/gpt-oss-20b`: una con `134` tokens de entrada y `182` de salida, `368` TPS y `494 ms`; otra con `117` tokens de entrada y `24` de salida, `72.9` TPS y `329 ms`. El provider aparece como `GROQ` en las cinco filas y la cuenta se muestra enmascarada como `Unive***`.
+
+La captura no contiene una columna de costo legible y no demuestra por sí sola que esas cinco filas sean exactamente las cinco pruebas funcionales; combina dos chats con tres comprobaciones de conexión. La evidencia principal de las cinco pruebas es la salida de terminal, mientras que el panel confirma que no hubo errores HTTP, que el provider fue Groq y que el routing ocurrió aguas arriba. No se documentan identificadores completos de API key, aunque el panel mostraba uno truncado.
 
 El piloto puede comparar un segundo model ID cloud solo si el provider lo ofrece dentro de la cuota gratuita. La calidad debe juzgarse con criterios definidos por el estudio —fidelidad al prompt, claridad, tono, repetición y latencia— y no únicamente por una respuesta llamativa. Si OmniRoute ralentiza demasiado el equipo, continuar la comparación directamente en el Playground del provider y registrar que el gateway fue omitido por limitación de hardware.
 
