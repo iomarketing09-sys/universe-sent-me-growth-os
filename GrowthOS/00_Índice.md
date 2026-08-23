@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-22
-**Versión:** 7.0
+**Versión:** 7.1
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -50,6 +50,7 @@
 | [Propuesta de ciclo semanal domingo–sábado](../Operations/Research/2026-08-22_Propuesta_Ciclo_Semanal_Domingo_Sabado.md) | Regla activa para cerrar el reporte el sábado e iniciar el ciclo operativo el domingo; distingue organización del aprendizaje de la hipótesis aún no demostrada sobre el rendimiento dominical. | Active |
 | [Análisis diario por familias y personajes — 22 de agosto](../Operations/Research/2026-08-22_Analisis_Corte_Diario_Familias_Personajes.md) | Interpreta shares, comentarios, clasificación provisional y estado de TAX-02, HUM-06, HUM-02 y Motion + POV/Meme sin atribuir causalidad. | Active |
 | [Protocolo de instrumentación de métricas de Reels](../Operations/Research/2026-08-22_Reels_Metric_Instrumentation_Protocol.md) | Medición por niveles L0–L4 para resolver la falta de views, reach y retención; L1 diario como base y 24/72 solo como cierre contractual opcional. Incluye campos de audio y variante para la serie Elara Walk. | Active |
+| [Reconciliación Meta de Reels — 22 de agosto](../Operations/Research/2026-08-22_Reels_Meta_Readonly_Reconciliation.json) | Verificación de cinco Reels publicados y tres casos sin ID Meta; confirma estado, IDs, horarios y engagement básico, y deja views/reach/retención como brecha explícita. | Active |
 | [Brief Celda Reels Motion + POV/Meme 001](../Operations/Production/2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md) | Tres casos controlados; MPM-001 reencuadrado como primera variante musical de Elara Walk, sin texto sobre la imagen y con situación visual de desconexión. | Review |
 | [Briefs de adaptación original — cinco semillas Drive/Memes](../Operations/Production/2026-08-22_Briefs_Cadence_Memes_Seed_Adaptations.md) | Cinco adaptaciones originales desde Drive/Memes; los cinco assets fueron aprobados y programados en Facebook, tres mediante reemplazo y dos mediante slots adicionales. | Review |
 | [Inventario de semillas Drive/Memes](../Operations/Research/2026-08-22_Drive_Memes_Seed_Inventory.csv) | Fuente de trazabilidad de las 14 semillas: cinco aprobadas y producidas como adaptaciones USM; MEME-CAD-003/004 están en v3, MEME-CAD-005 en v4 y las versiones anteriores quedan históricas; las capturas fuente no son publicables directamente. | Active |

@@ -4,9 +4,9 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-22
-**Versión:** 3.7
+**Versión:** 3.8
 **Autor:** Manus AI (CGO)
-**Documentos relacionados:** `05_00_Calendario_01_02_Ago.md`, `Operations/Memories/deep_dive_reels_comparativo.md`, `../Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`, `../Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json`, `../Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json`, `../Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json`, `../Operations/Research/2026-08-19_Decisiones_Reconciliacion_Reels.json`, `../Operations/Research/2026-08-19_Piezas_Sin_Cascada_Revision.json`, `../Operations/Research/2026-08-19_Auditoria_Assets_Drive_Reels.md`, `../Operations/Research/2026-08-19_Meta_Reels_Audit.json`, `../Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json`, `../Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json`, `../Operations/Research/Affiliate_Link_Ledger.csv`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Desamor.md`, `../Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv`, `../Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json`, `../Operations/Production/2026-08-22_Brief_Reel_Dialogue_Radio_003.md`, `../Operations/Production/2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md`, `14_00_Fuente_Maestra_y_Ledgers.md`
+**Documentos relacionados:** `05_00_Calendario_01_02_Ago.md`, `Operations/Memories/deep_dive_reels_comparativo.md`, `../Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`, `../Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json`, `../Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json`, `../Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json`, `../Operations/Research/2026-08-19_Decisiones_Reconciliacion_Reels.json`, `../Operations/Research/2026-08-19_Piezas_Sin_Cascada_Revision.json`, `../Operations/Research/2026-08-19_Auditoria_Assets_Drive_Reels.md`, `../Operations/Research/2026-08-19_Meta_Reels_Audit.json`, `../Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json`, `../Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json`, `../Operations/Research/Affiliate_Link_Ledger.csv`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Desamor.md`, `../Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv`, `../Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json`, `../Operations/Research/2026-08-22_Reels_Meta_Readonly_Reconciliation.json`, `../Operations/Production/2026-08-22_Brief_Reel_Dialogue_Radio_003.md`, `../Operations/Production/2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md`, `14_00_Fuente_Maestra_y_Ledgers.md`
 
 ---
 
@@ -124,7 +124,17 @@ La celda candidata vigente es `HB-REEL-MOTION-POV-MEME-01`: movimiento visible, 
 
 ### Publicación MPM-001 — 2026-08-22
 
-Fernando confirmó que `MPM-001` fue publicado manualmente en Facebook e Instagram con `Let It Happen — Tame Impala` disponible desde el catálogo nativo de ambas plataformas. La distribución simultánea debe quedar marcada como `Crosspost_At_Launch`; no reemplaza la plataforma primaria prevista en el brief, ni permite sumar o comparar de forma directa sus métricas. Los permalinks, caption y hashtags se conservan en la tabla de próximos estrenos. Faltan hora local, IDs nativos y snapshots separados; el estado correcto es `Published_Metrics_Pending`.
+La reconciliación directa con Meta confirmó que `MPM-001` está **publicado en Facebook**. Page Post ID: `1036844829507460_122154842337072582`; Reel ID nativo: `1581447113440863`; permalink: `https://www.facebook.com/reel/1581447113440863/`; hora local: `2026-08-22 17:23:32` en `America/Matamoros`; `is_published=true`; no aparece en `/scheduled_posts`. El snapshot L1 observó 14 reacciones, 2 comentarios y 2 shares, para 18 interacciones básicas. Meta no expuso views, reach ni retención; esos campos permanecen ausentes.
+
+Fernando también confirmó la publicación manual simultánea en Instagram con `Let It Happen — Tame Impala`, que conserva el estado `Crosspost_At_Launch`. La consulta ejecutada en este corte fue de Facebook; el ID, hora y métricas nativas de Instagram requieren verificación independiente y no se mezclan con Facebook. El estado consolidado correcto es `Published_Facebook_Verified__Instagram_User_Confirmed_Metrics_Pending`.
+
+### Reconciliación Meta de casos actuales — 2026-08-22
+
+La consulta de solo lectura verificó cinco casos publicados mediante Page Post ID y objeto Reel ID. Los cinco Page Posts devolvieron HTTP 200, `is_published=true`, hora local y permalink: `MPM-001`, `CON-2026-08-21-UniverseSenales`, `CON-2026-08-20-RemoteControl-EvanElara`, `CON-2026-08-19-DobleCheck-Universe` y `CNT-023`. Los cinco objetos Reel aceptaron el campo básico `id` con HTTP 200. La consulta no expuso views, reach ni retención; no se escriben ceros ni veredictos de vídeo.
+
+`MPM-002` y `MPM-003` no tienen Meta Post ID ni Reel ID en el registro vigente y continúan como casos de producción/referencia, no como publicaciones. `CON-2026-08-24-CraveYou-MaeveFeathers` continúa en `Review` sin ID Meta. No se recrearon, publicaron, programaron ni modificaron estos casos.
+
+La evidencia completa queda en `Operations/Research/2026-08-22_Reels_Meta_Readonly_Reconciliation.json`. La limitación residual es de métricas de vídeo: Meta permite confirmar identidad, estado y engagement básico del Page Post, pero la consulta directa de estos objetos no expone views, reach ni retención comparables. La solución operativa es capturar el siguiente nivel desde una superficie Meta que entregue esas métricas, sin atribuirlas por inferencia.
 
 ### Estado de Maeve
 

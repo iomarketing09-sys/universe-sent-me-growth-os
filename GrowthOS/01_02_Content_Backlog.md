@@ -3,8 +3,8 @@
 **Propósito:** Lista maestra de todo el contenido pendiente ordenado por prioridad estratégica.
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-21
-**Versión:** 2.7
+**Última actualización:** 2026-08-22
+**Versión:** 2.8
 **Autor:** Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_01_Calendario_Semanal.md`
 
@@ -18,11 +18,12 @@
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | CNT-006 | Tarot de Universe (contenido evergreen) | @char_USM_universe | Foto / Carrusel / Reel | Reutilizable | No |
 | CNT-002 | Wilfred reseña su propio peluche | @char_USM_wilfred | Reel (~14s) | **Publicado** (FB, 30-Jul 9:16 AM) | No |
-| CNT-023 | Sección recurrente '¿Qué me llegó?' (Mercado Libre) | Rotativo | Reel recurrente | Episodio 2 con bloqueante histórico; Episodio 3 Wilfred en `HOLD_PENDING_24H_REVIEW` | No |
+| CNT-023 | Sección recurrente '¿Qué me llegó?' (Mercado Libre) | Rotativo | Reel recurrente | Episodio 2 **publicado y verificado en Facebook**; Page Post `1036844829507460_122147352825072582`, Reel ID `1067337609170026`, 21 interacciones básicas observables. Episodio 3 Wilfred permanece en `HOLD_PENDING_24H_REVIEW`. | No |
 | CON-2026-08-24-CraveYou-MaeveFeathers | Crave You — Maeve: espejo, destellos y órbita | Maeve | Reel / Short musical 14–15s | `Review` — estructura de tres capas, score 8.88; Maeve es el único personaje; base de espejo, flashes editoriales no explícitos y cierre de órbita. Requiere audio nativo y storyboard aprobado. | No |
-| CON-2026-08-21-UniverseSenales | Meme rápido — Universe y las señales ignoradas | Universe | Reel cómico con clip del tráiler | `Active` — Fernando programó Facebook e Instagram con copys reales `universe viendote farmear aura` y `farmenado aura`; texto de las ocho señales dentro del clip. Producto nativo solo en Facebook; pendiente confirmar IDs, horarios, permalink y adjunción. TikTok y YouTube en hold. | No |
-| MPM-001 | Elara ignora a Wilfred — `POV: Eres Piscis` | Elara + Wilfred | Reel Motion + POV de 8–9s | `Aprobado_Con_Nota_Pending_Manual_Publication` — export final revisado; watermark de marca en esquina inferior derecha y `Let It Happen — Tame Impala` previstos. Fernando planea Facebook + Instagram con el mismo caption; registrar como `Crosspost_At_Launch`, con IDs y métricas separados. | No |
-| MPM-002 | Fantasma y los gatos saben algo que él no — `No lo sigas` | Fantasma + tres gatos | Reel Motion + meme de 7–8s | `Reference_Ready_Quota_Wait` — referencia, prompt, texto y payoff definidos; escenario de invernadero y recorrido nuevos para evitar reutilización histórica. Esperar cuota y gate de aprobación. | No |
+| CON-2026-08-21-UniverseSenales | Meme rápido — Universe y las señales ignoradas | Universe | Reel cómico con clip del tráiler | **Publicado y verificado en Facebook** — Page Post `1036844829507460_122154017667072582`, Reel ID `2005557463434064`, hora local `2026-08-21 16:30:59`, 12 interacciones básicas observables (10 reacciones, 1 comentario, 1 share). Instagram, TikTok y YouTube permanecen sin reconciliación independiente. | No |
+| MPM-001 | Elara ignora a Wilfred — variante musical de Elara Walk | Elara + Wilfred | Reel Motion + POV de 8–9s | **Publicado en Facebook y verificado** — Page Post `1036844829507460_122154842337072582`, Reel ID `1581447113440863`, hora local `2026-08-22 17:23:32`, 18 interacciones básicas (14 reacciones, 2 comentarios, 2 shares). Instagram conserva confirmación humana `Crosspost_At_Launch`, pero sus IDs y métricas requieren verificación independiente. Views, reach y retención no están disponibles. | No |
+| MPM-002 | Fantasma y los gatos saben algo que él no — `No lo sigas` | Fantasma + tres gatos | Reel Motion + meme de 7–8s | `Reference_Ready_Quota_Wait` — sin Meta Post ID ni Reel ID; referencia, prompt, texto y payoff definidos; escenario de invernadero y recorrido nuevos para evitar reutilización histórica. Esperar cuota y gate de aprobación. | No |
+| MPM-003 | Universe portal / tercera variante Motion POV | Universe | Reel Motion + portal de 7–8s | `Reference_Ready_Quota_Wait` — sin Meta Post ID ni Reel ID; referencia, prompt, texto y payoff definidos. Esperar cuota y gate de aprobación. | No |
 | CNT-024 | Frase del día — personaje + principio filosófico | Rotativo | Foto / Historia | En producción (5 variantes propuestas) — ver `Operations/Production/CNT024_Frase_del_Dia_Propuesta_Cinco_Variantes.md` | No |
 | CNT-026 | Banco de memes fin de semana 16–17 de agosto (Fantasma, Wilfred, Universe, Pareja Maeve, minimalista) | Multichar | Foto (frase en copy) | Draft — 5 propuestas con score ≥ 8.5 (ver `Operations/Production/CNT026_Memes_FinDeSemana_16_17_Ago.md`); pendiente de aprobación de Fernando y producción de imágenes en Flow | No |
 | CNT-027 | Meme Fantasma "Ghosting eterno" (derivado de Drive Ideas-Memes) | @char_USM_fantasma | Foto (frase en copy) | Draft — propuesta con score 9.10/10 (ver `Operations/Production/CNT027_Meme_Fantasma_Ghosting_DriveIdeas.md`); pendiente de aprobación de Fernando | No |

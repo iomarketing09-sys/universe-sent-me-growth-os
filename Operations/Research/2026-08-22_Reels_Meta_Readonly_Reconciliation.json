@@ -1,0 +1,1075 @@
+{
+  "title": "Meta read-only Reel reconciliation — current and next cases",
+  "purpose": "Cross-check GitHub Reel states against direct Meta Page Post/Reel lookups without any write operation.",
+  "status": "Active",
+  "created": "2026-08-22",
+  "updated": "2026-08-22",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "../../GrowthOS/07_00_Registro_Maestro_Reels.md",
+    "../../GrowthOS/01_02_Content_Backlog.md",
+    "2026-08-22_Reels_Confirmed_Metric_Assessment.json",
+    "2026-08-22_Corte_Diario_Metricas_2200.md"
+  ],
+  "captured_at_utc": "2026-08-23T03:52:29.799952+00:00",
+  "captured_at_local": "2026-08-22T22:52:29.799972-05:00",
+  "timezone": "America/Matamoros",
+  "page_id": "1036844829507460",
+  "page_name": "Universe Sent Me",
+  "api": "https://graph.facebook.com/v26.0",
+  "accounts_http_status": 200,
+  "scheduled_posts_lookup": {
+    "http_status": 200,
+    "ok": true,
+    "count": 45,
+    "data": {
+      "data": [
+        {
+          "id": "1036844829507460_122151379707072582",
+          "scheduled_publish_time": 1788145200,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151379707072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151379623072582",
+          "scheduled_publish_time": 1788134400,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151379623072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151379545072582",
+          "scheduled_publish_time": 1788123600,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151379545072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151379461072582",
+          "scheduled_publish_time": 1788114600,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151379461072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151379371072582",
+          "scheduled_publish_time": 1788102000,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151379371072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151379287072582",
+          "scheduled_publish_time": 1788048000,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151379287072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122154733797072582",
+          "scheduled_publish_time": 1788037200,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122154733797072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151379203072582",
+          "scheduled_publish_time": 1788028200,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151379203072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151379125072582",
+          "scheduled_publish_time": 1788019200,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151379125072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151379047072582",
+          "scheduled_publish_time": 1788015600,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151379047072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151378969072582",
+          "scheduled_publish_time": 1787961600,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151378969072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122154733719072582",
+          "scheduled_publish_time": 1787950800,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122154733719072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151378879072582",
+          "scheduled_publish_time": 1787941800,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151378879072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151378807072582",
+          "scheduled_publish_time": 1787932800,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151378807072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151378717072582",
+          "scheduled_publish_time": 1787929200,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151378717072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151378639072582",
+          "scheduled_publish_time": 1787875200,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151378639072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122154732567072582",
+          "scheduled_publish_time": 1787868000,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122154732567072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122154023841072582",
+          "scheduled_publish_time": 1787864400,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122154023841072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151378411072582",
+          "scheduled_publish_time": 1787855400,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151378411072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151378327072582",
+          "scheduled_publish_time": 1787846400,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151378327072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151378249072582",
+          "scheduled_publish_time": 1787842800,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151378249072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151378153072582",
+          "scheduled_publish_time": 1787788800,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151378153072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122154732501072582",
+          "scheduled_publish_time": 1787781600,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122154732501072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151377979072582",
+          "scheduled_publish_time": 1787778000,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151377979072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151377913072582",
+          "scheduled_publish_time": 1787769000,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151377913072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151377829072582",
+          "scheduled_publish_time": 1787760000,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151377829072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151377733072582",
+          "scheduled_publish_time": 1787756400,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151377733072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151377649072582",
+          "scheduled_publish_time": 1787702400,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151377649072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151377553072582",
+          "scheduled_publish_time": 1787695200,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151377553072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151377475072582",
+          "scheduled_publish_time": 1787691600,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151377475072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151377385072582",
+          "scheduled_publish_time": 1787682600,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151377385072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151377301072582",
+          "scheduled_publish_time": 1787673600,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151377301072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151377199072582",
+          "scheduled_publish_time": 1787670000,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151377199072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151377109072582",
+          "scheduled_publish_time": 1787616000,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151377109072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151377019072582",
+          "scheduled_publish_time": 1787608800,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151377019072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122154732441072582",
+          "scheduled_publish_time": 1787605200,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122154732441072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122154023781072582",
+          "scheduled_publish_time": 1787596200,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122154023781072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151376773072582",
+          "scheduled_publish_time": 1787587200,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151376773072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122154023721072582",
+          "scheduled_publish_time": 1787583600,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122154023721072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151376629072582",
+          "scheduled_publish_time": 1787540400,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151376629072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151376539072582",
+          "scheduled_publish_time": 1787529600,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151376539072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122154733665072582",
+          "scheduled_publish_time": 1787522400,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122154733665072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151376455072582",
+          "scheduled_publish_time": 1787518800,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151376455072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151376365072582",
+          "scheduled_publish_time": 1787509800,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151376365072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        },
+        {
+          "id": "1036844829507460_122151376281072582",
+          "scheduled_publish_time": 1787497200,
+          "is_published": false,
+          "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151376281072582",
+          "attachments": {
+            "data": [
+              {
+                "media_type": "photo",
+                "type": "photo"
+              }
+            ]
+          }
+        }
+      ],
+      "paging": {
+        "cursors": {
+          "before": "QVFIVEpsN3FnMGxiV0JxODJaNE05MFJoZAkhIdU9hWnZAmeGlVWmctQWRtQ2dTQW9xWDkyN0tsVUVzZAnI0ajF3ZAWU5ZAHltbFp5Y3d0Q1JTWGNtLS11STNuaVBB",
+          "after": "QVFIVHFtaW0tR0NuSmtuTFlQN1AtQU5vLTdoTEQ5cjRrUTNBOURlQldHbTJHakF5WWFwRGlLUkd2SVdCanNZASUd4R3FCelg0X2ozTjZAacWFYWmpRRV9rbHVB"
+        }
+      }
+    }
+  },
+  "cases": [
+    {
+      "case_id": "MPM-001",
+      "label": "Elara ignora a Wilfred / Elara Walk Music",
+      "status_expected": "published",
+      "post_id": "1036844829507460_122154842337072582",
+      "reel_id": "1581447113440863",
+      "post_lookup": {
+        "http_status": 200,
+        "ok": true,
+        "data": {
+          "id": "1036844829507460_122154842337072582",
+          "created_time": "2026-08-22T22:23:32+0000",
+          "updated_time": "2026-08-23T01:43:19+0000",
+          "is_published": true,
+          "permalink_url": "https://www.facebook.com/reel/1581447113440863/",
+          "message": "Ella no está disponible en este plano. 👀\n\n #UniverseSentMe #ElaraUSM #letithappen #tameimpala",
+          "shares": {
+            "count": 2
+          },
+          "reactions": {
+            "data": [],
+            "summary": {
+              "total_count": 14,
+              "viewer_reaction": "NONE"
+            }
+          },
+          "comments": {
+            "data": [],
+            "summary": {
+              "order": "ranked",
+              "total_count": 2,
+              "can_comment": true
+            }
+          },
+          "attachments": {
+            "data": [
+              {
+                "media_type": "video",
+                "type": "video_inline"
+              }
+            ]
+          }
+        }
+      },
+      "reel_lookup": {
+        "http_status": 200,
+        "ok": true,
+        "data": {
+          "id": "1581447113440863"
+        }
+      },
+      "post_observed": {
+        "id": "1036844829507460_122154842337072582",
+        "created_time_utc": "2026-08-22T22:23:32+0000",
+        "created_time_local": "2026-08-22T17:23:32-05:00",
+        "updated_time_utc": "2026-08-23T01:43:19+0000",
+        "is_published": true,
+        "permalink_url": "https://www.facebook.com/reel/1581447113440863/",
+        "reactions": 14,
+        "comments": 2,
+        "shares": 2,
+        "attachments": {
+          "data": [
+            {
+              "media_type": "video",
+              "type": "video_inline"
+            }
+          ]
+        },
+        "message": "Ella no está disponible en este plano. 👀\n\n #UniverseSentMe #ElaraUSM #letithappen #tameimpala"
+      },
+      "in_scheduled_posts": false
+    },
+    {
+      "case_id": "CON-2026-08-21-UniverseSenales",
+      "label": "Universe viéndote farmear aura",
+      "status_expected": "published",
+      "post_id": "1036844829507460_122154017667072582",
+      "reel_id": "2005557463434064",
+      "post_lookup": {
+        "http_status": 200,
+        "ok": true,
+        "data": {
+          "id": "1036844829507460_122154017667072582",
+          "created_time": "2026-08-21T21:30:59+0000",
+          "updated_time": "2026-08-21T22:04:32+0000",
+          "is_published": true,
+          "permalink_url": "https://www.facebook.com/reel/2005557463434064/",
+          "message": "Universe viéndote Farmear Aura \n\n #UniverseSentMe #UniverseUSM",
+          "shares": {
+            "count": 1
+          },
+          "reactions": {
+            "data": [],
+            "summary": {
+              "total_count": 10,
+              "viewer_reaction": "NONE"
+            }
+          },
+          "comments": {
+            "data": [],
+            "summary": {
+              "order": "ranked",
+              "total_count": 1,
+              "can_comment": true
+            }
+          },
+          "attachments": {
+            "data": [
+              {
+                "media_type": "video",
+                "type": "video_inline"
+              }
+            ]
+          }
+        }
+      },
+      "reel_lookup": {
+        "http_status": 200,
+        "ok": true,
+        "data": {
+          "id": "2005557463434064"
+        }
+      },
+      "post_observed": {
+        "id": "1036844829507460_122154017667072582",
+        "created_time_utc": "2026-08-21T21:30:59+0000",
+        "created_time_local": "2026-08-21T16:30:59-05:00",
+        "updated_time_utc": "2026-08-21T22:04:32+0000",
+        "is_published": true,
+        "permalink_url": "https://www.facebook.com/reel/2005557463434064/",
+        "reactions": 10,
+        "comments": 1,
+        "shares": 1,
+        "attachments": {
+          "data": [
+            {
+              "media_type": "video",
+              "type": "video_inline"
+            }
+          ]
+        },
+        "message": "Universe viéndote Farmear Aura \n\n #UniverseSentMe #UniverseUSM"
+      },
+      "in_scheduled_posts": false
+    },
+    {
+      "case_id": "CON-2026-08-20-RemoteControl-EvanElara",
+      "label": "Remote Control / Evan + Elara",
+      "status_expected": "published",
+      "post_id": "1036844829507460_122153750763072582",
+      "reel_id": "2815726225473165",
+      "post_lookup": {
+        "http_status": 200,
+        "ok": true,
+        "data": {
+          "id": "1036844829507460_122153750763072582",
+          "created_time": "2026-08-20T23:03:50+0000",
+          "updated_time": "2026-08-22T01:23:06+0000",
+          "is_published": true,
+          "permalink_url": "https://www.facebook.com/reel/2815726225473165/",
+          "message": "Hay personas que se quedan en el retrovisor aunque ya no vayan contigo.\n\nRemote Control — Sussie 4 ft. León Larregui.\n\n¿Qué canción te lleva de vuelta sin pedir permiso?\n\n#UniverseSentMe #EvanUSM #ElaraUSM #MomentosUSM #Sussie4 #leonlarregui",
+          "shares": {
+            "count": 3
+          },
+          "reactions": {
+            "data": [],
+            "summary": {
+              "total_count": 7,
+              "viewer_reaction": "NONE"
+            }
+          },
+          "comments": {
+            "data": [],
+            "summary": {
+              "order": "ranked",
+              "total_count": 1,
+              "can_comment": true
+            }
+          },
+          "attachments": {
+            "data": [
+              {
+                "media_type": "video",
+                "type": "video_inline"
+              }
+            ]
+          }
+        }
+      },
+      "reel_lookup": {
+        "http_status": 200,
+        "ok": true,
+        "data": {
+          "id": "2815726225473165"
+        }
+      },
+      "post_observed": {
+        "id": "1036844829507460_122153750763072582",
+        "created_time_utc": "2026-08-20T23:03:50+0000",
+        "created_time_local": "2026-08-20T18:03:50-05:00",
+        "updated_time_utc": "2026-08-22T01:23:06+0000",
+        "is_published": true,
+        "permalink_url": "https://www.facebook.com/reel/2815726225473165/",
+        "reactions": 7,
+        "comments": 1,
+        "shares": 3,
+        "attachments": {
+          "data": [
+            {
+              "media_type": "video",
+              "type": "video_inline"
+            }
+          ]
+        },
+        "message": "Hay personas que se quedan en el retrovisor aunque ya no vayan contigo.\n\nRemote Control — Sussie 4 ft. León Larregui.\n\n¿Qué canción te lleva de vuelta sin pedir permiso?\n\n#UniverseSentMe #EvanUSM #ElaraUSM #MomentosUSM #Sussie4 #leonlarregui"
+      },
+      "in_scheduled_posts": false
+    },
+    {
+      "case_id": "CON-2026-08-19-DobleCheck-Universe",
+      "label": "Doble Check → Universe",
+      "status_expected": "published",
+      "post_id": "1036844829507460_122153090559072582",
+      "reel_id": "2210896633022235",
+      "post_lookup": {
+        "http_status": 200,
+        "ok": true,
+        "data": {
+          "id": "1036844829507460_122153090559072582",
+          "created_time": "2026-08-20T00:03:35+0000",
+          "updated_time": "2026-08-20T00:03:35+0000",
+          "is_published": true,
+          "permalink_url": "https://www.facebook.com/reel/2210896633022235/",
+          "message": "Yo: “no pasa nada”.\nUniverse, dos segundos después: 🟣\n\nSi tu chat también abre portales dimensionales, no estás solo.\n\n#UniverseSentMe #UniverseUSM #MemesUSM",
+          "reactions": {
+            "data": [],
+            "summary": {
+              "total_count": 2,
+              "viewer_reaction": "NONE"
+            }
+          },
+          "comments": {
+            "data": [],
+            "summary": {
+              "order": "chronological",
+              "total_count": 0,
+              "can_comment": true
+            }
+          },
+          "attachments": {
+            "data": [
+              {
+                "media_type": "video",
+                "type": "video_inline"
+              }
+            ]
+          }
+        }
+      },
+      "reel_lookup": {
+        "http_status": 200,
+        "ok": true,
+        "data": {
+          "id": "2210896633022235"
+        }
+      },
+      "post_observed": {
+        "id": "1036844829507460_122153090559072582",
+        "created_time_utc": "2026-08-20T00:03:35+0000",
+        "created_time_local": "2026-08-19T19:03:35-05:00",
+        "updated_time_utc": "2026-08-20T00:03:35+0000",
+        "is_published": true,
+        "permalink_url": "https://www.facebook.com/reel/2210896633022235/",
+        "reactions": 2,
+        "comments": 0,
+        "shares": null,
+        "attachments": {
+          "data": [
+            {
+              "media_type": "video",
+              "type": "video_inline"
+            }
+          ]
+        },
+        "message": "Yo: “no pasa nada”.\nUniverse, dos segundos después: 🟣\n\nSi tu chat también abre portales dimensionales, no estás solo.\n\n#UniverseSentMe #UniverseUSM #MemesUSM"
+      },
+      "in_scheduled_posts": false
+    },
+    {
+      "case_id": "CNT-023",
+      "label": "¿Qué me llegó? / Elara lámpara de luna",
+      "status_expected": "published",
+      "post_id": "1036844829507460_122147352825072582",
+      "reel_id": "1067337609170026",
+      "post_lookup": {
+        "http_status": 200,
+        "ok": true,
+        "data": {
+          "id": "1036844829507460_122147352825072582",
+          "created_time": "2026-08-09T01:19:32+0000",
+          "updated_time": "2026-08-09T17:23:26+0000",
+          "is_published": true,
+          "permalink_url": "https://www.facebook.com/reel/1067337609170026/",
+          "message": "Universe no sabe qué trae en la caja. \nNunca sabe. 🌙📦\nPero sí sabe quedarse a ver la cara que pone Elara cuando la abre.\n\n👇 Comenta \"LUNA\" y te mandamos el link directo a la lámpara que le llegó a ella.\n\n#UniverseSentMe #QueMeLlegoUSM #UniverseUSM #ElaraUSM",
+          "shares": {
+            "count": 1
+          },
+          "reactions": {
+            "data": [],
+            "summary": {
+              "total_count": 18,
+              "viewer_reaction": "NONE"
+            }
+          },
+          "comments": {
+            "data": [],
+            "summary": {
+              "order": "ranked",
+              "total_count": 2,
+              "can_comment": true
+            }
+          },
+          "attachments": {
+            "data": [
+              {
+                "media_type": "video",
+                "type": "video_inline"
+              }
+            ]
+          }
+        }
+      },
+      "reel_lookup": {
+        "http_status": 200,
+        "ok": true,
+        "data": {
+          "id": "1067337609170026"
+        }
+      },
+      "post_observed": {
+        "id": "1036844829507460_122147352825072582",
+        "created_time_utc": "2026-08-09T01:19:32+0000",
+        "created_time_local": "2026-08-08T20:19:32-05:00",
+        "updated_time_utc": "2026-08-09T17:23:26+0000",
+        "is_published": true,
+        "permalink_url": "https://www.facebook.com/reel/1067337609170026/",
+        "reactions": 18,
+        "comments": 2,
+        "shares": 1,
+        "attachments": {
+          "data": [
+            {
+              "media_type": "video",
+              "type": "video_inline"
+            }
+          ]
+        },
+        "message": "Universe no sabe qué trae en la caja. \nNunca sabe. 🌙📦\nPero sí sabe quedarse a ver la cara que pone Elara cuando la abre.\n\n👇 Comenta \"LUNA\" y te mandamos el link directo a la lámpara que le llegó a ella.\n\n#UniverseSentMe #QueMeLlegoUSM #UniverseUSM #ElaraUSM"
+      },
+      "in_scheduled_posts": false
+    },
+    {
+      "case_id": "MPM-002",
+      "label": "Fantasma y los gatos / No lo sigas",
+      "status_expected": "not_published_no_meta_id",
+      "post_id": null,
+      "reel_id": null,
+      "post_lookup": null,
+      "reel_lookup": null,
+      "in_scheduled_posts": false
+    },
+    {
+      "case_id": "MPM-003",
+      "label": "Universe portal / tercera variante Motion POV",
+      "status_expected": "not_published_no_meta_id",
+      "post_id": null,
+      "reel_id": null,
+      "post_lookup": null,
+      "reel_lookup": null,
+      "in_scheduled_posts": false
+    },
+    {
+      "case_id": "CON-2026-08-24-CraveYou-MaeveFeathers",
+      "label": "Crave You / Maeve",
+      "status_expected": "review_not_published",
+      "post_id": null,
+      "reel_id": null,
+      "post_lookup": null,
+      "reel_lookup": null,
+      "in_scheduled_posts": false
+    }
+  ],
+  "summary": {
+    "cases_total": 8,
+    "published_expected": 5,
+    "published_post_lookups_ok": 5,
+    "reel_lookups_ok": 5,
+    "next_cases_without_meta_id": 3,
+    "published_cases_with_views_reach_retention_in_direct_lookup": 0
+  },
+  "interpretation_limits": [
+    "Direct Page Post lookup exposes basic engagement counters where permitted; it does not expose comparable views, reach or retention for these Reels.",
+    "A missing Reel-object lookup is a permission/object-surface limitation, not evidence that the post is unpublished.",
+    "MPM-002, MPM-003 and Crave You have no Meta ID in the current GitHub records and were not recreated or searched by content similarity.",
+    "Metrics are current/lifetime observable totals at capture time, not exact 24/72-hour windows."
+  ]
+}

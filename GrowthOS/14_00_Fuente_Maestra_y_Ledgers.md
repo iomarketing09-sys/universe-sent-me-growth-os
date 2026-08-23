@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.42"
+version: "2.43"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -41,6 +41,7 @@ related_documents:
   - "Operations/Research/2026-08-21_Analisis_Corte_Diario_Familias_Personajes.csv"
   - "Operations/Research/2026-08-22_Meta_Daily_Metrics_Raw.json"
   - "Operations/Research/2026-08-22_Corte_Diario_Metricas_2200.md"
+  - "Operations/Research/2026-08-22_Reels_Meta_Readonly_Reconciliation.json"
   - "Operations/Research/2026-08-22_Corte_Diario_Metricas_2200.csv"
   - "Operations/Research/2026-08-22_Analisis_Semanal_20260816_20260822.md"
   - "Operations/Research/2026-08-22_Analisis_Semanal_20260816_20260822.csv"
