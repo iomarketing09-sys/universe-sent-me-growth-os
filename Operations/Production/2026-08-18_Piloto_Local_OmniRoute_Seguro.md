@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 2.5
+**Versión:** 2.6
 
 **Autor:** Manus AI
 
@@ -347,6 +347,29 @@ El piloto puede comparar un segundo model ID cloud solo si el provider lo ofrece
 Si se necesita una segunda opinión, añadir **un solo provider adicional** y mantenerlo separado de Groq. Para Gemini, crear una clave independiente en Google AI Studio y usar únicamente prompts sintéticos o públicos. La documentación de precios indica que el nivel gratuito tiene tokens sin costo, pero también marca que el contenido se utiliza para mejorar productos; por tanto, no utilizar el provider gratuito con contenido confidencial de Universe Sent Me. [4] [12]
 
 Después de conectar Gemini, no utilizar `model: "auto"` para esta comparación. Seleccionar explícitamente el model ID que aparezca disponible en el catálogo, revisar los logs después de cada solicitud y desconectar la credencial al terminar. Si el equipo se vuelve lento, detener OmniRoute antes de continuar y usar directamente el Playground de Gemini.
+
+### Validación de Google AI Studio — 2026-08-23
+
+El primer model ID probado, `gemini/gemini-2.5-flash`, devolvió HTTP `404` con el mensaje del provider de que `models/gemini-2.5-flash` ya no está disponible para usuarios nuevos. No se debe volver a usar ese ID; el catálogo vigente del dashboard tiene prioridad sobre la memoria o ejemplos antiguos.
+
+Se probó después el model ID visible `gemini/gemini-3.5-flash` con un prompt sintético. La respuesta fue completa y terminó correctamente:
+
+| Campo | Resultado |
+|---|---|
+| HTTP | `200` |
+| Provider | `gemini` |
+| Model ID normalizado | `gemini-3.5-flash` |
+| Decisión | `strategy=single; provider=gemini` |
+| Latencia | `5359 ms` |
+| Finalización | `stop` |
+| Tokens según `usage` del cuerpo | `39` de entrada / `623` de salida |
+| Tokens según headers OmniRoute | `39` de entrada / `34` de salida |
+| Cache | `false` |
+| Costo reportado por OmniRoute | `0.0000000000` |
+
+La discrepancia entre `usage.completion_tokens=623` y `x-omniroute-tokens-out=34` queda registrada como una observación de medición específica de esta ruta; no debe resolverse inventando un valor ni mezclando ambas cifras. Para auditoría se conservará el cuerpo de la respuesta junto con los headers cuando se haga una comparación formal.
+
+Esta ejecución valida Google AI Studio como segundo provider directo, pero no valida todavía que el fallback del Combo se active. El Combo `usm-groq-gemini-priority` sí quedó creado con Groq primero y Google AI Studio después; su prueba realizada hasta este punto confirmó únicamente la ruta primaria de Groq. No se debe afirmar que el failover está probado hasta observar una solicitud atendida por `gemini` después de un fallo controlado de Groq.
 
 Groq debe tratarse como una ruta cloud controlada, no como una ruta privada local. Aunque sus términos describen restricciones sobre el uso de inputs y outputs, el prompt sale del equipo y se aplican también los términos de cada model provider. [7]
 
