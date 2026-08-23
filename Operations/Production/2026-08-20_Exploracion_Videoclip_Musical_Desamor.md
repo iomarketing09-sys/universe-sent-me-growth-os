@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 4.3
+**Versión:** 4.4
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -756,13 +756,15 @@ El audio continuaría fuera del archivo: el máster extendido se exportaría sin
 
 ## Referencias de inicio y cierre para Flow — 2026-08-23
 
-Como alternativa al clip adicional generado dentro de este entorno, Fernando puede construir el cierre en Flow utilizando dos referencias verticales de la misma continuidad visual. Ambas imágenes son PNG de 1440×2560 px, proporción 9:16, y permanecen sin texto ni audio.
+Como alternativa al clip adicional generado dentro de este entorno, Fernando puede construir el cierre en Flow utilizando dos referencias verticales de la misma continuidad visual. Ambas imágenes son PNG de 1440×2560 px, proporción 9:16, y permanecen sin texto ni audio. Los archivos están organizados en la carpeta de Drive `My Drive/Universe sent me/USM/Reels/08 Agosto/Maeve - Crave you - MPM.002` (folder ID `1Dl-t1tQV23Bh5NzfxUjegDsuXPs3vzhk`).
 
 | Uso en Flow | Archivo | Drive |
 |---|---|---|
-| `First frame` / inicio del Reel | `CON-2026-08-24_CraveYou_Maeve_HOOK-FIRST-V1_keyframe_review.png` | [Abrir referencia inicial](https://drive.google.com/file/d/1bISDPbHLqRsw2nK5LwLH3ghlzG6wW18u/view?usp=drivesdk) |
-| `Last frame` / cierre del clip adicional | `CON-2026-08-24_CraveYou_Maeve_HOOK-FIRST-V1_loop_final_reference.png` | [Abrir referencia final](https://drive.google.com/file/d/1R3M-wjf4NbWBg6Lz_r32dR7CB4NnGvom/view?usp=drivesdk) |
+| `First frame` / inicio del Reel | `CON-2026-08-24_CraveYou_Maeve_HOOK-FIRST-V1_keyframe_review.png` — Drive ID `1dhX7rA7tS8j2blL0OMnIVFI86NA8zyTb` | [Abrir referencia inicial](https://drive.google.com/file/d/1dhX7rA7tS8j2blL0OMnIVFI86NA8zyTb/view?usp=drivesdk) |
+| `Last frame` / cierre del clip adicional | `CON-2026-08-24_CraveYou_Maeve_HOOK-FIRST-V1_loop_final_reference.png` — Drive ID `1GuPhrLrUJXwW1x_Arn4BNUNZouyj3qpL` | [Abrir referencia final](https://drive.google.com/file/d/1GuPhrLrUJXwW1x_Arn4BNUNZouyj3qpL/view?usp=drivesdk) |
+| Prompt de Flow | `CON-2026-08-24_CraveYou_Maeve_HOOK-FIRST-V1_Flow_Prompt.txt` — Drive ID `1rBlR7Y3SAGeg4Vr6gze7PEX7IUS_hlkA` | [Abrir prompt](https://drive.google.com/file/d/1rBlR7Y3SAGeg4Vr6gze7PEX7IUS_hlkA/view?usp=drivesdk) |
+| Máster visual existente | `CON-2026-08-24_CraveYou_Maeve_HOOK-FIRST-V1_master_no_audio.mp4` — Drive ID `1YxeaHC_U73JbqofzZL7nGoPNtCZmBL45` | [Abrir máster](https://drive.google.com/file/d/1YxeaHC_U73JbqofzZL7nGoPNtCZmBL45/view?usp=drivesdk) |
 
 La referencia inicial muestra a Maeve frente al espejo con la pluma cruzando el primer plano y su mirada levantándose. La referencia final mantiene el mismo salón editorial, pero una pluma ocupa aproximadamente 75–90% de la imagen y deja un borde de verde petróleo/ámbar para ocultar el reinicio. En Flow, el clip de cierre debe comenzar desde el estado final del máster actual y terminar acercándose progresivamente a la referencia final; no debe reiniciar la pose de Maeve al principio ni convertir la imagen final en una pantalla blanca estática. La duración recomendada del cierre es 4–5 segundos.
 
-El resultado debe exportarse sin audio incrustado. `Crave You` sigue pendiente de verificación nativa en Facebook e Instagram. Las referencias y esta guía están en `Review`: usar Flow para producir el cierre o concatenar el loop no autoriza todavía programación ni publicación.
+El resultado debe exportarse sin audio incrustado. `Crave You` sigue pendiente de verificación nativa en Facebook e Instagram. Las referencias, el prompt y el máster están guardados en la carpeta específica de Drive; el clip que Fernando genere en Flow deberá guardarse allí con el mismo identificador de concepto. Usar Flow para producir el cierre o concatenar el loop no autoriza todavía programación ni publicación.
