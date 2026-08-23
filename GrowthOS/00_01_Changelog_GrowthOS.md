@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-23
-**Versión:** 3.15
+**Versión:** 3.16
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.16.00] — 2026-08-23 (Manus): Nuevo corte de comentarios de Facebook posterior al lote publicado.** La revisión de solo lectura detectó seis comentarios raíz y una réplica nueva de usuario dentro de un hilo existente. Seis señales quedaron pendientes de aprobación con propuestas específicas; una cita religiosa extensa con enlace, sin solicitud clara, quedó como `No_Requiere_Respuesta`. No se publicó ninguna respuesta. El ledger pasa a v3.1 y la auditoría de Facebook a v3.4.
 
 - **[3.15.00] — 2026-08-23 (Manus): Publicación verificada de 11 respuestas aprobadas en Facebook.** Fernando autorizó explícitamente el lote refinado. Meta Graph API v26.0 devolvió HTTP 200 en los 11 casos; todas las respuestas fueron atribuidas a Universe Sent Me, conservaron el texto exacto y quedaron visibles. Diez devolvieron el `parent.id` esperado directamente. Una respuesta quedó anidada bajo la respuesta previa de la Página; no se reintentó para evitar duplicado y la excepción quedó en el JSON de auditoría. El ledger pasa a v3.0 y la auditoría de Facebook a v3.3.
 

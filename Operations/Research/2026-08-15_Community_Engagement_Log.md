@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-23
-version: "3.0"
+version: "3.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -13,6 +13,7 @@ related_documents:
   - "GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md"
   - "Operations/Automation/validate_community_engagement_log.py"
   - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch.json"
+  - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_02.json"
   - "GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md"
 organization: "Operations/Research"
 ---
@@ -269,3 +270,20 @@ Fernando autorizó explícitamente la publicación del lote refinado. Meta Graph
 | `122151376083072582_1345911810604525` | `122151376083072582_919726994522401` | `Respondido` |
 
 La respuesta `122151376083072582_1634044988141953` quedó visible y con texto exacto, pero Meta devolvió como padre la respuesta previa de Universe Sent Me (`122151376083072582_1093298379810084`) en vez del ID de la réplica objetivo. No se reintentó para evitar duplicar una respuesta pública; la excepción quedó registrada en el CSV y en el JSON de auditoría.
+
+
+## 22. Nuevo corte de Facebook — 23 de agosto de 2026, posterior a la publicación del lote anterior
+
+La revisión de solo lectura mediante Meta Graph API v26.0 comparó el corte actual con la revisión anterior y también comprobó respuestas anidadas. Se detectaron **seis comentarios raíz nuevos** y **una réplica nueva de usuario**. Seis señales son respondibles y una publicación con cita religiosa extensa y enlace externo no tiene una solicitud clara, por lo que queda `No_Requiere_Respuesta` sin activar moderación automática.
+
+| Comentario_ID | Señal | Estado |
+|---|---|---|
+| `122151376083072582_1078572578055585` | “Amén hermanas 🤓” | `Pendiente_Respuesta` |
+| `122151376011072582_1374323618238603` | “Mis manos en tu cintura” — Nino Bravo | `Pendiente_Respuesta` |
+| `122151376011072582_1474344638049134` | “Tonight” — The Smashing Pumpkins | `Pendiente_Respuesta` |
+| `122151376011072582_2991082287899276` | “Stirb nicht vor mir” — Rammstein | `Pendiente_Respuesta` |
+| `122151376011072582_2308975296571861` | “Birdie” — León Larregui | `Pendiente_Respuesta` |
+| `122151375549072582_1089305796872950` | “bigbong 🤣” como continuación del juego de BigBang | `Pendiente_Respuesta` |
+| `122151376011072582_1807143836955837` | Cita de Corán 66:11, comentario extenso con enlace externo | `No_Requiere_Respuesta` |
+
+Las propuestas fueron preparadas con referencias al título, artista o juego verbal concreto. No se publicó ninguna respuesta en este corte. La réplica `bigbong 🤣` se trata como unidad independiente porque apareció dentro de un hilo cuyo comentario raíz ya tenía respuesta de la Página.

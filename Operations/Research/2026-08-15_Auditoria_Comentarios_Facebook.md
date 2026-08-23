@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-23
-version: "3.3"
+version: "3.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -16,6 +16,7 @@ related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
   - "Operations/Automation/validate_community_engagement_log.py"
   - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch.json"
+  - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_02.json"
 organization: "Operations/Research"
 ---
 
@@ -644,3 +645,18 @@ La revisión también confirma dos límites operativos. Una propuesta no debe co
 Fernando autorizó explícitamente el lote refinado. La ejecución idempotente mediante Meta Graph API v26.0 revisó cada comentario antes de escribir, no encontró respuestas exactas preexistentes y publicó las 11 respuestas. El resultado fue HTTP 200 en los 11 casos; la lectura posterior confirmó autoría `Universe Sent Me`, texto exacto e `is_hidden=false` en todos.
 
 Diez respuestas devolvieron el `parent.id` esperado directamente. La respuesta `122151376083072582_1634044988141953`, correspondiente a la réplica `122151376083072582_1712631733280410`, quedó visible y con texto exacto, pero Meta devolvió como padre la respuesta previa de la Página `122151376083072582_1093298379810084`. No se reintentó porque una segunda publicación habría creado un duplicado visible. El resultado completo y los checks quedan en `2026-08-23_Facebook_Comment_Publication_Batch.json`; el CSV registra las 11 filas como `Respondido`, con aprobación y `Respuesta_Meta_ID`.
+
+
+## 43. Nuevo corte de comentarios de Facebook — 23 de agosto de 2026
+
+La revisión de solo lectura posterior al lote publicado comparó el estado actual con la revisión anterior y recorrió también las respuestas anidadas. El delta contiene seis comentarios raíz nuevos y una réplica nueva de usuario. Las seis señales respondibles son recomendaciones musicales, una continuación humorística y una reacción contextual; la cita religiosa extensa con enlace externo no formula una solicitud clara y queda sin respuesta ni moderación automática.
+
+| Grupo | Casos | Acción |
+|---|---:|---|
+| Oportunidades respondibles | 6 | Preparar respuesta específica y esperar aprobación humana. |
+| Réplica dentro de hilo existente | 1 | Tratar como unidad independiente; no responder todavía. |
+| Comentario extenso con enlace, sin solicitud clara | 1 | `No_Requiere_Respuesta`; no asumir intención ni marcar spam automáticamente. |
+
+Las nuevas recomendaciones permiten mantener la regla editorial de especificidad: “Mis manos en tu cintura” se responde desde el romance clásico de Nino Bravo; “Tonight” desde su energía nostálgica y alternativa; “Stirb nicht vor mir” desde el dramatismo de Rammstein; y “Birdie” desde la combinación de ternura y viaje asociada a la elección. La réplica “bigbong 🤣” continúa el juego verbal del comentario sobre BigBang y puede recibir una línea breve sobre la dicción del universo. “Amén hermanas 🤓” prolonga el remate del hilo sin necesidad de explicitar el contenido original.
+
+El corte no incluye grupos de Facebook, Instagram, TikTok ni publicaciones ajenas. No se publicó ninguna respuesta.
