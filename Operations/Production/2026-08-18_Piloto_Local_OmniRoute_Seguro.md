@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 2.3
+**Versión:** 2.4
 
 **Autor:** Manus AI
 
@@ -294,6 +294,20 @@ En el iMac, después de copiar el script a una ubicación local, aplicar permiso
 chmod 700 ~/omniroute-daily-wrapper.sh
 ~/omniroute-daily-wrapper.sh
 ```
+
+El modo normal acepta un prompt de una sola línea. Para pegar un prompt largo o estructurado en varias líneas, usar el modo multilinea y escribir `FIN` sola en una línea cuando se haya terminado. Esto evita que las líneas del prompt se interpreten como comandos de la Terminal:
+
+```bash
+~/omniroute-daily-wrapper.sh --multiline
+```
+
+Después de iniciar ese modo, pegar el prompt completo, escribir:
+
+```text
+FIN
+```
+
+y pulsar Enter. Solo entonces el wrapper solicitará la API key de forma silenciosa.
 
 ### Validación del wrapper — 2026-08-23
 

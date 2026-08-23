@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 2.3
+**Versión:** 2.4
 
 **Autor:** Manus AI
 
@@ -115,6 +115,8 @@ Oracle asigna una **home region** al crear la tenancy y no permite cambiarla pos
 Para el uso manual desde el iMac se aprueba el wrapper [`omniroute-daily-wrapper.sh`](omniroute-daily-wrapper.sh), que solicita la clave de OmniRoute de forma silenciosa, utiliza un model ID Groq explícito, elimina los archivos temporales al terminar y no publica ni escribe en los ledgers. La ruta sigue siendo local y reversible; no se autoriza almacenar credenciales en `.bashrc`, `.profile`, Git o servicios automáticos. El primer caso de uso debe permanecer editorial y revisable, con prompts sintéticos o anonimizados.
 
 La primera ejecución del wrapper quedó validada el 2026-08-23 con un prompt sintético: HTTP `200`, `finish_reason: stop`, provider `groq`, modelo `openai/gpt-oss-20b`, `strategy=single`, `2093 ms`, `89` tokens de entrada y `44` de salida, sin cache hit. Esta prueba confirma la operación diaria del gateway, pero no autoriza todavía la publicación automática ni el envío de datos reales.
+
+El wrapper fue corregido para aceptar prompts extensos en modo multilinea mediante `omniroute-daily-wrapper.sh --multiline`; el usuario pega el contenido y escribe `FIN` en una línea separada antes de introducir la API key. Este control evita que las líneas del prompt se interpreten accidentalmente como comandos de shell.
 
 La recomendación actual es no aceptar `VM.Standard.E5.Flex` ni `VM.Standard3.Flex` solo porque tengan capacidad. Debe esperarse A1, intentar E2 Micro como piloto de muy bajo consumo o migrar a Google Cloud e2-micro. En Google Cloud, la ruta más simple requiere una IPv4 externa efímera y puede generar un SKU separado; IAP permite administrar la VM sin IP pública, pero no resuelve por sí solo la salida del contenedor hacia Docker Hub o Groq. El plan Google AI Pro/Google One y el crédito `Trial credit for GenAI App Builder` no deben tratarse como equivalentes: el primero es una suscripción con beneficios y créditos mensuales separados, y el segundo está limitado en la cuenta del piloto a GenAI App Builder/Vertex AI Agent Builder, APIs de Vertex AI y SKUs de IA generativa directamente asociados. El crédito tiene fecha de vencimiento confirmada del **14 de marzo de 2027**. **Compute Engine está excluido de ese crédito y se factura a tarifas estándar.** Compute Engine solo se aprueba mediante el e2-micro Free Tier u otra promoción distinta cuyos términos confirmen explícitamente que el SKU está cubierto. Si el costo cero estricto es no negociable, se debe preferir Oracle Always Free cuando haya capacidad o usar Groq directamente desde el iMac. Si se usa E2 Micro, OmniRoute debe ejecutarse con swap, servicios de fondo desactivados, un único provider cloud y solicitudes pequeñas; si el gateway no cabe con estabilidad, se debe omitir OmniRoute. Si existe una VM flexible creada por error, se debe terminar únicamente esa VM y eliminar su boot volume vacío; no solicitar la eliminación de toda la tenancy salvo que se quiera cerrar permanentemente la cuenta y se hayan revisado todos sus recursos. [12] [13] [14] [15] [16] [17]
 

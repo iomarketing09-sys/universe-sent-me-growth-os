@@ -4,6 +4,34 @@
 
 set -Eeuo pipefail
 
+usage() {
+  cat <<'USAGE'
+Uso:
+  omniroute-daily-wrapper.sh             Prompt de una sola línea.
+  omniroute-daily-wrapper.sh --multiline Prompt de varias líneas; termina escribiendo FIN en una línea separada.
+  omniroute-daily-wrapper.sh --help      Mostrar esta ayuda.
+USAGE
+}
+
+PROMPT_MODE="single"
+while [[ "$#" -gt 0 ]]; do
+  case "$1" in
+    --multiline)
+      PROMPT_MODE="multiline"
+      shift
+      ;;
+    --help|-h)
+      usage
+      exit 0
+      ;;
+    *)
+      printf 'Opción no reconocida: %s\n\n' "$1" >&2
+      usage >&2
+      exit 2
+      ;;
+  esac
+done
+
 ENDPOINT="${OMNIROUTE_URL:-http://127.0.0.1:20128/v1/chat/completions}"
 MODEL="${OMNIROUTE_MODEL:-groq/openai/gpt-oss-20b}"
 MAX_TOKENS="${OMNIROUTE_MAX_TOKENS:-400}"
@@ -32,7 +60,22 @@ fi
 printf 'Endpoint local: %s\n' "$ENDPOINT"
 printf 'Modelo: %s\n\n' "$MODEL"
 
-read -r -p 'Prompt sintético o anonimizado: ' PROMPT
+if [[ "$PROMPT_MODE" == "multiline" ]]; then
+  printf '%s\n' 'Escribe el prompt. Cuando termines, escribe únicamente FIN en una línea separada:'
+  PROMPT=""
+  while IFS= read -r line; do
+    if [[ "$line" == "FIN" ]]; then
+      break
+    fi
+    if [[ -n "$PROMPT" ]]; then
+      PROMPT+=$'\n'
+    fi
+    PROMPT+="$line"
+  done
+else
+  read -r -p 'Prompt sintético o anonimizado: ' PROMPT
+fi
+
 if [[ -z "${PROMPT//[[:space:]]/}" ]]; then
   printf 'Error: el prompt no puede estar vacío.\n' >&2
   exit 1
