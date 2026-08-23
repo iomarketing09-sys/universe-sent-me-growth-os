@@ -194,6 +194,6 @@ El conteo correcto depende de si se cuentan **productos-publicación** o **coloc
 | 29 ago | 1 | 1 | AFF-09 |
 | 30 ago | 1 | 1 | AFF-10 |
 
-El total es **16 productos-publicación registrados** durante el tramo, de los cuales 10 pertenecen al piloto principal y 6 a capas adicionales. En colocaciones por superficie son **17**, porque Universe/Senales usa el mismo producto en Facebook e Instagram. TikTok y YouTube quedan fuera del conteo activo porque sus enlaces están en `Hold` y no publicados.
+El total es **15 productos-publicación registrados** durante el tramo, de los cuales 10 pertenecen al piloto principal y 5 a capas adicionales. En colocaciones por superficie son **16**, porque Universe/Senales usa el mismo producto en Facebook e Instagram. TikTok y YouTube quedan fuera del conteo activo porque sus enlaces están en `Hold` y no publicados.
 
 Estas cifras describen el calendario y los registros operativos, no garantizan que cada pieza haya sido publicada ni que haya generado clics. Para medir la cadencia comercial real, cada fila debe reconciliarse con permalink, fecha efectiva y snapshot de Mercado Libre.
