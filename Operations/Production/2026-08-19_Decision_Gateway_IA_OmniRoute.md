@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 1.4
+**Versión:** 1.5
 
 **Autor:** Manus AI
 
@@ -110,9 +110,9 @@ Oracle asigna una **home region** al crear la tenancy y no permite cambiarla pos
 | Google Cloud `e2-micro` | Nivel gratuito mensual | Solo `us-west1`, `us-central1` o `us-east1`; 30 GB-mes de disco estándar y 1 GB/mes de salida desde Norteamérica dentro de límites; requiere otra cuenta y su propia facturación. | **Alternativa externa persistente** |
 | Railway | Trial/crédito limitado | Prueba sencilla, pero no es Always Free permanente y el volumen tiene condiciones de expiración. | **Solo prueba** |
 | Render Free | Gratuita con límites | Suspensión por inactividad y filesystem efímero; no conserva SQLite/configuración. | **Solo demo descartable** |
-| Cuenta Oracle duplicada | No aprobada | No crear cuentas adicionales para intentar cambiar la región; puede contradecir términos y complicar la gobernanza. | **No usar** |
+| Cuenta Oracle duplicada | No aprobada | Oracle permite una sola cuenta Free Trial o Always Free por persona; no crear cuentas adicionales para cambiar la home region o sortear la capacidad. | **No usar** |
 
-La recomendación actual es no aceptar `VM.Standard.E5.Flex` ni `VM.Standard3.Flex` solo porque tengan capacidad. Debe esperarse A1, intentar E2 Micro como piloto de muy bajo consumo o migrar a Google Cloud e2-micro. Si se usa E2 Micro, OmniRoute debe ejecutarse con swap, servicios de fondo desactivados, un único provider cloud y solicitudes pequeñas; si el gateway no cabe con estabilidad, se debe usar Groq directamente desde un cliente autorizado y omitir OmniRoute.
+La recomendación actual es no aceptar `VM.Standard.E5.Flex` ni `VM.Standard3.Flex` solo porque tengan capacidad. Debe esperarse A1, intentar E2 Micro como piloto de muy bajo consumo o migrar a Google Cloud e2-micro. Si se usa E2 Micro, OmniRoute debe ejecutarse con swap, servicios de fondo desactivados, un único provider cloud y solicitudes pequeñas; si el gateway no cabe con estabilidad, se debe usar Groq directamente desde un cliente autorizado y omitir OmniRoute. Si existe una VM flexible creada por error, se debe terminar únicamente esa VM y eliminar su boot volume vacío; no solicitar la eliminación de toda la tenancy salvo que se quiera cerrar permanentemente la cuenta y se hayan revisado todos sus recursos. [12] [13]
 
 ## Piloto propuesto
 
@@ -170,3 +170,7 @@ Hasta entonces, la conclusión operativa es: **sí se puede usar OmniRoute, pero
 [10]: [Render — Deploy for Free](https://render.com/docs/free)
 
 [11]: [Railway — Pricing and resource limits](https://railway.com/pricing)
+
+[12]: [Oracle Cloud Free Tier — FAQ](https://www.oracle.com/cloud/free/faq/)
+
+[13]: [Oracle — Deleting a Free Tier Tenancy and Cloud Account](https://docs.oracle.com/en-us/iaas/Content/General/Tasks/deleting_tenancy_freetier.htm)

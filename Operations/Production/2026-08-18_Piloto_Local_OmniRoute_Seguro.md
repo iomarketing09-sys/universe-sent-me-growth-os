@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 1.4
+**Versión:** 1.5
 
 **Autor:** Manus AI
 
@@ -335,11 +335,12 @@ Oracle ofrece una VM Always Free con recursos persistentes durante la vida de la
 
 ### 1. Crear la cuenta y controlar el coste
 
-1. Abre [Oracle Cloud Free](https://www.oracle.com/cloud/free/) y completa el registro. La cuenta puede solicitar verificación de identidad o método de pago según el país; eso no convierte automáticamente los recursos etiquetados como **Always Free Eligible** en recursos de pago.
+1. Abre [Oracle Cloud Free](https://www.oracle.com/cloud/free/) y completa el registro. La cuenta puede solicitar verificación de identidad o método de pago según el país; eso no convierte automáticamente los recursos etiquetados como **Always Free Eligible** en recursos de pago. Oracle indica que solo se permite una cuenta Free Trial o Always Free por persona; no crear una segunda cuenta para intentar obtener otra región o sortear la falta de capacidad. [24]
 2. Identifica la **home region** de la tenancy. Oracle indica que la home region no se puede cambiar después de crear la cuenta y que las VMs Compute Always Free deben crearse allí. Se pueden suscribir regiones adicionales en algunas cuentas, pero eso no convierte sus recursos Compute en Always Free. [20] [22]
 3. En la cuenta actual del piloto, la consola muestra la región `Mexico Northeast (Monterrey)` y solo `AD-1`. Por tanto, no hay otro availability domain disponible para sortear el error de capacidad; la acción correcta es esperar y reintentar A1, no cambiar a E5/E4/Intel Flex. En regiones con varios dominios sí se puede probar otro AD. Oracle indica que E2 Micro puede estar limitado a un solo AD. [20]
 4. Crea, si la consola lo permite, un compartment llamado `omniroute-free` y utiliza únicamente recursos que muestren la etiqueta **Always Free Eligible**. No crees Load Balancer, NAT Gateway, bases de datos de pago, discos fuera de la home region ni IPs o servicios adicionales sin revisar el coste.
 5. No actives Pay As You Go solo para resolver `out of host capacity`. Oracle indica que los recursos Always Free siguen sin cargo después de una actualización, pero cualquier recurso que exceda los límites gratuitos sí puede generar cargos. Las cuotas de compartment ayudan a limitar el consumo. [20]
+6. Si una VM E5/E4/Intel Flex fue creada por error, termina únicamente la instancia y elimina su boot volume vacío; no solicites la eliminación de toda la tenancy. La eliminación de la tenancy borra la cuenta cloud y todos sus recursos de manera irreversible, y la solicitud puede suspenderlos durante el proceso de 30 días. [25]
 
 ### 2. Crear la VM Always Free
 
@@ -730,3 +731,7 @@ Si el piloto se convierte en una función compartida, se deberán actualizar el 
 [22]: [Oracle — Managing Regions](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingregions.htm)
 
 [23]: [Google Cloud — Free Program and Compute Engine e2-micro](https://cloud.google.com/free/docs/free-cloud-features)
+
+[24]: [Oracle Cloud Free Tier — FAQ](https://www.oracle.com/cloud/free/faq/)
+
+[25]: [Oracle — Deleting a Free Tier Tenancy and Cloud Account](https://docs.oracle.com/en-us/iaas/Content/General/Tasks/deleting_tenancy_freetier.htm)
