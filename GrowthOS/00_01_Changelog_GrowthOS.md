@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 3.05
+**Versión:** 3.06
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.06.00] — 2026-08-22 (Manus): Evidencia visual agregada de Meta Business Suite para Reels 25 julio–21 agosto.** Fernando proporcionó capturas del panel con aproximadamente 20,500 visualizaciones, 23 h 18 min de reproducción y 473 interacciones en Reels de Facebook, con variaciones visibles de +17.4%, +23.6% y +56.6%. La vista específica de Instagram muestra 1,841 visualizaciones orgánicas, aproximadamente 1,100 de alcance y 70 interacciones, con variaciones de -23.3%, -28.9% y -7.9%. Se documentó la diferencia entre el encabezado agregado Facebook+Instagram y el dato específico de Instagram. Estos valores son evidencia agregada de canal y no se atribuyen a MPM-001 u otros IDs individuales; views, reach y retención por Reel siguen pendientes. Se creó `Operations/Research/2026-08-22_Meta_Business_Suite_28D_Reels_Visual_Evidence.md` y se actualizó el assessment, el Registro Maestro y la fuente maestra.
 
 - **[3.05.00] — 2026-08-22 (Manus): Reconciliación Meta de MPM-001 y Reels siguientes.** La consulta de solo lectura verificó cinco casos publicados (`MPM-001`, `CON-2026-08-21-UniverseSenales`, `CON-2026-08-20-RemoteControl-EvanElara`, `CON-2026-08-19-DobleCheck-Universe` y `CNT-023`) con Page Post HTTP 200, `is_published=true`, hora local y permalink; los cinco objetos Reel aceptaron su ID básico. MPM-001 queda confirmado en Facebook con 18 interacciones L1; no se expusieron views, reach ni retención. MPM-002, MPM-003 y `CON-2026-08-24-CraveYou-MaeveFeathers` siguen sin Meta ID y no publicados. Se creó `Operations/Research/2026-08-22_Reels_Meta_Readonly_Reconciliation.json`, se actualizó el Registro Maestro y el backlog; no se publicó, programó, canceló ni modificó contenido.
 

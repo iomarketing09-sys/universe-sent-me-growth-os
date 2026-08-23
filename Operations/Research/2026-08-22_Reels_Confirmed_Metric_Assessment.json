@@ -4,7 +4,7 @@
   "status": "Active",
   "created": "2026-08-22",
   "updated": "2026-08-22",
-  "version": "1.5",
+  "version": "1.6",
   "author": "Manus AI",
   "related_documents": [
     "Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv",
@@ -13,8 +13,41 @@
     "Operations/Research/2026-08-22_Reels_Metric_Instrumentation_Protocol.md",
     "Operations/Research/2026-08-22_Corte_Diario_Metricas_2200.md",
     "Operations/Research/2026-08-22_Meta_Daily_Metrics_Raw.json",
+    "Operations/Research/2026-08-22_Meta_Business_Suite_28D_Reels_Visual_Evidence.md",
     "GrowthOS/07_00_Registro_Maestro_Reels.md"
   ],
+  "meta_business_suite_28d_visual_evidence": {
+    "period_displayed": "2026-07-25_to_2026-08-21",
+    "source_type": "User_provided_Meta_Business_Suite_screenshots",
+    "facebook_reels": {
+      "views_displayed": 20500,
+      "views_display_precision": "approximate_display_20.5k",
+      "watch_time_displayed": "23h18m",
+      "interactions": 473,
+      "views_change_percent": 17.4,
+      "watch_time_change_percent": 23.6,
+      "interactions_change_percent": 56.6,
+      "reels_published_in_content_summary": 17
+    },
+    "instagram_specific": {
+      "organic_views": 1841,
+      "organic_views_change_percent": -23.3,
+      "reach_displayed": 1100,
+      "reach_change_percent": -28.9,
+      "content_interactions": 70,
+      "content_interactions_change_percent": -7.9,
+      "publications": 38,
+      "publications_change_percent": 8.9
+    },
+    "aggregate_header_context": {
+      "total_views_displayed": 137300,
+      "facebook_views": 135471,
+      "instagram_views": 1841,
+      "note": "La vista agregada incluye Facebook e Instagram; no sumar otra vez los 1,841 de Instagram."
+    },
+    "attribution_status": "Channel_aggregate_only_not_assignable_to_individual_reels",
+    "missing_individual_video_metrics": ["views_by_meta_id", "reach_by_meta_id", "retention", "average_watch_time_by_reel", "completion_rate", "followers_gained"]
+  },
   "inventory_scope": {
     "confirmed_reels": 6,
     "raw_engagement_median_non_verdict": 10.5,
