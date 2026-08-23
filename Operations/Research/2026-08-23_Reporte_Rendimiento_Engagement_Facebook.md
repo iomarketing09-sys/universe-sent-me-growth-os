@@ -2,13 +2,13 @@
 
 **Propósito:** Presentar el rendimiento reciente de la Página de Facebook Universe Sent Me usando datos nativos de Meta y auditar si la información está integrada correctamente en el Growth OS.
 
-**Estado:** Active  
-**Fecha de creación:** 2026-08-23  
-**Última actualización:** 2026-08-23  
-**Versión:** 1.0  
+**Estado:** Active
+**Fecha de creación:** 2026-08-23
+**Última actualización:** 2026-08-23
+**Versión:** 1.1
 **Autor:** Manus AI  
 **Organización:** `Operations/Research/`  
-**Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `Operations/Research/2026-08-22_Analisis_Semanal_20260816_20260822.md`, `Operations/Research/2026-08-15_Publication_Log.csv`, `Operations/Research/2026-08-15_ExperimentLog.csv`, `Operations/Research/2026-08-23_Facebook_Performance_Meta_API.json`, `Operations/Research/2026-08-23_Facebook_Performance_Recent_Chart.png`
+**Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `Operations/Research/2026-08-22_Analisis_Semanal_20260816_20260822.md`, `Operations/Research/2026-08-15_Publication_Log.csv`, `Operations/Research/2026-08-15_ExperimentLog.csv`, `Operations/Research/2026-08-23_Facebook_Performance_Meta_API.json`, `Operations/Research/2026-08-23_Facebook_Performance_Summary.json`, `Operations/Research/2026-08-23_Facebook_Growth_Integration_Audit.json`, `Operations/Research/2026-08-23_Facebook_Post_Reconciliation.json`, `Operations/Research/2026-08-23_Facebook_Performance_Recent_Chart.png`
 
 ---
 
@@ -18,7 +18,7 @@ El snapshot vivo de Meta Graph API v26.0 incluye las **20 publicaciones más rec
 
 El post filosófico con el mensaje visible `☁️✨🤔`, asociado al ID `1036844829507460_122151375549072582`, acumuló **2,846 interacciones** y representa **69.7%** del total del snapshot. Los dos primeros posts representan **76.3%**. Por tanto, el rendimiento reciente no debe interpretarse con la media simple: la señal central es mucho más baja y la difusión está concentrada en pocas piezas. [1]
 
-La integración con el Growth OS está **bien definida a nivel de arquitectura y parcialmente ejecutada a nivel operativo**. El proyecto ya tiene una definición métrica, ledgers de publicación y experimentos, HypothesisBank y reportes semanales. Sin embargo, el snapshot actual de Meta aún no cierra automáticamente las ventanas 24/72 horas, no contiene alcance o retención utilizables y solo 17 de las 20 publicaciones recientes encontraron coincidencia por ID en los ledgers actuales. El sistema tiene la estructura correcta, pero todavía no puede considerarse una integración completa de extremo a extremo. [1] [3] [4] [5]
+La integración con el Growth OS está **bien definida a nivel de arquitectura y parcialmente ejecutada a nivel operativo**. El proyecto ya tiene una definición métrica, ledgers de publicación y experimentos, HypothesisBank y reportes semanales. Sin embargo, el snapshot actual de Meta aún no cierra automáticamente las ventanas 24/72 horas ni contiene alcance o retención utilizables. Antes de esta ronda, tres Reels no estaban enlazados a los ledgers principales; la reconciliación posterior dejó **20 de 20 publicaciones recientes** con coincidencia por ID. El sistema ya tiene el crosswalk corregido, pero todavía no puede considerarse una integración completa de extremo a extremo por la brecha de ventanas e insights nativos. La primera prioridad de identidad quedó cerrada sin convertir snapshots lifetime en ventanas temporales. [1] [3] [4] [5] [6]
 
 ## 2. Alcance y definición métrica
 
@@ -97,15 +97,15 @@ La ejecución actual presenta cuatro brechas concretas:
 | Área | Evidencia actual | Evaluación |
 |---|---|---|
 | Snapshot vivo | Se conserva el JSON completo del 23 de agosto con 20 posts y métricas públicas. | **Correcto**, pero todavía separado del artefacto normalizado histórico de 28 días. |
-| Identidad de publicaciones | 17 de 20 IDs recientes coinciden con Publication Log y ExperimentLog; 3 no encontraron coincidencia en el crosswalk actual. | **Parcial**; falta reconciliar los tres IDs restantes antes de usarlos para hipótesis. |
-| Ventanas 24/72 horas | En 30 filas recientes del ExperimentLog y 35 publicaciones de Facebook del Publication Log, no hay valores 24h ni 72h no vacíos. | **Insuficiente** para análisis temporal limpio; predominan cortes lifetime u observaciones pendientes. |
+| Identidad de publicaciones | Los 20 de 20 IDs recientes coinciden ahora con Publication Log y ExperimentLog; los tres faltantes fueron reconciliados desde el inventario de Reels y el registro maestro. | **Corregido para este corte**; el crosswalk principal ya está completo. |
+| Ventanas 24/72 horas | En las 30 filas operativas recientes del ExperimentLog y las 38 publicaciones de Facebook del Publication Log, no hay valores 24h ni 72h no vacíos; la observación de reconciliación de Reels también conserva ambos campos nulos. | **Insuficiente** para análisis temporal limpio; predominan cortes lifetime u observaciones pendientes. |
 | Insights de alcance y video | El snapshot no entrega valores utilizables de impresiones, alcance, reproducciones o retención. | **Brecha de instrumentación**; Reels no puede subir de evidencia parcial sin otro origen nativo. |
 
 La base histórica también está correctamente documentada, pero no está fresca: el artefacto normalizado de Facebook de 28 días contiene 143 filas y cubre del 22 de julio al 18 de agosto, con extracción del 19 de agosto. El reporte semanal 16–22 de agosto ya integró 42 publicaciones y 3,464 interacciones básicas observables, pero declaró expresamente que eran acumulados observables y que Reels carecía de views, reach y retención por publicación. El snapshot actual extiende la lectura hasta el 23 de agosto, pero aún no reemplaza ni actualiza automáticamente ese ciclo semanal. [1] [2]
 
 ## 8. Acciones prioritarias de integración
 
-1. **Reconciliar los tres IDs recientes sin coincidencia** antes de atribuirlos a contenido, personaje, horario o hipótesis. Si no existe fila de publicación, crear primero la identidad operativa; no inferirla desde el caption.
+1. **Mantener el crosswalk reconciliado**: los 20 IDs recientes ya están enlazados con Publication Log, ExperimentLog e inventario especializado de Reels. No atribuir nuevas publicaciones a contenido, personaje, horario o hipótesis sin una identidad operativa verificable.
 2. **Conservar el snapshot vivo como evidencia primaria** y generar una tabla normalizada por publicación con fecha de extracción, ventana, reacciones, comentarios, shares, impresiones, alcance y retención, usando valores nulos cuando Meta no entregue datos.
 3. **Separar lifetime de 24/72 horas** en el Publication Log y ExperimentLog. Un acumulado actual no debe rellenar una ventana temporal que no fue capturada.
 4. **Cerrar el circuito de hipótesis**: cada corte debe producir un veredicto explícito —señal, inconcluso o no evaluable— y una próxima acción conectada con HB-003, HB-004, HB-005 o la hipótesis de video correspondiente.
@@ -122,3 +122,4 @@ El Growth OS **sí está integrado como sistema documental y analítico**, pero 
 [3]: `2026-08-15_ExperimentLog.csv` "Ledger append-only de hipótesis y observaciones"
 [4]: `2026-08-15_Publication_Log.csv` "Ledger append-only de publicaciones por plataforma"
 [5]: `../../GrowthOS/Integracion_Growth_OS.md` "Documento de integración del Growth OS"
+[6]: `2026-08-23_Facebook_Post_Reconciliation.json` "Reconciliación de tres Page Post IDs de Meta con los ledgers del Growth OS"

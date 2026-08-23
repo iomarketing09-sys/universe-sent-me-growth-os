@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-23
-**Versión:** 3.25
+**Versión:** 3.26
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.26.00] — 2026-08-23 (Manus): Reconciliación de los tres IDs de Reels y cierre del crosswalk de Facebook.** Se verificó que los tres posts faltantes ya estaban identificados en el inventario especializado o el registro maestro: `MPM-001` / `1581447113440863`, `CON-2026-08-21-UniverseSenales` / `2005557463434064` y `CON-2026-08-20-RemoteControl-EvanElara` / `2815726225473165`. Se añadieron de forma idempotente a `Publication_Log.csv`, `ExperimentLog.csv` y `Reels_Publication_Inventory.csv`, con 48 interacciones públicas lifetime como snapshot observable y sin rellenar ventanas 24/72h. El crosswalk de las 20 publicaciones recientes queda en 20/20; las brechas activas siguen siendo ventanas temporales e insights nativos de alcance/video.
 
 - **[3.25.00] — 2026-08-23 (Manus): Reporte vivo de rendimiento y auditoría de integración de Facebook.** Meta Graph API v26.0 devolvió 20 publicaciones recientes con 4,081 interacciones públicas acumuladas (reacciones + comentarios + shares); la mediana fue 45.5 y el outlier filosófico representó 69.7% del total. El Growth OS está integrado a nivel documental —fuente métrica, Publication Log, ExperimentLog, HypothesisBank y reportes—, pero parcialmente a nivel de pipeline: 17/20 publicaciones recientes coinciden con los ledgers y no hay ventanas 24/72h cerradas ni alcance/retención utilizables en el snapshot. Se creó `Operations/Research/2026-08-23_Reporte_Rendimiento_Engagement_Facebook.md`, con gráfico y evidencia JSON, y se actualizó `GrowthOS/Integracion_Growth_OS.md` a v2.5.3.
 

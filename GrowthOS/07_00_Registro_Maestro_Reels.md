@@ -4,9 +4,9 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-23
-**Versión:** 4.2
+**Versión:** 4.3
 **Autor:** Manus AI (CGO)
-**Documentos relacionados:** `05_00_Calendario_01_02_Ago.md`, `Operations/Memories/deep_dive_reels_comparativo.md`, `../Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`, `../Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json`, `../Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json`, `../Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json`, `../Operations/Research/2026-08-19_Decisiones_Reconciliacion_Reels.json`, `../Operations/Research/2026-08-19_Piezas_Sin_Cascada_Revision.json`, `../Operations/Research/2026-08-19_Auditoria_Assets_Drive_Reels.md`, `../Operations/Research/2026-08-19_Meta_Reels_Audit.json`, `../Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json`, `../Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json`, `../Operations/Research/Affiliate_Link_Ledger.csv`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Desamor.md`, `../Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv`, `../Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json`, `../Operations/Research/2026-08-22_Reels_Meta_Readonly_Reconciliation.json`, `../Operations/Research/2026-08-22_Meta_Business_Suite_28D_Reels_Visual_Evidence.md`, `../Operations/Production/2026-08-22_Brief_Reel_Dialogue_Radio_003.md`, `../Operations/Production/2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md`, `14_00_Fuente_Maestra_y_Ledgers.md`
+**Documentos relacionados:** `05_00_Calendario_01_02_Ago.md`, `Operations/Memories/deep_dive_reels_comparativo.md`, `../Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`, `../Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json`, `../Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json`, `../Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json`, `../Operations/Research/2026-08-19_Decisiones_Reconciliacion_Reels.json`, `../Operations/Research/2026-08-19_Piezas_Sin_Cascada_Revision.json`, `../Operations/Research/2026-08-19_Auditoria_Assets_Drive_Reels.md`, `../Operations/Research/2026-08-19_Meta_Reels_Audit.json`, `../Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json`, `../Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json`, `../Operations/Research/Affiliate_Link_Ledger.csv`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Desamor.md`, `../Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv`, `../Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json`, `../Operations/Research/2026-08-22_Reels_Meta_Readonly_Reconciliation.json`, `../Operations/Research/2026-08-22_Meta_Business_Suite_28D_Reels_Visual_Evidence.md`, `../Operations/Research/2026-08-23_Facebook_Post_Reconciliation.json`, `../Operations/Research/2026-08-23_Facebook_Performance_Meta_API.json`, `../Operations/Production/2026-08-22_Brief_Reel_Dialogue_Radio_003.md`, `../Operations/Production/2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md`, `14_00_Fuente_Maestra_y_Ledgers.md`
 
 ---
 
@@ -211,3 +211,22 @@ La extracción L1 registró **18 interacciones básicas**: 14 reacciones, 2 come
 MPM-001 se mantiene como un caso individual de `POV_character_movement` y primera variante de `ELARA-WALK-MUSIC-01`. Se requieren al menos tres casos comparables para una señal preliminar y cinco para un veredicto operativo. Instagram, TikTok, YouTube y afiliados no forman parte de esta publicación ni de este corte.
 
 Fuentes relacionadas: `Operations/Research/2026-08-22_Corte_Diario_Metricas_2200.md`, `Operations/Research/2026-08-22_Meta_Daily_Metrics_Raw.json` y `Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json`.
+
+
+---
+
+## Reconciliación de tres Reels recientes con los ledgers principales — 23 de agosto de 2026
+
+La auditoría del snapshot de Meta Graph API v26.0 detectó tres Page Post IDs recientes que ya estaban documentados en el inventario especializado o en el registro maestro de Reels, pero no habían sido enlazados en `Publication_Log.csv` y `ExperimentLog.csv`. Se añadieron de forma idempotente a los ledgers principales y se conservó el inventario especializado como apoyo operativo.
+
+| Caso | Page Post ID | Reel ID | Concepto / título | Engagement público lifetime observado |
+|---|---|---|---|---:|
+| `MPM-001` | `1036844829507460_122154842337072582` | `1581447113440863` | Ella no está disponible en este plano | 25 |
+| `CON-2026-08-21-UniverseSenales` | `1036844829507460_122154017667072582` | `2005557463434064` | Universe viéndote Farmear Aura | 12 |
+| `CON-2026-08-20-RemoteControl-EvanElara` | `1036844829507460_122153750763072582` | `2815726225473165` | Remote Control — Sussie 4 ft. León Larregui | 11 |
+
+Los valores anteriores son snapshots públicos de Meta obtenidos el 23 de agosto a las 20:04:20 UTC y se calculan como reacciones + comentarios + shares. No son cierres exactos de 24/72 horas. Para `MPM-001`, una evidencia previa de Meta Business Suite mostraba un snapshot diferente con 22 interacciones y métricas parciales de views, reach, saves y retención; ambos registros se conservan como cortes distintos y no se promedian.
+
+El experimento de reconciliación `OBS-FB-REEL-RECON-20260823` quedó enlazado a `EXP-2026-08-WEEKLY-CLOSE-01` y a las hipótesis `HB-REEL-MOTION-POV-MEME-01` y `HB-REEL-MUSIC-WALK-01`. El resultado es una mejora de identidad y trazabilidad, no una validación causal de las hipótesis. Las ventanas 24/72 horas permanecen vacías hasta disponer de una fuente nativa con fecha de corte explícita.
+
+Fuentes: `../Operations/Research/2026-08-23_Facebook_Post_Reconciliation.json`, `../Operations/Research/2026-08-23_Facebook_Performance_Meta_API.json`, `../Operations/Research/2026-08-21_Reels_Publication_Inventory.csv` y `../Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json`.
