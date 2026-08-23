@@ -4,9 +4,13 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-23
-**Versión:** 3.11
+**Versión:** 3.13
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.13.00] — 2026-08-23 (Manus): Validación de integridad del Community Engagement Log.** La incorporación de dos réplicas anidadas expuso una coma histórica sin encapsular y un campo adicional en el primer bloque de 11 filas. Se corrigió el formato sin cambiar IDs ni significado; el ledger quedó en 64 filas, 64 IDs únicos y 20 columnas. Se añadió `Operations/Automation/validate_community_engagement_log.py`, que devolvió `VALIDATION=PASS`.
+
+- **[3.12.00] — 2026-08-23 (Manus): Control de respuestas anidadas en Facebook.** Además de los 11 comentarios raíz del corte anterior, la revisión de hilos posteriores a `2026-08-23T02:36:53+0000` detectó dos réplicas nuevas de usuarios dentro de un hilo cuyo comentario raíz ya había recibido respuesta de Universe Sent Me. Se registraron como oportunidades independientes, con propuestas específicas y sin publicar. El ledger pasa a v2.7 y la auditoría de Facebook a v3.0.
 
 - **[3.11.00] — 2026-08-23 (Manus): Nuevo corte API de comentarios de Facebook.** Meta Graph API v26 detectó 11 comentarios posteriores al lote refinado: nueve oportunidades de respuesta y dos comentarios compuestos únicamente por nombres, clasificados como `No_Accion` por falta de contexto. Se prepararon respuestas específicas para títulos musicales, remates de humor, una referencia fantástica y una reflexión teológica; no se publicó ninguna. El ledger pasa a v2.6 y la auditoría de Facebook a v2.9.
 

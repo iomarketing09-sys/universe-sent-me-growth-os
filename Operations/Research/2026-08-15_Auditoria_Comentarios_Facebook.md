@@ -3,8 +3,8 @@ title: "Auditoría de comentarios de Facebook y propuesta de Community Growth"
 purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y definir un sistema de escucha, respuesta y aprendizaje para Universe Sent Me."
 status: Active
 created: 2026-08-15
-updated: 2026-08-22
-version: "2.9"
+updated: 2026-08-23
+version: "3.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -14,6 +14,7 @@ related_documents:
   - "Operations/Research/2026-08-15_Community_Engagement_Log.csv"
   - "Operations/Research/2026-08-15_Community_Engagement_Log.md"
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
+  - "Operations/Automation/validate_community_engagement_log.py"
 organization: "Operations/Research"
 ---
 
@@ -609,3 +610,22 @@ La consulta exclusiva mediante Meta Graph API v26, posterior al lote de seis res
 | “My Dad” | No_Accion | Solo un nombre; falta contexto para contestar sin asumir intención. |
 
 Las menciones automáticas de la Página permanecen fuera de la cola cualitativa. No se revisaron publicaciones de grupos en este corte y no se publicó ninguna respuesta.
+
+
+## 39. Control de respuestas anidadas — 23 de agosto de 2026
+
+Como control complementario al filtro de comentarios raíz sin respuesta, se revisaron las respuestas anidadas posteriores a `2026-08-23T02:36:53+0000`. La revisión confirmó dos réplicas nuevas de usuarios en el hilo de `122151376083072582_1530994081656231`, cuyo comentario raíz ya tenía una respuesta de la Página:
+
+| Respuesta_ID | Lectura operativa | Clasificación |
+|---|---|---|
+| `122151376083072582_1712631733280410` | La persona se identifica con el “modo travesura”. | Pendiente de aprobación |
+| `122151376083072582_1345911810604525` | La usuaria celebra pertenecer al grupo de las afortunadas. | Pendiente de aprobación |
+
+Este control evita dar por cerrado un hilo solo porque el comentario raíz ya recibió respuesta. Las réplicas de usuarios posteriores al cutoff deben evaluarse como unidades nuevas; las respuestas de Universe Sent Me y las conversaciones sin continuación de la Página no se vuelven a contestar automáticamente. Las dos propuestas preparadas mantienen humor cómplice y no exponen de forma explícita el contenido íntimo del meme.
+
+
+## 40. Integridad del ledger y validador genérico
+
+Al incorporar las dos réplicas anidadas se ejecutó una validación completa del CSV. El control detectó inconsistencias históricas: una fila con una coma sin encapsular en el campo de insight y el primer bloque de 11 filas con un campo vacío adicional. Se reparó el formato sin cambiar los IDs ni el significado de los registros; los 64 comentarios quedaron con 20 columnas, 64 IDs únicos y privacidad `Anonimizado`.
+
+El repositorio incorpora `Operations/Automation/validate_community_engagement_log.py`, que comprueba columnas, IDs duplicados, estados de respuesta, campos obligatorios para filas `Respondido` o `Pendiente_Respuesta` y anonimización. La ejecución posterior devolvió `VALIDATION=PASS`.
