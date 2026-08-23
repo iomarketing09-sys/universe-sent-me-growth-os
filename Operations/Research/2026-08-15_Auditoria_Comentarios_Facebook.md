@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-23
-version: "3.5"
+version: "3.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -18,6 +18,7 @@ related_documents:
   - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_02.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch_02.json"
+  - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_03.json"
 organization: "Operations/Research"
 ---
 
@@ -668,3 +669,20 @@ El corte no incluye grupos de Facebook, Instagram, TikTok ni publicaciones ajena
 Fernando autorizó explícitamente las seis respuestas del corte anterior: “Amén hermanas 🤓”, “Mis manos en tu cintura” de Nino Bravo, “Tonight” de The Smashing Pumpkins, “Stirb nicht vor mir” de Rammstein, “Birdie” de León Larregui y la réplica “bigbong 🤣”. La ejecución idempotente consultó cada hilo antes de publicar y no encontró respuestas exactas preexistentes de Universe Sent Me.
 
 Meta Graph API v26.0 devolvió HTTP 200 en los seis casos. La verificación posterior confirmó en cada respuesta la autoría de la Página, el `parent.id` correspondiente, el texto exacto aprobado y `is_hidden=false`. El JSON `2026-08-23_Facebook_Comment_Publication_Batch_02.json` conserva los seis resultados y sus IDs de Meta. El comentario religioso con enlace externo no formó parte del lote y continúa sin respuesta.
+
+
+## 45. Revisión exclusiva mediante API — 23 de agosto de 2026
+
+La revisión se realizó únicamente mediante Meta Graph API v26.0 sobre las 20 publicaciones recientes de la Página. El corte comparativo posterior a `2026-08-23T16:56:42+0000` devolvió **37 comentarios raíz nuevos** y **8 réplicas nuevas de usuarios**. Se comprobó que las 45 unidades no tenían respuesta de Universe Sent Me en el momento del corte.
+
+| Clasificación | Casos | Tratamiento |
+|---|---:|---|
+| Oportunidades de respuesta | 31 | Propuestas específicas, estado `Pendiente_Fernando`; no publicar sin autorización. |
+| Sin respuesta pública | 7 | Revisión manual de moderación por insultos, lenguaje estigmatizante, homofobia o amenaza vulgar. |
+| Sin acción por falta de contexto o por ser una interacción entre usuarios | 7 | No responder ni asumir intención. |
+
+La mayor concentración de actividad se produjo en la publicación filosófica `122151375549072582`, con respuestas sobre Dios, el origen, la conciencia y la relación entre creador y criatura. La cola contiene tanto aportes reflexivos como provocaciones e insultos; por eso las propuestas neutrales no validan afirmaciones religiosas y los casos agresivos no reciben una respuesta de marca.
+
+La API no expuso de forma uniforme la autoría en todas las réplicas, pero sí devolvió los IDs de las unidades identificables. Las ocho réplicas se conservaron como registros independientes, incluyendo la respuesta con ID `122151375549072582_1817089682764579`, que apareció directamente dentro del comentario teológico raíz. El JSON `2026-08-23_Facebook_Comment_Review_Delta_03.json` contiene el detalle completo del corte y las decisiones por unidad.
+
+No se revisaron grupos de Facebook, Instagram, TikTok ni publicaciones ajenas. No se publicó ninguna respuesta.

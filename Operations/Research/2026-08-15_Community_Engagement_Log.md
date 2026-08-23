@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-23
-version: "3.2"
+version: "3.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -15,6 +15,7 @@ related_documents:
   - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_02.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch_02.json"
+  - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_03.json"
   - "GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md"
 organization: "Operations/Research"
 ---
@@ -304,3 +305,14 @@ Fernando autorizó explícitamente las seis respuestas propuestas en el corte an
 | `122151375549072582_1089305796872950` | `122151375549072582_1036377862728177` | `Respondido` |
 
 El lote se publicó de forma idempotente: antes de cada escritura se consultó el hilo y no se encontró una respuesta exacta preexistente de la Página. La evidencia detallada queda en `2026-08-23_Facebook_Comment_Publication_Batch_02.json`.
+
+
+## 24. Nuevo corte de Facebook mediante API — 23 de agosto de 2026
+
+Se ejecutó una revisión exclusiva de Facebook mediante Meta Graph API v26.0, comparando el estado actual con el corte anterior de `2026-08-23T16:56:42+0000`. Se detectaron **37 comentarios raíz nuevos** y **8 réplicas nuevas de usuarios** dentro de hilos existentes. Ninguna de las 45 unidades tenía respuesta de Universe Sent Me en el corte consultado.
+
+De las 45 unidades, **31 quedaron como oportunidades de respuesta**, principalmente en el hilo filosófico sobre el origen de Dios y en recomendaciones musicales. **14 quedaron sin respuesta pública**: siete se marcaron para revisión manual de moderación por insultos, lenguaje estigmatizante, homofobia o amenaza vulgar; las demás fueron nombres aislados, texto ambiguo, acuerdos entre usuarios o réplicas que no requieren intervención de la Página.
+
+La pregunta “¿Y quién es el del dibujo?” se clasificó como respondible. La imagen muestra una figura creadora que también pregunta quién la creó; por ello la propuesta evita inventar un nombre de personaje y responde al giro paradójico del propio diseño. Se mantuvo la regla editorial de especificidad en las recomendaciones musicales: Vivaldi se conecta con la estructura de cuatro estaciones, “Alguien como tú” con una nostalgia suave, y las demás propuestas con el título, el artista o el juego verbal concreto.
+
+Las respuestas propuestas permanecen con `Pendiente_Fernando`. No se publicó ninguna respuesta en este corte. El registro detallado, incluidos IDs de comentarios y réplicas, está en `2026-08-23_Facebook_Comment_Review_Delta_03.json`.
