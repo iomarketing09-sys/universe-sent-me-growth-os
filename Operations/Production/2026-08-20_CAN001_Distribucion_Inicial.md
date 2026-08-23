@@ -1,10 +1,10 @@
 ---
 title: "CAN 001 — Distribución inicial en TikTok, Instagram Reels y YouTube Shorts"
 purpose: "Definir la publicación de lanzamiento de CAN 001 por plataforma, incluyendo una prueba controlada de audio nativo y el protocolo de medición inicial."
-status: "Active — first three-platform CAN-001 cascade published; measurement pending"
+status: "Active — first three-platform CAN-001 cascade published; operational measurement in progress"
 created: 2026-08-20
-updated: 2026-08-21
-version: "1.5"
+updated: 2026-08-22
+version: "1.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_CAN001_It_Was_Making_Noise_Production_Package.md"
@@ -129,6 +129,10 @@ El shortcode se conserva como identificador público accesible hasta recuperar e
 ### Corrección de fuente — Windsor.ai
 
 El snapshot público temprano fue complementado con Windsor.ai. A las 22:59 CDT, TikTok registró 93 views, 0 interacciones visibles y 2.15 s de watch time medio; Instagram registró 198 views, reach 161, una interacción total y 3.744 s de watch time medio. YouTube aún no devolvió una fila del Short de la fecha actual. El análisis completo y sus límites se conservan en `Operations/Research/2026-08-21_Bam_CAN001_Snapshot_Temprano.md`; estas cifras son tempranas y no autorizan una decisión sobre audio, formato ni plataforma.
+
+### Corte operativo — 22 de agosto
+
+En el corte autorizado con hora real, TikTok acumuló 145 views, 1 like y 2.20 s de watch time medio a T+27 h; Instagram acumuló 271 views, reach 215, 1 interacción y 3.994 s de watch time medio a T+26 h 45 min. YouTube no entregó aún una fila a T+26 h 15 min; la última evidencia directa de Studio permanece en 2 vistas y 1 compartido alrededor de T+18 h. Mantener el diseño de prueba 2 + 1 en CAN-002: estos datos describen una primera observación, no prueban un efecto causal del audio.
 
 ## 5. Respuesta y medición
 

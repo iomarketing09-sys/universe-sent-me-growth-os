@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — CAN-001: snapshot temprano consolidado"
 purpose: "Conservar las métricas públicas observables de la primera cascada de CAN-001 y distinguir datos medidos de campos no expuestos sin autenticación."
-status: "Active — evidencia directa confirma baja distribución en YouTube; Windsor sigue pendiente de indexación"
+status: "Active — corte operativo registrado; YouTube con evidencia directa y Windsor pendiente de indexación"
 created: 2026-08-21
-updated: 2026-08-21
-version: "1.3"
+updated: 2026-08-22
+version: "1.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
@@ -49,9 +49,23 @@ Con Windsor.ai habilitado y el conector de YouTube confirmado, se repitió la co
 
 Fernando aportó una captura de YouTube Studio del Short, marcada como publicada hace aproximadamente 18 horas. La interfaz muestra **2 vistas** y **1 vez compartido**. Este es el conteo manual más reciente y confirma que la distribución inicial de YouTube es muy baja; no permite atribuir la falta de fila en Windsor.ai a esa baja distribución, porque el mecanismo de indexación del conector no se ha observado directamente. Tampoco se calcula una tasa de compartidos sobre dos vistas: el denominador es demasiado pequeño para una lectura útil.
 
+## Corte operativo — 22 de agosto
+
+Fernando autorizó un nuevo corte con la hora real de consulta, sin forzarlo a las ventanas exactas de 24 horas. La solicitud se inició a las 22:03:13 CDT; las fuentes devolvieron sus filas entre 22:04 y 22:05 CDT. Cada edad se calcula desde el T0 real de su propia plataforma.
+
+| Plataforma | Fuente y edad real | Métricas operativas | Cambio frente al primer corte Windsor |
+|---|---:|---|---|
+| TikTok | Windsor.ai, `data_fetched_at` 03:04:28 UTC / 22:04:28 CDT; 27 h 00 min 08 s | 145 views; 1 like; 0 comentarios; 0 shares; 0 favoritos; avg. watch time 2.20 s; total watch 341 s; full-watched rate 4.52 %. | +52 views (+55.91 %) y +1 like. La duración reportada por TikTok es 8.08 s; el avg. watch equivale a 27.22 % de esa duración. |
+| Instagram Reels | Windsor.ai, `data_fetched_at` 03:05:07 UTC / 22:05:07 CDT; 26 h 45 min 07 s | 271 views; reach 215; 1 like; 0 comentarios; 0 shares; 0 saves; 1 interacción; avg. watch time 3.994 s; total watch 858.822 s. | +73 views (+36.86 %) y +54 de reach. El avg. watch equivale a 57.05 % de un clip de 7 s; la interacción es 0.46 % sobre reach y 0.36 % sobre views. |
+| YouTube Shorts | Windsor.ai consultado 03:05:18 UTC / 22:05:18 CDT; 26 h 15 min 18 s | Sin fila autenticada para `iuHT1kN0Uow`. La última evidencia directa sigue siendo 2 vistas y 1 compartido alrededor de T+18 h. | Sin métrica autenticada nueva. La ausencia en Windsor se mantiene como indexación pendiente, no como cero rendimiento. |
+
+## Lectura operativa
+
+Instagram acumula 1.8689 veces las views de TikTok en edades cercanas, y también conserva un watch time medio superior. Esto describe el resultado de esta primera pieza, pero no demuestra que el audio nativo `Do It` al 80 % sea la causa: las plataformas usan sistemas de distribución distintos, TikTok no tiene un volumen de audio confirmado y la muestra contiene una sola publicación. La señal accionable es mantener el diseño de prueba 2 + 1 en CAN-002 y acumular más piezas comparables antes de modificar el estilo, la cadencia o el uso de audio.
+
 ## Límites de comparación
 
-El diferencial temprano de views entre TikTok e Instagram no demuestra un efecto del audio porque las plataformas tienen sistemas de distribución y edades distintas. El único contraste operativo ya disponible es de formato de consumo: Instagram registra un watch time medio superior al de TikTok, pero ambos valores proceden de muestras tempranas y ninguno alcanza una ventana de 24 horas. YouTube queda fuera de comparaciones cuantitativas hasta que Windsor entregue una fila del video.
+El diferencial de views entre TikTok e Instagram no demuestra un efecto del audio porque las plataformas tienen sistemas de distribución y edades distintas. El contraste operativo disponible registra mayor watch time medio en Instagram, pero la muestra sigue siendo una sola pieza por plataforma. YouTube queda fuera de comparaciones cuantitativas hasta que Windsor entregue una fila del video o exista una captura directa posterior con métricas más completas.
 
 ## Lectura temprana
 
