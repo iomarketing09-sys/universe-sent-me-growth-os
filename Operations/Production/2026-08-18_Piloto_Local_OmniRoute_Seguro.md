@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 1.8
+**Versión:** 1.9
 
 **Autor:** Manus AI
 
@@ -342,18 +342,18 @@ Para el piloto, la opción práctica es usar una **IPv4 externa efímera**, nunc
 
 Google AI Pro/Google One es una suscripción de almacenamiento y funciones Gemini. En México, la página pública de Google One muestra 5 TB y un beneficio separado de créditos mensuales de Google Cloud del Google Developer Program; el precio y la elegibilidad que aparecen en la cuenta del usuario pueden variar por promoción. Ese plan **no convierte el almacenamiento de Drive/Fotos/Gmail en almacenamiento de una VM** y no debe confundirse con el saldo de Billing de Google Cloud. [30]
 
-El crédito que aparece como `Trial credit for GenAI App Builder` con un saldo aproximado de MX$17,178.46 es otra promoción. En la cuenta utilizada para este piloto, la información de Billing confirma que está estrictamente limitado a servicios de GenAI App Builder/Vertex AI Agent Builder, APIs de Vertex AI y SKUs de IA generativa directamente asociados. **Compute Engine y los servicios de infraestructura de propósito general están excluidos y se facturan a tarifas estándar.** Por tanto, este crédito no puede financiar la VM e2-micro de OmniRoute. La cobertura visible en la cuenta del usuario y el desglose de SKU tienen prioridad sobre cualquier suposición basada en el nombre de la promoción. Fuente permanente del proyecto: aclaración de Billing proporcionada por Fernando el 2026-08-23.
+El crédito que aparece como `Trial credit for GenAI App Builder` con un saldo aproximado de MX$17,178.46 es otra promoción. En la cuenta utilizada para este piloto, la información de Billing confirma que está estrictamente limitado a servicios de GenAI App Builder/Vertex AI Agent Builder, APIs de Vertex AI y SKUs de IA generativa directamente asociados. Su fecha de vencimiento confirmada es el **14 de marzo de 2027**. **Compute Engine y los servicios de infraestructura de propósito general están excluidos y se facturan a tarifas estándar.** Por tanto, este crédito no puede financiar la VM e2-micro de OmniRoute. La cobertura visible en la cuenta del usuario y el desglose de SKU tienen prioridad sobre cualquier suposición basada en el nombre de la promoción. Fuente permanente del proyecto: aclaración de Billing proporcionada por Fernando el 2026-08-23.
 
 Antes de crear la VM, confirma por escrito en la consola:
 
 | Comprobación | Resultado que autoriza continuar |
 |---|---|
-| Crédito | Tiene fecha de expiración visible y saldo disponible. |
+| Crédito | Tiene saldo disponible y vence el **14 de marzo de 2027** según la cuenta del piloto. |
 | Servicios elegibles | La promoción menciona explícitamente **Compute Engine** o la simulación de costo muestra el SKU como cubierto. El crédito actual de GenAI App Builder **no cumple** este criterio. |
 | Proyecto | La VM se creará en el proyecto vinculado a la cuenta de facturación que contiene el crédito. |
 | Costos no cubiertos | IPv4 externa, salida de red, disco, snapshots y otros SKU están identificados; no se asume que el crédito cubra todo. |
 
-El crédito actual de GenAI App Builder no es elegible para Compute Engine, por lo que no debe usarse para la VM. Mantén la opción Oracle Always Free, intenta la forma E2/A1 cuando exista capacidad o ejecuta Groq directamente desde el iMac. Google Cloud solo queda aprobado si se utiliza su e2-micro Free Tier o una promoción distinta que indique explícitamente cobertura de Compute Engine; cualquier uso posterior o SKU excluido puede facturarse.
+El crédito actual de GenAI App Builder, válido hasta el **14 de marzo de 2027**, no es elegible para Compute Engine, por lo que no debe usarse para la VM. Mantén la opción Oracle Always Free, intenta la forma E2/A1 cuando exista capacidad o ejecuta Groq directamente desde el iMac. Google Cloud solo queda aprobado si se utiliza su e2-micro Free Tier o una promoción distinta que indique explícitamente cobertura de Compute Engine; cualquier uso posterior o SKU excluido puede facturarse.
 
 #### Crear el proyecto y controlar el costo
 
