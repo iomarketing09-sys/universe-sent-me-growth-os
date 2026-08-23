@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-23
-version: "3.2"
+version: "3.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -15,6 +15,7 @@ related_documents:
   - "Operations/Research/2026-08-15_Community_Engagement_Log.md"
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
   - "Operations/Automation/validate_community_engagement_log.py"
+  - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch.json"
 organization: "Operations/Research"
 ---
 
@@ -636,3 +637,10 @@ El repositorio incorpora `Operations/Automation/validate_community_engagement_lo
 El análisis adjunto confirmó el criterio permanente de que una respuesta debe reaccionar al elemento específico del comentario. Se mantuvieron seis textos que ya tenían una conexión clara con el remate, título o energía del comentario. Se refinaron cinco: `Hijo de hombre` incorpora la asociación con Tarzán; `Viento` evita inventar una interpretación cuando falta artista; `Frío frío` usa un juego directo con el título; la reflexión sobre Dios y el tiempo se reformula como pregunta filosófica abierta; y la réplica de Sandy Iris retoma literalmente el “modo travesura” del hilo.
 
 La revisión también confirma dos límites operativos. Una propuesta no debe convertirse en respuesta automática solo porque funcionó en un comentario anterior, y una frase sobre una canción no debe sonar como elogio intercambiable para cualquier título. Las 11 filas permanecen pendientes de aprobación humana y ninguna respuesta fue publicada.
+
+
+## 42. Publicación autorizada del lote de 11 respuestas — 23 de agosto de 2026
+
+Fernando autorizó explícitamente el lote refinado. La ejecución idempotente mediante Meta Graph API v26.0 revisó cada comentario antes de escribir, no encontró respuestas exactas preexistentes y publicó las 11 respuestas. El resultado fue HTTP 200 en los 11 casos; la lectura posterior confirmó autoría `Universe Sent Me`, texto exacto e `is_hidden=false` en todos.
+
+Diez respuestas devolvieron el `parent.id` esperado directamente. La respuesta `122151376083072582_1634044988141953`, correspondiente a la réplica `122151376083072582_1712631733280410`, quedó visible y con texto exacto, pero Meta devolvió como padre la respuesta previa de la Página `122151376083072582_1093298379810084`. No se reintentó porque una segunda publicación habría creado un duplicado visible. El resultado completo y los checks quedan en `2026-08-23_Facebook_Comment_Publication_Batch.json`; el CSV registra las 11 filas como `Respondido`, con aprobación y `Respuesta_Meta_ID`.

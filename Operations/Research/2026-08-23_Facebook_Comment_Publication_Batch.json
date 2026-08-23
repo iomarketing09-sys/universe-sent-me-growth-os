@@ -1,0 +1,412 @@
+{
+  "executed_at_utc": "2026-08-23T16:31:18.885617+00:00",
+  "page_id": "1036844829507460",
+  "source": "Meta Graph API v26.0",
+  "approved_batch_size": 11,
+  "published_verified": 10,
+  "already_present_verified": 0,
+  "verification_failures": 1,
+  "publish_failures": 0,
+  "results": [
+    {
+      "target_comment_id": "122151376083072582_1033379579457116",
+      "message": "No todas… pero algunas vienen con el modo travesura activado. 😅🙈",
+      "run_at_utc": "2026-08-23T16:31:18.885617+00:00",
+      "preflight_status_code": 200,
+      "post_status_code": 200,
+      "post_response": {
+        "id": "122151376083072582_1041153768901083"
+      },
+      "status": "published_verified",
+      "reply_id": "122151376083072582_1041153768901083",
+      "verification": {
+        "status_code": 200,
+        "payload": {
+          "id": "122151376083072582_1041153768901083",
+          "from": {
+            "name": "Universe Sent Me",
+            "id": "1036844829507460"
+          },
+          "message": "No todas… pero algunas vienen con el modo travesura activado. 😅🙈",
+          "created_time": "2026-08-23T16:31:19+0000",
+          "parent": {
+            "created_time": "2026-08-23T05:07:43+0000",
+            "message": "Que? No todas pueden? 🤔",
+            "id": "122151376083072582_1033379579457116"
+          },
+          "is_hidden": false
+        },
+        "checks": {
+          "author_is_page": true,
+          "parent_matches": true,
+          "message_matches": true,
+          "is_hidden_false": true
+        }
+      }
+    },
+    {
+      "target_comment_id": "122151376083072582_1534062764662566",
+      "message": "Amén… el caos ya quedó oficialmente registrado. 😂✨",
+      "run_at_utc": "2026-08-23T16:31:18.885617+00:00",
+      "preflight_status_code": 200,
+      "post_status_code": 200,
+      "post_response": {
+        "id": "122151376083072582_2187948638483974"
+      },
+      "status": "published_verified",
+      "reply_id": "122151376083072582_2187948638483974",
+      "verification": {
+        "status_code": 200,
+        "payload": {
+          "id": "122151376083072582_2187948638483974",
+          "from": {
+            "name": "Universe Sent Me",
+            "id": "1036844829507460"
+          },
+          "message": "Amén… el caos ya quedó oficialmente registrado. 😂✨",
+          "created_time": "2026-08-23T16:31:23+0000",
+          "parent": {
+            "created_time": "2026-08-23T14:05:31+0000",
+            "message": "Amén",
+            "id": "122151376083072582_1534062764662566"
+          },
+          "is_hidden": false
+        },
+        "checks": {
+          "author_is_page": true,
+          "parent_matches": true,
+          "message_matches": true,
+          "is_hidden_false": true
+        }
+      }
+    },
+    {
+      "target_comment_id": "122151376011072582_1350675507083697",
+      "message": "Zumo de mandrágora: eso ya suena a una canción para abrir un portal y no mirar atrás. 🧪🎶✨",
+      "run_at_utc": "2026-08-23T16:31:18.885617+00:00",
+      "preflight_status_code": 200,
+      "post_status_code": 200,
+      "post_response": {
+        "id": "122151376011072582_811471728691213"
+      },
+      "status": "published_verified",
+      "reply_id": "122151376011072582_811471728691213",
+      "verification": {
+        "status_code": 200,
+        "payload": {
+          "id": "122151376011072582_811471728691213",
+          "from": {
+            "name": "Universe Sent Me",
+            "id": "1036844829507460"
+          },
+          "message": "Zumo de mandrágora: eso ya suena a una canción para abrir un portal y no mirar atrás. 🧪🎶✨",
+          "created_time": "2026-08-23T16:31:27+0000",
+          "parent": {
+            "created_time": "2026-08-23T14:38:40+0000",
+            "message": "Zumo de mandrágora",
+            "id": "122151376011072582_1350675507083697"
+          },
+          "is_hidden": false
+        },
+        "checks": {
+          "author_is_page": true,
+          "parent_matches": true,
+          "message_matches": true,
+          "is_hidden_false": true
+        }
+      }
+    },
+    {
+      "target_comment_id": "122151376011072582_1576421464128022",
+      "message": "Hijo de hombre: nostalgia instantánea y ganas de volver a ver Tarzán. 🎶🥹",
+      "run_at_utc": "2026-08-23T16:31:18.885617+00:00",
+      "preflight_status_code": 200,
+      "post_status_code": 200,
+      "post_response": {
+        "id": "122151376011072582_1327760669211634"
+      },
+      "status": "published_verified",
+      "reply_id": "122151376011072582_1327760669211634",
+      "verification": {
+        "status_code": 200,
+        "payload": {
+          "id": "122151376011072582_1327760669211634",
+          "from": {
+            "name": "Universe Sent Me",
+            "id": "1036844829507460"
+          },
+          "message": "Hijo de hombre: nostalgia instantánea y ganas de volver a ver Tarzán. 🎶🥹",
+          "created_time": "2026-08-23T16:31:31+0000",
+          "parent": {
+            "created_time": "2026-08-23T15:03:34+0000",
+            "message": "Hijo de hombre-phil Collins",
+            "id": "122151376011072582_1576421464128022"
+          },
+          "is_hidden": false
+        },
+        "checks": {
+          "author_is_page": true,
+          "parent_matches": true,
+          "message_matches": true,
+          "is_hidden_false": true
+        }
+      }
+    },
+    {
+      "target_comment_id": "122151376011072582_1017393391124351",
+      "message": "Viento… cortita la respuesta, pero bastante poderosa. 🌬️🎶",
+      "run_at_utc": "2026-08-23T16:31:18.885617+00:00",
+      "preflight_status_code": 200,
+      "post_status_code": 200,
+      "post_response": {
+        "id": "122151376011072582_1605632237609859"
+      },
+      "status": "published_verified",
+      "reply_id": "122151376011072582_1605632237609859",
+      "verification": {
+        "status_code": 200,
+        "payload": {
+          "id": "122151376011072582_1605632237609859",
+          "from": {
+            "name": "Universe Sent Me",
+            "id": "1036844829507460"
+          },
+          "message": "Viento… cortita la respuesta, pero bastante poderosa. 🌬️🎶",
+          "created_time": "2026-08-23T16:31:34+0000",
+          "parent": {
+            "created_time": "2026-08-23T06:41:39+0000",
+            "message": "Viento",
+            "id": "122151376011072582_1017393391124351"
+          },
+          "is_hidden": false
+        },
+        "checks": {
+          "author_is_page": true,
+          "parent_matches": true,
+          "message_matches": true,
+          "is_hidden_false": true
+        }
+      }
+    },
+    {
+      "target_comment_id": "122151376011072582_1693775178399393",
+      "message": "One of Us: una pregunta sencilla que se queda dando vueltas mucho después de que termina la canción. 🎶✨",
+      "run_at_utc": "2026-08-23T16:31:18.885617+00:00",
+      "preflight_status_code": 200,
+      "post_status_code": 200,
+      "post_response": {
+        "id": "122151376011072582_1758664078601575"
+      },
+      "status": "published_verified",
+      "reply_id": "122151376011072582_1758664078601575",
+      "verification": {
+        "status_code": 200,
+        "payload": {
+          "id": "122151376011072582_1758664078601575",
+          "from": {
+            "name": "Universe Sent Me",
+            "id": "1036844829507460"
+          },
+          "message": "One of Us: una pregunta sencilla que se queda dando vueltas mucho después de que termina la canción. 🎶✨",
+          "created_time": "2026-08-23T16:31:38+0000",
+          "parent": {
+            "created_time": "2026-08-23T08:24:54+0000",
+            "message": "one of us",
+            "id": "122151376011072582_1693775178399393"
+          },
+          "is_hidden": false
+        },
+        "checks": {
+          "author_is_page": true,
+          "parent_matches": true,
+          "message_matches": true,
+          "is_hidden_false": true
+        }
+      }
+    },
+    {
+      "target_comment_id": "122151376011072582_4579578845653974",
+      "message": "Frío frío… y de alguna manera Juan Luis Guerra consiguió que sonara todo lo contrario. 😂🎶",
+      "run_at_utc": "2026-08-23T16:31:18.885617+00:00",
+      "preflight_status_code": 200,
+      "post_status_code": 200,
+      "post_response": {
+        "id": "122151376011072582_28246325781662922"
+      },
+      "status": "published_verified",
+      "reply_id": "122151376011072582_28246325781662922",
+      "verification": {
+        "status_code": 200,
+        "payload": {
+          "id": "122151376011072582_28246325781662922",
+          "from": {
+            "name": "Universe Sent Me",
+            "id": "1036844829507460"
+          },
+          "message": "Frío frío… y de alguna manera Juan Luis Guerra consiguió que sonara todo lo contrario. 😂🎶",
+          "created_time": "2026-08-23T16:31:43+0000",
+          "parent": {
+            "created_time": "2026-08-23T07:39:06+0000",
+            "message": "Frío frío de Juan Luis Guerra",
+            "id": "122151376011072582_4579578845653974"
+          },
+          "is_hidden": false
+        },
+        "checks": {
+          "author_is_page": true,
+          "parent_matches": true,
+          "message_matches": true,
+          "is_hidden_false": true
+        }
+      }
+    },
+    {
+      "target_comment_id": "122151376011072582_1726492438602303",
+      "message": "Disfruto es de esas canciones que convierten lo cotidiano en algo íntimo y enorme. 🎶❤️",
+      "run_at_utc": "2026-08-23T16:31:18.885617+00:00",
+      "preflight_status_code": 200,
+      "post_status_code": 200,
+      "post_response": {
+        "id": "122151376011072582_1785603952630322"
+      },
+      "status": "published_verified",
+      "reply_id": "122151376011072582_1785603952630322",
+      "verification": {
+        "status_code": 200,
+        "payload": {
+          "id": "122151376011072582_1785603952630322",
+          "from": {
+            "name": "Universe Sent Me",
+            "id": "1036844829507460"
+          },
+          "message": "Disfruto es de esas canciones que convierten lo cotidiano en algo íntimo y enorme. 🎶❤️",
+          "created_time": "2026-08-23T16:31:46+0000",
+          "parent": {
+            "created_time": "2026-08-23T11:29:15+0000",
+            "message": "Disfruto _ carla morrison",
+            "id": "122151376011072582_1726492438602303"
+          },
+          "is_hidden": false
+        },
+        "checks": {
+          "author_is_page": true,
+          "parent_matches": true,
+          "message_matches": true,
+          "is_hidden_false": true
+        }
+      }
+    },
+    {
+      "target_comment_id": "122151375549072582_1755338779425523",
+      "message": "Jajaja, te metiste de lleno en una pregunta que lleva siglos dando dolores de cabeza: ¿qué significa realmente un ‘antes’ si el tiempo también tuvo un comienzo? 🤔✨",
+      "run_at_utc": "2026-08-23T16:31:18.885617+00:00",
+      "preflight_status_code": 200,
+      "post_status_code": 200,
+      "post_response": {
+        "id": "122151375549072582_1108299515097105"
+      },
+      "status": "published_verified",
+      "reply_id": "122151375549072582_1108299515097105",
+      "verification": {
+        "status_code": 200,
+        "payload": {
+          "id": "122151375549072582_1108299515097105",
+          "from": {
+            "name": "Universe Sent Me",
+            "id": "1036844829507460"
+          },
+          "message": "Jajaja, te metiste de lleno en una pregunta que lleva siglos dando dolores de cabeza: ¿qué significa realmente un ‘antes’ si el tiempo también tuvo un comienzo? 🤔✨",
+          "created_time": "2026-08-23T16:31:50+0000",
+          "parent": {
+            "created_time": "2026-08-23T09:49:58+0000",
+            "message": "Pues esta raro porque dios creó el tiempo y si nos ponemos a pensar él siempre estubo ahí porque si hay alguien que creo a dios pues entonces ya no sería dios... y si tratamos de buscar a su creador sigmifica que el tiempo también le afecta a dios y ya no es un dios... jaja o sea que antes de el no había nada y después de el no abra nada porque dios siempre estubo ahí en la nada y siempre lo estará porque el invento el mismo tiempo y para el no afecta como hacia nosotros lo persivimos",
+            "id": "122151375549072582_1755338779425523"
+          },
+          "is_hidden": false
+        },
+        "checks": {
+          "author_is_page": true,
+          "parent_matches": true,
+          "message_matches": true,
+          "is_hidden_false": true
+        }
+      }
+    },
+    {
+      "target_comment_id": "122151376083072582_1712631733280410",
+      "message": "Jajaja, entonces ese modo travesura sí venía activado de fábrica. 🙈😂",
+      "run_at_utc": "2026-08-23T16:31:18.885617+00:00",
+      "preflight_status_code": 200,
+      "post_status_code": 200,
+      "post_response": {
+        "id": "122151376083072582_1634044988141953"
+      },
+      "status": "published_verification_failed",
+      "reply_id": "122151376083072582_1634044988141953",
+      "verification": {
+        "status_code": 200,
+        "payload": {
+          "id": "122151376083072582_1634044988141953",
+          "from": {
+            "name": "Universe Sent Me",
+            "id": "1036844829507460"
+          },
+          "message": "Jajaja, entonces ese modo travesura sí venía activado de fábrica. 🙈😂",
+          "created_time": "2026-08-23T16:31:53+0000",
+          "parent": {
+            "created_time": "2026-08-22T19:55:52+0000",
+            "from": {
+              "name": "Universe Sent Me",
+              "id": "1036844829507460"
+            },
+            "message": "No todas… pero algunas vienen con el modo travesura activado. 😅🙈",
+            "id": "122151376083072582_1093298379810084"
+          },
+          "is_hidden": false
+        },
+        "checks": {
+          "author_is_page": true,
+          "parent_matches": false,
+          "message_matches": true,
+          "is_hidden_false": true
+        }
+      }
+    },
+    {
+      "target_comment_id": "122151376083072582_1345911810604525",
+      "message": "Anotado: Sandy Iris sí viene con el modo travesura activado. 😂🙈",
+      "run_at_utc": "2026-08-23T16:31:18.885617+00:00",
+      "preflight_status_code": 200,
+      "post_status_code": 200,
+      "post_response": {
+        "id": "122151376083072582_919726994522401"
+      },
+      "status": "published_verified",
+      "reply_id": "122151376083072582_919726994522401",
+      "verification": {
+        "status_code": 200,
+        "payload": {
+          "id": "122151376083072582_919726994522401",
+          "from": {
+            "name": "Universe Sent Me",
+            "id": "1036844829507460"
+          },
+          "message": "Anotado: Sandy Iris sí viene con el modo travesura activado. 😂🙈",
+          "created_time": "2026-08-23T16:31:57+0000",
+          "parent": {
+            "created_time": "2026-08-23T04:45:46+0000",
+            "message": "Sandy Iris al parecer no todas, afortunadas las que si podemos",
+            "id": "122151376083072582_1345911810604525"
+          },
+          "is_hidden": false
+        },
+        "checks": {
+          "author_is_page": true,
+          "parent_matches": true,
+          "message_matches": true,
+          "is_hidden_false": true
+        }
+      }
+    }
+  ]
+}

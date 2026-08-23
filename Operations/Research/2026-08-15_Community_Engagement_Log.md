@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-23
-version: "2.9"
+version: "3.0"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -12,6 +12,7 @@ related_documents:
   - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
   - "GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md"
   - "Operations/Automation/validate_community_engagement_log.py"
+  - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch.json"
   - "GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md"
 organization: "Operations/Research"
 ---
@@ -247,3 +248,24 @@ El análisis editorial de `pasted_content_3.txt` revisó las 11 propuestas pendi
 | `122151376083072582_1345911810604525` | “Anotado: Sandy Iris sí viene con el modo travesura activado. 😂🙈” | Da continuidad exacta al hilo y recupera el nombre y el remate de la usuaria. |
 
 Las seis propuestas restantes —“Que? No todas pueden?”, “Amén”, “Zumo de mandrágora”, “One of Us”, “Disfruto” y la réplica “Universe Sent Me creo que vengo con eso”— se mantuvieron sin cambios. El estado de las 11 filas continúa `Pendiente_Respuesta` y `Pendiente_Fernando`; ninguna escritura fue autorizada o ejecutada.
+
+
+## 21. Publicación autorizada de 11 respuestas — 23 de agosto de 2026
+
+Fernando autorizó explícitamente la publicación del lote refinado. Meta Graph API v26.0 procesó las 11 respuestas: todas devolvieron HTTP 200, fueron atribuidas a Universe Sent Me, conservaron el texto exacto aprobado y permanecieron visibles (`is_hidden=false`). Diez verificaron además el `parent.id` esperado directamente.
+
+| Comentario_ID | Respuesta_Meta_ID | Estado |
+|---|---|---|
+| `122151376083072582_1033379579457116` | `122151376083072582_1041153768901083` | `Respondido` |
+| `122151376083072582_1534062764662566` | `122151376083072582_2187948638483974` | `Respondido` |
+| `122151376011072582_1350675507083697` | `122151376011072582_811471728691213` | `Respondido` |
+| `122151376011072582_1576421464128022` | `122151376011072582_1327760669211634` | `Respondido` |
+| `122151376011072582_1017393391124351` | `122151376011072582_1605632237609859` | `Respondido` |
+| `122151376011072582_1693775178399393` | `122151376011072582_1758664078601575` | `Respondido` |
+| `122151376011072582_4579578845653974` | `122151376011072582_28246325781662922` | `Respondido` |
+| `122151376011072582_1726492438602303` | `122151376011072582_1785603952630322` | `Respondido` |
+| `122151375549072582_1755338779425523` | `122151375549072582_1108299515097105` | `Respondido` |
+| `122151376083072582_1712631733280410` | `122151376083072582_1634044988141953` | `Respondido` |
+| `122151376083072582_1345911810604525` | `122151376083072582_919726994522401` | `Respondido` |
+
+La respuesta `122151376083072582_1634044988141953` quedó visible y con texto exacto, pero Meta devolvió como padre la respuesta previa de Universe Sent Me (`122151376083072582_1093298379810084`) en vez del ID de la réplica objetivo. No se reintentó para evitar duplicar una respuesta pública; la excepción quedó registrada en el CSV y en el JSON de auditoría.

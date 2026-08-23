@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-23
-**Versión:** 3.14
+**Versión:** 3.15
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.15.00] — 2026-08-23 (Manus): Publicación verificada de 11 respuestas aprobadas en Facebook.** Fernando autorizó explícitamente el lote refinado. Meta Graph API v26.0 devolvió HTTP 200 en los 11 casos; todas las respuestas fueron atribuidas a Universe Sent Me, conservaron el texto exacto y quedaron visibles. Diez devolvieron el `parent.id` esperado directamente. Una respuesta quedó anidada bajo la respuesta previa de la Página; no se reintentó para evitar duplicado y la excepción quedó en el JSON de auditoría. El ledger pasa a v3.0 y la auditoría de Facebook a v3.3.
 
 - **[3.14.00] — 2026-08-23 (Manus): Refinamiento editorial de 11 respuestas pendientes de Facebook.** El análisis adjunto confirmó seis respuestas y refinó cinco para hacerlas más específicas: Tarzán para “Hijo de hombre”, cautela ante el título ambiguo “Viento”, juego con “Frío frío”, pregunta filosófica abierta sobre el tiempo y continuidad exacta para la réplica de Sandy Iris. El CSV conserva las 11 filas como `Pendiente_Respuesta`/`Pendiente_Fernando`; no se publicó ninguna.
 
