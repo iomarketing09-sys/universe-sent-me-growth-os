@@ -4,7 +4,7 @@
   "status": "Active",
   "created": "2026-08-22",
   "updated": "2026-08-22",
-  "version": "1.6",
+  "version": "1.7",
   "author": "Manus AI",
   "related_documents": [
     "Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv",
@@ -47,6 +47,52 @@
     },
     "attribution_status": "Channel_aggregate_only_not_assignable_to_individual_reels",
     "missing_individual_video_metrics": ["views_by_meta_id", "reach_by_meta_id", "retention", "average_watch_time_by_reel", "completion_rate", "followers_gained"]
+  },
+  "meta_business_suite_7d_visual_evidence": {
+    "period_displayed": "2026-08-15_to_2026-08-21",
+    "source_type": "User_provided_Meta_Business_Suite_screenshots",
+    "facebook_reels": {
+      "views": 1440,
+      "watch_time": "2h1m",
+      "interactions": 29,
+      "views_change_percent": -42.7,
+      "watch_time_change_percent": -29.0,
+      "interactions_change_percent": -45.3,
+      "published_content_context": {"photos": 37, "stories": 16, "reels": 3}
+    },
+    "instagram_specific": {
+      "organic_views": 365,
+      "views_change_percent": -1.9,
+      "reach": 188,
+      "reach_change_percent": -28.8,
+      "content_interactions": 15,
+      "content_interactions_change_percent": 15.4,
+      "published_content_context": {"publications": 10, "stories": 2, "publications_change_percent": 140.0},
+      "ads_views": 0
+    },
+    "aggregate_header_context": {"total_views_displayed": 1100, "facebook_views": 745, "instagram_views": 365},
+    "attribution_status": "Channel_aggregate_only_not_assignable_to_individual_reels"
+  },
+  "meta_business_suite_28d_individual_visible_rows": {
+    "period_displayed": "2026-07-25_to_2026-08-21",
+    "source_type": "User_provided_Meta_Business_Suite_screenshot",
+    "rows": [
+      {"title": "Dicen que si lo ves caminando...", "published_at": "2026-07-25T16:10:00", "reactions": 128, "reach": 7037, "viewers": 5998, "views": 7116, "follows": 0, "link_clicks": 0, "avg_watch_seconds": 5, "shares": 38},
+      {"title": "Fantasma USM", "published_at": "2026-08-05T19:32:00", "reactions": 20, "reach": 1518, "viewers": 1440, "views": 1679, "follows": 0, "link_clicks": null, "avg_watch_seconds": 4, "shares": 2},
+      {"title": "Mi gato sabe hacer de todo...", "published_at": "2026-07-29T21:03:00", "reactions": 24, "reach": 1005, "viewers": 958, "views": 1309, "follows": 1, "link_clicks": 0, "avg_watch_seconds": 5, "shares": 4},
+      {"title": "Dicen que si te sales de la realidad...", "published_at": "2026-08-03T21:27:00", "reactions": 17, "reach": 826, "viewers": 820, "views": 1038, "follows": 0, "link_clicks": 0, "avg_watch_seconds": 4, "shares": 3},
+      {"title": "Momentos con Wilfred", "published_at": "2026-07-30T09:16:00", "reactions": 21, "reach": 752, "viewers": 702, "views": 953, "follows": 0, "link_clicks": null, "avg_watch_seconds": 5, "shares": 1},
+      {"title": "Un rock bien gótico Vs una can...", "published_at": "2026-07-29T14:03:00", "reactions": 26, "reach": 723, "viewers": 719, "views": 937, "follows": 0, "link_clicks": 0, "avg_watch_seconds": 3, "shares": 0},
+      {"title": "Mi ascenso a la locura", "published_at": "2026-07-27T14:23:00", "reactions": 22, "reach": 713, "viewers": 695, "views": 1014, "follows": 0, "link_clicks": 0, "avg_watch_seconds": 6, "shares": 4},
+      {"title": "Evan y Elara en el Bosque", "published_at": "2026-08-08T21:00:00", "reactions": 6, "reach": 689, "viewers": 656, "views": 778, "follows": 0, "link_clicks": null, "avg_watch_seconds": 5, "shares": 1},
+      {"title": "Wilfred USM", "published_at": "2026-08-01T20:12:00", "reactions": 17, "reach": 671, "viewers": 672, "views": 799, "follows": 0, "link_clicks": null, "avg_watch_seconds": 4, "shares": 4},
+      {"title": "#universesentme #universo #Wilfred...", "published_at": "2026-07-28T23:14:00", "reactions": 6, "reach": 502, "viewers": 475, "views": 629, "follows": 0, "link_clicks": 0, "avg_watch_seconds": 3, "shares": 0},
+      {"title": "UniverseSentMe", "published_at": "2026-08-11T14:22:00", "reactions": 11, "reach": 433, "viewers": 455, "views": 675, "follows": 0, "link_clicks": null, "avg_watch_seconds": 5, "shares": 1},
+      {"title": "UniverseSentMe", "published_at": "2026-08-09T19:00:00", "reactions": 6, "reach": 368, "viewers": 357, "views": 468, "follows": 0, "link_clicks": null, "avg_watch_seconds": 4, "shares": 1},
+      {"title": "Hay conversaciones que no llegan a...", "published_at": "2026-08-02T22:23:00", "reactions": 8, "reach": 366, "viewers": 347, "views": 495, "follows": 0, "link_clicks": 0, "avg_watch_seconds": 4, "shares": 0}
+    ],
+    "attribution_status": "Title_and_date_visible_but_native_ids_not_exposed_in_screenshot",
+    "total_watch_time_column": "Visible_but_not_transcribed_because_unit/label_is_truncated"
   },
   "inventory_scope": {
     "confirmed_reels": 6,

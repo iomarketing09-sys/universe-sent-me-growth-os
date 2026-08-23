@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 3.06
+**Versión:** 3.07
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.07.00] — 2026-08-22 (Manus): Integración de cortes de 7 y 28 días de Meta Business Suite.** Fernando proporcionó capturas con el corte 15–21 de agosto: Facebook Reels registró 1,440 visualizaciones, 2 h 1 min y 29 interacciones, con variaciones visibles de -42.7%, -29.0% y -45.3%; Instagram específico registró 365 visualizaciones orgánicas, 188 de alcance y 15 interacciones, mientras el encabezado agregado mostró 745 visualizaciones de Facebook y 365 de Instagram. La tabla detallada de 28 días aportó alcance, espectadores, visualizaciones, seguimiento, tiempo promedio y shares para 13 filas visibles; el Reel líder registró 7,037 de alcance, 7,116 visualizaciones, 5 s promedio y 38 shares. Se amplió `Operations/Research/2026-08-22_Meta_Business_Suite_28D_Reels_Visual_Evidence.md` a v1.1, se actualizó el assessment y el cierre semanal. Los datos de canal no se atribuyen automáticamente a IDs individuales.
 
 - **[3.06.00] — 2026-08-22 (Manus): Evidencia visual agregada de Meta Business Suite para Reels 25 julio–21 agosto.** Fernando proporcionó capturas del panel con aproximadamente 20,500 visualizaciones, 23 h 18 min de reproducción y 473 interacciones en Reels de Facebook, con variaciones visibles de +17.4%, +23.6% y +56.6%. La vista específica de Instagram muestra 1,841 visualizaciones orgánicas, aproximadamente 1,100 de alcance y 70 interacciones, con variaciones de -23.3%, -28.9% y -7.9%. Se documentó la diferencia entre el encabezado agregado Facebook+Instagram y el dato específico de Instagram. Estos valores son evidencia agregada de canal y no se atribuyen a MPM-001 u otros IDs individuales; views, reach y retención por Reel siguen pendientes. Se creó `Operations/Research/2026-08-22_Meta_Business_Suite_28D_Reels_Visual_Evidence.md` y se actualizó el assessment, el Registro Maestro y la fuente maestra.
 

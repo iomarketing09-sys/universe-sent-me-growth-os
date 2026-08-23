@@ -1,11 +1,11 @@
-# Evidencia visual de Meta Business Suite — Reels últimos 28 días
+# Evidencia visual de Meta Business Suite — Reels últimos 7 y 28 días
 
 **Propósito:** Conservar la transcripción estructurada de las capturas de Meta Business Suite compartidas por Fernando para complementar la reconciliación de Reels con métricas agregadas de Facebook e Instagram. Este documento distingue los totales de canal de los datos visibles por Reel y no sustituye snapshots nativos por publicación.
 
 **Estado:** Active
 **Fecha de creación:** 2026-08-22
 **Última actualización:** 2026-08-22
-**Versión:** 1.0
+**Versión:** 1.1
 **Autor:** Manus AI (CGO)
 **Organización:** `Operations/Research/`
 **Fuente:** Capturas visuales proporcionadas por Fernando desde Meta Business Suite.
@@ -89,3 +89,76 @@ La captura reduce la brecha de métricas agregadas de Reels, pero no la brecha d
 ## 5. Requisitos de coherencia
 
 Este documento no reemplaza `2026-08-22_Reels_Meta_Readonly_Reconciliation.json`, que conserva la verificación de identidad y estado de cinco publicaciones. Requiere actualizar el Registro Maestro de Reels y la evaluación de métricas para registrar que ya existe una evidencia agregada visual de 20,523 views de Reels en Facebook y 1,841 views orgánicas específicas de Instagram para el periodo 25 jul–21 ago, sin atribuir esos totales directamente a MPM-001 u otros casos no visibles individualmente.
+
+## 6. Nuevo corte de 7 días — 15 a 21 de agosto de 2026
+
+Fernando proporcionó dos capturas adicionales del resumen de contenido de Meta Business Suite para el periodo **15–21 de agosto de 2026**. La captura de Instagram tiene una vista agregada Facebook + Instagram en el encabezado y un desglose específico de Instagram en el panel lateral; ambos niveles se conservan por separado.
+
+### 6.1 Instagram — resumen de 7 días
+
+| Nivel o métrica | Resultado visible | Variación visible |
+|---|---:|---:|
+| Visualizaciones agregadas Facebook + Instagram | 1,100 aprox. | -38.0% |
+| Desglose Facebook dentro del encabezado | 745 | — |
+| Desglose Instagram dentro del encabezado | 365 | — |
+| Visualizaciones específicas de Instagram | 365, todas orgánicas | -1.9% |
+| Visualizaciones de anuncios | 0 | 0% |
+| Alcance | 188 | -28.8% |
+| Interacciones con el contenido | 15 | +15.4% |
+| Publicaciones | 10 | +140.0% frente al 8–14 de agosto |
+| Historias | 2 | — |
+
+La lectura correcta es que **365 visualizaciones** corresponden al desglose específico de Instagram en este corte; aproximadamente 1,100 es la suma agregada que el encabezado presenta para Facebook e Instagram. No se debe reportar 1,100 como visualizaciones exclusivas de Instagram.
+
+El gráfico diario específico de Instagram marca un pico cercano a 137 visualizaciones el 20 de agosto, seguido por aproximadamente 68 el 21 de agosto. El panel lateral confirma que las 365 visualizaciones fueron orgánicas y que no hubo visualizaciones de anuncios.
+
+Las tarjetas destacadas de esta captura incluyen `yo después de mandar “no pasa nada”` (19 de agosto, 129 visualizaciones, 2 reacciones), `Hay personas que se quedan en el retrovisor` (20 de agosto, 86 visualizaciones, 5 reacciones), `Farmeando Aura #UniverseSentMe` (21 de agosto, 24 visualizaciones, 1 reacción) y `Ella no está disponible en este plano` (22 de agosto, 23 visualizaciones). Debido a que la última tarjeta está fechada el 22 de agosto, las tarjetas destacadas no deben interpretarse automáticamente como un subconjunto estricto del periodo 15–21; se conservan como contexto visible del panel.
+
+### 6.2 Facebook — pestaña Reels de 7 días
+
+| Métrica | Resultado visible | Variación visible |
+|---|---:|---:|
+| Visualizaciones de Reels | 1,440 | -42.7% |
+| Tiempo de reproducción | 2 h 1 min | -29.0% |
+| Interacciones | 29 | -45.3% |
+| Fotos publicadas | 37 | +51.4% frente al 8–14 de agosto |
+| Historias publicadas | 16 | — |
+| Reels publicados | 3 | — |
+
+El desglose de formatos del mismo corte muestra **167,480 visualizaciones y 4,830 interacciones en fotos**, frente a **1,440 visualizaciones y 29 interacciones en Reels**. También muestra 7,640 visualizaciones y 222 interacciones en enlaces; 691 visualizaciones y 8 interacciones en historias; 117 visualizaciones y 1 interacción en varias fotos; y 18 visualizaciones en texto.
+
+La captura de Reels muestra tarjetas destacadas con fechas anteriores al corte de 7 días, por ejemplo `Mi ascenso a la locura` del 27 de julio, `Evan y Elara en el Bosque` del 8 de agosto y `UniverseSentMe` del 11 de agosto. Por tanto, esas tarjetas son una selección de contenido destacado del panel y no deben sumarse como si fueran publicaciones nuevas del 15–21 de agosto.
+
+## 7. Reporte detallado de Reels — ventana de 28 días
+
+La tercera captura adicional presenta la tabla detallada de Reels del mismo entorno de Meta Business Suite. La ventana visible corresponde al corte de 28 días usado por el panel y permite observar métricas que la vista agregada no mostraba: alcance, espectadores, visualizaciones, seguimientos, clics en enlace, tiempo promedio de reproducción, tiempo total de reproducción y shares. Los nombres de columnas truncados se conservan con la interpretación visible; los valores no legibles o ambiguos no se completan por inferencia.
+
+| Reel visible | Fecha y hora | Reacciones | Alcance | Espectadores | Visualizaciones | Seguimientos | Clics enlace | Tiempo promedio | Shares |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| `Dicen que si lo ves caminando...` | 25 jul, 16:10 | 128 | 7,037 | 5,998 | 7,116 | 0 | 0 | 5 s | 38 |
+| `Fantasma 👻 USM` | 5 ago, 19:32 | 20 | 1,518 | 1,440 | 1,679 | 0 | No expuesto | 4 s | 2 |
+| `Mi gato sabe hacer de todo...#unive...` | 29 jul, 21:03 | 24 | 1,005 | 958 | 1,309 | 1 | 0 | 5 s | 4 |
+| `Dicen que si te sales de la realidad e...` | 3 ago, 21:27 | 17 | 826 | 820 | 1,038 | 0 | 0 | 4 s | 3 |
+| `Momentos con Wilfred` | 30 jul, 09:16 | 21 | 752 | 702 | 953 | 0 | No expuesto | 5 s | 1 |
+| `Un rock bien gótico Vs una can...` | 29 jul, 14:03 | 26 | 723 | 719 | 937 | 0 | 0 | 3 s | 0 |
+| `Mi ascenso a la locura 😵 #universes...` | 27 jul, 14:23 | 22 | 713 | 695 | 1,014 | 0 | 0 | 6 s | 4 |
+| `Evan y Elara en el Bosque` | 8 ago, 21:00 | 6 | 689 | 656 | 778 | 0 | No expuesto | 5 s | 1 |
+| `Wilfred USM` | 1 ago, 20:12 | 17 | 671 | 672 | 799 | 0 | No expuesto | 4 s | 4 |
+| `#universesentme #universo #Wilfre...` | 28 jul, 23:14 | 6 | 502 | 475 | 629 | 0 | 0 | 3 s | 0 |
+| `UniverseSentMe` | 11 ago, 14:22 | 11 | 433 | 455 | 675 | 0 | No expuesto | 5 s | 1 |
+| `UniverseSentMe` | 9 ago, 19:00 | 6 | 368 | 357 | 468 | 0 | No expuesto | 4 s | 1 |
+| `Hay conversaciones que no llegan a...` | 2 ago, 22:23 | 8 | 366 | 347 | 495 | 0 | 0 | 4 s | 0 |
+
+La columna de tiempo total de reproducción aparece truncada en la captura y presenta valores en formato numérico no compatible con el esquema actual; no se incorporan al aggregate hasta contar con el campo completo y su unidad. Asimismo, la tabla visible corresponde a una selección de filas mostradas por el reporte; no se extrapola al inventario completo de Reels.
+
+## 8. Lectura comparada de los nuevos cortes
+
+El corte de 7 días muestra una desaceleración reciente de Facebook Reels: 1,440 visualizaciones, 2 h 1 min y 29 interacciones, con variaciones negativas frente al periodo de comparación del panel. Frente al acumulado de 28 días de Facebook Reels —20,523 visualizaciones y 473 interacciones—, el corte semanal reciente aporta una fracción reducida del acumulado. La comparación es direccional porque las ventanas del panel y sus bases comparativas no son idénticas, pero sí alerta de que el crecimiento agregado de 28 días está concentrado en publicaciones anteriores, no necesariamente en la última semana.
+
+Instagram presenta un cuadro distinto: en 7 días se publicaron 10 piezas y 2 historias, pero el desglose específico fue de 365 visualizaciones orgánicas, 188 de alcance y 15 interacciones. El aumento de volumen no produjo un aumento proporcional de alcance; por ello, no se debe interpretar el +140% de publicaciones como evidencia de crecimiento.
+
+La tabla individual de 28 días confirma el patrón ya observado: `Dicen que si lo ves caminando...` lidera alcance, visualizaciones y shares, con 7,116 visualizaciones y 38 shares. El tiempo promedio visible es de 5 segundos. `Mi ascenso a la locura` muestra el mayor tiempo promedio visible de la tabla, 6 segundos, pero no lidera en alcance ni shares. Esto respalda una hipótesis diferenciada: **el reconocimiento inmediato y la capacidad de compartirse explican mejor la distribución que el tiempo promedio aislado**. Es una señal de trabajo, no un veredicto causal.
+
+## 9. Requisitos de coherencia posteriores
+
+La nueva evidencia debe mantenerse vinculada con `GrowthOS/07_00_Registro_Maestro_Reels.md`, `Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json`, `Operations/Research/2026-08-22_Reels_Meta_Readonly_Reconciliation.json` y `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`. Los agregados de 7 y 28 días son evidencia de panel; los datos individuales solo deben atribuirse a un Reel cuando el título, fecha y publicación permitan una asociación verificable con el ID nativo.
