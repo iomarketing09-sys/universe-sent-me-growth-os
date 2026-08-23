@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-23
-**Versión:** 3.22
+**Versión:** 3.23
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.23.00] — 2026-08-23 (Manus): Revisión de comentarios de hoy en Facebook.** La consulta exclusiva mediante Meta Graph API v26.0 encontró 44 comentarios raíz y 7 réplicas de usuarios de hoy sin respuesta de la Página; cuatro comentarios raíz son nuevos desde el corte anterior y se registraron con propuestas específicas. No se publicó ninguna respuesta. El ledger pasa a v3.4 y la auditoría de Facebook a v3.7.
 
 - **[3.22.00] — 2026-08-23 (Manus): Nuevo corte API de Facebook con 45 unidades sin respuesta.** La revisión exclusiva mediante Meta Graph API v26.0 detectó 37 comentarios raíz y 8 réplicas nuevas de usuarios. Se clasificaron 31 oportunidades de respuesta, 7 casos para revisión manual de moderación y 7 interacciones sin acción por falta de contexto o por ser conversaciones entre usuarios. No se publicó ninguna respuesta. El ledger pasa a v3.3 y la auditoría de Facebook a v3.6.
 

@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-23
-version: "3.6"
+version: "3.7"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -19,6 +19,7 @@ related_documents:
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_02.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch_02.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_03.json"
+  - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_04.json"
 organization: "Operations/Research"
 ---
 
@@ -686,3 +687,14 @@ La mayor concentración de actividad se produjo en la publicación filosófica `
 La API no expuso de forma uniforme la autoría en todas las réplicas, pero sí devolvió los IDs de las unidades identificables. Las ocho réplicas se conservaron como registros independientes, incluyendo la respuesta con ID `122151375549072582_1817089682764579`, que apareció directamente dentro del comentario teológico raíz. El JSON `2026-08-23_Facebook_Comment_Review_Delta_03.json` contiene el detalle completo del corte y las decisiones por unidad.
 
 No se revisaron grupos de Facebook, Instagram, TikTok ni publicaciones ajenas. No se publicó ninguna respuesta.
+
+
+## 46. Comentarios de hoy sin responder — 23 de agosto de 2026
+
+La consulta exclusiva mediante Meta Graph API v26.0 filtró los comentarios creados el 23 de agosto de 2026 y comprobó la ausencia de respuestas de Universe Sent Me. El corte actual contiene **44 comentarios raíz sin respuesta** y **7 réplicas de usuarios sin respuesta dentro de hilos**; de ellos, **4 comentarios raíz son nuevos desde la revisión anterior** y los restantes ya estaban registrados en la cola pendiente o clasificados como no accionables.
+
+Los cuatro nuevos comentarios raíz son “Nosotros”, “😂🤣🤣🤣🤣🤣🤣🤣”, “Esa es una muy buena pregunta 🤔” y “A ti ‘la histeria colectiva’”. Se clasificaron como oportunidades de respuesta breve y contextual. Las propuestas no se publicaron y quedaron con `Pendiente_Fernando` en el ledger.
+
+La consulta también confirmó que siete réplicas previamente detectadas continúan sin respuesta pública. Dos tienen valor conversacional —la invitación a escuchar una canción y un aporte sobre cosmogonía—; las otras cinco son acuerdos, provocaciones, insultos o lenguaje homofóbico entre usuarios y se mantienen fuera de la cola de respuestas de marca, con revisión manual cuando corresponde.
+
+El detalle de los cuatro registros nuevos queda en `2026-08-23_Facebook_Comment_Review_Delta_04.json`. No se revisaron grupos, Instagram, TikTok ni publicaciones ajenas. No se publicó ninguna respuesta.
