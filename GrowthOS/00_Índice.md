@@ -3,8 +3,8 @@
 **Propósito:** Punto de entrada a toda la documentación operativa del Growth OS (calendario editorial, colas, automatizaciones, governance).
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-22
-**Versión:** 7.1
+**Última actualización:** 2026-08-23
+**Versión:** 7.2
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -51,8 +51,9 @@
 | [Análisis diario por familias y personajes — 22 de agosto](../Operations/Research/2026-08-22_Analisis_Corte_Diario_Familias_Personajes.md) | Interpreta shares, comentarios, clasificación provisional y estado de TAX-02, HUM-06, HUM-02 y Motion + POV/Meme sin atribuir causalidad. | Active |
 | [Protocolo de instrumentación de métricas de Reels](../Operations/Research/2026-08-22_Reels_Metric_Instrumentation_Protocol.md) | Medición por niveles L0–L4 para resolver la falta de views, reach y retención; L1 diario como base y 24/72 solo como cierre contractual opcional. Incluye campos de audio y variante para la serie Elara Walk. | Active |
 | [Reconciliación Meta de Reels — 22 de agosto](../Operations/Research/2026-08-22_Reels_Meta_Readonly_Reconciliation.json) | Verificación de cinco Reels publicados y tres casos sin ID Meta; confirma estado, IDs, horarios y engagement básico, y deja views/reach/retención como brecha explícita. | Active |
-| [Evidencia visual Meta Business Suite — Reels 7D y 28D](../Operations/Research/2026-08-22_Meta_Business_Suite_28D_Reels_Visual_Evidence.md) | Transcripción de capturas con agregados e indicadores individuales visibles de Facebook e Instagram: visualizaciones, tiempo de reproducción, alcance, espectadores, tiempo promedio, shares y variaciones de los periodos 15–21 ago. y 25 jul–21 ago. | Active |
-| [Brief Celda Reels Motion + POV/Meme 001](../Operations/Production/2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md) | Marco experimental activo; incorpora `HOOK-H1-ACTION-FIRST` y propone MPM-002 v2 con Silvio, plaza de feria mágica y piedra kármica para evitar repetición visual de Fantasma. La revisión está en `Review` y no autoriza generación, programación ni publicación. | Active / Review |
+| [Evidencia visual Meta Business Suite — Reels 7D y 28D](../Operations/Research/2026-08-22_Meta_Business_Suite_28D_Reels_Visual_Evidence.md) | Transcripción de capturas con agregados e indicadores individuales visibles de Facebook e Instagram, incluyendo el desglose profundo de MPM-001 y los cortes 7D/28D. | Active |
+| [Brief Celda Reels Motion + POV/Meme 001](../Operations/Production/2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md) | Marco experimental activo; incorpora `HOOK-H1-ACTION-FIRST`. La revisión MPM-002 v2 de Silvio y la piedra quedó `Archived_Not_Active`; el aprendizaje se aplica ahora al caso Maeve/Crave You, documentado en la exploración musical. | Active |
+| [Exploración videoclip musical — Crave You / Maeve](../Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Desamor.md) | Documento fuente de la dirección musical; la revisión `HOOK-FIRST-V1` de Maeve queda en `Review`, con audio pendiente de verificación nativa y sin autorización de producción, programación o publicación. | Active / Review |
 | [Briefs de adaptación original — cinco semillas Drive/Memes](../Operations/Production/2026-08-22_Briefs_Cadence_Memes_Seed_Adaptations.md) | Cinco adaptaciones originales desde Drive/Memes; los cinco assets fueron aprobados y programados en Facebook, tres mediante reemplazo y dos mediante slots adicionales. | Review |
 | [Inventario de semillas Drive/Memes](../Operations/Research/2026-08-22_Drive_Memes_Seed_Inventory.csv) | Fuente de trazabilidad de las 14 semillas: cinco aprobadas y producidas como adaptaciones USM; MEME-CAD-003/004 están en v3, MEME-CAD-005 en v4 y las versiones anteriores quedan históricas; las capturas fuente no son publicables directamente. | Active |
 | [Propuesta y ejecución de cadencia 22–30 — MEME-CAD](../Operations/Research/2026-08-23_Propuesta_Cadencia_23_30_MEME-CAD_Review.md) | Auditoría y ejecución del bloque 22–30: 50 filas, 26 nuevas, 21 reuse Top y 3 reserve; cuatro slots adicionales y tres reemplazos verificados en Facebook. | Review |

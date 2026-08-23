@@ -6,13 +6,13 @@
 
 **Fecha de creación:** 2026-08-20
 
-**Última actualización:** 2026-08-21
+**Última actualización:** 2026-08-23
 
-**Versión:** 3.7
+**Versión:** 3.9
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
-**Documentos relacionados:** `2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../../GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `../../GrowthOS/07_00_Registro_Maestro_Reels.md`, `../../GrowthOS/Integracion_Growth_OS.md`
+**Documentos relacionados:** `2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../../GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `../../GrowthOS/07_00_Registro_Maestro_Reels.md`, `../../GrowthOS/Integracion_Growth_OS.md`, `2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md`
 
 ---
 
@@ -660,3 +660,60 @@ Si la pista solo está disponible en una plataforma, se publica el videoclip exc
 [20] [Young & Sick — Jet Black Heart, audio oficial](https://www.youtube.com/watch?v=am6A6xLRKlM), analizado el 2026-08-21 únicamente para energía y estructura de edición no infractora.
 
 [21] [Growth OS — Integración Growth OS ↔ Canon](../../GrowthOS/Integracion_Growth_OS.md), última sincronización canónica registrada el 2026-08-15; confirma a Maeve + Kael como pareja establecida y limita a Kiri a su territorio de asombro y varita canonizada.
+
+
+## Crave You — revisión hook-first de Maeve — 2026-08-23
+
+La propuesta vigente de `Crave You — Maeve entre todas las miradas` se simplifica a partir del aprendizaje de retención de `MPM-001`: la caída principal del caso de Elara/Wilfred ocurre alrededor de 0:03, por lo que el próximo Reel no debe comenzar con una entrada atmosférica lenta ni con una secuencia de tres capas que retrase la acción. Esta revisión conserva el territorio visual de Maeve —espejo, plumas, luz editorial y presencia individual—, pero comprime la historia a una sola situación legible desde el primer cuadro.
+
+El principio transferido es **acción o cambio visible antes de 1.5 segundos**. No se transfiere la caminata de Elara/Wilfred, no se reintroduce a Kael y no se convierte la canción en una ilustración literal de su letra. `Crave You` se mantiene como audio propuesto y atmósfera; su disponibilidad nativa debe verificarse en la plataforma elegida antes de producir. El máster debe continuar exportándose sin música incrustada.
+
+| Campo | Revisión propuesta |
+|---|---|
+| `Concept_ID` | `CON-2026-08-24-CraveYou-MaeveFeathers` — se conserva para no crear un duplicado. |
+| `Revision_ID` | `CON-2026-08-24-CraveYou-MaeveFeathers-HOOK-FIRST-V1` |
+| `Experiment_ID` | `EXP-202608-MUSICVIDEO-02` |
+| `Hypothesis_ID` | `HB-MUSICVIDEO-02` + aprendizaje de hook `HOOK-H1-ACTION-FIRST` |
+| Personaje | Maeve exclusivamente, conservando su identidad visual oficial. |
+| Escenario | Salón editorial íntimo con espejo alto, terciopelo vino, verde petróleo y una lámpara cálida. No se añade una segunda locación. |
+| Duración objetivo | 8–10 segundos; el fragmento exacto de `Crave You` se fija después de verificar disponibilidad nativa. |
+| Texto en pantalla | Ninguno. |
+| Caption (borrador) | `Todos miran. Solo una mirada importa. 🪶` |
+| Estado | `REVIEW — no producir, programar ni publicar hasta aprobar keyframe/storyboard y confirmar audio nativo.` |
+
+### Secuencia simplificada
+
+| Tiempo | Imagen y movimiento | Función del hook |
+|---:|---|---|
+| 0.0–0.6 s | Maeve ya está visible en plano medio corto frente al espejo; una pluma cruza la lente desde el primer cuadro y ella levanta la mirada de inmediato. No hay fade desde negro, logo ni plano vacío. | Acción física y rostro reconocible antes de 1 segundo. |
+| 0.6–2.5 s | Maeve gira apenas hacia el espejo; su reflejo ya está centrado mientras una segunda pluma se detiene entre ella y el cristal. La diferencia se entiende por composición, no por explicación. | Curiosidad visual sin introducir personajes ni una nueva locación. |
+| 2.5–5.5 s | Maeve extiende una mano y las plumas comienzan una órbita corta alrededor del espejo. La cámara hace un único acercamiento suave; no se usan flashes ni cortes rápidos. | Continuidad de la acción inicial y progresión legible. |
+| 5.5–8.5 s | Maeve cierra la mano; las plumas se detienen y el reflejo queda alineado con ella. Maeve sostiene la mirada un instante y el Reel termina en corte seco. | Payoff: la mirada no la elige; Maeve controla qué atención conserva. |
+
+La revisión elimina los 3–4 flashes editoriales, el cambio complejo de profundidad del espejo, la transición de varias paletas y la necesidad de una progresión `presencia → autoconciencia → órbita` de 15 segundos. El nuevo arco es **pluma cruza la lente → Maeve reacciona → órbita breve → control de la mirada**. La pieza busca que el espectador entienda que algo ocurre antes del segundo 1.5 sin depender de texto o audio.
+
+### Qué se conserva y qué se elimina
+
+| Se conserva | Se elimina o queda fuera de esta revisión |
+|---|---|
+| Maeve como único personaje. | Kael, Kiri, siluetas adultas y terceros identificables. |
+| Espejo alto, plumas, verde petróleo, vino y ámbar. | Lobby de cine, lluvia exterior, múltiples locaciones y cambio de mundos. |
+| Vestuario opaco y sensualidad no explícita. | Poses sugerentes, énfasis anatómico, desnudez o contacto. |
+| Uso propuesto: audio nativo `Crave You` tras verificación, sin música incrustada. | Letra visible, texto explicativo y SFX que compitan con la canción. |
+| Microhistoria visual sin diálogo. | Estructura de tres capas, flashes y montaje de 14–15 segundos. |
+
+### Control experimental y medición
+
+Esta revisión no es una comparación limpia de hook contra `MPM-001`, porque cambia personaje, audio, escenario y lenguaje visual. Es una adaptación estratégica del principio de entrada inmediata dentro de una nueva pieza musical. La métrica primaria será `views_3_seconds / visualizations`; como la duración objetivo es menor a 15 segundos, no se usará `views_15_seconds` como métrica principal. Se registrarán además finalizaciones o reproducciones al 75% si Meta las expone, tiempo promedio de reproducción, tiempo total, shares, guardados, comentarios y seguidores.
+
+El referente interno de MPM-001 en Facebook es 113 reproducciones de 3 segundos sobre 411 visualizaciones, aproximadamente 27.5%, con 34 reproducciones de 15 segundos y 6 segundos de tiempo promedio. La nueva pieza debe superar claramente la retención inicial sin deteriorar shares, guardados o finalizaciones; estas cifras son referencias operativas del caso anterior, no benchmarks universales.
+
+Para conservar comparabilidad se mantendrán constantes, dentro de lo posible, la plataforma primaria, el tratamiento `caption_minimo`, la ausencia de afiliación, el estilo 2D pictórico USM, la identidad de Maeve, el máster sin audio incrustado y la selección nativa de la canción. No se generará una segunda variante hasta observar la primera, y no se declarará un ganador con una sola publicación: se requieren n≥3 para señal preliminar y n=5 para decisión operativa.
+
+### Gates antes de producción
+
+Fernando debe aprobar esta simplificación, el caption propuesto, el rango de duración y el tratamiento de Maeve antes de crear el keyframe. Después debe verificarse que `Crave You` esté disponible de forma nativa en cada plataforma prevista. Si la canción no está disponible en una red, esa red queda fuera de la prueba; no se incrusta el audio ni se sustituye por otra pista. El documento de producción, el storyboard y las métricas deben conservar el mismo `Concept_ID` y la revisión `HOOK-FIRST-V1`.
+
+**Estado operativo:** esta revisión queda en `Review`. No autoriza generación de imágenes, generación de video, programación, publicación, afiliación ni modificación del calendario.
+
+**Documentos que requieren coherencia:** `GrowthOS/01_02_Content_Backlog.md`, `GrowthOS/07_00_Registro_Maestro_Reels.md`, `GrowthOS/00_Índice.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`. La propuesta anterior de Silvio con piedra queda archivada como historial descartado y no es una dirección activa.

@@ -4,7 +4,7 @@ purpose: "Diseñar los tres primeros casos controlados para probar si el movimie
 status: Active
 created: 2026-08-22
 updated: 2026-08-23
-version: "2.0"
+version: "2.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "../../GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -175,13 +175,13 @@ La acción debe comunicar la broma incluso en silencio: los audífonos de Elara 
 
 Este caso toma la lógica que funcionó —meme reconocible, movimiento de caminata, múltiples figuras y texto repetido—, pero exige un escenario, recorrido y export nuevos. No se reutilizan los archivos `Ghost_walks_cats_through_forest_202607240113.mp4` ni `Ghost_walks_cats_through_forest_202607251436.mp4` como publicación idéntica. El Reel histórico de Fantasma con gatos es una referencia de rendimiento y no un cuarto caso de la celda.
 
-### Revisión propuesta MPM-002 v2 — Silvio y la piedra kármica
+### Revisión archivada MPM-002 v2 — Silvio y la piedra kármica
 
-**Estado: Review.** Esta revisión no sustituye todavía la propuesta MPM-002 v1 ni autoriza generación, programación o publicación. La versión anterior de Fantasma y los gatos permanece como referencia histórica porque permite conservar la observación de rendimiento; la nueva propuesta cambia deliberadamente personaje, escenario, movimiento y payoff para evitar que el público perciba una repetición.
+**Estado: Archived_Not_Active.** Fernando descartó esta dirección y pidió olvidarse de Silvio arrojando la piedra. Se conserva únicamente como trazabilidad histórica; no sustituye MPM-002 v1, no se reutiliza para Maeve y no autoriza generación, programación o publicación. La versión anterior de Fantasma y los gatos permanece como referencia histórica porque permite conservar la observación de rendimiento; la nueva propuesta cambia deliberadamente personaje, escenario, movimiento y payoff para evitar que el público perciba una repetición.
 
 La hipótesis de **fatiga por familiaridad visual** es plausible, pero todavía no está demostrada de forma causal: la segunda publicación de Fantasma pudo haber tenido diferencias de horario, distribución, caption, audiencia y exposición. Por eso la decisión correcta es tratarlo como una hipótesis operativa de novedad, no como un hecho cerrado.
 
-| Campo | Especificación v2 |
+| Campo | Especificación histórica (no activa) |
 |---|---|
 | `Case_ID` | `MPM-002` |
 | `Revision_ID` | `MPM-002-V2-SILVIO-KARMA` |
@@ -207,11 +207,11 @@ La hipótesis de **fatiga por familiaridad visual** es plausible, pero todavía 
 | 1.8–4.5 s | Silvio lanza la piedra hacia cámara; la trayectoria debe ser clara y caricaturesca, sin contacto real ni gore. La piedra deja un destello kármico que conecta visualmente con el remate. |
 | 4.5–7.5 s | Silvio baja el brazo, se sacude las manos y mira hacia otro lado con satisfacción seca, como si la consecuencia ya estuviera resuelta. |
 
-La regla transferida desde MPM-001 es **acción y conflicto visibles antes de 1.5 segundos**. Lo que cambia es la gramática visual: MPM-002 v2 no usa caminata, persecución, audífonos, bosque ni cadena de personajes. El gesto agresivamente cómico de Silvio y la piedra funcionan como hook físico independiente y permiten comprobar si la novedad de personaje y escenario mejora la entrada.
+La regla transferida desde MPM-001 —**acción y conflicto visibles antes de 1.5 segundos**— fue el aprendizaje que inspiró esta revisión histórica. Sin embargo, MPM-002 v2 quedó archivado por decisión de Fernando: sus detalles de personaje, escenario, movimiento y payoff no deben convertirse en un brief de producción ni reactivarse como prueba.
 
-**Control de novedad:** el export debe compararse visualmente contra los dos clips históricos de Fantasma con gatos. Deben ser distintos el personaje principal, la localización, el recorrido, el encuadre inicial, el payoff y la estructura de movimiento. No se deben reutilizar `Ghost_walks_cats_through_forest_202607240113.mp4` ni `Ghost_walks_cats_through_forest_202607251436.mp4`, ni recortar sus frames para construir esta versión.
+**Trazabilidad histórica:** la propuesta habría requerido un control de novedad contra los dos clips históricos de Fantasma con gatos, pero no se generará ni exportará esta versión. No se deben reutilizar `Ghost_walks_cats_through_forest_202607240113.mp4` ni `Ghost_walks_cats_through_forest_202607251436.mp4`, ni recortar sus frames para construirla.
 
-**Interpretación experimental:** MPM-002 v2 será una prueba exploratoria de rotación de personaje y escenario que también aplica el tratamiento de hook `action_first`. No será una comparación limpia de hook contra MPM-001 porque cambia más de una dimensión creativa. La lectura principal será si logra una entrada más clara y shares suficientes dentro de la celda Motion + POV/Meme; cualquier mejora se considerará señal preliminar y requerirá más casos.
+**Cierre de la revisión:** MPM-002 v2 no será una prueba exploratoria ni una comparación dentro de la celda. La hipótesis de fatiga por familiaridad visual permanece como aprendizaje exploratorio, pero la aplicación vigente de `HOOK-H1-ACTION-FIRST` se trasladó a Maeve/Crave You en `2026-08-20_Exploracion_Videoclip_Musical_Desamor.md`.
 
 ### Caso MPM-003 — Universe dijo “solo cinco minutos”
 

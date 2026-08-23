@@ -175,7 +175,7 @@ La evidencia completa está en `Operations/Research/2026-08-22_Meta_Business_Sui
 
 ### Estado de Maeve
 
-El documento `Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Desamor.md` conserva el proyecto de Maeve como **dirección de producción en revisión**, no como Reel publicado. El tratamiento `Crave You — Maeve entre todas las miradas` y su variante `La habitación de las plumas` permanecen en `REVIEW`; no existe todavía un `Platform_Content_ID` ni un export de video incorporado al historial de Reels. Debe tratarse como `En_Produccion/Pendiente_Revision`, no como publicación, métrica o experimento cerrado. Si Fernando se refiere a otro Reel de Maeve distinto, habrá que vincularlo mediante nombre exacto del archivo, fecha o ID nativo antes de añadirlo.
+El documento `Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Desamor.md` conserva el proyecto de Maeve como **dirección de producción en revisión**, no como Reel publicado. El tratamiento vigente `Crave You — Maeve: hook-first espejo y plumas` conserva la revisión histórica `La habitación de las plumas`, pero reduce la estructura a 8–10 segundos, una locación, una acción visible desde el primer cuadro y una órbita breve. Su revisión `HOOK-FIRST-V1` permanece en `REVIEW`; no existe todavía un `Platform_Content_ID` ni un export de video incorporado al historial de Reels. Debe tratarse como `En_Produccion/Pendiente_Revision`, no como publicación, métrica o experimento cerrado. La propuesta MPM-002 v2 de Silvio y la piedra queda `Archived_Not_Active` y no forma parte de la dirección vigente.
 
 ### Brecha principal
 
