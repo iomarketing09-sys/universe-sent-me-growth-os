@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-23
-version: "3.8"
+version: "3.9"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -21,6 +21,12 @@ related_documents:
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_03.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_04.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch_03.json"
+  - "Operations/Production/audit_facebook_unanswered_comments_since_last_review.py"
+  - "Operations/Automation/record_facebook_comment_delta_20260823_05.py"
+  - "Operations/Automation/repair_facebook_comment_delta_20260823_05.py"
+  - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_05.json"
+  - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_05_Summary.md"
+  - "Operations/Research/2026-08-23_Facebook_Comment_Record_Delta_05.json"
 organization: "Operations/Research"
 ---
 
@@ -708,3 +714,27 @@ Fernando autorizó las tres respuestas restantes del último corte y pidió excl
 Meta Graph API v26.0 devolvió HTTP 200 en la preconsulta, publicación y verificación de los tres casos. Las respuestas fueron atribuidas a Universe Sent Me, conservaron el texto exacto, coincidieron con el comentario padre directo y quedaron visibles (`is_hidden=false`). Los IDs de respuesta fueron `122151375549072582_1778181103364654`, `122151375549072582_1296908542379898` y `122151375549072582_1036885795611907`, respectivamente.
 
 El comentario excluido no se publicó ni se modificó. El detalle técnico queda en `2026-08-23_Facebook_Comment_Publication_Batch_03.json`. No se publicaron otras respuestas pendientes.
+
+
+## 48. Revisión de nuevos comentarios sin responder — 23 de agosto de 2026
+
+La revisión exclusiva mediante Meta Graph API v26.0 se ejecutó a las `2026-08-23T23:49:53+0000`, tomando como corte anterior `2026-08-23T19:33:07+0000`. Se consultaron las **20 publicaciones propias más recientes**, con **160 comentarios raíz**, sus réplicas directas y **187 IDs de comentarios observados**. Meta no devolvió errores de API en las consultas realizadas.
+
+Se encontraron **72 comentarios de usuarios posteriores al último corte** y **72 sin una respuesta directa de Universe Sent Me detectada**. Esta cifra es una bandeja técnica, no una orden de respuesta: incluye comentarios vacíos, emojis, frases breves, conversaciones entre usuarios, aportes sustantivos y casos que requieren criterio humano.
+
+| Clasificación | Casos | Estado registrado | Tratamiento |
+|---|---:|---|---|
+| Contextual o sustantivo | 42 | `Sin_Revisar` | Revisar individualmente; no se redactó ni publicó respuesta. |
+| Posible moderación | 3 | `Sin_Revisar` + `Moderacion_Estado=Revisar` | No responder automáticamente; revisar contexto humano. |
+| Respuesta breve | 17 | `No_Requiere_Respuesta` | Señal de baja fricción; no interrumpir por defecto. |
+| Sin contenido | 4 | `No_Requiere_Respuesta` | Comentario vacío. |
+| Emoji o símbolo | 4 | `No_Requiere_Respuesta` | Reacción breve sin contexto textual. |
+| Réplica de baja señal | 2 | `No_Requiere_Respuesta` | Conversación entre usuarios o remate breve. |
+
+Entre los casos que sí merecen revisión humana están la pregunta filosófica “Cómo podrías crear algo que siempre ha estado?” (`122151375549072582_1271513331667499`), el aporte extenso sobre la curiosidad humana y el creador (`122151375549072582_1284524650312354`), la recomendación musical “Mi historia entre tus dedos” (`122151376011072582_1568269204678844`) y la lista de canciones de cuatro artistas (`122151376011072582_1060227956395275`). Son oportunidades de respuesta específica, pero Fernando debe aprobar el texto antes de cualquier publicación.
+
+Los comentarios con lenguaje sexual explícito o insultos no se contestarán automáticamente. Entre ellos están `122151376083072582_1747280716505079`, `122151376083072582_1374857821527596`, `122151375549072582_1311421877545042` y `122151375549072582_1780347913099754`; quedan como revisión humana de contexto y no implican ocultamiento o eliminación automática. El hecho de que un comentario no tenga respuesta de la Página tampoco convierte una conversación entre usuarios en obligación de intervención institucional.
+
+El registrador añadió las 72 unidades de forma idempotente al `Community_Engagement_Log.csv`. Para no inventar respuestas, los 42 comentarios contextuales y los 3 casos de moderación quedaron como `Sin_Revisar`, con `Respuesta_Sugerida` vacía; solo pasarán a `Pendiente_Respuesta` cuando exista una propuesta concreta aprobada para revisión. Los 27 restantes quedaron como `No_Requiere_Respuesta`. El validador del ledger devolvió `VALIDATION=PASS`, con 192 filas y 192 `Comentario_ID` únicos.
+
+La evidencia detallada está en `2026-08-23_Facebook_Comment_Review_Delta_05.json`, el resumen clasificatorio en `2026-08-23_Facebook_Comment_Review_Delta_05_Summary.md` y el registro de escritura en `2026-08-23_Facebook_Comment_Record_Delta_05.json`. No se usó My Browser, no se revisaron grupos ni publicaciones ajenas, no se consultaron otras plataformas y no se publicó ninguna respuesta.

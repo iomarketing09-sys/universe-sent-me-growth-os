@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-23
-**Versión:** 3.29
+**Versión:** 3.30
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.30.00] — 2026-08-23 (Manus): Revisión exclusiva de nuevos comentarios de Facebook sin respuesta.** Meta Graph API v26.0 revisó las 20 publicaciones propias más recientes, 160 comentarios raíz y sus réplicas directas; el corte posterior a `2026-08-23T19:33:07+0000` encontró 72 comentarios de usuarios sin una respuesta directa detectada y cero errores de API. Se clasificaron 42 como `Contextual_sustantivo`, 3 para revisión humana de moderación y 27 como baja señal, vacíos, emojis o conversación entre usuarios; los 42 y 3 quedaron `Sin_Revisar` sin respuesta sugerida para no inventar copy. Se añadieron 72 filas idempotentes al `Community_Engagement_Log.csv`, que queda con 192 filas y 192 IDs únicos; el validador devuelve PASS. No se publicó ninguna respuesta, no se usó el navegador y no se revisaron grupos ni otras plataformas. La evidencia queda en `2026-08-23_Facebook_Comment_Review_Delta_05.json`, su resumen, el registro de escritura y la auditoría comunitaria v3.9.
 
 - **[3.28.00] — 2026-08-23 (Manus): Publicación manual de Maeve/Crave You en Facebook e Instagram.** Fernando proporcionó los enlaces de ambas publicaciones. Facebook quedó reconciliado mediante Meta Graph API v26.0 con Page Post `1036844829507460_122155182621072582`, Reel `2855499098159488`, `is_published=true`, caption completo y hora local `17:36:57`; Instagram quedó registrado con permalink `https://www.instagram.com/reel/DcZlBYVRiot/`, shortcode `DcZlBYVRiot` y cuenta visible `universe_sent_me_0326`, pero sin ID nativo, hora exacta, caption completo o audio técnicamente confirmados. Se añadieron ambas filas al `Publication_Log.csv`, manteniendo las métricas separadas y pendientes de corte. No se publicó en TikTok/YouTube ni se añadió afiliación.
 
