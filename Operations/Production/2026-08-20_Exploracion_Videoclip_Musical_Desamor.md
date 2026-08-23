@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 4.4
+**Versión:** 4.5
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -768,3 +768,19 @@ Como alternativa al clip adicional generado dentro de este entorno, Fernando pue
 La referencia inicial muestra a Maeve frente al espejo con la pluma cruzando el primer plano y su mirada levantándose. La referencia final mantiene el mismo salón editorial, pero una pluma ocupa aproximadamente 75–90% de la imagen y deja un borde de verde petróleo/ámbar para ocultar el reinicio. En Flow, el clip de cierre debe comenzar desde el estado final del máster actual y terminar acercándose progresivamente a la referencia final; no debe reiniciar la pose de Maeve al principio ni convertir la imagen final en una pantalla blanca estática. La duración recomendada del cierre es 4–5 segundos.
 
 El resultado debe exportarse sin audio incrustado. `Crave You` sigue pendiente de verificación nativa en Facebook e Instagram. Las referencias, el prompt y el máster están guardados en la carpeta específica de Drive; el clip que Fernando genere en Flow deberá guardarse allí con el mismo identificador de concepto. Usar Flow para producir el cierre o concatenar el loop no autoriza todavía programación ni publicación.
+
+
+## Copy, hashtags y distribución propuesta — 2026-08-23
+
+El video queda preparado para una publicación cross-platform en **Facebook Reels e Instagram Reels**, manteniendo la misma pieza y el mismo caption principal para no introducir una diferencia editorial innecesaria. TikTok y YouTube Shorts no forman parte de esta primera salida; podrán evaluarse después como una adaptación separada.
+
+| Elemento | Propuesta |
+|---|---|
+| Caption principal | `Todos miran. Solo una mirada importa. 🪶` |
+| Caption alternativo, solo si se decide cambiar el tono | `No era la pluma. Era la mirada. 👀🪶` |
+| Hashtags base | `#CraveYou #Maeve #UniverseSentMe #ReelMusical #VisualStorytelling #FantasyAesthetic #MirrorScene #FeatherAesthetic` |
+| Audio | Seleccionar `Crave You` como pista nativa en cada plataforma, únicamente después de confirmar título y disponibilidad en la biblioteca correspondiente |
+| Archivo | Usar el máster visual sin audio incrustado; no subir una copia con música embebida |
+| Estado | `Review` — copy y distribución propuestos; no programado ni publicado |
+
+La recomendación editorial es usar el caption principal porque conecta con la mirada de Maeve sin explicar la escena, no introduce un romance nuevo y deja que el hook visual haga el trabajo. No se añadirá el nombre de un artista a los hashtags hasta confirmar la ficha exacta de la pista dentro de la plataforma. La publicación requiere aprobación explícita del caption, de Facebook e Instagram como destinos y de la selección nativa de audio; este documento no autoriza por sí mismo ninguna acción de publicación.
