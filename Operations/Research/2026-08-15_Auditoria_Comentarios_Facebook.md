@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-23
-version: "3.1"
+version: "3.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -629,3 +629,10 @@ Este control evita dar por cerrado un hilo solo porque el comentario raíz ya re
 Al incorporar las dos réplicas anidadas se ejecutó una validación completa del CSV. El control detectó inconsistencias históricas: una fila con una coma sin encapsular en el campo de insight y el primer bloque de 11 filas con un campo vacío adicional. Se reparó el formato sin cambiar los IDs ni el significado de los registros; los 64 comentarios quedaron con 20 columnas, 64 IDs únicos y privacidad `Anonimizado`.
 
 El repositorio incorpora `Operations/Automation/validate_community_engagement_log.py`, que comprueba columnas, IDs duplicados, estados de respuesta, campos obligatorios para filas `Respondido` o `Pendiente_Respuesta` y anonimización. La ejecución posterior devolvió `VALIDATION=PASS`.
+
+
+## 41. Revisión editorial de las 11 propuestas pendientes
+
+El análisis adjunto confirmó el criterio permanente de que una respuesta debe reaccionar al elemento específico del comentario. Se mantuvieron seis textos que ya tenían una conexión clara con el remate, título o energía del comentario. Se refinaron cinco: `Hijo de hombre` incorpora la asociación con Tarzán; `Viento` evita inventar una interpretación cuando falta artista; `Frío frío` usa un juego directo con el título; la reflexión sobre Dios y el tiempo se reformula como pregunta filosófica abierta; y la réplica de Sandy Iris retoma literalmente el “modo travesura” del hilo.
+
+La revisión también confirma dos límites operativos. Una propuesta no debe convertirse en respuesta automática solo porque funcionó en un comentario anterior, y una frase sobre una canción no debe sonar como elogio intercambiable para cualquier título. Las 11 filas permanecen pendientes de aprobación humana y ninguna respuesta fue publicada.

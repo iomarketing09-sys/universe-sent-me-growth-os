@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-23
-version: "2.8"
+version: "2.9"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -232,3 +232,18 @@ La revisión de respuestas anidadas posterior a `2026-08-23T02:36:53+0000` detec
 | `122151376083072582_1345911810604525` | “Sandy Iris al parecer no todas, afortunadas las que si podemos” | `Pendiente_Respuesta` |
 
 Las propuestas son, respectivamente, “Jajaja, entonces ese modo travesura sí venía activado de fábrica. 🙈😂” y “Jajaja, oficialmente pertenecen al grupo de las afortunadas. Universe toma nota. 😂✨”. La clasificación conserva el tono cómplice del hilo sin volver explícito el contenido íntimo del meme.
+
+
+## 20. Refinamiento editorial de respuestas pendientes — archivo adjunto
+
+El análisis editorial de `pasted_content_3.txt` revisó las 11 propuestas pendientes sin publicar. Se mantuvieron seis respuestas porque ya reaccionaban al elemento concreto del comentario y se refinaron cinco para reducir fórmulas intercambiables o evitar asumir una interpretación no confirmada.
+
+| Comentario_ID | Ajuste aplicado | Motivo |
+|---|---|---|
+| `122151376011072582_1576421464128022` | “Hijo de hombre: nostalgia instantánea y ganas de volver a ver Tarzán. 🎶🥹” | Usa la asociación cultural concreta de la canción en lugar de una nostalgia genérica. |
+| `122151376011072582_1017393391124351` | “Viento… cortita la respuesta, pero bastante poderosa. 🌬️🎶” | No inventa artista, versión ni significado a partir de un título ambiguo. |
+| `122151376011072582_4579578845653974` | “Frío frío… y de alguna manera Juan Luis Guerra consiguió que sonara todo lo contrario. 😂🎶” | Juega directamente con el título y evita una fórmula musical genérica. |
+| `122151375549072582_1755338779425523` | “Jajaja, te metiste de lleno en una pregunta que lleva siglos dando dolores de cabeza: ¿qué significa realmente un ‘antes’ si el tiempo también tuvo un comienzo? 🤔✨” | Abre la cuestión filosófica sin asumir una doctrina teológica específica. |
+| `122151376083072582_1345911810604525` | “Anotado: Sandy Iris sí viene con el modo travesura activado. 😂🙈” | Da continuidad exacta al hilo y recupera el nombre y el remate de la usuaria. |
+
+Las seis propuestas restantes —“Que? No todas pueden?”, “Amén”, “Zumo de mandrágora”, “One of Us”, “Disfruto” y la réplica “Universe Sent Me creo que vengo con eso”— se mantuvieron sin cambios. El estado de las 11 filas continúa `Pendiente_Respuesta` y `Pendiente_Fernando`; ninguna escritura fue autorizada o ejecutada.
