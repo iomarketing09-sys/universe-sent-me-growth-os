@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 4.2
+**Versión:** 4.3
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -752,3 +752,17 @@ El máster actual dura 9.0 segundos y ya contiene el arco completo de hook, reac
 La propuesta de loop conserva el máster actual sin cambios. El segundo clip comenzaría con Maeve después de cerrar la mano; ella relaja los dedos, el reflejo se desplaza apenas y las plumas aceleran su órbita. Una pluma cruzaría la lente al final hasta cubrir casi todo el cuadro, con composición, dirección y escala compatibles con la pluma que abre el Reel. La unión entre el cuadro final oscurecido y el primer cuadro del máster debe sentirse como una continuidad, no como un corte arbitrario.
 
 El audio continuaría fuera del archivo: el máster extendido se exportaría sin música incrustada y `Crave You` seguiría sujeto a verificación nativa en Facebook e Instagram. La ruta de loop no autoriza programación ni publicación; requiere aprobación específica del clip de cierre y una comprobación técnica de la concatenación antes de cualquier uso editorial.
+
+
+## Referencias de inicio y cierre para Flow — 2026-08-23
+
+Como alternativa al clip adicional generado dentro de este entorno, Fernando puede construir el cierre en Flow utilizando dos referencias verticales de la misma continuidad visual. Ambas imágenes son PNG de 1440×2560 px, proporción 9:16, y permanecen sin texto ni audio.
+
+| Uso en Flow | Archivo | Drive |
+|---|---|---|
+| `First frame` / inicio del Reel | `CON-2026-08-24_CraveYou_Maeve_HOOK-FIRST-V1_keyframe_review.png` | [Abrir referencia inicial](https://drive.google.com/file/d/1bISDPbHLqRsw2nK5LwLH3ghlzG6wW18u/view?usp=drivesdk) |
+| `Last frame` / cierre del clip adicional | `CON-2026-08-24_CraveYou_Maeve_HOOK-FIRST-V1_loop_final_reference.png` | [Abrir referencia final](https://drive.google.com/file/d/1R3M-wjf4NbWBg6Lz_r32dR7CB4NnGvom/view?usp=drivesdk) |
+
+La referencia inicial muestra a Maeve frente al espejo con la pluma cruzando el primer plano y su mirada levantándose. La referencia final mantiene el mismo salón editorial, pero una pluma ocupa aproximadamente 75–90% de la imagen y deja un borde de verde petróleo/ámbar para ocultar el reinicio. En Flow, el clip de cierre debe comenzar desde el estado final del máster actual y terminar acercándose progresivamente a la referencia final; no debe reiniciar la pose de Maeve al principio ni convertir la imagen final en una pantalla blanca estática. La duración recomendada del cierre es 4–5 segundos.
+
+El resultado debe exportarse sin audio incrustado. `Crave You` sigue pendiente de verificación nativa en Facebook e Instagram. Las referencias y esta guía están en `Review`: usar Flow para producir el cierre o concatenar el loop no autoriza todavía programación ni publicación.
