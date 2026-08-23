@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 4.1
+**Versión:** 4.2
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -737,3 +737,18 @@ El storyboard de revisión conserva la secuencia definida arriba: una pluma cruz
 La referencia oficial se usó únicamente para identidad; la composición del keyframe y el video usan la locación editorial aprobada y excluyen gato, Kael, Kiri, terceros, texto en pantalla, romance nuevo y sensualidad explícita. El video se generó a partir del keyframe aprobado y se limpió para conservar exclusivamente la pista de video. El máster queda en `Review`: no está autorizado para programarse ni publicarse. La siguiente decisión humana es confirmar la disponibilidad nativa de audio en Facebook e Instagram y, por separado, autorizar cualquier publicación; la disponibilidad no debe inferirse de servicios externos de streaming.
 
 **Documentos que requieren coherencia:** `GrowthOS/01_02_Content_Backlog.md`, `GrowthOS/07_00_Registro_Maestro_Reels.md`, `GrowthOS/00_Índice.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## Evaluación de extensión y loop — 2026-08-23
+
+El máster actual dura 9.0 segundos y ya contiene el arco completo de hook, reacción, órbita y payoff. Extenderlo con una repetición idéntica o con imágenes estáticas puede aumentar la duración nominal, pero también puede introducir una pausa perceptible y debilitar la entrada inmediata que motivó esta revisión. Esta sección es una propuesta `Review_Not_Approved`; no autoriza generar una variante, concatenar archivos ni modificar el máster vigente.
+
+| Ruta | Aplicación | Riesgo | Recomendación |
+|---|---|---|---|
+| Imágenes estáticas | Insertar una imagen de Maeve o del espejo entre el payoff y el reinicio | Congelamiento visible, caída de ritmo y apariencia de slideshow; solo funcionaría como puente muy breve con movimiento editorial sutil | No usar como extensión principal; reservar a un puente de 0.5–1.0 s si el beat musical lo exige |
+| Repetición del máster | Repetir los 9 segundos actuales | El segundo hook es idéntico y la repetición puede sentirse mecánica; no crea un cierre nuevo | No recomendada como primera opción |
+| Clip de cierre diseñado para loop | Añadir un clip nuevo de 4–5 segundos que parte del estado final y termina con una pluma cubriendo la lente, reproduciendo la lógica visual del primer cuadro | Requiere una generación adicional y control de continuidad de Maeve, espejo, plumas y luz | **Opción recomendada**; llevaría el total a aproximadamente 13–14 segundos y permitiría un reinicio visualmente oculto |
+
+La propuesta de loop conserva el máster actual sin cambios. El segundo clip comenzaría con Maeve después de cerrar la mano; ella relaja los dedos, el reflejo se desplaza apenas y las plumas aceleran su órbita. Una pluma cruzaría la lente al final hasta cubrir casi todo el cuadro, con composición, dirección y escala compatibles con la pluma que abre el Reel. La unión entre el cuadro final oscurecido y el primer cuadro del máster debe sentirse como una continuidad, no como un corte arbitrario.
+
+El audio continuaría fuera del archivo: el máster extendido se exportaría sin música incrustada y `Crave You` seguiría sujeto a verificación nativa en Facebook e Instagram. La ruta de loop no autoriza programación ni publicación; requiere aprobación específica del clip de cierre y una comprobación técnica de la concatenación antes de cualquier uso editorial.
