@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 2.2
+**Versión:** 2.3
 
 **Autor:** Manus AI
 
@@ -294,6 +294,12 @@ En el iMac, después de copiar el script a una ubicación local, aplicar permiso
 chmod 700 ~/omniroute-daily-wrapper.sh
 ~/omniroute-daily-wrapper.sh
 ```
+
+### Validación del wrapper — 2026-08-23
+
+El wrapper se ejecutó desde el iMac con un prompt sintético y completó la solicitud sin error: HTTP `200`, respuesta no vacía, `finish_reason: stop`, provider `groq`, model ID normalizado `openai/gpt-oss-20b`, `strategy=single`, latencia `2093 ms`, `89` tokens de entrada y `44` de salida. El header indicó `x-omniroute-cache-hit: false`, versión `3.8.49` y costo reportado por OmniRoute de `0.0000000000`. La clave no se incorporó al comando, al prompt ni al repositorio; el wrapper la recibe mediante entrada silenciosa y ejecuta limpieza al terminar.
+
+Esta prueba confirma la ruta operativa diaria: **Terminal → wrapper → OmniRoute local en `127.0.0.1` → Groq → respuesta**. La latencia de `2093 ms` es mayor que algunas pruebas anteriores, pero no representa un fallo; puede variar según la solicitud, el razonamiento del modelo y la red. La cifra de costo es la reportada por el gateway para esa respuesta y no garantiza que la cuota de Groq permanezca gratuita.
 
 El prompt debe ser sintético o anonimizado. Para una tarea que requiera más salida, puede aumentarse temporalmente el límite sin guardar configuración permanente:
 
