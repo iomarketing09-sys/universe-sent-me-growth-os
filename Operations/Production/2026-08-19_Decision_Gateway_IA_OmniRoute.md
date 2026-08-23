@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 1.5
+**Versión:** 1.6
 
 **Autor:** Manus AI
 
@@ -107,12 +107,12 @@ Oracle asigna una **home region** al crear la tenancy y no permite cambiarla pos
 |---|---|---|---|
 | Oracle `VM.Standard.A1.Flex` | Gratuita dentro de límites | Esperar y reintentar en la home region; usar Ubuntu ARM64/AArch64; no cambiar a E5/E4/Intel Flex. | **Primera opción si aparece capacidad** |
 | Oracle `VM.Standard.E2.1.Micro` | Gratuita dentro de límites | Crear una VM nueva, no cambiar la E5 existente; usar imagen Ubuntu x86_64/AMD64; aproximadamente 1 GB RAM. | **Plan de contingencia** |
-| Google Cloud `e2-micro` | Nivel gratuito mensual | Solo `us-west1`, `us-central1` o `us-east1`; 30 GB-mes de disco estándar y 1 GB/mes de salida desde Norteamérica dentro de límites; requiere otra cuenta y su propia facturación. | **Alternativa externa persistente** |
+| Google Cloud `e2-micro` | Nivel gratuito mensual | Solo `us-west1`, `us-central1` o `us-east1`; 30 GB-mes de disco estándar y 1 GB/mes de salida desde Norteamérica dentro de límites; la IPv4 externa puede tener un SKU separado; requiere otra cuenta y facturación. | **Alternativa externa persistente con control estricto** |
 | Railway | Trial/crédito limitado | Prueba sencilla, pero no es Always Free permanente y el volumen tiene condiciones de expiración. | **Solo prueba** |
 | Render Free | Gratuita con límites | Suspensión por inactividad y filesystem efímero; no conserva SQLite/configuración. | **Solo demo descartable** |
 | Cuenta Oracle duplicada | No aprobada | Oracle permite una sola cuenta Free Trial o Always Free por persona; no crear cuentas adicionales para cambiar la home region o sortear la capacidad. | **No usar** |
 
-La recomendación actual es no aceptar `VM.Standard.E5.Flex` ni `VM.Standard3.Flex` solo porque tengan capacidad. Debe esperarse A1, intentar E2 Micro como piloto de muy bajo consumo o migrar a Google Cloud e2-micro. Si se usa E2 Micro, OmniRoute debe ejecutarse con swap, servicios de fondo desactivados, un único provider cloud y solicitudes pequeñas; si el gateway no cabe con estabilidad, se debe usar Groq directamente desde un cliente autorizado y omitir OmniRoute. Si existe una VM flexible creada por error, se debe terminar únicamente esa VM y eliminar su boot volume vacío; no solicitar la eliminación de toda la tenancy salvo que se quiera cerrar permanentemente la cuenta y se hayan revisado todos sus recursos. [12] [13]
+La recomendación actual es no aceptar `VM.Standard.E5.Flex` ni `VM.Standard3.Flex` solo porque tengan capacidad. Debe esperarse A1, intentar E2 Micro como piloto de muy bajo consumo o migrar a Google Cloud e2-micro. En Google Cloud, la ruta más simple requiere una IPv4 externa efímera y puede generar un SKU separado; IAP permite administrar la VM sin IP pública, pero no resuelve por sí solo la salida del contenedor hacia Docker Hub o Groq. Si el costo cero estricto es no negociable, se debe preferir Oracle Always Free cuando haya capacidad o usar Groq directamente desde el iMac. Si se usa E2 Micro, OmniRoute debe ejecutarse con swap, servicios de fondo desactivados, un único provider cloud y solicitudes pequeñas; si el gateway no cabe con estabilidad, se debe omitir OmniRoute. Si existe una VM flexible creada por error, se debe terminar únicamente esa VM y eliminar su boot volume vacío; no solicitar la eliminación de toda la tenancy salvo que se quiera cerrar permanentemente la cuenta y se hayan revisado todos sus recursos. [12] [13] [14] [15]
 
 ## Piloto propuesto
 
@@ -174,3 +174,7 @@ Hasta entonces, la conclusión operativa es: **sí se puede usar OmniRoute, pero
 [12]: [Oracle Cloud Free Tier — FAQ](https://www.oracle.com/cloud/free/faq/)
 
 [13]: [Oracle — Deleting a Free Tier Tenancy and Cloud Account](https://docs.oracle.com/en-us/iaas/Content/General/Tasks/deleting_tenancy_freetier.htm)
+
+[14]: [Google Cloud — Network pricing and external IP addresses](https://cloud.google.com/vpc/network-pricing)
+
+[15]: [Google Cloud — Connect to Linux VMs using Identity-Aware Proxy](https://cloud.google.com/compute/docs/connect/ssh-using-iap)

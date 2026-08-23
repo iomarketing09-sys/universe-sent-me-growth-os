@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 1.5
+**Versión:** 1.6
 
 **Autor:** Manus AI
 
@@ -261,8 +261,9 @@ Groq debe tratarse como una ruta cloud controlada, no como una ruta privada loca
 | Render Free | Sí, con límites | No: el filesystem es efímero y se pierde la SQLite al reiniciar, redeployar o suspender; el servicio se suspende tras 15 minutos sin tráfico. [13] [14] | **Solo demo temporal**, no recomendada para conservar providers y configuración. |
 | Railway | Trial de 5 USD por hasta 30 días; después, plan Free con 1 USD/mes de crédito | Sí mediante volumen en `/app/data`, pero los volúmenes de cuentas trial se eliminan 30 días después de expirar los créditos. [15] [16] | **Mejor para una prueba de 30 días**, no gratis permanente. |
 | Oracle Cloud Always Free | Sí, mientras se mantengan las condiciones de Always Free | Sí, mediante el disco de la VM; exige administrar Linux, Docker, firewall, dominio y backups. [20] | **Mejor alternativa gratuita persistente**, pero requiere más trabajo técnico y puede sufrir falta de capacidad o reclamación por inactividad. |
+| Google Cloud e2-micro | Sí, dentro de límites y regiones elegibles | Sí, con 30 GB-mes de disco estándar; una IPv4 externa puede generar un cargo separado. [23] [28] | **Alternativa persistente**, con control estricto de red y facturación; no se puede garantizar costo cero absoluto si se necesita salida a Internet. |
 
-Para tu caso, la recomendación es **Railway si quieres probarlo rápidamente durante el trial** y **Oracle Cloud Always Free si necesitas dejarlo funcionando sin pagar mensualmente**. Render Free es el camino más sencillo visualmente, pero su pérdida de SQLite hace que OmniRoute olvide la configuración de providers después de un reinicio o suspensión. Además, la instancia gratuita de Render ofrece 512 MB de RAM y 0,1 CPU, mientras que la guía de OmniRoute recomienda como mínimo una VM de 1 GB para un despliegue persistente. [14] [18]
+Para tu caso, la recomendación es **Oracle Cloud A1/E2 Micro si aparece capacidad**, **Google Cloud e2-micro si aceptas controlar una posible tarifa de IPv4 externa**, Railway para una prueba temporal y Render solo para una demo descartable. Render Free es el camino más sencillo visualmente, pero su pérdida de SQLite hace que OmniRoute olvide la configuración de providers después de un reinicio o suspensión. Además, la instancia gratuita de Render ofrece 512 MB de RAM y 0,1 CPU, mientras que la guía de OmniRoute recomienda como mínimo una VM de 1 GB para un despliegue persistente. [14] [18]
 
 ### Configuración común de secretos
 
@@ -329,7 +330,84 @@ OMNIROUTE_DISABLE_CREDENTIAL_HEALTH_CHECK=true
 
 Después de cada suspensión o reinicio, debes asumir que la SQLite y las credenciales almacenadas desaparecerán. Render confirma que los servicios Free no pueden usar discos persistentes y que las bases SQLite locales se pierden; su Postgres Free también tiene una vigencia limitada de 30 días. [13] Por eso Render Free no debe ser la opción principal para OmniRoute. Úsalo solo para comprobar que el contenedor arranca, abrir el dashboard temporalmente y probar un provider sin datos privados.
 
-### Opción C: Oracle Cloud Always Free para persistencia gratuita
+### Opción C: Google Cloud e2-micro como alternativa persistente
+
+Google Cloud ofrece una VM e2-micro no interrumpible por mes dentro del nivel gratuito en una de estas regiones de Estados Unidos: `us-west1` (Oregón), `us-central1` (Iowa) o `us-east1` (Carolina del Sur). También incluye hasta 30 GB-mes de disco persistente estándar y 1 GB mensual de salida desde Norteamérica, dentro de los límites publicados. [23]
+
+**Advertencia de costo:** no existe una forma honesta de garantizar costo cero absoluto si la VM necesita una ruta normal de salida a Internet. Google cobra las direcciones IPv4 externas estáticas o efímeras por separado; el precio publicado es de US$0.005 por hora. [28] Una VM sin IPv4 externa puede administrarse mediante IAP, pero para descargar Docker y llamar a Groq necesitaría salida a Internet mediante Cloud NAT u otro proxy, que tampoco debe asumirse como gratuito. [29]
+
+Para el piloto, la opción práctica es usar una **IPv4 externa efímera**, nunca una IP estática, y asumir que podría aparecer un cargo pequeño. Si costo cero estricto es un requisito no negociable, no despliegues OmniRoute en Google Cloud: usa Oracle Always Free cuando A1/E2 Micro tenga capacidad o ejecuta Groq directamente desde el iMac.
+
+#### Crear el proyecto y controlar el costo
+
+1. Crea un proyecto de Google Cloud con un nombre como `omniroute-free` o utiliza un proyecto vacío existente. No mezcles otros servicios.
+2. Vincula una cuenta de facturación únicamente porque Google Cloud la requiere para Compute Engine; esto no elimina la necesidad de controlar los SKU.
+3. En **Billing → Budgets & alerts**, crea un presupuesto de referencia muy bajo, por ejemplo US$1, con alertas al 50%, 90% y 100%. Las alertas **no detienen automáticamente** los recursos ni la facturación, por lo que son un aviso y no un límite técnico. [27]
+4. En **Billing → Reports/Cost table**, filtra por el proyecto y revisa Compute Engine, Persistent Disk, External IP y Network Egress después de crear la VM.
+
+#### Crear la VM e2-micro
+
+En **Compute Engine → VM instances → Create instance**, usa estos valores:
+
+| Campo | Valor recomendado |
+|---|---|
+| Name | `omniroute-free` |
+| Region | `us-west1`, `us-central1` o `us-east1` |
+| Zone | Una zona dentro de la región elegida, por ejemplo `us-central1-a` |
+| Machine type | **E2 → e2-micro**; no `e2-small`, `e2-medium` ni tipo personalizado |
+| Provisioning model | **Standard/no interrumpible**, no Spot |
+| Boot disk | Ubuntu LTS x86_64/AMD64, **20 GB**, `pd-standard` |
+| External IPv4 | Efímera, solo si se acepta el posible cargo; nunca reservar una IP estática |
+| Firewall | No marcar “Allow HTTP” ni “Allow HTTPS” durante el piloto |
+| GPUs | Ninguna |
+| Additional disks/snapshots | Ninguno |
+
+La consola debe indicar que la VM `e2-micro` y el disco estándar están dentro de las condiciones del nivel gratuito. No crees más de una e2-micro y mantén el disco total del proyecto por debajo de 30 GB. No añadas Cloud NAT, Load Balancer, GPU, discos SSD, snapshots automáticos ni IP reservada.
+
+Para una VM sin IPv4 externa, IAP TCP forwarding permite el acceso SSH a la IP interna mediante un túnel HTTPS, pero requiere autenticación, IAM y una regla de firewall desde `35.235.240.0/20`. [29] Esa variante es apropiada para administrar una VM sin publicarla, pero no resuelve por sí sola la salida del contenedor hacia Docker Hub o Groq; por eso no es la ruta inicial recomendada para este piloto.
+
+#### Preparar la VM de 1 GB
+
+Conéctate por SSH y crea swap antes de instalar OmniRoute:
+
+```bash
+sudo fallocate -l 2G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+sudo sysctl vm.swappiness=10
+free -h
+```
+
+Instala Docker siguiendo el bloque oficial de este runbook y configura `OMNIROUTE_MEMORY_MB=384` o `512`, `OMNIROUTE_DISABLE_BACKGROUND_SERVICES=1`, un solo provider cloud y solicitudes pequeñas. Mantén el contenedor enlazado a `127.0.0.1:20128`; no marques los checkboxes de HTTP/HTTPS ni expongas el dashboard directamente durante el piloto.
+
+Si necesitas abrir el dashboard desde el iMac sin publicar el puerto, utiliza un túnel SSH local después de configurar el acceso:
+
+```bash
+ssh -i ~/.ssh/omniroute_oracle -N \
+  -L 20128:127.0.0.1:20128 usuario@IP_O_HOST_DE_GOOGLE
+```
+
+En Google Cloud, la ruta IAP equivalente es `gcloud compute ssh ... --tunnel-through-iap`, con un reenvío `-L`; la documentación oficial muestra los permisos y la regla de firewall necesarios. [29]
+
+#### Validación de costo antes de usar OmniRoute
+
+Antes de instalar el provider cloud, verifica en la consola:
+
+| Control | Resultado requerido |
+|---|---|
+| Máquina | `e2-micro`, Standard, una sola instancia |
+| Región | `us-west1`, `us-central1` o `us-east1` |
+| Disco | `pd-standard`, máximo 30 GB acumulados; se recomienda 20 GB |
+| IP | Efímera si es necesaria; no reservada/estática |
+| Red | Sin Cloud NAT, Load Balancer, GPU ni firewall HTTP/HTTPS público |
+| Salida | Mantener las llamadas a Groq pequeñas para no superar 1 GB/mes |
+| Billing | Alertas creadas y Cost table revisada; recordar que las alertas no apagan recursos |
+
+Si aparece cualquier SKU distinto de Compute e2-micro, Persistent Disk Standard o la IP externa que conscientemente aceptaste, detén la VM y corrige el recurso antes de desplegar OmniRoute.
+
+### Opción D: Oracle Cloud Always Free para persistencia gratuita
 
 Oracle ofrece una VM Always Free con recursos persistentes durante la vida de la cuenta: hasta 2 OCPU y 12 GB de memoria total en Ampere A1, o hasta dos VMs AMD de 1 GB, además de 200 GB de almacenamiento de bloques en la región principal. Oracle puede reclamar instancias inactivas y la creación puede fallar temporalmente por falta de capacidad. [20]
 
@@ -735,3 +813,11 @@ Si el piloto se convierte en una función compartida, se deberán actualizar el 
 [24]: [Oracle Cloud Free Tier — FAQ](https://www.oracle.com/cloud/free/faq/)
 
 [25]: [Oracle — Deleting a Free Tier Tenancy and Cloud Account](https://docs.oracle.com/en-us/iaas/Content/General/Tasks/deleting_tenancy_freetier.htm)
+
+[26]: [Google Cloud — Create and start a Compute Engine instance](https://cloud.google.com/compute/docs/instances/create-start-instance)
+
+[27]: [Google Cloud — Create, edit, or delete budgets and budget alerts](https://cloud.google.com/billing/docs/how-to/budgets)
+
+[28]: [Google Cloud — Network pricing and external IP addresses](https://cloud.google.com/vpc/network-pricing)
+
+[29]: [Google Cloud — Connect to Linux VMs using Identity-Aware Proxy](https://cloud.google.com/compute/docs/connect/ssh-using-iap)
