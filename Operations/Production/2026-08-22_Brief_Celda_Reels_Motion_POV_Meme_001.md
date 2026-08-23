@@ -4,7 +4,7 @@ purpose: "Diseñar los tres primeros casos controlados para probar si el movimie
 status: Active
 created: 2026-08-22
 updated: 2026-08-23
-version: "1.9"
+version: "2.0"
 author: "Manus AI (CGO)"
 related_documents:
   - "../../GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -174,6 +174,44 @@ La acción debe comunicar la broma incluso en silencio: los audífonos de Elara 
 | `Duration_Target` | 7–8 segundos |
 
 Este caso toma la lógica que funcionó —meme reconocible, movimiento de caminata, múltiples figuras y texto repetido—, pero exige un escenario, recorrido y export nuevos. No se reutilizan los archivos `Ghost_walks_cats_through_forest_202607240113.mp4` ni `Ghost_walks_cats_through_forest_202607251436.mp4` como publicación idéntica. El Reel histórico de Fantasma con gatos es una referencia de rendimiento y no un cuarto caso de la celda.
+
+### Revisión propuesta MPM-002 v2 — Silvio y la piedra kármica
+
+**Estado: Review.** Esta revisión no sustituye todavía la propuesta MPM-002 v1 ni autoriza generación, programación o publicación. La versión anterior de Fantasma y los gatos permanece como referencia histórica porque permite conservar la observación de rendimiento; la nueva propuesta cambia deliberadamente personaje, escenario, movimiento y payoff para evitar que el público perciba una repetición.
+
+La hipótesis de **fatiga por familiaridad visual** es plausible, pero todavía no está demostrada de forma causal: la segunda publicación de Fantasma pudo haber tenido diferencias de horario, distribución, caption, audiencia y exposición. Por eso la decisión correcta es tratarlo como una hipótesis operativa de novedad, no como un hecho cerrado.
+
+| Campo | Especificación v2 |
+|---|---|
+| `Case_ID` | `MPM-002` |
+| `Revision_ID` | `MPM-002-V2-SILVIO-KARMA` |
+| `Family_Candidate` | `Motion_character_reaction` |
+| `Concept_ID` | Nuevo concepto de Silvio; no reutilizar el paseo histórico de Fantasma. |
+| `Experiment_ID` | `EXP-202608-REEL-MOTION-POV-MEME-001` |
+| `Hypothesis_ID` | `HB-REEL-MOTION-POV-MEME-01` + `HB-REEL-NOVELTY-ROTATION-01` exploratoria |
+| `Hook_Type` | `action_first_visual_meme` |
+| `On_Screen_Text` | `POV: Dices que el karma no existe` — añadir en edición, no generar dentro de la imagen. |
+| `Caption_Treatment` | `caption_minimo` |
+| `Caption_Function` | `reforzar_remate` |
+| `Caption_Proposed` | `No era una piedra. Era una consecuencia. 😌` |
+| `Characters` | Silvio solo, conservando su identidad oficial de payaso/clown-like. |
+| `Scenario` | Plaza de feria mágica nocturna, con luces de atracción y una pequeña caseta de premios; no bosque, no sendero y no composición del Reel histórico de Fantasma. |
+| `Duration_Target` | 7–8 segundos |
+
+**Blueprint de hook y movimiento:**
+
+| Tiempo | Acción |
+|---|---|
+| 0.0–0.6 s | Silvio ya aparece en primer plano medio, molesto, con la piedra levantada y el brazo preparado. La intención de arrojarla debe ser legible en el primer cuadro; no hay fundido, logo ni plano vacío. |
+| 0.6–1.8 s | Silvio da un paso hacia cámara y tensa el brazo como si fuera a golpear con la piedra, no como si estuviera ofreciéndola. El texto breve aparece una sola vez. |
+| 1.8–4.5 s | Silvio lanza la piedra hacia cámara; la trayectoria debe ser clara y caricaturesca, sin contacto real ni gore. La piedra deja un destello kármico que conecta visualmente con el remate. |
+| 4.5–7.5 s | Silvio baja el brazo, se sacude las manos y mira hacia otro lado con satisfacción seca, como si la consecuencia ya estuviera resuelta. |
+
+La regla transferida desde MPM-001 es **acción y conflicto visibles antes de 1.5 segundos**. Lo que cambia es la gramática visual: MPM-002 v2 no usa caminata, persecución, audífonos, bosque ni cadena de personajes. El gesto agresivamente cómico de Silvio y la piedra funcionan como hook físico independiente y permiten comprobar si la novedad de personaje y escenario mejora la entrada.
+
+**Control de novedad:** el export debe compararse visualmente contra los dos clips históricos de Fantasma con gatos. Deben ser distintos el personaje principal, la localización, el recorrido, el encuadre inicial, el payoff y la estructura de movimiento. No se deben reutilizar `Ghost_walks_cats_through_forest_202607240113.mp4` ni `Ghost_walks_cats_through_forest_202607251436.mp4`, ni recortar sus frames para construir esta versión.
+
+**Interpretación experimental:** MPM-002 v2 será una prueba exploratoria de rotación de personaje y escenario que también aplica el tratamiento de hook `action_first`. No será una comparación limpia de hook contra MPM-001 porque cambia más de una dimensión creativa. La lectura principal será si logra una entrada más clara y shares suficientes dentro de la celda Motion + POV/Meme; cualquier mejora se considerará señal preliminar y requerirá más casos.
 
 ### Caso MPM-003 — Universe dijo “solo cinco minutos”
 
@@ -375,5 +413,6 @@ Este brief reemplaza la prioridad anterior de Dialogue_radio, pero no borra sus 
 | Fecha | Versión | Cambio | Autor |
 |---|---|---|---|
 | 2026-08-22 | 1.7 | Se consolida MPM-001 como serie musical sin texto sobre la imagen y con caption mínimo. | Manus AI (CGO) |
+| 2026-08-23 | 2.0 | Se propone MPM-002 v2 con Silvio, una plaza de feria mágica y una acción de piedra kármica desde el primer cuadro; se conserva la versión histórica de Fantasma como referencia, se añade la hipótesis exploratoria de rotación de novedad y se mantiene el gate de aprobación humana. | Manus AI (CGO) |
 | 2026-08-23 | 1.9 | Se añade el lineamiento `HOOK-H1-ACTION-FIRST` tras observar la caída principal de MPM-001 alrededor de 0:03; se definen variantes comparables, métricas de retención inicial y límites de aprobación. | Manus AI (CGO) |
 | 2026-08-22 | 1.8 | MPM-001 pasa a publicado en Facebook e Instagram; se registran caption, hashtags, audio nativo y permalinks, con métricas por plataforma aún pendientes. | Manus AI (CGO) |

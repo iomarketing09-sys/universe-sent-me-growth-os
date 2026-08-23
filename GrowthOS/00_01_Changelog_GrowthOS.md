@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-23
-**Versión:** 3.17
+**Versión:** 3.18
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.18.00] — 2026-08-23 (Manus): Revisión de MPM-002 para evitar fatiga por familiaridad visual.** A partir de la observación de Fernando de que una segunda publicación de Fantasma con gatos podía sentirse repetida, se añadió al brief v2.0 una revisión propuesta `MPM-002-V2-SILVIO-KARMA`: Silvio como personaje principal, una plaza de feria mágica nocturna como escenario, acción de piedra kármica desde el primer cuadro y payoff nuevo. Se conserva la versión histórica de Fantasma como referencia y no se borra su evidencia. La posible fatiga visual queda registrada como hipótesis exploratoria, no como causalidad demostrada. La revisión requiere aprobación humana y no autoriza generación, programación ni publicación.
 
 - **[3.17.00] — 2026-08-23 (Manus): Publicación verificada de seis respuestas aprobadas en Facebook.** Fernando autorizó las seis propuestas del último corte. Meta Graph API v26.0 devolvió HTTP 200 en todos los casos; se confirmó autoría de Universe Sent Me, `parent.id` correcto, texto exacto y `is_hidden=false`. El ledger pasa a v3.2 y la auditoría de Facebook a v3.5.
 
@@ -21,7 +23,6 @@
 - **[3.12.00] — 2026-08-23 (Manus): Control de respuestas anidadas en Facebook.** Además de los 11 comentarios raíz del corte anterior, la revisión de hilos posteriores a `2026-08-23T02:36:53+0000` detectó dos réplicas nuevas de usuarios dentro de un hilo cuyo comentario raíz ya había recibido respuesta de Universe Sent Me. Se registraron como oportunidades independientes, con propuestas específicas y sin publicar. El ledger pasa a v2.7 y la auditoría de Facebook a v3.0.
 
 - **[3.11.00] — 2026-08-23 (Manus): Nuevo corte API de comentarios de Facebook.** Meta Graph API v26 detectó 11 comentarios posteriores al lote refinado: nueve oportunidades de respuesta y dos comentarios compuestos únicamente por nombres, clasificados como `No_Accion` por falta de contexto. Se prepararon respuestas específicas para títulos musicales, remates de humor, una referencia fantástica y una reflexión teológica; no se publicó ninguna. El ledger pasa a v2.6 y la auditoría de Facebook a v2.9.
-
 - **[3.10.00] — 2026-08-23 (Manus): Optimización controlada del hook de la celda Motion + POV/Meme.** A partir de la caída de retención de MPM-001 alrededor de 0:03, se añadió al brief v1.9 el tratamiento `HOOK-H1-ACTION-FIRST`: mostrar desde el primer cuadro a Elara y Wilfred en movimiento, con la relación cómica legible antes de 1.5 s, sin logo, fundido ni texto nuevo. La referencia operativa de MPM-001 es 113 reproducciones de 3 s sobre 411 visualizaciones (≈27.5%) y 34 reproducciones de 15 s (≈8.3%). Se definieron H1, H2 y H3 como variantes no simultáneas y se mantuvieron constantes personajes, caption, duración, audio, plataforma, horario y exclusión de afiliación. El lineamiento no autoriza generación, programación ni publicación; requiere aprobación humana y n≥3 para señal preliminar.
 
 - **[3.09.00] — 2026-08-22 (Manus): Desglose profundo de MPM-001 en Facebook e Instagram.** Las capturas específicas muestran para Facebook 411 visualizaciones, 350 espectadores, 22 interacciones, 33 min 31 s de reproducción, 6 s promedio, 34 reproducciones de 15 s, 113 reproducciones de 3 s y una caída principal de retención alrededor de 0:03; también muestran 55.3% mujeres, 44.7% hombres y audiencia principal visible de México. El crosspost de Instagram registra 29 visualizaciones, 22 de alcance, 0 interacciones, 15 s promedio y 6 min de reproducción, pero sin ID nativo. MPM-001 queda en L2 parcial en Facebook; se mantienen separadas ambas plataformas y no se atribuyen conversiones.
