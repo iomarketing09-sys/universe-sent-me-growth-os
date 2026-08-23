@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 1.3
+**Versión:** 1.4
 
 **Autor:** Manus AI
 
@@ -51,6 +51,8 @@ La recomendación es conservar el logo oficial de Firma Bordados en la cabecera,
 La carpeta de Reels incluye un clip vertical de aproximadamente cuatro segundos con una línea de máquinas de bordado en operación. El clip transmite capacidad industrial y podría funcionar como evidencia de proceso en una sección móvil o como Reel, pero no como hero panorámico. Cualquier uso web requerirá optimización, controles de reproducción, un poster estático y validación previa de las marcas visibles.
 
 La estrategia de redes revisada define tres pilares: escolar, corporativo B2B y confianza/legado. El sitio debe priorizar el pilar B2B para maquiladoras internacionales y empresas, mientras que el bordado escolar debe mantenerse como capacidad secundaria o estacional. El protocolo actual de conversión dirige a sitio, teléfono, correo y mensajes directos, y prohíbe prometer WhatsApp; por tanto, la página no debe agregar un CTA de WhatsApp sin una autorización posterior. Las cuentas sociales todavía requieren confirmación de URL y propiedad antes de agregar iconos o enlaces.
+
+El usuario aprobó el uso del logo oficial de Firma Bordados, confirmó permiso para editar y publicar fotografías de trabajos de clientes, y autorizó el uso prudente de IA como apoyo de composición, nunca como sustitución de la evidencia real de proceso o producto. El staging actualizado reemplaza el monograma provisional por el logo oficial, integra una fotografía de proceso autorizada y añade enlaces externos a las cuentas oficiales de Facebook (`https://www.facebook.com/firmabordadospiedras`), Instagram (`https://www.instagram.com/firmabordados/`) y X (`https://x.com/firmabordados`). Los tres perfiles se verificaron como cuentas coherentes de Firma Bordados. La navegación usa enlaces externos accesibles y no automatiza publicaciones.
 
 ## Hechos confirmados con el usuario
 
@@ -124,7 +126,7 @@ El Combo `usm-groq-gemini-priority` pertenece al piloto de Universe Sent Me y no
 
 ## Decisión pendiente
 
-No iniciar una migración irreversible todavía. Ya se confirmó la autorización de reconstrucción, ausencia de correo empresarial vinculado al dominio, formulario básico y renovación de Wix en diciembre de 2026. Aún se necesita confirmar el costo actual de Wix, las cuentas oficiales de redes sociales, los servicios exactos, la preferencia de hosting, las licencias de las imágenes y clips candidatos, y la necesidad final del formulario antes de cualquier cambio DNS.
+No iniciar una migración irreversible todavía. Ya se confirmó la autorización de reconstrucción, ausencia de correo empresarial vinculado al dominio, formulario básico, renovación de Wix en diciembre de 2026, redes sociales oficiales y permiso para editar y publicar fotografías de trabajos. Aún se necesita confirmar el costo actual de Wix, los servicios exactos y su prioridad comercial, la preferencia de hosting y la necesidad final del formulario antes de cualquier cambio DNS.
 
 Si el inventario confirma que el sitio es realmente estático, se puede preparar una copia de prueba. La cancelación de Wix, transferencia del dominio y asignación de presupuesto para IA quedan bloqueadas hasta que el cliente apruebe el alcance, el costo y la nueva versión.
 
