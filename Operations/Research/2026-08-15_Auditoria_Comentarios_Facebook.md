@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-23
-version: "3.4"
+version: "3.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -17,6 +17,7 @@ related_documents:
   - "Operations/Automation/validate_community_engagement_log.py"
   - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_02.json"
+  - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch_02.json"
 organization: "Operations/Research"
 ---
 
@@ -660,3 +661,10 @@ La revisión de solo lectura posterior al lote publicado comparó el estado actu
 Las nuevas recomendaciones permiten mantener la regla editorial de especificidad: “Mis manos en tu cintura” se responde desde el romance clásico de Nino Bravo; “Tonight” desde su energía nostálgica y alternativa; “Stirb nicht vor mir” desde el dramatismo de Rammstein; y “Birdie” desde la combinación de ternura y viaje asociada a la elección. La réplica “bigbong 🤣” continúa el juego verbal del comentario sobre BigBang y puede recibir una línea breve sobre la dicción del universo. “Amén hermanas 🤓” prolonga el remate del hilo sin necesidad de explicitar el contenido original.
 
 El corte no incluye grupos de Facebook, Instagram, TikTok ni publicaciones ajenas. No se publicó ninguna respuesta.
+
+
+## 44. Publicación verificada de seis respuestas autorizadas — 23 de agosto de 2026
+
+Fernando autorizó explícitamente las seis respuestas del corte anterior: “Amén hermanas 🤓”, “Mis manos en tu cintura” de Nino Bravo, “Tonight” de The Smashing Pumpkins, “Stirb nicht vor mir” de Rammstein, “Birdie” de León Larregui y la réplica “bigbong 🤣”. La ejecución idempotente consultó cada hilo antes de publicar y no encontró respuestas exactas preexistentes de Universe Sent Me.
+
+Meta Graph API v26.0 devolvió HTTP 200 en los seis casos. La verificación posterior confirmó en cada respuesta la autoría de la Página, el `parent.id` correspondiente, el texto exacto aprobado y `is_hidden=false`. El JSON `2026-08-23_Facebook_Comment_Publication_Batch_02.json` conserva los seis resultados y sus IDs de Meta. El comentario religioso con enlace externo no formó parte del lote y continúa sin respuesta.

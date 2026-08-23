@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-23
-version: "3.1"
+version: "3.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -14,6 +14,7 @@ related_documents:
   - "Operations/Automation/validate_community_engagement_log.py"
   - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_02.json"
+  - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch_02.json"
   - "GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md"
 organization: "Operations/Research"
 ---
@@ -287,3 +288,19 @@ La revisión de solo lectura mediante Meta Graph API v26.0 comparó el corte act
 | `122151376011072582_1807143836955837` | Cita de Corán 66:11, comentario extenso con enlace externo | `No_Requiere_Respuesta` |
 
 Las propuestas fueron preparadas con referencias al título, artista o juego verbal concreto. No se publicó ninguna respuesta en este corte. La réplica `bigbong 🤣` se trata como unidad independiente porque apareció dentro de un hilo cuyo comentario raíz ya tenía respuesta de la Página.
+
+
+## 23. Publicación autorizada de seis respuestas — 23 de agosto de 2026
+
+Fernando autorizó explícitamente las seis respuestas propuestas en el corte anterior. Meta Graph API v26.0 devolvió HTTP 200 en los seis casos. La lectura posterior confirmó en todos la autoría `Universe Sent Me`, el `parent.id` correcto, el texto exacto aprobado y `is_hidden=false`.
+
+| Comentario_ID | Respuesta_Meta_ID | Estado |
+|---|---|---|
+| `122151376083072582_1078572578055585` | `122151376083072582_893660230176913` | `Respondido` |
+| `122151376011072582_1374323618238603` | `122151376011072582_28098051106481918` | `Respondido` |
+| `122151376011072582_1474344638049134` | `122151376011072582_1049860087828933` | `Respondido` |
+| `122151376011072582_2991082287899276` | `122151376011072582_3015080525525014` | `Respondido` |
+| `122151376011072582_2308975296571861` | `122151376011072582_2159794541252447` | `Respondido` |
+| `122151375549072582_1089305796872950` | `122151375549072582_1036377862728177` | `Respondido` |
+
+El lote se publicó de forma idempotente: antes de cada escritura se consultó el hilo y no se encontró una respuesta exacta preexistente de la Página. La evidencia detallada queda en `2026-08-23_Facebook_Comment_Publication_Batch_02.json`.

@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-23
-**Versión:** 3.16
+**Versión:** 3.17
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.17.00] — 2026-08-23 (Manus): Publicación verificada de seis respuestas aprobadas en Facebook.** Fernando autorizó las seis propuestas del último corte. Meta Graph API v26.0 devolvió HTTP 200 en todos los casos; se confirmó autoría de Universe Sent Me, `parent.id` correcto, texto exacto y `is_hidden=false`. El ledger pasa a v3.2 y la auditoría de Facebook a v3.5.
 
 - **[3.16.00] — 2026-08-23 (Manus): Nuevo corte de comentarios de Facebook posterior al lote publicado.** La revisión de solo lectura detectó seis comentarios raíz y una réplica nueva de usuario dentro de un hilo existente. Seis señales quedaron pendientes de aprobación con propuestas específicas; una cita religiosa extensa con enlace, sin solicitud clara, quedó como `No_Requiere_Respuesta`. No se publicó ninguna respuesta. El ledger pasa a v3.1 y la auditoría de Facebook a v3.4.
 

@@ -1,0 +1,228 @@
+{
+  "executed_at_utc": "2026-08-23T17:03:31.957952+00:00",
+  "page_id": "1036844829507460",
+  "source": "Meta Graph API v26.0",
+  "approved_batch_size": 6,
+  "published_verified": 6,
+  "already_present_verified": 0,
+  "verification_failures": 0,
+  "publish_failures": 0,
+  "results": [
+    {
+      "target_comment_id": "122151376083072582_1078572578055585",
+      "message": "Amén, hermanas: el acta del modo travesura ya quedó aprobada. 🤓😂",
+      "run_at_utc": "2026-08-23T17:03:31.957952+00:00",
+      "preflight_status_code": 200,
+      "post_status_code": 200,
+      "post_response": {
+        "id": "122151376083072582_893660230176913"
+      },
+      "status": "published_verified",
+      "reply_id": "122151376083072582_893660230176913",
+      "verification": {
+        "status_code": 200,
+        "payload": {
+          "id": "122151376083072582_893660230176913",
+          "from": {
+            "name": "Universe Sent Me",
+            "id": "1036844829507460"
+          },
+          "message": "Amén, hermanas: el acta del modo travesura ya quedó aprobada. 🤓😂",
+          "created_time": "2026-08-23T17:03:32+0000",
+          "parent": {
+            "created_time": "2026-08-23T16:36:02+0000",
+            "message": "Amén hermanas 🤓",
+            "id": "122151376083072582_1078572578055585"
+          },
+          "is_hidden": false
+        },
+        "checks": {
+          "author_is_page": true,
+          "parent_matches": true,
+          "message_matches": true,
+          "is_hidden_false": true
+        }
+      }
+    },
+    {
+      "target_comment_id": "122151376011072582_1374323618238603",
+      "message": "Mis manos en tu cintura: Nino Bravo poniendo el romance en modo clásico. 🎶✨",
+      "run_at_utc": "2026-08-23T17:03:31.957952+00:00",
+      "preflight_status_code": 200,
+      "post_status_code": 200,
+      "post_response": {
+        "id": "122151376011072582_28098051106481918"
+      },
+      "status": "published_verified",
+      "reply_id": "122151376011072582_28098051106481918",
+      "verification": {
+        "status_code": 200,
+        "payload": {
+          "id": "122151376011072582_28098051106481918",
+          "from": {
+            "name": "Universe Sent Me",
+            "id": "1036844829507460"
+          },
+          "message": "Mis manos en tu cintura: Nino Bravo poniendo el romance en modo clásico. 🎶✨",
+          "created_time": "2026-08-23T17:03:35+0000",
+          "parent": {
+            "created_time": "2026-08-23T15:45:50+0000",
+            "message": "Mis manos en tu cintura,  de nino bravo",
+            "id": "122151376011072582_1374323618238603"
+          },
+          "is_hidden": false
+        },
+        "checks": {
+          "author_is_page": true,
+          "parent_matches": true,
+          "message_matches": true,
+          "is_hidden_false": true
+        }
+      }
+    },
+    {
+      "target_comment_id": "122151376011072582_1474344638049134",
+      "message": "Tonight de The Smashing Pumpkins: nostalgia alternativa activada en tres palabras. 🧡💛🖤🎶",
+      "run_at_utc": "2026-08-23T17:03:31.957952+00:00",
+      "preflight_status_code": 200,
+      "post_status_code": 200,
+      "post_response": {
+        "id": "122151376011072582_1049860087828933"
+      },
+      "status": "published_verified",
+      "reply_id": "122151376011072582_1049860087828933",
+      "verification": {
+        "status_code": 200,
+        "payload": {
+          "id": "122151376011072582_1049860087828933",
+          "from": {
+            "name": "Universe Sent Me",
+            "id": "1036844829507460"
+          },
+          "message": "Tonight de The Smashing Pumpkins: nostalgia alternativa activada en tres palabras. 🧡💛🖤🎶",
+          "created_time": "2026-08-23T17:03:40+0000",
+          "parent": {
+            "created_time": "2026-08-23T16:45:27+0000",
+            "message": "Smashing pumpkins,  tonight 🧡💛🖤",
+            "id": "122151376011072582_1474344638049134"
+          },
+          "is_hidden": false
+        },
+        "checks": {
+          "author_is_page": true,
+          "parent_matches": true,
+          "message_matches": true,
+          "is_hidden_false": true
+        }
+      }
+    },
+    {
+      "target_comment_id": "122151376011072582_2991082287899276",
+      "message": "Stirb nicht vor mir: Rammstein llevando el drama romántico hasta el borde del abismo. 🖤🎶",
+      "run_at_utc": "2026-08-23T17:03:31.957952+00:00",
+      "preflight_status_code": 200,
+      "post_status_code": 200,
+      "post_response": {
+        "id": "122151376011072582_3015080525525014"
+      },
+      "status": "published_verified",
+      "reply_id": "122151376011072582_3015080525525014",
+      "verification": {
+        "status_code": 200,
+        "payload": {
+          "id": "122151376011072582_3015080525525014",
+          "from": {
+            "name": "Universe Sent Me",
+            "id": "1036844829507460"
+          },
+          "message": "Stirb nicht vor mir: Rammstein llevando el drama romántico hasta el borde del abismo. 🖤🎶",
+          "created_time": "2026-08-23T17:03:44+0000",
+          "parent": {
+            "created_time": "2026-08-23T16:28:17+0000",
+            "message": "stirb nicht vor mir - rammstein",
+            "id": "122151376011072582_2991082287899276"
+          },
+          "is_hidden": false
+        },
+        "checks": {
+          "author_is_page": true,
+          "parent_matches": true,
+          "message_matches": true,
+          "is_hidden_false": true
+        }
+      }
+    },
+    {
+      "target_comment_id": "122151376011072582_2308975296571861",
+      "message": "Birdie de León Larregui: ternura y viaje cósmico en la misma canción. ✨🎶",
+      "run_at_utc": "2026-08-23T17:03:31.957952+00:00",
+      "preflight_status_code": 200,
+      "post_status_code": 200,
+      "post_response": {
+        "id": "122151376011072582_2159794541252447"
+      },
+      "status": "published_verified",
+      "reply_id": "122151376011072582_2159794541252447",
+      "verification": {
+        "status_code": 200,
+        "payload": {
+          "id": "122151376011072582_2159794541252447",
+          "from": {
+            "name": "Universe Sent Me",
+            "id": "1036844829507460"
+          },
+          "message": "Birdie de León Larregui: ternura y viaje cósmico en la misma canción. ✨🎶",
+          "created_time": "2026-08-23T17:03:48+0000",
+          "parent": {
+            "created_time": "2026-08-23T15:57:09+0000",
+            "message": "Birdie ✨ león larregui 🥰🤗💖",
+            "id": "122151376011072582_2308975296571861"
+          },
+          "is_hidden": false
+        },
+        "checks": {
+          "author_is_page": true,
+          "parent_matches": true,
+          "message_matches": true,
+          "is_hidden_false": true
+        }
+      }
+    },
+    {
+      "target_comment_id": "122151375549072582_1089305796872950",
+      "message": "Jajaja, el universo también tiene problemas de dicción. 🤣💥",
+      "run_at_utc": "2026-08-23T17:03:31.957952+00:00",
+      "preflight_status_code": 200,
+      "post_status_code": 200,
+      "post_response": {
+        "id": "122151375549072582_1036377862728177"
+      },
+      "status": "published_verified",
+      "reply_id": "122151375549072582_1036377862728177",
+      "verification": {
+        "status_code": 200,
+        "payload": {
+          "id": "122151375549072582_1036377862728177",
+          "from": {
+            "name": "Universe Sent Me",
+            "id": "1036844829507460"
+          },
+          "message": "Jajaja, el universo también tiene problemas de dicción. 🤣💥",
+          "created_time": "2026-08-23T17:03:53+0000",
+          "parent": {
+            "created_time": "2026-08-23T16:30:08+0000",
+            "message": "bigbong 🤣",
+            "id": "122151375549072582_1089305796872950"
+          },
+          "is_hidden": false
+        },
+        "checks": {
+          "author_is_page": true,
+          "parent_matches": true,
+          "message_matches": true,
+          "is_hidden_false": true
+        }
+      }
+    }
+  ]
+}
