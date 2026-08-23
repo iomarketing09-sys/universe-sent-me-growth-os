@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 2.7
+**Versión:** 2.8
 
 **Autor:** Manus AI
 
@@ -393,6 +393,36 @@ Se realizó una prueba controlada con el Combo `usm-groq-gemini-priority`: Groq 
 La evidencia confirma el failover del Combo, no solo la disponibilidad directa de Gemini. La diferencia entre los contadores de tokens del cuerpo y de los headers vuelve a aparecer en la ruta Gemini y queda registrada sin reconciliar artificialmente. La solicitud utilizó un prompt sintético; no se enviaron datos privados, tokens, métricas reales ni documentos internos.
 
 Groq debe tratarse como una ruta cloud controlada, no como una ruta privada local. Aunque sus términos describen restricciones sobre el uso de inputs y outputs, el prompt sale del equipo y se aplican también los términos de cada model provider. [7]
+
+## Siguiente etapa: integración en aplicación o API de producción
+
+La instalación actual en el iMac es válida para desarrollo y staging, pero no puede ser el endpoint de producción: OmniRoute escucha únicamente en `127.0.0.1`, depende de que el iMac esté encendido y no es accesible desde una aplicación alojada en Internet. La aplicación tampoco debe llamar al dashboard ni al puerto local directamente desde el navegador.
+
+La arquitectura objetivo para un primer caso editorial es:
+
+```text
+Frontend React o cliente autorizado
+        ↓ HTTPS + sesión/autorización
+Backend privado de Universe Sent Me
+        ↓ payload mínimo + API key de ejecución
+OmniRoute privado en un host persistente
+        ↓ model = usm-groq-gemini-priority
+Groq principal → Gemini fallback
+        ↓ respuesta derivada
+Backend → borrador no publicado
+```
+
+| Enfoque | Tradeoffs | Coste | Complejidad de configuración |
+|---|---|---|---|
+| Provider directo desde el backend, sin OmniRoute | Es la alternativa ligera y reduce componentes, pero no conserva el Combo ni el failover multi-provider. | Coste y cuota del provider elegido; no se garantiza gratuidad permanente. | Baja |
+| OmniRoute en un host persistente con Docker y HTTPS | Conserva `usm-groq-gemini-priority`, logs y failover; exige volumen persistente, TLS, firewall, backups y mantenimiento. | Hosting potencialmente facturable más uso de providers; no asumir que Oracle, Google, Railway o Render serán gratuitos a largo plazo. | Media-alta |
+| Mantener OmniRoute en el iMac | Costo adicional mínimo y útil para staging local, pero no funciona como servicio público ni cuando el equipo está apagado. | Sin hosting adicional; requiere mantener el iMac encendido para cada prueba. | Baja para staging; no válida para producción |
+
+El siguiente paso de implementación debe ser un endpoint backend mínimo, por ejemplo `POST /api/ai/draft`, y no una llamada desde React a OmniRoute. El backend debe aceptar solo un propósito editorial permitido, limitar el tamaño del prompt, eliminar o rechazar secretos y datos personales, usar la API key de OmniRoute con permisos de ejecución, invocar el Combo por su nombre exacto, registrar request ID, provider, modelo, latencia, estado y costo reportado, y devolver el resultado marcado como `Draft`. No debe publicar contenido ni escribir en `Publication_Log.csv`, `ExperimentLog.csv`, el baseline ni la fuente maestra.
+
+Antes de exponer ese endpoint se requiere un entorno de staging separado, una URL HTTPS privada o protegida, autenticación del cliente, rate limiting, límites de longitud, timeout, manejo de `429`/`5xx`, sanitización de respuestas y observabilidad. El primer despliegue debe usar prompts sintéticos; después se puede evaluar texto público o anonimizado. La clave de Management Access debe permanecer desactivada y no debe reutilizarse la API key de un provider.
+
+La decisión pendiente es elegir entre el provider directo ligero y un host persistente para OmniRoute. Si el objetivo de producción exige conservar el Combo, el siguiente trabajo concreto es inventariar la aplicación actual —stack, hosting y backend disponible— y diseñar el contrato de `POST /api/ai/draft`; no se debe abrir el puerto del iMac a Internet ni crear un túnel improvisado.
 
 ## Paso 10: alojar OmniRoute fuera de la computadora
 
