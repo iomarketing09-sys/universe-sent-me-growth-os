@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-23
-**Versión:** 3.23
+**Versión:** 3.24
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.24.00] — 2026-08-23 (Manus): Publicación verificada de tres respuestas aprobadas en Facebook.** Fernando aprobó responder tres comentarios del último corte y excluir `122151375549072582_2130811011171538` porque etiqueta a otra persona. Meta Graph API v26.0 confirmó HTTP 200, autoría de Universe Sent Me, `parent.id` correcto, texto exacto e `is_hidden=false` en los tres casos. No se publicaron otras respuestas pendientes. El ledger pasa a v3.5 y la auditoría de Facebook a v3.8.
 
 - **[3.23.00] — 2026-08-23 (Manus): Revisión de comentarios de hoy en Facebook.** La consulta exclusiva mediante Meta Graph API v26.0 encontró 44 comentarios raíz y 7 réplicas de usuarios de hoy sin respuesta de la Página; cuatro comentarios raíz son nuevos desde el corte anterior y se registraron con propuestas específicas. No se publicó ninguna respuesta. El ledger pasa a v3.4 y la auditoría de Facebook a v3.7.
 

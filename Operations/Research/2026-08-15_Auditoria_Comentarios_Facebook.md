@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-23
-version: "3.7"
+version: "3.8"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -20,6 +20,7 @@ related_documents:
   - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch_02.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_03.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_04.json"
+  - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch_03.json"
 organization: "Operations/Research"
 ---
 
@@ -698,3 +699,12 @@ Los cuatro nuevos comentarios raíz son “Nosotros”, “😂🤣🤣🤣🤣�
 La consulta también confirmó que siete réplicas previamente detectadas continúan sin respuesta pública. Dos tienen valor conversacional —la invitación a escuchar una canción y un aporte sobre cosmogonía—; las otras cinco son acuerdos, provocaciones, insultos o lenguaje homofóbico entre usuarios y se mantienen fuera de la cola de respuestas de marca, con revisión manual cuando corresponde.
 
 El detalle de los cuatro registros nuevos queda en `2026-08-23_Facebook_Comment_Review_Delta_04.json`. No se revisaron grupos, Instagram, TikTok ni publicaciones ajenas. No se publicó ninguna respuesta.
+
+
+## 47. Publicación verificada de tres respuestas — 23 de agosto de 2026
+
+Fernando autorizó las tres respuestas restantes del último corte y pidió excluir el comentario `122151375549072582_2130811011171538` (“Nosotros”) porque etiqueta a otra persona. El lote publicado incluyó únicamente los comentarios `122151375549072582_2053549225533216`, `122151375549072582_1394530616118799` y `122151375549072582_1220311087840453`.
+
+Meta Graph API v26.0 devolvió HTTP 200 en la preconsulta, publicación y verificación de los tres casos. Las respuestas fueron atribuidas a Universe Sent Me, conservaron el texto exacto, coincidieron con el comentario padre directo y quedaron visibles (`is_hidden=false`). Los IDs de respuesta fueron `122151375549072582_1778181103364654`, `122151375549072582_1296908542379898` y `122151375549072582_1036885795611907`, respectivamente.
+
+El comentario excluido no se publicó ni se modificó. El detalle técnico queda en `2026-08-23_Facebook_Comment_Publication_Batch_03.json`. No se publicaron otras respuestas pendientes.

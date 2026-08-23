@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-23
-version: "3.4"
+version: "3.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -17,6 +17,7 @@ related_documents:
   - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch_02.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_03.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_04.json"
+  - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch_03.json"
   - "GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md"
 organization: "Operations/Research"
 ---

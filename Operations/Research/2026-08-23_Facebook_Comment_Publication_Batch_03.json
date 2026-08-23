@@ -1,0 +1,121 @@
+{
+  "executed_at_utc": "2026-08-23T19:44:31.048830+00:00",
+  "page_id": "1036844829507460",
+  "source": "Meta Graph API v26.0",
+  "excluded_comment_id": "122151375549072582_2130811011171538",
+  "approved_batch_size": 3,
+  "published_verified": 3,
+  "already_present_verified": 0,
+  "verification_failures": 0,
+  "publish_failures": 0,
+  "results": [
+    {
+      "target_comment_id": "122151375549072582_2053549225533216",
+      "message": "La pregunta provocó una risa nerviosa colectiva. 😂🤔",
+      "run_at_utc": "2026-08-23T19:44:31.048830+00:00",
+      "preflight_status_code": 200,
+      "post_status_code": 200,
+      "post_response": {
+        "id": "122151375549072582_1778181103364654"
+      },
+      "status": "published_verified",
+      "reply_id": "122151375549072582_1778181103364654",
+      "verification": {
+        "status_code": 200,
+        "payload": {
+          "id": "122151375549072582_1778181103364654",
+          "from": {
+            "name": "Universe Sent Me",
+            "id": "1036844829507460"
+          },
+          "message": "La pregunta provocó una risa nerviosa colectiva. 😂🤔",
+          "created_time": "2026-08-23T19:44:31+0000",
+          "parent": {
+            "created_time": "2026-08-23T19:19:50+0000",
+            "message": "😂🤣🤣🤣🤣🤣🤣🤣",
+            "id": "122151375549072582_2053549225533216"
+          },
+          "is_hidden": false
+        },
+        "checks": {
+          "author_is_page": true,
+          "parent_matches": true,
+          "message_matches": true,
+          "is_hidden_false": true
+        }
+      }
+    },
+    {
+      "target_comment_id": "122151375549072582_1394530616118799",
+      "message": "Y todavía no aparece el departamento de respuestas cósmicas. 🤔😂",
+      "run_at_utc": "2026-08-23T19:44:31.048830+00:00",
+      "preflight_status_code": 200,
+      "post_status_code": 200,
+      "post_response": {
+        "id": "122151375549072582_1296908542379898"
+      },
+      "status": "published_verified",
+      "reply_id": "122151375549072582_1296908542379898",
+      "verification": {
+        "status_code": 200,
+        "payload": {
+          "id": "122151375549072582_1296908542379898",
+          "from": {
+            "name": "Universe Sent Me",
+            "id": "1036844829507460"
+          },
+          "message": "Y todavía no aparece el departamento de respuestas cósmicas. 🤔😂",
+          "created_time": "2026-08-23T19:44:36+0000",
+          "parent": {
+            "created_time": "2026-08-23T19:32:34+0000",
+            "message": "Esa es una muy buena pregunta 🤔",
+            "id": "122151375549072582_1394530616118799"
+          },
+          "is_hidden": false
+        },
+        "checks": {
+          "author_is_page": true,
+          "parent_matches": true,
+          "message_matches": true,
+          "is_hidden_false": true
+        }
+      }
+    },
+    {
+      "target_comment_id": "122151375549072582_1220311087840453",
+      "message": "La histeria colectiva: creadora oficial de varias teorías y unos cuantos dolores de cabeza. 😂🤔",
+      "run_at_utc": "2026-08-23T19:44:31.048830+00:00",
+      "preflight_status_code": 200,
+      "post_status_code": 200,
+      "post_response": {
+        "id": "122151375549072582_1036885795611907"
+      },
+      "status": "published_verified",
+      "reply_id": "122151375549072582_1036885795611907",
+      "verification": {
+        "status_code": 200,
+        "payload": {
+          "id": "122151375549072582_1036885795611907",
+          "from": {
+            "name": "Universe Sent Me",
+            "id": "1036844829507460"
+          },
+          "message": "La histeria colectiva: creadora oficial de varias teorías y unos cuantos dolores de cabeza. 😂🤔",
+          "created_time": "2026-08-23T19:44:42+0000",
+          "parent": {
+            "created_time": "2026-08-23T19:32:40+0000",
+            "message": "A ti “la histeria colectiva”",
+            "id": "122151375549072582_1220311087840453"
+          },
+          "is_hidden": false
+        },
+        "checks": {
+          "author_is_page": true,
+          "parent_matches": true,
+          "message_matches": true,
+          "is_hidden_false": true
+        }
+      }
+    }
+  ]
+}
