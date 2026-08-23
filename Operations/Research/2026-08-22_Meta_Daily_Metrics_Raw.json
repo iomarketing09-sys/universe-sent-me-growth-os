@@ -1,0 +1,106 @@
+{
+  "captured_at_local": "2026-08-22T22:02:24.847782-05:00",
+  "captured_at_utc": "2026-08-23T03:02:24.847782+00:00",
+  "timezone": "America/Matamoros",
+  "page_id": "1036844829507460",
+  "page_name": "Universe Sent Me",
+  "window_start_local": "2026-08-22T00:00:00-05:00",
+  "window_end_local": "2026-08-22T22:02:24.847782-05:00",
+  "window_start_utc": "2026-08-22T05:00:00+00:00",
+  "window_end_utc": "2026-08-23T03:02:24.847782+00:00",
+  "source_endpoint": "https://graph.facebook.com/v26.0/1036844829507460/feed",
+  "feed_http_status": 200,
+  "feed_error": null,
+  "records_returned": 6,
+  "data": [
+    {
+      "id": "1036844829507460_122151375927072582",
+      "message": "💪📸😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "created_time": "2026-08-22T15:00:12+0000",
+      "updated_time": "2026-08-22T19:56:23+0000",
+      "is_published": true,
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151375927072582",
+      "format": "Image_or_post",
+      "reactions": 39,
+      "comments": 4,
+      "shares": 8,
+      "interactions_basic": 51
+    },
+    {
+      "id": "1036844829507460_122151376011072582",
+      "message": "😌 #UniverseSentMe",
+      "created_time": "2026-08-22T16:00:07+0000",
+      "updated_time": "2026-08-23T02:36:50+0000",
+      "is_published": true,
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151376011072582",
+      "format": "Image_or_post",
+      "reactions": 13,
+      "comments": 12,
+      "shares": 3,
+      "interactions_basic": 28
+    },
+    {
+      "id": "1036844829507460_122151376083072582",
+      "message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "created_time": "2026-08-22T18:30:00+0000",
+      "updated_time": "2026-08-23T03:00:05+0000",
+      "is_published": true,
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "format": "Image_or_post",
+      "reactions": 31,
+      "comments": 5,
+      "shares": 4,
+      "interactions_basic": 40
+    },
+    {
+      "id": "1036844829507460_122154842337072582",
+      "message": "Ella no está disponible en este plano. 👀\n\n #UniverseSentMe #ElaraUSM #letithappen #tameimpala",
+      "created_time": "2026-08-22T22:23:57+0000",
+      "updated_time": "2026-08-23T01:43:19+0000",
+      "is_published": true,
+      "permalink_url": "https://www.facebook.com/reel/1581447113440863/",
+      "format": "Reel",
+      "reactions": 14,
+      "comments": 2,
+      "shares": 2,
+      "interactions_basic": 18
+    },
+    {
+      "id": "1036844829507460_122151376203072582",
+      "message": "🌙 #UniverseSentMe",
+      "created_time": "2026-08-23T00:00:02+0000",
+      "updated_time": "2026-08-23T00:00:02+0000",
+      "is_published": true,
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151376203072582",
+      "format": "Image_or_post",
+      "reactions": 7,
+      "comments": 0,
+      "shares": 1,
+      "interactions_basic": 8
+    },
+    {
+      "id": "1036844829507460_122154733605072582",
+      "message": "😔 #GansoUSM #MemesUSM #UniverseSentMe",
+      "created_time": "2026-08-23T03:00:08+0000",
+      "updated_time": "2026-08-23T03:00:08+0000",
+      "is_published": true,
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122154733605072582",
+      "format": "Image_or_post",
+      "reactions": 0,
+      "comments": 0,
+      "shares": null,
+      "interactions_basic": 0
+    }
+  ],
+  "pagination": {
+    "cursors": {
+      "before": "QVFIVEdYbDI4LTFvdTdRMnNuRXFpU1B1ZAERCTXhmV1hEcGtvR2JpenBUcWF1V1ZAlcmlOU0pUS3RHcW5ha2Q4UWtDYVE5MFhmTERDSmxwX3NiNnRMVXZAsdG93SlljeE5XMWtCdW52aGlNQ21xb3QtelRvYTNtb3F6VVlnQzVHR2dycWhCbU9zbFRiV05qNno0ZA3pla3pPZAGNPZAlJUUmd4NFNXWE45NGNIZAWphLWtEcVFZAQXY1b18zS0hvSU1VS3RlUkViTDBTZA1FhalY4VmtXbm12a2k3cWI4M2ZA1VW1sY1RsYVd5OE9TdjJBUGNEV1d0cGtQLVByTjlwSXhxbkNhbTFDVUcxM3BldDJ5Y3daOFZAxWVNaUDhXMmJYMEZAvVkRmcXJIVmh1c1FZATzhKbndIWUlPWGpHNUZAHSnFFNzNrcUpNXzl1YXgyY2NzejNGeTdyeU9GQTYyM3ZA6azd4eGlvQVNtOXRydDB3ZADgzd2NGMHdxaktBWHo3cG4zT193VWQtYm5xRURpZADNxSldCdTNmZATVSMUhjdDFQVXZAqTFBjQ0t4LV9tRnJWT0VlYzhzNXgtZADZAfTzN4YUd6MDZAxcXUtMDI5SXNTOFEzaUIzaFZAtd1I4THp2eHlqYUlrZAnJXTHpiMFVQSkdEeHRGczlZAaFl0cjVtN1hCdU1DU2d2bWJ5MXMyUU9UU0pzNGR5Ylo5UjRFaFUwWnBIZA21QVjk5bnJkMlRGTm02ZAlo2RXNLcUZAKY3JMcFJyRVlnNG52OHF6ckU0SFQ1M1dmN18xNUZAHSnUyVEhVTUJEVlltVVhyU0UtUVMyZAEpUZAmlia2RMN2xxb3VNYXAtaTFMMVJQYm1jVEpsVW5VUjRNYUZAGVmpVX3VrNExOOEZAyNjJKMVRYOHI1cWprZAVlkME9OLXJtSEdGMUd0SkxKeG9rY2V4WlhheENMNGttN2lPTUV1Q2U0Wi1FUHJ4eDJOeHVCVm5SdwZDZD",
+      "after": "QVFIVHVJT1JObnVTQzVnN2Rtek9MT2JXNE1sTzhrSi1VSEUyT3QyWi1UT3VSOEhZAT25tX1VRM1ZAVWjEyM2ZAGWGZAqbFBDS2swOF9peDdhYmZAVaTlaMnp4ZAG0yRUFzTGhQd0JuOXRkX2psSExHV0htS0tvOU5WdHppZAThBQTl1TDRnV3N4YS1yTXZAWY3ozdWpKMUZA4LWdkMVEwd3dvZATlZASVBvNjdnM3dJZAm5VUjY0bXBRWW9MMmhJb2FvTUprU1lGYVhUdFlZARkVlZAUV0blpKdEpzWnRuc3NNYlgyeVVhRkNfLXRaVTFKcE0zYUs4QXNrdExwVUl5UE5LSUpERElCcWJPYmM5S1hCeWI3RmlZAU3BxSWlUd2ZAXQ2ZAlYllaMWNmYVNMMWxuc2ZAWUWtVMklfWWdXcWktOU40bk1fWHFYNWVUNjc3NWswTnd3SktCNTdWWkNaTlFHcjBZAcmlmWTkwNHVsVlg0dVlXdXZA2ZAkM4dzI3dEEzT2t6ZAlZAhZAjc1VlEwZAWZAGSzZAHd1FlM2ctcUxjSUJqeUN1czVxaldhZAVBvUVhiRS1pT2dPX0thNmRvY2VMclJ0YVpQVGNncWp0NVZAIODFIU3hYTTVtQ2lERzJCTkM3MzBTaXRRQVp0eW10Nk01NFpzSXZAZAVFpBNXo0MDNuZAGQ2OW9ka1BPTjV4OE12TlUwUXVEVmtOZA3djQ1V3c2JjVklvbjdhS3gtdnVlMFZAvZAzVFQWJ6MzUxX1pGUjdNMlowSVV5WHNhSWhsTjctdHQwM01ERWItRWVQUlg3M3BuRW45NUtBeDZAZANk9lQ0JVejN6S0NEM0JxU2JGQ0RwOWp2bF9ydEVrMmg1a01ydzdIUXNBNFVFTUNhdzNNSDVRXzRsZAFRDa1ZAVYnBCZAkMyaVZAEV3JfdEVNSWdHX21fM0tKc3NoNDl4OWE5WWlDaDQwY0JDUWJNMmQzYWZAGa0pjVlF6Y0JRMjhZAYmlOUQZDZD"
+    }
+  },
+  "limitations": [
+    "Interactions are lifetime observable totals at capture time, not exact 24-hour increments.",
+    "Views, reach, retention and watch time were not requested or available in this basic feed extraction.",
+    "Reels remain a separate format denominator and are not combined with image conclusions."
+  ]
+}

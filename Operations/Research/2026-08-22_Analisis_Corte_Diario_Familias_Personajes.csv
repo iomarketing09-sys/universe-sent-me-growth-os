@@ -1,0 +1,7 @@
+dimension,segment,n,interactions_known,mean_known,median_known,reactions_known,comments_known,shares_known,interpretation
+Formato,Image_or_post,5,127,25.4,28,90,21,16,Cuatro posts con shares expuestos; el slot de 22:00 es demasiado reciente y tiene shares no expuesto.
+Formato,Reel,1,18,18,18,14,2,2,"L1 observable; views, reach y retención no disponibles."
+Imagen madura,"10:00, 11:00, 13:30, 19:00",4,127,31.75,34.0,90,21,16,Descriptivo; las edades de exposición siguen siendo desiguales.
+Top interacción imagen,2608050 — 10:00,1,51,51,51,39,4,8,Líder del corte; no atribuir aún a personaje/familia sin reconciliación del asset.
+Top conversación imagen,260589 — 11:00,1,28,28,28,13,12,3,"Máximo de comentarios del corte; señal conversacional, no necesariamente de difusión."
+Reuse CNT,CNT-083 / 2607828 — 22:00,1,0,0,0,0,0,,"Publicado apenas al momento del corte; no evaluable y shares no expuesto, no tratar como cero."

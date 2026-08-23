@@ -4,13 +4,15 @@
   "status": "Active",
   "created": "2026-08-22",
   "updated": "2026-08-22",
-  "version": "1.4",
+  "version": "1.5",
   "author": "Manus AI",
   "related_documents": [
     "Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv",
     "Operations/Research/2026-08-21_Reels_Publication_Inventory.csv",
     "Operations/Research/2026-08-19_Auditoria_Reels_y_Monetizacion.md",
     "Operations/Research/2026-08-22_Reels_Metric_Instrumentation_Protocol.md",
+    "Operations/Research/2026-08-22_Corte_Diario_Metricas_2200.md",
+    "Operations/Research/2026-08-22_Meta_Daily_Metrics_Raw.json",
     "GrowthOS/07_00_Registro_Maestro_Reels.md"
   ],
   "inventory_scope": {
@@ -123,18 +125,20 @@
         "Interpretation": "Strong acquisition/discovery signal associated with recognizable meme logic plus visible walking motion; not a family verdict by itself."
       },
       {
-        "Concept_ID": "Pending_native_reconciliation",
+        "Concept_ID": "MPM-001",
         "Family_Candidate": "POV_character_movement",
         "Platform": "Facebook",
-        "Meta_Post_ID": "Pending_native_ID_confirmation",
+        "Meta_Post_ID": "1036844829507460_122154842337072582",
+        "Reel_ID": "1581447113440863",
+        "Metric_Window_Status": "Meta_current_feed_snapshot_interactions",
         "Description": "Elara walks through the forest wearing headphones while Wilfred appears behind her, talks to her and is ignored; MPM-001 uses no on-screen text, and the conceptual hook is when someone talks to you but you remain in your own world. The music remains unidentified in the Reel.",
-        "Reported_Performance": "Fernando reports higher impact than the podcast-style Reels; this remains a qualitative signal pending native ID and a comparable metric window.",
-        "Evidence_Level": "Human_report_high_signal_pending_native_ID_and_metric_window",
+        "Reported_Performance": {"interactions_basic": 18, "reactions": 14, "comments": 2, "shares": 2, "views": null, "reach": null, "retention": null, "captured_at_local": "2026-08-22T22:02:24-05:00"},
+        "Evidence_Level": "L1_native_meta_observed_not_comparable",
         "Identity_Correction": "This is not the Elara+Evan camping/forest asset. The nearby asset Elara y Evan en el Bosque belongs to a separate, more recent Reel and has been removed from the previous mapping.",
-        "Interpretation": "Priority design input for the next test cell and first candidate in ELARA-WALK-MUSIC-01, not yet a quantified record. The case needs its own native ID, source export and Music_Variant_ID before it can be measured."
+        "Interpretation": "MPM-001 now has a native Meta ID and an L1 observable snapshot. It remains a single case and cannot produce a comparable-cell verdict; it needs views/reach/retention and additional variants in ELARA-WALK-MUSIC-01."
       }
     ],
-    "source_note": "The high-signal case descriptions and identity correction are based on Fernando's direct project confirmation on 2026-08-22. The MPM-001 hook and music-series reframing are also based on Fernando's follow-up confirmation; native Meta ID, export and final audio selection remain pending.",
+    "source_note": "The high-signal case descriptions and identity correction are based on Fernando's direct project confirmation on 2026-08-22. MPM-001 now has a native Meta Page Post ID and Reel ID from the daily Facebook extraction, while export hash, views/reach/retention and Music_Variant_ID remain pending.",
     "minimum_next_cell": {
       "Hypothesis_ID": "HB-REEL-MOTION-POV-MEME-01",
       "Related_Hypothesis_ID": "HB-REEL-MUSIC-WALK-01",
@@ -240,5 +244,5 @@
       "Hypothesis_ID": ""
     }
   ],
-  "recommendation": "Do not use Dialogue_radio as the first adaptation candidate or default format. Keep it as a secondary observation because Fernando reports weaker attention for the podcast-style pieces. Prioritize a new cell under HB-REEL-MOTION-POV-MEME-01 combining visible physical motion, a recognizable meme or POV hook, and a clear visual payoff. Treat Character_loop_meme as reuse evidence only because both confirmed publications use the same asset group; retain Fantasma_Camina_Gatos as a high-signal reference rather than a clean comparable verdict. The Elara/Wilfred Piscis Reel remains pending native ID and metric reconciliation. Require at least three comparable cases for a preliminary signal and five for an operational decision."
+  "recommendation": "Do not use Dialogue_radio as the first adaptation candidate or default format. Keep it as a secondary observation because Fernando reports weaker attention for the podcast-style pieces. Prioritize a new cell under HB-REEL-MOTION-POV-MEME-01 combining visible physical motion, a recognizable meme or POV hook, and a clear visual payoff. Treat Character_loop_meme as reuse evidence only because both confirmed publications use the same asset group; retain Fantasma_Camina_Gatos as a high-signal reference rather than a clean comparable verdict. MPM-001 is now an L1-observed native Meta record with 18 basic interactions, but it is still a single case and lacks views/reach/retention. Require at least three comparable cases for a preliminary signal and five for an operational decision."
 }

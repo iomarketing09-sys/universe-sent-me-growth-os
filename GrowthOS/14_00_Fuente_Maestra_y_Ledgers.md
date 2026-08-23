@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.37"
+version: "2.38"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -39,6 +39,11 @@ related_documents:
   - "Operations/Research/2026-08-21_Analisis_Corte_Diario_Familias_Personajes.md"
   - "Operations/Research/2026-08-21_Analisis_Corte_Diario_Familias_Personajes.json"
   - "Operations/Research/2026-08-21_Analisis_Corte_Diario_Familias_Personajes.csv"
+  - "Operations/Research/2026-08-22_Meta_Daily_Metrics_Raw.json"
+  - "Operations/Research/2026-08-22_Corte_Diario_Metricas_2200.md"
+  - "Operations/Research/2026-08-22_Corte_Diario_Metricas_2200.csv"
+  - "Operations/Research/2026-08-22_Analisis_Corte_Diario_Familias_Personajes.md"
+  - "Operations/Research/2026-08-22_Analisis_Corte_Diario_Familias_Personajes.csv"
   - "Operations/Research/2026-08-21_Reels_Drive_Meta_Crossmatch_Review.csv"
   - "Operations/Research/2026-08-22_Reels_Pending_Asset_Reconciliation_Queue.csv"
   - "Operations/Research/2026-08-22_Reels_Pending_Drive_Triage.csv"
@@ -360,3 +365,13 @@ El análisis de `Operations/Research/2026-08-20_Alias_Impact_June.md` confirma q
 El control de calidad mantiene separadas dos preguntas: **cuánto rindió junio** y **a qué CNT/asset puede atribuirse cada resultado**. Para la primera, los agregados deben calcularse sobre la vista consolidada: 172 publicaciones lógicas y 17,334 interacciones en el corte actual, no sobre las 177 filas fuente que contienen cinco duplicados. Para la segunda, la resolución de `260508` mejora la precisión de atribución de sus 17 interacciones totales, repartidas como 9 en `CNT-042` y 8 en `CNT-043`, sin cambiar la suma mensual.
 
 La regla operativa queda establecida: una reconciliación administrativa puede cambiar la clasificación por asset/CNT y la elegibilidad para análisis de reuse, pero no reescribe métricas de publicación ni se mezcla con P0, afiliados o ventanas 24/72 horas.
+
+## 19. Corte diario de métricas — 2026-08-22 22:02
+
+El corte diario de Meta recuperó seis publicaciones reales del 22 de agosto: cinco imágenes/posts y un Reel. Las imágenes sumaron 127 interacciones conocidas y el Reel 18; las cifras son acumulados observables al momento de la captura, no incrementos exactos de 24 horas. El slot adicional de `CNT-083` a las 22:00 acababa de publicarse, no expuso shares y queda fuera de cualquier lectura de rendimiento hasta contar con suficiente exposición.
+
+El post de las 10:00 (`2608050`) lideró las imágenes con 51 interacciones conocidas y 8 shares. `260589` lideró comentarios con 12. Las dos piezas nuevas `2608050` y `2608063` todavía no tienen reconciliación taxonómica permanente; `260589` permanece como personaje no identificado, `260510` como Universe con confianza alta y `CNT-083/2607828` como Ganso con confianza alta. No se atribuye el resultado a un personaje o familia aislada.
+
+El Reel `MPM-001` —Elara caminando con audífonos y Wilfred detrás— quedó en nivel L1 observable con 18 interacciones básicas. Meta no expuso views, reach ni retención en esta extracción; por eso no se compara con imágenes ni se evalúa formalmente la celda `HB-REEL-MOTION-POV-MEME-01`. Afiliados conserva su ledger independiente y no se sumó al engagement editorial.
+
+Los documentos operativos permanentes son `Operations/Research/2026-08-22_Corte_Diario_Metricas_2200.md`, su CSV y raw, y `Operations/Research/2026-08-22_Analisis_Corte_Diario_Familias_Personajes.md` con su CSV. La observación `OBS-DAILY-20260822-2200` se añadió al `ExperimentLog.csv` como `Corte_Observado`, sin campos 24/72h. Las filas de publicación observadas se añadieron de forma append-only al `Publication_Log.csv`; no se reescribieron hechos históricos ni se modificaron calendario, canon, Reels o afiliados.

@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-22
-**Versión:** 6.71
+**Versión:** 6.8
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -39,11 +39,13 @@
 | [Pipeline de Publicación Local y Estándar CSV](13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md) | Documenta el script propio de Fernando, el estándar CSV y la Custom API de Meta configurada para Universe Sent Me. | Active |
 | [Fuente Maestra y Ledgers del Growth OS](14_00_Fuente_Maestra_y_Ledgers.md) | Define el inventario maestro, los ledgers, la distinción canon/reconciliación y la cadencia de reportes diarios; las ventanas 24/72 son una capa contractual opcional. | Active |
 | [Bridge de Integración Growth OS–Canon](Integracion_Growth_OS.md) | Caché condensado del canon, HypothesisBank y reglas de sincronización; v2.5.2 con HB-006 a HB-009 para briefs comparables, manteniendo separación del canon y sin autorizar generación. | Active |
-| [Publication Log](../Operations/Research/2026-08-15_Publication_Log.csv) | Ledger append-only con 85 hechos de Facebook, 3 publicaciones activas de Instagram y 3 intentos históricos de Instagram eliminados manualmente. | Active |
-| [ExperimentLog](../Operations/Research/2026-08-15_ExperimentLog.csv) | Observaciones históricas y observaciones `Corte_Diario`; las ventanas 24/72 quedan para cierres formales cuando correspondan. Incluye el corte diario del 21 de agosto con desglose por familias/personajes separado de afiliados. | Active |
+| [Publication Log](../Operations/Research/2026-08-15_Publication_Log.csv) | Ledger append-only con 103 hechos de Facebook y 13 de Instagram, conservando estados publicados, programados y eliminados; incluye los cinco hechos observados del 22 de agosto. | Active |
+| [ExperimentLog](../Operations/Research/2026-08-15_ExperimentLog.csv) | Observaciones históricas y observaciones `Corte_Diario`; las ventanas 24/72 quedan para cierres formales cuando correspondan. Incluye los cortes diarios del 21 y 22 de agosto con desglose por familias/personajes separado de afiliados. | Active |
 | [Community Engagement Log](../Operations/Research/2026-08-15_Community_Engagement_Log.md) | Esquema y flujo para registrar comentarios reales, respuestas humanas y señales cualitativas sin identidades personales. | Active |
 | [Reporte diario de métricas Meta — 21 de agosto](../Operations/Research/2026-08-21_Corte_Diario_Metricas_2200.md) | Corte observado de 12 publicaciones reales: 10 imágenes y 2 Reels; 495 interacciones editoriales. No mezcla afiliados ni presenta lifetime como delta diario. | Active |
 | [Análisis diario por familias y personajes — 21 de agosto](../Operations/Research/2026-08-21_Analisis_Corte_Diario_Familias_Personajes.md) | Desglose primario por familia, personaje, shares y comentarios; revisa TAX-02, HUM-06, HUM-02 y Motion + POV/Meme sin canonizar resultados. | Active |
+| [Reporte diario de métricas Meta — 22 de agosto](../Operations/Research/2026-08-22_Corte_Diario_Metricas_2200.md) | Corte observado de 6 publicaciones reales: 5 imágenes y 1 Reel; separa exposición inmadura del slot de las 22:00 y no mezcla métricas de vídeo con imágenes. | Active |
+| [Análisis diario por familias y personajes — 22 de agosto](../Operations/Research/2026-08-22_Analisis_Corte_Diario_Familias_Personajes.md) | Interpreta shares, comentarios, clasificación provisional y estado de TAX-02, HUM-06, HUM-02 y Motion + POV/Meme sin atribuir causalidad. | Active |
 | [Protocolo de instrumentación de métricas de Reels](../Operations/Research/2026-08-22_Reels_Metric_Instrumentation_Protocol.md) | Medición por niveles L0–L4 para resolver la falta de views, reach y retención; L1 diario como base y 24/72 solo como cierre contractual opcional. Incluye campos de audio y variante para la serie Elara Walk. | Active |
 | [Brief Celda Reels Motion + POV/Meme 001](../Operations/Production/2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md) | Tres casos controlados; MPM-001 reencuadrado como primera variante musical de Elara Walk, sin texto sobre la imagen y con situación visual de desconexión. | Review |
 | [Briefs de adaptación original — cinco semillas Drive/Memes](../Operations/Production/2026-08-22_Briefs_Cadence_Memes_Seed_Adaptations.md) | Cinco adaptaciones originales desde Drive/Memes; los cinco assets fueron aprobados y programados en Facebook, tres mediante reemplazo y dos mediante slots adicionales. | Review |

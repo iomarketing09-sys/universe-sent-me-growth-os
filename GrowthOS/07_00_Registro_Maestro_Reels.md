@@ -151,3 +151,16 @@ El Reel `2210896633022235` aparece en el feed de la página mediante el post `10
 La evidencia JSON se conserva en `Operations/Research/2026-08-20_Meta_Reel_2210896633022235_Metrics.json`.
 
 ---
+
+
+---
+
+## Actualización operativa — MPM-001 publicado en Facebook, 22 de agosto de 2026
+
+El Reel `MPM-001` —Elara caminando con audífonos mientras Wilfred la sigue y habla detrás de ella— quedó publicado en Facebook y fue observado en el corte diario de las 22:02 de `America/Matamoros`. Su Page Post ID es `1036844829507460_122154842337072582`, su Reel ID nativo es `1581447113440863` y su permalink es `https://www.facebook.com/reel/1581447113440863/`. El caption observado fue `Ella no está disponible en este plano. 👀` con `#UniverseSentMe #ElaraUSM #letithappen #tameimpala`.
+
+La extracción L1 registró **18 interacciones básicas**: 14 reacciones, 2 comentarios y 2 shares. Meta no expuso views, reach ni retención en esta consulta; esos campos permanecen ausentes, no cero. Este registro es un snapshot observable de engagement, no un cierre exacto de 24/72 horas y no constituye todavía evidencia suficiente para evaluar la celda `HB-REEL-MOTION-POV-MEME-01`.
+
+MPM-001 se mantiene como un caso individual de `POV_character_movement` y primera variante de `ELARA-WALK-MUSIC-01`. Se requieren al menos tres casos comparables para una señal preliminar y cinco para un veredicto operativo. Instagram, TikTok, YouTube y afiliados no forman parte de esta publicación ni de este corte.
+
+Fuentes relacionadas: `Operations/Research/2026-08-22_Corte_Diario_Metricas_2200.md`, `Operations/Research/2026-08-22_Meta_Daily_Metrics_Raw.json` y `Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json`.
