@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — Semana 01: paquete de lanzamiento"
 purpose: "Organizar el primer bloque de cuatro piezas originales de Bam in a Can antes de publicar, con orden editorial, producción, copy, audio y medición."
-status: "Active — primera cascada CAN-001 publicada en TikTok, Instagram Reels y YouTube Shorts"
+status: "Active — CAN-001 publicada; CAN-002 preparada para publicación manual"
 created: 2026-08-21
-updated: 2026-08-21
-version: "1.9"
+updated: 2026-08-23
+version: "1.10"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_Plan_Lanzamiento_Audiencia_Bam_In_A_Can.md"
@@ -69,7 +69,7 @@ El calendario operativo se documenta en `2026-08-21_Bam_In_A_Can_Semana01_Calend
 
 **Premisa:** un infomercial de 1997 presenta una impresora térmica color hueso que produce un recibo vacío. La cámara se acerca y el papel se mueve como si estuviera recordando algo. Todo el producto parece funcional, pero nadie explica por qué necesita imprimir recuerdos.
 
-**Estado final (21 Ago):** Fernando revisó el corte de edición y confirmó que el recibo permanece vacío: no se ven números ni códigos de barras. CAN-002 queda **APPROVED_FOR_BATCH**. El render original se conserva como fuente; el corte final es la versión canónica de publicación y no requiere otro render.
+**Estado final (21 Ago):** Fernando revisó el corte de edición y confirmó que el recibo permanece vacío: no se ven números ni códigos de barras. CAN-002 queda **READY_FOR_MANUAL_PUBLISH** para el 23 de agosto. El render original se conserva como fuente; el corte final es la versión canónica de publicación y no requiere otro render.
 
 **Guion de 10 s:**
 
@@ -98,6 +98,8 @@ Use only the attached initial keyframe as the visual anchor. Vertical 9:16, 10 s
 | Copy | `This product was recalled before anyone could forget it.\n\nOriginal fiction. AI-made.` |
 | Audio | SFX + audio nativo que sugiera tecnología nostálgica/lenta; no letra explicativa. |
 | Hashtags de base | `#BamInACan #Weirdcore #FakeCommercial #AIVideo` |
+
+**Regla de salida basada en CAN-001:** conservar la secuencia TikTok 19:00 → Instagram Reels 19:20 → YouTube Shorts 19:50 CDT. El primer post mostró mejores views y watch time medio en Instagram, pero no valida el audio al 80 % como explicación; para CAN-002, mantener el audio nativo bajo (TikTok 10–12 %, Instagram 8–10 %) y preservar el motor, los clicks y el chime. YouTube conserva SFX sin canción como control. El runbook completo y los textos bloqueados viven en `2026-08-21_Bam_In_A_Can_Semana01_Calendario_Publicacion.md`.
 
 ### CAN-003 — *Do Not Insert Coins After Midnight*
 

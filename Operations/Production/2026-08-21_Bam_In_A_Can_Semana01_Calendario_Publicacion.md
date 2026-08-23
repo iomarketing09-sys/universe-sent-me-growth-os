@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — Semana 01: calendario de publicación"
 purpose: "Coordinar la salida del primer lote de cuatro piezas de Bam in a Can, sus metadatos por plataforma y las ventanas mínimas de medición sin programar publicaciones automáticas."
-status: "Active — primera cascada CAN-001 completa; CAN-002 a CAN-004 pendientes"
+status: "Active — CAN-001 medido; CAN-002 preparado para publicación manual el 23 de agosto"
 created: 2026-08-21
-updated: 2026-08-21
-version: "1.3"
+updated: 2026-08-23
+version: "1.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-21_Bam_In_A_Can_Semana01_Paquete_Lanzamiento.md"
@@ -37,6 +37,27 @@ TikTok e Instagram usarán audio nativo únicamente cuando el primer loop añada
 
 CAN-001 ya se publicó en TikTok el 21 de agosto de 2026 a las 19:04:20 CDT. El ID canónico es `7676640119222209813` y el audio declarado por Fernando es `Do It` — Infraction Music. También salió en Instagram Reels a las 19:20:00 CDT con shortcode `DcUnEVnsoaV`, el mismo audio al 80 % y el disclosure verificado en el caption público. YouTube Shorts cerró la cascada a las 19:50:00 CDT con ID `iuHT1kN0Uow` y SFX originales sin música nativa. La publicación real queda en el ledger. El disclosure de TikTok y YouTube aún requiere verificación porque no se observó en las vistas públicas recuperadas.
 
+## Activación manual de CAN-002 — domingo 23 de agosto
+
+El corte operativo de CAN-001 no identifica una “hora ganadora” ni prueba que el volumen de audio de Instagram explique su mayor consumo; solo muestra que Instagram acumuló más views y watch time medio en la primera pieza. Por ello, CAN-002 conserva la ventana de arranque y el diseño 2 + 1: publicar la pieza hoy sin esperar más datos, pero sin repetir el 80 % de volumen por inercia.
+
+| Momento CDT | Acción exacta | Criterio de ejecución |
+|---|---|---|
+| 18:45–18:55 | **Go/no-go manual.** Confirmar el corte final de 10 s, recibo completamente vacío, overlay y disclosure. | Si algún elemento falla, no publicar y mover el bloque completo 24 h. |
+| 19:00 | **TikTok.** Subir `CAN-002`; elegir dentro de la app un loop lento, tecnológico y nostálgico, sin letra explicativa. Mantener SFX audibles. | Audio nativo al **10–12 %**, entrando desde 00:00. Activar etiqueta IA si está disponible. |
+| 19:20 | **Instagram Reels.** Subir el mismo export; elegir un audio nativo propio de la app con textura analógica/ambiental y sin letra dominante. | Audio nativo al **8–10 %**, entrando desde 00:00. No replicar 80 %: CAN-001 no permite atribuirle su resultado. Activar etiqueta IA si está disponible. |
+| 19:50 | **YouTube Shorts.** Subir el mismo export como control. | **Solo SFX originales; sin canción.** Marcar contenido alterado/generado si la interfaz lo solicita. |
+
+### Metadatos bloqueados de CAN-002
+
+| Elemento | Texto / regla |
+|---|---|
+| Overlay | `FOR PEOPLE WHO MISS A SUMMER THEY NEVER HAD.` de **00:00 a 00:02.5**. |
+| Caption exacto | `This product was recalled before anyone could forget it.`<br><br>`Original fiction. AI-made.` |
+| Hashtags | `#BamInACan #Weirdcore #FakeCommercial #AIVideo` |
+| Estructura visual | Impresora retro color hueso, recibo sin texto ni código visible, indicador ámbar, papel que avanza y se curva; corte seco al final. No añadir CTA ni explicación. |
+| Registro T0 | Tras cada publicación, guardar ID/permalink, hora real, audio, creador, volumen y segundo de entrada. Calcular T+3 h/T+24 h/T+72 h/T+7 d desde cada T0 real. |
+
 ## Go/no-go por cada día
 
 La hora de publicación no autoriza una salida automática. A las 18:45 CDT, Fernando verifica el export correcto, caption, disclosure y selección de audio. Si falta alguno, la pieza se pospone al siguiente día disponible y todo el calendario se mueve 24 horas, manteniendo siempre la separación mínima de 36 horas entre piezas.
@@ -51,4 +72,4 @@ La hora de publicación no autoriza una salida automática. A las 18:45 CDT, Fer
 
 ## Dependencias antes de iniciar CAN-001
 
-La propuesta asume que los cuatro clips finales ya están aprobados. Antes de publicar CAN-001, seleccionar manualmente los audios nativos de TikTok e Instagram y preparar los tres uploads con el copy correcto. El ledger `Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv` ya contiene los doce renglones planificados; en T0 solo se completan sus campos de publicación real. Este documento no crea una programación, no vincula cuentas ni publica contenido.
+La propuesta asume que los cuatro clips finales ya están aprobados. Antes de publicar cada CAN, seleccionar manualmente los audios nativos de TikTok e Instagram y preparar los tres uploads con el copy correcto. El ledger `Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv` ya contiene los doce renglones planificados; en T0 solo se completan sus campos de publicación real. Este documento no crea una programación, no vincula cuentas ni publica contenido.
