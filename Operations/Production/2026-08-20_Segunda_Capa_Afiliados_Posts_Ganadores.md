@@ -145,3 +145,38 @@ No se amplía la capa después de un solo clic o una sola venta. La expansión r
 La activación actualizó `Affiliate_Link_Ledger.csv`, el changelog y este documento de `Draft` a `Active`. `Affiliate_Metrics_Snapshots.csv` se actualizará cuando existan cortes visibles de las dos nuevas etiquetas. No se modificó `Affiliate_Pilot_Assignments.csv` porque la Capa 2 mantiene una campaña separada.
 
 ---
+
+
+## 10. Propuesta de aceleración masiva — revisión 2026-08-22
+
+La hipótesis de Fernando es válida: con solo tres clics en los últimos siete días, mantener una cadencia baja puede tardar demasiado en producir evidencia. Se recomienda probar hasta **tres productos afiliados por día**, pero como tres publicaciones distintas y no como tres productos dentro de una misma publicación. La aceleración debe usar slots existentes del calendario, no añadir volumen ilimitado que pueda deteriorar el rendimiento editorial.
+
+La primera ola recomendada es un sprint de **7 días y 21 productos-publicación**. Cada producto recibe una etiqueta exclusiva, una sola superficie principal, un CTA registrado y un snapshot a 24 horas y 72 horas. Los productos deben distribuirse en tres familias de hipótesis: utilidad impulsiva, identidad/personaje y curiosidad visual. No se deben cambiar simultáneamente producto, personaje, CTA, formato y horario en todas las piezas; al menos una variable debe permanecer controlada por cohorte.
+
+| Elemento | Regla del sprint |
+|---|---|
+| Cadencia máxima | 3 productos afiliados por día |
+| Unidad de prueba | 1 producto en 1 publicación |
+| Separación | 3–4 horas entre publicaciones afiliadas cuando sea posible |
+| Superficie principal | Facebook nativo; Instagram y otras superficies en cohortes separadas |
+| Tracking | Etiqueta única por producto-publicación-superficie |
+| CTA | Un CTA explícito registrado por fila |
+| Control editorial | Mantener al menos 1 publicación sin afiliación cada 2 días |
+| Métricas | Clics, vistas/alcance, CTR si la fuente es comparable, unidades, ventas y comisión |
+| Cortes | 24 horas, 72 horas y cierre de 7 días |
+
+La propuesta **no autoriza todavía la generación masiva o publicación automática**. Antes de ejecutar, se deben seleccionar los 21 productos, confirmar stock/precio/encaje, asignar los slots del calendario y aprobar la matriz completa. El sprint se detiene si la presencia comercial comienza a dominar el calendario o si las publicaciones afiliadas presentan una caída editorial anómala frente a los controles.
+
+## 11. Criterios de aprendizaje y decisión
+
+El resultado debe analizarse por clics por publicación y, cuando existan vistas o alcance comparables, por CTR. La comisión estimada no se trata como ingreso confirmado. Con 21 observaciones, los resultados siguen siendo exploratorios, pero serán más útiles que el corte actual de tres clics si se mantiene el tracking.
+
+| Resultado del sprint | Decisión |
+|---|---|
+| Tráfico sube y una familia de productos concentra clics | Repetir esa familia con nuevos hooks y mantener una segunda familia como comparación. |
+| Hay clics pero 0 ventas | Revisar producto, precio, ficha, confianza y ventana de atribución antes de aumentar volumen. |
+| Hay 0–5 clics en 21 publicaciones | El problema probable es distribución/CTA/encaje, no falta de catálogo; pausar expansión y revisar contenido. |
+| Hay clics dispersos sin patrón | No declarar ganador; ampliar una segunda cohorte con variables más controladas. |
+| Hay caída clara de interacción en posts afiliados | Reducir a 1–2 productos diarios y proteger el calendario editorial. |
+
+La recomendación final es **sí acelerar, pero con un sprint controlado de hasta tres productos diarios durante siete días**, sustituyendo slots existentes y manteniendo una publicación de control periódica. Esto reduce el tiempo de aprendizaje sin convertir la página en un catálogo ni destruir la atribución.
