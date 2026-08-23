@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-22
-**Versión:** 6.8
+**Versión:** 6.9
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -45,6 +45,7 @@
 | [Reporte diario de métricas Meta — 21 de agosto](../Operations/Research/2026-08-21_Corte_Diario_Metricas_2200.md) | Corte observado de 12 publicaciones reales: 10 imágenes y 2 Reels; 495 interacciones editoriales. No mezcla afiliados ni presenta lifetime como delta diario. | Active |
 | [Análisis diario por familias y personajes — 21 de agosto](../Operations/Research/2026-08-21_Analisis_Corte_Diario_Familias_Personajes.md) | Desglose primario por familia, personaje, shares y comentarios; revisa TAX-02, HUM-06, HUM-02 y Motion + POV/Meme sin canonizar resultados. | Active |
 | [Reporte diario de métricas Meta — 22 de agosto](../Operations/Research/2026-08-22_Corte_Diario_Metricas_2200.md) | Corte observado de 6 publicaciones reales: 5 imágenes y 1 Reel; separa exposición inmadura del slot de las 22:00 y no mezcla métricas de vídeo con imágenes. | Active |
+| [Propuesta de ciclo semanal domingo–sábado](../Operations/Research/2026-08-22_Propuesta_Ciclo_Semanal_Domingo_Sabado.md) | Convención Draft para cerrar el reporte el sábado e iniciar el ciclo operativo el domingo; distingue organización del aprendizaje de la hipótesis aún no demostrada sobre el rendimiento dominical. | Draft |
 | [Análisis diario por familias y personajes — 22 de agosto](../Operations/Research/2026-08-22_Analisis_Corte_Diario_Familias_Personajes.md) | Interpreta shares, comentarios, clasificación provisional y estado de TAX-02, HUM-06, HUM-02 y Motion + POV/Meme sin atribuir causalidad. | Active |
 | [Protocolo de instrumentación de métricas de Reels](../Operations/Research/2026-08-22_Reels_Metric_Instrumentation_Protocol.md) | Medición por niveles L0–L4 para resolver la falta de views, reach y retención; L1 diario como base y 24/72 solo como cierre contractual opcional. Incluye campos de audio y variante para la serie Elara Walk. | Active |
 | [Brief Celda Reels Motion + POV/Meme 001](../Operations/Production/2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md) | Tres casos controlados; MPM-001 reencuadrado como primera variante musical de Elara Walk, sin texto sobre la imagen y con situación visual de desconexión. | Review |

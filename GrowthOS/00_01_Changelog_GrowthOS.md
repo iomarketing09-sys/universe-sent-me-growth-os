@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 3.00
+**Versión:** 3.01
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.01.00] — 2026-08-22 (Manus): Propuesta de ciclo semanal domingo–sábado.** Se creó `Operations/Research/2026-08-22_Propuesta_Ciclo_Semanal_Domingo_Sabado.md` en estado `Draft` para evaluar el cierre del reporte general los sábados y el inicio del ciclo operativo los domingos. El baseline de mayo respalda domingo como día estratégico por su engagement relativo, pero la ventana Facebook del 22 de julio al 18 de agosto no demuestra superioridad dominical frente a todos los días; por eso la propuesta separa convención de reporte y causalidad. No se modificaron calendario, horarios, cadencia ni publicaciones. La adopción requiere aprobación de Fernando y, si se confirma, deberá actualizar `00_Índice.md`, `04_00_Formato_Calendario_Semanal_CGO.md`, la arquitectura de calendario y el protocolo de reportes.
 
 - **[2.99.00] — 2026-08-23 (Manus): Publicación de seis respuestas refinadas en Facebook.** Fernando aprobó los cambios de copy del archivo adjunto para los comentarios sobre ejercicios de Kegel, “Desde que te tengo”, “After all these years” de Journey, la selección de tres canciones, “The Beautiful People” y el Big Bang. Las seis respuestas se publicaron mediante Meta Graph API v26 y se verificaron con autoría de Universe Sent Me, padre correcto, texto exacto e `is_hidden=False`. Growth OS pasa a v3.25, el ledger a v2.5 y la auditoría de Facebook a v2.8. El aprendizaje permanente es responder al motivo por el que la persona eligió la canción —jugando con el título, la estructura o la energía— en lugar de usar elogios musicales intercambiables.
 
