@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 2.6
+**Versión:** 2.7
 
 **Autor:** Manus AI
 
@@ -370,6 +370,27 @@ Se probó después el model ID visible `gemini/gemini-3.5-flash` con un prompt s
 La discrepancia entre `usage.completion_tokens=623` y `x-omniroute-tokens-out=34` queda registrada como una observación de medición específica de esta ruta; no debe resolverse inventando un valor ni mezclando ambas cifras. Para auditoría se conservará el cuerpo de la respuesta junto con los headers cuando se haga una comparación formal.
 
 Esta ejecución valida Google AI Studio como segundo provider directo, pero no valida todavía que el fallback del Combo se active. El Combo `usm-groq-gemini-priority` sí quedó creado con Groq primero y Google AI Studio después; su prueba realizada hasta este punto confirmó únicamente la ruta primaria de Groq. No se debe afirmar que el failover está probado hasta observar una solicitud atendida por `gemini` después de un fallo controlado de Groq.
+
+### Validación de failover del Combo — 2026-08-23
+
+Se realizó una prueba controlada con el Combo `usm-groq-gemini-priority`: Groq se desactivó temporalmente desde el dashboard, se envió una sola solicitud sintética y Groq se reactivó inmediatamente después. OmniRoute transfirió la solicitud al segundo destino:
+
+| Campo | Resultado |
+|---|---|
+| Combo | `usm-groq-gemini-priority` |
+| Estrategia | `priority` |
+| Provider seleccionado | `gemini` |
+| Modelo seleccionado | `gemini-3.5-flash` |
+| HTTP | `200` |
+| Finalización | `stop` |
+| Latencia | `3714 ms` |
+| Tokens según `usage` del cuerpo | `11` de entrada / `250` de salida |
+| Tokens según headers OmniRoute | `11` de entrada / `17` de salida |
+| Cache | `false` |
+| Costo reportado por OmniRoute | `0.0000000000` |
+| Groq después de la prueba | Reactivado |
+
+La evidencia confirma el failover del Combo, no solo la disponibilidad directa de Gemini. La diferencia entre los contadores de tokens del cuerpo y de los headers vuelve a aparecer en la ruta Gemini y queda registrada sin reconciliar artificialmente. La solicitud utilizó un prompt sintético; no se enviaron datos privados, tokens, métricas reales ni documentos internos.
 
 Groq debe tratarse como una ruta cloud controlada, no como una ruta privada local. Aunque sus términos describen restricciones sobre el uso de inputs y outputs, el prompt sale del equipo y se aplican también los términos de cada model provider. [7]
 
