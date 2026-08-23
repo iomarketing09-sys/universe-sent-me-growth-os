@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 2.4
+**Versión:** 2.5
 
 **Autor:** Manus AI
 
@@ -314,6 +314,23 @@ y pulsar Enter. Solo entonces el wrapper solicitará la API key de forma silenci
 El wrapper se ejecutó desde el iMac con un prompt sintético y completó la solicitud sin error: HTTP `200`, respuesta no vacía, `finish_reason: stop`, provider `groq`, model ID normalizado `openai/gpt-oss-20b`, `strategy=single`, latencia `2093 ms`, `89` tokens de entrada y `44` de salida. El header indicó `x-omniroute-cache-hit: false`, versión `3.8.49` y costo reportado por OmniRoute de `0.0000000000`. La clave no se incorporó al comando, al prompt ni al repositorio; el wrapper la recibe mediante entrada silenciosa y ejecuta limpieza al terminar.
 
 Esta prueba confirma la ruta operativa diaria: **Terminal → wrapper → OmniRoute local en `127.0.0.1` → Groq → respuesta**. La latencia de `2093 ms` es mayor que algunas pruebas anteriores, pero no representa un fallo; puede variar según la solicitud, el razonamiento del modelo y la red. La cifra de costo es la reportada por el gateway para esa respuesta y no garantiza que la cuota de Groq permanezca gratuita.
+
+### Validación editorial inicial — 2026-08-23
+
+Con el wrapper ya corregido, se ejecutó un prompt de una sola línea para generar un borrador editorial sintético sobre un gato ficticio con gafas que descubre una puerta luminosa entre libros. La salida cumplió la estructura solicitada: etiqueta `Draft sujeto a revisión humana`, gancho, tres momentos visuales, descripción y llamada a la acción. No inventó métricas, fechas, resultados ni datos de audiencia.
+
+| Control editorial | Resultado |
+|---|---|
+| Prompt completo recibido | Sí; la API key se solicitó después del prompt |
+| Respuesta | HTTP `200`, no vacía |
+| Terminación | `finish_reason: stop` |
+| Routing | `strategy=single`, provider `groq`, modelo `openai/gpt-oss-20b` |
+| Latencia | `866 ms` |
+| Tokens | `147` de entrada / `294` de salida |
+| Cache | `false` |
+| Estado de contenido | Borrador; no publicado |
+
+La respuesta agregó emojis, hashtags y una llamada a la acción de estilo genérico. Esto no es un error técnico, pero demuestra que el prompt debe especificar si el estudio quiere un tono sobrio, sin emojis, sin hashtags o con una voz de personaje concreta. Antes de guardar un borrador dentro de Growth OS, revisar canon, voz, duración, claridad visual y llamada a la acción. La prueba valida la generación asistida, no el rendimiento de la pieza ni la conveniencia de publicarla. Los resultados permanecen como derivados revisables y no deben incorporarse a `Publication_Log.csv`, `ExperimentLog.csv` ni a un baseline hasta que exista aprobación editorial y publicación real.
 
 El prompt debe ser sintético o anonimizado. Para una tarea que requiera más salida, puede aumentarse temporalmente el límite sin guardar configuración permanente:
 
