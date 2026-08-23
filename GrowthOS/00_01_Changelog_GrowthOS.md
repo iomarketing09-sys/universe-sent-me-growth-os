@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 3.09
+**Versión:** 3.10
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.10.00] — 2026-08-23 (Manus): Optimización controlada del hook de la celda Motion + POV/Meme.** A partir de la caída de retención de MPM-001 alrededor de 0:03, se añadió al brief v1.9 el tratamiento `HOOK-H1-ACTION-FIRST`: mostrar desde el primer cuadro a Elara y Wilfred en movimiento, con la relación cómica legible antes de 1.5 s, sin logo, fundido ni texto nuevo. La referencia operativa de MPM-001 es 113 reproducciones de 3 s sobre 411 visualizaciones (≈27.5%) y 34 reproducciones de 15 s (≈8.3%). Se definieron H1, H2 y H3 como variantes no simultáneas y se mantuvieron constantes personajes, caption, duración, audio, plataforma, horario y exclusión de afiliación. El lineamiento no autoriza generación, programación ni publicación; requiere aprobación humana y n≥3 para señal preliminar.
 
 - **[3.09.00] — 2026-08-22 (Manus): Desglose profundo de MPM-001 en Facebook e Instagram.** Las capturas específicas muestran para Facebook 411 visualizaciones, 350 espectadores, 22 interacciones, 33 min 31 s de reproducción, 6 s promedio, 34 reproducciones de 15 s, 113 reproducciones de 3 s y una caída principal de retención alrededor de 0:03; también muestran 55.3% mujeres, 44.7% hombres y audiencia principal visible de México. El crosspost de Instagram registra 29 visualizaciones, 22 de alcance, 0 interacciones, 15 s promedio y 6 min de reproducción, pero sin ID nativo. MPM-001 queda en L2 parcial en Facebook; se mantienen separadas ambas plataformas y no se atribuyen conversiones.
 

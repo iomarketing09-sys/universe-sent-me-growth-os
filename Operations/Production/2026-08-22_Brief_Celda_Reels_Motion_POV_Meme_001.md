@@ -3,8 +3,8 @@ title: "Brief de celda Reels Motion + POV/Meme 001"
 purpose: "Diseñar los tres primeros casos controlados para probar si el movimiento físico inmediatamente legible, combinado con un hook situacional o un meme reconocible, supera en descubrimiento y compartidos al formato tipo podcast/radio; MPM-001 abre además una serie musical recurrente de Elara caminando con audífonos."
 status: Active
 created: 2026-08-22
-updated: 2026-08-22
-version: "1.8"
+updated: 2026-08-23
+version: "1.9"
 author: "Manus AI (CGO)"
 related_documents:
   - "../../GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -92,7 +92,40 @@ Las primeras direcciones sonoras que se pueden explorar son: **indie dream-pop s
 
 Las variantes futuras pueden cambiar la situación —Wilfred hablando, una reunión incómoda, una caminata nocturna, una entrada triunfal o una reacción a otros personajes— sin cambiar la ancla visual de Elara ni convertir el audio en explicación narrativa. Cada variante debe registrar `Music_Variant_ID`, `Hook_Text`, `Situation_Type`, `Audio_Source` y `Hashtag_Set` por separado.
 
-## 5. Casos propuestos
+## 5. Lineamiento de optimización del hook tras MPM-001
+
+La evidencia individual de MPM-001 en Facebook muestra 411 visualizaciones, 350 espectadores, 113 reproducciones de 3 segundos, 34 reproducciones de 15 segundos y 6 segundos de tiempo promedio. La curva de retención presenta la caída más fuerte alrededor de 0:03. La lectura operativa es que el concepto y el payoff consiguen que una minoría continúe, pero la entrada no comunica con suficiente rapidez la relación cómica entre Elara y Wilfred.
+
+El siguiente Reel de esta celda debe optimizar **solo el primer beat**, no rehacer simultáneamente el personaje, el escenario, la música, la duración y el caption. La variante recomendada es `HOOK-H1-ACTION-FIRST`:
+
+| Momento | Tratamiento recomendado |
+|---|---|
+| 0.0–0.5 s | Elara y Wilfred ya aparecen en movimiento desde el primer cuadro; audífonos, sombrero y siluetas deben ser legibles inmediatamente. No usar logo, fundido ni plano vacío. |
+| 0.5–1.5 s | Wilfred entra claramente en el espacio de Elara, gesticula y articula una frase; Elara mantiene la mirada al frente y no reacciona. La acción debe ser comprensible sin audio. |
+| 1.5–5.5 s | Mantener la caminata y la misma lógica de desconexión de MPM-001, con cámara y velocidad equivalentes en lo posible. |
+| 5.5–8.5 s | Conservar el remate de Wilfred derrotado mirando a cámara mientras Elara continúa. |
+
+El principio creativo es **mostrar el conflicto antes de explicarlo**: en el primer segundo el público debe ver que alguien intenta llamar la atención de Elara y que ella está completamente desconectada. No añadir texto al primer frame para resolver el problema, porque MPM-001 se diseñó para comprensión visual y la prueba debe distinguir una mejora de puesta en escena de una mejora producida por texto.
+
+### 5.1 Variantes de hook para una futura comparación
+
+| Variante | Cambio aislado | Uso |
+|---|---|---|
+| `HOOK-H1-ACTION-FIRST` | Wilfred ya está gesticulando y dentro del encuadre desde 0.0 s. | **Recomendada para el próximo Reel.** |
+| `HOOK-H2-REACTION-FIRST` | Abrir con la mirada derrotada de Wilfred durante 0.5–0.8 s y revelar inmediatamente a Elara ignorándolo. | Segunda variante, no simultánea con H1. |
+| `HOOK-H3-MOTION-CLOSE` | Empezar con un encuadre ligeramente más cerrado en los audífonos y el gesto de Wilfred, sin cambiar el caption ni la música. | Tercera variante, solo después de medir H1. |
+
+Estas variantes no deben publicarse como tres cambios simultáneos. Para preservar la inferencia, la siguiente pieza debe usar `HOOK-H1-ACTION-FIRST` y mantener constantes `caption_minimo`, el caption externo, la exclusión de afiliación, la duración objetivo de 8–9 segundos, el estilo visual, la pareja de personajes, la plataforma primaria y la franja de publicación. Si el siguiente Reel cambia de personajes o situación, el resultado será una nueva observación de la celda, no una prueba limpia del hook.
+
+### 5.2 Criterios de medición del hook
+
+El indicador primario será la retención inicial visible en Meta, especialmente `views_3_seconds / visualizations`, seguido por `views_15_seconds / visualizations`, tiempo promedio de reproducción y shares. Para MPM-001, la referencia observada de 3 segundos es aproximadamente **27.5%** (113 de 411) y la de 15 segundos aproximadamente **8.3%** (34 de 411); son referencias operativas de este panel, no benchmarks universales.
+
+La variante H1 se considerará prometedora si mejora claramente la retención de 3 segundos respecto a la referencia de MPM-001 sin deteriorar de manera evidente las reproducciones de 15 segundos, el tiempo promedio o los shares. No se declarará ganadora con un solo Reel: la señal preliminar requiere al menos tres casos comparables y la decisión operativa requiere cinco. Los reportes diarios seguirán siendo la fuente primaria; no se usarán ventanas artificiales de 24/72 horas como sustituto del aprendizaje diario.
+
+No se autoriza por esta actualización la generación, programación, publicación, republicación ni modificación de ningún Reel. Esta sección define el tratamiento experimental para aprobación humana posterior.
+
+## 6. Casos propuestos
 
 ### Caso MPM-001 — Elara ignora a Wilfred
 
@@ -163,19 +196,19 @@ Este caso toma la lógica que funcionó —meme reconocible, movimiento de camin
 
 El caso prueba si la combinación de hábito digital reconocible y movimiento puede trasladar la señal de Universe a la misma celda sin depender de una conversación. Las gafas redondas deben ser visibles desde el primer plano y en el último; no se permite una transformación que las oculte.
 
-## 6. Orden de producción y aleatorización
+## 7. Orden de producción y aleatorización
 
 No se debe interpretar el orden como ranking creativo. Una vez aprobados los tres casos, se recomienda asignar los tres a slots de fuerza equivalente —10:00–11:00, 16:00–17:00 o 19:00–21:00— y registrar el horario exacto. Si la operación lo permite, el orden de publicación debe sortearse entre los tres casos después de verificar identidad y export. No se deben agregar links de Mercado Libre, CTA de producto, boosts ni cambios de caption después de publicar.
 
 El caso MPM-001 no depende de encontrar primero el ID histórico de la publicación de referencia para poder producirlo; cualquier ID histórico sirve únicamente para reconciliar evidencia y evitar atribuirle el asset de Evan. La pieza nueva debe recibir su propio `Concept_ID`, `Primary_Asset_ID`, `Experiment_ID` e ID nativo después de publicar.
 
-## 7. Gate de aprobación
+## 8. Gate de aprobación
 
 Fernando debe aprobar por separado: el hook `¿De cuánto te hablan…?`, la identidad visual de Elara y Wilfred, la ausencia de Evan, la capa musical sin explicación visible, la estructura del meme de Fantasma, la preservación de las gafas de Universe, los tres captions externos, la duración y la exclusión de afiliación. La aprobación de este brief no autoriza generación automática, programación ni publicación.
 
 Después de generar, cada export pasa por revisión de identidad, legibilidad, movimiento, ausencia de watermark no registrado y comprensión sin audio. Después de publicar, el reporte diario registra primero identidad y engagement básico como `L1_Engagement_Observable`; cuando una fuente autorizada exponga views, reach o retención, se añade `L2_Discovery` o `L3_Video_Retention`. Las ventanas exactas de 24/72 horas son opcionales y solo se usan para un cierre contractual comparable. El protocolo completo está en `Operations/Research/2026-08-22_Reels_Metric_Instrumentation_Protocol.md`. No se declara `WIN` con un solo caso; el mínimo es n=3 y la decisión operativa requiere llegar a n=5.
 
-## 8. Evaluación de calidad de las propuestas
+## 9. Evaluación de calidad de las propuestas
 
 | Caso | Relatable | Humor/emoción | Giro moderno | Voz de personaje | Share hook | Slot | Resultado |
 |---|---:|---:|---:|---:|---:|---:|---|
@@ -185,17 +218,17 @@ Después de generar, cada export pasa por revisión de identidad, legibilidad, m
 
 Los puntajes fueron ejecutados con la rúbrica vigente de propuestas de Growth OS. En esta celda, `format_ok` representa que el Reel tiene movimiento real y no es un Reel de texto estático; el texto funciona como hook visual breve, no como sustituto de una escena.
 
-## 9. Documentos que requieren sincronización
+## 10. Documentos que requieren sincronización
 
 Al aprobarse este brief, deberán actualizarse el ledger de publicaciones de Reels, el staging de producción y la evaluación de la hipótesis. Hasta entonces, no se crea CNT, no se modifica el calendario y no se actualiza `ExperimentLog`.
 
 La corrección de MPM-001 y la separación del asset de Evan/Elara quedan enlazadas con el registro maestro, la fuente maestra y la evaluación estructurada. La serie musical se documenta dentro de este brief y no requiere otro documento conceptual mientras esta celda permanezca en Review.
 
-## 10. Paquete técnico de generación visual
+## 11. Paquete técnico de generación visual
 
 El primer set de referencias fue descartado porque no coincidía con el estilo ni los diseños de personaje oficiales de `My Drive/Universe sent me/USM/Elementos`. Se consultaron directamente las carpetas oficiales de `PERSONAJES` y `LUGARES`, y se regeneró un set nuevo con ese material como fuente de verdad. MPM-003 también fue refinada a v2 para asegurar la visibilidad de las gafas. La ejecución debe seguir el orden: referencia primaria oficial → variaciones de encuadre → clip de video → revisión visual → edición exacta del texto → aprobación de export. Los binarios generados se guardan en paralelo en `My Drive/Universe sent me/USM/Reels/08 Agosto/EXP-202608-REEL-MOTION-POV-MEME-001`; GitHub conserva la fuente documental. MPM-001 ya fue cargado allí. Todavía no se ha creado CNT, modificado calendario ni publicado contenido.
 
-### 10.1 Definiciones globales
+### 11.1 Definiciones globales
 
 | Dimensión | Especificación bloqueada |
 |---|---|
@@ -209,7 +242,7 @@ El primer set de referencias fue descartado porque no coincidía con el estilo n
 | Logo y watermark | Ninguno durante la generación. Si aparece un watermark no previsto, el export falla revisión. |
 | Afiliación | Excluida. No incluir productos, enlaces, catálogos ni CTA comercial. |
 
-### 10.2 Mapa de referencias de identidad
+### 11.2 Mapa de referencias de identidad
 
 | Caso | Referencias permitidas | Uso | Exclusiones críticas |
 |---|---|---|---|
@@ -219,25 +252,25 @@ El primer set de referencias fue descartado porque no coincidía con el estilo n
 
 Las referencias de My Drive se utilizarán como fuente de verdad de identidad y estilo. La composición, acción, fondo y recorrido se generarán de nuevo para que ningún caso sea un repost o una duplicación de asset. El registro de revisión visual está en `Generated_Reels/Motion_POV_Meme_001/reference_review_notes.md`. Las primeras referencias generadas quedan descartadas; las únicas válidas son `MPM-001_primary_reference_official_style_v2.png`, `MPM-002_primary_reference_official_style_v2.png` y `MPM-003_primary_reference_official_style_v2.png`.
 
-### 10.3 Prompt de referencia primaria — MPM-001
+### 11.3 Prompt de referencia primaria — MPM-001
 
 ```text
 Create a vertical 9:16 primary visual reference for a short comedic fantasy Reel in the Universe Sent Me world. Use a 2D digital painterly illustration style with soft linework, subtle brush texture, cinematic depth, deep green and blue forest light, and readable character silhouettes. Elara is in the foreground, a petite young woman with light wavy hair, a pointed brown witch hat, a brown knitted cardigan, light top and visible white over-ear headphones. She walks calmly through a magical forest and looks straight ahead, completely absorbed in her headphones. Wilfred is behind her in the same frame, an elderly forest guardian gnome with a pointed red hat, long white beard and green tunic; he is visibly trying to speak to her while following her. Elara must not turn around. Keep the upper third and lower center visually clean for later editorial text. No Evan, no camping, no tent, no backpacks, no shared campfire, no props, no readable text, no logos, no watermarks, no labels, no annotations.
 ```
 
-### 10.4 Prompt de referencia primaria — MPM-002
+### 11.4 Prompt de referencia primaria — MPM-002
 
 ```text
 Create a vertical 9:16 primary visual reference for a new Universe Sent Me comedic fantasy Reel. Use a 2D digital painterly illustration style, soft linework, deep violet moonlight and muted teal shadows. Show Fantasma as a mysterious ghostly character walking across a moonlit abandoned greenhouse walkway, with three expressive black cats following in a staggered line. This is a new location and new composition, not a recreation of a forest path. Fantasma is already moving at the front of the group; the cats are visibly closing the distance and subtly pulling the group in different directions. Make the physical walking direction immediately readable and leave clean space for text added later. No exact copied frame from any existing Reel, no readable text, no logos, no watermarks, no labels, no annotations.
 ```
 
-### 10.5 Prompt de referencia primaria — MPM-003
+### 11.5 Prompt de referencia primaria — MPM-003
 
 ```text
 Create a vertical 9:16 primary visual reference for a short comedic fantasy Reel in the Universe Sent Me world. Use a 2D digital painterly style with soft linework, subtle brush texture, cinematic magical realism, cool blue corridor light and a warm violet portal glow. Universe is a white cat with clearly visible round glasses, holding a phone while walking toward a small glowing portal in a cosmic hallway. The cat must remain recognizable and the round glasses must be unobstructed. Show a clean, simple action path from the lower foreground toward the portal, with empty safe space at the top for later editorial text. No other characters, no readable text, no logos, no watermarks, no labels, no annotations.
 ```
 
-## 11. Blueprints de video
+## 12. Blueprints de video
 
 Los tres clips deben generarse como piezas independientes de una sola toma continua, no como una conversación ni como una sucesión de imágenes estáticas. El texto será compuesto posteriormente con el mismo template editorial; el modelo de video debe priorizar movimiento corporal, dirección y reacción final.
 
@@ -283,13 +316,13 @@ Vertical 9:16 comedic fantasy Reel in the established Universe Sent Me 2D painte
 Vertical 9:16 comedic magical-realism Reel in the established Universe Sent Me 2D painterly style. Universe is a white cat with clearly visible round glasses and a phone in one paw. Universe walks steadily through a cool blue cosmic hallway toward a small violet glowing portal. The camera tracks backward smoothly while the cat crosses the threshold without stopping; the lighting gradually changes from deep night blue to pale sunrise gold as the background shifts from stars to dawn. Universe keeps the same mildly tired expression and continues walking as if only five minutes passed. In the final beat Universe exits the portal into a dawn-lit corridor, still wearing the same unobstructed round glasses, revealing that much more time has passed. Universe, the phone, the glasses, the portal and the corridor exist continuously; do not hide or replace the glasses and do not add other characters. Keep the upper third clean for text added in post. No readable generated text, no dialogue, no narration, no background music, no logo, no watermark.
 ```
 
-## 12. Template de edición y medición
+## 13. Template de edición y medición
 
 Para no introducir una variable oculta, los tres exports deben usar el mismo margen superior, familia tipográfica, tamaño aproximado, contraste, animación de entrada y duración del hook. En MPM-002 se repetirá literalmente la frase `No lo sigas` sobre Fantasma y cada gato, con el mismo estilo y solo desplazando la posición según el sujeto. El caption externo seguirá siendo `caption_minimo` con función `reforzar_remate`; no se copiará todo el texto sobreimpreso en el caption.
 
 Antes de publicar, cada export debe pasar por cuatro controles: identidad de personajes, trayectoria de movimiento, legibilidad del hook sin audio y ausencia de watermark o producto. Después de publicar, se guardarán snapshots de 24 y 72 horas con la misma definición de views, reach, no seguidores, retención inicial, tiempo medio, completación, shares, comentarios, respuestas y seguidores ganados.
 
-## 13. Plan de publicación manual de MPM-001
+## 14. Plan de publicación manual de MPM-001
 
 MPM-001 se recomienda como publicación primaria en **Facebook**, con una subida separada a **Instagram** si el mismo audio está disponible o puede incorporarse legalmente desde la biblioteca de la plataforma. La primera prueba no debe dispersarse simultáneamente en TikTok y YouTube: esos crossposts pueden ejecutarse después como publicaciones independientes, con sus propios IDs y métricas, pero no son necesarios para responder la pregunta inicial.
 
@@ -312,13 +345,13 @@ La ventana recomendada es **17:00–18:00 en `America/Matamoros`**, con 17:00 co
 
 Después de la subida manual, Fernando debe proporcionar o confirmar los IDs nativos. El corte diario registrará primero `L1_Engagement_Observable` y luego intentará `L2/L3` mediante Windsor o Instagram integrado. La fila debe conservar `Series_ID=ELARA-WALK-MUSIC-01`, `Music_Variant_ID=ELARA-WALK-MUSIC-01-V01`, `Audio_Source`, `Music_Reference`, `Music_Hashtag=None` si no se usa hashtag, `Published_At_Local`, `Export_SHA256`, `Platform_Content_ID` y permalink. Esta publicación no recibe un veredicto de éxito con un solo corte.
 
-### 13.1 Estado de publicación confirmado — MPM-001
+### 14.1 Estado de publicación confirmado — MPM-001
 
 MPM-001 se publicó manualmente en Facebook e Instagram el 22 de agosto de 2026 con el caption `Ella no está disponible en este plano. 👀`, los hashtags `#UniverseSentMe #ElaraUSM #letithappen #tameimpala` y `Let It Happen — Tame Impala` elegido desde la biblioteca nativa en ambas plataformas. Los permalinks son [Facebook](https://www.facebook.com/share/r/1FF3rq76yg/) e [Instagram](https://www.instagram.com/reel/DcW-pUnxqGG/?igsi=eXU5YzF0cHkwNjFj). La publicación es `Crosspost_At_Launch`: se registrará como una unidad de celda con métricas estrictamente separadas por plataforma.
 
 Las horas exactas, el Page Post/Reel ID de Facebook, el Instagram Media ID y los snapshots L1/L2/L3 siguen pendientes. No se añaden afiliación, pauta ni una inferencia de rendimiento por haber completado la publicación.
 
-## 14. Gate siguiente
+## 15. Gate siguiente
 
 Las primeras referencias fueron rechazadas por no respetar el estilo de `Elementos`. Las tres referencias regeneradas con los archivos oficiales ya están disponibles: MPM-001, MPM-002 y MPM-003, esta última únicamente en su versión `official_style_v2`. MPM-001 completó su preflight y publicación; sus próximos datos son hora local, IDs y snapshots separados. MPM-002 permanece `Reference_Ready_Quota_Wait` y MPM-003 aún no se genera. Las referencias y el video generado de MPM-001 están cargados en [la carpeta operativa de Drive](https://drive.google.com/drive/folders/1NAyNNUnkNF5QGO7oYDgpw4b5poEPTuhX). La generación de referencias no equivale a aprobar los videos finales de los casos restantes. El siguiente gate de producción es esperar cuota y aprobación explícita para MPM-002; no se crean CNT, no se asignan slots, no se programa y no se publica MPM-002/003 hasta completar su revisión operativa.
 
@@ -342,4 +375,5 @@ Este brief reemplaza la prioridad anterior de Dialogue_radio, pero no borra sus 
 | Fecha | Versión | Cambio | Autor |
 |---|---|---|---|
 | 2026-08-22 | 1.7 | Se consolida MPM-001 como serie musical sin texto sobre la imagen y con caption mínimo. | Manus AI (CGO) |
+| 2026-08-23 | 1.9 | Se añade el lineamiento `HOOK-H1-ACTION-FIRST` tras observar la caída principal de MPM-001 alrededor de 0:03; se definen variantes comparables, métricas de retención inicial y límites de aprobación. | Manus AI (CGO) |
 | 2026-08-22 | 1.8 | MPM-001 pasa a publicado en Facebook e Instagram; se registran caption, hashtags, audio nativo y permalinks, con métricas por plataforma aún pendientes. | Manus AI (CGO) |
