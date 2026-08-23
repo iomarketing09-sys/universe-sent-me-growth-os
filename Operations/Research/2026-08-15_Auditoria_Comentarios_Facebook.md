@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.8"
+version: "2.9"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -588,3 +588,24 @@ Fernando aprobó los cambios de copy del archivo `pasted_content_2.txt`. Las sei
 | “Y se hizo el BigBang jajajaja” | `Jajaja, así empiezan los grandes desórdenes cósmicos… y luego nadie sabe quién fue. 💥😂` | `122151375549072582_4103837726583284` |
 
 El aprendizaje editorial asociado es que una respuesta musical no tiene que demostrar conocimiento enciclopédico de la canción: debe demostrar que entendió por qué la persona la eligió. Se prioriza jugar con el título, reconocer la estructura de una selección o responder a la energía concreta de la referencia. Si una respuesta pudiera pegarse sin cambios bajo otra canción, debe reescribirse.
+
+
+## 38. Nuevo corte API — 11 comentarios sin respuesta
+
+La consulta exclusiva mediante Meta Graph API v26, posterior al lote de seis respuestas refinadas, detectó 11 comentarios de usuarios sin respuesta. Nueve presentan una señal conversacional clara y quedan pendientes de aprobación; dos contienen únicamente nombres y se clasifican como `No_Accion`.
+
+| Comentario | Clasificación | Criterio |
+|---|---|---|
+| “Que? No todas pueden? 🤔” | Pendiente | Remate que puede continuar el humor del post sin repetir el contenido íntimo. |
+| “Amén” | Pendiente | Reacción breve que admite una línea juguetona. |
+| “Zumo de mandrágora” | Pendiente | Referencia fantástica que puede conectarse con el imaginario de USM. |
+| “Hijo de hombre” — Phil Collins | Pendiente | Canción y artista concretos; responder a la nostalgia y el tono cinematográfico. |
+| “Viento” | Pendiente | Título musical sin artista; responder al título sin asumir una versión concreta. |
+| “One of Us” | Pendiente | Título con una pregunta implícita; evitar atribuir artista si no fue indicado. |
+| “Frío frío” — Juan Luis Guerra | Pendiente | Canción y artista concretos; reconocer ritmo, sabor y recuerdo. |
+| “Disfruto” — Carla Morrison | Pendiente | Canción íntima; responder con calidez sin diagnosticar la experiencia de la persona. |
+| Reflexión sobre Dios y el tiempo | Pendiente | Responder la paradoja con respeto y humor ligero, sin presentar una doctrina como hecho. |
+| “Fruanky Lopez” | No_Accion | Solo un nombre; falta contexto para contestar sin asumir intención. |
+| “My Dad” | No_Accion | Solo un nombre; falta contexto para contestar sin asumir intención. |
+
+Las menciones automáticas de la Página permanecen fuera de la cola cualitativa. No se revisaron publicaciones de grupos en este corte y no se publicó ninguna respuesta.

@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.5"
+version: "2.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -198,3 +198,24 @@ La consulta exclusiva mediante Meta Graph API v26 detectó seis comentarios de u
 | `122151375549072582_2632055060570783` | Remate sobre energía y Big Bang | `Jajaja, así empiezan los grandes desórdenes cósmicos… y luego nadie sabe quién fue. 💥😂` | `Respondido` |
 
 La primera respuesta mantiene el humor sin repetir ni amplificar el contenido íntimo del comentario. Las respuestas musicales refinadas juegan con el título o reconocen por qué la persona eligió la canción; la playlist se responde reconociendo su estructura; y los remates mantienen la complicidad del contenido original. Las seis respuestas fueron publicadas y verificadas el 23 de agosto de 2026.
+
+
+## 18. Nuevo corte API — 11 comentarios posteriores al último lote refinado
+
+La revisión mediante Meta Graph API v26, con corte posterior a `2026-08-23T02:36:53+0000`, detectó 11 comentarios de usuarios sin respuesta en las publicaciones propias. Nueve contienen una señal respondible y quedan `Pendiente_Respuesta`; dos son únicamente nombres —“Fruanky Lopez” y “My Dad”— y quedan `No_Accion` porque no hay contexto suficiente para contestar sin asumir una intención.
+
+| Comentario_ID | Señal | Estado |
+|---|---|---|
+| `122151376083072582_1033379579457116` | “Que? No todas pueden? 🤔” | `Pendiente_Respuesta` |
+| `122151376083072582_1534062764662566` | “Amén” | `Pendiente_Respuesta` |
+| `122151376011072582_1350675507083697` | “Zumo de mandrágora” | `Pendiente_Respuesta` |
+| `122151376011072582_1576421464128022` | “Hijo de hombre” — Phil Collins | `Pendiente_Respuesta` |
+| `122151376011072582_1017393391124351` | “Viento” | `Pendiente_Respuesta` |
+| `122151376011072582_1693775178399393` | “One of Us” | `Pendiente_Respuesta` |
+| `122151376011072582_4579578845653974` | “Frío frío” — Juan Luis Guerra | `Pendiente_Respuesta` |
+| `122151376011072582_1726492438602303` | “Disfruto” — Carla Morrison | `Pendiente_Respuesta` |
+| `122151375549072582_1755338779425523` | Reflexión teológica sobre Dios y el tiempo | `Pendiente_Respuesta` |
+| `122151376203072582_1856194378697993` | Nombre: “Fruanky Lopez” | `No_Accion` |
+| `122151375549072582_2263197197773933` | Nombre: “My Dad” | `No_Accion` |
+
+Las respuestas sugeridas se mantienen específicas: recogen el remate del comentario, el título de la canción, el artista cuando fue indicado o la paradoja planteada. No se publicó ninguna respuesta en esta revisión.
