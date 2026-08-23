@@ -2,10 +2,10 @@
 
 **Propósito:** Evaluar y proponer una convención de reporte semanal que cierre el sábado y abra el siguiente ciclo operativo el domingo, sin confundir el calendario de análisis con una prueba causal ni modificar la programación activa de Facebook.
 
-**Estado:** Draft
+**Estado:** Active
 **Fecha de creación:** 2026-08-22
 **Última actualización:** 2026-08-22
-**Versión:** 0.1
+**Versión:** 1.0
 **Autor:** Manus AI (CGO)
 **Organización:** `Operations/Research/`
 **Documentos relacionados:** `GrowthOS/04_00_Formato_Calendario_Semanal_CGO.md`, `GrowthOS/00_Índice.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `Operations/Research/2026-08-19_Windsor_Facebook_Organic_28D_Normalizado.json`, `Operations/Research/2026-08-22_Corte_Diario_Metricas_2200.md`
@@ -14,7 +14,7 @@
 
 ## 1. Propuesta ejecutiva
 
-Se propone que el **ciclo de reporte y aprendizaje** de Universe Sent Me se defina de **domingo a sábado**. El sábado se realiza el corte general de la semana después del último slot con exposición mínima razonable; el domingo se considera el primer día del nuevo ciclo operativo y editorial.
+Se establece que el **ciclo de reporte y aprendizaje** de Universe Sent Me se define de **domingo a sábado**. El sábado se realiza el corte general de la semana después del último slot con exposición mínima razonable; el domingo se considera el primer día del nuevo ciclo operativo y editorial.
 
 Esta convención es recomendable por organización y continuidad de aprendizaje, pero no debe presentarse como prueba de que el domingo sea siempre el día de mayor rendimiento. La evidencia histórica de mayo sí identificó al domingo como el día de mayor engagement relativo, mientras que el dataset de Facebook más reciente de 28 días muestra una señal más matizada y no confirma que domingo supere a todos los demás días por publicación.
 
@@ -61,9 +61,9 @@ No recomiendo declarar todavía que domingo es el día más fuerte. La evidencia
 
 Para validarlo, se recomienda observar al menos **cuatro a seis ciclos domingo–sábado**, manteniendo separados formato, volumen, mezcla de nuevo/reuse, horario y outliers. La métrica de decisión debe priorizar la mediana por publicación y las señales de shares/comentarios, acompañadas por alcance cuando esté disponible.
 
-## 6. Documentos que requerirían actualización si se aprueba
+## 6. Documentos sincronizados tras la aprobación
 
-Si Fernando confirma la adopción, deberán actualizarse `GrowthOS/00_Índice.md` en su flujo de trabajo semanal, `GrowthOS/04_00_Formato_Calendario_Semanal_CGO.md`, el documento de arquitectura del calendario y el protocolo de reportes diarios. El estado de esta propuesta permanece **Draft** hasta esa aprobación; no se modifica la programación actual.
+Fernando confirmó la adopción. La convención quedó activada en `GrowthOS/00_Índice.md`, `GrowthOS/01_00_Arquitectura_Calendario_Escalable.md`, `GrowthOS/04_00_Formato_Calendario_Semanal_CGO.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md` y `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`. La activación organiza el reporte y el aprendizaje, pero no modifica retroactivamente la programación actual ni los cortes mensuales.
 
 ## Referencias
 

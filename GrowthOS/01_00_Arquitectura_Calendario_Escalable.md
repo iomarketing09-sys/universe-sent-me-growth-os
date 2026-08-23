@@ -3,8 +3,8 @@
 **Propósito:** Definir la arquitectura de metadatos y flujos operativos para gestionar más de 1,000 piezas de contenido, permitiendo filtrado, priorización y publicación controlada mediante Manus y la API de Graph de Meta.
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-15
-**Versión:** 1.3
+**Última actualización:** 2026-08-22
+**Versión:** 1.4
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`; `Universe Sent Me - Biblia/07 Historias/00 Estándar de Historias.md` (repositorio separado, solo lectura: `iomarketing09-sys/universe-sent-me-1`)
 
@@ -119,6 +119,12 @@ Para asignar contenido a los próximos 7 días, el sistema debe aplicar las sigu
 8. **Regla de Temporalidad:** Clasificar cada pieza como Evergreen, Estacional, Evento o Tendencia. Nunca proponer contenido cuya temporalidad no corresponda con la fecha actual.
 9. **Filosofía de Decisión:** Ante varias opciones, seleccionar siempre aquella que: aporte mayor aprendizaje, valide una hipótesis importante, tenga mayor probabilidad de crecimiento, fortalezca el universo narrativo y optimice el tiempo de producción.
 10. **Tendencias:** Buscar oportunidades únicamente cuando sean compatibles con la identidad de Universe Sent Me. Las tendencias son herramientas, no objetivos.
+
+### Convención de ciclo semanal
+
+El calendario semanal operativo y su reporte de aprendizaje usan un ciclo de **domingo a sábado**. El domingo abre el bloque y el sábado lo cierra después del último slot. La convención organiza la vista semanal, pero no reescribe los periodos mensuales ni convierte el día de inicio en una variable causal demostrada.
+
+El cierre del sábado debe consolidar los reportes diarios del bloque completo, conservar por separado Facebook, Reels, Instagram y afiliados, y marcar como `Exposicion_Inmadura` cualquier publicación que no haya tenido tiempo suficiente. La mediana por publicación se utiliza como resumen robusto; los outliers, shares, comentarios, formato, volumen y mezcla nuevo/reuse se reportan por separado.
 
 ### Estructura del Calendario Semanal (Vista)
 

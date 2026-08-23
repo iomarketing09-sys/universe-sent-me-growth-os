@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.39"
+version: "2.41"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -367,7 +367,13 @@ El control de calidad mantiene separadas dos preguntas: **cuánto rindió junio*
 
 La regla operativa queda establecida: una reconciliación administrativa puede cambiar la clasificación por asset/CNT y la elegibilidad para análisis de reuse, pero no reescribe métricas de publicación ni se mezcla con P0, afiliados o ventanas 24/72 horas.
 
-## 19. Corte diario de métricas — 2026-08-22 22:02
+## 19. Convención activa de ciclo semanal — domingo a sábado
+
+Fernando confirmó la adopción de la convención de reporte y aprendizaje domingo–sábado. El domingo abre el ciclo editorial y el sábado lo cierra después del último slot; la regla no reescribe cortes mensuales ni cambia por sí sola la programación, los denominadores de plataforma o las aprobaciones requeridas. El reporte semanal se construye a partir de los reportes diarios del bloque completo y prioriza la mediana por publicación, shares, comentarios, formato, volumen, mezcla nuevo/reuse y alcance cuando exista.
+
+El primer cierre bajo esta convención corresponde al bloque **domingo 16 a sábado 22 de agosto de 2026**. Su extracción raw, cruce con el calendario, resumen CSV y análisis general quedan en `Operations/Research/2026-08-22_Weekly_Metrics_20260816_20260822_Raw.json`, `Operations/Research/2026-08-22_Weekly_Metrics_20260816_20260822_Joined.csv`, `Operations/Research/2026-08-22_Analisis_Semanal_20260816_20260822.csv` y `Operations/Research/2026-08-22_Analisis_Semanal_20260816_20260822.md`. La observación `OBS-WEEKLY-20260816-20260822` se añadió al `ExperimentLog.csv` como `Cierre_Semanal`, sin ventanas 24/72h. Las actualizaciones de `00_Índice.md`, `01_00_Arquitectura_Calendario_Escalable.md`, `04_00_Formato_Calendario_Semanal_CGO.md`, `06_00_Reglas_Aprendizaje_Tendencias.md` y la propuesta activada conservan la misma regla.
+
+## 20. Corte diario de métricas — 2026-08-22 22:02
 
 El corte diario de Meta recuperó seis publicaciones reales del 22 de agosto: cinco imágenes/posts y un Reel. Las imágenes sumaron 127 interacciones conocidas y el Reel 18; las cifras son acumulados observables al momento de la captura, no incrementos exactos de 24 horas. El slot adicional de `CNT-083` a las 22:00 acababa de publicarse, no expuso shares y queda fuera de cualquier lectura de rendimiento hasta contar con suficiente exposición.
 

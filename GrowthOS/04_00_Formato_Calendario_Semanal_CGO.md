@@ -1,10 +1,10 @@
-# Formato del Calendario Semanal (Propuesta CGO v3.0)
+# Formato del Calendario Semanal CGO v3.2
 
 **Propósito:** Establecer la estructura de distribución semanal de contenido en las plataformas de Universe Sent Me, optimizando el mix entre reutilización de memes, reels, nuevo contenido y lore, ajustado a las frecuencias de publicación reales y validado con datos de mayo 2026.
-**Estado:** Active (Propuesta)
+**Estado:** Active
 **Fecha de creación:** 2026-08-01
-**Última actualización:** 2026-08-15
-**Versión:** 3.1
+**Última actualización:** 2026-08-22
+**Versión:** 3.2
 **Autor:** Manus AI (CGO)
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_01_Calendario_Semanal.md`, `01_03_Reuse_Queue.md`, `03_00_Sistema_Generacion_Memes.md`
 
@@ -57,6 +57,12 @@ El mismo contenido se distribuye inteligentemente según el comportamiento de ca
 *   **TikTok / YouTube Shorts (Alcance Frío):** Reciben **exclusivamente los Reels** que se generan en Instagram. Esto multiplica el alcance de los videos 1 a 2 diarios sin requerir producción adicional.
 
 ---
+
+## 2.1 Ciclo operativo activo domingo–sábado
+
+El ciclo de reporte, aprendizaje y planificación comienza el domingo y termina el sábado. El domingo se trata como el primer día editorial del bloque; el sábado se realiza el cierre general después del último slot. Esta convención no modifica por sí sola la cadencia, los horarios ni los denominadores de plataforma.
+
+El cierre semanal se construye desde los reportes diarios domingo–sábado. Las publicaciones que acaban de salir se conservan como observaciones de identidad y estado, pero se marcan como exposición inmadura y no se utilizan para declarar ganadores. La métrica central del cierre es la mediana por publicación, acompañada por shares, comentarios, alcance y formato cuando estén disponibles. Las ventanas exactas 24/72 horas siguen siendo opcionales y contractuales, no la fuente primaria.
 
 ## 3. Propuesta de Plantilla Semanal (Template W02+)
 

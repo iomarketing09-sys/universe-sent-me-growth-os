@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-22
-**Versión:** 3.25
+**Versión:** 3.26
 **Autor:** Manus AI (CGO); Sección 6 añadida por Claude
 **Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`, `../Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`, `../Operations/Research/2026-08-21_Julio_Expansion_Lote01_Analysis.md`, `../Operations/Research/2026-08-21_Expansion_Celdas_Comparables_Post_Julio_Lote01.json`, `../Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Findings.md`, `../Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md`, `../Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`, `../Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Audit.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Analysis.md`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Manual_Findings.md`, `../Operations/Research/2026-08-21_Junio_Caption_Reclassification_Impact.md`, `../Operations/Research/2026-08-21_Validacion_Cruzada_Hipotesis_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.md`, `../Operations/Research/2026-08-15_Community_Engagement_Log.md`, `../Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`
 
@@ -60,7 +60,15 @@ Después de cada publicación deberás actualizar automáticamente el conocimien
 
 ---
 
-## 4. Gestión de Tendencias
+## 3.1 Convención de ciclo semanal y cierre de aprendizaje
+
+El ciclo activo de reporte y aprendizaje comienza el **domingo** y termina el **sábado**. El domingo abre el bloque editorial; el sábado se realiza el cierre general después del último slot, idealmente cuando la última pieza ya tenga una exposición mínima. Esta convención organiza el análisis y no altera retroactivamente los cortes mensuales.
+
+Los reportes diarios siguen siendo la fuente primaria. El cierre semanal consolida los reportes de domingo a sábado y separa Facebook, imágenes, Reels, Instagram y afiliados. Las publicaciones recién publicadas se registran por identidad y estado, pero se excluyen de conclusiones de rendimiento cuando todavía son inmaduras. La métrica resumen prioritaria es la mediana por publicación, acompañada por shares, comentarios, formato, volumen, mezcla nuevo/reuse y alcance cuando esté disponible. Las ventanas exactas de 24/72 horas solo se usan cuando una celda comparable o un cierre contractual lo requiere.
+
+El día domingo puede analizarse como un tratamiento temporal de interés, pero nunca se declara ganador por defecto. Se debe comparar contra otros domingos y contra días equivalentes con controles de formato, volumen, horario y composición editorial durante al menos cuatro a seis ciclos.
+
+## 5. Gestión de Tendencias
 
 Buscar oportunidades únicamente cuando sean compatibles con la identidad de Universe Sent Me. **Nunca persigas tendencias que contradigan el tono del universo.**
 

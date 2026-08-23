@@ -4,9 +4,13 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-22
-**Versión:** 3.01
+**Versión:** 3.03
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.03.00] — 2026-08-22 (Manus): Cierre general de la semana domingo 16–sábado 22.** Se consolidaron 42 publicaciones de Facebook mediante extracción de solo lectura: 38 imágenes con 3,421 interacciones observables y 4 Reels con 43. El análisis semanal muestra concentración en outliers, con `2608028` aportando 1,004 interacciones y top 5 explicando aproximadamente 57.5% de las interacciones de imágenes; viernes tuvo la mejor mediana diaria (117), pero no se declara ganador. Se añadió `OBS-WEEKLY-20260816-20260822` al `ExperimentLog.csv` sin ventanas 24/72h. El cierre confirma la utilidad de la convención domingo–sábado, no prueba causalidad del día ni del aumento de volumen. No se modificaron publicaciones ni calendarios.
+
+- **[3.02.00] — 2026-08-22 (Manus): Activación del ciclo semanal domingo–sábado y cierre general de la semana 16–22.** Fernando confirmó la convención: domingo inicia el bloque editorial y sábado cierra el reporte después del último slot. Se activaron la propuesta de ciclo, el flujo del índice, la arquitectura escalable, el formato semanal, las reglas de aprendizaje y la fuente maestra. Se creó `Operations/Research/2026-08-22_Analisis_Semanal_20260816_20260822.md` y su CSV a partir de una extracción Meta de 42 posts: 38 imágenes con 3,421 interacciones observables y 4 Reels con 43; la lectura conserva la concentración de outliers, la separación de formatos y la falta de views/reach/retención de vídeo. No se modificaron publicaciones ni calendarios.
 
 - **[3.01.00] — 2026-08-22 (Manus): Propuesta de ciclo semanal domingo–sábado.** Se creó `Operations/Research/2026-08-22_Propuesta_Ciclo_Semanal_Domingo_Sabado.md` en estado `Draft` para evaluar el cierre del reporte general los sábados y el inicio del ciclo operativo los domingos. El baseline de mayo respalda domingo como día estratégico por su engagement relativo, pero la ventana Facebook del 22 de julio al 18 de agosto no demuestra superioridad dominical frente a todos los días; por eso la propuesta separa convención de reporte y causalidad. No se modificaron calendario, horarios, cadencia ni publicaciones. La adopción requiere aprobación de Fernando y, si se confirma, deberá actualizar `00_Índice.md`, `04_00_Formato_Calendario_Semanal_CGO.md`, la arquitectura de calendario y el protocolo de reportes.
 
