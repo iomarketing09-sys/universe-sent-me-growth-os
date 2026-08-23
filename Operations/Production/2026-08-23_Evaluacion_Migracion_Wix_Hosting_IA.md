@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 1.1
+**Versión:** 1.2
 
 **Autor:** Manus AI
 
@@ -34,6 +34,14 @@ La reconstrucción no debe ser una copia literal. La dirección aprobada es una 
 
 La auditoría no envió el formulario, no interactuó con el chat, no descargó los PDFs y no modificó el sitio ni el DNS. Los tres PDFs suman aproximadamente 24.1 MB según el usuario; antes de elegir hosting se debe comprobar el tamaño de cada archivo, porque los límites se aplican por activo individual y no solo al total.
 
+## Dirección de modernización y staging
+
+El usuario confirmó que el sitio no necesita ser idéntico a la versión Wix y seleccionó una dirección **corporativa-industrial** orientada a maquiladoras internacionales. La propuesta de staging se denomina **Precisión Industrial**: azul marino, blanco cálido y gris acero como base; Cobalto Industrial `#1A6E9B` como acento de información y precisión; y rojo reservado para la acción principal de conversión. La arquitectura usa una primera pantalla con propuesta de valor y CTA, banda de capacidades, evidencia de proceso de bordado, biblioteca de catálogos, presentación institucional y contacto accesible.
+
+El sistema visual utiliza un monograma FB de puntada continua, reglas discontinuas, numeración de secciones y etiquetas de documento como motivo recurrente. Se priorizan imágenes de máquina, hilo, manos, prendas y contexto de taller. La imagen actual que incorpora una marca de tercero no se reutilizará sin autorización específica. La versión staging conserva el contenido institucional validado, los tres catálogos y el contacto público, pero usa un formulario que prepara un correo localmente; no almacena datos ni expone un backend.
+
+La consulta pasiva de los recursos públicos confirmó tamaños individuales aproximados de 13.6 MB, 3.8 MB y 5.8 MB para los tres PDFs. Cada archivo queda bajo el límite de 25 MiB por activo documentado por Cloudflare Pages Free, por lo que el conjunto es técnicamente apto para la alternativa de hosting estático, sujeto a volver a alojar los PDFs bajo control del cliente antes del corte definitivo. [3]
+
 ## Inventario previo obligatorio
 
 Antes de elegir hosting, documentar sin publicar credenciales:
@@ -58,7 +66,7 @@ Antes de elegir hosting, documentar sin publicar credenciales:
 | **Netlify Free** | Despliegue sencillo, dominio personalizado con SSL y funciones disponibles dentro de su plan. | El plan usa límites de créditos/uso que deben vigilarse; no asumir costo cero ilimitado. | $0 en el plan Free, sujeto a límites | Baja |
 | **Continuar en Wix** | No hay migración, DNS ni reconstrucción. | Se mantiene el costo del plan y no se reutiliza esa infraestructura para alojar OmniRoute. | Plan actual del cliente | Muy baja |
 
-Cloudflare Pages documenta en su plan Free hasta 500 builds mensuales, hasta 100 dominios personalizados por proyecto, 20.000 archivos y un límite de 25 MiB por activo. [3] Netlify publica un plan Free de $0 con dominios personalizados y SSL, pero también muestra un sistema de créditos y límites de uso que deben revisarse antes de prometer costo cero. [4] GitHub Pages documenta el uso de dominios personalizados, pero no debe tratarse como un servicio de backend o de almacenamiento de secretos. [5]
+Cloudflare Pages documenta en su plan Free hasta 500 builds mensuales, hasta 100 dominios personalizados por proyecto, 20.000 archivos y un límite de 25 MiB por activo. [3] Netlify publica un plan Free de $0 con dominios personalizados y SSL, pero también muestra un sistema de créditos y límites de uso que deben revisarse antes de prometer costo cero. [5] GitHub Pages documenta el uso de dominios personalizados, pero no debe tratarse como un servicio de backend o de almacenamiento de secretos. [6]
 
 ## Recomendación preliminar
 
@@ -66,7 +74,7 @@ Para este caso, la mejor ruta de evaluación es **reconstrucción estática + Cl
 
 El contacto debe resolverse de manera explícita. Si solo se necesita mostrar teléfono, correo o WhatsApp, se pueden usar enlaces directos autorizados. Si se requiere un formulario, se debe usar un endpoint/backend o servicio de formularios con política de privacidad, protección antispam, límites y almacenamiento controlado. No se deben poner API keys en el JavaScript público.
 
-No se recomienda alojar OmniRoute dentro de la misma página estática. OmniRoute debe permanecer como un servicio privado separado. La página del cliente solo podría consumir una función de IA mediante un backend propio, después de que el cliente solicite y apruebe esa función como alcance adicional. La decisión vigente del proyecto mantiene el frontend fuera del acceso directo a OmniRoute y exige un backend privado para cualquier integración de producción. [6]
+No se recomienda alojar OmniRoute dentro de la misma página estática. OmniRoute debe permanecer como un servicio privado separado. La página del cliente solo podría consumir una función de IA mediante un backend propio, después de que el cliente solicite y apruebe esa función como alcance adicional. La decisión vigente del proyecto mantiene el frontend fuera del acceso directo a OmniRoute y exige un backend privado para cualquier integración de producción. [7]
 
 ## Plan de migración reversible
 
@@ -77,10 +85,10 @@ No se recomienda alojar OmniRoute dentro de la misma página estática. OmniRout
 5. Ejecutar una revisión del cliente y corregir diferencias.
 6. Preparar el cambio DNS. Wix indica que para apuntar a un host externo se actualizan registros A y CNAME; los cambios pueden tardar hasta 48 horas en propagarse. [2]
 7. Mantener Wix activo durante la propagación y confirmar desde varios dispositivos que el nuevo sitio funciona.
-8. Revisar correo empresarial y registros MX antes de cancelar cualquier servicio. Wix advierte que el correo necesita sus registros MX después de una transferencia de dominio. [3]
+8. Revisar correo empresarial y registros MX antes de cancelar cualquier servicio. Wix advierte que el correo necesita sus registros MX después de una transferencia de dominio. [4]
 9. Cancelar o reducir el plan Wix únicamente después de que el cliente confirme por escrito que el nuevo sitio y el dominio funcionan.
 
-La transferencia del dominio fuera de Wix es opcional. Si se realiza, Wix indica que el nuevo proveedor asumirá datos de contacto, DNS y renovaciones, que la transferencia suele tardar hasta siete días y que pueden aplicar bloqueos de transferencia de 60 días. [3] Para reducir riesgo, la primera versión debería mantener el dominio con Wix y solo apuntarlo por DNS al nuevo hosting, si el host lo permite.
+La transferencia del dominio fuera de Wix es opcional. Si se realiza, Wix indica que el nuevo proveedor asumirá datos de contacto, DNS y renovaciones, que la transferencia suele tardar hasta siete días y que pueden aplicar bloqueos de transferencia de 60 días. [4] Para reducir riesgo, la primera versión debería mantener el dominio con Wix y solo apuntarlo por DNS al nuevo hosting, si el host lo permite.
 
 ## Separación del presupuesto y de los proyectos
 
@@ -116,10 +124,12 @@ La evaluación no cambia todavía los ledgers ni el dashboard de Growth OS. Si s
 
 [2]: [Wix — Connecting a Wix Domain to an External Site](https://support.wix.com/en/article/connecting-a-wix-domain-to-an-external-site)
 
-[3]: [Wix — Transferring Your Wix Domain Away from Wix](https://support.wix.com/en/article/transferring-your-wix-domain-away-from-wix-2477749)
+[3]: [Cloudflare Pages — Limits](https://developers.cloudflare.com/pages/platform/limits/)
 
-[4]: [Netlify — Pricing](https://www.netlify.com/pricing/)
+[4]: [Wix — Transferring Your Wix Domain Away from Wix](https://support.wix.com/en/article/transferring-your-wix-domain-away-from-wix-2477749)
 
-[5]: [GitHub Docs — Configuring a Custom Domain for GitHub Pages](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
+[5]: [Netlify — Pricing](https://www.netlify.com/pricing/)
 
-[6]: [Universe Sent Me — Decisión de uso de OmniRoute](2026-08-19_Decision_Gateway_IA_OmniRoute.md)
+[6]: [GitHub Docs — Configuring a Custom Domain for GitHub Pages](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
+
+[7]: [Universe Sent Me — Decisión de uso de OmniRoute](2026-08-19_Decision_Gateway_IA_OmniRoute.md)
