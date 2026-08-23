@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-23
-**Versión:** 3.19
+**Versión:** 3.20
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.20.00] — 2026-08-23 (Manus): Preflight de storyboard/keyframe para Maeve/Crave You.** Fernando aprobó preparar el keyframe y comprobar audio para Facebook e Instagram. Se descargó una referencia oficial de Maeve desde Drive, se generó el keyframe `CON-2026-08-24_CraveYou_Maeve_HOOK-FIRST-V1_keyframe_review.png` y se guardó en la carpeta del experimento `EXP-202608-REEL-MOTION-POV-MEME-001` con Drive ID `1bISDPbHLqRsw2nK5LwLH3ghlzG6wW18u`. El audio nativo `Crave You` no pudo verificarse porque la sesión del navegador disponible no estaba autenticada; no se pidieron credenciales ni se presumió disponibilidad. Maeve sigue en `Review`: no se generó video, no se programó ni se publicó.
 
 - **[3.19.00] — 2026-08-23 (Manus): Reorientación de la optimización de hook hacia Maeve/Crave You.** Fernando descartó la dirección de Silvio arrojando una piedra; la revisión `MPM-002-V2-SILVIO-KARMA` queda `Archived_Not_Active` y se conserva solo como historial. El aprendizaje de `MPM-001` —hacer visible la acción antes de 1.5 segundos y evitar una entrada atmosférica lenta— se aplica ahora a `CON-2026-08-24-CraveYou-MaeveFeathers` mediante `HOOK-FIRST-V1`: Maeve como único personaje, espejo y plumas en una sola locación, pluma cruzando la lente desde el primer cuadro, reacción inmediata, órbita breve y duración objetivo de 8–10 segundos. El caso permanece en `Review`; no se produjeron assets, no se programó ni se publicó.
 

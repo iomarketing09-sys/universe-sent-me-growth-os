@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 3.9
+**Versión:** 4.0
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -717,3 +717,22 @@ Fernando debe aprobar esta simplificación, el caption propuesto, el rango de du
 **Estado operativo:** esta revisión queda en `Review`. No autoriza generación de imágenes, generación de video, programación, publicación, afiliación ni modificación del calendario.
 
 **Documentos que requieren coherencia:** `GrowthOS/01_02_Content_Backlog.md`, `GrowthOS/07_00_Registro_Maestro_Reels.md`, `GrowthOS/00_Índice.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`. La propuesta anterior de Silvio con piedra queda archivada como historial descartado y no es una dirección activa.
+
+
+## Preflight aprobado — Maeve hook-first — 2026-08-23
+
+Fernando aprobó la preparación del storyboard/keyframe y la comprobación de audio para `CON-2026-08-24-CraveYou-MaeveFeathers-HOOK-FIRST-V1`. El alcance preliminar se acota a **Facebook Reels e Instagram Reels**, por continuidad con la publicación cross-platform de MPM-001; TikTok y YouTube Shorts quedan fuera de este preflight y requerirían una decisión posterior.
+
+El storyboard de revisión conserva la secuencia definida arriba: una pluma cruza la lente y Maeve levanta la mirada en 0.0–0.6 s; el reflejo queda alineado y una segunda pluma se detiene en 0.6–2.5 s; la órbita breve comienza en 2.5–5.5 s; Maeve cierra la mano y detiene las plumas en 5.5–8.5 s. El rango total de 8–10 segundos permanece objetivo, no duración final fijada.
+
+| Preflight | Resultado | Estado |
+|---|---|---|
+| Referencia de identidad | `Generate_reference_Chica.jpeg`, Drive file ID `1SGd3wzzf-WR-db-foL6Nh67-YO49hgt6` | Verificada para rostro, cabello, pecas, cárdigan gris y silueta adulta |
+| Keyframe hook-first | [`CON-2026-08-24_CraveYou_Maeve_HOOK-FIRST-V1_keyframe_review.png`](https://drive.google.com/file/d/1bISDPbHLqRsw2nK5LwLH3ghlzG6wW18u/view?usp=drivesdk), Drive file ID `1bISDPbHLqRsw2nK5LwLH3ghlzG6wW18u` | Generado y guardado como material de revisión; no es video ni asset publicado |
+| Storyboard | Secuencia de cuatro beats descrita arriba | Preparado para revisión |
+| Audio `Crave You` | Facebook Reels e Instagram Reels | No verificado: la sesión del navegador disponible mostró una pantalla de acceso no autenticada; no se usaron credenciales ni se presume disponibilidad nativa |
+| Producción/publicación | Sin generación de video, programación, publicación, afiliación ni modificación de calendario | Bloqueado hasta aprobación explícita posterior |
+
+La referencia oficial se usó únicamente para identidad; la composición del keyframe usa la locación editorial aprobada y excluye gato, Kael, Kiri, terceros, texto en pantalla, romance nuevo y sensualidad explícita. El keyframe queda en `Review` y no constituye autorización para generar clips. La siguiente decisión humana es confirmar si el keyframe conserva suficientemente la identidad de Maeve y, si procede, habilitar una verificación manual de audio nativo en Facebook e Instagram mediante la sesión real del usuario; la disponibilidad no debe inferirse de servicios externos de streaming.
+
+**Documentos que requieren coherencia:** `GrowthOS/01_02_Content_Backlog.md`, `GrowthOS/07_00_Registro_Maestro_Reels.md`, `GrowthOS/00_Índice.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
