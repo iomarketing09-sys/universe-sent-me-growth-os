@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.6"
+version: "2.7"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -556,3 +556,19 @@ Fernando confirmó la publicación de cuatro respuestas: tres comentarios de pub
 | Grupo `♠️ᴇɴꜱᴜᴇɴ̃ᴏ ᴏꜱᴄᴜʀᴏ♠️` | Comentario de Sara Gonzalez sobre experiencias difíciles | Navegador autenticado | Facebook mostró la respuesta de Universe Sent Me publicada dentro del hilo aproximadamente un minuto después del envío. La API no permite verificar este objeto de grupo con el token actual. |
 
 La respuesta del grupo fue deliberadamente neutral y empática: “Gracias por compartir tu experiencia. Lamento que hayas atravesado situaciones tan difíciles. Te mando mucha fuerza y deseo que puedas contar con personas de confianza y apoyo profesional cercano.” No valida como hechos las afirmaciones sensibles del comentario ni ofrece diagnóstico. El comentario de grupo no se incorpora al ledger CSV de publicaciones propias porque la API de la Página no lo expone de forma fiable.
+
+
+## 36. Nuevo corte API — seis oportunidades de respuesta
+
+La revisión exclusiva mediante Meta Graph API v26, posterior al último lote publicado, detectó seis comentarios de usuarios sin respuesta de Universe Sent Me:
+
+| Publicación | Comentario | Clasificación |
+|---|---|---|
+| `122151376083072582` | “de mis ejecrcicios de kegel no van a estar hablando .” | Humor con insinuación; se recomienda responder sin repetir el contenido íntimo. |
+| `122151376011072582` | “Desde que te tengo” | Frase musical/emocional; responder al sentido de vínculo. |
+| `122151376011072582` | “After all these years de Journey” | Recomendación musical; reconocer la permanencia del clásico. |
+| `122151376011072582` | “Para alguien romantico: Unintended. Para un amigo: Roads Untraveled. Para mi mismo: Waiting for the end.” | Playlist por contexto emocional; reconocer el mapa de estados sin inventar datos. |
+| `122151376011072582` | “The beautiful people” | Recomendación musical; responder a la energía rebelde de la canción. |
+| `122151375549072582` | “Y se hizo el BigBang jajajaja” | Remate cósmico; mantener el humor sin explicación científica innecesaria. |
+
+Las seis respuestas quedan `Pendiente_Respuesta` hasta aprobación de Fernando. Las menciones automáticas de la página continúan fuera de la cola cualitativa. No se revisaron publicaciones de grupos en este corte.

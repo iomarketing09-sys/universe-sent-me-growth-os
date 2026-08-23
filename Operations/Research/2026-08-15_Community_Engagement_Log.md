@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-22
-version: "2.3"
+version: "2.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -182,3 +182,19 @@ La revisión exclusiva mediante Meta Graph API v26 encontró tres comentarios de
 | `122151374823072582_29175971021989551` | `122151374823072582` | Remate humorístico sobre “farmeo” | `¡Que se arme el farmeo entonces! 😂✨` | `Respondido` |
 
 Las menciones automáticas de `@seguidores` y `@fansdestacados` permanecen fuera de la cola de conversación. El seguimiento anterior sobre la playlist ya fue respondido y no debe duplicarse.
+
+
+## 17. Nuevo corte API — seis comentarios pendientes posteriores al 22 de agosto
+
+La consulta exclusiva mediante Meta Graph API v26 detectó seis comentarios de usuarios posteriores a la última respuesta publicada (`2026-08-22T21:23:54+0000`). En el corte, ninguno tenía respuesta de Universe Sent Me. Las menciones automáticas no se incluyeron.
+
+| Comentario_ID | Señal anonimizada | Respuesta sugerida | Estado |
+|---|---|---|---|
+| `122151376083072582_1645620013842129` | Remate humorístico con insinuación | `Jajaja, hay temas que mejor se quedan fuera del informe oficial. 😂🙈` | `Pendiente_Respuesta` |
+| `122151376011072582_2264341507649153` | Frase musical sobre vínculo | `Esa frase suena a canción que convierte una persona en hogar. ❤️🎶` | `Pendiente_Respuesta` |
+| `122151376011072582_1388537403384828` | Recomendación musical de Journey | `Un clásico para cuando los años pasan, pero ciertas canciones siguen encontrando el mismo lugar. 🎶✨` | `Pendiente_Respuesta` |
+| `122151376011072582_1035056722682494` | Playlist con tres contextos emocionales | `Eso ya es un mapa emocional completo: amor, amistad y conversación contigo mismo. 🎶✨` | `Pendiente_Respuesta` |
+| `122151376011072582_1359177262629611` | Recomendación de “The Beautiful People” | `The Beautiful People siempre llega con esa energía rebelde que no pide permiso. 🤘🎶` | `Pendiente_Respuesta` |
+| `122151375549072582_2632055060570783` | Remate sobre energía y Big Bang | `Jajaja, así empiezan los grandes desórdenes cósmicos. 💥✨` | `Pendiente_Respuesta` |
+
+La primera respuesta mantiene el humor sin repetir ni amplificar el contenido íntimo del comentario. Las respuestas musicales reconocen la referencia concreta y los dos remates mantienen la complicidad del contenido original. No se publicó ninguna respuesta en esta revisión.
