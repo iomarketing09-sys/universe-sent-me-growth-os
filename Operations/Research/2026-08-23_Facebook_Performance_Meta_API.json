@@ -1,0 +1,1502 @@
+{
+  "title": "Facebook recent performance — Meta Graph API read-only snapshot",
+  "purpose": "Recent Page post engagement and exposed per-post/Page insight metrics for Growth OS review.",
+  "status": "Active",
+  "created_at": "2026-08-23",
+  "last_updated": "2026-08-23",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "GrowthOS/Integracion_Growth_OS.md",
+    "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md",
+    "Operations/Research/2026-08-22_Analisis_Semanal_20260816_20260822.md",
+    "Operations/Research/2026-08-15_Publication_Log.csv",
+    "Operations/Research/2026-08-15_ExperimentLog.csv"
+  ],
+  "source": "Meta Graph API v26.0",
+  "page_id": "1036844829507460",
+  "account_name": "Universe Sent Me",
+  "retrieved_at": "2026-08-23T20:04:20.380036+00:00",
+  "posts_requested": 20,
+  "posts_returned": 20,
+  "insight_metrics_requested": [
+    "post_impressions",
+    "post_impressions_unique",
+    "post_engaged_users",
+    "post_clicks",
+    "post_reactions_by_type_total",
+    "post_video_views",
+    "post_video_avg_time_watched"
+  ],
+  "page_insight_window": {
+    "since": "2026-08-16",
+    "until_exclusive": "2026-08-24",
+    "period": "day"
+  },
+  "page_insights": {
+    "page_impressions": {
+      "metric": "page_impressions",
+      "status_code": 400,
+      "error": {
+        "message": "(#100) The value must be a valid insights metric",
+        "type": "OAuthException",
+        "code": 100,
+        "fbtrace_id": "A2nqK8DS86wftCc_QTTtAKP"
+      }
+    },
+    "page_impressions_unique": {
+      "metric": "page_impressions_unique",
+      "status_code": 400,
+      "error": {
+        "message": "(#100) The value must be a valid insights metric",
+        "type": "OAuthException",
+        "code": 100,
+        "fbtrace_id": "A7sDoOkBD5m8n8nlFJLNEI2"
+      }
+    },
+    "page_engaged_users": {
+      "metric": "page_engaged_users",
+      "status_code": 400,
+      "error": {
+        "message": "(#100) The value must be a valid insights metric",
+        "type": "OAuthException",
+        "code": 100,
+        "fbtrace_id": "Ai5WnpRBui2MNKwao3gIbeD"
+      }
+    },
+    "page_post_engagements": {
+      "metric": "page_post_engagements",
+      "status_code": 200,
+      "value": null,
+      "raw": []
+    },
+    "page_actions_post_reactions_total": {
+      "metric": "page_actions_post_reactions_total",
+      "status_code": 200,
+      "value": null,
+      "raw": []
+    },
+    "page_actions_post_comments": {
+      "metric": "page_actions_post_comments",
+      "status_code": 400,
+      "error": {
+        "message": "(#100) The value must be a valid insights metric",
+        "type": "OAuthException",
+        "code": 100,
+        "fbtrace_id": "ACYQtaQUWPNsQMuC_ccwDGu"
+      }
+    },
+    "page_actions_post_shares": {
+      "metric": "page_actions_post_shares",
+      "status_code": 400,
+      "error": {
+        "message": "(#100) The value must be a valid insights metric",
+        "type": "OAuthException",
+        "code": 100,
+        "fbtrace_id": "As2sOEvgGcvTUM4JtlbTSxc"
+      }
+    }
+  },
+  "posts": [
+    {
+      "id": "1036844829507460_122151376365072582",
+      "created_time": "2026-08-23T18:30:00+0000",
+      "message": "💔 #UniverseSentMe",
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151376365072582",
+      "content_types": [
+        "photo"
+      ],
+      "reactions": 10,
+      "comments": 1,
+      "shares": 1,
+      "engagement_public": 12,
+      "insights": {
+        "post_impressions": {
+          "metric": "post_impressions",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AEEFaJ8ZCDI3HkwqjJMakLr"
+          }
+        },
+        "post_impressions_unique": {
+          "metric": "post_impressions_unique",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AJjK124c3VLvozD8JHldKdU"
+          }
+        },
+        "post_engaged_users": {
+          "metric": "post_engaged_users",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "Amz5UhoHyDhueo3luBV0gCf"
+          }
+        },
+        "post_clicks": {
+          "metric": "post_clicks",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_reactions_by_type_total": {
+          "metric": "post_reactions_by_type_total",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_views": {
+          "metric": "post_video_views",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_avg_time_watched": {
+          "metric": "post_video_avg_time_watched",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        }
+      },
+      "retrieved_at": "2026-08-23T20:04:20.380036+00:00"
+    },
+    {
+      "id": "1036844829507460_122151376281072582",
+      "created_time": "2026-08-23T15:00:08+0000",
+      "message": "🤯🌀😂 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151376281072582",
+      "content_types": [
+        "photo"
+      ],
+      "reactions": 22,
+      "comments": 2,
+      "shares": 3,
+      "engagement_public": 27,
+      "insights": {
+        "post_impressions": {
+          "metric": "post_impressions",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AeafGDFf2vSUcptw8BZdvq5"
+          }
+        },
+        "post_impressions_unique": {
+          "metric": "post_impressions_unique",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "A4ggkuSC_ZtMI1ma-Uo37mj"
+          }
+        },
+        "post_engaged_users": {
+          "metric": "post_engaged_users",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "Axga6OuKsTNWIaB6gKslGHH"
+          }
+        },
+        "post_clicks": {
+          "metric": "post_clicks",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_reactions_by_type_total": {
+          "metric": "post_reactions_by_type_total",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_views": {
+          "metric": "post_video_views",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_avg_time_watched": {
+          "metric": "post_video_avg_time_watched",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        }
+      },
+      "retrieved_at": "2026-08-23T20:04:20.380036+00:00"
+    },
+    {
+      "id": "1036844829507460_122154733605072582",
+      "created_time": "2026-08-23T03:00:08+0000",
+      "message": "😔 #GansoUSM #MemesUSM #UniverseSentMe",
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122154733605072582",
+      "content_types": [
+        "photo"
+      ],
+      "reactions": 43,
+      "comments": 2,
+      "shares": 25,
+      "engagement_public": 70,
+      "insights": {
+        "post_impressions": {
+          "metric": "post_impressions",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AnVrlDNcK3fvwqpQ4KC9lff"
+          }
+        },
+        "post_impressions_unique": {
+          "metric": "post_impressions_unique",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "A4HzqwelNkMud-cYexOv7Dt"
+          }
+        },
+        "post_engaged_users": {
+          "metric": "post_engaged_users",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AWS6u9iigGVr81IWkoQBvQx"
+          }
+        },
+        "post_clicks": {
+          "metric": "post_clicks",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_reactions_by_type_total": {
+          "metric": "post_reactions_by_type_total",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_views": {
+          "metric": "post_video_views",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_avg_time_watched": {
+          "metric": "post_video_avg_time_watched",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        }
+      },
+      "retrieved_at": "2026-08-23T20:04:20.380036+00:00"
+    },
+    {
+      "id": "1036844829507460_122151376203072582",
+      "created_time": "2026-08-23T00:00:02+0000",
+      "message": "🌙 #UniverseSentMe",
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151376203072582",
+      "content_types": [
+        "photo"
+      ],
+      "reactions": 14,
+      "comments": 1,
+      "shares": 2,
+      "engagement_public": 17,
+      "insights": {
+        "post_impressions": {
+          "metric": "post_impressions",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "ABjdBT65NDUF9gm_BgDF9V4"
+          }
+        },
+        "post_impressions_unique": {
+          "metric": "post_impressions_unique",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "ApvWYeNp6PQzvlYdp6vmnhE"
+          }
+        },
+        "post_engaged_users": {
+          "metric": "post_engaged_users",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "ANzGxOFDqH6jcUyAjAwAmEg"
+          }
+        },
+        "post_clicks": {
+          "metric": "post_clicks",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_reactions_by_type_total": {
+          "metric": "post_reactions_by_type_total",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_views": {
+          "metric": "post_video_views",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_avg_time_watched": {
+          "metric": "post_video_avg_time_watched",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        }
+      },
+      "retrieved_at": "2026-08-23T20:04:20.380036+00:00"
+    },
+    {
+      "id": "1036844829507460_122154842337072582",
+      "created_time": "2026-08-22T22:23:57+0000",
+      "message": "Ella no está disponible en este plano. 👀\n\n #UniverseSentMe #ElaraUSM #letithappen #tameimpala",
+      "permalink_url": "https://www.facebook.com/reel/1581447113440863/",
+      "content_types": [
+        "video"
+      ],
+      "reactions": 21,
+      "comments": 2,
+      "shares": 2,
+      "engagement_public": 25,
+      "insights": {
+        "post_impressions": {
+          "metric": "post_impressions",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AwNKykiUXVF64RwQHHzleOM"
+          }
+        },
+        "post_impressions_unique": {
+          "metric": "post_impressions_unique",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "A5BrUXdj2bfQoZXKSJ0Go2h"
+          }
+        },
+        "post_engaged_users": {
+          "metric": "post_engaged_users",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "A2Obj0uYDabnksJ4AgkMyKt"
+          }
+        },
+        "post_clicks": {
+          "metric": "post_clicks",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_reactions_by_type_total": {
+          "metric": "post_reactions_by_type_total",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_views": {
+          "metric": "post_video_views",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_avg_time_watched": {
+          "metric": "post_video_avg_time_watched",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        }
+      },
+      "retrieved_at": "2026-08-23T20:04:20.380036+00:00"
+    },
+    {
+      "id": "1036844829507460_122151376083072582",
+      "created_time": "2026-08-22T18:30:00+0000",
+      "message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "content_types": [
+        "photo"
+      ],
+      "reactions": 221,
+      "comments": 14,
+      "shares": 33,
+      "engagement_public": 268,
+      "insights": {
+        "post_impressions": {
+          "metric": "post_impressions",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "Amjg6TlMNN6SO0sDmSBgxPO"
+          }
+        },
+        "post_impressions_unique": {
+          "metric": "post_impressions_unique",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AUoKQI_EBgVzd60VxWXhssL"
+          }
+        },
+        "post_engaged_users": {
+          "metric": "post_engaged_users",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AOL7-i2-zlFPgemvFibDCbG"
+          }
+        },
+        "post_clicks": {
+          "metric": "post_clicks",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_reactions_by_type_total": {
+          "metric": "post_reactions_by_type_total",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_views": {
+          "metric": "post_video_views",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_avg_time_watched": {
+          "metric": "post_video_avg_time_watched",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        }
+      },
+      "retrieved_at": "2026-08-23T20:04:20.380036+00:00"
+    },
+    {
+      "id": "1036844829507460_122151376011072582",
+      "created_time": "2026-08-22T16:00:07+0000",
+      "message": "😌 #UniverseSentMe",
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151376011072582",
+      "content_types": [
+        "photo"
+      ],
+      "reactions": 22,
+      "comments": 26,
+      "shares": 4,
+      "engagement_public": 52,
+      "insights": {
+        "post_impressions": {
+          "metric": "post_impressions",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AwaaijrXUDlaGOhR55Enp9u"
+          }
+        },
+        "post_impressions_unique": {
+          "metric": "post_impressions_unique",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AvsJgqyrnM7fzynnfkzMJ50"
+          }
+        },
+        "post_engaged_users": {
+          "metric": "post_engaged_users",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AS6djkuPuNH0HtU8G2MZQC_"
+          }
+        },
+        "post_clicks": {
+          "metric": "post_clicks",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_reactions_by_type_total": {
+          "metric": "post_reactions_by_type_total",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_views": {
+          "metric": "post_video_views",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_avg_time_watched": {
+          "metric": "post_video_avg_time_watched",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        }
+      },
+      "retrieved_at": "2026-08-23T20:04:20.380036+00:00"
+    },
+    {
+      "id": "1036844829507460_122151375927072582",
+      "created_time": "2026-08-22T15:00:12+0000",
+      "message": "💪📸😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151375927072582",
+      "content_types": [
+        "photo"
+      ],
+      "reactions": 46,
+      "comments": 4,
+      "shares": 8,
+      "engagement_public": 58,
+      "insights": {
+        "post_impressions": {
+          "metric": "post_impressions",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AMB7XmvqL0Ot5ghZqQxu-YJ"
+          }
+        },
+        "post_impressions_unique": {
+          "metric": "post_impressions_unique",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "ALquS2BcW-EvIi4eiVRfCrt"
+          }
+        },
+        "post_engaged_users": {
+          "metric": "post_engaged_users",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "A-pWylRPn8FjTLXBpMpdYJp"
+          }
+        },
+        "post_clicks": {
+          "metric": "post_clicks",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_reactions_by_type_total": {
+          "metric": "post_reactions_by_type_total",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_views": {
+          "metric": "post_video_views",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_avg_time_watched": {
+          "metric": "post_video_avg_time_watched",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        }
+      },
+      "retrieved_at": "2026-08-23T20:04:20.380036+00:00"
+    },
+    {
+      "id": "1036844829507460_122151375843072582",
+      "created_time": "2026-08-22T00:00:05+0000",
+      "message": "Analizando mi propio caos. 🧐 #UniverseSentMe",
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151375843072582",
+      "content_types": [
+        "photo"
+      ],
+      "reactions": 103,
+      "comments": 3,
+      "shares": 37,
+      "engagement_public": 143,
+      "insights": {
+        "post_impressions": {
+          "metric": "post_impressions",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "ACb3ydbF7SBjspp3EwpDDT0"
+          }
+        },
+        "post_impressions_unique": {
+          "metric": "post_impressions_unique",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "Aq-mv9D7-bZlv1P0EqfbrCe"
+          }
+        },
+        "post_engaged_users": {
+          "metric": "post_engaged_users",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "Ao6VUoNgW_lvWmdmSG72oh2"
+          }
+        },
+        "post_clicks": {
+          "metric": "post_clicks",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_reactions_by_type_total": {
+          "metric": "post_reactions_by_type_total",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_views": {
+          "metric": "post_video_views",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_avg_time_watched": {
+          "metric": "post_video_avg_time_watched",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        }
+      },
+      "retrieved_at": "2026-08-23T20:04:20.380036+00:00"
+    },
+    {
+      "id": "1036844829507460_122154017667072582",
+      "created_time": "2026-08-21T21:30:59+0000",
+      "message": "Universe viéndote Farmear Aura \n\n #UniverseSentMe #UniverseUSM",
+      "permalink_url": "https://www.facebook.com/reel/2005557463434064/",
+      "content_types": [
+        "video"
+      ],
+      "reactions": 10,
+      "comments": 1,
+      "shares": 1,
+      "engagement_public": 12,
+      "insights": {
+        "post_impressions": {
+          "metric": "post_impressions",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "Ap8JYRGwCb8FlyrcMqv1lKx"
+          }
+        },
+        "post_impressions_unique": {
+          "metric": "post_impressions_unique",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "As-3SkZSCOKaCMPMhz5WRwJ"
+          }
+        },
+        "post_engaged_users": {
+          "metric": "post_engaged_users",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "ApQk_DjLesG-HOeeXpcbKCj"
+          }
+        },
+        "post_clicks": {
+          "metric": "post_clicks",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_reactions_by_type_total": {
+          "metric": "post_reactions_by_type_total",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_views": {
+          "metric": "post_video_views",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_avg_time_watched": {
+          "metric": "post_video_avg_time_watched",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        }
+      },
+      "retrieved_at": "2026-08-23T20:04:20.380036+00:00"
+    },
+    {
+      "id": "1036844829507460_122151375759072582",
+      "created_time": "2026-08-21T18:30:00+0000",
+      "message": "☕💌🔥 #ElaraUSM #MemesUSM #UniverseSentMe",
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151375759072582",
+      "content_types": [
+        "photo"
+      ],
+      "reactions": 26,
+      "comments": 2,
+      "shares": 11,
+      "engagement_public": 39,
+      "insights": {
+        "post_impressions": {
+          "metric": "post_impressions",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "ADZxvhlOgMwWfe6FDrmOifG"
+          }
+        },
+        "post_impressions_unique": {
+          "metric": "post_impressions_unique",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "APbnMGuK5mfnNuBFfEfr3Mk"
+          }
+        },
+        "post_engaged_users": {
+          "metric": "post_engaged_users",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AU3Ln-pYlFYD2pnglgyHFm8"
+          }
+        },
+        "post_clicks": {
+          "metric": "post_clicks",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_reactions_by_type_total": {
+          "metric": "post_reactions_by_type_total",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_views": {
+          "metric": "post_video_views",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_avg_time_watched": {
+          "metric": "post_video_avg_time_watched",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        }
+      },
+      "retrieved_at": "2026-08-23T20:04:20.380036+00:00"
+    },
+    {
+      "id": "1036844829507460_122151375627072582",
+      "created_time": "2026-08-21T16:00:07+0000",
+      "message": "🙂‍↔️ #UniverseSentMe",
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151375627072582",
+      "content_types": [
+        "photo"
+      ],
+      "reactions": 122,
+      "comments": 1,
+      "shares": 48,
+      "engagement_public": 171,
+      "insights": {
+        "post_impressions": {
+          "metric": "post_impressions",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AAut-s_XNO7_QhtRwAkJFHG"
+          }
+        },
+        "post_impressions_unique": {
+          "metric": "post_impressions_unique",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "ANy0HSPfKdMYDr5FwDCeraV"
+          }
+        },
+        "post_engaged_users": {
+          "metric": "post_engaged_users",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "A4blOQt2U0eoB8caX2oLhB9"
+          }
+        },
+        "post_clicks": {
+          "metric": "post_clicks",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_reactions_by_type_total": {
+          "metric": "post_reactions_by_type_total",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_views": {
+          "metric": "post_video_views",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_avg_time_watched": {
+          "metric": "post_video_avg_time_watched",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        }
+      },
+      "retrieved_at": "2026-08-23T20:04:20.380036+00:00"
+    },
+    {
+      "id": "1036844829507460_122151375549072582",
+      "created_time": "2026-08-21T15:00:10+0000",
+      "message": "☁️✨🤔",
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "content_types": [
+        "photo"
+      ],
+      "reactions": 2029,
+      "comments": 52,
+      "shares": 765,
+      "engagement_public": 2846,
+      "insights": {
+        "post_impressions": {
+          "metric": "post_impressions",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AXohPPvc9EmnUxBMnriMeYE"
+          }
+        },
+        "post_impressions_unique": {
+          "metric": "post_impressions_unique",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "ANdfSvSrdoiwIDPkzOTqFLd"
+          }
+        },
+        "post_engaged_users": {
+          "metric": "post_engaged_users",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AHlGLoGfD_gnte1t7g1M7Uc"
+          }
+        },
+        "post_clicks": {
+          "metric": "post_clicks",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_reactions_by_type_total": {
+          "metric": "post_reactions_by_type_total",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_views": {
+          "metric": "post_video_views",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_avg_time_watched": {
+          "metric": "post_video_avg_time_watched",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        }
+      },
+      "retrieved_at": "2026-08-23T20:04:20.380036+00:00"
+    },
+    {
+      "id": "1036844829507460_122151375465072582",
+      "created_time": "2026-08-21T00:00:05+0000",
+      "message": "💞🫶✨ #MaeveUSM #KaelUSM #UniverseSentMe",
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151375465072582",
+      "content_types": [
+        "photo"
+      ],
+      "reactions": 28,
+      "comments": 2,
+      "shares": 4,
+      "engagement_public": 34,
+      "insights": {
+        "post_impressions": {
+          "metric": "post_impressions",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "Ak2_Wcq3LTfsfLWlJ_NlT77"
+          }
+        },
+        "post_impressions_unique": {
+          "metric": "post_impressions_unique",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "ANexq95Lz_K8B9T7EBCT3kj"
+          }
+        },
+        "post_engaged_users": {
+          "metric": "post_engaged_users",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AEIXw9H-pBgGFU927m4hpv5"
+          }
+        },
+        "post_clicks": {
+          "metric": "post_clicks",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_reactions_by_type_total": {
+          "metric": "post_reactions_by_type_total",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_views": {
+          "metric": "post_video_views",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_avg_time_watched": {
+          "metric": "post_video_avg_time_watched",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        }
+      },
+      "retrieved_at": "2026-08-23T20:04:20.380036+00:00"
+    },
+    {
+      "id": "1036844829507460_122153750763072582",
+      "created_time": "2026-08-20T23:04:21+0000",
+      "message": "Hay personas que se quedan en el retrovisor aunque ya no vayan contigo.\n\nRemote Control — Sussie 4 ft. León Larregui.\n\n¿Qué canción te lleva de vuelta sin pedir permiso?\n\n#UniverseSentMe #EvanUSM #ElaraUSM #MomentosUSM #Sussie4 #leonlarregui",
+      "permalink_url": "https://www.facebook.com/reel/2815726225473165/",
+      "content_types": [
+        "video"
+      ],
+      "reactions": 7,
+      "comments": 1,
+      "shares": 3,
+      "engagement_public": 11,
+      "insights": {
+        "post_impressions": {
+          "metric": "post_impressions",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "A60HZ-AYVPkVU84Jt99m71C"
+          }
+        },
+        "post_impressions_unique": {
+          "metric": "post_impressions_unique",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "A_ONWlbqj_wXzSfT5YQ3ngx"
+          }
+        },
+        "post_engaged_users": {
+          "metric": "post_engaged_users",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "ARM2OymC8bnzHELVnv_VKXh"
+          }
+        },
+        "post_clicks": {
+          "metric": "post_clicks",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_reactions_by_type_total": {
+          "metric": "post_reactions_by_type_total",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_views": {
+          "metric": "post_video_views",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_avg_time_watched": {
+          "metric": "post_video_avg_time_watched",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        }
+      },
+      "retrieved_at": "2026-08-23T20:04:20.380036+00:00"
+    },
+    {
+      "id": "1036844829507460_122151375375072582",
+      "created_time": "2026-08-20T22:00:13+0000",
+      "message": "🫣 #UniverseSentMe",
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151375375072582",
+      "content_types": [
+        "photo"
+      ],
+      "reactions": 42,
+      "comments": 2,
+      "shares": 15,
+      "engagement_public": 59,
+      "insights": {
+        "post_impressions": {
+          "metric": "post_impressions",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "A1wQqDdjFzZGAWcU1BHN2M3"
+          }
+        },
+        "post_impressions_unique": {
+          "metric": "post_impressions_unique",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AtiOLnNK8xISvVWgnW8JOZ0"
+          }
+        },
+        "post_engaged_users": {
+          "metric": "post_engaged_users",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AvJE734PRlEyuqlywlDalCH"
+          }
+        },
+        "post_clicks": {
+          "metric": "post_clicks",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_reactions_by_type_total": {
+          "metric": "post_reactions_by_type_total",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_views": {
+          "metric": "post_video_views",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_avg_time_watched": {
+          "metric": "post_video_avg_time_watched",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        }
+      },
+      "retrieved_at": "2026-08-23T20:04:20.380036+00:00"
+    },
+    {
+      "id": "1036844829507460_122151375303072582",
+      "created_time": "2026-08-20T21:00:03+0000",
+      "message": "🧠🌲🤨 #WilfredUSM #MemesUSM #UniverseSentMe",
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151375303072582",
+      "content_types": [
+        "photo"
+      ],
+      "reactions": 24,
+      "comments": 3,
+      "shares": 9,
+      "engagement_public": 36,
+      "insights": {
+        "post_impressions": {
+          "metric": "post_impressions",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "Akm7DMILHCuhYxCucHByHOK"
+          }
+        },
+        "post_impressions_unique": {
+          "metric": "post_impressions_unique",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "A9xTcqPJ_elu8UFPWUvwAzP"
+          }
+        },
+        "post_engaged_users": {
+          "metric": "post_engaged_users",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "A9JkSzrUaGT8HRO7Pyo1WWe"
+          }
+        },
+        "post_clicks": {
+          "metric": "post_clicks",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_reactions_by_type_total": {
+          "metric": "post_reactions_by_type_total",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_views": {
+          "metric": "post_video_views",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_avg_time_watched": {
+          "metric": "post_video_avg_time_watched",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        }
+      },
+      "retrieved_at": "2026-08-23T20:04:20.380036+00:00"
+    },
+    {
+      "id": "1036844829507460_122151375189072582",
+      "created_time": "2026-08-20T18:30:00+0000",
+      "message": "🤨 #UniverseSentMe",
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151375189072582",
+      "content_types": [
+        "photo"
+      ],
+      "reactions": 29,
+      "comments": 5,
+      "shares": 5,
+      "engagement_public": 39,
+      "insights": {
+        "post_impressions": {
+          "metric": "post_impressions",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "Ag9qiUYUQWCk0hnzntIj6cv"
+          }
+        },
+        "post_impressions_unique": {
+          "metric": "post_impressions_unique",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "A8AlSaMR9d3oK38SrsnC6mN"
+          }
+        },
+        "post_engaged_users": {
+          "metric": "post_engaged_users",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AuxGEfdFQ6Y0t-GtyWfSU9w"
+          }
+        },
+        "post_clicks": {
+          "metric": "post_clicks",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_reactions_by_type_total": {
+          "metric": "post_reactions_by_type_total",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_views": {
+          "metric": "post_video_views",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_avg_time_watched": {
+          "metric": "post_video_avg_time_watched",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        }
+      },
+      "retrieved_at": "2026-08-23T20:04:20.380036+00:00"
+    },
+    {
+      "id": "1036844829507460_122151375111072582",
+      "created_time": "2026-08-20T16:00:54+0000",
+      "message": "💸🪿😂 #GansoUSM #MemesUSM #UniverseSentMe",
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151375111072582",
+      "content_types": [
+        "photo"
+      ],
+      "reactions": 54,
+      "comments": 2,
+      "shares": 25,
+      "engagement_public": 81,
+      "insights": {
+        "post_impressions": {
+          "metric": "post_impressions",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AYNXOZv86tW-iIcd8EANvQR"
+          }
+        },
+        "post_impressions_unique": {
+          "metric": "post_impressions_unique",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "A0dNTzT1re7fp0wjnHot6AW"
+          }
+        },
+        "post_engaged_users": {
+          "metric": "post_engaged_users",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "A0P_Z5WRcmjPeOvtpPrlCak"
+          }
+        },
+        "post_clicks": {
+          "metric": "post_clicks",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_reactions_by_type_total": {
+          "metric": "post_reactions_by_type_total",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_views": {
+          "metric": "post_video_views",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_avg_time_watched": {
+          "metric": "post_video_avg_time_watched",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        }
+      },
+      "retrieved_at": "2026-08-23T20:04:20.380036+00:00"
+    },
+    {
+      "id": "1036844829507460_122151374997072582",
+      "created_time": "2026-08-20T15:00:23+0000",
+      "message": "😳🧠🐱 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151374997072582",
+      "content_types": [
+        "photo"
+      ],
+      "reactions": 54,
+      "comments": 0,
+      "shares": 27,
+      "engagement_public": 81,
+      "insights": {
+        "post_impressions": {
+          "metric": "post_impressions",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AetaKYWX9Ax029aiObstPlf"
+          }
+        },
+        "post_impressions_unique": {
+          "metric": "post_impressions_unique",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "AC_HVt4SdXVeNsa9IGIebDG"
+          }
+        },
+        "post_engaged_users": {
+          "metric": "post_engaged_users",
+          "status_code": 400,
+          "error": {
+            "message": "(#100) The value must be a valid insights metric",
+            "type": "OAuthException",
+            "code": 100,
+            "fbtrace_id": "Ai1wcFlGUgCOcCOplGzlYg2"
+          }
+        },
+        "post_clicks": {
+          "metric": "post_clicks",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_reactions_by_type_total": {
+          "metric": "post_reactions_by_type_total",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_views": {
+          "metric": "post_video_views",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        },
+        "post_video_avg_time_watched": {
+          "metric": "post_video_avg_time_watched",
+          "status_code": 200,
+          "value": null,
+          "raw": []
+        }
+      },
+      "retrieved_at": "2026-08-23T20:04:20.380036+00:00"
+    }
+  ]
+}

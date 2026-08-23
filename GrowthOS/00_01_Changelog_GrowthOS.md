@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-23
-**Versión:** 3.24
+**Versión:** 3.25
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.25.00] — 2026-08-23 (Manus): Reporte vivo de rendimiento y auditoría de integración de Facebook.** Meta Graph API v26.0 devolvió 20 publicaciones recientes con 4,081 interacciones públicas acumuladas (reacciones + comentarios + shares); la mediana fue 45.5 y el outlier filosófico representó 69.7% del total. El Growth OS está integrado a nivel documental —fuente métrica, Publication Log, ExperimentLog, HypothesisBank y reportes—, pero parcialmente a nivel de pipeline: 17/20 publicaciones recientes coinciden con los ledgers y no hay ventanas 24/72h cerradas ni alcance/retención utilizables en el snapshot. Se creó `Operations/Research/2026-08-23_Reporte_Rendimiento_Engagement_Facebook.md`, con gráfico y evidencia JSON, y se actualizó `GrowthOS/Integracion_Growth_OS.md` a v2.5.3.
 
 - **[3.24.00] — 2026-08-23 (Manus): Publicación verificada de tres respuestas aprobadas en Facebook.** Fernando aprobó responder tres comentarios del último corte y excluir `122151375549072582_2130811011171538` porque etiqueta a otra persona. Meta Graph API v26.0 confirmó HTTP 200, autoría de Universe Sent Me, `parent.id` correcto, texto exacto e `is_hidden=false` en los tres casos. No se publicaron otras respuestas pendientes. El ledger pasa a v3.5 y la auditoría de Facebook a v3.8.
 

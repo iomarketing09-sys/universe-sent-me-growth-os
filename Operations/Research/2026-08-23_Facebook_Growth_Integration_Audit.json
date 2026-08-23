@@ -1,0 +1,171 @@
+{
+  "api_retrieved_at": "2026-08-23T20:04:20.380036+00:00",
+  "api_post_count": 20,
+  "api_date_min": "2026-08-20T15:00:23+0000",
+  "api_date_max": "2026-08-23T18:30:00+0000",
+  "public_engagement": {
+    "n": 20,
+    "total_engagement_public": 4081,
+    "mean": 204.05,
+    "median": 45.5,
+    "max": 2846,
+    "total_reactions": 2927,
+    "total_comments": 126,
+    "total_shares": 1028
+  },
+  "shares_share_of_engagement": 0.2519,
+  "comments_share_of_engagement": 0.0309,
+  "reactions_share_of_engagement": 0.7172,
+  "top1_share": 0.6974,
+  "top2_share": 0.763,
+  "recent_posts_in_publication_log": 17,
+  "recent_posts_in_experiment_log": 17,
+  "recent_post_matches": [
+    {
+      "id": "1036844829507460_122151376365072582",
+      "short_id": "122151376365072582",
+      "publication_log_match": true,
+      "experiment_log_match": true
+    },
+    {
+      "id": "1036844829507460_122151376281072582",
+      "short_id": "122151376281072582",
+      "publication_log_match": true,
+      "experiment_log_match": true
+    },
+    {
+      "id": "1036844829507460_122154733605072582",
+      "short_id": "122154733605072582",
+      "publication_log_match": true,
+      "experiment_log_match": true
+    },
+    {
+      "id": "1036844829507460_122151376203072582",
+      "short_id": "122151376203072582",
+      "publication_log_match": true,
+      "experiment_log_match": true
+    },
+    {
+      "id": "1036844829507460_122154842337072582",
+      "short_id": "122154842337072582",
+      "publication_log_match": false,
+      "experiment_log_match": false
+    },
+    {
+      "id": "1036844829507460_122151376083072582",
+      "short_id": "122151376083072582",
+      "publication_log_match": true,
+      "experiment_log_match": true
+    },
+    {
+      "id": "1036844829507460_122151376011072582",
+      "short_id": "122151376011072582",
+      "publication_log_match": true,
+      "experiment_log_match": true
+    },
+    {
+      "id": "1036844829507460_122151375927072582",
+      "short_id": "122151375927072582",
+      "publication_log_match": true,
+      "experiment_log_match": true
+    },
+    {
+      "id": "1036844829507460_122151375843072582",
+      "short_id": "122151375843072582",
+      "publication_log_match": true,
+      "experiment_log_match": true
+    },
+    {
+      "id": "1036844829507460_122154017667072582",
+      "short_id": "122154017667072582",
+      "publication_log_match": false,
+      "experiment_log_match": false
+    },
+    {
+      "id": "1036844829507460_122151375759072582",
+      "short_id": "122151375759072582",
+      "publication_log_match": true,
+      "experiment_log_match": true
+    },
+    {
+      "id": "1036844829507460_122151375627072582",
+      "short_id": "122151375627072582",
+      "publication_log_match": true,
+      "experiment_log_match": true
+    },
+    {
+      "id": "1036844829507460_122151375549072582",
+      "short_id": "122151375549072582",
+      "publication_log_match": true,
+      "experiment_log_match": true
+    },
+    {
+      "id": "1036844829507460_122151375465072582",
+      "short_id": "122151375465072582",
+      "publication_log_match": true,
+      "experiment_log_match": true
+    },
+    {
+      "id": "1036844829507460_122153750763072582",
+      "short_id": "122153750763072582",
+      "publication_log_match": false,
+      "experiment_log_match": false
+    },
+    {
+      "id": "1036844829507460_122151375375072582",
+      "short_id": "122151375375072582",
+      "publication_log_match": true,
+      "experiment_log_match": true
+    },
+    {
+      "id": "1036844829507460_122151375303072582",
+      "short_id": "122151375303072582",
+      "publication_log_match": true,
+      "experiment_log_match": true
+    },
+    {
+      "id": "1036844829507460_122151375189072582",
+      "short_id": "122151375189072582",
+      "publication_log_match": true,
+      "experiment_log_match": true
+    },
+    {
+      "id": "1036844829507460_122151375111072582",
+      "short_id": "122151375111072582",
+      "publication_log_match": true,
+      "experiment_log_match": true
+    },
+    {
+      "id": "1036844829507460_122151374997072582",
+      "short_id": "122151374997072582",
+      "publication_log_match": true,
+      "experiment_log_match": true
+    }
+  ],
+  "experiment_log": {
+    "rows_total": 113,
+    "facebook_rows": 101,
+    "recent_published_rows": 30,
+    "recent_24h_nonempty": 0,
+    "recent_72h_nonempty": 0,
+    "recent_verdicts": {
+      "Pendiente_24h": 9,
+      "Corte_Observado_Lifetime": 19,
+      "El corte concentra 475 interacciones en 10 imágenes y 20 en 2 Reels. Por familia, Relatable_Social suma 156 interacciones/52 shares (n=3), Difusión_Minimal 148/33 (n=3), Ácido_Interpersonal 64/16 (n=2), Personaje_Marcador 78/24 (n=1), Conversación_Relacional 29/3 (n=1) y los Reels observados 20/4. Por personaje, Universe suma 256/67 en seis piezas, pero la señal cruza Universe, Ganso y una pieza sin personaje identificado; no se atribuye causalidad al personaje. Los shares favorecen situaciones transferibles y captions mínimos; los comentarios se concentran especialmente en las piezas ácidas/relacionales, pero la muestra no es pareada. La hipótesis TAX-02 queda reforzada direccionalmente; HUM-06 compatible pero no universal; HUM-02 exploratoria; Motion + POV/Meme no evaluable por falta de métricas nativas de video.": 1,
+      "Corte_Observado": 1
+    }
+  },
+  "publication_log": {
+    "rows_total": 116,
+    "facebook_rows": 103,
+    "published_rows": 35,
+    "24h_nonempty": 0,
+    "72h_nonempty": 0
+  },
+  "normalized_28d_artifact": {
+    "rows": 143,
+    "cut_start": "2026-07-22",
+    "cut_end": "2026-08-18",
+    "retrieved_at": "2026-08-19T16:08:45.687Z"
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "source": "Meta Graph API v26.0",
+  "retrieved_at": "2026-08-23T20:04:20.380036+00:00",
+  "posts_returned": 20,
+  "window": {
+    "latest_created_time": "2026-08-23T18:30:00+0000",
+    "earliest_created_time": "2026-08-20T15:00:23+0000"
+  },
+  "overall": {
+    "n": 20,
+    "total_engagement_public": 4081,
+    "mean": 204.05,
+    "median": 45.5,
+    "max": 2846,
+    "total_reactions": 2927,
+    "total_comments": 126,
+    "total_shares": 1028
+  },
+  "by_format": {
+    "Imagen/Foto": {
+      "n": 17,
+      "total_engagement_public": 4033,
+      "mean": 237.24,
+      "median": 58,
+      "max": 2846,
+      "total_reactions": 2889,
+      "total_comments": 122,
+      "total_shares": 1022
+    },
+    "Video/Reel": {
+      "n": 3,
+      "total_engagement_public": 48,
+      "mean": 16.0,
+      "median": 12,
+      "max": 25,
+      "total_reactions": 38,
+      "total_comments": 4,
+      "total_shares": 6
+    }
+  },
+  "by_date": {
+    "2026-08-20": {
+      "n": 6,
+      "total_engagement_public": 307,
+      "mean": 51.17,
+      "median": 49.0,
+      "max": 81,
+      "total_reactions": 210,
+      "total_comments": 13,
+      "total_shares": 84
+    },
+    "2026-08-21": {
+      "n": 5,
+      "total_engagement_public": 3102,
+      "mean": 620.4,
+      "median": 39,
+      "max": 2846,
+      "total_reactions": 2215,
+      "total_comments": 58,
+      "total_shares": 829
+    },
+    "2026-08-22": {
+      "n": 5,
+      "total_engagement_public": 546,
+      "mean": 109.2,
+      "median": 58,
+      "max": 268,
+      "total_reactions": 413,
+      "total_comments": 49,
+      "total_shares": 84
+    },
+    "2026-08-23": {
+      "n": 4,
+      "total_engagement_public": 126,
+      "mean": 31.5,
+      "median": 22.0,
+      "max": 70,
+      "total_reactions": 89,
+      "total_comments": 6,
+      "total_shares": 31
+    }
+  },
+  "top_posts": [
+    {
+      "rank": 1,
+      "id": "1036844829507460_122151375549072582",
+      "created_time": "2026-08-21T15:00:10+0000",
+      "format": "Imagen/Foto",
+      "engagement_public": 2846,
+      "reactions": 2029,
+      "comments": 52,
+      "shares": 765,
+      "message": "☁️✨🤔"
+    },
+    {
+      "rank": 2,
+      "id": "1036844829507460_122151376083072582",
+      "created_time": "2026-08-22T18:30:00+0000",
+      "format": "Imagen/Foto",
+      "engagement_public": 268,
+      "reactions": 221,
+      "comments": 14,
+      "shares": 33,
+      "message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe"
+    },
+    {
+      "rank": 3,
+      "id": "1036844829507460_122151375627072582",
+      "created_time": "2026-08-21T16:00:07+0000",
+      "format": "Imagen/Foto",
+      "engagement_public": 171,
+      "reactions": 122,
+      "comments": 1,
+      "shares": 48,
+      "message": "🙂‍↔️ #UniverseSentMe"
+    },
+    {
+      "rank": 4,
+      "id": "1036844829507460_122151375843072582",
+      "created_time": "2026-08-22T00:00:05+0000",
+      "format": "Imagen/Foto",
+      "engagement_public": 143,
+      "reactions": 103,
+      "comments": 3,
+      "shares": 37,
+      "message": "Analizando mi propio caos. 🧐 #UniverseSentMe"
+    },
+    {
+      "rank": 5,
+      "id": "1036844829507460_122151375111072582",
+      "created_time": "2026-08-20T16:00:54+0000",
+      "format": "Imagen/Foto",
+      "engagement_public": 81,
+      "reactions": 54,
+      "comments": 2,
+      "shares": 25,
+      "message": "💸🪿😂 #GansoUSM #MemesUSM #UniverseSentMe"
+    },
+    {
+      "rank": 6,
+      "id": "1036844829507460_122151374997072582",
+      "created_time": "2026-08-20T15:00:23+0000",
+      "format": "Imagen/Foto",
+      "engagement_public": 81,
+      "reactions": 54,
+      "comments": 0,
+      "shares": 27,
+      "message": "😳🧠🐱 #UniverseUSM #MemesUSM #UniverseSentMe"
+    },
+    {
+      "rank": 7,
+      "id": "1036844829507460_122154733605072582",
+      "created_time": "2026-08-23T03:00:08+0000",
+      "format": "Imagen/Foto",
+      "engagement_public": 70,
+      "reactions": 43,
+      "comments": 2,
+      "shares": 25,
+      "message": "😔 #GansoUSM #MemesUSM #UniverseSentMe"
+    },
+    {
+      "rank": 8,
+      "id": "1036844829507460_122151375375072582",
+      "created_time": "2026-08-20T22:00:13+0000",
+      "format": "Imagen/Foto",
+      "engagement_public": 59,
+      "reactions": 42,
+      "comments": 2,
+      "shares": 15,
+      "message": "🫣 #UniverseSentMe"
+    },
+    {
+      "rank": 9,
+      "id": "1036844829507460_122151375927072582",
+      "created_time": "2026-08-22T15:00:12+0000",
+      "format": "Imagen/Foto",
+      "engagement_public": 58,
+      "reactions": 46,
+      "comments": 4,
+      "shares": 8,
+      "message": "💪📸😂 #UniverseUSM #MemesUSM #UniverseSentMe"
+    },
+    {
+      "rank": 10,
+      "id": "1036844829507460_122151376011072582",
+      "created_time": "2026-08-22T16:00:07+0000",
+      "format": "Imagen/Foto",
+      "engagement_public": 52,
+      "reactions": 22,
+      "comments": 26,
+      "shares": 4,
+      "message": "😌 #UniverseSentMe"
+    }
+  ],
+  "page_insights": {
+    "page_impressions": {
+      "status_code": 400,
+      "value": null,
+      "values": [],
+      "error": {
+        "message": "(#100) The value must be a valid insights metric",
+        "type": "OAuthException",
+        "code": 100,
+        "fbtrace_id": "A2nqK8DS86wftCc_QTTtAKP"
+      }
+    },
+    "page_impressions_unique": {
+      "status_code": 400,
+      "value": null,
+      "values": [],
+      "error": {
+        "message": "(#100) The value must be a valid insights metric",
+        "type": "OAuthException",
+        "code": 100,
+        "fbtrace_id": "A7sDoOkBD5m8n8nlFJLNEI2"
+      }
+    },
+    "page_engaged_users": {
+      "status_code": 400,
+      "value": null,
+      "values": [],
+      "error": {
+        "message": "(#100) The value must be a valid insights metric",
+        "type": "OAuthException",
+        "code": 100,
+        "fbtrace_id": "Ai5WnpRBui2MNKwao3gIbeD"
+      }
+    },
+    "page_post_engagements": {
+      "status_code": 200,
+      "value": null,
+      "values": [],
+      "error": null
+    },
+    "page_actions_post_reactions_total": {
+      "status_code": 200,
+      "value": null,
+      "values": [],
+      "error": null
+    },
+    "page_actions_post_comments": {
+      "status_code": 400,
+      "value": null,
+      "values": [],
+      "error": {
+        "message": "(#100) The value must be a valid insights metric",
+        "type": "OAuthException",
+        "code": 100,
+        "fbtrace_id": "ACYQtaQUWPNsQMuC_ccwDGu"
+      }
+    },
+    "page_actions_post_shares": {
+      "status_code": 400,
+      "value": null,
+      "values": [],
+      "error": {
+        "message": "(#100) The value must be a valid insights metric",
+        "type": "OAuthException",
+        "code": 100,
+        "fbtrace_id": "As2sOEvgGcvTUM4JtlbTSxc"
+      }
+    }
+  },
+  "post_insight_status": {
+    "post_clicks|HTTP_200": 20,
+    "post_engaged_users|HTTP_400": 20,
+    "post_impressions|HTTP_400": 20,
+    "post_impressions_unique|HTTP_400": 20,
+    "post_reactions_by_type_total|HTTP_200": 20,
+    "post_video_avg_time_watched|HTTP_200": 20,
+    "post_video_views|HTTP_200": 20
+  }
+}

@@ -6,9 +6,10 @@
 
 | Campo | Valor |
 | :--- | :--- |
-| **Última sincronización** | 2026-08-21 |
+| **Última sincronización** | 2026-08-23 |
 | **Fuente de canon** | Repo GitHub administrado por Claude: `iomarketing09-sys/universe-sent-me-1`, rama `main`, HEAD `1daaad5342c278909b78076a54d8b220fa51e023`. Ficha de sincronización recibida por Claude mediante clonación directa. |
-| **Estado del documento** | v2.5.2 — HypothesisBank ampliado con HB-006 a HB-009 para briefs comparables; no implica generación, calendario, CNT ni publicación |
+| **Estado del documento** | v2.5.3 — HypothesisBank ampliado con HB-006 a HB-009 para briefs comparables; auditoría de integración de rendimiento Facebook añadida; no implica generación, calendario, CNT ni publicación |
+| **Artefactos de rendimiento relacionados** | `Operations/Research/2026-08-23_Reporte_Rendimiento_Engagement_Facebook.md`, `Operations/Research/2026-08-23_Facebook_Performance_Meta_API.json`, `Operations/Research/2026-08-23_Facebook_Performance_Summary.json`, `Operations/Research/2026-08-23_Facebook_Growth_Integration_Audit.json` |
 | **Propietario** | Manus (Manus AI) |
 | **Guardián de Canon** | Claude (vía repo GitHub) |
 | **Aprobador final** | Fernando |
@@ -155,6 +156,14 @@ El sistema se compone de:
 4. **Flujo directo Manus + Graph API:** Manus valida estado, canon, asset, copy, plataforma y fecha; después crea la orden de publicación y registra el resultado.
 5. **Máquina de estados:** controla el flujo de cada pieza desde la idea hasta el archivo.
 6. **Registro post-publicación:** Manus consulta solo métricas nuevas, actualiza el `HypothesisBank` y agrega el resultado al `ExperimentLog`.
+
+### 5.1 Auditoría operativa de Facebook — 2026-08-23
+
+El reporte `Operations/Research/2026-08-23_Reporte_Rendimiento_Engagement_Facebook.md` confirma que la arquitectura está definida, pero el cierre operativo todavía es parcial. Un snapshot vivo de Meta Graph API v26.0 con 20 publicaciones recientes contiene reacciones, comentarios y shares públicos, pero no entrega valores utilizables de impresiones, alcance o retención. Además, 17 de 20 IDs recientes encuentran coincidencia en los ledgers de publicación y experimentos; tres requieren reconciliación antes de atribuirlos a contenido o hipótesis.
+
+El circuito de ventanas temporales sigue incompleto: las filas recientes del `ExperimentLog` y el `Publication_Log` no tienen valores no vacíos para `Interacciones_24h` o `Interacciones_72h`, por lo que los acumulados lifetime deben permanecer diferenciados de las mediciones temporales. La decisión vigente es tratar el sistema como **integrado documentalmente y parcialmente integrado como pipeline de datos**, sin elevar hipótesis ni declarar causalidad a partir de un solo outlier.
+
+La próxima sincronización debe unir el snapshot vivo con la identidad de publicación, mantener valores nulos cuando Meta no exponga una métrica y generar un veredicto explícito por hipótesis: señal, inconcluso o no evaluable.
 
 ---
 
