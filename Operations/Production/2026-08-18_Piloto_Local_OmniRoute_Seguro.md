@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 1.6
+**Versión:** 1.7
 
 **Autor:** Manus AI
 
@@ -337,6 +337,23 @@ Google Cloud ofrece una VM e2-micro no interrumpible por mes dentro del nivel gr
 **Advertencia de costo:** no existe una forma honesta de garantizar costo cero absoluto si la VM necesita una ruta normal de salida a Internet. Google cobra las direcciones IPv4 externas estáticas o efímeras por separado; el precio publicado es de US$0.005 por hora. [28] Una VM sin IPv4 externa puede administrarse mediante IAP, pero para descargar Docker y llamar a Groq necesitaría salida a Internet mediante Cloud NAT u otro proxy, que tampoco debe asumirse como gratuito. [29]
 
 Para el piloto, la opción práctica es usar una **IPv4 externa efímera**, nunca una IP estática, y asumir que podría aparecer un cargo pequeño. Si costo cero estricto es un requisito no negociable, no despliegues OmniRoute en Google Cloud: usa Oracle Always Free cuando A1/E2 Micro tenga capacidad o ejecuta Groq directamente desde el iMac.
+
+#### Diferenciar Google AI Pro del crédito de Google Cloud
+
+Google AI Pro/Google One es una suscripción de almacenamiento y funciones Gemini. En México, la página pública de Google One muestra 5 TB y un beneficio separado de créditos mensuales de Google Cloud del Google Developer Program; el precio y la elegibilidad que aparecen en la cuenta del usuario pueden variar por promoción. Ese plan **no convierte el almacenamiento de Drive/Fotos/Gmail en almacenamiento de una VM** y no debe confundirse con el saldo de Billing de Google Cloud. [30]
+
+El crédito que aparece como `Trial credit for GenAI App Builder` con un saldo aproximado de MX$17,178.46 es otra promoción. El nombre sugiere un alcance específico para GenAI/App Builder y la página pública del grupo de SKUs Premium GenAI enumera SKUs de Gemini API; por ello no se debe asumir que ese crédito cubra Compute Engine. La cobertura real debe verificarse en la consola de Google Cloud, en **Billing → Credits/Promotions** y en los términos asociados al crédito. [31]
+
+Antes de crear la VM, confirma por escrito en la consola:
+
+| Comprobación | Resultado que autoriza continuar |
+|---|---|
+| Crédito | Tiene fecha de expiración visible y saldo disponible. |
+| Servicios elegibles | La promoción menciona explícitamente **Compute Engine** o la simulación de costo muestra el SKU como cubierto. |
+| Proyecto | La VM se creará en el proyecto vinculado a la cuenta de facturación que contiene el crédito. |
+| Costos no cubiertos | IPv4 externa, salida de red, disco, snapshots y otros SKU están identificados; no se asume que el crédito cubra todo. |
+
+Si Compute Engine no aparece como servicio elegible, no uses ese crédito para la VM. Mantén la opción Oracle Always Free o ejecuta Groq directamente desde el iMac. Si sí aparece como elegible, recuerda que el crédito tiene vencimiento y que cualquier uso posterior o SKU excluido puede facturarse.
 
 #### Crear el proyecto y controlar el costo
 
@@ -821,3 +838,7 @@ Si el piloto se convierte en una función compartida, se deberán actualizar el 
 [28]: [Google Cloud — Network pricing and external IP addresses](https://cloud.google.com/vpc/network-pricing)
 
 [29]: [Google Cloud — Connect to Linux VMs using Identity-Aware Proxy](https://cloud.google.com/compute/docs/connect/ssh-using-iap)
+
+[30]: [Google One — Google AI Plans](https://one.google.com/about/google-ai-plans/)
+
+[31]: [Google Cloud — Google Developer Program Premium GenAI Credit SKU Group](https://cloud.google.com/skus/sku-groups/google-developer-program-premium-genai-credit)
