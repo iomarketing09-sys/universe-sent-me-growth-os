@@ -6,9 +6,9 @@
 
 **Fecha de creación:** 2026-08-19
 
-**Última actualización:** 2026-08-19
+**Última actualización:** 2026-08-23
 
-**Versión:** 1.3
+**Versión:** 1.4
 
 **Autor:** Manus AI
 
@@ -97,7 +97,22 @@ No se selecciona una implementación definitiva hasta que exista un primer caso 
 
 **Recomendación de implementación:** comenzar con **Groq cloud conectado a un gateway OmniRoute local de bajo consumo**, utilizando datos sintéticos o un corte de métricas ya anonimizado. Fijar un único provider y un model ID explícito; no usar `auto` ni conectar providers gratuitos de procedencia incierta. Si el gateway ralentiza el equipo, probar Groq o Gemini directamente desde su Playground/API. Si el piloto demuestra valor, construir un endpoint backend mínimo y desplegar OmniRoute en una VM separada; no incrustarlo dentro del frontend React ni dentro del proceso de extracción de Windsor.
 
-Para evitar cargar la computadora, el hosting externo queda permitido solo bajo estas condiciones: **Railway** sirve para un trial temporal con volumen en `/app/data`, **Render Free** solo para una demo descartable porque pierde la SQLite al suspenderse, y **Oracle Cloud Always Free** es la alternativa gratuita persistente si Fernando acepta administrar una VM, firewall, HTTPS y backups. El procedimiento detallado y sus límites están en [`2026-08-18_Piloto_Local_OmniRoute_Seguro.md`](2026-08-18_Piloto_Local_OmniRoute_Seguro.md), que ahora incluye el despliegue paso a paso en Oracle Cloud Always Free, HTTPS, backups y actualización por digest.
+Para evitar cargar la computadora, el hosting externo queda permitido solo bajo estas condiciones: **Railway** sirve para un trial temporal con volumen en `/app/data`, **Render Free** solo para una demo descartable porque pierde la SQLite al suspenderse, y **Oracle Cloud Always Free** es la alternativa gratuita persistente si Fernando acepta administrar una VM, firewall, HTTPS y backups. Sin embargo, en la cuenta actual la región principal es `Mexico Northeast (Monterrey)`, solo se muestra `AD-1` y `VM.Standard.A1.Flex` está temporalmente sin capacidad. La home region no puede cambiarse después de crear la tenancy y suscribir otra región no convierte automáticamente sus VMs en Always Free. [7] [8] Si Oracle no libera capacidad para A1 ni ofrece E2 Micro, Google Cloud e2-micro en una región elegible es la alternativa permanente más cercana, mientras que Railway y Render quedan limitados a pruebas temporales. El procedimiento detallado y sus límites están en [`2026-08-18_Piloto_Local_OmniRoute_Seguro.md`](2026-08-18_Piloto_Local_OmniRoute_Seguro.md), que incluye Oracle, HTTPS, backups y alternativas de hosting.
+
+## Regiones y alternativas cuando Oracle no tiene capacidad
+
+Oracle asigna una **home region** al crear la tenancy y no permite cambiarla posteriormente. Algunas cuentas pueden suscribir regiones adicionales, pero los recursos Compute y Block Volume Always Free deben crearse en la home region; suscribir otra región no convierte una forma de pago en gratuita. En la cuenta del piloto, la consola muestra `Mexico Northeast (Monterrey)` con un único availability domain visible (`AD-1`). Por eso el error `Out of capacity` para A1 no se puede resolver cambiando de AD en esta cuenta. [7] [8]
+
+| Ruta | Permanencia | Condiciones | Decisión |
+|---|---|---|---|
+| Oracle `VM.Standard.A1.Flex` | Gratuita dentro de límites | Esperar y reintentar en la home region; usar Ubuntu ARM64/AArch64; no cambiar a E5/E4/Intel Flex. | **Primera opción si aparece capacidad** |
+| Oracle `VM.Standard.E2.1.Micro` | Gratuita dentro de límites | Crear una VM nueva, no cambiar la E5 existente; usar imagen Ubuntu x86_64/AMD64; aproximadamente 1 GB RAM. | **Plan de contingencia** |
+| Google Cloud `e2-micro` | Nivel gratuito mensual | Solo `us-west1`, `us-central1` o `us-east1`; 30 GB-mes de disco estándar y 1 GB/mes de salida desde Norteamérica dentro de límites; requiere otra cuenta y su propia facturación. | **Alternativa externa persistente** |
+| Railway | Trial/crédito limitado | Prueba sencilla, pero no es Always Free permanente y el volumen tiene condiciones de expiración. | **Solo prueba** |
+| Render Free | Gratuita con límites | Suspensión por inactividad y filesystem efímero; no conserva SQLite/configuración. | **Solo demo descartable** |
+| Cuenta Oracle duplicada | No aprobada | No crear cuentas adicionales para intentar cambiar la región; puede contradecir términos y complicar la gobernanza. | **No usar** |
+
+La recomendación actual es no aceptar `VM.Standard.E5.Flex` ni `VM.Standard3.Flex` solo porque tengan capacidad. Debe esperarse A1, intentar E2 Micro como piloto de muy bajo consumo o migrar a Google Cloud e2-micro. Si se usa E2 Micro, OmniRoute debe ejecutarse con swap, servicios de fondo desactivados, un único provider cloud y solicitudes pequeñas; si el gateway no cabe con estabilidad, se debe usar Groq directamente desde un cliente autorizado y omitir OmniRoute.
 
 ## Piloto propuesto
 
@@ -145,3 +160,13 @@ Hasta entonces, la conclusión operativa es: **sí se puede usar OmniRoute, pero
 [5]: [OmniRoute — configuración CORS y seguridad](https://raw.githubusercontent.com/diegosouzapw/OmniRoute/release/v3.8.50/docs/security/CORS.md)
 
 [6]: [OmniRoute — Free Tiers & Free-Token Budget](https://raw.githubusercontent.com/diegosouzapw/OmniRoute/release/v3.8.50/docs/reference/FREE_TIERS.md)
+
+[7]: [Oracle Cloud — Always Free Resources](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm)
+
+[8]: [Oracle — Managing Regions](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingregions.htm)
+
+[9]: [Google Cloud — Free Program and Compute Engine e2-micro](https://cloud.google.com/free/docs/free-cloud-features)
+
+[10]: [Render — Deploy for Free](https://render.com/docs/free)
+
+[11]: [Railway — Pricing and resource limits](https://railway.com/pricing)

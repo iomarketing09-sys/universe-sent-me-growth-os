@@ -6,9 +6,9 @@
 
 **Fecha de creación:** 2026-08-18
 
-**Última actualización:** 2026-08-19
+**Última actualización:** 2026-08-23
 
-**Versión:** 1.3
+**Versión:** 1.4
 
 **Autor:** Manus AI
 
@@ -336,9 +336,10 @@ Oracle ofrece una VM Always Free con recursos persistentes durante la vida de la
 ### 1. Crear la cuenta y controlar el coste
 
 1. Abre [Oracle Cloud Free](https://www.oracle.com/cloud/free/) y completa el registro. La cuenta puede solicitar verificación de identidad o método de pago según el país; eso no convierte automáticamente los recursos etiquetados como **Always Free Eligible** en recursos de pago.
-2. Identifica la **home region** de la tenancy. Las VMs Always Free deben crearse allí. Si la consola muestra `out of host capacity`, no cambies inmediatamente a una forma de pago: prueba otro availability domain de la misma región o espera a que haya capacidad. [20]
-3. Crea, si la consola lo permite, un compartment llamado `omniroute-free` y utiliza únicamente recursos que muestren la etiqueta **Always Free Eligible**. No crees Load Balancer, NAT Gateway, bases de datos de pago, discos fuera de la home region ni IPs o servicios adicionales sin revisar el coste.
-4. No actives Pay As You Go solo para resolver `out of host capacity`. Oracle indica que los recursos Always Free siguen sin cargo después de una actualización, pero cualquier recurso que exceda los límites gratuitos sí puede generar cargos. Las cuotas de compartment ayudan a limitar el consumo. [20]
+2. Identifica la **home region** de la tenancy. Oracle indica que la home region no se puede cambiar después de crear la cuenta y que las VMs Compute Always Free deben crearse allí. Se pueden suscribir regiones adicionales en algunas cuentas, pero eso no convierte sus recursos Compute en Always Free. [20] [22]
+3. En la cuenta actual del piloto, la consola muestra la región `Mexico Northeast (Monterrey)` y solo `AD-1`. Por tanto, no hay otro availability domain disponible para sortear el error de capacidad; la acción correcta es esperar y reintentar A1, no cambiar a E5/E4/Intel Flex. En regiones con varios dominios sí se puede probar otro AD. Oracle indica que E2 Micro puede estar limitado a un solo AD. [20]
+4. Crea, si la consola lo permite, un compartment llamado `omniroute-free` y utiliza únicamente recursos que muestren la etiqueta **Always Free Eligible**. No crees Load Balancer, NAT Gateway, bases de datos de pago, discos fuera de la home region ni IPs o servicios adicionales sin revisar el coste.
+5. No actives Pay As You Go solo para resolver `out of host capacity`. Oracle indica que los recursos Always Free siguen sin cargo después de una actualización, pero cualquier recurso que exceda los límites gratuitos sí puede generar cargos. Las cuotas de compartment ayudan a limitar el consumo. [20]
 
 ### 2. Crear la VM Always Free
 
@@ -644,7 +645,7 @@ Los problemas más comunes son los siguientes:
 | Login no funciona detrás del túnel SSH | Usar temporalmente `AUTH_COOKIE_SECURE=false` solo en acceso HTTP local; volver a `true` con HTTPS. |
 | Se consume demasiada RAM | Mantener `OMNIROUTE_DISABLE_BACKGROUND_SERVICES=1`, reducir `OMNIROUTE_MEMORY_MB`, limitar solicitudes pesadas y no activar perfiles web/CLI. |
 
-Oracle es la mejor opción gratuita persistente si aceptas administrar un servidor Linux. Es gratuito solo dentro de los recursos Always Free y no elimina los deberes de seguridad, backup, actualización ni supervisión. Railway sigue siendo más sencillo para un trial, pero no es gratuito permanente.
+Oracle es la mejor opción gratuita persistente si aceptas administrar un servidor Linux y logras capacidad para A1 o E2 Micro en la home region. Es gratuito solo dentro de los recursos Always Free y no elimina los deberes de seguridad, backup, actualización ni supervisión. Railway sigue siendo más sencillo para un trial, pero no es gratuito permanente. Si Oracle no ofrece ninguna forma gratuita, la alternativa permanente más cercana es Google Cloud Compute Engine e2-micro en `us-west1`, `us-central1` o `us-east1`, con 30 GB-mes de disco estándar y 1 GB de salida mensual desde Norteamérica dentro de los límites del nivel gratuito; requiere configurar otra cuenta de nube y aceptar sus propias condiciones de facturación. [23]
 
 ## Paso 11: criterios de aceptación y cierre
 
@@ -725,3 +726,7 @@ Si el piloto se convierte en una función compartida, se deberán actualizar el 
 [20]: [Oracle Cloud — Always Free Resources](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm)
 
 [21]: [OmniRoute — Environment Variables v3.8.50](https://raw.githubusercontent.com/diegosouzapw/OmniRoute/release/v3.8.50/docs/reference/ENVIRONMENT.md)
+
+[22]: [Oracle — Managing Regions](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingregions.htm)
+
+[23]: [Google Cloud — Free Program and Compute Engine e2-micro](https://cloud.google.com/free/docs/free-cloud-features)
