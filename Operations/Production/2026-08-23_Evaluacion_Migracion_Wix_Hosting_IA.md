@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 1.0
+**Versión:** 1.1
 
 **Autor:** Manus AI
 
@@ -25,6 +25,14 @@ El sitio no puede exportarse desde Wix como el mismo sitio listo para ejecutarse
 La alternativa viable es **reconstruir el sitio** como una página estática o como un sitio pequeño con un backend externo para el contacto. Después se puede probar en una URL temporal y conectar el dominio existente mediante DNS. Wix permite apuntar un dominio comprado en Wix a un sitio externo usando registros A y CNAME; no se debe cambiar DNS ni cancelar el plan hasta que el cliente apruebe la versión nueva y se comprueben sitio, PDFs, formularios, correo y SEO básico. [2]
 
 El presupuesto que eventualmente se libere sigue siendo del cliente. No debe transferirse automáticamente a Universe Sent Me ni a OmniRoute. Si el cliente desea financiar funciones adicionales, debe existir una propuesta separada que indique alcance, horas, hosting, uso de IA, mantenimiento, propiedad de los entregables y autorización expresa.
+
+## Resultado de la auditoría pública inicial
+
+La revisión pública confirmó una página corporativa de una sola página con navegación superior, secciones de trabajos, información institucional, tres catálogos PDF y contacto. El contenido visible incluye una propuesta de servicios de bordado, experiencia de la empresa, dirección, teléfono, horario y un formulario básico. También se observó un botón flotante de chat y una imagen principal con un logotipo de tercero; cualquier marca o fotografía de cliente debe contar con autorización antes de reutilizarse.
+
+La reconstrucción no debe ser una copia literal. La dirección aprobada es una modernización conservadora con una primera pantalla más clara, propuesta de valor y CTA de contacto; una galería de trabajos más ordenada; tarjetas para los tres catálogos; una sección de servicios o proceso; y un contacto accesible con teléfono, correo, horario, dirección y formulario simple. El rediseño debe priorizar móvil, contraste, foco de teclado, encabezados semánticos, texto alternativo, compresión de imágenes y navegación directa a catálogos y contacto.
+
+La auditoría no envió el formulario, no interactuó con el chat, no descargó los PDFs y no modificó el sitio ni el DNS. Los tres PDFs suman aproximadamente 24.1 MB según el usuario; antes de elegir hosting se debe comprobar el tamaño de cada archivo, porque los límites se aplican por activo individual y no solo al total.
 
 ## Inventario previo obligatorio
 
