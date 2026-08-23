@@ -2,13 +2,13 @@
 
 **Propósito:** Definir una posible nueva familia de Reels musicales de Universe Sent Me, donde una canción licenciada guía una microhistoria emocional antes de seleccionar personajes, escenas o producción.
 
-**Estado:** Active — máster publicado en cascada completa; video `HOOK-FIRST-V1` de Maeve generado sin audio incrustado y pendiente de audio nativo/publicación.
+**Estado:** Active — máster publicado en cascada completa; video `HOOK-FIRST-V1` de Maeve publicado manualmente en Facebook e Instagram, con métricas nativas aún pendientes de lectura.
 
 **Fecha de creación:** 2026-08-20
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 4.5
+**Versión:** 4.6
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -784,3 +784,15 @@ El video queda preparado para una publicación cross-platform en **Facebook Reel
 | Estado | `Review` — copy y distribución propuestos; no programado ni publicado |
 
 La recomendación editorial es usar el caption principal porque conecta con la mirada de Maeve sin explicar la escena, no introduce un romance nuevo y deja que el hook visual haga el trabajo. No se añadirá el nombre de un artista a los hashtags hasta confirmar la ficha exacta de la pista dentro de la plataforma. La publicación requiere aprobación explícita del caption, de Facebook e Instagram como destinos y de la selección nativa de audio; este documento no autoriza por sí mismo ninguna acción de publicación.
+
+
+## Publicación manual confirmada — 2026-08-23
+
+Fernando informó que publicó manualmente la pieza `CON-2026-08-24-CraveYou-MaeveFeathers-HOOK-FIRST-V1` en Facebook e Instagram. La publicación mantiene el máster visual sin audio incrustado y utiliza `Crave You` como pista nativa según la configuración realizada por Fernando; la verificación pública disponible no expuso el nombre del audio en ambas superficies, por lo que el audio nativo se registra como `Reported_By_Owner / Pending_Native_Audio_Readback`, no como una comprobación técnica completa.
+
+| Plataforma | Evidencia | Estado de reconciliación |
+|---|---|---|
+| Facebook Reels | [Enlace proporcionado](https://www.facebook.com/share/r/1CUWhJRwJ1/) → permalink canónico `https://www.facebook.com/reel/2855499098159488/`; Page Post ID `1036844829507460_122155182621072582`; `created_time` `2026-08-23T22:36:57Z` = `2026-08-23 17:36:57` en `America/Matamoros`; `is_published=true`; caption completo coincide con el propuesto | Publicado y verificado en modo lectura mediante Meta Graph API v26 |
+| Instagram Reels | [Enlace proporcionado](https://www.instagram.com/reel/DcZlBYVRiot/?igsi=OHcwaG10MXA0Mmt1); shortcode `DcZlBYVRiot`; cuenta visible `universe_sent_me_0326`; hashtags visibles parcialmente, incluyendo `#CraveYou`, `#Maeve`, `#UniverseSentMe`, `#ReelMusical` y `#VisualStorytelling` | Publicado según enlace de Fernando y visible públicamente; ID nativo, hora exacta, caption completo y audio no confirmados |
+
+El estado operativo pasa de `Review` a `Publicado_Manual` para Facebook e Instagram. Las métricas de cada plataforma permanecen pendientes y deben registrarse por separado en los cortes diarios del Growth OS. No se publicó en TikTok ni YouTube Shorts, no se añadió afiliación y no se modificó el calendario.
