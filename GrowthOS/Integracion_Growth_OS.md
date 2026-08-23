@@ -8,8 +8,8 @@
 | :--- | :--- |
 | **Última sincronización** | 2026-08-23 |
 | **Fuente de canon** | Repo GitHub administrado por Claude: `iomarketing09-sys/universe-sent-me-1`, rama `main`, HEAD `1daaad5342c278909b78076a54d8b220fa51e023`. Ficha de sincronización recibida por Claude mediante clonación directa. |
-| **Estado del documento** | v2.5.3 — HypothesisBank ampliado con HB-006 a HB-009 para briefs comparables; auditoría de integración de rendimiento Facebook añadida; no implica generación, calendario, CNT ni publicación |
-| **Artefactos de rendimiento relacionados** | `Operations/Research/2026-08-23_Reporte_Rendimiento_Engagement_Facebook.md`, `Operations/Research/2026-08-23_Facebook_Performance_Meta_API.json`, `Operations/Research/2026-08-23_Facebook_Performance_Summary.json`, `Operations/Research/2026-08-23_Facebook_Growth_Integration_Audit.json`, `Operations/Research/2026-08-23_Facebook_Post_Reconciliation.json` |
+| **Estado del documento** | v2.5.4 — HypothesisBank ampliado con HB-006 a HB-009; auditoría Facebook actualizada con cierre temporal `Unavailable_No_Baseline` e insights Windsor L2 parciales; no implica generación, calendario, CNT ni publicación |
+| **Artefactos de rendimiento relacionados** | `Operations/Research/2026-08-23_Reporte_Rendimiento_Engagement_Facebook.md`, `Operations/Research/2026-08-23_Facebook_Performance_Meta_API.json`, `Operations/Research/2026-08-23_Facebook_Performance_Summary.json`, `Operations/Research/2026-08-23_Facebook_Growth_Integration_Audit.json`, `Operations/Research/2026-08-23_Facebook_Post_Reconciliation.json`, `Operations/Research/2026-08-23_Facebook_24_72_Window_Closure.json`, `Operations/Research/2026-08-23_Facebook_24_72_and_Video_Insights_Summary.json`, `Operations/Research/2026-08-23_Facebook_Reels_Video_Insights.csv`, `Operations/Research/2026-08-23_Facebook_Windsor_Insights_Raw.json` |
 | **Propietario** | Manus (Manus AI) |
 | **Guardián de Canon** | Claude (vía repo GitHub) |
 | **Aprobador final** | Fernando |
@@ -140,7 +140,7 @@ Estos conflictos no representan cambios del canon remoto. Por decisión operativ
 | `EXP-2026-08-BASELINE-01` | HB-005 | Cohortes junio 1–14, julio 1–14 y agosto 1–14 | Facebook | Foto/meme | 2026-06-01 a 2026-08-14 | Cerrada | — | — | Veredicto consolidado: julio es la referencia principal; agosto cae frente a julio, pero supera a junio por pieza. |
 | `EXP-2026-08-BASELINE-02` | HB-003 | Cohortes 4–9 y 10–14 de agosto | Facebook | Foto/meme | 2026-08-04 a 2026-08-14 | Cerrada / señal preliminar | — | — | La mediana 37 frente a 26 es compatible con la ampliación horaria, pero no es causal por confusión de contenido y día. |
 | `EXP-2026-08-BASELINE-03` | HB-004 | Mix de reuse del 4–9 de agosto | Facebook | Foto/meme | 2026-08-04 a 2026-08-09 | Inconclusa | — | — | Se observaron al menos 14 reuse sobre aproximadamente 32 publicaciones; queda en prueba con Reuse_Top frente a Nueva. |
-| `EXP-2026-08-CAL-01` | HB-003 / HB-004 / HB-005 | Lote Facebook 15–16 de agosto | Facebook | Imagen estática | 2026-08-15 a 2026-08-16 | Pendiente_24h | — | — | 9 publicaciones programadas; métricas e hipótesis se completan a 24/72 horas. |
+| `EXP-2026-08-CAL-01` | HB-003 / HB-004 / HB-005 | Cohorte reciente Facebook evaluada en cierre | Facebook | Imagen/Video | 2026-08-15 a 2026-08-23 | Cierre_24_72_Unavailable_No_Baseline | — | 2,055 lifetime auxiliar | 33 candidatas; 27 elegibles —22 ventanas 24h y 20 de 72h—; HTTP 200 en las 27 lecturas y cero escrituras exactas. El total lifetime no es una métrica temporal. |
 
 ---
 
@@ -159,11 +159,13 @@ El sistema se compone de:
 
 ### 5.1 Auditoría operativa de Facebook — 2026-08-23
 
-El reporte `Operations/Research/2026-08-23_Reporte_Rendimiento_Engagement_Facebook.md` confirma que la arquitectura está definida, pero el cierre operativo todavía es parcial. Un snapshot vivo de Meta Graph API v26.0 con 20 publicaciones recientes contiene reacciones, comentarios y shares públicos, pero no entrega valores utilizables de impresiones, alcance o retención. Los 20 de 20 IDs recientes ya encuentran coincidencia en los ledgers de publicación y experimentos después de reconciliar tres Reels desde el inventario especializado y el registro maestro; la evidencia queda en `Operations/Research/2026-08-23_Facebook_Post_Reconciliation.json`.
+El reporte `Operations/Research/2026-08-23_Reporte_Rendimiento_Engagement_Facebook.md` confirma que la arquitectura está definida y que la identidad reciente está reconciliada: los 20 de 20 Page Post IDs recientes encuentran coincidencia en los ledgers de publicación y experimentos después de integrar tres Reels desde el inventario especializado y el registro maestro. La evidencia de reconciliación queda en `Operations/Research/2026-08-23_Facebook_Post_Reconciliation.json`.
 
-El circuito de ventanas temporales sigue incompleto: las filas recientes del `ExperimentLog` y el `Publication_Log` no tienen valores no vacíos para `Interacciones_24h` o `Interacciones_72h`, por lo que los acumulados lifetime deben permanecer diferenciados de las mediciones temporales. La decisión vigente es tratar el sistema como **integrado documentalmente y parcialmente integrado como pipeline de datos**, sin elevar hipótesis ni declarar causalidad a partir de un solo outlier.
+El cierre temporal se ejecutó sobre 33 candidatas de `EXP-2026-08-CAL-01`; 27 fueron elegibles, con 22 ventanas de 24h y 20 de 72h. Las 27 lecturas de Meta devolvieron HTTP 200, pero solo con totals lifetime actuales. Sin baseline E0 ni snapshot temporalmente acotado, el estado correcto es **`Unavailable_No_Baseline`** y se escribieron cero valores exactos en `Interacciones_24h` o `Interacciones_72h`. Los marcadores `24h_snapshot_unavailable` y `72h_snapshot_unavailable` preservan la trazabilidad sin presentar el total auxiliar de 2,055 como resultado temporal.
 
-La próxima sincronización debe conservar el crosswalk 20/20, mantener valores nulos cuando Meta no exponga una métrica y generar un veredicto explícito por hipótesis: señal, inconcluso o no evaluable. La prioridad operativa pendiente es cerrar ventanas 24/72 horas y obtener insights nativos de alcance y video cuando la fuente los exponga.
+Windsor.ai agregó insights nativos de `facebook_organic` para cuatro Reels con `Meta_Reel_ID`: reach/discovery único, plays, replays, watch promedio, duración, tiempo de reproducción y conteo de vistas orgánicas ≥95%. Todos permanecen como `lifetime_actual` y `L2_plus_watch_signals_partial`; no se elevan a L3 porque no hay tasa de retención de 3 segundos ni tasa de finalización comparable. MPM-001 conserva además la discrepancia entre Windsor y el snapshot previo de Business Suite, sin sobrescritura ni promedio.
+
+La próxima sincronización debe conservar el crosswalk 20/20, mantener los campos 24/72 vacíos mientras falte E0, y generar un veredicto explícito por hipótesis. La prioridad de instrumentación es diseñar y aprobar el baseline al publicar y las capturas E24/E72; este documento no autoriza por sí mismo una automatización recurrente, publicación, programación ni cambio de contenido.
 
 ---
 
@@ -176,6 +178,7 @@ La próxima sincronización debe conservar el crosswalk 20/20, mantener valores 
 | 2026-08-03 | Resolución de Silvio y diseño corregido | Canon commit `8e9fe9a`, registrado en `Canon_Contradictions_Report.md` | Fernando vía Claude |
 | 2026-08-15 | Resincronización contra el HEAD canónico actual `1daaad5` | Ficha `canon_sync_fiche.md` proporcionada por Claude; consultada `2026-08-15T22:56:57Z` vía clonación directa | Manus |
 | 2026-08-15 | Corrección de alias visuales de Kael y Maeve | Aclaración de Fernando: Chico de los Pantalones = Kael; Chica del Suéter = Maeve | Manus |
+| 2026-08-23 | Cierre de ventanas 24/72 e integración de insights Windsor | 27 casos elegibles; cero escrituras exactas por ausencia de baseline; cuatro Reels en L2 parcial; commits locales del Growth OS pendientes de publicación al momento de esta edición | Manus |
 
 ---
 

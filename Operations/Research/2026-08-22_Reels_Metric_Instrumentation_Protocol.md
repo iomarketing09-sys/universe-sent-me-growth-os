@@ -3,8 +3,8 @@ title: "Protocolo de instrumentación y medición de Reels"
 purpose: "Resolver la ausencia intermitente de views, reach y retención en Meta mediante una arquitectura de medición por capas, incorporando las fuentes de lectura confirmadas para la celda HB-REEL-MOTION-POV-MEME-01 y futuras publicaciones de video."
 status: Active
 created: 2026-08-22
-updated: 2026-08-22
-version: "1.2"
+updated: 2026-08-23
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md"
@@ -13,6 +13,10 @@ related_documents:
   - "Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json"
   - "GrowthOS/07_00_Registro_Maestro_Reels.md"
   - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
+  - "Operations/Research/2026-08-23_Facebook_24_72_Window_Closure.json"
+  - "Operations/Research/2026-08-23_Facebook_24_72_and_Video_Insights_Summary.json"
+  - "Operations/Research/2026-08-23_Facebook_Reels_Video_Insights.csv"
+  - "Operations/Research/2026-08-23_Facebook_Windsor_Insights_Raw.json"
 organization: "Operations/Research"
 ---
 
@@ -52,11 +56,11 @@ La revisión de conectores se realizó en modo lectura. No se publicaron, modifi
 | TikTok for Business | Deshabilitado | Sin cuenta operativa confirmada | No forma parte del diagnóstico actual de Facebook/Instagram | No usar sin habilitación y autorización |
 | Metricool, Supermetrics y otros conectores analíticos | Deshabilitados | Sin acceso confirmado | No deben tratarse como fuentes disponibles | No usar ni solicitar cambios sin necesidad explícita |
 
-La prueba de Windsor para Facebook orgánico devolvió, entre otras, tres filas de Reels recientes con IDs `2815726225473165`, `2210896633022235` y `2005557463434064`. En esas filas estuvieron disponibles `blue_reels_play_count`, `fb_reels_total_plays`, `fb_reels_replay_count`, `reels_post_impressions_unique`, `post_video_avg_time_watched`, `post_video_complete_views_organic`, `post_video_view_time`, shares, comentarios y reacciones. La respuesta también incluyó una fila técnica con `id=null` y ceros; esa fila no representa una publicación y debe excluirse del análisis.
+La consulta unificada de Windsor para Facebook orgánico devolvió cuatro filas de Reels con IDs `2815726225473165`, `2210896633022235`, `2005557463434064` y `1581447113440863`. En esas filas estuvieron disponibles `post_id`, `blue_reels_play_count`, `fb_reels_total_plays`, `fb_reels_replay_count`, `reels_post_impressions_unique`, `post_video_avg_time_watched`, `post_video_complete_views_organic`, `post_video_view_time`, `length`, shares, comentarios y reacciones. La respuesta también incluyó filas técnicas o de post con `id=null`; esas filas no representan un Reel y deben excluirse del análisis. Los cuatro casos se registraron a `2026-08-23T21:02:08` como `lifetime_actual`, nunca como `snapshot_24h` o `snapshot_72h`.
 
 La prueba de Windsor para Instagram devolvió Reels e imágenes recientes. Para un Reel estuvieron disponibles `media_reach`, `media_reel_avg_watch_time`, `media_reel_total_watch_time`, `media_reel_total_interactions`, likes y comentarios. `media_impressions`, `media_plays`, `media_reel_video_views` y `media_follows` pueden llegar como `null`; el protocolo conserva ese estado y no lo transforma en cero.
 
-La fuente Windsor se considera **conectada y utilizable**, no automáticamente completa. Cada captura debe conservar `data_fetched_at`, cuenta, campo, valor bruto y, cuando aplique, unidad de tiempo. Los campos de tiempo de reproducción se almacenan primero en su valor bruto; cualquier conversión a segundos debe quedar documentada y validarse contra `Duration_Seconds` antes de comparar casos.
+La fuente Windsor se considera **conectada y utilizable**, no automáticamente completa. Cada captura debe conservar `data_fetched_at`, cuenta, campo, valor bruto y, cuando aplique, unidad de tiempo. Los campos de tiempo de reproducción se almacenan primero en su valor bruto; cualquier conversión a segundos debe quedar documentada y validarse contra `Duration_Seconds` antes de comparar casos. `post_video_complete_views_organic` es un conteo de vistas orgánicas que alcanzaron al menos 95%, no una tasa de finalización. `average_watch_time / length` es un descriptor, no una tasa de retención. Un snapshot lifetime actual de Windsor nunca puede poblar `Interacciones_24h` o `Interacciones_72h`; esas columnas requieren baseline E0 y captura temporal válida.
 
 ## 4. Campos obligatorios por publicación
 
@@ -160,15 +164,15 @@ No se deben crear múltiples versiones del mismo caso únicamente para “forzar
 
 ## 9. Estado actual y próxima acción
 
-El estado histórico de la familia continúa siendo `L1_Engagement_Observable` hasta que cada caso tenga una captura comparable; la existencia de Windsor no convierte automáticamente los seis Reels históricos en una celda `L2`/`L3`. La celda `HB-REEL-MOTION-POV-MEME-01` permanece como `Active_candidate_priority`, pero no como veredicto. MPM-001 ya cuenta con export y carpeta de Drive; MPM-002 y MPM-003 tienen referencias oficiales y permanecen pendientes de generación por cuota.
+El estado histórico de la familia continúa siendo principalmente `L1_Engagement_Observable`, pero cuatro Reels recientes cuentan ahora con `L2_Discovery` + `L2_plus_watch_signals_partial` desde Windsor. La existencia de estas filas no convierte automáticamente la familia en una celda `L3` ni `L4`; faltan retención comparable y al menos tres casos controlados para una señal preliminar. La celda `HB-REEL-MOTION-POV-MEME-01` permanece como `Active_candidate_priority`, pero no como veredicto. MPM-001 conserva su export y carpeta de Drive, además de dos snapshots no equivalentes: Windsor reporta 29.458s de duración y 5.112s de watch promedio, mientras Business Suite reporta un máster de 9s y 6s de watch promedio. MPM-002 y MPM-003 permanecen pendientes de generación por cuota.
 
-La próxima acción operativa para cualquier Reel publicado es ejecutar, en este orden, el corte diario de engagement, la lectura de Windsor para el canal correspondiente y la lectura integrada de Instagram cuando exista crosspost o publicación nativa. Para Facebook, el conjunto mínimo recomendado es `Reel_ID`, `created_time`, `reels_post_type`, `reels_permalink_url`, `blue_reels_play_count`, `fb_reels_total_plays`, `fb_reels_replay_count`, `reels_post_impressions_unique`, `post_video_avg_time_watched`, `post_video_complete_views_organic`, `post_video_view_time`, `post_video_social_actions_comment`, `post_video_social_actions_share`, `post_video_total_reactions`, `length` y `data_fetched_at`. Para Instagram, el conjunto mínimo es `media_id`, `timestamp`, `media_type`, `media_product_type`, `media_permalink`, `media_reach`, `media_reel_avg_watch_time`, `media_reel_total_watch_time`, `media_reel_total_interactions`, `media_like_count`, `media_comments_count`, `media_shares`, `media_saved`, `media_follows` y `data_fetched_at`.
+La próxima acción operativa para cualquier Reel publicado es ejecutar, en este orden, el corte diario de engagement, la lectura de Windsor para el canal correspondiente y la lectura integrada de Instagram cuando exista crosspost o publicación nativa. Para Facebook, el conjunto mínimo recomendado es `Reel_ID`, `post_id`, `created_time`, `reels_post_type`, `reels_permalink_url`, `blue_reels_play_count`, `fb_reels_total_plays`, `fb_reels_replay_count`, `reels_post_impressions_unique`, `post_video_avg_time_watched`, `post_video_complete_views_organic`, `post_video_view_time`, `post_video_social_actions_comment`, `post_video_social_actions_share`, `post_video_total_reactions`, `length` y `data_fetched_at`. Para Instagram, el conjunto mínimo es `media_id`, `timestamp`, `media_type`, `media_product_type`, `media_permalink`, `media_reach`, `media_reel_avg_watch_time`, `media_reel_total_watch_time`, `media_reel_total_interactions`, `media_like_count`, `media_comments_count`, `media_shares`, `media_saved`, `media_follows` y `data_fetched_at`. La evidencia de Facebook del 23 de agosto queda normalizada en `2026-08-23_Facebook_Reels_Video_Insights.csv`; su `metric_window_type` es siempre `lifetime_actual`.
 
 MPM-001 debe registrar su identidad nativa cuando Fernando autorice la publicación; además debe conservar `Series_ID=ELARA-WALK-MUSIC-01`, `Music_Variant_ID`, `Audio_Source` y `Music_Hashtag` aunque el hashtag sea `None`. Después se debe capturar primero `L1` y, en el mismo corte diario, intentar `L2`/`L3` por Windsor. MPM-002 y MPM-003 deben seguir exactamente la misma plantilla cuando se generen y publiquen. La captura no autoriza ninguna publicación ni modificación del calendario.
 
 ## 10. Coherencia documental
 
-Esta actualización añade campos de audio y serie musical para Reels, pero no modifica el calendario, el CNT, el canon, la taxonomía de personajes ni el ledger de afiliados. `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/07_00_Registro_Maestro_Reels.md` ya enlazan el protocolo y no requieren cambios estructurales en esta revisión; solo deberán recibir una actualización futura si se incorpora un nuevo campo permanente al esquema de sus ledgers. El changelog se actualiza con la evidencia de acceso y las reglas de prioridad de fuentes.
+Esta actualización formaliza la prioridad de Windsor como fuente de enriquecimiento `L2`/watch parcial para Facebook, la exclusión de filas sin Reel ID y la separación estricta entre `lifetime_actual` y `snapshot_24h`/`snapshot_72h`. No modifica el calendario, el CNT, el canon, la taxonomía de personajes ni el ledger de afiliados. `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/07_00_Registro_Maestro_Reels.md` reciben referencias y estados operativos, pero no se cambia el esquema contractual de `Interacciones_24h`/`Interacciones_72h`. El changelog registra esta actualización y la discrepancia de MPM-001.
 
 No se modifica calendario, no se crea CNT y no se publica contenido como parte de este protocolo. La programación o publicación requiere su aprobación humana separada.
 

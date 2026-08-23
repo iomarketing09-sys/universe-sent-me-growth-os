@@ -4,9 +4,9 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-23
-**Versión:** 4.3
+**Versión:** 4.4
 **Autor:** Manus AI (CGO)
-**Documentos relacionados:** `05_00_Calendario_01_02_Ago.md`, `Operations/Memories/deep_dive_reels_comparativo.md`, `../Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`, `../Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json`, `../Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json`, `../Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json`, `../Operations/Research/2026-08-19_Decisiones_Reconciliacion_Reels.json`, `../Operations/Research/2026-08-19_Piezas_Sin_Cascada_Revision.json`, `../Operations/Research/2026-08-19_Auditoria_Assets_Drive_Reels.md`, `../Operations/Research/2026-08-19_Meta_Reels_Audit.json`, `../Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json`, `../Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json`, `../Operations/Research/Affiliate_Link_Ledger.csv`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Desamor.md`, `../Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv`, `../Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json`, `../Operations/Research/2026-08-22_Reels_Meta_Readonly_Reconciliation.json`, `../Operations/Research/2026-08-22_Meta_Business_Suite_28D_Reels_Visual_Evidence.md`, `../Operations/Research/2026-08-23_Facebook_Post_Reconciliation.json`, `../Operations/Research/2026-08-23_Facebook_Performance_Meta_API.json`, `../Operations/Production/2026-08-22_Brief_Reel_Dialogue_Radio_003.md`, `../Operations/Production/2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md`, `14_00_Fuente_Maestra_y_Ledgers.md`
+**Documentos relacionados:** `05_00_Calendario_01_02_Ago.md`, `Operations/Memories/deep_dive_reels_comparativo.md`, `../Operations/Research/2026-08-19_Historial_Reels_Consolidado.json`, `../Operations/Research/2026-08-19_Relaciones_Reels_Alta_Evidencia.json`, `../Operations/Research/2026-08-19_Inventario_Assets_Drive_Reels.json`, `../Operations/Research/2026-08-19_Publicaciones_Historicas_Adjudicadas.json`, `../Operations/Research/2026-08-19_Decisiones_Reconciliacion_Reels.json`, `../Operations/Research/2026-08-19_Piezas_Sin_Cascada_Revision.json`, `../Operations/Research/2026-08-19_Auditoria_Assets_Drive_Reels.md`, `../Operations/Research/2026-08-19_Meta_Reels_Audit.json`, `../Operations/Research/2026-08-19_YouTube_Metadata_Nativo.json`, `../Operations/Research/2026-08-19_Inventario_Coste_Reels_28D.json`, `../Operations/Research/Affiliate_Link_Ledger.csv`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Desamor.md`, `../Operations/Research/2026-08-22_Reels_Confirmed_Classification.csv`, `../Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json`, `../Operations/Research/2026-08-22_Reels_Meta_Readonly_Reconciliation.json`, `../Operations/Research/2026-08-22_Meta_Business_Suite_28D_Reels_Visual_Evidence.md`, `../Operations/Research/2026-08-23_Facebook_Post_Reconciliation.json`, `../Operations/Research/2026-08-23_Facebook_Performance_Meta_API.json`, `../Operations/Research/2026-08-23_Facebook_24_72_Window_Closure.json`, `../Operations/Research/2026-08-23_Facebook_24_72_and_Video_Insights_Summary.json`, `../Operations/Research/2026-08-23_Facebook_Reels_Video_Insights.csv`, `../Operations/Research/2026-08-23_Facebook_Windsor_Insights_Raw.json`, `../Operations/Research/2026-08-22_Meta_Business_Suite_28D_Reels_Visual_Evidence.md`, `../tools/validate_facebook_windows_video_insights.py`, `../Operations/Production/2026-08-22_Brief_Reel_Dialogue_Radio_003.md`, `../Operations/Production/2026-08-22_Brief_Celda_Reels_Motion_POV_Meme_001.md`, `14_00_Fuente_Maestra_y_Ledgers.md`
 
 ---
 
@@ -230,3 +230,39 @@ Los valores anteriores son snapshots públicos de Meta obtenidos el 23 de agosto
 El experimento de reconciliación `OBS-FB-REEL-RECON-20260823` quedó enlazado a `EXP-2026-08-WEEKLY-CLOSE-01` y a las hipótesis `HB-REEL-MOTION-POV-MEME-01` y `HB-REEL-MUSIC-WALK-01`. El resultado es una mejora de identidad y trazabilidad, no una validación causal de las hipótesis. Las ventanas 24/72 horas permanecen vacías hasta disponer de una fuente nativa con fecha de corte explícita.
 
 Fuentes: `../Operations/Research/2026-08-23_Facebook_Post_Reconciliation.json`, `../Operations/Research/2026-08-23_Facebook_Performance_Meta_API.json`, `../Operations/Research/2026-08-21_Reels_Publication_Inventory.csv` y `../Operations/Research/2026-08-22_Reels_Confirmed_Metric_Assessment.json`.
+
+
+---
+
+## Snapshot Windsor de insights de Reels — 23 de agosto de 2026
+
+La consulta de solo lectura a Windsor.ai sobre `facebook_organic` recuperó cuatro filas con `Meta_Reel_ID` y `Page Post ID` enlazables. El snapshot fue tomado a las **2026-08-23 21:02:08 UTC** y todas las métricas tienen `metric_window_type=lifetime_actual`. La columna de alcance/discovery usada es `reels_post_impressions_unique`; los plays, replays, watch time y completions proceden de los campos nativos documentados en `Operations/Research/2026-08-23_Facebook_24_72_and_Video_Insights_Summary.json`.
+
+| Reel | Page Post ID | Reach/discovery único | Plays totales | Replays | Watch promedio / duración | Vistas orgánicas ≥95% | Interacciones Windsor |
+|---|---|---:|---:|---:|---:|---:|---:|
+| Doble Check (`2210896633022235`) | `1036844829507460_122153090559072582` | 184 | 203 | 27 | 11.017s / 13.403s | 8 | 2 |
+| Remote Control (`2815726225473165`) | `1036844829507460_122153750763072582` | 390 | 451 | 43 | 4.420s / 30.133s | 19 | 11 |
+| Farmear Aura (`2005557463434064`) | `1036844829507460_122154017667072582` | 252 | 336 | 79 | 5.621s / 8.125s | 38 | 13 |
+| MPM-001 (`1581447113440863`) | `1036844829507460_122154842337072582` | 666 | 706 | 70 | 5.112s / 29.458s | 24 | 26 |
+
+El conteo `Vistas orgánicas ≥95%` no es una tasa de finalización. La relación entre watch promedio y duración solo se conserva como descriptor; no es retención completa. Los cuatro casos quedan en `L2_Discovery` + `L2_plus_watch_signals_partial`, no en L3, porque no se recuperó una curva de retención comparable ni una tasa de finalización.
+
+Los campos genéricos `Views`, `Reach` y `Engagement` del CSV de inventario no se sobrescribieron: ya contenían snapshots heterogéneos de Meta o estaban vacíos. El detalle de Windsor se añadió con etiquetas de fuente y timestamp en `Metrics_Status` y `Source`, mientras que los ledgers contractuales de 24/72 permanecen pendientes.
+
+Para MPM-001 se preservan dos evidencias no equivalentes. Windsor reporta duración de 29.458 segundos y watch promedio de 5.112 segundos; la evidencia previa de Meta Business Suite asociada por título, fecha y minuto reporta un máster de 9 segundos, 411 visualizaciones, 350 espectadores, 6 segundos promedio, 34 reproducciones de 15 segundos y 113 de 3 segundos. No se reemplaza, promedia ni declara equivalencia entre ambos cortes.
+
+Fuentes relacionadas: `../Operations/Research/2026-08-23_Facebook_24_72_and_Video_Insights_Summary.json`, `../Operations/Research/2026-08-23_Facebook_Reels_Video_Insights.csv`, `../Operations/Research/2026-08-23_Facebook_Windsor_Insights_Raw.json`, `../Operations/Research/2026-08-22_Meta_Business_Suite_28D_Reels_Visual_Evidence.md` y `../tools/validate_facebook_windows_video_insights.py`.
+
+## Cierre de ventanas temporales 24/72 — 23 de agosto de 2026
+
+La corrida `2026-08-23T21:00:00+00:00` procesó 33 candidatas de `EXP-2026-08-CAL-01`; 27 tenían al menos una ventana vencida, con 22 casos de 24h y 20 de 72h. Las 27 lecturas de Meta devolvieron HTTP 200, pero únicamente con contadores lifetime actuales. Sin baseline E0 ni snapshot temporalmente acotado, el cierre correcto es `Unavailable_No_Baseline`: se escribieron cero valores en `Interacciones_24h` y `Interacciones_72h`, y se añadieron marcadores de indisponibilidad a los ledgers. La evidencia completa está en `../Operations/Research/2026-08-23_Facebook_24_72_Window_Closure.json`.
+
+Esta actualización eleva la instrumentación individual de cuatro Reels a L2 parcial, pero no constituye una validación causal de `HB-REEL-MOTION-POV-MEME-01` ni de `HB-REEL-MUSIC-WALK-01`. Se necesita un baseline de publicación y al menos tres casos comparables antes de emitir una señal preliminar.
+
+**Última actualización:** 2026-08-23. **Versión:** 4.4.
+
+Fuentes relacionadas: `../Operations/Research/2026-08-23_Facebook_24_72_Window_Closure.json`, `../Operations/Research/2026-08-23_Facebook_24_72_and_Video_Insights_Summary.json`, `../Operations/Research/2026-08-15_Publication_Log.csv` y `../Operations/Research/2026-08-15_ExperimentLog.csv`.
+
+**Nota de coherencia:** los documentos `Operations/Research/2026-08-23_Reporte_Rendimiento_Engagement_Facebook.md` y `GrowthOS/Integracion_Growth_OS.md` deben mantener la misma semántica: snapshots Windsor como `lifetime_actual`, ventanas 24/72 vacías por ausencia de baseline y MPM-001 con fuentes discrepantes preservadas.
+
+**Estado de cierre de esta actualización:** Active. El registro no autoriza publicación, programación ni cambios de contenido.

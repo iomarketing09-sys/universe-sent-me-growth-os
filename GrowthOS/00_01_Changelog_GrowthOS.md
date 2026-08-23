@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-23
-**Versión:** 3.26
+**Versión:** 3.27
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.27.00] — 2026-08-23 (Manus): Cierre metodológico de ventanas 24/72 e integración de insights Windsor para Reels de Facebook.** Se ejecutó la extracción determinista a las `2026-08-23T21:00:00+00:00` sobre 33 candidatas de `EXP-2026-08-CAL-01`: 27 publicaciones tuvieron al menos una ventana elegible, con 22 ventanas de 24h y 20 de 72h; Meta respondió HTTP 200 en las 27 lecturas, pero solo entregó acumulados lifetime actuales. Sin baseline E0 ni snapshot temporalmente acotado, el estado correcto es `Unavailable_No_Baseline` y se escribieron cero valores en `Interacciones_24h`/`Interacciones_72h`; los ledgers conservan marcadores de indisponibilidad. La consulta unificada de Windsor, recuperada a las `2026-08-23T21:02:08`, añadió cuatro Reels con reach/discovery, plays, replays y watch signals parciales: `2210896633022235`, `2815726225473165`, `2005557463434064` y `1581447113440863`. Se mantuvo `lifetime_actual`, se excluyeron filas sin Reel ID y MPM-001 conserva sin sobrescritura la discrepancia entre Windsor y Business Suite. Se actualizaron el reporte Facebook a v1.2, el registro maestro de Reels a v4.4, el puente de integración a v2.5.4 y el protocolo de instrumentación a v1.3; el validador específico devuelve PASS. No hubo publicación, programación, cambio de contenido ni automatización recurrente.
 
 - **[3.26.00] — 2026-08-23 (Manus): Reconciliación de los tres IDs de Reels y cierre del crosswalk de Facebook.** Se verificó que los tres posts faltantes ya estaban identificados en el inventario especializado o el registro maestro: `MPM-001` / `1581447113440863`, `CON-2026-08-21-UniverseSenales` / `2005557463434064` y `CON-2026-08-20-RemoteControl-EvanElara` / `2815726225473165`. Se añadieron de forma idempotente a `Publication_Log.csv`, `ExperimentLog.csv` y `Reels_Publication_Inventory.csv`, con 48 interacciones públicas lifetime como snapshot observable y sin rellenar ventanas 24/72h. El crosswalk de las 20 publicaciones recientes queda en 20/20; las brechas activas siguen siendo ventanas temporales e insights nativos de alcance/video.
 

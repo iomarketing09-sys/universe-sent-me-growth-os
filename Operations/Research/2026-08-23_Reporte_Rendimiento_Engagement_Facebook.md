@@ -5,10 +5,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-23
 **Última actualización:** 2026-08-23
-**Versión:** 1.1
+**Versión:** 1.2
 **Autor:** Manus AI  
 **Organización:** `Operations/Research/`  
-**Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `Operations/Research/2026-08-22_Analisis_Semanal_20260816_20260822.md`, `Operations/Research/2026-08-15_Publication_Log.csv`, `Operations/Research/2026-08-15_ExperimentLog.csv`, `Operations/Research/2026-08-23_Facebook_Performance_Meta_API.json`, `Operations/Research/2026-08-23_Facebook_Performance_Summary.json`, `Operations/Research/2026-08-23_Facebook_Growth_Integration_Audit.json`, `Operations/Research/2026-08-23_Facebook_Post_Reconciliation.json`, `Operations/Research/2026-08-23_Facebook_Performance_Recent_Chart.png`
+**Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `Operations/Research/2026-08-22_Analisis_Semanal_20260816_20260822.md`, `Operations/Research/2026-08-15_Publication_Log.csv`, `Operations/Research/2026-08-15_ExperimentLog.csv`, `Operations/Research/2026-08-23_Facebook_Performance_Meta_API.json`, `Operations/Research/2026-08-23_Facebook_Performance_Summary.json`, `Operations/Research/2026-08-23_Facebook_Growth_Integration_Audit.json`, `Operations/Research/2026-08-23_Facebook_Post_Reconciliation.json`, `Operations/Research/2026-08-23_Facebook_Performance_Recent_Chart.png`, `Operations/Research/2026-08-23_Facebook_24_72_Window_Closure.json`, `Operations/Research/2026-08-23_Facebook_24_72_and_Video_Insights_Summary.json`, `Operations/Research/2026-08-23_Facebook_Reels_Video_Insights.csv`, `Operations/Research/2026-08-23_Facebook_Windsor_Insights_Raw.json`, `../../tools/validate_facebook_windows_video_insights.py`
 
 ---
 
@@ -18,7 +18,7 @@ El snapshot vivo de Meta Graph API v26.0 incluye las **20 publicaciones más rec
 
 El post filosófico con el mensaje visible `☁️✨🤔`, asociado al ID `1036844829507460_122151375549072582`, acumuló **2,846 interacciones** y representa **69.7%** del total del snapshot. Los dos primeros posts representan **76.3%**. Por tanto, el rendimiento reciente no debe interpretarse con la media simple: la señal central es mucho más baja y la difusión está concentrada en pocas piezas. [1]
 
-La integración con el Growth OS está **bien definida a nivel de arquitectura y parcialmente ejecutada a nivel operativo**. El proyecto ya tiene una definición métrica, ledgers de publicación y experimentos, HypothesisBank y reportes semanales. Sin embargo, el snapshot actual de Meta aún no cierra automáticamente las ventanas 24/72 horas ni contiene alcance o retención utilizables. Antes de esta ronda, tres Reels no estaban enlazados a los ledgers principales; la reconciliación posterior dejó **20 de 20 publicaciones recientes** con coincidencia por ID. El sistema ya tiene el crosswalk corregido, pero todavía no puede considerarse una integración completa de extremo a extremo por la brecha de ventanas e insights nativos. La primera prioridad de identidad quedó cerrada sin convertir snapshots lifetime en ventanas temporales. [1] [3] [4] [5] [6]
+La integración con el Growth OS está **bien definida a nivel de arquitectura y parcialmente ejecutada a nivel operativo**. El proyecto ya tiene una definición métrica, ledgers de publicación y experimentos, HypothesisBank y reportes semanales. En esta ronda se procesaron las ventanas vencidas, pero el cierre estricto quedó en `Unavailable_No_Baseline`: hubo **27 publicaciones elegibles**, **22 ventanas de 24h** y **20 de 72h**, con 27 respuestas HTTP 200 y **cero escrituras exactas** porque Meta devolvió acumulados lifetime sin baseline histórico. En paralelo, Windsor.ai permitió extraer reach/discovery y señales parciales de watch para **cuatro Reels**, todos en nivel `L2_Discovery` + watch parcial, sin convertirlos en retención L3. La reconciliación previa dejó **20 de 20 publicaciones recientes** con coincidencia por ID. El crosswalk está corregido, pero el pipeline aún no es de extremo a extremo para ventanas exactas ni retención completa. [1] [3] [4] [5] [6] [7] [8] [9]
 
 ## 2. Alcance y definición métrica
 
@@ -86,7 +86,33 @@ La API aceptó algunos nombres de métricas con respuesta HTTP 200, pero devolvi
 | Página | `page_post_engagements`, reacciones totales | HTTP 200, pero sin valores en la ventana solicitada. |
 | Página | Impresiones, alcance, usuarios engaged, comentarios y shares por acción | No disponibles o métrica no válida en esta consulta. |
 
-En consecuencia, este reporte sí puede comparar **engagement público acumulado por publicación**, pero no puede calcular engagement rate, alcance por pieza, retención de video, completions, CTR ni eficiencia por impresión. La ausencia de datos es una limitación de instrumentación, no evidencia de rendimiento cero.
+En consecuencia, este reporte sí puede comparar **engagement público acumulado por publicación** y, para cuatro Reels, documentar un snapshot lifetime de alcance/play/watch desde Windsor. No puede calcular engagement rate temporal, cierres 24/72, CTR, eficiencia por impresión ni retención completa por pieza. La ausencia de un campo no es evidencia de rendimiento cero; es una limitación de instrumentación y de definición temporal. [7] [8] [9]
+
+## 6.1 Cierre estricto de ventanas 24/72 e insights de video — 23 de agosto
+
+La corrida determinista se ejecutó a las **2026-08-23 21:00:00 UTC** sobre las 33 publicaciones candidatas de `EXP-2026-08-CAL-01`. Solo 27 tenían al menos una ventana vencida. Meta respondió HTTP 200 en las 27 lecturas, pero cada respuesta fue un acumulado lifetime actual; no existía un snapshot E0 tomado al publicar ni una respuesta temporalmente acotada. Por la regla contractual del Growth OS, `Interacciones_24h` y `Interacciones_72h` permanecen vacías y no se sustituyen con totals actuales. [7]
+
+| Control de cierre | Resultado | Interpretación |
+|---|---:|---|
+| Publicaciones candidatas | 33 | Cohorte evaluada |
+| Ventanas 24h elegibles | 22 | Procesadas, sin valor exacto escribible |
+| Ventanas 72h elegibles | 20 | Procesadas, sin valor exacto escribible |
+| Publicaciones elegibles | 27 | Hay solapamiento entre 24h y 72h |
+| Respuestas Meta HTTP 200 | 27 | Lectura correcta; no implica dato temporal |
+| Escrituras exactas 24/72 | 0 | Estado: `Unavailable_No_Baseline` |
+
+El artefacto de cierre conserva los totals lifetime como evidencia auxiliar y añadió marcadores `24h_snapshot_unavailable` / `72h_snapshot_unavailable` a los ledgers. El total de **2,055 interacciones lifetime** de esas respuestas no es un resultado de 24h/72h y no debe usarse como tal. La brecha pendiente se resuelve capturando un baseline al momento de publicación y snapshots posteriores con timestamp y definición estable.
+
+Windsor.ai sí entregó un snapshot lifetime actual de `facebook_organic`, recuperado a las **2026-08-23 21:02:08 UTC**. La columna de alcance usada es `reels_post_impressions_unique`; los plays y replays provienen de `fb_reels_total_plays` y `fb_reels_replay_count`. `complete_views_organic_95pct` es un **conteo de vistas orgánicas que alcanzaron al menos 95%**, no una tasa de completitud. La proporción de average watch frente a length se conserva únicamente como indicador descriptivo; no es una tasa de retención ni un veredicto causal. [8] [9]
+
+| Reel | Reach/discovery único | Plays totales | Replays | Watch promedio / duración | Completions orgánicas ≥95% | Interacciones observables Windsor |
+|---|---:|---:|---:|---:|---:|---:|
+| Doble Check (`2210896633022235`) | 184 | 203 | 27 | 11.017s / 13.403s | 8 | 2 |
+| Remote Control (`2815726225473165`) | 390 | 451 | 43 | 4.420s / 30.133s | 19 | 11 |
+| Farmear Aura (`2005557463434064`) | 252 | 336 | 79 | 5.621s / 8.125s | 38 | 13 |
+| MPM-001 (`1581447113440863`) | 666 | 706 | 70 | 5.112s / 29.458s | 24 | 26 |
+
+Los cuatro casos suben a **L2 de discovery** y `L2_plus_watch_signals_partial`; ninguno cumple todavía evidencia L3 completa porque no se recibió una tasa de retención de 3 segundos ni una tasa de finalización comparable. El snapshot de MPM-001 presenta una discrepancia de fuente que se conserva sin sobrescritura: Windsor reporta duración de 29.458 segundos y watch promedio de 5.112 segundos, mientras que la evidencia previa de Business Suite asociada a la misma identidad reporta un máster de 9 segundos, 411 visualizaciones, 350 espectadores, 6 segundos promedio, 34 reproducciones de 15 segundos y 113 de 3 segundos. Son cortes/definiciones distintos; no se promedian ni se declara equivalencia. [8] [9] [10]
 
 ## 7. ¿Está integrado correctamente en el Growth OS?
 
@@ -98,22 +124,23 @@ La ejecución actual presenta cuatro brechas concretas:
 |---|---|---|
 | Snapshot vivo | Se conserva el JSON completo del 23 de agosto con 20 posts y métricas públicas. | **Correcto**, pero todavía separado del artefacto normalizado histórico de 28 días. |
 | Identidad de publicaciones | Los 20 de 20 IDs recientes coinciden ahora con Publication Log y ExperimentLog; los tres faltantes fueron reconciliados desde el inventario de Reels y el registro maestro. | **Corregido para este corte**; el crosswalk principal ya está completo. |
-| Ventanas 24/72 horas | En las 30 filas operativas recientes del ExperimentLog y las 38 publicaciones de Facebook del Publication Log, no hay valores 24h ni 72h no vacíos; la observación de reconciliación de Reels también conserva ambos campos nulos. | **Insuficiente** para análisis temporal limpio; predominan cortes lifetime u observaciones pendientes. |
-| Insights de alcance y video | El snapshot no entrega valores utilizables de impresiones, alcance, reproducciones o retención. | **Brecha de instrumentación**; Reels no puede subir de evidencia parcial sin otro origen nativo. |
+| Ventanas 24/72 horas | La corrida de 23 de agosto procesó 27 publicaciones elegibles —22 de 24h y 20 de 72h—, obtuvo HTTP 200 en todas y escribió cero valores exactos por ausencia de baseline. | **Cierre metodológico correcto, pero no disponible como métrica temporal**. |
+| Insights de alcance y video | Windsor entregó cuatro filas con Reel ID, reach/discovery único, plays, replays, watch time y conteo de completions orgánicas ≥95%; todos están marcados lifetime actual y L2 parcial. | **Mejora de instrumentación para cuatro Reels; L3 y retención completa pendientes**. |
 
 La base histórica también está correctamente documentada, pero no está fresca: el artefacto normalizado de Facebook de 28 días contiene 143 filas y cubre del 22 de julio al 18 de agosto, con extracción del 19 de agosto. El reporte semanal 16–22 de agosto ya integró 42 publicaciones y 3,464 interacciones básicas observables, pero declaró expresamente que eran acumulados observables y que Reels carecía de views, reach y retención por publicación. El snapshot actual extiende la lectura hasta el 23 de agosto, pero aún no reemplaza ni actualiza automáticamente ese ciclo semanal. [1] [2]
 
 ## 8. Acciones prioritarias de integración
 
 1. **Mantener el crosswalk reconciliado**: los 20 IDs recientes ya están enlazados con Publication Log, ExperimentLog e inventario especializado de Reels. No atribuir nuevas publicaciones a contenido, personaje, horario o hipótesis sin una identidad operativa verificable.
-2. **Conservar el snapshot vivo como evidencia primaria** y generar una tabla normalizada por publicación con fecha de extracción, ventana, reacciones, comentarios, shares, impresiones, alcance y retención, usando valores nulos cuando Meta no entregue datos.
+2. **Conservar los snapshots vivos como evidencia primaria** y mantener la tabla normalizada de Windsor separada por fuente, timestamp y definición de métrica.
 3. **Separar lifetime de 24/72 horas** en el Publication Log y ExperimentLog. Un acumulado actual no debe rellenar una ventana temporal que no fue capturada.
-4. **Cerrar el circuito de hipótesis**: cada corte debe producir un veredicto explícito —señal, inconcluso o no evaluable— y una próxima acción conectada con HB-003, HB-004, HB-005 o la hipótesis de video correspondiente.
-5. **Mantener el lenguaje de causalidad disciplinado**: el outlier filosófico es un caso prioritario de estudio; no valida por sí solo una regla de contenido, personaje, día u horario.
+4. **Instrumentar el baseline al publicar**: registrar E0 con timestamp, alcance/plays/interacciones disponibles y un identificador de extracción; luego capturar E24 y E72 con el mismo esquema. No crear una automatización recurrente hasta aprobar explícitamente su diseño y alcance.
+5. **Cerrar el circuito de hipótesis**: cada corte debe producir un veredicto explícito —señal, inconcluso o no evaluable— y una próxima acción conectada con HB-003, HB-004, HB-005 o la hipótesis de video correspondiente.
+6. **Mantener el lenguaje de causalidad disciplinado**: el outlier filosófico es un caso prioritario de estudio; no valida por sí solo una regla de contenido, personaje, día u horario.
 
 ## 9. Veredicto
 
-El Growth OS **sí está integrado como sistema documental y analítico**, pero **no está completamente integrado como pipeline automático de datos recientes**. La arquitectura, los ledgers, la definición métrica y las hipótesis están presentes. La prioridad no es crear otro dashboard, sino conectar este snapshot vivo con la identidad de publicación, conservar ventanas temporales honestas y cerrar el paso desde observación hasta veredicto y próxima acción.
+El Growth OS **sí está integrado como sistema documental y analítico**, pero **no está completamente integrado como pipeline automático de datos recientes**. La arquitectura, los ledgers, la definición métrica y las hipótesis están presentes; la identidad de las 20 publicaciones recientes quedó reconciliada, las ventanas fueron cerradas honestamente como `Unavailable_No_Baseline` y cuatro Reels ahora tienen evidencia Windsor L2 con watch parcial. La prioridad no es crear otro dashboard, sino capturar el baseline de publicación, preservar la separación lifetime/24/72 y cerrar el paso desde observación hasta veredicto y próxima acción.
 
 ## Referencias
 
@@ -123,3 +150,7 @@ El Growth OS **sí está integrado como sistema documental y analítico**, pero 
 [4]: `2026-08-15_Publication_Log.csv` "Ledger append-only de publicaciones por plataforma"
 [5]: `../../GrowthOS/Integracion_Growth_OS.md` "Documento de integración del Growth OS"
 [6]: `2026-08-23_Facebook_Post_Reconciliation.json` "Reconciliación de tres Page Post IDs de Meta con los ledgers del Growth OS"
+[7]: `2026-08-23_Facebook_24_72_Window_Closure.json` "Evidencia de cierre de ventanas 24/72 con 27 casos elegibles y cero escrituras exactas"
+[8]: `2026-08-23_Facebook_Windsor_Insights_Raw.json` "Snapshot raw de Windsor.ai para publicaciones y Reels de Facebook"
+[9]: `2026-08-23_Facebook_24_72_and_Video_Insights_Summary.json` "Resumen normalizado de ventanas e insights de video"
+[10]: `2026-08-22_Meta_Business_Suite_28D_Reels_Visual_Evidence.md` "Evidencia visual previa de Meta Business Suite, incluida MPM-001"
