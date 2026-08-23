@@ -3,8 +3,8 @@ title: "Protocolo P0 de métricas comparables y veredictos"
 purpose: "Definir cómo medir la prueba activa, comparar sus resultados y cerrar el ciclo de aprendizaje sin mezclar lifetime histórico, cortes observados ni canales."
 status: "Active"
 created: 2026-08-17
-updated: 2026-08-17
-version: "1.0"
+updated: 2026-08-23
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_ExperimentLog.csv"
@@ -12,6 +12,7 @@ related_documents:
   - "GrowthOS/08_00_Metricas_Baseline_Plataformas.md"
   - "Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md"
   - "Operations/Research/2026-08-17_Prioridad_Siguientes_Pendientes_Growth_OS.md"
+  - "Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md"
 organization: "Operations/Research"
 ---
 
@@ -27,7 +28,7 @@ El ciclo de aprendizaje se cierra por hipótesis, no por sensación ni por un po
 
 La unidad mínima es `una publicación en una plataforma`. Facebook e Instagram se analizan en tablas separadas. No se combinan posts con Reels, ni contenido nuevo con reuse, salvo que la hipótesis lo especifique y el informe muestre los estratos separados.
 
-Cada publicación debe tener un registro de baseline cercano a la publicación y, cuando sea posible, snapshots a 24 y 72 horas. Si Meta no entrega un snapshot exacto, el registro se marca como `Corte_Observado` y queda fuera de la métrica contractual de 24/72 horas.
+Cada publicación debe tener un registro de baseline cercano a la publicación y, cuando sea posible, snapshots a 24 y 72 horas. El punto de captura E0 es posterior a la confirmación de `is_published=true` y `created_time` real de Meta; la hora planeada no sustituye la hora efectiva. La especificación de ledger, tolerancias e idempotencia está en `Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md`. Si Meta no entrega un snapshot exacto, el registro se marca como `Corte_Observado` y queda fuera de la métrica contractual de 24/72 horas.
 
 ## Métricas
 

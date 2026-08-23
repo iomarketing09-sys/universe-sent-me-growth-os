@@ -17,6 +17,7 @@ related_documents:
   - "Operations/Research/2026-08-15_Community_Engagement_Log.md"
   - "Operations/Production/extract_metrics_24_72.py"
   - "Operations/Production/extract_metrics_24_72_playbook.md"
+  - "Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md"
   - "Operations/Research/2026-08-15_Reconciliacion_Publicaciones_15_16_CNT.md"
   - "GrowthOS/00_Índice.md"
   - "Operations/Research/2026-08-17_Instagram_Publicacion_260633.json"
@@ -95,7 +96,7 @@ organization: "GrowthOS"
 
 ## 1. Decisión de arquitectura
 
-La fuente maestra no debe ser un calendario gigante ni una tabla que repita una pieza cada vez que se publica en otra plataforma. Los agregados mensuales históricos viven en `Operations/Research/Historical_Performance_Snapshot.csv` como capa de referencia y las publicaciones individuales históricas verificables en `Operations/Research/Historical_Performance_Individuals.csv`; ninguna de las dos capas sustituye los ledgers append-only. La arquitectura recomendada para Universe Sent Me es **una fuente maestra de contenido más tres ledgers append-only**, cada uno con una función distinta: hechos de publicación, aprendizaje experimental y señales cualitativas de comunidad.
+La fuente maestra no debe ser un calendario gigante ni una tabla que repita una pieza cada vez que se publica en otra plataforma. Los agregados mensuales históricos viven en `Operations/Research/Historical_Performance_Snapshot.csv` como capa de referencia y las publicaciones individuales históricas verificables en `Operations/Research/Historical_Performance_Individuals.csv`; ninguna de las dos capas sustituye los ledgers append-only. La arquitectura activa recomendada para Universe Sent Me es **una fuente maestra de contenido más tres ledgers append-only**, cada uno con una función distinta: hechos de publicación, aprendizaje experimental y señales cualitativas de comunidad. Se propone un cuarto ledger append-only de snapshots temporales para conservar E0/E24/E72 sin sobrecargar los ledgers activos; su diseño está en `Review` y no se considera operativo hasta aprobación.
 
 | Capa | Archivo canónico | Qué representa | Quién lo modifica |
 |---|---|---|---|
@@ -103,6 +104,7 @@ La fuente maestra no debe ser un calendario gigante ni una tabla que repita una 
 | Historial de publicación | `Operations/Research/2026-08-15_Publication_Log.csv` | Una fila por publicación y plataforma. Conecta pieza, asset, fecha, cuenta, IDs de Meta, permalink, archivado y estado real. | Manus agrega después de cada orden o resultado de Meta. |
 | Aprendizaje experimental | `Operations/Research/2026-08-15_ExperimentLog.csv` | Una fila por cohorte, publicación u observación de hipótesis. Contiene métricas, veredicto, conclusión y próxima acción. | Manus agrega datos; CGO/Manus redacta conclusión; Fernando aprueba decisiones de calendario. |
 | Comunidad cualitativa | `Operations/Research/2026-08-15_Community_Engagement_Log.csv` | Una fila por comentario real que aporte señal, respuesta humana o decisión de moderación. No guarda identidades personales y complementa, pero no sustituye, el aprendizaje cuantitativo. | Manus agrega datos anonimizados; las respuestas públicas y acciones de moderación requieren aprobación humana. |
+| Snapshots temporales — propuesta en Review | `Operations/Research/Metrics_Snapshot_Log.csv` | Una fila por intento/captura E0, E24, E72 u observado lifetime, con contadores crudos, timestamp, tolerancia, raw y estado. No existe todavía como ledger operativo. | Worker E0/E24/E72 después de aprobación; GitHub conserva el artefacto oficial. |
 
 ### 1.1 Jerarquía de fuentes de métricas y sincronización
 
@@ -216,8 +218,8 @@ La operación diaria no debe consultar toda la historia. Manus debe leer el inve
 El flujo económico es el siguiente:
 
 1. **Antes de publicar:** leer `Content_Inventory.csv` y el calendario aprobado; validar solamente las filas del lote actual.
-2. **Durante la publicación:** registrar el resultado en `Publication_Log.csv`; no volver a inspeccionar todo el inventario.
-3. **En cada corte diario:** consultar solo las publicaciones nuevas o modificadas desde el último corte, guardar el snapshot observado y extraer aprendizajes de formato, personaje, horario, shares, comentarios, captions y Reels. Las métricas de afiliados permanecen en su ledger independiente.
+2. **Durante la publicación:** registrar el resultado en `Publication_Log.csv`; después de confirmar `is_published=true`, capturar E0 en `Metrics_Snapshot_Log.csv` cuando ese ledger sea aprobado. No volver a inspeccionar todo el inventario.
+3. **En cada corte diario:** consultar solo las publicaciones nuevas o modificadas desde el último corte, guardar el snapshot observado y extraer aprendizajes de formato, personaje, horario, shares, comentarios, captions y Reels. Cuando el ledger temporal esté activo, el worker seleccionará E24/E72 por `Target_At_UTC`; las métricas de afiliados permanecen en su ledger independiente.
 4. **Al cierre del ciclo:** agregar una observación consolidada a `ExperimentLog.csv`, actualizar el veredicto de la hipótesis y generar las colas como vistas.
 5. **Para comentarios:** leer solo comentarios nuevos desde el último cursor o ventana; no revisar cada cinco minutos, deduplicar por `Comentario_ID` y no conservar identidades personales. Registrar las señales en `Community_Engagement_Log.csv`.
 
@@ -234,6 +236,8 @@ Los cortes diarios **no requieren ventanas exactas de 24/72 horas**. Sus acumula
 ### 5.2 Ventanas exactas como capa contractual opcional
 
 Las ventanas exactas de 24 y 72 horas se mantienen únicamente cuando un experimento comparable las necesite para un cierre contractual o para comparar publicaciones con una definición temporal idéntica. En ese caso, se consultan solo los `Meta_ID` vencidos, idealmente en lote. Cada fila conserva su hora real y, si Meta no permite reconstruir el snapshot, se registra `24h_snapshot_unavailable` o `72h_snapshot_unavailable` sin inventar el valor [7] [8]. La ausencia de una ventana exacta no bloquea el reporte diario ni elimina sus aprendizajes; solo limita el veredicto formal de esa celda experimental.
+
+La propuesta `Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md` define el cuarto ledger `Metrics_Snapshot_Log.csv`, el hook posterior a `is_published=true`, la cola de posts programados, la opción de Webhook para publicaciones manuales, las tolerancias y las claves idempotentes. Mientras el diseño esté en Review, los campos `Interacciones_24h`/`Interacciones_72h` permanecen bajo el contrato actual y no se crea ningún schedule nuevo.
 
 El flujo económico queda así: un corte diario alimenta el aprendizaje operativo y las decisiones de contenido; una consulta adicional de 24/72 horas se ejecuta solo cuando una celda comparable, P0 u otra revisión formal la requiera. De este modo, el Growth OS aprende de los datos disponibles cada día sin confundir `Corte_Observado`, `lifetime_actual` y `snapshot_24_72h`.
 

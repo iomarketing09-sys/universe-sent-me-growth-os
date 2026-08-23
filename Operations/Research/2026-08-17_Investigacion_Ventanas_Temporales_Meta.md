@@ -3,7 +3,7 @@ title: "Investigación — Ventanas temporales de Meta para interacciones 24/72h
 purpose: "Determinar por qué Meta no devuelve snapshots históricos exactos de 24 y 72 horas para el experimento de Facebook y definir una ruta verificable para futuras publicaciones."
 status: "Review"
 created: 2026-08-17
-updated: 2026-08-17
+updated: 2026-08-23
 version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
@@ -12,6 +12,7 @@ related_documents:
   - "GrowthOS/08_00_Metricas_Baseline_Plataformas.md"
   - "Operations/Research/2026-08-17_Metricas_24_72_Extraccion_02.json"
   - "Operations/Research/2026-08-15_Auditoria_General_Growth_OS.md"
+  - "Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md"
 organization: "Operations/Research"
 ---
 
@@ -110,11 +111,11 @@ El extractor actual debe conservar dos modos separados:
 | `legacy_lifetime_evidence` | Diagnóstico de publicaciones antiguas sin baseline | Solo evidencia JSON y marcador de indisponibilidad |
 | `snapshot_delta` | Futuras publicaciones con baseline capturado | Snapshot ledger, deltas 24/72h y campos del ExperimentLog |
 
-No se recomienda cambiar automáticamente el extractor ni modificar el scheduler hasta que Fernando apruebe el nuevo esquema de snapshots y la cadencia diaria. El siguiente paso técnico debe ser diseñar un `Metrics_Snapshot_Log.csv` separado, porque el `ExperimentLog` actual no conserva tres capturas crudas por publicación.
+No se recomienda cambiar automáticamente el extractor ni modificar el scheduler hasta que Fernando apruebe el nuevo esquema de snapshots y la cadencia diaria. El diseño técnico de `Metrics_Snapshot_Log.csv`, el hook E0, el worker E24/E72, las tolerancias y la idempotencia ya están especificados en `Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md`; el `ExperimentLog` actual no conserva tres capturas crudas por publicación y no debe asumir esa función.
 
 ## 7. Estado de decisión
 
-La solución propuesta queda en `Review`. No se ha alterado el schedule vigente, no se ha cambiado la definición histórica del experimento y no se han escrito métricas exactas que Meta no devolvió.
+La solución propuesta y su arquitectura de implementación quedan en `Review`. No se ha alterado el schedule vigente, no se ha cambiado la definición histórica del experimento y no se han escrito métricas exactas que Meta no devolvió. La implementación requiere aprobación explícita de Fernando antes de activar un worker, modificar el publicador o suscribir Webhooks.
 
 ## Referencias
 

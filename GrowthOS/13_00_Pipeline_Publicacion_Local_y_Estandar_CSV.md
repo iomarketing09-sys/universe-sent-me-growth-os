@@ -1,7 +1,7 @@
 ---
 estado: Active
-version: "1.7"
-ultima_revision: 2026-08-15
+version: "1.8"
+ultima_revision: 2026-08-23
 dependencias:
   - GrowthOS/01_00_Arquitectura_Calendario_Escalable.md
   - GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md
@@ -14,10 +14,10 @@ dependencias:
 **Propósito:** Documentar el pipeline de publicación real que usa Fernando (script propio en PyCharm, con Gemini, publicando vía Meta Graph API) y establecer el estándar de exportación CSV que cualquier calendario de Growth OS debe producir para poder alimentarlo directamente, sin reformateo manual.
 **Estado:** Active
 **Fecha de creación:** 2026-08-12
-**Última actualización:** 2026-08-15
-**Versión:** 1.48
+**Última actualización:** 2026-08-23
+**Versión:** 1.49
 **Autor:** Claude, documentando información provista por Fernando; actualización de Manus AI
-**Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `05_03_Calendario_10_16_Agosto.md` (y calendarios futuros), `Operations/Research/2026-08-15_Publication_Log.csv`, `Operations/Research/2026-08-15_ExperimentLog.csv`, `GrowthOS/00_01_Changelog_GrowthOS.md`, `GrowthOS/00_Índice.md`
+**Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `05_03_Calendario_10_16_Agosto.md` (y calendarios futuros), `Operations/Research/2026-08-15_Publication_Log.csv`, `Operations/Research/2026-08-15_ExperimentLog.csv`, `GrowthOS/00_01_Changelog_GrowthOS.md`, `GrowthOS/00_Índice.md`, `Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md`
 
 ---
 
@@ -64,11 +64,17 @@ Fernando ya tiene un **script funcional en PyCharm, usando la API de Gemini, que
 
 ## 3. Archivado posterior a la publicación
 
-La carpeta `My Drive/Universe sent me/USM/Humor existencial` es la entrada de memes nuevos. El archivo permanece en la raíz durante la preparación, aprobación y programación. Después de confirmar la publicación real mediante el ID de Meta, Manus registra `ID_Meta`, fecha y hora, plataforma, estado y métricas iniciales, y mueve el archivo a `Humor existencial/[Mes]`, conservando exactamente su nombre y número de referencia.
+La carpeta `My Drive/Universe sent me/USM/Humor existencial` es la entrada de memes nuevos. El archivo permanece en la raíz durante la preparación, aprobación y programación. Después de confirmar la publicación real mediante el ID de Meta, Manus registra `ID_Meta`, fecha y hora, plataforma, estado y métricas iniciales, y mueve el archivo a `Humor existencial/[Mes]`, conservando exactamente su nombre y número de referencia. En esa misma confirmación debe dispararse el evento de baseline E0: consultar `created_time` e `is_published`, leer los contadores actuales del objeto y registrar una fila `baseline_e0` en el ledger de snapshots. La hora planeada o la creación de una programación no constituyen E0.
 
 Si la publicación falla o queda pendiente, el archivo no se mueve: permanece en la raíz con el estado correspondiente. Si una pieza se reutiliza en otro mes, se registra una nueva fila de publicación y el archivo se mueve a la carpeta del mes de la nueva publicación sin eliminar el historial anterior.
 
 Este archivado organiza disponibilidad y trazabilidad, pero no sustituye el registro de Meta. Para decidir reuse, la fuente prioritaria sigue siendo el historial real de publicaciones y métricas, no únicamente la ubicación del archivo.
+
+### 3.1 Enganche E0 y publicaciones programadas
+
+El publicador debe emitir un evento interno posterior a la verificación de `is_published=true`. El consumidor del evento captura E0 con la misma identidad `Meta_Post_ID`, `Publicacion_ID`, `Experiment_ID` y `CNT`, y escribe primero en `Metrics_Snapshot_Log.csv`; después puede añadir una nota de estado a `Publication_Log.csv`. La clave idempotente es `Meta_Post_ID + baseline_e0`. Si el post fue programado, el evento queda pendiente hasta que Meta confirme la publicación efectiva; nunca se usa `scheduled_publish_time` como `Published_At_UTC`.
+
+Los fallos de captura se registran como intentos separados con `E0_Pending`, `E0_Late` o `E0_Missing`. Un error de token, un campo de contador ausente o una captura fuera de tolerancia no autoriza a rellenar `Interacciones_24h`/`Interacciones_72h`; el worker E24/E72 solo puede calcular deltas cuando exista un E0 válido. El diseño completo, incluyendo el ledger, tolerancias, reintentos y fallback para publicaciones manuales, está en `Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md`.
 
 ## 4. Fuente maestra y registro de aprendizaje
 
