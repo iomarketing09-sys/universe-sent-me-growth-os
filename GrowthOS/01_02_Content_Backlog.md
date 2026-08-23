@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-23
-**Versión:** 3.0
+**Versión:** 3.1
 **Autor:** Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_01_Calendario_Semanal.md`, `07_00_Registro_Maestro_Reels.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Desamor.md`
 
@@ -19,7 +19,7 @@
 | CNT-006 | Tarot de Universe (contenido evergreen) | @char_USM_universe | Foto / Carrusel / Reel | Reutilizable | No |
 | CNT-002 | Wilfred reseña su propio peluche | @char_USM_wilfred | Reel (~14s) | **Publicado** (FB, 30-Jul 9:16 AM) | No |
 | CNT-023 | Sección recurrente '¿Qué me llegó?' (Mercado Libre) | Rotativo | Reel recurrente | Episodio 2 **publicado y verificado en Facebook**; Page Post `1036844829507460_122147352825072582`, Reel ID `1067337609170026`, 21 interacciones básicas observables. Episodio 3 Wilfred permanece en `HOLD_PENDING_24H_REVIEW`. | No |
-| CON-2026-08-24-CraveYou-MaeveFeathers | Crave You — Maeve: hook-first espejo y plumas | Maeve | Reel / Short musical 8–10s | `Review` — preflight aprobado; revisión `HOOK-FIRST-V1` con Maeve como único personaje, una sola locación editorial, pluma cruzando la lente desde el primer cuadro, reacción inmediata, órbita breve y cierre de mirada. El keyframe de revisión está guardado en Drive como `1bISDPbHLqRsw2nK5LwLH3ghlzG6wW18u`; el audio nativo `Crave You` para Facebook/Instagram sigue pendiente de verificación. No autoriza generación de video, programación ni publicación. | No |
+| CON-2026-08-24-CraveYou-MaeveFeathers | Crave You — Maeve: hook-first espejo y plumas | Maeve | Reel / Short musical 8–10s | `Review` — video `HOOK-FIRST-V1` generado a partir del keyframe aprobado y guardado en Drive como `1Fia8Qmewm6FTm3w28oKrSnLCOd_sqdKM1`; Maeve es el único personaje, con una sola locación editorial, pluma cruzando la lente desde el primer cuadro, reacción inmediata, órbita breve y cierre de mirada. El audio nativo `Crave You` para Facebook/Instagram sigue pendiente de verificación. No autoriza programación ni publicación. | No |
 | CON-2026-08-21-UniverseSenales | Meme rápido — Universe y las señales ignoradas | Universe | Reel cómico con clip del tráiler | **Publicado y verificado en Facebook** — Page Post `1036844829507460_122154017667072582`, Reel ID `2005557463434064`, hora local `2026-08-21 16:30:59`, 12 interacciones básicas observables (10 reacciones, 1 comentario, 1 share). Instagram, TikTok y YouTube permanecen sin reconciliación independiente. | No |
 | MPM-001 | Elara ignora a Wilfred — variante musical de Elara Walk | Elara + Wilfred | Reel Motion + POV de 8–9s | **Publicado en Facebook y verificado** — Page Post `1036844829507460_122154842337072582`, Reel ID `1581447113440863`, hora local `2026-08-22 17:23:32`, 18 interacciones básicas (14 reacciones, 2 comentarios, 2 shares). Instagram conserva confirmación humana `Crosspost_At_Launch`, pero sus IDs y métricas requieren verificación independiente. Views, reach y retención no están disponibles. | No |
 | MPM-002 | Fantasma y los gatos saben algo que él no — `No lo sigas` | Fantasma + tres gatos | Reel Motion + meme de 7–8s | `Reference_Ready_Quota_Wait` — propuesta histórica conservada; la revisión MPM-002 v2 de Silvio y la piedra queda `Archived_Not_Active` y no sustituye este caso. Sin Meta Post ID ni Reel ID; referencia, prompt, texto y payoff definidos. Esperar cuota y gate de aprobación. | No |

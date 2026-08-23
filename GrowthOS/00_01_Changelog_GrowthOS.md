@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-23
-**Versión:** 3.20
+**Versión:** 3.21
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.21.00] — 2026-08-23 (Manus): Generación autorizada del máster de Maeve/Crave You.** Fernando autorizó generar el video completo basado en el keyframe aprobado. Se generó `CON-2026-08-24_CraveYou_Maeve_HOOK-FIRST-V1_master_no_audio.mp4`, se eliminó cualquier pista técnica de audio y la verificación confirmó 9.0 segundos, 720×1280, H.264 a 24 fps y ausencia de stream de audio. El máster se guardó en Drive con ID `1Fia8Qmewm6FTm3w28oKrSnLCOd_sqdKM1`. La disponibilidad nativa de `Crave You` en Facebook/Instagram continúa pendiente; no se programó ni publicó el video.
 
 - **[3.20.00] — 2026-08-23 (Manus): Preflight de storyboard/keyframe para Maeve/Crave You.** Fernando aprobó preparar el keyframe y comprobar audio para Facebook e Instagram. Se descargó una referencia oficial de Maeve desde Drive, se generó el keyframe `CON-2026-08-24_CraveYou_Maeve_HOOK-FIRST-V1_keyframe_review.png` y se guardó en la carpeta del experimento `EXP-202608-REEL-MOTION-POV-MEME-001` con Drive ID `1bISDPbHLqRsw2nK5LwLH3ghlzG6wW18u`. El audio nativo `Crave You` no pudo verificarse porque la sesión del navegador disponible no estaba autenticada; no se pidieron credenciales ni se presumió disponibilidad. Maeve sigue en `Review`: no se generó video, no se programó ni se publicó.
 

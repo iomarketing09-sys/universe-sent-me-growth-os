@@ -2,13 +2,13 @@
 
 **Propósito:** Definir una posible nueva familia de Reels musicales de Universe Sent Me, donde una canción licenciada guía una microhistoria emocional antes de seleccionar personajes, escenas o producción.
 
-**Estado:** Active — máster publicado en cascada completa; fashion film metafórico de Crave You en revisión de Fernando.
+**Estado:** Active — máster publicado en cascada completa; video `HOOK-FIRST-V1` de Maeve generado sin audio incrustado y pendiente de audio nativo/publicación.
 
 **Fecha de creación:** 2026-08-20
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 4.0
+**Versión:** 4.1
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -728,11 +728,12 @@ El storyboard de revisión conserva la secuencia definida arriba: una pluma cruz
 | Preflight | Resultado | Estado |
 |---|---|---|
 | Referencia de identidad | `Generate_reference_Chica.jpeg`, Drive file ID `1SGd3wzzf-WR-db-foL6Nh67-YO49hgt6` | Verificada para rostro, cabello, pecas, cárdigan gris y silueta adulta |
-| Keyframe hook-first | [`CON-2026-08-24_CraveYou_Maeve_HOOK-FIRST-V1_keyframe_review.png`](https://drive.google.com/file/d/1bISDPbHLqRsw2nK5LwLH3ghlzG6wW18u/view?usp=drivesdk), Drive file ID `1bISDPbHLqRsw2nK5LwLH3ghlzG6wW18u` | Generado y guardado como material de revisión; no es video ni asset publicado |
-| Storyboard | Secuencia de cuatro beats descrita arriba | Preparado para revisión |
+| Keyframe hook-first | [`CON-2026-08-24_CraveYou_Maeve_HOOK-FIRST-V1_keyframe_review.png`](https://drive.google.com/file/d/1bISDPbHLqRsw2nK5LwLH3ghlzG6wW18u/view?usp=drivesdk), Drive file ID `1bISDPbHLqRsw2nK5LwLH3ghlzG6wW18u` | Generado y guardado como material de revisión |
+| Storyboard | Secuencia de cuatro beats descrita arriba | Preparado y utilizado como guía de generación |
+| Video master sin audio | [`CON-2026-08-24_CraveYou_Maeve_HOOK-FIRST-V1_master_no_audio.mp4`](https://drive.google.com/file/d/1Fia8Qmewm6FTm3w28oKrSnLCOd_sqdKM1/view?usp=drivesdk), Drive file ID `1Fia8Qmewm6FTm3w28oKrSnLCOd_sqdKM1` | Generado; 9.0 s, 720×1280, H.264, 24 fps, sin pista de audio |
 | Audio `Crave You` | Facebook Reels e Instagram Reels | No verificado: la sesión del navegador disponible mostró una pantalla de acceso no autenticada; no se usaron credenciales ni se presume disponibilidad nativa |
-| Producción/publicación | Sin generación de video, programación, publicación, afiliación ni modificación de calendario | Bloqueado hasta aprobación explícita posterior |
+| Producción/publicación | Video generado y guardado en Drive; no se programó, publicó, adjuntó afiliación ni modificó el calendario | El máster permanece en `Review` hasta validar audio y autorizar publicación |
 
-La referencia oficial se usó únicamente para identidad; la composición del keyframe usa la locación editorial aprobada y excluye gato, Kael, Kiri, terceros, texto en pantalla, romance nuevo y sensualidad explícita. El keyframe queda en `Review` y no constituye autorización para generar clips. La siguiente decisión humana es confirmar si el keyframe conserva suficientemente la identidad de Maeve y, si procede, habilitar una verificación manual de audio nativo en Facebook e Instagram mediante la sesión real del usuario; la disponibilidad no debe inferirse de servicios externos de streaming.
+La referencia oficial se usó únicamente para identidad; la composición del keyframe y el video usan la locación editorial aprobada y excluyen gato, Kael, Kiri, terceros, texto en pantalla, romance nuevo y sensualidad explícita. El video se generó a partir del keyframe aprobado y se limpió para conservar exclusivamente la pista de video. El máster queda en `Review`: no está autorizado para programarse ni publicarse. La siguiente decisión humana es confirmar la disponibilidad nativa de audio en Facebook e Instagram y, por separado, autorizar cualquier publicación; la disponibilidad no debe inferirse de servicios externos de streaming.
 
 **Documentos que requieren coherencia:** `GrowthOS/01_02_Content_Backlog.md`, `GrowthOS/07_00_Registro_Maestro_Reels.md`, `GrowthOS/00_Índice.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
