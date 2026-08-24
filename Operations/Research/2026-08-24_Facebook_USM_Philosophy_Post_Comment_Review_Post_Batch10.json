@@ -1,0 +1,1257 @@
+{
+  "reviewed_at": "2026-08-24T03:19:22+00:00",
+  "page_id": "1036844829507460",
+  "post_id": "1036844829507460_122151375549072582",
+  "linked_comment_id": "2371700183567495",
+  "source": "Meta Graph API v26.0 / direct Page Post comments + one-level nested replies",
+  "read_only": true,
+  "post": {
+    "id": "1036844829507460_122151375549072582",
+    "message": "☁️✨🤔",
+    "created_time": "2026-08-21T15:00:10+0000",
+    "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151375549072582"
+  },
+  "root_comments_seen": 68,
+  "comment_ids_seen": 90,
+  "root_comments_without_direct_page_reply": 37,
+  "root_comments_with_direct_page_reply": 31,
+  "unanswered_units_including_replies": 59,
+  "api_error_count": 0,
+  "api_errors": [],
+  "unanswered": [
+    {
+      "comment_id": "122151375549072582_1558962762367236",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:51:34+0000",
+      "comment_message": "Filos Zen y tiene toda la razón",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151375549072582_901941632636512",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1307689874582977",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:44:58+0000",
+      "comment_message": "Deii Pm Fue el amor de mi vida, ya jamás logre encontrar una mujer así de pensante 🥺",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151375549072582_901941632636512",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_3607944949355092",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:33:35+0000",
+      "comment_message": "White Benny pero no ay hombres lo que abunda es puro gays",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151375549072582_1036994699332009",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1540949493877836",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:49:39+0000",
+      "comment_message": "White Benny y al hombre jajaj?",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151375549072582_1036994699332009",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1800401234474137",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:15:47+0000",
+      "comment_message": "Bruno Linares es una larga historia apegado a la ciencia ,historia de como los españoles arrodillan  a los mexicanos obligandoles a sus creencias, en fin  hijo mio por tu paz interna puedes creer en lo que tu gustes. 😊😉",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151375549072582_1036994699332009",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_999401489813305",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T17:58:18+0000",
+      "comment_message": "Jose Estrella si le sabes no le llamas papá dios le llamas yaldabaoth WOW!!",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151375549072582_37855550027424046",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1031688816340908",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:00:48+0000",
+      "comment_message": "Zeus IR de la que dejó verde al Paul",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151375549072582_1495068889305489",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1099796562737376",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T23:06:53+0000",
+      "comment_message": "Lorenz Henry DL what?",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151375549072582_2032167597504773",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1817089682764579",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T17:25:20+0000",
+      "comment_message": "L Roberto LJ Hay que tener en cuenta que nuestro Dios es un sincretismo entre amon, zeus y el dios abrahamico \n\nY pues amon-ra se creo a si mismo, el tmbn es la nada misma, pero cuando la nada adquirio consciencia se creo todo (Te invito a investigar por tu cuenta, pues estoy parafraseando)",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151375549072582_1755338779425523",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1009066035494694",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:26:13+0000",
+      "comment_message": "L Roberto LJ así es querido amiguito! \nPara los que aún no lo entienden Dyos no es más que la misma existencia: nada/todo (dualidad) tiempo/espacio y (luz/sombra)",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151375549072582_1755338779425523",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1759740911890964",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:28:23+0000",
+      "comment_message": "Joaquín Araque por ahí va la cosa bro, el tema es que el verdadero nombre de ese poder existencial divino que crea todo no tiene nombre y se le atribuye el nombre de Dios con mil pronombres de mil historias diferentes con distintos nombres...",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151375549072582_1755338779425523",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1356485370871041",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:30:25+0000",
+      "comment_message": "Houz Huer por eso me gusto tanto el poema del tao \n\n\"El tao que se puede nombrar, no es le verdadero tao\"\n\nO como decia Giordano Bruno \"La esencia de Dios es tan grande y poderosa que es imposible que pueda caber en una idea humana\"",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151375549072582_1755338779425523",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1607751794327420",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-24T02:48:33+0000",
+      "comment_message": "L Roberto LJ la importancia de observar 👀 amigos si ponen atención,  habla de la pipa que  tiene en sus manos ,habla de drogas y mas mis estimados 🐑🐑🐑🐑🐑🐑",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151375549072582_1755338779425523",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1034906995912331",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-24T02:52:54+0000",
+      "comment_message": "Y si , el hombre  invento la biblia a su conveniencia y semejanza, pero hasta la.mujer abrió los ojos ja ja ja ya no es sumisa al hombre ni a sus ideas narcisistas,  pero entiendo eso lo entiende una persona de media profesional en adelante obvio🤷",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151375549072582_1755338779425523",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1089305796872950",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T16:30:08+0000",
+      "comment_message": "bigbong 🤣",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151375549072582_2632055060570783",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_2445223119302734",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:45:36+0000",
+      "comment_message": "Daniel Ricardo Mesa seas mamón, no metas la física en lo teológico.",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151375549072582_4590382837949041",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1334349785149802",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:55:20+0000",
+      "comment_message": "Daniel Ricardo Mesa hahaha esa es la masa idiota",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151375549072582_4590382837949041",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1311421877545042",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:45:50+0000",
+      "comment_message": "Universe Sent Me y que es transformar?idiota",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151375549072582_4590382837949041",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1788329568832719",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:52:18+0000",
+      "comment_message": "Doser Psycodelia lit está escena",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151375549072582_4590382837949041",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1442803861236285",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:43:58+0000",
+      "comment_message": "Dios fue creado por el hombre.",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1046418834638831",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:08:16+0000",
+      "comment_message": "Eimen",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1837178844383978",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:14:54+0000",
+      "comment_message": "Yo",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_872181139160064",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:53:55+0000",
+      "comment_message": "No digas eso diosito que me confundes 😞",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1780347913099754",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:22:44+0000",
+      "comment_message": "Chale, con razón, las luciérnagas se les prende el fundillo andaba bien pasado el creador cuando las inventó",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_972981675802863",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:23:55+0000",
+      "comment_message": "El hombre quiere saber los misterios del cosmos del tiempo cuando no es capaz de dominar ni su mente ni sus deseos",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1586390436263285",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:05:49+0000",
+      "comment_message": "El hombre creo a Dios a su imagen y semejanza",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1039895839038595",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:59:55+0000",
+      "comment_message": "El ser humano xd",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1068685309201303",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:24:42+0000",
+      "comment_message": "Miguel Hurtado cielos forest eres el mejor, es correcto el altísimo habita en los cielos, pero es metáfora y astroteologia, Dios a muerto y nosotros lo hemos matado decía Nietcheze, es productos de nuestros pensamientos",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151375549072582_1039895839038595",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1644442960710725",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:10:57+0000",
+      "comment_message": "El imaginario colectivo",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1403487698543780",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:24:31+0000",
+      "comment_message": "La imaginación del hombre 😎",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1617891193262090",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:06:06+0000",
+      "comment_message": "El más drogo",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1642353581234558",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:38:41+0000",
+      "comment_message": "Nadie el siempre ha existido antes de todo lo que conocemos.🖤",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_2682838392118151",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:44:12+0000",
+      "comment_message": "Con ese look: los griegos.",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1783035276182829",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:07:52+0000",
+      "comment_message": "Dios se habrá fumado una de las buenas jajaja",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_2553794695093209",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:54:31+0000",
+      "comment_message": "Uste mismo pa acuérdese 😉",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_2242124606609181",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:32:32+0000",
+      "comment_message": "Jajajajaja 🤣🤣 Dios siendo Dios un rato",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_2263197197773933",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T14:20:17+0000",
+      "comment_message": "My Dad",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_27540592708951388",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:41:54+0000",
+      "comment_message": "Ave fénix. Solo se me ocurre eso jajaja",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_2139938020237319",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:56:13+0000",
+      "comment_message": "Quien va a crear al creador no digan mamadas",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1859721888531923",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:49:20+0000",
+      "comment_message": "Esta loca la pregunta",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1271513331667499",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:40:57+0000",
+      "comment_message": "Cómo podrías crear algo que siempre ha estado?",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1702306021068700",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:46:06+0000",
+      "comment_message": "Sergio Stamaria no tiene sentido tu respuesta",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151375549072582_1271513331667499",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1296590669083805",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:50:24+0000",
+      "comment_message": "Miguel Ángel Quintana  tienes tan poca compresión de los símbolos que le llamas respuesta a una pregunta formulada, como es que lograr levantarte cada mañana sin morir en el intento?",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151375549072582_1271513331667499",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1345438560907663",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:53:01+0000",
+      "comment_message": "Yo soy el gran yo 😁",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1284524650312354",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T22:42:54+0000",
+      "comment_message": "Querer comprender cosas que no somos capaces ni de imaginar sería como preguntarle a una hormiga que tipo de harina usó el panadero para hornear ese pan de donde se desprendió aquella miga que la alimenta a ella y a la colonia. \nSomos tan diminutos en el universo pero tan curiosos que creemos ser capaces de analizar y comprender todo, lo cierto es que no sabemos nada acerca de la vida, mucho menos de la creación y en un abismo inimaginable sabemos sobre el creador.",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_2159556928109209",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:56:09+0000",
+      "comment_message": "El huevo o la gallina la misma aplica",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1775198897248896",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:58:34+0000",
+      "comment_message": ".",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1383611429837958",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:55:07+0000",
+      "comment_message": "🦉🤨😰😨😧😦😮😯😳🤯🌞🩵🙆🏻🌬️☁️🌈⚡🌪️🌧️🌞",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_2076221029645579",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:54:12+0000",
+      "comment_message": "Héctor Ser",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_2044378132857128",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T17:33:04+0000",
+      "comment_message": "Gabriel Quintero",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1640754384339219",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:52:50+0000",
+      "comment_message": "🤭🤗😆👌❤️❤️‍🩹👑💯",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1933875761350410",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:30:09+0000",
+      "comment_message": "Nosotros",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1046880914865088",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:03:14+0000",
+      "comment_message": "El hombre",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1074916168231993",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:03:07+0000",
+      "comment_message": "Nosotros",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_2089754968329324",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:41:52+0000",
+      "comment_message": "Hit✨️💨",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1450732226864481",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T20:38:14+0000",
+      "comment_message": "",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1004388505976156",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:52:18+0000",
+      "comment_message": "🤔🤨🫣😎 La  élite lo creo invento y los esquizofrenicos adoctrinados e ignorantes y sumisos se la tragaron tienen muchos amigos imaginarios 🐑💩🤡💀",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_942638681466045",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:47:59+0000",
+      "comment_message": "Dios existe por qué el pendejo ser humano lo creó. Por la puta necesidad de creer en algo superior.",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151375549072582_1110818364949332",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:30:19+0000",
+      "comment_message": "El es el TODO ha existido siempre pynch3$ nalgas miadas con ese meme te caerá la vrgx",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    }
+  ],
+  "responded_roots": [
+    {
+      "comment_id": "122151375549072582_1220311087840453",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:32:40+0000",
+      "comment_message": "A ti “la histeria colectiva”",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_1036885795611907"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_1394530616118799",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:32:34+0000",
+      "comment_message": "Esa es una muy buena pregunta 🤔",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_1296908542379898"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_2130811011171538",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:22:01+0000",
+      "comment_message": "Nosotros",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_1072601748518850"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_2053549225533216",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:19:50+0000",
+      "comment_message": "😂🤣🤣🤣🤣🤣🤣🤣",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_1778181103364654"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_1041452398791312",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:08:26+0000",
+      "comment_message": "Nosotros...por si no lo sabias",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_1431675492356014"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_2126386847941459",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:06:14+0000",
+      "comment_message": "El hombre",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_1491021766121325"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_1365567789035301",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:05:30+0000",
+      "comment_message": "La gente cree que Dios no existe, y que importa quien creo a Dios lo que importa es Que lo adores y le obedezcas , para que preguntar tanto si lo que importa es estar bien",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_1424324786227812"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_1723626708895458",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T19:02:20+0000",
+      "comment_message": "Y quien es el de este dibujo??",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_1278389794297670"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_2502202590246984",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:59:52+0000",
+      "comment_message": "El humano después de fumar un porro jajaja",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_2299896167506874"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_2854017014972594",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:59:03+0000",
+      "comment_message": "Una singular singularidad singularizada singularmente",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_1333516701902630"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_826905977110802",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:49:13+0000",
+      "comment_message": "😊🤭😂🤣",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_1072469108633905"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_901941632636512",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:44:12+0000",
+      "comment_message": "Me decía una niña de 16 años , Dios existe porqué nosotros existimos.",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_1822967672449893"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_2272618483487529",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:40:17+0000",
+      "comment_message": "Una super conciencia",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_1463572888955608"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_1963359551036593",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:40:01+0000",
+      "comment_message": "Es algo q no te incumbe mortal ingrato😇",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_1050471807915443"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_1782291889888079",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:35:02+0000",
+      "comment_message": "Será que no es persona será aire yo creo DIOS ES AIRE NOMAS",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_1408953451115173"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_1377242193921035",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:32:14+0000",
+      "comment_message": "Quien sabe 🥱🤔",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_1701834400902167"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_1694912638287381",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:30:07+0000",
+      "comment_message": "Eres una construcción racional de nuestras dudas ascedidas por el vacío de la incomprensión humana y la soberbia de querer entender",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_1434315235177802"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_1036994699332009",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:28:21+0000",
+      "comment_message": "Pues quien ??? Yo mero \" el hombre\"",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_4649170828742638"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_28655859584020446",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:26:45+0000",
+      "comment_message": "el humano es su amigo imaginario",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_1357763783109238"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_1068603845556930",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:23:11+0000",
+      "comment_message": "Apocalipsis 22:13 yo soy el alfa y la omega, el principio y el fin, el primero y el ultimo",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_3599578740201354"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_1595535212280412",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:21:52+0000",
+      "comment_message": "El humano",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_873977805646788"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_2020808335220703",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:02:40+0000",
+      "comment_message": "Esa pregunta quebró absolutamente toda creencia religiosa en mi mente 🤣",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_1420888616565588"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_1620066063117283",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:02:19+0000",
+      "comment_message": "El ser humano... Inventamos cada cosa para no hacernos cargos de nuestros errores y para justificar todo lo que no entendemos",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_2954874998179841"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_1701646280916056",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T18:01:13+0000",
+      "comment_message": "L Roberto LJ jjaaj dios no existe,solo te hacen creér que existe",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_1461399919134414"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_37855550027424046",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T17:52:54+0000",
+      "comment_message": "Sofia la madre la sabiduria el neon que probiene del pleroma ella lo creo.",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_1406471608059820"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_1495068889305489",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T17:46:05+0000",
+      "comment_message": "ájaa! De la mera exótica 😏🤣🤣",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_2268961613940492"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_2032167597504773",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T17:27:49+0000",
+      "comment_message": "Êl asî mismo se creô, llegô del multiverso y se creô asî mismo para este universo.",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_1000740896353122"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_1370750357963444",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T17:26:55+0000",
+      "comment_message": "Nosotros te creamos, y tú nos creaste. Confuso pero cierto.",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_4618084168478511"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_1755338779425523",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T09:49:58+0000",
+      "comment_message": "Pues esta raro porque dios creó el tiempo y si nos ponemos a pensar él siempre estubo ahí porque si hay alguien que creo a dios pues entonces ya no sería dios... y si tratamos de buscar a su creador sigmifica que el tiempo también le afecta a dios y ya no es un dios... jaja o sea que antes de el no había nada y después de el no abra nada porque dios siempre estubo ahí en la nada y siempre lo estará porque el invento el mismo tiempo y para el no afecta como hacia nosotros lo persivimos",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_1108299515097105"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_2632055060570783",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-23T01:03:57+0000",
+      "comment_message": "Y se hizo el BigBang jajajaja",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_4103837726583284"
+      ]
+    },
+    {
+      "comment_id": "122151375549072582_4590382837949041",
+      "post_id": "1036844829507460_122151375549072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151375549072582",
+      "comment_created_time": "2026-08-22T20:53:45+0000",
+      "comment_message": "La energía no se crea ni se destruye, solo se transforma. ✍🏻",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151375549072582_4046718525622147"
+      ]
+    }
+  ]
+}

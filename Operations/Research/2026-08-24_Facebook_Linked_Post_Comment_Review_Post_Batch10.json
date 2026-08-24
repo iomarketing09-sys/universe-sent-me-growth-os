@@ -1,0 +1,1052 @@
+{
+  "reviewed_at": "2026-08-24T03:18:37+00:00",
+  "page_id": "1036844829507460",
+  "post_id": "1036844829507460_122151376083072582",
+  "linked_comment_id": "2371700183567495",
+  "source": "Meta Graph API v26.0 / direct Page Post comments + one-level nested replies",
+  "read_only": true,
+  "status": "Superseded_For_Philosophy_Post_Audit",
+  "note": "Este corte corresponde al post 😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe, no al post ☁️✨🤔. Para el segundo se debe usar 2026-08-24_Facebook_USM_Philosophy_Post_Comment_Review_Post_Batch10.json.",
+  "post": {
+    "id": "1036844829507460_122151376083072582",
+    "message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+    "created_time": "2026-08-22T18:30:00+0000",
+    "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151376083072582"
+  },
+  "root_comments_seen": 59,
+  "comment_ids_seen": 75,
+  "root_comments_without_direct_page_reply": 34,
+  "root_comments_with_direct_page_reply": 25,
+  "unanswered_units_including_replies": 50,
+  "api_error_count": 0,
+  "api_errors": [],
+  "unanswered": [
+    {
+      "comment_id": "122151376083072582_1610047380741515",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T02:48:19+0000",
+      "comment_message": "Olivia Gonzalez Tú lo has dicho es un reverendo idiota.",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151376083072582_2013957549234314",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_2217697402410708",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T01:47:32+0000",
+      "comment_message": "Amayrany Velázquez kegel se llaman",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151376083072582_1046993968083177",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_27750034838001055",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T01:54:19+0000",
+      "comment_message": "Amayrany Velázquez",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151376083072582_1046993968083177",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_3382611651900802",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T22:34:57+0000",
+      "comment_message": "Janiiss Mendozaa si tiene mal piso pelvico no,los musculos no van a tener fuerza",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151376083072582_1028237043539692",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1571920724307009",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T23:09:37+0000",
+      "comment_message": "Delfina Gonzalez solo que te dejen los 🥚 🥚 adentro 😂",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151376083072582_1870186187563324",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1434017718618203",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T00:49:27+0000",
+      "comment_message": "Delfina Gonzalez sería plasentero quedar asi trabados como perros",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151376083072582_1870186187563324",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_902627939195818",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T02:14:10+0000",
+      "comment_message": "Eross Dimau placentero  con C",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151376083072582_1870186187563324",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1761860648467747",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T02:30:35+0000",
+      "comment_message": "Eross Dimau que??? Eres zo o fi li co",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151376083072582_1870186187563324",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1930555637636650",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T02:23:00+0000",
+      "comment_message": "Aun así me han abandonado",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1374857821527596",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T21:23:16+0000",
+      "comment_message": "Cuando estaba bien joven estuve con una que hasta me desprendió el frenillo que une la cabeza con el pellejo de tan apretada que estaba jajaja.\n Ufff fenomenal 👌",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_2633800330373000",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T00:54:24+0000",
+      "comment_message": "Fernando Molina a mí me pasó con mi ex , le rompí el frenillo dos veces , pero no pensé que era por lo apretada , pensé que era por los sentones , ahora si que no entiendo por qué se lo rompí dos veces jajajaja",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151376083072582_1374857821527596",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_3161831614012821",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T02:36:10+0000",
+      "comment_message": "Muchas gracias 😂😂😂",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1539874414078742",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T03:17:21+0000",
+      "comment_message": "El chiquito siempre 🤭",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_28148795568072687",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T03:08:58+0000",
+      "comment_message": "Jajaja se pasan...",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_910971145400039",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T01:11:20+0000",
+      "comment_message": "Ufff BB... Bien fácil cuando hagan pipi aprieta suelta aprieta suelta 😀",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1363924695858655",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T02:09:29+0000",
+      "comment_message": "Eriickaa Ross no es recomendable que lo hagan haciendo pis pero si es ese ejercicio de contracción",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151376083072582_910971145400039",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1081846294378141",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T02:35:44+0000",
+      "comment_message": "Ana Munera a mí me lo recomendó mi gine",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151376083072582_910971145400039",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1800051157832910",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T00:39:38+0000",
+      "comment_message": "Gracias 🫂😊",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_2288087915279831",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T20:14:14+0000",
+      "comment_message": "CANGREJERA",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1031789069652438",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T23:26:09+0000",
+      "comment_message": "Ejercitense",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1815514939806977",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T02:24:43+0000",
+      "comment_message": "Asi sea 🤭",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1047038644880975",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T00:43:31+0000",
+      "comment_message": "Ebs Javier Sdt feliz usted verdad ajajjajaja",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1772568213940295",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T01:01:09+0000",
+      "comment_message": "Gabriela Medina obvio bb 🤤🤤🤤",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151376083072582_1047038644880975",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_949437001541040",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T01:02:47+0000",
+      "comment_message": "Ebs Javier Sdt 🤭❣️",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151376083072582_1047038644880975",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_2556977661487440",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T20:03:11+0000",
+      "comment_message": "Jajajaja gracias! Gracias!",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1612855930252607",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T20:44:56+0000",
+      "comment_message": "No entiendo 😅",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_3701844673318079",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T02:02:56+0000",
+      "comment_message": "Gaby Loredo ni entenderás",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151376083072582_1612855930252607",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1326149289368622",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T02:33:34+0000",
+      "comment_message": "Ejercicios de Kegel. 👌🏻 Recomendados.",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1057397926935250",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T22:17:47+0000",
+      "comment_message": "Upss",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_2076744963209419",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T20:24:38+0000",
+      "comment_message": "Necesito!!",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1550365972735011",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T20:07:24+0000",
+      "comment_message": "benditas sean 🧡👌",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1770381007434218",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-22T19:34:39+0000",
+      "comment_message": "",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_4013447285624648",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T20:52:46+0000",
+      "comment_message": "Angel Valencia",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1011734881866583",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-22T23:44:51+0000",
+      "comment_message": "",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1046306528175154",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T01:00:39+0000",
+      "comment_message": "Diego Cruz",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1053899660748200",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T01:18:00+0000",
+      "comment_message": "Shulada Mujer!!!👌🏼",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151376083072582_1046306528175154",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_2271298670302332",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T22:03:33+0000",
+      "comment_message": "Allison A. Velasquez Rios ❤️",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1374303084841115",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T20:21:38+0000",
+      "comment_message": "🤷🏼‍♀️",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1375496654051986",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-22T19:02:12+0000",
+      "comment_message": "",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_917639204232499",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T21:43:46+0000",
+      "comment_message": "",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1431044915538379",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T04:36:35+0000",
+      "comment_message": "",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1593582012424855",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T02:49:09+0000",
+      "comment_message": "Gracias 🙏🏽 🤗🤭",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1766545104476907",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T03:17:28+0000",
+      "comment_message": "Luz Ramirez así que eres una de las elegidas por dios jajjas 🤭",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151376083072582_1593582012424855",
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_2139372153647884",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T22:19:09+0000",
+      "comment_message": "Amén",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_2571934529910533",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T02:16:20+0000",
+      "comment_message": "Jajaja",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_886767890954566",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T00:41:22+0000",
+      "comment_message": "Gracias",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1423809309592152",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T02:34:04+0000",
+      "comment_message": "Jjj   X2",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_2294338478000981",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T01:26:22+0000",
+      "comment_message": "Amén 🤣🤣",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_3542786449212158",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T23:09:15+0000",
+      "comment_message": "",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    },
+    {
+      "comment_id": "122151376083072582_1385775342983817",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T17:37:33+0000",
+      "comment_message": "Jajaja si soy",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": false,
+      "direct_page_reply_count": 0,
+      "page_reply_ids": []
+    }
+  ],
+  "responded_roots": [
+    {
+      "comment_id": "122151376083072582_2041952303861577",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T02:30:16+0000",
+      "comment_message": "Hasta quedar pegados como perros ☝🏻🫶🏻😎",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_1077823714740369"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_936442526178550",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T02:20:42+0000",
+      "comment_message": "No fue el producto, fue la atención !!!\n🔋",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_2057146538237658"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_1777381266626241",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T01:59:52+0000",
+      "comment_message": "Y larga la tengas para que eso suceda 🤔",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_1586873356432896"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_2136675140593360",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T01:46:26+0000",
+      "comment_message": "Yo sé pero de nada me sirve si ni novio tengo 😒",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_1414431073895095"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_1461910735802563",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T01:45:49+0000",
+      "comment_message": "Pensaba que todas podíamos hacer eso",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_1099858606049935"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_2013957549234314",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T01:38:27+0000",
+      "comment_message": "Yo lo hago y el pendej* aun asi me cambio por otro bollo podrido 🤣🤣🤣",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_1475009691053757"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_1046993968083177",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T01:16:35+0000",
+      "comment_message": "Jajaja como son los ejercicios?",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_2317015215370362"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_2371700183567495",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T01:01:58+0000",
+      "comment_message": "Rikolino dijo bubulubu 😂",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_2544521936374341"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_1435662098773431",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T00:55:57+0000",
+      "comment_message": "Perrito",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_1862911838260493"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_1694103262232576",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T00:50:25+0000",
+      "comment_message": "Que te ordeñe asi desde adentro 🥵🥵🥵",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_1060242273589535"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_1387619540151231",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T23:31:04+0000",
+      "comment_message": "Así como yo viviré 120 años.🤗",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_25998006246563712"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_3309129972605548",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T23:59:47+0000",
+      "comment_message": "Jaja jajaja jajajaja jajajaja así les gusta",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_2857677777946548"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_1037906569213579",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T23:05:57+0000",
+      "comment_message": "Perrito 😂 cangrejo como sea somos afortunadas",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_1012107321873782"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_1976584486379301",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T22:26:03+0000",
+      "comment_message": "Que yo que? 😅😘",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_1589792622559067"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_1620302366278351",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T22:23:54+0000",
+      "comment_message": "Jajaja todas pueden solo tiene que saber hacer los ejercicios",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_1614458346791800"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_1028237043539692",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T21:10:11+0000",
+      "comment_message": "Yo juraba que era algo que TODAS hacíamos :0",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_1067336845783809"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_1108096458452825",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T21:01:11+0000",
+      "comment_message": "Benditos los que tenemos eso en casa 🙏✨❤️‍🔥",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_1404185008333995"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_1719326086024419",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T20:16:39+0000",
+      "comment_message": "No sabia que no podian todas jaja y la explicación que él me da jaja me da mucha risa como dice que le hago jajaj",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_1105469192150480"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_1747280716505079",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T19:41:26+0000",
+      "comment_message": "A mi papucho le doy sus buenas chupadas con mis labios , y no estoy hablando de los de mi boca!!\nHahahahahahahaha",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_2270174113755963"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_1870186187563324",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T18:12:13+0000",
+      "comment_message": "yo  pero a veces hasta me da miedo quedar atorada como perros",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_1046638411560082"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_1078572578055585",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T16:36:02+0000",
+      "comment_message": "Amén hermanas 🤓",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_893660230176913"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_1534062764662566",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T14:05:31+0000",
+      "comment_message": "Amén",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_2187948638483974"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_1033379579457116",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-23T05:07:43+0000",
+      "comment_message": "Que? No todas pueden? 🤔",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_1041153768901083"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_1645620013842129",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-22T23:57:25+0000",
+      "comment_message": "de mis ejecrcicios de kegel no van a estar hablando .",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_1630977451714964"
+      ]
+    },
+    {
+      "comment_id": "122151376083072582_2218476525601574",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
+      "comment_created_time": "2026-08-24T02:11:30+0000",
+      "comment_message": "Uuff yes yes yes",
+      "comment_type": "Comentario_Raiz",
+      "parent_comment_id": null,
+      "is_hidden": false,
+      "has_direct_page_reply": true,
+      "direct_page_reply_count": 1,
+      "page_reply_ids": [
+        "122151376083072582_1432139138976125"
+      ]
+    }
+  ]
+}

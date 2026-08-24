@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "4.7"
+version: "4.8"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -73,6 +73,13 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_Comment_Review_Broad_72h_Post_Batch09.json"
   - "Operations/Research/2026-08-24_Facebook_Post_Batch09_Review_Record.json"
   - "Operations/Research/2026-08-24_Facebook_Pending_Queue_Remaining.md"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_10.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_10.json"
+  - "Operations/Research/2026-08-24_Facebook_USM_Philosophy_Post_Comment_Review_Post_Batch10.json"
+  - "Operations/Research/2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Reply_Proposals.json"
+  - "Operations/Research/2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Reply_Proposals.md"
+  - "Operations/Research/2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Review_Record.json"
+  - "Operations/Research/2026-08-24_Facebook_Linked_Post_Comment_Review_Post_Batch10.json"
 organization: "Operations/Research"
 ---
 
@@ -951,3 +958,25 @@ Fernando aprobó las cinco respuestas musicales de la reconciliación. La API pe
 La revisión posterior de la cola dejó **34 propuestas activas pendientes**, **1 comentario aprobado bloqueado** y **1 réplica musical excluida** por ser conversación usuario-a-usuario. Las propuestas accionables se agrupan en 25 del post `☁️✨🤔` y 9 del meme `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`. El último corte posterior encontró un comentario nuevo adicional, también una réplica entre usuarios, registrado como `No_Requiere_Respuesta`.
 
 La evidencia está en `2026-08-24_Facebook_Comment_Publication_Batch_09.json`, `2026-08-24_Facebook_Comment_Publication_Record_Batch_09.json`, `2026-08-24_Facebook_Pending_Queue_Remaining.md` y `2026-08-24_Facebook_Post_Batch09_Review_Record.json`. No se publicaron respuestas fuera de las cuatro verificadas; el caso inaccesible permanece pendiente de nueva lectura.
+
+
+## 59. Batch 10 y auditoría correcta del post ☁️✨🤔 — 24 de agosto de 2026
+
+Fernando autorizó responder las 25 propuestas existentes del post `1036844829507460_122151375549072582`, cuyo caption externo es `☁️✨🤔`. Meta Graph API v26.0 publicó y verificó **25/25** respuestas: autoría de Universe Sent Me, `parent.id` correcto, texto exacto e `is_hidden=false`. El lote se registró como Batch 10 y se sincronizó en el ledger.
+
+El primer corte visualmente equivalente que se ejecutó después del lote apuntó por error al post del meme `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`; ese artefacto quedó marcado como `Superseded_For_Philosophy_Post_Audit`. La auditoría correcta se ejecutó después sobre `1036844829507460_122151375549072582`.
+
+| Métrica del post correcto | Resultado |
+|---|---:|
+| Raíces observadas | 68 |
+| IDs incluyendo réplicas | 90 |
+| Raíces con respuesta directa de la Página | 31 |
+| Raíces sin respuesta directa | 37 |
+| Unidades sin respuesta incluyendo réplicas | 59 |
+| Errores de API | 0 |
+| Propuestas preparadas | 28 |
+| Casos sin acción | 9 |
+
+Las 28 propuestas retoman el comentario específico, la paradoja central y el tono de USM sin usar una plantilla repetitiva. Los 9 casos sin acción corresponden a nombres aislados, emojis, comentarios vacíos, puntuación o respuestas de una sola palabra sin contexto suficiente. No se publicaron propuestas nuevas del segundo corte.
+
+Después del Batch 10, la cola general queda reducida a **9 propuestas activas** del meme `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe` y **1 caso aprobado bloqueado** por inaccesibilidad temporal en Meta. La cola actualizada está en `2026-08-24_Facebook_Pending_Queue_Remaining.md`. La auditoría correcta y las 28 propuestas están en los artefactos `2026-08-24_Facebook_USM_Philosophy_Post_Comment_Review_Post_Batch10.json` y `2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Reply_Proposals.md/.json`.
