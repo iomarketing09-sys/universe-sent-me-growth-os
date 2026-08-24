@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-24
 
-**Versión:** 4.9
+**Versión:** 5.0
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -858,3 +858,21 @@ Se capturó un corte de solo lectura en Meta Business Suite desde Quick-seedless
 La interfaz identifica la caída principal de audiencia alrededor de **0:02** y muestra una curva de retención, por lo que el corte se clasifica como `L3_Current_Facebook`. No obstante, no se debe interpretar `Reproducciones de 15 segundos` como finalización: el máster documentado dura aproximadamente 9 segundos y la pantalla no expone un campo inequívoco de completación ni replay separado. La lectura válida por ahora es que el hook logra distribución fuera de seguidores, pero pierde atención antes de consolidar el movimiento de órbita; hacen falta cortes diarios comparables para diagnosticar si la curva se estabiliza.
 
 La comparación con MPM-001 continúa siendo contextual, no causal: cambia personaje, audio, lenguaje visual y duración. Este corte no autoriza nuevos renders, publicación adicional, afiliación ni modificaciones del Reel. El siguiente corte diario mantiene Facebook e Instagram separados y debe registrar métricas equivalentes cuando estén visibles.
+
+## Comparación contextual con Reels históricos de Facebook — 2026-08-24
+
+El corte de Maeve se contrastó contra las 13 filas individuales visibles del reporte histórico de Meta Business Suite para publicaciones entre el 25 de julio y el 21 de agosto. Es una referencia de **rango histórico**, no una cohorte temporal limpia: las filas históricas combinan edades y ventanas de vida distintas, mientras Maeve es un corte temprano por contenido. No se convierten estas diferencias en una prueba causal del audio, el personaje o la mecánica de hook.
+
+| Métrica | Maeve — corte actual | Mediana histórica visible | Diferencia descriptiva | Lectura correcta |
+|---|---:|---:|---:|---|
+| Visualizaciones | 757 | 937 | -19.21% | Está por debajo del centro histórico visible, pero por encima de cuatro de las 13 filas. |
+| Espectadores | 636 | 695 | -8.48% | Distribución cercana al rango central, no al outlier alto. |
+| Reacciones | 16 | 17 | -5.88% | Prácticamente en la mediana visible. |
+| Tiempo promedio | 4 s | 4 s | 0.00% | Coincide con la mediana; no prueba consumo fuerte frente a la duración del Reel. |
+| Shares | 0 | 1 | -100.00% | Falta señal de compartido en este corte; observar antes de valorar la pieza como compartible. |
+
+El principal outlier histórico —Fantasma caminando con gatos— registra 7,116 vistas, 7,037 de alcance y 38 shares. No es un benchmark operativo de Maeve: fue observado en otra fecha, con una mecánica de meme/movimiento diferente y una ventana de vida más madura. El uso correcto de ese outlier es recordar que los shares y la adquisición pueden escalar cuando la lógica visual es inmediata, no exigir que un fashion film musical lo replique en su primer día.
+
+Frente a los Reels recientes de Facebook, Maeve reúne más visualizaciones y reacciones brutas que los snapshots anteriores de MPM-001 (411 visualizaciones, 14 reacciones visibles) y `Remote Control` (397 vistas, 7 reacciones visibles), pero su tiempo promedio de 4 s queda por debajo de los 6 s de MPM-001 y los 5 s de `Remote Control`; además, Maeve aún no muestra shares ni guardados. Dado que cambian edad de corte, audio, personaje, duración y formato, esto describe una **mejor distribución inicial relativa**, no un ganador de retención ni de conversación.
+
+> **Decisión CGO:** no editar, extender ni sustituir el Reel de Maeve a partir de este único corte. Mantener el siguiente snapshot diario, observar si aparecen shares/guardados y confirmar si la caída cerca de 0:02 se estabiliza. Para el siguiente caso MPM de Fantasma, preservar el aprendizaje común: movimiento y conflicto ya visibles desde el cuadro inicial, texto `No lo sigas` antes de 0.8 s y payoff sin explicación.
