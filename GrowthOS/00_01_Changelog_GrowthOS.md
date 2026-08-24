@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-24
-**Versión:** 3.57
+**Versión:** 3.58
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.58.00] — 2026-08-24 (Manus): Catálogos y servicios confirmados integrados al staging de Firma Bordados.** Fernando validó BigBang 2019, M&O 2016 y Soul & Blues 2025 como catálogos vigentes. Se cargaron sus copias autorizadas en el staging, se corrigieron tamaños visibles a 13.6 MB, 3.8 MB y 8.0 MB, y se verificó respuesta HTTP correcta. Se incorporaron digitalización, bordado, serigrafía, playeras, camisas, uniformes industriales y línea médica; parches y gorras se excluyen con una nota discreta. Los PDFs deberán migrarse al repositorio/almacenamiento del cliente para Cloudflare. Wix, DNS y dominio no cambiaron.
 
 - **[3.57.00] — 2026-08-24 (Manus): Inventario autorizado de catálogos Drive para Firma Bordados.** Se revisaron tres PDFs compartidos por Fernando: BigBang (61 páginas, 13.6 MB), M&O (52 páginas, 3.8 MB) y Soul & Blues 2025 (23 páginas, 8.0 MB). Se detectaron metadatos de tamaño desactualizados en dos tarjetas y ediciones declaradas 2019/2016 que requieren confirmación de vigencia del cliente antes de sustituir enlaces Wix. No se modificó el staging, Cloudflare, Wix, DNS ni contenido de servicios.
 

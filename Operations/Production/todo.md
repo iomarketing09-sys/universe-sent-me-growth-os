@@ -15,3 +15,4 @@
 - [x] Definir y revisar una animación ligera, accesible y coherente con Color que Trabaja antes de modificar el staging de Firma Bordados.
 - [x] Implementar la puntada inicial, entradas breves y microinteracciones aprobadas en el staging de Firma Bordados; validar en escritorio y móvil.
 - [x] Inventariar y validar los PDFs autorizados de Drive para sustituir los enlaces temporales de Wix en un staging posterior.
+- [x] Integrar los tres catálogos confirmados con tamaños correctos y los servicios validados en el staging de Firma Bordados, sin cambio de Wix o DNS.
