@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 4.6
+**Versión:** 4.7
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -796,3 +796,18 @@ Fernando informó que publicó manualmente la pieza `CON-2026-08-24-CraveYou-Mae
 | Instagram Reels | [Enlace proporcionado](https://www.instagram.com/reel/DcZlBYVRiot/?igsi=OHcwaG10MXA0Mmt1); shortcode `DcZlBYVRiot`; cuenta visible `universe_sent_me_0326`; hashtags visibles parcialmente, incluyendo `#CraveYou`, `#Maeve`, `#UniverseSentMe`, `#ReelMusical` y `#VisualStorytelling` | Publicado según enlace de Fernando y visible públicamente; ID nativo, hora exacta, caption completo y audio no confirmados |
 
 El estado operativo pasa de `Review` a `Publicado_Manual` para Facebook e Instagram. Las métricas de cada plataforma permanecen pendientes y deben registrarse por separado en los cortes diarios del Growth OS. No se publicó en TikTok ni YouTube Shorts, no se añadió afiliación y no se modificó el calendario.
+
+
+## Calendario de seguimiento de métricas — publicación 2026-08-23
+
+El seguimiento de `CON-2026-08-24-CraveYou-MaeveFeathers` se realizará mediante el reporte diario del Growth OS, que es la fuente primaria de aprendizaje. No se requieren comprobaciones horarias. El corte debe consultar Facebook e Instagram por separado y conservar `null`/`Unavailable` cuando una métrica no sea entregada.
+
+| Corte | Momento recomendado | Alcance | Regla |
+|---|---|---|---|
+| Primer corte operativo | 2026-08-24, 22:00 `America/Matamoros` | Facebook e Instagram | Registrar estado, views, reach, reacciones, comentarios, shares, guardados, tiempo de reproducción y retención si existen; clasificar cada plataforma como L1, L2 o L3. |
+| Seguimiento diario | Cada día a las 22:00, hasta el cierre semanal | Facebook e Instagram | Comparar tendencias por plataforma; no sumar métricas entre redes ni convertir acumulados en ventanas artificiales. |
+| Cierre opcional de 24 horas | Facebook: 2026-08-24, 17:36:57; Instagram: usar la hora nativa solo si se confirma | Cada plataforma por separado | Es una lectura contractual opcional. Si no existe baseline o snapshot exacto, registrar `Unavailable_No_Baseline` y conservar el corte diario. |
+| Cierre opcional de 72 horas | Facebook: 2026-08-26, 17:36:57; Instagram: según su timestamp nativo confirmado | Cada plataforma por separado | No rellenar `Interacciones_72h` con acumulados lifetime; solo escribirlo si existe una captura temporalmente válida. |
+| Cierre de siete días | 2026-08-30, 22:00 | Facebook e Instagram | Evaluar distribución y consumo inicial como señal descriptiva; no declarar veredicto de la celda con un solo Reel. |
+
+La recomendación operativa es comenzar con el corte de **hoy a las 22:00** y mantener el seguimiento diario. Los puntos de 24 y 72 horas deben tratarse como opcionales porque el protocolo vigente exige baseline E0 y una captura temporal válida; si Meta o Windsor solo devuelve acumulados actuales, se documenta el dato como `lifetime_actual`, no como ventana exacta. El seguimiento no autoriza nuevas publicaciones, cambios de caption, afiliación ni modificaciones del Reel.
