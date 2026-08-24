@@ -3,10 +3,10 @@
 **Propósito:** Definir los criterios de decisión para la programación, reutilización, análisis y creación de contenido en Universe Sent Me.
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
-**Última actualización:** 2026-08-22
-**Versión:** 3.26
+**Última actualización:** 2026-08-24
+**Versión:** 3.27
 **Autor:** Manus AI (CGO); Sección 6 añadida por Claude
-**Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`, `../Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`, `../Operations/Research/2026-08-21_Julio_Expansion_Lote01_Analysis.md`, `../Operations/Research/2026-08-21_Expansion_Celdas_Comparables_Post_Julio_Lote01.json`, `../Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Findings.md`, `../Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md`, `../Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`, `../Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Audit.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Analysis.md`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Manual_Findings.md`, `../Operations/Research/2026-08-21_Junio_Caption_Reclassification_Impact.md`, `../Operations/Research/2026-08-21_Validacion_Cruzada_Hipotesis_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.md`, `../Operations/Research/2026-08-15_Community_Engagement_Log.md`, `../Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`
+**Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`, `../Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`, `../Operations/Research/2026-08-21_Julio_Expansion_Lote01_Analysis.md`, `../Operations/Research/2026-08-21_Expansion_Celdas_Comparables_Post_Julio_Lote01.json`, `../Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Findings.md`, `../Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md`, `../Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`, `../Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Audit.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Analysis.md`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Manual_Findings.md`, `../Operations/Research/2026-08-21_Junio_Caption_Reclassification_Impact.md`, `../Operations/Research/2026-08-21_Validacion_Cruzada_Hipotesis_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.md`, `../Operations/Research/2026-08-15_Community_Engagement_Log.md`, `../Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `../Operations/Research/2026-08-24_Facebook_Expanded_Audit_Reply_Proposals.md`
 
 ---
 
@@ -411,3 +411,26 @@ La publicación de respuestas comunitarias debe cerrar con una comprobación det
 El estado del comentario original debe registrarse por separado. Si el comentario padre aparece como `is_hidden=True`, la respuesta puede estar publicada y visible para la API, pero eso no demuestra que el hilo sea visible para el público. No se debe desocultar, eliminar ni modificar el comentario padre sin una decisión de moderación independiente. Esta distinción evita declarar “visible” un intercambio cuyo comentario original sigue oculto.
 
 El lote del 22 de agosto verificó siete respuestas con esta comprobación: las siete pertenecen al hilo correcto, fueron publicadas por Universe Sent Me, conservaron el texto aprobado y devolvieron `is_hidden=False`. Uno de los comentarios originales, el que contenía un enlace musical, devolvió `is_hidden=True`; no se cambió su estado y quedó marcado para revisión separada. La evidencia completa se conserva en `Operations/Research/2026-08-15_Community_Engagement_Log.csv` y en la auditoría de Facebook.
+
+
+## 21. Respuestas con criterio propio — 2026-08-24
+
+El feedback editorial de Fernando refina la regla de especificidad: una respuesta de Universe Sent Me debe sonar como una cuenta con criterio propio, no como una plantilla que reconoce superficialmente el tema. La brevedad no es suficiente por sí sola; el remate debe devolver el elemento exacto que la persona aportó.
+
+| Principio | Aplicación | Evitar |
+|---|---|---|
+| Responder al comentario concreto | Retomar la anécdota, interpretación, contradicción o palabra que sostiene el chiste. | Elogios o frases que podrían pegarse bajo cualquier comentario. |
+| Mantener complicidad sin condescendencia | En una queja o vulnerabilidad ligera, dejar el chiste abierto y acompañar el tono. | Etiquetas como “queja de soltera” cuando pueden sonar condescendientes. |
+| Usar un remate propio | “Eso ya no fue problema de técnica; fue falta de criterio.” funciona porque juzga el giro específico del comentario y no necesita invocar un personaje. | Añadir “el universo” por obligación o sobrecargar la respuesta con lore. |
+| En música, responder a la interpretación | Si la persona explica qué significa una canción, identificar el título y devolver esa lectura concreta. | Hablar de la banda en general con una frase que serviría para cualquier canción. |
+
+Para el comentario que identifica **“Te Quiero Puta!” de Rammstein** y lo interpreta como una canción sobre una mujer con muchos pretendientes, la respuesta pendiente quedó refinada así: “Sí, esa lectura de una mujer con tantos pretendientes le pone otra capa a la canción. 👀 Rammstein no deja precisamente las cosas en la superficie.” La ficha oficial de la canción se conserva en el video de letras de Rammstein y en la ficha musical de Spotify [1] [2].
+
+Antes de aprobar una respuesta, el revisor debe contestar: **“¿Qué parte exacta de este comentario estoy devolviendo?”** Si no puede señalar una palabra, idea, interpretación o giro concreto, la respuesta debe reescribirse. Esta regla se aplica a comentarios musicales, historias personales, dobles sentidos, quejas, críticas y reacciones de baja fricción.
+
+Toda respuesta pública continúa bajo aprobación humana explícita. El criterio mejora la calidad de las propuestas, pero no autoriza publicación automática.
+
+### Referencias
+
+[1]: https://www.youtube.com/watch?v=1f_5dnvh3d4 "Rammstein Official — Te Quiero Puta! (Official Lyric Video)"
+[2]: https://open.spotify.com/intl-es/track/2ZVLMYBZQ5BRwuk0UGupnB "Spotify — Te quiero puta! — Rammstein"
