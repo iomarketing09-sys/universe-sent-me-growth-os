@@ -1,0 +1,87 @@
+{
+  "title": "Facebook Comment Publication Batch 12 — Reclassified USM Replies",
+  "purpose": "Evidencia de la publicación y verificación de cinco respuestas reclasificadas y aprobadas por Fernando.",
+  "status": "Active",
+  "created_at": "2026-08-24T03:40:35+00:00",
+  "updated_at": "2026-08-24T03:40:35+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Reply_Proposals.json",
+    "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_12.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv"
+  ],
+  "organization": "Operations/Research",
+  "published_at": "2026-08-24T03:40:35+00:00",
+  "source": "Meta Graph API v26.0",
+  "page_id": "1036844829507460",
+  "post_id": "1036844829507460_122151375549072582",
+  "explicit_user_approval": true,
+  "requested_count": 5,
+  "published_count": 5,
+  "already_published_count": 0,
+  "inaccessible_count": 0,
+  "verified_count": 5,
+  "results": [
+    {
+      "status": "published",
+      "parent_comment_id": "122151375549072582_1837178844383978",
+      "comment_excerpt": "Yo",
+      "reply_id": "122151375549072582_1035787572782598",
+      "message": "Jajaja, el “yo” se reconoció en el meme. 😂🤔",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151375549072582_1837178844383978",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151375549072582_1046418834638831",
+      "comment_excerpt": "Eimen",
+      "reply_id": "122151375549072582_1800937160903221",
+      "message": "Amén, que el misterio siga abierto. 😅🤔",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151375549072582_1046418834638831",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151375549072582_1383611429837958",
+      "comment_excerpt": "🦉🤨😰😨😧😦😮😯😳🤯🌞🩵🙆🏻🌬️☁️🌈⚡🌪️🌧️🌞",
+      "reply_id": "122151375549072582_1564611505447627",
+      "message": "Eso fue una reacción completa: misterio, crisis y clima cósmico incluidos. 😂🌌",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151375549072582_1383611429837958",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151375549072582_1640754384339219",
+      "comment_excerpt": "🤭🤗😆👌❤️❤️‍🩹👑💯",
+      "reply_id": "122151375549072582_1586318856502201",
+      "message": "Esa reacción trae risa, corazón y sello de aprobación en un solo paquete. 😂👑",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151375549072582_1640754384339219",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151375549072582_2263197197773933",
+      "comment_excerpt": "My Dad",
+      "reply_id": "122151375549072582_1067579035664987",
+      "message": "Tu papá ya pidió los créditos de la creación. 😂🤔",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151375549072582_2263197197773933",
+      "is_hidden": false,
+      "verified": true
+    }
+  ]
+}

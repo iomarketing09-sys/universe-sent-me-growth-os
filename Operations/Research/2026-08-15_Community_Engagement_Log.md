@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "4.5"
+version: "4.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -98,6 +98,16 @@ related_documents:
   - "Operations/Automation/export_facebook_publication_batch_11_md.py"
   - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_11.md"
   - "Operations/Automation/reclassify_usm_philosophy_no_action_cases_20260824.py"
+  - "Operations/Automation/publish_five_reclassified_usm_replies_20260824.py"
+  - "Operations/Automation/record_facebook_publication_batch_12.py"
+  - "Operations/Automation/summarize_facebook_pending_queue_after_batch12.py"
+  - "Operations/Automation/audit_current_facebook_pending_queue_20260824.py"
+  - "Operations/Automation/export_facebook_pending_after_batch12_md.py"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_12.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_12.json"
+  - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch12.json"
+  - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch12_Audit.json"
+  - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch12.md"
   - "Operations/Research/2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Reply_Proposals.md"
   - "GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md"
 organization: "Operations/Research"

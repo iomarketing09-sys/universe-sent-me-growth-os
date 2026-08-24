@@ -1,0 +1,55 @@
+{
+  "title": "Facebook Comment Publication Record Batch 12 — Reclassified USM Replies",
+  "purpose": "Registrar la sincronización de las cinco respuestas reclasificadas y aprobadas del post ☁️✨🤔.",
+  "status": "Active",
+  "created_at": "2026-08-24T03:40:35+00:00",
+  "updated_at": "2026-08-24T03:40:35+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_12.json",
+    "Operations/Research/2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Reply_Proposals.json",
+    "Operations/Research/2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Reply_Proposals.md",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv"
+  ],
+  "organization": "Operations/Research",
+  "recorded_at": "2026-08-24T03:40:35+00:00",
+  "source": "Meta Graph API v26.0",
+  "batch_file": "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_12.json",
+  "updated_rows": 5,
+  "verified_rows": 5,
+  "records": [
+    {
+      "comment_id": "122151375549072582_1837178844383978",
+      "reply_id": "122151375549072582_1035787572782598",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_1046418834638831",
+      "reply_id": "122151375549072582_1800937160903221",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_1383611429837958",
+      "reply_id": "122151375549072582_1564611505447627",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_1640754384339219",
+      "reply_id": "122151375549072582_1586318856502201",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_2263197197773933",
+      "reply_id": "122151375549072582_1067579035664987",
+      "status": "Respondido",
+      "verified": true
+    }
+  ],
+  "remaining_no_action_count": 4,
+  "new_proposals_published": false
+}

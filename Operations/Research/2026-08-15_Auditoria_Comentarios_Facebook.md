@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "5.0"
+version: "5.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -89,6 +89,16 @@ related_documents:
   - "Operations/Automation/export_facebook_publication_batch_11_md.py"
   - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_11.md"
   - "Operations/Automation/reclassify_usm_philosophy_no_action_cases_20260824.py"
+  - "Operations/Automation/publish_five_reclassified_usm_replies_20260824.py"
+  - "Operations/Automation/record_facebook_publication_batch_12.py"
+  - "Operations/Automation/summarize_facebook_pending_queue_after_batch12.py"
+  - "Operations/Automation/audit_current_facebook_pending_queue_20260824.py"
+  - "Operations/Automation/export_facebook_pending_after_batch12_md.py"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_12.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_12.json"
+  - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch12.json"
+  - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch12_Audit.json"
+  - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch12.md"
 organization: "Operations/Research"
 ---
 
@@ -1022,3 +1032,23 @@ También se corrigieron cuatro interpretaciones del bloque de nueve casos sin ac
 | `🦉🤨😰😨😧😦😮😯😳🤯🌞🩵🙆🏻🌬️☁️🌈⚡🌪️🌧️🌞` | Cadena de misterio, sorpresa, crisis y símbolos cósmicos/climáticos; se propone responder a la reacción sin afirmar un significado exacto. | Propuesta pendiente |
 
 Los otros cuatro casos permanecen sin acción por ser una referencia aislada, un nombre aislado, puntuación o comentario vacío. Las cinco propuestas corregidas no se publicaron. El JSON de propuestas pasó a v1.2 y el ledger mantiene 255 filas y 255 IDs únicos.
+
+
+## 62. Batch 12 y estado actual de la cola — 24 de agosto de 2026
+
+Fernando aprobó las cinco respuestas reclasificadas del post ☁️✨🤔. Meta Graph API v26.0 publicó y verificó **5/5**: “Yo”, “Eimen” interpretado como “Amén”, “My Dad” y las dos cadenas de emojis. No se publicaron respuestas adicionales.
+
+Después del lote se revisó la cola actual del ledger y se comprobó cada registro pendiente mediante una auditoría de solo lectura en Meta:
+
+| Estado actual | Cantidad |
+|---|---:|
+| Registros de Facebook pendientes con propuesta | 12 |
+| Accesibles por API | 11 |
+| Inaccesibles por API | 1 |
+| Con respuesta exacta de la Página | 0 |
+| Con otra respuesta de la Página | 0 |
+| Errores de API aparte del objeto inaccesible | 0 |
+
+La cola pendiente se compone de **8 raíces del post del meme** —“CANGREJERA”, `🤷🏼‍♀️`, “Necesito!!”, “Upss”, “Amén”, “Ejercitense” y dos “Gracias”—, **1 comentario musical inaccesible** de “El día que volviste a la Tierra”, **2 réplicas de otros usuarios** con propuestas heredadas y **1 comentario raíz contextual** (“Jajaja si soy”) en otro hilo. Las réplicas quedan sujetas a criterio editorial y no deben publicarse automáticamente.
+
+La evidencia está en `2026-08-24_Facebook_Pending_Queue_After_Batch12_Audit.json` y el informe legible `2026-08-24_Facebook_Pending_Queue_After_Batch12.md`. El ledger conserva 255 filas y 255 IDs únicos; la validación permanece en `PASS`.
