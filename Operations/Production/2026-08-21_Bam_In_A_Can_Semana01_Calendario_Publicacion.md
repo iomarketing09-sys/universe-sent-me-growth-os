@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — Semana 01: calendario de publicación"
 purpose: "Coordinar la salida del primer lote de cuatro piezas de Bam in a Can, sus metadatos por plataforma y las ventanas mínimas de medición sin programar publicaciones automáticas."
-status: "Active — CAN-001 medido; CAN-002 publicado en TikTok y pendiente de Instagram/YouTube"
+status: "Active — CAN-001 medido; CAN-002 publicado en TikTok e Instagram y pendiente de YouTube"
 created: 2026-08-21
 updated: 2026-08-23
-version: "1.5"
+version: "1.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-21_Bam_In_A_Can_Semana01_Paquete_Lanzamiento.md"
@@ -71,7 +71,21 @@ El corte operativo de CAN-001 no identifica una “hora ganadora” ni prueba qu
 | T+72 h | 26 Ago, 18:59:43 CDT |
 | T+7 d | 30 Ago, 18:59:43 CDT |
 
-La siguiente acción de la cascada sigue siendo Instagram Reels y luego YouTube Shorts. Los T0 de esas salidas se registrarán por separado; no se reutiliza el T0 de TikTok.
+### Registro real — CAN-002 Instagram Reels
+
+| Campo | Dato confirmado |
+|---|---|
+| Estado | Publicado. |
+| T0 público | 23 Ago 2026, 19:20:37 CDT; recuperado del atributo `datetime` visible en el permalink. |
+| Shortcode / permalink | `DcZv1l4sjhz` · `https://www.instagram.com/reel/DcZv1l4sjhz/` |
+| Copy y disclosure | Verificados públicamente: copy exacto, `Original fiction. AI-made.` y los cuatro hashtags aprobados. |
+| Audio | `she share post (for blog)`; creador y volumen no informados. |
+| T+3 h | 23 Ago, 22:20:37 CDT |
+| T+24 h | 24 Ago, 19:20:37 CDT |
+| T+72 h | 26 Ago, 19:20:37 CDT |
+| T+7 d | 30 Ago, 19:20:37 CDT |
+
+La siguiente acción de la cascada es YouTube Shorts. Su T0 se registrará por separado; no se reutilizan los T0 de TikTok ni Instagram.
 
 ## Go/no-go por cada día
 
