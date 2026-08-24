@@ -1,0 +1,39 @@
+---
+title: "Bam in a Can — CAN-002: chequeo inicial de visibilidad"
+purpose: "Preservar el primer corte operativo de CAN-002 antes de las ventanas T+3 h, separando métricas autenticadas, evidencia pública e indexación pendiente."
+status: "Active — chequeo previo a T+3 h; medición temprana completa pendiente"
+created: 2026-08-23
+updated: 2026-08-23
+version: "1.0"
+author: "Manus AI (CGO)"
+related_documents:
+  - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
+  - "Operations/Production/2026-08-21_Bam_In_A_Can_Semana01_Calendario_Publicacion.md"
+  - "Operations/Production/2026-08-21_Bam_In_A_Can_Semana01_Paquete_Lanzamiento.md"
+  - "Operations/Research/2026-08-21_Bam_CAN001_Snapshot_Temprano.md"
+organization: "Operations/Research"
+---
+
+# Bam in a Can — CAN-002: chequeo inicial de visibilidad
+
+## Propósito del corte
+
+Este documento registra el primer chequeo de CAN-002 solicitado tras cerrar su cascada. El corte se declaró a las **20:12:20 CDT del 23 de agosto**. No corresponde a T+3 h en ninguna plataforma: TikTok tenía 1 h 12 min 37 s; Instagram Reels 51 min 43 s; y YouTube Shorts 15 min 20 s. Por ello, describe visibilidad e indexación iniciales, no rendimiento temprano comparable.
+
+## Datos observados
+
+| Plataforma | Edad al corte declarado | Fuente / hora de consulta | Métricas disponibles | Interpretación correcta |
+|---|---:|---|---|---|
+| TikTok | 1 h 12 min 37 s | Windsor.ai, `data_fetched_at` 01:12:41 UTC | 26 views; 0 likes; 0 comentarios; 0 shares; 0 favoritos; duración 9.73 s; avg. watch 3.03 s; total watch 72 s; full-watch rate 8.33 %. | El avg. watch equivale a **31.14 %** de la duración. Es una observación inicial de volumen mínimo, no una lectura de distribución. El caption recuperado por Windsor incluye `Original fiction. AI-made.`. |
+| Instagram Reels | 51 min 43 s | Windsor.ai, consulta 01:13:21 UTC; permalink público 01:14:22 UTC | Windsor no devolvió fila. El permalink público confirma caption/disclosure y muestra **0 comentarios**. | La ausencia de fila no equivale a cero views, reach, likes, shares o saves. |
+| YouTube Shorts | 15 min 20 s | Windsor.ai, consulta 01:13:53 UTC; Short público 01:14:36 UTC | Windsor no devolvió fila. La vista pública muestra **1 like** y **0 comentarios**; no expone views. | Es evidencia pública de interacción inicial, no un dataset completo. La fila autenticada sigue pendiente de indexación. |
+
+## Lectura operativa
+
+No se valida una hipótesis creativa, de audio o de plataforma en este corte. La pieza tiene menos de 75 minutos en TikTok y menos de una hora en Instagram, mientras que YouTube todavía no indexa sus métricas en Windsor.ai. Las dos versiones con audio nativo compartido y la versión de SFX no tienen edades equivalentes ni datos suficientes para comparar consumo o atribuir un efecto a `she share post (for blog)`.
+
+El siguiente corte útil empieza después de que YouTube cumpla su propia ventana T+3 h, a las **22:57 CDT**. Se deben repetir las consultas autenticadas de las tres redes y conservar por separado las métricas de plataforma, la fuente y la edad real de cada post.
+
+## Límites y actualizaciones relacionadas
+
+El ledger registra este control como `pre-T3` dentro del campo de snapshot para evitar que la información se pierda, pero no debe leerse como el snapshot T+3 h programado. Este documento actualiza la interpretación de lanzamiento de CAN-002; los documentos relacionados que requieren el siguiente ajuste son el ledger de distribución y el paquete de Semana 01, ambos modificados en este mismo cambio.

@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — Semana 01: paquete de lanzamiento"
 purpose: "Organizar el primer bloque de cuatro piezas originales de Bam in a Can antes de publicar, con orden editorial, producción, copy, audio y medición."
-status: "Active — CAN-001 publicada; CAN-002 cascada completa y en medición"
+status: "Active — CAN-001 publicada; CAN-002 en chequeo inicial previo a T+3 h"
 created: 2026-08-21
 updated: 2026-08-23
-version: "1.13"
+version: "1.14"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_Plan_Lanzamiento_Audiencia_Bam_In_A_Can.md"
@@ -100,6 +100,8 @@ Use only the attached initial keyframe as the visual anchor. Vertical 9:16, 10 s
 | Hashtags de base | `#BamInACan #Weirdcore #FakeCommercial #AIVideo` |
 
 **Regla de salida basada en CAN-001:** conservar la secuencia TikTok 19:00 → Instagram Reels 19:20 → YouTube Shorts 19:50 CDT. El primer post mostró mejores views y watch time medio en Instagram, pero no valida el audio al 80 % como explicación; para CAN-002, mantener el audio nativo bajo (TikTok 10–12 %, Instagram 8–10 %) y preservar el motor, los clicks y el chime. YouTube conserva SFX sin canción como control. El runbook completo y los textos bloqueados viven en `2026-08-21_Bam_In_A_Can_Semana01_Calendario_Publicacion.md`.
+
+**Chequeo inicial (23 Ago, 20:12 CDT):** TikTok recibió 26 views, 0 interacciones y 3.03 s de watch time medio a T+1 h 12 min; Instagram aún no devolvió fila en Windsor y su permalink mostraba 0 comentarios; YouTube aún no devolvió fila y su página pública mostraba 1 like y 0 comentarios. Este corte es previo a T+3 h y no autoriza conclusiones sobre la pieza ni sobre el audio. La evidencia completa vive en `Operations/Research/2026-08-23_Bam_CAN002_Chequeo_Inicial.md`.
 
 ### CAN-003 — *Do Not Insert Coins After Midnight*
 
