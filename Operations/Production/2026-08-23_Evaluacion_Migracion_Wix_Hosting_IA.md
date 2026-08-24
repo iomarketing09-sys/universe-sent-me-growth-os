@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 1.8
+**Versión:** 1.9
 
 **Autor:** Manus AI
 
@@ -146,6 +146,12 @@ El sitio estático de Firma Bordados no necesita compartir servidor con OmniRout
 La recomendación de arquitectura y presupuesto permanece: primero migrar y validar el sitio en un entorno gratuito y separado; mantener OmniRoute local hasta que cinco pruebas de análisis/borradores demuestren valor; y solo después considerar un VPS privado. Pagar un VPS no mejora por sí mismo los modelos ni sus cuotas; solo aporta disponibilidad independiente del iMac y una ubicación apta para un backend privado.
 
 La guía técnica completa de la prueba sin DNS está en `2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md`. Define una rama `staging`, un proyecto Pages separado, una URL `*.pages.dev`, el reemplazo previo de rutas Manus/Wix por activos controlados por el cliente y un checklist verificable. También establece que WordPress no aporta valor inmediato al caso actual; se reconsidera únicamente si el cliente necesita edición frecuente autónoma, blog, múltiples autores o funciones CMS.
+
+### Aclaración posterior: WordPress en vez de Cloudflare Pages
+
+Fernando aclaró que desea evaluar **WordPress como alternativa al host Cloudflare Pages**, no solo como un CMS accesorio. La ruta prioritaria en Review pasa a ser WordPress.com bajo cuenta del cliente, usando primero un sitio temporal `*.wordpress.com` sin DNS. Esta alternativa es viable dentro del presupuesto de referencia con el plan Personal anual; no ofrece el staging nativo de WordPress.com, que queda limitado a Business/Commerce y supera ese presupuesto. La guía operativa separada es `2026-08-23_Ruta_Staging_WordPress_Firma_Bordados.md`.
+
+La opción Cloudflare Pages continúa documentada como alternativa estática y reversible, pero no se iniciará mientras se evalúe la preferencia WordPress. Ninguna ruta autoriza mezclar infraestructura, credenciales, presupuesto o datos del cliente con Universe Sent Me u OmniRoute.
 
 ## Integración futura de IA
 

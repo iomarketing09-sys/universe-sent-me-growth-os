@@ -11,3 +11,4 @@
 - [x] Comparar una distribución anual reversible de $2,000 MXN entre el hosting de Firma Bordados y la operación privada de OmniRoute, manteniendo ambos proyectos separados.
 - [x] Documentar el staging técnico y la validación de Firma Bordados en Cloudflare Pages sin cambio de DNS.
 - [x] Comparar WordPress con el sitio estático actual antes de decidir la plataforma final del cliente.
+- [x] Evaluar un staging de WordPress administrado como alternativa a Cloudflare Pages, con cuenta, datos y presupuesto propios del cliente.

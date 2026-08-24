@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-24
-**Versión:** 3.54
+**Versión:** 3.55
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.55.00] — 2026-08-23 (Manus): Ruta WordPress.com para staging de Firma Bordados.** Fernando aclaró que evalúa WordPress como plataforma de hosting en lugar de Cloudflare Pages. Se documentó la ruta WordPress.com bajo cuenta del cliente: sitio temporal `*.wordpress.com`, activos/PDFs propios, revisión sin DNS y conexión futura del dominio Wix mediante registros DNS solo después de aprobación escrita. WordPress.com Personal cabe en el presupuesto de referencia; el staging nativo Business/Commerce no. No se creó cuenta, contrató plan, modificó Wix/DNS ni se mezcló infraestructura con Universe Sent Me.
 
 - **[3.54.00] — 2026-08-23 (Manus): Guía de staging Cloudflare Pages para Firma Bordados.** Se documentó una prueba reversible del sitio React/Vite en una URL `*.pages.dev`, con rama `staging`, repositorio y cuenta propiedad del cliente, salida `dist/public`, reemplazo previo de rutas de activos Manus/Wix y checklist de verificación. La guía no autoriza cambio de DNS, cancelación Wix, formulario con backend ni integración con OmniRoute. WordPress queda descartado para el alcance actual y solo se reconsidera ante edición frecuente autónoma, blog, autores o CMS. Los presupuestos, credenciales, datos y hosting permanecen separados de Universe Sent Me.
 
