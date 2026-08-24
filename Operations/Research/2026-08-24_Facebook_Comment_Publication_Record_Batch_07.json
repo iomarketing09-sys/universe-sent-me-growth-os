@@ -1,0 +1,65 @@
+{
+  "title": "Facebook Comment Publication Record Batch 07",
+  "purpose": "Registrar la sincronización de las siete respuestas aprobadas y verificadas en el Community Engagement Log.",
+  "status": "Active",
+  "created_at": "2026-08-24T02:34:43+00:00",
+  "updated_at": "2026-08-24T02:34:43+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_07.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
+    "Operations/Research/2026-08-24_Facebook_Expanded_Audit_Reply_Proposals.json"
+  ],
+  "organization": "Operations/Research",
+  "recorded_at": "2026-08-24T02:34:43+00:00",
+  "source": "Meta Graph API v26.0",
+  "batch_file": "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_07.json",
+  "updated_rows": 7,
+  "verified_rows": 7,
+  "records": [
+    {
+      "comment_id": "122151376083072582_2218476525601574",
+      "reply_id": "122151376083072582_1432139138976125",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_1461910735802563",
+      "reply_id": "122151376083072582_1099858606049935",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_2136675140593360",
+      "reply_id": "122151376083072582_1414431073895095",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_2013957549234314",
+      "reply_id": "122151376083072582_1475009691053757",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_1046993968083177",
+      "reply_id": "122151376083072582_2317015215370362",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_1777381266626241",
+      "reply_id": "122151376083072582_1586873356432896",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376011072582_1379392830310327",
+      "reply_id": "122151376011072582_1738348087493469",
+      "status": "Respondido",
+      "verified": true
+    }
+  ],
+  "new_audit_proposals_published": false
+}

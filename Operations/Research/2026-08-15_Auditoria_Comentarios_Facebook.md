@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "4.3"
+version: "4.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -862,3 +862,20 @@ Las siete propuestas continúan pendientes de aprobación explícita. No se publ
 
 [1]: https://www.youtube.com/watch?v=1f_5dnvh3d4 "Rammstein Official — Te Quiero Puta! (Official Lyric Video)"
 [2]: https://open.spotify.com/intl-es/track/2ZVLMYBZQ5BRwuk0UGupnB "Spotify — Te quiero puta! — Rammstein"
+
+
+## 55. Publicación verificada de siete respuestas aprobadas — 24 de agosto de 2026
+
+Fernando autorizó publicar las siete respuestas pendientes del informe ampliado, incluida la versión corregida para “Yo sé pero de nada me sirve…” y la respuesta específica al comentario sobre Rammstein. El lote se ejecutó exclusivamente mediante Meta Graph API v26.0. La preconsulta de cada hilo no encontró duplicados exactos ni otra respuesta de la Página que bloqueara el lote.
+
+| Comentario padre | Respuesta publicada | Respuesta_Meta_ID | Verificación |
+|---|---|---|---|
+| `122151376083072582_2218476525601574` | “El universo escuchó ese “yes yes yes”. 😂🙈” | `122151376083072582_1432139138976125` | Autoría de Página, padre correcto, texto exacto, `is_hidden=false`. |
+| `122151376083072582_1461910735802563` | “No todas recibieron el mismo manual del universo. 😂” | `122151376083072582_1099858606049935` | Autoría de Página, padre correcto, texto exacto, `is_hidden=false`. |
+| `122151376083072582_2136675140593360` | “Jajaja, el universo también contempla ese pequeño detalle. 😂” | `122151376083072582_1414431073895095` | Autoría de Página, padre correcto, texto exacto, `is_hidden=false`. |
+| `122151376083072582_2013957549234314` | “Eso ya no fue problema de técnica; fue falta de criterio. 😂” | `122151376083072582_1475009691053757` | Autoría de Página, padre correcto, texto exacto, `is_hidden=false`. |
+| `122151376083072582_1046993968083177` | “Son los ejercicios de Kegel; para hacerlos bien, mejor revisa una guía profesional. 😅” | `122151376083072582_2317015215370362` | Autoría de Página, padre correcto, texto exacto, `is_hidden=false`. |
+| `122151376083072582_1777381266626241` | “Jajaja, el universo ya puso sus requisitos. 😂🙈” | `122151376083072582_1586873356432896` | Autoría de Página, padre correcto, texto exacto, `is_hidden=false`. |
+| `122151376011072582_1379392830310327` | “Sí, esa lectura de una mujer con tantos pretendientes le pone otra capa a la canción. 👀 Rammstein no deja precisamente las cosas en la superficie.” | `122151376011072582_1738348087493469` | Autoría de Página, padre correcto, texto exacto, `is_hidden=false`. |
+
+El registro técnico completo está en `2026-08-24_Facebook_Comment_Publication_Batch_07.json` y `2026-08-24_Facebook_Comment_Publication_Record_Batch_07.json`. Las siete filas se actualizaron a `Respondido` y `Aprobada` en el Community Engagement Log. El ledger conserva 226 filas y 226 IDs únicos; el validador quedó en `PASS`. No se publicó ninguna respuesta adicional fuera de estas siete.

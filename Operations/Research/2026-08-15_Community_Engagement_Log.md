@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "3.8"
+version: "3.9"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -50,6 +50,10 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_Comment_Review_Delta_08_Record.json"
   - "Operations/Research/2026-08-24_Facebook_Expanded_Audit_Reply_Proposals.md"
   - "Operations/Research/2026-08-24_Facebook_Expanded_Audit_Reply_Proposals.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_07.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_07.json"
+  - "Operations/Automation/publish_seven_approved_facebook_replies_20260824.py"
+  - "Operations/Automation/record_facebook_publication_batch_07.py"
   - "GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md"
 organization: "Operations/Research"
 ---
@@ -412,3 +416,22 @@ El post enlazado `1036844829507460_122151376083072582` fue revisado además en m
 La referencia correcta del meme queda fijada en la documentación relacionada: la imagen contiene la frase **“larga vida a esas mujeres que aprietan desde adentro”** y el caption externo es `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`. Las descripciones visuales anteriores que afirmaban un gato gris en un salón o corredor palaciego se consideran incorrectas y no deben reutilizarse.
 
 El informe ampliado conserva siete propuestas para la siguiente aprobación de Fernando, incluida una pregunta sobre ejercicios de Kegel marcada como revisión de salud. No incluye instrucciones médicas. Las demás unidades nuevas quedaron en no-acción por baja señal, conversación de usuario a usuario, etiquetas a terceros, ausencia de contexto o una práctica de salud que ya había sido corregida por otra persona. Ninguna de las siete propuestas se publicó.
+
+
+## 29. Batch 07 — siete respuestas aprobadas y verificadas — 24 de agosto de 2026
+
+Fernando autorizó las siete propuestas pendientes del informe ampliado. Cada hilo se consultó antes de publicar para comprobar que no existiera una respuesta exacta previa ni otra respuesta de la Página que requiriera bloqueo. Después de cada escritura, Meta Graph API v26.0 confirmó autoría de Universe Sent Me, texto exacto, `parent.id` correcto e `is_hidden=false`.
+
+| Comentario_ID | Respuesta_Meta_ID | Estado |
+|---|---|---|
+| `122151376083072582_2218476525601574` | `122151376083072582_1432139138976125` | `Respondido` |
+| `122151376083072582_1461910735802563` | `122151376083072582_1099858606049935` | `Respondido` |
+| `122151376083072582_2136675140593360` | `122151376083072582_1414431073895095` | `Respondido` |
+| `122151376083072582_2013957549234314` | `122151376083072582_1475009691053757` | `Respondido` |
+| `122151376083072582_1046993968083177` | `122151376083072582_2317015215370362` | `Respondido` |
+| `122151376083072582_1777381266626241` | `122151376083072582_1586873356432896` | `Respondido` |
+| `122151376011072582_1379392830310327` | `122151376011072582_1738348087493469` | `Respondido` |
+
+La última fila corresponde al comentario sobre **“Te Quiero Puta!” de Rammstein** y recibió la respuesta específica sobre la lectura de una mujer con muchos pretendientes. La respuesta de Kegel se mantuvo como referencia general, sin instrucciones clínicas. El detalle completo está en `2026-08-24_Facebook_Comment_Publication_Batch_07.json` y `2026-08-24_Facebook_Comment_Publication_Record_Batch_07.json`.
+
+El ledger conserva 226 filas y 226 IDs únicos. No se añadieron filas nuevas porque los siete comentarios ya estaban registrados como hallazgos del Delta 08; solo se actualizaron sus estados, textos aprobados, fechas e IDs de respuesta. No se publicó ninguna respuesta fuera de las siete autorizadas.

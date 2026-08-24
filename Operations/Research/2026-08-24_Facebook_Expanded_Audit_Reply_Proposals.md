@@ -1,22 +1,22 @@
 # Auditoría ampliada de comentarios de Facebook y propuestas de respuesta
 
-**Propósito:** documentar el corte ampliado de comentarios de Facebook realizado exclusivamente mediante Meta Graph API v26.0, separar los hallazgos que no requieren intervención de las respuestas que podrían continuar la conversación y dejar claro que ninguna propuesta nueva se publicó sin autorización.
+**Propósito:** documentar el corte ampliado de comentarios de Facebook realizado exclusivamente mediante Meta Graph API v26.0 y conservar la trazabilidad de las propuestas aprobadas, publicadas y verificadas por Fernando.
 
 **Estado:** Review  
 **Fecha de creación:** 2026-08-24  
 **Última actualización:** 2026-08-24  
-**Versión:** 1.1
+**Versión:** 1.2
 **Autor:** Manus AI  
 **Fuente:** Meta Graph API v26.0, Page feed, comentarios directos de publicaciones y un nivel de réplicas anidadas  
 **Documentos relacionados:** `2026-08-24_Facebook_Comment_Review_Delta_08.json`; `2026-08-24_Facebook_Linked_Post_Comment_Review.json`; `2026-08-15_Community_Engagement_Log.csv`; `2026-08-15_Auditoria_Comentarios_Facebook.md`; `2026-08-24_Facebook_Linked_Post_Reply_Proposals.md`
 
 ## Resumen operativo
 
-Después de publicar y verificar las tres respuestas expresamente aprobadas por Fernando, se revisaron las 20 publicaciones propias más recientes. El corte cubrió 179 comentarios raíz y 215 IDs de comentarios/réplicas. Desde el cursor `2026-08-24T01:11:02+00:00` aparecieron **16 comentarios nuevos sin respuesta directa**, todos registrados de forma idempotente en el ledger como `Sin_Revisar`. No se detectaron errores de API.
+Después de publicar y verificar las tres respuestas del Batch 06 y las siete respuestas del Batch 07 expresamente aprobadas por Fernando, se revisaron las 20 publicaciones propias más recientes. El corte cubrió 179 comentarios raíz y 215 IDs de comentarios/réplicas. Desde el cursor `2026-08-24T01:11:02+00:00` aparecieron **16 comentarios nuevos sin respuesta directa**, todos registrados de forma idempotente en el ledger como `Sin_Revisar`. No se detectaron errores de API.
 
 El post enlazado `1036844829507460_122151376083072582` se volvió a auditar completo. Tiene 48 comentarios raíz, 17 con respuesta directa de la Página y 31 sin respuesta directa; al incluir réplicas, quedan 42 unidades sin respuesta técnica. Esta cifra incluye comentarios antiguos y conversaciones de usuario a usuario, por lo que no equivale a 42 respuestas que debamos publicar.
 
-> **Alcance de publicación:** en este corte no se publicó ninguna respuesta adicional. Las únicas publicaciones realizadas fueron las tres aprobadas previamente por Fernando y registradas en el Batch 06.
+> **Alcance de publicación:** se publicaron exactamente siete respuestas adicionales en el Batch 07. Las siete fueron aprobadas explícitamente por Fernando y verificadas después de cada escritura. No se publicó ninguna respuesta fuera de esas siete.
 
 ## Referencia correcta del meme
 
@@ -37,27 +37,27 @@ El caption externo comprobado por API es únicamente `😏🙈😂 #UniverseUSM 
 | Nuevos comentarios sin respuesta directa | 16 |
 | Errores de API | 0 |
 | Nuevos registros añadidos al ledger | 16 |
-| Respuestas nuevas publicadas desde esta auditoría | 0 |
+| Respuestas nuevas publicadas desde esta auditoría | 7 |
 | Comentarios raíz del post enlazado | 48 |
 | Raíces del post enlazado con respuesta de la Página | 17 |
 | Raíces del post enlazado sin respuesta de la Página | 31 |
 | Unidades sin respuesta en el post enlazado, incluyendo réplicas | 42 |
 
-## Propuestas pendientes de aprobación
+## Propuestas aprobadas y publicadas — Batch 07
 
-Estas son las únicas siete propuestas nuevas que quedan para la siguiente decisión de Fernando. Todas se relacionan con el comentario y la publicación identificados por sus IDs técnicos en el artefacto JSON. **Ninguna está publicada.**
+Estas fueron las siete propuestas aprobadas por Fernando y publicadas/verificadas mediante Meta Graph API v26.0. Ya no quedan propuestas pendientes de este corte.
 
-| Comentario | Publicación | Propuesta | Criterio |
+| Comentario | Publicación | Propuesta | Estado / ID Meta |
 |---|---|---|---|
-| “Uuff yes yes yes” | Meme de la frase “larga vida a esas mujeres que aprietan desde adentro” | **“El universo escuchó ese ‘yes yes yes’. 😂🙈”** | Complicidad breve, sin añadir detalle explícito. |
-| “Pensaba que todas podíamos hacer eso” | Mismo meme | **“No todas recibieron el mismo manual del universo. 😂”** | Devuelve el chiste sin explicar ni intensificar el doble sentido. |
-| “Yo sé pero de nada me sirve si ni novio tengo 😒” | Mismo meme | **“Jajaja, el universo también contempla ese pequeño detalle. 😂”** | Revisión editorial de Fernando: mantiene la complicidad y deja el chiste abierto, sin sonar condescendiente. |
-| “Yo lo hago y el pendej* aun así me cambió por otro…” | Mismo meme | **“Eso ya no fue problema de técnica; fue falta de criterio. 😂”** | Acompaña la anécdota y evita repetir el insulto. |
-| “Jajaja como son los ejercicios?” | Mismo meme | **“Son los ejercicios de Kegel; para hacerlos bien, mejor revisa una guía profesional. 😅”** | Requiere revisión por tratarse de salud; no incluye instrucciones clínicas. |
-| “Y larga la tengas para que eso suceda 🤔” | Mismo meme | **“Jajaja, el universo ya puso sus requisitos. 😂🙈”** | Mantiene el tono de doble sentido sin repetir ni ampliar el contenido sexual. |
-| “Te quiero p..t4 de rammstein habla de un amor hacia una dama que tiene muchos pretendientes muy buena” | Publicación musical reciente | **“Sí, esa lectura de una mujer con tantos pretendientes le pone otra capa a la canción. 👀 Rammstein no deja precisamente las cosas en la superficie.”** | Retoma la interpretación concreta de la persona y evita un comentario genérico sobre la banda; sigue pendiente de aprobación/publicación. |
+| “Uuff yes yes yes” | Meme de la frase “larga vida a esas mujeres que aprietan desde adentro” | **“El universo escuchó ese ‘yes yes yes’. 😂🙈”** | `Respondido` / `122151376083072582_1432139138976125` |
+| “Pensaba que todas podíamos hacer eso” | Mismo meme | **“No todas recibieron el mismo manual del universo. 😂”** | `Respondido` / `122151376083072582_1099858606049935` |
+| “Yo sé pero de nada me sirve si ni novio tengo 😒” | Mismo meme | **“Jajaja, el universo también contempla ese pequeño detalle. 😂”** | `Respondido` / `122151376083072582_1414431073895095` |
+| “Yo lo hago y el pendej* aun así me cambió por otro…” | Mismo meme | **“Eso ya no fue problema de técnica; fue falta de criterio. 😂”** | `Respondido` / `122151376083072582_1475009691053757` |
+| “Jajaja como son los ejercicios?” | Mismo meme | **“Son los ejercicios de Kegel; para hacerlos bien, mejor revisa una guía profesional. 😅”** | `Respondido` / `122151376083072582_2317015215370362` |
+| “Y larga la tengas para que eso suceda 🤔” | Mismo meme | **“Jajaja, el universo ya puso sus requisitos. 😂🙈”** | `Respondido` / `122151376083072582_1586873356432896` |
+| “Te quiero p..t4 de rammstein habla de un amor hacia una dama que tiene muchos pretendientes muy buena” | Publicación musical reciente | **“Sí, esa lectura de una mujer con tantos pretendientes le pone otra capa a la canción. 👀 Rammstein no deja precisamente las cosas en la superficie.”** | `Respondido` / `122151376011072582_1738348087493469` |
 
-La propuesta sobre los ejercicios de Kegel queda marcada como **Revisión_Salud**: si se aprueba, debe mantenerse como una referencia general y no convertirse en instrucciones médicas dentro del comentario. La propuesta de Rammstein queda ligada a la canción **“Te Quiero Puta!” de Rammstein, del álbum Rosenrot**, y a la lectura expresada en el comentario: una mujer con muchos pretendientes. Las propuestas de doble sentido no deben competir con la intensidad del usuario ni añadir detalles gráficos.
+La respuesta sobre los ejercicios de Kegel se publicó como referencia general y no contiene instrucciones clínicas. La respuesta de Rammstein queda ligada a la canción **“Te Quiero Puta!” de Rammstein, del álbum Rosenrot**, y devuelve la lectura expresada en el comentario: una mujer con muchos pretendientes. Las respuestas de doble sentido mantienen el tono cómplice sin añadir detalles gráficos.
 
 ## Hallazgos clasificados como no-acción
 
@@ -73,9 +73,9 @@ Se mantienen sin respuesta porque son breves, vacíos, nombres aislados, réplic
 
 ## Trazabilidad y siguiente decisión
 
-El Delta 08 quedó registrado en `Operations/Research/2026-08-24_Facebook_Comment_Review_Delta_08_Record.json`; la sincronización añadió 16 IDs nuevos al ledger y la validación del ledger quedó en `PASS`. El artefacto estructurado completo conserva el mensaje, el tipo de comentario, la publicación, la razón de clasificación y, cuando corresponde, la propuesta exacta.
+El Delta 08 quedó registrado en `Operations/Research/2026-08-24_Facebook_Comment_Review_Delta_08_Record.json` y el Batch 07 en `Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_07.json`; la sincronización del lote añadió siete respuestas verificadas al ledger y la validación quedó en `PASS`. El artefacto estructurado completo conserva el mensaje, el tipo de comentario, la publicación, la razón de clasificación y, cuando corresponde, la propuesta exacta.
 
-Fernando debe aprobar explícitamente cada una de las siete propuestas —o indicar cuáles descartar— antes de cualquier nueva publicación. La revisión editorial de la propuesta #3 no equivale a una autorización de publicación. Mientras tanto, no se publicarán respuestas adicionales.
+Las siete respuestas de este informe ya fueron aprobadas, publicadas y verificadas. El siguiente paso es un nuevo corte de solo lectura para identificar comentarios posteriores; no se publicarán respuestas nuevas sin una autorización explícita adicional.
 
 ## Referencias externas de la canción
 

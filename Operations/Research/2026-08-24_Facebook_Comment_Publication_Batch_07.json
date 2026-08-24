@@ -1,0 +1,103 @@
+{
+  "title": "Facebook Comment Publication Batch 07",
+  "purpose": "Evidencia de la publicación y verificación de las siete respuestas aprobadas por Fernando.",
+  "status": "Active",
+  "created_at": "2026-08-24T02:34:43+00:00",
+  "updated_at": "2026-08-24T02:34:43+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
+    "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_07.json",
+    "Operations/Research/2026-08-24_Facebook_Expanded_Audit_Reply_Proposals.json"
+  ],
+  "organization": "Operations/Research",
+  "published_at": "2026-08-24T02:34:43+00:00",
+  "source": "Meta Graph API v26.0",
+  "page_id": "1036844829507460",
+  "post_id": "1036844829507460_122151376083072582",
+  "explicit_user_approval": true,
+  "requested_count": 7,
+  "published_count": 7,
+  "already_published_count": 0,
+  "verified_count": 7,
+  "results": [
+    {
+      "status": "published",
+      "parent_comment_id": "122151376083072582_2218476525601574",
+      "reply_id": "122151376083072582_1432139138976125",
+      "message": "El universo escuchó ese “yes yes yes”. 😂🙈",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376083072582_2218476525601574",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151376083072582_1461910735802563",
+      "reply_id": "122151376083072582_1099858606049935",
+      "message": "No todas recibieron el mismo manual del universo. 😂",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376083072582_1461910735802563",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151376083072582_2136675140593360",
+      "reply_id": "122151376083072582_1414431073895095",
+      "message": "Jajaja, el universo también contempla ese pequeño detalle. 😂",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376083072582_2136675140593360",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151376083072582_2013957549234314",
+      "reply_id": "122151376083072582_1475009691053757",
+      "message": "Eso ya no fue problema de técnica; fue falta de criterio. 😂",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376083072582_2013957549234314",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151376083072582_1046993968083177",
+      "reply_id": "122151376083072582_2317015215370362",
+      "message": "Son los ejercicios de Kegel; para hacerlos bien, mejor revisa una guía profesional. 😅",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376083072582_1046993968083177",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151376083072582_1777381266626241",
+      "reply_id": "122151376083072582_1586873356432896",
+      "message": "Jajaja, el universo ya puso sus requisitos. 😂🙈",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376083072582_1777381266626241",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151376011072582_1379392830310327",
+      "reply_id": "122151376011072582_1738348087493469",
+      "message": "Sí, esa lectura de una mujer con tantos pretendientes le pone otra capa a la canción. 👀 Rammstein no deja precisamente las cosas en la superficie.",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376011072582_1379392830310327",
+      "is_hidden": false,
+      "verified": true
+    }
+  ]
+}
