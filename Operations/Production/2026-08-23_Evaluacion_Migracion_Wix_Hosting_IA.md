@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 1.7
+**Versión:** 1.8
 
 **Autor:** Manus AI
 
@@ -144,6 +144,8 @@ Las cifras son orientativas: el proveedor factura en USD y aplica su propia trib
 El sitio estático de Firma Bordados no necesita compartir servidor con OmniRoute. Cloudflare Pages permite conectar dominio personalizado; para el dominio raíz se administrará la zona DNS en Cloudflare y para un subdominio basta un CNAME configurado después de asociarlo en el panel. [9] La cuenta, facturación y control del dominio deben ser del cliente. El presupuesto de Universe Sent Me no debe pagar ni condicionar esa decisión.
 
 La recomendación de arquitectura y presupuesto permanece: primero migrar y validar el sitio en un entorno gratuito y separado; mantener OmniRoute local hasta que cinco pruebas de análisis/borradores demuestren valor; y solo después considerar un VPS privado. Pagar un VPS no mejora por sí mismo los modelos ni sus cuotas; solo aporta disponibilidad independiente del iMac y una ubicación apta para un backend privado.
+
+La guía técnica completa de la prueba sin DNS está en `2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md`. Define una rama `staging`, un proyecto Pages separado, una URL `*.pages.dev`, el reemplazo previo de rutas Manus/Wix por activos controlados por el cliente y un checklist verificable. También establece que WordPress no aporta valor inmediato al caso actual; se reconsidera únicamente si el cliente necesita edición frecuente autónoma, blog, múltiples autores o funciones CMS.
 
 ## Integración futura de IA
 

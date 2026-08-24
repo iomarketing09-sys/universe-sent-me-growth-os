@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-24
-**Versión:** 3.53
+**Versión:** 3.54
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.54.00] — 2026-08-23 (Manus): Guía de staging Cloudflare Pages para Firma Bordados.** Se documentó una prueba reversible del sitio React/Vite en una URL `*.pages.dev`, con rama `staging`, repositorio y cuenta propiedad del cliente, salida `dist/public`, reemplazo previo de rutas de activos Manus/Wix y checklist de verificación. La guía no autoriza cambio de DNS, cancelación Wix, formulario con backend ni integración con OmniRoute. WordPress queda descartado para el alcance actual y solo se reconsidera ante edición frecuente autónoma, blog, autores o CMS. Los presupuestos, credenciales, datos y hosting permanecen separados de Universe Sent Me.
 
 - **[3.53.00] — 2026-08-23 (Manus): Diseño de asistencia de métricas y respuestas con OmniRoute.** Se definieron dos carriles `Draft`: lectura narrativa de cortes métricos ya normalizados y propuestas comunitarias a partir de contexto anonimizado. Meta/Windsor y los scripts versionados siguen siendo la fuente de métricas; los ledgers, cálculo, deduplicación, moderación y publicación no se delegan a IA. Las respuestas de comunidad requieren clasificación de riesgo, aprobación explícita de Fernando, preflight anti-duplicado y verificación posterior. Solo se considera una futura preparación programada de colas; un bot que publica autónomamente queda prohibido. No se consultó, escribió ni publicó contenido durante este diseño.
 
