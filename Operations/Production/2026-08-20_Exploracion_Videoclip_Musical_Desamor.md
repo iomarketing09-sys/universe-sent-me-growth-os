@@ -6,9 +6,9 @@
 
 **Fecha de creación:** 2026-08-20
 
-**Última actualización:** 2026-08-23
+**Última actualización:** 2026-08-24
 
-**Versión:** 4.8
+**Versión:** 4.9
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -832,3 +832,29 @@ La evaluación debe distinguir entre **retención**, **finalización** y **repet
 Para Facebook se intentará capturar `plays`, vistas de 3 segundos, `average_watch_time`, vistas completas, `replay_count`, `reach`, espectadores únicos y tiempo total. La métrica de 15 segundos solo será útil si el export real supera ese umbral; para un loop de 13–14 segundos no debe tratarse automáticamente como finalización. Para Instagram se intentará capturar `views` o `plays`, `reach`, tiempo medio, tiempo total, shares, guardados, comentarios y cualquier campo nativo de replays o retención que la cuenta exponga.
 
 El diagnóstico mínimo será: **P0 hook**, **P0 llegada al cierre**, **P1 replay**, y **P1 consumo promedio**. La pregunta principal no será “¿cuántos plays obtuvo?”, sino: “¿qué proporción supera los 3 segundos, alcanza el cierre de la pluma y vuelve a entrar al loop?”. Si faltan las curvas o los campos de retención, el resultado se limitará a `L1` o `L2`; no se declarará retención completa a partir de views, likes o tiempo total.
+
+## Corte visible de Meta — Facebook — 2026-08-24
+
+Se capturó un corte de solo lectura en Meta Business Suite desde Quick-seedless para el contenido `122155182621072582`, correspondiente al Reel **`CON-2026-08-24-CraveYou-MaeveFeathers-HOOK-FIRST-V1`** de Maeve. La pantalla muestra el caption `Todos miran. Solo una mirada importa. 🪶`, la fecha de publicación `2026-08-23 17:36` y los identificadores ya reconciliados de Facebook. Este dato **no corresponde al Case_ID `MPM-002` de Fantasma y tres gatos**; la carpeta operativa de Maeve contiene la etiqueta histórica `MPM.002`, lo que no debe alterar la taxonomía de la celda Motion + POV/Meme.
+
+| Campo | Valor visible |
+|---|---:|
+| `Captured_At_Local` | `2026-08-24T18:03:38-05:00` |
+| Fuente | Meta Business Suite, vista `object_insights`, lectura directa en Quick-seedless |
+| Visualizaciones | 757 |
+| Espectadores | 636 |
+| Interacciones | 19 |
+| Tiempo total de reproducción | 43 min 18 s |
+| Seguidores ganados | 0 |
+| Tiempo promedio de reproducción | 4 s |
+| Reproducciones de 15 segundos | 35 |
+| Reacciones | 16 |
+| Comentarios | 3 |
+| Shares | 0 |
+| Guardados | 0 |
+| Clics en el enlace | No aplicable / `--` |
+| Distribución visible | Seguidores 44.5%; recomendaciones 55.5% |
+
+La interfaz identifica la caída principal de audiencia alrededor de **0:02** y muestra una curva de retención, por lo que el corte se clasifica como `L3_Current_Facebook`. No obstante, no se debe interpretar `Reproducciones de 15 segundos` como finalización: el máster documentado dura aproximadamente 9 segundos y la pantalla no expone un campo inequívoco de completación ni replay separado. La lectura válida por ahora es que el hook logra distribución fuera de seguidores, pero pierde atención antes de consolidar el movimiento de órbita; hacen falta cortes diarios comparables para diagnosticar si la curva se estabiliza.
+
+La comparación con MPM-001 continúa siendo contextual, no causal: cambia personaje, audio, lenguaje visual y duración. Este corte no autoriza nuevos renders, publicación adicional, afiliación ni modificaciones del Reel. El siguiente corte diario mantiene Facebook e Instagram separados y debe registrar métricas equivalentes cuando estén visibles.
