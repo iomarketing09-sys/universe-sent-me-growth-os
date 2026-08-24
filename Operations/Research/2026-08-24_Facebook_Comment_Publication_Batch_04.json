@@ -1,0 +1,37 @@
+{
+  "published_at": "2026-08-24T01:07:10+00:00",
+  "source": "Meta Graph API v26.0",
+  "page_id": "1036844829507460",
+  "read_only_precheck": true,
+  "explicit_user_approval": true,
+  "requested_count": 2,
+  "published_count": 2,
+  "already_published_count": 0,
+  "verified_count": 2,
+  "results": [
+    {
+      "status": "published",
+      "parent_comment_id": "122151376539072582_1033595316219697",
+      "reply_id": "122151376539072582_1017908597886964",
+      "message": "Maeve no miente… solo deja que cada quien saque sus conclusiones 😹",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376539072582_1033595316219697",
+      "is_hidden": false,
+      "verified": true,
+      "approval": "Fernando aprobó la propuesta en la conversación del 24 de agosto de 2026."
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151376083072582_3309129972605548",
+      "reply_id": "122151376083072582_2857677777946548",
+      "message": "Jajaja, aquí cada quien interpreta a su manera 😹🙈",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376083072582_3309129972605548",
+      "is_hidden": false,
+      "verified": true,
+      "approval": "Fernando aprobó la propuesta en la conversación del 24 de agosto de 2026."
+    }
+  ]
+}

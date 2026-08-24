@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "3.6"
+version: "3.7"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -19,8 +19,22 @@ related_documents:
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_04.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch_03.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_06.json"
+  - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_07.json"
   - "Operations/Research/2026-08-24_Facebook_Comment_Record_Delta_06.json"
   - "Operations/Automation/record_facebook_comment_delta_20260824_06.py"
+  - "Operations/Production/audit_linked_facebook_post_comments.py"
+  - "tools/summarize_linked_facebook_post_comments.py"
+  - "Operations/Automation/prepare_linked_post_reply_proposals_20260824.py"
+  - "Operations/Automation/record_linked_post_reply_proposals_20260824.py"
+  - "Operations/Automation/publish_approved_facebook_replies_20260824.py"
+  - "Operations/Automation/record_facebook_publication_batch_04.py"
+  - "Operations/Research/2026-08-24_Facebook_Linked_Post_Comment_Review.json"
+  - "Operations/Research/2026-08-24_Facebook_Linked_Post_Comment_Review_Summary.md"
+  - "Operations/Research/2026-08-24_Facebook_Linked_Post_Reply_Proposals.json"
+  - "Operations/Research/2026-08-24_Facebook_Linked_Post_Reply_Proposals.md"
+  - "Operations/Research/2026-08-24_Facebook_Linked_Post_Reply_Record.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_04.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_04.json"
   - "GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md"
 organization: "Operations/Research"
 ---
@@ -330,3 +344,12 @@ La revisión exclusiva mediante Meta Graph API v26.0 se ejecutó el `2026-08-24T
 Dos comentarios tienen propuestas específicas y quedaron `Pendiente_Respuesta` + `Pendiente_Fernando`: “Mentira no es😹😹”, asociado a la publicación `😳🛏️🔥`, con la respuesta “Maeve no miente… solo deja que cada quien saque sus conclusiones 😹”; y “Jaja jajaja jajajaja jajajaja así les gusta”, asociado a `😏🙈😂`, con la respuesta “Jajaja, aquí cada quien interpreta a su manera 😹🙈”. El comentario vacío del Reel “Todos miran. Solo una mirada importa.” quedó `No_Requiere_Respuesta`.
 
 Estas propuestas son copy pendiente de aprobación, no publicaciones. El CSV conserva `Privacidad=Anonimizado`, `Moderacion_Estado=No_Accion` y la fuente exacta del corte. Después del registro, el ledger contiene 195 filas y 195 `Comentario_ID` únicos; el validador continúa en `PASS`.
+
+
+## 26. Auditoría del post enlazado y publicación aprobada — 24 de agosto de 2026
+
+El enlace proporcionado por Fernando resolvió mediante Meta Graph API v26.0 al Page Post `1036844829507460_122151376083072582`. La revisión directa encontró 40 comentarios raíz, 46 IDs incluyendo réplicas y 41 unidades sin respuesta directa. Se prepararon nueve propuestas específicas y se excluyeron 32 unidades por falta de contexto, conversación entre usuarios, menciones, comentarios vacíos o lenguaje sexual explícito que requiere criterio humano.
+
+Fernando aprobó dos propuestas previamente preparadas. Se publicaron y verificaron como respuestas de `Universe Sent Me`: `122151376539072582_1017908597886964` para el comentario `122151376539072582_1033595316219697`, y `122151376083072582_2857677777946548` para el comentario `122151376083072582_3309129972605548`. En ambos casos Meta confirmó el `parent.id` correcto, el texto exacto y `is_hidden=false`.
+
+Las nueve propuestas del hilo enlazado permanecen `Pendiente_Fernando`; ninguna fue publicada. El ledger conserva 210 filas y 210 IDs únicos, con privacidad anonimizada y validación PASS.

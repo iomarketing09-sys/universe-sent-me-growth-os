@@ -1,0 +1,109 @@
+{
+  "created_at": "2026-08-24T01:09:13+00:00",
+  "source_reviewed_at": "2026-08-24T01:08:04+00:00",
+  "source": "Meta Graph API v26.0 / direct Page Post comments + one-level nested replies",
+  "post_id": "1036844829507460_122151376083072582",
+  "linked_comment_id": "2371700183567495",
+  "proposal_count": 9,
+  "unanswered_units_reviewed": 41,
+  "not_proposed_count": 32,
+  "not_proposed_reasons": {
+    "low_signal_or_empty": "Vacíos, nombres aislados, emojis, agradecimientos o remates demasiado breves.",
+    "user_to_user_or_tag": "Réplicas o menciones dirigidas a otras personas; no interrumpir ni asumir intención.",
+    "moderation_review": "Lenguaje sexual explícito o potencialmente ofensivo; revisión humana, no respuesta automática."
+  },
+  "proposals": [
+    {
+      "comment_id": "122151376083072582_1870186187563324",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-23T18:12:13+0000",
+      "comment_type": "Comentario_Raiz",
+      "comment_message": "yo  pero a veces hasta me da miedo quedar atorada como perros",
+      "suggested_reply": "Eso ya sería pasar de la química a la logística 😅 Mejor disfrutar la escena sin quedar atorados.",
+      "status": "Pendiente_Fernando",
+      "published": false
+    },
+    {
+      "comment_id": "122151376083072582_1719326086024419",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-23T20:16:39+0000",
+      "comment_type": "Comentario_Raiz",
+      "comment_message": "No sabia que no podian todas jaja y la explicación que él me da jaja me da mucha risa como dice que le hago jajaj",
+      "suggested_reply": "Jajaja, ahí está el detalle: no todas las sorpresas vienen con manual de instrucciones 😅",
+      "status": "Pendiente_Fernando",
+      "published": false
+    },
+    {
+      "comment_id": "122151376083072582_1108096458452825",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-23T21:01:11+0000",
+      "comment_type": "Comentario_Raiz",
+      "comment_message": "Benditos los que tenemos eso en casa 🙏✨❤️‍🔥",
+      "suggested_reply": "Jajaja, hay cosas que se disfrutan más cuando vienen con buen sentido del humor 😏",
+      "status": "Pendiente_Fernando",
+      "published": false
+    },
+    {
+      "comment_id": "122151376083072582_1028237043539692",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-23T21:10:11+0000",
+      "comment_type": "Comentario_Raiz",
+      "comment_message": "Yo juraba que era algo que TODAS hacíamos :0",
+      "suggested_reply": "Jajaja, la escena dejó más de una teoría en el aire 😅",
+      "status": "Pendiente_Fernando",
+      "published": false
+    },
+    {
+      "comment_id": "122151376083072582_1976584486379301",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-23T22:26:03+0000",
+      "comment_type": "Comentario_Raiz",
+      "comment_message": "Que yo que? 😅😘",
+      "suggested_reply": "Tú sabrás… nosotros solo estamos tomando nota 😏😂",
+      "status": "Pendiente_Fernando",
+      "published": false
+    },
+    {
+      "comment_id": "122151376083072582_1037906569213579",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-23T23:05:57+0000",
+      "comment_type": "Comentario_Raiz",
+      "comment_message": "Perrito 😂 cangrejo como sea somos afortunadas",
+      "suggested_reply": "El cangrejo también tiene su club de fans 😂",
+      "status": "Pendiente_Fernando",
+      "published": false
+    },
+    {
+      "comment_id": "122151376083072582_1387619540151231",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-23T23:31:04+0000",
+      "comment_type": "Comentario_Raiz",
+      "comment_message": "Así como yo viviré 120 años.🤗",
+      "suggested_reply": "Con esa confianza, el universo ya te apartó lugar para los 120 🤗✨",
+      "status": "Pendiente_Fernando",
+      "published": false
+    },
+    {
+      "comment_id": "122151376083072582_2371700183567495",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T01:01:58+0000",
+      "comment_type": "Comentario_Raiz",
+      "comment_message": "Rikolino dijo bubulubu 😂",
+      "suggested_reply": "Rikolino sabe lo que dice 😂",
+      "status": "Pendiente_Fernando",
+      "published": false
+    },
+    {
+      "comment_id": "122151376083072582_1620302366278351",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-23T22:23:54+0000",
+      "comment_type": "Comentario_Raiz",
+      "comment_message": "Jajaja todas pueden solo tiene que saber hacer los ejercicios",
+      "suggested_reply": "La clave está en saber hacerlo… y en no perder el sentido del humor 😂",
+      "status": "Pendiente_Fernando",
+      "published": false
+    }
+  ],
+  "read_only_preparation": true,
+  "no_publication_performed": true
+}

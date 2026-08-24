@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "4.0"
+version: "4.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -28,8 +28,22 @@ related_documents:
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_05_Summary.md"
   - "Operations/Research/2026-08-23_Facebook_Comment_Record_Delta_05.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_06.json"
+  - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_07.json"
   - "Operations/Research/2026-08-24_Facebook_Comment_Record_Delta_06.json"
   - "Operations/Automation/record_facebook_comment_delta_20260824_06.py"
+  - "Operations/Production/audit_linked_facebook_post_comments.py"
+  - "tools/summarize_linked_facebook_post_comments.py"
+  - "Operations/Automation/prepare_linked_post_reply_proposals_20260824.py"
+  - "Operations/Automation/record_linked_post_reply_proposals_20260824.py"
+  - "Operations/Automation/publish_approved_facebook_replies_20260824.py"
+  - "Operations/Automation/record_facebook_publication_batch_04.py"
+  - "Operations/Research/2026-08-24_Facebook_Linked_Post_Comment_Review.json"
+  - "Operations/Research/2026-08-24_Facebook_Linked_Post_Comment_Review_Summary.md"
+  - "Operations/Research/2026-08-24_Facebook_Linked_Post_Reply_Proposals.json"
+  - "Operations/Research/2026-08-24_Facebook_Linked_Post_Reply_Proposals.md"
+  - "Operations/Research/2026-08-24_Facebook_Linked_Post_Reply_Record.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_04.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_04.json"
 organization: "Operations/Research"
 ---
 
@@ -756,3 +770,16 @@ Se detectaron **3 comentarios de usuarios posteriores al último corte**, todos 
 | `122155182621072582_1634878035019592` | Reel “Todos miran...” | Comentario vacío | No responder | `No_Requiere_Respuesta` |
 
 Las dos respuestas son propuestas, no publicaciones. El `Community_Engagement_Log.csv` quedó en **195 filas con 195 IDs únicos**, y el validador devolvió `VALIDATION=PASS`. La evidencia técnica está en `2026-08-23_Facebook_Comment_Review_Delta_06.json` y el registro de propuestas en `2026-08-24_Facebook_Comment_Record_Delta_06.json`. No se usó My Browser, no se revisaron grupos ni otras plataformas y no se ejecutó ninguna escritura sobre Facebook.
+
+
+## 50. Hilo enlazado y publicación verificada — 24 de agosto de 2026
+
+Fernando proporcionó un enlace con `comment_id=2371700183567495`. La resolución mediante Meta Graph API v26.0 identificó el comentario raíz completo como `122151376083072582_2371700183567495`, dentro del Page Post `1036844829507460_122151376083072582` (`😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`). La auditoría directa del post se ejecutó a las `2026-08-24T01:08:04+0000` y revisó **40 comentarios raíz**, **46 IDs** incluyendo réplicas y **41 unidades sin respuesta directa**; no hubo errores de API.
+
+La cola se filtró antes de redactar respuestas. Se prepararon **9 propuestas específicas** para comentarios con contexto o valor de interacción; **32 unidades** quedaron fuera de la cola por ser comentarios vacíos, nombres aislados, emojis, agradecimientos, remates de baja señal, conversaciones entre usuarios, menciones a terceros o lenguaje sexual explícito que requiere criterio humano. Ninguna de esas 32 unidades se convirtió en respuesta automática.
+
+Las nueve propuestas quedaron en `Pendiente_Fernando` y no se publicaron. Entre ellas están respuestas para “yo pero a veces hasta me da miedo quedar atorada como perros”, “No sabía que no podían todas”, “Benditos los que tenemos eso en casa”, “Perrito 😂 cangrejo como sea somos afortunadas”, “Así como yo viviré 120 años”, “Rikolino dijo bubulubu 😂” y otros comentarios del mismo hilo. El detalle completo y las propuestas están en `2026-08-24_Facebook_Linked_Post_Comment_Review_Summary.md` y `2026-08-24_Facebook_Linked_Post_Reply_Proposals.md`.
+
+De forma separada, Fernando aprobó las dos respuestas que ya estaban preparadas para comentarios nuevos: `122151376539072582_1033595316219697` y `122151376083072582_3309129972605548`. Se publicaron mediante Meta Graph API v26.0 y se verificaron con autoría `Universe Sent Me`, `parent.id` correcto, texto exacto e `is_hidden=false`. Los IDs de respuesta publicados son `122151376539072582_1017908597886964` y `122151376083072582_2857677777946548`, respectivamente. El detalle queda en `2026-08-24_Facebook_Comment_Publication_Batch_04.json`.
+
+El ledger comunitario quedó en **210 filas y 210 `Comentario_ID` únicos** y el validador devolvió `PASS`. No se usó My Browser, no se revisaron grupos ni otras plataformas. Las nueve propuestas nuevas siguen pendientes de aprobación explícita; no se publicaron.

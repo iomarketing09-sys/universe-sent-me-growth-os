@@ -1,0 +1,22 @@
+{
+  "recorded_at": "2026-08-24T01:07:10+00:00",
+  "source": "Meta Graph API v26.0",
+  "batch_file": "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_04.json",
+  "updated_rows": 2,
+  "verified_rows": 2,
+  "records": [
+    {
+      "comment_id": "122151376539072582_1033595316219697",
+      "reply_id": "122151376539072582_1017908597886964",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_3309129972605548",
+      "reply_id": "122151376083072582_2857677777946548",
+      "status": "Respondido",
+      "verified": true
+    }
+  ],
+  "no_additional_publication_performed": true
+}
