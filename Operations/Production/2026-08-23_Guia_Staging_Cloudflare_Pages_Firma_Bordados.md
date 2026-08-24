@@ -4,7 +4,7 @@ purpose: "Definir los pasos técnicos para probar el sitio React/Vite de Firma B
 status: Review
 created: 2026-08-23
 updated: 2026-08-24
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Evaluacion_Migracion_Wix_Hosting_IA.md"
@@ -56,6 +56,12 @@ La configuración inicial intentó definir `staging` como Production branch, per
 
 El paquete P0 quedó publicado en la URL principal de staging. Se verificaron el build TypeScript/Vite, el meta `noindex,nofollow,noarchive`, `robots.txt`, los headers `X-Content-Type-Options`, `Referrer-Policy` y `Permissions-Policy`, además de la aparición del hero y el enlace de salto alcanzable por teclado en viewport móvil. El paquete habilita zoom, foco visible, salto de contenido y reducción integral de movimiento. No alteró texto comercial, servicios, catálogos, WhatsApp, Wix, DNS, nameservers ni dominio personalizado.
 
+### Validación P1 — 2026-08-24
+
+El mantenimiento P1 incorporó validación continua de GitHub para Pull Requests y pushes a `staging`/`main`, usando el lockfile congelado, `pnpm check` y `pnpm exec vite build`. La ejecución verificada terminó correctamente antes de promover los commits `f49a344` y `beaaa8d` a `main`. La landing redujo providers inactivos, retiró `next-themes` y `sonner`, priorizó la imagen hero y difirió imágenes de proceso no críticas; el bundle principal pasó de ≈562 kB a 451.78 kB sin comprimir y de ≈163 kB a 127.12 kB gzip.
+
+La URL de Pages sirve `main`, mientras `staging` es la rama de integración. Se preservan noindex, `robots.txt`, los headers P0, los activos locales y el contacto. La protección formal de la rama `main` sigue pendiente de una decisión explícita de operación porque cambiaría la forma de colaboración; no se modificaron Wix, DNS, nameservers ni dominio personalizado.
+
 ## 2. Estado de partida y preparación obligatoria
 
 | Elemento | Estado actual | Acción antes de Cloudflare Pages |
@@ -95,9 +101,9 @@ Esta parte no modifica el dominio ni el DNS. El propietario de la cuenta debe se
 ### C. Ramas exactas para el staging
 
 1. Se sube la copia limpia del proyecto a `main` como referencia controlada.
-2. Desde `main`, se crea la rama `staging`. La URL principal de Pages de esta primera prueba seguirá los commits de `staging`.
+2. Desde `main`, se crea la rama `staging`. En la configuración vigente, la URL principal de Pages sigue `main`; `staging` conserva el rol de integración y revisión.
 3. Para cada modificación se crea una rama descriptiva, por ejemplo `feature/cta-whatsapp` o `fix/catalogo-myo`, desde `staging`.
-4. Se abre un Pull Request hacia `staging`. Cloudflare genera una URL única de preview para ese Pull Request; tras aprobación se integra a `staging`.
+4. Se abre un Pull Request hacia `staging`. GitHub Actions valida tipos y build; Cloudflare puede generar una URL única de preview para ese Pull Request. Tras aprobación se integra a `staging` y solo después se promueve explícitamente a `main`.
 5. `main` no se conecta al dominio público durante esta fase y `firmabordados.com` permanece en Wix.
 
 ## 3. Estructura de repositorio y ramas
@@ -120,7 +126,7 @@ Estos pasos se realizan en la **cuenta Cloudflare del cliente**. Como conectan u
 | Campo de Cloudflare Pages | Valor para este staging |
 | :--- | :--- |
 | Project name | `firma-bordados-staging` |
-| Production branch | `staging` |
+| Production branch | `main` |
 | Framework preset | React (Vite), o configuración manual equivalente |
 | Root directory | Vacío; el proyecto está en la raíz del repositorio |
 | Build command | `pnpm exec vite build` |
@@ -140,7 +146,7 @@ Cloudflare admite versiones específicas de Node y pnpm con variables de entorno
 | Cuenta Cloudflare | Cuenta propiedad del cliente, sin `firmabordados.com` agregado |
 | Cuenta GitHub conectada | Cuenta/organización del cliente; app **Cloudflare Workers & Pages** con acceso solo a `firma-bordados-site` |
 | Proyecto seleccionado | Repositorio privado `firma-bordados-site` |
-| Rama elegida | `staging` como Production branch del proyecto de prueba |
+| Rama elegida | `main` como Production branch del proyecto de prueba; `staging` se conserva para revisión |
 | Project name | `firma-bordados-staging` |
 | Root directory | Vacío |
 | Build command | `pnpm exec vite build` |

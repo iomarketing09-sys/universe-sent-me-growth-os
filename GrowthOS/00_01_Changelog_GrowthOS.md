@@ -6,7 +6,9 @@
 **Última actualización:** 2026-08-24
 **Versión:** 3.65
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
-**Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+**Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`, `Operations/Production/2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md`
+
+- **[3.65.00] — 2026-08-24 (Manus): Paquete P1 de mantenimiento cerrado en el staging Cloudflare de Firma Bordados.** Se integró CI en GitHub para Pull Requests y pushes a `staging`/`main`, con instalación bloqueada, TypeScript y build Vite; tras corregir la inicialización de pnpm, las ejecuciones de ambas ramas terminaron correctamente. Los commits `f49a344` y `beaaa8d` retiraron providers inactivos y las dependencias `next-themes`/`sonner`, hicieron segura en español la pantalla de recuperación, priorizaron el hero y difirieron imágenes no críticas. El bundle principal disminuyó de ≈562 kB a 451.78 kB sin comprimir y de ≈163 kB a 127.12 kB gzip. Se promovió a `main`, que Pages sirve como staging, y se verificaron noindex, robots y headers P0. La protección formal de `main` permanece pendiente de decisión porque altera la colaboración. Wix, DNS, nameservers y `firmabordados.com` no cambiaron.
 
 - **[3.64.00] — 2026-08-24 (Manus): Paquete P0 de accesibilidad/protección validado en el staging Cloudflare de Firma Bordados.** Se habilitó zoom, foco visible, enlace de salto y reducción de movimiento; se añadieron meta noindex y headers estáticos de protección. El commit `b3754d0` se validó con TypeScript/Vite y se promovió a `main`, rama que Pages sirve como staging público. La configuración inicial conservó `main` pese a un intento de definir `staging`; se documentó el flujo ramas de trabajo/staging → revisión → promoción a main. Se verificaron meta, robots, headers, hero y teclado en móvil. Wix, DNS, nameservers y dominio no cambiaron.
 

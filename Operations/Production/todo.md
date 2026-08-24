@@ -22,6 +22,7 @@
 - [x] Aplicar el paquete P0 de accesibilidad y protección de staging tras aprobación: zoom, foco visible, enlace de salto, reducción de movimiento integral, meta noindex y headers estáticos.
 - [x] Publicar el paquete P0 validado en la rama `staging` y verificar su despliegue en Cloudflare Pages.
 - [x] Resolver la discrepancia de rama Pages promoviendo el paquete P0 a `main`, rama de producción vigente del staging, sin modificar Wix, DNS ni dominio.
+- [x] Aplicar el paquete P1 de mantenimiento: CI, flujo de ramas y medición/limpieza del runtime confirmado para el staging de Firma Bordados; la protección formal de `main` queda pendiente de aprobación operativa separada.
 - [x] Convertir WhatsApp en el CTA principal del hero de Firma Bordados y validar el enlace en escritorio y móvil.
 - [x] Guiar la creación de la cuenta Cloudflare y repositorio privado del cliente antes de configurar Cloudflare Pages.
 - [x] Acompañar la configuración del proyecto Cloudflare Pages de staging para Firma Bordados sin agregar dominio ni modificar DNS.

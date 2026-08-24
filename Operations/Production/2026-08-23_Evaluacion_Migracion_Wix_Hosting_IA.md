@@ -6,15 +6,15 @@
 
 **Fecha de creación:** 2026-08-23
 
-**Última actualización:** 2026-08-23
+**Última actualización:** 2026-08-24
 
-**Versión:** 2.6
+**Versión:** 2.7
 
 **Autor:** Manus AI
 
 **Organización:** `Operations/Production`
 
-**Documentos relacionados:** [`2026-08-18_Piloto_Local_OmniRoute_Seguro.md`](2026-08-18_Piloto_Local_OmniRoute_Seguro.md), [`2026-08-19_Decision_Gateway_IA_OmniRoute.md`](2026-08-19_Decision_Gateway_IA_OmniRoute.md).
+**Documentos relacionados:** [`2026-08-18_Piloto_Local_OmniRoute_Seguro.md`](2026-08-18_Piloto_Local_OmniRoute_Seguro.md), [`2026-08-19_Decision_Gateway_IA_OmniRoute.md`](2026-08-19_Decision_Gateway_IA_OmniRoute.md), [`2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md`](2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md) y [`2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md`](2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md).
 
 ---
 
@@ -178,6 +178,10 @@ El staging se desplegó exitosamente en `https://firma-bordados-staging.pages.de
 `2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md` organiza mejoras de bajo riesgo mientras se esperan materiales, tiempos y mínimos: accesibilidad, noindex de staging, headers, carga diferida de imágenes, limpieza de runtime, CI y protección de ramas. No autoriza analytics, backend de formularios, precios, SEO estructurado definitivo ni cambio de dominio.
 
 El paquete P0 del backlog se completó. Se añadió zoom, foco visible, enlace de salto, reducción de movimiento integral, noindex y headers estáticos; el build se validó y la URL Pages se comprobó en móvil. Pages conserva `main` como Production branch del sitio de staging, por lo que el commit aprobado se promovió desde `staging` a `main` en vez de cambiar el dominio o el proyecto. Este ajuste solo sincroniza el código de prueba y no modifica Wix, DNS o el dominio público.
+
+El paquete P1 se cerró con una validación continua de GitHub sobre Pull Requests y pushes a `staging`/`main`, basada en el lockfile congelado, TypeScript y la build Vite. Después de corregir el orden de inicialización de pnpm en CI, las ejecuciones de `staging` y `main` terminaron correctamente y los commits validados `f49a344`/`beaaa8d` se promovieron por avance rápido a `main`. La landing redujo providers inactivos, retiró `next-themes` y `sonner`, aplicó carga diferida a imágenes no críticas y redujo el bundle principal de ≈562 kB a 451.78 kB sin comprimir (≈163 kB a 127.12 kB gzip). Se confirmó nuevamente la URL de staging, noindex, robots y headers; Wix, DNS, nameservers y `firmabordados.com` siguen sin modificaciones.
+
+La protección formal de `main` no se habilitó durante P1 porque altera el flujo de colaboración de GitHub. La disciplina vigente es suficiente para el staging temporal: ramas de trabajo o `staging` → revisión + CI → promoción explícita a `main` → despliegue de Pages. Cualquier regla de protección debe aprobarse por separado antes de activarla.
 
 ## Integración futura de IA
 

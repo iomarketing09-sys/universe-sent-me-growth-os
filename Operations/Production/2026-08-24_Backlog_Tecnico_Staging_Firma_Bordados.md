@@ -4,7 +4,7 @@ purpose: "Priorizar mejoras de rendimiento, accesibilidad, seguridad técnica y 
 status: Active
 created: 2026-08-24
 updated: 2026-08-24
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md"
@@ -18,9 +18,9 @@ organization: "Operations/Production"
 
 ## 1. Estado auditado
 
-El staging `https://firma-bordados-staging.pages.dev` construye correctamente desde la rama `staging` y sirve activos locales, catálogos, WhatsApp y el formulario `mailto:` sin depender de Wix o Manus. La interfaz ya respeta `prefers-reduced-motion` para sus revelados, y los catálogos se abren en una pestaña separada.
+El staging `https://firma-bordados-staging.pages.dev` construye correctamente desde la rama `main` y sirve activos locales, catálogos, WhatsApp y el formulario `mailto:` sin depender de Wix o Manus. La rama `staging` queda como integración y revisión antes de una promoción explícita a `main`. La interfaz ya respeta `prefers-reduced-motion` para sus revelados, y los catálogos se abren en una pestaña separada.
 
-La auditoría identificó ajustes que no requieren información comercial adicional. La copia inicial genera un JavaScript principal de aproximadamente 562 kB sin comprimir, conserva providers genéricos que no usa la landing y aún puede reforzar zoom, foco visible, noindex explícito y encabezados estáticos. Ninguno de estos cambios altera servicios, precios, materiales, tiempos, mínimos, dominio o DNS.
+La auditoría identificó ajustes que no requieren información comercial adicional. La copia inicial generaba un JavaScript principal de aproximadamente 562 kB sin comprimir (≈163 kB gzip) y conservaba providers genéricos que no usaba la landing. Tras P1, el bundle principal quedó en 451.78 kB (127.12 kB gzip), una reducción aproximada de 19% sin comprimir y 22% comprimido. Ninguno de estos cambios altera servicios, precios, materiales, tiempos, mínimos, dominio o DNS.
 
 ## 2. Prioridades
 
@@ -29,10 +29,10 @@ La auditoría identificó ajustes que no requieren información comercial adicio
 | P0 | Paquete de accesibilidad: eliminar `maximum-scale=1`, añadir enlace de salto, estados `:focus-visible` y desactivar `scroll-behavior: smooth` con reducción de movimiento | Mejora teclado, zoom y comodidad sin cambiar la propuesta visual | Ninguna | Nulo |
 | P0 | Añadir meta `robots=noindex,nofollow` al staging, además de `robots.txt` | Evita presentar la versión temporal como sitio final en buscadores | Ninguna | Nulo |
 | P0 | Crear `client/public/_headers` con `X-Content-Type-Options`, `Referrer-Policy` y `Permissions-Policy` restrictiva | Endurece la respuesta estática sin introducir backend | Probar WhatsApp, PDFs y redes tras el cambio | Nulo |
-| P1 | Marcar imágenes no críticas con `loading="lazy"` y `decoding="async"`; dar prioridad solo a la imagen hero | Reduce carga inicial percibida y preserva el hero | Ninguna | Nulo |
-| P1 | Simplificar el núcleo React: retirar `ThemeProvider`, `TooltipProvider` y `Toaster` si la landing no los usa; ejecutar análisis de bundle antes de podar dependencias | Reduce superficie de runtime y facilita mantenimiento | Prueba visual y build | Nulo |
-| P1 | Añadir CI de GitHub: `pnpm check` y `pnpm exec vite build` para cada Pull Request | Evita que un cambio de contenido rompa el deploy | Repositorio privado Io Marketing | Nulo |
-| P1 | Proteger `main`; mantener `staging` como rama de revisión mientras Wix continúe activo | Evita que un cambio no revisado se interprete como corte final | Decisión operativa de Io Marketing | Nulo |
+| P1 aplicado | Marcar imágenes no críticas con `loading="lazy"` y `decoding="async"`; dar prioridad solo a la imagen hero | Reduce carga inicial percibida y preserva el hero | Ninguna | Nulo |
+| P1 aplicado | Simplificar el núcleo React: retirar `ThemeProvider`, `TooltipProvider` y `Toaster` inactivos; medir el bundle antes de podar dependencias | Reduce superficie de runtime y facilita mantenimiento | Prueba visual y build | Nulo |
+| P1 aplicado | Añadir CI de GitHub: `pnpm check` y `pnpm exec vite build` para cada Pull Request y push a `main`/`staging` | Evita que un cambio de contenido rompa el deploy | Repositorio privado Io Marketing | Nulo |
+| P1 pendiente de decisión | Proteger `main`; mantener `staging` como rama de revisión mientras Wix continúe activo | Evita que un cambio no revisado se interprete como corte final | Confirmación sobre el cambio de colaboración en GitHub | Nulo |
 | P2 | Añadir Open Graph, Twitter Card y JSON-LD de negocio local | Mejora previsualización y preparación SEO del futuro dominio | Validar nombre legal, teléfono preferido, dirección y horarios antes de declarar datos estructurados | Bajo |
 | P2 | Añadir analítica de eventos para clics en WhatsApp, correo y PDFs | Mide intención comercial y ayuda a priorizar catálogo/CTA | Consentimiento de privacidad, herramienta y responsable de datos | Medio |
 | P2 | Sustituir `mailto:` por formulario con backend | Recibe solicitudes aunque el cliente no tenga app de correo configurada | Aviso de privacidad, destinatario, antispam y proceso de respuesta | Medio |
@@ -41,8 +41,16 @@ La auditoría identificó ajustes que no requieren información comercial adicio
 
 El paquete **P0 de accesibilidad y protección de staging** se aplicó en el commit `b3754d0` y se promovió a la rama `main` que Cloudflare Pages usa para este sitio de prueba. Incluye zoom habilitado, estados de foco, enlace de salto, reducción de movimiento integral, meta noindex y encabezados estáticos. Se validó en build, escritorio y móvil, y no cambia la oferta comercial ni recaba datos.
 
-El siguiente ajuste propuesto corresponde al paquete **P1 de mantenimiento**: CI GitHub, protección de rama y medición real de bundle antes de eliminar providers/dependencias. La meta no es perseguir un número de kilobytes, sino retirar código realmente inactivo con una build reproducible y revisión visual.
+## 4. Paquete P1 aplicado
 
-## 4. Límites hasta recibir la información del cliente
+El paquete **P1 de mantenimiento** se integró primero a `staging` en los commits `f49a344` y `beaaa8d`, pasó las validaciones locales y obtuvo ejecuciones exitosas de GitHub Actions tanto en `staging` como en `main`. La configuración añade `.github/workflows/validate.yml`, que instala el lockfile congelado y ejecuta `pnpm check` y `pnpm exec vite build` en Pull Requests y pushes a las ramas operativas. Un primer intento detectó que el cache de `setup-node` buscaba `pnpm` antes de activarlo; se corrigió retirando ese cache y la ejecución final terminó correctamente antes de promover a `main`.
+
+La landing ya no monta `ThemeProvider`, `TooltipProvider` ni `Toaster`. Se retiraron `next-themes`, `sonner`, el módulo Sonner y el contexto de tema, y se mantuvo el límite de errores con una pantalla breve en español que no expone trazas. `@radix-ui/react-tooltip` se conserva por ahora: un componente de sidebar residual aún lo importa y TypeScript compila todo el árbol fuente aunque el sidebar no entre al bundle. Esta dependencia no se cargó en el runtime activo; una poda adicional exige retirar o modularizar ese código residual en una tarea separada.
+
+También se dio prioridad de red a la imagen hero y se aplicó carga diferida/decodificación asíncrona a las fotografías de proceso y al logo del formulario, que aparecen fuera de la primera pantalla. Después de la build, el JavaScript principal pasó de ≈562 kB a 451.78 kB sin comprimir (≈19% menos) y de ≈163 kB a 127.12 kB gzip (≈22% menos). La promoción rápida a `main` dejó ambas ramas en `beaaa8d`; Pages sirvió un nuevo artefacto y se volvieron a confirmar `noindex,nofollow,noarchive`, `robots.txt` y los headers P0.
+
+La protección formal de `main` no se activó porque cambia el modo de colaboración de GitHub y necesita una decisión explícita de operación. Hasta entonces, la regla documentada y aplicada es: rama de trabajo o `staging` → revisión, CI y build → promoción explícita y validada a `main` → despliegue en la URL pública de staging.
+
+## 5. Límites hasta recibir la información del cliente
 
 No se deben añadir precios, cotizadores, promesas de tiempo, mínimos de pedido, materiales, certificaciones, formularios que almacenen datos, analytics de terceros ni SEO estructurado definitivo. La URL `*.pages.dev` debe seguir marcada como staging y el dominio `firmabordados.com` no debe asociarse al proyecto hasta el gate de aprobación, transferencia/operación administrada y migración documentado.
