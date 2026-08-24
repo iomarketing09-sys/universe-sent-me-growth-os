@@ -1,10 +1,10 @@
 ---
 title: "Inventario de catálogos de Drive — Firma Bordados"
-purpose: "Registrar los PDFs autorizados en Drive que reemplazarán los enlaces temporales de Wix en un staging futuro, conservando su origen, tamaño y estado de revisión."
+purpose: "Registrar los PDFs autorizados en Drive y los límites comerciales confirmados para el staging de Firma Bordados, conservando origen, tamaño, estado de revisión y reglas prudentes de redacción."
 status: Review
 created: 2026-08-24
 updated: 2026-08-24
-version: "1.2"
+version: "1.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md"
@@ -48,6 +48,16 @@ Fernando confirmó que los tres catálogos son vigentes y están autorizados par
 | Límites | No se realizan parches ni gorras | Comunicar de forma discreta como una nota de alcance en la sección de solicitud, no como mensaje dominante |
 
 Los servicios fueron proporcionados por Fernando el 2026-08-24. No se infirieron prestaciones, plazos, precios, materiales, mínimos de pedido ni certificaciones adicionales.
+
+### Condiciones comerciales confirmadas — 2026-08-24
+
+| Tema | Dato confirmado | Regla de redacción para el sitio |
+| :--- | :--- | :--- |
+| Serigrafía | Mínimo de 12 piezas | Indicar «a partir de 12 piezas» exclusivamente dentro de la capacidad de serigrafía. No extender el mínimo a bordado, digitalización ni prendas. |
+| Tiempos de entrega | Varían según el pedido y la carga de trabajo existente | Explicar que se confirman al revisar cantidad, requerimiento y carga de trabajo. No publicar un rango, fecha ni promesa de disponibilidad. |
+| Materiales | Pendientes de confirmación | No describir telas, gramajes, composiciones, acabados ni calidades como hechos hasta recibir información del cliente. |
+
+Estas condiciones se integraron al staging Cloudflare el 2026-08-24. La referencia al mínimo no equivale a cotización, disponibilidad garantizada ni capacidad máxima de producción.
 
 ## Reglas de integración
 

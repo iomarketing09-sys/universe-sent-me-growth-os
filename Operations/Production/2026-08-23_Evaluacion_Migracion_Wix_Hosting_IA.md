@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-24
 
-**Versión:** 2.7
+**Versión:** 2.8
 
 **Autor:** Manus AI
 
@@ -182,6 +182,8 @@ El paquete P0 del backlog se completó. Se añadió zoom, foco visible, enlace d
 El paquete P1 se cerró con una validación continua de GitHub sobre Pull Requests y pushes a `staging`/`main`, basada en el lockfile congelado, TypeScript y la build Vite. Después de corregir el orden de inicialización de pnpm en CI, las ejecuciones de `staging` y `main` terminaron correctamente y los commits validados `f49a344`/`beaaa8d` se promovieron por avance rápido a `main`. La landing redujo providers inactivos, retiró `next-themes` y `sonner`, aplicó carga diferida a imágenes no críticas y redujo el bundle principal de ≈562 kB a 451.78 kB sin comprimir (≈163 kB a 127.12 kB gzip). Se confirmó nuevamente la URL de staging, noindex, robots y headers; Wix, DNS, nameservers y `firmabordados.com` siguen sin modificaciones.
 
 La protección formal de `main` no se habilitó durante P1 porque altera el flujo de colaboración de GitHub. La disciplina vigente es suficiente para el staging temporal: ramas de trabajo o `staging` → revisión + CI → promoción explícita a `main` → despliegue de Pages. Cualquier regla de protección debe aprobarse por separado antes de activarla.
+
+La primera actualización comercial posterior a P1 se completó solo con información confirmada: serigrafía a partir de 12 piezas y tiempos que se confirman según cantidad, requerimiento y carga de trabajo. Se usó una visual exclusiva de prendas sin marcas externas y una adaptación fiel de la fachada autorizada, ambas optimizadas para la web. El cambio pasó CI, se integró en `staging` y se promovió al staging público servido desde `main`; la revisión visual confirmó servicios, catálogos, contacto y protecciones P0. El bloqueo sobre materiales permanece: no se describieron telas, gramajes, composiciones, acabados ni certificaciones.
 
 ## Integración futura de IA
 

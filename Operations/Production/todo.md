@@ -23,6 +23,9 @@
 - [x] Publicar el paquete P0 validado en la rama `staging` y verificar su despliegue en Cloudflare Pages.
 - [x] Resolver la discrepancia de rama Pages promoviendo el paquete P0 a `main`, rama de producción vigente del staging, sin modificar Wix, DNS ni dominio.
 - [x] Aplicar el paquete P1 de mantenimiento: CI, flujo de ramas y medición/limpieza del runtime confirmado para el staging de Firma Bordados; la protección formal de `main` queda pendiente de aprobación operativa separada.
+- [x] Registrar e integrar de forma prudente el mínimo confirmado de 12 piezas para serigrafía y la nota de tiempos de entrega variables según pedido y carga de trabajo.
+- [x] Revisar los activos autorizados de la carpeta Drive compartida y seleccionar referencias o imágenes exclusivas para reforzar las secciones de prendas y ubicación del staging.
+- [x] Incorporar, validar y documentar la actualización visual/comercial de Firma Bordados sin modificar Wix, DNS ni el dominio público.
 - [x] Convertir WhatsApp en el CTA principal del hero de Firma Bordados y validar el enlace en escritorio y móvil.
 - [x] Guiar la creación de la cuenta Cloudflare y repositorio privado del cliente antes de configurar Cloudflare Pages.
 - [x] Acompañar la configuración del proyecto Cloudflare Pages de staging para Firma Bordados sin agregar dominio ni modificar DNS.

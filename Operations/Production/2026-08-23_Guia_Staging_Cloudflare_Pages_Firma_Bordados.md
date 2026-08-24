@@ -4,7 +4,7 @@ purpose: "Definir los pasos técnicos para probar el sitio React/Vite de Firma B
 status: Review
 created: 2026-08-23
 updated: 2026-08-24
-version: "1.2"
+version: "1.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Evaluacion_Migracion_Wix_Hosting_IA.md"
@@ -61,6 +61,12 @@ El paquete P0 quedó publicado en la URL principal de staging. Se verificaron el
 El mantenimiento P1 incorporó validación continua de GitHub para Pull Requests y pushes a `staging`/`main`, usando el lockfile congelado, `pnpm check` y `pnpm exec vite build`. La ejecución verificada terminó correctamente antes de promover los commits `f49a344` y `beaaa8d` a `main`. La landing redujo providers inactivos, retiró `next-themes` y `sonner`, priorizó la imagen hero y difirió imágenes de proceso no críticas; el bundle principal pasó de ≈562 kB a 451.78 kB sin comprimir y de ≈163 kB a 127.12 kB gzip.
 
 La URL de Pages sirve `main`, mientras `staging` es la rama de integración. Se preservan noindex, `robots.txt`, los headers P0, los activos locales y el contacto. La protección formal de la rama `main` sigue pendiente de una decisión explícita de operación porque cambiaría la forma de colaboración; no se modificaron Wix, DNS, nameservers ni dominio personalizado.
+
+### Actualización comercial y visual — 2026-08-24
+
+El commit `f6a754a` se abrió en la rama `content/commercial-visual-update`, se revisó mediante Pull Request hacia `staging`, pasó CI y se integró en `staging`; el merge `1d24703` se promovió por avance rápido a `main`, que Pages sirve como URL pública de pruebas. La actualización incorporó el mínimo confirmado de 12 piezas para serigrafía y una nota que explica que los tiempos se confirman según cantidad, requerimiento y carga de trabajo. No publicó plazos, materiales, precios ni mínimos para otros servicios.
+
+También añadió una visual exclusiva de prendas sin marcas de terceros y una adaptación fiel de la fachada autorizada, ambas optimizadas como WebP. La versión publicada se comprobó de forma visual y mantiene WhatsApp, catálogos, contacto, noindex, robots y headers P0. Wix, DNS, nameservers, dominio personalizado y `firmabordados.com` continúan sin cambios.
 
 ## 2. Estado de partida y preparación obligatoria
 
