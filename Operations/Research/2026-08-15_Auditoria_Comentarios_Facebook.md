@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "4.8"
+version: "4.9"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -80,6 +80,12 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Reply_Proposals.md"
   - "Operations/Research/2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Review_Record.json"
   - "Operations/Research/2026-08-24_Facebook_Linked_Post_Comment_Review_Post_Batch10.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_11.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_11.json"
+  - "Operations/Research/2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Reply_Proposals.json"
+  - "Operations/Research/2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Reply_Proposals.md"
+  - "Operations/Automation/publish_twenty eight_usm_philosophy_replies_20260824.py"
+  - "Operations/Automation/record_facebook_publication_batch_11.py"
 organization: "Operations/Research"
 ---
 
@@ -980,3 +986,19 @@ El primer corte visualmente equivalente que se ejecutó después del lote apunt�
 Las 28 propuestas retoman el comentario específico, la paradoja central y el tono de USM sin usar una plantilla repetitiva. Los 9 casos sin acción corresponden a nombres aislados, emojis, comentarios vacíos, puntuación o respuestas de una sola palabra sin contexto suficiente. No se publicaron propuestas nuevas del segundo corte.
 
 Después del Batch 10, la cola general queda reducida a **9 propuestas activas** del meme `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe` y **1 caso aprobado bloqueado** por inaccesibilidad temporal en Meta. La cola actualizada está en `2026-08-24_Facebook_Pending_Queue_Remaining.md`. La auditoría correcta y las 28 propuestas están en los artefactos `2026-08-24_Facebook_USM_Philosophy_Post_Comment_Review_Post_Batch10.json` y `2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Reply_Proposals.md/.json`.
+
+
+## 60. Batch 11 y revisión de los nueve casos sin acción — 24 de agosto de 2026
+
+Fernando autorizó publicar las 28 propuestas preparadas para las raíces restantes del post `1036844829507460_122151375549072582` (`☁️✨🤔`). Meta Graph API v26.0 completó **28 publicaciones y 28 verificaciones**, sin duplicados, errores de API ni respuestas fuera del lote autorizado.
+
+Los nueve casos que quedaron fuera no se publicaron porque eran nombres aislados, emojis, comentarios vacíos, puntuación o respuestas de una sola palabra sin contexto suficiente. Se conservan en la sección `no_action` del JSON de propuestas y se muestran de forma detallada a Fernando para una posible revisión editorial posterior.
+
+| Resultado | Cantidad |
+|---|---:|
+| Respuestas autorizadas | 28 |
+| Publicadas y verificadas | 28 |
+| Casos sin acción | 9 |
+| Publicaciones adicionales | 0 |
+
+El ledger conserva 255 filas y 255 IDs únicos; la validación permanece en `PASS`. El informe legible actualizado está en `2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Reply_Proposals.md`, y la evidencia de publicación está en los artefactos Batch 11.

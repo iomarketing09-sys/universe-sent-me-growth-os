@@ -1,0 +1,193 @@
+{
+  "title": "Facebook Comment Publication Record Batch 11 — ☁️✨🤔",
+  "purpose": "Registrar la sincronización de las 28 respuestas aprobadas y verificadas del post ☁️✨🤔, manteniendo los 9 casos sin acción separados.",
+  "status": "Active",
+  "created_at": "2026-08-24T03:25:01+00:00",
+  "updated_at": "2026-08-24T03:25:01+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_11.json",
+    "Operations/Research/2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Reply_Proposals.json",
+    "Operations/Research/2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Reply_Proposals.md",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv"
+  ],
+  "organization": "Operations/Research",
+  "recorded_at": "2026-08-24T03:25:01+00:00",
+  "source": "Meta Graph API v26.0",
+  "batch_file": "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_11.json",
+  "updated_rows": 28,
+  "verified_rows": 28,
+  "records": [
+    {
+      "comment_id": "122151375549072582_1284524650312354",
+      "reply_id": "122151375549072582_1347216420731655",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_1345438560907663",
+      "reply_id": "122151375549072582_1546270729969427",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_2682838392118151",
+      "reply_id": "122151375549072582_2094140168155228",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_2242124606609181",
+      "reply_id": "122151375549072582_2023003834996715",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_1933875761350410",
+      "reply_id": "122151375549072582_887824877487937",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_1403487698543780",
+      "reply_id": "122151375549072582_2220181982179239",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_972981675802863",
+      "reply_id": "122151375549072582_1942585406426857",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_1780347913099754",
+      "reply_id": "122151375549072582_1386541393584349",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_1644442960710725",
+      "reply_id": "122151375549072582_2608642759582708",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_1783035276182829",
+      "reply_id": "122151375549072582_1475241601079326",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_1617891193262090",
+      "reply_id": "122151375549072582_1376481024674949",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_1586390436263285",
+      "reply_id": "122151375549072582_1036306719023541",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_1046880914865088",
+      "reply_id": "122151375549072582_1429748582382422",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_1074916168231993",
+      "reply_id": "122151375549072582_1028382136692647",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_1039895839038595",
+      "reply_id": "122151375549072582_1829625651549079",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_2139938020237319",
+      "reply_id": "122151375549072582_1752660988954807",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_2159556928109209",
+      "reply_id": "122151375549072582_1393913729371701",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_2553794695093209",
+      "reply_id": "122151375549072582_1442705557693951",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_872181139160064",
+      "reply_id": "122151375549072582_1057391607015007",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_1859721888531923",
+      "reply_id": "122151375549072582_1385570613688458",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_1442803861236285",
+      "reply_id": "122151375549072582_905456662245262",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_27540592708951388",
+      "reply_id": "122151375549072582_1465068202135840",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_1271513331667499",
+      "reply_id": "122151375549072582_1629541318681280",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_1642353581234558",
+      "reply_id": "122151375549072582_1588433572857694",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_1004388505976156",
+      "reply_id": "122151375549072582_1367560798346768",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_942638681466045",
+      "reply_id": "122151375549072582_2722512191478038",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_2089754968329324",
+      "reply_id": "122151375549072582_2947208368949252",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151375549072582_1110818364949332",
+      "reply_id": "122151375549072582_4174845672756847",
+      "status": "Respondido",
+      "verified": true
+    }
+  ],
+  "no_action_count": 9,
+  "new_proposals_published": false
+}

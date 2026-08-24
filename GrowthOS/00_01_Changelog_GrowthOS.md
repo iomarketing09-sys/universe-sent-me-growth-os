@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-24
-**Versión:** 3.45
+**Versión:** 3.46
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.46.00] — 2026-08-24 (Manus): Batch 11 y publicación de 28 respuestas del post ☁️✨🤔.** Fernando autorizó las 28 propuestas específicas preparadas tras la auditoría correcta del post `1036844829507460_122151375549072582`. Meta Graph API v26.0 publicó y verificó 28/28, con preconsulta anti-duplicado y comprobación de autoría, padre, texto exacto y `is_hidden=false`. Los 9 casos clasificados como baja señal, nombres, emojis, vacíos o puntuación no se publicaron y quedan para revisión editorial separada. El ledger conserva 255 filas y 255 IDs únicos; validación PASS. No se publicaron respuestas fuera de las 28 autorizadas.
 
 - **[3.45.00] — 2026-08-24 (Manus): Batch 10 y auditoría completa del post ☁️✨🤔.** Fernando autorizó las 25 respuestas ya propuestas para el post `1036844829507460_122151375549072582`. Meta Graph API v26.0 publicó y verificó 25/25, con autoría de Página, padres correctos, textos exactos e `is_hidden=false`. La auditoría posterior del post correcto encontró 68 raíces, 90 IDs incluyendo réplicas, 31 raíces respondidas y 37 raíces sin respuesta. Se prepararon 28 propuestas específicas con personalidad USM y 9 casos sin acción; no se publicaron esas nuevas propuestas. Se corrigió un corte intermedio que había apuntado al post del meme y quedó marcado como superseded. La cola general se redujo a 9 propuestas activas del meme y 1 caso bloqueado por Meta. El ledger conserva 255 filas y 255 IDs únicos; validación PASS.
 

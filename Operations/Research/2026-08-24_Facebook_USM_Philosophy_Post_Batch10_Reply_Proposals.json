@@ -20,7 +20,7 @@
   "proposal_count": 28,
   "no_action_count": 9,
   "new_ledger_rows": 0,
-  "publication_performed": false,
+  "publication_performed": true,
   "proposals": [
     {
       "comment_id": "122151375549072582_1284524650312354",
@@ -28,8 +28,10 @@
       "comment_created_time": "2026-08-23T22:42:54+0000",
       "suggested_reply": "La hormiga no necesita conocer al panadero para seguir preguntando por la miga; quizá ahí está el punto. 🤔✨",
       "reason": "Retoma la metáfora de la hormiga y la miga, que es el núcleo distintivo del comentario.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_1347216420731655"
     },
     {
       "comment_id": "122151375549072582_1345438560907663",
@@ -37,8 +39,10 @@
       "comment_created_time": "2026-08-23T20:53:01+0000",
       "suggested_reply": "Llegó el gran Yo con respuesta incluida. 😌🤔",
       "reason": "Juega con la fórmula exacta del comentario sin añadir una referencia innecesaria.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_1546270729969427"
     },
     {
       "comment_id": "122151375549072582_2682838392118151",
@@ -46,8 +50,10 @@
       "comment_created_time": "2026-08-23T20:44:12+0000",
       "suggested_reply": "Los griegos ya tenían una mitología lista para cubrir ese puesto. 😂🏛️",
       "reason": "Retoma la referencia griega en lugar de elogiarla de forma genérica.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_2094140168155228"
     },
     {
       "comment_id": "122151375549072582_2242124606609181",
@@ -55,8 +61,10 @@
       "comment_created_time": "2026-08-23T20:32:32+0000",
       "suggested_reply": "Dios siendo Dios y el hilo intentando tomar apuntes. 😂🤔",
       "reason": "Retoma exactamente la lectura humorística de Dios actuando como Dios.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_2023003834996715"
     },
     {
       "comment_id": "122151375549072582_1933875761350410",
@@ -64,8 +72,10 @@
       "comment_created_time": "2026-08-23T20:30:09+0000",
       "suggested_reply": "El “nosotros” vuelve a aparecer: la humanidad no piensa soltar el crédito. 😂🤔",
       "reason": "Retoma la palabra clave y la conecta con el tema de autoría.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_887824877487937"
     },
     {
       "comment_id": "122151375549072582_1403487698543780",
@@ -73,8 +83,10 @@
       "comment_created_time": "2026-08-23T20:24:31+0000",
       "suggested_reply": "La imaginación humana siempre llega con presupuesto ilimitado. 😎✨",
       "reason": "Convierte la interpretación del comentario en un remate visual y específico.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_2220181982179239"
     },
     {
       "comment_id": "122151375549072582_972981675802863",
@@ -82,8 +94,10 @@
       "comment_created_time": "2026-08-23T20:23:55+0000",
       "suggested_reply": "El humano quiere descifrar el cosmos mientras todavía negocia con su propia mente. 🤔😂",
       "reason": "Retoma el contraste entre la curiosidad cósmica y el dominio de uno mismo.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_1942585406426857"
     },
     {
       "comment_id": "122151375549072582_1780347913099754",
@@ -91,8 +105,10 @@
       "comment_created_time": "2026-08-23T20:22:44+0000",
       "suggested_reply": "El creador sí se puso creativo con las luciérnagas. 😂✨",
       "reason": "Responde al ejemplo de las luciérnagas sin repetir el lenguaje corporal explícito.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_1386541393584349"
     },
     {
       "comment_id": "122151375549072582_1644442960710725",
@@ -100,8 +116,10 @@
       "comment_created_time": "2026-08-23T20:10:57+0000",
       "suggested_reply": "El imaginario colectivo también pidió crédito de autoría. 🤔✨",
       "reason": "Retoma el concepto central sin sonar a plantilla.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_2608642759582708"
     },
     {
       "comment_id": "122151375549072582_1783035276182829",
@@ -109,8 +127,10 @@
       "comment_created_time": "2026-08-23T20:07:52+0000",
       "suggested_reply": "Con razón el universo salió con tantas preguntas pendientes. 😂🌌",
       "reason": "Devuelve el chiste sobre fumar sin añadir detalles ni escalarlo.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_1475241601079326"
     },
     {
       "comment_id": "122151375549072582_1617891193262090",
@@ -118,8 +138,10 @@
       "comment_created_time": "2026-08-23T20:06:06+0000",
       "suggested_reply": "El cerebro creativo se fue demasiado lejos con esta pregunta. 😂🌌",
       "reason": "Mantiene el tono ligero sin reforzar el insulto o la etiqueta del comentario.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_1376481024674949"
     },
     {
       "comment_id": "122151375549072582_1586390436263285",
@@ -127,8 +149,10 @@
       "comment_created_time": "2026-08-23T20:05:49+0000",
       "suggested_reply": "Ese es el espejo incómodo del meme: crear al creador a nuestra imagen. 🤔✨",
       "reason": "Responde a la formulación exacta de imagen y semejanza.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_1036306719023541"
     },
     {
       "comment_id": "122151375549072582_1046880914865088",
@@ -136,8 +160,10 @@
       "comment_created_time": "2026-08-23T20:03:14+0000",
       "suggested_reply": "El sospechoso habitual del hilo: el hombre. 😂🤔",
       "reason": "Remate corto para una respuesta breve y recurrente del hilo.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_1429748582382422"
     },
     {
       "comment_id": "122151375549072582_1074916168231993",
@@ -145,8 +171,10 @@
       "comment_created_time": "2026-08-23T20:03:07+0000",
       "suggested_reply": "Nosotros otra vez… esto ya parece una junta de accionistas de la creación. 😂",
       "reason": "Diferencia la segunda aparición de “Nosotros” con una imagen nueva.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_1028382136692647"
     },
     {
       "comment_id": "122151375549072582_1039895839038595",
@@ -154,8 +182,10 @@
       "comment_created_time": "2026-08-23T19:59:55+0000",
       "suggested_reply": "La humanidad ya se nominó sola. 😂🤔",
       "reason": "Remate breve para la respuesta de una sola frase.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_1829625651549079"
     },
     {
       "comment_id": "122151375549072582_2139938020237319",
@@ -163,8 +193,10 @@
       "comment_created_time": "2026-08-23T19:56:13+0000",
       "suggested_reply": "Esa es la trampa: si tiene creador, ya no sería el primero. 🤔",
       "reason": "Responde directamente a la pregunta sin repetir el insulto del comentario.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_1752660988954807"
     },
     {
       "comment_id": "122151375549072582_2159556928109209",
@@ -172,8 +204,10 @@
       "comment_created_time": "2026-08-23T19:56:09+0000",
       "suggested_reply": "La misma trampa, pero con plumas: una pregunta que se persigue a sí misma. 😂🐔",
       "reason": "Responde a la comparación huevo-gallina con un giro breve y específico.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_1393913729371701"
     },
     {
       "comment_id": "122151375549072582_2553794695093209",
@@ -181,8 +215,10 @@
       "comment_created_time": "2026-08-23T19:54:31+0000",
       "suggested_reply": "Ese “usted mismo” viene con demasiada seguridad para una pregunta eterna. 😉🤔",
       "reason": "Responde al tono confiado y coloquial del comentario.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_1442705557693951"
     },
     {
       "comment_id": "122151375549072582_872181139160064",
@@ -190,8 +226,10 @@
       "comment_created_time": "2026-08-23T19:53:55+0000",
       "suggested_reply": "Jajaja, el diosito también se puede confundir; la pregunta venía con trampa. 😅🤔",
       "reason": "Devuelve la reacción emocional al meme sin entrar a corregir una creencia.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_1057391607015007"
     },
     {
       "comment_id": "122151375549072582_1859721888531923",
@@ -199,8 +237,10 @@
       "comment_created_time": "2026-08-23T19:49:20+0000",
       "suggested_reply": "Loca, pero de esas que se quedan dando vueltas todo el día. 😂🤔",
       "reason": "Valida el efecto del meme con un remate de personalidad propia.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_1385570613688458"
     },
     {
       "comment_id": "122151375549072582_1442803861236285",
@@ -208,8 +248,10 @@
       "comment_created_time": "2026-08-23T19:43:58+0000",
       "suggested_reply": "El universo recibe esa teoría con una ceja levantada: el hombre creando a su propio creador. 🤔✨",
       "reason": "Retoma directamente la tesis del comentario y el giro del meme.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_905456662245262"
     },
     {
       "comment_id": "122151375549072582_27540592708951388",
@@ -217,8 +259,10 @@
       "comment_created_time": "2026-08-23T19:41:54+0000",
       "suggested_reply": "El ave fénix al menos tiene experiencia con empezar desde cero. 🔥🤔",
       "reason": "Usa la imagen del ave fénix para conectar con el origen y la creación.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_1465068202135840"
     },
     {
       "comment_id": "122151375549072582_1271513331667499",
@@ -226,8 +270,10 @@
       "comment_created_time": "2026-08-23T19:40:57+0000",
       "suggested_reply": "Exacto: ahí es donde el meme deja de ser chiste y se vuelve paradoja. 🤔✨",
       "reason": "Retoma la contradicción central de crear algo que siempre estuvo.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_1629541318681280"
     },
     {
       "comment_id": "122151375549072582_1642353581234558",
@@ -235,8 +281,10 @@
       "comment_created_time": "2026-08-23T19:38:41+0000",
       "suggested_reply": "Ahí está la paradoja: si siempre existió, la pregunta cambia de dueño. 🤔✨",
       "reason": "Responde a la idea de existencia eterna con la misma paradoja del post.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_1588433572857694"
     },
     {
       "comment_id": "122151375549072582_1004388505976156",
@@ -244,8 +292,10 @@
       "comment_created_time": "2026-08-23T18:52:18+0000",
       "suggested_reply": "El hilo se puso más intenso que la pregunta original. Mejor volvamos al misterio central: ¿quién creó al creador? 🤔",
       "reason": "Desescala el lenguaje despectivo y devuelve la conversación al tema del post sin tono de moderación.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_1367560798346768"
     },
     {
       "comment_id": "122151375549072582_942638681466045",
@@ -253,8 +303,10 @@
       "comment_created_time": "2026-08-23T18:47:59+0000",
       "suggested_reply": "La pregunta encontró una respuesta bastante contundente… y bastante incendiaria. 🤔😂",
       "reason": "Mantiene el remate juguetón sin repetir las expresiones vulgares.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_2722512191478038"
     },
     {
       "comment_id": "122151375549072582_2089754968329324",
@@ -262,8 +314,10 @@
       "comment_created_time": "2026-08-23T18:41:52+0000",
       "suggested_reply": "El universo registró ese “hit” y se quedó pensando. 😂✨",
       "reason": "Responde al “hit” sin inventar una interpretación musical no expresada.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_2947208368949252"
     },
     {
       "comment_id": "122151375549072582_1110818364949332",
@@ -271,8 +325,10 @@
       "comment_created_time": "2026-08-23T18:30:19+0000",
       "suggested_reply": "El hilo ya pasó de la filosofía a los gritos del multiverso. 😂🌌",
       "reason": "No compite con el insulto; reconoce la escalada y conserva el tono USM.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando"
+      "status": "Respondido",
+      "approval_status": "Aprobada",
+      "published": true,
+      "reply_id": "122151375549072582_4174845672756847"
     }
   ],
   "no_action": [
@@ -358,5 +414,7 @@
       "approval_status": "No_Aplica"
     }
   ],
-  "next_step": "Fernando puede aprobar un subconjunto por IDs; no publicar estas propuestas sin autorización explícita."
+  "next_step": "Revisar los 9 casos sin acción; no publicar sin nueva aprobación explícita.",
+  "published_count": 28,
+  "verified_count": 28
 }
