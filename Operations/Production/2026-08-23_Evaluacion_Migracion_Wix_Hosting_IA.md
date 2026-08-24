@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-24
 
-**Versión:** 2.9
+**Versión:** 3.0
 
 **Autor:** Manus AI
 
@@ -186,6 +186,8 @@ La protección formal de `main` no se habilitó durante P1 porque altera el fluj
 La primera actualización comercial posterior a P1 se completó solo con información confirmada: serigrafía a partir de 12 piezas y tiempos que se confirman según cantidad, requerimiento y carga de trabajo. Se usó una visual exclusiva de prendas sin marcas externas y una adaptación fiel de la fachada autorizada, ambas optimizadas para la web. El cambio pasó CI, se integró en `staging` y se promovió al staging público servido desde `main`; la revisión visual confirmó servicios, catálogos, contacto y protecciones P0. El bloqueo sobre materiales permanece: no se describieron telas, gramajes, composiciones, acabados ni certificaciones.
 
 La refinación posterior añadió una galería corta de procesos dentro de «Nuestro trabajo». Las fotografías de Drive con marcas de clientes se utilizaron solo como referencia; la versión pública usa una fotografía autorizada existente y dos visuales exclusivas sin marcas de terceros. También se agregó una frase sobre explorar opciones de prenda según la necesidad de presentación, en lugar de declarar materiales o calidades no documentados. El flujo de revisión, CI y promoción a `main` se mantuvo intacto; Wix, DNS, nameservers y el dominio público siguen sin cambios.
+
+Tras detectarse una generación incompleta en la tarjeta «Detalle de bordado», se revirtió de forma puntual el uso de visuales externos y se sustituyeron por recursos locales comprobados. La corrección pasó CI en `staging` y `main`; tres solicitudes estáticas a los activos de la galería devolvieron HTTP 200 y la respuesta de la landing no contiene el marcador de fallo. La validación visual manual queda a cargo del usuario en Quick-seedless, sin volver a usar un navegador remoto de otra computadora.
 
 ## Integración futura de IA
 

@@ -4,7 +4,7 @@ purpose: "Definir los pasos técnicos para probar el sitio React/Vite de Firma B
 status: Review
 created: 2026-08-23
 updated: 2026-08-24
-version: "1.4"
+version: "1.5"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Evaluacion_Migracion_Wix_Hosting_IA.md"
@@ -73,6 +73,12 @@ También añadió una visual exclusiva de prendas sin marcas de terceros y una a
 El commit `8a01b15` se revisó mediante Pull Request hacia `staging`, superó CI y se integró mediante el merge `d15ef60`, luego promovido a `main`, que Pages sirve como endpoint público de pruebas. Se amplió «Nuestro trabajo» con una galería de proceso de tres tarjetas: bordado en prenda, detalle de bordado y proceso de serigrafía. Las dos visuales nuevas son exclusivas y no incluyen marcas de clientes; las fotografías reales con marcas visibles se conservaron solo como referencia interna.
 
 La nota contigua a los tiempos de entrega ahora explica que se pueden explorar opciones de prenda según las necesidades de presentación del equipo. Esta redacción no afirma composición, material, calidad, certificación, inventario ni plazo. La versión publicada mantiene servicios, catálogos, contacto, noindex, robots y headers P0. No se modificaron Wix, DNS, nameservers ni el dominio público.
+
+### Corrección de activos de galería — 2026-08-24
+
+La tarjeta «Detalle de bordado» mostró un marcador de generación fallida después de la actualización de galería. El commit correctivo `b634f47` retiró las dos referencias externas de generación y se revisó mediante Pull Request hacia `staging`; el merge `eaf89df` pasó CI en `staging` y `main`, desde donde Pages sirve el staging público. La galería usa ahora únicamente `proceso-autorizado.jpeg`, `proceso-detalle.webp` y `prendas-color-web.webp`, activos locales del repositorio que responden correctamente.
+
+La comprobación técnica verificó código de respuesta HTTP 200 para los tres recursos y ausencia del texto de error en la respuesta de la landing. Por preferencia explícita del usuario, la comprobación visual manual queda pendiente y debe hacerse solo desde su navegador Quick-seedless; no se utilizará el navegador remoto de otra computadora. Wix, DNS, nameservers y dominio público se mantienen sin cambios.
 
 ## 2. Estado de partida y preparación obligatoria
 

@@ -4,7 +4,7 @@ purpose: "Registrar la procedencia, evaluación y uso previsto de fotografías a
 status: Active
 created: 2026-08-24
 updated: 2026-08-24
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md"
@@ -45,6 +45,8 @@ Las fotos de bordado de terceros de Drive permanecen como referencia o detalle s
 
 Se revisaron dos muestras adicionales de Drive: `FB_IMG_1787256185059.jpg`, con bordado `AHB` sobre prenda verde, y `FB_IMG_1787256139212.jpg`, con bordado `HOK` sobre prenda oscura. Ambas son útiles para apreciar costura, contraste de hilo y trabajo de personalización, pero incluyen marcas de clientes; por ello permanecen como referencias internas y no se usan directamente en la página pública.
 
-La sección «Nuestro trabajo» se amplió con una galería de tres tarjetas: una fotografía autorizada de bordado ya integrada y dos visuales exclusivas de detalle de bordado y proceso de serigrafía. Las nuevas visuales excluyen nombres, letras, logotipos, precios y marcas de terceros. Se añadieron como recursos de apoyo para explicar procesos, no como evidencia de un pedido específico, catálogo de existencias, certificación ni promesa de materiales.
+La sección «Nuestro trabajo» se amplió inicialmente con una galería de tres tarjetas: una fotografía autorizada de bordado y dos visuales exclusivas. Los recursos generados no se completaron correctamente en el entorno publicado y una tarjeta mostró el mensaje «image generation failed»; por tanto, no se consideran activos aprobados ni parte del sitio final.
 
-La misma actualización añadió una tercera nota junto a los tiempos: «Le ayudamos a explorar opciones de prenda de acuerdo con las necesidades de presentación de su equipo». Esta formulación evita declarar «materiales de alta calidad» sin ficha técnica o confirmación del cliente. Cualquier mención futura de tela, composición, gramaje, acabado o calidad deberá registrarse primero en el inventario comercial.
+La corrección `b634f47`, validada por CI e integrada a staging/main mediante `eaf89df`, sustituyó ambos recursos generados por activos locales ya verificados: `proceso-autorizado.jpeg`, `proceso-detalle.webp` y `prendas-color-web.webp`. La galería final conserva tres tarjetas: «Bordado en prenda», «Detalle de bordado» y «Variedad de prendas». La verificación técnica confirmó HTTP 200 para los tres activos y ausencia del marcador de error en la respuesta del staging.
+
+La misma actualización añadió una tercera nota junto a los tiempos: «Le ayudamos a explorar opciones de prenda de acuerdo con las necesidades de presentación de su equipo». Esta formulación evita declarar «materiales de alta calidad» sin ficha técnica o confirmación del cliente. Cualquier mención futura de tela, composición, gramaje, acabado o calidad deberá registrarse primero en el inventario comercial. La comprobación visual manual queda reservada al navegador Quick-seedless del usuario; no se debe usar un navegador remoto de otra computadora para esa validación.
