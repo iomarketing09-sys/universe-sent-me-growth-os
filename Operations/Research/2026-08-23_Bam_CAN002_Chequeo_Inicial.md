@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — CAN-002: chequeo inicial de visibilidad"
 purpose: "Preservar el primer corte operativo de CAN-002 antes de las ventanas T+3 h, separando métricas autenticadas, evidencia pública e indexación pendiente."
-status: "Active — conectores confirmados; medición temprana completa pendiente de filas en Instagram y YouTube"
+status: "Active — consultas reducidas confirman que Instagram y YouTube siguen pendientes de filas"
 created: 2026-08-23
 updated: 2026-08-23
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
@@ -37,6 +37,10 @@ El siguiente corte útil empieza después de que YouTube cumpla su propia ventan
 ## Reconsulta tras confirmar conectores
 
 Fernando confirmó que actualizó la conexión de Instagram en Windsor.ai. La reconsulta verificó que la cuenta `bam_inacan` permanece listada como cuenta activa de Instagram y que el canal `baminacan@gmail.com` permanece activo en YouTube. Sin embargo, la consulta de Instagram a las **20:38:53 CDT** y la de YouTube a las **20:40:32 CDT** continuaron devolviendo conjuntos vacíos para CAN-002. La conexión está disponible; las filas de contenido siguen pendientes de sincronización/indexación. No se registran métricas de cero por ese motivo.
+
+### Validación con campos mínimos
+
+Para respetar el límite de la cuenta gratuita, se ejecutaron consultas reducidas de cuatro campos por plataforma. Instagram usó `media_shortcode`, `media_views`, `media_reach` y `data_fetched_at` a las **20:46:42 CDT**; YouTube usó `video_title`, `views`, `likes` y `data_fetched_at` a las **20:46:59 CDT**. Ambas devolvieron conjuntos vacíos. Por tanto, el retraso no está causado por solicitar demasiados fields: las filas de CAN-002 aún no están disponibles en Windsor.ai. Mantener estos subconjuntos mínimos para futuras revisiones hasta que aparezcan las filas.
 
 ## Límites y actualizaciones relacionadas
 
