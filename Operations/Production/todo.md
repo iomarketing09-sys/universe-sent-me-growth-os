@@ -14,3 +14,4 @@
 - [x] Evaluar un staging de WordPress administrado como alternativa a Cloudflare Pages, con cuenta, datos y presupuesto propios del cliente.
 - [x] Definir y revisar una animación ligera, accesible y coherente con Color que Trabaja antes de modificar el staging de Firma Bordados.
 - [x] Implementar la puntada inicial, entradas breves y microinteracciones aprobadas en el staging de Firma Bordados; validar en escritorio y móvil.
+- [x] Inventariar y validar los PDFs autorizados de Drive para sustituir los enlaces temporales de Wix en un staging posterior.

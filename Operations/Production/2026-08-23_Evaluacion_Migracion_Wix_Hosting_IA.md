@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 2.0
+**Versión:** 2.1
 
 **Autor:** Manus AI
 
@@ -156,6 +156,10 @@ La opción Cloudflare Pages continúa documentada como alternativa estática y r
 ### Decisión vigente: Cloudflare Pages con movimiento ligero
 
 Fernando confirmó posteriormente que Cloudflare Pages es la ruta preferida por coste y mantenimiento. El staging React/Vite recibió la actualización visual `Color que Trabaja` documentada en `2026-08-23_Actualizacion_Movimiento_Staging_Firma_Bordados.md`: una puntada SVG de entrada, revelados breves, microinteracciones de catálogo/CTA y reglas de bordado como sistema de identidad. La alternativa WordPress se conserva únicamente como referencia y no se ejecutará sin nueva decisión. No hubo cambios a Wix, DNS, contenido, catálogos ni formulario.
+
+### Inventario autorizado de catálogos
+
+La carpeta Drive compartida por Fernando contiene los tres catálogos que reemplazarán los enlaces temporales Wix durante una integración posterior. `2026-08-24_Inventario_Catalogos_Drive_Firma_Bordados.md` registra sus nombres, tamaños, páginas y portadas revisadas. Detecta tamaños desactualizados en las tarjetas Soul & Blues y M&O, además de ediciones declaradas 2019 y 2016 para BigBang/M&O; por ello los enlaces y metadatos del staging no se cambiarán hasta que el cliente confirme que las tres versiones son vigentes. Los servicios siguen pendientes y no se infieren de los catálogos.
 
 ## Integración futura de IA
 

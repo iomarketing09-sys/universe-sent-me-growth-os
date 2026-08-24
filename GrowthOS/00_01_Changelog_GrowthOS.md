@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-24
-**Versión:** 3.56
+**Versión:** 3.57
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.57.00] — 2026-08-24 (Manus): Inventario autorizado de catálogos Drive para Firma Bordados.** Se revisaron tres PDFs compartidos por Fernando: BigBang (61 páginas, 13.6 MB), M&O (52 páginas, 3.8 MB) y Soul & Blues 2025 (23 páginas, 8.0 MB). Se detectaron metadatos de tamaño desactualizados en dos tarjetas y ediciones declaradas 2019/2016 que requieren confirmación de vigencia del cliente antes de sustituir enlaces Wix. No se modificó el staging, Cloudflare, Wix, DNS ni contenido de servicios.
 
 - **[3.56.00] — 2026-08-23 (Manus): Cloudflare Pages y movimiento ligero confirmados para Firma Bordados.** Se confirmó Cloudflare Pages como ruta de hosting de menor coste/mantenimiento frente a WordPress y se aplicó al staging la puntada SVG de entrada, revelados breves, microinteracciones de catálogos/CTA y sistema de fichas con reglas de bordado. El movimiento respeta `prefers-reduced-motion`; no se añadieron loops, video automático, parallax, partículas ni carruseles. Wix, DNS, catálogos, formulario y datos del cliente no cambiaron. WordPress permanece solo como alternativa documentada.
 
