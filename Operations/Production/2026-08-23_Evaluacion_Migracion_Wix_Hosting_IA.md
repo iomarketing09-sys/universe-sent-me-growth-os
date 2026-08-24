@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 1.4
+**Versión:** 1.5
 
 **Autor:** Manus AI
 
@@ -36,9 +36,9 @@ La auditoría no envió el formulario, no interactuó con el chat, no descargó 
 
 ## Dirección de modernización y staging
 
-El usuario confirmó que el sitio no necesita ser idéntico a la versión Wix y seleccionó una dirección **corporativa-industrial** orientada a maquiladoras internacionales. La propuesta de staging se denomina **Precisión Industrial**: azul marino, blanco cálido y gris acero como base; Cobalto Industrial `#1A6E9B` como acento de información y precisión; y rojo reservado para la acción principal de conversión. La arquitectura usa una primera pantalla con propuesta de valor y CTA, banda de capacidades, evidencia de proceso de bordado, biblioteca de catálogos, presentación institucional y contacto accesible.
+El usuario confirmó que el sitio no necesita ser idéntico a la versión Wix. Primero se construyó una dirección corporativa-industrial, pero posteriormente aprobó una referencia visual **clara y colorida** como base para la evolución de staging. La dirección vigente se denomina **Color que Trabaja**: blanco cálido dominante; Azul Firma `#0D4C9E` para navegación y títulos; rojo `#DF2B2C` para la acción principal; y amarillo `#F3BD25` para detalle, trayectoria y categorías. Conserva claridad para compradores de maquiladoras internacionales sin una atmósfera naval-industrial dominante.
 
-El sistema visual utiliza un monograma FB de puntada continua, reglas discontinuas, numeración de secciones y etiquetas de documento como motivo recurrente. Se priorizan imágenes de máquina, hilo, manos, prendas y contexto de taller. La imagen actual que incorpora una marca de tercero no se reutilizará sin autorización específica. La versión staging conserva el contenido institucional validado, los tres catálogos y el contacto público, pero usa un formulario que prepara un correo localmente; no almacena datos ni expone un backend.
+La arquitectura vigente usa una hero clara de dos columnas —mensaje comercial y fotografía de proceso—, capacidades con acentos de color, collage de evidencia de prendas y bordado, biblioteca de catálogos y contacto accesible. El staging reemplazó el monograma provisional por el logo oficial aprobado, mantuvo los tres catálogos y el contacto público, y usa un formulario que prepara un correo localmente; no almacena datos ni expone un backend. Las pruebas visuales en escritorio y móvil confirmaron legibilidad de logo, navegación, enlaces, contraste y formularios. No se modificó Wix ni DNS.
 
 La consulta pasiva de los recursos públicos confirmó tamaños individuales aproximados de 13.6 MB, 3.8 MB y 5.8 MB para los tres PDFs. Cada archivo queda bajo el límite de 25 MiB por activo documentado por Cloudflare Pages Free, por lo que el conjunto es técnicamente apto para la alternativa de hosting estático, sujeto a volver a alojar los PDFs bajo control del cliente antes del corte definitivo. [3]
 
@@ -46,13 +46,15 @@ La consulta pasiva de los recursos públicos confirmó tamaños individuales apr
 
 La revisión autorizada de `My Drive/Firma Bordados` confirmó una identidad visual coherente para contenidos: azul marino, rojo, amarillo, blanco, prendas de trabajo, hilos y detalles de bordado. Las publicaciones verticales de uniforme, parche y nombres bordados son buenas referencias de paleta, producto y lenguaje visual; no deben colocarse completas en la web porque incluyen CTAs, encuadres de feed y textos de interacción propios de redes sociales.
 
-La recomendación es conservar el logo oficial de Firma Bordados en la cabecera, pero solicitar un archivo vectorial o PNG con transparencia antes del corte definitivo. Para el sitio corporativo, se deben preferir fotografías propias limpias de proceso o prendas terminadas, sin marcas de clientes visibles, salvo autorización específica. Se identificaron fotografías y clips reales de bordado que sirven como evidencia visual, pero algunos muestran logotipos de terceros, nombres de clientes o maquinaria Tajima; hasta obtener permiso explícito, se usarán como referencia de encuadre, no como activos públicos.
+La recomendación es conservar el logo oficial de Firma Bordados en la cabecera, pero solicitar un archivo vectorial o PNG con transparencia antes del corte definitivo. El usuario confirmó permiso para editar y publicar fotografías de trabajos de clientes; aun así, se deben preferir fotografías propias limpias de proceso o prendas terminadas, y usar referencias de terceros solo cuando su marca, licencia y propósito queden claros. Se identificaron fotografías y clips reales de bordado que sirven como evidencia visual. Los clips con maquinaria Tajima deben optimizarse y validarse antes de integrarse en web.
 
 La carpeta de Reels incluye un clip vertical de aproximadamente cuatro segundos con una línea de máquinas de bordado en operación. El clip transmite capacidad industrial y podría funcionar como evidencia de proceso en una sección móvil o como Reel, pero no como hero panorámico. Cualquier uso web requerirá optimización, controles de reproducción, un poster estático y validación previa de las marcas visibles.
 
 La estrategia de redes revisada define tres pilares: escolar, corporativo B2B y confianza/legado. El sitio debe priorizar el pilar B2B para maquiladoras internacionales y empresas, mientras que el bordado escolar debe mantenerse como capacidad secundaria o estacional. El protocolo actual de conversión dirige a sitio, teléfono, correo y mensajes directos, y prohíbe prometer WhatsApp; por tanto, la página no debe agregar un CTA de WhatsApp sin una autorización posterior. Las cuentas sociales todavía requieren confirmación de URL y propiedad antes de agregar iconos o enlaces.
 
 El usuario aprobó el uso del logo oficial de Firma Bordados, confirmó permiso para editar y publicar fotografías de trabajos de clientes, y autorizó el uso prudente de IA como apoyo de composición, nunca como sustitución de la evidencia real de proceso o producto. El staging actualizado reemplaza el monograma provisional por el logo oficial, integra una fotografía de proceso autorizada y añade enlaces externos a las cuentas oficiales de Facebook (`https://www.facebook.com/firmabordadospiedras`), Instagram (`https://www.instagram.com/firmabordados/`) y X (`https://x.com/firmabordados`). Los tres perfiles se verificaron como cuentas coherentes de Firma Bordados. La navegación usa enlaces externos accesibles y no automatiza publicaciones.
+
+La variante de staging ahora incorpora la referencia clara y colorida aprobada por el usuario: producto y bordado son la evidencia principal, los acentos azul/rojo/amarillo proceden del logo oficial, y los fondos claros mejoran cercanía sin retirar la información que necesita un comprador B2B. La versión no es una réplica de una maqueta generada; traduce su jerarquía —hero clara, módulos de producto, catálogo ordenado y contacto visible— a una implementación responsive con activos autorizados y contenido verificable.
 
 ## Hechos confirmados con el usuario
 
