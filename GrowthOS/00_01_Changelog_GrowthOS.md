@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-24
-**Versión:** 3.63
+**Versión:** 3.64
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.64.00] — 2026-08-24 (Manus): Paquete P0 de accesibilidad/protección validado en el staging Cloudflare de Firma Bordados.** Se habilitó zoom, foco visible, enlace de salto y reducción de movimiento; se añadieron meta noindex y headers estáticos de protección. El commit `b3754d0` se validó con TypeScript/Vite y se promovió a `main`, rama que Pages sirve como staging público. La configuración inicial conservó `main` pese a un intento de definir `staging`; se documentó el flujo ramas de trabajo/staging → revisión → promoción a main. Se verificaron meta, robots, headers, hero y teclado en móvil. Wix, DNS, nameservers y dominio no cambiaron.
 
 - **[3.63.00] — 2026-08-24 (Manus): Backlog técnico de bajo riesgo para Firma Bordados.** Se auditó el staging Cloudflare y se priorizaron mejoras sin depender de materiales, tiempos o mínimos: paquete P0 de accesibilidad/protección de staging, carga diferida de imágenes, limpieza de runtime, CI y protección de ramas. Quedan bloqueados analytics, backend de formularios, precios, SEO estructurado definitivo y dominio hasta confirmación/consentimiento correspondiente. No se modificó el sitio durante la auditoría.
 

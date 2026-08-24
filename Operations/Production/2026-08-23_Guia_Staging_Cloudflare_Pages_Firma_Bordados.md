@@ -42,13 +42,19 @@ La verificación adicional de GitHub se completó y la aplicación **Cloudflare 
 | Proyecto Pages | `firma-bordados-staging` |
 | URL de staging | `https://firma-bordados-staging.pages.dev` |
 | Repositorio | `iomarketing09-sys/firma-bordados-site` (privado) |
-| Rama de producción del staging | `staging` |
+| Rama de producción del staging | `main` |
 | Comando de build | `pnpm exec vite build` |
 | Directorio publicado | `dist/public` |
 | Entorno de build | `NODE_VERSION=22.16.0` |
 | Dominio personalizado | Ninguno |
 
 El primer build terminó correctamente y se verificó que la URL sirve el hero, WhatsApp como CTA principal, capacidades, catálogos, contacto y los enlaces de PDF. La página contiene bloqueo de indexación de staging. Wix, `firmabordados.com`, DNS y nameservers permanecen sin cambios. Cualquier corte de dominio continúa bloqueado por la transferencia/operación administrada documentada y una aprobación expresa del cliente.
+
+La configuración inicial intentó definir `staging` como Production branch, pero Cloudflare conservó `main` como rama de producción. Para evitar una discrepancia pública se promovió el commit validado `b3754d0` de `staging` a `main` mediante avance rápido, con lo que ambos apuntan al mismo contenido P0. La operación vigente del repositorio es: cambios en ramas de trabajo o `staging` → build y revisión → promoción aprobada a `main` → Pages despliega `main` en `firma-bordados-staging.pages.dev`. Esta política aplica únicamente al entorno de prueba; no afecta el dominio Wix.
+
+### Validación P0 — 2026-08-24
+
+El paquete P0 quedó publicado en la URL principal de staging. Se verificaron el build TypeScript/Vite, el meta `noindex,nofollow,noarchive`, `robots.txt`, los headers `X-Content-Type-Options`, `Referrer-Policy` y `Permissions-Policy`, además de la aparición del hero y el enlace de salto alcanzable por teclado en viewport móvil. El paquete habilita zoom, foco visible, salto de contenido y reducción integral de movimiento. No alteró texto comercial, servicios, catálogos, WhatsApp, Wix, DNS, nameservers ni dominio personalizado.
 
 ## 2. Estado de partida y preparación obligatoria
 

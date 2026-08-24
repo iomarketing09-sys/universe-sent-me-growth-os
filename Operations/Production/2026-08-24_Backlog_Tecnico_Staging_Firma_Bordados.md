@@ -1,7 +1,7 @@
 ---
 title: "Backlog técnico de bajo riesgo — Staging Firma Bordados"
 purpose: "Priorizar mejoras de rendimiento, accesibilidad, seguridad técnica y operación del staging que no dependan de materiales, tiempos de entrega o mínimos de pedido."
-status: Review
+status: Active
 created: 2026-08-24
 updated: 2026-08-24
 version: "1.0"
@@ -37,11 +37,11 @@ La auditoría identificó ajustes que no requieren información comercial adicio
 | P2 | Añadir analítica de eventos para clics en WhatsApp, correo y PDFs | Mide intención comercial y ayuda a priorizar catálogo/CTA | Consentimiento de privacidad, herramienta y responsable de datos | Medio |
 | P2 | Sustituir `mailto:` por formulario con backend | Recibe solicitudes aunque el cliente no tenga app de correo configurada | Aviso de privacidad, destinatario, antispam y proceso de respuesta | Medio |
 
-## 3. Paquete recomendado ahora
+## 3. Paquete P0 aplicado
 
-El siguiente ajuste recomendado es un solo paquete **P0 de accesibilidad y protección de staging**. Incluye habilitar zoom, estados de foco, enlace de salto, reducción de movimiento integral, meta noindex y encabezados estáticos. Se valida en escritorio y móvil, y no cambia la oferta comercial ni recaba datos.
+El paquete **P0 de accesibilidad y protección de staging** se aplicó en el commit `b3754d0` y se promovió a la rama `main` que Cloudflare Pages usa para este sitio de prueba. Incluye zoom habilitado, estados de foco, enlace de salto, reducción de movimiento integral, meta noindex y encabezados estáticos. Se validó en build, escritorio y móvil, y no cambia la oferta comercial ni recaba datos.
 
-Después corresponde el paquete **P1 de mantenimiento**: CI GitHub, protección de rama y medición real de bundle antes de eliminar providers/dependencias. La meta no es perseguir un número de kilobytes, sino retirar código realmente inactivo con una build reproducible y revisión visual.
+El siguiente ajuste propuesto corresponde al paquete **P1 de mantenimiento**: CI GitHub, protección de rama y medición real de bundle antes de eliminar providers/dependencias. La meta no es perseguir un número de kilobytes, sino retirar código realmente inactivo con una build reproducible y revisión visual.
 
 ## 4. Límites hasta recibir la información del cliente
 

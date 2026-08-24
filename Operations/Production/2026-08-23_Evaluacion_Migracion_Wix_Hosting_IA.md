@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 2.5
+**Versión:** 2.6
 
 **Autor:** Manus AI
 
@@ -176,6 +176,8 @@ El staging se desplegó exitosamente en `https://firma-bordados-staging.pages.de
 ### Mejoras técnicas independientes del contenido comercial
 
 `2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md` organiza mejoras de bajo riesgo mientras se esperan materiales, tiempos y mínimos: accesibilidad, noindex de staging, headers, carga diferida de imágenes, limpieza de runtime, CI y protección de ramas. No autoriza analytics, backend de formularios, precios, SEO estructurado definitivo ni cambio de dominio.
+
+El paquete P0 del backlog se completó. Se añadió zoom, foco visible, enlace de salto, reducción de movimiento integral, noindex y headers estáticos; el build se validó y la URL Pages se comprobó en móvil. Pages conserva `main` como Production branch del sitio de staging, por lo que el commit aprobado se promovió desde `staging` a `main` en vez de cambiar el dominio o el proyecto. Este ajuste solo sincroniza el código de prueba y no modifica Wix, DNS o el dominio público.
 
 ## Integración futura de IA
 
