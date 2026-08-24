@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "4.6"
+version: "4.7"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -110,6 +110,12 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch12.md"
   - "Operations/Research/2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Reply_Proposals.md"
   - "GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md"
+  - "Operations/Automation/record_facebook_publication_batch_13.py"
+  - "Operations/Automation/export_facebook_pending_after_batch13_md.py"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_13.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_13.json"
+  - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch13.json"
+  - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch13.md"
 organization: "Operations/Research"
 ---
 
@@ -119,7 +125,7 @@ organization: "Operations/Research"
 
 Este documento define el uso del ledger `2026-08-15_Community_Engagement_Log.csv`. El registro convierte los comentarios en señales de aprendizaje sin transformarlos en un sistema de vigilancia ni en un bot de respuestas. La unidad de registro es un comentario real recuperado desde una publicación propia; cada comentario se identifica por su `Comentario_ID` y solo puede aparecer una vez.
 
-El ledger se creó vacío de forma intencional. Después de extracciones verificables, al cierre de este corte contiene 226 comentarios reales registrados en el CSV, incluyendo los lotes de respuestas publicados y los nuevos hallazgos del Delta 08. Las auditorías históricas agregadas se conservan como evidencia de cobertura y no se reconstruyen retroactivamente como filas individuales cuando no existe un ID verificable. No se inventan nombres, perfiles, IDs personales, intenciones ni respuestas históricas.
+El ledger se creó vacío de forma intencional. Después de extracciones verificables, al cierre de este corte contiene 255 comentarios reales registrados en el CSV, incluyendo los lotes de respuestas publicados y los nuevos hallazgos del Delta 08. Las auditorías históricas agregadas se conservan como evidencia de cobertura y no se reconstruyen retroactivamente como filas individuales cuando no existe un ID verificable. No se inventan nombres, perfiles, IDs personales, intenciones ni respuestas históricas.
 
 ## 2. Fuente y privacidad
 
@@ -568,3 +574,12 @@ Fernando corrigió cinco interpretaciones del bloque de nueve casos sin acción.
 | Publicaciones adicionales durante la corrección | 0 |
 
 El ledger conserva 255 filas y 255 IDs únicos; la validación permanece en `PASS`. La propuesta editorial corregida está en `2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Reply_Proposals.md/.json`.
+
+
+## 15. Sincronización del Batch 13 — 24 de agosto de 2026
+
+El Batch 13 cerró la autorización pendiente del post filosófico y de los comentarios relacionados revisados por Fernando. Se registraron **10 respuestas como `Respondido`**, con texto exacto, timestamp y `Respuesta_Meta_ID` devuelto por Meta Graph API v26.0. La verificación confirmó las 10 publicaciones; una réplica anidada se validó bajo la semántica normal de Meta en la que la respuesta puede devolver como `parent.id` el ID de la publicación raíz.
+
+La réplica de L Roberto se conservó en el ledger con decisión de no acción, porque Fernando indicó expresamente no contestarla. El comentario musical sin texto accesible se conservó sin publicación y con señal de bloqueo de API; no se inventó contenido ni se forzó una respuesta no verificable. La cola posterior al Batch 13 contiene exactamente esos **2 casos excluidos** y ninguna otra respuesta aprobada pendiente.
+
+El CSV mantiene el carácter anonimizado y append-only de la evidencia. El registro de publicación está en `2026-08-24_Facebook_Comment_Publication_Record_Batch_13.json` y la cola legible en `2026-08-24_Facebook_Pending_Queue_After_Batch13.md`.

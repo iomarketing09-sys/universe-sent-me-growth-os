@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "5.1"
+version: "5.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -99,6 +99,14 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch12.json"
   - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch12_Audit.json"
   - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch12.md"
+  - "Operations/Automation/publish_ten_remaining_facebook_replies_20260824.py"
+  - "Operations/Automation/verify_ten_remaining_facebook_replies_after_partial.py"
+  - "Operations/Automation/record_facebook_publication_batch_13.py"
+  - "Operations/Automation/export_facebook_pending_after_batch13_md.py"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_13.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_13.json"
+  - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch13.json"
+  - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch13.md"
 organization: "Operations/Research"
 ---
 
@@ -1052,3 +1060,18 @@ Después del lote se revisó la cola actual del ledger y se comprobó cada regis
 La cola pendiente se compone de **8 raíces del post del meme** —“CANGREJERA”, `🤷🏼‍♀️`, “Necesito!!”, “Upss”, “Amén”, “Ejercitense” y dos “Gracias”—, **1 comentario musical inaccesible** de “El día que volviste a la Tierra”, **2 réplicas de otros usuarios** con propuestas heredadas y **1 comentario raíz contextual** (“Jajaja si soy”) en otro hilo. Las réplicas quedan sujetas a criterio editorial y no deben publicarse automáticamente.
 
 La evidencia está en `2026-08-24_Facebook_Pending_Queue_After_Batch12_Audit.json` y el informe legible `2026-08-24_Facebook_Pending_Queue_After_Batch12.md`. El ledger conserva 255 filas y 255 IDs únicos; la validación permanece en `PASS`.
+
+
+## 63. Batch 13 y cierre de la cola aprobada — 24 de agosto de 2026
+
+Fernando autorizó publicar las diez respuestas restantes, excluyendo explícitamente la réplica de L Roberto y el comentario musical inaccesible sin texto recuperable. Meta Graph API v26.0 publicó las **10 respuestas** y la primera verificación detectó una diferencia de semántica en la propiedad `parent` de la réplica musical; una verificación recuperada confirmó la publicación en el hilo correcto y la visibilidad de las 10 respuestas.
+
+| Resultado | Cantidad |
+|---|---:|
+| Respuestas autorizadas y publicadas | 10 |
+| Respuestas verificadas | 10 |
+| Réplica excluida por decisión editorial | 1 |
+| Comentario inaccesible excluido | 1 |
+| Publicaciones fuera de autorización | 0 |
+
+Después del Batch 13 quedan únicamente **dos registros pendientes**: la réplica de L Roberto, que Fernando indicó no contestar, y el comentario musical sin texto accesible para Meta, que no debe forzarse. La cola final está en `2026-08-24_Facebook_Pending_Queue_After_Batch13.md`.

@@ -1,0 +1,446 @@
+{
+  "title": "Facebook Pending Queue After Batch 13",
+  "purpose": "Estado actual de la cola del ledger después de publicar y verificar el Batch 13, excluyendo a L Roberto y el comentario inaccesible.",
+  "status": "Active",
+  "created_at": "2026-08-24",
+  "updated_at": "2026-08-24",
+  "version": "1.1",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
+    "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_12.json",
+    "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_12.json",
+    "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_13.json",
+    "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_13.json"
+  ],
+  "organization": "Operations/Research",
+  "source": "Community Engagement Log synchronized with Meta Graph API v26.0 publication records; current queue calculated after verified Batch 13 without a new broad API sweep",
+  "ledger_rows": 255,
+  "facebook_pending_count": 2,
+  "facebook_pending_with_proposal": 2,
+  "facebook_pending_without_proposal": 0,
+  "facebook_no_action_count": 78,
+  "published_from_batch13": 10,
+  "excluded_from_batch13": [
+    "122151375549072582_1817089682764579",
+    "122151376011072582_1703056380925949"
+  ],
+  "groups": {
+    "1036844829507460_122151376011072582": 1,
+    "122151375549072582": 1
+  },
+  "pending": [
+    {
+      "comment_id": "122151376011072582_1703056380925949",
+      "post_id": "1036844829507460_122151376011072582",
+      "comment_date": "2026-08-24T02:44:40+0000",
+      "comment_type": "Comentario_Raiz",
+      "suggested_reply": "“El día que volviste a la Tierra” de Carlos Sadness: una elección con nostalgia y regreso en el título. 🎶🌎",
+      "approval_status": "Pendiente_Fernando",
+      "priority": "Media",
+      "source": "Meta Graph API v26.0 — publicación bloqueada por objeto inaccesible"
+    },
+    {
+      "comment_id": "122151375549072582_1817089682764579",
+      "post_id": "122151375549072582",
+      "comment_date": "2026-08-23T17:25:20+0000",
+      "comment_type": "Réplica_Anidada",
+      "suggested_reply": "Sí, ahí ya entramos en historia de las religiones y cosmogonías. Gracias por aportar la referencia; la pregunta se puso aún más grande. 🤔✨",
+      "approval_status": "Pendiente_Fernando",
+      "priority": "Media",
+      "source": "Meta Graph API v26.0 — réplica nueva posterior a 2026-08-23T16:56:42+0000"
+    }
+  ],
+  "no_action": [
+    {
+      "comment_id": "122148874563072582_1043931788381940",
+      "post_id": "1036844829507460_122148874371072582",
+      "reason": "La publicación recibió una mención automática de distribución; no es conversación cualitativa."
+    },
+    {
+      "comment_id": "122148874563072582_1041875985485706",
+      "post_id": "1036844829507460_122148874371072582",
+      "reason": "Interacción sin texto; no permite inferir intención."
+    },
+    {
+      "comment_id": "122148874563072582_1453609189930890",
+      "post_id": "1036844829507460_122148874371072582",
+      "reason": "Expresa desinterés por la situación del meme sin amenaza ni solicitud de atención."
+    },
+    {
+      "comment_id": "122148874563072582_2252237312201539",
+      "post_id": "1036844829507460_122148874371072582",
+      "reason": "Confirma comprensión o acuerdo, pero no abre una conversación nueva."
+    },
+    {
+      "comment_id": "122148874563072582_1049239287689712",
+      "post_id": "1036844829507460_122148874371072582",
+      "reason": "Interacción sin texto; no permite inferir intención."
+    },
+    {
+      "comment_id": "122150560083072582_2163324611195836",
+      "post_id": "1036844829507460_122150560083072582",
+      "reason": "Interacción sin texto; no permite inferir intención."
+    },
+    {
+      "comment_id": "122150559981072582_1374355454096145",
+      "post_id": "1036844829507460_122150559981072582",
+      "reason": "La plataforma generó una mención automática; no es una conversación cualitativa."
+    },
+    {
+      "comment_id": "122150559981072582_1600827945012626",
+      "post_id": "1036844829507460_122150559981072582",
+      "reason": "Interacción sin texto; no permite inferir intención."
+    },
+    {
+      "comment_id": "122150559981072582_4583774341900775",
+      "post_id": "1036844829507460_122150559981072582",
+      "reason": "Interacción sin texto; no permite inferir intención."
+    },
+    {
+      "comment_id": "122150559873072582_933934449728408",
+      "post_id": "1036844829507460_122150559873072582",
+      "reason": "La plataforma generó una mención automática; no es una conversación cualitativa."
+    },
+    {
+      "comment_id": "122150559873072582_1738197423962274",
+      "post_id": "1036844829507460_122150559873072582",
+      "reason": "Interacción sin texto; no permite inferir intención."
+    },
+    {
+      "comment_id": "122150560215072582_1538293250939503",
+      "post_id": "1036844829507460_122150560215072582",
+      "reason": "La plataforma generó una mención automática; no es una conversación cualitativa."
+    },
+    {
+      "comment_id": "122150560215072582_1791440162034610",
+      "post_id": "1036844829507460_122150560215072582",
+      "reason": "Interacción sin texto; no permite inferir intención."
+    },
+    {
+      "comment_id": "122151376203072582_1856194378697993",
+      "post_id": "122151376203072582",
+      "reason": "No hay contexto suficiente para responder sin asumir una intención."
+    },
+    {
+      "comment_id": "122151376011072582_1807143836955837",
+      "post_id": "122151376011072582",
+      "reason": "Texto religioso extenso con enlace externo, sin pregunta ni vínculo claro con la publicación; no responder sin asumir intención. No se marca como spam ni se modera automáticamente."
+    },
+    {
+      "comment_id": "122151376365072582_1397524005805789",
+      "post_id": "122151376365072582",
+      "reason": "No hay contexto suficiente para una respuesta útil."
+    },
+    {
+      "comment_id": "122154733605072582_2041839189774293",
+      "post_id": "122154733605072582",
+      "reason": "El comentario no contiene una idea o solicitud clara."
+    },
+    {
+      "comment_id": "122151375549072582_2076221029645579",
+      "post_id": "122151375549072582",
+      "reason": "Nombre aislado; parece etiqueta o identificación, no una reacción desarrollada al post."
+    },
+    {
+      "comment_id": "122151375549072582_2044378132857128",
+      "post_id": "122151375549072582",
+      "reason": "Nombre aislado; no hay señal textual suficiente para responder."
+    },
+    {
+      "comment_id": "122151375549072582_2445223119302734",
+      "post_id": "122151375549072582",
+      "reason": "Es una disputa entre usuarios con lenguaje insultante; no entrar al intercambio."
+    },
+    {
+      "comment_id": "122151375549072582_1334349785149802",
+      "post_id": "122151375549072582",
+      "reason": "Es una disputa entre usuarios con lenguaje insultante; no entrar al intercambio."
+    },
+    {
+      "comment_id": "122151375549072582_1558962762367236",
+      "post_id": "122151375549072582",
+      "reason": "La réplica expresa acuerdo con otra persona y no solicita intervención de la Página."
+    },
+    {
+      "comment_id": "122151375549072582_999401489813305",
+      "post_id": "122151375549072582",
+      "reason": "La réplica intensifica el debate entre usuarios y no requiere intervención de la Página."
+    },
+    {
+      "comment_id": "122151375549072582_3607944949355092",
+      "post_id": "122151375549072582",
+      "reason": "Contiene lenguaje despectivo hacia un grupo protegido; requiere revisión manual de moderación y no respuesta pública."
+    },
+    {
+      "comment_id": "122151375549072582_1031688816340908",
+      "post_id": "122151375549072582",
+      "reason": "No se entiende con claridad la intención ni el referente; no asumir significado."
+    },
+    {
+      "comment_id": "122155182621072582_3283369308528902",
+      "post_id": "1036844829507460_122155182621072582",
+      "reason": "No requiere respuesta; comentario vacío."
+    },
+    {
+      "comment_id": "122154733665072582_28352245461059761",
+      "post_id": "1036844829507460_122154733665072582",
+      "reason": "Señal de baja fricción; no requiere respuesta por defecto."
+    },
+    {
+      "comment_id": "122151376083072582_1571920724307009",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Réplica de usuario; no interrumpir conversación por defecto."
+    },
+    {
+      "comment_id": "122151376083072582_1374857821527596",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Sin propuesta en este corte; mantener fuera de la cola de publicación."
+    },
+    {
+      "comment_id": "122151376083072582_3382611651900802",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Réplica de usuario; no interrumpir conversación por defecto."
+    },
+    {
+      "comment_id": "122151376083072582_2556977661487440",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Señal breve o mención; falta contexto para responder."
+    },
+    {
+      "comment_id": "122151376083072582_1612855930252607",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Señal breve o mención; falta contexto para responder."
+    },
+    {
+      "comment_id": "122151376083072582_1550365972735011",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Señal breve o mención; falta contexto para responder."
+    },
+    {
+      "comment_id": "122151376083072582_2271298670302332",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Sin propuesta en este corte; mantener fuera de la cola de publicación."
+    },
+    {
+      "comment_id": "122151376083072582_917639204232499",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Comentario vacío; no requiere respuesta."
+    },
+    {
+      "comment_id": "122151376083072582_4013447285624648",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Señal breve o mención; falta contexto para responder."
+    },
+    {
+      "comment_id": "122151376083072582_3542786449212158",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Comentario vacío; no requiere respuesta."
+    },
+    {
+      "comment_id": "122151375549072582_1311421877545042",
+      "post_id": "1036844829507460_122151375549072582",
+      "reason": "No responder automáticamente; revisar contexto humano."
+    },
+    {
+      "comment_id": "122151375549072582_1788329568832719",
+      "post_id": "1036844829507460_122151375549072582",
+      "reason": "Conversación de usuarios o remate breve; no interrumpir por defecto."
+    },
+    {
+      "comment_id": "122151375549072582_1099796562737376",
+      "post_id": "1036844829507460_122151375549072582",
+      "reason": "Conversación de usuarios o remate breve; no interrumpir por defecto."
+    },
+    {
+      "comment_id": "122151375549072582_1775198897248896",
+      "post_id": "1036844829507460_122151375549072582",
+      "reason": "Puntuación aislada."
+    },
+    {
+      "comment_id": "122151375549072582_1450732226864481",
+      "post_id": "1036844829507460_122151375549072582",
+      "reason": "Comentario vacío."
+    },
+    {
+      "comment_id": "122155182621072582_1634878035019592",
+      "post_id": "1036844829507460_122155182621072582",
+      "reason": "Comentario vacío; no requiere respuesta."
+    },
+    {
+      "comment_id": "122151376083072582_1434017718618203",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Réplica de usuario; no interrumpir conversación por defecto."
+    },
+    {
+      "comment_id": "122151376083072582_1047038644880975",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Sin propuesta en este corte; mantener fuera de la cola de publicación."
+    },
+    {
+      "comment_id": "122151376083072582_1772568213940295",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Réplica de usuario; no interrumpir conversación por defecto."
+    },
+    {
+      "comment_id": "122151376083072582_949437001541040",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Réplica de usuario; no interrumpir conversación por defecto."
+    },
+    {
+      "comment_id": "122151376083072582_2633800330373000",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Réplica de usuario; no interrumpir conversación por defecto."
+    },
+    {
+      "comment_id": "122151376083072582_1046306528175154",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Señal breve o mención; falta contexto para responder."
+    },
+    {
+      "comment_id": "122151376083072582_1011734881866583",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Comentario vacío; no requiere respuesta."
+    },
+    {
+      "comment_id": "122151376083072582_1770381007434218",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Comentario vacío; no requiere respuesta."
+    },
+    {
+      "comment_id": "122151376083072582_1375496654051986",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Comentario vacío; no requiere respuesta."
+    },
+    {
+      "comment_id": "122151376083072582_1431044915538379",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Comentario vacío; no requiere respuesta."
+    },
+    {
+      "comment_id": "122151376539072582_1576849620502140",
+      "post_id": "1036844829507460_122151376539072582",
+      "reason": "Comentario vacío; no existe señal textual a la que responder."
+    },
+    {
+      "comment_id": "122151376281072582_2427653044377839",
+      "post_id": "1036844829507460_122151376281072582",
+      "reason": "Comentario vacío; no existe señal textual a la que responder."
+    },
+    {
+      "comment_id": "122151376281072582_1717046576595691",
+      "post_id": "1036844829507460_122151376281072582",
+      "reason": "Réplica de usuario o etiqueta a terceros; no interrumpir la conversación."
+    },
+    {
+      "comment_id": "122154733605072582_1562755421995476",
+      "post_id": "1036844829507460_122154733605072582",
+      "reason": "Comentario con contexto insuficiente para proponer un remate que no sea genérico."
+    },
+    {
+      "comment_id": "122154842337072582_1096751386023868",
+      "post_id": "1036844829507460_122154842337072582",
+      "reason": "Comentario vacío; no existe señal textual a la que responder."
+    },
+    {
+      "comment_id": "122151376083072582_902627939195818",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Réplica de usuario o etiqueta a terceros; no interrumpir la conversación."
+    },
+    {
+      "comment_id": "122151376083072582_1761860648467747",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Réplica de usuario o etiqueta a terceros; no interrumpir la conversación."
+    },
+    {
+      "comment_id": "122151376083072582_1815514939806977",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Reacción demasiado breve para construir una respuesta específica."
+    },
+    {
+      "comment_id": "122151376083072582_1930555637636650",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Comentario con contexto insuficiente para proponer un remate que no sea genérico."
+    },
+    {
+      "comment_id": "122151376083072582_1326149289368622",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "La persona ya está respondiendo a otro usuario o aportando una aclaración; la Página no necesita interrumpir."
+    },
+    {
+      "comment_id": "122151376083072582_3161831614012821",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Reacción demasiado breve para construir una respuesta específica."
+    },
+    {
+      "comment_id": "122151376083072582_1081846294378141",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Réplica de usuario o etiqueta a terceros; no interrumpir la conversación."
+    },
+    {
+      "comment_id": "122151376083072582_2571934529910533",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Reacción demasiado breve para construir una respuesta específica."
+    },
+    {
+      "comment_id": "122151376083072582_1423809309592152",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Reacción demasiado breve para construir una respuesta específica."
+    },
+    {
+      "comment_id": "122151376011072582_2543029022835800",
+      "post_id": "1036844829507460_122151376011072582",
+      "reason": "Comentario con contexto insuficiente para proponer un remate que no sea genérico."
+    },
+    {
+      "comment_id": "122151376011072582_1030919906241987",
+      "post_id": "1036844829507460_122151376011072582",
+      "reason": "Réplica de usuario o etiqueta a terceros; no interrumpir la conversación."
+    },
+    {
+      "comment_id": "122151376011072582_1426018186007183",
+      "post_id": "1036844829507460_122151376011072582",
+      "reason": "Réplica de usuario o etiqueta a terceros; no interrumpir la conversación."
+    },
+    {
+      "comment_id": "122151375927072582_1534872741193794",
+      "post_id": "1036844829507460_122151375927072582",
+      "reason": "Comentario vacío; no existe señal textual a la que responder."
+    },
+    {
+      "comment_id": "122151375927072582_1578323530492558",
+      "post_id": "1036844829507460_122151375927072582",
+      "reason": "Comentario vacío; no existe señal textual a la que responder."
+    },
+    {
+      "comment_id": "122151375843072582_3286162124901426",
+      "post_id": "1036844829507460_122151375843072582",
+      "reason": "Comentario vacío; no existe señal textual a la que responder."
+    },
+    {
+      "comment_id": "122151375843072582_1245105511057492",
+      "post_id": "1036844829507460_122151375843072582",
+      "reason": "Comentario vacío; no existe señal textual a la que responder."
+    },
+    {
+      "comment_id": "122151376083072582_1610047380741515",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Réplica de usuario o etiqueta; no interrumpir la conversación."
+    },
+    {
+      "comment_id": "122151376083072582_1593582012424855",
+      "post_id": "1036844829507460_122151376083072582",
+      "reason": "Comentario breve o de baja señal; no se fuerza un remate genérico."
+    },
+    {
+      "comment_id": "122151375549072582_1607751794327420",
+      "post_id": "1036844829507460_122151375549072582",
+      "reason": "Réplica de usuario o etiqueta; no interrumpir la conversación."
+    },
+    {
+      "comment_id": "122151375549072582_1034906995912331",
+      "post_id": "1036844829507460_122151375549072582",
+      "reason": "Réplica de usuario a usuario; no interrumpir la conversación desde la Página."
+    }
+  ]
+}

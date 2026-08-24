@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-24
-**Versión:** 3.48
+**Versión:** 3.49
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.49.00] — 2026-08-24 (Manus): Batch 13 y cierre de la cola autorizada de Facebook.** Fernando autorizó diez respuestas y excluyó explícitamente la réplica de L Roberto y el comentario musical inaccesible sin texto recuperable. Meta Graph API v26.0 publicó y verificó 10/10; una réplica anidada fue validada con la semántica normal de Meta que devuelve el `parent.id` de la raíz del hilo. El ledger queda sincronizado y validado con 255 filas y 255 IDs únicos. La cola posterior al Batch 13 contiene exactamente 2 casos excluidos: uno por decisión editorial y otro por bloqueo de API. No se publicaron respuestas fuera de las 10 autorizadas. Evidencia: `2026-08-24_Facebook_Comment_Publication_Batch_13.json`, su registro, y `2026-08-24_Facebook_Pending_Queue_After_Batch13.md`.
 
 - **[3.48.00] — 2026-08-24 (Manus): Batch 12 y auditoría actual de pendientes.** Fernando aprobó cinco casos reclasificados del post ☁️✨🤔: “Eimen” como “Amén”, “Yo” como identificación, “My Dad” y dos cadenas de emojis interpretables. Meta Graph API v26.0 publicó y verificó 5/5. La auditoría posterior de la cola encontró 12 registros pendientes con propuesta: 11 accesibles y 1 comentario musical inaccesible; ninguno tenía respuesta exacta u otra respuesta de la Página. La cola se compone de 8 raíces del meme, 2 réplicas sujetas a criterio y 1 raíz contextual. El ledger mantiene 255 filas y 255 IDs únicos; validación PASS. No se publicaron respuestas fuera de las cinco autorizadas.
 

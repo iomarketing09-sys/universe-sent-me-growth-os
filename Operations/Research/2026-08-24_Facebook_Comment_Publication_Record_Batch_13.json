@@ -1,0 +1,86 @@
+{
+  "title": "Facebook Comment Publication Record Batch 13",
+  "purpose": "Registrar diez respuestas aprobadas y verificadas; conservar explícitamente fuera del lote a L Roberto y el comentario inaccesible.",
+  "status": "Active",
+  "created_at": "2026-08-24T03:49:42+00:00",
+  "updated_at": "2026-08-24T03:49:42+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_13.json",
+    "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch12.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv"
+  ],
+  "organization": "Operations/Research",
+  "recorded_at": "2026-08-24T03:49:42+00:00",
+  "source": "Meta Graph API v26.0",
+  "updated_rows": 10,
+  "verified_rows": 10,
+  "excluded_comment_ids": [
+    "122151375549072582_1817089682764579",
+    "122151376011072582_1703056380925949"
+  ],
+  "records": [
+    {
+      "comment_id": "122151376083072582_2288087915279831",
+      "reply_id": "122151376083072582_1373965101527412",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_1374303084841115",
+      "reply_id": "122151376083072582_2624277351322664",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_2076744963209419",
+      "reply_id": "122151376083072582_4624228337790055",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_1057397926935250",
+      "reply_id": "122151376083072582_1275669098963355",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_2139372153647884",
+      "reply_id": "122151376083072582_943361278782949",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_1031789069652438",
+      "reply_id": "122151376083072582_1510544064090956",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_1800051157832910",
+      "reply_id": "122151376083072582_994981680262825",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_886767890954566",
+      "reply_id": "122151376083072582_2059152401659768",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376011072582_2488170114997851",
+      "reply_id": "122151376011072582_2863110624053394",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_1385775342983817",
+      "reply_id": "122151376083072582_1858873402153599",
+      "status": "Respondido",
+      "verified": true
+    }
+  ],
+  "new_proposals_published": false
+}
