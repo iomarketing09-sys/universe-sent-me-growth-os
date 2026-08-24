@@ -3,8 +3,8 @@
   "purpose": "Registrar las 37 raíces revisadas del post ☁️✨🤔: 28 propuestas y 9 casos sin acción.",
   "status": "Active",
   "created_at": "2026-08-24T03:19:22+00:00",
-  "updated_at": "2026-08-24T03:19:22+00:00",
-  "version": "1.0",
+  "updated_at": "2026-08-24",
+  "version": "1.1",
   "author": "Manus AI",
   "related_documents": [
     "Operations/Research/2026-08-24_Facebook_USM_Philosophy_Post_Comment_Review_Post_Batch10.json",
@@ -15,9 +15,16 @@
   "source": "Meta Graph API v26.0",
   "reviewed_at": "2026-08-24T03:19:22+00:00",
   "roots_reviewed": 37,
-  "proposal_count": 28,
-  "no_action_count": 9,
+  "proposal_count": 33,
+  "no_action_count": 4,
   "new_rows_added": 0,
   "publication_performed": false,
-  "new_comment_ids": []
+  "new_comment_ids": [],
+  "reclassified_comment_ids": [
+    "122151375549072582_1046418834638831",
+    "122151375549072582_1837178844383978",
+    "122151375549072582_2263197197773933",
+    "122151375549072582_1640754384339219",
+    "122151375549072582_1383611429837958"
+  ]
 }

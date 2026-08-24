@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "4.4"
+version: "4.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -95,6 +95,9 @@ related_documents:
   - "Operations/Automation/record_facebook_publication_batch_11.py"
   - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_11.json"
   - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_11.json"
+  - "Operations/Automation/export_facebook_publication_batch_11_md.py"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_11.md"
+  - "Operations/Automation/reclassify_usm_philosophy_no_action_cases_20260824.py"
   - "Operations/Research/2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Reply_Proposals.md"
   - "GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md"
 organization: "Operations/Research"
@@ -539,3 +542,19 @@ Fernando autorizó las 28 respuestas preparadas para el post `1036844829507460_1
 Los nueve casos sin acción son nombres aislados, emojis, comentarios vacíos, puntuación o respuestas de una sola palabra sin contexto suficiente. No recibieron respuesta y se muestran en `2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Reply_Proposals.md` para revisión editorial de Fernando.
 
 El ledger permanece con 255 filas y 255 IDs únicos; la validación es `PASS`. La evidencia del lote está en `2026-08-24_Facebook_Comment_Publication_Batch_11.json` y `2026-08-24_Facebook_Comment_Publication_Record_Batch_11.json`.
+
+
+## 35. Corrección de casos sin acción del Batch 11 — 24 de agosto de 2026
+
+El detalle del Batch 11 se verificó directamente: contiene 28 respuestas, 28 publicaciones y 28 verificaciones. Se creó además un índice Markdown completo para evitar que la interfaz muestre solo una parte del lote.
+
+Fernando corrigió cinco interpretaciones del bloque de nueve casos sin acción. Las filas de “Eimen”, “Yo”, “My Dad” y las dos cadenas de emojis pasan a `Pendiente_Respuesta` con propuestas específicas; no se publicaron. Los otros cuatro casos siguen como `No_Requiere_Respuesta` por falta de contenido útil: una referencia aislada, un nombre aislado, puntuación y un comentario vacío.
+
+| Resultado | Cantidad |
+|---|---:|
+| Respuestas del Batch 11 publicadas y verificadas | 28 |
+| Casos reclasificados como propuestas pendientes | 5 |
+| Casos que siguen sin acción | 4 |
+| Publicaciones adicionales durante la corrección | 0 |
+
+El ledger conserva 255 filas y 255 IDs únicos; la validación permanece en `PASS`. La propuesta editorial corregida está en `2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Reply_Proposals.md/.json`.

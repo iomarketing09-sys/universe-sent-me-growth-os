@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-24
-**Versión:** 3.46
+**Versión:** 3.47
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.47.00] — 2026-08-24 (Manus): Corrección del detalle del Batch 11 y reclasificación editorial.** Se verificó que el Batch 11 contiene 28 respuestas, 28 publicaciones y 28 verificaciones; se creó un índice Markdown completo para evitar recortes de visualización. Fernando corrigió cinco casos: “Eimen” significa “Amén”, “Yo” expresa identificación con el meme, “My Dad” merece revisión y las dos cadenas de emojis contienen señales interpretables. Esos cinco pasan a `Pendiente_Respuesta` con propuestas USM; cuatro casos permanecen como `No_Requiere_Respuesta`. No se publicó nada adicional. El ledger mantiene 255 filas y 255 IDs únicos; validación PASS.
 
 - **[3.46.00] — 2026-08-24 (Manus): Batch 11 y publicación de 28 respuestas del post ☁️✨🤔.** Fernando autorizó las 28 propuestas específicas preparadas tras la auditoría correcta del post `1036844829507460_122151375549072582`. Meta Graph API v26.0 publicó y verificó 28/28, con preconsulta anti-duplicado y comprobación de autoría, padre, texto exacto y `is_hidden=false`. Los 9 casos clasificados como baja señal, nombres, emojis, vacíos o puntuación no se publicaron y quedan para revisión editorial separada. El ledger conserva 255 filas y 255 IDs únicos; validación PASS. No se publicaron respuestas fuera de las 28 autorizadas.
 

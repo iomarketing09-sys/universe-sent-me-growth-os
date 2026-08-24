@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "4.9"
+version: "5.0"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -86,6 +86,9 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Reply_Proposals.md"
   - "Operations/Automation/publish_twenty eight_usm_philosophy_replies_20260824.py"
   - "Operations/Automation/record_facebook_publication_batch_11.py"
+  - "Operations/Automation/export_facebook_publication_batch_11_md.py"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_11.md"
+  - "Operations/Automation/reclassify_usm_philosophy_no_action_cases_20260824.py"
 organization: "Operations/Research"
 ---
 
@@ -1002,3 +1005,20 @@ Los nueve casos que quedaron fuera no se publicaron porque eran nombres aislados
 | Publicaciones adicionales | 0 |
 
 El ledger conserva 255 filas y 255 IDs únicos; la validación permanece en `PASS`. El informe legible actualizado está en `2026-08-24_Facebook_USM_Philosophy_Post_Batch10_Reply_Proposals.md`, y la evidencia de publicación está en los artefactos Batch 11.
+
+
+## 61. Corrección del detalle del Batch 11 — 24 de agosto de 2026
+
+Fernando señaló que el artefacto del Batch 11 se estaba mostrando de forma recortada, aunque el JSON contiene 28 resultados y 28 verificaciones. Para eliminar esa ambigüedad se creó `2026-08-24_Facebook_Comment_Publication_Batch_11.md`, un índice legible con las 28 filas, sus textos, IDs de respuesta y estado de verificación.
+
+También se corrigieron cuatro interpretaciones del bloque de nueve casos sin acción y se añadió una propuesta para la segunda cadena de emojis:
+
+| Caso | Lectura corregida | Estado |
+|---|---|---|
+| “Eimen” | Se interpreta como “Amén”, una aprobación breve del meme. | Propuesta pendiente |
+| “Yo” | Indica identificación con la frase o situación del meme. | Propuesta pendiente |
+| “My Dad” | Referencia humorística al posible creador; merece revisión en lugar de descartarse automáticamente. | Propuesta pendiente |
+| `🤭🤗😆👌❤️❤️‍🩹👑💯` | Risa, afecto, aprobación y entusiasmo; puede recibir un remate interpretativo. | Propuesta pendiente |
+| `🦉🤨😰😨😧😦😮😯😳🤯🌞🩵🙆🏻🌬️☁️🌈⚡🌪️🌧️🌞` | Cadena de misterio, sorpresa, crisis y símbolos cósmicos/climáticos; se propone responder a la reacción sin afirmar un significado exacto. | Propuesta pendiente |
+
+Los otros cuatro casos permanecen sin acción por ser una referencia aislada, un nombre aislado, puntuación o comentario vacío. Las cinco propuestas corregidas no se publicaron. El JSON de propuestas pasó a v1.2 y el ledger mantiene 255 filas y 255 IDs únicos.
