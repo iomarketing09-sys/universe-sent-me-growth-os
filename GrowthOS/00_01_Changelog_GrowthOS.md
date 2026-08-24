@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-24
-**Versión:** 3.49
+**Versión:** 3.50
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.50.00] — 2026-08-24 (Manus): Batch 14 de revisión y propuestas de engagement en Facebook.** Meta Graph API v26.0 revisó 20 publicaciones propias, 198 comentarios raíz y 246 IDs de comentarios/réplicas. El escaneo encontró 106 unidades actuales sin respuesta directa, pero 69 ya estaban clasificadas históricamente. Se revisaron 37 unidades nuevas o `Sin_Revisar`: 13 quedan con propuestas específicas `Pendiente_Fernando` y 24 como `No_Requiere_Respuesta`. El único comentario posterior al cursor del Batch 13 fue una réplica usuario-a-usuario y no se propone intervenir. No hubo errores de API ni publicaciones. Evidencia: `2026-08-24_Facebook_Comment_Review_Batch_14.json`, `2026-08-24_Facebook_Batch14_Engagement_Proposals.md` y el inventario reconciliado.
 
 - **[3.49.00] — 2026-08-24 (Manus): Batch 13 y cierre de la cola autorizada de Facebook.** Fernando autorizó diez respuestas y excluyó explícitamente la réplica de L Roberto y el comentario musical inaccesible sin texto recuperable. Meta Graph API v26.0 publicó y verificó 10/10; una réplica anidada fue validada con la semántica normal de Meta que devuelve el `parent.id` de la raíz del hilo. El ledger queda sincronizado y validado con 255 filas y 255 IDs únicos. La cola posterior al Batch 13 contiene 0 pendientes publicables y conserva 2 casos excluidos: uno marcado `No_Requiere_Respuesta` por decisión editorial y otro `Archivado` por bloqueo de API. No se publicaron respuestas fuera de las 10 autorizadas. Evidencia: `2026-08-24_Facebook_Comment_Publication_Batch_13.json`, su registro, y `2026-08-24_Facebook_Pending_Queue_After_Batch13.md`.
 

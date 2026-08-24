@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "5.2"
+version: "5.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -107,6 +107,16 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_13.json"
   - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch13.json"
   - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch13.md"
+  - "Operations/Automation/audit_facebook_comments_batch_14.py"
+  - "Operations/Automation/build_facebook_batch14_inventory.py"
+  - "Operations/Automation/fetch_facebook_batch14_candidate_context.py"
+  - "Operations/Automation/record_facebook_batch14_review.py"
+  - "Operations/Automation/export_facebook_batch14_report.py"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Review_Batch_14.json"
+  - "Operations/Research/2026-08-24_Facebook_Batch14_Current_Unanswered_Inventory.json"
+  - "Operations/Research/2026-08-24_Facebook_Batch14_Candidate_Context.json"
+  - "Operations/Research/2026-08-24_Facebook_Batch14_Engagement_Proposals.json"
+  - "Operations/Research/2026-08-24_Facebook_Batch14_Engagement_Proposals.md"
 organization: "Operations/Research"
 ---
 
@@ -1075,3 +1085,28 @@ Fernando autorizó publicar las diez respuestas restantes, excluyendo explícita
 | Publicaciones fuera de autorización | 0 |
 
 Después del Batch 13 quedan **0 pendientes publicables**. Se conservan 2 registros como exclusiones no accionables: la réplica de L Roberto, que Fernando indicó no contestar, y el comentario musical sin texto accesible para Meta, que se archivó sin forzar una respuesta. La cola final está en `2026-08-24_Facebook_Pending_Queue_After_Batch13.md`.
+
+
+## 64. Batch 14 — escaneo posterior y oportunidades de engagement — 24 de agosto de 2026
+
+La revisión de solo lectura mediante Meta Graph API v26.0 se ejecutó a las `2026-08-24T04:01:12+00:00`, usando como cursor el timestamp de publicación del Batch 13 (`2026-08-24T03:49:42+00:00`). Se consultaron las 20 publicaciones propias más recientes, 198 comentarios raíz y 246 IDs incluyendo réplicas de un nivel. La extracción terminó con cero errores de API y cero escrituras.
+
+| Indicador | Resultado |
+|---|---:|
+| Publicaciones propias revisadas | 20 |
+| Comentarios raíz | 198 |
+| IDs de comentarios y réplicas | 246 |
+| Unidades actuales sin respuesta directa | 106 |
+| Ya clasificadas históricamente y no reabiertas | 69 |
+| Unidades nuevas o `Sin_Revisar` clasificadas | 37 |
+| Propuestas específicas pendientes de aprobación | 13 |
+| Casos clasificados `No_Requiere_Respuesta` | 24 |
+| Comentarios nuevos posteriores al cursor Batch 13 | 1 |
+| Errores de API | 0 |
+| Publicaciones realizadas | 0 |
+
+El único comentario nuevo posterior al cursor fue una réplica dentro de una conversación usuario-a-usuario en el meme `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`. Aunque contiene un remate que podría recibir una respuesta ingeniosa, no está dirigido a la Página; se clasificó `No_Requiere_Respuesta` para no interrumpir el intercambio.
+
+Las 13 oportunidades recomendadas incluyen cinco referencias musicales —“Saturno” de Rafa Espino, una lista con Warcry/Kaleus/Mago de Oz/Macaco, “Canción de cuna” de Los Piojos, “Amor eterno” y “Mi historia entre tus dedos”—, cinco remates o juegos del meme y una réplica dirigida a la Página sobre “Frío frío” de Juan Luis Guerra, además de dos comentarios de doble sentido tratados con respuestas cómplices y no gráficas. Las 24 unidades sin acción son principalmente conversaciones entre usuarios, etiquetas o nombres aislados, reacciones breves, baja señal y debates filosóficos sin petición dirigida a la Página.
+
+La evidencia completa está en `2026-08-24_Facebook_Comment_Review_Batch_14.json`, el inventario reconciliado en `2026-08-24_Facebook_Batch14_Current_Unanswered_Inventory.json`, el contexto seleccionado en `2026-08-24_Facebook_Batch14_Candidate_Context.json` y las propuestas en `2026-08-24_Facebook_Batch14_Engagement_Proposals.md`. La autorización de Fernando es necesaria antes de cualquier publicación.

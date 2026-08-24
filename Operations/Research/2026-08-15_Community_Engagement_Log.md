@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "4.7"
+version: "4.8"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -116,6 +116,16 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_13.json"
   - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch13.json"
   - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch13.md"
+  - "Operations/Automation/audit_facebook_comments_batch_14.py"
+  - "Operations/Automation/build_facebook_batch14_inventory.py"
+  - "Operations/Automation/fetch_facebook_batch14_candidate_context.py"
+  - "Operations/Automation/record_facebook_batch14_review.py"
+  - "Operations/Automation/export_facebook_batch14_report.py"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Review_Batch_14.json"
+  - "Operations/Research/2026-08-24_Facebook_Batch14_Current_Unanswered_Inventory.json"
+  - "Operations/Research/2026-08-24_Facebook_Batch14_Candidate_Context.json"
+  - "Operations/Research/2026-08-24_Facebook_Batch14_Engagement_Proposals.json"
+  - "Operations/Research/2026-08-24_Facebook_Batch14_Engagement_Proposals.md"
 organization: "Operations/Research"
 ---
 
@@ -125,7 +135,7 @@ organization: "Operations/Research"
 
 Este documento define el uso del ledger `2026-08-15_Community_Engagement_Log.csv`. El registro convierte los comentarios en señales de aprendizaje sin transformarlos en un sistema de vigilancia ni en un bot de respuestas. La unidad de registro es un comentario real recuperado desde una publicación propia; cada comentario se identifica por su `Comentario_ID` y solo puede aparecer una vez.
 
-El ledger se creó vacío de forma intencional. Después de extracciones verificables, al cierre de este corte contiene 255 comentarios reales registrados en el CSV, incluyendo los lotes de respuestas publicados y los nuevos hallazgos del Delta 08. Las auditorías históricas agregadas se conservan como evidencia de cobertura y no se reconstruyen retroactivamente como filas individuales cuando no existe un ID verificable. No se inventan nombres, perfiles, IDs personales, intenciones ni respuestas históricas.
+El ledger se creó vacío de forma intencional. Después de extracciones verificables, al cierre de este corte contiene 270 comentarios reales registrados en el CSV, incluyendo los lotes de respuestas publicados y los nuevos hallazgos del Delta 08. Las auditorías históricas agregadas se conservan como evidencia de cobertura y no se reconstruyen retroactivamente como filas individuales cuando no existe un ID verificable. No se inventan nombres, perfiles, IDs personales, intenciones ni respuestas históricas.
 
 ## 2. Fuente y privacidad
 
@@ -583,3 +593,25 @@ El Batch 13 cerró la autorización pendiente del post filosófico y de los come
 La réplica de L Roberto se conservó en el ledger como `No_Requiere_Respuesta`, porque Fernando indicó expresamente no contestarla. El comentario musical sin texto accesible se conservó como `Archivado`, sin publicación y con señal de bloqueo de API; no se inventó contenido ni se forzó una respuesta no verificable. La cola posterior al Batch 13 contiene **0 pendientes publicables** y conserva esos **2 casos excluidos** únicamente para trazabilidad.
 
 El CSV mantiene el carácter anonimizado y append-only de la evidencia. El registro de publicación está en `2026-08-24_Facebook_Comment_Publication_Record_Batch_13.json` y la cola legible en `2026-08-24_Facebook_Pending_Queue_After_Batch13.md`.
+
+
+## 16. Batch 14 — revisión de nuevas oportunidades y reconciliación histórica — 24 de agosto de 2026
+
+La revisión exclusiva mediante Meta Graph API v26.0 se ejecutó a las `2026-08-24T04:01:12+00:00`, usando como cursor el cierre verificado del Batch 13 (`2026-08-24T03:49:42+00:00`). Se revisaron las 20 publicaciones propias más recientes, 198 comentarios raíz y 246 IDs de comentarios y réplicas. No hubo errores de API ni escrituras en Facebook.
+
+El escaneo encontró 106 unidades actuales sin respuesta directa. Ese número no equivale a oportunidades de engagement: 69 ya tenían una clasificación histórica y no se reabrieron. Se revisaron editorialmente 37 unidades nuevas o previamente `Sin_Revisar`; 13 recibieron una propuesta específica y 24 quedaron `No_Requiere_Respuesta` por ser conversaciones entre usuarios, reacciones breves, baja señal o debates sin petición dirigida a la Página.
+
+| Resultado Batch 14 | Casos |
+|---|---:|
+| Unidades actuales sin respuesta directa | 106 |
+| Ya clasificadas históricamente, no reabiertas | 69 |
+| Nuevas o `Sin_Revisar` clasificadas | 37 |
+| Propuestas `Pendiente_Respuesta` / `Pendiente_Fernando` | 13 |
+| Nuevas clasificaciones `No_Requiere_Respuesta` | 24 |
+| Comentarios nuevos posteriores al cursor Batch 13 | 1 |
+| Errores de API | 0 |
+| Publicaciones ejecutadas | 0 |
+
+El único comentario posterior al cursor fue una réplica dentro de una conversación entre usuarios, sin solicitud dirigida a Universe Sent Me; se registró como `No_Requiere_Respuesta`. Las 13 propuestas quedan bajo aprobación explícita de Fernando. Las respuestas musicales usan el título, artista o carga emocional concreta; los comentarios de doble sentido reciben, cuando corresponde, un remate cómplice y no gráfico. Ninguna propuesta autoriza por sí misma una publicación.
+
+El ledger queda con 270 filas y 270 IDs únicos; el validador confirma `PASS`. La evidencia completa está en `2026-08-24_Facebook_Comment_Review_Batch_14.json`, el inventario unido en `2026-08-24_Facebook_Batch14_Current_Unanswered_Inventory.json`, el contexto seleccionado en `2026-08-24_Facebook_Batch14_Candidate_Context.json` y las propuestas legibles en `2026-08-24_Facebook_Batch14_Engagement_Proposals.md`.
