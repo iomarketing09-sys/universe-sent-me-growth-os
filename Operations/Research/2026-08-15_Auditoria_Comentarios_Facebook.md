@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "4.4"
+version: "4.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -59,6 +59,9 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_Comment_Review_Delta_08_Record.json"
   - "Operations/Research/2026-08-24_Facebook_Expanded_Audit_Reply_Proposals.json"
   - "Operations/Research/2026-08-24_Facebook_Expanded_Audit_Reply_Proposals.md"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Review_Broad_72h.json"
+  - "Operations/Research/2026-08-24_Facebook_Broad_72h_Reply_Proposals.md"
+  - "Operations/Research/2026-08-24_Facebook_Broad_72h_Review_Record.json"
 organization: "Operations/Research"
 ---
 
@@ -879,3 +882,26 @@ Fernando autorizó publicar las siete respuestas pendientes del informe ampliado
 | `122151376011072582_1379392830310327` | “Sí, esa lectura de una mujer con tantos pretendientes le pone otra capa a la canción. 👀 Rammstein no deja precisamente las cosas en la superficie.” | `122151376011072582_1738348087493469` | Autoría de Página, padre correcto, texto exacto, `is_hidden=false`. |
 
 El registro técnico completo está en `2026-08-24_Facebook_Comment_Publication_Batch_07.json` y `2026-08-24_Facebook_Comment_Publication_Record_Batch_07.json`. Las siete filas se actualizaron a `Respondido` y `Aprobada` en el Community Engagement Log. El ledger conserva 226 filas y 226 IDs únicos; el validador quedó en `PASS`. No se publicó ninguna respuesta adicional fuera de estas siete.
+
+
+## 56. Auditoría amplia móvil de 72 horas — 24 de agosto de 2026
+
+A petición de Fernando se amplió la ventana para incluir comentarios de varias horas atrás, no solo los posteriores al último cursor. La revisión exclusiva por Meta Graph API v26.0 cubrió las 20 publicaciones propias más recientes y una ventana móvil desde `2026-08-21T02:39:52+00:00` hasta `2026-08-24T02:39:52+00:00`.
+
+| Métrica | Resultado |
+|---|---:|
+| Publicaciones propias revisadas | 20 |
+| Comentarios raíz observados | 189 |
+| IDs de comentarios/réplicas observados | 228 |
+| Unidades sin respuesta actualmente | 161 |
+| Unidades sin respuesta dentro de 72 horas | 159 |
+| Ya registradas dentro de la ventana | 136 |
+| Hallazgos nuevos sin respuesta | 23 |
+| Candidatos con propuesta específica | 2 |
+| Hallazgos sin acción | 21 |
+| Errores de API | 0 |
+| Respuestas publicadas en este corte | 0 |
+
+Los dos candidatos preparados son: “No fue el producto, fue la atención !!! 🔋”, con una respuesta que retoma la oposición producto/atención; y “Hasta quedar pegados como perros ☝🏻🫶🏻😎”, con una respuesta juguetona que no añade detalles gráficos. Los 21 restantes quedaron fuera de la cola por ser comentarios vacíos, réplicas/etiquetas, conversaciones usuario-a-usuario, reacciones demasiado breves o falta de contexto suficiente. Los 136 hallazgos antiguos se conservaron como ya registrados y no se duplicaron.
+
+La evidencia queda en `2026-08-24_Facebook_Comment_Review_Broad_72h.json`, `2026-08-24_Facebook_Broad_72h_Reply_Proposals.md/.json` y `2026-08-24_Facebook_Broad_72h_Review_Record.json`. La revisión fue de solo lectura: no se publicó ninguna respuesta y los dos candidatos requieren aprobación explícita de Fernando.

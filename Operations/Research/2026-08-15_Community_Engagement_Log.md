@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "3.9"
+version: "4.0"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -54,6 +54,12 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_07.json"
   - "Operations/Automation/publish_seven_approved_facebook_replies_20260824.py"
   - "Operations/Automation/record_facebook_publication_batch_07.py"
+  - "Operations/Production/audit_facebook_unanswered_comments_broad_72h.py"
+  - "Operations/Automation/record_facebook_broad_72h_review.py"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Review_Broad_72h.json"
+  - "Operations/Research/2026-08-24_Facebook_Broad_72h_Reply_Proposals.json"
+  - "Operations/Research/2026-08-24_Facebook_Broad_72h_Reply_Proposals.md"
+  - "Operations/Research/2026-08-24_Facebook_Broad_72h_Review_Record.json"
   - "GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md"
 organization: "Operations/Research"
 ---
@@ -435,3 +441,18 @@ Fernando autorizó las siete propuestas pendientes del informe ampliado. Cada hi
 La última fila corresponde al comentario sobre **“Te Quiero Puta!” de Rammstein** y recibió la respuesta específica sobre la lectura de una mujer con muchos pretendientes. La respuesta de Kegel se mantuvo como referencia general, sin instrucciones clínicas. El detalle completo está en `2026-08-24_Facebook_Comment_Publication_Batch_07.json` y `2026-08-24_Facebook_Comment_Publication_Record_Batch_07.json`.
 
 El ledger conserva 226 filas y 226 IDs únicos. No se añadieron filas nuevas porque los siete comentarios ya estaban registrados como hallazgos del Delta 08; solo se actualizaron sus estados, textos aprobados, fechas e IDs de respuesta. No se publicó ninguna respuesta fuera de las siete autorizadas.
+
+
+## 30. Auditoría amplia móvil de 72 horas — 24 de agosto de 2026
+
+La revisión amplia de Facebook mediante Meta Graph API v26.0 cubrió las 20 publicaciones propias más recientes y comentarios desde `2026-08-21T02:39:52+00:00`. Se observaron 189 comentarios raíz y 228 IDs de comentarios/réplicas; 161 unidades siguen sin respuesta actualmente y 159 están dentro de la ventana de 72 horas. De esas 159, 136 ya estaban registradas y 23 fueron hallazgos nuevos incorporados de forma idempotente.
+
+| Resultado de clasificación | Cantidad | Estado en ledger |
+|---|---:|---|
+| Candidatos con propuesta específica | 2 | `Pendiente_Respuesta` / `Pendiente_Fernando` |
+| Vacíos, réplicas, conversaciones, reacciones breves o falta de contexto | 21 | `No_Requiere_Respuesta` |
+| Respuestas publicadas en este corte | 0 | No aplica |
+
+Los dos candidatos son el comentario “No fue el producto, fue la atención !!! 🔋”, cuya propuesta retoma la oposición entre producto y atención, y “Hasta quedar pegados como perros ☝🏻🫶🏻😎”, cuya propuesta responde al giro concreto sin añadir detalles gráficos. Los 21 casos restantes no reciben propuesta automática. No se duplicaron los 136 hallazgos ya existentes dentro de la ventana.
+
+El detalle está en `2026-08-24_Facebook_Comment_Review_Broad_72h.json`, `2026-08-24_Facebook_Broad_72h_Reply_Proposals.md/.json` y `2026-08-24_Facebook_Broad_72h_Review_Record.json`. La validación posterior debe conservar el ledger anonimizado y no publicar ninguna respuesta sin aprobación explícita de Fernando.

@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-24
-**Versión:** 3.41
+**Versión:** 3.42
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.42.00] — 2026-08-24 (Manus): Auditoría amplia de comentarios de Facebook en ventana móvil de 72 horas.** La revisión exclusiva mediante Meta Graph API v26.0 cubrió las 20 publicaciones propias más recientes, 189 comentarios raíz y 228 IDs de comentarios/réplicas. Detectó 161 unidades sin respuesta actualmente, 159 dentro de la ventana de 72 horas, 23 hallazgos nuevos y 2 candidatos con propuesta específica; 21 quedaron sin acción por falta de contexto, réplicas, etiquetas, conversaciones o baja señal. No hubo errores de API ni publicaciones. El ledger pasó a 249 filas y 249 IDs únicos, con validación PASS. La evidencia queda en `2026-08-24_Facebook_Comment_Review_Broad_72h.json`, `2026-08-24_Facebook_Broad_72h_Reply_Proposals.md/.json` y su registro.
 
 - **[3.41.00] — 2026-08-24 (Manus): Publicación verificada del Batch 07 de siete respuestas aprobadas.** Fernando autorizó publicar las siete respuestas pendientes del informe ampliado, incluida la respuesta específica al comentario sobre “Te Quiero Puta!” de Rammstein y la versión corregida de “Yo sé pero de nada me sirve si ni novio tengo 😒”. Meta Graph API v26.0 confirmó siete publicaciones, cada una con autoría de Universe Sent Me, `parent.id` correcto, texto exacto e `is_hidden=false`. El ledger conserva 226 filas y 226 IDs únicos; la validación quedó en PASS. No se publicó ninguna respuesta fuera de las siete autorizadas. La evidencia está en `2026-08-24_Facebook_Comment_Publication_Batch_07.json` y su registro de sincronización.
 
