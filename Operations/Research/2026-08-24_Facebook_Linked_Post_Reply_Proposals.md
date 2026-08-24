@@ -43,7 +43,9 @@ Hahahahahahahaha | Jajaja, entendimos el doble sentido, pero mantengamos el hilo
 
 **Publicación identificadora:** `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`
 **Page Post ID:** `1036844829507460_122151376083072582`
-**Enlace de referencia:** https://www.facebook.com/122146890051072582/posts/122151376083072582
+**Enlace de referencia:** https://www.facebook.com/122151376083072582/posts/122151376083072582
+
+**Contexto para identificar la publicación:** la API devuelve como copy únicamente los emojis `😏🙈😂` y los hashtags. Por las referencias de los usuarios a quedar “atorados como perros”, ejercicios, piso pélvico y dobles sentidos, se infiere que están reaccionando a un meme visual de tema íntimo/sexual. Esta es una guía contextual basada en los comentarios, no una descripción verificada de la imagen; para confirmar el elemento visual exacto haría falta revisar la publicación directamente.
 
 Estas respuestas pueden generar continuidad, pero no son obligatorias. Para comentarios vacíos, nombres aislados o conversaciones entre usuarios se mantiene la recomendación de no responder.
 
