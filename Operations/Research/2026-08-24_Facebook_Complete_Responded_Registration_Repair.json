@@ -1,0 +1,74 @@
+{
+  "title": "Facebook — reparación completa del registro de comentarios respondidos",
+  "purpose": "Corregir el Community Engagement Log con evidencia de Meta Graph API v26.0: dos textos de respuesta, un ID de comentario con alias histórico y tres respuestas históricas actualmente inaccesibles; sin publicar ni modificar Facebook.",
+  "status": "Active",
+  "created_at": "2026-08-24T08:27:17+00:00",
+  "updated_at": "2026-08-24T08:27:17+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
+    "Operations/Research/2026-08-24_Facebook_All_Responded_Comments_Meta_Verification.json",
+    "Operations/Research/2026-08-24_Facebook_Inaccessible_Replies_Recovery_Search.json",
+    "Operations/Research/2026-08-24_Facebook_Missing_Replies_Thread_Scan.json",
+    "Operations/Research/2026-08-24_Facebook_All_Replies_Reconciliation.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.md",
+    "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
+  ],
+  "organization": "Operations/Research",
+  "source": "Meta Graph API v26.0 GET-only verification plus historical publication evidence",
+  "ledger_rows": 270,
+  "ledger_respondido_rows": 166,
+  "corrections_applied": 3,
+  "correction_details": [
+    {
+      "type": "response_text",
+      "comment_id": "122151374217072582_1811120803575478",
+      "reply_id": "122151374217072582_1786534689428464",
+      "before": "Revisar contexto antes de responder; no moderar automáticamente",
+      "after": "Momento… ¿cómo que soundtrack, villanos y santos? 👀 Necesitamos el episodio anterior."
+    },
+    {
+      "type": "response_text",
+      "comment_id": "122151374289072582_1362274622770602",
+      "reply_id": "122151374289072582_1753493165792345",
+      "before": "No responder por ahora",
+      "after": "Ya casi, ya casi… no me desconcentres. 😭👀🫩"
+    },
+    {
+      "type": "comment_id",
+      "old_comment_id": "122151374823072582_1041411610869463",
+      "new_comment_id": "122151374823072582_1041411612075968",
+      "reply_id": "122151374823072582_1792383575281432"
+    }
+  ],
+  "historical_inaccessible_count": 3,
+  "historical_inaccessible": [
+    {
+      "comment_id": "122151376083072582_1530994081656231",
+      "historical_comment_id": null,
+      "reply_id": "122151376083072582_1093298379810084",
+      "status_code": 400,
+      "error": "META_HTTP_400",
+      "evidence_record_present_before_reconciliation": false
+    },
+    {
+      "comment_id": "122151376083072582_1712631733280410",
+      "historical_comment_id": null,
+      "reply_id": "122151376083072582_1634044988141953",
+      "status_code": 400,
+      "error": "META_HTTP_400",
+      "evidence_record_present_before_reconciliation": true
+    },
+    {
+      "comment_id": "122151376083072582_1345911810604525",
+      "historical_comment_id": null,
+      "reply_id": "122151376083072582_919726994522401",
+      "status_code": 400,
+      "error": "META_HTTP_400",
+      "evidence_record_present_before_reconciliation": true
+    }
+  ],
+  "facebook_writes_performed": 0,
+  "no_reply_retries": true
+}

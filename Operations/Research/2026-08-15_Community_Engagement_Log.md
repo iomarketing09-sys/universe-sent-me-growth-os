@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "4.9"
+version: "5.0"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -135,6 +135,19 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_14.json"
   - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_14.md"
   - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch14.json"
+  - "Operations/Automation/reconcile_all_facebook_replies.py"
+  - "Operations/Automation/verify_all_responded_facebook_comments.py"
+  - "Operations/Automation/locate_inaccessible_facebook_replies.py"
+  - "Operations/Automation/scan_facebook_threads_for_missing_replies.py"
+  - "Operations/Automation/repair_facebook_responded_ledger.py"
+  - "Operations/Automation/build_complete_facebook_responded_registry.py"
+  - "Operations/Research/2026-08-24_Facebook_All_Replies_Reconciliation.json"
+  - "Operations/Research/2026-08-24_Facebook_All_Responded_Comments_Meta_Verification.json"
+  - "Operations/Research/2026-08-24_Facebook_Inaccessible_Replies_Recovery_Search.json"
+  - "Operations/Research/2026-08-24_Facebook_Missing_Replies_Thread_Scan.json"
+  - "Operations/Research/2026-08-24_Facebook_Complete_Responded_Registration_Repair.json"
+  - "Operations/Research/2026-08-24_Facebook_Complete_Responded_Registry.json"
+  - "Operations/Research/2026-08-24_Facebook_Complete_Responded_Registry.md"
 organization: "Operations/Research"
 ---
 
@@ -624,3 +637,27 @@ El escaneo encontró 106 unidades actuales sin respuesta directa. Ese número no
 El único comentario posterior al cursor fue una réplica dentro de una conversación entre usuarios, sin solicitud dirigida a Universe Sent Me; se registró como `No_Requiere_Respuesta`. Las 13 propuestas fueron aprobadas explícitamente por Fernando, publicadas y verificadas: 12 con parent directo y 1 réplica anidada con semántica de parent inmediato devuelta por Meta. Las respuestas musicales usan el título, artista o carga emocional concreta; los comentarios de doble sentido reciben un remate cómplice y no gráfico.
 
 El ledger queda con 270 filas y 270 IDs únicos; el validador confirma `PASS`. La evidencia de revisión está en `2026-08-24_Facebook_Comment_Review_Batch_14.json`, el inventario unido en `2026-08-24_Facebook_Batch14_Current_Unanswered_Inventory.json`, el contexto seleccionado en `2026-08-24_Facebook_Batch14_Candidate_Context.json` y las propuestas en `2026-08-24_Facebook_Batch14_Engagement_Proposals.md`. La evidencia de publicación está en `2026-08-24_Facebook_Comment_Publication_Batch_14.json`, su registro, el índice Markdown y la cola posterior.
+
+## 17. Conciliación completa de comentarios respondidos — 24 de agosto de 2026
+
+Se realizó una conciliación integral del estado `Respondido` contra todos los registros históricos de publicación disponibles y una verificación de lectura mediante Meta Graph API v26.0. El ledger contiene **270 filas**, de las cuales **166** están marcadas como `Respondido`. Las 166 tienen registro administrativo completo: `Comentario_ID`, `Post_ID`, respuesta exacta, aprobación, timestamp, `Respuesta_Meta_ID`, fuente y privacidad anonimizada.
+
+| Resultado de la conciliación | Casos |
+|---|---:|
+| Filas totales del ledger | 270 |
+| Filas `Respondido` | 166 |
+| Registro administrativo completo | 166 |
+| Verificados actualmente por Meta | 163 |
+| Objetos actualmente inaccesibles (HTTP 400) | 3 |
+| Con evidencia histórica de lote | 128 |
+| Sin artefacto histórico de lote separado | 38 |
+| Correcciones aplicadas | 3 |
+| Nuevas escrituras en Facebook durante la conciliación | 0 |
+
+Se corrigieron dos campos `Respuesta_Sugerida` que contenían notas editoriales en lugar del texto realmente publicado por la Página. También se corrigió un `Comentario_ID` histórico: el reply `122151374823072582_1792383575281432` confirmó como parent el ID `122151374823072582_1041411612075968`, que reemplaza el ID histórico `122151374823072582_1041411610869463`. Estas correcciones no generaron publicaciones nuevas.
+
+Tres replies permanecen como `Respondido` con trazabilidad histórica, pero su GET directo actual devuelve HTTP 400: `122151376083072582_1093298379810084`, `122151376083072582_1634044988141953` y `122151376083072582_919726994522401`. No se reintentaron ni se convirtieron en pendientes para evitar duplicados. En conjunto, la conciliación confirma que todos los comentarios marcados como `Respondido` están debidamente registrados en el ledger; la diferencia entre evidencia histórica y acceso API actual queda separada y documentada.
+
+La vista consolidada de las 166 filas está en `2026-08-24_Facebook_Complete_Responded_Registry.json` y `2026-08-24_Facebook_Complete_Responded_Registry.md`. La verificación completa está en `2026-08-24_Facebook_All_Responded_Comments_Meta_Verification.json`; la reparación aplicada está en `2026-08-24_Facebook_Complete_Responded_Registration_Repair.json`.
+
+**Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/00_01_Changelog_GrowthOS.md` y este documento. El CSV continúa siendo la fuente única de verdad operativa.

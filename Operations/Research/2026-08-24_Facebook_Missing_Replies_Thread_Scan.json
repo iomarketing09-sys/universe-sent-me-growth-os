@@ -1,0 +1,920 @@
+{
+  "title": "Facebook — escaneo recursivo de hilos para replies inaccesibles",
+  "purpose": "Buscar los Meta reply IDs inaccesibles dentro de todos los comentarios y réplicas de sus publicaciones canónicas, sin escrituras.",
+  "status": "Review",
+  "created_at": "2026-08-24T08:26:25+00:00",
+  "updated_at": "2026-08-24T08:26:25+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
+    "Operations/Research/2026-08-24_Facebook_All_Responded_Comments_Meta_Verification.json",
+    "Operations/Research/2026-08-24_Facebook_Inaccessible_Replies_Recovery_Search.json",
+    "Operations/Research/2026-08-24_Facebook_All_Replies_Reconciliation.json"
+  ],
+  "organization": "Operations/Research",
+  "source": "Meta Graph API v26.0 GET only",
+  "page_id": "1036844829507460",
+  "searched_posts": [
+    "1036844829507460_122151376083072582"
+  ],
+  "visited_comment_objects": 144,
+  "api_requests": 144,
+  "target_reply_count": 3,
+  "found_target_reply_count": 0,
+  "results": [
+    {
+      "comment_id": "122151376083072582_1530994081656231",
+      "reply_id": "122151376083072582_1093298379810084",
+      "message": "No todas… pero algunas vienen con el modo travesura activado. 😅🙈",
+      "historical_post_id": "1036844829507460_122151376083072582",
+      "canonical_post_id": "1036844829507460_122151376083072582",
+      "found": false,
+      "match": null
+    },
+    {
+      "comment_id": "122151376083072582_1712631733280410",
+      "reply_id": "122151376083072582_1634044988141953",
+      "message": "Jajaja, entonces ese modo travesura sí venía activado de fábrica. 🙈😂",
+      "historical_post_id": "122151376083072582",
+      "canonical_post_id": "1036844829507460_122151376083072582",
+      "found": false,
+      "match": null
+    },
+    {
+      "comment_id": "122151376083072582_1345911810604525",
+      "reply_id": "122151376083072582_919726994522401",
+      "message": "Anotado: Sandy Iris sí viene con el modo travesura activado. 😂🙈",
+      "historical_post_id": "122151376083072582",
+      "canonical_post_id": "1036844829507460_122151376083072582",
+      "found": false,
+      "match": null
+    }
+  ],
+  "requests_log": [
+    {
+      "parent_id": "1036844829507460_122151376083072582",
+      "depth": 0,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1875655376797902",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1216558461547643",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1539874414078742",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2041952303861577",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_936442526178550",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1777381266626241",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2136675140593360",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1461910735802563",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2013957549234314",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2294338478000981",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1046993968083177",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_910971145400039",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2371700183567495",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1435662098773431",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1694103262232576",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_886767890954566",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1800051157832910",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1387619540151231",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_3309129972605548",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1031789069652438",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1037906569213579",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1976584486379301",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1620302366278351",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2139372153647884",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1057397926935250",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1028237043539692",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1108096458452825",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2076744963209419",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1374303084841115",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1719326086024419",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2288087915279831",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1747280716505079",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1870186187563324",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1385775342983817",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1078572578055585",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1534062764662566",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1033379579457116",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1645620013842129",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1374857821527596",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_4578713942406487",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1930555637636650",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1042114515343799",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2218476525601574",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1064431163230561",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1815514939806977",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1345634194224651",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1047038644880975",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2556977661487440",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1482819530395036",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1612855930252607",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2243916309786846",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1326149289368622",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_3161831614012821",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1375056147466831",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_28148795568072687",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1054911050596272",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1550365972735011",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1770381007434218",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1431044915538379",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_4013447285624648",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1011734881866583",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1046306528175154",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2271298670302332",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1375496654051986",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_29328855216704722",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_917639204232499",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1814552109914822",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1593582012424855",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2571934529910533",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1423809309592152",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_3542786449212158",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1597619722155027",
+      "depth": 1,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1069317052240407",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2034035404142465",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1093565023186820",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1077823714740369",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2057146538237658",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1586873356432896",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1437282314880982",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1414431073895095",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1099858606049935",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1475009691053757",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1610047380741515",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1959476711400866",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1056565760406303",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_890910630481148",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1685172899838354",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2475636989584155",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1474440198037493",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1035968275894067",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2157411618317762",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2217697402410708",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_27750034838001055",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2317015215370362",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1363924695858655",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1081846294378141",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1016863408077392",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2544521936374341",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1862911838260493",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1060242273589535",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2059152401659768",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_994981680262825",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_25998006246563712",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2857677777946548",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1510544064090956",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1680667606362856",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1012107321873782",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2158728761720542",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1589792622559067",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1614458346791800",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_28802659646003528",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1594595032063210",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_943361278782949",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1275669098963355",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_3382611651900802",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1067336845783809",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1367795585545947",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1404185008333995",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_4624228337790055",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2624277351322664",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1105469192150480",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1373965101527412",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2270174113755963",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1571920724307009",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1434017718618203",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1046638411560082",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_902627939195818",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1761860648467747",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1716955579517613",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1858873402153599",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_893660230176913",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2187948638483974",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1041153768901083",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1630977451714964",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2633800330373000",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_2261598178082401",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1432139138976125",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1772568213940295",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_949437001541040",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_932843502558471",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_3701844673318079",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1053899660748200",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "parent_id": "122151376083072582_1766545104476907",
+      "depth": 2,
+      "status_code": 200,
+      "error": null
+    }
+  ]
+}

@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "5.4"
+version: "5.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -14,6 +14,19 @@ related_documents:
   - "Operations/Research/2026-08-15_Community_Engagement_Log.csv"
   - "Operations/Research/2026-08-15_Community_Engagement_Log.md"
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
+  - "Operations/Automation/reconcile_all_facebook_replies.py"
+  - "Operations/Automation/verify_all_responded_facebook_comments.py"
+  - "Operations/Automation/locate_inaccessible_facebook_replies.py"
+  - "Operations/Automation/scan_facebook_threads_for_missing_replies.py"
+  - "Operations/Automation/repair_facebook_responded_ledger.py"
+  - "Operations/Automation/build_complete_facebook_responded_registry.py"
+  - "Operations/Research/2026-08-24_Facebook_All_Replies_Reconciliation.json"
+  - "Operations/Research/2026-08-24_Facebook_All_Responded_Comments_Meta_Verification.json"
+  - "Operations/Research/2026-08-24_Facebook_Inaccessible_Replies_Recovery_Search.json"
+  - "Operations/Research/2026-08-24_Facebook_Missing_Replies_Thread_Scan.json"
+  - "Operations/Research/2026-08-24_Facebook_Complete_Responded_Registration_Repair.json"
+  - "Operations/Research/2026-08-24_Facebook_Complete_Responded_Registry.json"
+  - "Operations/Research/2026-08-24_Facebook_Complete_Responded_Registry.md"
   - "Operations/Automation/validate_community_engagement_log.py"
   - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_02.json"
@@ -1119,3 +1132,27 @@ El único comentario nuevo posterior al cursor fue una réplica dentro de una co
 Las 13 oportunidades recomendadas —cinco referencias musicales, remates del meme, una réplica dirigida a la Página sobre “Frío frío” de Juan Luis Guerra y dos respuestas de doble sentido no gráficas— fueron aprobadas, publicadas y verificadas. Las 24 unidades sin acción son principalmente conversaciones entre usuarios, etiquetas o nombres aislados, reacciones breves, baja señal y debates filosóficos sin petición dirigida a la Página.
 
 La evidencia del escaneo está en `2026-08-24_Facebook_Comment_Review_Batch_14.json`, el inventario reconciliado en `2026-08-24_Facebook_Batch14_Current_Unanswered_Inventory.json`, el contexto seleccionado en `2026-08-24_Facebook_Batch14_Candidate_Context.json` y las propuestas en `2026-08-24_Facebook_Batch14_Engagement_Proposals.md`. La evidencia de publicación está en `2026-08-24_Facebook_Comment_Publication_Batch_14.json`, su registro, el índice Markdown y la cola posterior.
+
+## 65. Conciliación completa del registro de comentarios respondidos — 24 de agosto de 2026
+
+Se auditó el estado `Respondido` del Community Engagement Log contra todos los registros históricos de publicación disponibles y mediante GET de Meta Graph API v26.0 para cada `Respuesta_Meta_ID`. El objetivo fue corregir el registro, no publicar respuestas nuevas.
+
+| Indicador | Resultado |
+|---|---:|
+| Filas totales del ledger | 270 |
+| Filas `Respondido` | 166 |
+| Filas con registro administrativo completo | 166 |
+| Filas verificadas actualmente por Meta | 163 |
+| Filas cuyo objeto reply devuelve HTTP 400 | 3 |
+| Filas con evidencia histórica de publicación | 128 |
+| Filas sin artefacto histórico de lote separado | 38 |
+| Correcciones de registro aplicadas | 3 |
+| Escrituras en Facebook durante la auditoría | 0 |
+
+Las tres correcciones fueron dos textos de respuesta reemplazados por el texto exacto devuelto por Meta y un `Comentario_ID` corregido con el parent ID confirmado por el reply. El validador del CSV permanece en `PASS`, con 270 IDs de comentario únicos, privacidad `Anonimizado` y todos los campos obligatorios presentes en las filas `Respondido`.
+
+Meta verificó actualmente 163 de las 166 respuestas. Tres replies históricos devuelven HTTP 400 en el endpoint directo; dos tienen evidencia histórica explícita de publicación y el tercero conserva trazabilidad completa en el ledger. Se intentó además una búsqueda recursiva de hilos y una búsqueda por publicación canónica, sin encontrar objetos alternativos visibles para esos tres IDs. No se reintentaron publicaciones ni se alteró Facebook.
+
+El registro consolidado de las 166 filas está en `2026-08-24_Facebook_Complete_Responded_Registry.json` y `2026-08-24_Facebook_Complete_Responded_Registry.md`. La evidencia técnica está en `2026-08-24_Facebook_All_Responded_Comments_Meta_Verification.json`, `2026-08-24_Facebook_All_Replies_Reconciliation.json`, `2026-08-24_Facebook_Complete_Responded_Registration_Repair.json` y `2026-08-24_Facebook_Missing_Replies_Thread_Scan.json`.
+
+El CSV `Operations/Research/2026-08-15_Community_Engagement_Log.csv` continúa siendo la fuente única de verdad operativa. Los documentos relacionados actualizados por esta modificación son `Operations/Research/2026-08-15_Community_Engagement_Log.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

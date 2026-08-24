@@ -1,0 +1,169 @@
+{
+  "title": "Facebook — recuperación de respuestas actualmente inaccesibles",
+  "purpose": "Buscar mediante GET en las publicaciones de Facebook las respuestas del ledger cuyo Meta reply ID devuelve HTTP 400, sin realizar escrituras.",
+  "status": "Review",
+  "created_at": "2026-08-24T08:24:53+00:00",
+  "updated_at": "2026-08-24T08:24:53+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
+    "Operations/Research/2026-08-24_Facebook_All_Responded_Comments_Meta_Verification.json",
+    "Operations/Research/2026-08-24_Facebook_All_Replies_Reconciliation.json"
+  ],
+  "organization": "Operations/Research",
+  "source": "Meta Graph API v26.0 GET only",
+  "page_id": "1036844829507460",
+  "searched_error_rows": 3,
+  "located_exact_visible_page_replies": 1,
+  "results": [
+    {
+      "ledger_comment_id": "122151376083072582_1345911810604525",
+      "ledger_reply_id": "122151376083072582_919726994522401",
+      "historical_post_id": "122151376083072582",
+      "candidate_post_ids": [
+        "122151376083072582",
+        "1036844829507460_122151376083072582"
+      ],
+      "located_post_id": null,
+      "ledger_message": "Anotado: Sandy Iris sí viene con el modo travesura activado. 😂🙈",
+      "search_match": null,
+      "search_match_count_for_page": 39,
+      "requests": {
+        "122151376083072582": [
+          {
+            "url": "https://graph.facebook.com/v26.0/122151376083072582/comments",
+            "filter": "stream",
+            "status_code": 400,
+            "error": {
+              "message": "(#12) singular statuses API is deprecated for versions v2.4 and higher",
+              "type": "OAuthException",
+              "code": 12,
+              "fbtrace_id": "AtUVeRS9DtJPauT3rnx4lWf"
+            }
+          },
+          {
+            "url": "https://graph.facebook.com/v26.0/122151376083072582/comments",
+            "filter": null,
+            "status_code": 400,
+            "error": {
+              "message": "(#12) singular statuses API is deprecated for versions v2.4 and higher",
+              "type": "OAuthException",
+              "code": 12,
+              "fbtrace_id": "AXX4Hum4AO2NARti32_3LfP"
+            }
+          }
+        ],
+        "1036844829507460_122151376083072582": [
+          {
+            "url": "https://graph.facebook.com/v26.0/1036844829507460_122151376083072582/comments",
+            "filter": "stream",
+            "status_code": 200,
+            "error": null
+          },
+          {
+            "url": "https://graph.facebook.com/v26.0/1036844829507460_122151376083072582/comments?fields=id%2Cfrom%2Cmessage%2Ccreated_time%2Cparent%2Cis_hidden&limit=100&filter=stream&after=WTI5dGJXVnVkRjlqZAFhKemIzSTZANVGMyTmpVME5URXdORFEzTmprd056b3hOemczTlRReE5EUTUZD",
+            "filter": "stream",
+            "status_code": 200,
+            "error": null
+          }
+        ]
+      }
+    },
+    {
+      "ledger_comment_id": "122151376083072582_1530994081656231",
+      "ledger_reply_id": "122151376083072582_1093298379810084",
+      "historical_post_id": "1036844829507460_122151376083072582",
+      "candidate_post_ids": [
+        "1036844829507460_122151376083072582"
+      ],
+      "located_post_id": "1036844829507460_122151376083072582",
+      "ledger_message": "No todas… pero algunas vienen con el modo travesura activado. 😅🙈",
+      "search_match": {
+        "id": "122151376083072582_1041153768901083",
+        "from": {
+          "name": "Universe Sent Me",
+          "id": "1036844829507460"
+        },
+        "message": "No todas… pero algunas vienen con el modo travesura activado. 😅🙈",
+        "created_time": "2026-08-23T16:31:19+0000",
+        "parent": {
+          "created_time": "2026-08-23T05:07:43+0000",
+          "message": "Que? No todas pueden? 🤔",
+          "id": "122151376083072582_1033379579457116"
+        },
+        "is_hidden": false
+      },
+      "search_match_count_for_page": 39,
+      "requests": {
+        "1036844829507460_122151376083072582": [
+          {
+            "url": "https://graph.facebook.com/v26.0/1036844829507460_122151376083072582/comments",
+            "filter": "stream",
+            "status_code": 200,
+            "error": null
+          },
+          {
+            "url": "https://graph.facebook.com/v26.0/1036844829507460_122151376083072582/comments?fields=id%2Cfrom%2Cmessage%2Ccreated_time%2Cparent%2Cis_hidden&limit=100&filter=stream&after=WTI5dGJXVnVkRjlqZAFhKemIzSTZANVGMyTmpVME5URXdORFEzTmprd056b3hOemczTlRReE5EUTUZD",
+            "filter": "stream",
+            "status_code": 200,
+            "error": null
+          }
+        ]
+      }
+    },
+    {
+      "ledger_comment_id": "122151376083072582_1712631733280410",
+      "ledger_reply_id": "122151376083072582_1634044988141953",
+      "historical_post_id": "122151376083072582",
+      "candidate_post_ids": [
+        "122151376083072582",
+        "1036844829507460_122151376083072582"
+      ],
+      "located_post_id": null,
+      "ledger_message": "Jajaja, entonces ese modo travesura sí venía activado de fábrica. 🙈😂",
+      "search_match": null,
+      "search_match_count_for_page": 39,
+      "requests": {
+        "122151376083072582": [
+          {
+            "url": "https://graph.facebook.com/v26.0/122151376083072582/comments",
+            "filter": "stream",
+            "status_code": 400,
+            "error": {
+              "message": "(#12) singular statuses API is deprecated for versions v2.4 and higher",
+              "type": "OAuthException",
+              "code": 12,
+              "fbtrace_id": "AtUVeRS9DtJPauT3rnx4lWf"
+            }
+          },
+          {
+            "url": "https://graph.facebook.com/v26.0/122151376083072582/comments",
+            "filter": null,
+            "status_code": 400,
+            "error": {
+              "message": "(#12) singular statuses API is deprecated for versions v2.4 and higher",
+              "type": "OAuthException",
+              "code": 12,
+              "fbtrace_id": "AXX4Hum4AO2NARti32_3LfP"
+            }
+          }
+        ],
+        "1036844829507460_122151376083072582": [
+          {
+            "url": "https://graph.facebook.com/v26.0/1036844829507460_122151376083072582/comments",
+            "filter": "stream",
+            "status_code": 200,
+            "error": null
+          },
+          {
+            "url": "https://graph.facebook.com/v26.0/1036844829507460_122151376083072582/comments?fields=id%2Cfrom%2Cmessage%2Ccreated_time%2Cparent%2Cis_hidden&limit=100&filter=stream&after=WTI5dGJXVnVkRjlqZAFhKemIzSTZANVGMyTmpVME5URXdORFEzTmprd056b3hOemczTlRReE5EUTUZD",
+            "filter": "stream",
+            "status_code": 200,
+            "error": null
+          }
+        ]
+      }
+    }
+  ]
+}
