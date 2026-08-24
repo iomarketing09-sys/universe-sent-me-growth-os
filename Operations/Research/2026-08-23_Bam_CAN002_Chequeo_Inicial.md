@@ -1,10 +1,10 @@
 ---
-title: "Bam in a Can — CAN-002: chequeo inicial de visibilidad"
-purpose: "Preservar el primer corte operativo de CAN-002 antes de las ventanas T+3 h, separando métricas autenticadas, evidencia pública e indexación pendiente."
-status: "Active — Instagram actualizado por shortcode; evidencia directa de YouTube registrada y fila pendiente"
+title: "Bam in a Can — CAN-002: chequeo inicial y corte post-T+3"
+purpose: "Preservar los cortes operativos iniciales de CAN-002, separando métricas autenticadas, cache de plataforma, evidencia directa e indexación pendiente."
+status: "Active — corte post-T+3 registrado; Instagram mantiene cache previa y YouTube sigue sin fila Windsor"
 created: 2026-08-23
 updated: 2026-08-23
-version: "1.5"
+version: "1.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
@@ -62,6 +62,20 @@ El conteo es una señal inicial de distribución y compartidos a seguir, no una 
 
 ![Captura de YouTube Studio de CAN-002 a T+1 h 13 min 22 s](2026-08-23_Bam_CAN002_YouTube_Studio_T1h13m22s.jpg)
 
+## Corte consolidado post-T+3 — 23 de agosto
+
+Fernando autorizó la revisión al superar la ventana T+3 de YouTube. El corte se registró alrededor de **23:01 CDT**. La tabla conserva la edad real y no fuerza equivalencia entre las tres plataformas.
+
+| Plataforma | Fuente y edad aplicable | Métricas disponibles | Lectura correcta |
+|---|---:|---|---|
+| TikTok | Windsor.ai, `data_fetched_at` 04:01:07 UTC / 23:01:07 CDT; **4 h 01 min 24 s** desde T0 | 117 views; 2 likes; 0 comentarios; 0 shares; 0 favoritos; avg. watch 2.64 s; total watch 329 s; full-watch rate 8 %. | Desde el primer corte sube de 26 a 117 views y de 0 a 2 likes. El avg. watch equivale aproximadamente a 27 % de los 9.73 s de duración conocidos. El incremento de alcance no compensa por sí solo la baja finalización; debe seguirse con más piezas. |
+| Instagram Reels | Reconsulta de Windsor por shortcode realizada durante este corte; última cache con `data_fetched_at` 01:51:35/01:57:54 UTC, **1 h 37 min 17 s** desde T0 | 200 views; reach 34; 0 likes; 0 comentarios; 0 shares; avg. watch 8.536 s; total watch 290.246 s. | La reconsulta no refrescó el origen. Estos son los valores previos ya documentados, no un resultado nuevo de T+3. Se mantienen sin inferir crecimiento o estancamiento posterior. |
+| YouTube Shorts | Evidencia directa de Studio recibida durante el corte; referencia de registro 23:01:18 CDT, aproximadamente **3 h 04 min 18 s** desde T0 | 90 views; 2 likes; 4 shares; mensaje cualitativo de repeticiones indefinidas. | Frente a la captura anterior (58 views, 1 like y 4 shares), hay +32 views y +1 like; los shares permanecen en 4. Studio no expone aquí una cifra de retención, por lo que el mensaje cualitativo no se traduce a porcentaje. |
+
+La discrepancia de frescura de fuentes es parte del resultado: TikTok sí devolvió una fila nueva; Instagram respondió con cache anterior; YouTube continúa sin fila en Windsor, pero Studio proporciona la evidencia manual más reciente. Por ello, no se construye un ranking cross-platform ni se atribuye la diferencia al audio nativo `she share post (for blog)` o al control de SFX.
+
+![Captura de YouTube Studio de CAN-002 alrededor de T+3 h](2026-08-23_Bam_CAN002_YouTube_Studio_T3h04m18s.jpg)
+
 ## Límites y actualizaciones relacionadas
 
-El ledger registra este control como `pre-T3` dentro del campo de snapshot para evitar que la información se pierda, pero no debe leerse como el snapshot T+3 h programado. Este documento actualiza la interpretación de lanzamiento de CAN-002; los documentos relacionados que requieren el siguiente ajuste son el ledger de distribución y el paquete de Semana 01, ambos modificados en este mismo cambio.
+El ledger conserva el chequeo inicial como `pre-T3` y el nuevo corte post-T+3 dentro del mismo snapshot por plataforma. Este documento actualiza la interpretación de lanzamiento de CAN-002; el documento relacionado que requiere el mismo ajuste es el ledger de distribución, modificado en este cambio. El paquete y el calendario de Semana 01 no requieren modificación porque no cambian el copy, los assets, el audio ni las ventanas planificadas.
