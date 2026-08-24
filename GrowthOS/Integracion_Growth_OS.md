@@ -8,7 +8,7 @@
 | :--- | :--- |
 | **Última sincronización** | 2026-08-23 |
 | **Fuente de canon** | Repo GitHub administrado por Claude: `iomarketing09-sys/universe-sent-me-1`, rama `main`, HEAD `1daaad5342c278909b78076a54d8b220fa51e023`. Ficha de sincronización recibida por Claude mediante clonación directa. |
-| **Estado del documento** | v2.5.6 — HypothesisBank ampliado con HB-006 a HB-009; auditoría Facebook actualizada con cierre temporal `Unavailable_No_Baseline`, insights Windsor L2 parciales y diseño E0/E24/E72 en Review; protocolo OmniRoute añadido como asistente de borradores no canónicos; no implica generación, calendario, CNT ni publicación |
+| **Estado del documento** | v2.5.7 — HypothesisBank ampliado con HB-006 a HB-009; auditoría Facebook actualizada con cierre temporal `Unavailable_No_Baseline`, insights Windsor L2 parciales y diseño E0/E24/E72 en Review; OmniRoute puede asistir cortes agregados y propuestas comunitarias como `Draft`, sin alterar fuentes canónicas ni publicar; no implica generación, calendario ni CNT |
 | **Artefactos de rendimiento relacionados** | `Operations/Research/2026-08-23_Reporte_Rendimiento_Engagement_Facebook.md`, `Operations/Research/2026-08-23_Facebook_Performance_Meta_API.json`, `Operations/Research/2026-08-23_Facebook_Performance_Summary.json`, `Operations/Research/2026-08-23_Facebook_Growth_Integration_Audit.json`, `Operations/Research/2026-08-23_Facebook_Post_Reconciliation.json`, `Operations/Research/2026-08-23_Facebook_24_72_Window_Closure.json`, `Operations/Research/2026-08-23_Facebook_24_72_and_Video_Insights_Summary.json`, `Operations/Research/2026-08-23_Facebook_Reels_Video_Insights.csv`, `Operations/Research/2026-08-23_Facebook_Windsor_Insights_Raw.json`, `Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md` |
 | **Propietario** | Manus (Manus AI) |
 | **Guardián de Canon** | Claude (vía repo GitHub) |
@@ -181,6 +181,12 @@ OmniRoute está aprobado únicamente como una capa local de **asistencia editori
 Queda prohibido enviar a OmniRoute tokens de Meta, API keys, PII, comentarios reales sin anonimizar, Windsor crudo, métricas canónicas no agregadas, documentos privados o identificadores de publicación. OmniRoute tampoco puede escribir en `Content_Inventory.csv`, `Publication_Log.csv`, `ExperimentLog.csv`, `HypothesisBank`, calendario, backlog, canon o cuentas sociales; toda salida queda fuera de esas fuentes hasta que una persona la revise y la incorpore manualmente bajo las reglas vigentes.
 
 El flujo obligatorio es: **brief aprobado o contexto sintético → OmniRoute → salida `Draft` → revisión humana/canon → documento o fila manualmente aprobada → producción/publicación con gates existentes**. El wrapper local documentado en `Operations/Production/omniroute-daily-wrapper.sh` se usa para invocaciones manuales; no existe autorización para automatizar publicaciones ni para exponer el gateway al navegador.
+
+### 5.3 Análisis asistido de métricas y propuestas comunitarias
+
+El documento `Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md` formaliza dos extensiones permitidas: análisis narrativo de un corte **agregado, normalizado y limitado por fuente/ventana**, y hasta tres propuestas de respuesta sobre un contexto comunitario **anonimizado**. OmniRoute no recibe datos crudos de Windsor, identificadores de publicación, comentarios íntegros, perfiles, nombres, enlaces ni datos sensibles. Un modelo no calcula ni modifica las métricas canónicas, no clasifica una moderación definitivamente y no mueve un comentario a `Respondido`.
+
+La automatización admisible se detiene en preparar borradores o una cola `Pendiente_Fernando`. La publicación sigue usando el flujo con preflight anti-duplicado, aprobación humana explícita, verificación de autoría, relación padre-hijo, texto exacto y visibilidad. El nivel de bot que interpreta y responde por sí mismo queda prohibido.
 
 ---
 
