@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 1.6
+**Versión:** 1.7
 
 **Autor:** Manus AI
 
@@ -128,6 +128,23 @@ El ahorro del plan Wix no es automáticamente presupuesto de Universe Sent Me. D
 
 Aunque el cliente quiera financiar trabajo adicional, no se deben reutilizar sus credenciales, PDFs, datos de contacto, audiencia, dominio o contenido para Universe Sent Me. Los proyectos deben tener repositorios, cuentas, claves, facturación y respaldos separados.
 
+### Escenario de referencia: $2,000 MXN anuales liberados
+
+Un ahorro potencial de Wix no crea automáticamente un presupuesto de Universe Sent Me. Hasta contar con una autorización contractual o escrita que indique que ese ahorro puede ser retenido y reasignado, el monto continúa siendo presupuesto del cliente y debe usarse solo para su sitio, mantenimiento, formulario o contingencias. La estimación siguiente aplica únicamente si el usuario dispone de **$2,000 MXN propios, separados y anuales** para Universe Sent Me después de cerrar esa decisión con el cliente.
+
+| Escenario | Firma Bordados | OmniRoute / Universe Sent Me | Uso aproximado del presupuesto anual | Decisión |
+|---|---|---|---:|---|
+| Conservador — recomendado | Cloudflare Pages en cuenta del cliente, con hosting estático sin costo y Wix activo hasta aprobar el corte | Piloto local manual en el iMac; Groq/Gemini con límites gratuitos; reserva para un caso de uso probado | $0 de infraestructura recurrente; $2,000 MXN quedan como reserva propia de USM | **Prioritario** |
+| Servidor mínimo experimental | Igual que el anterior, sin compartir cuentas ni DNS | VPS de 1 GiB para OmniRoute privado, acceso por backend/VPN y sin exposición de dashboard | Un VPS de referencia de $6 USD/mes equivale a ~ $1,219 MXN/año antes de impuestos; a un tipo de cambio indicativo de 16.9242 y 16% adicional, ~ $1,414 MXN, con ~ $586 MXN de reserva | **Solo piloto; no aprobar aún** |
+| Servidor ultrabásico | Igual que el anterior | VPS de 512 MiB | ~$812 MXN/año antes de impuestos; ~$942 MXN con el mismo supuesto de 16% | **No recomendado:** el contenedor local ya observó ~448 MiB, sin margen operativo suficiente |
+| Servidor con margen | Igual que el anterior | VPS de 2 GiB | ~$2,827 MXN/año con el mismo supuesto de tipo de cambio e impuesto | **Fuera del presupuesto de referencia** |
+
+Las cifras son orientativas: el proveedor factura en USD y aplica su propia tributación; el banco o tarjeta puede utilizar otro tipo de cambio. DigitalOcean publica actualmente $6 USD/mes para 1 GiB y $12 USD/mes para 2 GiB; sus VPS son administrados por el cliente, no un servicio de operación incluida. [11] El tipo de cambio debe verificarse al momento de contratar con una fuente oficial o con el emisor de pago. [12]
+
+El sitio estático de Firma Bordados no necesita compartir servidor con OmniRoute. Cloudflare Pages permite conectar dominio personalizado; para el dominio raíz se administrará la zona DNS en Cloudflare y para un subdominio basta un CNAME configurado después de asociarlo en el panel. [9] La cuenta, facturación y control del dominio deben ser del cliente. El presupuesto de Universe Sent Me no debe pagar ni condicionar esa decisión.
+
+La recomendación de arquitectura y presupuesto permanece: primero migrar y validar el sitio en un entorno gratuito y separado; mantener OmniRoute local hasta que cinco pruebas de análisis/borradores demuestren valor; y solo después considerar un VPS privado. Pagar un VPS no mejora por sí mismo los modelos ni sus cuotas; solo aporta disponibilidad independiente del iMac y una ubicación apta para un backend privado.
+
 ## Integración futura de IA
 
 Si el cliente solicita una función de IA, la primera versión debe ser un endpoint de borradores detrás de un backend privado, no una llamada desde el navegador. Debe aceptar un propósito limitado, validar tamaño y contenido, excluir secretos y datos personales, aplicar autenticación y rate limiting, registrar provider/modelo/latencia/estado y devolver una respuesta marcada como `Draft`. No debe publicar automáticamente ni escribir en los ledgers de Universe Sent Me.
@@ -165,3 +182,7 @@ La evaluación no cambia todavía los ledgers ni el dashboard de Growth OS. Si s
 [9]: [Cloudflare Pages — Custom domains](https://developers.cloudflare.com/pages/configuration/custom-domains/)
 
 [10]: [Vercel — Hobby Plan](https://vercel.com/docs/plans/hobby)
+
+[11]: [DigitalOcean — Droplet Pricing](https://www.digitalocean.com/pricing/droplets)
+
+[12]: [Banco de México — Tipo de cambio](https://www.banxico.org.mx/tipcamb/main.do?page=tip&idioma=en)
