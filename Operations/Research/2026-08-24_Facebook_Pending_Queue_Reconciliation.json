@@ -22,7 +22,7 @@
     "music_root_proposals": 5,
     "new_followup_findings": 5
   },
-  "publication_performed": false,
+  "publication_performed": true,
   "music_proposals": [
     {
       "comment_id": "122151376011072582_1720626909225543",
@@ -32,8 +32,11 @@
       "comment_type": "Comentario_Raiz",
       "comment_excerpt": "Unstoppable",
       "suggested_reply": "“Unstoppable”: esa sí entra como himno para volver a ponerse de pie. 🎶🔥",
-      "approval_status": "Pendiente_Fernando",
-      "source": "Followup_72h"
+      "approval_status": "Aprobada",
+      "source": "Followup_72h",
+      "status": "Respondido",
+      "published": true,
+      "reply_id": "122151376011072582_1039764151997713"
     },
     {
       "comment_id": "122151376011072582_1703056380925949",
@@ -44,7 +47,10 @@
       "comment_excerpt": "El día que volviste a la tierra - Carlos Sadness",
       "suggested_reply": "“El día que volviste a la Tierra” de Carlos Sadness: una elección con nostalgia y regreso en el título. 🎶🌎",
       "approval_status": "Pendiente_Fernando",
-      "source": "Followup_72h"
+      "source": "Followup_72h",
+      "status": "Bloqueado_API",
+      "published": false,
+      "api_error": "META_HTTP_400: {\"error\":{\"message\":\"Unsupported get request. Object with ID '122151376011072582_1703056380925949' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https:\\/\\/developers.facebook.com\\/docs\\/graph-api\",\"type\":\"GraphMethodException\",\"code\":100,\"error_subcode\":33,\"fbtrace_id\":\"A7xXQTW9NmqH4Z2-rcE7ig4\"}}"
     },
     {
       "comment_id": "122151376011072582_2110248423207879",
@@ -54,8 +60,11 @@
       "comment_type": "Comentario_Raiz",
       "comment_excerpt": "Con migo danza el que ama mí Alma",
       "suggested_reply": "‘Conmigo danza el que ama mi alma’: ese título ya llega con poesía y movimiento. 🎶✨",
-      "approval_status": "Pendiente_Fernando",
-      "source": "Existing_Queue"
+      "approval_status": "Aprobada",
+      "source": "Existing_Queue",
+      "status": "Respondido",
+      "published": true,
+      "reply_id": "122151376011072582_3696977003793724"
     },
     {
       "comment_id": "122151376011072582_1622582352867257",
@@ -65,8 +74,11 @@
       "comment_type": "Comentario_Raiz",
       "comment_excerpt": "alguien como tú - Josean log",
       "suggested_reply": "Alguien como tú de Josean Log: una elección que suena a nostalgia suave y confesión. 🎶✨",
-      "approval_status": "Pendiente_Fernando",
-      "source": "Existing_Queue"
+      "approval_status": "Aprobada",
+      "source": "Existing_Queue",
+      "status": "Respondido",
+      "published": true,
+      "reply_id": "122151376011072582_2632335903871914"
     },
     {
       "comment_id": "122151376011072582_2033022903995271",
@@ -76,8 +88,11 @@
       "comment_type": "Comentario_Raiz",
       "comment_excerpt": "Las cuatro estaciones, Antonio Vivaldi.",
       "suggested_reply": "Las cuatro estaciones de Vivaldi: cuatro moods y todos con violines dramáticos. 🎻✨",
-      "approval_status": "Pendiente_Fernando",
-      "source": "Existing_Queue"
+      "approval_status": "Aprobada",
+      "source": "Existing_Queue",
+      "status": "Respondido",
+      "published": true,
+      "reply_id": "122151376011072582_917259168104259"
     }
   ],
   "all_pending_proposals": [
@@ -89,8 +104,11 @@
       "comment_type": "Comentario_Raiz",
       "comment_excerpt": "Unstoppable",
       "suggested_reply": "“Unstoppable”: esa sí entra como himno para volver a ponerse de pie. 🎶🔥",
-      "approval_status": "Pendiente_Fernando",
-      "source": "Followup_72h"
+      "approval_status": "Aprobada",
+      "source": "Followup_72h",
+      "status": "Respondido",
+      "published": true,
+      "reply_id": "122151376011072582_1039764151997713"
     },
     {
       "comment_id": "122151376011072582_1703056380925949",
@@ -101,7 +119,10 @@
       "comment_excerpt": "El día que volviste a la tierra - Carlos Sadness",
       "suggested_reply": "“El día que volviste a la Tierra” de Carlos Sadness: una elección con nostalgia y regreso en el título. 🎶🌎",
       "approval_status": "Pendiente_Fernando",
-      "source": "Followup_72h"
+      "source": "Followup_72h",
+      "status": "Bloqueado_API",
+      "published": false,
+      "api_error": "META_HTTP_400: {\"error\":{\"message\":\"Unsupported get request. Object with ID '122151376011072582_1703056380925949' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https:\\/\\/developers.facebook.com\\/docs\\/graph-api\",\"type\":\"GraphMethodException\",\"code\":100,\"error_subcode\":33,\"fbtrace_id\":\"A7xXQTW9NmqH4Z2-rcE7ig4\"}}"
     },
     {
       "comment_id": "122151376083072582_886767890954566",
@@ -397,8 +418,11 @@
       "comment_type": "Comentario_Raiz",
       "comment_excerpt": "Con migo danza el que ama mí Alma",
       "suggested_reply": "‘Conmigo danza el que ama mi alma’: ese título ya llega con poesía y movimiento. 🎶✨",
-      "approval_status": "Pendiente_Fernando",
-      "source": "Existing_Queue"
+      "approval_status": "Aprobada",
+      "source": "Existing_Queue",
+      "status": "Respondido",
+      "published": true,
+      "reply_id": "122151376011072582_3696977003793724"
     },
     {
       "comment_id": "122151376011072582_2488170114997851",
@@ -518,8 +542,11 @@
       "comment_type": "Comentario_Raiz",
       "comment_excerpt": "alguien como tú - Josean log",
       "suggested_reply": "Alguien como tú de Josean Log: una elección que suena a nostalgia suave y confesión. 🎶✨",
-      "approval_status": "Pendiente_Fernando",
-      "source": "Existing_Queue"
+      "approval_status": "Aprobada",
+      "source": "Existing_Queue",
+      "status": "Respondido",
+      "published": true,
+      "reply_id": "122151376011072582_2632335903871914"
     },
     {
       "comment_id": "122151376011072582_2033022903995271",
@@ -529,8 +556,11 @@
       "comment_type": "Comentario_Raiz",
       "comment_excerpt": "Las cuatro estaciones, Antonio Vivaldi.",
       "suggested_reply": "Las cuatro estaciones de Vivaldi: cuatro moods y todos con violines dramáticos. 🎻✨",
-      "approval_status": "Pendiente_Fernando",
-      "source": "Existing_Queue"
+      "approval_status": "Aprobada",
+      "source": "Existing_Queue",
+      "status": "Respondido",
+      "published": true,
+      "reply_id": "122151376011072582_917259168104259"
     }
   ],
   "followup_findings": [
@@ -590,5 +620,7 @@
       "reason": "Réplica de usuario o etiqueta; no interrumpir la conversación."
     }
   ],
-  "next_step": "Fernando puede aprobar un subconjunto por IDs; no publicar sin autorización explícita."
+  "next_step": "Revisar la cola restante; el comentario inaccesible requiere una nueva lectura API antes de intentar cualquier respuesta.",
+  "published_from_queue": 4,
+  "inaccessible_from_queue": 1
 }
