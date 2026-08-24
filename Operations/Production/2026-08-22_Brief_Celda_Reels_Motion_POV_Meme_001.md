@@ -3,8 +3,8 @@ title: "Brief de celda Reels Motion + POV/Meme 001"
 purpose: "Diseñar los tres primeros casos controlados para probar si el movimiento físico inmediatamente legible, combinado con un hook situacional o un meme reconocible, supera en descubrimiento y compartidos al formato tipo podcast/radio; MPM-001 abre además una serie musical recurrente de Elara caminando con audífonos."
 status: Active
 created: 2026-08-22
-updated: 2026-08-23
-version: "2.1"
+updated: 2026-08-24
+version: "2.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "../../GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -222,17 +222,33 @@ La regla transferida desde MPM-001 —**acción y conflicto visibles antes de 1.
 | `Concept_ID` | Nuevo concepto de Universe; no mezclar con `CON-2026-08-19-DobleCheck-Universe`. |
 | `Experiment_ID` | `EXP-202608-REEL-MOTION-POV-MEME-001` |
 | `Hypothesis_ID` | `HB-REEL-MOTION-POV-MEME-01` |
-| `Hook_Type` | `POV_modern_habit` |
+| `Hook_Type` | `POV_action_reveal` — el hábito y su consecuencia deben ser visibles desde el primer cuadro. |
 | `On_Screen_Text` | `POV: Dijiste “solo cinco minutos”` |
 | `Caption_Treatment` | `caption_minimo` |
 | `Caption_Function` | `reforzar_remate` |
 | `Caption_Proposed` | `Y el portal ya cambió de horario. 🫠` |
 | `Characters` | Universe |
-| `Motion_Beat` | Universe, gato blanco con gafas redondas visibles, camina con el teléfono hacia un portal; el fondo cambia de noche a amanecer mientras mantiene el paso. |
-| `Payoff` | Sale del portal con la misma expresión y la luz del amanecer; las gafas permanecen visibles y no se transforma su identidad. |
-| `Duration_Target` | 8–10 segundos |
+| `Motion_Beat` | Universe ya está cruzando el portal con teléfono y gafas visibles; una franja de amanecer aparece al otro lado desde el primer cuadro y el cambio de noche a mañana se completa antes de 2 s. |
+| `Payoff` | El portal se cierra detrás de Universe mientras él continúa con la misma expresión, en luz de amanecer y con las gafas sin obstrucción. |
+| `Duration_Target` | 8–9 segundos |
 
 El caso prueba si la combinación de hábito digital reconocible y movimiento puede trasladar la señal de Universe a la misma celda sin depender de una conversación. Las gafas redondas deben ser visibles desde el primer plano y en el último; no se permite una transformación que las oculte.
+
+### 6.1 Revisión de hook `MPM-003-H1-ACTION-REVEAL` — 2026-08-24
+
+El corte de Maeve muestra una caída principal cerca de 0:02. Esta observación no prueba que el personaje, la canción o el portal hayan sido la causa; el formato, audio, duración y audiencia cambian. Sí ofrece una regla de diseño transferible: **el espectador debe entender el conflicto y percibir su primer cambio antes de que llegue a dos segundos**. MPM-003 no debe iniciar con un trayecto largo hacia el portal ni con una transición de luz que se demora; comienza dentro de la acción y revela de inmediato que cinco minutos ya alteraron el tiempo.
+
+| Ventana | Ajuste obligatorio | Función de retención |
+|---:|---|---|
+| 0.0–0.35 s | Plano medio tres cuartos: Universe ya da un paso a través del umbral con teléfono bajo una pata y ambas gafas redondas visibles. La escena contiene noche azul detrás y una franja dorada de amanecer delante desde el primer cuadro. El texto completo aparece estático, no letra por letra: `POV: Dijiste “solo cinco minutos”`. | Identidad, hábito y consecuencia son legibles sin esperar una introducción. |
+| 0.35–1.25 s | Un único paso decidido completa el cruce; la luz cambia de azul nocturno a amanecer y el portal se encoge detrás de Universe. La cámara hace un seguimiento corto, no un recorrido lento. | Cambio físico y temporal antes de la zona de caída de Maeve. |
+| 1.25–2.0 s | Universe mira una vez el teléfono sin texto legible y mantiene una expresión apenas confundida; el portal termina de cerrarse. | Confirmar el chiste sin diálogo ni una segunda explicación textual. |
+| 2.0–6.2 s | Universe sigue caminando por el pasillo ya iluminado, con el amanecer estable y las gafas visibles. | Permitir que el espectador procese el remate, sin introducir otra transición o personaje. |
+| 6.2–8.5 s | Universe sale del encuadre mientras el portal apagado queda al fondo; corte seco. | Cierre visual simple, no una nueva historia. |
+
+La edición no usa fundido desde negro, logo de entrada, typing animation, zoom decorativo ni texto adicional. El overlay permanece alto y con contraste suficiente durante los primeros dos segundos; no debe tapar gafas, teléfono ni la línea del portal. El audio sigue sin diálogo ni narración y la comprensión silenciosa es obligatoria.
+
+La lectura posterior priorizará `retention_2s` cuando Meta la entregue; si no existe, se usará la primera inflexión de la curva de retención como observación cualitativa y `views_3_seconds / visualizations` como proxy secundario. Después se revisarán tiempo promedio, llegada aproximada al segundo 4–5, shares, guardados y comentarios. MPM-003 sigue siendo una observación nueva de la celda, no una comparación causal limpia con Maeve ni una segunda variante de Maeve.
 
 ## 7. Orden de producción y aleatorización
 
@@ -343,15 +359,17 @@ Vertical 9:16 comedic fantasy Reel in the established Universe Sent Me 2D painte
 ### MPM-003 — Universe dijo “solo cinco minutos”
 
 | Tiempo | Acción y encuadre | Texto añadido en edición |
-|---|---|---|
-| 0.0–1.2 s | Plano medio. Universe, gato blanco con gafas redondas visibles, camina con el teléfono hacia el portal. | `POV: Dijiste “solo cinco minutos”` |
-| 1.2–7.0 s | Tracking backward. Universe cruza el umbral; la iluminación pasa suavemente de azul nocturno a amanecer mientras continúa caminando. | Mantener el hook. |
-| 7.0–9.5 s | Sale del portal con la misma expresión; el fondo revela que pasó mucho más tiempo. Las gafas siguen visibles. | Sin explicación adicional. |
+|---:|---|---|
+| 0.0–0.35 s | Plano medio tres cuartos. Universe ya cruza el umbral, con teléfono bajo una pata y gafas redondas sin obstrucción; noche azul queda detrás y amanecer dorado al frente. | `POV: Dijiste “solo cinco minutos”`, visible completo desde el primer cuadro. |
+| 0.35–1.25 s | Seguimiento corto. Un paso completa el cruce y la luz pasa de noche a amanecer; el portal se encoge detrás. | Mantener el hook, sin animación de escritura. |
+| 1.25–2.0 s | Universe mira una vez el teléfono —sin pantalla legible— y el portal termina de cerrarse. | Mantener el hook. |
+| 2.0–6.2 s | Universe continúa por el pasillo de amanecer, misma expresión y gafas visibles; no hay segundo efecto ni personaje extra. | Retirar el hook entre 2.0–2.5 s. |
+| 6.2–8.5 s | Universe sale del encuadre y el portal apagado permanece al fondo; corte seco. | Sin explicación adicional. |
 
 **Video prompt in English:**
 
 ```text
-Vertical 9:16 comedic magical-realism Reel in the established Universe Sent Me 2D painterly style. Universe is a white cat with clearly visible round glasses and a phone in one paw. Universe walks steadily through a cool blue cosmic hallway toward a small violet glowing portal. The camera tracks backward smoothly while the cat crosses the threshold without stopping; the lighting gradually changes from deep night blue to pale sunrise gold as the background shifts from stars to dawn. Universe keeps the same mildly tired expression and continues walking as if only five minutes passed. In the final beat Universe exits the portal into a dawn-lit corridor, still wearing the same unobstructed round glasses, revealing that much more time has passed. Universe, the phone, the glasses, the portal and the corridor exist continuously; do not hide or replace the glasses and do not add other characters. Keep the upper third clean for text added in post. No readable generated text, no dialogue, no narration, no background music, no logo, no watermark.
+Vertical 9:16 comedic magical-realism Reel in the established Universe Sent Me 2D painterly style, 8 to 9 seconds, one continuous physically coherent shot. Universe is a white cat with clearly visible round gold glasses and a phone held low in one paw. From the first frame, Universe is already stepping through a small violet portal: deep blue night remains visible behind the portal while pale sunrise gold is clearly visible in the corridor ahead. The camera begins in a three-quarter medium shot and performs only a short smooth tracking move as one deliberate step completes the crossing before 1.25 seconds; the lighting shifts from night blue to dawn gold and the portal visibly shrinks behind Universe. Between 1.25 and 2 seconds, Universe glances once at the phone with mild confused indifference; the phone screen contains no readable text and the portal closes completely. Universe then continues walking through the stable dawn-lit corridor and exits frame while the closed portal remains in the background for the final beat. Universe, the phone, both unobstructed round glasses, the portal and the corridor exist continuously; do not hide or replace the glasses and do not add other characters, a second portal, a second transformation or a slow pre-portal walk. Keep the upper third clear for text added in post. No readable generated text, no dialogue, no narration, no background music, no logo, no watermark.
 ```
 
 ## 13. Template de edición y medición
