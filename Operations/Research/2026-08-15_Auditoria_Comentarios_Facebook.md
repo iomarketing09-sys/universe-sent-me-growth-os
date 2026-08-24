@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "5.8"
+version: "5.9"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -1244,5 +1244,31 @@ La única mención directa nueva a Universe Sent Me fue `122151376083072582_1036
 La revisión también conservó el comentario musical aislado `Coco valiente`. Quedó sin acción porque no aporta artista, letra ni contexto verificable para responder de forma específica; no fue descartado ni ocultado del inventario. Esta decisión mantiene la cobertura de señales musicales sin fabricar una interpretación.
 
 El detalle completo de decisiones está en `2026-08-24_Facebook_Editorial_Review_After_Approved_Publication.md/.json`; la cola vigente está en `2026-08-24_Facebook_Pending_Queue_After_Approved_Publication_Review.json`; la evidencia de lectura está en `2026-08-24_Facebook_Comment_Review_After_Approved_Publication.json`; y el contexto saneado está en `2026-08-24_Facebook_Direct_Page_Mention_Context_After_Batch14.json`. El auditor reutilizable corregido es `Operations/Automation/audit_facebook_comments_after_approved_publication.py`; el registrador idempotente es `Operations/Automation/record_facebook_after_approved_publication_review.py`.
+
+**Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Community_Engagement_Log.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 37. Publicación autorizada de cinco respuestas — 24 de agosto de 2026
+
+Fernando autorizó explícitamente las cinco propuestas del corte posterior a la publicación aprobada. La operación se ejecutó únicamente mediante Meta Graph API v26.0 entre `2026-08-24T21:11:06+0000` y `2026-08-24T21:11:17+0000`. El preflight GET se completó para los cinco hilos antes del primer POST, sin detectar respuestas exactas previas ni conflictos de Página.
+
+El lote terminó con **5/5 respuestas publicadas y verificadas**. Meta confirmó en cada caso el Page ID `1036844829507460`, el texto exacto aprobado, `is_hidden=false`, timestamp y relación parent. Cuatro respuestas devolvieron el comentario objetivo como parent directo. La réplica anidada `122151376083072582_1036099909244517`, que mencionaba directamente a Universe Sent Me, devolvió el parent inmediato real `122151376083072582_1750491739409073`; la semántica fue validada contra la cadena del hilo y no se reintentó.
+
+| Control | Resultado |
+|---|---:|
+| Respuestas autorizadas | 5 |
+| Publicadas | 5 |
+| Verificadas | 5 |
+| Parent directo | 4 |
+| Réplica anidada validada | 1 |
+| Duplicados | 0 |
+| Errores de API/verificación | 0 |
+| Publicaciones fuera de autorización | 0 |
+
+El ledger conserva las cinco filas con `Respuesta_Estado=Respondido`, `Aprobacion_Estado=Aprobada`, `Respuesta_Meta_ID`, `Respuesta_Fecha`, texto exacto, fuente Meta y timestamp de sincronización. El CSV permanece en **448 filas únicas**, con `Pendiente_Respuesta=0` y la cola del corte cerrada.
+
+La evidencia primaria está en `2026-08-24_Facebook_Comment_Publication_After_Approved_Publication_Review.json`; el registro normalizado está en `2026-08-24_Facebook_Comment_Publication_Record_After_Approved_Publication_Review.json` y `.md`; y la cola sincronizada en `2026-08-24_Facebook_Pending_Queue_After_Approved_Publication_Review.json`. La revisión editorial conserva la trazabilidad del estado previo y el posterior `Respondido`.
+
+No se publicó ninguna respuesta para las 90 unidades clasificadas como `No_Requiere_Respuesta`, incluida la referencia musical aislada `Coco valiente`. Las futuras escrituras siguen requiriendo autorización explícita y específica de Fernando.
 
 **Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Community_Engagement_Log.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

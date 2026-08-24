@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "5.3"
+version: "5.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -741,5 +741,29 @@ Las cinco propuestas corresponden a un remate sobre el asterisco del meme, una p
 También se conservó explícitamente el comentario aislado **“Coco valiente”**. Se clasificó como baja señal porque no contiene artista, letra ni contexto verificable para redactar una respuesta musical específica; no se omitió del inventario ni del ledger. Las 90 no-acciones incluyen 63 réplicas dentro de conversaciones entre usuarios, 14 señales breves o vacías, 8 comentarios contextuales o ambiguos y 5 unidades con lenguaje sensible. El criterio aplicado fue no interrumpir conversaciones laterales ni amplificar descripciones íntimas desde la Página.
 
 El detalle completo de decisiones está en `2026-08-24_Facebook_Editorial_Review_After_Approved_Publication.md/.json`; la cola vigente está en `2026-08-24_Facebook_Pending_Queue_After_Approved_Publication_Review.json`; la evidencia de lectura está en `2026-08-24_Facebook_Comment_Review_After_Approved_Publication.json`; y el contexto saneado de la mención directa está en `2026-08-24_Facebook_Direct_Page_Mention_Context_After_Batch14.json`. El auditor reutilizable queda en `Operations/Automation/audit_facebook_comments_after_approved_publication.py`, con cursor separado del nombre histórico de Batch 14.
+
+**Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 21. Publicación autorizada de cinco respuestas — 24 de agosto de 2026
+
+Fernando autorizó explícitamente las cinco respuestas propuestas en la revisión posterior a la publicación aprobada. La ejecución se realizó exclusivamente mediante Meta Graph API v26.0 entre `2026-08-24T21:11:06+0000` y `2026-08-24T21:11:17+0000`. El preflight consultó cada hilo antes del primer POST, comprobó que no existiera una respuesta exacta previa y no encontró conflictos de Página.
+
+Se publicaron y verificaron **5/5 respuestas**. La verificación confirmó autoría del Page ID `1036844829507460`, texto exacto aprobado, `is_hidden=false`, timestamp y relación parent. Cuatro respuestas tuvieron parent directo del comentario objetivo. La réplica anidada de la mención directa fue validada mediante el parent inmediato que Meta devuelve para ese hilo; no se reintentó por la diferencia entre parent objetivo y parent inmediato.
+
+| Resultado | Casos | Estado |
+|---|---:|---|
+| Respuestas autorizadas | 5 | `Pendiente_Fernando` → `Aprobada` |
+| Publicadas | 5 | `Respuesta_Estado=Respondido` |
+| Verificadas | 5 | Texto, Page ID, visibilidad y parent confirmados |
+| Parent directo | 4 | Semántica `direct_target_parent` |
+| Réplica anidada | 1 | Semántica `nested_reply_api_returns_target_parent` |
+| Duplicados | 0 | Preflight sin conflictos |
+| Errores de verificación | 0 | Sin incidencias |
+| Pendientes publicables de este corte | 0 | Cola cerrada |
+
+Los cinco registros actualizados conservan su `Respuesta_Meta_ID`, `Respuesta_Fecha`, texto exacto, aprobación, fuente de Meta y timestamp de sincronización. El detalle normalizado está en `2026-08-24_Facebook_Comment_Publication_After_Approved_Publication_Review.json` y `.md`; la evidencia de publicación y verificación está en `2026-08-24_Facebook_Comment_Publication_After_Approved_Publication_Review.json`; y la cola cerrada en `2026-08-24_Facebook_Pending_Queue_After_Approved_Publication_Review.json`.
+
+La autorización se limitó exactamente a estos cinco comentarios. No se publicaron respuestas para las 90 unidades que habían quedado `No_Requiere_Respuesta`, incluida la referencia musical aislada `Coco valiente`. El CSV permanece append-only, anonimizado y con IDs únicos.
 
 **Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
