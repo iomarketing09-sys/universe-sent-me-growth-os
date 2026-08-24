@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — CAN-002: chequeo inicial de visibilidad"
 purpose: "Preservar el primer corte operativo de CAN-002 antes de las ventanas T+3 h, separando métricas autenticadas, evidencia pública e indexación pendiente."
-status: "Active — Instagram actualizado por shortcode; YouTube sigue pendiente de fila"
+status: "Active — Instagram actualizado por shortcode; evidencia directa de YouTube registrada y fila pendiente"
 created: 2026-08-23
 updated: 2026-08-23
-version: "1.4"
+version: "1.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
@@ -53,6 +53,14 @@ La causa de los conjuntos vacíos de Instagram no fue el número de fields, ni u
 El refresh conjunto de CAN-001 y CAN-002 mantuvo el filtro por shortcode sin rango de fechas. Para CAN-002, el bloque de views/reach conservó `data_fetched_at` **20:51:35 CDT**: **200 views** y **reach 34**. El bloque de interacciones devolvió 0 likes, 0 comentarios y 0 shares. El bloque de consumo devolvió `data_fetched_at` **20:57:54 CDT**, con avg. watch time raw `8536` y total watch time raw `290246`, documentados como **8.536 s** y **290.246 s** tras convertir de milisegundos.
 
 El avg. watch equivale aproximadamente al **85 %** de los 10 segundos de CAN-002, pero no autoriza un veredicto creativo todavía: la pieza tiene menor alcance, el snapshot sigue temprano y no hay control cuantitativo de YouTube. La lectura correcta es que la retención inicial merece seguimiento, no que el audio ni el formato ya estén validados.
+
+### Evidencia directa de YouTube Studio
+
+Fernando aportó una captura de YouTube Studio para `-P8er9X9ggw`. El nombre del archivo indica **21:10:22 CDT**; usado como timestamp de registro, el Short tenía **1 h 13 min 22 s** desde su T0. Studio muestra **58 vistas**, **1 like** y **4 veces compartido**. La interfaz también presenta el mensaje cualitativo de que el Short mantuvo a usuarios viendo con repeticiones indefinidas; no expone en esta captura una cifra de retención, duración media ni porcentaje, por lo que ese mensaje no se convierte en una métrica numérica.
+
+El conteo es una señal inicial de distribución y compartidos a seguir, no una validación de audio, formato ni hipótesis creativa. Tiene una edad muy corta, una muestra pequeña y una definición de métricas no equiparable con TikTok o Instagram. Windsor.ai todavía no devolvía una fila de este Short en la última consulta mínima, de modo que Studio queda registrado como la fuente manual provisional.
+
+![Captura de YouTube Studio de CAN-002 a T+1 h 13 min 22 s](2026-08-23_Bam_CAN002_YouTube_Studio_T1h13m22s.jpg)
 
 ## Límites y actualizaciones relacionadas
 

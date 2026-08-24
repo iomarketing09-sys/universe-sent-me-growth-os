@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — CAN-001: snapshot temprano consolidado"
 purpose: "Conservar las métricas públicas observables de la primera cascada de CAN-001 y distinguir datos medidos de campos no expuestos sin autenticación."
-status: "Active — Instagram actualizado; YouTube con evidencia directa y Windsor pendiente de indexación"
+status: "Active — Instagram y evidencia directa de YouTube actualizadas; Windsor pendiente de indexación"
 created: 2026-08-21
 updated: 2026-08-23
-version: "1.5"
+version: "1.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
@@ -64,6 +64,14 @@ Fernando autorizó un nuevo corte con la hora real de consulta, sin forzarlo a l
 Se actualizó CAN-001 por shortcode, sin rango de fechas y en bloques de hasta cuatro fields. La consulta de views/reach devolvió `data_fetched_at` **20:51:35 CDT**; el bloque de watch time devolvió **20:57:54 CDT**. A efectos de este refresh, el Reel acumula **280 views**, **reach 217**, **2 likes**, 0 comentarios y 0 shares. El avg. watch time raw `4345` y total watch time raw `947410` se registran como **4.345 s** y **947.410 s**, respectivamente, siguiendo la magnitud de milisegundos de la exportación de Windsor.ai.
 
 Frente al corte operativo previo (271 views, reach 215 y 1 like), el registro muestra +9 views, +2 de reach y +1 like. El avg. watch equivale aproximadamente al **62 %** de los 7 segundos del clip. Esta actualización no modifica la lectura causal: sigue siendo una sola pieza, y YouTube no aporta aún un control cuantitativo usable.
+
+## Actualización de evidencia directa de YouTube Studio — 23 de agosto
+
+Fernando aportó una segunda captura directa de YouTube Studio para `iuHT1kN0Uow`. El nombre del archivo indica **21:09:46 CDT**; tomando ese momento como timestamp de registro, el Short tenía **49 h 19 min 46 s** desde su T0. Studio muestra **13 vistas**, **+11 en las últimas 48 horas** y **1 vez compartido**. El panel no muestra un conteo de likes en esta captura, por lo que ese campo permanece como no disponible.
+
+Esta evidencia sustituye el conteo manual previo de 2 vistas como último dato directo de Studio; el número de shares permanece en 1. Confirma que hubo crecimiento posterior, pero el volumen sigue siendo demasiado bajo para diagnosticar distribución o atribuir desempeño al control de SFX. Windsor.ai continúa sin devolver una fila autenticada, por lo que ambos orígenes se conservan separados.
+
+![Captura de YouTube Studio de CAN-001 a T+49 h 19 min 46 s](2026-08-23_Bam_CAN001_YouTube_Studio_T49h19m46s.jpg)
 
 ## Lectura operativa
 
