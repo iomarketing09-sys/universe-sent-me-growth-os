@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-24
-**Versión:** 3.59
+**Versión:** 3.60
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.60.00] — 2026-08-24 (Manus): WhatsApp como CTA principal y guía exacta Cloudflare Pages para Firma Bordados.** Se convirtió WhatsApp en el llamado principal del hero, conservando catálogos como acción secundaria y el correo/formulario en contacto. Se documentaron los pasos de cuenta Cloudflare y GitHub propiedad del cliente, repositorio privado, acceso restringido de la app Cloudflare Workers & Pages, ramas, build React/Vite y salida `dist/public`. No se creó cuenta, repositorio ni proyecto Pages; no se modificó Wix, DNS o el dominio público.
 
 - **[3.59.00] — 2026-08-24 (Manus): WhatsApp confirmado en el staging de Firma Bordados.** Se añadió el canal `+52 878 788 0735` con un mensaje inicial de consulta y se mantuvo el correo `firmabordados@yahoo.com` y el formulario `mailto:` ya existente. La legibilidad se verificó en móvil; no se envió ningún mensaje. Materiales, tiempos de entrega y mínimos de pedido siguen pendientes de confirmación del cliente y no se inventaron.
 

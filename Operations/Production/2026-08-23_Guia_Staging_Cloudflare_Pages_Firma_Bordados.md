@@ -3,8 +3,8 @@ title: "Guía de staging reversible en Cloudflare Pages — Firma Bordados"
 purpose: "Definir los pasos técnicos para probar el sitio React/Vite de Firma Bordados en Cloudflare Pages sin modificar Wix, el DNS del dominio ni el sitio público actual; incluir el criterio para descartar o adoptar WordPress."
 status: Review
 created: 2026-08-23
-updated: 2026-08-23
-version: "1.0"
+updated: 2026-08-24
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Evaluacion_Migracion_Wix_Hosting_IA.md"
@@ -33,6 +33,37 @@ Esta guía crea una prueba aislada del staging React/Vite existente en una URL `
 | Dominio | Wix continúa atendiendo `firmabordados.com` | No tocar DNS ni nameservers durante esta fase |
 
 El código de staging no debe conservar URLs de almacenamiento de Manus ni archivos del cliente que no estén autorizados para su repo. Antes de subir, buscar y sustituir rutas `"/manus-storage/"` y `"https://www.firmabordados.com/_files/"`. Los activos del cliente deben vivir bajo control de su cuenta/repo o en un almacenamiento que él posea.
+
+## 2.1 Pasos exactos: cuenta Cloudflare y repositorio privado del cliente
+
+Esta parte no modifica el dominio ni el DNS. El propietario de la cuenta debe ser el cliente; Fernando puede ser administrador técnico, pero no debe sustituir la propiedad del cliente. No compartir contraseñas, códigos 2FA, tokens ni datos bancarios por chat.
+
+### A. Crear la cuenta del cliente en Cloudflare
+
+1. El cliente abre `https://dash.cloudflare.com/sign-up` en su propio navegador e introduce un correo que controle a largo plazo.
+2. El cliente crea la contraseña, verifica el correo y activa autenticación de dos factores desde **My Profile** → **Authentication**. Guardará sus códigos de recuperación en un lugar privado.
+3. En esta fase debe **omitir** cualquier opción de “Add a website”, “Add a domain” o cambio de nameservers. La cuenta puede existir sin incorporar `firmabordados.com`.
+4. El cliente invita a Fernando como miembro solamente si necesita apoyo continuo: **Manage account** → **Members** → **Invite members**. El cliente conserva el rol propietario; el acceso de Fernando se puede retirar después.
+5. No se agregan métodos de pago, Workers, dominios, API tokens ni secretos para este staging estático.
+
+### B. Crear el repositorio privado del cliente en GitHub
+
+1. El cliente inicia sesión en `https://github.com` con una cuenta que controle o crea una nueva exclusivamente para Firma Bordados. Debe activar 2FA desde **Settings** → **Password and authentication**.
+2. En la esquina superior derecha elige **+** → **New repository**.
+3. Selecciona su usuario u organización como **Owner** y escribe exactamente `firma-bordados-site` como **Repository name**.
+4. Selecciona **Private**. No usar **Public** porque el repositorio contendrá los PDF autorizados, fotografías y archivos de negocio.
+5. Para una importación limpia por Git, deja desmarcadas las opciones **Add a README file**, **Add .gitignore** y **Choose a license**; después pulsa **Create repository**.
+6. En **Settings** → **Collaborators and teams**, el cliente puede invitar a Fernando con el menor acceso que permita el trabajo acordado. No debe invitar cuentas desconocidas ni compartir su contraseña.
+
+> Antes de enviar código al repositorio, se prepara una copia apta para Cloudflare. El proyecto actual contiene utilidades y rutas específicas de Manus (`/manus-storage`, collector y proxy local); esas partes no se copian como dependencia de producción. Se reemplazan por activos locales autorizados en `client/public/media/` y `client/public/catalogos/`, y se comprueba el build sin dependencias Manus.
+
+### C. Ramas exactas para el staging
+
+1. Se sube la copia limpia del proyecto a `main` como referencia controlada.
+2. Desde `main`, se crea la rama `staging`. La URL principal de Pages de esta primera prueba seguirá los commits de `staging`.
+3. Para cada modificación se crea una rama descriptiva, por ejemplo `feature/cta-whatsapp` o `fix/catalogo-myo`, desde `staging`.
+4. Se abre un Pull Request hacia `staging`. Cloudflare genera una URL única de preview para ese Pull Request; tras aprobación se integra a `staging`.
+5. `main` no se conecta al dominio público durante esta fase y `firmabordados.com` permanece en Wix.
 
 ## 3. Estructura de repositorio y ramas
 
@@ -66,6 +97,23 @@ Estos pasos se realizan en la **cuenta Cloudflare del cliente**. Como conectan u
 6. En **Settings** → **General**, habilitar una política de acceso para previews si el cliente no desea que los enlaces de ramas sean públicos. Las previews son públicas por defecto. [3]
 
 Cloudflare admite versiones específicas de Node y pnpm con variables de entorno. Fijarlas evita que una actualización de la imagen de compilación cambie la reproducción del build sin revisión. [4]
+
+### D. Lista de comprobación en pantalla antes de pulsar `Save and Deploy`
+
+| Control | Debe decir o mostrar |
+| :--- | :--- |
+| Cuenta Cloudflare | Cuenta propiedad del cliente, sin `firmabordados.com` agregado |
+| Cuenta GitHub conectada | Cuenta/organización del cliente; app **Cloudflare Workers & Pages** con acceso solo a `firma-bordados-site` |
+| Proyecto seleccionado | Repositorio privado `firma-bordados-site` |
+| Rama elegida | `staging` como Production branch del proyecto de prueba |
+| Project name | `firma-bordados-staging` |
+| Root directory | Vacío |
+| Build command | `pnpm exec vite build` |
+| Build output directory | `dist/public` |
+| Variables | `NODE_VERSION=22.16.0` y `PNPM_VERSION=10.11.1` |
+| Dominio personalizado | Ninguno; solo se espera la URL `*.pages.dev` |
+
+Cloudflare admite repositorios GitHub privados y recomienda limitar la aplicación de GitHub a los repositorios necesarios. Cada push a la rama conectada genera un build; los Pull Requests creados desde el mismo repositorio producen previews actualizables. [1] [7]
 
 ## 5. Pruebas técnicas antes de compartir el staging
 
@@ -118,3 +166,5 @@ La fase de staging queda lista cuando el cliente pueda visitar `firma-bordados-s
 [5]: [Cloudflare Pages — Add a custom domain to a branch](https://developers.cloudflare.com/pages/how-to/custom-branch-aliases/)
 
 [6]: [WordPress.org — Requirements](https://wordpress.org/about/requirements/)
+
+[7]: [Cloudflare Pages — GitHub integration](https://developers.cloudflare.com/pages/configuration/git-integration/github-integration/)
