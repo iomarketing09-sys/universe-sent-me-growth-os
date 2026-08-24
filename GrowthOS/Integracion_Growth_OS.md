@@ -8,7 +8,7 @@
 | :--- | :--- |
 | **Última sincronización** | 2026-08-23 |
 | **Fuente de canon** | Repo GitHub administrado por Claude: `iomarketing09-sys/universe-sent-me-1`, rama `main`, HEAD `1daaad5342c278909b78076a54d8b220fa51e023`. Ficha de sincronización recibida por Claude mediante clonación directa. |
-| **Estado del documento** | v2.5.5 — HypothesisBank ampliado con HB-006 a HB-009; auditoría Facebook actualizada con cierre temporal `Unavailable_No_Baseline`, insights Windsor L2 parciales y diseño E0/E24/E72 en Review; no implica generación, calendario, CNT ni publicación |
+| **Estado del documento** | v2.5.6 — HypothesisBank ampliado con HB-006 a HB-009; auditoría Facebook actualizada con cierre temporal `Unavailable_No_Baseline`, insights Windsor L2 parciales y diseño E0/E24/E72 en Review; protocolo OmniRoute añadido como asistente de borradores no canónicos; no implica generación, calendario, CNT ni publicación |
 | **Artefactos de rendimiento relacionados** | `Operations/Research/2026-08-23_Reporte_Rendimiento_Engagement_Facebook.md`, `Operations/Research/2026-08-23_Facebook_Performance_Meta_API.json`, `Operations/Research/2026-08-23_Facebook_Performance_Summary.json`, `Operations/Research/2026-08-23_Facebook_Growth_Integration_Audit.json`, `Operations/Research/2026-08-23_Facebook_Post_Reconciliation.json`, `Operations/Research/2026-08-23_Facebook_24_72_Window_Closure.json`, `Operations/Research/2026-08-23_Facebook_24_72_and_Video_Insights_Summary.json`, `Operations/Research/2026-08-23_Facebook_Reels_Video_Insights.csv`, `Operations/Research/2026-08-23_Facebook_Windsor_Insights_Raw.json`, `Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md` |
 | **Propietario** | Manus (Manus AI) |
 | **Guardián de Canon** | Claude (vía repo GitHub) |
@@ -167,6 +167,21 @@ Windsor.ai agregó insights nativos de `facebook_organic` para cuatro Reels con 
 
 La próxima sincronización debe conservar el crosswalk 20/20, mantener los campos 24/72 vacíos mientras falte E0, y generar un veredicto explícito por hipótesis. La arquitectura para resolverlo ya está documentada en `Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md`: hook posterior a `is_published=true`, ledger separado, worker por `Target_At_UTC`, idempotencia y fallback para posts manuales. El diseño sigue en Review; este documento no autoriza por sí mismo una automatización recurrente, publicación, programación ni cambio de contenido.
 
+### 5.2 OmniRoute como asistente de borradores del Growth OS
+
+OmniRoute está aprobado únicamente como una capa local de **asistencia editorial y análisis cualitativo**. La configuración validada es el Combo `usm-groq-gemini-priority`, con `groq/openai/gpt-oss-20b` como ruta principal y `gemini/gemini-3.5-flash` como fallback. El proveedor, modelo, latencia, costo reportado y estado de respuesta son metadatos operativos; no son evidencia de rendimiento editorial ni reemplazan medición nativa de plataforma.
+
+| Uso permitido | Entrada permitida | Salida esperada | Destino humano |
+| :--- | :--- | :--- | :--- |
+| Ideación de una celda | Brief canónico aprobado, objetivo editorial y restricciones de formato | Variantes de ángulo, hook y tensión narrativa con estado `Draft` | Revisión de Fernando / Claude antes de CNT, calendario o producción |
+| Borrador de caption o guion | Personajes, reglas canónicas, duración, plataforma y tono aprobados | Copy o guion marcado `Draft` con riesgos y preguntas de revisión | Revisión humana antes de crear o modificar el brief oficial |
+| Revisión de coherencia | Borrador propio, reglas del canon y checklist de producción | Lista de posibles contradicciones, ambigüedades y faltantes | Corrección humana; OmniRoute no resuelve canon por sí solo |
+| Síntesis cualitativa | Resumen agregado, público o sintético de una observación ya documentada | Lecturas exploratorias y próximas preguntas, nunca veredictos causales | Analista humano; el `ExperimentLog` conserva solo evidencia validada |
+
+Queda prohibido enviar a OmniRoute tokens de Meta, API keys, PII, comentarios reales sin anonimizar, Windsor crudo, métricas canónicas no agregadas, documentos privados o identificadores de publicación. OmniRoute tampoco puede escribir en `Content_Inventory.csv`, `Publication_Log.csv`, `ExperimentLog.csv`, `HypothesisBank`, calendario, backlog, canon o cuentas sociales; toda salida queda fuera de esas fuentes hasta que una persona la revise y la incorpore manualmente bajo las reglas vigentes.
+
+El flujo obligatorio es: **brief aprobado o contexto sintético → OmniRoute → salida `Draft` → revisión humana/canon → documento o fila manualmente aprobada → producción/publicación con gates existentes**. El wrapper local documentado en `Operations/Production/omniroute-daily-wrapper.sh` se usa para invocaciones manuales; no existe autorización para automatizar publicaciones ni para exponer el gateway al navegador.
+
 ---
 
 ## 6. Historial de Sincronización
@@ -179,6 +194,7 @@ La próxima sincronización debe conservar el crosswalk 20/20, mantener los camp
 | 2026-08-15 | Resincronización contra el HEAD canónico actual `1daaad5` | Ficha `canon_sync_fiche.md` proporcionada por Claude; consultada `2026-08-15T22:56:57Z` vía clonación directa | Manus |
 | 2026-08-15 | Corrección de alias visuales de Kael y Maeve | Aclaración de Fernando: Chico de los Pantalones = Kael; Chica del Suéter = Maeve | Manus |
 | 2026-08-23 | Cierre de ventanas 24/72 e integración de insights Windsor | 27 casos elegibles; cero escrituras exactas por ausencia de baseline; cuatro Reels en L2 parcial; commits locales del Growth OS pendientes de publicación al momento de esta edición | Manus |
+| 2026-08-23 | Protocolo de OmniRoute para borradores del Growth OS | Combo local Groq principal/Gemini fallback, outputs no canónicos, revisión humana obligatoria y prohibición de datos sensibles | Manus |
 
 ---
 

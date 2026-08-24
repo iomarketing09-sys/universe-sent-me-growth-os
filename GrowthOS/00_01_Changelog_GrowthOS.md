@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-24
-**Versión:** 3.51
+**Versión:** 3.52
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.52.00] — 2026-08-23 (Manus): Protocolo de OmniRoute para borradores del Growth OS.** Se formalizó OmniRoute como asistente local de ideación, borradores, revisión de coherencia y síntesis cualitativa, usando el Combo `usm-groq-gemini-priority` con Groq principal y Gemini fallback. Se prohíbe enviar secretos, PII, comentarios reales sin anonimizar, Windsor crudo, métricas canónicas no agregadas, documentos privados e IDs de publicación. Ninguna salida puede escribir en inventarios, ledgers, HypothesisBank, calendario, canon o cuentas sociales sin revisión humana; cada salida queda `Draft` hasta la aprobación correspondiente. No se generó, programó ni publicó contenido.
 
 - **[3.51.00] — 2026-08-24 (Manus): Publicación verificada del Batch 14 de Facebook.** Fernando aprobó las 13 propuestas del Batch 14. Meta Graph API v26.0 confirmó las 13 respuestas con autoría de la Página, texto exacto, `is_hidden=false` y parent válido: 12 con parent directo y 1 réplica anidada con semántica de parent inmediato. Ocho ya estaban creadas antes de la recuperación, una se recuperó tras la validación parcial y cuatro se publicaron durante la recuperación; no se duplicó ningún POST. El ledger quedó en 270 filas y 270 IDs únicos; validación PASS. La cola posterior al Batch 14 contiene 0 pendientes publicables. Evidencia: `2026-08-24_Facebook_Comment_Publication_Batch_14.json`, su registro, el índice Markdown y `2026-08-24_Facebook_Pending_Queue_After_Batch14.json`.
 
