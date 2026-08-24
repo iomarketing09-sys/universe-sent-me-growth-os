@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — Semana 01: paquete de lanzamiento"
 purpose: "Organizar el primer bloque de cuatro piezas originales de Bam in a Can antes de publicar, con orden editorial, producción, copy, audio y medición."
-status: "Active — CAN-001 publicada; CAN-002 publicada en TikTok e Instagram y en cascada activa"
+status: "Active — CAN-001 publicada; CAN-002 cascada completa y en medición"
 created: 2026-08-21
 updated: 2026-08-23
-version: "1.12"
+version: "1.13"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_Plan_Lanzamiento_Audiencia_Bam_In_A_Can.md"
@@ -69,7 +69,7 @@ El calendario operativo se documenta en `2026-08-21_Bam_In_A_Can_Semana01_Calend
 
 **Premisa:** un infomercial de 1997 presenta una impresora térmica color hueso que produce un recibo vacío. La cámara se acerca y el papel se mueve como si estuviera recordando algo. Todo el producto parece funcional, pero nadie explica por qué necesita imprimir recuerdos.
 
-**Estado final (21 Ago):** Fernando revisó el corte de edición y confirmó que el recibo permanece vacío: no se ven números ni códigos de barras. CAN-002 salió en TikTok el 23 de agosto a las 18:59:43 CDT, con ID `7677381101991644437`, y en Instagram Reels a las 19:20:37 CDT, con shortcode `DcZv1l4sjhz`. Ambas usan el audio nativo `she share post (for blog)`; creador y volumen no fueron informados. El caption de Instagram confirma el disclosure obligatorio. YouTube Shorts aún no se ha registrado. El render original se conserva como fuente; el corte final es la versión canónica de publicación y no requiere otro render.
+**Estado final (21 Ago):** Fernando revisó el corte de edición y confirmó que el recibo permanece vacío: no se ven números ni códigos de barras. CAN-002 salió en TikTok el 23 de agosto a las 18:59:43 CDT, con ID `7677381101991644437`, y en Instagram Reels a las 19:20:37 CDT, con shortcode `DcZv1l4sjhz`. Ambas usan el audio nativo `she share post (for blog)`; creador y volumen no fueron informados. El caption de Instagram confirma el disclosure obligatorio. YouTube Shorts cerró la cascada a las 19:57:00 CDT, con ID `-P8er9X9ggw` y SFX originales sin música. El título público expone `AI-made`, mientras que la confirmación del disclosure completo/etiqueta de IA permanece abierta. El render original se conserva como fuente; el corte final es la versión canónica de publicación y no requiere otro render.
 
 **Guion de 10 s:**
 
