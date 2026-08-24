@@ -3,8 +3,8 @@ title: "Auditoría de comentarios de Facebook y propuesta de Community Growth"
 purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y definir un sistema de escucha, respuesta y aprendizaje para Universe Sent Me."
 status: Active
 created: 2026-08-15
-updated: 2026-08-23
-version: "3.9"
+updated: 2026-08-24
+version: "4.0"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -27,6 +27,9 @@ related_documents:
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_05.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_05_Summary.md"
   - "Operations/Research/2026-08-23_Facebook_Comment_Record_Delta_05.json"
+  - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_06.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Record_Delta_06.json"
+  - "Operations/Automation/record_facebook_comment_delta_20260824_06.py"
 organization: "Operations/Research"
 ---
 
@@ -738,3 +741,18 @@ Los comentarios con lenguaje sexual explícito o insultos no se contestarán aut
 El registrador añadió las 72 unidades de forma idempotente al `Community_Engagement_Log.csv`. Para no inventar respuestas, los 42 comentarios contextuales y los 3 casos de moderación quedaron como `Sin_Revisar`, con `Respuesta_Sugerida` vacía; solo pasarán a `Pendiente_Respuesta` cuando exista una propuesta concreta aprobada para revisión. Los 27 restantes quedaron como `No_Requiere_Respuesta`. El validador del ledger devolvió `VALIDATION=PASS`, con 192 filas y 192 `Comentario_ID` únicos.
 
 La evidencia detallada está en `2026-08-23_Facebook_Comment_Review_Delta_05.json`, el resumen clasificatorio en `2026-08-23_Facebook_Comment_Review_Delta_05_Summary.md` y el registro de escritura en `2026-08-23_Facebook_Comment_Record_Delta_05.json`. No se usó My Browser, no se revisaron grupos ni publicaciones ajenas, no se consultaron otras plataformas y no se publicó ninguna respuesta.
+
+
+## 49. Comentarios nuevos de hoy sin responder — 24 de agosto de 2026
+
+La revisión exclusiva mediante Meta Graph API v26.0 se ejecutó a las `2026-08-24T00:36:21+0000`, comparando contra el corte anterior de `2026-08-23T23:49:53+0000`. Se consultaron nuevamente las **20 publicaciones propias más recientes**, con **160 comentarios raíz** y sus réplicas directas. No hubo errores de API.
+
+Se detectaron **3 comentarios de usuarios posteriores al último corte**, todos sin respuesta directa de Universe Sent Me en la consulta. Dos tienen una propuesta contextual y quedan pendientes de aprobación de Fernando; uno es un comentario vacío y no requiere respuesta.
+
+| Comentario | Publicación | Lectura | Propuesta | Estado |
+|---|---|---|---|---|
+| `122151376539072582_1033595316219697` | `😳🛏️🔥` | “Mentira no es😹😹” | “Maeve no miente… solo deja que cada quien saque sus conclusiones 😹” | `Pendiente_Fernando` |
+| `122151376083072582_3309129972605548` | `😏🙈😂` | “Jaja jajaja jajajaja jajajaja así les gusta” | “Jajaja, aquí cada quien interpreta a su manera 😹🙈” | `Pendiente_Fernando` |
+| `122155182621072582_1634878035019592` | Reel “Todos miran...” | Comentario vacío | No responder | `No_Requiere_Respuesta` |
+
+Las dos respuestas son propuestas, no publicaciones. El `Community_Engagement_Log.csv` quedó en **195 filas con 195 IDs únicos**, y el validador devolvió `VALIDATION=PASS`. La evidencia técnica está en `2026-08-23_Facebook_Comment_Review_Delta_06.json` y el registro de propuestas en `2026-08-24_Facebook_Comment_Record_Delta_06.json`. No se usó My Browser, no se revisaron grupos ni otras plataformas y no se ejecutó ninguna escritura sobre Facebook.

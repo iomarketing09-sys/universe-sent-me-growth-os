@@ -1,0 +1,23 @@
+{
+  "recorded_at": "2026-08-24T00:36:21+00:00",
+  "cutoff": "2026-08-23T23:49:53+00:00",
+  "source": "Meta Graph API v26.0",
+  "read_only_review": true,
+  "input_count": 3,
+  "new_records_appended": 3,
+  "respondable_proposals": 2,
+  "no_action_records": 1,
+  "proposals": [
+    {
+      "comment_id": "122151376539072582_1033595316219697",
+      "post_id": "1036844829507460_122151376539072582",
+      "suggested_reply": "Maeve no miente… solo deja que cada quien saque sus conclusiones 😹"
+    },
+    {
+      "comment_id": "122151376083072582_3309129972605548",
+      "post_id": "1036844829507460_122151376083072582",
+      "suggested_reply": "Jajaja, aquí cada quien interpreta a su manera 😹🙈"
+    }
+  ],
+  "no_publication_performed": true
+}

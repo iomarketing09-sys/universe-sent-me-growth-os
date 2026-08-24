@@ -3,8 +3,8 @@ title: "Community Engagement Log — Universe Sent Me"
 purpose: "Registrar de forma ligera, append-only y anonimizada las señales cualitativas de comentarios, las respuestas humanas y los aprendizajes editoriales de la comunidad."
 status: Active
 created: 2026-08-15
-updated: 2026-08-23
-version: "3.5"
+updated: 2026-08-24
+version: "3.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -18,6 +18,9 @@ related_documents:
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_03.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_04.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch_03.json"
+  - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_06.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Record_Delta_06.json"
+  - "Operations/Automation/record_facebook_comment_delta_20260824_06.py"
   - "GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md"
 organization: "Operations/Research"
 ---
@@ -318,3 +321,12 @@ De las 45 unidades, **31 quedaron como oportunidades de respuesta**, principalme
 La pregunta “¿Y quién es el del dibujo?” se clasificó como respondible. La imagen muestra una figura creadora que también pregunta quién la creó; por ello la propuesta evita inventar un nombre de personaje y responde al giro paradójico del propio diseño. Se mantuvo la regla editorial de especificidad en las recomendaciones musicales: Vivaldi se conecta con la estructura de cuatro estaciones, “Alguien como tú” con una nostalgia suave, y las demás propuestas con el título, el artista o el juego verbal concreto.
 
 Las respuestas propuestas permanecen con `Pendiente_Fernando`. No se publicó ninguna respuesta en este corte. El registro detallado, incluidos IDs de comentarios y réplicas, está en `2026-08-23_Facebook_Comment_Review_Delta_03.json`.
+
+
+## 25. Comentarios nuevos de hoy — dos propuestas pendientes
+
+La revisión exclusiva mediante Meta Graph API v26.0 se ejecutó el `2026-08-24T00:36:21+0000`, comparando contra el corte de `2026-08-23T23:49:53+0000`. Se consultaron las 20 publicaciones propias más recientes, 160 comentarios raíz y sus réplicas directas. Se detectaron tres comentarios nuevos sin respuesta directa y cero errores de API.
+
+Dos comentarios tienen propuestas específicas y quedaron `Pendiente_Respuesta` + `Pendiente_Fernando`: “Mentira no es😹😹”, asociado a la publicación `😳🛏️🔥`, con la respuesta “Maeve no miente… solo deja que cada quien saque sus conclusiones 😹”; y “Jaja jajaja jajajaja jajajaja así les gusta”, asociado a `😏🙈😂`, con la respuesta “Jajaja, aquí cada quien interpreta a su manera 😹🙈”. El comentario vacío del Reel “Todos miran. Solo una mirada importa.” quedó `No_Requiere_Respuesta`.
+
+Estas propuestas son copy pendiente de aprobación, no publicaciones. El CSV conserva `Privacidad=Anonimizado`, `Moderacion_Estado=No_Accion` y la fuente exacta del corte. Después del registro, el ledger contiene 195 filas y 195 `Comentario_ID` únicos; el validador continúa en `PASS`.
