@@ -21,6 +21,35 @@ Esta guía crea una prueba aislada del staging React/Vite existente en una URL `
 
 > El staging sirve para que el cliente revise la nueva versión con una URL real y para validar build, activos, catálogos, enlaces y contacto. No es aún el corte de producción.
 
+### Excepción temporal de propiedad — Io Marketing
+
+Fernando autorizó que el primer staging use la cuenta actual de Cloudflare y GitHub de **Io Marketing**, con un repositorio privado. Esta excepción solo facilita la revisión técnica: no transfiere la propiedad del dominio ni convierte los activos del cliente en activos de Universe Sent Me.
+
+Antes de asociar `firmabordados.com`, cambiar DNS, facturar hosting o cancelar Wix, se debe cumplir una de estas opciones: transferir el repositorio y proyecto Pages a una cuenta del cliente, o documentar expresamente que Io Marketing operará el hosting en nombre del cliente, con accesos, responsabilidad de renovación y un mecanismo de entrega definidos. El contenido, catálogos y contactos de Firma Bordados permanecen separados de Universe Sent Me y OmniRoute.
+
+### Estado de configuración — 2026-08-24
+
+La cuenta Cloudflare de Io Marketing fue verificada y no mostraba proyectos Pages existentes ni dominios agregados durante esta sesión. El repositorio privado temporal `iomarketing09-sys/firma-bordados-site` contiene una copia estática validada y las ramas `main` y `staging`. El flujo de Cloudflare se encuentra en la autorización de la aplicación GitHub, que debe limitarse a ese repositorio antes de crear `firma-bordados-staging`. No se ha modificado Wix, DNS, `firmabordados.com` ni la configuración de dominio de Cloudflare.
+
+Durante la instalación limitada de **Cloudflare Workers and Pages** en GitHub, la redirección devolvió `Error connecting to git account`. Cloudflare indicó desinstalar completamente y reinstalar la aplicación. No se creó un proyecto Pages, no se concedió acceso a otros repositorios y no se modificó ningún dominio. El siguiente intento debe empezar revisando la instalación de GitHub y, si existe una instalación parcial, retirarla antes de repetir la autorización con el único repositorio `iomarketing09-sys/firma-bordados-site`.
+
+### Resultado de staging — 2026-08-24
+
+La verificación adicional de GitHub se completó y la aplicación **Cloudflare Workers and Pages** quedó limitada al único repositorio privado `iomarketing09-sys/firma-bordados-site`. La ruta correcta se realizó desde **Get started with Pages → Import an existing Git repository**, no desde el flujo de Worker.
+
+| Configuración | Valor aplicado |
+| :--- | :--- |
+| Proyecto Pages | `firma-bordados-staging` |
+| URL de staging | `https://firma-bordados-staging.pages.dev` |
+| Repositorio | `iomarketing09-sys/firma-bordados-site` (privado) |
+| Rama de producción del staging | `staging` |
+| Comando de build | `pnpm exec vite build` |
+| Directorio publicado | `dist/public` |
+| Entorno de build | `NODE_VERSION=22.16.0` |
+| Dominio personalizado | Ninguno |
+
+El primer build terminó correctamente y se verificó que la URL sirve el hero, WhatsApp como CTA principal, capacidades, catálogos, contacto y los enlaces de PDF. La página contiene bloqueo de indexación de staging. Wix, `firmabordados.com`, DNS y nameservers permanecen sin cambios. Cualquier corte de dominio continúa bloqueado por la transferencia/operación administrada documentada y una aprobación expresa del cliente.
+
 ## 2. Estado de partida y preparación obligatoria
 
 | Elemento | Estado actual | Acción antes de Cloudflare Pages |

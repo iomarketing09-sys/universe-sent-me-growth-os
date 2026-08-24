@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 2.4
+**Versión:** 2.5
 
 **Autor:** Manus AI
 
@@ -168,6 +168,10 @@ Fernando confirmó la vigencia de los tres catálogos y la oferta comercial. El 
 Fernando confirmó el correo `firmabordados@yahoo.com` y el WhatsApp `+52 878 788 0735`. El staging conserva el formulario que prepara un correo desde el dispositivo y añade un enlace visible de WhatsApp con mensaje inicial sobre prendas, bordado o serigrafía. El enlace se probó visualmente en móvil; no se enviaron mensajes. Materiales, tiempos de entrega y mínimos de pedido siguen pendientes de solicitud al cliente y no se incorporan hasta contar con información confirmada.
 
 WhatsApp es ahora el CTA principal del hero y conserva catálogos como acción secundaria. La guía `2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md` se amplió con pasos exactos para crear la cuenta Cloudflare y el repositorio GitHub privado del cliente, limitar el acceso de la aplicación Cloudflare Workers & Pages, preparar ramas y configurar el build. La ejecución de cuentas, repositorio, Cloudflare Pages y DNS sigue pendiente de realizarse con el cliente o con autorización explícita; no se modificó Wix ni el dominio público.
+
+Fernando autorizó posteriormente una excepción temporal: el repositorio privado y el primer proyecto Pages se crearán bajo las cuentas actuales de Io Marketing. Esta excepción no autoriza un corte de dominio. La transferencia del repositorio/proyecto al cliente, o un acuerdo de operación administrada por Io Marketing, se vuelve un gate obligatorio antes de modificar DNS, renovar hosting o cancelar Wix.
+
+El staging se desplegó exitosamente en `https://firma-bordados-staging.pages.dev` desde la rama privada `staging`, con build Vite reproducible y activos locales aprobados. La aplicación GitHub de Cloudflare se limitó a ese repositorio. La URL se verificó sin añadir dominio personalizado: conserva CTA de WhatsApp, contacto, servicios y catálogos; no afecta Wix, `firmabordados.com`, DNS ni nameservers.
 
 ## Integración futura de IA
 

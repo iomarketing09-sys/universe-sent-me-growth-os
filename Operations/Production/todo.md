@@ -20,3 +20,5 @@
 - [ ] Solicitar al cliente materiales, tiempos de entrega y mínimos de pedido antes de incorporarlos al sitio.
 - [x] Convertir WhatsApp en el CTA principal del hero de Firma Bordados y validar el enlace en escritorio y móvil.
 - [x] Guiar la creación de la cuenta Cloudflare y repositorio privado del cliente antes de configurar Cloudflare Pages.
+- [x] Acompañar la configuración del proyecto Cloudflare Pages de staging para Firma Bordados sin agregar dominio ni modificar DNS.
+- [x] Preparar y publicar una copia limpia en un repositorio privado temporal de Io Marketing para el staging de Firma Bordados, con transferencia al cliente pendiente antes del corte de dominio.

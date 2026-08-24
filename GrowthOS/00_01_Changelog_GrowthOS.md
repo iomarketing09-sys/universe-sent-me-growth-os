@@ -4,9 +4,13 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-24
-**Versión:** 3.60
+**Versión:** 3.62
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.62.00] — 2026-08-24 (Manus): Staging Cloudflare Pages desplegado para Firma Bordados.** Se creó el repositorio privado temporal `iomarketing09-sys/firma-bordados-site`, se limitó la app Cloudflare Workers and Pages a ese único repositorio y se desplegó `https://firma-bordados-staging.pages.dev` desde la rama `staging`. El build usa `pnpm exec vite build`, publica `dist/public` y fija Node 22.16.0. Se verificaron hero, CTA WhatsApp, capacidades, catálogos, contacto y PDFs. Wix, DNS, nameservers y `firmabordados.com` no cambiaron; el corte sigue bloqueado por aprobación/transferencia u operación administrada.
+
+- **[3.61.00] — 2026-08-24 (Manus): Excepción temporal de propiedad Io Marketing para el staging de Firma Bordados.** Fernando autorizó que el repositorio privado y el primer Pages staging se creen bajo las cuentas actuales de Io Marketing. La excepción no modifica la propiedad del dominio ni autoriza DNS, Wix, facturación o cancelación. Antes de cualquier corte, será obligatorio transferir repo/proyecto al cliente o documentar la operación administrada y la entrega. Los activos y datos del cliente permanecen separados de Universe Sent Me y OmniRoute.
 
 - **[3.60.00] — 2026-08-24 (Manus): WhatsApp como CTA principal y guía exacta Cloudflare Pages para Firma Bordados.** Se convirtió WhatsApp en el llamado principal del hero, conservando catálogos como acción secundaria y el correo/formulario en contacto. Se documentaron los pasos de cuenta Cloudflare y GitHub propiedad del cliente, repositorio privado, acceso restringido de la app Cloudflare Workers & Pages, ramas, build React/Vite y salida `dist/public`. No se creó cuenta, repositorio ni proyecto Pages; no se modificó Wix, DNS o el dominio público.
 
