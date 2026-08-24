@@ -182,6 +182,8 @@ El corte incorporó 95 filas al ledger; en esta ejecución idempotente se anexar
 
 Documentos relacionados que deben mantenerse alineados: el ledger descriptivo, la auditoría histórica de comentarios de Facebook y el changelog de GrowthOS. La corrección del cursor queda documentada en el nuevo auditor `Operations/Automation/audit_facebook_comments_after_approved_publication.py`.
 
+## Referencias
+
 Fuentes: [Meta Graph API Comments and Mentions][1] y [Meta Graph API Comment reference][2].
 
 [1]: https://developers.facebook.com/documentation/pages-api/comments-mentions
