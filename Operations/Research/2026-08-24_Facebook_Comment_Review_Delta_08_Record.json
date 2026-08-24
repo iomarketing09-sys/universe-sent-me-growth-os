@@ -1,0 +1,41 @@
+{
+  "title": "Facebook Comment Review Delta 08 Record",
+  "purpose": "Registrar la incorporación idempotente de los hallazgos nuevos del Delta 08 al Community Engagement Log.",
+  "status": "Active",
+  "created_at": "2026-08-24T02:14:15+00:00",
+  "updated_at": "2026-08-24T02:14:15+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-24_Facebook_Comment_Review_Delta_08.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.md"
+  ],
+  "organization": "Operations/Research",
+  "recorded_at": "2026-08-24T02:14:15+00:00",
+  "reviewed_at": "2026-08-24T02:12:42+00:00",
+  "source": "Meta Graph API v26.0",
+  "delta_file": "Operations/Research/2026-08-24_Facebook_Comment_Review_Delta_08.json",
+  "new_rows_added": 16,
+  "skipped_existing": 0,
+  "comment_ids_added": [
+    "122151376539072582_27935583276097528",
+    "122151376083072582_2218476525601574",
+    "122151376083072582_1461910735802563",
+    "122151376083072582_2136675140593360",
+    "122151376083072582_2013957549234314",
+    "122151376083072582_910971145400039",
+    "122151376083072582_1363924695858655",
+    "122151376083072582_1046993968083177",
+    "122151376083072582_2217697402410708",
+    "122151376083072582_27750034838001055",
+    "122151376083072582_3701844673318079",
+    "122151376083072582_1777381266626241",
+    "122151376083072582_1053899660748200",
+    "122151376083072582_2294338478000981",
+    "122151376011072582_1379392830310327",
+    "122151375843072582_842359288869319"
+  ],
+  "comment_ids_skipped_existing": [],
+  "publication_performed": false
+}

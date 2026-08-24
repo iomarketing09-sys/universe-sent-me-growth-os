@@ -1,13 +1,26 @@
 {
+  "title": "Facebook Linked Post Reply Proposals",
+  "purpose": "Conservar las propuestas, decisiones y verificaciones de respuestas para el post enlazado de Facebook.",
+  "status": "Review",
   "created_at": "2026-08-24T01:09:13+00:00",
+  "version": "1.1",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-24_Facebook_Linked_Post_Comment_Review.json",
+    "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_05.json",
+    "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_06.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
+    "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
+  ],
+  "organization": "Operations/Research",
   "source_reviewed_at": "2026-08-24T01:08:04+00:00",
   "source": "Meta Graph API v26.0 / direct Page Post comments + one-level nested replies",
   "post_id": "1036844829507460_122151376083072582",
   "post_copy": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
   "post_permalink": "https://www.facebook.com/122146890051072582/posts/122151376083072582",
-  "context_note": "La API devuelve únicamente emojis y hashtags como copy. Por las referencias de los usuarios a quedar atorados como perros, ejercicios, piso pélvico y dobles sentidos, se infiere que reaccionan a un meme visual de tema íntimo/sexual; no es una descripción verificada de la imagen.",
-  "visual_description": "La imagen muestra un gato gris pequeño sentado en el centro de un corredor o salón amplio de estilo palaciego, con columnas y barandales ornamentados en tonos lila y gris; el gato aparece solo, mirando al frente, con expresión seria o desconcertada y la marca UniverseSentMe en la parte inferior.",
-  "meme_reading": "El contraste entre la apariencia inocente y seria del gato, el escenario solemne y el copy 😏🙈😂 funciona como una reacción silenciosa de estoy viendo lo que pasa, pero no voy a decir nada. Las referencias a quedar atorados como perros, ejercicios y piso pélvico pertenecen a interpretaciones de los usuarios, no a texto visible de la imagen.",
+  "context_note": "La API devuelve únicamente emojis y hashtags como caption externo. Fernando confirmó que la frase visible dentro de la imagen es ‘larga vida a esas mujeres que aprietan desde adentro’. Esta frase es la referencia válida para interpretar los comentarios de doble sentido, ejercicios, piso pélvico, ‘Perrito’ y ‘Cangrejera’.",
+  "visual_description": "No se conserva una descripción visual adicional como fuente de verdad. La referencia confirmada por Fernando es la frase visible dentro de la imagen: ‘larga vida a esas mujeres que aprietan desde adentro’.",
+  "meme_reading": "El meme se apoya en un doble sentido sexual explícito contenido en la frase de la imagen. El caption externo comprobado por API es únicamente 😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe. Las respuestas deben tratar el contexto con humor cómplice sin agregar detalles gráficos.",
   "linked_comment_id": "2371700183567495",
   "proposal_count": 9,
   "unanswered_units_reviewed": 41,
@@ -129,7 +142,7 @@
   ],
   "read_only_preparation": true,
   "no_publication_performed": false,
-  "updated_at": "2026-08-24T01:38:05+00:00",
+  "updated_at": "2026-08-24T02:10:31+00:00",
   "publication_batch": "2026-08-24_Facebook_Comment_Publication_Batch_05.json",
   "safety_proposal_count": 2,
   "low_signal_proposal_count": 9,
@@ -140,13 +153,15 @@
       "comment_message": "A mi papucho le doy sus buenas chupadas con mis labios , y no estoy hablando de los de mi boca!!\nHahahahahahahaha",
       "comment_type": "Comentario_Raiz",
       "category": "Revisión_moderación",
-      "suggested_reply": "Jajaja, entendimos el doble sentido, pero mantengamos el hilo en tono juguetón y sin detalles explícitos 😅",
+      "suggested_reply": "Jajaja, ese papucho claramente no se puede quejar. 😂🙈",
       "reason": "Doble sentido sexual explícito; redirigir sin repetir ni ampliar el contenido.",
-      "status": "Sin_Revisar",
-      "approval_status": "Pendiente_Fernando",
+      "status": "Respondido",
+      "approval_status": "Aprobada",
       "moderation_status": "Revisar",
       "publish_recommendation": "No publicar automáticamente",
-      "published": false
+      "published": true,
+      "published_at": "2026-08-24T02:10:31+00:00",
+      "reply_id": "122151376083072582_2270174113755963"
     },
     {
       "comment_id": "122151376083072582_1694103262232576",
@@ -154,13 +169,15 @@
       "comment_message": "Que te ordeñe asi desde adentro 🥵🥵🥵",
       "comment_type": "Comentario_Raiz",
       "category": "Revisión_moderación",
-      "suggested_reply": "Vamos a dejar esa parte en la imaginación y mantener el hilo en tono juguetón, sin detalles explícitos 😅",
+      "suggested_reply": "Jajaja, la imaginación ya hizo todo el trabajo por ti. 😂🙈",
       "reason": "Solicitud sexual explícita; responder con límite amable y sin contenido gráfico.",
-      "status": "Sin_Revisar",
-      "approval_status": "Pendiente_Fernando",
+      "status": "Respondido",
+      "approval_status": "Aprobada",
       "moderation_status": "Revisar",
       "publish_recommendation": "No publicar automáticamente",
-      "published": false
+      "published": true,
+      "published_at": "2026-08-24T02:10:31+00:00",
+      "reply_id": "122151376083072582_1060242273589535"
     },
     {
       "comment_id": "122151376083072582_2288087915279831",
@@ -252,13 +269,15 @@
       "comment_message": "Perrito",
       "comment_type": "Comentario_Raiz",
       "category": "Baja_señal",
-      "suggested_reply": "El cangrejo también tiene su momento 😂",
+      "suggested_reply": "El universo ya tiene demasiadas especies involucradas en esto. 😂",
       "reason": "Propuesta opcional para dar continuidad; no es necesario responder si se prioriza evitar ruido.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando",
+      "status": "Respondido",
+      "approval_status": "Aprobada",
       "moderation_status": "No_Accion",
       "publish_recommendation": "Opcional; no publicar sin aprobación",
-      "published": false
+      "published": true,
+      "published_at": "2026-08-24T02:10:31+00:00",
+      "reply_id": "122151376083072582_1862911838260493"
     },
     {
       "comment_id": "122151376083072582_1800051157832910",
@@ -290,5 +309,8 @@
     }
   ],
   "empty_comment_policy": "No preparar respuesta para comentarios vacíos; no hay contenido al que responder.",
-  "new_proposals_published": false
+  "new_proposals_published": true,
+  "new_proposals_published_count": 3,
+  "remaining_unpublished_safety_low_signal_proposals": 8,
+  "publication_batch_06": "2026-08-24_Facebook_Comment_Publication_Batch_06.json"
 }

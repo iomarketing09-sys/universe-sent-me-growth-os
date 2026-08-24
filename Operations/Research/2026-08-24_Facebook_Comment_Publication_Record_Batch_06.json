@@ -1,0 +1,42 @@
+{
+  "title": "Facebook Comment Publication Record Batch 06",
+  "purpose": "Registrar la sincronización de las tres respuestas aprobadas y verificadas en el Community Engagement Log.",
+  "status": "Active",
+  "created_at": "2026-08-24T02:10:31+00:00",
+  "updated_at": "2026-08-24T02:10:31+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_06.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.md"
+  ],
+  "organization": "Operations/Research",
+  "recorded_at": "2026-08-24T02:10:31+00:00",
+  "source": "Meta Graph API v26.0",
+  "batch_file": "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_06.json",
+  "updated_rows": 3,
+  "verified_rows": 3,
+  "records": [
+    {
+      "comment_id": "122151376083072582_1747280716505079",
+      "reply_id": "122151376083072582_2270174113755963",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_1694103262232576",
+      "reply_id": "122151376083072582_1060242273589535",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_1435662098773431",
+      "reply_id": "122151376083072582_1862911838260493",
+      "status": "Respondido",
+      "verified": true
+    }
+  ],
+  "published_approved_replies": 3,
+  "new_audit_proposals_published": false
+}

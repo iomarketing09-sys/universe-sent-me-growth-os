@@ -1,0 +1,59 @@
+{
+  "title": "Facebook Comment Publication Batch 06",
+  "purpose": "Evidencia de la publicación y verificación de las tres respuestas aprobadas por Fernando.",
+  "status": "Active",
+  "created_at": "2026-08-24T02:10:31+00:00",
+  "updated_at": "2026-08-24T02:10:31+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
+    "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_06.json",
+    "Operations/Research/2026-08-24_Facebook_Linked_Post_Reply_Proposals.json"
+  ],
+  "organization": "Operations/Research",
+  "published_at": "2026-08-24T02:10:31+00:00",
+  "source": "Meta Graph API v26.0",
+  "page_id": "1036844829507460",
+  "post_id": "1036844829507460_122151376083072582",
+  "explicit_user_approval": true,
+  "requested_count": 3,
+  "published_count": 3,
+  "already_published_count": 0,
+  "verified_count": 3,
+  "results": [
+    {
+      "status": "published",
+      "parent_comment_id": "122151376083072582_1747280716505079",
+      "reply_id": "122151376083072582_2270174113755963",
+      "message": "Jajaja, ese papucho claramente no se puede quejar. 😂🙈",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376083072582_1747280716505079",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151376083072582_1694103262232576",
+      "reply_id": "122151376083072582_1060242273589535",
+      "message": "Jajaja, la imaginación ya hizo todo el trabajo por ti. 😂🙈",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376083072582_1694103262232576",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151376083072582_1435662098773431",
+      "reply_id": "122151376083072582_1862911838260493",
+      "message": "El universo ya tiene demasiadas especies involucradas en esto. 😂",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376083072582_1435662098773431",
+      "is_hidden": false,
+      "verified": true
+    }
+  ]
+}

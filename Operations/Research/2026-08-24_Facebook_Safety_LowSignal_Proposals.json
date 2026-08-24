@@ -1,11 +1,25 @@
 {
+  "title": "Facebook Safety and Low-Signal Reply Proposals",
+  "purpose": "Conservar propuestas de respuesta para comentarios explícitos o de baja señal, separando publicaciones aprobadas de la cola pendiente.",
+  "status": "Review",
   "created_at": "2026-08-24T01:38:05+00:00",
+  "version": "1.1",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-24_Facebook_Linked_Post_Reply_Proposals.json",
+    "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_06.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv"
+  ],
+  "organization": "Operations/Research",
   "source": "Meta Graph API v26.0 / linked post review",
   "post_id": "1036844829507460_122151376083072582",
   "moderation_proposals": 2,
   "low_signal_proposals": 9,
   "empty_comments_left_unanswered": 6,
-  "published": false,
+  "published_count": 3,
+  "unpublished_count": 8,
+  "publication_batch": "2026-08-24_Facebook_Comment_Publication_Batch_06.json",
+  "updated_at": "2026-08-24T02:10:31+00:00",
   "records": [
     {
       "comment_id": "122151376083072582_1747280716505079",
@@ -13,13 +27,15 @@
       "comment_message": "A mi papucho le doy sus buenas chupadas con mis labios , y no estoy hablando de los de mi boca!!\nHahahahahahahaha",
       "comment_type": "Comentario_Raiz",
       "category": "Revisión_moderación",
-      "suggested_reply": "Jajaja, entendimos el doble sentido, pero mantengamos el hilo en tono juguetón y sin detalles explícitos 😅",
-      "reason": "Doble sentido sexual explícito; redirigir sin repetir ni ampliar el contenido.",
-      "status": "Sin_Revisar",
-      "approval_status": "Pendiente_Fernando",
+      "suggested_reply": "Jajaja, ese papucho claramente no se puede quejar. 😂🙈",
+      "reason": "Doble sentido sexual explícito; respuesta cómplice no gráfica aprobada por Fernando.",
+      "status": "Respondido",
+      "approval_status": "Aprobada",
       "moderation_status": "Revisar",
-      "publish_recommendation": "No publicar automáticamente",
-      "published": false
+      "publish_recommendation": "Publicado únicamente con aprobación explícita",
+      "published": true,
+      "published_at": "2026-08-24T02:10:31+00:00",
+      "reply_id": "122151376083072582_2270174113755963"
     },
     {
       "comment_id": "122151376083072582_1694103262232576",
@@ -27,13 +43,15 @@
       "comment_message": "Que te ordeñe asi desde adentro 🥵🥵🥵",
       "comment_type": "Comentario_Raiz",
       "category": "Revisión_moderación",
-      "suggested_reply": "Vamos a dejar esa parte en la imaginación y mantener el hilo en tono juguetón, sin detalles explícitos 😅",
-      "reason": "Solicitud sexual explícita; responder con límite amable y sin contenido gráfico.",
-      "status": "Sin_Revisar",
-      "approval_status": "Pendiente_Fernando",
+      "suggested_reply": "Jajaja, la imaginación ya hizo todo el trabajo por ti. 😂🙈",
+      "reason": "Solicitud sexual explícita; respuesta cómplice no gráfica aprobada por Fernando.",
+      "status": "Respondido",
+      "approval_status": "Aprobada",
       "moderation_status": "Revisar",
-      "publish_recommendation": "No publicar automáticamente",
-      "published": false
+      "publish_recommendation": "Publicado únicamente con aprobación explícita",
+      "published": true,
+      "published_at": "2026-08-24T02:10:31+00:00",
+      "reply_id": "122151376083072582_1060242273589535"
     },
     {
       "comment_id": "122151376083072582_2288087915279831",
@@ -125,13 +143,15 @@
       "comment_message": "Perrito",
       "comment_type": "Comentario_Raiz",
       "category": "Baja_señal",
-      "suggested_reply": "El cangrejo también tiene su momento 😂",
-      "reason": "Propuesta opcional para dar continuidad; no es necesario responder si se prioriza evitar ruido.",
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando",
+      "suggested_reply": "El universo ya tiene demasiadas especies involucradas en esto. 😂",
+      "reason": "Propuesta de baja señal aprobada por Fernando y publicada con humor contextual.",
+      "status": "Respondido",
+      "approval_status": "Aprobada",
       "moderation_status": "No_Accion",
-      "publish_recommendation": "Opcional; no publicar sin aprobación",
-      "published": false
+      "publish_recommendation": "Publicado únicamente con aprobación explícita",
+      "published": true,
+      "published_at": "2026-08-24T02:10:31+00:00",
+      "reply_id": "122151376083072582_1862911838260493"
     },
     {
       "comment_id": "122151376083072582_1800051157832910",

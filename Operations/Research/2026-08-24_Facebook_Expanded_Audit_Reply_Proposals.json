@@ -1,0 +1,195 @@
+{
+  "title": "Auditoría ampliada de comentarios de Facebook y propuestas de respuesta",
+  "purpose": "Registrar los hallazgos nuevos del Delta 08 y preparar propuestas editoriales sin publicar respuestas adicionales sin autorización explícita.",
+  "status": "Review",
+  "created_at": "2026-08-24T02:18:00+00:00",
+  "updated_at": "2026-08-24T02:18:00+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-24_Facebook_Comment_Review_Delta_08.json",
+    "Operations/Research/2026-08-24_Facebook_Linked_Post_Comment_Review.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
+    "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md",
+    "Operations/Research/2026-08-24_Facebook_Linked_Post_Reply_Proposals.md"
+  ],
+  "source": "Meta Graph API v26.0 / Page feed + direct post comments + one-level nested replies",
+  "reviewed_at": "2026-08-24T02:12:42+00:00",
+  "cutoff": "2026-08-24T01:11:02+00:00",
+  "coverage": {
+    "posts_fetched": 20,
+    "page_posts_reviewed": 20,
+    "root_comments_seen": 179,
+    "comment_ids_seen": 215,
+    "new_user_comments_after_cutoff": 16,
+    "new_unanswered_after_cutoff": 16,
+    "api_error_count": 0,
+    "linked_post_root_comments_seen": 48,
+    "linked_post_roots_without_direct_page_reply": 31,
+    "linked_post_unanswered_units_including_replies": 42
+  },
+  "publication_scope": {
+    "approved_batch_published_before_audit": 3,
+    "additional_replies_published_from_this_audit": 0,
+    "explicit_approval_required_for_all_proposals": true
+  },
+  "findings": [
+    {
+      "comment_id": "122151376539072582_27935583276097528",
+      "post_id": "1036844829507460_122151376539072582",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "comment_message": "Si tu",
+      "comment_type": "Comentario_Raiz",
+      "disposition": "No_Accion",
+      "reason": "Fragmento demasiado breve y ambiguo para una respuesta específica."
+    },
+    {
+      "comment_id": "122151376083072582_2218476525601574",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "comment_message": "Uuff yes yes yes",
+      "comment_type": "Comentario_Raiz",
+      "disposition": "Propuesta_Pendiente_Fernando",
+      "proposed_reply": "El universo escuchó ese “yes yes yes”. 😂🙈",
+      "reason": "Reacción afirmativa al doble sentido del meme; la respuesta devuelve la complicidad sin agregar detalle explícito."
+    },
+    {
+      "comment_id": "122151376083072582_1461910735802563",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "comment_message": "Pensaba que todas podíamos hacer eso",
+      "comment_type": "Comentario_Raiz",
+      "disposition": "Propuesta_Pendiente_Fernando",
+      "proposed_reply": "No todas recibieron el mismo manual del universo. 😂",
+      "reason": "La persona interpreta la frase visible como una capacidad que todas tendrían; la respuesta mantiene el chiste y no discute ni explica sexualmente."
+    },
+    {
+      "comment_id": "122151376083072582_2136675140593360",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "comment_message": "Yo sé pero de nada me sirve si ni novio tengo 😒",
+      "comment_type": "Comentario_Raiz",
+      "disposition": "Propuesta_Pendiente_Fernando",
+      "proposed_reply": "El universo también entiende esa queja de soltera. 😂",
+      "reason": "Respuesta relacional al comentario; acompaña la queja sin hacer presión ni añadir contenido sexual."
+    },
+    {
+      "comment_id": "122151376083072582_2013957549234314",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "comment_message": "Yo lo hago y el pendej* aun asi me cambio por otro bollo podrido 🤣🤣🤣",
+      "comment_type": "Comentario_Raiz",
+      "disposition": "Propuesta_Pendiente_Fernando",
+      "proposed_reply": "Eso ya no fue problema de técnica; fue falta de criterio. 😂",
+      "reason": "La persona convierte el meme en una anécdota de decepción sentimental; la propuesta responde a la conducta de la expareja sin repetir el insulto."
+    },
+    {
+      "comment_id": "122151376083072582_910971145400039",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "comment_message": "Ufff BB... Bien fácil cuando hagan pipi aprieta suelta aprieta suelta 😀",
+      "comment_type": "Comentario_Raiz",
+      "disposition": "No_Accion",
+      "reason": "Incluye una práctica relacionada con salud que no conviene validar en una respuesta breve; además, el hilo ya contiene una corrección de otro usuario."
+    },
+    {
+      "comment_id": "122151376083072582_1363924695858655",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "comment_message": "[etiqueta a tercero] no es recomendable que lo hagan haciendo pis pero si es ese ejercicio de contracción",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151376083072582_910971145400039",
+      "disposition": "No_Accion",
+      "reason": "Es una corrección entre usuarios y contiene una etiqueta a un tercero; la Página no debe interrumpir ese intercambio."
+    },
+    {
+      "comment_id": "122151376083072582_1046993968083177",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "comment_message": "Jajaja como son los ejercicios?",
+      "comment_type": "Comentario_Raiz",
+      "disposition": "Propuesta_Pendiente_Fernando_Revision_Salud",
+      "proposed_reply": "Son los ejercicios de Kegel; para hacerlos bien, mejor revisa una guía profesional. 😅",
+      "reason": "Pregunta directa sobre el ejercicio mencionado en el hilo. Requiere aprobación editorial por tratarse de un tema de salud; no se deben añadir instrucciones clínicas en el comentario."
+    },
+    {
+      "comment_id": "122151376083072582_2217697402410708",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "comment_message": "[etiqueta a tercero]: kegel se llaman",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151376083072582_1046993968083177",
+      "disposition": "No_Accion",
+      "reason": "Respuesta de usuario a usuario que ya atiende la pregunta; no hace falta que la Página replique."
+    },
+    {
+      "comment_id": "122151376083072582_27750034838001055",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "comment_message": "[etiqueta a tercero]",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151376083072582_1046993968083177",
+      "disposition": "No_Accion",
+      "reason": "Nombre aislado dentro de una conversación entre usuarios; no es una solicitud dirigida a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_3701844673318079",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "comment_message": "[etiqueta a tercero] ni entenderás",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151376083072582_1612855930252607",
+      "disposition": "No_Accion",
+      "reason": "Conversación usuario-a-usuario dirigida a una tercera persona."
+    },
+    {
+      "comment_id": "122151376083072582_1777381266626241",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "comment_message": "Y larga la tengas para que eso suceda 🤔",
+      "comment_type": "Comentario_Raiz",
+      "disposition": "Propuesta_Pendiente_Fernando",
+      "proposed_reply": "Jajaja, el universo ya puso sus requisitos. 😂🙈",
+      "reason": "Doble sentido sexual; la propuesta responde con complicidad sin repetir ni ampliar el contenido explícito."
+    },
+    {
+      "comment_id": "122151376083072582_1053899660748200",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "comment_message": "Shulada Mujer!!!👌🏼",
+      "comment_type": "Replica_Anidada",
+      "parent_comment_id": "122151376083072582_1046306528175154",
+      "disposition": "No_Accion",
+      "reason": "Elogio dentro de una conversación ya iniciada entre usuarios; no es una solicitud de la Página."
+    },
+    {
+      "comment_id": "122151376083072582_2294338478000981",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "comment_message": "Amén 🤣🤣",
+      "comment_type": "Comentario_Raiz",
+      "disposition": "No_Accion",
+      "reason": "Reacción breve y repetitiva; no requiere una intervención específica de la Página."
+    },
+    {
+      "comment_id": "122151376011072582_1379392830310327",
+      "post_id": "1036844829507460_122151376011072582",
+      "post_message": "😌 #UniverseSentMe",
+      "comment_message": "Te quiero p..t4 de rammstein habla de un amor hacia una dama que tiene muchos pretendientes muy buena",
+      "comment_type": "Comentario_Raiz",
+      "disposition": "Propuesta_Pendiente_Fernando",
+      "proposed_reply": "Rammstein nunca llega suave; esa lectura de la canción está intensa. 😅",
+      "reason": "Comentario de interpretación musical en otra publicación reciente; propuesta neutral y específica a la referencia musical, sin repetir el término vulgar."
+    },
+    {
+      "comment_id": "122151375843072582_842359288869319",
+      "post_id": "1036844829507460_122151376083072582",
+      "post_message": "Analizando mi propio caos. 🧐 #UniverseSentMe",
+      "comment_message": "Jajajaj",
+      "comment_type": "Comentario_Raiz",
+      "disposition": "No_Accion",
+      "reason": "Risa aislada sin una pregunta o contexto suficiente para una respuesta específica."
+    }
+  ],
+  "next_step": "Esperar aprobación explícita de Fernando antes de publicar cualquiera de las siete propuestas; no se ha publicado ninguna respuesta adicional en este corte."
+}

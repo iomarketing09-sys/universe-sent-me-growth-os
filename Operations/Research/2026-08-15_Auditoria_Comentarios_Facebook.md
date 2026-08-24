@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "4.1"
+version: "4.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -50,6 +50,15 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_05.json"
   - "Operations/Research/2026-08-24_Facebook_Safety_LowSignal_Proposals.json"
   - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_04.json"
+  - "Operations/Automation/publish_three_approved_facebook_replies_20260824.py"
+  - "Operations/Automation/record_facebook_publication_batch_06.py"
+  - "Operations/Automation/record_facebook_audit_delta_08.py"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_06.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_06.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Review_Delta_08.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Review_Delta_08_Record.json"
+  - "Operations/Research/2026-08-24_Facebook_Expanded_Audit_Reply_Proposals.json"
+  - "Operations/Research/2026-08-24_Facebook_Expanded_Audit_Reply_Proposals.md"
 organization: "Operations/Research"
 ---
 
@@ -798,3 +807,42 @@ Fernando aprobó las nueve propuestas preparadas para el post `1036844829507460_
 Para los comentarios que habían quedado fuera de la primera cola, se prepararon **2 propuestas prudentes y no gráficas** para lenguaje sexual explícito y **9 propuestas opcionales** para señales de baja intensidad. Las primeras redirigen el tono sin repetir ni desarrollar el contenido sexual; las segundas se consideran opcionales porque responder puede añadir ruido. Los comentarios vacíos, nombres aislados, menciones a terceros y réplicas entre usuarios permanecen sin respuesta por defecto. Ninguna de estas 11 propuestas adicionales fue publicada.
 
 El ledger comunitario conserva **210 filas y 210 `Comentario_ID` únicos**; la validación devolvió `PASS`. No se usó navegador ni se publicaron respuestas fuera del lote aprobado.
+
+
+## 52. Publicación verificada de tres respuestas aprobadas — 24 de agosto de 2026
+
+Fernando autorizó explícitamente tres respuestas adicionales del hilo `1036844829507460_122151376083072582`: dos comentarios con doble sentido sexual y el comentario breve “Perrito”. La publicación se ejecutó exclusivamente mediante Meta Graph API v26.0. Antes de cada escritura se consultaron las réplicas directas para evitar duplicados; no había una respuesta exacta ni otra respuesta de la Página que bloqueara el lote.
+
+| Comentario padre | Respuesta publicada | Respuesta_Meta_ID | Verificación |
+|---|---|---|---|
+| `122151376083072582_1747280716505079` | “Jajaja, ese papucho claramente no se puede quejar. 😂🙈” | `122151376083072582_2270174113755963` | `from.id` de la Página, `parent.id` correcto, texto exacto, `is_hidden=false`. |
+| `122151376083072582_1694103262232576` | “Jajaja, la imaginación ya hizo todo el trabajo por ti. 😂🙈” | `122151376083072582_1060242273589535` | `from.id` de la Página, `parent.id` correcto, texto exacto, `is_hidden=false`. |
+| `122151376083072582_1435662098773431` | “El universo ya tiene demasiadas especies involucradas en esto. 😂” | `122151376083072582_1862911838260493` | `from.id` de la Página, `parent.id` correcto, texto exacto, `is_hidden=false`. |
+
+Las tres filas se sincronizaron en el ledger comunitario como `Respondido`, con `Aprobacion_Estado=Aprobada` y fuente `Meta Graph API v26.0 — publicación verificada`. No se publicaron las otras propuestas explícitas o de baja señal.
+
+## 53. Corrección de contexto del meme y auditoría ampliada — 24 de agosto de 2026
+
+Fernando corrigió la referencia visual que se había descrito de forma errónea en materiales de trabajo anteriores. La frase realmente visible dentro de la imagen es:
+
+> “larga vida a esas mujeres que aprietan desde adentro”
+
+El caption externo comprobado por API permanece como `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`. La frase de la imagen es la referencia editorial para interpretar los comentarios de ejercicios, “Perrito”, “Cangrejera” y las reacciones de doble sentido. Las descripciones anteriores que afirmaban un gato gris en un salón o corredor palaciego no son fuente válida y deben considerarse corregidas.
+
+Después del Batch 06 se revisaron las 20 publicaciones propias más recientes mediante Meta Graph API v26.0. El corte incremental tomó como cursor `2026-08-24T01:11:02+00:00`, recorrió 179 comentarios raíz y 215 IDs de comentarios/réplicas, y encontró 16 comentarios nuevos sin respuesta directa. No hubo errores de API. Los 16 hallazgos se añadieron de forma idempotente al ledger como `Sin_Revisar`, sin inventar propuestas en esa tabla.
+
+| Cobertura | Resultado |
+|---|---:|
+| Publicaciones propias revisadas | 20 |
+| Comentarios raíz | 179 |
+| IDs de comentarios/réplicas | 215 |
+| Nuevos sin respuesta desde el cursor | 16 |
+| Errores de API | 0 |
+| Nuevas filas del ledger | 16 |
+| Respuestas adicionales publicadas | 0 |
+
+La auditoría completa del post enlazado `1036844829507460_122151376083072582` confirmó 48 comentarios raíz, 17 con respuesta directa de la Página y 31 sin respuesta directa. Al incluir réplicas de un nivel, quedaron 42 unidades sin respuesta técnica; esta cifra incluye conversaciones entre usuarios, nombres aislados, comentarios vacíos y comentarios antiguos, por lo que no equivale a una orden de publicación.
+
+Se prepararon siete propuestas nuevas para aprobación explícita de Fernando: cuatro respuestas al mismo meme sobre “yes yes yes”, la capacidad que no todas tienen, la queja de no tener novio y una anécdota de cambio de pareja; una respuesta prudente a la pregunta sobre ejercicios de Kegel; una respuesta al doble sentido de “Y larga la tengas…”; y una respuesta a la interpretación musical de Rammstein en otra publicación. La propuesta sobre Kegel queda bajo revisión de salud y no incluye instrucciones clínicas. Las réplicas usuario-a-usuario, etiquetas a terceros, comentarios vacíos, reacciones repetitivas y la sugerencia de hacer contracciones al orinar quedaron como `No_Accion`.
+
+El detalle técnico y las propuestas están en `2026-08-24_Facebook_Expanded_Audit_Reply_Proposals.md/.json`, `2026-08-24_Facebook_Comment_Review_Delta_08.json` y `2026-08-24_Facebook_Linked_Post_Comment_Review.json`. El ledger quedó con 226 filas y 226 IDs únicos; el validador devolvió `VALIDATION=PASS`. No se usó My Browser, no se revisaron grupos ni otras plataformas y no se publicó ninguna respuesta fuera de las tres autorizadas del Batch 06.

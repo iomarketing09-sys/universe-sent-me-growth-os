@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "3.7"
+version: "3.8"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -41,6 +41,15 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_05.json"
   - "Operations/Research/2026-08-24_Facebook_Safety_LowSignal_Proposals.json"
   - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_04.json"
+  - "Operations/Automation/publish_three_approved_facebook_replies_20260824.py"
+  - "Operations/Automation/record_facebook_publication_batch_06.py"
+  - "Operations/Automation/record_facebook_audit_delta_08.py"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_06.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_06.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Review_Delta_08.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Review_Delta_08_Record.json"
+  - "Operations/Research/2026-08-24_Facebook_Expanded_Audit_Reply_Proposals.md"
+  - "Operations/Research/2026-08-24_Facebook_Expanded_Audit_Reply_Proposals.json"
   - "GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md"
 organization: "Operations/Research"
 ---
@@ -51,7 +60,7 @@ organization: "Operations/Research"
 
 Este documento define el uso del ledger `2026-08-15_Community_Engagement_Log.csv`. El registro convierte los comentarios en señales de aprendizaje sin transformarlos en un sistema de vigilancia ni en un bot de respuestas. La unidad de registro es un comentario real recuperado desde una publicación propia; cada comentario se identifica por su `Comentario_ID` y solo puede aparecer una vez.
 
-El ledger se creó vacío de forma intencional. Después de extracciones verificables, ahora contiene 42 comentarios reales registrados en el CSV, incluyendo el lote de siete comentarios del 22 de agosto. La auditoría histórica de 67 comentarios de las 20 publicaciones recientes permanece como evidencia agregada y no se reconstruyen sus filas individuales. No se inventan nombres, perfiles, IDs personales, intenciones ni respuestas históricas.
+El ledger se creó vacío de forma intencional. Después de extracciones verificables, al cierre de este corte contiene 226 comentarios reales registrados en el CSV, incluyendo los lotes de respuestas publicados y los nuevos hallazgos del Delta 08. Las auditorías históricas agregadas se conservan como evidencia de cobertura y no se reconstruyen retroactivamente como filas individuales cuando no existe un ID verificable. No se inventan nombres, perfiles, IDs personales, intenciones ni respuestas históricas.
 
 ## 2. Fuente y privacidad
 
@@ -63,7 +72,7 @@ El campo `Privacidad` utiliza inicialmente `Anonimizado`. Si un comentario requi
 
 | Campo | Valores permitidos | Uso |
 |---|---|---|
-| `Tipo` | `Distribucion_Automatica`, `Vacio`, `Etiqueta_Social`, `Aprobacion_Breve`, `Reaccion_Emoji`, `Contextual_Sustantivo`, `Historia_Personal`, `Pregunta`, `Critica`, `Riesgo_Moderacion`, `Spam` | Clasificar la función observable del comentario sin diagnosticar al autor. |
+| `Tipo` | `Comentario_Raiz`, `Replica_Anidada`, `Distribucion_Automatica`, `Vacio`, `Etiqueta_Social`, `Aprobacion_Breve`, `Reaccion_Emoji`, `Contextual_Sustantivo`, `Historia_Personal`, `Pregunta`, `Critica`, `Riesgo_Moderacion`, `Spam` | Registrar la estructura y la función observable del comentario sin diagnosticar al autor. |
 | `Respuesta_Estado` | `Sin_Revisar`, `No_Requiere_Respuesta`, `Pendiente_Respuesta`, `Respondido`, `Escalado`, `Archivado` | Registrar el estado de atención humana. |
 | `Respuesta_Fecha` | Timestamp ISO 8601 o vacío | Registrar cuándo se publicó la respuesta, no cuándo se propuso. |
 | `Respuesta_Meta_ID` | ID de comentario de respuesta o vacío | Conservar la evidencia de publicación devuelta por Meta Graph API. |
@@ -73,6 +82,7 @@ El campo `Privacidad` utiliza inicialmente `Anonimizado`. Si un comentario requi
 | `Prioridad` | `Alta`, `Media`, `Baja` | Priorizar preguntas, historias, críticas útiles y riesgos por encima de emojis o etiquetas automáticas. |
 | `Accion_Calendario` | `Ninguna`, `Repetir_Hook`, `Probar_CTA`, `Probar_Personaje`, `Crear_Asset_Respuesta`, `Actualizar_Copy`, `Revisar_Canon` | Devolver la señal al calendario o a la producción. |
 | `Privacidad` | `Anonimizado` | Confirmar que no se guardaron datos personales innecesarios. |
+| `Señal` | `Baja_señal`, `Conversación_Contextual`, `Conversación_Usuario_Usuario`, `Lenguaje_Sensible`, u otra etiqueta editorial documentada | Resumir la señal observable; no sustituye el campo estructural `Tipo`. |
 
 ## 4. Flujo de revisión
 
@@ -368,3 +378,37 @@ Fernando aprobó las nueve respuestas del post `1036844829507460_122151376083072
 Se añadieron además 2 propuestas prudentes para comentarios con lenguaje sexual explícito y 9 propuestas opcionales para baja señal. Las propuestas sexuales no son gráficas y funcionan como redirección de límites; las de baja señal solo se usarían si Fernando considera que aportan continuidad. Las 11 permanecen `Pendiente_Fernando` y `published=false`. Los comentarios vacíos no reciben propuesta porque no hay contenido textual al cual responder.
 
 El ledger mantiene 210 filas y 210 IDs únicos. La validación devolvió `PASS`; ninguna propuesta adicional fue publicada.
+
+
+## 27. Batch 06 — tres respuestas aprobadas y verificadas — 24 de agosto de 2026
+
+Fernando autorizó explícitamente tres respuestas del post `1036844829507460_122151376083072582`. El publicador consultó cada hilo antes de escribir para evitar duplicados y, después de cada POST, verificó autoría de la Página, texto exacto, `parent.id` e `is_hidden=false`.
+
+| Comentario_ID | Respuesta_Meta_ID | Estado |
+|---|---|---|
+| `122151376083072582_1747280716505079` | `122151376083072582_2270174113755963` | `Respondido` |
+| `122151376083072582_1694103262232576` | `122151376083072582_1060242273589535` | `Respondido` |
+| `122151376083072582_1435662098773431` | `122151376083072582_1862911838260493` | `Respondido` |
+
+Las respuestas conservan el texto exacto aprobado por Fernando. El detalle completo se encuentra en `2026-08-24_Facebook_Comment_Publication_Batch_06.json` y el registro de sincronización en `2026-08-24_Facebook_Comment_Publication_Record_Batch_06.json`. No se publicó ninguna otra propuesta.
+
+## 28. Delta 08 y auditoría ampliada — 24 de agosto de 2026
+
+La revisión exclusiva de Facebook mediante Meta Graph API v26.0 se ejecutó con cursor `2026-08-24T01:11:02+00:00` y revisó las 20 publicaciones propias más recientes. Encontró 16 comentarios nuevos sin respuesta directa; todos se añadieron de forma idempotente y quedaron `Sin_Revisar`, con `Respuesta_Sugerida` vacía hasta completar la clasificación editorial.
+
+| Métrica | Resultado |
+|---|---:|
+| Publicaciones propias revisadas | 20 |
+| Comentarios raíz observados | 179 |
+| IDs de comentarios/réplicas observados | 215 |
+| Hallazgos nuevos sin respuesta | 16 |
+| Errores de API | 0 |
+| Filas nuevas añadidas al ledger | 16 |
+| Respuestas nuevas publicadas desde el corte | 0 |
+| Estado del validador | `PASS` |
+
+El post enlazado `1036844829507460_122151376083072582` fue revisado además en modo completo: 48 raíces, 17 con respuesta directa de la Página, 31 sin respuesta directa y 42 unidades sin respuesta al incluir réplicas. Estas unidades no se convierten automáticamente en 42 respuestas, porque varias son conversaciones entre usuarios, etiquetas a terceros, nombres aislados, vacíos o señales repetitivas.
+
+La referencia correcta del meme queda fijada en la documentación relacionada: la imagen contiene la frase **“larga vida a esas mujeres que aprietan desde adentro”** y el caption externo es `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`. Las descripciones visuales anteriores que afirmaban un gato gris en un salón o corredor palaciego se consideran incorrectas y no deben reutilizarse.
+
+El informe ampliado conserva siete propuestas para la siguiente aprobación de Fernando, incluida una pregunta sobre ejercicios de Kegel marcada como revisión de salud. No incluye instrucciones médicas. Las demás unidades nuevas quedaron en no-acción por baja señal, conversación de usuario a usuario, etiquetas a terceros, ausencia de contexto o una práctica de salud que ya había sido corregida por otra persona. Ninguna de las siete propuestas se publicó.

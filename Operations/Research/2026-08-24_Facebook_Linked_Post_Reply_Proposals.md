@@ -4,12 +4,12 @@
 **Estado:** Review
 **Fecha de creación:** 2026-08-24
 **Última actualización:** 2026-08-24
-**Versión:** 1.0
+**Versión:** 1.1
 **Autor:** Manus AI (CGO)
-**Documentos relacionados:** `Operations/Research/2026-08-24_Facebook_Linked_Post_Comment_Review.json`, `Operations/Research/2026-08-24_Facebook_Linked_Post_Comment_Review_Summary.md`, `Operations/Research/2026-08-15_Community_Engagement_Log.csv`, `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`
+**Documentos relacionados:** `Operations/Research/2026-08-24_Facebook_Linked_Post_Comment_Review.json`, `Operations/Research/2026-08-24_Facebook_Linked_Post_Comment_Review_Summary.md`, `Operations/Research/2026-08-15_Community_Engagement_Log.csv`, `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_05.json`, `Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_06.json`
 **Organización:** Operations/Research
 
-**Fuente:** revisión de `1036844829507460_122151376083072582` mediante Meta Graph API v26.0; se observaron 41 unidades sin respuesta directa, de las cuales 9 tienen propuesta y 32 quedan fuera de la cola de publicación.
+**Fuente:** revisión inicial y auditoría ampliada de `1036844829507460_122151376083072582` mediante Meta Graph API v26.0; la revisión inicial observó 41 unidades sin respuesta directa y el corte ampliado posterior registró 16 hallazgos nuevos, con siete propuestas nuevas aún pendientes.
 
 | Comment ID | Comentario | Propuesta | Estado |
 |---|---|---|---|
@@ -27,17 +27,16 @@
 
 No se prepararon respuestas para comentarios vacíos, emojis, nombres aislados, agradecimientos breves, réplicas de baja señal, menciones dirigidas a otras personas o conversaciones entre usuarios. Tampoco se prepararon respuestas para lenguaje sexual explícito o potencialmente ofensivo; esos casos quedan para revisión humana de moderación.
 
-Ninguna propuesta de este documento ha sido publicada. La publicación requiere aprobación explícita de Fernando y verificación posterior de autoría, comentario padre, texto exacto e `is_hidden=false`.
+Las nueve propuestas de la primera tabla ya fueron publicadas y verificadas en el Batch 05. Las tres respuestas de las secciones adicionales también fueron aprobadas, publicadas y verificadas en el Batch 06. Las restantes propuestas de baja señal continúan pendientes; cualquier nueva publicación requiere aprobación explícita de Fernando y verificación posterior de autoría, comentario padre, texto exacto e `is_hidden=false`.
 
 ## Propuestas adicionales: lenguaje sexual explícito
 
-Estas propuestas son límites amables y no gráficas. No repiten ni desarrollan el contenido sexual del usuario y quedan pendientes de aprobación; no se han publicado.
+Estas dos respuestas fueron aprobadas por Fernando, publicadas y verificadas en el Batch 06.
 
-| Comment ID | Comentario | Propuesta | Estado |
+| Comentario | Respuesta publicada | Estado | Respuesta_Meta_ID |
 |---|---|---|---|
-| `122151376083072582_1747280716505079` | A mi papucho le doy sus buenas chupadas con mis labios , y no estoy hablando de los de mi boca!!
-Hahahahahahahaha | Jajaja, entendimos el doble sentido, pero mantengamos el hilo en tono juguetón y sin detalles explícitos 😅 | `Pendiente_Fernando` / `Revisar` |
-| `122151376083072582_1694103262232576` | Que te ordeñe asi desde adentro 🥵🥵🥵 | Vamos a dejar esa parte en la imaginación y mantener el hilo en tono juguetón, sin detalles explícitos 😅 | `Pendiente_Fernando` / `Revisar` |
+| “A mi papucho le doy sus buenas chupadas con mis labios…” | “Jajaja, ese papucho claramente no se puede quejar. 😂🙈” | `Respondido` / verificado | `122151376083072582_2270174113755963` |
+| “Que te ordeñe así desde adentro 🥵🥵🥵” | “Jajaja, la imaginación ya hizo todo el trabajo por ti. 😂🙈” | `Respondido` / verificado | `122151376083072582_1060242273589535` |
 
 ## Propuestas opcionales: baja señal
 
@@ -45,13 +44,13 @@ Hahahahahahahaha | Jajaja, entendimos el doble sentido, pero mantengamos el hilo
 **Page Post ID:** `1036844829507460_122151376083072582`
 **Enlace de referencia:** https://www.facebook.com/122151376083072582/posts/122151376083072582
 
-**Descripción visual observada:** la imagen muestra un gato gris pequeño sentado en el centro de un corredor o salón amplio, de estilo palaciego, con columnas y barandales ornamentados en tonos lila y gris. El gato aparece solo, mirando al frente, con una expresión seria o desconcertada; lleva la marca `UniverseSentMe` en la parte inferior.
+**Referencia confirmada por Fernando:** la imagen contiene la frase `larga vida a esas mujeres que aprietan desde adentro`.
 
-**Caption comprobado:** `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`. No aparece otra frase explicativa en el caption ni texto adicional dentro de la imagen.
+**Caption comprobado:** `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`.
 
-**Lectura del meme:** funciona como una imagen de reacción: el gato está sentado solemnemente, como si observara algo incómodo, atrevido o absurdo y eligiera no intervenir. La expresión del gato y los emojis permiten que los usuarios proyecten un doble sentido, pero no existe una acción concreta visible que explique por sí sola comentarios como “Upss”, “Cangrejera” o “Ejercítense”. Esos comentarios son interpretaciones o bromas añadidas por los usuarios; no son el significado literal comprobable del creativo.
+**Lectura del meme:** la frase es un doble sentido sexual directo y explica los comentarios sobre ejercicios, “Perrito”, “Cangrejera” y otras reacciones de complicidad. No se conserva una descripción visual adicional como fuente de verdad. Las respuestas de la Página deben mantener el tono juguetón sin repetir ni añadir detalles gráficos.
 
-Estas respuestas pueden generar continuidad, pero no son obligatorias. Para comentarios vacíos, nombres aislados o conversaciones entre usuarios se mantiene la recomendación de no responder.
+Estas respuestas pueden generar continuidad, pero no son obligatorias. Para comentarios vacíos, nombres aislados o conversaciones entre usuarios se mantiene la recomendación de no responder. “Perrito” ya fue respondido en el Batch 06; las demás propuestas de esta tabla continúan pendientes.
 
 | Comment ID | Comentario | Propuesta opcional | Estado |
 |---|---|---|---|
@@ -61,8 +60,8 @@ Estas respuestas pueden generar continuidad, pero no son obligatorias. Para come
 | `122151376083072582_1057397926935250` | Upss | Upps… el universo tomó nota 😅 | `Pendiente_Fernando` |
 | `122151376083072582_2139372153647884` | Amén | El universo recibe ese amén 😅✨ | `Pendiente_Fernando` |
 | `122151376083072582_1031789069652438` | Ejercitense | La recomendación queda registrada 😅 | `Pendiente_Fernando` |
-| `122151376083072582_1435662098773431` | Perrito | El cangrejo también tiene su momento 😂 | `Pendiente_Fernando` |
+| `122151376083072582_1435662098773431` | Perrito | El universo ya tiene demasiadas especies involucradas en esto. 😂 | `Respondido` / verificado — `122151376083072582_1862911838260493` |
 | `122151376083072582_1800051157832910` | Gracias 🫂😊 | ¡Gracias a ti por pasar por aquí! 🫂✨ | `Pendiente_Fernando` |
 | `122151376083072582_886767890954566` | Gracias | ¡Gracias a ti por pasar por aquí! 🫂✨ | `Pendiente_Fernando` |
 
-**Política de comentarios vacíos:** no se prepara respuesta porque no existe señal textual; se mantienen como `No_Requiere_Respuesta`. Ninguna propuesta de estas dos secciones ha sido publicada.
+**Política de comentarios vacíos:** no se prepara respuesta porque no existe señal textual; se mantienen como `No_Requiere_Respuesta`. Las dos respuestas explícitas y la respuesta para “Perrito” ya están publicadas y verificadas en el Batch 06; las demás propuestas de baja señal continúan pendientes y no se publican sin nueva aprobación.
