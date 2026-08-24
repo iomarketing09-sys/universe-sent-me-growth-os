@@ -1,0 +1,34 @@
+{
+  "title": "Facebook Pending Queue After Batch 14",
+  "purpose": "Estado del ledger después de publicar y verificar las 13 respuestas aprobadas del Batch 14.",
+  "status": "Active",
+  "created_at": "2026-08-24",
+  "updated_at": "2026-08-24T04:14:58+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-24_Facebook_Batch14_Engagement_Proposals.json",
+    "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_14.json",
+    "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_14.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv"
+  ],
+  "organization": "Operations/Research",
+  "source": "Community Engagement Log synchronized with verified Meta Graph API v26.0 publication record; no new broad API sweep after publication",
+  "ledger_rows": 270,
+  "facebook_pending_count": 0,
+  "facebook_pending_with_proposal": 0,
+  "published_from_batch14": 13,
+  "verified_from_batch14": 13,
+  "no_action_count": 103,
+  "archived_count": 1,
+  "pending": [],
+  "publication_summary": {
+    "requested": 13,
+    "verified": 13,
+    "already_published_before_recovery": 8,
+    "recovered_after_partial_publish": 1,
+    "published_during_recovery": 4,
+    "strict_direct_parent": 12,
+    "nested_immediate_parent_semantics": 1
+  }
+}

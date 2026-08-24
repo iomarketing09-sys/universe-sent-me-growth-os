@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "4.8"
+version: "4.9"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -126,6 +126,15 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_Batch14_Candidate_Context.json"
   - "Operations/Research/2026-08-24_Facebook_Batch14_Engagement_Proposals.json"
   - "Operations/Research/2026-08-24_Facebook_Batch14_Engagement_Proposals.md"
+  - "Operations/Automation/publish_facebook_batch14_approved_replies.py"
+  - "Operations/Automation/recover_facebook_batch14_publication.py"
+  - "Operations/Automation/enrich_facebook_batch14_publication_times.py"
+  - "Operations/Automation/record_facebook_publication_batch_14.py"
+  - "Operations/Automation/export_facebook_publication_batch14_md.py"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_14.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_14.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_14.md"
+  - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch14.json"
 organization: "Operations/Research"
 ---
 
@@ -599,19 +608,19 @@ El CSV mantiene el carácter anonimizado y append-only de la evidencia. El regis
 
 La revisión exclusiva mediante Meta Graph API v26.0 se ejecutó a las `2026-08-24T04:01:12+00:00`, usando como cursor el cierre verificado del Batch 13 (`2026-08-24T03:49:42+00:00`). Se revisaron las 20 publicaciones propias más recientes, 198 comentarios raíz y 246 IDs de comentarios y réplicas. No hubo errores de API ni escrituras en Facebook.
 
-El escaneo encontró 106 unidades actuales sin respuesta directa. Ese número no equivale a oportunidades de engagement: 69 ya tenían una clasificación histórica y no se reabrieron. Se revisaron editorialmente 37 unidades nuevas o previamente `Sin_Revisar`; 13 recibieron una propuesta específica y 24 quedaron `No_Requiere_Respuesta` por ser conversaciones entre usuarios, reacciones breves, baja señal o debates sin petición dirigida a la Página.
+El escaneo encontró 106 unidades actuales sin respuesta directa. Ese número no equivale a oportunidades de engagement: 69 ya tenían una clasificación histórica y no se reabrieron. Se revisaron editorialmente 37 unidades nuevas o previamente `Sin_Revisar`; 13 recibieron una propuesta específica que después fue aprobada, publicada y verificada, y 24 quedaron `No_Requiere_Respuesta` por ser conversaciones entre usuarios, reacciones breves, baja señal o debates sin petición dirigida a la Página.
 
 | Resultado Batch 14 | Casos |
 |---|---:|
 | Unidades actuales sin respuesta directa | 106 |
 | Ya clasificadas históricamente, no reabiertas | 69 |
 | Nuevas o `Sin_Revisar` clasificadas | 37 |
-| Propuestas `Pendiente_Respuesta` / `Pendiente_Fernando` | 13 |
+| Propuestas aprobadas, publicadas y verificadas | 13 |
 | Nuevas clasificaciones `No_Requiere_Respuesta` | 24 |
 | Comentarios nuevos posteriores al cursor Batch 13 | 1 |
 | Errores de API | 0 |
-| Publicaciones ejecutadas | 0 |
+| Publicaciones ejecutadas y verificadas | 13 |
 
-El único comentario posterior al cursor fue una réplica dentro de una conversación entre usuarios, sin solicitud dirigida a Universe Sent Me; se registró como `No_Requiere_Respuesta`. Las 13 propuestas quedan bajo aprobación explícita de Fernando. Las respuestas musicales usan el título, artista o carga emocional concreta; los comentarios de doble sentido reciben, cuando corresponde, un remate cómplice y no gráfico. Ninguna propuesta autoriza por sí misma una publicación.
+El único comentario posterior al cursor fue una réplica dentro de una conversación entre usuarios, sin solicitud dirigida a Universe Sent Me; se registró como `No_Requiere_Respuesta`. Las 13 propuestas fueron aprobadas explícitamente por Fernando, publicadas y verificadas: 12 con parent directo y 1 réplica anidada con semántica de parent inmediato devuelta por Meta. Las respuestas musicales usan el título, artista o carga emocional concreta; los comentarios de doble sentido reciben un remate cómplice y no gráfico.
 
-El ledger queda con 270 filas y 270 IDs únicos; el validador confirma `PASS`. La evidencia completa está en `2026-08-24_Facebook_Comment_Review_Batch_14.json`, el inventario unido en `2026-08-24_Facebook_Batch14_Current_Unanswered_Inventory.json`, el contexto seleccionado en `2026-08-24_Facebook_Batch14_Candidate_Context.json` y las propuestas legibles en `2026-08-24_Facebook_Batch14_Engagement_Proposals.md`.
+El ledger queda con 270 filas y 270 IDs únicos; el validador confirma `PASS`. La evidencia de revisión está en `2026-08-24_Facebook_Comment_Review_Batch_14.json`, el inventario unido en `2026-08-24_Facebook_Batch14_Current_Unanswered_Inventory.json`, el contexto seleccionado en `2026-08-24_Facebook_Batch14_Candidate_Context.json` y las propuestas en `2026-08-24_Facebook_Batch14_Engagement_Proposals.md`. La evidencia de publicación está en `2026-08-24_Facebook_Comment_Publication_Batch_14.json`, su registro, el índice Markdown y la cola posterior.

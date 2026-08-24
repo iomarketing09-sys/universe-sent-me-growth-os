@@ -1,19 +1,19 @@
 # Facebook Batch 14 — oportunidades de engagement
 
-**Propósito:** documentar el escaneo de comentarios de Facebook, reconciliar oportunidades nuevas y antiguas y preparar respuestas específicas para aprobación humana, sin publicar.
-**Estado:** Review  
+**Propósito:** documentar el escaneo de comentarios de Facebook, reconciliar oportunidades nuevas y antiguas y conservar las respuestas específicas aprobadas para el Batch 14.
+**Estado:** Active
 **Fecha de creación:** 2026-08-24  
-**Última actualización:** 2026-08-24T04:01:12+00:00  
-**Versión:** 1.0  
+**Última actualización:** 2026-08-24T04:14:58+00:00
+**Versión:** 1.1
 **Autor:** Manus AI  
-**Documentos relacionados:** `2026-08-24_Facebook_Comment_Review_Batch_14.json`; `2026-08-24_Facebook_Batch14_Current_Unanswered_Inventory.json`; `2026-08-24_Facebook_Batch14_Candidate_Context.json`; `2026-08-24_Facebook_Batch14_Engagement_Proposals.json`; `2026-08-24_Facebook_Pending_Queue_After_Batch13.json`; `2026-08-15_Community_Engagement_Log.csv`  
+**Documentos relacionados:** `2026-08-24_Facebook_Comment_Review_Batch_14.json`; `2026-08-24_Facebook_Batch14_Current_Unanswered_Inventory.json`; `2026-08-24_Facebook_Batch14_Candidate_Context.json`; `2026-08-24_Facebook_Batch14_Engagement_Proposals.json`; `2026-08-24_Facebook_Pending_Queue_After_Batch13.json`; `2026-08-24_Facebook_Comment_Publication_Batch_14.json`; `2026-08-24_Facebook_Comment_Publication_Record_Batch_14.json`; `2026-08-24_Facebook_Comment_Publication_Batch_14.md`; `2026-08-24_Facebook_Pending_Queue_After_Batch14.json`; `2026-08-15_Community_Engagement_Log.csv`
 **Organización:** Operations/Research
 
 ## Resumen ejecutivo
 
-La revisión exclusiva mediante Meta Graph API v26.0 cubrió **20 publicaciones propias**, **198 comentarios raíz** y **246 IDs de comentarios/réplicas**. Se detectaron **106 unidades actuales sin respuesta directa**, pero **69 ya tenían clasificación histórica** y no se reabrieron. Las **37 unidades nuevas o Sin_Revisar** recibieron una decisión editorial: **13 propuestas** quedan `Pendiente_Fernando` y **24** quedan `No_Requiere_Respuesta`.
+La revisión exclusiva mediante Meta Graph API v26.0 cubrió **20 publicaciones propias**, **198 comentarios raíz** y **246 IDs de comentarios/réplicas**. Se detectaron **106 unidades actuales sin respuesta directa**, pero **69 ya tenían clasificación histórica** y no se reabrieron. Las **37 unidades nuevas o Sin_Revisar** recibieron una decisión editorial: **13 propuestas** fueron aprobadas, publicadas y verificadas en Batch 14; **24** quedan `No_Requiere_Respuesta`.
 
-Después del cursor del Batch 13 (`2026-08-24T03:49:42+00:00`) apareció **un comentario nuevo**. Es una réplica dirigida a otra persona dentro de una conversación usuario-a-usuario, así que no se propone intervenir. No hubo errores de API y no se publicó nada.
+Después del cursor del Batch 13 (`2026-08-24T03:49:42+00:00`) apareció **un comentario nuevo**. Es una réplica dirigida a otra persona dentro de una conversación usuario-a-usuario, así que no se propuso intervenir. No hubo errores de API. Las 13 respuestas propuestas en este documento fueron publicadas posteriormente con autorización explícita de Fernando y verificadas individualmente.
 
 | Indicador | Resultado |
 |---|---:|
@@ -24,13 +24,13 @@ Después del cursor del Batch 13 (`2026-08-24T03:49:42+00:00`) apareció **un co
 | Unidades nuevas desde Batch 13 | 1 |
 | Unidades nuevas no registradas desde Batch 13 | 1 |
 | Unidades nuevas o Sin_Revisar clasificadas ahora | 37 |
-| Propuestas pendientes de aprobación | 13 |
+| Propuestas aprobadas, publicadas y verificadas | 13 |
 | Casos sin acción | 24 |
 | Errores de API | 0 |
 
-## Propuestas pendientes de aprobación
+## Propuestas aprobadas y publicadas
 
-Estas 13 respuestas son propuestas, no publicaciones. Requieren aprobación explícita de Fernando antes de cualquier escritura en Facebook.
+Estas 13 respuestas fueron las propuestas editoriales del corte y posteriormente recibieron aprobación explícita de Fernando. La evidencia de publicación y verificación está en `2026-08-24_Facebook_Comment_Publication_Batch_14.json` y su registro asociado.
 
 | # | Referencia del comentario | Comentario | Propuesta | Prioridad | Motivo editorial |
 |---:|---|---|---|---|---|
@@ -91,7 +91,7 @@ Las propuestas musicales responden al título, artista o carga emocional concret
 
 ## Estado operativo
 
-No se ejecutaron POST, ocultamientos, eliminaciones ni otras escrituras en Facebook. El Batch 14 queda preparado para revisión humana. Si Fernando aprueba un subconjunto, deberá publicarse con preconsulta anti-duplicado, verificación posterior de autoría, texto exacto, relación parent y `is_hidden=false`.
+Las propuestas ya no están pendientes: fueron publicadas y verificadas en el Batch 14. No se ejecutaron ocultamientos ni eliminaciones. La evidencia conserva la preconsulta anti-duplicado, la autoría de Página, el texto exacto, la relación parent y `is_hidden=false`.
 
 ## Limitación del corte
 

@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "5.3"
+version: "5.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -117,6 +117,15 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_Batch14_Candidate_Context.json"
   - "Operations/Research/2026-08-24_Facebook_Batch14_Engagement_Proposals.json"
   - "Operations/Research/2026-08-24_Facebook_Batch14_Engagement_Proposals.md"
+  - "Operations/Automation/publish_facebook_batch14_approved_replies.py"
+  - "Operations/Automation/recover_facebook_batch14_publication.py"
+  - "Operations/Automation/enrich_facebook_batch14_publication_times.py"
+  - "Operations/Automation/record_facebook_publication_batch_14.py"
+  - "Operations/Automation/export_facebook_publication_batch14_md.py"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_14.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_14.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_14.md"
+  - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch14.json"
 organization: "Operations/Research"
 ---
 
@@ -1099,14 +1108,14 @@ La revisión de solo lectura mediante Meta Graph API v26.0 se ejecutó a las `20
 | Unidades actuales sin respuesta directa | 106 |
 | Ya clasificadas históricamente y no reabiertas | 69 |
 | Unidades nuevas o `Sin_Revisar` clasificadas | 37 |
-| Propuestas específicas pendientes de aprobación | 13 |
+| Propuestas específicas aprobadas, publicadas y verificadas | 13 |
 | Casos clasificados `No_Requiere_Respuesta` | 24 |
 | Comentarios nuevos posteriores al cursor Batch 13 | 1 |
 | Errores de API | 0 |
-| Publicaciones realizadas | 0 |
+| Publicaciones realizadas y verificadas | 13 |
 
 El único comentario nuevo posterior al cursor fue una réplica dentro de una conversación usuario-a-usuario en el meme `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`. Aunque contiene un remate que podría recibir una respuesta ingeniosa, no está dirigido a la Página; se clasificó `No_Requiere_Respuesta` para no interrumpir el intercambio.
 
-Las 13 oportunidades recomendadas incluyen cinco referencias musicales —“Saturno” de Rafa Espino, una lista con Warcry/Kaleus/Mago de Oz/Macaco, “Canción de cuna” de Los Piojos, “Amor eterno” y “Mi historia entre tus dedos”—, cinco remates o juegos del meme y una réplica dirigida a la Página sobre “Frío frío” de Juan Luis Guerra, además de dos comentarios de doble sentido tratados con respuestas cómplices y no gráficas. Las 24 unidades sin acción son principalmente conversaciones entre usuarios, etiquetas o nombres aislados, reacciones breves, baja señal y debates filosóficos sin petición dirigida a la Página.
+Las 13 oportunidades recomendadas —cinco referencias musicales, remates del meme, una réplica dirigida a la Página sobre “Frío frío” de Juan Luis Guerra y dos respuestas de doble sentido no gráficas— fueron aprobadas, publicadas y verificadas. Las 24 unidades sin acción son principalmente conversaciones entre usuarios, etiquetas o nombres aislados, reacciones breves, baja señal y debates filosóficos sin petición dirigida a la Página.
 
-La evidencia completa está en `2026-08-24_Facebook_Comment_Review_Batch_14.json`, el inventario reconciliado en `2026-08-24_Facebook_Batch14_Current_Unanswered_Inventory.json`, el contexto seleccionado en `2026-08-24_Facebook_Batch14_Candidate_Context.json` y las propuestas en `2026-08-24_Facebook_Batch14_Engagement_Proposals.md`. La autorización de Fernando es necesaria antes de cualquier publicación.
+La evidencia del escaneo está en `2026-08-24_Facebook_Comment_Review_Batch_14.json`, el inventario reconciliado en `2026-08-24_Facebook_Batch14_Current_Unanswered_Inventory.json`, el contexto seleccionado en `2026-08-24_Facebook_Batch14_Candidate_Context.json` y las propuestas en `2026-08-24_Facebook_Batch14_Engagement_Proposals.md`. La evidencia de publicación está en `2026-08-24_Facebook_Comment_Publication_Batch_14.json`, su registro, el índice Markdown y la cola posterior.

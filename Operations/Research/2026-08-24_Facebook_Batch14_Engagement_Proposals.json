@@ -1,9 +1,9 @@
 {
   "title": "Facebook Batch 14 Engagement Proposals",
   "purpose": "Reconciliar oportunidades nuevas y antiguas detectadas en el escaneo Batch 14 y preparar respuestas específicas para aprobación humana, sin publicar.",
-  "status": "Review",
+  "status": "Active",
   "created_at": "2026-08-24T04:01:12+00:00",
-  "updated_at": "2026-08-24T04:01:12+00:00",
+  "updated_at": "2026-08-24T04:14:58+00:00",
   "version": "1.0",
   "author": "Manus AI",
   "related_documents": [
@@ -43,10 +43,14 @@
       "priority": "Media",
       "already_logged_before_batch14": false,
       "created_after_batch13_cursor": false,
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando",
+      "status": "Respondido",
+      "approval_status": "Aprobada",
       "suggested_reply": "Saturno de Rafa Espino… esa sí deja el corazón orbitando un rato. 🪐🎶",
-      "insight": "La persona aportó una canción concreta; responder al título y artista evita un agradecimiento musical genérico."
+      "insight": "La persona aportó una canción concreta; responder al título y artista evita un agradecimiento musical genérico.",
+      "reply_id": "122151376011072582_1094452429605784",
+      "published_at": "2026-08-24T04:12:04+0000",
+      "verified": true,
+      "publication_parent_semantics": "direct_parent"
     },
     {
       "comment_id": "122151376011072582_1060227956395275",
@@ -61,10 +65,14 @@
       "priority": "Media",
       "already_logged_before_batch14": true,
       "created_after_batch13_cursor": false,
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando",
+      "status": "Respondido",
+      "approval_status": "Aprobada",
       "suggested_reply": "Eso ya es una playlist con cuatro formas de decir lo mismo: aquí hay sentimientos y no pocos. 🎶✨",
-      "insight": "La lista reúne cuatro canciones y merece una respuesta que reconozca su hilo emocional, no un elogio genérico."
+      "insight": "La lista reúne cuatro canciones y merece una respuesta que reconozca su hilo emocional, no un elogio genérico.",
+      "reply_id": "122151376011072582_4378850609033913",
+      "published_at": "2026-08-24T04:12:08+0000",
+      "verified": true,
+      "publication_parent_semantics": "direct_parent"
     },
     {
       "comment_id": "122151376011072582_4502922900025556",
@@ -79,10 +87,14 @@
       "priority": "Media",
       "already_logged_before_batch14": true,
       "created_after_batch13_cursor": false,
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando",
+      "status": "Respondido",
+      "approval_status": "Aprobada",
       "suggested_reply": "‘Canción de cuna’ de Los Piojos… elección para cuando el recuerdo no quiere dormir. 🎶🌙",
-      "insight": "La respuesta juega con el título y conserva el tono nocturno sin inventar una interpretación extensa."
+      "insight": "La respuesta juega con el título y conserva el tono nocturno sin inventar una interpretación extensa.",
+      "reply_id": "122151376011072582_1973674756669962",
+      "published_at": "2026-08-24T04:12:12+0000",
+      "verified": true,
+      "publication_parent_semantics": "direct_parent"
     },
     {
       "comment_id": "122151376011072582_1418254450159338",
@@ -97,10 +109,14 @@
       "priority": "Alta",
       "already_logged_before_batch14": true,
       "created_after_batch13_cursor": false,
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando",
+      "status": "Respondido",
+      "approval_status": "Aprobada",
       "suggested_reply": "Hay ausencias que no necesitan haber sido pareja para doler así. ‘Amor eterno’ lo entiende demasiado bien. 🥺🎶",
-      "insight": "Reconoce la pérdida sin diagnosticar ni hacer humor; conecta la experiencia con la canción concreta."
+      "insight": "Reconoce la pérdida sin diagnosticar ni hacer humor; conecta la experiencia con la canción concreta.",
+      "reply_id": "122151376011072582_1473302331485380",
+      "published_at": "2026-08-24T04:12:15+0000",
+      "verified": true,
+      "publication_parent_semantics": "direct_parent"
     },
     {
       "comment_id": "122151376011072582_1568269204678844",
@@ -115,10 +131,14 @@
       "priority": "Media",
       "already_logged_before_batch14": true,
       "created_after_batch13_cursor": false,
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando",
+      "status": "Respondido",
+      "approval_status": "Aprobada",
       "suggested_reply": "‘Mi historia entre tus dedos’… de esas canciones que convierten una despedida en escena completa. 🎶🥀",
-      "insight": "Responde a la imagen emocional del título sin afirmar artista o contexto que la persona no indicó."
+      "insight": "Responde a la imagen emocional del título sin afirmar artista o contexto que la persona no indicó.",
+      "reply_id": "122151376011072582_1604740854617332",
+      "published_at": "2026-08-24T04:12:18+0000",
+      "verified": true,
+      "publication_parent_semantics": "direct_parent"
     },
     {
       "comment_id": "122151376539072582_1448883027065510",
@@ -133,10 +153,14 @@
       "priority": "Media",
       "already_logged_before_batch14": false,
       "created_after_batch13_cursor": false,
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando",
+      "status": "Respondido",
+      "approval_status": "Aprobada",
       "suggested_reply": "Jajaja, el universo no promete resultados, pero sí recomienda constancia. 😂🙈",
-      "insight": "Devuelve el juego sobre la petición sin añadir instrucciones ni escalar el contenido sexual."
+      "insight": "Devuelve el juego sobre la petición sin añadir instrucciones ni escalar el contenido sexual.",
+      "reply_id": "122151376539072582_2857549581292838",
+      "published_at": "2026-08-24T04:12:22+0000",
+      "verified": true,
+      "publication_parent_semantics": "direct_parent"
     },
     {
       "comment_id": "122151376083072582_1875655376797902",
@@ -151,10 +175,14 @@
       "priority": "Media",
       "already_logged_before_batch14": false,
       "created_after_batch13_cursor": false,
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando",
+      "status": "Respondido",
+      "approval_status": "Aprobada",
       "suggested_reply": "Jajaja, el comentario llegó con manual técnico incluido. 😂🙈",
-      "insight": "Respuesta cómplice y no gráfica; reconoce la intensidad sin competir con ella ni añadir detalles."
+      "insight": "Respuesta cómplice y no gráfica; reconoce la intensidad sin competir con ella ni añadir detalles.",
+      "reply_id": "122151376083072582_1069317052240407",
+      "published_at": "2026-08-24T04:12:26+0000",
+      "verified": true,
+      "publication_parent_semantics": "direct_parent"
     },
     {
       "comment_id": "122151376083072582_1216558461547643",
@@ -169,10 +197,14 @@
       "priority": "Media",
       "already_logged_before_batch14": false,
       "created_after_batch13_cursor": false,
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando",
+      "status": "Respondido",
+      "approval_status": "Aprobada",
       "suggested_reply": "El universo ya tiene demasiadas especies involucradas en esto. 😂",
-      "insight": "Continúa el juego de especies que la persona ya introdujo, sin agregar una referencia ajena."
+      "insight": "Continúa el juego de especies que la persona ya introdujo, sin agregar una referencia ajena.",
+      "reply_id": "122151376083072582_2034035404142465",
+      "published_at": "2026-08-24T04:12:29+0000",
+      "verified": true,
+      "publication_parent_semantics": "direct_parent"
     },
     {
       "comment_id": "122151376011072582_2122543521717318",
@@ -187,10 +219,14 @@
       "priority": "Alta",
       "already_logged_before_batch14": false,
       "created_after_batch13_cursor": false,
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando",
+      "status": "Respondido",
+      "approval_status": "Aprobada",
       "suggested_reply": "Jajaja, tienes razón: el frío era solo en el título; la confusión fue nuestra. 😂🎶",
-      "insight": "La réplica menciona a la Página y responde directamente a su intervención; merece continuidad específica."
+      "insight": "La réplica menciona a la Página y responde directamente a su intervención; merece continuidad específica.",
+      "reply_id": "122151376011072582_28270515985875919",
+      "published_at": "2026-08-24T04:12:33+0000",
+      "verified": true,
+      "publication_parent_semantics": "nested_reply_api_returns_immediate_parent"
     },
     {
       "comment_id": "122151376083072582_1539874414078742",
@@ -205,10 +241,14 @@
       "priority": "Media",
       "already_logged_before_batch14": false,
       "created_after_batch13_cursor": false,
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando",
+      "status": "Respondido",
+      "approval_status": "Aprobada",
       "suggested_reply": "Jajaja, ese detalle no pasó desapercibido. 😂🙈",
-      "insight": "La respuesta reconoce exactamente el detalle que el comentario subraya, sin volverlo más explícito."
+      "insight": "La respuesta reconoce exactamente el detalle que el comentario subraya, sin volverlo más explícito.",
+      "reply_id": "122151376083072582_1093565023186820",
+      "published_at": "2026-08-24T04:14:16+0000",
+      "verified": true,
+      "publication_parent_semantics": "direct_parent"
     },
     {
       "comment_id": "122151376539072582_1049776371233063",
@@ -223,10 +263,14 @@
       "priority": "Media",
       "already_logged_before_batch14": false,
       "created_after_batch13_cursor": false,
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando",
+      "status": "Respondido",
+      "approval_status": "Aprobada",
       "suggested_reply": "Jajaja, el universo agradece la precisión técnica. 😂🙈",
-      "insight": "Devuelve el remate como falsa precisión técnica y no agrega contenido explícito."
+      "insight": "Devuelve el remate como falsa precisión técnica y no agrega contenido explícito.",
+      "reply_id": "122151376539072582_1970438900414902",
+      "published_at": "2026-08-24T04:14:20+0000",
+      "verified": true,
+      "publication_parent_semantics": "direct_parent"
     },
     {
       "comment_id": "122151376083072582_2294338478000981",
@@ -241,10 +285,14 @@
       "priority": "Media",
       "already_logged_before_batch14": true,
       "created_after_batch13_cursor": false,
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando",
+      "status": "Respondido",
+      "approval_status": "Aprobada",
       "suggested_reply": "Ese amén viene con toda la convicción. 😂✨",
-      "insight": "Retoma la palabra exacta del comentario y la convierte en un remate de marca."
+      "insight": "Retoma la palabra exacta del comentario y la convierte en un remate de marca.",
+      "reply_id": "122151376083072582_2157411618317762",
+      "published_at": "2026-08-24T04:14:24+0000",
+      "verified": true,
+      "publication_parent_semantics": "direct_parent"
     },
     {
       "comment_id": "122151376083072582_910971145400039",
@@ -259,10 +307,14 @@
       "priority": "Media",
       "already_logged_before_batch14": true,
       "created_after_batch13_cursor": false,
-      "status": "Pendiente_Respuesta",
-      "approval_status": "Pendiente_Fernando",
+      "status": "Respondido",
+      "approval_status": "Aprobada",
       "suggested_reply": "Jajaja, el tutorial llegó con instrucciones incluidas. 😂🙈",
-      "insight": "Reconoce el formato de tutorial sin validar ni ampliar la recomendación; mantiene el tono no gráfico."
+      "insight": "Reconoce el formato de tutorial sin validar ni ampliar la recomendación; mantiene el tono no gráfico.",
+      "reply_id": "122151376083072582_1016863408077392",
+      "published_at": "2026-08-24T04:14:28+0000",
+      "verified": true,
+      "publication_parent_semantics": "direct_parent"
     }
   ],
   "no_action": [
@@ -699,6 +751,10 @@
       "insight": "La historia merece respeto, pero la Página no debe irrumpir en el intercambio."
     }
   ],
-  "published": false,
-  "authorization_required": true
+  "published": true,
+  "authorization_required": true,
+  "published_at": "2026-08-24T04:14:14+00:00",
+  "publication_record": "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_14.json",
+  "authorization_satisfied": true,
+  "published_count": 13
 }
