@@ -36,6 +36,9 @@ related_documents:
   - "Operations/Automation/prepare_linked_post_reply_proposals_20260824.py"
   - "Operations/Automation/record_linked_post_reply_proposals_20260824.py"
   - "Operations/Automation/publish_approved_facebook_replies_20260824.py"
+  - "Operations/Automation/publish_linked_post_approved_replies_20260824.py"
+  - "Operations/Automation/record_facebook_publication_batch_05.py"
+  - "Operations/Automation/prepare_low_signal_and_moderation_proposals_20260824.py"
   - "Operations/Automation/record_facebook_publication_batch_04.py"
   - "Operations/Research/2026-08-24_Facebook_Linked_Post_Comment_Review.json"
   - "Operations/Research/2026-08-24_Facebook_Linked_Post_Comment_Review_Summary.md"
@@ -43,6 +46,9 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_Linked_Post_Reply_Proposals.md"
   - "Operations/Research/2026-08-24_Facebook_Linked_Post_Reply_Record.json"
   - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_04.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_05.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_05.json"
+  - "Operations/Research/2026-08-24_Facebook_Safety_LowSignal_Proposals.json"
   - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_04.json"
 organization: "Operations/Research"
 ---
@@ -783,3 +789,12 @@ Las nueve propuestas quedaron en `Pendiente_Fernando` y no se publicaron. Entre 
 De forma separada, Fernando aprobó las dos respuestas que ya estaban preparadas para comentarios nuevos: `122151376539072582_1033595316219697` y `122151376083072582_3309129972605548`. Se publicaron mediante Meta Graph API v26.0 y se verificaron con autoría `Universe Sent Me`, `parent.id` correcto, texto exacto e `is_hidden=false`. Los IDs de respuesta publicados son `122151376539072582_1017908597886964` y `122151376083072582_2857677777946548`, respectivamente. El detalle queda en `2026-08-24_Facebook_Comment_Publication_Batch_04.json`.
 
 El ledger comunitario quedó en **210 filas y 210 `Comentario_ID` únicos** y el validador devolvió `PASS`. No se usó My Browser, no se revisaron grupos ni otras plataformas. Las nueve propuestas nuevas siguen pendientes de aprobación explícita; no se publicaron.
+
+
+## 51. Publicación de nueve respuestas aprobadas y propuestas adicionales — 24 de agosto de 2026
+
+Fernando aprobó las nueve propuestas preparadas para el post `1036844829507460_122151376083072582`. Se publicaron mediante Meta Graph API v26.0 a las `2026-08-24T01:36:20+0000`. Las nueve verificaciones devolvieron `verified=true`, autoría `Universe Sent Me`, `parent.id` correcto, texto exacto e `is_hidden=false`. El detalle de cada respuesta y su ID Meta está en `2026-08-24_Facebook_Comment_Publication_Batch_05.json`; el registro de sincronización del ledger está en `2026-08-24_Facebook_Comment_Publication_Record_Batch_05.json`.
+
+Para los comentarios que habían quedado fuera de la primera cola, se prepararon **2 propuestas prudentes y no gráficas** para lenguaje sexual explícito y **9 propuestas opcionales** para señales de baja intensidad. Las primeras redirigen el tono sin repetir ni desarrollar el contenido sexual; las segundas se consideran opcionales porque responder puede añadir ruido. Los comentarios vacíos, nombres aislados, menciones a terceros y réplicas entre usuarios permanecen sin respuesta por defecto. Ninguna de estas 11 propuestas adicionales fue publicada.
+
+El ledger comunitario conserva **210 filas y 210 `Comentario_ID` únicos**; la validación devolvió `PASS`. No se usó navegador ni se publicaron respuestas fuera del lote aprobado.

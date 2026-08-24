@@ -27,6 +27,9 @@ related_documents:
   - "Operations/Automation/prepare_linked_post_reply_proposals_20260824.py"
   - "Operations/Automation/record_linked_post_reply_proposals_20260824.py"
   - "Operations/Automation/publish_approved_facebook_replies_20260824.py"
+  - "Operations/Automation/publish_linked_post_approved_replies_20260824.py"
+  - "Operations/Automation/record_facebook_publication_batch_05.py"
+  - "Operations/Automation/prepare_low_signal_and_moderation_proposals_20260824.py"
   - "Operations/Automation/record_facebook_publication_batch_04.py"
   - "Operations/Research/2026-08-24_Facebook_Linked_Post_Comment_Review.json"
   - "Operations/Research/2026-08-24_Facebook_Linked_Post_Comment_Review_Summary.md"
@@ -34,6 +37,9 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_Linked_Post_Reply_Proposals.md"
   - "Operations/Research/2026-08-24_Facebook_Linked_Post_Reply_Record.json"
   - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_04.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_05.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_05.json"
+  - "Operations/Research/2026-08-24_Facebook_Safety_LowSignal_Proposals.json"
   - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_04.json"
   - "GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md"
 organization: "Operations/Research"
@@ -353,3 +359,12 @@ El enlace proporcionado por Fernando resolvió mediante Meta Graph API v26.0 al 
 Fernando aprobó dos propuestas previamente preparadas. Se publicaron y verificaron como respuestas de `Universe Sent Me`: `122151376539072582_1017908597886964` para el comentario `122151376539072582_1033595316219697`, y `122151376083072582_2857677777946548` para el comentario `122151376083072582_3309129972605548`. En ambos casos Meta confirmó el `parent.id` correcto, el texto exacto y `is_hidden=false`.
 
 Las nueve propuestas del hilo enlazado permanecen `Pendiente_Fernando`; ninguna fue publicada. El ledger conserva 210 filas y 210 IDs únicos, con privacidad anonimizada y validación PASS.
+
+
+## 27. Lote aprobado y propuestas adicionales — 24 de agosto de 2026
+
+Fernando aprobó las nueve respuestas del post `1036844829507460_122151376083072582`. Se publicaron mediante Meta Graph API v26.0 a las `2026-08-24T01:36:20+0000` y las nueve fueron verificadas con autoría `Universe Sent Me`, `parent.id` correcto, texto exacto e `is_hidden=false`.
+
+Se añadieron además 2 propuestas prudentes para comentarios con lenguaje sexual explícito y 9 propuestas opcionales para baja señal. Las propuestas sexuales no son gráficas y funcionan como redirección de límites; las de baja señal solo se usarían si Fernando considera que aportan continuidad. Las 11 permanecen `Pendiente_Fernando` y `published=false`. Los comentarios vacíos no reciben propuesta porque no hay contenido textual al cual responder.
+
+El ledger mantiene 210 filas y 210 IDs únicos. La validación devolvió `PASS`; ninguna propuesta adicional fue publicada.

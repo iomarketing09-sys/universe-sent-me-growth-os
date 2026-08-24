@@ -1,0 +1,112 @@
+{
+  "published_at": "2026-08-24T01:36:20+00:00",
+  "source": "Meta Graph API v26.0",
+  "page_id": "1036844829507460",
+  "post_id": "1036844829507460_122151376083072582",
+  "explicit_user_approval": true,
+  "requested_count": 9,
+  "published_count": 9,
+  "already_published_count": 0,
+  "verified_count": 9,
+  "results": [
+    {
+      "status": "published",
+      "parent_comment_id": "122151376083072582_1870186187563324",
+      "reply_id": "122151376083072582_1046638411560082",
+      "message": "Eso ya sería pasar de la química a la logística 😅 Mejor disfrutar la escena sin quedar atorados.",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376083072582_1870186187563324",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151376083072582_1719326086024419",
+      "reply_id": "122151376083072582_1105469192150480",
+      "message": "Jajaja, ahí está el detalle: no todas las sorpresas vienen con manual de instrucciones 😅",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376083072582_1719326086024419",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151376083072582_1108096458452825",
+      "reply_id": "122151376083072582_1404185008333995",
+      "message": "Jajaja, hay cosas que se disfrutan más cuando vienen con buen sentido del humor 😏",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376083072582_1108096458452825",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151376083072582_1028237043539692",
+      "reply_id": "122151376083072582_1067336845783809",
+      "message": "Jajaja, la escena dejó más de una teoría en el aire 😅",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376083072582_1028237043539692",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151376083072582_1976584486379301",
+      "reply_id": "122151376083072582_1589792622559067",
+      "message": "Tú sabrás… nosotros solo estamos tomando nota 😏😂",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376083072582_1976584486379301",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151376083072582_1037906569213579",
+      "reply_id": "122151376083072582_1012107321873782",
+      "message": "El cangrejo también tiene su club de fans 😂",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376083072582_1037906569213579",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151376083072582_1387619540151231",
+      "reply_id": "122151376083072582_25998006246563712",
+      "message": "Con esa confianza, el universo ya te apartó lugar para los 120 🤗✨",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376083072582_1387619540151231",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151376083072582_2371700183567495",
+      "reply_id": "122151376083072582_2544521936374341",
+      "message": "Rikolino sabe lo que dice 😂",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376083072582_2371700183567495",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151376083072582_1620302366278351",
+      "reply_id": "122151376083072582_1614458346791800",
+      "message": "La clave está en saber hacerlo… y en no perder el sentido del humor 😂",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376083072582_1620302366278351",
+      "is_hidden": false,
+      "verified": true
+    }
+  ]
+}
