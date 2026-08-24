@@ -1,0 +1,768 @@
+{
+  "title": "Facebook Pending Queue After Post-Batch-14 Review",
+  "purpose": "Estado actual de la cola después de registrar la revisión posterior al Batch 14; distingue propuestas que requieren aprobación de casos cerrados sin acción.",
+  "status": "Review",
+  "created_at": "2026-08-24T16:50:20+00:00",
+  "updated_at": "2026-08-24T16:50:20+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-24_Facebook_Editorial_Review_After_Batch14.json",
+    "Operations/Research/2026-08-24_Facebook_Editorial_Review_After_Batch14.md",
+    "Operations/Research/2026-08-24_Facebook_Comment_Review_After_Batch14.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.md"
+  ],
+  "organization": "Operations/Research",
+  "source": "Meta Graph API v26.0 / post-Batch-14 read-only review",
+  "read_only_review": true,
+  "approval_required_for_publication": true,
+  "review_cursor": "2026-08-24T04:14:14+00:00",
+  "ledger_rows": 353,
+  "review_candidate_count": 83,
+  "pending_response_count": 24,
+  "pending_response_with_proposal_count": 24,
+  "no_action_count_in_review": 59,
+  "publishable_without_new_approval": 0,
+  "published_from_this_review": 0,
+  "pending_comments": [
+    {
+      "comment_id": "122151376629072582_1041344015455456",
+      "post_id": "1036844829507460_122151376629072582",
+      "comment_created_time": "2026-08-24T15:57:28+0000",
+      "comment_message": "Un Dios Desde Su Trono,\nPuede Dominar,\nHasta El Átomo, \nMás Distante.",
+      "post_message": "El cambio da miedo… quedarse igual también. 😮‍💨 #UniverseSentMe",
+      "proposed_reply": "Hay tronos que parecen lejanos, pero el universo siempre encuentra la forma de acercar la señal. ✨",
+      "priority": "Alta",
+      "insight": "Comentario filosófico en una publicación sobre el cambio; oportunidad de respuesta con voz de marca.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376539072582_757157010825943",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T15:12:43+0000",
+      "comment_message": "Está científicamente comprobado que si 🧐👍",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "El comité científico del universo queda oficialmente convocado. 🧐😂",
+      "priority": "Media",
+      "insight": "El comentario presenta una afirmación irónica como evidencia científica; oportunidad de remate temático.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376539072582_1069501129107761",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T04:32:53+0000",
+      "comment_message": "Según mis amigas del trabajo si funciona jajaja",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "El comité de amigas ya emitió su veredicto. 😂",
+      "priority": "Media",
+      "insight": "Aporta validación social en tono de humor y responde a la experiencia que menciona el comentario.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376539072582_1723720622176837",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T06:41:41+0000",
+      "comment_message": "No pero le vas a agarrar gusto al gusto",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "El universo advierte: agarrarle gusto no sustituye la técnica. 😂",
+      "priority": "Media",
+      "insight": "Contesta el juego verbal sin añadir una descripción sexual explícita.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376539072582_1967578493929235",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T12:31:15+0000",
+      "comment_message": "Claro preciosa usted déjese querer",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "El universo deja la invitación en modo misterioso. 😌",
+      "priority": "Media",
+      "insight": "Comentario de coqueteo en una raíz, con una respuesta breve y cómplice que no escala.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376539072582_2105653843654560",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T15:27:46+0000",
+      "comment_message": "Esque la leche tiene vitaminas",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "La leche también quiso entrar al debate nutricional. 😂",
+      "priority": "Media",
+      "insight": "Juega con la explicación literal del comentario y el doble sentido del post sin añadir explicitud.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376365072582_1038307515745573",
+      "post_id": "1036844829507460_122151376365072582",
+      "comment_created_time": "2026-08-24T15:39:46+0000",
+      "comment_message": "Allí Los Dos Entienden, Que Es Más Importante El Oxígeno, Que El Afecto Externo.",
+      "post_message": "💔 #UniverseSentMe",
+      "proposed_reply": "A veces el aire dice más que cualquier promesa. 💔",
+      "priority": "Alta",
+      "insight": "Comentario reflexivo sobre una publicación de ruptura; respuesta emocional y específica.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376083072582_1658593382547991",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T16:25:48+0000",
+      "comment_message": "Nunca e tenido algo así alguien que me de esperiensa🤔",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "El universo no entrega experiencias por catálogo, pero recomienda ir sin prisa. 😅",
+      "priority": "Media",
+      "insight": "Expresa falta de experiencia; la respuesta mantiene empatía y prudencia sin prometer ni describir.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376083072582_1508436187637419",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T15:15:01+0000",
+      "comment_message": "Jajaja como ayer 😜",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "El universo repite tema, pero ustedes nunca repiten el comentario. 😂",
+      "priority": "Media",
+      "insight": "Alude a la continuidad del contenido y reconoce el nuevo giro del hilo.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376083072582_1754742345836101",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T13:51:20+0000",
+      "comment_message": "Me urge una de esas",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "El universo recomienda empezar por la constancia, no por la urgencia. 😂",
+      "priority": "Alta",
+      "insight": "Expresa intención clara de experimentar el tema del meme; permite una respuesta editorial con criterio.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376083072582_1042114515343799",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T04:51:05+0000",
+      "comment_message": "Tener perrito los vuelve locos🤭🤣",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "El universo ya confirmó que los perritos vienen con efectos secundarios. 😂🙈",
+      "priority": "Media",
+      "insight": "Retoma el juego de palabras del comentario y mantiene el doble sentido en un nivel no gráfico.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376083072582_1852477149460266",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T16:25:46+0000",
+      "comment_message": "Buenp aclaremos que por màs que te gas la llave que màs aprieta no podrás apretar un alfiler",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "La llave podrá ser de alta presión, pero el universo también exige buena técnica. 😂",
+      "priority": "Media",
+      "insight": "Riff específico sobre la metáfora de la llave; responde al comentario sin escalar el contenido sexual.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376083072582_4578713942406487",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T05:10:04+0000",
+      "comment_message": "Vuelves precoz al más cabron🤣🤣🤣",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "El universo no garantiza efectos secundarios; solo dejó el chiste servido. 😂🙈",
+      "priority": "Media",
+      "insight": "Responde al remate sexual del comentario sin competir con su intensidad ni añadir detalles.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376083072582_1037049892299180",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T15:41:14+0000",
+      "comment_message": "El verdadero amarre.",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "Amarre, sí, pero con rutina incluida. 😂",
+      "priority": "Media",
+      "insight": "Retoma la idea de amarre del comentario y la conecta con el ejercicio del meme.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376083072582_1064431163230561",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T04:18:10+0000",
+      "comment_message": "Bendito seas, Arnold Henry Kegel.",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "El doctor Kegel estaría orgulloso de este comentario. 😂",
+      "priority": "Media",
+      "insight": "Referencia directa al origen del ejercicio; permite un remate inteligente sin añadir contenido explícito.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376083072582_1482819530395036",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T04:35:34+0000",
+      "comment_message": "La más deli experiencia 😈",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "Ese comentario llegó con la experiencia certificada incluida. 😂🙈",
+      "priority": "Media",
+      "insight": "Dobles sentidos del meme; la respuesta acompaña el tono sin describir ni escalar contenido sexual.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376083072582_1375056147466831",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T05:26:34+0000",
+      "comment_message": "Que así sea gracias 😌 jajajaj por un suelo pélvico sano 😂",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "Ese es el espíritu: humor, salud y cero excusas. 😂✨",
+      "priority": "Media",
+      "insight": "El comentario combina el chiste con una referencia explícita a salud del suelo pélvico; la respuesta conserva ambos elementos con criterio.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376083072582_1054911050596272",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T06:26:28+0000",
+      "comment_message": "Raiosss 😎 \n\n porque me sale esto , si claramente se sabe que no me puedo contener 😭😭. Y el algoritmo arrojará la publicación a mis contactos ... 🫣 \n\nDejen les explico que es para reducir las costillas y marcar el abdomen 🫣",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "El algoritmo también quiso participar en la clase de anatomía. 😂🙈",
+      "priority": "Alta",
+      "insight": "Comentario autoconsciente sobre la distribución del meme; oportunidad de respuesta específica y compartible.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376083072582_2128221185244977",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T10:13:15+0000",
+      "comment_message": "Quien tiene perrito se siente  tan ricoo😋😊",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "El algoritmo dejó el doble sentido servido y ustedes hicieron el resto. 😂🙈",
+      "priority": "Media",
+      "insight": "Reacción a una segunda variante del chiste del perrito; mantiene continuidad sin repetir una plantilla.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376083072582_1597619722155027",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T06:07:14+0000",
+      "comment_message": "Ahora resulta q todas son apretaditas 🤣🤣\nParrrrr favarrrrr la mayoría de mujeres qieren penes grandes se les antoja\nY con los chicos no cuenten nada eso explica todo",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "Jajaja, el debate se fue a otro universo; aquí solo veníamos por el ejercicio. 😂🙈",
+      "priority": "Media",
+      "insight": "Desescala una comparación sexual y devuelve la conversación al tema del meme.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376011072582_1511346237415004",
+      "post_id": "1036844829507460_122151376011072582",
+      "comment_created_time": "2026-08-24T13:53:34+0000",
+      "comment_message": "Universe Sent Me al fin subjetivo andando",
+      "post_message": "😌 #UniverseSentMe",
+      "proposed_reply": "Jajaja, esa canción llegó con la indirecta incluida. 😌",
+      "priority": "Alta",
+      "insight": "Mención directa a Universe Sent Me dentro de un hilo musical; la respuesta conecta el comentario con “Frío frío” de Juan Luis Guerra.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376011072582_1418262703532657",
+      "post_id": "1036844829507460_122151376011072582",
+      "comment_created_time": "2026-08-24T04:37:57+0000",
+      "comment_message": "Scorpions -You & I 🖤🌹🪄",
+      "post_message": "😌 #UniverseSentMe",
+      "proposed_reply": "Scorpions siempre entra con nostalgia elegante; “You & I” queda muy bien en este mood. 🖤🌹",
+      "priority": "Alta",
+      "insight": "Referencia musical concreta y conectada con el mood de la publicación.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376011072582_1076789614927276",
+      "post_id": "1036844829507460_122151376011072582",
+      "comment_created_time": "2026-08-24T14:12:18+0000",
+      "comment_message": "Mujer amante",
+      "post_message": "😌 #UniverseSentMe",
+      "proposed_reply": "“Mujer amante” entra justo en ese mood de canción que no pide permiso. 🖤",
+      "priority": "Alta",
+      "insight": "Título musical concreto que amplía la conversación del post sin respuesta genérica.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376011072582_1780015050089465",
+      "post_id": "1036844829507460_122151376011072582",
+      "comment_created_time": "2026-08-24T16:23:34+0000",
+      "comment_message": "Sueños del alma",
+      "post_message": "😌 #UniverseSentMe",
+      "proposed_reply": "“Sueños del alma” le queda perfecto a ese mood: suave por fuera, intenso por dentro. ✨",
+      "priority": "Media",
+      "insight": "Referencia musical o poética específica que encaja con la publicación y permite una respuesta con criterio.",
+      "approval_state": "Pendiente_Fernando"
+    }
+  ],
+  "closed_without_action": [
+    {
+      "comment_id": "122151376539072582_1380342656886963",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T07:47:36+0000",
+      "comment_message": "Lucrecia Montero Apoco",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376539072582_1742295650428395",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T11:22:47+0000",
+      "comment_message": "Lucrecia Montero si es verdad 😜",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376539072582_28156343077368654",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T11:24:36+0000",
+      "comment_message": "Oscar Lema lo voy a practicar entonces",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376539072582_1082252391416920",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T15:43:14+0000",
+      "comment_message": "Lucrecia Montero lo que te va a crecer es el ollo amor",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376539072582_2279147189508142",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T15:44:51+0000",
+      "comment_message": "Lucrecia Montero Funciona solo para las mujeres 😎",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376539072582_2368064344011658",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T16:33:53+0000",
+      "comment_message": "Lucrecia Montero éso es pura mentira Lo q te asé tener una buena Figura es Cojiendo y cuidándote con alimentos naturales así crece tú culo tú cuerpo esprimenta el semen?🧠👈",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376539072582_27010933268582791",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T06:36:31+0000",
+      "comment_message": "Mayra Gdlp Valdespino enserioo sii",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376539072582_1595420618619871",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T07:17:39+0000",
+      "comment_message": "Mayra Gdlp Valdespino más ancha de donde?",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376539072582_2165683630961986",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T07:48:05+0000",
+      "comment_message": "Mayra Gdlp Valdespino no me digas que si lo hicistes",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376539072582_2316624902210938",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T08:26:21+0000",
+      "comment_message": "Mayra Gdlp Valdespino pz Nada Mal hee👌😉😇",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376539072582_4081436048816939",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T16:02:03+0000",
+      "comment_message": "Mayra Gdlp Valdespino quiere probar mis 22cm",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376539072582_1507883758048838",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T07:48:41+0000",
+      "comment_message": "Guadalupe Gres por qué lo dices",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376539072582_2801993696836141",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T15:57:31+0000",
+      "comment_message": "Y la que guste lo comprobamos 😉🤣",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Invitación sexual abierta; no responder para evitar escalada y mantener el tono no gráfico de USM."
+    },
+    {
+      "comment_id": "122151376539072582_2185999025299395",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T16:25:03+0000",
+      "comment_message": "Quien sabe",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Reacción breve y ambigua; no requiere una respuesta específica."
+    },
+    {
+      "comment_id": "122151376539072582_1586668932961301",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T07:50:03+0000",
+      "comment_message": "Katlesy KuroNeko apoco",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376539072582_1384225937186766",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T11:28:46+0000",
+      "comment_message": "Katlesy KuroNeko pero debe ser varias veces....eso empieza el crecimiento despues q le empiezas a coger gusto🌹,,",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376539072582_1809525246881121",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T06:11:36+0000",
+      "comment_message": "Seraaa",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Reacción ambigua de baja señal; no hay una idea concreta que desarrollar."
+    },
+    {
+      "comment_id": "122151376539072582_1579280780243878",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T07:47:25+0000",
+      "comment_message": "Monssesita Gomez ya lo hicistes",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376539072582_1517259523410133",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T16:34:52+0000",
+      "comment_message": "Monssesita Gomez mentiras cariño",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376539072582_2302229697254222",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T07:48:18+0000",
+      "comment_message": "Marie Del Rio apoco",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376539072582_1097649419495817",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T10:35:24+0000",
+      "comment_message": "El oyo te va a crecer",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Remate sexual breve y ambiguo; no construir una respuesta sin contexto suficiente."
+    },
+    {
+      "comment_id": "122151376539072582_1719781712610755",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T05:25:01+0000",
+      "comment_message": "Es mas seguro",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Comentario demasiado breve y ambiguo para construir una respuesta específica."
+    },
+    {
+      "comment_id": "122151376539072582_1038391735671409",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T09:45:31+0000",
+      "comment_message": "Quien quiere le crescan sus ponpitas voy a domicilio😊",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Oferta de servicio con tono promocional/sexual; no es una oportunidad de engagement de la Página."
+    },
+    {
+      "comment_id": "122151376539072582_1037286275874549",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T09:46:21+0000",
+      "comment_message": "Oh pongan lugarcito  sin miedo al exito",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376539072582_1091544093296741",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T06:36:54+0000",
+      "comment_message": "Linda Gomez si t animarias",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376539072582_1374037014243030",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T07:48:23+0000",
+      "comment_message": "Linda Gomez que",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376539072582_2104411286852333",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T06:54:39+0000",
+      "comment_message": "😐",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Emoji aislado; no requiere respuesta de la Página."
+    },
+    {
+      "comment_id": "122151376539072582_1449883646972607",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T07:47:05+0000",
+      "comment_message": "Nayla Echeverria que paso",
+      "post_message": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_4076841835780078",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T11:42:11+0000",
+      "comment_message": "Eunice Espinheiro ese cómo es",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_947574218408511",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T16:24:17+0000",
+      "comment_message": "Xingu Zana Musa Tarot q rico",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_1066291592822276",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T16:41:57+0000",
+      "comment_message": "Con mi esposo si clarooo",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_1437282314880982",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T05:52:05+0000",
+      "comment_message": "Linda Wilkerson los vatos más exigentes son los \nque te la meten y nomás les llega, a los labios de la 🍞 Ocha 😂",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_1986619028836535",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T10:50:44+0000",
+      "comment_message": "LiZz Ramirez algunos ni a eso llegan 🙄😂😂😂😂😂😂😂😂😂😂",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_890910630481148",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T04:29:54+0000",
+      "comment_message": "Isela De La Cruz si hermana pobre pitillo chico 🤣",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_1685172899838354",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T04:30:41+0000",
+      "comment_message": "Ivan Delosantos pss un wey indesiso mejor nadota 🤣",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_2475636989584155",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T04:31:19+0000",
+      "comment_message": "Universe Sent Me sera que busco un criterio todo wuango 🤣",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_1474440198037493",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T04:32:41+0000",
+      "comment_message": "JCarlos HR oportunidades  van y no regresan 👌",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_1035968275894067",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T08:01:20+0000",
+      "comment_message": "Olivia Gonzalez\nEn serio? 😬",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_1706693273891187",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T15:15:41+0000",
+      "comment_message": "Universe Sent Me justo así aprendí",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_1680667606362856",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T05:23:53+0000",
+      "comment_message": "Imelda Dominguez cierto!!",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_2158728761720542",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T07:59:41+0000",
+      "comment_message": "MI Nina Hermoxxa\nUyyyy te la sabes",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_946654097692514",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T12:02:13+0000",
+      "comment_message": "MI Nina Hermoxxa rico",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_1082766324101680",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T15:15:19+0000",
+      "comment_message": "MI Nina Hermoxxa pitbull dice mi hombre jajaja",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_2613285652442148",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T15:17:12+0000",
+      "comment_message": "Carmen Luna ha caray explicate jajajaj",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_1594595032063210",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T07:57:07+0000",
+      "comment_message": "Tay Ochoa Chavez\nWow, en serio?",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_1082996270950199",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T16:21:52+0000",
+      "comment_message": "Tay Ochoa Chavez 🤔",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_1014607164893363",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T16:23:15+0000",
+      "comment_message": "Ella Larita me gustaría intentar que es éso",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_1716955579517613",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T06:00:30+0000",
+      "comment_message": "Delfina Gonzalez dime de qe presumes.... Y",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_2159105175041013",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T16:21:25+0000",
+      "comment_message": "Delfina Gonzalez q rico",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_2189838228609288",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T12:42:18+0000",
+      "comment_message": "Quien para mis 20cm",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Solicitud sexual explícita y de baja señal; no sumar escalada ni normalizar una respuesta gráfica."
+    },
+    {
+      "comment_id": "122151376083072582_2261598178082401",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T08:02:48+0000",
+      "comment_message": "Anais Rodriguez\nY usted tiene? 🫣",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_945824014444512",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T11:53:56+0000",
+      "comment_message": "André San claro que yes🥳",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_28914096281524356",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T16:35:40+0000",
+      "comment_message": "Anais Rodriguez\nUyyy en serio? 😍",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_1605124677664234",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T13:48:50+0000",
+      "comment_message": "Karina Skrzipietz No lo sé Ricky, no me consta 🙄",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151376083072582_1345634194224651",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T05:56:53+0000",
+      "comment_message": "Gracias jejeje",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Agradecimiento breve sin señal adicional; conservar el tono del ledger sin forzar una respuesta genérica."
+    },
+    {
+      "comment_id": "122151376083072582_1814552109914822",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T07:01:36+0000",
+      "comment_message": "Gracias",
+      "post_message": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "reason": "Agradecimiento breve sin señal adicional; no requiere intervención de la Página en este corte."
+    },
+    {
+      "comment_id": "122151376011072582_1424399456418240",
+      "post_id": "1036844829507460_122151376011072582",
+      "comment_created_time": "2026-08-24T16:34:09+0000",
+      "comment_message": "Bonita bonita",
+      "post_message": "😌 #UniverseSentMe",
+      "reason": "No intervenir: comentario de baja señal, conversación lateral o contenido que no requiere una respuesta de la Página."
+    },
+    {
+      "comment_id": "122151375843072582_1606199587887450",
+      "post_id": "1036844829507460_122151375843072582",
+      "comment_created_time": "2026-08-24T14:42:10+0000",
+      "comment_message": "Melissa Muñoz Todo bien en casa?",
+      "post_message": "Analizando mi propio caos. 🧐 #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    },
+    {
+      "comment_id": "122151375843072582_1732443401417593",
+      "post_id": "1036844829507460_122151375843072582",
+      "comment_created_time": "2026-08-24T14:47:54+0000",
+      "comment_message": "Marcela Flores pues fijate que en mi casa perfectamente no se en la tuya si te puedo ayudar en algo a ti? deberias meterte en tus asuntos mija no en los de otros!!! Puedes ayudar personas mayores con alzaimer o demencia senil principios de SUSACC??? o simplemente te estas uniendo a la campaña de desprestigio que andan de uno. A ver si asi aprenden, el dia que te conozca contestare a tu pregunta! Ministerio Público Honduras Daniel Habif Facebook se les deberia de caer la cara de verguenza el acoso es delito he invadir la privacidad tambien lo es.quienes crean y comentan el meme solo con eso ya se sabe.DE DIOS NO SE ESCAPA NADIE. Han buscado por todos lados como en suciarlo a uno quedan mal y cada vez los que se hunden mas son todos ustedes hasta dinde lleva la ambicion hasta donde Padre Héctor Mario Salazar Londoño debería poner en oracion este asunto por favor. Asi fue como me.paso todo el daño hecho.",
+      "post_message": "Analizando mi propio caos. 🧐 #UniverseSentMe",
+      "reason": "Réplica dentro de una conversación usuario-a-usuario; intervenir rompería el intercambio y no hay solicitud clara a la Página."
+    }
+  ]
+}

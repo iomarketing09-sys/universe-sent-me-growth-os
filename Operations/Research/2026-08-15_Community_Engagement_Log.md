@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "5.0"
+version: "5.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -148,6 +148,16 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_Complete_Responded_Registration_Repair.json"
   - "Operations/Research/2026-08-24_Facebook_Complete_Responded_Registry.json"
   - "Operations/Research/2026-08-24_Facebook_Complete_Responded_Registry.md"
+  - "Operations/Automation/audit_facebook_comments_after_batch14.py"
+  - "Operations/Automation/fetch_facebook_after_batch14_candidate_context.py"
+  - "Operations/Automation/record_facebook_after_batch14_review.py"
+  - "Operations/Automation/export_facebook_after_batch14_review_md.py"
+  - "Operations/Automation/build_facebook_pending_queue_after_review.py"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Review_After_Batch14.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Context_After_Batch14.json"
+  - "Operations/Research/2026-08-24_Facebook_Editorial_Review_After_Batch14.json"
+  - "Operations/Research/2026-08-24_Facebook_Editorial_Review_After_Batch14.md"
+  - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Review.json"
 organization: "Operations/Research"
 ---
 
@@ -661,3 +671,24 @@ Tres replies permanecen como `Respondido` con trazabilidad histórica, pero su G
 La vista consolidada de las 166 filas está en `2026-08-24_Facebook_Complete_Responded_Registry.json` y `2026-08-24_Facebook_Complete_Responded_Registry.md`. La verificación completa está en `2026-08-24_Facebook_All_Responded_Comments_Meta_Verification.json`; la reparación aplicada está en `2026-08-24_Facebook_Complete_Responded_Registration_Repair.json`.
 
 **Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/00_01_Changelog_GrowthOS.md` y este documento. El CSV continúa siendo la fuente única de verdad operativa.
+
+
+## 18. Nuevo corte posterior al Batch 14 — revisión de comentarios sin respuesta — 24 de agosto de 2026
+
+La revisión exclusiva mediante Meta Graph API v26.0 se ejecutó a las `2026-08-24T16:42:06+00:00`, usando como cursor el cierre verificado del Batch 14 (`2026-08-24T04:14:14+00:00`). Se consultaron las 20 publicaciones propias más recientes, 232 comentarios raíz y 329 IDs de comentarios y réplicas. No hubo errores de API ni escrituras en Facebook.
+
+Se detectaron **83 comentarios nuevos sin respuesta** desde el cursor. Se registraron de forma idempotente en el CSV, que pasó de 270 a **353 filas**. La clasificación editorial dejó **24 propuestas específicas** en `Pendiente_Respuesta` + `Pendiente_Aprobacion` y **59 casos en `No_Requiere_Respuesta`**. La cola tiene 0 publicaciones autorizadas sin una nueva aprobación: ninguna de las 24 propuestas debe publicarse automáticamente.
+
+| Resultado | Casos | Tratamiento |
+|---|---:|---|
+| Comentarios nuevos sin respuesta | 83 | Registrados una sola vez por `Comentario_ID` |
+| Propuestas específicas | 24 | Pendientes de aprobación explícita de Fernando |
+| No requiere respuesta | 59 | Conversaciones usuario-a-usuario, baja señal, solicitación, o contenido que no conviene escalar |
+| Publicaciones realizadas en este corte | 0 | Solo lectura; no se modificó Facebook |
+| Errores de API | 0 | Sin incidencias técnicas |
+
+Las propuestas con prioridad alta incluyen **“Scorpions — You & I”**, la mención musical a **“Frío frío”**, **“Mujer amante”**, **“Sueños del alma”**, una reflexión sobre el aire y el afecto, y comentarios autoconscientes sobre el algoritmo o la intención de experimentar. Las propuestas de doble sentido se mantienen cómplices y no gráficas. Las réplicas que únicamente continúan conversaciones entre usuarios, incluso cuando contienen nombres o etiquetas, no se interrumpen salvo que exista una solicitud clara a la Página.
+
+El detalle completo está en `2026-08-24_Facebook_Editorial_Review_After_Batch14.md/.json`; el contexto de los padres de las réplicas está en `2026-08-24_Facebook_Comment_Context_After_Batch14.json`; y el estado resumido de la cola en `2026-08-24_Facebook_Pending_Queue_After_Review.json`. El CSV continúa siendo la fuente única de verdad operativa y toda propuesta permanece bloqueada hasta recibir autorización explícita.
+
+**Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

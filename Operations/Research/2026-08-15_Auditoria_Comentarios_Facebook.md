@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "5.5"
+version: "5.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -27,6 +27,16 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_Complete_Responded_Registration_Repair.json"
   - "Operations/Research/2026-08-24_Facebook_Complete_Responded_Registry.json"
   - "Operations/Research/2026-08-24_Facebook_Complete_Responded_Registry.md"
+  - "Operations/Automation/audit_facebook_comments_after_batch14.py"
+  - "Operations/Automation/fetch_facebook_after_batch14_candidate_context.py"
+  - "Operations/Automation/record_facebook_after_batch14_review.py"
+  - "Operations/Automation/export_facebook_after_batch14_review_md.py"
+  - "Operations/Automation/build_facebook_pending_queue_after_review.py"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Review_After_Batch14.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Context_After_Batch14.json"
+  - "Operations/Research/2026-08-24_Facebook_Editorial_Review_After_Batch14.json"
+  - "Operations/Research/2026-08-24_Facebook_Editorial_Review_After_Batch14.md"
+  - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Review.json"
   - "Operations/Automation/validate_community_engagement_log.py"
   - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_02.json"
@@ -1156,3 +1166,26 @@ Meta verificó actualmente 163 de las 166 respuestas. Tres replies históricos d
 El registro consolidado de las 166 filas está en `2026-08-24_Facebook_Complete_Responded_Registry.json` y `2026-08-24_Facebook_Complete_Responded_Registry.md`. La evidencia técnica está en `2026-08-24_Facebook_All_Responded_Comments_Meta_Verification.json`, `2026-08-24_Facebook_All_Replies_Reconciliation.json`, `2026-08-24_Facebook_Complete_Responded_Registration_Repair.json` y `2026-08-24_Facebook_Missing_Replies_Thread_Scan.json`.
 
 El CSV `Operations/Research/2026-08-15_Community_Engagement_Log.csv` continúa siendo la fuente única de verdad operativa. Los documentos relacionados actualizados por esta modificación son `Operations/Research/2026-08-15_Community_Engagement_Log.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 34. Revisión posterior al Batch 14 — comentarios nuevos sin responder — 24 de agosto de 2026
+
+La revisión exclusiva mediante Meta Graph API v26.0 se ejecutó en modo lectura a las `2026-08-24T16:42:06+00:00`, con cursor `2026-08-24T04:14:14+00:00`, correspondiente al cierre verificado del Batch 14. Se consultaron las 20 publicaciones propias más recientes, 232 comentarios raíz y 329 IDs de comentarios y réplicas. No se registraron errores de API ni se realizaron escrituras.
+
+El corte encontró **83 comentarios nuevos sin respuesta**. La clasificación editorial separó **24 oportunidades potenciales** con copy específico de **59 casos `No_Requiere_Respuesta`**. Las propuestas quedaron en `Pendiente_Respuesta` + `Pendiente_Aprobacion`; ninguna autorización se infiere de este documento.
+
+| Resultado | Casos | Lectura de auditoría |
+|---|---:|---|
+| Comentarios nuevos sin respuesta | 83 | Hallazgos posteriores al cursor Batch 14 |
+| Propuestas específicas | 24 | Requieren aprobación explícita antes de publicar |
+| No requiere respuesta | 59 | Principalmente conversaciones usuario-a-usuario, baja señal, solicitación o escalada sexual |
+| Publicaciones ejecutadas | 0 | Corte exclusivamente GET/read-only |
+| Errores de API | 0 | Sin incidencias técnicas |
+
+Las oportunidades de mayor prioridad son referencias musicales concretas —“Scorpions — You & I”, “Frío frío”, “Mujer amante” y “Sueños del alma”—, una reflexión sobre afecto y aire, y comentarios autoconscientes sobre el algoritmo o la intención de experimentar. En el post de doble sentido, las propuestas responden al remate concreto sin añadir detalle sexual ni competir con la escalada del hilo.
+
+Las 59 no-acciones se mantienen fuera de la cola publicable: 48 son réplicas dentro de conversaciones entre usuarios sin solicitud clara a la Página; las restantes son reacciones breves, comentarios ambiguos, promociones, invitaciones explícitas o contenido que no ofrece un ángulo seguro y específico para USM. Las menciones a `Universe Sent Me` dentro de una conversación lateral no se convierten automáticamente en solicitud dirigida a la Página.
+
+El registro completo de decisiones está en `2026-08-24_Facebook_Editorial_Review_After_Batch14.md/.json`; el contexto de las réplicas está en `2026-08-24_Facebook_Comment_Context_After_Batch14.json`; y el resumen de cola en `2026-08-24_Facebook_Pending_Queue_After_Review.json`. El ledger pasa a 353 filas y conserva `Privacidad=Anonimizado`. La cola contiene 24 propuestas que requieren decisión de Fernando y **0 publicaciones autorizadas sin nueva aprobación**.
+
+**Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Community_Engagement_Log.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

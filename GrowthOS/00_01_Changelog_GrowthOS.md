@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-24
-**Versión:** 3.65
+**Versión:** 3.66
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
-**Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`, `Operations/Production/2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md`
+**Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`, `Operations/Production/2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md`, `Operations/Research/2026-08-15_Community_Engagement_Log.md`, `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `Operations/Research/2026-08-24_Facebook_Editorial_Review_After_Batch14.md`
+
+- **[3.66.00] — 2026-08-24 (Manus): Nuevo corte de comentarios de Facebook posterior al Batch 14.** Meta Graph API v26.0 revisó en modo solo lectura las 20 publicaciones propias más recientes y encontró 83 comentarios nuevos sin respuesta desde el cursor `2026-08-24T04:14:14+00:00`. Se registraron 24 propuestas específicas como `Pendiente_Respuesta` + `Pendiente_Aprobacion` y 59 casos como `No_Requiere_Respuesta`; no se realizaron publicaciones ni hubo errores de API. El ledger pasó a 353 filas y conserva `Privacidad=Anonimizado`; la cola requiere aprobación explícita de Fernando antes de cualquier escritura. Evidencia: `2026-08-24_Facebook_Comment_Review_After_Batch14.json`, `2026-08-24_Facebook_Comment_Context_After_Batch14.json`, `2026-08-24_Facebook_Editorial_Review_After_Batch14.md` y `2026-08-24_Facebook_Pending_Queue_After_Review.json`.
 
 - **[3.65.00] — 2026-08-24 (Manus): Paquete P1 de mantenimiento cerrado en el staging Cloudflare de Firma Bordados.** Se integró CI en GitHub para Pull Requests y pushes a `staging`/`main`, con instalación bloqueada, TypeScript y build Vite; tras corregir la inicialización de pnpm, las ejecuciones de ambas ramas terminaron correctamente. Los commits `f49a344` y `beaaa8d` retiraron providers inactivos y las dependencias `next-themes`/`sonner`, hicieron segura en español la pantalla de recuperación, priorizaron el hero y difirieron imágenes no críticas. El bundle principal disminuyó de ≈562 kB a 451.78 kB sin comprimir y de ≈163 kB a 127.12 kB gzip. Se promovió a `main`, que Pages sirve como staging, y se verificaron noindex, robots y headers P0. La protección formal de `main` permanece pendiente de decisión porque altera la colaboración. Wix, DNS, nameservers y `firmabordados.com` no cambiaron.
 
