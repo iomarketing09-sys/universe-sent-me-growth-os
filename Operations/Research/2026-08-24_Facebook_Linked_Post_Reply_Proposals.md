@@ -41,6 +41,10 @@ Hahahahahahahaha | Jajaja, entendimos el doble sentido, pero mantengamos el hilo
 
 ## Propuestas opcionales: baja señal
 
+**Publicación identificadora:** `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`
+**Page Post ID:** `1036844829507460_122151376083072582`
+**Enlace de referencia:** https://www.facebook.com/122146890051072582/posts/122151376083072582
+
 Estas respuestas pueden generar continuidad, pero no son obligatorias. Para comentarios vacíos, nombres aislados o conversaciones entre usuarios se mantiene la recomendación de no responder.
 
 | Comment ID | Comentario | Propuesta opcional | Estado |
