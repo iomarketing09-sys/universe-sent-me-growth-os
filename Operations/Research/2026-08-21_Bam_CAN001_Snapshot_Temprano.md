@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — CAN-001: snapshot temprano consolidado"
 purpose: "Conservar las métricas públicas observables de la primera cascada de CAN-001 y distinguir datos medidos de campos no expuestos sin autenticación."
-status: "Active — corte operativo registrado; YouTube con evidencia directa y Windsor pendiente de indexación"
+status: "Active — Instagram actualizado; YouTube con evidencia directa y Windsor pendiente de indexación"
 created: 2026-08-21
-updated: 2026-08-22
-version: "1.4"
+updated: 2026-08-23
+version: "1.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
@@ -58,6 +58,12 @@ Fernando autorizó un nuevo corte con la hora real de consulta, sin forzarlo a l
 | TikTok | Windsor.ai, `data_fetched_at` 03:04:28 UTC / 22:04:28 CDT; 27 h 00 min 08 s | 145 views; 1 like; 0 comentarios; 0 shares; 0 favoritos; avg. watch time 2.20 s; total watch 341 s; full-watched rate 4.52 %. | +52 views (+55.91 %) y +1 like. La duración reportada por TikTok es 8.08 s; el avg. watch equivale a 27.22 % de esa duración. |
 | Instagram Reels | Windsor.ai, `data_fetched_at` 03:05:07 UTC / 22:05:07 CDT; 26 h 45 min 07 s | 271 views; reach 215; 1 like; 0 comentarios; 0 shares; 0 saves; 1 interacción; avg. watch time 3.994 s; total watch 858.822 s. | +73 views (+36.86 %) y +54 de reach. El avg. watch equivale a 57.05 % de un clip de 7 s; la interacción es 0.46 % sobre reach y 0.36 % sobre views. |
 | YouTube Shorts | Windsor.ai consultado 03:05:18 UTC / 22:05:18 CDT; 26 h 15 min 18 s | Sin fila autenticada para `iuHT1kN0Uow`. La última evidencia directa sigue siendo 2 vistas y 1 compartido alrededor de T+18 h. | Sin métrica autenticada nueva. La ausencia en Windsor se mantiene como indexación pendiente, no como cero rendimiento. |
+
+## Actualización de Instagram — 23 de agosto
+
+Se actualizó CAN-001 por shortcode, sin rango de fechas y en bloques de hasta cuatro fields. La consulta de views/reach devolvió `data_fetched_at` **20:51:35 CDT**; el bloque de watch time devolvió **20:57:54 CDT**. A efectos de este refresh, el Reel acumula **280 views**, **reach 217**, **2 likes**, 0 comentarios y 0 shares. El avg. watch time raw `4345` y total watch time raw `947410` se registran como **4.345 s** y **947.410 s**, respectivamente, siguiendo la magnitud de milisegundos de la exportación de Windsor.ai.
+
+Frente al corte operativo previo (271 views, reach 215 y 1 like), el registro muestra +9 views, +2 de reach y +1 like. El avg. watch equivale aproximadamente al **62 %** de los 7 segundos del clip. Esta actualización no modifica la lectura causal: sigue siendo una sola pieza, y YouTube no aporta aún un control cuantitativo usable.
 
 ## Lectura operativa
 

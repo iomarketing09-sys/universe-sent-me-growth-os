@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — CAN-002: chequeo inicial de visibilidad"
 purpose: "Preservar el primer corte operativo de CAN-002 antes de las ventanas T+3 h, separando métricas autenticadas, evidencia pública e indexación pendiente."
-status: "Active — Instagram confirmado operativo; YouTube sigue pendiente de fila"
+status: "Active — Instagram actualizado por shortcode; YouTube sigue pendiente de fila"
 created: 2026-08-23
 updated: 2026-08-23
-version: "1.3"
+version: "1.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
@@ -47,6 +47,12 @@ Para respetar el límite de la cuenta gratuita, se ejecutaron consultas reducida
 La cuenta `bam_inacan` y sus capacidades de media/insights están operativas. Una consulta de inventario **sin filtro de fecha**, con solo `media_shortcode`, `media_caption` y `data_fetched_at`, devolvió CAN-001 y CAN-002 a las **20:51:19 CDT**. Una segunda consulta de CAN-002 por shortcode, también sin rango de fechas, devolvió **200 views** y **reach 34** a las **20:51:35 CDT**; un tercer bloque reducido devolvió **0 likes** y **0 comentarios** a las **20:51:47 CDT**.
 
 La causa de los conjuntos vacíos de Instagram no fue el número de fields, ni una falta de permisos, ni la ausencia del Reel: fue el uso del rango de fechas junto con la consulta de media. A partir de ahora, para Reels individuales de Bam se debe consultar por `media_shortcode` **sin** `date_from`/`date_to`, mediante bloques de hasta cuatro fields. YouTube continúa sin fila incluso con campos mínimos y requiere una ruta de diagnóstico separada.
+
+### Actualización de métricas de Instagram
+
+El refresh conjunto de CAN-001 y CAN-002 mantuvo el filtro por shortcode sin rango de fechas. Para CAN-002, el bloque de views/reach conservó `data_fetched_at` **20:51:35 CDT**: **200 views** y **reach 34**. El bloque de interacciones devolvió 0 likes, 0 comentarios y 0 shares. El bloque de consumo devolvió `data_fetched_at` **20:57:54 CDT**, con avg. watch time raw `8536` y total watch time raw `290246`, documentados como **8.536 s** y **290.246 s** tras convertir de milisegundos.
+
+El avg. watch equivale aproximadamente al **85 %** de los 10 segundos de CAN-002, pero no autoriza un veredicto creativo todavía: la pieza tiene menor alcance, el snapshot sigue temprano y no hay control cuantitativo de YouTube. La lectura correcta es que la retención inicial merece seguimiento, no que el audio ni el formato ya estén validados.
 
 ## Límites y actualizaciones relacionadas
 
