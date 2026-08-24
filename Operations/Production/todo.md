@@ -12,3 +12,5 @@
 - [x] Documentar el staging técnico y la validación de Firma Bordados en Cloudflare Pages sin cambio de DNS.
 - [x] Comparar WordPress con el sitio estático actual antes de decidir la plataforma final del cliente.
 - [x] Evaluar un staging de WordPress administrado como alternativa a Cloudflare Pages, con cuenta, datos y presupuesto propios del cliente.
+- [x] Definir y revisar una animación ligera, accesible y coherente con Color que Trabaja antes de modificar el staging de Firma Bordados.
+- [x] Implementar la puntada inicial, entradas breves y microinteracciones aprobadas en el staging de Firma Bordados; validar en escritorio y móvil.

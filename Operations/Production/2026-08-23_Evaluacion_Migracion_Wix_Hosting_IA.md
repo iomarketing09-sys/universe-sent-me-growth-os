@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 1.9
+**Versión:** 2.0
 
 **Autor:** Manus AI
 
@@ -152,6 +152,10 @@ La guía técnica completa de la prueba sin DNS está en `2026-08-23_Guia_Stagin
 Fernando aclaró que desea evaluar **WordPress como alternativa al host Cloudflare Pages**, no solo como un CMS accesorio. La ruta prioritaria en Review pasa a ser WordPress.com bajo cuenta del cliente, usando primero un sitio temporal `*.wordpress.com` sin DNS. Esta alternativa es viable dentro del presupuesto de referencia con el plan Personal anual; no ofrece el staging nativo de WordPress.com, que queda limitado a Business/Commerce y supera ese presupuesto. La guía operativa separada es `2026-08-23_Ruta_Staging_WordPress_Firma_Bordados.md`.
 
 La opción Cloudflare Pages continúa documentada como alternativa estática y reversible, pero no se iniciará mientras se evalúe la preferencia WordPress. Ninguna ruta autoriza mezclar infraestructura, credenciales, presupuesto o datos del cliente con Universe Sent Me u OmniRoute.
+
+### Decisión vigente: Cloudflare Pages con movimiento ligero
+
+Fernando confirmó posteriormente que Cloudflare Pages es la ruta preferida por coste y mantenimiento. El staging React/Vite recibió la actualización visual `Color que Trabaja` documentada en `2026-08-23_Actualizacion_Movimiento_Staging_Firma_Bordados.md`: una puntada SVG de entrada, revelados breves, microinteracciones de catálogo/CTA y reglas de bordado como sistema de identidad. La alternativa WordPress se conserva únicamente como referencia y no se ejecutará sin nueva decisión. No hubo cambios a Wix, DNS, contenido, catálogos ni formulario.
 
 ## Integración futura de IA
 

@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-24
-**Versión:** 3.55
+**Versión:** 3.56
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.56.00] — 2026-08-23 (Manus): Cloudflare Pages y movimiento ligero confirmados para Firma Bordados.** Se confirmó Cloudflare Pages como ruta de hosting de menor coste/mantenimiento frente a WordPress y se aplicó al staging la puntada SVG de entrada, revelados breves, microinteracciones de catálogos/CTA y sistema de fichas con reglas de bordado. El movimiento respeta `prefers-reduced-motion`; no se añadieron loops, video automático, parallax, partículas ni carruseles. Wix, DNS, catálogos, formulario y datos del cliente no cambiaron. WordPress permanece solo como alternativa documentada.
 
 - **[3.55.00] — 2026-08-23 (Manus): Ruta WordPress.com para staging de Firma Bordados.** Fernando aclaró que evalúa WordPress como plataforma de hosting en lugar de Cloudflare Pages. Se documentó la ruta WordPress.com bajo cuenta del cliente: sitio temporal `*.wordpress.com`, activos/PDFs propios, revisión sin DNS y conexión futura del dominio Wix mediante registros DNS solo después de aprobación escrita. WordPress.com Personal cabe en el presupuesto de referencia; el staging nativo Business/Commerce no. No se creó cuenta, contrató plan, modificó Wix/DNS ni se mezcló infraestructura con Universe Sent Me.
 
