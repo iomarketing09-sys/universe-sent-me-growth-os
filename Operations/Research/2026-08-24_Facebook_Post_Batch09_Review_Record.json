@@ -1,0 +1,23 @@
+{
+  "title": "Facebook Post-Batch 09 Review Record",
+  "purpose": "Registrar un hallazgo nuevo de solo lectura clasificado como réplica usuario-a-usuario y fuera de la cola de respuesta.",
+  "status": "Active",
+  "created_at": "2026-08-24T03:05:45+00:00",
+  "updated_at": "2026-08-24T03:05:45+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-24_Facebook_Comment_Review_Broad_72h_Post_Batch09.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
+    "Operations/Research/2026-08-24_Facebook_Pending_Queue_Remaining.md"
+  ],
+  "organization": "Operations/Research",
+  "source": "Meta Graph API v26.0",
+  "reviewed_at": "2026-08-24T03:05:45+00:00",
+  "new_rows_added": 1,
+  "no_action_rows": 1,
+  "publication_performed": false,
+  "comment_ids": [
+    "122151375549072582_1034906995912331"
+  ]
+}

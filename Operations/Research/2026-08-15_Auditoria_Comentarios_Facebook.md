@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "4.6"
+version: "4.7"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -68,6 +68,11 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_Pending_Queue_Reconciliation.json"
   - "Operations/Research/2026-08-24_Facebook_Pending_Queue_Reconciliation.md"
   - "Operations/Research/2026-08-24_Facebook_Followup_Review_Record.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_09.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_09.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Review_Broad_72h_Post_Batch09.json"
+  - "Operations/Research/2026-08-24_Facebook_Post_Batch09_Review_Record.json"
+  - "Operations/Research/2026-08-24_Facebook_Pending_Queue_Remaining.md"
 organization: "Operations/Research"
 ---
 
@@ -929,3 +934,20 @@ Después se ejecutó un seguimiento de solo lectura sobre las mismas 20 publicac
 La reconciliación corrigió el filtro anterior que solo mostraba hallazgos nuevos. La cola completa conserva **41 propuestas pendientes**: **5 recomendaciones musicales raíz** del post `😌 #UniverseSentMe` y 36 propuestas de otros hilos. Las cinco musicales son “Unstoppable”, “El día que volviste a la tierra - Carlos Sadness”, “Con migo danza el que ama mí Alma”, “alguien como tú - Josean log” y “Las cuatro estaciones, Antonio Vivaldi.” La réplica de usuario a usuario sobre escuchar una canción se mantiene fuera de la cola de respuestas de la Página.
 
 No se publicaron respuestas adicionales durante la reconciliación. Los dos nuevos candidatos musicales quedan pendientes de aprobación explícita de Fernando, al igual que las propuestas ya registradas de la cola completa. La evidencia está en `2026-08-24_Facebook_Comment_Review_Broad_72h_Followup.json`, `2026-08-24_Facebook_Pending_Queue_Reconciliation.md/.json` y `2026-08-24_Facebook_Followup_Review_Record.json`.
+
+
+## 58. Batch 09 y cola restante — 24 de agosto de 2026
+
+Fernando aprobó las cinco respuestas musicales de la reconciliación. La API permitió publicar y verificar cuatro; el comentario “El día que volviste a la tierra - Carlos Sadness” devolvió `HTTP 400 / código 100` al intentar cargar su objeto. No se forzó la publicación y el caso quedó documentado como `Bloqueado_API` para una nueva lectura si vuelve a estar disponible.
+
+| Comentario padre | Resultado | Respuesta_Meta_ID |
+|---|---|---|
+| `122151376011072582_1720626909225543` — “Unstoppable” | Publicada y verificada | `122151376083072582_1039764151997713` |
+| `122151376011072582_1703056380925949` — “El día que volviste a la tierra - Carlos Sadness” | Bloqueada por objeto inaccesible en Meta | No aplica |
+| `122151376011072582_2110248423207879` — “Con migo danza el que ama mí Alma” | Publicada y verificada | `122151376083072582_3696977003793724` |
+| `122151376011072582_1622582352867257` — “alguien como tú - Josean log” | Publicada y verificada | `122151376083072582_2632335903871914` |
+| `122151376011072582_2033022903995271` — “Las cuatro estaciones, Antonio Vivaldi.” | Publicada y verificada | `122151376082072582_917259168104259` |
+
+La revisión posterior de la cola dejó **34 propuestas activas pendientes**, **1 comentario aprobado bloqueado** y **1 réplica musical excluida** por ser conversación usuario-a-usuario. Las propuestas accionables se agrupan en 25 del post `☁️✨🤔` y 9 del meme `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`. El último corte posterior encontró un comentario nuevo adicional, también una réplica entre usuarios, registrado como `No_Requiere_Respuesta`.
+
+La evidencia está en `2026-08-24_Facebook_Comment_Publication_Batch_09.json`, `2026-08-24_Facebook_Comment_Publication_Record_Batch_09.json`, `2026-08-24_Facebook_Pending_Queue_Remaining.md` y `2026-08-24_Facebook_Post_Batch09_Review_Record.json`. No se publicaron respuestas fuera de las cuatro verificadas; el caso inaccesible permanece pendiente de nueva lectura.

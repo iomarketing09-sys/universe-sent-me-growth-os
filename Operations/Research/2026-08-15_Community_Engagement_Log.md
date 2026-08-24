@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "4.1"
+version: "4.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -70,6 +70,16 @@ related_documents:
   - "Operations/Automation/record_facebook_publication_batch_08.py"
   - "Operations/Production/audit_facebook_unanswered_comments_broad_72h_followup.py"
   - "Operations/Automation/reconcile_facebook_pending_queue_20260824.py"
+  - "Operations/Automation/publish_five_approved_music_replies_20260824.py"
+  - "Operations/Automation/record_facebook_publication_batch_09.py"
+  - "Operations/Automation/diagnose_music_comment_ids_20260824.py"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_09.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_09.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Review_Broad_72h_Post_Batch09.json"
+  - "Operations/Research/2026-08-24_Facebook_Post_Batch09_Review_Record.json"
+  - "Operations/Research/2026-08-24_Facebook_Pending_Queue_Remaining.md"
+  - "Operations/Production/audit_facebook_unanswered_comments_broad_72h_post_batch09.py"
+  - "Operations/Automation/export_remaining_facebook_pending_queue_20260824.py"
   - "GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md"
 organization: "Operations/Research"
 ---
@@ -482,3 +492,19 @@ El seguimiento posterior revisó las mismas 20 publicaciones y la ventana móvil
 La reconciliación de la cola completa mostró **41 propuestas pendientes**, incluidas **5 recomendaciones musicales raíz** del post `😌 #UniverseSentMe`: “Unstoppable”, “El día que volviste a la tierra - Carlos Sadness”, “Con migo danza el que ama mí Alma”, “alguien como tú - Josean log” y “Las cuatro estaciones, Antonio Vivaldi.” La réplica que invita a escuchar una canción se conserva como conversación usuario-a-usuario y no como respuesta para la Página.
 
 No se publicaron respuestas adicionales durante esta revisión. Los cinco casos musicales requieren aprobación explícita individual o por subconjunto. El detalle está en `2026-08-24_Facebook_Pending_Queue_Reconciliation.md/.json` y la evidencia de publicación en los artefactos Batch 08.
+
+
+## 32. Batch 09 y cola restante — 24 de agosto de 2026
+
+Fernando aprobó las cinco respuestas musicales. Meta Graph API v26.0 publicó y verificó cuatro; el comentario “El día que volviste a la tierra - Carlos Sadness” no pudo cargarse y quedó como `Bloqueado_API` sin forzar la escritura. El detalle técnico está en los artefactos Batch 09.
+
+| Resultado | Cantidad |
+|---|---:|
+| Respuestas publicadas y verificadas | 4 |
+| Comentarios aprobados bloqueados por Meta | 1 |
+| Respuestas adicionales publicadas durante la revisión de cola | 0 |
+| Propuestas activas restantes | 34 |
+
+La cola restante se agrupa en 25 propuestas del post `☁️✨🤔` y 9 del meme `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`; 1 réplica musical queda excluida por ser conversación usuario-a-usuario. El último corte posterior añadió una réplica nueva clasificada como `No_Requiere_Respuesta`. No se publicará ninguna respuesta de la cola restante sin aprobación explícita de Fernando.
+
+El ledger queda con 255 filas y 255 IDs únicos antes de cualquier nuevo comentario posterior; la validación más reciente confirmó `PASS`. La evidencia está en `2026-08-24_Facebook_Comment_Publication_Batch_09.json`, `2026-08-24_Facebook_Comment_Publication_Record_Batch_09.json`, `2026-08-24_Facebook_Pending_Queue_Remaining.md` y `2026-08-24_Facebook_Post_Batch09_Review_Record.json`.

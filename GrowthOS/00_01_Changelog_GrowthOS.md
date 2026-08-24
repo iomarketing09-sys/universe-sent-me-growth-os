@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-24
-**Versión:** 3.43
+**Versión:** 3.44
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.44.00] — 2026-08-24 (Manus): Batch 09 y revisión de la cola restante de Facebook.** Fernando aprobó cinco respuestas musicales. Meta Graph API v26.0 publicó y verificó cuatro; el comentario “El día que volviste a la tierra - Carlos Sadness” quedó bloqueado porque su objeto ya no era accesible (`HTTP 400`, código 100), sin forzar la escritura. La cola restante quedó reconciliada en 34 propuestas activas, 1 caso aprobado bloqueado y 1 réplica excluida por ser conversación usuario-a-usuario; además, un corte posterior encontró una réplica usuario-a-usuario clasificada como `No_Requiere_Respuesta`. El ledger conserva 255 filas y 255 IDs únicos; validación PASS. No se publicaron respuestas fuera de las cuatro verificadas del Batch 09.
 
 - **[3.43.00] — 2026-08-24 (Manus): Batch 08 y reconciliación completa de la cola de Facebook.** Fernando aprobó dos respuestas del corte amplio y Meta Graph API v26.0 confirmó ambas publicaciones: “Ahí está: no era el producto, era la atención. 😂🔋” y “Jajaja, ahí ya se necesita un plan de salida. 😂🙈”, con autoría de Página, padres correctos, textos exactos e `is_hidden=false`. El seguimiento revisó nuevamente las 20 publicaciones y encontró 5 comentarios nuevos; la reconciliación dejó visibles 41 propuestas pendientes, incluidas 5 recomendaciones musicales raíz que antes quedaban fuera del resumen de novedades. No se publicaron respuestas adicionales durante la reconciliación. El ledger conserva 254 filas y 254 IDs únicos; validación PASS. Evidencia: Batch 08, seguimiento de 72 horas y `Facebook_Pending_Queue_Reconciliation`.
 
