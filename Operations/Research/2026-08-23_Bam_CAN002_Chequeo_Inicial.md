@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — CAN-002: chequeo inicial de visibilidad"
 purpose: "Preservar el primer corte operativo de CAN-002 antes de las ventanas T+3 h, separando métricas autenticadas, evidencia pública e indexación pendiente."
-status: "Active — consultas reducidas confirman que Instagram y YouTube siguen pendientes de filas"
+status: "Active — Instagram confirmado operativo; YouTube sigue pendiente de fila"
 created: 2026-08-23
 updated: 2026-08-23
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
@@ -40,7 +40,13 @@ Fernando confirmó que actualizó la conexión de Instagram en Windsor.ai. La re
 
 ### Validación con campos mínimos
 
-Para respetar el límite de la cuenta gratuita, se ejecutaron consultas reducidas de cuatro campos por plataforma. Instagram usó `media_shortcode`, `media_views`, `media_reach` y `data_fetched_at` a las **20:46:42 CDT**; YouTube usó `video_title`, `views`, `likes` y `data_fetched_at` a las **20:46:59 CDT**. Ambas devolvieron conjuntos vacíos. Por tanto, el retraso no está causado por solicitar demasiados fields: las filas de CAN-002 aún no están disponibles en Windsor.ai. Mantener estos subconjuntos mínimos para futuras revisiones hasta que aparezcan las filas.
+Para respetar el límite de la cuenta gratuita, se ejecutaron consultas reducidas de cuatro campos por plataforma. Instagram usó `media_shortcode`, `media_views`, `media_reach` y `data_fetched_at` a las **20:46:42 CDT**; YouTube usó `video_title`, `views`, `likes` y `data_fetched_at` a las **20:46:59 CDT**. Ambas devolvieron conjuntos vacíos cuando se aplicó el filtro de fecha de la publicación. Esto no prueba que falten los contenidos: describe el comportamiento de esa forma de consulta.
+
+### Diagnóstico confirmado — Instagram
+
+La cuenta `bam_inacan` y sus capacidades de media/insights están operativas. Una consulta de inventario **sin filtro de fecha**, con solo `media_shortcode`, `media_caption` y `data_fetched_at`, devolvió CAN-001 y CAN-002 a las **20:51:19 CDT**. Una segunda consulta de CAN-002 por shortcode, también sin rango de fechas, devolvió **200 views** y **reach 34** a las **20:51:35 CDT**; un tercer bloque reducido devolvió **0 likes** y **0 comentarios** a las **20:51:47 CDT**.
+
+La causa de los conjuntos vacíos de Instagram no fue el número de fields, ni una falta de permisos, ni la ausencia del Reel: fue el uso del rango de fechas junto con la consulta de media. A partir de ahora, para Reels individuales de Bam se debe consultar por `media_shortcode` **sin** `date_from`/`date_to`, mediante bloques de hasta cuatro fields. YouTube continúa sin fila incluso con campos mínimos y requiere una ruta de diagnóstico separada.
 
 ## Límites y actualizaciones relacionadas
 
