@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 4.7
+**Versión:** 4.8
 
 **Autor:** Manus AI (CGO), a partir de dirección creativa de Fernando
 
@@ -811,3 +811,24 @@ El seguimiento de `CON-2026-08-24-CraveYou-MaeveFeathers` se realizará mediante
 | Cierre de siete días | 2026-08-30, 22:00 | Facebook e Instagram | Evaluar distribución y consumo inicial como señal descriptiva; no declarar veredicto de la celda con un solo Reel. |
 
 La recomendación operativa es comenzar con el corte de **hoy a las 22:00** y mantener el seguimiento diario. Los puntos de 24 y 72 horas deben tratarse como opcionales porque el protocolo vigente exige baseline E0 y una captura temporal válida; si Meta o Windsor solo devuelve acumulados actuales, se documenta el dato como `lifetime_actual`, no como ventana exacta. El seguimiento no autoriza nuevas publicaciones, cambios de caption, afiliación ni modificaciones del Reel.
+
+
+## Indicadores prioritarios para evaluar la retención del loop — 2026-08-24
+
+La evaluación debe distinguir entre **retención**, **finalización** y **repetición**. En un loop de aproximadamente 13–14 segundos, que una persona reproduzca más de una vez puede elevar los plays y el tiempo total sin demostrar por sí solo que haya visto completo el primer recorrido. Por eso los indicadores se leerán en este orden y por plataforma, sin sumar Facebook con Instagram.
+
+| Prioridad | Indicador | Qué responde | Regla de interpretación |
+|---|---|---|---|
+| P0 | `Retention_3s_Rate = views_3s / plays_or_views` | ¿El hook de la pluma y la reacción de Maeve detienen el desplazamiento? | Es el indicador principal de la entrada. Compararlo con MPM-001 como referencia contextual, no como control limpio. |
+| P0 | `Midpoint_Rate = views_at_50% / plays_or_views` | ¿La pieza mantiene atención más allá del hook? | Para un loop de 13–14 s, el punto medio ocurre aproximadamente entre 6.5 y 7 s. Usar solo si la plataforma entrega el campo o una curva de retención equivalente. |
+| P0 | `Completion_Rate` o vistas que alcanzan el último tramo | ¿El espectador llega a la pluma que cubre la lente y al cierre diseñado? | No confundir con replay. La finalización demuestra llegada al final del recorrido, no necesariamente un reinicio visto. |
+| P0 | `Seam_Drop_or_Continuation` | ¿Existe una caída anormal en la unión entre cierre y reinicio? | Revisar la curva alrededor del segundo 8.5–10.5, según la duración real. Si no existe curva, registrar `Unavailable` y revisar el video manualmente, sin inventar una tasa. |
+| P1 | `Average_Watch_Time / Duration_Seconds` | ¿Cuánto tiempo se consume en promedio respecto al export real? | Es un descriptor de consumo, no una tasa de retención ni una prueba de loop. La duración debe ser la del archivo publicado. |
+| P1 | `Replay_Rate = replays / plays` o `plays / unique_viewers` | ¿La pieza induce una segunda reproducción? | Es señal de repetición, no de finalización. Solo usar si numerador y denominador provienen de la misma plataforma y corte. |
+| P1 | `Total_Watch_Time` | ¿Cuánto consumo acumulado generó la pieza? | Sirve para dimensionar valor total; no sustituye la retención individual porque puede crecer por alcance o replays. |
+| P1 | `Reach` y `Unique_Viewers` | ¿A cuántas personas llegó la pieza? | Son indicadores de distribución. Se reportan junto a retención, no como retención. |
+| P2 | Shares, guardados, comentarios y follows | ¿El loop genera una respuesta de valor o conversación? | Son señales de calidad/acción posterior; ayudan a interpretar el consumo, pero no prueban que el loop se haya visto completo. |
+
+Para Facebook se intentará capturar `plays`, vistas de 3 segundos, `average_watch_time`, vistas completas, `replay_count`, `reach`, espectadores únicos y tiempo total. La métrica de 15 segundos solo será útil si el export real supera ese umbral; para un loop de 13–14 segundos no debe tratarse automáticamente como finalización. Para Instagram se intentará capturar `views` o `plays`, `reach`, tiempo medio, tiempo total, shares, guardados, comentarios y cualquier campo nativo de replays o retención que la cuenta exponga.
+
+El diagnóstico mínimo será: **P0 hook**, **P0 llegada al cierre**, **P1 replay**, y **P1 consumo promedio**. La pregunta principal no será “¿cuántos plays obtuvo?”, sino: “¿qué proporción supera los 3 segundos, alcanza el cierre de la pluma y vuelve a entrar al loop?”. Si faltan las curvas o los campos de retención, el resultado se limitará a `L1` o `L2`; no se declarará retención completa a partir de views, likes o tiempo total.
