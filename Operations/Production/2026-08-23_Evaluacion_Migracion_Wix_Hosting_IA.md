@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 1.5
+**Versión:** 1.6
 
 **Autor:** Manus AI
 
@@ -90,6 +90,14 @@ Cloudflare Pages documenta en su plan Free hasta 500 builds mensuales, hasta 100
 
 Para este caso, la mejor ruta de evaluación es **reconstrucción estática + Cloudflare Pages o GitHub Pages**, manteniendo inicialmente el dominio registrado en Wix. La página descrita tiene pocos contenidos dinámicos y los catálogos PDF pueden ser enlaces o descargas si cada archivo está dentro del límite del hosting elegido.
 
+### Recomendación actual de hosting
+
+La recomendación actual es **Cloudflare Pages en una cuenta propiedad del cliente**, con despliegue desde un repositorio separado del proyecto Universe Sent Me. El caso actual se ajusta a sus límites Free: Pages admite hasta 500 builds mensuales, 100 dominios personalizados y 20,000 archivos por sitio; cada PDF de Firma Bordados está debajo de su límite de 25 MiB por activo. [3] Cloudflare también ofrece SSL, CDN y protección DDoS en su plan Free. [8]
+
+La transición debe seguir dos etapas. Primero, usar el dominio temporal de staging ya publicado o un subdominio como `staging.firmabordados.com`; Cloudflare Pages permite conectar un subdominio mediante un CNAME sin que el dominio sea una zona Cloudflare. [9] Después de la aprobación del cliente, para publicar el dominio raíz `firmabordados.com` en Cloudflare Pages será necesario agregar la zona y apuntar los nameservers del dominio a Cloudflare. [9] La ausencia de correo empresarial reduce el riesgo operativo, pero los registros DNS existentes se deben inventariar antes de ese cambio.
+
+**Netlify Free** es la alternativa secundaria si se prioriza un flujo de dominio personalizado con SSL sin mover la zona DNS de inmediato. Su plan Free publica 300 créditos de uso y los despliegues de producción, el ancho de banda y los requests consumen créditos; por lo tanto, debe configurarse monitoreo y no prometer costo ilimitado. [5] No se recomienda GitHub Pages para este cliente: GitHub establece que Pages no está destinado ni permitido como servicio de hosting gratuito para un sitio dirigido a un negocio. [6] Tampoco se recomienda Vercel Hobby, ya que su plan gratuito está restringido a uso personal no comercial. [10]
+
 El contacto debe resolverse de manera explícita. Si solo se necesita mostrar teléfono, correo o WhatsApp, se pueden usar enlaces directos autorizados. Si se requiere un formulario, se debe usar un endpoint/backend o servicio de formularios con política de privacidad, protección antispam, límites y almacenamiento controlado. No se deben poner API keys en el JavaScript público.
 
 No se recomienda alojar OmniRoute dentro de la misma página estática. OmniRoute debe permanecer como un servicio privado separado. La página del cliente solo podría consumir una función de IA mediante un backend propio, después de que el cliente solicite y apruebe esa función como alcance adicional. La decisión vigente del proyecto mantiene el frontend fuera del acceso directo a OmniRoute y exige un backend privado para cualquier integración de producción. [7]
@@ -151,3 +159,9 @@ La evaluación no cambia todavía los ledgers ni el dashboard de Growth OS. Si s
 [6]: [GitHub Docs — Configuring a Custom Domain for GitHub Pages](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
 
 [7]: [Universe Sent Me — Decisión de uso de OmniRoute](2026-08-19_Decision_Gateway_IA_OmniRoute.md)
+
+[8]: [Cloudflare — Free Plan Overview](https://www.cloudflare.com/plans/free/)
+
+[9]: [Cloudflare Pages — Custom domains](https://developers.cloudflare.com/pages/configuration/custom-domains/)
+
+[10]: [Vercel — Hobby Plan](https://vercel.com/docs/plans/hobby)
