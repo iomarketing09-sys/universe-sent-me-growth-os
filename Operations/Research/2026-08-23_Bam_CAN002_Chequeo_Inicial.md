@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — CAN-002: chequeo inicial de visibilidad"
 purpose: "Preservar el primer corte operativo de CAN-002 antes de las ventanas T+3 h, separando métricas autenticadas, evidencia pública e indexación pendiente."
-status: "Active — chequeo previo a T+3 h; medición temprana completa pendiente"
+status: "Active — conectores confirmados; medición temprana completa pendiente de filas en Instagram y YouTube"
 created: 2026-08-23
 updated: 2026-08-23
-version: "1.0"
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
@@ -33,6 +33,10 @@ Este documento registra el primer chequeo de CAN-002 solicitado tras cerrar su c
 No se valida una hipótesis creativa, de audio o de plataforma en este corte. La pieza tiene menos de 75 minutos en TikTok y menos de una hora en Instagram, mientras que YouTube todavía no indexa sus métricas en Windsor.ai. Las dos versiones con audio nativo compartido y la versión de SFX no tienen edades equivalentes ni datos suficientes para comparar consumo o atribuir un efecto a `she share post (for blog)`.
 
 El siguiente corte útil empieza después de que YouTube cumpla su propia ventana T+3 h, a las **22:57 CDT**. Se deben repetir las consultas autenticadas de las tres redes y conservar por separado las métricas de plataforma, la fuente y la edad real de cada post.
+
+## Reconsulta tras confirmar conectores
+
+Fernando confirmó que actualizó la conexión de Instagram en Windsor.ai. La reconsulta verificó que la cuenta `bam_inacan` permanece listada como cuenta activa de Instagram y que el canal `baminacan@gmail.com` permanece activo en YouTube. Sin embargo, la consulta de Instagram a las **20:38:53 CDT** y la de YouTube a las **20:40:32 CDT** continuaron devolviendo conjuntos vacíos para CAN-002. La conexión está disponible; las filas de contenido siguen pendientes de sincronización/indexación. No se registran métricas de cero por ese motivo.
 
 ## Límites y actualizaciones relacionadas
 
