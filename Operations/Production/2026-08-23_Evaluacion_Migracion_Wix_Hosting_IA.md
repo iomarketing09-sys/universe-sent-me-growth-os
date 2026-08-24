@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-24
 
-**Versión:** 2.8
+**Versión:** 2.9
 
 **Autor:** Manus AI
 
@@ -184,6 +184,8 @@ El paquete P1 se cerró con una validación continua de GitHub sobre Pull Reques
 La protección formal de `main` no se habilitó durante P1 porque altera el flujo de colaboración de GitHub. La disciplina vigente es suficiente para el staging temporal: ramas de trabajo o `staging` → revisión + CI → promoción explícita a `main` → despliegue de Pages. Cualquier regla de protección debe aprobarse por separado antes de activarla.
 
 La primera actualización comercial posterior a P1 se completó solo con información confirmada: serigrafía a partir de 12 piezas y tiempos que se confirman según cantidad, requerimiento y carga de trabajo. Se usó una visual exclusiva de prendas sin marcas externas y una adaptación fiel de la fachada autorizada, ambas optimizadas para la web. El cambio pasó CI, se integró en `staging` y se promovió al staging público servido desde `main`; la revisión visual confirmó servicios, catálogos, contacto y protecciones P0. El bloqueo sobre materiales permanece: no se describieron telas, gramajes, composiciones, acabados ni certificaciones.
+
+La refinación posterior añadió una galería corta de procesos dentro de «Nuestro trabajo». Las fotografías de Drive con marcas de clientes se utilizaron solo como referencia; la versión pública usa una fotografía autorizada existente y dos visuales exclusivas sin marcas de terceros. También se agregó una frase sobre explorar opciones de prenda según la necesidad de presentación, en lugar de declarar materiales o calidades no documentados. El flujo de revisión, CI y promoción a `main` se mantuvo intacto; Wix, DNS, nameservers y el dominio público siguen sin cambios.
 
 ## Integración futura de IA
 

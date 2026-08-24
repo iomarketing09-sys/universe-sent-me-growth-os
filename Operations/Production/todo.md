@@ -26,6 +26,9 @@
 - [x] Registrar e integrar de forma prudente el mínimo confirmado de 12 piezas para serigrafía y la nota de tiempos de entrega variables según pedido y carga de trabajo.
 - [x] Revisar los activos autorizados de la carpeta Drive compartida y seleccionar referencias o imágenes exclusivas para reforzar las secciones de prendas y ubicación del staging.
 - [x] Incorporar, validar y documentar la actualización visual/comercial de Firma Bordados sin modificar Wix, DNS ni el dominio público.
+- [x] Integrar una redacción prudente sobre selección de prendas sin afirmar materiales o calidades no confirmadas.
+- [x] Revisar más activos autorizados y ampliar de forma curada la sección «Nuestro trabajo» con evidencia real o visuales exclusivas sin marcas de terceros.
+- [x] Validar, publicar en el staging Cloudflare y documentar esta mejora sin modificar Wix, DNS ni el dominio público.
 - [x] Convertir WhatsApp en el CTA principal del hero de Firma Bordados y validar el enlace en escritorio y móvil.
 - [x] Guiar la creación de la cuenta Cloudflare y repositorio privado del cliente antes de configurar Cloudflare Pages.
 - [x] Acompañar la configuración del proyecto Cloudflare Pages de staging para Firma Bordados sin agregar dominio ni modificar DNS.

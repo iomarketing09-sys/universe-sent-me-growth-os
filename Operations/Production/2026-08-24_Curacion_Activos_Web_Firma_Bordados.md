@@ -4,7 +4,7 @@ purpose: "Registrar la procedencia, evaluación y uso previsto de fotografías a
 status: Active
 created: 2026-08-24
 updated: 2026-08-24
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md"
@@ -40,3 +40,11 @@ La actualización conserva **Color que Trabaja** y refuerza dos pruebas concreta
 La fotografía de fachada recibió una adaptación conservadora: se ajustaron encuadre, perspectiva, exposición y contraste sin modificar edificio, letrero, identidad ni entorno comercial. Se presenta en el bloque de contacto como prueba de atención local en Piedras Negras. Ambas imágenes se optimizaron en WebP para la web (≈59 kB para prendas y ≈214 kB para fachada), se integraron en la rama revisada y se publicaron tras validación de TypeScript/Vite y CI de GitHub.
 
 Las fotos de bordado de terceros de Drive permanecen como referencia o detalle secundario, no como afirmación de relación comercial ni certificación. La selección final se validó junto con los enlaces de contacto, el CTA WhatsApp, el mínimo confirmado de serigrafía y la nota prudente sobre tiempos variables.
+
+## 4. Ampliación de galería — 2026-08-24
+
+Se revisaron dos muestras adicionales de Drive: `FB_IMG_1787256185059.jpg`, con bordado `AHB` sobre prenda verde, y `FB_IMG_1787256139212.jpg`, con bordado `HOK` sobre prenda oscura. Ambas son útiles para apreciar costura, contraste de hilo y trabajo de personalización, pero incluyen marcas de clientes; por ello permanecen como referencias internas y no se usan directamente en la página pública.
+
+La sección «Nuestro trabajo» se amplió con una galería de tres tarjetas: una fotografía autorizada de bordado ya integrada y dos visuales exclusivas de detalle de bordado y proceso de serigrafía. Las nuevas visuales excluyen nombres, letras, logotipos, precios y marcas de terceros. Se añadieron como recursos de apoyo para explicar procesos, no como evidencia de un pedido específico, catálogo de existencias, certificación ni promesa de materiales.
+
+La misma actualización añadió una tercera nota junto a los tiempos: «Le ayudamos a explorar opciones de prenda de acuerdo con las necesidades de presentación de su equipo». Esta formulación evita declarar «materiales de alta calidad» sin ficha técnica o confirmación del cliente. Cualquier mención futura de tela, composición, gramaje, acabado o calidad deberá registrarse primero en el inventario comercial.

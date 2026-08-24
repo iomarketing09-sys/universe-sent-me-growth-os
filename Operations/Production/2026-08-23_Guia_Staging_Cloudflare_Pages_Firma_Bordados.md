@@ -4,7 +4,7 @@ purpose: "Definir los pasos técnicos para probar el sitio React/Vite de Firma B
 status: Review
 created: 2026-08-23
 updated: 2026-08-24
-version: "1.3"
+version: "1.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Evaluacion_Migracion_Wix_Hosting_IA.md"
@@ -67,6 +67,12 @@ La URL de Pages sirve `main`, mientras `staging` es la rama de integración. Se 
 El commit `f6a754a` se abrió en la rama `content/commercial-visual-update`, se revisó mediante Pull Request hacia `staging`, pasó CI y se integró en `staging`; el merge `1d24703` se promovió por avance rápido a `main`, que Pages sirve como URL pública de pruebas. La actualización incorporó el mínimo confirmado de 12 piezas para serigrafía y una nota que explica que los tiempos se confirman según cantidad, requerimiento y carga de trabajo. No publicó plazos, materiales, precios ni mínimos para otros servicios.
 
 También añadió una visual exclusiva de prendas sin marcas de terceros y una adaptación fiel de la fachada autorizada, ambas optimizadas como WebP. La versión publicada se comprobó de forma visual y mantiene WhatsApp, catálogos, contacto, noindex, robots y headers P0. Wix, DNS, nameservers, dominio personalizado y `firmabordados.com` continúan sin cambios.
+
+### Refinación de galería y guía de prendas — 2026-08-24
+
+El commit `8a01b15` se revisó mediante Pull Request hacia `staging`, superó CI y se integró mediante el merge `d15ef60`, luego promovido a `main`, que Pages sirve como endpoint público de pruebas. Se amplió «Nuestro trabajo» con una galería de proceso de tres tarjetas: bordado en prenda, detalle de bordado y proceso de serigrafía. Las dos visuales nuevas son exclusivas y no incluyen marcas de clientes; las fotografías reales con marcas visibles se conservaron solo como referencia interna.
+
+La nota contigua a los tiempos de entrega ahora explica que se pueden explorar opciones de prenda según las necesidades de presentación del equipo. Esta redacción no afirma composición, material, calidad, certificación, inventario ni plazo. La versión publicada mantiene servicios, catálogos, contacto, noindex, robots y headers P0. No se modificaron Wix, DNS, nameservers ni el dominio público.
 
 ## 2. Estado de partida y preparación obligatoria
 
