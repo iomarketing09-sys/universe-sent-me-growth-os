@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-24
-**Versión:** 3.58
+**Versión:** 3.59
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.59.00] — 2026-08-24 (Manus): WhatsApp confirmado en el staging de Firma Bordados.** Se añadió el canal `+52 878 788 0735` con un mensaje inicial de consulta y se mantuvo el correo `firmabordados@yahoo.com` y el formulario `mailto:` ya existente. La legibilidad se verificó en móvil; no se envió ningún mensaje. Materiales, tiempos de entrega y mínimos de pedido siguen pendientes de confirmación del cliente y no se inventaron.
 
 - **[3.58.00] — 2026-08-24 (Manus): Catálogos y servicios confirmados integrados al staging de Firma Bordados.** Fernando validó BigBang 2019, M&O 2016 y Soul & Blues 2025 como catálogos vigentes. Se cargaron sus copias autorizadas en el staging, se corrigieron tamaños visibles a 13.6 MB, 3.8 MB y 8.0 MB, y se verificó respuesta HTTP correcta. Se incorporaron digitalización, bordado, serigrafía, playeras, camisas, uniformes industriales y línea médica; parches y gorras se excluyen con una nota discreta. Los PDFs deberán migrarse al repositorio/almacenamiento del cliente para Cloudflare. Wix, DNS y dominio no cambiaron.
 

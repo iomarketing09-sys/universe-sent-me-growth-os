@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-23
 
-**Versión:** 2.2
+**Versión:** 2.3
 
 **Autor:** Manus AI
 
@@ -162,6 +162,10 @@ Fernando confirmó posteriormente que Cloudflare Pages es la ruta preferida por 
 La carpeta Drive compartida por Fernando contiene los tres catálogos que reemplazarán los enlaces temporales Wix durante una integración posterior. `2026-08-24_Inventario_Catalogos_Drive_Firma_Bordados.md` registra sus nombres, tamaños, páginas y portadas revisadas. Detecta tamaños desactualizados en las tarjetas Soul & Blues y M&O, además de ediciones declaradas 2019 y 2016 para BigBang/M&O; por ello los enlaces y metadatos del staging no se cambiarán hasta que el cliente confirme que las tres versiones son vigentes. Los servicios siguen pendientes y no se infieren de los catálogos.
 
 Fernando confirmó la vigencia de los tres catálogos y la oferta comercial. El staging ahora los sirve como activos controlados del entorno de prueba, ajusta sus tamaños visibles y presenta digitalización, bordado, serigrafía, playeras, camisas, uniformes industriales y línea médica. La nota de alcance indica que no se realizan parches ni gorras. Los activos deberán volver a incorporarse al repositorio/almacenamiento del cliente antes del despliegue Cloudflare; Wix, DNS y el dominio no cambiaron.
+
+### Canales de contacto y contenido pendiente
+
+Fernando confirmó el correo `firmabordados@yahoo.com` y el WhatsApp `+52 878 788 0735`. El staging conserva el formulario que prepara un correo desde el dispositivo y añade un enlace visible de WhatsApp con mensaje inicial sobre prendas, bordado o serigrafía. El enlace se probó visualmente en móvil; no se enviaron mensajes. Materiales, tiempos de entrega y mínimos de pedido siguen pendientes de solicitud al cliente y no se incorporan hasta contar con información confirmada.
 
 ## Integración futura de IA
 

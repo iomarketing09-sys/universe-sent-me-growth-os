@@ -16,3 +16,5 @@
 - [x] Implementar la puntada inicial, entradas breves y microinteracciones aprobadas en el staging de Firma Bordados; validar en escritorio y móvil.
 - [x] Inventariar y validar los PDFs autorizados de Drive para sustituir los enlaces temporales de Wix en un staging posterior.
 - [x] Integrar los tres catálogos confirmados con tamaños correctos y los servicios validados en el staging de Firma Bordados, sin cambio de Wix o DNS.
+- [x] Incorporar el enlace WhatsApp confirmado de Firma Bordados y validar el flujo de contacto en el staging.
+- [ ] Solicitar al cliente materiales, tiempos de entrega y mínimos de pedido antes de incorporarlos al sitio.
