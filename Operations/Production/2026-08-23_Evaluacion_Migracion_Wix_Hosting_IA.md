@@ -173,6 +173,10 @@ Fernando autorizó posteriormente una excepción temporal: el repositorio privad
 
 El staging se desplegó exitosamente en `https://firma-bordados-staging.pages.dev` desde la rama privada `staging`, con build Vite reproducible y activos locales aprobados. La aplicación GitHub de Cloudflare se limitó a ese repositorio. La URL se verificó sin añadir dominio personalizado: conserva CTA de WhatsApp, contacto, servicios y catálogos; no afecta Wix, `firmabordados.com`, DNS ni nameservers.
 
+### Mejoras técnicas independientes del contenido comercial
+
+`2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md` organiza mejoras de bajo riesgo mientras se esperan materiales, tiempos y mínimos: accesibilidad, noindex de staging, headers, carga diferida de imágenes, limpieza de runtime, CI y protección de ramas. No autoriza analytics, backend de formularios, precios, SEO estructurado definitivo ni cambio de dominio.
+
 ## Integración futura de IA
 
 Si el cliente solicita una función de IA, la primera versión debe ser un endpoint de borradores detrás de un backend privado, no una llamada desde el navegador. Debe aceptar un propósito limitado, validar tamaño y contenido, excluir secretos y datos personales, aplicar autenticación y rate limiting, registrar provider/modelo/latencia/estado y devolver una respuesta marcada como `Draft`. No debe publicar automáticamente ni escribir en los ledgers de Universe Sent Me.

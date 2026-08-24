@@ -4,9 +4,11 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-24
-**Versión:** 3.62
+**Versión:** 3.63
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
 **Documentos relacionados:** `00_Índice.md`, `09_00_Estandar_Documentacion_Interna.md`, `Studio_Governance.md`
+
+- **[3.63.00] — 2026-08-24 (Manus): Backlog técnico de bajo riesgo para Firma Bordados.** Se auditó el staging Cloudflare y se priorizaron mejoras sin depender de materiales, tiempos o mínimos: paquete P0 de accesibilidad/protección de staging, carga diferida de imágenes, limpieza de runtime, CI y protección de ramas. Quedan bloqueados analytics, backend de formularios, precios, SEO estructurado definitivo y dominio hasta confirmación/consentimiento correspondiente. No se modificó el sitio durante la auditoría.
 
 - **[3.62.00] — 2026-08-24 (Manus): Staging Cloudflare Pages desplegado para Firma Bordados.** Se creó el repositorio privado temporal `iomarketing09-sys/firma-bordados-site`, se limitó la app Cloudflare Workers and Pages a ese único repositorio y se desplegó `https://firma-bordados-staging.pages.dev` desde la rama `staging`. El build usa `pnpm exec vite build`, publica `dist/public` y fija Node 22.16.0. Se verificaron hero, CTA WhatsApp, capacidades, catálogos, contacto y PDFs. Wix, DNS, nameservers y `firmabordados.com` no cambiaron; el corte sigue bloqueado por aprobación/transferencia u operación administrada.
 

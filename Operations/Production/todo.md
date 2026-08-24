@@ -18,6 +18,8 @@
 - [x] Integrar los tres catálogos confirmados con tamaños correctos y los servicios validados en el staging de Firma Bordados, sin cambio de Wix o DNS.
 - [x] Incorporar el enlace WhatsApp confirmado de Firma Bordados y validar el flujo de contacto en el staging.
 - [ ] Solicitar al cliente materiales, tiempos de entrega y mínimos de pedido antes de incorporarlos al sitio.
+- [x] Priorizar mejoras técnicas, de accesibilidad y de conversión para el staging de Firma Bordados que no dependan de materiales, tiempos o mínimos de pedido.
+- [ ] Aplicar el paquete P0 de accesibilidad y protección de staging tras aprobación: zoom, foco visible, enlace de salto, reducción de movimiento integral, meta noindex y headers estáticos.
 - [x] Convertir WhatsApp en el CTA principal del hero de Firma Bordados y validar el enlace en escritorio y móvil.
 - [x] Guiar la creación de la cuenta Cloudflare y repositorio privado del cliente antes de configurar Cloudflare Pages.
 - [x] Acompañar la configuración del proyecto Cloudflare Pages de staging para Firma Bordados sin agregar dominio ni modificar DNS.
