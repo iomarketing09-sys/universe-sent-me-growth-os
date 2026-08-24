@@ -1,12 +1,13 @@
 ---
 estado: Active
-version: "1.8"
-ultima_revision: 2026-08-23
+version: "1.50"
+ultima_revision: 2026-08-24
 dependencias:
   - GrowthOS/01_00_Arquitectura_Calendario_Escalable.md
   - GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md
   - Operations/Research/2026-08-15_Publication_Log.csv
   - Operations/Research/2026-08-15_ExperimentLog.csv
+  - Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json
 ---
 
 # Pipeline de Publicación Local (PyCharm + Gemini + Meta API) y Estándar de Exportación de Calendarios
@@ -14,10 +15,10 @@ dependencias:
 **Propósito:** Documentar el pipeline de publicación real que usa Fernando (script propio en PyCharm, con Gemini, publicando vía Meta Graph API) y establecer el estándar de exportación CSV que cualquier calendario de Growth OS debe producir para poder alimentarlo directamente, sin reformateo manual.
 **Estado:** Active
 **Fecha de creación:** 2026-08-12
-**Última actualización:** 2026-08-23
-**Versión:** 1.49
+**Última actualización:** 2026-08-24
+**Versión:** 1.50
 **Autor:** Claude, documentando información provista por Fernando; actualización de Manus AI
-**Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `05_03_Calendario_10_16_Agosto.md` (y calendarios futuros), `Operations/Research/2026-08-15_Publication_Log.csv`, `Operations/Research/2026-08-15_ExperimentLog.csv`, `GrowthOS/00_01_Changelog_GrowthOS.md`, `GrowthOS/00_Índice.md`, `Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md`
+**Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `05_03_Calendario_10_16_Agosto.md` (y calendarios futuros), `Operations/Research/2026-08-15_Publication_Log.csv`, `Operations/Research/2026-08-15_ExperimentLog.csv`, `GrowthOS/00_01_Changelog_GrowthOS.md`, `GrowthOS/00_Índice.md`, `Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md`, `Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json`
 
 ---
 
@@ -121,7 +122,13 @@ El 2026-08-14 se creó y activó el conector **Universe Sent Me Meta API**, una 
 
 El token debe rotarse si se sospecha exposición, si cambia el administrador o si Meta lo invalida. Al actualizarlo, debe modificarse únicamente la credencial almacenada en el conector; este documento debe conservar solo el nombre de la variable y no el valor secreto. Los endpoints y campos no deben asumirse: deben comprobarse en la documentación oficial de [Graph API][1] y [Pages API][2], especialmente porque Meta puede retirar o cambiar métricas y permisos por versión.
 
-## 6. Pendientes de definición (no resueltos en esta sesión)
+## 6. Estado de configuración observado el 24 de agosto de 2026
+
+La auditoría de conectividad separa el hecho histórico de que el pipeline se haya probado del estado actual de la configuración. La Custom API `Universe Sent Me Meta API` existe con credencial cifrada, pero aparece deshabilitada (`enabled=false`). El conector de Instagram está habilitado y conserva tres cuentas conocidas, pero ninguna tiene `activeAccountUid`; por ello el smoke test de cuenta no puede ejecutarse hasta seleccionar explícitamente `@universe_sent_me_0326`. La consulta de Meta Ads Manager devuelve `not connected`, y Google Calendar no puede listar calendarios con los scopes actuales. El estado completo, incluyendo Make, Google Workspace, scheduling y validadores, queda en `Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json`.
+
+Esta observación no invalida las publicaciones históricas verificadas ni autoriza cambios de configuración. Significa que una nueva operación debe comenzar por un preflight de conectores: `enabled` no equivale a `connected`, `connected` no equivale a `readable` y `readable` no equivale a `operational` para Universe Sent Me. Mientras no exista una cuenta Instagram activa y una ruta Meta habilitada o documentada como alternativa aprobada, el pipeline no debe presentarse como extremo a extremo reproducible desde la sesión actual.
+
+## 7. Pendientes de definición (no resueltos en esta sesión)
 
 1. **Valor exacto de `Marca` para Universe Sent Me** — no confirmado; los ejemplos vistos son de otro proyecto de Fernando (Quirelli/Flexi).
 2. **Valores posibles de `Estado`** más allá de `BORRADOR` (¿aprobado, publicado, error?) — no confirmado.
@@ -129,7 +136,7 @@ El token debe rotarse si se sospecha exposición, si cambia el administrador o s
 4. **Multi-plataforma:** cómo se resolverá la publicación en Instagram una vez integrada — columna nueva, o pipeline separado. Fernando mencionó estar abierto a cambiar el formato de CSV a Markdown; no se definió si eso reemplazaría esta estructura o coexistiría con ella.
 5. **Validación pre-publicación:** no se definió si el pipeline de Fernando valida que el archivo exista en `Ruta_Completa` antes de intentar publicar, o si eso quedaría como responsabilidad de quien arma el calendario.
 
-## 7. Qué NO cambia por ahora
+## 8. Qué NO cambia por ahora
 
 - El proceso de armar el calendario (elegir personaje, horario, copy, hashtags, reuse vs. nuevo) sigue siendo el mismo ya documentado en `01_00_Arquitectura_Calendario_Escalable.md` y aplicado en los calendarios semanales.
 - Este documento no reemplaza ni automatiza nada todavía — solo dejar registrado el pipeline real de Fernando para que futuros calendarios se diseñen ya pensando en ser exportables a este formato, en vez de descubrir la incompatibilidad después.

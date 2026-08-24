@@ -3,8 +3,8 @@ title: "Fuente maestra y ledgers del Growth OS"
 purpose: "Definir una arquitectura mínima y unificada para que inventario, publicaciones, calendarios y aprendizaje compartan IDs sin duplicar datos ni repetir consultas innecesarias."
 status: Active
 created: 2026-08-15
-updated: 2026-08-23
-version: "2.50"
+updated: 2026-08-24
+version: "2.51"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -240,6 +240,12 @@ Las ventanas exactas de 24 y 72 horas se mantienen únicamente cuando un experim
 La propuesta `Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md` define el cuarto ledger `Metrics_Snapshot_Log.csv`, el hook posterior a `is_published=true`, la cola de posts programados, la opción de Webhook para publicaciones manuales, las tolerancias y las claves idempotentes. Mientras el diseño esté en Review, los campos `Interacciones_24h`/`Interacciones_72h` permanecen bajo el contrato actual y no se crea ningún schedule nuevo.
 
 El flujo económico queda así: un corte diario alimenta el aprendizaje operativo y las decisiones de contenido; una consulta adicional de 24/72 horas se ejecuta solo cuando una celda comparable, P0 u otra revisión formal la requiera. De este modo, el Growth OS aprende de los datos disponibles cada día sin confundir `Corte_Observado`, `lifetime_actual` y `snapshot_24_72h`.
+
+### 5.1 Estado de conectividad y materialización observado el 24 de agosto de 2026
+
+La auditoría de conectividad confirma que la arquitectura de ledgers está vigente, pero no todos sus puntos de entrada están operativos en la configuración actual. `Metrics_Snapshot_Log.csv` todavía no existe, por lo que E0/E24/E72 no se pueden capturar como ledger append-only y las columnas temporales del `Publication_Log`/`ExperimentLog` permanecen vacías bajo el contrato correcto. El conector `Universe Sent Me Meta API` existe con credencial cifrada, pero está deshabilitado; Instagram está habilitado con tres cuentas conocidas y ninguna cuenta activa; Meta Ads Manager aparece habilitado pero la llamada devuelve `not connected`; Google Calendar no tiene scopes suficientes; y no existe un schedule recurrente activo en la sesión auditada.
+
+Google Drive/Sheets sí responde en lectura, pero la hoja `USM Growth OS` fue modificada por última vez el 8 de agosto de 2026 y su Dashboard conserva esa fecha. Por tanto, la hoja debe tratarse como artefacto histórico o auxiliar hasta que exista una sincronización explícita; GitHub continúa siendo la fuente oficial de verdad. La evidencia sanitizada está en `Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json` y no autoriza cambios de configuración ni publicaciones.
 
 ## 6. Primer estado implementado
 

@@ -1,0 +1,118 @@
+{
+  "title": "Evidencia de conectividad y operación del Growth OS",
+  "purpose": "Conservar una fotografía reproducible y sanitizada de las conexiones, pruebas de ejecución y estado de los ledgers observados durante la auditoría general del 24 de agosto de 2026.",
+  "status": "Active",
+  "created": "2026-08-24",
+  "updated": "2026-08-24",
+  "version": "1.0",
+  "author": "Manus AI (CGO)",
+  "organization": "Operations/Research/",
+  "related_documents": [
+    "Operations/Research/2026-08-22_Auditoria_Ejecutiva_GrowthOS_Estado_y_Prioridades.md",
+    "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md",
+    "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md",
+    "Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md"
+  ],
+  "observed_at": "2026-08-24",
+  "source_of_truth": {
+    "repository": "iomarketing09-sys/universe-sent-me-growth-os",
+    "branch": "main",
+    "head": "80628f4101b5ac49c8fe1cd583c8baf2c222fd9d",
+    "local_remote_equal": true,
+    "working_tree_after_cleanup": "clean"
+  },
+  "connector_status": [
+    {
+      "name": "GitHub",
+      "configured_enabled": true,
+      "observed_result": "Operational: repository cloned, remote main verified, local HEAD equals remote HEAD."
+    },
+    {
+      "name": "Universe Sent Me Meta API",
+      "configured_enabled": false,
+      "observed_result": "Blocked for current session: connector definition exists and contains an encrypted credential, but it is disabled."
+    },
+    {
+      "name": "Instagram",
+      "configured_enabled": true,
+      "known_accounts": ["@universe_sent_me_0326", "@firmabordados", "@bam_inacan"],
+      "active_account": null,
+      "observed_result": "Blocked for current session: account read failed because no active account is selected."
+    },
+    {
+      "name": "Meta Ads Manager",
+      "configured_enabled": true,
+      "observed_result": "Not verified: connector call returned not connected."
+    },
+    {
+      "name": "Make",
+      "configured_enabled": true,
+      "observed_result": "Connected read-only: users_me and organizations_list returned data. Repository documentation marks Make as historical and non-operational."
+    },
+    {
+      "name": "Google Workspace",
+      "configured_enabled": true,
+      "observed_result": "Operational read-only through gws: Drive and Sheets metadata/values were readable."
+    },
+    {
+      "name": "Google Calendar",
+      "configured_enabled": true,
+      "active_account": null,
+      "observed_result": "Not operational for audit execution: calendar list request returned insufficient authentication scopes."
+    },
+    {
+      "name": "Canva",
+      "configured_enabled": true,
+      "observed_result": "Enabled in configuration; not required by the current publication loop and not smoke-tested in this audit."
+    }
+  ],
+  "scheduling": {
+    "current_task_schedule": "none",
+    "interpretation": "No recurring Manus task is active for the Growth OS. The documented daily/weekly cadences are operating procedures, not currently enforced schedules."
+  },
+  "repository_checks": {
+    "markdown_files": 260,
+    "csv_files": 113,
+    "json_files": 210,
+    "operational_scripts": 46,
+    "python_syntax": "PASS",
+    "node_syntax": "PASS",
+    "facebook_reconciliation_validator": "PASS",
+    "facebook_windows_video_validator": "PASS",
+    "community_ledger_validator": "PASS"
+  },
+  "ledger_snapshot": {
+    "content_inventory_rows": 85,
+    "publication_log_rows": 121,
+    "publication_log_platforms": {
+      "Facebook": 107,
+      "Instagram": 14
+    },
+    "publication_log_meta_post_id_filled": "107/121",
+    "publication_log_ig_media_id_filled": "13/121",
+    "publication_log_permalink_filled": "114/121",
+    "publication_log_interactions_24h_filled": "0/121",
+    "publication_log_interactions_72h_filled": "0/121",
+    "experiment_log_rows": 114,
+    "experiment_log_interactions_24h_filled": "0/114",
+    "experiment_log_interactions_72h_filled": "0/114",
+    "community_log_rows": 448,
+    "community_log_unique_comment_ids": 448,
+    "metrics_snapshot_log_present": false
+  },
+  "external_sheet_snapshot": {
+    "spreadsheet": "USM Growth OS",
+    "spreadsheet_id": "1H1r3BoWW1Jh-zMYssEm-SpAuYuPZuXqyZosP-bJpCZw",
+    "modified_time": "2026-08-08T01:37:35.742Z",
+    "tabs": ["Cola de Publicación", "ExperimentLog", "Hypothesis Bank", "Dashboard"],
+    "dashboard_last_update": "08/08/2026 1:37:35",
+    "queue_visible_range": "2026-08-01 to 2026-08-09",
+    "interpretation": "Readable but stale relative to the GitHub ledgers and current August 24 operations; not suitable as a live source of truth."
+  },
+  "operational_interpretation": {
+    "maturity_level": "3/5 — operativo supervisado",
+    "closed_loop": false,
+    "main_blocker": "Temporal measurement and active connector state prevent a reliable publication-to-learning loop.",
+    "safe_conclusion": "The system is not static: Facebook publication, comment review/reply, ledger updates and weekly analysis have real evidence. It is not yet a closed-loop optimization system because E0/E24/E72 snapshots, active Instagram selection and a live scheduling layer are not operational."
+  }
+}
