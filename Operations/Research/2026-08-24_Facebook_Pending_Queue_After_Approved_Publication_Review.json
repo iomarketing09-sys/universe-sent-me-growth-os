@@ -1,0 +1,805 @@
+{
+  "title": "Facebook Pending Queue After Approved Publication Review",
+  "purpose": "Cola actual de propuestas que requieren aprobación de Fernando y registro de casos cerrados sin acción después del corte de solo lectura.",
+  "status": "Review",
+  "created_at": "2026-08-24T20:43:27+00:00",
+  "updated_at": "2026-08-24T20:43:27+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "organization": "Operations/Research",
+  "related_documents": [
+    "Operations/Research/2026-08-24_Facebook_Editorial_Review_After_Approved_Publication.json",
+    "Operations/Research/2026-08-24_Facebook_Comment_Review_After_Approved_Publication.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv"
+  ],
+  "source": "Meta Graph API v26.0 / read-only review",
+  "read_only_review": true,
+  "approval_required_for_publication": true,
+  "review_cursor": "2026-08-24T17:13:46+00:00",
+  "current_unanswered_units_in_scope": 239,
+  "review_candidate_count": 95,
+  "pending_response_count": 5,
+  "pending_response_with_proposal_count": 5,
+  "no_action_count_in_review": 90,
+  "publishable_without_new_approval": 0,
+  "published_from_this_review": 0,
+  "pending_comments": [
+    {
+      "comment_id": "122151376539072582_1063233976446841",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:06:31+0000",
+      "comment_message": "Jajajaja como pueden creer eso  lo único q se les hace grande es el asterisco ✳️🤣🤣",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "proposed_reply": "El asterisco siempre aparece para salvar la credibilidad del meme. 😂✳️",
+      "priority": "Media",
+      "insight": "El comentario convierte el asterisco en el remate del meme; la respuesta lo reconoce sin repetir ni ampliar el doble sentido.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376539072582_2056563468318334",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:18:16+0000",
+      "comment_message": "Francisco Castillo será verdad esto?",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "proposed_reply": "El universo no entrega certificados; aquí solo venimos a observar las teorías. 😂🙈",
+      "priority": "Media",
+      "insight": "Es una pregunta directa sobre la afirmación del meme; la propuesta responde con humor sin presentar la broma como un hecho médico.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376539072582_1406586844746099",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T20:20:35+0000",
+      "comment_message": "Entonces ami me van a crecer las manos jejeje 🤣",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "proposed_reply": "Jajaja, no saques conclusiones tan literales; el meme no prometía transformaciones de ese tipo. 😂🙈",
+      "priority": "Media",
+      "insight": "El comentario lleva la premisa a una consecuencia corporal absurda; la respuesta devuelve el remate y evita escalar el contenido íntimo.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376083072582_1036099909244517",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T18:01:14+0000",
+      "comment_message": "Universe Sent Me pero esto parece más salud pública 😂",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "proposed_reply": "Jajaja, de meme a campaña de salud pública en dos comentarios. 😂🙈",
+      "priority": "Alta",
+      "insight": "Es el único reply nuevo que menciona directamente a Universe Sent Me. El parent explica el chiste como reducción de costillas y marcación abdominal; la propuesta continúa el giro hacia salud pública sin dar consejo médico.",
+      "approval_state": "Pendiente_Fernando"
+    },
+    {
+      "comment_id": "122151376083072582_1620854262795787",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T17:30:32+0000",
+      "comment_message": "La trampa del cangrejo 🦀❤️",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "proposed_reply": "La trampa del cangrejo ya quedó oficialmente registrada. 😂🦀",
+      "priority": "Media",
+      "insight": "El comentario aporta un nombre juguetón al mecanismo sugerido por el meme; la propuesta es específica y no añade contenido gráfico.",
+      "approval_state": "Pendiente_Fernando"
+    }
+  ],
+  "closed_without_action": [
+    {
+      "comment_id": "122154023781072582_935057332322884",
+      "post_id": "1036844829507460_122154023781072582",
+      "comment_created_time": "2026-08-24T18:46:23+0000",
+      "comment_message": "",
+      "post_reference": "Publicación con caption visible: `Bueno… tampoco era para tanto. 🤭`",
+      "reason": "Comentario sin texto recuperable; se conserva para cobertura, sin intervención."
+    },
+    {
+      "comment_id": "122151376539072582_1695096108262414",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:05:02+0000",
+      "comment_message": "Katlesy KuroNeko asi",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1725536432038711",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T17:21:49+0000",
+      "comment_message": "Lucrecia Montero yo te lo hago crecer",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_28106975998942085",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T17:23:39+0000",
+      "comment_message": "Lucrecia Montero t los go",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_38106126435699670",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T18:24:41+0000",
+      "comment_message": "Lucrecia Montero buenas tardes preciosa saludos desde Bogotá",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_2076072709783970",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T18:59:20+0000",
+      "comment_message": "Lucrecia Montero Nada pierdes con intentarlo 🤣🤣🤣🤣🤣",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_4310464835870945",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:01:32+0000",
+      "comment_message": "Lucrecia Montero hola",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1620218453116254",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:37:25+0000",
+      "comment_message": "Ivan Cuellar hola",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1069021205910564",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:37:36+0000",
+      "comment_message": "Yenny Sánchez jajaja ya se",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1590289339189064",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:57:32+0000",
+      "comment_message": "Lucrecia Montero hola",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_4417284298588640",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:58:52+0000",
+      "comment_message": "Lucrecia Montero si gustas te doy técnicas y las pone en practica y veras los resultados",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1427042346190567",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T20:01:59+0000",
+      "comment_message": "Lucrecia Montero es verdad,pero no todos saben hacerlo",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1370094871913625",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T20:04:54+0000",
+      "comment_message": "Lucrecia Montero inbox?",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_2263638407815685",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T20:07:06+0000",
+      "comment_message": "Lucrecia Montero SI ME AGUANTA MIS 28CM CURBO GRUESA Y VENOSA Y DE CABEZA GRANDE Y CURVO HACIA LA DERECHA YO TE LA HAGO CRECER PERO OTRA COSA LA PANCITA",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_2330866401077564",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T20:13:51+0000",
+      "comment_message": "Lucrecia Montero te ayudo y verás",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1748626526450021",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T17:14:41+0000",
+      "comment_message": "Mayra Gdlp Valdespino hola",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_27637599342606686",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T17:21:23+0000",
+      "comment_message": "Mayra Gdlp Valdespino si siente bien rico mami",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1803557858071701",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T17:23:28+0000",
+      "comment_message": "Mayra Gdlp Valdespino te pusiste más caderona?",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_2927456060942765",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T17:30:45+0000",
+      "comment_message": "Mayra Gdlp Valdespino depende de el baron",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1592339552537787",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T18:08:27+0000",
+      "comment_message": "Mayra Gdlp Valdespino Reina así te ves fenomenal.😘😘😘❤️",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_2310672409758727",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T18:59:21+0000",
+      "comment_message": "Mayra Gdlp Valdespino eso tendría yo que comprobarte. Digo...comprobarlo.",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1394411982616530",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:04:49+0000",
+      "comment_message": "Mayra Gdlp Valdespino deberás bella",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_2308316286581894",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:24:31+0000",
+      "comment_message": "Mayra Gdlp Valdespino 🤔🤔🤣🤣🤣🤣",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1762348074721032",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:34:53+0000",
+      "comment_message": "Mayra Gdlp Valdespino más Acha de dónde delas caderas o del chiquito",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_2378515359620767",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T20:21:16+0000",
+      "comment_message": "Mayra Gdlp Valdespino pero te gusta",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1050586174222934",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:17:49+0000",
+      "comment_message": "Santiago D. Antonio 🌺",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_2231428957650275",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:34:26+0000",
+      "comment_message": "Santiago D. Antonio usted como que tiene esperiencia en eso",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_2818165501899507",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:56:27+0000",
+      "comment_message": "Santiago D. Antonio jajajajajajajjajaa... que cosas no",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1029004873284326",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T20:10:47+0000",
+      "comment_message": "Santiago D. Antonio más si está como la mía....no te podrás sentar",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1393379158896459",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T20:12:59+0000",
+      "comment_message": "Santiago D. Antonio lo habla tu experiencia",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1038787515435824",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T20:30:49+0000",
+      "comment_message": "Chelsy Quiñonez jajajaja",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Mención a terceros, etiqueta o señal ambigua sin una solicitud dirigida a Universe Sent Me; no asumir intención."
+    },
+    {
+      "comment_id": "122151376539072582_1865266674453536",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:47:56+0000",
+      "comment_message": "Es verdad lo confirmo",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Aprobación, risa, saludo o reacción breve sin una pregunta o contexto que exija respuesta."
+    },
+    {
+      "comment_id": "122151376539072582_1310193327667701",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:49:08+0000",
+      "comment_message": "Luciia Huerta hola te encanta coger por el culo",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1010953711973131",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T20:07:43+0000",
+      "comment_message": "Luciia Huerta claro que es\n\n verdad",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1051139924294566",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T18:40:56+0000",
+      "comment_message": "Ahora sí ya te creo Olguin Malandro Gram Rum 😂 🥹",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Mención a terceros, etiqueta o señal ambigua sin una solicitud dirigida a Universe Sent Me; no asumir intención."
+    },
+    {
+      "comment_id": "122151376539072582_1102623825452041",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T18:46:04+0000",
+      "comment_message": "Grc Amee Olguín romper romper 🤭",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_2115470249055952",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T17:41:16+0000",
+      "comment_message": "Entre mas dotada es la herramenta mejores los resultados, ahi si se animan yo se las pongo gigantes🤣",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Mención a terceros, etiqueta o señal ambigua sin una solicitud dirigida a Universe Sent Me; no asumir intención."
+    },
+    {
+      "comment_id": "122151376539072582_29132673976322533",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:03:08+0000",
+      "comment_message": "Marie Del Rio hola",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1078622734654097",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:05:41+0000",
+      "comment_message": "Marie Del Rio deberás bella",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_3412542625582522",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:26:16+0000",
+      "comment_message": "Marie Del Rio hola cómo estás me gustaría conversar con Tigo privado",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_2086149816109905",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T20:15:30+0000",
+      "comment_message": "Marie Del Rio si en verdad , no te conozco pero te puedo ayudar",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1551813615965350",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:05:32+0000",
+      "comment_message": "Monssesita Gomez cres",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1768879524147515",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:38:50+0000",
+      "comment_message": "Monssesita Gomez con una buena venosa para que se habrán las caderas",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_2286359445513479",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:14:24+0000",
+      "comment_message": "Total mentira lo único que se hace grande es el * pues no tendría lógica que crecieran",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Aprobación, risa, saludo o reacción breve sin una pregunta o contexto que exija respuesta."
+    },
+    {
+      "comment_id": "122151376539072582_1047735864715635",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T18:38:42+0000",
+      "comment_message": "Mentira",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Aprobación, risa, saludo o reacción breve sin una pregunta o contexto que exija respuesta."
+    },
+    {
+      "comment_id": "122151376539072582_2163623690856767",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T18:56:54+0000",
+      "comment_message": "Atenas Mancisidor 🤣🤣🤣será",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_4531515107105207",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:26:14+0000",
+      "comment_message": "Atenas Mancisidor 😏😏🤣🤣🤣",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_2882322842130555",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T20:16:19+0000",
+      "comment_message": "Atenas Mancisidor te puedo ayudar para que salgas de dudas",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_2726763597759300",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T20:14:32+0000",
+      "comment_message": "Se ponen mas buenas despues de tener un bebe pero asi no creo lo dudo mucho...",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Mención a terceros, etiqueta o señal ambigua sin una solicitud dirigida a Universe Sent Me; no asumir intención."
+    },
+    {
+      "comment_id": "122151376539072582_2093906785344626",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T20:09:03+0000",
+      "comment_message": "Natalia Gonzales claro que es verdad",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1687668805671341",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T18:27:38+0000",
+      "comment_message": "No te preocupes solo son 18 Cms de largo y te van a crecer mucho",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Lenguaje sexual explícito o descripción íntima; no escalar ni competir desde la Página."
+    },
+    {
+      "comment_id": "122151376539072582_2110951906221679",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T18:48:09+0000",
+      "comment_message": "Jajajjaja",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Aprobación, risa, saludo o reacción breve sin una pregunta o contexto que exija respuesta."
+    },
+    {
+      "comment_id": "122151376539072582_1711675766788952",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:26:19+0000",
+      "comment_message": "Laura Mar me calificas",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1076410888207443",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T17:24:11+0000",
+      "comment_message": "Uffff",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Aprobación, risa, saludo o reacción breve sin una pregunta o contexto que exija respuesta."
+    },
+    {
+      "comment_id": "122151376539072582_1389563846466209",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T20:17:01+0000",
+      "comment_message": "Obvio",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Aprobación, risa, saludo o reacción breve sin una pregunta o contexto que exija respuesta."
+    },
+    {
+      "comment_id": "122151376539072582_1041948021962117",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:27:55+0000",
+      "comment_message": "Si es cierto ahora no puedo con tanto",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Mención a terceros, etiqueta o señal ambigua sin una solicitud dirigida a Universe Sent Me; no asumir intención."
+    },
+    {
+      "comment_id": "122151376539072582_903141995851407",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T18:15:15+0000",
+      "comment_message": "Aber desnalgadas digan presente yo las atiendo 🍆🍆",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Lenguaje sexual explícito o descripción íntima; no escalar ni competir desde la Página."
+    },
+    {
+      "comment_id": "122151376539072582_3630715713746017",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T17:50:08+0000",
+      "comment_message": "Cristopher Sanchez No tengo pruebas pero tampoco dudas 🤣🤣🤣",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Mención a terceros, etiqueta o señal ambigua sin una solicitud dirigida a Universe Sent Me; no asumir intención."
+    },
+    {
+      "comment_id": "122151376539072582_2335603473881165",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T17:57:18+0000",
+      "comment_message": "Genesis Gutierrez para q veas pz",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_914339891270526",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:05:21+0000",
+      "comment_message": "Genesis Gutierrez sera",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_962663543541377",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:18:32+0000",
+      "comment_message": "Linda Gomez 🌺",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1597165285374918",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:11:49+0000",
+      "comment_message": "Yhtak Vn Vn 🧐🫦",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Lenguaje sexual explícito o descripción íntima; no escalar ni competir desde la Página."
+    },
+    {
+      "comment_id": "122151376539072582_2568126203636627",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:12:59+0000",
+      "comment_message": "Leinad A Selev Caypin jajajaha jajajaha",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376539072582_1722665012183535",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T17:39:07+0000",
+      "comment_message": "",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Comentario sin texto recuperable; se conserva para cobertura, sin intervención."
+    },
+    {
+      "comment_id": "122151376539072582_2127044411551534",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T20:23:51+0000",
+      "comment_message": "Sisi",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Aprobación, risa, saludo o reacción breve sin una pregunta o contexto que exija respuesta."
+    },
+    {
+      "comment_id": "122151376539072582_1032661786430045",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:45:20+0000",
+      "comment_message": "",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Comentario sin texto recuperable; se conserva para cobertura, sin intervención."
+    },
+    {
+      "comment_id": "122151376539072582_1222653273349519",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-24T19:36:39+0000",
+      "comment_message": "Es mi fantacia aserselo ahuna mujer por el chiquito",
+      "post_reference": "Reel de Maeve — caption visible: `😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Lenguaje sexual explícito o descripción íntima; no escalar ni competir desde la Página."
+    },
+    {
+      "comment_id": "122151376365072582_1377756154333158",
+      "post_id": "1036844829507460_122151376365072582",
+      "comment_created_time": "2026-08-24T17:50:46+0000",
+      "comment_message": "",
+      "post_reference": "Publicación de tono emocional — caption visible: `💔 #UniverseSentMe`",
+      "reason": "Comentario sin texto recuperable; se conserva para cobertura, sin intervención."
+    },
+    {
+      "comment_id": "122151376083072582_1175843385033340",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T19:01:06+0000",
+      "comment_message": "Karina Skrzipietz lamento contradecirte en este punto mujer",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376083072582_1103335455691461",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T17:27:35+0000",
+      "comment_message": "Anais Rodriguez yo solo tengo gatos 🥲",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376083072582_873812545794155",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T19:24:30+0000",
+      "comment_message": "😋😍",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376083072582_4201396710151414",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T19:44:33+0000",
+      "comment_message": "MI Nina Hermoxxa pues q muerde fuerte jajaja",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376083072582_2238299290067121",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T20:21:00+0000",
+      "comment_message": "MI Nina Hermoxxa cangrejo?",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376083072582_1640502764177122",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T18:30:23+0000",
+      "comment_message": "Tay Ochoa Chavez hola 😘",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376083072582_1702931607635381",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T19:03:06+0000",
+      "comment_message": "Tay Ochoa Chavez tengo entendido que quien lo prectica puede lograrlo pero hay una que otra afortunada que ya los trae esas contracciones involuntarias desde adentro de la vagina presiona el pene y ellas ni lo hacen ni saben que lo están provocando",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376083072582_1598747188463854",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T17:24:39+0000",
+      "comment_message": "Janiiss Mendozaa no es, siéntete privilegiada",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376083072582_2906273333038344",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T20:05:46+0000",
+      "comment_message": "Janiiss Mendozaa no es así ...",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376083072582_1318929356789315",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T18:31:37+0000",
+      "comment_message": "Lilith Delbene Morales de Sade que te dices que lo muerdes rico jajajaj 🤭",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376083072582_4347428852068433",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T17:56:34+0000",
+      "comment_message": "Sin duda , jamás lo a echo!",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376083072582_1412424637471651",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T17:57:16+0000",
+      "comment_message": "Genial, pues adelante!!\nQue te detiene amigo??",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376083072582_2214167662486264",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T19:06:55+0000",
+      "comment_message": "Ella Larita nesecito un besito así",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376083072582_28480268844910921",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T19:22:59+0000",
+      "comment_message": "Y a mi que me dices??",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376083072582_1717777599278289",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T19:01:13+0000",
+      "comment_message": "Delfina Gonzalez a mí ya me pasó jajajaja",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376083072582_1573888567751879",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T20:21:58+0000",
+      "comment_message": "Giron Nankurunaisa Claudia se siente bien rico!!!!",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Réplica dentro de una conversación entre usuarios; no interrumpir desde la Página salvo mención directa, que en este corte se trató como propuesta separada."
+    },
+    {
+      "comment_id": "122151376083072582_1626860065665420",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T18:47:14+0000",
+      "comment_message": "Así sea 😎😌🙌",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Aprobación, risa, saludo o reacción breve sin una pregunta o contexto que exija respuesta."
+    },
+    {
+      "comment_id": "122151376083072582_1377868324461079",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T20:39:54+0000",
+      "comment_message": "Eso me vuelve loco Mya Morgado",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Mención a terceros, etiqueta o señal ambigua sin una solicitud dirigida a Universe Sent Me; no asumir intención."
+    },
+    {
+      "comment_id": "122151376083072582_1603267324730419",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T20:24:54+0000",
+      "comment_message": "Se siente ricooo eso! Je",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Mención a terceros, etiqueta o señal ambigua sin una solicitud dirigida a Universe Sent Me; no asumir intención."
+    },
+    {
+      "comment_id": "122151376083072582_1858890888853369",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T17:33:03+0000",
+      "comment_message": "Es facir corazón,solo es apretar cuando la vergª está dentro,algo así como cuando tienes tos jaja se hace como una contracción y ufff a ellos les encanta 😈🫦",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Lenguaje sexual explícito o descripción íntima; no escalar ni competir desde la Página."
+    },
+    {
+      "comment_id": "122151376083072582_1068633529088205",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-24T17:30:10+0000",
+      "comment_message": "Seeee",
+      "post_reference": "Meme de la frase confirmada `larga vida a esas mujeres que aprietan desde adentro`; caption visible: `😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe`",
+      "reason": "Aprobación, risa, saludo o reacción breve sin una pregunta o contexto que exija respuesta."
+    },
+    {
+      "comment_id": "122151376011072582_2607700726348753",
+      "post_id": "1036844829507460_122151376011072582",
+      "comment_created_time": "2026-08-24T17:48:58+0000",
+      "comment_message": "Coco valiente",
+      "post_reference": "Publicación de contexto breve — caption visible: `😌 #UniverseSentMe`",
+      "reason": "Referencia aislada posiblemente musical (‘Coco valiente’), pero sin artista ni contexto suficiente para una respuesta musical específica. Se conserva y no se omite."
+    }
+  ]
+}

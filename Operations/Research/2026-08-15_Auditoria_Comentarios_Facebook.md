@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "5.7"
+version: "5.8"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -1216,5 +1216,33 @@ El lote terminó con **24/24 respuestas publicadas y verificadas**. Meta confirm
 El ledger conserva las 24 respuestas con `Respuesta_Estado=Respondido`, `Aprobacion_Estado=Aprobada`, `Respuesta_Meta_ID`, `Respuesta_Fecha`, texto exacto, fuente Meta y timestamp de sincronización. El CSV permanece en 353 filas, con 0 comentarios en `Pendiente_Respuesta` después del lote y 162 clasificados como `No_Requiere_Respuesta` en el total histórico.
 
 La evidencia primaria está en `2026-08-24_Facebook_Comment_Publication_After_Batch14.json`; el registro normalizado está en `2026-08-24_Facebook_Comment_Publication_Record_After_Batch14.json`; y la cola posterior en `2026-08-24_Facebook_Pending_Queue_After_Approved_Publication.json`. El informe editorial actualizado conserva el razonamiento de las 24 respuestas y las 59 no-acciones originales.
+
+**Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Community_Engagement_Log.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 36. Revisión posterior a la publicación aprobada — comentarios nuevos sin responder — 24 de agosto de 2026
+
+La revisión exclusiva mediante Meta Graph API v26.0 se ejecutó en modo lectura a las `2026-08-24T20:43:27+00:00`, con cursor `2026-08-24T17:13:46+00:00`, correspondiente al cierre verificado de las 24 respuestas aprobadas posteriores al Batch 14. El corte consultó las 20 publicaciones propias más recientes, 199 comentarios raíz y 349 IDs entre comentarios y réplicas. El alcance recuperó una profundidad de una sola capa de réplicas y no paginó más allá de los primeros 100 objetos por colección; esta limitación queda declarada en la evidencia técnica. No hubo errores de API ni escrituras.
+
+Se encontraron **95 comentarios nuevos sin respuesta directa** posteriores al cursor. Todos fueron preservados y clasificados en el ledger, que pasó de 353 a **448 filas únicas**. La revisión editorial dejó **5 propuestas específicas** en `Pendiente_Respuesta` + `Pendiente_Fernando` y **90 unidades `No_Requiere_Respuesta`**. Ninguna propuesta está autorizada para publicar.
+
+| Control | Resultado |
+|---|---:|
+| Publicaciones propias revisadas | 20 |
+| Comentarios raíz vistos | 199 |
+| IDs de comentarios/réplicas vistos | 349 |
+| Comentarios nuevos sin respuesta | 95 |
+| Propuestas específicas | 5 |
+| No requiere respuesta | 90 |
+| Publicaciones ejecutadas | 0 |
+| Errores de API | 0 |
+
+La concentración se distribuye entre 69 hallazgos del reel de Maeve, 23 del meme cuya frase confirmada es `larga vida a esas mujeres que aprietan desde adentro`, y un hallazgo en cada una de tres publicaciones con captions `😌`, `💔` y `Bueno… tampoco era para tanto. 🤭`. Las 90 no-acciones se desglosan en 63 réplicas de conversaciones usuario-a-usuario, 14 señales breves o vacías, 8 comentarios contextuales o ambiguos y 5 unidades con lenguaje sensible. La regla aplicada fue no interrumpir conversaciones laterales, no asumir que una etiqueta es una solicitud a la Página y no competir con contenido sexual explícito.
+
+La única mención directa nueva a Universe Sent Me fue `122151376083072582_1036099909244517`: `Universe Sent Me pero esto parece más salud pública 😂`. El parent inmediato explica el chiste como una supuesta rutina para reducir costillas y marcar abdomen; se preparó la propuesta `Jajaja, de meme a campaña de salud pública en dos comentarios. 😂🙈`, que permanece pendiente de autorización. El contexto auxiliar fue saneado para no conservar campos de autor.
+
+La revisión también conservó el comentario musical aislado `Coco valiente`. Quedó sin acción porque no aporta artista, letra ni contexto verificable para responder de forma específica; no fue descartado ni ocultado del inventario. Esta decisión mantiene la cobertura de señales musicales sin fabricar una interpretación.
+
+El detalle completo de decisiones está en `2026-08-24_Facebook_Editorial_Review_After_Approved_Publication.md/.json`; la cola vigente está en `2026-08-24_Facebook_Pending_Queue_After_Approved_Publication_Review.json`; la evidencia de lectura está en `2026-08-24_Facebook_Comment_Review_After_Approved_Publication.json`; y el contexto saneado está en `2026-08-24_Facebook_Direct_Page_Mention_Context_After_Batch14.json`. El auditor reutilizable corregido es `Operations/Automation/audit_facebook_comments_after_approved_publication.py`; el registrador idempotente es `Operations/Automation/record_facebook_after_approved_publication_review.py`.
 
 **Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Community_Engagement_Log.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

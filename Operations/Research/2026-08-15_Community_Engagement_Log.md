@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "5.2"
+version: "5.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -718,5 +718,28 @@ Se publicaron y verificaron **24/24 respuestas**. La verificación comprobó aut
 El CSV quedó en **353 filas**, con las 24 filas actualizadas con `Respuesta_Meta_ID`, `Respuesta_Fecha`, respuesta exacta, aprobación, fuente y timestamp de sincronización. El registro detallado está en `2026-08-24_Facebook_Comment_Publication_After_Batch14.json` y `2026-08-24_Facebook_Comment_Publication_Record_After_Batch14.json`; la cola posterior está en `2026-08-24_Facebook_Pending_Queue_After_Approved_Publication.json`.
 
 La ejecución inicial terminó sin interrupciones; el publicador se diseñó para detenerse ante cualquier verificación no concluyente, pero no fue necesario activar recuperación. El informe editorial fue actualizado para mostrar las 24 respuestas publicadas/verificadas y mantener las 59 no-acciones fuera de la cola publicable.
+
+**Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 20. Nuevo corte posterior a la publicación aprobada — 24 de agosto de 2026
+
+La revisión exclusiva mediante Meta Graph API v26.0 se ejecutó en modo lectura a las `2026-08-24T20:43:27+00:00`, usando el cursor correcto `2026-08-24T17:13:46+00:00`, correspondiente al cierre verificado de la última tanda de 24 respuestas aprobadas. Se consultaron las 20 publicaciones propias más recientes, 199 comentarios raíz y 349 IDs de comentarios y réplicas; no hubo errores de API ni escrituras en Facebook.
+
+El corte detectó **95 comentarios nuevos sin respuesta directa** posteriores al cursor y los registró de manera idempotente en el CSV. El ledger pasó de 353 a **448 filas únicas**. La clasificación dejó **5 propuestas específicas** en `Pendiente_Respuesta` + `Pendiente_Fernando` y **90 casos `No_Requiere_Respuesta`**. La cola no contiene publicaciones autorizadas: ninguna propuesta puede publicarse sin una nueva aprobación explícita de Fernando.
+
+| Resultado | Casos | Tratamiento |
+|---|---:|---|
+| Comentarios nuevos sin respuesta | 95 | Registrados una sola vez por `Comentario_ID` |
+| Propuestas específicas | 5 | Pendientes de aprobación explícita de Fernando |
+| No requiere respuesta | 90 | Conversaciones usuario-a-usuario, baja señal, referencias ambiguas o lenguaje sensible |
+| Publicaciones realizadas en este corte | 0 | Solo lectura; no se modificó Facebook |
+| Errores de API | 0 | Sin incidencias técnicas |
+
+Las cinco propuestas corresponden a un remate sobre el asterisco del meme, una pregunta directa sobre si la afirmación es cierta, una consecuencia absurda sobre “crecer las manos”, la referencia juguetona a la “trampa del cangrejo” y una réplica que menciona directamente a Universe Sent Me. La última fue contextualizada con su parent inmediato: el hilo venía explicando en tono de broma una supuesta rutina para reducir costillas y marcar abdomen; la propuesta devuelve el giro de “salud pública” sin dar consejo médico.
+
+También se conservó explícitamente el comentario aislado **“Coco valiente”**. Se clasificó como baja señal porque no contiene artista, letra ni contexto verificable para redactar una respuesta musical específica; no se omitió del inventario ni del ledger. Las 90 no-acciones incluyen 63 réplicas dentro de conversaciones entre usuarios, 14 señales breves o vacías, 8 comentarios contextuales o ambiguos y 5 unidades con lenguaje sensible. El criterio aplicado fue no interrumpir conversaciones laterales ni amplificar descripciones íntimas desde la Página.
+
+El detalle completo de decisiones está en `2026-08-24_Facebook_Editorial_Review_After_Approved_Publication.md/.json`; la cola vigente está en `2026-08-24_Facebook_Pending_Queue_After_Approved_Publication_Review.json`; la evidencia de lectura está en `2026-08-24_Facebook_Comment_Review_After_Approved_Publication.json`; y el contexto saneado de la mención directa está en `2026-08-24_Facebook_Direct_Page_Mention_Context_After_Batch14.json`. El auditor reutilizable queda en `Operations/Automation/audit_facebook_comments_after_approved_publication.py`, con cursor separado del nombre histórico de Batch 14.
 
 **Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
