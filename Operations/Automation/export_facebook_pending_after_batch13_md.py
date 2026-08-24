@@ -1,4 +1,4 @@
-"""Export the two explicitly excluded pending Facebook items after Batch 13."""
+"""Export the final Facebook queue after Batch 13."""
 
 import json
 from pathlib import Path
@@ -8,30 +8,42 @@ QUEUE = ROOT / "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batc
 OUT = ROOT / "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch13.md"
 
 queue = json.loads(QUEUE.read_text(encoding="utf-8"))
-rows = queue.get("pending", [])
-if len(rows) != 2:
-    raise SystemExit(f"EXPECTED_2_EXCLUDED_PENDING: {len(rows)}")
+if queue.get("facebook_pending_count") != 0 or queue.get("pending"):
+    raise SystemExit("EXPECTED_ZERO_PUBLISHABLE_PENDING")
+excluded = queue.get("excluded_from_batch13", [])
+if len(excluded) != 2:
+    raise SystemExit(f"EXPECTED_2_EXCLUSIONS: {len(excluded)}")
 
 lines = [
-    "# Cola pendiente de Facebook después del Batch 13",
+    "# Cola de Facebook después del Batch 13",
     "",
-    "**Propósito:** registrar los dos comentarios que permanecen sin respuesta por decisión editorial de Fernando.",
+    "**Propósito:** registrar el estado final de la cola que fue revisada y autorizada en el Batch 13, diferenciando respuestas publicadas de exclusiones editoriales o técnicas.",
     "**Estado:** Active",
     "**Fecha de creación:** 2026-08-24",
     "**Última actualización:** 2026-08-24",
-    "**Versión:** 1.0",
+    "**Versión:** 1.1",
     "**Autor:** Manus AI",
     "**Documentos relacionados:** `2026-08-24_Facebook_Comment_Publication_Batch_13.json`; `2026-08-24_Facebook_Comment_Publication_Record_Batch_13.json`; `2026-08-24_Facebook_Pending_Queue_After_Batch13.json`; `2026-08-15_Community_Engagement_Log.csv`",
     "**Organización:** Operations/Research",
     "",
-    "Después del Batch 13 quedan **2 registros pendientes**, ambos excluidos explícitamente de publicación:",
+    "## Estado final",
     "",
-    "| Caso | Motivo | Estado |",
+    "Después del Batch 13 quedan **0 pendientes publicables** dentro de la cola revisada. Las diez respuestas autorizadas fueron publicadas y verificadas. Los dos casos restantes se registran como no accionables y no deben volver a enviarse sin una nueva autorización explícita de Fernando.",
+    "",
+    "| Resultado | Cantidad |",
+    "|---|---:|",
+    "| Respuestas autorizadas, publicadas y verificadas | 10 |",
+    "| Pendientes publicables | 0 |",
+    "| Exclusiones editoriales o técnicas | 2 |",
+    "",
+    "## Exclusiones conservadas para trazabilidad",
+    "",
+    "| Caso | Estado en ledger | Motivo |",
     "|---|---|---|",
-    "| Réplica de L Roberto en el hilo filosófico | Fernando indicó no contestarla por ser una réplica de usuario a usuario. | Excluida — no responder |",
-    "| Comentario musical inaccesible sin texto recuperable | Meta no carga el objeto; no se fuerza una publicación sobre un comentario que no puede verificarse. | Bloqueada por API — no responder |",
+    "| Réplica de L Roberto `122151375549072582_1817089682764579` | `No_Requiere_Respuesta` | Fernando indicó no contestar una réplica de usuario a usuario; no interrumpir el intercambio. |",
+    "| Comentario musical inaccesible `122151376011072582_1703056380925949` | `Archivado` | Meta no permite recuperar el objeto ni su texto; no forzar una respuesta no verificable. |",
     "",
-    "Las otras diez respuestas autorizadas del Batch 13 fueron publicadas y verificadas. No queda ninguna otra respuesta aprobada pendiente en esta cola.",
+    "Este estado refleja la reconciliación del ledger después del Batch 13 y **no representa una nueva auditoría amplia de Facebook**. Cualquier comentario nuevo deberá pasar por una revisión posterior mediante Meta Graph API v26.0 y requerirá autorización antes de publicar.",
 ]
 OUT.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
-print(json.dumps({"remaining_pending": len(rows), "excluded": 2}, ensure_ascii=False))
+print(json.dumps({"publishable_pending": 0, "excluded": len(excluded)}, ensure_ascii=False))

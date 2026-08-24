@@ -1,56 +1,116 @@
 {
   "title": "Facebook Pending Queue After Batch 13",
-  "purpose": "Estado actual de la cola del ledger después de publicar y verificar el Batch 13, excluyendo a L Roberto y el comentario inaccesible.",
+  "purpose": "Estado actual de la cola del ledger después de publicar y verificar el Batch 13; las diez propuestas autorizadas fueron respondidas y los dos casos restantes fueron excluidos explícitamente.",
   "status": "Active",
   "created_at": "2026-08-24",
   "updated_at": "2026-08-24",
-  "version": "1.1",
+  "version": "1.2",
   "author": "Manus AI",
   "related_documents": [
     "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
-    "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_12.json",
-    "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_12.json",
+    "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch12.json",
     "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_13.json",
     "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_13.json"
   ],
   "organization": "Operations/Research",
   "source": "Community Engagement Log synchronized with Meta Graph API v26.0 publication records; current queue calculated after verified Batch 13 without a new broad API sweep",
   "ledger_rows": 255,
-  "facebook_pending_count": 2,
-  "facebook_pending_with_proposal": 2,
+  "facebook_pending_count": 0,
+  "facebook_pending_with_proposal": 0,
   "facebook_pending_without_proposal": 0,
-  "facebook_no_action_count": 78,
+  "facebook_no_action_count": 80,
   "published_from_batch13": 10,
   "excluded_from_batch13": [
     "122151375549072582_1817089682764579",
     "122151376011072582_1703056380925949"
   ],
-  "groups": {
-    "1036844829507460_122151376011072582": 1,
-    "122151375549072582": 1
-  },
-  "pending": [
+  "responded_from_batch13": [
+    "122151376083072582_2288087915279831",
+    "122151376083072582_1374303084841115",
+    "122151376083072582_2076744963209419",
+    "122151376083072582_1057397926935250",
+    "122151376083072582_2139372153647884",
+    "122151376083072582_1031789069652438",
+    "122151376083072582_1800051157832910",
+    "122151376083072582_886767890954566",
+    "122151376011072582_2488170114997851",
+    "122151376083072582_1385775342983817"
+  ],
+  "reconciled_batch13": [
     {
       "comment_id": "122151376011072582_1703056380925949",
-      "post_id": "1036844829507460_122151376011072582",
-      "comment_date": "2026-08-24T02:44:40+0000",
-      "comment_type": "Comentario_Raiz",
-      "suggested_reply": "“El día que volviste a la Tierra” de Carlos Sadness: una elección con nostalgia y regreso en el título. 🎶🌎",
-      "approval_status": "Pendiente_Fernando",
-      "priority": "Media",
-      "source": "Meta Graph API v26.0 — publicación bloqueada por objeto inaccesible"
+      "outcome": "Archivado",
+      "reason": "Objeto de comentario inaccesible para Meta (HTTP 400 / código 100); Fernando indicó no forzar una respuesta no verificable.",
+      "verified": false
+    },
+    {
+      "comment_id": "122151376083072582_2288087915279831",
+      "outcome": "Respondido",
+      "reply_id": "122151376083072582_1373965101527412",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_1374303084841115",
+      "outcome": "Respondido",
+      "reply_id": "122151376083072582_2624277351322664",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_2076744963209419",
+      "outcome": "Respondido",
+      "reply_id": "122151376083072582_4624228337790055",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_1057397926935250",
+      "outcome": "Respondido",
+      "reply_id": "122151376083072582_1275669098963355",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_2139372153647884",
+      "outcome": "Respondido",
+      "reply_id": "122151376083072582_943361278782949",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_1031789069652438",
+      "outcome": "Respondido",
+      "reply_id": "122151376083072582_1510544064090956",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_1800051157832910",
+      "outcome": "Respondido",
+      "reply_id": "122151376083072582_994981680262825",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_886767890954566",
+      "outcome": "Respondido",
+      "reply_id": "122151376083072582_2059152401659768",
+      "verified": true
     },
     {
       "comment_id": "122151375549072582_1817089682764579",
-      "post_id": "122151375549072582",
-      "comment_date": "2026-08-23T17:25:20+0000",
-      "comment_type": "Réplica_Anidada",
-      "suggested_reply": "Sí, ahí ya entramos en historia de las religiones y cosmogonías. Gracias por aportar la referencia; la pregunta se puso aún más grande. 🤔✨",
-      "approval_status": "Pendiente_Fernando",
-      "priority": "Media",
-      "source": "Meta Graph API v26.0 — réplica nueva posterior a 2026-08-23T16:56:42+0000"
+      "outcome": "No_Requiere_Respuesta",
+      "reason": "Fernando indicó no contestar esta réplica de usuario a usuario; no interrumpir el intercambio.",
+      "verified": false
+    },
+    {
+      "comment_id": "122151376011072582_2488170114997851",
+      "outcome": "Respondido",
+      "reply_id": "122151376011072582_2863110624053394",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_1385775342983817",
+      "outcome": "Respondido",
+      "reply_id": "122151376083072582_1858873402153599",
+      "verified": true
     }
   ],
+  "pending": [],
   "no_action": [
     {
       "comment_id": "122148874563072582_1043931788381940",
@@ -441,6 +501,16 @@
       "comment_id": "122151375549072582_1034906995912331",
       "post_id": "1036844829507460_122151375549072582",
       "reason": "Réplica de usuario a usuario; no interrumpir la conversación desde la Página."
+    },
+    {
+      "comment_id": "122151376011072582_1703056380925949",
+      "post_id": "1036844829507460_122151376011072582",
+      "reason": "Objeto de comentario inaccesible para Meta (HTTP 400 / código 100); Fernando indicó no forzar una respuesta no verificable."
+    },
+    {
+      "comment_id": "122151375549072582_1817089682764579",
+      "post_id": "122151375549072582",
+      "reason": "Fernando indicó no contestar esta réplica de usuario a usuario; no interrumpir el intercambio."
     }
   ]
 }

@@ -1074,4 +1074,4 @@ Fernando autorizó publicar las diez respuestas restantes, excluyendo explícita
 | Comentario inaccesible excluido | 1 |
 | Publicaciones fuera de autorización | 0 |
 
-Después del Batch 13 quedan únicamente **dos registros pendientes**: la réplica de L Roberto, que Fernando indicó no contestar, y el comentario musical sin texto accesible para Meta, que no debe forzarse. La cola final está en `2026-08-24_Facebook_Pending_Queue_After_Batch13.md`.
+Después del Batch 13 quedan **0 pendientes publicables**. Se conservan 2 registros como exclusiones no accionables: la réplica de L Roberto, que Fernando indicó no contestar, y el comentario musical sin texto accesible para Meta, que se archivó sin forzar una respuesta. La cola final está en `2026-08-24_Facebook_Pending_Queue_After_Batch13.md`.

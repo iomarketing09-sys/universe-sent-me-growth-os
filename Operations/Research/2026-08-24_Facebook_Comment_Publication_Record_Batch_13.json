@@ -1,14 +1,15 @@
 {
   "title": "Facebook Comment Publication Record Batch 13",
-  "purpose": "Registrar diez respuestas aprobadas y verificadas; conservar explícitamente fuera del lote a L Roberto y el comentario inaccesible.",
+  "purpose": "Registrar diez respuestas aprobadas y verificadas y dos exclusiones editoriales explícitas; conservar la trazabilidad sin repetir publicaciones.",
   "status": "Active",
   "created_at": "2026-08-24T03:49:42+00:00",
   "updated_at": "2026-08-24T03:49:42+00:00",
-  "version": "1.0",
+  "version": "1.1",
   "author": "Manus AI",
   "related_documents": [
     "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_13.json",
     "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch12.json",
+    "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Batch13.json",
     "Operations/Research/2026-08-15_Community_Engagement_Log.csv"
   ],
   "organization": "Operations/Research",
@@ -16,6 +17,7 @@
   "source": "Meta Graph API v26.0",
   "updated_rows": 10,
   "verified_rows": 10,
+  "excluded_rows": 2,
   "excluded_comment_ids": [
     "122151375549072582_1817089682764579",
     "122151376011072582_1703056380925949"
@@ -80,6 +82,20 @@
       "reply_id": "122151376083072582_1858873402153599",
       "status": "Respondido",
       "verified": true
+    }
+  ],
+  "excluded_records": [
+    {
+      "comment_id": "122151375549072582_1817089682764579",
+      "status": "No_Requiere_Respuesta",
+      "reason": "Fernando indicó no contestar esta réplica de usuario a usuario; no interrumpir el intercambio.",
+      "published": false
+    },
+    {
+      "comment_id": "122151376011072582_1703056380925949",
+      "status": "Archivado",
+      "reason": "Objeto de comentario inaccesible para Meta (HTTP 400 / código 100); Fernando indicó no forzar una respuesta no verificable.",
+      "published": false
     }
   ],
   "new_proposals_published": false
