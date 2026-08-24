@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "5.6"
+version: "5.7"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -37,6 +37,12 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_Editorial_Review_After_Batch14.json"
   - "Operations/Research/2026-08-24_Facebook_Editorial_Review_After_Batch14.md"
   - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Review.json"
+  - "Operations/Automation/publish_facebook_after_batch14_approved_replies.py"
+  - "Operations/Automation/record_facebook_publication_after_batch14.py"
+  - "Operations/Automation/export_facebook_after_batch14_review_md.py"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_After_Batch14.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_After_Batch14.json"
+  - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Approved_Publication.json"
   - "Operations/Automation/validate_community_engagement_log.py"
   - "Operations/Research/2026-08-23_Facebook_Comment_Publication_Batch.json"
   - "Operations/Research/2026-08-23_Facebook_Comment_Review_Delta_02.json"
@@ -1187,5 +1193,28 @@ Las oportunidades de mayor prioridad son referencias musicales concretas —“S
 Las 59 no-acciones se mantienen fuera de la cola publicable: 48 son réplicas dentro de conversaciones entre usuarios sin solicitud clara a la Página; las restantes son reacciones breves, comentarios ambiguos, promociones, invitaciones explícitas o contenido que no ofrece un ángulo seguro y específico para USM. Las menciones a `Universe Sent Me` dentro de una conversación lateral no se convierten automáticamente en solicitud dirigida a la Página.
 
 El registro completo de decisiones está en `2026-08-24_Facebook_Editorial_Review_After_Batch14.md/.json`; el contexto de las réplicas está en `2026-08-24_Facebook_Comment_Context_After_Batch14.json`; y el resumen de cola en `2026-08-24_Facebook_Pending_Queue_After_Review.json`. El ledger pasa a 353 filas y conserva `Privacidad=Anonimizado`. La cola contiene 24 propuestas que requieren decisión de Fernando y **0 publicaciones autorizadas sin nueva aprobación**.
+
+**Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Community_Engagement_Log.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+## 35. Publicación aprobada posterior al Batch 14 — 24 de agosto de 2026
+
+Fernando aprobó las 24 propuestas del corte posterior al Batch 14. La operación se ejecutó únicamente mediante Meta Graph API v26.0, con preflight anti-duplicado sobre los 24 hilos antes del primer POST. La ventana documentada fue `2026-08-24T17:11:44+00:00`–`2026-08-24T17:13:46+00:00`.
+
+El lote terminó con **24/24 respuestas publicadas y verificadas**. Meta confirmó en cada caso el Page ID `1036844829507460`, el texto exacto de la respuesta, `is_hidden=false`, timestamp y relación parent. Veintitrés respuestas devolvieron el comentario objetivo como parent directo. La única réplica anidada fue validada comparando el parent devuelto por Meta con el parent inmediato real de la réplica objetivo; no se trató como error ni se reintentó.
+
+| Control | Resultado |
+|---|---:|
+| Respuestas autorizadas | 24 |
+| Publicadas | 24 |
+| Verificadas | 24 |
+| Parent directo | 23 |
+| Réplica anidada validada | 1 |
+| Duplicados | 0 |
+| Errores de API | 0 |
+| Respuestas fuera de autorización | 0 |
+
+El ledger conserva las 24 respuestas con `Respuesta_Estado=Respondido`, `Aprobacion_Estado=Aprobada`, `Respuesta_Meta_ID`, `Respuesta_Fecha`, texto exacto, fuente Meta y timestamp de sincronización. El CSV permanece en 353 filas, con 0 comentarios en `Pendiente_Respuesta` después del lote y 162 clasificados como `No_Requiere_Respuesta` en el total histórico.
+
+La evidencia primaria está en `2026-08-24_Facebook_Comment_Publication_After_Batch14.json`; el registro normalizado está en `2026-08-24_Facebook_Comment_Publication_Record_After_Batch14.json`; y la cola posterior en `2026-08-24_Facebook_Pending_Queue_After_Approved_Publication.json`. El informe editorial actualizado conserva el razonamiento de las 24 respuestas y las 59 no-acciones originales.
 
 **Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Community_Engagement_Log.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

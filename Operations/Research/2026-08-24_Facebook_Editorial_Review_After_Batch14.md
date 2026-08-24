@@ -1,26 +1,27 @@
 # Revisión editorial de Facebook posterior al Batch 14
 
-> **Estado:** Review · **Solo lectura** · **No se publicaron respuestas**
+> **Estado:** Active · **24/24 respuestas publicadas y verificadas** · Meta Graph API v26.0
 
 ## Ficha del documento
 
 | Campo | Valor |
 |---|---|
 | Propósito | Registrar y clasificar comentarios nuevos sin respuesta encontrados después del Batch 14. |
-| Corte | 2026-08-24T16:50:20+00:00 |
+| Corte | 2026-08-24T17:13:46+00:00 |
 | Fuente | Meta Graph API v26.0 / post-Batch-14 read-only review |
 | Cursor | 2026-08-24T04:14:14+00:00 (2026-08-24_Facebook_Comment_Publication_Batch_14.json) |
 | Unidades revisadas | 83 |
-| Propuestas pendientes de aprobación | 24 |
+| Propuestas pendientes de aprobación | 0 |
+| Respuestas publicadas y verificadas | 24 |
 | Casos sin acción | 59 |
-| Publicaciones realizadas | 0 |
+| Publicaciones realizadas | 24 |
 | Filas del ledger después del registro | 353 |
 
 ## Resumen ejecutivo
 
-Meta Graph API v26.0 encontró **83 comentarios nuevos sin respuesta** desde el cursor del Batch 14. Se prepararon **24 propuestas específicas** para aprobación de Fernando y se clasificaron **59 casos como `No_Requiere_Respuesta`**. La mayoría de los casos sin acción son réplicas dentro de conversaciones usuario-a-usuario, comentarios de baja señal o contenido sexual que no debe escalarse desde la Página.
+Meta Graph API v26.0 encontró **83 comentarios nuevos sin respuesta** desde el cursor del Batch 14. Fernando aprobó las **24 propuestas específicas**, que fueron publicadas y verificadas individualmente; además, se clasificaron **59 casos como `No_Requiere_Respuesta`**. La mayoría de los casos sin acción son réplicas dentro de conversaciones usuario-a-usuario, comentarios de baja señal o contenido sexual que no debe escalarse desde la Página.
 
-La revisión cubrió las siguientes publicaciones y no realizó escrituras en Facebook:
+La revisión cubrió las siguientes publicaciones. Las respuestas aprobadas se publicaron en un lote separado y quedaron verificadas contra Meta:
 
 | Post_ID | Copy/caption | Hallazgos nuevos |
 |---|---|---:|
@@ -31,9 +32,9 @@ La revisión cubrió las siguientes publicaciones y no realizó escrituras en Fa
 | `1036844829507460_122151376539072582` | 😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe | 33 |
 | `1036844829507460_122151376629072582` | El cambio da miedo… quedarse igual también. 😮‍💨 #UniverseSentMe | 1 |
 
-## Propuestas pendientes de aprobación
+## Propuestas publicadas y verificadas
 
-Estas propuestas están registradas como `Pendiente_Respuesta` y **no deben publicarse sin autorización explícita**.
+Estas respuestas fueron aprobadas explícitamente por Fernando, publicadas mediante Meta Graph API v26.0 y verificadas por texto, autoría, visibilidad y parent.
 
 | # | Comentario | Publicación | Propuesta USM | Prioridad | Criterio |
 |---:|---|---|---|---|---|
@@ -133,13 +134,15 @@ Los siguientes casos se conservan para trazabilidad, pero no se propone interven
 1. No interrumpir réplicas usuario-a-usuario salvo solicitud clara a la Página.
 2. Para dobles sentidos, responder solo cuando exista un ángulo específico y mantener el tono cómplice, no gráfico y sin escalada.
 3. No convertir agradecimientos, emojis aislados o comentarios ambiguos en respuestas genéricas.
-4. Toda propuesta permanece pendiente hasta recibir aprobación explícita de Fernando.
+4. Toda publicación requiere aprobación explícita de Fernando; el lote documentado aquí ya cumplió esa condición.
 5. El ledger conserva el texto del comentario, copy de la publicación, propuesta o no-acción, prioridad, fuente y timestamp de registro.
 
 ## Documentos relacionados
 
 - `Operations/Research/2026-08-24_Facebook_Comment_Review_After_Batch14.json`
 - `Operations/Research/2026-08-24_Facebook_Comment_Context_After_Batch14.json`
+- `Operations/Research/2026-08-24_Facebook_Comment_Publication_After_Batch14.json`
+- `Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_After_Batch14.json`
 - `Operations/Research/2026-08-24_Facebook_Editorial_Review_After_Batch14.json`
 - `Operations/Research/2026-08-15_Community_Engagement_Log.csv`
 - `Operations/Research/2026-08-15_Community_Engagement_Log.md`

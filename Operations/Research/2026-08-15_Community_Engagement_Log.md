@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "5.1"
+version: "5.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -158,6 +158,12 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_Editorial_Review_After_Batch14.json"
   - "Operations/Research/2026-08-24_Facebook_Editorial_Review_After_Batch14.md"
   - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Review.json"
+  - "Operations/Automation/publish_facebook_after_batch14_approved_replies.py"
+  - "Operations/Automation/record_facebook_publication_after_batch14.py"
+  - "Operations/Automation/export_facebook_after_batch14_review_md.py"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_After_Batch14.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_After_Batch14.json"
+  - "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Approved_Publication.json"
 organization: "Operations/Research"
 ---
 
@@ -690,5 +696,27 @@ Se detectaron **83 comentarios nuevos sin respuesta** desde el cursor. Se regist
 Las propuestas con prioridad alta incluyen **“Scorpions — You & I”**, la mención musical a **“Frío frío”**, **“Mujer amante”**, **“Sueños del alma”**, una reflexión sobre el aire y el afecto, y comentarios autoconscientes sobre el algoritmo o la intención de experimentar. Las propuestas de doble sentido se mantienen cómplices y no gráficas. Las réplicas que únicamente continúan conversaciones entre usuarios, incluso cuando contienen nombres o etiquetas, no se interrumpen salvo que exista una solicitud clara a la Página.
 
 El detalle completo está en `2026-08-24_Facebook_Editorial_Review_After_Batch14.md/.json`; el contexto de los padres de las réplicas está en `2026-08-24_Facebook_Comment_Context_After_Batch14.json`; y el estado resumido de la cola en `2026-08-24_Facebook_Pending_Queue_After_Review.json`. El CSV continúa siendo la fuente única de verdad operativa y toda propuesta permanece bloqueada hasta recibir autorización explícita.
+
+**Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+## 19. Publicación aprobada posterior al Batch 14 — 24 de agosto de 2026
+
+Fernando aprobó explícitamente las 24 propuestas registradas en el corte posterior al Batch 14. La publicación se ejecutó exclusivamente mediante Meta Graph API v26.0 entre `2026-08-24T17:11:44+00:00` y `2026-08-24T17:13:46+00:00`. El preflight comprobó cada hilo antes del primer POST; no se detectaron respuestas exactas previas ni conflictos de Página.
+
+Se publicaron y verificaron **24/24 respuestas**. La verificación comprobó autoría de Page ID `1036844829507460`, texto exacto, `is_hidden=false`, timestamp y relación parent. Veintitrés respuestas tuvieron parent directo del comentario objetivo y una réplica anidada fue validada mediante el parent inmediato que Meta devuelve para ese hilo. No hubo publicaciones duplicadas, errores de API ni respuestas fuera del conjunto aprobado.
+
+| Resultado | Casos | Estado registrado |
+|---|---:|---|
+| Respuestas aprobadas | 24 | `Pendiente_Fernando` → `Aprobada` |
+| Publicadas | 24 | `Respuesta_Estado=Respondido` |
+| Verificadas | 24 | Texto, Page ID, visibilidad y parent confirmados |
+| Parent directo | 23 | Semántica `direct_target_parent` |
+| Réplica anidada | 1 | Semántica `nested_target_parent` |
+| Duplicados | 0 | Preflight y ledger sin conflictos |
+| Pendientes publicables posteriores | 0 | Cola vacía después de sincronización |
+
+El CSV quedó en **353 filas**, con las 24 filas actualizadas con `Respuesta_Meta_ID`, `Respuesta_Fecha`, respuesta exacta, aprobación, fuente y timestamp de sincronización. El registro detallado está en `2026-08-24_Facebook_Comment_Publication_After_Batch14.json` y `2026-08-24_Facebook_Comment_Publication_Record_After_Batch14.json`; la cola posterior está en `2026-08-24_Facebook_Pending_Queue_After_Approved_Publication.json`.
+
+La ejecución inicial terminó sin interrupciones; el publicador se diseñó para detenerse ante cualquier verificación no concluyente, pero no fue necesario activar recuperación. El informe editorial fue actualizado para mostrar las 24 respuestas publicadas/verificadas y mantener las 59 no-acciones fuera de la cola publicable.
 
 **Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

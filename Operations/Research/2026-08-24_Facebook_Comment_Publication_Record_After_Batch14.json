@@ -1,0 +1,246 @@
+{
+  "title": "Facebook Comment Publication Record — 24 Approved Replies After Batch 14",
+  "purpose": "Registrar las 24 respuestas aprobadas explícitamente por Fernando, publicadas y verificadas mediante Meta Graph API v26.0.",
+  "status": "Active",
+  "created_at": "2026-08-24T17:11:44+00:00",
+  "updated_at": "2026-08-24T17:13:46+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-24_Facebook_Comment_Publication_After_Batch14.json",
+    "Operations/Research/2026-08-24_Facebook_Editorial_Review_After_Batch14.json",
+    "Operations/Research/2026-08-24_Facebook_Editorial_Review_After_Batch14.md",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
+    "Operations/Research/2026-08-24_Facebook_Pending_Queue_After_Approved_Publication.json"
+  ],
+  "organization": "Operations/Research",
+  "source": "Meta Graph API v26.0",
+  "page_id": "1036844829507460",
+  "explicit_user_approval": true,
+  "approval_source": "Fernando aprobó las 24 respuestas en conversación antes de la publicación.",
+  "requested_count": 24,
+  "published_count": 24,
+  "already_published_count": 0,
+  "verified_count": 24,
+  "strict_direct_parent_count": 23,
+  "nested_target_parent_semantics_count": 1,
+  "no_duplicate_posts": true,
+  "records": [
+    {
+      "comment_id": "122151376629072582_1041344015455456",
+      "reply_id": "122151376629072582_1366715502250355",
+      "reply_created_time": "2026-08-24T17:12:01+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    },
+    {
+      "comment_id": "122151376539072582_757157010825943",
+      "reply_id": "122151376539072582_953034013734042",
+      "reply_created_time": "2026-08-24T17:12:05+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    },
+    {
+      "comment_id": "122151376539072582_1069501129107761",
+      "reply_id": "122151376539072582_28763120869947782",
+      "reply_created_time": "2026-08-24T17:12:08+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    },
+    {
+      "comment_id": "122151376539072582_1723720622176837",
+      "reply_id": "122151376539072582_2294200888074531",
+      "reply_created_time": "2026-08-24T17:12:14+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    },
+    {
+      "comment_id": "122151376539072582_1967578493929235",
+      "reply_id": "122151376539072582_37760446773601713",
+      "reply_created_time": "2026-08-24T17:12:17+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    },
+    {
+      "comment_id": "122151376539072582_2105653843654560",
+      "reply_id": "122151376539072582_813218061848107",
+      "reply_created_time": "2026-08-24T17:12:21+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    },
+    {
+      "comment_id": "122151376365072582_1038307515745573",
+      "reply_id": "122151376365072582_1571034324510462",
+      "reply_created_time": "2026-08-24T17:12:25+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    },
+    {
+      "comment_id": "122151376083072582_1658593382547991",
+      "reply_id": "122151376083072582_1088833606922435",
+      "reply_created_time": "2026-08-24T17:12:30+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    },
+    {
+      "comment_id": "122151376083072582_1508436187637419",
+      "reply_id": "122151376083072582_2496058647536048",
+      "reply_created_time": "2026-08-24T17:12:34+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    },
+    {
+      "comment_id": "122151376083072582_1754742345836101",
+      "reply_id": "122151376083072582_1031871906278421",
+      "reply_created_time": "2026-08-24T17:12:38+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    },
+    {
+      "comment_id": "122151376083072582_1042114515343799",
+      "reply_id": "122151376083072582_2379176999570486",
+      "reply_created_time": "2026-08-24T17:12:42+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    },
+    {
+      "comment_id": "122151376083072582_1852477149460266",
+      "reply_id": "122151376083072582_1090543476758908",
+      "reply_created_time": "2026-08-24T17:12:46+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    },
+    {
+      "comment_id": "122151376083072582_4578713942406487",
+      "reply_id": "122151376083072582_905704635592836",
+      "reply_created_time": "2026-08-24T17:12:59+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    },
+    {
+      "comment_id": "122151376083072582_1037049892299180",
+      "reply_id": "122151376083072582_1804034700782431",
+      "reply_created_time": "2026-08-24T17:13:03+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    },
+    {
+      "comment_id": "122151376083072582_1064431163230561",
+      "reply_id": "122151376083072582_1761660544882738",
+      "reply_created_time": "2026-08-24T17:13:06+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    },
+    {
+      "comment_id": "122151376083072582_1482819530395036",
+      "reply_id": "122151376083072582_2009149489740194",
+      "reply_created_time": "2026-08-24T17:13:10+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    },
+    {
+      "comment_id": "122151376083072582_1375056147466831",
+      "reply_id": "122151376083072582_2245089049614695",
+      "reply_created_time": "2026-08-24T17:13:13+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    },
+    {
+      "comment_id": "122151376083072582_1054911050596272",
+      "reply_id": "122151376083072582_1750491739409073",
+      "reply_created_time": "2026-08-24T17:13:17+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    },
+    {
+      "comment_id": "122151376083072582_2128221185244977",
+      "reply_id": "122151376083072582_1076160321555279",
+      "reply_created_time": "2026-08-24T17:13:22+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    },
+    {
+      "comment_id": "122151376083072582_1597619722155027",
+      "reply_id": "122151376083072582_2571646036607676",
+      "reply_created_time": "2026-08-24T17:13:25+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    },
+    {
+      "comment_id": "122151376011072582_1511346237415004",
+      "reply_id": "122151376011072582_1745079840029387",
+      "reply_created_time": "2026-08-24T17:13:29+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "nested_reply_api_returns_target_parent"
+    },
+    {
+      "comment_id": "122151376011072582_1418262703532657",
+      "reply_id": "122151376011072582_1070019235642871",
+      "reply_created_time": "2026-08-24T17:13:34+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    },
+    {
+      "comment_id": "122151376011072582_1076789614927276",
+      "reply_id": "122151376011072582_1804433530916166",
+      "reply_created_time": "2026-08-24T17:13:38+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    },
+    {
+      "comment_id": "122151376011072582_1780015050089465",
+      "reply_id": "122151376011072582_2500143140398910",
+      "reply_created_time": "2026-08-24T17:13:43+0000",
+      "status": "Respondido",
+      "verified": true,
+      "publication_status": "published",
+      "parent_semantics": "direct_target_parent"
+    }
+  ]
+}
