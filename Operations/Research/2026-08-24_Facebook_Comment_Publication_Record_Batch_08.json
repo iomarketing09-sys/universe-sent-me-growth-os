@@ -1,0 +1,35 @@
+{
+  "title": "Facebook Comment Publication Record Batch 08",
+  "purpose": "Registrar la sincronización de las dos respuestas aprobadas y verificadas en el Community Engagement Log.",
+  "status": "Active",
+  "created_at": "2026-08-24T02:48:10+00:00",
+  "updated_at": "2026-08-24T02:48:10+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_08.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
+    "Operations/Research/2026-08-24_Facebook_Broad_72h_Reply_Proposals.json"
+  ],
+  "organization": "Operations/Research",
+  "recorded_at": "2026-08-24T02:48:10+00:00",
+  "source": "Meta Graph API v26.0",
+  "batch_file": "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_08.json",
+  "updated_rows": 2,
+  "verified_rows": 2,
+  "records": [
+    {
+      "comment_id": "122151376083072582_936442526178550",
+      "reply_id": "122151376083072582_2057146538237658",
+      "status": "Respondido",
+      "verified": true
+    },
+    {
+      "comment_id": "122151376083072582_2041952303861577",
+      "reply_id": "122151376083072582_1077823714740369",
+      "status": "Respondido",
+      "verified": true
+    }
+  ],
+  "new_proposals_published": false
+}

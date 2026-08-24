@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "4.5"
+version: "4.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -62,6 +62,12 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_Comment_Review_Broad_72h.json"
   - "Operations/Research/2026-08-24_Facebook_Broad_72h_Reply_Proposals.md"
   - "Operations/Research/2026-08-24_Facebook_Broad_72h_Review_Record.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_08.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_08.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Review_Broad_72h_Followup.json"
+  - "Operations/Research/2026-08-24_Facebook_Pending_Queue_Reconciliation.json"
+  - "Operations/Research/2026-08-24_Facebook_Pending_Queue_Reconciliation.md"
+  - "Operations/Research/2026-08-24_Facebook_Followup_Review_Record.json"
 organization: "Operations/Research"
 ---
 
@@ -905,3 +911,21 @@ A petición de Fernando se amplió la ventana para incluir comentarios de varias
 Los dos candidatos preparados son: “No fue el producto, fue la atención !!! 🔋”, con una respuesta que retoma la oposición producto/atención; y “Hasta quedar pegados como perros ☝🏻🫶🏻😎”, con una respuesta juguetona que no añade detalles gráficos. Los 21 restantes quedaron fuera de la cola por ser comentarios vacíos, réplicas/etiquetas, conversaciones usuario-a-usuario, reacciones demasiado breves o falta de contexto suficiente. Los 136 hallazgos antiguos se conservaron como ya registrados y no se duplicaron.
 
 La evidencia queda en `2026-08-24_Facebook_Comment_Review_Broad_72h.json`, `2026-08-24_Facebook_Broad_72h_Reply_Proposals.md/.json` y `2026-08-24_Facebook_Broad_72h_Review_Record.json`. La revisión fue de solo lectura: no se publicó ninguna respuesta y los dos candidatos requieren aprobación explícita de Fernando.
+
+
+## 57. Batch 08 y reconciliación de comentarios musicales — 24 de agosto de 2026
+
+Fernando aprobó las dos propuestas del corte amplio anterior. Se publicaron y verificaron por Meta Graph API v26.0:
+
+| Comentario padre | Respuesta publicada | Respuesta_Meta_ID | Verificación |
+|---|---|---|---|
+| `122151376083072582_936442526178550` | “Ahí está: no era el producto, era la atención. 😂🔋” | `122151376083072582_2057146538237658` | Autoría de Página, padre correcto, texto exacto, `is_hidden=false`. |
+| `122151376083072582_2041952303861577` | “Jajaja, ahí ya se necesita un plan de salida. 😂🙈” | `122151376083072582_1077823714740369` | Autoría de Página, padre correcto, texto exacto, `is_hidden=false`. |
+
+El intento inicial del segundo hilo usó un ID tipográfico inválido y falló durante la preconsulta; no generó ninguna escritura. El reintento con el ID correcto se completó 2/2 y quedó registrado en el Batch 08 y su registro de sincronización.
+
+Después se ejecutó un seguimiento de solo lectura sobre las mismas 20 publicaciones y la ventana móvil de 72 horas. El seguimiento observó 192 comentarios raíz y 228 IDs, con 164 unidades sin respuesta actualmente, 162 dentro de la ventana, 157 ya registradas y 5 hallazgos nuevos; no hubo errores de API. Los cinco se incorporaron al ledger sin duplicación: dos recomendaciones musicales nuevas y tres casos sin acción.
+
+La reconciliación corrigió el filtro anterior que solo mostraba hallazgos nuevos. La cola completa conserva **41 propuestas pendientes**: **5 recomendaciones musicales raíz** del post `😌 #UniverseSentMe` y 36 propuestas de otros hilos. Las cinco musicales son “Unstoppable”, “El día que volviste a la tierra - Carlos Sadness”, “Con migo danza el que ama mí Alma”, “alguien como tú - Josean log” y “Las cuatro estaciones, Antonio Vivaldi.” La réplica de usuario a usuario sobre escuchar una canción se mantiene fuera de la cola de respuestas de la Página.
+
+No se publicaron respuestas adicionales durante la reconciliación. Los dos nuevos candidatos musicales quedan pendientes de aprobación explícita de Fernando, al igual que las propuestas ya registradas de la cola completa. La evidencia está en `2026-08-24_Facebook_Comment_Review_Broad_72h_Followup.json`, `2026-08-24_Facebook_Pending_Queue_Reconciliation.md/.json` y `2026-08-24_Facebook_Followup_Review_Record.json`.

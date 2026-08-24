@@ -1,0 +1,28 @@
+{
+  "title": "Facebook Follow-up Review Record",
+  "purpose": "Registrar cinco hallazgos nuevos del seguimiento y su clasificación sin publicar.",
+  "status": "Active",
+  "created_at": "2026-08-24T02:49:59+00:00",
+  "updated_at": "2026-08-24T02:49:59+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-24_Facebook_Comment_Review_Broad_72h_Followup.json",
+    "Operations/Research/2026-08-24_Facebook_Pending_Queue_Reconciliation.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv"
+  ],
+  "organization": "Operations/Research",
+  "source": "Meta Graph API v26.0",
+  "reviewed_at": "2026-08-24T02:49:59+00:00",
+  "new_rows_added": 5,
+  "new_proposals": 2,
+  "new_no_action": 3,
+  "publication_performed": false,
+  "comment_ids": [
+    "122151376083072582_1610047380741515",
+    "122151376083072582_1593582012424855",
+    "122151376011072582_1703056380925949",
+    "122151376011072582_1720626909225543",
+    "122151375549072582_1607751794327420"
+  ]
+}

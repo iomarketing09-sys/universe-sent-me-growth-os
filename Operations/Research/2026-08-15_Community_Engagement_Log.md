@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "4.0"
+version: "4.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -60,6 +60,16 @@ related_documents:
   - "Operations/Research/2026-08-24_Facebook_Broad_72h_Reply_Proposals.json"
   - "Operations/Research/2026-08-24_Facebook_Broad_72h_Reply_Proposals.md"
   - "Operations/Research/2026-08-24_Facebook_Broad_72h_Review_Record.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Batch_08.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_08.json"
+  - "Operations/Research/2026-08-24_Facebook_Comment_Review_Broad_72h_Followup.json"
+  - "Operations/Research/2026-08-24_Facebook_Pending_Queue_Reconciliation.json"
+  - "Operations/Research/2026-08-24_Facebook_Pending_Queue_Reconciliation.md"
+  - "Operations/Research/2026-08-24_Facebook_Followup_Review_Record.json"
+  - "Operations/Automation/publish_two_approved_facebook_replies_20260824.py"
+  - "Operations/Automation/record_facebook_publication_batch_08.py"
+  - "Operations/Production/audit_facebook_unanswered_comments_broad_72h_followup.py"
+  - "Operations/Automation/reconcile_facebook_pending_queue_20260824.py"
   - "GrowthOS/12_00_Sistema_Dos_Capas_Contenido_Canon.md"
 organization: "Operations/Research"
 ---
@@ -456,3 +466,19 @@ La revisión amplia de Facebook mediante Meta Graph API v26.0 cubrió las 20 pub
 Los dos candidatos son el comentario “No fue el producto, fue la atención !!! 🔋”, cuya propuesta retoma la oposición entre producto y atención, y “Hasta quedar pegados como perros ☝🏻🫶🏻😎”, cuya propuesta responde al giro concreto sin añadir detalles gráficos. Los 21 casos restantes no reciben propuesta automática. No se duplicaron los 136 hallazgos ya existentes dentro de la ventana.
 
 El detalle está en `2026-08-24_Facebook_Comment_Review_Broad_72h.json`, `2026-08-24_Facebook_Broad_72h_Reply_Proposals.md/.json` y `2026-08-24_Facebook_Broad_72h_Review_Record.json`. La validación posterior debe conservar el ledger anonimizado y no publicar ninguna respuesta sin aprobación explícita de Fernando.
+
+
+## 31. Batch 08 y reconciliación musical — 24 de agosto de 2026
+
+Fernando aprobó las dos respuestas del corte amplio anterior. Ambas se publicaron y verificaron mediante Meta Graph API v26.0, y sus filas se actualizaron a `Respondido` y `Aprobada`.
+
+| Comentario_ID | Respuesta_Meta_ID | Estado |
+|---|---|---|
+| `122151376083072582_936442526178550` | `122151376083072582_2057146538237658` | `Respondido` |
+| `122151376083072582_2041952303861577` | `122151376083072582_1077823714740369` | `Respondido` |
+
+El seguimiento posterior revisó las mismas 20 publicaciones y la ventana móvil de 72 horas: 192 raíces, 228 IDs, 164 unidades sin respuesta actualmente, 162 dentro de la ventana, 157 ya registradas y 5 hallazgos nuevos. Los cinco se incorporaron sin duplicación; dos son recomendaciones musicales nuevas y tres quedaron sin acción.
+
+La reconciliación de la cola completa mostró **41 propuestas pendientes**, incluidas **5 recomendaciones musicales raíz** del post `😌 #UniverseSentMe`: “Unstoppable”, “El día que volviste a la tierra - Carlos Sadness”, “Con migo danza el que ama mí Alma”, “alguien como tú - Josean log” y “Las cuatro estaciones, Antonio Vivaldi.” La réplica que invita a escuchar una canción se conserva como conversación usuario-a-usuario y no como respuesta para la Página.
+
+No se publicaron respuestas adicionales durante esta revisión. Los cinco casos musicales requieren aprobación explícita individual o por subconjunto. El detalle está en `2026-08-24_Facebook_Pending_Queue_Reconciliation.md/.json` y la evidencia de publicación en los artefactos Batch 08.

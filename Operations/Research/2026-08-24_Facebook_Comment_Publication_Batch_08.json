@@ -1,0 +1,48 @@
+{
+  "title": "Facebook Comment Publication Batch 08",
+  "purpose": "Evidencia de la publicación y verificación de las dos respuestas aprobadas por Fernando.",
+  "status": "Active",
+  "created_at": "2026-08-24T02:48:10+00:00",
+  "updated_at": "2026-08-24T02:48:10+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-24_Facebook_Broad_72h_Reply_Proposals.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
+    "Operations/Research/2026-08-24_Facebook_Comment_Publication_Record_Batch_08.json"
+  ],
+  "organization": "Operations/Research",
+  "published_at": "2026-08-24T02:48:10+00:00",
+  "source": "Meta Graph API v26.0",
+  "page_id": "1036844829507460",
+  "post_id": "1036844829507460_122151376083072582",
+  "explicit_user_approval": true,
+  "requested_count": 2,
+  "published_count": 2,
+  "already_published_count": 0,
+  "verified_count": 2,
+  "results": [
+    {
+      "status": "published",
+      "parent_comment_id": "122151376083072582_936442526178550",
+      "reply_id": "122151376083072582_2057146538237658",
+      "message": "Ahí está: no era el producto, era la atención. 😂🔋",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376083072582_936442526178550",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151376083072582_2041952303861577",
+      "reply_id": "122151376083072582_1077823714740369",
+      "message": "Jajaja, ahí ya se necesita un plan de salida. 😂🙈",
+      "from_id": "1036844829507460",
+      "from_name": "Universe Sent Me",
+      "parent_id_returned": "122151376083072582_2041952303861577",
+      "is_hidden": false,
+      "verified": true
+    }
+  ]
+}
