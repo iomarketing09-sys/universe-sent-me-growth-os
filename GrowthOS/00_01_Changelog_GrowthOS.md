@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.62
+**Versión:** 4.63
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.63.00] — 2026-08-25 (Fernando/Manus): Revisión Facebook GET-only bloqueada antes de la API.** El auditor reusable `Operations/Automation/audit_facebook_comments_get_only.py` no pudo iniciar porque `META_PAGE_ACCESS_TOKEN` no estaba disponible; la verificación read-only confirmó `Universe Sent Me Meta API` como `enabled=false`. No existe conteo de delta válido —no equivale a cero novedades—, no hubo llamadas Meta exitosas, no se consultaron otras redes, no hubo POST/PUT/DELETE ni cambios en cola o ledger, y no se creó un review vacío. Evidencia: `Operations/Research/2026-08-25_22-06-59_Facebook_Comment_Review_Blocker.json`. Próximo paso seguro: restaurar el conector existente y ejecutar el auditor con su cursor dinámico.
 
 - **[4.62.00] — 2026-08-25 (Fernando/Manus): Primera lectura oficial Sandbox de TikTok completada en local.** Con el token Desktop/PKCE ya autorizado, el collector se ejecutó en Xubuntu con un máximo de una página y devolvió `status=collected`, `brand=Universe Sent Me`, `platform=TikTok` y `records=9`. La evidencia cruda queda únicamente en la ruta privada local y no se envió a GitHub, Google Sheets, OmniRoute, Wix, Firma Bordados, Bam in a Can ni terceros. Esta prueba valida conectividad y `video.list` en Sandbox, pero no constituye acceso de Production, normalización, cron ni autorización para escritura. Próximo gate: revisión humana local de atribución y campos disponibles. Documento actualizado: `Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md` v1.4.
 

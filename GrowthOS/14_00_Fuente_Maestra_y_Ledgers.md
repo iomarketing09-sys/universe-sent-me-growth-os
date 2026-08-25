@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "2.67"
+version: "2.68"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -567,3 +567,10 @@ Meta confirmó `is_published=true` para `1036844829507460_122151377475072582`, c
 Se ejecutó `capture_e0_after_publish.py` sin replay en tres intentos dentro de la tolerancia contractual de 600 segundos: `324.231 s`, `443.148 s` y `534.813 s`. Meta omitió `shares` en las tres respuestas; por tanto, los snapshots `MS-3B8CF33A64774426A423`, `MS-E6733B5227BADB8DE5B5` y `MS-06296EABD6D618E9A23F` quedaron como `Window_Status=Anomaly` con `Anomaly_Code=missing_counter`. `shares` se conserva ausente y no se transforma en cero; no se calcula `Lifetime_Interactions`, `Delta_From_E0`, E24 ni E72.
 
 El ledger conserva cinco filas totales: cuatro `Anomaly` y una `Late`, cero `Valid_E0`, sin duplicados, sin errores ni advertencias y con validación estructural `PASS`. La validación `PASS` no promueve las anomalías a baseline contractual. El control one-shot se pausó después del tercer intento para impedir una cuarta anomalía duplicada. No se modificó contenido, programación, cola, `Publication_Log.csv` ni `ExperimentLog.csv`. Evidencia: `Operations/Research/2026-08-25_PUB-FB-17_30-47_E0_Execution_Evidence.json` y los tres raw asociados.
+
+
+## 31. Revisión Facebook GET-only bloqueada — 25 de agosto de 2026
+
+El auditor reusable `Operations/Automation/audit_facebook_comments_get_only.py` no pudo iniciar el corte solicitado porque `META_PAGE_ACCESS_TOKEN` no estaba disponible. La verificación read-only confirmó que `Universe Sent Me Meta API` (`76925630-05da-4aa7-878d-64a6a520ca6d`) está `enabled=false`.
+
+Por este motivo no existe un conteo de delta válido: el resultado es **sin lectura disponible**, no una afirmación de cero comentarios. No hubo llamadas Graph API exitosas, no hubo escrituras en Meta, no se consultaron otras redes, no se creó artefacto de revisión vacío y no se modificaron cola ni ledger. La evidencia sanitizada está en `Operations/Research/2026-08-25_22-06-59_Facebook_Comment_Review_Blocker.json`. El siguiente paso es restaurar el conector existente y ejecutar el auditor de nuevo usando su cursor dinámico.

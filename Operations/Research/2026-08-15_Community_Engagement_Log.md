@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "6.8"
+version: "6.9"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -945,3 +945,12 @@ Fernando autorizó publicar las ocho respuestas aprobadas del lote adicional. El
 El ledger actualizó las ocho filas a `Respuesta_Estado=Respondido`, `Aprobacion_Estado=Aprobada`, con `Respuesta_Meta_ID` y `Respuesta_Fecha` de Meta. Se conservan **612 filas / 612 IDs únicos** y validación `PASS`, con `Privacidad=Anonimizado`. Evidencia: `Operations/Research/2026-08-25_18-49-39_Facebook_Additional_Publication_Preflight.json`, `Operations/Research/2026-08-25_18-49-39_Facebook_Additional_Publication.json` y `Operations/Research/2026-08-25_18-51-09_Facebook_Additional_Publication_Record.json/.md`.
 
 La cola adicional quedó cerrada: **0 propuestas pendientes**, **2 casos `Revisar_Contexto`** y **5 no acciones**. Los dos casos de contexto y las cinco no acciones no fueron publicados. Evidencia de cierre: `Operations/Research/2026-08-25_18-51-09_Facebook_Pending_Queue_After_Additional_Publication.json`. **Documentos relacionados:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 36. Revisión GET-only bloqueada por conector Meta deshabilitado — 25 de agosto de 2026
+
+Se intentó ejecutar `Operations/Automation/audit_facebook_comments_get_only.py` para revisar exclusivamente la Página de Facebook Universe Sent Me. El auditor no pudo iniciar porque `META_PAGE_ACCESS_TOKEN` no estaba disponible en el entorno de ejecución. La verificación read-only de configuración confirmó que el conector `Universe Sent Me Meta API` (`76925630-05da-4aa7-878d-64a6a520ca6d`) aparece `enabled=false`.
+
+No se realizó ninguna llamada exitosa a Meta Graph API v26.0; no se consultaron otras redes; no hubo POST, PUT, DELETE, publicaciones, ocultamientos o modificaciones; no se creó un nuevo artefacto de review; y no se modificaron la cola ni el ledger. La evidencia sanitizada está en `Operations/Research/2026-08-25_22-06-59_Facebook_Comment_Review_Blocker.json`. El siguiente paso seguro es restaurar el acceso del conector existente y volver a ejecutar el mismo auditor, sin crear otro conector ni reutilizar aprobaciones.
+
+**Documentos relacionados que requieren alineación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

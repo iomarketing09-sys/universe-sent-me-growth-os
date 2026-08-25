@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "7.3"
+version: "7.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -1460,3 +1460,12 @@ Fernando autorizó publicar las ocho propuestas aprobadas. El preflight GET-only
 El ledger actualizó las ocho filas a `Respuesta_Estado=Respondido`, `Aprobacion_Estado=Aprobada`, con sus `Respuesta_Meta_ID` y `Respuesta_Fecha`; mantiene `Privacidad=Anonimizado`, **612 filas / 612 IDs únicos** y validación `PASS`. La cola posterior quedó con **0 propuestas pendientes**, **2 casos `Revisar_Contexto`** y **5 no acciones**. Evidencia: `Operations/Research/2026-08-25_18-51-09_Facebook_Pending_Queue_After_Additional_Publication.json`.
 
 **Documentos relacionados:** `Operations/Research/2026-08-15_Community_Engagement_Log.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 52. Corte solicitado bloqueado antes de la API — 25 de agosto de 2026
+
+Se intentó el corte solicitado con `Operations/Automation/audit_facebook_comments_get_only.py`, cuyo diseño usa el último review GET-only exitoso como cursor y crea un artefacto timestamped nuevo. El proceso se detuvo antes de cualquier llamada Graph API porque `META_PAGE_ACCESS_TOKEN` no estaba disponible. La inspección read-only de configuración confirmó que `Universe Sent Me Meta API` (`76925630-05da-4aa7-878d-64a6a520ca6d`) está deshabilitado (`enabled=false`).
+
+El resultado es **sin delta disponible** —no equivale a cero comentarios— porque el acceso no permitió leer la Página. Hubo 0 llamadas Meta exitosas, 0 operaciones de escritura, 0 consultas a otras redes, 0 cambios de cola y 0 cambios de ledger. No se reutilizaron aprobaciones ni se creó un review vacío. Evidencia: `Operations/Research/2026-08-25_22-06-59_Facebook_Comment_Review_Blocker.json`.
+
+El siguiente paso seguro es restaurar el acceso del conector existente y volver a ejecutar el auditor reusable; no se debe crear un segundo conector ni usar navegador u otra red.
