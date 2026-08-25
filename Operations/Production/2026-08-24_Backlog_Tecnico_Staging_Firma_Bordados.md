@@ -4,7 +4,7 @@ purpose: "Priorizar mejoras de rendimiento, accesibilidad, seguridad técnica y 
 status: Active
 created: 2026-08-24
 updated: 2026-08-24
-version: "1.11"
+version: "1.12"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md"
@@ -100,6 +100,8 @@ Fernando confirmó que, por ahora, el staging no incorporará materiales, compos
 ### Prueba temporal de recepción — 2026-08-24
 
 El commit `5c4a1e0` dirigió temporalmente el correo guiado y el formulario local del staging a `io.marketin.09@gmail.com` para comprobar la recepción desde un dispositivo real. El Pull Request 11 pasó CI, se integró a `staging` y el merge `41ed194` se promovió a `main`. El sitio muestra avisos de prueba y pide no enviar datos reales; WhatsApp, el correo directo y la página de privacidad conservan `firmabordados@yahoo.com`. La comprobación HTTP confirmó ambos destinos de página con 200, el buzón provisional únicamente en el flujo de prueba y el correo oficial dentro de privacidad. Tras confirmar la recepción, se debe restaurar inmediatamente `firmabordados@yahoo.com` como destino de correo guiado y del formulario local mediante el mismo flujo de revisión.
+
+La prueba en celular confirmó que el cliente de correo se abre con el mensaje ya preparado; por ello no se requiere backend para el flujo actual. El commit `ce3a605` restauró `firmabordados@yahoo.com`, retiró los avisos temporales y pasó Pull Request 12, CI en `staging` y `main`; el merge `1f518f1` se promovió a `main`. La verificación HTTP encontró el correo oficial, “Correo guiado” y “Preparar correo”, sin rastros del buzón o mensajes de prueba. El envío directo desde el sitio continúa fuera de alcance: requeriría backend, protección antispam validada en servidor, proveedor de entrega y secretos aprobados.
 
 ## 6. Límites hasta recibir la información del cliente
 
