@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.70
+**Versión:** 4.71
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.71.00] — 2026-08-25 (Fernando/Manus): Generador de resúmenes Meta seguros preparado.** Se añadió `summarize_meta_private_metrics.py` para revisar de forma local y agregada las capturas privadas más recientes de Facebook e Instagram. El script compila, no realiza llamadas remotas ni escrituras, y no imprime IDs, texto de posts, captions, URLs, rutas de evidencia, tokens, personas o registros individuales. Facebook se resume por rango temporal y estadísticos de reacciones, comentarios y shares; Instagram incorpora disponibilidad de contadores y distribución por tipo de media y superficie. Los totales son contadores nativos de vida al momento de captura y no equivalen a ventanas comparables ni decisiones de Growth OS. Pendiente: ejecutar ambos resúmenes en Xubuntu y revisarlos humanamente. Documento actualizado: `Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md` v2.1.
 
 - **[4.70.00] — 2026-08-25 (Fernando/Manus): Primeras capturas privadas Meta completadas para Universe Sent Me.** Fernando ejecutó los collectors locales con el token aprobado de Meta cargado temporalmente. Facebook devolvió `status=collected`, `brand=Universe Sent Me`, `platform=Facebook`, `records=25`; Instagram devolvió `status=collected`, `brand=Universe Sent Me`, `platform=Instagram`, `records=25`, `available_native_fields=11`. La evidencia detallada permanece solo en Xubuntu. No se ampliaron permisos, no se crearon tokens o aplicaciones adicionales y no hubo operaciones de escritura, Sheets, ledgers, OmniRoute, contenido, comentarios, calendarios ni acceso a otras marcas. El siguiente gate es un resumen local seguro y revisión humana; no hay normalización ni integración productiva autorizada. Documento actualizado: `Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md` v2.0.
 

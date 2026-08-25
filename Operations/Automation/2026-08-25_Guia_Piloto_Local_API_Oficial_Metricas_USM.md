@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "2.0"
+version: "2.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -140,6 +140,12 @@ El collector de Facebook deriva un Page token de la página objetivo con el toke
 Fernando ejecutó ambos collectors usando temporalmente el token Meta ya aprobado de Universe Sent Me. Facebook devolvió `status = collected`, `brand = Universe Sent Me`, `platform = Facebook` y `records = 25`. Instagram devolvió `status = collected`, `brand = Universe Sent Me`, `platform = Instagram`, `records = 25` y `available_native_fields = 11`.
 
 La captura confirma acceso de lectura para los campos contratados, no una autorización de integración productiva. El detalle se conserva fuera del repositorio en Xubuntu. Antes de crear vistas derivadas o cualquier normalización, solo se podrán mostrar resúmenes locales que excluyan IDs, textos, URLs, rutas de evidencia y cualquier dato de personas.
+
+### Resúmenes locales seguros
+
+`summarize_meta_private_metrics.py` es un lector local de la evidencia más reciente de Facebook o Instagram. No realiza llamadas remotas ni escribe archivos. Para Facebook presenta únicamente el rango de publicación, número de registros y, para reacciones, comentarios y shares, registros disponibles/no disponibles, total de los valores disponibles y mediana. Para Instagram presenta esos mismos conceptos por contador nativo disponible, además de la distribución de tipos de media y de superficie.
+
+El generador prohíbe explícitamente cualquier salida de IDs, captions, textos, URLs, rutas de evidencia, tokens, datos personales o registros individuales. Sus totales son descriptivos y corresponden a contadores de vida al momento de captura; no son una normalización por ventana, una clasificación de contenido ni una recomendación de Growth OS.
 
 ## Referencias
 

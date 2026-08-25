@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "5.9"
+version: "6.0"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -71,7 +71,8 @@ organization: "GrowthOS"
 - [x] Compilar y revisar los collectors para prohibir POST/PUT/PATCH/DELETE, así como cualquier escritura en GitHub, Sheets, ledgers, contenido, comentarios, calendarios u OmniRoute.
 - [x] Ejecutar una primera captura manual de ambos collectors: Facebook `status=collected`, `records=25`; Instagram `status=collected`, `records=25`, `available_native_fields=11`; no se ampliaron permisos ni se movió raw fuera de Xubuntu.
 - [ ] Mostrar y revisar localmente resúmenes seguros de las primeras capturas Meta, sin IDs, textos de publicaciones, URLs, rutas de evidencia o datos de personas; no normalizar ni enviar raw a OmniRoute todavía.
-- [ ] Definir y validar que los resúmenes muestren únicamente rango temporal, cantidad de registros, totales nativos, mediana y disponibilidad de campos; prohibir rankings por texto, IDs, URLs, captions o datos de personas.
+- [x] Definir y validar que los resúmenes muestren únicamente rango temporal, cantidad de registros, totales nativos, mediana y disponibilidad de campos; prohibir rankings por texto, IDs, URLs, captions o datos de personas.
+- [x] Implementar y compilar `summarize_meta_private_metrics.py`, un generador local sin llamadas remotas ni escrituras que excluye IDs, textos, URLs, rutas, tokens y raw.
 - [ ] Ejecutar los resúmenes seguros de Facebook e Instagram en Xubuntu y revisar sus resultados agregados, preservando los archivos de evidencia fuente como privados.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
 - [x] Configurar y autorizar la app de escritorio Sandbox de TikTok con los scopes oficiales mínimos `user.info.basic` y `video.list`, callback local y PKCE; el cliente OAuth local de Google con scopes de lectura y monetización sigue pendiente.
