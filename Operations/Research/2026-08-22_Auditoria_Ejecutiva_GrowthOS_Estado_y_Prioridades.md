@@ -5,10 +5,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-22
 **Última actualización:** 2026-08-25
-**Versión:** 1.4
+**Versión:** 1.5
 **Autor:** Manus AI (CGO)
 **Organización:** `Operations/Research/`
-**Documentos relacionados:** `GrowthOS/00_Índice.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/01_02_Content_Backlog.md`, `GrowthOS/01_04_Production_Queue.md`, `GrowthOS/07_00_Registro_Maestro_Reels.md`, `Operations/Research/2026-08-22_Analisis_Semanal_20260816_20260822.md`, `Operations/Research/2026-08-22_Auditoria_Monetizacion_Afiliados_MercadoLibre.md`, `Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json`, `Operations/Research/2026-08-23_Reporte_Rendimiento_Engagement_Facebook.md`, `Operations/Research/2026-08-25_Instagram_Route_Smoke_Test.json`, `Operations/Research/2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json`, `Operations/Automation/record_metrics_snapshot.py`, `Operations/Automation/validate_metrics_snapshot_ledger.py`, `Operations/Research/Metrics_Snapshot_Log.csv`
+**Documentos relacionados:** `GrowthOS/00_Índice.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/01_02_Content_Backlog.md`, `GrowthOS/01_04_Production_Queue.md`, `GrowthOS/07_00_Registro_Maestro_Reels.md`, `Operations/Research/2026-08-22_Analisis_Semanal_20260816_20260822.md`, `Operations/Research/2026-08-22_Auditoria_Monetizacion_Afiliados_MercadoLibre.md`, `Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json`, `Operations/Research/2026-08-23_Reporte_Rendimiento_Engagement_Facebook.md`, `Operations/Research/2026-08-25_Instagram_Route_Smoke_Test.json`, `Operations/Research/2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json`, `Operations/Automation/record_metrics_snapshot.py`, `Operations/Automation/validate_metrics_snapshot_ledger.py`, `Operations/Automation/capture_e0_after_publish.py`, `Operations/Automation/run_metrics_windows.py`, `Operations/Automation/simulate_pipeline_e0_e72.py`, `Operations/Research/Metrics_Snapshot_Log.csv`, `Operations/Research/2026-08-25_Simulacion_Pipeline_E0_E72_Evidence.json`
 
 ---
 
@@ -16,7 +16,7 @@
 
 El Growth OS está **operativo, documentado y con evidencia de ejecución real**, pero todavía no es un sistema de optimización cerrado ni autoejecutable. Facebook funciona como carril principal de publicación y comunidad; los ledgers y validadores pasan controles internos; GitHub permanece sincronizado con la rama `main` remota; y la ruta Instagram ya está restaurada para lecturas con la cuenta USM seleccionada. La conectividad restante no es homogénea: la Custom API de Meta está habilitada y su health check responde, Meta Ads continúa como no conectado, Google Calendar carece de scopes suficientes y no existe un schedule recurrente activo. La cola futura de Facebook sí está reconciliada con Meta. [1] [2] [3]
 
-El cuello de botella no es producir más documentación. Es **cerrar la transición desde publicación verificada hacia medición comparable y decisión de growth**. El `Publication_Log` ya conserva 121 hechos, pero `Interacciones_24h` y `Interacciones_72h` siguen vacíos en 121/121 filas; `Metrics_Snapshot_Log.csv` ya existe con el esquema P0, aunque todavía no contiene capturas productivas; y el diseño E0/E24/E72 permanece en `Review`. El sistema aprende mediante cortes observados, lifetime y análisis manuales, pero todavía no actualiza de forma automática una cohorte comparable después de cada publicación. [4] [5] [7]
+El cuello de botella no es producir más documentación. Es **cerrar la transición desde publicación verificada hacia medición comparable y decisión de growth**. El `Publication_Log` conserva 121 hechos y la reconciliación histórica ya cerró 26 estados con evidencia Meta; sin embargo, `Interacciones_24h` y `Interacciones_72h` siguen vacíos en 114/114 filas de `ExperimentLog`, y `Metrics_Snapshot_Log.csv` todavía no contiene capturas productivas. El adaptador E0 y el worker E24/E72 pasan una simulación completa aislada, pero aún no se invocan desde una publicación real ni mediante un schedule persistente. El sistema aprende mediante cortes observados, lifetime y análisis manuales, pero todavía no actualiza automáticamente una cohorte comparable después de cada publicación.
 
 > **Veredicto CGO:** estado **operativo supervisado, nivel 3/5**. No es estático porque publica, reconcilia, registra comunidad y produce decisiones trazables; aún no es un loop funcional completo porque depende de intervención humana, conectores con estado incompleto y snapshots temporales no implementados.
 
@@ -25,15 +25,15 @@ El cuello de botella no es producir más documentación. Es **cerrar la transici
 | Área | Estado | Qué ya funciona | Brecha principal | Prioridad |
 |---|---|---|---|---:|
 | Fuente de verdad y governance | **Activo** | GitHub es la fuente oficial; la rama `main` local coincide con la remota y los documentos operativos están enlazados. | La hoja de Google Drive conserva un estado antiguo y algunos documentos históricos mantienen estados superseded. | P1 |
-| Calendario y Facebook | **Activo** | El `Publication_Log` conserva 107 filas de Facebook; 62 están en estado programado y 39 en estado publicado, con IDs y permalinks completos. | La cadencia está verificada como ejecución, pero aún no demuestra causalidad ni estabilidad de la mediana por cohorte. | P0 |
-| Métricas diarias y semanales | **Activo, inmaduro** | Hay cortes observados, cierre semanal, validadores y evidencia Meta/Windsor; el ledger P0 ya tiene esquema y validador. | `Interacciones_24h` y `Interacciones_72h` están vacías en 121/121 publicaciones y aún no existe una captura productiva E0. | P0 |
+| Calendario y Facebook | **Activo y reconciliado** | El `Publication_Log` conserva 107 filas de Facebook; 65 están publicadas y la cola efectiva conserva 33 posts futuros alineados con Meta. | La cadencia está verificada como ejecución, pero todavía necesita siete días de medición comparable. | P0 |
+| Métricas diarias y semanales | **Activo, inmaduro** | Hay cortes observados, cierre semanal, validadores y evidencia Meta/Windsor; el ledger P0 ya tiene esquema, adaptador y worker probados en simulación. | `Interacciones_24h` y `Interacciones_72h` están vacías en 114/114 observaciones y aún no existe una captura productiva E0. | P0 |
 | Aprendizaje de contenido | **En observación** | El sistema registra hipótesis, outliers, familias, formato, comunidad y próximas acciones. | La concentración reciente exige cohortes pareadas; no se debe convertir un outlier en regla editorial. | P0 |
 | Reels | **Activo con brecha de instrumentación** | Hay inventario, crosswalk y cuatro Reels con señales Windsor L2 parciales. | Faltan views/reach/retención comparables y el estado de `MPM-001`/siguientes estrenos requiere una sola lectura vigente. | P0 |
 | Instagram | **Lectura operativa restaurada** | La cuenta `@universe_sent_me_0326` está seleccionada; identidad, cuota y listado de cinco posts responden. | La publicación no se probó ni se autoriza por esta auditoría; el flujo de contenido sigue requiriendo solicitud y confirmación separadas. | P1 |
 | TikTok / YouTube | **En espera selectiva** | Existen relaciones históricas y fuentes analíticas documentadas. | No hay un carril de publicación ni una cohorte reciente comparable en el sistema auditado. | P1 |
 | Afiliados Mercado Libre | **Ámbar / Review** | Hay 13 asignaciones, etiquetas individuales y 11 snapshots documentados. | El corte más reciente conserva 3 clics, 0 compradores, 0 órdenes y $0 MXN; falta granularidad estable por etiqueta y superficie. | P1 |
 | Comunidad | **Activo y dinámico con gates humanos** | El ledger tiene 448 filas únicas; los validadores pasan y los lotes de respuestas recientes fueron verificados por Meta. | La respuesta sigue dependiendo de autorización humana y algunas verificaciones históricas devuelven 403/400. | P1 |
-| Automatización y scheduling | **No operativo como sistema recurrente** | Make responde, la ruta Meta está activa y existen playbooks y scripts reproducibles. | No hay schedule activo en la sesión ni worker E0/E24/E72; las cadencias y cierres siguen dependiendo de ejecución controlada. | P0 |
+| Automatización y scheduling | **Preparado, no recurrente** | Make responde, la ruta Meta está activa, el adaptador E0 y el worker E24/E72 pasan simulación completa y existen playbooks reproducibles. | No hay schedule persistente ni hook live conectado a la publicación de Manus; las cadencias y cierres siguen dependiendo de ejecución controlada. | P0 |
 | Paid growth | **No verificado / fuera de operación actual** | El conector Meta Ads Manager está habilitado en configuración. | La llamada real devuelve `not connected` y no hay evidencia de campañas, gasto o resultados auditables. Debe conectarse o declararse fuera de alcance. | P1 |
 | Producción nueva | **Activo, con gates humanos** | MEME-CAD-001–005 y los lotes recientes tienen briefs, aprobaciones y ejecución documentada. | La siguiente cohorte necesita hipótesis, control y aprobación antes de programarse; no hace falta abrir otra auditoría creativa amplia. | P1 |
 | Histórico junio/julio | **Fundación suficiente para decisiones** | Hay comparativas, aliases, top posts y familias integrados. | Permanece deuda residual de casos sin asset/taxonomía, sin bloquear la operación diaria. | P2 |
@@ -77,9 +77,9 @@ El nivel 3/5 no significa que el proyecto esté detenido. Significa que el siste
 | Captura E0 | Módulo reproducible implementado; replay aislado produjo `Valid_E0`. | **PASS — listo para producción** |
 | Idempotencia | Retry del mismo `Meta_Post_ID + Snapshot_Type` devuelve `no_op_valid_already_exists`. | **PASS** |
 | Captura E24 | Replay aislado con E0 previo produjo `Valid_24h` y delta. | **PASS — prueba temporal** |
-| Hook/worker productivo | Aún no integrado al publicador ni programado como worker recurrente. | **PENDIENTE** |
+| Hook/worker productivo | Adaptador E0 y worker E24/E72 implementados y probados con replay; aún no conectados a una publicación real ni a un runtime recurrente. | **PENDIENTE DE ACTIVACIÓN** |
 
-La evidencia de Instagram está en `2026-08-25_Instagram_Route_Smoke_Test.json`; la evidencia del ledger y sus pruebas está en `2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json`. No se publicó, modificó ni eliminó contenido y no se escribió ningún snapshot histórico en el ledger productivo.
+La evidencia de Instagram está en `2026-08-25_Instagram_Route_Smoke_Test.json`; la evidencia del ledger y sus pruebas está en `2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json`; la simulación completa E0→E72 está en `2026-08-25_Simulacion_Pipeline_E0_E72_Evidence.json`. No se publicó, modificó ni eliminó contenido real y no se escribió ningún snapshot histórico en el ledger productivo.
 
 ## 3. Qué está cerrado y no debe reabrirse ahora
 
@@ -155,6 +155,29 @@ El próximo cambio estratégico solo debe ejecutarse cuando exista una pregunta 
 ### Documentos que requieren coherencia posterior
 
 La implementación P0 y el avance prioritario ya actualizaron `GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y el diseño E0/E24/E72. La revisión post-P0 confirmó 33 posts futuros reconciliados entre Meta y `Publication_Log`; el reconciliador actualizó 26 estados de publicación y 24 estados experimentales sin rellenar métricas. El adaptador E0 y el worker E24/E72 pasan pruebas aisladas, pero la primera captura productiva y el schedule persistente dependen de exponer el publicador general de PyCharm. La evidencia del avance está en `Operations/Research/2026-08-25_Priority_Pipeline_Progress_Evidence.json`.
+
+## 8. Próximas acciones prioritarias — corte post-simulación
+
+El sistema ya tiene capacidad técnica suficiente para dejar de diseñar componentes y pasar a una **activación controlada con datos reales**. La prioridad no es aumentar el volumen de publicaciones, sino convertir la publicación que ya ejecuta Manus mediante la API en el primer evento medible y cerrar una cohorte de aprendizaje sin mezclar lifetime con ventanas temporales.
+
+| Orden | Prioridad | Acción siguiente | Impacto esperado | Dependencia | Criterio de cierre |
+|---:|---:|---|---|---|---|
+| 1 | **P0** | Conectar `capture_e0_after_publish.py` al resultado real de publicación de Manus/Meta después de `is_published=true`. | Inicia el loop real y elimina la pérdida de baseline para publicaciones nuevas. | El publicador debe entregar `meta_post_id`, `is_published`, timestamp, `Publicacion_ID` e identidad analítica. | Primera fila productiva `Valid_E0` con raw, timestamp y validator `PASS`. |
+| 2 | **P0** | Ejecutar `run_metrics_windows.py` con una cadencia persistente o una rutina operativa controlada que respete `Target_At_UTC`. | Convierte E0 en E24/E72 comparables y permite calcular deltas reales. | Primer E0 productivo; runtime con acceso a Meta y al ledger. | Una publicación completa E0→E24→E72 real, con retries idempotentes. |
+| 3 | **P0** | Mantener sin cambios la cola actual de 33 posts futuros y ejecutar un ciclo de medición de siete días. | Distingue cadencia, formato, outliers y mediana sin reabrir la planificación por reflejo. | Reporte diario nuevo; no usar publicaciones inmaduras para conclusiones. | Siete reportes diarios y cierre domingo–sábado con mediana, mix y decisión. |
+| 4 | **P0** | Reconciliar el carril Reels antes de producir MPM-002/003: `MPM-001`, `CON-2026-08-21-UniverseSenales`, `CNT-023` y `CON-2026-08-24-CraveYou-MaeveFeathers`. | Evita producir sobre estados o IDs contradictorios y mejora la atribución multicanal. | ID nativo, permalink, hora, plataforma y evidencia vigente por fila. | Una fila vigente por caso, con gaps explícitos y sin duplicaciones. |
+| 5 | **P1** | Resolver los ocho Meta IDs publicados sin fila experimental: asignar experimento explícito o declararlos fuera de cohorte. | Evita que el aprendizaje mezcle publicaciones sin hipótesis ni control. | Revisión editorial; no inferir desde caption o asset. | Cero IDs publicados sin decisión de pertenencia experimental. |
+| 6 | **P1** | Preparar la siguiente cohorte de contenido desde el backlog, pero mantenerla en Draft hasta aprobación. Priorizar `CNT-026`–`028` o una celda Reels comparable, no producir por llenar slots. | Genera aprendizaje nuevo con control y refuerza la identidad del universo. | Aprobación de Fernando, asset trazable, hipótesis y campos analíticos completos. | Brief aprobado, hipótesis asignada, asset verificado y control definido. |
+| 7 | **P1** | Reconciliar afiliados por superficie y etiqueta, corregir los tres casos de correspondencia visual y mantener al menos un control sin producto. | Convierte los tres clics sin ventas en una prueba diagnosticable, sin declarar fracaso comercial con n pequeño. | Producto/etiqueta/permalink y snapshot comparable por superficie. | Etiquetas verificadas, snapshots consistentes y muestra de clics suficiente para una decisión. |
+| 8 | **P2** | Resolver gobernanza de fuentes y conectores: congelar Google Sheets como histórico, declarar paid growth fuera de alcance o reconectarlo, y mantener comunidad con gate humano. | Reduce decisiones sobre estados obsoletos y evita trabajo en integraciones sin objetivo. | Decisión explícita de alcance y ownership. | Un estado documentado por integración y ninguna fuente auxiliar presentada como viva. |
+
+### Acciones que no deben priorizarse ahora
+
+No conviene ampliar el volumen de contenido, generar MPM-002/003, activar Meta Ads, reactivar Make ni abrir otra auditoría histórica amplia antes de completar los tres primeros órdenes. Tampoco conviene escribir métricas 24/72 sobre publicaciones antiguas ni asignar automáticamente los ocho Meta IDs a experimentos.
+
+### Cadencia de decisión
+
+La revisión operativa debe ocurrir diariamente sobre publicaciones y conectividad, con un cierre semanal domingo–sábado. La revisión estratégica de hipótesis debe hacerse solo cuando exista una cohorte con identidad analítica completa y suficiente madurez temporal. El estado no debe elevarse de 3/5 hasta que exista al menos una publicación real con E0, E24 y E72 válidos y una actualización de aprendizaje trazable.
 
 ## Referencias
 
