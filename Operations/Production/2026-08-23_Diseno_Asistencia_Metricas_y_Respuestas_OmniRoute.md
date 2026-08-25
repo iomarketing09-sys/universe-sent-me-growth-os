@@ -4,7 +4,7 @@ purpose: "Definir cómo OmniRoute puede analizar resúmenes métricos ya normali
 status: Review
 created: 2026-08-23
 updated: 2026-08-25
-version: "1.8"
+version: "1.9"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-19_Decision_Gateway_IA_OmniRoute.md"
@@ -329,6 +329,14 @@ iO Marketing administra la cuenta compartida de Windsor.ai y las marcas Bam in a
 Esta regla actualiza la interpretación de la prueba: la existencia de una cuenta administradora `io.marketing` no identifica por sí misma el canal de YouTube de Universe Sent Me. La identificación debe basarse en el canal o la cuenta de marca concreta, no en el correo administrativo.
 
 Fernando confirmó que `https://www.youtube.com/@Bam_in_a_can` corresponde a **Bam in a Can**. La conexión de YouTube asociada a esa marca queda marcada como excluida del loop de Universe Sent Me. No se consultaron métricas, publicaciones ni metadatos del canal durante esta identificación; se espera la URL o handle específico de Universe Sent Me para continuar.
+
+### 8.15 YouTube de Universe Sent Me validado
+
+Fernando identificó `https://www.youtube.com/@Universe_Sent_Me` como el canal de Universe Sent Me. Una lectura limitada de la conexión de YouTube administrada por iO Marketing confirmó que esa ruta devuelve Shorts con títulos y señales propias de Universe Sent Me, por lo que queda aprobada como fuente de solo lectura para la marca.
+
+La muestra devolvió por video `views`, `engaged_views`, `likes`, `comments`, `shares`, `average_view_percentage` y `subscribers_gained`. `average_view_duration` se recibió vacío en la muestra, por lo que debe persistirse como `not_available`, nunca como cero. También se observaron valores de `average_view_percentage` superiores a 100 en algunos Shorts; el loop debe conservarlos como métrica nativa de YouTube y prohibir compararlos directamente con la tasa de finalización de TikTok o con el porcentaje visto de Instagram.
+
+Con esta validación, las cuatro rutas de contenido de Universe Sent Me cuentan con una base de lectura: Facebook mediante runners existentes, Instagram mediante la conexión nativa, TikTok orgánico mediante Windsor.ai Trial y YouTube mediante Windsor.ai Trial. Aún no se crea ningún schedule ni se escriben registros canónicos: la fuente definitiva y el gate del piloto programado siguen pendientes.
 
 ## Referencias
 
