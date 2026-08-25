@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "7.0"
+version: "7.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -963,5 +963,16 @@ El auditor reusable `Operations/Automation/audit_facebook_comments_get_only.py` 
 El delta desde el cursor fue de **7 IDs nuevos pendientes**, compuestos por **5 comentarios raíz y 2 réplicas anidadas**. No hubo errores de API. Los siete se clasificaron como `No_Requiere_Respuesta`: 2 réplicas entre usuarios, 1 etiqueta/nombre con emojis, 1 comentario sin texto, 2 opiniones o reacciones de baja señal y 1 comentario con lenguaje íntimo/sexualizado. No se generaron propuestas, no se modificó la cola vigente y no se publicó ni alteró contenido.
 
 El registrador `Operations/Automation/record_facebook_review_get_only_2026_08_25_2211.py` añadió las 7 filas al ledger anonimizado, que conserva **619 filas / 619 IDs únicos** y validación `PASS`. Evidencia editorial y reporte: `Operations/Research/2026-08-25_22-11-14_Facebook_Editorial_Review_GET_Only.json`, `Operations/Research/2026-08-25_22-11-14_Facebook_Comment_Review_Report.md` y `Operations/Research/2026-08-25_22-11-14_Facebook_Pending_Queue_No_Change.json`.
+
+**Documentos relacionados que requieren alineación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 38. Revisión reciente bloqueada antes de Meta — 25 de agosto de 2026
+
+Se intentó nuevamente ejecutar `Operations/Automation/audit_facebook_comments_get_only.py` para revisar exclusivamente la Página de Facebook Universe Sent Me con Meta Graph API v26.0. El auditor se detuvo antes de consultar Facebook porque `META_PAGE_ACCESS_TOKEN` no estaba disponible. La verificación read-only del conector `Universe Sent Me Meta API` (`76925630-05da-4aa7-878d-64a6a520ca6d`) confirmó `enabled=false`.
+
+El resultado es **sin lectura disponible**, no cero comentarios. No hubo llamadas Meta exitosas, no se consultaron otras redes, no se ejecutó POST, PUT ni DELETE, no se publicaron ni ocultaron respuestas, y no se modificaron la cola ni el ledger. Tampoco se generó un review vacío. La evidencia sanitizada está en `Operations/Research/2026-08-25_22-33-10_Facebook_Comment_Review_Blocker.json`.
+
+El siguiente paso seguro es restaurar el acceso del conector existente y ejecutar el auditor reusable con su cursor dinámico; no se debe crear otro conector ni reutilizar aprobaciones.
 
 **Documentos relacionados que requieren alineación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

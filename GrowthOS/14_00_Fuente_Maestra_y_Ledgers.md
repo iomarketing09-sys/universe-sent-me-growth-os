@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "2.69"
+version: "2.70"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -583,3 +583,10 @@ El auditor reusable ejecutó un corte de solo lectura mediante Meta Graph API v2
 Los 7 IDs fueron clasificados como `No_Requiere_Respuesta`, por lo que no se generaron propuestas y la cola de publicación permaneció sin cambios. El registrador añadió las 7 filas al ledger, que quedó en **619 filas / 619 IDs únicos** con validación `PASS` y privacidad anonimizada. Evidencia: `Operations/Research/2026-08-25_22-11-14_Facebook_Comment_Review_GET_Only.json`, `Operations/Research/2026-08-25_22-11-14_Facebook_Editorial_Review_GET_Only.json`, `Operations/Research/2026-08-25_22-11-14_Facebook_Comment_Review_Report.md` y `Operations/Research/2026-08-25_22-11-14_Facebook_Pending_Queue_No_Change.json`.
 
 **Regla operativa confirmada:** cuando el delta tiene comentarios nuevos pero ninguna propuesta editorial, se conserva cada ID en el ledger, se mantiene la cola intacta y no se realizan operaciones de escritura en Meta.
+
+
+## 33. Corte Facebook GET-only bloqueado antes de la lectura — 25 de agosto de 2026
+
+El auditor `Operations/Automation/audit_facebook_comments_get_only.py` no pudo iniciar el corte solicitado porque `META_PAGE_ACCESS_TOKEN` no estaba disponible. La inspección read-only confirmó `Universe Sent Me Meta API` (`76925630-05da-4aa7-878d-64a6a520ca6d`) con `enabled=false`.
+
+El resultado es **sin lectura disponible**, no cero novedades. No hubo llamadas Meta exitosas, no se consultaron otras redes, no se realizaron escrituras, no se generó un review vacío y no se modificaron la cola ni el ledger. Evidencia: `Operations/Research/2026-08-25_22-33-10_Facebook_Comment_Review_Blocker.json`. El siguiente paso es restaurar el conector existente y volver a ejecutar el auditor con su cursor dinámico.

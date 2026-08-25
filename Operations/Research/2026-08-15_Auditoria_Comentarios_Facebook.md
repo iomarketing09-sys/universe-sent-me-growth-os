@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "7.5"
+version: "7.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -1478,3 +1478,12 @@ El auditor `Operations/Automation/audit_facebook_comments_get_only.py` ejecutó 
 Se detectaron **7 IDs nuevos pendientes sin registrar**: **5 comentarios raíz y 2 réplicas anidadas**. La clasificación fue **0 propuestas** y **7 `No_Requiere_Respuesta`**. La decisión se distribuyó en 2 réplicas de conversaciones entre usuarios, 1 etiqueta/nombre con emojis, 1 comentario sin texto, 2 reacciones u opiniones de baja señal y 1 comentario íntimo/sexualizado. No se intervino en conversaciones laterales, no se guardaron datos personales de autores, y no se realizaron POST, PUT, DELETE, publicaciones, ocultamientos ni modificaciones.
 
 El registrador oficial adaptado añadió los 7 IDs al ledger; el validador devuelve `PASS` con **619 filas / 619 IDs únicos**. La cola no cambió y no se crearon propuestas. Evidencia: `Operations/Research/2026-08-25_22-11-14_Facebook_Comment_Review_GET_Only.json`, `Operations/Research/2026-08-25_22-11-14_Facebook_Editorial_Review_GET_Only.json`, `Operations/Research/2026-08-25_22-11-14_Facebook_Comment_Review_Report.md` y `Operations/Research/2026-08-25_22-11-14_Facebook_Pending_Queue_No_Change.json`.
+
+
+## 54. Corte reciente bloqueado por acceso Meta — 25 de agosto de 2026
+
+El auditor reusable `Operations/Automation/audit_facebook_comments_get_only.py` se intentó ejecutar para el nuevo corte de comentarios recientes. La operación terminó antes de cualquier llamada Graph API porque `META_PAGE_ACCESS_TOKEN` no estaba disponible; la verificación read-only confirmó que el conector `Universe Sent Me Meta API` (`76925630-05da-4aa7-878d-64a6a520ca6d`) aparece `enabled=false`.
+
+No existe un conteo de delta válido: esto no equivale a cero novedades. Hubo 0 llamadas Meta exitosas, 0 operaciones de escritura, 0 consultas a otras redes, 0 cambios en cola y 0 cambios en ledger; tampoco se creó un artefacto de revisión vacío. La evidencia sanitizada está en `Operations/Research/2026-08-25_22-33-10_Facebook_Comment_Review_Blocker.json`.
+
+El siguiente paso seguro es restaurar el acceso del conector existente y ejecutar el mismo auditor con su cursor dinámico. No se deben reutilizar aprobaciones ni cambiar de red.
