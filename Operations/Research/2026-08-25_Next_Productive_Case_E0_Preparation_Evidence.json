@@ -1,0 +1,69 @@
+{
+  "title": "Preparación del siguiente caso productivo E0",
+  "purpose": "Seleccionar la siguiente publicación aprobada explícita y preparar una captura E0 dentro de la tolerancia de ±600 segundos, sin publicar ni modificar la cola.",
+  "status": "Active",
+  "created": "2026-08-25",
+  "updated": "2026-08-25",
+  "version": "1.0",
+  "author": "Manus AI (CGO)",
+  "organization": "Operations/Research",
+  "related_documents": [
+    "Operations/Research/2026-08-25_First_Productive_Case_E0_Execution_Evidence.json",
+    "Operations/Research/2026-08-25_First_Productive_Case_Preparation_Evidence.json",
+    "Operations/Research/2026-08-15_Publication_Log.csv",
+    "Operations/Research/2026-08-15_ExperimentLog.csv",
+    "Operations/Automation/capture_e0_after_publish.py",
+    "Operations/Research/Metrics_Snapshot_Log.csv",
+    "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
+  ],
+  "selection": {
+    "selection_basis": "Earliest future Facebook publication after the 2026-08-25T15:20:00Z selector checkpoint with explicit Meta_Post_ID, non-cancelled status and explicit experiment mapping.",
+    "publicacion_id": "PUB-FB-17_30-46",
+    "id_pieza": "",
+    "asset_ref": "2607792 - fantasma+Universe - El gato ;o (21-jun-26).jpeg",
+    "platform": "Facebook",
+    "account_id": "1036844829507460",
+    "meta_post_id": "1036844829507460_122151377385072582",
+    "experiment_id": "EXP-2026-08-CAL-01",
+    "hypothesis_id": "HB-003|HB-004|HB-005",
+    "publication_log_status": "Programada",
+    "experiment_log_status": "Programada",
+    "planned_local": "2026-08-25T13:30:00-05:00",
+    "planned_utc": "2026-08-25T18:30:00Z",
+    "cnt": "",
+    "identity_rule": "ID_Pieza remains empty because the Publication Log does not explicitly assign one; asset_ref is preserved as a reference and is not promoted to ID_Pieza."
+  },
+  "meta_read_check": {
+    "queried_at_utc": "2026-08-25T17:59:19Z",
+    "meta_post_id": "1036844829507460_122151377385072582",
+    "is_published": false,
+    "created_time": "2026-08-25T18:30:00+0000",
+    "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151377385072582",
+    "http_status": 200,
+    "interpretation": "Meta confirms the scheduled object exists and is not yet published. No E0 was captured."
+  },
+  "e0_control": {
+    "schedule_task_uid": "P9iKuQHRgO56wVd7MSBJ5o",
+    "schedule_name": "USM: capturar E0 de PUB-FB-17_30-46",
+    "status": "active",
+    "run_mode": "full_auto",
+    "cron": "0 34 13 25 8 *",
+    "timezone": "America/Matamoros",
+    "scheduled_check_local": "2026-08-25T13:34:00-05:00",
+    "scheduled_check_utc": "2026-08-25T18:34:00Z",
+    "expire_at": "2026-08-25T19:00:00Z",
+    "tolerance_seconds": 600,
+    "connector": "Universe Sent Me Meta API",
+    "behavior": "Read-only Meta check; capture E0 only if is_published=true, meta_post_id and created_time are present; otherwise return E0_PENDING without writing a snapshot. The publisher result uses the explicit IDs above, cnt empty and id_pieza empty."
+  },
+  "safety": {
+    "content_published": false,
+    "content_reprogrammed": false,
+    "content_edited": false,
+    "content_deleted": false,
+    "queue_modified": false,
+    "publication_log_modified": false,
+    "experiment_log_modified": false,
+    "historical_metrics_invented": false
+  }
+}
