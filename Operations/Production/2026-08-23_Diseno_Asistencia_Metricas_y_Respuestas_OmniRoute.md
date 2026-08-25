@@ -4,7 +4,7 @@ purpose: "Definir cómo OmniRoute puede analizar resúmenes métricos ya normali
 status: Review
 created: 2026-08-23
 updated: 2026-08-25
-version: "2.2"
+version: "2.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-19_Decision_Gateway_IA_OmniRoute.md"
@@ -381,6 +381,12 @@ Fernando solicitó incluir monetización en el loop de Universe Sent Me. La inte
 YouTube define estos valores como ingresos o rendimiento publicitario **estimados**; pueden ajustarse al cierre de mes y pueden depender de la moneda solicitada en la consulta. Por ello, el ledger conservará moneda, ventana, hora de extracción y `financial_status = preliminary`; nunca tratará una lectura diaria como ingreso definitivo. [15]
 
 Los importes monetarios crudos se almacenarán solo en la capa financiera local y, si se aprueba, en una vista restringida de la hoja. Por defecto, OmniRoute recibirá únicamente señales agregadas no monetarias —por ejemplo, `revenue_trend = up/down/flat`, `monetization_available = true/false` y variaciones porcentuales redondeadas— para formular hipótesis `Draft`. Enviar importes exactos al modelo requiere una autorización financiera separada de Fernando.
+
+### 8.19 Scripts locales sin secretos preparados
+
+Tras la aprobación del gate técnico se prepararon `authorize_tiktok_desktop.py`, `fetch_tiktok_official_metrics.py`, `fetch_youtube_official_metrics.py`, `official_metrics_config.example.json` y `official_metrics_requirements.txt` en `Operations/Automation/`. También se creó la guía `Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md`.
+
+Los collectors son deliberadamente de una sola dirección: almacenan evidencia privada local, no escriben GitHub, Google Sheets, `Metrics_Snapshot_Log.csv`, `Publication_Log.csv`, `ExperimentLog.csv`, publicaciones, comentarios ni OmniRoute. La normalización, el análisis sanitizado y la escritura de vistas derivadas quedan sujetos a la validación humana posterior a las lecturas de prueba.
 
 ## Referencias
 
