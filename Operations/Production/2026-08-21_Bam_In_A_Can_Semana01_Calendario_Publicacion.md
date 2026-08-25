@@ -105,7 +105,7 @@ Con este registro, CAN-002 conserva el diseño 2 + 1: TikTok e Instagram con aud
 
 ### Control programado — CAN-002 T+72
 
-Se programó un único control consolidado para el **martes 26 de agosto de 2026 a las 20:10 CDT**. Esta hora se sitúa después de las tres ventanas T+72 de CAN-002: TikTok 18:59:43, Instagram Reels 19:20:37 y YouTube Shorts 19:57:00 CDT. La programación solo consulta, documenta y reporta; **no publica, edita ni responde contenido**.
+Se programó un único control consolidado para el **miércoles 26 de agosto de 2026 a las 20:10 CDT**. Esta hora se sitúa después de las tres ventanas T+72 de CAN-002: TikTok 18:59:43, Instagram Reels 19:20:37 y YouTube Shorts 19:57:00 CDT. La programación solo consulta, documenta y reporta; **no publica, edita ni responde contenido**.
 
 El corte usará TikTok mediante la cuenta orgánica de Bam en Windsor.ai, Instagram por shortcode `DcZv1l4sjhz` sin rangos de fecha y bloques de hasta cuatro fields, e intentará YouTube por Windsor sin registrar una ausencia como cero. Si no existe una fila de YouTube, conservará la indexación pendiente y utilizará únicamente evidencia de Studio que Fernando haya compartido con timestamp o edad disponible. El snapshot y el ledger se actualizarán con la hora, fuente, frescura y límites de comparabilidad reales.
 
