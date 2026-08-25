@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.55
+**Versión:** 4.56
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.56.00] — 2026-08-25 (Fernando/Manus): Requisitos de App Review TikTok documentados; no se enviará una revisión sin demo real sandbox.** Al avanzar en el formulario, TikTok solicitó una explicación de productos/scopes y al menos un video de demostración end-to-end. La guía del piloto se actualizó a v1.1 con un texto fiel a Login Kit + Display API, exactamente `user.info.basic` y `video.list`, y un guion de grabación sandbox sin secretos, tokens, escritura, otras marcas ni funciones ficticias. La entrada refuerza que no se debe enviar la revisión mientras no exista la interfaz local funcional que el video debe mostrar; una maqueta o video generado no es evidencia válida. Documento actualizado: `Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md` v1.1.
 
 - **[4.55.00] — 2026-08-25 (Fernando/Manus): Firma TikTok para Web/Desktop URL publicada y validada en la raíz pública.** Al configurar la URL oficial de Web/Desktop con `https://iomarketing09-sys.github.io/usm-metrics-public/`, TikTok emitió el archivo `tiktokxnmggjEzrUJrGftPCNm8hgWVRKCBDiWw.txt`. Se publicó sin modificación en la raíz del host bajo `https://iomarketing09-sys.github.io/usm-metrics-public/tiktokxnmggjEzrUJrGftPCNm8hgWVRKCBDiWw.txt`; el build `0e331a4` quedó `built`. La validación independiente confirmó HTTP `200`, `Content-Type: text/plain; charset=utf-8` y contenido byte a byte idéntico al adjunto. Las firmas de Terms of Use, Privacy Policy y Web/Desktop URL están listas. Pendiente únicamente: pulsar `Verify` en cada bloque y registrar el resultado. No se tocaron Wix, DNS, tokens, métricas ni infraestructura de otras marcas. Documento actualizado: `Operations/Automation/2026-08-25_Textos_Publicos_Terminos_Privacidad_App_Metricas_USM.md` v1.7.
 

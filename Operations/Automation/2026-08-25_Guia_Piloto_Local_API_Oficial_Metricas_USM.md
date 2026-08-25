@@ -4,10 +4,11 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
+  - "Operations/Automation/2026-08-25_Textos_Publicos_Terminos_Privacidad_App_Metricas_USM.md"
   - "Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md"
   - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
   - "GrowthOS/todo.md"
@@ -50,6 +51,43 @@ Antes de correr los scripts se copia la plantilla hacia `~/.config/usm-metrics/c
 
 Los ingresos de YouTube son estimados y pueden ajustarse al cierre mensual. El piloto conserva `financial_status = preliminary`, la moneda y la ventana de extracción. Los importes exactos no pasan a OmniRoute por defecto; el modelo solo podrá recibir señales agregadas de tendencia cuando Fernando apruebe una etapa posterior de normalización.
 
+## Gate de App Review y demo sandbox de TikTok
+
+Antes de enviar la aplicación de TikTok a revisión, se debe completar una demostración real del flujo en **Sandbox**. La solicitud no debe presentarse mientras solo exista una página de políticas o mientras la integración esté en construcción. TikTok exige que la app muestre cada producto y scope seleccionado, que el video cubra la interacción completa y que la experiencia web mostrada use el dominio configurado como sitio oficial. [1]
+
+El sandbox es el entorno correcto para probar esta integración sin afectar la configuración productiva. El operador debe crear un sandbox de la app, añadir únicamente una cuenta TikTok propia de Universe Sent Me como `Target User`, y después ejecutar la autorización con PKCE. Nunca se escribirán contraseñas, `client_secret`, tokens, códigos de autorización ni respuestas crudas en el repositorio, en la grabación o en el chat. [2]
+
+| Elemento | Configuración permitida | Debe verse en la demo | Prohibido |
+| :--- | :--- | :--- | :--- |
+| Login Kit | Desktop, callback `http://127.0.0.1:8765/callback/`, PKCE. | Acción voluntaria para conectar TikTok, consentimiento sandbox y retorno al cliente local. | Login oculto, credenciales visibles o cuentas de otras marcas. |
+| `user.info.basic` | Lectura mínima para identificar el perfil autorizado. | Estado de conexión y datos básicos mínimos del perfil sandbox. | PII adicional, mensajes, contactos o cuentas no autorizadas. |
+| `video.list` / Display API | Lectura de videos públicos autorizados y sus contadores nativos. | Lista visible de videos sandbox devuelta por el flujo; se puede ocultar IDs y valores exactos si es necesario. | Publicar, editar, borrar, comentar, enviar mensajes o gestionar anuncios. |
+
+### Texto propuesto para “Explain how each product and scope works”
+
+> The Universe Sent Me Metrics App is a local desktop analytics tool operated by iO Marketing for authorized Universe Sent Me social accounts. Login Kit is used only when the authorized operator selects “Connect TikTok” in the local app. The operator completes TikTok authorization and returns through the local loopback callback using PKCE. The app requests `user.info.basic` only to confirm the authorized TikTok profile, and `video.list` only to retrieve the operator-authorized account’s public video metadata and native engagement counters through the Display API. The local interface displays the connection state, basic profile confirmation, and a read-only recent-video list to support internal performance review. OAuth tokens and raw API responses are stored only in restricted local directories outside GitHub and are not sent to OmniRoute. The app does not post content, edit or delete videos, manage comments, send messages, run ads, transfer funds, or access Bam in a Can, Firma Bordados, or unrelated accounts.
+
+Este texto queda por debajo del límite de 1,000 caracteres, pero solo puede usarse si la demo muestra de forma fiel la interfaz local y el flujo descrito. No se debe alegar una funcionalidad que no se haya implementado ni ocultar que el acceso está restringido a operadores autorizados.
+
+### Guion mínimo de demo real
+
+La demostración debe ser una grabación de pantalla única, sin música ni edición engañosa, de aproximadamente 45–90 segundos y menor a 50 MB. Se grabará después de configurar el sandbox y debe ocultar cualquier secreto o token.
+
+| Tiempo | Acción visible | Evidencia requerida |
+| :--- | :--- | :--- |
+| 0–10 s | Abrir la página oficial `https://iomarketing09-sys.github.io/usm-metrics-public/`. | Enlaces visibles y activos a Terms y Privacy. |
+| 10–25 s | Abrir la interfaz local real de la app y seleccionar `Connect TikTok`. | La UI identifica Universe Sent Me y explica que el acceso es de solo lectura. |
+| 25–45 s | Completar la autorización del usuario objetivo dentro del sandbox. | Pantalla de consentimiento y retorno al callback local, sin mostrar códigos ni tokens. |
+| 45–75 s | Mostrar perfil básico confirmado y la lista de videos obtenida mediante `video.list`. | Estado `Connected`, alcance de lectura y ausencia de controles de escritura. |
+| 75–90 s | Mostrar la pantalla de privacidad local o aviso de almacenamiento. | Tokens y raw permanecen locales; no hay publicación, comentarios, anuncios ni mensajería. |
+
+Si el sandbox o la interfaz local no están listos, se debe guardar el formulario como Draft y no subir un video simulado o generado por IA. La revisión debe demostrar una integración funcional, no una maqueta.
+
 ## Estado del documento
 
-La guía es operativa pero no autoriza cron ni escrituras canónicas. Después de completar los consentimientos y las dos lecturas de prueba, deberá actualizarse junto con el documento de diseño, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, las pestañas derivadas de `USM Growth OS` y el changelog.
+La guía es operativa pero no autoriza cron ni escrituras canónicas. Después de completar la revisión TikTok, los consentimientos y las dos lecturas de prueba, deberá actualizarse junto con el documento de diseño, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, las pestañas derivadas de `USM Growth OS` y el changelog.
+
+## Referencias
+
+[1]: https://developers.tiktok.com/docs/en/app-review-guidelines "TikTok for Developers — App Review Guidelines"
+[2]: https://developers.tiktok.com/doc/add-a-sandbox/ "TikTok for Developers — Add a Sandbox"
