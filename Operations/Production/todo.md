@@ -74,9 +74,10 @@
 - [x] Revisar el Gate 5 de solicitudes: confirmar qué canal puede operar en producción y qué requisitos siguen pendientes para habilitar formulario real.
 - [ ] Confirmar `firmabordados@yahoo.com` como destinatario de Formspree y obtener aprobación separada antes de permitir consultas reales a través del formulario.
 - [ ] Mantener pendiente el formulario real de Formspree y revisar el Gate 4 de contenido aprobado antes de cualquier corte a producción.
-- [ ] Confirmar o retirar el distintivo «20+ años de experiencia» antes de aprobar contenido para producción.
+- [x] Confirmar o retirar el distintivo «20+ años de experiencia» antes de aprobar contenido para producción.
 - [ ] Retirar u ocultar el formulario sintético Formspree y sustituir el texto de staging del footer al preparar la versión de producción.
-- [ ] Obtener aprobación final de contenido de Firma Bordados después de resolver los bloqueos del Gate 4 y revisar visualmente en Quick-seedless.
+- [x] Obtener aprobación final de contenido de Firma Bordados después de resolver los bloqueos del Gate 4 y revisar visualmente en Quick-seedless.
+- [x] Registrar que «20+ años» está confirmado, que el contenido actual está aprobado y que Formspree se ocultará en producción mientras no se verifique el buzón oficial.
 - [x] Incorporar el inventario DNS confirmado, la renovación de $470 MXN operada por Io Marketing y la URL raíz como canónica al plan de corte y reversión del Gate 3.
 - [x] Comparar y documentar alternativas seguras de backend, entrega de correo, aviso de privacidad y antispam para el formulario de Firma Bordados.
 - [x] Preparar el cambio de «Cómo solicitar» para priorizar correo sin eliminar WhatsApp como canal alternativo.

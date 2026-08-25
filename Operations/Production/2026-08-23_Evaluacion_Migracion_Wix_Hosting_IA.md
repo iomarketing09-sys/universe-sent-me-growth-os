@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-24
 
-**Versión:** 4.1
+**Versión:** 4.2
 
 **Autor:** Manus AI
 
@@ -230,7 +230,7 @@ El último paso no es técnico: el cliente confirma por escrito que el dominio s
 
 La auditoría pasiva del Gate 3 registró que `firmabordados.com` usa `ns14.wixdns.net` y `ns15.wixdns.net`, con tres A en el root y CNAME `www`, `es` y `m` dirigidos a Wix. Io Marketing confirmó que figura como registrante, autoridad autorizada para cambios y pagador de la renovación de $470 MXN el 19 de febrero; el cliente confirmó que no hay servicios ligados al dominio. La URL canónica de producción será el root y las variantes `www`, `es` y `m` se proponen como redirecciones al root tras el corte. El registro RDAP público indica vencimiento el 2027-02-19. El Gate 3 queda listo documentalmente; el cambio de nameservers Cloudflare sigue bloqueado hasta recibir una aprobación explícita de corte.
 
-La revisión del Gate 4 confirma que servicios, catálogos, activos, contacto y privacidad para correo guiado se sostienen en fuentes aprobadas. Antes de aprobar el contenido final se deben resolver tres puntos: confirmar o retirar «20+ años», retirar/ocultar el formulario sintético Formspree del alcance productivo y sustituir el texto de staging del footer. El detalle está en `2026-08-25_Gate4_Aprobacion_Contenido_Produccion_Firma_Bordados.md`.
+La revisión del Gate 4 confirma que servicios, catálogos, activos, contacto y privacidad para correo guiado se sostienen en fuentes aprobadas. Fernando aprobó el contenido para producción, confirmó «20+ años» y autorizó retirar/ocultar el piloto Formspree y sustituir el texto de staging del footer durante la preparación técnica de producción. El Gate 4 queda cerrado documentalmente; no se agregan materiales, certificaciones, precios, disponibilidad ni proveedores nuevos. El detalle está en `2026-08-25_Gate4_Aprobacion_Contenido_Produccion_Firma_Bordados.md`.
 
 ### Modelo de operación administrada confirmado
 
