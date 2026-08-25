@@ -8,14 +8,14 @@
 
 **Última actualización:** 2026-08-24
 
-**Versión:** 4.0
+**Versión:** 4.1
 
 **Autor:** Manus AI
 
 **Organización:** `Operations/Production`
 
 **Documentos relacionados:** [`2026-08-18_Piloto_Local_OmniRoute_Seguro.md`](2026-08-18_Piloto_Local_OmniRoute_Seguro.md), [`2026-08-19_Decision_Gateway_IA_OmniRoute.md`](2026-08-19_Decision_Gateway_IA_OmniRoute.md), [`2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md`](2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md), [`2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md`](2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md) y [`2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md`](2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md).
-**Documentos relacionados:** [`2026-08-18_Piloto_Local_OmniRoute_Seguro.md`](2026-08-18_Piloto_Local_OmniRoute_Seguro.md), [`2026-08-19_Decision_Gateway_IA_OmniRoute.md`](2026-08-19_Decision_Gateway_IA_OmniRoute.md), [`2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md`](2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md), [`2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md`](2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md), [`2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md`](2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md), [`2026-08-25_Propuesta_Cotizacion_Migracion_Mantenimiento_Firma_Bordados.md`](2026-08-25_Propuesta_Cotizacion_Migracion_Mantenimiento_Firma_Bordados.md) y [`2026-08-25_Auditoria_Gate3_Dominio_DNS_Firma_Bordados.md`](2026-08-25_Auditoria_Gate3_Dominio_DNS_Firma_Bordados.md).
+**Documentos relacionados:** [`2026-08-18_Piloto_Local_OmniRoute_Seguro.md`](2026-08-18_Piloto_Local_OmniRoute_Seguro.md), [`2026-08-19_Decision_Gateway_IA_OmniRoute.md`](2026-08-19_Decision_Gateway_IA_OmniRoute.md), [`2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md`](2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md), [`2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md`](2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md), [`2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md`](2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md), [`2026-08-25_Propuesta_Cotizacion_Migracion_Mantenimiento_Firma_Bordados.md`](2026-08-25_Propuesta_Cotizacion_Migracion_Mantenimiento_Firma_Bordados.md), [`2026-08-25_Auditoria_Gate3_Dominio_DNS_Firma_Bordados.md`](2026-08-25_Auditoria_Gate3_Dominio_DNS_Firma_Bordados.md) y [`2026-08-25_Gate4_Aprobacion_Contenido_Produccion_Firma_Bordados.md`](2026-08-25_Gate4_Aprobacion_Contenido_Produccion_Firma_Bordados.md).
 
 ---
 
@@ -229,6 +229,8 @@ Una vez autorizado el cambio, se actualizan únicamente los registros aprobados,
 El último paso no es técnico: el cliente confirma por escrito que el dominio sirve el nuevo sitio y que el canal de contacto funciona. Solo entonces se programa la reducción o cancelación de Wix, idealmente lejos de la fecha de renovación de diciembre de 2026 para conservar margen de reversión. Si el dominio raíz se aloja en Cloudflare Pages, Cloudflare indica que debe gestionarse la zona en Cloudflare; este movimiento de nameservers sigue requiriendo una aprobación separada.[9]
 
 La auditoría pasiva del Gate 3 registró que `firmabordados.com` usa `ns14.wixdns.net` y `ns15.wixdns.net`, con tres A en el root y CNAME `www`, `es` y `m` dirigidos a Wix. Io Marketing confirmó que figura como registrante, autoridad autorizada para cambios y pagador de la renovación de $470 MXN el 19 de febrero; el cliente confirmó que no hay servicios ligados al dominio. La URL canónica de producción será el root y las variantes `www`, `es` y `m` se proponen como redirecciones al root tras el corte. El registro RDAP público indica vencimiento el 2027-02-19. El Gate 3 queda listo documentalmente; el cambio de nameservers Cloudflare sigue bloqueado hasta recibir una aprobación explícita de corte.
+
+La revisión del Gate 4 confirma que servicios, catálogos, activos, contacto y privacidad para correo guiado se sostienen en fuentes aprobadas. Antes de aprobar el contenido final se deben resolver tres puntos: confirmar o retirar «20+ años», retirar/ocultar el formulario sintético Formspree del alcance productivo y sustituir el texto de staging del footer. El detalle está en `2026-08-25_Gate4_Aprobacion_Contenido_Produccion_Firma_Bordados.md`.
 
 ### Modelo de operación administrada confirmado
 
