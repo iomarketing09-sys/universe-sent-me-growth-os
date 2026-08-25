@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-24
 
-**Versión:** 4.5
+**Versión:** 4.6
 
 **Autor:** Manus AI
 
@@ -235,6 +235,10 @@ La revisión del Gate 4 confirma que servicios, catálogos, activos, contacto y 
 El Gate 6 validó técnicamente el staging: inicio, privacidad, robots, los tres catálogos, headers de seguridad, bloqueo de indexación y build TypeScript/Vite. No se identificó una falla técnica severa. La revisión visual manual sigue pendiente en Quick-seedless y es el único requisito restante para cerrar este gate; no autoriza por sí misma indexación, nameservers ni corte de producción.
 
 El Gate 7 ya define la configuración SEO que se aplicará solo después de que el dominio raíz resuelva hacia la versión aprobada: canonical absoluto, redirects de variantes, indexación, robots permitido, sitemap limitado a URLs canónicas y verificación posterior en Search Console. Fernando aprobó título, descripción, canonical de raíz, sitemap inicial y redirecciones. El staging conserva noindex y bloqueo de robots hasta el corte; siguen pendientes la preparación técnica de producción y la autorización de nameservers.
+
+## Pausa operativa — 2026-08-25
+
+Fernando indicó pausar la preparación de producción de Firma Bordados para retomar OmniRoute como frente de trabajo separado. En consecuencia, quedan expresamente suspendidos: el corte DNS, cualquier cambio de nameservers, asociación del dominio a Cloudflare Pages, retiro de `noindex`, SEO de producción, ocultamiento del piloto Formspree y la habilitación de formulario real. Esta pausa no revierte el staging ni los gates documentados; solo impide ejecutar cambios hasta recibir una nueva instrucción explícita. OmniRoute conserva infraestructura, datos, proveedores y presupuesto separados de Firma Bordados.
 
 ### Modelo de operación administrada confirmado
 
