@@ -4,7 +4,7 @@ purpose: "Definir cómo OmniRoute puede analizar resúmenes métricos ya normali
 status: Review
 created: 2026-08-23
 updated: 2026-08-25
-version: "2.8"
+version: "2.9"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-19_Decision_Gateway_IA_OmniRoute.md"
@@ -408,6 +408,14 @@ Las URLs sugeridas son `https://iomarketin.wixstudio.com/universesentme/usm-metr
 
 Fernando confirmó que el sitio ya cuenta con la página de privacidad `https://iomarketin.wixstudio.com/universesentme/privacypolicyusm`, usada junto al sitio de Universe Sent Me para permisos anteriores de Meta. Esta ruta se evaluará como candidata para TikTok; la URL exacta de términos continúa pendiente y ambas deben revisarse públicamente antes de reutilizarse.
 
+### 8.24 Bloqueo de firma por ruta y opciones de host
+
+TikTok indicó que el archivo `tiktokmzjR7qzSiBBz0lZFqmCsoSY3CMOFZ7au.txt` debe ser accesible bajo el prefijo `https://iomarketin.wixstudio.com/universesentme/privacypolicyusm/` antes de confirmar la verificación. La documentación de Wix confirma que no permite añadir un archivo `.txt` arbitrario al sitio en una ruta de URL controlada; por tanto, una subida al Media Manager no es una prueba válida de que TikTok podrá recuperar el archivo solicitado. [16] [17]
+
+El loop no debe usar el host, dominio, proyecto ni presupuesto de Firma Bordados como atajo. Las alternativas sostenibles son un repositorio público dedicado de GitHub Pages o un proyecto independiente de Cloudflare Pages para Universe Sent Me, ambos capaces de servir activos estáticos en rutas de archivo predecibles. GitHub Pages exige un repositorio público bajo GitHub Free; Cloudflare Pages proporciona un subdominio propio por proyecto. [18] [19]
+
+No se creó un host alternativo ni se intentó una verificación fallida. Fernando debe elegir la alternativa antes de crear recursos públicos o mover los enlaces de términos y privacidad.
+
 ## Referencias
 
 [1]: https://developers.facebook.com/docs/instagram-api/guides/insights "Meta for Developers — Instagram Insights"
@@ -425,4 +433,8 @@ Fernando confirmó que el sitio ya cuenta con la página de privacidad `https://
 [13]: https://developers.tiktok.com/doc/tiktok-api-v2-video-list/ "TikTok for Developers — List Videos"
 [14]: https://developers.google.com/youtube/analytics/reference/reports/query "Google for Developers — YouTube Analytics Reports: Query and scopes"
 [15]: https://developers.google.com/youtube/analytics/metrics "Google for Developers — YouTube Analytics Metrics"
+[16]: https://developers.tiktok.com/doc/getting-started-create-an-app "TikTok for Developers — Register Your App"
+[17]: https://support.wix.com/en/article/request-adding-a-txt-file-to-the-top-level-domain-for-google-analytics-verification "Wix Support — TXT file hosting limitation"
+[18]: https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site "GitHub Docs — Creating a GitHub Pages site"
+[19]: https://developers.cloudflare.com/pages/framework-guides/deploy-anything/ "Cloudflare Pages Docs — Static HTML"
 [16]: https://developers.tiktok.com/doc/display-api-get-started/ "TikTok for Developers — Display API Get Started"

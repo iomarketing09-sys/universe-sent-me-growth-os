@@ -4,7 +4,7 @@ purpose: "Proveer el contenido mínimo, revisable y separado por marca para las 
 status: Review
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -29,6 +29,17 @@ Estos textos están destinados a dos páginas públicas separadas dentro del sit
 | Privacy Policy | `https://iomarketin.wixstudio.com/universesentme/privacypolicyusm` | Identificada; pendiente de revisión pública de contenido y alcance. |
 | Terms of Service | Pendiente de URL exacta. | No usar la URL principal como sustituto. |
 
+> **Bloqueo técnico de TikTok:** el método de verificación actual entrega un archivo de firma y exige que esté disponible bajo el prefijo de URL indicado. Wix documenta que no permite servir un archivo `.txt` arbitrario en una ruta de sitio controlada. No se debe subir el archivo al Media Manager ni pulsar `Verify` hasta elegir un host estático compatible. [1] [2]
+
+## Alternativas de host pendientes de decisión
+
+| Alternativa | Compatibilidad con archivo en ruta exacta | Separación de marcas | Consideración |
+| :--- | :--- | :--- | :--- |
+| GitHub Pages en repositorio público dedicado | Sí; publica archivos estáticos conservando la estructura de directorios. [3] | Repositorio nuevo exclusivo de Universe Sent Me. | Los contenidos publicados serían visibles y el repositorio debe ser público en GitHub Free. |
+| Cloudflare Pages en proyecto/cuenta separada | Sí; despliega HTML y activos estáticos bajo un subdominio `*.pages.dev`. [4] | Proyecto de Universe Sent Me, sin usar el proyecto, host ni dominio de Firma Bordados. | Requiere una cuenta o proyecto distinto y autorización explícita para crearlo. |
+
+No se creará ningún host, repositorio público o proyecto de Cloudflare por este documento.
+
 ## Página 1 — Terms of Service
 
 **Page title:** `Terms of Service — Universe Sent Me Metrics App`
@@ -40,6 +51,13 @@ Estos textos están destinados a dos páginas públicas separadas dentro del sit
 The Universe Sent Me Metrics App is a private, local analytics tool operated by iO Marketing for the Universe Sent Me brand. It is used only to review performance information for social accounts that the authorized operator controls.
 
 The app does not publish content, edit videos, manage comments, send messages, run advertising campaigns, process payments, or act on behalf of unrelated brands.
+
+## Referencias
+
+[1]: https://developers.tiktok.com/doc/getting-started-create-an-app "TikTok for Developers — Register Your App"
+[2]: https://support.wix.com/en/article/request-adding-a-txt-file-to-the-top-level-domain-for-google-analytics-verification "Wix Support — TXT file hosting limitation"
+[3]: https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site "GitHub Docs — Creating a GitHub Pages site"
+[4]: https://developers.cloudflare.com/pages/framework-guides/deploy-anything/ "Cloudflare Pages Docs — Static HTML"
 
 ### 2. Authorized use
 
