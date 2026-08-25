@@ -1,0 +1,79 @@
+{
+  "title": "Evidencia de simulación aislada del pipeline E0 a E72",
+  "purpose": "Registrar una prueba reproducible del pipeline completo de snapshots usando un post sintético, un ledger temporal y payloads con la forma de respuesta Meta, sin realizar llamadas ni escrituras productivas.",
+  "status": "Active",
+  "created": "2026-08-25",
+  "updated": "2026-08-25",
+  "version": "1.0",
+  "author": "Manus AI (CGO)",
+  "organization": "Operations/Research/",
+  "related_documents": [
+    "Operations/Automation/simulate_pipeline_e0_e72.py",
+    "Operations/Automation/capture_e0_after_publish.py",
+    "Operations/Automation/run_metrics_windows.py",
+    "Operations/Automation/record_metrics_snapshot.py",
+    "Operations/Automation/validate_metrics_snapshot_ledger.py",
+    "Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md",
+    "Operations/Research/Metrics_Snapshot_Log.csv",
+    "Operations/Research/2026-08-25_Priority_Pipeline_Progress_Evidence.json"
+  ],
+  "simulation_id": "SIM-E0-E72-20260825-001",
+  "post_id": "SIMULATED-POST-E0-E72-001",
+  "post_is_synthetic": true,
+  "meta_api_called": false,
+  "production_ledger_written": false,
+  "production_ledger_unchanged": true,
+  "production_ledger_sha256": "0b0b8077483a14d6583c176db7a672316c1d90284670ae019d2fadbd720656f9",
+  "temporary_ledger_rows": 3,
+  "temporary_raw_files": 3,
+  "steps": {
+    "E0": {
+      "status": "recorded",
+      "window_status": "Valid_E0",
+      "lifetime_interactions": 4,
+      "retry_status": "no_op_valid_already_exists"
+    },
+    "E24": {
+      "status": "recorded",
+      "window_status": "Valid_24h",
+      "lifetime_interactions": 10,
+      "delta_from_e0": 6,
+      "capture_offset_seconds": 300,
+      "retry_no_op": true
+    },
+    "E72": {
+      "status": "recorded",
+      "window_status": "Valid_72h",
+      "lifetime_interactions": 17,
+      "delta_from_e0": 13,
+      "capture_offset_seconds": 300,
+      "retry_no_op": true
+    }
+  },
+  "validator": {
+    "status": "PASS",
+    "temporary_status_counts": {
+      "Valid_E0": 1,
+      "Valid_24h": 1,
+      "Valid_72h": 1
+    },
+    "duplicate_snapshot_ids": [],
+    "duplicate_valid_logical_keys": [],
+    "errors": [],
+    "warnings": []
+  },
+  "assertions": {
+    "baseline_e0": true,
+    "snapshot_24h": true,
+    "snapshot_72h": true,
+    "production_isolation": true,
+    "idempotency": true,
+    "raw_count_matches_snapshots": true
+  },
+  "status": "PASS",
+  "limitations": [
+    "The test does not create a real Meta post and does not call the Meta API.",
+    "The counter values are synthetic fixtures using the Meta response shape; they are not production performance data.",
+    "This validates the local contract, adapter, worker, raw handling, delta logic and idempotency, not the live scheduler or the external publisher runtime."
+  ]
+}
