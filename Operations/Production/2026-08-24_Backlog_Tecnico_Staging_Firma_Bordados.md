@@ -3,8 +3,8 @@ title: "Backlog técnico de bajo riesgo — Staging Firma Bordados"
 purpose: "Priorizar mejoras de rendimiento, accesibilidad, seguridad técnica y operación del staging que no dependan de materiales, tiempos de entrega o mínimos de pedido."
 status: Active
 created: 2026-08-24
-updated: 2026-08-24
-version: "1.1"
+updated: 2026-08-25
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md"
@@ -32,7 +32,7 @@ La auditoría identificó ajustes que no requieren información comercial adicio
 | P1 aplicado | Marcar imágenes no críticas con `loading="lazy"` y `decoding="async"`; dar prioridad solo a la imagen hero | Reduce carga inicial percibida y preserva el hero | Ninguna | Nulo |
 | P1 aplicado | Simplificar el núcleo React: retirar `ThemeProvider`, `TooltipProvider` y `Toaster` inactivos; medir el bundle antes de podar dependencias | Reduce superficie de runtime y facilita mantenimiento | Prueba visual y build | Nulo |
 | P1 aplicado | Añadir CI de GitHub: `pnpm check` y `pnpm exec vite build` para cada Pull Request y push a `main`/`staging` | Evita que un cambio de contenido rompa el deploy | Repositorio privado Io Marketing | Nulo |
-| P1 pendiente de decisión | Proteger `main`; mantener `staging` como rama de revisión mientras Wix continúe activo | Evita que un cambio no revisado se interprete como corte final | Confirmación sobre el cambio de colaboración en GitHub | Nulo |
+| P1 aplicado con límite de plan | Mantener `main` privado y formalizar el gate rama de trabajo → PR a `staging` → CI → promoción explícita a `main` → CI | Reduce cambios accidentales sin exponer activos ni elevar el plan | GitHub Pro/Team si se requiere enforcement nativo | Nulo |
 | P2 | Añadir Open Graph, Twitter Card y JSON-LD de negocio local | Mejora previsualización y preparación SEO del futuro dominio | Validar nombre legal, teléfono preferido, dirección y horarios antes de declarar datos estructurados | Bajo |
 | P2 | Añadir analítica de eventos para clics en WhatsApp, correo y PDFs | Mide intención comercial y ayuda a priorizar catálogo/CTA | Consentimiento de privacidad, herramienta y responsable de datos | Medio |
 | P2 | Sustituir `mailto:` por formulario con backend | Recibe solicitudes aunque el cliente no tenga app de correo configurada | Aviso de privacidad, destinatario, antispam y proceso de respuesta | Medio |
@@ -49,8 +49,28 @@ La landing ya no monta `ThemeProvider`, `TooltipProvider` ni `Toaster`. Se retir
 
 También se dio prioridad de red a la imagen hero y se aplicó carga diferida/decodificación asíncrona a las fotografías de proceso y al logo del formulario, que aparecen fuera de la primera pantalla. Después de la build, el JavaScript principal pasó de ≈562 kB a 451.78 kB sin comprimir (≈19% menos) y de ≈163 kB a 127.12 kB gzip (≈22% menos). La promoción rápida a `main` dejó ambas ramas en `beaaa8d`; Pages sirvió un nuevo artefacto y se volvieron a confirmar `noindex,nofollow,noarchive`, `robots.txt` y los headers P0.
 
-La protección formal de `main` no se activó porque cambia el modo de colaboración de GitHub y necesita una decisión explícita de operación. Hasta entonces, la regla documentada y aplicada es: rama de trabajo o `staging` → revisión, CI y build → promoción explícita y validada a `main` → despliegue en la URL pública de staging.
+La protección técnica de `main` se evaluó tras la autorización de Fernando. GitHub rechazó branch protection y rulesets para el repositorio privado actual porque requieren GitHub Pro o una visibilidad pública. La visibilidad no se cambió y no se elevó el plan. En su lugar, se documentó y validó el gate operativo: rama de trabajo → Pull Request a `staging` → CI y build → promoción explícita a `main` → CI → despliegue en la URL pública de staging.
 
-## 5. Límites hasta recibir la información del cliente
+## 5. Mejoras comerciales recomendadas sin bloquear por materiales
+
+| Prioridad | Mejora propuesta | Beneficio esperado | Dependencia | Estado recomendado |
+| :--- | :--- | :--- | :--- | :--- |
+| C1 | Crear una sección «Cómo solicitar» en tres pasos: compartir necesidad, elegir opción de prenda/catálogo y confirmar detalles con el equipo | Reduce incertidumbre para una primera consulta sin prometer precio ni plazo | Ninguna | Siguiente mejora recomendada |
+| C1 | Mejorar el mensaje inicial de WhatsApp con campos opcionales de prenda, técnica, cantidad aproximada y uso | Aumenta la calidad de los leads sin almacenar datos en el sitio | Validar solo la redacción | Siguiente mejora recomendada |
+| C1 | Añadir una franja de «Marcas disponibles por catálogo»: BigBang, M&O y Soul & Blues, con enlace a cada PDF | Convierte los catálogos en una razón visible para consultar y respalda la oferta con fuentes existentes | Dickies sigue fuera hasta recibir su catálogo | Siguiente mejora recomendada |
+| C2 | Añadir un FAQ breve: mínimo de serigrafía de 12 piezas, tiempos que se confirman por pedido/carga y categorías de prendas consultables | Resuelve objeciones frecuentes sin inventar condiciones | Ninguna | Apto tras revisar el tono |
+| C2 | Ampliar el portafolio con fotografías reales autorizadas, ocultando o excluyendo marcas de clientes sin permiso | Aumenta confianza mediante evidencia de trabajo | Curaduría y permisos por imagen | Apto por lotes pequeños |
+| C3 | Añadir enlace de ubicación con indicaciones y revisar información de contacto visible | Reduce fricción para visitas o llamadas | Verificar el destino exacto del mapa | Pendiente de verificación |
+| C3 | Implementar formulario con backend y analítica de intención | Mejora captura y medición de solicitudes | Aviso de privacidad, responsable de datos, antispam y proceso de respuesta | Bloqueado hasta decisión operativa |
+
+### Decisión recomendada sobre GitHub Pro
+
+GitHub Pro no es necesario hoy para el staging: existe un solo flujo de mantenimiento, CI ya valida build/tipos y el gate operativo reduce el riesgo sin coste adicional. Se vuelve recomendable cuando participen varios colaboradores, el cliente quiera aprobar Pull Requests desde GitHub, haya cambios frecuentes o se necesite impedir técnicamente los pushes directos a `main`. La protección nativa puede exigir Pull Requests, revisiones y checks antes de permitir cambios en una rama protegida.[1]
+
+## 6. Límites hasta recibir la información del cliente
 
 No se deben añadir precios, cotizadores, promesas de tiempo, mínimos de pedido, materiales, certificaciones, formularios que almacenen datos, analytics de terceros ni SEO estructurado definitivo. La URL `*.pages.dev` debe seguir marcada como staging y el dominio `firmabordados.com` no debe asociarse al proyecto hasta el gate de aprobación, transferencia/operación administrada y migración documentado.
+
+## Referencias
+
+[1]: [GitHub Docs — About protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)

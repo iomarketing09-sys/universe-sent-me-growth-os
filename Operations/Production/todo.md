@@ -36,6 +36,8 @@
 - [x] Aplicar la máxima protección disponible sin elevar plan ni exponer el repositorio: gate operativo con Pull Request, CI y promoción explícita; la protección nativa sigue bloqueada por el plan/visibilidad de GitHub.
 - [x] Validar y documentar el nuevo flujo protegido de ramas sin alterar Wix, DNS ni el dominio público.
 - [ ] Decidir por separado si se desea GitHub Pro/Team para activar branch protection nativa en el repositorio privado; no hacer público el repositorio para desbloquearla.
+- [x] Evaluar y documentar la necesidad real de GitHub Pro frente al gate operativo actual del staging privado.
+- [x] Priorizar mejoras de conversión, contenido y confianza para el sitio de Firma Bordados sin inventar información comercial.
 - [x] Convertir WhatsApp en el CTA principal del hero de Firma Bordados y validar el enlace en escritorio y móvil.
 - [x] Guiar la creación de la cuenta Cloudflare y repositorio privado del cliente antes de configurar Cloudflare Pages.
 - [x] Acompañar la configuración del proyecto Cloudflare Pages de staging para Firma Bordados sin agregar dominio ni modificar DNS.
