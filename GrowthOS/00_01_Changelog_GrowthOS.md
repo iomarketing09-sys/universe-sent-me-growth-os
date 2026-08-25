@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.51
+**Versión:** 4.52
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.52.00] — 2026-08-25 (Fernando/Manus): GitHub Pages activo y contacto público autorizado para la app de métricas USM.** Fernando activó GitHub Pages para `iomarketing09-sys/usm-metrics-public` desde la rama `main` y la carpeta `/(root)`. Se comprobó la disponibilidad pública de `https://iomarketing09-sys.github.io/usm-metrics-public/terms/` y `https://iomarketing09-sys.github.io/usm-metrics-public/privacy/`. Fernando autorizó incluir `io_marketin_09@gmail.com` como canal de contacto de iO Marketing y el build `ded94cd` confirma dicho dato en ambos textos. El siguiente gate es sustituir las URLs Wix en TikTok por estas rutas y obtener una instrucción de firma asociada al prefijo GitHub Pages; no se reutilizará el archivo del prefijo Wix. Documento actualizado: `Operations/Automation/2026-08-25_Textos_Publicos_Terminos_Privacidad_App_Metricas_USM.md` v1.4.
 
 - **[4.51.00] — 2026-08-25 (Fernando/Manus): Host técnico público de Universe Sent Me preparado, pendiente de activación manual de Pages.** Conforme a la autorización de Fernando, se creó el repositorio público exclusivo `iomarketing09-sys/usm-metrics-public` y se enviaron sus páginas estáticas mínimas: inicio, `/terms/` y `/privacy/`. El repositorio prohíbe explícitamente secretos, tokens, métricas, importes financieros, PII y recursos de Bam in a Can, Firma Bordados u otras marcas. Se retiró cualquier correo que no hubiera sido confirmado expresamente para publicación. El intento de activar GitHub Pages con el token de integración devolvió `403 Resource not accessible by integration`; por tanto, el siguiente gate requiere que Fernando habilite `Settings → Pages` desde GitHub con la rama `main` y `/(root)`. Solo después se validarán las URLs y TikTok deberá emitir una instrucción nueva para el prefijo GitHub Pages; no se reutilizará la firma asociada a Wix. Documentos actualizados: `Operations/Automation/2026-08-25_Textos_Publicos_Terminos_Privacidad_App_Metricas_USM.md` v1.3 y `GrowthOS/todo.md` v3.9.
 

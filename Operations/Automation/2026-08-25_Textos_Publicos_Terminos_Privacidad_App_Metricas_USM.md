@@ -4,7 +4,7 @@ purpose: "Proveer el contenido mínimo, revisable y separado por marca para las 
 status: Review
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.3"
+version: "1.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -20,7 +20,7 @@ organization: "Operations/Automation"
 
 Estos textos están destinados a dos páginas públicas separadas en un host técnico mínimo de **GitHub Pages** exclusivo de Universe Sent Me. Wix permanece sin cambios. iO Marketing opera la aplicación descrita, que es un collector local privado para Universe Sent Me. No vende productos, no publica en TikTok y no se relaciona con Bam in a Can ni Firma Bordados.
 
-> **Estado de publicación:** el contenido fue preparado y enviado al repositorio público dedicado `iomarketing09-sys/usm-metrics-public` en los directorios `/terms/` y `/privacy/`. Falta habilitar GitHub Pages desde la interfaz de GitHub y confirmar explícitamente el correo público de contacto antes de incorporarlo a las páginas. No sustituye revisión legal profesional.
+> **Estado de publicación:** GitHub Pages está activo para el repositorio público dedicado `iomarketing09-sys/usm-metrics-public`. Las páginas publicadas son `https://iomarketing09-sys.github.io/usm-metrics-public/terms/` y `https://iomarketing09-sys.github.io/usm-metrics-public/privacy/`. Fernando autorizó publicar `io_marketin_09@gmail.com` como contacto de iO Marketing y la versión desplegada fue comprobada. Falta obtener la instrucción de firma que TikTok genere para el prefijo nuevo. No sustituye revisión legal profesional.
 
 ## URLs existentes verificadas por Fernando
 
@@ -35,7 +35,7 @@ Estos textos están destinados a dos páginas públicas separadas en un host té
 
 | Alternativa | Compatibilidad con archivo en ruta exacta | Separación de marcas | Estado |
 | :--- | :--- | :--- | :--- |
-| GitHub Pages en repositorio público dedicado | Sí; publica archivos estáticos conservando la estructura de directorios. [3] | Repositorio nuevo exclusivo de Universe Sent Me. | **Elegido.** Repositorio público creado y contenido mínimo enviado en los commits `90d9e3c` y `71da24c`; falta activar Pages desde `Settings → Pages` con `main` y `/(root)`. |
+| GitHub Pages en repositorio público dedicado | Sí; publica archivos estáticos conservando la estructura de directorios. [3] | Repositorio nuevo exclusivo de Universe Sent Me. | **Activo.** Pages usa `main` y `/(root)`; el build de `ded94cd` quedó `built` y se validaron ambas rutas públicas. |
 | Cloudflare Pages en proyecto/cuenta separada | Sí; despliega HTML y activos estáticos bajo un subdominio `*.pages.dev`. [4] | Proyecto de Universe Sent Me, sin usar el proyecto, host ni dominio de Firma Bordados. | No seleccionado. |
 
 El repositorio público contiene exclusivamente páginas de política y, cuando TikTok la genere para el prefijo nuevo, una firma de verificación. No puede contener métricas, credenciales, tokens, datos financieros, PII ni recursos de otras marcas.
@@ -133,12 +133,12 @@ For privacy questions or requests related to this app, contact iO Marketing at: 
 
 ## Publicación en GitHub Pages
 
-Una vez que el operador habilite Pages desde GitHub, publicar desde la rama `main` y la carpeta `/(root)`. GitHub debería asignar el sitio de proyecto bajo `https://iomarketing09-sys.github.io/usm-metrics-public/`; confirmar la URL exacta visible en la pantalla de Pages antes de pegarla en TikTok.
+GitHub Pages publica desde la rama `main` y la carpeta `/(root)` en `https://iomarketing09-sys.github.io/usm-metrics-public/`. La página de términos y la página de privacidad devolvieron contenido público y el HTML desplegado contiene el correo autorizado.
 
 | Página pública | Ruta esperada | Contenido fuente |
 | :--- | :--- | :--- |
-| Terms of Service — Universe Sent Me Metrics App | `/usm-metrics-public/terms/` | Página 1 de este documento. |
-| Privacy Policy — Universe Sent Me Metrics App | `/usm-metrics-public/privacy/` | Página 2 de este documento. |
+| Terms of Service — Universe Sent Me Metrics App | `https://iomarketing09-sys.github.io/usm-metrics-public/terms/` | Página 1 de este documento. |
+| Privacy Policy — Universe Sent Me Metrics App | `https://iomarketing09-sys.github.io/usm-metrics-public/privacy/` | Página 2 de este documento. |
 | Firma de TikTok | `/usm-metrics-public/privacy/tiktok*.txt` | Añadir solo el archivo exacto que TikTok genere después de aceptar el nuevo prefijo. |
 
 Tras habilitar Pages, comprobar públicamente las rutas de términos y privacidad. Después, en TikTok, sustituir las URLs Wix por esas dos rutas y solicitar o descargar la instrucción de verificación para el prefijo nuevo. No reutilizar ni inventar el contenido de la firma asociada al prefijo Wix. El archivo exacto se añadirá al directorio solicitado y solo entonces se pulsará `Verify`.
