@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.48
+**Versión:** 4.49
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.49.00] — 2026-08-25 (Manus): Siguiente publicación programada preparada para E0 con reintentos controlados.** Se seleccionó `PUB-FB-17_30-47`, la primera publicación futura explícita posterior al caso `PUB-FB-17_30-46`, con asset_ref `2608062 - Kiri+Evan - prestame el marron.jpeg`, Meta Post ID `1036844829507460_122151377475072582`, experimento `EXP-2026-08-CAL-01` e hipótesis `HB-003|HB-004|HB-005`. La publicación permanece `Programada` para 2026-08-25 16:00 America/Matamoros / 21:00 UTC y Meta confirmó en modo lectura `is_published=false` antes de su hora. El único schedule se reutilizó como control one-shot activo a las 16:02 locales / 21:02 UTC, con intentos adicionales a 16:05 y 16:08, todos dentro de ±600 segundos. El control solo consulta, detiene los reintentos al confirmar `is_published=true`, ejecuta el hook sin replay y guarda raw; si sigue pendiente, devuelve `E0_PENDING` sin escribir. `ID_Pieza` y `CNT` permanecen vacíos porque no están explícitamente asignados. No se modificó contenido ni programación. Evidencia: `Operations/Research/2026-08-25_PUB-FB-17_30-47_E0_Preparation_Evidence.json`.
 
 - **[4.48.00] — 2026-08-25 (Fernando/Manus): Wix bloqueado para la firma de URL de TikTok.** TikTok pidió que `tiktokmzjR7qzSiBBz0lZFqmCsoSY3CMOFZ7au.txt` sea recuperable bajo el prefijo de la página de privacidad de Universe Sent Me. La documentación de Wix no permite servir un `.txt` arbitrario en una ruta controlada, por lo que se prohibió usar Media Manager o pulsar `Verify` con una URL distinta. Se documentaron GitHub Pages público dedicado y Cloudflare Pages independiente como alternativas estáticas; no se creó ningún host ni se utilizó infraestructura, host, dominio o presupuesto de Firma Bordados. Documento actualizado: `Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md` v2.9.
 

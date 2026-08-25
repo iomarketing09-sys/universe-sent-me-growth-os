@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-25
-**Versión:** 8.1
+**Versión:** 8.2
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -72,6 +72,7 @@
 | [Evidencia de ejecución del primer caso productivo E0](../Operations/Research/2026-08-25_First_Productive_Case_E0_Execution_Evidence.json) | Resultado sanitizado de Meta y del hook E0: snapshot `MS-8096357E6473C74A7D4B` registrado como `Anomaly/missing_counter`; validador PASS, cero E0 válidos y E24/E72 bloqueados. | Active |
 | [Preparación del siguiente caso productivo E0](../Operations/Research/2026-08-25_Next_Productive_Case_E0_Preparation_Evidence.json) | Selecciona `PUB-FB-17_30-46`, con Meta Post ID explícito y experimento `EXP-2026-08-CAL-01`; el control terminó con captura `Late` no canónica. | Active |
 | [Revisión E0 del siguiente caso productivo](../Operations/Research/2026-08-25_Next_Productive_Case_E0_Review_Evidence.json) | Meta confirmó la publicación y los tres contadores, pero la captura ocurrió 3,014.35 s después de `created_time`; snapshot `MS-1CAB60E7ED3D007C02CF` como `Late/late_capture`, sin E0 válido ni E24/E72. | Active |
+| [Preparación E0 de PUB-FB-17_30-47](../Operations/Research/2026-08-25_PUB-FB-17_30-47_E0_Preparation_Evidence.json) | Siguiente publicación futura programada explícita; Meta confirmó `is_published=false` en preparación. Control one-shot activo a las 16:02 locales / 21:02 UTC, con tres lecturas controladas hasta 16:08 y tolerancia E0 de ±600 segundos. | Active |
 | [Intento de captura E0 del siguiente caso](../Operations/Research/2026-08-25_Next_Productive_Case_E0_Attempt_Evidence.json) | Intento bloqueado por acceso Meta: OAuth 2500, sin respuesta `is_published`; no se construyó publisher result, no se invocó el hook y el ledger no recibió nuevas filas. | Active |
 | [Runner de simulación E0 a E72](../Operations/Automation/simulate_pipeline_e0_e72.py) | Ejecuta el replay reproducible con ledger temporal y payloads Meta-shaped; nunca llama ni escribe en Meta. | Active |
 | [Propuesta de ciclo semanal domingo–sábado](../Operations/Research/2026-08-22_Propuesta_Ciclo_Semanal_Domingo_Sabado.md) | Regla activa para cerrar el reporte el sábado e iniciar el ciclo operativo el domingo; distingue organización del aprendizaje de la hipótesis aún no demostrada sobre el rendimiento dominical. | Active |
