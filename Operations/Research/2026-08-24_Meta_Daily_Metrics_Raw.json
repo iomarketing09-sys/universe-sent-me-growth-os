@@ -1,0 +1,184 @@
+{
+  "captured_at_local": "2026-08-24T22:08:34.798395-05:00",
+  "captured_at_utc": "2026-08-25T03:08:34.798395Z",
+  "timezone": "America/Matamoros",
+  "page_id": "1036844829507460",
+  "page_name": "Universe Sent Me",
+  "window_start_local": "2026-08-24T00:00:00-05:00",
+  "window_end_local": "2026-08-24T22:08:34.798395-05:00",
+  "window_start_utc": "2026-08-24T05:00:00Z",
+  "window_end_utc": "2026-08-25T03:08:34.798395Z",
+  "source_endpoint": "https://graph.facebook.com/v26.0/1036844829507460/feed",
+  "feed_http_status": 200,
+  "feed_error": null,
+  "records_returned": 6,
+  "data": [
+    {
+      "id": "1036844829507460_122151377109072582",
+      "message": "😈🚲🫣 #KaelUSM #MemesUSM #UniverseSentMe",
+      "created_time": "2026-08-25T00:00:00+0000",
+      "updated_time": "2026-08-25T00:59:30+0000",
+      "is_published": true,
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151377109072582",
+      "reactions": {
+        "data": [],
+        "summary": {
+          "total_count": 22,
+          "viewer_reaction": "NONE"
+        }
+      },
+      "comments": {
+        "data": [],
+        "summary": {
+          "order": "ranked",
+          "total_count": 1,
+          "can_comment": true
+        }
+      },
+      "shares": {
+        "count": 26
+      }
+    },
+    {
+      "id": "1036844829507460_122151377019072582",
+      "message": "😬🔫🙃 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "created_time": "2026-08-24T22:00:06+0000",
+      "updated_time": "2026-08-24T23:34:46+0000",
+      "is_published": true,
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151377019072582",
+      "reactions": {
+        "data": [],
+        "summary": {
+          "total_count": 25,
+          "viewer_reaction": "NONE"
+        }
+      },
+      "comments": {
+        "data": [],
+        "summary": {
+          "order": "ranked",
+          "total_count": 1,
+          "can_comment": true
+        }
+      },
+      "shares": {
+        "count": 6
+      }
+    },
+    {
+      "id": "1036844829507460_122154732441072582",
+      "message": "La administración de recursos también aplica para el caos. 👀 #WilfredUSM #MemesUSM #UniverseSentMe",
+      "created_time": "2026-08-24T21:00:03+0000",
+      "updated_time": "2026-08-24T21:00:03+0000",
+      "is_published": true,
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122154732441072582",
+      "reactions": {
+        "data": [],
+        "summary": {
+          "total_count": 1,
+          "viewer_reaction": "NONE"
+        }
+      },
+      "comments": {
+        "data": [],
+        "summary": {
+          "order": "chronological",
+          "total_count": 0,
+          "can_comment": true
+        }
+      },
+      "shares": {
+        "count": 1
+      }
+    },
+    {
+      "id": "1036844829507460_122154023781072582",
+      "message": "Bueno… tampoco era para tanto. 🤭",
+      "created_time": "2026-08-24T18:30:00+0000",
+      "updated_time": "2026-08-24T20:41:14+0000",
+      "is_published": true,
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122154023781072582",
+      "reactions": {
+        "data": [],
+        "summary": {
+          "total_count": 21,
+          "viewer_reaction": "NONE"
+        }
+      },
+      "comments": {
+        "data": [],
+        "summary": {
+          "order": "ranked",
+          "total_count": 2,
+          "can_comment": true
+        }
+      },
+      "shares": {
+        "count": 6
+      }
+    },
+    {
+      "id": "1036844829507460_122151376773072582",
+      "message": "😏 #UniverseSentMe",
+      "created_time": "2026-08-24T16:00:00+0000",
+      "updated_time": "2026-08-24T16:00:00+0000",
+      "is_published": true,
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151376773072582",
+      "reactions": {
+        "data": [],
+        "summary": {
+          "total_count": 15,
+          "viewer_reaction": "NONE"
+        }
+      },
+      "comments": {
+        "data": [],
+        "summary": {
+          "order": "chronological",
+          "total_count": 0,
+          "can_comment": true
+        }
+      },
+      "shares": {
+        "count": 3
+      }
+    },
+    {
+      "id": "1036844829507460_122154023721072582",
+      "message": "A veces uno llega tarde y todavía quiere tener la razón. 😭",
+      "created_time": "2026-08-24T15:00:03+0000",
+      "updated_time": "2026-08-24T15:55:34+0000",
+      "is_published": true,
+      "permalink_url": "https://www.facebook.com/122146890051072582/posts/122154023721072582",
+      "reactions": {
+        "data": [],
+        "summary": {
+          "total_count": 20,
+          "viewer_reaction": "NONE"
+        }
+      },
+      "comments": {
+        "data": [],
+        "summary": {
+          "order": "ranked",
+          "total_count": 1,
+          "can_comment": true
+        }
+      },
+      "shares": {
+        "count": 4
+      }
+    }
+  ],
+  "pagination": {
+    "cursors": {
+      "before": "QVFIVEpObGZAuRTNUSjd4bXI0QV9YOEJsTTRNNl9zYmJKaS1KOFpqRWZAzTWEyQkhxaEFBMk5IemlQN2c4Nm45WmJ5N1lnSlNidUZADU0s4Nk4xYldEcTdwSGdCTnp1WnJhblg5eTM1a0ttZAGduMW5TRlJkMC1zUkZAFc1Joc2FTWk5sMUxFUmY2UE5TRzRXNEJfa0VjcWg5MGJRQ1kxVWxYeFo0NHA1QmxWWlhHSmx4S2dhNlk2WjY2c1ZAiVy1ZAakVIeW5HeGJCZAFBWVVlNeDlVNzZAGd2xwM05SZAnFhSUhmcVktakJCbDkzZAFRSNnFhRGlWUUR0VHdWb1BPdzRUQU55bTNGVXVCMUd1WWVvdTFfNXpQVTlpSS02UUR0QW5xdzJMSGdIRTVwcktnQ01oZA283Y194YW5fb2pNZAnVfbG42bHhZAeEYzNXlYdUZA1S1hmcjBtNUVPeXhKUFpQbFRhQWFRTml1Y2gxempIdWpiRWZAqSXN5d3FxWmZAKb3dyekNzTzRSYjlNUy1qZAk13RnpwZAHVZAT0N1QlU5LTB0MWdySWJIRU54bkJFRVVWZAXZAIblI5OF9vdUlVbGx5NUJqeFdidGg1V3ZABOUN1bjQ1MjJ6SlEzblZApWW5PMGFwWTlMMC1XTEk0dkYzTjBUSTNEQTdNR1JpSEJXWTZAleWR6ODNKMDY4LUhNV2p0RFpkVUlLakdfQ1JMMkxHVGVZAdGpCUnlCMU1GT0xpUnZAmQjExbjVvNWNGc05qaWdRNUlGZATV3ZAUdqclFsTUY1a1BWYXNCTVRRbEw0dWJzdVF1OFNtSkZA4RjlZAUDNycDJfWGh4dlF4OUZAEaFlDOU9SSDZA1SWlXWlFvUDd2QnhOU09RdFlJV0RMOE9qaDl5dk15N2dZAUXNVZAmx4THZAPdWx6Q3lkUzB2Rk4xWV9FVG11LTJqNTJocU5sRk5aMko5Wk9TcjhsTUdWLVJGYjFkaFQ4amRYUmR0QQZDZD",
+      "after": "QVFIVEQ2aVM4dTNNcGNqTEZAtLUJZAa3I5M3YtTXNMbjRHZAzF1U0xkOE94VnQxZAEVBTjZAzc2UyWk0yRVFJVnBzMEhCS2hKdFJNemhuTTRnR0k4RUFfemtSMDk3WUtmMkhMTG9HaTBaWXk5azg5UHk2ZAElieFFXakRCUDRWcGk5TktVLVVLbnVDZAFI3WlFvSjRiUEVSMWdFX29HbXRPcXhlRjJleGNYbUp5UW14X2hXN3RpTGxNYjNpVUg1QmdxWFZAqLXlfaUltOXFkM2R3MkRINnJMclc2X09GS25EZAGV1QUFLQ0duUmxUSkpSeGd6RHJoZAV91TmU0WnBySVhWRmQ3RzB1Rm5rNDBsdmxLLXJSRHlBSkhJX3dDWWt6bXp5TTNGV2xzMk5hbTU0dUU2OXU3SEJ1TVpGX25YQkhTaUdCS1BTcHJsX282OHhMVUxRYi1SX090R0ZApZAUgzZADZAOZA21UOTE4QmI2VlM3eVh3ZAWE0bm8wVWZAOb0JvXzI5R0k3RnI2WnZAFVGdQbG1yTG5GWFJUOUFyMWNfSGFOZAXk1cEtGdUk1MlhSeVVqT2M4bzl0dFdGX0NzSFhwTG0zVUZACM3o2UGIzbGttbUo1VDRzbGZAmODJ0ZAWFTbkstbDFMOEZAaNFZAOWXBPMUZAyRjVEb0VkRV9ReWNHZAmVaYmpZAamsxZA0xvYlQxbU5keXVPaGlqWS03VnVaeUlhQ2YtY3hVNDhiaVhKSVJTUGhLaG1hWlFxV1g3Ump6b1BSNGtSUGREZA1hYMFNHNm1rZAWVCaXUxZAnVMSGpOWldIeW1hcUc0dldHLUtwb0xFcFAwZAHk0Nlo0dk9hVW5na0tBbkhGTXVqblNFaVVESzV1bmdQZATZAnbjBuSFRZAcGwycnNiaWZA5Szk5SVlFRVEzQXJhX1QzbDBZAQTRPWThjbDQxR0NvYkJ1bkhDQXg5VlBSYmdxdlNqZAW50alQ3X0hpdm1QdEhaMENRUQZDZD"
+    }
+  },
+  "limitations": [
+    "Interactions are lifetime observable totals at capture time, not exact 24-hour increments.",
+    "Views, reach, retention and watch time were not requested or available in this basic feed extraction.",
+    "Reels remain a separate format denominator and are not combined with image conclusions."
+  ]
+}

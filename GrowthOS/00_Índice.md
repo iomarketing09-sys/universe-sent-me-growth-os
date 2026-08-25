@@ -3,8 +3,8 @@
 **Propósito:** Punto de entrada a toda la documentación operativa del Growth OS (calendario editorial, colas, automatizaciones, governance).
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-23
-**Versión:** 7.5
+**Última actualización:** 2026-08-25
+**Versión:** 7.6
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -40,11 +40,15 @@
 | [Fuente Maestra y Ledgers del Growth OS](14_00_Fuente_Maestra_y_Ledgers.md) | Define el inventario maestro, los ledgers, la distinción canon/reconciliación y la cadencia de reportes diarios; las ventanas 24/72 son una capa contractual opcional. | Active |
 | [Bridge de Integración Growth OS–Canon](Integracion_Growth_OS.md) | Caché condensado del canon, HypothesisBank y reglas de sincronización; v2.5.2 con HB-006 a HB-009 para briefs comparables, manteniendo separación del canon y sin autorizar generación. | Active |
 | [Publication Log](../Operations/Research/2026-08-15_Publication_Log.csv) | Ledger append-only con 103 hechos de Facebook y 13 de Instagram, conservando estados publicados, programados y eliminados; incluye los cinco hechos observados del 22 de agosto. | Active |
-| [ExperimentLog](../Operations/Research/2026-08-15_ExperimentLog.csv) | Observaciones históricas y observaciones `Corte_Diario`; las ventanas 24/72 quedan para cierres formales cuando correspondan. Incluye los cortes diarios del 21 y 22 de agosto con desglose por familias/personajes separado de afiliados. | Active |
+| [ExperimentLog](../Operations/Research/2026-08-15_ExperimentLog.csv) | Observaciones históricas y observaciones `Corte_Diario`; las ventanas 24/72 quedan para cierres formales cuando correspondan. Incluye los cortes diarios del 21, 22 y 24 de agosto con desglose por formato separado de afiliados. | Active |
 | [Community Engagement Log](../Operations/Research/2026-08-15_Community_Engagement_Log.md) | Esquema y flujo para registrar comentarios reales, respuestas humanas y señales cualitativas sin identidades personales. | Active |
 | [Reporte diario de métricas Meta — 21 de agosto](../Operations/Research/2026-08-21_Corte_Diario_Metricas_2200.md) | Corte observado de 12 publicaciones reales: 10 imágenes y 2 Reels; 495 interacciones editoriales. No mezcla afiliados ni presenta lifetime como delta diario. | Active |
 | [Análisis diario por familias y personajes — 21 de agosto](../Operations/Research/2026-08-21_Analisis_Corte_Diario_Familias_Personajes.md) | Desglose primario por familia, personaje, shares y comentarios; revisa TAX-02, HUM-06, HUM-02 y Motion + POV/Meme sin canonizar resultados. | Active |
 | [Reporte diario de métricas Meta — 22 de agosto](../Operations/Research/2026-08-22_Corte_Diario_Metricas_2200.md) | Corte observado de 6 publicaciones reales: 5 imágenes y 1 Reel; separa exposición inmadura del slot de las 22:00 y no mezcla métricas de vídeo con imágenes. | Active |
+| [Reporte diario de métricas Meta — 24 de agosto](../Operations/Research/2026-08-24_Corte_Diario_Metricas_2200.md) | Corte real de 22:08: 6 publicaciones de imagen, 155 interacciones lifetime observables; actualiza Growth OS en modo descriptivo y no sustituye E0/E24/E72. | Active |
+| [Análisis estructurado del corte — 24 de agosto](../Operations/Research/2026-08-24_Analisis_Corte_Diario_Metricas_2200.json) | Agregados, ranking, cruces explícitos por Meta Post ID y reglas de interpretación del corte puntual. | Active |
+| [Raw Meta del corte — 24 de agosto](../Operations/Research/2026-08-24_Meta_Daily_Metrics_Raw.json) | Evidencia raw sanitizada de la consulta de solo lectura al feed de la Página. | Active |
+| [CSV normalizado del corte — 24 de agosto](../Operations/Research/2026-08-24_Corte_Diario_Metricas_2200.csv) | Tabla normalizada por publicación para análisis posterior, sin escribir ledgers contractuales. | Active |
 | [Análisis semanal 16–22 de agosto](../Operations/Research/2026-08-22_Analisis_Semanal_20260816_20260822.md) | Primer cierre general bajo el ciclo domingo–sábado; resume 42 publicaciones de Facebook, separa imágenes/Reels y distingue concentración de outliers de señales operativas. | Active |
 | [Auditoría ejecutiva del Growth OS: estado y prioridades](../Operations/Research/2026-08-22_Auditoria_Ejecutiva_GrowthOS_Estado_y_Prioridades.md) | Vista global actualizada del sistema: estado operativo supervisado 3/5, conectividad real, áreas activas, inmaduras, bloqueadas y pendientes P0–P2. | Active |
 | [Evidencia de conectividad y operación](../Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json) | Snapshot sanitizado de conectores, schedules, validadores y ledgers observado el 24 de agosto de 2026. | Active |
@@ -55,6 +59,7 @@
 | [Metrics Snapshot Log](../Operations/Research/Metrics_Snapshot_Log.csv) | Ledger append-only para E0, E24, E72 y observaciones lifetime, separado de publicación y aprendizaje. | Active |
 | [Módulo de registro de snapshots](../Operations/Automation/record_metrics_snapshot.py) | Captura payload, guarda raw, clasifica ventana y aplica idempotencia por `Meta_Post_ID + Snapshot_Type`. | Active |
 | [Validador del Metrics Snapshot Log](../Operations/Automation/validate_metrics_snapshot_ledger.py) | Comprueba esquema, campos contractuales, raw, duplicados, E0 y deltas E24/E72. | Active |
+| [Runner de corte diario de métricas](../Operations/Automation/run_daily_metrics_cut.py) | Consulta Meta en modo lectura, normaliza el corte por fecha local, cruza solo Meta Post IDs explícitos y genera raw, CSV, análisis y reporte sin modificar ledgers contractuales. | Active |
 | [Adaptador de hook E0](../Operations/Automation/capture_e0_after_publish.py) | Recibe el resultado verificado del publicador, exige `is_published=true` y registra E0 sin publicar contenido. | Active |
 | [Worker de ventanas E24/E72](../Operations/Automation/run_metrics_windows.py) | Selecciona E0 válidos por `Target_At_UTC`, aplica lock, tolerancia e idempotencia; no activa schedules por sí mismo. | Active |
 | [Reconciliador Publication Log–Meta](../Operations/Automation/reconcile_publication_log_from_meta.py) | Promueve estados locales solo con evidencia `is_published=true` del feed Meta y excluye cancelaciones documentadas. | Active |

@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "2.54"
+version: "2.55"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -18,6 +18,9 @@ related_documents:
   - "Operations/Production/extract_metrics_24_72.py"
   - "Operations/Production/extract_metrics_24_72_playbook.md"
   - "Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md"
+  - "Operations/Automation/run_daily_metrics_cut.py"
+  - "Operations/Research/2026-08-24_Corte_Diario_Metricas_2200.md"
+  - "Operations/Research/2026-08-24_Analisis_Corte_Diario_Metricas_2200.json"
   - "Operations/Research/Metrics_Snapshot_Log.csv"
   - "Operations/Automation/record_metrics_snapshot.py"
   - "Operations/Automation/validate_metrics_snapshot_ledger.py"
@@ -423,7 +426,19 @@ El Reel `MPM-001` —Elara caminando con audífonos y Wilfred detrás— quedó 
 Los documentos operativos permanentes son `Operations/Research/2026-08-22_Corte_Diario_Metricas_2200.md`, su CSV y raw, y `Operations/Research/2026-08-22_Analisis_Corte_Diario_Familias_Personajes.md` con su CSV. La observación `OBS-DAILY-20260822-2200` se añadió al `ExperimentLog.csv` como `Corte_Observado`, sin campos 24/72h. Las filas de publicación observadas se añadieron de forma append-only al `Publication_Log.csv`; no se reescribieron hechos históricos ni se modificaron calendario, canon, Reels o afiliados.
 
 
-## 21. Reglas aprobadas para el ledger de comunidad — 2026-08-25
+## 21. Corte diario de métricas — 2026-08-24 22:08
+
+El runner `Operations/Automation/run_daily_metrics_cut.py` ejecutó una consulta de solo lectura al feed de la Página `Universe Sent Me` mediante Meta Graph API v26, usando la ventana local del 24 de agosto hasta las 22:08 en `America/Matamoros`. Meta devolvió **seis publicaciones reales**, todas confirmadas como `is_published=true`, y todas fueron clasificadas como `Image_or_post`; no se observaron Reels en este corte.
+
+Los contadores lifetime observables sumaron **155 interacciones conocidas**: **104 reacciones, 5 comentarios y 46 shares**. La media descriptiva fue **25.83** y la mediana estadística **27**. El mejor resultado observable fue el post de las 19:00, `2607825 - Kael - Ser el malo de la historia (28-jun-26).png`, con **49 interacciones conocidas y 26 shares**. La lectura es descriptiva y está condicionada por diferencias de exposición; no demuestra causalidad de personaje, copy u horario.
+
+El cruce se realizó únicamente por `Meta_Post_ID` explícito contra `Publication_Log.csv`. Aunque las seis filas tuvieron coincidencia de publicación, varias conservan `ID_Pieza` vacío y solo tienen `Asset_Ref`; no se completaron CNT, personaje, familia o hipótesis por inferencia. Reels, afiliados y las ocho publicaciones sin mapping experimental continúan en sus capas separadas.
+
+Este corte **sí actualiza el Growth OS dentro de la ejecución**, pero en modo `descriptive_draft`: produce raw, CSV normalizado, análisis estructurado y un reporte Markdown para alimentar la revisión del CGO. No escribe `Metrics_Snapshot_Log.csv`, `Publication_Log.csv` ni `ExperimentLog.csv`, no proyecta valores E24/E72 y no cierra hipótesis. Las decisiones de aprendizaje contractual siguen dependiendo de E0/E24/E72 válidos y de revisión humana.
+
+Los documentos permanentes de esta ejecución son `Operations/Research/2026-08-24_Meta_Daily_Metrics_Raw.json`, `Operations/Research/2026-08-24_Corte_Diario_Metricas_2200.csv`, `Operations/Research/2026-08-24_Analisis_Corte_Diario_Metricas_2200.json` y `Operations/Research/2026-08-24_Corte_Diario_Metricas_2200.md`. El ledger contractual conserva **0 filas** y el validador devuelve `PASS`. La tarea E0 de la publicación aprobada permanece independiente y no fue modificada.
+
+## 22. Reglas aprobadas para el ledger de comunidad — 2026-08-25
 
 A partir de la aprobación explícita de Fernando, el `Community_Engagement_Log.csv` y sus vistas derivadas deben aplicar cinco controles interpretativos:
 
