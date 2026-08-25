@@ -4,7 +4,7 @@ purpose: "Priorizar mejoras de rendimiento, accesibilidad, seguridad técnica y 
 status: Active
 created: 2026-08-24
 updated: 2026-08-24
-version: "1.9"
+version: "1.10"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md"
@@ -92,6 +92,10 @@ La operación de privacidad ya confirmó el correo `firmabordados@yahoo.com` par
 El commit `87ec478` añadió una página estática de aviso de privacidad en la ruta `/privacidad/`, con enlace desde el footer, responsable Firma Bordados, domicilio confirmado, correo ARCO, finalidades limitadas, política propuesta de doce meses y un aviso claro de que el staging no almacena datos del correo guiado. El Pull Request 9 pasó CI y se promovió a `main`; la ruta sin barra final reveló una redirección de Pages al inicio, por lo que el Pull Request 10 corrigió los enlaces y la regla de SPA a la ruta canónica con barra final. El merge `402cffe` se promovió a `main`; la comprobación HTTP final devolvió 200 para `/privacidad/`, confirmó el contenido, ausencia de nombres personales retirados y `robots.txt` bloqueado. No se activaron formulario servidor-side, backend, Turnstile, proveedor, secreto, analítica, almacenamiento, Wix, DNS, nameservers ni dominio público.
 
 Fernando aprobó el texto del aviso para el staging y confirmó mantener el correo guiado como flujo de solicitud. Se propone revisar la operación tras 30 días calendario, sin analítica web: comprobar manualmente si el correo permite recibir datos suficientes, si el equipo responde de forma consistente y si existen consultas perdidas o incompletas. Solo si esa revisión evidencia fricción se reabrirá la decisión de formulario gestionado o backend propio.
+
+### Decisión de alcance vigente — 2026-08-24
+
+Fernando confirmó que, por ahora, el staging no incorporará materiales, composiciones, certificaciones, disponibilidad ni condiciones comerciales adicionales. El sitio se mantiene con servicios, mínimos, catálogos y condiciones que ya cuentan con confirmación documental. Esta decisión evita afirmar especificaciones o promesas sin respaldo; los datos pendientes podrán reabrirse solo cuando Firma Bordados los confirme y se autorice su inclusión.
 
 ## 6. Límites hasta recibir la información del cliente
 
