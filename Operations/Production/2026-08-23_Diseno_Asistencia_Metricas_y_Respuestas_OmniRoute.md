@@ -4,7 +4,7 @@ purpose: "Definir cómo OmniRoute puede analizar resúmenes métricos ya normali
 status: Review
 created: 2026-08-23
 updated: 2026-08-25
-version: "2.9"
+version: "3.0"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-19_Decision_Gateway_IA_OmniRoute.md"
@@ -16,6 +16,7 @@ related_documents:
   - "GrowthOS/Integracion_Growth_OS.md"
   - "Operations/Research/2026-08-15_Community_Engagement_Log.md"
   - "Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md"
+  - "Operations/Automation/2026-08-25_Esquema_Normalizacion_Determinista_Multicanal_USM.md"
 organization: "Operations/Production"
 ---
 
@@ -59,6 +60,8 @@ El análisis humano o determinista conserva las fuentes, cálculos y artefactos 
 | límites de comparabilidad | `muestra pequeña`, `lifetime`, `outlier`, `sin E0` | Obligatorio en cada prompt |
 
 La IA no calcula la fuente de verdad ni reconcilia diferencias entre plataformas. Si el modelo realiza una operación aritmética para explicarla, esa operación debe verificarse contra el reporte determinista antes de entrar a un documento o ledger.
+
+La capa determinista aplicable para métricas multicanal está definida en `Operations/Automation/2026-08-25_Esquema_Normalizacion_Determinista_Multicanal_USM.md`, actualmente en `Review`. OmniRoute no puede recibir datos provenientes directamente de los collectors locales hasta que las observaciones superen sus validaciones de fuente, ventana, disponibilidad, comparabilidad y sanitización. Aun entonces, solo recibirá agregados de cohorte; no IDs nativos, filas crudas ni importes monetarios detallados.
 
 ### 3.2 Prompt base de métricas
 

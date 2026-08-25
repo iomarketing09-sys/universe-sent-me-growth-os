@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.72
+**Versión:** 4.73
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.73.00] — 2026-08-25 (Fernando/Manus): Esquema determinista multicanal diseñado y mantenido en Review.** Se creó `Operations/Automation/2026-08-25_Esquema_Normalizacion_Determinista_Multicanal_USM.md` v1.0. El esquema usa observaciones largas append-only, define llaves de idempotencia, procedencia, disponibilidad, ventanas, comparabilidad, evidencia con hash y supersedencia para TikTok, YouTube, Facebook e Instagram. Conserva campos nativos y prohíbe una métrica universal de views o engagement. También separa lifetime, actividad diaria, intervalos, ventanas exactas y cortes observados; trata campos ausentes como `null` con causa explícita, y a la monetización como `financial_restricted`. Incluye validaciones, ejemplos sintéticos, destinos permitidos y gates de implementación. Los documentos de piloto y OmniRoute quedaron enlazados al esquema. No se creó ledger, script de normalización, hoja derivada, cron, escritura canónica ni envío a OmniRoute. La siguiente acción requiere revisión y aprobación del diseño antes de construir un dry-run.
 
 - **[4.72.00] — 2026-08-25 (Fernando/Manus): Resúmenes locales seguros de Meta revisados sin normalización.** Los agregados de Facebook cubrieron 25 posts entre el 22 y 25 de agosto, con 3,702 reacciones, 261 comentarios y 785 shares disponibles; tres shares permanecen no disponibles. Instagram cubrió 25 media entre el 4 y 25 de agosto: 13 imágenes, 10 videos y 2 carruseles, distribuidos entre 15 FEED y 10 REELS. `saved_count` no fue devuelto en ningún registro; `total_views_count` solo estuvo disponible para 10 media y sumó 760. La revisión es descriptiva: mezcla edades y contadores de vida, por lo que no se declararon ganadores, benchmarks, hipótesis ni métricas cero. No se movió raw fuera de Xubuntu ni se modificaron Sheets, ledgers, OmniRoute, contenido o cualquier otra marca. Siguiente gate: normalización determinista separada, si Fernando la autoriza. Documento actualizado: `Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md` v2.2.
 

@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "2.2"
+version: "2.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -146,6 +146,12 @@ La captura confirma acceso de lectura para los campos contratados, no una autori
 `summarize_meta_private_metrics.py` es un lector local de la evidencia más reciente de Facebook o Instagram. No realiza llamadas remotas ni escribe archivos. Para Facebook presenta únicamente el rango de publicación, número de registros y, para reacciones, comentarios y shares, registros disponibles/no disponibles, total de los valores disponibles y mediana. Para Instagram presenta esos mismos conceptos por contador nativo disponible, además de la distribución de tipos de media y de superficie.
 
 El generador prohíbe explícitamente cualquier salida de IDs, captions, textos, URLs, rutas de evidencia, tokens, datos personales o registros individuales. Sus totales son descriptivos y corresponden a contadores de vida al momento de captura; no son una normalización por ventana, una clasificación de contenido ni una recomendación de Growth OS.
+
+## Esquema multicanal en revisión
+
+El diseño `2026-08-25_Esquema_Normalizacion_Determinista_Multicanal_USM.md` define la futura estructura común de observaciones para TikTok, YouTube, Facebook e Instagram. Normaliza identidad, procedencia, ventana, disponibilidad y unidad, pero conserva toda métrica nativa en su propio nombre y prohíbe una columna universal de engagement o views. El esquema se mantiene en `Review`: no crea un ledger nuevo, no transforma evidencia privada en datos canónicos y no llena las pestañas derivadas de Google Sheets.
+
+Los collectors locales actuales permanecen limitados a captura privada y resumen seguro. Cualquier implementación posterior debe pasar los gates de validación del esquema, append-only e idempotencia descritos en ese diseño antes de registrar una observación canónica.
 
 ### Revisión descriptiva de la primera captura — 25 de agosto de 2026
 
