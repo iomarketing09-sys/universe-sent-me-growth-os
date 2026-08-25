@@ -41,7 +41,7 @@ La Ley Federal de Protección de Datos Personales en Posesión de los Particular
 
 | Elemento | Confirmación recibida | Uso permitido en este diseño | Pendiente antes de publicar |
 | :--- | :--- | :--- | :--- |
-| Persona responsable declarada | **Paty Lozano** | Identificar a la persona responsable en el borrador interno del aviso | Confirmar la denominación exacta que debe aparecer públicamente y su capacidad para actuar en nombre de Firma Bordados. |
+| Empresa responsable declarada | **Firma Bordados** | Identificar a la empresa responsable en el borrador interno del aviso | Confirmar la razón social únicamente si es distinta del nombre comercial que debe aparecer públicamente. |
 | Domicilio del responsable | Emilio Carranza #1021 Int. 113, Col. Burócratas, Piedras Negras, Coahuila | Usar el domicilio operativo ya visible y confirmado del negocio | Confirmar que es el domicilio apropiado para el aviso y el medio de recepción de solicitudes ARCO. |
 
 La implementación debe colocar junto al botón de envío un enlace visible al aviso simplificado y un enlace al aviso integral. El texto se elaborará con los datos reales del responsable y deberá revisarse por el cliente o asesor legal antes de activarse. Como contenido mínimo, debe declarar que los datos se usan para atender, dar seguimiento y, cuando proceda, cotizar la solicitud; identificar al responsable y un correo o medio ARCO; explicar el plazo de conservación; y revelar los proveedores que procesen la información en nombre del responsable.
@@ -73,7 +73,7 @@ Si el dominio se transfiere a Cloudflare DNS como parte de la migración final, 
 
 ## 6. Decisiones necesarias antes de activar servicios
 
-1. Confirmar la **denominación pública exacta** de Paty Lozano y que el domicilio del negocio es el medio apropiado para el aviso y solicitudes ARCO.
+1. Confirmar la **razón social**, únicamente si es distinta de Firma Bordados, y que el domicilio del negocio es el medio apropiado para el aviso y solicitudes ARCO.
 2. Confirmar el correo destinatario y las personas autorizadas para leer y responder consultas.
 3. Aprobar finalidades, campos, periodo de conservación y medio para solicitudes ARCO.
 4. Elegir: proveedor gestionado temporal o Function propia después de la migración/DNS.
@@ -82,7 +82,7 @@ Si el dominio se transfiere a Cloudflare DNS como parte de la migración final, 
 
 ## 7. Estado
 
-La Etapa A está **aplicada**. Paty Lozano y el domicilio operativo del negocio quedaron registrados como datos declarados para preparar el aviso, pero no constituyen un aviso de privacidad definitivo ni una validación legal. No se ha activado backend, proveedor de correo, Turnstile, analítica, secreto, almacenamiento de consultas, cambio DNS ni migración de dominio. La recomendación de la Etapa B permanece en **Review** y requiere decisión explícita antes de cualquier integración externa.
+La Etapa A está **aplicada**. Firma Bordados y el domicilio operativo del negocio quedaron registrados como datos declarados para preparar el aviso, pero no constituyen un aviso de privacidad definitivo ni una validación legal. No se ha activado backend, proveedor de correo, Turnstile, analítica, secreto, almacenamiento de consultas, cambio DNS ni migración de dominio. La recomendación de la Etapa B permanece en **Review** y requiere decisión explícita antes de cualquier integración externa.
 
 El borrador de aviso integral y simplificado se creó en `2026-08-24_Borrador_Aviso_Privacidad_Firma_Bordados.md` con estado **Draft**. Su publicación sigue bloqueada por las validaciones operativas y legales enumeradas en dicho documento.
 

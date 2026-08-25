@@ -28,7 +28,7 @@ El staging actual de Firma Bordados usa enlaces de correo guiado y no recibe ni 
 
 | Elemento | Dato confirmado | Nota de publicación |
 | :--- | :--- | :--- |
-| Responsable declarada | Paty Lozano | Confirmar la denominación pública exacta antes de publicar: si aparecerá solo su nombre o una fórmula que la relacione con Firma Bordados. |
+| Empresa responsable declarada | Firma Bordados | Confirmar la razón social únicamente si es distinta del nombre comercial que se mostrará públicamente. |
 | Domicilio | Emilio Carranza #1021 Int. 113, Col. Burócratas, Piedras Negras, Coahuila | Confirmar que este domicilio se usará para el aviso y, en su caso, para solicitudes ARCO. |
 | Correo de contacto | firmabordados@yahoo.com | Confirmar que será el canal autorizado para privacidad, ARCO, revocación y limitación de uso. |
 | Formulario/back-end | No activo | No declarar proveedor, Turnstile, analítica, transferencia ni almacenamiento hasta conocer la configuración real. |
@@ -39,7 +39,7 @@ El staging actual de Firma Bordados usa enlaces de correo guiado y no recibe ni 
 
 **Última actualización propuesta:** 24 de agosto de 2026. **Versión:** borrador 0.1.
 
-**Responsable.** Paty Lozano, como persona responsable declarada de Firma Bordados, con domicilio en Emilio Carranza #1021 Int. 113, Col. Burócratas, Piedras Negras, Coahuila, es responsable del tratamiento de los datos personales que se describen en este aviso. Antes de publicar este texto se confirmará que esta es la denominación exacta que debe mostrarse públicamente.
+**Responsable.** Firma Bordados, con domicilio en Emilio Carranza #1021 Int. 113, Col. Burócratas, Piedras Negras, Coahuila, es responsable del tratamiento de los datos personales que se describen en este aviso. Antes de publicar este texto se confirmará la razón social solo si es distinta del nombre comercial que se mostrará públicamente.
 
 **Datos personales que podrán tratarse.** Para atender una solicitud de información o cotización, Firma Bordados podrá tratar nombre, correo electrónico, teléfono, empresa —cuando la persona decida proporcionarlo— y los datos incluidos en la consulta, como tipo de prenda, técnica de interés, cantidad aproximada y uso o requerimiento. Firma Bordados no solicita datos personales sensibles, financieros, patrimoniales ni documentos de identificación para esta finalidad; se pide no enviarlos por el formulario o correo de consulta.
 
@@ -63,7 +63,7 @@ El staging actual de Firma Bordados usa enlaces de correo guiado y no recibe ni 
 
 ## 4. Propuesta de aviso de privacidad simplificado para un formulario futuro
 
-> **Aviso de privacidad simplificado — borrador.** Paty Lozano, como responsable declarada de Firma Bordados, con domicilio en Emilio Carranza #1021 Int. 113, Col. Burócratas, Piedras Negras, Coahuila, tratará su nombre, correo, teléfono, empresa —si lo proporciona— y datos de su solicitud para atenderla, comunicarse con usted y preparar o dar seguimiento a una posible cotización. Puede solicitar limitar el uso de sus datos en `firmabordados@yahoo.com`. Consulte el aviso de privacidad integral en **[URL pendiente de definir antes de publicar]**.
+> **Aviso de privacidad simplificado — borrador.** Firma Bordados, con domicilio en Emilio Carranza #1021 Int. 113, Col. Burócratas, Piedras Negras, Coahuila, tratará su nombre, correo, teléfono, empresa —si lo proporciona— y datos de su solicitud para atenderla, comunicarse con usted y preparar o dar seguimiento a una posible cotización. Puede solicitar limitar el uso de sus datos en `firmabordados@yahoo.com`. Consulte el aviso de privacidad integral en **[URL pendiente de definir antes de publicar]**.
 
 El aviso simplificado debe aparecer junto al botón de envío del formulario futuro, con un enlace funcional al aviso integral. No debe usarse junto al correo guiado actual, porque esa ruta no captura datos en el sitio.
 
@@ -71,12 +71,12 @@ El aviso simplificado debe aparecer junto al botón de envío del formulario fut
 
 | Validación | Responsable de confirmar | Motivo |
 | :--- | :--- | :--- |
-| Denominación pública exacta del responsable | Paty Lozano | Evitar presentar una identidad comercial o jurídica no confirmada. |
-| Buzón y personas autorizadas para privacidad/ARCO | Paty Lozano | Asegurar que las solicitudes se reciban y atiendan. |
-| Periodo de conservación y criterio de eliminación | Paty Lozano | Alinear la práctica real con el principio de proporcionalidad. |
+| Razón social, si es distinta de Firma Bordados | Firma Bordados | Evitar presentar una identidad comercial o jurídica inexacta. |
+| Buzón y personas autorizadas para privacidad/ARCO | Firma Bordados | Asegurar que las solicitudes se reciban y atiendan. |
+| Periodo de conservación y criterio de eliminación | Firma Bordados | Alinear la práctica real con el principio de proporcionalidad. |
 | URL pública del aviso integral | Equipo web, tras aprobación | Evitar enlazar a una página inexistente. |
-| Proveedor de formulario, correo, antispam y analítica | Paty Lozano y equipo web | Declarar correctamente el tratamiento por terceros antes de capturar datos. |
-| Revisión legal y autorización de publicación | Paty Lozano o asesor legal | Confirmar adecuación a la operación real antes de depender del aviso. |
+| Proveedor de formulario, correo, antispam y analítica | Firma Bordados y equipo web | Declarar correctamente el tratamiento por terceros antes de capturar datos. |
+| Revisión legal y autorización de publicación | Firma Bordados o asesor legal | Confirmar adecuación a la operación real antes de depender del aviso. |
 
 ## Referencias
 

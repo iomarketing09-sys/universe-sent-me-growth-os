@@ -47,6 +47,7 @@
 - [ ] Decidir formulario con backend y analítica solo después de definir privacidad, antispam, retención/ARCO y proceso de respuesta.
 - [x] Incorporar al diseño de privacidad que Paty Lozano es la responsable declarada y que el domicilio corresponde al negocio, sin publicar todavía un aviso final.
 - [x] Redactar un borrador de aviso de privacidad para Firma Bordados con los datos confirmados y campos claramente pendientes de validación legal y operativa.
+- [x] Corregir el borrador de privacidad para identificar únicamente a Firma Bordados como responsable y retirar el nombre de Paty Lozano.
 - [x] Comparar y documentar alternativas seguras de backend, entrega de correo, aviso de privacidad y antispam para el formulario de Firma Bordados.
 - [x] Preparar el cambio de «Cómo solicitar» para priorizar correo sin eliminar WhatsApp como canal alternativo.
 - [x] Implementar y validar en staging el enlace de correo guiado para «Cómo solicitar», conservando WhatsApp en hero y contacto.
