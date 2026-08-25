@@ -38,6 +38,10 @@
 - [ ] Decidir por separado si se desea GitHub Pro/Team para activar branch protection nativa en el repositorio privado; no hacer público el repositorio para desbloquearla.
 - [x] Evaluar y documentar la necesidad real de GitHub Pro frente al gate operativo actual del staging privado.
 - [x] Priorizar mejoras de conversión, contenido y confianza para el sitio de Firma Bordados sin inventar información comercial.
+- [x] Implementar el paquete C1: sección «Cómo solicitar», mensaje guiado de WhatsApp y franja de marcas confirmadas por catálogo.
+- [x] Validar, publicar en el staging Cloudflare y documentar el paquete C1 sin modificar Wix, DNS ni el dominio público.
+- [ ] Implementar el paquete C2: FAQ breve y ampliación prudente del portafolio con fotografías reales autorizadas.
+- [ ] Validar, publicar en el staging Cloudflare y documentar el paquete C2 sin modificar Wix, DNS ni el dominio público.
 - [x] Convertir WhatsApp en el CTA principal del hero de Firma Bordados y validar el enlace en escritorio y móvil.
 - [x] Guiar la creación de la cuenta Cloudflare y repositorio privado del cliente antes de configurar Cloudflare Pages.
 - [x] Acompañar la configuración del proyecto Cloudflare Pages de staging para Firma Bordados sin agregar dominio ni modificar DNS.

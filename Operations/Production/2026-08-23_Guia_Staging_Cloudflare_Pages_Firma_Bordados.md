@@ -4,7 +4,7 @@ purpose: "Definir los pasos técnicos para probar el sitio React/Vite de Firma B
 status: Review
 created: 2026-08-23
 updated: 2026-08-25
-version: "1.7"
+version: "1.8"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Evaluacion_Migracion_Wix_Hosting_IA.md"
@@ -89,6 +89,12 @@ Fernando confirmó que las playeras y uniformes vendidos corresponden a las marc
 Se intentó activar la protección técnica de `main` y también las rulesets mediante la API de GitHub. Ambas operaciones devolvieron HTTP 403 porque el repositorio privado actual requiere GitHub Pro o hacerlo público. No se cambió la visibilidad del repositorio —que contiene catálogos y activos de cliente— ni se actualizó ningún plan, porque ambas opciones necesitan una decisión separada y pueden afectar costo o privacidad.
 
 Como alternativa vigente, el commit `accdcc0` documentó en el README el gate operativo obligatorio: **rama de trabajo → Pull Request a `staging` → CI correcto → promoción explícita a `main` → CI correcto → Pages**. El Pull Request 4 pasó CI, se integró a `staging` y el merge `10cb8af` se promovió a `main`. La regla no equivale a una protección técnica nativa; se mantiene la decisión pendiente de actualizar el plan GitHub o cambiar visibilidad si se desea enforcement de plataforma.
+
+### Paquete C1 de conversión — 2026-08-25
+
+El commit `9fd686e` incorporó una sección «Cómo solicitar» con los pasos de describir la necesidad, explorar catálogos y confirmar detalles directamente con el equipo. El CTA de WhatsApp ahora prepara campos opcionales para tipo de prenda, técnica, cantidad aproximada y uso/requerimiento; los campos viven exclusivamente en el mensaje que abre el dispositivo y el staging no los almacena.
+
+También se añadió una franja «Marcas por catálogo» para BigBang, Soul & Blues y M&O con enlaces a los PDFs autorizados. Dickies sigue ausente hasta que se reciba su catálogo. El Pull Request 5 pasó CI, se integró a `staging` y el merge `a6e1a21` se promovió a `main`. La comprobación técnica del bundle público confirmó la nueva sección y las marcas, sin referencia a Dickies. Wix, DNS, nameservers, dominio público, precios, plazos y backend de formulario no cambiaron.
 
 ## 2. Estado de partida y preparación obligatoria
 

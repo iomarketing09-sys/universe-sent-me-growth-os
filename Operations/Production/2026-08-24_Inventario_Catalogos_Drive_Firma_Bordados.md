@@ -4,7 +4,7 @@ purpose: "Registrar los PDFs autorizados en Drive y los límites comerciales con
 status: Review
 created: 2026-08-24
 updated: 2026-08-25
-version: "1.4"
+version: "1.5"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md"
@@ -64,6 +64,8 @@ Estas condiciones se integraron al staging Cloudflare el 2026-08-24. La referenc
 Fernando confirmó que las playeras y uniformes que vende Firma Bordados corresponden a las marcas contenidas en sus catálogos autorizados. Para el sitio, las referencias comerciales confirmadas son **BigBang**, **M&O** y **Soul & Blues**, siempre mediante sus catálogos vigentes enlazados y sin presentar una talla, color, modelo o disponibilidad específica como inventario en tiempo real.
 
 **Dickies** queda explícitamente pendiente: no se añadirá al texto, imágenes, catálogos ni metadata del staging hasta recibir su catálogo autorizado o una confirmación documental equivalente. Esta regla evita usar la marca sin una fuente operativa verificable.
+
+Las marcas confirmadas se hicieron visibles en el paquete C1 del staging el 2026-08-25 mediante una franja enlazada a los PDFs existentes. La presentación se limita a las marcas de catálogo y no afirma disponibilidad de una prenda concreta, inventario, precio o relación de distribución exclusiva.
 
 ## Reglas de integración
 

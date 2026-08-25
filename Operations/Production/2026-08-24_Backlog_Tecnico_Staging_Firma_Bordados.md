@@ -4,7 +4,7 @@ purpose: "Priorizar mejoras de rendimiento, accesibilidad, seguridad técnica y 
 status: Active
 created: 2026-08-24
 updated: 2026-08-25
-version: "1.2"
+version: "1.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md"
@@ -55,9 +55,9 @@ La protección técnica de `main` se evaluó tras la autorización de Fernando. 
 
 | Prioridad | Mejora propuesta | Beneficio esperado | Dependencia | Estado recomendado |
 | :--- | :--- | :--- | :--- | :--- |
-| C1 | Crear una sección «Cómo solicitar» en tres pasos: compartir necesidad, elegir opción de prenda/catálogo y confirmar detalles con el equipo | Reduce incertidumbre para una primera consulta sin prometer precio ni plazo | Ninguna | Siguiente mejora recomendada |
-| C1 | Mejorar el mensaje inicial de WhatsApp con campos opcionales de prenda, técnica, cantidad aproximada y uso | Aumenta la calidad de los leads sin almacenar datos en el sitio | Validar solo la redacción | Siguiente mejora recomendada |
-| C1 | Añadir una franja de «Marcas disponibles por catálogo»: BigBang, M&O y Soul & Blues, con enlace a cada PDF | Convierte los catálogos en una razón visible para consultar y respalda la oferta con fuentes existentes | Dickies sigue fuera hasta recibir su catálogo | Siguiente mejora recomendada |
+| C1 aplicado | Crear una sección «Cómo solicitar» en tres pasos: compartir necesidad, elegir opción de prenda/catálogo y confirmar detalles con el equipo | Reduce incertidumbre para una primera consulta sin prometer precio ni plazo | Ninguna | Publicado en staging |
+| C1 aplicado | Mejorar el mensaje inicial de WhatsApp con campos opcionales de prenda, técnica, cantidad aproximada y uso | Aumenta la calidad de los leads sin almacenar datos en el sitio | Validar solo la redacción | Publicado en staging |
+| C1 aplicado | Añadir una franja de «Marcas disponibles por catálogo»: BigBang, M&O y Soul & Blues, con enlace a cada PDF | Convierte los catálogos en una razón visible para consultar y respalda la oferta con fuentes existentes | Dickies sigue fuera hasta recibir su catálogo | Publicado en staging |
 | C2 | Añadir un FAQ breve: mínimo de serigrafía de 12 piezas, tiempos que se confirman por pedido/carga y categorías de prendas consultables | Resuelve objeciones frecuentes sin inventar condiciones | Ninguna | Apto tras revisar el tono |
 | C2 | Ampliar el portafolio con fotografías reales autorizadas, ocultando o excluyendo marcas de clientes sin permiso | Aumenta confianza mediante evidencia de trabajo | Curaduría y permisos por imagen | Apto por lotes pequeños |
 | C3 | Añadir enlace de ubicación con indicaciones y revisar información de contacto visible | Reduce fricción para visitas o llamadas | Verificar el destino exacto del mapa | Pendiente de verificación |
@@ -66,6 +66,10 @@ La protección técnica de `main` se evaluó tras la autorización de Fernando. 
 ### Decisión recomendada sobre GitHub Pro
 
 GitHub Pro no es necesario hoy para el staging: existe un solo flujo de mantenimiento, CI ya valida build/tipos y el gate operativo reduce el riesgo sin coste adicional. Se vuelve recomendable cuando participen varios colaboradores, el cliente quiera aprobar Pull Requests desde GitHub, haya cambios frecuentes o se necesite impedir técnicamente los pushes directos a `main`. La protección nativa puede exigir Pull Requests, revisiones y checks antes de permitir cambios en una rama protegida.[1]
+
+### Paquete C1 aplicado — 2026-08-25
+
+El commit `9fd686e` añadió una sección «Cómo solicitar» en tres pasos, un CTA de WhatsApp que prellena campos opcionales de prenda, técnica, cantidad aproximada y uso, y una franja de marcas por catálogo. El Pull Request 5 pasó CI, se integró en `staging` y el merge `a6e1a21` se promovió a `main`. La verificación técnica del bundle publicado confirmó la sección de solicitud y la franja de marcas, y confirmó que Dickies no aparece hasta recibir su catálogo. El sitio no almacena datos del mensaje guiado, no añade precios ni tiempos y no modifica Wix, DNS ni el dominio público.
 
 ## 6. Límites hasta recibir la información del cliente
 
