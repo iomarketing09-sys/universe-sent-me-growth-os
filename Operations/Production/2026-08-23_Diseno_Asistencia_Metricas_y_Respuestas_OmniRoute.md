@@ -3,14 +3,16 @@ title: "Diseño de asistencia de métricas y respuestas con OmniRoute"
 purpose: "Definir cómo OmniRoute puede analizar resúmenes métricos ya normalizados y producir propuestas de respuesta comunitaria sin convertirse en fuente canónica, sistema de moderación automática ni publicador autónomo."
 status: Review
 created: 2026-08-23
-updated: 2026-08-23
-version: "1.0"
+updated: 2026-08-25
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-19_Decision_Gateway_IA_OmniRoute.md"
   - "Operations/Production/2026-08-18_Piloto_Local_OmniRoute_Seguro.md"
   - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
   - "GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md"
+  - "GrowthOS/08_00_Metricas_Baseline_Plataformas.md"
+  - "GrowthOS/todo.md"
   - "GrowthOS/Integracion_Growth_OS.md"
   - "Operations/Research/2026-08-15_Community_Engagement_Log.md"
   - "Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md"
@@ -160,3 +162,68 @@ Un error de proveedor, una salida truncada, JSON inválido, una discrepancia de 
 Para pasar del Nivel 0 al Nivel 1 se requiere un piloto de cinco briefs métricos sintéticos o agregados y cinco casos comunitarios verdes ya anonimizados. La validación debe confirmar que no se envió PII, secreto, comentario crudo ni ID; que las propuestas se etiquetaron `Draft`; que ninguna métrica se alteró; y que Fernando pudo aprobar, reescribir o rechazar cada salida. El piloto no incluye consulta programada ni publicación.
 
 Antes de considerar el Nivel 2 se necesita aprobación separada del diseño técnico, una ubicación segura para secretos, pruebas de idempotencia, límites de tasa, auditoría de logs, un mecanismo de pausa y una definición de frecuencia. No se usa un scheduler de alta frecuencia para comentarios; se respeta el ritmo operativo vigente de cortes y deltas.
+
+## 8. Extensión propuesta: loop multicanal de Growth para Universe Sent Me
+
+### 8.1 Alcance confirmado
+
+La propuesta cubre exclusivamente las cuentas y piezas de **Universe Sent Me** en Instagram, Facebook, TikTok y YouTube. Contempla un corte diario, un cierre semanal, una hoja de consulta derivada y reportes revisables dentro de Manus. No comparte infraestructura, credenciales, datos, proveedores ni presupuesto con Firma Bordados.
+
+El propósito no es producir un resumen automático de vanidad. El loop debe convertir cada publicación identificable en una oportunidad de aprendizaje: conservar el hecho y la métrica en los ledgers, separar lo comparable de lo inmaduro y generar hipótesis de bajo riesgo para el siguiente ciclo. OmniRoute participa únicamente después de esta preparación y nunca reemplaza una fuente, fórmula, veredicto ni decisión editorial.
+
+### 8.2 Arquitectura objetivo y fronteras
+
+```text
+Fuentes aprobadas de cada plataforma
+→ validación, deduplicación y normalización determinista
+→ GitHub: fuente canónica y ledgers append-only
+→ hoja derivada de consulta / dashboard
+→ brief agregado, sin IDs ni PII
+→ OmniRoute local: análisis Draft
+→ revisión humana
+→ hipótesis o experimento aprobado, si corresponde
+```
+
+| Capa | Función | Regla obligatoria |
+| :--- | :--- | :--- |
+| Recolección | Recuperar exclusivamente métricas nativas y metadatos operativos mínimos de las cuatro plataformas. | Conservar `source`, `retrieved_at`, `window_type`, definición de cada métrica y estado de disponibilidad. |
+| Normalización | Resolver duplicados, separar snapshots de actividad diaria y relacionar cada fila con `Concept_ID`/`Platform_Content_ID` cuando exista evidencia. | No sumar Reach, views o engagement entre plataformas, ni convertir ausencia en cero. |
+| Ledgers canónicos | Registrar hechos de publicación, snapshots y aprendizaje en el repositorio. | GitHub sigue siendo la única fuente de verdad; la hoja no modifica ni corrige ledgers. |
+| Hoja derivada | Facilitar filtros por período, plataforma, formato, personaje, hook, hipótesis y estado de madurez. | Se regenera desde artefactos canónicos; no se vuelve una segunda base de datos. |
+| OmniRoute local | Leer solamente un brief agregado por plataforma o cohorte y proponer observaciones e hipótesis. | Salida `Draft`; sin secretos, identificadores nativos, filas crudas, comentarios íntegros ni escritura automática. |
+| Revisión humana | Validar cifras, limitaciones, interpretación y posible experimento. | Ningún draft actualiza un ledger, altera el calendario o publica contenido. |
+
+Instagram Insights permite consultas de métricas de cuenta y de media para cuentas profesionales, mientras YouTube distingue reportes masivos de consultas específicas y TikTok expone campos de rendimiento por video para una cuenta autorizada. Estas capacidades deben comprobarse con la cuenta y permisos concretos antes de activar cualquier lectura automática. [1] [2] [3]
+
+### 8.3 Qué debe medir el loop actual
+
+El corte diario debe responder “qué cambió y qué requiere atención”, sin convertir acumulados lifetime en resultados de 24/72 horas. El cierre semanal debe responder “qué probar o ajustar en la siguiente cohorte”, manteniendo cada plataforma y ventana separadas.
+
+| Corte | Datos deterministas mínimos | Salida de OmniRoute permitida | Decisión humana posterior |
+| :--- | :--- | :--- | :--- |
+| Diario, idealmente cerca de 22:00 `America/Matamoros` | Piezas nuevas o modificadas; plataforma; formato; estado de madurez; views o Reach cuando exista; acciones nativas; retención disponible; crecimiento; fuente y hora de lectura. | Hasta tres observaciones descriptivas, alertas de calidad de datos y una pregunta de aprendizaje. | Confirmar que la lectura no mezcla ventanas ni confunde una pieza inmadura con un resultado. |
+| Semanal, al cierre del sábado después del último slot | Cohortes maduras; mediana por pieza; distribución; shares, guardados/favoritos, comentarios y retención según plataforma; cobertura de cascada; mezcla nuevo/reuse y evidencia de hipótesis. | Hipótesis de trabajo, máximo dos experimentos codificables y limitaciones explícitas. | Aprobar, reescribir o rechazar la hipótesis; decidir si entra a un siguiente calendario. |
+
+Para el Growth actual, el análisis debe priorizar cinco preguntas: qué formato y plataforma aportan señal real por pieza; si los hooks `action-first` y las situaciones reconocibles sostienen retención; qué personaje, estructura narrativa y tratamiento de caption merecen más casos comparables; si la cascada Instagram–TikTok–YouTube se completó y cómo difiere su desempeño; y qué piezas aún son demasiado nuevas, incompletas o no comparables para concluir algo. Estas preguntas se derivan de las reglas activas y no autorizan declarar un ganador con muestras pequeñas. [4]
+
+### 8.4 Dos modalidades viables para el siguiente paso
+
+| Modalidad | Cómo funciona | Ventajas | Límites y requisitos |
+| :--- | :--- | :--- |
+| **A. Piloto controlado de siete días** | Se generan cortes diarios de solo lectura con las rutas ya comprobadas; TikTok y YouTube se incorporan después de validar su fuente. El sábado se crea la hoja derivada y OmniRoute recibe briefs agregados para un reporte semanal `Draft`. | Menor riesgo, comprueba definiciones y detecta huecos antes de depender de un proceso recurrente. No requiere conceder más permisos ni mover secretos ahora. | Requiere revisión operativa de los cortes y no ofrece todavía cobertura automática completa de las cuatro plataformas. |
+| **B. Loop multicanal programado** | Un proceso de solo lectura recupera deltas a diario, normaliza, actualiza artefactos canónicos y refresca la hoja derivada; después genera un brief mínimo para el análisis `Draft` diario y semanal. | Reduce el trabajo repetitivo y conserva historial uniforme por plataforma y cohorte. | Requiere aprobar por separado las rutas de acceso de TikTok/YouTube, ubicación de secretos, idempotencia, límites de tasa, mecanismo de pausa, pruebas de lectura y el destino de la hoja derivada. No puede usar los conectores de Manus directamente desde un servicio externo sin un diseño de credenciales u orquestación aprobado. |
+
+No se selecciona una modalidad ni se crea un schedule en este documento. La decisión debe basarse en la tolerancia operativa de Fernando: primero validar la calidad de la fuente y de los briefs, o invertir desde ahora en el loop programado con sus controles completos.
+
+### 8.5 Condiciones de aprobación y coherencia documental
+
+Antes de activar cualquier automatización se deben aprobar: la modalidad elegida; las rutas de lectura por plataforma; los campos y ventanas exactos; el formato de la hoja derivada; la cadencia; el mecanismo de pausa; y un piloto de solo lectura que no escriba métricas ni veredictos basados en la salida del modelo.
+
+Si la propuesta se aprueba, requerirán actualización coordinada `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `GrowthOS/08_00_Metricas_Baseline_Plataformas.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`, `Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`. Ninguno de esos cambios se autoriza por este diseño.
+
+## Referencias
+
+[1]: https://developers.facebook.com/docs/instagram-api/guides/insights "Meta for Developers — Instagram Insights"
+[2]: https://developers.google.com/youtube/analytics "Google for Developers — YouTube Analytics and Reporting APIs"
+[3]: https://developers.tiktok.com/doc/tiktok-api-v2-video-query/ "TikTok for Developers — Query Videos"
+[4]: ../../GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md "Growth OS — Reglas estratégicas de aprendizaje y tendencias"
