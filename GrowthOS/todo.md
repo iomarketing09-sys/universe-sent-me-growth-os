@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "3.8"
+version: "3.9"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -35,6 +35,10 @@ organization: "GrowthOS"
 - [ ] Confirmar la URL pública existente de términos de servicio de Universe Sent Me antes de reutilizar ambas rutas para TikTok.
 - [x] Confirmar que Wix no permite publicar un archivo `.txt` arbitrario en la ruta exacta exigida por TikTok; no usar Media Manager ni pulsar `Verify` con una URL distinta.
 - [x] Elegir GitHub Pages dedicado como host alternativo gratuito de Universe Sent Me para términos, privacidad y la firma de TikTok; Fernando autorizó crear un repositorio público mínimo sin métricas, credenciales, PII ni recursos de Firma Bordados.
+- [x] Crear y enviar el contenido mínimo al repositorio público exclusivo `iomarketing09-sys/usm-metrics-public`: `index.html`, `/terms/`, `/privacy/` y reglas de no incluir secretos ni datos de otras marcas.
+- [ ] Habilitar GitHub Pages manualmente desde `Settings → Pages` usando `main` y `/(root)`, porque el token de integración no tiene permiso de configuración de Pages; validar las URLs públicas antes de cambiarlas en TikTok.
+- [ ] Confirmar el canal público de contacto que iO Marketing autoriza mostrar en las páginas de términos y privacidad; no publicar un correo no confirmado.
+- [ ] Sustituir las URLs Wix por las URLs públicas de Pages dentro de TikTok y obtener la nueva instrucción o firma de verificación asociada al prefijo GitHub Pages; no reutilizar la firma del prefijo Wix.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
 - [ ] Crear una app de escritorio de TikTok con los scopes oficiales mínimos `user.info.basic` y `video.list`, callback local con PKCE, más un cliente OAuth local de Google con scopes de lectura para YouTube Data, YouTube Analytics y monetización.
 - [ ] Reemplazar la consulta de Windsor.ai por scripts locales de TikTok y YouTube antes del fin del Trial, manteniendo Facebook e Instagram en sus rutas existentes.

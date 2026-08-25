@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.50
+**Versión:** 4.51
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.51.00] — 2026-08-25 (Fernando/Manus): Host técnico público de Universe Sent Me preparado, pendiente de activación manual de Pages.** Conforme a la autorización de Fernando, se creó el repositorio público exclusivo `iomarketing09-sys/usm-metrics-public` y se enviaron sus páginas estáticas mínimas: inicio, `/terms/` y `/privacy/`. El repositorio prohíbe explícitamente secretos, tokens, métricas, importes financieros, PII y recursos de Bam in a Can, Firma Bordados u otras marcas. Se retiró cualquier correo que no hubiera sido confirmado expresamente para publicación. El intento de activar GitHub Pages con el token de integración devolvió `403 Resource not accessible by integration`; por tanto, el siguiente gate requiere que Fernando habilite `Settings → Pages` desde GitHub con la rama `main` y `/(root)`. Solo después se validarán las URLs y TikTok deberá emitir una instrucción nueva para el prefijo GitHub Pages; no se reutilizará la firma asociada a Wix. Documentos actualizados: `Operations/Automation/2026-08-25_Textos_Publicos_Terminos_Privacidad_App_Metricas_USM.md` v1.3 y `GrowthOS/todo.md` v3.9.
 
 - **[4.50.00] — 2026-08-25 (Fernando/Manus): Evaluación separada para una futura migración del sitio de Universe Sent Me.** A partir de la consulta de Fernando, se inventarió de modo pasivo el sitio Wix actual: propuesta de marca, portfolio, contacto, redes y textos legales. Se documentó que el host técnico para TikTok y una migración completa son decisiones separadas: primero puede resolverse el archivo de firma con un sitio estático mínimo; la migración futura exige auditoría de activos, URLs, formularios, SEO, analítica, staging y reversión. No se modificó Wix, DNS, dominio, analítica, contenido ni infraestructura, y Firma Bordados quedó excluida. Documento nuevo: `Operations/Production/2026-08-25_Evaluacion_Migracion_Sitio_Wix_Universe_Sent_Me.md` v1.0.
 

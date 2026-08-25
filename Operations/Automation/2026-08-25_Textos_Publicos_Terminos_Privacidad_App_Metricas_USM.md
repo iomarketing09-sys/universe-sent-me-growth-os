@@ -4,7 +4,7 @@ purpose: "Proveer el contenido mínimo, revisable y separado por marca para las 
 status: Review
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.2"
+version: "1.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -18,9 +18,9 @@ organization: "Operations/Automation"
 
 ## Propósito
 
-Estos textos están destinados a dos páginas públicas separadas dentro del sitio propio de **Universe Sent Me** en Wix. iO Marketing opera la aplicación descrita, que es un collector local privado para Universe Sent Me. No vende productos, no publica en TikTok y no se relaciona con Bam in a Can ni Firma Bordados.
+Estos textos están destinados a dos páginas públicas separadas en un host técnico mínimo de **GitHub Pages** exclusivo de Universe Sent Me. Wix permanece sin cambios. iO Marketing opera la aplicación descrita, que es un collector local privado para Universe Sent Me. No vende productos, no publica en TikTok y no se relaciona con Bam in a Can ni Firma Bordados.
 
-> **Estado de publicación:** la URL de privacidad existente fue identificada; faltan confirmar la URL de términos, el correo público de contacto de iO Marketing y que ambas páginas correspondan a esta app. No sustituye revisión legal profesional.
+> **Estado de publicación:** el contenido fue preparado y enviado al repositorio público dedicado `iomarketing09-sys/usm-metrics-public` en los directorios `/terms/` y `/privacy/`. Falta habilitar GitHub Pages desde la interfaz de GitHub y confirmar explícitamente el correo público de contacto antes de incorporarlo a las páginas. No sustituye revisión legal profesional.
 
 ## URLs existentes verificadas por Fernando
 
@@ -31,14 +31,14 @@ Estos textos están destinados a dos páginas públicas separadas dentro del sit
 
 > **Bloqueo técnico de TikTok:** el método de verificación actual entrega un archivo de firma y exige que esté disponible bajo el prefijo de URL indicado. Wix documenta que no permite servir un archivo `.txt` arbitrario en una ruta de sitio controlada. No se debe subir el archivo al Media Manager ni pulsar `Verify` hasta elegir un host estático compatible. [1] [2]
 
-## Alternativas de host pendientes de decisión
+## Decisión de host y estado de despliegue
 
-| Alternativa | Compatibilidad con archivo en ruta exacta | Separación de marcas | Consideración |
+| Alternativa | Compatibilidad con archivo en ruta exacta | Separación de marcas | Estado |
 | :--- | :--- | :--- | :--- |
-| GitHub Pages en repositorio público dedicado | Sí; publica archivos estáticos conservando la estructura de directorios. [3] | Repositorio nuevo exclusivo de Universe Sent Me. | Los contenidos publicados serían visibles y el repositorio debe ser público en GitHub Free. |
-| Cloudflare Pages en proyecto/cuenta separada | Sí; despliega HTML y activos estáticos bajo un subdominio `*.pages.dev`. [4] | Proyecto de Universe Sent Me, sin usar el proyecto, host ni dominio de Firma Bordados. | Requiere una cuenta o proyecto distinto y autorización explícita para crearlo. |
+| GitHub Pages en repositorio público dedicado | Sí; publica archivos estáticos conservando la estructura de directorios. [3] | Repositorio nuevo exclusivo de Universe Sent Me. | **Elegido.** Repositorio público creado y contenido mínimo enviado en los commits `90d9e3c` y `71da24c`; falta activar Pages desde `Settings → Pages` con `main` y `/(root)`. |
+| Cloudflare Pages en proyecto/cuenta separada | Sí; despliega HTML y activos estáticos bajo un subdominio `*.pages.dev`. [4] | Proyecto de Universe Sent Me, sin usar el proyecto, host ni dominio de Firma Bordados. | No seleccionado. |
 
-No se creará ningún host, repositorio público o proyecto de Cloudflare por este documento.
+El repositorio público contiene exclusivamente páginas de política y, cuando TikTok la genere para el prefijo nuevo, una firma de verificación. No puede contener métricas, credenciales, tokens, datos financieros, PII ni recursos de otras marcas.
 
 ## Página 1 — Terms of Service
 
@@ -131,13 +131,14 @@ This policy may be updated if the app's data access, security controls, platform
 
 For privacy questions or requests related to this app, contact iO Marketing at: **[public contact email to be confirmed before publication]**.
 
-## Publicación en Wix
+## Publicación en GitHub Pages
 
-Crear dos páginas públicas y separadas dentro de `https://iomarketin.wixstudio.com/universesentme`, sin incluirlas necesariamente en la navegación principal del sitio:
+Una vez que el operador habilite Pages desde GitHub, publicar desde la rama `main` y la carpeta `/(root)`. GitHub debería asignar el sitio de proyecto bajo `https://iomarketing09-sys.github.io/usm-metrics-public/`; confirmar la URL exacta visible en la pantalla de Pages antes de pegarla en TikTok.
 
-| Página Wix | URL sugerida | Contenido fuente |
+| Página pública | Ruta esperada | Contenido fuente |
 | :--- | :--- | :--- |
-| Terms of Service — Universe Sent Me Metrics App | `https://iomarketin.wixstudio.com/universesentme/usm-metrics-terms` | Página 1 de este documento. |
-| Privacy Policy — Universe Sent Me Metrics App | `https://iomarketin.wixstudio.com/universesentme/usm-metrics-privacy` | Página 2 de este documento. |
+| Terms of Service — Universe Sent Me Metrics App | `/usm-metrics-public/terms/` | Página 1 de este documento. |
+| Privacy Policy — Universe Sent Me Metrics App | `/usm-metrics-public/privacy/` | Página 2 de este documento. |
+| Firma de TikTok | `/usm-metrics-public/privacy/tiktok*.txt` | Añadir solo el archivo exacto que TikTok genere después de aceptar el nuevo prefijo. |
 
-Tras publicar, abrir cada enlace en modo incógnito o sin iniciar sesión y confirmar que se visualiza públicamente. Esas URLs públicas son las que se pegarán en el formulario de TikTok.
+Tras habilitar Pages, comprobar públicamente las rutas de términos y privacidad. Después, en TikTok, sustituir las URLs Wix por esas dos rutas y solicitar o descargar la instrucción de verificación para el prefijo nuevo. No reutilizar ni inventar el contenido de la firma asociada al prefijo Wix. El archivo exacto se añadirá al directorio solicitado y solo entonces se pulsará `Verify`.
