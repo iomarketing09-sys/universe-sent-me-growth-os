@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "6.9"
+version: "7.0"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -1422,3 +1422,12 @@ El escaneo de las 20 publicaciones propias cubrió hasta 100 comentarios por col
 El registrador `Operations/Automation/record_facebook_review_get_only_2026_08_25_1758.py` añadió 63 filas append-only. El ledger quedó en **612 filas y 612 IDs únicos**, con `Privacidad=Anonimizado`, `CNT_ID` preservado para réplicas y validación oficial `PASS`. Evidencia editorial, cola y reporte: `Operations/Research/2026-08-25_17-58-20_Facebook_Editorial_Review_GET_Only.json`, `Operations/Research/2026-08-25_17-58-20_Facebook_Pending_Queue_GET_Only.json` y `Operations/Research/2026-08-25_17-58-20_Facebook_Comment_Review_Report.md`.
 
 **Documentos relacionados que requieren alineación:** `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `Operations/Research/2026-08-15_Community_Engagement_Log.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 48. Aprobación y vista filtrada de comunidad — 25 de agosto de 2026
+
+Fernando aprobó explícitamente las tres propuestas nuevas del corte GET-only: `She's Gone` de Steelheart, `El amor acaba` de José José y `Cuando te acuerdes de mí` de Marco Antonio Solís. El estado quedó registrado como `Aprobada / Pendiente_Publicacion`; no se publicó ninguna respuesta y no se ejecutaron POST, PUT ni DELETE. Las dos propuestas históricas de `Contigo` de Karol G y `Aventurera` de Alberto Plaza permanecen `Pendiente_Fernando`, por lo que la cola conserva cinco propuestas.
+
+Para la vista solicitada se excluyeron 43 réplicas de conversación usuario-a-usuario y dos entradas de etiqueta o nombre aislado. Se muestran 15 comentarios raíz `No_Requiere_Respuesta`, con sus IDs estructurales, publicación de referencia, texto y motivo editorial. La vista y el registro de aprobación están en `Operations/Research/2026-08-25_18-19-20_Facebook_Approval_and_Filtered_Review.json/.md`; la cola y la clasificación actualizadas están en `Operations/Research/2026-08-25_17-58-20_Facebook_Pending_Queue_GET_Only.json` y `Operations/Research/2026-08-25_17-58-20_Facebook_Editorial_Review_GET_Only.json`.
+
+El ledger conserva 612 filas y 612 IDs únicos, con `Privacidad=Anonimizado`; para las tres aprobaciones se mantuvo `Respuesta_Estado=Pendiente_Respuesta` y sin `Respuesta_Meta_ID`, porque todavía no existe publicación verificada. **Estado:** Active. **Regla:** una aprobación registrada no se convierte en publicación hasta recibir una instrucción específica para publicar y ejecutar el preflight/verificación correspondiente. **Documentos relacionados:** `Operations/Research/2026-08-15_Community_Engagement_Log.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

@@ -3,7 +3,7 @@
   "purpose": "Clasificación completa del delta no registrado detectado por Meta Graph API v26.0, conservando cada ID estructural y preparando únicamente propuestas para aprobación.",
   "status": "Review",
   "created_at": "2026-08-25T17:58:20+00:00",
-  "updated_at": "2026-08-25T17:58:20+00:00",
+  "updated_at": "2026-08-25T18:19:20+00:00",
   "version": "1.0",
   "author": "Manus AI",
   "organization": "Operations/Research",
@@ -11,7 +11,8 @@
     "Operations/Research/2026-08-25_17-58-20_Facebook_Comment_Review_GET_Only.json",
     "Operations/Research/2026-08-25_17-58-20_Facebook_Pending_Queue_GET_Only.json",
     "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
-    "GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md"
+    "GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md",
+    "Operations/Research/2026-08-25_18-19-20_Facebook_Approval_and_Filtered_Review.json"
   ],
   "source": "Meta Graph API v26.0 — revisión GET-only",
   "read_only_review": true,
@@ -1196,16 +1197,19 @@
       "comment_type": "Comentario_Raiz",
       "post_reference": "Publicación de contexto breve — caption visible: `😌 #UniverseSentMe`",
       "source": "Meta Graph API v26.0 — revisión GET-only",
-      "decision": "Pendiente_de_aprobacion",
+      "decision": "Aprobada_Pendiente_Publicacion",
       "response_state": "Pendiente_Respuesta",
-      "approval_state": "Pendiente_Fernando",
+      "approval_state": "Aprobada",
       "proposed_reply": "«She's Gone» de Steelheart: esa sí llega con guitarra y nostalgia a la mesa. 🎶🌙",
       "priority": "Media",
       "calendar_action": "Ninguna",
       "moderation_state": "Revisar",
       "signal": "Referencia_musical_titulo_artista",
       "reason": "Título y artista identificables; se propone una respuesta específica y queda pendiente de aprobación de Fernando.",
-      "message_for_editor": "She's gone — Steelheart."
+      "message_for_editor": "She's gone — Steelheart.",
+      "publication_status": "Pendiente_Publicacion",
+      "approval_recorded_at": "2026-08-25T18:19:20+00:00",
+      "approved_by": "Fernando"
     },
     {
       "comment_id": "122151376011072582_1714779139616049",
@@ -1215,16 +1219,19 @@
       "comment_type": "Comentario_Raiz",
       "post_reference": "Publicación de contexto breve — caption visible: `😌 #UniverseSentMe`",
       "source": "Meta Graph API v26.0 — revisión GET-only",
-      "decision": "Pendiente_de_aprobacion",
+      "decision": "Aprobada_Pendiente_Publicacion",
       "response_state": "Pendiente_Respuesta",
-      "approval_state": "Pendiente_Fernando",
+      "approval_state": "Aprobada",
       "proposed_reply": "«El amor acaba» de José José: cuando el corazón pide una verdad cantada en voz alta. 🎶🌙",
       "priority": "Media",
       "calendar_action": "Ninguna",
       "moderation_state": "Revisar",
       "signal": "Referencia_musical_titulo_artista",
       "reason": "Título y artista identificables; se propone una respuesta específica y queda pendiente de aprobación de Fernando.",
-      "message_for_editor": "El amor acaba — José José."
+      "message_for_editor": "El amor acaba — José José.",
+      "publication_status": "Pendiente_Publicacion",
+      "approval_recorded_at": "2026-08-25T18:19:20+00:00",
+      "approved_by": "Fernando"
     },
     {
       "comment_id": "122151376011072582_2114188339514417",
@@ -1234,20 +1241,25 @@
       "comment_type": "Comentario_Raiz",
       "post_reference": "Publicación de contexto breve — caption visible: `😌 #UniverseSentMe`",
       "source": "Meta Graph API v26.0 — revisión GET-only",
-      "decision": "Pendiente_de_aprobacion",
+      "decision": "Aprobada_Pendiente_Publicacion",
       "response_state": "Pendiente_Respuesta",
-      "approval_state": "Pendiente_Fernando",
+      "approval_state": "Aprobada",
       "proposed_reply": "«Cuando te acuerdes de mí» de Marco Antonio Solís: para Lukas, una canción que se queda trotando en la memoria. 🐾🎶",
       "priority": "Media",
       "calendar_action": "Ninguna",
       "moderation_state": "Revisar",
       "signal": "Referencia_musical_con_historia_de_duelo",
       "reason": "Título, artista y contexto afectivo identificables; la propuesta reconoce la memoria de Lukas sin inventar datos adicionales.",
-      "message_for_editor": "«Cuando te acuerdes de mí» — Marco Antonio Solís; dedicado a Lukas."
+      "message_for_editor": "«Cuando te acuerdes de mí» — Marco Antonio Solís; dedicado a Lukas.",
+      "publication_status": "Pendiente_Publicacion",
+      "approval_recorded_at": "2026-08-25T18:19:20+00:00",
+      "approved_by": "Fernando"
     }
   ],
   "ledger_rows_from_review": 63,
   "ledger_rows_appended_this_execution": 63,
   "skipped_existing_ids": [],
-  "ledger_sync_status": "PASS"
+  "ledger_sync_status": "PASS",
+  "approval_recorded": true,
+  "approved_pending_publication_count": 3
 }

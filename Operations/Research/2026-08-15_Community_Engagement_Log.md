@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "6.4"
+version: "6.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -907,3 +907,12 @@ La revisión manual se ejecutó mediante Meta Graph API v26.0 sobre Facebook pro
 El ledger CSV recibió 63 filas append-only, con `Privacidad=Anonimizado`, `CNT_ID` preservado para réplicas, y quedó en **612 filas / 612 IDs únicos**. El validador oficial devolvió `PASS`. La clasificación completa, la cola y el reporte están en `Operations/Research/2026-08-25_17-58-20_Facebook_Editorial_Review_GET_Only.json`, `Operations/Research/2026-08-25_17-58-20_Facebook_Pending_Queue_GET_Only.json` y `Operations/Research/2026-08-25_17-58-20_Facebook_Comment_Review_Report.md`.
 
 **Documentos relacionados que requieren alineación:** `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 32. Aprobación explícita y vista filtrada — 25 de agosto de 2026
+
+Fernando aprobó explícitamente las tres propuestas musicales nuevas: `She's Gone` de Steelheart, `El amor acaba` de José José y `Cuando te acuerdes de mí` de Marco Antonio Solís. La aprobación se registró en el ledger como `Aprobacion_Estado=Aprobada`, manteniendo `Respuesta_Estado=Pendiente_Respuesta` y sin `Respuesta_Meta_ID`, porque no se ejecutó publicación en este paso. Las dos propuestas anteriores —`Contigo` de Karol G y `Aventurera` de Alberto Plaza— permanecen `Pendiente_Fernando`. La cola vigente contiene cinco propuestas, tres aprobadas pendientes de publicación y dos aún pendientes de aprobación.
+
+A solicitud de Fernando se preparó una vista de los casos `No_Requiere_Respuesta` mostrando solo los comentarios raíz que no son conversaciones laterales ni etiquetas o nombres aislados. La vista contiene **15 comentarios raíz**; se excluyeron **43 réplicas** de conversación usuario-a-usuario y **2 entradas** de etiqueta o nombre aislado. La evidencia completa está en `Operations/Research/2026-08-25_18-19-20_Facebook_Approval_and_Filtered_Review.json/.md`.
+
+**Estado:** Active. **Regla de seguridad:** aprobar no equivale a publicar; cualquier publicación requiere una instrucción específica y posterior de Fernando, seguida de preflight y verificación. **Documentos relacionados que requieren alineación:** `Operations/Research/2026-08-25_17-58-20_Facebook_Pending_Queue_GET_Only.json`, `Operations/Research/2026-08-25_17-58-20_Facebook_Editorial_Review_GET_Only.json`, `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

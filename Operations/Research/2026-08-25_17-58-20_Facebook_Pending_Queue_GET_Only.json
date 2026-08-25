@@ -3,15 +3,16 @@
   "purpose": "Cola vigente de propuestas que requieren aprobación posterior de Fernando y registro de casos nuevos cerrados sin acción.",
   "status": "Review",
   "created_at": "2026-08-25T17:58:20+00:00",
-  "updated_at": "2026-08-25T17:58:20+00:00",
-  "version": "1.0",
+  "updated_at": "2026-08-25T18:19:20+00:00",
+  "version": "1.1",
   "author": "Manus AI",
   "organization": "Operations/Research",
   "related_documents": [
     "Operations/Research/2026-08-25_17-58-20_Facebook_Comment_Review_GET_Only.json",
     "Operations/Research/2026-08-25_17-58-20_Facebook_Editorial_Review_GET_Only.json",
     "Operations/Research/2026-08-25_Facebook_Pending_Queue_After_Five_Approved_Replies.json",
-    "Operations/Research/2026-08-15_Community_Engagement_Log.csv"
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
+    "Operations/Research/2026-08-25_18-19-20_Facebook_Approval_and_Filtered_Review.json"
   ],
   "source": "Meta Graph API v26.0 — revisión GET-only",
   "read_only_review": true,
@@ -58,7 +59,10 @@
       "proposed_reply": "«She's Gone» de Steelheart: esa sí llega con guitarra y nostalgia a la mesa. 🎶🌙",
       "priority": "Media",
       "insight": "Título y artista identificables; se propone una respuesta específica y queda pendiente de aprobación de Fernando.",
-      "approval_state": "Pendiente_Fernando"
+      "approval_state": "Aprobada",
+      "publication_status": "Pendiente_Publicacion",
+      "approval_recorded_at": "2026-08-25T18:19:20+00:00",
+      "approved_by": "Fernando"
     },
     {
       "comment_id": "122151376011072582_1714779139616049",
@@ -69,7 +73,10 @@
       "proposed_reply": "«El amor acaba» de José José: cuando el corazón pide una verdad cantada en voz alta. 🎶🌙",
       "priority": "Media",
       "insight": "Título y artista identificables; se propone una respuesta específica y queda pendiente de aprobación de Fernando.",
-      "approval_state": "Pendiente_Fernando"
+      "approval_state": "Aprobada",
+      "publication_status": "Pendiente_Publicacion",
+      "approval_recorded_at": "2026-08-25T18:19:20+00:00",
+      "approved_by": "Fernando"
     },
     {
       "comment_id": "122151376011072582_2114188339514417",
@@ -80,7 +87,10 @@
       "proposed_reply": "«Cuando te acuerdes de mí» de Marco Antonio Solís: para Lukas, una canción que se queda trotando en la memoria. 🐾🎶",
       "priority": "Media",
       "insight": "Título, artista y contexto afectivo identificables; la propuesta reconoce la memoria de Lukas sin inventar datos adicionales.",
-      "approval_state": "Pendiente_Fernando"
+      "approval_state": "Aprobada",
+      "publication_status": "Pendiente_Publicacion",
+      "approval_recorded_at": "2026-08-25T18:19:20+00:00",
+      "approved_by": "Fernando"
     }
   ],
   "closed_without_action": [
@@ -684,5 +694,10 @@
       "signal": "Referencia_musical_incompleta",
       "reason": "Parece una referencia o título musical, pero no incluye artista; la regla aprobada exige título y artista para proponer respuesta."
     }
-  ]
+  ],
+  "approval_recorded": true,
+  "approval_recorded_at": "2026-08-25T18:19:20+00:00",
+  "approved_pending_publication_count": 3,
+  "pending_fernando_count": 2,
+  "publishable_with_current_approval_count": 3
 }
