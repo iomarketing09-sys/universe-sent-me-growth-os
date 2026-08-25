@@ -4,7 +4,7 @@ purpose: "Definir cómo OmniRoute puede analizar resúmenes métricos ya normali
 status: Review
 created: 2026-08-23
 updated: 2026-08-25
-version: "2.4"
+version: "2.5"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-19_Decision_Gateway_IA_OmniRoute.md"
@@ -393,6 +393,12 @@ Los collectors son deliberadamente de una sola dirección: almacenan evidencia p
 La revisión de la guía vigente de TikTok Display API confirmó que `video.list` requiere además `user.info.basic`, con aprobación de Login Kit y TikTok API para la app. Se corrigieron la plantilla, el autorizador OAuth, la guía operativa y este contrato. [16]
 
 La app local seguirá solicitando solo esos dos scopes de lectura. `user.info.basic` se emplea únicamente para completar la autorización que TikTok requiere; el collector no consulta ni persiste campos de perfil salvo que una futura decisión documental lo apruebe expresamente.
+
+### 8.21 Contenedor de TikTok reservado para Universe Sent Me
+
+Fernando confirmó que ya existe una app de TikTok creada por él y sin configuración previa. Esta app queda reservada exclusivamente para el acceso oficial de Universe Sent Me. Antes de añadir productos, scopes, callback o credenciales, se verificará que su nombre y descripción hagan explícita la marca y que no arrastre permisos, usuarios o datos de Bam in a Can ni Firma Bordados.
+
+La reserva no habilita todavía OAuth ni acceso de datos. El próximo paso es configurar Login Kit y TikTok API dentro de ese contenedor, con los únicos scopes autorizados `user.info.basic` y `video.list`.
 
 ## Referencias
 
