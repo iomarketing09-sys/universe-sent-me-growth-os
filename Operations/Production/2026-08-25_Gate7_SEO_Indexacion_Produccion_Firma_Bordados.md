@@ -1,10 +1,10 @@
 ---
 title: "Gate 7 — SEO e indexación para producción — Firma Bordados"
 purpose: "Definir los cambios de SEO, canonical, sitemap e indexación que solo deberán aplicarse después de que firmabordados.com resuelva hacia la versión de producción aprobada."
-status: Review
+status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-25_Gate6_Revision_Tecnica_Visual_Produccion_Firma_Bordados.md"
@@ -43,9 +43,9 @@ Los redirects, canonical autorreferente y sitemap con la misma URL canónica se 
 
 | Elemento | Propuesta | Estado |
 | :--- | :--- | :--- |
-| Título de inicio | `Firma Bordados | Bordado, serigrafía y uniformes en Piedras Negras` | Pendiente de aprobación de Io Marketing antes de implementar |
-| Descripción de inicio | `Firma Bordados ofrece digitalización, bordado, serigrafía y opciones de playeras, camisas, uniformes industriales y línea médica en Piedras Negras, Coahuila. Consulte nuestros catálogos.` | Pendiente de aprobación de Io Marketing antes de implementar |
-| Título de privacidad | `Aviso de privacidad | Firma Bordados` | Pendiente de aprobación antes de implementar |
+| Título de inicio | `Firma Bordados | Bordado, serigrafía y uniformes en Piedras Negras` | **Aprobado por Fernando**; aplicar solo después del corte |
+| Descripción de inicio | `Firma Bordados ofrece digitalización, bordado, serigrafía y opciones de playeras, camisas, uniformes industriales y línea médica en Piedras Negras, Coahuila. Consulte nuestros catálogos.` | **Aprobada por Fernando**; aplicar solo después del corte |
+| Título de privacidad | `Aviso de privacidad | Firma Bordados` | Aprobado como texto de ruta; aplicar solo después del corte |
 | Imagen Open Graph | Logo oficial o hero aprobado, sin marcas de clientes | Pendiente de decisión; no es requisito de indexación |
 | Datos estructurados | Solo después de validar nombre comercial, dirección, teléfonos, horario y URL final | Pendiente; no se activará en este gate sin revisión adicional |
 
@@ -65,7 +65,7 @@ No se proponen palabras como “mejor”, precios, disponibilidad, materiales, c
 
 ## 5. Estado del Gate 7
 
-El Gate 7 está **preparado documentalmente**. Permanece bloqueado hasta que el Gate 3 se ejecute y el dominio raíz esté activo. Antes de implementar se requieren dos aprobaciones: la propuesta de título/descripción y la preparación técnica que oculta el piloto Formspree y retira el texto de staging. No se añade analítica ni se cambia SEO del staging.
+Fernando aprobó título, descripción, canonical de raíz, sitemap inicial limitado a inicio/privacidad y redirecciones de variantes hacia el root. El Gate 7 está **activo y preparado documentalmente**, pero su implementación permanece bloqueada hasta que el Gate 3 se ejecute y el dominio raíz esté activo. Aún se requiere preparar la versión técnica que oculta el piloto Formspree y retira el texto de staging. No se añade analítica ni se cambia SEO del staging.
 
 ## Referencias
 

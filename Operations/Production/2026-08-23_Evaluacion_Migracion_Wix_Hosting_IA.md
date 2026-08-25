@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-24
 
-**Versión:** 4.4
+**Versión:** 4.5
 
 **Autor:** Manus AI
 
@@ -234,7 +234,7 @@ La revisión del Gate 4 confirma que servicios, catálogos, activos, contacto y 
 
 El Gate 6 validó técnicamente el staging: inicio, privacidad, robots, los tres catálogos, headers de seguridad, bloqueo de indexación y build TypeScript/Vite. No se identificó una falla técnica severa. La revisión visual manual sigue pendiente en Quick-seedless y es el único requisito restante para cerrar este gate; no autoriza por sí misma indexación, nameservers ni corte de producción.
 
-El Gate 7 ya define la configuración SEO que se aplicará solo después de que el dominio raíz resuelva hacia la versión aprobada: canonical absoluto, redirects de variantes, indexación, robots permitido, sitemap limitado a URLs canónicas y verificación posterior en Search Console. El staging conserva noindex y bloqueo de robots hasta ese momento.
+El Gate 7 ya define la configuración SEO que se aplicará solo después de que el dominio raíz resuelva hacia la versión aprobada: canonical absoluto, redirects de variantes, indexación, robots permitido, sitemap limitado a URLs canónicas y verificación posterior en Search Console. Fernando aprobó título, descripción, canonical de raíz, sitemap inicial y redirecciones. El staging conserva noindex y bloqueo de robots hasta el corte; siguen pendientes la preparación técnica de producción y la autorización de nameservers.
 
 ### Modelo de operación administrada confirmado
 

@@ -75,7 +75,8 @@
 - [ ] Completar la revisión visual manual del Gate 6 en Quick-seedless antes de cerrar el gate técnico y visual.
 - [x] Completar la revisión visual manual del Gate 6 en Quick-seedless antes de cerrar el gate técnico y visual.
 - [x] Preparar el Gate 7 de SEO, sitemap, canonical e indexación para producción sin retirar `noindex` ni modificar el dominio antes del corte.
-- [ ] Aprobar título y descripción SEO de producción, y preparar la versión técnica que oculta Formspree sintético y elimina el texto de staging antes del corte.
+- [ ] Preparar la versión técnica de producción que oculta Formspree sintético, elimina el texto de staging y aplica el SEO ya aprobado después del corte DNS.
+- [x] Registrar la aprobación de título, descripción, canonical, sitemap inicial y redirecciones SEO, manteniendo su aplicación bloqueada hasta el corte DNS.
 - [x] Revisar el Gate 5 de solicitudes: confirmar qué canal puede operar en producción y qué requisitos siguen pendientes para habilitar formulario real.
 - [ ] Confirmar `firmabordados@yahoo.com` como destinatario de Formspree y obtener aprobación separada antes de permitir consultas reales a través del formulario.
 - [ ] Mantener pendiente el formulario real de Formspree y revisar el Gate 4 de contenido aprobado antes de cualquier corte a producción.
