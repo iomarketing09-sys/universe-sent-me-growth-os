@@ -8,14 +8,14 @@
 
 **Última actualización:** 2026-08-24
 
-**Versión:** 3.7
+**Versión:** 3.8
 
 **Autor:** Manus AI
 
 **Organización:** `Operations/Production`
 
 **Documentos relacionados:** [`2026-08-18_Piloto_Local_OmniRoute_Seguro.md`](2026-08-18_Piloto_Local_OmniRoute_Seguro.md), [`2026-08-19_Decision_Gateway_IA_OmniRoute.md`](2026-08-19_Decision_Gateway_IA_OmniRoute.md), [`2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md`](2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md), [`2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md`](2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md) y [`2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md`](2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md).
-**Documentos relacionados:** [`2026-08-18_Piloto_Local_OmniRoute_Seguro.md`](2026-08-18_Piloto_Local_OmniRoute_Seguro.md), [`2026-08-19_Decision_Gateway_IA_OmniRoute.md`](2026-08-19_Decision_Gateway_IA_OmniRoute.md), [`2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md`](2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md), [`2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md`](2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md), [`2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md`](2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md) y [`2026-08-25_Propuesta_Cotizacion_Migracion_Mantenimiento_Firma_Bordados.md`](2026-08-25_Propuesta_Cotizacion_Migracion_Mantenimiento_Firma_Bordados.md).
+**Documentos relacionados:** [`2026-08-18_Piloto_Local_OmniRoute_Seguro.md`](2026-08-18_Piloto_Local_OmniRoute_Seguro.md), [`2026-08-19_Decision_Gateway_IA_OmniRoute.md`](2026-08-19_Decision_Gateway_IA_OmniRoute.md), [`2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md`](2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md), [`2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md`](2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md), [`2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md`](2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md), [`2026-08-25_Propuesta_Cotizacion_Migracion_Mantenimiento_Firma_Bordados.md`](2026-08-25_Propuesta_Cotizacion_Migracion_Mantenimiento_Firma_Bordados.md) y [`2026-08-25_Auditoria_Gate3_Dominio_DNS_Firma_Bordados.md`](2026-08-25_Auditoria_Gate3_Dominio_DNS_Firma_Bordados.md).
 
 ---
 
@@ -227,6 +227,8 @@ Primero se congela una versión aprobada del sitio y se toma una copia de refere
 Una vez autorizado el cambio, se actualizan únicamente los registros aprobados, se mantiene Wix disponible durante la propagación y se valida el nuevo dominio desde computadoras y teléfonos en redes distintas. Se comprueban inicio, rutas, redirecciones de cualquier URL anterior, catálogos, contacto, formularios si existen y el correo. Si aparece una falla crítica, se restauran los registros DNS previamente documentados para devolver el tráfico a Wix.
 
 El último paso no es técnico: el cliente confirma por escrito que el dominio sirve el nuevo sitio y que el canal de contacto funciona. Solo entonces se programa la reducción o cancelación de Wix, idealmente lejos de la fecha de renovación de diciembre de 2026 para conservar margen de reversión. Si el dominio raíz se aloja en Cloudflare Pages, Cloudflare indica que debe gestionarse la zona en Cloudflare; este movimiento de nameservers sigue requiriendo una aprobación separada.[9]
+
+La auditoría pasiva del Gate 3 registró que `firmabordados.com` usa `ns14.wixdns.net` y `ns15.wixdns.net`, con registros A del root y `www` dirigidos a Wix. No aparecen MX/TXT en el apex en la consulta pública, pero esta evidencia no sustituye inventariar la zona completa y todos los servicios dependientes desde Wix. El registro RDAP público indica vencimiento el 2027-02-19; debe confirmarse en la cuenta del cliente junto con registrante, renovación y facturación. El Gate 3 queda abierto hasta tener esos datos, una zona de reversión y aprobación explícita de cualquier cambio DNS.
 
 ### Modelo de operación administrada confirmado
 
