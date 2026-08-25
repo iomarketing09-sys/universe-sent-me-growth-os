@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.57
+**Versión:** 4.58
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.58.00] — 2026-08-25 (Fernando/Manus): Configuración de Sandbox TikTok reportada como completada; falta validación visual final.** Fernando confirmó que concluyó la configuración solicitada en el Sandbox. El contrato aplicado fue Login Kit de escritorio, Target User exclusivo de Universe Sent Me, scopes mínimos `user.info.basic` y `video.list`, y callback local `http://127.0.0.1:8765/callback/`. Se mantiene la prohibición de Content Posting, Share Kit, Webhooks, Data Portability, Local Service API, comentarios, mensajes, anuncios, credenciales en chat y cualquier cuenta de Bam in a Can, Firma Bordados o terceros. Antes de consultar Client Key o ejecutar OAuth local, queda una validación visual pendiente de productos, scopes, callback y Target User en la página Sandbox. Pendiente canónico actualizado a v4.6.
 
 - **[4.57.00] — 2026-08-25 (Fernando/Manus): Sandbox elegido para el piloto TikTok de solo lectura.** Fernando eligió continuar por Sandbox en vez de enviar App Review. El alcance inmediato es crear un sandbox exclusivo `USM Metrics Read Only`, añadir únicamente la cuenta propia de Universe Sent Me como Target User y probar Login Kit + Display API con los scopes exactos `user.info.basic` y `video.list`. Se prohíbe clonar o activar productos de escritura, importar la configuración a Production, añadir Bam in a Can, Firma Bordados u otras cuentas, o enviar la solicitud de revisión mientras el piloto siga siendo interno. El pendiente canónico quedó actualizado a v4.5.
 

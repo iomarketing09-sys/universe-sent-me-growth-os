@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "4.5"
+version: "4.6"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -47,9 +47,10 @@ organization: "GrowthOS"
 - [ ] Revisar que los productos y scopes mostrados en la demo coincidan exactamente con la solicitud antes de enviar App Review; retirar cualquier producto o scope no utilizado.
 - [x] Elegir Sandbox de TikTok como ruta inmediata para el piloto local de Universe Sent Me; no enviar App Review ni afirmar que la app está lista para producción.
 - [ ] Confirmar en TikTok el resultado de las tres verificaciones de URL (Terms of Use, Privacy Policy y Web/Desktop URL) antes de activar productos en el sandbox.
-- [ ] Crear un sandbox exclusivo `USM Metrics Read Only`, sin clonar productos de escritura y sin importar configuración a Production.
-- [ ] Añadir únicamente una cuenta TikTok propia de Universe Sent Me como Target User del sandbox; excluir Bam in a Can, Firma Bordados, cualquier cliente y cuentas ajenas.
-- [ ] Configurar en el sandbox únicamente Login Kit y TikTok API/Display API con `user.info.basic` y `video.list`; no activar Content Posting, comentarios, mensajes, anuncios ni scopes adicionales.
+- [x] Crear el sandbox exclusivo `USM Metrics Read Only`, sin clonar productos de escritura y sin importar configuración a Production; Fernando reportó la configuración finalizada.
+- [x] Añadir únicamente una cuenta TikTok propia de Universe Sent Me como Target User del sandbox; excluir Bam in a Can, Firma Bordados, cualquier cliente y cuentas ajenas; Fernando reportó la configuración finalizada.
+- [x] Configurar en el sandbox únicamente Login Kit y TikTok API/Display API con `user.info.basic` y `video.list`, más `http://127.0.0.1:8765/callback/`; no activar Content Posting, comentarios, mensajes, anuncios ni scopes adicionales; Fernando reportó la configuración finalizada.
+- [ ] Confirmar visualmente en el Sandbox el usuario objetivo, la lista final de productos/scopes y el callback antes de abrir Client Key o realizar OAuth local.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
 - [ ] Crear una app de escritorio de TikTok con los scopes oficiales mínimos `user.info.basic` y `video.list`, callback local con PKCE, más un cliente OAuth local de Google con scopes de lectura para YouTube Data, YouTube Analytics y monetización.
 - [ ] Reemplazar la consulta de Windsor.ai por scripts locales de TikTok y YouTube antes del fin del Trial, manteniendo Facebook e Instagram en sus rutas existentes.
