@@ -3,8 +3,8 @@ title: "Guía de staging reversible en Cloudflare Pages — Firma Bordados"
 purpose: "Definir los pasos técnicos para probar el sitio React/Vite de Firma Bordados en Cloudflare Pages sin modificar Wix, el DNS del dominio ni el sitio público actual; incluir el criterio para descartar o adoptar WordPress."
 status: Review
 created: 2026-08-23
-updated: 2026-08-25
-version: "1.12"
+updated: 2026-08-24
+version: "1.13"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Evaluacion_Migracion_Wix_Hosting_IA.md"
@@ -119,6 +119,8 @@ El Pull Request 8 pasó CI, se integró a `staging` y el merge `c694741` se prom
 El commit `87ec478` añadió la ruta estática de revisión `https://firma-bordados-staging.pages.dev/privacidad/` y un enlace desde el pie de página. El contenido presenta a Firma Bordados como responsable, su domicilio, `firmabordados@yahoo.com` como contacto de privacidad/ARCO, finalidades de atención y cotización, mecanismos para limitar uso, derechos ARCO, revocación, la conservación propuesta de doce meses y el compromiso de actualizar el aviso antes de activar proveedores o backend.
 
 El Pull Request 9 pasó CI, se integró a `staging` y se promovió a `main`. Una revisión HTTP detectó que `/privacidad` sin barra final redirigía al inicio en Pages; el Pull Request 10 corrigió la regla de SPA y el enlace hacia `/privacidad/`. Tras CI en `staging` y `main`, el merge `402cffe` se publicó y la comprobación HTTP devolvió 200 para la ruta canónica, con el aviso, el correo y la política de doce meses presentes; no aparecen nombres personales retirados. La página es una versión de revisión y no activa formulario con backend, Turnstile, proveedor, secreto, analítica, almacenamiento, Wix, DNS, nameservers ni dominio público.
+
+Fernando aprobó el texto del aviso para el staging y confirmó mantener el correo guiado. La siguiente acción no es un despliegue: durante 30 días calendario se revisará manualmente que las solicitudes lleguen completas y que el equipo pueda atenderlas sin pérdidas. La evaluación no usa analítica ni modifica la infraestructura. Un formulario seguirá bloqueado hasta que esa observación muestre una necesidad real y se autorice explícitamente su ruta técnica.
 
 ## 2. Estado de partida y preparación obligatoria
 

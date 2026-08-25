@@ -1,10 +1,10 @@
 ---
 title: "Borrador de aviso de privacidad — Firma Bordados"
 purpose: "Proponer un aviso de privacidad integral y un aviso simplificado para una futura captura de consultas, usando únicamente los datos confirmados y señalando los puntos que requieren validación antes de publicarse."
-status: Review
+status: Active
 created: 2026-08-24
 updated: 2026-08-24
-version: "0.3"
+version: "0.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md"
@@ -16,13 +16,13 @@ organization: "Operations/Production"
 
 # Borrador de aviso de privacidad — Firma Bordados
 
-> **Borrador de trabajo — no publicar todavía.** Este texto no es asesoría legal ni sustituye la revisión de Firma Bordados o de un asesor legal. Debe validarse antes de ponerlo junto a un formulario, activar un backend o afirmar que describe la operación vigente.
+> **Activo para el staging — no habilita un formulario.** El texto fue aprobado para la página estática de staging y sigue sin activar captura de datos en el sitio. Antes de cualquier formulario, backend o proveedor externo, Firma Bordados deberá revisar que el aviso describa la operación real y, cuando corresponda, solicitar revisión legal.
 
 ## 1. Alcance del borrador
 
 Este documento propone el contenido de un aviso integral y de su versión simplificada para una futura captura digital de consultas. La Ley Federal de Protección de Datos Personales en Posesión de los Particulares exige que el aviso incluya, al menos, identidad y domicilio del responsable, datos tratados, finalidades, medios para limitar uso o divulgación, mecanismos ARCO y la forma de comunicar cambios. Cuando los datos se recaban electrónicamente, la versión simplificada debe estar disponible al momento de recabarlos e indicar dónde consultar el aviso integral.[1]
 
-El staging actual de Firma Bordados usa enlaces de correo guiado y no recibe ni almacena datos en un servidor. Esta versión se publicó únicamente para revisión en la ruta estática `/privacidad/` del staging. No activa una captura de datos, no sustituye la revisión legal y debe actualizarse antes de implementar cualquier formulario con backend o proveedor externo.
+El staging actual de Firma Bordados usa enlaces de correo guiado y no recibe ni almacena datos en un servidor. Esta versión se publicó y aprobó para el staging en la ruta estática `/privacidad/`. No activa una captura de datos, no sustituye la revisión que resulte necesaria para la operación real y debe actualizarse antes de implementar cualquier formulario con backend o proveedor externo.
 
 ## 2. Datos que sustentan esta propuesta
 
@@ -72,6 +72,8 @@ El aviso simplificado debe aparecer junto al botón de envío del formulario fut
 ## 4.1 Publicación de revisión en staging
 
 El 2026-08-24, el contenido integral de este borrador se adaptó a una página estática en `https://firma-bordados-staging.pages.dev/privacidad/`, accesible desde el pie de página. La publicación pasó Pull Request 9, CI en `staging` y `main`, y una corrección posterior de la ruta canónica pasó Pull Request 10 y CI. La comprobación HTTP confirmó respuesta 200 de la ruta con barra final, presencia del correo de privacidad, la política propuesta de doce meses, ausencia de nombres personales retirados y continuidad de `robots.txt` con bloqueo de indexación. No se activaron backend, formulario servidor-side, Turnstile, proveedor, secreto, analítica, almacenamiento, Wix, DNS, nameservers ni dominio público.
+
+El 2026-08-24, Fernando aprobó el texto publicado para el staging y confirmó que se mantendrá el correo guiado como canal de solicitud. La siguiente revisión operativa propuesta será después de **30 días calendario** de uso o antes si el equipo detecta que las consultas se pierden, llegan incompletas o no pueden atenderse con el correo actual. Esta revisión no requiere analítica web ni cambios de infraestructura.
 
 ## 5. Validaciones pendientes antes de publicación
 

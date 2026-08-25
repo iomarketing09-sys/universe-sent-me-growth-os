@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-25
 
-**Versión:** 3.4
+**Versión:** 3.5
 
 **Autor:** Manus AI
 
@@ -196,6 +196,8 @@ El paquete C3 redujo fricción para visitas locales con un enlace de indicacione
 El ajuste C1.1 cambió únicamente la ruta de la franja «Cómo solicitar»: ahora abre un correo guiado a `firmabordados@yahoo.com` con campos opcionales para entender la solicitud. WhatsApp permanece como CTA principal del hero y como alternativa de contacto. El cambio se validó por Pull Request, CI y comprobaciones HTTP del staging; no recibe ni almacena datos en el sitio y no activa backend, proveedor de correo, antispam, analítica, secreto, Wix, DNS ni dominio. La construcción de un formulario servidor-side sigue bloqueada hasta definir responsable, aviso de privacidad, retención/ARCO, destinatarios autorizados, proveedor y controles antispam.
 
 La Etapa A de privacidad se completó mediante una página estática de revisión en `https://firma-bordados-staging.pages.dev/privacidad/`, enlazada desde el footer. Declara a Firma Bordados como responsable, el domicilio confirmado, `firmabordados@yahoo.com` para privacidad/ARCO y un plazo operativo propuesto de doce meses desde la última interacción. El contenido se validó con Pull Requests, CI y HTTP; la ruta canónica usa barra final. No se activó backend, formulario servidor-side, proveedor de correo, Turnstile, secreto, analítica, almacenamiento, Wix, DNS, nameservers ni el dominio público. El aviso y la operación siguen requiriendo revisión antes de activar la Etapa B.
+
+Fernando aprobó el texto para el staging y optó por mantener el correo guiado. La siguiente etapa recomendada es una observación operativa manual de 30 días calendario, sin analítica web: comprobar que las solicitudes contengan información suficiente, se atiendan con consistencia y no se pierdan. Si este flujo funciona, no hay necesidad técnica inmediata de formulario; si presenta fricción, se retomará la decisión de un proveedor gestionado o una Function propia bajo aprobaciones separadas.
 
 ## Integración futura de IA
 

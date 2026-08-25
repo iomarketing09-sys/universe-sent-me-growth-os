@@ -3,8 +3,8 @@ title: "Diseño de formulario, privacidad y entrega de correo — Firma Bordados
 purpose: "Comparar rutas seguras para recibir consultas del sitio y definir los requisitos de privacidad, antispam, entrega de correo y aprobación antes de activar un backend."
 status: Review
 created: 2026-08-25
-updated: 2026-08-25
-version: "1.4"
+updated: 2026-08-24
+version: "1.5"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-24_Borrador_Aviso_Privacidad_Firma_Bordados.md"
@@ -101,7 +101,7 @@ La recomendación es **no sustituir el correo guiado todavía**. Cuando exista u
 
 ## 7. Estado
 
-La Etapa A está **aplicada**. La página estática de revisión se publicó en `https://firma-bordados-staging.pages.dev/privacidad/` y se enlaza desde el pie de página. Firma Bordados y el domicilio operativo del negocio quedaron registrados como datos declarados para preparar el aviso, pero no constituyen un aviso de privacidad definitivo ni una validación legal. No se ha activado backend, proveedor de correo, Turnstile, analítica, secreto, almacenamiento de consultas, cambio DNS ni migración de dominio. La recomendación de la Etapa B permanece en **Review** y requiere decisión explícita antes de cualquier integración externa.
+La Etapa A está **activa en staging**. La página estática se publicó en `https://firma-bordados-staging.pages.dev/privacidad/`, se enlaza desde el pie de página y su texto fue aprobado por Fernando el 2026-08-24. El correo guiado se mantiene como canal de solicitud. Durante los próximos 30 días calendario se observará de forma operativa si las consultas llegan completas, se atienden sin fricción y no se pierden; no se añadirá analítica web para ello. Firma Bordados y el domicilio operativo del negocio quedaron registrados como datos declarados para el aviso. No se ha activado backend, proveedor de correo, Turnstile, analítica, secreto, almacenamiento de consultas, cambio DNS ni migración de dominio. La recomendación de la Etapa B permanece en **Review** y requiere decisión explícita antes de cualquier integración externa.
 
 El borrador de aviso integral y simplificado se creó en `2026-08-24_Borrador_Aviso_Privacidad_Firma_Bordados.md` con estado **Draft**. Su publicación sigue bloqueada por las validaciones operativas y legales enumeradas en dicho documento.
 

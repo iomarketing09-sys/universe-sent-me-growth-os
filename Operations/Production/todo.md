@@ -51,6 +51,8 @@
 - [x] Incorporar la confirmación de `firmabordados@yahoo.com` como canal de privacidad/ARCO, responsable interno de atención, conservación razonable y futura página de aviso antes de publicar el formulario.
 - [x] Proponer una ruta técnica de formulario y antispam que respete el staging actual y no requiera activar servicios hasta recibir aprobación explícita.
 - [x] Publicar una página estática de aviso de privacidad en el staging de Firma Bordados, enlazada desde el contacto, sin formulario con backend ni captura de datos.
+- [x] Registrar la aprobación del aviso de privacidad de staging y observar la atención de solicitudes por correo guiado durante un periodo operativo antes de reconsiderar un formulario.
+- [ ] Revisar manualmente, después de 30 días calendario de uso o ante fricción operativa, si el correo guiado recibe solicitudes completas y se atiende sin pérdidas antes de reconsiderar un formulario.
 - [x] Comparar y documentar alternativas seguras de backend, entrega de correo, aviso de privacidad y antispam para el formulario de Firma Bordados.
 - [x] Preparar el cambio de «Cómo solicitar» para priorizar correo sin eliminar WhatsApp como canal alternativo.
 - [x] Implementar y validar en staging el enlace de correo guiado para «Cómo solicitar», conservando WhatsApp en hero y contacto.
