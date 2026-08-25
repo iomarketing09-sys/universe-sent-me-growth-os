@@ -3,8 +3,8 @@ title: "Guía de staging reversible en Cloudflare Pages — Firma Bordados"
 purpose: "Definir los pasos técnicos para probar el sitio React/Vite de Firma Bordados en Cloudflare Pages sin modificar Wix, el DNS del dominio ni el sitio público actual; incluir el criterio para descartar o adoptar WordPress."
 status: Review
 created: 2026-08-23
-updated: 2026-08-24
-version: "1.6"
+updated: 2026-08-25
+version: "1.7"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Evaluacion_Migracion_Wix_Hosting_IA.md"
@@ -60,7 +60,7 @@ El paquete P0 quedó publicado en la URL principal de staging. Se verificaron el
 
 El mantenimiento P1 incorporó validación continua de GitHub para Pull Requests y pushes a `staging`/`main`, usando el lockfile congelado, `pnpm check` y `pnpm exec vite build`. La ejecución verificada terminó correctamente antes de promover los commits `f49a344` y `beaaa8d` a `main`. La landing redujo providers inactivos, retiró `next-themes` y `sonner`, priorizó la imagen hero y difirió imágenes de proceso no críticas; el bundle principal pasó de ≈562 kB a 451.78 kB sin comprimir y de ≈163 kB a 127.12 kB gzip.
 
-La URL de Pages sirve `main`, mientras `staging` es la rama de integración. Se preservan noindex, `robots.txt`, los headers P0, los activos locales y el contacto. La protección formal de la rama `main` sigue pendiente de una decisión explícita de operación porque cambiaría la forma de colaboración; no se modificaron Wix, DNS, nameservers ni dominio personalizado.
+La URL de Pages sirve `main`, mientras `staging` es la rama de integración. Se preservan noindex, `robots.txt`, los headers P0, los activos locales y el contacto. La protección formal de la rama `main` fue solicitada y evaluada posteriormente; no se modificaron Wix, DNS, nameservers ni dominio personalizado.
 
 ### Actualización comercial y visual — 2026-08-24
 
@@ -81,6 +81,14 @@ La tarjeta «Detalle de bordado» mostró un marcador de generación fallida des
 La comprobación técnica verificó código de respuesta HTTP 200 para los tres recursos y ausencia del texto de error en la respuesta de la landing. Por preferencia explícita del usuario, la comprobación visual manual queda pendiente y debe hacerse solo desde su navegador Quick-seedless; no se utilizará el navegador remoto de otra computadora. Wix, DNS, nameservers y dominio público se mantienen sin cambios.
 
 El usuario confirmó posteriormente la visualización correcta de la galería desde Quick-seedless, con lo que se cierra la incidencia. La corrección visual se considera aprobada solo para este staging; no modifica el sitio Wix ni autoriza un corte de dominio.
+
+### Protección de `main` y marcas de catálogo — 2026-08-25
+
+Fernando confirmó que las playeras y uniformes vendidos corresponden a las marcas de los catálogos vigentes: BigBang, M&O y Soul & Blues. La marca Dickies sigue pendiente y no se integrará hasta recibir su catálogo autorizado o una fuente documental equivalente. La referencia de marca se mantiene vinculada a los PDFs, sin declarar inventario, tallas, modelos o disponibilidad en tiempo real.
+
+Se intentó activar la protección técnica de `main` y también las rulesets mediante la API de GitHub. Ambas operaciones devolvieron HTTP 403 porque el repositorio privado actual requiere GitHub Pro o hacerlo público. No se cambió la visibilidad del repositorio —que contiene catálogos y activos de cliente— ni se actualizó ningún plan, porque ambas opciones necesitan una decisión separada y pueden afectar costo o privacidad.
+
+Como alternativa vigente, el commit `accdcc0` documentó en el README el gate operativo obligatorio: **rama de trabajo → Pull Request a `staging` → CI correcto → promoción explícita a `main` → CI correcto → Pages**. El Pull Request 4 pasó CI, se integró a `staging` y el merge `10cb8af` se promovió a `main`. La regla no equivale a una protección técnica nativa; se mantiene la decisión pendiente de actualizar el plan GitHub o cambiar visibilidad si se desea enforcement de plataforma.
 
 ## 2. Estado de partida y preparación obligatoria
 

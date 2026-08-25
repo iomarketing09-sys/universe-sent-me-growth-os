@@ -3,8 +3,8 @@ title: "Inventario de catálogos de Drive — Firma Bordados"
 purpose: "Registrar los PDFs autorizados en Drive y los límites comerciales confirmados para el staging de Firma Bordados, conservando origen, tamaño, estado de revisión y reglas prudentes de redacción."
 status: Review
 created: 2026-08-24
-updated: 2026-08-24
-version: "1.3"
+updated: 2026-08-25
+version: "1.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md"
@@ -58,6 +58,12 @@ Los servicios fueron proporcionados por Fernando el 2026-08-24. No se infirieron
 | Materiales | Pendientes de confirmación | No describir telas, gramajes, composiciones, acabados ni calidades como hechos hasta recibir información del cliente. |
 
 Estas condiciones se integraron al staging Cloudflare el 2026-08-24. La referencia al mínimo no equivale a cotización, disponibilidad garantizada ni capacidad máxima de producción.
+
+### Marcas de prendas confirmadas por catálogo — 2026-08-25
+
+Fernando confirmó que las playeras y uniformes que vende Firma Bordados corresponden a las marcas contenidas en sus catálogos autorizados. Para el sitio, las referencias comerciales confirmadas son **BigBang**, **M&O** y **Soul & Blues**, siempre mediante sus catálogos vigentes enlazados y sin presentar una talla, color, modelo o disponibilidad específica como inventario en tiempo real.
+
+**Dickies** queda explícitamente pendiente: no se añadirá al texto, imágenes, catálogos ni metadata del staging hasta recibir su catálogo autorizado o una confirmación documental equivalente. Esta regla evita usar la marca sin una fuente operativa verificable.
 
 ## Reglas de integración
 

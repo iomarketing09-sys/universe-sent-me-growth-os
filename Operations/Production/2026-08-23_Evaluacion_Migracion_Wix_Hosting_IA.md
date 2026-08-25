@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-24
 
-**Versión:** 3.0
+**Versión:** 3.1
 
 **Autor:** Manus AI
 
@@ -188,6 +188,8 @@ La primera actualización comercial posterior a P1 se completó solo con informa
 La refinación posterior añadió una galería corta de procesos dentro de «Nuestro trabajo». Las fotografías de Drive con marcas de clientes se utilizaron solo como referencia; la versión pública usa una fotografía autorizada existente y dos visuales exclusivas sin marcas de terceros. También se agregó una frase sobre explorar opciones de prenda según la necesidad de presentación, en lugar de declarar materiales o calidades no documentados. El flujo de revisión, CI y promoción a `main` se mantuvo intacto; Wix, DNS, nameservers y el dominio público siguen sin cambios.
 
 Tras detectarse una generación incompleta en la tarjeta «Detalle de bordado», se revirtió de forma puntual el uso de visuales externos y se sustituyeron por recursos locales comprobados. La corrección pasó CI en `staging` y `main`; tres solicitudes estáticas a los activos de la galería devolvieron HTTP 200 y la respuesta de la landing no contiene el marcador de fallo. La validación visual manual queda a cargo del usuario en Quick-seedless, sin volver a usar un navegador remoto de otra computadora.
+
+Fernando confirmó que las prendas corresponden a BigBang, M&O y Soul & Blues según los catálogos vigentes; Dickies queda pendiente de una fuente documental autorizada. La protección técnica de `main` no está disponible para el repositorio privado actual: GitHub devolvió 403 para branch protection y rulesets, indicando que requiere GitHub Pro o visibilidad pública. No se elevó el plan ni se hizo público el repositorio. En su lugar se formalizó y validó un gate operativo de Pull Request a `staging`, CI correcto y promoción explícita a `main`; esta alternativa reduce el riesgo operativo pero no sustituye enforcement nativo.
 
 ## Integración futura de IA
 

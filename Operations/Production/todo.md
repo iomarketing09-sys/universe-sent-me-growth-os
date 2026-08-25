@@ -32,6 +32,10 @@
 - [x] Sustituir el recurso fallido de «Detalle de bordado» por activos locales válidos y verificar técnicamente la galería publicada.
 - [x] Documentar la corrección de la galería sin modificar Wix, DNS ni el dominio público.
 - [x] Confirmación visual de la galería recibida desde el navegador Quick-seedless del usuario; no se usó el navegador remoto de otra computadora para la aprobación final.
+- [x] Registrar las marcas de prendas confirmadas por catálogo y dejar Dickies como pendiente hasta recibir su catálogo o autorización.
+- [x] Aplicar la máxima protección disponible sin elevar plan ni exponer el repositorio: gate operativo con Pull Request, CI y promoción explícita; la protección nativa sigue bloqueada por el plan/visibilidad de GitHub.
+- [x] Validar y documentar el nuevo flujo protegido de ramas sin alterar Wix, DNS ni el dominio público.
+- [ ] Decidir por separado si se desea GitHub Pro/Team para activar branch protection nativa en el repositorio privado; no hacer público el repositorio para desbloquearla.
 - [x] Convertir WhatsApp en el CTA principal del hero de Firma Bordados y validar el enlace en escritorio y móvil.
 - [x] Guiar la creación de la cuenta Cloudflare y repositorio privado del cliente antes de configurar Cloudflare Pages.
 - [x] Acompañar la configuración del proyecto Cloudflare Pages de staging para Firma Bordados sin agregar dominio ni modificar DNS.
