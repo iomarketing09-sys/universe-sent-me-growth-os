@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — Semana 01: calendario de publicación"
 purpose: "Coordinar la salida del primer lote de cuatro piezas de Bam in a Can, sus metadatos por plataforma y las ventanas mínimas de medición sin programar publicaciones automáticas."
-status: "Active — CAN-001 medido; CAN-002 cascada completa y en medición"
+status: "Active — CAN-001 medido; CAN-002 con control T+72 programado"
 created: 2026-08-21
-updated: 2026-08-23
-version: "1.7"
+updated: 2026-08-24
+version: "1.8"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-21_Bam_In_A_Can_Semana01_Paquete_Lanzamiento.md"
@@ -103,6 +103,12 @@ La siguiente acción de la cascada es YouTube Shorts. Su T0 se registrará por s
 
 Con este registro, CAN-002 conserva el diseño 2 + 1: TikTok e Instagram con audio nativo compartido y YouTube con SFX originales. Las tres plataformas se miden con su propio T0.
 
+### Control programado — CAN-002 T+72
+
+Se programó un único control consolidado para el **martes 26 de agosto de 2026 a las 20:10 CDT**. Esta hora se sitúa después de las tres ventanas T+72 de CAN-002: TikTok 18:59:43, Instagram Reels 19:20:37 y YouTube Shorts 19:57:00 CDT. La programación solo consulta, documenta y reporta; **no publica, edita ni responde contenido**.
+
+El corte usará TikTok mediante la cuenta orgánica de Bam en Windsor.ai, Instagram por shortcode `DcZv1l4sjhz` sin rangos de fecha y bloques de hasta cuatro fields, e intentará YouTube por Windsor sin registrar una ausencia como cero. Si no existe una fila de YouTube, conservará la indexación pendiente y utilizará únicamente evidencia de Studio que Fernando haya compartido con timestamp o edad disponible. El snapshot y el ledger se actualizarán con la hora, fuente, frescura y límites de comparabilidad reales.
+
 ## Go/no-go por cada día
 
 La hora de publicación no autoriza una salida automática. A las 18:45 CDT, Fernando verifica el export correcto, caption, disclosure y selección de audio. Si falta alguno, la pieza se pospone al siguiente día disponible y todo el calendario se mueve 24 horas, manteniendo siempre la separación mínima de 36 horas entre piezas.
@@ -117,4 +123,4 @@ La hora de publicación no autoriza una salida automática. A las 18:45 CDT, Fer
 
 ## Dependencias antes de iniciar CAN-001
 
-La propuesta asume que los cuatro clips finales ya están aprobados. Antes de publicar cada CAN, seleccionar manualmente los audios nativos de TikTok e Instagram y preparar los tres uploads con el copy correcto. El ledger `Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv` ya contiene los doce renglones planificados; en T0 solo se completan sus campos de publicación real. Este documento no crea una programación, no vincula cuentas ni publica contenido.
+La propuesta asume que los cuatro clips finales ya están aprobados. Antes de publicar cada CAN, seleccionar manualmente los audios nativos de TikTok e Instagram y preparar los tres uploads con el copy correcto. El ledger `Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv` ya contiene los doce renglones planificados; en T0 solo se completan sus campos de publicación real. Este documento no programa publicaciones automáticas, no vincula cuentas ni publica contenido. El único control de medición descrito arriba queda programado como revisión documental y no modifica permisos de las plataformas.
