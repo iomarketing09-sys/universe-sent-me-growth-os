@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.7"
+version: "1.8"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -24,6 +24,6 @@ organization: "GrowthOS"
 - [x] Autorizar una prueba de conexión de Windsor.ai en modo solo lectura y sin crear pagos, para confirmar la cobertura orgánica de TikTok y YouTube.
 - [x] Comparar Windsor.ai contra las APIs oficiales de TikTok y YouTube, más alternativas gratuitas/de menor costo que entreguen métricas orgánicas suficientes para el loop local.
 - [x] Validar Windsor.ai en modo solo lectura para TikTok: la cuenta Universe Sent Me devuelve métricas de video, alcance, acciones, watch time y tasa de finalización.
-- [ ] Identificar cuál de las dos cuentas de YouTube conectadas en Windsor.ai corresponde exclusivamente a Universe Sent Me antes de consultar o automatizar datos de YouTube.
+- [ ] Identificar cuál de las cuentas/canales de YouTube administrados por iO Marketing corresponde exclusivamente a Universe Sent Me antes de consultar o automatizar datos de YouTube; excluir de este loop los datos de Bam in a Can y Firma Bordados.
 - [ ] Elegir la fuente sostenible: APIs oficiales locales sin cuota de intermediario, Windsor.ai como integración de pago, o una combinación transitoria solo de lectura.
 - [ ] Aprobar un piloto programado de solo lectura con cortes diarios, reporte semanal, hoja derivada y análisis de OmniRoute etiquetado `Draft`; no activar publicaciones, respuestas automáticas ni escrituras canónicas.

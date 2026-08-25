@@ -4,7 +4,7 @@ purpose: "Definir cómo OmniRoute puede analizar resúmenes métricos ya normali
 status: Review
 created: 2026-08-23
 updated: 2026-08-25
-version: "1.6"
+version: "1.7"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-19_Decision_Gateway_IA_OmniRoute.md"
@@ -313,6 +313,20 @@ La conexión de YouTube tiene dos cuentas etiquetadas `baminacan@gmail.com` e `i
 | **Apps Script para YouTube** | Sin servidor adicional; corre asociado a Google Workspace. | Puede llevar métricas de YouTube Analytics a una hoja mediante un servicio avanzado. [10] | Solo resuelve YouTube, desplaza parte de la automatización fuera de GitHub y no resuelve TikTok; no se usa como fuente canónica sin rediseño. |
 
 La ruta de menor costo recurrente es utilizar APIs oficiales directas con un script local programado; la ruta de menor esfuerzo técnico es conservar Windsor.ai, sujeta a su precio tras la prueba. Una combinación transitoria también es posible: usar Windsor solo para validar TikTok mientras se construye la integración oficial de YouTube, pero no se debe contratar ni programar una exportación hasta que Fernando elija la fuente final.
+
+### 8.14 Gobernanza de cuenta iO Marketing y separación de marcas
+
+iO Marketing administra la cuenta compartida de Windsor.ai y las marcas Bam in a Can, Universe Sent Me y Firma Bordados. Esta administración común **no crea un permiso de mezcla de datos**. Cada ejecución, fila, vista, brief y análisis debe llevar una marca explícita y filtrar primero por `brand = Universe Sent Me` antes de leer, normalizar, exportar o enviar agregados a OmniRoute.
+
+| Elemento | Regla para el loop actual |
+| :--- | :--- |
+| Alcance de lectura | Solo cuentas, publicaciones y métricas verificadas como pertenecientes a Universe Sent Me. |
+| Bam in a Can | No se consulta, combina ni analiza dentro de este loop, aunque comparta administración. |
+| Firma Bordados | Queda completamente excluida de Windsor, OmniRoute, la hoja derivada y cualquier job de Universe Sent Me. |
+| Cuentas ambiguas | Si una cuenta de YouTube u otra fuente no identifica inequívocamente la marca, se marca `brand_unresolved` y no se consulta hasta recibir la confirmación de Fernando. |
+| Vistas derivadas y OmniRoute | Las pestañas solo pueden contener filas `brand = Universe Sent Me`; los briefs para el modelo omiten cualquier dato de otras marcas. |
+
+Esta regla actualiza la interpretación de la prueba: la existencia de una cuenta administradora `io.marketing` no identifica por sí misma el canal de YouTube de Universe Sent Me. La identificación debe basarse en el canal o la cuenta de marca concreta, no en el correo administrativo.
 
 ## Referencias
 
