@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "5.0"
+version: "5.1"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -55,10 +55,11 @@ organization: "GrowthOS"
 - [x] Ejecutar una primera lectura local con el collector TikTok y confirmar que `video.list` funciona en Sandbox: `status=collected`, `brand=Universe Sent Me`, `platform=TikTok`, `records=9`; evidencia cruda conservada solo en Xubuntu.
 - [ ] Revisar de forma local y humana la evidencia privada del Sandbox para confirmar que los 9 registros son de la cuenta objetivo y que los campos nativos disponibles se ajustan al contrato; no normalizar, no escribir Google Sheets ni enviar raw a OmniRoute aún.
 - [x] Cerrar el piloto TikTok en estado Sandbox validado, sin integrar a Production, sin cron y sin llevar sus datos a ledgers, Sheets u OmniRoute; toda futura integración requiere un gate separado.
-- [ ] Crear o seleccionar un proyecto de Google Cloud exclusivo para iO Marketing / Universe Sent Me, sin mezclar Firma Bordados ni clientes, y habilitar únicamente YouTube Data API v3 y YouTube Analytics API.
-- [ ] Configurar el consentimiento OAuth de Google para prueba local, crear un cliente tipo Desktop y guardar el archivo descargado solo en `~/.config/usm-metrics/youtube-client-secret.json` con permisos restrictivos; no subirlo a GitHub ni compartirlo en chat.
-- [ ] Autorizar localmente el canal `@Universe_Sent_Me` con los scopes exactos `youtube.readonly`, `yt-analytics.readonly` y `yt-analytics-monetary.readonly`; no solicitar scopes de publicación, edición, comentarios, administración ni cuentas de otras marcas.
-- [ ] Ejecutar una primera lectura local de YouTube, registrar rendimiento y, solo si la API devuelve datos, monetización preliminar; mantener ingresos crudos privados y fuera de OmniRoute sin aprobación financiera separada.
+- [x] Crear el proyecto de Google Cloud exclusivo `USM Local Metrics` para iO Marketing / Universe Sent Me y habilitar únicamente YouTube Data API v3 y YouTube Analytics API; no se mezclaron Firma Bordados ni clientes.
+- [x] Configurar el consentimiento OAuth de Google para prueba local, crear el cliente Desktop `USM Metrics Xubuntu Local` y guardar el archivo descargado solo en `~/.config/usm-metrics/youtube-client-secret.json` con permisos restrictivos; no se subió a GitHub ni se compartió en chat.
+- [x] Autorizar localmente el canal `@Universe_Sent_Me` con los scopes exactos `youtube.readonly`, `yt-analytics.readonly` y `yt-analytics-monetary.readonly`; no se solicitaron scopes de publicación, edición, comentarios, administración ni cuentas de otras marcas.
+- [x] Ejecutar una primera lectura local de YouTube: `status=collected`, `brand=Universe Sent Me`, `platform=YouTube`, `performance_rows=8` y `monetization_status=not_available`; no se tratará la ausencia como cero.
+- [ ] Revisar local y humanamente las ocho filas de rendimiento disponibles para confirmar atribución y ventanas de fecha; mantener cualquier importe o error de monetización en evidencia privada, fuera de OmniRoute y sin aprobación financiera separada.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
 - [x] Configurar y autorizar la app de escritorio Sandbox de TikTok con los scopes oficiales mínimos `user.info.basic` y `video.list`, callback local y PKCE; el cliente OAuth local de Google con scopes de lectura y monetización sigue pendiente.
 - [ ] Reemplazar la consulta de Windsor.ai por scripts locales de TikTok y YouTube antes del fin del Trial, manteniendo Facebook e Instagram en sus rutas existentes.

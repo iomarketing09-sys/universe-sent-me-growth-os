@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.4"
+version: "1.5"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -100,6 +100,14 @@ La autorización no es evidencia de lectura de métricas todavía. El próximo c
 El collector oficial se ejecutó con `--max-pages 1` y devolvió `status = collected`, `brand = Universe Sent Me`, `platform = TikTok` y `records = 9`. El archivo de evidencia cruda permanece bajo el directorio privado de Xubuntu definido en la configuración; no se trasladó a GitHub, Google Sheets, OmniRoute ni a ningún servicio de otra marca.
 
 Este resultado demuestra conectividad y alcance de solo lectura de `video.list` dentro del Sandbox, no rendimiento definitivo ni una autorización para operar en Production. Antes de cualquier normalización se debe realizar una revisión humana local para atribuir los registros al Target User y confirmar los campos realmente devueltos. El piloto sigue sin cron, sin escritura canónica, sin importes financieros y sin automatización de respuestas o publicaciones.
+
+## YouTube: primera lectura local de rendimiento
+
+El proyecto exclusivo `USM Local Metrics` habilitó únicamente YouTube Data API v3 y YouTube Analytics API. El consentimiento OAuth local se configuró en modo de prueba mediante el cliente Desktop `USM Metrics Xubuntu Local`, cuyos archivos y token permanecen bajo `~/.config/usm-metrics/` fuera del repositorio.
+
+El collector de YouTube confirmó `status = collected`, `brand = Universe Sent Me`, `platform = YouTube` y `performance_rows = 8`. La solicitud de monetización devolvió `monetization_status = not_available`. Esta ausencia se preserva tal cual: no equivale a ingresos cero, no se reintenta con permisos de escritura y no se envían importes ni errores financieros a OmniRoute.
+
+Antes de interpretar resultados o pasar valores agregados a una vista derivada, Fernando debe revisar localmente las ocho filas para atribución al canal y coherencia de ventana. La lectura continúa sin cron, Google Sheets, ledgers, contenido, comentarios, programación ni cambios en otros proyectos.
 
 ## Estado del documento
 

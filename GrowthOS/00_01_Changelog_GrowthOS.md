@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.65
+**Versión:** 4.66
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.66.00] — 2026-08-25 (Fernando/Manus): Primera lectura oficial local de YouTube completada, con monetización no disponible.** En el proyecto exclusivo `USM Local Metrics`, Fernando habilitó YouTube Data API v3 y YouTube Analytics API, creó el cliente Desktop `USM Metrics Xubuntu Local` y completó OAuth en modo de prueba con los tres scopes aprobados: `youtube.readonly`, `yt-analytics.readonly` y `yt-analytics-monetary.readonly`. El collector local devolvió `status=collected`, `brand=Universe Sent Me`, `platform=YouTube`, `performance_rows=8` y `monetization_status=not_available`. La ausencia de monetización se conserva como `not_available`, no como cero; los importes potenciales, tokens, cliente OAuth, evidencia cruda y cualquier error financiero siguen únicamente en Xubuntu. No hubo Google Sheets, ledgers, OmniRoute, cron, contenido, comentarios, publicaciones ni acceso a otras marcas. Siguiente gate: revisión humana local de las ocho filas y sus ventanas; cualquier uso de monetización exige aprobación financiera separada. Documento actualizado: `Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md` v1.5.
 
 - **[4.65.00] — 2026-08-25 (Fernando/Manus): Corte Facebook GET-only bloqueado antes de la API.** El auditor reusable se detuvo porque `META_PAGE_ACCESS_TOKEN` no estaba disponible; la verificación read-only confirmó `Universe Sent Me Meta API` como `enabled=false`. No existe conteo de delta válido —no equivale a cero novedades—, no hubo llamadas Meta exitosas, no se consultaron otras redes, no se ejecutó POST/PUT/DELETE y no se cambiaron la cola ni el ledger. No se creó un review vacío ni se reutilizaron aprobaciones. Evidencia: `Operations/Research/2026-08-25_22-33-10_Facebook_Comment_Review_Blocker.json`. Siguiente paso seguro: restaurar el acceso del conector existente y ejecutar el auditor con su cursor dinámico.
 
