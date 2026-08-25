@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.49
+**Versión:** 4.50
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.50.00] — 2026-08-25 (Fernando/Manus): Evaluación separada para una futura migración del sitio de Universe Sent Me.** A partir de la consulta de Fernando, se inventarió de modo pasivo el sitio Wix actual: propuesta de marca, portfolio, contacto, redes y textos legales. Se documentó que el host técnico para TikTok y una migración completa son decisiones separadas: primero puede resolverse el archivo de firma con un sitio estático mínimo; la migración futura exige auditoría de activos, URLs, formularios, SEO, analítica, staging y reversión. No se modificó Wix, DNS, dominio, analítica, contenido ni infraestructura, y Firma Bordados quedó excluida. Documento nuevo: `Operations/Production/2026-08-25_Evaluacion_Migracion_Sitio_Wix_Universe_Sent_Me.md` v1.0.
 
 - **[4.49.00] — 2026-08-25 (Manus): Siguiente publicación programada preparada para E0 con reintentos controlados.** Se seleccionó `PUB-FB-17_30-47`, la primera publicación futura explícita posterior al caso `PUB-FB-17_30-46`, con asset_ref `2608062 - Kiri+Evan - prestame el marron.jpeg`, Meta Post ID `1036844829507460_122151377475072582`, experimento `EXP-2026-08-CAL-01` e hipótesis `HB-003|HB-004|HB-005`. La publicación permanece `Programada` para 2026-08-25 16:00 America/Matamoros / 21:00 UTC y Meta confirmó en modo lectura `is_published=false` antes de su hora. El único schedule se reutilizó como control one-shot activo a las 16:02 locales / 21:02 UTC, con intentos adicionales a 16:05 y 16:08, todos dentro de ±600 segundos. El control solo consulta, detiene los reintentos al confirmar `is_published=true`, ejecuta el hook sin replay y guarda raw; si sigue pendiente, devuelve `E0_PENDING` sin escribir. `ID_Pieza` y `CNT` permanecen vacíos porque no están explícitamente asignados. No se modificó contenido ni programación. Evidencia: `Operations/Research/2026-08-25_PUB-FB-17_30-47_E0_Preparation_Evidence.json`.
 
