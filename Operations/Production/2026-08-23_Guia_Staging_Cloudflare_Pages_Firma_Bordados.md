@@ -4,7 +4,7 @@ purpose: "Definir los pasos técnicos para probar el sitio React/Vite de Firma B
 status: Review
 created: 2026-08-23
 updated: 2026-08-25
-version: "1.9"
+version: "1.10"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Evaluacion_Migracion_Wix_Hosting_IA.md"
@@ -101,6 +101,12 @@ También se añadió una franja «Marcas por catálogo» para BigBang, Soul & Bl
 El commit `2ca773f` añadió una sección de preguntas frecuentes con información confirmada sobre serigrafía, tiempos de entrega, categorías consultables de prenda y el alcance que excluye parches/gorras. La sección no incorpora datos de materiales, precios, cotizaciones, plazos exactos ni certificaciones.
 
 La galería «Nuestro trabajo» pasó de tres a cuatro tarjetas con `digitalizacion-proceso.png`, una imagen autorizada del proceso de digitalización sin marca de cliente visible. El Pull Request 6 pasó CI, se integró a `staging` y el merge `67f3f1f` se promovió a `main`. La comprobación técnica encontró el FAQ, la nueva tarjeta y una respuesta HTTP 200 del activo publicado. Wix, DNS, nameservers, dominio público, formulario backend y analítica siguen sin cambios.
+
+### Paquete C3 de acceso local — 2026-08-25
+
+El commit `b3e6f57` añadió en el pie de página el enlace «Cómo llegar», que abre indicaciones de Google Maps hacia la dirección confirmada de Firma Bordados. El enlace usa la dirección ya visible en el sitio y no recopila ubicación del visitante, no incrusta un mapa y no añade ningún servicio de terceros al runtime.
+
+El Pull Request 7 pasó CI, se integró a `staging` y el merge `82be09b` se promovió a `main`. La URL de destino devolvió HTTP 200 y la verificación del bundle público encontró el enlace. WhatsApp, correo, ambos teléfonos y horario permanecen visibles. Wix, DNS, nameservers, dominio público, formulario backend y analítica siguen sin cambios.
 
 ## 2. Estado de partida y preparación obligatoria
 

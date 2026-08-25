@@ -6,9 +6,9 @@
 
 **Fecha de creación:** 2026-08-23
 
-**Última actualización:** 2026-08-24
+**Última actualización:** 2026-08-25
 
-**Versión:** 3.1
+**Versión:** 3.2
 
 **Autor:** Manus AI
 
@@ -190,6 +190,8 @@ La refinación posterior añadió una galería corta de procesos dentro de «Nue
 Tras detectarse una generación incompleta en la tarjeta «Detalle de bordado», se revirtió de forma puntual el uso de visuales externos y se sustituyeron por recursos locales comprobados. La corrección pasó CI en `staging` y `main`; tres solicitudes estáticas a los activos de la galería devolvieron HTTP 200 y la respuesta de la landing no contiene el marcador de fallo. La validación visual manual queda a cargo del usuario en Quick-seedless, sin volver a usar un navegador remoto de otra computadora.
 
 Fernando confirmó que las prendas corresponden a BigBang, M&O y Soul & Blues según los catálogos vigentes; Dickies queda pendiente de una fuente documental autorizada. La protección técnica de `main` no está disponible para el repositorio privado actual: GitHub devolvió 403 para branch protection y rulesets, indicando que requiere GitHub Pro o visibilidad pública. No se elevó el plan ni se hizo público el repositorio. En su lugar se formalizó y validó un gate operativo de Pull Request a `staging`, CI correcto y promoción explícita a `main`; esta alternativa reduce el riesgo operativo pero no sustituye enforcement nativo.
+
+El paquete C3 redujo fricción para visitas locales con un enlace de indicaciones basado únicamente en la dirección confirmada. No se usó geolocalización, no se incrustó un mapa ni se iniciaron servicios de analítica. El enlace, los teléfonos, correo y horario se validaron técnicamente antes de publicar la promoción a `main`; el staging continúa separado del sitio Wix y del dominio público.
 
 ## Integración futura de IA
 

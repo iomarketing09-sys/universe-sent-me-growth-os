@@ -4,7 +4,7 @@ purpose: "Priorizar mejoras de rendimiento, accesibilidad, seguridad técnica y 
 status: Active
 created: 2026-08-24
 updated: 2026-08-25
-version: "1.4"
+version: "1.5"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md"
@@ -60,7 +60,7 @@ La protección técnica de `main` se evaluó tras la autorización de Fernando. 
 | C1 aplicado | Añadir una franja de «Marcas disponibles por catálogo»: BigBang, M&O y Soul & Blues, con enlace a cada PDF | Convierte los catálogos en una razón visible para consultar y respalda la oferta con fuentes existentes | Dickies sigue fuera hasta recibir su catálogo | Publicado en staging |
 | C2 aplicado | Añadir un FAQ breve: mínimo de serigrafía de 12 piezas, tiempos que se confirman por pedido/carga y categorías de prendas consultables | Resuelve objeciones frecuentes sin inventar condiciones | Ninguna | Publicado en staging |
 | C2 aplicado | Ampliar el portafolio con fotografías reales autorizadas, ocultando o excluyendo marcas de clientes sin permiso | Aumenta confianza mediante evidencia de trabajo | Curaduría y permisos por imagen | Publicado con evidencia de digitalización |
-| C3 | Añadir enlace de ubicación con indicaciones y revisar información de contacto visible | Reduce fricción para visitas o llamadas | Verificar el destino exacto del mapa | Pendiente de verificación |
+| C3 aplicado | Añadir enlace de ubicación con indicaciones y revisar información de contacto visible | Reduce fricción para visitas o llamadas | Dirección confirmada y enlace técnico validado | Publicado en staging |
 | C3 | Implementar formulario con backend y analítica de intención | Mejora captura y medición de solicitudes | Aviso de privacidad, responsable de datos, antispam y proceso de respuesta | Bloqueado hasta decisión operativa |
 
 ### Decisión recomendada sobre GitHub Pro
@@ -74,6 +74,10 @@ El commit `9fd686e` añadió una sección «Cómo solicitar» en tres pasos, un 
 ### Paquete C2 aplicado — 2026-08-25
 
 El commit `2ca773f` incorporó un FAQ con los límites confirmados —serigrafía a partir de 12 piezas, tiempos según cantidad/requerimiento/carga, categorías de prenda consultables y exclusión de parches/gorras— y añadió una tarjeta de «Digitalización en proceso» al portafolio. El Pull Request 6 pasó CI, se integró a `staging` y el merge `67f3f1f` se promovió a `main`. La comprobación técnica encontró el FAQ y la tarjeta en el bundle publicado, y el activo local respondió HTTP 200. No se añadieron materiales, precios, plazos exactos, analytics, backend de formulario, Wix, DNS ni dominio público.
+
+### Paquete C3 aplicado — 2026-08-25
+
+El commit `b3e6f57` añadió un enlace «Cómo llegar» que construye indicaciones de Google Maps a partir de la dirección confirmada: Emilio Carranza #1021 Int. 113, Col. Burócratas, Piedras Negras, Coahuila. El Pull Request 7 pasó CI, se integró a `staging` y el merge `82be09b` se promovió a `main`. La comprobación técnica confirmó HTTP 200 del destino y encontró el enlace dentro del bundle público; se conservaron correo, WhatsApp, teléfonos y horario visibles. No se incorporó mapa embebido, geolocalización, backend, analítica, Wix, DNS ni dominio público.
 
 ## 6. Límites hasta recibir la información del cliente
 

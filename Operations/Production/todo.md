@@ -42,7 +42,8 @@
 - [x] Validar, publicar en el staging Cloudflare y documentar el paquete C1 sin modificar Wix, DNS ni el dominio público.
 - [x] Implementar el paquete C2: FAQ breve y ampliación prudente del portafolio con fotografías reales autorizadas.
 - [x] Validar, publicar en el staging Cloudflare y documentar el paquete C2 sin modificar Wix, DNS ni el dominio público.
-- [ ] Implementar el paquete C3: enlace de ubicación con indicaciones y verificación final de los datos de contacto visibles.
+- [x] Implementar el paquete C3: enlace de ubicación con indicaciones y verificación final de los datos de contacto visibles.
+- [x] Construir y verificar un enlace de indicaciones usando únicamente la dirección confirmada de Firma Bordados.
 - [ ] Decidir formulario con backend y analítica solo después de definir privacidad, antispam, responsable y proceso de respuesta.
 - [x] Convertir WhatsApp en el CTA principal del hero de Firma Bordados y validar el enlace en escritorio y móvil.
 - [x] Guiar la creación de la cuenta Cloudflare y repositorio privado del cliente antes de configurar Cloudflare Pages.
