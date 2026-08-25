@@ -1,0 +1,106 @@
+{
+  "title": "Facebook Additional Publication Preflight — eight approved replies",
+  "purpose": "Preflight GET-only completo de las ocho respuestas aprobadas antes de cualquier publicación.",
+  "status": "Preflight_Pass",
+  "created_at": "2026-08-25T18:50:21+00:00",
+  "updated_at": "2026-08-25T18:50:27+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "organization": "Operations/Research",
+  "related_documents": [
+    "Operations/Research/2026-08-25_18-34-06_Facebook_Pending_Queue_After_Current_Queue_Publication.json",
+    "Operations/Research/2026-08-25_18-45-08_Facebook_Additional_Engagement_Approval.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv"
+  ],
+  "source": "Meta Graph API v26.0",
+  "page_id": "1036844829507460",
+  "explicit_user_approval": true,
+  "requested_count": 8,
+  "preflight_completed_count": 8,
+  "conflict_count": 0,
+  "existing_exact_count": 0,
+  "published_count": 0,
+  "verified_count": 0,
+  "checks": [
+    {
+      "comment_id": "122151377109072582_1043788355242576",
+      "post_id": "1036844829507460_122151377109072582",
+      "comment_type": "Comentario_Raiz",
+      "target_parent_id": null,
+      "target_is_hidden": false,
+      "existing_child_count": 0,
+      "existing_page_reply_count": 0,
+      "existing_exact": null
+    },
+    {
+      "comment_id": "122151377109072582_1522896686271901",
+      "post_id": "1036844829507460_122151377109072582",
+      "comment_type": "Comentario_Raiz",
+      "target_parent_id": null,
+      "target_is_hidden": false,
+      "existing_child_count": 0,
+      "existing_page_reply_count": 0,
+      "existing_exact": null
+    },
+    {
+      "comment_id": "122151376539072582_1416950633724431",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_type": "Comentario_Raiz",
+      "target_parent_id": null,
+      "target_is_hidden": false,
+      "existing_child_count": 2,
+      "existing_page_reply_count": 0,
+      "existing_exact": null
+    },
+    {
+      "comment_id": "122151376083072582_1858563828450701",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_type": "Comentario_Raiz",
+      "target_parent_id": null,
+      "target_is_hidden": false,
+      "existing_child_count": 0,
+      "existing_page_reply_count": 0,
+      "existing_exact": null
+    },
+    {
+      "comment_id": "122151376083072582_1751262112632205",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_type": "Comentario_Raiz",
+      "target_parent_id": null,
+      "target_is_hidden": false,
+      "existing_child_count": 1,
+      "existing_page_reply_count": 0,
+      "existing_exact": null
+    },
+    {
+      "comment_id": "122151376083072582_1044932481615070",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_type": "Comentario_Raiz",
+      "target_parent_id": null,
+      "target_is_hidden": false,
+      "existing_child_count": 0,
+      "existing_page_reply_count": 0,
+      "existing_exact": null
+    },
+    {
+      "comment_id": "122151376011072582_1633124508149465",
+      "post_id": "1036844829507460_122151376011072582",
+      "comment_type": "Comentario_Raiz",
+      "target_parent_id": null,
+      "target_is_hidden": false,
+      "existing_child_count": 0,
+      "existing_page_reply_count": 0,
+      "existing_exact": null
+    },
+    {
+      "comment_id": "122151376011072582_1382951430696782",
+      "post_id": "1036844829507460_122151376011072582",
+      "comment_type": "Comentario_Raiz",
+      "target_parent_id": null,
+      "target_is_hidden": false,
+      "existing_child_count": 0,
+      "existing_page_reply_count": 0,
+      "existing_exact": null
+    }
+  ]
+}

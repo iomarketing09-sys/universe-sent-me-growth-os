@@ -3,7 +3,7 @@
   "purpose": "Registrar la propuesta editorial pegada por Fernando para reclasificar oportunidades de engagement sin publicar respuestas adicionales.",
   "status": "Active",
   "created_at": "2026-08-25T18:34:06+00:00",
-  "updated_at": "2026-08-25T18:45:08+00:00",
+  "updated_at": "2026-08-25T18:51:09+00:00",
   "version": "1.0",
   "author": "Manus AI",
   "organization": "Operations/Research",
@@ -29,9 +29,11 @@
       "proposed_reply": "Eso ya suena a que el miedo presentó su renuncia. 👀😂",
       "insight": "Reflexión con personalidad; Fernando propuso abrir un ping-pong breve.",
       "approval_state": "Aprobada",
-      "publication_status": "Pendiente_Publicacion",
+      "publication_status": "Respondido",
       "approval_recorded_at": "2026-08-25T18:45:08+00:00",
-      "approved_by": "Fernando"
+      "approved_by": "Fernando",
+      "response_status": "Respondido",
+      "publication_count": 1
     },
     {
       "comment_id": "122151377109072582_1522896686271901",
@@ -42,9 +44,11 @@
       "proposed_reply": "Entonces estamos ante un empate emocional. 😂",
       "insight": "Comentario abstracto con una oportunidad de remate corto.",
       "approval_state": "Aprobada",
-      "publication_status": "Pendiente_Publicacion",
+      "publication_status": "Respondido",
       "approval_recorded_at": "2026-08-25T18:45:08+00:00",
-      "approved_by": "Fernando"
+      "approved_by": "Fernando",
+      "response_status": "Respondido",
+      "publication_count": 1
     },
     {
       "comment_id": "122151376539072582_1416950633724431",
@@ -55,9 +59,11 @@
       "proposed_reply": "Objeción aceptada. 😂",
       "insight": "Rechazo breve con tono de invitación al ping-pong.",
       "approval_state": "Aprobada",
-      "publication_status": "Pendiente_Publicacion",
+      "publication_status": "Respondido",
       "approval_recorded_at": "2026-08-25T18:45:08+00:00",
-      "approved_by": "Fernando"
+      "approved_by": "Fernando",
+      "response_status": "Respondido",
+      "publication_count": 1
     },
     {
       "comment_id": "122151376083072582_1858563828450701",
@@ -68,9 +74,11 @@
       "proposed_reply": "El problema no era la técnica… era el departamento de permanencia. 😂",
       "insight": "Identificación con el meme y mini-historia personal; remate no gráfico.",
       "approval_state": "Aprobada",
-      "publication_status": "Pendiente_Publicacion",
+      "publication_status": "Respondido",
       "approval_recorded_at": "2026-08-25T18:45:08+00:00",
-      "approved_by": "Fernando"
+      "approved_by": "Fernando",
+      "response_status": "Respondido",
+      "publication_count": 1
     },
     {
       "comment_id": "122151376083072582_1751262112632205",
@@ -81,9 +89,11 @@
       "proposed_reply": "Jajaja, la clase todavía no tiene fecha de inscripción. 😂",
       "insight": "Solicitud ambigua con oportunidad de interacción juguetona, sin explicar el doble sentido.",
       "approval_state": "Aprobada",
-      "publication_status": "Pendiente_Publicacion",
+      "publication_status": "Respondido",
       "approval_recorded_at": "2026-08-25T18:45:08+00:00",
-      "approved_by": "Fernando"
+      "approved_by": "Fernando",
+      "response_status": "Respondido",
+      "publication_count": 1
     },
     {
       "comment_id": "122151376083072582_1044932481615070",
@@ -94,9 +104,11 @@
       "proposed_reply": "Amén recibido. El universo toma nota. 😌✨",
       "insight": "Aprobación breve que Fernando considera apta para un remate cómplice.",
       "approval_state": "Aprobada",
-      "publication_status": "Pendiente_Publicacion",
+      "publication_status": "Respondido",
       "approval_recorded_at": "2026-08-25T18:45:08+00:00",
-      "approved_by": "Fernando"
+      "approved_by": "Fernando",
+      "response_status": "Respondido",
+      "publication_count": 1
     },
     {
       "comment_id": "122151376011072582_1633124508149465",
@@ -107,9 +119,11 @@
       "proposed_reply": "Y nosotros encantados de que lo ames. 😌✨",
       "insight": "Aprobación breve con oportunidad de reciprocidad de marca.",
       "approval_state": "Aprobada",
-      "publication_status": "Pendiente_Publicacion",
+      "publication_status": "Respondido",
       "approval_recorded_at": "2026-08-25T18:45:08+00:00",
-      "approved_by": "Fernando"
+      "approved_by": "Fernando",
+      "response_status": "Respondido",
+      "publication_count": 1
     },
     {
       "comment_id": "122151376011072582_1382951430696782",
@@ -120,9 +134,11 @@
       "proposed_reply": "Esa tiene pinta de ir directo a la playlist. ❤️🎶",
       "insight": "Referencia musical incompleta, pero con una respuesta que abre una segunda interacción.",
       "approval_state": "Aprobada",
-      "publication_status": "Pendiente_Publicacion",
+      "publication_status": "Respondido",
       "approval_recorded_at": "2026-08-25T18:45:08+00:00",
-      "approved_by": "Fernando"
+      "approved_by": "Fernando",
+      "response_status": "Respondido",
+      "publication_count": 1
     }
   ],
   "context_review": [
@@ -197,5 +213,9 @@
     }
   ],
   "approval_recorded": true,
-  "approved_pending_publication_count": 8
+  "approved_pending_publication_count": 8,
+  "published_additional_count": 8,
+  "verified_additional_count": 8,
+  "pending_proposal_count": 0,
+  "publication_record": "Operations/Research/2026-08-25_18-51-09_Facebook_Additional_Publication_Record.json"
 }

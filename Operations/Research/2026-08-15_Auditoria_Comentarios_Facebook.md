@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "7.2"
+version: "7.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -1451,3 +1451,12 @@ Fernando aprobó explícitamente las ocho propuestas adicionales surgidas de la 
 La cola de publicación posterior contiene ocho propuestas aprobadas. Los casos `Te lo pro meto` y `Las cesareadas por ahí no paso nada! 🫢` no forman parte de ese lote: permanecen como `Revisar_Contexto` hasta confirmar el significado del comentario. El comentario sexualizado y las cuatro reacciones aisladas permanecen `No_Requiere_Respuesta`. Evidencia: `Operations/Research/2026-08-25_18-45-08_Facebook_Additional_Engagement_Approval.json/.md`, `Operations/Research/2026-08-25_18-34-06_Facebook_Additional_Engagement_Review.json/.md` y `Operations/Research/2026-08-25_18-34-06_Facebook_Pending_Queue_After_Current_Queue_Publication.json`.
 
 **Regla de seguridad:** esta aprobación no incluye los dos casos de contexto ni las cinco no acciones y no ejecuta publicación automáticamente. Cuando Fernando solicite publicar el lote, se debe realizar un nuevo preflight GET-only, bloquear duplicados o conflictos y verificar cada respuesta tras el POST. **Documentos relacionados:** `Operations/Research/2026-08-15_Community_Engagement_Log.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 51. Publicación verificable del lote adicional — 25 de agosto de 2026
+
+Fernando autorizó publicar las ocho propuestas aprobadas. El preflight GET-only consultó los ocho comentarios y sus respuestas, encontró **0 duplicados** y **0 conflictos**. Meta Graph API v26.0 confirmó **8/8 publicadas y verificadas**, todas con parent directo, texto exacto, autoría de la Página e `is_hidden=false`. No se ejecutaron publicaciones fuera del conjunto autorizado. Evidencia: `Operations/Research/2026-08-25_18-49-39_Facebook_Additional_Publication_Preflight.json`, `Operations/Research/2026-08-25_18-49-39_Facebook_Additional_Publication.json` y `Operations/Research/2026-08-25_18-51-09_Facebook_Additional_Publication_Record.json/.md`.
+
+El ledger actualizó las ocho filas a `Respuesta_Estado=Respondido`, `Aprobacion_Estado=Aprobada`, con sus `Respuesta_Meta_ID` y `Respuesta_Fecha`; mantiene `Privacidad=Anonimizado`, **612 filas / 612 IDs únicos** y validación `PASS`. La cola posterior quedó con **0 propuestas pendientes**, **2 casos `Revisar_Contexto`** y **5 no acciones**. Evidencia: `Operations/Research/2026-08-25_18-51-09_Facebook_Pending_Queue_After_Additional_Publication.json`.
+
+**Documentos relacionados:** `Operations/Research/2026-08-15_Community_Engagement_Log.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
