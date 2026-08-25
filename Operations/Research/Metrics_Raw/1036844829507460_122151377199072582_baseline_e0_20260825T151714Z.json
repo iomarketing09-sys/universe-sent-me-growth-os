@@ -1,0 +1,37 @@
+{
+  "captured_at_utc": "2026-08-25T15:17:14.978980Z",
+  "meta_post_id": "1036844829507460_122151377199072582",
+  "snapshot_type": "baseline_e0",
+  "http_status": 200,
+  "publication_event": {
+    "meta_post_id": "1036844829507460_122151377199072582",
+    "publicacion_id": "PUB-FB-17_30-44",
+    "experiment_id": "EXP-2026-08-CAL-01",
+    "id_pieza": "Universe - Existencial 2607831.png",
+    "cnt": "",
+    "platform": "Facebook",
+    "account_id": "1036844829507460",
+    "is_published": true,
+    "created_time": "2026-08-25T15:00:22+0000"
+  },
+  "payload": {
+    "created_time": "2026-08-25T15:00:22+0000",
+    "reactions": {
+      "data": [],
+      "summary": {
+        "total_count": 2,
+        "viewer_reaction": "NONE"
+      }
+    },
+    "comments": {
+      "data": [],
+      "summary": {
+        "order": "ranked",
+        "total_count": 1,
+        "can_comment": true
+      }
+    },
+    "id": "1036844829507460_122151377199072582"
+  },
+  "hook_run_id": "20260825T151714Z"
+}

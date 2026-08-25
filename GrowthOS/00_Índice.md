@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-25
-**Versión:** 7.7
+**Versión:** 7.8
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -54,7 +54,7 @@
 | [Análisis semanal 16–22 de agosto](../Operations/Research/2026-08-22_Analisis_Semanal_20260816_20260822.md) | Primer cierre general bajo el ciclo domingo–sábado; resume 42 publicaciones de Facebook, separa imágenes/Reels y distingue concentración de outliers de señales operativas. | Active |
 | [Auditoría ejecutiva del Growth OS: estado y prioridades](../Operations/Research/2026-08-22_Auditoria_Ejecutiva_GrowthOS_Estado_y_Prioridades.md) | Vista global actualizada del sistema: estado operativo supervisado 3/5, conectividad real, áreas activas, inmaduras, bloqueadas y pendientes P0–P2. | Active |
 | [Evidencia de conectividad y operación](../Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json) | Snapshot sanitizado de conectores, schedules, validadores y ledgers observado el 24 de agosto de 2026. | Active |
-| [Revisión del pipeline de publicación post-P0](../Operations/Research/2026-08-25_Revision_Pipeline_Publicacion_Post_P0.md) | Revisión actual: 33 posts futuros reconciliados con Meta, Instagram legible, ledger de snapshots válido pero sin E0 productivo y sin worker E24/E72. | Active |
+| [Revisión del pipeline de publicación post-P0](../Operations/Research/2026-08-25_Revision_Pipeline_Publicacion_Post_P0.md) | Revisión actual: 33 posts futuros reconciliados con Meta, Instagram legible, ledger de snapshots válido, pero sin E0 productivo canónico y sin worker E24/E72 habilitado. | Active |
 | [Evidencia de revisión del pipeline post-P0](../Operations/Research/2026-08-25_Pipeline_Post_P0_Review_Evidence.json) | Snapshot estructurado de la cola Meta, feed, reconciliación local, Instagram y cobertura de ledgers. | Active |
 | [Evidencia del smoke test de Instagram](../Operations/Research/2026-08-25_Instagram_Route_Smoke_Test.json) | Confirma cuenta USM activa, identidad, cuota y lectura de cinco posts sin publicar contenido. | Active |
 | [Evidencia de activación del Metrics Snapshot Log](../Operations/Research/2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json) | Confirma ledger P0, módulo E0, validador, prueba E0/E24 e idempotencia en ledger temporal. | Active |
@@ -68,7 +68,8 @@
 | [Reconciliador Experiment Log–Publication Log](../Operations/Automation/reconcile_experiment_log_from_publication.py) | Actualiza solo el estado de publicación experimental; preserva métricas y veredictos. | Active |
 | [Evidencia de avance de pendientes prioritarios](../Operations/Research/2026-08-25_Priority_Pipeline_Progress_Evidence.json) | Registra las pruebas E0/E24/E72 y las reconciliaciones aplicadas después del P0. | Active |
 | [Simulación aislada del pipeline E0 a E72](../Operations/Research/2026-08-25_Simulacion_Pipeline_E0_E72_Evidence.json) | Prueba completa con post sintético: E0, E24, E72, deltas, raw, idempotencia y aislamiento del ledger productivo. | Active |
-| [Preparación del primer caso productivo E0→E72](../Operations/Research/2026-08-25_First_Productive_Case_Preparation_Evidence.json) | Identifica el siguiente post aprobado y registra el control posterior preparado; espera confirmación real `is_published=true` sin modificar la cola. | Active |
+| [Preparación del primer caso productivo E0→E72](../Operations/Research/2026-08-25_First_Productive_Case_Preparation_Evidence.json) | Identifica el post aprobado y documenta el control posterior; Meta confirmó la publicación, pero el intento E0 quedó no canónico por `shares` ausente y fuera de tolerancia. | Active |
+| [Evidencia de ejecución del primer caso productivo E0](../Operations/Research/2026-08-25_First_Productive_Case_E0_Execution_Evidence.json) | Resultado sanitizado de Meta y del hook E0: snapshot `MS-8096357E6473C74A7D4B` registrado como `Anomaly/missing_counter`; validador PASS, cero E0 válidos y E24/E72 bloqueados. | Active |
 | [Runner de simulación E0 a E72](../Operations/Automation/simulate_pipeline_e0_e72.py) | Ejecuta el replay reproducible con ledger temporal y payloads Meta-shaped; nunca llama ni escribe en Meta. | Active |
 | [Propuesta de ciclo semanal domingo–sábado](../Operations/Research/2026-08-22_Propuesta_Ciclo_Semanal_Domingo_Sabado.md) | Regla activa para cerrar el reporte el sábado e iniciar el ciclo operativo el domingo; distingue organización del aprendizaje de la hipótesis aún no demostrada sobre el rendimiento dominical. | Active |
 | [Análisis diario por familias y personajes — 22 de agosto](../Operations/Research/2026-08-22_Analisis_Corte_Diario_Familias_Personajes.md) | Interpreta shares, comentarios, clasificación provisional y estado de TAX-02, HUM-06, HUM-02 y Motion + POV/Meme sin atribuir causalidad. | Active |

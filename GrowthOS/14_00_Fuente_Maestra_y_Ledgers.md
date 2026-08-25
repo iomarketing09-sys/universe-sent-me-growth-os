@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "2.59"
+version: "2.60"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -25,6 +25,7 @@ related_documents:
   - "Operations/Automation/record_metrics_snapshot.py"
   - "Operations/Automation/validate_metrics_snapshot_ledger.py"
   - "Operations/Research/2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json"
+  - "Operations/Research/2026-08-25_First_Productive_Case_E0_Execution_Evidence.json"
   - "Operations/Research/2026-08-25_Instagram_Route_Smoke_Test.json"
   - "Operations/Research/2026-08-25_Pipeline_Post_P0_Review_Evidence.json"
   - "Operations/Research/2026-08-25_Revision_Pipeline_Publicacion_Post_P0.md"
@@ -487,3 +488,11 @@ La tarea recurrente `Revisión Facebook USM — cadencia focalizada` queda como 
 El proceso puede usar únicamente los conectores `Universe Sent Me Meta API` y `GitHub`. La salida operativa es una vista derivada: delta por cursor, comentarios raíz, réplicas, propuestas, no acción y reporte fechado. El ledger factual sigue siendo append-only y anonimizado; si no hay novedades, la tarea informa cero y no modifica la cola.
 
 El contrato de seguridad prohíbe POST, PUT, DELETE, publicación, ocultamiento o modificación en Meta. Las propuestas quedan para revisión de Fernando; una aprobación anterior no se reutiliza. Cada lote publicable requiere autorización explícita posterior y verificación individual. **Schedule ID:** `4i8525UwBbh8mk84iZZ42Y`. **Estado:** Active, prueba temporal de siete días.
+
+## 26. Primer caso productivo E0 — resultado no canónico — 2026-08-25
+
+Meta confirmó el Page Post ID `1036844829507460_122151377199072582` como publicado (`is_published=true`) con `created_time=2026-08-25T15:00:22+0000`. El hook `Operations/Automation/capture_e0_after_publish.py` se ejecutó sin replay a las `2026-08-25T15:17:14.978980Z` y creó el snapshot `MS-8096357E6473C74A7D4B` para `PUB-FB-17_30-44` / `EXP-2026-08-CAL-01`.
+
+El snapshot se conserva en `Metrics_Snapshot_Log.csv` como evidencia `Window_Status=Anomaly` y `Anomaly_Code=missing_counter`: Meta devolvió reacciones `2`, comentarios `1` y `shares=null`. El capture ocurrió **1,012.979 segundos** después de `created_time`, fuera de la tolerancia contractual de ±600 segundos. El validador estructural devuelve `PASS`, pero `valid_e0_posts=0`; por tanto, este registro no es un E0 canónico y no habilita el worker E24/E72. No se convirtió `shares` a cero ni se hizo backfill histórico.
+
+La publicación, la cola, `Publication_Log.csv` y `ExperimentLog.csv` no fueron modificados por esta ejecución. La evidencia sanitizada, incluyendo el resultado de Meta, el snapshot, el raw y la decisión de bloqueo de ventanas posteriores, está en `Operations/Research/2026-08-25_First_Productive_Case_E0_Execution_Evidence.json`. Se requiere una decisión operativa para abrir una nueva oportunidad de baseline válida o mantener este caso como evidencia no canónica; no se debe reintentar con una hora histórica inventada.

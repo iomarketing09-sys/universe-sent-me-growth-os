@@ -4,7 +4,7 @@
   "status": "Active",
   "created": "2026-08-25",
   "updated": "2026-08-25",
-  "version": "1.0",
+  "version": "1.1",
   "author": "Manus AI (CGO)",
   "organization": "Operations/Research/",
   "related_documents": [
@@ -55,7 +55,7 @@
     "cron": "0 10 10 25 8 *",
     "timezone": "America/Matamoros",
     "expire_at": "2026-08-25T15:30:00Z",
-    "status": "active",
+    "status": "fired_with_capture_anomaly",
     "run_mode": "full_auto",
     "scheduled_check_local": "2026-08-25T10:10:00-05:00",
     "scheduled_check_utc": "2026-08-25T15:10:00Z",
@@ -64,9 +64,14 @@
   },
   "execution_state": {
     "e0_recorded": false,
+    "e0_attempted": true,
+    "e0_snapshot_id": "MS-8096357E6473C74A7D4B",
+    "e0_window_status": "Anomaly",
+    "e0_anomaly_code": "missing_counter",
+    "meta_confirmed_published": true,
     "e24_recorded": false,
     "e72_recorded": false,
-    "waiting_for_meta_confirmation": true,
-    "next_required_evidence": "Meta response with is_published=true and created_time for the selected Meta_Post_ID."
+    "waiting_for_meta_confirmation": false,
+    "next_required_evidence": "A policy decision or a new compliant baseline opportunity is required; do not backfill this E0 because Meta omitted shares and the capture was outside the approved ±600 second tolerance."
   }
 }
