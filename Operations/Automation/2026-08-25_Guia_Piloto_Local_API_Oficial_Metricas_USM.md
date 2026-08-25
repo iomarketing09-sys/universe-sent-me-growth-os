@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.7"
+version: "1.8"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -120,6 +120,20 @@ El validador recibe `USM_META_USER_ACCESS_TOKEN` únicamente desde el entorno de
 Fernando cargó temporalmente el token depurado ya aprobado de Meta en Xubuntu y ejecutó el validador. El resultado fue `status = validated`, `facebook_connection = validated` e `instagram_connection = validated`. La prueba acredita únicamente que la app aprobada de Universe Sent Me puede identificar la página Facebook prevista y la cuenta profesional Instagram vinculada, bajo solicitudes `GET` y con el token local.
 
 No se solicitaron permisos nuevos, no se crearon aplicaciones nuevas, no se consultaron publicaciones, comentarios, mensajes o insights y no se modificaron ledgers, Google Sheets, OmniRoute, contenido o cuentas de otras marcas. Un futuro collector de métricas debe conservar estas mismas restricciones y pasar un gate separado de revisión antes de leer media o insights.
+
+### Contrato de collectors Meta privados — lectura nativa únicamente
+
+Los collectors Meta se limitarán a capturas manuales de acumulados nativos por publicación o media, sin inferir ventanas E0/E24/E72 ni solicitar insights. Para Facebook se consultará el feed de la página de Universe Sent Me con `GET`, filtrando registros publicados y solicitando solamente `id`, `created_time`, `is_published`, agregados de reacciones y comentarios, y `shares`. No se solicitarán `message`, enlaces, autores, perfiles, adjuntos, media URLs o datos de personas. Meta exige `pages_read_engagement` y `pages_read_user_content` para leer el feed propio de una página. [1]
+
+Para Instagram se consultarán únicamente las media de la cuenta profesional enlazada, mediante `GET`, con `id`, `timestamp`, `media_type`, `media_product_type`, `like_count`, `comments_count`, y, cuando Meta los devuelva, `saved_count`, `shares_count`, `total_like_count`, `total_comments_count`, `total_views_count` y `reposts_count`. No se pedirán caption, media URL, permalink, comentarios, mensajes o insights. Los contadores pueden faltar por configuración de visibilidad, tipo de media o limitaciones de la API; el collector conservará esas ausencias como `not_available`, nunca como cero. La lectura de media con Facebook Login requiere `instagram_basic` y `pages_read_engagement`. [2]
+
+Cada collector usará como máximo 25 registros por plataforma por ejecución, guardará raw estrictamente bajo `~/.local/share/usm-metrics/evidence/`, imprimirá solo un resumen no sensible y verificará que la marca sea Universe Sent Me. Los scripts no podrán realizar POST, PUT, PATCH o DELETE, ni escribir en el repositorio, Google Sheets, ledgers, OmniRoute, contenido, comentarios, calendarios o cualquier activo de otras marcas.
+
+## Referencias
+
+[1] [Meta Page Feed Reference](https://developers.facebook.com/docs/graph-api/reference/page/feed/)
+
+[2] [Meta Instagram Media Reference](https://developers.facebook.com/documentation/instagram-platform/reference/instagram-media)
 
 ## Estado del documento
 
