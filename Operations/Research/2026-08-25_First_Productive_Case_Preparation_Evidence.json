@@ -39,6 +39,16 @@
     "source_status": "Programada",
     "selection_rule": "Earliest future approved post returned by Meta scheduled_posts and matched to the local Publication_Log."
   },
+  "prepublication_check": {
+    "queried_at_utc": "2026-08-25T02:27:11Z",
+    "meta_post_id": "1036844829507460_122151377199072582",
+    "is_published": false,
+    "created_time_returned_by_meta": "2026-08-25T15:00:00+0000",
+    "reactions": 0,
+    "comments": 0,
+    "shares": null,
+    "interpretation": "The post remained scheduled before its configured publication time; no E0 snapshot was eligible and no ledger write was performed."
+  },
   "post_publication_control": {
     "schedule_task_uid": "P9iKuQHRgO56wVd7MSBJ5o",
     "schedule_name": "USM: capturar E0 del próximo post aprobado",
