@@ -8,14 +8,14 @@
 
 **Última actualización:** 2026-08-24
 
-**Versión:** 4.2
+**Versión:** 4.3
 
 **Autor:** Manus AI
 
 **Organización:** `Operations/Production`
 
 **Documentos relacionados:** [`2026-08-18_Piloto_Local_OmniRoute_Seguro.md`](2026-08-18_Piloto_Local_OmniRoute_Seguro.md), [`2026-08-19_Decision_Gateway_IA_OmniRoute.md`](2026-08-19_Decision_Gateway_IA_OmniRoute.md), [`2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md`](2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md), [`2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md`](2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md) y [`2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md`](2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md).
-**Documentos relacionados:** [`2026-08-18_Piloto_Local_OmniRoute_Seguro.md`](2026-08-18_Piloto_Local_OmniRoute_Seguro.md), [`2026-08-19_Decision_Gateway_IA_OmniRoute.md`](2026-08-19_Decision_Gateway_IA_OmniRoute.md), [`2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md`](2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md), [`2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md`](2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md), [`2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md`](2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md), [`2026-08-25_Propuesta_Cotizacion_Migracion_Mantenimiento_Firma_Bordados.md`](2026-08-25_Propuesta_Cotizacion_Migracion_Mantenimiento_Firma_Bordados.md), [`2026-08-25_Auditoria_Gate3_Dominio_DNS_Firma_Bordados.md`](2026-08-25_Auditoria_Gate3_Dominio_DNS_Firma_Bordados.md) y [`2026-08-25_Gate4_Aprobacion_Contenido_Produccion_Firma_Bordados.md`](2026-08-25_Gate4_Aprobacion_Contenido_Produccion_Firma_Bordados.md).
+**Documentos relacionados:** [`2026-08-18_Piloto_Local_OmniRoute_Seguro.md`](2026-08-18_Piloto_Local_OmniRoute_Seguro.md), [`2026-08-19_Decision_Gateway_IA_OmniRoute.md`](2026-08-19_Decision_Gateway_IA_OmniRoute.md), [`2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md`](2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md), [`2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md`](2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md), [`2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md`](2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md), [`2026-08-25_Propuesta_Cotizacion_Migracion_Mantenimiento_Firma_Bordados.md`](2026-08-25_Propuesta_Cotizacion_Migracion_Mantenimiento_Firma_Bordados.md), [`2026-08-25_Auditoria_Gate3_Dominio_DNS_Firma_Bordados.md`](2026-08-25_Auditoria_Gate3_Dominio_DNS_Firma_Bordados.md), [`2026-08-25_Gate4_Aprobacion_Contenido_Produccion_Firma_Bordados.md`](2026-08-25_Gate4_Aprobacion_Contenido_Produccion_Firma_Bordados.md) y [`2026-08-25_Gate6_Revision_Tecnica_Visual_Produccion_Firma_Bordados.md`](2026-08-25_Gate6_Revision_Tecnica_Visual_Produccion_Firma_Bordados.md).
 
 ---
 
@@ -231,6 +231,8 @@ El último paso no es técnico: el cliente confirma por escrito que el dominio s
 La auditoría pasiva del Gate 3 registró que `firmabordados.com` usa `ns14.wixdns.net` y `ns15.wixdns.net`, con tres A en el root y CNAME `www`, `es` y `m` dirigidos a Wix. Io Marketing confirmó que figura como registrante, autoridad autorizada para cambios y pagador de la renovación de $470 MXN el 19 de febrero; el cliente confirmó que no hay servicios ligados al dominio. La URL canónica de producción será el root y las variantes `www`, `es` y `m` se proponen como redirecciones al root tras el corte. El registro RDAP público indica vencimiento el 2027-02-19. El Gate 3 queda listo documentalmente; el cambio de nameservers Cloudflare sigue bloqueado hasta recibir una aprobación explícita de corte.
 
 La revisión del Gate 4 confirma que servicios, catálogos, activos, contacto y privacidad para correo guiado se sostienen en fuentes aprobadas. Fernando aprobó el contenido para producción, confirmó «20+ años» y autorizó retirar/ocultar el piloto Formspree y sustituir el texto de staging del footer durante la preparación técnica de producción. El Gate 4 queda cerrado documentalmente; no se agregan materiales, certificaciones, precios, disponibilidad ni proveedores nuevos. El detalle está en `2026-08-25_Gate4_Aprobacion_Contenido_Produccion_Firma_Bordados.md`.
+
+El Gate 6 validó técnicamente el staging: inicio, privacidad, robots, los tres catálogos, headers de seguridad, bloqueo de indexación y build TypeScript/Vite. No se identificó una falla técnica severa. La revisión visual manual sigue pendiente en Quick-seedless y es el único requisito restante para cerrar este gate; no autoriza por sí misma indexación, nameservers ni corte de producción.
 
 ### Modelo de operación administrada confirmado
 
