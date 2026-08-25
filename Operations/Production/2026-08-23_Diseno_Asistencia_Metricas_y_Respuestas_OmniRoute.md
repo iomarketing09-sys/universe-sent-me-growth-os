@@ -4,7 +4,7 @@ purpose: "Definir cómo OmniRoute puede analizar resúmenes métricos ya normali
 status: Review
 created: 2026-08-23
 updated: 2026-08-25
-version: "1.7"
+version: "1.8"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-19_Decision_Gateway_IA_OmniRoute.md"
@@ -327,6 +327,8 @@ iO Marketing administra la cuenta compartida de Windsor.ai y las marcas Bam in a
 | Vistas derivadas y OmniRoute | Las pestañas solo pueden contener filas `brand = Universe Sent Me`; los briefs para el modelo omiten cualquier dato de otras marcas. |
 
 Esta regla actualiza la interpretación de la prueba: la existencia de una cuenta administradora `io.marketing` no identifica por sí misma el canal de YouTube de Universe Sent Me. La identificación debe basarse en el canal o la cuenta de marca concreta, no en el correo administrativo.
+
+Fernando confirmó que `https://www.youtube.com/@Bam_in_a_can` corresponde a **Bam in a Can**. La conexión de YouTube asociada a esa marca queda marcada como excluida del loop de Universe Sent Me. No se consultaron métricas, publicaciones ni metadatos del canal durante esta identificación; se espera la URL o handle específico de Universe Sent Me para continuar.
 
 ## Referencias
 
