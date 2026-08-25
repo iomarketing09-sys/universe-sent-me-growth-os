@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.2"
+version: "1.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -88,6 +88,12 @@ Si el sandbox o la interfaz local no están listos, se debe guardar el formulari
 Fernando proporcionó evidencia visual de la configuración Sandbox. El producto visible es **Login Kit**; el modal de productos no muestra otros productos activos. La lista de scopes presenta únicamente `user.info.basic` —incluido por Login Kit— y `video.list`. El redirect URI de Desktop es exactamente `http://127.0.0.1:8765/callback/`. En `Target Users` aparece un único registro: `universe.sent.me`, atribuido por Fernando a Universe Sent Me.
 
 La siguiente prueba no presupone que el acceso esté operativo: el autorizador local debe confirmar el scope devuelto y el collector debe comprobar una llamada de lectura a `video.list`. Si TikTok devuelve que falta habilitar un producto o permiso, se detiene la ejecución, se documenta el error y se revisa el Sandbox; no se añaden alternativas de escritura, contenidos, mensajería, anuncios o cuentas de otras marcas.
+
+### Autorización local confirmada — 25 de agosto de 2026
+
+El flujo Desktop con PKCE se completó para el usuario objetivo de Sandbox. El autorizador local confirmó `status = authorized`, `brand = Universe Sent Me` y el scope exacto `user.info.basic,video.list`. El primer intento se detuvo antes del consentimiento porque TikTok rechazó el identificador de cliente; no produjo token. Tras verificar que se usaban las credenciales de la app correcta, TikTok entregó el callback local y el script guardó el token únicamente en la ruta privada configurada fuera del repositorio.
+
+La autorización no es evidencia de lectura de métricas todavía. El próximo comando debe usar el collector para comprobar `video.list` de forma local; se conservará el resultado crudo solo como evidencia privada y no se actualizarán ledgers, Google Sheets, OmniRoute, calendarios ni contenido hasta una revisión humana posterior.
 
 ## Estado del documento
 

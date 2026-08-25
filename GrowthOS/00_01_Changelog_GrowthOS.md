@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.60
+**Versión:** 4.61
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.61.00] — 2026-08-25 (Fernando/Manus): OAuth Desktop/PKCE Sandbox de TikTok autorizado con scopes mínimos.** Tras corregir un primer rechazo de identificador de cliente que no generó token, Fernando completó el consentimiento del Target User de Universe Sent Me. El autorizador local devolvió `status=authorized`, `brand=Universe Sent Me` y `scope=user.info.basic,video.list`; el token se guardó únicamente fuera del repositorio con permisos privados. El entorno Python local fue reparado al instalar el soporte estándar de venv/pip y confirmó `requests` disponible. No se expusieron credenciales, tokens, URLs de autorización o respuestas crudas; no se invocó `video.list` todavía, no se escribieron ledgers/Sheets/OmniRoute y no hubo publicaciones, comentarios, mensajes, anuncios ni otras marcas. Siguiente gate: lectura local única mediante el collector y validación de respuesta. Documento actualizado: `Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md` v1.3.
 
 - **[4.60.00] — 2026-08-25 (Manus): E0 de PUB-FB-17_30-47 ejecutado con tres intentos dentro de la ventana, pero bloqueado por `shares` ausente.** Meta confirmó `is_published=true` y `created_time=2026-08-25T21:00:07+0000`. El hook se ejecutó sin replay a los 324.231, 443.148 y 534.813 segundos; Meta omitió `shares` en las tres respuestas. Se registraron `MS-3B8CF33A64774426A423`, `MS-E6733B5227BADB8DE5B5` y `MS-06296EABD6D618E9A23F`, todos `Anomaly/missing_counter`; no se inventó `shares=0`. El ledger queda en 5 filas (`Anomaly=4`, `Late=1`), 0 `Valid_E0`, validación `PASS`, sin duplicados ni errores. E24/E72 permanecen bloqueados. El control se pausó después del tercer intento para evitar una cuarta anomalía. No se modificó contenido, programación, cola, `Publication_Log.csv` ni `ExperimentLog.csv`. Evidencia: `Operations/Research/2026-08-25_PUB-FB-17_30-47_E0_Execution_Evidence.json`.
 
