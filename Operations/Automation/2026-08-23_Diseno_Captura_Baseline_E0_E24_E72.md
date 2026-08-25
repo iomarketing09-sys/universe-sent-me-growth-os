@@ -4,11 +4,11 @@
 
 **Estado:** Review
 **Fecha de creación:** 2026-08-23
-**Última actualización:** 2026-08-23
-**Versión:** 1.0
+**Última actualización:** 2026-08-25
+**Versión:** 1.1
 **Autor:** Manus AI (CGO)
 **Organización:** `Operations/Automation/`
-**Documentos relacionados:** `../Research/2026-08-17_Investigacion_Ventanas_Temporales_Meta.md`, `../Research/2026-08-17_Protocolo_P0_Metricas_y_Veredictos.md`, `../Research/2026-08-22_Reels_Metric_Instrumentation_Protocol.md`, `../../GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`, `../../GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `../../GrowthOS/08_00_Metricas_Baseline_Plataformas.md`, `../Research/2026-08-15_Publication_Log.csv`, `../Research/2026-08-15_ExperimentLog.csv`
+**Documentos relacionados:** `../Research/2026-08-17_Investigacion_Ventanas_Temporales_Meta.md`, `../Research/2026-08-17_Protocolo_P0_Metricas_y_Veredictos.md`, `../Research/2026-08-22_Reels_Metric_Instrumentation_Protocol.md`, `../../GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`, `../../GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `../../GrowthOS/08_00_Metricas_Baseline_Plataformas.md`, `../Research/2026-08-15_Publication_Log.csv`, `../Research/2026-08-15_ExperimentLog.csv`, `../Research/Metrics_Snapshot_Log.csv`, `record_metrics_snapshot.py`, `validate_metrics_snapshot_ledger.py`, `../Research/2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json`, `../Research/2026-08-25_Instagram_Route_Smoke_Test.json`
 
 ---
 
@@ -29,7 +29,7 @@ El baseline se toma **después de confirmar la publicación real**, no cuando se
 
 > Un snapshot lifetime actual es evidencia del estado en el momento de la captura. Solo se convierte en E0, E24 o E72 cuando conserva `captured_at_utc`, `published_at_utc`, el ID nativo, la fuente, los contadores crudos y el estado de tolerancia correspondiente.
 
-Este diseño permanece en **Review**. No activa schedules, no modifica el publicador de Fernando y no autoriza publicaciones hasta que Fernando apruebe la ruta, las tolerancias y el esquema.
+El diseño completo permanece en **Review**: no activa schedules, no modifica el publicador de Fernando y no autoriza publicaciones. El bloque P0 de ledger y captura reproducible quedó implementado de forma acotada el 2026-08-25, con `Metrics_Snapshot_Log.csv`, el módulo `record_metrics_snapshot.py` y su validador. El hook posterior a una publicación real, el worker E24/E72 y la automatización recurrente permanecen pendientes de integración y decisión operativa.
 
 ## 2. Punto de enganche en el sistema actual
 
@@ -197,20 +197,28 @@ La automatización debe priorizar lo repetitivo y de mayor impacto:
 
 El ahorro semanal debe medirse durante un piloto de tres a cinco publicaciones: registrar cuántos reintentos manuales, reconciliaciones y sesiones de recuperación evita el flujo. No se debe afirmar un ahorro horario antes de observar esa cohorte.
 
-## 10. Plan de piloto sin activación automática todavía
+## 10. Estado de implementación P0 y límites actuales
+
+El P0 de registro quedó activo como componente reproducible: `Operations/Research/Metrics_Snapshot_Log.csv` contiene el encabezado aprobado; `Operations/Automation/record_metrics_snapshot.py` puede leer un payload guardado o consultar Meta con `META_PAGE_ACCESS_TOKEN`, escribir un raw por intento y registrar E0/E24/E72/observed_lifetime; y `Operations/Automation/validate_metrics_snapshot_ledger.py` comprueba esquema, campos, duplicados, raw, E0 y deltas. La evidencia de pruebas está en `Operations/Research/2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json`.
+
+La prueba aislada registró un E0, un retry `no-op` y un E24 en un ledger temporal; el ledger productivo permanece con cero snapshots porque no se debe fabricar un E0 histórico. El siguiente post nuevo que pase por una ruta Meta verificable debe ejecutar el módulo inmediatamente después de confirmar `is_published=true` y producir la primera fila de producción.
+
+La activación P0 **no incluye todavía** el hook dentro del publicador de Fernando, el worker por `Target_At_UTC`, una tarea recurrente, una suscripción Webhook ni la actualización automática de `Publication_Log.csv`/`ExperimentLog.csv`. Esos componentes siguen en las prioridades P1–P4 y requieren pruebas separadas.
+
+## 11. Plan de piloto sin activación automática todavía
 
 El piloto propuesto es deliberadamente acotado:
 
-1. Fernando aprueba la alternativa de implementación, las tolerancias y el nombre definitivo de `Metrics_Snapshot_Log.csv`.
-2. Se implementa E0 para publicaciones de Facebook que pasen por el publicador actual; no se toca Instagram, TikTok ni la publicación de respuestas de comunidad.
-3. Se prueban tres casos inmediatos y, si existe una programación futura, un caso programado. Cada caso debe conservar Page Post ID, `created_time`, `is_published`, counters, raw y estado.
+1. El esquema y la implementación P0 de `Metrics_Snapshot_Log.csv` quedan registrados; las tolerancias propuestas siguen sujetas a revisión operativa antes de convertirlas en reglas permanentes.
+2. Se usa el módulo P0 para publicaciones de Facebook que pasen por una ruta Meta verificable; no se toca Instagram, TikTok ni la publicación de respuestas de comunidad.
+3. Se prueban tres casos reales nuevos y, si existe una programación futura, un caso programado. Cada caso debe conservar Page Post ID, `created_time`, `is_published`, counters, raw y estado.
 4. Se ejecutan validaciones de duplicados, IDs, timestamps, counters faltantes y `counter_decreased`.
-5. Tras el piloto se decide si ampliar a E24/E72 con worker frecuente y si vale la pena la suscripción Webhook.
-6. Solo después de una prueba exitosa se actualizan el protocolo P0, el pipeline de publicación, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y el changelog con la versión implementada.
+5. Tras el piloto se decide si integrar el hook al publicador, ampliar a E24/E72 con worker frecuente y si vale la pena la suscripción Webhook.
+6. La implementación P0 ya está documentada en el pipeline, la fuente maestra, el changelog y `2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json`; las siguientes actualizaciones dependerán de capturas productivas reales.
 
 No se debe reutilizar el lote histórico de 2026-08-15 a 2026-08-23 para fabricar E0. Ese lote permanece `Unavailable_No_Baseline` y sigue siendo válido únicamente como evidencia de la limitación.
 
-## 11. Coherencia documental
+## 12. Coherencia documental
 
 Este documento representa un diseño nuevo y enlaza con la investigación metodológica, el protocolo P0, el pipeline de publicación y la arquitectura de ledgers. Mientras permanezca en `Review`, los documentos relacionados deben conservar sus reglas actuales: lifetime separado de 24/72, publicación con aprobación humana y ningún scheduler nuevo activado. Si Fernando aprueba la implementación, deberán actualizarse como mínimo `Operations/Research/2026-08-17_Investigacion_Ventanas_Temporales_Meta.md`, `Operations/Research/2026-08-17_Protocolo_P0_Metricas_y_Veredictos.md`, `GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `Operations/Research/2026-08-22_Reels_Metric_Instrumentation_Protocol.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
 

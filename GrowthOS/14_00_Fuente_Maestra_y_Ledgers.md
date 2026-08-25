@@ -3,8 +3,8 @@ title: "Fuente maestra y ledgers del Growth OS"
 purpose: "Definir una arquitectura mínima y unificada para que inventario, publicaciones, calendarios y aprendizaje compartan IDs sin duplicar datos ni repetir consultas innecesarias."
 status: Active
 created: 2026-08-15
-updated: 2026-08-24
-version: "2.51"
+updated: 2026-08-25
+version: "2.52"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -18,6 +18,11 @@ related_documents:
   - "Operations/Production/extract_metrics_24_72.py"
   - "Operations/Production/extract_metrics_24_72_playbook.md"
   - "Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md"
+  - "Operations/Research/Metrics_Snapshot_Log.csv"
+  - "Operations/Automation/record_metrics_snapshot.py"
+  - "Operations/Automation/validate_metrics_snapshot_ledger.py"
+  - "Operations/Research/2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json"
+  - "Operations/Research/2026-08-25_Instagram_Route_Smoke_Test.json"
   - "Operations/Research/2026-08-15_Reconciliacion_Publicaciones_15_16_CNT.md"
   - "GrowthOS/00_Índice.md"
   - "Operations/Research/2026-08-17_Instagram_Publicacion_260633.json"
@@ -243,9 +248,17 @@ El flujo económico queda así: un corte diario alimenta el aprendizaje operativ
 
 ### 5.1 Estado de conectividad y materialización observado el 24 de agosto de 2026
 
-La auditoría de conectividad confirma que la arquitectura de ledgers está vigente, pero no todos sus puntos de entrada están operativos en la configuración actual. `Metrics_Snapshot_Log.csv` todavía no existe, por lo que E0/E24/E72 no se pueden capturar como ledger append-only y las columnas temporales del `Publication_Log`/`ExperimentLog` permanecen vacías bajo el contrato correcto. El conector `Universe Sent Me Meta API` existe con credencial cifrada, pero está deshabilitado; Instagram está habilitado con tres cuentas conocidas y ninguna cuenta activa; Meta Ads Manager aparece habilitado pero la llamada devuelve `not connected`; Google Calendar no tiene scopes suficientes; y no existe un schedule recurrente activo en la sesión auditada.
+La auditoría de conectividad confirma que la arquitectura de ledgers está vigente, pero no todos sus puntos de entrada están operativos en la configuración actual. `Metrics_Snapshot_Log.csv` ya existe con el encabezado aprobado y un validador P0, pero todavía no contiene capturas productivas; por ello E0/E24/E72 aún no se han materializado en el ledger y las columnas temporales del `Publication_Log`/`ExperimentLog` permanecen vacías bajo el contrato correcto. El conector `Universe Sent Me Meta API` existe con credencial cifrada, pero está deshabilitado; Instagram está habilitado con tres cuentas conocidas y ninguna cuenta activa; Meta Ads Manager aparece habilitado pero la llamada devuelve `not connected`; Google Calendar no tiene scopes suficientes; y no existe un schedule recurrente activo en la sesión auditada.
 
-Google Drive/Sheets sí responde en lectura, pero la hoja `USM Growth OS` fue modificada por última vez el 8 de agosto de 2026 y su Dashboard conserva esa fecha. Por tanto, la hoja debe tratarse como artefacto histórico o auxiliar hasta que exista una sincronización explícita; GitHub continúa siendo la fuente oficial de verdad. La evidencia sanitizada está en `Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json` y no autoriza cambios de configuración ni publicaciones.
+Google Drive/Sheets sí responde en lectura, pero la hoja `USM Growth OS` fue modificada por última vez el 8 de agosto de 2026 y su Dashboard conserva esa fecha. Por tanto, la hoja debe tratarse como artefacto histórico o auxiliar hasta que exista una sincronización explícita; GitHub continúa siendo la fuente oficial de verdad. La evidencia sanitizada está en `Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json` y representa el corte previo a la implementación P0.
+
+### 5.2 Estado P0 implementado el 25 de agosto de 2026
+
+La cuenta activa del conector Instagram quedó seleccionada como `@universe_sent_me_0326` (`activeAccountUid=d8d075f0-7fd9-4a23-a501-6cefc74dee6b`). El smoke test de lectura respondió correctamente con identidad de cuenta, cuota de publicación `0/100` y cinco posts recientes; no se creó, modificó ni eliminó contenido. La evidencia completa está en `Operations/Research/2026-08-25_Instagram_Route_Smoke_Test.json`.
+
+El ledger `Operations/Research/Metrics_Snapshot_Log.csv` quedó creado con su encabezado aprobado. El módulo `Operations/Automation/record_metrics_snapshot.py` y el validador `Operations/Automation/validate_metrics_snapshot_ledger.py` fueron probados en un ledger temporal con E0, retry idempotente `no-op` y E24 válido. El ledger productivo conserva cero filas de snapshots porque no se fabrica E0 para publicaciones históricas. La evidencia está en `Operations/Research/2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json`.
+
+Este estado activa la capacidad de registro, pero no declara cerrado el loop: el hook dentro del publicador de Fernando, la primera captura productiva E0 y el worker recurrente E24/E72 siguen pendientes. Los campos contractuales de `Publication_Log` y `ExperimentLog` no se modifican hasta que existan capturas válidas con el mismo `Meta_Post_ID` y timestamps dentro de tolerancia.
 
 ## 6. Primer estado implementado
 

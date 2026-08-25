@@ -1,7 +1,7 @@
 ---
 estado: Active
-version: "1.50"
-ultima_revision: 2026-08-24
+version: "1.51"
+ultima_revision: 2026-08-25
 dependencias:
   - GrowthOS/01_00_Arquitectura_Calendario_Escalable.md
   - GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md
@@ -15,10 +15,10 @@ dependencias:
 **Propósito:** Documentar el pipeline de publicación real que usa Fernando (script propio en PyCharm, con Gemini, publicando vía Meta Graph API) y establecer el estándar de exportación CSV que cualquier calendario de Growth OS debe producir para poder alimentarlo directamente, sin reformateo manual.
 **Estado:** Active
 **Fecha de creación:** 2026-08-12
-**Última actualización:** 2026-08-24
-**Versión:** 1.50
+**Última actualización:** 2026-08-25
+**Versión:** 1.51
 **Autor:** Claude, documentando información provista por Fernando; actualización de Manus AI
-**Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `05_03_Calendario_10_16_Agosto.md` (y calendarios futuros), `Operations/Research/2026-08-15_Publication_Log.csv`, `Operations/Research/2026-08-15_ExperimentLog.csv`, `GrowthOS/00_01_Changelog_GrowthOS.md`, `GrowthOS/00_Índice.md`, `Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md`, `Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json`
+**Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `05_03_Calendario_10_16_Agosto.md` (y calendarios futuros), `Operations/Research/2026-08-15_Publication_Log.csv`, `Operations/Research/2026-08-15_ExperimentLog.csv`, `GrowthOS/00_01_Changelog_GrowthOS.md`, `GrowthOS/00_Índice.md`, `Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md`, `Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json`, `Operations/Research/2026-08-25_Instagram_Route_Smoke_Test.json`, `Operations/Research/2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json`, `Operations/Automation/record_metrics_snapshot.py`, `Operations/Automation/validate_metrics_snapshot_ledger.py`, `Operations/Research/Metrics_Snapshot_Log.csv`
 
 ---
 
@@ -124,9 +124,9 @@ El token debe rotarse si se sospecha exposición, si cambia el administrador o s
 
 ## 6. Estado de configuración observado el 24 de agosto de 2026
 
-La auditoría de conectividad separa el hecho histórico de que el pipeline se haya probado del estado actual de la configuración. La Custom API `Universe Sent Me Meta API` existe con credencial cifrada, pero aparece deshabilitada (`enabled=false`). El conector de Instagram está habilitado y conserva tres cuentas conocidas, pero ninguna tiene `activeAccountUid`; por ello el smoke test de cuenta no puede ejecutarse hasta seleccionar explícitamente `@universe_sent_me_0326`. La consulta de Meta Ads Manager devuelve `not connected`, y Google Calendar no puede listar calendarios con los scopes actuales. El estado completo, incluyendo Make, Google Workspace, scheduling y validadores, queda en `Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json`.
+La auditoría de conectividad separa el hecho histórico de que el pipeline se haya probado del estado actual de la configuración. La Custom API `Universe Sent Me Meta API` existe con credencial cifrada, pero aparece deshabilitada (`enabled=false`). El conector de Instagram está habilitado y ahora tiene seleccionada la cuenta `@universe_sent_me_0326`; el smoke test de lectura respondió correctamente. La consulta de Meta Ads Manager devuelve `not connected`, y Google Calendar no puede listar calendarios con los scopes actuales. El estado completo, incluyendo Make, Google Workspace, scheduling y validadores, queda en `Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json`; la evidencia de la selección y prueba de Instagram queda en `Operations/Research/2026-08-25_Instagram_Route_Smoke_Test.json`.
 
-Esta observación no invalida las publicaciones históricas verificadas ni autoriza cambios de configuración. Significa que una nueva operación debe comenzar por un preflight de conectores: `enabled` no equivale a `connected`, `connected` no equivale a `readable` y `readable` no equivale a `operational` para Universe Sent Me. Mientras no exista una cuenta Instagram activa y una ruta Meta habilitada o documentada como alternativa aprobada, el pipeline no debe presentarse como extremo a extremo reproducible desde la sesión actual.
+Esta observación no invalida las publicaciones históricas verificadas ni autoriza publicaciones nuevas. La cuenta Instagram activa ya fue seleccionada y verificada en lectura; la nueva operación debe comenzar por un preflight de conectores: `enabled` no equivale a `connected`, `connected` no equivale a `readable` y `readable` no equivale a `operational` para Universe Sent Me. El módulo P0 de snapshots está listo para registrar E0/E24/E72, pero el pipeline no debe presentarse como extremo a extremo reproducible hasta integrar el hook al publicador y generar la primera captura productiva.
 
 ## 7. Pendientes de definición (no resueltos en esta sesión)
 
@@ -139,7 +139,7 @@ Esta observación no invalida las publicaciones históricas verificadas ni autor
 ## 8. Qué NO cambia por ahora
 
 - El proceso de armar el calendario (elegir personaje, horario, copy, hashtags, reuse vs. nuevo) sigue siendo el mismo ya documentado en `01_00_Arquitectura_Calendario_Escalable.md` y aplicado en los calendarios semanales.
-- Este documento no reemplaza ni automatiza nada todavía — solo dejar registrado el pipeline real de Fernando para que futuros calendarios se diseñen ya pensando en ser exportables a este formato, en vez de descubrir la incompatibilidad después.
+- Este documento no reemplaza ni automatiza el publicador de Fernando. El registro P0 de snapshots vive en `Operations/Automation/record_metrics_snapshot.py` y `Operations/Research/Metrics_Snapshot_Log.csv`; su hook de ejecución posterior a `is_published=true` todavía debe integrarse al publicador real.
 
 ---
 

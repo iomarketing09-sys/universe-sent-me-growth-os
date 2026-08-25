@@ -1,0 +1,1 @@
+Snapshot_ID,Logical_Key,Publicacion_ID,Experiment_ID,ID_Pieza,CNT,Plataforma,Cuenta_ID,Meta_Post_ID,Meta_Photo_ID,Reel_ID,Published_At_UTC,Published_At_Local,Snapshot_Type,Target_At_UTC,Captured_At_UTC,Age_Seconds,Tolerance_Seconds,Window_Status,Reactions,Comments,Shares,Lifetime_Interactions,Delta_From_E0,Source,HTTP_Status,Raw_Evidence_Path,Idempotency_Key,Anomaly_Code,Notes

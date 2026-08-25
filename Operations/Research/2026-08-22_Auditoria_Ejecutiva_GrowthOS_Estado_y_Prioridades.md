@@ -4,19 +4,19 @@
 
 **Estado:** Active
 **Fecha de creación:** 2026-08-22
-**Última actualización:** 2026-08-24
-**Versión:** 1.1
+**Última actualización:** 2026-08-25
+**Versión:** 1.2
 **Autor:** Manus AI (CGO)
 **Organización:** `Operations/Research/`
-**Documentos relacionados:** `GrowthOS/00_Índice.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/01_02_Content_Backlog.md`, `GrowthOS/01_04_Production_Queue.md`, `GrowthOS/07_00_Registro_Maestro_Reels.md`, `Operations/Research/2026-08-22_Analisis_Semanal_20260816_20260822.md`, `Operations/Research/2026-08-22_Auditoria_Monetizacion_Afiliados_MercadoLibre.md`, `Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json`, `Operations/Research/2026-08-23_Reporte_Rendimiento_Engagement_Facebook.md`
+**Documentos relacionados:** `GrowthOS/00_Índice.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/01_02_Content_Backlog.md`, `GrowthOS/01_04_Production_Queue.md`, `GrowthOS/07_00_Registro_Maestro_Reels.md`, `Operations/Research/2026-08-22_Analisis_Semanal_20260816_20260822.md`, `Operations/Research/2026-08-22_Auditoria_Monetizacion_Afiliados_MercadoLibre.md`, `Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json`, `Operations/Research/2026-08-23_Reporte_Rendimiento_Engagement_Facebook.md`, `Operations/Research/2026-08-25_Instagram_Route_Smoke_Test.json`, `Operations/Research/2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json`, `Operations/Automation/record_metrics_snapshot.py`, `Operations/Automation/validate_metrics_snapshot_ledger.py`, `Operations/Research/Metrics_Snapshot_Log.csv`
 
 ---
 
 ## 1. Veredicto ejecutivo
 
-El Growth OS está **operativo, documentado y con evidencia de ejecución real**, pero todavía no es un sistema de optimización cerrado ni autoejecutable. Facebook funciona como carril principal de publicación y comunidad; los ledgers y validadores pasan controles internos; y GitHub permanece sincronizado con la rama `main` remota. Sin embargo, la conectividad actual no es homogénea: la Custom API de Meta está deshabilitada, Instagram no tiene una cuenta activa seleccionada, Meta Ads responde como no conectado, Google Calendar carece de scopes suficientes y no existe un schedule recurrente activo. [1] [2] [3]
+El Growth OS está **operativo, documentado y con evidencia de ejecución real**, pero todavía no es un sistema de optimización cerrado ni autoejecutable. Facebook funciona como carril principal de publicación y comunidad; los ledgers y validadores pasan controles internos; GitHub permanece sincronizado con la rama `main` remota; y la ruta Instagram ya está restaurada para lecturas con la cuenta USM seleccionada. La conectividad restante no es homogénea: la Custom API de Meta continúa deshabilitada, Meta Ads responde como no conectado, Google Calendar carece de scopes suficientes y no existe un schedule recurrente activo. [1] [2] [3]
 
-El cuello de botella no es producir más documentación. Es **cerrar la transición desde publicación verificada hacia medición comparable y decisión de growth**. El `Publication_Log` ya conserva 121 hechos, pero `Interacciones_24h` y `Interacciones_72h` siguen vacíos en 121/121 filas; `Metrics_Snapshot_Log.csv` todavía no existe; y el diseño E0/E24/E72 permanece en `Review`. El sistema aprende mediante cortes observados, lifetime y análisis manuales, pero todavía no actualiza de forma automática una cohorte comparable después de cada publicación. [4] [5]
+El cuello de botella no es producir más documentación. Es **cerrar la transición desde publicación verificada hacia medición comparable y decisión de growth**. El `Publication_Log` ya conserva 121 hechos, pero `Interacciones_24h` y `Interacciones_72h` siguen vacíos en 121/121 filas; `Metrics_Snapshot_Log.csv` ya existe con el esquema P0, aunque todavía no contiene capturas productivas; y el diseño E0/E24/E72 permanece en `Review`. El sistema aprende mediante cortes observados, lifetime y análisis manuales, pero todavía no actualiza de forma automática una cohorte comparable después de cada publicación. [4] [5] [7]
 
 > **Veredicto CGO:** estado **operativo supervisado, nivel 3/5**. No es estático porque publica, reconcilia, registra comunidad y produce decisiones trazables; aún no es un loop funcional completo porque depende de intervención humana, conectores con estado incompleto y snapshots temporales no implementados.
 
@@ -26,10 +26,10 @@ El cuello de botella no es producir más documentación. Es **cerrar la transici
 |---|---|---|---|---:|
 | Fuente de verdad y governance | **Activo** | GitHub es la fuente oficial; la rama `main` local coincide con la remota y los documentos operativos están enlazados. | La hoja de Google Drive conserva un estado antiguo y algunos documentos históricos mantienen estados superseded. | P1 |
 | Calendario y Facebook | **Activo** | El `Publication_Log` conserva 107 filas de Facebook; 62 están en estado programado y 39 en estado publicado, con IDs y permalinks completos. | La cadencia está verificada como ejecución, pero aún no demuestra causalidad ni estabilidad de la mediana por cohorte. | P0 |
-| Métricas diarias y semanales | **Activo, inmaduro** | Hay cortes observados, cierre semanal, validadores y evidencia Meta/Windsor. | `Interacciones_24h` y `Interacciones_72h` están vacías en 121/121 publicaciones; el ledger temporal no está implementado. | P0 |
+| Métricas diarias y semanales | **Activo, inmaduro** | Hay cortes observados, cierre semanal, validadores y evidencia Meta/Windsor; el ledger P0 ya tiene esquema y validador. | `Interacciones_24h` y `Interacciones_72h` están vacías en 121/121 publicaciones y aún no existe una captura productiva E0. | P0 |
 | Aprendizaje de contenido | **En observación** | El sistema registra hipótesis, outliers, familias, formato, comunidad y próximas acciones. | La concentración reciente exige cohortes pareadas; no se debe convertir un outlier en regla editorial. | P0 |
 | Reels | **Activo con brecha de instrumentación** | Hay inventario, crosswalk y cuatro Reels con señales Windsor L2 parciales. | Faltan views/reach/retención comparables y el estado de `MPM-001`/siguientes estrenos requiere una sola lectura vigente. | P0 |
-| Instagram | **Historial activo; operación actual bloqueada en esta sesión** | El log conserva 14 filas, 13 IDs de media y siete permalinks; hubo publicaciones manuales confirmadas. | El conector tiene tres cuentas conocidas pero ninguna `activeAccountUid`; no se puede ejecutar un smoke test hasta seleccionar la cuenta USM. | P0 |
+| Instagram | **Lectura operativa restaurada** | La cuenta `@universe_sent_me_0326` está seleccionada; identidad, cuota y listado de cinco posts responden. | La publicación no se probó ni se autoriza por esta auditoría; el flujo de contenido sigue requiriendo solicitud y confirmación separadas. | P1 |
 | TikTok / YouTube | **En espera selectiva** | Existen relaciones históricas y fuentes analíticas documentadas. | No hay un carril de publicación ni una cohorte reciente comparable en el sistema auditado. | P1 |
 | Afiliados Mercado Libre | **Ámbar / Review** | Hay 13 asignaciones, etiquetas individuales y 11 snapshots documentados. | El corte más reciente conserva 3 clics, 0 compradores, 0 órdenes y $0 MXN; falta granularidad estable por etiqueta y superficie. | P1 |
 | Comunidad | **Activo y dinámico con gates humanos** | El ledger tiene 448 filas únicas; los validadores pasan y los lotes de respuestas recientes fueron verificados por Meta. | La respuesta sigue dependiendo de autorización humana y algunas verificaciones históricas devuelven 403/400. | P1 |
@@ -46,7 +46,7 @@ La conectividad debe distinguirse entre **habilitada en configuración**, **resp
 |---|---|---|---|
 | GitHub | **Operativo** | `main` local y remoto coinciden en `80628f4`; working tree limpio tras retirar artefactos temporales. | Fuente oficial de verdad y único destino permanente de la auditoría. |
 | Meta Graph API USM | **Deshabilitado actualmente** | Existe `Universe Sent Me Meta API` con credencial cifrada, pero `enabled=false`. | La ruta está documentada y fue usada históricamente, pero no está lista para una nueva ejecución desde la configuración actual. |
-| Instagram | **Habilitado, sin cuenta activa** | Conector enabled; cuentas conocidas `@universe_sent_me_0326`, `@firmabordados` y `@bam_inacan`; la lectura falló por ausencia de `activeAccountUid`. | La cuenta USM debe seleccionarse explícitamente antes de declarar el carril operativo. |
+| Instagram | **Habilitado y cuenta activa seleccionada** | `activeAccountUid=d8d075f0-7fd9-4a23-a501-6cefc74dee6b`; `get_account_info` y `get_post_list` respondieron correctamente. | Falta una publicación de prueba solo si Fernando la solicita explícitamente; la ruta de lectura ya está verificada. |
 | Meta Ads Manager | **No conectado** | La consulta de cuentas devolvió `Meta Ads Manager connector not connected`. | No hay base para afirmar que paid growth esté funcionando. |
 | Make | **Respondiente, pero histórico** | `users_me` y `organizations_list` devolvieron datos; el repo lo excluye del flujo activo. | Conectado no significa que automatice USM. No debe reactivarse sin blueprint, ownership y criterio de ejecución. |
 | Google Workspace / Drive / Sheets | **Lectura operativa, datos desactualizados** | Drive y Sheets fueron legibles; `USM Growth OS` fue modificado el 8 de agosto y su Dashboard conserva esa fecha. | Es una fuente auxiliar histórica, no una fuente de verdad viva frente a GitHub. |
@@ -67,6 +67,19 @@ La evidencia completa y sanitizada se conserva en `2026-08-24_Growth_Connectivit
 | 5/5 | Loop adaptativo cerrado: captura fiable, aprendizaje por cohortes, actualización de hipótesis y selección de la siguiente prueba con guardrails. | No alcanzado. |
 
 El nivel 3/5 no significa que el proyecto esté detenido. Significa que el sistema ya produce trabajo y evidencia, pero la continuidad todavía depende de que una persona ejecute, reconcilie y apruebe cada transición crítica.
+
+### 2.3 Resultado de la implementación P0 — 25 de agosto de 2026
+
+| Entregable P0 | Resultado | Estado |
+|---|---|---|
+| Ruta Instagram | Cuenta `@universe_sent_me_0326` seleccionada; identidad y cuota `0/100` verificadas; cinco posts recientes leídos. | **PASS — lectura** |
+| Ledger de snapshots | `Metrics_Snapshot_Log.csv` creado con el esquema aprobado y cero filas históricas fabricadas. | **PASS — activo** |
+| Captura E0 | Módulo reproducible implementado; replay aislado produjo `Valid_E0`. | **PASS — listo para producción** |
+| Idempotencia | Retry del mismo `Meta_Post_ID + Snapshot_Type` devuelve `no_op_valid_already_exists`. | **PASS** |
+| Captura E24 | Replay aislado con E0 previo produjo `Valid_24h` y delta. | **PASS — prueba temporal** |
+| Hook/worker productivo | Aún no integrado al publicador ni programado como worker recurrente. | **PENDIENTE** |
+
+La evidencia de Instagram está en `2026-08-25_Instagram_Route_Smoke_Test.json`; la evidencia del ledger y sus pruebas está en `2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json`. No se publicó, modificó ni eliminó contenido y no se escribió ningún snapshot histórico en el ledger productivo.
 
 ## 3. Qué está cerrado y no debe reabrirse ahora
 
@@ -129,8 +142,7 @@ El próximo cambio estratégico solo debe ejecutarse cuando exista una pregunta 
 
 | Prioridad | Pendiente | Criterio de cierre |
 |---|---|---|
-| **P0** | Restaurar una ruta de publicación verificable desde la configuración actual: activar la Custom API de Meta o documentar formalmente otra ruta aprobada; seleccionar `@universe_sent_me_0326` como cuenta activa de Instagram; ejecutar smoke tests de lectura sin publicar. | Meta `/me`/Página y cuenta IG USM responden; se verifica identidad, permisos y lectura de posts sin errores de cuenta. |
-| **P0** | Aprobar e implementar `Metrics_Snapshot_Log.csv` y el enganche E0 posterior a `is_published=true`, seguido de E24/E72 con la misma identidad y tolerancias. | Existe el ledger, una publicación nueva produce E0 idempotente y los cierres posteriores se escriben sin convertir lifetime en 24/72. |
+| **P0** | Integrar el módulo E0 en el publicador productivo de Facebook y producir la primera captura real posterior a `is_published=true`; el ledger ya está activo. | Una publicación nueva genera una fila E0 real, con raw, timestamps, contadores y validación `PASS`; no se reconstruye ningún E0 histórico. |
 | **P0** | Mantener la cadencia de Facebook, pero cerrar cada día con formato, ID, estado, edad, engagement observable y marca de `Exposicion_Inmadura`. | Siete días consecutivos con reportes diarios y un cierre domingo–sábado que compare mediana, outliers y mix nueva/reuse. |
 | **P1** | Resolver la doble fuente externa: congelar la hoja `USM Growth OS` como histórico o sincronizarla de forma explícita con GitHub. | Un documento declara que GitHub es la fuente única y la hoja no presenta colas o hipótesis antiguas como estado actual. |
 | **P1** | Decidir si paid growth pertenece al alcance operativo. Si sí, reconectar Meta Ads Manager y registrar cuenta/campañas; si no, marcarlo como fuera de alcance y no dejarlo como enabled sin uso. | Estado intencional, verificable y reflejado en la documentación. |
@@ -140,7 +152,7 @@ El próximo cambio estratégico solo debe ejecutarse cuando exista una pregunta 
 
 ### Documentos que requieren coherencia posterior
 
-Esta actualización no autoriza por sí misma cambios de configuración ni publicaciones. Para mantener la fuente única de verdad, la siguiente ronda debería revisar `GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md` y `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` para incorporar el estado actual de la Custom API deshabilitada, la cuenta Instagram sin selección activa y la ausencia material de `Metrics_Snapshot_Log.csv`. El índice y el changelog deben apuntar a esta evidencia; el diseño E0/E24/E72 debe permanecer en `Review` hasta aprobación explícita.
+La implementación P0 ya actualizó `GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y el diseño E0/E24/E72. La siguiente ronda debe integrar el hook al publicador, generar la primera captura productiva y decidir el worker recurrente; el diseño completo permanece en `Review` hasta que existan esos casos reales. El índice y el changelog deben apuntar también a las evidencias del 25 de agosto.
 
 ## Referencias
 
@@ -149,3 +161,6 @@ Esta actualización no autoriza por sí misma cambios de configuración ni publi
 [3]: ../../GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md "Pipeline de publicación local y estándar CSV"
 [4]: ../../GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md "Fuente maestra y ledgers del Growth OS"
 [5]: ../Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md "Diseño de captura automática de baseline E0 y ventanas E24/E72"
+[6]: 2026-08-25_Instagram_Route_Smoke_Test.json "Smoke test de la ruta Instagram de Universe Sent Me — 25 de agosto de 2026"
+[7]: 2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json "Activación y pruebas del Metrics Snapshot Log — 25 de agosto de 2026"
+[8]: ../../Operations/Automation/record_metrics_snapshot.py "Módulo P0 de registro de snapshots"

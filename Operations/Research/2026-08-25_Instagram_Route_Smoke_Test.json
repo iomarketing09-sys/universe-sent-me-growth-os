@@ -1,0 +1,95 @@
+{
+  "title": "Smoke test de la ruta Instagram de Universe Sent Me",
+  "purpose": "Conservar evidencia verificable de que la cuenta Instagram de Universe Sent Me está seleccionada y que las lecturas de identidad, cuota de publicación y posts recientes responden correctamente sin publicar contenido.",
+  "status": "Active",
+  "created": "2026-08-25",
+  "updated": "2026-08-25",
+  "version": "1.0",
+  "author": "Manus AI (CGO)",
+  "organization": "Operations/Research/",
+  "related_documents": [
+    "Operations/Research/2026-08-22_Auditoria_Ejecutiva_GrowthOS_Estado_y_Prioridades.md",
+    "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md",
+    "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md",
+    "Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json"
+  ],
+  "account": {
+    "connector": "Instagram",
+    "configured_active_account_name": "@universe_sent_me_0326",
+    "configured_active_account_uid": "d8d075f0-7fd9-4a23-a501-6cefc74dee6b",
+    "instagram_business_id": "27878406895132242",
+    "username": "universe_sent_me_0326",
+    "name": "Universe sent me",
+    "bio": "Siguenos y encuentra el mensaje oculto",
+    "followers_count": 44,
+    "follows_count": 103,
+    "media_count": 473
+  },
+  "tests": {
+    "get_account_info": {
+      "status": "PASS",
+      "success": true,
+      "publishing_limit_usage": 0,
+      "publishing_limit_total": 100,
+      "publishing_limit_remaining": 100,
+      "publishing_limit_window": "rolling 24 hours"
+    },
+    "get_post_list": {
+      "status": "PASS",
+      "success": true,
+      "requested_limit": 5,
+      "returned_posts": 5,
+      "next_page_available": true,
+      "sample_posts": [
+        {
+          "id": "18090189620391312",
+          "type": "IMAGE",
+          "permalink": "https://www.instagram.com/p/DcaDAqNDR-z/",
+          "timestamp_utc": "2026-08-24T03:00:18+0000",
+          "likes": 1,
+          "comments": 0
+        },
+        {
+          "id": "18106619597133852",
+          "type": "VIDEO",
+          "permalink": "https://www.instagram.com/reel/DcZlBYVRiot/",
+          "timestamp_utc": "2026-08-23T22:39:08+0000",
+          "likes": 2,
+          "comments": 0
+        },
+        {
+          "id": "18145095169477028",
+          "type": "VIDEO",
+          "permalink": "https://www.instagram.com/reel/DcW-pUnxqGG/",
+          "timestamp_utc": "2026-08-22T22:25:20+0000",
+          "likes": 3,
+          "comments": 0
+        },
+        {
+          "id": "18061142618526577",
+          "type": "VIDEO",
+          "permalink": "https://www.instagram.com/reel/DcUnGOnBVQr/",
+          "timestamp_utc": "2026-08-22T00:20:05+0000",
+          "likes": 2,
+          "comments": 0
+        },
+        {
+          "id": "17903033787553072",
+          "type": "IMAGE",
+          "permalink": "https://www.instagram.com/p/DcUk0FejdQz/",
+          "timestamp_utc": "2026-08-22T00:00:14+0000",
+          "likes": 0,
+          "comments": 0
+        }
+      ]
+    },
+    "content_mutation": {
+      "status": "NOT_PERFORMED",
+      "posts_created": 0,
+      "posts_modified": 0,
+      "posts_deleted": 0
+    }
+  },
+  "verdict": "PASS_READ_ONLY",
+  "interpretation": "La cuenta Instagram de Universe Sent Me está correctamente seleccionada y la ruta de lectura responde con identidad, cuota y posts recientes. La ruta está restaurada para lectura y preparación operativa; la publicación sigue requiriendo una solicitud explícita y confirmación separada."
+}

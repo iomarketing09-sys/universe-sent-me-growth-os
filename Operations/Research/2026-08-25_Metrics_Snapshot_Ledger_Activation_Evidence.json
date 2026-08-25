@@ -1,0 +1,68 @@
+{
+  "title": "Activación y pruebas del Metrics Snapshot Log",
+  "purpose": "Conservar evidencia de la creación del ledger append-only, del módulo P0 de captura y de las pruebas de E0/E24 e idempotencia ejecutadas fuera del ledger productivo.",
+  "status": "Active",
+  "created": "2026-08-25",
+  "updated": "2026-08-25",
+  "version": "1.0",
+  "author": "Manus AI (CGO)",
+  "organization": "Operations/Research/",
+  "related_documents": [
+    "Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md",
+    "Operations/Automation/record_metrics_snapshot.py",
+    "Operations/Automation/validate_metrics_snapshot_ledger.py",
+    "Operations/Research/Metrics_Snapshot_Log.csv",
+    "Operations/Research/2026-08-25_Instagram_Route_Smoke_Test.json",
+    "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
+  ],
+  "production_state": {
+    "ledger_path": "Operations/Research/Metrics_Snapshot_Log.csv",
+    "ledger_exists": true,
+    "schema_header_active": true,
+    "production_rows_at_activation": 0,
+    "production_historical_rows_written": 0,
+    "historical_backfill_performed": false,
+    "production_capture_hook_wired": false,
+    "production_e24_e72_worker_scheduled": false,
+    "recurring_automation_activated": false
+  },
+  "implemented_components": {
+    "record_module": "Operations/Automation/record_metrics_snapshot.py",
+    "validator": "Operations/Automation/validate_metrics_snapshot_ledger.py",
+    "source_contract": "Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md",
+    "supported_snapshot_types": ["baseline_e0", "snapshot_24h", "snapshot_72h", "observed_lifetime"],
+    "idempotency_key": "Meta_Post_ID + Snapshot_Type",
+    "raw_evidence": "One immutable JSON file per capture attempt",
+    "window_rule": "Only valid E0 plus valid E24/E72 with the same post ID can produce a delta; lifetime observations never fill contractual windows."
+  },
+  "isolated_tests": {
+    "fixture_source": "Operations/Research/2026-08-17_Metricas_24_72_Extraccion_02.json",
+    "fixture_scope": "Temporary ledger under /tmp/usm_metrics_snapshot_test; no production rows created.",
+    "e0_record": {
+      "status": "PASS",
+      "window_status": "Valid_E0",
+      "meta_post_id": "1036844829507460_122150559441072582",
+      "interactions_fixture": 121
+    },
+    "e0_retry": {
+      "status": "PASS_NO_OP",
+      "behavior": "Existing valid Logical_Key returned without appending a duplicate row."
+    },
+    "e24_record": {
+      "status": "PASS",
+      "window_status": "Valid_24h",
+      "delta_from_e0": 0
+    },
+    "ledger_validator": {
+      "status": "PASS",
+      "rows_checked": 2,
+      "valid_e0": 1,
+      "valid_24h": 1,
+      "duplicate_snapshot_ids": 0,
+      "duplicate_valid_logical_keys": 0,
+      "errors": 0
+    }
+  },
+  "verdict": "P0_LEDGER_ACTIVE_E0_READY",
+  "remaining_gap": "The ledger and capture module are active and validated, but the hook after a real publication and the recurring E24/E72 worker still require integration and an explicit runtime decision. The next real publication must create the first production E0; no historical E0 may be reconstructed."
+}
