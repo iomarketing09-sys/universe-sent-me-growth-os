@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "6.6"
+version: "6.7"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -1387,3 +1387,12 @@ Cada revisión debe usar el cursor incremental, recuperar el delta, distinguir r
 **Estado:** Active como cadencia manual aprobada. **Límite:** no se activó una automatización, no se modificó la cola y no se autorizaron respuestas adicionales. Cualquier automatización futura requiere una instrucción explícita separada y una ruta técnica aprobada.
 
 Fuente canónica: `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, sección 24. Arquitectura: `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, sección 24.
+
+
+## 45. Automatización temporal de revisión Facebook — 25 de agosto de 2026
+
+Fernando autorizó la automatización de la cadencia focalizada durante siete días. La tarea recurrente `Revisión Facebook USM — cadencia focalizada` quedó activa con expiración `2026-09-01T10:12:56Z` y horario America/Matamoros. Sus revisiones útiles son 12:00, 17:30 y 21:30. Los disparos técnicos adicionales a 12:30, 17:00 y 21:00 existen únicamente para representar los minutos 30 con el cron disponible y deben concluir sin acción (`no_op`).
+
+La tarea está restringida a los conectores `Universe Sent Me Meta API` y `GitHub`, consulta únicamente comentarios de Facebook mediante Meta Graph API v26.0 y no puede usar navegador, otras redes ni operaciones de escritura. Debe conservar la separación raíz/réplica, el anonimato del ledger y la cola de propuestas para revisión de Fernando.
+
+La tarea no puede publicar respuestas aunque existan aprobaciones anteriores. Cada lote requiere una autorización posterior e independiente de Fernando y verificación individual. **Estado:** Active, prueba temporal de siete días. **Schedule ID:** `4i8525UwBbh8mk84iZZ42Y`. **Cola:** no modificada al activarse la tarea.

@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "6.1"
+version: "6.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -878,3 +878,12 @@ Cada corte debe usar el cursor incremental, recuperar únicamente el delta dispo
 **Estado:** Active como cadencia manual aprobada. **Límite:** no se activó automatización, no se modificó la cola y no se autorizaron publicaciones adicionales. La instrucción para activar cualquier tarea recurrente debe ser independiente y explícita.
 
 Fuente canónica: `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, sección 24. Arquitectura: `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, sección 24.
+
+
+## 29. Automatización temporal de revisión Facebook — 25 de agosto de 2026
+
+Fernando autorizó automatizar la cadencia focalizada durante siete días. La tarea `Revisión Facebook USM — cadencia focalizada` quedó activa con expiración `2026-09-01T10:12:56Z` y revisiones útiles a las **12:00, 17:30 y 21:30**, hora de `America/Matamoros`. Para representar 17:30 y 21:30 en el cron de seis campos se configuraron también disparos técnicos a 12:30, 17:00 y 21:00; esos disparos deben finalizar como `no_op`.
+
+La tarea usa únicamente `Universe Sent Me Meta API` y `GitHub`. Lee el delta mediante Meta Graph API v26.0, preserva IDs estructurales anonimizados, separa raíces y réplicas, clasifica propuestas y no acción, y entrega un reporte para Fernando. No puede ejecutar escrituras en Meta, ni siquiera para respuestas previamente aprobadas; cualquier publicación requiere una autorización posterior e independiente.
+
+**Estado:** Active, prueba temporal de siete días. **Schedule ID:** `4i8525UwBbh8mk84iZZ42Y`. **Cola:** no modificada al crear la tarea. **Documentos relacionados:** `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

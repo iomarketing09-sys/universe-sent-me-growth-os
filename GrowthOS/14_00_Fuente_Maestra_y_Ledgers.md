@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "2.58"
+version: "2.59"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -478,3 +478,12 @@ La cadencia focalizada para Facebook queda aprobada como pauta operativa durante
 Cada lectura produce una vista derivada, no una segunda fuente maestra: delta nuevo, raíces, réplicas, clasificación editorial, propuestas, no acción y concentración por publicación. La revisión no debe ejecutarse cada hora mediante sesiones completas. Una lectura adicional se reserva para bursts anómalos, solicitudes directas a la Página o una cola que supere claramente el patrón habitual.
 
 La propuesta completa está en `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, sección 24. Fernando eligió la opción focalizada el 2026-08-25. La operación sigue siendo manual; cualquier automatización requiere una instrucción adicional y una ruta técnica aprobada.
+
+
+## 25. Contrato de automatización de revisión Facebook — 2026-08-25
+
+La tarea recurrente `Revisión Facebook USM — cadencia focalizada` queda como proceso temporal activo durante siete días, con expiración `2026-09-01T10:12:56Z`. Sus revisiones efectivas son 12:00, 17:30 y 21:30 en `America/Matamoros`. Debido al formato de cron de seis campos, existen además disparos técnicos a 12:30, 17:00 y 21:00 que deben terminar sin acción (`no_op`).
+
+El proceso puede usar únicamente los conectores `Universe Sent Me Meta API` y `GitHub`. La salida operativa es una vista derivada: delta por cursor, comentarios raíz, réplicas, propuestas, no acción y reporte fechado. El ledger factual sigue siendo append-only y anonimizado; si no hay novedades, la tarea informa cero y no modifica la cola.
+
+El contrato de seguridad prohíbe POST, PUT, DELETE, publicación, ocultamiento o modificación en Meta. Las propuestas quedan para revisión de Fernando; una aprobación anterior no se reutiliza. Cada lote publicable requiere autorización explícita posterior y verificación individual. **Schedule ID:** `4i8525UwBbh8mk84iZZ42Y`. **Estado:** Active, prueba temporal de siete días.
