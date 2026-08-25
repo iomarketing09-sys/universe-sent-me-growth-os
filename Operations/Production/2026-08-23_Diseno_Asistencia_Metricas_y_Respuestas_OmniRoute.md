@@ -4,7 +4,7 @@ purpose: "Definir cómo OmniRoute puede analizar resúmenes métricos ya normali
 status: Review
 created: 2026-08-23
 updated: 2026-08-25
-version: "1.4"
+version: "1.5"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-19_Decision_Gateway_IA_OmniRoute.md"
@@ -292,6 +292,12 @@ Fernando eligió como runtime primario su equipo Xubuntu junto a OmniRoute. Esta
 Para dos fuentes —TikTok y YouTube— la referencia pública de Windsor.ai indica que el plan gratuito permanente permite solo una fuente y una cuenta; el plan Basic admite tres fuentes con actualización diaria por USD 23/mes o USD 19/mes facturado anualmente. [6] En consecuencia, un escenario independiente mínimo con Windsor Basic y un VPS de 2 GB equivale aproximadamente a **USD 35/mes antes de impuestos, respaldos y posibles cargos del proveedor**. El mismo escenario sobre Xubuntu elimina el VPS y conserva solo el costo de Windsor, si se decide continuar después de la prueba.
 
 No se contratará ningún servicio por este documento. La opción local es la decisión vigente; un VPS solo se reconsidera si el equipo no puede mantenerse encendido con suficiente regularidad o si se requiere independencia operativa total.
+
+### 8.12 Hoja derivada preparada
+
+El 2026-08-25 se crearon en la hoja existente `USM Growth OS` las pestañas vacías `Metrics_Daily_View`, `Weekly_Growth_Draft` y `Data_Quality`. La acción fue autorizada por Fernando y se limitó a añadir estas tres vistas; `Cola de Publicación`, `ExperimentLog`, `Hypothesis Bank` y `Dashboard` permanecieron sin cambios.
+
+Las pestañas aún no contienen datos, fórmulas ni headers. Su estructura final se cargará únicamente después de confirmar una fuente con cobertura válida para TikTok y YouTube y de aprobar el piloto programado de solo lectura. Esto evita presentar una hoja parcialmente configurada como una fuente de verdad o inducir conclusiones antes de que existan cortes reproducibles.
 
 ## Referencias
 
