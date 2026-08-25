@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.63
+**Versión:** 4.64
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.64.00] — 2026-08-25 (Fernando/Manus): Corte Facebook GET-only con 7 IDs nuevos y 0 propuestas.** El auditor reusable utilizó el cursor `2026-08-25T17:58:20+00:00`, revisó 20 publicaciones propias, observó 97 raíces y 269 IDs estructurales, y detectó 7 IDs nuevos: 5 comentarios raíz y 2 réplicas. Los 7 fueron clasificados como `No_Requiere_Respuesta`; hubo 0 errores de API, 0 propuestas, no se consultaron otras redes y no se ejecutaron operaciones de escritura. El registrador añadió los 7 IDs al ledger anonimizado, que quedó en 619 filas / 619 IDs únicos con validación `PASS`; la cola permaneció intacta. Evidencia: `Operations/Research/2026-08-25_22-11-14_Facebook_Comment_Review_GET_Only.json`, `Operations/Research/2026-08-25_22-11-14_Facebook_Editorial_Review_GET_Only.json`, `Operations/Research/2026-08-25_22-11-14_Facebook_Comment_Review_Report.md` y `Operations/Research/2026-08-25_22-11-14_Facebook_Pending_Queue_No_Change.json`.
 
 - **[4.63.00] — 2026-08-25 (Fernando/Manus): Revisión Facebook GET-only bloqueada antes de la API.** El auditor reusable `Operations/Automation/audit_facebook_comments_get_only.py` no pudo iniciar porque `META_PAGE_ACCESS_TOKEN` no estaba disponible; la verificación read-only confirmó `Universe Sent Me Meta API` como `enabled=false`. No existe conteo de delta válido —no equivale a cero novedades—, no hubo llamadas Meta exitosas, no se consultaron otras redes, no hubo POST/PUT/DELETE ni cambios en cola o ledger, y no se creó un review vacío. Evidencia: `Operations/Research/2026-08-25_22-06-59_Facebook_Comment_Review_Blocker.json`. Próximo paso seguro: restaurar el conector existente y ejecutar el auditor con su cursor dinámico.
 

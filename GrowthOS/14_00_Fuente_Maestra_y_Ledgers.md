@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "2.68"
+version: "2.69"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -574,3 +574,12 @@ El ledger conserva cinco filas totales: cuatro `Anomaly` y una `Late`, cero `Val
 El auditor reusable `Operations/Automation/audit_facebook_comments_get_only.py` no pudo iniciar el corte solicitado porque `META_PAGE_ACCESS_TOKEN` no estaba disponible. La verificación read-only confirmó que `Universe Sent Me Meta API` (`76925630-05da-4aa7-878d-64a6a520ca6d`) está `enabled=false`.
 
 Por este motivo no existe un conteo de delta válido: el resultado es **sin lectura disponible**, no una afirmación de cero comentarios. No hubo llamadas Graph API exitosas, no hubo escrituras en Meta, no se consultaron otras redes, no se creó artefacto de revisión vacío y no se modificaron cola ni ledger. La evidencia sanitizada está en `Operations/Research/2026-08-25_22-06-59_Facebook_Comment_Review_Blocker.json`. El siguiente paso es restaurar el conector existente y ejecutar el auditor de nuevo usando su cursor dinámico.
+
+
+## 32. Corte Facebook GET-only sin propuestas — 25 de agosto de 2026
+
+El auditor reusable ejecutó un corte de solo lectura mediante Meta Graph API v26.0 con cursor `2026-08-25T17:58:20+00:00`. Cubrió 20 publicaciones propias, 97 comentarios raíz y 269 IDs estructurales; detectó **7 IDs nuevos** —5 raíces y 2 réplicas— sin errores de API.
+
+Los 7 IDs fueron clasificados como `No_Requiere_Respuesta`, por lo que no se generaron propuestas y la cola de publicación permaneció sin cambios. El registrador añadió las 7 filas al ledger, que quedó en **619 filas / 619 IDs únicos** con validación `PASS` y privacidad anonimizada. Evidencia: `Operations/Research/2026-08-25_22-11-14_Facebook_Comment_Review_GET_Only.json`, `Operations/Research/2026-08-25_22-11-14_Facebook_Editorial_Review_GET_Only.json`, `Operations/Research/2026-08-25_22-11-14_Facebook_Comment_Review_Report.md` y `Operations/Research/2026-08-25_22-11-14_Facebook_Pending_Queue_No_Change.json`.
+
+**Regla operativa confirmada:** cuando el delta tiene comentarios nuevos pero ninguna propuesta editorial, se conserva cada ID en el ledger, se mantiene la cola intacta y no se realizan operaciones de escritura en Meta.

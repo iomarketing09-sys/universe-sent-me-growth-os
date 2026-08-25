@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "6.9"
+version: "7.0"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -952,5 +952,16 @@ La cola adicional quedó cerrada: **0 propuestas pendientes**, **2 casos `Revisa
 Se intentó ejecutar `Operations/Automation/audit_facebook_comments_get_only.py` para revisar exclusivamente la Página de Facebook Universe Sent Me. El auditor no pudo iniciar porque `META_PAGE_ACCESS_TOKEN` no estaba disponible en el entorno de ejecución. La verificación read-only de configuración confirmó que el conector `Universe Sent Me Meta API` (`76925630-05da-4aa7-878d-64a6a520ca6d`) aparece `enabled=false`.
 
 No se realizó ninguna llamada exitosa a Meta Graph API v26.0; no se consultaron otras redes; no hubo POST, PUT, DELETE, publicaciones, ocultamientos o modificaciones; no se creó un nuevo artefacto de review; y no se modificaron la cola ni el ledger. La evidencia sanitizada está en `Operations/Research/2026-08-25_22-06-59_Facebook_Comment_Review_Blocker.json`. El siguiente paso seguro es restaurar el acceso del conector existente y volver a ejecutar el mismo auditor, sin crear otro conector ni reutilizar aprobaciones.
+
+**Documentos relacionados que requieren alineación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 37. Corte GET-only con 7 nuevos IDs sin oportunidad de respuesta — 25 de agosto de 2026
+
+El auditor reusable `Operations/Automation/audit_facebook_comments_get_only.py` ejecutó una revisión exclusivamente de la Página de Facebook Universe Sent Me mediante Meta Graph API v26.0. Usó como cursor `2026-08-25T17:58:20+00:00`, cubrió 20 publicaciones propias, observó 97 comentarios raíz y 269 IDs estructurales en el alcance, y produjo el artefacto nuevo `Operations/Research/2026-08-25_22-11-14_Facebook_Comment_Review_GET_Only.json`.
+
+El delta desde el cursor fue de **7 IDs nuevos pendientes**, compuestos por **5 comentarios raíz y 2 réplicas anidadas**. No hubo errores de API. Los siete se clasificaron como `No_Requiere_Respuesta`: 2 réplicas entre usuarios, 1 etiqueta/nombre con emojis, 1 comentario sin texto, 2 opiniones o reacciones de baja señal y 1 comentario con lenguaje íntimo/sexualizado. No se generaron propuestas, no se modificó la cola vigente y no se publicó ni alteró contenido.
+
+El registrador `Operations/Automation/record_facebook_review_get_only_2026_08_25_2211.py` añadió las 7 filas al ledger anonimizado, que conserva **619 filas / 619 IDs únicos** y validación `PASS`. Evidencia editorial y reporte: `Operations/Research/2026-08-25_22-11-14_Facebook_Editorial_Review_GET_Only.json`, `Operations/Research/2026-08-25_22-11-14_Facebook_Comment_Review_Report.md` y `Operations/Research/2026-08-25_22-11-14_Facebook_Pending_Queue_No_Change.json`.
 
 **Documentos relacionados que requieren alineación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
