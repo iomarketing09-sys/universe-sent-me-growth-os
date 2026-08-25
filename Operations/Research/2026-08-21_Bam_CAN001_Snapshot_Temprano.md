@@ -3,8 +3,8 @@ title: "Bam in a Can — CAN-001: snapshot temprano consolidado"
 purpose: "Conservar las métricas públicas observables de la primera cascada de CAN-001 y distinguir datos medidos de campos no expuestos sin autenticación."
 status: "Active — Instagram y evidencia directa de YouTube actualizadas; Windsor pendiente de indexación"
 created: 2026-08-21
-updated: 2026-08-23
-version: "1.6"
+updated: 2026-08-24
+version: "1.7"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
@@ -72,6 +72,14 @@ Fernando aportó una segunda captura directa de YouTube Studio para `iuHT1kN0Uow
 Esta evidencia sustituye el conteo manual previo de 2 vistas como último dato directo de Studio; el número de shares permanece en 1. Confirma que hubo crecimiento posterior, pero el volumen sigue siendo demasiado bajo para diagnosticar distribución o atribuir desempeño al control de SFX. Windsor.ai continúa sin devolver una fila autenticada, por lo que ambos orígenes se conservan separados.
 
 ![Captura de YouTube Studio de CAN-001 a T+49 h 19 min 46 s](2026-08-23_Bam_CAN001_YouTube_Studio_T49h19m46s.jpg)
+
+## Actualización de YouTube Studio — 24 de agosto
+
+Fernando aportó una nueva captura directa de Studio, recibida a las **22:21:14 CDT**. La interfaz solo muestra la edad relativa de **3 días**, no un timestamp exacto de la captura; por tanto, se conserva esa precisión limitada. Studio reporta **15 vistas**, **+4 en las últimas 48 horas** y **1 vez compartido**. El conteo de likes no aparece en esta vista.
+
+Frente a la evidencia directa previa de 13 vistas, hay **+2 vistas** acumuladas y el share permanece en 1. El crecimiento confirma distribución continua pero de bajo volumen; no permite valorar el control de SFX ni establecer una comparación útil con TikTok o Instagram. Windsor sigue sin fila autenticada para el Short.
+
+![Captura de YouTube Studio de CAN-001 con edad relativa de tres días](2026-08-24_Bam_CAN001_YouTube_Studio_relative_3d.jpg)
 
 ## Lectura operativa
 

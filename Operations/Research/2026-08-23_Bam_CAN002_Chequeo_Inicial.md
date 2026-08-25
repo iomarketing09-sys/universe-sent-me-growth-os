@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — CAN-002: chequeo inicial y corte post-T+3"
 purpose: "Preservar los cortes operativos iniciales de CAN-002, separando métricas autenticadas, cache de plataforma, evidencia directa e indexación pendiente."
-status: "Active — corte post-T+3 registrado; Instagram mantiene cache previa y YouTube sigue sin fila Windsor"
+status: "Active — evidencia Studio cercana a T+24 registrada; Instagram mantiene cache previa y YouTube sigue sin fila Windsor"
 created: 2026-08-23
-updated: 2026-08-23
-version: "1.6"
+updated: 2026-08-24
+version: "1.7"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
@@ -75,6 +75,14 @@ Fernando autorizó la revisión al superar la ventana T+3 de YouTube. El corte s
 La discrepancia de frescura de fuentes es parte del resultado: TikTok sí devolvió una fila nueva; Instagram respondió con cache anterior; YouTube continúa sin fila en Windsor, pero Studio proporciona la evidencia manual más reciente. Por ello, no se construye un ranking cross-platform ni se atribuye la diferencia al audio nativo `she share post (for blog)` o al control de SFX.
 
 ![Captura de YouTube Studio de CAN-002 alrededor de T+3 h](2026-08-23_Bam_CAN002_YouTube_Studio_T3h04m18s.jpg)
+
+## Actualización de YouTube Studio — 24 de agosto
+
+Fernando aportó una nueva captura de Studio, recibida a las **22:21:14 CDT**. La interfaz identifica el Short como publicado hace **1 día**, sin exponer una hora exacta de captura. Registra **255 vistas**, **3 likes** y **4 shares**; también lo presenta como el Short con más vistas de la cuenta en ese momento y muestra a **México con 75 %** dentro de las ubicaciones principales de audiencia.
+
+Frente al corte de Studio cercano a T+3 (90 vistas, 2 likes y 4 shares), esto equivale a +165 vistas y +1 like; los shares permanecen en 4. La señal es positiva para la distribución inicial de CAN-002, pero no demuestra la causa: el reconocimiento de “más vistas” es relativo al catálogo actual de la cuenta, la muestra sigue siendo de una sola pieza y las demás plataformas no comparten la misma edad, métricas ni frescura de datos. Windsor continúa sin fila autenticada de YouTube.
+
+![Captura de YouTube Studio de CAN-002 con edad relativa de un día](2026-08-24_Bam_CAN002_YouTube_Studio_relative_1d.jpg)
 
 ## Límites y actualizaciones relacionadas
 
