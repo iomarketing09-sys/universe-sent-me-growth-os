@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "2.62"
+version: "2.63"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -525,3 +525,12 @@ El ledger mantiene **612 filas / 612 IDs únicos** y validación `PASS`; las cin
 El texto editorial proporcionado por Fernando se convirtió en una cola nueva posterior a la publicación: **8 propuestas `Pendiente_Fernando`**, **2 casos `Revisar_Contexto`** y **5 no acciones**. La cola vigente es `Operations/Research/2026-08-25_18-34-06_Facebook_Pending_Queue_After_Current_Queue_Publication.json`; no se publican las ocho propuestas ni las dos respuestas candidatas sin aprobación específica posterior y, en los casos de contexto, sin confirmar primero el significado del comentario.
 
 **Documentos relacionados que requieren alineación:** `Operations/Research/2026-08-15_Community_Engagement_Log.md`, `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 29. Aprobación adicional pendiente de publicación — 25 de agosto de 2026
+
+Fernando aprobó las ocho propuestas adicionales de engagement, incluida la redacción `Y nosotros encantados de que lo ames. 😌✨` para `Amo`. La aprobación se registró en el ledger como `Aprobacion_Estado=Aprobada`, manteniendo `Respuesta_Estado=Pendiente_Respuesta`, sin `Respuesta_Meta_ID` ni `Respuesta_Fecha`. No se ejecutaron llamadas de publicación para este lote.
+
+La nueva cola contiene **8 propuestas `Aprobada/Pendiente_Publicacion`**, **2 casos `Revisar_Contexto`** y **5 no acciones**. `Te lo pro meto` y `Las cesareadas por ahí no paso nada! 🫢` requieren contexto antes de transformarse en una propuesta publicable. Evidencia: `Operations/Research/2026-08-25_18-45-08_Facebook_Additional_Engagement_Approval.json/.md`, `Operations/Research/2026-08-25_18-34-06_Facebook_Additional_Engagement_Review.json/.md` y `Operations/Research/2026-08-25_18-34-06_Facebook_Pending_Queue_After_Current_Queue_Publication.json`.
+
+**Regla de seguridad:** la aprobación de este lote no incluye los dos casos de contexto ni las cinco no acciones. Cuando se solicite publicar, se requiere un nuevo preflight GET-only, control de duplicados/conflictos y verificación individual posterior. **Documentos relacionados:** `Operations/Research/2026-08-15_Community_Engagement_Log.md`, `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

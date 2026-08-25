@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "6.6"
+version: "6.7"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -927,3 +927,12 @@ El ledger actualizó las cinco filas a `Respuesta_Estado=Respondido`, `Aprobacio
 Fernando proporcionó una propuesta editorial adicional para los 15 comentarios raíz previamente filtrados. Se registraron **8 oportunidades nuevas** con respuesta propuesta, **2 casos para revisar contexto** y **5 casos que permanecen sin respuesta**. La nueva cola contiene ocho propuestas `Pendiente_Fernando`; las ocho quedan sin publicar y sin aprobación reutilizada. La respuesta para `Te lo pro meto` y la de `Las cesareadas...` requieren confirmar contexto antes de considerar cualquier aprobación. Evidencia: `Operations/Research/2026-08-25_18-34-06_Facebook_Additional_Engagement_Review.json/.md` y `Operations/Research/2026-08-25_18-34-06_Facebook_Pending_Queue_After_Current_Queue_Publication.json`.
 
 **Documentos relacionados que requieren alineación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 34. Ocho propuestas aprobadas, pendientes de publicación — 25 de agosto de 2026
+
+Fernando aprobó explícitamente las ocho propuestas adicionales derivadas del texto editorial pegado. Se aprobó conservar la versión juguetona de `Amo`: `Y nosotros encantados de que lo ames. 😌✨`. Las ocho filas del ledger quedaron con `Aprobacion_Estado=Aprobada`, `Respuesta_Estado=Pendiente_Respuesta`, sin `Respuesta_Meta_ID` ni `Respuesta_Fecha`, y con `Privacidad=Anonimizado`. **No se ejecutó ninguna publicación** de este lote.
+
+La cola adicional quedó en **8 propuestas Aprobada/Pendiente_Publicacion**. Los dos comentarios dependientes de contexto —`Te lo pro meto` y `Las cesareadas por ahí no paso nada! 🫢`— permanecen fuera del lote hasta confirmar su significado, y las cinco no acciones se mantienen cerradas. Evidencia: `Operations/Research/2026-08-25_18-45-08_Facebook_Additional_Engagement_Approval.json/.md`, `Operations/Research/2026-08-25_18-34-06_Facebook_Additional_Engagement_Review.json/.md` y `Operations/Research/2026-08-25_18-34-06_Facebook_Pending_Queue_After_Current_Queue_Publication.json`.
+
+**Regla vigente:** la aprobación se registró, pero no autoriza ninguna publicación fuera de este lote ni se ejecutará publicación hasta una instrucción operativa específica. Antes de publicar se requiere preflight GET-only actualizado y verificación individual. **Documentos relacionados que requieren alineación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

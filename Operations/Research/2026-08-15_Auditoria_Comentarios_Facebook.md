@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "7.1"
+version: "7.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -1442,3 +1442,12 @@ El registrador actualizó las cinco filas del ledger a `Respondido` con sus IDs 
 El texto editorial proporcionado por Fernando reclasificó los 15 comentarios raíz restantes en **8 oportunidades con respuesta propuesta**, **2 casos que requieren revisar contexto** y **5 casos que permanecen sin respuesta**. Las ocho oportunidades quedaron en una nueva cola `Pendiente_Fernando`; las dos revisiones de contexto no pueden publicarse sin confirmar primero el significado del comentario y las cinco no acciones siguen cerradas. Evidencia: `Operations/Research/2026-08-25_18-34-06_Facebook_Additional_Engagement_Review.json/.md` y `Operations/Research/2026-08-25_18-34-06_Facebook_Pending_Queue_After_Current_Queue_Publication.json`.
 
 **Documentos relacionados:** `Operations/Research/2026-08-15_Community_Engagement_Log.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 50. Aprobación de ocho propuestas adicionales — 25 de agosto de 2026
+
+Fernando aprobó explícitamente las ocho propuestas adicionales surgidas de la revisión editorial. Se conservó la redacción aprobada para `Amo`: `Y nosotros encantados de que lo ames. 😌✨`. El estado de las ocho filas es `Aprobacion_Estado=Aprobada` y `Respuesta_Estado=Pendiente_Respuesta`; no tienen `Respuesta_Meta_ID` ni `Respuesta_Fecha`, porque este paso no ejecutó publicación.
+
+La cola de publicación posterior contiene ocho propuestas aprobadas. Los casos `Te lo pro meto` y `Las cesareadas por ahí no paso nada! 🫢` no forman parte de ese lote: permanecen como `Revisar_Contexto` hasta confirmar el significado del comentario. El comentario sexualizado y las cuatro reacciones aisladas permanecen `No_Requiere_Respuesta`. Evidencia: `Operations/Research/2026-08-25_18-45-08_Facebook_Additional_Engagement_Approval.json/.md`, `Operations/Research/2026-08-25_18-34-06_Facebook_Additional_Engagement_Review.json/.md` y `Operations/Research/2026-08-25_18-34-06_Facebook_Pending_Queue_After_Current_Queue_Publication.json`.
+
+**Regla de seguridad:** esta aprobación no incluye los dos casos de contexto ni las cinco no acciones y no ejecuta publicación automáticamente. Cuando Fernando solicite publicar el lote, se debe realizar un nuevo preflight GET-only, bloquear duplicados o conflictos y verificar cada respuesta tras el POST. **Documentos relacionados:** `Operations/Research/2026-08-15_Community_Engagement_Log.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

@@ -1,24 +1,38 @@
 {
-  "title": "Facebook Additional Engagement Review — 2026-08-25 18:34 UTC",
-  "purpose": "Registrar la propuesta editorial pegada por Fernando para reclasificar oportunidades de engagement sin publicar respuestas adicionales.",
+  "title": "Facebook Additional Engagement Approval — 2026-08-25 18:45 UTC",
+  "purpose": "Registrar la aprobación explícita de ocho propuestas editoriales adicionales, sin ejecutar publicación, y dejar separadas las revisiones de contexto.",
   "status": "Active",
-  "created_at": "2026-08-25T18:34:06+00:00",
+  "created_at": "2026-08-25T18:45:08+00:00",
   "updated_at": "2026-08-25T18:45:08+00:00",
   "version": "1.0",
   "author": "Manus AI",
   "organization": "Operations/Research",
   "related_documents": [
+    "Operations/Research/2026-08-25_18-34-06_Facebook_Additional_Engagement_Review.json",
     "Operations/Research/2026-08-25_18-34-06_Facebook_Pending_Queue_After_Current_Queue_Publication.json",
-    "Operations/Research/2026-08-25_17-58-20_Facebook_Editorial_Review_GET_Only.json",
     "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
-    "Operations/Research/2026-08-25_18-34-06_Facebook_Publication_Record.json",
-    "Operations/Research/2026-08-25_18-45-08_Facebook_Additional_Engagement_Approval.json"
+    "Operations/Research/2026-08-25_18-45-08_Facebook_Additional_Engagement_Approval.md"
   ],
-  "source": "Fernando pasted editorial review",
-  "publication_executed_for_followup": false,
-  "new_proposal_count": 8,
+  "source": "Fernando — aprobación explícita en conversación",
+  "approval_recorded": true,
+  "approval_recorded_at": "2026-08-25T18:45:08+00:00",
+  "approved_by": "Fernando",
+  "approved_comment_ids": [
+    "122151377109072582_1043788355242576",
+    "122151377109072582_1522896686271901",
+    "122151376539072582_1416950633724431",
+    "122151376083072582_1858563828450701",
+    "122151376083072582_1751262112632205",
+    "122151376083072582_1044932481615070",
+    "122151376011072582_1633124508149465",
+    "122151376011072582_1382951430696782"
+  ],
+  "approved_pending_publication_count": 8,
+  "pending_approval_count": 0,
   "context_review_count": 2,
   "no_action_count": 5,
+  "publication_executed": false,
+  "publication_status": "8 approved pending publication; 0 published in this step",
   "proposals": [
     {
       "comment_id": "122151377109072582_1043788355242576",
@@ -124,78 +138,5 @@
       "approval_recorded_at": "2026-08-25T18:45:08+00:00",
       "approved_by": "Fernando"
     }
-  ],
-  "context_review": [
-    {
-      "comment_id": "122151376539072582_1787852502561437",
-      "post_id": "1036844829507460_122151376539072582",
-      "comment_created_time": "2026-08-25T03:55:36+0000",
-      "comment_message": "Te lo pro meto",
-      "post_reference": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
-      "candidate_reply": "Promesa recibida. Ahora falta ver si se cumple. 😂",
-      "decision": "Revisar_Contexto",
-      "reason": "Revisar primero el contexto visual/copy del Reel de Maeve; no publicar ni convertir en propuesta hasta confirmar el juego de palabras.",
-      "publication_status": "No_Publicar_Sin_Contexto"
-    },
-    {
-      "comment_id": "122151376083072582_2117668022157008",
-      "post_id": "1036844829507460_122151376083072582",
-      "comment_created_time": "2026-08-25T01:17:35+0000",
-      "comment_message": "Las cesareadas por ahi no paso nada ! 🫢",
-      "post_reference": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
-      "candidate_reply": "Jajaja, cada quien tiene su propia teoría. 🫢😂",
-      "decision": "Revisar_Contexto",
-      "reason": "Revisar qué significa exactamente la referencia antes de responder; no inventar contexto.",
-      "publication_status": "No_Publicar_Sin_Contexto"
-    }
-  ],
-  "no_action": [
-    {
-      "comment_id": "122151376539072582_1957098628471175",
-      "post_id": "1036844829507460_122151376539072582",
-      "comment_created_time": "2026-08-25T15:10:14+0000",
-      "comment_message": "Yo soló les aseguró que les cresera algo y hasta adición se les vuelva chulas",
-      "post_reference": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
-      "decision": "No_Requiere_Respuesta",
-      "reason": "Lenguaje sexualizado; no escalar ni competir desde la Página."
-    },
-    {
-      "comment_id": "122151376539072582_1032315632920234",
-      "post_id": "1036844829507460_122151376539072582",
-      "comment_created_time": "2026-08-25T14:43:39+0000",
-      "comment_message": "🙂",
-      "post_reference": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
-      "decision": "No_Requiere_Respuesta",
-      "reason": "Reacción aislada sin conversación que abrir."
-    },
-    {
-      "comment_id": "122151376539072582_1794660225032096",
-      "post_id": "1036844829507460_122151376539072582",
-      "comment_created_time": "2026-08-25T05:15:42+0000",
-      "comment_message": "🥵🥵",
-      "post_reference": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
-      "decision": "No_Requiere_Respuesta",
-      "reason": "Reacción aislada sin conversación que abrir."
-    },
-    {
-      "comment_id": "122151376083072582_1507773138044678",
-      "post_id": "1036844829507460_122151376083072582",
-      "comment_created_time": "2026-08-25T02:58:47+0000",
-      "comment_message": "🥵",
-      "post_reference": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
-      "decision": "No_Requiere_Respuesta",
-      "reason": "Reacción aislada sin conversación que abrir."
-    },
-    {
-      "comment_id": "122151376083072582_2252762218897901",
-      "post_id": "1036844829507460_122151376083072582",
-      "comment_created_time": "2026-08-25T03:51:38+0000",
-      "comment_message": "😮‍💨💜",
-      "post_reference": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
-      "decision": "No_Requiere_Respuesta",
-      "reason": "Reacción aislada sin conversación que abrir."
-    }
-  ],
-  "approval_recorded": true,
-  "approved_pending_publication_count": 8
+  ]
 }
