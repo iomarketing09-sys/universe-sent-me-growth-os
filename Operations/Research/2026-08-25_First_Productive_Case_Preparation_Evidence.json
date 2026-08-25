@@ -42,14 +42,15 @@
   "post_publication_control": {
     "schedule_task_uid": "P9iKuQHRgO56wVd7MSBJ5o",
     "schedule_name": "USM: capturar E0 del próximo post aprobado",
-    "cron": "0 10 15 25 8 *",
+    "cron": "0 10 10 25 8 *",
     "timezone": "America/Matamoros",
     "expire_at": "2026-08-25T15:30:00Z",
     "status": "active",
+    "run_mode": "full_auto",
     "scheduled_check_local": "2026-08-25T10:10:00-05:00",
     "scheduled_check_utc": "2026-08-25T15:10:00Z",
     "connector": "Universe Sent Me Meta API",
-    "safe_behavior": "Read Meta only; if is_published=false, write nothing and report E0_PENDING; if is_published=true, invoke the E0 adapter, persist raw and validate the ledger."
+    "safe_behavior": "Read Meta only; if is_published=false, write nothing and report E0_PENDING; if is_published=true, invoke the E0 adapter, persist raw and validate the ledger. The schedule is a one-shot control and expires at 10:30 local."
   },
   "execution_state": {
     "e0_recorded": false,
