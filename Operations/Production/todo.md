@@ -54,6 +54,7 @@
 - [x] Registrar la aprobación del aviso de privacidad de staging y observar la atención de solicitudes por correo guiado durante un periodo operativo antes de reconsiderar un formulario.
 - [ ] Revisar manualmente, después de 30 días calendario de uso o ante fricción operativa, si el correo guiado recibe solicitudes completas y se atiende sin pérdidas antes de reconsiderar un formulario.
 - [ ] Mantener fuera del staging materiales, composiciones, certificaciones, disponibilidad y condiciones comerciales hasta recibir datos confirmados y una nueva decisión de inclusión.
+- [ ] Cambiar temporalmente el destino del correo guiado y del formulario local a `io.marketin.09@gmail.com` para una prueba de recepción en staging, mostrar aviso de prueba y restaurar `firmabordados@yahoo.com` al concluir.
 - [x] Comparar y documentar alternativas seguras de backend, entrega de correo, aviso de privacidad y antispam para el formulario de Firma Bordados.
 - [x] Preparar el cambio de «Cómo solicitar» para priorizar correo sin eliminar WhatsApp como canal alternativo.
 - [x] Implementar y validar en staging el enlace de correo guiado para «Cómo solicitar», conservando WhatsApp en hero y contacto.

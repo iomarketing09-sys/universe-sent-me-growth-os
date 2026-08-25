@@ -4,7 +4,7 @@ purpose: "Definir los pasos técnicos para probar el sitio React/Vite de Firma B
 status: Review
 created: 2026-08-23
 updated: 2026-08-24
-version: "1.13"
+version: "1.14"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Evaluacion_Migracion_Wix_Hosting_IA.md"
@@ -121,6 +121,12 @@ El commit `87ec478` añadió la ruta estática de revisión `https://firma-borda
 El Pull Request 9 pasó CI, se integró a `staging` y se promovió a `main`. Una revisión HTTP detectó que `/privacidad` sin barra final redirigía al inicio en Pages; el Pull Request 10 corrigió la regla de SPA y el enlace hacia `/privacidad/`. Tras CI en `staging` y `main`, el merge `402cffe` se publicó y la comprobación HTTP devolvió 200 para la ruta canónica, con el aviso, el correo y la política de doce meses presentes; no aparecen nombres personales retirados. La página es una versión de revisión y no activa formulario con backend, Turnstile, proveedor, secreto, analítica, almacenamiento, Wix, DNS, nameservers ni dominio público.
 
 Fernando aprobó el texto del aviso para el staging y confirmó mantener el correo guiado. La siguiente acción no es un despliegue: durante 30 días calendario se revisará manualmente que las solicitudes lleguen completas y que el equipo pueda atenderlas sin pérdidas. La evaluación no usa analítica ni modifica la infraestructura. Un formulario seguirá bloqueado hasta que esa observación muestre una necesidad real y se autorice explícitamente su ruta técnica.
+
+### Prueba temporal de correo guiado — 2026-08-24
+
+Para verificar recepción sin acceder al buzón oficial, el staging dirige temporalmente solo el correo guiado y el formulario local a `io.marketin.09@gmail.com`. El aviso visible indica que es una prueba y que no se envíen datos reales. El correo directo en contacto y el aviso de privacidad permanecen en `firmabordados@yahoo.com`.
+
+La prueba se valida manualmente desde Quick-seedless: abrir “Preparar prueba” o completar el formulario, confirmar que el cliente de correo propone `io.marketin.09@gmail.com`, enviar un mensaje de prueba sin datos reales y confirmar su llegada al buzón provisional. Tan pronto se confirme recepción, crear una rama de restauración que reemplace el destino provisional por `firmabordados@yahoo.com`, pasar PR → CI → `staging` → `main` y repetir las verificaciones HTTP. No enviar mensajes de prueba desde automatización ni modificar el aviso de privacidad, Wix, DNS, nameservers, dominio, backend, Turnstile, proveedores, secretos, almacenamiento o analítica.
 
 ## 2. Estado de partida y preparación obligatoria
 
