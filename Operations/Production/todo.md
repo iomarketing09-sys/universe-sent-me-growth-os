@@ -44,7 +44,8 @@
 - [x] Validar, publicar en el staging Cloudflare y documentar el paquete C2 sin modificar Wix, DNS ni el dominio público.
 - [x] Implementar el paquete C3: enlace de ubicación con indicaciones y verificación final de los datos de contacto visibles.
 - [x] Construir y verificar un enlace de indicaciones usando únicamente la dirección confirmada de Firma Bordados.
-- [ ] Decidir formulario con backend y analítica solo después de definir privacidad, antispam, responsable y proceso de respuesta.
+- [ ] Decidir formulario con backend y analítica solo después de definir privacidad, antispam, retención/ARCO y proceso de respuesta.
+- [x] Incorporar al diseño de privacidad que Paty Lozano es la responsable declarada y que el domicilio corresponde al negocio, sin publicar todavía un aviso final.
 - [x] Comparar y documentar alternativas seguras de backend, entrega de correo, aviso de privacidad y antispam para el formulario de Firma Bordados.
 - [x] Preparar el cambio de «Cómo solicitar» para priorizar correo sin eliminar WhatsApp como canal alternativo.
 - [x] Implementar y validar en staging el enlace de correo guiado para «Cómo solicitar», conservando WhatsApp en hero y contacto.

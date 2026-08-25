@@ -4,7 +4,7 @@ purpose: "Comparar rutas seguras para recibir consultas del sitio y definir los 
 status: Review
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Evaluacion_Migracion_Wix_Hosting_IA.md"
@@ -38,6 +38,11 @@ El formulario no debe pedir materiales de clientes, archivos, listas de personal
 
 La Ley Federal de Protección de Datos Personales en Posesión de los Particulares exige que el aviso informe, entre otros elementos, identidad y domicilio del responsable, datos tratados, finalidades, medios para limitar uso/divulgación, procedimientos ARCO y cómo se comunicarán cambios.[1] Cuando los datos se recaban electrónicamente, la modalidad simplificada debe estar disponible en ese momento e indicar dónde consultar el aviso integral.[1]
 
+| Elemento | Confirmación recibida | Uso permitido en este diseño | Pendiente antes de publicar |
+| :--- | :--- | :--- | :--- |
+| Persona responsable declarada | **Paty Lozano** | Identificar a la persona responsable en el borrador interno del aviso | Confirmar la denominación exacta que debe aparecer públicamente y su capacidad para actuar en nombre de Firma Bordados. |
+| Domicilio del responsable | Emilio Carranza #1021 Int. 113, Col. Burócratas, Piedras Negras, Coahuila | Usar el domicilio operativo ya visible y confirmado del negocio | Confirmar que es el domicilio apropiado para el aviso y el medio de recepción de solicitudes ARCO. |
+
 La implementación debe colocar junto al botón de envío un enlace visible al aviso simplificado y un enlace al aviso integral. El texto se elaborará con los datos reales del responsable y deberá revisarse por el cliente o asesor legal antes de activarse. Como contenido mínimo, debe declarar que los datos se usan para atender, dar seguimiento y, cuando proceda, cotizar la solicitud; identificar al responsable y un correo o medio ARCO; explicar el plazo de conservación; y revelar los proveedores que procesen la información en nombre del responsable.
 
 > **Regla operativa:** el aviso no debe afirmar que no existen transferencias o procesadores si se usa un proveedor de formularios, correo o antispam. Esa relación debe identificarse correctamente antes de publicar el formulario.
@@ -67,7 +72,7 @@ Si el dominio se transfiere a Cloudflare DNS como parte de la migración final, 
 
 ## 6. Decisiones necesarias antes de activar servicios
 
-1. Confirmar quién será el **responsable** del tratamiento y su domicilio operativo para el aviso.
+1. Confirmar la **denominación pública exacta** de Paty Lozano y que el domicilio del negocio es el medio apropiado para el aviso y solicitudes ARCO.
 2. Confirmar el correo destinatario y las personas autorizadas para leer y responder consultas.
 3. Aprobar finalidades, campos, periodo de conservación y medio para solicitudes ARCO.
 4. Elegir: proveedor gestionado temporal o Function propia después de la migración/DNS.
@@ -76,7 +81,7 @@ Si el dominio se transfiere a Cloudflare DNS como parte de la migración final, 
 
 ## 7. Estado
 
-La Etapa A está **aplicada**. No se ha activado backend, proveedor de correo, Turnstile, analítica, secreto, almacenamiento de consultas, cambio DNS ni migración de dominio. La recomendación de la Etapa B permanece en **Review** y requiere decisión explícita antes de cualquier integración externa.
+La Etapa A está **aplicada**. Paty Lozano y el domicilio operativo del negocio quedaron registrados como datos declarados para preparar el aviso, pero no constituyen un aviso de privacidad definitivo ni una validación legal. No se ha activado backend, proveedor de correo, Turnstile, analítica, secreto, almacenamiento de consultas, cambio DNS ni migración de dominio. La recomendación de la Etapa B permanece en **Review** y requiere decisión explícita antes de cualquier integración externa.
 
 ## Referencias
 
