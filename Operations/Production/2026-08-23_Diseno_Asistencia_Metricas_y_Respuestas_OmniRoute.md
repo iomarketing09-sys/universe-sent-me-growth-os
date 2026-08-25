@@ -4,7 +4,7 @@ purpose: "Definir cómo OmniRoute puede analizar resúmenes métricos ya normali
 status: Review
 created: 2026-08-23
 updated: 2026-08-25
-version: "2.5"
+version: "2.7"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-19_Decision_Gateway_IA_OmniRoute.md"
@@ -399,6 +399,12 @@ La app local seguirá solicitando solo esos dos scopes de lectura. `user.info.ba
 Fernando confirmó que ya existe una app de TikTok creada por él y sin configuración previa. Esta app queda reservada exclusivamente para el acceso oficial de Universe Sent Me. Antes de añadir productos, scopes, callback o credenciales, se verificará que su nombre y descripción hagan explícita la marca y que no arrastre permisos, usuarios o datos de Bam in a Can ni Firma Bordados.
 
 La reserva no habilita todavía OAuth ni acceso de datos. El próximo paso es configurar Login Kit y TikTok API dentro de ese contenedor, con los únicos scopes autorizados `user.info.basic` y `video.list`.
+
+### 8.22 URLs públicas de términos y privacidad
+
+El formulario de creación de TikTok requiere URL de términos de servicio y URL de privacidad. Fernando identificó el sitio propio de Universe Sent Me `https://iomarketin.wixstudio.com/universesentme` como anfitrión preferido. Se preparó el borrador separado `Operations/Automation/2026-08-25_Textos_Publicos_Terminos_Privacidad_App_Metricas_USM.md` para dos páginas públicas de la app local.
+
+Las URLs sugeridas son `https://iomarketin.wixstudio.com/universesentme/usm-metrics-terms` y `https://iomarketin.wixstudio.com/universesentme/usm-metrics-privacy`. Antes de enviarlas a TikTok se debe confirmar un correo de contacto público de iO Marketing, publicar ambas páginas, probar su acceso sin sesión y revisar que el contenido no afirme operaciones de Bam in a Can, Firma Bordados ni otros clientes.
 
 ## Referencias
 
