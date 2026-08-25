@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.61
+**Versión:** 4.62
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.62.00] — 2026-08-25 (Fernando/Manus): Primera lectura oficial Sandbox de TikTok completada en local.** Con el token Desktop/PKCE ya autorizado, el collector se ejecutó en Xubuntu con un máximo de una página y devolvió `status=collected`, `brand=Universe Sent Me`, `platform=TikTok` y `records=9`. La evidencia cruda queda únicamente en la ruta privada local y no se envió a GitHub, Google Sheets, OmniRoute, Wix, Firma Bordados, Bam in a Can ni terceros. Esta prueba valida conectividad y `video.list` en Sandbox, pero no constituye acceso de Production, normalización, cron ni autorización para escritura. Próximo gate: revisión humana local de atribución y campos disponibles. Documento actualizado: `Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md` v1.4.
 
 - **[4.61.00] — 2026-08-25 (Fernando/Manus): OAuth Desktop/PKCE Sandbox de TikTok autorizado con scopes mínimos.** Tras corregir un primer rechazo de identificador de cliente que no generó token, Fernando completó el consentimiento del Target User de Universe Sent Me. El autorizador local devolvió `status=authorized`, `brand=Universe Sent Me` y `scope=user.info.basic,video.list`; el token se guardó únicamente fuera del repositorio con permisos privados. El entorno Python local fue reparado al instalar el soporte estándar de venv/pip y confirmó `requests` disponible. No se expusieron credenciales, tokens, URLs de autorización o respuestas crudas; no se invocó `video.list` todavía, no se escribieron ledgers/Sheets/OmniRoute y no hubo publicaciones, comentarios, mensajes, anuncios ni otras marcas. Siguiente gate: lectura local única mediante el collector y validación de respuesta. Documento actualizado: `Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md` v1.3.
 

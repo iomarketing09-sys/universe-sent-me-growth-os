@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "4.8"
+version: "4.9"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -52,7 +52,8 @@ organization: "GrowthOS"
 - [x] Configurar en el sandbox únicamente Login Kit y TikTok API/Display API con `user.info.basic` y `video.list`, más `http://127.0.0.1:8765/callback/`; no activar Content Posting, comentarios, mensajes, anuncios ni scopes adicionales; Fernando reportó la configuración finalizada.
 - [x] Confirmar visualmente en el Sandbox: Login Kit como único producto; `user.info.basic` y `video.list` como únicos scopes; callback `http://127.0.0.1:8765/callback/`; y un solo Target User `universe.sent.me` de Universe Sent Me. No aparecieron otros productos activos.
 - [x] Validar en el flujo local que el token Sandbox autorizado incluye exactamente `user.info.basic` y `video.list`: el autorizador Desktop/PKCE confirmó `status=authorized` y `brand=Universe Sent Me`; el token quedó fuera del repositorio.
-- [ ] Ejecutar una primera lectura local con el collector TikTok y confirmar que `video.list` funciona en Sandbox; si falla por producto no disponible, detenerse y revisar la configuración Sandbox sin añadir scopes o productos de escritura.
+- [x] Ejecutar una primera lectura local con el collector TikTok y confirmar que `video.list` funciona en Sandbox: `status=collected`, `brand=Universe Sent Me`, `platform=TikTok`, `records=9`; evidencia cruda conservada solo en Xubuntu.
+- [ ] Revisar de forma local y humana la evidencia privada del Sandbox para confirmar que los 9 registros son de la cuenta objetivo y que los campos nativos disponibles se ajustan al contrato; no normalizar, no escribir Google Sheets ni enviar raw a OmniRoute aún.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
 - [x] Configurar y autorizar la app de escritorio Sandbox de TikTok con los scopes oficiales mínimos `user.info.basic` y `video.list`, callback local y PKCE; el cliente OAuth local de Google con scopes de lectura y monetización sigue pendiente.
 - [ ] Reemplazar la consulta de Windsor.ai por scripts locales de TikTok y YouTube antes del fin del Trial, manteniendo Facebook e Instagram en sus rutas existentes.

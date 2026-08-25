@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.3"
+version: "1.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -94,6 +94,12 @@ La siguiente prueba no presupone que el acceso esté operativo: el autorizador l
 El flujo Desktop con PKCE se completó para el usuario objetivo de Sandbox. El autorizador local confirmó `status = authorized`, `brand = Universe Sent Me` y el scope exacto `user.info.basic,video.list`. El primer intento se detuvo antes del consentimiento porque TikTok rechazó el identificador de cliente; no produjo token. Tras verificar que se usaban las credenciales de la app correcta, TikTok entregó el callback local y el script guardó el token únicamente en la ruta privada configurada fuera del repositorio.
 
 La autorización no es evidencia de lectura de métricas todavía. El próximo comando debe usar el collector para comprobar `video.list` de forma local; se conservará el resultado crudo solo como evidencia privada y no se actualizarán ledgers, Google Sheets, OmniRoute, calendarios ni contenido hasta una revisión humana posterior.
+
+### Primera lectura Sandbox confirmada — 25 de agosto de 2026
+
+El collector oficial se ejecutó con `--max-pages 1` y devolvió `status = collected`, `brand = Universe Sent Me`, `platform = TikTok` y `records = 9`. El archivo de evidencia cruda permanece bajo el directorio privado de Xubuntu definido en la configuración; no se trasladó a GitHub, Google Sheets, OmniRoute ni a ningún servicio de otra marca.
+
+Este resultado demuestra conectividad y alcance de solo lectura de `video.list` dentro del Sandbox, no rendimiento definitivo ni una autorización para operar en Production. Antes de cualquier normalización se debe realizar una revisión humana local para atribuir los registros al Target User y confirmar los campos realmente devueltos. El piloto sigue sin cron, sin escritura canónica, sin importes financieros y sin automatización de respuestas o publicaciones.
 
 ## Estado del documento
 
