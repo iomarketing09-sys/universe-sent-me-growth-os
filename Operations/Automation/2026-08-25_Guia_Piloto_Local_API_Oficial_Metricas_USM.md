@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "2.1"
+version: "2.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -146,6 +146,14 @@ La captura confirma acceso de lectura para los campos contratados, no una autori
 `summarize_meta_private_metrics.py` es un lector local de la evidencia más reciente de Facebook o Instagram. No realiza llamadas remotas ni escribe archivos. Para Facebook presenta únicamente el rango de publicación, número de registros y, para reacciones, comentarios y shares, registros disponibles/no disponibles, total de los valores disponibles y mediana. Para Instagram presenta esos mismos conceptos por contador nativo disponible, además de la distribución de tipos de media y de superficie.
 
 El generador prohíbe explícitamente cualquier salida de IDs, captions, textos, URLs, rutas de evidencia, tokens, datos personales o registros individuales. Sus totales son descriptivos y corresponden a contadores de vida al momento de captura; no son una normalización por ventana, una clasificación de contenido ni una recomendación de Growth OS.
+
+### Revisión descriptiva de la primera captura — 25 de agosto de 2026
+
+El resumen de Facebook abarcó 25 posts publicados entre el 22 y el 25 de agosto de 2026. Los contadores nativos disponibles acumularon 3,702 reacciones, 261 comentarios y 785 shares. La mediana por post fue 31 reacciones, 2 comentarios y 9 shares entre los 22 registros para los que Meta devolvió shares; tres registros quedaron sin dicho contador y se conservan como no disponibles. Como referencia descriptiva, los promedios calculados sobre valores disponibles son 148.08 reacciones y 10.44 comentarios por registro, y 35.68 shares por registro con share disponible.
+
+El resumen de Instagram abarcó 25 media entre el 4 y el 25 de agosto de 2026: 13 imágenes, 10 videos y 2 carruseles; 15 superficies `FEED` y 10 `REELS`. Los valores nativos disponibles fueron 30 likes, 0 comentarios, 1 share y 3 reposts. `saved_count` no fue devuelto para ningún registro, por lo que se conserva como no disponible. `total_views_count` estuvo disponible para 10 de 25 media y sumó 760; esos diez registros tuvieron una mediana de 67 vistas. Los demás quince registros no deben interpretarse como cero vistas.
+
+Estas capturas mezclan edades y formatos, y los contadores son de vida. Por lo tanto, se prohíbe derivar rankings, ganadores, benchmarks o hipótesis de contenido a partir de esta lectura. La siguiente posible capa es una normalización determinista por publicación y ventana, sujeta a autorización independiente.
 
 ## Referencias
 

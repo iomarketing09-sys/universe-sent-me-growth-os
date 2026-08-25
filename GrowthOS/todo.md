@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "6.0"
+version: "6.1"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -73,7 +73,8 @@ organization: "GrowthOS"
 - [ ] Mostrar y revisar localmente resúmenes seguros de las primeras capturas Meta, sin IDs, textos de publicaciones, URLs, rutas de evidencia o datos de personas; no normalizar ni enviar raw a OmniRoute todavía.
 - [x] Definir y validar que los resúmenes muestren únicamente rango temporal, cantidad de registros, totales nativos, mediana y disponibilidad de campos; prohibir rankings por texto, IDs, URLs, captions o datos de personas.
 - [x] Implementar y compilar `summarize_meta_private_metrics.py`, un generador local sin llamadas remotas ni escrituras que excluye IDs, textos, URLs, rutas, tokens y raw.
-- [ ] Ejecutar los resúmenes seguros de Facebook e Instagram en Xubuntu y revisar sus resultados agregados, preservando los archivos de evidencia fuente como privados.
+- [x] Ejecutar los resúmenes seguros de Facebook e Instagram en Xubuntu y revisar sus resultados agregados, preservando los archivos de evidencia fuente como privados.
+- [ ] Definir un gate separado de normalización determinista antes de llevar métricas Meta a vistas derivadas; no usar capturas de vida con edades distintas para declarar ganadores, llenar Sheets o actualizar hipótesis.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
 - [x] Configurar y autorizar la app de escritorio Sandbox de TikTok con los scopes oficiales mínimos `user.info.basic` y `video.list`, callback local y PKCE; el cliente OAuth local de Google con scopes de lectura y monetización sigue pendiente.
 - [ ] Reemplazar la consulta de Windsor.ai por scripts locales de TikTok y YouTube antes del fin del Trial, manteniendo Facebook e Instagram en sus rutas existentes.

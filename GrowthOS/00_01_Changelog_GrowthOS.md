@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.71
+**Versión:** 4.72
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.72.00] — 2026-08-25 (Fernando/Manus): Resúmenes locales seguros de Meta revisados sin normalización.** Los agregados de Facebook cubrieron 25 posts entre el 22 y 25 de agosto, con 3,702 reacciones, 261 comentarios y 785 shares disponibles; tres shares permanecen no disponibles. Instagram cubrió 25 media entre el 4 y 25 de agosto: 13 imágenes, 10 videos y 2 carruseles, distribuidos entre 15 FEED y 10 REELS. `saved_count` no fue devuelto en ningún registro; `total_views_count` solo estuvo disponible para 10 media y sumó 760. La revisión es descriptiva: mezcla edades y contadores de vida, por lo que no se declararon ganadores, benchmarks, hipótesis ni métricas cero. No se movió raw fuera de Xubuntu ni se modificaron Sheets, ledgers, OmniRoute, contenido o cualquier otra marca. Siguiente gate: normalización determinista separada, si Fernando la autoriza. Documento actualizado: `Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md` v2.2.
 
 - **[4.71.00] — 2026-08-25 (Fernando/Manus): Generador de resúmenes Meta seguros preparado.** Se añadió `summarize_meta_private_metrics.py` para revisar de forma local y agregada las capturas privadas más recientes de Facebook e Instagram. El script compila, no realiza llamadas remotas ni escrituras, y no imprime IDs, texto de posts, captions, URLs, rutas de evidencia, tokens, personas o registros individuales. Facebook se resume por rango temporal y estadísticos de reacciones, comentarios y shares; Instagram incorpora disponibilidad de contadores y distribución por tipo de media y superficie. Los totales son contadores nativos de vida al momento de captura y no equivalen a ventanas comparables ni decisiones de Growth OS. Pendiente: ejecutar ambos resúmenes en Xubuntu y revisarlos humanamente. Documento actualizado: `Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md` v2.1.
 
