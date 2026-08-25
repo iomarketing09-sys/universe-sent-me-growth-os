@@ -4,7 +4,7 @@ purpose: "Definir cómo OmniRoute puede analizar resúmenes métricos ya normali
 status: Review
 created: 2026-08-23
 updated: 2026-08-25
-version: "1.9"
+version: "2.0"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-19_Decision_Gateway_IA_OmniRoute.md"
@@ -337,6 +337,14 @@ Fernando identificó `https://www.youtube.com/@Universe_Sent_Me` como el canal d
 La muestra devolvió por video `views`, `engaged_views`, `likes`, `comments`, `shares`, `average_view_percentage` y `subscribers_gained`. `average_view_duration` se recibió vacío en la muestra, por lo que debe persistirse como `not_available`, nunca como cero. También se observaron valores de `average_view_percentage` superiores a 100 en algunos Shorts; el loop debe conservarlos como métrica nativa de YouTube y prohibir compararlos directamente con la tasa de finalización de TikTok o con el porcentaje visto de Instagram.
 
 Con esta validación, las cuatro rutas de contenido de Universe Sent Me cuentan con una base de lectura: Facebook mediante runners existentes, Instagram mediante la conexión nativa, TikTok orgánico mediante Windsor.ai Trial y YouTube mediante Windsor.ai Trial. Aún no se crea ningún schedule ni se escriben registros canónicos: la fuente definitiva y el gate del piloto programado siguen pendientes.
+
+### 8.16 Decisión de fuente definitiva y uso temporal de Windsor.ai
+
+Fernando eligió **APIs oficiales locales** como fuente definitiva para TikTok y YouTube. Los scripts se ejecutarán en su equipo Xubuntu, junto a OmniRoute, sin una cuota mensual de intermediario. Esta decisión conserva el diseño de lectura, normalización y aprobación humana ya definido; no autoriza aún credenciales, scripts, cron ni escritura en las vistas derivadas.
+
+Windsor.ai conserva únicamente un papel de referencia de lectura durante los cuatro días restantes de su Trial. No se crearán pagos, exports, tasks de destino ni automatizaciones productivas en Windsor.ai. La transición exige que los clientes OAuth, scopes de solo lectura, almacenamiento local seguro, renovación de tokens y pruebas de datos queden definidos y aprobados antes de que finalice el Trial.
+
+Las rutas existentes de Facebook e Instagram no se sustituyen en esta fase. El trabajo nuevo se limita a TikTok y YouTube, siempre con `brand = Universe Sent Me` y con la exclusión activa de Bam in a Can y Firma Bordados.
 
 ## Referencias
 
