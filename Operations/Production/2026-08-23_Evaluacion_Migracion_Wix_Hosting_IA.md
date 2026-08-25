@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-24
 
-**Versión:** 3.8
+**Versión:** 3.9
 
 **Autor:** Manus AI
 
@@ -228,7 +228,7 @@ Una vez autorizado el cambio, se actualizan únicamente los registros aprobados,
 
 El último paso no es técnico: el cliente confirma por escrito que el dominio sirve el nuevo sitio y que el canal de contacto funciona. Solo entonces se programa la reducción o cancelación de Wix, idealmente lejos de la fecha de renovación de diciembre de 2026 para conservar margen de reversión. Si el dominio raíz se aloja en Cloudflare Pages, Cloudflare indica que debe gestionarse la zona en Cloudflare; este movimiento de nameservers sigue requiriendo una aprobación separada.[9]
 
-La auditoría pasiva del Gate 3 registró que `firmabordados.com` usa `ns14.wixdns.net` y `ns15.wixdns.net`, con registros A del root y `www` dirigidos a Wix. No aparecen MX/TXT en el apex en la consulta pública, pero esta evidencia no sustituye inventariar la zona completa y todos los servicios dependientes desde Wix. El registro RDAP público indica vencimiento el 2027-02-19; debe confirmarse en la cuenta del cliente junto con registrante, renovación y facturación. El Gate 3 queda abierto hasta tener esos datos, una zona de reversión y aprobación explícita de cualquier cambio DNS.
+La auditoría pasiva del Gate 3 registró que `firmabordados.com` usa `ns14.wixdns.net` y `ns15.wixdns.net`, con tres A en el root y CNAME `www`, `es` y `m` dirigidos a Wix. Io Marketing confirmó que paga la renovación de $470 MXN el 19 de febrero, y el cliente confirmó que no hay servicios ligados al dominio. La URL canónica de producción será el root y las variantes `www`, `es` y `m` se proponen como redirecciones al root tras el corte. El registro RDAP público indica vencimiento el 2027-02-19. El Gate 3 solo permanece abierto para identificar por escrito al registrante/autoridad de cambio y obtener aprobación explícita de los nameservers Cloudflare antes de cualquier corte.
 
 ### Modelo de operación administrada confirmado
 

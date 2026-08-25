@@ -68,7 +68,8 @@
 - [x] Estimar los costos anuales de operación fuera de Wix por escenarios, con correo guiado y formulario gestionado como alternativas, sin contratar servicios.
 - [x] Preparar una propuesta de cotización de costo único de migración y paquetes de mantenimiento anual administrados por Io Marketing, con alcance, exclusiones y supuestos claros.
 - [x] Auditar el Gate 3 de dominio y DNS: control, renovación, registros A/CNAME/MX/TXT, servicios dependientes, plan de reversión y aprobaciones, sin modificar configuración.
-- [ ] Recibir del cliente la confirmación de registrante/renovación y el inventario completo de zona Wix antes de aprobar cualquier cambio DNS o nameserver.
+- [ ] Confirmar por escrito quién figura como registrante/autorizado para cambios del dominio antes de aprobar cualquier cambio DNS o nameserver.
+- [x] Incorporar el inventario DNS confirmado, la renovación de $470 MXN operada por Io Marketing y la URL raíz como canónica al plan de corte y reversión del Gate 3.
 - [x] Comparar y documentar alternativas seguras de backend, entrega de correo, aviso de privacidad y antispam para el formulario de Firma Bordados.
 - [x] Preparar el cambio de «Cómo solicitar» para priorizar correo sin eliminar WhatsApp como canal alternativo.
 - [x] Implementar y validar en staging el enlace de correo guiado para «Cómo solicitar», conservando WhatsApp en hero y contacto.
