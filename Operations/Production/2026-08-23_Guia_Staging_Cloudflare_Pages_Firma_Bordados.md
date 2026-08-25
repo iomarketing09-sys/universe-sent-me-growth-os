@@ -4,7 +4,7 @@ purpose: "Definir los pasos técnicos para probar el sitio React/Vite de Firma B
 status: Review
 created: 2026-08-23
 updated: 2026-08-24
-version: "1.5"
+version: "1.6"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Evaluacion_Migracion_Wix_Hosting_IA.md"
@@ -79,6 +79,8 @@ La nota contigua a los tiempos de entrega ahora explica que se pueden explorar o
 La tarjeta «Detalle de bordado» mostró un marcador de generación fallida después de la actualización de galería. El commit correctivo `b634f47` retiró las dos referencias externas de generación y se revisó mediante Pull Request hacia `staging`; el merge `eaf89df` pasó CI en `staging` y `main`, desde donde Pages sirve el staging público. La galería usa ahora únicamente `proceso-autorizado.jpeg`, `proceso-detalle.webp` y `prendas-color-web.webp`, activos locales del repositorio que responden correctamente.
 
 La comprobación técnica verificó código de respuesta HTTP 200 para los tres recursos y ausencia del texto de error en la respuesta de la landing. Por preferencia explícita del usuario, la comprobación visual manual queda pendiente y debe hacerse solo desde su navegador Quick-seedless; no se utilizará el navegador remoto de otra computadora. Wix, DNS, nameservers y dominio público se mantienen sin cambios.
+
+El usuario confirmó posteriormente la visualización correcta de la galería desde Quick-seedless, con lo que se cierra la incidencia. La corrección visual se considera aprobada solo para este staging; no modifica el sitio Wix ni autoriza un corte de dominio.
 
 ## 2. Estado de partida y preparación obligatoria
 

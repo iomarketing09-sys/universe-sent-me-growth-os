@@ -4,7 +4,7 @@ purpose: "Registrar la procedencia, evaluación y uso previsto de fotografías a
 status: Active
 created: 2026-08-24
 updated: 2026-08-24
-version: "1.2"
+version: "1.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md"
@@ -50,3 +50,7 @@ La sección «Nuestro trabajo» se amplió inicialmente con una galería de tres
 La corrección `b634f47`, validada por CI e integrada a staging/main mediante `eaf89df`, sustituyó ambos recursos generados por activos locales ya verificados: `proceso-autorizado.jpeg`, `proceso-detalle.webp` y `prendas-color-web.webp`. La galería final conserva tres tarjetas: «Bordado en prenda», «Detalle de bordado» y «Variedad de prendas». La verificación técnica confirmó HTTP 200 para los tres activos y ausencia del marcador de error en la respuesta del staging.
 
 La misma actualización añadió una tercera nota junto a los tiempos: «Le ayudamos a explorar opciones de prenda de acuerdo con las necesidades de presentación de su equipo». Esta formulación evita declarar «materiales de alta calidad» sin ficha técnica o confirmación del cliente. Cualquier mención futura de tela, composición, gramaje, acabado o calidad deberá registrarse primero en el inventario comercial. La comprobación visual manual queda reservada al navegador Quick-seedless del usuario; no se debe usar un navegador remoto de otra computadora para esa validación.
+
+### Confirmación final de visualización — 2026-08-24
+
+El usuario confirmó que la galería corregida se ve correctamente desde Quick-seedless. La selección final queda aprobada para el staging actual: bordado en prenda, detalle de bordado y variedad de prendas. No se requieren más cambios visuales por esta incidencia.
