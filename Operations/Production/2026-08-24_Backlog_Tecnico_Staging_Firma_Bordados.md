@@ -108,6 +108,8 @@ La prueba en celular confirmó que el cliente de correo se abre con el mensaje y
 
 El commit `4378bec` añadió el endpoint Formspree aprobado a un formulario visible exclusivamente para pruebas sintéticas. Se añadieron nombre, correo y requerimiento obligatorios; empresa y teléfono opcionales; honeypot; confirmación obligatoria de no enviar datos reales; ausencia de archivos; y enlace de respaldo al correo guiado. La página de privacidad se actualizó para identificar el piloto y prohibir datos reales mientras el buzón oficial siga sin verificar. El Pull Request 13 pasó CI, se integró a `staging` y el merge `9522527` se promovió a `main`. HTTP confirmó respuesta 200, endpoint, aviso de prueba, correo oficial, ausencia del buzón provisional y `robots.txt` bloqueado. No se activaron consultas reales, archivos, analítica, autorespuestas, pago, backend propio, Turnstile, secreto, Wix, DNS, nameservers ni dominio público.
 
+Fernando confirmó que una prueba sintética llegó correctamente al buzón configurado en Formspree. El resultado confirma el flujo técnico de prueba; no habilita el formulario para clientes ni sustituye la verificación pendiente de `firmabordados@yahoo.com` como destinatario oficial.
+
 ## 6. Límites hasta recibir la información del cliente
 
 No se deben añadir precios, cotizadores, promesas de tiempo, mínimos de pedido, materiales, certificaciones, formularios que almacenen datos, analytics de terceros ni SEO estructurado definitivo. La URL `*.pages.dev` debe seguir marcada como staging y el dominio `firmabordados.com` no debe asociarse al proyecto hasta el gate de aprobación, transferencia/operación administrada y migración documentado.

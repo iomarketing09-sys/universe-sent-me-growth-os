@@ -127,6 +127,8 @@ El endpoint público `https://formspree.io/f/meajblbz` se integró exclusivament
 
 La verificación técnica del staging confirmó HTTP 200 en inicio y privacidad, endpoint presente, aviso de pruebas sintéticas, `firmabordados@yahoo.com` aún visible, ausencia del buzón provisional anterior y `robots.txt` bloqueado. El destinatario `firmabordados@yahoo.com` aún no está verificado dentro de Formspree. Por ello, **no se aceptan consultas reales** ni se debe describir el formulario como canal oficial hasta que el negocio complete la verificación y se haga una revisión separada.
 
+Fernando confirmó la recepción correcta de una prueba sintética enviada desde el staging. Esto valida la experiencia de envío y el endpoint, pero no modifica la restricción: el formulario seguirá marcado como prueba hasta que `firmabordados@yahoo.com` se verifique como destinatario dentro de Formspree y se apruebe expresamente la apertura a consultas reales.
+
 ## 6. Decisiones necesarias antes de activar servicios
 
 1. Confirmar la **razón social**, únicamente si es distinta de Firma Bordados, y que el domicilio del negocio es el medio apropiado para el aviso y solicitudes ARCO.
