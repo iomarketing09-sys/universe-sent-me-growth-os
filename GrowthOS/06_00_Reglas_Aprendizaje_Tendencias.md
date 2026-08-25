@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-25
-**Versión:** 3.28
+**Versión:** 3.29
 **Autor:** Manus AI (CGO); Sección 6 añadida por Claude
 **Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`, `../Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`, `../Operations/Research/2026-08-21_Julio_Expansion_Lote01_Analysis.md`, `../Operations/Research/2026-08-21_Expansion_Celdas_Comparables_Post_Julio_Lote01.json`, `../Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Findings.md`, `../Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md`, `../Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`, `../Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Audit.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Analysis.md`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Manual_Findings.md`, `../Operations/Research/2026-08-21_Junio_Caption_Reclassification_Impact.md`, `../Operations/Research/2026-08-21_Validacion_Cruzada_Hipotesis_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.md`, `../Operations/Research/2026-08-15_Community_Engagement_Log.md`, `../Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `../Operations/Research/2026-08-24_Facebook_Expanded_Audit_Reply_Proposals.md`
 
@@ -453,3 +453,27 @@ La tasa de propuesta es un indicador **editorial**, no una métrica nativa de Me
 El análisis que originó estas reglas está en `Operations/Research/2026-08-25_Facebook_Comment_Interaction_Trends_Analysis.md/.json`. La evidencia de la cola está en `Operations/Research/2026-08-25_Facebook_Comment_Review_After_Five_Approved_Replies.json` y la arquitectura del ledger en `Operations/Research/2026-08-15_Community_Engagement_Log.csv`.
 
 **Estado de aprobación:** aprobado explícitamente por Fernando el 2026-08-25. **Alcance:** reglas de análisis y criterio editorial; no autoriza publicaciones, automatizaciones, cambios de calendario ni respuestas adicionales.
+
+
+## 23. Métricas derivadas de interacción comunitaria — 2026-08-25
+
+La implementación de las cinco reglas no crea nuevas métricas nativas dentro de Meta ni garantiza aumentos de alcance, reproducciones, reacciones o shares. Crea una capa de medición derivada sobre el `Community_Engagement_Log.csv`, destinada a separar mejor la actividad visible del hilo, la oportunidad editorial y la respuesta de la Página.
+
+| Métrica derivada | Fórmula | Qué permite observar | No debe interpretarse como |
+|---|---|---|---|
+| `Comentarios_Raiz` | Conteo de comentarios cuyo `parent` es la publicación | Demanda directa inicial por publicación | Usuarios únicos o alcance |
+| `Replicas_Anidadas` | Conteo de comentarios con parent de comentario | Profundidad y continuidad del hilo | Oportunidades directas de la Página |
+| `Share_Replicas` | `Replicas_Anidadas / Comentarios_Revisados × 100` | Cuánto del volumen proviene de conversaciones laterales | Sentimiento o calidad por sí solo |
+| `Concentracion_Post_Top1` | Comentarios del `Post_ID` líder / comentarios revisados × 100 | Dependencia del total respecto a una publicación | Rendimiento promedio del perfil |
+| `Tasa_Propuesta_Editorial` | Propuestas de respuesta / comentarios revisados × 100 | Proporción de casos suficientemente específicos para intervención | Engagement nativo, reach o impacto causal |
+| `Tasa_No_Accion` | Casos `No_Requiere_Respuesta` / comentarios revisados × 100 | Cuánto volumen no debe interrumpirse desde la Página | Moderación automática o falta de interés |
+| `Senales_Musicales_Identificables` | Conteo de comentarios con título + artista verificables | Demanda de respuestas culturales específicas | Popularidad de una canción |
+| `Cobertura_Respuesta_Pagina` | Respuestas verificadas de la Página / propuestas autorizadas × 100 | Ejecución de la cola aprobada | Aumento orgánico de la conversación |
+| `Tasa_Continuacion_Post_Respuesta` | Hilos con nueva actividad posterior a una respuesta / hilos respondidos × 100 | Si la respuesta abre continuidad observable | Causalidad sin grupo de comparación |
+| `Latencia_Respuesta` | Timestamp de respuesta verificada − timestamp del comentario | Velocidad operativa de community management | Calidad o eficacia de la respuesta |
+
+Las primeras siete métricas pueden calcularse en una revisión GET-only. Las tres últimas requieren que exista una respuesta pública autorizada, su `Respuesta_Meta_ID`, timestamp de verificación y una ventana posterior definida. Para cualquier comparación se debe conservar el cursor, la fecha de extracción, el alcance de publicaciones, la ventana temporal, la definición de comentario revisado y el desglose raíz/réplica.
+
+El conjunto mínimo para el reporte semanal será `Comentarios_Raiz`, `Replicas_Anidadas`, `Share_Replicas`, `Concentracion_Post_Top1`, `Tasa_Propuesta_Editorial`, `Tasa_No_Accion` y `Senales_Musicales_Identificables`. Se acompañará con comentarios por hora solo cuando la duración de la cohorte sea comparable. Ningún indicador derivado sustituye las métricas de Meta ni debe usarse para declarar crecimiento sin reach, impresiones, reproducciones, usuarios únicos o una fuente equivalente.
+
+**Estado:** activo por aprobación de las cinco reglas el 2026-08-25. **Documento fuente:** `Operations/Research/2026-08-25_Facebook_Comment_Interaction_Trends_Analysis.md/.json`. **Documentos relacionados que deben mantenerse alineados:** `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `Operations/Research/2026-08-15_Community_Engagement_Log.md`, `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

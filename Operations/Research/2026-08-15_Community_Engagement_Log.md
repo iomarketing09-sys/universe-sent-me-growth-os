@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "5.8"
+version: "5.9"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -847,3 +847,12 @@ La aprobación aplica al análisis, la clasificación y la preparación de propu
 Fuente de decisión: `Operations/Research/2026-08-25_Facebook_Comment_Interaction_Trends_Analysis.md/.json`. Reglas activas: `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`. Arquitectura de ledger alineada: `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`.
 
 **Documento relacionado que requiere actualización:** `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 26. Métricas derivadas esperadas tras la aprobación de reglas — 25 de agosto de 2026
+
+Las cinco reglas aprobadas no crean métricas nativas nuevas en Meta ni garantizan más alcance o engagement. Permiten calcular de forma consistente una capa derivada: comentarios raíz, réplicas anidadas, participación de réplicas, concentración del post líder, tasa de propuesta editorial, tasa de no acción y señales musicales identificables. La cobertura de respuesta de la Página, la continuación posterior y la latencia requieren además una respuesta pública autorizada y verificada.
+
+El reporte semanal debe separar hechos de comentario, métricas derivadas e indicadores nativos de plataforma. Las métricas derivadas se conservan en artefactos fechados con cursor, fecha de extracción, alcance y denominador; no se escriben como si fueran reach, impresiones, reproducciones, sentimiento o usuarios únicos. La especificación canónica queda en `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, sección 23, y su aplicación arquitectónica en `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, sección 22.
+
+**Estado:** activo. **Documento relacionado que requiere actualización:** `GrowthOS/00_01_Changelog_GrowthOS.md`.

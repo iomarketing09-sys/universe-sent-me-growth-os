@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "2.55"
+version: "2.56"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -453,3 +453,19 @@ A partir de la aprobación explícita de Fernando, el `Community_Engagement_Log.
 Estas reglas no cambian el carácter append-only del ledger ni autorizan publicaciones. El registro conserva `Comentario_ID`, `Respuesta_Estado`, `Moderacion_Estado`, `Privacidad`, fuente y timestamp; la cola de aprobación sigue siendo una vista derivada y no una segunda fuente maestra. El análisis de origen está en `Operations/Research/2026-08-25_Facebook_Comment_Interaction_Trends_Analysis.md/.json` y las reglas activas de aprendizaje en `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`.
 
 **Estado:** aprobado explícitamente por Fernando el 2026-08-25. **Documentos que requieren alineación:** `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `Operations/Research/2026-08-15_Community_Engagement_Log.md`, `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 23. Capa de métricas derivadas para comunidad — 2026-08-25
+
+El `Community_Engagement_Log.csv` conserva los hechos por comentario; los reportes pueden derivar vistas agregadas sin convertirlas en nuevos estados maestros. El conjunto mínimo aprobado para el reporte semanal es: `Comentarios_Raiz`, `Replicas_Anidadas`, `Share_Replicas`, `Concentracion_Post_Top1`, `Tasa_Propuesta_Editorial`, `Tasa_No_Accion` y `Senales_Musicales_Identificables`.
+
+| Tipo de vista | Requisito de datos | Condición de uso |
+|---|---|---|
+| Volumen y profundidad | `Comentario_ID`, relación `parent`, `Post_ID` y cursor | Separar siempre raíz y réplica antes de sumar. |
+| Concentración | `Post_ID` o referencia de publicación | Reportar el top 1 y la distribución por publicación. |
+| Oportunidad editorial | `Respuesta_Estado`, decisión editorial y total revisado | Es indicador de clasificación; no reemplaza métricas nativas de Meta. |
+| Música | Texto del comentario y verificación de título + artista | No inferir popularidad ni significado de la canción. |
+| Continuidad posterior | `Respuesta_Meta_ID`, `Respuesta_Fecha` y nueva extracción | Requiere respuesta pública autorizada y ventana posterior definida. |
+| Latencia operativa | Timestamp de comentario y timestamp de respuesta verificada | Describe velocidad de operación, no eficacia causal. |
+
+Las vistas derivadas no deben escribirse de regreso en la fila factual del comentario como si fueran métricas nativas. Se conservan en reportes fechados, con cursor, fecha de extracción, alcance de publicaciones, ventana y definición de denominador. La especificación completa se encuentra en `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, sección 23.

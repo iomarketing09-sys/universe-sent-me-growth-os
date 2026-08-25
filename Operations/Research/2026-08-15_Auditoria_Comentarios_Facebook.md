@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "6.3"
+version: "6.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -1358,3 +1358,12 @@ Fernando aprobó las cinco decisiones derivadas del análisis comparativo del co
 La decisión mejora la clasificación y la calidad de las propuestas, pero no autoriza publicaciones, automatizaciones, cambios de calendario ni respuestas adicionales. La cola vigente permanece sin cambios y cada escritura continúa requiriendo autorización explícita para el comentario concreto.
 
 La regla canónica queda en `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`; la aplicación al ledger queda en `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`; el análisis que originó la decisión está en `Operations/Research/2026-08-25_Facebook_Comment_Interaction_Trends_Analysis.md/.json`; y la aprobación se conserva también en `Operations/Research/2026-08-15_Community_Engagement_Log.md`.
+
+
+## 42. Métricas derivadas esperadas y límites — 25 de agosto de 2026
+
+La implementación de las cinco reglas aprobadas añade una capa de análisis reproducible, no nuevas métricas nativas de Meta. El reporte de comunidad medirá: `Comentarios_Raiz`, `Replicas_Anidadas`, `Share_Replicas`, `Concentracion_Post_Top1`, `Tasa_Propuesta_Editorial`, `Tasa_No_Accion` y `Senales_Musicales_Identificables`. Después de respuestas públicas autorizadas y verificadas podrá añadir `Cobertura_Respuesta_Pagina`, `Tasa_Continuacion_Post_Respuesta` y `Latencia_Respuesta`.
+
+Estas métricas sirven para describir volumen, profundidad, concentración, clasificación editorial y operación de respuesta. No equivalen a alcance, impresiones, reproducciones, sentimiento, usuarios únicos ni causalidad. Toda comparación debe conservar cursor, timestamp de extracción, alcance de publicaciones, ventana y denominador; raíces y réplicas nunca deben sumarse sin identificarlas por separado.
+
+La especificación canónica queda en `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, sección 23; la arquitectura de vistas en `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, sección 22; y el análisis de origen en `Operations/Research/2026-08-25_Facebook_Comment_Interaction_Trends_Analysis.md/.json`.
