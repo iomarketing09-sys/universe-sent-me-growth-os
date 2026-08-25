@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.46
+**Versión:** 4.47
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.47.00] — 2026-08-25 (Manus): Revisión E0 de PUB-FB-17_30-46 registrada como captura tardía.** Meta confirmó `is_published=true`, `created_time=2026-08-25T18:30:01+0000` y contadores `reactions=2`, `comments=0`, `shares=1`. El publisher result conservó `PUB-FB-17_30-46`, `EXP-2026-08-CAL-01`, `ID_Pieza` vacío y `CNT` vacío. El hook se ejecutó sin replay y creó `MS-1CAB60E7ED3D007C02CF`, pero la captura ocurrió a los 3,014.35 segundos, fuera de la tolerancia E0 de ±600; la fila queda `Late/late_capture`, con `Lifetime_Interactions=3` solo como observación, sin `Delta_From_E0`. El ledger conserva dos filas de evidencia, 0 E0 válidos y validación `PASS`; E24/E72 no se habilitan. No se modificó contenido, publicación, cola, `Publication_Log.csv` ni `ExperimentLog.csv`. Evidencia: `Operations/Research/2026-08-25_Next_Productive_Case_E0_Review_Evidence.json`.
 
 - **[4.46.00] — 2026-08-25 (Fernando/Manus): URL pública de privacidad de Universe Sent Me identificada.** Fernando confirmó `https://iomarketin.wixstudio.com/universesentme/privacypolicyusm` como página existente de privacidad en el sitio de la marca, previamente usado para permisos de Meta. La ruta queda candidata para el formulario de TikTok, pendiente de revisión pública de contenido y alcance. La URL de términos sigue pendiente; no se añadió, publicó ni modificó ninguna página Wix. Documento actualizado: `Operations/Automation/2026-08-25_Textos_Publicos_Terminos_Privacidad_App_Metricas_USM.md` v1.0.
 

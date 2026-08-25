@@ -1,0 +1,93 @@
+{
+  "title": "Revisión E0 del siguiente caso productivo",
+  "purpose": "Registrar la consulta real de Meta y la captura tardía del post PUB-FB-17_30-46 sin presentar una observación fuera de ventana como E0 canónico.",
+  "status": "Active",
+  "created": "2026-08-25",
+  "updated": "2026-08-25",
+  "version": "1.0",
+  "author": "Manus AI (CGO)",
+  "organization": "Operations/Research",
+  "related_documents": [
+    "Operations/Research/2026-08-25_Next_Productive_Case_E0_Preparation_Evidence.json",
+    "Operations/Research/2026-08-25_Next_Productive_Case_E0_Attempt_Evidence.json",
+    "Operations/Research/2026-08-25_First_Productive_Case_E0_Execution_Evidence.json",
+    "Operations/Automation/capture_e0_after_publish.py",
+    "Operations/Automation/record_metrics_snapshot.py",
+    "Operations/Automation/validate_metrics_snapshot_ledger.py",
+    "Operations/Research/Metrics_Snapshot_Log.csv",
+    "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
+  ],
+  "publisher_result": {
+    "meta_post_id": "1036844829507460_122151377385072582",
+    "publicacion_id": "PUB-FB-17_30-46",
+    "experiment_id": "EXP-2026-08-CAL-01",
+    "id_pieza": "",
+    "cnt": "",
+    "platform": "Facebook",
+    "account_id": "1036844829507460",
+    "is_published": true,
+    "created_time": "2026-08-25T18:30:01+0000"
+  },
+  "meta_read_check": {
+    "queried_at_utc": "2026-08-25T19:19:32Z",
+    "http_status": 200,
+    "is_published": true,
+    "meta_post_id": "1036844829507460_122151377385072582",
+    "created_time": "2026-08-25T18:30:01+0000",
+    "permalink_url": "https://www.facebook.com/122146890051072582/posts/122151377385072582",
+    "counters_returned": {
+      "reactions": 2,
+      "comments": 0,
+      "shares": 1
+    }
+  },
+  "capture_execution": {
+    "capture_mode": "production_no_replay",
+    "captured_at_utc": "2026-08-25T19:20:15.350297Z",
+    "snapshot_id": "MS-1CAB60E7ED3D007C02CF",
+    "logical_key": "1036844829507460_122151377385072582+baseline_e0",
+    "snapshot_type": "baseline_e0",
+    "age_seconds": 3014.35,
+    "tolerance_seconds": 600,
+    "window_status": "Late",
+    "anomaly_code": "late_capture",
+    "raw_evidence_path": "Operations/Research/Metrics_Raw/1036844829507460_122151377385072582_baseline_e0_20260825T192015Z.json",
+    "lifetime_interactions": 3,
+    "delta_from_e0": "",
+    "capture_status": "recorded_as_noncanonical_evidence"
+  },
+  "ledger_effect": {
+    "ledger": "Operations/Research/Metrics_Snapshot_Log.csv",
+    "rows_total_after_capture": 2,
+    "new_row_added": true,
+    "status_counts": {
+      "Anomaly": 1,
+      "Late": 1
+    },
+    "valid_e0_posts": 0,
+    "duplicate_snapshot_ids": [],
+    "duplicate_valid_logical_keys": [],
+    "validation": "PASS",
+    "errors": [],
+    "warnings": []
+  },
+  "downstream_decision": {
+    "e0_canonical": false,
+    "e24_e72_enabled": false,
+    "reason": "All required counters were present, but the capture occurred outside the approved ±600 second E0 tolerance. The row is retained as Late evidence and is excluded from contractual closure.",
+    "do_not_backfill": true,
+    "do_not_impute": true,
+    "do_not_republish_or_reschedule": true,
+    "optional_future_read": "A later observed_lifetime/descriptive read may be recorded, but it cannot generate Delta_From_E0, E24/E72 verdicts or hypothesis closure."
+  },
+  "safety": {
+    "content_published_by_this_task": false,
+    "content_reprogrammed": false,
+    "content_edited": false,
+    "content_deleted": false,
+    "queue_modified": false,
+    "publication_log_modified": false,
+    "experiment_log_modified": false,
+    "metrics_invented": false
+  }
+}

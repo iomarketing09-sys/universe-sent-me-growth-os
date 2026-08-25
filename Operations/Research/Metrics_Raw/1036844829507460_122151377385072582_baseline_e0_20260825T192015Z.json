@@ -1,0 +1,40 @@
+{
+  "captured_at_utc": "2026-08-25T19:20:15.350297Z",
+  "meta_post_id": "1036844829507460_122151377385072582",
+  "snapshot_type": "baseline_e0",
+  "http_status": 200,
+  "publication_event": {
+    "meta_post_id": "1036844829507460_122151377385072582",
+    "publicacion_id": "PUB-FB-17_30-46",
+    "experiment_id": "EXP-2026-08-CAL-01",
+    "id_pieza": "",
+    "cnt": "",
+    "platform": "Facebook",
+    "account_id": "1036844829507460",
+    "is_published": true,
+    "created_time": "2026-08-25T18:30:01+0000"
+  },
+  "payload": {
+    "created_time": "2026-08-25T18:30:01+0000",
+    "reactions": {
+      "data": [],
+      "summary": {
+        "total_count": 2,
+        "viewer_reaction": "NONE"
+      }
+    },
+    "comments": {
+      "data": [],
+      "summary": {
+        "order": "chronological",
+        "total_count": 0,
+        "can_comment": true
+      }
+    },
+    "shares": {
+      "count": 1
+    },
+    "id": "1036844829507460_122151377385072582"
+  },
+  "hook_run_id": "20260825T192015Z"
+}

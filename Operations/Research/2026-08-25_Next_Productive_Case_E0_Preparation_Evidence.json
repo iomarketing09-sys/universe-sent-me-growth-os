@@ -4,11 +4,12 @@
   "status": "Active",
   "created": "2026-08-25",
   "updated": "2026-08-25",
-  "version": "1.0",
+  "version": "1.1",
   "author": "Manus AI (CGO)",
   "organization": "Operations/Research",
   "related_documents": [
     "Operations/Research/2026-08-25_First_Productive_Case_E0_Execution_Evidence.json",
+    "Operations/Research/2026-08-25_Next_Productive_Case_E0_Review_Evidence.json",
     "Operations/Research/2026-08-25_First_Productive_Case_Preparation_Evidence.json",
     "Operations/Research/2026-08-15_Publication_Log.csv",
     "Operations/Research/2026-08-15_ExperimentLog.csv",
@@ -45,7 +46,7 @@
   "e0_control": {
     "schedule_task_uid": "P9iKuQHRgO56wVd7MSBJ5o",
     "schedule_name": "USM: capturar E0 de PUB-FB-17_30-46",
-    "status": "paused_after_api_error",
+    "status": "completed_late_capture",
     "run_mode": "full_auto",
     "cron": "0 34 13 25 8 *",
     "timezone": "America/Matamoros",
@@ -55,7 +56,7 @@
     "tolerance_seconds": 600,
     "connector": "Universe Sent Me Meta API",
     "behavior": "Read-only Meta check; capture E0 only if is_published=true, meta_post_id and created_time are present; otherwise return E0_PENDING without writing a snapshot. The publisher result uses the explicit IDs above, cnt empty and id_pieza empty.",
-    "outcome": "The control attempt was blocked before Meta returned a post response because the connector was disabled and the environment token returned OAuth 2500; no E0 snapshot was written."
+    "outcome": "The scheduled control attempt was blocked by OAuth 2500; a later manual read obtained the published post and the hook recorded a Late non-canonical baseline. See Operations/Research/2026-08-25_Next_Productive_Case_E0_Review_Evidence.json."
   },
   "safety": {
     "content_published": false,

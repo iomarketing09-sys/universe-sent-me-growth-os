@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "2.64"
+version: "2.65"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -543,3 +543,11 @@ Fernando autorizó publicar las ocho propuestas aprobadas. El preflight GET-only
 El ledger mantiene **612 filas / 612 IDs únicos**, con las ocho filas actualizadas a `Respuesta_Estado=Respondido`, `Aprobacion_Estado=Aprobada`, y sus respectivos `Respuesta_Meta_ID` y `Respuesta_Fecha`; el validador devuelve `PASS`. La cola posterior queda con **0 propuestas pendientes**, **2 casos `Revisar_Contexto`** y **5 no acciones**. Evidencia de cierre: `Operations/Research/2026-08-25_18-51-09_Facebook_Pending_Queue_After_Additional_Publication.json`.
 
 **Documentos relacionados:** `Operations/Research/2026-08-15_Community_Engagement_Log.md`, `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+## 31. Revisión E0 de PUB-FB-17_30-46 — resultado tardío — 2026-08-25
+
+Meta confirmó en modo lectura `is_published=true` para `1036844829507460_122151377385072582`, con `created_time=2026-08-25T18:30:01+0000` y contadores `reactions=2`, `comments=0`, `shares=1`. El publisher result conservó `PUB-FB-17_30-46`, `EXP-2026-08-CAL-01`, `ID_Pieza` vacío y `CNT` vacío, según la identidad explícita del Publication Log.
+
+El hook `capture_e0_after_publish.py` se ejecutó sin replay y registró `MS-1CAB60E7ED3D007C02CF`. La fila quedó como `Window_Status=Late` con `Anomaly_Code=late_capture`: `Captured_At_UTC=2026-08-25T19:20:15.350297Z`, `Age_Seconds=3014.35` y tolerancia de 600 segundos. Aunque los tres contadores estuvieron disponibles y `Lifetime_Interactions=3`, esta lectura no es un E0 canónico y no puede habilitar E24/E72.
+
+El ledger conserva dos filas de evidencia —una `Anomaly` por el caso anterior y una `Late` para este caso—, cero `Valid_E0`, validación estructural `PASS`, sin duplicados ni errores. No se hace backfill, no se imputa, no se reprograma ni se republica este post; una lectura futura solo puede registrarse como `observed_lifetime` descriptivo, sin delta, veredicto ni cierre de hipótesis. Evidencia: `Operations/Research/2026-08-25_Next_Productive_Case_E0_Review_Evidence.json` y raw asociado.
