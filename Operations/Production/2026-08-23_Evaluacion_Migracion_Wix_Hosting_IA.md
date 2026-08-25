@@ -8,13 +8,13 @@
 
 **Última actualización:** 2026-08-25
 
-**Versión:** 3.2
+**Versión:** 3.3
 
 **Autor:** Manus AI
 
 **Organización:** `Operations/Production`
 
-**Documentos relacionados:** [`2026-08-18_Piloto_Local_OmniRoute_Seguro.md`](2026-08-18_Piloto_Local_OmniRoute_Seguro.md), [`2026-08-19_Decision_Gateway_IA_OmniRoute.md`](2026-08-19_Decision_Gateway_IA_OmniRoute.md), [`2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md`](2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md) y [`2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md`](2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md).
+**Documentos relacionados:** [`2026-08-18_Piloto_Local_OmniRoute_Seguro.md`](2026-08-18_Piloto_Local_OmniRoute_Seguro.md), [`2026-08-19_Decision_Gateway_IA_OmniRoute.md`](2026-08-19_Decision_Gateway_IA_OmniRoute.md), [`2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md`](2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md), [`2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md`](2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md) y [`2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md`](2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md).
 
 ---
 
@@ -192,6 +192,8 @@ Tras detectarse una generación incompleta en la tarjeta «Detalle de bordado»,
 Fernando confirmó que las prendas corresponden a BigBang, M&O y Soul & Blues según los catálogos vigentes; Dickies queda pendiente de una fuente documental autorizada. La protección técnica de `main` no está disponible para el repositorio privado actual: GitHub devolvió 403 para branch protection y rulesets, indicando que requiere GitHub Pro o visibilidad pública. No se elevó el plan ni se hizo público el repositorio. En su lugar se formalizó y validó un gate operativo de Pull Request a `staging`, CI correcto y promoción explícita a `main`; esta alternativa reduce el riesgo operativo pero no sustituye enforcement nativo.
 
 El paquete C3 redujo fricción para visitas locales con un enlace de indicaciones basado únicamente en la dirección confirmada. No se usó geolocalización, no se incrustó un mapa ni se iniciaron servicios de analítica. El enlace, los teléfonos, correo y horario se validaron técnicamente antes de publicar la promoción a `main`; el staging continúa separado del sitio Wix y del dominio público.
+
+El ajuste C1.1 cambió únicamente la ruta de la franja «Cómo solicitar»: ahora abre un correo guiado a `firmabordados@yahoo.com` con campos opcionales para entender la solicitud. WhatsApp permanece como CTA principal del hero y como alternativa de contacto. El cambio se validó por Pull Request, CI y comprobaciones HTTP del staging; no recibe ni almacena datos en el sitio y no activa backend, proveedor de correo, antispam, analítica, secreto, Wix, DNS ni dominio. La construcción de un formulario servidor-side sigue bloqueada hasta definir responsable, aviso de privacidad, retención/ARCO, destinatarios autorizados, proveedor y controles antispam.
 
 ## Integración futura de IA
 

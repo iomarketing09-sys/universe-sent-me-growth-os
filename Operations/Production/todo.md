@@ -45,6 +45,10 @@
 - [x] Implementar el paquete C3: enlace de ubicación con indicaciones y verificación final de los datos de contacto visibles.
 - [x] Construir y verificar un enlace de indicaciones usando únicamente la dirección confirmada de Firma Bordados.
 - [ ] Decidir formulario con backend y analítica solo después de definir privacidad, antispam, responsable y proceso de respuesta.
+- [x] Comparar y documentar alternativas seguras de backend, entrega de correo, aviso de privacidad y antispam para el formulario de Firma Bordados.
+- [x] Preparar el cambio de «Cómo solicitar» para priorizar correo sin eliminar WhatsApp como canal alternativo.
+- [x] Implementar y validar en staging el enlace de correo guiado para «Cómo solicitar», conservando WhatsApp en hero y contacto.
+- [ ] Solicitar aprobación explícita antes de activar servicios externos, secretos o almacenamiento de datos de consultas.
 - [x] Convertir WhatsApp en el CTA principal del hero de Firma Bordados y validar el enlace en escritorio y móvil.
 - [x] Guiar la creación de la cuenta Cloudflare y repositorio privado del cliente antes de configurar Cloudflare Pages.
 - [x] Acompañar la configuración del proyecto Cloudflare Pages de staging para Firma Bordados sin agregar dominio ni modificar DNS.

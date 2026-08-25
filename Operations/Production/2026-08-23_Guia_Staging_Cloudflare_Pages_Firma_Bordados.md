@@ -4,7 +4,7 @@ purpose: "Definir los pasos técnicos para probar el sitio React/Vite de Firma B
 status: Review
 created: 2026-08-23
 updated: 2026-08-25
-version: "1.10"
+version: "1.11"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Evaluacion_Migracion_Wix_Hosting_IA.md"
@@ -107,6 +107,12 @@ La galería «Nuestro trabajo» pasó de tres a cuatro tarjetas con `digitalizac
 El commit `b3e6f57` añadió en el pie de página el enlace «Cómo llegar», que abre indicaciones de Google Maps hacia la dirección confirmada de Firma Bordados. El enlace usa la dirección ya visible en el sitio y no recopila ubicación del visitante, no incrusta un mapa y no añade ningún servicio de terceros al runtime.
 
 El Pull Request 7 pasó CI, se integró a `staging` y el merge `82be09b` se promovió a `main`. La URL de destino devolvió HTTP 200 y la verificación del bundle público encontró el enlace. WhatsApp, correo, ambos teléfonos y horario permanecen visibles. Wix, DNS, nameservers, dominio público, formulario backend y analítica siguen sin cambios.
+
+### Ajuste C1.1 — correo guiado para «Cómo solicitar» — 2026-08-25
+
+El commit `ba952d9` sustituyó el destino de WhatsApp dentro de la franja «Cómo solicitar» por un `mailto:` guiado a `firmabordados@yahoo.com`. El enlace prepara un asunto y campos opcionales de tipo de prenda, técnica —bordado o serigrafía—, cantidad aproximada y uso/requerimiento; el dispositivo del visitante abre su cliente de correo y el staging no recibe ni almacena esos datos. WhatsApp permanece visible como CTA principal del hero y canal alternativo de contacto.
+
+El Pull Request 8 pasó CI, se integró a `staging` y el merge `c694741` se promovió por avance rápido a `main`, que Pages sirve en `https://firma-bordados-staging.pages.dev`. La verificación HTTP confirmó respuesta 200, la sección «Así puede comenzar su solicitud», el texto «Correo guiado», el `mailto:` correcto, el enlace de WhatsApp aún presente, `robots.txt` bloqueado y ausencia de Dickies. No se activaron backend, Turnstile, secreto, almacenamiento de consultas, analítica, Wix, DNS, nameservers ni dominio personalizado.
 
 ## 2. Estado de partida y preparación obligatoria
 
