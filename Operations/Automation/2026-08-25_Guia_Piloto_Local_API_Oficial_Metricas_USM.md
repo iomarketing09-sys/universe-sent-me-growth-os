@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.9"
+version: "2.0"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -134,6 +134,12 @@ Cada collector usará como máximo 25 registros por plataforma por ejecución, g
 Se implementaron `fetch_facebook_official_metrics.py` y `fetch_instagram_official_metrics.py`. Ambos scripts compilan con Python y una revisión estática confirmó que no contienen invocaciones `requests.post`, `requests.put`, `requests.patch` ni `requests.delete`. Los dos requieren `USM_META_USER_ACCESS_TOKEN` solo como variable temporal, producen un resumen seguro de `status`, `brand`, `platform` y número de registros, y guardan el detalle crudo únicamente en Xubuntu.
 
 El collector de Facebook deriva un Page token de la página objetivo con el token de usuario, consulta hasta 25 posts publicados y retiene solo identificador, fecha, reacciones, comentarios y shares nativos. El collector de Instagram redescubre la cuenta profesional desde la página objetivo, valida el username esperado y consulta hasta 25 media con los campos nativos del contrato. Cualquier error de permiso, campo no soportado o cuenta no coincidente queda como `blocked`, sin reintentos que amplíen permisos.
+
+### Primera captura privada confirmada — 25 de agosto de 2026
+
+Fernando ejecutó ambos collectors usando temporalmente el token Meta ya aprobado de Universe Sent Me. Facebook devolvió `status = collected`, `brand = Universe Sent Me`, `platform = Facebook` y `records = 25`. Instagram devolvió `status = collected`, `brand = Universe Sent Me`, `platform = Instagram`, `records = 25` y `available_native_fields = 11`.
+
+La captura confirma acceso de lectura para los campos contratados, no una autorización de integración productiva. El detalle se conserva fuera del repositorio en Xubuntu. Antes de crear vistas derivadas o cualquier normalización, solo se podrán mostrar resúmenes locales que excluyan IDs, textos, URLs, rutas de evidencia y cualquier dato de personas.
 
 ## Referencias
 

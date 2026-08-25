@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.69
+**Versión:** 4.70
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.70.00] — 2026-08-25 (Fernando/Manus): Primeras capturas privadas Meta completadas para Universe Sent Me.** Fernando ejecutó los collectors locales con el token aprobado de Meta cargado temporalmente. Facebook devolvió `status=collected`, `brand=Universe Sent Me`, `platform=Facebook`, `records=25`; Instagram devolvió `status=collected`, `brand=Universe Sent Me`, `platform=Instagram`, `records=25`, `available_native_fields=11`. La evidencia detallada permanece solo en Xubuntu. No se ampliaron permisos, no se crearon tokens o aplicaciones adicionales y no hubo operaciones de escritura, Sheets, ledgers, OmniRoute, contenido, comentarios, calendarios ni acceso a otras marcas. El siguiente gate es un resumen local seguro y revisión humana; no hay normalización ni integración productiva autorizada. Documento actualizado: `Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md` v2.0.
 
 - **[4.69.00] — 2026-08-25 (Fernando/Manus): Collectors Meta privados GET-only implementados.** Con autorización de Fernando se añadieron `fetch_facebook_official_metrics.py` y `fetch_instagram_official_metrics.py` para Universe Sent Me. Cada script usa únicamente `USM_META_USER_ACCESS_TOKEN` como variable temporal, limita la captura a 25 registros, conserva raw fuera del repositorio e imprime solo un resumen seguro. Facebook retiene `id`, `created_time`, reacciones, comentarios y shares de posts publicados; Instagram retiene campos nativos de media y preserva los no devueltos como ausentes. Ambos scripts compilan y una revisión estática confirmó ausencia de POST/PUT/PATCH/DELETE. No existe cron, Sheets, ledgers, OmniRoute, publicación, comentarios, mensajes, anuncios ni acceso a otra marca. Pendiente: primera captura manual y validación del resumen. Documento actualizado: `Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md` v1.9.
 
