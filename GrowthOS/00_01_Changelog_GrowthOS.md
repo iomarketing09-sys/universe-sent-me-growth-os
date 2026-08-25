@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.52
+**Versión:** 4.53
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.53.00] — 2026-08-25 (Fernando/Manus): Firma TikTok de Terms of Use publicada y validada en GitHub Pages.** Fernando entregó el archivo `tiktokjjOjCxVa79R7dLBeVyvL1uB9kB1BJZcR.txt` emitido para Terms of Use. Se publicó sin modificación bajo `https://iomarketing09-sys.github.io/usm-metrics-public/terms/tiktokjjOjCxVa79R7dLBeVyvL1uB9kB1BJZcR.txt`; el build `969c3af` quedó `built`. La validación independiente confirmó HTTP `200`, `Content-Type: text/plain; charset=utf-8` y contenido byte a byte idéntico al archivo entregado. Solo falta recibir la firma independiente de Privacy Policy, publicarla en la ruta que TikTok indique y verificarla. No se tocaron Wix, DNS, tokens, métricas ni infraestructura de otras marcas. Documento actualizado: `Operations/Automation/2026-08-25_Textos_Publicos_Terminos_Privacidad_App_Metricas_USM.md` v1.5.
 
 - **[4.52.00] — 2026-08-25 (Fernando/Manus): GitHub Pages activo y contacto público autorizado para la app de métricas USM.** Fernando activó GitHub Pages para `iomarketing09-sys/usm-metrics-public` desde la rama `main` y la carpeta `/(root)`. Se comprobó la disponibilidad pública de `https://iomarketing09-sys.github.io/usm-metrics-public/terms/` y `https://iomarketing09-sys.github.io/usm-metrics-public/privacy/`. Fernando autorizó incluir `io_marketin_09@gmail.com` como canal de contacto de iO Marketing y el build `ded94cd` confirma dicho dato en ambos textos. El siguiente gate es sustituir las URLs Wix en TikTok por estas rutas y obtener una instrucción de firma asociada al prefijo GitHub Pages; no se reutilizará el archivo del prefijo Wix. Documento actualizado: `Operations/Automation/2026-08-25_Textos_Publicos_Terminos_Privacidad_App_Metricas_USM.md` v1.4.
 
