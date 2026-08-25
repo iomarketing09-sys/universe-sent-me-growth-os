@@ -4,7 +4,7 @@ purpose: "Definir cómo OmniRoute puede analizar resúmenes métricos ya normali
 status: Review
 created: 2026-08-23
 updated: 2026-08-25
-version: "2.3"
+version: "2.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-19_Decision_Gateway_IA_OmniRoute.md"
@@ -352,7 +352,7 @@ El piloto local requiere dos clientes OAuth independientes y de solo lectura. Ca
 
 | Plataforma | Cliente y permisos mínimos | Datos mínimos del piloto | Renovación y control |
 | :--- | :--- | :--- | :--- |
-| TikTok | Aplicación de escritorio registrada en TikTok for Developers, `video.list` y callback local `http://127.0.0.1:<puerto>/callback/` con PKCE. [11] [12] | ID, fecha de creación, título, `view_count`, `like_count`, `comment_count` y `share_count` de videos públicos de la cuenta autorizada. [13] | Access token con vida corta; refresh token local rotado tras cada renovación. El script valida `state`, usa PKCE y aborta si los scopes concedidos no son exactamente los esperados. |
+| TikTok | Aplicación de escritorio registrada en TikTok for Developers, con `user.info.basic` y `video.list`, callback local `http://127.0.0.1:<puerto>/callback/` y PKCE. [11] [12] [16] | ID, fecha de creación, título, `view_count`, `like_count`, `comment_count` y `share_count` de videos públicos de la cuenta autorizada. [13] | Access token con vida corta; refresh token local rotado tras cada renovación. El script valida `state`, usa PKCE y aborta si los scopes concedidos no son exactamente los esperados. |
 | YouTube | Cliente OAuth local de Google con `https://www.googleapis.com/auth/youtube.readonly`, `https://www.googleapis.com/auth/yt-analytics.readonly` y `https://www.googleapis.com/auth/yt-analytics-monetary.readonly`. [8] [14] | ID de video, tipo de contenido, publicación, views, engaged views, likes, comentarios, shares, porcentaje visto, watch time cuando exista, suscriptores ganados y monetización si es elegible. | Refresh token local con permisos restrictivos; el script nunca solicita scopes de carga, edición, comentarios, gestión de canal ni monetización de terceros. |
 
 La aplicación de escritorio de TikTok admite un callback en `localhost`/`127.0.0.1` con puerto, y exige PKCE; esto permite que la autorización ocurra en el navegador del propio equipo Xubuntu sin publicar un endpoint ni abrir un puerto de Internet. [12] En ambos casos, la primera autorización exige una aprobación de Fernando en el proveedor, pero los refresh posteriores son deterministas y locales.
@@ -388,6 +388,12 @@ Tras la aprobación del gate técnico se prepararon `authorize_tiktok_desktop.py
 
 Los collectors son deliberadamente de una sola dirección: almacenan evidencia privada local, no escriben GitHub, Google Sheets, `Metrics_Snapshot_Log.csv`, `Publication_Log.csv`, `ExperimentLog.csv`, publicaciones, comentarios ni OmniRoute. La normalización, el análisis sanitizado y la escritura de vistas derivadas quedan sujetos a la validación humana posterior a las lecturas de prueba.
 
+### 8.20 Corrección de scopes mínimos de TikTok
+
+La revisión de la guía vigente de TikTok Display API confirmó que `video.list` requiere además `user.info.basic`, con aprobación de Login Kit y TikTok API para la app. Se corrigieron la plantilla, el autorizador OAuth, la guía operativa y este contrato. [16]
+
+La app local seguirá solicitando solo esos dos scopes de lectura. `user.info.basic` se emplea únicamente para completar la autorización que TikTok requiere; el collector no consulta ni persiste campos de perfil salvo que una futura decisión documental lo apruebe expresamente.
+
 ## Referencias
 
 [1]: https://developers.facebook.com/docs/instagram-api/guides/insights "Meta for Developers — Instagram Insights"
@@ -405,3 +411,4 @@ Los collectors son deliberadamente de una sola dirección: almacenan evidencia p
 [13]: https://developers.tiktok.com/doc/tiktok-api-v2-video-list/ "TikTok for Developers — List Videos"
 [14]: https://developers.google.com/youtube/analytics/reference/reports/query "Google for Developers — YouTube Analytics Reports: Query and scopes"
 [15]: https://developers.google.com/youtube/analytics/metrics "Google for Developers — YouTube Analytics Metrics"
+[16]: https://developers.tiktok.com/doc/display-api-get-started/ "TikTok for Developers — Display API Get Started"

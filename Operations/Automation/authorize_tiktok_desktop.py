@@ -106,8 +106,9 @@ def main() -> int:
         )
 
     scopes = list(tiktok.get("required_scopes", []))
-    if scopes != ["video.list"]:
-        raise RuntimeError("Only the approved TikTok scope ['video.list'] is permitted for this pilot.")
+    approved_scopes = {"user.info.basic", "video.list"}
+    if set(scopes) != approved_scopes:
+        raise RuntimeError("Only the approved TikTok scopes ['user.info.basic', 'video.list'] are permitted for this pilot.")
 
     state = secrets.token_urlsafe(32)
     verifier = secrets.token_urlsafe(72)[:96]
@@ -161,7 +162,7 @@ def main() -> int:
     if response.status_code != 200 or payload.get("error"):
         raise SystemExit(f"TikTok token exchange failed with HTTP {response.status_code}: {payload.get('error_description', payload.get('error'))}")
     granted = set(str(payload.get("scope", "")).split(","))
-    if set(scopes) != granted:
+    if approved_scopes != granted:
         raise SystemExit("Granted scopes do not match the approved read-only scope. Token was not saved.")
 
     payload["brand"] = BRAND

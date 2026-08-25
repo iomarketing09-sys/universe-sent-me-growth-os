@@ -9,6 +9,7 @@
     "redirect_uri": "http://127.0.0.1:8765/callback/",
     "token_file": "~/.config/usm-metrics/tiktok-token.json",
     "required_scopes": [
+      "user.info.basic",
       "video.list"
     ]
   },

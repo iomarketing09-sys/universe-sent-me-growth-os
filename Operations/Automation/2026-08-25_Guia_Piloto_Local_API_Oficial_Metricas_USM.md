@@ -34,7 +34,7 @@ Los tres scripts se guardan en `Operations/Automation/`, pero la configuración 
 
 ## Secuencia de activación prevista
 
-La creación de apps y los consentimientos se realizan en el navegador de Fernando, sin compartir claves en la conversación. Primero se crea la app de escritorio de TikTok con `video.list`, el callback `http://127.0.0.1:8765/callback/` y PKCE. Después se crea el cliente OAuth local de Google, se habilitan YouTube Data API y YouTube Analytics API, y se aprueban únicamente los scopes de lectura y monetización definidos en el documento de diseño.
+La creación de apps y los consentimientos se realizan en el navegador de Fernando, sin compartir claves en la conversación. Primero se crea la app de escritorio de TikTok con los scopes mínimos oficiales `user.info.basic` y `video.list`, el callback `http://127.0.0.1:8765/callback/` y PKCE. Después se crea el cliente OAuth local de Google, se habilitan YouTube Data API y YouTube Analytics API, y se aprueban únicamente los scopes de lectura y monetización definidos en el documento de diseño.
 
 Antes de correr los scripts se copia la plantilla hacia `~/.config/usm-metrics/config.json`, se ajustan solo rutas locales si hiciera falta y se instala el archivo de cliente de Google únicamente en la ruta privada indicada. Los valores de TikTok quedan en variables de entorno de la sesión local; no se guardan en la plantilla.
 
