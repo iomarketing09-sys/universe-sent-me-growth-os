@@ -1,0 +1,61 @@
+{
+  "title": "Preparación del primer caso productivo E0→E72",
+  "purpose": "Registrar el post aprobado seleccionado y el control posterior preparado para capturar E0 únicamente después de que Meta confirme la publicación real.",
+  "status": "Active",
+  "created": "2026-08-25",
+  "updated": "2026-08-25",
+  "version": "1.0",
+  "author": "Manus AI (CGO)",
+  "organization": "Operations/Research/",
+  "related_documents": [
+    "Operations/Research/2026-08-15_Publication_Log.csv",
+    "Operations/Research/2026-08-15_ExperimentLog.csv",
+    "Operations/Automation/capture_e0_after_publish.py",
+    "Operations/Automation/run_metrics_windows.py",
+    "Operations/Research/Metrics_Snapshot_Log.csv",
+    "Operations/Research/2026-08-25_Simulacion_Pipeline_E0_E72_Evidence.json",
+    "Operations/Research/2026-08-22_Auditoria_Ejecutiva_GrowthOS_Estado_y_Prioridades.md"
+  ],
+  "scope": {
+    "content_created": false,
+    "content_published": false,
+    "content_modified": false,
+    "queue_modified": false,
+    "meta_write_called": false,
+    "mode": "read-only discovery plus one-shot post-publication control"
+  },
+  "approved_case": {
+    "publicacion_id": "PUB-FB-17_30-44",
+    "id_pieza": "Universe - Existencial 2607831.png",
+    "platform": "Facebook",
+    "page_id": "1036844829507460",
+    "meta_post_id": "1036844829507460_122151377199072582",
+    "experiment_id": "EXP-2026-08-CAL-01",
+    "hypothesis_id": "HB-003|HB-004|HB-005",
+    "scheduled_publish_time_local": "2026-08-25T10:00:00-05:00",
+    "scheduled_publish_time_utc": "2026-08-25T15:00:00Z",
+    "scheduled_is_published": false,
+    "caption": "🧚‍♀️🍗🎬😂 #KiriUSM #MemesUSM #UniverseSentMe",
+    "source_status": "Programada",
+    "selection_rule": "Earliest future approved post returned by Meta scheduled_posts and matched to the local Publication_Log."
+  },
+  "post_publication_control": {
+    "schedule_task_uid": "P9iKuQHRgO56wVd7MSBJ5o",
+    "schedule_name": "USM: capturar E0 del próximo post aprobado",
+    "cron": "0 10 15 25 8 *",
+    "timezone": "America/Matamoros",
+    "expire_at": "2026-08-25T15:30:00Z",
+    "status": "active",
+    "scheduled_check_local": "2026-08-25T10:10:00-05:00",
+    "scheduled_check_utc": "2026-08-25T15:10:00Z",
+    "connector": "Universe Sent Me Meta API",
+    "safe_behavior": "Read Meta only; if is_published=false, write nothing and report E0_PENDING; if is_published=true, invoke the E0 adapter, persist raw and validate the ledger."
+  },
+  "execution_state": {
+    "e0_recorded": false,
+    "e24_recorded": false,
+    "e72_recorded": false,
+    "waiting_for_meta_confirmation": true,
+    "next_required_evidence": "Meta response with is_published=true and created_time for the selected Meta_Post_ID."
+  }
+}
