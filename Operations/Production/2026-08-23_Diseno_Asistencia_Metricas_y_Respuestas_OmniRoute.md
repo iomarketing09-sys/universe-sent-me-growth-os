@@ -4,7 +4,7 @@ purpose: "Definir cómo OmniRoute puede analizar resúmenes métricos ya normali
 status: Review
 created: 2026-08-23
 updated: 2026-08-25
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-19_Decision_Gateway_IA_OmniRoute.md"
@@ -220,6 +220,51 @@ No se selecciona una modalidad ni se crea un schedule en este documento. La deci
 Antes de activar cualquier automatización se deben aprobar: la modalidad elegida; las rutas de lectura por plataforma; los campos y ventanas exactos; el formato de la hoja derivada; la cadencia; el mecanismo de pausa; y un piloto de solo lectura que no escriba métricas ni veredictos basados en la salida del modelo.
 
 Si la propuesta se aprueba, requerirán actualización coordinada `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `GrowthOS/08_00_Metricas_Baseline_Plataformas.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`, `Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`. Ninguno de esos cambios se autoriza por este diseño.
+
+### 8.6 Decisión registrada: modalidad B
+
+El 2026-08-25 Fernando autorizó preparar la **modalidad B: loop multicanal programado**. Esta autorización permite detallar y verificar la arquitectura, pero **no activa todavía** integraciones, credenciales, lectura automática, schedule, escritura canónica, publicación ni respuestas automáticas. Cada uno de esos cambios requiere su propio gate de aprobación.
+
+### 8.7 Contrato mínimo de datos y ejecución
+
+El loop programado tiene dos pasos no intercambiables. Primero, un proceso determinista recoge y normaliza solo los deltas disponibles; después, OmniRoute recibe un brief sanitizado y produce análisis `Draft`. El modelo no consulta plataformas, no calcula el registro canónico y no llama a herramientas de publicación.
+
+| Etapa | Entrada permitida | Salida | Control de integridad |
+| :--- | :--- | :--- | :--- |
+| 1. Lectura | Fuente autorizada de una plataforma, credencial guardada fuera del repositorio y cursor/fecha del último corte. | Respuesta de solo lectura y evidencia operacional restringida. | `read_only`, límite de tasa, timeout, registro de HTTP y error explícito. |
+| 2. Normalización | Datos por publicación y cuenta, sin comentarios ni perfiles. | Filas con nombres de métrica y ventana originales; valores ausentes permanecen `null`. | Dedupe por `Platform + Platform_Content_ID + Snapshot_At_UTC`; no se rellenan ceros. |
+| 3. Validación | Filas normalizadas y relación explícita con el ledger. | Lote `valid`, `partial`, `rejected` o `deferred`. | Requiere fuente, hora, plataforma y definición; nunca infiere `Concept_ID`, CNT o hipótesis. |
+| 4. Escritura canónica | Solo un lote `valid`/`partial` y la evidencia asociada. | Append-only de artefactos y actualización documentada. | Idempotency key de ejecución; GitHub conserva el estado oficial antes de refrescar vistas derivadas. |
+| 5. Hoja derivada | Artefactos canónicos ya confirmados. | Tablas filtrables de consulta y calidad de datos. | Si la hoja falla, el lote canónico no se revierte ni se duplica. |
+| 6. Brief OmniRoute | Agregados por cohorte: plataforma, formato, etiquetas creativas, ventana, mediana/rango y limitaciones. | Nota `Draft` con observaciones, hipótesis y pruebas pequeñas. | No recibe secretos, IDs nativos, URLs privadas, handles, filas crudas ni comentarios. |
+| 7. Revisión humana | Reporte determinista y Draft de OmniRoute. | Aprobación, rechazo o reescritura de hipótesis/experimento. | No hay transición automática a calendario, publicación o ledger de veredictos. |
+
+Cada fila normalizada debe conservar al menos los siguientes campos. No todas las plataformas entregarán cada métrica; los campos no expuestos permanecen `null` y se conserva `availability_reason`.
+
+| Grupo | Campos obligatorios | Campos condicionales |
+| :--- | :--- | :--- |
+| Identidad y trazabilidad | `platform`, `platform_content_id`, `published_at_utc`, `retrieved_at_utc`, `source`, `window_type`, `metric_definition`, `batch_id`, `row_status` | `publication_id`, `concept_id`, `experiment_id`, `hypothesis_id`, solo si existe vínculo explícito. |
+| Clasificación editorial | `content_type`, `crosspost_status`, `maturity_status` | `character`, `hook_type`, `caption_treatment`, `narrative_structure`, solo si se registraron antes de la publicación. |
+| Distribución y acción | `views`, `reach`, `impressions`, `likes_or_reactions`, `comments`, `shares`, `saves_or_favorites` | `native_engagement`, únicamente cuando la fuente documente su definición. |
+| Video y crecimiento | `avg_watch_time_seconds`, `completion_rate`, `retention_3s_rate`, `followers_gained`, `subscribers_gained`, `subscribers_lost` | Cada métrica exige su unidad, fuente y denominador originales. |
+| Calidad | `availability_reason`, `comparability`, `error_code`, `is_partial_period` | `raw_evidence_path` solo en almacenamiento privado/restringido; nunca en el prompt de OmniRoute. |
+
+### 8.8 Rutas de fuente que deben comprobarse antes de activar
+
+| Plataforma | Ruta base existente o candidata | Estado de diseño | Gate previo a automatización |
+| :--- | :--- | :--- | :--- |
+| Facebook | Meta Graph API y los runners E0/E24/E72 ya versionados. | Base de lectura y normalización existente; el corte diario actual es descriptivo y no cierra hipótesis. | Confirmar secreto de servidor, hook E0 real, lock y frecuencia del worker. |
+| Instagram | Conector de Instagram para lectura puntual; Insights oficial o Windsor para lote analítico. | La cuenta de Universe está seleccionada para lectura; el historial distingue la validación puntual de la fuente analítica. | Verificar disponibilidad de Insights, campos, permisos y ruta sostenible fuera de una sesión manual. |
+| TikTok | Windsor como fuente histórica principal; API oficial de videos como ruta alternativa autorizable. | Se debe comprobar cobertura de views, acciones, retención y crecimiento antes de elegir fuente. | Confirmar el proveedor, credenciales, límites y la deduplicación por `video_id`. |
+| YouTube | Windsor como fuente histórica principal; YouTube Analytics API como ruta alternativa autorizable. | Se deben separar actividad diaria y snapshot lifetime de video. | Confirmar proveedor, autorización de canal, métricas y agregación segura por video/día. |
+
+El horario propuesto es un corte diario cerca de las 22:00 `America/Matamoros` y un cierre semanal después del último slot del sábado. La frecuencia se configura solo tras probar que cada fuente responde con datos íntegros y que el job es idempotente; un error debe registrar `deferred` y no provocar reintentos ciegos, escrituras parciales ni conclusiones.
+
+### 8.9 Hoja derivada y OmniRoute local
+
+La hoja derivada deberá contener, como mínimo, tres pestañas: `Metrics_Daily_View` para cortes por contenido y plataforma, `Weekly_Growth_Draft` para cohortes maduras y `Data_Quality` para cobertura, nulos, fuente, ventana y errores. Será una vista de consulta reconstruible desde los artefactos canónicos; no podrá cambiar métricas, relaciones ni estados de los ledgers.
+
+OmniRoute permanecerá privado en el equipo local de Fernando. Un trabajo local puede leer únicamente el brief agregado ya aprobado, llamar al combo configurado y guardar una nota `Draft` con `provider_real`, `modelo_real`, `latencia_ms`, `estado` y `decisión_humana`. Si el equipo está apagado, el resultado es `analysis_deferred`; la captura determinista y los ledgers no se alteran ni quedan bloqueados por la ausencia del modelo.
 
 ## Referencias
 
