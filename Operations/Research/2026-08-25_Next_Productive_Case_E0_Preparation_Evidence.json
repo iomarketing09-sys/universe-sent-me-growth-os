@@ -45,7 +45,7 @@
   "e0_control": {
     "schedule_task_uid": "P9iKuQHRgO56wVd7MSBJ5o",
     "schedule_name": "USM: capturar E0 de PUB-FB-17_30-46",
-    "status": "active",
+    "status": "paused_after_api_error",
     "run_mode": "full_auto",
     "cron": "0 34 13 25 8 *",
     "timezone": "America/Matamoros",
@@ -54,7 +54,8 @@
     "expire_at": "2026-08-25T19:00:00Z",
     "tolerance_seconds": 600,
     "connector": "Universe Sent Me Meta API",
-    "behavior": "Read-only Meta check; capture E0 only if is_published=true, meta_post_id and created_time are present; otherwise return E0_PENDING without writing a snapshot. The publisher result uses the explicit IDs above, cnt empty and id_pieza empty."
+    "behavior": "Read-only Meta check; capture E0 only if is_published=true, meta_post_id and created_time are present; otherwise return E0_PENDING without writing a snapshot. The publisher result uses the explicit IDs above, cnt empty and id_pieza empty.",
+    "outcome": "The control attempt was blocked before Meta returned a post response because the connector was disabled and the environment token returned OAuth 2500; no E0 snapshot was written."
   },
   "safety": {
     "content_published": false,

@@ -1,0 +1,72 @@
+{
+  "title": "Intento de captura E0 del siguiente caso — acceso Meta bloqueado",
+  "purpose": "Registrar el resultado de la ejecución solicitada y demostrar que no se escribió snapshot cuando Meta no pudo ser consultado.",
+  "status": "Active",
+  "created": "2026-08-25",
+  "updated": "2026-08-25",
+  "version": "1.0",
+  "author": "Manus AI (CGO)",
+  "organization": "Operations/Research",
+  "related_documents": [
+    "Operations/Research/2026-08-25_Next_Productive_Case_E0_Preparation_Evidence.json",
+    "Operations/Research/2026-08-25_First_Productive_Case_E0_Execution_Evidence.json",
+    "Operations/Automation/capture_e0_after_publish.py",
+    "Operations/Research/Metrics_Snapshot_Log.csv",
+    "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
+  ],
+  "approved_case": {
+    "publicacion_id": "PUB-FB-17_30-46",
+    "experiment_id": "EXP-2026-08-CAL-01",
+    "id_pieza": "",
+    "cnt": "",
+    "platform": "Facebook",
+    "account_id": "1036844829507460",
+    "meta_post_id": "1036844829507460_122151377385072582"
+  },
+  "scheduled_control": {
+    "schedule_task_uid": "P9iKuQHRgO56wVd7MSBJ5o",
+    "schedule_name": "USM: capturar E0 de PUB-FB-17_30-46",
+    "cron": "0 34 13 25 8 *",
+    "timezone": "America/Matamoros",
+    "scheduled_check_utc": "2026-08-25T18:34:00Z",
+    "expire_at": "2026-08-25T19:00:00Z",
+    "status_observed": "pause"
+  },
+  "attempt": {
+    "attempted_at_utc": null,
+    "attempted_at_utc_note": "The shell did not persist the exact attempt timestamp; the attempt occurred after the 17:59:19Z Meta check and before this evidence was written.",
+    "result_status": "API_ERROR",
+    "reason": "Meta could not be queried because the Universe Sent Me Meta API connector was disabled after configuration refresh and the environment token returned OAuth code 2500: an active access token must be used to query the current user.",
+    "meta_post_response_available": false,
+    "is_published": null,
+    "meta_post_id_confirmed_by_query": false,
+    "created_time_confirmed_by_query": false,
+    "publisher_result_built": false,
+    "capture_e0_invoked": false,
+    "e0_pending": false,
+    "no_snapshot_reason": "The contract requires a real Meta response before classifying E0_PENDING or invoking the hook; no response was available."
+  },
+  "ledger_check": {
+    "ledger": "Operations/Research/Metrics_Snapshot_Log.csv",
+    "rows": 1,
+    "new_rows_from_this_attempt": 0,
+    "existing_status_counts": {
+      "Anomaly": 1
+    },
+    "valid_e0_posts": 0,
+    "validation": "PASS",
+    "errors": [],
+    "warnings": []
+  },
+  "safety": {
+    "published": false,
+    "reprogrammed": false,
+    "edited": false,
+    "deleted": false,
+    "queue_modified": false,
+    "publication_log_modified": false,
+    "experiment_log_modified": false,
+    "metrics_invented": false
+  },
+  "next_action": "Enable the Universe Sent Me Meta API connector through the pending configuration confirmation, then perform one read-only check of the same post. Do not create a new schedule, reprogram the post, or invoke capture_e0_after_publish.py until Meta returns a real response."
+}
