@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "6.2"
+version: "6.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -1349,3 +1349,12 @@ En el ledger, la ventana de siete días inmediatamente anterior acumuló 430 fil
 El aprendizaje operativo queda incorporado: separar raíces y réplicas; reportar concentración por publicación; usar la tasa de propuesta como indicador editorial complementario; y reconocer título + artista como una señal musical suficientemente identificable para una respuesta breve. Evidencia detallada: `Operations/Research/2026-08-25_Facebook_Comment_Interaction_Trends_Analysis.md/.json`.
 
 **Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Community_Engagement_Log.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 41. Aprobación humana de las reglas de interacción — 25 de agosto de 2026
+
+Fernando aprobó las cinco decisiones derivadas del análisis comparativo del corte de 101 comentarios. Quedan activas para el trabajo de comunidad: separar raíces y réplicas; analizar la concentración por publicación; usar la tasa de propuesta como indicador editorial secundario; reconocer una señal musical cuando exista título + artista; y no intervenir por defecto en conversaciones usuario-a-usuario, reacciones breves o lenguaje íntimo.
+
+La decisión mejora la clasificación y la calidad de las propuestas, pero no autoriza publicaciones, automatizaciones, cambios de calendario ni respuestas adicionales. La cola vigente permanece sin cambios y cada escritura continúa requiriendo autorización explícita para el comentario concreto.
+
+La regla canónica queda en `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`; la aplicación al ledger queda en `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`; el análisis que originó la decisión está en `Operations/Research/2026-08-25_Facebook_Comment_Interaction_Trends_Analysis.md/.json`; y la aprobación se conserva también en `Operations/Research/2026-08-15_Community_Engagement_Log.md`.

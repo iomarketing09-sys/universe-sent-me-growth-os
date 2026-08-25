@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "5.7"
+version: "5.8"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -836,3 +836,14 @@ La ventana de siete días inmediatamente anterior al cursor acumuló 430 filas d
 **Aprendizajes incorporados al Growth OS:** separar raíces de réplicas; reportar concentración por publicación; conservar la tasa de propuesta como indicador editorial complementario, no como sustituto de alcance; y tratar título + artista como señal suficiente para una propuesta musical breve. El análisis completo está en `2026-08-25_Facebook_Comment_Interaction_Trends_Analysis.md/.json`.
 
 **Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 25. Aprobación de reglas de interacción y aprendizaje — 25 de agosto de 2026
+
+Fernando aprobó explícitamente las cinco decisiones recomendadas en el análisis de tendencias de comentarios. Desde este cierre, quedan activas como reglas de interpretación del ledger y del reporte de comunidad: separar raíces y réplicas; analizar por publicación; usar la tasa de propuestas como indicador editorial secundario; tratar título + artista como señal suficiente para una propuesta musical breve; y no intervenir por defecto en conversaciones laterales o lenguaje íntimo.
+
+La aprobación aplica al análisis, la clasificación y la preparación de propuestas. **No autoriza publicaciones, respuestas adicionales, automatizaciones ni cambios de calendario.** La cola de Facebook permanece sin cambios y cualquier escritura sigue requiriendo autorización explícita para el comentario concreto.
+
+Fuente de decisión: `Operations/Research/2026-08-25_Facebook_Comment_Interaction_Trends_Analysis.md/.json`. Reglas activas: `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`. Arquitectura de ledger alineada: `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`.
+
+**Documento relacionado que requiere actualización:** `GrowthOS/00_01_Changelog_GrowthOS.md`.

@@ -414,3 +414,20 @@ El post de las 10:00 (`2608050`) lideró las imágenes con 51 interacciones cono
 El Reel `MPM-001` —Elara caminando con audífonos y Wilfred detrás— quedó en nivel L1 observable con 18 interacciones básicas. Meta no expuso views, reach ni retención en esta extracción; por eso no se compara con imágenes ni se evalúa formalmente la celda `HB-REEL-MOTION-POV-MEME-01`. Afiliados conserva su ledger independiente y no se sumó al engagement editorial.
 
 Los documentos operativos permanentes son `Operations/Research/2026-08-22_Corte_Diario_Metricas_2200.md`, su CSV y raw, y `Operations/Research/2026-08-22_Analisis_Corte_Diario_Familias_Personajes.md` con su CSV. La observación `OBS-DAILY-20260822-2200` se añadió al `ExperimentLog.csv` como `Corte_Observado`, sin campos 24/72h. Las filas de publicación observadas se añadieron de forma append-only al `Publication_Log.csv`; no se reescribieron hechos históricos ni se modificaron calendario, canon, Reels o afiliados.
+
+
+## 21. Reglas aprobadas para el ledger de comunidad — 2026-08-25
+
+A partir de la aprobación explícita de Fernando, el `Community_Engagement_Log.csv` y sus vistas derivadas deben aplicar cinco controles interpretativos:
+
+| Control | Regla de fuente maestra |
+|---|---|
+| Profundidad | Separar `Comentario_Raiz` de `Replica_Anidada`; una réplica es actividad de hilo, no una oportunidad directa por defecto. |
+| Concentración | Agrupar reportes por `Post_ID` antes de extraer tendencias del perfil. |
+| Oportunidad | Calcular `propuestas editoriales / comentarios revisados` como indicador cualitativo secundario, sin tratarlo como reach o engagement nativo. |
+| Música | Considerar propuesta específica cuando exista título + artista; no inventar interpretación de letra ni responder con una plantilla genérica. |
+| No acción | Mantener conversaciones usuario-a-usuario, reacciones breves y lenguaje íntimo como `No_Requiere_Respuesta` salvo solicitud directa inequívoca y revisión humana. |
+
+Estas reglas no cambian el carácter append-only del ledger ni autorizan publicaciones. El registro conserva `Comentario_ID`, `Respuesta_Estado`, `Moderacion_Estado`, `Privacidad`, fuente y timestamp; la cola de aprobación sigue siendo una vista derivada y no una segunda fuente maestra. El análisis de origen está en `Operations/Research/2026-08-25_Facebook_Comment_Interaction_Trends_Analysis.md/.json` y las reglas activas de aprendizaje en `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`.
+
+**Estado:** aprobado explícitamente por Fernando el 2026-08-25. **Documentos que requieren alineación:** `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `Operations/Research/2026-08-15_Community_Engagement_Log.md`, `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

@@ -3,8 +3,8 @@
 **Propósito:** Definir los criterios de decisión para la programación, reutilización, análisis y creación de contenido en Universe Sent Me.
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
-**Última actualización:** 2026-08-24
-**Versión:** 3.27
+**Última actualización:** 2026-08-25
+**Versión:** 3.28
 **Autor:** Manus AI (CGO); Sección 6 añadida por Claude
 **Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`, `../Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`, `../Operations/Research/2026-08-21_Julio_Expansion_Lote01_Analysis.md`, `../Operations/Research/2026-08-21_Expansion_Celdas_Comparables_Post_Julio_Lote01.json`, `../Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Findings.md`, `../Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md`, `../Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`, `../Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Audit.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Analysis.md`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Manual_Findings.md`, `../Operations/Research/2026-08-21_Junio_Caption_Reclassification_Impact.md`, `../Operations/Research/2026-08-21_Validacion_Cruzada_Hipotesis_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.md`, `../Operations/Research/2026-08-15_Community_Engagement_Log.md`, `../Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `../Operations/Research/2026-08-24_Facebook_Expanded_Audit_Reply_Proposals.md`
 
@@ -434,3 +434,22 @@ Toda respuesta pública continúa bajo aprobación humana explícita. El criteri
 
 [1]: https://www.youtube.com/watch?v=1f_5dnvh3d4 "Rammstein Official — Te Quiero Puta! (Official Lyric Video)"
 [2]: https://open.spotify.com/intl-es/track/2ZVLMYBZQ5BRwuk0UGupnB "Spotify — Te quiero puta! — Rammstein"
+
+
+## 22. Reglas aprobadas para aprendizaje de comentarios — 2026-08-25
+
+Fernando aprobó las decisiones derivadas del análisis comparativo de la cola de Facebook. Estas reglas quedan **Active** para el trabajo de comunidad y complementan, sin sustituir, el ledger anonimizado, la aprobación humana y la verificación de Meta.
+
+| Regla aprobada | Aplicación operativa | Límite |
+|---|---|---|
+| Separar volumen de profundidad | Reportar siempre comentarios raíz y réplicas anidadas por separado. | Una réplica aumenta la actividad del hilo, pero no equivale automáticamente a una oportunidad de respuesta de la Página. |
+| Analizar por publicación | Desglosar el volumen por `Post_ID` y referencia visible antes de extraer tendencias del perfil. | No declarar que el perfil creció por comentarios si el volumen está concentrado en una sola pieza. |
+| Usar la tasa de propuesta como indicador secundario | Comparar `propuestas editoriales / comentarios revisados` para observar la calidad accionable de una cola. | No usarla como sustituto de alcance, reproducciones, impresiones, sentimiento poblacional o usuarios únicos. |
+| Reconocer señales musicales con título + artista | Preparar una respuesta breve y específica cuando el comentario identifique ambos elementos. | No inventar una lectura de la letra ni responder con una frase genérica aplicable a cualquier canción. |
+| No intervenir por defecto en conversaciones laterales o lenguaje íntimo | Clasificar réplicas usuario-a-usuario, reacciones breves y descripciones íntimas como no acción salvo solicitud directa inequívoca. | La regla no reemplaza la revisión de seguridad ni autoriza moderación automática; toda respuesta pública sigue requiriendo autorización explícita. |
+
+La tasa de propuesta es un indicador **editorial**, no una métrica nativa de Meta. La lectura debe conservar la cohorte, el cursor, la fecha de extracción y el alcance del escaneo. Los análisis de comentarios observados no deben mezclarse con reach, impresiones, reproducciones o engagement cuantitativo de publicaciones.
+
+El análisis que originó estas reglas está en `Operations/Research/2026-08-25_Facebook_Comment_Interaction_Trends_Analysis.md/.json`. La evidencia de la cola está en `Operations/Research/2026-08-25_Facebook_Comment_Review_After_Five_Approved_Replies.json` y la arquitectura del ledger en `Operations/Research/2026-08-15_Community_Engagement_Log.csv`.
+
+**Estado de aprobación:** aprobado explícitamente por Fernando el 2026-08-25. **Alcance:** reglas de análisis y criterio editorial; no autoriza publicaciones, automatizaciones, cambios de calendario ni respuestas adicionales.
