@@ -4,7 +4,7 @@ purpose: "Definir cómo OmniRoute puede analizar resúmenes métricos ya normali
 status: Review
 created: 2026-08-23
 updated: 2026-08-25
-version: "1.2"
+version: "1.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-19_Decision_Gateway_IA_OmniRoute.md"
@@ -213,7 +213,7 @@ Para el Growth actual, el análisis debe priorizar cinco preguntas: qué formato
 | **A. Piloto controlado de siete días** | Se generan cortes diarios de solo lectura con las rutas ya comprobadas; TikTok y YouTube se incorporan después de validar su fuente. El sábado se crea la hoja derivada y OmniRoute recibe briefs agregados para un reporte semanal `Draft`. | Menor riesgo, comprueba definiciones y detecta huecos antes de depender de un proceso recurrente. No requiere conceder más permisos ni mover secretos ahora. | Requiere revisión operativa de los cortes y no ofrece todavía cobertura automática completa de las cuatro plataformas. |
 | **B. Loop multicanal programado** | Un proceso de solo lectura recupera deltas a diario, normaliza, actualiza artefactos canónicos y refresca la hoja derivada; después genera un brief mínimo para el análisis `Draft` diario y semanal. | Reduce el trabajo repetitivo y conserva historial uniforme por plataforma y cohorte. | Requiere aprobar por separado las rutas de acceso de TikTok/YouTube, ubicación de secretos, idempotencia, límites de tasa, mecanismo de pausa, pruebas de lectura y el destino de la hoja derivada. No puede usar los conectores de Manus directamente desde un servicio externo sin un diseño de credenciales u orquestación aprobado. |
 
-No se selecciona una modalidad ni se crea un schedule en este documento. La decisión debe basarse en la tolerancia operativa de Fernando: primero validar la calidad de la fuente y de los briefs, o invertir desde ahora en el loop programado con sus controles completos.
+La primera versión de este diseño no seleccionó una modalidad ni creó un schedule. La decisión posterior y su alcance quedan registrados en la sección 8.6; cualquier activación técnica conserva sus propios gates.
 
 ### 8.5 Condiciones de aprobación y coherencia documental
 
@@ -265,6 +265,18 @@ El horario propuesto es un corte diario cerca de las 22:00 `America/Matamoros` y
 La hoja derivada deberá contener, como mínimo, tres pestañas: `Metrics_Daily_View` para cortes por contenido y plataforma, `Weekly_Growth_Draft` para cohortes maduras y `Data_Quality` para cobertura, nulos, fuente, ventana y errores. Será una vista de consulta reconstruible desde los artefactos canónicos; no podrá cambiar métricas, relaciones ni estados de los ledgers.
 
 OmniRoute permanecerá privado en el equipo local de Fernando. Un trabajo local puede leer únicamente el brief agregado ya aprobado, llamar al combo configurado y guardar una nota `Draft` con `provider_real`, `modelo_real`, `latencia_ms`, `estado` y `decisión_humana`. Si el equipo está apagado, el resultado es `analysis_deferred`; la captura determinista y los ledgers no se alteran ni quedan bloqueados por la ausencia del modelo.
+
+### 8.10 Validaciones realizadas y bloqueos restantes
+
+| Elemento | Resultado de verificación | Decisión operativa |
+| :--- | :--- | :--- |
+| Instagram `@universe_sent_me_0326` | La cuenta quedó seleccionada para esta sesión y respondió en modo solo lectura. La lista de publicaciones devuelve ID, tipo, fecha, permalink, likes y comentarios; la consulta de insights por post devolvió `shares`, `comments`, `likes`, `saved`, `total_interactions`, `reach` y `views`. | La ruta sirve para validar contenido y obtener métricas por post. Antes de automatizarla fuera de la sesión se debe resolver una credencial o una orquestación sostenible, sin exponer tokens. |
+| Facebook | El runner `run_daily_metrics_cut.py` ya implementa lectura GET-only, cruce por `Meta_Post_ID`, separación de Reels y registros descriptivos. El pipeline E0/E24/E72 dispone de módulos probados, pero su hook productivo y worker recurrente permanecen separados. | Reutilizar los runners existentes; no mezclar el schedule temporal de comentarios con el futuro job de métricas. |
+| TikTok | La fuente histórica Windsor.ai está deshabilitada en la configuración actual. La integración visible TikTok for Business también está deshabilitada y se orienta a campañas publicitarias, no valida todavía la cobertura orgánica necesaria. | No activar hasta elegir y probar una ruta de datos orgánica con campos, permisos, límites y deduplicación confirmados. |
+| YouTube | Windsor.ai y vidIQ están deshabilitados. La documentación oficial ofrece YouTube Analytics para consultas y Reporting API para reportes masivos, pero no hay una ruta conectada ni autorizada en esta sesión. [2] | No activar hasta elegir y probar una ruta de datos de canal que separe actividad diaria y snapshots lifetime. |
+| Hoja `USM Growth OS` | Existe una hoja con pestañas históricas `Cola de Publicación`, `ExperimentLog`, `Hypothesis Bank` y `Dashboard`; su modificación más reciente fue el 8 de agosto y el dashboard no representa el contrato multicanal actual. | No se modifica. Para la vista derivada se requiere aprobar nuevas pestañas `Metrics_Daily_View`, `Weekly_Growth_Draft` y `Data_Quality`, o crear una hoja separada de consulta. |
+
+Estas verificaciones no añaden una fuente canónica nueva ni autorizan un schedule. El siguiente gate es elegir la ruta sostenible de TikTok y YouTube, decidir el destino de la hoja derivada y aprobar dónde residirá la autenticación de los procesos de solo lectura.
 
 ## Referencias
 
