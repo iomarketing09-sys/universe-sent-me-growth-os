@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "5.2"
+version: "5.3"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -62,6 +62,7 @@ organization: "GrowthOS"
 - [ ] Revisar local y humanamente las ocho filas de rendimiento disponibles para confirmar atribución y ventanas de fecha; mantener cualquier importe o error de monetización en evidencia privada, fuera de OmniRoute y sin aprobación financiera separada.
 - [ ] Mostrar localmente un resumen legible de las ocho filas de YouTube sin revelar IDs, rutas, tokens ni valores monetarios; conservar toda evidencia fuente en Xubuntu.
 - [ ] Inventariar los runners y la configuración local existente de Meta para Facebook e Instagram, sin leer ni exponer secretos, y confirmar que la marca configurada sea exactamente Universe Sent Me.
+- [x] Preparar y compilar `validate_meta_local_readonly.py`, un validador oficial Meta GET-only que usa un token solo desde entorno local, guarda evidencia únicamente fuera del repositorio y no contiene POST/PUT/PATCH/DELETE.
 - [ ] Ejecutar una prueba acotada GET-only para Facebook y otra para Instagram mediante APIs oficiales locales, con una cuenta objetivo de Universe Sent Me y sin publicar, comentar, responder, editar, guardar en Sheets, escribir ledgers ni usar OmniRoute.
 - [ ] Registrar el resultado de cada prueba Meta, incluidos bloqueos de permisos o token, sin convertir datos ausentes en cero ni añadir scopes de escritura para resolver errores.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.

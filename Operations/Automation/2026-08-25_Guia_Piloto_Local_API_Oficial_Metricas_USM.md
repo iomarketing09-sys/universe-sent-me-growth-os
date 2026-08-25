@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.5"
+version: "1.6"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -108,6 +108,12 @@ El proyecto exclusivo `USM Local Metrics` habilitó únicamente YouTube Data API
 El collector de YouTube confirmó `status = collected`, `brand = Universe Sent Me`, `platform = YouTube` y `performance_rows = 8`. La solicitud de monetización devolvió `monetization_status = not_available`. Esta ausencia se preserva tal cual: no equivale a ingresos cero, no se reintenta con permisos de escritura y no se envían importes ni errores financieros a OmniRoute.
 
 Antes de interpretar resultados o pasar valores agregados a una vista derivada, Fernando debe revisar localmente las ocho filas para atribución al canal y coherencia de ventana. La lectura continúa sin cron, Google Sheets, ledgers, contenido, comentarios, programación ni cambios en otros proyectos.
+
+## Meta: validador local GET-only para Facebook e Instagram
+
+El runner histórico `run_daily_metrics_cut.py` no se usa para este gate porque escribe evidencia y análisis dentro del repositorio. En su lugar, `validate_meta_local_readonly.py` valida exclusivamente la conectividad y la autorización con solicitudes `GET`: primero comprueba que el token local devuelve la página `1036844829507460` de Universe Sent Me y, después, que la cuenta profesional vinculada devuelve el usuario esperado `universe_sent_me_0326`.
+
+El validador recibe `USM_META_USER_ACCESS_TOKEN` únicamente desde el entorno de la terminal; no lo lee de archivos de proyecto ni lo imprime. Conserva un resumen mínimo de éxito o bloqueo bajo `~/.local/share/usm-metrics/evidence/`, fuera del repositorio, y no consulta publicaciones, comentarios, mensajes, insights ni endpoints de escritura. Cualquier fallo de token, página o permiso debe documentarse como bloqueo, sin interpretar ausencias como cero ni añadir scopes de escritura.
 
 ## Estado del documento
 
