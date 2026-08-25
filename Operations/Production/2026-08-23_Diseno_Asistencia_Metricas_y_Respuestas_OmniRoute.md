@@ -4,7 +4,7 @@ purpose: "Definir cómo OmniRoute puede analizar resúmenes métricos ya normali
 status: Review
 created: 2026-08-23
 updated: 2026-08-25
-version: "2.1"
+version: "2.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-19_Decision_Gateway_IA_OmniRoute.md"
@@ -353,7 +353,7 @@ El piloto local requiere dos clientes OAuth independientes y de solo lectura. Ca
 | Plataforma | Cliente y permisos mínimos | Datos mínimos del piloto | Renovación y control |
 | :--- | :--- | :--- | :--- |
 | TikTok | Aplicación de escritorio registrada en TikTok for Developers, `video.list` y callback local `http://127.0.0.1:<puerto>/callback/` con PKCE. [11] [12] | ID, fecha de creación, título, `view_count`, `like_count`, `comment_count` y `share_count` de videos públicos de la cuenta autorizada. [13] | Access token con vida corta; refresh token local rotado tras cada renovación. El script valida `state`, usa PKCE y aborta si los scopes concedidos no son exactamente los esperados. |
-| YouTube | Cliente OAuth local de Google con `https://www.googleapis.com/auth/youtube.readonly` y `https://www.googleapis.com/auth/yt-analytics.readonly`. [8] | ID de video, tipo de contenido, publicación, views, engaged views, likes, comentarios, shares, porcentaje visto, watch time cuando exista y suscriptores ganados. | Refresh token local con permisos restrictivos; el script nunca solicita scopes de carga, edición, comentarios ni monetización. |
+| YouTube | Cliente OAuth local de Google con `https://www.googleapis.com/auth/youtube.readonly`, `https://www.googleapis.com/auth/yt-analytics.readonly` y `https://www.googleapis.com/auth/yt-analytics-monetary.readonly`. [8] [14] | ID de video, tipo de contenido, publicación, views, engaged views, likes, comentarios, shares, porcentaje visto, watch time cuando exista, suscriptores ganados y monetización si es elegible. | Refresh token local con permisos restrictivos; el script nunca solicita scopes de carga, edición, comentarios, gestión de canal ni monetización de terceros. |
 
 La aplicación de escritorio de TikTok admite un callback en `localhost`/`127.0.0.1` con puerto, y exige PKCE; esto permite que la autorización ocurra en el navegador del propio equipo Xubuntu sin publicar un endpoint ni abrir un puerto de Internet. [12] En ambos casos, la primera autorización exige una aprobación de Fernando en el proveedor, pero los refresh posteriores son deterministas y locales.
 
@@ -367,6 +367,20 @@ El collector debe persistir primero un artefacto bruto local temporal con permis
 | Marca distinta o cuenta no resuelta | Detener la extracción de esa fila antes de persistir datos o formar un brief. |
 
 Este contrato es un diseño aprobado, no una autorización para crear apps, dar consentimientos OAuth, instalar scripts o iniciar cron. Esas acciones se presentan como un gate técnico separado.
+
+### 8.18 Capa de monetización de YouTube
+
+Fernando solicitó incluir monetización en el loop de Universe Sent Me. La integración de YouTube añadirá el scope `https://www.googleapis.com/auth/yt-analytics-monetary.readonly`, exclusivamente para consultar reportes monetarios del canal autorizado. El consentimiento mostrará un permiso adicional de lectura; no permite publicar videos, editar contenido, gestionar comentarios ni mover fondos. [14]
+
+| Grupo | Campos de lectura | Uso permitido |
+| :--- | :--- | :--- |
+| Ingreso estimado | `estimatedRevenue`, `estimatedAdRevenue`, `estimatedRedPartnerRevenue` | Snapshot diario/semanal por canal y, cuando la fuente lo permita, por video. Se guardan con `financial_status = preliminary`. |
+| Rendimiento publicitario | `grossRevenue`, `adImpressions`, `monetizedPlaybacks`, `cpm`, `playbackBasedCpm` | Diagnóstico de tendencia y cobertura publicitaria; no sirve para proyectar ingresos ni comprometer presupuestos. |
+| Contexto de contenido | `views`, `engagedViews`, `estimatedMinutesWatched`, `averageViewDuration`, `averageViewPercentage`, `subscribersGained` | Relacionar eficiencia de contenido y monetización solo dentro de YouTube y su misma ventana temporal. |
+
+YouTube define estos valores como ingresos o rendimiento publicitario **estimados**; pueden ajustarse al cierre de mes y pueden depender de la moneda solicitada en la consulta. Por ello, el ledger conservará moneda, ventana, hora de extracción y `financial_status = preliminary`; nunca tratará una lectura diaria como ingreso definitivo. [15]
+
+Los importes monetarios crudos se almacenarán solo en la capa financiera local y, si se aprueba, en una vista restringida de la hoja. Por defecto, OmniRoute recibirá únicamente señales agregadas no monetarias —por ejemplo, `revenue_trend = up/down/flat`, `monetization_available = true/false` y variaciones porcentuales redondeadas— para formular hipótesis `Draft`. Enviar importes exactos al modelo requiere una autorización financiera separada de Fernando.
 
 ## Referencias
 
@@ -383,3 +397,5 @@ Este contrato es un diseño aprobado, no una autorización para crear apps, dar 
 [11]: https://developers.tiktok.com/doc/oauth-user-access-token-management/ "TikTok for Developers — User Access Token Management"
 [12]: https://developers.tiktok.com/doc/login-kit-desktop/ "TikTok for Developers — Login Kit for Desktop"
 [13]: https://developers.tiktok.com/doc/tiktok-api-v2-video-list/ "TikTok for Developers — List Videos"
+[14]: https://developers.google.com/youtube/analytics/reference/reports/query "Google for Developers — YouTube Analytics Reports: Query and scopes"
+[15]: https://developers.google.com/youtube/analytics/metrics "Google for Developers — YouTube Analytics Metrics"
