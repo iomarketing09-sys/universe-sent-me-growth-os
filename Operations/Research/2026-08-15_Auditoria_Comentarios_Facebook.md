@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "6.8"
+version: "6.9"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -1404,4 +1404,21 @@ La tarea recurrente intentó ejecutar una revisión a las 12:03 de `America/Mata
 
 Como control de seguridad, la tarea `Revisión Facebook USM — cadencia focalizada` fue pausada. Su Schedule ID es `4i8525UwBbh8mk84iZZ42Y`; conserva la expiración `2026-09-01T10:12:56Z` y la cadencia aprobada de 12:00, 17:30 y 21:30 en `America/Matamoros`. La reactivación requiere habilitar explícitamente el conector Meta API, verificar la identidad de la Página mediante GET-only y confirmar que solo Meta API y GitHub estén asignados. No se debe reactivar si la tarea conserva conectores adicionales o si el token no está disponible.
 
-**Estado:** Paused. **Límite:** no se repite la solicitud de habilitación sin una confirmación explícita de Fernando.
+**Estado histórico:** Paused. **Límite histórico:** no se repitió la solicitud de habilitación; la reactivación posterior ocurrió únicamente después de la confirmación explícita de Fernando y de una verificación read-only.
+
+
+## 47. Reactivación verificada y corte GET-only — 25 de agosto de 2026
+
+Tras la confirmación explícita de Fernando de que Meta estaba activo, se verificó en modo lectura que `Universe Sent Me Meta API` estaba habilitado. La evidencia sanitizada de esta comprobación se conserva en `Operations/Research/2026-08-25_18-10-48_Facebook_Schedule_Reactivation_Verification.json`. El único schedule (`4i8525UwBbh8mk84iZZ42Y`) se reactivó con sus conectores explícitamente restringidos a `Universe Sent Me Meta API` y `GitHub`, conservando la expiración `2026-09-01T10:12:56Z`. La revisión manual se ejecutó exclusivamente sobre Facebook propio con Meta Graph API v26.0; no se usó navegador, no se consultaron otras redes y no se realizaron POST, PUT, DELETE, ocultamientos ni modificaciones.
+
+El escaneo de las 20 publicaciones propias cubrió hasta 100 comentarios por colección y una profundidad de réplica anidada. El artefacto `Operations/Research/2026-08-25_17-58-20_Facebook_Comment_Review_GET_Only.json` contiene **63 IDs nuevos** no registrados en el ledger: **20 raíces** y **43 réplicas**. Hubo **0 errores de API**. La clasificación conservó todos los IDs estructurales y generó **3 propuestas nuevas** y **60 no acciones**. La cola acumulada queda en **5 propuestas pendientes de Fernando**, incluyendo las dos propuestas musicales previas; no se repropusieron ni publicaron.
+
+| Propuesta nueva | Respuesta propuesta | Estado |
+|---|---|---|
+| `She's Gone` — Steelheart | «She's Gone» de Steelheart: esa sí llega con guitarra y nostalgia a la mesa. 🎶🌙 | `Pendiente_Fernando` |
+| `El amor acaba` — José José | «El amor acaba» de José José: cuando el corazón pide una verdad cantada en voz alta. 🎶🌙 | `Pendiente_Fernando` |
+| `Cuando te acuerdes de mí` — Marco Antonio Solís | «Cuando te acuerdes de mí» de Marco Antonio Solís: para Lukas, una canción que se queda trotando en la memoria. 🐾🎶 | `Pendiente_Fernando` |
+
+El registrador `Operations/Automation/record_facebook_review_get_only_2026_08_25_1758.py` añadió 63 filas append-only. El ledger quedó en **612 filas y 612 IDs únicos**, con `Privacidad=Anonimizado`, `CNT_ID` preservado para réplicas y validación oficial `PASS`. Evidencia editorial, cola y reporte: `Operations/Research/2026-08-25_17-58-20_Facebook_Editorial_Review_GET_Only.json`, `Operations/Research/2026-08-25_17-58-20_Facebook_Pending_Queue_GET_Only.json` y `Operations/Research/2026-08-25_17-58-20_Facebook_Comment_Review_Report.md`.
+
+**Documentos relacionados que requieren alineación:** `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `Operations/Research/2026-08-15_Community_Engagement_Log.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

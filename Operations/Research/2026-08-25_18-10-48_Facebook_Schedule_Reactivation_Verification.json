@@ -1,0 +1,51 @@
+{
+  "title": "Facebook Schedule Reactivation Verification",
+  "purpose": "Conservar evidencia sanitizada de la verificación del conector Meta y de la reactivación restringida del schedule temporal de revisión de comentarios.",
+  "status": "Active",
+  "created_at": "2026-08-25T18:10:48Z",
+  "updated_at": "2026-08-25T18:10:48Z",
+  "version": "1.0",
+  "author": "Manus AI",
+  "organization": "Operations/Research",
+  "related_documents": [
+    "GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md",
+    "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.md",
+    "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md",
+    "Operations/Research/2026-08-25_17-58-20_Facebook_Comment_Review_GET_Only.json"
+  ],
+  "verification_source": "manus-config config load + schedule status",
+  "meta_connector": {
+    "name": "Universe Sent Me Meta API",
+    "uid": "76925630-05da-4aa7-878d-64a6a520ca6d",
+    "enabled": true
+  },
+  "schedule": {
+    "name": "Revisión Facebook USM — cadencia focalizada",
+    "task_uid": "4i8525UwBbh8mk84iZZ42Y",
+    "status": "active",
+    "timezone": "America/Matamoros",
+    "cron": "0 0,30 12,17,21 * * *",
+    "expire_at": "2026-09-01T10:12:56Z",
+    "enabled_connector_uids": [
+      "76925630-05da-4aa7-878d-64a6a520ca6d",
+      "bbb0df76-66bd-4a24-ae4f-2aac4750d90b"
+    ],
+    "enabled_connector_names": [
+      "Universe Sent Me Meta API",
+      "GitHub"
+    ],
+    "useful_local_times": ["12:00", "17:30", "21:30"],
+    "technical_no_op_local_times": ["12:30", "17:00", "21:00"]
+  },
+  "safety_contract": {
+    "facebook_only": true,
+    "meta_graph_api_version": "v26.0",
+    "read_operations_only": true,
+    "publishing_allowed": false,
+    "post_put_delete_allowed": false,
+    "author_personal_data_retained": false,
+    "approval_required_for_any_future_publication": true
+  },
+  "verification_result": "PASS"
+}
