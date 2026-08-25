@@ -40,8 +40,10 @@
 - [x] Priorizar mejoras de conversión, contenido y confianza para el sitio de Firma Bordados sin inventar información comercial.
 - [x] Implementar el paquete C1: sección «Cómo solicitar», mensaje guiado de WhatsApp y franja de marcas confirmadas por catálogo.
 - [x] Validar, publicar en el staging Cloudflare y documentar el paquete C1 sin modificar Wix, DNS ni el dominio público.
-- [ ] Implementar el paquete C2: FAQ breve y ampliación prudente del portafolio con fotografías reales autorizadas.
-- [ ] Validar, publicar en el staging Cloudflare y documentar el paquete C2 sin modificar Wix, DNS ni el dominio público.
+- [x] Implementar el paquete C2: FAQ breve y ampliación prudente del portafolio con fotografías reales autorizadas.
+- [x] Validar, publicar en el staging Cloudflare y documentar el paquete C2 sin modificar Wix, DNS ni el dominio público.
+- [ ] Implementar el paquete C3: enlace de ubicación con indicaciones y verificación final de los datos de contacto visibles.
+- [ ] Decidir formulario con backend y analítica solo después de definir privacidad, antispam, responsable y proceso de respuesta.
 - [x] Convertir WhatsApp en el CTA principal del hero de Firma Bordados y validar el enlace en escritorio y móvil.
 - [x] Guiar la creación de la cuenta Cloudflare y repositorio privado del cliente antes de configurar Cloudflare Pages.
 - [x] Acompañar la configuración del proyecto Cloudflare Pages de staging para Firma Bordados sin agregar dominio ni modificar DNS.

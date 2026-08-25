@@ -3,8 +3,8 @@ title: "Curaduría de activos web — Firma Bordados"
 purpose: "Registrar la procedencia, evaluación y uso previsto de fotografías autorizadas para actualizar de forma reversible el staging Cloudflare de Firma Bordados."
 status: Active
 created: 2026-08-24
-updated: 2026-08-24
-version: "1.3"
+updated: 2026-08-25
+version: "1.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md"
@@ -54,3 +54,9 @@ La misma actualización añadió una tercera nota junto a los tiempos: «Le ayud
 ### Confirmación final de visualización — 2026-08-24
 
 El usuario confirmó que la galería corregida se ve correctamente desde Quick-seedless. La selección final queda aprobada para el staging actual: bordado en prenda, detalle de bordado y variedad de prendas. No se requieren más cambios visuales por esta incidencia.
+
+## 5. Evidencia de digitalización para portafolio — 2026-08-25
+
+Se revisó `digitalizacion - firma bordados.png` desde la carpeta autorizada `Firma Bordados - 2025`. La imagen muestra el proceso de digitalización en una máquina de bordado sobre una figura amarilla, sin marca de cliente visible. Por ello se considera apta como evidencia de proceso público y se integró como la cuarta tarjeta de la galería bajo el título «Digitalización en proceso».
+
+El archivo se copió como activo local `digitalizacion-proceso.png` en el repositorio Cloudflare y respondió HTTP 200 después del despliegue. La incorporación ilustra una capacidad ya confirmada; no revela materiales, maquinaria específica, certificaciones ni capacidad de producción no documentada.

@@ -4,7 +4,7 @@ purpose: "Definir los pasos técnicos para probar el sitio React/Vite de Firma B
 status: Review
 created: 2026-08-23
 updated: 2026-08-25
-version: "1.8"
+version: "1.9"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Evaluacion_Migracion_Wix_Hosting_IA.md"
@@ -95,6 +95,12 @@ Como alternativa vigente, el commit `accdcc0` documentó en el README el gate op
 El commit `9fd686e` incorporó una sección «Cómo solicitar» con los pasos de describir la necesidad, explorar catálogos y confirmar detalles directamente con el equipo. El CTA de WhatsApp ahora prepara campos opcionales para tipo de prenda, técnica, cantidad aproximada y uso/requerimiento; los campos viven exclusivamente en el mensaje que abre el dispositivo y el staging no los almacena.
 
 También se añadió una franja «Marcas por catálogo» para BigBang, Soul & Blues y M&O con enlaces a los PDFs autorizados. Dickies sigue ausente hasta que se reciba su catálogo. El Pull Request 5 pasó CI, se integró a `staging` y el merge `a6e1a21` se promovió a `main`. La comprobación técnica del bundle público confirmó la nueva sección y las marcas, sin referencia a Dickies. Wix, DNS, nameservers, dominio público, precios, plazos y backend de formulario no cambiaron.
+
+### Paquete C2 de FAQ y portafolio — 2026-08-25
+
+El commit `2ca773f` añadió una sección de preguntas frecuentes con información confirmada sobre serigrafía, tiempos de entrega, categorías consultables de prenda y el alcance que excluye parches/gorras. La sección no incorpora datos de materiales, precios, cotizaciones, plazos exactos ni certificaciones.
+
+La galería «Nuestro trabajo» pasó de tres a cuatro tarjetas con `digitalizacion-proceso.png`, una imagen autorizada del proceso de digitalización sin marca de cliente visible. El Pull Request 6 pasó CI, se integró a `staging` y el merge `67f3f1f` se promovió a `main`. La comprobación técnica encontró el FAQ, la nueva tarjeta y una respuesta HTTP 200 del activo publicado. Wix, DNS, nameservers, dominio público, formulario backend y analítica siguen sin cambios.
 
 ## 2. Estado de partida y preparación obligatoria
 
