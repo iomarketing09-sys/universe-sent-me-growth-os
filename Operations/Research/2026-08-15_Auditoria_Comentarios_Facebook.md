@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "7.0"
+version: "7.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -1431,3 +1431,14 @@ Fernando aprobó explícitamente las tres propuestas nuevas del corte GET-only: 
 Para la vista solicitada se excluyeron 43 réplicas de conversación usuario-a-usuario y dos entradas de etiqueta o nombre aislado. Se muestran 15 comentarios raíz `No_Requiere_Respuesta`, con sus IDs estructurales, publicación de referencia, texto y motivo editorial. La vista y el registro de aprobación están en `Operations/Research/2026-08-25_18-19-20_Facebook_Approval_and_Filtered_Review.json/.md`; la cola y la clasificación actualizadas están en `Operations/Research/2026-08-25_17-58-20_Facebook_Pending_Queue_GET_Only.json` y `Operations/Research/2026-08-25_17-58-20_Facebook_Editorial_Review_GET_Only.json`.
 
 El ledger conserva 612 filas y 612 IDs únicos, con `Privacidad=Anonimizado`; para las tres aprobaciones se mantuvo `Respuesta_Estado=Pendiente_Respuesta` y sin `Respuesta_Meta_ID`, porque todavía no existe publicación verificada. **Estado:** Active. **Regla:** una aprobación registrada no se convierte en publicación hasta recibir una instrucción específica para publicar y ejecutar el preflight/verificación correspondiente. **Documentos relacionados:** `Operations/Research/2026-08-15_Community_Engagement_Log.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 49. Publicación verificable de cinco respuestas y propuesta editorial adicional — 25 de agosto de 2026
+
+Fernando autorizó publicar las cinco respuestas de la cola. El preflight GET-only consultó cada comentario y sus respuestas, encontró **0 duplicados** y **0 conflictos**, y se ejecutó únicamente el conjunto autorizado. Meta Graph API v26.0 confirmó **5/5 publicadas y verificadas**, todas con parent directo, texto exacto, autoría de la Página e `is_hidden=false`. Evidencia: `Operations/Research/2026-08-25_18-19-20_Facebook_Publication_Preflight.json`, `Operations/Research/2026-08-25_18-19-20_Facebook_Publication.json` y `Operations/Research/2026-08-25_18-34-06_Facebook_Publication_Record.json/.md`.
+
+El registrador actualizó las cinco filas del ledger a `Respondido` con sus IDs de respuesta y timestamps de Meta. La privacidad permanece `Anonimizado`; el ledger mantiene **612 filas / 612 IDs únicos** y el validador devuelve `PASS`. No se publicó ninguna respuesta fuera del conjunto autorizado.
+
+El texto editorial proporcionado por Fernando reclasificó los 15 comentarios raíz restantes en **8 oportunidades con respuesta propuesta**, **2 casos que requieren revisar contexto** y **5 casos que permanecen sin respuesta**. Las ocho oportunidades quedaron en una nueva cola `Pendiente_Fernando`; las dos revisiones de contexto no pueden publicarse sin confirmar primero el significado del comentario y las cinco no acciones siguen cerradas. Evidencia: `Operations/Research/2026-08-25_18-34-06_Facebook_Additional_Engagement_Review.json/.md` y `Operations/Research/2026-08-25_18-34-06_Facebook_Pending_Queue_After_Current_Queue_Publication.json`.
+
+**Documentos relacionados:** `Operations/Research/2026-08-15_Community_Engagement_Log.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

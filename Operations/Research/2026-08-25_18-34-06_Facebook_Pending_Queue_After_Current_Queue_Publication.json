@@ -1,0 +1,136 @@
+{
+  "title": "Facebook Pending Queue — after five current queue replies",
+  "purpose": "Cola vigente posterior a la publicación verificable de cinco respuestas, con nuevas oportunidades pendientes de aprobación.",
+  "status": "Review",
+  "created_at": "2026-08-25T18:34:06+00:00",
+  "updated_at": "2026-08-25T18:34:06+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "organization": "Operations/Research",
+  "related_documents": [
+    "Operations/Research/2026-08-25_18-34-06_Facebook_Publication_Record.json",
+    "Operations/Research/2026-08-25_18-34-06_Facebook_Additional_Engagement_Review.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv"
+  ],
+  "source": "Meta Graph API v26.0 publication verification + Fernando pasted editorial review",
+  "published_prior_queue_count": 5,
+  "published_prior_queue_verified_count": 5,
+  "pending_response_count": 8,
+  "pending_approval_count": 8,
+  "context_review_count": 2,
+  "published_from_this_review": 0,
+  "pending_comments": [
+    {
+      "comment_id": "122151377109072582_1043788355242576",
+      "post_id": "1036844829507460_122151377109072582",
+      "comment_created_time": "2026-08-25T07:12:37+0000",
+      "comment_message": "¡A mí me da miedo ya no tenerle miedo a nada!",
+      "post_reference": "😈🚲🫣 #KaelUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "Eso ya suena a que el miedo presentó su renuncia. 👀😂",
+      "insight": "Reflexión con personalidad; Fernando propuso abrir un ping-pong breve.",
+      "approval_state": "Pendiente_Fernando",
+      "publication_status": "Pendiente_Aprobacion"
+    },
+    {
+      "comment_id": "122151377109072582_1522896686271901",
+      "post_id": "1036844829507460_122151377109072582",
+      "comment_created_time": "2026-08-25T00:59:30+0000",
+      "comment_message": "Igual Eso No Me Suma Y Ni Me Resta.",
+      "post_reference": "😈🚲🫣 #KaelUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "Entonces estamos ante un empate emocional. 😂",
+      "insight": "Comentario abstracto con una oportunidad de remate corto.",
+      "approval_state": "Pendiente_Fernando",
+      "publication_status": "Pendiente_Aprobacion"
+    },
+    {
+      "comment_id": "122151376539072582_1416950633724431",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-25T02:22:47+0000",
+      "comment_message": "Falso 😂",
+      "post_reference": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "Objeción aceptada. 😂",
+      "insight": "Rechazo breve con tono de invitación al ping-pong.",
+      "approval_state": "Pendiente_Fernando",
+      "publication_status": "Pendiente_Aprobacion"
+    },
+    {
+      "comment_id": "122151376083072582_1858563828450701",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-25T02:28:11+0000",
+      "comment_message": "Dicen que yo lo Hago, pero al final nadie se queda! 🙄😢😏",
+      "post_reference": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "El problema no era la técnica… era el departamento de permanencia. 😂",
+      "insight": "Identificación con el meme y mini-historia personal; remate no gráfico.",
+      "approval_state": "Pendiente_Fernando",
+      "publication_status": "Pendiente_Aprobacion"
+    },
+    {
+      "comment_id": "122151376083072582_1751262112632205",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-25T03:37:13+0000",
+      "comment_message": "Deberían de enseñarme jajaja",
+      "post_reference": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "Jajaja, la clase todavía no tiene fecha de inscripción. 😂",
+      "insight": "Solicitud ambigua con oportunidad de interacción juguetona, sin explicar el doble sentido.",
+      "approval_state": "Pendiente_Fernando",
+      "publication_status": "Pendiente_Aprobacion"
+    },
+    {
+      "comment_id": "122151376083072582_1044932481615070",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-25T01:13:18+0000",
+      "comment_message": "Amén💝",
+      "post_reference": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "proposed_reply": "Amén recibido. El universo toma nota. 😌✨",
+      "insight": "Aprobación breve que Fernando considera apta para un remate cómplice.",
+      "approval_state": "Pendiente_Fernando",
+      "publication_status": "Pendiente_Aprobacion"
+    },
+    {
+      "comment_id": "122151376011072582_1633124508149465",
+      "post_id": "1036844829507460_122151376011072582",
+      "comment_created_time": "2026-08-25T16:41:43+0000",
+      "comment_message": "Amo",
+      "post_reference": "😌 #UniverseSentMe",
+      "proposed_reply": "Y nosotros encantados de que lo ames. 😌✨",
+      "insight": "Aprobación breve con oportunidad de reciprocidad de marca.",
+      "approval_state": "Pendiente_Fernando",
+      "publication_status": "Pendiente_Aprobacion"
+    },
+    {
+      "comment_id": "122151376011072582_1382951430696782",
+      "post_id": "1036844829507460_122151376011072582",
+      "comment_created_time": "2026-08-25T06:32:25+0000",
+      "comment_message": "Un solo cuerpo❤️",
+      "post_reference": "😌 #UniverseSentMe",
+      "proposed_reply": "Esa tiene pinta de ir directo a la playlist. ❤️🎶",
+      "insight": "Referencia musical incompleta, pero con una respuesta que abre una segunda interacción.",
+      "approval_state": "Pendiente_Fernando",
+      "publication_status": "Pendiente_Aprobacion"
+    }
+  ],
+  "context_review": [
+    {
+      "comment_id": "122151376539072582_1787852502561437",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-25T03:55:36+0000",
+      "comment_message": "Te lo pro meto",
+      "post_reference": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "candidate_reply": "Promesa recibida. Ahora falta ver si se cumple. 😂",
+      "decision": "Revisar_Contexto",
+      "reason": "Revisar primero el contexto visual/copy del Reel de Maeve; no publicar ni convertir en propuesta hasta confirmar el juego de palabras.",
+      "publication_status": "No_Publicar_Sin_Contexto"
+    },
+    {
+      "comment_id": "122151376083072582_2117668022157008",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-25T01:17:35+0000",
+      "comment_message": "Las cesareadas por ahi no paso nada ! 🫢",
+      "post_reference": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "candidate_reply": "Jajaja, cada quien tiene su propia teoría. 🫢😂",
+      "decision": "Revisar_Contexto",
+      "reason": "Revisar qué significa exactamente la referencia antes de responder; no inventar contexto.",
+      "publication_status": "No_Publicar_Sin_Contexto"
+    }
+  ]
+}

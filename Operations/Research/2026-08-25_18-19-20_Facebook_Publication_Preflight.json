@@ -1,0 +1,77 @@
+{
+  "title": "Facebook Publication Preflight — current queue",
+  "purpose": "Preflight GET-only completo de las cinco respuestas actuales antes de cualquier publicación.",
+  "status": "Preflight_Pass",
+  "created_at": "2026-08-25T18:33:34+00:00",
+  "updated_at": "2026-08-25T18:33:40+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "organization": "Operations/Research",
+  "related_documents": [
+    "Operations/Research/2026-08-25_17-58-20_Facebook_Pending_Queue_GET_Only.json",
+    "Operations/Research/2026-08-25_18-19-20_Facebook_Approval_and_Filtered_Review.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv"
+  ],
+  "source": "Meta Graph API v26.0",
+  "page_id": "1036844829507460",
+  "explicit_user_approval": true,
+  "approval_scope": "Las cinco respuestas actuales de la cola aprobadas por Fernando en conversación.",
+  "requested_count": 5,
+  "preflight_completed_count": 5,
+  "conflict_count": 0,
+  "existing_exact_count": 0,
+  "published_count": 0,
+  "verified_count": 0,
+  "checks": [
+    {
+      "comment_id": "122151376011072582_1051573194149891",
+      "post_id": "1036844829507460_122151376011072582",
+      "comment_type": "Comentario_Raiz",
+      "target_parent_id": null,
+      "target_is_hidden": false,
+      "existing_child_count": 0,
+      "existing_page_reply_count": 0,
+      "existing_exact": null
+    },
+    {
+      "comment_id": "122151376011072582_1458569976337294",
+      "post_id": "1036844829507460_122151376011072582",
+      "comment_type": "Comentario_Raiz",
+      "target_parent_id": null,
+      "target_is_hidden": false,
+      "existing_child_count": 0,
+      "existing_page_reply_count": 0,
+      "existing_exact": null
+    },
+    {
+      "comment_id": "122151376011072582_1436559848285776",
+      "post_id": "1036844829507460_122151376011072582",
+      "comment_type": "Comentario_Raiz",
+      "target_parent_id": null,
+      "target_is_hidden": false,
+      "existing_child_count": 0,
+      "existing_page_reply_count": 0,
+      "existing_exact": null
+    },
+    {
+      "comment_id": "122151376011072582_1714779139616049",
+      "post_id": "1036844829507460_122151376011072582",
+      "comment_type": "Comentario_Raiz",
+      "target_parent_id": null,
+      "target_is_hidden": false,
+      "existing_child_count": 0,
+      "existing_page_reply_count": 0,
+      "existing_exact": null
+    },
+    {
+      "comment_id": "122151376011072582_2114188339514417",
+      "post_id": "1036844829507460_122151376011072582",
+      "comment_type": "Comentario_Raiz",
+      "target_parent_id": null,
+      "target_is_hidden": false,
+      "existing_child_count": 0,
+      "existing_page_reply_count": 0,
+      "existing_exact": null
+    }
+  ]
+}

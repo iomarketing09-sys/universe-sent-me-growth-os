@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "6.5"
+version: "6.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -916,3 +916,14 @@ Fernando aprobó explícitamente las tres propuestas musicales nuevas: `She's Go
 A solicitud de Fernando se preparó una vista de los casos `No_Requiere_Respuesta` mostrando solo los comentarios raíz que no son conversaciones laterales ni etiquetas o nombres aislados. La vista contiene **15 comentarios raíz**; se excluyeron **43 réplicas** de conversación usuario-a-usuario y **2 entradas** de etiqueta o nombre aislado. La evidencia completa está en `Operations/Research/2026-08-25_18-19-20_Facebook_Approval_and_Filtered_Review.json/.md`.
 
 **Estado:** Active. **Regla de seguridad:** aprobar no equivale a publicar; cualquier publicación requiere una instrucción específica y posterior de Fernando, seguida de preflight y verificación. **Documentos relacionados que requieren alineación:** `Operations/Research/2026-08-25_17-58-20_Facebook_Pending_Queue_GET_Only.json`, `Operations/Research/2026-08-25_17-58-20_Facebook_Editorial_Review_GET_Only.json`, `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 33. Publicación verificada y nueva cola editorial — 25 de agosto de 2026
+
+Fernando autorizó publicar las cinco respuestas de la cola vigente. El preflight GET-only comprobó los cinco comentarios, paginó sus respuestas, encontró 0 duplicados y 0 conflictos, y el publicador ejecutó únicamente el conjunto autorizado. Meta Graph API v26.0 confirmó **5/5 publicadas y verificadas**, todas con parent directo, `is_hidden=false`, texto exacto y autoría de la Página. No se publicó ninguna respuesta adicional.
+
+El ledger actualizó las cinco filas a `Respuesta_Estado=Respondido`, `Aprobacion_Estado=Aprobada`, con `Respuesta_Meta_ID` y `Respuesta_Fecha` de Meta; conserva **612 filas / 612 IDs únicos** y validación `PASS`. Evidencia: `Operations/Research/2026-08-25_18-19-20_Facebook_Publication_Preflight.json`, `Operations/Research/2026-08-25_18-19-20_Facebook_Publication.json` y `Operations/Research/2026-08-25_18-34-06_Facebook_Publication_Record.json/.md`.
+
+Fernando proporcionó una propuesta editorial adicional para los 15 comentarios raíz previamente filtrados. Se registraron **8 oportunidades nuevas** con respuesta propuesta, **2 casos para revisar contexto** y **5 casos que permanecen sin respuesta**. La nueva cola contiene ocho propuestas `Pendiente_Fernando`; las ocho quedan sin publicar y sin aprobación reutilizada. La respuesta para `Te lo pro meto` y la de `Las cesareadas...` requieren confirmar contexto antes de considerar cualquier aprobación. Evidencia: `Operations/Research/2026-08-25_18-34-06_Facebook_Additional_Engagement_Review.json/.md` y `Operations/Research/2026-08-25_18-34-06_Facebook_Pending_Queue_After_Current_Queue_Publication.json`.
+
+**Documentos relacionados que requieren alineación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

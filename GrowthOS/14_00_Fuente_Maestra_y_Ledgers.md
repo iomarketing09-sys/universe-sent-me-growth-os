@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "2.61"
+version: "2.62"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -514,3 +514,14 @@ La clasificación editorial produjo **3 propuestas musicales nuevas** y **60 cas
 El registrador `Operations/Automation/record_facebook_review_get_only_2026_08_25_1758.py` añadió las 63 filas de forma append-only, conservó `CNT_ID` para las réplicas, mantuvo `Privacidad=Anonimizado` y dejó el ledger en **612 filas / 612 IDs únicos**. El validador oficial devolvió `PASS`. Evidencia: `Operations/Research/2026-08-25_17-58-20_Facebook_Comment_Review_GET_Only.json`, `Operations/Research/2026-08-25_17-58-20_Facebook_Editorial_Review_GET_Only.json`, `Operations/Research/2026-08-25_17-58-20_Facebook_Pending_Queue_GET_Only.json` y `Operations/Research/2026-08-25_17-58-20_Facebook_Comment_Review_Report.md`.
 
 **Documentos relacionados que requieren alineación:** `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `Operations/Research/2026-08-15_Community_Engagement_Log.md`, `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 28. Publicación actual y nueva cola editorial — 25 de agosto de 2026
+
+La autorización explícita de Fernando para publicar las cinco respuestas de la cola se ejecutó mediante un publicador de un solo uso. El preflight consultó cada objetivo y sus respuestas con GET, encontró 0 duplicados y 0 conflictos, y Meta Graph API v26.0 confirmó **5/5 respuestas publicadas y verificadas**, todas con parent directo, texto exacto, autoría de la Página e `is_hidden=false`. Evidencia normalizada: `Operations/Research/2026-08-25_18-34-06_Facebook_Publication_Record.json/.md`.
+
+El ledger mantiene **612 filas / 612 IDs únicos** y validación `PASS`; las cinco filas publicadas tienen `Respuesta_Estado=Respondido`, `Aprobacion_Estado=Aprobada`, timestamp e ID de respuesta de Meta. El artefacto de publicación no incluye operaciones fuera del conjunto autorizado.
+
+El texto editorial proporcionado por Fernando se convirtió en una cola nueva posterior a la publicación: **8 propuestas `Pendiente_Fernando`**, **2 casos `Revisar_Contexto`** y **5 no acciones**. La cola vigente es `Operations/Research/2026-08-25_18-34-06_Facebook_Pending_Queue_After_Current_Queue_Publication.json`; no se publican las ocho propuestas ni las dos respuestas candidatas sin aprobación específica posterior y, en los casos de contexto, sin confirmar primero el significado del comentario.
+
+**Documentos relacionados que requieren alineación:** `Operations/Research/2026-08-15_Community_Engagement_Log.md`, `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
