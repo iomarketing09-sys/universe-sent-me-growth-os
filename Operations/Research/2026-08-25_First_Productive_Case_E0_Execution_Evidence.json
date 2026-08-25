@@ -4,7 +4,7 @@
   "status": "Active",
   "created": "2026-08-25",
   "updated": "2026-08-25",
-  "version": "1.0",
+  "version": "1.1",
   "author": "Manus AI (CGO)",
   "organization": "Operations/Research",
   "related_documents": [
@@ -60,10 +60,52 @@
     "errors": [],
     "warnings": []
   },
+  "impact_analysis": {
+    "ledger_effect": "One append-only evidence row was added. It is counted in rows_total and status_counts.Anomaly, but not in valid_e0_posts.",
+    "contractual_effect": "No canonical baseline exists for this Meta_Post_ID; Lifetime_Interactions and Delta_From_E0 remain blank, and no ExperimentLog metrics projection is authorized.",
+    "downstream_effect": "The E24/E72 worker found zero candidates at both target times because it filters exclusively on Window_Status=Valid_E0.",
+    "data_integrity_effect": "The missing shares value was preserved as null/blank rather than imputed as zero; the raw API response remains available for audit."
+  },
+  "worker_dry_run": {
+    "e24_target_utc": "2026-08-26T15:00:22Z",
+    "e24_candidates": 0,
+    "e24_errors": [],
+    "e72_target_utc": "2026-08-28T15:00:22Z",
+    "e72_candidates": 0,
+    "e72_errors": [],
+    "dry_run_status": "PASS"
+  },
+  "corrective_actions": [
+    {
+      "priority": "P0",
+      "action": "No ejecutar ni programar E24/E72 para este post mientras no exista un Valid_E0.",
+      "status": "Applied"
+    },
+    {
+      "priority": "P0",
+      "action": "Conservar intactos la fila Anomaly, el raw y el snapshot ID; no borrar, sobrescribir, convertir shares a 0 ni hacer backfill histórico.",
+      "status": "Applied"
+    },
+    {
+      "priority": "P1",
+      "action": "Si se necesita una lectura posterior, registrar únicamente observed_lifetime/descriptive, sin Delta_From_E0 ni conclusión E24/E72.",
+      "status": "Recommended"
+    },
+    {
+      "priority": "P1",
+      "action": "No republicar ni reprogramar esta pieza para reparar el baseline; abrir el siguiente caso con el hook conectado antes de publicar y capturar dentro de ±600 segundos.",
+      "status": "Recommended"
+    },
+    {
+      "priority": "P1",
+      "action": "Añadir un preflight que exija reactions, comments y shares disponibles antes de clasificar un E0 como válido y generar alerta inmediata si falta cualquier contador.",
+      "status": "Recommended"
+    }
+  ],
   "interpretation": {
     "e0_canonical": false,
     "reason": "The contractual counters are incomplete because Meta did not expose shares. The value is preserved as null; it is not converted to zero.",
-    "e24_e72_action": "Do not execute or schedule E24/E72 from this row until a valid E0 exists.",
+    "e24_e72_action": "Do not execute or schedule E24/E72 from this row; the current worker excludes it because no Valid_E0 exists.",
     "content_mutation": false,
     "meta_write_called": false,
     "queue_modified": false,

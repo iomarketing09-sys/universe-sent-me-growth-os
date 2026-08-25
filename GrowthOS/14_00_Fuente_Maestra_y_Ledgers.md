@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "2.60"
+version: "2.61"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -496,3 +496,11 @@ Meta confirmó el Page Post ID `1036844829507460_122151377199072582` como public
 El snapshot se conserva en `Metrics_Snapshot_Log.csv` como evidencia `Window_Status=Anomaly` y `Anomaly_Code=missing_counter`: Meta devolvió reacciones `2`, comentarios `1` y `shares=null`. El capture ocurrió **1,012.979 segundos** después de `created_time`, fuera de la tolerancia contractual de ±600 segundos. El validador estructural devuelve `PASS`, pero `valid_e0_posts=0`; por tanto, este registro no es un E0 canónico y no habilita el worker E24/E72. No se convirtió `shares` a cero ni se hizo backfill histórico.
 
 La publicación, la cola, `Publication_Log.csv` y `ExperimentLog.csv` no fueron modificados por esta ejecución. La evidencia sanitizada, incluyendo el resultado de Meta, el snapshot, el raw y la decisión de bloqueo de ventanas posteriores, está en `Operations/Research/2026-08-25_First_Productive_Case_E0_Execution_Evidence.json`. Se requiere una decisión operativa para abrir una nueva oportunidad de baseline válida o mantener este caso como evidencia no canónica; no se debe reintentar con una hora histórica inventada.
+
+### Protocolo correctivo para este post
+
+1. **Bloqueo inmediato:** no ejecutar ni programar E24/E72 para este `Meta_Post_ID`. El worker actual solo selecciona filas `Window_Status=Valid_E0`, por lo que el post debe quedar fuera de los cortes contractuales.
+2. **Conservación de evidencia:** mantener la fila `Anomaly`, el `Snapshot_ID` y el raw. No eliminar, sobrescribir, transformar `shares=null` en `0` ni hacer backfill de `Published_At_UTC`, `Lifetime_Interactions` o `Delta_From_E0`.
+3. **Lectura opcional:** si se necesita seguir observando el post, registrar una observación `observed_lifetime` o un reporte descriptivo separado. Esa lectura no puede producir delta, veredicto ni cierre de hipótesis.
+4. **No reparar republicando:** no republicar ni reprogramar esta pieza para fabricar un baseline. El siguiente experimento debe ser un nuevo caso aprobado, con el hook conectado antes de publicar y captura E0 dentro de ±600 segundos.
+5. **Corrección preventiva del pipeline:** añadir un preflight que compruebe la disponibilidad de `reactions`, `comments` y `shares` antes de declarar `Valid_E0`; si falta cualquiera, debe emitir una alerta inmediata y conservar la respuesta raw como anomalía. También debe comprobarse la disponibilidad de los contadores con una consulta de diagnóstico de solo lectura antes del siguiente caso productivo.
