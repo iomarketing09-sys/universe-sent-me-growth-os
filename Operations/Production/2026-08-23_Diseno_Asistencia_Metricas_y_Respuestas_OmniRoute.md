@@ -4,7 +4,7 @@ purpose: "Definir cómo OmniRoute puede analizar resúmenes métricos ya normali
 status: Review
 created: 2026-08-23
 updated: 2026-08-25
-version: "1.5"
+version: "1.6"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-19_Decision_Gateway_IA_OmniRoute.md"
@@ -299,6 +299,21 @@ El 2026-08-25 se crearon en la hoja existente `USM Growth OS` las pestañas vac�
 
 Las pestañas aún no contienen datos, fórmulas ni headers. Su estructura final se cargará únicamente después de confirmar una fuente con cobertura válida para TikTok y YouTube y de aprobar el piloto programado de solo lectura. Esto evita presentar una hoja parcialmente configurada como una fuente de verdad o inducir conclusiones antes de que existan cortes reproducibles.
 
+### 8.13 Prueba de Windsor.ai y alternativas de bajo costo
+
+La prueba autorizada de Windsor.ai se habilitó sin crear pagos, tareas de destino ni acciones de escritura. El perfil responde como `Trial` y ya conserva conexiones de lectura para `tiktok_organic`, `youtube`, Facebook orgánico e Instagram. La consulta de TikTok para la cuenta Universe Sent Me devolvió registros por video con `video_views_count`, `video_likes`, `video_comments`, `video_shares`, `video_favorites`, `video_reach`, `video_average_time_watched` y `video_full_watched_rate`; por tanto, cubre el contrato mínimo de TikTok para la prueba.
+
+La conexión de YouTube tiene dos cuentas etiquetadas `baminacan@gmail.com` e `io.marketing.09@gmail.com`, ninguna identificada explícitamente como Universe Sent Me. Para mantener la separación de marcas, no se consultó contenido de ninguna de ellas. Fernando debe identificar cuál corresponde al canal de Universe Sent Me antes de cualquier lectura o automatización de YouTube.
+
+| Alternativa | Costo recurrente de software/intermediario | Cobertura útil | Condición y límite |
+| :--- | :--- | :--- | :--- |
+| **APIs oficiales directas + Python/cron local** | Sin cuota de un intermediario; usa el equipo Xubuntu ya elegido. | TikTok Display API puede devolver por video views, likes, comments y shares; YouTube Analytics consulta views, watch time y subscribers por canal/video. [7] [8] | Requiere registrar clientes OAuth, guardar tokens solo en el equipo local y mantener dos integraciones. TikTok no sustituye la analítica avanzada de retención disponible en Windsor. |
+| **Windsor.ai** | Trial activo; su precio publicado para Basic es USD 23/mes o USD 19/mes anual si se requieren dos fuentes. [6] | En esta prueba ya confirmó cobertura amplia de TikTok y expone campos de YouTube, además de conectores y destinos comunes. | El plan gratuito permanente limita la cuenta a una fuente y una cuenta; el servicio no debe crear exports ni acciones de escritura sin un gate separado. [6] |
+| **n8n Community autoalojado** | Sin cuota de software; se ejecuta junto a OmniRoute en Xubuntu. [9] | Orquesta llamadas a las APIs oficiales, validación, GitHub y hoja derivada. | No añade datos ni credenciales: sigue requiriendo las APIs oficiales. También añade mantenimiento operativo y no se instala por este documento. |
+| **Apps Script para YouTube** | Sin servidor adicional; corre asociado a Google Workspace. | Puede llevar métricas de YouTube Analytics a una hoja mediante un servicio avanzado. [10] | Solo resuelve YouTube, desplaza parte de la automatización fuera de GitHub y no resuelve TikTok; no se usa como fuente canónica sin rediseño. |
+
+La ruta de menor costo recurrente es utilizar APIs oficiales directas con un script local programado; la ruta de menor esfuerzo técnico es conservar Windsor.ai, sujeta a su precio tras la prueba. Una combinación transitoria también es posible: usar Windsor solo para validar TikTok mientras se construye la integración oficial de YouTube, pero no se debe contratar ni programar una exportación hasta que Fernando elija la fuente final.
+
 ## Referencias
 
 [1]: https://developers.facebook.com/docs/instagram-api/guides/insights "Meta for Developers — Instagram Insights"
@@ -307,3 +322,7 @@ Las pestañas aún no contienen datos, fórmulas ni headers. Su estructura final
 [4]: ../../GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md "Growth OS — Reglas estratégicas de aprendizaje y tendencias"
 [5]: https://www.digitalocean.com/pricing/droplets "DigitalOcean — Droplet pricing"
 [6]: https://windsor.ai/pricing/ "Windsor.ai — Pricing"
+[7]: https://developers.tiktok.com/doc/tiktok-api-v2-video-query/ "TikTok for Developers — Query Videos"
+[8]: https://developers.google.com/youtube/analytics/reference/reports/query "Google for Developers — YouTube Analytics Reports: Query"
+[9]: https://docs.n8n.io/choose-how-to-use-n8n/ "n8n Docs — Self-hosted Community edition"
+[10]: https://developers.google.com/apps-script/advanced/youtube-analytics "Google for Developers — Apps Script YouTube Analytics service"
