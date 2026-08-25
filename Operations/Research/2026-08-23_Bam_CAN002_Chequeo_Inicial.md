@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — CAN-002: chequeo inicial y corte post-T+3"
 purpose: "Preservar los cortes operativos iniciales de CAN-002, separando métricas autenticadas, cache de plataforma, evidencia directa e indexación pendiente."
-status: "Active — evidencia Studio cercana a T+24 registrada; Instagram mantiene cache previa y YouTube sigue sin fila Windsor"
+status: "Active — TikTok e Instagram actualizados cerca de T+28; YouTube sigue sin fila Windsor"
 created: 2026-08-23
 updated: 2026-08-24
-version: "1.7"
+version: "1.8"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
@@ -84,6 +84,17 @@ Frente al corte de Studio cercano a T+3 (90 vistas, 2 likes y 4 shares), esto eq
 
 ![Captura de YouTube Studio de CAN-002 con edad relativa de un día](2026-08-24_Bam_CAN002_YouTube_Studio_relative_1d.jpg)
 
+## Reconsulta TikTok e Instagram — 24 de agosto
+
+Para sostener la siguiente prueba editorial, se reconsultaron ambas plataformas con la ruta correcta y bloques de hasta cuatro fields. TikTok devolvió `data_fetched_at` **2026-08-25T03:57:55Z / 22:57:55 CDT**; el post tenía **27 h 58 min 12 s**. Instagram devolvió `data_fetched_at` **2026-08-25T03:58:33Z / 22:58:33 CDT**; el Reel tenía **27 h 37 min 56 s**.
+
+| Plataforma | Métricas frescas | Lectura interna |
+|---|---|---|
+| TikTok | 155 views; 2 likes; 0 shares; 0 favoritos; avg. watch 2.51 s; total watch 452 s; duración 9.73 s; full-watch rate 7.22 %. | El avg. watch equivale a 25.79 % de la duración. Frente a T+4 h, las views crecieron 32.47 %, pero el consumo por vista cayó de 2.64 s a 2.51 s y no aparecieron señales de distribución. Los comentarios no se reconsultaron en este bloque; su último valor confirmado era 0. |
+| Instagram Reels | 324 views; reach 248; 0 likes; 0 comentarios; 0 shares; 0 saves; avg. watch 5.454 s; total watch 1,390.849 s. | Views y reach crecieron frente al corte previo, pero no hubo interacción activa. El avg. watch equivale a 54.54 % de 10 s y bajó 3.082 s frente al corte temprano; se interpreta como cambio de composición del alcance, no como prueba de una causa creativa. |
+
+La reconsulta habilita ajustes de prueba de hook en TikTok y packaging de caption en Instagram, documentados en el Plan de lanzamiento de audiencia de Bam. No habilita un cambio de horario, audio ni volumen: solo hay una pieza reciente y las plataformas no son comparables entre sí.
+
 ## Límites y actualizaciones relacionadas
 
-El ledger conserva el chequeo inicial como `pre-T3` y el nuevo corte post-T+3 dentro del mismo snapshot por plataforma. Este documento actualiza la interpretación de lanzamiento de CAN-002; el documento relacionado que requiere el mismo ajuste es el ledger de distribución, modificado en este cambio. El paquete y el calendario de Semana 01 no requieren modificación porque no cambian el copy, los assets, el audio ni las ventanas planificadas.
+El ledger conserva el chequeo inicial como `pre-T3`, el corte post-T+3 y la reconsulta post-T+24 dentro de los snapshots por plataforma. Este documento actualiza la interpretación de lanzamiento de CAN-002; los documentos relacionados que requieren el mismo ajuste son el ledger de distribución y el Plan de lanzamiento de audiencia de Bam, modificados en este cambio. El paquete y el calendario de Semana 01 no requieren modificación porque no cambian el copy, los assets, el audio ni las ventanas planificadas.

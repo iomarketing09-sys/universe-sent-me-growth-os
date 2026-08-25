@@ -1,14 +1,18 @@
 ---
 title: "Plan de lanzamiento de audiencia — Bam in a Can"
 purpose: "Construir la identidad editorial, el catálogo inicial y la primera audiencia de Bam in a Can antes de cualquier campaña de terceros o monetización externa."
-status: "Draft"
+status: "Active — señales iniciales de CAN-001 y CAN-002 incorporadas; validación pendiente"
 created: 2026-08-20
-updated: 2026-08-20
-version: "1.0"
+updated: 2026-08-24
+version: "1.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_Piloto_Content_Rewards_Bam_In_A_Can.md"
   - "Operations/Research/2026-08-20_Evaluacion_Content_Rewards_Capa_Monetizacion.md"
+  - "Operations/Production/2026-08-21_Bam_In_A_Can_Semana01_Calendario_Publicacion.md"
+  - "Operations/Research/2026-08-21_Bam_CAN001_Snapshot_Temprano.md"
+  - "Operations/Research/2026-08-23_Bam_CAN002_Chequeo_Inicial.md"
+  - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
   - "Operations/Production/Brand_Assets/Bam_In_A_Can/Bam_in_a_can_Logo.png"
 organization: "Operations/Production"
 ---
@@ -81,6 +85,17 @@ La producción debe priorizar la velocidad sin sacrificar la identidad: una prem
 
 Solo se reabre la ruta de campañas externas cuando Bam cumpla los siguientes mínimos internos: catálogo de 12 piezas propias, mínimo de 21 días de actividad, dos formatos repetidos tres veces y una señal clara de audiencia o distribución. Los requisitos adicionales de cada campaña —como 1,000 seguidores, geografía o derecho de uso— se validan después y nunca determinan el lenguaje original de Bam.
 
-## 8. Documentos que requieren actualización posterior
+## 8. Ajuste operativo inicial — TikTok e Instagram
 
-Después de los primeros 21 días, actualizar este plan con el corte de métricas por formato y el veredicto de continuidad. Actualizar `Operations/Production/2026-08-20_Piloto_Content_Rewards_Bam_In_A_Can.md` para decidir si la pausa de campañas se mantiene o si se habilita una revisión nueva. Crear un registro de piezas de Bam antes de producir más de ocho publicaciones, para no convertir esta primera lista en un backlog sin trazabilidad.
+El ajuste se basa en las filas frescas de CAN-002 recuperadas aproximadamente a las 22:58 CDT del 24 de agosto, con edades cercanas a 28 horas. TikTok registró 155 views, 2 likes, 0 shares, 0 favoritos, 2.51 s de avg. watch sobre 9.73 s y 7.22 % de finalización. Instagram Reels registró 324 views, reach 248, 0 likes, 0 comentarios, 0 shares, 0 saves y 5.454 s de avg. watch sobre un video de 10 s. Los valores describen una sola pieza por plataforma; no prueban un efecto de horario, audio o formato.
+
+| Plataforma | Señal útil | Cambio operativo para CAN-003 y CAN-004 | Hipótesis a observar | Regla de decisión |
+|---|---|---|---|---|
+| TikTok | El alcance continuó creciendo, pero el avg. watch está cerca de 26 % de la duración y la finalización es 7.22 %; no hubo shares ni favoritos. | Mantener el horario y el audio nativo bajo. Mostrar la anomalía o la acción imposible en los primeros **0.5 s**; llegar al giro antes de **2.5 s**; terminar con una composición que conecte visualmente con el primer frame. Quitar toda introducción explicativa que retrase la acción. | `H-BAM-TT-HOOK-01`: un hook visible inmediato y un loop más cerrado elevan el consumo dentro de TikTok. | Después de CAN-003 y CAN-004, considerar señal favorable solo si el avg. watch llega a **≥3.0 s** o la finalización a **≥10 %**, y aparece al menos una interacción de distribución (share o favorito). Dos piezas no bastan para declarar un ganador. |
+| Instagram Reels | El alcance fresco sí creció, pero no produjo interacción activa; el avg. watch bajó de 8.536 s en el corte temprano a 5.454 s al ampliarse el reach. | Mantener horario, audio bajo y asset central. No añadir CTA dentro del video. Añadir únicamente en el caption una pregunta breve, diegética y sin explicación; para CAN-003: `Would you put in another coin?` después del copy y antes de `Original fiction. AI-made.` | `H-BAM-IG-PACKAGING-01`: un remate de caption que prolonga la anomalía puede estimular comentarios, shares o saves sin diluir el tono de archivo. | Repetir en dos piezas. La señal no se define por views: requiere al menos una interacción activa nueva por pieza o una mejora frente al cero actual, con una retención que se mantenga por encima de 50 % de la duración. |
+
+Este es un ajuste de **creatividad y packaging**, no de franja horaria. Se preserva el diseño 2 + 1: TikTok e Instagram con audio nativo bajo y YouTube Shorts con SFX originales. No se cambia el audio, volumen ni horario hasta contar con varios cortes de edad comparable. El copy de disclosure sigue siendo obligatorio y la pregunta de caption no debe sustituirlo.
+
+## 9. Documentos que requieren actualización posterior
+
+Después de los primeros 21 días, actualizar este plan con el corte de métricas por formato y el veredicto de continuidad. El siguiente ajuste relacionado debe registrarse en `Operations/Research/2026-08-23_Bam_CAN002_Chequeo_Inicial.md` y en el ledger de distribución después de CAN-003/CAN-004, para aceptar, revisar o descartar `H-BAM-TT-HOOK-01` y `H-BAM-IG-PACKAGING-01`. Actualizar `Operations/Production/2026-08-20_Piloto_Content_Rewards_Bam_In_A_Can.md` para decidir si la pausa de campañas se mantiene o si se habilita una revisión nueva. Crear un registro de piezas de Bam antes de producir más de ocho publicaciones, para no convertir esta primera lista en un backlog sin trazabilidad.
