@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "6.1"
+version: "6.2"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -75,6 +75,10 @@ organization: "GrowthOS"
 - [x] Implementar y compilar `summarize_meta_private_metrics.py`, un generador local sin llamadas remotas ni escrituras que excluye IDs, textos, URLs, rutas, tokens y raw.
 - [x] Ejecutar los resúmenes seguros de Facebook e Instagram en Xubuntu y revisar sus resultados agregados, preservando los archivos de evidencia fuente como privados.
 - [ ] Definir un gate separado de normalización determinista antes de llevar métricas Meta a vistas derivadas; no usar capturas de vida con edades distintas para declarar ganadores, llenar Sheets o actualizar hipótesis.
+- [ ] Inventariar los campos y límites nativos validados de TikTok, YouTube, Facebook e Instagram para la estructura multicanal; conservar toda métrica no comparable en un namespace de plataforma.
+- [ ] Diseñar el esquema determinista común de publicaciones, observaciones de métricas, ventanas, disponibilidad, procedencia y versiones de transformación; no implementar escrituras canónicas en este gate.
+- [ ] Definir reglas explícitas para distinguir contadores de vida, métricas por ventana, `not_available`, `missing`, datos preliminares de monetización y datos sin comparabilidad interplataforma.
+- [ ] Documentar validaciones, ejemplos sintéticos y los documentos/ledgers que requerirán actualización antes de implementar normalización local.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
 - [x] Configurar y autorizar la app de escritorio Sandbox de TikTok con los scopes oficiales mínimos `user.info.basic` y `video.list`, callback local y PKCE; el cliente OAuth local de Google con scopes de lectura y monetización sigue pendiente.
 - [ ] Reemplazar la consulta de Windsor.ai por scripts locales de TikTok y YouTube antes del fin del Trial, manteniendo Facebook e Instagram en sus rutas existentes.
