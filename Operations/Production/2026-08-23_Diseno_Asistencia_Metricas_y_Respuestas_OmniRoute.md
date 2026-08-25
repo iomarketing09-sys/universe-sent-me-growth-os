@@ -4,7 +4,7 @@ purpose: "Definir cómo OmniRoute puede analizar resúmenes métricos ya normali
 status: Review
 created: 2026-08-23
 updated: 2026-08-25
-version: "2.0"
+version: "2.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-19_Decision_Gateway_IA_OmniRoute.md"
@@ -346,6 +346,28 @@ Windsor.ai conserva únicamente un papel de referencia de lectura durante los cu
 
 Las rutas existentes de Facebook e Instagram no se sustituyen en esta fase. El trabajo nuevo se limita a TikTok y YouTube, siempre con `brand = Universe Sent Me` y con la exclusión activa de Bam in a Can y Firma Bordados.
 
+### 8.17 Contrato de acceso oficial para el piloto local
+
+El piloto local requiere dos clientes OAuth independientes y de solo lectura. Cada uno se ejecutará en Xubuntu bajo un usuario local, con una carpeta de configuración de permisos restrictivos, excluida de Git y sin secretos en conversaciones, documentos, hojas o outputs de OmniRoute. El job nunca debe usar contraseñas, sesiones del navegador ni una clave compartida entre plataformas.
+
+| Plataforma | Cliente y permisos mínimos | Datos mínimos del piloto | Renovación y control |
+| :--- | :--- | :--- | :--- |
+| TikTok | Aplicación de escritorio registrada en TikTok for Developers, `video.list` y callback local `http://127.0.0.1:<puerto>/callback/` con PKCE. [11] [12] | ID, fecha de creación, título, `view_count`, `like_count`, `comment_count` y `share_count` de videos públicos de la cuenta autorizada. [13] | Access token con vida corta; refresh token local rotado tras cada renovación. El script valida `state`, usa PKCE y aborta si los scopes concedidos no son exactamente los esperados. |
+| YouTube | Cliente OAuth local de Google con `https://www.googleapis.com/auth/youtube.readonly` y `https://www.googleapis.com/auth/yt-analytics.readonly`. [8] | ID de video, tipo de contenido, publicación, views, engaged views, likes, comentarios, shares, porcentaje visto, watch time cuando exista y suscriptores ganados. | Refresh token local con permisos restrictivos; el script nunca solicita scopes de carga, edición, comentarios ni monetización. |
+
+La aplicación de escritorio de TikTok admite un callback en `localhost`/`127.0.0.1` con puerto, y exige PKCE; esto permite que la autorización ocurra en el navegador del propio equipo Xubuntu sin publicar un endpoint ni abrir un puerto de Internet. [12] En ambos casos, la primera autorización exige una aprobación de Fernando en el proveedor, pero los refresh posteriores son deterministas y locales.
+
+El collector debe persistir primero un artefacto bruto local temporal con permisos restrictivos, normalizarlo de manera determinista y registrar solo el conjunto mínimo de campos en el ledger y las vistas derivadas. Los títulos, URLs e IDs se retienen únicamente cuando sirven para relacionar una fila con un `Platform_Content_ID`; el brief hacia OmniRoute recibe métricas agregadas y etiquetas de experimento, no datos crudos ni tokens.
+
+| Resultado de fuente | Tratamiento obligatorio |
+| :--- | :--- |
+| Campo disponible | Registrar valor, fuente, ventana, hora de extracción y tipo `lifetime`/`daily`/`snapshot`. |
+| Campo nulo o no entregado | Registrar `not_available`; nunca convertir a cero. |
+| Error de autorización, rate limit o refresh | Registrar el fallo, conservar los últimos datos válidos sin reescribirlos y marcar el ciclo como `collection_deferred`. |
+| Marca distinta o cuenta no resuelta | Detener la extracción de esa fila antes de persistir datos o formar un brief. |
+
+Este contrato es un diseño aprobado, no una autorización para crear apps, dar consentimientos OAuth, instalar scripts o iniciar cron. Esas acciones se presentan como un gate técnico separado.
+
 ## Referencias
 
 [1]: https://developers.facebook.com/docs/instagram-api/guides/insights "Meta for Developers — Instagram Insights"
@@ -358,3 +380,6 @@ Las rutas existentes de Facebook e Instagram no se sustituyen en esta fase. El t
 [8]: https://developers.google.com/youtube/analytics/reference/reports/query "Google for Developers — YouTube Analytics Reports: Query"
 [9]: https://docs.n8n.io/choose-how-to-use-n8n/ "n8n Docs — Self-hosted Community edition"
 [10]: https://developers.google.com/apps-script/advanced/youtube-analytics "Google for Developers — Apps Script YouTube Analytics service"
+[11]: https://developers.tiktok.com/doc/oauth-user-access-token-management/ "TikTok for Developers — User Access Token Management"
+[12]: https://developers.tiktok.com/doc/login-kit-desktop/ "TikTok for Developers — Login Kit for Desktop"
+[13]: https://developers.tiktok.com/doc/tiktok-api-v2-video-list/ "TikTok for Developers — List Videos"
