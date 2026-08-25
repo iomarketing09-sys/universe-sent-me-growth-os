@@ -3,8 +3,8 @@ title: "Backlog técnico de bajo riesgo — Staging Firma Bordados"
 purpose: "Priorizar mejoras de rendimiento, accesibilidad, seguridad técnica y operación del staging que no dependan de materiales, tiempos de entrega o mínimos de pedido."
 status: Active
 created: 2026-08-24
-updated: 2026-08-24
-version: "1.13"
+updated: 2026-08-25
+version: "1.14"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md"
@@ -64,7 +64,7 @@ La protección técnica de `main` se evaluó tras la autorización de Fernando. 
 | P3 | Implementar formulario con backend y analítica de intención | Mejora captura y medición de solicitudes | Aviso de privacidad revisado, antispam, elección de ruta y proceso de respuesta | Bloqueado hasta decisión operativa |
 | C1.1 aplicado | Cambiar el destino de «Cómo solicitar» a correo guiado y mantener WhatsApp como alternativa | Prioriza una consulta estructurada sin introducir captura de datos en el sitio | Ninguna; usa el `mailto:` ya confirmado | Publicado en staging |
 | C4 aplicado | Añadir aviso de privacidad estático, enlazado desde el footer y marcado como revisión de staging | Hace visible el marco de privacidad antes de cualquier formulario servidor-side | Observación operativa del correo guiado; revisión de Firma Bordados antes de activación de formulario | Activo en staging |
-| C5 piloto | Integrar Formspree para pruebas sintéticas con datos mínimos y aviso visible | Valida la experiencia de formulario sin reemplazar el correo guiado | Verificación de `firmabordados@yahoo.com` en Formspree antes de aceptar consultas reales | Activo solo para pruebas sintéticas |
+| C5 piloto | Integrar Formspree para pruebas sintéticas con datos mínimos y aviso visible | Valida la experiencia de formulario sin reemplazar el correo guiado | Verificación de `firmabordados@yahoo.com` en Formspree antes de aceptar consultas reales | Activo solo para pruebas sintéticas; excluido del corte de producción |
 
 ### Decisión recomendada sobre GitHub Pro
 
@@ -109,6 +109,10 @@ La prueba en celular confirmó que el cliente de correo se abre con el mensaje y
 El commit `4378bec` añadió el endpoint Formspree aprobado a un formulario visible exclusivamente para pruebas sintéticas. Se añadieron nombre, correo y requerimiento obligatorios; empresa y teléfono opcionales; honeypot; confirmación obligatoria de no enviar datos reales; ausencia de archivos; y enlace de respaldo al correo guiado. La página de privacidad se actualizó para identificar el piloto y prohibir datos reales mientras el buzón oficial siga sin verificar. El Pull Request 13 pasó CI, se integró a `staging` y el merge `9522527` se promovió a `main`. HTTP confirmó respuesta 200, endpoint, aviso de prueba, correo oficial, ausencia del buzón provisional y `robots.txt` bloqueado. No se activaron consultas reales, archivos, analítica, autorespuestas, pago, backend propio, Turnstile, secreto, Wix, DNS, nameservers ni dominio público.
 
 Fernando confirmó que una prueba sintética llegó correctamente al buzón configurado en Formspree. El resultado confirma el flujo técnico de prueba; no habilita el formulario para clientes ni sustituye la verificación pendiente de `firmabordados@yahoo.com` como destinatario oficial.
+
+### Gate 5 revisado — 2026-08-25
+
+El correo guiado a `firmabordados@yahoo.com`, WhatsApp como alternativa y el aviso de privacidad estático se consideran suficientes para producción. La prueba en celular y la recepción sintética de Formspree confirmaron las dos experiencias, pero el formulario gestionado no se habilita para datos reales porque el destinatario oficial aún no está verificado. La migración no depende de esa verificación: C5 se excluye del alcance público hasta que el negocio complete la verificación y Io Marketing apruebe por separado quitar el modo de pruebas.
 
 ## 6. Límites hasta recibir la información del cliente
 

@@ -3,8 +3,8 @@ title: "Diseño de formulario, privacidad y entrega de correo — Firma Bordados
 purpose: "Comparar rutas seguras para recibir consultas del sitio y definir los requisitos de privacidad, antispam, entrega de correo y aprobación antes de activar un backend."
 status: Review
 created: 2026-08-25
-updated: 2026-08-24
-version: "1.7"
+updated: 2026-08-25
+version: "1.8"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-24_Borrador_Aviso_Privacidad_Firma_Bordados.md"
@@ -105,9 +105,9 @@ La página de precios de Formspree muestra opciones de facturación mensual y an
 
 **Recomendación actual:** mantener correo guiado por USD 0 adicional. Si se requiere envío directo antes de una migración de DNS, evaluar Formspree primero en el plan Free con consultas sintéticas, sin archivos y con el aviso actualizado, pero solo después de aprobarlo expresamente como encargado de datos. Si más adelante se autoriza una migración de DNS, la opción de mayor control es Pages Function + Turnstile + Cloudflare Email Service; su costo base público sería USD 5/mes y no requiere introducir otro proveedor de envío.
 
-### Propuesta de piloto Formspree Free — pendiente de aprobación
+### Piloto Formspree Free — aprobado y publicado solo para pruebas sintéticas
 
-> **No iniciado.** Esta sección describe el único alcance propuesto para decidir si se crea o no una cuenta. No se ha creado cuenta, endpoint, secreto, formulario de envío directo ni flujo de datos hacia Formspree.
+> **No habilitado para consultas reales.** La cuenta, endpoint y formulario de piloto fueron aprobados y publicados únicamente para pruebas sintéticas. No se deben enviar datos reales hasta verificar el destinatario oficial y aprobar la apertura del canal.
 
 | Elemento | Propuesta de piloto | Límite de seguridad y privacidad |
 | :--- | :--- | :--- |
@@ -119,7 +119,7 @@ La página de precios de Formspree muestra opciones de facturación mensual y an
 | Conservación | Buzón oficial: hasta 12 meses desde la última interacción, conforme a la política operativa propuesta; archivo del proveedor: máximo 30 días en el plan Free.[6] | El aviso debe diferenciar la retención interna de la retención técnica del proveedor. |
 | Confirmación al visitante | Pantalla de agradecimiento sin exponer datos enviados; sin autorespuesta en el plan Free | No prometer plazo de respuesta ni registrar analítica de conversión. |
 
-Antes de ejecutar este piloto, Firma Bordados debe aprobar expresamente: **(1)** crear la cuenta de Formspree y aceptar sus términos; **(2)** que Formspree procese los cinco campos anteriores como proveedor/encargado; **(3)** actualizar el aviso para informar el uso del proveedor, su archivo técnico y el canal ARCO; **(4)** verificar `firmabordados@yahoo.com` como destinatario; y **(5)** mantener el límite de 50 envíos/mes sin compra automática. Si alguna condición no se aprueba, se conserva el correo guiado actual.
+Firma Bordados aprobó la cuenta, el endpoint, los campos mínimos, los controles y la actualización del aviso para el piloto. Aún falta **verificar `firmabordados@yahoo.com` como destinatario en Formspree** y aprobar explícitamente que el formulario deje de ser de pruebas. Mientras tanto se conserva el correo guiado actual como canal oficial.
 
 ### Estado del piloto sintético — publicado con destinatario oficial pendiente
 
@@ -143,6 +143,20 @@ Fernando confirmó la recepción correcta de una prueba sintética enviada desde
 La Etapa A está **activa en staging**. La página estática se publicó en `https://firma-bordados-staging.pages.dev/privacidad/`, se enlaza desde el pie de página y su texto fue aprobado por Fernando el 2026-08-24. El correo guiado se mantiene como canal de solicitud. Un piloto sintético de Formspree quedó publicado, pero no sustituye el correo guiado ni acepta consultas reales hasta verificar el destinatario oficial. Durante los próximos 30 días calendario se observará de forma operativa si las consultas llegan completas, se atienden sin fricción y no se pierden; no se añadirá analítica web para ello. Firma Bordados y el domicilio operativo del negocio quedaron registrados como datos declarados para el aviso. No se ha activado backend propio, Turnstile, analítica, secreto, almacenamiento propio de consultas, cambio DNS ni migración de dominio. La recomendación de la Etapa B permanece en **Review** y requiere decisión explícita antes de cualquier integración externa adicional.
 
 El borrador de aviso integral y simplificado se creó en `2026-08-24_Borrador_Aviso_Privacidad_Firma_Bordados.md` con estado **Draft**. Su publicación sigue bloqueada por las validaciones operativas y legales enumeradas en dicho documento.
+
+## 8. Gate 5 — canal de solicitudes y formulario de contacto
+
+| Componente | Evidencia disponible | Decisión para producción | Condición pendiente |
+| :--- | :--- | :--- | :--- |
+| Correo guiado | Se validó que abre el cliente de correo en un celular con `firmabordados@yahoo.com`, asunto y campos de solicitud preparados | **Apto como canal oficial de producción** | Mantener revisión operativa manual de consultas y respuestas durante los primeros 30 días. |
+| WhatsApp | CTA visible en hero y contacto alternativo confirmado | **Apto como canal alternativo de producción** | Mantener el número confirmado y no prometer tiempos de respuesta no aprobados. |
+| Aviso de privacidad estático | Página `/privacidad/` aprobada para el flujo actual de correo guiado | **Apto para producción con correo guiado** | Revisar y actualizar antes de cualquier cambio de proveedor, analítica o captura real de datos. |
+| Formspree `meajblbz` | Endpoint integrado, formulario con datos mínimos, honeypot, confirmación de prueba y recepción sintética confirmada | **No apto aún para consultas reales** | Verificar `firmabordados@yahoo.com` como destinatario y aprobar por separado la apertura del canal. |
+| Antispam del formulario | Honeypot, restricción de pruebas y controles básicos de Formspree | **Solo suficiente para el piloto** | Revisar spam y control de dominio antes de la apertura real; no añadir archivos, reCAPTCHA de Google ni analítica sin actualizar aviso. |
+
+**Decisión Gate 5:** el sitio puede migrar a producción con **correo guiado como solicitud oficial, WhatsApp como alternativa y aviso de privacidad publicado**. El formulario Formspree no forma parte del alcance público de producción mientras conserve el estado de pruebas. Esta decisión evita bloquear el corte por una integración que aún no tiene buzón verificado.
+
+Para habilitar Formspree después del corte —o antes, mediante una aprobación separada— se deben cumplir todas las condiciones siguientes: el equipo de Firma Bordados verifica `firmabordados@yahoo.com` desde el flujo del proveedor; Io Marketing confirma que el endpoint sigue restringido al dominio oficial; se sustituye el aviso de pruebas por un aviso real que identifique a Formspree como proveedor/encargado y su archivo técnico; se mantiene el límite de 50 envíos mensuales sin compra automática; y Io Marketing autoriza por escrito que el formulario acepte datos reales.
 
 ## Referencias
 

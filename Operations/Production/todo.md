@@ -71,6 +71,8 @@
 - [x] Confirmar por escrito quién figura como registrante/autorizado para cambios del dominio antes de aprobar cualquier cambio DNS o nameserver.
 - [x] Actualizar el Gate 3 para registrar a Io Marketing como registrante y autoridad de cambios, dejando pendiente solo la aprobación explícita del corte.
 - [ ] Obtener aprobación explícita de Io Marketing para reemplazar los nameservers Wix por los valores de Cloudflare cuando se programe el corte de producción.
+- [x] Revisar el Gate 5 de solicitudes: confirmar qué canal puede operar en producción y qué requisitos siguen pendientes para habilitar formulario real.
+- [ ] Confirmar `firmabordados@yahoo.com` como destinatario de Formspree y obtener aprobación separada antes de permitir consultas reales a través del formulario.
 - [x] Incorporar el inventario DNS confirmado, la renovación de $470 MXN operada por Io Marketing y la URL raíz como canónica al plan de corte y reversión del Gate 3.
 - [x] Comparar y documentar alternativas seguras de backend, entrega de correo, aviso de privacidad y antispam para el formulario de Firma Bordados.
 - [x] Preparar el cambio de «Cómo solicitar» para priorizar correo sin eliminar WhatsApp como canal alternativo.
