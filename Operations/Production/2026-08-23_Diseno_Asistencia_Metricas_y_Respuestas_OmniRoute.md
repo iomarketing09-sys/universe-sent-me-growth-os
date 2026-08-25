@@ -4,7 +4,7 @@ purpose: "Definir cómo OmniRoute puede analizar resúmenes métricos ya normali
 status: Review
 created: 2026-08-23
 updated: 2026-08-25
-version: "1.3"
+version: "1.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-19_Decision_Gateway_IA_OmniRoute.md"
@@ -278,9 +278,26 @@ OmniRoute permanecerá privado en el equipo local de Fernando. Un trabajo local 
 
 Estas verificaciones no añaden una fuente canónica nueva ni autorizan un schedule. El siguiente gate es elegir la ruta sostenible de TikTok y YouTube, decidir el destino de la hoja derivada y aprobar dónde residirá la autenticación de los procesos de solo lectura.
 
+### 8.11 Comparación de costo: equipo local vs. servicio independiente
+
+Fernando eligió como runtime primario su equipo Xubuntu junto a OmniRoute. Esta opción no incorpora una nueva suscripción de hosting: depende de que el equipo, su conexión y la sesión local permanezcan disponibles. El costo de fuentes de datos es independiente del lugar donde se ejecute el job.
+
+| Componente | Equipo Xubuntu local | VPS independiente orientativo |
+| :--- | :--- | :--- |
+| Ejecución del job y OmniRoute | Sin cuota adicional de servidor; depende de electricidad, internet y que el equipo permanezca encendido. | Un VPS pequeño requiere al menos 2 GB de RAM para mantener sistema, job y OmniRoute con margen operativo. Un ejemplo público de 1 vCPU / 2 GB en DigitalOcean figura en USD 12/mes, sin respaldos opcionales. [5] |
+| Recuperación ante apagones | El análisis se marca `analysis_deferred`; el siguiente ciclo no debe duplicar ni completar artificialmente el anterior. | Mayor continuidad, pero requiere hardening, actualizaciones, backups, firewall, monitoreo y una política de respuesta a incidentes. |
+| Datos y credenciales | Permanecen bajo control local; nunca se guardan en GitHub ni se envían a OmniRoute. | Deben residir en un almacén de secretos del proveedor y nunca en archivos versionados. Requiere una aprobación adicional de infraestructura. |
+| Windsor.ai para TikTok y YouTube | Igual costo que en un VPS; la opción local no elimina esta suscripción si se utilizan ambas fuentes. | Igual costo que en local. |
+
+Para dos fuentes —TikTok y YouTube— la referencia pública de Windsor.ai indica que el plan gratuito permanente permite solo una fuente y una cuenta; el plan Basic admite tres fuentes con actualización diaria por USD 23/mes o USD 19/mes facturado anualmente. [6] En consecuencia, un escenario independiente mínimo con Windsor Basic y un VPS de 2 GB equivale aproximadamente a **USD 35/mes antes de impuestos, respaldos y posibles cargos del proveedor**. El mismo escenario sobre Xubuntu elimina el VPS y conserva solo el costo de Windsor, si se decide continuar después de la prueba.
+
+No se contratará ningún servicio por este documento. La opción local es la decisión vigente; un VPS solo se reconsidera si el equipo no puede mantenerse encendido con suficiente regularidad o si se requiere independencia operativa total.
+
 ## Referencias
 
 [1]: https://developers.facebook.com/docs/instagram-api/guides/insights "Meta for Developers — Instagram Insights"
 [2]: https://developers.google.com/youtube/analytics "Google for Developers — YouTube Analytics and Reporting APIs"
 [3]: https://developers.tiktok.com/doc/tiktok-api-v2-video-query/ "TikTok for Developers — Query Videos"
 [4]: ../../GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md "Growth OS — Reglas estratégicas de aprendizaje y tendencias"
+[5]: https://www.digitalocean.com/pricing/droplets "DigitalOcean — Droplet pricing"
+[6]: https://windsor.ai/pricing/ "Windsor.ai — Pricing"
