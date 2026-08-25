@@ -227,6 +227,26 @@ Una vez autorizado el cambio, se actualizan únicamente los registros aprobados,
 
 El último paso no es técnico: el cliente confirma por escrito que el dominio sirve el nuevo sitio y que el canal de contacto funciona. Solo entonces se programa la reducción o cancelación de Wix, idealmente lejos de la fecha de renovación de diciembre de 2026 para conservar margen de reversión. Si el dominio raíz se aloja en Cloudflare Pages, Cloudflare indica que debe gestionarse la zona en Cloudflare; este movimiento de nameservers sigue requiriendo una aprobación separada.[9]
 
+### Modelo de operación administrada confirmado
+
+Fernando confirmó que **Io Marketing operará el hosting y el repositorio** de Firma Bordados cuando llegue el corte. Este modelo no convierte a Io Marketing en titular del dominio ni autoriza por sí solo cambios de DNS, nameservers o renovaciones. Antes del corte debe existir un acuerdo operativo simple que identifique al menos: el cliente como titular/beneficiario del dominio y contenido; Io Marketing como operador del repositorio, Cloudflare Pages, despliegues y mantenimiento; personas autorizadas para aprobar cambios; canal de incidencias; periodicidad de mantenimiento; respaldo del repositorio; y procedimiento de entrega si cambia el operador.
+
+### Costos anuales de operación fuera de Wix
+
+> **Advertencia de costos:** no soy asesor financiero. Estas cifras son análisis con precios públicos en USD y no incluyen impuestos, tipo de cambio, comisiones bancarias, precio vigente de renovación del dominio en Wix ni una cuota de servicio de Io Marketing. No se debe contratar ni cancelar Wix basándose solo en esta tabla.
+
+| Escenario después del corte | Hosting / sitio | Formulario y contacto | Costo técnico anual estimado | Costos que se mantienen o se cotizan aparte | Recomendación |
+| :--- | :--- | :--- | :---: | :--- | :--- |
+| **A. Operación mínima — recomendada** | Cloudflare Pages estático | Correo guiado y WhatsApp | **USD 0** | Renovación del dominio con el registrador actual; cuota anual o mensual de administración de Io Marketing por definir | La opción más simple si el correo guiado funciona. |
+| **B. Formulario gestionado Free** | Cloudflare Pages estático | Formspree Free, hasta 50 envíos/mes, solo tras verificar el buzón oficial | **USD 0** mientras no se rebase el límite | Dominio + administración; revisar el plan y aviso de privacidad | Útil si se desea probar envío directo sin DNS ni pago inicial. |
+| **C. Formulario gestionado Personal** | Cloudflare Pages estático | Formspree Personal, USD 10/mes | **USD 120** | Dominio + administración + impuestos/tipo de cambio | Solo si el volumen o los controles requeridos superan el plan Free. |
+| **D. Formulario gestionado Professional** | Cloudflare Pages estático | Formspree Professional, USD 20/mes | **USD 240** | Dominio + administración + impuestos/tipo de cambio | No se justifica con la información actual. |
+| **E. Formulario propio futuro** | Pages + Function | Turnstile y Cloudflare Email Service, tras autorizar DNS de Cloudflare | **Desde USD 60** por Workers Paid (USD 5/mes) | Dominio + administración + cualquier uso que exceda los incluidos | Mayor control, pero no procede sin una decisión separada de DNS y privacidad. |
+
+Cloudflare documenta que las solicitudes de activos estáticos son gratuitas e ilimitadas en Pages, y que Pages Functions usa los límites de Workers. Workers Paid tiene una cuota mínima de USD 5 por mes, equivalente a USD 60 al año.[13] [14] Formspree publica un plan Free y planes Personal/Professional de USD 10/20 por mes; el precio anual final debe verificarse en su checkout antes de contratar.[15] Cloudflare Registrar anuncia renovaciones a costo, pero el dominio `firmabordados.com` sigue actualmente bajo Wix y su importe concreto debe confirmarse en la cuenta del cliente.[16]
+
+La cifra anterior **no incluye** la cuota profesional de Io Marketing. Esa cuota debe definirse como un servicio separado y visible al cliente, por ejemplo: mantenimiento preventivo, actualizaciones de contenido autorizadas, atención de incidentes, revisión mensual de formularios/consultas, reportes y cambios urgentes. Recomiendo cotizarla con un alcance, número de horas o bolsas de cambios y una periodicidad —mensual o anual— distintos del costo técnico de terceros, para que el cliente sepa qué paga a cada parte.
+
 ## Integración futura de IA
 
 Si el cliente solicita una función de IA, la primera versión debe ser un endpoint de borradores detrás de un backend privado, no una llamada desde el navegador. Debe aceptar un propósito limitado, validar tamaño y contenido, excluir secretos y datos personales, aplicar autenticación y rate limiting, registrar provider/modelo/latencia/estado y devolver una respuesta marcada como `Draft`. No debe publicar automáticamente ni escribir en los ledgers de Universe Sent Me.
@@ -268,3 +288,11 @@ La evaluación no cambia todavía los ledgers ni el dashboard de Growth OS. Si s
 [11]: [DigitalOcean — Droplet Pricing](https://www.digitalocean.com/pricing/droplets)
 
 [12]: [Banco de México — Tipo de cambio](https://www.banxico.org.mx/tipcamb/main.do?page=tip&idioma=en)
+
+[13]: [Cloudflare Workers — precios](https://developers.cloudflare.com/workers/platform/pricing/)
+
+[14]: [Cloudflare Pages Functions — precios](https://developers.cloudflare.com/pages/functions/pricing/)
+
+[15]: [Formspree — planes](https://formspree.io/plans)
+
+[16]: [Cloudflare Registrar — renovación a costo](https://www.cloudflare.com/products/registrar/)
