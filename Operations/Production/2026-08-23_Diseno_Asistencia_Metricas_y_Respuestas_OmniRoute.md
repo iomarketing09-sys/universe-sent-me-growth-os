@@ -4,7 +4,7 @@ purpose: "Definir cómo OmniRoute puede analizar resúmenes métricos ya normali
 status: Review
 created: 2026-08-23
 updated: 2026-08-25
-version: "2.7"
+version: "2.8"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-19_Decision_Gateway_IA_OmniRoute.md"
@@ -405,6 +405,8 @@ La reserva no habilita todavía OAuth ni acceso de datos. El próximo paso es co
 El formulario de creación de TikTok requiere URL de términos de servicio y URL de privacidad. Fernando identificó el sitio propio de Universe Sent Me `https://iomarketin.wixstudio.com/universesentme` como anfitrión preferido. Se preparó el borrador separado `Operations/Automation/2026-08-25_Textos_Publicos_Terminos_Privacidad_App_Metricas_USM.md` para dos páginas públicas de la app local.
 
 Las URLs sugeridas son `https://iomarketin.wixstudio.com/universesentme/usm-metrics-terms` y `https://iomarketin.wixstudio.com/universesentme/usm-metrics-privacy`. Antes de enviarlas a TikTok se debe confirmar un correo de contacto público de iO Marketing, publicar ambas páginas, probar su acceso sin sesión y revisar que el contenido no afirme operaciones de Bam in a Can, Firma Bordados ni otros clientes.
+
+Fernando confirmó que el sitio ya cuenta con la página de privacidad `https://iomarketin.wixstudio.com/universesentme/privacypolicyusm`, usada junto al sitio de Universe Sent Me para permisos anteriores de Meta. Esta ruta se evaluará como candidata para TikTok; la URL exacta de términos continúa pendiente y ambas deben revisarse públicamente antes de reutilizarse.
 
 ## Referencias
 

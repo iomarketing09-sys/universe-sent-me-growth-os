@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.45
+**Versión:** 4.46
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.46.00] — 2026-08-25 (Fernando/Manus): URL pública de privacidad de Universe Sent Me identificada.** Fernando confirmó `https://iomarketin.wixstudio.com/universesentme/privacypolicyusm` como página existente de privacidad en el sitio de la marca, previamente usado para permisos de Meta. La ruta queda candidata para el formulario de TikTok, pendiente de revisión pública de contenido y alcance. La URL de términos sigue pendiente; no se añadió, publicó ni modificó ninguna página Wix. Documento actualizado: `Operations/Automation/2026-08-25_Textos_Publicos_Terminos_Privacidad_App_Metricas_USM.md` v1.0.
 
 - **[4.45.00] — 2026-08-25 (Fernando/Manus): Sitio propio de Universe Sent Me elegido para URLs públicas.** Fernando identificó `https://iomarketin.wixstudio.com/universesentme` como sitio propio de la marca. Los borradores de términos y privacidad para la app local se alojarán allí, con las rutas sugeridas `/universesentme/usm-metrics-terms` y `/universesentme/usm-metrics-privacy`. iO Marketing continúa como operador, pero la política evita toda mezcla con Bam in a Can y Firma Bordados. Falta confirmar correo público, publicar y probar acceso anónimo antes de enviar el formulario de TikTok. Documento relacionado: `Operations/Automation/2026-08-25_Textos_Publicos_Terminos_Privacidad_App_Metricas_USM.md` v1.0.
 

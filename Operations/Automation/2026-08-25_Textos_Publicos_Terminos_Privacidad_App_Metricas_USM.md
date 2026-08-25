@@ -4,7 +4,7 @@ purpose: "Proveer el contenido mínimo, revisable y separado por marca para las 
 status: Review
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -20,7 +20,14 @@ organization: "Operations/Automation"
 
 Estos textos están destinados a dos páginas públicas separadas dentro del sitio propio de **Universe Sent Me** en Wix. iO Marketing opera la aplicación descrita, que es un collector local privado para Universe Sent Me. No vende productos, no publica en TikTok y no se relaciona con Bam in a Can ni Firma Bordados.
 
-> **Estado de publicación:** revisar antes de publicar. Falta confirmar el correo público de contacto de iO Marketing y la fecha de publicación. No sustituye revisión legal profesional.
+> **Estado de publicación:** la URL de privacidad existente fue identificada; faltan confirmar la URL de términos, el correo público de contacto de iO Marketing y que ambas páginas correspondan a esta app. No sustituye revisión legal profesional.
+
+## URLs existentes verificadas por Fernando
+
+| Tipo | URL | Estado |
+| :--- | :--- | :--- |
+| Privacy Policy | `https://iomarketin.wixstudio.com/universesentme/privacypolicyusm` | Identificada; pendiente de revisión pública de contenido y alcance. |
+| Terms of Service | Pendiente de URL exacta. | No usar la URL principal como sustituto. |
 
 ## Página 1 — Terms of Service
 
