@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.68
+**Versión:** 4.69
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.69.00] — 2026-08-25 (Fernando/Manus): Collectors Meta privados GET-only implementados.** Con autorización de Fernando se añadieron `fetch_facebook_official_metrics.py` y `fetch_instagram_official_metrics.py` para Universe Sent Me. Cada script usa únicamente `USM_META_USER_ACCESS_TOKEN` como variable temporal, limita la captura a 25 registros, conserva raw fuera del repositorio e imprime solo un resumen seguro. Facebook retiene `id`, `created_time`, reacciones, comentarios y shares de posts publicados; Instagram retiene campos nativos de media y preserva los no devueltos como ausentes. Ambos scripts compilan y una revisión estática confirmó ausencia de POST/PUT/PATCH/DELETE. No existe cron, Sheets, ledgers, OmniRoute, publicación, comentarios, mensajes, anuncios ni acceso a otra marca. Pendiente: primera captura manual y validación del resumen. Documento actualizado: `Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md` v1.9.
 
 - **[4.68.00] — 2026-08-25 (Fernando/Manus): Conexión local GET-only validada para Facebook e Instagram de Universe Sent Me.** Fernando confirmó que la app Meta ya aprobada y el token depurado correspondían a Universe Sent Me. El token se cargó temporalmente solo en la terminal de Xubuntu y `validate_meta_local_readonly.py` devolvió `status=validated`, `facebook_connection=validated` e `instagram_connection=validated`. La prueba verificó el acceso a la página objetivo y su cuenta profesional Instagram vinculada con como máximo dos consultas GET. No se expusieron secretos, no se crearon apps ni permisos nuevos, no hubo acceso a publicaciones, comentarios, mensajes o insights, y no se escribieron GitHub, Sheets, ledgers, OmniRoute, contenido, calendarios o datos de otras marcas. Documento actualizado: `Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md` v1.7.
 

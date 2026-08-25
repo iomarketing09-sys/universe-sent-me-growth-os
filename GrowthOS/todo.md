@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "5.6"
+version: "5.7"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -66,9 +66,9 @@ organization: "GrowthOS"
 - [x] Localizar y cargar temporalmente en Xubuntu el token depurado de la app Meta ya aprobada para Universe Sent Me; no se creó otra app, no se solicitaron permisos nuevos, no se expuso el token y no se persistió en el repositorio.
 - [x] Ejecutar una prueba acotada GET-only mediante APIs oficiales locales: `status=validated`, `facebook_connection=validated` e `instagram_connection=validated` para las cuentas objetivo de Universe Sent Me; no hubo publicación, comentarios, respuestas, edición, Sheets, ledgers ni OmniRoute.
 - [x] Registrar el resultado de la prueba Meta sin convertir datos ausentes en cero ni añadir scopes de escritura; la evidencia mínima quedó privada en Xubuntu.
-- [ ] Definir y documentar el contrato de los collectors Meta privados: campos nativos, ventanas de captura, cuenta objetivo, evidencia local y métricas que permanecerán `not_available` sin inferencia.
-- [ ] Implementar un collector local GET-only para Facebook Page y otro para Instagram Professional de Universe Sent Me, usando solo el token aprobado temporal en `USM_META_USER_ACCESS_TOKEN` y guardando raw bajo `~/.local/share/usm-metrics/evidence/`.
-- [ ] Compilar y revisar los collectors para prohibir POST/PUT/PATCH/DELETE, así como cualquier escritura en GitHub, Sheets, ledgers, contenido, comentarios, calendarios u OmniRoute.
+- [x] Definir y documentar el contrato de los collectors Meta privados: campos nativos, ventanas de captura, cuenta objetivo, evidencia local y métricas que permanecerán `not_available` sin inferencia.
+- [x] Implementar `fetch_facebook_official_metrics.py` y `fetch_instagram_official_metrics.py` como collectors locales GET-only de Universe Sent Me, usando solo el token temporal `USM_META_USER_ACCESS_TOKEN` y guardando raw bajo `~/.local/share/usm-metrics/evidence/`.
+- [x] Compilar y revisar los collectors para prohibir POST/PUT/PATCH/DELETE, así como cualquier escritura en GitHub, Sheets, ledgers, contenido, comentarios, calendarios u OmniRoute.
 - [ ] Ejecutar una primera captura manual de ambos collectors, revisar solo el resumen seguro de resultados y documentar bloqueos sin ampliar permisos.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
 - [x] Configurar y autorizar la app de escritorio Sandbox de TikTok con los scopes oficiales mínimos `user.info.basic` y `video.list`, callback local y PKCE; el cliente OAuth local de Google con scopes de lectura y monetización sigue pendiente.

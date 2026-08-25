@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.8"
+version: "1.9"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -128,6 +128,12 @@ Los collectors Meta se limitarán a capturas manuales de acumulados nativos por 
 Para Instagram se consultarán únicamente las media de la cuenta profesional enlazada, mediante `GET`, con `id`, `timestamp`, `media_type`, `media_product_type`, `like_count`, `comments_count`, y, cuando Meta los devuelva, `saved_count`, `shares_count`, `total_like_count`, `total_comments_count`, `total_views_count` y `reposts_count`. No se pedirán caption, media URL, permalink, comentarios, mensajes o insights. Los contadores pueden faltar por configuración de visibilidad, tipo de media o limitaciones de la API; el collector conservará esas ausencias como `not_available`, nunca como cero. La lectura de media con Facebook Login requiere `instagram_basic` y `pages_read_engagement`. [2]
 
 Cada collector usará como máximo 25 registros por plataforma por ejecución, guardará raw estrictamente bajo `~/.local/share/usm-metrics/evidence/`, imprimirá solo un resumen no sensible y verificará que la marca sea Universe Sent Me. Los scripts no podrán realizar POST, PUT, PATCH o DELETE, ni escribir en el repositorio, Google Sheets, ledgers, OmniRoute, contenido, comentarios, calendarios o cualquier activo de otras marcas.
+
+### Implementación revisada
+
+Se implementaron `fetch_facebook_official_metrics.py` y `fetch_instagram_official_metrics.py`. Ambos scripts compilan con Python y una revisión estática confirmó que no contienen invocaciones `requests.post`, `requests.put`, `requests.patch` ni `requests.delete`. Los dos requieren `USM_META_USER_ACCESS_TOKEN` solo como variable temporal, producen un resumen seguro de `status`, `brand`, `platform` y número de registros, y guardan el detalle crudo únicamente en Xubuntu.
+
+El collector de Facebook deriva un Page token de la página objetivo con el token de usuario, consulta hasta 25 posts publicados y retiene solo identificador, fecha, reacciones, comentarios y shares nativos. El collector de Instagram redescubre la cuenta profesional desde la página objetivo, valida el username esperado y consulta hasta 25 media con los campos nativos del contrato. Cualquier error de permiso, campo no soportado o cuenta no coincidente queda como `blocked`, sin reintentos que amplíen permisos.
 
 ## Referencias
 
