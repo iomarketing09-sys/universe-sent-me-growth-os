@@ -4,7 +4,7 @@ purpose: "Priorizar mejoras de rendimiento, accesibilidad, seguridad técnica y 
 status: Active
 created: 2026-08-24
 updated: 2026-08-25
-version: "1.7"
+version: "1.8"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md"
@@ -63,6 +63,7 @@ La protección técnica de `main` se evaluó tras la autorización de Fernando. 
 | C3 aplicado | Añadir enlace de ubicación con indicaciones y revisar información de contacto visible | Reduce fricción para visitas o llamadas | Dirección confirmada y enlace técnico validado | Publicado en staging |
 | P3 | Implementar formulario con backend y analítica de intención | Mejora captura y medición de solicitudes | Aviso de privacidad revisado, antispam, elección de ruta y proceso de respuesta | Bloqueado hasta decisión operativa |
 | C1.1 aplicado | Cambiar el destino de «Cómo solicitar» a correo guiado y mantener WhatsApp como alternativa | Prioriza una consulta estructurada sin introducir captura de datos en el sitio | Ninguna; usa el `mailto:` ya confirmado | Publicado en staging |
+| C4 aplicado | Añadir aviso de privacidad estático, enlazado desde el footer y marcado como revisión de staging | Hace visible el marco de privacidad antes de cualquier formulario servidor-side | Revisión de Firma Bordados y legal antes de activación de formulario | Publicado en staging |
 
 ### Decisión recomendada sobre GitHub Pro
 
@@ -85,6 +86,10 @@ El commit `b3e6f57` añadió un enlace «Cómo llegar» que construye indicacion
 El commit `ba952d9` cambió el CTA de la franja «Cómo solicitar» a un correo guiado dirigido a `firmabordados@yahoo.com`, con asunto y campos opcionales de prenda, técnica, cantidad aproximada y uso/requerimiento. El Pull Request 8 pasó CI, se integró a `staging` y el merge `c694741` se promovió por avance rápido a `main`. La comprobación HTTP del staging confirmó la sección, el enlace `mailto:`, la continuidad de WhatsApp y la ausencia de Dickies en el bundle. No se activaron backend, proveedor, Turnstile, secreto, almacenamiento, analítica, Wix, DNS ni dominio público.
 
 La operación de privacidad ya confirmó el correo `firmabordados@yahoo.com` para solicitudes ARCO y una persona interna responsable de revisarlo. Se propone conservar las consultas hasta doce meses desde la última interacción, con eliminación o disociación posterior salvo obligación comercial, legal o contractual. Este criterio sigue sujeto a revisión antes de publicar el aviso. La ruta recomendada permanece: correo guiado ahora; proveedor gestionado solo con aprobación explícita si se requiere formulario antes de mover DNS; o Pages Function + Turnstile + Cloudflare Email Service tras una migración aprobada a Cloudflare DNS. No se activó ninguna integración.
+
+### Paquete C4 aplicado — 2026-08-24
+
+El commit `87ec478` añadió una página estática de aviso de privacidad en la ruta `/privacidad/`, con enlace desde el footer, responsable Firma Bordados, domicilio confirmado, correo ARCO, finalidades limitadas, política propuesta de doce meses y un aviso claro de que el staging no almacena datos del correo guiado. El Pull Request 9 pasó CI y se promovió a `main`; la ruta sin barra final reveló una redirección de Pages al inicio, por lo que el Pull Request 10 corrigió los enlaces y la regla de SPA a la ruta canónica con barra final. El merge `402cffe` se promovió a `main`; la comprobación HTTP final devolvió 200 para `/privacidad/`, confirmó el contenido, ausencia de nombres personales retirados y `robots.txt` bloqueado. No se activaron formulario servidor-side, backend, Turnstile, proveedor, secreto, analítica, almacenamiento, Wix, DNS, nameservers ni dominio público.
 
 ## 6. Límites hasta recibir la información del cliente
 

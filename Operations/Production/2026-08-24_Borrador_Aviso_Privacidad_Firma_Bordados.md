@@ -1,10 +1,10 @@
 ---
 title: "Borrador de aviso de privacidad — Firma Bordados"
 purpose: "Proponer un aviso de privacidad integral y un aviso simplificado para una futura captura de consultas, usando únicamente los datos confirmados y señalando los puntos que requieren validación antes de publicarse."
-status: Draft
+status: Review
 created: 2026-08-24
 updated: 2026-08-24
-version: "0.2"
+version: "0.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md"
@@ -22,7 +22,7 @@ organization: "Operations/Production"
 
 Este documento propone el contenido de un aviso integral y de su versión simplificada para una futura captura digital de consultas. La Ley Federal de Protección de Datos Personales en Posesión de los Particulares exige que el aviso incluya, al menos, identidad y domicilio del responsable, datos tratados, finalidades, medios para limitar uso o divulgación, mecanismos ARCO y la forma de comunicar cambios. Cuando los datos se recaban electrónicamente, la versión simplificada debe estar disponible al momento de recabarlos e indicar dónde consultar el aviso integral.[1]
 
-El staging actual de Firma Bordados usa enlaces de correo guiado y no recibe ni almacena datos en un servidor. Por ello, este borrador **no debe añadirse al sitio ni presentarse como aviso vigente** hasta que se decida y active una captura de datos compatible con este texto.
+El staging actual de Firma Bordados usa enlaces de correo guiado y no recibe ni almacena datos en un servidor. Esta versión se publicó únicamente para revisión en la ruta estática `/privacidad/` del staging. No activa una captura de datos, no sustituye la revisión legal y debe actualizarse antes de implementar cualquier formulario con backend o proveedor externo.
 
 ## 2. Datos que sustentan esta propuesta
 
@@ -68,6 +68,10 @@ El staging actual de Firma Bordados usa enlaces de correo guiado y no recibe ni 
 > **Aviso de privacidad simplificado — borrador.** Firma Bordados, con domicilio en Emilio Carranza #1021 Int. 113, Col. Burócratas, Piedras Negras, Coahuila, tratará su nombre, correo, teléfono, empresa —si lo proporciona— y datos de su solicitud para atenderla, comunicarse con usted y preparar o dar seguimiento a una posible cotización. Puede solicitar limitar el uso de sus datos en `firmabordados@yahoo.com`. Consulte el aviso de privacidad integral en **[URL pendiente de definir antes de publicar]**.
 
 El aviso simplificado debe aparecer junto al botón de envío del formulario futuro, con un enlace funcional al aviso integral. No debe usarse junto al correo guiado actual, porque esa ruta no captura datos en el sitio.
+
+## 4.1 Publicación de revisión en staging
+
+El 2026-08-24, el contenido integral de este borrador se adaptó a una página estática en `https://firma-bordados-staging.pages.dev/privacidad/`, accesible desde el pie de página. La publicación pasó Pull Request 9, CI en `staging` y `main`, y una corrección posterior de la ruta canónica pasó Pull Request 10 y CI. La comprobación HTTP confirmó respuesta 200 de la ruta con barra final, presencia del correo de privacidad, la política propuesta de doce meses, ausencia de nombres personales retirados y continuidad de `robots.txt` con bloqueo de indexación. No se activaron backend, formulario servidor-side, Turnstile, proveedor, secreto, analítica, almacenamiento, Wix, DNS, nameservers ni dominio público.
 
 ## 5. Validaciones pendientes antes de publicación
 

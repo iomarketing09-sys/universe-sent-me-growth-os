@@ -8,7 +8,7 @@
 
 **Última actualización:** 2026-08-25
 
-**Versión:** 3.3
+**Versión:** 3.4
 
 **Autor:** Manus AI
 
@@ -194,6 +194,8 @@ Fernando confirmó que las prendas corresponden a BigBang, M&O y Soul & Blues se
 El paquete C3 redujo fricción para visitas locales con un enlace de indicaciones basado únicamente en la dirección confirmada. No se usó geolocalización, no se incrustó un mapa ni se iniciaron servicios de analítica. El enlace, los teléfonos, correo y horario se validaron técnicamente antes de publicar la promoción a `main`; el staging continúa separado del sitio Wix y del dominio público.
 
 El ajuste C1.1 cambió únicamente la ruta de la franja «Cómo solicitar»: ahora abre un correo guiado a `firmabordados@yahoo.com` con campos opcionales para entender la solicitud. WhatsApp permanece como CTA principal del hero y como alternativa de contacto. El cambio se validó por Pull Request, CI y comprobaciones HTTP del staging; no recibe ni almacena datos en el sitio y no activa backend, proveedor de correo, antispam, analítica, secreto, Wix, DNS ni dominio. La construcción de un formulario servidor-side sigue bloqueada hasta definir responsable, aviso de privacidad, retención/ARCO, destinatarios autorizados, proveedor y controles antispam.
+
+La Etapa A de privacidad se completó mediante una página estática de revisión en `https://firma-bordados-staging.pages.dev/privacidad/`, enlazada desde el footer. Declara a Firma Bordados como responsable, el domicilio confirmado, `firmabordados@yahoo.com` para privacidad/ARCO y un plazo operativo propuesto de doce meses desde la última interacción. El contenido se validó con Pull Requests, CI y HTTP; la ruta canónica usa barra final. No se activó backend, formulario servidor-side, proveedor de correo, Turnstile, secreto, analítica, almacenamiento, Wix, DNS, nameservers ni el dominio público. El aviso y la operación siguen requiriendo revisión antes de activar la Etapa B.
 
 ## Integración futura de IA
 
