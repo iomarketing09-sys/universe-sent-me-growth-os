@@ -6,9 +6,9 @@
 
 **Fecha de creación:** 2026-08-23
 
-**Última actualización:** 2026-08-25
+**Última actualización:** 2026-08-24
 
-**Versión:** 3.5
+**Versión:** 3.6
 
 **Autor:** Manus AI
 
@@ -198,6 +198,34 @@ El ajuste C1.1 cambió únicamente la ruta de la franja «Cómo solicitar»: aho
 La Etapa A de privacidad se completó mediante una página estática de revisión en `https://firma-bordados-staging.pages.dev/privacidad/`, enlazada desde el footer. Declara a Firma Bordados como responsable, el domicilio confirmado, `firmabordados@yahoo.com` para privacidad/ARCO y un plazo operativo propuesto de doce meses desde la última interacción. El contenido se validó con Pull Requests, CI y HTTP; la ruta canónica usa barra final. No se activó backend, formulario servidor-side, proveedor de correo, Turnstile, secreto, analítica, almacenamiento, Wix, DNS, nameservers ni el dominio público. El aviso y la operación siguen requiriendo revisión antes de activar la Etapa B.
 
 Fernando aprobó el texto para el staging y optó por mantener el correo guiado. La siguiente etapa recomendada es una observación operativa manual de 30 días calendario, sin analítica web: comprobar que las solicitudes contengan información suficiente, se atiendan con consistencia y no se pierdan. Si este flujo funciona, no hay necesidad técnica inmediata de formulario; si presenta fricción, se retomará la decisión de un proveedor gestionado o una Function propia bajo aprobaciones separadas.
+
+## Checklist de migración final Wix → producción
+
+> **Gate de producción:** esta lista es un requisito de planificación. No autoriza cambiar Wix, DNS, nameservers, `firmabordados.com`, facturación ni cuentas. Cada punto marcado como obligatorio necesita responsable y aprobación explícita antes del corte.
+
+| Orden | Requisito verificable | Responsable por confirmar | Estado actual | ¿Bloquea el corte? |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | Aprobación escrita del cliente para publicar el staging actual como sitio público | Firma Bordados | Pendiente | **Sí** |
+| 2 | Decidir propiedad: cuenta Cloudflare Pages y repositorio del cliente, o acuerdo documentado de operación administrada por Io Marketing | Cliente / Io Marketing | Excepción temporal vigente; propiedad final pendiente | **Sí** |
+| 3 | Confirmar registrante, renovación y acceso autorizado al dominio; inventariar A, CNAME, MX, TXT y cualquier servicio que dependa de DNS | Cliente / administrador de dominio | Pendiente | **Sí** |
+| 4 | Confirmar que el contenido de producción coincide con datos aprobados: logo, imágenes, servicios, contactos, horario y los tres PDFs vigentes | Firma Bordados | Staging preparado; aprobación final pendiente | **Sí** |
+| 5 | Resolver el canal oficial de solicitudes: conservar correo guiado/WhatsApp o, si se usa Formspree, verificar `firmabordados@yahoo.com`, actualizar el aviso y aprobar consultas reales | Firma Bordados | Correo guiado activo; Formspree solo sintético | **Sí, solo si el formulario será público** |
+| 6 | Realizar revisión final en escritorio y móvil: navegación, catálogos, teléfonos, WhatsApp, correo, aviso de privacidad, dirección, 404 y HTTPS | Cliente / equipo web | Staging técnico validado; revisión de producción pendiente | **Sí** |
+| 7 | Definir títulos, descripción, favicon, canonical, sitemap y política de indexación para el dominio público; retirar `noindex` solo cuando el dominio final funcione | Equipo web con aprobación del cliente | Staging intencionalmente bloqueado para buscadores | **Sí** |
+| 8 | Preparar plan de reversión: conservar Wix activo, guardar el estado DNS previo y establecer responsable/ventana de corte | Cliente / equipo web | Pendiente | **Sí** |
+| 9 | Asociar primero el dominio al proyecto de hosting y revisar la configuración requerida; aprobar expresamente los cambios DNS o nameservers antes de aplicarlos | Cliente | Pendiente | **Sí** |
+| 10 | Tras propagación, validar desde varias redes que el sitio, PDFs y contactos funcionen; monitorear antes de reducir Wix | Cliente / equipo web | Pendiente | **Sí** |
+| 11 | Reducir o cancelar Wix solo después de aceptación escrita y periodo de estabilidad acordado | Cliente | Pendiente | **Sí** |
+
+Los datos pendientes de materiales, composiciones, certificaciones, disponibilidad y condiciones comerciales **no bloquean** el corte mientras no se añadan al sitio. GitHub Pro, analítica y una migración del formulario a backend propio son opcionales; no deben retrasar la migración si el flujo de correo guiado funciona y el cliente acepta ese alcance.
+
+### Secuencia de corte recomendada
+
+Primero se congela una versión aprobada del sitio y se toma una copia de referencia de los registros DNS y de las pantallas importantes de Wix. Después se configura el dominio en el hosting objetivo, sin cancelar Wix, y se presenta al cliente el cambio DNS exacto y su plan de reversión. Wix documenta que un dominio conectado a un sitio externo requiere actualizar sus registros A y CNAME, con una propagación que puede tardar hasta 48 horas.[2]
+
+Una vez autorizado el cambio, se actualizan únicamente los registros aprobados, se mantiene Wix disponible durante la propagación y se valida el nuevo dominio desde computadoras y teléfonos en redes distintas. Se comprueban inicio, rutas, redirecciones de cualquier URL anterior, catálogos, contacto, formularios si existen y el correo. Si aparece una falla crítica, se restauran los registros DNS previamente documentados para devolver el tráfico a Wix.
+
+El último paso no es técnico: el cliente confirma por escrito que el dominio sirve el nuevo sitio y que el canal de contacto funciona. Solo entonces se programa la reducción o cancelación de Wix, idealmente lejos de la fecha de renovación de diciembre de 2026 para conservar margen de reversión. Si el dominio raíz se aloja en Cloudflare Pages, Cloudflare indica que debe gestionarse la zona en Cloudflare; este movimiento de nameservers sigue requiriendo una aprobación separada.[9]
 
 ## Integración futura de IA
 
