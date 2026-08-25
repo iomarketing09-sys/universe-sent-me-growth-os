@@ -4,11 +4,12 @@
   "status": "Active",
   "created": "2026-08-25",
   "updated": "2026-08-25",
-  "version": "1.0",
+  "version": "1.1",
   "author": "Manus AI (CGO)",
   "organization": "Operations/Research",
   "related_documents": [
     "Operations/Research/2026-08-25_Next_Productive_Case_E0_Review_Evidence.json",
+    "Operations/Research/2026-08-25_PUB-FB-17_30-47_E0_Execution_Evidence.json",
     "Operations/Research/2026-08-25_Next_Productive_Case_E0_Attempt_Evidence.json",
     "Operations/Research/2026-08-25_First_Productive_Case_E0_Execution_Evidence.json",
     "Operations/Research/2026-08-15_Publication_Log.csv",
@@ -46,7 +47,7 @@
   "e0_control": {
     "schedule_task_uid": "P9iKuQHRgO56wVd7MSBJ5o",
     "schedule_name": "USM: capturar E0 de PUB-FB-17_30-47",
-    "status": "active",
+    "status": "paused_after_three_anomaly_attempts",
     "run_mode": "full_auto",
     "cron": "0 2 16 25 8 *",
     "timezone": "America/Matamoros",
@@ -60,7 +61,8 @@
     "expire_at": "2026-08-25T21:12:00Z",
     "tolerance_seconds": 600,
     "connector": "Universe Sent Me Meta API",
-    "behavior": "Read-only Meta checks; stop at the first response with is_published=true. Capture E0 only if meta_post_id, created_time and all contractual counters are available. If all attempts remain pending, return E0_PENDING without writing a snapshot. If published but outside tolerance, preserve as Late and do not enable E24/E72."
+    "behavior": "Read-only Meta checks; stop at the first response with is_published=true. Capture E0 only if meta_post_id, created_time and all contractual counters are available. If all attempts remain pending, return E0_PENDING without writing a snapshot. If published but outside tolerance, preserve as Late and do not enable E24/E72.",
+    "outcome": "Three production attempts occurred at 324.231, 443.148 and 534.813 seconds after created_time, all within ±600 seconds. Meta omitted shares in every response; all three rows were recorded as Anomaly/missing_counter. No Valid_E0 was created and the control was paused to prevent further duplicate anomalies. See Operations/Research/2026-08-25_PUB-FB-17_30-47_E0_Execution_Evidence.json."
   },
   "safety": {
     "content_published": false,

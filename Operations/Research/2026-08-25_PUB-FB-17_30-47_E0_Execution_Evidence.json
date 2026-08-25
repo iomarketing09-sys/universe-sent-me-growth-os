@@ -1,0 +1,130 @@
+{
+  "title": "Ejecución E0 de PUB-FB-17_30-47",
+  "purpose": "Registrar las lecturas reales de Meta y los tres intentos del hook E0 dentro de la ventana de ±600 segundos, sin presentar el caso como baseline canónico cuando falta un contador contractual.",
+  "status": "Active",
+  "created": "2026-08-25",
+  "updated": "2026-08-25",
+  "version": "1.0",
+  "author": "Manus AI (CGO)",
+  "organization": "Operations/Research",
+  "related_documents": [
+    "Operations/Research/2026-08-25_PUB-FB-17_30-47_E0_Preparation_Evidence.json",
+    "Operations/Research/2026-08-25_Next_Productive_Case_E0_Review_Evidence.json",
+    "Operations/Research/2026-08-25_First_Productive_Case_E0_Execution_Evidence.json",
+    "Operations/Automation/capture_e0_after_publish.py",
+    "Operations/Automation/record_metrics_snapshot.py",
+    "Operations/Automation/validate_metrics_snapshot_ledger.py",
+    "Operations/Research/Metrics_Snapshot_Log.csv",
+    "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
+  ],
+  "publisher_result": {
+    "meta_post_id": "1036844829507460_122151377475072582",
+    "publicacion_id": "PUB-FB-17_30-47",
+    "experiment_id": "EXP-2026-08-CAL-01",
+    "id_pieza": "",
+    "cnt": "",
+    "platform": "Facebook",
+    "account_id": "1036844829507460",
+    "is_published": true,
+    "created_time": "2026-08-25T21:00:07Z"
+  },
+  "meta_read_check": {
+    "queried_at_utc": "2026-08-25T21:05:14Z",
+    "http_status": 200,
+    "is_published": true,
+    "meta_post_id": "1036844829507460_122151377475072582",
+    "created_time": "2026-08-25T21:00:07+0000",
+    "counters_returned": {
+      "reactions": 1,
+      "comments": 0,
+      "shares": null
+    },
+    "shares_interpretation": "Meta did not expose the shares field; it was retained as absent and never coerced to zero."
+  },
+  "capture_attempts": [
+    {
+      "attempt": 1,
+      "snapshot_id": "MS-3B8CF33A64774426A423",
+      "captured_at_utc": "2026-08-25T21:05:31.230738Z",
+      "age_seconds": 324.231,
+      "tolerance_seconds": 600,
+      "window_status": "Anomaly",
+      "anomaly_code": "missing_counter",
+      "reactions": 1,
+      "comments": 0,
+      "shares": null,
+      "lifetime_interactions": null,
+      "raw_evidence_path": "Operations/Research/Metrics_Raw/1036844829507460_122151377475072582_baseline_e0_20260825T210531Z.json"
+    },
+    {
+      "attempt": 2,
+      "snapshot_id": "MS-E6733B5227BADB8DE5B5",
+      "captured_at_utc": "2026-08-25T21:07:30.147743Z",
+      "age_seconds": 443.148,
+      "tolerance_seconds": 600,
+      "window_status": "Anomaly",
+      "anomaly_code": "missing_counter",
+      "reactions": 2,
+      "comments": 0,
+      "shares": null,
+      "lifetime_interactions": null,
+      "raw_evidence_path": "Operations/Research/Metrics_Raw/1036844829507460_122151377475072582_baseline_e0_20260825T210730Z.json"
+    },
+    {
+      "attempt": 3,
+      "snapshot_id": "MS-06296EABD6D618E9A23F",
+      "captured_at_utc": "2026-08-25T21:09:01.812509Z",
+      "age_seconds": 534.813,
+      "tolerance_seconds": 600,
+      "window_status": "Anomaly",
+      "anomaly_code": "missing_counter",
+      "reactions": 2,
+      "comments": 0,
+      "shares": null,
+      "lifetime_interactions": null,
+      "raw_evidence_path": "Operations/Research/Metrics_Raw/1036844829507460_122151377475072582_baseline_e0_20260825T210901Z.json"
+    }
+  ],
+  "ledger_effect": {
+    "ledger": "Operations/Research/Metrics_Snapshot_Log.csv",
+    "rows_total_after_execution": 5,
+    "new_rows_added_for_this_case": 3,
+    "status_counts": {
+      "Anomaly": 4,
+      "Late": 1
+    },
+    "valid_e0_posts": 0,
+    "duplicate_snapshot_ids": [],
+    "duplicate_valid_logical_keys": [],
+    "validation": "PASS",
+    "errors": [],
+    "warnings": [],
+    "interpretation": "PASS confirms structural integrity; it does not promote an Anomaly to Valid_E0. The same logical key is retained for forensic evidence because no valid baseline exists."
+  },
+  "downstream_decision": {
+    "e0_canonical": false,
+    "e24_e72_enabled": false,
+    "reason": "All three reads were within ±600 seconds, but Meta omitted the required shares counter in each response. No temporal baseline or delta is valid.",
+    "do_not_backfill": true,
+    "do_not_impute": true,
+    "do_not_republish_or_reschedule": true,
+    "next_action": "Diagnose Meta counter availability and use a new approved post for the next canonical E0."
+  },
+  "control_cleanup": {
+    "schedule_task_uid": "P9iKuQHRgO56wVd7MSBJ5o",
+    "schedule_status_after_attempts": "pause",
+    "paused_at_utc": "2026-08-25T21:09:30Z",
+    "reason": "Prevent a fourth duplicate anomaly after the three controlled attempts within the E0 window."
+  },
+  "safety": {
+    "content_published_by_this_task": false,
+    "content_reprogrammed": false,
+    "content_edited": false,
+    "content_deleted": false,
+    "queue_modified": false,
+    "publication_log_modified": false,
+    "experiment_log_modified": false,
+    "metrics_invented": false,
+    "replay_used": false
+  }
+}

@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.59
+**Versión:** 4.60
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.60.00] — 2026-08-25 (Manus): E0 de PUB-FB-17_30-47 ejecutado con tres intentos dentro de la ventana, pero bloqueado por `shares` ausente.** Meta confirmó `is_published=true` y `created_time=2026-08-25T21:00:07+0000`. El hook se ejecutó sin replay a los 324.231, 443.148 y 534.813 segundos; Meta omitió `shares` en las tres respuestas. Se registraron `MS-3B8CF33A64774426A423`, `MS-E6733B5227BADB8DE5B5` y `MS-06296EABD6D618E9A23F`, todos `Anomaly/missing_counter`; no se inventó `shares=0`. El ledger queda en 5 filas (`Anomaly=4`, `Late=1`), 0 `Valid_E0`, validación `PASS`, sin duplicados ni errores. E24/E72 permanecen bloqueados. El control se pausó después del tercer intento para evitar una cuarta anomalía. No se modificó contenido, programación, cola, `Publication_Log.csv` ni `ExperimentLog.csv`. Evidencia: `Operations/Research/2026-08-25_PUB-FB-17_30-47_E0_Execution_Evidence.json`.
 
 - **[4.59.00] — 2026-08-25 (Fernando/Manus): Sandbox TikTok verificado visualmente para acceso mínimo de Universe Sent Me.** Las capturas de Fernando confirman Login Kit como único producto visible, los únicos scopes `user.info.basic` y `video.list`, el callback Desktop exacto `http://127.0.0.1:8765/callback/` y un solo Target User `universe.sent.me` para Universe Sent Me. No se observaron Share Kit, Content Posting API, Webhooks, Data Portability, Local Service API ni otros scopes. El siguiente gate es técnico y local: validar que TikTok entregue esos scopes y que `video.list` responda en Sandbox. Si el endpoint exige una configuración adicional, se detiene y documenta sin añadir capacidades de escritura. Documento actualizado: `Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md` v1.2.
 

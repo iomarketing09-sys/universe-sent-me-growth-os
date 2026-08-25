@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "2.66"
+version: "2.67"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -559,3 +559,11 @@ La siguiente publicación futura explícita posterior a `PUB-FB-17_30-46` es `PU
 La consulta GET-only de preparación a las `2026-08-25T19:32:04Z` confirmó `is_published=false`, `created_time=2026-08-25T21:00:00+0000` y HTTP 200. El único schedule se reutilizó como control one-shot activo a las 16:02 locales / 21:02 UTC, con intentos controlados a los 0, 180 y 360 segundos y expiración a las 21:12 UTC. El control detiene los reintentos al confirmar `is_published=true`; solo entonces construye el publisher result y ejecuta el hook sin replay. Si todos los intentos permanecen pendientes, devuelve `E0_PENDING` sin escribir snapshot. Si la publicación se confirma fuera de ±600 segundos, registra `Late` y no habilita E24/E72.
 
 No se publicó, reprogramó, editó ni eliminó contenido; la cola, `Publication_Log.csv`, `ExperimentLog.csv` y el ledger contractual no fueron modificados durante la preparación. Evidencia: `Operations/Research/2026-08-25_PUB-FB-17_30-47_E0_Preparation_Evidence.json`.
+
+## 33. Ejecución E0 de PUB-FB-17_30-47 — anomalía dentro de ventana — 2026-08-25
+
+Meta confirmó `is_published=true` para `1036844829507460_122151377475072582`, con `created_time=2026-08-25T21:00:07+0000`. El publisher result conservó `PUB-FB-17_30-47`, `EXP-2026-08-CAL-01`, `ID_Pieza` vacío, `CNT` vacío, plataforma Facebook y `account_id=1036844829507460`.
+
+Se ejecutó `capture_e0_after_publish.py` sin replay en tres intentos dentro de la tolerancia contractual de 600 segundos: `324.231 s`, `443.148 s` y `534.813 s`. Meta omitió `shares` en las tres respuestas; por tanto, los snapshots `MS-3B8CF33A64774426A423`, `MS-E6733B5227BADB8DE5B5` y `MS-06296EABD6D618E9A23F` quedaron como `Window_Status=Anomaly` con `Anomaly_Code=missing_counter`. `shares` se conserva ausente y no se transforma en cero; no se calcula `Lifetime_Interactions`, `Delta_From_E0`, E24 ni E72.
+
+El ledger conserva cinco filas totales: cuatro `Anomaly` y una `Late`, cero `Valid_E0`, sin duplicados, sin errores ni advertencias y con validación estructural `PASS`. La validación `PASS` no promueve las anomalías a baseline contractual. El control one-shot se pausó después del tercer intento para impedir una cuarta anomalía duplicada. No se modificó contenido, programación, cola, `Publication_Log.csv` ni `ExperimentLog.csv`. Evidencia: `Operations/Research/2026-08-25_PUB-FB-17_30-47_E0_Execution_Evidence.json` y los tres raw asociados.
