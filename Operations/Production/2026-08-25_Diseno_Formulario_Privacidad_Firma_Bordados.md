@@ -4,7 +4,7 @@ purpose: "Comparar rutas seguras para recibir consultas del sitio y definir los 
 status: Review
 created: 2026-08-25
 updated: 2026-08-24
-version: "1.6"
+version: "1.7"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-24_Borrador_Aviso_Privacidad_Firma_Bordados.md"
@@ -121,6 +121,12 @@ La página de precios de Formspree muestra opciones de facturación mensual y an
 
 Antes de ejecutar este piloto, Firma Bordados debe aprobar expresamente: **(1)** crear la cuenta de Formspree y aceptar sus términos; **(2)** que Formspree procese los cinco campos anteriores como proveedor/encargado; **(3)** actualizar el aviso para informar el uso del proveedor, su archivo técnico y el canal ARCO; **(4)** verificar `firmabordados@yahoo.com` como destinatario; y **(5)** mantener el límite de 50 envíos/mes sin compra automática. Si alguna condición no se aprueba, se conserva el correo guiado actual.
 
+### Estado del piloto sintético — publicado con destinatario oficial pendiente
+
+El endpoint público `https://formspree.io/f/meajblbz` se integró exclusivamente como piloto de pruebas sintéticas mediante el commit `4378bec`, Pull Request 13 y promoción a `main` con el merge `9522527`. El formulario exige nombre, correo y requerimiento de prueba; empresa y teléfono son opcionales; incluye honeypot `_gotcha`, confirmación obligatoria de que no se enviarán datos reales, ausencia de archivos y un enlace visible al correo guiado oficial. La página de privacidad declara que Formspree participa únicamente en el piloto.
+
+La verificación técnica del staging confirmó HTTP 200 en inicio y privacidad, endpoint presente, aviso de pruebas sintéticas, `firmabordados@yahoo.com` aún visible, ausencia del buzón provisional anterior y `robots.txt` bloqueado. El destinatario `firmabordados@yahoo.com` aún no está verificado dentro de Formspree. Por ello, **no se aceptan consultas reales** ni se debe describir el formulario como canal oficial hasta que el negocio complete la verificación y se haga una revisión separada.
+
 ## 6. Decisiones necesarias antes de activar servicios
 
 1. Confirmar la **razón social**, únicamente si es distinta de Firma Bordados, y que el domicilio del negocio es el medio apropiado para el aviso y solicitudes ARCO.
@@ -132,7 +138,7 @@ Antes de ejecutar este piloto, Firma Bordados debe aprobar expresamente: **(1)**
 
 ## 7. Estado
 
-La Etapa A está **activa en staging**. La página estática se publicó en `https://firma-bordados-staging.pages.dev/privacidad/`, se enlaza desde el pie de página y su texto fue aprobado por Fernando el 2026-08-24. El correo guiado se mantiene como canal de solicitud. Durante los próximos 30 días calendario se observará de forma operativa si las consultas llegan completas, se atienden sin fricción y no se pierden; no se añadirá analítica web para ello. Firma Bordados y el domicilio operativo del negocio quedaron registrados como datos declarados para el aviso. No se ha activado backend, proveedor de correo, Turnstile, analítica, secreto, almacenamiento de consultas, cambio DNS ni migración de dominio. La recomendación de la Etapa B permanece en **Review** y requiere decisión explícita antes de cualquier integración externa.
+La Etapa A está **activa en staging**. La página estática se publicó en `https://firma-bordados-staging.pages.dev/privacidad/`, se enlaza desde el pie de página y su texto fue aprobado por Fernando el 2026-08-24. El correo guiado se mantiene como canal de solicitud. Un piloto sintético de Formspree quedó publicado, pero no sustituye el correo guiado ni acepta consultas reales hasta verificar el destinatario oficial. Durante los próximos 30 días calendario se observará de forma operativa si las consultas llegan completas, se atienden sin fricción y no se pierden; no se añadirá analítica web para ello. Firma Bordados y el domicilio operativo del negocio quedaron registrados como datos declarados para el aviso. No se ha activado backend propio, Turnstile, analítica, secreto, almacenamiento propio de consultas, cambio DNS ni migración de dominio. La recomendación de la Etapa B permanece en **Review** y requiere decisión explícita antes de cualquier integración externa adicional.
 
 El borrador de aviso integral y simplificado se creó en `2026-08-24_Borrador_Aviso_Privacidad_Firma_Bordados.md` con estado **Draft**. Su publicación sigue bloqueada por las validaciones operativas y legales enumeradas en dicho documento.
 

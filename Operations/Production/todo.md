@@ -58,6 +58,9 @@
 - [x] Restaurar `firmabordados@yahoo.com` como destino del correo guiado y del formulario local tras la prueba confirmada, retirar avisos temporales y validar el staging.
 - [x] Comparar costos actuales, periodicidad, privacidad, antispam y requisitos de proveedores para un formulario con envío directo, sin activar ningún servicio.
 - [x] Preparar la propuesta de piloto de Formspree Free con datos mínimos, antispam, retención y actualización del aviso, sin crear cuenta ni publicar hasta recibir aprobación explícita.
+- [ ] Ejecutar el piloto Formspree Free aprobado: crear cuenta, verificar `firmabordados@yahoo.com`, actualizar aviso, implementar datos mínimos y controles antispam, y publicar solo tras CI.
+- [x] Integrar el endpoint Formspree `https://formspree.io/f/meajblbz` solo para pruebas sintéticas, con aviso visible y correo guiado oficial alternativo, hasta verificar `firmabordados@yahoo.com` como destinatario.
+- [ ] Verificar `firmabordados@yahoo.com` como destinatario de Formspree y obtener aprobación separada antes de permitir consultas reales a través del formulario.
 - [x] Comparar y documentar alternativas seguras de backend, entrega de correo, aviso de privacidad y antispam para el formulario de Firma Bordados.
 - [x] Preparar el cambio de «Cómo solicitar» para priorizar correo sin eliminar WhatsApp como canal alternativo.
 - [x] Implementar y validar en staging el enlace de correo guiado para «Cómo solicitar», conservando WhatsApp en hero y contacto.

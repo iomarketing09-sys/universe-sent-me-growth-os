@@ -55,7 +55,7 @@ El staging actual de Firma Bordados usa enlaces de correo guiado y no recibe ni 
 
 **Conservación.** Como política operativa propuesta, las consultas se conservarán hasta por doce meses contados desde la última interacción y posteriormente se eliminarán o disociarán, salvo que se formalice una relación comercial o resulte aplicable una obligación legal o contractual de conservación. Este periodo debe ser confirmado por Firma Bordados y revisado antes de publicar el aviso definitivo.
 
-**Transferencias y personas encargadas.** Con la información disponible al elaborar este borrador, no se contemplan transferencias de datos personales para fines comerciales. Antes de activar un formulario, servicio de correo transaccional, antispam, analítica o proveedor externo, Firma Bordados deberá revisar si ese tercero tratará datos por cuenta del responsable o si existe una transferencia que deba declararse y, de ser necesario, actualizar este aviso antes de iniciar la captura.
+**Transferencias y personas encargadas.** Con la información disponible al elaborar este borrador, no se contemplan transferencias de datos personales para fines comerciales. El staging incluye un piloto sintético de Formspree que no está autorizado para recibir consultas reales mientras `firmabordados@yahoo.com` siga pendiente de verificación como destinatario. Antes de activar ese formulario para datos reales, Firma Bordados deberá revisar la participación del proveedor como encargado y actualizar este aviso para describirla correctamente.
 
 **Medidas de seguridad.** Firma Bordados procurará aplicar medidas administrativas, técnicas y físicas razonables, según la naturaleza de los datos y la operación vigente, para evitar su daño, pérdida, alteración, destrucción, uso, acceso o tratamiento no autorizado. Las personas que atiendan consultas deberán acceder solo cuando sea necesario para cumplir las finalidades descritas.
 
@@ -91,6 +91,8 @@ El 2026-08-24, Fernando aprobó el texto publicado para el staging y confirmó q
 Si Firma Bordados aprueba el piloto Formspree Free, el aviso deberá actualizarse **antes** de publicar el formulario para explicar que el proveedor recibirá nombre, correo, empresa/teléfono opcionales y requerimiento con el único fin de entregar la consulta a `firmabordados@yahoo.com`. También deberá describir que el plan Free conserva un archivo técnico de envíos de hasta treinta días, mientras Firma Bordados conservará las consultas recibidas en su buzón conforme a la política operativa propuesta de hasta doce meses desde la última interacción.[2]
 
 No se deben habilitar archivos, reCAPTCHA de Google, autorespuestas, analítica de marketing ni destinatarios adicionales dentro del piloto sin revisar de nuevo el aviso y los proveedores involucrados. La aprobación del texto actual no equivale a aprobar Formspree: el proveedor, los campos y el límite de cincuenta envíos por mes requieren autorización separada.
+
+El endpoint `https://formspree.io/f/meajblbz` se publicó solo para pruebas sintéticas con una confirmación obligatoria de no enviar datos reales. Antes de aceptar consultas reales, el buzón `firmabordados@yahoo.com` debe verificarse en Formspree y este aviso debe revisarse para reflejar el flujo definitivo.
 
 ## Referencias
 

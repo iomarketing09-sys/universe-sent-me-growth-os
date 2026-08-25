@@ -4,7 +4,7 @@ purpose: "Definir los pasos técnicos para probar el sitio React/Vite de Firma B
 status: Review
 created: 2026-08-23
 updated: 2026-08-24
-version: "1.15"
+version: "1.16"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Evaluacion_Migracion_Wix_Hosting_IA.md"
@@ -129,6 +129,12 @@ Para verificar recepción sin acceder al buzón oficial, el staging dirige tempo
 La prueba se valida manualmente desde Quick-seedless: abrir “Preparar prueba” o completar el formulario, confirmar que el cliente de correo propone `io.marketin.09@gmail.com`, enviar un mensaje de prueba sin datos reales y confirmar su llegada al buzón provisional. Tan pronto se confirme recepción, crear una rama de restauración que reemplace el destino provisional por `firmabordados@yahoo.com`, pasar PR → CI → `staging` → `main` y repetir las verificaciones HTTP. No enviar mensajes de prueba desde automatización ni modificar el aviso de privacidad, Wix, DNS, nameservers, dominio, backend, Turnstile, proveedores, secretos, almacenamiento o analítica.
 
 La prueba se cerró después de confirmar desde un celular que el cliente de correo abre con el mensaje preparado. El commit `ce3a605` y Pull Request 12 restauraron `firmabordados@yahoo.com` en el correo guiado y el formulario local, retirando todos los avisos temporales. Tras CI en `staging` y `main`, el merge `1f518f1` se publicó; HTTP confirmó inicio y privacidad con 200, correo oficial presente y ausencia del buzón provisional. El flujo estable sigue siendo `mailto:`: la persona visitante debe pulsar Enviar en su aplicación de correo. No convertirlo en envío directo sin una nueva aprobación de backend, antispam servidor-side, proveedor y secretos.
+
+### Paquete C5 — piloto Formspree solo para pruebas sintéticas — 2026-08-24
+
+El commit `4378bec` incorporó el endpoint `https://formspree.io/f/meajblbz` con Pull Request 13. El formulario requiere confirmación de prueba sintética, contiene honeypot, no admite archivos y mantiene el correo guiado oficial como alternativa. La página `/privacidad/` declara que Formspree participa solo en este piloto y prohíbe consultas reales. El Pull Request pasó CI en la rama, `staging` y `main`; el merge `9522527` se publicó. La comprobación HTTP final devolvió 200 para inicio y privacidad, encontró endpoint, aviso, correo oficial y `robots.txt` bloqueado, y confirmó que no se conserva el buzón provisional.
+
+El endpoint no debe usarse para datos reales hasta que Firma Bordados verifique `firmabordados@yahoo.com` dentro de Formspree. Al verificarlo, detenerse y obtener una aprobación separada antes de eliminar el aviso de pruebas, aceptar consultas reales o modificar controles, retención, proveedor, DNS, secretos, backend, Turnstile, analítica, Wix, nameservers o dominio.
 
 ## 2. Estado de partida y preparación obligatoria
 

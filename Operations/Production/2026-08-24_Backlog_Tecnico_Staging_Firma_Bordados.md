@@ -4,7 +4,7 @@ purpose: "Priorizar mejoras de rendimiento, accesibilidad, seguridad técnica y 
 status: Active
 created: 2026-08-24
 updated: 2026-08-24
-version: "1.12"
+version: "1.13"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md"
@@ -64,6 +64,7 @@ La protección técnica de `main` se evaluó tras la autorización de Fernando. 
 | P3 | Implementar formulario con backend y analítica de intención | Mejora captura y medición de solicitudes | Aviso de privacidad revisado, antispam, elección de ruta y proceso de respuesta | Bloqueado hasta decisión operativa |
 | C1.1 aplicado | Cambiar el destino de «Cómo solicitar» a correo guiado y mantener WhatsApp como alternativa | Prioriza una consulta estructurada sin introducir captura de datos en el sitio | Ninguna; usa el `mailto:` ya confirmado | Publicado en staging |
 | C4 aplicado | Añadir aviso de privacidad estático, enlazado desde el footer y marcado como revisión de staging | Hace visible el marco de privacidad antes de cualquier formulario servidor-side | Observación operativa del correo guiado; revisión de Firma Bordados antes de activación de formulario | Activo en staging |
+| C5 piloto | Integrar Formspree para pruebas sintéticas con datos mínimos y aviso visible | Valida la experiencia de formulario sin reemplazar el correo guiado | Verificación de `firmabordados@yahoo.com` en Formspree antes de aceptar consultas reales | Activo solo para pruebas sintéticas |
 
 ### Decisión recomendada sobre GitHub Pro
 
@@ -102,6 +103,10 @@ Fernando confirmó que, por ahora, el staging no incorporará materiales, compos
 El commit `5c4a1e0` dirigió temporalmente el correo guiado y el formulario local del staging a `io.marketin.09@gmail.com` para comprobar la recepción desde un dispositivo real. El Pull Request 11 pasó CI, se integró a `staging` y el merge `41ed194` se promovió a `main`. El sitio muestra avisos de prueba y pide no enviar datos reales; WhatsApp, el correo directo y la página de privacidad conservan `firmabordados@yahoo.com`. La comprobación HTTP confirmó ambos destinos de página con 200, el buzón provisional únicamente en el flujo de prueba y el correo oficial dentro de privacidad. Tras confirmar la recepción, se debe restaurar inmediatamente `firmabordados@yahoo.com` como destino de correo guiado y del formulario local mediante el mismo flujo de revisión.
 
 La prueba en celular confirmó que el cliente de correo se abre con el mensaje ya preparado; por ello no se requiere backend para el flujo actual. El commit `ce3a605` restauró `firmabordados@yahoo.com`, retiró los avisos temporales y pasó Pull Request 12, CI en `staging` y `main`; el merge `1f518f1` se promovió a `main`. La verificación HTTP encontró el correo oficial, “Correo guiado” y “Preparar correo”, sin rastros del buzón o mensajes de prueba. El envío directo desde el sitio continúa fuera de alcance: requeriría backend, protección antispam validada en servidor, proveedor de entrega y secretos aprobados.
+
+### Paquete C5 piloto sintético aplicado — 2026-08-24
+
+El commit `4378bec` añadió el endpoint Formspree aprobado a un formulario visible exclusivamente para pruebas sintéticas. Se añadieron nombre, correo y requerimiento obligatorios; empresa y teléfono opcionales; honeypot; confirmación obligatoria de no enviar datos reales; ausencia de archivos; y enlace de respaldo al correo guiado. La página de privacidad se actualizó para identificar el piloto y prohibir datos reales mientras el buzón oficial siga sin verificar. El Pull Request 13 pasó CI, se integró a `staging` y el merge `9522527` se promovió a `main`. HTTP confirmó respuesta 200, endpoint, aviso de prueba, correo oficial, ausencia del buzón provisional y `robots.txt` bloqueado. No se activaron consultas reales, archivos, analítica, autorespuestas, pago, backend propio, Turnstile, secreto, Wix, DNS, nameservers ni dominio público.
 
 ## 6. Límites hasta recibir la información del cliente
 
