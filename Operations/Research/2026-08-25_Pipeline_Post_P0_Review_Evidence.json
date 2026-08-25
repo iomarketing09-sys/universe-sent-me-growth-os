@@ -1,0 +1,118 @@
+{
+  "title": "Evidencia de revisión del pipeline de publicación post-P0",
+  "purpose": "Conservar el estado verificable del pipeline de publicación de Universe Sent Me después del P0, separando publicación real, programación futura, reconciliación, Instagram y materialización de snapshots.",
+  "status": "Active",
+  "created": "2026-08-25",
+  "updated": "2026-08-25",
+  "version": "1.0",
+  "author": "Manus AI (CGO)",
+  "organization": "Operations/Research/",
+  "related_documents": [
+    "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md",
+    "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md",
+    "Operations/Research/2026-08-25_Instagram_Route_Smoke_Test.json",
+    "Operations/Research/2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json",
+    "Operations/Research/Metrics_Snapshot_Log.csv",
+    "Operations/Automation/record_metrics_snapshot.py",
+    "Operations/Automation/validate_metrics_snapshot_ledger.py"
+  ],
+  "observation_scope": {
+    "mode": "read_only",
+    "content_published": false,
+    "content_modified": false,
+    "content_deleted": false,
+    "meta_health": {
+      "status": "PASS",
+      "identity_id": "2920605591459033",
+      "identity_name": "Fernando Gdlr",
+      "page_id": "1036844829507460",
+      "page_name": "Universe Sent Me"
+    }
+  },
+  "meta_scheduled_queue": {
+    "status": "PASS",
+    "rows_returned": 33,
+    "all_is_published_false": true,
+    "scheduled_range_utc": {
+      "earliest": "2026-08-25T15:00:00Z",
+      "latest": "2026-08-31T03:00:00Z"
+    },
+    "scheduled_range_america_matamoros": {
+      "earliest": "2026-08-25T10:00:00-05:00",
+      "latest": "2026-08-30T22:00:00-05:00"
+    },
+    "pagination_present": true,
+    "api_error": null
+  },
+  "publication_log": {
+    "rows": 121,
+    "facebook_rows": 107,
+    "instagram_rows": 14,
+    "states": {
+      "Publicado": 43,
+      "Programada": 61,
+      "Programada_Meta_Verificado": 7,
+      "Eliminada_Manualmente": 4,
+      "Cancelada_Autorizada": 3,
+      "Cancelada_Por_Sustitucion": 3
+    },
+    "meta_post_ids": 107,
+    "permalinks": 114
+  },
+  "schedule_reconciliation": {
+    "effective_local_scheduled_rows": 59,
+    "future_effective_local_scheduled_rows": 33,
+    "past_or_due_effective_local_scheduled_rows": 26,
+    "cancelled_ids_excluded_from_active_set": 6,
+    "future_ids_in_meta_queue": 33,
+    "future_ids_missing_from_meta_queue": 0,
+    "queue_ids_missing_from_local_effective_set": 0,
+    "verdict": "PASS_ACTIVE_FUTURE_QUEUE_RECONCILED"
+  },
+  "facebook_feed_reconciliation": {
+    "pages_read": 2,
+    "feed_rows_read": 500,
+    "feed_is_published_true": 500,
+    "local_ids_not_in_queue_or_feed": 6,
+    "not_in_current_evidence_are_cancelled": 6,
+    "verdict": "PASS_REMAINING_GAPS_DOCUMENTED_AS_CANCELLED"
+  },
+  "instagram": {
+    "status": "PASS_READ_ONLY",
+    "active_account": "@universe_sent_me_0326",
+    "instagram_business_id": "27878406895132242",
+    "followers_count": 44,
+    "media_count": 473,
+    "publishing_quota_usage": "0/100",
+    "account_info_read": true,
+    "post_list_read": true,
+    "posts_read_in_control": 5,
+    "publication_test_performed": false
+  },
+  "ledgers": {
+    "publication_log_validation": "PASS",
+    "experiment_log_rows": 114,
+    "experiment_24h_filled": 0,
+    "experiment_72h_filled": 0,
+    "community_log_rows": 549,
+    "community_log_validation": "PASS",
+    "metrics_snapshot_log": {
+      "file_exists": true,
+      "header_schema_valid": true,
+      "rows": 0,
+      "validator": "PASS",
+      "production_e0_rows": 0,
+      "historical_backfill": false
+    }
+  },
+  "runtime_gaps": [
+    "record_metrics_snapshot.py is ready but is not yet called by the real publisher after is_published=true.",
+    "No production E0 exists yet; the first one must come from a new publication and must not be reconstructed historically.",
+    "No recurring E24/E72 worker or schedule is active.",
+    "Publication_Log and ExperimentLog are not automatically updated from Metrics_Snapshot_Log.",
+    "The active future queue is reconciled, but 26 past-or-due local scheduled records remain historical state and should be closed by the operational reconciliation process rather than re-created."
+  ],
+  "verdict": "PIPELINE_OPERATIONAL_SUPERVISED_POST_P0",
+  "maturity": "3/5",
+  "interpretation": "The publishing path is functioning for Facebook scheduling and read-only Instagram verification. The active future queue is fully reconciled with Meta, while the learning loop remains incomplete because no production snapshot has been captured and the E0 hook and E24/E72 worker are not yet wired into the runtime."
+}

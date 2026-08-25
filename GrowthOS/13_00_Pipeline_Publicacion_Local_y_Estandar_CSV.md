@@ -1,6 +1,6 @@
 ---
 estado: Active
-version: "1.51"
+version: "1.52"
 ultima_revision: 2026-08-25
 dependencias:
   - GrowthOS/01_00_Arquitectura_Calendario_Escalable.md
@@ -16,9 +16,9 @@ dependencias:
 **Estado:** Active
 **Fecha de creación:** 2026-08-12
 **Última actualización:** 2026-08-25
-**Versión:** 1.51
+**Versión:** 1.52
 **Autor:** Claude, documentando información provista por Fernando; actualización de Manus AI
-**Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `05_03_Calendario_10_16_Agosto.md` (y calendarios futuros), `Operations/Research/2026-08-15_Publication_Log.csv`, `Operations/Research/2026-08-15_ExperimentLog.csv`, `GrowthOS/00_01_Changelog_GrowthOS.md`, `GrowthOS/00_Índice.md`, `Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md`, `Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json`, `Operations/Research/2026-08-25_Instagram_Route_Smoke_Test.json`, `Operations/Research/2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json`, `Operations/Automation/record_metrics_snapshot.py`, `Operations/Automation/validate_metrics_snapshot_ledger.py`, `Operations/Research/Metrics_Snapshot_Log.csv`
+**Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `05_03_Calendario_10_16_Agosto.md` (y calendarios futuros), `Operations/Research/2026-08-15_Publication_Log.csv`, `Operations/Research/2026-08-15_ExperimentLog.csv`, `GrowthOS/00_01_Changelog_GrowthOS.md`, `GrowthOS/00_Índice.md`, `Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md`, `Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json`, `Operations/Research/2026-08-25_Instagram_Route_Smoke_Test.json`, `Operations/Research/2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json`, `Operations/Automation/record_metrics_snapshot.py`, `Operations/Automation/validate_metrics_snapshot_ledger.py`, `Operations/Research/Metrics_Snapshot_Log.csv`, `Operations/Research/2026-08-25_Pipeline_Post_P0_Review_Evidence.json`, `Operations/Research/2026-08-25_Revision_Pipeline_Publicacion_Post_P0.md`
 
 ---
 
@@ -122,11 +122,17 @@ El 2026-08-14 se creó y activó el conector **Universe Sent Me Meta API**, una 
 
 El token debe rotarse si se sospecha exposición, si cambia el administrador o si Meta lo invalida. Al actualizarlo, debe modificarse únicamente la credencial almacenada en el conector; este documento debe conservar solo el nombre de la variable y no el valor secreto. Los endpoints y campos no deben asumirse: deben comprobarse en la documentación oficial de [Graph API][1] y [Pages API][2], especialmente porque Meta puede retirar o cambiar métricas y permisos por versión.
 
-## 6. Estado de configuración observado el 24 de agosto de 2026
+## 6. Estado de configuración observado el 24 de agosto de 2026 (corte previo al P0)
 
-La auditoría de conectividad separa el hecho histórico de que el pipeline se haya probado del estado actual de la configuración. La Custom API `Universe Sent Me Meta API` existe con credencial cifrada, pero aparece deshabilitada (`enabled=false`). El conector de Instagram está habilitado y ahora tiene seleccionada la cuenta `@universe_sent_me_0326`; el smoke test de lectura respondió correctamente. La consulta de Meta Ads Manager devuelve `not connected`, y Google Calendar no puede listar calendarios con los scopes actuales. El estado completo, incluyendo Make, Google Workspace, scheduling y validadores, queda en `Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json`; la evidencia de la selección y prueba de Instagram queda en `Operations/Research/2026-08-25_Instagram_Route_Smoke_Test.json`.
+La auditoría de conectividad del 24 de agosto registró un corte previo al P0. En ese momento, la Custom API `Universe Sent Me Meta API` aparecía deshabilitada (`enabled=false`) y la cuenta Instagram aún no estaba seleccionada. Ese estado histórico queda conservado en `Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json`; la evidencia posterior se documenta en la sección 6.1.
 
 Esta observación no invalida las publicaciones históricas verificadas ni autoriza publicaciones nuevas. La cuenta Instagram activa ya fue seleccionada y verificada en lectura; la nueva operación debe comenzar por un preflight de conectores: `enabled` no equivale a `connected`, `connected` no equivale a `readable` y `readable` no equivale a `operational` para Universe Sent Me. El módulo P0 de snapshots está listo para registrar E0/E24/E72, pero el pipeline no debe presentarse como extremo a extremo reproducible hasta integrar el hook al publicador y generar la primera captura productiva.
+
+### 6.1 Revisión post-P0 — 25 de agosto de 2026
+
+La revisión posterior al P0 confirmó que la Custom API `Universe Sent Me Meta API` está habilitada en la configuración actual y que su health check `/me` responde correctamente. También confirmó que la cola `scheduled_posts` contiene 33 posts futuros, todos con `is_published=false`, desde el 25 de agosto a las 10:00 hasta el 30 de agosto a las 22:00 en `America/Matamoros`. Los 33 IDs futuros efectivos del `Publication_Log` coinciden con los 33 IDs de Meta; no hay faltantes en ninguna dirección. Se excluyeron seis IDs cancelados porque el ledger contiene sus eventos correctivos y sustituciones.
+
+El `Publication_Log` conserva 121 filas, el `ExperimentLog` 114 y el ledger comunitario 549. El `Metrics_Snapshot_Log.csv` sigue con solo encabezado y su validador devuelve `PASS`; no existe todavía un E0 productivo, y las columnas `Interacciones_24h`/`Interacciones_72h` siguen vacías. Instagram responde en lectura con `@universe_sent_me_0326`, 44 seguidores, 473 medios y cuota `0/100`. La evidencia estructurada y el informe completo están en `Operations/Research/2026-08-25_Pipeline_Post_P0_Review_Evidence.json` y `Operations/Research/2026-08-25_Revision_Pipeline_Publicacion_Post_P0.md`.
 
 ## 7. Pendientes de definición (no resueltos en esta sesión)
 

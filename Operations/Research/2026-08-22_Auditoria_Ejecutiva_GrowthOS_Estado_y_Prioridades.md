@@ -5,7 +5,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-22
 **Última actualización:** 2026-08-25
-**Versión:** 1.2
+**Versión:** 1.3
 **Autor:** Manus AI (CGO)
 **Organización:** `Operations/Research/`
 **Documentos relacionados:** `GrowthOS/00_Índice.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/01_02_Content_Backlog.md`, `GrowthOS/01_04_Production_Queue.md`, `GrowthOS/07_00_Registro_Maestro_Reels.md`, `Operations/Research/2026-08-22_Analisis_Semanal_20260816_20260822.md`, `Operations/Research/2026-08-22_Auditoria_Monetizacion_Afiliados_MercadoLibre.md`, `Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json`, `Operations/Research/2026-08-23_Reporte_Rendimiento_Engagement_Facebook.md`, `Operations/Research/2026-08-25_Instagram_Route_Smoke_Test.json`, `Operations/Research/2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json`, `Operations/Automation/record_metrics_snapshot.py`, `Operations/Automation/validate_metrics_snapshot_ledger.py`, `Operations/Research/Metrics_Snapshot_Log.csv`
@@ -14,7 +14,7 @@
 
 ## 1. Veredicto ejecutivo
 
-El Growth OS está **operativo, documentado y con evidencia de ejecución real**, pero todavía no es un sistema de optimización cerrado ni autoejecutable. Facebook funciona como carril principal de publicación y comunidad; los ledgers y validadores pasan controles internos; GitHub permanece sincronizado con la rama `main` remota; y la ruta Instagram ya está restaurada para lecturas con la cuenta USM seleccionada. La conectividad restante no es homogénea: la Custom API de Meta continúa deshabilitada, Meta Ads responde como no conectado, Google Calendar carece de scopes suficientes y no existe un schedule recurrente activo. [1] [2] [3]
+El Growth OS está **operativo, documentado y con evidencia de ejecución real**, pero todavía no es un sistema de optimización cerrado ni autoejecutable. Facebook funciona como carril principal de publicación y comunidad; los ledgers y validadores pasan controles internos; GitHub permanece sincronizado con la rama `main` remota; y la ruta Instagram ya está restaurada para lecturas con la cuenta USM seleccionada. La conectividad restante no es homogénea: la Custom API de Meta está habilitada y su health check responde, Meta Ads continúa como no conectado, Google Calendar carece de scopes suficientes y no existe un schedule recurrente activo. La cola futura de Facebook sí está reconciliada con Meta. [1] [2] [3]
 
 El cuello de botella no es producir más documentación. Es **cerrar la transición desde publicación verificada hacia medición comparable y decisión de growth**. El `Publication_Log` ya conserva 121 hechos, pero `Interacciones_24h` y `Interacciones_72h` siguen vacíos en 121/121 filas; `Metrics_Snapshot_Log.csv` ya existe con el esquema P0, aunque todavía no contiene capturas productivas; y el diseño E0/E24/E72 permanece en `Review`. El sistema aprende mediante cortes observados, lifetime y análisis manuales, pero todavía no actualiza de forma automática una cohorte comparable después de cada publicación. [4] [5] [7]
 
@@ -33,7 +33,7 @@ El cuello de botella no es producir más documentación. Es **cerrar la transici
 | TikTok / YouTube | **En espera selectiva** | Existen relaciones históricas y fuentes analíticas documentadas. | No hay un carril de publicación ni una cohorte reciente comparable en el sistema auditado. | P1 |
 | Afiliados Mercado Libre | **Ámbar / Review** | Hay 13 asignaciones, etiquetas individuales y 11 snapshots documentados. | El corte más reciente conserva 3 clics, 0 compradores, 0 órdenes y $0 MXN; falta granularidad estable por etiqueta y superficie. | P1 |
 | Comunidad | **Activo y dinámico con gates humanos** | El ledger tiene 448 filas únicas; los validadores pasan y los lotes de respuestas recientes fueron verificados por Meta. | La respuesta sigue dependiendo de autorización humana y algunas verificaciones históricas devuelven 403/400. | P1 |
-| Automatización y scheduling | **No operativo como sistema recurrente** | Make responde, pero la documentación lo dejó fuera del flujo; existen playbooks y scripts reproducibles. | No hay schedule activo en la sesión y no existe worker E0/E24/E72; las cadencias son instrucciones, no ejecución autónoma. | P0 |
+| Automatización y scheduling | **No operativo como sistema recurrente** | Make responde, la ruta Meta está activa y existen playbooks y scripts reproducibles. | No hay schedule activo en la sesión ni worker E0/E24/E72; las cadencias y cierres siguen dependiendo de ejecución controlada. | P0 |
 | Paid growth | **No verificado / fuera de operación actual** | El conector Meta Ads Manager está habilitado en configuración. | La llamada real devuelve `not connected` y no hay evidencia de campañas, gasto o resultados auditables. Debe conectarse o declararse fuera de alcance. | P1 |
 | Producción nueva | **Activo, con gates humanos** | MEME-CAD-001–005 y los lotes recientes tienen briefs, aprobaciones y ejecución documentada. | La siguiente cohorte necesita hipótesis, control y aprobación antes de programarse; no hace falta abrir otra auditoría creativa amplia. | P1 |
 | Histórico junio/julio | **Fundación suficiente para decisiones** | Hay comparativas, aliases, top posts y familias integrados. | Permanece deuda residual de casos sin asset/taxonomía, sin bloquear la operación diaria. | P2 |
@@ -45,7 +45,7 @@ La conectividad debe distinguirse entre **habilitada en configuración**, **resp
 | Componente | Estado observado | Evidencia | Lectura CGO |
 |---|---|---|---|
 | GitHub | **Operativo** | `main` local y remoto coinciden en `80628f4`; working tree limpio tras retirar artefactos temporales. | Fuente oficial de verdad y único destino permanente de la auditoría. |
-| Meta Graph API USM | **Deshabilitado actualmente** | Existe `Universe Sent Me Meta API` con credencial cifrada, pero `enabled=false`. | La ruta está documentada y fue usada históricamente, pero no está lista para una nueva ejecución desde la configuración actual. |
+| Meta Graph API USM | **Habilitado y legible** | La Custom API responde en health check con la identidad Meta esperada; la Página y la cola programada pudieron consultarse. | La ruta de lectura/programación está activa; el hook E0 posterior a publicación todavía no está integrado. |
 | Instagram | **Habilitado y cuenta activa seleccionada** | `activeAccountUid=d8d075f0-7fd9-4a23-a501-6cefc74dee6b`; `get_account_info` y `get_post_list` respondieron correctamente. | Falta una publicación de prueba solo si Fernando la solicita explícitamente; la ruta de lectura ya está verificada. |
 | Meta Ads Manager | **No conectado** | La consulta de cuentas devolvió `Meta Ads Manager connector not connected`. | No hay base para afirmar que paid growth esté funcionando. |
 | Make | **Respondiente, pero histórico** | `users_me` y `organizations_list` devolvieron datos; el repo lo excluye del flujo activo. | Conectado no significa que automatice USM. No debe reactivarse sin blueprint, ownership y criterio de ejecución. |
@@ -152,7 +152,7 @@ El próximo cambio estratégico solo debe ejecutarse cuando exista una pregunta 
 
 ### Documentos que requieren coherencia posterior
 
-La implementación P0 ya actualizó `GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y el diseño E0/E24/E72. La siguiente ronda debe integrar el hook al publicador, generar la primera captura productiva y decidir el worker recurrente; el diseño completo permanece en `Review` hasta que existan esos casos reales. El índice y el changelog deben apuntar también a las evidencias del 25 de agosto.
+La implementación P0 ya actualizó `GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y el diseño E0/E24/E72. La revisión post-P0 del 25 de agosto confirmó 33 posts futuros reconciliados entre Meta y `Publication_Log`; la siguiente ronda debe integrar el hook al publicador, generar la primera captura productiva y decidir el worker recurrente. El índice y el changelog deben apuntar también a `Operations/Research/2026-08-25_Revision_Pipeline_Publicacion_Post_P0.md` y su evidencia JSON.
 
 ## Referencias
 
