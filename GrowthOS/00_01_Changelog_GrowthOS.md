@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.54
+**Versión:** 4.55
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.55.00] — 2026-08-25 (Fernando/Manus): Firma TikTok para Web/Desktop URL publicada y validada en la raíz pública.** Al configurar la URL oficial de Web/Desktop con `https://iomarketing09-sys.github.io/usm-metrics-public/`, TikTok emitió el archivo `tiktokxnmggjEzrUJrGftPCNm8hgWVRKCBDiWw.txt`. Se publicó sin modificación en la raíz del host bajo `https://iomarketing09-sys.github.io/usm-metrics-public/tiktokxnmggjEzrUJrGftPCNm8hgWVRKCBDiWw.txt`; el build `0e331a4` quedó `built`. La validación independiente confirmó HTTP `200`, `Content-Type: text/plain; charset=utf-8` y contenido byte a byte idéntico al adjunto. Las firmas de Terms of Use, Privacy Policy y Web/Desktop URL están listas. Pendiente únicamente: pulsar `Verify` en cada bloque y registrar el resultado. No se tocaron Wix, DNS, tokens, métricas ni infraestructura de otras marcas. Documento actualizado: `Operations/Automation/2026-08-25_Textos_Publicos_Terminos_Privacidad_App_Metricas_USM.md` v1.7.
 
 - **[4.54.00] — 2026-08-25 (Fernando/Manus): Firma TikTok de Privacy Policy publicada y validada; ambos bloques listos para Verify.** Fernando entregó el archivo `tiktokSLf6NLRYPnK9WU9RG666hrZmHtKqELbe.txt` emitido para Privacy Policy. Se publicó sin modificación bajo `https://iomarketing09-sys.github.io/usm-metrics-public/privacy/tiktokSLf6NLRYPnK9WU9RG666hrZmHtKqELbe.txt`; el build `25c87b3` quedó `built`. La validación independiente confirmó HTTP `200`, `Content-Type: text/plain; charset=utf-8` y contenido byte a byte idéntico al adjunto. La firma de Terms of Use ya tenía la misma validación, por lo que TikTok puede verificar ambos bloques. Pendiente únicamente: pulsar `Verify` en cada bloque y registrar el resultado. No se tocaron Wix, DNS, tokens, métricas ni infraestructura de otras marcas. Documento actualizado: `Operations/Automation/2026-08-25_Textos_Publicos_Terminos_Privacidad_App_Metricas_USM.md` v1.6.
 

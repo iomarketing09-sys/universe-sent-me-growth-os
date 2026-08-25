@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "4.2"
+version: "4.3"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -40,7 +40,8 @@ organization: "GrowthOS"
 - [x] Confirmar el canal público de contacto autorizado para las páginas de términos y privacidad: `io_marketin_09@gmail.com`; la versión desplegada fue verificada.
 - [x] Sustituir las URLs Wix por las URLs públicas de Pages dentro de TikTok y publicar la firma de verificación de Terms of Use en su ruta exacta; HTTP `200`, tipo `text/plain` y contenido cotejado contra el archivo recibido.
 - [x] Recibir la firma de verificación de Privacy Policy que TikTok generó para el prefijo GitHub Pages, publicarla bajo el directorio exacto solicitado y validar HTTP `200`, tipo `text/plain` y contenido idéntico antes de pulsar `Verify`.
-- [ ] Pulsar `Verify` en TikTok para Terms of Use y Privacy Policy, registrar el resultado individual de cada bloque y no configurar productos o credenciales OAuth hasta que ambas validaciones estén confirmadas.
+- [x] Recibir, publicar y validar la firma de TikTok para la Web/Desktop URL principal en la raíz de GitHub Pages; HTTP `200`, tipo `text/plain` y contenido idéntico al archivo recibido.
+- [ ] Pulsar `Verify` en TikTok para Terms of Use, Privacy Policy y Web/Desktop URL, registrar el resultado individual de cada bloque y no configurar productos o credenciales OAuth hasta que todas las validaciones estén confirmadas.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
 - [ ] Crear una app de escritorio de TikTok con los scopes oficiales mínimos `user.info.basic` y `video.list`, callback local con PKCE, más un cliente OAuth local de Google con scopes de lectura para YouTube Data, YouTube Analytics y monetización.
 - [ ] Reemplazar la consulta de Windsor.ai por scripts locales de TikTok y YouTube antes del fin del Trial, manteniendo Facebook e Instagram en sus rutas existentes.
