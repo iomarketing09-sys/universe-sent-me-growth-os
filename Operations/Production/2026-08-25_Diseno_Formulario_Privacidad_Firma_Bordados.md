@@ -4,7 +4,7 @@ purpose: "Comparar rutas seguras para recibir consultas del sitio y definir los 
 status: Review
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.2"
+version: "1.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-24_Borrador_Aviso_Privacidad_Firma_Bordados.md"
@@ -46,6 +46,15 @@ La Ley Federal de Protección de Datos Personales en Posesión de los Particular
 
 La implementación debe colocar junto al botón de envío un enlace visible al aviso simplificado y un enlace al aviso integral. El texto se elaborará con los datos reales del responsable y deberá revisarse por el cliente o asesor legal antes de activarse. Como contenido mínimo, debe declarar que los datos se usan para atender, dar seguimiento y, cuando proceda, cotizar la solicitud; identificar al responsable y un correo o medio ARCO; explicar el plazo de conservación; y revelar los proveedores que procesen la información en nombre del responsable.
 
+### 3.1 Confirmaciones operativas — 2026-08-24
+
+| Punto | Confirmación recibida | Aplicación documentada |
+| :--- | :--- | :--- |
+| Canal de privacidad y ARCO | `firmabordados@yahoo.com` | Será el correo indicado para consultas de privacidad, limitación de uso, revocación y solicitudes ARCO. |
+| Atención del buzón | Firma Bordados asignará a una persona responsable de revisar esos correos | No se nombra a la persona públicamente; el equipo debe asegurar continuidad de atención. |
+| Conservación | Se solicita un plazo razonable y practicable | Se propone conservar consultas **hasta 12 meses desde la última interacción** y después eliminarlas o disociarlas, salvo que se formalice una relación comercial o exista una obligación legal/contractual aplicable. La revisión legal debe validar este criterio antes de publicarlo. |
+| Página del aviso | Se confirma crearla cuando exista un formulario | El aviso integral se publicará como página propia antes de activar la captura de datos; por ahora el correo guiado continúa sin backend. |
+
 > **Regla operativa:** el aviso no debe afirmar que no existen transferencias o procesadores si se usa un proveedor de formularios, correo o antispam. Esa relación debe identificarse correctamente antes de publicar el formulario.
 
 ## 4. Alternativas técnicas
@@ -71,12 +80,22 @@ La ruta recomendada es **Pages Function + Turnstile + proveedor de correo verifi
 
 Si el dominio se transfiere a Cloudflare DNS como parte de la migración final, se puede reevaluar Cloudflare Email Service. Si el cliente necesita el formulario antes de ese cambio, deberá aprobar expresamente un proveedor gestionado y sus condiciones de tratamiento de datos.
 
+### Propuesta técnica recomendada — sin activación todavía
+
+| Momento | Ruta propuesta | Por qué | Condición antes de ejecutar |
+| :--- | :--- | :--- |
+| **Ahora** | Mantener correo guiado y finalizar/revisar el aviso de privacidad | No captura datos en el sitio, no exige secretos ni DNS y conserva WhatsApp como alternativa | Publicar el aviso solo cuando la empresa apruebe la versión final. |
+| **Si se requiere formulario antes de mover DNS** | Servicio gestionado de formularios, evaluado y aprobado por Firma Bordados | Evita construir un backend propio antes de disponer de un dominio remitente verificado | Aprobación explícita del proveedor, condiciones de tratamiento, retención, destinatario y antispam. |
+| **Después de una migración aprobada de DNS/dominio** | Pages Function + Turnstile + Cloudflare Email Service | Mantiene la validación y el reenvío de correo dentro de la plataforma Cloudflare | Cloudflare DNS, dominio incorporado al servicio, widget Turnstile, secretos y pruebas de entrega aprobadas.[3] [5] |
+
+La recomendación es **no sustituir el correo guiado todavía**. Cuando exista un formulario, debe recibir solo nombre, correo, empresa/teléfono opcionales y requerimiento; añadir honeypot, límites de longitud y tasa, y verificar Turnstile del lado del servidor en cada envío. El widget por sí solo no protege el endpoint; la validación `Siteverify` en servidor es obligatoria.[5] Resend no es la ruta preferida en la configuración actual porque exige un dominio registrado/verificado y registros DNS; no se tocarán DNS ni dominio sin una autorización separada.[2]
+
 ## 6. Decisiones necesarias antes de activar servicios
 
 1. Confirmar la **razón social**, únicamente si es distinta de Firma Bordados, y que el domicilio del negocio es el medio apropiado para el aviso y solicitudes ARCO.
-2. Confirmar el correo destinatario y las personas autorizadas para leer y responder consultas.
-3. Aprobar finalidades, campos, periodo de conservación y medio para solicitudes ARCO.
-4. Elegir: proveedor gestionado temporal o Function propia después de la migración/DNS.
+2. Confirmar el correo destinatario y las personas autorizadas para leer y responder consultas. **Confirmado:** `firmabordados@yahoo.com` y una persona responsable interna sin nombre público.
+3. Aprobar finalidades, campos, periodo de conservación y medio para solicitudes ARCO. **Propuesta documentada:** doce meses desde la última interacción, sujeta a revisión legal.
+4. Elegir: proveedor gestionado temporal o Function propia después de la migración/DNS. **Recomendación actual:** conservar correo guiado hasta tomar esa decisión.
 5. Aprobar la creación de widget Turnstile, secretos y cualquier cuenta externa necesaria.
 6. Definir si se medirán solo eventos técnicos agregados o se instalará analítica, con su aviso correspondiente.
 
