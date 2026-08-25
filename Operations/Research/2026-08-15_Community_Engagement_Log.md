@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "6.0"
+version: "6.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -867,3 +867,14 @@ Se conservan dos alternativas: una cadencia mínima de 17:30 y 22:00 para reduci
 La comparación debe usar como cierre la latencia de detección, comentarios raíz, réplicas, tasa de propuesta, tasa de no acción, concentración por publicación y, cuando exista respuesta autorizada, cobertura, continuación y latencia de respuesta. **Estado:** Review. Fernando debe elegir una opción antes de automatizarla.
 
 Documento canónico de la propuesta: `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, sección 24. Arquitectura alineada: `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, sección 24.
+
+
+## 28. Aprobación de cadencia focalizada de revisión — 25 de agosto de 2026
+
+Fernando aprobó la opción focalizada para una prueba de siete días: revisiones GET-only de Facebook a las **12:00, 17:30 y 21:30**, hora de `America/Matamoros`. La cadencia está aprobada como pauta operativa para organizar revisiones manuales y no como schedule automático.
+
+Cada corte debe usar el cursor incremental, recuperar únicamente el delta disponible, separar comentarios raíz de réplicas, clasificar propuestas y no acción, y medir latencia de detección, concentración por publicación y tasa de propuesta. Una lectura adicional queda reservada para bursts anómalos o solicitudes directas a la Página. No se recomienda polling horario permanente.
+
+**Estado:** Active como cadencia manual aprobada. **Límite:** no se activó automatización, no se modificó la cola y no se autorizaron publicaciones adicionales. La instrucción para activar cualquier tarea recurrente debe ser independiente y explícita.
+
+Fuente canónica: `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, sección 24. Arquitectura: `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, sección 24.

@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-25
-**Versión:** 3.30
+**Versión:** 3.31
 **Autor:** Manus AI (CGO); Sección 6 añadida por Claude
 **Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`, `../Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`, `../Operations/Research/2026-08-21_Julio_Expansion_Lote01_Analysis.md`, `../Operations/Research/2026-08-21_Expansion_Celdas_Comparables_Post_Julio_Lote01.json`, `../Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Findings.md`, `../Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md`, `../Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`, `../Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Audit.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Analysis.md`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Manual_Findings.md`, `../Operations/Research/2026-08-21_Junio_Caption_Reclassification_Impact.md`, `../Operations/Research/2026-08-21_Validacion_Cruzada_Hipotesis_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.md`, `../Operations/Research/2026-08-15_Community_Engagement_Log.md`, `../Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `../Operations/Research/2026-08-24_Facebook_Expanded_Audit_Reply_Proposals.md`
 
@@ -481,7 +481,7 @@ El conjunto mínimo para el reporte semanal será `Comentarios_Raiz`, `Replicas_
 
 ## 24. Cadencia propuesta para revisar comentarios de Facebook — 2026-08-25
 
-Esta es una propuesta operativa en estado **Review**; no crea un schedule ni autoriza publicaciones. Se basa en el último burst observado de 101 comentarios, concentrado entre la tarde y la noche, y en la cadencia vigente de publicaciones de Facebook. Todas las horas se expresan en `America/Matamoros`.
+La cadencia focalizada queda aprobada como pauta operativa durante una prueba de siete días; no crea un schedule ni autoriza publicaciones. Se basa en el último burst observado de 101 comentarios, concentrado entre la tarde y la noche, y en la cadencia vigente de publicaciones de Facebook. Todas las horas se expresan en `America/Matamoros`.
 
 | Opción | Horarios y frecuencia | Ventaja | Trade-off | Coste y complejidad |
 |---|---|---|---|---|
@@ -493,4 +493,4 @@ Esta es una propuesta operativa en estado **Review**; no crea un schedule ni aut
 
 La frecuencia no debe evaluarse por cantidad de respuestas publicadas. Los indicadores de cierre son: latencia de detección, comentarios raíz nuevos, proporción de réplicas, tasa de propuesta editorial, tasa de no acción, concentración por publicación y —solo cuando exista una respuesta autorizada— cobertura, continuación y latencia de respuesta. No se recomienda revisar cada hora mediante sesiones completas ni activar una tarea recurrente sin confirmar primero la opción y el canal de entrega.
 
-**Estado:** Review. **Aprobación requerida:** Fernando debe elegir una opción antes de crear cualquier automatización. **Documentos relacionados:** `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `Operations/Research/2026-08-15_Community_Engagement_Log.md`, `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+**Estado:** Active para la cadencia focalizada aprobada. **Aprobación registrada:** Fernando eligió esta opción el 2026-08-25. No se activó una tarea automática; cualquier automatización requiere una instrucción adicional. **Documentos relacionados:** `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `Operations/Research/2026-08-15_Community_Engagement_Log.md`, `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

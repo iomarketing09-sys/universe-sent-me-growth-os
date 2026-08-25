@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "6.5"
+version: "6.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -1376,3 +1376,14 @@ Con base en los bursts observados, la cadencia recomendada es una prueba de **tr
 Cada revisión debe recuperar el delta con cursor, separar raíces de réplicas, clasificar propuestas y no acción, y registrar latencia de detección. Las lecturas adicionales se reservan para bursts anómalos o solicitudes directas a la Página. La cadencia está en `Review`: Fernando debe elegir una opción antes de crear cualquier automatización recurrente. La recomendación no autoriza publicaciones ni respuestas automáticas.
 
 Fuente canónica: `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, sección 24. Arquitectura de vistas: `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, sección 24.
+
+
+## 44. Cadencia focalizada aprobada — 25 de agosto de 2026
+
+Fernando aprobó la opción focalizada para una prueba de siete días: revisiones GET-only a las **12:00, 17:30 y 21:30**, hora de `America/Matamoros`. La aprobación organiza la operación manual y no constituye autorización para crear un schedule automático.
+
+Cada revisión debe usar el cursor incremental, recuperar el delta, distinguir raíces y réplicas, clasificar propuestas/no acción y medir la latencia de detección. Se permite una lectura adicional ante un burst anómalo o una solicitud directa a la Página. No se recomienda polling horario permanente.
+
+**Estado:** Active como cadencia manual aprobada. **Límite:** no se activó una automatización, no se modificó la cola y no se autorizaron respuestas adicionales. Cualquier automatización futura requiere una instrucción explícita separada y una ruta técnica aprobada.
+
+Fuente canónica: `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, sección 24. Arquitectura: `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, sección 24.

@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "2.57"
+version: "2.58"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -473,8 +473,8 @@ Las vistas derivadas no deben escribirse de regreso en la fila factual del comen
 
 ## 24. Cadencia propuesta para revisiones de comunidad — 2026-08-25
 
-La cadencia recomendada para Facebook queda en estado **Review** y no activa ningún schedule. La opción focalizada propone tres lecturas GET-only por día en `America/Matamoros`: **12:00, 17:30 y 21:30**, usando un cursor incremental y conservando el alcance de publicaciones, fecha de extracción y denominadores. La opción mínima contempla 17:30 y 22:00; la opción intensiva solo se usaría como prueba temporal de siete días con 12:00, 16:00, 19:30 y 22:30.
+La cadencia focalizada para Facebook queda aprobada como pauta operativa durante una prueba de siete días y no activa ningún schedule. La opción focalizada propone tres lecturas GET-only por día en `America/Matamoros`: **12:00, 17:30 y 21:30**, usando un cursor incremental y conservando el alcance de publicaciones, fecha de extracción y denominadores. La opción mínima contempla 17:30 y 22:00; la opción intensiva solo se usaría como prueba temporal de siete días con 12:00, 16:00, 19:30 y 22:30.
 
 Cada lectura produce una vista derivada, no una segunda fuente maestra: delta nuevo, raíces, réplicas, clasificación editorial, propuestas, no acción y concentración por publicación. La revisión no debe ejecutarse cada hora mediante sesiones completas. Una lectura adicional se reserva para bursts anómalos, solicitudes directas a la Página o una cola que supere claramente el patrón habitual.
 
-La propuesta completa está en `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, sección 24. Fernando debe elegir una opción antes de activar cualquier automatización; mientras no exista esa aprobación, la operación sigue siendo manual y bajo solicitud explícita.
+La propuesta completa está en `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, sección 24. Fernando eligió la opción focalizada el 2026-08-25. La operación sigue siendo manual; cualquier automatización requiere una instrucción adicional y una ruta técnica aprobada.
