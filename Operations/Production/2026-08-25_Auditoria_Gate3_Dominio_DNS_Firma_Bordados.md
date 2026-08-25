@@ -4,7 +4,7 @@ purpose: "Registrar el estado público de dominio y DNS, los riesgos, los datos 
 status: Review
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Evaluacion_Migracion_Wix_Hosting_IA.md"
@@ -29,8 +29,8 @@ organization: "Operations/Production"
 | `es` | CNAME a `cdn1.wixdns.net`; TTL 1 hora | Alias Wix actual. Se propone redirigirlo al dominio raíz en producción, sujeto a aprobación en el corte. |
 | `m` | CNAME a `www247.wixdns.net`; TTL 1 hora | Alias móvil Wix actual. Se propone redirigirlo al dominio raíz en producción, sujeto a aprobación en el corte. |
 | MX/TXT/AAAA en el apex | No hay registros en la zona Wix aportada | El cliente confirmó que no hay servicios ligados al dominio; no obstante, se conserva esta zona como referencia de reversión. |
-| Renovación del dominio | Io Marketing paga $470 MXN; fecha de renovación 19 de febrero | Incluir como partida externa anual y verificar el registrante público/autoridad antes de cualquier transferencia o cambio de cuenta. |
-| Registro del dominio | RDAP público muestra registro el 2026-02-19 y vencimiento el 2027-02-19 | Coincide con la fecha anual confirmada por Io Marketing; falta identificar por escrito quién figura como registrante y autoriza transferencias. |
+| Renovación del dominio | Io Marketing paga $470 MXN; fecha de renovación 19 de febrero | Incluir como partida externa anual. |
+| Registro del dominio | Io Marketing figura como registrante y autoridad autorizada para cambios; RDAP público muestra vencimiento el 2027-02-19 | Autoridad confirmada por Fernando; conservar evidencia operativa en el acuerdo administrado antes de una transferencia o cambio de cuenta. |
 
 ## 2. Riesgo principal y decisión técnica
 
@@ -42,7 +42,7 @@ Para servir el dominio raíz en Cloudflare Pages, la zona debe estar configurada
 
 | Pregunta o evidencia requerida | Cómo obtenerla sin compartir credenciales | Estado |
 | :--- | :--- | :--- |
-| Quién es el registrante y quién autoriza cambios de dominio | Confirmación escrita del cliente | Pendiente: Io Marketing paga renovación, pero el registrante aún no se ha identificado. |
+| Quién es el registrante y quién autoriza cambios de dominio | Io Marketing | Confirmado por Fernando. |
 | Fecha e importe de renovación del dominio y del plan Wix | Confirmación recibida: Io Marketing paga $470 MXN; renovación el 19 de febrero | Confirmado; falta separar el importe exacto de cualquier plan Wix si sigue activo antes del corte. |
 | Inventario completo de zona DNS | Lista recibida desde Wix con A, CNAME y NS; TTL de 1 hora para A/CNAME y 1 día para NS | Confirmado para la zona reportada. |
 | Servicios conectados al dominio | Cliente confirma que no hay servicios ligados al dominio | Confirmado. |
@@ -67,11 +67,11 @@ No se debe reducir ni cancelar Wix hasta completar un periodo de estabilidad aco
 | Criterio | Estado |
 | :--- | :--- |
 | Inventario público de DNS | Completado de forma pasiva |
-| Control de registrante, renovación y facturación | Renovación confirmada: Io Marketing paga $470 MXN el 19 de febrero; registrante pendiente |
+| Control de registrante, renovación y facturación | Confirmado: Io Marketing es registrante, autoridad de cambios y pagador de $470 MXN el 19 de febrero |
 | Zona DNS completa y dependencias | Confirmada por el cliente: A/CNAME/NS reportados y sin servicios ligados al dominio |
 | Aprobación de cambio de nameservers/DNS | No solicitada; bloqueada |
 | Plan de reversión documentado | Preparado con nameservers y registros Wix confirmados |
-| Gate 3 listo para corte | **No** — falta identificar registrante/autoridad y autorizar explícitamente el cambio de nameservers |
+| Gate 3 listo para corte | **Listo documentalmente** — el cambio de nameservers sigue bloqueado hasta una aprobación explícita de corte |
 
 ## Referencias
 
