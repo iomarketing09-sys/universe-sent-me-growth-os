@@ -4,7 +4,7 @@ purpose: "Comparar rutas seguras para recibir consultas del sitio y definir los 
 status: Review
 created: 2026-08-25
 updated: 2026-08-24
-version: "1.5"
+version: "1.6"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-24_Borrador_Aviso_Privacidad_Firma_Bordados.md"
@@ -90,6 +90,21 @@ Si el dominio se transfiere a Cloudflare DNS como parte de la migración final, 
 
 La recomendación es **no sustituir el correo guiado todavía**. Cuando exista un formulario, debe recibir solo nombre, correo, empresa/teléfono opcionales y requerimiento; añadir honeypot, límites de longitud y tasa, y verificar Turnstile del lado del servidor en cada envío. El widget por sí solo no protege el endpoint; la validación `Siteverify` en servidor es obligatoria.[5] Resend no es la ruta preferida en la configuración actual porque exige un dominio registrado/verificado y registros DNS; no se tocarán DNS ni dominio sin una autorización separada.[2]
 
+### Comparación actual de costo, proveedor y privacidad — 2026-08-24
+
+> Los precios siguientes son tarifas públicas en **USD**, sujetas a impuestos, tipo de cambio y ajustes del proveedor. No constituyen una autorización de compra ni una estimación garantizada. Los equivalentes anuales son una multiplicación de la tarifa mensual pública, no un precio anual contratado.
+
+| Ruta | Costo publicado | Equivalente anual orientativo | Requisitos técnicos | Privacidad y antispam | Viabilidad con las restricciones actuales |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Correo guiado actual | Sin cargo adicional de proveedor | USD 0 | `mailto:`; el visitante pulsa Enviar en su cliente | El sitio no recibe ni almacena datos; aviso actual ya cubre el flujo | **Activa y recomendada mientras funcione** |
+| Formspree gestionado | Gratis hasta 50 envíos/mes para pruebas; Personal USD 10/mes por 200 envíos; Professional USD 20/mes por 2,000 envíos.[6] | USD 0 / 120 / 240, respectivamente | Cuenta de Formspree y endpoint del formulario; no exige migrar DNS para enviar al buzón existente | Formspree recibe y archiva consultas; el aviso debe nombrarlo como encargado y reflejar retención. Ofrece filtrado básico, reCAPTCHA, honeypot y restricción por dominio; el control avanzado requiere Professional/Business.[6] [8] | **Posible solo con aprobación explícita de proveedor y condiciones de datos** |
+| Pages Function + Cloudflare Email Service | Workers Paid: mínimo USD 5/mes; 3,000 correos/mes incluidos y luego USD 0.35 por 1,000.[3] [9] | Desde USD 60 | Pages Function, Workers Paid, dominio incorporado a Cloudflare Email Service, destino verificado y Cloudflare DNS | Turnstile Free permite hasta 20 widgets y desafíos ilimitados; se debe validar en servidor. El aviso debe reflejar la Function, el manejo de errores y cualquier retención.[4] [5] [10] | **Bloqueada:** Email Service exige Cloudflare DNS y no se permite tocar DNS/nameservers sin autorización separada.[3] |
+| Pages Function + Resend | Resend Free: USD 0, hasta 3,000 correos/mes y 100/día; Pro USD 20/mes por 50,000 correos.[11] | USD 0 / 240, más cualquier costo de Function aplicable | Backend, secreto de API y dominio propio verificado en Resend | Resend actúa como encargado; el aviso debe declararlo y ajustar retención. Antispam sigue siendo responsabilidad de la Function: Turnstile validado en servidor, honeypot, límites de longitud/tasa y sin archivos inicialmente.[11] [12] | **Bloqueada:** Resend requiere verificar un dominio propio mediante DNS, que no se modificará sin autorización separada.[12] |
+
+La página de precios de Formspree muestra opciones de facturación mensual y anual, pero sus precios anuales no se exponen de forma estática en la fuente consultada; se deben confirmar en el checkout antes de pagar. Cloudflare Workers se cobra mensualmente; Resend reserva sus suscripciones anuales para Enterprise.[9] [13] No se recomienda asumir que el gasto será anual ni cargarlo contra el presupuesto del cliente sin revisar la pantalla de compra, impuestos y divisa.
+
+**Recomendación actual:** mantener correo guiado por USD 0 adicional. Si se requiere envío directo antes de una migración de DNS, evaluar Formspree primero en el plan Free con consultas sintéticas, sin archivos y con el aviso actualizado, pero solo después de aprobarlo expresamente como encargado de datos. Si más adelante se autoriza una migración de DNS, la opción de mayor control es Pages Function + Turnstile + Cloudflare Email Service; su costo base público sería USD 5/mes y no requiere introducir otro proveedor de envío.
+
 ## 6. Decisiones necesarias antes de activar servicios
 
 1. Confirmar la **razón social**, únicamente si es distinta de Firma Bordados, y que el domicilio del negocio es el medio apropiado para el aviso y solicitudes ARCO.
@@ -116,3 +131,19 @@ El borrador de aviso integral y simplificado se creó en `2026-08-24_Borrador_Av
 [4]: [Create a HTML form — Cloudflare Pages Docs](https://developers.cloudflare.com/pages/tutorials/forms/)
 
 [5]: [Protect your forms — Cloudflare Turnstile Docs](https://developers.cloudflare.com/turnstile/tutorials/login-pages/)
+
+[6]: [Formspree — planes y límites](https://formspree.io/plans)
+
+[7]: [Formspree — seguridad y privacidad](https://formspree.io/security/)
+
+[8]: [Formspree — prevención de spam](https://help.formspree.io/articles/troubleshooting/how-to-prevent-spam)
+
+[9]: [Cloudflare Email Service — precios](https://developers.cloudflare.com/email-service/platform/pricing/)
+
+[10]: [Cloudflare Turnstile — planes](https://developers.cloudflare.com/turnstile/plans/)
+
+[11]: [Resend — precios de correo transaccional](https://resend.com/pricing)
+
+[12]: [Resend — dominios verificados](https://resend.com/docs/dashboard/domains/introduction)
+
+[13]: [Resend — periodicidad y planes anuales](https://resend.com/docs/knowledge-base/what-is-resend-pricing)
