@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "5.4"
+version: "5.5"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -61,11 +61,11 @@ organization: "GrowthOS"
 - [x] Ejecutar una primera lectura local de YouTube: `status=collected`, `brand=Universe Sent Me`, `platform=YouTube`, `performance_rows=8` y `monetization_status=not_available`; no se tratará la ausencia como cero.
 - [ ] Revisar local y humanamente las ocho filas de rendimiento disponibles para confirmar atribución y ventanas de fecha; mantener cualquier importe o error de monetización en evidencia privada, fuera de OmniRoute y sin aprobación financiera separada.
 - [ ] Mostrar localmente un resumen legible de las ocho filas de YouTube sin revelar IDs, rutas, tokens ni valores monetarios; conservar toda evidencia fuente en Xubuntu.
-- [ ] Inventariar los runners y la configuración local existente de Meta para Facebook e Instagram, sin leer ni exponer secretos, y confirmar que la marca configurada sea exactamente Universe Sent Me.
+- [x] Inventariar el patrón local Meta existente sin leer ni exponer secretos y confirmar que la app aprobada y el token depurado corresponden exactamente a Universe Sent Me.
 - [x] Preparar y compilar `validate_meta_local_readonly.py`, un validador oficial Meta GET-only que usa un token solo desde entorno local, guarda evidencia únicamente fuera del repositorio y no contiene POST/PUT/PATCH/DELETE.
-- [ ] Localizar y cargar temporalmente en Xubuntu el token depurado de la app Meta ya aprobada para Universe Sent Me; no crear otra app, no solicitar permisos nuevos, no exponer el token y no persistirlo en el repositorio.
-- [ ] Ejecutar una prueba acotada GET-only para Facebook y otra para Instagram mediante APIs oficiales locales, con una cuenta objetivo de Universe Sent Me y sin publicar, comentar, responder, editar, guardar en Sheets, escribir ledgers ni usar OmniRoute.
-- [ ] Registrar el resultado de cada prueba Meta, incluidos bloqueos de permisos o token, sin convertir datos ausentes en cero ni añadir scopes de escritura para resolver errores.
+- [x] Localizar y cargar temporalmente en Xubuntu el token depurado de la app Meta ya aprobada para Universe Sent Me; no se creó otra app, no se solicitaron permisos nuevos, no se expuso el token y no se persistió en el repositorio.
+- [x] Ejecutar una prueba acotada GET-only mediante APIs oficiales locales: `status=validated`, `facebook_connection=validated` e `instagram_connection=validated` para las cuentas objetivo de Universe Sent Me; no hubo publicación, comentarios, respuestas, edición, Sheets, ledgers ni OmniRoute.
+- [x] Registrar el resultado de la prueba Meta sin convertir datos ausentes en cero ni añadir scopes de escritura; la evidencia mínima quedó privada en Xubuntu.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
 - [x] Configurar y autorizar la app de escritorio Sandbox de TikTok con los scopes oficiales mínimos `user.info.basic` y `video.list`, callback local y PKCE; el cliente OAuth local de Google con scopes de lectura y monetización sigue pendiente.
 - [ ] Reemplazar la consulta de Windsor.ai por scripts locales de TikTok y YouTube antes del fin del Trial, manteniendo Facebook e Instagram en sus rutas existentes.

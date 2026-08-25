@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.6"
+version: "1.7"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -114,6 +114,12 @@ Antes de interpretar resultados o pasar valores agregados a una vista derivada, 
 El runner histórico `run_daily_metrics_cut.py` no se usa para este gate porque escribe evidencia y análisis dentro del repositorio. En su lugar, `validate_meta_local_readonly.py` valida exclusivamente la conectividad y la autorización con solicitudes `GET`: primero comprueba que el token local devuelve la página `1036844829507460` de Universe Sent Me y, después, que la cuenta profesional vinculada devuelve el usuario esperado `universe_sent_me_0326`.
 
 El validador recibe `USM_META_USER_ACCESS_TOKEN` únicamente desde el entorno de la terminal; no lo lee de archivos de proyecto ni lo imprime. Conserva un resumen mínimo de éxito o bloqueo bajo `~/.local/share/usm-metrics/evidence/`, fuera del repositorio, y no consulta publicaciones, comentarios, mensajes, insights ni endpoints de escritura. Cualquier fallo de token, página o permiso debe documentarse como bloqueo, sin interpretar ausencias como cero ni añadir scopes de escritura.
+
+### Validación local confirmada — 25 de agosto de 2026
+
+Fernando cargó temporalmente el token depurado ya aprobado de Meta en Xubuntu y ejecutó el validador. El resultado fue `status = validated`, `facebook_connection = validated` e `instagram_connection = validated`. La prueba acredita únicamente que la app aprobada de Universe Sent Me puede identificar la página Facebook prevista y la cuenta profesional Instagram vinculada, bajo solicitudes `GET` y con el token local.
+
+No se solicitaron permisos nuevos, no se crearon aplicaciones nuevas, no se consultaron publicaciones, comentarios, mensajes o insights y no se modificaron ledgers, Google Sheets, OmniRoute, contenido o cuentas de otras marcas. Un futuro collector de métricas debe conservar estas mismas restricciones y pasar un gate separado de revisión antes de leer media o insights.
 
 ## Estado del documento
 

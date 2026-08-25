@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.67
+**Versión:** 4.68
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.68.00] — 2026-08-25 (Fernando/Manus): Conexión local GET-only validada para Facebook e Instagram de Universe Sent Me.** Fernando confirmó que la app Meta ya aprobada y el token depurado correspondían a Universe Sent Me. El token se cargó temporalmente solo en la terminal de Xubuntu y `validate_meta_local_readonly.py` devolvió `status=validated`, `facebook_connection=validated` e `instagram_connection=validated`. La prueba verificó el acceso a la página objetivo y su cuenta profesional Instagram vinculada con como máximo dos consultas GET. No se expusieron secretos, no se crearon apps ni permisos nuevos, no hubo acceso a publicaciones, comentarios, mensajes o insights, y no se escribieron GitHub, Sheets, ledgers, OmniRoute, contenido, calendarios o datos de otras marcas. Documento actualizado: `Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md` v1.7.
 
 - **[4.67.00] — 2026-08-25 (Fernando/Manus): Validador local GET-only preparado para Meta.** A petición de Fernando se añadió `Operations/Automation/validate_meta_local_readonly.py` para validar Facebook e Instagram bajo el mismo patrón local de los pilotos TikTok y YouTube. El script compila y se verificó que no contiene `POST`, `PUT`, `PATCH` ni `DELETE`. Solo requiere el token como variable temporal de entorno, contrasta la página esperada de Universe Sent Me y la cuenta profesional vinculada, y guarda una evidencia mínima de resultado bajo la ruta privada de Xubuntu. No consulta publicaciones, comentarios, mensajes o insights; no escribe GitHub, Sheets, ledgers, contenido, calendarios ni OmniRoute. Pendiente: inventariar el acceso local y ejecutar una prueba por API sin exponer secretos. Documento actualizado: `Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md` v1.6.
 
