@@ -1,0 +1,49 @@
+%% Universe Sent Me — Growth OS pipeline ejecutivo
+%% Fuente de verdad: GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md
+%% Arquitectura de datos: GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md
+flowchart LR
+    S1["1 · ESTRATEGIA Y PREPARACIÓN\nCanon + Content Inventory\nHypothesis Bank · calendario · backlog\nGATE HUMANO: aprobación por pieza"]
+    S2["2 · PUBLICACIÓN REAL\nProducción + preflight\nManus → Meta Graph API\nFacebook programado · Instagram separado"]
+    S3["3 · MEDICIÓN\nVerificación: Meta_Post_ID + created_time\nis_published=true\nE0 + corte diario 22:00"]
+    S4["4 · APRENDIZAJE\nE24 / E72 solo con E0 válido\nAnálisis CGO: comparables y cohortes\nRevisión humana antes de decidir"]
+    S5["5 · RETROALIMENTACIÓN\nDecisión de Growth\nRepetir · ajustar · pausar\nBrief y siguiente experimento"]
+
+    S1 --> S2 --> S3 --> S4 --> S5
+    S5 -. "vuelve a planificación" .-> S1
+
+    PUBLOG[("Publication Log\nHecho real de publicación")]
+    SNAP[("Metrics Snapshot Log\nE0 · E24 · E72 · raw")]
+    EXPLOG[("ExperimentLog\nObservación · métricas · veredicto")]
+    GITHUB["GitHub\nFuente oficial de verdad\nDocumentación permanente"]
+
+    S2 --> PUBLOG
+    S3 --> SNAP
+    S4 --> EXPLOG
+    SNAP -.-> GITHUB
+    EXPLOG -.-> GITHUB
+    S5 -.-> GITHUB
+
+    subgraph CARRILES["Carriles separados y gobernanza"]
+        REELS["Reels\nInstrumentación L0–L4\nNo mezclar con imágenes"]
+        AFF["Afiliados\nLedger y denominador propio"]
+        COMMUNITY["Comunidad\nRespuestas humanas aprobadas"]
+        LIMITS["Reglas críticas\nNo inventar E0/E24/E72\nNo cerrar hipótesis con lifetime"]
+    end
+
+    S2 -.-> REELS
+    S2 -.-> AFF
+    S3 -.-> COMMUNITY
+    S4 -.-> LIMITS
+
+    classDef stage fill:#0f2742,stroke:#5eead4,color:#ecfeff,stroke-width:3px
+    classDef ledger fill:#312e81,stroke:#c4b5fd,color:#f5f3ff,stroke-width:2px
+    classDef source fill:#1f2937,stroke:#93c5fd,color:#eff6ff,stroke-width:2px
+    classDef lane fill:#374151,stroke:#d1d5db,color:#f9fafb,stroke-width:2px
+
+    class S1,S2,S3,S4,S5 stage
+    class PUBLOG,SNAP,EXPLOG ledger
+    class GITHUB source
+    class REELS,AFF,COMMUNITY,LIMITS lane
+
+    style CARRILES fill:#1f2937,stroke:#9ca3af,stroke-width:2px,color:#f3f4f6
+    linkStyle default stroke:#94a3b8,stroke-width:2px
