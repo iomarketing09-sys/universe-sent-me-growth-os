@@ -29,6 +29,14 @@
       "page_name": "Universe Sent Me"
     }
   },
+  "publisher_runtime": {
+    "general_pycharm_publisher_in_repository": false,
+    "documented_runtime": "Fernando's local PyCharm publisher using Gemini and Meta Graph API",
+    "versioned_historical_runner": "Operations/Production/run_instagram_15_16_scheduler.py",
+    "historical_runner_scope": "2026-08-15 and 2026-08-16 only",
+    "e0_hook_integrable_in_current_repo": false,
+    "blocker": "The general publisher source or an explicit post-publication event contract is not present in the repository."
+  },
   "meta_scheduled_queue": {
     "status": "PASS",
     "rows_returned": 33,
@@ -110,7 +118,8 @@
     "No production E0 exists yet; the first one must come from a new publication and must not be reconstructed historically.",
     "No recurring E24/E72 worker or schedule is active.",
     "Publication_Log and ExperimentLog are not automatically updated from Metrics_Snapshot_Log.",
-    "The active future queue is reconciled, but 26 past-or-due local scheduled records remain historical state and should be closed by the operational reconciliation process rather than re-created."
+    "The active future queue is reconciled, but 26 past-or-due local scheduled records remain historical state and should be closed by the operational reconciliation process rather than re-created.",
+    "The general PyCharm publisher is outside the repository, so the E0 hook cannot be integrated responsibly until its source or output contract is made available."
   ],
   "verdict": "PIPELINE_OPERATIONAL_SUPERVISED_POST_P0",
   "maturity": "3/5",

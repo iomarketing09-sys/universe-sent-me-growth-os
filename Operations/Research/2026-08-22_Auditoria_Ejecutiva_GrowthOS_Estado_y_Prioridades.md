@@ -5,7 +5,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-22
 **Última actualización:** 2026-08-25
-**Versión:** 1.3
+**Versión:** 1.4
 **Autor:** Manus AI (CGO)
 **Organización:** `Operations/Research/`
 **Documentos relacionados:** `GrowthOS/00_Índice.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/01_02_Content_Backlog.md`, `GrowthOS/01_04_Production_Queue.md`, `GrowthOS/07_00_Registro_Maestro_Reels.md`, `Operations/Research/2026-08-22_Analisis_Semanal_20260816_20260822.md`, `Operations/Research/2026-08-22_Auditoria_Monetizacion_Afiliados_MercadoLibre.md`, `Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json`, `Operations/Research/2026-08-23_Reporte_Rendimiento_Engagement_Facebook.md`, `Operations/Research/2026-08-25_Instagram_Route_Smoke_Test.json`, `Operations/Research/2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json`, `Operations/Automation/record_metrics_snapshot.py`, `Operations/Automation/validate_metrics_snapshot_ledger.py`, `Operations/Research/Metrics_Snapshot_Log.csv`
@@ -142,17 +142,19 @@ El próximo cambio estratégico solo debe ejecutarse cuando exista una pregunta 
 
 | Prioridad | Pendiente | Criterio de cierre |
 |---|---|---|
-| **P0** | Integrar el módulo E0 en el publicador productivo de Facebook y producir la primera captura real posterior a `is_published=true`; el ledger ya está activo. | Una publicación nueva genera una fila E0 real, con raw, timestamps, contadores y validación `PASS`; no se reconstruye ningún E0 histórico. |
+| **P0** | Exponer el código o contrato de salida del publicador productivo de Facebook e integrar el adaptador `capture_e0_after_publish.py`; el ledger y el contrato ya están activos. | Una publicación nueva genera una fila E0 real, con raw, timestamps, contadores y validación `PASS`; no se reconstruye ningún E0 histórico. |
+| **P0** | Activar el worker `run_metrics_windows.py` en un runtime persistente después del primer E0. | E24/E72 se ejecutan cerca de `Target_At_UTC`, con lock, tolerancia, raw e idempotencia; no se crean snapshots fuera de ventana. |
 | **P0** | Mantener la cadencia de Facebook, pero cerrar cada día con formato, ID, estado, edad, engagement observable y marca de `Exposicion_Inmadura`. | Siete días consecutivos con reportes diarios y un cierre domingo–sábado que compare mediana, outliers y mix nueva/reuse. |
 | **P1** | Resolver la doble fuente externa: congelar la hoja `USM Growth OS` como histórico o sincronizarla de forma explícita con GitHub. | Un documento declara que GitHub es la fuente única y la hoja no presenta colas o hipótesis antiguas como estado actual. |
 | **P1** | Decidir si paid growth pertenece al alcance operativo. Si sí, reconectar Meta Ads Manager y registrar cuenta/campañas; si no, marcarlo como fuera de alcance y no dejarlo como enabled sin uso. | Estado intencional, verificable y reflejado en la documentación. |
 | **P1** | Mantener el circuito de comunidad con aprobación humana y corregir el backlog de verificaciones 403/400 solo cuando exista una acción concreta. | Cola pendiente y respuestas publicadas tienen evidencia; no se habilita un bot autónomo. |
 | **P2** | Normalizar estados antiguos de Reels, calendarios, colas y documentos superseded, empezando por los que contradicen el pipeline actual. | Una sola fila vigente por publicación y ningún documento activo presenta como pendiente algo ya cerrado. |
 | **P2** | Añadir smoke tests de conectores y una revisión semanal de configuración. | El informe semanal distingue `enabled`, `connected`, `readable` y `operational` con evidencias y fecha. |
+| **P2** | Resolver los ocho Meta IDs publicados que aún no tienen fila experimental asociada. | Cada publicación se asigna explícitamente a un experimento o queda documentada fuera de cohorte; no se infiere el vínculo desde caption o asset. |
 
 ### Documentos que requieren coherencia posterior
 
-La implementación P0 ya actualizó `GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y el diseño E0/E24/E72. La revisión post-P0 del 25 de agosto confirmó 33 posts futuros reconciliados entre Meta y `Publication_Log`; la siguiente ronda debe integrar el hook al publicador, generar la primera captura productiva y decidir el worker recurrente. El índice y el changelog deben apuntar también a `Operations/Research/2026-08-25_Revision_Pipeline_Publicacion_Post_P0.md` y su evidencia JSON.
+La implementación P0 y el avance prioritario ya actualizaron `GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y el diseño E0/E24/E72. La revisión post-P0 confirmó 33 posts futuros reconciliados entre Meta y `Publication_Log`; el reconciliador actualizó 26 estados de publicación y 24 estados experimentales sin rellenar métricas. El adaptador E0 y el worker E24/E72 pasan pruebas aisladas, pero la primera captura productiva y el schedule persistente dependen de exponer el publicador general de PyCharm. La evidencia del avance está en `Operations/Research/2026-08-25_Priority_Pipeline_Progress_Evidence.json`.
 
 ## Referencias
 

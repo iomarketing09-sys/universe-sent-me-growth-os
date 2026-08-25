@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "2.53"
+version: "2.54"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -25,6 +25,11 @@ related_documents:
   - "Operations/Research/2026-08-25_Instagram_Route_Smoke_Test.json"
   - "Operations/Research/2026-08-25_Pipeline_Post_P0_Review_Evidence.json"
   - "Operations/Research/2026-08-25_Revision_Pipeline_Publicacion_Post_P0.md"
+  - "Operations/Research/2026-08-25_Priority_Pipeline_Progress_Evidence.json"
+  - "Operations/Automation/capture_e0_after_publish.py"
+  - "Operations/Automation/run_metrics_windows.py"
+  - "Operations/Automation/reconcile_publication_log_from_meta.py"
+  - "Operations/Automation/reconcile_experiment_log_from_publication.py"
   - "Operations/Research/2026-08-15_Reconciliacion_Publicaciones_15_16_CNT.md"
   - "GrowthOS/00_Índice.md"
   - "Operations/Research/2026-08-17_Instagram_Publicacion_260633.json"
@@ -260,11 +265,11 @@ La cuenta activa del conector Instagram quedó seleccionada como `@universe_sent
 
 El ledger `Operations/Research/Metrics_Snapshot_Log.csv` quedó creado con su encabezado aprobado. El módulo `Operations/Automation/record_metrics_snapshot.py` y el validador `Operations/Automation/validate_metrics_snapshot_ledger.py` fueron probados en un ledger temporal con E0, retry idempotente `no-op` y E24 válido. El ledger productivo conserva cero filas de snapshots porque no se fabrica E0 para publicaciones históricas. La evidencia está en `Operations/Research/2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json`.
 
-Este estado activa la capacidad de registro, pero no declara cerrado el loop: el hook dentro del publicador de Fernando, la primera captura productiva E0 y el worker recurrente E24/E72 siguen pendientes. Los campos contractuales de `Publication_Log` y `ExperimentLog` no se modifican hasta que existan capturas válidas con el mismo `Meta_Post_ID` y timestamps dentro de tolerancia.
+Este estado activa la capacidad de registro, pero no declara cerrado el loop: el hook live dentro del publicador de Fernando, la primera captura productiva E0 y el schedule recurrente E24/E72 siguen pendientes. El adaptador `capture_e0_after_publish.py` y el worker `run_metrics_windows.py` ya fueron implementados y probados en modo controlado. Los reconciliadores actualizaron estados de publicación y aprendizaje sin modificar métricas ni veredictos; los campos contractuales temporales permanecen vacíos hasta que existan snapshots válidos con el mismo `Meta_Post_ID` y timestamps dentro de tolerancia.
 
 ## 6. Primer estado implementado
 
-El `ExperimentLog` contiene observaciones históricas, nueve publicaciones reales de Facebook del 15–16 de agosto y tres publicaciones activas confirmadas de Instagram: `2608030`, `2608036` y `2608060`. Además, registra seis IDs proporcionados por Fernando para duplicaciones Instagram 17–30 (`260633`, `260560`, `260614`, `260625`, `260613` y `260528`) con estado prudente `Programada`, sin permalink ni hora real inventados. La fila histórica de `260633` con media `17943879225288953` permanece como `Eliminada_Manualmente`; el nuevo ID `1564061365193135` se conserva como registro separado. Ninguna de estas filas recibe un CNT inventado; permanecen con `ID_Pieza` vacío hasta una reconciliación con evidencia suficiente. El `Publication_Log` enlaza las nueve publicaciones de Facebook con `CNT-031`–`CNT-039`, conserva intentos históricos de Instagram eliminados manualmente y separa publicaciones activas confirmadas de programaciones con ID proporcionado. Las métricas 24/72 horas de Facebook siguen pendientes cuando Meta no permite reconstruir el snapshot exacto. Para históricos y cortes de publicación, Instagram ya tiene evidencia analítica de Windsor y validación puntual del conector; el estado de cada fila debe distinguir entre `lifetime_actual`, `corte_observado` y `snapshot_24_72h`.
+El `ExperimentLog` contiene observaciones históricas, publicaciones reales de Facebook y tres publicaciones activas confirmadas de Instagram: `2608030`, `2608036` y `2608060`. El 25 de agosto se reconciliaron 24 filas Facebook cuyo `Meta_ID` ya tenía estado `Publicado` en `Publication_Log`; la operación fue exclusivamente de estado y no rellenó `Interacciones_24h`, `Interacciones_72h` ni `Veredicto`. Además, registra seis IDs proporcionados por Fernando para duplicaciones Instagram 17–30 (`260633`, `260560`, `260614`, `260625`, `260613` y `260528`) con estado prudente `Programada`, sin permalink ni hora real inventados. La fila histórica de `260633` con media `17943879225288953` permanece como `Eliminada_Manualmente`; el nuevo ID `1564061365193135` se conserva como registro separado. Ninguna de estas filas recibe un CNT inventado; permanecen con `ID_Pieza` vacío hasta una reconciliación con evidencia suficiente. El `Publication_Log` enlaza las nueve publicaciones de Facebook con `CNT-031`–`CNT-039`, conserva intentos históricos de Instagram eliminados manualmente y separa publicaciones activas confirmadas de programaciones con ID proporcionado. Las métricas 24/72 horas de Facebook siguen pendientes cuando Meta no permite reconstruir el snapshot exacto. Para históricos y cortes de publicación, Instagram ya tiene evidencia analítica de Windsor y validación puntual del conector; el estado de cada fila debe distinguir entre `lifetime_actual`, `corte_observado` y `snapshot_24_72h`.
 
 El `Community_Engagement_Log.csv` contiene 18 comentarios reales: nueve del primer lote, seis del delta del 16 de agosto, dos del delta del 17 de agosto y una revisión puntual de publicación. Las cuatro respuestas del primer lote y la respuesta puntual fueron aceptadas por Meta; la respuesta puntual tiene `Respuesta_Meta_ID=122148874563072582_1613678620282915`, aunque su verificación GET devolvió HTTP 403 por permisos. La muestra histórica de 67 comentarios se conserva como análisis agregado y no se transforma retroactivamente en filas. Las futuras revisiones deben recuperar solo el delta nuevo, deduplicar por `Comentario_ID` y mantener respuestas y moderación bajo aprobación humana.
 

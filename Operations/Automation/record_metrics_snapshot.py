@@ -261,11 +261,27 @@ def make_snapshot_row(
     }
 
 
+def derive_page_access_token(user_token: str, page_id: str = DEFAULT_ACCOUNT_ID) -> str:
+    """Derive the Page token without persisting or printing it."""
+    response = requests.get(
+        f"{GRAPH_BASE}/me/accounts",
+        headers={"Authorization": f"Bearer {user_token}"},
+        params={"fields": "id,access_token", "limit": 100},
+        timeout=30,
+    )
+    response.raise_for_status()
+    for account in response.json().get("data", []):
+        if account.get("id") == page_id and account.get("access_token"):
+            return str(account["access_token"])
+    raise RuntimeError(f"Universe Sent Me Page Access Token not found for page {page_id}")
+
+
 def fetch_meta_payload(meta_post_id: str, token: str) -> tuple[dict[str, Any], int]:
     fields = "created_time,reactions.limit(0).summary(true),comments.limit(0).summary(true),shares"
+    page_token = derive_page_access_token(token)
     response = requests.get(
         f"{GRAPH_BASE}/{meta_post_id}",
-        headers={"Authorization": f"Bearer {token}"},
+        headers={"Authorization": f"Bearer {page_token}"},
         params={"fields": fields},
         timeout=30,
     )

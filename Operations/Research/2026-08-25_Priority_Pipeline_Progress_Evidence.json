@@ -1,0 +1,114 @@
+{
+  "title": "Evidencia de avance de pendientes prioritarios del pipeline",
+  "purpose": "Registrar la implementación reproducible del hook E0, el worker E24/E72 y la reconciliación segura de Publication_Log y ExperimentLog después del P0.",
+  "status": "Active",
+  "created": "2026-08-25",
+  "updated": "2026-08-25",
+  "version": "1.0",
+  "author": "Manus AI (CGO)",
+  "organization": "Operations/Research/",
+  "related_documents": [
+    "Operations/Automation/capture_e0_after_publish.py",
+    "Operations/Automation/run_metrics_windows.py",
+    "Operations/Automation/reconcile_publication_log_from_meta.py",
+    "Operations/Automation/reconcile_experiment_log_from_publication.py",
+    "Operations/Automation/record_metrics_snapshot.py",
+    "Operations/Automation/validate_metrics_snapshot_ledger.py",
+    "Operations/Research/Metrics_Snapshot_Log.csv",
+    "Operations/Research/2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json",
+    "Operations/Research/2026-08-25_Revision_Pipeline_Publicacion_Post_P0.md"
+  ],
+  "scope": {
+    "content_published": false,
+    "content_modified": false,
+    "content_deleted": false,
+    "future_meta_queue_modified": false,
+    "mode": "controlled local implementation and read-only reconciliation"
+  },
+  "e0_hook": {
+    "adapter": "Operations/Automation/capture_e0_after_publish.py",
+    "contract": "publisher result must contain meta_post_id or id, is_published=true, and confirmed published_at_utc or created_time",
+    "pending_event_test": "PASS_E0_PENDING_NO_WRITE",
+    "valid_event_replay": "PASS_VALID_E0",
+    "retry": "PASS_NO_OP_VALID_ALREADY_EXISTS",
+    "raw_files_in_replay": 1,
+    "ledger_validation": "PASS",
+    "production_hook_active": false,
+    "blocker": "The general PyCharm publisher is not versioned in the repository; source or an explicit output contract is still needed for live invocation."
+  },
+  "e24_e72_worker": {
+    "worker": "Operations/Automation/run_metrics_windows.py",
+    "selection_rule": "only Valid_E0 rows with target within +/-3600 seconds",
+    "locking": "non-blocking exclusive filesystem lock",
+    "replay_test": {
+      "e24": "PASS_VALID_24H",
+      "e72": "PASS_VALID_72H",
+      "retry": "PASS_NO_OP_VALID_ALREADY_EXISTS",
+      "validator": "PASS",
+      "temporary_ledger_rows": 3,
+      "temporary_status_counts": {
+        "Valid_E0": 1,
+        "Valid_24h": 1,
+        "Valid_72h": 1
+      }
+    },
+    "recurring_schedule_active": false
+  },
+  "publication_log_reconciliation": {
+    "reconciler": "Operations/Automation/reconcile_publication_log_from_meta.py",
+    "mode": "apply after successful dry-run",
+    "meta_feed_pages_read": 2,
+    "meta_feed_rows_read": 500,
+    "planned_updates": 26,
+    "applied_updates": 26,
+    "from_state_counts": {
+      "Programada": 23,
+      "Programada_Meta_Verificado": 3
+    },
+    "cancelled_ids_excluded": 6,
+    "future_queue_changed": false,
+    "scope": "Only Facebook rows matching is_published=true feed records; cancellation groups excluded; append-only marker added to Notes and Fuente."
+  },
+  "experiment_log_reconciliation": {
+    "reconciler": "Operations/Automation/reconcile_experiment_log_from_publication.py",
+    "planned_updates": 24,
+    "applied_updates": 24,
+    "from_state_counts": {
+      "Programada": 21,
+      "Programada_Meta_Verificado": 3
+    },
+    "metrics_24h_changed": 0,
+    "metrics_72h_changed": 0,
+    "verdicts_changed": 0,
+    "published_facebook_without_experiment_row_after_apply": 8,
+    "remaining_scope": "The eight missing experiment mappings require explicit editorial/experiment assignment; no Meta ID was inferred from caption or asset."
+  },
+  "post_reconciliation_state": {
+    "publication_log_rows": 121,
+    "publication_status_counts": {
+      "Publicado": 69,
+      "Programada": 38,
+      "Programada_Meta_Verificado": 4,
+      "Eliminada_Manualmente": 4,
+      "Cancelada_Autorizada": 3,
+      "Cancelada_Por_Sustitucion": 3
+    },
+    "effective_future_scheduled_rows": 33,
+    "future_rows_reconciled_with_meta_queue": 33,
+    "past_or_due_effective_scheduled_rows": 0,
+    "experiment_log_rows": 114,
+    "experiment_status_updates_applied": 24,
+    "published_rows_without_experiment_mapping": 8,
+    "metrics_24h_filled": 0,
+    "metrics_72h_filled": 0
+  },
+  "current_productive_state": {
+    "metrics_snapshot_log_rows": 0,
+    "production_e0_rows": 0,
+    "experiment_24h_filled": 0,
+    "experiment_72h_filled": 0,
+    "hook_live": false,
+    "worker_schedule_live": false,
+    "verdict": "CAPABILITY_IMPLEMENTED_NOT_YET_LIVE_END_TO_END"
+  }
+}

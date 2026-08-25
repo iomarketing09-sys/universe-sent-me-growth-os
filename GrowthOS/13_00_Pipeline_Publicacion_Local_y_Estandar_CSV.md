@@ -1,6 +1,6 @@
 ---
 estado: Active
-version: "1.52"
+version: "1.53"
 ultima_revision: 2026-08-25
 dependencias:
   - GrowthOS/01_00_Arquitectura_Calendario_Escalable.md
@@ -16,7 +16,7 @@ dependencias:
 **Estado:** Active
 **Fecha de creación:** 2026-08-12
 **Última actualización:** 2026-08-25
-**Versión:** 1.52
+**Versión:** 1.53
 **Autor:** Claude, documentando información provista por Fernando; actualización de Manus AI
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `05_03_Calendario_10_16_Agosto.md` (y calendarios futuros), `Operations/Research/2026-08-15_Publication_Log.csv`, `Operations/Research/2026-08-15_ExperimentLog.csv`, `GrowthOS/00_01_Changelog_GrowthOS.md`, `GrowthOS/00_Índice.md`, `Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md`, `Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json`, `Operations/Research/2026-08-25_Instagram_Route_Smoke_Test.json`, `Operations/Research/2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json`, `Operations/Automation/record_metrics_snapshot.py`, `Operations/Automation/validate_metrics_snapshot_ledger.py`, `Operations/Research/Metrics_Snapshot_Log.csv`, `Operations/Research/2026-08-25_Pipeline_Post_P0_Review_Evidence.json`, `Operations/Research/2026-08-25_Revision_Pipeline_Publicacion_Post_P0.md`
 
@@ -132,7 +132,7 @@ Esta observación no invalida las publicaciones históricas verificadas ni autor
 
 La revisión posterior al P0 confirmó que la Custom API `Universe Sent Me Meta API` está habilitada en la configuración actual y que su health check `/me` responde correctamente. También confirmó que la cola `scheduled_posts` contiene 33 posts futuros, todos con `is_published=false`, desde el 25 de agosto a las 10:00 hasta el 30 de agosto a las 22:00 en `America/Matamoros`. Los 33 IDs futuros efectivos del `Publication_Log` coinciden con los 33 IDs de Meta; no hay faltantes en ninguna dirección. Se excluyeron seis IDs cancelados porque el ledger contiene sus eventos correctivos y sustituciones.
 
-El `Publication_Log` conserva 121 filas, el `ExperimentLog` 114 y el ledger comunitario 549. El `Metrics_Snapshot_Log.csv` sigue con solo encabezado y su validador devuelve `PASS`; no existe todavía un E0 productivo, y las columnas `Interacciones_24h`/`Interacciones_72h` siguen vacías. Instagram responde en lectura con `@universe_sent_me_0326`, 44 seguidores, 473 medios y cuota `0/100`. La evidencia estructurada y el informe completo están en `Operations/Research/2026-08-25_Pipeline_Post_P0_Review_Evidence.json` y `Operations/Research/2026-08-25_Revision_Pipeline_Publicacion_Post_P0.md`.
+El `Publication_Log` conserva 121 filas; tras la reconciliación segura, 26 estados Facebook pasaron a `Publicado` con evidencia de Meta. El `ExperimentLog` conserva 114 filas; 24 estados de publicación experimentales fueron actualizados sin modificar métricas ni veredictos, y ocho publicaciones publicadas todavía no tienen una fila experimental asociada. El ledger comunitario tiene 549 filas. El `Metrics_Snapshot_Log.csv` sigue con solo encabezado y su validador devuelve `PASS`; no existe todavía un E0 productivo, y las columnas `Interacciones_24h`/`Interacciones_72h` siguen vacías. Instagram responde en lectura con `@universe_sent_me_0326`, 44 seguidores, 473 medios y cuota `0/100`. El adaptador E0 y el worker E24/E72 pasan pruebas aisladas, pero el publicador general y el schedule persistente todavía no están conectados. La evidencia estructurada está en `Operations/Research/2026-08-25_Priority_Pipeline_Progress_Evidence.json`; el informe de estado está en `Operations/Research/2026-08-25_Revision_Pipeline_Publicacion_Post_P0.md`.
 
 ## 7. Pendientes de definición (no resueltos en esta sesión)
 
