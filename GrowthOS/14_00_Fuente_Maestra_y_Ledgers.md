@@ -483,11 +483,11 @@ La propuesta completa está en `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`
 
 ## 25. Contrato de automatización de revisión Facebook — 2026-08-25
 
-La tarea recurrente `Revisión Facebook USM — cadencia focalizada` queda como proceso temporal activo durante siete días, con expiración `2026-09-01T10:12:56Z`. Sus revisiones efectivas son 12:00, 17:30 y 21:30 en `America/Matamoros`. Debido al formato de cron de seis campos, existen además disparos técnicos a 12:30, 17:00 y 21:00 que deben terminar sin acción (`no_op`).
+La tarea recurrente `Revisión Facebook USM — cadencia focalizada` queda como proceso temporal creado y actualmente pausado durante siete días, con expiración `2026-09-01T10:12:56Z`. Sus revisiones efectivas son 12:00, 17:30 y 21:30 en `America/Matamoros`. Debido al formato de cron de seis campos, existen además disparos técnicos a 12:30, 17:00 y 21:00 que deben terminar sin acción (`no_op`).
 
 El proceso puede usar únicamente los conectores `Universe Sent Me Meta API` y `GitHub`. La salida operativa es una vista derivada: delta por cursor, comentarios raíz, réplicas, propuestas, no acción y reporte fechado. El ledger factual sigue siendo append-only y anonimizado; si no hay novedades, la tarea informa cero y no modifica la cola.
 
-El contrato de seguridad prohíbe POST, PUT, DELETE, publicación, ocultamiento o modificación en Meta. Las propuestas quedan para revisión de Fernando; una aprobación anterior no se reutiliza. Cada lote publicable requiere autorización explícita posterior y verificación individual. **Schedule ID:** `4i8525UwBbh8mk84iZZ42Y`. **Estado:** Active, prueba temporal de siete días.
+El contrato de seguridad prohíbe POST, PUT, DELETE, publicación, ocultamiento o modificación en Meta. Las propuestas quedan para revisión de Fernando; una aprobación anterior no se reutiliza. Cada lote publicable requiere autorización explícita posterior y verificación individual. **Schedule ID:** `4i8525UwBbh8mk84iZZ42Y`. **Estado:** Paused, prueba temporal de siete días pendiente de acceso.
 
 ## 26. Primer caso productivo E0 — resultado no canónico — 2026-08-25
 

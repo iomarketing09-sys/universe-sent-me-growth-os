@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "6.2"
+version: "6.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -887,3 +887,12 @@ Fernando autorizó automatizar la cadencia focalizada durante siete días. La ta
 La tarea usa únicamente `Universe Sent Me Meta API` y `GitHub`. Lee el delta mediante Meta Graph API v26.0, preserva IDs estructurales anonimizados, separa raíces y réplicas, clasifica propuestas y no acción, y entrega un reporte para Fernando. No puede ejecutar escrituras en Meta, ni siquiera para respuestas previamente aprobadas; cualquier publicación requiere una autorización posterior e independiente.
 
 **Estado:** Active, prueba temporal de siete días. **Schedule ID:** `4i8525UwBbh8mk84iZZ42Y`. **Cola:** no modificada al crear la tarea. **Documentos relacionados:** `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 30. Pausa preventiva de la automatización Facebook — 25 de agosto de 2026
+
+Durante la primera ejecución de la tarea recurrente, el entorno no expuso `META_PAGE_ACCESS_TOKEN` y la configuración confirmó que `Universe Sent Me Meta API` permanecía deshabilitado. Para evitar ejecuciones sin acceso real y preservar el alcance Facebook-only, la tarea `Revisión Facebook USM — cadencia focalizada` fue pausada.
+
+**Schedule ID:** `4i8525UwBbh8mk84iZZ42Y`. **Estado:** Paused. **Expiración original:** `2026-09-01T10:12:56Z`. La cola no se modificó, no se consultaron otras redes y no se realizó ninguna escritura en Meta. La reactivación requiere habilitar explícitamente el conector Meta API; después debe comprobarse la identidad de la Página, ejecutar una lectura GET-only y confirmar que solo Meta API y GitHub estén asignados antes de reactivar la programación.
+
+La especificación de seguridad permanece en `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, sección 25, y `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, sección 25. La pausa no revoca la cadencia aprobada; únicamente impide ejecuciones sin credenciales/conector disponible.

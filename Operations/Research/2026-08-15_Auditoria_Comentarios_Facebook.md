@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "6.7"
+version: "6.8"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -1396,3 +1396,12 @@ Fernando autorizó la automatización de la cadencia focalizada durante siete d�
 La tarea está restringida a los conectores `Universe Sent Me Meta API` y `GitHub`, consulta únicamente comentarios de Facebook mediante Meta Graph API v26.0 y no puede usar navegador, otras redes ni operaciones de escritura. Debe conservar la separación raíz/réplica, el anonimato del ledger y la cola de propuestas para revisión de Fernando.
 
 La tarea no puede publicar respuestas aunque existan aprobaciones anteriores. Cada lote requiere una autorización posterior e independiente de Fernando y verificación individual. **Estado:** Active, prueba temporal de siete días. **Schedule ID:** `4i8525UwBbh8mk84iZZ42Y`. **Cola:** no modificada al activarse la tarea.
+
+
+## 46. Ejecución bloqueada y pausa preventiva — 25 de agosto de 2026
+
+La tarea recurrente intentó ejecutar una revisión a las 12:03 de `America/Matamoros`, pero el entorno no expuso `META_PAGE_ACCESS_TOKEN`. La configuración también confirmó que `Universe Sent Me Meta API` estaba deshabilitado. No se ejecutó ninguna lectura a Meta, no se consultaron otras redes y no se modificó la cola.
+
+Como control de seguridad, la tarea `Revisión Facebook USM — cadencia focalizada` fue pausada. Su Schedule ID es `4i8525UwBbh8mk84iZZ42Y`; conserva la expiración `2026-09-01T10:12:56Z` y la cadencia aprobada de 12:00, 17:30 y 21:30 en `America/Matamoros`. La reactivación requiere habilitar explícitamente el conector Meta API, verificar la identidad de la Página mediante GET-only y confirmar que solo Meta API y GitHub estén asignados. No se debe reactivar si la tarea conserva conectores adicionales o si el token no está disponible.
+
+**Estado:** Paused. **Límite:** no se repite la solicitud de habilitación sin una confirmación explícita de Fernando.
