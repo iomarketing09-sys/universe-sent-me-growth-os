@@ -4,7 +4,7 @@ purpose: "Proveer el contenido mínimo, revisable y separado por marca para las 
 status: Review
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.5"
+version: "1.6"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -20,7 +20,7 @@ organization: "Operations/Automation"
 
 Estos textos están destinados a dos páginas públicas separadas en un host técnico mínimo de **GitHub Pages** exclusivo de Universe Sent Me. Wix permanece sin cambios. iO Marketing opera la aplicación descrita, que es un collector local privado para Universe Sent Me. No vende productos, no publica en TikTok y no se relaciona con Bam in a Can ni Firma Bordados.
 
-> **Estado de publicación:** GitHub Pages está activo para el repositorio público dedicado `iomarketing09-sys/usm-metrics-public`. Las páginas publicadas son `https://iomarketing09-sys.github.io/usm-metrics-public/terms/` y `https://iomarketing09-sys.github.io/usm-metrics-public/privacy/`. Fernando autorizó publicar `io_marketin_09@gmail.com` como contacto de iO Marketing y la versión desplegada fue comprobada. La firma de **Terms of Use** ya fue publicada y validada; falta recibir y publicar la firma independiente que TikTok genere para el prefijo de privacidad. No sustituye revisión legal profesional.
+> **Estado de publicación:** GitHub Pages está activo para el repositorio público dedicado `iomarketing09-sys/usm-metrics-public`. Las páginas publicadas son `https://iomarketing09-sys.github.io/usm-metrics-public/terms/` y `https://iomarketing09-sys.github.io/usm-metrics-public/privacy/`. Fernando autorizó publicar `io_marketin_09@gmail.com` como contacto de iO Marketing y la versión desplegada fue comprobada. Las firmas de **Terms of Use** y **Privacy Policy** ya fueron publicadas y validadas de forma independiente. Falta que Fernando pulse la verificación de cada bloque en TikTok y confirme el resultado. No sustituye revisión legal profesional.
 
 ## URLs existentes verificadas por Fernando
 
@@ -140,6 +140,6 @@ GitHub Pages publica desde la rama `main` y la carpeta `/(root)` en `https://iom
 | Terms of Service — Universe Sent Me Metrics App | `https://iomarketing09-sys.github.io/usm-metrics-public/terms/` | Página 1 de este documento. |
 | Privacy Policy — Universe Sent Me Metrics App | `https://iomarketing09-sys.github.io/usm-metrics-public/privacy/` | Página 2 de este documento. |
 | Firma TikTok — Terms of Use | `https://iomarketing09-sys.github.io/usm-metrics-public/terms/tiktokjjOjCxVa79R7dLBeVyvL1uB9kB1BJZcR.txt` | Publicada desde el archivo exacto recibido; HTTP `200`, `text/plain; charset=utf-8` y contenido idéntico al adjunto. |
-| Firma TikTok — Privacy Policy | `/usm-metrics-public/privacy/tiktok*.txt` | Pendiente: añadir solo el archivo exacto que TikTok genere para el prefijo de privacidad. |
+| Firma TikTok — Privacy Policy | `https://iomarketing09-sys.github.io/usm-metrics-public/privacy/tiktokSLf6NLRYPnK9WU9RG666hrZmHtKqELbe.txt` | Publicada desde el archivo exacto recibido; HTTP `200`, `text/plain; charset=utf-8` y contenido idéntico al adjunto. |
 
-Tras habilitar Pages, comprobar públicamente las rutas de términos y privacidad. La firma de Terms of Use se puede verificar ya con TikTok. Para privacidad, solicitar o descargar la instrucción de verificación para el prefijo nuevo, sin reutilizar ni inventar el contenido de la firma asociada a Wix. El archivo exacto se añadirá al directorio solicitado y solo entonces se pulsará `Verify` para privacidad.
+Tras habilitar Pages, comprobar públicamente las rutas de términos y privacidad. Las dos firmas se pueden verificar ya con TikTok. No se reutilizó ni inventó contenido de la firma asociada a Wix. El último paso técnico de URL consiste en pulsar `Verify` en el bloque correspondiente de Terms of Use y en el de Privacy Policy, y confirmar el resultado de cada uno.

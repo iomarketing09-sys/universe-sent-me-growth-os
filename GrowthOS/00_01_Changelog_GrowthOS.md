@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.53
+**Versión:** 4.54
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.54.00] — 2026-08-25 (Fernando/Manus): Firma TikTok de Privacy Policy publicada y validada; ambos bloques listos para Verify.** Fernando entregó el archivo `tiktokSLf6NLRYPnK9WU9RG666hrZmHtKqELbe.txt` emitido para Privacy Policy. Se publicó sin modificación bajo `https://iomarketing09-sys.github.io/usm-metrics-public/privacy/tiktokSLf6NLRYPnK9WU9RG666hrZmHtKqELbe.txt`; el build `25c87b3` quedó `built`. La validación independiente confirmó HTTP `200`, `Content-Type: text/plain; charset=utf-8` y contenido byte a byte idéntico al adjunto. La firma de Terms of Use ya tenía la misma validación, por lo que TikTok puede verificar ambos bloques. Pendiente únicamente: pulsar `Verify` en cada bloque y registrar el resultado. No se tocaron Wix, DNS, tokens, métricas ni infraestructura de otras marcas. Documento actualizado: `Operations/Automation/2026-08-25_Textos_Publicos_Terminos_Privacidad_App_Metricas_USM.md` v1.6.
 
 - **[4.53.00] — 2026-08-25 (Fernando/Manus): Firma TikTok de Terms of Use publicada y validada en GitHub Pages.** Fernando entregó el archivo `tiktokjjOjCxVa79R7dLBeVyvL1uB9kB1BJZcR.txt` emitido para Terms of Use. Se publicó sin modificación bajo `https://iomarketing09-sys.github.io/usm-metrics-public/terms/tiktokjjOjCxVa79R7dLBeVyvL1uB9kB1BJZcR.txt`; el build `969c3af` quedó `built`. La validación independiente confirmó HTTP `200`, `Content-Type: text/plain; charset=utf-8` y contenido byte a byte idéntico al archivo entregado. Solo falta recibir la firma independiente de Privacy Policy, publicarla en la ruta que TikTok indique y verificarla. No se tocaron Wix, DNS, tokens, métricas ni infraestructura de otras marcas. Documento actualizado: `Operations/Automation/2026-08-25_Textos_Publicos_Terminos_Privacidad_App_Metricas_USM.md` v1.5.
 
