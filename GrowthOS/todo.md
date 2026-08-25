@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "4.4"
+version: "4.5"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -45,6 +45,11 @@ organization: "GrowthOS"
 - [ ] Preparar el texto de App Review que explique exclusivamente Login Kit y Display API para Universe Sent Me, con scopes `user.info.basic` y `video.list`, lectura local y sin publicación, mensajes, comentarios, anuncios ni otros permisos.
 - [ ] Grabar una demo real en el sandbox de TikTok que muestre el flujo completo de escritorio: inicio local, autorización de sandbox, callback loopback y lectura de datos de video; no incluir secretos, tokens visibles, datos de Bam in a Can ni Firma Bordados.
 - [ ] Revisar que los productos y scopes mostrados en la demo coincidan exactamente con la solicitud antes de enviar App Review; retirar cualquier producto o scope no utilizado.
+- [x] Elegir Sandbox de TikTok como ruta inmediata para el piloto local de Universe Sent Me; no enviar App Review ni afirmar que la app está lista para producción.
+- [ ] Confirmar en TikTok el resultado de las tres verificaciones de URL (Terms of Use, Privacy Policy y Web/Desktop URL) antes de activar productos en el sandbox.
+- [ ] Crear un sandbox exclusivo `USM Metrics Read Only`, sin clonar productos de escritura y sin importar configuración a Production.
+- [ ] Añadir únicamente una cuenta TikTok propia de Universe Sent Me como Target User del sandbox; excluir Bam in a Can, Firma Bordados, cualquier cliente y cuentas ajenas.
+- [ ] Configurar en el sandbox únicamente Login Kit y TikTok API/Display API con `user.info.basic` y `video.list`; no activar Content Posting, comentarios, mensajes, anuncios ni scopes adicionales.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
 - [ ] Crear una app de escritorio de TikTok con los scopes oficiales mínimos `user.info.basic` y `video.list`, callback local con PKCE, más un cliente OAuth local de Google con scopes de lectura para YouTube Data, YouTube Analytics y monetización.
 - [ ] Reemplazar la consulta de Windsor.ai por scripts locales de TikTok y YouTube antes del fin del Trial, manteniendo Facebook e Instagram en sus rutas existentes.
