@@ -66,6 +66,7 @@
 - [x] Preparar un checklist de migración final Wix → producción con requisitos de propiedad, contenido, privacidad, pruebas, dominio, DNS, reversión y aprobación explícita, sin ejecutar el corte.
 - [x] Documentar que Io Marketing operará el hosting y repositorio de Firma Bordados bajo un acuerdo administrado, sin transferir aún el dominio ni ejecutar el corte.
 - [x] Estimar los costos anuales de operación fuera de Wix por escenarios, con correo guiado y formulario gestionado como alternativas, sin contratar servicios.
+- [x] Preparar una propuesta de cotización de costo único de migración y paquetes de mantenimiento anual administrados por Io Marketing, con alcance, exclusiones y supuestos claros.
 - [x] Comparar y documentar alternativas seguras de backend, entrega de correo, aviso de privacidad y antispam para el formulario de Firma Bordados.
 - [x] Preparar el cambio de «Cómo solicitar» para priorizar correo sin eliminar WhatsApp como canal alternativo.
 - [x] Implementar y validar en staging el enlace de correo guiado para «Cómo solicitar», conservando WhatsApp en hero y contacto.

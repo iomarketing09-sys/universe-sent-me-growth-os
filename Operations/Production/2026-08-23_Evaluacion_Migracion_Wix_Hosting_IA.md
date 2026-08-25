@@ -8,13 +8,14 @@
 
 **Última actualización:** 2026-08-24
 
-**Versión:** 3.6
+**Versión:** 3.7
 
 **Autor:** Manus AI
 
 **Organización:** `Operations/Production`
 
 **Documentos relacionados:** [`2026-08-18_Piloto_Local_OmniRoute_Seguro.md`](2026-08-18_Piloto_Local_OmniRoute_Seguro.md), [`2026-08-19_Decision_Gateway_IA_OmniRoute.md`](2026-08-19_Decision_Gateway_IA_OmniRoute.md), [`2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md`](2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md), [`2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md`](2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md) y [`2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md`](2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md).
+**Documentos relacionados:** [`2026-08-18_Piloto_Local_OmniRoute_Seguro.md`](2026-08-18_Piloto_Local_OmniRoute_Seguro.md), [`2026-08-19_Decision_Gateway_IA_OmniRoute.md`](2026-08-19_Decision_Gateway_IA_OmniRoute.md), [`2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md`](2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md), [`2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md`](2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md), [`2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md`](2026-08-25_Diseno_Formulario_Privacidad_Firma_Bordados.md) y [`2026-08-25_Propuesta_Cotizacion_Migracion_Mantenimiento_Firma_Bordados.md`](2026-08-25_Propuesta_Cotizacion_Migracion_Mantenimiento_Firma_Bordados.md).
 
 ---
 
@@ -246,6 +247,8 @@ Fernando confirmó que **Io Marketing operará el hosting y el repositorio** de 
 Cloudflare documenta que las solicitudes de activos estáticos son gratuitas e ilimitadas en Pages, y que Pages Functions usa los límites de Workers. Workers Paid tiene una cuota mínima de USD 5 por mes, equivalente a USD 60 al año.[13] [14] Formspree publica un plan Free y planes Personal/Professional de USD 10/20 por mes; el precio anual final debe verificarse en su checkout antes de contratar.[15] Cloudflare Registrar anuncia renovaciones a costo, pero el dominio `firmabordados.com` sigue actualmente bajo Wix y su importe concreto debe confirmarse en la cuenta del cliente.[16]
 
 La cifra anterior **no incluye** la cuota profesional de Io Marketing. Esa cuota debe definirse como un servicio separado y visible al cliente, por ejemplo: mantenimiento preventivo, actualizaciones de contenido autorizadas, atención de incidentes, revisión mensual de formularios/consultas, reportes y cambios urgentes. Recomiendo cotizarla con un alcance, número de horas o bolsas de cambios y una periodicidad —mensual o anual— distintos del costo técnico de terceros, para que el cliente sepa qué paga a cada parte.
+
+La propuesta base de migración y mantenimiento se documentó por separado en `2026-08-25_Propuesta_Cotizacion_Migracion_Mantenimiento_Firma_Bordados.md`. Es un borrador comercial que separa el corte único, los paquetes Esencial/Estándar, las exclusiones y los costos de terceros; no constituye una contratación ni autoriza cambios de producción.
 
 ## Integración futura de IA
 
