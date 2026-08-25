@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -83,9 +83,15 @@ La demostración debe ser una grabación de pantalla única, sin música ni edic
 
 Si el sandbox o la interfaz local no están listos, se debe guardar el formulario como Draft y no subir un video simulado o generado por IA. La revisión debe demostrar una integración funcional, no una maqueta.
 
+### Verificación visual del Sandbox — 25 de agosto de 2026
+
+Fernando proporcionó evidencia visual de la configuración Sandbox. El producto visible es **Login Kit**; el modal de productos no muestra otros productos activos. La lista de scopes presenta únicamente `user.info.basic` —incluido por Login Kit— y `video.list`. El redirect URI de Desktop es exactamente `http://127.0.0.1:8765/callback/`. En `Target Users` aparece un único registro: `universe.sent.me`, atribuido por Fernando a Universe Sent Me.
+
+La siguiente prueba no presupone que el acceso esté operativo: el autorizador local debe confirmar el scope devuelto y el collector debe comprobar una llamada de lectura a `video.list`. Si TikTok devuelve que falta habilitar un producto o permiso, se detiene la ejecución, se documenta el error y se revisa el Sandbox; no se añaden alternativas de escritura, contenidos, mensajería, anuncios o cuentas de otras marcas.
+
 ## Estado del documento
 
-La guía es operativa pero no autoriza cron ni escrituras canónicas. Después de completar la revisión TikTok, los consentimientos y las dos lecturas de prueba, deberá actualizarse junto con el documento de diseño, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, las pestañas derivadas de `USM Growth OS` y el changelog.
+La guía es operativa pero no autoriza cron ni escrituras canónicas. Después de completar el consentimiento sandbox y las dos lecturas de prueba, deberá actualizarse junto con el documento de diseño, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, las pestañas derivadas de `USM Growth OS` y el changelog.
 
 ## Referencias
 

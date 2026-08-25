@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.58
+**Versión:** 4.59
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.59.00] — 2026-08-25 (Fernando/Manus): Sandbox TikTok verificado visualmente para acceso mínimo de Universe Sent Me.** Las capturas de Fernando confirman Login Kit como único producto visible, los únicos scopes `user.info.basic` y `video.list`, el callback Desktop exacto `http://127.0.0.1:8765/callback/` y un solo Target User `universe.sent.me` para Universe Sent Me. No se observaron Share Kit, Content Posting API, Webhooks, Data Portability, Local Service API ni otros scopes. El siguiente gate es técnico y local: validar que TikTok entregue esos scopes y que `video.list` responda en Sandbox. Si el endpoint exige una configuración adicional, se detiene y documenta sin añadir capacidades de escritura. Documento actualizado: `Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md` v1.2.
 
 - **[4.58.00] — 2026-08-25 (Fernando/Manus): Configuración de Sandbox TikTok reportada como completada; falta validación visual final.** Fernando confirmó que concluyó la configuración solicitada en el Sandbox. El contrato aplicado fue Login Kit de escritorio, Target User exclusivo de Universe Sent Me, scopes mínimos `user.info.basic` y `video.list`, y callback local `http://127.0.0.1:8765/callback/`. Se mantiene la prohibición de Content Posting, Share Kit, Webhooks, Data Portability, Local Service API, comentarios, mensajes, anuncios, credenciales en chat y cualquier cuenta de Bam in a Can, Firma Bordados o terceros. Antes de consultar Client Key o ejecutar OAuth local, queda una validación visual pendiente de productos, scopes, callback y Target User en la página Sandbox. Pendiente canónico actualizado a v4.6.
 

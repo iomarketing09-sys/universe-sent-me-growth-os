@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "4.6"
+version: "4.7"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -50,7 +50,8 @@ organization: "GrowthOS"
 - [x] Crear el sandbox exclusivo `USM Metrics Read Only`, sin clonar productos de escritura y sin importar configuración a Production; Fernando reportó la configuración finalizada.
 - [x] Añadir únicamente una cuenta TikTok propia de Universe Sent Me como Target User del sandbox; excluir Bam in a Can, Firma Bordados, cualquier cliente y cuentas ajenas; Fernando reportó la configuración finalizada.
 - [x] Configurar en el sandbox únicamente Login Kit y TikTok API/Display API con `user.info.basic` y `video.list`, más `http://127.0.0.1:8765/callback/`; no activar Content Posting, comentarios, mensajes, anuncios ni scopes adicionales; Fernando reportó la configuración finalizada.
-- [ ] Confirmar visualmente en el Sandbox el usuario objetivo, la lista final de productos/scopes y el callback antes de abrir Client Key o realizar OAuth local.
+- [x] Confirmar visualmente en el Sandbox: Login Kit como único producto; `user.info.basic` y `video.list` como únicos scopes; callback `http://127.0.0.1:8765/callback/`; y un solo Target User `universe.sent.me` de Universe Sent Me. No aparecieron otros productos activos.
+- [ ] Validar en el flujo local que el token sandbox autorizado incluye exactamente `user.info.basic` y `video.list`, y que la llamada de lectura `video.list` funciona; si falla por producto no disponible, detenerse y revisar la configuración Sandbox sin añadir scopes o productos de escritura.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
 - [ ] Crear una app de escritorio de TikTok con los scopes oficiales mínimos `user.info.basic` y `video.list`, callback local con PKCE, más un cliente OAuth local de Google con scopes de lectura para YouTube Data, YouTube Analytics y monetización.
 - [ ] Reemplazar la consulta de Windsor.ai por scripts locales de TikTok y YouTube antes del fin del Trial, manteniendo Facebook e Instagram en sus rutas existentes.
