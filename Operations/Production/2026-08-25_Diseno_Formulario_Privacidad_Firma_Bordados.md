@@ -7,6 +7,7 @@ updated: 2026-08-25
 version: "1.2"
 author: "Manus AI"
 related_documents:
+  - "Operations/Production/2026-08-24_Borrador_Aviso_Privacidad_Firma_Bordados.md"
   - "Operations/Production/2026-08-23_Evaluacion_Migracion_Wix_Hosting_IA.md"
   - "Operations/Production/2026-08-23_Guia_Staging_Cloudflare_Pages_Firma_Bordados.md"
   - "Operations/Production/2026-08-24_Backlog_Tecnico_Staging_Firma_Bordados.md"
@@ -82,6 +83,8 @@ Si el dominio se transfiere a Cloudflare DNS como parte de la migración final, 
 ## 7. Estado
 
 La Etapa A está **aplicada**. Paty Lozano y el domicilio operativo del negocio quedaron registrados como datos declarados para preparar el aviso, pero no constituyen un aviso de privacidad definitivo ni una validación legal. No se ha activado backend, proveedor de correo, Turnstile, analítica, secreto, almacenamiento de consultas, cambio DNS ni migración de dominio. La recomendación de la Etapa B permanece en **Review** y requiere decisión explícita antes de cualquier integración externa.
+
+El borrador de aviso integral y simplificado se creó en `2026-08-24_Borrador_Aviso_Privacidad_Firma_Bordados.md` con estado **Draft**. Su publicación sigue bloqueada por las validaciones operativas y legales enumeradas en dicho documento.
 
 ## Referencias
 
