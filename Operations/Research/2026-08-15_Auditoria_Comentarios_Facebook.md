@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "6.4"
+version: "6.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -1367,3 +1367,12 @@ La implementación de las cinco reglas aprobadas añade una capa de análisis re
 Estas métricas sirven para describir volumen, profundidad, concentración, clasificación editorial y operación de respuesta. No equivalen a alcance, impresiones, reproducciones, sentimiento, usuarios únicos ni causalidad. Toda comparación debe conservar cursor, timestamp de extracción, alcance de publicaciones, ventana y denominador; raíces y réplicas nunca deben sumarse sin identificarlas por separado.
 
 La especificación canónica queda en `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, sección 23; la arquitectura de vistas en `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, sección 22; y el análisis de origen en `Operations/Research/2026-08-25_Facebook_Comment_Interaction_Trends_Analysis.md/.json`.
+
+
+## 43. Cadencia propuesta para revisión de comentarios — 25 de agosto de 2026
+
+Con base en los bursts observados, la cadencia recomendada es una prueba de **tres revisiones GET-only al día** en `America/Matamoros`: 12:00, 17:30 y 21:30, durante siete días. La opción mínima es 17:30 y 22:00; la opción intensiva, únicamente temporal, es 12:00, 16:00, 19:30 y 22:30. Esta última no debe convertirse en polling horario permanente.
+
+Cada revisión debe recuperar el delta con cursor, separar raíces de réplicas, clasificar propuestas y no acción, y registrar latencia de detección. Las lecturas adicionales se reservan para bursts anómalos o solicitudes directas a la Página. La cadencia está en `Review`: Fernando debe elegir una opción antes de crear cualquier automatización recurrente. La recomendación no autoriza publicaciones ni respuestas automáticas.
+
+Fuente canónica: `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, sección 24. Arquitectura de vistas: `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, sección 24.

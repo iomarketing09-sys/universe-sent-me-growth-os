@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-25
-**Versión:** 3.29
+**Versión:** 3.30
 **Autor:** Manus AI (CGO); Sección 6 añadida por Claude
 **Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`, `../Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`, `../Operations/Research/2026-08-21_Julio_Expansion_Lote01_Analysis.md`, `../Operations/Research/2026-08-21_Expansion_Celdas_Comparables_Post_Julio_Lote01.json`, `../Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Findings.md`, `../Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md`, `../Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`, `../Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Audit.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Analysis.md`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Manual_Findings.md`, `../Operations/Research/2026-08-21_Junio_Caption_Reclassification_Impact.md`, `../Operations/Research/2026-08-21_Validacion_Cruzada_Hipotesis_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.md`, `../Operations/Research/2026-08-15_Community_Engagement_Log.md`, `../Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `../Operations/Research/2026-08-24_Facebook_Expanded_Audit_Reply_Proposals.md`
 
@@ -477,3 +477,20 @@ Las primeras siete métricas pueden calcularse en una revisión GET-only. Las tr
 El conjunto mínimo para el reporte semanal será `Comentarios_Raiz`, `Replicas_Anidadas`, `Share_Replicas`, `Concentracion_Post_Top1`, `Tasa_Propuesta_Editorial`, `Tasa_No_Accion` y `Senales_Musicales_Identificables`. Se acompañará con comentarios por hora solo cuando la duración de la cohorte sea comparable. Ningún indicador derivado sustituye las métricas de Meta ni debe usarse para declarar crecimiento sin reach, impresiones, reproducciones, usuarios únicos o una fuente equivalente.
 
 **Estado:** activo por aprobación de las cinco reglas el 2026-08-25. **Documento fuente:** `Operations/Research/2026-08-25_Facebook_Comment_Interaction_Trends_Analysis.md/.json`. **Documentos relacionados que deben mantenerse alineados:** `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `Operations/Research/2026-08-15_Community_Engagement_Log.md`, `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 24. Cadencia propuesta para revisar comentarios de Facebook — 2026-08-25
+
+Esta es una propuesta operativa en estado **Review**; no crea un schedule ni autoriza publicaciones. Se basa en el último burst observado de 101 comentarios, concentrado entre la tarde y la noche, y en la cadencia vigente de publicaciones de Facebook. Todas las horas se expresan en `America/Matamoros`.
+
+| Opción | Horarios y frecuencia | Ventaja | Trade-off | Coste y complejidad |
+|---|---|---|---|---|
+| Revisión focalizada recomendada | 3 revisiones diarias: 12:00, 17:30 y 21:30 | Cubre la salida del post de la mañana, el bloque de tarde y el pico nocturno sin polling continuo. | Puede dejar un burst corto entre revisiones. | Bajo; revisión GET-only con cursor incremental. |
+| Revisión mínima | 2 revisiones diarias: 17:30 y 22:00 | Menor esfuerzo y concentra la lectura en las horas de mayor actividad observada. | Más latencia para comentarios del bloque matutino y mayor acumulación por corte. | Muy bajo; dos lecturas GET-only. |
+| Revisión intensiva temporal | 4 revisiones diarias: 12:00, 16:00, 19:30 y 22:30 durante 7 días | Permite medir si la concentración vespertina se repite y reduce la latencia de respuesta. | Más trabajo editorial; puede generar ruido si se responde por volumen. | Bajo-medio; requiere disciplina de cursor y no debe convertirse en polling horario permanente. |
+
+**Recomendación de prueba:** usar la opción focalizada de 3 revisiones durante siete días. Ejecutar una cuarta lectura solo cuando una publicación supere el patrón habitual, exista una solicitud directa a la Página o el volumen observado desde el último cursor aumente claramente. Cada revisión debe recuperar el delta, separar raíces de réplicas, clasificar propuestas y no acción, y dejar explícito cuántos casos requieren autorización.
+
+La frecuencia no debe evaluarse por cantidad de respuestas publicadas. Los indicadores de cierre son: latencia de detección, comentarios raíz nuevos, proporción de réplicas, tasa de propuesta editorial, tasa de no acción, concentración por publicación y —solo cuando exista una respuesta autorizada— cobertura, continuación y latencia de respuesta. No se recomienda revisar cada hora mediante sesiones completas ni activar una tarea recurrente sin confirmar primero la opción y el canal de entrega.
+
+**Estado:** Review. **Aprobación requerida:** Fernando debe elegir una opción antes de crear cualquier automatización. **Documentos relacionados:** `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `Operations/Research/2026-08-15_Community_Engagement_Log.md`, `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

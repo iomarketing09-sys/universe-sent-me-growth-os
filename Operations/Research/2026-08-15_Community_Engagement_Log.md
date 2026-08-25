@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "5.9"
+version: "6.0"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -856,3 +856,14 @@ Las cinco reglas aprobadas no crean métricas nativas nuevas en Meta ni garantiz
 El reporte semanal debe separar hechos de comentario, métricas derivadas e indicadores nativos de plataforma. Las métricas derivadas se conservan en artefactos fechados con cursor, fecha de extracción, alcance y denominador; no se escriben como si fueran reach, impresiones, reproducciones, sentimiento o usuarios únicos. La especificación canónica queda en `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, sección 23, y su aplicación arquitectónica en `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, sección 22.
 
 **Estado:** activo. **Documento relacionado que requiere actualización:** `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 27. Cadencia propuesta de revisión de comentarios — 25 de agosto de 2026
+
+La recomendación operativa es una prueba de **tres revisiones GET-only diarias** en `America/Matamoros`, a las **12:00, 17:30 y 21:30**, durante siete días. La selección cubre el bloque posterior al slot matutino, la transición de tarde y el tramo nocturno donde se concentró el último burst. No se activa ninguna tarea recurrente con esta anotación.
+
+Se conservan dos alternativas: una cadencia mínima de 17:30 y 22:00 para reducir esfuerzo, y una cadencia intensiva temporal de cuatro lecturas —12:00, 16:00, 19:30 y 22:30— solo para medir si el patrón vespertino se repite. Una lectura adicional se reserva para bursts anómalos o solicitudes directas a la Página. No se recomienda polling horario permanente.
+
+La comparación debe usar como cierre la latencia de detección, comentarios raíz, réplicas, tasa de propuesta, tasa de no acción, concentración por publicación y, cuando exista respuesta autorizada, cobertura, continuación y latencia de respuesta. **Estado:** Review. Fernando debe elegir una opción antes de automatizarla.
+
+Documento canónico de la propuesta: `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, sección 24. Arquitectura alineada: `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, sección 24.
