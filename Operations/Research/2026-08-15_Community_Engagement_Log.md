@@ -3,8 +3,8 @@ title: "Community Engagement Log — Universe Sent Me"
 purpose: "Registrar de forma ligera, append-only y anonimizada las señales cualitativas de comentarios, las respuestas humanas y los aprendizajes editoriales de la comunidad."
 status: Active
 created: 2026-08-15
-updated: 2026-08-24
-version: "5.6"
+updated: 2026-08-25
+version: "5.7"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -811,5 +811,28 @@ Las propuestas son respuestas específicas a `Contigo-karol g` y `aventurera, Al
 Las 99 no-acciones se desglosan en 71 réplicas de conversaciones usuario-a-usuario, 14 señales breves o vacías, 11 comentarios contextuales o anecdóticos y 3 unidades con lenguaje sensible. No se respondieron automáticamente las conversaciones laterales, las recomendaciones de ejercicios ni las descripciones íntimas.
 
 La evidencia cruda está en `2026-08-25_Facebook_Comment_Review_After_Five_Approved_Replies.json`; la clasificación completa en `2026-08-25_Facebook_Editorial_Review_After_Five_Approved_Replies.json/.md`; la cola vigente en `2026-08-25_Facebook_Pending_Queue_After_Five_Approved_Replies.json`; y el auditor reutilizable en `Operations/Automation/audit_facebook_comments_after_five_approved_replies.py`.
+
+**Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 24. Tendencias comparativas de interacción — 25 de agosto de 2026
+
+Se comparó el corte actual de **101 comentarios nuevos** con los cortes editoriales anteriores de 83 y 95 comentarios, además de dos ventanas semanales del ledger. El análisis no modifica la cola ni publica respuestas; documenta únicamente patrones observados en comentarios recuperados mediante Meta Graph API v26.0.
+
+| Indicador | Corte de 83 | Corte de 95 | Corte actual de 101 |
+|---|---:|---:|---:|
+| Comentarios observados | 83 | 95 | 101 |
+| Propuestas editoriales | 24 | 5 | 2 |
+| Tasa de propuesta | 28.92% | 5.26% | 1.98% |
+| Duración efectiva del burst | 12.40 h | 3.42 h | 3.66 h |
+| Comentarios observados por hora | 6.69 | 27.78 | 27.60 |
+
+El volumen actual es 6.32% mayor que el corte de 95 y 21.69% mayor que el de 83. La velocidad por hora es prácticamente estable frente al corte de 95 —0.65% menor—, por lo que el aumento de volumen se explica principalmente por una ventana efectiva 7.02% más larga, no por una aceleración clara.
+
+La composición sí cambió: 30 raíces y 71 réplicas, es decir, 70.3% de actividad anidada, 2.93 puntos porcentuales por encima del corte de 95. El Reel de Maeve concentró 81 de los 101 comentarios (80.2%), 7.57 puntos porcentuales más que su participación en el corte anterior. Esto confirma que el volumen debe leerse por publicación y por profundidad del hilo, no como un KPI único del perfil.
+
+La ventana de siete días inmediatamente anterior al cursor acumuló 430 filas del ledger, frente a 18 en la ventana de siete días previa: +2,288.89%. Este salto está afectado por los lotes de auditoría/publicación recientes y por la mezcla de estados del ledger; no debe presentarse como crecimiento orgánico de alcance ni como aumento de usuarios únicos.
+
+**Aprendizajes incorporados al Growth OS:** separar raíces de réplicas; reportar concentración por publicación; conservar la tasa de propuesta como indicador editorial complementario, no como sustituto de alcance; y tratar título + artista como señal suficiente para una propuesta musical breve. El análisis completo está en `2026-08-25_Facebook_Comment_Interaction_Trends_Analysis.md/.json`.
 
 **Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

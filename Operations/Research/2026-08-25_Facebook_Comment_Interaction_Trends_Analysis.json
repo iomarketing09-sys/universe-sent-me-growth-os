@@ -1,0 +1,481 @@
+{
+  "title": "Facebook Comment Interaction Trends Analysis",
+  "purpose": "Comparar el corte actual de 101 comentarios nuevos con cortes previos y ventanas temporales del ledger, sin inferir alcance o impresiones que no estén disponibles.",
+  "status": "Review",
+  "created_at": "2026-08-25T00:53:35+00:00",
+  "updated_at": "2026-08-25T00:53:35+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "organization": "Operations/Research",
+  "related_documents": [
+    "Operations/Research/2026-08-25_Facebook_Comment_Review_After_Five_Approved_Replies.json",
+    "Operations/Research/2026-08-25_Facebook_Editorial_Review_After_Five_Approved_Replies.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
+    "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md",
+    "GrowthOS/00_01_Changelog_GrowthOS.md"
+  ],
+  "source_scope": "Repository evidence from Meta Graph API v26.0 read-only scans and the anonymized Community Engagement Log",
+  "comparison_limits": [
+    "Comment counts measure observed comments in the scanned 20 own Page posts, not reach, impressions, views, or unique commenters.",
+    "The current scan reads one level of replies and up to 100 objects per collection; it is not a full historical export.",
+    "The current 101-comment cohort is a burst after the previous publication cursor, while prior weekly windows cover different post mixes and durations."
+  ],
+  "current_scan": {
+    "label": "Corte actual posterior a cinco respuestas",
+    "reviewed_at": "2026-08-25T00:53:35+00:00",
+    "cursor": "2026-08-24T21:11:20+00:00",
+    "candidate_count": 101,
+    "root_count": 30,
+    "nested_count": 71,
+    "root_share_pct": 29.7,
+    "nested_share_pct": 70.3,
+    "posts_with_candidates": 3,
+    "cohort_min_comment_time": "2026-08-24T21:12:01+00:00",
+    "cohort_max_comment_time": "2026-08-25T00:51:51+00:00",
+    "cohort_duration_hours": 3.66,
+    "observed_comments_per_hour": 27.6,
+    "top_posts": [
+      {
+        "post_id": "1036844829507460_122151376539072582",
+        "post_reference": "Reel de Maeve",
+        "count": 81,
+        "share_pct": 80.2
+      },
+      {
+        "post_id": "1036844829507460_122151376083072582",
+        "post_reference": "Meme ‘larga vida a esas mujeres que aprietan desde adentro’",
+        "count": 18,
+        "share_pct": 17.82
+      },
+      {
+        "post_id": "1036844829507460_122151376011072582",
+        "post_reference": "Publicación de contexto breve",
+        "count": 2,
+        "share_pct": 1.98
+      }
+    ],
+    "current_unanswered_units_in_scope": 347,
+    "new_units_since_cursor": 101,
+    "api_error_count": 0,
+    "proposal_count": 2,
+    "no_action_count": 99,
+    "proposal_rate_pct": 1.98,
+    "music_candidate_count": 2,
+    "burst_min_comment_time": "2026-08-24T21:12:01+00:00",
+    "burst_max_comment_time": "2026-08-25T00:51:51+00:00",
+    "burst_duration_hours": 3.66,
+    "cursor_to_review_hours": 3.7,
+    "observed_comments_per_hour_in_burst": 27.6,
+    "hourly_counts_utc": {
+      "2026-08-24T21:00Z": 35,
+      "2026-08-24T22:00Z": 19,
+      "2026-08-24T23:00Z": 28,
+      "2026-08-25T00:00Z": 19
+    }
+  },
+  "prior_scans": [
+    {
+      "label": "Corte anterior de 83 comentarios",
+      "reviewed_at": "2026-08-24T16:42:06+00:00",
+      "cursor": "2026-08-24T04:14:14+00:00",
+      "candidate_count": 83,
+      "root_count": 34,
+      "nested_count": 49,
+      "root_share_pct": 40.96,
+      "nested_share_pct": 59.04,
+      "posts_with_candidates": 6,
+      "cohort_min_comment_time": "2026-08-24T04:18:10+00:00",
+      "cohort_max_comment_time": "2026-08-24T16:41:57+00:00",
+      "cohort_duration_hours": 12.4,
+      "observed_comments_per_hour": 6.69,
+      "top_posts": [
+        {
+          "post_id": "1036844829507460_122151376083072582",
+          "post_reference": "Meme ‘larga vida a esas mujeres que aprietan desde adentro’",
+          "count": 41,
+          "share_pct": 49.4
+        },
+        {
+          "post_id": "1036844829507460_122151376539072582",
+          "post_reference": "Reel de Maeve",
+          "count": 33,
+          "share_pct": 39.76
+        },
+        {
+          "post_id": "1036844829507460_122151376011072582",
+          "post_reference": "Publicación de contexto breve",
+          "count": 5,
+          "share_pct": 6.02
+        },
+        {
+          "post_id": "1036844829507460_122151375843072582",
+          "post_reference": "Analizando mi propio caos. 🧐 #UniverseSentMe",
+          "count": 2,
+          "share_pct": 2.41
+        },
+        {
+          "post_id": "1036844829507460_122151376629072582",
+          "post_reference": "El cambio da miedo… quedarse igual también. 😮‍💨 #UniverseSentMe",
+          "count": 1,
+          "share_pct": 1.2
+        },
+        {
+          "post_id": "1036844829507460_122151376365072582",
+          "post_reference": "💔 #UniverseSentMe",
+          "count": 1,
+          "share_pct": 1.2
+        }
+      ]
+    },
+    {
+      "label": "Corte anterior de 95 comentarios",
+      "reviewed_at": "2026-08-24T20:43:27+00:00",
+      "cursor": "2026-08-24T17:13:46+00:00",
+      "candidate_count": 95,
+      "root_count": 31,
+      "nested_count": 64,
+      "root_share_pct": 32.63,
+      "nested_share_pct": 67.37,
+      "posts_with_candidates": 5,
+      "cohort_min_comment_time": "2026-08-24T17:14:41+00:00",
+      "cohort_max_comment_time": "2026-08-24T20:39:54+00:00",
+      "cohort_duration_hours": 3.42,
+      "observed_comments_per_hour": 27.78,
+      "top_posts": [
+        {
+          "post_id": "1036844829507460_122151376539072582",
+          "post_reference": "Reel de Maeve",
+          "count": 69,
+          "share_pct": 72.63
+        },
+        {
+          "post_id": "1036844829507460_122151376083072582",
+          "post_reference": "Meme ‘larga vida a esas mujeres que aprietan desde adentro’",
+          "count": 23,
+          "share_pct": 24.21
+        },
+        {
+          "post_id": "1036844829507460_122154023781072582",
+          "post_reference": "Bueno… tampoco era para tanto. 🤭",
+          "count": 1,
+          "share_pct": 1.05
+        },
+        {
+          "post_id": "1036844829507460_122151376365072582",
+          "post_reference": "💔 #UniverseSentMe",
+          "count": 1,
+          "share_pct": 1.05
+        },
+        {
+          "post_id": "1036844829507460_122151376011072582",
+          "post_reference": "Publicación de contexto breve",
+          "count": 1,
+          "share_pct": 1.05
+        }
+      ]
+    }
+  ],
+  "cut_history": [
+    {
+      "label": "Corte de 83",
+      "comments": 83,
+      "proposals": 24,
+      "no_action": 59,
+      "proposal_rate_pct": 28.92,
+      "duration_hours": 12.4,
+      "comments_per_hour": 6.69
+    },
+    {
+      "label": "Corte de 95",
+      "comments": 95,
+      "proposals": 5,
+      "no_action": 90,
+      "proposal_rate_pct": 5.26,
+      "duration_hours": 3.42,
+      "comments_per_hour": 27.78
+    },
+    {
+      "label": "Corte actual de 101",
+      "comments": 101,
+      "proposals": 2,
+      "no_action": 99,
+      "proposal_rate_pct": 1.98,
+      "duration_hours": 3.66,
+      "comments_per_hour": 27.6
+    }
+  ],
+  "ledger_windows": [
+    {
+      "label": "Ventana de 7 días inmediatamente anterior al cursor",
+      "start": "2026-08-17T21:11:20+00:00",
+      "end": "2026-08-24T21:11:20+00:00",
+      "count": 430,
+      "comments_per_day": 61.43,
+      "root_count": 177,
+      "nested_count": 151,
+      "root_share_pct": 41.16,
+      "status_counts": {
+        "Respondido": 190,
+        "No_Requiere_Respuesta": 239,
+        "Archivado": 1
+      },
+      "signal_counts": {
+        "Identificación y complicidad con el remate": 1,
+        "Identificación directa": 1,
+        "Remate elaborado y alineado con humor de Elara": 1,
+        "Comentario ambiguo sobre el meme y una canción; tono burlón pero sin amenaza ni insulto directo": 1,
+        "Mensaje de ánimo y acompañamiento": 1,
+        "Remate humorístico sobre aura y falta de claridad": 1,
+        "Humor de identificación social sobre la tribu de los migajeros": 1,
+        "Insulto aislado tratado con humor sin escalar": 1,
+        "Acuerdo incompleto que abre conexión emocional": 1,
+        "Elogio breve con oportunidad de abrir conversación musical": 1,
+        "Complicidad sobre la debilidad de la audiencia por los michis": 1,
+        "Afecto breve asociado a gatos": 1,
+        "Risa y aprobación del remate": 2,
+        "Reacción juguetona con energía de unicornio": 1,
+        "Pregunta retórica que amplía la identificación": 1,
+        "Referencia musical que abre un recuerdo": 1,
+        "Canción asociada a duelo y memoria personal": 1,
+        "Lista de canciones y memoria escolar": 1,
+        "Recomendación musical mediante enlace": 1,
+        "Aprobación breve de la invitación del post": 1,
+        "Recomendación musical": 6,
+        "Reconocimiento de una canción": 1,
+        "Seguimiento musical con petición implícita de playlist": 1,
+        "Reflexión sobre transformación y energía": 1,
+        "Remate humorístico sobre farmeo": 1,
+        "Remate humorístico con insinuación": 1,
+        "Frase musical sobre vínculo": 1,
+        "Recomendación musical de Journey": 1,
+        "Playlist con tres contextos emocionales": 1,
+        "Recomendación musical de The Beautiful People": 1,
+        "Remate sobre energía y Big Bang": 1,
+        "Comentario compuesto solo por un nombre": 1,
+        "Remate de duda sobre el meme": 1,
+        "Aprobación breve": 2,
+        "Referencia a Zumo de mandrágora": 1,
+        "Recomendación de Hijo de hombre de Phil Collins": 1,
+        "Referencia musical Viento": 1,
+        "Recomendación de One of Us": 1,
+        "Recomendación de Frío frío de Juan Luis Guerra": 1,
+        "Recomendación de Disfruto de Carla Morrison": 1,
+        "Post_☁️✨🤔_Reclasificación_Fernando": 5,
+        "Reflexión teológica sobre Dios y el tiempo": 1,
+        "Réplica sobre el modo travesura": 1,
+        "Réplica que celebra pertenecer al grupo": 1,
+        "Continuación breve del remate con ‘Amén hermanas’": 1,
+        "Recomendación de ‘Mis manos en tu cintura’ de Nino Bravo": 1,
+        "Recomendación de ‘Tonight’ de The Smashing Pumpkins": 1,
+        "Cita religiosa extensa con enlace externo y sin solicitud clara": 1,
+        "Recomendación de ‘Stirb nicht vor mir’ de Rammstein": 1,
+        "Recomendación de ‘Birdie’ de León Larregui": 1,
+        "Réplica humorística que transforma BigBang en ‘bigbong’": 1,
+        "Texto demasiado breve para inferir intención": 1,
+        "Nombre o mención sin contexto": 1,
+        "Propuesta_Respuesta": 11,
+        "Autoidentificación humorística": 1,
+        "Recomendación musical de Vivaldi": 1,
+        "Título o frase musical de tono poético": 1,
+        "Recomendación de ‘Alguien como tú’ de Josean Log": 1,
+        "Juego verbal con ‘singularidad’": 1,
+        "Respuesta colectiva sobre el origen": 1,
+        "Remate de humor con voz divina": 1,
+        "Pregunta directa sobre la figura de la imagen": 1,
+        "Paradoja de creador y criatura": 1,
+        "Respuesta breve al origen de la figura": 1,
+        "Reflexión sobre fe, duda y práctica religiosa": 1,
+        "Hipótesis de una superconciencia": 1,
+        "Aforismo sobre existencia y creencia": 1,
+        "Referencia esotérica sobre el origen": 1,
+        "Autoatribución humorística del origen": 1,
+        "Remate coloquial y pícaro": 1,
+        "Reconocimiento de incertidumbre": 1,
+        "Origen autocreado con giro de multiverso": 1,
+        "Humor sobre una explicación alterada del universo": 1,
+        "Respuesta breve: el humano como creador": 1,
+        "Giro humorístico sobre creador y criatura": 1,
+        "Postura escéptica sobre la creencia": 1,
+        "Reflexión crítica sobre las explicaciones humanas": 1,
+        "Definición filosófica del concepto divino": 1,
+        "Reacción emocional al debate": 1,
+        "Cita bíblica sobre principio y fin": 1,
+        "Post_☁️✨🤔_Batch10_Review": 32,
+        "Hipótesis humorística sobre una figura de aire": 1,
+        "Reacción humorística de crisis existencial": 1,
+        "Invitación directa a escuchar la canción recomendada": 1,
+        "Aporte teológico y cosmogónico dentro del hilo": 1,
+        "Insulto dirigido a otra persona": 2,
+        "Acuerdo breve entre usuarios": 1,
+        "Provocación entre usuarios sobre una creencia": 1,
+        "Lenguaje homofóbico dirigido a terceros": 1,
+        "Réplica ambigua sin contexto suficiente": 1,
+        "Respuesta breve sobre el origen": 1,
+        "Reacción humorística al debate": 1,
+        "Reconocimiento de la pregunta central": 1,
+        "Remate sobre el origen de las creencias": 1,
+        "Sin_contenido": 1,
+        "Respuesta_breve": 1,
+        "Sin_Accion": 20,
+        "Baja_señal": 34,
+        "Revisión_moderación": 3,
+        "Referencia musical de despedida": 1,
+        "Historia personal y música de duelo": 1,
+        "Playlist musical": 1,
+        "Conversación filosófica entre usuarios": 7,
+        "Réplica_baja_señal": 2,
+        "Historia personal dentro de conversación": 1,
+        "Crítica entre usuarios": 1,
+        "Sin_Contenido": 1,
+        "Respuesta de baja señal": 1,
+        "Conversación_Contextual": 14,
+        "Lenguaje_Sensible": 6,
+        "Consejo humorístico sobre el meme": 1,
+        "Conversación entre usuarios": 9,
+        "Etiqueta o nombre aislado": 1,
+        "Aprobación explícita del meme": 1,
+        "Risa breve": 1,
+        "Conversación_Usuario_Usuario": 71,
+        "Contexto_Insuficiente": 3,
+        "Contextual_Sustantivo": 2,
+        "Seguimiento_72h": 3,
+        "Doble sentido con petición de resultado": 1,
+        "Lenguaje sexualizado de doble sentido": 1,
+        "Texto de baja señal": 1,
+        "Juego de palabras del meme": 1,
+        "Corrección dirigida a la Página": 1,
+        "Complicidad breve con el meme": 1,
+        "Doble sentido y precisión humorística": 1,
+        "Reacción de emoji": 1,
+        "Oportunidad de engagement específica": 29,
+        "No accionable en este corte": 59
+      },
+      "posts_with_comments": 32,
+      "top_post_ids": [
+        {
+          "post_id": "1036844829507460_122151376083072582",
+          "count": 140
+        },
+        {
+          "post_id": "1036844829507460_122151376539072582",
+          "count": 108
+        },
+        {
+          "post_id": "122151375549072582",
+          "count": 46
+        },
+        {
+          "post_id": "1036844829507460_122151375549072582",
+          "count": 44
+        },
+        {
+          "post_id": "1036844829507460_122151376011072582",
+          "count": 25
+        },
+        {
+          "post_id": "122151376011072582",
+          "count": 20
+        },
+        {
+          "post_id": "122151376083072582",
+          "count": 8
+        },
+        {
+          "post_id": "1036844829507460_122151375843072582",
+          "count": 6
+        },
+        {
+          "post_id": "1036844829507460_122151375927072582",
+          "count": 3
+        },
+        {
+          "post_id": "1036844829507460_122151374157072582",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "label": "Ventana de 7 días entre 14 y 7 días antes del cursor",
+      "start": "2026-08-10T21:11:20+00:00",
+      "end": "2026-08-17T21:11:20+00:00",
+      "count": 18,
+      "comments_per_day": 2.57,
+      "root_count": 0,
+      "nested_count": 0,
+      "root_share_pct": 0.0,
+      "status_counts": {
+        "No_Requiere_Respuesta": 13,
+        "Respondido": 5
+      },
+      "signal_counts": {
+        "Mención automática a audiencia": 4,
+        "Comentario sin texto": 7,
+        "Rechazo explícito del chiste": 1,
+        "Complicidad humorística sobre el personaje": 1,
+        "Referencia de tendencia externa y parecido humorístico": 1,
+        "Aprobación breve del remate": 1,
+        "Remate alternativo sobre dejar de buscar": 1,
+        "Humor ácido general sobre conductas atribuidas a ambos géneros": 1,
+        "Relato personal de conflicto relacional y problemas legales con cierre de humor autodepreciativo": 1
+      },
+      "posts_with_comments": 5,
+      "top_post_ids": [
+        {
+          "post_id": "1036844829507460_122148874371072582",
+          "count": 10
+        },
+        {
+          "post_id": "1036844829507460_122150559981072582",
+          "count": 3
+        },
+        {
+          "post_id": "1036844829507460_122150559873072582",
+          "count": 2
+        },
+        {
+          "post_id": "1036844829507460_122150560215072582",
+          "count": 2
+        },
+        {
+          "post_id": "1036844829507460_122150560083072582",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "derived_comparisons": {
+    "current_vs_prior_95_pct_change": 6.32,
+    "current_vs_prior_83_pct_change": 21.69,
+    "current_vs_prior_7_day_ledger_count_pct_change": -76.51,
+    "current_vs_prior_7_day_ledger_hourly_rate_pct_change": 978.15,
+    "current_vs_prior_95_duration_pct_change": 7.02,
+    "current_vs_prior_95_hourly_rate_pct_change": -0.65,
+    "current_top_post_share_minus_prior_95_top_post_share_percentage_points": 7.57,
+    "prior_7_day_vs_prior_14_to_7_day_count_pct_change": 2288.89,
+    "current_proposal_rate_minus_prior_95_percentage_points": -3.28,
+    "current_nested_share_minus_prior_95_percentage_points": 2.93
+  },
+  "editorial_outcomes_current": {
+    "proposals": [
+      {
+        "comment_id": "122151376011072582_1051573194149891",
+        "comment_message": "Contigo-karol g",
+        "post_reference": "Publicación de contexto breve — caption visible: `😌 #UniverseSentMe`",
+        "proposed_reply": "«CONTIGO» de Karol G: el corazón sí sabe elegir soundtrack. 💗🎶"
+      },
+      {
+        "comment_id": "122151376011072582_1458569976337294",
+        "comment_message": "aventurera, Alberto plaza",
+        "post_reference": "Publicación de contexto breve — caption visible: `😌 #UniverseSentMe`",
+        "proposed_reply": "«Aventurera» de Alberto Plaza: esa sí trae nostalgia con pasaporte propio. 🎶🌙"
+      }
+    ],
+    "no_action_count": 99,
+    "no_action_by_reason": {
+      "Conversación_Usuario_Usuario": 71,
+      "Baja_señal": 14,
+      "Conversación_Contextual": 11,
+      "Lenguaje_Sensible": 3
+    }
+  }
+}

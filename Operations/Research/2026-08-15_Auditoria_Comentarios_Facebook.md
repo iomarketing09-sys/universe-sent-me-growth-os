@@ -3,8 +3,8 @@ title: "Auditoría de comentarios de Facebook y propuesta de Community Growth"
 purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y definir un sistema de escucha, respuesta y aprendizaje para Universe Sent Me."
 status: Active
 created: 2026-08-15
-updated: 2026-08-24
-version: "6.1"
+updated: 2026-08-25
+version: "6.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -1324,5 +1324,28 @@ Las dos propuestas corresponden a referencias musicales identificables por títu
 Las 99 no-acciones se desglosan en 71 réplicas de conversaciones usuario-a-usuario, 14 señales breves o vacías, 11 comentarios contextuales o anecdóticos y 3 unidades con lenguaje sensible. Se conservan todos los IDs para trazabilidad; el criterio evita interrumpir conversaciones laterales, convertir recomendaciones de ejercicios en consejos propios o amplificar descripciones íntimas desde la Página.
 
 La evidencia de lectura está en `2026-08-25_Facebook_Comment_Review_After_Five_Approved_Replies.json`; la clasificación completa en `2026-08-25_Facebook_Editorial_Review_After_Five_Approved_Replies.json/.md`; la cola vigente en `2026-08-25_Facebook_Pending_Queue_After_Five_Approved_Replies.json`; y el auditor reproducible en `Operations/Automation/audit_facebook_comments_after_five_approved_replies.py`.
+
+**Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Community_Engagement_Log.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 40. Tendencias comparativas del corte posterior a cinco respuestas — 25 de agosto de 2026
+
+Se analizó el corte actual de 101 comentarios nuevos frente a los cortes editoriales previos de 83 y 95 comentarios, utilizando el ledger anonimizado para construir dos ventanas semanales anteriores al cursor `2026-08-24T21:11:20+0000`. El análisis es de comentarios observados, no de alcance, impresiones, reproducciones ni usuarios únicos.
+
+| Indicador | Corte de 83 | Corte de 95 | Corte actual de 101 |
+|---|---:|---:|---:|
+| Comentarios observados | 83 | 95 | 101 |
+| Tasa de propuesta editorial | 28.92% | 5.26% | 1.98% |
+| Duración efectiva del burst | 12.40 h | 3.42 h | 3.66 h |
+| Comentarios observados por hora | 6.69 | 27.78 | 27.60 |
+| Participación de réplicas | 59.04% | 67.37% | 70.30% |
+
+El volumen actual creció 6.32% frente al corte de 95 y 21.69% frente al de 83. Frente al corte inmediatamente anterior, la velocidad por hora disminuyó solo 0.65% y la ventana efectiva fue 7.02% más larga; por tanto, el aumento no demuestra una aceleración de la conversación. La tasa de propuesta editorial bajó a 1.98%, principalmente porque 71 de 101 unidades fueron réplicas entre usuarios y no oportunidades directas de la Página.
+
+La concentración se desplazó hacia el Reel de Maeve: 81 comentarios, 80.2% del corte actual, frente a 72.63% en el corte anterior (+7.57 puntos porcentuales). El meme de la frase `larga vida a esas mujeres que aprietan desde adentro` aportó 18 comentarios (17.82%) y la publicación de contexto breve aportó 2 (1.98%). La actividad está concentrada en tres publicaciones, por lo que los próximos análisis deben segmentarse por publicación.
+
+En el ledger, la ventana de siete días inmediatamente anterior acumuló 430 filas, frente a 18 en la ventana de siete días previa (+2,288.89%). Este cambio está influido por los lotes recientes de auditoría y publicación y por la mezcla de estados del ledger; no puede presentarse como crecimiento orgánico de alcance, sentimiento o usuarios únicos.
+
+El aprendizaje operativo queda incorporado: separar raíces y réplicas; reportar concentración por publicación; usar la tasa de propuesta como indicador editorial complementario; y reconocer título + artista como una señal musical suficientemente identificable para una respuesta breve. Evidencia detallada: `Operations/Research/2026-08-25_Facebook_Comment_Interaction_Trends_Analysis.md/.json`.
 
 **Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Community_Engagement_Log.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
