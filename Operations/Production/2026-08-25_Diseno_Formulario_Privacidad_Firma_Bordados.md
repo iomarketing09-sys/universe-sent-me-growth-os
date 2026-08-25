@@ -105,6 +105,22 @@ La página de precios de Formspree muestra opciones de facturación mensual y an
 
 **Recomendación actual:** mantener correo guiado por USD 0 adicional. Si se requiere envío directo antes de una migración de DNS, evaluar Formspree primero en el plan Free con consultas sintéticas, sin archivos y con el aviso actualizado, pero solo después de aprobarlo expresamente como encargado de datos. Si más adelante se autoriza una migración de DNS, la opción de mayor control es Pages Function + Turnstile + Cloudflare Email Service; su costo base público sería USD 5/mes y no requiere introducir otro proveedor de envío.
 
+### Propuesta de piloto Formspree Free — pendiente de aprobación
+
+> **No iniciado.** Esta sección describe el único alcance propuesto para decidir si se crea o no una cuenta. No se ha creado cuenta, endpoint, secreto, formulario de envío directo ni flujo de datos hacia Formspree.
+
+| Elemento | Propuesta de piloto | Límite de seguridad y privacidad |
+| :--- | :--- | :--- |
+| Cuenta y control | Una cuenta de Formspree destinada a Firma Bordados, con acceso limitado a quien atiende el buzón y a la persona autorizada para mantenimiento web | No crear la cuenta hasta recibir autorización expresa; no compartir contraseñas ni incluir credenciales en repositorio. |
+| Destino | `firmabordados@yahoo.com`, confirmado como buzón operativo y ARCO | Verificar el buzón mediante el flujo del proveedor; no añadir destinatarios secundarios sin confirmación. |
+| Campos | Nombre y correo obligatorios; empresa y teléfono opcionales; mensaje/requerimiento obligatorio | Sin archivos, imágenes, documentos, CURP, datos financieros, sensibles ni listas de personal. |
+| Volumen | Formspree Free: hasta 50 envíos por mes; archivo del proveedor de hasta 30 días.[6] | Mantener el flujo de correo guiado como alternativa si se alcanza el límite; no contratar automáticamente. |
+| Antispam | Formshield básico del proveedor, restricción al dominio del staging/sitio, honeypot y validación de longitud en frontend | No activar reCAPTCHA de Google en el piloto sin actualizar la revisión de proveedores del aviso; reevaluar si aparece spam. |
+| Conservación | Buzón oficial: hasta 12 meses desde la última interacción, conforme a la política operativa propuesta; archivo del proveedor: máximo 30 días en el plan Free.[6] | El aviso debe diferenciar la retención interna de la retención técnica del proveedor. |
+| Confirmación al visitante | Pantalla de agradecimiento sin exponer datos enviados; sin autorespuesta en el plan Free | No prometer plazo de respuesta ni registrar analítica de conversión. |
+
+Antes de ejecutar este piloto, Firma Bordados debe aprobar expresamente: **(1)** crear la cuenta de Formspree y aceptar sus términos; **(2)** que Formspree procese los cinco campos anteriores como proveedor/encargado; **(3)** actualizar el aviso para informar el uso del proveedor, su archivo técnico y el canal ARCO; **(4)** verificar `firmabordados@yahoo.com` como destinatario; y **(5)** mantener el límite de 50 envíos/mes sin compra automática. Si alguna condición no se aprueba, se conserva el correo guiado actual.
+
 ## 6. Decisiones necesarias antes de activar servicios
 
 1. Confirmar la **razón social**, únicamente si es distinta de Firma Bordados, y que el domicilio del negocio es el medio apropiado para el aviso y solicitudes ARCO.

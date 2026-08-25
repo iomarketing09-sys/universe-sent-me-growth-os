@@ -86,6 +86,14 @@ El 2026-08-24, Fernando aprobó el texto publicado para el staging y confirmó q
 | Proveedor de formulario, correo, antispam y analítica | Firma Bordados y equipo web | Declarar correctamente el tratamiento por terceros antes de capturar datos. |
 | Revisión legal y autorización de publicación | Firma Bordados o asesor legal | Confirmar adecuación a la operación real antes de depender del aviso. |
 
+## 5.1 Cambio requerido si se aprueba el piloto Formspree
+
+Si Firma Bordados aprueba el piloto Formspree Free, el aviso deberá actualizarse **antes** de publicar el formulario para explicar que el proveedor recibirá nombre, correo, empresa/teléfono opcionales y requerimiento con el único fin de entregar la consulta a `firmabordados@yahoo.com`. También deberá describir que el plan Free conserva un archivo técnico de envíos de hasta treinta días, mientras Firma Bordados conservará las consultas recibidas en su buzón conforme a la política operativa propuesta de hasta doce meses desde la última interacción.[2]
+
+No se deben habilitar archivos, reCAPTCHA de Google, autorespuestas, analítica de marketing ni destinatarios adicionales dentro del piloto sin revisar de nuevo el aviso y los proveedores involucrados. La aprobación del texto actual no equivale a aprobar Formspree: el proveedor, los campos y el límite de cincuenta envíos por mes requieren autorización separada.
+
 ## Referencias
 
 [1]: [Ley Federal de Protección de Datos Personales en Posesión de los Particulares — Cámara de Diputados](https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf)
+
+[2]: [Formspree — planes, archivo y controles de spam](https://formspree.io/plans)
