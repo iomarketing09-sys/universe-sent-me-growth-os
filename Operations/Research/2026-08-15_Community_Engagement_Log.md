@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-24
-version: "5.4"
+version: "5.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -765,5 +765,51 @@ Se publicaron y verificaron **5/5 respuestas**. La verificación confirmó autor
 Los cinco registros actualizados conservan su `Respuesta_Meta_ID`, `Respuesta_Fecha`, texto exacto, aprobación, fuente de Meta y timestamp de sincronización. El detalle normalizado está en `2026-08-24_Facebook_Comment_Publication_After_Approved_Publication_Review.json` y `.md`; la evidencia de publicación y verificación está en `2026-08-24_Facebook_Comment_Publication_After_Approved_Publication_Review.json`; y la cola cerrada en `2026-08-24_Facebook_Pending_Queue_After_Approved_Publication_Review.json`.
 
 La autorización se limitó exactamente a estos cinco comentarios. No se publicaron respuestas para las 90 unidades que habían quedado `No_Requiere_Respuesta`, incluida la referencia musical aislada `Coco valiente`. El CSV permanece append-only, anonimizado y con IDs únicos.
+
+**Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 22. Nueva cola posterior a cinco respuestas — 25 de agosto de 2026
+
+La revisión exclusiva mediante Meta Graph API v26.0 se ejecutó en modo lectura a las `2026-08-25T00:53:35+00:00`, con cursor `2026-08-24T21:11:20+00:00`, correspondiente al cierre verificado de las cinco respuestas publicadas en el corte anterior. Se consultaron las 20 publicaciones propias más recientes, 234 comentarios raíz y 457 IDs de comentarios y réplicas; no hubo errores de API ni escrituras.
+
+El corte encontró **101 comentarios nuevos sin respuesta directa**, todos no registrados previamente en el ledger. Se clasificaron **2 propuestas específicas** como `Pendiente_Respuesta` + `Pendiente_Fernando` y **99 casos** como `No_Requiere_Respuesta`. Las dos propuestas son referencias musicales identificables: `Contigo-karol g` y `aventurera, Alberto plaza`. La cola no contiene publicaciones autorizadas; ninguna puede publicarse sin una nueva aprobación explícita de Fernando.
+
+| Resultado | Casos | Tratamiento |
+|---|---:|---|
+| Unidades actuales sin respuesta directa en el alcance | 347 | Incluye backlog histórico |
+| Comentarios nuevos desde el cursor | 101 | Registrados una sola vez por `Comentario_ID` |
+| Propuestas específicas | 2 | Pendientes de aprobación explícita |
+| No requiere respuesta | 99 | Conservados con motivo editorial |
+| Publicaciones realizadas en este corte | 0 | Solo lectura |
+| Errores de API | 0 | Sin incidencias |
+
+Las 99 no-acciones se desglosan en **71 réplicas de conversaciones usuario-a-usuario**, **14 señales breves o vacías**, **11 comentarios contextuales o anecdóticos** y **3 unidades con lenguaje sensible**. Se mantuvieron todos los IDs en el inventario; no se respondieron automáticamente las conversaciones laterales, las recomendaciones de ejercicios ni las descripciones íntimas.
+
+El detalle completo está en `2026-08-25_Facebook_Editorial_Review_After_Five_Approved_Replies.json/.md`; la cola vigente está en `2026-08-25_Facebook_Pending_Queue_After_Five_Approved_Replies.json`; la evidencia cruda de lectura está en `2026-08-25_Facebook_Comment_Review_After_Five_Approved_Replies.json`; y el auditor reutilizable en `Operations/Automation/audit_facebook_comments_after_five_approved_replies.py`.
+
+**Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 23. Nueva cola posterior a cinco respuestas — 25 de agosto de 2026
+
+La revisión exclusiva mediante Meta Graph API v26.0 se ejecutó en modo lectura a las `2026-08-25T00:53:35+0000`, usando el cursor `2026-08-24T21:11:20+0000`, correspondiente al cierre verificado de las cinco respuestas publicadas en el corte anterior. Se revisaron las 20 publicaciones propias más recientes, 234 comentarios raíz y 457 IDs de comentarios y réplicas; no hubo errores de API ni escrituras.
+
+El corte encontró **101 comentarios nuevos sin respuesta directa**, todos ausentes del ledger al inicio de la revisión. Se registraron de manera idempotente en el CSV: **2 propuestas específicas** quedaron como `Pendiente_Respuesta` + `Pendiente_Fernando` y **99 casos** como `No_Requiere_Respuesta`. El ledger pasó de 448 a **549 filas únicas**. La cola no contiene publicaciones autorizadas.
+
+| Resultado | Casos | Tratamiento |
+|---|---:|---|
+| Unidades actuales sin respuesta directa en el alcance | 347 | Incluye backlog histórico |
+| Comentarios nuevos desde el cursor | 101 | Registrados una sola vez por `Comentario_ID` |
+| Propuestas específicas | 2 | Referencias musicales; pendientes de aprobación |
+| No requiere respuesta | 99 | Conservados con motivo editorial |
+| Publicaciones realizadas en este corte | 0 | Solo lectura |
+| Errores de API | 0 | Sin incidencias |
+
+Las propuestas son respuestas específicas a `Contigo-karol g` y `aventurera, Alberto plaza`. La primera reconoce `CONTIGO` de Karol G; la segunda reconoce `Aventurera` de Alberto Plaza. Ambas mantienen el tono USM y no inventan un análisis de letra que el comentario no pidió.
+
+Las 99 no-acciones se desglosan en 71 réplicas de conversaciones usuario-a-usuario, 14 señales breves o vacías, 11 comentarios contextuales o anecdóticos y 3 unidades con lenguaje sensible. No se respondieron automáticamente las conversaciones laterales, las recomendaciones de ejercicios ni las descripciones íntimas.
+
+La evidencia cruda está en `2026-08-25_Facebook_Comment_Review_After_Five_Approved_Replies.json`; la clasificación completa en `2026-08-25_Facebook_Editorial_Review_After_Five_Approved_Replies.json/.md`; la cola vigente en `2026-08-25_Facebook_Pending_Queue_After_Five_Approved_Replies.json`; y el auditor reutilizable en `Operations/Automation/audit_facebook_comments_after_five_approved_replies.py`.
 
 **Documentos que requieren actualización por esta modificación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
