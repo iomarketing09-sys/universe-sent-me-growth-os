@@ -1,10 +1,10 @@
 ---
 title: "Plan de lanzamiento de audiencia — Bam in a Can"
 purpose: "Construir la identidad editorial, el catálogo inicial y la primera audiencia de Bam in a Can antes de cualquier campaña de terceros o monetización externa."
-status: "Active — señales iniciales de CAN-001 y CAN-002 incorporadas; validación pendiente"
+status: "Active — CAN-003 T+3 incorporado; hipótesis de hook y retención en validación"
 created: 2026-08-20
-updated: 2026-08-24
-version: "1.1"
+updated: 2026-08-26
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_Piloto_Content_Rewards_Bam_In_A_Can.md"
@@ -12,6 +12,7 @@ related_documents:
   - "Operations/Production/2026-08-21_Bam_In_A_Can_Semana01_Calendario_Publicacion.md"
   - "Operations/Research/2026-08-21_Bam_CAN001_Snapshot_Temprano.md"
   - "Operations/Research/2026-08-23_Bam_CAN002_Chequeo_Inicial.md"
+  - "Operations/Research/2026-08-25_Bam_CAN003_Corte_Inicial.md"
   - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
   - "Operations/Production/Brand_Assets/Bam_In_A_Can/Bam_in_a_can_Logo.png"
 organization: "Operations/Production"
@@ -96,6 +97,19 @@ El ajuste se basa en las filas frescas de CAN-002 recuperadas aproximadamente a 
 
 Este es un ajuste de **creatividad y packaging**, no de franja horaria. Se preserva el diseño 2 + 1: TikTok e Instagram con audio nativo bajo y YouTube Shorts con SFX originales. No se cambia el audio, volumen ni horario hasta contar con varios cortes de edad comparable. El copy de disclosure sigue siendo obligatorio y la pregunta de caption no debe sustituirlo.
 
-## 9. Documentos que requieren actualización posterior
+## 9. Hipótesis preliminares — CAN-003 T+3
 
-Después de los primeros 21 días, actualizar este plan con el corte de métricas por formato y el veredicto de continuidad. El siguiente ajuste relacionado debe registrarse en `Operations/Research/2026-08-23_Bam_CAN002_Chequeo_Inicial.md` y en el ledger de distribución después de CAN-003/CAN-004, para aceptar, revisar o descartar `H-BAM-TT-HOOK-01` y `H-BAM-IG-PACKAGING-01`. Actualizar `Operations/Production/2026-08-20_Piloto_Content_Rewards_Bam_In_A_Can.md` para decidir si la pausa de campañas se mantiene o si se habilita una revisión nueva. Crear un registro de piezas de Bam antes de producir más de ocho publicaciones, para no convertir esta primera lista en un backlog sin trazabilidad.
+CAN-003 introdujo una señal dividida por plataforma. En YouTube Studio, el Short alcanzó 853 views, 11 likes y 1 share en la ventana reportada de tres horas, y previamente mostraba 10 s de visualización media sobre una duración de 10 s. En TikTok Studio, la pieza acumuló 101 views, 2.6 s de average watch sobre 10.05 s, 5.61 % de finalización y 97.2 % del tráfico desde Para ti; Instagram continuaba con dos views según el reporte manual de Fernando y no estaba indexado en Windsor. Estas señales describen un solo activo y no demuestran que una variable aislada haya causado el resultado.
+
+| Hipótesis | Señal que la motiva | Prueba siguiente | Regla preliminar de lectura |
+|---|---|---|---|
+| `H-BAM-YT-CLOSED-LOOP-01` | YouTube muestra consumo medio de 10 s sobre un video de 10 s y crecimiento de 578 a 853 views entre las dos capturas tempranas. | En el próximo `FOUND` o `FAKE TRAILER` comparable, conservar una duración de 8–10 s, abrir con la anomalía ya activa y cerrar en una composición que visualmente conecte con el primer frame. Mantener SFX sin música en YouTube. | Señal favorable si el watch medio se mantiene en **≥90 %** de la duración en dos piezas comparables y YouTube vuelve a sostener distribución temprana; un solo Short no valida el loop. |
+| `H-BAM-TT-FIRST-SECOND-01` | TikTok recibió 97.2 % del tráfico desde Para ti, pero la curva cae con fuerza después del inicio; 2.6 s equivalen a 25.0 % de la duración y solo 5.61 % completó el video. | En el próximo video comparable para TikTok, el frame 0 debe mostrar la acción imposible en marcha, no la máquina en reposo. Incluir una segunda escalada visual antes de 1.5 s y el payoff antes de 3.0 s; el cierre debe regresar a una forma visual del frame inicial. | Señal favorable si la retención media supera **3.0 s** o la finalización llega a **≥10 %**, sin perder entrada desde Para ti. No se cambia el horario por este resultado. |
+| `H-BAM-TT-SINGLE-RULE-01` | La distribución inicial existe, pero el primer segundo no sostuvo suficiente curiosidad. | Cada `FOUND` debe presentar una sola regla imposible visible: por ejemplo, “la moneda entra sola”, “la lata respira” o “el cursor vuelve”; no añadir dos misterios simultáneos ni una explicación escrita antes de la acción. | Validar solo si la segunda pieza conserva el hook físico y mejora al menos una métrica de consumo frente a CAN-003; si no, revisar el tipo de anomalía antes de variar audio. |
+| `H-BAM-IG-PACKAGING-01` | Instagram todavía no aporta datos indexados; dos views manuales no permiten juzgar ni el caption ni el Reel. | Mantener la pregunta diegética de caption en una segunda publicación antes de cambiarla. Reconsultar por shortcode sin fechas cuando aparezca la fila. | No aceptar ni descartar la hipótesis hasta contar con dos Reels indexados y una interacción activa observable; la ausencia de fila no equivale a cero. |
+
+La consecuencia práctica para CAN-004 y la siguiente pieza comparable no es aumentar texto ni explicar el lore. El hook debe ser una **acción física imposible ya iniciada**, con una progresión visual clara: anomalía en frame 0, escalada antes de 1.5 s, remate antes de 3 s y cierre capaz de inducir replay. En YouTube se mantiene el control de SFX; en TikTok e Instagram se conserva el audio nativo bajo hasta que existan dos o más piezas comparables.
+
+## 10. Documentos que requieren actualización posterior
+
+Después de los primeros 21 días, actualizar este plan con el corte de métricas por formato y el veredicto de continuidad. El siguiente ajuste relacionado debe registrarse en `Operations/Research/2026-08-25_Bam_CAN003_Corte_Inicial.md` y en el ledger de distribución después de CAN-004 y la siguiente pieza comparable, para aceptar, revisar o descartar `H-BAM-YT-CLOSED-LOOP-01`, `H-BAM-TT-FIRST-SECOND-01`, `H-BAM-TT-SINGLE-RULE-01` y `H-BAM-IG-PACKAGING-01`. Actualizar `Operations/Production/2026-08-20_Piloto_Content_Rewards_Bam_In_A_Can.md` para decidir si la pausa de campañas se mantiene o si se habilita una revisión nueva. Crear un registro de piezas de Bam antes de producir más de ocho publicaciones, para no convertir esta primera lista en un backlog sin trazabilidad.
