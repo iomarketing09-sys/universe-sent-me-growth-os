@@ -4,7 +4,7 @@ purpose: "Preparar una decisión reversible y respaldada sobre el almacenamiento
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.2"
+version: "1.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -143,6 +143,8 @@ El inventario de Xubuntu reportó aproximadamente 24 GiB usados en la raíz actu
 | Imagen completa del disco actual | Aproximadamente 465.8 GiB antes de margen | 1 TB recomendado; no es la vía elegida para la migración planificada, salvo que se apruebe una estrategia de imagen separada. |
 
 La recomendación actual es un medio externo de **128 GB o mayor** para el respaldo lógico. Debe ser un dispositivo separado, fiable y dedicado al proceso de migración, con capacidad para crear y verificar una copia antes de modificar Xubuntu. La decisión de compra, proveedor y formato del medio sigue correspondiendo a Fernando; este documento no solicita ni autoriza ninguna compra ni formateo.
+
+El disco Windows informado con 730 GB libres no puede ocupar ese papel por ahora: no fue detectado como dispositivo de bloque en Xubuntu después de reconectarlo. Hasta que un medio aparezca con tamaño, transporte y filesystem identificables, no se permite iniciar G-SEC-1A ni realizar copias.
 
 ## Referencias
 

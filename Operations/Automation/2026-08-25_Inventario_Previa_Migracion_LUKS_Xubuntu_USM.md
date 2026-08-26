@@ -4,7 +4,7 @@ purpose: "Registrar los metadatos de aplicaciones, servicios y rutas que deben c
 status: Review
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.2"
+version: "1.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -96,3 +96,9 @@ Antes de solicitar autorización para migrar, todavía faltan: decisión de qué
 ## Capacidad recomendada para G-SEC-1A
 
 Con 24 GiB usados en el sistema actual, una copia lógica con 50% de margen necesita aproximadamente 36 GiB y duplicar la ocupación actual requiere 48 GiB. Por ello, 64 GB es el mínimo técnico para una copia lógica limitada; se recomienda **128 GB o más** para conservar margen de revisión, prueba de restauración y crecimiento antes de migrar. Una imagen completa del disco no forma parte de esta ruta y requeriría un medio de aproximadamente 1 TB para evitar operar al límite.
+
+## Estado de los medios disponibles
+
+La USB de 28.8 GB queda descartada como respaldo único porque no alcanza el objetivo de 36 GiB con margen. El disco externo usado en Windows, aunque reporta 730 GB libres desde Windows, no apareció en Xubuntu tras la inspección read-only ni después de reconectarlo: `lsblk` solo mostró el lector SD `sdb` de 0 B. No se detectó un bloque USB con tamaño, formato o punto de montaje.
+
+Por seguridad, el disco Windows no es apto para G-SEC-1A mientras no sea detectado en Xubuntu. No se debe formatear, reparar, cifrar, montar manualmente ni copiar datos sobre él. La alternativa recomendada es obtener o reservar un medio externo independiente de **128 GB o mayor**, verificar que aparezca como dispositivo USB con tamaño antes de usarlo y repetir la inspección de solo lectura.

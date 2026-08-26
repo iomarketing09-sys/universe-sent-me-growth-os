@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.94
+**Versión:** 4.95
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.95.00] — 2026-08-25 (Fernando/Manus): Disco Windows bloqueado como medio de respaldo por falta de detección.** Después de conectar y reconectar el disco Windows con 730 GB libres, Xubuntu continuó mostrando solo el lector SD `sdb` de 0 B; no apareció un bloque USB con tamaño, filesystem o montaje. La USB de 28.8 GB tampoco alcanza el mínimo de 36 GiB con margen. Por seguridad, ninguno de los dos medios se usará para G-SEC-1A, y no se ejecutarán reparación, formateo, montaje manual ni copia. Se requiere un medio externo alternativo de 128 GB o mayor que aparezca correctamente en Xubuntu antes de cualquier respaldo. Plan de cifrado actualizado a v1.3 e inventario a v1.3.
 
 - **[4.94.00] — 2026-08-25 (Fernando/Manus): Medios de respaldo identificados; inspección segura preparada.** Fernando informó una USB de 28.8 GB y un disco externo usado en Windows con 730 GB libres. La USB queda descartada como único medio porque está por debajo de los 36 GB requeridos para una copia lógica con margen. El disco Windows es candidato de capacidad, pero requiere confirmar filesystem, montaje, espacio y que no se alterará información existente. Se añadió `inspect_external_backup_media.sh`, un inspector read-only que no monta, desmonta, copia, repara, cifra ni formatea dispositivos. La asignación final queda pendiente de su reporte. No se tocaron los medios.
 

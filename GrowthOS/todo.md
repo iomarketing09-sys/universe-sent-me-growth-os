@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "10.1"
+version: "10.5"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -120,7 +120,10 @@ organization: "GrowthOS"
 - [x] Generar inventario no destructivo previo a respaldo: aplicaciones, servicios, proyectos y rutas de configuración necesarias para restaurar Xubuntu, sin leer raw, evidencia privada, tokens, secretos ni contenido de cuentas. Resultado documentado en `2026-08-25_Inventario_Previa_Migracion_LUKS_Xubuntu_USM.md` v1.1.
 - [ ] G-SEC-1A.1: Fernando debe decidir qué rutas personales entran al respaldo general y conseguir un medio externo separado; clasificar `~/.config/usm-metrics`, `~/.local/share/usm-metrics` y `~/omniroute-pilot` como respaldo privado cifrado, sin exponer contenido.
 - [x] Definir la capacidad mínima y recomendada del medio externo de respaldo con margen suficiente para los 24 GB actualmente usados, la verificación y el crecimiento previo a la migración LUKS. Resultado: 64 GB mínimo técnico para copia lógica limitada; 128 GB recomendado; 1 TB solo si se aprobara una imagen completa separada.
-- [ ] Evaluar los medios ya disponibles: USB de 28.8 GB y disco externo Windows con 730 GB libres. Confirmar de forma no destructiva el sistema de archivos, estado y carpeta segura disponible antes de asignar el respaldo.
+- [x] Evaluar los medios ya disponibles: USB de 28.8 GB y disco externo Windows con 730 GB libres. Resultado: USB insuficiente; disco Windows no detectado en Xubuntu y no apto todavía.
+- [x] Resolver bloqueo de detección: la primera inspección no mostró la USB ni el disco Windows, solo el lector SD `sdb` de 0 B. Reconectar un medio a la vez y confirmar que aparece en `lsblk` antes de inspeccionar o copiar datos. Resultado: la reconexión no detectó el disco Windows.
+- [x] Diagnosticar sin escritura el disco Windows no detectado: verificar conexión directa, cable, alimentación y mensajes recientes del kernel; si no aparece como bloque USB con tamaño, no usarlo para respaldo ni intentar reparación/formateo. Resultado: permanece no detectado; sin cambios al medio.
+- [ ] G-SEC-1A.2: obtener o reservar un medio externo alternativo de 128 GB o mayor y verificar que Xubuntu lo detecte con tamaño y filesystem antes de iniciar cualquier respaldo.
 - [x] Documentar la secuencia de automatización posterior al cifrado: validación manual, ejecución supervisada, scheduler local, observabilidad, salida sanitizada Draft y criterios de pausa; no activar cron, APIs de escritura, Sheets ni OmniRoute. Documento: `2026-08-25_Hoja_Ruta_Automatizacion_Local_Segura_USM.md`.
 - [x] Revisar el estado canónico del contrato de shadow ledger en GitHub y consolidar los requisitos pendientes para un futuro proyecto separado de almacenamiento local cifrado; no modificar discos, volúmenes, cifrado ni ledgers reales. Revisión: commit remoto `480ea95`; contrato `Review`, G-NORM-4R bloqueado y opción activa sintética.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
