@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "2.4"
+version: "2.5"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -160,6 +160,12 @@ Los collectors locales actuales permanecen limitados a captura privada y resumen
 El fixture cubre una observación Facebook disponible, una ausencia válida de saves de Instagram, una observación TikTok de vida y una métrica diaria de porcentaje visto de YouTube por encima de 100, que se conserva sin recorte. Además incluye casos de marca incorrecta y valor nulo marcado erróneamente como disponible. La batería `validate_normalization_dry_run.py` verificó `NORM-01` a `NORM-12`, incluidos duplicados, ausencia explícita, métricas derivadas incompletas, evidencia no hasheada, datos monetarios no restringidos y campo prohibido.
 
 El resultado del gate fue `synthetic_validation_passed` con 3 filas válidas, 1 parcial, 2 rechazadas y 0 duplicados en el lote base. Este resultado no autoriza utilizar evidencia real: el próximo posible paso es `G-NORM-3`, un piloto local privado, y requiere aprobación adicional de Fernando.
+
+### G-NORM-3: piloto privado de cobertura preparado
+
+Con aprobación de Fernando, `normalize_metrics_private_pilot.py` quedó preparado para ejecutar G-NORM-3. Lee únicamente el archivo más reciente de evidencia privada por plataforma y procesa en memoria un máximo de ocho registros fuente por TikTok, YouTube, Facebook e Instagram. No hace solicitudes de red, no necesita token, no persiste observaciones normalizadas y no modifica evidencia fuente, ledgers, Google Sheets, OmniRoute o calendarios.
+
+El reporte imprime exclusivamente estado, cantidad de registros fuente disponibles, tamaño de muestra procesada, cantidad de observaciones normalizadas en memoria, validaciones, cobertura por nombre de métrica y disponibilidad. Nunca imprime IDs, captions, títulos, URLs, valores nativos, rutas, tokens, hashes ni filas normalizadas. Para YouTube, todo el bloque de monetización queda excluido incluso si existe en la evidencia; el reporte solo trabaja con las filas de rendimiento de la ventana cerrada. La validación contra fixtures sintéticos cubrió Facebook, Instagram, TikTok y YouTube sin filas rechazadas y confirmó que las ausencias se registran como parciales.
 
 ### Revisión descriptiva de la primera captura — 25 de agosto de 2026
 

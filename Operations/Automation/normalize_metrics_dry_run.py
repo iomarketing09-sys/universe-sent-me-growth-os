@@ -21,10 +21,11 @@ BRAND = "Universe Sent Me"
 NORMALIZER_VERSION = "0.1.0-dry-run"
 ALLOWED_PLATFORMS = {"facebook", "instagram", "tiktok", "youtube"}
 ALLOWED_SCOPES = {"content", "channel", "account"}
-ALLOWED_UNITS = {"count", "seconds", "percentage", "currency", "ratio"}
+ALLOWED_UNITS = {"count", "minutes", "seconds", "percentage", "currency", "ratio"}
 ALLOWED_WINDOWS = {
     "lifetime_at_capture",
     "daily_activity",
+    "period_total",
     "interval_delta",
     "exact_window",
     "observed_cut",

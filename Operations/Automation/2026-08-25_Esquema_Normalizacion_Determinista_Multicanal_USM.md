@@ -4,7 +4,7 @@ purpose: "Definir una estructura auditable que conserve métricas nativas de Tik
 status: Review
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
@@ -77,7 +77,7 @@ La unidad base será una observación larga, no una fila ancha con decenas de co
 | `concept_id`, `cnt_id`, `experiment_id`, `hypothesis_id` | string/null | Solo enlaces ya verificados; `null` es preferible a una asociación probable. |
 | `metric_name` | enum | Nombre canónico de un solo contador o medición nativa. |
 | `metric_value` | decimal/null | Valor sin redondeo destructivo; `null` si no existe o no es aplicable. |
-| `metric_unit` | enum | `count`, `seconds`, `percentage`, `currency` o `ratio`. |
+| `metric_unit` | enum | `count`, `minutes`, `seconds`, `percentage`, `currency` o `ratio`. |
 | `metric_definition` | string | Definición fuente y componentes cuando sea derivada. |
 | `window_type` | enum | Semántica temporal obligatoria descrita en la sección 5. |
 | `window_start_utc`, `window_end_utc` | timestamp/null | Obligatorios para actividad diaria, intervalo o ventana exacta; opcionales en lifetime. |
@@ -109,6 +109,7 @@ Una llave idéntica es un duplicado y se omite. Si una fuente entrega una correc
 |---|---|---|
 | `lifetime_at_capture` | Contador acumulado visible cuando se leyó. | Solo descriptivo o comparable entre publicaciones de madurez definida; no es delta. |
 | `daily_activity` | Actividad agregada de un día de fuente, como Analytics de YouTube. | No sumar snapshots lifetime del mismo video ni mezclar con `lifetime_at_capture`. |
+| `period_total` | Total de una consulta cerrada con fecha de inicio y fin, como Analytics de YouTube por video en un rango. | Solo comparar con la misma definición y rango; no etiquetar como actividad diaria. |
 | `interval_delta` | Diferencia calculada entre dos observaciones válidas de la misma métrica. | Requiere mismo contenido, fuente, definición y límites temporales contiguos. |
 | `exact_window` | E0/E24/E72 u otra ventana contractual con tolerancia aprobada. | Comparable dentro de plataforma, formato y cohorte cuando la ventana coincide. |
 | `observed_cut` | Corte operativo de publicaciones maduras o modificadas. | Descriptivo; no se presenta como una ventana exacta. |
@@ -150,7 +151,7 @@ Una métrica derivada será `null` si falta un componente obligatorio o si el de
 | Facebook | `reactions`, `comments`, `shares`, `created_time`, `is_published` | `reactions_native`, `comments_native`, `shares_native`, `published_at_utc` | Son contadores lifetime al corte; shares puede faltar. |
 | Instagram | `like_count`, `comments_count`, `saved_count`, `shares_count`, `total_views_count`, `reposts_count`, tipo y timestamp | `likes_native`, `comments_native`, `saves_native`, `shares_native`, `views_native`, `reposts_native`, tipo editorial nativo | `saved_count` y `total_views_count` pueden no estar disponibles por media. |
 | TikTok | `view_count`, `like_count`, `comment_count`, `share_count`, `create_time` de Display API | `views_native`, `likes_native`, `comments_native`, `shares_native`, `published_at_utc` | No expone reach, favoritos, retención ni finalización en la ruta oficial actual. |
-| YouTube | `views`, `engagedViews`, `likes`, `comments`, `shares`, `averageViewPercentage`, `subscribersGained` | `views_native`, `engaged_views_native`, `likes_native`, `comments_native`, `shares_native`, `average_view_percentage_native`, `subscribers_gained_native` | La salida de Analytics debe conservar `daily_activity` separada del snapshot lifetime; monetización puede ser `not_available`. |
+| YouTube | `views`, `engagedViews`, `likes`, `comments`, `shares`, `estimatedMinutesWatched`, `averageViewDuration`, `averageViewPercentage`, `subscribersGained` | `views_native`, `engaged_views_native`, `likes_native`, `comments_native`, `shares_native`, `estimated_watch_minutes_native`, `average_watch_time_seconds_native`, `average_view_percentage_native`, `subscribers_gained_native` | La salida de Analytics por rango debe usar `period_total` con inicio y fin reales; monetización puede ser `not_available`. |
 
 ## 7. Niveles de comparabilidad
 

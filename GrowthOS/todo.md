@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "6.5"
+version: "6.7"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -84,7 +84,10 @@ organization: "GrowthOS"
 - [x] Definir un contrato JSON sintético de entrada y una salida JSON de observaciones normalizadas, sin IDs reales, evidencia fuente, tokens, paths locales ni escrituras.
 - [x] Implementar `normalize_metrics_dry_run.py` y `validate_normalization_dry_run.py`, cubriendo los casos sintéticos TikTok, YouTube, Facebook e Instagram y aplicando `NORM-01` a `NORM-12`.
 - [x] Ejecutar el set de pruebas sintéticas: 3 filas válidas, 1 parcial, 2 rechazadas y 0 duplicados en la base; `NORM-01` a `NORM-12` pasaron sin crear o modificar ledgers, Sheets, raw o credenciales.
-- [ ] Revisar el resultado del dry-run y decidir si se autoriza `G-NORM-3`: un piloto privado con una muestra real acotada, sin materializar filas canónicas.
+- [x] Revisar el resultado del dry-run y autorizar `G-NORM-3`: piloto privado con una muestra real acotada, sin materializar filas canónicas.
+- [x] Definir G-NORM-3 con máximo de 8 registros fuente por plataforma; prohibir texto, URLs, IDs en salida, rutas, tokens, monetización y datos de otras marcas.
+- [x] Implementar `normalize_metrics_private_pilot.py` para leer únicamente la evidencia privada local más reciente de TikTok, YouTube, Facebook e Instagram y emitir un reporte de cobertura local sin persistir observaciones normalizadas.
+- [ ] Ejecutar el piloto local, validar `NORM-01` a `NORM-12` sobre las muestras reales y conservar solo un reporte agregado de cobertura fuera de GitHub; no escribir ledgers, Sheets, OmniRoute ni cron.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
 - [x] Configurar y autorizar la app de escritorio Sandbox de TikTok con los scopes oficiales mínimos `user.info.basic` y `video.list`, callback local y PKCE; el cliente OAuth local de Google con scopes de lectura y monetización sigue pendiente.
 - [ ] Reemplazar la consulta de Windsor.ai por scripts locales de TikTok y YouTube antes del fin del Trial, manteniendo Facebook e Instagram en sus rutas existentes.

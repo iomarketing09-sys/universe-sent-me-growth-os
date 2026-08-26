@@ -1,0 +1,13 @@
+{
+  "brand": "Universe Sent Me",
+  "platform": "YouTube",
+  "captured_at_utc": "2099-01-02T12:00:00Z",
+  "window_start": "2098-12-26",
+  "window_end": "2099-01-01",
+  "performance_rows": [
+    {"video": "synthetic-yt-1", "views": 30, "engagedViews": 8, "likes": 2, "comments": 0, "shares": 1, "estimatedMinutesWatched": 4.5, "averageViewDuration": 9.0, "averageViewPercentage": 110.0, "subscribersGained": 1},
+    {"video": "synthetic-yt-2", "views": 0, "engagedViews": 0, "likes": 0, "comments": 0, "shares": 0, "estimatedMinutesWatched": 0.0, "averageViewDuration": 0.0, "averageViewPercentage": 0.0, "subscribersGained": 0}
+  ],
+  "monetization_status": "not_available",
+  "monetization_rows": []
+}

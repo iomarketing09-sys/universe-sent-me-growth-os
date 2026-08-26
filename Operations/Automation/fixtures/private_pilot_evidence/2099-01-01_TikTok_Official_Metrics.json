@@ -1,0 +1,9 @@
+{
+  "brand": "Universe Sent Me",
+  "platform": "TikTok",
+  "captured_at_utc": "2099-01-02T12:00:00Z",
+  "videos": [
+    {"id": "synthetic-tt-1", "create_time": 4070944800, "view_count": 24, "like_count": 2, "comment_count": 0, "share_count": 1},
+    {"id": "synthetic-tt-2", "create_time": 4070948400, "view_count": 0, "like_count": 0, "comment_count": 0, "share_count": 0}
+  ]
+}
