@@ -4,7 +4,7 @@ purpose: "Registrar los metadatos de aplicaciones, servicios y rutas que deben c
 status: Review
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -92,3 +92,7 @@ El recolector se ejecutó localmente y devolvió `inventory_metadata_only_comple
 El inventario confirma que no existe un dispositivo secundario listo para la alternativa B y que la decisión por LUKS integral es coherente con el estado actual. La siguiente preparación es seleccionar un **medio externo de respaldo**, con capacidad superior a los datos que Fernando decida conservar, y diseñar una copia separada que trate `~/.config/usm-metrics`, `~/.local/share/usm-metrics` y `~/omniroute-pilot` como categorías privadas que nunca se comparten por chat o repositorios.
 
 Antes de solicitar autorización para migrar, todavía faltan: decisión de qué rutas personales se incluyen, medio de respaldo disponible, método de cifrado del respaldo, prueba de restauración de archivos no sensibles y ventana de mantenimiento. G-NORM-4R, la inserción real, cron, Google Sheets y OmniRoute con datos USM permanecen bloqueados.
+
+## Capacidad recomendada para G-SEC-1A
+
+Con 24 GiB usados en el sistema actual, una copia lógica con 50% de margen necesita aproximadamente 36 GiB y duplicar la ocupación actual requiere 48 GiB. Por ello, 64 GB es el mínimo técnico para una copia lógica limitada; se recomienda **128 GB o más** para conservar margen de revisión, prueba de restauración y crecimiento antes de migrar. Una imagen completa del disco no forma parte de esta ruta y requeriría un medio de aproximadamente 1 TB para evitar operar al límite.

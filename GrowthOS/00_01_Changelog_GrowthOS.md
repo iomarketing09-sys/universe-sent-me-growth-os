@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.92
+**Versión:** 4.93
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.93.00] — 2026-08-25 (Fernando/Manus): Capacidad de respaldo definida para G-SEC-1A.** Con 24 GiB usados en Xubuntu se calcularon 30 GiB con 25% de margen, 36 GiB con 50% y 48 GiB al duplicar la ocupación. Para el respaldo lógico previo a la migración LUKS, 64 GB es el mínimo técnico y 128 GB es la recomendación para tener margen de revisión, restauración y crecimiento. Una imagen completa de `sda` no está incluida en la ruta elegida; requeriría aproximadamente 1 TB para no operar al límite. La capacidad se documentó en el plan de cifrado v1.2 e inventario v1.2; no se seleccionó ni compró medio alguno.
 
 - **[4.92.00] — 2026-08-25 (Fernando/Manus): Inventario de Xubuntu recibido y clasificado para G-SEC-1A.** Fernando ejecutó el recolector no destructivo y compartió el reporte de metadatos. Xubuntu opera sobre Ubuntu 26.04 LTS, un único disco `sda` de 465.8 GB con `sda2 ext4 /`, 24 GB usados y 410 GB libres; `sdb` no está disponible. Se identificaron Python 3.14.4, Node 22.22.2 bajo NVM, Docker 29.1.3, Firefox, Thunderbird, Brave, WhatsApp Desktop y dependencias del venv USM. Se clasificaron `~/universe-sent-me-growth-os` (281 MB) y `~/bin` como código; `~/omniroute-pilot` (8.0 MB), `~/.config/usm-metrics` (20 KB) y `~/.local/share/usm-metrics` (151 MB) como categorías privadas a respaldar solo cifradas y sin inspección de contenido. No se identificó timer USM activo. La decisión LUKS integral se confirma como coherente; falta medio externo, decisión sobre rutas personales, método de cifrado del respaldo, prueba de restauración y ventana de mantenimiento. Documento de inventario actualizado a v1.1; no se leyó raw, tokens, secretos ni contenido de cuentas.
 

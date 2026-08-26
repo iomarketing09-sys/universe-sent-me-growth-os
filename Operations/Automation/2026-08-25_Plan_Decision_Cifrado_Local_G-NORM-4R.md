@@ -4,7 +4,7 @@ purpose: "Preparar una decisión reversible y respaldada sobre el almacenamiento
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -131,6 +131,18 @@ Esta alternativa limita la superficie de cambio y puede ser adecuada para el pil
 ## Prohibiciones hasta autorización nueva
 
 No se ejecutan operaciones de particionado, formateo, `cryptsetup`, migración, instalación, montaje persistente, copia de evidencia, cambios de arranque ni creación de ledger real. Firma Bordados y Bam in a Can siguen completamente fuera de este plan. OmniRoute continúa local, draft-only y sin recibir datos del ledger.
+
+## Capacidad del medio externo de respaldo
+
+El inventario de Xubuntu reportó aproximadamente 24 GiB usados en la raíz actual. Se calcularon tres referencias: 30 GiB con margen de 25%, 36 GiB con margen de 50% y 48 GiB al duplicar el uso actual. Estas cifras son para un respaldo **lógico por archivos** previo a una reinstalación/migración LUKS, no para una imagen sector a sector del disco completo.
+
+| Escenario | Capacidad estimada | Medio recomendado |
+|---|---:|---|
+| Copia lógica mínima con margen | 36 GiB | 64 GB como mínimo técnico, si solo se conservará una copia y no habrá crecimiento relevante. |
+| Copia lógica con espacio para revisión, restauración y crecimiento | 48 GiB o más | 128 GB recomendado para G-SEC-1A. |
+| Imagen completa del disco actual | Aproximadamente 465.8 GiB antes de margen | 1 TB recomendado; no es la vía elegida para la migración planificada, salvo que se apruebe una estrategia de imagen separada. |
+
+La recomendación actual es un medio externo de **128 GB o mayor** para el respaldo lógico. Debe ser un dispositivo separado, fiable y dedicado al proceso de migración, con capacidad para crear y verificar una copia antes de modificar Xubuntu. La decisión de compra, proveedor y formato del medio sigue correspondiendo a Fernando; este documento no solicita ni autoriza ninguna compra ni formateo.
 
 ## Referencias
 
