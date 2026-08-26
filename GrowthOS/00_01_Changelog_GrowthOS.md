@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.90
+**Versión:** 4.91
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.91.00] — 2026-08-25 (Fernando/Manus): Recolector no destructivo de inventario previo a LUKS preparado.** Tras elegir LUKS integral, Fernando solicitó el inventario detallado para respaldo. Se añadieron `collect_xubuntu_backup_inventory.sh` y `2026-08-25_Inventario_Previa_Migracion_LUKS_Xubuntu_USM.md` v1.0. El script registra metadatos de aplicaciones, paquetes, servicios, contenedores y rutas necesarias para restauración, pero excluye expresamente contenido de secretos, raw, evidencia, tokens, claves, perfiles de navegador, archivos de cuentas y configuración privada. La sintaxis fue validada. Aún no se ejecutó en Xubuntu, no se creó respaldo ni se leyó contenido privado; se requiere la ejecución local y revisión de Fernando para completar G-SEC-1A.
 
 - **[4.90.00] — 2026-08-25 (Fernando/Manus): Preferencia arquitectónica por LUKS integral.** Fernando decidió que la Ruta A —migración planificada de Xubuntu a cifrado LUKS integral— es la más adecuada antes del crecimiento de Universe Sent Me. La decisión se registró en el plan de cifrado v1.1 y consentimiento v1.3. Solo abre G-SEC-1A, dedicado a inventario, respaldo externo separado, prueba de restauración y ventana de mantenimiento. No se autorizaron ni ejecutaron cambios de disco, cifrado, migración, inserción de observaciones reales o automatización.
 
