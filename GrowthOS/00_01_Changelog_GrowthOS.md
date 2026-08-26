@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-26
-**Versión:** 5.15
+**Versión:** 5.16
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.16.00] — 2026-08-26 (Fernando/Manus): Plan B rEFInd reversible diseñado, sin instalación.** La inspección confirmó que la ESP actual solo contiene `EFI/BOOT` y `EFI/ubuntu`, `Boot0000` sigue iniciando Ubuntu y `Boot0080` apunta a un rEFInd antiguo no existente. El paquete Ubuntu candidato `refind` 0.14.2-2.1 está disponible y el iMac no soporta Secure Boot, por lo que no se planifican shim, MOK ni llaves. Se creó `2026-08-26_Plan_B_rEFInd_Seleccion_USB_USM.md` y un wrapper `--plan` que solo revisa ESP, paquete, Secure Boot y NVRAM. La instalación posterior, sus archivos bajo `EFI/refind`, la entrada NVRAM nueva y la reversión requieren autorizaciones independientes. No se instaló paquete, no se modificó ESP/NVRAM, no se arrancó USB ni se tocó LUKS, el respaldo o datos USM.
 
 - **[5.15.00] — 2026-08-26 (Fernando/Manus): Revisión Facebook GET-only bloqueada antes de la API.** El auditor reusable no pudo iniciar porque `META_PAGE_ACCESS_TOKEN` no estaba disponible; la verificación read-only confirmó `Universe Sent Me Meta API` como `enabled=false`. No existe conteo de delta válido —no equivale a cero comentarios—, no hubo llamadas GET exitosas, no se consultaron otras redes, no hubo POST/PUT/DELETE ni publicaciones, ocultamientos o modificaciones, y no se cambiaron la cola ni el ledger. Evidencia: `Operations/Research/2026-08-26_18-10-32_Facebook_Comment_Review_Blocker.json`. Siguiente paso seguro: restaurar el acceso del conector existente y ejecutar el auditor con su cursor dinámico.
 

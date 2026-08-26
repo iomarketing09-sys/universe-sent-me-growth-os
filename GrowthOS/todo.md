@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "11.36"
+version: "11.62"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -156,6 +156,43 @@ organization: "GrowthOS"
 - [x] Secuencia física G-MIG-LUKS-1.2b: por límite de puertos se mantuvo `Fernando` conectado y se reemplazó `STORE N GO` por la USB instaladora; el checksum del respaldo volvió a dar `OK` y no se escribió ningún medio.
 - [ ] G-MIG-LUKS-1.3: no requerido mientras la USB existente `sdd` Xubuntu 26.04 amd64 siga disponible y legible. Si se pierde, corrompe o deja de ser utilizable, descargar la ISO oficial, verificar checksum y crear un medio booteable únicamente sobre `STORE N GO`; requerirá autorización explícita de borrado de esa USB, nunca de `sda` o `sdc`.
 - [ ] G-MIG-LUKS-1.4: realizar una revisión visual del arranque desde la USB reutilizada, confirmar que el instalador ofrece cifrado y detenerse antes de cualquier pantalla que pueda modificar `sda`; requiere autorización de reinicio, pero no de instalación.
+- [ ] Ejecutar G-MIG-LUKS-1.4 autorizado: expulsar y desconectar `Fernando`, arrancar desde la USB Xubuntu reutilizada y revisar el instalador; no seleccionar instalar, borrar, particionar ni cifrar `sda`.
+- [ ] Verificar G-MIG-LUKS-1.4: volver al sistema actual sin cambios de disco, reconectar `Fernando`, comprobar que el respaldo vuelve a montar y registrar el resultado visual del instalador.
+- [ ] Resolver bloqueo G-MIG-LUKS-1.4: recuperar el selector de arranque del iMac con el método de tecla Option/Alt, sin cambiar firmware, NVRAM, disco, cifrado ni iniciar instalación.
+- [x] Resolver bloqueo G-MIG-LUKS-1.4: el selector de arranque del iMac mostró la USB y el menú GRUB de Xubuntu; la primera entrada `Xubuntu` quedó disponible. No se cambió firmware, NVRAM, disco ni cifrado.
+- [ ] Revisar G-MIG-LUKS-1.4 en entorno live: iniciar la primera entrada de Xubuntu, abrir el asistente solo hasta configuración de disco, registrar si presenta cifrado y salir sin instalar, borrar, formatear o particionar `sda`.
+- [ ] Resolver selector G-MIG-LUKS-1.4: el menú GRUB observado pertenece al Xubuntu interno, no a la USB. Inventariar desde el sistema actual la herramienta o método usado anteriormente para elegir el disco de arranque, sin cambiar configuración de arranque, firmware ni discos.
+- [ ] Usar rEFInd temporalmente en G-MIG-LUKS-1.4: Fernando identifica rEFInd como el selector usado previamente. Confirmar su presencia, elegir la entrada USB solo para una sesión y no instalar, actualizar ni cambiar el arranque predeterminado.
+- [x] Usar rEFInd temporalmente en G-MIG-LUKS-1.4: el inventario confirmó que rEFInd no está instalado: no hay paquete ni archivos EFI. No se modificó el arranque predeterminado, firmware ni discos.
+- [ ] Resolver método de arranque alterno G-MIG-LUKS-1.4: investigar un selector temporal/reversible compatible con el iMac y teclado no original antes de reinstalar herramientas o cambiar cualquier preferencia de arranque.
+- [x] Resolver método de arranque alterno G-MIG-LUKS-1.4: `efibootmgr -v` identificó `Boot0080` como `rEFInd` (`\\EFI\\refind\\refind_x64.efi`); no aparece una entrada USB persistente y no se cambió `BootOrder`.
+- [ ] G-MIG-LUKS-1.4b: con autorización explícita, establecer `BootNext=0080` solo para el siguiente reinicio y seleccionar la USB desde rEFInd; no usar `-o`, no crear/eliminar entradas UEFI ni modificar discos.
+- [ ] Ejecutar G-MIG-LUKS-1.4b autorizado: establecer exclusivamente `BootNext=0080`, confirmar que `BootOrder` sigue `0000,0080`, reiniciar una vez y elegir la USB desde rEFInd; no usar opciones de creación, borrado u orden persistente de `efibootmgr`.
+- [ ] Confirmar G-MIG-LUKS-1.4b: el comando temporal fue enviado y el equipo reinició; verificar visualmente si rEFInd apareció o si el firmware volvió al arranque interno, antes de ejecutar cualquier comando adicional.
+- [x] Confirmar G-MIG-LUKS-1.4b: el equipo volvió directamente al Xubuntu interno; BootNext no produjo una sesión visible de rEFInd. No se cambió `BootOrder`, no se modificó firmware de forma persistente ni se tocó disco alguno.
+- [ ] Investigar alternativa G-MIG-LUKS-1.4c: seleccionar un método reversible compatible con iMac y teclado no original tras el fallo de BootNext, sin reinstalar rEFInd ni cambiar el arranque predeterminado sin nueva autorización.
+- [ ] Identificar USB G-MIG-LUKS-1.4c: al reconectar, la USB Xubuntu no conserva necesariamente la letra `sdd`; localizarla por `Xubuntu 26.04 amd64`, ISO9660/ESP y modelo antes de construir cualquier comando de GRUB.
+- [x] Identificar USB G-MIG-LUKS-1.4c: la USB Xubuntu actual es `/dev/sda`, modelo Cruze, 7.2 GB, ISO9660 `Xubuntu 26.04 amd64`, ESP `sda2` y writable `sda4`; el disco interno actual es `/dev/sdc`. No se usará ninguna letra anterior sin reinspección.
+- [x] Confirmar EFI USB G-MIG-LUKS-1.4c: montaje temporal solo lectura de `sda2` confirmó `EFI/boot/bootx64.efi`, `mmx64.efi` y `grubx64.efi`; se desmontó y retiró el punto temporal.
+- [ ] G-MIG-LUKS-1.4c: con autorización nueva, usar la consola GRUB de una sola sesión para `chainloader` hacia `EFI/boot/bootx64.efi` de la USB; no guardar configuración, crear entradas ni cambiar firmware/NVRAM/discos.
+- [ ] Identificar GRUB G-MIG-LUKS-1.4c: `grub-probe` falló con `devtmpfs` sin cambios. Usar `ls` interactivo en GRUB para localizar la partición que contiene `EFI/boot/bootx64.efi` antes de ejecutar `chainloader`.
+- [ ] Diagnosticar arranque G-MIG-LUKS-1.4c: el menú GRUB dejó de aparecer y Alt no activa selector con el teclado no original. Confirmar en Xubuntu el estado de BootNext, BootOrder y el arranque actual antes de otro reinicio; no intentar instalación, NVRAM persistente ni cambios de disco.
+- [x] Diagnosticar arranque G-MIG-LUKS-1.4c: `BootNext` se consumió, `BootOrder` sigue `0000,0080`, `BootCurrent=0000` y la raíz volvió a `/dev/sda2 ext4`. No hubo cambio persistente de firmware, orden de arranque ni discos.
+- [ ] Redefinir G-MIG-LUKS-1.4d: elegir una alternativa de revisión que no dependa de arrancar la USB mientras el teclado no original y el firmware impidan el selector; no instalar rEFInd ni cambiar NVRAM/GRUB sin autorización nueva.
+- [x] Redefinir G-MIG-LUKS-1.4d: al pulsar Esc se recuperó el menú GRUB interno sin cambios persistentes; queda disponible la consola temporal para inspección.
+- [ ] Enumerar GRUB G-MIG-LUKS-1.4d: desde `grub>` ejecutar exclusivamente `ls` y registrar las unidades/particiones visibles antes de intentar cualquier `chainloader`.
+- [x] Enumerar GRUB G-MIG-LUKS-1.4d: GRUB mostró `hd1` con cuatro particiones y `hd2` con dos; por coincidencia estructural, `hd1` es candidato a la USB Xubuntu. Falta verificar en lectura `(hd1,gpt2)/EFI/boot/`.
+- [x] Verificar EFI candidata G-MIG-LUKS-1.4d: `(hd1,gpt2)/EFI/boot/` devolvió `file not found`; no se ejecutó chainload ni se modificó nada.
+- [ ] Explorar EFI GRUB G-MIG-LUKS-1.4d: revisar en modo lectura las rutas EFI de `hd1` restantes y `hd2` hasta encontrar `bootx64.efi`; no intentar `chainloader` antes de confirmación exacta.
+- [x] Descartar GRUB hd1 G-MIG-LUKS-1.4d: las cuatro particiones de `hd1` mostraron el mismo árbol del sistema interno y `(hd1,gpt2)/EFI/boot/` no existe; no es la USB Xubuntu.
+- [ ] Inspeccionar GRUB hd2 G-MIG-LUKS-1.4d: revisar exclusivamente `(hd2,gpt1)` y `(hd2,gpt2)` en modo lectura para localizar el cargador EFI de la USB o descartar el último candidato visible.
+- [x] Inspeccionar GRUB hd2 G-MIG-LUKS-1.4d: las particiones visibles de `hd2` tampoco expusieron el cargador EFI de la USB; se descarta chainload GRUB para esta sesión sin ejecutar `boot` ni cambios persistentes.
+- [ ] Alternativa G-MIG-LUKS-1.4e: elegir un método externo de selección USB —teclado Apple/compatible, firmware o revisión diferida— sin instalar rEFInd, reconfigurar GRUB, cambiar NVRAM ni modificar discos sin nueva autorización.
+- [ ] Plan B rEFInd G-MIG-LUKS-1.4f: diseñar una reinstalación reversible sobre la ESP interna y una salida documentada que restaure el estado actual; no instalar paquete, copiar archivos EFI ni crear entrada NVRAM hasta autorización explícita posterior.
+- [x] Inspeccionar ESP rEFInd G-MIG-LUKS-1.4f: `/boot/efi` es `/dev/sda1` con 1.1 GB libres y solo `BOOT`/`ubuntu`; `Boot0000` sigue válido y `Boot0080` apunta a una ubicación antigua no presente. No se modificó ESP ni NVRAM.
+- [x] Compatibilidad rEFInd G-MIG-LUKS-1.4f: `refind` 0.14.2-2.1 está disponible desde el repositorio Ubuntu configurado y el equipo no soporta Secure Boot; no se requerirá shim, MOK ni llaves para el plan B.
+- [ ] Diseñar instalación reversible rEFInd G-MIG-LUKS-1.4f: definir preflight, copia de estado EFI/NVRAM, instalación desde paquete Ubuntu, prueba de selector USB y reversión a `Boot0000`, sin ejecutar aún cambios persistentes.
+- [ ] Preparar plan rEFInd G-MIG-LUKS-1.4f: crear un wrapper `--plan` que compruebe ESP, paquete, Secure Boot y estado actual sin escritura; mantener `--execute` bloqueado hasta una autorización específica de ESP/NVRAM.
 - [ ] G-MIG-LUKS-1.3a: antes de escribir, confirmar visualmente el objetivo `Xubuntu 26.04 LTS Desktop 64-bit`, la coincidencia de SHA-256 oficial y que el destino sigue siendo la USB `STORE N GO`, no `sda` ni `sdc`.
 - [ ] G-SEC-1A.3e: ejecutar `prepare_usm_encrypted_backup.sh --dry-run` sobre el volumen real después de 3b y 3c; no autoriza `--execute` ni la creación de ciphertext.
 - [x] Diseñar el árbol exacto de `USM_PRE_LUKS_BACKUP`, incluyendo categorías permitidas, manifest, checksums, nombres, retención y exclusiones; no crear todavía rutas en el volumen vfat. Diseño incorporado en `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md` v1.2.

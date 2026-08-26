@@ -4,13 +4,14 @@ purpose: "Definir los gates y la secuencia reversible para reinstalar Xubuntu co
 status: Draft
 created: 2026-08-26
 updated: 2026-08-26
-version: "0.4"
+version: "0.5"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
   - "Operations/Automation/2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md"
   - "Operations/Automation/2026-08-25_Inventario_Previa_Migracion_LUKS_Xubuntu_USM.md"
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
+  - "Operations/Automation/2026-08-26_Plan_B_rEFInd_Seleccion_USB_USM.md"
   - "GrowthOS/todo.md"
 organization: "Operations/Automation"
 ---
@@ -66,6 +67,7 @@ El nuevo usuario local debe conservar el nombre `universe-sent-me` salvo que Fer
 | G-MIG-LUKS-1.1 | Confirmar USB vacío de al menos 16 GB, acceso al disco externo, tiempo de mantenimiento, alimentación estable y decisión de reinstalación limpia. | No. |
 | G-MIG-LUKS-1.2 | Inspección final de solo lectura: identidad de `sda`, montaje del respaldo y verificación de checksum. | No. |
 | G-MIG-LUKS-1.3 | Crear medio booteable oficial y verificar su integridad. | Sí, solo borra el USB aprobado. |
+| G-MIG-LUKS-1.4f | Instalar opcionalmente rEFInd para seleccionar la USB, bajo un plan reversible y autorización independiente. | Sí, solo ESP/NVRAM; no particiones, cifrado ni datos. |
 | G-MIG-LUKS-1.4 | Revisión visual del instalador y confirmación de que apunta al disco interno correcto. | No hasta el paso de confirmación del instalador. |
 | G-MIG-LUKS-1.5 | Instalar Xubuntu con LUKS integral mediante el instalador, borrando exclusivamente el disco interno aprobado. | Sí, operación destructiva sobre `sda`. |
 | G-MIG-LUKS-1.6 | Verificar después del primer arranque que la raíz está respaldada por `crypto_LUKS`/`crypt`, que arranca con frase y que no hay error de montaje. | No. |
@@ -79,6 +81,7 @@ El nuevo usuario local debe conservar el nombre `universe-sent-me` salvo que Fer
 | A. Preparar | Elegir USB exclusivamente para instalador y resguardar el disco `Fernando` como respaldo fuera de línea. | G-MIG-LUKS-1.1 aprobado. |
 | B. Verificar | Identificar por modelo/tamaño el disco interno y comprobar nuevamente el ciphertext sin descifrar. | G-MIG-LUKS-1.2 aprobado. |
 | C. Medio | Descargar la ISO oficial correspondiente, verificar su checksum y escribir el USB aprobado. | G-MIG-LUKS-1.3 aprobado. |
+| C.1 Selector opcional | Recuperar un selector USB mediante teclado compatible o rEFInd reversible, si el firmware sigue bloqueando Option/Alt. | G-MIG-LUKS-1.4f aprobado por separado si usa rEFInd. |
 | D. Instalar | Arrancar desde USB, elegir cifrado en el instalador oficial y detenerse antes de cualquier pantalla que destruya `sda` para una última aprobación. | G-MIG-LUKS-1.4 y luego 1.5 aprobados por separado. |
 | E. Verificar LUKS | Confirmar cadena de bloques cifrada, arranque, red y actualización base. | G-MIG-LUKS-1.6 completado. |
 | F. Recuperar USM | Instalar `age`, restaurar solo las raíces autorizadas al sistema ya cifrado, comprobar scripts y mantener el backup externo intacto. | G-MIG-LUKS-1.7 aprobado. |
@@ -87,6 +90,12 @@ El nuevo usuario local debe conservar el nombre `universe-sent-me` salvo que Fer
 ## Requisitos antes de crear el medio de instalación
 
 La siguiente decisión práctica es reservar un USB vacío de **al menos 16 GB** para el instalador. Ese USB se borrará completamente durante la creación del medio y no debe ser el disco externo `Fernando`, el cual conserva el respaldo cifrado. También se requiere acceso continuo a la frase de arranque LUKS que Fernando elegirá y a las dos copias físicas de la frase de recuperación `age`, sin compartir ninguna de ellas por chat.
+
+## Bloqueo de selección USB y Plan B rEFInd
+
+La USB reutilizada contiene un instalador Xubuntu 26.04 válido, pero no pudo seleccionarse desde el iMac Intel con el teclado actual: Option/Alt no fue reconocido, la entrada rEFInd histórica `Boot0080` estaba rota y un intento de `BootNext` volvió al sistema interno. La consola GRUB del sistema interno tampoco expuso el cargador de la USB. Ninguno de esos diagnósticos modificó particiones, archivos EFI, orden persistente de arranque ni datos.
+
+El proyecto conserva dos rutas: conseguir temporalmente un teclado Apple/Mac compatible por cable, sin cambios persistentes; o instalar rEFInd mediante el plan Draft `2026-08-26_Plan_B_rEFInd_Seleccion_USB_USM.md`. La segunda ruta requiere una aprobación distinta porque instala un paquete, escribe una ruta nueva bajo `EFI/refind` y puede crear una entrada UEFI/NVRAM. No autoriza la instalación Xubuntu ni G-MIG-LUKS-1.5.
 
 Antes de la instalación debe haber alimentación estable, tiempo suficiente para interrupciones y la confirmación de que no existe otro sistema operativo o dato no inventariado en `sda` que deba preservarse. El proyecto asume reinstalación limpia del único disco interno; si aparece una partición o requisito nuevo, el plan se detendrá y se revisará.
 

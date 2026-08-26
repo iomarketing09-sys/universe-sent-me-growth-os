@@ -3,8 +3,8 @@ title: "Plan comparativo de cifrado local para G-NORM-4R — LUKS integral vs. v
 purpose: "Preparar una decisión reversible y respaldada sobre el almacenamiento cifrado necesario antes de considerar el piloto real G-NORM-4R."
 status: Draft
 created: 2026-08-25
-updated: 2026-08-25
-version: "1.19"
+updated: 2026-08-26
+version: "1.20"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -12,6 +12,7 @@ related_documents:
   - "Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md"
   - "Operations/Automation/2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md"
   - "Operations/Automation/2026-08-26_Proyecto_Migracion_LUKS_Integral_USM.md"
+  - "Operations/Automation/2026-08-26_Plan_B_rEFInd_Seleccion_USB_USM.md"
   - "GrowthOS/todo.md"
 organization: "Operations/Automation"
 ---
@@ -29,6 +30,8 @@ Este documento no autoriza comandos, formateos, particiones, cifrado, migracione
 Fernando eligió la **Alternativa A: migración planificada de Xubuntu a cifrado LUKS integral** como la dirección preferida para el crecimiento de Universe Sent Me. La decisión se basa en que el proyecto probablemente conservará más evidencia, configuraciones y automatizaciones locales que un piloto mínimo de ledger.
 
 La preparación G-SEC-1A ya completó inventario, respaldo externo separado y restauración controlada. El proyecto separado `2026-08-26_Proyecto_Migracion_LUKS_Integral_USM.md` define ahora los gates G-MIG-LUKS-1.1 a G-MIG-LUKS-1.8. G-MIG-LUKS-1.2 confirmó `sda` como disco interno y el respaldo íntegro en `sdc3`; seleccionó `sdd` 28.9 GB `STORE N GO` como único candidato de instalador, mientras que `sdb` 0 B se excluye. No autoriza todavía una migración, reinstalación, operación de disco, captura de datos reales ni activación de G-NORM-4R.
+
+La USB reutilizable Xubuntu 26.04 fue verificada posteriormente, pero el iMac Intel no expone de forma fiable el selector de inicio con el teclado actual. El proyecto conserva un Plan B Draft rEFInd exclusivamente para recuperar esa selección de USB; cualquier escritura de ESP o NVRAM sigue separada de LUKS y exige una aprobación puntual. Este obstáculo de arranque no cambia el bloqueo de G-NORM-4R ni las condiciones de cifrado local.
 
 > La protección requerida es cifrado de datos en reposo. No elimina por sí sola otros riesgos: un volumen montado queda disponible para la sesión activa, y el cifrado no reemplaza respaldo, permisos ni control de acceso.
 
