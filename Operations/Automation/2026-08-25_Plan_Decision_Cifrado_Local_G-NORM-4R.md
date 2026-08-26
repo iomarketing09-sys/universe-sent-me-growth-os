@@ -4,7 +4,7 @@ purpose: "Preparar una decisión reversible y respaldada sobre el almacenamiento
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.5"
+version: "1.6"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -167,6 +167,8 @@ Incluso si estos gates se aprobaran, la copia cifrada de Drive sería contingenc
 El disco externo Windows se detectó como `sdc3`, un volumen `vfat` de 930.8 GiB con 730.9 GiB disponibles. Puede servir como destino físico para el respaldo lógico previo a la migración, pero con dos límites: contiene información existente y `vfat` no aporta permisos POSIX ni cifrado en reposo.
 
 Por ello, cualquier respaldo deberá usar una carpeta exclusiva aprobada y preservar los datos privados de USM en un formato cifrado antes de escribirlos al disco. No se crea esa carpeta, no se copia ningún archivo y no se cifra nada hasta completar G-SEC-1A.3: alcance de categorías, nombre de carpeta, método de cifrado de contenido privado y prueba de restauración de archivos no sensibles.
+
+El diseño de estructura y wrapper previo se documenta en `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md`. Usa `age` solo como propuesta de cifrado local por streaming y parte en modo de planificación; no autoriza una copia real hasta los gates G-SEC-1A.3a a G-SEC-1A.3e.
 
 ## Referencias
 

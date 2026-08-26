@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "10.9"
+version: "11.1"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -125,6 +125,8 @@ organization: "GrowthOS"
 - [x] Diagnosticar sin escritura el disco Windows no detectado: verificar conexión directa, cable, alimentación y mensajes recientes del kernel; si no aparece como bloque USB con tamaño, no usarlo para respaldo ni intentar reparación/formateo. Resultado: permanece no detectado; sin cambios al medio.
 - [x] G-SEC-1A.2: inspeccionar el disco externo Windows recién detectado y confirmar tamaño, filesystem, montaje y espacio libre. Resultado: `sdc3` vfat de 930.8 GiB, 730.9 GiB disponibles, montado bajo `/run/media/universe-sent-me/Fernando`; apto condicionalmente como destino, sin formatear ni modificar datos existentes.
 - [ ] G-SEC-1A.3: definir carpeta exclusiva de respaldo, alcance de categorías y método de cifrado local previo para datos privados antes de la primera copia al volumen vfat; ensayar restauración con archivos no sensibles.
+- [x] Diseñar la estructura y el script de respaldo cifrado local: separar contenido de código de categorías privadas, requerir llave fuera del disco/Drive/chat, soportar simulación y prohibir cualquier copia real hasta aprobación y prueba de restauración. Documento: `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md`; wrapper: `prepare_usm_encrypted_backup.sh`.
+- [ ] G-SEC-1A.3a-e: aprobar carpeta exclusiva, alcance de fuentes privadas, instalación/verificación de age, recuperación de frase fuera de servicios cloud y prueba de restauración ficticia antes de autorizar `--execute`.
 - [x] Evaluar Google Drive de iO Marketing (5 TB disponibles) solo como respaldo futuro cifrado antes de subirlo, con llave fuera de Drive y prueba de restauración; mantener prohibido cualquier uso como ledger activo o destino actual de datos USM. Decisión: contingencia futura condicionada; no reemplaza medio local y no autoriza subida actual.
 - [ ] G-BACKUP-DRIVE-0 a G-BACKUP-DRIVE-4: si se solicita después, definir alcance de archivos, cifrado local previo, llave fuera de Drive, restauración probada y aprobación de subida manual sin sincronización.
 - [x] Documentar la secuencia de automatización posterior al cifrado: validación manual, ejecución supervisada, scheduler local, observabilidad, salida sanitizada Draft y criterios de pausa; no activar cron, APIs de escritura, Sheets ni OmniRoute. Documento: `2026-08-25_Hoja_Ruta_Automatizacion_Local_Segura_USM.md`.

@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.97
+**Versión:** 4.98
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.98.00] — 2026-08-25 (Fernando/Manus): Diseño de respaldo cifrado local previo a LUKS.** A solicitud de Fernando se crearon `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md` v1.0 y `prepare_usm_encrypted_backup.sh`. El diseño usa age como herramienta consolidada de cifrado por streaming con frase interactiva fuera de argumentos, ambiente, repo, Drive, chat y disco externo. Propone la carpeta `USM_PRE_LUKS_BACKUP` con ciphertext, manifests sin secretos y checksums de ciphertext. El wrapper parte en `--plan`, tiene `--dry-run` y exige confirmaciones para `--execute`; las rutas privadas están excluidas por defecto. No se instaló age, no se creó carpeta, no se generó llave, no se cifró ni copió ningún archivo. Se requieren los gates G-SEC-1A.3a-e, incluida una restauración ficticia, antes de cualquier ejecución real. Plan de cifrado actualizado a v1.6.
 
 - **[4.97.00] — 2026-08-25 (Fernando/Manus): Disco externo Windows detectado y aprobado condicionalmente como destino físico.** Una nueva inspección detectó `sdc` por USB, modelo `ST1000LM035-1RK172`; su partición `sdc3` es `vfat`, tiene 930.8 GiB de capacidad y 730.9 GiB disponibles, montada bajo `/run/media/universe-sent-me/Fernando`. Supera el requisito de capacidad y puede ser destino del respaldo lógico, pero contiene datos existentes y `vfat` no ofrece permisos POSIX ni cifrado en reposo. Se prohíbe formatearlo, repararlo, reorganizarlo o copiar datos privados en claro. El siguiente gate G-SEC-1A.3 define carpeta exclusiva, categorías y cifrado local previo de datos privados, seguido de una restauración de archivos no sensibles. Inventario actualizado a v1.4 y plan de cifrado a v1.5; no se copiaron archivos.
 
