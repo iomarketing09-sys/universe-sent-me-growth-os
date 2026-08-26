@@ -4,7 +4,7 @@ purpose: "Definir los gates y la secuencia reversible para reinstalar Xubuntu co
 status: Draft
 created: 2026-08-26
 updated: 2026-08-26
-version: "0.6"
+version: "0.7"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -98,6 +98,8 @@ La USB reutilizada contiene un instalador Xubuntu 26.04 válido, pero no pudo se
 El proyecto conserva dos rutas: conseguir temporalmente un teclado Apple/Mac compatible por cable, sin cambios persistentes; o instalar rEFInd mediante el plan Draft `2026-08-26_Plan_B_rEFInd_Seleccion_USB_USM.md`. La segunda ruta requiere una aprobación distinta porque instala un paquete, escribe una ruta nueva bajo `EFI/refind` y puede crear una entrada UEFI/NVRAM. No autoriza la instalación Xubuntu ni G-MIG-LUKS-1.5.
 
 Fernando autorizó y ejecutó G-MIG-LUKS-1.4f. El paquete `refind` creó `EFI/refind/refind_x64.efi` y la entrada nueva `Boot0001`, dejando `Boot0000` y `EFI/ubuntu` presentes. El instalador cambió el orden a `0001,0000,0080`; todavía no se ha reiniciado ni probado rEFInd. El siguiente paso sigue siendo solo la revisión visual de la USB, no una instalación ni un cambio de disco.
+
+La revisión visual G-MIG-LUKS-1.4 se completó después: rEFInd arrancó la USB Xubuntu y el instalador llegó a **Disk setup** sin seleccionar ni confirmar ninguna operación. La pantalla ofreció instalar junto a Ubuntu, borrar Ubuntu, borrar disco o instalación manual; no mostró una opción guiada de cifrado LUKS. El instalador se cerró y el Xubuntu interno volvió a iniciar correctamente por rEFInd. Por tanto, G-MIG-LUKS-1.5 sigue bloqueado: antes de autorizar un borrado debe definirse y revisarse un método de instalación LUKS integral compatible con este instalador, probablemente a través de un diseño manual separado si no se identifica una opción guiada oficial.
 
 Antes de la instalación debe haber alimentación estable, tiempo suficiente para interrupciones y la confirmación de que no existe otro sistema operativo o dato no inventariado en `sda` que deba preservarse. El proyecto asume reinstalación limpia del único disco interno; si aparece una partición o requisito nuevo, el plan se detendrá y se revisará.
 

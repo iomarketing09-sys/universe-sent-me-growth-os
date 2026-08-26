@@ -4,7 +4,7 @@ purpose: "Recuperar de forma reversible el selector de arranque necesario para r
 status: Review
 created: 2026-08-26
 updated: 2026-08-26
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-26_Proyecto_Migracion_LUKS_Integral_USM.md"
@@ -85,6 +85,16 @@ Fernando autorizó la instalación y ejecutó el preflight final el 26 de agosto
 | Discos y respaldo | No se instalaron Xubuntu ni LUKS, no se modificaron particiones y el disco `Fernando` permaneció fuera de la operación. | Confirmado. |
 
 La comparación automatizada con `diff` no pudo leer la sustitución de proceso mediante `sudo` (`/dev/fd/63`), pero las salidas directas de EFI y NVRAM permiten verificar las rutas y entradas anteriores. El próximo control no escribe: reiniciar una sola vez con la USB Xubuntu conectada, observar rEFInd y seleccionar únicamente el medio USB. Si no aparece o no lista la USB, se vuelve a Ubuntu sin entrar al instalador y se detiene para diagnóstico.
+
+## Validación de arranque y revisión visual completadas
+
+El primer arranque de rEFInd fue correcto. Con el disco `Fernando` desconectado, rEFInd mostró la USB y la entrada `Boot EFI\boot\grubx64.efi from ESP`, consistente con el cargador de la USB Xubuntu previamente inspeccionada. Esa entrada llevó al escritorio de prueba de Xubuntu 26.04; no hubo modificación de medios.
+
+Durante la revisión interactiva se seleccionaron idioma, teclado, red disponible, instalación interactiva y **Xubuntu Desktop**. Las dos opciones de software propietario y códecs se dejaron desmarcadas. La pantalla **Disk setup** mostró: instalar junto a Ubuntu 26.04 LTS, borrar Ubuntu 26.04 LTS, borrar el disco e instalación manual. No se seleccionó ni confirmó ninguna de ellas.
+
+> La interfaz de disco observada no mostró una opción visible de cifrado LUKS dentro de los flujos guiados. Este hecho no prueba que el instalador no pueda configurarse manualmente con LUKS; confirma únicamente que no se encontró una ruta guiada de cifrado en esta revisión.
+
+El instalador se cerró sin aplicar cambios. rEFInd volvió a mostrar el cargador interno `EFI\ubuntu\grubx64.efi` sobre el volumen FAT de 1 GiB, y el sistema actual inició correctamente. La comprobación posterior devolvió `BootCurrent=0001`, esperable porque el firmware inició rEFInd; `Boot0000` para `EFI\ubuntu\shimx64.efi` continúa intacto y `BootOrder=0001,0000,0080` mantiene Ubuntu como respaldo.
 
 ## Reversión condicionada a la evidencia posterior
 
