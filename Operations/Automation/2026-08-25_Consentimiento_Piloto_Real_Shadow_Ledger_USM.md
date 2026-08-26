@@ -4,12 +4,13 @@ purpose: "Proponer el alcance, retención, protección y rollback de una muestra
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
   - "Operations/Automation/2026-08-25_Esquema_Normalizacion_Determinista_Multicanal_USM.md"
   - "Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md"
+  - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
   - "GrowthOS/todo.md"
 organization: "Operations/Automation"
 ---
@@ -68,6 +69,8 @@ El diagnóstico local del 25 de agosto de 2026 mostró la raíz de Xubuntu monta
 | Volumen cifrado dedicado | Crear y validar un volumen local cifrado exclusivo para el shadow ledger, sin mover otros datos. | Requiere dispositivo/espacio dedicado y aprobación separada antes de formatear o cifrar. |
 
 No se ejecutará ninguna de estas alternativas automáticamente. Mientras el cifrado no sea confirmado, el escritor real permanece desactivado y el shadow ledger seguirá aceptando solo `synthetic = true`.
+
+El plan comparativo no ejecutable de respaldo, recuperación, verificación y gates se documenta en `2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md`. Su creación no autoriza cifrar, reformatear, montar, migrar ni insertar observaciones reales.
 
 ## Evaluación de Drive y GitHub
 

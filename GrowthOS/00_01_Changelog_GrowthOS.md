@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.87
+**Versión:** 4.88
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.88.00] — 2026-08-25 (Fernando/Manus): Plan comparativo no ejecutable para cifrado local.** Fernando solicitó comparar migrar Xubuntu a LUKS integral frente a un volumen LUKS dedicado para el shadow ledger. Se creó `2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md` v1.0 con alcance, respaldo, restauración, verificación, permisos, retención y gates G-SEC-0 a G-SEC-3. El documento recomienda condicionalmente LUKS integral si USM protegerá evidencia y configuración local sostenida, o volumen dedicado si el alcance continúa limitado al piloto y existe medio físico exclusivo; sin respaldo validado o dispositivo dedicado se mantiene modo sintético. No se ejecutaron comandos de disco, cifrado, particionado, montaje, migración ni inserción real. Consentimiento actualizado a v1.3 para enlazar el plan.
 
 - **[4.87.00] — 2026-08-25 (Fernando/Manus): Benchmark sintético aislado de Headroom completado.** Fernando autorizó el siguiente paso de Headroom bajo un gate exclusivamente ficticio. `benchmark_headroom_synthetic.py` ejecutó Headroom `0.36.5` en un entorno temporal, con JSON ficticio en memoria, sockets bloqueados, Kompress ML desactivado, sin proxy, memoria, `learn`, `wrap`, contexto compartido, OmniRoute, secretos o datos USM. El resultado pasó: 8,486 tokens antes, 3,655 después, 4,831 ahorrados y razón `0.569291`. El primer intento reveló que `compress()` crea por defecto tres archivos CCR; la ejecución final confinó dicha caché, la instalación y todos los artefactos al temporal, y confirmó su eliminación. El hallazgo refuerza que Headroom no se integra al pipeline USM: permanece solo como benchmark sintético aislado. Documento actualizado: evaluación Headroom v1.1.
 
