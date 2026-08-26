@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.78
+**Versión:** 4.79
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.79.00] — 2026-08-25 (Fernando/Manus): Consentimiento de piloto real privado preparado en Draft.** Tras la autorización de principio de Fernando se creó `2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md` v1.0. Propone una muestra máxima de cuatro observaciones no financieras —una por plataforma—, ejecución interactiva única, disco cifrado, permisos `0700/0600`, 30 días de retención sin backup automático y rollback mediante detención y nueva cadena, nunca modificación o borrado in-place. El documento exige confirmar explícitamente esos cinco controles antes de activar G-NORM-4R. El estado es `Draft`: no existe autorización para insertar datos reales, crear el ledger persistente o materializar destinos canónicos.
 
 - **[4.78.00] — 2026-08-25 (Fernando/Manus): Demostración sintética de G-NORM-4 confirmada en Xubuntu.** Fernando ejecutó `validate_shadow_ledger_synthetic.py` tras sincronizar el commit `5eea616`. La respuesta `shadow_ledger_synthetic_validation_passed` confirmó inserción inicial, idempotencia, rechazo de actualización in-place y corrección por supersedencia append-only. Las garantías fueron entrada exclusivamente sintética, ruta temporal privada, sin red y sin escritura canónica. La prueba eliminó su ruta temporal; no se creó el shadow ledger persistente ni se insertaron observaciones reales. No se tocaron GitHub, fuente canónica, Sheets, OmniRoute, cron, contenido, otras marcas o credenciales. Para cualquier muestra real privada se necesitará consentimiento específico adicional. Documento actualizado: `Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md` v1.1.
 
