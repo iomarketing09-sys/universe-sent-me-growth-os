@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.83
+**Versión:** 4.84
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.84.00] — 2026-08-25 (Fernando/Manus): Validación sintética de semántica inválida con JSONL válido.** Tras aprobar el siguiente ejercicio sintético, Fernando solicitó ampliar la detección sin reparación. La suite temporal añadió cuatro casos legibles como JSONL pero incoherentes con el contrato: `genesis` de marca incorrecta, `record_type` desconocido, colisión de `observation_key` sin supersedencia y `ledger_entry_key` alterado. `inspect_shadow_ledger_synthetic.py` devolvió las detecciones esperadas `genesis_contract_invalid`, `record_type_invalid`, `observation_key_collision` y `entry_key_invalid`; todos preservaron invariancia byte a byte. `shadow_ledger_corruption_synthetic_validation_passed` ahora cubre ocho detecciones, permanece sin red, sin reparación automática, sin datos reales y con ledger temporal eliminado. El siguiente paso permitido es revisión humana de la matriz sintética; no se activa G-NORM-4R, un ledger persistente, Drive, GitHub como ledger, Sheets, OmniRoute ni cron. Documentos actualizados: shadow ledger v1.3, esquema v1.5 y guía v3.2.
 
 - **[4.83.00] — 2026-08-25 (Fernando/Manus): Simulación sintética de corrupción temporal sin reparación.** Por solicitud de Fernando se añadieron un inspector de solo lectura y una batería temporal para tres fallas controladas: JSONL truncado, secuencia sin `genesis` y supersedencia hacia una clave inexistente. La suite devolvió `shadow_ledger_corruption_synthetic_validation_passed`; detectó `jsonl_invalid`, `genesis_missing_or_not_first` y `supersession_target_missing`, y comparó los bytes antes y después de cada inspección para confirmar que no hubo reparación, escritura, reordenamiento o borrado. No hubo red, datos reales, raw, tokens, rutas privadas, Drive, GitHub como ledger, Sheets, OmniRoute, cron o ledger persistente. El siguiente control permitido se mantiene sintético: inconsistencias semánticas con JSONL formalmente válido. Documentos actualizados: shadow ledger v1.2, esquema v1.4 y guía v3.1.
 

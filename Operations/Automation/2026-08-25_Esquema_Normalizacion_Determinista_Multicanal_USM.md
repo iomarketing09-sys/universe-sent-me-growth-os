@@ -4,7 +4,7 @@ purpose: "Definir una estructura auditable que conserve métricas nativas de Tik
 status: Review
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.4"
+version: "1.5"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
@@ -237,6 +237,8 @@ La batería integrada `validate_synthetic_boundary_suite.py` amplió la cobertur
 La suite bloqueó `socket.socket` durante la ejecución y confirmó `synthetic_boundary_suite_passed` con NORM-01 a NORM-12, cinco pruebas append-only, ledger temporal y cero escrituras canónicas. Este resultado aporta confianza a la capa sintética, pero no cambia el estado `Review`, no activa almacenamiento real y no autoriza reparación automática ante corrupción.
 
 Como siguiente control de lectura, `validate_shadow_ledger_corruption_synthetic.py` generó inconsistencias exclusivamente sintéticas: JSONL malformado, secuencia sin genesis y referencia de supersedencia inexistente. `inspect_shadow_ledger_synthetic.py` las detectó sin modificar los bytes de los archivos temporales. No se habilita recuperación automática, reconstrucción de hechos ni materialización de datos reales.
+
+La cobertura sintética también incluye JSONL formalmente válido con contrato `genesis` incorrecto, tipo de evento desconocido, colisión de `observation_key` y `ledger_entry_key` alterado. La detección separa la lectura técnica de la validez semántica y mantiene la decisión de no reparar automáticamente el historial.
 
 ## Referencias
 

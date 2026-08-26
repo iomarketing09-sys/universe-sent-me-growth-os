@@ -4,7 +4,7 @@ purpose: "Definir el ledger privado de validación para comprobar idempotencia, 
 status: Review
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.2"
+version: "1.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Esquema_Normalizacion_Determinista_Multicanal_USM.md"
@@ -95,6 +95,12 @@ Esta demostración no creó el ledger persistente bajo `~/.local/share/usm-metri
 La suite `validate_shadow_ledger_corruption_synthetic.py` generó tres fallas controladas dentro de un directorio temporal: una línea JSONL truncada, una secuencia que comienza con observación sin evento `genesis` y una supersedencia que apunta a una clave inexistente. El inspector `inspect_shadow_ledger_synthetic.py` detectó respectivamente `jsonl_invalid`, `genesis_missing_or_not_first` y `supersession_target_missing`.
 
 Antes y después de cada inspección, la suite comparó los bytes completos del archivo temporal. La igualdad byte a byte confirmó que el inspector no agregó, eliminó, ordenó ni reparó ningún evento. La ejecución devolvió `shadow_ledger_corruption_synthetic_validation_passed` con sockets bloqueados, sin red, sin ledgers canónicos y sin datos reales. Este control detecta, pero no recupera ni normaliza, archivos inconsistentes.
+
+### Validación semántica sobre JSONL formalmente válido
+
+La misma suite amplió la cobertura con cuatro archivos JSONL sintéticos que se pueden leer como JSON, pero incumplen el contrato interno: `genesis` con marca incorrecta, tipo de evento desconocido, dos observaciones con la misma `observation_key` sin supersedencia y `ledger_entry_key` alterado. El inspector reportó respectivamente `genesis_contract_invalid`, `record_type_invalid`, `observation_key_collision` y `entry_key_invalid`.
+
+Cada caso volvió a confirmar invariancia byte a byte durante la inspección. El resultado no elige una fila “correcta”, no recalcula llaves, no corrige el contrato ni añade eventos de reparación. La cobertura permanece exclusivamente sintética, temporal y sin efectos fuera del directorio de prueba.
 
 ## Referencias
 

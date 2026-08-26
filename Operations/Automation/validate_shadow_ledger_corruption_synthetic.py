@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Simulate synthetic temporary ledger corruption and prove no repair occurs.
+"""Simulate synthetic temporary ledger inconsistencies and prove no repair occurs.
 
 All files are created under a TemporaryDirectory and removed automatically.
 The test never uses source evidence, real identifiers, environment secrets,
@@ -69,11 +69,59 @@ def main() -> int:
             )
             assert_read_only(inconsistent, "supersession_target_missing")
 
+            invalid_genesis = root / "invalid-genesis-contract.jsonl"
+            invalid_genesis_events = seed_ledger(invalid_genesis, fixture)
+            invalid_genesis_events[0]["brand"] = "Synthetic Other Brand"
+            invalid_genesis.write_text(
+                "".join(stable_json(event) + "\n" for event in invalid_genesis_events),
+                encoding="utf-8",
+            )
+            assert_read_only(invalid_genesis, "genesis_contract_invalid")
+
+            unknown_record = root / "unknown-record-type.jsonl"
+            unknown_record_events = seed_ledger(unknown_record, fixture)
+            unknown_record_events.append({"record_type": "synthetic_audit_marker"})
+            unknown_record.write_text(
+                "".join(stable_json(event) + "\n" for event in unknown_record_events),
+                encoding="utf-8",
+            )
+            assert_read_only(unknown_record, "record_type_invalid")
+
+            collision = root / "observation-key-collision.jsonl"
+            collision_events = seed_ledger(collision, fixture)
+            duplicate_observation = copy.deepcopy(collision_events[1])
+            duplicate_observation["evidence_fingerprint"] = "5" * 64
+            duplicate_observation["transform_run_id"] = "shadow-synthetic-collision"
+            duplicate_observation["ledger_entry_key"] = entry_key(duplicate_observation)
+            collision.write_text(
+                "".join(stable_json(event) + "\n" for event in [*collision_events, duplicate_observation]),
+                encoding="utf-8",
+            )
+            assert_read_only(collision, "observation_key_collision")
+
+            altered_entry_key = root / "altered-entry-key.jsonl"
+            altered_entry_events = seed_ledger(altered_entry_key, fixture)
+            altered_entry_events[1]["ledger_entry_key"] = "0" * 64
+            altered_entry_key.write_text(
+                "".join(stable_json(event) + "\n" for event in altered_entry_events),
+                encoding="utf-8",
+            )
+            assert_read_only(altered_entry_key, "entry_key_invalid")
+
     print(
         json.dumps(
             {
                 "status": "shadow_ledger_corruption_synthetic_validation_passed",
-                "tests": ["malformed_jsonl_detected", "genesis_missing_detected", "inconsistent_supersession_detected", "byte_invariance_confirmed"],
+                "tests": [
+                    "malformed_jsonl_detected",
+                    "genesis_missing_detected",
+                    "inconsistent_supersession_detected",
+                    "invalid_genesis_contract_detected",
+                    "unknown_record_type_detected",
+                    "observation_key_collision_detected",
+                    "altered_entry_key_detected",
+                    "byte_invariance_confirmed",
+                ],
                 "guarantees": ["synthetic_only", "temporary_ledger_only", "network_socket_blocked", "read_only_inspection", "no_automatic_repair", "no_canonical_write"],
             },
             ensure_ascii=False,

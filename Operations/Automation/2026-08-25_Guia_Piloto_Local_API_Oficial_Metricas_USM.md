@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "3.1"
+version: "3.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -198,6 +198,12 @@ La suite no lee variables de entorno, raw, rutas privadas o tokens. El shadow le
 La validación `validate_shadow_ledger_corruption_synthetic.py` ejecuta tres corrupciones intencionales y puramente sintéticas: JSONL truncado, evento `genesis` ausente y supersedencia contra una clave inexistente. El inspector de solo lectura informa la clase de inconsistencia sin imprimir filas, IDs, rutas o evidencia.
 
 Antes y después de inspeccionar cada archivo, la suite compara sus bytes. La igualdad confirma que no existe reparación automática, reordenamiento, borrado o escritura de compensación. Este ejercicio tampoco habilita el ledger persistente, Drive, GitHub, Google Sheets, OmniRoute, cron ni observaciones reales.
+
+### Semántica inválida con JSONL válido
+
+La cobertura de integridad agrega cuatro archivos JSONL sintéticos que son formalmente legibles pero no cumplen el contrato: `genesis` de marca incorrecta, `record_type` desconocido, colisión de `observation_key` y `ledger_entry_key` alterado. El inspector los rechazó como `genesis_contract_invalid`, `record_type_invalid`, `observation_key_collision` y `entry_key_invalid`, sin elegir, reescribir ni reconstruir eventos.
+
+Todos los casos permanecen bajo directorio temporal, con sockets bloqueados y comparación byte a byte antes y después de inspección. No se habilita una ruta de recuperación automática, ni un ledger real, ni un cambio del bloqueo de G-NORM-4R.
 
 ### Revisión descriptiva de la primera captura — 25 de agosto de 2026
 
