@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-26
-**Versión:** 5.22
+**Versión:** 5.23
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.23.00] — 2026-08-26 (Fernando/Manus): método guiado LUKS identificado; borrado aún no autorizado.** La investigación oficial de Ubuntu 26.04 aclaró que la lista inicial Disk setup no es la pantalla final de cifrado: tras seleccionar `Erase disk and install Ubuntu`, aparece la página para elegir `Encrypt with a passphrase`, opción recomendada que usa LVM con cifrado de disco. La modalidad hardware-backed se excluye por ausencia local de Secure Boot. Se diseñó G-MIG-LUKS-1.4g para verificar visualmente esa ruta en el instalador Xubuntu sin escribir ni ingresar una frase, y se documentó el preflight, el aislamiento físico y la última autorización puntual que requiere G-MIG-LUKS-1.5. No se reinició, abrió el instalador, tocó un disco ni se autorizó una operación destructiva.
 
 - **[5.22.00] — 2026-08-26 (Fernando/Manus): rEFInd y revisión visual del instalador completados sin cambio de disco.** rEFInd arrancó la USB Xubuntu por `EFI\boot\grubx64.efi`; se recorrieron las pantallas de instalación no destructivas y se llegó a Disk setup. El instalador ofreció instalar junto a Ubuntu, borrar Ubuntu, borrar disco o instalación manual, sin opción guiada LUKS visible. No se seleccionó ni confirmó una operación de disco. Se cerró el instalador y rEFInd inició el Xubuntu interno; `BootCurrent=0001` es coherente con el paso por rEFInd, mientras `Boot0000` se preservó y `BootOrder=0001,0000,0080`. G-MIG-LUKS-1.5 queda bloqueado hasta diseñar y revisar la ruta LUKS integral compatible con este instalador. No se modificaron particiones, LUKS, respaldo, collectors ni datos reales.
 

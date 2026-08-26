@@ -4,7 +4,7 @@ purpose: "Preparar una decisión reversible y respaldada sobre el almacenamiento
 status: Draft
 created: 2026-08-25
 updated: 2026-08-26
-version: "1.21"
+version: "1.22"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -33,7 +33,7 @@ La preparación G-SEC-1A ya completó inventario, respaldo externo separado y re
 
 La USB reutilizable Xubuntu 26.04 fue verificada posteriormente, pero el iMac Intel no expone de forma fiable el selector de inicio con el teclado actual. El proyecto conserva un Plan B Draft rEFInd exclusivamente para recuperar esa selección de USB; cualquier escritura de ESP o NVRAM sigue separada de LUKS y exige una aprobación puntual. Este obstáculo de arranque no cambia el bloqueo de G-NORM-4R ni las condiciones de cifrado local.
 
-El Plan B rEFInd ya fue instalado, probado y logró abrir el instalador Xubuntu sin cambios de disco. La pantalla de disco observada ofreció únicamente instalar junto a Ubuntu, borrar Ubuntu, borrar el disco o instalación manual; no expuso cifrado LUKS en un flujo guiado. La decisión Ruta A se mantiene, pero el gate destructivo ahora exige primero un diseño revisado del método LUKS que corresponda a las capacidades realmente visibles del instalador. G-NORM-4R y toda materialización real permanecen bloqueados.
+El Plan B rEFInd ya fue instalado, probado y logró abrir el instalador Xubuntu sin cambios de disco. La lista inicial de disco ofreció instalar junto a Ubuntu, borrar Ubuntu, borrar el disco o instalación manual. La documentación oficial de Ubuntu 26.04 muestra que la ruta `Erase disk and install Ubuntu` abre después una página de cifrado donde `Encrypt with a passphrase` es la opción recomendada, con LVM y cifrado de disco. [4] La decisión Ruta A se mantiene y ahora G-MIG-LUKS-1.4g verificará visualmente esta misma ruta en Xubuntu sin instalar. G-NORM-4R y toda materialización real permanecen bloqueados.
 
 > La protección requerida es cifrado de datos en reposo. No elimina por sí sola otros riesgos: un volumen montado queda disponible para la sesión activa, y el cifrado no reemplaza respaldo, permisos ni control de acceso.
 
@@ -188,3 +188,5 @@ El árbol exacto del destino físico se fija en el diseño de respaldo v2.3: `US
 [2] [cryptsetup(8) — Linux manual page](https://man7.org/linux/man-pages/man8/cryptsetup.8.html)
 
 [3] [Consentimiento de piloto real shadow ledger](2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md)
+
+[4] [Ubuntu Desktop Documentation — Install Ubuntu Desktop](https://ubuntu.com/desktop/docs/en/latest/tutorial/install-ubuntu-desktop/)

@@ -4,7 +4,7 @@ purpose: "Definir los gates y la secuencia reversible para reinstalar Xubuntu co
 status: Draft
 created: 2026-08-26
 updated: 2026-08-26
-version: "0.7"
+version: "0.8"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -69,6 +69,7 @@ El nuevo usuario local debe conservar el nombre `universe-sent-me` salvo que Fer
 | G-MIG-LUKS-1.3 | Crear medio booteable oficial y verificar su integridad. | Sí, solo borra el USB aprobado. |
 | G-MIG-LUKS-1.4f | Instalar opcionalmente rEFInd para seleccionar la USB, bajo un plan reversible y autorización independiente. | Sí, solo ESP/NVRAM; no particiones, cifrado ni datos. |
 | G-MIG-LUKS-1.4 | Revisión visual del instalador y confirmación de que apunta al disco interno correcto. | No hasta el paso de confirmación del instalador. |
+| G-MIG-LUKS-1.4g | Verificar visualmente la ruta guiada `Erase disk` → `Encrypt with a passphrase` y la pantalla de resumen, sin confirmar instalación. | No. |
 | G-MIG-LUKS-1.5 | Instalar Xubuntu con LUKS integral mediante el instalador, borrando exclusivamente el disco interno aprobado. | Sí, operación destructiva sobre `sda`. |
 | G-MIG-LUKS-1.6 | Verificar después del primer arranque que la raíz está respaldada por `crypto_LUKS`/`crypt`, que arranca con frase y que no hay error de montaje. | No. |
 | G-MIG-LUKS-1.7 | Instalar herramientas mínimas y restaurar selectivamente el entorno USM desde el ciphertext, con la frase ingresada localmente. | Sí, escribe sobre el nuevo sistema cifrado. |
@@ -82,10 +83,11 @@ El nuevo usuario local debe conservar el nombre `universe-sent-me` salvo que Fer
 | B. Verificar | Identificar por modelo/tamaño el disco interno y comprobar nuevamente el ciphertext sin descifrar. | G-MIG-LUKS-1.2 aprobado. |
 | C. Medio | Descargar la ISO oficial correspondiente, verificar su checksum y escribir el USB aprobado. | G-MIG-LUKS-1.3 aprobado. |
 | C.1 Selector opcional | Recuperar un selector USB mediante teclado compatible o rEFInd reversible, si el firmware sigue bloqueando Option/Alt. | G-MIG-LUKS-1.4f aprobado por separado si usa rEFInd. |
-| D. Instalar | Arrancar desde USB, elegir cifrado en el instalador oficial y detenerse antes de cualquier pantalla que destruya `sda` para una última aprobación. | G-MIG-LUKS-1.4 y luego 1.5 aprobados por separado. |
-| E. Verificar LUKS | Confirmar cadena de bloques cifrada, arranque, red y actualización base. | G-MIG-LUKS-1.6 completado. |
-| F. Recuperar USM | Instalar `age`, restaurar solo las raíces autorizadas al sistema ya cifrado, comprobar scripts y mantener el backup externo intacto. | G-MIG-LUKS-1.7 aprobado. |
-| G. Retomar operación | Ejecutar pruebas sintéticas/read-only y revisar privacidad antes de abrir gates de datos reales. | G-MIG-LUKS-1.8 completado. |
+| D. Confirmar cifrado | Verificar dentro del instalador la página guiada de cifrado por frase y el resumen de instalación, sin aplicar. | G-MIG-LUKS-1.4g aprobado. |
+| E. Instalar | Arrancar desde USB, elegir cifrado en el instalador oficial y detenerse en el resumen antes de cualquier confirmación destructiva. | G-MIG-LUKS-1.5 aprobado por separado. |
+| F. Verificar LUKS | Confirmar cadena de bloques cifrada, arranque, red y actualización base. | G-MIG-LUKS-1.6 completado. |
+| G. Recuperar USM | Instalar `age`, restaurar solo las raíces autorizadas al sistema ya cifrado, comprobar scripts y mantener el backup externo intacto. | G-MIG-LUKS-1.7 aprobado. |
+| H. Retomar operación | Ejecutar pruebas sintéticas/read-only y revisar privacidad antes de abrir gates de datos reales. | G-MIG-LUKS-1.8 completado. |
 
 ## Requisitos antes de crear el medio de instalación
 
@@ -97,9 +99,35 @@ La USB reutilizada contiene un instalador Xubuntu 26.04 válido, pero no pudo se
 
 El proyecto conserva dos rutas: conseguir temporalmente un teclado Apple/Mac compatible por cable, sin cambios persistentes; o instalar rEFInd mediante el plan Draft `2026-08-26_Plan_B_rEFInd_Seleccion_USB_USM.md`. La segunda ruta requiere una aprobación distinta porque instala un paquete, escribe una ruta nueva bajo `EFI/refind` y puede crear una entrada UEFI/NVRAM. No autoriza la instalación Xubuntu ni G-MIG-LUKS-1.5.
 
-Fernando autorizó y ejecutó G-MIG-LUKS-1.4f. El paquete `refind` creó `EFI/refind/refind_x64.efi` y la entrada nueva `Boot0001`, dejando `Boot0000` y `EFI/ubuntu` presentes. El instalador cambió el orden a `0001,0000,0080`; todavía no se ha reiniciado ni probado rEFInd. El siguiente paso sigue siendo solo la revisión visual de la USB, no una instalación ni un cambio de disco.
+Fernando autorizó y ejecutó G-MIG-LUKS-1.4f. El paquete `refind` creó `EFI/refind/refind_x64.efi` y la entrada nueva `Boot0001`, dejando `Boot0000` y `EFI/ubuntu` presentes. El instalador cambió el orden a `0001,0000,0080`; rEFInd arrancó después tanto la USB reutilizada como el Xubuntu interno, el cual permanece sano.
 
-La revisión visual G-MIG-LUKS-1.4 se completó después: rEFInd arrancó la USB Xubuntu y el instalador llegó a **Disk setup** sin seleccionar ni confirmar ninguna operación. La pantalla ofreció instalar junto a Ubuntu, borrar Ubuntu, borrar disco o instalación manual; no mostró una opción guiada de cifrado LUKS. El instalador se cerró y el Xubuntu interno volvió a iniciar correctamente por rEFInd. Por tanto, G-MIG-LUKS-1.5 sigue bloqueado: antes de autorizar un borrado debe definirse y revisarse un método de instalación LUKS integral compatible con este instalador, probablemente a través de un diseño manual separado si no se identifica una opción guiada oficial.
+La revisión visual G-MIG-LUKS-1.4 llegó a **Disk setup** sin seleccionar ni confirmar ninguna operación. La lista inicial mostró instalar junto a Ubuntu, borrar Ubuntu, borrar disco e instalación manual. La documentación oficial de Ubuntu 26.04 aclara que la ruta de cifrado aparece **después de seleccionar** `Erase disk and install Ubuntu`: allí se puede elegir `Encrypt with a passphrase`, la opción recomendada que combina LVM con cifrado de disco. [4] [5] Como la revisión se detuvo correctamente antes de seleccionar una opción de disco, aún falta el gate no destructivo G-MIG-LUKS-1.4g para confirmar que la variante Xubuntu muestra esa misma pantalla guiada. No se abrirá instalación manual ni se modificará una partición.
+
+## Diseño de desbloqueo G-MIG-LUKS-1.5
+
+El método candidato es **instalación limpia guiada en el disco interno con `Erase disk and install Xubuntu` seguido de `Encrypt with a passphrase`**. Ubuntu documenta esta alternativa como el cifrado recomendado y especifica que configura LVM con cifrado de disco. [5] El método usa LUKS a nivel de bloque y desbloqueo con una frase ingresada localmente. [1]
+
+La opción de cifrado respaldado por hardware queda excluida: la comprobación local indicó ausencia de Secure Boot, mientras Ubuntu requiere Secure Boot UEFI, TPM 2.0 e IOMMU para esa modalidad. [6] La ruta manual también queda excluida de este proyecto mientras no exista un diseño de particionado aprobado por separado; no es necesaria si la ruta guiada de frase está disponible.
+
+### G-MIG-LUKS-1.4g — prueba visual de cifrado guiado
+
+Este gate no escribe en disco. Con la USB Xubuntu conectada y `Fernando` desconectado, se inicia la sesión de prueba por rEFInd. En **Disk setup** se selecciona temporalmente `Erase disk and install Xubuntu` y se pulsa continuar únicamente para abrir la pantalla **Encryption and file system**. El criterio de PASS es observar `Encrypt with a passphrase` y, si se muestra, la indicación de LVM/cifrado. No se escribe ninguna frase, no se avanza a usuario, zona horaria ni resumen, y se cierra el instalador sin aplicar cambios.
+
+### G-MIG-LUKS-1.5 — punto de no retorno y preflight obligatorio
+
+Solo después de que G-MIG-LUKS-1.4g pase, este es el checklist que debe completarse el mismo día de la instalación. No se acepta una confirmación genérica: cada renglón se confirma explícitamente antes del botón final.
+
+| Control | Evidencia requerida antes de avanzar | Resultado si falla |
+|---|---|---|
+| Respaldo | Confirmar que el ciphertext `age` y la restauración controlada aprobada siguen documentados; el disco `Fernando` se desconecta antes de arrancar el instalador. | No se reinicia para instalar. |
+| Identidad del destino | Desde la sesión live, verificar por modelo, tamaño y montaje que existe un solo disco interno objetivo de aproximadamente 465.8 GB; nunca decidir por la letra `/dev/sdX`. | Detenerse y documentar la discrepancia. |
+| Aislamiento físico | Mantener conectada solo la USB Xubuntu junto al disco interno; `Fernando` y `STORE N GO` desconectados. | No llegar a Disk setup. |
+| Método de cifrado | Seleccionar exclusivamente `Erase disk and install Xubuntu` → `Encrypt with a passphrase`; no usar alongside, manual, LVM sin cifrar ni hardware-backed encryption. | Volver al escritorio live sin instalar. |
+| Frase LUKS | Fernando crea e ingresa la frase solo localmente y la conserva fuera del equipo; no se dicta, muestra, pega ni registra en chat, GitHub, Drive o scripts. | No continuar. |
+| Resumen final | Revisar que el resumen nombre solo el disco interno verificado y el cifrado por frase. | No pulsar instalar. |
+| Última autorización | Fernando autoriza expresamente **en ese momento** borrar solo el disco interno identificado para instalar Xubuntu Desktop cifrado con frase. | No pulsar `Install`. |
+
+El único punto destructivo es pulsar el botón final `Install` desde el resumen ya verificado. Todo lo anterior sirve para observar, comparar y cancelar. Tras ese clic no se intenta una cancelación ni se desconecta la alimentación; la siguiente acción es esperar el final, retirar la USB cuando el instalador lo pida y completar G-MIG-LUKS-1.6.
 
 Antes de la instalación debe haber alimentación estable, tiempo suficiente para interrupciones y la confirmación de que no existe otro sistema operativo o dato no inventariado en `sda` que deba preservarse. El proyecto asume reinstalación limpia del único disco interno; si aparece una partición o requisito nuevo, el plan se detendrá y se revisará.
 
@@ -114,3 +142,9 @@ La migración no mezcla datos, código ni credenciales de Firma Bordados, Bam in
 [2] [Xubuntu — Release 26.04](https://xubuntu.org/release/26.04/)
 
 [3] [Ubuntu Desktop Documentation — Create a bootable USB stick](https://ubuntu.com/desktop/docs/en/latest/how-to/create-a-bootable-usb-stick/)
+
+[4] [Ubuntu Desktop Documentation — Install Ubuntu Desktop, Disk setup](https://ubuntu.com/desktop/docs/en/latest/tutorial/install-ubuntu-desktop/)
+
+[5] [Ubuntu Desktop Documentation — Advanced disk setup features](https://ubuntu.com/desktop/docs/en/latest/reference/advanced-disk-setup-features/)
+
+[6] [Ubuntu Desktop Documentation — Encrypt your disk with TPM](https://ubuntu.com/desktop/docs/en/latest/how-to/encrypt-your-disk-with-tpm/)

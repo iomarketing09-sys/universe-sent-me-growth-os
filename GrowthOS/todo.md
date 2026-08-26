@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-26
-version: "11.68"
+version: "11.70"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -198,7 +198,8 @@ organization: "GrowthOS"
 - [x] Validar primer arranque rEFInd G-MIG-LUKS-1.4f: rEFInd mostró y arrancó la entrada USB `EFI\boot\grubx64.efi`; tras salir sin instalar, rEFInd inició de nuevo el Xubuntu interno por `EFI\ubuntu\grubx64.efi`. `efibootmgr -v` confirmó `BootCurrent=0001`, `Boot0000` Ubuntu intacto y `BootOrder=0001,0000,0080`.
 - [x] Autorizar reinicio de prueba G-MIG-LUKS-1.4f: Fernando autorizó reiniciar con la USB Xubuntu conectada y `Fernando` desconectado para comprobar rEFInd y seleccionar solo la entrada USB. No autoriza instalar Xubuntu ni modificar discos.
 - [x] Confirmar menú rEFInd G-MIG-LUKS-1.4f: el primer arranque mostró rEFInd y la entrada seleccionada `Boot EFI\boot\grubx64.efi from ESP`, consistente con el cargador validado de la USB Xubuntu. Se indicó seleccionar solo esa entrada; no se eligieron entradas internas ni se modificó disco alguno.
-- [ ] Diseñar método LUKS G-MIG-LUKS-1.4g: la revisión de Disk setup no mostró cifrado guiado; antes de G-MIG-LUKS-1.5, documentar y revisar una ruta LUKS integral compatible con el instalador visible o una alternativa oficial. No abrir instalación manual ni modificar particiones sin una nueva autorización.
+- [ ] Ejecutar método LUKS G-MIG-LUKS-1.4g: la documentación oficial indica que `Erase disk` abre después `Encrypt with a passphrase` (LVM + cifrado). Verificarlo visualmente en el instalador Xubuntu sin escribir frase ni avanzar al resumen; no abrir instalación manual ni modificar particiones.
+- [x] Diseñar desbloqueo G-MIG-LUKS-1.5: método propuesto `Erase disk` → `Encrypt with a passphrase`; preflight de respaldo, identidad por modelo/tamaño, aislamiento físico, frase local y última autorización específica documentados en el proyecto v0.8. No autoriza aún borrar disco.
 - [ ] G-MIG-LUKS-1.3a: antes de escribir, confirmar visualmente el objetivo `Xubuntu 26.04 LTS Desktop 64-bit`, la coincidencia de SHA-256 oficial y que el destino sigue siendo la USB `STORE N GO`, no `sda` ni `sdc`.
 - [ ] G-SEC-1A.3e: ejecutar `prepare_usm_encrypted_backup.sh --dry-run` sobre el volumen real después de 3b y 3c; no autoriza `--execute` ni la creación de ciphertext.
 - [x] Diseñar el árbol exacto de `USM_PRE_LUKS_BACKUP`, incluyendo categorías permitidas, manifest, checksums, nombres, retención y exclusiones; no crear todavía rutas en el volumen vfat. Diseño incorporado en `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md` v1.2.
