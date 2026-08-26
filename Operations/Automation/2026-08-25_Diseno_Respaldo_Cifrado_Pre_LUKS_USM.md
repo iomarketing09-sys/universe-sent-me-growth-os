@@ -4,12 +4,13 @@ purpose: "Definir una estructura de carpetas y un wrapper de cifrado local previ
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.2"
+version: "1.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
   - "Operations/Automation/2026-08-25_Inventario_Previa_Migracion_LUKS_Xubuntu_USM.md"
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
+  - "Operations/Automation/create_usm_backup_tree.sh"
   - "GrowthOS/todo.md"
 organization: "Operations/Automation"
 ---
@@ -20,7 +21,7 @@ organization: "Operations/Automation"
 
 El disco externo Windows fue validado como destino físico condicionado: `sdc3`, formato `vfat`, 730.9 GiB libres. El formato permite guardar archivos, pero no cifra datos ni conserva permisos POSIX. Por ello, las categorías privadas solo pueden llegar al disco dentro de un archivo cifrado creado localmente.
 
-Este documento y `prepare_usm_encrypted_backup.sh` son **diseño**. El script arranca en modo `--plan`, no crea carpetas ni archivos por defecto, y no se ejecutará en modo `--execute` hasta que G-SEC-1A.3 y la prueba de restauración estén aprobados.
+Este documento y `prepare_usm_encrypted_backup.sh` son **diseño**. El script arranca en modo `--plan`, no crea carpetas ni archivos por defecto, y no se ejecutará en modo `--execute` hasta que G-SEC-1A.3b, G-SEC-1A.3c, G-SEC-1A.3e y la autorización específica de la primera copia estén aprobados.
 
 ## Herramienta seleccionada
 
@@ -30,7 +31,7 @@ Para este respaldo se diseña inicialmente el modo **passphrase interactivo**. L
 
 ## Estructura propuesta en el disco externo
 
-La estructura se creará únicamente al aprobar `--execute`:
+El árbol vacío fue creado y verificado mediante el wrapper independiente `create_usm_backup_tree.sh`, aprobado como G-SEC-1A.3a. La creación de ese árbol no ejecutó `prepare_usm_encrypted_backup.sh`, no generó archivos ni implica autorización de respaldo. La nomenclatura de archivos permanece como diseño para gates posteriores:
 
 ```text
 /run/media/universe-sent-me/Fernando/
@@ -71,7 +72,7 @@ Los únicos datos privados del disco serán ciphertext `.age`. El manifest no en
 
 | Gate | Debe aprobarse explícitamente |
 |---|---|
-| G-SEC-1A.3a | Nombre de carpeta `USM_PRE_LUKS_BACKUP` y confirmación de que no interfiere con archivos Windows existentes. |
+| G-SEC-1A.3a | **Completado el 2026-08-25.** Se aprobó y creó el árbol vacío en la raíz del volumen `vfat` confirmado. |
 | G-SEC-1A.3b | Alcance: decidir si se incluyen las tres raíces privadas, además de código y scripts. |
 | G-SEC-1A.3c | Instalar/verificar `age` desde fuente oficial y definir dónde Fernando conservará la recuperación de la frase. |
 | G-SEC-1A.3d | Probar cifrado y restauración de un archivo ficticio no sensible en una carpeta temporal. |
@@ -92,11 +93,17 @@ Fernando aprobó una prueba exclusivamente ficticia. Se usó el binario oficial 
 | Entorno temporal externo | Dos directorios de descarga/prueba del sandbox se detectaron tras el primer intento de limpieza y se eliminaron manualmente; la verificación final confirmó ausencia de artefactos `usm-age-*` bajo `/tmp`. |
 | Medios y datos USM | No se usó el disco externo, Drive, OmniRoute, `~/.config/usm-metrics`, `~/.local/share/usm-metrics` ni `~/omniroute-pilot`. |
 
-La prueba confirma el mecanismo básico de cifrado/restauración e integridad de age, pero **no valida todavía** la operación real con frase interactiva, las fuentes privadas, el volumen vfat o la restauración de un respaldo autorizado. Esos pasos siguen detrás de G-SEC-1A.3a, b, c y e.
+La prueba confirma el mecanismo básico de cifrado/restauración e integridad de age, pero **no valida todavía** la operación real con frase interactiva, las fuentes privadas, el volumen vfat o la restauración de un respaldo autorizado. Esos pasos siguen detrás de G-SEC-1A.3b, G-SEC-1A.3c, G-SEC-1A.3e y una autorización independiente de la primera copia.
+
+## Registro de ejecución G-SEC-1A.3a
+
+Fernando aprobó el gate y ejecutó localmente `create_usm_backup_tree.sh` el 2026-08-25. Antes de escribir, el wrapper confirmó que el destino era el punto de montaje `/run/media/universe-sent-me/Fernando`, con fuente `/dev/sdc3` y filesystem `vfat`. El modo `--plan` terminó con `STATUS=plan_only_no_directories_created`; el modo `--execute` terminó con `STATUS=empty_tree_created`.
+
+El wrapper se negó de forma explícita a operar si `USM_PRE_LUKS_BACKUP` ya existía. Por tanto, la ejecución confirmada creó solamente la raíz y sus cinco subcarpetas vacías; no reemplazó contenido previo ni dejó archivos de respaldo. La enumeración final mostró exclusivamente directorios. No se ejecutaron los wrappers de cifrado, no se instaló `age`, no se leyeron rutas privadas y no se produjeron ciphertexts, manifests, checksums ni evidencia de restauración.
 
 ## Árbol exacto de `USM_PRE_LUKS_BACKUP`
 
-El siguiente árbol es el único diseño aprobado para la primera copia. Se creará en la raíz del volumen ya montado, no dentro de carpetas de Windows existentes. Ninguna carpeta existe todavía.
+El siguiente árbol es el único diseño aprobado para la primera copia. Sus seis directorios vacíos ya existen en la raíz del volumen montado, no dentro de carpetas de Windows existentes. Los cinco nombres de archivo que aparecen son plantillas futuras: **ninguno existe todavía**.
 
 ```text
 USM_PRE_LUKS_BACKUP/
@@ -130,9 +137,9 @@ Un archivo `.partial` puede existir solo durante la operación de streaming. Si 
 
 El manifest será texto simple y tendrá solo estas claves: `backup_type`, `protocol_version`, `created_utc`, `ciphertext_file`, `ciphertext_sha256_file`, `encryption`, `scope_profile`, `restore_status` y `operator_confirmation`. La clave `scope_profile` puede ser `code_and_scripts_only` o `code_scripts_and_approved_private`; no enumera rutas ni archivos.
 
-### Secuencia al crear el árbol
+### Secuencia después de crear el árbol
 
-La autorización posterior debe hacer tres acciones en orden: crear el árbol vacío, ejecutar `--dry-run` contra el punto de montaje y revisar el resultado antes de permitir la primera operación `--execute`. Ninguna de estas acciones aprueba datos privados por sí sola. La primera copia seguirá requiriendo confirmación separada de fuentes y una frase de recuperación gestionada fuera de este volumen.
+G-SEC-1A.3a ya creó el árbol vacío. La siguiente autorización debe decidir el alcance privado (G-SEC-1A.3b), verificar o instalar `age` y definir la recuperación fuera de este volumen y de servicios cloud (G-SEC-1A.3c), y después ejecutar `--dry-run` contra el punto de montaje (G-SEC-1A.3e). Ninguna de esas acciones aprueba datos privados por sí sola. La primera copia seguirá requiriendo confirmación separada de fuentes y una frase de recuperación gestionada fuera de este volumen.
 
 ## Referencias
 

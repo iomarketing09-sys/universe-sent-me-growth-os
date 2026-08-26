@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "11.6"
+version: "11.7"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -126,10 +126,13 @@ organization: "GrowthOS"
 - [x] G-SEC-1A.2: inspeccionar el disco externo Windows recién detectado y confirmar tamaño, filesystem, montaje y espacio libre. Resultado: `sdc3` vfat de 930.8 GiB, 730.9 GiB disponibles, montado bajo `/run/media/universe-sent-me/Fernando`; apto condicionalmente como destino, sin formatear ni modificar datos existentes.
 - [ ] G-SEC-1A.3: definir carpeta exclusiva de respaldo, alcance de categorías y método de cifrado local previo para datos privados antes de la primera copia al volumen vfat; ensayar restauración con archivos no sensibles.
 - [x] Diseñar la estructura y el script de respaldo cifrado local: separar contenido de código de categorías privadas, requerir llave fuera del disco/Drive/chat, soportar simulación y prohibir cualquier copia real hasta aprobación y prueba de restauración. Documento: `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md`; wrapper: `prepare_usm_encrypted_backup.sh`.
-- [ ] G-SEC-1A.3a, b, c y e: aprobar carpeta exclusiva, alcance de fuentes privadas, instalación/verificación de age, recuperación de frase fuera de servicios cloud y dry-run sobre el volumen real antes de autorizar `--execute`.
+- [x] G-SEC-1A.3a: aprobar y crear únicamente la carpeta exclusiva vacía en el volumen vfat; no implica copia, cifrado, lectura de fuentes privadas ni modificación de archivos existentes.
+- [ ] G-SEC-1A.3b: decidir si las raíces privadas `~/omniroute-pilot`, `~/.config/usm-metrics` y `~/.local/share/usm-metrics` entrarán al alcance del respaldo; mantener excluidos tokens, credenciales, evidencia raw y secretos hasta una definición explícita.
+- [ ] G-SEC-1A.3c: instalar o verificar `age` localmente y definir el mecanismo de recuperación fuera del disco externo, Drive, GitHub, correo y chat.
+- [ ] G-SEC-1A.3e: ejecutar `prepare_usm_encrypted_backup.sh --dry-run` sobre el volumen real después de 3b y 3c; no autoriza `--execute` ni la creación de ciphertext.
 - [x] Diseñar el árbol exacto de `USM_PRE_LUKS_BACKUP`, incluyendo categorías permitidas, manifest, checksums, nombres, retención y exclusiones; no crear todavía rutas en el volumen vfat. Diseño incorporado en `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md` v1.2.
-- [ ] G-SEC-1A.3a: Fernando debe aprobar la creación del árbol vacío `USM_PRE_LUKS_BACKUP` en la raíz del volumen vfat antes de cualquier dry-run o copia.
-- [ ] Ejecutar G-SEC-1A.3a aprobado: crear y verificar únicamente el árbol vacío `USM_PRE_LUKS_BACKUP` en el punto de montaje validado; no copiar, cifrar, leer datos privados ni modificar archivos existentes.
+- [x] G-SEC-1A.3a: Fernando aprobó y ejecutó la creación del árbol vacío `USM_PRE_LUKS_BACKUP` en `/run/media/universe-sent-me/Fernando`; el wrapper verificó `/dev/sdc3`, `vfat` y `STATUS=empty_tree_created`, sin crear archivos de respaldo ni tocar datos existentes.
+- [x] Verificar G-SEC-1A.3a: la salida enumeró únicamente `USM_PRE_LUKS_BACKUP` y sus cinco subcarpetas aprobadas; no se reportó ciphertext, manifest, checksum, evidencia de restauración ni copias privadas.
 - [x] Ejecutar la prueba ficticia aprobada de cifrado y restauración con age: fixture temporal sin datos USM, herramienta temporal, comparación de integridad y limpieza completa; no usar disco externo, rutas privadas ni respaldo real. Resultado: round-trip y hashes coincidentes; artefactos temporales eliminados.
 - [x] Evaluar Google Drive de iO Marketing (5 TB disponibles) solo como respaldo futuro cifrado antes de subirlo, con llave fuera de Drive y prueba de restauración; mantener prohibido cualquier uso como ledger activo o destino actual de datos USM. Decisión: contingencia futura condicionada; no reemplaza medio local y no autoriza subida actual.
 - [ ] G-BACKUP-DRIVE-0 a G-BACKUP-DRIVE-4: si se solicita después, definir alcance de archivos, cifrado local previo, llave fuera de Drive, restauración probada y aprobación de subida manual sin sincronización.

@@ -4,12 +4,13 @@ purpose: "Preparar una decisión reversible y respaldada sobre el almacenamiento
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.8"
+version: "1.9"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
   - "Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md"
+  - "Operations/Automation/2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md"
   - "GrowthOS/todo.md"
 organization: "Operations/Automation"
 ---
@@ -144,7 +145,7 @@ El inventario de Xubuntu reportó aproximadamente 24 GiB usados en la raíz actu
 
 La recomendación actual es un medio externo de **128 GB o mayor** para el respaldo lógico. Debe ser un dispositivo separado, fiable y dedicado al proceso de migración, con capacidad para crear y verificar una copia antes de modificar Xubuntu. La decisión de compra, proveedor y formato del medio sigue correspondiendo a Fernando; este documento no solicita ni autoriza ninguna compra ni formateo.
 
-El disco Windows informado con 730 GB libres no puede ocupar ese papel por ahora: no fue detectado como dispositivo de bloque en Xubuntu después de reconectarlo. Hasta que un medio aparezca con tamaño, transporte y filesystem identificables, no se permite iniciar G-SEC-1A ni realizar copias.
+El disco Windows informado ya fue detectado sin escritura como `/dev/sdc3`, volumen `vfat` con label `Fernando`, montado en `/run/media/universe-sent-me/Fernando`, con 730.9 GiB disponibles. Es un destino físico condicional para ciphertext futuro, no un volumen LUKS ni un ledger. Como contiene datos existentes de Windows y `vfat` no cifra ni conserva permisos POSIX, permanece prohibido escribir datos USM abiertos, formatear, reparar, reorganizar o montar de forma persistente.
 
 ## Drive como contingencia cifrada futura
 
@@ -166,13 +167,13 @@ Incluso si estos gates se aprobaran, la copia cifrada de Drive sería contingenc
 
 El disco externo Windows se detectó como `sdc3`, un volumen `vfat` de 930.8 GiB con 730.9 GiB disponibles. Puede servir como destino físico para el respaldo lógico previo a la migración, pero con dos límites: contiene información existente y `vfat` no aporta permisos POSIX ni cifrado en reposo.
 
-Por ello, cualquier respaldo deberá usar una carpeta exclusiva aprobada y preservar los datos privados de USM en un formato cifrado antes de escribirlos al disco. No se crea esa carpeta, no se copia ningún archivo y no se cifra nada hasta completar G-SEC-1A.3: alcance de categorías, nombre de carpeta, método de cifrado de contenido privado y prueba de restauración de archivos no sensibles.
+Por ello, cualquier respaldo deberá usar una carpeta exclusiva aprobada y preservar los datos privados de USM en un formato cifrado antes de escribirlos al disco. El gate G-SEC-1A.3a ya creó exclusivamente el árbol vacío `USM_PRE_LUKS_BACKUP` en la raíz del volumen; no se copió, leyó ni cifró ningún dato. Permanecen pendientes el alcance de categorías (G-SEC-1A.3b), la herramienta y recuperación (G-SEC-1A.3c) y el dry-run del volumen real (G-SEC-1A.3e).
 
-El diseño de estructura y wrapper previo se documenta en `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md`. Usa `age` solo como propuesta de cifrado local por streaming y parte en modo de planificación; no autoriza una copia real hasta los gates G-SEC-1A.3a a G-SEC-1A.3e.
+El diseño de estructura y wrapper previo se documenta en `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md`. Usa `age` solo como propuesta de cifrado local por streaming y parte en modo de planificación; no autoriza una copia real hasta los gates G-SEC-1A.3b, G-SEC-1A.3c y G-SEC-1A.3e, además de una aprobación separada de primera copia.
 
 G-SEC-1A.3d ya tiene una prueba ficticia aprobada y pasada con age temporal: fixture artificial, cifrado, restauración, hashes iguales y limpieza verificada. La prueba no incluyó datos de USM ni el disco externo, por lo que no reduce los demás gates de alcance, recuperación de frase y dry-run sobre el volumen real.
 
-El árbol exacto del destino físico se fija en el diseño de respaldo v1.2: `USM_PRE_LUKS_BACKUP` contiene solo protocolo no sensible, ciphertext, manifest mínimo, checksum de ciphertext y evidencia agregada de restauración. No se crean rutas ni se escribe sobre el volumen hasta una autorización de G-SEC-1A.3a.
+El árbol exacto del destino físico se fija en el diseño de respaldo v1.3: `USM_PRE_LUKS_BACKUP` contiene solo protocolo no sensible, ciphertext, manifest mínimo, checksum de ciphertext y evidencia agregada de restauración. G-SEC-1A.3a fue aprobado y verificado: existen solo la raíz y sus cinco subcarpetas vacías. Ningún archivo de protocolo, ciphertext, manifest, checksum o evidencia existe todavía, y no se autoriza añadirlos sin los gates pendientes.
 
 ## Referencias
 
