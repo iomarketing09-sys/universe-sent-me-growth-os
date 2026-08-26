@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "2.5"
+version: "2.6"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -166,6 +166,12 @@ El resultado del gate fue `synthetic_validation_passed` con 3 filas válidas, 1 
 Con aprobación de Fernando, `normalize_metrics_private_pilot.py` quedó preparado para ejecutar G-NORM-3. Lee únicamente el archivo más reciente de evidencia privada por plataforma y procesa en memoria un máximo de ocho registros fuente por TikTok, YouTube, Facebook e Instagram. No hace solicitudes de red, no necesita token, no persiste observaciones normalizadas y no modifica evidencia fuente, ledgers, Google Sheets, OmniRoute o calendarios.
 
 El reporte imprime exclusivamente estado, cantidad de registros fuente disponibles, tamaño de muestra procesada, cantidad de observaciones normalizadas en memoria, validaciones, cobertura por nombre de métrica y disponibilidad. Nunca imprime IDs, captions, títulos, URLs, valores nativos, rutas, tokens, hashes ni filas normalizadas. Para YouTube, todo el bloque de monetización queda excluido incluso si existe en la evidencia; el reporte solo trabaja con las filas de rendimiento de la ventana cerrada. La validación contra fixtures sintéticos cubrió Facebook, Instagram, TikTok y YouTube sin filas rechazadas y confirmó que las ausencias se registran como parciales.
+
+### Resultado de G-NORM-3 — 25 de agosto de 2026
+
+El piloto local privado devolvió `private_pilot_coverage_complete` en las cuatro plataformas. Facebook procesó una muestra de 8 de 25 posts fuente: 22 observaciones válidas y 2 parciales porque shares solo estuvo disponible para 6 de los 8 posts. Instagram procesó 8 de 25 media: 37 observaciones válidas y 11 parciales; saves no estuvo disponible en los ocho media y views solo en cinco. TikTok procesó 8 de 9 videos y sus 32 observaciones fueron válidas. YouTube procesó las 8 filas de rendimiento disponibles y generó 72 observaciones válidas, con monetización excluida.
+
+No hubo rechazos ni duplicados. El porcentaje de muestreo fue 32.00% para Facebook e Instagram, 88.88% para TikTok y 100.00% para YouTube. Estas tasas describen únicamente cobertura de adaptadores; no miden rendimiento, no son una normalización por ventana y no autorizan clasificar contenido. El siguiente gate posible es G-NORM-4, un shadow ledger privado append-only que requerirá una nueva aprobación humana.
 
 ### Revisión descriptiva de la primera captura — 25 de agosto de 2026
 

@@ -4,7 +4,7 @@ purpose: "Definir una estructura auditable que conserve métricas nativas de Tik
 status: Review
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
@@ -218,6 +218,12 @@ Los ejemplos siguientes son deliberadamente sintéticos y no representan publica
 | `G-NORM-5` | Vista derivada reconstruible y brief sanitizado de cohorte madura. | Automatización productiva o publicación. |
 
 Antes de `G-NORM-4` requerirán actualización coordinada `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `GrowthOS/08_00_Metricas_Baseline_Plataformas.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`, `Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`. Ningún script podrá materializar filas canónicas hasta que ese gate sea aprobado.
+
+### Resultado de G-NORM-3
+
+El piloto privado procesó en memoria un máximo de ocho registros fuente por plataforma a partir de evidencia local ya existente. Facebook procesó 8 de 25 registros fuente y normalizó 24 observaciones: 22 válidas y 2 parciales por shares no disponibles. Instagram procesó 8 de 25 y normalizó 48 observaciones: 37 válidas y 11 parciales; `saves_native` quedó no disponible en toda la muestra y `views_native` solo estuvo disponible en 5 de 8 media. TikTok procesó 8 de 9 registros y normalizó 32 observaciones válidas. YouTube procesó 8 de 8 filas de rendimiento y normalizó 72 observaciones válidas; monetización quedó totalmente excluida.
+
+No hubo observaciones rechazadas ni duplicados en el piloto. El reporte no expuso IDs, textos, URLs, valores nativos, rutas, tokens, hashes o monetización, y el proceso no escribió evidencia, datos normalizados, ledgers, Google Sheets, OmniRoute ni cron. La cobertura valida los adaptadores y reglas de disponibilidad, pero no convierte el diseño en `Active`: G-NORM-4 requeriría una autorización separada para un shadow ledger privado append-only.
 
 ## Referencias
 
