@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-26
-version: "11.64"
+version: "11.65"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -196,6 +196,7 @@ organization: "GrowthOS"
 - [x] Autorizar instalación rEFInd G-MIG-LUKS-1.4f: Fernando aprobó explícitamente la ruta B; permite solo paquete Ubuntu, archivos nuevos bajo `EFI/refind` y una entrada NVRAM nueva, no instalar Xubuntu, alterar particiones, formatear ni cifrar discos.
 - [x] Ejecutar G-MIG-LUKS-1.4f: preflight final y snapshot local completados; `refind` 0.14.2-2.1 creó `EFI/refind/refind_x64.efi` y `Boot0001`; `Boot0000`/`EFI/ubuntu` siguen presentes. El instalador dejó `BootOrder=0001,0000,0080`; no hubo reinicio, instalación Xubuntu ni modificación de discos.
 - [ ] Validar primer arranque rEFInd G-MIG-LUKS-1.4f: con USB Xubuntu conectada y `Fernando` desconectado, reiniciar una sola vez, confirmar que aparece rEFInd y seleccionar únicamente la USB; detenerse antes de cualquier pantalla que cambie el disco interno.
+- [x] Autorizar reinicio de prueba G-MIG-LUKS-1.4f: Fernando autorizó reiniciar con la USB Xubuntu conectada y `Fernando` desconectado para comprobar rEFInd y seleccionar solo la entrada USB. No autoriza instalar Xubuntu ni modificar discos.
 - [ ] G-MIG-LUKS-1.3a: antes de escribir, confirmar visualmente el objetivo `Xubuntu 26.04 LTS Desktop 64-bit`, la coincidencia de SHA-256 oficial y que el destino sigue siendo la USB `STORE N GO`, no `sda` ni `sdc`.
 - [ ] G-SEC-1A.3e: ejecutar `prepare_usm_encrypted_backup.sh --dry-run` sobre el volumen real después de 3b y 3c; no autoriza `--execute` ni la creación de ciphertext.
 - [x] Diseñar el árbol exacto de `USM_PRE_LUKS_BACKUP`, incluyendo categorías permitidas, manifest, checksums, nombres, retención y exclusiones; no crear todavía rutas en el volumen vfat. Diseño incorporado en `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md` v1.2.
