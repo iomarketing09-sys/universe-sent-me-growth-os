@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-26
-**Versión:** 5.23
+**Versión:** 5.24
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.24.00] — 2026-08-26 (Fernando/Manus): cifrado guiado LVM con LUKS confirmado sin instalación.** Bajo autorización G-MIG-LUKS-1.4g, Xubuntu mostró la pantalla `Encryption and file system` con `Encrypt with a passphrase` y el texto `This uses LVM with LUKS encryption`. No se eligió ninguna opción, no se ingresó frase, no se llegó al resumen y no se alteró un disco. El instalador se cerró y el sistema interno volvió a iniciar. La ruta guiada queda validada; G-MIG-LUKS-1.5 continúa requiriendo preflight final y una autorización puntual para borrar exclusivamente el disco interno verificado.
 
 - **[5.23.00] — 2026-08-26 (Fernando/Manus): método guiado LUKS identificado; borrado aún no autorizado.** La investigación oficial de Ubuntu 26.04 aclaró que la lista inicial Disk setup no es la pantalla final de cifrado: tras seleccionar `Erase disk and install Ubuntu`, aparece la página para elegir `Encrypt with a passphrase`, opción recomendada que usa LVM con cifrado de disco. La modalidad hardware-backed se excluye por ausencia local de Secure Boot. Se diseñó G-MIG-LUKS-1.4g para verificar visualmente esa ruta en el instalador Xubuntu sin escribir ni ingresar una frase, y se documentó el preflight, el aislamiento físico y la última autorización puntual que requiere G-MIG-LUKS-1.5. No se reinició, abrió el instalador, tocó un disco ni se autorizó una operación destructiva.
 

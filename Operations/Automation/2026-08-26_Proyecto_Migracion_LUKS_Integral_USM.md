@@ -4,7 +4,7 @@ purpose: "Definir los gates y la secuencia reversible para reinstalar Xubuntu co
 status: Draft
 created: 2026-08-26
 updated: 2026-08-26
-version: "0.8"
+version: "0.9"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -101,7 +101,9 @@ El proyecto conserva dos rutas: conseguir temporalmente un teclado Apple/Mac com
 
 Fernando autorizó y ejecutó G-MIG-LUKS-1.4f. El paquete `refind` creó `EFI/refind/refind_x64.efi` y la entrada nueva `Boot0001`, dejando `Boot0000` y `EFI/ubuntu` presentes. El instalador cambió el orden a `0001,0000,0080`; rEFInd arrancó después tanto la USB reutilizada como el Xubuntu interno, el cual permanece sano.
 
-La revisión visual G-MIG-LUKS-1.4 llegó a **Disk setup** sin seleccionar ni confirmar ninguna operación. La lista inicial mostró instalar junto a Ubuntu, borrar Ubuntu, borrar disco e instalación manual. La documentación oficial de Ubuntu 26.04 aclara que la ruta de cifrado aparece **después de seleccionar** `Erase disk and install Ubuntu`: allí se puede elegir `Encrypt with a passphrase`, la opción recomendada que combina LVM con cifrado de disco. [4] [5] Como la revisión se detuvo correctamente antes de seleccionar una opción de disco, aún falta el gate no destructivo G-MIG-LUKS-1.4g para confirmar que la variante Xubuntu muestra esa misma pantalla guiada. No se abrirá instalación manual ni se modificará una partición.
+La revisión visual G-MIG-LUKS-1.4 llegó a **Disk setup** sin seleccionar ni confirmar ninguna operación. La lista inicial mostró instalar junto a Ubuntu, borrar Ubuntu, borrar disco e instalación manual. La documentación oficial de Ubuntu 26.04 aclara que la ruta de cifrado aparece **después de seleccionar** `Erase disk and install Ubuntu`: allí se puede elegir `Encrypt with a passphrase`, la opción recomendada que combina LVM con cifrado de disco. [4] [5]
+
+G-MIG-LUKS-1.4g confirmó esta ruta en el instalador Xubuntu: la pantalla **Encryption and file system** mostró `Encrypt with a passphrase` con el texto `This uses LVM with LUKS encryption`. No se seleccionó opción, no se ingresó frase, no se avanzó al resumen y el instalador se cerró. El Xubuntu interno volvió a iniciar correctamente. Por tanto, el método guiado propuesto está validado; G-MIG-LUKS-1.5 sigue separado y bloqueado hasta contar con el preflight final y la autorización destructiva específica.
 
 ## Diseño de desbloqueo G-MIG-LUKS-1.5
 
