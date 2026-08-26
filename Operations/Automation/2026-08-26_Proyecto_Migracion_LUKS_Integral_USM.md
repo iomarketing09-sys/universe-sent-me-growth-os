@@ -4,7 +4,7 @@ purpose: "Definir los gates y la secuencia reversible para reinstalar Xubuntu co
 status: Draft
 created: 2026-08-26
 updated: 2026-08-26
-version: "0.2"
+version: "0.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -40,6 +40,12 @@ Este documento es un plano de proyecto. No crea medios booteables, no descarga I
 La inspección local de solo lectura confirmó `sda` como el único disco interno, con `sda2 ext4` montado en `/`. El respaldo `age` en `sdc3` (`vfat`, label `Fernando`) volvió a validar su checksum como `OK`. No se ejecutó ningún comando de montaje, borrado, formato o escritura.
 
 La USB de 8 GB usada previamente aparece como `sdb`, pero informa capacidad `0 B`; se clasifica como **no utilizable**. El único candidato seleccionado para el medio de instalación es `sdd`: USB de 28.9 GB, partición `sdd1` `vfat`, label `STORE N GO`, montada en `/run/media/universe-sent-me/STORE N GO`. Esta selección no autoriza borrarla: cualquier creación de medio requerirá el gate G-MIG-LUKS-1.3 y una nueva confirmación explícita de que se acepta borrar **solo `sdd`**.
+
+## Medio oficial propuesto para G-MIG-LUKS-1.3
+
+El objetivo propuesto es **Xubuntu 26.04 LTS, Desktop 64-bit**. La ISO se descargará desde el canal oficial de Xubuntu a una carpeta local del sistema, nunca directamente a la USB, y se contrastará contra el archivo oficial `SHA256SUMS` antes de elegir el medio. Xubuntu identifica 26.04 como una versión LTS publicada en abril de 2026 y ofrece el checksum SHA-256 oficial para sus ISOs. [2]
+
+Para la creación del USB se usará preferentemente **Startup Disk Creator** en la interfaz de Xubuntu, tras verificar visualmente que el destino sea la USB `STORE N GO` de 28.9 GB. La documentación oficial indica que el proceso sobrescribe y destruye los datos del USB, por lo que no se usará un comando `dd` manual. [3] Justo antes de escribir, se repetirá `lsblk` y se exigirá que `sda` y `sdc` sigan identificados como disco interno y disco de respaldo, respectivamente. Si cambian letras, capacidad, modelo o montajes, el proceso se detiene.
 
 ## Arquitectura objetivo
 
@@ -85,3 +91,7 @@ La migración no mezcla datos, código ni credenciales de Firma Bordados, Bam in
 ## Referencias
 
 [1] [Ubuntu Security Documentation — Full disk encryption](https://documentation.ubuntu.com/security/security-features/storage/encryption-full-disk/)
+
+[2] [Xubuntu — Release 26.04](https://xubuntu.org/release/26.04/)
+
+[3] [Ubuntu Desktop Documentation — Create a bootable USB stick](https://ubuntu.com/desktop/docs/en/latest/how-to/create-a-bootable-usb-stick/)

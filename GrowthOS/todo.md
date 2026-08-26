@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "11.32"
+version: "11.33"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -153,6 +153,7 @@ organization: "GrowthOS"
 - [x] G-MIG-LUKS-1.2: inspección final de solo lectura completada. Confirmó `sda` como disco interno con raíz `sda2 ext4`, respaldo checksum `OK` en `sdc3` `vfat` label `Fernando`, y no realizó escrituras.
 - [x] Comparar medios G-MIG-LUKS-1.2: la USB anterior de 8 GB aparece como `sdb` con 0 B y no es utilizable; la USB autorizada es `sdd` de 28.9 GB, `vfat`, label `STORE N GO`, montada en `/run/media/universe-sent-me/STORE N GO`. No se escribió ningún medio.
 - [ ] G-MIG-LUKS-1.3: descargar la ISO oficial de Xubuntu, verificar su checksum y crear un medio booteable únicamente sobre `sdd` 28.9 GB `STORE N GO`; requiere autorización explícita de borrado del USB, nunca de `sda` o `sdc`.
+- [ ] G-MIG-LUKS-1.3a: antes de escribir, confirmar visualmente el objetivo `Xubuntu 26.04 LTS Desktop 64-bit`, la coincidencia de SHA-256 oficial y que el destino sigue siendo la USB `STORE N GO`, no `sda` ni `sdc`.
 - [ ] G-SEC-1A.3e: ejecutar `prepare_usm_encrypted_backup.sh --dry-run` sobre el volumen real después de 3b y 3c; no autoriza `--execute` ni la creación de ciphertext.
 - [x] Diseñar el árbol exacto de `USM_PRE_LUKS_BACKUP`, incluyendo categorías permitidas, manifest, checksums, nombres, retención y exclusiones; no crear todavía rutas en el volumen vfat. Diseño incorporado en `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md` v1.2.
 - [x] G-SEC-1A.3a: Fernando aprobó y ejecutó la creación del árbol vacío `USM_PRE_LUKS_BACKUP` en `/run/media/universe-sent-me/Fernando`; el wrapper verificó `/dev/sdc3`, `vfat` y `STATUS=empty_tree_created`, sin crear archivos de respaldo ni tocar datos existentes.
