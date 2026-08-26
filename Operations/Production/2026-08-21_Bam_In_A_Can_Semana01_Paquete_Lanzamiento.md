@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — Semana 01: paquete de lanzamiento"
 purpose: "Organizar el primer bloque de cuatro piezas originales de Bam in a Can antes de publicar, con orden editorial, producción, copy, audio y medición."
-status: "Active — CAN-001 publicada; CAN-002 con señal inicial autenticada de Instagram"
+status: "Active — CAN-001 y CAN-002 medidas; CAN-003 publicada en TikTok e Instagram con YouTube pendiente"
 created: 2026-08-21
-updated: 2026-08-23
-version: "1.15"
+updated: 2026-08-25
+version: "1.16"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_Plan_Lanzamiento_Audiencia_Bam_In_A_Can.md"
@@ -31,7 +31,7 @@ El calendario operativo se documenta en `2026-08-21_Bam_In_A_Can_Semana01_Calend
 |---:|---|---|---|---|
 | 1 | `CAN-001` | CAN FOUND | Manifiesto: algo vivo dentro de la lata. | Cascada completa el 21 Ago: TikTok a las 19:04, Instagram Reels a las 19:20 y YouTube Shorts a las 19:50 CDT. |
 | 2 | `CAN-002` | CAN FAKE TRAILER | Demostrar que Bam también fabrica productos de archivo que nunca debieron existir. | Corte final validado por Fernando: el recibo permanece vacío, sin números ni códigos de barras legibles. |
-| 3 | `CAN-003` | CAN FOUND | Mostrar que la anomalía puede ocurrir fuera de la lata, manteniendo una sola regla visual imposible. | Montaje cinematográfico de 10 s aprobado para edición: moneda, mecanismos, abolladuras desde dentro y espirales vacíos. |
+| 3 | `CAN-003` | CAN FOUND | Mostrar que la anomalía puede ocurrir fuera de la lata, manteniendo una sola regla visual imposible. | TikTok e Instagram publicados el 25 Ago; YouTube Shorts pendiente. T0, audio, volumen y etiqueta IA aún requieren registro. |
 | 4 | `CAN-004` | CAN MEME | Abrir una vía más ligera y compartible sin abandonar la estética extraña. | Corte integrado final `Can004.mp4` aprobado para el lote: progresión de miniaturas, cursor, parpadeo y corte negro. |
 
 ## 3. Sistema técnico común
@@ -135,6 +135,8 @@ Can you make a video with the sequence of images in the attached Vintage vending
 | Copy | `It took the coin. It didn't give anything back.` + `Original fiction. AI-made.` |
 | Audio | SFX de moneda, motor/espirales y abolladuras deben liderar; audio nativo solo si no los tapa. |
 | Hashtags de base | `#BamInACan #LiminalSpace #WeirdTok #AIVideo` |
+
+**Registro de salida — 25 Ago:** TikTok se confirmó mediante el ID `7678142841209589012`; T0, audio nativo, volumen y etiqueta IA siguen pendientes de Fernando. Instagram Reels se confirmó con shortcode `DcfDsCIMrpx`. La vista pública verifica el copy aprobado, la pregunta diegética `Would you put in another coin?`, el disclosure `Original fiction. AI-made.` y los cuatro hashtags; el T0, audio, volumen y etiqueta IA siguen pendientes. YouTube Shorts cerró la cascada con ID `ZKm8Xb817A8` y T0 público 20:54:05 CDT, recuperado de `datePublished` (`18:54:05 -07:00`). El título y la descripción públicos confirman el copy, la etiqueta AI es visible y Fernando confirmó SFX sin música.
 
 #### Concepto de toma única archivado
 

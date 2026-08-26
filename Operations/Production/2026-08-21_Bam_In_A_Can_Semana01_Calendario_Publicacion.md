@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — Semana 01: calendario de publicación"
 purpose: "Coordinar la salida del primer lote de cuatro piezas de Bam in a Can, sus metadatos por plataforma y las ventanas mínimas de medición sin programar publicaciones automáticas."
-status: "Active — CAN-001 medido; CAN-002 con control T+72 programado"
+status: "Active — CAN-001 y CAN-002 medidas; CAN-003 con cascada completa y corte inicial preparado"
 created: 2026-08-21
-updated: 2026-08-24
-version: "1.8"
+updated: 2026-08-25
+version: "1.9"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-21_Bam_In_A_Can_Semana01_Paquete_Lanzamiento.md"
@@ -108,6 +108,18 @@ Con este registro, CAN-002 conserva el diseño 2 + 1: TikTok e Instagram con aud
 Se programó un único control consolidado para el **miércoles 26 de agosto de 2026 a las 20:10 CDT**. Esta hora se sitúa después de las tres ventanas T+72 de CAN-002: TikTok 18:59:43, Instagram Reels 19:20:37 y YouTube Shorts 19:57:00 CDT. La programación solo consulta, documenta y reporta; **no publica, edita ni responde contenido**.
 
 El corte usará TikTok mediante la cuenta orgánica de Bam en Windsor.ai, Instagram por shortcode `DcZv1l4sjhz` sin rangos de fecha y bloques de hasta cuatro fields, e intentará YouTube por Windsor sin registrar una ausencia como cero. Si no existe una fila de YouTube, conservará la indexación pendiente y utilizará únicamente evidencia de Studio que Fernando haya compartido con timestamp o edad disponible. El snapshot y el ledger se actualizarán con la hora, fuente, frescura y límites de comparabilidad reales.
+
+## Registro parcial — CAN-003
+
+CAN-003 completó su cascada el 25 de agosto. Los identificadores confirmados son TikTok `7678142841209589012`, Instagram Reels `DcfDsCIMrpx` y YouTube Shorts `ZKm8Xb817A8`. Cada plataforma conserva su propio T0; las horas no se infieren a partir de la secuencia de publicación.
+
+| Plataforma | Estado y metadatos confirmados | Ventanas disponibles |
+|---|---|---|
+| TikTok | Publicado; ID canónico confirmado. Audio, volumen, etiqueta IA y T0 todavía pendientes de confirmación de Fernando. | Se fijarán cuando exista T0 verificable. |
+| Instagram Reels | Publicado; shortcode confirmado. Audio `Order now` — Portizmusic. El copy, la pregunta diegética, el disclosure y los hashtags están verificados públicamente. Volumen, etiqueta IA y T0 aún pendientes. | Se fijarán cuando exista T0 verificable. |
+| YouTube Shorts | Publicado; ID `ZKm8Xb817A8`. T0 público **25 Ago, 20:54:05 CDT**, recuperado de `datePublished` (`18:54:05 -07:00`). SFX sin música confirmado por Fernando; etiqueta AI visible en la página pública. | T+3: **25 Ago, 23:54:05 CDT**; T+24: **26 Ago, 20:54:05 CDT**; T+72: **28 Ago, 20:54:05 CDT**; T+7 d: **1 Sep, 20:54:05 CDT**. |
+
+El primer corte multicanal se realiza después de la ventana T+3 de YouTube. Para TikTok e Instagram se etiquetará como snapshot posterior a T0 hasta recuperar sus horas reales; no se los presentará como T+3 exacto.
 
 ## Go/no-go por cada día
 
