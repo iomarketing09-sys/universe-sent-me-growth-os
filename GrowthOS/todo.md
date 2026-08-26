@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "11.18"
+version: "11.19"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -137,10 +137,11 @@ organization: "GrowthOS"
 - [x] G-SEC-1A.3c.2c: aislar en un segundo stash temporal los permisos ejecutables y cachés reaparecidos antes de sincronizar `c2dc1ba`; se aplicó únicamente el stash original y el repositorio quedó limpio. Ambos stashes se conservan para revisión humana.
 - [ ] G-SEC-1A.3c.2d: decidir explícitamente si se conservan o eliminan los stashes redundantes `temporary-permissions-before-c2dc1ba` y `preserve-local-before-age-2026-08-25`; no ejecutar `git stash drop` sin confirmación humana.
 - [x] G-SEC-1A.3e: dry-run aprobado y ejecutado contra `/run/media/universe-sent-me/Fernando`; confirmó `/dev/sdc3` `vfat`, `age 1.2.1`, metadatos de las cinco rutas aprobadas y `STATUS=dry_run_complete_no_files_created`. La verificación posterior confirmó `STATUS=backup_tree_contains_no_files`.
-- [ ] G-SEC-1A.3f: antes de ejecutar cualquier primera copia, emitir una autorización explícita y única para crear un ciphertext con el perfil `code_scripts_and_approved_private`; confirmar que las dos copias físicas de recuperación ya están preparadas fuera del disco y que los stashes de Git permanecen bajo la decisión humana pendiente.
-- [ ] Ejecutar G-SEC-1A.3f autorizado: crear un único ciphertext con el perfil `code_scripts_and_approved_private`, manifest mínimo, protocolo no sensible y checksum del ciphertext; nunca crear archivos abiertos, subir a Drive ni modificar el árbol fuera de sus cinco carpetas aprobadas.
-- [ ] Validación previa G-SEC-1A.3f: exigir que el destino sea el punto de montaje raíz `vfat` `/dev/sdc3` con label `Fernando` y que las cinco subcarpetas aprobadas estén vacías antes de escribir el primer ciphertext.
-- [ ] Verificar G-SEC-1A.3f: comprobar checksum de ciphertext y presencia de protocolo/manifest, sin descifrar, inspeccionar contenido ni mostrar la frase de recuperación.
+- [x] G-SEC-1A.3f: Fernando confirmó las dos copias físicas y autorizó una única primera copia del perfil `code_scripts_and_approved_private`; los stashes de Git permanecen bajo decisión humana pendiente.
+- [x] Ejecutar G-SEC-1A.3f autorizado: se creó un único ciphertext `usm_pre_luks_20260826T042149Z.tar.gz.age` con manifest mínimo, protocolo no sensible y checksum; no se crearon archivos abiertos, no hubo Drive ni cambios fuera de las cinco carpetas aprobadas.
+- [x] Validación previa G-SEC-1A.3f: el wrapper confirmó que el destino era el punto de montaje raíz `/dev/sdc3`, `vfat`, label `Fernando`, y que las cinco subcarpetas aprobadas estaban vacías antes de escribir el primer ciphertext.
+- [x] Verificar G-SEC-1A.3f: `sha256sum -c` devolvió `OK`; ciphertext de 307,792,785 bytes; se observaron exactamente protocolo, ciphertext, manifest y checksum. No se descifró, inspeccionó contenido ni mostró frase de recuperación.
+- [ ] G-SEC-1A.3g: diseñar y aprobar una restauración controlada de la copia real en una ruta temporal privada, con contenido real expuesto solo durante la prueba, verificación de integridad y limpieza demostrada antes de cualquier migración LUKS. No ejecutar restauración sin autorización independiente.
 - [ ] G-SEC-1A.3e: ejecutar `prepare_usm_encrypted_backup.sh --dry-run` sobre el volumen real después de 3b y 3c; no autoriza `--execute` ni la creación de ciphertext.
 - [x] Diseñar el árbol exacto de `USM_PRE_LUKS_BACKUP`, incluyendo categorías permitidas, manifest, checksums, nombres, retención y exclusiones; no crear todavía rutas en el volumen vfat. Diseño incorporado en `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md` v1.2.
 - [x] G-SEC-1A.3a: Fernando aprobó y ejecutó la creación del árbol vacío `USM_PRE_LUKS_BACKUP` en `/run/media/universe-sent-me/Fernando`; el wrapper verificó `/dev/sdc3`, `vfat` y `STATUS=empty_tree_created`, sin crear archivos de respaldo ni tocar datos existentes.

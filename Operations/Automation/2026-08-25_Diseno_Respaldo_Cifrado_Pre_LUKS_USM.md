@@ -4,7 +4,7 @@ purpose: "Definir una estructura de carpetas y un wrapper de cifrado local previ
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.8"
+version: "1.9"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -81,7 +81,8 @@ Los únicos datos privados del disco serán ciphertext `.age`. El manifest no en
 | G-SEC-1A.3c | **Completado el 2026-08-25.** Recuperación física aprobada en dos copias manuscritas y separadas; `age` verificado desde repositorios Ubuntu configurados, sin procesar datos USM. |
 | G-SEC-1A.3d | Probar cifrado y restauración de un archivo ficticio no sensible en una carpeta temporal. |
 | G-SEC-1A.3e | **Completado el 2026-08-25.** Dry-run contra el volumen validó montaje, herramienta, árbol y metadatos sin crear archivos. |
-| G-SEC-1A.3f | Autorización independiente y única de la primera copia cifrada; debe validar previamente `/dev/sdc3`, `vfat`, label `Fernando` y las cinco subcarpetas vacías. |
+| G-SEC-1A.3f | **Completado el 2026-08-26.** Primera copia única creada tras validar `/dev/sdc3`, `vfat`, label `Fernando` y las cinco subcarpetas vacías. |
+| G-SEC-1A.3g | Diseñar y aprobar una restauración controlada de la copia real; no está aprobada. |
 
 No se autoriza copia real, subida a Drive, sincronización, Drive como ledger, uso de OmniRoute, inserción de observaciones ni cambios de LUKS mediante este diseño.
 
@@ -124,9 +125,15 @@ Fernando aprobó y ejecutó el dry-run contra `/run/media/universe-sent-me/Ferna
 
 Una comprobación posterior de solo lectura devolvió `STATUS=backup_tree_contains_no_files`. Por tanto, `00_PROTOCOL`, `10_CIPHERTEXT`, `20_MANIFEST`, `30_INTEGRITY` y `40_RESTORE_EVIDENCE` siguen vacías; no existen protocolo, ciphertext, manifest, checksum ni evidencia de restauración. El dry-run no autoriza `--execute` ni reemplaza la aprobación separada G-SEC-1A.3f para una primera copia.
 
+## Registro de primera copia G-SEC-1A.3f
+
+Fernando confirmó físicamente las dos copias de recuperación y autorizó una única ejecución. El wrapper validó el volumen aprobado y creó `usm_pre_luks_20260826T042149Z.tar.gz.age` en `10_CIPHERTEXT`, junto con `BACKUP_PROTOCOL_v1.txt`, el manifest mínimo correspondiente y el checksum de ciphertext. El archivo cifrado mide 307,792,785 bytes. `sha256sum -c` devolvió `OK`; se verificó el ciphertext, pero **no se descifró ni inspeccionó su contenido**.
+
+El manifest confirmó `encryption=age_passphrase_interactive`, `scope_profile=code_scripts_and_approved_private` y `restore_status=pending`. La estructura contiene exactamente cuatro archivos: protocolo, ciphertext, manifest y checksum. `40_RESTORE_EVIDENCE` continúa vacía. No hay archivos abiertos `.tar` o `.tar.gz`, no hubo subida a Drive, no se activó OmniRoute ni se modificó LUKS. La copia permite avanzar a un diseño de restauración controlada, pero no demuestra todavía la recuperabilidad de datos reales.
+
 ## Árbol exacto de `USM_PRE_LUKS_BACKUP`
 
-El siguiente árbol es el único diseño aprobado para la primera copia. Sus seis directorios vacíos ya existen en la raíz del volumen montado, no dentro de carpetas de Windows existentes. Los cinco nombres de archivo que aparecen son plantillas futuras: **ninguno existe todavía**.
+El siguiente árbol es el único diseño aprobado. Sus seis directorios existen en la raíz del volumen montado, no dentro de carpetas de Windows existentes. La primera copia ya creó protocolo, ciphertext, manifest y checksum; la evidencia de restauración permanece como plantilla hasta G-SEC-1A.3g.
 
 ```text
 USM_PRE_LUKS_BACKUP/
@@ -162,7 +169,7 @@ El manifest será texto simple y tendrá solo estas claves: `backup_type`, `prot
 
 ### Secuencia después de crear el árbol
 
-G-SEC-1A.3a ya creó el árbol vacío, G-SEC-1A.3b ya fijó el alcance autorizado, G-SEC-1A.3c ya verificó la herramienta y la recuperación, y G-SEC-1A.3e validó el dry-run. La primera copia sigue bloqueada por G-SEC-1A.3f: requerirá una autorización separada y única, y una frase de recuperación gestionada fuera de este volumen.
+G-SEC-1A.3a creó el árbol vacío, G-SEC-1A.3b fijó el alcance autorizado, G-SEC-1A.3c verificó la herramienta y la recuperación, G-SEC-1A.3e validó el dry-run y G-SEC-1A.3f creó y verificó la primera copia cifrada. La siguiente barrera es G-SEC-1A.3g: diseñar y aprobar una restauración real controlada; no se descifrará ni restaurará nada sin esa autorización separada.
 
 ## Referencias
 
