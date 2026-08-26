@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — Semana 01: paquete de lanzamiento"
 purpose: "Organizar el primer bloque de cuatro piezas originales de Bam in a Can antes de publicar, con orden editorial, producción, copy, audio y medición."
-status: "Active — CAN-001 y CAN-002 medidas; CAN-003 publicada en TikTok e Instagram con YouTube pendiente"
+status: "Active — CAN-001 y CAN-002 medidas; CAN-003 con cascada completa; CAN-004 adaptada como experimento de shares y saves"
 created: 2026-08-21
 updated: 2026-08-25
-version: "1.16"
+version: "1.17"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_Plan_Lanzamiento_Audiencia_Bam_In_A_Can.md"
@@ -31,8 +31,8 @@ El calendario operativo se documenta en `2026-08-21_Bam_In_A_Can_Semana01_Calend
 |---:|---|---|---|---|
 | 1 | `CAN-001` | CAN FOUND | Manifiesto: algo vivo dentro de la lata. | Cascada completa el 21 Ago: TikTok a las 19:04, Instagram Reels a las 19:20 y YouTube Shorts a las 19:50 CDT. |
 | 2 | `CAN-002` | CAN FAKE TRAILER | Demostrar que Bam también fabrica productos de archivo que nunca debieron existir. | Corte final validado por Fernando: el recibo permanece vacío, sin números ni códigos de barras legibles. |
-| 3 | `CAN-003` | CAN FOUND | Mostrar que la anomalía puede ocurrir fuera de la lata, manteniendo una sola regla visual imposible. | TikTok e Instagram publicados el 25 Ago; YouTube Shorts pendiente. T0, audio, volumen y etiqueta IA aún requieren registro. |
-| 4 | `CAN-004` | CAN MEME | Abrir una vía más ligera y compartible sin abandonar la estética extraña. | Corte integrado final `Can004.mp4` aprobado para el lote: progresión de miniaturas, cursor, parpadeo y corte negro. |
+| 3 | `CAN-003` | CAN FOUND | Mostrar que la anomalía puede ocurrir fuera de la lata, manteniendo una sola regla visual imposible. | Cascada completa el 25 Ago; corte T+3 documentado. |
+| 4 | `CAN-004` | CAN MEME | Abrir una vía más ligera y compartible sin abandonar la estética extraña. | Corte integrado final `Can004.mp4` aprobado; adaptación de meme de reconocimiento y escalada definida. |
 
 ## 3. Sistema técnico común
 
@@ -205,13 +205,15 @@ No distorsionar las copias fuera del borde curvo del CRT. El efecto debe sentirs
 
 **Corte final integrado (21 Ago):** `Can004.mp4` sustituye la composición `v1` como asset canónico de publicación. El montaje final conserva la escena CRT/lata, inserta una progresión de paneles de producto dentro de la pantalla, introduce cursor y cierra con un flash/corte negro. La revisión de movimiento lo declaró **READY_FOR_BATCH**: no hay texto ajeno, logos no autorizados, errores de continuidad ni fallos técnicos bloqueantes. La composición `v1` queda como versión de trabajo reutilizable, no como export final.
 
-**Guion de 6 s:**
+**Objetivo de prueba:** establecer la línea base de `H-BAM-MEME-RELAY-01`. El objetivo primario no es el avg. watch de CAN-003: son los shares y saves/favorites producidos por una premisa que se entienda sin lore y pueda reenviarse con contexto propio.
+
+**Guion de 6 s adaptado:**
 
 | Tiempo | Acción |
 |---|---|
-| 00:00–00:01.5 | Monitor CRT beige en un escritorio oscuro con pantalla vacía. |
-| 00:01.5–00:04.5 | Una ventana sin texto aparece, luego se replica en seis ventanas más; cada una enseña la misma lata sellada. |
-| 00:04.5–00:06.0 | El cursor intenta cerrar una ventana y todas parpadean una vez; corte a negro. |
+| 00:00–00:00.8 | Una sola miniatura de lata ya visible en el CRT. Texto manual: `me: one more weird video before bed`. |
+| 00:00.8–00:04.8 | Texto manual: `my FYP:`. La pantalla pasa de una a siete miniaturas de lata con un click seco por aparición; no hay interfaz reconocible ni texto adicional. |
+| 00:04.8–00:06.0 | El cursor intenta cerrar una miniatura; aparecen dos más, las ventanas parpadean y corte inmediato a negro. |
 
 **Prompt de keyframe (inglés):**
 
@@ -227,10 +229,11 @@ Use only the attached initial keyframe as the visual anchor. Vertical 9:16, 6 se
 
 | Publicación | Propuesta |
 |---|---|
-| Overlay manual | `me: one more weird video before bed` de 00:00–00:01.5; `the algorithm:` de 00:01.5–00:04.0. |
-| Copy | `A normal amount of internet, apparently.\n\nOriginal fiction. AI-made.` |
-| Audio | No canción necesaria. Usar clicks y hum; si se añade audio nativo, solo en TikTok al 6–8%. |
+| Overlay manual | `me: one more weird video before bed` de 00:00–00:00.8; `my FYP:` de 00:00.8–00:04.8. No añadir un tercer mensaje. |
+| Copy | `me: one more weird video before bed.\n\nmy algorithm:\n\nOriginal fiction. AI-made.` |
+| Audio | SFX de clicks, hum y chirp lideran. TikTok/Instagram: audio nativo instrumental bajo solo si no cubre los clicks; YouTube: SFX originales sin música. |
 | Hashtags de base | `#BamInACan #InternetCulture #Weirdcore #AIMeme` |
+| Métrica primaria | TikTok: shares + favorites; Instagram: shares + saves. Mantener views y completion como guardrails secundarios. |
 
 ## 5. Asset manifest antes de abrir publicación
 

@@ -4,7 +4,7 @@ purpose: "Construir la identidad editorial, el catálogo inicial y la primera au
 status: "Active — CAN-003 T+3 incorporado; hipótesis de hook y retención en validación"
 created: 2026-08-20
 updated: 2026-08-26
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_Piloto_Content_Rewards_Bam_In_A_Can.md"
@@ -110,6 +110,20 @@ CAN-003 introdujo una señal dividida por plataforma. En YouTube Studio, el Shor
 
 La consecuencia práctica para CAN-004 y la siguiente pieza comparable no es aumentar texto ni explicar el lore. El hook debe ser una **acción física imposible ya iniciada**, con una progresión visual clara: anomalía en frame 0, escalada antes de 1.5 s, remate antes de 3 s y cierre capaz de inducir replay. En YouTube se mantiene el control de SFX; en TikTok e Instagram se conserva el audio nativo bajo hasta que existan dos o más piezas comparables.
 
-## 10. Documentos que requieren actualización posterior
+## 10. Adaptación CAN-004 — experimento de shares y saves
 
-Después de los primeros 21 días, actualizar este plan con el corte de métricas por formato y el veredicto de continuidad. El siguiente ajuste relacionado debe registrarse en `Operations/Research/2026-08-25_Bam_CAN003_Corte_Inicial.md` y en el ledger de distribución después de CAN-004 y la siguiente pieza comparable, para aceptar, revisar o descartar `H-BAM-YT-CLOSED-LOOP-01`, `H-BAM-TT-FIRST-SECOND-01`, `H-BAM-TT-SINGLE-RULE-01` y `H-BAM-IG-PACKAGING-01`. Actualizar `Operations/Production/2026-08-20_Piloto_Content_Rewards_Bam_In_A_Can.md` para decidir si la pausa de campañas se mantiene o si se habilita una revisión nueva. Crear un registro de piezas de Bam antes de producir más de ocho publicaciones, para no convertir esta primera lista en un backlog sin trazabilidad.
+CAN-004 no prueba `H-BAM-TT-FIRST-SECOND-01` ni `H-BAM-YT-CLOSED-LOOP-01`, porque es un `CAN MEME`, no una anomalía `FOUND` ni un `FAKE TRAILER`. Su trabajo es establecer una primera línea base para una mecánica distinta: **reconocimiento inmediato + escalada compartible**.
+
+| Variable | Decisión CAN-004 | Razón de distribución |
+|---|---|---|
+| Reconocimiento | Abrir con `me: one more weird video before bed` durante 0.0–0.8 s. | La persona debe entender el chiste antes de que aparezca la explicación visual. |
+| Escalada | A 0.8 s aparece `my FYP:` y la pantalla CRT pasa de una a siete miniaturas de la lata con un click por aparición. | La progresión funciona como exageración familiar, no como lore que deba descifrarse. |
+| Remate | A 4.8 s el cursor intenta cerrar una ventana y aparecen dos miniaturas más antes del flash/corte negro a 6 s. | El intento fallido completa el patrón del meme y deja un frame de salida compacto, no una explicación. |
+| Copy | `me: one more weird video before bed.\n\nmy algorithm:\n\nOriginal fiction. AI-made.` | Repite la premisa solo lo necesario, conserva disclosure y facilita que el post se reenvíe sin contexto. |
+| Medición | Primaria: shares y saves/favorites por plataforma. Secundaria: views, completion y comentarios. | Un meme debe evaluarse por su capacidad de ser guardado o enviado, no contra la retención de CAN-003. |
+
+La hipótesis activa es `H-BAM-MEME-RELAY-01`: una premisa de hábito digital reconocible, seguida de una escalada visual limpia y sin lore, obtiene al menos una acción de distribución activa —share, save o favorite— durante su primera ventana de 24 horas. CAN-004 establece la línea base; un solo post no acepta ni rechaza la hipótesis. Si aparece esa acción, la siguiente prueba debe conservar el mecanismo de reconocimiento y variar solo la metáfora visual.
+
+## 11. Documentos que requieren actualización posterior
+
+Después de los primeros 21 días, actualizar este plan con el corte de métricas por formato y el veredicto de continuidad. El siguiente ajuste relacionado debe registrarse en el ledger de distribución después de CAN-004 y la siguiente pieza comparable, para aceptar, revisar o descartar `H-BAM-MEME-RELAY-01`, `H-BAM-YT-CLOSED-LOOP-01`, `H-BAM-TT-FIRST-SECOND-01`, `H-BAM-TT-SINGLE-RULE-01` y `H-BAM-IG-PACKAGING-01`. Actualizar `Operations/Production/2026-08-20_Piloto_Content_Rewards_Bam_In_A_Can.md` para decidir si la pausa de campañas se mantiene o si se habilita una revisión nueva. Crear un registro de piezas de Bam antes de producir más de ocho publicaciones, para no convertir esta primera lista en un backlog sin trazabilidad.
