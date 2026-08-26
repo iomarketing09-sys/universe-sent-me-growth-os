@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "11.13"
+version: "11.15"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -133,7 +133,9 @@ organization: "GrowthOS"
 - [x] G-SEC-1A.3c.1: Fernando aprobó dos copias físicas manuscritas y separadas como soporte de recuperación, fuera del disco externo y de servicios en línea; no se solicitará ni escribirá la frase en repositorio, chat, correo o variables de entorno.
 - [x] G-SEC-1A.3c.2: instalar o verificar `age` con comandos locales de solo herramienta y confirmar versión/ruta, sin leer fuentes USM, crear archivos de respaldo, usar el disco externo ni introducir una frase. Resultado: `STATUS=age_available_no_usm_data_processed`.
 - [x] G-SEC-1A.3c.2a: inspeccionar y preservar los cambios locales sin confirmar del clon Xubuntu antes de sincronizar el verificador de `age`; se creó el stash local `preserve-local-before-age-2026-08-25`, sin reset, limpieza destructiva ni descarte de archivos.
-- [ ] G-SEC-1A.3c.2b: después de actualizar reglas de ignorados y modos de scripts, restaurar el stash local de Xubuntu y confirmar que solo reaparecen los permisos ejecutables esperados y cachés ya ignoradas; no descartar el stash hasta verificación humana.
+- [x] G-SEC-1A.3c.2b: después de actualizar reglas de ignorados y modos de scripts, restaurar el stash local de Xubuntu y confirmar que solo reaparecen los permisos ejecutables esperados y cachés ya ignoradas; `git status --short` quedó vacío y no se descartó ningún stash.
+- [x] G-SEC-1A.3c.2c: aislar en un segundo stash temporal los permisos ejecutables y cachés reaparecidos antes de sincronizar `c2dc1ba`; se aplicó únicamente el stash original y el repositorio quedó limpio. Ambos stashes se conservan para revisión humana.
+- [ ] G-SEC-1A.3c.2d: decidir explícitamente si se conservan o eliminan los stashes redundantes `temporary-permissions-before-c2dc1ba` y `preserve-local-before-age-2026-08-25`; no ejecutar `git stash drop` sin confirmación humana.
 - [ ] G-SEC-1A.3e: ejecutar `prepare_usm_encrypted_backup.sh --dry-run` sobre el volumen real después de 3b y 3c; no autoriza `--execute` ni la creación de ciphertext.
 - [x] Diseñar el árbol exacto de `USM_PRE_LUKS_BACKUP`, incluyendo categorías permitidas, manifest, checksums, nombres, retención y exclusiones; no crear todavía rutas en el volumen vfat. Diseño incorporado en `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md` v1.2.
 - [x] G-SEC-1A.3a: Fernando aprobó y ejecutó la creación del árbol vacío `USM_PRE_LUKS_BACKUP` en `/run/media/universe-sent-me/Fernando`; el wrapper verificó `/dev/sdc3`, `vfat` y `STATUS=empty_tree_created`, sin crear archivos de respaldo ni tocar datos existentes.
