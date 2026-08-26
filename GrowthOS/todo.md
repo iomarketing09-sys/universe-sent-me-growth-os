@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "11.29"
+version: "11.32"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -149,7 +149,10 @@ organization: "GrowthOS"
 - [x] Ejecutar G-SEC-1A.3g.2 autorizado: la frase se introdujo localmente; el proceso confirmó `STATUS=controlled_restore_validation_passed` sin reintento ni exposición de contenido.
 - [x] Verificar G-SEC-1A.3g.2: se confirmó ausencia de la ruta temporal y evidencia agregada con checksum antes/después, estructura validada y limpieza aprobada. El manifest original permanece inmutable con `restore_status=pending`.
 - [x] G-MIG-LUKS-1: proyecto separado de migración integral a LUKS diseñado en `2026-08-26_Proyecto_Migracion_LUKS_Integral_USM.md`; define medio de instalación, respaldo fuera de línea, verificación previa, recreación y validación posterior, sin modificar disco, particiones, cifrado o datos reales del ledger.
-- [ ] G-MIG-LUKS-1.1: confirmar disponibilidad de un USB vacío de al menos 16 GB para el instalador, acceso físico continuado al disco externo `Fernando`, tiempo de mantenimiento y una decisión explícita de reinstalación limpia antes de crear cualquier medio booteable.
+- [x] G-MIG-LUKS-1.1: Fernando confirmó que la USB de 28.8 GB puede borrarse, se conservará Xubuntu, habrá acceso físico al disco `Fernando` y puede reservarse una ventana de mantenimiento; no se creó medio booteable.
+- [x] G-MIG-LUKS-1.2: inspección final de solo lectura completada. Confirmó `sda` como disco interno con raíz `sda2 ext4`, respaldo checksum `OK` en `sdc3` `vfat` label `Fernando`, y no realizó escrituras.
+- [x] Comparar medios G-MIG-LUKS-1.2: la USB anterior de 8 GB aparece como `sdb` con 0 B y no es utilizable; la USB autorizada es `sdd` de 28.9 GB, `vfat`, label `STORE N GO`, montada en `/run/media/universe-sent-me/STORE N GO`. No se escribió ningún medio.
+- [ ] G-MIG-LUKS-1.3: descargar la ISO oficial de Xubuntu, verificar su checksum y crear un medio booteable únicamente sobre `sdd` 28.9 GB `STORE N GO`; requiere autorización explícita de borrado del USB, nunca de `sda` o `sdc`.
 - [ ] G-SEC-1A.3e: ejecutar `prepare_usm_encrypted_backup.sh --dry-run` sobre el volumen real después de 3b y 3c; no autoriza `--execute` ni la creación de ciphertext.
 - [x] Diseñar el árbol exacto de `USM_PRE_LUKS_BACKUP`, incluyendo categorías permitidas, manifest, checksums, nombres, retención y exclusiones; no crear todavía rutas en el volumen vfat. Diseño incorporado en `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md` v1.2.
 - [x] G-SEC-1A.3a: Fernando aprobó y ejecutó la creación del árbol vacío `USM_PRE_LUKS_BACKUP` en `/run/media/universe-sent-me/Fernando`; el wrapper verificó `/dev/sdc3`, `vfat` y `STATUS=empty_tree_created`, sin crear archivos de respaldo ni tocar datos existentes.

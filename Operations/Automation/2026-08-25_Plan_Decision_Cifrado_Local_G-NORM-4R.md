@@ -4,7 +4,7 @@ purpose: "Preparar una decisión reversible y respaldada sobre el almacenamiento
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.18"
+version: "1.19"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -28,7 +28,7 @@ Este documento no autoriza comandos, formateos, particiones, cifrado, migracione
 
 Fernando eligió la **Alternativa A: migración planificada de Xubuntu a cifrado LUKS integral** como la dirección preferida para el crecimiento de Universe Sent Me. La decisión se basa en que el proyecto probablemente conservará más evidencia, configuraciones y automatizaciones locales que un piloto mínimo de ledger.
 
-La preparación G-SEC-1A ya completó inventario, respaldo externo separado y restauración controlada. El proyecto separado `2026-08-26_Proyecto_Migracion_LUKS_Integral_USM.md` define ahora los gates G-MIG-LUKS-1.1 a G-MIG-LUKS-1.8. No autoriza todavía una migración, reinstalación, operación de disco, captura de datos reales ni activación de G-NORM-4R.
+La preparación G-SEC-1A ya completó inventario, respaldo externo separado y restauración controlada. El proyecto separado `2026-08-26_Proyecto_Migracion_LUKS_Integral_USM.md` define ahora los gates G-MIG-LUKS-1.1 a G-MIG-LUKS-1.8. G-MIG-LUKS-1.2 confirmó `sda` como disco interno y el respaldo íntegro en `sdc3`; seleccionó `sdd` 28.9 GB `STORE N GO` como único candidato de instalador, mientras que `sdb` 0 B se excluye. No autoriza todavía una migración, reinstalación, operación de disco, captura de datos reales ni activación de G-NORM-4R.
 
 > La protección requerida es cifrado de datos en reposo. No elimina por sí sola otros riesgos: un volumen montado queda disponible para la sesión activa, y el cifrado no reemplaza respaldo, permisos ni control de acceso.
 

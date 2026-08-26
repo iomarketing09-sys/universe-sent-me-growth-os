@@ -4,7 +4,7 @@ purpose: "Definir los gates y la secuencia reversible para reinstalar Xubuntu co
 status: Draft
 created: 2026-08-26
 updated: 2026-08-26
-version: "0.1"
+version: "0.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -34,6 +34,12 @@ Este documento es un plano de proyecto. No crea medios booteables, no descarga I
 | Respaldo previo | Ciphertext `age` único en `/dev/sdc3` (`vfat`, label `Fernando`), checksum y restauración controlada validados. |
 | Recuperación del backup | Dos copias físicas separadas bajo control de Fernando; la frase no se almacena en este proyecto. |
 | Datos reales y automatización | Siguen bloqueados hasta que la migración y su validación posterior estén completas. |
+
+## Inspección final de medios G-MIG-LUKS-1.2
+
+La inspección local de solo lectura confirmó `sda` como el único disco interno, con `sda2 ext4` montado en `/`. El respaldo `age` en `sdc3` (`vfat`, label `Fernando`) volvió a validar su checksum como `OK`. No se ejecutó ningún comando de montaje, borrado, formato o escritura.
+
+La USB de 8 GB usada previamente aparece como `sdb`, pero informa capacidad `0 B`; se clasifica como **no utilizable**. El único candidato seleccionado para el medio de instalación es `sdd`: USB de 28.9 GB, partición `sdd1` `vfat`, label `STORE N GO`, montada en `/run/media/universe-sent-me/STORE N GO`. Esta selección no autoriza borrarla: cualquier creación de medio requerirá el gate G-MIG-LUKS-1.3 y una nueva confirmación explícita de que se acepta borrar **solo `sdd`**.
 
 ## Arquitectura objetivo
 
