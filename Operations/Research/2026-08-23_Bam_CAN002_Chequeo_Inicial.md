@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — CAN-002: chequeo inicial y corte post-T+3"
 purpose: "Preservar los cortes operativos iniciales de CAN-002, separando métricas autenticadas, cache de plataforma, evidencia directa e indexación pendiente."
-status: "Active — seguimiento T+49 registrado; YouTube con discrepancia de fuentes pendiente de reconciliación"
+status: "Active — evidencia directa de Studio priorizada; discrepancia de Windsor documentada"
 created: 2026-08-23
 updated: 2026-08-25
-version: "1.9"
+version: "1.10"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
@@ -103,6 +103,18 @@ Instagram devolvió una fila fresca a las **20:23:23 CDT**, con edad de **49 h 0
 
 Por primera vez, el inventario mínimo de YouTube en Windsor incluyó CAN-002 con 103 views y 2 likes a las **20:24:36 CDT**. No reemplaza la evidencia directa de Studio de 255 views, 3 likes y 4 shares: los orígenes no comparten una referencia de corte verificable y sus valores difieren. Esta fila se conserva como indexación parcial pendiente de reconciliación. No se comparan estos conteos de YouTube contra TikTok o Instagram ni se utiliza la discrepancia para alterar la estrategia.
 
+## Evidencia directa de YouTube Studio — 25 de agosto
+
+Fernando aportó dos capturas directas de Studio. La pantalla detallada de CAN-002 —recibida con hora de dispositivo alrededor de **20:23 CDT**— muestra **260 views**, **+206 en las últimas 48 horas**, **3 likes** y **4 shares**. También confirma el hito de ser el primer Short del canal en alcanzar 200 vistas y muestra a México con 30 % de las ubicaciones principales de ese Short. Este es el conteo preferente de CAN-002 para el presente corte, porque corresponde a la vista directa del video.
+
+La pantalla de analítica de canal muestra 1 suscriptor, 277 vistas, 3 likes y 5 shares acumulados desde el comienzo, 272 vistas en los últimos 7 días y México con 28 % de la audiencia del canal. En esa misma pantalla, la tarjeta de creación más reciente de CAN-002 marca 260 views y 3 likes, mientras una miniatura de “Shorts más populares” muestra 256 views. La diferencia de cuatro views se conserva como refresco asíncrono entre componentes de Studio; no se promedia ni se convierte en una métrica adicional.
+
+La fila de Windsor (103 views, 2 likes) sigue siendo evidencia técnica de indexación parcial, pero no reemplaza los 260 views, 3 likes y 4 shares de Studio directo. La reconciliación operativa queda resuelta para este corte: **Studio directo por video es la fuente preferente de performance de CAN-002**, las tarjetas de canal son contexto y Windsor permanece como fuente complementaria hasta que alcance un conteo consistente.
+
+![Resumen de canal de YouTube Studio de Bam](2026-08-25_Bam_CAN002_YouTube_Studio_Channel_and_Metrics.jpg)
+
+![Métrica directa de CAN-002 en YouTube Studio](2026-08-25_Bam_CAN002_YouTube_Studio_Detail_260views.jpg)
+
 ## Límites y actualizaciones relacionadas
 
-El ledger conserva el chequeo inicial como `pre-T3`, el corte post-T+3, la reconsulta post-T+24 y el seguimiento posterior dentro de los snapshots por plataforma. Este documento actualiza la interpretación de lanzamiento de CAN-002; el documento relacionado que requiere el mismo ajuste es el ledger de distribución, modificado en este cambio. El paquete, el calendario y el Plan de lanzamiento de audiencia no requieren modificación porque este corte no cambia copy, assets, audio, hipótesis ni ventanas planificadas.
+El ledger conserva el chequeo inicial como `pre-T3`, el corte post-T+3, la reconsulta post-T+24, el seguimiento posterior y la evidencia directa actualizada de Studio dentro de los snapshots por plataforma. Los documentos relacionados que requieren el mismo ajuste son el snapshot de CAN-001 —por la tarjeta de canal asíncrona— y el ledger de distribución, modificados en este cambio. El paquete, el calendario y el Plan de lanzamiento de audiencia no requieren modificación porque este corte no cambia copy, assets, audio, hipótesis ni ventanas planificadas.
