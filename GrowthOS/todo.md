@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "11.23"
+version: "11.25"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -144,7 +144,7 @@ organization: "GrowthOS"
 - [ ] G-SEC-1A.3g: diseñar y aprobar una restauración controlada de la copia real en una ruta temporal privada, con contenido real expuesto solo durante la prueba, verificación de integridad y limpieza demostrada antes de cualquier migración LUKS. No ejecutar restauración sin autorización independiente.
 - [x] Diseñar G-SEC-1A.3g: se fijó ruta temporal privada, validación de ciphertext/checksum, validación estructural de los cinco grupos, evidencia agregada sin contenido y limpieza fail-closed; `validate_usm_restore_controlled.sh --plan` y el validador sintético pasaron sin ejecutar `age --decrypt`.
 - [x] Corregir G-SEC-1A.3g: la validación comprueba exclusivamente la estructura restaurada correspondiente al punto temporal del backup, no compara fuentes locales que podrían haber cambiado desde la copia; la prueba sintética ajustada pasó.
-- [ ] G-SEC-1A.3g.1: ejecutar únicamente el dry-run del wrapper de restauración contra el ciphertext real para confirmar precondiciones, sin descifrar ni crear ruta temporal.
+- [x] G-SEC-1A.3g.1: dry-run ejecutado contra el ciphertext real; confirmó checksum, `/dev/sdc3` `vfat`, label `Fernando` y `STATUS=restore_dry_run_complete_no_decrypt_no_temp_data_no_external_writes`. La verificación posterior confirmó `STATUS=restore_dry_run_left_no_temp_data_or_evidence`.
 - [ ] G-SEC-1A.3g.2: con aprobación independiente posterior, ejecutar una sola restauración controlada real, validar la huella lógica, confirmar limpieza de la ruta temporal y revisar la evidencia agregada antes de autorizar una migración LUKS.
 - [ ] G-SEC-1A.3e: ejecutar `prepare_usm_encrypted_backup.sh --dry-run` sobre el volumen real después de 3b y 3c; no autoriza `--execute` ni la creación de ciphertext.
 - [x] Diseñar el árbol exacto de `USM_PRE_LUKS_BACKUP`, incluyendo categorías permitidas, manifest, checksums, nombres, retención y exclusiones; no crear todavía rutas en el volumen vfat. Diseño incorporado en `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md` v1.2.

@@ -4,7 +4,7 @@ purpose: "Definir una estructura de carpetas y un wrapper de cifrado local previ
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "2.1"
+version: "2.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -84,7 +84,7 @@ Los únicos datos privados del disco serán ciphertext `.age`. El manifest no en
 | G-SEC-1A.3d | Probar cifrado y restauración de un archivo ficticio no sensible en una carpeta temporal. |
 | G-SEC-1A.3e | **Completado el 2026-08-25.** Dry-run contra el volumen validó montaje, herramienta, árbol y metadatos sin crear archivos. |
 | G-SEC-1A.3f | **Completado el 2026-08-26.** Primera copia única creada tras validar `/dev/sdc3`, `vfat`, label `Fernando` y las cinco subcarpetas vacías. |
-| G-SEC-1A.3g | Diseño v2.0 preparado. Falta aprobación independiente para descifrar temporalmente la copia real y ejecutar la validación. |
+| G-SEC-1A.3g | Diseño v2.2 y dry-run completados. Falta aprobación independiente para descifrar temporalmente la copia real y ejecutar la validación. |
 
 No se autoriza copia real, subida a Drive, sincronización, Drive como ledger, uso de OmniRoute, inserción de observaciones ni cambios de LUKS mediante este diseño.
 
@@ -199,6 +199,12 @@ La prueba pasa solo si ambos checksums del ciphertext son válidos, el descifrad
 ### Límites y prohibiciones de G-SEC-1A.3g
 
 G-SEC-1A.3g no publica, programa ni sube datos. No usa Drive, GitHub, Sheets, OmniRoute, APIs sociales, cron, shadow ledger ni otro producto de iO Marketing. No admite una segunda copia, no modifica el ciphertext, no actualiza el manifest original y no elimina los stashes locales de Git. La frase de recuperación no se muestra, registra ni comparte. La ejecución de este diseño sigue **no autorizada** hasta un consentimiento explícito posterior.
+
+### Registro de dry-run G-SEC-1A.3g.1
+
+Fernando aprobó y ejecutó el dry-run contra el ciphertext `usm_pre_luks_20260826T042149Z.tar.gz.age`. El wrapper validó el SHA-256, fuente `/dev/sdc3`, filesystem `vfat`, label `Fernando`, manifest y herramientas locales; devolvió `STATUS=restore_dry_run_complete_no_decrypt_no_temp_data_no_external_writes`. No se solicitó frase ni se invocó `age --decrypt`.
+
+La verificación posterior devolvió `STATUS=restore_dry_run_left_no_temp_data_or_evidence`: no existe una ruta bajo `~/.config/.usm-restore-validation.20260826T042149Z.*` y `40_RESTORE_EVIDENCE` no contiene evidencia para este timestamp. G-SEC-1A.3g.2 sigue bloqueado hasta una autorización independiente de exposición temporal de datos reales.
 
 ## Referencias
 
