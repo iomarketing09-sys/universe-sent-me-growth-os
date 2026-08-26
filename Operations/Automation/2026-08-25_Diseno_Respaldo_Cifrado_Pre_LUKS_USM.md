@@ -4,7 +4,7 @@ purpose: "Definir una estructura de carpetas y un wrapper de cifrado local previ
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -93,6 +93,46 @@ Fernando aprobó una prueba exclusivamente ficticia. Se usó el binario oficial 
 | Medios y datos USM | No se usó el disco externo, Drive, OmniRoute, `~/.config/usm-metrics`, `~/.local/share/usm-metrics` ni `~/omniroute-pilot`. |
 
 La prueba confirma el mecanismo básico de cifrado/restauración e integridad de age, pero **no valida todavía** la operación real con frase interactiva, las fuentes privadas, el volumen vfat o la restauración de un respaldo autorizado. Esos pasos siguen detrás de G-SEC-1A.3a, b, c y e.
+
+## Árbol exacto de `USM_PRE_LUKS_BACKUP`
+
+El siguiente árbol es el único diseño aprobado para la primera copia. Se creará en la raíz del volumen ya montado, no dentro de carpetas de Windows existentes. Ninguna carpeta existe todavía.
+
+```text
+USM_PRE_LUKS_BACKUP/
+├── 00_PROTOCOL/
+│   └── BACKUP_PROTOCOL_v1.txt
+├── 10_CIPHERTEXT/
+│   └── usm_pre_luks_YYYYMMDDTHHMMSSZ.tar.gz.age
+├── 20_MANIFEST/
+│   └── usm_pre_luks_YYYYMMDDTHHMMSSZ.manifest.txt
+├── 30_INTEGRITY/
+│   └── usm_pre_luks_YYYYMMDDTHHMMSSZ.sha256
+└── 40_RESTORE_EVIDENCE/
+    └── restore_check_YYYYMMDDTHHMMSSZ.txt
+```
+
+| Carpeta | Contenido permitido | Contenido prohibido |
+|---|---|---|
+| `00_PROTOCOL` | Instrucciones de recuperación y versión del diseño, sin información operativa sensible. | Frases, llaves, tokens, nombres de cuentas, rutas privadas o datos de métricas. |
+| `10_CIPHERTEXT` | Un único archivo `.tar.gz.age` por ejecución aprobada. | Archivos abiertos `.tar`, `.tar.gz`, raw, evidencia, archivos parciales o copias sin cifrar. |
+| `20_MANIFEST` | Fecha UTC, versión del protocolo, nombre del ciphertext, tipo de cifrado, scope profile y referencia al checksum. | Lista interna de archivos, rutas de origen, valores de métricas, IDs, hashes de evidencia, secretos o frase. |
+| `30_INTEGRITY` | SHA-256 calculado exclusivamente sobre el archivo `.age`. | Checksums de archivos privados individuales o datos previos al cifrado. |
+| `40_RESTORE_EVIDENCE` | Resultado agregado de una restauración aprobada: fecha, estado PASS/FAIL y checksum de ciphertext verificado. | Datos restaurados, rutas privadas, texto de archivos, llaves o detalles de cuentas. |
+
+### Convención de nombres y retención
+
+Todo nombre usa UTC sin espacios: `usm_pre_luks_YYYYMMDDTHHMMSSZ`. El primer respaldo se mantiene como `current` por convención documental, no mediante carpeta especial. No se crea una segunda versión ni se borra una anterior hasta que la restauración del primer ciphertext haya pasado y Fernando haya aprobado cualquier rotación.
+
+Un archivo `.partial` puede existir solo durante la operación de streaming. Si queda después de un fallo, se elimina antes de un nuevo intento y no se registra como respaldo. Una carpeta o archivo fuera de este árbol se considera una desviación del gate y detiene la operación.
+
+### Contenido del manifest
+
+El manifest será texto simple y tendrá solo estas claves: `backup_type`, `protocol_version`, `created_utc`, `ciphertext_file`, `ciphertext_sha256_file`, `encryption`, `scope_profile`, `restore_status` y `operator_confirmation`. La clave `scope_profile` puede ser `code_and_scripts_only` o `code_scripts_and_approved_private`; no enumera rutas ni archivos.
+
+### Secuencia al crear el árbol
+
+La autorización posterior debe hacer tres acciones en orden: crear el árbol vacío, ejecutar `--dry-run` contra el punto de montaje y revisar el resultado antes de permitir la primera operación `--execute`. Ninguna de estas acciones aprueba datos privados por sí sola. La primera copia seguirá requiriendo confirmación separada de fuentes y una frase de recuperación gestionada fuera de este volumen.
 
 ## Referencias
 

@@ -4,7 +4,7 @@ purpose: "Preparar una decisión reversible y respaldada sobre el almacenamiento
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.7"
+version: "1.8"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -171,6 +171,8 @@ Por ello, cualquier respaldo deberá usar una carpeta exclusiva aprobada y prese
 El diseño de estructura y wrapper previo se documenta en `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md`. Usa `age` solo como propuesta de cifrado local por streaming y parte en modo de planificación; no autoriza una copia real hasta los gates G-SEC-1A.3a a G-SEC-1A.3e.
 
 G-SEC-1A.3d ya tiene una prueba ficticia aprobada y pasada con age temporal: fixture artificial, cifrado, restauración, hashes iguales y limpieza verificada. La prueba no incluyó datos de USM ni el disco externo, por lo que no reduce los demás gates de alcance, recuperación de frase y dry-run sobre el volumen real.
+
+El árbol exacto del destino físico se fija en el diseño de respaldo v1.2: `USM_PRE_LUKS_BACKUP` contiene solo protocolo no sensible, ciphertext, manifest mínimo, checksum de ciphertext y evidencia agregada de restauración. No se crean rutas ni se escribe sobre el volumen hasta una autorización de G-SEC-1A.3a.
 
 ## Referencias
 
