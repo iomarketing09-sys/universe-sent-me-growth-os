@@ -4,7 +4,7 @@ purpose: "Definir una estructura de carpetas y un wrapper de cifrado local previ
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.6"
+version: "1.7"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -80,7 +80,8 @@ Los únicos datos privados del disco serán ciphertext `.age`. El manifest no en
 | G-SEC-1A.3b | **Completado el 2026-08-25.** Fernando aprobó incluir las tres raíces privadas exclusivamente dentro de un ciphertext futuro, junto con código y scripts. |
 | G-SEC-1A.3c | **Completado el 2026-08-25.** Recuperación física aprobada en dos copias manuscritas y separadas; `age` verificado desde repositorios Ubuntu configurados, sin procesar datos USM. |
 | G-SEC-1A.3d | Probar cifrado y restauración de un archivo ficticio no sensible en una carpeta temporal. |
-| G-SEC-1A.3e | Revisar dry-run y aprobar ejecución manual única. |
+| G-SEC-1A.3e | **Completado el 2026-08-25.** Dry-run contra el volumen validó montaje, herramienta, árbol y metadatos sin crear archivos. |
+| G-SEC-1A.3f | Autorización independiente y única de la primera copia cifrada; no está aprobada. |
 
 No se autoriza copia real, subida a Drive, sincronización, Drive como ledger, uso de OmniRoute, inserción de observaciones ni cambios de LUKS mediante este diseño.
 
@@ -116,6 +117,12 @@ Al revisar el wrapper se detectó una diferencia heredada entre sus nombres inte
 Fernando aprobó el mecanismo de recuperación: dos copias físicas manuscritas, separadas y bajo su control. Una futura frase se introducirá únicamente de forma interactiva en la terminal local cuando exista una autorización de primera copia; no debe copiarse al historial de shell ni compartirse con este proyecto.
 
 La verificación local instaló `age` desde los repositorios Ubuntu configurados y confirmó `age_path=/usr/bin/age`, `age_version=1.2.1`, `package_version=1.2.1-1build1` y `STATUS=age_available_no_usm_data_processed`. No se leyeron fuentes USM, no se usó el disco externo, no se solicitó frase y no se creó ciphertext. Con ello G-SEC-1A.3c queda completado; el siguiente control sigue siendo el dry-run G-SEC-1A.3e.
+
+## Registro de dry-run G-SEC-1A.3e
+
+Fernando aprobó y ejecutó el dry-run contra `/run/media/universe-sent-me/Fernando`. La salida confirmó `target_mount=/run/media/universe-sent-me/Fernando`, `/dev/sdc3 vfat 930.8G 730.9G 21%`, `age_available=/usr/bin/age`, versión `1.2.1` y `STATUS=dry_run_complete_no_files_created`. El perfil de inclusión quedó en `private_roots_included=false`: el dry-run revisó solamente la presencia, tipo, modo y propietario de las dos rutas de código y las tres raíces privadas aprobadas, sin enumerar contenidos ni crear un archivo.
+
+Una comprobación posterior de solo lectura devolvió `STATUS=backup_tree_contains_no_files`. Por tanto, `00_PROTOCOL`, `10_CIPHERTEXT`, `20_MANIFEST`, `30_INTEGRITY` y `40_RESTORE_EVIDENCE` siguen vacías; no existen protocolo, ciphertext, manifest, checksum ni evidencia de restauración. El dry-run no autoriza `--execute` ni reemplaza la aprobación separada G-SEC-1A.3f para una primera copia.
 
 ## Árbol exacto de `USM_PRE_LUKS_BACKUP`
 
@@ -155,7 +162,7 @@ El manifest será texto simple y tendrá solo estas claves: `backup_type`, `prot
 
 ### Secuencia después de crear el árbol
 
-G-SEC-1A.3a ya creó el árbol vacío, G-SEC-1A.3b ya fijó el alcance autorizado y G-SEC-1A.3c ya verificó la herramienta y la recuperación. El siguiente gate es ejecutar `--dry-run` contra el punto de montaje (G-SEC-1A.3e). El dry-run no crea un respaldo. La primera copia seguirá requiriendo una autorización separada y una frase de recuperación gestionada fuera de este volumen.
+G-SEC-1A.3a ya creó el árbol vacío, G-SEC-1A.3b ya fijó el alcance autorizado, G-SEC-1A.3c ya verificó la herramienta y la recuperación, y G-SEC-1A.3e validó el dry-run. La primera copia sigue bloqueada por G-SEC-1A.3f: requerirá una autorización separada y única, y una frase de recuperación gestionada fuera de este volumen.
 
 ## Referencias
 

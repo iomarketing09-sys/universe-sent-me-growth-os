@@ -4,7 +4,7 @@ purpose: "Preparar una decisión reversible y respaldada sobre el almacenamiento
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.11"
+version: "1.12"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -167,13 +167,13 @@ Incluso si estos gates se aprobaran, la copia cifrada de Drive sería contingenc
 
 El disco externo Windows se detectó como `sdc3`, un volumen `vfat` de 930.8 GiB con 730.9 GiB disponibles. Puede servir como destino físico para el respaldo lógico previo a la migración, pero con dos límites: contiene información existente y `vfat` no aporta permisos POSIX ni cifrado en reposo.
 
-Por ello, cualquier respaldo deberá usar una carpeta exclusiva aprobada y preservar los datos privados de USM en un formato cifrado antes de escribirlos al disco. El gate G-SEC-1A.3a ya creó exclusivamente el árbol vacío `USM_PRE_LUKS_BACKUP` en la raíz del volumen; no se copió, leyó ni cifró ningún dato. G-SEC-1A.3b aprobó el alcance cifrado de `~/omniroute-pilot`, `~/.config/usm-metrics` y `~/.local/share/usm-metrics`, sin abrirlas ni transferirlas. G-SEC-1A.3c confirmó la recuperación física en dos copias separadas y `age` desde repositorios Ubuntu configurados (`/usr/bin/age`, `1.2.1`), sin procesar datos USM. Permanece pendiente el dry-run del volumen real (G-SEC-1A.3e).
+Por ello, cualquier respaldo deberá usar una carpeta exclusiva aprobada y preservar los datos privados de USM en un formato cifrado antes de escribirlos al disco. El gate G-SEC-1A.3a ya creó exclusivamente el árbol vacío `USM_PRE_LUKS_BACKUP` en la raíz del volumen; no se copió, leyó ni cifró ningún dato. G-SEC-1A.3b aprobó el alcance cifrado de `~/omniroute-pilot`, `~/.config/usm-metrics` y `~/.local/share/usm-metrics`, sin abrirlas ni transferirlas. G-SEC-1A.3c confirmó la recuperación física en dos copias separadas y `age` desde repositorios Ubuntu configurados (`/usr/bin/age`, `1.2.1`), sin procesar datos USM. G-SEC-1A.3e completó el dry-run sobre `/dev/sdc3` `vfat` y confirmó que el árbol sigue sin archivos. Permanece bloqueada la primera copia bajo un gate único separado, G-SEC-1A.3f.
 
-El diseño de estructura y wrapper previo se documenta en `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md`. Usa `age` local por streaming y parte en modo de planificación; no autoriza una copia real hasta G-SEC-1A.3e y una aprobación separada de primera copia. El wrapper quedó alineado con el árbol físico aprobado y bloquea cualquier primera copia si las cinco subcarpetas no están vacías.
+El diseño de estructura y wrapper previo se documenta en `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md`. Usa `age` local por streaming y parte en modo de planificación; G-SEC-1A.3e validó el dry-run, pero no autoriza una copia real. El wrapper queda sujeto a G-SEC-1A.3f, una aprobación separada de primera copia, y bloquea cualquier primera copia si las cinco subcarpetas no están vacías.
 
 G-SEC-1A.3d ya tiene una prueba ficticia aprobada y pasada con age temporal: fixture artificial, cifrado, restauración, hashes iguales y limpieza verificada. La prueba no incluyó datos de USM ni el disco externo, por lo que no reduce los demás gates de alcance, recuperación de frase y dry-run sobre el volumen real.
 
-El árbol exacto del destino físico se fija en el diseño de respaldo v1.6: `USM_PRE_LUKS_BACKUP` contiene solo protocolo no sensible, ciphertext, manifest mínimo, checksum de ciphertext y evidencia agregada de restauración. G-SEC-1A.3a fue aprobado y verificado: existen solo la raíz y sus cinco subcarpetas vacías. G-SEC-1A.3b aprobó el perfil `code_scripts_and_approved_private` y G-SEC-1A.3c verificó herramienta y recuperación; ningún archivo de protocolo, ciphertext, manifest, checksum o evidencia existe todavía, y no se autoriza añadirlos sin el dry-run y el gate de primera copia.
+El árbol exacto del destino físico se fija en el diseño de respaldo v1.7: `USM_PRE_LUKS_BACKUP` contiene solo protocolo no sensible, ciphertext, manifest mínimo, checksum de ciphertext y evidencia agregada de restauración. G-SEC-1A.3a fue aprobado y verificado: existen solo la raíz y sus cinco subcarpetas vacías. G-SEC-1A.3b aprobó el perfil `code_scripts_and_approved_private`, G-SEC-1A.3c verificó herramienta y recuperación, y G-SEC-1A.3e confirmó dry-run sin archivos creados; no se autoriza añadir ningún archivo sin G-SEC-1A.3f.
 
 ## Referencias
 
