@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.82
+**Versión:** 4.83
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.83.00] — 2026-08-25 (Fernando/Manus): Simulación sintética de corrupción temporal sin reparación.** Por solicitud de Fernando se añadieron un inspector de solo lectura y una batería temporal para tres fallas controladas: JSONL truncado, secuencia sin `genesis` y supersedencia hacia una clave inexistente. La suite devolvió `shadow_ledger_corruption_synthetic_validation_passed`; detectó `jsonl_invalid`, `genesis_missing_or_not_first` y `supersession_target_missing`, y comparó los bytes antes y después de cada inspección para confirmar que no hubo reparación, escritura, reordenamiento o borrado. No hubo red, datos reales, raw, tokens, rutas privadas, Drive, GitHub como ledger, Sheets, OmniRoute, cron o ledger persistente. El siguiente control permitido se mantiene sintético: inconsistencias semánticas con JSONL formalmente válido. Documentos actualizados: shadow ledger v1.2, esquema v1.4 y guía v3.1.
 
 - **[4.82.00] — 2026-08-25 (Fernando/Manus): Cobertura sintética ampliada y batería integrada aislada.** Por decisión de Fernando se mantuvo el sistema exclusivamente sintético. Se ampliaron los fixtures con un porcentaje nativo YouTube mayor a 100 preservado, ventana cerrada `C3_exact_window`, unidad de minutos y disponibilidad mixta; el shadow ledger añadió rechazo de supersedencia desconocida. `validate_synthetic_boundary_suite.py` ejecutó NORM-01 a NORM-12 y cinco pruebas append-only con `socket.socket` bloqueado. Devolvió `synthetic_boundary_suite_passed`, con garantías de fixture-only, sin red, ledger temporal y cero escritura canónica. No se usaron entorno, tokens, raw, rutas privadas, Drive, GitHub, Sheets, OmniRoute, cron o datos reales. El siguiente ejercicio permitido es sintético: detectar corrupción temporal o evidencia inconsistente sin reparación automática. Documentos actualizados: esquema v1.3 y guía v3.0.
 

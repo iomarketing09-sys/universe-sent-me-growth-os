@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "3.0"
+version: "3.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -192,6 +192,12 @@ El trabajo permitido mientras tanto es sintético: fixtures, pruebas temporales,
 Se añadió `validate_synthetic_boundary_suite.py` para ejecutar el normalizador y el shadow ledger en el mismo proceso sintético con sockets bloqueados. La matriz ahora incluye disponibilidad mixta, porcentaje nativo mayor a 100, periodo cerrado con tier `C3_exact_window`, unidad nativa de minutos y rechazo de supersedencia desconocida. El resultado fue `synthetic_boundary_suite_passed`.
 
 La suite no lee variables de entorno, raw, rutas privadas o tokens. El shadow ledger existe solo en un directorio temporal dentro de la prueba y se elimina al terminar. No se habilita reparación automática, recuperación de evidencia, inserción real ni almacenamiento en Drive o GitHub.
+
+### Detección de corrupción temporal
+
+La validación `validate_shadow_ledger_corruption_synthetic.py` ejecuta tres corrupciones intencionales y puramente sintéticas: JSONL truncado, evento `genesis` ausente y supersedencia contra una clave inexistente. El inspector de solo lectura informa la clase de inconsistencia sin imprimir filas, IDs, rutas o evidencia.
+
+Antes y después de inspeccionar cada archivo, la suite compara sus bytes. La igualdad confirma que no existe reparación automática, reordenamiento, borrado o escritura de compensación. Este ejercicio tampoco habilita el ledger persistente, Drive, GitHub, Google Sheets, OmniRoute, cron ni observaciones reales.
 
 ### Revisión descriptiva de la primera captura — 25 de agosto de 2026
 

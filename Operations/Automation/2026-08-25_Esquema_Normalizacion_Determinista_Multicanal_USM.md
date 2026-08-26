@@ -4,7 +4,7 @@ purpose: "Definir una estructura auditable que conserve métricas nativas de Tik
 status: Review
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.3"
+version: "1.4"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
@@ -235,6 +235,8 @@ La implementación sintética de G-NORM-4 está descrita en `2026-08-25_Shadow_L
 La batería integrada `validate_synthetic_boundary_suite.py` amplió la cobertura de contrato. El normalizador preservó un porcentaje nativo de YouTube superior a 100 sin recorte, una observación de periodo cerrado `C3_exact_window`, una duración nativa en minutos y una ausencia válida de Instagram como parcial. El shadow ledger validó además el rechazo de una supersedencia que apunta a una observación inexistente.
 
 La suite bloqueó `socket.socket` durante la ejecución y confirmó `synthetic_boundary_suite_passed` con NORM-01 a NORM-12, cinco pruebas append-only, ledger temporal y cero escrituras canónicas. Este resultado aporta confianza a la capa sintética, pero no cambia el estado `Review`, no activa almacenamiento real y no autoriza reparación automática ante corrupción.
+
+Como siguiente control de lectura, `validate_shadow_ledger_corruption_synthetic.py` generó inconsistencias exclusivamente sintéticas: JSONL malformado, secuencia sin genesis y referencia de supersedencia inexistente. `inspect_shadow_ledger_synthetic.py` las detectó sin modificar los bytes de los archivos temporales. No se habilita recuperación automática, reconstrucción de hechos ni materialización de datos reales.
 
 ## Referencias
 

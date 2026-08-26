@@ -4,7 +4,7 @@ purpose: "Definir el ledger privado de validación para comprobar idempotencia, 
 status: Review
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Esquema_Normalizacion_Determinista_Multicanal_USM.md"
@@ -78,6 +78,7 @@ Para G-NORM-4, la entrada debe llevar `synthetic = true`. El mecanismo de inserc
 | Actualización in-place | No existe comando de actualización; una colisión no supersedida se rechaza. |
 | Corrección | Nueva línea válida con `supersedes_observation_key`. |
 | Sanitización | Entrada con campo prohibido o marca incorrecta queda rechazada. |
+| Integridad de lectura | JSONL malformado, ausencia de genesis o supersedencia incoherente se reportan sin reescribir el archivo. |
 
 ## Gates posteriores
 
@@ -88,6 +89,12 @@ G-NORM-5 solo podrá considerarse después de una revisión humana del shadow le
 La batería `validate_shadow_ledger_synthetic.py` se ejecutó en Xubuntu el 25 de agosto de 2026 y devolvió `shadow_ledger_synthetic_validation_passed`. Confirmó las cuatro pruebas contractuales: inserción inicial, repetición idempotente, rechazo de una colisión que intentaba modificar un evento existente y corrección por supersedencia append-only. Las garantías reportadas fueron `synthetic_only`, `private_temp_ledger`, `no_network` y `no_canonical_write`.
 
 Esta demostración no creó el ledger persistente bajo `~/.local/share/usm-metrics/shadow-ledger/`; usó una ruta temporal eliminada al terminar. La inserción de cualquier observación real, incluso privada, sigue bloqueada hasta una aprobación separada.
+
+## Simulación de corrupción sintética confirmada
+
+La suite `validate_shadow_ledger_corruption_synthetic.py` generó tres fallas controladas dentro de un directorio temporal: una línea JSONL truncada, una secuencia que comienza con observación sin evento `genesis` y una supersedencia que apunta a una clave inexistente. El inspector `inspect_shadow_ledger_synthetic.py` detectó respectivamente `jsonl_invalid`, `genesis_missing_or_not_first` y `supersession_target_missing`.
+
+Antes y después de cada inspección, la suite comparó los bytes completos del archivo temporal. La igualdad byte a byte confirmó que el inspector no agregó, eliminó, ordenó ni reparó ningún evento. La ejecución devolvió `shadow_ledger_corruption_synthetic_validation_passed` con sockets bloqueados, sin red, sin ledgers canónicos y sin datos reales. Este control detecta, pero no recupera ni normaliza, archivos inconsistentes.
 
 ## Referencias
 
