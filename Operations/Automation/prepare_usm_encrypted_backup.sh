@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # Design-stage encrypted backup wrapper for the planned Xubuntu-to-LUKS migration.
+# Design philosophy for this file: use only the pre-approved external-tree layout,
+# stream plaintext directly to ciphertext, and fail closed before any data read.
 # Default mode is --plan: it does not create folders, archives, encrypted files,
-# keys, checksums, or copies. --execute is intentionally gated and must be
-# approved separately after a non-sensitive restoration test plan exists.
+# keys, checksums, or copies. --execute remains separately gated.
 
 set -euo pipefail
 umask 077
@@ -30,7 +31,8 @@ Security rules:
   - The script never accepts a passphrase from command-line arguments or environment variables.
   - age prompts interactively at execution. Do not leave the passphrase blank and do not paste it into chat.
   - The identity/passphrase recovery material must remain outside this disk, Drive, GitHub, email and chat.
-  - Private roots are omitted unless --include-private is supplied with the exact confirmation string.
+  - The three approved private roots are omitted unless --include-private is supplied with the exact confirmation string.
+  - --execute only accepts the pre-created USM_PRE_LUKS_BACKUP directory tree.
 EOF
 }
 
@@ -90,23 +92,25 @@ printf 'private_roots_included=%s\n' "$INCLUDE_PRIVATE"
 if [ "$MODE" = 'plan' ]; then
   cat <<'EOF'
 
-Folder layout created only by --execute after separate approval:
+Pre-created external-tree layout required before --execute:
   <target-mount>/USM_PRE_LUKS_BACKUP/
-    archives/      encrypted .age archives only
-    manifests/     non-secret run manifest
-    checksums/     SHA-256 of ciphertext only
+    00_PROTOCOL/           protocol text without sensitive data
+    10_CIPHERTEXT/         encrypted .age archive only
+    20_MANIFEST/           non-secret run manifest
+    30_INTEGRITY/          SHA-256 of ciphertext only
+    40_RESTORE_EVIDENCE/   restore result after a separate approved test
 
 Public/reconstructible roots:
   - ~/universe-sent-me-growth-os
   - ~/bin
 
-Private roots, excluded by default:
+Private roots approved for a future ciphertext but excluded unless --include-private:
   - ~/.config/usm-metrics
   - ~/.local/share/usm-metrics
   - ~/omniroute-pilot
 
 Required gates before --execute:
-  1. G-SEC-1A.3 approves target folder and source categories.
+  1. G-SEC-1A.3a created the target tree and G-SEC-1A.3b approved these sources.
   2. age is installed from an approved source and is available on PATH.
   3. Passphrase recovery material is stored outside the external disk, Drive,
      GitHub, email, chat and the archive.
@@ -129,6 +133,18 @@ printf '\nPrivate source metadata:\n'
 for root in "${PRIVATE_ROOTS[@]}"; do source_metadata "$root"; done
 
 if [ "$MODE" = 'dry-run' ]; then
+  readonly DRY_RUN_BACKUP_ROOT="$TARGET_MOUNT/USM_PRE_LUKS_BACKUP"
+  readonly DRY_RUN_DIRS=(
+    "$DRY_RUN_BACKUP_ROOT/00_PROTOCOL"
+    "$DRY_RUN_BACKUP_ROOT/10_CIPHERTEXT"
+    "$DRY_RUN_BACKUP_ROOT/20_MANIFEST"
+    "$DRY_RUN_BACKUP_ROOT/30_INTEGRITY"
+    "$DRY_RUN_BACKUP_ROOT/40_RESTORE_EVIDENCE"
+  )
+  [ -d "$DRY_RUN_BACKUP_ROOT" ] || die 'approved USM_PRE_LUKS_BACKUP tree is absent'
+  for dir in "${DRY_RUN_DIRS[@]}"; do
+    [ -d "$dir" ] || die "required approved directory is absent: $dir"
+  done
   if command -v age >/dev/null 2>&1; then
     printf 'age_available=%s\n' "$(command -v age)"
     age --version 2>/dev/null || true
@@ -150,17 +166,37 @@ done
 
 readonly RUN_DATE="$(date -u +%Y%m%dT%H%M%SZ)"
 readonly BACKUP_ROOT="$TARGET_MOUNT/USM_PRE_LUKS_BACKUP"
-readonly ARCHIVE_DIR="$BACKUP_ROOT/archives"
-readonly MANIFEST_DIR="$BACKUP_ROOT/manifests"
-readonly CHECKSUM_DIR="$BACKUP_ROOT/checksums"
+readonly PROTOCOL_DIR="$BACKUP_ROOT/00_PROTOCOL"
+readonly ARCHIVE_DIR="$BACKUP_ROOT/10_CIPHERTEXT"
+readonly MANIFEST_DIR="$BACKUP_ROOT/20_MANIFEST"
+readonly CHECKSUM_DIR="$BACKUP_ROOT/30_INTEGRITY"
+readonly RESTORE_EVIDENCE_DIR="$BACKUP_ROOT/40_RESTORE_EVIDENCE"
+readonly REQUIRED_BACKUP_DIRS=(
+  "$PROTOCOL_DIR"
+  "$ARCHIVE_DIR"
+  "$MANIFEST_DIR"
+  "$CHECKSUM_DIR"
+  "$RESTORE_EVIDENCE_DIR"
+)
+readonly PROTOCOL="$PROTOCOL_DIR/BACKUP_PROTOCOL_v1.txt"
 readonly ARCHIVE_NAME="usm_pre_luks_${RUN_DATE}.tar.gz.age"
 readonly TEMP_ARCHIVE="$ARCHIVE_DIR/.${ARCHIVE_NAME}.partial"
 readonly FINAL_ARCHIVE="$ARCHIVE_DIR/$ARCHIVE_NAME"
 readonly MANIFEST="$MANIFEST_DIR/usm_pre_luks_${RUN_DATE}.manifest.txt"
 readonly CHECKSUM="$CHECKSUM_DIR/usm_pre_luks_${RUN_DATE}.sha256"
 
-mkdir -p "$ARCHIVE_DIR" "$MANIFEST_DIR" "$CHECKSUM_DIR"
-trap 'rm -f "$TEMP_ARCHIVE"' EXIT
+[ -d "$BACKUP_ROOT" ] || die 'approved USM_PRE_LUKS_BACKUP tree is absent'
+for dir in "${REQUIRED_BACKUP_DIRS[@]}"; do
+  [ -d "$dir" ] || die "required approved directory is absent: $dir"
+  [ -z "$(find "$dir" -mindepth 1 -maxdepth 1 -print -quit)" ] || die "required directory is not empty: $dir"
+done
+BACKUP_COMPLETE='false'
+cleanup_failed_backup() {
+  if [ "$BACKUP_COMPLETE" != 'true' ]; then
+    rm -f "$TEMP_ARCHIVE" "$FINAL_ARCHIVE" "$CHECKSUM" "$MANIFEST" "$PROTOCOL"
+  fi
+}
+trap cleanup_failed_backup EXIT
 
 printf 'age will now request a passphrase interactively. Do not leave it blank.\n'
 printf 'Streaming archive directly into ciphertext; no plaintext archive file is created.\n'
@@ -175,21 +211,28 @@ tar -C "$HOME" -czf - \
 mv -f "$TEMP_ARCHIVE" "$FINAL_ARCHIVE"
 sha256sum "$FINAL_ARCHIVE" > "$CHECKSUM"
 {
+  printf 'protocol_version=1\n'
   printf 'backup_type=usm_pre_luks_encrypted\n'
+  printf 'encryption=age_passphrase_interactive\n'
+  printf 'ciphertext_only_on_external_vfat=true\n'
+  printf 'restore_evidence=required_before_luks_migration\n'
+} > "$PROTOCOL"
+{
+  printf 'backup_type=usm_pre_luks_encrypted\n'
+  printf 'protocol_version=1\n'
   printf 'created_utc=%s\n' "$RUN_DATE"
   printf 'ciphertext_file=%s\n' "$ARCHIVE_NAME"
   printf 'ciphertext_sha256_file=%s\n' "$(basename "$CHECKSUM")"
   printf 'encryption=age_passphrase_interactive\n'
-  printf 'sources=public_roots_plus_approved_private_roots\n'
-  printf 'restore_gate=required_before_luks_migration\n'
+  printf 'scope_profile=code_scripts_and_approved_private\n'
+  printf 'restore_status=pending\n'
+  printf 'operator_confirmation=%s\n' "$REQUIRED_CONFIRMATION"
 } > "$MANIFEST"
 
-if command -v age-inspect >/dev/null 2>&1; then
-  age-inspect "$FINAL_ARCHIVE" > "$MANIFEST_DIR/usm_pre_luks_${RUN_DATE}.age-inspect.txt"
-fi
-
+BACKUP_COMPLETE='true'
 trap - EXIT
 printf 'STATUS=encrypted_backup_created\n'
 printf 'ciphertext=%s\n' "$FINAL_ARCHIVE"
+printf 'protocol=%s\n' "$PROTOCOL"
 printf 'manifest=%s\n' "$MANIFEST"
 printf 'checksum=%s\n' "$CHECKSUM"

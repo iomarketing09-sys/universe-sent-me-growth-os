@@ -4,7 +4,7 @@ purpose: "Definir una estructura de carpetas y un wrapper de cifrado local previ
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.3"
+version: "1.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -52,7 +52,7 @@ Los únicos datos privados del disco serán ciphertext `.age`. El manifest no en
 | Grupo | Rutas | Política |
 |---|---|---|
 | Código y reconstrucción | `~/universe-sent-me-growth-os`, `~/bin` | Se incluyen para recuperación de scripts y documentación. |
-| Configuración y datos privados | `~/.config/usm-metrics`, `~/.local/share/usm-metrics`, `~/omniroute-pilot` | Excluidos por defecto; solo se incluyen con `--include-private` tras aprobación explícita. |
+| Configuración y datos privados | `~/.config/usm-metrics`, `~/.local/share/usm-metrics`, `~/omniroute-pilot` | **Aprobados para un futuro ciphertext** bajo el perfil `code_scripts_and_approved_private`; siguen excluidos en `--plan` y `--dry-run`, y solo se leen con `--include-private` después de G-SEC-1A.3c, G-SEC-1A.3e y una autorización independiente de primera copia. |
 | Excluido | Browser profiles, SSH/GPG keys, correo, chat, cuentas de otras marcas, medias personales no aprobadas, Docker engine data y cache general. | Nunca se agrega al wrapper sin una decisión separada. |
 
 ## Controles del wrapper
@@ -73,7 +73,7 @@ Los únicos datos privados del disco serán ciphertext `.age`. El manifest no en
 | Gate | Debe aprobarse explícitamente |
 |---|---|
 | G-SEC-1A.3a | **Completado el 2026-08-25.** Se aprobó y creó el árbol vacío en la raíz del volumen `vfat` confirmado. |
-| G-SEC-1A.3b | Alcance: decidir si se incluyen las tres raíces privadas, además de código y scripts. |
+| G-SEC-1A.3b | **Completado el 2026-08-25.** Fernando aprobó incluir las tres raíces privadas exclusivamente dentro de un ciphertext futuro, junto con código y scripts. |
 | G-SEC-1A.3c | Instalar/verificar `age` desde fuente oficial y definir dónde Fernando conservará la recuperación de la frase. |
 | G-SEC-1A.3d | Probar cifrado y restauración de un archivo ficticio no sensible en una carpeta temporal. |
 | G-SEC-1A.3e | Revisar dry-run y aprobar ejecución manual única. |
@@ -93,13 +93,19 @@ Fernando aprobó una prueba exclusivamente ficticia. Se usó el binario oficial 
 | Entorno temporal externo | Dos directorios de descarga/prueba del sandbox se detectaron tras el primer intento de limpieza y se eliminaron manualmente; la verificación final confirmó ausencia de artefactos `usm-age-*` bajo `/tmp`. |
 | Medios y datos USM | No se usó el disco externo, Drive, OmniRoute, `~/.config/usm-metrics`, `~/.local/share/usm-metrics` ni `~/omniroute-pilot`. |
 
-La prueba confirma el mecanismo básico de cifrado/restauración e integridad de age, pero **no valida todavía** la operación real con frase interactiva, las fuentes privadas, el volumen vfat o la restauración de un respaldo autorizado. Esos pasos siguen detrás de G-SEC-1A.3b, G-SEC-1A.3c, G-SEC-1A.3e y una autorización independiente de la primera copia.
+La prueba confirma el mecanismo básico de cifrado/restauración e integridad de age, pero **no valida todavía** la operación real con frase interactiva, el volumen vfat o la restauración de un respaldo autorizado. Esos pasos siguen detrás de G-SEC-1A.3c, G-SEC-1A.3e y una autorización independiente de la primera copia.
 
 ## Registro de ejecución G-SEC-1A.3a
 
 Fernando aprobó el gate y ejecutó localmente `create_usm_backup_tree.sh` el 2026-08-25. Antes de escribir, el wrapper confirmó que el destino era el punto de montaje `/run/media/universe-sent-me/Fernando`, con fuente `/dev/sdc3` y filesystem `vfat`. El modo `--plan` terminó con `STATUS=plan_only_no_directories_created`; el modo `--execute` terminó con `STATUS=empty_tree_created`.
 
 El wrapper se negó de forma explícita a operar si `USM_PRE_LUKS_BACKUP` ya existía. Por tanto, la ejecución confirmada creó solamente la raíz y sus cinco subcarpetas vacías; no reemplazó contenido previo ni dejó archivos de respaldo. La enumeración final mostró exclusivamente directorios. No se ejecutaron los wrappers de cifrado, no se instaló `age`, no se leyeron rutas privadas y no se produjeron ciphertexts, manifests, checksums ni evidencia de restauración.
+
+## Registro de alcance G-SEC-1A.3b
+
+Fernando aprobó que `~/omniroute-pilot`, `~/.config/usm-metrics` y `~/.local/share/usm-metrics` formen parte del perfil futuro `code_scripts_and_approved_private`, junto con `~/universe-sent-me-growth-os` y `~/bin`. Esta aprobación define alcance, no transfiere datos: las tres raíces no fueron abiertas, enumeradas, copiadas ni hashadas durante este gate.
+
+Al revisar el wrapper se detectó una diferencia heredada entre sus nombres internos de carpeta y el árbol físico aprobado. Se corrigió para exigir exactamente `00_PROTOCOL`, `10_CIPHERTEXT`, `20_MANIFEST`, `30_INTEGRITY` y `40_RESTORE_EVIDENCE`; no puede crear carpetas alternativas. La validación fue solo de sintaxis y `--plan`, que permaneció sin escrituras. El wrapper también exige que las cinco carpetas estén vacías para la primera copia y elimina protocolo, ciphertext, manifest y checksum si una futura ejecución falla antes de completarse.
 
 ## Árbol exacto de `USM_PRE_LUKS_BACKUP`
 
@@ -139,7 +145,7 @@ El manifest será texto simple y tendrá solo estas claves: `backup_type`, `prot
 
 ### Secuencia después de crear el árbol
 
-G-SEC-1A.3a ya creó el árbol vacío. La siguiente autorización debe decidir el alcance privado (G-SEC-1A.3b), verificar o instalar `age` y definir la recuperación fuera de este volumen y de servicios cloud (G-SEC-1A.3c), y después ejecutar `--dry-run` contra el punto de montaje (G-SEC-1A.3e). Ninguna de esas acciones aprueba datos privados por sí sola. La primera copia seguirá requiriendo confirmación separada de fuentes y una frase de recuperación gestionada fuera de este volumen.
+G-SEC-1A.3a ya creó el árbol vacío y G-SEC-1A.3b ya fijó el alcance autorizado. La siguiente autorización debe verificar o instalar `age` y definir la recuperación fuera de este volumen y de servicios cloud (G-SEC-1A.3c), y después ejecutar `--dry-run` contra el punto de montaje (G-SEC-1A.3e). Ninguna de esas acciones crea un respaldo. La primera copia seguirá requiriendo una autorización separada y una frase de recuperación gestionada fuera de este volumen.
 
 ## Referencias
 

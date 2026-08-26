@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "11.7"
+version: "11.10"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -127,8 +127,10 @@ organization: "GrowthOS"
 - [ ] G-SEC-1A.3: definir carpeta exclusiva de respaldo, alcance de categorías y método de cifrado local previo para datos privados antes de la primera copia al volumen vfat; ensayar restauración con archivos no sensibles.
 - [x] Diseñar la estructura y el script de respaldo cifrado local: separar contenido de código de categorías privadas, requerir llave fuera del disco/Drive/chat, soportar simulación y prohibir cualquier copia real hasta aprobación y prueba de restauración. Documento: `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md`; wrapper: `prepare_usm_encrypted_backup.sh`.
 - [x] G-SEC-1A.3a: aprobar y crear únicamente la carpeta exclusiva vacía en el volumen vfat; no implica copia, cifrado, lectura de fuentes privadas ni modificación de archivos existentes.
-- [ ] G-SEC-1A.3b: decidir si las raíces privadas `~/omniroute-pilot`, `~/.config/usm-metrics` y `~/.local/share/usm-metrics` entrarán al alcance del respaldo; mantener excluidos tokens, credenciales, evidencia raw y secretos hasta una definición explícita.
+- [x] G-SEC-1A.3b: Fernando aprobó que las raíces privadas `~/omniroute-pilot`, `~/.config/usm-metrics` y `~/.local/share/usm-metrics` entren únicamente en el alcance de un futuro ciphertext cifrado. No se leerán ni copiarán hasta superar G-SEC-1A.3c, G-SEC-1A.3e y una aprobación separada de primera copia.
+- [x] G-SEC-1A.3b.1: alinear el wrapper `prepare_usm_encrypted_backup.sh` con el árbol físico aprobado `00_PROTOCOL`, `10_CIPHERTEXT`, `20_MANIFEST`, `30_INTEGRITY` y `40_RESTORE_EVIDENCE`; sintaxis y `--plan` validados sin ejecutar dry-run ni tocar el volumen.
 - [ ] G-SEC-1A.3c: instalar o verificar `age` localmente y definir el mecanismo de recuperación fuera del disco externo, Drive, GitHub, correo y chat.
+- [ ] G-SEC-1A.3c.1: elegir y registrar el soporte físico de recuperación que Fernando guardará fuera del disco externo y de servicios en línea; no solicitar ni escribir la frase de recuperación en repositorio, chat, correo o variables de entorno.
 - [ ] G-SEC-1A.3e: ejecutar `prepare_usm_encrypted_backup.sh --dry-run` sobre el volumen real después de 3b y 3c; no autoriza `--execute` ni la creación de ciphertext.
 - [x] Diseñar el árbol exacto de `USM_PRE_LUKS_BACKUP`, incluyendo categorías permitidas, manifest, checksums, nombres, retención y exclusiones; no crear todavía rutas en el volumen vfat. Diseño incorporado en `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md` v1.2.
 - [x] G-SEC-1A.3a: Fernando aprobó y ejecutó la creación del árbol vacío `USM_PRE_LUKS_BACKUP` en `/run/media/universe-sent-me/Fernando`; el wrapper verificó `/dev/sdc3`, `vfat` y `STATUS=empty_tree_created`, sin crear archivos de respaldo ni tocar datos existentes.
