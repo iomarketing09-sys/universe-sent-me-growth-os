@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "9.7"
+version: "9.8"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -117,7 +117,8 @@ organization: "GrowthOS"
 - [x] Completar un plan comparativo no ejecutable entre migración de Xubuntu a LUKS y volumen cifrado dedicado para el ledger; incluir respaldo, restauración, verificación, permisos, retención y gates, sin modificar discos ni datos. Documento: `2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md`.
 - [x] Elegir preferencia arquitectónica para el crecimiento de USM: Ruta A, migración planificada de Xubuntu a cifrado LUKS integral. Esta preferencia no autoriza ninguna operación de disco.
 - [ ] G-SEC-1A: definir inventario, respaldo externo separado, prueba de restauración y ventana de mantenimiento antes de solicitar una autorización separada para migrar Xubuntu a LUKS.
-- [ ] Generar inventario no destructivo previo a respaldo: aplicaciones, servicios, proyectos y rutas de configuración necesarias para restaurar Xubuntu, sin leer raw, evidencia privada, tokens, secretos ni contenido de cuentas.
+- [x] Generar inventario no destructivo previo a respaldo: aplicaciones, servicios, proyectos y rutas de configuración necesarias para restaurar Xubuntu, sin leer raw, evidencia privada, tokens, secretos ni contenido de cuentas. Resultado documentado en `2026-08-25_Inventario_Previa_Migracion_LUKS_Xubuntu_USM.md` v1.1.
+- [ ] G-SEC-1A.1: Fernando debe decidir qué rutas personales entran al respaldo general y conseguir un medio externo separado; clasificar `~/.config/usm-metrics`, `~/.local/share/usm-metrics` y `~/omniroute-pilot` como respaldo privado cifrado, sin exponer contenido.
 - [x] Documentar la secuencia de automatización posterior al cifrado: validación manual, ejecución supervisada, scheduler local, observabilidad, salida sanitizada Draft y criterios de pausa; no activar cron, APIs de escritura, Sheets ni OmniRoute. Documento: `2026-08-25_Hoja_Ruta_Automatizacion_Local_Segura_USM.md`.
 - [x] Revisar el estado canónico del contrato de shadow ledger en GitHub y consolidar los requisitos pendientes para un futuro proyecto separado de almacenamiento local cifrado; no modificar discos, volúmenes, cifrado ni ledgers reales. Revisión: commit remoto `480ea95`; contrato `Review`, G-NORM-4R bloqueado y opción activa sintética.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
