@@ -4,7 +4,7 @@ purpose: "Definir el ledger privado de validación para comprobar idempotencia, 
 status: Review
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.3"
+version: "1.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Esquema_Normalizacion_Determinista_Multicanal_USM.md"
@@ -101,6 +101,17 @@ Antes y después de cada inspección, la suite comparó los bytes completos del 
 La misma suite amplió la cobertura con cuatro archivos JSONL sintéticos que se pueden leer como JSON, pero incumplen el contrato interno: `genesis` con marca incorrecta, tipo de evento desconocido, dos observaciones con la misma `observation_key` sin supersedencia y `ledger_entry_key` alterado. El inspector reportó respectivamente `genesis_contract_invalid`, `record_type_invalid`, `observation_key_collision` y `entry_key_invalid`.
 
 Cada caso volvió a confirmar invariancia byte a byte durante la inspección. El resultado no elige una fila “correcta”, no recalcula llaves, no corrige el contrato ni añade eventos de reparación. La cobertura permanece exclusivamente sintética, temporal y sin efectos fuera del directorio de prueba.
+
+## Revisión estructurada del contrato `Review`
+
+La revisión humana de la matriz confirmó que las pruebas iniciales cubrían estructura JSONL, `genesis`, supersedencia, tipos de evento, colisiones de `observation_key` y coherencia de `ledger_entry_key`, pero dejaban dos controles de lectura implícitos. Se añadieron y validaron las siguientes reglas:
+
+| Regla añadida | Detección | Propósito |
+|---|---|---|
+| Una observación ya escrita debe seguir cumpliendo NORM-01 a NORM-12 al leerse. | `observation_norm_invalid` | Detectar corrupción o deriva semántica de una fila persistida, sin corregirla. |
+| Una `ledger_entry_key` solo puede aparecer una vez. | `ledger_entry_key_duplicate` | Detectar repetición exacta de un evento, incluso si también hay colisión de observación. |
+
+La matriz ahora ejecuta diez controles: nueve detecciones y la invariancia byte a byte. La regresión integrada de normalizador y shadow ledger siguió pasando. El dictamen es **suficiencia limitada para el contrato sintético actual**: el estado permanece `Review`; G-NORM-4R, cualquier inserción real, ledger persistente, Google Sheets, Drive, GitHub como ledger y OmniRoute continúan bloqueados. Estas pruebas no sustituyen el requisito independiente de almacenamiento local cifrado y consentimiento granular.
 
 ## Referencias
 

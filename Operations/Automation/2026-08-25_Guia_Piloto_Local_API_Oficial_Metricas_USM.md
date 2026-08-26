@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "3.2"
+version: "3.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -204,6 +204,12 @@ Antes y después de inspeccionar cada archivo, la suite compara sus bytes. La ig
 La cobertura de integridad agrega cuatro archivos JSONL sintéticos que son formalmente legibles pero no cumplen el contrato: `genesis` de marca incorrecta, `record_type` desconocido, colisión de `observation_key` y `ledger_entry_key` alterado. El inspector los rechazó como `genesis_contract_invalid`, `record_type_invalid`, `observation_key_collision` y `entry_key_invalid`, sin elegir, reescribir ni reconstruir eventos.
 
 Todos los casos permanecen bajo directorio temporal, con sockets bloqueados y comparación byte a byte antes y después de inspección. No se habilita una ruta de recuperación automática, ni un ledger real, ni un cambio del bloqueo de G-NORM-4R.
+
+### Dictamen de revisión sintética
+
+La revisión estructurada de la matriz incorporó dos controles: una observación existente que ya no cumple NORM-01 a NORM-12 se marca `observation_norm_invalid`, y una `ledger_entry_key` repetida se marca `ledger_entry_key_duplicate`. La regresión integrada del normalizador y shadow ledger continuó en `PASS`.
+
+El dictamen es suficiente únicamente para el contrato sintético vigente. La guía no autoriza cambiar el estado `Review`, crear un ledger persistente, insertar datos reales, activar G-NORM-4R o usar destinos externos. El requisito de cifrado local verificado, consentimiento granular y retención aprobada continúa separado y bloqueante.
 
 ### Revisión descriptiva de la primera captura — 25 de agosto de 2026
 

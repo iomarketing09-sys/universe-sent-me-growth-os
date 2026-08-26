@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "8.3"
+version: "8.6"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -106,7 +106,9 @@ organization: "GrowthOS"
 - [x] Documentar la cobertura sintética ampliada y mantener bloqueada cualquier inserción real o uso de Drive/GitHub como ledger activo.
 - [x] Simular corrupción controlada en un ledger temporal sintético: JSONL malformado, secuencia sin genesis y referencia de supersedencia inconsistente; confirmar detección determinista, invariancia byte a byte y ausencia de reparación automática.
 - [x] Ejecutar una prueba sintética de semántica inválida pero JSONL válido: contrato genesis incorrecto, `record_type` desconocido, colisión de `observation_key` y `ledger_entry_key` alterado; conservar el principio de inspección sin reparación.
-- [ ] Consolidar una matriz canónica de detecciones sintéticas y decidir, mediante revisión humana, si el contrato `Review` requiere nuevas reglas antes de considerar cualquier gate posterior; no habilitar datos reales ni persistencia.
+- [x] Consolidar una matriz canónica de detecciones sintéticas y decidir, mediante revisión humana, si el contrato `Review` requiere nuevas reglas antes de considerar cualquier gate posterior; no habilitar datos reales ni persistencia. Dictamen: se añadieron dos reglas de lectura y el contrato sigue en `Review`.
+- [x] Completar el dictamen de revisión humana de la matriz sintética y del contrato `Review`: evaluar cobertura, coherencia, límites de no reparación y reglas faltantes; mantener G-NORM-4R y cualquier persistencia real bloqueados. Dictamen: cobertura sintética suficiente solo para el contrato actual; no hay autorización de persistencia real.
+- [x] Añadir a la inspección sintética de lectura el rechazo de una observación que ya no cumple NORM-01 a NORM-12 y la detección de `ledger_entry_key` duplicada; conservar invariancia byte a byte y ausencia de reparación.
 - [x] Revisar el estado canónico del contrato de shadow ledger en GitHub y consolidar los requisitos pendientes para un futuro proyecto separado de almacenamiento local cifrado; no modificar discos, volúmenes, cifrado ni ledgers reales. Revisión: commit remoto `480ea95`; contrato `Review`, G-NORM-4R bloqueado y opción activa sintética.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
 - [x] Configurar y autorizar la app de escritorio Sandbox de TikTok con los scopes oficiales mínimos `user.info.basic` y `video.list`, callback local y PKCE; el cliente OAuth local de Google con scopes de lectura y monetización sigue pendiente.

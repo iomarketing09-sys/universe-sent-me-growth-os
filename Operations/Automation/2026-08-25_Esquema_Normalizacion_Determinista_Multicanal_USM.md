@@ -4,7 +4,7 @@ purpose: "Definir una estructura auditable que conserve métricas nativas de Tik
 status: Review
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.5"
+version: "1.6"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
@@ -239,6 +239,8 @@ La suite bloqueó `socket.socket` durante la ejecución y confirmó `synthetic_b
 Como siguiente control de lectura, `validate_shadow_ledger_corruption_synthetic.py` generó inconsistencias exclusivamente sintéticas: JSONL malformado, secuencia sin genesis y referencia de supersedencia inexistente. `inspect_shadow_ledger_synthetic.py` las detectó sin modificar los bytes de los archivos temporales. No se habilita recuperación automática, reconstrucción de hechos ni materialización de datos reales.
 
 La cobertura sintética también incluye JSONL formalmente válido con contrato `genesis` incorrecto, tipo de evento desconocido, colisión de `observation_key` y `ledger_entry_key` alterado. La detección separa la lectura técnica de la validez semántica y mantiene la decisión de no reparar automáticamente el historial.
+
+La revisión estructurada añadió dos invariantes de lectura: cada observación persistida debe volver a pasar NORM-01 a NORM-12 y cada `ledger_entry_key` debe ser única. Un fallo se reporta como inconsistencia, sin recalcular campos, elegir una versión ni reparar el archivo. El esquema permanece en `Review` y su cobertura sintética no autoriza ninguna observación real.
 
 ## Referencias
 

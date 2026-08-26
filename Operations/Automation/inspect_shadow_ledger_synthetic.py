@@ -13,6 +13,7 @@ import json
 from pathlib import Path
 from typing import Any
 
+from normalize_metrics_dry_run import validate_row
 from shadow_ledger_private import BRAND, LEDGER_SCHEMA_VERSION, entry_key, load_events
 
 
@@ -42,6 +43,7 @@ def inspect_ledger(ledger_path: Path) -> dict[str, Any]:
         errors.append("genesis_contract_invalid")
 
     observed_keys: set[str] = set()
+    ledger_entry_keys: set[str] = set()
     superseded_keys: set[str] = set()
     for event in events:
         record_type = event.get("record_type")
@@ -56,8 +58,12 @@ def inspect_ledger(ledger_path: Path) -> dict[str, Any]:
         if not isinstance(observation_key, str) or not isinstance(ledger_entry_key, str):
             errors.append("observation_identity_invalid")
             continue
+        if ledger_entry_key in ledger_entry_keys:
+            errors.append("ledger_entry_key_duplicate")
         if entry_key(event) != ledger_entry_key:
             errors.append("entry_key_invalid")
+        if validate_row(event):
+            errors.append("observation_norm_invalid")
 
         previous_key = event.get("supersedes_observation_key")
         if previous_key is not None:
@@ -71,6 +77,7 @@ def inspect_ledger(ledger_path: Path) -> dict[str, Any]:
             errors.append("observation_key_collision")
 
         observed_keys.add(observation_key)
+        ledger_entry_keys.add(ledger_entry_key)
 
     return {
         "status": "valid" if not errors else "invalid",

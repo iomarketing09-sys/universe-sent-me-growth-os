@@ -108,6 +108,23 @@ def main() -> int:
             )
             assert_read_only(altered_entry_key, "entry_key_invalid")
 
+            invalid_norm = root / "invalid-normalized-observation.jsonl"
+            invalid_norm_events = seed_ledger(invalid_norm, fixture)
+            invalid_norm_events[1]["metric_value"] = -1
+            invalid_norm.write_text(
+                "".join(stable_json(event) + "\n" for event in invalid_norm_events),
+                encoding="utf-8",
+            )
+            assert_read_only(invalid_norm, "observation_norm_invalid")
+
+            duplicate_entry = root / "duplicate-ledger-entry-key.jsonl"
+            duplicate_entry_events = seed_ledger(duplicate_entry, fixture)
+            duplicate_entry.write_text(
+                "".join(stable_json(event) + "\n" for event in [*duplicate_entry_events, copy.deepcopy(duplicate_entry_events[1])]),
+                encoding="utf-8",
+            )
+            assert_read_only(duplicate_entry, "ledger_entry_key_duplicate")
+
     print(
         json.dumps(
             {
@@ -120,6 +137,8 @@ def main() -> int:
                     "unknown_record_type_detected",
                     "observation_key_collision_detected",
                     "altered_entry_key_detected",
+                    "invalid_normalized_observation_detected",
+                    "duplicate_ledger_entry_key_detected",
                     "byte_invariance_confirmed",
                 ],
                 "guarantees": ["synthetic_only", "temporary_ledger_only", "network_socket_blocked", "read_only_inspection", "no_automatic_repair", "no_canonical_write"],
