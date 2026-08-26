@@ -11,6 +11,7 @@ related_documents:
   - "GrowthOS/08_00_Metricas_Baseline_Plataformas.md"
   - "GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md"
   - "Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md"
+  - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
   - "GrowthOS/todo.md"
 organization: "Operations/Automation"
@@ -224,6 +225,10 @@ Antes de `G-NORM-4` requerirán actualización coordinada `GrowthOS/14_00_Fuente
 El piloto privado procesó en memoria un máximo de ocho registros fuente por plataforma a partir de evidencia local ya existente. Facebook procesó 8 de 25 registros fuente y normalizó 24 observaciones: 22 válidas y 2 parciales por shares no disponibles. Instagram procesó 8 de 25 y normalizó 48 observaciones: 37 válidas y 11 parciales; `saves_native` quedó no disponible en toda la muestra y `views_native` solo estuvo disponible en 5 de 8 media. TikTok procesó 8 de 9 registros y normalizó 32 observaciones válidas. YouTube procesó 8 de 8 filas de rendimiento y normalizó 72 observaciones válidas; monetización quedó totalmente excluida.
 
 No hubo observaciones rechazadas ni duplicados en el piloto. El reporte no expuso IDs, textos, URLs, valores nativos, rutas, tokens, hashes o monetización, y el proceso no escribió evidencia, datos normalizados, ledgers, Google Sheets, OmniRoute ni cron. La cobertura valida los adaptadores y reglas de disponibilidad, pero no convierte el diseño en `Active`: G-NORM-4 requeriría una autorización separada para un shadow ledger privado append-only.
+
+### Preparación de G-NORM-4
+
+La implementación sintética de G-NORM-4 está descrita en `2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md`. `shadow_ledger_private.py` solo acepta fixtures con `synthetic = true`, inicializa un archivo JSONL privado con evento genesis y agrega observaciones completas como eventos inmutables. La batería sintética confirmó inserción inicial, repetición idempotente, rechazo de colisión no supersedida y corrección append-only. Esta preparación no activa la inserción de datos reales ni altera la condición `Review` del esquema.
 
 ## Referencias
 

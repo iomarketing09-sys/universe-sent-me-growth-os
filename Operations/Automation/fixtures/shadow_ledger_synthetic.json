@@ -1,0 +1,35 @@
+{
+  "synthetic": true,
+  "brand": "Universe Sent Me",
+  "fixture_version": "1.0",
+  "observations": [
+    {
+      "brand": "Universe Sent Me",
+      "platform": "tiktok",
+      "target_account_confirmed": true,
+      "entity_scope": "content",
+      "platform_content_id": "synthetic-shadow-content-01",
+      "metric_name": "views_native",
+      "metric_value": 42,
+      "metric_unit": "count",
+      "metric_definition": "Synthetic TikTok view counter at capture for shadow-ledger test.",
+      "window_type": "lifetime_at_capture",
+      "window_start_utc": null,
+      "window_end_utc": null,
+      "published_at_utc": "2099-01-01T12:00:00Z",
+      "observed_at_utc": "2099-01-02T12:00:00Z",
+      "source_system": "tiktok_display_api",
+      "source_endpoint": "synthetic_shadow_test",
+      "source_schema_version": "synthetic-v1",
+      "availability_status": "available",
+      "availability_reason": null,
+      "comparability_tier": "C1_same_platform_observed",
+      "evidence_fingerprint": "1111111111111111111111111111111111111111111111111111111111111111",
+      "publication_ref": null,
+      "concept_id": null,
+      "cnt_id": null,
+      "experiment_id": null,
+      "hypothesis_id": null
+    }
+  ]
+}

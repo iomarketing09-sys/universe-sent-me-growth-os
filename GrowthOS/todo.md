@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "6.8"
+version: "7.0"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -88,7 +88,11 @@ organization: "GrowthOS"
 - [x] Definir G-NORM-3 con máximo de 8 registros fuente por plataforma; prohibir texto, URLs, IDs en salida, rutas, tokens, monetización y datos de otras marcas.
 - [x] Implementar `normalize_metrics_private_pilot.py` para leer únicamente la evidencia privada local más reciente de TikTok, YouTube, Facebook e Instagram y emitir un reporte de cobertura local sin persistir observaciones normalizadas.
 - [x] Ejecutar G-NORM-3 sobre muestras reales privadas: las cuatro plataformas completaron cobertura sin filas rechazadas; se conservó solo el reporte agregado y no se escribieron ledgers, Sheets, OmniRoute ni cron.
-- [ ] Revisar el reporte G-NORM-3 y decidir si se autoriza `G-NORM-4`: un shadow ledger privado append-only, todavía sin escribir datos canónicos, Sheets o modelos.
+- [x] Revisar el reporte G-NORM-3 y autorizar `G-NORM-4`: un shadow ledger privado append-only, todavía sin escribir datos canónicos, Sheets o modelos.
+- [x] Definir la ruta privada, el esquema JSONL, las reglas append-only, la llave de idempotencia, la supersedencia y los permisos restrictivos del shadow ledger.
+- [x] Implementar `shadow_ledger_private.py`, un escritor/validador local que acepta solamente fixtures sintéticos válidos y nunca escribe GitHub, `Normalized_Metric_Observation_Log`, Sheets, OmniRoute o cron.
+- [x] Probar idempotencia, rechazo de actualización in-place y corrección mediante supersedencia usando únicamente observaciones sintéticas; la batería pasó en ruta temporal privada.
+- [ ] Ejecutar una demostración privada acotada del shadow ledger y documentar su integridad sin materializar datos reales en destinos canónicos.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
 - [x] Configurar y autorizar la app de escritorio Sandbox de TikTok con los scopes oficiales mínimos `user.info.basic` y `video.list`, callback local y PKCE; el cliente OAuth local de Google con scopes de lectura y monetización sigue pendiente.
 - [ ] Reemplazar la consulta de Windsor.ai por scripts locales de TikTok y YouTube antes del fin del Trial, manteniendo Facebook e Instagram en sus rutas existentes.
