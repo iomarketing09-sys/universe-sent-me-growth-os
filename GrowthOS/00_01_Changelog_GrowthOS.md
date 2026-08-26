@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.85
+**Versión:** 4.86
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.86.00] — 2026-08-25 (Fernando/Manus): Headroom evaluado y no adoptado para el pipeline de métricas.** Fernando solicitó evaluar el plugin Headroom. La investigación oficial confirmó que es una capa local de compresión de contexto para LLMs, no un plugin de analítica social ni un collector. Su CCR conserva contenido original en caché local —30 minutos por defecto en el proxy— y su memoria persistente puede usar SQLite, HNSW y FTS5. Dado que el disco Xubuntu no tiene cifrado confirmado y G-NORM-4R sigue bloqueado, Headroom no se conecta a collectors, evidencia, shadow ledger, normalización, OmniRoute ni briefs reales. Solo podría considerarse un benchmark futuro con fixture ficticio, sin memoria, `learn`, `wrap` ni contexto compartido, bajo un gate separado. Documento nuevo: `Operations/Research/2026-08-25_Evaluacion_Headroom_Contexto_IA_USM.md` v1.0.
 
 - **[4.85.00] — 2026-08-25 (Fernando/Manus): Revisión estructurada de la matriz sintética y dictamen limitado.** Fernando autorizó continuar con la revisión humana del contrato `Review`. La evaluación encontró dos controles de lectura faltantes y los añadió al inspector sintético: `observation_norm_invalid` verifica que un evento ya escrito sigue cumpliendo NORM-01 a NORM-12; `ledger_entry_key_duplicate` detecta repetición exacta de una entrada. La matriz ahora ejecuta nueve detecciones más la invariancia byte a byte, y tanto `synthetic_boundary_suite_passed` como `shadow_ledger_corruption_synthetic_validation_passed` permanecieron en PASS. El dictamen confirma suficiencia limitada para el contrato exclusivamente sintético, no para datos reales. El contrato sigue `Review`; G-NORM-4R, ledger persistente, datos reales, Drive/GitHub como ledger, Sheets, OmniRoute y cron permanecen bloqueados. Documentos actualizados: shadow ledger v1.4, esquema v1.6 y guía v3.3.
 
