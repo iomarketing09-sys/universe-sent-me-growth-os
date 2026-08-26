@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-26
-version: "2.72"
+version: "2.73"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -614,3 +614,12 @@ Evidencia relacionada: `Operations/Research/2026-08-25_PUB-FB-17_30-47_E0_Execut
 La nueva revisión de comentarios recientes no pudo iniciar. La inspección read-only mostró `Universe Sent Me Meta API` (`76925630-05da-4aa7-878d-64a6a520ca6d`) como `enabled=false`, y `Operations/Automation/audit_facebook_comments_get_only.py` terminó antes de consultar Meta porque `META_PAGE_ACCESS_TOKEN` no estaba disponible.
 
 El resultado es **sin lectura disponible**, no cero novedades. No hubo llamadas GET exitosas, no se consultaron otras redes, no se realizaron escrituras en Meta y no se modificaron la cola ni el ledger. No se creó un review vacío ni se reutilizaron aprobaciones. Evidencia: `Operations/Research/2026-08-26_18-10-32_Facebook_Comment_Review_Blocker.json`.
+
+
+## 35. Corte Facebook GET-only con propuesta puntual — 26 de agosto de 2026
+
+El auditor reusable ejecutó un corte de solo lectura mediante Meta Graph API v26.0 con cursor `2026-08-25T22:11:14+00:00`. Cubrió 20 publicaciones propias, 109 comentarios raíz y 292 IDs estructurales; detectó 27 unidades nuevas, de las cuales 25 eran pendientes no registradas y 2 ya tenían respuesta directa de la Página. Los 25 pendientes se separaron en 13 raíces y 12 réplicas.
+
+La clasificación generó una sola propuesta específica para Wilfred —`Wilfred ya tomó nota: un guiño y un toque de canela. 🌲😂`— en `Pendiente_Fernando`. Los otros 24 IDs quedaron como `No_Requiere_Respuesta`. El ledger anonimizado quedó en **644 filas / 644 IDs únicos**, validación `PASS`, y la cola contiene 1 propuesta nueva más los 2 casos de contexto previos. No se ejecutaron escrituras en Meta ni se reutilizaron aprobaciones.
+
+**Evidencia:** `Operations/Research/2026-08-26_18-15-41_Facebook_Comment_Review_GET_Only.json`, `Operations/Research/2026-08-26_18-15-41_Facebook_Editorial_Review_GET_Only.json`, `Operations/Research/2026-08-26_18-15-41_Facebook_Comment_Review_Report.md` y `Operations/Research/2026-08-26_18-15-41_Facebook_Pending_Queue_GET_Only.json`.

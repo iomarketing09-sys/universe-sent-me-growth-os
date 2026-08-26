@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-26
-version: "7.7"
+version: "7.8"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -1496,3 +1496,14 @@ Se intentó ejecutar `Operations/Automation/audit_facebook_comments_get_only.py`
 No existe un conteo de delta válido: el resultado es **sin lectura disponible**, no cero novedades. Hubo 0 llamadas GET exitosas, 0 consultas a otras redes, 0 operaciones POST/PUT/DELETE, 0 publicaciones, 0 ocultamientos y 0 modificaciones de contenido, cola o ledger. No se creó un review vacío ni se reutilizaron aprobaciones. Evidencia sanitizada: `Operations/Research/2026-08-26_18-10-32_Facebook_Comment_Review_Blocker.json`.
 
 El siguiente paso seguro es restaurar el acceso del conector existente y volver a ejecutar el auditor reusable con su cursor dinámico.
+
+
+## 56. Corte reciente: 25 pendientes nuevos y 1 propuesta — 26 de agosto de 2026
+
+Con el conector Meta activo, `Operations/Automation/audit_facebook_comments_get_only.py` realizó el corte solicitado mediante Meta Graph API v26.0. El auditor usó como cursor `2026-08-25T22:11:14+00:00`, revisó 20 publicaciones propias, observó 109 raíces y 292 IDs estructurales, y no registró errores de API.
+
+El delta fue de **27 unidades nuevas**: 25 comentarios nuevos sin respuesta y 2 unidades que ya tenían respuesta directa de la Página. Los 25 pendientes se separaron en **13 comentarios raíz y 12 réplicas anidadas**. La clasificación produjo **1 propuesta específica** para Wilfred —`Wilfred ya tomó nota: un guiño y un toque de canela. 🌲😂`— y **24 `No_Requiere_Respuesta`**: 12 conversaciones laterales, 3 sin texto, 3 etiquetas/referencias aisladas, 4 de baja señal y 2 con lenguaje íntimo/sexualizado.
+
+El ledger quedó en **644 filas / 644 IDs únicos**, validación `PASS` y privacidad anonimizada. La cola fue actualizada únicamente con la propuesta en `Pendiente_Fernando`; los 2 casos de contexto previos permanecen intactos. No hubo POST, PUT, DELETE, publicaciones, ocultamientos ni modificaciones en Meta. No se reutilizaron aprobaciones.
+
+**Evidencia:** `Operations/Research/2026-08-26_18-15-41_Facebook_Comment_Review_GET_Only.json`, `Operations/Research/2026-08-26_18-15-41_Facebook_Editorial_Review_GET_Only.json`, `Operations/Research/2026-08-26_18-15-41_Facebook_Comment_Review_Report.md` y `Operations/Research/2026-08-26_18-15-41_Facebook_Pending_Queue_GET_Only.json`.

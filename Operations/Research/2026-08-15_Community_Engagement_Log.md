@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-26
-version: "7.2"
+version: "7.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -985,5 +985,18 @@ Fernando solicitó una nueva revisión de comentarios pendientes. Se verificó e
 El resultado es **sin lectura disponible**, no cero comentarios. No hubo llamadas GET exitosas, no se consultaron otras redes, no se ejecutaron POST, PUT ni DELETE, y no se modificaron publicaciones, respuestas, ocultamientos, cola ni ledger. No se generó un review vacío ni se reutilizaron aprobaciones. Evidencia: `Operations/Research/2026-08-26_18-10-32_Facebook_Comment_Review_Blocker.json`.
 
 El siguiente paso seguro es restaurar el acceso del conector existente y ejecutar el mismo auditor con su cursor dinámico.
+
+**Documentos relacionados:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 40. Corte GET-only con 25 IDs nuevos y una propuesta — 26 de agosto de 2026
+
+Tras verificarse como activo el conector `Universe Sent Me Meta API`, el auditor reusable `Operations/Automation/audit_facebook_comments_get_only.py` ejecutó una revisión exclusivamente de la Página de Facebook Universe Sent Me mediante Meta Graph API v26.0. Usó como cursor `2026-08-25T22:11:14+00:00`, cubrió 20 publicaciones propias, observó 109 comentarios raíz y 292 IDs estructurales, y registró 0 errores de API.
+
+El delta fue de **27 unidades nuevas** desde el cursor: **25 comentarios nuevos pendientes sin registrar** y 2 unidades nuevas que ya tenían respuesta directa de la Página. Entre los 25 pendientes se identificaron **13 comentarios raíz y 12 réplicas anidadas**. Se generó 1 propuesta específica para el comentario dirigido al personaje Wilfred: `Wilfred ya tomó nota: un guiño y un toque de canela. 🌲😂`, en estado `Pendiente_Fernando`. Los otros 24 IDs fueron clasificados como `No_Requiere_Respuesta`: 12 conversaciones laterales entre usuarios, 3 comentarios sin texto, 3 etiquetas o referencias aisladas, 4 reacciones/comentarios de baja señal y 2 comentarios raíz con lenguaje íntimo o sexualizado.
+
+El registrador `Operations/Automation/record_facebook_review_get_only_2026_08_26_1815.py` añadió los 25 IDs al ledger anonimizado, que quedó en **644 filas / 644 IDs únicos** con validación `PASS`. La cola vigente ahora contiene 1 propuesta pendiente, conserva los 2 casos de contexto existentes y acumula las no acciones documentadas. No se ejecutaron POST, PUT ni DELETE, no se publicó ninguna respuesta y no se consultaron otras redes.
+
+**Evidencia:** `Operations/Research/2026-08-26_18-15-41_Facebook_Comment_Review_GET_Only.json`, `Operations/Research/2026-08-26_18-15-41_Facebook_Editorial_Review_GET_Only.json`, `Operations/Research/2026-08-26_18-15-41_Facebook_Comment_Review_Report.md` y `Operations/Research/2026-08-26_18-15-41_Facebook_Pending_Queue_GET_Only.json`.
 
 **Documentos relacionados:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

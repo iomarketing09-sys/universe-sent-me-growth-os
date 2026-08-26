@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-26
-**Versión:** 5.16
+**Versión:** 5.17
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.17.00] — 2026-08-26 (Fernando/Manus): Corte Facebook GET-only con 25 pendientes nuevos y 1 propuesta específica.** El auditor reusable utilizó el cursor `2026-08-25T22:11:14+00:00`, revisó 20 publicaciones propias, observó 109 raíces y 292 IDs estructurales, y detectó 27 unidades nuevas: 25 comentarios sin respuesta y 2 ya respondidos por la Página. Los 25 pendientes fueron 13 raíces y 12 réplicas; se generó 1 propuesta para Wilfred y 24 `No_Requiere_Respuesta`. Hubo 0 errores de API, no se consultaron otras redes y no se ejecutaron escrituras en Meta. El ledger quedó en 644 filas / 644 IDs únicos con validación `PASS`; la cola conserva 1 propuesta `Pendiente_Fernando` y 2 casos de contexto previos. Evidencia: `Operations/Research/2026-08-26_18-15-41_Facebook_Comment_Review_GET_Only.json`, `Operations/Research/2026-08-26_18-15-41_Facebook_Editorial_Review_GET_Only.json`, `Operations/Research/2026-08-26_18-15-41_Facebook_Comment_Review_Report.md` y `Operations/Research/2026-08-26_18-15-41_Facebook_Pending_Queue_GET_Only.json`.
 
 - **[5.16.00] — 2026-08-26 (Fernando/Manus): Plan B rEFInd reversible diseñado, sin instalación.** La inspección confirmó que la ESP actual solo contiene `EFI/BOOT` y `EFI/ubuntu`, `Boot0000` sigue iniciando Ubuntu y `Boot0080` apunta a un rEFInd antiguo no existente. El paquete Ubuntu candidato `refind` 0.14.2-2.1 está disponible y el iMac no soporta Secure Boot, por lo que no se planifican shim, MOK ni llaves. Se creó `2026-08-26_Plan_B_rEFInd_Seleccion_USB_USM.md` y un wrapper `--plan` que solo revisa ESP, paquete, Secure Boot y NVRAM. La instalación posterior, sus archivos bajo `EFI/refind`, la entrada NVRAM nueva y la reversión requieren autorizaciones independientes. No se instaló paquete, no se modificó ESP/NVRAM, no se arrancó USB ni se tocó LUKS, el respaldo o datos USM.
 
