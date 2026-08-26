@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-26
-**Versión:** 5.17
+**Versión:** 5.18
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.18.00] — 2026-08-26 (Fernando/Manus): rEFInd instalado como Plan B, pendiente de primer arranque.** Tras preflight y autorización explícita G-MIG-LUKS-1.4f, se guardó un snapshot local EFI/NVRAM y se instaló `refind` 0.14.2-2.1 con la dependencia `gawk`. El paquete creó `EFI/refind/refind_x64.efi` y `Boot0001`, dejó intactos `EFI/ubuntu` y `Boot0000`, y cambió `BootOrder` a `0001,0000,0080`. El disco `Fernando` no participó; no se reinició, no se instaló Xubuntu, no se tocaron particiones ni LUKS. El siguiente control es arrancar visualmente rEFInd con la USB Xubuntu y detenerse antes de cualquier operación del instalador.
 
 - **[5.17.00] — 2026-08-26 (Fernando/Manus): Corte Facebook GET-only con 25 pendientes nuevos y 1 propuesta específica.** El auditor reusable utilizó el cursor `2026-08-25T22:11:14+00:00`, revisó 20 publicaciones propias, observó 109 raíces y 292 IDs estructurales, y detectó 27 unidades nuevas: 25 comentarios sin respuesta y 2 ya respondidos por la Página. Los 25 pendientes fueron 13 raíces y 12 réplicas; se generó 1 propuesta para Wilfred y 24 `No_Requiere_Respuesta`. Hubo 0 errores de API, no se consultaron otras redes y no se ejecutaron escrituras en Meta. El ledger quedó en 644 filas / 644 IDs únicos con validación `PASS`; la cola conserva 1 propuesta `Pendiente_Fernando` y 2 casos de contexto previos. Evidencia: `Operations/Research/2026-08-26_18-15-41_Facebook_Comment_Review_GET_Only.json`, `Operations/Research/2026-08-26_18-15-41_Facebook_Editorial_Review_GET_Only.json`, `Operations/Research/2026-08-26_18-15-41_Facebook_Comment_Review_Report.md` y `Operations/Research/2026-08-26_18-15-41_Facebook_Pending_Queue_GET_Only.json`.
 

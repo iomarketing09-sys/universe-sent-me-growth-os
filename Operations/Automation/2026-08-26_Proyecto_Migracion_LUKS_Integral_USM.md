@@ -4,7 +4,7 @@ purpose: "Definir los gates y la secuencia reversible para reinstalar Xubuntu co
 status: Draft
 created: 2026-08-26
 updated: 2026-08-26
-version: "0.5"
+version: "0.6"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -96,6 +96,8 @@ La siguiente decisión práctica es reservar un USB vacío de **al menos 16 GB**
 La USB reutilizada contiene un instalador Xubuntu 26.04 válido, pero no pudo seleccionarse desde el iMac Intel con el teclado actual: Option/Alt no fue reconocido, la entrada rEFInd histórica `Boot0080` estaba rota y un intento de `BootNext` volvió al sistema interno. La consola GRUB del sistema interno tampoco expuso el cargador de la USB. Ninguno de esos diagnósticos modificó particiones, archivos EFI, orden persistente de arranque ni datos.
 
 El proyecto conserva dos rutas: conseguir temporalmente un teclado Apple/Mac compatible por cable, sin cambios persistentes; o instalar rEFInd mediante el plan Draft `2026-08-26_Plan_B_rEFInd_Seleccion_USB_USM.md`. La segunda ruta requiere una aprobación distinta porque instala un paquete, escribe una ruta nueva bajo `EFI/refind` y puede crear una entrada UEFI/NVRAM. No autoriza la instalación Xubuntu ni G-MIG-LUKS-1.5.
+
+Fernando autorizó y ejecutó G-MIG-LUKS-1.4f. El paquete `refind` creó `EFI/refind/refind_x64.efi` y la entrada nueva `Boot0001`, dejando `Boot0000` y `EFI/ubuntu` presentes. El instalador cambió el orden a `0001,0000,0080`; todavía no se ha reiniciado ni probado rEFInd. El siguiente paso sigue siendo solo la revisión visual de la USB, no una instalación ni un cambio de disco.
 
 Antes de la instalación debe haber alimentación estable, tiempo suficiente para interrupciones y la confirmación de que no existe otro sistema operativo o dato no inventariado en `sda` que deba preservarse. El proyecto asume reinstalación limpia del único disco interno; si aparece una partición o requisito nuevo, el plan se detendrá y se revisará.
 

@@ -1,10 +1,10 @@
 ---
 title: "Plan B rEFInd para selección temporal de USB — Universe Sent Me"
 purpose: "Recuperar de forma reversible el selector de arranque necesario para revisar la USB instaladora de Xubuntu, sin autorizar todavía la instalación de Xubuntu ni operaciones de disco."
-status: Draft
+status: Review
 created: 2026-08-26
 updated: 2026-08-26
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-26_Proyecto_Migracion_LUKS_Integral_USM.md"
@@ -70,6 +70,21 @@ El comando `refind-install` puede añadir una entrada NVRAM y copia archivos a l
 Al aparecer rEFInd se seleccionará únicamente la entrada que identifique la USB Xubuntu. Si rEFInd muestra solo el sistema interno, o si no aparece, se detiene y se vuelve a Xubuntu sin instalar nada. Una sesión rEFInd no es autorización para pulsar acciones del instalador que borren, particionen, formateen o cifren el disco interno.
 
 La revisión G-MIG-LUKS-1.4 termina al comprobar visualmente si el instalador ofrece cifrado y al salir sin aplicar cambios. El siguiente gate destructivo G-MIG-LUKS-1.5 sigue siendo independiente y requerirá autorización nueva, explícita y específica para el disco interno identificado en ese momento.
+
+## Ejecución registrada de G-MIG-LUKS-1.4f
+
+Fernando autorizó la instalación y ejecutó el preflight final el 26 de agosto de 2026. El snapshot previo se guardó localmente bajo `/var/lib/usm-migration/refind-snapshots/20260826T181952Z`. Después, `apt` instaló `refind` `0.14.2-2.1` y su dependencia `gawk`, sin actualizaciones ni eliminaciones de paquetes.
+
+| Verificación posterior | Resultado | Estado |
+|---|---|---|
+| Ruta nueva | Existe `EFI/refind/refind_x64.efi` y `EFI/refind/refind.conf`, junto con iconos, llaves y el driver `ext4_x64.efi`. | Confirmado. |
+| Cargador Ubuntu | `EFI/ubuntu/shimx64.efi` y `EFI/ubuntu/grubx64.efi` continúan presentes. | Confirmado. |
+| Entrada Ubuntu | `Boot0000` sigue apuntando a `\EFI\ubuntu\shimx64.efi`. | Confirmado. |
+| Entrada rEFInd nueva | `Boot0001` apunta a `\EFI\refind\refind_x64.efi` sobre la misma ESP actual. | Confirmado. |
+| Orden de arranque | El instalador dejó `BootOrder: 0001,0000,0080`; rEFInd quedó primero, Ubuntu segundo y `Boot0080` antiguo permanece sin tocar. | Confirmado; pendiente de prueba de arranque. |
+| Discos y respaldo | No se instalaron Xubuntu ni LUKS, no se modificaron particiones y el disco `Fernando` permaneció fuera de la operación. | Confirmado. |
+
+La comparación automatizada con `diff` no pudo leer la sustitución de proceso mediante `sudo` (`/dev/fd/63`), pero las salidas directas de EFI y NVRAM permiten verificar las rutas y entradas anteriores. El próximo control no escribe: reiniciar una sola vez con la USB Xubuntu conectada, observar rEFInd y seleccionar únicamente el medio USB. Si no aparece o no lista la USB, se vuelve a Ubuntu sin entrar al instalador y se detiene para diagnóstico.
 
 ## Reversión condicionada a la evidencia posterior
 
