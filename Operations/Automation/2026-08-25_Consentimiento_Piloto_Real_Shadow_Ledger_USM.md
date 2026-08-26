@@ -69,6 +69,18 @@ El diagnóstico local del 25 de agosto de 2026 mostró la raíz de Xubuntu monta
 
 No se ejecutará ninguna de estas alternativas automáticamente. Mientras el cifrado no sea confirmado, el escritor real permanece desactivado y el shadow ledger seguirá aceptando solo `synthetic = true`.
 
+## Evaluación de Drive y GitHub
+
+Ni GitHub ni Google Drive están autorizados como **ledger activo** para observaciones reales privadas. El ledger contiene identificadores nativos mínimos, tiempos de observación, valores de métricas y hashes; aunque no contenga tokens o raw, sigue siendo un conjunto privado que debe conservar garantías de append-only, control de acceso y retención limitada.
+
+| Destino | Decisión | Motivo operativo |
+|---|---|---|
+| Repositorio GitHub | **Prohibido** como shadow ledger. | El historial de commits dificulta cumplir retención/eliminación; la exposición de metadata y el riesgo de configuración/acceso son incompatibles con el aislamiento requerido. GitHub conserva documentación y código, no observaciones reales. |
+| Google Drive | **No permitido** como ledger activo. | Versionado y permisos de Drive no garantizan append-only ni idempotencia. No debe recibir observaciones, evidencia, IDs, valores, hashes, tokens o datos financieros del piloto. |
+| Drive como backup cifrado de un volumen local protegido | **Posible solo en un gate futuro.** | Requeriría cifrado del archivo antes de salir de Xubuntu, llave exclusiva fuera de Drive, política de restauración y aprobación específica. No sustituye el almacenamiento local cifrado. |
+
+La alternativa operativa más segura sigue siendo un volumen cifrado local dedicado. Solo después de validarlo se podría evaluar un respaldo cifrado externo como contingencia; nunca GitHub ni Drive como fuente activa del ledger.
+
 ## Referencias
 
 [1] [Shadow ledger privado append-only](2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md)

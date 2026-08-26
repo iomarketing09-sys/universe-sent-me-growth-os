@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "7.4"
+version: "7.5"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -98,6 +98,8 @@ organization: "GrowthOS"
 - [x] Verificar el disco local de Xubuntu: la raíz está montada directamente desde `sda2` con `ext4`, sin capa `crypto_LUKS` o `crypt`; no se considera cifrado confirmado.
 - [ ] Resolver el requisito de almacenamiento protegido antes de activar G-NORM-4R: cifrar el disco de Xubuntu mediante una migración planificada o usar un volumen cifrado local dedicado; no insertar datos reales antes de esta confirmación.
 - [x] Mantener bloqueados el escritor real y la muestra real privada: el shadow ledger acepta únicamente fixtures sintéticos mientras no exista cifrado local confirmado.
+- [ ] Evaluar Google Drive y GitHub como posibles destinos del shadow ledger privado, verificando privacidad, permisos, versionado append-only, retención y separación de fuentes canónicas.
+- [ ] Definir, si procede, una alternativa de almacenamiento permitida que no exponga observaciones reales, evidencia, IDs, valores, hashes, tokens o datos financieros; no trasladar archivos sin aprobación separada.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
 - [x] Configurar y autorizar la app de escritorio Sandbox de TikTok con los scopes oficiales mínimos `user.info.basic` y `video.list`, callback local y PKCE; el cliente OAuth local de Google con scopes de lectura y monetización sigue pendiente.
 - [ ] Reemplazar la consulta de Windsor.ai por scripts locales de TikTok y YouTube antes del fin del Trial, manteniendo Facebook e Instagram en sus rutas existentes.

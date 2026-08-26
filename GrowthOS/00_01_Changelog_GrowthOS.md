@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.80
+**Versión:** 4.81
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.81.00] — 2026-08-25 (Fernando/Manus): GitHub y Drive descartados como ledger activo del piloto real.** A solicitud de Fernando se evaluaron Drive y GitHub ante el bloqueo de cifrado local. GitHub queda prohibido para observaciones reales por historial, retención y exposición de metadata; conservará solo código y documentación. Google Drive no es un ledger activo permitido porque no garantiza append-only o idempotencia y no debe recibir observaciones, evidencia, IDs, valores, hashes, tokens o monetización. Únicamente un respaldo cifrado fuera de Xubuntu podría evaluarse en un gate futuro, después de contar con volumen local cifrado, cifrado previo al upload, llave externa y política de restauración. La alternativa operativa sigue siendo un volumen cifrado local dedicado. Documento actualizado: consentimiento de piloto real v1.2.
 
 - **[4.80.00] — 2026-08-25 (Fernando/Manus): G-NORM-4R bloqueado por ausencia de cifrado local confirmado.** Fernando aprobó los límites, retención y aislamiento del piloto real privado, pero indicó no conocer el estado de cifrado. El diagnóstico no destructivo mostró que `/` se monta directamente desde `sda2` como `ext4`, sin `crypto_LUKS` ni tipo `crypt`. Por seguridad, G-NORM-4R permanece bloqueado: no se crea el ledger persistente, no se adapta el escritor para datos reales y no se insertan observaciones reales. El consentimiento Draft v1.1 registra tres alternativas no ejecutadas: continuar sintético, migrar Xubuntu a LUKS con respaldo y proyecto separado, o crear un volumen local cifrado dedicado con aprobación separada. Documentos actualizados: consentimiento v1.1 y guía de piloto v2.9.
 
