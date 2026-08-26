@@ -3,8 +3,8 @@ title: "Fuente maestra y ledgers del Growth OS"
 purpose: "Definir una arquitectura mínima y unificada para que inventario, publicaciones, calendarios y aprendizaje compartan IDs sin duplicar datos ni repetir consultas innecesarias."
 status: Active
 created: 2026-08-15
-updated: 2026-08-25
-version: "2.71"
+updated: 2026-08-26
+version: "2.72"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -607,3 +607,10 @@ El último corte diario disponible cubrió seis posts de imagen y registró 155 
 La corrección prioritaria es de instrumentación: conservar `shares` como ausente cuando Meta no lo exponga, validar los tres contadores antes de promover a `Valid_E0`, mantener tres intentos controlados dentro de ±600 segundos y alertar sin imputar cuando falte un contador. E24/E72 deben continuar bloqueados hasta el primer E0 válido. Mientras tanto, el sistema puede avanzar con cortes diarios descriptivos, comunidad, reconciliación de Reels, afiliados, preparación de cohortes y gobernanza de fuentes; no puede cerrar formalmente hipótesis ni elevar su madurez.
 
 Evidencia relacionada: `Operations/Research/2026-08-25_PUB-FB-17_30-47_E0_Execution_Evidence.json`, `Operations/Research/2026-08-25_22-11-14_Facebook_Comment_Review_Report.md`, `Operations/Research/Metrics_Snapshot_Log.csv` y `Operations/Research/2026-08-24_Corte_Diario_Metricas_2200.md`.
+
+
+## 34. Corte Facebook GET-only bloqueado — 26 de agosto de 2026
+
+La nueva revisión de comentarios recientes no pudo iniciar. La inspección read-only mostró `Universe Sent Me Meta API` (`76925630-05da-4aa7-878d-64a6a520ca6d`) como `enabled=false`, y `Operations/Automation/audit_facebook_comments_get_only.py` terminó antes de consultar Meta porque `META_PAGE_ACCESS_TOKEN` no estaba disponible.
+
+El resultado es **sin lectura disponible**, no cero novedades. No hubo llamadas GET exitosas, no se consultaron otras redes, no se realizaron escrituras en Meta y no se modificaron la cola ni el ledger. No se creó un review vacío ni se reutilizaron aprobaciones. Evidencia: `Operations/Research/2026-08-26_18-10-32_Facebook_Comment_Review_Blocker.json`.

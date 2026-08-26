@@ -3,8 +3,8 @@ title: "Community Engagement Log — Universe Sent Me"
 purpose: "Registrar de forma ligera, append-only y anonimizada las señales cualitativas de comentarios, las respuestas humanas y los aprendizajes editoriales de la comunidad."
 status: Active
 created: 2026-08-15
-updated: 2026-08-25
-version: "7.1"
+updated: 2026-08-26
+version: "7.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -976,3 +976,14 @@ El resultado es **sin lectura disponible**, no cero comentarios. No hubo llamada
 El siguiente paso seguro es restaurar el acceso del conector existente y ejecutar el auditor reusable con su cursor dinámico; no se debe crear otro conector ni reutilizar aprobaciones.
 
 **Documentos relacionados que requieren alineación:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 39. Revisión de comentarios recientes bloqueada — 26 de agosto de 2026
+
+Fernando solicitó una nueva revisión de comentarios pendientes. Se verificó el conector existente `Universe Sent Me Meta API` (`76925630-05da-4aa7-878d-64a6a520ca6d`) y apareció `enabled=false`. El auditor reusable `Operations/Automation/audit_facebook_comments_get_only.py` se intentó ejecutar, pero se detuvo antes de cualquier llamada a Meta porque `META_PAGE_ACCESS_TOKEN` no estaba disponible.
+
+El resultado es **sin lectura disponible**, no cero comentarios. No hubo llamadas GET exitosas, no se consultaron otras redes, no se ejecutaron POST, PUT ni DELETE, y no se modificaron publicaciones, respuestas, ocultamientos, cola ni ledger. No se generó un review vacío ni se reutilizaron aprobaciones. Evidencia: `Operations/Research/2026-08-26_18-10-32_Facebook_Comment_Review_Blocker.json`.
+
+El siguiente paso seguro es restaurar el acceso del conector existente y ejecutar el mismo auditor con su cursor dinámico.
+
+**Documentos relacionados:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

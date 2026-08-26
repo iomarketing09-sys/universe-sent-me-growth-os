@@ -3,8 +3,8 @@ title: "Auditoría de comentarios de Facebook y propuesta de Community Growth"
 purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y definir un sistema de escucha, respuesta y aprendizaje para Universe Sent Me."
 status: Active
 created: 2026-08-15
-updated: 2026-08-25
-version: "7.6"
+updated: 2026-08-26
+version: "7.7"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -1487,3 +1487,12 @@ El auditor reusable `Operations/Automation/audit_facebook_comments_get_only.py` 
 No existe un conteo de delta válido: esto no equivale a cero novedades. Hubo 0 llamadas Meta exitosas, 0 operaciones de escritura, 0 consultas a otras redes, 0 cambios en cola y 0 cambios en ledger; tampoco se creó un artefacto de revisión vacío. La evidencia sanitizada está en `Operations/Research/2026-08-25_22-33-10_Facebook_Comment_Review_Blocker.json`.
 
 El siguiente paso seguro es restaurar el acceso del conector existente y ejecutar el mismo auditor con su cursor dinámico. No se deben reutilizar aprobaciones ni cambiar de red.
+
+
+## 55. Revisión reciente bloqueada antes de la API — 26 de agosto de 2026
+
+Se intentó ejecutar `Operations/Automation/audit_facebook_comments_get_only.py` para revisar comentarios recientes pendientes de responder en la Página Universe Sent Me mediante Meta Graph API v26.0. La inspección read-only confirmó que el conector `Universe Sent Me Meta API` (`76925630-05da-4aa7-878d-64a6a520ca6d`) está `enabled=false`; el auditor terminó antes de cualquier solicitud porque `META_PAGE_ACCESS_TOKEN` no estaba disponible.
+
+No existe un conteo de delta válido: el resultado es **sin lectura disponible**, no cero novedades. Hubo 0 llamadas GET exitosas, 0 consultas a otras redes, 0 operaciones POST/PUT/DELETE, 0 publicaciones, 0 ocultamientos y 0 modificaciones de contenido, cola o ledger. No se creó un review vacío ni se reutilizaron aprobaciones. Evidencia sanitizada: `Operations/Research/2026-08-26_18-10-32_Facebook_Comment_Review_Blocker.json`.
+
+El siguiente paso seguro es restaurar el acceso del conector existente y volver a ejecutar el auditor reusable con su cursor dinámico.

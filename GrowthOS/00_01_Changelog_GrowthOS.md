@@ -3,9 +3,11 @@
 **Propósito:** Registro centralizado de hitos, integraciones, cambios estratégicos y actualizaciones de arquitectura. Este documento permite a los agentes (Manus, Claude, etc.) sincronizar contexto rápidamente sin re-leer todo el repositorio.
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
-**Última actualización:** 2026-08-25
-**Versión:** 5.14
+**Última actualización:** 2026-08-26
+**Versión:** 5.15
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.15.00] — 2026-08-26 (Fernando/Manus): Revisión Facebook GET-only bloqueada antes de la API.** El auditor reusable no pudo iniciar porque `META_PAGE_ACCESS_TOKEN` no estaba disponible; la verificación read-only confirmó `Universe Sent Me Meta API` como `enabled=false`. No existe conteo de delta válido —no equivale a cero comentarios—, no hubo llamadas GET exitosas, no se consultaron otras redes, no hubo POST/PUT/DELETE ni publicaciones, ocultamientos o modificaciones, y no se cambiaron la cola ni el ledger. Evidencia: `Operations/Research/2026-08-26_18-10-32_Facebook_Comment_Review_Blocker.json`. Siguiente paso seguro: restaurar el acceso del conector existente y ejecutar el auditor con su cursor dinámico.
 
 - **[5.14.00] — 2026-08-26 (Fernando/Manus): USB instaladora Xubuntu existente validada y reutilizada sin escritura.** La USB de 8 GB fue conectada en lugar de `STORE N GO` y apareció como `sdd` 7.2 GB modelo Cruze, con `Xubuntu 26.04 amd64` ISO9660, ESP y partición writable. Se decide reutilizarla sin crear un medio nuevo; `STORE N GO` queda intacta como alternativa de contingencia. El respaldo `Fernando` permaneció conectado y su checksum fue `OK`. El siguiente gate es una revisión visual de arranque que se detendrá antes de modificar `sda`; no se autorizó reinicio ni instalación. Proyecto actualizado a v0.4 y pendientes a v11.36.
 
