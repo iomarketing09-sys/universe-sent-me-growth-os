@@ -4,7 +4,7 @@ purpose: "Preparar una decisión reversible y respaldada sobre el almacenamiento
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -21,6 +21,12 @@ organization: "Operations/Automation"
 El diagnóstico del 25 de agosto de 2026 encontró que la raíz de Xubuntu está montada desde `sda2` como `ext4`, sin una capa `crypto_LUKS` ni dispositivo `crypt`. Por ello, G-NORM-4R permanece bloqueado: no hay shadow ledger persistente, inserciones reales ni materialización canónica.
 
 Este documento no autoriza comandos, formateos, particiones, cifrado, migraciones ni cambios de arranque. Su función es comparar dos caminos antes de iniciar un **proyecto separado** con respaldo verificado y aprobación explícita.
+
+## Decisión arquitectónica registrada
+
+Fernando eligió la **Alternativa A: migración planificada de Xubuntu a cifrado LUKS integral** como la dirección preferida para el crecimiento de Universe Sent Me. La decisión se basa en que el proyecto probablemente conservará más evidencia, configuraciones y automatizaciones locales que un piloto mínimo de ledger.
+
+Esta preferencia solo abre el gate de preparación G-SEC-1A: inventario, respaldo externo separado, prueba de restauración y ventana de mantenimiento. No autoriza todavía una migración, reinstalación, operación de disco, captura de datos reales ni activación de G-NORM-4R.
 
 > La protección requerida es cifrado de datos en reposo. No elimina por sí sola otros riesgos: un volumen montado queda disponible para la sesión activa, y el cifrado no reemplaza respaldo, permisos ni control de acceso.
 

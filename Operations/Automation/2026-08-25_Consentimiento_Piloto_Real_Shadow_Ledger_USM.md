@@ -4,7 +4,7 @@ purpose: "Proponer el alcance, retención, protección y rollback de una muestra
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.2"
+version: "1.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
@@ -71,6 +71,8 @@ El diagnóstico local del 25 de agosto de 2026 mostró la raíz de Xubuntu monta
 No se ejecutará ninguna de estas alternativas automáticamente. Mientras el cifrado no sea confirmado, el escritor real permanece desactivado y el shadow ledger seguirá aceptando solo `synthetic = true`.
 
 El plan comparativo no ejecutable de respaldo, recuperación, verificación y gates se documenta en `2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md`. Su creación no autoriza cifrar, reformatear, montar, migrar ni insertar observaciones reales.
+
+Fernando eligió la ruta de migración planificada a LUKS integral como preferencia arquitectónica. G-NORM-4R permanece bloqueado hasta completar el gate de respaldo y recuperación, realizar la migración bajo una autorización nueva y verificar el cifrado resultante.
 
 ## Evaluación de Drive y GitHub
 
