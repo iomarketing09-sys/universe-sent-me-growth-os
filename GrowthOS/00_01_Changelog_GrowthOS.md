@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.81
+**Versión:** 4.82
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.82.00] — 2026-08-25 (Fernando/Manus): Cobertura sintética ampliada y batería integrada aislada.** Por decisión de Fernando se mantuvo el sistema exclusivamente sintético. Se ampliaron los fixtures con un porcentaje nativo YouTube mayor a 100 preservado, ventana cerrada `C3_exact_window`, unidad de minutos y disponibilidad mixta; el shadow ledger añadió rechazo de supersedencia desconocida. `validate_synthetic_boundary_suite.py` ejecutó NORM-01 a NORM-12 y cinco pruebas append-only con `socket.socket` bloqueado. Devolvió `synthetic_boundary_suite_passed`, con garantías de fixture-only, sin red, ledger temporal y cero escritura canónica. No se usaron entorno, tokens, raw, rutas privadas, Drive, GitHub, Sheets, OmniRoute, cron o datos reales. El siguiente ejercicio permitido es sintético: detectar corrupción temporal o evidencia inconsistente sin reparación automática. Documentos actualizados: esquema v1.3 y guía v3.0.
 
 - **[4.81.00] — 2026-08-25 (Fernando/Manus): GitHub y Drive descartados como ledger activo del piloto real.** A solicitud de Fernando se evaluaron Drive y GitHub ante el bloqueo de cifrado local. GitHub queda prohibido para observaciones reales por historial, retención y exposición de metadata; conservará solo código y documentación. Google Drive no es un ledger activo permitido porque no garantiza append-only o idempotencia y no debe recibir observaciones, evidencia, IDs, valores, hashes, tokens o monetización. Únicamente un respaldo cifrado fuera de Xubuntu podría evaluarse en un gate futuro, después de contar con volumen local cifrado, cifrado previo al upload, llave externa y política de restauración. La alternativa operativa sigue siendo un volumen cifrado local dedicado. Documento actualizado: consentimiento de piloto real v1.2.
 

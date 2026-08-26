@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "7.5"
+version: "7.7"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -100,6 +100,11 @@ organization: "GrowthOS"
 - [x] Mantener bloqueados el escritor real y la muestra real privada: el shadow ledger acepta únicamente fixtures sintéticos mientras no exista cifrado local confirmado.
 - [ ] Evaluar Google Drive y GitHub como posibles destinos del shadow ledger privado, verificando privacidad, permisos, versionado append-only, retención y separación de fuentes canónicas.
 - [ ] Definir, si procede, una alternativa de almacenamiento permitida que no exponga observaciones reales, evidencia, IDs, valores, hashes, tokens o datos financieros; no trasladar archivos sin aprobación separada.
+- [x] Decidir continuar el sistema de normalización y shadow ledger exclusivamente con pruebas sintéticas mientras no exista almacenamiento local cifrado confirmado.
+- [x] Ampliar la matriz sintética con casos de disponibilidad mixta, periodo cerrado, porcentajes mayores a 100, unidad de minutos, exclusión financiera, duplicados y supersedencia inválida.
+- [x] Ejecutar una batería integrada de normalizador y shadow ledger que confirme aislamiento: sin red, entorno, raw, rutas, tokens, escrituras persistentes ni destinos canónicos.
+- [x] Documentar la cobertura sintética ampliada y mantener bloqueada cualquier inserción real o uso de Drive/GitHub como ledger activo.
+- [ ] Diseñar el siguiente ejercicio sintético de recuperación: verificar que un ledger temporal corrupto o una evidencia inconsistente se detecten y no produzcan materialización ni reparación automática.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
 - [x] Configurar y autorizar la app de escritorio Sandbox de TikTok con los scopes oficiales mínimos `user.info.basic` y `video.list`, callback local y PKCE; el cliente OAuth local de Google con scopes de lectura y monetización sigue pendiente.
 - [ ] Reemplazar la consulta de Windsor.ai por scripts locales de TikTok y YouTube antes del fin del Trial, manteniendo Facebook e Instagram en sus rutas existentes.

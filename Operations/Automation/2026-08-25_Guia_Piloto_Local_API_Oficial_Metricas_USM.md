@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "2.9"
+version: "3.0"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -186,6 +186,12 @@ La demostración sintética se completó en Xubuntu con `shadow_ledger_synthetic
 El diagnóstico de Xubuntu mostró `/` montado directamente desde `sda2` como `ext4`, sin una capa `crypto_LUKS` o `crypt`. Dado que el consentimiento del piloto real exige cifrado local confirmado, G-NORM-4R queda bloqueado. No se adaptará el escritor para datos reales, no se creará el shadow ledger persistente y no se procesará ninguna muestra real hasta que se apruebe y complete una alternativa de almacenamiento protegido.
 
 El trabajo permitido mientras tanto es sintético: fixtures, pruebas temporales, diseño, documentación y revisión del contrato. Cualquier migración de disco o creación de volumen cifrado requiere un plan local separado con respaldo previo y no forma parte de esta guía.
+
+### Cobertura sintética ampliada
+
+Se añadió `validate_synthetic_boundary_suite.py` para ejecutar el normalizador y el shadow ledger en el mismo proceso sintético con sockets bloqueados. La matriz ahora incluye disponibilidad mixta, porcentaje nativo mayor a 100, periodo cerrado con tier `C3_exact_window`, unidad nativa de minutos y rechazo de supersedencia desconocida. El resultado fue `synthetic_boundary_suite_passed`.
+
+La suite no lee variables de entorno, raw, rutas privadas o tokens. El shadow ledger existe solo en un directorio temporal dentro de la prueba y se elimina al terminar. No se habilita reparación automática, recuperación de evidencia, inserción real ni almacenamiento en Drive o GitHub.
 
 ### Revisión descriptiva de la primera captura — 25 de agosto de 2026
 

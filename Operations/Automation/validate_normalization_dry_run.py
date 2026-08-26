@@ -34,11 +34,18 @@ def expect_rejected(base: dict, mutate, rule: str) -> None:
 def main() -> int:
     fixture = json.loads(FIXTURE_PATH.read_text(encoding="utf-8"))
     valid = copy.deepcopy(fixture["observations"][0])
-    invalid_availability = copy.deepcopy(fixture["observations"][5])
+    invalid_availability = copy.deepcopy(fixture["observations"][7])
 
     baseline = normalise({"synthetic": True, "brand": "Universe Sent Me", "observations": fixture["observations"]})
-    assert baseline["validation_counts"] == {"valid": 3, "partial": 1, "rejected": 2, "duplicate_skip": 0}, baseline
+    assert baseline["validation_counts"] == {"valid": 5, "partial": 1, "rejected": 2, "duplicate_skip": 0}, baseline
     assert normalise({"synthetic": True, "brand": "Universe Sent Me", "observations": [valid, valid]})["validation_counts"]["duplicate_skip"] == 1
+
+    normalized = baseline["normalized_observations"]
+    assert normalized[1]["row_status"] == "partial", normalized[1]
+    assert normalized[3]["metric_value"] == 125.5, normalized[3]
+    assert normalized[4]["window_type"] == "period_total", normalized[4]
+    assert normalized[4]["comparability_tier"] == "C3_exact_window", normalized[4]
+    assert normalized[5]["metric_unit"] == "minutes", normalized[5]
 
     expect_rejected(valid, lambda row: row.update({"brand": "Other Brand"}), "NORM-01")
     expect_rejected(valid, lambda row: row.update({"target_account_confirmed": False}), "NORM-02")
@@ -63,6 +70,7 @@ def main() -> int:
                 "status": "synthetic_validation_passed",
                 "rules_covered": [f"NORM-{number:02d}" for number in range(1, 13)],
                 "baseline_counts": baseline["validation_counts"],
+                "edge_cases": ["mixed_availability", "percentage_above_100_preserved", "closed_period", "native_minutes"],
                 "guarantees": ["synthetic_only", "no_network", "no_write"],
             },
             ensure_ascii=False,

@@ -34,6 +34,12 @@ def main() -> int:
         correction["observations"][0]["supersedes_observation_key"] = original_key
         corrected = append_fixture(ledger, correction)
         assert corrected["summary"] == {"appended": 1, "duplicate_skip": 0, "rejected": 0, "supersessions": 1}, corrected
+
+        invalid_supersession = json.loads(json.dumps(collision))
+        invalid_supersession["observations"][0]["supersedes_observation_key"] = "f" * 64
+        invalid_result = append_fixture(ledger, invalid_supersession)
+        assert invalid_result["summary"]["rejected"] == 1, invalid_result
+
         events = load_events(ledger)
         assert len(events) == 3, events
         assert [event["record_type"] for event in events] == ["genesis", "observation", "observation"], events
@@ -42,7 +48,7 @@ def main() -> int:
         json.dumps(
             {
                 "status": "shadow_ledger_synthetic_validation_passed",
-                "tests": ["initial_append", "idempotent_rerun", "in_place_collision_rejected", "append_only_supersession"],
+                "tests": ["initial_append", "idempotent_rerun", "in_place_collision_rejected", "append_only_supersession", "unknown_supersession_rejected"],
                 "guarantees": ["synthetic_only", "private_temp_ledger", "no_network", "no_canonical_write"],
             },
             ensure_ascii=False,
