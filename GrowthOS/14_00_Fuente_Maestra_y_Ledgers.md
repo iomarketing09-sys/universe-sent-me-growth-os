@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-26
-version: "2.74"
+version: "2.75"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -632,3 +632,12 @@ La propuesta de respuesta para el comentario de Wilfred fue autorizada explícit
 La respuesta publicada fue `Wilfred ya tomó nota: un guiño y un toque de canela. 🌲😂`. El ledger conserva **644 filas / 644 IDs únicos**, validación `PASS`, y la fila objetivo quedó en `Respondido` con su `Respuesta_Meta_ID` y `Respuesta_Fecha`. La cola de propuestas quedó en **0**; los 2 casos de contexto y los 4 comentarios de baja señal más los 2 comentarios íntimos permanecen sin publicar.
 
 **Evidencia:** `Operations/Research/2026-08-26_18-24-00_Facebook_Wilfred_Publication.json`, `Operations/Research/2026-08-26_18-26-39_Facebook_Wilfred_Publication_Record.json/.md` y `Operations/Research/2026-08-26_18-26-39_Facebook_Pending_Queue_After_Wilfred_Publication.json`.
+
+
+## 37. Priorización editorial de baja señal — 26 de agosto de 2026
+
+Fernando seleccionó cuatro comentarios previamente clasificados como baja señal porque identificó actividad recurrente de sus cuentas en la Página. Se prepararon propuestas de re-engagement específicas y se reclasificaron los cuatro registros a `Pendiente_Respuesta` con `Aprobacion_Estado=Pendiente_Fernando`.
+
+La actividad observada puede priorizar una revisión humana, pero no autoriza por sí misma una publicación ni constituye un dato personal que deba conservarse en el ledger. Los 2 casos de contexto, los 2 comentarios con lenguaje íntimo y los 5 no acciones restantes permanecen fuera de la cola.
+
+**Evidencia:** `Operations/Research/2026-08-26_18-38-17_Facebook_Low_Signal_Proposal_Review.json`, `Operations/Research/2026-08-26_18-38-17_Facebook_Low_Signal_Proposal_Review.md` y `Operations/Research/2026-08-26_18-38-17_Facebook_Pending_Queue_Low_Signal_Proposals.json`.

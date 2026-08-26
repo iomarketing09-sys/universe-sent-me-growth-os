@@ -1,0 +1,77 @@
+{
+  "title": "Facebook Low-Signal Proposal Review — 2026-08-26 18:38 UTC",
+  "purpose": "Registrar la selección editorial de cuatro comentarios de baja señal para re-engagement, con propuestas específicas pendientes de aprobación humana.",
+  "status": "Review",
+  "created_at": "2026-08-26T18:38:17+00:00",
+  "updated_at": "2026-08-26T18:38:17+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-26_18-26-39_Facebook_Pending_Queue_After_Wilfred_Publication.json",
+    "Operations/Research/2026-08-26_18-15-41_Facebook_Editorial_Review_GET_Only.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
+    "Operations/Research/2026-08-26_18-38-17_Facebook_Pending_Queue_Low_Signal_Proposals.json",
+    "Operations/Research/2026-08-26_18-38-17_Facebook_Low_Signal_Proposal_Review.md"
+  ],
+  "organization": "Operations/Research",
+  "source": "Fernando editorial selection from the latest Facebook GET-only review",
+  "read_only_meta_state": true,
+  "new_proposal_count": 4,
+  "no_action_reclassified_count": 4,
+  "context_review_count_preserved": 2,
+  "publication_count": 0,
+  "decisions": [
+    {
+      "comment_id": "122151377649072582_2511249876017099",
+      "post_id": "1036844829507460_122151377649072582",
+      "comment_message": "Pues claro que nooooooo, ni pierdo .., , ni voy 😏",
+      "post_reference": "🪦🧟‍♀️😅 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "decision": "Propuesta",
+      "response_state": "Pendiente_Respuesta",
+      "approval_state": "Pendiente_Fernando",
+      "category": "low_signal_reengagement",
+      "reason": "Fernando identificó una cuenta activa de la Página; el comentario ofrece una apertura breve para responder al remate de permanencia sin escalar el doble sentido.",
+      "proposed_reply": "Ese “ni voy” ya viene con cláusula de permanencia. 😂",
+      "publication_status": "No_Publicar_Sin_Autorizacion_Posterior"
+    },
+    {
+      "comment_id": "122151377649072582_2227921178135227",
+      "post_id": "1036844829507460_122151377649072582",
+      "comment_message": "pues no te mueres...👁️👁️🔥🌀",
+      "post_reference": "🪦🧟‍♀️😅 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "decision": "Propuesta",
+      "response_state": "Pendiente_Respuesta",
+      "approval_state": "Pendiente_Fernando",
+      "category": "low_signal_reengagement",
+      "reason": "Fernando identificó una cuenta activa de la Página; se propone un remate específico al tono de inmortalidad/escape del comentario.",
+      "proposed_reply": "El universo confirmó que aquí nadie se escapa tan fácil. 👁️🔥",
+      "publication_status": "No_Publicar_Sin_Autorizacion_Posterior"
+    },
+    {
+      "comment_id": "122151377109072582_1103053779073759",
+      "post_id": "1036844829507460_122151377109072582",
+      "comment_message": "Seeeee",
+      "post_reference": "😈🚲🫣 #KaelUSM #MemesUSM #UniverseSentMe",
+      "decision": "Propuesta",
+      "response_state": "Pendiente_Respuesta",
+      "approval_state": "Pendiente_Fernando",
+      "category": "low_signal_reengagement",
+      "reason": "Fernando identificó una cuenta activa de la Página; la respuesta convierte la reacción breve en un remate participativo sin inventar contexto.",
+      "proposed_reply": "Ese “seeeee” sonó a confirmación oficial. 😂",
+      "publication_status": "No_Publicar_Sin_Autorizacion_Posterior"
+    },
+    {
+      "comment_id": "122151377109072582_28380292711566338",
+      "post_id": "1036844829507460_122151377109072582",
+      "comment_message": "Ni me lo recuerdes!!",
+      "post_reference": "😈🚲🫣 #KaelUSM #MemesUSM #UniverseSentMe",
+      "decision": "Propuesta",
+      "response_state": "Pendiente_Respuesta",
+      "approval_state": "Pendiente_Fernando",
+      "category": "low_signal_reengagement",
+      "reason": "Fernando identificó una cuenta activa de la Página; la respuesta sigue la reacción de memoria con un giro breve y natural.",
+      "proposed_reply": "Jajaja, el recuerdo llegó sin tocar la puerta. 😅",
+      "publication_status": "No_Publicar_Sin_Autorizacion_Posterior"
+    }
+  ]
+}

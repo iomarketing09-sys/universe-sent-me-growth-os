@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-26
-version: "7.4"
+version: "7.5"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -1011,5 +1011,23 @@ El registrador `Operations/Automation/record_wilfred_publication_2026_08_26.py` 
 Los cuatro comentarios de baja señal y los dos comentarios con lenguaje íntimo permanecen sin respuesta y no fueron incluidos en la operación. No se publicaron respuestas adicionales.
 
 **Evidencia:** `Operations/Research/2026-08-26_18-24-00_Facebook_Wilfred_Publication.json`, `Operations/Research/2026-08-26_18-26-39_Facebook_Wilfred_Publication_Record.json/.md` y `Operations/Research/2026-08-26_18-26-39_Facebook_Pending_Queue_After_Wilfred_Publication.json`.
+
+**Documentos relacionados:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 42. Re-engagement de cuatro comentarios de baja señal — 26 de agosto de 2026
+
+Fernando identificó que cuatro comentarios previamente clasificados como `No_Requiere_Respuesta` podían pertenecer a usuarios activos de la Página y solicitó propuestas de re-engagement. Se prepararon cuatro respuestas específicas, breves y no invasivas, sin consultar nuevos datos personales ni guardar nombres de autores.
+
+| Señal | Propuesta | Estado |
+|---|---|---|
+| “Ni pierdo…, ni voy 😏” | `Ese “ni voy” ya viene con cláusula de permanencia. 😂` | `Pendiente_Fernando` |
+| “pues no te mueres...” | `El universo confirmó que aquí nadie se escapa tan fácil. 👁️🔥` | `Pendiente_Fernando` |
+| “Seeeee” | `Ese “seeeee” sonó a confirmación oficial. 😂` | `Pendiente_Fernando` |
+| “Ni me lo recuerdes!!” | `Jajaja, el recuerdo llegó sin tocar la puerta. 😅` | `Pendiente_Fernando` |
+
+Los cuatro IDs fueron reclasificados en el ledger como `Pendiente_Respuesta`, con `Aprobacion_Estado=Pendiente_Fernando`, y se añadieron a una nueva cola de propuestas. No se ejecutó ninguna publicación. Los 2 casos de contexto y los 2 comentarios con lenguaje íntimo permanecen separados; los 5 casos de reacción/no acción restantes no fueron modificados.
+
+**Evidencia:** `Operations/Research/2026-08-26_18-38-17_Facebook_Low_Signal_Proposal_Review.json`, `Operations/Research/2026-08-26_18-38-17_Facebook_Low_Signal_Proposal_Review.md` y `Operations/Research/2026-08-26_18-38-17_Facebook_Pending_Queue_Low_Signal_Proposals.json`.
 
 **Documentos relacionados:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

@@ -1,0 +1,325 @@
+{
+  "title": "Facebook Pending Queue — low-signal re-engagement proposals",
+  "purpose": "Cola vigente posterior al corte GET-only de comentarios recientes; solo contiene propuestas que requieren aprobación humana y conserva casos de contexto/no acción.",
+  "status": "Active",
+  "created_at": "2026-08-25T18:51:09+00:00",
+  "updated_at": "2026-08-26T18:38:17+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "organization": "Operations/Research",
+  "related_documents": [
+    "Operations/Research/2026-08-26_18-15-41_Facebook_Comment_Review_GET_Only.json",
+    "Operations/Research/2026-08-26_18-15-41_Facebook_Editorial_Review_GET_Only.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv",
+    "Operations/Research/2026-08-26_18-15-41_Facebook_Comment_Review_Report.md",
+    "Operations/Research/2026-08-26_18-24-00_Facebook_Wilfred_Publication.json",
+    "Operations/Research/2026-08-26_18-26-39_Facebook_Wilfred_Publication_Record.json",
+    "Operations/Research/2026-08-26_18-38-17_Facebook_Low_Signal_Proposal_Review.json",
+    "Operations/Research/2026-08-26_18-38-17_Facebook_Low_Signal_Proposal_Review.md"
+  ],
+  "source": "Meta Graph API v26.0 GET-only review",
+  "published_additional_count": 8,
+  "verified_additional_count": 8,
+  "pending_response_count": 4,
+  "pending_approval_count": 4,
+  "context_review_count": 2,
+  "no_action_count": 25,
+  "published_from_this_review": 0,
+  "pending_comments": [
+    {
+      "comment_id": "122151377649072582_2511249876017099",
+      "post_id": "1036844829507460_122151377649072582",
+      "comment_message": "Pues claro que nooooooo, ni pierdo .., , ni voy 😏",
+      "post_reference": "🪦🧟‍♀️😅 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "candidate_reply": "Ese “ni voy” ya viene con cláusula de permanencia. 😂",
+      "decision": "Propuesta",
+      "approval_status": "Pendiente_Fernando",
+      "publication_status": "No_Publicar_Sin_Autorizacion_Posterior",
+      "reason": "Fernando identificó una cuenta activa de la Página; el comentario ofrece una apertura breve para responder al remate de permanencia sin escalar el doble sentido."
+    },
+    {
+      "comment_id": "122151377649072582_2227921178135227",
+      "post_id": "1036844829507460_122151377649072582",
+      "comment_message": "pues no te mueres...👁️👁️🔥🌀",
+      "post_reference": "🪦🧟‍♀️😅 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "candidate_reply": "El universo confirmó que aquí nadie se escapa tan fácil. 👁️🔥",
+      "decision": "Propuesta",
+      "approval_status": "Pendiente_Fernando",
+      "publication_status": "No_Publicar_Sin_Autorizacion_Posterior",
+      "reason": "Fernando identificó una cuenta activa de la Página; se propone un remate específico al tono de inmortalidad/escape del comentario."
+    },
+    {
+      "comment_id": "122151377109072582_1103053779073759",
+      "post_id": "1036844829507460_122151377109072582",
+      "comment_message": "Seeeee",
+      "post_reference": "😈🚲🫣 #KaelUSM #MemesUSM #UniverseSentMe",
+      "candidate_reply": "Ese “seeeee” sonó a confirmación oficial. 😂",
+      "decision": "Propuesta",
+      "approval_status": "Pendiente_Fernando",
+      "publication_status": "No_Publicar_Sin_Autorizacion_Posterior",
+      "reason": "Fernando identificó una cuenta activa de la Página; la respuesta convierte la reacción breve en un remate participativo sin inventar contexto."
+    },
+    {
+      "comment_id": "122151377109072582_28380292711566338",
+      "post_id": "1036844829507460_122151377109072582",
+      "comment_message": "Ni me lo recuerdes!!",
+      "post_reference": "😈🚲🫣 #KaelUSM #MemesUSM #UniverseSentMe",
+      "candidate_reply": "Jajaja, el recuerdo llegó sin tocar la puerta. 😅",
+      "decision": "Propuesta",
+      "approval_status": "Pendiente_Fernando",
+      "publication_status": "No_Publicar_Sin_Autorizacion_Posterior",
+      "reason": "Fernando identificó una cuenta activa de la Página; la respuesta sigue la reacción de memoria con un giro breve y natural."
+    }
+  ],
+  "context_review": [
+    {
+      "comment_id": "122151376539072582_1787852502561437",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-25T03:55:36+0000",
+      "comment_message": "Te lo pro meto",
+      "post_reference": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "candidate_reply": "Promesa recibida. Ahora falta ver si se cumple. 😂",
+      "decision": "Revisar_Contexto",
+      "reason": "Revisar primero el contexto visual/copy del Reel de Maeve; no publicar ni convertir en propuesta hasta confirmar el juego de palabras.",
+      "publication_status": "No_Publicar_Sin_Contexto"
+    },
+    {
+      "comment_id": "122151376083072582_2117668022157008",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-25T01:17:35+0000",
+      "comment_message": "Las cesareadas por ahi no paso nada ! 🫢",
+      "post_reference": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "candidate_reply": "Jajaja, cada quien tiene su propia teoría. 🫢😂",
+      "decision": "Revisar_Contexto",
+      "reason": "Revisar qué significa exactamente la referencia antes de responder; no inventar contexto.",
+      "publication_status": "No_Publicar_Sin_Contexto"
+    }
+  ],
+  "no_action": [
+    {
+      "comment_id": "122151376539072582_1957098628471175",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-25T15:10:14+0000",
+      "comment_message": "Yo soló les aseguró que les cresera algo y hasta adición se les vuelva chulas",
+      "post_reference": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Lenguaje sexualizado; no escalar ni competir desde la Página."
+    },
+    {
+      "comment_id": "122151376539072582_1032315632920234",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-25T14:43:39+0000",
+      "comment_message": "🙂",
+      "post_reference": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Reacción aislada sin conversación que abrir."
+    },
+    {
+      "comment_id": "122151376539072582_1794660225032096",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-25T05:15:42+0000",
+      "comment_message": "🥵🥵",
+      "post_reference": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Reacción aislada sin conversación que abrir."
+    },
+    {
+      "comment_id": "122151376083072582_1507773138044678",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-25T02:58:47+0000",
+      "comment_message": "🥵",
+      "post_reference": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Reacción aislada sin conversación que abrir."
+    },
+    {
+      "comment_id": "122151376083072582_2252762218897901",
+      "post_id": "1036844829507460_122151376083072582",
+      "comment_created_time": "2026-08-25T03:51:38+0000",
+      "comment_message": "😮‍💨💜",
+      "post_reference": "😏🙈😂 #UniverseUSM #MemesUSM #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Reacción aislada sin conversación que abrir."
+    },
+    {
+      "comment_id": "122151377829072582_28383172787961275",
+      "post_id": "1036844829507460_122151377829072582",
+      "comment_created_time": "2026-08-26T18:14:54+0000",
+      "comment_message": "[contenido preservado en el artefacto crudo; omitido aquí por privacidad y/o conversación lateral]",
+      "post_reference": "👻🏛️😂 #FantasmaUSM #MemesUSM #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Conversación lateral entre usuarios; no intervenir por defecto."
+    },
+    {
+      "comment_id": "122151377829072582_1825215598636287",
+      "post_id": "1036844829507460_122151377829072582",
+      "comment_created_time": "2026-08-26T16:26:56+0000",
+      "comment_message": "[contenido preservado en el artefacto crudo; omitido aquí por privacidad y/o conversación lateral]",
+      "post_reference": "👻🏛️😂 #FantasmaUSM #MemesUSM #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Comentario sin texto accesible; no hay contenido interpretable para responder."
+    },
+    {
+      "comment_id": "122151377733072582_1844462750268067",
+      "post_id": "1036844829507460_122151377733072582",
+      "comment_created_time": "2026-08-26T16:42:20+0000",
+      "comment_message": "[contenido preservado en el artefacto crudo; omitido aquí por privacidad y/o conversación lateral]",
+      "post_reference": "👻 #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Comentario sin texto accesible; no hay contenido interpretable para responder."
+    },
+    {
+      "comment_id": "122151377553072582_2082749602339096",
+      "post_id": "1036844829507460_122151377553072582",
+      "comment_created_time": "2026-08-26T00:32:00+0000",
+      "comment_message": "[contenido preservado en el artefacto crudo; omitido aquí por privacidad y/o conversación lateral]",
+      "post_reference": "Wilfred sabe. 🌲 #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Comentario sin texto accesible; no hay contenido interpretable para responder."
+    },
+    {
+      "comment_id": "122151377385072582_1381340473484974",
+      "post_id": "1036844829507460_122151377385072582",
+      "comment_created_time": "2026-08-26T16:00:54+0000",
+      "comment_message": "[contenido preservado en el artefacto crudo; omitido aquí por privacidad y/o conversación lateral]",
+      "post_reference": "👻🐱💬 #FantasmaUSM #MemesUSM #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Nombre o etiqueta aislada; no es una solicitud dirigida a Universe Sent Me."
+    },
+    {
+      "comment_id": "122151377301072582_1868276244144629",
+      "post_id": "1036844829507460_122151377301072582",
+      "comment_created_time": "2026-08-25T23:57:24+0000",
+      "comment_message": "[contenido preservado en el artefacto crudo; omitido aquí por privacidad y/o conversación lateral]",
+      "post_reference": "😵‍💫 #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Nombre o etiqueta aislada; no es una solicitud dirigida a Universe Sent Me."
+    },
+    {
+      "comment_id": "122151377301072582_2057068651589277",
+      "post_id": "1036844829507460_122151377301072582",
+      "comment_created_time": "2026-08-26T00:08:20+0000",
+      "comment_message": "[contenido preservado en el artefacto crudo; omitido aquí por privacidad y/o conversación lateral]",
+      "post_reference": "😵‍💫 #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Conversación lateral entre usuarios; no intervenir por defecto."
+    },
+    {
+      "comment_id": "122151377301072582_4610302405963159",
+      "post_id": "1036844829507460_122151377301072582",
+      "comment_created_time": "2026-08-26T00:23:13+0000",
+      "comment_message": "[contenido preservado en el artefacto crudo; omitido aquí por privacidad y/o conversación lateral]",
+      "post_reference": "😵‍💫 #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Conversación lateral entre usuarios; no intervenir por defecto."
+    },
+    {
+      "comment_id": "122151377301072582_2196303134278820",
+      "post_id": "1036844829507460_122151377301072582",
+      "comment_created_time": "2026-08-25T23:44:53+0000",
+      "comment_message": "[contenido preservado en el artefacto crudo; omitido aquí por privacidad y/o conversación lateral]",
+      "post_reference": "😵‍💫 #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Referencia o etiqueta aislada sin solicitud inequívoca para la Página."
+    },
+    {
+      "comment_id": "122151376539072582_1698756234550097",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-25T23:36:41+0000",
+      "comment_message": "[contenido preservado en el artefacto crudo; omitido aquí por privacidad y/o conversación lateral]",
+      "post_reference": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Conversación lateral entre usuarios; además contiene una corrección personal que la Página no debe arbitrar."
+    },
+    {
+      "comment_id": "122151376539072582_1046777111597787",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-26T00:27:52+0000",
+      "comment_message": "[contenido preservado en el artefacto crudo; omitido aquí por privacidad y/o conversación lateral]",
+      "post_reference": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Conversación lateral entre usuarios; no intervenir por defecto."
+    },
+    {
+      "comment_id": "122151376539072582_1011631161908869",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-26T16:47:10+0000",
+      "comment_message": "[contenido preservado en el artefacto crudo; omitido aquí por privacidad y/o conversación lateral]",
+      "post_reference": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Conversación lateral entre usuarios; no intervenir por defecto."
+    },
+    {
+      "comment_id": "122151376539072582_1765878984462569",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-25T23:22:25+0000",
+      "comment_message": "[contenido preservado en el artefacto crudo; omitido aquí por privacidad y/o conversación lateral]",
+      "post_reference": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Conversación lateral con lenguaje sexualizado; no competir ni escalar desde la Página."
+    },
+    {
+      "comment_id": "122151376539072582_1052637797681413",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-25T23:22:09+0000",
+      "comment_message": "[contenido preservado en el artefacto crudo; omitido aquí por privacidad y/o conversación lateral]",
+      "post_reference": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Conversación lateral entre usuarios; no intervenir por defecto."
+    },
+    {
+      "comment_id": "122151376539072582_4526764267583952",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-26T02:11:47+0000",
+      "comment_message": "[contenido preservado en el artefacto crudo; omitido aquí por privacidad y/o conversación lateral]",
+      "post_reference": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Conversación lateral entre usuarios; no intervenir por defecto."
+    },
+    {
+      "comment_id": "122151376539072582_1435118931792085",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-25T23:22:38+0000",
+      "comment_message": "[contenido preservado en el artefacto crudo; omitido aquí por privacidad y/o conversación lateral]",
+      "post_reference": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Conversación lateral entre usuarios; no intervenir por defecto."
+    },
+    {
+      "comment_id": "122151376539072582_1606238507792353",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-26T03:44:36+0000",
+      "comment_message": "[contenido preservado en el artefacto crudo; omitido aquí por privacidad y/o conversación lateral]",
+      "post_reference": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Lenguaje íntimo/sexualizado sin solicitud dirigida a la Página; no escalar ni competir con el comentario."
+    },
+    {
+      "comment_id": "122151376539072582_1575231017429884",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-25T23:47:51+0000",
+      "comment_message": "[contenido preservado en el artefacto crudo; omitido aquí por privacidad y/o conversación lateral]",
+      "post_reference": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Lenguaje íntimo/sexualizado y reacción de baja señal; no escalar desde la Página."
+    },
+    {
+      "comment_id": "122151376539072582_1581587120130496",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-26T02:11:34+0000",
+      "comment_message": "[contenido preservado en el artefacto crudo; omitido aquí por privacidad y/o conversación lateral]",
+      "post_reference": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Conversación lateral entre usuarios; no intervenir por defecto."
+    },
+    {
+      "comment_id": "122151376539072582_1677598369999299",
+      "post_id": "1036844829507460_122151376539072582",
+      "comment_created_time": "2026-08-26T03:20:18+0000",
+      "comment_message": "[contenido preservado en el artefacto crudo; omitido aquí por privacidad y/o conversación lateral]",
+      "post_reference": "😳🛏️🔥 #MaeveUSM #MemesUSM #UniverseSentMe",
+      "decision": "No_Requiere_Respuesta",
+      "reason": "Conversación lateral entre usuarios; no intervenir por defecto."
+    }
+  ]
+}

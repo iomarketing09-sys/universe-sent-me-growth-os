@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-26
-version: "7.9"
+version: "8.0"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -1516,3 +1516,17 @@ Fernando autorizó explícitamente la respuesta propuesta para el comentario de 
 Respuesta publicada: `Wilfred ya tomó nota: un guiño y un toque de canela. 🌲😂`. Evidencia primaria: `Operations/Research/2026-08-26_18-24-00_Facebook_Wilfred_Publication.json`; registro de cierre: `Operations/Research/2026-08-26_18-26-39_Facebook_Wilfred_Publication_Record.json/.md`.
 
 El ledger quedó actualizado y validado en **644 filas / 644 IDs únicos — PASS**. La cola de propuestas pendientes quedó en **0**; los 2 casos de contexto permanecen sin publicar. Los cuatro casos de baja señal y los dos comentarios con lenguaje íntimo no fueron respondidos ni modificados. No se reutilizaron aprobaciones para otros comentarios.
+
+
+## 58. Propuestas de re-engagement para cuatro comentarios de baja señal — 26 de agosto de 2026
+
+Fernando identificó que cuatro comentarios de baja señal podían proceder de usuarios activos de la Página y solicitó una propuesta de respuesta para cada uno. Se reclasificaron exclusivamente esos cuatro registros, previamente `No_Requiere_Respuesta`, como `Pendiente_Respuesta` con `Aprobacion_Estado=Pendiente_Fernando`.
+
+| Señal | Respuesta propuesta | Estado |
+|---|---|---|
+| “Ni pierdo…, ni voy 😏” | `Ese “ni voy” ya viene con cláusula de permanencia. 😂` | `Pendiente_Fernando` |
+| “pues no te mueres...” | `El universo confirmó que aquí nadie se escapa tan fácil. 👁️🔥` | `Pendiente_Fernando` |
+| “Seeeee” | `Ese “seeeee” sonó a confirmación oficial. 😂` | `Pendiente_Fernando` |
+| “Ni me lo recuerdes!!” | `Jajaja, el recuerdo llegó sin tocar la puerta. 😅` | `Pendiente_Fernando` |
+
+Las respuestas son propuestas editoriales, no publicaciones. Los 2 comentarios de contexto, los 2 comentarios con lenguaje íntimo y los 5 casos de no acción restantes no se modificaron ni se incluyeron en la nueva cola. Evidencia: `Operations/Research/2026-08-26_18-38-17_Facebook_Low_Signal_Proposal_Review.json`, `Operations/Research/2026-08-26_18-38-17_Facebook_Low_Signal_Proposal_Review.md` y `Operations/Research/2026-08-26_18-38-17_Facebook_Pending_Queue_Low_Signal_Proposals.json`.
