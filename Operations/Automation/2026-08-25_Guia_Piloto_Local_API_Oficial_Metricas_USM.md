@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "2.8"
+version: "2.9"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -180,6 +180,12 @@ El diseño privado `2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md` y los s
 El archivo real, si se ejecuta posteriormente, residirá solo bajo `~/.local/share/usm-metrics/shadow-ledger/` con permisos restrictivos. Aun así, la implementación actual solo acepta `synthetic = true`. La demostración local de este mecanismo sigue pendiente; la inserción de observaciones reales privadas requiere un consentimiento distinto y no forma parte de G-NORM-4.
 
 La demostración sintética se completó en Xubuntu con `shadow_ledger_synthetic_validation_passed`. La prueba confirmó inserción inicial, reejecución idempotente, rechazo de actualización in-place y supersedencia append-only, con garantías de no red y no escritura canónica. La ruta temporal usada fue eliminada por la batería. El mecanismo de inserción real continúa desactivado y requiere un consentimiento separado.
+
+### Bloqueo de G-NORM-4R por almacenamiento no cifrado
+
+El diagnóstico de Xubuntu mostró `/` montado directamente desde `sda2` como `ext4`, sin una capa `crypto_LUKS` o `crypt`. Dado que el consentimiento del piloto real exige cifrado local confirmado, G-NORM-4R queda bloqueado. No se adaptará el escritor para datos reales, no se creará el shadow ledger persistente y no se procesará ninguna muestra real hasta que se apruebe y complete una alternativa de almacenamiento protegido.
+
+El trabajo permitido mientras tanto es sintético: fixtures, pruebas temporales, diseño, documentación y revisión del contrato. Cualquier migración de disco o creación de volumen cifrado requiere un plan local separado con respaldo previo y no forma parte de esta guía.
 
 ### Revisión descriptiva de la primera captura — 25 de agosto de 2026
 

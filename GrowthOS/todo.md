@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "7.2"
+version: "7.4"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -94,9 +94,10 @@ organization: "GrowthOS"
 - [x] Probar idempotencia, rechazo de actualización in-place y corrección mediante supersedencia usando únicamente observaciones sintéticas; la batería pasó en ruta temporal privada.
 - [x] Ejecutar una demostración privada acotada del shadow ledger en Xubuntu: `shadow_ledger_synthetic_validation_passed` confirmó inserción inicial, idempotencia, rechazo in-place y supersedencia, sin red ni escrituras canónicas.
 - [x] Revisar el resultado G-NORM-4 y autorizar preparar un consentimiento separado para una muestra real privada en el shadow ledger; no hay inserción real autorizada hasta definir sus controles.
-- [ ] Definir y aprobar el máximo de observaciones reales, plataformas, métricas permitidas, retención local, cifrado de disco, respaldo, reconstrucción, rollback y eliminación segura del piloto.
-- [ ] Adaptar el escritor para aceptar solo una entrada real privada sanitizada y acotada, con confirmación explícita por ejecución, sin leer tokens o raw directamente y sin destinos canónicos.
-- [ ] Ejecutar una muestra real privada bajo los controles aprobados, validar append-only e idempotencia y emitir únicamente un reporte agregado de integridad.
+- [x] Aprobar máximo de cuatro observaciones reales no financieras, una por plataforma, retención de 30 días, sin backups automáticos/cloud, rollback append-only y aislamiento total de destinos canónicos para G-NORM-4R.
+- [x] Verificar el disco local de Xubuntu: la raíz está montada directamente desde `sda2` con `ext4`, sin capa `crypto_LUKS` o `crypt`; no se considera cifrado confirmado.
+- [ ] Resolver el requisito de almacenamiento protegido antes de activar G-NORM-4R: cifrar el disco de Xubuntu mediante una migración planificada o usar un volumen cifrado local dedicado; no insertar datos reales antes de esta confirmación.
+- [x] Mantener bloqueados el escritor real y la muestra real privada: el shadow ledger acepta únicamente fixtures sintéticos mientras no exista cifrado local confirmado.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
 - [x] Configurar y autorizar la app de escritorio Sandbox de TikTok con los scopes oficiales mínimos `user.info.basic` y `video.list`, callback local y PKCE; el cliente OAuth local de Google con scopes de lectura y monetización sigue pendiente.
 - [ ] Reemplazar la consulta de Windsor.ai por scripts locales de TikTok y YouTube antes del fin del Trial, manteniendo Facebook e Instagram en sus rutas existentes.

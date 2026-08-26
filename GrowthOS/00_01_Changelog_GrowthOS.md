@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.79
+**Versión:** 4.80
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.80.00] — 2026-08-25 (Fernando/Manus): G-NORM-4R bloqueado por ausencia de cifrado local confirmado.** Fernando aprobó los límites, retención y aislamiento del piloto real privado, pero indicó no conocer el estado de cifrado. El diagnóstico no destructivo mostró que `/` se monta directamente desde `sda2` como `ext4`, sin `crypto_LUKS` ni tipo `crypt`. Por seguridad, G-NORM-4R permanece bloqueado: no se crea el ledger persistente, no se adapta el escritor para datos reales y no se insertan observaciones reales. El consentimiento Draft v1.1 registra tres alternativas no ejecutadas: continuar sintético, migrar Xubuntu a LUKS con respaldo y proyecto separado, o crear un volumen local cifrado dedicado con aprobación separada. Documentos actualizados: consentimiento v1.1 y guía de piloto v2.9.
 
 - **[4.79.00] — 2026-08-25 (Fernando/Manus): Consentimiento de piloto real privado preparado en Draft.** Tras la autorización de principio de Fernando se creó `2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md` v1.0. Propone una muestra máxima de cuatro observaciones no financieras —una por plataforma—, ejecución interactiva única, disco cifrado, permisos `0700/0600`, 30 días de retención sin backup automático y rollback mediante detención y nueva cadena, nunca modificación o borrado in-place. El documento exige confirmar explícitamente esos cinco controles antes de activar G-NORM-4R. El estado es `Draft`: no existe autorización para insertar datos reales, crear el ledger persistente o materializar destinos canónicos.
 

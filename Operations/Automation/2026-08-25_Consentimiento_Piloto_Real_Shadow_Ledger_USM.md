@@ -4,7 +4,7 @@ purpose: "Proponer el alcance, retención, protección y rollback de una muestra
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
@@ -56,6 +56,18 @@ Fernando debe confirmar todas las siguientes condiciones antes de que exista un 
 5. Confirma que los datos permanecerán exclusivamente en Xubuntu y no se enviarán a GitHub, Sheets, OmniRoute, Drive ni herramientas de IA.
 
 Una vez confirmadas, se actualizará el estado a `Active` para el único propósito del piloto G-NORM-4R. La autorización será granular y no se extenderá a inserciones posteriores, volúmenes mayores, datos financieros o materialización canónica.
+
+## Verificación de cifrado y bloqueo actual
+
+El diagnóstico local del 25 de agosto de 2026 mostró la raíz de Xubuntu montada directamente desde `sda2` con `ext4`, sin capa `crypto_LUKS` ni dispositivo de tipo `crypt`. Por lo tanto, el cifrado de disco no está confirmado y G-NORM-4R queda **bloqueado**. La aprobación de los demás controles permanece documentada, pero no habilita una inserción real hasta resolver este requisito.
+
+| Alternativa | Alcance | Decisión requerida |
+|---|---|---|
+| Continuar sintético | Mantener G-NORM-4 únicamente con fixtures y rutas temporales. | No requiere cambios de disco; es la opción activa. |
+| Migrar Xubuntu a cifrado de disco | Planificar respaldo, reinstalación o migración con LUKS y posterior restauración validada. | Proyecto local separado; puede afectar disponibilidad y requiere copia de seguridad previa. |
+| Volumen cifrado dedicado | Crear y validar un volumen local cifrado exclusivo para el shadow ledger, sin mover otros datos. | Requiere dispositivo/espacio dedicado y aprobación separada antes de formatear o cifrar. |
+
+No se ejecutará ninguna de estas alternativas automáticamente. Mientras el cifrado no sea confirmado, el escritor real permanece desactivado y el shadow ledger seguirá aceptando solo `synthetic = true`.
 
 ## Referencias
 
