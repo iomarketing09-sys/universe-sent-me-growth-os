@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "7.0"
+version: "7.1"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -92,7 +92,8 @@ organization: "GrowthOS"
 - [x] Definir la ruta privada, el esquema JSONL, las reglas append-only, la llave de idempotencia, la supersedencia y los permisos restrictivos del shadow ledger.
 - [x] Implementar `shadow_ledger_private.py`, un escritor/validador local que acepta solamente fixtures sintéticos válidos y nunca escribe GitHub, `Normalized_Metric_Observation_Log`, Sheets, OmniRoute o cron.
 - [x] Probar idempotencia, rechazo de actualización in-place y corrección mediante supersedencia usando únicamente observaciones sintéticas; la batería pasó en ruta temporal privada.
-- [ ] Ejecutar una demostración privada acotada del shadow ledger y documentar su integridad sin materializar datos reales en destinos canónicos.
+- [x] Ejecutar una demostración privada acotada del shadow ledger en Xubuntu: `shadow_ledger_synthetic_validation_passed` confirmó inserción inicial, idempotencia, rechazo in-place y supersedencia, sin red ni escrituras canónicas.
+- [ ] Revisar el resultado G-NORM-4 y decidir si se autoriza un consentimiento separado para insertar una muestra real privada en el shadow ledger; no hay inserción real autorizada aún.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
 - [x] Configurar y autorizar la app de escritorio Sandbox de TikTok con los scopes oficiales mínimos `user.info.basic` y `video.list`, callback local y PKCE; el cliente OAuth local de Google con scopes de lectura y monetización sigue pendiente.
 - [ ] Reemplazar la consulta de Windsor.ai por scripts locales de TikTok y YouTube antes del fin del Trial, manteniendo Facebook e Instagram en sus rutas existentes.

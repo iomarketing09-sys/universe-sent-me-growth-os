@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "2.7"
+version: "2.8"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -178,6 +178,8 @@ No hubo rechazos ni duplicados. El porcentaje de muestreo fue 32.00% para Facebo
 El diseño privado `2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md` y los scripts `shadow_ledger_private.py` y `validate_shadow_ledger_synthetic.py` implementan G-NORM-4 sin acceso a datos reales. La batería se ejecutó sobre una ruta temporal y confirmó: una inserción inicial, una reejecución idempotente que no agrega línea, rechazo de una colisión que intenta reemplazar una observación existente y una corrección con supersedencia append-only.
 
 El archivo real, si se ejecuta posteriormente, residirá solo bajo `~/.local/share/usm-metrics/shadow-ledger/` con permisos restrictivos. Aun así, la implementación actual solo acepta `synthetic = true`. La demostración local de este mecanismo sigue pendiente; la inserción de observaciones reales privadas requiere un consentimiento distinto y no forma parte de G-NORM-4.
+
+La demostración sintética se completó en Xubuntu con `shadow_ledger_synthetic_validation_passed`. La prueba confirmó inserción inicial, reejecución idempotente, rechazo de actualización in-place y supersedencia append-only, con garantías de no red y no escritura canónica. La ruta temporal usada fue eliminada por la batería. El mecanismo de inserción real continúa desactivado y requiere un consentimiento separado.
 
 ### Revisión descriptiva de la primera captura — 25 de agosto de 2026
 

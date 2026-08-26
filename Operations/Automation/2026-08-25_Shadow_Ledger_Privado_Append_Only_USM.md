@@ -4,7 +4,7 @@ purpose: "Definir el ledger privado de validación para comprobar idempotencia, 
 status: Review
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Esquema_Normalizacion_Determinista_Multicanal_USM.md"
@@ -82,6 +82,12 @@ Para G-NORM-4, la entrada debe llevar `synthetic = true`. El mecanismo de inserc
 ## Gates posteriores
 
 G-NORM-5 solo podrá considerarse después de una revisión humana del shadow ledger sintético y, si se propone una inserción real, tras documentar un consentimiento específico para datos privados, retención, cifrado de disco, reconstrucción y rollback local. Aun en ese momento, la fuente canónica, Google Sheets y OmniRoute permanecerán fuera hasta un gate independiente.
+
+## Demostración local confirmada
+
+La batería `validate_shadow_ledger_synthetic.py` se ejecutó en Xubuntu el 25 de agosto de 2026 y devolvió `shadow_ledger_synthetic_validation_passed`. Confirmó las cuatro pruebas contractuales: inserción inicial, repetición idempotente, rechazo de una colisión que intentaba modificar un evento existente y corrección por supersedencia append-only. Las garantías reportadas fueron `synthetic_only`, `private_temp_ledger`, `no_network` y `no_canonical_write`.
+
+Esta demostración no creó el ledger persistente bajo `~/.local/share/usm-metrics/shadow-ledger/`; usó una ruta temporal eliminada al terminar. La inserción de cualquier observación real, incluso privada, sigue bloqueada hasta una aprobación separada.
 
 ## Referencias
 

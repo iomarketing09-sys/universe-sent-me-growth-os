@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.77
+**Versión:** 4.78
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.78.00] — 2026-08-25 (Fernando/Manus): Demostración sintética de G-NORM-4 confirmada en Xubuntu.** Fernando ejecutó `validate_shadow_ledger_synthetic.py` tras sincronizar el commit `5eea616`. La respuesta `shadow_ledger_synthetic_validation_passed` confirmó inserción inicial, idempotencia, rechazo de actualización in-place y corrección por supersedencia append-only. Las garantías fueron entrada exclusivamente sintética, ruta temporal privada, sin red y sin escritura canónica. La prueba eliminó su ruta temporal; no se creó el shadow ledger persistente ni se insertaron observaciones reales. No se tocaron GitHub, fuente canónica, Sheets, OmniRoute, cron, contenido, otras marcas o credenciales. Para cualquier muestra real privada se necesitará consentimiento específico adicional. Documento actualizado: `Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md` v1.1.
 
 - **[4.77.00] — 2026-08-25 (Fernando/Manus): G-NORM-4 shadow ledger sintético implementado y validado.** Se creó `2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md`, el fixture `shadow_ledger_synthetic.json`, el escritor `shadow_ledger_private.py` y la batería `validate_shadow_ledger_synthetic.py`. El ledger JSONL previsto vive únicamente bajo la ruta privada de Xubuntu con directorio `0700` y archivo `0600`; contiene un evento genesis y observaciones inmutables. La prueba sintética validó inserción inicial, repetición idempotente, rechazo de actualización in-place y corrección mediante supersedencia append-only. El escritor acepta exclusivamente fixtures marcados `synthetic=true`, no hace red y no escribe source evidence, ledgers canónicos, Sheets, OmniRoute, cron o contenido. Falta una demostración privada local del mecanismo; la inserción de datos reales sigue fuera de alcance y requiere consentimiento posterior. Documentos actualizados: esquema v1.3 y guía v2.7.
 
