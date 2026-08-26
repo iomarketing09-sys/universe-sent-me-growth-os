@@ -4,8 +4,8 @@
 
 **Estado:** Active
 **Fecha de creación:** 2026-08-22
-**Última actualización:** 2026-08-25
-**Versión:** 1.5
+**Última actualización:** 2026-08-26
+**Versión:** 1.6
 **Autor:** Manus AI (CGO)
 **Organización:** `Operations/Research/`
 **Documentos relacionados:** `GrowthOS/00_Índice.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md`, `GrowthOS/01_02_Content_Backlog.md`, `GrowthOS/01_04_Production_Queue.md`, `GrowthOS/07_00_Registro_Maestro_Reels.md`, `Operations/Research/2026-08-22_Analisis_Semanal_20260816_20260822.md`, `Operations/Research/2026-08-22_Auditoria_Monetizacion_Afiliados_MercadoLibre.md`, `Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json`, `Operations/Research/2026-08-23_Reporte_Rendimiento_Engagement_Facebook.md`, `Operations/Research/2026-08-25_Instagram_Route_Smoke_Test.json`, `Operations/Research/2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json`, `Operations/Automation/record_metrics_snapshot.py`, `Operations/Automation/validate_metrics_snapshot_ledger.py`, `Operations/Automation/capture_e0_after_publish.py`, `Operations/Automation/run_metrics_windows.py`, `Operations/Automation/simulate_pipeline_e0_e72.py`, `Operations/Research/Metrics_Snapshot_Log.csv`, `Operations/Research/2026-08-25_Simulacion_Pipeline_E0_E72_Evidence.json`
@@ -178,6 +178,61 @@ No conviene ampliar el volumen de contenido, generar MPM-002/003, activar Meta A
 ### Cadencia de decisión
 
 La revisión operativa debe ocurrir diariamente sobre publicaciones y conectividad, con un cierre semanal domingo–sábado. La revisión estratégica de hipótesis debe hacerse solo cuando exista una cohorte con identidad analítica completa y suficiente madurez temporal. El estado no debe elevarse de 3/5 hasta que exista al menos una publicación real con E0, E24 y E72 válidos y una actualización de aprendizaje trazable.
+
+## 9. Estado consolidado al 26 de agosto de 2026
+
+Esta sección supersede las cifras operativas antiguas de las secciones anteriores cuando exista una diferencia temporal. El corte se construyó desde los ledgers oficiales sincronizados en GitHub y desde el estado actual del schedule de la tarea; no se inventaron métricas ni se reclasificaron anomalías como E0 válidos.
+
+### 9.1 Veredicto actual
+
+El Growth OS se mantiene en **nivel 3/5: operativo supervisado**. Ya no es un sistema puramente documental: publica y reconcilia hechos de Meta, conserva una cola editorial activa, registra comunidad, genera cortes descriptivos y mantiene módulos reproducibles para snapshots. Sin embargo, todavía no es un loop adaptativo cerrado porque no existe ningún `Valid_E0`; por tanto, tampoco existe una cadena productiva E0→E24→E72 que permita actualizar hipótesis con deltas temporales comparables.
+
+La capacidad de avance no está bloqueada de forma total. **Sí se puede avanzar** con cortes diarios descriptivos, comunidad, planificación de contenido, reconciliación de Reels, instrumentación de afiliados y preparación de nuevas cohortes. **No se puede avanzar contractualmente** con veredictos formales de experimentos, deltas E24/E72, cierre temporal de hipótesis ni elevación de madurez del sistema mientras no exista al menos un E0 válido.
+
+### 9.2 Estado de los ledgers
+
+| Fuente | Estado actual | Lectura operativa |
+|---|---:|---|
+| `Publication_Log.csv` | 121 filas: 69 `Publicado`, 38 `Programada`, 4 `Programada_Meta_Verificado`, 4 `Eliminada_Manualmente`, 3 `Cancelada_Autorizada` y 3 `Cancelada_Por_Sustitucion` | 107 hechos de Facebook y 14 de Instagram. La cola efectiva futura tenía 30 publicaciones al momento del corte del 26 de agosto; este número disminuye naturalmente al llegar las horas programadas. |
+| `ExperimentLog.csv` | 114 filas; 104 con `Meta_ID` explícito | 58 filas `Publicado` o `Publicado_observado` con Meta ID están bloqueadas para cierres temporales porque no existe ningún `Valid_E0`. Las filas históricas `Cerrada` no deben reinterpretarse como nuevas ventanas E24/E72. |
+| `Metrics_Snapshot_Log.csv` | 5 filas, todas `baseline_e0` | 4 `Anomaly` y 1 `Late`; 0 `Valid_E0`. Hay tres Meta Post IDs observados y no existe ningún baseline temporal canónico. |
+| `Community_Engagement_Log.csv` | 619 filas y 619 `Comentario_ID` únicos | 410 `No_Requiere_Respuesta`, 208 `Respondido` y 1 `Archivado`. La última revisión GET-only añadió 7 IDs —5 raíces y 2 réplicas—, generó 0 propuestas y dejó la cola sin cambios. |
+
+Las cinco filas de snapshots son evidencia técnica, no aprendizaje temporal válido. El primer caso contiene `missing_counter` por `shares` ausente; el segundo es `Late` por captura fuera de ventana; el tercer caso tuvo tres intentos dentro de ±600 segundos, pero Meta omitió `shares` en todos. En ningún caso se transformó `shares` ausente en cero, se calculó un delta o se habilitó E24/E72. El validador devuelve `PASS` estructural, lo que confirma la integridad del ledger, no la existencia de un E0 válido.
+
+### 9.3 Señal de contenido y operación reciente
+
+El último corte diario disponible de Facebook —24 de agosto a las 22:08 de `America/Matamoros`— cubrió 6 publicaciones de imagen y registró 155 interacciones lifetime observables, con media 25.83 y mediana 27. El post líder alcanzó 49 interacciones y 26 shares. Esta señal sirve para ranking descriptivo y para decidir qué revisar; no prueba causalidad de personaje, copy, formato u horario ni sustituye E0/E24/E72.
+
+La comunidad opera mejor que el circuito cuantitativo temporal: el ledger es único por comentario, la privacidad permanece anonimizada, las respuestas publicadas tienen evidencia de Meta y los nuevos comentarios sin oportunidad de respuesta se conservan sin alterar la cola. Se mantienen dos casos de contexto y cinco no acciones en la vista posterior a la publicación; no existe autorización para activar respuestas automáticas.
+
+### 9.4 Conectividad y automatización
+
+| Componente | Estado actual | Implicación |
+|---|---|---|
+| GitHub | **Operativo y fuente oficial** | `main` fue sincronizada antes del corte; los documentos permanentes deben continuar aquí. |
+| Meta Graph API / Custom API | **Habilitada en la configuración actual y legible en las últimas ejecuciones** | La lectura de publicaciones y contadores funciona, pero la exposición de `shares` es inconsistente y debe tratarse como una condición de datos, no como cero. Cada ejecución necesita smoke check y preflight de los tres contadores. |
+| Instagram | **Lectura operativa** | `@universe_sent_me_0326` sigue siendo la cuenta seleccionada; publicar requiere una solicitud y confirmación separadas. |
+| Meta Ads | **No conectado / fuera de operación** | No existe evidencia suficiente para evaluar paid growth. Debe conectarse con intención explícita o declararse fuera de alcance. |
+| Google Calendar | **No verificable** | Persisten permisos insuficientes; no se debe asumir que el calendario externo materializa la cola de GitHub. |
+| Corte diario | **Ejecutable, sin schedule general confirmado en esta tarea** | Existe `run_daily_metrics_cut.py` y un corte real documentado, pero la tarea actual solo muestra el control E0 de `PUB-FB-17_30-47` pausado. La cadencia diaria no debe considerarse activa hasta verificarla en su propia ejecución. |
+| E24/E72 | **Preparado, bloqueado** | El worker tiene lock, tolerancia e idempotencia, pero selecciona únicamente `Valid_E0`; no debe forzarse sobre estos cinco snapshots. |
+
+### 9.5 Prioridades de decisión
+
+| Orden | Prioridad | Acción | Criterio de cierre |
+|---:|---|---|---|
+| 1 | **P0** | Corregir la instrumentación E0: preflight de `reactions`, `comments` y `shares`, consulta diagnóstica GET-only y alerta si falta cualquier contador. | La siguiente publicación aprobada genera una fila `Valid_E0` dentro de ±600 segundos, con raw y validación `PASS`. |
+| 2 | **P0** | Mantener un ciclo descriptivo de 7 días con corte diario y cierre semanal, sin presentar lifetime como delta. | Siete cortes fechados con ranking, mediana, outliers, mix y limitaciones documentadas. |
+| 3 | **P0** | Reconciliar Reels y completar la instrumentación L1/L2 antes de producir MPM-002/003. | Una fila vigente por Reel con ID nativo, permalink, hora y views/reach/retención cuando la plataforma los entregue. |
+| 4 | **P1** | Mantener la cola futura sin añadir volumen por reflejo y preparar la siguiente cohorte con hipótesis y aprobación humana. | Cada nueva pieza tiene asset, hipótesis, control y aprobación explícitos. |
+| 5 | **P1** | Mantener comunidad con gate humano y verificar por separado la cadencia temporal si se desea automatizarla. | No hay respuestas automáticas; cada publicación tiene preflight y verificación individual. |
+| 6 | **P1** | Reconciliar afiliados por etiqueta, superficie y publicación antes de ampliar productos. | Clics, ventas, órdenes y comisión quedan atribuidos o explícitamente ausentes. |
+| 7 | **P2** | Resolver gobernanza de fuentes y conectores: Sheets como histórico, paid growth con decisión explícita y smoke tests periódicos. | Ninguna fuente auxiliar presenta estados antiguos como estado actual. |
+
+### 9.6 Documentos que requieren coherencia posterior
+
+Esta actualización modifica el estado operativo descrito en la auditoría. Para mantener la fuente única, también requieren alineación `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, `GrowthOS/00_Índice.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`. No se requiere modificar `Publication_Log.csv` ni `ExperimentLog.csv` para este reporte: el análisis es de lectura y sus estados permanecen intactos.
 
 ## Referencias
 

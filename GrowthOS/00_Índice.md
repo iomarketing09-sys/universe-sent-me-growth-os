@@ -4,7 +4,7 @@
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-25
-**Versión:** 8.3
+**Versión:** 8.4
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -52,7 +52,7 @@
 | [Raw Meta del corte — 24 de agosto](../Operations/Research/2026-08-24_Meta_Daily_Metrics_Raw.json) | Evidencia raw sanitizada de la consulta de solo lectura al feed de la Página. | Active |
 | [CSV normalizado del corte — 24 de agosto](../Operations/Research/2026-08-24_Corte_Diario_Metricas_2200.csv) | Tabla normalizada por publicación para análisis posterior, sin escribir ledgers contractuales. | Active |
 | [Análisis semanal 16–22 de agosto](../Operations/Research/2026-08-22_Analisis_Semanal_20260816_20260822.md) | Primer cierre general bajo el ciclo domingo–sábado; resume 42 publicaciones de Facebook, separa imágenes/Reels y distingue concentración de outliers de señales operativas. | Active |
-| [Auditoría ejecutiva del Growth OS: estado y prioridades](../Operations/Research/2026-08-22_Auditoria_Ejecutiva_GrowthOS_Estado_y_Prioridades.md) | Vista global actualizada del sistema: estado operativo supervisado 3/5, conectividad real, áreas activas, inmaduras, bloqueadas y pendientes P0–P2. | Active |
+| [Auditoría ejecutiva del Growth OS: estado y prioridades](../Operations/Research/2026-08-22_Auditoria_Ejecutiva_GrowthOS_Estado_y_Prioridades.md) | Reporte general vigente v1.6: estado 3/5, 121 publicaciones, 114 observaciones experimentales, 5 snapshots no canónicos, 619 comentarios únicos, bloqueos E0/E24/E72 y prioridades P0–P2 al 26 de agosto. | Active |
 | [Evidencia de conectividad y operación](../Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json) | Snapshot sanitizado de conectores, schedules, validadores y ledgers observado el 24 de agosto de 2026. | Active |
 | [Revisión del pipeline de publicación post-P0](../Operations/Research/2026-08-25_Revision_Pipeline_Publicacion_Post_P0.md) | Revisión actual: 33 posts futuros reconciliados con Meta, Instagram legible, ledger de snapshots válido, pero sin E0 productivo canónico y sin worker E24/E72 habilitado. | Active |
 | [Evidencia de revisión del pipeline post-P0](../Operations/Research/2026-08-25_Pipeline_Post_P0_Review_Evidence.json) | Snapshot estructurado de la cola Meta, feed, reconciliación local, Instagram y cobertura de ledgers. | Active |

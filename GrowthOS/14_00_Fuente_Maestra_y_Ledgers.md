@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-25
-version: "2.70"
+version: "2.71"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -590,3 +590,20 @@ Los 7 IDs fueron clasificados como `No_Requiere_Respuesta`, por lo que no se gen
 El auditor `Operations/Automation/audit_facebook_comments_get_only.py` no pudo iniciar el corte solicitado porque `META_PAGE_ACCESS_TOKEN` no estaba disponible. La inspección read-only confirmó `Universe Sent Me Meta API` (`76925630-05da-4aa7-878d-64a6a520ca6d`) con `enabled=false`.
 
 El resultado es **sin lectura disponible**, no cero novedades. No hubo llamadas Meta exitosas, no se consultaron otras redes, no se realizaron escrituras, no se generó un review vacío y no se modificaron la cola ni el ledger. Evidencia: `Operations/Research/2026-08-25_22-33-10_Facebook_Comment_Review_Blocker.json`. El siguiente paso es restaurar el conector existente y volver a ejecutar el auditor con su cursor dinámico.
+
+
+## 34. Estado consolidado del Growth OS — 2026-08-26
+
+Esta sección resume el estado vigente después de los tres intentos productivos de E0 y de la última revisión de comunidad. Cuando una cifra anterior difiera, esta sección funciona como vista consolidada más reciente; los ledgers append-only y sus evidencias históricas permanecen intactos.
+
+El sistema conserva nivel de madurez **3/5 — operativo supervisado**. Facebook publica y reconcilia hechos reales, GitHub mantiene la fuente oficial, el corte diario descriptivo está implementado, la comunidad conserva señales anonimizadas y los módulos E0/E24/E72 están preparados. El loop adaptativo todavía no está cerrado porque existen **0 `Valid_E0`** y, por tanto, ningún E24/E72 contractual ni delta temporal comparable.
+
+Los ledgers sincronizados contienen 121 filas en `Publication_Log.csv` —107 Facebook y 14 Instagram—, 114 filas en `ExperimentLog.csv`, 5 snapshots `baseline_e0` en `Metrics_Snapshot_Log.csv` y 619 comentarios únicos en `Community_Engagement_Log.csv`. El ledger de snapshots se distribuye en cuatro `Anomaly` y una `Late`, con validación estructural `PASS`, sin duplicados, pero sin baseline canónico. Los tres Meta Post IDs observados temporalmente son `1036844829507460_122151377199072582` (`Anomaly`), `1036844829507460_122151377385072582` (`Late`) y `1036844829507460_122151377475072582` (tres `Anomaly` por `shares` ausente).
+
+El `ExperimentLog.csv` tiene 104 filas con `Meta_ID` explícito. De ellas, 58 corresponden a publicaciones `Publicado` o `Publicado_observado` sin `Valid_E0`; esas filas permanecen bloqueadas para cierres temporales E24/E72, aunque sí pueden participar en lecturas descriptivas o históricas cuando la ventana y la definición estén documentadas. Las 40 filas `Programada` y las 4 `Programada_Meta_Verificado` no deben recibir métricas antes de su publicación real.
+
+El último corte diario disponible cubrió seis posts de imagen y registró 155 interacciones lifetime observables, con media 25.83 y mediana 27; su líder alcanzó 49 interacciones y 26 shares. Esta señal alimenta ranking y revisión editorial, no causalidad ni un veredicto de hipótesis. La revisión comunitaria más reciente añadió 7 IDs —5 comentarios raíz y 2 réplicas—, produjo 0 propuestas y dejó la cola sin cambios; no hay autorización para respuestas automáticas.
+
+La corrección prioritaria es de instrumentación: conservar `shares` como ausente cuando Meta no lo exponga, validar los tres contadores antes de promover a `Valid_E0`, mantener tres intentos controlados dentro de ±600 segundos y alertar sin imputar cuando falte un contador. E24/E72 deben continuar bloqueados hasta el primer E0 válido. Mientras tanto, el sistema puede avanzar con cortes diarios descriptivos, comunidad, reconciliación de Reels, afiliados, preparación de cohortes y gobernanza de fuentes; no puede cerrar formalmente hipótesis ni elevar su madurez.
+
+Evidencia relacionada: `Operations/Research/2026-08-25_PUB-FB-17_30-47_E0_Execution_Evidence.json`, `Operations/Research/2026-08-25_22-11-14_Facebook_Comment_Review_Report.md`, `Operations/Research/Metrics_Snapshot_Log.csv` y `Operations/Research/2026-08-24_Corte_Diario_Metricas_2200.md`.
