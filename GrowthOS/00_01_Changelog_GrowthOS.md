@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.98
+**Versión:** 4.99
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.99.00] — 2026-08-25 (Fernando/Manus): Prueba ficticia de cifrado y restauración con age completada.** Fernando aprobó G-SEC-1A.3d. Se descargó temporalmente el binario oficial age v1.3.1, sin instalarlo en el sistema; `validate_age_fictitious_roundtrip.sh` generó fixture artificial y llaves efímeras en `/tmp`, cifró, restauró y confirmó hashes SHA-256 iguales con ciphertext de 290 bytes. No se usaron rutas USM, disco externo, Drive, OmniRoute, secretos ni frase humana. El directorio de fixture se eliminó automáticamente; dos directorios temporales del sandbox se detectaron y eliminaron manualmente, tras lo cual no quedaron artefactos `usm-age-*`. La prueba valida criptografía básica, no el backup real. Permanecen G-SEC-1A.3a,b,c,e: carpeta, alcance, instalación/verificación local de age, recuperación de frase y dry-run de volumen real. Diseño actualizado a v1.1 y plan de cifrado a v1.7.
 
 - **[4.98.00] — 2026-08-25 (Fernando/Manus): Diseño de respaldo cifrado local previo a LUKS.** A solicitud de Fernando se crearon `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md` v1.0 y `prepare_usm_encrypted_backup.sh`. El diseño usa age como herramienta consolidada de cifrado por streaming con frase interactiva fuera de argumentos, ambiente, repo, Drive, chat y disco externo. Propone la carpeta `USM_PRE_LUKS_BACKUP` con ciphertext, manifests sin secretos y checksums de ciphertext. El wrapper parte en `--plan`, tiene `--dry-run` y exige confirmaciones para `--execute`; las rutas privadas están excluidas por defecto. No se instaló age, no se creó carpeta, no se generó llave, no se cifró ni copió ningún archivo. Se requieren los gates G-SEC-1A.3a-e, incluida una restauración ficticia, antes de cualquier ejecución real. Plan de cifrado actualizado a v1.6.
 

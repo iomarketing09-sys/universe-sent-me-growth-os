@@ -4,7 +4,7 @@ purpose: "Definir una estructura de carpetas y un wrapper de cifrado local previ
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -78,6 +78,21 @@ Los únicos datos privados del disco serán ciphertext `.age`. El manifest no en
 | G-SEC-1A.3e | Revisar dry-run y aprobar ejecución manual única. |
 
 No se autoriza copia real, subida a Drive, sincronización, Drive como ledger, uso de OmniRoute, inserción de observaciones ni cambios de LUKS mediante este diseño.
+
+## Prueba ficticia de cifrado y restauración
+
+Fernando aprobó una prueba exclusivamente ficticia. Se usó el binario oficial temporal de age `v1.3.1` dentro de `/tmp`, sin instalación del sistema, sin acceso a rutas USM y sin disco externo. `validate_age_fictitious_roundtrip.sh` creó un fixture textual ficticio y un par de llaves efímeras de destinatario; este enfoque evita introducir una frase de recuperación humana durante el ensayo.
+
+| Control | Resultado |
+|---|---|
+| Fixture | Texto artificial con marca explícita `synthetic`; sin datos USM. |
+| Cifrado | Archivo ciphertext de 290 bytes creado en directorio temporal. |
+| Restauración | El hash SHA-256 del fixture restaurado coincidió con el del origen. |
+| Persistencia | El directorio del fixture y sus llaves efímeras fueron eliminados. |
+| Entorno temporal externo | Dos directorios de descarga/prueba del sandbox se detectaron tras el primer intento de limpieza y se eliminaron manualmente; la verificación final confirmó ausencia de artefactos `usm-age-*` bajo `/tmp`. |
+| Medios y datos USM | No se usó el disco externo, Drive, OmniRoute, `~/.config/usm-metrics`, `~/.local/share/usm-metrics` ni `~/omniroute-pilot`. |
+
+La prueba confirma el mecanismo básico de cifrado/restauración e integridad de age, pero **no valida todavía** la operación real con frase interactiva, las fuentes privadas, el volumen vfat o la restauración de un respaldo autorizado. Esos pasos siguen detrás de G-SEC-1A.3a, b, c y e.
 
 ## Referencias
 
