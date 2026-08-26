@@ -4,7 +4,7 @@ purpose: "Determinar si Headroom puede aportar al flujo de IA de Universe Sent M
 status: Review
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -61,6 +61,14 @@ En Xubuntu, el almacenamiento de disco no tiene cifrado confirmado. Por prudenci
 | Usarlo para desarrollo general fuera del pipeline USM | Fuera de este documento. | Debe mantenerse separado de datos, cuentas, presupuesto e infraestructura de USM. |
 
 No se instalará, conectará ni configurará Headroom a partir de esta evaluación. Si en el futuro se autoriza un ensayo, deberá empezar con un benchmark sintético de compresión sobre un texto ficticio y demostrar explícitamente: no persistencia, ausencia de red adicional, rutas de almacenamiento identificadas, limpieza al terminar y ninguna alteración de OmniRoute o de los collectors.
+
+## Benchmark sintético aislado confirmado
+
+Se ejecutó `benchmark_headroom_synthetic.py` con Headroom `0.36.5` dentro de un entorno y directorio temporales. El input fue JSON ficticio en memoria, se bloquearon sockets, se desactivó el modelo ML `Kompress`, y no se inició proxy ni se activaron memoria, aprendizaje, wrappers, contexto compartido u OmniRoute.
+
+El benchmark registró 8,486 tokens antes y 3,655 después, con 4,831 tokens ahorrados y una reducción de `0.569291`. Headroom creó tres archivos CCR bajo `.headroom/` incluso en el uso directo de `compress()`. Ese hallazgo confirma que CCR no debe describirse como ausente por defecto: solo fue aceptable porque la caché, el entorno de instalación y la carpeta principal se confinaron a directorios temporales, se verificaron y se eliminaron al finalizar.
+
+La prueba no habilita una integración. Demuestra únicamente que Headroom puede comprimir un fixture ficticio bajo aislamiento estricto. Cualquier uso futuro que no replique estas condiciones —incluida la recepción de un brief real sanitizado— requiere un gate nuevo, revisión de retención y confirmación de almacenamiento protegido.
 
 ## Referencias
 

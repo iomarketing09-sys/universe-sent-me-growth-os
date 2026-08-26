@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "8.8"
+version: "9.1"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -110,7 +110,10 @@ organization: "GrowthOS"
 - [x] Completar el dictamen de revisión humana de la matriz sintética y del contrato `Review`: evaluar cobertura, coherencia, límites de no reparación y reglas faltantes; mantener G-NORM-4R y cualquier persistencia real bloqueados. Dictamen: cobertura sintética suficiente solo para el contrato actual; no hay autorización de persistencia real.
 - [x] Añadir a la inspección sintética de lectura el rechazo de una observación que ya no cumple NORM-01 a NORM-12 y la detección de `ledger_entry_key` duplicada; conservar invariancia byte a byte y ausencia de reparación.
 - [x] Evaluar el plugin Headroom para determinar su producto, permisos, tratamiento de datos y encaje con el sistema local read-only de Universe Sent Me; no conectarlo ni autorizarlo sin un gate separado. Decisión: no adoptar ni conectar al pipeline USM; se documentó como capa de compresión de contexto, no de métricas.
-- [ ] Si se solicita en el futuro, diseñar un gate de benchmark sintético aislado de Headroom: fixture ficticio, sin memoria, `learn`, `wrap` o contexto compartido, con rutas de caché verificadas y limpieza demostrada; no tocar OmniRoute ni datos USM.
+- [x] Diseñar un gate de benchmark sintético aislado de Headroom: fixture ficticio, sin memoria, `learn`, `wrap` o contexto compartido, con rutas de caché verificadas y limpieza demostrada; no tocar OmniRoute ni datos USM.
+- [x] Ejecutar el benchmark Headroom exclusivamente con fixture ficticio y entorno temporal aislado; prohibir memoria, proxy persistente, `learn`, `wrap`, contexto compartido, secretos, OmniRoute y datos USM; permitir únicamente CCR confinada al temporal y verificar eliminación completa antes de documentar resultados.
+- [x] Ajustar el benchmark Headroom para reconocer que la compresión directa crea caché CCR temporal; permitirla solo dentro del directorio temporal, verificar sus rutas y confirmar su eliminación al finalizar, sin usar ningún dato USM.
+- [ ] No integrar Headroom a OmniRoute ni al pipeline USM sin un gate específico que revise encadenamiento de proxies, retención CCR, almacenamiento cifrado y límites de datos sanitizados.
 - [x] Revisar el estado canónico del contrato de shadow ledger en GitHub y consolidar los requisitos pendientes para un futuro proyecto separado de almacenamiento local cifrado; no modificar discos, volúmenes, cifrado ni ledgers reales. Revisión: commit remoto `480ea95`; contrato `Review`, G-NORM-4R bloqueado y opción activa sintética.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
 - [x] Configurar y autorizar la app de escritorio Sandbox de TikTok con los scopes oficiales mínimos `user.info.basic` y `video.list`, callback local y PKCE; el cliente OAuth local de Google con scopes de lectura y monetización sigue pendiente.
