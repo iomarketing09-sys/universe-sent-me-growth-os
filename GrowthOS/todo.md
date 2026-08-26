@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "11.5"
+version: "11.6"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -129,6 +129,7 @@ organization: "GrowthOS"
 - [ ] G-SEC-1A.3a, b, c y e: aprobar carpeta exclusiva, alcance de fuentes privadas, instalación/verificación de age, recuperación de frase fuera de servicios cloud y dry-run sobre el volumen real antes de autorizar `--execute`.
 - [x] Diseñar el árbol exacto de `USM_PRE_LUKS_BACKUP`, incluyendo categorías permitidas, manifest, checksums, nombres, retención y exclusiones; no crear todavía rutas en el volumen vfat. Diseño incorporado en `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md` v1.2.
 - [ ] G-SEC-1A.3a: Fernando debe aprobar la creación del árbol vacío `USM_PRE_LUKS_BACKUP` en la raíz del volumen vfat antes de cualquier dry-run o copia.
+- [ ] Ejecutar G-SEC-1A.3a aprobado: crear y verificar únicamente el árbol vacío `USM_PRE_LUKS_BACKUP` en el punto de montaje validado; no copiar, cifrar, leer datos privados ni modificar archivos existentes.
 - [x] Ejecutar la prueba ficticia aprobada de cifrado y restauración con age: fixture temporal sin datos USM, herramienta temporal, comparación de integridad y limpieza completa; no usar disco externo, rutas privadas ni respaldo real. Resultado: round-trip y hashes coincidentes; artefactos temporales eliminados.
 - [x] Evaluar Google Drive de iO Marketing (5 TB disponibles) solo como respaldo futuro cifrado antes de subirlo, con llave fuera de Drive y prueba de restauración; mantener prohibido cualquier uso como ledger activo o destino actual de datos USM. Decisión: contingencia futura condicionada; no reemplaza medio local y no autoriza subida actual.
 - [ ] G-BACKUP-DRIVE-0 a G-BACKUP-DRIVE-4: si se solicita después, definir alcance de archivos, cifrado local previo, llave fuera de Drive, restauración probada y aprobación de subida manual sin sincronización.
