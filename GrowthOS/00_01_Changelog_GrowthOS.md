@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.93
+**Versión:** 4.94
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.94.00] — 2026-08-25 (Fernando/Manus): Medios de respaldo identificados; inspección segura preparada.** Fernando informó una USB de 28.8 GB y un disco externo usado en Windows con 730 GB libres. La USB queda descartada como único medio porque está por debajo de los 36 GB requeridos para una copia lógica con margen. El disco Windows es candidato de capacidad, pero requiere confirmar filesystem, montaje, espacio y que no se alterará información existente. Se añadió `inspect_external_backup_media.sh`, un inspector read-only que no monta, desmonta, copia, repara, cifra ni formatea dispositivos. La asignación final queda pendiente de su reporte. No se tocaron los medios.
 
 - **[4.93.00] — 2026-08-25 (Fernando/Manus): Capacidad de respaldo definida para G-SEC-1A.** Con 24 GiB usados en Xubuntu se calcularon 30 GiB con 25% de margen, 36 GiB con 50% y 48 GiB al duplicar la ocupación. Para el respaldo lógico previo a la migración LUKS, 64 GB es el mínimo técnico y 128 GB es la recomendación para tener margen de revisión, restauración y crecimiento. Una imagen completa de `sda` no está incluida en la ruta elegida; requeriría aproximadamente 1 TB para no operar al límite. La capacidad se documentó en el plan de cifrado v1.2 e inventario v1.2; no se seleccionó ni compró medio alguno.
 
