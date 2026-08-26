@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "11.33"
+version: "11.36"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -151,8 +151,11 @@ organization: "GrowthOS"
 - [x] G-MIG-LUKS-1: proyecto separado de migración integral a LUKS diseñado en `2026-08-26_Proyecto_Migracion_LUKS_Integral_USM.md`; define medio de instalación, respaldo fuera de línea, verificación previa, recreación y validación posterior, sin modificar disco, particiones, cifrado o datos reales del ledger.
 - [x] G-MIG-LUKS-1.1: Fernando confirmó que la USB de 28.8 GB puede borrarse, se conservará Xubuntu, habrá acceso físico al disco `Fernando` y puede reservarse una ventana de mantenimiento; no se creó medio booteable.
 - [x] G-MIG-LUKS-1.2: inspección final de solo lectura completada. Confirmó `sda` como disco interno con raíz `sda2 ext4`, respaldo checksum `OK` en `sdc3` `vfat` label `Fernando`, y no realizó escrituras.
-- [x] Comparar medios G-MIG-LUKS-1.2: la USB anterior de 8 GB aparece como `sdb` con 0 B y no es utilizable; la USB autorizada es `sdd` de 28.9 GB, `vfat`, label `STORE N GO`, montada en `/run/media/universe-sent-me/STORE N GO`. No se escribió ningún medio.
-- [ ] G-MIG-LUKS-1.3: descargar la ISO oficial de Xubuntu, verificar su checksum y crear un medio booteable únicamente sobre `sdd` 28.9 GB `STORE N GO`; requiere autorización explícita de borrado del USB, nunca de `sda` o `sdc`.
+- [x] Comparar medios G-MIG-LUKS-1.2: la USB anterior de 8 GB no estaba conectada durante la inspección; Fernando confirmó que ya contiene el instalador de Xubuntu. `sdd` de 28.9 GB `STORE N GO` queda como alternativa no destructiva, sin escritura realizada.
+- [x] G-MIG-LUKS-1.2b: inspección de solo lectura confirmó la USB existente como `sdd` USB de 7.2 GB con `Xubuntu 26.04 amd64` ISO9660, partición ESP y espacio writable; puede reutilizarse sin crear medio nuevo.
+- [x] Secuencia física G-MIG-LUKS-1.2b: por límite de puertos se mantuvo `Fernando` conectado y se reemplazó `STORE N GO` por la USB instaladora; el checksum del respaldo volvió a dar `OK` y no se escribió ningún medio.
+- [ ] G-MIG-LUKS-1.3: no requerido mientras la USB existente `sdd` Xubuntu 26.04 amd64 siga disponible y legible. Si se pierde, corrompe o deja de ser utilizable, descargar la ISO oficial, verificar checksum y crear un medio booteable únicamente sobre `STORE N GO`; requerirá autorización explícita de borrado de esa USB, nunca de `sda` o `sdc`.
+- [ ] G-MIG-LUKS-1.4: realizar una revisión visual del arranque desde la USB reutilizada, confirmar que el instalador ofrece cifrado y detenerse antes de cualquier pantalla que pueda modificar `sda`; requiere autorización de reinicio, pero no de instalación.
 - [ ] G-MIG-LUKS-1.3a: antes de escribir, confirmar visualmente el objetivo `Xubuntu 26.04 LTS Desktop 64-bit`, la coincidencia de SHA-256 oficial y que el destino sigue siendo la USB `STORE N GO`, no `sda` ni `sdc`.
 - [ ] G-SEC-1A.3e: ejecutar `prepare_usm_encrypted_backup.sh --dry-run` sobre el volumen real después de 3b y 3c; no autoriza `--execute` ni la creación de ciphertext.
 - [x] Diseñar el árbol exacto de `USM_PRE_LUKS_BACKUP`, incluyendo categorías permitidas, manifest, checksums, nombres, retención y exclusiones; no crear todavía rutas en el volumen vfat. Diseño incorporado en `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md` v1.2.

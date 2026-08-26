@@ -4,7 +4,7 @@ purpose: "Definir los gates y la secuencia reversible para reinstalar Xubuntu co
 status: Draft
 created: 2026-08-26
 updated: 2026-08-26
-version: "0.3"
+version: "0.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -46,6 +46,12 @@ La USB de 8 GB usada previamente aparece como `sdb`, pero informa capacidad `0 B
 El objetivo propuesto es **Xubuntu 26.04 LTS, Desktop 64-bit**. La ISO se descargará desde el canal oficial de Xubuntu a una carpeta local del sistema, nunca directamente a la USB, y se contrastará contra el archivo oficial `SHA256SUMS` antes de elegir el medio. Xubuntu identifica 26.04 como una versión LTS publicada en abril de 2026 y ofrece el checksum SHA-256 oficial para sus ISOs. [2]
 
 Para la creación del USB se usará preferentemente **Startup Disk Creator** en la interfaz de Xubuntu, tras verificar visualmente que el destino sea la USB `STORE N GO` de 28.9 GB. La documentación oficial indica que el proceso sobrescribe y destruye los datos del USB, por lo que no se usará un comando `dd` manual. [3] Justo antes de escribir, se repetirá `lsblk` y se exigirá que `sda` y `sdc` sigan identificados como disco interno y disco de respaldo, respectivamente. Si cambian letras, capacidad, modelo o montajes, el proceso se detiene.
+
+### Decisión de reutilización del instalador existente
+
+La inspección posterior detectó la USB existente como `sdd`, USB de 7.2 GB modelo Cruze. Contiene `Xubuntu 26.04 amd64` en ISO9660, partición ESP y una partición `writable`; por tanto, satisface el objetivo de medio Xubuntu 26.04 LTS y se reutilizará sin reescritura. El checksum del respaldo en `Fernando` volvió a validar `OK` durante la inspección. `STORE N GO` no se borrará mientras esta USB siga disponible y legible.
+
+El siguiente gate es iniciar una **revisión visual del instalador** desde la USB reutilizada. Esta revisión permite comprobar que el medio arranca y que ofrece cifrado, pero se detiene antes de cualquier pantalla que pueda modificar `sda`. Arrancar desde USB exige una autorización de reinicio separada; no equivale a autorización de instalación.
 
 ## Arquitectura objetivo
 
