@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-26
-version: "8.0"
+version: "8.1"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -1530,3 +1530,12 @@ Fernando identificó que cuatro comentarios de baja señal podían proceder de u
 | “Ni me lo recuerdes!!” | `Jajaja, el recuerdo llegó sin tocar la puerta. 😅` | `Pendiente_Fernando` |
 
 Las respuestas son propuestas editoriales, no publicaciones. Los 2 comentarios de contexto, los 2 comentarios con lenguaje íntimo y los 5 casos de no acción restantes no se modificaron ni se incluyeron en la nueva cola. Evidencia: `Operations/Research/2026-08-26_18-38-17_Facebook_Low_Signal_Proposal_Review.json`, `Operations/Research/2026-08-26_18-38-17_Facebook_Low_Signal_Proposal_Review.md` y `Operations/Research/2026-08-26_18-38-17_Facebook_Pending_Queue_Low_Signal_Proposals.json`.
+
+
+## 59. Publicación de cuatro respuestas de baja señal — 26 de agosto de 2026
+
+Fernando aprobó las cuatro respuestas de re-engagement. El preflight GET-only revisó cada comentario y sus respuestas, encontró 0 duplicados y 0 conflictos, y se ejecutaron exactamente cuatro POST. Meta Graph API v26.0 confirmó **4/4 publicadas y verificadas**, con texto exacto, autoría de Universe Sent Me, `is_hidden=false` y parent directo correcto.
+
+Las cuatro respuestas fueron: `Jajaja, ese «ni voy» sonó a que de aquí no te mueve nadie. 😂`, `El universo confirmó que aquí nadie se escapa tan fácil. 👁️🔥`, `Ese «seeeee» sonó a confirmación oficial. 😂` y `Jajaja, el recuerdo llegó sin tocar la puerta. 😅`. Evidencia primaria: `Operations/Research/2026-08-26_18-44-00_Facebook_Low_Signal_Publication.json`; registro de cierre: `Operations/Research/2026-08-26_18-49-09_Facebook_Low_Signal_Publication_Record.json/.md`.
+
+El ledger quedó en **644 filas / 644 IDs únicos — PASS**, con las cuatro filas en `Respondido` y sus IDs de respuesta. La cola de propuestas de baja señal quedó en 0. Los dos comentarios con lenguaje íntimo, los dos casos de contexto y las cinco no acciones restantes no fueron respondidos ni modificados.

@@ -3,7 +3,7 @@
   "purpose": "Registrar la selección editorial de cuatro comentarios de baja señal para re-engagement, con propuestas específicas pendientes de aprobación humana.",
   "status": "Review",
   "created_at": "2026-08-26T18:38:17+00:00",
-  "updated_at": "2026-08-26T18:38:17+00:00",
+  "updated_at": "2026-08-26T18:49:07+00:00",
   "version": "1.0",
   "author": "Manus AI",
   "related_documents": [
@@ -26,52 +26,66 @@
       "post_id": "1036844829507460_122151377649072582",
       "comment_message": "Pues claro que nooooooo, ni pierdo .., , ni voy 😏",
       "post_reference": "🪦🧟‍♀️😅 #MaeveUSM #MemesUSM #UniverseSentMe",
-      "decision": "Propuesta",
-      "response_state": "Pendiente_Respuesta",
-      "approval_state": "Pendiente_Fernando",
+      "decision": "Respondido",
+      "response_state": "Respondido",
+      "approval_state": "Aprobada",
       "category": "low_signal_reengagement",
       "reason": "Fernando identificó una cuenta activa de la Página; el comentario ofrece una apertura breve para responder al remate de permanencia sin escalar el doble sentido.",
-      "proposed_reply": "Ese “ni voy” ya viene con cláusula de permanencia. 😂",
-      "publication_status": "No_Publicar_Sin_Autorizacion_Posterior"
+      "proposed_reply": "Jajaja, ese «ni voy» sonó a que de aquí no te mueve nadie. 😂",
+      "publication_status": "Publicado_y_verificado",
+      "response_meta_id": "122151377649072582_28490208183937584",
+      "response_created_time": "2026-08-26T18:48:57+0000"
     },
     {
       "comment_id": "122151377649072582_2227921178135227",
       "post_id": "1036844829507460_122151377649072582",
       "comment_message": "pues no te mueres...👁️👁️🔥🌀",
       "post_reference": "🪦🧟‍♀️😅 #MaeveUSM #MemesUSM #UniverseSentMe",
-      "decision": "Propuesta",
-      "response_state": "Pendiente_Respuesta",
-      "approval_state": "Pendiente_Fernando",
+      "decision": "Respondido",
+      "response_state": "Respondido",
+      "approval_state": "Aprobada",
       "category": "low_signal_reengagement",
       "reason": "Fernando identificó una cuenta activa de la Página; se propone un remate específico al tono de inmortalidad/escape del comentario.",
       "proposed_reply": "El universo confirmó que aquí nadie se escapa tan fácil. 👁️🔥",
-      "publication_status": "No_Publicar_Sin_Autorizacion_Posterior"
+      "publication_status": "Publicado_y_verificado",
+      "response_meta_id": "122151377649072582_2051190608847635",
+      "response_created_time": "2026-08-26T18:49:01+0000"
     },
     {
       "comment_id": "122151377109072582_1103053779073759",
       "post_id": "1036844829507460_122151377109072582",
       "comment_message": "Seeeee",
       "post_reference": "😈🚲🫣 #KaelUSM #MemesUSM #UniverseSentMe",
-      "decision": "Propuesta",
-      "response_state": "Pendiente_Respuesta",
-      "approval_state": "Pendiente_Fernando",
+      "decision": "Respondido",
+      "response_state": "Respondido",
+      "approval_state": "Aprobada",
       "category": "low_signal_reengagement",
       "reason": "Fernando identificó una cuenta activa de la Página; la respuesta convierte la reacción breve en un remate participativo sin inventar contexto.",
-      "proposed_reply": "Ese “seeeee” sonó a confirmación oficial. 😂",
-      "publication_status": "No_Publicar_Sin_Autorizacion_Posterior"
+      "proposed_reply": "Ese «seeeee» sonó a confirmación oficial. 😂",
+      "publication_status": "Publicado_y_verificado",
+      "response_meta_id": "122151377109072582_2294344668004637",
+      "response_created_time": "2026-08-26T18:49:04+0000"
     },
     {
       "comment_id": "122151377109072582_28380292711566338",
       "post_id": "1036844829507460_122151377109072582",
       "comment_message": "Ni me lo recuerdes!!",
       "post_reference": "😈🚲🫣 #KaelUSM #MemesUSM #UniverseSentMe",
-      "decision": "Propuesta",
-      "response_state": "Pendiente_Respuesta",
-      "approval_state": "Pendiente_Fernando",
+      "decision": "Respondido",
+      "response_state": "Respondido",
+      "approval_state": "Aprobada",
       "category": "low_signal_reengagement",
       "reason": "Fernando identificó una cuenta activa de la Página; la respuesta sigue la reacción de memoria con un giro breve y natural.",
       "proposed_reply": "Jajaja, el recuerdo llegó sin tocar la puerta. 😅",
-      "publication_status": "No_Publicar_Sin_Autorizacion_Posterior"
+      "publication_status": "Publicado_y_verificado",
+      "response_meta_id": "122151377109072582_1515532467406994",
+      "response_created_time": "2026-08-26T18:49:07+0000"
     }
-  ]
+  ],
+  "publication_update": {
+    "published_count": 4,
+    "verified_count": 4,
+    "publication_status": "Publicado_y_verificado",
+    "additional_cases_published": 0
+  }
 }

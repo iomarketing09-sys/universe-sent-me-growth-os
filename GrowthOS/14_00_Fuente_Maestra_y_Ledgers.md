@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-26
-version: "2.75"
+version: "2.76"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -641,3 +641,12 @@ Fernando seleccionó cuatro comentarios previamente clasificados como baja seña
 La actividad observada puede priorizar una revisión humana, pero no autoriza por sí misma una publicación ni constituye un dato personal que deba conservarse en el ledger. Los 2 casos de contexto, los 2 comentarios con lenguaje íntimo y los 5 no acciones restantes permanecen fuera de la cola.
 
 **Evidencia:** `Operations/Research/2026-08-26_18-38-17_Facebook_Low_Signal_Proposal_Review.json`, `Operations/Research/2026-08-26_18-38-17_Facebook_Low_Signal_Proposal_Review.md` y `Operations/Research/2026-08-26_18-38-17_Facebook_Pending_Queue_Low_Signal_Proposals.json`.
+
+
+## 38. Publicación de cuatro respuestas de baja señal — 26 de agosto de 2026
+
+Las cuatro propuestas de re-engagement de baja señal fueron aprobadas explícitamente por Fernando y publicadas mediante Meta Graph API v26.0 después de un preflight sin duplicados ni conflictos. Las cuatro quedaron verificadas con texto exacto, autoría de la Página, `is_hidden=false` y parent directo correcto.
+
+El ledger conserva **644 filas / 644 IDs únicos**, validación `PASS`, y las cuatro filas pasaron a `Respondido` con sus IDs Meta y timestamps. La cola de baja señal quedó en **0 propuestas pendientes**. Los 2 comentarios con lenguaje íntimo, los 2 casos de contexto y las 5 no acciones restantes permanecen fuera de publicación.
+
+**Evidencia:** `Operations/Research/2026-08-26_18-44-00_Facebook_Low_Signal_Publication.json`, `Operations/Research/2026-08-26_18-49-09_Facebook_Low_Signal_Publication_Record.json/.md` y `Operations/Research/2026-08-26_18-49-09_Facebook_Pending_Queue_After_Low_Signal_Publication.json`.

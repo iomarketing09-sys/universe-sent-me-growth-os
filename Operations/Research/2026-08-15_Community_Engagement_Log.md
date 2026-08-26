@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-26
-version: "7.5"
+version: "7.6"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -1029,5 +1029,18 @@ Fernando identificó que cuatro comentarios previamente clasificados como `No_Re
 Los cuatro IDs fueron reclasificados en el ledger como `Pendiente_Respuesta`, con `Aprobacion_Estado=Pendiente_Fernando`, y se añadieron a una nueva cola de propuestas. No se ejecutó ninguna publicación. Los 2 casos de contexto y los 2 comentarios con lenguaje íntimo permanecen separados; los 5 casos de reacción/no acción restantes no fueron modificados.
 
 **Evidencia:** `Operations/Research/2026-08-26_18-38-17_Facebook_Low_Signal_Proposal_Review.json`, `Operations/Research/2026-08-26_18-38-17_Facebook_Low_Signal_Proposal_Review.md` y `Operations/Research/2026-08-26_18-38-17_Facebook_Pending_Queue_Low_Signal_Proposals.json`.
+
+**Documentos relacionados:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 43. Publicación verificada de cuatro respuestas de baja señal — 26 de agosto de 2026
+
+Fernando aprobó las cuatro propuestas de re-engagement de baja señal, incluida la redacción corregida: `Jajaja, ese «ni voy» sonó a que de aquí no te mueve nadie. 😂`. El preflight consultó cada comentario y sus respuestas; no encontró duplicados ni conflictos. Meta Graph API v26.0 confirmó **4/4 publicadas y verificadas**, con texto exacto, autoría de la Página, `is_hidden=false` y parent directo correcto.
+
+El registrador `Operations/Automation/record_low_signal_publication_2026_08_26.py` actualizó las cuatro filas a `Respuesta_Estado=Respondido`, `Aprobacion_Estado=Aprobada`, con sus `Respuesta_Meta_ID` y timestamps. El ledger conserva **644 filas / 644 IDs únicos** y validación `PASS`. La cola de baja señal quedó con **0 propuestas pendientes**.
+
+Los 2 comentarios con lenguaje íntimo, los 2 casos de contexto y las 5 no acciones restantes no se respondieron ni se modificaron. No se publicó ninguna respuesta adicional.
+
+**Evidencia:** `Operations/Research/2026-08-26_18-44-00_Facebook_Low_Signal_Publication.json`, `Operations/Research/2026-08-26_18-49-09_Facebook_Low_Signal_Publication_Record.json/.md` y `Operations/Research/2026-08-26_18-49-09_Facebook_Pending_Queue_After_Low_Signal_Publication.json`.
 
 **Documentos relacionados:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

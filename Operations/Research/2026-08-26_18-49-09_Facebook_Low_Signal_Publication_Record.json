@@ -1,0 +1,79 @@
+{
+  "title": "Facebook Low-Signal Replies — publication and ledger update",
+  "purpose": "Record the explicit approval, verified publication, queue closure and ledger update for exactly four low-signal Facebook replies.",
+  "status": "Active",
+  "created_at": "2026-08-26T18:48:55+00:00",
+  "updated_at": "2026-08-26T18:49:07+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-26_18-44-00_Facebook_Low_Signal_Publication.json",
+    "Operations/Research/2026-08-26_18-38-17_Facebook_Low_Signal_Proposal_Review.json",
+    "Operations/Research/2026-08-26_18-49-09_Facebook_Pending_Queue_After_Low_Signal_Publication.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv"
+  ],
+  "organization": "Operations/Research",
+  "source": "Meta Graph API v26.0",
+  "page_id": "1036844829507460",
+  "explicit_user_approval": true,
+  "requested_count": 4,
+  "published_count": 4,
+  "verified_count": 4,
+  "strict_direct_parent_count": 4,
+  "queue_pending_response_count_after": 0,
+  "additional_cases_published": 0,
+  "results": [
+    {
+      "status": "published",
+      "parent_comment_id": "122151377649072582_2511249876017099",
+      "post_id": "1036844829507460_122151377649072582",
+      "proposed_reply": "Jajaja, ese «ni voy» sonó a que de aquí no te mueve nadie. 😂",
+      "reply_id": "122151377649072582_28490208183937584",
+      "message": "Jajaja, ese «ni voy» sonó a que de aquí no te mueve nadie. 😂",
+      "from_id": "1036844829507460",
+      "parent_id_returned": "122151377649072582_2511249876017099",
+      "created_time": "2026-08-26T18:48:57+0000",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151377649072582_2227921178135227",
+      "post_id": "1036844829507460_122151377649072582",
+      "proposed_reply": "El universo confirmó que aquí nadie se escapa tan fácil. 👁️🔥",
+      "reply_id": "122151377649072582_2051190608847635",
+      "message": "El universo confirmó que aquí nadie se escapa tan fácil. 👁️🔥",
+      "from_id": "1036844829507460",
+      "parent_id_returned": "122151377649072582_2227921178135227",
+      "created_time": "2026-08-26T18:49:01+0000",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151377109072582_1103053779073759",
+      "post_id": "1036844829507460_122151377109072582",
+      "proposed_reply": "Ese «seeeee» sonó a confirmación oficial. 😂",
+      "reply_id": "122151377109072582_2294344668004637",
+      "message": "Ese «seeeee» sonó a confirmación oficial. 😂",
+      "from_id": "1036844829507460",
+      "parent_id_returned": "122151377109072582_1103053779073759",
+      "created_time": "2026-08-26T18:49:04+0000",
+      "is_hidden": false,
+      "verified": true
+    },
+    {
+      "status": "published",
+      "parent_comment_id": "122151377109072582_28380292711566338",
+      "post_id": "1036844829507460_122151377109072582",
+      "proposed_reply": "Jajaja, el recuerdo llegó sin tocar la puerta. 😅",
+      "reply_id": "122151377109072582_1515532467406994",
+      "message": "Jajaja, el recuerdo llegó sin tocar la puerta. 😅",
+      "from_id": "1036844829507460",
+      "parent_id_returned": "122151377109072582_28380292711566338",
+      "created_time": "2026-08-26T18:49:07+0000",
+      "is_hidden": false,
+      "verified": true
+    }
+  ]
+}
