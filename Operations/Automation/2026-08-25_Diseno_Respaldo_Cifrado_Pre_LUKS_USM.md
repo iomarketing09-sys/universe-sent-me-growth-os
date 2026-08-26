@@ -4,7 +4,7 @@ purpose: "Definir una estructura de carpetas y un wrapper de cifrado local previ
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.9"
+version: "2.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -12,6 +12,8 @@ related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
   - "Operations/Automation/create_usm_backup_tree.sh"
   - "Operations/Automation/verify_local_age_tool.sh"
+  - "Operations/Automation/validate_usm_restore_controlled.sh"
+  - "Operations/Automation/validate_usm_restore_tree.py"
   - "GrowthOS/todo.md"
 organization: "Operations/Automation"
 ---
@@ -22,7 +24,7 @@ organization: "Operations/Automation"
 
 El disco externo Windows fue validado como destino físico condicionado: `sdc3`, formato `vfat`, 730.9 GiB libres. El formato permite guardar archivos, pero no cifra datos ni conserva permisos POSIX. Por ello, las categorías privadas solo pueden llegar al disco dentro de un archivo cifrado creado localmente.
 
-Este documento y `prepare_usm_encrypted_backup.sh` son **diseño**. El script arranca en modo `--plan`, no crea carpetas ni archivos por defecto, y no se ejecutará en modo `--execute` hasta que G-SEC-1A.3b, G-SEC-1A.3c, G-SEC-1A.3e y la autorización específica de la primera copia estén aprobados.
+Este documento cubre el respaldo inicial ya creado y el diseño de su restauración controlada. El wrapper de copia no permite una segunda versión sobre el árbol actual, y `validate_usm_restore_controlled.sh` inicia en modo `--plan`; este último no se ejecutará en modo `--execute` hasta una autorización separada de G-SEC-1A.3g.
 
 ## Herramienta seleccionada
 
@@ -82,7 +84,7 @@ Los únicos datos privados del disco serán ciphertext `.age`. El manifest no en
 | G-SEC-1A.3d | Probar cifrado y restauración de un archivo ficticio no sensible en una carpeta temporal. |
 | G-SEC-1A.3e | **Completado el 2026-08-25.** Dry-run contra el volumen validó montaje, herramienta, árbol y metadatos sin crear archivos. |
 | G-SEC-1A.3f | **Completado el 2026-08-26.** Primera copia única creada tras validar `/dev/sdc3`, `vfat`, label `Fernando` y las cinco subcarpetas vacías. |
-| G-SEC-1A.3g | Diseñar y aprobar una restauración controlada de la copia real; no está aprobada. |
+| G-SEC-1A.3g | Diseño v2.0 preparado. Falta aprobación independiente para descifrar temporalmente la copia real y ejecutar la validación. |
 
 No se autoriza copia real, subida a Drive, sincronización, Drive como ledger, uso de OmniRoute, inserción de observaciones ni cambios de LUKS mediante este diseño.
 
@@ -170,6 +172,33 @@ El manifest será texto simple y tendrá solo estas claves: `backup_type`, `prot
 ### Secuencia después de crear el árbol
 
 G-SEC-1A.3a creó el árbol vacío, G-SEC-1A.3b fijó el alcance autorizado, G-SEC-1A.3c verificó la herramienta y la recuperación, G-SEC-1A.3e validó el dry-run y G-SEC-1A.3f creó y verificó la primera copia cifrada. La siguiente barrera es G-SEC-1A.3g: diseñar y aprobar una restauración real controlada; no se descifrará ni restaurará nada sin esa autorización separada.
+
+## Diseño de restauración controlada G-SEC-1A.3g
+
+La finalidad de G-SEC-1A.3g es probar que el ciphertext real puede restaurarse y que los cinco grupos autorizados son lógicamente equivalentes a sus fuentes actuales, sin publicar archivos, rutas internas, valores de métricas, tokens ni contenido. La prueba **sí expone datos reales temporalmente** dentro de la ruta local no cifrada de Xubuntu; por eso requiere una aprobación distinta de la primera copia y un reconocimiento explícito de ese riesgo temporal.
+
+| Elemento | Diseño aprobado para futura ejecución |
+|---|---|
+| Ciphertext de entrada | Únicamente `usm_pre_luks_20260826T042149Z.tar.gz.age`, después de validar su SHA-256. |
+| Punto de montaje | Solo `/dev/sdc3`, `vfat`, label `Fernando`, raíz de montaje aprobada. |
+| Ruta temporal | Directorio único creado con `mktemp` bajo `~/.config/.usm-restore-validation.<stamp>.XXXXXX`, con `umask 077` y modo `0700`. No se usa `/tmp`, el disco externo, Drive ni el repositorio. |
+| Descifrado | `age --decrypt` solicita la frase exclusivamente en la terminal local; no recibe frases por argumentos, ambiente, archivos ni chat. |
+| Restauración | El stream se extrae con `tar` al directorio temporal; no conserva un archivo `.tar` abierto. |
+| Validación histórica | El validador confirma exclusivamente que el árbol restaurado contiene los cinco grupos requeridos y solo tipos permitidos —directorios, archivos regulares o symlinks—. No compara contra fuentes actuales, pues estas pueden haber cambiado desde el punto temporal del respaldo. |
+| Integridad | SHA-256 del ciphertext se revisa antes y después de la restauración. |
+| Limpieza | El directorio temporal se elimina tras PASS y mediante `trap` ante salida/fallo. Se confirma que la ruta ya no existe antes de escribir evidencia. |
+| Límite de limpieza | La eliminación por ruta no equivale a borrado seguro de bloques en `ext4`; la ventana de plaintext temporal es el riesgo explícitamente reconocido por este gate. |
+| Evidencia externa | Solo se escribe `40_RESTORE_EVIDENCE/restore_check_<stamp>.txt` tras PASS; contiene estados agregados, no contenido, rutas internas, hashes por archivo ni frase. |
+
+### Requisitos de entrada y criterios de resultado
+
+Antes de un futuro `--execute`, el wrapper exige el ciphertext, protocolo, manifest y checksum existentes; que el manifest conserve `scope_profile=code_scripts_and_approved_private` y `restore_status=pending`; que el destino siga siendo exactamente el volumen aprobado; que estén disponibles `age`, `tar`, `sha256sum` y Python local; y que aún no exista una evidencia de restauración para ese timestamp. Una ejecución requiere además `--acknowledge-temporary-plaintext` y la confirmación exacta `RUN_CONTROLLED_USM_RESTORE`.
+
+La prueba pasa solo si ambos checksums del ciphertext son válidos, el descifrado autenticado y la extracción finalizan sin error, el árbol restaurado contiene los cinco grupos requeridos con tipos permitidos y la ruta temporal ya no existe tras la limpieza. No se compara el resultado contra fuentes actuales: la copia es evidencia de un momento anterior y esas fuentes pueden cambiar después. Si falla cualquier control, no se crea evidencia PASS; el `trap` intenta retirar la ruta temporal y el proceso termina en error. La limpieza no autoriza una migración por sí sola: el resultado deberá revisarse y documentarse antes de abrir un proyecto de migración LUKS.
+
+### Límites y prohibiciones de G-SEC-1A.3g
+
+G-SEC-1A.3g no publica, programa ni sube datos. No usa Drive, GitHub, Sheets, OmniRoute, APIs sociales, cron, shadow ledger ni otro producto de iO Marketing. No admite una segunda copia, no modifica el ciphertext, no actualiza el manifest original y no elimina los stashes locales de Git. La frase de recuperación no se muestra, registra ni comparte. La ejecución de este diseño sigue **no autorizada** hasta un consentimiento explícito posterior.
 
 ## Referencias
 

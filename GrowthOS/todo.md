@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "11.19"
+version: "11.23"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -142,6 +142,10 @@ organization: "GrowthOS"
 - [x] Validación previa G-SEC-1A.3f: el wrapper confirmó que el destino era el punto de montaje raíz `/dev/sdc3`, `vfat`, label `Fernando`, y que las cinco subcarpetas aprobadas estaban vacías antes de escribir el primer ciphertext.
 - [x] Verificar G-SEC-1A.3f: `sha256sum -c` devolvió `OK`; ciphertext de 307,792,785 bytes; se observaron exactamente protocolo, ciphertext, manifest y checksum. No se descifró, inspeccionó contenido ni mostró frase de recuperación.
 - [ ] G-SEC-1A.3g: diseñar y aprobar una restauración controlada de la copia real en una ruta temporal privada, con contenido real expuesto solo durante la prueba, verificación de integridad y limpieza demostrada antes de cualquier migración LUKS. No ejecutar restauración sin autorización independiente.
+- [x] Diseñar G-SEC-1A.3g: se fijó ruta temporal privada, validación de ciphertext/checksum, validación estructural de los cinco grupos, evidencia agregada sin contenido y limpieza fail-closed; `validate_usm_restore_controlled.sh --plan` y el validador sintético pasaron sin ejecutar `age --decrypt`.
+- [x] Corregir G-SEC-1A.3g: la validación comprueba exclusivamente la estructura restaurada correspondiente al punto temporal del backup, no compara fuentes locales que podrían haber cambiado desde la copia; la prueba sintética ajustada pasó.
+- [ ] G-SEC-1A.3g.1: ejecutar únicamente el dry-run del wrapper de restauración contra el ciphertext real para confirmar precondiciones, sin descifrar ni crear ruta temporal.
+- [ ] G-SEC-1A.3g.2: con aprobación independiente posterior, ejecutar una sola restauración controlada real, validar la huella lógica, confirmar limpieza de la ruta temporal y revisar la evidencia agregada antes de autorizar una migración LUKS.
 - [ ] G-SEC-1A.3e: ejecutar `prepare_usm_encrypted_backup.sh --dry-run` sobre el volumen real después de 3b y 3c; no autoriza `--execute` ni la creación de ciphertext.
 - [x] Diseñar el árbol exacto de `USM_PRE_LUKS_BACKUP`, incluyendo categorías permitidas, manifest, checksums, nombres, retención y exclusiones; no crear todavía rutas en el volumen vfat. Diseño incorporado en `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md` v1.2.
 - [x] G-SEC-1A.3a: Fernando aprobó y ejecutó la creación del árbol vacío `USM_PRE_LUKS_BACKUP` en `/run/media/universe-sent-me/Fernando`; el wrapper verificó `/dev/sdc3`, `vfat` y `STATUS=empty_tree_created`, sin crear archivos de respaldo ni tocar datos existentes.

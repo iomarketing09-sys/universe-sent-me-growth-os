@@ -4,7 +4,7 @@ purpose: "Preparar una decisión reversible y respaldada sobre el almacenamiento
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.13"
+version: "1.15"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -167,13 +167,13 @@ Incluso si estos gates se aprobaran, la copia cifrada de Drive sería contingenc
 
 El disco externo Windows se detectó como `sdc3`, un volumen `vfat` de 930.8 GiB con 730.9 GiB disponibles. Puede servir como destino físico para el respaldo lógico previo a la migración, pero con dos límites: contiene información existente y `vfat` no aporta permisos POSIX ni cifrado en reposo.
 
-Por ello, cualquier respaldo deberá usar una carpeta exclusiva aprobada y preservar los datos privados de USM en un formato cifrado antes de escribirlos al disco. El gate G-SEC-1A.3a creó exclusivamente el árbol vacío `USM_PRE_LUKS_BACKUP` en la raíz del volumen; G-SEC-1A.3b aprobó el alcance cifrado de `~/omniroute-pilot`, `~/.config/usm-metrics` y `~/.local/share/usm-metrics`, sin abrirlas ni transferirlas; G-SEC-1A.3c confirmó la recuperación física en dos copias separadas y `age` desde repositorios Ubuntu configurados (`/usr/bin/age`, `1.2.1`); y G-SEC-1A.3e completó el dry-run sobre `/dev/sdc3` `vfat`. Con autorización única G-SEC-1A.3f, se creó la primera copia ciphertext de 307,792,785 bytes y su checksum validó `OK`, sin descifrar contenido. El siguiente gate es una restauración real controlada G-SEC-1A.3g; la migración LUKS y G-NORM-4R siguen bloqueados.
+Por ello, cualquier respaldo deberá usar una carpeta exclusiva aprobada y preservar los datos privados de USM en un formato cifrado antes de escribirlos al disco. El gate G-SEC-1A.3a creó exclusivamente el árbol vacío `USM_PRE_LUKS_BACKUP` en la raíz del volumen; G-SEC-1A.3b aprobó el alcance cifrado de `~/omniroute-pilot`, `~/.config/usm-metrics` y `~/.local/share/usm-metrics`, sin abrirlas ni transferirlas; G-SEC-1A.3c confirmó la recuperación física en dos copias separadas y `age` desde repositorios Ubuntu configurados (`/usr/bin/age`, `1.2.1`); y G-SEC-1A.3e completó el dry-run sobre `/dev/sdc3` `vfat`. Con autorización única G-SEC-1A.3f, se creó la primera copia ciphertext de 307,792,785 bytes y su checksum validó `OK`, sin descifrar contenido. El diseño G-SEC-1A.3g ya define el futuro restablecimiento temporal, comparación lógica y limpieza fail-closed, pero no se ha descifrado ningún dato. La migración LUKS y G-NORM-4R siguen bloqueados.
 
-El diseño de estructura y wrapper previo se documenta en `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md`. Usa `age` local por streaming; G-SEC-1A.3f creó una única primera copia y bloquea cualquier segunda copia porque las cinco subcarpetas ya no están vacías. No se habilita la migración hasta que G-SEC-1A.3g valide una restauración real controlada.
+El diseño de estructura y wrapper previo se documenta en `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md`. Usa `age` local por streaming; G-SEC-1A.3f creó una única primera copia y bloquea cualquier segunda copia porque las cinco subcarpetas ya no están vacías. `validate_usm_restore_controlled.sh` parte en `--plan` y requiere un dry-run, seguido de otra aprobación humana, antes de descifrar la primera copia. La restauración valida la autenticidad de age, los checksums y la presencia estructural de los cinco grupos del backup histórico; no compara contra fuentes actuales que pueden haber cambiado. No se habilita la migración hasta que G-SEC-1A.3g valide una restauración real controlada.
 
 G-SEC-1A.3d ya tiene una prueba ficticia aprobada y pasada con age temporal: fixture artificial, cifrado, restauración, hashes iguales y limpieza verificada. La prueba no incluyó datos de USM ni el disco externo, por lo que no reduce los demás gates de alcance, recuperación de frase y dry-run sobre el volumen real.
 
-El árbol exacto del destino físico se fija en el diseño de respaldo v1.9: `USM_PRE_LUKS_BACKUP` contiene protocolo no sensible, un ciphertext, manifest mínimo, checksum de ciphertext y evidencia agregada de restauración. G-SEC-1A.3f creó los cuatro primeros elementos y confirmó la integridad de ciphertext; no existe aún evidencia de restauración. No se autoriza una segunda copia, alteración del ciphertext ni migración LUKS sin el proyecto de restauración G-SEC-1A.3g.
+El árbol exacto del destino físico se fija en el diseño de respaldo v2.0: `USM_PRE_LUKS_BACKUP` contiene protocolo no sensible, un ciphertext, manifest mínimo, checksum de ciphertext y evidencia agregada de restauración. G-SEC-1A.3f creó los cuatro primeros elementos y confirmó la integridad de ciphertext; no existe aún evidencia de restauración. No se autoriza una segunda copia, alteración del ciphertext ni migración LUKS sin el proyecto de restauración G-SEC-1A.3g.
 
 ## Referencias
 
