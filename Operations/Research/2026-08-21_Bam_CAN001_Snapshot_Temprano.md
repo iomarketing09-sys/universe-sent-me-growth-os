@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — CAN-001: snapshot temprano consolidado"
 purpose: "Conservar las métricas públicas observables de la primera cascada de CAN-001 y distinguir datos medidos de campos no expuestos sin autenticación."
-status: "Active — Instagram y evidencia directa de YouTube actualizadas; Windsor pendiente de indexación"
+status: "Active — seguimiento multifuente registrado; filas de TikTok e Instagram ausentes en el corte actual"
 created: 2026-08-21
-updated: 2026-08-24
-version: "1.7"
+updated: 2026-08-25
+version: "1.8"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
@@ -80,6 +80,12 @@ Fernando aportó una nueva captura directa de Studio, recibida a las **22:21:14 
 Frente a la evidencia directa previa de 13 vistas, hay **+2 vistas** acumuladas y el share permanece en 1. El crecimiento confirma distribución continua pero de bajo volumen; no permite valorar el control de SFX ni establecer una comparación útil con TikTok o Instagram. Windsor sigue sin fila autenticada para el Short.
 
 ![Captura de YouTube Studio de CAN-001 con edad relativa de tres días](2026-08-24_Bam_CAN001_YouTube_Studio_relative_3d.jpg)
+
+## Seguimiento multifuente — 25 de agosto
+
+Se solicitó un corte de seguimiento de CAN-001 junto con CAN-002. La consulta individual de TikTok por el ID canónico `7676640119222209813` y la consulta individual de Instagram por el shortcode `DcUnEVnsoaV` devolvieron conjuntos vacíos. Esta ausencia no se registra como cero ni se utiliza para inferir una caída: los últimos valores utilizables siguen siendo los documentados anteriormente.
+
+La consulta mínima de YouTube en Windsor sí devolvió por primera vez una fila titulada `CAN 001 / IT WAS MAKING NOISE FROM THE INSIDE.#BamInACan#BamInACan`, con 3 views y 0 likes a las **20:24:36 CDT**. No sustituye la evidencia directa más reciente de Studio —15 vistas y 1 share— porque los conteos no son consistentes entre fuentes y no se confirmó que compartan el mismo corte o definición. Queda como señal de indexación parcial que requiere reconciliación, no como un downgrade de Studio.
 
 ## Lectura operativa
 

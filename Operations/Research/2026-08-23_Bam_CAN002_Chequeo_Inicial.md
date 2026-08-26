@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — CAN-002: chequeo inicial y corte post-T+3"
 purpose: "Preservar los cortes operativos iniciales de CAN-002, separando métricas autenticadas, cache de plataforma, evidencia directa e indexación pendiente."
-status: "Active — TikTok e Instagram actualizados cerca de T+28; YouTube sigue sin fila Windsor"
+status: "Active — seguimiento T+49 registrado; YouTube con discrepancia de fuentes pendiente de reconciliación"
 created: 2026-08-23
-updated: 2026-08-24
-version: "1.8"
+updated: 2026-08-25
+version: "1.9"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
@@ -95,6 +95,14 @@ Para sostener la siguiente prueba editorial, se reconsultaron ambas plataformas 
 
 La reconsulta habilita ajustes de prueba de hook en TikTok y packaging de caption en Instagram, documentados en el Plan de lanzamiento de audiencia de Bam. No habilita un cambio de horario, audio ni volumen: solo hay una pieza reciente y las plataformas no son comparables entre sí.
 
+## Seguimiento multifuente — 25 de agosto
+
+El corte de seguimiento devolvió una fila fresca de TikTok a las **20:22:52 CDT**, cuando CAN-002 tenía **49 h 23 min 09 s**: 155 views, 2 likes, 0 shares, 0 favoritos y avg. watch 2.51 s. Es el mismo conteo de views y likes del corte previo cercano a T+28, por lo que no se declara crecimiento nuevo desde esa fila. La finalización más reciente disponible continúa siendo 7.22 %; no se reconsultaron comentarios en este bloque.
+
+Instagram devolvió una fila fresca a las **20:23:23 CDT**, con edad de **49 h 02 min 46 s**: 324 views, reach 248, 0 likes, 0 comentarios, 0 shares, 0 saves, avg. watch 5.454 s y total watch 1,390.849 s. Los valores se mantienen frente al corte cercano a T+28; la actualización confirma estabilidad del snapshot de Windsor, no una evolución nueva.
+
+Por primera vez, el inventario mínimo de YouTube en Windsor incluyó CAN-002 con 103 views y 2 likes a las **20:24:36 CDT**. No reemplaza la evidencia directa de Studio de 255 views, 3 likes y 4 shares: los orígenes no comparten una referencia de corte verificable y sus valores difieren. Esta fila se conserva como indexación parcial pendiente de reconciliación. No se comparan estos conteos de YouTube contra TikTok o Instagram ni se utiliza la discrepancia para alterar la estrategia.
+
 ## Límites y actualizaciones relacionadas
 
-El ledger conserva el chequeo inicial como `pre-T3`, el corte post-T+3 y la reconsulta post-T+24 dentro de los snapshots por plataforma. Este documento actualiza la interpretación de lanzamiento de CAN-002; los documentos relacionados que requieren el mismo ajuste son el ledger de distribución y el Plan de lanzamiento de audiencia de Bam, modificados en este cambio. El paquete y el calendario de Semana 01 no requieren modificación porque no cambian el copy, los assets, el audio ni las ventanas planificadas.
+El ledger conserva el chequeo inicial como `pre-T3`, el corte post-T+3, la reconsulta post-T+24 y el seguimiento posterior dentro de los snapshots por plataforma. Este documento actualiza la interpretación de lanzamiento de CAN-002; el documento relacionado que requiere el mismo ajuste es el ledger de distribución, modificado en este cambio. El paquete, el calendario y el Plan de lanzamiento de audiencia no requieren modificación porque este corte no cambia copy, assets, audio, hipótesis ni ventanas planificadas.
