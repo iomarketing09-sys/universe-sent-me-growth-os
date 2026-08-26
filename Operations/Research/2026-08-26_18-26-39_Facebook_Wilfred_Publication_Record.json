@@ -1,0 +1,28 @@
+{
+  "title": "Facebook Wilfred Reply — publication and ledger update",
+  "purpose": "Record the explicit approval, verified publication, queue closure and ledger update for exactly one Facebook reply.",
+  "status": "Active",
+  "created_at": "2026-08-26T18:26:25+00:00",
+  "updated_at": "2026-08-26T18:26:39+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-26_18-24-00_Facebook_Wilfred_Publication.json",
+    "Operations/Research/2026-08-26_18-15-41_Facebook_Editorial_Review_GET_Only.json",
+    "Operations/Research/2026-08-26_18-26-39_Facebook_Pending_Queue_After_Wilfred_Publication.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv"
+  ],
+  "organization": "Operations/Research",
+  "source": "Meta Graph API v26.0",
+  "page_id": "1036844829507460",
+  "explicit_user_approval": true,
+  "target_comment_id": "122151377553072582_1857148135657699",
+  "reply_id": "122151377553072582_4768546293365795",
+  "published_count": 1,
+  "verified_count": 1,
+  "is_hidden": false,
+  "parent_id_returned": "122151377553072582_1857148135657699",
+  "ledger_state": "Respondido",
+  "queue_pending_response_count_after": 0,
+  "additional_cases_published": 0
+}
