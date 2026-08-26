@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "2.3"
+version: "2.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -152,6 +152,14 @@ El generador prohíbe explícitamente cualquier salida de IDs, captions, textos,
 El diseño `2026-08-25_Esquema_Normalizacion_Determinista_Multicanal_USM.md` define la futura estructura común de observaciones para TikTok, YouTube, Facebook e Instagram. Normaliza identidad, procedencia, ventana, disponibilidad y unidad, pero conserva toda métrica nativa en su propio nombre y prohíbe una columna universal de engagement o views. El esquema se mantiene en `Review`: no crea un ledger nuevo, no transforma evidencia privada en datos canónicos y no llena las pestañas derivadas de Google Sheets.
 
 Los collectors locales actuales permanecen limitados a captura privada y resumen seguro. Cualquier implementación posterior debe pasar los gates de validación del esquema, append-only e idempotencia descritos en ese diseño antes de registrar una observación canónica.
+
+### G-NORM-2: normalizador sintético dry-run validado
+
+`normalize_metrics_dry_run.py` acepta exclusivamente un fixture JSON con `synthetic = true`. No realiza solicitudes de red, no lee variables de entorno, tokens o evidencia local, y no escribe archivos, ledgers, Google Sheets u OmniRoute. Produce en stdout observaciones normalizadas con `observation_key`, `transform_run_id`, versión del normalizador y estado de validación.
+
+El fixture cubre una observación Facebook disponible, una ausencia válida de saves de Instagram, una observación TikTok de vida y una métrica diaria de porcentaje visto de YouTube por encima de 100, que se conserva sin recorte. Además incluye casos de marca incorrecta y valor nulo marcado erróneamente como disponible. La batería `validate_normalization_dry_run.py` verificó `NORM-01` a `NORM-12`, incluidos duplicados, ausencia explícita, métricas derivadas incompletas, evidencia no hasheada, datos monetarios no restringidos y campo prohibido.
+
+El resultado del gate fue `synthetic_validation_passed` con 3 filas válidas, 1 parcial, 2 rechazadas y 0 duplicados en el lote base. Este resultado no autoriza utilizar evidencia real: el próximo posible paso es `G-NORM-3`, un piloto local privado, y requiere aprobación adicional de Fernando.
 
 ### Revisión descriptiva de la primera captura — 25 de agosto de 2026
 

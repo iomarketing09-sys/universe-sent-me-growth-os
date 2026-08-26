@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "6.3"
+version: "6.5"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -80,6 +80,11 @@ organization: "GrowthOS"
 - [x] Definir reglas explícitas para distinguir contadores de vida, métricas por ventana, `not_available`, `missing`, datos preliminares de monetización y datos sin comparabilidad interplataforma.
 - [x] Documentar validaciones, ejemplos sintéticos y los documentos/ledgers que requerirán actualización antes de implementar normalización local.
 - [ ] Revisar y aprobar el esquema `2026-08-25_Esquema_Normalizacion_Determinista_Multicanal_USM.md` antes de crear un normalizador `dry-run` o cualquier ledger de observaciones.
+- [x] Aprobar `G-NORM-1`: revisión humana del esquema determinista multicanal; se autoriza preparar `G-NORM-2` únicamente en modo dry-run con datos sintéticos.
+- [x] Definir un contrato JSON sintético de entrada y una salida JSON de observaciones normalizadas, sin IDs reales, evidencia fuente, tokens, paths locales ni escrituras.
+- [x] Implementar `normalize_metrics_dry_run.py` y `validate_normalization_dry_run.py`, cubriendo los casos sintéticos TikTok, YouTube, Facebook e Instagram y aplicando `NORM-01` a `NORM-12`.
+- [x] Ejecutar el set de pruebas sintéticas: 3 filas válidas, 1 parcial, 2 rechazadas y 0 duplicados en la base; `NORM-01` a `NORM-12` pasaron sin crear o modificar ledgers, Sheets, raw o credenciales.
+- [ ] Revisar el resultado del dry-run y decidir si se autoriza `G-NORM-3`: un piloto privado con una muestra real acotada, sin materializar filas canónicas.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.
 - [x] Configurar y autorizar la app de escritorio Sandbox de TikTok con los scopes oficiales mínimos `user.info.basic` y `video.list`, callback local y PKCE; el cliente OAuth local de Google con scopes de lectura y monetización sigue pendiente.
 - [ ] Reemplazar la consulta de Windsor.ai por scripts locales de TikTok y YouTube antes del fin del Trial, manteniendo Facebook e Instagram en sus rutas existentes.
