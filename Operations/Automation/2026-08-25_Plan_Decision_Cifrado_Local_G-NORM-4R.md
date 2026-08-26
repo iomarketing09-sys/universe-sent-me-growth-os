@@ -4,7 +4,7 @@ purpose: "Preparar una decisión reversible y respaldada sobre el almacenamiento
 status: Draft
 created: 2026-08-25
 updated: 2026-08-26
-version: "1.23"
+version: "1.24"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -34,6 +34,8 @@ La preparación G-SEC-1A ya completó inventario, respaldo externo separado y re
 La USB reutilizable Xubuntu 26.04 fue verificada posteriormente, pero el iMac Intel no expone de forma fiable el selector de inicio con el teclado actual. El proyecto conserva un Plan B Draft rEFInd exclusivamente para recuperar esa selección de USB; cualquier escritura de ESP o NVRAM sigue separada de LUKS y exige una aprobación puntual. Este obstáculo de arranque no cambia el bloqueo de G-NORM-4R ni las condiciones de cifrado local.
 
 El Plan B rEFInd ya fue instalado, probado y logró abrir el instalador Xubuntu sin cambios de disco. La lista inicial de disco ofreció instalar junto a Ubuntu, borrar Ubuntu, borrar el disco o instalación manual. La documentación oficial de Ubuntu 26.04 muestra que la ruta `Erase disk and install Ubuntu` abre después una página de cifrado donde `Encrypt with a passphrase` es la opción recomendada, con LVM y cifrado de disco. [4] G-MIG-LUKS-1.4g ya verificó visualmente en Xubuntu la pantalla `Encryption and file system` y el texto explícito `This uses LVM with LUKS encryption`, sin seleccionar opciones ni iniciar instalación. La decisión Ruta A se mantiene, pero G-NORM-4R y toda materialización real permanecen bloqueados hasta que G-MIG-LUKS-1.5 se ejecute y G-MIG-LUKS-1.6 confirme el cifrado real tras el primer arranque.
+
+G-MIG-LUKS-1.5 y G-MIG-LUKS-1.6 ya se completaron: el instalador borró exclusivamente el disco interno autorizado y la comprobación posterior confirmó `crypto_LUKS` → `dm_crypt-0` → LVM → raíz `/`. La condición de cifrado local en reposo se cumple para el nuevo sistema, pero G-NORM-4R continúa bloqueado hasta restaurar selectivamente las rutas autorizadas bajo G-MIG-LUKS-1.7 y revalidar los controles de privacidad, retención y operación read-only.
 
 > La protección requerida es cifrado de datos en reposo. No elimina por sí sola otros riesgos: un volumen montado queda disponible para la sesión activa, y el cifrado no reemplaza respaldo, permisos ni control de acceso.
 

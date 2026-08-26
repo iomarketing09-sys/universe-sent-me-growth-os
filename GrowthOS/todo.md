@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-26
-version: "11.72"
+version: "11.76"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -199,6 +199,11 @@ organization: "GrowthOS"
 - [x] Autorizar reinicio de prueba G-MIG-LUKS-1.4f: Fernando autorizó reiniciar con la USB Xubuntu conectada y `Fernando` desconectado para comprobar rEFInd y seleccionar solo la entrada USB. No autoriza instalar Xubuntu ni modificar discos.
 - [x] Confirmar menú rEFInd G-MIG-LUKS-1.4f: el primer arranque mostró rEFInd y la entrada seleccionada `Boot EFI\boot\grubx64.efi from ESP`, consistente con el cargador validado de la USB Xubuntu. Se indicó seleccionar solo esa entrada; no se eligieron entradas internas ni se modificó disco alguno.
 - [x] Ejecutar método LUKS G-MIG-LUKS-1.4g: la pantalla `Encryption and file system` de Xubuntu mostró `Encrypt with a passphrase` y el texto `This uses LVM with LUKS encryption`. No se seleccionó opción, no se ingresó frase ni se avanzó; el instalador se cerró y el sistema interno volvió a iniciar correctamente.
+- [x] Repetir preflight G-MIG-LUKS-1.5: el destino interno validado es `ST3500` de 465.8 GB (`/dev/sda` en esta sesión; raíz `sda2`, ESP `sda1`); la única USB instaladora detectada es `Cruze` de 7.2 GB (`Xubuntu 26.04 amd64`). `Fernando` y `STORE N GO` permanecen desconectados. No se ha iniciado instalación.
+- [ ] Configurar G-MIG-LUKS-1.5 hasta el resumen: arrancar la USB validada, elegir Xubuntu Desktop y `Encrypt with a passphrase`, ingresar la frase solo localmente y detenerse en el resumen sin pulsar `Install`; requiere una última autorización explícita para el borrado.
+- [x] Ejecutar G-MIG-LUKS-1.5: Fernando autorizó borrar exclusivamente `ST3500418AS / sda`; el instalador finalizó y la nueva instalación solicitó la frase LUKS antes de abrir el escritorio. Pendiente validar técnicamente la cadena LUKS y montajes antes de restaurar USM.
+- [x] Validar G-MIG-LUKS-1.6: Ubuntu 26.04 inició tras pedir frase LUKS. `/dev/sda3` es `crypto_LUKS`, se abre como `dm_crypt-0`, contiene LVM y la raíz `/` se monta desde `ubuntu--vg-ubuntu--lv`; `/boot`=`sda2 ext4` y ESP=`sda1 vfat`. `Fernando` siguió desconectado y no se restauraron datos.
+- [ ] Diseñar preflight G-MIG-LUKS-1.7: definir reinstalación mínima de herramientas, conexión controlada de `Fernando`, verificación del ciphertext y restauración selectiva al sistema cifrado; no conectar ni descifrar respaldo sin autorización específica.
 - [x] Diseñar desbloqueo G-MIG-LUKS-1.5: método propuesto `Erase disk` → `Encrypt with a passphrase`; preflight de respaldo, identidad por modelo/tamaño, aislamiento físico, frase local y última autorización específica documentados en el proyecto v0.8. No autoriza aún borrar disco.
 - [x] Autorizar G-MIG-LUKS-1.4g: Fernando aprobó verificar la página guiada de cifrado por frase sin instalación; prohíbe ingresar frase, continuar a resumen, crear particiones o modificar cualquier disco.
 - [ ] G-MIG-LUKS-1.3a: antes de escribir, confirmar visualmente el objetivo `Xubuntu 26.04 LTS Desktop 64-bit`, la coincidencia de SHA-256 oficial y que el destino sigue siendo la USB `STORE N GO`, no `sda` ni `sdc`.

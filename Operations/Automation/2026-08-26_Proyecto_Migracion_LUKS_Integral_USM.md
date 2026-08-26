@@ -1,10 +1,10 @@
 ---
 title: "Proyecto de migración integral a LUKS — Universe Sent Me"
 purpose: "Definir los gates y la secuencia reversible para reinstalar Xubuntu con cifrado LUKS integral después de validar el respaldo cifrado previo."
-status: Draft
+status: Active
 created: 2026-08-26
 updated: 2026-08-26
-version: "0.9"
+version: "1.0"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -104,6 +104,12 @@ Fernando autorizó y ejecutó G-MIG-LUKS-1.4f. El paquete `refind` creó `EFI/re
 La revisión visual G-MIG-LUKS-1.4 llegó a **Disk setup** sin seleccionar ni confirmar ninguna operación. La lista inicial mostró instalar junto a Ubuntu, borrar Ubuntu, borrar disco e instalación manual. La documentación oficial de Ubuntu 26.04 aclara que la ruta de cifrado aparece **después de seleccionar** `Erase disk and install Ubuntu`: allí se puede elegir `Encrypt with a passphrase`, la opción recomendada que combina LVM con cifrado de disco. [4] [5]
 
 G-MIG-LUKS-1.4g confirmó esta ruta en el instalador Xubuntu: la pantalla **Encryption and file system** mostró `Encrypt with a passphrase` con el texto `This uses LVM with LUKS encryption`. No se seleccionó opción, no se ingresó frase, no se avanzó al resumen y el instalador se cerró. El Xubuntu interno volvió a iniciar correctamente. Por tanto, el método guiado propuesto está validado; G-MIG-LUKS-1.5 sigue separado y bloqueado hasta contar con el preflight final y la autorización destructiva específica.
+
+## Ejecución y verificación LUKS completadas
+
+Tras el preflight final, Fernando autorizó explícitamente borrar solo el disco interno `ST3500418AS / sda`. El resumen del instalador identificó ese disco, Xubuntu Desktop, **LUKS (LVM)** y todas las particiones de la USB Xubuntu `sdc` como `Unchanged`. Después de pulsar el único botón irreversible `Install`, la instalación terminó y solicitó la frase LUKS antes de abrir el escritorio nuevo.
+
+La validación G-MIG-LUKS-1.6 se ejecutó antes de conectar `Fernando` o restaurar USM. La evidencia de solo lectura confirmó Ubuntu 26.04, `/dev/sda3` con `crypto_LUKS`, el mapper activo `dm_crypt-0`, el volumen lógico `ubuntu--vg-ubuntu--lv` montado como raíz `/`, `/dev/sda2` como `/boot` y `/dev/sda1` como ESP. Esta topología es consistente con el cifrado LUKS guiado por frase validado en el instalador. El gate G-MIG-LUKS-1.7 permanece separado: requiere un preflight y una autorización específica para conectar, verificar y restaurar selectivamente desde el ciphertext `age`.
 
 ## Diseño de desbloqueo G-MIG-LUKS-1.5
 
