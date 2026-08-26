@@ -4,13 +4,14 @@ purpose: "Definir una estructura de carpetas y un wrapper de cifrado local previ
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.4"
+version: "1.5"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
   - "Operations/Automation/2026-08-25_Inventario_Previa_Migracion_LUKS_Xubuntu_USM.md"
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
   - "Operations/Automation/create_usm_backup_tree.sh"
+  - "Operations/Automation/verify_local_age_tool.sh"
   - "GrowthOS/todo.md"
 organization: "Operations/Automation"
 ---
@@ -27,7 +28,7 @@ Este documento y `prepare_usm_encrypted_backup.sh` son **diseño**. El script ar
 
 El wrapper está diseñado alrededor de [age](https://github.com/FiloSottile/age), herramienta de cifrado de archivos moderna, composable y ampliamente mantenida. El README oficial documenta instalación en Ubuntu 22.04+ y la operación de cifrado/decrifrado mediante `age --passphrase` o claves de destinatario. [1]
 
-Para este respaldo se diseña inicialmente el modo **passphrase interactivo**. La frase no se recibe por argumentos ni variables de entorno, no se escribe en el repositorio ni el disco externo, y se introduce solo en la terminal local de Fernando. La recuperación debe almacenarse fuera del disco, Drive, GitHub, chat, correo, OmniRoute y el archivo cifrado.
+Para este respaldo se diseña inicialmente el modo **passphrase interactivo**. La frase no se recibe por argumentos ni variables de entorno, no se escribe en el repositorio ni el disco externo, y se introduce solo en la terminal local de Fernando. Fernando aprobó que su recuperación se conserve en **dos copias físicas manuscritas y separadas**, bajo su control, fuera del disco, Drive, GitHub, chat, correo, OmniRoute y el archivo cifrado. El contenido de la frase no se solicita, registra ni transmite en este proyecto.
 
 ## Estructura propuesta en el disco externo
 
@@ -36,13 +37,16 @@ El árbol vacío fue creado y verificado mediante el wrapper independiente `crea
 ```text
 /run/media/universe-sent-me/Fernando/
 └── USM_PRE_LUKS_BACKUP/
-    ├── archives/
-    │   └── usm_pre_luks_<UTC>.tar.gz.age
-    ├── manifests/
-    │   ├── usm_pre_luks_<UTC>.manifest.txt
-    │   └── usm_pre_luks_<UTC>.age-inspect.txt   # opcional, sin descifrar
-    └── checksums/
-        └── usm_pre_luks_<UTC>.sha256            # checksum del ciphertext
+    ├── 00_PROTOCOL/
+    │   └── BACKUP_PROTOCOL_v1.txt
+    ├── 10_CIPHERTEXT/
+    │   └── usm_pre_luks_YYYYMMDDTHHMMSSZ.tar.gz.age
+    ├── 20_MANIFEST/
+    │   └── usm_pre_luks_YYYYMMDDTHHMMSSZ.manifest.txt
+    ├── 30_INTEGRITY/
+    │   └── usm_pre_luks_YYYYMMDDTHHMMSSZ.sha256
+    └── 40_RESTORE_EVIDENCE/
+        └── restore_check_YYYYMMDDTHHMMSSZ.txt
 ```
 
 Los únicos datos privados del disco serán ciphertext `.age`. El manifest no enumera archivos internos, valores de métricas, IDs, tokens, rutas privadas, llaves ni contenido. El checksum se calcula sobre ciphertext y permite detectar cambios o daños del archivo cifrado sin exponer el contenido.
@@ -74,7 +78,7 @@ Los únicos datos privados del disco serán ciphertext `.age`. El manifest no en
 |---|---|
 | G-SEC-1A.3a | **Completado el 2026-08-25.** Se aprobó y creó el árbol vacío en la raíz del volumen `vfat` confirmado. |
 | G-SEC-1A.3b | **Completado el 2026-08-25.** Fernando aprobó incluir las tres raíces privadas exclusivamente dentro de un ciphertext futuro, junto con código y scripts. |
-| G-SEC-1A.3c | Instalar/verificar `age` desde fuente oficial y definir dónde Fernando conservará la recuperación de la frase. |
+| G-SEC-1A.3c | Recuperación física aprobada el 2026-08-25: dos copias manuscritas y separadas. Falta instalar/verificar `age` desde fuente oficial, sin procesar datos USM. |
 | G-SEC-1A.3d | Probar cifrado y restauración de un archivo ficticio no sensible en una carpeta temporal. |
 | G-SEC-1A.3e | Revisar dry-run y aprobar ejecución manual única. |
 
@@ -106,6 +110,10 @@ El wrapper se negó de forma explícita a operar si `USM_PRE_LUKS_BACKUP` ya exi
 Fernando aprobó que `~/omniroute-pilot`, `~/.config/usm-metrics` y `~/.local/share/usm-metrics` formen parte del perfil futuro `code_scripts_and_approved_private`, junto con `~/universe-sent-me-growth-os` y `~/bin`. Esta aprobación define alcance, no transfiere datos: las tres raíces no fueron abiertas, enumeradas, copiadas ni hashadas durante este gate.
 
 Al revisar el wrapper se detectó una diferencia heredada entre sus nombres internos de carpeta y el árbol físico aprobado. Se corrigió para exigir exactamente `00_PROTOCOL`, `10_CIPHERTEXT`, `20_MANIFEST`, `30_INTEGRITY` y `40_RESTORE_EVIDENCE`; no puede crear carpetas alternativas. La validación fue solo de sintaxis y `--plan`, que permaneció sin escrituras. El wrapper también exige que las cinco carpetas estén vacías para la primera copia y elimina protocolo, ciphertext, manifest y checksum si una futura ejecución falla antes de completarse.
+
+## Registro de recuperación G-SEC-1A.3c
+
+Fernando aprobó el mecanismo de recuperación: dos copias físicas manuscritas, separadas y bajo su control. Una futura frase se introducirá únicamente de forma interactiva en la terminal local cuando exista una autorización de primera copia; no debe copiarse al historial de shell ni compartirse con este proyecto. La decisión de recuperación ya está cerrada, pero G-SEC-1A.3c sigue pendiente hasta confirmar que `age` está disponible desde la fuente oficial del sistema. La verificación de herramienta no leerá fuentes USM, no usará el disco externo, no solicitará frase ni creará ciphertext.
 
 ## Árbol exacto de `USM_PRE_LUKS_BACKUP`
 
@@ -145,7 +153,7 @@ El manifest será texto simple y tendrá solo estas claves: `backup_type`, `prot
 
 ### Secuencia después de crear el árbol
 
-G-SEC-1A.3a ya creó el árbol vacío y G-SEC-1A.3b ya fijó el alcance autorizado. La siguiente autorización debe verificar o instalar `age` y definir la recuperación fuera de este volumen y de servicios cloud (G-SEC-1A.3c), y después ejecutar `--dry-run` contra el punto de montaje (G-SEC-1A.3e). Ninguna de esas acciones crea un respaldo. La primera copia seguirá requiriendo una autorización separada y una frase de recuperación gestionada fuera de este volumen.
+G-SEC-1A.3a ya creó el árbol vacío, G-SEC-1A.3b ya fijó el alcance autorizado y el mecanismo de recuperación de G-SEC-1A.3c ya fue aprobado. Falta instalar o verificar `age` localmente sin procesar datos, y después ejecutar `--dry-run` contra el punto de montaje (G-SEC-1A.3e). Ninguna de esas acciones crea un respaldo. La primera copia seguirá requiriendo una autorización separada y una frase de recuperación gestionada fuera de este volumen.
 
 ## Referencias
 
