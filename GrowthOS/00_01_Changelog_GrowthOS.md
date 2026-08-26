@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.88
+**Versión:** 4.89
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.89.00] — 2026-08-25 (Fernando/Manus): Hoja de ruta de automatización local segura.** Fernando preguntó qué faltaría para automatizar después de resolver cifrado. Se creó `2026-08-25_Hoja_Ruta_Automatizacion_Local_Segura_USM.md` v1.0: separa ejecución manual supervisada de temporizador local fail-closed, define preflight, collectors GET-only, normalización, shadow ledger, calidad agregada, logs seguros, criterios de pausa y gates G-SEC-0 a G-SEC-3, G-NORM-4R, G-AUTO-0 a G-AUTO-2, G-OUTPUT-0 y G-LLM-0. La ruta recomendada es tres corridas manuales correctas antes de una captura diaria local sin salidas externas. Sheets y OmniRoute quedan en gates posteriores e independientes. No se activaron cron, procesos de fondo, APIs de escritura, salidas cloud, modelos ni datos reales. Guía de piloto actualizada a v3.4.
 
 - **[4.88.00] — 2026-08-25 (Fernando/Manus): Plan comparativo no ejecutable para cifrado local.** Fernando solicitó comparar migrar Xubuntu a LUKS integral frente a un volumen LUKS dedicado para el shadow ledger. Se creó `2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md` v1.0 con alcance, respaldo, restauración, verificación, permisos, retención y gates G-SEC-0 a G-SEC-3. El documento recomienda condicionalmente LUKS integral si USM protegerá evidencia y configuración local sostenida, o volumen dedicado si el alcance continúa limitado al piloto y existe medio físico exclusivo; sin respaldo validado o dispositivo dedicado se mantiene modo sintético. No se ejecutaron comandos de disco, cifrado, particionado, montaje, migración ni inserción real. Consentimiento actualizado a v1.3 para enlazar el plan.
 

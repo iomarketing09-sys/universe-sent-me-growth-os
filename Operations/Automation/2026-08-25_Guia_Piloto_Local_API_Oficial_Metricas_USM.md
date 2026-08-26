@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "3.3"
+version: "3.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -210,6 +210,8 @@ Todos los casos permanecen bajo directorio temporal, con sockets bloqueados y co
 La revisión estructurada de la matriz incorporó dos controles: una observación existente que ya no cumple NORM-01 a NORM-12 se marca `observation_norm_invalid`, y una `ledger_entry_key` repetida se marca `ledger_entry_key_duplicate`. La regresión integrada del normalizador y shadow ledger continuó en `PASS`.
 
 El dictamen es suficiente únicamente para el contrato sintético vigente. La guía no autoriza cambiar el estado `Review`, crear un ledger persistente, insertar datos reales, activar G-NORM-4R o usar destinos externos. El requisito de cifrado local verificado, consentimiento granular y retención aprobada continúa separado y bloqueante.
+
+La secuencia propuesta para una automatización local posterior al cifrado está documentada en `2026-08-25_Hoja_Ruta_Automatizacion_Local_Segura_USM.md`. El documento separa corridas manuales supervisadas, temporizador local fail-closed, control de calidad, salidas locales y gates externos. No habilita cron, Google Sheets, OmniRoute, Drive, GitHub como ledger ni APIs de escritura.
 
 ### Revisión descriptiva de la primera captura — 25 de agosto de 2026
 
