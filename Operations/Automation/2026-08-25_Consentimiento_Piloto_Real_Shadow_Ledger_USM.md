@@ -4,7 +4,7 @@ purpose: "Proponer el alcance, retención, protección y rollback de una muestra
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.3"
+version: "1.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
@@ -85,6 +85,8 @@ Ni GitHub ni Google Drive están autorizados como **ledger activo** para observa
 | Drive como backup cifrado de un volumen local protegido | **Posible solo en un gate futuro.** | Requeriría cifrado del archivo antes de salir de Xubuntu, llave exclusiva fuera de Drive, política de restauración y aprobación específica. No sustituye el almacenamiento local cifrado. |
 
 La alternativa operativa más segura sigue siendo un volumen cifrado local dedicado. Solo después de validarlo se podría evaluar un respaldo cifrado externo como contingencia; nunca GitHub ni Drive como fuente activa del ledger.
+
+La capacidad disponible de Drive de iO Marketing permite considerar una contingencia futura, pero no modifica esta prohibición. El plan de cifrado v1.4 define G-BACKUP-DRIVE-0 a G-BACKUP-DRIVE-4: archivo cifrado localmente antes de subir, llave fuera de Drive, restauración probada y aprobación manual sin sincronización. No hay ninguna subida autorizada bajo el estado actual.
 
 ## Referencias
 

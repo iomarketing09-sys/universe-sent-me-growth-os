@@ -4,7 +4,7 @@ purpose: "Registrar los metadatos de aplicaciones, servicios y rutas que deben c
 status: Review
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.3"
+version: "1.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -102,3 +102,17 @@ Con 24 GiB usados en el sistema actual, una copia lógica con 50% de margen nece
 La USB de 28.8 GB queda descartada como respaldo único porque no alcanza el objetivo de 36 GiB con margen. El disco externo usado en Windows, aunque reporta 730 GB libres desde Windows, no apareció en Xubuntu tras la inspección read-only ni después de reconectarlo: `lsblk` solo mostró el lector SD `sdb` de 0 B. No se detectó un bloque USB con tamaño, formato o punto de montaje.
 
 Por seguridad, el disco Windows no es apto para G-SEC-1A mientras no sea detectado en Xubuntu. No se debe formatear, reparar, cifrar, montar manualmente ni copiar datos sobre él. La alternativa recomendada es obtener o reservar un medio externo independiente de **128 GB o mayor**, verificar que aparezca como dispositivo USB con tamaño antes de usarlo y repetir la inspección de solo lectura.
+
+## Disco externo detectado y aptitud condicionada
+
+Una inspección posterior detectó el disco externo como `sdc`, transporte USB y modelo `ST1000LM035-1RK172`, con tamaño de 931.5 GiB. La partición `sdc3` está montada en `/run/media/universe-sent-me/Fernando`, usa `vfat`, tiene 930.8 GiB de capacidad y 730.9 GiB disponibles. Su capacidad supera ampliamente el objetivo de 48 GiB para una copia lógica con margen.
+
+| Criterio | Resultado | Decisión |
+|---|---|---|
+| Detección física | Correcta: `sdc` USB con tamaño identificable. | Pasa el requisito de detección. |
+| Capacidad | 730.9 GiB disponibles. | Suficiente para respaldo lógico y verificación. |
+| Formato | `vfat`, montado en lectura/escritura. | Compatible como destino de archivos, pero sin permisos POSIX ni cifrado en reposo. |
+| Datos existentes | El volumen ya tiene contenido y etiqueta `Fernando`. | No se formatea, repara ni reorganiza; se requiere carpeta de respaldo aprobada. |
+| Datos privados USM | Configuración y datos de métricas deben permanecer cifrados antes de salir de Xubuntu. | No se copiarán en claro a `vfat`. |
+
+El disco queda **apto de forma condicionada** como destino físico del respaldo lógico. Antes de la primera copia se debe aprobar una carpeta exclusiva que no interfiera con contenido Windows existente, definir qué categorías se respaldan y acordar un método que cifre localmente los elementos privados antes de escribirlos al volumen. El disco nunca será shadow ledger, volumen LUKS ni destino de sincronización automática.

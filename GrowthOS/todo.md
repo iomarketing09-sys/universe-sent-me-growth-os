@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "10.5"
+version: "10.9"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -123,7 +123,10 @@ organization: "GrowthOS"
 - [x] Evaluar los medios ya disponibles: USB de 28.8 GB y disco externo Windows con 730 GB libres. Resultado: USB insuficiente; disco Windows no detectado en Xubuntu y no apto todavía.
 - [x] Resolver bloqueo de detección: la primera inspección no mostró la USB ni el disco Windows, solo el lector SD `sdb` de 0 B. Reconectar un medio a la vez y confirmar que aparece en `lsblk` antes de inspeccionar o copiar datos. Resultado: la reconexión no detectó el disco Windows.
 - [x] Diagnosticar sin escritura el disco Windows no detectado: verificar conexión directa, cable, alimentación y mensajes recientes del kernel; si no aparece como bloque USB con tamaño, no usarlo para respaldo ni intentar reparación/formateo. Resultado: permanece no detectado; sin cambios al medio.
-- [ ] G-SEC-1A.2: obtener o reservar un medio externo alternativo de 128 GB o mayor y verificar que Xubuntu lo detecte con tamaño y filesystem antes de iniciar cualquier respaldo.
+- [x] G-SEC-1A.2: inspeccionar el disco externo Windows recién detectado y confirmar tamaño, filesystem, montaje y espacio libre. Resultado: `sdc3` vfat de 930.8 GiB, 730.9 GiB disponibles, montado bajo `/run/media/universe-sent-me/Fernando`; apto condicionalmente como destino, sin formatear ni modificar datos existentes.
+- [ ] G-SEC-1A.3: definir carpeta exclusiva de respaldo, alcance de categorías y método de cifrado local previo para datos privados antes de la primera copia al volumen vfat; ensayar restauración con archivos no sensibles.
+- [x] Evaluar Google Drive de iO Marketing (5 TB disponibles) solo como respaldo futuro cifrado antes de subirlo, con llave fuera de Drive y prueba de restauración; mantener prohibido cualquier uso como ledger activo o destino actual de datos USM. Decisión: contingencia futura condicionada; no reemplaza medio local y no autoriza subida actual.
+- [ ] G-BACKUP-DRIVE-0 a G-BACKUP-DRIVE-4: si se solicita después, definir alcance de archivos, cifrado local previo, llave fuera de Drive, restauración probada y aprobación de subida manual sin sincronización.
 - [x] Documentar la secuencia de automatización posterior al cifrado: validación manual, ejecución supervisada, scheduler local, observabilidad, salida sanitizada Draft y criterios de pausa; no activar cron, APIs de escritura, Sheets ni OmniRoute. Documento: `2026-08-25_Hoja_Ruta_Automatizacion_Local_Segura_USM.md`.
 - [x] Revisar el estado canónico del contrato de shadow ledger en GitHub y consolidar los requisitos pendientes para un futuro proyecto separado de almacenamiento local cifrado; no modificar discos, volúmenes, cifrado ni ledgers reales. Revisión: commit remoto `480ea95`; contrato `Review`, G-NORM-4R bloqueado y opción activa sintética.
 - [ ] Inventariar el sitio actual de Universe Sent Me en Wix y evaluar una migración futura como proyecto separado; no ejecutar cambios de Wix, DNS, dominio, analítica ni hosting durante esta evaluación.

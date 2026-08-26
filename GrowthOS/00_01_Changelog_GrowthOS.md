@@ -4,8 +4,12 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-25
-**Versión:** 4.95
+**Versión:** 4.97
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[4.97.00] — 2026-08-25 (Fernando/Manus): Disco externo Windows detectado y aprobado condicionalmente como destino físico.** Una nueva inspección detectó `sdc` por USB, modelo `ST1000LM035-1RK172`; su partición `sdc3` es `vfat`, tiene 930.8 GiB de capacidad y 730.9 GiB disponibles, montada bajo `/run/media/universe-sent-me/Fernando`. Supera el requisito de capacidad y puede ser destino del respaldo lógico, pero contiene datos existentes y `vfat` no ofrece permisos POSIX ni cifrado en reposo. Se prohíbe formatearlo, repararlo, reorganizarlo o copiar datos privados en claro. El siguiente gate G-SEC-1A.3 define carpeta exclusiva, categorías y cifrado local previo de datos privados, seguido de una restauración de archivos no sensibles. Inventario actualizado a v1.4 y plan de cifrado a v1.5; no se copiaron archivos.
+
+- **[4.96.00] — 2026-08-25 (Fernando/Manus): Drive con 5 TB evaluado como contingencia futura, no como ledger.** Fernando informó que la cuenta de iO Marketing dispone de 5 TB en Drive. La capacidad es suficiente para una copia de contingencia, pero no cambia las prohibiciones: Drive no es un medio local verificable para G-SEC-1A, no puede ser shadow ledger activo y no recibe datos USM actuales. Se añadieron gates G-BACKUP-DRIVE-0 a G-BACKUP-DRIVE-4: alcance aprobado, archivo cifrado localmente antes de subir, llave fuera de Drive/GitHub/chat, restauración probada y aprobación manual sin sincronización. No se creó, cifró ni subió ningún archivo. Plan de cifrado actualizado a v1.4 y consentimiento a v1.4.
 
 - **[4.95.00] — 2026-08-25 (Fernando/Manus): Disco Windows bloqueado como medio de respaldo por falta de detección.** Después de conectar y reconectar el disco Windows con 730 GB libres, Xubuntu continuó mostrando solo el lector SD `sdb` de 0 B; no apareció un bloque USB con tamaño, filesystem o montaje. La USB de 28.8 GB tampoco alcanza el mínimo de 36 GiB con margen. Por seguridad, ninguno de los dos medios se usará para G-SEC-1A, y no se ejecutarán reparación, formateo, montaje manual ni copia. Se requiere un medio externo alternativo de 128 GB o mayor que aparezca correctamente en Xubuntu antes de cualquier respaldo. Plan de cifrado actualizado a v1.3 e inventario a v1.3.
 

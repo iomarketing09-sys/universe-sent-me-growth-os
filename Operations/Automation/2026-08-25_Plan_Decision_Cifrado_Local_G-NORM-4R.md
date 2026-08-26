@@ -4,7 +4,7 @@ purpose: "Preparar una decisión reversible y respaldada sobre el almacenamiento
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.3"
+version: "1.5"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -145,6 +145,28 @@ El inventario de Xubuntu reportó aproximadamente 24 GiB usados en la raíz actu
 La recomendación actual es un medio externo de **128 GB o mayor** para el respaldo lógico. Debe ser un dispositivo separado, fiable y dedicado al proceso de migración, con capacidad para crear y verificar una copia antes de modificar Xubuntu. La decisión de compra, proveedor y formato del medio sigue correspondiendo a Fernando; este documento no solicita ni autoriza ninguna compra ni formateo.
 
 El disco Windows informado con 730 GB libres no puede ocupar ese papel por ahora: no fue detectado como dispositivo de bloque en Xubuntu después de reconectarlo. Hasta que un medio aparezca con tamaño, transporte y filesystem identificables, no se permite iniciar G-SEC-1A ni realizar copias.
+
+## Drive como contingencia cifrada futura
+
+La cuenta de iO Marketing tiene capacidad suficiente en Google Drive, pero su capacidad no cambia la decisión de seguridad: Drive no sustituye un medio local verificable para G-SEC-1A, no puede ser el shadow ledger activo y no recibe datos USM ahora.
+
+Solo podría evaluarse como una **segunda copia de contingencia**, después de completar una preparación separada:
+
+| Gate propuesto | Requisito | Resultado si no pasa |
+|---|---|---|
+| G-BACKUP-DRIVE-0 | Definir exactamente qué categorías no sensibles o privadas autorizadas se respaldan; excluir ledger real, raw, tokens, credenciales y browser profiles. | No se crea archivo de backup. |
+| G-BACKUP-DRIVE-1 | Crear un archivo cifrado localmente antes de cualquier subida; Drive solo recibe el cifrado final, nunca archivos abiertos. | No se usa Drive. |
+| G-BACKUP-DRIVE-2 | Guardar la llave o frase de recuperación fuera de Drive, GitHub, chat, email, OmniRoute y el propio archivo. | No se sube el archivo. |
+| G-BACKUP-DRIVE-3 | Verificar la restauración desde una copia descargada con un conjunto de archivos no sensibles. | El respaldo no se considera válido. |
+| G-BACKUP-DRIVE-4 | Aprobación explícita para la subida manual; sin sincronización automática. | Drive continúa fuera del flujo. |
+
+Incluso si estos gates se aprobaran, la copia cifrada de Drive sería contingencia de recuperación y no sustituiría el respaldo local ni los controles de LUKS. No se crea, cifra, sube ni prueba ningún archivo como parte de este documento.
+
+## Medio físico de respaldo identificado
+
+El disco externo Windows se detectó como `sdc3`, un volumen `vfat` de 930.8 GiB con 730.9 GiB disponibles. Puede servir como destino físico para el respaldo lógico previo a la migración, pero con dos límites: contiene información existente y `vfat` no aporta permisos POSIX ni cifrado en reposo.
+
+Por ello, cualquier respaldo deberá usar una carpeta exclusiva aprobada y preservar los datos privados de USM en un formato cifrado antes de escribirlos al disco. No se crea esa carpeta, no se copia ningún archivo y no se cifra nada hasta completar G-SEC-1A.3: alcance de categorías, nombre de carpeta, método de cifrado de contenido privado y prueba de restauración de archivos no sensibles.
 
 ## Referencias
 
