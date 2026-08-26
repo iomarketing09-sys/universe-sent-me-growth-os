@@ -4,7 +4,7 @@ purpose: "Definir una estructura de carpetas y un wrapper de cifrado local previ
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "2.2"
+version: "2.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -84,7 +84,7 @@ Los únicos datos privados del disco serán ciphertext `.age`. El manifest no en
 | G-SEC-1A.3d | Probar cifrado y restauración de un archivo ficticio no sensible en una carpeta temporal. |
 | G-SEC-1A.3e | **Completado el 2026-08-25.** Dry-run contra el volumen validó montaje, herramienta, árbol y metadatos sin crear archivos. |
 | G-SEC-1A.3f | **Completado el 2026-08-26.** Primera copia única creada tras validar `/dev/sdc3`, `vfat`, label `Fernando` y las cinco subcarpetas vacías. |
-| G-SEC-1A.3g | Diseño v2.2 y dry-run completados. Falta aprobación independiente para descifrar temporalmente la copia real y ejecutar la validación. |
+| G-SEC-1A.3g | **Completado el 2026-08-26.** Dry-run y una restauración real controlada pasaron con limpieza y evidencia agregada. |
 
 No se autoriza copia real, subida a Drive, sincronización, Drive como ledger, uso de OmniRoute, inserción de observaciones ni cambios de LUKS mediante este diseño.
 
@@ -135,7 +135,7 @@ El manifest confirmó `encryption=age_passphrase_interactive`, `scope_profile=co
 
 ## Árbol exacto de `USM_PRE_LUKS_BACKUP`
 
-El siguiente árbol es el único diseño aprobado. Sus seis directorios existen en la raíz del volumen montado, no dentro de carpetas de Windows existentes. La primera copia ya creó protocolo, ciphertext, manifest y checksum; la evidencia de restauración permanece como plantilla hasta G-SEC-1A.3g.
+El siguiente árbol es el único diseño aprobado. Sus seis directorios existen en la raíz del volumen montado, no dentro de carpetas de Windows existentes. La primera copia creó protocolo, ciphertext, manifest y checksum; G-SEC-1A.3g agregó la evidencia agregada de restauración.
 
 ```text
 USM_PRE_LUKS_BACKUP/
@@ -171,11 +171,11 @@ El manifest será texto simple y tendrá solo estas claves: `backup_type`, `prot
 
 ### Secuencia después de crear el árbol
 
-G-SEC-1A.3a creó el árbol vacío, G-SEC-1A.3b fijó el alcance autorizado, G-SEC-1A.3c verificó la herramienta y la recuperación, G-SEC-1A.3e validó el dry-run y G-SEC-1A.3f creó y verificó la primera copia cifrada. La siguiente barrera es G-SEC-1A.3g: diseñar y aprobar una restauración real controlada; no se descifrará ni restaurará nada sin esa autorización separada.
+G-SEC-1A.3a creó el árbol vacío, G-SEC-1A.3b fijó el alcance autorizado, G-SEC-1A.3c verificó la herramienta y la recuperación, G-SEC-1A.3e validó el dry-run, G-SEC-1A.3f creó y verificó la primera copia cifrada, y G-SEC-1A.3g restauró y validó la copia de forma controlada. El siguiente trabajo, si Fernando lo aprueba, es un proyecto separado de migración integral a LUKS; ninguna modificación de disco está autorizada por este documento.
 
 ## Diseño de restauración controlada G-SEC-1A.3g
 
-La finalidad de G-SEC-1A.3g es probar que el ciphertext real puede restaurarse y que los cinco grupos autorizados son lógicamente equivalentes a sus fuentes actuales, sin publicar archivos, rutas internas, valores de métricas, tokens ni contenido. La prueba **sí expone datos reales temporalmente** dentro de la ruta local no cifrada de Xubuntu; por eso requiere una aprobación distinta de la primera copia y un reconocimiento explícito de ese riesgo temporal.
+La finalidad de G-SEC-1A.3g es probar que el ciphertext real puede restaurarse y que los cinco grupos autorizados del punto temporal del respaldo están presentes con tipos de entrada permitidos, sin publicar archivos, rutas internas, valores de métricas, tokens ni contenido. La prueba **sí expone datos reales temporalmente** dentro de la ruta local no cifrada de Xubuntu; por eso requirió una aprobación distinta de la primera copia y un reconocimiento explícito de ese riesgo temporal.
 
 | Elemento | Diseño aprobado para futura ejecución |
 |---|---|
@@ -198,13 +198,19 @@ La prueba pasa solo si ambos checksums del ciphertext son válidos, el descifrad
 
 ### Límites y prohibiciones de G-SEC-1A.3g
 
-G-SEC-1A.3g no publica, programa ni sube datos. No usa Drive, GitHub, Sheets, OmniRoute, APIs sociales, cron, shadow ledger ni otro producto de iO Marketing. No admite una segunda copia, no modifica el ciphertext, no actualiza el manifest original y no elimina los stashes locales de Git. La frase de recuperación no se muestra, registra ni comparte. La ejecución de este diseño sigue **no autorizada** hasta un consentimiento explícito posterior.
+G-SEC-1A.3g no publica, programa ni sube datos. No usa Drive, GitHub, Sheets, OmniRoute, APIs sociales, cron, shadow ledger ni otro producto de iO Marketing. No admite una segunda copia, no modifica el ciphertext, no actualiza el manifest original y no elimina los stashes locales de Git. La frase de recuperación no se muestra, registra ni comparte. La única ejecución autorizada ya concluyó y no se autoriza una repetición sin un gate nuevo.
 
 ### Registro de dry-run G-SEC-1A.3g.1
 
 Fernando aprobó y ejecutó el dry-run contra el ciphertext `usm_pre_luks_20260826T042149Z.tar.gz.age`. El wrapper validó el SHA-256, fuente `/dev/sdc3`, filesystem `vfat`, label `Fernando`, manifest y herramientas locales; devolvió `STATUS=restore_dry_run_complete_no_decrypt_no_temp_data_no_external_writes`. No se solicitó frase ni se invocó `age --decrypt`.
 
-La verificación posterior devolvió `STATUS=restore_dry_run_left_no_temp_data_or_evidence`: no existe una ruta bajo `~/.config/.usm-restore-validation.20260826T042149Z.*` y `40_RESTORE_EVIDENCE` no contiene evidencia para este timestamp. G-SEC-1A.3g.2 sigue bloqueado hasta una autorización independiente de exposición temporal de datos reales.
+La verificación posterior devolvió `STATUS=restore_dry_run_left_no_temp_data_or_evidence`: no existe una ruta bajo `~/.config/.usm-restore-validation.20260826T042149Z.*` y `40_RESTORE_EVIDENCE` no contenía evidencia para este timestamp antes de la ejecución real.
+
+### Registro de restauración controlada G-SEC-1A.3g.2
+
+Fernando aprobó explícitamente la exposición temporal de plaintext y ejecutó una sola restauración controlada. El wrapper devolvió `STATUS=controlled_restore_validation_passed`. La evidencia agregada confirma checksum del ciphertext antes y después, `scope_profile=code_scripts_and_approved_private`, estructura válida de los cinco grupos requeridos y `temporary_path_cleanup=passed`.
+
+La comprobación final confirmó que no quedó una ruta `.usm-restore-validation.20260826T042149Z.*` bajo `~/.config` y que la evidencia externa no contiene contenido, rutas internas, hashes por archivo ni frase. El manifest original se mantiene inmutable con `restore_status=pending`; la evidencia `40_RESTORE_EVIDENCE/restore_check_20260826T042149Z.txt` es la fuente de resultado del test. La limpieza por ruta sigue sin constituir una garantía de secure erase en `ext4`.
 
 ## Referencias
 
