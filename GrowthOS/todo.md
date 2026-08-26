@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-25
-version: "11.11"
+version: "11.13"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -129,9 +129,11 @@ organization: "GrowthOS"
 - [x] G-SEC-1A.3a: aprobar y crear únicamente la carpeta exclusiva vacía en el volumen vfat; no implica copia, cifrado, lectura de fuentes privadas ni modificación de archivos existentes.
 - [x] G-SEC-1A.3b: Fernando aprobó que las raíces privadas `~/omniroute-pilot`, `~/.config/usm-metrics` y `~/.local/share/usm-metrics` entren únicamente en el alcance de un futuro ciphertext cifrado. No se leerán ni copiarán hasta superar G-SEC-1A.3c, G-SEC-1A.3e y una aprobación separada de primera copia.
 - [x] G-SEC-1A.3b.1: alinear el wrapper `prepare_usm_encrypted_backup.sh` con el árbol físico aprobado `00_PROTOCOL`, `10_CIPHERTEXT`, `20_MANIFEST`, `30_INTEGRITY` y `40_RESTORE_EVIDENCE`; sintaxis y `--plan` validados sin ejecutar dry-run ni tocar el volumen.
-- [ ] G-SEC-1A.3c: instalar o verificar `age` localmente y definir el mecanismo de recuperación fuera del disco externo, Drive, GitHub, correo y chat.
+- [x] G-SEC-1A.3c: recuperación física aprobada y `age` verificado localmente desde repositorios Ubuntu configurados: `/usr/bin/age`, versión `1.2.1`, paquete `1.2.1-1build1`; no se procesaron datos USM, disco externo, frase ni ciphertext.
 - [x] G-SEC-1A.3c.1: Fernando aprobó dos copias físicas manuscritas y separadas como soporte de recuperación, fuera del disco externo y de servicios en línea; no se solicitará ni escribirá la frase en repositorio, chat, correo o variables de entorno.
-- [ ] G-SEC-1A.3c.2: instalar o verificar `age` con comandos locales de solo herramienta y confirmar versión/ruta, sin leer fuentes USM, crear archivos de respaldo, usar el disco externo ni introducir una frase.
+- [x] G-SEC-1A.3c.2: instalar o verificar `age` con comandos locales de solo herramienta y confirmar versión/ruta, sin leer fuentes USM, crear archivos de respaldo, usar el disco externo ni introducir una frase. Resultado: `STATUS=age_available_no_usm_data_processed`.
+- [x] G-SEC-1A.3c.2a: inspeccionar y preservar los cambios locales sin confirmar del clon Xubuntu antes de sincronizar el verificador de `age`; se creó el stash local `preserve-local-before-age-2026-08-25`, sin reset, limpieza destructiva ni descarte de archivos.
+- [ ] G-SEC-1A.3c.2b: después de actualizar reglas de ignorados y modos de scripts, restaurar el stash local de Xubuntu y confirmar que solo reaparecen los permisos ejecutables esperados y cachés ya ignoradas; no descartar el stash hasta verificación humana.
 - [ ] G-SEC-1A.3e: ejecutar `prepare_usm_encrypted_backup.sh --dry-run` sobre el volumen real después de 3b y 3c; no autoriza `--execute` ni la creación de ciphertext.
 - [x] Diseñar el árbol exacto de `USM_PRE_LUKS_BACKUP`, incluyendo categorías permitidas, manifest, checksums, nombres, retención y exclusiones; no crear todavía rutas en el volumen vfat. Diseño incorporado en `2026-08-25_Diseno_Respaldo_Cifrado_Pre_LUKS_USM.md` v1.2.
 - [x] G-SEC-1A.3a: Fernando aprobó y ejecutó la creación del árbol vacío `USM_PRE_LUKS_BACKUP` en `/run/media/universe-sent-me/Fernando`; el wrapper verificó `/dev/sdc3`, `vfat` y `STATUS=empty_tree_created`, sin crear archivos de respaldo ni tocar datos existentes.

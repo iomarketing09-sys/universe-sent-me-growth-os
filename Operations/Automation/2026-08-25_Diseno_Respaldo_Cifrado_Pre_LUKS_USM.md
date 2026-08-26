@@ -4,7 +4,7 @@ purpose: "Definir una estructura de carpetas y un wrapper de cifrado local previ
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.5"
+version: "1.6"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -78,7 +78,7 @@ Los únicos datos privados del disco serán ciphertext `.age`. El manifest no en
 |---|---|
 | G-SEC-1A.3a | **Completado el 2026-08-25.** Se aprobó y creó el árbol vacío en la raíz del volumen `vfat` confirmado. |
 | G-SEC-1A.3b | **Completado el 2026-08-25.** Fernando aprobó incluir las tres raíces privadas exclusivamente dentro de un ciphertext futuro, junto con código y scripts. |
-| G-SEC-1A.3c | Recuperación física aprobada el 2026-08-25: dos copias manuscritas y separadas. Falta instalar/verificar `age` desde fuente oficial, sin procesar datos USM. |
+| G-SEC-1A.3c | **Completado el 2026-08-25.** Recuperación física aprobada en dos copias manuscritas y separadas; `age` verificado desde repositorios Ubuntu configurados, sin procesar datos USM. |
 | G-SEC-1A.3d | Probar cifrado y restauración de un archivo ficticio no sensible en una carpeta temporal. |
 | G-SEC-1A.3e | Revisar dry-run y aprobar ejecución manual única. |
 
@@ -113,7 +113,9 @@ Al revisar el wrapper se detectó una diferencia heredada entre sus nombres inte
 
 ## Registro de recuperación G-SEC-1A.3c
 
-Fernando aprobó el mecanismo de recuperación: dos copias físicas manuscritas, separadas y bajo su control. Una futura frase se introducirá únicamente de forma interactiva en la terminal local cuando exista una autorización de primera copia; no debe copiarse al historial de shell ni compartirse con este proyecto. La decisión de recuperación ya está cerrada, pero G-SEC-1A.3c sigue pendiente hasta confirmar que `age` está disponible desde la fuente oficial del sistema. La verificación de herramienta no leerá fuentes USM, no usará el disco externo, no solicitará frase ni creará ciphertext.
+Fernando aprobó el mecanismo de recuperación: dos copias físicas manuscritas, separadas y bajo su control. Una futura frase se introducirá únicamente de forma interactiva en la terminal local cuando exista una autorización de primera copia; no debe copiarse al historial de shell ni compartirse con este proyecto.
+
+La verificación local instaló `age` desde los repositorios Ubuntu configurados y confirmó `age_path=/usr/bin/age`, `age_version=1.2.1`, `package_version=1.2.1-1build1` y `STATUS=age_available_no_usm_data_processed`. No se leyeron fuentes USM, no se usó el disco externo, no se solicitó frase y no se creó ciphertext. Con ello G-SEC-1A.3c queda completado; el siguiente control sigue siendo el dry-run G-SEC-1A.3e.
 
 ## Árbol exacto de `USM_PRE_LUKS_BACKUP`
 
@@ -153,7 +155,7 @@ El manifest será texto simple y tendrá solo estas claves: `backup_type`, `prot
 
 ### Secuencia después de crear el árbol
 
-G-SEC-1A.3a ya creó el árbol vacío, G-SEC-1A.3b ya fijó el alcance autorizado y el mecanismo de recuperación de G-SEC-1A.3c ya fue aprobado. Falta instalar o verificar `age` localmente sin procesar datos, y después ejecutar `--dry-run` contra el punto de montaje (G-SEC-1A.3e). Ninguna de esas acciones crea un respaldo. La primera copia seguirá requiriendo una autorización separada y una frase de recuperación gestionada fuera de este volumen.
+G-SEC-1A.3a ya creó el árbol vacío, G-SEC-1A.3b ya fijó el alcance autorizado y G-SEC-1A.3c ya verificó la herramienta y la recuperación. El siguiente gate es ejecutar `--dry-run` contra el punto de montaje (G-SEC-1A.3e). El dry-run no crea un respaldo. La primera copia seguirá requiriendo una autorización separada y una frase de recuperación gestionada fuera de este volumen.
 
 ## Referencias
 
