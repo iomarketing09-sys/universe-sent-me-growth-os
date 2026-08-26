@@ -4,7 +4,7 @@ purpose: "Definir una estructura de carpetas y un wrapper de cifrado local previ
 status: Draft
 created: 2026-08-25
 updated: 2026-08-25
-version: "1.7"
+version: "1.8"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -65,7 +65,7 @@ Los únicos datos privados del disco serán ciphertext `.age`. El manifest no en
 |---|---|
 | Modo seguro | `--plan` es predeterminado y no escribe. `--dry-run` verifica herramientas, metadata y montaje sin crear archivos. |
 | Ejecución explícita | `--execute` requiere `--include-private` y la cadena exacta de confirmación. |
-| Destino | Debe ser un punto de montaje existente, no una subcarpeta ni la raíz de Xubuntu. |
+| Destino | Debe ser el punto de montaje raíz existente, no una subcarpeta ni la raíz de Xubuntu; el wrapper exige específicamente `/dev/sdc3`, `vfat` y label `Fernando` antes de dry-run o ejecución. |
 | Cifrado | `tar` transmite directamente a `age --passphrase`; no se conserva un `.tar.gz` abierto en el disco. |
 | Llave | Interactiva, fuera de shell history, argumentos, variables, repo, Drive y disco externo. |
 | Integridad | SHA-256 del ciphertext; `age-inspect` opcional sin descifrar. |
@@ -81,7 +81,7 @@ Los únicos datos privados del disco serán ciphertext `.age`. El manifest no en
 | G-SEC-1A.3c | **Completado el 2026-08-25.** Recuperación física aprobada en dos copias manuscritas y separadas; `age` verificado desde repositorios Ubuntu configurados, sin procesar datos USM. |
 | G-SEC-1A.3d | Probar cifrado y restauración de un archivo ficticio no sensible en una carpeta temporal. |
 | G-SEC-1A.3e | **Completado el 2026-08-25.** Dry-run contra el volumen validó montaje, herramienta, árbol y metadatos sin crear archivos. |
-| G-SEC-1A.3f | Autorización independiente y única de la primera copia cifrada; no está aprobada. |
+| G-SEC-1A.3f | Autorización independiente y única de la primera copia cifrada; debe validar previamente `/dev/sdc3`, `vfat`, label `Fernando` y las cinco subcarpetas vacías. |
 
 No se autoriza copia real, subida a Drive, sincronización, Drive como ledger, uso de OmniRoute, inserción de observaciones ni cambios de LUKS mediante este diseño.
 

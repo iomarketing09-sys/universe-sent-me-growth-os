@@ -124,8 +124,18 @@ fi
 [ -d "$TARGET_MOUNT" ] || die 'target mount directory does not exist'
 mountpoint -q "$TARGET_MOUNT" || die 'target must be an existing mount point, not a subdirectory'
 
+readonly TARGET_SOURCE="$(findmnt -T "$TARGET_MOUNT" -no SOURCE)"
+readonly TARGET_FSTYPE="$(findmnt -T "$TARGET_MOUNT" -no FSTYPE)"
+readonly TARGET_LABEL="$(lsblk -no LABEL "$TARGET_SOURCE" 2>/dev/null | head -n 1 | tr -d '[:space:]')"
+[ "$TARGET_SOURCE" = '/dev/sdc3' ] || die "expected approved source /dev/sdc3, found: $TARGET_SOURCE"
+[ "$TARGET_FSTYPE" = 'vfat' ] || die "expected vfat target, found: $TARGET_FSTYPE"
+[ "$TARGET_LABEL" = 'Fernando' ] || die "expected target label Fernando, found: ${TARGET_LABEL:-unset}"
+
 printf 'target_mount=%s\n' "$TARGET_MOUNT"
-findmnt -T "$TARGET_MOUNT" -no SOURCE,FSTYPE,SIZE,AVAIL,USE% || die 'cannot resolve target mount metadata'
+printf 'target_source=%s\n' "$TARGET_SOURCE"
+printf 'target_fstype=%s\n' "$TARGET_FSTYPE"
+printf 'target_label=%s\n' "$TARGET_LABEL"
+findmnt -T "$TARGET_MOUNT" -no SIZE,AVAIL,USE% || die 'cannot resolve target mount metadata'
 
 printf '\nPublic source metadata:\n'
 for root in "${PUBLIC_ROOTS[@]}"; do source_metadata "$root"; done
