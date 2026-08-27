@@ -4,7 +4,7 @@ purpose: "Preparar una decisión reversible y respaldada sobre el almacenamiento
 status: Draft
 created: 2026-08-25
 updated: 2026-08-26
-version: "1.33"
+version: "1.34"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -51,7 +51,7 @@ G-MIG-LUKS-1.8c ya pasó en el sistema restaurado bajo LUKS. El preflight confir
 
 El PASS de G-MIG-LUKS-1.8c completa la revalidación técnica estática posterior a la migración, pero **no** autoriza G-NORM-4R. Antes de reconsiderar cualquier observación real deben diseñarse y aprobarse por separado los controles de privacidad, retención, operación read-only y consentimiento granular. El shadow ledger real, Drive, GitHub como destino de datos, Sheets, Docker y OmniRoute continúan fuera de alcance.
 
-El diseño separado `2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md` v2.1 materializa esos controles como G-SEC-2. La condición de cifrado local se mantiene cumplida, pero no basta para habilitar tratamiento: G-SEC-2 sigue en `Draft`. Su primer subgate técnico, G-SEC-2.3a, tiene fixture y validador sintéticos diseñados, pero no ejecutados ni autorizados. No existe consentimiento vigente ni autorización de operación real. Por tanto, G-NORM-4R continúa bloqueado.
+El diseño separado `2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md` v2.2 materializa esos controles como G-SEC-2. La condición de cifrado local se mantiene cumplida, pero no basta para habilitar tratamiento: G-SEC-2 sigue en `Draft`. Su primer subgate técnico, G-SEC-2.3a, pasó con fixture y validador sintéticos, rechazo de egress/scheduler/datos privados/red/finanzas/marcas ajenas y guardia de socket bloqueada. No existe consentimiento vigente ni autorización de operación real. Por tanto, G-NORM-4R continúa bloqueado.
 
 > La protección requerida es cifrado de datos en reposo. No elimina por sí sola otros riesgos: un volumen montado queda disponible para la sesión activa, y el cifrado no reemplaza respaldo, permisos ni control de acceso.
 

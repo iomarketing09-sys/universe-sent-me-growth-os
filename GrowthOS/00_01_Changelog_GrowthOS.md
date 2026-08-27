@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-26
-**Versión:** 5.36
+**Versión:** 5.37
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.37.00] — 2026-08-26 (Fernando/Manus): G-SEC-2.3a pasó como prueba sintética de barreras.** Tras autorización explícita, el preflight confirmó Python y los artefactos ficticios, sin procesos de servicios o collectors. La suite devolvió `gsec2_synthetic_barriers_passed`: permitió únicamente el caso manual en memoria y rechazó los seis casos de egress externo, scheduler, evidencia privada, red, finanzas y marca ajena; la guardia de socket se bloqueó como se diseñó. No se leyeron rutas privadas ni variables de entorno, importaron collectors, abrieron red/OAuth/API, escribieron ledger/evidencia/canonical, instalaron paquetes, iniciaron cron, Docker u OmniRoute, ni se habilitaron salidas externas o G-NORM-4R.
 
 - **[5.36.00] — 2026-08-26 (Fernando/Manus): G-SEC-2.3a diseñado como verificación sintética de barreras.** Se añadieron un fixture ficticio, un validador Python y un wrapper con modos `--plan`, `--preflight` y ejecución confirmada. El diseño permite solo un caso ficticio manual en memoria y debe rechazar destinos externos, scheduler, evidencia privada, red, monetización y marcas ajenas; intercepta cualquier socket antes de abrir red. La ejecución requiere una autorización explícita nueva y no está autorizada ni realizada. No se leyeron rutas privadas, configuraciones, tokens o evidencia; no se importaron collectors, instalaron dependencias, crearon archivos de ledger/evidencia, iniciaron servicios, Docker u OmniRoute, ni se habilitaron cron, OAuth, APIs, Drive, Sheets, GitHub como destino de datos o G-NORM-4R.
 

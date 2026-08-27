@@ -4,7 +4,7 @@ purpose: "Definir los controles separados que deben diseñarse, revisarse y apro
 status: Draft
 created: 2026-08-25
 updated: 2026-08-26
-version: "2.1"
+version: "2.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
@@ -111,9 +111,9 @@ Una operación futura será read-only solo si todos sus límites técnicos y ope
 
 Antes de cualquier ejecución real, se deberá diseñar una prueba **sintética** que demuestre que los modos de escritura, egress y automatización se rechazan. Esa prueba no importará collectors, no leerá configuración privada ni abrirá sockets. La autorización para diseñarla y ejecutarla será un subgate nuevo, no parte de este documento.
 
-### G-SEC-2.3a — verificación sintética de barreras diseñada
+### G-SEC-2.3a — verificación sintética de barreras aprobada y pasada
 
-El subgate G-SEC-2.3a ya está diseñado y publicado, pero no se ha ejecutado. Usa el fixture versionado `fixtures/gsec2_readonly_barriers_synthetic.json`, el validador `validate_gsec2_readonly_barriers_synthetic.py` y el wrapper `preflight_gsec2_readonly_barriers.sh`. Los tres artefactos contienen únicamente casos ficticios y reglas de rechazo; no reciben parámetros de cuentas, métricas, ventanas, tokens, rutas privadas ni evidencia.
+G-SEC-2.3a se diseñó, aprobó explícitamente y pasó en el sistema LUKS. Usa el fixture versionado `fixtures/gsec2_readonly_barriers_synthetic.json`, el validador `validate_gsec2_readonly_barriers_synthetic.py` y el wrapper `preflight_gsec2_readonly_barriers.sh`. Los tres artefactos contienen únicamente casos ficticios y reglas de rechazo; no reciben parámetros de cuentas, métricas, ventanas, tokens, rutas privadas ni evidencia.
 
 | Caso sintético | Resultado que deberá demostrar la suite | Barrera G-SEC-2 cubierta |
 |---|---|---|
@@ -125,9 +125,11 @@ El subgate G-SEC-2.3a ya está diseñado y publicado, pero no se ha ejecutado. U
 | `financial_metric_blocked` | Rechazo de dato financiero ficticio. | Exclusión de monetización. |
 | `cross_brand_blocked` | Rechazo de una marca ficticia distinta. | Separación estricta de marcas. |
 
-El wrapper ofrece `--plan`, `--preflight` y `--execute --confirm RUN_USM_GSEC2_SYNTHETIC_BARRIERS`. El modo `--plan` no inspecciona el entorno. El preflight solo comprueba repositorio, Python, los dos artefactos públicos y nombres de procesos para detenerse si detecta un collector, OmniRoute o Docker Compose. El modo de ejecución requerirá una **autorización explícita independiente**; usará `python3 -B` y `PYTHONDONTWRITEBYTECODE=1`, bloqueará `socket.socket` y emitirá solo estado agregado, casos de rechazo y garantías. No crea archivos, incluso temporales, ni llama ningún servicio.
+El wrapper ofrece `--plan`, `--preflight` y `--execute --confirm RUN_USM_GSEC2_SYNTHETIC_BARRIERS`. El modo `--plan` no inspecciona el entorno. El preflight solo comprueba repositorio, Python, los dos artefactos públicos y nombres de procesos para detenerse si detecta un collector, OmniRoute o Docker Compose. El modo de ejecución usa `python3 -B` y `PYTHONDONTWRITEBYTECODE=1`, bloquea `socket.socket` y emite solo estado agregado, casos de rechazo y garantías. No crea archivos, incluso temporales, ni llama ningún servicio.
 
-El criterio de PASS propuesto es `gsec2_synthetic_barriers_passed`, con los seis rechazos esperados y la guardia de socket bloqueada. Cualquier diferencia, proceso detectado o artefacto faltante será `BLOCKED`; no se corrige el entorno, no se instala software y no se reintenta sin revisar el resultado. Un PASS demostrará solo las barreras sintéticas actuales: no cambia G-SEC-2 de `Draft`, no concede consentimiento granular y no abre G-NORM-4R.
+La ejecución autorizada devolvió `STATUS=preflight_complete_gsec2_synthetic_only_no_network_no_private_read`, seguido de `gsec2_synthetic_barriers_passed` y `STATUS=gsec2_synthetic_barriers_complete_no_network_no_private_read`. Permitió únicamente `manual_local_minimum_allowed` en memoria. Rechazó los seis casos esperados: egress externo, scheduler, clase de evidencia privada, red, dato financiero y marca ajena. La guardia de socket informó `blocked_as_designed`; no se detectaron servicios ni collectors activos.
+
+Cualquier diferencia, proceso detectado o artefacto faltante será `BLOCKED`; no se corrige el entorno, no se instala software y no se reintenta sin revisar el resultado. El PASS demuestra solo las barreras sintéticas actuales: no cambia G-SEC-2 de `Draft`, no concede consentimiento granular y no abre G-NORM-4R.
 
 ## G-SEC-2.4 — Consentimiento granular, por operación y revocable
 
@@ -153,7 +155,7 @@ G-SEC-2 se considera **diseñado** cuando este documento y los documentos relaci
 
 | Estado | Resultado | Consecuencia |
 |---|---|---|
-| Draft | Diseño documentado, incluida G-SEC-2.3a sin ejecución ni revisión humana del contenido. | G-NORM-4R bloqueado. |
+| Draft | Diseño documentado, con G-SEC-2.3a sintético ya pasado pero sin revisión humana completa de los cuatro controles. | G-NORM-4R bloqueado. |
 | Review | Fernando revisó los límites y solicita preparar pruebas sintéticas de controles. | Solo se puede proponer el subgate sintético correspondiente. |
 | Active | Solo después de pruebas de control aprobadas y consentimiento puntual vigente. | Permite proponer, no ejecutar automáticamente, una única operación G-NORM-4R. |
 | Blocked | Cualquier ambigüedad, salida externa, datos no permitidos, retención indefinida o consentimiento vencido. | No se abre evidencia ni se ejecuta ningún collector. |
