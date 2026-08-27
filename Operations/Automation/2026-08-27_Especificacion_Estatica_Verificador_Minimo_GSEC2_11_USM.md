@@ -4,7 +4,7 @@ purpose: "Definir, sin crear código ni ejecutar consultas, la interfaz pública
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.6"
+version: "1.7"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Gate_Tecnico_Pasivo_Observacion_Real_Minima_GSEC2_11_USM.md"
@@ -110,7 +110,7 @@ No crea archivos, scripts, logs, capturas, hashes, ledger, reportes, copias, cac
 
 ## Estado y siguiente acción permitida
 
-Esta especificación está en `Review`. La implementación limitada `2026-08-27_Implementacion_Nucleo_Politica_Publico_GSEC2_11_USM.md` v1.4 está en `Review`. El runner estándar `2026-08-27_Runner_Sintetico_Estandar_GSEC2_11_USM.md` v1.0 fue creado en `Draft` para declarar los mismos cinco casos sin `pytest`; no se ha importado ni ejecutado. No registra nombres reales, no observa el sistema, no usa datos ni abre red. Una prueba sintética ejecutada necesitaría una autorización humana nueva y no permitiría compilar, importar o ejecutar contra el equipo real.
+Esta especificación está en `Review`. La implementación limitada `2026-08-27_Implementacion_Nucleo_Politica_Publico_GSEC2_11_USM.md` v1.5 y el runner estándar `2026-08-27_Runner_Sintetico_Estandar_GSEC2_11_USM.md` v1.2 están en `Review`; ninguno se ha importado ni ejecutado. No registran nombres reales, no observan el sistema, no usan datos ni abren red. Una prueba sintética ejecutada necesitaría una autorización humana nueva y no permitiría compilar, importar o ejecutar contra el equipo real.
 
 Para conservar coherencia, el estado `Review` se refleja en G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2, G-SEC-2.8 y G-SEC-2.10 no requieren cambio de estado porque sus límites siguen sin alteración.
 

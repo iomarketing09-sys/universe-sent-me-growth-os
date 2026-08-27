@@ -4,7 +4,7 @@ purpose: "Definir la arquitectura lógica, las interfaces conceptuales, las vali
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.4"
+version: "1.5"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Especificacion_Estatica_Verificador_Minimo_GSEC2_11_USM.md"
@@ -114,7 +114,7 @@ No cambia G-SEC-2 de `Review`, no inicia una fase operativa y no desbloquea G-NO
 
 ## Estado y siguiente acción permitida
 
-Este contrato está en `Review`. El núcleo de política público y su prueba sintética existen como implementación `2026-08-27_Implementacion_Nucleo_Politica_Publico_GSEC2_11_USM.md` v1.4 en `Review`, sin nombres reales ni interfaz de ejecución. Se creó el runner estándar no ejecutado `2026-08-27_Runner_Sintetico_Estandar_GSEC2_11_USM.md` v1.0 en `Draft`, sin dependencias externas. La siguiente acción permitida es su revisión estática; una prueba sintética ejecutada seguiría requiriendo una autorización humana nueva y no autorizaría observar el sistema.
+Este contrato está en `Review`. El núcleo de política público y su prueba sintética existen como implementación `2026-08-27_Implementacion_Nucleo_Politica_Publico_GSEC2_11_USM.md` v1.5 en `Review`, sin nombres reales ni interfaz de ejecución. El runner estándar no ejecutado `2026-08-27_Runner_Sintetico_Estandar_GSEC2_11_USM.md` v1.2 está en `Review`, sin dependencias externas. Una prueba sintética ejecutada seguiría requiriendo una autorización humana nueva y no autorizaría observar el sistema.
 
 Para conservar coherencia, el estado `Review` se refleja en la especificación estática, G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2, G-SEC-2.8 y G-SEC-2.10 no requieren cambio de estado porque sus límites continúan vigentes.
 

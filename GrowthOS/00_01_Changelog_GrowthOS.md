@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.86
+**Versión:** 5.87
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.87.00] — 2026-08-27 (Fernando/Manus): revisión humana estática del runner estándar G-SEC-2.11 confirmada.** Fernando confirmó los cinco casos abstractos, las dependencias puras, la salida efímera, la ausencia de CLI y persistencia, y las prohibiciones. `2026-08-27_Runner_Sintetico_Estandar_GSEC2_11_USM.md` pasa de `Draft` a `Review`. La revisión valida solo el texto: el runner no se importó, compiló, ejecutó ni probó, no registró nombres reales y no consultó el sistema. Una prueba sintética ejecutada requerirá autorización humana nueva y seguirá sin permitir observación de servicios, collectors, red, datos, archivos o G-NORM-4R.
 
 - **[5.86.00] — 2026-08-27 (Fernando/Manus): inspección estática no ejecutada del runner estándar G-SEC-2.11.** Se inspeccionó textualmente `run_policy_core_gsec211_synthetic.py` para detectar importaciones o llamadas declaradas de acceso a sistema, red, archivos, procesos, entorno, persistencia o salida impresa. No se detectaron esos patrones. El dictamen se limita al texto: el runner no se importó, compiló ni ejecutó, no se evaluaron casos sintéticos y no se analizó el sistema. El documento del runner permanece en `Draft`; la siguiente acción permitida es una revisión humana estática.
 

@@ -1,10 +1,10 @@
 ---
 title: "Runner sintético estándar G-SEC-2.11 — Universe Sent Me"
 purpose: "Registrar el diseño y creación no ejecutada de un runner de biblioteca estándar para los cinco casos abstractos del núcleo de política G-SEC-2.11, sin instalar dependencias ni acceder al sistema."
-status: Draft
+status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Implementacion_Nucleo_Politica_Publico_GSEC2_11_USM.md"
@@ -52,6 +52,14 @@ Se inspeccionó el texto del runner para detectar importaciones o llamadas decla
 
 > **Alcance del dictamen:** confirma solo la ausencia de los patrones textuales revisados. El runner no se importó, compiló ni ejecutó, y la inspección no evaluó los cinco casos sintéticos ni analizó el sistema.
 
+## Registro de revisión humana estática
+
+Fernando confirmó los cinco casos abstractos, las dependencias puras, la salida efímera, la ausencia de CLI y persistencia, y las prohibiciones. Como resultado, el runner pasa de `Draft` a `Review`.
+
+> **Alcance confirmado:** la revisión valida exclusivamente el texto del runner. No lo importa, compila, ejecuta o prueba; no registra nombres reales y no consulta servicios, collectors, procesos, red, puertos, datos, configuración o rutas privadas.
+
+Para mantener la coherencia, esta revisión actualiza la implementación, el contrato de código, la especificación estática, G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2 y G-NORM-4R no cambian de estado.
+
 ## Prohibiciones que continúan vigentes
 
 El runner no puede compilarse, importarse, ejecutarse, modificarse para leer archivos o conectarse con un componente del sistema sin una autorización humana posterior. No se instalarán dependencias ni se volverá a invocar `pytest` bajo este documento.
@@ -60,9 +68,9 @@ No se permiten nombres reales, datos, credenciales, rutas, variables de entorno,
 
 ## Estado y siguiente acción permitida
 
-El runner está en `Draft`. La siguiente acción permitida es una revisión humana estática del archivo y sus cinco casos declarados. Esa revisión solo podría cambiar este documento a `Review`; no autorizaría importar, compilar, ejecutar, probar, registrar nombres reales ni consultar el sistema.
+El runner está en `Review`. No autoriza importarlo, compilarlo, ejecutarlo, probarlo, registrar nombres reales ni consultar el sistema. Una futura prueba sintética ejecutada requerirá una autorización humana nueva y seguirá limitada a los cinco casos abstractos; no podrá analizar el equipo, la red, archivos, datos o componentes reales.
 
-Para mantener coherencia, este documento requiere actualizar la implementación, el contrato de código, la especificación estática, G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2 y G-NORM-4R no cambian de estado.
+Para mantener coherencia, el estado `Review` se refleja en la implementación, el contrato de código, la especificación estática, G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2 y G-NORM-4R no cambian de estado.
 
 ## Referencias
 
