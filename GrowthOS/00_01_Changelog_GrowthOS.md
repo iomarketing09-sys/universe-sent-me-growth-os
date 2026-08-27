@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.66
+**Versión:** 5.67
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.67.00] — 2026-08-27 (Fernando/Manus): revisión humana de G-SEC-2.7 confirmada, sin iniciar fase operativa.** Fernando confirmó los prerrequisitos, resultados de decisión, autorizaciones separadas y prohibiciones. El gate `2026-08-27_Gate_Preparacion_Decision_Fase_Operativa_GSEC2_7_USM.md` pasa de `Draft` a `Review`. La revisión solo confirma el diseño de transición: no activa G-SEC-2, no inicia una fase operativa formal, no emite tarjeta, no solicita o registra consentimiento y no habilita datos, red, sistemas, collectors, OAuth/API, ledger, automatizaciones o servicios. Se alinearon el contrato G-SEC-2, el cierre P.5 y los pendientes. G-NORM-4R permanece bloqueado. Un paso posterior requerirá diseñar y autorizar un gate específico de control técnico pasivo.
 
 - **[5.66.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.7 diseñado para preparación y decisión, sin iniciar fase operativa.** Ante la colisión detectada, Fernando aprobó usar G-SEC-2.7 y preservar G-SEC-2.5 y G-SEC-2.6 como hitos históricos. Se creó `2026-08-27_Gate_Preparacion_Decision_Fase_Operativa_GSEC2_7_USM.md` v1.0 en `Draft`. El gate define prerrequisitos documentales, controles de preparación, resultados de decisión y una secuencia de autorizaciones separadas. Solo puede resultar en preparación para diseñar un gate posterior; no cambia G-SEC-2 a `Active`, no emite tarjeta, no solicita consentimiento ni abre G-NORM-4R. No se abrieron datos, red, rutas privadas, collectors, OAuth/API, ledger, automatizaciones, servicios, medios, discos, LUKS o integraciones. La siguiente acción permitida es una revisión humana independiente de G-SEC-2.7.
 

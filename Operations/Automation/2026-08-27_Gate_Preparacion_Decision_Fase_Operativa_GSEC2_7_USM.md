@@ -1,10 +1,10 @@
 ---
 title: "G-SEC-2.7 — Gate de preparación y decisión para una eventual fase operativa formal — Universe Sent Me"
 purpose: "Definir prerrequisitos, resultados de decisión y autorizaciones separadas antes de considerar una fase operativa formal, sin activar datos, red, collectors, OAuth/API, ledger, automatizaciones, servicios o G-NORM-4R."
-status: Draft
+status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -87,7 +87,13 @@ G-SEC-2.7 no ejecuta scripts, preflights, validadores, diagnósticos o comprobac
 
 ## Estado y siguiente acción permitida
 
-Este gate está en `Draft`. La siguiente acción permitida es una revisión humana independiente que confirme sus prerrequisitos, resultados de decisión, secuencia separada y prohibiciones. Esa revisión solo puede cambiar G-SEC-2.7 a `Review`; no puede iniciar la fase operativa formal ni habilitar datos o sistemas.
+### Registro de revisión humana — 2026-08-27
+
+Fernando confirmó los prerrequisitos, resultados de decisión, autorizaciones separadas y prohibiciones de G-SEC-2.7. El estado documental cambia de `Draft` a `Review`. Esta revisión solo confirma el diseño de transición: no inicia la fase operativa formal, no activa G-SEC-2, no emite tarjeta, no solicita o registra consentimiento y no habilita datos o sistemas.
+
+G-SEC-2 permanece en `Review` y G-NORM-4R sigue bloqueado. No se abrió información privada, red, rutas privadas, collectors, OAuth/API, ledger, automatizaciones, servicios, medios, discos, LUKS o integraciones.
+
+Una continuación requiere un gate y autorización nuevos para diseñar un control técnico pasivo de preparación. No se puede ejecutar una comprobación técnica, crear una propuesta, emitir tarjeta, solicitar consentimiento o habilitar G-NORM-4R.
 
 ## Referencias
 
