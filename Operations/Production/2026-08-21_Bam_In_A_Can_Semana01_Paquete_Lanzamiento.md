@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — Semana 01: paquete de lanzamiento"
 purpose: "Organizar el primer bloque de cuatro piezas originales de Bam in a Can antes de publicar, con orden editorial, producción, copy, audio y medición."
-status: "Active — CAN-001 y CAN-002 medidas; CAN-003 con cascada completa; CAN-004 con hook nativo de TikTok y storyboard de edición definidos"
+status: "Active — CAN-001 y CAN-002 medidas; CAN-003 con cascada completa; CAN-004 con hook nativo de TikTok, storyboard de edición y continuidad de marca verificada"
 created: 2026-08-21
 updated: 2026-08-26
-version: "1.19"
+version: "1.21"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_Plan_Lanzamiento_Audiencia_Bam_In_A_Can.md"
@@ -189,6 +189,10 @@ Audio only: empty laundromat hum, a quiet compressor, one very soft muffled exha
 **Premisa:** meme original en forma de clip. Un monitor CRT beige reproduce una ventana de video vacía. Con cada *click*, aparecen más ventanas pequeñas, pero todas muestran la misma lata cerrada. Se corta antes de que cubran completamente el monitor.
 
 **Estado de render (21 Ago):** `Generate_storyboard_video_animation_can004.mp4` preserva con calidad la lámpara, escritorio negro, CRT beige y lata con marca Bam. Es una buena placa base, pero no ejecuta la mecánica central: la pantalla se queda con un punto blanco y no aparecen ventanas ni cursor. **No regenerar**: la pantalla CRT es un área plana y delimitada; la réplica de ventanas se debe componer en edición para que sea exacta y repetible.
+
+**Anclas visuales directas de Drive (26 Ago):** el archivo `Bam_in_a_can_Logo.png` de la carpeta raíz `Bam in a can` fija el objeto de marca: lata metálica corta y cilíndrica con tapa de anilla, etiqueta crema envejecida, wordmark negro `BAM IN A CAN`, aro rojo, estrellas y acentos rojos. El storyboard original `can 004/CRT_monitor_grid_composition_202608211423.jpeg` fija el mundo de CAN-004: CRT marfil desgastado, pantalla casi negra, escritorio oscuro, lámpara cálida y lata de marca a la derecha. Sus equivalentes ya archivados en el repositorio son `Operations/Production/Brand_Assets/Bam_In_A_Can/Bam_in_a_can_Logo.png` y `Operations/Production/Assets/Bam_In_A_Can/Storyboards/CAN-004_CRT_Monitor_Storyboard.jpeg`.
+
+**Regla de continuidad para cualquier variante:** usar la lata de etiqueta crema/negra/roja de Bam —no una lata plateada genérica— tanto en la mesa como en cada miniatura dentro de la pantalla. La lámpara cálida, el fondo negro, el escritorio oscuro y el CRT marfil deben conservar la escala y el encuadre frontal del storyboard original. Estas imágenes son referencias de identidad y composición; ninguna cuadrícula debe cargarse como input directo de Flow.
 
 **Receta de edición obligatoria:** usar el plano frontal del CRT como base y enmascarar solo el rectángulo de la pantalla. Sobre esa máscara, colocar una imagen/recorte de la lata limpia sin texto adicional en siete paneles sin borde ni interfaz:
 
