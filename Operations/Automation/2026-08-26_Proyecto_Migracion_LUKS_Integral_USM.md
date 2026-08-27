@@ -4,7 +4,7 @@ purpose: "Definir los gates y la secuencia reversible para reinstalar Xubuntu co
 status: Active
 created: 2026-08-26
 updated: 2026-08-26
-version: "1.5"
+version: "1.6"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -146,6 +146,8 @@ El wrapper `inspect_omniroute_passive_after_luks.sh` no tiene modo de inicio ni 
 | Sin servicio activo | No hay proceso ni puerto de OmniRoute en escucha. | Cumple el aislamiento requerido para el siguiente diseño. |
 
 G-MIG-LUKS-1.8b no prueba solicitudes, rutas, proveedores, fallback, API keys ni borradores. Eso requerirá un gate independiente con una fixture no sensible, consentimiento específico y un control previo del arranque de Docker.
+
+La primera ejecución pasiva devolvió un falso positivo porque el patrón `pgrep` coincidió con la propia línea de comando del wrapper. Este resultado no indica un servicio OmniRoute activo: el inventario sí confirmó el directorio privado con modo `0700` y ausencia de Docker/Compose. El wrapper se corrigió para excluir su PID antes de evaluar procesos externos, sin añadir instalación, inicio, lectura de `.env`, apertura de puertos ni red. La repetición sigue usando la autorización ya otorgada para G-MIG-LUKS-1.8b.
 
 ## Diseño de desbloqueo G-MIG-LUKS-1.5
 

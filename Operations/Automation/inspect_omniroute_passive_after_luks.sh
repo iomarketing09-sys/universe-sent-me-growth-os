@@ -64,9 +64,11 @@ else
 fi
 
 echo '--- PROCESS AND PORT CHECK ---'
-if pgrep -af 'omniroute|docker compose|docker-compose' >/dev/null; then
+PROCESS_MATCHES="$(pgrep -af 'omniroute|docker compose|docker-compose' || true)"
+PROCESS_MATCHES="$(printf '%s\n' "$PROCESS_MATCHES" | awk -v self="$$" '$1 != self && $0 !~ /pgrep -af/ { print }')"
+if [ -n "$PROCESS_MATCHES" ]; then
   echo 'STATUS=blocked_omniroute_or_compose_process_detected'
-  pgrep -af 'omniroute|docker compose|docker-compose'
+  printf '%s\n' "$PROCESS_MATCHES"
   exit 1
 fi
 

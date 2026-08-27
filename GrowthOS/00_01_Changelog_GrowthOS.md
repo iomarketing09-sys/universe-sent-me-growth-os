@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-26
-**Versión:** 5.29
+**Versión:** 5.30
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.30.00] — 2026-08-26 (Fernando/Manus): falso positivo de inspección OmniRoute corregido sin activar servicios.** La primera ejecución pasiva confirmó el directorio restaurado y la ausencia de Docker/Compose, pero el patrón de `pgrep` coincidió con el propio wrapper y devolvió un bloqueo erróneo. Se modificó el detector para excluir su PID y se validó su sintaxis. No se instaló Docker, no se inició OmniRoute, no se abrió `.env`, no hubo red ni cambios de puerto. La inspección pasiva autorizada debe repetirse tras actualizar el repositorio.
 
 - **[5.29.00] — 2026-08-26 (Fernando/Manus): inspección pasiva de Docker y OmniRoute diseñada, sin ejecución.** Se creó `inspect_omniroute_passive_after_luks.sh` para informar únicamente metadatos de directorio, nombres de artefactos, presencia/versiones de clientes Docker/Compose, procesos y escucha local en el puerto 20128. El wrapper no tiene modo de inicio, no instala Docker, no abre archivos `.env`, no llama APIs ni envía datos. G-MIG-LUKS-1.8b requiere una autorización separada para ejecutarlo; OmniRoute, Docker y toda entrada permanecen detenidos.
 
