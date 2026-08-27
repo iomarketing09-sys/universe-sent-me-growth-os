@@ -354,3 +354,10 @@ organization: "GrowthOS"
 - [x] Evaluar de forma documental los diez controles de `USM-GSEC2-4C-PREAL-20260827-01`; dictamen `scope_compatible_for_separate_human_request`.
 - [x] Cambiar la propuesta a `Review`; los diez controles son compatibles en el plano documental, con condiciones posteriores explícitas.
 - [x] Mantener sin emitir la tarjeta de consentimiento y sin autorizar datos reales, red, OAuth/API, collectors, persistencia o G-NORM-4R.
+
+## G-SEC-2.4d — Tarjeta de consentimiento puntual Draft — 2026-08-27
+
+- [x] Redactar una tarjeta puntual con ventana UTC cerrada, cuentas exactas, métricas y una sola operación; tarjeta `USM-CONSENT-20260827-01` creada en `Draft`.
+- [x] Mantener la tarjeta en `Draft`; no emitirla, solicitar consentimiento ni ejecutar acceso real.
+- [ ] Revisar que la tarjeta coincida exactamente con la propuesta `USM-GSEC2-4C-PREAL-20260827-01`.
+- [x] Mantener bloqueados datos reales, red, OAuth/API, collectors, persistencia y G-NORM-4R.
