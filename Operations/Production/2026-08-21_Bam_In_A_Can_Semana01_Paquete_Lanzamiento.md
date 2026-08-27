@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — Semana 01: paquete de lanzamiento"
 purpose: "Organizar el primer bloque de cuatro piezas originales de Bam in a Can antes de publicar, con orden editorial, producción, copy, audio y medición."
-status: "Active — CAN-001 y CAN-002 medidas; CAN-003 con cascada completa; CAN-004 adaptada como experimento de shares y saves"
+status: "Active — CAN-001 y CAN-002 medidas; CAN-003 con cascada completa; CAN-004 con hook nativo de TikTok definido"
 created: 2026-08-21
-updated: 2026-08-25
-version: "1.17"
+updated: 2026-08-26
+version: "1.18"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_Plan_Lanzamiento_Audiencia_Bam_In_A_Can.md"
@@ -215,6 +215,21 @@ No distorsionar las copias fuera del borde curvo del CRT. El efecto debe sentirs
 | 00:00.8–00:04.8 | Texto manual: `my FYP:`. La pantalla pasa de una a siete miniaturas de lata con un click seco por aparición; no hay interfaz reconocible ni texto adicional. |
 | 00:04.8–00:06.0 | El cursor intenta cerrar una miniatura; aparecen dos más, las ventanas parpadean y corte inmediato a negro. |
 
+### Corte nativo de TikTok — frame 0 a 3 s
+
+Este corte adapta la placa final de CAN-004 para resolver el problema de TikTok observado en CAN-003: exposición inicial desde Para ti sin una retención suficiente después del primer segundo. No cambia la hipótesis primaria de meme (`H-BAM-MEME-RELAY-01`); comprime el reconocimiento, la escalada y el remate parcial para que el chiste sea entendible antes de los 3 s.
+
+| Tiempo | Imagen y movimiento exactos | Texto en pantalla | SFX / regla de edición |
+|---|---|---|---|
+| **00:00–00:00.18** | Abrir ya dentro de la pantalla CRT: **tres** miniaturas irregulares de la lata están visibles y un cursor apunta a la miniatura central. La lata real a la derecha del monitor sigue inmóvil. No iniciar con el CRT vacío. | Sin texto todavía. | El primer frame debe tener contraste y movimiento implícito: cursor ya en posición. Sin fade-in. |
+| **00:00.18–00:00.55** | El cursor hace un click sobre la miniatura central; aparecen **dos** miniaturas más en lugares inesperados dentro del CRT. | `me: just one video before bed` en la parte alta, una sola línea, blanco roto y sin animación de escritura. | Click 1 a 00:00.20; cada miniatura entra en un solo frame, sin transición suave. |
+| **00:00.55–00:01.25** | El texto anterior desaparece por corte. Llegan **dos** miniaturas más, hasta siete; una de ellas invade parcialmente la otra pero no sale del borde del CRT. | `my FYP:` en el mismo lugar. | Clicks 2 y 3 a 00:00.62 y 00:00.92. Mantener las miniaturas suficientemente grandes para que la lata se reconozca a primera vista. |
+| **00:01.25–00:01.80** | El cursor se desplaza de inmediato a una esquina de una miniatura como si fuera a cerrarla. Las siete miniaturas quedan quietas por 0.25 s. | `my FYP:` permanece. | Añadir un micro-silencio de 0.12 s antes del click de cierre; no añadir texto explicativo. |
+| **00:01.80–00:02.35** | El click de cierre produce el remate parcial: en vez de desaparecer, brotan **dos** miniaturas nuevas desde el punto del cursor y desplazan las demás. Total: nueve paneles. | `my FYP:` permanece; debe ser legible hasta 00:02.20. | Click de cierre seco a 00:01.82 seguido de doble click acelerado; este es el payoff que debe retener al espectador hasta el segundo 3. |
+| **00:02.35–00:03.00** | Los nueve paneles se estabilizan en una composición incómodamente llena. El cursor queda atrapado debajo de una miniatura; un panel muestra un parpadeo único. | Sin texto desde 00:02.35. | Un chirp CRT corto a 00:02.55. No hacer corte negro todavía: reservar el intento final de cierre y el corte para 00:04.8–00:06.0. |
+
+La regla de export para TikTok es conservar el visual dentro de la máscara curva del CRT, sin iconos reconocibles ni bordes de sistema operativo. El texto se agrega manualmente en edición, no en el render. El audio nativo, si se utiliza, debe quedar por debajo de los clicks; no introducir voz, explicación ni un tercer overlay. La versión se etiqueta internamente como `CAN004-TT-HookA` y se evalúa por shares/favorites, con retención como guardrail secundario.
+
 **Prompt de keyframe (inglés):**
 
 ```text
@@ -229,7 +244,7 @@ Use only the attached initial keyframe as the visual anchor. Vertical 9:16, 6 se
 
 | Publicación | Propuesta |
 |---|---|
-| Overlay manual | `me: one more weird video before bed` de 00:00–00:00.8; `my FYP:` de 00:00.8–00:04.8. No añadir un tercer mensaje. |
+| Overlay manual | **TikTok `HookA`:** `me: just one video before bed` de 00:00.18–00:00.55; `my FYP:` de 00:00.55–00:02.35. Otras plataformas conservan la versión de 00:00–00:00.8 y 00:00.8–00:04.8 hasta que haya una prueba comparable. |
 | Copy | `me: one more weird video before bed.\n\nmy algorithm:\n\nOriginal fiction. AI-made.` |
 | Audio | SFX de clicks, hum y chirp lideran. TikTok/Instagram: audio nativo instrumental bajo solo si no cubre los clicks; YouTube: SFX originales sin música. |
 | Hashtags de base | `#BamInACan #InternetCulture #Weirdcore #AIMeme` |
