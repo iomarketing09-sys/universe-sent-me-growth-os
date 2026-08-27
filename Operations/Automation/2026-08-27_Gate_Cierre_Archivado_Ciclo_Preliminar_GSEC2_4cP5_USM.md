@@ -4,9 +4,10 @@ purpose: "Definir y revisar el protocolo documental de cierre del ciclo prelimin
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
+  - "Operations/Automation/2026-08-27_Gate_Preparacion_Decision_Fase_Operativa_GSEC2_7_USM.md"
   - "Operations/Automation/2026-08-27_Gate_Seguridad_Restriccion_Red_Formato_Vacio_GSEC2_4cP4_USM.md"
   - "Operations/Automation/2026-08-27_Gate_Auditoria_Trazabilidad_Local_Formato_Vacio_GSEC2_4cP3_USM.md"
   - "Operations/Automation/2026-08-27_Gate_Formato_Vacio_Propuesta_Hipotetica_GSEC2_4cP2_USM.md"
@@ -77,7 +78,7 @@ G-SEC-2.4c-P.5 no ejecuta scripts, validadores, preflights, comandos de archivo,
 
 ## Estado y siguiente acción permitida
 
-Este gate está en `Review`. El ciclo preliminar queda documentalmente cerrado, no operativo y sin datos. Cualquier paso nuevo exige un gate documental distinto y autorización explícita; no se puede crear, completar o archivar una propuesta, tarjeta, consentimiento, auditoría, dato o resultado con este cierre.
+Este gate está en `Review`. El ciclo preliminar queda documentalmente cerrado, no operativo y sin datos. G-SEC-2.7 fue diseñado después como un gate separado de preparación y decisión en `Draft`; no reabre el ciclo ni altera este cierre. Cualquier paso nuevo exige un gate documental distinto y autorización explícita; no se puede crear, completar o archivar una propuesta, tarjeta, consentimiento, auditoría, dato o resultado con este cierre.
 
 ## Referencias
 

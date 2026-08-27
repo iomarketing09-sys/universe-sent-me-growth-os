@@ -4,7 +4,7 @@ purpose: "Definir los controles separados que deben diseñarse, revisarse y apro
 status: Review
 created: 2026-08-25
 updated: 2026-08-27
-version: "4.3"
+version: "4.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
@@ -27,6 +27,10 @@ related_documents:
   - "Operations/Automation/2026-08-27_Procedimiento_Preliminar_Propuesta_Minima_GSEC2_4c_USM.md"
   - "Operations/Automation/2026-08-27_Gate_Diseno_Propuesta_Hipotetica_Unica_GSEC2_4cP1_USM.md"
   - "Operations/Automation/2026-08-27_Gate_Formato_Vacio_Propuesta_Hipotetica_GSEC2_4cP2_USM.md"
+  - "Operations/Automation/2026-08-27_Gate_Auditoria_Trazabilidad_Local_Formato_Vacio_GSEC2_4cP3_USM.md"
+  - "Operations/Automation/2026-08-27_Gate_Seguridad_Restriccion_Red_Formato_Vacio_GSEC2_4cP4_USM.md"
+  - "Operations/Automation/2026-08-27_Gate_Cierre_Archivado_Ciclo_Preliminar_GSEC2_4cP5_USM.md"
+  - "Operations/Automation/2026-08-27_Gate_Preparacion_Decision_Fase_Operativa_GSEC2_7_USM.md"
   - "Operations/Automation/preflight_gsec2_template_static_integrity.sh"
   - "Operations/Automation/validate_gsec2_template_static_integrity.py"
   - "Operations/Automation/2026-08-27_Revision_Final_Consolidacion_GSEC2_USM.md"
@@ -229,6 +233,10 @@ Los documentos que requieren actualización conjunta son el contrato del shadow 
 ### G-SEC-2.6 — consolidación final diseñada
 
 La revisión final y matriz de consolidación se documentan en `2026-08-27_Revision_Final_Consolidacion_GSEC2_USM.md` v1.3. G-SEC-2.6 completó sus diez comprobaciones públicas como `Compatible` y registró `gsec2_consolidation_review_complete`. La revisión independiente posterior de G-SEC-2.4c confirmó la ficha pública vacía y sus diez controles, manteniéndola en `Review` sin propuesta, tarjeta o consentimiento. El procedimiento preliminar G-SEC-2.4c-P está documentado en `2026-08-27_Procedimiento_Preliminar_Propuesta_Minima_GSEC2_4c_USM.md` v1.5, también en `Review`, y solo describe la secuencia documental de una futura preparación sin crear una instancia. El gate G-SEC-2.4c-P.1 está documentado en `2026-08-27_Gate_Diseno_Propuesta_Hipotetica_Unica_GSEC2_4cP1_USM.md` v1.3, `Review`, y establece los límites previos de un diseño hipotético sin crearlo. G-SEC-2.4c-P.2 y su formato vacío están en `Review` como diseño documental, sin instancia de propuesta. Ninguno de estos resultados cambia el estado de este módulo ni permite tratar datos reales. G-SEC-2 permanece en `Review`.
+
+### G-SEC-2.7 — preparación y decisión de una eventual fase operativa
+
+G-SEC-2.7 se documenta en `2026-08-27_Gate_Preparacion_Decision_Fase_Operativa_GSEC2_7_USM.md` v1.0, en `Draft`. Se creó después del cierre documental del ciclo preliminar para separar la preparación de una decisión futura de cualquier ejecución. Solo fija prerrequisitos, resultados de decisión y autorizaciones separadas; no cambia G-SEC-2 a `Active`, no emite tarjeta, no solicita consentimiento y no permite abrir datos, red, collectors, OAuth/API, ledger, automatizaciones, servicios o G-NORM-4R.
 
 ## Referencias
 

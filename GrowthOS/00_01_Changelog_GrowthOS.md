@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.65
+**Versión:** 5.66
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.66.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.7 diseñado para preparación y decisión, sin iniciar fase operativa.** Ante la colisión detectada, Fernando aprobó usar G-SEC-2.7 y preservar G-SEC-2.5 y G-SEC-2.6 como hitos históricos. Se creó `2026-08-27_Gate_Preparacion_Decision_Fase_Operativa_GSEC2_7_USM.md` v1.0 en `Draft`. El gate define prerrequisitos documentales, controles de preparación, resultados de decisión y una secuencia de autorizaciones separadas. Solo puede resultar en preparación para diseñar un gate posterior; no cambia G-SEC-2 a `Active`, no emite tarjeta, no solicita consentimiento ni abre G-NORM-4R. No se abrieron datos, red, rutas privadas, collectors, OAuth/API, ledger, automatizaciones, servicios, medios, discos, LUKS o integraciones. La siguiente acción permitida es una revisión humana independiente de G-SEC-2.7.
 
 - **[5.65.00] — 2026-08-27 (Fernando/Manus): ciclo preliminar G-SEC-2.4c-P cerrado documentalmente mediante G-SEC-2.4c-P.5.** Se creó y revisó `2026-08-27_Gate_Cierre_Archivado_Ciclo_Preliminar_GSEC2_4cP5_USM.md` v1.1, en `Review`. El protocolo limita el cierre y archivado a políticas, versiones, estados, referencias y trazabilidad agregada no sensible dentro del repositorio; no crea carpetas, paquetes, copias, backups, snapshots, exportaciones ni archivos de auditoría. Excluye datos, evidencia, credenciales, rutas privadas, medios, discos, LUKS y resultados operativos. El ciclo permanece no operativo: no crea propuesta, tarjeta, consentimiento, auditoría o ejecución. G-SEC-2 continúa en `Review` y G-NORM-4R sigue bloqueado. No se abrieron datos o rutas privadas, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA ni salidas externas. Un nuevo avance requiere otro gate documental y autorización explícita.
 
