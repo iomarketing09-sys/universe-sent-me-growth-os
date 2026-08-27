@@ -4,7 +4,7 @@ purpose: "Proporcionar una referencia vacía para describir y comparar, en el fu
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.7"
+version: "1.8"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Gate_Diseno_Propuesta_Hipotetica_Unica_GSEC2_4cP1_USM.md"
@@ -89,7 +89,7 @@ Fernando confirmó que comprende esta ficha pública vacía y sus diez controles
 
 G-SEC-2.5 validó estáticamente los marcadores pendientes, enlaces y los diez controles de comparación frente a G-SEC-2 y la plantilla de tarjeta. G-SEC-2.6 consolidó las diez comprobaciones públicas como `Compatible`. Estos resultados, junto con esta revisión, mantienen G-SEC-2 en `Review` y G-NORM-4R bloqueado.
 
-El procedimiento preliminar `2026-08-27_Procedimiento_Preliminar_Propuesta_Minima_GSEC2_4c_USM.md` v1.2 fue revisado de manera humana independiente y está en `Review`. El gate `2026-08-27_Gate_Diseno_Propuesta_Hipotetica_Unica_GSEC2_4cP1_USM.md` v1.0 se diseñó en `Draft` para delimitar una futura propuesta hipotética sin crearla. No se deben copiar ni completar esta ficha, emitir una tarjeta, solicitar consentimiento, abrir datos o rutas privadas, invocar collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salidas externas. La siguiente acción permitida es revisar ese gate como diseño documental independiente.
+El procedimiento preliminar `2026-08-27_Procedimiento_Preliminar_Propuesta_Minima_GSEC2_4c_USM.md` v1.3 fue revisado de manera humana independiente y está en `Review`. El gate `2026-08-27_Gate_Diseno_Propuesta_Hipotetica_Unica_GSEC2_4cP1_USM.md` v1.1 también fue revisado y está en `Review`; delimita una futura propuesta hipotética sin crearla. No se deben copiar ni completar esta ficha, emitir una tarjeta, solicitar consentimiento, abrir datos o rutas privadas, invocar collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salidas externas. Cualquier continuación exige una autorización nueva para diseñar un gate sobre el formato vacío de una propuesta hipotética.
 
 ## Referencias
 

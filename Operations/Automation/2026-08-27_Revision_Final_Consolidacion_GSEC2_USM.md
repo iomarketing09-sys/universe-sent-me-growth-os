@@ -4,7 +4,7 @@ purpose: "Definir la revisión humana final que consolida evidencia documental p
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.6"
+version: "1.7"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -87,7 +87,7 @@ Este documento está en `Review` y no requiere datos del usuario. La revisión m
 
 ### Actualización de coherencia posterior — 2026-08-27
 
-G-SEC-2.4c recibió su revisión humana independiente posteriormente y ahora está en `Review`, vacía y sin propuesta emitida. Este hecho no altera los resultados históricos de esta matriz, no convierte la ficha en una propuesta ni habilita un consentimiento o una operación. El procedimiento documental preliminar de propuesta mínima futura se diseñó como G-SEC-2.4c-P en `2026-08-27_Procedimiento_Preliminar_Propuesta_Minima_GSEC2_4c_USM.md` y ahora está en `Review` tras su revisión humana independiente. El gate G-SEC-2.4c-P.1 se diseñó en `Draft` para definir los límites de una propuesta hipotética de una sola operación, sin crear esa propuesta. La única siguiente acción permitida es revisar el nuevo gate; no se puede crear una propuesta, tarjeta o solicitud de consentimiento.
+G-SEC-2.4c recibió su revisión humana independiente posteriormente y ahora está en `Review`, vacía y sin propuesta emitida. Este hecho no altera los resultados históricos de esta matriz, no convierte la ficha en una propuesta ni habilita un consentimiento o una operación. El procedimiento documental preliminar de propuesta mínima futura se diseñó como G-SEC-2.4c-P en `2026-08-27_Procedimiento_Preliminar_Propuesta_Minima_GSEC2_4c_USM.md` y ahora está en `Review` tras su revisión humana independiente. El gate G-SEC-2.4c-P.1 se diseñó y revisó como `Review` en `2026-08-27_Gate_Diseno_Propuesta_Hipotetica_Unica_GSEC2_4cP1_USM.md`; define los límites de una propuesta hipotética de una sola operación sin crearla. La siguiente acción posible exige diseñar y autorizar un gate nuevo sobre el formato vacío de la propuesta; no se puede crear propuesta, tarjeta o solicitud de consentimiento.
 
 ## Referencias
 

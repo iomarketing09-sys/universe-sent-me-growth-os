@@ -1,10 +1,10 @@
 ---
 title: "G-SEC-2.4c-P.1 — Gate de diseño para una propuesta hipotética de una sola operación — Universe Sent Me"
 purpose: "Definir el control documental que, bajo una autorización posterior independiente, podría delimitar cómo diseñar una propuesta hipotética de una sola operación sin crear una instancia, emitir tarjeta, solicitar consentimiento ni habilitar ejecución."
-status: Draft
+status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Procedimiento_Preliminar_Propuesta_Minima_GSEC2_4c_USM.md"
@@ -85,7 +85,13 @@ G-SEC-2.4c-P.1 no ejecuta scripts ni validadores, no lee rutas privadas o variab
 
 ## Estado y siguiente acción permitida
 
-Este documento está en `Draft`. La única acción siguiente permitida es una revisión humana independiente de G-SEC-2.4c-P.1, limitada a comprobar que conserva el estado cero, la operación única hipotética, los límites no negociables, la separación documental y las condiciones de detención. Esa revisión no puede crear una propuesta, tarjeta, consentimiento ni operación, y G-NORM-4R permanece bloqueado.
+### Registro de revisión humana — 2026-08-27
+
+Fernando confirmó que comprende el gate de diseño, la operación única hipotética, los límites no negociables, las autorizaciones separadas y las condiciones de detención. El estado documental cambia de `Draft` a `Review`. Esta revisión confirma el diseño del control, no una propuesta: no crea una instancia, no completa la ficha, no emite una tarjeta, no solicita o registra consentimiento y no autoriza una operación.
+
+G-SEC-2 permanece en `Review` y G-NORM-4R sigue bloqueado. No se abrieron datos, rutas privadas, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salida externa.
+
+La siguiente acción posible requiere una autorización nueva y explícita para diseñar un gate documental posterior sobre el **formato vacío** de una propuesta hipotética. Hasta que tal gate exista y sea aprobado, no se puede crear, copiar o completar una propuesta, una tarjeta, una vigencia o una solicitud de consentimiento.
 
 ## Referencias
 
