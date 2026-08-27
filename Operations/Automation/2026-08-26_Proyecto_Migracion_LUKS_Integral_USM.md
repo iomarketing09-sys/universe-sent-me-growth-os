@@ -4,7 +4,7 @@ purpose: "Definir los gates y la secuencia reversible para reinstalar Xubuntu co
 status: Active
 created: 2026-08-26
 updated: 2026-08-27
-version: "1.25"
+version: "1.26"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -171,7 +171,7 @@ La primera ejecución autorizada completó el preflight, pero el analizador devo
 
 La corrección pública publicada en el commit `757c6ab` alinea el análisis con el contrato real: el collector verifica sus referencias de configuración, el autorizador público verifica PKCE/callback/scopes y el ejemplo público verifica el directorio de evidencia, variables locales y scopes TikTok. La sintaxis y el análisis se validaron antes de publicar. Tras actualizar el clon LUKS, Fernando ejecutó de nuevo el preflight y el modo confirmado: obtuvo `STATUS=preflight_complete_static_only_no_private_read_no_network`, `status=static_contract_passed`, cero fallos y `STATUS=collectors_static_review_complete_no_private_read_no_network`.
 
-G-MIG-LUKS-1.8c queda completado exclusivamente como revisión estática. La totalidad de los collectors, OAuth, APIs, tokens, configuraciones privadas, evidencia real, instalación de dependencias, cron, Docker, OmniRoute, shadow ledger persistente y G-NORM-4R permanece bloqueada. El diseño de esos controles posteriores ahora existe como G-SEC-2 en `2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md` v3.5 y quedó en `Review` tras confirmación humana. Sus cuatro subgates técnicos G-SEC-2.1a, 2.2a, 2.3a y 2.4a ya pasaron exclusivamente con fixtures ficticios: no hubo red, salida, automatización, lectura privada, mutación de archivos ni consentimiento real. La tarjeta real vacía y su procedimiento de solicitud puntual están documentados en `2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md` v1.7, también en `Review`, sin campos emitidos ni solicitud activa. La ficha de propuesta pública mínima `2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md` v1.3 está en `Draft`, no contiene propuesta y no activa una integración. G-SEC-2.5 pasó revisando estáticamente estas piezas públicas, sin red ni lectura privada; G-SEC-2.6 está en `Review` como diseño final, sin consolidación ejecutada.
+G-MIG-LUKS-1.8c queda completado exclusivamente como revisión estática. La totalidad de los collectors, OAuth, APIs, tokens, configuraciones privadas, evidencia real, instalación de dependencias, cron, Docker, OmniRoute, shadow ledger persistente y G-NORM-4R permanece bloqueada. El diseño de esos controles posteriores ahora existe como G-SEC-2 en `2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md` v3.6 y quedó en `Review` tras confirmación humana. Sus cuatro subgates técnicos G-SEC-2.1a, 2.2a, 2.3a y 2.4a ya pasaron exclusivamente con fixtures ficticios: no hubo red, salida, automatización, lectura privada, mutación de archivos ni consentimiento real. La tarjeta real vacía y su procedimiento de solicitud puntual están documentados en `2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md` v1.8, también en `Review`, sin campos emitidos ni solicitud activa. La ficha de propuesta pública mínima `2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md` v1.4 está en `Draft`, no contiene propuesta y no activa una integración. G-SEC-2.5 pasó revisando estáticamente estas piezas públicas, sin red ni lectura privada; G-SEC-2.6 consolidó sus diez comprobaciones públicas como compatibles, sin cambiar estados ni activar operación.
 
 ## Diseño de desbloqueo G-MIG-LUKS-1.5
 

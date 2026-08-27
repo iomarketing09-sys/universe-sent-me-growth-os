@@ -4,7 +4,7 @@ purpose: "Definir la revisión humana final que consolida evidencia documental p
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -48,22 +48,28 @@ La persona revisora debe efectuar la siguiente lista de forma manual, sin abrir 
 
 | # | Comprobación manual | Criterio de `Compatible` | Resultado futuro |
 |---:|---|---|---|
-| 1 | Estado del contrato G-SEC-2 | Sigue en `Review`; no hay estado `Active`. | `[PENDIENTE — no revisar]` |
-| 2 | Límites de privacidad | USM únicamente, máximo cuatro observaciones y sin métricas financieras. | `[PENDIENTE — no revisar]` |
-| 3 | Retención | Máximo 30 días, revisión humana y ninguna disposición automática. | `[PENDIENTE — no revisar]` |
-| 4 | Read-only y egress | Una operación manual futura, sin salida externa, red adicional o automatización. | `[PENDIENTE — no revisar]` |
-| 5 | Pruebas sintéticas | G-SEC-2.1a, 2.2a, 2.3a y 2.4a constan como PASS con sus límites. | `[PENDIENTE — no revisar]` |
-| 6 | Plantilla vacía | G-SEC-2.4b sigue en `Review`, sin referencia, fechas, aprobación o datos. | `[PENDIENTE — no revisar]` |
-| 7 | Ficha pública | G-SEC-2.4c sigue en `Draft`, vacía y sin propuesta emitida. | `[PENDIENTE — no revisar]` |
-| 8 | Integridad estática | G-SEC-2.5 figura como PASS y su alcance se limita a documentos públicos. | `[PENDIENTE — no revisar]` |
-| 9 | Bloqueos transversales | No se autorizan collectors, OAuth/API, ledger persistente, cron, Docker, OmniRoute, Drive, Sheets o GitHub como datos. | `[PENDIENTE — no revisar]` |
-| 10 | Próximo paso permitido | Solo revisión humana de G-SEC-2.4c o diseño documental posterior. | `[PENDIENTE — no revisar]` |
+| 1 | Estado del contrato G-SEC-2 | Sigue en `Review`; no hay estado `Active`. | Compatible |
+| 2 | Límites de privacidad | USM únicamente, máximo cuatro observaciones y sin métricas financieras. | Compatible |
+| 3 | Retención | Máximo 30 días, revisión humana y ninguna disposición automática. | Compatible |
+| 4 | Read-only y egress | Una operación manual futura, sin salida externa, red adicional o automatización. | Compatible |
+| 5 | Pruebas sintéticas | G-SEC-2.1a, 2.2a, 2.3a y 2.4a constan como PASS con sus límites. | Compatible |
+| 6 | Plantilla vacía | G-SEC-2.4b sigue en `Review`, sin referencia, fechas, aprobación o datos. | Compatible |
+| 7 | Ficha pública | G-SEC-2.4c sigue en `Draft`, vacía y sin propuesta emitida. | Compatible |
+| 8 | Integridad estática | G-SEC-2.5 figura como PASS y su alcance se limita a documentos públicos. | Compatible |
+| 9 | Bloqueos transversales | No se autorizan collectors, OAuth/API, ledger persistente, cron, Docker, OmniRoute, Drive, Sheets o GitHub como datos. | Compatible |
+| 10 | Próximo paso permitido | Solo revisión humana de G-SEC-2.4c o diseño documental posterior. | Compatible |
 
 ## Criterio y resultado de consolidación
 
 La consolidación podrá ejecutarse solo después de una autorización explícita que nombre **G-SEC-2.6** y confirme que la revisión será documental. Su resultado esperado, si las diez filas son `Compatible`, es `gsec2_consolidation_review_complete`. Ese resultado mantiene G-SEC-2 en `Review` y deja G-SEC-2.4c en `Draft` hasta que tenga una revisión independiente.
 
 Si existe una fila `No compatible` o `No declarado`, el único resultado válido es `gsec2_consolidation_blocked`. No se modifica el documento fuente, no se emite tarjeta, no se solicita consentimiento y no se abre un recurso privado. El hallazgo solo puede conducir a un nuevo diseño documental separado.
+
+### Dictamen registrado — 2026-08-27
+
+La revisión manual autorizada completó las diez comprobaciones públicas con resultado `Compatible`. El dictamen es `gsec2_consolidation_review_complete`: consolida la evidencia documental de G-SEC-2 como coherente para fines de gobernanza. No cambia G-SEC-2 de `Review`, no llena la ficha pública, no emite la tarjeta vacía ni solicita o concede consentimiento.
+
+La consolidación se realizó mediante lectura textual dentro del repositorio y comprobaciones de marcadores públicos. No se accedió a rutas privadas, variables de entorno, tokens, respaldo `Fernando`, datos de plataformas, contenido, métricas, evidencia o logs. Tampoco se abrió red, se importaron collectors, se usó OAuth/API, se creó ledger, se inició cron, Docker, OmniRoute o cualquier servicio.
 
 ## Prohibiciones permanentes de este subgate
 
