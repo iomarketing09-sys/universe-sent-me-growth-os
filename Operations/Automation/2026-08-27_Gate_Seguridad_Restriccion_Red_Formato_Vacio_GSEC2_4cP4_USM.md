@@ -4,9 +4,10 @@ purpose: "Definir controles documentales estrictos de seguridad y restricción d
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
+  - "Operations/Automation/2026-08-27_Gate_Cierre_Archivado_Ciclo_Preliminar_GSEC2_4cP5_USM.md"
   - "Operations/Automation/2026-08-27_Gate_Auditoria_Trazabilidad_Local_Formato_Vacio_GSEC2_4cP3_USM.md"
   - "Operations/Automation/2026-08-27_Gate_Formato_Vacio_Propuesta_Hipotetica_GSEC2_4cP2_USM.md"
   - "Operations/Automation/2026-08-27_Formato_Vacio_Propuesta_Hipotetica_Unica_GSEC2_4cP2_USM.md"
@@ -90,7 +91,7 @@ Fernando confirmó los principios de seguridad, la restricción de red, el bloqu
 
 G-SEC-2 continúa en `Review` y G-NORM-4R sigue bloqueado. No se abrió información privada, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salida externa.
 
-Una continuación requiere un gate y autorización nuevos para diseñar un artefacto documental posterior. No se puede ejecutar una comprobación técnica, crear propuesta, emitir tarjeta, solicitar consentimiento o habilitar G-NORM-4R.
+G-SEC-2.4c-P.5 se diseñó y revisó como `Review` en `2026-08-27_Gate_Cierre_Archivado_Ciclo_Preliminar_GSEC2_4cP5_USM.md` v1.1 para cerrar documentalmente el ciclo preliminar, sin archivar datos o aplicar controles. Toda continuación requiere un gate y autorización nuevos; no se puede ejecutar una comprobación técnica, crear propuesta, emitir tarjeta, solicitar consentimiento o habilitar G-NORM-4R.
 
 ## Referencias
 

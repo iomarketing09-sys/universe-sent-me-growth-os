@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.63
+**Versión:** 5.65
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.65.00] — 2026-08-27 (Fernando/Manus): ciclo preliminar G-SEC-2.4c-P cerrado documentalmente mediante G-SEC-2.4c-P.5.** Se creó y revisó `2026-08-27_Gate_Cierre_Archivado_Ciclo_Preliminar_GSEC2_4cP5_USM.md` v1.1, en `Review`. El protocolo limita el cierre y archivado a políticas, versiones, estados, referencias y trazabilidad agregada no sensible dentro del repositorio; no crea carpetas, paquetes, copias, backups, snapshots, exportaciones ni archivos de auditoría. Excluye datos, evidencia, credenciales, rutas privadas, medios, discos, LUKS y resultados operativos. El ciclo permanece no operativo: no crea propuesta, tarjeta, consentimiento, auditoría o ejecución. G-SEC-2 continúa en `Review` y G-NORM-4R sigue bloqueado. No se abrieron datos o rutas privadas, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA ni salidas externas. Un nuevo avance requiere otro gate documental y autorización explícita.
 
 - **[5.63.00] — 2026-08-27 (Fernando/Manus): revisión humana de G-SEC-2.4c-P.4 confirmada, sin inspección técnica.** Fernando confirmó principios de seguridad, restricción de red, bloqueo de secretos y datos, y autorizaciones separadas. El gate `2026-08-27_Gate_Seguridad_Restriccion_Red_Formato_Vacio_GSEC2_4cP4_USM.md` pasa de `Draft` a `Review`. La revisión confirma solo política: no inspecciona ni modifica red, firewall, servicios, procesos, discos, LUKS, rutas privadas o integraciones. Se actualizó la referencia de auditoría P.3 y los pendientes. G-SEC-2 continúa en `Review` y G-NORM-4R permanece bloqueado. No se abrió información privada, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salida externa. Cualquier continuación requiere un gate documental y autorización nuevos.
 
