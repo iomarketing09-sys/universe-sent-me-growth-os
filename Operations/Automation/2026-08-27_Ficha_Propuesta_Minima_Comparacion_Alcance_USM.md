@@ -1,10 +1,10 @@
 ---
 title: "Ficha pública de propuesta mínima y comparación manual de alcance USM"
 purpose: "Proporcionar una referencia vacía para describir y comparar, en el futuro, una única propuesta técnica contra los límites G-SEC-2, sin emitir tarjeta, solicitar consentimiento ni autorizar operaciones."
-status: Draft
+status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.4"
+version: "1.5"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md"
@@ -81,7 +81,13 @@ El dictamen `consent_scope_mismatch` es obligatorio cuando falte un campo, se ex
 
 ## Estado y siguiente gate permitido
 
-Este documento está en `Draft` y no requiere respuesta ni datos del usuario. G-SEC-2.5 validó estáticamente sus marcadores pendientes, enlaces y los diez controles de comparación frente a G-SEC-2 y la plantilla de tarjeta; el PASS no cambia este estado ni llena campos. G-SEC-2.6 completó su consolidación manual de evidencias públicas con las diez filas compatibles, lo que conserva esta ficha en `Draft` hasta su revisión independiente. La siguiente acción permitida sigue siendo una revisión humana de esta ficha y lista como diseño documental; no crea una propuesta futura, solicita consentimiento ni abre G-NORM-4R.
+### Registro de revisión humana — 2026-08-27
+
+Fernando confirmó que comprende esta ficha pública vacía y sus diez controles de comparación. Por ello, el estado documental cambia de `Draft` a `Review`. La confirmación revisa exclusivamente la estructura, los límites y el criterio de bloqueo; no completa ningún campo `[PENDIENTE — no emitir]` o `[PENDIENTE — no comparar]`, no emite una propuesta o tarjeta, no solicita ni registra consentimiento y no autoriza una operación.
+
+G-SEC-2.5 validó estáticamente los marcadores pendientes, enlaces y los diez controles de comparación frente a G-SEC-2 y la plantilla de tarjeta. G-SEC-2.6 consolidó las diez comprobaciones públicas como `Compatible`. Estos resultados, junto con esta revisión, mantienen G-SEC-2 en `Review` y G-NORM-4R bloqueado.
+
+La única continuación posible requiere un gate documental nuevo y explícito para **diseñar**, sin emitir, el procedimiento de una futura propuesta mínima. No se deben copiar ni completar esta ficha, emitir una tarjeta, solicitar consentimiento, abrir datos o rutas privadas, invocar collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salidas externas.
 
 ## Referencias
 

@@ -4,7 +4,7 @@ purpose: "Definir la revisión humana final que consolida evidencia documental p
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.2"
+version: "1.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -39,7 +39,7 @@ La matriz siguiente indica el estado conocido de los controles. No es una orden 
 | G-SEC-2.3a | PASS sintético. | Rechazo de egress, red, automatización y operación no permitida. | Arranque de collectors o servicios. |
 | G-SEC-2.4a | PASS sintético. | Completitud de una tarjeta ficticia. | Consentimiento de Fernando. |
 | G-SEC-2.4b | `Review` confirmado. | Plantilla vacía y procedimiento humano comprendidos. | Tarjeta emitida o solicitud activa. |
-| G-SEC-2.4c | `Draft`. | Ficha pública y comparación manual disponibles. | Propuesta emitida o alcance aprobado. |
+| G-SEC-2.4c | `Review` confirmado posteriormente. | Ficha pública vacía y comparación manual comprendidas. | Propuesta emitida, alcance aprobado, tarjeta o consentimiento. |
 | G-SEC-2.5 | PASS estático. | Coherencia pública de contrato, plantilla y ficha. | Revisión humana de la ficha o consentimiento. |
 
 ## Método de revisión final
@@ -54,14 +54,14 @@ La persona revisora debe efectuar la siguiente lista de forma manual, sin abrir 
 | 4 | Read-only y egress | Una operación manual futura, sin salida externa, red adicional o automatización. | Compatible |
 | 5 | Pruebas sintéticas | G-SEC-2.1a, 2.2a, 2.3a y 2.4a constan como PASS con sus límites. | Compatible |
 | 6 | Plantilla vacía | G-SEC-2.4b sigue en `Review`, sin referencia, fechas, aprobación o datos. | Compatible |
-| 7 | Ficha pública | G-SEC-2.4c sigue en `Draft`, vacía y sin propuesta emitida. | Compatible |
+| 7 | Ficha pública | Al consolidar, G-SEC-2.4c estaba en `Draft`, vacía y sin propuesta emitida. | Compatible |
 | 8 | Integridad estática | G-SEC-2.5 figura como PASS y su alcance se limita a documentos públicos. | Compatible |
 | 9 | Bloqueos transversales | No se autorizan collectors, OAuth/API, ledger persistente, cron, Docker, OmniRoute, Drive, Sheets o GitHub como datos. | Compatible |
-| 10 | Próximo paso permitido | Solo revisión humana de G-SEC-2.4c o diseño documental posterior. | Compatible |
+| 10 | Próximo paso permitido | Al consolidar, solo revisión humana de G-SEC-2.4c o diseño documental posterior. | Compatible |
 
 ## Criterio y resultado de consolidación
 
-La consolidación podrá ejecutarse solo después de una autorización explícita que nombre **G-SEC-2.6** y confirme que la revisión será documental. Su resultado esperado, si las diez filas son `Compatible`, es `gsec2_consolidation_review_complete`. Ese resultado mantiene G-SEC-2 en `Review` y deja G-SEC-2.4c en `Draft` hasta que tenga una revisión independiente.
+La consolidación podrá ejecutarse solo después de una autorización explícita que nombre **G-SEC-2.6** y confirme que la revisión será documental. Su resultado esperado, si las diez filas son `Compatible`, es `gsec2_consolidation_review_complete`. En el momento de la consolidación, ese resultado mantuvo G-SEC-2 en `Review` y dejó G-SEC-2.4c en `Draft` hasta su revisión independiente posterior.
 
 Si existe una fila `No compatible` o `No declarado`, el único resultado válido es `gsec2_consolidation_blocked`. No se modifica el documento fuente, no se emite tarjeta, no se solicita consentimiento y no se abre un recurso privado. El hallazgo solo puede conducir a un nuevo diseño documental separado.
 
@@ -77,11 +77,15 @@ G-SEC-2.6 no ejecuta scripts, no usa red, no importa collectors, no analiza ruta
 
 ## Estado y siguiente gate permitido
 
-### Registro de revisión humana — 2026-08-27
+### Registro histórico de revisión humana — 2026-08-27
 
 Fernando confirmó que comprende la matriz final de diez controles y su criterio de consolidación. Esta confirmación revisa el diseño de G-SEC-2.6 solamente: no ejecuta la lista, no consolida el módulo, no rellena el resultado de ninguna fila y no cambia los estados de G-SEC-2, la plantilla o la ficha.
 
-Este documento está en `Review` y no requiere datos del usuario. La siguiente acción permitida, solo bajo autorización explícita nueva, es ejecutar la revisión manual de los diez controles públicos. Aun si todas las filas fueran compatibles, el resultado se limita a `gsec2_consolidation_review_complete`: no emite tarjeta, no solicita consentimiento y no abre G-NORM-4R.
+Este documento está en `Review` y no requiere datos del usuario. La revisión manual de los diez controles públicos ya fue ejecutada y registró `gsec2_consolidation_review_complete`; no emitió tarjeta, no solicitó consentimiento ni abrió G-NORM-4R.
+
+### Actualización de coherencia posterior — 2026-08-27
+
+G-SEC-2.4c recibió su revisión humana independiente posteriormente y ahora está en `Review`, vacía y sin propuesta emitida. Este hecho no altera los resultados históricos de esta matriz, no convierte la ficha en una propuesta ni habilita un consentimiento o una operación. La continuación permitida queda limitada a diseñar, bajo un gate nuevo, un procedimiento documental de propuesta mínima futura.
 
 ## Referencias
 

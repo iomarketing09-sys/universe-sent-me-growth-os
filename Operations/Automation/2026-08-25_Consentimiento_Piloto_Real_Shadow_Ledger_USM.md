@@ -4,7 +4,7 @@ purpose: "Definir los controles separados que deben diseñarse, revisarse y apro
 status: Review
 created: 2026-08-25
 updated: 2026-08-27
-version: "3.6"
+version: "3.7"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
@@ -195,7 +195,7 @@ El wrapper `preflight_gsec2_granular_consent.sh` mantiene los modos `--plan`, `-
 
 La ejecución autorizada pasó con `STATUS=preflight_complete_gsec2_granular_consent_synthetic_only_no_network_no_private_read`, `gsec2_granular_consent_synthetic_passed` y `STATUS=gsec2_granular_consent_synthetic_complete_no_network_no_private_read_no_real_consent`. Permitió únicamente la tarjeta ficticia completa y rechazó las ocho variantes esperadas: referencia ausente, ampliación de alcance, métrica financiera, retención extendida, ejecución no read-only, egress externo, vigencia/no revocación inválida y datos/identificadores simulados. Reportó guardia de socket bloqueada, sin procesos de servicios o collectors.
 
-Este PASS valida únicamente la **plantilla ficticia**. La plantilla real vacía y el procedimiento de solicitud humana se documentan por separado en `2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md` v1.3. Su revisión humana fue confirmada y el documento pasó a `Review`, sin pedir todavía datos, tokens o consentimiento y sin autorizar una operación. La ficha pública vacía y lista manual para comparar una futura propuesta contra esos límites se documentan en `2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md` v1.0, en `Draft`. G-SEC-2.5 ya está diseñado como validación estática de estas tres piezas públicas, pero no se ha ejecutado. G-NORM-4R continúa bloqueado hasta un gate separado que incorpore una tarjeta real completa, consentimiento humano vigente y validación manual del alcance técnico.
+Este PASS valida únicamente la **plantilla ficticia**. La plantilla real vacía y el procedimiento de solicitud humana se documentan por separado en `2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md` v1.3. Su revisión humana fue confirmada y el documento pasó a `Review`, sin pedir todavía datos, tokens o consentimiento y sin autorizar una operación. La ficha pública vacía y lista manual para comparar una futura propuesta contra esos límites se documentan en `2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md` v1.5, ahora en `Review` tras una confirmación humana independiente. La ficha continúa sin propuesta, campos completados, tarjeta o consentimiento. G-SEC-2.5 pasó su validación estática y G-SEC-2.6 consolidó documentalmente sus diez controles públicos, sin modificar estos límites. G-NORM-4R continúa bloqueado hasta un gate separado que incorpore una tarjeta real completa, consentimiento humano vigente y validación manual del alcance técnico.
 
 ### G-SEC-2.5 — integridad estática de plantillas diseñada
 
@@ -217,7 +217,7 @@ G-SEC-2 se considera **diseñado** cuando este documento y los documentos relaci
 | Estado | Resultado | Consecuencia |
 |---|---|---|
 | Draft | Diseño documentado, con G-SEC-2.3a sintético ya pasado pero sin revisión humana completa de los cuatro controles. | G-NORM-4R bloqueado. |
-| Review | Fernando confirmó los cuatro límites de diseño; G-SEC-2.1a, G-SEC-2.2a, G-SEC-2.3a, G-SEC-2.4a y G-SEC-2.5 pasaron exclusivamente con fixtures o documentos públicos. Sigue faltando revisar la ficha de propuesta, una tarjeta puntual real y consentimiento humano vigente. | Solo se puede revisar la ficha y diseñar pasos documentales posteriores, sin datos reales. |
+| Review | Fernando confirmó los cuatro límites de diseño; G-SEC-2.1a, G-SEC-2.2a, G-SEC-2.3a, G-SEC-2.4a y G-SEC-2.5 pasaron exclusivamente con fixtures o documentos públicos. La ficha pública fue revisada y permanece vacía; siguen faltando una propuesta puntual futura, una tarjeta puntual real y consentimiento humano vigente. | Solo se puede diseñar pasos documentales posteriores, sin datos reales. |
 | Active | Solo después de pruebas de control aprobadas y consentimiento puntual vigente. | Permite proponer, no ejecutar automáticamente, una única operación G-NORM-4R. |
 | Blocked | Cualquier ambigüedad, salida externa, datos no permitidos, retención indefinida o consentimiento vencido. | No se abre evidencia ni se ejecuta ningún collector. |
 
@@ -225,7 +225,7 @@ Los documentos que requieren actualización conjunta son el contrato del shadow 
 
 ### G-SEC-2.6 — consolidación final diseñada
 
-La revisión final y matriz de consolidación se documentan en `2026-08-27_Revision_Final_Consolidacion_GSEC2_USM.md` v1.2. G-SEC-2.6 completó sus diez comprobaciones públicas como `Compatible` y registró `gsec2_consolidation_review_complete`. Consolida la cadena de evidencias públicas y los bloqueos persistentes, pero no sustituye la revisión pendiente de G-SEC-2.4c, no cambia el estado de este módulo ni permite tratar datos reales. G-SEC-2 permanece en `Review`.
+La revisión final y matriz de consolidación se documentan en `2026-08-27_Revision_Final_Consolidacion_GSEC2_USM.md` v1.3. G-SEC-2.6 completó sus diez comprobaciones públicas como `Compatible` y registró `gsec2_consolidation_review_complete`. La revisión independiente posterior de G-SEC-2.4c confirmó la ficha pública vacía y sus diez controles, manteniéndola en `Review` sin propuesta, tarjeta o consentimiento. Ninguno de ambos resultados cambia el estado de este módulo ni permite tratar datos reales. G-SEC-2 permanece en `Review`.
 
 ## Referencias
 

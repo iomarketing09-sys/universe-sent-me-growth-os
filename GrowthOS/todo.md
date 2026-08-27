@@ -3,8 +3,8 @@ title: "Pendientes operativos de GrowthOS"
 purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin mezclar operaciones, infraestructura ni datos de clientes externos."
 status: Active
 created: 2026-08-25
-updated: 2026-08-26
-version: "12.35"
+updated: 2026-08-27
+version: "12.37"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -230,7 +230,7 @@ organization: "GrowthOS"
 - [x] Diseñar G-SEC-2.4b: plantilla vacía y procedimiento de solicitud humana de tarjeta de consentimiento puntual documentados en `2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md` v1.0; no piden consentimiento, datos, tokens, configuración privada ni autorización de operación real.
 - [x] Revisar G-SEC-2.4b: Fernando confirmó la plantilla vacía y el procedimiento de solicitud humana. El resultado permitido sigue siendo solo `Review`, sin emitir tarjeta, pedir consentimiento ni ejecutar datos reales.
 - [x] Diseñar G-SEC-2.4c: ficha pública de propuesta mínima y lista manual de comparación de alcance documentadas en `2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md` v1.0; no pide consentimiento, datos, tokens, configuración privada ni autorización de operación real.
-- [ ] Revisar G-SEC-2.4c: confirmar comprensión humana de la ficha pública y lista manual; el resultado permitido sigue siendo solo `Review`, sin emitir propuesta, tarjeta, consentimiento ni operación.
+- [x] Revisar G-SEC-2.4c: Fernando confirmó la ficha pública vacía y los diez controles de comparación. La ficha pasa a `Review`, sin completar campos, emitir propuesta o tarjeta, solicitar o registrar consentimiento ni ejecutar una operación.
 - [x] Diseñar G-SEC-2.5: validación estática de integridad de las plantillas, referencias y límites públicos de consentimiento con fixture, validador y preflight públicos; no lee datos privados, no solicita consentimiento ni habilita G-NORM-4R u operación alguna.
 - [x] Autorizar G-SEC-2.5: Fernando autorizó ejecutar preflight y validación estática con `RUN_USM_GSEC2_TEMPLATE_STATIC_INTEGRITY`; solo lee documentos y fixture públicos del repositorio, no solicita consentimiento ni autoriza operación alguna.
 - [x] Corregir G-SEC-2.5: el primer análisis estático bloqueó solo por la variante textual `máxima de 24 horas` en la plantilla pública. La expectativa pública se corrigió y la repetición autorizada devolvió `gsec2_template_static_integrity_passed`, sin ampliar lectura, red ni operaciones.
@@ -239,7 +239,6 @@ organization: "GrowthOS"
 - [x] Revisar G-SEC-2.6: Fernando confirmó la matriz final de diez controles y su criterio de consolidación. El resultado permitido sigue siendo solo `Review`, sin consolidar, emitir tarjeta, pedir consentimiento ni ejecutar datos reales.
 - [x] Autorizar consolidación G-SEC-2.6: Fernando autorizó ejecutar únicamente la revisión manual de las diez comprobaciones públicas; no emite tarjeta, no solicita consentimiento, no abre datos privados ni habilita G-NORM-4R u operación alguna.
 - [x] Ejecutar G-SEC-2.6: las diez comprobaciones públicas resultaron `Compatible` y el dictamen fue `gsec2_consolidation_review_complete`. No cambió G-SEC-2 de `Review`, no emitió tarjeta, no solicitó consentimiento ni abrió datos privados, red, collectors o integraciones.
-- [ ] Revisar G-SEC-2.4c: confirmar comprensión humana de la ficha pública de propuesta mínima y la lista manual de comparación; el resultado permitido sigue siendo solo `Review`, sin emitir propuesta, tarjeta, consentimiento ni operación.
 - [x] Diseñar G-SEC-2.3a: prueba sintética de las barreras de operación read-only, egress y automatización; incluye fixture ficticio, validador de política y wrapper con modo plan/preflight/execute confirmado. No lee rutas privadas, no importa collectors, no abre sockets, no instala dependencias y no crea ledger persistente.
 - [x] Autorizar G-SEC-2.3a: Fernando autorizó ejecutar el preflight y, solo si pasa, la prueba de barreras sintéticas con `RUN_USM_GSEC2_SYNTHETIC_BARRIERS`; no autoriza datos reales, red, OAuth, collectors, tokens, evidencia, ledger persistente, cron, Docker, OmniRoute ni salidas externas.
 - [x] Ejecutar G-SEC-2.3a: preflight PASS y prueba sintética PASS con seis rechazos esperados —egress externo, scheduler, evidencia privada, red, finanzas y marca ajena— y guardia de socket bloqueada. No se leyeron rutas privadas/entorno, importaron collectors, escribieron ledgers/evidencia ni iniciaron scheduler, servicio, Docker u OmniRoute.
