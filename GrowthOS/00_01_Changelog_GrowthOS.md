@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.55
+**Versión:** 5.56
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.56.00] — 2026-08-27 (Fernando/Manus): gate documental G-SEC-2.4c-P.1 diseñado, sin propuesta hipotética creada.** Se creó `2026-08-27_Gate_Diseno_Propuesta_Hipotetica_Unica_GSEC2_4cP1_USM.md` v1.0 en `Draft`. El gate fija el estado cero, el alcance de una sola operación hipotética, los límites no negociables de marca, muestra, métricas, exclusiones, retención, método, egress, vigencia y salida, además de autorizaciones separadas y detención por `consent_scope_mismatch`. El documento no contiene propuesta, identificador, fecha, muestra, plataforma activa, tarjeta o consentimiento; tampoco autoriza una operación. Se actualizaron procedimiento, ficha, contrato, consolidación y pendientes para mantener coherencia. G-SEC-2 continúa en `Review` y G-NORM-4R sigue bloqueado. No se abrieron datos o rutas privadas, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA ni salidas externas. La siguiente acción permitida es una revisión humana independiente de G-SEC-2.4c-P.1.
 
 - **[5.55.00] — 2026-08-27 (Fernando/Manus): revisión documental G-SEC-2.4c-P confirmada, sin propuesta emitida.** Fernando confirmó el procedimiento preliminar, el estado cero, las condiciones de detención y la separación entre documentación pública y una futura propuesta local. El documento `2026-08-27_Procedimiento_Preliminar_Propuesta_Minima_GSEC2_4c_USM.md` pasa de `Draft` a `Review`. La confirmación revisa exclusivamente ese diseño: no crea, copia o completa propuesta, no emite tarjeta, no solicita o registra consentimiento y no autoriza operación. Se alinearon la ficha, el contrato G-SEC-2, la matriz G-SEC-2.6 y los pendientes para reflejar el estado. G-SEC-2 sigue en `Review` y G-NORM-4R permanece bloqueado. No se abrió información privada, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salida externa. Cualquier avance exige diseñar y autorizar un gate documental nuevo para una propuesta hipotética.
 
