@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.71
+**Versión:** 5.72
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.72.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.10 diseñado para análisis documental de una superficie única, sin ejecución.** Se creó `2026-08-27_Gate_Analisis_Documental_Superficie_Ejecucion_No_Ejecucion_GSEC2_10_USM.md` v1.0 en `Draft`. El gate limita el análisis a políticas públicas sobre la no ejecución de servicios, collectors, automatizaciones e integraciones. Define fuentes permitidas, preguntas de coherencia, salidas agregadas y detención, sin contrastar documentos con el sistema. No consulta procesos, servicios, puertos, red, datos, rutas privadas, configuración, evidencia o logs. G-SEC-2 continúa en `Review` y G-NORM-4R permanece bloqueado. La siguiente acción permitida es una revisión humana independiente de G-SEC-2.10.
 
 - **[5.71.00] — 2026-08-27 (Fernando/Manus): revisión humana de G-SEC-2.9 confirmada, sin comprobación de servicios.** Fernando confirmó la superficie única, el modelo de no ejecución, las condiciones futuras y las prohibiciones. El gate `2026-08-27_Gate_Superficie_Unica_Ejecucion_Servicios_No_Ejecucion_GSEC2_9_USM.md` pasa de `Draft` a `Review`. La revisión confirma solo el diseño: no ejecuta comprobación, no consulta servicios, procesos o puertos reales y no genera evidencia o una afirmación sobre el sistema. Se alinearon G-SEC-2.8, el contrato G-SEC-2 y los pendientes. G-SEC-2 continúa en `Review` y G-NORM-4R permanece bloqueado. Un paso posterior requiere un gate y autorización nuevos para diseñar el método pasivo de esta única superficie.
 

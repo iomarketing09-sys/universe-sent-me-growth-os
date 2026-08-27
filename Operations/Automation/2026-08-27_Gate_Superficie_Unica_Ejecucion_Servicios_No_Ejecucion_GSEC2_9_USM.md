@@ -4,9 +4,10 @@ purpose: "Definir el diseño de una futura comprobación pasiva de una única su
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
+  - "Operations/Automation/2026-08-27_Gate_Analisis_Documental_Superficie_Ejecucion_No_Ejecucion_GSEC2_10_USM.md"
   - "Operations/Automation/2026-08-27_Gate_Tecnico_Pasivo_Preparacion_No_Ejecucion_GSEC2_8_USM.md"
   - "Operations/Automation/2026-08-27_Gate_Preparacion_Decision_Fase_Operativa_GSEC2_7_USM.md"
   - "Operations/Automation/2026-08-27_Gate_Seguridad_Restriccion_Red_Formato_Vacio_GSEC2_4cP4_USM.md"
@@ -80,7 +81,7 @@ Fernando confirmó la superficie única, el modelo de no ejecución, las condici
 
 G-SEC-2 permanece en `Review` y G-NORM-4R sigue bloqueado. No se abrió información privada, datos, red, rutas privadas, collectors, OAuth/API, ledger, automatizaciones, servicios, medios, discos, LUKS o integraciones.
 
-Una continuación requiere un gate y autorización nuevos para diseñar el método pasivo de una sola superficie. No se puede ejecutar una comprobación, crear propuesta, emitir tarjeta, solicitar consentimiento o habilitar G-NORM-4R.
+G-SEC-2.10 fue diseñado en `Draft` como `2026-08-27_Gate_Analisis_Documental_Superficie_Ejecucion_No_Ejecucion_GSEC2_10_USM.md` v1.0 para analizar solo la coherencia documental de esta misma superficie. La siguiente acción permitida es revisar ese diseño; no se puede ejecutar una comprobación, crear propuesta, emitir tarjeta, solicitar consentimiento o habilitar G-NORM-4R.
 
 ## Referencias
 
