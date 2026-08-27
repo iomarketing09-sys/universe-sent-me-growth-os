@@ -1,10 +1,10 @@
 ---
 title: "G-SEC-2.8 — Gate técnico pasivo de preparación sin ejecución — Universe Sent Me"
 purpose: "Definir en forma documental los límites, superficies, resultados y bloqueos de una futura comprobación técnica pasiva, sin ejecutar diagnósticos, abrir datos o red, ni modificar sistemas."
-status: Draft
+status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Gate_Preparacion_Decision_Fase_Operativa_GSEC2_7_USM.md"
@@ -76,7 +76,13 @@ G-SEC-2.8 no ejecuta comandos, scripts, preflights, validadores, diagnósticos, 
 
 ## Estado y siguiente acción permitida
 
-Este gate está en `Draft`. La única acción siguiente permitida es una revisión humana independiente que confirme el modelo de no ejecución, las superficies enumeradas, las condiciones futuras y las prohibiciones. Esa revisión solo puede cambiar G-SEC-2.8 a `Review`; no ejecuta una comprobación pasiva ni habilita datos, red, sistemas o G-NORM-4R.
+### Registro de revisión humana — 2026-08-27
+
+Fernando confirmó el modelo de no ejecución, las superficies enumeradas, las condiciones futuras y las prohibiciones. El estado documental cambia de `Draft` a `Review`. Esta revisión solo confirma el diseño del gate; no ejecuta una comprobación pasiva, no genera evidencia ni declara estado técnico real.
+
+G-SEC-2 permanece en `Review` y G-NORM-4R sigue bloqueado. No se abrió información privada, datos, red, rutas privadas, collectors, OAuth/API, ledger, automatizaciones, servicios, medios, discos, LUKS o integraciones.
+
+Una continuación requiere un gate y autorización nuevos para diseñar una comprobación pasiva de una única superficie. No se puede ejecutar esa comprobación, crear una propuesta, emitir tarjeta, solicitar consentimiento o habilitar G-NORM-4R.
 
 ## Referencias
 
