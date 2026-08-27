@@ -3,8 +3,8 @@ title: "Proyecto de migración integral a LUKS — Universe Sent Me"
 purpose: "Definir los gates y la secuencia reversible para reinstalar Xubuntu con cifrado LUKS integral después de validar el respaldo cifrado previo."
 status: Active
 created: 2026-08-26
-updated: 2026-08-26
-version: "1.15"
+updated: 2026-08-27
+version: "1.16"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -171,7 +171,7 @@ La primera ejecución autorizada completó el preflight, pero el analizador devo
 
 La corrección pública publicada en el commit `757c6ab` alinea el análisis con el contrato real: el collector verifica sus referencias de configuración, el autorizador público verifica PKCE/callback/scopes y el ejemplo público verifica el directorio de evidencia, variables locales y scopes TikTok. La sintaxis y el análisis se validaron antes de publicar. Tras actualizar el clon LUKS, Fernando ejecutó de nuevo el preflight y el modo confirmado: obtuvo `STATUS=preflight_complete_static_only_no_private_read_no_network`, `status=static_contract_passed`, cero fallos y `STATUS=collectors_static_review_complete_no_private_read_no_network`.
 
-G-MIG-LUKS-1.8c queda completado exclusivamente como revisión estática. La totalidad de los collectors, OAuth, APIs, tokens, configuraciones privadas, evidencia real, instalación de dependencias, cron, Docker, OmniRoute, shadow ledger persistente y G-NORM-4R permanece bloqueada. El diseño de esos controles posteriores ahora existe como G-SEC-2 en `2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md` v2.4 y quedó en `Review` tras confirmación humana. Su primer subgate técnico G-SEC-2.3a ya pasó con fixtures ficticios y barreras de red/salida/automatización bloqueadas; los subgates G-SEC-2.1a y 2.2a preparan pruebas separadas de privacidad/minimización y retención, pero no se han ejecutado. Ninguna de estas revisiones activa una integración.
+G-MIG-LUKS-1.8c queda completado exclusivamente como revisión estática. La totalidad de los collectors, OAuth, APIs, tokens, configuraciones privadas, evidencia real, instalación de dependencias, cron, Docker, OmniRoute, shadow ledger persistente y G-NORM-4R permanece bloqueada. El diseño de esos controles posteriores ahora existe como G-SEC-2 en `2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md` v2.5 y quedó en `Review` tras confirmación humana. Sus tres subgates técnicos G-SEC-2.1a, 2.2a y 2.3a ya pasaron exclusivamente con fixtures ficticios: no hubo red, salida, automatización, lectura privada o mutación de archivos. El siguiente posible diseño es la validación sintética de completitud de una tarjeta de consentimiento puntual. Ninguna de estas revisiones activa una integración.
 
 ## Diseño de desbloqueo G-MIG-LUKS-1.5
 

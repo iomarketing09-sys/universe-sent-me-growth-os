@@ -3,8 +3,8 @@ title: "G-SEC-2 — Controles de privacidad, retención, operación read-only y 
 purpose: "Definir los controles separados que deben diseñarse, revisarse y aprobarse antes de considerar una única inserción real privada en el shadow ledger bajo G-NORM-4R."
 status: Review
 created: 2026-08-25
-updated: 2026-08-26
-version: "2.4"
+updated: 2026-08-27
+version: "2.5"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
@@ -139,18 +139,18 @@ La ejecución autorizada devolvió `STATUS=preflight_complete_gsec2_synthetic_on
 
 Cualquier diferencia, proceso detectado o artefacto faltante será `BLOCKED`; no se corrige el entorno, no se instala software y no se reintenta sin revisar el resultado. El PASS demuestra solo las barreras sintéticas actuales: no cambia G-SEC-2 de `Draft`, no concede consentimiento granular y no abre G-NORM-4R.
 
-### G-SEC-2.1a y G-SEC-2.2a — verificaciones sintéticas diseñadas, sin ejecución
+### G-SEC-2.1a y G-SEC-2.2a — verificaciones sintéticas aprobadas y pasadas
 
-Los dos subgates restantes fueron preparados como validaciones independientes de política con fixtures ficticios. No reciben datos de plataformas, no leen directorios privados ni entorno, no importan collectors y bloquean `socket.socket` antes de cualquier red. Cada wrapper tiene los modos `--plan`, `--preflight` y `--execute` con una cadena de confirmación distinta, de modo que una futura autorización puede limitarse a uno de los dos controles.
+Los dos subgates se prepararon como validaciones independientes de política con fixtures ficticios y pasaron tras aprobación explícita. No reciben datos de plataformas, no leen directorios privados ni entorno, no importan collectors y bloquean `socket.socket` antes de cualquier red. Cada wrapper tiene los modos `--plan`, `--preflight` y `--execute` con una cadena de confirmación distinta, de modo que la autorización quedó limitada a los dos controles sintéticos.
 
 | Subgate | Permite solo en el fixture | Debe rechazar en el fixture | Confirmación futura exacta |
 |---|---|---|---|
 | G-SEC-2.1a minimización/egress | Campos agregados mínimos (`platform`, `metric_name`, `metric_value`, `window_type`, `availability`) en memoria temporal. | Caption, handle, respuesta raw, Drive, Sheets y otra marca. | `RUN_USM_GSEC2_MINIMIZATION_EGRESS_SYNTHETIC` |
 | G-SEC-2.2a retención/disposición | Registro ficticio dentro de 30 días o, exactamente en el día 30, bloqueo de nuevas escrituras y solicitud de revisión humana sin mutación. | Retención vencida sin revisión, eliminación automática, reescritura in-place, archivo externo e indefinición. | `RUN_USM_GSEC2_RETENTION_DISPOSITION_SYNTHETIC` |
 
-La suite de minimización valida una lista blanca de campos y exige el destino `temporary_memory`; no usa valores reales. La suite de retención modela edades enteras ficticias y una política fija de 30 días; no mide tiempo del sistema, no busca archivos, no elimina ni modifica nada. Sus salidas previstas contienen solamente nombres de casos, razones de rechazo y garantías agregadas.
+El preflight de G-SEC-2.1a confirmó Python, sus artefactos ficticios y la ausencia de procesos de servicio o collectors. Su suite devolvió `gsec2_minimization_egress_synthetic_passed`: permitió solo el agregado mínimo en memoria y rechazó caption, handle, respuesta raw, Drive, Sheets y otra marca. El preflight de G-SEC-2.2a confirmó las mismas condiciones de aislamiento y su suite devolvió `gsec2_retention_disposition_synthetic_passed`: permitió un registro ficticio dentro del plazo y el estado de revisión humana en el día 30; rechazó vencimiento sin revisión, eliminación automática, reescritura in-place, archivo externo y retención indefinida.
 
-Los dos subgates permanecen **diseñados y sin ejecutar**. El preflight de cada uno solo podrá revisar repositorio, Python, sus dos archivos públicos y procesos por nombre; no modifica el entorno. La ejecución requerirá aprobación explícita independiente, deberá detenerse ante un proceso detectado y no abre G-NORM-4R aunque ambos resultados sean PASS.
+Ambas suites reportaron la guardia de socket `blocked_as_designed`, no leyeron rutas privadas ni variables de entorno, no importaron collectors y no escribieron ledger, evidencia, archivos canónicos o destinos externos. El preflight de cada una se limitó a repositorio, Python, sus dos archivos públicos y procesos por nombre; no modificó el entorno. Ambos PASS no abren G-NORM-4R ni constituyen consentimiento granular para una operación real.
 
 ## G-SEC-2.4 — Consentimiento granular, por operación y revocable
 
@@ -177,7 +177,7 @@ G-SEC-2 se considera **diseñado** cuando este documento y los documentos relaci
 | Estado | Resultado | Consecuencia |
 |---|---|---|
 | Draft | Diseño documentado, con G-SEC-2.3a sintético ya pasado pero sin revisión humana completa de los cuatro controles. | G-NORM-4R bloqueado. |
-| Review | Fernando confirmó los cuatro límites de diseño; G-SEC-2.3a pasó, mientras G-SEC-2.1a y G-SEC-2.2a están diseñados y sin ejecutar. Sigue faltando una futura tarjeta puntual de consentimiento. | Solo se pueden diseñar o proponer subgates sintéticos posteriores. |
+| Review | Fernando confirmó los cuatro límites de diseño; G-SEC-2.1a, G-SEC-2.2a y G-SEC-2.3a pasaron exclusivamente con fixtures ficticios. Sigue faltando una futura tarjeta puntual de consentimiento. | Solo se puede diseñar o proponer la validación sintética de completitud de consentimiento, sin datos reales. |
 | Active | Solo después de pruebas de control aprobadas y consentimiento puntual vigente. | Permite proponer, no ejecutar automáticamente, una única operación G-NORM-4R. |
 | Blocked | Cualquier ambigüedad, salida externa, datos no permitidos, retención indefinida o consentimiento vencido. | No se abre evidencia ni se ejecuta ningún collector. |
 

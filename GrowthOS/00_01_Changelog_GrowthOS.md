@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.41
+**Versión:** 5.42
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.42.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.1a y G-SEC-2.2a pasaron como pruebas sintéticas separadas.** Tras autorización explícita, ambos preflights confirmaron Python, fixtures/validadores presentes y ausencia de procesos de servicios o collectors. La suite de minimización/egress permitió solo campos agregados mínimos en memoria y rechazó caption, handle, raw, Drive, Sheets y marcas ajenas. La suite de retención/disposición permitió el fixture dentro de plazo y el límite de día 30 con revisión humana; rechazó vencimiento sin revisión, eliminación automática, reescritura in-place, archivo externo y retención indefinida. Ambas guardias de socket bloquearon apertura de red. No se leyeron rutas privadas ni entorno, no se importaron collectors, no se escribieron ledger/evidencia/destino externo, ni se activaron datos reales, OAuth/API, dependencias, cron, Docker, OmniRoute o G-NORM-4R. El siguiente trabajo permitido es solo diseñar G-SEC-2.4a, una validación sintética de completitud del consentimiento granular.
 
 - **[5.41.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.1a y G-SEC-2.2a diseñados como pruebas sintéticas separadas.** Se añadieron fixtures, validadores y wrappers independientes para minimización/egress y retención/disposición. La primera acepta solo campos agregados mínimos en memoria y rechaza caption, handle, raw, Drive, Sheets y marcas ajenas. La segunda modela la retención ficticia de 30 días y rechaza vencimiento sin revisión, eliminación automática, reescritura in-place, archivo externo y retención indefinida. Ambos interceptan sockets, no importan collectors, no leen rutas privadas o entorno y no escriben ledger, evidencia, archivos externos ni datos canónicos. Están diseñados y sin ejecutar; cada uno requiere autorización explícita independiente. No se activaron datos reales, red/OAuth/API, dependencias, cron, Docker, OmniRoute ni G-NORM-4R.
 

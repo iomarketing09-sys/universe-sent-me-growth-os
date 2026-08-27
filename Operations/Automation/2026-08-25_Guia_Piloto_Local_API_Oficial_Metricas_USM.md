@@ -3,8 +3,8 @@ title: "Guía del piloto local con APIs oficiales de métricas — Universe Sent
 purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exponer secretos, sin escritura canónica y con monetización de YouTube cuando esté disponible."
 status: Draft
 created: 2026-08-25
-updated: 2026-08-26
-version: "3.8"
+updated: 2026-08-27
+version: "3.9"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -230,7 +230,7 @@ Estas capturas mezclan edades y formatos, y los contadores son de vida. Por lo t
 
 ## Estado del documento
 
-La guía es operativa pero no autoriza cron ni escrituras canónicas. El diseño G-SEC-2 de privacidad, retención, operación read-only y consentimiento granular se registró como dependencia previa independiente para cualquier G-NORM-4R. G-SEC-2 está en `Review` después de la confirmación humana de sus cuatro controles y su prueba G-SEC-2.3a pasó exclusivamente con un fixture ficticio y sin red. G-SEC-2.1a y G-SEC-2.2a están diseñados, pero sin ejecutar ni autorizar. Esta guía no permite volver a abrir configuraciones privadas, ejecutar collectors, crear un ledger persistente o mover datos a ningún destino externo.
+La guía es operativa pero no autoriza cron ni escrituras canónicas. El diseño G-SEC-2 de privacidad, retención, operación read-only y consentimiento granular se registró como dependencia previa independiente para cualquier G-NORM-4R. G-SEC-2 está en `Review` después de la confirmación humana de sus cuatro controles. Sus pruebas G-SEC-2.1a, G-SEC-2.2a y G-SEC-2.3a pasaron exclusivamente con fixtures ficticios y sin red; no se abrió archivo ni configuración privada. Esta guía no permite volver a abrir configuraciones privadas, ejecutar collectors, crear un ledger persistente o mover datos a ningún destino externo.
 
 ## Referencias
 
