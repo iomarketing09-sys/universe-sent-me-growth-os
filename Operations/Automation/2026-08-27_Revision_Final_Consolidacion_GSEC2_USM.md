@@ -4,12 +4,13 @@ purpose: "Definir la revisión humana final que consolida evidencia documental p
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.3"
+version: "1.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
   - "Operations/Automation/2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md"
   - "Operations/Automation/2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md"
+  - "Operations/Automation/2026-08-27_Procedimiento_Preliminar_Propuesta_Minima_GSEC2_4c_USM.md"
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
   - "Operations/Automation/2026-08-26_Proyecto_Migracion_LUKS_Integral_USM.md"
@@ -85,7 +86,7 @@ Este documento está en `Review` y no requiere datos del usuario. La revisión m
 
 ### Actualización de coherencia posterior — 2026-08-27
 
-G-SEC-2.4c recibió su revisión humana independiente posteriormente y ahora está en `Review`, vacía y sin propuesta emitida. Este hecho no altera los resultados históricos de esta matriz, no convierte la ficha en una propuesta ni habilita un consentimiento o una operación. La continuación permitida queda limitada a diseñar, bajo un gate nuevo, un procedimiento documental de propuesta mínima futura.
+G-SEC-2.4c recibió su revisión humana independiente posteriormente y ahora está en `Review`, vacía y sin propuesta emitida. Este hecho no altera los resultados históricos de esta matriz, no convierte la ficha en una propuesta ni habilita un consentimiento o una operación. El procedimiento documental preliminar de propuesta mínima futura ya quedó diseñado como G-SEC-2.4c-P en `2026-08-27_Procedimiento_Preliminar_Propuesta_Minima_GSEC2_4c_USM.md` v1.0, `Draft`. La siguiente acción permitida queda limitada a revisar ese procedimiento; no se puede crear una propuesta, tarjeta o solicitud de consentimiento.
 
 ## Referencias
 
