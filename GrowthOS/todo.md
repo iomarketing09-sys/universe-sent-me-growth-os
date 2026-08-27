@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-26
-version: "11.85"
+version: "11.87"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -216,6 +216,9 @@ organization: "GrowthOS"
 - [ ] Validar G-MIG-LUKS-1.7b: comprobar presencia, propietarios y permisos de `bin` y las tres raíces privadas, ausencia de staging y repositorio GitHub preservado; no iniciar OmniRoute, collectors ni automatizaciones.
 - [x] Validar G-MIG-LUKS-1.7b: `bin`, las tres raíces privadas y `omniroute-pilot` existen con modo `0700` y propietario `universe-sent-me`; staging temporal ausente, repositorio GitHub canónico preservado en `e717b3d` y no se detectaron procesos OmniRoute/USM activos.
 - [ ] G-MIG-LUKS-1.8: reinstalar y probar herramientas locales exclusivamente con fixtures sintéticos/read-only; mantener OmniRoute detenido y no abrir collectors, shadow ledger, Sheets, Drive ni datos reales hasta aprobar gates posteriores.
+- [ ] Diseñar preflight G-MIG-LUKS-1.8: inventariar scripts/dependencias restaurados, definir instalaciones mínimas y pruebas sintéticas read-only, y validar que no existan procesos OmniRoute, collectors, cron o flujos de datos reales antes de una ejecución separada.
+- [x] Diseñar preflight G-MIG-LUKS-1.8: `preflight_usm_synthetic_after_luks.sh` diferencia `--plan`, `--preflight` y un `--execute` confirmado; solo permite el suite fixture-only con sockets bloqueados, ledger temporal y sin escrituras canónicas. OmniRoute, collectors y cron siguen excluidos.
+- [ ] Autorizar G-MIG-LUKS-1.8a: ejecutar el preflight y, si pasa, el suite sintético de normalización/shadow ledger con Python local; no instala paquetes, no abre red, no lee configuraciones privadas ni inicia servicios.
 - [x] Diseñar desbloqueo G-MIG-LUKS-1.5: método propuesto `Erase disk` → `Encrypt with a passphrase`; preflight de respaldo, identidad por modelo/tamaño, aislamiento físico, frase local y última autorización específica documentados en el proyecto v0.8. No autoriza aún borrar disco.
 - [x] Autorizar G-MIG-LUKS-1.4g: Fernando aprobó verificar la página guiada de cifrado por frase sin instalación; prohíbe ingresar frase, continuar a resumen, crear particiones o modificar cualquier disco.
 - [ ] G-MIG-LUKS-1.3a: antes de escribir, confirmar visualmente el objetivo `Xubuntu 26.04 LTS Desktop 64-bit`, la coincidencia de SHA-256 oficial y que el destino sigue siendo la USB `STORE N GO`, no `sda` ni `sdc`.

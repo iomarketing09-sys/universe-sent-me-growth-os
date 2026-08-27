@@ -4,7 +4,7 @@ purpose: "Definir los gates y la secuencia reversible para reinstalar Xubuntu co
 status: Active
 created: 2026-08-26
 updated: 2026-08-26
-version: "1.2"
+version: "1.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -12,6 +12,8 @@ related_documents:
   - "Operations/Automation/2026-08-25_Inventario_Previa_Migracion_LUKS_Xubuntu_USM.md"
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
   - "Operations/Automation/2026-08-26_Plan_B_rEFInd_Seleccion_USB_USM.md"
+  - "Operations/Automation/preflight_usm_synthetic_after_luks.sh"
+  - "Operations/Automation/validate_synthetic_boundary_suite.py"
   - "GrowthOS/todo.md"
 organization: "Operations/Automation"
 ---
@@ -73,7 +75,7 @@ El nuevo usuario local debe conservar el nombre `universe-sent-me` salvo que Fer
 | G-MIG-LUKS-1.5 | Instalar Xubuntu con LUKS integral mediante el instalador, borrando exclusivamente el disco interno aprobado. | Sí, operación destructiva sobre `sda`. |
 | G-MIG-LUKS-1.6 | Verificar después del primer arranque que la raíz está respaldada por `crypto_LUKS`/`crypt`, que arranca con frase y que no hay error de montaje. | No. |
 | G-MIG-LUKS-1.7 | Instalar herramientas mínimas y restaurar selectivamente el entorno USM desde el ciphertext, con la frase ingresada localmente. | Sí, escribe sobre el nuevo sistema cifrado. |
-| G-MIG-LUKS-1.8 | Validar collectors en modo sintético/read-only, OmniRoute local y el contrato de privacidad antes de abrir G-NORM-4R. | No datos reales persistentes. |
+| G-MIG-LUKS-1.8 | Validar herramientas recuperadas con fixtures sintéticos, sin red, sin servicios y sin datos reales; OmniRoute y collectors se revisan primero solo por presencia/configuración. | No datos reales persistentes. |
 
 ## Secuencia operativa propuesta
 
@@ -114,6 +116,20 @@ La validación G-MIG-LUKS-1.6 se ejecutó antes de conectar `Fernando` o restaur
 El preflight G-MIG-LUKS-1.7a ya confirmó en el sistema cifrado `age` 1.2.1, Git 2.53.0 y el clon canónico del repositorio. Con `Fernando` conectado como `/dev/sdc3` `vfat`, se verificaron sin descifrar las cinco piezas del backup y el SHA-256 del ciphertext de 307,792,785 bytes. El diseño de G-MIG-LUKS-1.7b restaurará selectivamente `bin` y las tres raíces privadas aprobadas, mientras conserva el repositorio actual clonado desde GitHub como fuente canónica. Sigue pendiente una autorización específica para descifrar localmente y mover esas rutas al sistema LUKS.
 
 G-MIG-LUKS-1.7b se completó tras autorización: el wrapper volvió a validar el ciphertext, solicitó la frase `age` solo localmente y restauró `bin` y las tres raíces privadas aprobadas al volumen LUKS. Los cuatro destinos quedaron con modo `0700` y propietario `universe-sent-me`; no quedó staging temporal, el repositorio GitHub se preservó y no se iniciaron procesos de OmniRoute o USM. `Fernando` no recibió escritura. El siguiente gate G-MIG-LUKS-1.8 se limita a reinstalar y probar herramientas locales con fixtures sintéticos/read-only, sin datos reales persistentes ni automatización activa.
+
+## Diseño de preflight G-MIG-LUKS-1.8
+
+G-MIG-LUKS-1.8 inicia con el wrapper `preflight_usm_synthetic_after_luks.sh`. Su modo `--plan` no lee el entorno operativo; `--preflight` revisa exclusivamente la presencia del repositorio, Python local, fixtures y scripts candidatos, y comprueba que no haya procesos OmniRoute, Docker Compose, collectors, cron o servicios de datos activos. No importa configuraciones privadas, no abre evidencia, no llama APIs y no escribe archivos.
+
+La primera prueba candidata es `validate_synthetic_boundary_suite.py`, ejecutada solo con Python estándar y la opción `-B` para no producir bytecode. El suite intercepta la apertura de sockets, ejecuta el normalizador contra `fixtures/normalization_dry_run_synthetic.json` y prueba el shadow ledger únicamente en un `TemporaryDirectory`; su resultado debe incluir `synthetic_only`, `network_socket_blocked`, `temporary_ledger_only` y `no_canonical_write`.
+
+| Subgate | Acción permitida | Prohibiciones |
+|---|---|---|
+| G-MIG-LUKS-1.8a | Ejecutar preflight de inventario y el suite sintético sin red, tras una aprobación separada. | No instalar dependencias de collectors, no leer tokens/evidencia, no crear ledger persistente. |
+| G-MIG-LUKS-1.8b | Diseñar por separado la comprobación de presencia de Docker/OmniRoute, sin iniciar contenedores. | No iniciar OmniRoute ni enviar entradas, aun sintéticas, hasta revisar configuración y puertos. |
+| G-MIG-LUKS-1.8c | Revisar contratos y dependencias de collectors solo por código/configuración de ejemplo. | No ejecutar collectors, OAuth, API GET, escritura de evidencia, cron o Sheets. |
+
+El éxito de G-MIG-LUKS-1.8a no abre G-NORM-4R. Antes de cualquier observación real siguen siendo obligatorios la renovación de privacidad, retención, consentimiento granular y la decisión humana de permitir una operación real mínima.
 
 ## Diseño de desbloqueo G-MIG-LUKS-1.5
 

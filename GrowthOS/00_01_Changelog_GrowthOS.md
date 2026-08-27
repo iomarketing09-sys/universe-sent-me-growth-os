@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-26
-**Versión:** 5.26
+**Versión:** 5.27
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.27.00] — 2026-08-26 (Fernando/Manus): preflight sintético post-LUKS diseñado, sin ejecución.** Se inventariaron los validadores restaurados y se confirmó que el suite de frontera sintética usa fixtures, bloquea sockets y limita el shadow ledger a un directorio temporal. Se creó `preflight_usm_synthetic_after_luks.sh`, con modos `--plan`, `--preflight` y `--execute` confirmado. El preflight no instala paquetes, no lee configuraciones privadas, no llama APIs, no arranca OmniRoute/Docker, no habilita cron y no escribe un ledger canónico. G-MIG-LUKS-1.8a requiere autorización separada para ejecutar el suite fixture-only; collectors, OmniRoute y datos reales continúan bloqueados.
 
 - **[5.26.00] — 2026-08-26 (Fernando/Manus): restauración selectiva post-LUKS completada y validada.** El preflight comprobó `Fernando` como `/dev/sdc3` `vfat`, las cinco piezas del backup y el SHA-256 del ciphertext sin descifrar. Con autorización separada, el wrapper solicitó la frase `age` solo localmente, restauró `bin` y las tres raíces privadas autorizadas bajo LUKS y volvió a validar el checksum. Las cuatro rutas quedaron con modo `0700` y propietario correcto; el staging no quedó presente, el clon GitHub canónico se preservó y no se detectaron procesos OmniRoute/USM. `Fernando` no se modificó. G-MIG-LUKS-1.8 es el siguiente gate; collectors, shadow ledger, OmniRoute, Sheets, Drive y datos reales siguen bloqueados.
 
