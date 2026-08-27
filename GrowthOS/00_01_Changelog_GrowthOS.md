@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.43
+**Versión:** 5.44
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.44.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.4a pasó como validación de tarjeta ficticia, sin consentimiento real.** Tras autorización explícita, el preflight confirmó Python, fixture/validador y ausencia de procesos de servicios o collectors. La suite devolvió `gsec2_granular_consent_synthetic_passed`: permitió solo la tarjeta ficticia completa y bloqueó referencia ausente, ampliación de alcance, métrica financiera, retención mayor a 30 días, operación no read-only, egress externo, vigencia/no revocación inválidas y datos/identificadores simulados. La guardia de socket bloqueó apertura de red. No se solicitaron, registraron, validaron ni concedieron consentimientos reales; no se leyeron rutas privadas, entorno, tokens o evidencia, no se importaron collectors, llamaron OAuth/API, crearon ledger, iniciaron operación, cron, Docker u OmniRoute, ni se abrió G-NORM-4R. El siguiente trabajo permitido es solo diseñar una tarjeta real vacía y su procedimiento de solicitud puntual.
 
 - **[5.43.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.4a diseñado para validar una tarjeta ficticia de consentimiento granular.** Se añadieron fixture, validador y preflight para comprobar en memoria una sola tarjeta ficticia completa y rechazar referencia ausente, ampliación de alcance, monetización, retención mayor a 30 días, ejecución no read-only, egress externo, vigencia superior a 24 h o no revocable, y datos/identificadores simulados. El artefacto declara que el marcador ficticio no es consentimiento de Fernando y que el subgate no solicita, registra, verifica ni concede consentimiento real. Está diseñado y sin ejecutar; requiere aprobación explícita diferente. No se leyeron rutas privadas, entorno, tokens ni evidencia; no se importaron collectors, abrieron sockets, llamaron OAuth/API, crearon ledger, iniciaron operación, cron, Docker u OmniRoute, ni se habilitaron datos reales, salidas externas o G-NORM-4R.
 

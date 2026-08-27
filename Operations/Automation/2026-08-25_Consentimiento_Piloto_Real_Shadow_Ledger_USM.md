@@ -4,7 +4,7 @@ purpose: "Definir los controles separados que deben diseñarse, revisarse y apro
 status: Review
 created: 2026-08-25
 updated: 2026-08-27
-version: "2.6"
+version: "2.7"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
@@ -172,7 +172,7 @@ El consentimiento propuesto no será una autorización general para “usar mét
 
 La aprobación debe contener una frase inequívoca que nombre el gate, la muestra, el plazo, la prohibición de salidas y la vigencia. Una aprobación de diseño, una aprobación histórica de collectors o una aprobación del cifrado LUKS no sustituye esta tarjeta. Si la persona que opera percibe cualquier diferencia entre la tarjeta y el entorno real, debe detenerse sin abrir datos y registrar únicamente `consent_scope_mismatch`.
 
-### G-SEC-2.4a — verificación sintética de completitud de tarjeta diseñada
+### G-SEC-2.4a — verificación sintética de completitud de tarjeta aprobada y pasada
 
 G-SEC-2.4a contiene una tarjeta ficticia de una operación y ocho tarjetas defectuosas dentro de `fixtures/gsec2_granular_consent_card_synthetic.json`. Su validador solo revisa estructura y límites en memoria. El marcador `synthetic_approval_marker` representa un caso de prueba y **no** es consentimiento de Fernando, no tiene efectos operativos ni puede convertirse en una autorización real.
 
@@ -186,9 +186,11 @@ G-SEC-2.4a contiene una tarjeta ficticia de una operación y ocho tarjetas defec
 | `expired_or_nonrevocable_card_blocked` | Bloquear. | Vigencia exacta de 24 h y posibilidad de revocación. |
 | `real_data_or_identifier_field_blocked` | Bloquear. | Un fixture de consentimiento no admite datos reales ni identificadores. |
 
-El wrapper `preflight_gsec2_granular_consent.sh` mantiene los modos `--plan`, `--preflight` y `--execute --confirm RUN_USM_GSEC2_GRANULAR_CONSENT_SYNTHETIC`. Incluso el modo de ejecución, que requerirá autorización distinta, no pedirá, guardará, validará ni concederá consentimiento real. Solo puede emitir `gsec2_granular_consent_synthetic_passed`, casos agregados de rechazo y garantías. La guardia de socket bloquea red; no se leen variables de entorno, rutas privadas, tokens o evidencia y no se invoca collector, OAuth, API, servicio, scheduler, Docker u OmniRoute.
+El wrapper `preflight_gsec2_granular_consent.sh` mantiene los modos `--plan`, `--preflight` y `--execute --confirm RUN_USM_GSEC2_GRANULAR_CONSENT_SYNTHETIC`. Incluso el modo de ejecución no pide, guarda, valida ni concede consentimiento real. Solo puede emitir `gsec2_granular_consent_synthetic_passed`, casos agregados de rechazo y garantías. La guardia de socket bloquea red; no se leen variables de entorno, rutas privadas, tokens o evidencia y no se invoca collector, OAuth, API, servicio, scheduler, Docker u OmniRoute.
 
-G-SEC-2.4a está **diseñado y sin ejecutar**. Un resultado PASS futuro validaría únicamente la plantilla de tarjeta ficticia. El paso posterior requeriría un diseño independiente de la tarjeta real, seguido por una solicitud humana puntual con el alcance técnico exacto y un gate específico; G-NORM-4R continúa bloqueado.
+La ejecución autorizada pasó con `STATUS=preflight_complete_gsec2_granular_consent_synthetic_only_no_network_no_private_read`, `gsec2_granular_consent_synthetic_passed` y `STATUS=gsec2_granular_consent_synthetic_complete_no_network_no_private_read_no_real_consent`. Permitió únicamente la tarjeta ficticia completa y rechazó las ocho variantes esperadas: referencia ausente, ampliación de alcance, métrica financiera, retención extendida, ejecución no read-only, egress externo, vigencia/no revocación inválida y datos/identificadores simulados. Reportó guardia de socket bloqueada, sin procesos de servicios o collectors.
+
+Este PASS valida únicamente la **plantilla ficticia**. El siguiente trabajo, si se solicita, será diseñar una tarjeta real vacía y un procedimiento de solicitud humana puntual, sin pedir todavía datos, tokens, consentimientos ni autorizar una operación. G-NORM-4R continúa bloqueado hasta un gate separado que incorpore una tarjeta real completa, consentimiento humano vigente y validación manual del alcance técnico.
 
 ## Criterio de cierre de G-SEC-2 y siguiente gate posible
 
@@ -197,7 +199,7 @@ G-SEC-2 se considera **diseñado** cuando este documento y los documentos relaci
 | Estado | Resultado | Consecuencia |
 |---|---|---|
 | Draft | Diseño documentado, con G-SEC-2.3a sintético ya pasado pero sin revisión humana completa de los cuatro controles. | G-NORM-4R bloqueado. |
-| Review | Fernando confirmó los cuatro límites de diseño; G-SEC-2.1a, G-SEC-2.2a y G-SEC-2.3a pasaron exclusivamente con fixtures ficticios. G-SEC-2.4a está diseñado y sin ejecutar; sigue faltando una futura tarjeta puntual de consentimiento. | Solo se puede autorizar o proponer la validación sintética de completitud, sin datos reales. |
+| Review | Fernando confirmó los cuatro límites de diseño; G-SEC-2.1a, G-SEC-2.2a, G-SEC-2.3a y G-SEC-2.4a pasaron exclusivamente con fixtures ficticios. Sigue faltando una tarjeta puntual real, consentimiento humano vigente y revisión manual de alcance. | Solo se puede diseñar la plantilla y procedimiento de solicitud de tarjeta real, sin datos reales. |
 | Active | Solo después de pruebas de control aprobadas y consentimiento puntual vigente. | Permite proponer, no ejecutar automáticamente, una única operación G-NORM-4R. |
 | Blocked | Cualquier ambigüedad, salida externa, datos no permitidos, retención indefinida o consentimiento vencido. | No se abre evidencia ni se ejecuta ningún collector. |
 
