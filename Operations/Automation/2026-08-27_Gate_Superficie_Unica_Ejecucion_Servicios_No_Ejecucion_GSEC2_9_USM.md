@@ -4,7 +4,7 @@ purpose: "Definir el diseño de una futura comprobación pasiva de una única su
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.3"
+version: "1.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Gate_Analisis_Documental_Superficie_Ejecucion_No_Ejecucion_GSEC2_10_USM.md"
@@ -83,7 +83,9 @@ G-SEC-2 permanece en `Review` y G-NORM-4R sigue bloqueado. No se abrió informac
 
 G-SEC-2.10 fue revisado como `2026-08-27_Gate_Analisis_Documental_Superficie_Ejecucion_No_Ejecucion_GSEC2_10_USM.md` v1.1 en `Review`; confirmó únicamente sus límites documentales y no analizó el sistema.
 
-G-SEC-2.11 fue diseñado en `Draft` como `2026-08-27_Gate_Tecnico_Pasivo_Observacion_Real_Minima_GSEC2_11_USM.md` v1.0 para delimitar el único gate previo a una eventual observación local de componentes de ejecución registrados. La siguiente acción permitida es revisar ese diseño; no se puede ejecutar una comprobación, crear un verificador, emitir tarjeta, solicitar consentimiento operativo o habilitar G-NORM-4R.
+G-SEC-2.11 fue revisado como `2026-08-27_Gate_Tecnico_Pasivo_Observacion_Real_Minima_GSEC2_11_USM.md` v1.2 en `Review`; confirmó solo la superficie mínima, los nombres registrables, las salidas agregadas y la detención fail-closed. No creó un verificador ni observó el sistema.
+
+Si se identifica una necesidad concreta, el siguiente trabajo permitido es diseñar un verificador mínimo, público y estático en un alcance separado. No se puede crear ni ejecutar ese verificador, realizar una comprobación, emitir tarjeta, solicitar consentimiento operativo o habilitar G-NORM-4R sin una autorización humana nueva.
 
 ## Referencias
 

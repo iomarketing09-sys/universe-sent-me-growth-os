@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.75
+**Versión:** 5.76
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.76.00] — 2026-08-27 (Fernando/Manus): revisión humana de G-SEC-2.11 confirmada sin crear verificador.** Fernando confirmó la superficie mínima, los nombres registrables, las salidas agregadas y la detención fail-closed. El gate `2026-08-27_Gate_Tecnico_Pasivo_Observacion_Real_Minima_GSEC2_11_USM.md` pasa de `Draft` a `Review`. La confirmación valida exclusivamente el diseño y la precedencia fail-closed: no creó ni ejecutó un verificador, no observó servicios, collectors, procesos, red o datos, y no habilitó G-NORM-4R ni transición operativa. Si surge una necesidad concreta, primero se deberá diseñar un verificador público, mínimo y estático con autorización humana nueva; ese diseño tampoco autorizará ejecutarlo.
 
 - **[5.75.00] — 2026-08-27 (Fernando/Manus): revisión documental de detención y salidas de G-SEC-2.11.** Se revisaron únicamente las condiciones fail-closed y las categorías de salida agregada de `2026-08-27_Gate_Tecnico_Pasivo_Observacion_Real_Minima_GSEC2_11_USM.md`. La revisión fijó la precedencia: exceso de alcance → `scope_mismatch`; bloqueo, falta de autorización o incompletitud → `observation_incomplete_or_blocked`; nombre exacto registrado observado → `registered_execution_candidate_observed`; y solo una lista completa de consultas autorizadas sin coincidencias → `registered_non_execution_observed`. G-SEC-2.11 sigue en `Draft`; no se analizó el sistema, no se ejecutó un verificador y no se abrieron datos, red, collectors, servicios o G-NORM-4R.
 

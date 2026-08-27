@@ -1,10 +1,10 @@
 ---
 title: "G-SEC-2.11 — Gate técnico pasivo de observación real mínima — Universe Sent Me"
 purpose: "Definir la estructura y los límites de un gate separado que, tras revisiones y autorizaciones posteriores, podría permitir una única observación local y mínima de componentes de ejecución USM registrados, sin datos, red, cambios ni activación operativa."
-status: Draft
+status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Gate_Superficie_Unica_Ejecucion_Servicios_No_Ejecucion_GSEC2_9_USM.md"
@@ -23,7 +23,7 @@ organization: "Operations/Automation"
 
 > **Frontera decisiva:** G-SEC-2.11 solo podría observar componentes USM con un nombre público, exacto y no sensible previamente registrado. No puede inferir que todo el sistema está inactivo, que no existe otro proceso, ni que los collectors Python no estén ejecutándose por el solo hecho de no encontrar un nombre conocido.
 
-Este documento es un diseño en `Draft`. No ejecuta observaciones, no instala un verificador y no produce un resultado técnico sobre el equipo actual.
+Este documento es un diseño en `Review`. No ejecuta observaciones, no instala ni crea un verificador y no produce un resultado técnico sobre el equipo actual.
 
 ## Cadena de decisiones separadas
 
@@ -37,6 +37,14 @@ La revisión del diseño y la eventual observación real son decisiones distinta
 | 4. Cierre humano | Interpretar solo la categoría agregada y decidir si hace falta otro diseño. | Registro no sensible del cierre, si se autoriza. | Corregir, investigar o activar servicios. |
 
 G-SEC-2.9 y G-SEC-2.10 permanecen como antecedentes de alcance y coherencia documental. Este gate no los reemplaza, ni cambia G-SEC-2 de `Review`, ni desbloquea G-NORM-4R.
+
+## Registro de revisión humana independiente
+
+Fernando confirmó la superficie mínima, los nombres registrables, las salidas agregadas y la detención fail-closed. Como resultado, G-SEC-2.11 pasa de `Draft` a `Review`.
+
+> **Alcance confirmado:** la revisión valida solamente la estructura documental del gate. No crea un verificador, no observa servicios, collectors, red, datos o procesos y no habilita G-NORM-4R, una fase operativa, una automatización o una integración.
+
+Para mantener la coherencia, esta revisión actualiza el pendiente operativo, el changelog central y el estado de siguiente acción de G-SEC-2.9. G-SEC-2, G-SEC-2.8 y G-SEC-2.10 conservan sus estados y prohibiciones sin cambios.
 
 ## Superficie única que podría observarse
 
@@ -117,9 +125,9 @@ No permite automatización, vigilancia continua, programación, red, uso de puer
 
 ## Estado y siguiente acción permitida
 
-G-SEC-2.11 está en `Draft`. La única acción siguiente permitida es una **revisión humana independiente del diseño**, limitada a verificar que esta estructura conserva una superficie mínima, salidas agregadas, prohibiciones y detención fail-closed. Esa revisión solo podría cambiar el documento a `Review`; no habilita un verificador, una observación del sistema, datos, red, servicios, collectors, automatizaciones, integraciones ni G-NORM-4R.
+G-SEC-2.11 está en `Review`. No habilita un verificador, una observación del sistema, datos, red, servicios, collectors, automatizaciones, integraciones ni G-NORM-4R. Si en el futuro existe una necesidad concreta, el siguiente trabajo posible será diseñar un verificador mínimo, público y estático con un alcance separado y autorización humana nueva; su diseño no autorizaría ejecutarlo contra el sistema.
 
-Para preservar la coherencia, este diseño requiere actualizar el pendiente operativo, el changelog central y el estado de siguiente acción de G-SEC-2.9. El contrato G-SEC-2 y G-SEC-2.10 no requieren cambio de estado porque sus límites continúan vigentes.
+Para preservar la coherencia, el estado `Review` se refleja en el pendiente operativo, el changelog central y el estado de siguiente acción de G-SEC-2.9. El contrato G-SEC-2 y G-SEC-2.10 no requieren cambio de estado porque sus límites continúan vigentes.
 
 ## Referencias
 
