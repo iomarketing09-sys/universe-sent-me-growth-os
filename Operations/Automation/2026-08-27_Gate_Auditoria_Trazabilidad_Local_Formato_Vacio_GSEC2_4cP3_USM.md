@@ -1,10 +1,10 @@
 ---
 title: "G-SEC-2.4c-P.3 — Gate de auditoría y trazabilidad local del formato vacío — Universe Sent Me"
 purpose: "Definir reglas documentales para revisar localmente el formato vacío de propuesta hipotética y conservar una trazabilidad mínima no sensible, sin crear un ledger, propuesta, tarjeta, consentimiento o ejecución."
-status: Draft
+status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Gate_Formato_Vacio_Propuesta_Hipotetica_GSEC2_4cP2_USM.md"
@@ -84,7 +84,13 @@ G-SEC-2.4c-P.3 no ejecuta scripts, validadores o preflights; no abre sockets, ru
 
 ## Estado y siguiente acción permitida
 
-Este gate está en `Draft`. La siguiente acción permitida es una revisión humana independiente de estas reglas de auditoría y trazabilidad, limitada a la estructura documental. Esa revisión solo podría cambiar este documento a `Review`; no ejecuta auditoría, no crea un ledger, no completa propuesta, tarjeta o consentimiento y no habilita G-NORM-4R.
+### Registro de revisión humana — 2026-08-27
+
+Fernando confirmó el alcance de auditoría, la trazabilidad mínima no sensible, la ausencia de ledger y las condiciones de detención. El estado documental cambia de `Draft` a `Review`. Esta revisión confirma únicamente las reglas de política; no ejecuta auditoría, no crea ledger, log, evidencia o archivo temporal, y no crea o completa propuesta, tarjeta, consentimiento u operación.
+
+G-SEC-2 continúa en `Review` y G-NORM-4R sigue bloqueado. No se abrió información privada, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salida externa.
+
+Una continuación requerirá un gate nuevo y autorización explícita para diseñar un artefacto documental posterior. Hasta entonces, no se puede ejecutar una auditoría, producir un dictamen operativo, crear una instancia de propuesta, emitir tarjeta o solicitar consentimiento.
 
 ## Referencias
 

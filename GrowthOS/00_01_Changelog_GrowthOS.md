@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.60
+**Versión:** 5.61
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.61.00] — 2026-08-27 (Fernando/Manus): revisión humana de G-SEC-2.4c-P.3 confirmada, sin auditoría ejecutada.** Fernando confirmó el alcance de auditoría, trazabilidad mínima no sensible, ausencia de ledger y condiciones de detención. El gate `2026-08-27_Gate_Auditoria_Trazabilidad_Local_Formato_Vacio_GSEC2_4cP3_USM.md` pasa de `Draft` a `Review`. La revisión solo confirma reglas de política: no ejecuta auditoría, no crea ledger, log, evidencia o archivos temporales y no crea o completa propuesta, tarjeta, consentimiento u operación. Se alinearon las referencias del gate P.2 y formato vacío. G-SEC-2 continúa en `Review` y G-NORM-4R permanece bloqueado. No se abrió información privada, red, collectors, OAuth/API, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salida externa. Cualquier continuación requiere un gate documental y autorización nuevos.
 
 - **[5.60.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.4c-P.3 diseñado para auditoría y trazabilidad local de política.** Se creó `2026-08-27_Gate_Auditoria_Trazabilidad_Local_Formato_Vacio_GSEC2_4cP3_USM.md` v1.0 en `Draft`. El gate limita la auditoría al formato vacío y versiones de políticas públicas; define dictámenes agregados, trazabilidad mínima no sensible, detención por `consent_scope_mismatch` y la prohibición expresa de crear ledger, log, evidencia o archivo temporal. “Local” describe la revisión humana bajo LUKS, no una base de datos o directorio de auditoría. No se crea propuesta, tarjeta, consentimiento, ejecución ni instancia de formato. G-SEC-2 continúa en `Review` y G-NORM-4R permanece bloqueado. No se abrieron datos o rutas privadas, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA ni salidas externas. La siguiente acción permitida es una revisión humana independiente del gate P.3.
 
