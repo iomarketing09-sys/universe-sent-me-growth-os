@@ -4,9 +4,10 @@ purpose: "Definir el control documental que permite diseñar y revisar un format
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
+  - "Operations/Automation/2026-08-27_Gate_Auditoria_Trazabilidad_Local_Formato_Vacio_GSEC2_4cP3_USM.md"
   - "Operations/Automation/2026-08-27_Formato_Vacio_Propuesta_Hipotetica_Unica_GSEC2_4cP2_USM.md"
   - "Operations/Automation/2026-08-27_Gate_Diseno_Propuesta_Hipotetica_Unica_GSEC2_4cP1_USM.md"
   - "Operations/Automation/2026-08-27_Procedimiento_Preliminar_Propuesta_Minima_GSEC2_4c_USM.md"
@@ -89,7 +90,7 @@ Fernando confirmó el gate, el formato vacío, sus marcadores, límites fijos, s
 
 El formato relacionado recibió la misma revisión independiente y también cambia a `Review`, conservando todos sus campos variables como `[PENDIENTE — no emitir]`. G-SEC-2 permanece en `Review` y G-NORM-4R continúa bloqueado. No se abrió información privada, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salida externa.
 
-Una continuación requerirá un gate nuevo y una autorización explícita para diseñar un artefacto documental posterior. Hasta entonces, no se puede crear, copiar o completar una propuesta, tarjeta, vigencia o solicitud de consentimiento.
+El gate G-SEC-2.4c-P.3 fue diseñado en `Draft` como `2026-08-27_Gate_Auditoria_Trazabilidad_Local_Formato_Vacio_GSEC2_4cP3_USM.md` v1.0 para fijar reglas de auditoría y trazabilidad local de política sin crear un ledger o una instancia. La siguiente acción permitida es revisar ese gate documental; no se puede crear, copiar o completar una propuesta, tarjeta, vigencia o solicitud de consentimiento.
 
 ## Referencias
 

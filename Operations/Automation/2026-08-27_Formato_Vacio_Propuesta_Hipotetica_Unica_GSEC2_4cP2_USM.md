@@ -4,9 +4,10 @@ purpose: "Ofrecer una referencia de estructura completamente vacía para una fut
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
+  - "Operations/Automation/2026-08-27_Gate_Auditoria_Trazabilidad_Local_Formato_Vacio_GSEC2_4cP3_USM.md"
   - "Operations/Automation/2026-08-27_Gate_Formato_Vacio_Propuesta_Hipotetica_GSEC2_4cP2_USM.md"
   - "Operations/Automation/2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md"
   - "Operations/Automation/2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md"
@@ -52,7 +53,7 @@ El formato debe detenerse como `consent_scope_mismatch` si aparece cualquier dat
 
 Fernando confirmó que el formato conserva sus marcadores, límites fijos, separación documental y condición de detención. El estado documental cambia de `Draft` a `Review`. Esta confirmación no agrega valores, referencias, finalidad, fecha, muestra, plataforma, métrica, vigencia, tarjeta, consentimiento o instrucción de ejecución.
 
-El formato permanece como referencia pública vacía. G-SEC-2 y G-SEC-2.4c-P.2 continúan en `Review`; G-NORM-4R sigue bloqueado. Toda continuación requiere un gate y autorización nuevos, sin convertir este formato en una propuesta, tarjeta o consentimiento.
+El formato permanece como referencia pública vacía. G-SEC-2 y G-SEC-2.4c-P.2 continúan en `Review`; G-SEC-2.4c-P.3 fue diseñado en `Draft` para definir auditoría y trazabilidad local de política, sin ledger o instancia. G-NORM-4R sigue bloqueado. Toda continuación requiere un gate y autorización nuevos, sin convertir este formato en una propuesta, tarjeta o consentimiento.
 
 ## Referencias
 

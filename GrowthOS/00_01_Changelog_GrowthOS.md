@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.59
+**Versión:** 5.60
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.60.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.4c-P.3 diseñado para auditoría y trazabilidad local de política.** Se creó `2026-08-27_Gate_Auditoria_Trazabilidad_Local_Formato_Vacio_GSEC2_4cP3_USM.md` v1.0 en `Draft`. El gate limita la auditoría al formato vacío y versiones de políticas públicas; define dictámenes agregados, trazabilidad mínima no sensible, detención por `consent_scope_mismatch` y la prohibición expresa de crear ledger, log, evidencia o archivo temporal. “Local” describe la revisión humana bajo LUKS, no una base de datos o directorio de auditoría. No se crea propuesta, tarjeta, consentimiento, ejecución ni instancia de formato. G-SEC-2 continúa en `Review` y G-NORM-4R permanece bloqueado. No se abrieron datos o rutas privadas, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA ni salidas externas. La siguiente acción permitida es una revisión humana independiente del gate P.3.
 
 - **[5.59.00] — 2026-08-27 (Fernando/Manus): revisión humana de G-SEC-2.4c-P.2 y del formato vacío confirmada.** Fernando confirmó el gate, el formato vacío, sus marcadores, límites fijos, separación documental y condiciones de detención. Ambos documentos pasan de `Draft` a `Review` sin incorporar referencia, finalidad, fecha, muestra, plataforma, métrica, vigencia, propuesta, tarjeta o consentimiento concretos. La revisión confirma solo la estructura de control; no crea una instancia, no completa la ficha, no solicita o registra consentimiento y no autoriza operación. Se alinearon el gate P.1, procedimiento, ficha, contrato y pendientes. G-SEC-2 continúa en `Review` y G-NORM-4R permanece bloqueado. No se abrió información privada, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salida externa. Cualquier continuación requerirá un gate documental y autorización nuevos.
 
