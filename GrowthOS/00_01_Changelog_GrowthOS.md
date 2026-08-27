@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.90
+**Versión:** 5.91
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.91.00] — 2026-08-27 (Fernando/Manus): suite sintética única G-SEC-2.11 ejecutada y aprobada.** Con autorización puntual posterior a la revisión de la interfaz, se invocó una sola vez el runner estándar mediante un lanzador temporal no persistente. Resultado agregado: `synthetic_policy_suite_passed`, `case_count=5`, `result_scope=aggregate_ephemeral_only`. Se usó biblioteca estándar, `PYTHONDONTWRITEBYTECODE=1` y no se crearon archivos de evidencia ni cachés; el lanzador temporal fue eliminado. No hubo red, datos reales, procesos, collectors, rutas privadas, persistencia, OAuth/API, OmniRoute ni G-NORM-4R. El resultado no autoriza una segunda ejecución ni la recepción de métricas reales.
 
 - **[5.90.00] — 2026-08-27 (Fernando/Manus): revisión humana independiente de la interfaz sintética mínima G-SEC-2.11 confirmada.** Fernando revisó y autorizó el cambio de `2026-08-27_Interfaz_Invocacion_Sintetica_Minima_GSEC2_11_USM.md` v1.1 de `Draft` a `Review`. La revisión confirmó el conjunto cerrado de cinco casos, las precondiciones, la salida agregada efímera y la detención fail-closed. No se importó ni ejecutó el runner, no se accedió a datos, red, collectors, procesos, rutas privadas o G-NORM-4R. La ejecución sintética queda como autorización separada.
 

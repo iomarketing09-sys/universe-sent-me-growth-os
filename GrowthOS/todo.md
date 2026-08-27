@@ -335,3 +335,9 @@ organization: "GrowthOS"
 - [ ] Ejecutar una única suite sintética G-SEC-2.11 solo después de autorización puntual posterior a este cambio de estado.
 - [ ] Mantener bloqueados datos reales, red, collectors, procesos, rutas privadas, persistencia y G-NORM-4R durante la revisión y la futura ejecución sintética.
 - [ ] Diseñar la propuesta real mínima únicamente después de cerrar la suite sintética y obtener una decisión separada.
+
+## G-SEC-2.11 — Ejecución sintética autorizada — 2026-08-27
+
+- [x] Ejecutar una sola vez el runner estándar con los cinco casos abstractos cerrados: `synthetic_policy_suite_passed`.
+- [x] Verificar que la salida sea únicamente agregada, efímera y en memoria: `case_count=5`, `result_scope=aggregate_ephemeral_only`.
+- [x] Confirmar ausencia de red, datos reales, procesos, collectors, archivos, persistencia y G-NORM-4R; el lanzador temporal fue eliminado.
