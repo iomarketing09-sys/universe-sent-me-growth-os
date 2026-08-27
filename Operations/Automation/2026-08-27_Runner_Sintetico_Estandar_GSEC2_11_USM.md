@@ -4,7 +4,7 @@ purpose: "Registrar el diseño y creación no ejecutada de un runner de bibliote
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.2"
+version: "1.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Implementacion_Nucleo_Politica_Publico_GSEC2_11_USM.md"
@@ -60,6 +60,12 @@ Fernando confirmó los cinco casos abstractos, las dependencias puras, la salida
 
 Para mantener la coherencia, esta revisión actualiza la implementación, el contrato de código, la especificación estática, G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2 y G-NORM-4R no cambian de estado.
 
+## Solicitud de ejecución y bloqueo de invocación
+
+Fernando autorizó una ejecución única de los cinco casos sintéticos. Antes de ejecutarla, se confirmó que el runner revisado no incluye interfaz de línea de comandos, bloque principal ni otra forma de invocación aprobada. Por diseño, no se debe importar o ejecutar desde una orden ad hoc, porque ello crearía una interfaz de ejecución no revisada.
+
+> **Dictamen:** `synthetic_execution_blocked_no_approved_invocation`. La ejecución no se inició: no se importó el runner, no se evaluó ningún caso y no se accedió al sistema, red, archivos de datos, nombres reales o componentes USM. No se modificará el runner ni se creará un wrapper sin una autorización humana nueva.
+
 ## Prohibiciones que continúan vigentes
 
 El runner no puede compilarse, importarse, ejecutarse, modificarse para leer archivos o conectarse con un componente del sistema sin una autorización humana posterior. No se instalarán dependencias ni se volverá a invocar `pytest` bajo este documento.
@@ -68,7 +74,7 @@ No se permiten nombres reales, datos, credenciales, rutas, variables de entorno,
 
 ## Estado y siguiente acción permitida
 
-El runner está en `Review`. No autoriza importarlo, compilarlo, ejecutarlo, probarlo, registrar nombres reales ni consultar el sistema. Una futura prueba sintética ejecutada requerirá una autorización humana nueva y seguirá limitada a los cinco casos abstractos; no podrá analizar el equipo, la red, archivos, datos o componentes reales.
+El runner está en `Review`. No autoriza importarlo, compilarlo, ejecutarlo, probarlo, registrar nombres reales ni consultar el sistema. La solicitud de ejecución sintética quedó bloqueada por falta de una interfaz de invocación aprobada. El siguiente paso posible sería diseñar esa interfaz de forma mínima y pública, con autorización humana nueva; dicho diseño no permitiría crearla o usarla sin revisiones posteriores.
 
 Para mantener coherencia, el estado `Review` se refleja en la implementación, el contrato de código, la especificación estática, G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2 y G-NORM-4R no cambian de estado.
 

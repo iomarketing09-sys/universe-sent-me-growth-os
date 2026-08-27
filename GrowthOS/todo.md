@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-27
-version: "12.71"
+version: "12.72"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -279,6 +279,8 @@ organization: "GrowthOS"
 - [x] Diseñar un runner sintético estándar G-SEC-2.11 para los cinco casos abstractos ya definidos: se creó `2026-08-27_Runner_Sintetico_Estandar_GSEC2_11_USM.md` v1.1 en `Draft` y `run_policy_core_gsec211_synthetic.py`, sin instalar dependencias, acceder al sistema, red, archivos de datos ni usar nombres reales. Una inspección textual no detectó patrones declarados de acceso prohibido; el runner no se ejecutó.
 - [x] Revisar estáticamente el runner sintético estándar G-SEC-2.11: Fernando confirmó los cinco casos abstractos, dependencias puras, salida efímera, ausencia de CLI/persistencia y prohibiciones. El resultado se limita a `Review`, sin importarlo, compilarlo, ejecutarlo ni registrar nombres reales.
 - [x] Registrar la revisión humana estática del runner sintético estándar G-SEC-2.11: se documentó el cambio de `Draft` a `Review` sin importarlo, compilarlo, ejecutarlo, probarlo ni registrar nombres reales.
+- [x] Ejecutar una sola vez el runner sintético estándar G-SEC-2.11: la ejecución autorizada se bloqueó de forma fail-closed antes de importar o evaluar los cinco casos, ya que no existe una interfaz de invocación aprobada. No se usaron nombres reales, servicios, collectors, procesos, red, archivos de datos, persistencia ni análisis del sistema.
+- [ ] Resolver el bloqueo de invocación del runner G-SEC-2.11: diseñar una interfaz de invocación pública, mínima y no ejecutada para los cinco casos abstractos. No importar, ejecutar, modificar el runner ni crear un wrapper sin una autorización humana nueva.
 - [x] Diseñar G-SEC-2.5: validación estática de integridad de las plantillas, referencias y límites públicos de consentimiento con fixture, validador y preflight públicos; no lee datos privados, no solicita consentimiento ni habilita G-NORM-4R u operación alguna.
 - [x] Autorizar G-SEC-2.5: Fernando autorizó ejecutar preflight y validación estática con `RUN_USM_GSEC2_TEMPLATE_STATIC_INTEGRITY`; solo lee documentos y fixture públicos del repositorio, no solicita consentimiento ni autoriza operación alguna.
 - [x] Corregir G-SEC-2.5: el primer análisis estático bloqueó solo por la variante textual `máxima de 24 horas` en la plantilla pública. La expectativa pública se corrigió y la repetición autorizada devolvió `gsec2_template_static_integrity_passed`, sin ampliar lectura, red ni operaciones.

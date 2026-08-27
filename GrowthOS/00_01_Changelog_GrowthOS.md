@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.87
+**Versión:** 5.88
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.88.00] — 2026-08-27 (Fernando/Manus): ejecución sintética del runner G-SEC-2.11 bloqueada por falta de interfaz aprobada.** Tras una autorización explícita para ejecutar una sola vez los cinco casos abstractos, se identificó que `run_policy_core_gsec211_synthetic.py` no contiene CLI, bloque principal ni otra interfaz de invocación revisada. La ejecución se detuvo antes de importar el runner o evaluar casos. El estado es `synthetic_execution_blocked_no_approved_invocation`; no se modificó el runner, no se creó wrapper y no hubo acceso a sistema, red, datos, archivos, nombres reales, servicios o collectors. La siguiente acción posible es diseñar una interfaz pública mínima con una autorización humana nueva; G-SEC-2 continúa en `Review` y G-NORM-4R bloqueado.
 
 - **[5.87.00] — 2026-08-27 (Fernando/Manus): revisión humana estática del runner estándar G-SEC-2.11 confirmada.** Fernando confirmó los cinco casos abstractos, las dependencias puras, la salida efímera, la ausencia de CLI y persistencia, y las prohibiciones. `2026-08-27_Runner_Sintetico_Estandar_GSEC2_11_USM.md` pasa de `Draft` a `Review`. La revisión valida solo el texto: el runner no se importó, compiló, ejecutó ni probó, no registró nombres reales y no consultó el sistema. Una prueba sintética ejecutada requerirá autorización humana nueva y seguirá sin permitir observación de servicios, collectors, red, datos, archivos o G-NORM-4R.
 
