@@ -4,7 +4,7 @@ purpose: "Definir los controles separados que deben diseñarse, revisarse y apro
 status: Review
 created: 2026-08-25
 updated: 2026-08-27
-version: "3.3"
+version: "3.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
@@ -26,6 +26,7 @@ related_documents:
   - "Operations/Automation/2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md"
   - "Operations/Automation/preflight_gsec2_template_static_integrity.sh"
   - "Operations/Automation/validate_gsec2_template_static_integrity.py"
+  - "Operations/Automation/2026-08-27_Revision_Final_Consolidacion_GSEC2_USM.md"
 organization: "Operations/Automation"
 ---
 
@@ -221,6 +222,10 @@ G-SEC-2 se considera **diseñado** cuando este documento y los documentos relaci
 | Blocked | Cualquier ambigüedad, salida externa, datos no permitidos, retención indefinida o consentimiento vencido. | No se abre evidencia ni se ejecuta ningún collector. |
 
 Los documentos que requieren actualización conjunta son el contrato del shadow ledger, el plan de cifrado/G-NORM-4R, el proyecto de migración LUKS, la guía de APIs oficiales, `GrowthOS/todo.md` y el changelog. La actualización deberá registrar que G-SEC-2 está diseñado pero no aprobado para ejecutar datos reales.
+
+### G-SEC-2.6 — consolidación final diseñada
+
+La revisión final y matriz de consolidación se documentan en `2026-08-27_Revision_Final_Consolidacion_GSEC2_USM.md` v1.0. G-SEC-2.6 verifica manualmente la cadena de evidencias públicas y los bloqueos persistentes; no sustituye la revisión pendiente de G-SEC-2.4c, no cambia el estado de este módulo ni permite tratar datos reales. Está en `Draft` y sin ejecutar.
 
 ## Referencias
 

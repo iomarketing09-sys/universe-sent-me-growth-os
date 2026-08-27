@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.49
+**Versión:** 5.50
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.50.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.6 diseñado para revisión final y consolidación documental.** Se creó `2026-08-27_Revision_Final_Consolidacion_GSEC2_USM.md` v1.0 con una matriz de ocho evidencias y diez comprobaciones manuales de estados, límites, PASS sintéticos, campos pendientes y bloqueos transversales. La consolidación solo podrá declarar `gsec2_consolidation_review_complete` si todas las filas son compatibles; de lo contrario, debe detenerse como `gsec2_consolidation_blocked` sin corregir operación ni abrir información privada. Está en `Draft` y sin ejecutar. No emite tarjeta ni consentimiento, no crea propuesta, no usa datos/tokens/rutas privadas, no activa collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, salidas externas ni G-NORM-4R.
 
 - **[5.49.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.5 pasó como integridad estática de plantillas públicas.** Tras autorización explícita, el preflight confirmó los cuatro artefactos públicos y ausencia de collectors/servicios. El primer análisis bloqueó solo por una variante textual de la frase de 24 horas; se corrigió la expectativa del fixture y la repetición autorizada devolvió `gsec2_template_static_integrity_passed`. Confirmó estado G-SEC-2/plantilla/ficha, marca Universe Sent Me, máximo cuatro observaciones, 30 días, 24 horas, marcadores pendientes, enlaces cruzados y diez controles de comparación. No se leyeron rutas privadas o entorno, no hubo red/sockets, consentimiento real, collectors, OAuth/API, ledger, evidencia, salidas, cron, Docker, OmniRoute ni G-NORM-4R.
 

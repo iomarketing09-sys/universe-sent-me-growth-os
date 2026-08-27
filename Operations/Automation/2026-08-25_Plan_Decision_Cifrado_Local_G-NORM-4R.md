@@ -4,7 +4,7 @@ purpose: "Preparar una decisión reversible y respaldada sobre el almacenamiento
 status: Draft
 created: 2026-08-25
 updated: 2026-08-27
-version: "1.44"
+version: "1.45"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -51,7 +51,7 @@ G-MIG-LUKS-1.8c ya pasó en el sistema restaurado bajo LUKS. El preflight confir
 
 El PASS de G-MIG-LUKS-1.8c completa la revalidación técnica estática posterior a la migración, pero **no** autoriza G-NORM-4R. Antes de reconsiderar cualquier observación real deben diseñarse y aprobarse por separado los controles de privacidad, retención, operación read-only y consentimiento granular. El shadow ledger real, Drive, GitHub como destino de datos, Sheets, Docker y OmniRoute continúan fuera de alcance.
 
-El diseño separado `2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md` v3.3 materializa esos controles como G-SEC-2. La condición de cifrado local se mantiene cumplida, pero no basta para habilitar tratamiento: G-SEC-2 está en `Review` tras confirmación humana de los cuatro límites. G-SEC-2.3a pasó con fixture y validador sintéticos, rechazo de egress/scheduler/datos privados/red/finanzas/marcas ajenas y guardia de socket bloqueada. G-SEC-2.1a y G-SEC-2.2a también pasaron con fixtures ficticios: comprobaron minimización/egress y retención/disposición sin mutar archivo alguno. G-SEC-2.4a pasó validando una tarjeta ficticia de consentimiento único y ocho escenarios de rechazo; no solicitó ni creó consentimiento real. La plantilla vacía revisada está en `2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md` v1.5. La ficha pública de propuesta mínima y comparación de alcance está en `2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md` v1.1, en `Draft`, sin propuesta emitida. G-SEC-2.5 ya pasó comprobando estáticamente sus referencias y límites públicos. No existe consentimiento vigente ni autorización de operación real. Por tanto, G-NORM-4R continúa bloqueado.
+El diseño separado `2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md` v3.4 materializa esos controles como G-SEC-2. La condición de cifrado local se mantiene cumplida, pero no basta para habilitar tratamiento: G-SEC-2 está en `Review` tras confirmación humana de los cuatro límites. G-SEC-2.3a pasó con fixture y validador sintéticos, rechazo de egress/scheduler/datos privados/red/finanzas/marcas ajenas y guardia de socket bloqueada. G-SEC-2.1a y G-SEC-2.2a también pasaron con fixtures ficticios: comprobaron minimización/egress y retención/disposición sin mutar archivo alguno. G-SEC-2.4a pasó validando una tarjeta ficticia de consentimiento único y ocho escenarios de rechazo; no solicitó ni creó consentimiento real. La plantilla vacía revisada está en `2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md` v1.6. La ficha pública de propuesta mínima y comparación de alcance está en `2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md` v1.2, en `Draft`, sin propuesta emitida. G-SEC-2.5 ya pasó comprobando estáticamente sus referencias y límites públicos. G-SEC-2.6 está diseñado para consolidar esa evidencia pública, pero no se ha revisado ni ejecutado. No existe consentimiento vigente ni autorización de operación real. Por tanto, G-NORM-4R continúa bloqueado.
 
 > La protección requerida es cifrado de datos en reposo. No elimina por sí sola otros riesgos: un volumen montado queda disponible para la sesión activa, y el cifrado no reemplaza respaldo, permisos ni control de acceso.
 
