@@ -4,7 +4,7 @@ purpose: "Preparar una decisión reversible y respaldada sobre el almacenamiento
 status: Draft
 created: 2026-08-25
 updated: 2026-08-26
-version: "1.29"
+version: "1.30"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -44,6 +44,8 @@ G-MIG-LUKS-1.8a ya pasó: el entorno recuperado ejecutó la batería de frontera
 G-MIG-LUKS-1.8b se limita a diseñar una inspección pasiva de Docker y OmniRoute. La inspección no instala clientes, inicia contenedores, abre puertos, lee archivos `.env`, consulta proveedores ni procesa datos. Solo validará metadatos del directorio restaurado, binarios de cliente, procesos y la ausencia de escucha local en el puerto de OmniRoute. Aunque confirme que no hay servicios activos, G-NORM-4R sigue bloqueado hasta completar los controles de privacidad, retención, operación read-only y consentimiento granular.
 
 La inspección G-MIG-LUKS-1.8b ya confirmó que OmniRoute está restaurado pero inactivo: no existe cliente Docker/Compose y no hay proceso o puerto local asociado. Esta condición preserva el aislamiento, pero no habilita reinstalar Docker, arrancar OmniRoute o procesar una fixture. El siguiente subgate solo puede inspeccionar contratos y dependencias de collectors por código/configuración de ejemplo; toda operación OAuth/API, evidencia real, ledger persistente o G-NORM-4R continúa bloqueada.
+
+G-MIG-LUKS-1.8c queda diseñado como análisis sintáctico de los contratos públicos de TikTok, YouTube, Facebook, Instagram y la sonda Meta. Revisará scopes, variables de entorno declaradas, requisitos, rutas privadas previstas y ausencia de verbos Meta de escritura, pero no importará o ejecutará collectors ni accederá a sus configuraciones reales. Incluso con resultado PASS, G-NORM-4R y toda operación OAuth/API, evidencia real, ledger persistente, OmniRoute o cron permanecen bloqueados.
 
 > La protección requerida es cifrado de datos en reposo. No elimina por sí sola otros riesgos: un volumen montado queda disponible para la sesión activa, y el cifrado no reemplaza respaldo, permisos ni control de acceso.
 

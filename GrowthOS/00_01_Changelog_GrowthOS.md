@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-26
-**Versión:** 5.32
+**Versión:** 5.33
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.33.00] — 2026-08-26 (Fernando/Manus): revisión estática de collectors diseñada, sin integración.** Se crearon `preflight_collectors_static_after_luks.sh` y `validate_collectors_static_contract.py`. El diseño verifica siete artefactos públicos y analiza sus contratos con `ast.parse` y texto: scopes, variables locales declaradas, rutas de evidencia, dependencias y ausencia de verbos Meta de escritura. No importa ni ejecuta collectors, no abre configuración privada, tokens, evidencia o `.env`, no ejecuta OAuth/API, no instala paquetes, no escribe evidencia/canonical, no arranca servicios ni cron. G-MIG-LUKS-1.8c requiere autorización separada para ejecutar únicamente este análisis estático.
 
 - **[5.32.00] — 2026-08-26 (Fernando/Manus): inspección pasiva OmniRoute aprobada, sin Docker ni servicios.** Tras corregir una auto-coincidencia del wrapper, G-MIG-LUKS-1.8b confirmó `~/omniroute-pilot` con modo `0700`, Docker y Compose ausentes, 0 procesos OmniRoute/Compose y puerto 20128 no escuchando. No se instaló software, inició servicio, abrió `.env`, consultó red ni procesó entradas. El resultado es solo inventario; instalar Docker o iniciar OmniRoute requiere un gate separado. El próximo subgate revisará contratos de collectors exclusivamente por código/configuración de ejemplo.
 
