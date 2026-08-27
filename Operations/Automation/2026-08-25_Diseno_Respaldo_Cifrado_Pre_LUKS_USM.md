@@ -1,10 +1,10 @@
 ---
 title: "Diseño de respaldo cifrado previo a LUKS — Universe Sent Me"
 purpose: "Definir una estructura de carpetas y un wrapper de cifrado local previo a escribir cualquier respaldo autorizado en el disco externo vfat."
-status: Draft
+status: Active
 created: 2026-08-25
-updated: 2026-08-25
-version: "2.3"
+updated: 2026-08-26
+version: "2.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -14,6 +14,8 @@ related_documents:
   - "Operations/Automation/verify_local_age_tool.sh"
   - "Operations/Automation/validate_usm_restore_controlled.sh"
   - "Operations/Automation/validate_usm_restore_tree.py"
+  - "Operations/Automation/restore_usm_post_luks_selective.sh"
+  - "Operations/Automation/2026-08-26_Proyecto_Migracion_LUKS_Integral_USM.md"
   - "GrowthOS/todo.md"
 organization: "Operations/Automation"
 ---
@@ -211,6 +213,22 @@ La verificación posterior devolvió `STATUS=restore_dry_run_left_no_temp_data_o
 Fernando aprobó explícitamente la exposición temporal de plaintext y ejecutó una sola restauración controlada. El wrapper devolvió `STATUS=controlled_restore_validation_passed`. La evidencia agregada confirma checksum del ciphertext antes y después, `scope_profile=code_scripts_and_approved_private`, estructura válida de los cinco grupos requeridos y `temporary_path_cleanup=passed`.
 
 La comprobación final confirmó que no quedó una ruta `.usm-restore-validation.20260826T042149Z.*` bajo `~/.config` y que la evidencia externa no contiene contenido, rutas internas, hashes por archivo ni frase. El manifest original se mantiene inmutable con `restore_status=pending`; la evidencia `40_RESTORE_EVIDENCE/restore_check_20260826T042149Z.txt` es la fuente de resultado del test. La limpieza por ruta sigue sin constituir una garantía de secure erase en `ext4`.
+
+## Restauración selectiva post-LUKS G-MIG-LUKS-1.7
+
+La migración a Xubuntu con LUKS quedó validada antes de conectar `Fernando`. El siguiente uso del ciphertext no repite la prueba histórica G-SEC-1A.3g: su finalidad es restituir selectivamente el entorno USM dentro del nuevo sistema cifrado. `restore_usm_post_luks_selective.sh` se creó como wrapper separado, con `--plan` predeterminado; su modo `--execute` exige una autorización explícita posterior y nunca recibe la frase por argumentos, archivos, variables de entorno, GitHub, Drive o chat.
+
+| Categoría del archive | Destino post-LUKS | Política de restauración |
+|---|---|---|
+| `universe-sent-me-growth-os` | Repositorio clonado desde GitHub en `~/universe-sent-me-growth-os` | **No se extrae desde el archive.** GitHub es la fuente canónica actual y evita retroceder documentación o código con un snapshot previo a LUKS. |
+| `bin` | `~/bin` | Se restaura solo si la ruta no existe aún. |
+| `.config/usm-metrics` | `~/.config/usm-metrics` | Se restaura solo si la ruta no existe aún y queda en el sistema LUKS. |
+| `.local/share/usm-metrics` | `~/.local/share/usm-metrics` | Se restaura solo si la ruta no existe aún y queda en el sistema LUKS. |
+| `omniroute-pilot` | `~/omniroute-pilot` | Se restaura solo si la ruta no existe aún; no inicia Docker, OmniRoute ni flujos automáticos. |
+
+El wrapper valida antes el mount de `Fernando`, la etiqueta `vfat`, las cinco piezas del árbol, el manifest permitido y el SHA-256 del ciphertext. Después de la aprobación G-MIG-LUKS-1.7b, descifra por streaming hacia un staging privado con `umask 077` y modo `0700` dentro de `~/.config`, extrae solamente las cuatro rutas aprobadas y verifica el checksum del ciphertext de nuevo. Solo si el staging está completo y los destinos siguen ausentes, mueve las rutas al `$HOME` del sistema ya cifrado. No escribe en el disco externo, no modifica el ciphertext, no restaura el clon viejo del repositorio y elimina el staging al terminar.
+
+La frase `age` solo se ingresará de forma interactiva en la terminal local. El plaintext temporal y las rutas restauradas permanecen dentro del volumen LUKS activo; no se usan `/tmp`, el disco externo, Drive, GitHub, Sheets, OmniRoute ni otras marcas. La limpieza por ruta del staging no equivale a secure erase, pero el destino subyacente ya está cifrado en reposo.
 
 ## Referencias
 
