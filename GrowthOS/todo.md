@@ -367,3 +367,9 @@ organization: "GrowthOS"
 - [x] Comparar la tarjeta `USM-CONSENT-20260827-01` con la propuesta `USM-GSEC2-4C-PREAL-20260827-01` y la plantilla vigente.
 - [x] Cambiar la tarjeta a `Review`; coincidieron ventana, cuentas, métricas, exclusiones, revocación y salida en el plano documental.
 - [x] Mantener el consentimiento como no emitido; no iniciar operación, OAuth/API, collectors ni preflight real.
+
+## G-SEC-2.4f — Aprobación puntual recibida, ejecución aún bloqueada — 2026-08-27
+
+- [x] Registrar la aprobación explícita de `USM-CONSENT-20260827-01` como `approved_for_next_gate_only`, sin convertirla en permiso de ejecución inmediata.
+- [ ] Preparar el siguiente gate de preflight operativo read-only, manteniendo la captura detenida.
+- [x] No ejecutar preflight, collectors, OAuth/API, consultas de plataforma ni recibir métricas hasta una autorización separada.

@@ -4,7 +4,7 @@ purpose: "Preparar, sin emitir, una tarjeta de consentimiento granular para una 
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Propuesta_Real_Minima_Una_Operacion_GSEC2_4c_USM.md"
@@ -110,11 +110,17 @@ Fernando revisó la tarjeta `USM-CONSENT-20260827-01` contra la propuesta `USM-G
 
 El dictamen es `consent_card_scope_compatible_for_separate_approval`. La tarjeta pasa de `Draft` a `Review`, pero no se emite consentimiento ni se autoriza una operación. Las condiciones de retención, método, vigencia y salida siguen sujetas a gates posteriores.
 
+## Aprobación humana puntual recibida — 2026-08-27
+
+Fernando aprobó explícitamente esta tarjeta exacta para continuar únicamente al siguiente gate, repitiendo la referencia, la ventana UTC, las cuatro cuentas y métricas, el límite de una sola operación, la prohibición de egress, la retención máxima de 30 días y la revocación. La aprobación incluyó expresamente: **no ejecutar todavía**.
+
+El alcance de la aprobación queda clasificado como `approved_for_next_gate_only`. No se interpreta como autorización para ejecutar preflight, consultar plataformas, abrir OAuth/API, iniciar collectors, recibir métricas, escribir evidencia o activar G-NORM-4R. La tarjeta conserva las mismas condiciones y no se permite ampliarla.
+
 ## Estado y siguiente gate permitido
 
-Esta tarjeta permanece en **`Review`** y no ha sido emitida. La siguiente acción permitida es presentar, en una acción separada y solo si se desea, una solicitud humana de consentimiento para esta tarjeta exacta. La presentación de la tarjeta no debe ocurrir junto con un preflight, una lectura de plataforma o una ejecución de collector.
+Esta tarjeta permanece en **`Review`**, con aprobación puntual registrada para continuar al siguiente gate, pero no ha sido emitida como permiso de ejecución. La siguiente acción permitida es preparar el preflight operativo read-only en un documento separado. La preparación no debe combinarse con una lectura de plataforma o una ejecución de collector.
 
-No se ha ejecutado ninguna lectura, no se han consultado cuentas, no se han abierto tokens ni configuraciones y no se ha autorizado la recepción de métricas reales.
+No se ha ejecutado ninguna lectura, no se han consultado cuentas, no se han abierto tokens ni configuraciones y no se ha autorizado todavía la recepción de métricas reales.
 
 ## Referencias
 

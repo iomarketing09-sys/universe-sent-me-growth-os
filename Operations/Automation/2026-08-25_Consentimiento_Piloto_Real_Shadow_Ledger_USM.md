@@ -4,7 +4,7 @@ purpose: "Definir los controles separados que deben diseñarse, revisarse y apro
 status: Review
 created: 2026-08-25
 updated: 2026-08-27
-version: "5.4"
+version: "5.5"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
@@ -71,7 +71,7 @@ El resultado esperado de este gate es un paquete de decisiones verificables, no 
 
 La propuesta `USM-GSEC2-4C-PREAL-20260827-01` quedó documentada en `2026-08-27_Propuesta_Real_Minima_Una_Operacion_GSEC2_4c_USM.md` v1.1 como un diseño concreto pero no emitido. Define una finalidad única, máximo cuatro observaciones no financieras, una métrica nativa por plataforma, una ventana cerrada pendiente de fijar en una tarjeta posterior, método manual local read-only, salida agregada segura y exclusiones estrictas. Su revisión humana independiente confirmó compatibilidad documental de sus diez controles y la elevó a `Review`; no completa la ficha de consentimiento, no solicita aprobación y no autoriza acceso real.
 
-La tarjeta de consentimiento puntual sigue siendo un gate separado y todavía no se ha emitido. Se preparó en `Draft` la tarjeta `2026-08-27_Tarjeta_Consentimiento_Puntual_Draft_USM-GSEC2-4C-PREAL-20260827-01.md`, con ventana candidata `2026-08-28T00:00:00Z`–`2026-08-28T23:59:59Z` y las cuatro cuentas objetivo documentales. La tarjeta no solicita aprobación ni habilita acceso. G-NORM-4R, datos reales, red, OAuth/API y collectors permanecen bloqueados.
+La tarjeta de consentimiento puntual `USM-CONSENT-20260827-01` está en `Review` v1.2. Fernando aprobó explícitamente continuar únicamente al siguiente gate, con la ventana `2026-08-28T00:00:00Z`–`2026-08-28T23:59:59Z` y las cuatro cuentas objetivo documentales, indicando expresamente no ejecutar todavía. Esta aprobación no habilita preflight, acceso, OAuth/API, collectors, captura de métricas ni G-NORM-4R. G-NORM-4R, datos reales, red y collectors permanecen bloqueados.
 
 ## Brechas vigentes antes de recibir métricas reales
 

@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.95
+**Versión:** 5.96
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.96.00] — 2026-08-27 (Fernando/Manus): aprobación puntual recibida únicamente para continuar al siguiente gate.** Fernando aprobó expresamente la tarjeta exacta `USM-CONSENT-20260827-01` dentro de la ventana `2026-08-28T00:00:00Z`–`2026-08-28T23:59:59Z`, limitada a las cuatro cuentas y métricas documentadas, sin egress, con retención máxima de 30 días y revocación posible. La decisión se clasifica como `approved_for_next_gate_only` e incluye la instrucción expresa **no ejecutar todavía**. No se ejecutó preflight, no se consultaron plataformas, no se abrieron tokens, no se inició OAuth/API ni collectors y G-NORM-4R continúa bloqueado.
 
 - **[5.95.00] — 2026-08-27 (Fernando/Manus): revisión humana independiente de la tarjeta puntual completada.** Fernando comparó `USM-CONSENT-20260827-01` con la propuesta y la plantilla vigente. El dictamen documental fue `consent_card_scope_compatible_for_separate_approval`, por lo que la tarjeta pasa de `Draft` a `Review` v1.1. Se confirmaron la ventana UTC `2026-08-28T00:00:00Z`–`2026-08-28T23:59:59Z`, las cuatro cuentas exactas, las cuatro métricas, las exclusiones, la revocación y la salida agregada. No se emitió consentimiento, no se ejecutó preflight ni se abrió ningún dato, red, OAuth/API o collector. G-NORM-4R continúa bloqueado.
 
