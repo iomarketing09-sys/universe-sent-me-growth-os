@@ -3,8 +3,8 @@ title: "Auditoría de comentarios de Facebook y propuesta de Community Growth"
 purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y definir un sistema de escucha, respuesta y aprendizaje para Universe Sent Me."
 status: Active
 created: 2026-08-15
-updated: 2026-08-26
-version: "8.2"
+updated: 2026-08-27
+version: "8.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -1552,3 +1552,15 @@ El auditor reusable revisó 20 publicaciones propias con cursor `2026-08-26T18:1
 | Lenguaje íntimo/ambiguo | 2 | `No_Requiere_Respuesta`; no escalar ni competir desde la Página. |
 
 El ledger pasó a **649 filas / 649 IDs únicos — PASS**. La cola mantiene la propuesta de Kael y los 2 casos de contexto previos; ninguna aprobación previa fue reutilizada. Evidencia: `Operations/Research/2026-08-27_01-39-36_Facebook_Comment_Review_GET_Only.json`, `Operations/Research/2026-08-27_01-39-36_Facebook_Editorial_Review_GET_Only.json`, `Operations/Research/2026-08-27_01-39-36_Facebook_Comment_Review_Report.md` y `Operations/Research/2026-08-27_01-39-36_Facebook_Pending_Queue_GET_Only.json`.
+
+## 61. Publicación verificada de la propuesta de Kael — 27 de agosto de 2026
+
+Fernando autorizó explícitamente publicar únicamente la respuesta propuesta para el comentario estructural `122151377109072582_903939745742789`. El preflight GET mediante Meta Graph API v26.0 confirmó el texto objetivo, `parent=null`, `is_hidden=false`, cero respuestas directas y ausencia de conflictos.
+
+Se ejecutó exactamente un POST con la respuesta `Kael lo tiene claro: no toda opinión merece convertirse en insomnio. 😈🌙`. Meta devolvió `122151377109072582_28294138936939332`. La verificación posterior confirmó autoría de la Página `1036844829507460`, coincidencia exacta del texto, padre `122151377109072582_903939745742789` e `is_hidden=false`. El ledger quedó actualizado a `Respondido` con aprobación `Aprobada`; la cola quedó con 0 propuestas pendientes y conserva los 2 casos `Revisar_Contexto`.
+
+Los dos comentarios con lenguaje íntimo permanecen sin respuesta y sin modificación: `A darme mi dotación de nalgadas jajajajaja` en `👻 #UniverseSentMe`, y `Pero con cuidado que luego es difícil de limpiar` en `Wilfred sabe. 🌲 #UniverseSentMe`. Ambos carecen de una solicitud inequívoca dirigida a la Página; por ello se mantiene la regla de no escalar ni competir desde USM.
+
+**Evidencia:** `Operations/Research/2026-08-27_01-56-42_Facebook_Kael_Publication_Preflight.json`, `Operations/Research/2026-08-27_01-56-42_Facebook_Kael_Publication.json`, `Operations/Research/2026-08-27_01-56-42_Facebook_Kael_Publication_Record.json`, `Operations/Research/2026-08-27_01-56-42_Facebook_Kael_Publication_Record.md`, `Operations/Research/2026-08-27_01-56-42_Facebook_Pending_Queue_After_Kael_Publication.json` y `Operations/Research/2026-08-15_Community_Engagement_Log.csv`.
+
+**Coherencia requerida:** esta actualización también se reflejó en `Operations/Research/2026-08-15_Community_Engagement_Log.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.

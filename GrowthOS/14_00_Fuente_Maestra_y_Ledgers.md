@@ -3,8 +3,8 @@ title: "Fuente maestra y ledgers del Growth OS"
 purpose: "Definir una arquitectura mínima y unificada para que inventario, publicaciones, calendarios y aprendizaje compartan IDs sin duplicar datos ni repetir consultas innecesarias."
 status: Active
 created: 2026-08-15
-updated: 2026-08-26
-version: "2.77"
+updated: 2026-08-27
+version: "2.78"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -659,3 +659,13 @@ El auditor reusable usó el cursor `2026-08-26T18:15:41+00:00` y revisó 20 publ
 Solo se generó una propuesta: `Kael lo tiene claro: no toda opinión merece convertirse en insomnio. 😈🌙`, en estado `Pendiente_Fernando`. Los cuatro casos restantes quedaron `No_Requiere_Respuesta`. El ledger quedó en **649 filas / 649 IDs únicos — PASS** y la cola conserva la propuesta y los 2 casos de contexto previos. No hubo réplicas nuevas, errores ni escrituras en Meta.
 
 **Evidencia:** `Operations/Research/2026-08-27_01-39-36_Facebook_Comment_Review_GET_Only.json`, `Operations/Research/2026-08-27_01-39-36_Facebook_Editorial_Review_GET_Only.json`, `Operations/Research/2026-08-27_01-39-36_Facebook_Comment_Review_Report.md` y `Operations/Research/2026-08-27_01-39-36_Facebook_Pending_Queue_GET_Only.json`.
+
+## 40. Publicación verificada y cierre de cola de Kael — 27 de agosto de 2026
+
+El comentario raíz `122151377109072582_903939745742789` fue publicado únicamente después de la autorización explícita de Fernando. El preflight confirmó `parent=null`, `is_hidden=false`, cero respuestas directas y ausencia de conflicto. La respuesta publicada fue `Kael lo tiene claro: no toda opinión merece convertirse en insomnio. 😈🌙`.
+
+La verificación posterior confirmó el Meta ID `122151377109072582_28294138936939332`, autoría de la Página `1036844829507460`, texto exacto, padre correcto e `is_hidden=false`. El ledger fuente `Operations/Research/2026-08-15_Community_Engagement_Log.csv` quedó en **649 filas / 649 IDs únicos — PASS**, con el registro de Kael en `Respondido`, y la cola derivada quedó en 0 propuestas pendientes.
+
+Los dos comentarios de lenguaje íntimo se mantienen como `No_Requiere_Respuesta`; la Página no escala ni compite con lenguaje íntimo o ambiguo sin solicitud inequívoca. La publicación no modifica esta regla ni autoriza respuestas retroactivas.
+
+**Evidencia relacionada:** `Operations/Research/2026-08-27_01-56-42_Facebook_Kael_Publication_Preflight.json`, `Operations/Research/2026-08-27_01-56-42_Facebook_Kael_Publication.json`, `Operations/Research/2026-08-27_01-56-42_Facebook_Kael_Publication_Record.json`, `Operations/Research/2026-08-27_01-56-42_Facebook_Pending_Queue_After_Kael_Publication.json`, `Operations/Research/2026-08-15_Community_Engagement_Log.md` y `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`.

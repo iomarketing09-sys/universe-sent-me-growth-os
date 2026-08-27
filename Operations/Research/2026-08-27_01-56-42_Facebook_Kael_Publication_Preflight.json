@@ -1,0 +1,32 @@
+{
+  "title": "Facebook Kael Reply — publication preflight",
+  "purpose": "Registrar la autorización explícita y las comprobaciones GET previas a publicar exactamente una respuesta en el comentario de Kael.",
+  "status": "Active",
+  "created_at": "2026-08-27T01:56:42+00:00",
+  "updated_at": "2026-08-27T01:56:42+00:00",
+  "version": "1.0",
+  "author": "Manus AI",
+  "related_documents": [
+    "Operations/Research/2026-08-27_01-56-42_Facebook_Kael_Publication.json",
+    "Operations/Research/2026-08-27_01-56-42_Facebook_Kael_Publication_Record.json",
+    "Operations/Research/2026-08-27_01-56-42_Facebook_Kael_Publication_Record.md",
+    "Operations/Research/2026-08-27_01-56-42_Facebook_Pending_Queue_After_Kael_Publication.json",
+    "Operations/Research/2026-08-27_01-39-36_Facebook_Editorial_Review_GET_Only.json",
+    "Operations/Research/2026-08-27_01-39-36_Facebook_Comment_Review_GET_Only.json",
+    "Operations/Research/2026-08-15_Community_Engagement_Log.csv"
+  ],
+  "organization": "Operations/Research",
+  "source": "Meta Graph API v26.0",
+  "page_id": "1036844829507460",
+  "explicit_user_approval": true,
+  "target_comment_id": "122151377109072582_903939745742789",
+  "target_post_id": "1036844829507460_122151377109072582",
+  "target_comment_message": "Con gusto de ser el villano, igualmente hay pocas opiniones que realmente me quitan el sueño",
+  "target_parent_id": null,
+  "target_is_hidden": false,
+  "existing_direct_reply_count_before": 0,
+  "conflict_detected": false,
+  "reply_text_approved": "Kael lo tiene claro: no toda opinión merece convertirse en insomnio. 😈🌙",
+  "scope": "Solo el comentario objetivo; no se incluyeron otros candidatos.",
+  "preflight_result": "PASS"
+}
