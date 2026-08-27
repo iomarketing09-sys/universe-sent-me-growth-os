@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.79
+**Versión:** 5.80
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.80.00] — 2026-08-27 (Fernando/Manus): revisión humana del contrato de código público G-SEC-2.11 confirmada.** Fernando confirmó la arquitectura separada, la interfaz conceptual, el flujo, los invariantes, los límites de pruebas y las prohibiciones. `2026-08-27_Contrato_Artefacto_Codigo_Publico_Verificador_Minimo_GSEC2_11_USM.md` pasa de `Draft` a `Review`. La revisión valida únicamente el contrato: no creó código, no registró nombres reales, no seleccionó comandos y no observó servicios, collectors, procesos, red, puertos, datos, configuración o rutas privadas. Una futura propuesta para crear un núcleo de política como archivo público requerirá autorización nueva y, aun creada, no podrá compilarse, probarse ni ejecutarse sin autorizaciones posteriores separadas.
 
 - **[5.79.00] — 2026-08-27 (Fernando/Manus): contrato no ejecutable del artefacto público G-SEC-2.11 diseñado.** Se creó `2026-08-27_Contrato_Artefacto_Codigo_Publico_Verificador_Minimo_GSEC2_11_USM.md` v1.0 en `Draft`. El contrato separa un núcleo puro de política de cualquier adaptador o interfaz de ejecución, que permanecen fuera de alcance. Define interfaz conceptual, flujo lógico de cinco pasos, invariantes estáticas, límites sintéticos y prohibiciones de código, componentes reales, red, datos, privilegios, persistencia y pruebas sobre el sistema. No se crearon archivos de código, no se registraron nombres y no se analizó el equipo. La siguiente acción permitida es revisar el contrato documental.
 

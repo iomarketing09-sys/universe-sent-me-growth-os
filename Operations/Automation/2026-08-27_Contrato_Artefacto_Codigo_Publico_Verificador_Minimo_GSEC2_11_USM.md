@@ -1,10 +1,10 @@
 ---
 title: "Contrato no ejecutable del artefacto de código público G-SEC-2.11 — Universe Sent Me"
 purpose: "Definir la arquitectura lógica, las interfaces conceptuales, las validaciones y los bloqueos verificables de un futuro artefacto de código público para G-SEC-2.11, sin crear archivos de código, registrar componentes ni observar el sistema."
-status: Draft
+status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Especificacion_Estatica_Verificador_Minimo_GSEC2_11_USM.md"
@@ -24,7 +24,15 @@ Este documento define cómo tendría que estructurarse un posible artefacto de c
 
 > **Límite decisivo:** el artefacto futuro solo podría aplicar reglas sobre una entrada efímera ya autorizada. No puede descubrir nombres, inventariar el equipo, buscar collectors genéricos, interpretar argumentos ni proporcionar por sí mismo una autorización de ejecución.
 
-Mientras este contrato esté en `Draft`, no existe ningún archivo de código autorizado ni una interfaz permitida para observar el sistema.
+Este contrato está en `Review`, pero no existe ningún archivo de código autorizado ni una interfaz permitida para observar el sistema.
+
+## Registro de revisión humana independiente
+
+Fernando confirmó la arquitectura separada, la interfaz conceptual, el flujo, los invariantes, los límites de pruebas y las prohibiciones. Como resultado, este contrato pasa de `Draft` a `Review`.
+
+> **Alcance confirmado:** la revisión valida solo el contrato documental. No crea código, no registra nombres reales, no selecciona comandos y no consulta servicios, collectors, procesos, red, puertos, datos, configuración o rutas privadas.
+
+Para mantener la coherencia, esta revisión actualiza la especificación estática, G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2, G-SEC-2.8 y G-SEC-2.10 conservan sus estados y prohibiciones sin cambios.
 
 ## Arquitectura lógica mínima
 
@@ -103,9 +111,9 @@ No cambia G-SEC-2 de `Review`, no inicia una fase operativa y no desbloquea G-NO
 
 ## Estado y siguiente acción permitida
 
-Este contrato está en `Draft`. La siguiente acción permitida es una **revisión humana independiente del contrato de código**: arquitectura separada, interfaz conceptual, flujo de cinco pasos, invariantes verificables, límites de pruebas y prohibiciones. Esa revisión solo podría cambiar este documento a `Review`; no creará código, no registrará nombres reales, no seleccionará comandos y no analizará el sistema.
+Este contrato está en `Review`. No crea código, no registra nombres reales, no selecciona comandos y no analiza el sistema. Si en el futuro existe una necesidad concreta, cualquier propuesta para crear un núcleo de política como archivo público requerirá una autorización humana nueva y específica; dicha creación no autorizaría compilarlo, probarlo ni ejecutarlo.
 
-Para conservar coherencia, este diseño actualiza la especificación estática, G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2, G-SEC-2.8 y G-SEC-2.10 no requieren cambio de estado porque sus límites continúan vigentes.
+Para conservar coherencia, el estado `Review` se refleja en la especificación estática, G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2, G-SEC-2.8 y G-SEC-2.10 no requieren cambio de estado porque sus límites continúan vigentes.
 
 ## Referencias
 

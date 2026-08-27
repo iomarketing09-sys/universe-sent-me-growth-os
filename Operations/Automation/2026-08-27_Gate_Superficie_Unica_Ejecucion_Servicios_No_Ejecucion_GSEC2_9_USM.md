@@ -4,7 +4,7 @@ purpose: "Definir el diseño de una futura comprobación pasiva de una única su
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.7"
+version: "1.8"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Gate_Analisis_Documental_Superficie_Ejecucion_No_Ejecucion_GSEC2_10_USM.md"
@@ -85,7 +85,7 @@ G-SEC-2.10 fue revisado como `2026-08-27_Gate_Analisis_Documental_Superficie_Eje
 
 G-SEC-2.11 fue revisado como `2026-08-27_Gate_Tecnico_Pasivo_Observacion_Real_Minima_GSEC2_11_USM.md` v1.2 en `Review`; confirmó solo la superficie mínima, los nombres registrables, las salidas agregadas y la detención fail-closed. No creó un verificador ni observó el sistema.
 
-La especificación pública `2026-08-27_Especificacion_Estatica_Verificador_Minimo_GSEC2_11_USM.md` v1.2 está en `Review`; mantiene el registro vacío por defecto, una sola pasada y la exclusión de datos, red, argumentos, rutas, daemons, privilegios, persistencia y automatización. El contrato de código público `2026-08-27_Contrato_Artefacto_Codigo_Publico_Verificador_Minimo_GSEC2_11_USM.md` v1.0 se diseñó en `Draft`. La siguiente acción permitida es revisar ese contrato; no se puede crear ni ejecutar código, registrar nombres reales, realizar una comprobación, emitir tarjeta, solicitar consentimiento operativo o habilitar G-NORM-4R sin una autorización humana nueva.
+La especificación pública `2026-08-27_Especificacion_Estatica_Verificador_Minimo_GSEC2_11_USM.md` v1.3 y el contrato de código público `2026-08-27_Contrato_Artefacto_Codigo_Publico_Verificador_Minimo_GSEC2_11_USM.md` v1.1 están en `Review`; mantienen el registro vacío por defecto, una sola pasada y la exclusión de datos, red, argumentos, rutas, daemons, privilegios, persistencia y automatización. Cualquier propuesta de creación de un núcleo de política como archivo público requerirá una autorización humana nueva; no se puede crear ni ejecutar código, registrar nombres reales, realizar una comprobación, emitir tarjeta, solicitar consentimiento operativo o habilitar G-NORM-4R sin autorizaciones posteriores separadas.
 
 ## Referencias
 

@@ -4,7 +4,7 @@ purpose: "Definir, sin crear código ni ejecutar consultas, la interfaz pública
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.2"
+version: "1.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Gate_Tecnico_Pasivo_Observacion_Real_Minima_GSEC2_11_USM.md"
@@ -107,7 +107,7 @@ No crea archivos, scripts, logs, capturas, hashes, ledger, reportes, copias, cac
 
 ## Estado y siguiente acción permitida
 
-Esta especificación está en `Review`. No autoriza crear código, registrar nombres reales, observar el sistema, usar datos, abrir red ni habilitar G-NORM-4R. Se diseñó en `Draft` el contrato `2026-08-27_Contrato_Artefacto_Codigo_Publico_Verificador_Minimo_GSEC2_11_USM.md` v1.0 para un posible artefacto de código público. La siguiente acción permitida es revisar ese contrato; su revisión no creará código ni autorizará ejecución.
+Esta especificación está en `Review`. No autoriza crear código, registrar nombres reales, observar el sistema, usar datos, abrir red ni habilitar G-NORM-4R. El contrato `2026-08-27_Contrato_Artefacto_Codigo_Publico_Verificador_Minimo_GSEC2_11_USM.md` v1.1 fue revisado y está en `Review`; no creó código ni autorizó ejecución. Cualquier propuesta para crear un núcleo de política como archivo público requiere una autorización humana nueva y específica.
 
 Para conservar coherencia, el estado `Review` se refleja en G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2, G-SEC-2.8 y G-SEC-2.10 no requieren cambio de estado porque sus límites siguen sin alteración.
 
