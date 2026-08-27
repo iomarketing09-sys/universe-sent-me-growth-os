@@ -4,7 +4,7 @@ purpose: "Definir una arquitectura mínima y unificada para que inventario, publ
 status: Active
 created: 2026-08-15
 updated: 2026-08-26
-version: "2.76"
+version: "2.77"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/01_00_Arquitectura_Calendario_Escalable.md"
@@ -650,3 +650,12 @@ Las cuatro propuestas de re-engagement de baja señal fueron aprobadas explícit
 El ledger conserva **644 filas / 644 IDs únicos**, validación `PASS`, y las cuatro filas pasaron a `Respondido` con sus IDs Meta y timestamps. La cola de baja señal quedó en **0 propuestas pendientes**. Los 2 comentarios con lenguaje íntimo, los 2 casos de contexto y las 5 no acciones restantes permanecen fuera de publicación.
 
 **Evidencia:** `Operations/Research/2026-08-26_18-44-00_Facebook_Low_Signal_Publication.json`, `Operations/Research/2026-08-26_18-49-09_Facebook_Low_Signal_Publication_Record.json/.md` y `Operations/Research/2026-08-26_18-49-09_Facebook_Pending_Queue_After_Low_Signal_Publication.json`.
+
+
+## 39. Corte Facebook GET-only — 27 de agosto de 2026
+
+El auditor reusable usó el cursor `2026-08-26T18:15:41+00:00` y revisó 20 publicaciones propias. Se detectaron 5 IDs nuevos sin respuesta, todos comentarios raíz: 2 vacíos, 2 de lenguaje íntimo/ambiguo y 1 reflexión contextual sobre Kael.
+
+Solo se generó una propuesta: `Kael lo tiene claro: no toda opinión merece convertirse en insomnio. 😈🌙`, en estado `Pendiente_Fernando`. Los cuatro casos restantes quedaron `No_Requiere_Respuesta`. El ledger quedó en **649 filas / 649 IDs únicos — PASS** y la cola conserva la propuesta y los 2 casos de contexto previos. No hubo réplicas nuevas, errores ni escrituras en Meta.
+
+**Evidencia:** `Operations/Research/2026-08-27_01-39-36_Facebook_Comment_Review_GET_Only.json`, `Operations/Research/2026-08-27_01-39-36_Facebook_Editorial_Review_GET_Only.json`, `Operations/Research/2026-08-27_01-39-36_Facebook_Comment_Review_Report.md` y `Operations/Research/2026-08-27_01-39-36_Facebook_Pending_Queue_GET_Only.json`.

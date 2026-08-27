@@ -4,7 +4,7 @@ purpose: "Verificar los permisos reales de Meta para comentarios de Facebook y d
 status: Active
 created: 2026-08-15
 updated: 2026-08-26
-version: "8.1"
+version: "8.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md"
@@ -1539,3 +1539,16 @@ Fernando aprobó las cuatro respuestas de re-engagement. El preflight GET-only r
 Las cuatro respuestas fueron: `Jajaja, ese «ni voy» sonó a que de aquí no te mueve nadie. 😂`, `El universo confirmó que aquí nadie se escapa tan fácil. 👁️🔥`, `Ese «seeeee» sonó a confirmación oficial. 😂` y `Jajaja, el recuerdo llegó sin tocar la puerta. 😅`. Evidencia primaria: `Operations/Research/2026-08-26_18-44-00_Facebook_Low_Signal_Publication.json`; registro de cierre: `Operations/Research/2026-08-26_18-49-09_Facebook_Low_Signal_Publication_Record.json/.md`.
 
 El ledger quedó en **644 filas / 644 IDs únicos — PASS**, con las cuatro filas en `Respondido` y sus IDs de respuesta. La cola de propuestas de baja señal quedó en 0. Los dos comentarios con lenguaje íntimo, los dos casos de contexto y las cinco no acciones restantes no fueron respondidos ni modificados.
+
+
+## 60. Nuevo corte GET-only — 27 de agosto de 2026
+
+El auditor reusable revisó 20 publicaciones propias con cursor `2026-08-26T18:15:41+00:00` y corte `2026-08-27T01:39:36+00:00`. Meta devolvió **5 unidades nuevas sin respuesta**, todas comentarios raíz y ninguna réplica. No hubo errores de API ni escrituras.
+
+| Clasificación | Casos | Tratamiento |
+|---|---:|---|
+| Propuesta contextual | 1 | `Kael lo tiene claro: no toda opinión merece convertirse en insomnio. 😈🌙`; `Pendiente_Fernando`. |
+| Comentarios vacíos | 2 | `No_Requiere_Respuesta`; se conservaron sus IDs estructurales. |
+| Lenguaje íntimo/ambiguo | 2 | `No_Requiere_Respuesta`; no escalar ni competir desde la Página. |
+
+El ledger pasó a **649 filas / 649 IDs únicos — PASS**. La cola mantiene la propuesta de Kael y los 2 casos de contexto previos; ninguna aprobación previa fue reutilizada. Evidencia: `Operations/Research/2026-08-27_01-39-36_Facebook_Comment_Review_GET_Only.json`, `Operations/Research/2026-08-27_01-39-36_Facebook_Editorial_Review_GET_Only.json`, `Operations/Research/2026-08-27_01-39-36_Facebook_Comment_Review_Report.md` y `Operations/Research/2026-08-27_01-39-36_Facebook_Pending_Queue_GET_Only.json`.

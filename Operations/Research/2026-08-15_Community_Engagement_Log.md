@@ -4,7 +4,7 @@ purpose: "Registrar de forma ligera, append-only y anonimizada las señales cual
 status: Active
 created: 2026-08-15
 updated: 2026-08-26
-version: "7.6"
+version: "7.7"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md"
@@ -1042,5 +1042,18 @@ El registrador `Operations/Automation/record_low_signal_publication_2026_08_26.p
 Los 2 comentarios con lenguaje íntimo, los 2 casos de contexto y las 5 no acciones restantes no se respondieron ni se modificaron. No se publicó ninguna respuesta adicional.
 
 **Evidencia:** `Operations/Research/2026-08-26_18-44-00_Facebook_Low_Signal_Publication.json`, `Operations/Research/2026-08-26_18-49-09_Facebook_Low_Signal_Publication_Record.json/.md` y `Operations/Research/2026-08-26_18-49-09_Facebook_Pending_Queue_After_Low_Signal_Publication.json`.
+
+**Documentos relacionados:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
+
+
+## 44. Nuevo corte Facebook GET-only — 27 de agosto de 2026
+
+La revisión mediante Meta Graph API v26.0 se ejecutó a las `2026-08-27T01:39:36+00:00` con cursor `2026-08-26T18:15:41+00:00`. Se revisaron 20 publicaciones propias y se detectaron **5 IDs nuevos sin respuesta**, todos comentarios raíz: 2 vacíos, 2 con lenguaje íntimo/ambiguo y 1 reflexión contextual sobre Kael.
+
+La reflexión contextual recibió una única propuesta específica: `Kael lo tiene claro: no toda opinión merece convertirse en insomnio. 😈🌙`, con estado `Pendiente_Fernando`. Los otros 4 registros quedaron `No_Requiere_Respuesta`; no se generaron respuestas para los comentarios vacíos ni para los comentarios íntimos/ambiguos. No hubo réplicas nuevas, errores de API ni escrituras en Meta.
+
+El ledger pasó a **649 filas / 649 IDs únicos — PASS** y la cola conserva 1 propuesta pendiente, junto con los 2 casos de contexto previos. No se reutilizaron aprobaciones anteriores.
+
+**Evidencia:** `Operations/Research/2026-08-27_01-39-36_Facebook_Comment_Review_GET_Only.json`, `Operations/Research/2026-08-27_01-39-36_Facebook_Editorial_Review_GET_Only.json`, `Operations/Research/2026-08-27_01-39-36_Facebook_Comment_Review_Report.md` y `Operations/Research/2026-08-27_01-39-36_Facebook_Pending_Queue_GET_Only.json`.
 
 **Documentos relacionados:** `Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md` y `GrowthOS/00_01_Changelog_GrowthOS.md`.
