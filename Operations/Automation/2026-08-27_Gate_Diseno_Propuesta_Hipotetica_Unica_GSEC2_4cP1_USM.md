@@ -4,10 +4,11 @@ purpose: "Definir el control documental que, bajo una autorización posterior in
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Procedimiento_Preliminar_Propuesta_Minima_GSEC2_4c_USM.md"
+  - "Operations/Automation/2026-08-27_Gate_Formato_Vacio_Propuesta_Hipotetica_GSEC2_4cP2_USM.md"
   - "Operations/Automation/2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md"
   - "Operations/Automation/2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md"
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -91,7 +92,7 @@ Fernando confirmó que comprende el gate de diseño, la operación única hipot�
 
 G-SEC-2 permanece en `Review` y G-NORM-4R sigue bloqueado. No se abrieron datos, rutas privadas, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salida externa.
 
-La siguiente acción posible requiere una autorización nueva y explícita para diseñar un gate documental posterior sobre el **formato vacío** de una propuesta hipotética. Hasta que tal gate exista y sea aprobado, no se puede crear, copiar o completar una propuesta, una tarjeta, una vigencia o una solicitud de consentimiento.
+El gate G-SEC-2.4c-P.2 fue diseñado en `Draft` como `2026-08-27_Gate_Formato_Vacio_Propuesta_Hipotetica_GSEC2_4cP2_USM.md` v1.0 junto con un formato vacío relacionado. La siguiente acción permitida es revisar ese gate y el formato, sin crear, copiar o completar una propuesta, una tarjeta, una vigencia o una solicitud de consentimiento.
 
 ## Referencias
 
