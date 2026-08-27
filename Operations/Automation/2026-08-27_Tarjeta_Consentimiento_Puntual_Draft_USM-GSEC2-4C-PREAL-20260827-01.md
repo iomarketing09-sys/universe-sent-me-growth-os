@@ -1,10 +1,10 @@
 ---
-title: "Tarjeta de consentimiento puntual Draft — USM-GSEC2-4C-PREAL-20260827-01"
+title: "Tarjeta de consentimiento puntual en Review — USM-GSEC2-4C-PREAL-20260827-01"
 purpose: "Preparar, sin emitir, una tarjeta de consentimiento granular para una única operación manual read-only de Universe Sent Me, con ventana UTC y cuentas objetivo exactas."
-status: Draft
+status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Propuesta_Real_Minima_Una_Operacion_GSEC2_4c_USM.md"
@@ -16,11 +16,11 @@ related_documents:
 organization: "Operations/Automation"
 ---
 
-# Tarjeta de consentimiento puntual Draft
+# Tarjeta de consentimiento puntual en Review
 
 ## Estado y frontera
 
-Esta tarjeta es una **preparación documental en estado `Draft`**. Fija un alcance candidato, una ventana UTC y las cuentas públicas objetivo para facilitar una revisión posterior. **No es consentimiento, no ha sido presentada para aprobación y no autoriza ninguna operación.**
+Esta tarjeta es una **preparación documental en estado `Review`**. La revisión humana independiente confirmó la coherencia documental de su alcance, ventana UTC, cuentas objetivo y controles. **No es consentimiento, no ha sido presentada para aprobación y no autoriza ninguna operación.**
 
 No se deben abrir datos, leer tokens, iniciar OAuth, llamar APIs, ejecutar collectors, comprobar vigencia de credenciales, crear evidencia real o escribir un ledger. G-SEC-2 permanece en `Review` y G-NORM-4R continúa bloqueado.
 
@@ -28,7 +28,7 @@ No se deben abrir datos, leer tokens, iniciar OAuth, llamar APIs, ejecutar colle
 
 ## Identificación de la solicitud futura
 
-| Campo | Valor Draft | Estado |
+| Campo | Valor revisado | Estado |
 |---|---|---|
 | Referencia de propuesta | `USM-GSEC2-4C-PREAL-20260827-01` | Coincide con la propuesta en `Review`. |
 | Referencia de tarjeta | `USM-CONSENT-20260827-01` | Identificador de esta tarjeta; no es un permiso. |
@@ -79,7 +79,7 @@ La salida permitida sería exclusivamente un resumen agregado seguro: estado PAS
 
 ## Checklist de compatibilidad de la tarjeta
 
-| Control | Resultado de esta tarjeta Draft | Condición antes de cualquier operación |
+| Control | Resultado documental revisado | Condición antes de cualquier operación |
 |---|---|---|
 | Propuesta de referencia | Compatible en diseño | Mantener la referencia exacta. |
 | Marca | Compatible | Confirmar solo Universe Sent Me. |
@@ -104,9 +104,15 @@ El proceso debe bloquearse si una cuenta no coincide exactamente, si la ventana 
 
 El estado de bloqueo obligatorio es `consent_scope_mismatch`. No se debe corregir improvisando, ampliar la tarjeta, consultar la plataforma o convertir una aprobación anterior en consentimiento vigente.
 
+## Registro de revisión humana independiente — 2026-08-27
+
+Fernando revisó la tarjeta `USM-CONSENT-20260827-01` contra la propuesta `USM-GSEC2-4C-PREAL-20260827-01` y la plantilla vigente. Confirmó la coincidencia documental de la finalidad, marca, muestra máxima de cuatro observaciones, métricas, exclusiones, retención propuesta, método read-only, egress, ventana UTC, revocación y salida agregada. También confirmó que la ventana `2026-08-28T00:00:00Z`–`2026-08-28T23:59:59Z` y las cuatro cuentas objetivo están fijadas sin permitir sustituciones ni ampliaciones.
+
+El dictamen es `consent_card_scope_compatible_for_separate_approval`. La tarjeta pasa de `Draft` a `Review`, pero no se emite consentimiento ni se autoriza una operación. Las condiciones de retención, método, vigencia y salida siguen sujetas a gates posteriores.
+
 ## Estado y siguiente gate permitido
 
-Esta tarjeta permanece en **`Draft`** y no ha sido emitida. La siguiente acción permitida es una revisión humana independiente de la coincidencia entre esta tarjeta y la propuesta `USM-GSEC2-4C-PREAL-20260827-01`. Después de esa revisión, la tarjeta podría pasar a `Review` o bloquearse; solo un paso posterior y separado podría solicitar consentimiento.
+Esta tarjeta permanece en **`Review`** y no ha sido emitida. La siguiente acción permitida es presentar, en una acción separada y solo si se desea, una solicitud humana de consentimiento para esta tarjeta exacta. La presentación de la tarjeta no debe ocurrir junto con un preflight, una lectura de plataforma o una ejecución de collector.
 
 No se ha ejecutado ninguna lectura, no se han consultado cuentas, no se han abierto tokens ni configuraciones y no se ha autorizado la recepción de métricas reales.
 

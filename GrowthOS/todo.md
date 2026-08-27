@@ -361,3 +361,9 @@ organization: "GrowthOS"
 - [x] Mantener la tarjeta en `Draft`; no emitirla, solicitar consentimiento ni ejecutar acceso real.
 - [ ] Revisar que la tarjeta coincida exactamente con la propuesta `USM-GSEC2-4C-PREAL-20260827-01`.
 - [x] Mantener bloqueados datos reales, red, OAuth/API, collectors, persistencia y G-NORM-4R.
+
+## G-SEC-2.4e — Revisión independiente de tarjeta puntual — 2026-08-27
+
+- [x] Comparar la tarjeta `USM-CONSENT-20260827-01` con la propuesta `USM-GSEC2-4C-PREAL-20260827-01` y la plantilla vigente.
+- [x] Cambiar la tarjeta a `Review`; coincidieron ventana, cuentas, métricas, exclusiones, revocación y salida en el plano documental.
+- [x] Mantener el consentimiento como no emitido; no iniciar operación, OAuth/API, collectors ni preflight real.

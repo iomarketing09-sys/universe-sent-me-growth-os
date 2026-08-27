@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.94
+**Versión:** 5.95
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.95.00] — 2026-08-27 (Fernando/Manus): revisión humana independiente de la tarjeta puntual completada.** Fernando comparó `USM-CONSENT-20260827-01` con la propuesta y la plantilla vigente. El dictamen documental fue `consent_card_scope_compatible_for_separate_approval`, por lo que la tarjeta pasa de `Draft` a `Review` v1.1. Se confirmaron la ventana UTC `2026-08-28T00:00:00Z`–`2026-08-28T23:59:59Z`, las cuatro cuentas exactas, las cuatro métricas, las exclusiones, la revocación y la salida agregada. No se emitió consentimiento, no se ejecutó preflight ni se abrió ningún dato, red, OAuth/API o collector. G-NORM-4R continúa bloqueado.
 
 - **[5.94.00] — 2026-08-27 (Fernando/Manus): tarjeta de consentimiento puntual redactada en Draft, sin emisión.** Se creó `2026-08-27_Tarjeta_Consentimiento_Puntual_Draft_USM-GSEC2-4C-PREAL-20260827-01.md` v1.0, con referencia `USM-CONSENT-20260827-01`, ventana candidata `2026-08-28T00:00:00Z`–`2026-08-28T23:59:59Z` y las cuentas documentales de TikTok `universe.sent.me`, YouTube `@Universe_Sent_Me`, Facebook Page ID `1036844829507460` e Instagram `@universe_sent_me_0326`. La tarjeta limita la operación a cuatro observaciones y sus métricas aprobadas. No se emitió consentimiento, no se solicitaron aprobaciones, no se abrieron datos, red, OAuth/API o collectors y G-NORM-4R continúa bloqueado.
 
