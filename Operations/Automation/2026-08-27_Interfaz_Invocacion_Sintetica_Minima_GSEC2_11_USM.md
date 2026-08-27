@@ -1,10 +1,10 @@
 ---
 title: "Interfaz de invocación sintética mínima G-SEC-2.11 — Universe Sent Me"
 purpose: "Definir la interfaz documental, pública y no ejecutable para una única llamada sintética y efímera al runner G-SEC-2.11, sin crear código, importar módulos, registrar nombres reales ni analizar el sistema."
-status: Draft
+status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Runner_Sintetico_Estandar_GSEC2_11_USM.md"
@@ -84,7 +84,13 @@ La interfaz futura deberá detenerse antes de importar el runner si detecta un c
 
 ## Estado y siguiente acción permitida
 
-Esta interfaz está en `Draft`. La siguiente acción permitida es una revisión humana independiente de este contrato: conjunto cerrado, precondiciones, resultado único, límites y detención fail-closed. Esa revisión solo podría cambiar este documento a `Review`; no crearía una interfaz de código, no importaría el runner y no ejecutaría los casos.
+Esta interfaz está en `Review` tras la revisión humana independiente autorizada el 2026-08-27. La revisión confirmó el conjunto cerrado de cinco casos, las precondiciones, el resultado agregado único, los límites de ejecución efímera y la detención `fail-closed`. El cambio de estado no crea una interfaz de código, no importa el runner y no ejecuta los casos.
+
+## Registro de revisión humana independiente — 2026-08-27
+
+Fernando autorizó el cambio de estado de `Draft` a `Review` después de comprobar que la interfaz no admite parámetros de sistema, nombres reales, rutas, datos, secretos, red, persistencia, reintentos, scheduler, collectors ni destinos externos. También confirmó que cualquier ambigüedad debe producir `synthetic_policy_suite_blocked` y que la revisión no constituye autorización para recibir métricas reales.
+
+El siguiente paso queda separado y requiere una autorización nueva: ejecutar una sola vez la suite sintética con el runner estándar, manteniendo la salida efímera y agregada. Hasta recibir esa autorización, la interfaz permanece sin importar ni ejecutar.
 
 ## Referencias
 

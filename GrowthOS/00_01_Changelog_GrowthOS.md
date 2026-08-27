@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.89
+**Versión:** 5.90
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.90.00] — 2026-08-27 (Fernando/Manus): revisión humana independiente de la interfaz sintética mínima G-SEC-2.11 confirmada.** Fernando revisó y autorizó el cambio de `2026-08-27_Interfaz_Invocacion_Sintetica_Minima_GSEC2_11_USM.md` v1.1 de `Draft` a `Review`. La revisión confirmó el conjunto cerrado de cinco casos, las precondiciones, la salida agregada efímera y la detención fail-closed. No se importó ni ejecutó el runner, no se accedió a datos, red, collectors, procesos, rutas privadas o G-NORM-4R. La ejecución sintética queda como autorización separada.
 
 - **[5.89.00] — 2026-08-27 (Fernando/Manus): interfaz sintética mínima diseñada y brechas hacia métricas reales consolidadas.** Se creó `2026-08-27_Interfaz_Invocacion_Sintetica_Minima_GSEC2_11_USM.md` v1.0 en `Draft`. Define solo una futura llamada sintética única a cinco casos cerrados, con precondiciones, salida agregada efímera y detención fail-closed; no contiene comando, wrapper, CLI, código nuevo, importación o ejecución. G-SEC-2 v5.1 ahora consolida las condiciones restantes para una nueva lectura real: propuesta mínima, revisión humana, tarjeta puntual vigente, gate manual read-only, preflight autorizado y retención de 30 días. Las capturas históricas no constituyen permiso vigente. No se activaron collectors, OAuth/API, red, datos, automatización, G-NORM-4R ni destinos externos.
 

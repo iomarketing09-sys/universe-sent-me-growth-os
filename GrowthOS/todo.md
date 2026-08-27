@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-27
-version: "12.73"
+version: "12.74"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -329,3 +329,9 @@ organization: "GrowthOS"
 - [x] Configurar y autorizar la app de escritorio Sandbox de TikTok con los scopes oficiales mínimos `user.info.basic` y `video.list`, callback local y PKCE; el cliente OAuth local de Google con scopes de lectura y monetización sigue pendiente.
 - [ ] Reemplazar la consulta de Windsor.ai por scripts locales de TikTok y YouTube antes del fin del Trial, manteniendo Facebook e Instagram en sus rutas existentes.
 - [ ] Aprobar un piloto programado de solo lectura con cortes diarios, reporte semanal, hoja derivada y análisis de OmniRoute etiquetado `Draft`; no activar publicaciones, respuestas automáticas ni escrituras canónicas.
+
+## G-SEC-2.11 — Revisión de interfaz sintética — 2026-08-27
+
+- [ ] Ejecutar una única suite sintética G-SEC-2.11 solo después de autorización puntual posterior a este cambio de estado.
+- [ ] Mantener bloqueados datos reales, red, collectors, procesos, rutas privadas, persistencia y G-NORM-4R durante la revisión y la futura ejecución sintética.
+- [ ] Diseñar la propuesta real mínima únicamente después de cerrar la suite sintética y obtener una decisión separada.
