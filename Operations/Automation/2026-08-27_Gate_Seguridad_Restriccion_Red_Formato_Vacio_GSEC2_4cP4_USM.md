@@ -1,10 +1,10 @@
 ---
 title: "G-SEC-2.4c-P.4 — Gate de seguridad y restricción de red del formato vacío — Universe Sent Me"
 purpose: "Definir controles documentales estrictos de seguridad y restricción de red para cualquier revisión futura del formato vacío, sin modificar firewall, servicios, discos, LUKS, rutas privadas o integraciones."
-status: Draft
+status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Gate_Auditoria_Trazabilidad_Local_Formato_Vacio_GSEC2_4cP3_USM.md"
@@ -84,7 +84,13 @@ G-SEC-2.4c-P.4 no ejecuta scripts, preflights, validadores, comandos de red o di
 
 ## Estado y siguiente acción permitida
 
-Este gate está en `Draft`. La única acción siguiente permitida es una revisión humana independiente de sus principios, límites de red, bloqueo de secretos/datos y secuencia de autorizaciones. Esa revisión solo podría cambiar este documento a `Review`; no inspecciona ni modifica la configuración técnica y no habilita G-NORM-4R.
+### Registro de revisión humana — 2026-08-27
+
+Fernando confirmó los principios de seguridad, la restricción de red, el bloqueo de secretos y datos, y las autorizaciones separadas. El estado documental cambia de `Draft` a `Review`. La revisión confirma solo la política: no inspecciona ni modifica la red, firewall, servicios, procesos, discos, LUKS, rutas privadas o integraciones.
+
+G-SEC-2 continúa en `Review` y G-NORM-4R sigue bloqueado. No se abrió información privada, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salida externa.
+
+Una continuación requiere un gate y autorización nuevos para diseñar un artefacto documental posterior. No se puede ejecutar una comprobación técnica, crear propuesta, emitir tarjeta, solicitar consentimiento o habilitar G-NORM-4R.
 
 ## Referencias
 

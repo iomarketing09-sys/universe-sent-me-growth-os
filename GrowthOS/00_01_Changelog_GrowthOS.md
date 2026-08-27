@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.62
+**Versión:** 5.63
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.63.00] — 2026-08-27 (Fernando/Manus): revisión humana de G-SEC-2.4c-P.4 confirmada, sin inspección técnica.** Fernando confirmó principios de seguridad, restricción de red, bloqueo de secretos y datos, y autorizaciones separadas. El gate `2026-08-27_Gate_Seguridad_Restriccion_Red_Formato_Vacio_GSEC2_4cP4_USM.md` pasa de `Draft` a `Review`. La revisión confirma solo política: no inspecciona ni modifica red, firewall, servicios, procesos, discos, LUKS, rutas privadas o integraciones. Se actualizó la referencia de auditoría P.3 y los pendientes. G-SEC-2 continúa en `Review` y G-NORM-4R permanece bloqueado. No se abrió información privada, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salida externa. Cualquier continuación requiere un gate documental y autorización nuevos.
 
 - **[5.62.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.4c-P.4 diseñado como política estricta de seguridad y restricción de red.** Se creó `2026-08-27_Gate_Seguridad_Restriccion_Red_Formato_Vacio_GSEC2_4cP4_USM.md` v1.0 en `Draft`. El gate fija mínimo privilegio, denegación por defecto, separación de entornos, salida mínima, reversibilidad, prohibición de red durante el diseño y bloqueo de secretos, datos, medios, LUKS, servicios, firewall e integraciones. No contiene comandos, direcciones, puertos, reglas ejecutables, capturas o pruebas de conectividad; tampoco modifica configuración técnica. G-SEC-2 continúa en `Review` y G-NORM-4R sigue bloqueado. No se abrieron datos o rutas privadas, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA ni salidas externas. La siguiente acción permitida es una revisión humana independiente de G-SEC-2.4c-P.4.
 

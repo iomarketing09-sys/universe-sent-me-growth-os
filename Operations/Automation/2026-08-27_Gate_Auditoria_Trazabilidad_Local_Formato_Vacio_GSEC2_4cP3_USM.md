@@ -4,7 +4,7 @@ purpose: "Definir reglas documentales para revisar localmente el formato vacío 
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.2"
+version: "1.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Gate_Seguridad_Restriccion_Red_Formato_Vacio_GSEC2_4cP4_USM.md"
@@ -91,7 +91,7 @@ Fernando confirmó el alcance de auditoría, la trazabilidad mínima no sensible
 
 G-SEC-2 continúa en `Review` y G-NORM-4R sigue bloqueado. No se abrió información privada, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salida externa.
 
-G-SEC-2.4c-P.4 fue diseñado en `Draft` como `2026-08-27_Gate_Seguridad_Restriccion_Red_Formato_Vacio_GSEC2_4cP4_USM.md` v1.0 para definir restricciones de seguridad y red sin aplicar cambios técnicos. La siguiente acción permitida es revisar ese gate; no se puede ejecutar una auditoría, producir un dictamen operativo, crear una instancia de propuesta, emitir tarjeta o solicitar consentimiento.
+G-SEC-2.4c-P.4 recibió su revisión humana independiente como `Review` en `2026-08-27_Gate_Seguridad_Restriccion_Red_Formato_Vacio_GSEC2_4cP4_USM.md` v1.1. Define restricciones de seguridad y red sin aplicar cambios técnicos. Cualquier continuación requiere un gate y autorización nuevos; no se puede ejecutar una auditoría, producir un dictamen operativo, crear una instancia de propuesta, emitir tarjeta o solicitar consentimiento.
 
 ## Referencias
 
