@@ -1,0 +1,83 @@
+{
+  "synthetic": true,
+  "brand": "Universe Sent Me",
+  "cases": [
+    {
+      "name": "manual_local_minimum_allowed",
+      "operation": "manual_fixture_validation",
+      "brand": "Universe Sent Me",
+      "data_class": "synthetic_fixture",
+      "destination": "temporary_memory",
+      "execution": "manual_once",
+      "network": false,
+      "automation": false,
+      "financial": false
+    },
+    {
+      "name": "external_egress_blocked",
+      "operation": "fixture_export",
+      "brand": "Universe Sent Me",
+      "data_class": "synthetic_fixture",
+      "destination": "github",
+      "execution": "manual_once",
+      "network": false,
+      "automation": false,
+      "financial": false
+    },
+    {
+      "name": "scheduler_blocked",
+      "operation": "fixture_validation",
+      "brand": "Universe Sent Me",
+      "data_class": "synthetic_fixture",
+      "destination": "temporary_memory",
+      "execution": "scheduled",
+      "network": false,
+      "automation": true,
+      "financial": false
+    },
+    {
+      "name": "private_evidence_blocked",
+      "operation": "fixture_validation",
+      "brand": "Universe Sent Me",
+      "data_class": "private_evidence",
+      "destination": "temporary_memory",
+      "execution": "manual_once",
+      "network": false,
+      "automation": false,
+      "financial": false
+    },
+    {
+      "name": "network_blocked",
+      "operation": "fixture_validation",
+      "brand": "Universe Sent Me",
+      "data_class": "synthetic_fixture",
+      "destination": "temporary_memory",
+      "execution": "manual_once",
+      "network": true,
+      "automation": false,
+      "financial": false
+    },
+    {
+      "name": "financial_metric_blocked",
+      "operation": "fixture_validation",
+      "brand": "Universe Sent Me",
+      "data_class": "synthetic_fixture",
+      "destination": "temporary_memory",
+      "execution": "manual_once",
+      "network": false,
+      "automation": false,
+      "financial": true
+    },
+    {
+      "name": "cross_brand_blocked",
+      "operation": "fixture_validation",
+      "brand": "Bam in a Can",
+      "data_class": "synthetic_fixture",
+      "destination": "temporary_memory",
+      "execution": "manual_once",
+      "network": false,
+      "automation": false,
+      "financial": false
+    }
+  ]
+}

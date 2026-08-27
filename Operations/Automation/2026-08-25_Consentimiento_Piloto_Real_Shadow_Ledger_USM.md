@@ -4,7 +4,7 @@ purpose: "Definir los controles separados que deben diseñarse, revisarse y apro
 status: Draft
 created: 2026-08-25
 updated: 2026-08-26
-version: "2.0"
+version: "2.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
@@ -14,6 +14,8 @@ related_documents:
   - "Operations/Automation/2026-08-26_Proyecto_Migracion_LUKS_Integral_USM.md"
   - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
   - "GrowthOS/todo.md"
+  - "Operations/Automation/preflight_gsec2_readonly_barriers.sh"
+  - "Operations/Automation/validate_gsec2_readonly_barriers_synthetic.py"
 organization: "Operations/Automation"
 ---
 
@@ -109,6 +111,24 @@ Una operación futura será read-only solo si todos sus límites técnicos y ope
 
 Antes de cualquier ejecución real, se deberá diseñar una prueba **sintética** que demuestre que los modos de escritura, egress y automatización se rechazan. Esa prueba no importará collectors, no leerá configuración privada ni abrirá sockets. La autorización para diseñarla y ejecutarla será un subgate nuevo, no parte de este documento.
 
+### G-SEC-2.3a — verificación sintética de barreras diseñada
+
+El subgate G-SEC-2.3a ya está diseñado y publicado, pero no se ha ejecutado. Usa el fixture versionado `fixtures/gsec2_readonly_barriers_synthetic.json`, el validador `validate_gsec2_readonly_barriers_synthetic.py` y el wrapper `preflight_gsec2_readonly_barriers.sh`. Los tres artefactos contienen únicamente casos ficticios y reglas de rechazo; no reciben parámetros de cuentas, métricas, ventanas, tokens, rutas privadas ni evidencia.
+
+| Caso sintético | Resultado que deberá demostrar la suite | Barrera G-SEC-2 cubierta |
+|---|---|---|
+| `manual_local_minimum_allowed` | Se permite exclusivamente la validación manual en memoria de un fixture sintético. | Operación local mínima. |
+| `external_egress_blocked` | Rechazo de un destino GitHub ficticio, sin crear salida. | Egress y destinos externos prohibidos. |
+| `scheduler_blocked` | Rechazo de ejecución programada ficticia. | Sin cron, servicios ni automatización. |
+| `private_evidence_blocked` | Rechazo de la clase simulada de evidencia privada. | No leer rutas ni datos privados. |
+| `network_blocked` | Rechazo de la bandera de red y guardia de socket interceptada. | Sin red, OAuth ni API. |
+| `financial_metric_blocked` | Rechazo de dato financiero ficticio. | Exclusión de monetización. |
+| `cross_brand_blocked` | Rechazo de una marca ficticia distinta. | Separación estricta de marcas. |
+
+El wrapper ofrece `--plan`, `--preflight` y `--execute --confirm RUN_USM_GSEC2_SYNTHETIC_BARRIERS`. El modo `--plan` no inspecciona el entorno. El preflight solo comprueba repositorio, Python, los dos artefactos públicos y nombres de procesos para detenerse si detecta un collector, OmniRoute o Docker Compose. El modo de ejecución requerirá una **autorización explícita independiente**; usará `python3 -B` y `PYTHONDONTWRITEBYTECODE=1`, bloqueará `socket.socket` y emitirá solo estado agregado, casos de rechazo y garantías. No crea archivos, incluso temporales, ni llama ningún servicio.
+
+El criterio de PASS propuesto es `gsec2_synthetic_barriers_passed`, con los seis rechazos esperados y la guardia de socket bloqueada. Cualquier diferencia, proceso detectado o artefacto faltante será `BLOCKED`; no se corrige el entorno, no se instala software y no se reintenta sin revisar el resultado. Un PASS demostrará solo las barreras sintéticas actuales: no cambia G-SEC-2 de `Draft`, no concede consentimiento granular y no abre G-NORM-4R.
+
 ## G-SEC-2.4 — Consentimiento granular, por operación y revocable
 
 El consentimiento propuesto no será una autorización general para “usar métricas”. Es una decisión puntual de Fernando sobre una única operación definida. Debe ser solicitado solo después de que G-SEC-2.1, 2.2 y 2.3 estén completos y de que exista una propuesta técnica exacta, revisable y sin secretos.
@@ -133,7 +153,7 @@ G-SEC-2 se considera **diseñado** cuando este documento y los documentos relaci
 
 | Estado | Resultado | Consecuencia |
 |---|---|---|
-| Draft | Diseño documentado, sin revisión humana del contenido. | G-NORM-4R bloqueado. |
+| Draft | Diseño documentado, incluida G-SEC-2.3a sin ejecución ni revisión humana del contenido. | G-NORM-4R bloqueado. |
 | Review | Fernando revisó los límites y solicita preparar pruebas sintéticas de controles. | Solo se puede proponer el subgate sintético correspondiente. |
 | Active | Solo después de pruebas de control aprobadas y consentimiento puntual vigente. | Permite proponer, no ejecutar automáticamente, una única operación G-NORM-4R. |
 | Blocked | Cualquier ambigüedad, salida externa, datos no permitidos, retención indefinida o consentimiento vencido. | No se abre evidencia ni se ejecuta ningún collector. |

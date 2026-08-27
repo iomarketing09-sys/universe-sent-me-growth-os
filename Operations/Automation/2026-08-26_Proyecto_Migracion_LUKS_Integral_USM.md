@@ -4,7 +4,7 @@ purpose: "Definir los gates y la secuencia reversible para reinstalar Xubuntu co
 status: Active
 created: 2026-08-26
 updated: 2026-08-26
-version: "1.11"
+version: "1.12"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -171,7 +171,7 @@ La primera ejecución autorizada completó el preflight, pero el analizador devo
 
 La corrección pública publicada en el commit `757c6ab` alinea el análisis con el contrato real: el collector verifica sus referencias de configuración, el autorizador público verifica PKCE/callback/scopes y el ejemplo público verifica el directorio de evidencia, variables locales y scopes TikTok. La sintaxis y el análisis se validaron antes de publicar. Tras actualizar el clon LUKS, Fernando ejecutó de nuevo el preflight y el modo confirmado: obtuvo `STATUS=preflight_complete_static_only_no_private_read_no_network`, `status=static_contract_passed`, cero fallos y `STATUS=collectors_static_review_complete_no_private_read_no_network`.
 
-G-MIG-LUKS-1.8c queda completado exclusivamente como revisión estática. La totalidad de los collectors, OAuth, APIs, tokens, configuraciones privadas, evidencia real, instalación de dependencias, cron, Docker, OmniRoute, shadow ledger persistente y G-NORM-4R permanece bloqueada. El diseño de esos controles posteriores ahora existe como G-SEC-2 en `2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md` v2.0, pero sigue en `Draft`: no activa ninguna integración ni sustituye una futura autorización puntual.
+G-MIG-LUKS-1.8c queda completado exclusivamente como revisión estática. La totalidad de los collectors, OAuth, APIs, tokens, configuraciones privadas, evidencia real, instalación de dependencias, cron, Docker, OmniRoute, shadow ledger persistente y G-NORM-4R permanece bloqueada. El diseño de esos controles posteriores ahora existe como G-SEC-2 en `2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md` v2.1. Su primer subgate técnico G-SEC-2.3a solo prepara una prueba con fixture sintético de barreras; sigue sin autorización de ejecución y no activa ninguna integración ni sustituye una futura autorización puntual.
 
 ## Diseño de desbloqueo G-MIG-LUKS-1.5
 

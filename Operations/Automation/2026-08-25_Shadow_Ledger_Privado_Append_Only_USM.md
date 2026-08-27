@@ -4,7 +4,7 @@ purpose: "Definir el ledger privado de validación para comprobar idempotencia, 
 status: Review
 created: 2026-08-25
 updated: 2026-08-26
-version: "1.5"
+version: "1.6"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Esquema_Normalizacion_Determinista_Multicanal_USM.md"
@@ -117,9 +117,9 @@ La matriz ahora ejecuta diez controles: nueve detecciones y la invariancia byte 
 
 ## Dependencia G-SEC-2 diseñada
 
-El documento `2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md` v2.0 define G-SEC-2 como el conjunto de controles previos al piloto real. Establece cuatro subgates independientes: minimización de datos y salidas, retención máxima de 30 días con revisión humana, operación local estrictamente read-only y una tarjeta de consentimiento por operación con vigencia de 24 horas.
+El documento `2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md` v2.1 define G-SEC-2 como el conjunto de controles previos al piloto real. Establece cuatro subgates independientes: minimización de datos y salidas, retención máxima de 30 días con revisión humana, operación local estrictamente read-only y una tarjeta de consentimiento por operación con vigencia de 24 horas.
 
-El diseño no modifica este contrato ni habilita su escritor real. Antes de cualquier G-NORM-4R, los cuatro subgates deben pasar revisión humana y una prueba sintética específica de las barreras read-only. No se abrirán tokens, evidencia, collectors, API, cron, Docker, OmniRoute, Sheets, Drive, GitHub ni modelos como consecuencia de esta dependencia.
+G-SEC-2.3a prepara esa prueba específica con un fixture ficticio que debe rechazar destinos externos, scheduling, datos privados, red, monetización y otras marcas, mientras permite solo una comprobación manual en memoria. Está diseñado y sin ejecutar. El diseño no modifica este contrato ni habilita su escritor real. Antes de cualquier G-NORM-4R, los cuatro subgates deben pasar revisión humana y la prueba sintética debe tener autorización y PASS por separado. No se abrirán tokens, evidencia, collectors, API, cron, Docker, OmniRoute, Sheets, Drive, GitHub ni modelos como consecuencia de esta dependencia.
 
 ## Referencias
 
