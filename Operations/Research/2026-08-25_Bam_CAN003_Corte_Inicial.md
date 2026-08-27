@@ -4,7 +4,7 @@ purpose: "Preservar el primer corte de CAN-003, distinguiendo evidencia directa 
 status: "Active — corte post-T+24 registrado; las tres plataformas ya aportan una fuente de medición"
 created: 2026-08-25
 updated: 2026-08-26
-version: "1.2"
+version: "1.3"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_Plan_Lanzamiento_Audiencia_Bam_In_A_Can.md"
@@ -63,6 +63,12 @@ El corte se ejecutó aproximadamente a las **21:50–21:53 CDT**, después de la
 
 La hipótesis de loop de YouTube gana una segunda señal descriptiva: el alcance siguió creciendo después de T+3 y la lectura anterior de Studio mostraba 10 s de visualización media sobre 10 s de duración. No queda validada hasta observar una nueva pieza comparable. TikTok mejora marginalmente pero no alcanza todavía los umbrales de consumo ni produce shares/favorites; `H-BAM-TT-FIRST-SECOND-01` continúa abierta. El primer dato autenticado de Instagram es insuficiente para evaluar `H-BAM-IG-PACKAGING-01`.
 
+## Diagnóstico de divergencia por plataforma
+
+El corte documenta un desempeño divergente, no una causa demostrada. YouTube ofrece una combinación de alcance creciente y señal de consumo completo/replay; TikTok ofrece descubrimiento desde Para ti pero consumo y finalización bajos; Instagram ofrece una muestra indexada todavía demasiado pequeña. La explicación operativa y las pruebas de control quedan registradas en el Plan de lanzamiento de audiencia de Bam.
+
+La siguiente pieza comparable debe preservar el núcleo narrativo, pero usar ediciones nativas: loop/SFX para YouTube, evento imposible en frame 0 y payoff antes de 3 s para TikTok, y caption diegético repetido para Instagram. CAN-004 no se usa como control de este diagnóstico porque su objetivo es shares y saves como CAN MEME.
+
 ## Evidencia archivada
 
 ![Métrica directa de CAN-003 en YouTube Studio a T+2 h 21 min 41 s](2026-08-25_Bam_CAN003_YouTube_Studio_T2h21m41s.jpg)
@@ -77,4 +83,4 @@ La hipótesis de loop de YouTube gana una segunda señal descriptiva: el alcance
 
 ## Documentos relacionados que requieren actualización posterior
 
-El ledger de distribución se actualiza en este mismo cambio. El Plan de lanzamiento de audiencia no cambia porque el corte no acepta ni descarta una hipótesis: CAN-003 necesita una segunda pieza comparable. El calendario y paquete de lanzamiento no requieren cambios adicionales, salvo que Fernando confirme los T0, volumen o etiqueta IA pendientes de TikTok e Instagram.
+El Plan de lanzamiento de audiencia se actualiza en este mismo cambio con el diagnóstico y las pruebas de control. El ledger no requiere modificación porque no hay una métrica nueva en este diagnóstico. El calendario y paquete de lanzamiento no requieren cambios adicionales, salvo que Fernando confirme los T0, volumen o etiqueta IA pendientes de TikTok e Instagram.

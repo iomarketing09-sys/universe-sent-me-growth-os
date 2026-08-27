@@ -1,10 +1,10 @@
 ---
 title: "Plan de lanzamiento de audiencia — Bam in a Can"
 purpose: "Construir la identidad editorial, el catálogo inicial y la primera audiencia de Bam in a Can antes de cualquier campaña de terceros o monetización externa."
-status: "Active — CAN-003 T+3 incorporado; hipótesis de hook y retención en validación"
+status: "Active — divergencia CAN-003 por plataforma documentada; hipótesis de distribución y retención en validación"
 created: 2026-08-20
 updated: 2026-08-26
-version: "1.3"
+version: "1.4"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_Piloto_Content_Rewards_Bam_In_A_Can.md"
@@ -110,7 +110,20 @@ CAN-003 introdujo una señal dividida por plataforma. En YouTube Studio, el Shor
 
 La consecuencia práctica para CAN-004 y la siguiente pieza comparable no es aumentar texto ni explicar el lore. El hook debe ser una **acción física imposible ya iniciada**, con una progresión visual clara: anomalía en frame 0, escalada antes de 1.5 s, remate antes de 3 s y cierre capaz de inducir replay. En YouTube se mantiene el control de SFX; en TikTok e Instagram se conserva el audio nativo bajo hasta que existan dos o más piezas comparables.
 
-## 10. Adaptación CAN-004 — experimento de shares y saves
+## 10. Diagnóstico de divergencia — CAN-003
+
+CAN-003 no demuestra que el mismo video “funcione” o “falle” universalmente: el resultado documenta tres sistemas de distribución, tres audiencias iniciales y tres fuentes de medición distintas. YouTube alcanzó 1,101 views alrededor de T+25 h tras mostrar una visualización media de 10 s sobre 10 s; TikTok recibió 97.2 % de su tráfico temprano desde Para ti, pero llegó a 146 views alrededor de T+25 h con 2.95 s de average watch y 6.17 % de finalización; Instagram Reels alcanzó 26 views y reach 21 al quedar indexado. Los valores no son una comparación de eficiencia entre plataformas porque no comparten definiciones, audiencias ni señales de distribución.
+
+| Factor | Evidencia observada | Interpretación prudente | Prueba de control |
+|---|---|---|---|
+| **Loop cerrado en YouTube** | Studio mostró 10 s de watch medio en un video de 10 s y el Short siguió creciendo de 853 a 1,101 views. | Es la explicación con más señal para la continuidad en YouTube: la pieza puede satisfacer un consumo completo o replay. No aísla el efecto de SFX, tema, título o recomendación. | Repetir 8–10 s con anomalía activa en frame 0 y retorno visual al frame inicial en el próximo `FOUND` o `FAKE TRAILER` de YouTube, preservando SFX sin música. |
+| **Pago insuficiente de curiosidad en TikTok** | TikTok obtuvo entrada desde Para ti, pero la retención temprana cayó fuerte y el avg. watch cerró en 29.34 % de duración; no registró shares ni favorites. | El cuello de botella no parece ser solo conseguir la primera exposición. Es más probable que la acción se comprenda tarde, que la escalada sea demasiado gradual o que el payoff no llegue antes de perder a la audiencia. | Crear un corte nativo de TikTok del mismo tipo de historia: acción imposible visible en frame 0, segunda escalada antes de 1.5 s y payoff antes de 3 s. No variar simultáneamente horario y audio. |
+| **Empaquetado de Instagram no evaluable aún** | El Reel recién indexado tiene 26 views, reach 21 y cero acciones activas. | Es un volumen insuficiente para decidir si la pregunta diegética, el audio o el asset redujeron distribución. Tampoco prueba un rechazo de audiencia. | Repetir la pregunta de caption una vez más y medir al menos dos Reels indexados antes de modificar el packaging. |
+| **Ajuste plataforma–audiencia** | El mismo concepto recibió una distribución muy distinta pese a conservar asset central y disclosure. | La recomendación y el inventario inicial de cada plataforma pueden ser factores importantes, pero no se puede separar ese efecto del audio nativo, título, momento de indexación y audiencia incipiente. | Mantener un núcleo creativo idéntico y variar solo la edición nativa en una segunda pieza comparable; tratar YouTube, TikTok e Instagram como experimentos paralelos, no como un embudo único. |
+
+La implicación es concreta: **no se debe convertir CAN-003 en una plantilla idéntica para las tres redes**. En YouTube se conserva la estructura de loop con SFX. En TikTok se antepone el evento imposible y se comprime el payoff. En Instagram se conserva el caption experimental y se espera una segunda observación indexada. CAN-004 se mantiene aislado como experimento de meme y no decide ninguna de estas hipótesis de retención.
+
+## 11. Adaptación CAN-004 — experimento de shares y saves
 
 CAN-004 no prueba `H-BAM-TT-FIRST-SECOND-01` ni `H-BAM-YT-CLOSED-LOOP-01`, porque es un `CAN MEME`, no una anomalía `FOUND` ni un `FAKE TRAILER`. Su trabajo es establecer una primera línea base para una mecánica distinta: **reconocimiento inmediato + escalada compartible**.
 
@@ -124,6 +137,6 @@ CAN-004 no prueba `H-BAM-TT-FIRST-SECOND-01` ni `H-BAM-YT-CLOSED-LOOP-01`, porqu
 
 La hipótesis activa es `H-BAM-MEME-RELAY-01`: una premisa de hábito digital reconocible, seguida de una escalada visual limpia y sin lore, obtiene al menos una acción de distribución activa —share, save o favorite— durante su primera ventana de 24 horas. CAN-004 establece la línea base; un solo post no acepta ni rechaza la hipótesis. Si aparece esa acción, la siguiente prueba debe conservar el mecanismo de reconocimiento y variar solo la metáfora visual.
 
-## 11. Documentos que requieren actualización posterior
+## 12. Documentos que requieren actualización posterior
 
-Después de los primeros 21 días, actualizar este plan con el corte de métricas por formato y el veredicto de continuidad. El siguiente ajuste relacionado debe registrarse en el ledger de distribución después de CAN-004 y la siguiente pieza comparable, para aceptar, revisar o descartar `H-BAM-MEME-RELAY-01`, `H-BAM-YT-CLOSED-LOOP-01`, `H-BAM-TT-FIRST-SECOND-01`, `H-BAM-TT-SINGLE-RULE-01` y `H-BAM-IG-PACKAGING-01`. Actualizar `Operations/Production/2026-08-20_Piloto_Content_Rewards_Bam_In_A_Can.md` para decidir si la pausa de campañas se mantiene o si se habilita una revisión nueva. Crear un registro de piezas de Bam antes de producir más de ocho publicaciones, para no convertir esta primera lista en un backlog sin trazabilidad.
+Después de los primeros 21 días, actualizar este plan con el corte de métricas por formato y el veredicto de continuidad. El siguiente ajuste relacionado debe registrarse en el snapshot de CAN-003 y en el ledger de distribución después de CAN-004 y la siguiente pieza comparable, para aceptar, revisar o descartar `H-BAM-MEME-RELAY-01`, `H-BAM-YT-CLOSED-LOOP-01`, `H-BAM-TT-FIRST-SECOND-01`, `H-BAM-TT-SINGLE-RULE-01` y `H-BAM-IG-PACKAGING-01`. Actualizar `Operations/Production/2026-08-20_Piloto_Content_Rewards_Bam_In_A_Can.md` para decidir si la pausa de campañas se mantiene o si se habilita una revisión nueva. Crear un registro de piezas de Bam antes de producir más de ocho publicaciones, para no convertir esta primera lista en un backlog sin trazabilidad.
