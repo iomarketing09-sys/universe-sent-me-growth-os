@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.73
+**Versión:** 5.74
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.74.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.11 diseñado como previo técnico mínimo a una observación real.** Se creó `2026-08-27_Gate_Tecnico_Pasivo_Observacion_Real_Minima_GSEC2_11_USM.md` v1.0 en `Draft`. El diseño exige nombres públicos, exactos y no sensibles para cualquier componente observable; no permite inventario de procesos, argumentos, rutas, entorno, red, puertos, sockets, Docker, Compose, OmniRoute, collectors, daemons, privilegios, persistencia o reintentos. Los collectors Python genéricos permanecen fuera de alcance hasta un diseño separado de wrapper no sensible. Una futura observación requerirá revisión del diseño, revisión del verificador y autorización humana de una sola ventana. G-SEC-2 continúa en `Review` y G-NORM-4R permanece bloqueado; no se ejecutó comprobación alguna.
 
 - **[5.73.00] — 2026-08-27 (Fernando/Manus): revisión humana de G-SEC-2.10 confirmada, sin análisis del sistema.** Fernando confirmó las fuentes permitidas, preguntas de análisis, salidas limitadas y condiciones de detención. El gate `2026-08-27_Gate_Analisis_Documental_Superficie_Ejecucion_No_Ejecucion_GSEC2_10_USM.md` pasa de `Draft` a `Review`. La revisión registra solo comprensión y coherencia del diseño documental: no analiza el sistema, no ejecuta una comprobación, no consulta procesos, puertos, servicios o red y no genera evidencia técnica. G-SEC-2 continúa en `Review` y G-NORM-4R permanece bloqueado. Cualquier contraste con el equipo real requerirá un gate técnico diferente y autorización humana explícita antes de ejecutar un comando.
 
