@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.78
+**Versión:** 5.79
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.79.00] — 2026-08-27 (Fernando/Manus): contrato no ejecutable del artefacto público G-SEC-2.11 diseñado.** Se creó `2026-08-27_Contrato_Artefacto_Codigo_Publico_Verificador_Minimo_GSEC2_11_USM.md` v1.0 en `Draft`. El contrato separa un núcleo puro de política de cualquier adaptador o interfaz de ejecución, que permanecen fuera de alcance. Define interfaz conceptual, flujo lógico de cinco pasos, invariantes estáticas, límites sintéticos y prohibiciones de código, componentes reales, red, datos, privilegios, persistencia y pruebas sobre el sistema. No se crearon archivos de código, no se registraron nombres y no se analizó el equipo. La siguiente acción permitida es revisar el contrato documental.
 
 - **[5.78.00] — 2026-08-27 (Fernando/Manus): revisión humana de la especificación estática G-SEC-2.11 confirmada.** Fernando confirmó el registro vacío por defecto, entradas admisibles, precondiciones, una sola pasada, salidas agregadas, precedencia y detención fail-closed. `2026-08-27_Especificacion_Estatica_Verificador_Minimo_GSEC2_11_USM.md` pasa de `Draft` a `Review`. La revisión valida solo el contrato: no creó código, no registró nombres reales, no observó servicios, collectors, procesos, red, puertos, datos o configuración y no habilitó G-NORM-4R. Cualquier diseño de artefacto de código requerirá una autorización humana nueva y, aun diseñado, no podrá ejecutarse sin autorizaciones posteriores separadas.
 
