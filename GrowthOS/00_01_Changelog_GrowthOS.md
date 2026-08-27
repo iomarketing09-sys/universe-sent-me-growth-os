@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.72
+**Versión:** 5.73
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.73.00] — 2026-08-27 (Fernando/Manus): revisión humana de G-SEC-2.10 confirmada, sin análisis del sistema.** Fernando confirmó las fuentes permitidas, preguntas de análisis, salidas limitadas y condiciones de detención. El gate `2026-08-27_Gate_Analisis_Documental_Superficie_Ejecucion_No_Ejecucion_GSEC2_10_USM.md` pasa de `Draft` a `Review`. La revisión registra solo comprensión y coherencia del diseño documental: no analiza el sistema, no ejecuta una comprobación, no consulta procesos, puertos, servicios o red y no genera evidencia técnica. G-SEC-2 continúa en `Review` y G-NORM-4R permanece bloqueado. Cualquier contraste con el equipo real requerirá un gate técnico diferente y autorización humana explícita antes de ejecutar un comando.
 
 - **[5.72.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.10 diseñado para análisis documental de una superficie única, sin ejecución.** Se creó `2026-08-27_Gate_Analisis_Documental_Superficie_Ejecucion_No_Ejecucion_GSEC2_10_USM.md` v1.0 en `Draft`. El gate limita el análisis a políticas públicas sobre la no ejecución de servicios, collectors, automatizaciones e integraciones. Define fuentes permitidas, preguntas de coherencia, salidas agregadas y detención, sin contrastar documentos con el sistema. No consulta procesos, servicios, puertos, red, datos, rutas privadas, configuración, evidencia o logs. G-SEC-2 continúa en `Review` y G-NORM-4R permanece bloqueado. La siguiente acción permitida es una revisión humana independiente de G-SEC-2.10.
 
