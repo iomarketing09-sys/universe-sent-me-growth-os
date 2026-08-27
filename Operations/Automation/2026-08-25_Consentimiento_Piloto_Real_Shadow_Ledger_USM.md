@@ -4,7 +4,7 @@ purpose: "Definir los controles separados que deben diseñarse, revisarse y apro
 status: Review
 created: 2026-08-25
 updated: 2026-08-27
-version: "4.7"
+version: "4.8"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
@@ -32,6 +32,7 @@ related_documents:
   - "Operations/Automation/2026-08-27_Gate_Cierre_Archivado_Ciclo_Preliminar_GSEC2_4cP5_USM.md"
   - "Operations/Automation/2026-08-27_Gate_Preparacion_Decision_Fase_Operativa_GSEC2_7_USM.md"
   - "Operations/Automation/2026-08-27_Gate_Tecnico_Pasivo_Preparacion_No_Ejecucion_GSEC2_8_USM.md"
+  - "Operations/Automation/2026-08-27_Gate_Superficie_Unica_Ejecucion_Servicios_No_Ejecucion_GSEC2_9_USM.md"
   - "Operations/Automation/preflight_gsec2_template_static_integrity.sh"
   - "Operations/Automation/validate_gsec2_template_static_integrity.py"
   - "Operations/Automation/2026-08-27_Revision_Final_Consolidacion_GSEC2_USM.md"
@@ -237,7 +238,7 @@ La revisión final y matriz de consolidación se documentan en `2026-08-27_Revis
 
 ### G-SEC-2.7 — preparación y decisión de una eventual fase operativa
 
-G-SEC-2.7 se documenta en `2026-08-27_Gate_Preparacion_Decision_Fase_Operativa_GSEC2_7_USM.md` v1.3, en `Review` tras una confirmación humana independiente. Se creó después del cierre documental del ciclo preliminar para separar la preparación de una decisión futura de cualquier ejecución. G-SEC-2.8 recibió su revisión humana como gate técnico pasivo de preparación en `Review`; no ejecuta diagnósticos ni comprueba el entorno. Ninguno cambia G-SEC-2 a `Active`, emite tarjeta, solicita consentimiento o permite abrir datos, red, collectors, OAuth/API, ledger, automatizaciones, servicios o G-NORM-4R.
+G-SEC-2.7 se documenta en `2026-08-27_Gate_Preparacion_Decision_Fase_Operativa_GSEC2_7_USM.md` v1.3, en `Review` tras una confirmación humana independiente. Se creó después del cierre documental del ciclo preliminar para separar la preparación de una decisión futura de cualquier ejecución. G-SEC-2.8 recibió su revisión humana como gate técnico pasivo de preparación en `Review`; no ejecuta diagnósticos ni comprueba el entorno. G-SEC-2.9 se diseñó en `Draft` para delimitar una única superficie conceptual de no ejecución de servicios, collectors, automatizaciones e integraciones, sin verificarla. Ninguno cambia G-SEC-2 a `Active`, emite tarjeta, solicita consentimiento o permite abrir datos, red, collectors, OAuth/API, ledger, automatizaciones, servicios o G-NORM-4R.
 
 ## Referencias
 
