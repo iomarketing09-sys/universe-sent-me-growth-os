@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — Semana 01: paquete de lanzamiento"
 purpose: "Organizar el primer bloque de cuatro piezas originales de Bam in a Can antes de publicar, con orden editorial, producción, copy, audio y medición."
-status: "Active — CAN-001 y CAN-002 medidas; CAN-003 con cascada completa; CAN-004 con hook nativo de TikTok definido"
+status: "Active — CAN-001 y CAN-002 medidas; CAN-003 con cascada completa; CAN-004 con hook nativo de TikTok y storyboard de edición definidos"
 created: 2026-08-21
 updated: 2026-08-26
-version: "1.18"
+version: "1.19"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_Plan_Lanzamiento_Audiencia_Bam_In_A_Can.md"
@@ -229,6 +229,14 @@ Este corte adapta la placa final de CAN-004 para resolver el problema de TikTok 
 | **00:02.35–00:03.00** | Los nueve paneles se estabilizan en una composición incómodamente llena. El cursor queda atrapado debajo de una miniatura; un panel muestra un parpadeo único. | Sin texto desde 00:02.35. | Un chirp CRT corto a 00:02.55. No hacer corte negro todavía: reservar el intento final de cierre y el corte para 00:04.8–00:06.0. |
 
 La regla de export para TikTok es conservar el visual dentro de la máscara curva del CRT, sin iconos reconocibles ni bordes de sistema operativo. El texto se agrega manualmente en edición, no en el render. El audio nativo, si se utiliza, debe quedar por debajo de los clicks; no introducir voz, explicación ni un tercer overlay. La versión se etiqueta internamente como `CAN004-TT-HookA` y se evalúa por shares/favorites, con retención como guardrail secundario.
+
+#### Lámina de storyboard de edición — `CAN004-TT-HookA`
+
+**Archivo canónico:** `Operations/Production/Assets/Bam_In_A_Can/Storyboards/CAN-004_TikTok_HookA_Storyboard.png`.
+
+La lámina documenta en una cuadrícula de seis paneles el avance visual **3 → 5 → 7 → 7 → 9 → 9** miniaturas de lata. El primer panel comienza con la anomalía ya presente; el cuarto muestra la anticipación del cursor; el quinto fija el payoff de nueve paneles contenidos dentro del CRT; y el sexto muestra la composición final llena, cursor atrapado y parpadeo único. La lata física, el monitor, el escritorio y la lámpara se mantienen constantes en todos los beats.
+
+El asset es una **guía de composición para Edits/CapCut** y no un keyframe de generación ni una referencia que deba cargarse a Flow. La edición de Fernando debe respetar los timestamps, los overlays y los SFX definidos en la tabla anterior; la imagen no sustituye el render canónico `Can004.mp4` ni autoriza la publicación.
 
 **Prompt de keyframe (inglés):**
 
