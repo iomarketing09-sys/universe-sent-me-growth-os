@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — CAN-003: corte inicial multicanal"
 purpose: "Preservar el primer corte de CAN-003, distinguiendo evidencia directa de YouTube Studio, cache temprana autenticada de TikTok e indexación pendiente de Instagram."
-status: "Active — evidencia T+3 directa de YouTube y TikTok incorporada; Instagram pendiente de indexación"
+status: "Active — corte post-T+24 registrado; las tres plataformas ya aportan una fuente de medición"
 created: 2026-08-25
 updated: 2026-08-26
-version: "1.1"
+version: "1.2"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Production/2026-08-20_Plan_Lanzamiento_Audiencia_Bam_In_A_Can.md"
@@ -51,6 +51,18 @@ Instagram continuaba mostrando dos views según el reporte manual de Fernando. C
 
 Estas señales permiten formular hipótesis preliminares de hook y replay, documentadas en el Plan de lanzamiento de audiencia. No validan una hipótesis: CAN-003 es un solo activo, cada plataforma tiene distribución y medición distinta, y la respuesta de Instagram todavía no está disponible.
 
+## Corte operativo posterior a T+24 — 26 de agosto
+
+El corte se ejecutó aproximadamente a las **21:50–21:53 CDT**, después de la ventana T+24 de YouTube. La evidencia no se etiqueta como T+24 exacto en TikTok o Instagram porque sus T0 nativos no están confirmados con la misma precisión.
+
+| Plataforma | Fuente y edad aplicable | Métricas actuales | Lectura interna |
+|---|---|---|---|
+| TikTok | Windsor `tiktok_organic`, `data_fetched_at` 21:50:25–21:50:49 CDT; T+25 h 35 min desde el T0 recuperado. | 146 views; 1 like; 0 comentarios; 0 shares; 0 favoritos; avg. watch 2.95 s; total watch 477 s; duración 10.055 s; full-watch rate 6.17 %. | El avg. watch equivale a 29.34 % de duración. Frente al screenshot T+3, el consumo mejora levemente de 2.6 s a 2.95 s y la finalización de 5.61 % a 6.17 %, pero sigue por debajo de los umbrales exploratorios de 3 s / 10 % y no hay señal de distribución activa. |
+| Instagram Reels | Windsor por shortcode, `data_fetched_at` 21:52:33–21:52:57 CDT; el T0 exacto no está confirmado. | 26 views; reach 21; 0 likes; 0 comentarios; 0 shares; 0 saves; avg. watch 5.493 s; total watch 131.843 s. | El Reel ya está indexado y supera las dos views manuales tempranas, pero la muestra sigue siendo muy pequeña y no hay interacción activa. El avg. watch equivale aproximadamente a 54.93 % de 10 s. |
+| YouTube Shorts | Captura directa de Studio recibida a las 21:51:49 CDT; aproximadamente T+24 h 57 min. | 1,101 views; 9 likes; 1 share; hito de primer Short del canal en superar 1.0 K views. | Las views suben de 853 en la captura T+3 a 1,101. El share permanece en 1. Los likes pasan de 11 a 9 en la interfaz, por lo que no se infiere una caída de afinidad: puede haber retiro de likes o refresco asíncrono. Studio directo sigue siendo la fuente preferente y Windsor aún no devuelve una fila de CAN-003. |
+
+La hipótesis de loop de YouTube gana una segunda señal descriptiva: el alcance siguió creciendo después de T+3 y la lectura anterior de Studio mostraba 10 s de visualización media sobre 10 s de duración. No queda validada hasta observar una nueva pieza comparable. TikTok mejora marginalmente pero no alcanza todavía los umbrales de consumo ni produce shares/favorites; `H-BAM-TT-FIRST-SECOND-01` continúa abierta. El primer dato autenticado de Instagram es insuficiente para evaluar `H-BAM-IG-PACKAGING-01`.
+
 ## Evidencia archivada
 
 ![Métrica directa de CAN-003 en YouTube Studio a T+2 h 21 min 41 s](2026-08-25_Bam_CAN003_YouTube_Studio_T2h21m41s.jpg)
@@ -61,6 +73,8 @@ Estas señales permiten formular hipótesis preliminares de hook y replay, docum
 
 ![Métricas tempranas y fuentes de tráfico de CAN-003 en TikTok Studio](2026-08-26_Bam_CAN003_TikTok_Studio_early_window.jpg)
 
+![Métrica directa post-T+24 de CAN-003 en YouTube Studio](2026-08-26_Bam_CAN003_YouTube_Studio_1101views.jpg)
+
 ## Documentos relacionados que requieren actualización posterior
 
-El ledger de distribución y el Plan de lanzamiento de audiencia se actualizan en este mismo cambio. En el corte T+24 se actualizarán este snapshot y el ledger; el Plan se ajustará solo si CAN-003 y la siguiente pieza comparable ofrecen evidencia repetida suficiente para aceptar, revisar o descartar las hipótesis activas. El calendario y paquete de lanzamiento no requieren cambios adicionales, salvo que Fernando confirme los T0, volumen o etiqueta IA pendientes de TikTok e Instagram.
+El ledger de distribución se actualiza en este mismo cambio. El Plan de lanzamiento de audiencia no cambia porque el corte no acepta ni descarta una hipótesis: CAN-003 necesita una segunda pieza comparable. El calendario y paquete de lanzamiento no requieren cambios adicionales, salvo que Fernando confirme los T0, volumen o etiqueta IA pendientes de TikTok e Instagram.

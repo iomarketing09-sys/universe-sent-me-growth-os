@@ -1,10 +1,10 @@
 ---
 title: "Bam in a Can — CAN-002: chequeo inicial y corte post-T+3"
 purpose: "Preservar los cortes operativos iniciales de CAN-002, separando métricas autenticadas, cache de plataforma, evidencia directa e indexación pendiente."
-status: "Active — evidencia directa de Studio priorizada; discrepancia de Windsor documentada"
+status: "Active — corte posterior a T+72 registrado; Studio directo sigue siendo preferente en YouTube"
 created: 2026-08-23
-updated: 2026-08-25
-version: "1.10"
+updated: 2026-08-26
+version: "1.11"
 author: "Manus AI (CGO)"
 related_documents:
   - "Operations/Research/Bam_In_A_Can_Distribution_Ledger.csv"
@@ -115,6 +115,18 @@ La fila de Windsor (103 views, 2 likes) sigue siendo evidencia técnica de index
 
 ![Métrica directa de CAN-002 en YouTube Studio](2026-08-25_Bam_CAN002_YouTube_Studio_Detail_260views.jpg)
 
+## Corte operativo posterior a T+72 — 26 de agosto
+
+El control programado para T+72 se ejecutó de forma retrasada alrededor de las **21:53 CDT**. Se conserva como corte posterior a T+72, no como una medición exacta de esa ventana.
+
+| Plataforma | Fuente y frescura | Métricas disponibles | Lectura correcta |
+|---|---|---|---|
+| TikTok | Consulta individual Windsor `tiktok_organic`, 21:53:35 CDT. | Sin fila para `7677381101991644437`. | La ausencia no equivale a cero ni permite afirmar que el rendimiento cambió desde el último dato utilizable de 155 views y 2 likes. |
+| Instagram Reels | Windsor por shortcode, `data_fetched_at` 21:52:33–21:52:57 CDT. | 327 views; reach 249; 0 likes; 0 comentarios; 0 shares; 0 saves; avg. watch 5.509 s; total watch 1,410.378 s. | Hay +3 views y +1 de reach frente al corte previo; no hay interacción activa nueva. El avg. watch equivale a 55.09 % de 10 s. |
+| YouTube Shorts | Windsor, 21:53:20 CDT; edad aproximada T+73 h 56 min. | 156 views; 1 like; 0 shares. | Windsor continúa por debajo de la última lectura directa de Studio (260 views, 3 likes y 4 shares). La fila es complementaria y no sustituye Studio directo. |
+
+El corte no modifica la estrategia de CAN-002 ni permite atribuir resultados al audio. La señal operativa se mantiene: las fuentes de YouTube siguen sin reconciliarse y TikTok no devolvió una fila nueva; Instagram ofrece una actualización pequeña sin distribución activa.
+
 ## Límites y actualizaciones relacionadas
 
-El ledger conserva el chequeo inicial como `pre-T3`, el corte post-T+3, la reconsulta post-T+24, el seguimiento posterior y la evidencia directa actualizada de Studio dentro de los snapshots por plataforma. Los documentos relacionados que requieren el mismo ajuste son el snapshot de CAN-001 —por la tarjeta de canal asíncrona— y el ledger de distribución, modificados en este cambio. El paquete, el calendario y el Plan de lanzamiento de audiencia no requieren modificación porque este corte no cambia copy, assets, audio, hipótesis ni ventanas planificadas.
+El ledger conserva el chequeo inicial como `pre-T3`, el corte post-T+3, la reconsulta post-T+24, el seguimiento posterior, el corte post-T+72 y la evidencia directa actualizada de Studio dentro de los snapshots por plataforma. El documento relacionado que requiere el mismo ajuste es el ledger de distribución, modificado en este cambio. El paquete, el calendario y el Plan de lanzamiento de audiencia no requieren modificación porque este corte no cambia copy, assets, audio, hipótesis ni ventanas planificadas.
