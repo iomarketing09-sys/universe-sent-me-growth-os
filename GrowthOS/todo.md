@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-26
-version: "11.99"
+version: "12.01"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -230,6 +230,8 @@ organization: "GrowthOS"
 - [x] Diseñar G-MIG-LUKS-1.8c: `preflight_collectors_static_after_luks.sh` y `validate_collectors_static_contract.py` revisan código, requisitos y ejemplo mediante texto/AST, sin importar collectors ni leer configuraciones privadas, tokens, evidencia o red.
 - [ ] Ejecutar revisión estática G-MIG-LUKS-1.8c: tras publicar el diseño, inspeccionar solo código, requisitos y `.example`; no abrir configuraciones reales, tokens, evidencia, OAuth, red, collectors ni cron.
 - [ ] Autorizar G-MIG-LUKS-1.8c: ejecutar preflight y analizador AST de contratos públicos; no instala paquetes ni activa collectors, servicios, OAuth, APIs, cron o datos reales.
+- [x] Autorizar G-MIG-LUKS-1.8c: Fernando aprobó ejecutar solo el preflight y el análisis AST/texto de contratos públicos, sin tokens, configuraciones privadas, evidencia, red, OAuth, collectors, cron, Docker u OmniRoute.
+- [ ] Corregir G-MIG-LUKS-1.8c: el analizador buscó valores TikTok/YouTube que se declaran en el autorizador o configuración pública, no en los collectors de lectura; ajustar las reglas y repetir el mismo análisis estático ya autorizado sin ejecutar integraciones.
 - [x] Corregir recurrencia G-MIG-LUKS-1.8b: la exclusión por PID no cubrió la invocación `bash` que lanza el wrapper; la corrección excluye por nombre exacto el archivo de inspección, conserva los procesos OmniRoute/Compose ajenos y validó sintaxis.
 - [x] Diseñar desbloqueo G-MIG-LUKS-1.5: método propuesto `Erase disk` → `Encrypt with a passphrase`; preflight de respaldo, identidad por modelo/tamaño, aislamiento físico, frase local y última autorización específica documentados en el proyecto v0.8. No autoriza aún borrar disco.
 - [x] Autorizar G-MIG-LUKS-1.4g: Fernando aprobó verificar la página guiada de cifrado por frase sin instalación; prohíbe ingresar frase, continuar a resumen, crear particiones o modificar cualquier disco.

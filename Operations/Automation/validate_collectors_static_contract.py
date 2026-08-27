@@ -17,6 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 REQUIREMENTS = ROOT / "official_metrics_requirements.txt"
 EXAMPLE = ROOT / "official_metrics_config.example.json"
+TIKTOK_AUTHORIZER = ROOT / "authorize_tiktok_desktop.py"
 
 
 def call_name(node: ast.AST) -> str | None:
@@ -62,7 +63,7 @@ def main() -> int:
     facebook = ROOT / "fetch_facebook_official_metrics.py"
     instagram = ROOT / "fetch_instagram_official_metrics.py"
     meta_probe = ROOT / "validate_meta_local_readonly.py"
-    for source in (tiktok, youtube, facebook, instagram, meta_probe, REQUIREMENTS, EXAMPLE):
+    for source in (tiktok, youtube, facebook, instagram, meta_probe, TIKTOK_AUTHORIZER, REQUIREMENTS, EXAMPLE):
         if not source.is_file():
             failures.append(f"required public artifact is absent: {source.name}")
     if failures:
@@ -73,12 +74,20 @@ def main() -> int:
     tiktok_calls = calls_in(ast.parse(tiktok_text, filename=str(tiktok)))
     require(
         tiktok_text,
-        ["Universe Sent Me", "USM_TIKTOK_CLIENT_KEY", "USM_TIKTOK_CLIENT_SECRET", "user.info.basic", "video.list", "~/.local/share/usm-metrics/evidence"],
+        ["Universe Sent Me", "config[\"tiktok\"]", "video.list", "token_file", "client_key_env", "client_secret_env"],
         "TikTok collector",
         failures,
     )
     if "requests.post" not in tiktok_calls:
         failures.append("TikTok collector: expected POST-only OAuth/Display contract is absent")
+
+    authorizer_text = TIKTOK_AUTHORIZER.read_text(encoding="utf-8")
+    require(
+        authorizer_text,
+        ["Universe Sent Me", "user.info.basic", "video.list", "127.0.0.1", "PKCE", "client_key_env", "client_secret_env"],
+        "TikTok authorizer",
+        failures,
+    )
 
     youtube_text = youtube.read_text(encoding="utf-8")
     require(
@@ -90,7 +99,7 @@ def main() -> int:
             "yt-analytics-monetary.readonly",
             "monetization_status",
             "not_available",
-            "~/.local/share/usm-metrics/evidence",
+            "config[\"evidence_dir\"]",
         ],
         "YouTube collector",
         failures,
@@ -119,6 +128,13 @@ def main() -> int:
         failures.append("example configuration: brand differs from Universe Sent Me")
     if set(example) - {"brand", "timezone", "evidence_dir", "tiktok", "youtube"}:
         failures.append("example configuration: unexpected top-level key")
+    if example.get("evidence_dir") != "~/.local/share/usm-metrics/evidence":
+        failures.append("example configuration: evidence directory differs from the private local path")
+    tiktok_example = example.get("tiktok")
+    if not isinstance(tiktok_example, dict) or set(tiktok_example.get("required_scopes", [])) != {"user.info.basic", "video.list"}:
+        failures.append("example configuration: TikTok scopes differ from the approved read-only set")
+    if not isinstance(tiktok_example, dict) or tiktok_example.get("client_key_env") != "USM_TIKTOK_CLIENT_KEY" or tiktok_example.get("client_secret_env") != "USM_TIKTOK_CLIENT_SECRET":
+        failures.append("example configuration: TikTok local variable names differ from the approved contract")
 
     result = {
         "status": "static_contract_passed" if not failures else "static_contract_blocked",
