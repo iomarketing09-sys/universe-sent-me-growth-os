@@ -4,10 +4,13 @@ purpose: "Definir la arquitectura lógica, las interfaces conceptuales, las vali
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Especificacion_Estatica_Verificador_Minimo_GSEC2_11_USM.md"
+  - "Operations/Automation/2026-08-27_Implementacion_Nucleo_Politica_Publico_GSEC2_11_USM.md"
+  - "Operations/Automation/policy_core_gsec211.py"
+  - "Operations/Automation/test_policy_core_gsec211_synthetic.py"
   - "Operations/Automation/2026-08-27_Gate_Tecnico_Pasivo_Observacion_Real_Minima_GSEC2_11_USM.md"
   - "Operations/Automation/2026-08-27_Gate_Superficie_Unica_Ejecucion_Servicios_No_Ejecucion_GSEC2_9_USM.md"
   - "Operations/Automation/2026-08-27_Gate_Analisis_Documental_Superficie_Ejecucion_No_Ejecucion_GSEC2_10_USM.md"
@@ -24,7 +27,7 @@ Este documento define cómo tendría que estructurarse un posible artefacto de c
 
 > **Límite decisivo:** el artefacto futuro solo podría aplicar reglas sobre una entrada efímera ya autorizada. No puede descubrir nombres, inventariar el equipo, buscar collectors genéricos, interpretar argumentos ni proporcionar por sí mismo una autorización de ejecución.
 
-Este contrato está en `Review`, pero no existe ningún archivo de código autorizado ni una interfaz permitida para observar el sistema.
+Este contrato está en `Review`. Se creó el núcleo de política puro `policy_core_gsec211.py` y su archivo de prueba sintética no ejecutada, ambos bajo una autorización explícita y limitada. No existe una interfaz permitida para observar el sistema.
 
 ## Registro de revisión humana independiente
 
@@ -111,7 +114,7 @@ No cambia G-SEC-2 de `Review`, no inicia una fase operativa y no desbloquea G-NO
 
 ## Estado y siguiente acción permitida
 
-Este contrato está en `Review`. No crea código, no registra nombres reales, no selecciona comandos y no analiza el sistema. Si en el futuro existe una necesidad concreta, cualquier propuesta para crear un núcleo de política como archivo público requerirá una autorización humana nueva y específica; dicha creación no autorizaría compilarlo, probarlo ni ejecutarlo.
+Este contrato está en `Review`. El núcleo de política público y su prueba sintética existen como implementación en `Draft`, sin nombres reales ni interfaz de ejecución. La siguiente acción permitida es una revisión humana estática de esa implementación; no autoriza compilar, importar, ejecutar, probar, registrar nombres reales ni analizar el sistema.
 
 Para conservar coherencia, el estado `Review` se refleja en la especificación estática, G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2, G-SEC-2.8 y G-SEC-2.10 no requieren cambio de estado porque sus límites continúan vigentes.
 

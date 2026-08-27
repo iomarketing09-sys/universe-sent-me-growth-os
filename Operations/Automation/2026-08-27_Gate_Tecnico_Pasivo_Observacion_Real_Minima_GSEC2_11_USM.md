@@ -4,7 +4,7 @@ purpose: "Definir la estructura y los límites de un gate separado que, tras rev
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.6"
+version: "1.7"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Gate_Superficie_Unica_Ejecucion_Servicios_No_Ejecucion_GSEC2_9_USM.md"
@@ -126,7 +126,7 @@ No permite automatización, vigilancia continua, programación, red, uso de puer
 
 ## Estado y siguiente acción permitida
 
-G-SEC-2.11 está en `Review`. No habilita un verificador, una observación del sistema, datos, red, servicios, collectors, automatizaciones, integraciones ni G-NORM-4R. La especificación pública `2026-08-27_Especificacion_Estatica_Verificador_Minimo_GSEC2_11_USM.md` v1.3 y el contrato no ejecutable `2026-08-27_Contrato_Artefacto_Codigo_Publico_Verificador_Minimo_GSEC2_11_USM.md` v1.1 están en `Review`; ninguno creó código ni registró nombres reales. Cualquier propuesta de creación de un núcleo de política como archivo público requerirá una autorización humana nueva y no autorizará compilarlo, probarlo ni ejecutarlo.
+G-SEC-2.11 está en `Review`. No habilita un verificador, una observación del sistema, datos, red, servicios, collectors, automatizaciones, integraciones ni G-NORM-4R. La especificación pública v1.4 y el contrato no ejecutable v1.2 están en `Review`. La implementación limitada `2026-08-27_Implementacion_Nucleo_Politica_Publico_GSEC2_11_USM.md` v1.0 está en `Draft`, con núcleo puro y prueba sintética no ejecutada; no contiene nombres reales ni una interfaz de consulta. La siguiente acción permitida es revisar estáticamente esa implementación; no autoriza compilar, importar, ejecutar, probar ni observar el sistema.
 
 Para preservar la coherencia, el estado `Review` se refleja en el pendiente operativo, el changelog central y el estado de siguiente acción de G-SEC-2.9. El contrato G-SEC-2 y G-SEC-2.10 no requieren cambio de estado porque sus límites continúan vigentes.
 
