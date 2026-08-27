@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.40
+**Versión:** 5.41
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.41.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.1a y G-SEC-2.2a diseñados como pruebas sintéticas separadas.** Se añadieron fixtures, validadores y wrappers independientes para minimización/egress y retención/disposición. La primera acepta solo campos agregados mínimos en memoria y rechaza caption, handle, raw, Drive, Sheets y marcas ajenas. La segunda modela la retención ficticia de 30 días y rechaza vencimiento sin revisión, eliminación automática, reescritura in-place, archivo externo y retención indefinida. Ambos interceptan sockets, no importan collectors, no leen rutas privadas o entorno y no escriben ledger, evidencia, archivos externos ni datos canónicos. Están diseñados y sin ejecutar; cada uno requiere autorización explícita independiente. No se activaron datos reales, red/OAuth/API, dependencias, cron, Docker, OmniRoute ni G-NORM-4R.
 
 - **[5.40.00] — 2026-08-26 (Fernando/Manus): revisión humana G-SEC-2 confirmada, sin ejecución; registro reconciliado.** Fernando confirmó los cuatro controles de diseño: minimización y separación de Universe Sent Me; retención de 30 días con revisión humana y sin mutación; operación manual read-only; y consentimiento granular por una sola operación, vigente hasta 24 horas y revocable. G-SEC-2 pasa de `Draft` a `Review`. La confirmación no abre datos reales, tokens, configuración privada, collectors, OAuth/API, ledger persistente, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos ni G-NORM-4R. El próximo trabajo permitido es diseñar pruebas sintéticas separadas de minimización/egress y retención/disposición. La versión se renumeró al reconciliar los hitos remotos 5.38 y 5.39 para conservar ambos sin duplicidad.
 

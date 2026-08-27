@@ -1,0 +1,69 @@
+{
+  "synthetic": true,
+  "brand": "Universe Sent Me",
+  "allowed_fields": [
+    "platform",
+    "metric_name",
+    "metric_value",
+    "window_type",
+    "availability"
+  ],
+  "cases": [
+    {
+      "name": "minimum_local_aggregate_allowed",
+      "brand": "Universe Sent Me",
+      "data_class": "synthetic_observation",
+      "fields": ["platform", "metric_name", "metric_value", "window_type", "availability"],
+      "destination": "temporary_memory",
+      "external_egress": false
+    },
+    {
+      "name": "caption_field_blocked",
+      "brand": "Universe Sent Me",
+      "data_class": "synthetic_observation",
+      "fields": ["platform", "metric_name", "metric_value", "caption"],
+      "destination": "temporary_memory",
+      "external_egress": false
+    },
+    {
+      "name": "creator_identifier_blocked",
+      "brand": "Universe Sent Me",
+      "data_class": "synthetic_observation",
+      "fields": ["platform", "metric_name", "metric_value", "creator_handle"],
+      "destination": "temporary_memory",
+      "external_egress": false
+    },
+    {
+      "name": "raw_response_blocked",
+      "brand": "Universe Sent Me",
+      "data_class": "raw_api_response",
+      "fields": ["platform", "payload"],
+      "destination": "temporary_memory",
+      "external_egress": false
+    },
+    {
+      "name": "drive_egress_blocked",
+      "brand": "Universe Sent Me",
+      "data_class": "synthetic_observation",
+      "fields": ["platform", "metric_name", "metric_value"],
+      "destination": "drive",
+      "external_egress": true
+    },
+    {
+      "name": "sheets_egress_blocked",
+      "brand": "Universe Sent Me",
+      "data_class": "synthetic_observation",
+      "fields": ["platform", "metric_name", "metric_value"],
+      "destination": "sheets",
+      "external_egress": true
+    },
+    {
+      "name": "other_brand_blocked",
+      "brand": "Firma Bordados",
+      "data_class": "synthetic_observation",
+      "fields": ["platform", "metric_name", "metric_value"],
+      "destination": "temporary_memory",
+      "external_egress": false
+    }
+  ]
+}

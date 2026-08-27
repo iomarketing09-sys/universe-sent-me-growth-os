@@ -4,7 +4,7 @@ purpose: "Definir los controles separados que deben diseñarse, revisarse y apro
 status: Review
 created: 2026-08-25
 updated: 2026-08-26
-version: "2.3"
+version: "2.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
@@ -16,6 +16,10 @@ related_documents:
   - "GrowthOS/todo.md"
   - "Operations/Automation/preflight_gsec2_readonly_barriers.sh"
   - "Operations/Automation/validate_gsec2_readonly_barriers_synthetic.py"
+  - "Operations/Automation/preflight_gsec2_minimization_egress.sh"
+  - "Operations/Automation/validate_gsec2_minimization_egress_synthetic.py"
+  - "Operations/Automation/preflight_gsec2_retention_disposition.sh"
+  - "Operations/Automation/validate_gsec2_retention_disposition_synthetic.py"
 organization: "Operations/Automation"
 ---
 
@@ -135,6 +139,19 @@ La ejecución autorizada devolvió `STATUS=preflight_complete_gsec2_synthetic_on
 
 Cualquier diferencia, proceso detectado o artefacto faltante será `BLOCKED`; no se corrige el entorno, no se instala software y no se reintenta sin revisar el resultado. El PASS demuestra solo las barreras sintéticas actuales: no cambia G-SEC-2 de `Draft`, no concede consentimiento granular y no abre G-NORM-4R.
 
+### G-SEC-2.1a y G-SEC-2.2a — verificaciones sintéticas diseñadas, sin ejecución
+
+Los dos subgates restantes fueron preparados como validaciones independientes de política con fixtures ficticios. No reciben datos de plataformas, no leen directorios privados ni entorno, no importan collectors y bloquean `socket.socket` antes de cualquier red. Cada wrapper tiene los modos `--plan`, `--preflight` y `--execute` con una cadena de confirmación distinta, de modo que una futura autorización puede limitarse a uno de los dos controles.
+
+| Subgate | Permite solo en el fixture | Debe rechazar en el fixture | Confirmación futura exacta |
+|---|---|---|---|
+| G-SEC-2.1a minimización/egress | Campos agregados mínimos (`platform`, `metric_name`, `metric_value`, `window_type`, `availability`) en memoria temporal. | Caption, handle, respuesta raw, Drive, Sheets y otra marca. | `RUN_USM_GSEC2_MINIMIZATION_EGRESS_SYNTHETIC` |
+| G-SEC-2.2a retención/disposición | Registro ficticio dentro de 30 días o, exactamente en el día 30, bloqueo de nuevas escrituras y solicitud de revisión humana sin mutación. | Retención vencida sin revisión, eliminación automática, reescritura in-place, archivo externo e indefinición. | `RUN_USM_GSEC2_RETENTION_DISPOSITION_SYNTHETIC` |
+
+La suite de minimización valida una lista blanca de campos y exige el destino `temporary_memory`; no usa valores reales. La suite de retención modela edades enteras ficticias y una política fija de 30 días; no mide tiempo del sistema, no busca archivos, no elimina ni modifica nada. Sus salidas previstas contienen solamente nombres de casos, razones de rechazo y garantías agregadas.
+
+Los dos subgates permanecen **diseñados y sin ejecutar**. El preflight de cada uno solo podrá revisar repositorio, Python, sus dos archivos públicos y procesos por nombre; no modifica el entorno. La ejecución requerirá aprobación explícita independiente, deberá detenerse ante un proceso detectado y no abre G-NORM-4R aunque ambos resultados sean PASS.
+
 ## G-SEC-2.4 — Consentimiento granular, por operación y revocable
 
 El consentimiento propuesto no será una autorización general para “usar métricas”. Es una decisión puntual de Fernando sobre una única operación definida. Debe ser solicitado solo después de que G-SEC-2.1, 2.2 y 2.3 estén completos y de que exista una propuesta técnica exacta, revisable y sin secretos.
@@ -160,7 +177,7 @@ G-SEC-2 se considera **diseñado** cuando este documento y los documentos relaci
 | Estado | Resultado | Consecuencia |
 |---|---|---|
 | Draft | Diseño documentado, con G-SEC-2.3a sintético ya pasado pero sin revisión humana completa de los cuatro controles. | G-NORM-4R bloqueado. |
-| Review | Fernando confirmó los cuatro límites de diseño; faltan pruebas sintéticas específicas de privacidad/minimización y retención, además de una futura tarjeta puntual de consentimiento. | Solo se pueden diseñar o proponer subgates sintéticos posteriores. |
+| Review | Fernando confirmó los cuatro límites de diseño; G-SEC-2.3a pasó, mientras G-SEC-2.1a y G-SEC-2.2a están diseñados y sin ejecutar. Sigue faltando una futura tarjeta puntual de consentimiento. | Solo se pueden diseñar o proponer subgates sintéticos posteriores. |
 | Active | Solo después de pruebas de control aprobadas y consentimiento puntual vigente. | Permite proponer, no ejecutar automáticamente, una única operación G-NORM-4R. |
 | Blocked | Cualquier ambigüedad, salida externa, datos no permitidos, retención indefinida o consentimiento vencido. | No se abre evidencia ni se ejecuta ningún collector. |
 

@@ -1,0 +1,63 @@
+{
+  "synthetic": true,
+  "brand": "Universe Sent Me",
+  "retention_days": 30,
+  "cases": [
+    {
+      "name": "active_record_allowed",
+      "age_days": 7,
+      "proposed_action": "hold_without_use",
+      "human_review": false,
+      "mutates_record": false,
+      "destination": "temporary_memory"
+    },
+    {
+      "name": "boundary_requires_human_review",
+      "age_days": 30,
+      "proposed_action": "block_new_writes_and_request_human_review",
+      "human_review": true,
+      "mutates_record": false,
+      "destination": "temporary_memory"
+    },
+    {
+      "name": "expired_without_review_blocked",
+      "age_days": 31,
+      "proposed_action": "continue_holding",
+      "human_review": false,
+      "mutates_record": false,
+      "destination": "temporary_memory"
+    },
+    {
+      "name": "automatic_delete_blocked",
+      "age_days": 31,
+      "proposed_action": "automatic_delete",
+      "human_review": false,
+      "mutates_record": true,
+      "destination": "temporary_memory"
+    },
+    {
+      "name": "in_place_rewrite_blocked",
+      "age_days": 31,
+      "proposed_action": "rewrite_record_for_retention",
+      "human_review": true,
+      "mutates_record": true,
+      "destination": "temporary_memory"
+    },
+    {
+      "name": "external_archive_blocked",
+      "age_days": 31,
+      "proposed_action": "archive_for_review",
+      "human_review": true,
+      "mutates_record": false,
+      "destination": "drive"
+    },
+    {
+      "name": "indefinite_hold_blocked",
+      "age_days": 365,
+      "proposed_action": "continue_holding",
+      "human_review": false,
+      "mutates_record": false,
+      "destination": "temporary_memory"
+    }
+  ]
+}
