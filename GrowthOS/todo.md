@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-26
-version: "12.14"
+version: "12.16"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -224,7 +224,8 @@ organization: "GrowthOS"
 - [x] Autorizar G-SEC-2.2a: Fernando autorizó ejecutar preflight y prueba sintética de retención/disposición con `RUN_USM_GSEC2_RETENTION_DISPOSITION_SYNTHETIC`; no autoriza datos reales, red, OAuth, collectors, tokens, evidencia, ledger persistente, cron, Docker, OmniRoute ni salidas externas.
 - [x] Ejecutar G-SEC-2.1a: preflight PASS y suite de minimización/egress PASS. Permitió solo el fixture agregado mínimo en memoria; bloqueó caption, handle, raw, Drive, Sheets y otra marca, con socket guard bloqueada. No leyó datos/rutas privadas, entorno, collectors ni escribió salida alguna.
 - [x] Ejecutar G-SEC-2.2a: preflight PASS y suite de retención/disposición PASS. Permitió el fixture dentro de plazo y revisión humana en día 30; bloqueó vencimiento sin revisión, eliminación automática, reescritura, archivo externo y retención indefinida, con socket guard bloqueada. No leyó datos/rutas privadas, entorno, collectors ni modificó archivos.
-- [ ] Diseñar G-SEC-2.4a: validación sintética de completitud de tarjeta de consentimiento granular por una operación, sin datos reales, red, OAuth, collectors, tokens, evidencia, ledger persistente, cron, Docker, OmniRoute ni salidas externas.
+- [x] Diseñar G-SEC-2.4a: validación sintética de completitud de tarjeta de consentimiento granular por una operación con fixture, validador y preflight públicos. No registra ni concede consentimiento real, ni autoriza datos reales, red, OAuth, collectors, tokens, evidencia, ledger persistente, cron, Docker, OmniRoute o salidas externas.
+- [ ] Autorizar G-SEC-2.4a: ejecutar preflight y prueba sintética con `RUN_USM_GSEC2_GRANULAR_CONSENT_SYNTHETIC`; no solicita, guarda, valida o concede consentimiento real y no autoriza datos reales, collectors, OAuth/API, ledger persistente, cron, Docker, OmniRoute ni salidas externas.
 - [x] Diseñar G-SEC-2.3a: prueba sintética de las barreras de operación read-only, egress y automatización; incluye fixture ficticio, validador de política y wrapper con modo plan/preflight/execute confirmado. No lee rutas privadas, no importa collectors, no abre sockets, no instala dependencias y no crea ledger persistente.
 - [x] Autorizar G-SEC-2.3a: Fernando autorizó ejecutar el preflight y, solo si pasa, la prueba de barreras sintéticas con `RUN_USM_GSEC2_SYNTHETIC_BARRIERS`; no autoriza datos reales, red, OAuth, collectors, tokens, evidencia, ledger persistente, cron, Docker, OmniRoute ni salidas externas.
 - [x] Ejecutar G-SEC-2.3a: preflight PASS y prueba sintética PASS con seis rechazos esperados —egress externo, scheduler, evidencia privada, red, finanzas y marca ajena— y guardia de socket bloqueada. No se leyeron rutas privadas/entorno, importaron collectors, escribieron ledgers/evidencia ni iniciaron scheduler, servicio, Docker u OmniRoute.

@@ -1,0 +1,193 @@
+{
+  "synthetic": true,
+  "purpose": "Validate fictional consent-card completeness only; this is not real consent.",
+  "required_metrics": {
+    "TikTok": "views_native",
+    "YouTube": "views_native_closed_period",
+    "Facebook": "reactions_native",
+    "Instagram": "likes_native"
+  },
+  "cases": [
+    {
+      "name": "complete_single_operation_card_allowed",
+      "reference": "synthetic-g-norm-4r-proposal-v1",
+      "brand": "Universe Sent Me",
+      "sample_size": 4,
+      "metrics": {
+        "TikTok": "views_native",
+        "YouTube": "views_native_closed_period",
+        "Facebook": "reactions_native",
+        "Instagram": "likes_native"
+      },
+      "retention_days": 30,
+      "execution": "manual_read_only_once",
+      "external_egress": false,
+      "validity_hours": 24,
+      "revocable": true,
+      "result_output": "aggregate_safe_status_only",
+      "real_data": false,
+      "synthetic_approval_marker": true
+    },
+    {
+      "name": "missing_reference_blocked",
+      "brand": "Universe Sent Me",
+      "sample_size": 4,
+      "metrics": {
+        "TikTok": "views_native",
+        "YouTube": "views_native_closed_period",
+        "Facebook": "reactions_native",
+        "Instagram": "likes_native"
+      },
+      "retention_days": 30,
+      "execution": "manual_read_only_once",
+      "external_egress": false,
+      "validity_hours": 24,
+      "revocable": true,
+      "result_output": "aggregate_safe_status_only",
+      "real_data": false,
+      "synthetic_approval_marker": true
+    },
+    {
+      "name": "scope_expansion_blocked",
+      "reference": "synthetic-g-norm-4r-proposal-v1",
+      "brand": "Universe Sent Me",
+      "sample_size": 5,
+      "metrics": {
+        "TikTok": "views_native",
+        "YouTube": "views_native_closed_period",
+        "Facebook": "reactions_native",
+        "Instagram": "likes_native",
+        "Other": "views_native"
+      },
+      "retention_days": 30,
+      "execution": "manual_read_only_once",
+      "external_egress": false,
+      "validity_hours": 24,
+      "revocable": true,
+      "result_output": "aggregate_safe_status_only",
+      "real_data": false,
+      "synthetic_approval_marker": true
+    },
+    {
+      "name": "financial_metric_blocked",
+      "reference": "synthetic-g-norm-4r-proposal-v1",
+      "brand": "Universe Sent Me",
+      "sample_size": 4,
+      "metrics": {
+        "TikTok": "views_native",
+        "YouTube": "estimated_revenue",
+        "Facebook": "reactions_native",
+        "Instagram": "likes_native"
+      },
+      "retention_days": 30,
+      "execution": "manual_read_only_once",
+      "external_egress": false,
+      "validity_hours": 24,
+      "revocable": true,
+      "result_output": "aggregate_safe_status_only",
+      "real_data": false,
+      "synthetic_approval_marker": true
+    },
+    {
+      "name": "retention_extension_blocked",
+      "reference": "synthetic-g-norm-4r-proposal-v1",
+      "brand": "Universe Sent Me",
+      "sample_size": 4,
+      "metrics": {
+        "TikTok": "views_native",
+        "YouTube": "views_native_closed_period",
+        "Facebook": "reactions_native",
+        "Instagram": "likes_native"
+      },
+      "retention_days": 31,
+      "execution": "manual_read_only_once",
+      "external_egress": false,
+      "validity_hours": 24,
+      "revocable": true,
+      "result_output": "aggregate_safe_status_only",
+      "real_data": false,
+      "synthetic_approval_marker": true
+    },
+    {
+      "name": "non_readonly_execution_blocked",
+      "reference": "synthetic-g-norm-4r-proposal-v1",
+      "brand": "Universe Sent Me",
+      "sample_size": 4,
+      "metrics": {
+        "TikTok": "views_native",
+        "YouTube": "views_native_closed_period",
+        "Facebook": "reactions_native",
+        "Instagram": "likes_native"
+      },
+      "retention_days": 30,
+      "execution": "scheduled_or_write_capable",
+      "external_egress": false,
+      "validity_hours": 24,
+      "revocable": true,
+      "result_output": "aggregate_safe_status_only",
+      "real_data": false,
+      "synthetic_approval_marker": true
+    },
+    {
+      "name": "external_egress_blocked",
+      "reference": "synthetic-g-norm-4r-proposal-v1",
+      "brand": "Universe Sent Me",
+      "sample_size": 4,
+      "metrics": {
+        "TikTok": "views_native",
+        "YouTube": "views_native_closed_period",
+        "Facebook": "reactions_native",
+        "Instagram": "likes_native"
+      },
+      "retention_days": 30,
+      "execution": "manual_read_only_once",
+      "external_egress": true,
+      "validity_hours": 24,
+      "revocable": true,
+      "result_output": "aggregate_safe_status_only",
+      "real_data": false,
+      "synthetic_approval_marker": true
+    },
+    {
+      "name": "expired_or_nonrevocable_card_blocked",
+      "reference": "synthetic-g-norm-4r-proposal-v1",
+      "brand": "Universe Sent Me",
+      "sample_size": 4,
+      "metrics": {
+        "TikTok": "views_native",
+        "YouTube": "views_native_closed_period",
+        "Facebook": "reactions_native",
+        "Instagram": "likes_native"
+      },
+      "retention_days": 30,
+      "execution": "manual_read_only_once",
+      "external_egress": false,
+      "validity_hours": 25,
+      "revocable": false,
+      "result_output": "aggregate_safe_status_only",
+      "real_data": false,
+      "synthetic_approval_marker": true
+    },
+    {
+      "name": "real_data_or_identifier_field_blocked",
+      "reference": "synthetic-g-norm-4r-proposal-v1",
+      "brand": "Universe Sent Me",
+      "sample_size": 4,
+      "metrics": {
+        "TikTok": "views_native",
+        "YouTube": "views_native_closed_period",
+        "Facebook": "reactions_native",
+        "Instagram": "likes_native"
+      },
+      "retention_days": 30,
+      "execution": "manual_read_only_once",
+      "external_egress": false,
+      "validity_hours": 24,
+      "revocable": true,
+      "result_output": "aggregate_safe_status_only",
+      "real_data": true,
+      "synthetic_approval_marker": true,
+      "identifier": "fictional-id-must-not-be-allowed"
+    }
+  ]
+}

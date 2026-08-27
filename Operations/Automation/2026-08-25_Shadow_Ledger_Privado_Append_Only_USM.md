@@ -4,7 +4,7 @@ purpose: "Definir el ledger privado de validación para comprobar idempotencia, 
 status: Review
 created: 2026-08-25
 updated: 2026-08-27
-version: "1.10"
+version: "1.11"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Esquema_Normalizacion_Determinista_Multicanal_USM.md"
@@ -119,7 +119,7 @@ La matriz ahora ejecuta diez controles: nueve detecciones y la invariancia byte 
 
 El documento `2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md` v2.1 define G-SEC-2 como el conjunto de controles previos al piloto real. Establece cuatro subgates independientes: minimización de datos y salidas, retención máxima de 30 días con revisión humana, operación local estrictamente read-only y una tarjeta de consentimiento por operación con vigencia de 24 horas.
 
-G-SEC-2 pasó a `Review` después de la confirmación humana de los cuatro límites de diseño. G-SEC-2.3a pasó con un fixture ficticio: rechazó destinos externos, scheduling, datos privados, red, monetización y otras marcas, mientras permitió solo una comprobación manual en memoria y bloqueó la apertura de sockets. Las pruebas separadas G-SEC-2.1a de minimización/egress y G-SEC-2.2a de retención/disposición también pasaron con fixtures ficticios y guardia de socket. La primera rechazó campos no mínimos, raw, destinos externos y marcas ajenas; la segunda rechazó vencimiento sin revisión, eliminación/re-escritura automática, archivo externo y retención indefinida. El diseño no modifica este contrato ni habilita su escritor real. Antes de cualquier G-NORM-4R, falta una tarjeta puntual de consentimiento granular y su validación sintética de completitud; ningún PASS actual los sustituye. No se abrirán tokens, evidencia, collectors, API, cron, Docker, OmniRoute, Sheets, Drive, GitHub ni modelos como consecuencia de esta dependencia.
+G-SEC-2 pasó a `Review` después de la confirmación humana de los cuatro límites de diseño. G-SEC-2.3a pasó con un fixture ficticio: rechazó destinos externos, scheduling, datos privados, red, monetización y otras marcas, mientras permitió solo una comprobación manual en memoria y bloqueó la apertura de sockets. Las pruebas separadas G-SEC-2.1a de minimización/egress y G-SEC-2.2a de retención/disposición también pasaron con fixtures ficticios y guardia de socket. La primera rechazó campos no mínimos, raw, destinos externos y marcas ajenas; la segunda rechazó vencimiento sin revisión, eliminación/re-escritura automática, archivo externo y retención indefinida. G-SEC-2.4a ya está diseñado para revisar tarjetas ficticias de una sola operación, pero no se ha ejecutado ni constituye una autorización. El diseño no modifica este contrato ni habilita su escritor real. Antes de cualquier G-NORM-4R, G-SEC-2.4a debe pasar y todavía debe diseñarse y aprobarse una tarjeta puntual de consentimiento granular real; ningún PASS actual los sustituye. No se abrirán tokens, evidencia, collectors, API, cron, Docker, OmniRoute, Sheets, Drive, GitHub ni modelos como consecuencia de esta dependencia.
 
 ## Referencias
 
