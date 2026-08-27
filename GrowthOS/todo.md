@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-26
-version: "11.96"
+version: "11.97"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -226,6 +226,8 @@ organization: "GrowthOS"
 - [x] Autorizar G-MIG-LUKS-1.8b: Fernando aprobó ejecutar solo la inspección pasiva de Docker y OmniRoute; no permite instalar/iniciar componentes, leer `.env`, abrir puertos ni realizar solicitudes de red.
 - [x] Corregir inspección pasiva G-MIG-LUKS-1.8b: el detector `pgrep` coincidió con el proceso del propio wrapper y produjo un falso positivo; la corrección excluye su propio PID y conserva el mismo alcance pasivo. La sintaxis validó correctamente.
 - [ ] Repetir inspección pasiva G-MIG-LUKS-1.8b: publicar la corrección y volver a revisar metadatos, clientes, procesos y puerto 20128 sin instalar/iniciar componentes ni abrir configuraciones privadas.
+- [x] Repetir inspección pasiva G-MIG-LUKS-1.8b: directorio `~/omniroute-pilot` presente con modo `0700`; Docker/Compose ausentes, sin procesos OmniRoute/Compose y puerto 20128 no escuchando. No se inició servicio, se abrió `.env`, llamó red ni modificó configuración.
+- [ ] Diseñar G-MIG-LUKS-1.8c: revisar contratos, scripts y dependencias de collectors solo por código/configuración de ejemplo; no ejecutar OAuth, APIs, collectors, cron ni evidencia con datos reales.
 - [x] Corregir recurrencia G-MIG-LUKS-1.8b: la exclusión por PID no cubrió la invocación `bash` que lanza el wrapper; la corrección excluye por nombre exacto el archivo de inspección, conserva los procesos OmniRoute/Compose ajenos y validó sintaxis.
 - [x] Diseñar desbloqueo G-MIG-LUKS-1.5: método propuesto `Erase disk` → `Encrypt with a passphrase`; preflight de respaldo, identidad por modelo/tamaño, aislamiento físico, frase local y última autorización específica documentados en el proyecto v0.8. No autoriza aún borrar disco.
 - [x] Autorizar G-MIG-LUKS-1.4g: Fernando aprobó verificar la página guiada de cifrado por frase sin instalación; prohíbe ingresar frase, continuar a resumen, crear particiones o modificar cualquier disco.

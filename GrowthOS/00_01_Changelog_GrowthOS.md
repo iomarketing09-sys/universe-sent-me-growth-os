@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-26
-**Versión:** 5.31
+**Versión:** 5.32
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.32.00] — 2026-08-26 (Fernando/Manus): inspección pasiva OmniRoute aprobada, sin Docker ni servicios.** Tras corregir una auto-coincidencia del wrapper, G-MIG-LUKS-1.8b confirmó `~/omniroute-pilot` con modo `0700`, Docker y Compose ausentes, 0 procesos OmniRoute/Compose y puerto 20128 no escuchando. No se instaló software, inició servicio, abrió `.env`, consultó red ni procesó entradas. El resultado es solo inventario; instalar Docker o iniciar OmniRoute requiere un gate separado. El próximo subgate revisará contratos de collectors exclusivamente por código/configuración de ejemplo.
 
 - **[5.31.00] — 2026-08-26 (Fernando/Manus): exclusión definitiva del wrapper en inspección OmniRoute.** La corrección por PID no cubrió la invocación `bash` del propio script; se sustituyó por una exclusión del nombre exacto del archivo de inspección, sin filtrar procesos OmniRoute/Compose ajenos. La sintaxis validó correctamente y no se ejecutó Docker, OmniRoute, red, apertura de `.env` o cambio de puertos. La inspección pasiva autorizada se repetirá tras sincronizar el repositorio.
 

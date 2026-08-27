@@ -4,7 +4,7 @@ purpose: "Definir los gates y la secuencia reversible para reinstalar Xubuntu co
 status: Active
 created: 2026-08-26
 updated: 2026-08-26
-version: "1.7"
+version: "1.8"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -148,6 +148,8 @@ El wrapper `inspect_omniroute_passive_after_luks.sh` no tiene modo de inicio ni 
 G-MIG-LUKS-1.8b no prueba solicitudes, rutas, proveedores, fallback, API keys ni borradores. Eso requerirá un gate independiente con una fixture no sensible, consentimiento específico y un control previo del arranque de Docker.
 
 La primera ejecución pasiva devolvió un falso positivo porque el patrón `pgrep` coincidió con la propia línea de comando del wrapper. Este resultado no indica un servicio OmniRoute activo: el inventario sí confirmó el directorio privado con modo `0700` y ausencia de Docker/Compose. Una exclusión inicial por PID no cubrió la invocación `bash` que lanzó el archivo; la corrección final excluye por nombre exacto el wrapper de inspección y conserva cualquier proceso OmniRoute/Compose ajeno. La sintaxis fue validada sin ejecución, instalación, inicio, lectura de `.env`, apertura de puertos ni red. La repetición sigue usando la autorización ya otorgada para G-MIG-LUKS-1.8b.
+
+G-MIG-LUKS-1.8b pasó tras aplicar la corrección: `~/omniroute-pilot` sigue presente con modo `0700`, Docker y Docker Compose no están instalados, no se detectaron procesos OmniRoute/Compose y `127.0.0.1:20128` no está en escucha. No se modificó configuración, no se abrió archivo `.env`, no se inició contenedor, no se llamó red y no se usaron entradas sintéticas o reales. El resultado es inventario técnico, no autorización para instalar Docker ni iniciar OmniRoute.
 
 ## Diseño de desbloqueo G-MIG-LUKS-1.5
 
