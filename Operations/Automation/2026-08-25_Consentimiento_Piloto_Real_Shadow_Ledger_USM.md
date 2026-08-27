@@ -4,7 +4,7 @@ purpose: "Definir los controles separados que deben diseñarse, revisarse y apro
 status: Review
 created: 2026-08-25
 updated: 2026-08-27
-version: "3.1"
+version: "3.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
@@ -24,6 +24,8 @@ related_documents:
   - "Operations/Automation/validate_gsec2_granular_consent_synthetic.py"
   - "Operations/Automation/2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md"
   - "Operations/Automation/2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md"
+  - "Operations/Automation/preflight_gsec2_template_static_integrity.sh"
+  - "Operations/Automation/validate_gsec2_template_static_integrity.py"
 organization: "Operations/Automation"
 ---
 
@@ -192,7 +194,20 @@ El wrapper `preflight_gsec2_granular_consent.sh` mantiene los modos `--plan`, `-
 
 La ejecución autorizada pasó con `STATUS=preflight_complete_gsec2_granular_consent_synthetic_only_no_network_no_private_read`, `gsec2_granular_consent_synthetic_passed` y `STATUS=gsec2_granular_consent_synthetic_complete_no_network_no_private_read_no_real_consent`. Permitió únicamente la tarjeta ficticia completa y rechazó las ocho variantes esperadas: referencia ausente, ampliación de alcance, métrica financiera, retención extendida, ejecución no read-only, egress externo, vigencia/no revocación inválida y datos/identificadores simulados. Reportó guardia de socket bloqueada, sin procesos de servicios o collectors.
 
-Este PASS valida únicamente la **plantilla ficticia**. La plantilla real vacía y el procedimiento de solicitud humana se documentan por separado en `2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md` v1.2. Su revisión humana fue confirmada y el documento pasó a `Review`, sin pedir todavía datos, tokens o consentimiento y sin autorizar una operación. La ficha pública vacía y lista manual para comparar una futura propuesta contra esos límites se documentan en `2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md` v1.0, en `Draft`. G-NORM-4R continúa bloqueado hasta un gate separado que incorpore una tarjeta real completa, consentimiento humano vigente y validación manual del alcance técnico.
+Este PASS valida únicamente la **plantilla ficticia**. La plantilla real vacía y el procedimiento de solicitud humana se documentan por separado en `2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md` v1.3. Su revisión humana fue confirmada y el documento pasó a `Review`, sin pedir todavía datos, tokens o consentimiento y sin autorizar una operación. La ficha pública vacía y lista manual para comparar una futura propuesta contra esos límites se documentan en `2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md` v1.0, en `Draft`. G-SEC-2.5 ya está diseñado como validación estática de estas tres piezas públicas, pero no se ha ejecutado. G-NORM-4R continúa bloqueado hasta un gate separado que incorpore una tarjeta real completa, consentimiento humano vigente y validación manual del alcance técnico.
+
+### G-SEC-2.5 — integridad estática de plantillas diseñada
+
+G-SEC-2.5 usa `fixtures/gsec2_template_static_integrity_expectations.json`, `validate_gsec2_template_static_integrity.py` y `preflight_gsec2_template_static_integrity.sh`. El gate solo puede leer los tres documentos públicos de contrato, plantilla y ficha dentro del repositorio. Comprueba estado documental, marcadores de límites, enlaces cruzados, campos pendientes y las diez filas de comparación; no interpreta propuestas, tarjetas o respuestas humanas.
+
+| Comprobación estática | Resultado esperado | Límite de seguridad |
+|---|---|---|
+| Estados de documentos | G-SEC-2 y plantilla en `Review`; ficha en `Draft`. | No cambia estados ni emite artefactos. |
+| Límites constantes | Marca USM, máximo 4 observaciones, 30 días y 24 horas. | No evalúa valores o datos de operación. |
+| Campos pendientes | Marcadores de no emisión/no solicitud/no comparación permanecen presentes. | No completa ni solicita campos. |
+| Enlaces y controles | Referencias mutuas y diez controles de comparación. | No abre rutas fuera del repositorio. |
+
+El wrapper solo ofrece `--plan`, `--preflight` y `--execute --confirm RUN_USM_GSEC2_TEMPLATE_STATIC_INTEGRITY`. El modo de planificación ya validó su sintaxis y no leyó documentos. El futuro preflight verificará los cuatro artefactos públicos y la ausencia de procesos de collectors/servicios; el modo de ejecución requerirá autorización separada, leerá texto público y emitirá únicamente `gsec2_template_static_integrity_passed` o `BLOCKED`. G-SEC-2.5 está diseñado y sin ejecutar: no lee rutas privadas o entorno, no abre sockets, no solicita ni concede consentimiento real y no habilita G-NORM-4R.
 
 ## Criterio de cierre de G-SEC-2 y siguiente gate posible
 

@@ -1,0 +1,66 @@
+{
+  "fixture_type": "gsec2_template_static_integrity_public_only",
+  "brand": "Universe Sent Me",
+  "limits": {
+    "max_observations": 4,
+    "retention_days": 30,
+    "validity_hours": 24
+  },
+  "documents": {
+    "gsec2_contract": {
+      "path": "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md",
+      "status": "Review",
+      "required_markers": [
+        "# G-SEC-2 — Controles previos para un piloto real privado",
+        "Universe Sent Me",
+        "Máximo cuatro observaciones",
+        "Máximo 30 días",
+        "Una ejecución manual, read-only, sin salida externa.",
+        "ventana máxima de 24 horas",
+        "2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md",
+        "2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md"
+      ]
+    },
+    "consent_template": {
+      "path": "Operations/Automation/2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md",
+      "status": "Review",
+      "required_markers": [
+        "# Plantilla vacía y procedimiento de solicitud — tarjeta de consentimiento puntual USM",
+        "No es una tarjeta emitida",
+        "[PENDIENTE — no emitir]",
+        "[PENDIENTE — no solicitar]",
+        "Universe Sent Me",
+        "30 días máximos",
+        "máximo de 24 horas",
+        "2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md"
+      ]
+    },
+    "proposal_sheet": {
+      "path": "Operations/Automation/2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md",
+      "status": "Draft",
+      "required_markers": [
+        "# Ficha pública de propuesta mínima y comparación manual de alcance USM",
+        "No es una propuesta emitida",
+        "[PENDIENTE — no emitir]",
+        "[PENDIENTE — no comparar]",
+        "Universe Sent Me",
+        "30 días máximos",
+        "Hasta 24 horas",
+        "consent_scope_mismatch",
+        "2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md"
+      ]
+    }
+  },
+  "required_comparison_controls": [
+    "Referencia",
+    "Marca",
+    "Muestra",
+    "Métricas",
+    "Exclusiones",
+    "Retención",
+    "Método",
+    "Egress",
+    "Vigencia",
+    "Salida"
+  ]
+}

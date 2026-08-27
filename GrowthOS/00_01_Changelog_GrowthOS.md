@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.47
+**Versión:** 5.48
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.48.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.5 diseñado como validación estática de integridad documental.** Se añadieron fixture de expectativas, validador Python y preflight públicos para comprobar, solo dentro del repositorio, los estados de G-SEC-2/plantilla/ficha, marca USM, límites de cuatro observaciones, 30 días y 24 horas, marcadores pendientes, enlaces cruzados y diez controles de comparación. El modo `--plan` validó la sintaxis del diseño sin leer documentos. La ejecución no está autorizada ni realizada y requiere una confirmación separada. Por diseño no lee rutas privadas ni entorno, no abre sockets, no solicita o concede consentimiento real, no invoca collectors, OAuth/API, servicios, cron, Docker, OmniRoute ni escribe ledger/evidencia/salidas. G-NORM-4R sigue bloqueado.
 
 - **[5.47.00] — 2026-08-27 (Fernando/Manus): ficha pública y lista manual G-SEC-2.4c diseñadas, sin propuesta emitida.** Se creó `2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md` v1.0 como referencia vacía para describir una futura propuesta mínima y compararla en diez controles contra G-SEC-2: referencia, marca, muestra, métricas, exclusiones, retención, método, egress, vigencia/revocación y salida segura. Todos los campos permanecen pendientes; cualquier resultado no compatible produce `consent_scope_mismatch` sin abrir información privada ni solicitar consentimiento. El documento está en `Draft`, no contiene propuesta, tarjeta o consentimiento y no habilita G-NORM-4R, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos ni salidas externas.
 
