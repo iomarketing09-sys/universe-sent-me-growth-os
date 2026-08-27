@@ -1,10 +1,10 @@
 ---
 title: "G-SEC-2 — Controles de privacidad, retención, operación read-only y consentimiento granular — Universe Sent Me"
 purpose: "Definir los controles separados que deben diseñarse, revisarse y aprobarse antes de considerar una única inserción real privada en el shadow ledger bajo G-NORM-4R."
-status: Draft
+status: Review
 created: 2026-08-25
 updated: 2026-08-26
-version: "2.2"
+version: "2.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
@@ -23,7 +23,7 @@ organization: "Operations/Automation"
 
 ## Propósito, estado y límite
 
-**G-SEC-2** es el gate de diseño que separa la seguridad técnica ya verificada bajo LUKS de cualquier tratamiento de métricas reales. Su finalidad es fijar qué datos mínimos podría tratar un piloto, durante cuánto tiempo, bajo qué modo de lectura y con qué autorización humana específica. Este documento está en estado **Draft**: no activa G-NORM-4R, no cambia scripts, no crea un ledger persistente y no autoriza llamadas de red.
+**G-SEC-2** es el gate de diseño que separa la seguridad técnica ya verificada bajo LUKS de cualquier tratamiento de métricas reales. Su finalidad es fijar qué datos mínimos podría tratar un piloto, durante cuánto tiempo, bajo qué modo de lectura y con qué autorización humana específica. Este documento está en estado **Review**: Fernando confirmó los cuatro controles de diseño; no activa G-NORM-4R, no cambia scripts, no crea un ledger persistente y no autoriza llamadas de red.
 
 > **Principio de decisión:** una confirmación de cifrado no es una autorización de tratamiento. Cada finalidad, categoría de dato, ventana temporal y salida posible requiere una autorización independiente y revocable.
 
@@ -42,6 +42,10 @@ La migración LUKS, la restauración selectiva, la suite sintética, la inspecci
 | G-NORM-4R | Bloqueado. | Solo podrá reconsiderarse tras aprobar y verificar los cuatro controles G-SEC-2. |
 
 El resultado esperado de este gate es un paquete de decisiones verificables, no una automatización: un registro de minimización, una política de retención, una especificación de operación read-only y una tarjeta de consentimiento granular. Solo cuando las cuatro piezas estén aprobadas y comprobadas en un gate posterior puede proponerse el mínimo siguiente paso técnico.
+
+### Registro de revisión humana — 2026-08-26
+
+Fernando confirmó explícitamente los cuatro controles de diseño: alcance mínimo limitado a Universe Sent Me; retención propuesta de 30 días con revisión humana y sin mutación; operación manual estrictamente read-only; y consentimiento por una sola operación, con vigencia máxima de 24 horas y posibilidad de detenerla. Esta revisión cambia el estado documental de `Draft` a `Review` solamente. No constituye consentimiento granular para un piloto ni autorización para abrir datos, ejecutar collectors o crear un shadow ledger persistente.
 
 ## Clasificación de datos y frontera de salida
 
@@ -156,7 +160,7 @@ G-SEC-2 se considera **diseñado** cuando este documento y los documentos relaci
 | Estado | Resultado | Consecuencia |
 |---|---|---|
 | Draft | Diseño documentado, con G-SEC-2.3a sintético ya pasado pero sin revisión humana completa de los cuatro controles. | G-NORM-4R bloqueado. |
-| Review | Fernando revisó los límites y solicita preparar pruebas sintéticas de controles. | Solo se puede proponer el subgate sintético correspondiente. |
+| Review | Fernando confirmó los cuatro límites de diseño; faltan pruebas sintéticas específicas de privacidad/minimización y retención, además de una futura tarjeta puntual de consentimiento. | Solo se pueden diseñar o proponer subgates sintéticos posteriores. |
 | Active | Solo después de pruebas de control aprobadas y consentimiento puntual vigente. | Permite proponer, no ejecutar automáticamente, una única operación G-NORM-4R. |
 | Blocked | Cualquier ambigüedad, salida externa, datos no permitidos, retención indefinida o consentimiento vencido. | No se abre evidencia ni se ejecuta ningún collector. |
 
