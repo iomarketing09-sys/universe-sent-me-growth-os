@@ -1,10 +1,10 @@
 ---
 title: "G-SEC-2.6 — Revisión final y consolidación del módulo de controles — Universe Sent Me"
 purpose: "Definir la revisión humana final que consolida evidencia documental pública de G-SEC-2 sin emitir consentimiento, activar datos reales ni habilitar G-NORM-4R."
-status: Draft
+status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -71,7 +71,11 @@ G-SEC-2.6 no ejecuta scripts, no usa red, no importa collectors, no analiza ruta
 
 ## Estado y siguiente gate permitido
 
-Este documento está en `Draft` y no requiere una respuesta ni datos del usuario. La siguiente acción permitida es una revisión humana del **diseño** de G-SEC-2.6; esa revisión no ejecuta la lista, no consolida el módulo y no cambia los estados de los documentos. Cualquier futura autorización para realizar la consolidación deberá ser separada, inequívoca y limitada a los diez controles públicos de esta matriz.
+### Registro de revisión humana — 2026-08-27
+
+Fernando confirmó que comprende la matriz final de diez controles y su criterio de consolidación. Esta confirmación revisa el diseño de G-SEC-2.6 solamente: no ejecuta la lista, no consolida el módulo, no rellena el resultado de ninguna fila y no cambia los estados de G-SEC-2, la plantilla o la ficha.
+
+Este documento está en `Review` y no requiere datos del usuario. La siguiente acción permitida, solo bajo autorización explícita nueva, es ejecutar la revisión manual de los diez controles públicos. Aun si todas las filas fueran compatibles, el resultado se limita a `gsec2_consolidation_review_complete`: no emite tarjeta, no solicita consentimiento y no abre G-NORM-4R.
 
 ## Referencias
 

@@ -4,7 +4,7 @@ purpose: "Definir los controles separados que deben diseñarse, revisarse y apro
 status: Review
 created: 2026-08-25
 updated: 2026-08-27
-version: "3.4"
+version: "3.5"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
@@ -225,7 +225,7 @@ Los documentos que requieren actualización conjunta son el contrato del shadow 
 
 ### G-SEC-2.6 — consolidación final diseñada
 
-La revisión final y matriz de consolidación se documentan en `2026-08-27_Revision_Final_Consolidacion_GSEC2_USM.md` v1.0. G-SEC-2.6 verifica manualmente la cadena de evidencias públicas y los bloqueos persistentes; no sustituye la revisión pendiente de G-SEC-2.4c, no cambia el estado de este módulo ni permite tratar datos reales. Está en `Draft` y sin ejecutar.
+La revisión final y matriz de consolidación se documentan en `2026-08-27_Revision_Final_Consolidacion_GSEC2_USM.md` v1.1. G-SEC-2.6 verifica manualmente la cadena de evidencias públicas y los bloqueos persistentes; su revisión humana fue confirmada, pero no sustituye la revisión pendiente de G-SEC-2.4c, no cambia el estado de este módulo ni permite tratar datos reales. Está en `Review` y sin ejecutar.
 
 ## Referencias
 

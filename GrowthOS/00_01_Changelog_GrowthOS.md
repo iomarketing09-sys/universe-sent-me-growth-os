@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.50
+**Versión:** 5.51
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.51.00] — 2026-08-27 (Fernando/Manus): revisión documental G-SEC-2.6 confirmada, sin consolidación.** Fernando confirmó que comprende la matriz final de diez controles y su criterio de consolidación. El documento `2026-08-27_Revision_Final_Consolidacion_GSEC2_USM.md` pasó de `Draft` a `Review`, sin rellenar filas, ejecutar la lista, consolidar el módulo, emitir una tarjeta, solicitar consentimiento ni modificar estados de G-SEC-2, plantilla o ficha. La siguiente acción requerirá autorización separada para revisar manualmente solo los diez controles públicos. No se abrieron datos, rutas privadas, tokens, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, salidas externas ni G-NORM-4R.
 
 - **[5.50.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.6 diseñado para revisión final y consolidación documental.** Se creó `2026-08-27_Revision_Final_Consolidacion_GSEC2_USM.md` v1.0 con una matriz de ocho evidencias y diez comprobaciones manuales de estados, límites, PASS sintéticos, campos pendientes y bloqueos transversales. La consolidación solo podrá declarar `gsec2_consolidation_review_complete` si todas las filas son compatibles; de lo contrario, debe detenerse como `gsec2_consolidation_blocked` sin corregir operación ni abrir información privada. Está en `Draft` y sin ejecutar. No emite tarjeta ni consentimiento, no crea propuesta, no usa datos/tokens/rutas privadas, no activa collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, salidas externas ni G-NORM-4R.
 
