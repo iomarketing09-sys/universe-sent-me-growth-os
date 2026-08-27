@@ -1,10 +1,10 @@
 ---
 title: "G-SEC-2.9 — Gate técnico pasivo de superficie única: ejecución de servicios — Universe Sent Me"
 purpose: "Definir el diseño de una futura comprobación pasiva de una única superficie: la no ejecución de servicios, collectors, automatizaciones e integraciones USM, sin ejecutar diagnósticos, abrir datos o modificar sistemas."
-status: Draft
+status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Gate_Tecnico_Pasivo_Preparacion_No_Ejecucion_GSEC2_8_USM.md"
@@ -74,7 +74,13 @@ G-SEC-2.9 no ejecuta comandos, scripts, preflights, validadores, diagnósticos, 
 
 ## Estado y siguiente acción permitida
 
-Este gate está en `Draft`. La siguiente acción permitida es una revisión humana independiente que confirme la superficie única, el modelo de no ejecución, las condiciones futuras y las prohibiciones. Esa revisión solo puede cambiar G-SEC-2.9 a `Review`; no ejecuta comprobación, no verifica servicios reales y no habilita datos, red, sistemas o G-NORM-4R.
+### Registro de revisión humana — 2026-08-27
+
+Fernando confirmó la superficie única, el modelo de no ejecución, las condiciones futuras y las prohibiciones. El estado documental cambia de `Draft` a `Review`. Esta revisión solo confirma el diseño: no ejecuta comprobación, no consulta o verifica servicios, procesos o puertos reales, y no genera evidencia o afirmaciones sobre el sistema.
+
+G-SEC-2 permanece en `Review` y G-NORM-4R sigue bloqueado. No se abrió información privada, datos, red, rutas privadas, collectors, OAuth/API, ledger, automatizaciones, servicios, medios, discos, LUKS o integraciones.
+
+Una continuación requiere un gate y autorización nuevos para diseñar el método pasivo de una sola superficie. No se puede ejecutar una comprobación, crear propuesta, emitir tarjeta, solicitar consentimiento o habilitar G-NORM-4R.
 
 ## Referencias
 

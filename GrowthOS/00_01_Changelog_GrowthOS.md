@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.70
+**Versión:** 5.71
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.71.00] — 2026-08-27 (Fernando/Manus): revisión humana de G-SEC-2.9 confirmada, sin comprobación de servicios.** Fernando confirmó la superficie única, el modelo de no ejecución, las condiciones futuras y las prohibiciones. El gate `2026-08-27_Gate_Superficie_Unica_Ejecucion_Servicios_No_Ejecucion_GSEC2_9_USM.md` pasa de `Draft` a `Review`. La revisión confirma solo el diseño: no ejecuta comprobación, no consulta servicios, procesos o puertos reales y no genera evidencia o una afirmación sobre el sistema. Se alinearon G-SEC-2.8, el contrato G-SEC-2 y los pendientes. G-SEC-2 continúa en `Review` y G-NORM-4R permanece bloqueado. Un paso posterior requiere un gate y autorización nuevos para diseñar el método pasivo de esta única superficie.
 
 - **[5.70.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.9 diseñado para una superficie técnica pasiva única, sin ejecución.** Se confirmó la numeración siguiente disponible y se creó `2026-08-27_Gate_Superficie_Unica_Ejecucion_Servicios_No_Ejecucion_GSEC2_9_USM.md` v1.0 en `Draft`. La única superficie conceptual es la no ejecución de servicios, collectors, automatizaciones e integraciones USM. El gate no consulta procesos, servicios, puertos, archivos, red o configuración; tampoco combina datos, almacenamiento, permisos, LUKS, dispositivos o red como otras superficies. Define condiciones futuras, resultados documentales y bloqueos estrictos de no ejecución. G-SEC-2 continúa en `Review` y G-NORM-4R sigue bloqueado. La siguiente acción permitida es una revisión humana independiente de G-SEC-2.9.
 
