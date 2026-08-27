@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-26
-**Versión:** 5.25
+**Versión:** 5.26
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.26.00] — 2026-08-26 (Fernando/Manus): restauración selectiva post-LUKS completada y validada.** El preflight comprobó `Fernando` como `/dev/sdc3` `vfat`, las cinco piezas del backup y el SHA-256 del ciphertext sin descifrar. Con autorización separada, el wrapper solicitó la frase `age` solo localmente, restauró `bin` y las tres raíces privadas autorizadas bajo LUKS y volvió a validar el checksum. Las cuatro rutas quedaron con modo `0700` y propietario correcto; el staging no quedó presente, el clon GitHub canónico se preservó y no se detectaron procesos OmniRoute/USM. `Fernando` no se modificó. G-MIG-LUKS-1.8 es el siguiente gate; collectors, shadow ledger, OmniRoute, Sheets, Drive y datos reales siguen bloqueados.
 
 - **[5.25.00] — 2026-08-26 (Fernando/Manus): migración Xubuntu a LUKS completada y validada.** Tras el preflight final y la autorización explícita para `ST3500418AS / sda`, el instalador aplicó Xubuntu Desktop con LUKS (LVM); la USB Xubuntu se mantuvo sin cambios y `Fernando` permaneció desconectado. El primer arranque solicitó la frase LUKS. La validación de solo lectura confirmó la cadena `/dev/sda3 crypto_LUKS` → `dm_crypt-0` → LVM → raíz `/`, con `/boot` y ESP separados. No se conectó ni restauró el respaldo, ni se reactivaron collectors, OmniRoute o datos reales. El siguiente gate es el preflight específico de restauración selectiva G-MIG-LUKS-1.7.
 

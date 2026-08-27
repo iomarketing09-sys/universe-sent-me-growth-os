@@ -4,7 +4,7 @@ purpose: "Definir los gates y la secuencia reversible para reinstalar Xubuntu co
 status: Active
 created: 2026-08-26
 updated: 2026-08-26
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -112,6 +112,8 @@ Tras el preflight final, Fernando autorizó explícitamente borrar solo el disco
 La validación G-MIG-LUKS-1.6 se ejecutó antes de conectar `Fernando` o restaurar USM. La evidencia de solo lectura confirmó Ubuntu 26.04, `/dev/sda3` con `crypto_LUKS`, el mapper activo `dm_crypt-0`, el volumen lógico `ubuntu--vg-ubuntu--lv` montado como raíz `/`, `/dev/sda2` como `/boot` y `/dev/sda1` como ESP. Esta topología es consistente con el cifrado LUKS guiado por frase validado en el instalador. El gate G-MIG-LUKS-1.7 permanece separado: requiere un preflight y una autorización específica para conectar, verificar y restaurar selectivamente desde el ciphertext `age`.
 
 El preflight G-MIG-LUKS-1.7a ya confirmó en el sistema cifrado `age` 1.2.1, Git 2.53.0 y el clon canónico del repositorio. Con `Fernando` conectado como `/dev/sdc3` `vfat`, se verificaron sin descifrar las cinco piezas del backup y el SHA-256 del ciphertext de 307,792,785 bytes. El diseño de G-MIG-LUKS-1.7b restaurará selectivamente `bin` y las tres raíces privadas aprobadas, mientras conserva el repositorio actual clonado desde GitHub como fuente canónica. Sigue pendiente una autorización específica para descifrar localmente y mover esas rutas al sistema LUKS.
+
+G-MIG-LUKS-1.7b se completó tras autorización: el wrapper volvió a validar el ciphertext, solicitó la frase `age` solo localmente y restauró `bin` y las tres raíces privadas aprobadas al volumen LUKS. Los cuatro destinos quedaron con modo `0700` y propietario `universe-sent-me`; no quedó staging temporal, el repositorio GitHub se preservó y no se iniciaron procesos de OmniRoute o USM. `Fernando` no recibió escritura. El siguiente gate G-MIG-LUKS-1.8 se limita a reinstalar y probar herramientas locales con fixtures sintéticos/read-only, sin datos reales persistentes ni automatización activa.
 
 ## Diseño de desbloqueo G-MIG-LUKS-1.5
 

@@ -4,7 +4,7 @@ purpose: "Definir una estructura de carpetas y un wrapper de cifrado local previ
 status: Active
 created: 2026-08-25
 updated: 2026-08-26
-version: "2.4"
+version: "2.5"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -229,6 +229,12 @@ La migración a Xubuntu con LUKS quedó validada antes de conectar `Fernando`. E
 El wrapper valida antes el mount de `Fernando`, la etiqueta `vfat`, las cinco piezas del árbol, el manifest permitido y el SHA-256 del ciphertext. Después de la aprobación G-MIG-LUKS-1.7b, descifra por streaming hacia un staging privado con `umask 077` y modo `0700` dentro de `~/.config`, extrae solamente las cuatro rutas aprobadas y verifica el checksum del ciphertext de nuevo. Solo si el staging está completo y los destinos siguen ausentes, mueve las rutas al `$HOME` del sistema ya cifrado. No escribe en el disco externo, no modifica el ciphertext, no restaura el clon viejo del repositorio y elimina el staging al terminar.
 
 La frase `age` solo se ingresará de forma interactiva en la terminal local. El plaintext temporal y las rutas restauradas permanecen dentro del volumen LUKS activo; no se usan `/tmp`, el disco externo, Drive, GitHub, Sheets, OmniRoute ni otras marcas. La limpieza por ruta del staging no equivale a secure erase, pero el destino subyacente ya está cifrado en reposo.
+
+### Registro de ejecución G-MIG-LUKS-1.7b
+
+Fernando autorizó la restauración selectiva después del preflight, que verificó `/dev/sdc3`, `vfat`, label `Fernando` y el SHA-256 del ciphertext sin descifrar. El wrapper solicitó la frase `age` únicamente en la terminal local y devolvió `STATUS=selective_restore_complete_repository_preserved`; el checksum pasó antes y después de la extracción.
+
+La validación posterior confirmó `~/bin`, `~/.config/usm-metrics`, `~/.local/share/usm-metrics` y `~/omniroute-pilot`, todos con propietario `universe-sent-me` y modo `0700`. No quedó staging `.usm-postluks-restore.*`, el clon GitHub permaneció en `e717b3d` y no se detectaron procesos OmniRoute o USM. El volumen `Fernando` no recibió escritura ni modificación. La restauración completa G-MIG-LUKS-1.7, pero no autoriza abrir collectors, OmniRoute, shadow ledger, Sheets, Drive ni datos reales.
 
 ## Referencias
 

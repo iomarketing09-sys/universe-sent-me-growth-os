@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-26
-version: "11.81"
+version: "11.85"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -210,6 +210,12 @@ organization: "GrowthOS"
 - [x] Validar ciphertext G-MIG-LUKS-1.7a: las cinco piezas de `USM_PRE_LUKS_BACKUP` están presentes; ciphertext de 307,792,785 bytes validó SHA-256 `OK` y la evidencia histórica registra checksum antes/después, estructura restaurada y limpieza aprobadas. No hubo descifrado, copia ni escritura externa.
 - [ ] Autorizar G-MIG-LUKS-1.7b: requiere permiso explícito para descifrar temporalmente el ciphertext e instalar selectivamente código, scripts y las tres raíces privadas autorizadas dentro del nuevo sistema LUKS; la frase `age` se ingresa solo localmente y no se escribe al disco externo.
 - [x] Diseñar G-MIG-LUKS-1.7b: `restore_usm_post_luks_selective.sh` separa `--plan`, `--preflight` y `--execute`; conserva el clon GitHub como canónico, restaura solo `bin` y tres raíces privadas a destinos ausentes bajo LUKS y nunca escribe en `Fernando`.
+- [x] Autorizar G-MIG-LUKS-1.7b: Fernando aprobó descifrar localmente y restaurar selectivamente `bin` y las tres raíces privadas autorizadas al sistema LUKS; el clon GitHub actual se conserva y `Fernando` no se modifica.
+- [x] Preflight interno G-MIG-LUKS-1.7b: wrapper actualizado desde el repositorio canónico validó `/dev/sdc3`, `vfat`, `Fernando` y el SHA-256 del ciphertext; devolvió `STATUS=preflight_complete_no_decrypt_no_restore_no_external_writes`.
+- [x] Ejecutar G-MIG-LUKS-1.7b: checksum validado antes y después; descifrado interactivo completó `STATUS=selective_restore_complete_repository_preserved`. No se modificó `Fernando` ni se restauró el clon GitHub anterior.
+- [ ] Validar G-MIG-LUKS-1.7b: comprobar presencia, propietarios y permisos de `bin` y las tres raíces privadas, ausencia de staging y repositorio GitHub preservado; no iniciar OmniRoute, collectors ni automatizaciones.
+- [x] Validar G-MIG-LUKS-1.7b: `bin`, las tres raíces privadas y `omniroute-pilot` existen con modo `0700` y propietario `universe-sent-me`; staging temporal ausente, repositorio GitHub canónico preservado en `e717b3d` y no se detectaron procesos OmniRoute/USM activos.
+- [ ] G-MIG-LUKS-1.8: reinstalar y probar herramientas locales exclusivamente con fixtures sintéticos/read-only; mantener OmniRoute detenido y no abrir collectors, shadow ledger, Sheets, Drive ni datos reales hasta aprobar gates posteriores.
 - [x] Diseñar desbloqueo G-MIG-LUKS-1.5: método propuesto `Erase disk` → `Encrypt with a passphrase`; preflight de respaldo, identidad por modelo/tamaño, aislamiento físico, frase local y última autorización específica documentados en el proyecto v0.8. No autoriza aún borrar disco.
 - [x] Autorizar G-MIG-LUKS-1.4g: Fernando aprobó verificar la página guiada de cifrado por frase sin instalación; prohíbe ingresar frase, continuar a resumen, crear particiones o modificar cualquier disco.
 - [ ] G-MIG-LUKS-1.3a: antes de escribir, confirmar visualmente el objetivo `Xubuntu 26.04 LTS Desktop 64-bit`, la coincidencia de SHA-256 oficial y que el destino sigue siendo la USB `STORE N GO`, no `sda` ni `sdc`.
