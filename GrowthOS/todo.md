@@ -341,3 +341,10 @@ organization: "GrowthOS"
 - [x] Ejecutar una sola vez el runner estándar con los cinco casos abstractos cerrados: `synthetic_policy_suite_passed`.
 - [x] Verificar que la salida sea únicamente agregada, efímera y en memoria: `case_count=5`, `result_scope=aggregate_ephemeral_only`.
 - [x] Confirmar ausencia de red, datos reales, procesos, collectors, archivos, persistencia y G-NORM-4R; el lanzador temporal fue eliminado.
+
+## G-SEC-2.4c — Propuesta real mínima de una sola operación — 2026-08-27
+
+- [x] Diseñar la propuesta real mínima con finalidad única, alcance cerrado y máximo de cuatro observaciones no financieras; documento `USM-GSEC2-4C-PREAL-20260827-01` creado en `Draft`.
+- [x] Mantener la propuesta en estado documental `Draft`; no emitir tarjeta de consentimiento ni autorización operativa.
+- [x] Mantener bloqueados datos reales, red, OAuth/API, collectors, automatización, persistencia y G-NORM-4R.
+- [ ] Revisar la propuesta de forma humana independiente antes de considerar una tarjeta de consentimiento puntual.

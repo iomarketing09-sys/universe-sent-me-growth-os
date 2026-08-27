@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.91
+**Versión:** 5.92
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.92.00] — 2026-08-27 (Fernando/Manus): propuesta real mínima de una sola operación diseñada en Draft.** Se creó `2026-08-27_Propuesta_Real_Minima_Una_Operacion_GSEC2_4c_USM.md` v1.0 con referencia `USM-GSEC2-4C-PREAL-20260827-01`. Define una finalidad única, máximo cuatro observaciones no financieras, una métrica nativa por plataforma, ventana cerrada pendiente de fijarse en una tarjeta posterior, método manual local read-only, salida agregada segura y exclusiones estrictas. La propuesta no emite consentimiento, no autoriza acceso, no abre datos, red, OAuth/API o collectors y mantiene G-NORM-4R bloqueado.
 
 - **[5.91.00] — 2026-08-27 (Fernando/Manus): suite sintética única G-SEC-2.11 ejecutada y aprobada.** Con autorización puntual posterior a la revisión de la interfaz, se invocó una sola vez el runner estándar mediante un lanzador temporal no persistente. Resultado agregado: `synthetic_policy_suite_passed`, `case_count=5`, `result_scope=aggregate_ephemeral_only`. Se usó biblioteca estándar, `PYTHONDONTWRITEBYTECODE=1` y no se crearon archivos de evidencia ni cachés; el lanzador temporal fue eliminado. No hubo red, datos reales, procesos, collectors, rutas privadas, persistencia, OAuth/API, OmniRoute ni G-NORM-4R. El resultado no autoriza una segunda ejecución ni la recepción de métricas reales.
 
