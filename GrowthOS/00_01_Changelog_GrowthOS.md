@@ -4,8 +4,12 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.84
+**Versión:** 5.86
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.86.00] — 2026-08-27 (Fernando/Manus): inspección estática no ejecutada del runner estándar G-SEC-2.11.** Se inspeccionó textualmente `run_policy_core_gsec211_synthetic.py` para detectar importaciones o llamadas declaradas de acceso a sistema, red, archivos, procesos, entorno, persistencia o salida impresa. No se detectaron esos patrones. El dictamen se limita al texto: el runner no se importó, compiló ni ejecutó, no se evaluaron casos sintéticos y no se analizó el sistema. El documento del runner permanece en `Draft`; la siguiente acción permitida es una revisión humana estática.
+
+- **[5.85.00] — 2026-08-27 (Fernando/Manus): runner sintético estándar G-SEC-2.11 creado sin dependencias externas.** Tras elegir la alternativa ligera, se creó `Operations/Automation/run_policy_core_gsec211_synthetic.py` y su registro `2026-08-27_Runner_Sintetico_Estandar_GSEC2_11_USM.md` v1.0 en `Draft`. El runner declara en memoria los cinco casos abstractos ya definidos, devuelve resultados booleanos efímeros y no ofrece CLI, persistencia, procesos, red, archivos, datos, nombres reales ni una interfaz de consulta. No se instaló software, no se reintentó `pytest` y el runner no se importó, compiló ni ejecutó. La siguiente acción permitida es revisión humana estática del runner; G-SEC-2 continúa en `Review` y G-NORM-4R bloqueado.
 
 - **[5.84.00] — 2026-08-27 (Fernando/Manus): prueba sintética G-SEC-2.11 bloqueada de forma fail-closed por dependencia ausente.** Con autorización específica se intentó ejecutar únicamente los cinco casos abstractos de `test_policy_core_gsec211_synthetic.py`, con caché deshabilitada. La ejecución se detuvo antes de importar el núcleo o evaluar un caso porque `pytest` no está disponible localmente. No se crearon cachés, logs, evidencia ni resultados persistentes; no hubo acceso a sistema, red, datos, servicios, collectors o componentes reales. El estado es `synthetic_test_blocked_dependency_absent`; no se instalará una dependencia, no se creará runner alternativo ni se reintentará sin autorización humana nueva. G-SEC-2 continúa en `Review` y G-NORM-4R bloqueado.
 

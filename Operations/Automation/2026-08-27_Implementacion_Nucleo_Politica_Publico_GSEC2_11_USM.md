@@ -4,7 +4,7 @@ purpose: "Registrar la creación limitada del núcleo de política puro y de su 
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.3"
+version: "1.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Contrato_Artefacto_Codigo_Publico_Verificador_Minimo_GSEC2_11_USM.md"
@@ -12,6 +12,8 @@ related_documents:
   - "Operations/Automation/2026-08-27_Gate_Tecnico_Pasivo_Observacion_Real_Minima_GSEC2_11_USM.md"
   - "Operations/Automation/policy_core_gsec211.py"
   - "Operations/Automation/test_policy_core_gsec211_synthetic.py"
+  - "Operations/Automation/run_policy_core_gsec211_synthetic.py"
+  - "Operations/Automation/2026-08-27_Runner_Sintetico_Estandar_GSEC2_11_USM.md"
   - "GrowthOS/todo.md"
 organization: "Operations/Automation"
 ---
@@ -89,7 +91,7 @@ No se permite compilar, importar, ejecutar, probar ni integrar estos archivos si
 
 ## Estado y siguiente acción permitida
 
-Esta implementación está en `Review`. No autoriza compilar, importar, ejecutar, probar, registrar nombres reales ni observar el sistema. La prueba sintética autorizada quedó bloqueada por la ausencia local de `pytest`; cualquier propuesta de instalar una dependencia o crear un runner alternativo requerirá una autorización humana nueva, estrictamente limitada a entradas abstractas. Ninguna alternativa autorizará observación del sistema, nombres reales ni una integración.
+Esta implementación está en `Review`. No autoriza compilar, importar, ejecutar, probar, registrar nombres reales ni observar el sistema. Ante la ausencia local de `pytest`, se creó bajo autorización explícita el runner estándar `run_policy_core_gsec211_synthetic.py`, documentado en `2026-08-27_Runner_Sintetico_Estandar_GSEC2_11_USM.md` v1.0 en `Draft`. El runner no se ha importado ni ejecutado. La siguiente acción permitida es revisar estáticamente ese archivo; no autoriza observación del sistema, nombres reales ni una integración.
 
 Para mantener coherencia, el estado `Review` se refleja en el contrato de código, la especificación estática, G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2 y G-NORM-4R no cambian de estado.
 
