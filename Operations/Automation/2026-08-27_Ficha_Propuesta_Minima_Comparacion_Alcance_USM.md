@@ -4,7 +4,7 @@ purpose: "Proporcionar una referencia vacía para describir y comparar, en el fu
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.5"
+version: "1.6"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md"
@@ -88,7 +88,7 @@ Fernando confirmó que comprende esta ficha pública vacía y sus diez controles
 
 G-SEC-2.5 validó estáticamente los marcadores pendientes, enlaces y los diez controles de comparación frente a G-SEC-2 y la plantilla de tarjeta. G-SEC-2.6 consolidó las diez comprobaciones públicas como `Compatible`. Estos resultados, junto con esta revisión, mantienen G-SEC-2 en `Review` y G-NORM-4R bloqueado.
 
-El procedimiento preliminar `2026-08-27_Procedimiento_Preliminar_Propuesta_Minima_GSEC2_4c_USM.md` v1.0 se creó en `Draft` para describir cómo podría prepararse, bajo autorizaciones futuras separadas, una propuesta mínima. No se deben copiar ni completar esta ficha, emitir una tarjeta, solicitar consentimiento, abrir datos o rutas privadas, invocar collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salidas externas. La siguiente acción permitida es revisar ese procedimiento como diseño documental independiente.
+El procedimiento preliminar `2026-08-27_Procedimiento_Preliminar_Propuesta_Minima_GSEC2_4c_USM.md` v1.1 fue revisado de manera humana independiente y está en `Review`. Describe cómo podría prepararse, bajo autorizaciones futuras separadas, una propuesta mínima sin crearla. No se deben copiar ni completar esta ficha, emitir una tarjeta, solicitar consentimiento, abrir datos o rutas privadas, invocar collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salidas externas. Cualquier continuación requiere una autorización nueva para diseñar un gate documental de propuesta hipotética.
 
 ## Referencias
 

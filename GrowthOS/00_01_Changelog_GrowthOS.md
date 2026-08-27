@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.54
+**Versión:** 5.55
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.55.00] — 2026-08-27 (Fernando/Manus): revisión documental G-SEC-2.4c-P confirmada, sin propuesta emitida.** Fernando confirmó el procedimiento preliminar, el estado cero, las condiciones de detención y la separación entre documentación pública y una futura propuesta local. El documento `2026-08-27_Procedimiento_Preliminar_Propuesta_Minima_GSEC2_4c_USM.md` pasa de `Draft` a `Review`. La confirmación revisa exclusivamente ese diseño: no crea, copia o completa propuesta, no emite tarjeta, no solicita o registra consentimiento y no autoriza operación. Se alinearon la ficha, el contrato G-SEC-2, la matriz G-SEC-2.6 y los pendientes para reflejar el estado. G-SEC-2 sigue en `Review` y G-NORM-4R permanece bloqueado. No se abrió información privada, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salida externa. Cualquier avance exige diseñar y autorizar un gate documental nuevo para una propuesta hipotética.
 
 - **[5.54.00] — 2026-08-27 (Fernando/Manus): procedimiento preliminar G-SEC-2.4c-P diseñado, sin propuesta emitida.** Se creó `2026-08-27_Procedimiento_Preliminar_Propuesta_Minima_GSEC2_4c_USM.md` v1.0 en `Draft`. Establece estado cero obligatorio, secuencia de cinco etapas futuras, requisitos documentales previos, separación entre documentación pública y una futura instancia bajo LUKS, y detención obligatoria mediante `consent_scope_mismatch`. El procedimiento no copia ni completa la ficha G-SEC-2.4c, no crea una propuesta, tarjeta, vigencia o solicitud de consentimiento y no autoriza operación. Se actualizaron la ficha, el contrato G-SEC-2, la matriz G-SEC-2.6 y el registro de pendientes para mantener coherencia. G-SEC-2 sigue en `Review` y G-NORM-4R permanece bloqueado. No se abrieron datos o rutas privadas, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA ni salidas externas. El siguiente paso permitido es una revisión humana independiente del procedimiento.
 

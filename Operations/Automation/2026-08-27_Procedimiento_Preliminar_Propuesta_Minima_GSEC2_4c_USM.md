@@ -1,10 +1,10 @@
 ---
 title: "G-SEC-2.4c-P — Procedimiento preliminar para una futura propuesta mínima — Universe Sent Me"
 purpose: "Definir una secuencia documental previa para preparar, bajo una autorización posterior independiente, una propuesta mínima revisable contra G-SEC-2, sin crearla, emitirla, solicitar consentimiento ni autorizar una operación."
-status: Draft
+status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md"
@@ -76,7 +76,13 @@ No se ejecutan scripts, validadores, collectors, OAuth/API, red, cron, Docker, O
 
 ## Estado y siguiente acción permitida
 
-Este documento está en `Draft`. El siguiente paso permitido es una **revisión humana independiente de G-SEC-2.4c-P** para confirmar que el procedimiento protege el estado cero, la separación entre documentos y datos, y las condiciones de detención. Esa revisión no podrá crear una propuesta futura, emitir una tarjeta, solicitar consentimiento ni habilitar G-NORM-4R.
+### Registro de revisión humana — 2026-08-27
+
+Fernando confirmó que comprende el procedimiento preliminar, el estado cero, las condiciones de detención y la separación entre documentación pública y una futura propuesta local. El estado documental cambia de `Draft` a `Review`. Esta confirmación revisa únicamente el diseño del procedimiento; no crea, copia o completa una propuesta, no emite una tarjeta, no solicita o registra consentimiento y no autoriza una operación.
+
+Este procedimiento permanece como una guía de preparación documental. G-SEC-2 continúa en `Review` y G-NORM-4R sigue bloqueado. No se abrió información privada, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salida externa.
+
+La siguiente acción posible requerirá una autorización nueva y explícita para diseñar un gate documental que defina, sin emitir, una propuesta hipotética de una sola operación. Hasta que ese gate exista y sea aprobado, la ficha pública, la tarjeta y todos sus marcadores permanecen vacíos.
 
 ## Referencias
 
