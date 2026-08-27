@@ -1,10 +1,10 @@
 ---
 title: "Formato vacío de propuesta hipotética de una sola operación — G-SEC-2.4c-P.2 — Universe Sent Me"
 purpose: "Ofrecer una referencia de estructura completamente vacía para una futura propuesta hipotética, con marcadores que impiden tratarla como propuesta, tarjeta, consentimiento u operación."
-status: Draft
+status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Gate_Formato_Vacio_Propuesta_Hipotetica_GSEC2_4cP2_USM.md"
@@ -48,7 +48,11 @@ El formato debe detenerse como `consent_scope_mismatch` si aparece cualquier dat
 
 ## Estado y siguiente acción permitida
 
-El formato está en `Draft` y solo puede revisarse junto con G-SEC-2.4c-P.2. La revisión posible confirma que sigue vacío y limitado; no crea propuesta, tarjeta, consentimiento ni operación.
+### Registro de revisión humana — 2026-08-27
+
+Fernando confirmó que el formato conserva sus marcadores, límites fijos, separación documental y condición de detención. El estado documental cambia de `Draft` a `Review`. Esta confirmación no agrega valores, referencias, finalidad, fecha, muestra, plataforma, métrica, vigencia, tarjeta, consentimiento o instrucción de ejecución.
+
+El formato permanece como referencia pública vacía. G-SEC-2 y G-SEC-2.4c-P.2 continúan en `Review`; G-NORM-4R sigue bloqueado. Toda continuación requiere un gate y autorización nuevos, sin convertir este formato en una propuesta, tarjeta o consentimiento.
 
 ## Referencias
 

@@ -4,7 +4,7 @@ purpose: "Definir el control documental que, bajo una autorización posterior in
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.2"
+version: "1.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Procedimiento_Preliminar_Propuesta_Minima_GSEC2_4c_USM.md"
@@ -92,7 +92,7 @@ Fernando confirmó que comprende el gate de diseño, la operación única hipot�
 
 G-SEC-2 permanece en `Review` y G-NORM-4R sigue bloqueado. No se abrieron datos, rutas privadas, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salida externa.
 
-El gate G-SEC-2.4c-P.2 fue diseñado en `Draft` como `2026-08-27_Gate_Formato_Vacio_Propuesta_Hipotetica_GSEC2_4cP2_USM.md` v1.0 junto con un formato vacío relacionado. La siguiente acción permitida es revisar ese gate y el formato, sin crear, copiar o completar una propuesta, una tarjeta, una vigencia o una solicitud de consentimiento.
+El gate G-SEC-2.4c-P.2 fue revisado como `Review` en `2026-08-27_Gate_Formato_Vacio_Propuesta_Hipotetica_GSEC2_4cP2_USM.md` v1.1 junto con su formato vacío también en `Review`. Ninguno crea, copia o completa una propuesta, una tarjeta, una vigencia o una solicitud de consentimiento. Cualquier continuación requiere un gate nuevo y autorización explícita.
 
 ## Referencias
 

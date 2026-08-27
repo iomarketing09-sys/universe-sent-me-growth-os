@@ -1,10 +1,10 @@
 ---
 title: "G-SEC-2.4c-P.2 — Gate para el formato vacío de propuesta hipotética — Universe Sent Me"
 purpose: "Definir el control documental que permite diseñar y revisar un formato completamente vacío para una futura propuesta hipotética de una sola operación, sin crear una instancia, emitir tarjeta, solicitar consentimiento ni habilitar ejecución."
-status: Draft
+status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Formato_Vacio_Propuesta_Hipotetica_Unica_GSEC2_4cP2_USM.md"
@@ -83,7 +83,13 @@ G-SEC-2.4c-P.2 no ejecuta scripts, preflights o validadores; no abre sockets, ru
 
 ## Estado y siguiente acción permitida
 
-Este gate y su formato relacionado están en `Draft`. La siguiente acción permitida es una revisión humana independiente que confirme el formato vacío, los marcadores, las reglas fijas y los bloqueos. Esa revisión no puede crear una propuesta, tarjeta, consentimiento u operación; G-NORM-4R permanece bloqueado.
+### Registro de revisión humana — 2026-08-27
+
+Fernando confirmó el gate, el formato vacío, sus marcadores, límites fijos, separación documental y condiciones de detención. El estado de este gate cambia de `Draft` a `Review`. La revisión se limita al diseño: no crea una instancia, no completa la ficha, no emite tarjeta, no solicita o registra consentimiento y no autoriza una operación.
+
+El formato relacionado recibió la misma revisión independiente y también cambia a `Review`, conservando todos sus campos variables como `[PENDIENTE — no emitir]`. G-SEC-2 permanece en `Review` y G-NORM-4R continúa bloqueado. No se abrió información privada, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salida externa.
+
+Una continuación requerirá un gate nuevo y una autorización explícita para diseñar un artefacto documental posterior. Hasta entonces, no se puede crear, copiar o completar una propuesta, tarjeta, vigencia o solicitud de consentimiento.
 
 ## Referencias
 

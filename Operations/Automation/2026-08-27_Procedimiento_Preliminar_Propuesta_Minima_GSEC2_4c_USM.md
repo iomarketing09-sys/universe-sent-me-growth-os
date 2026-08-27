@@ -4,7 +4,7 @@ purpose: "Definir una secuencia documental previa para preparar, bajo una autori
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.4"
+version: "1.5"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Gate_Diseno_Propuesta_Hipotetica_Unica_GSEC2_4cP1_USM.md"
@@ -84,7 +84,7 @@ Fernando confirmó que comprende el procedimiento preliminar, el estado cero, la
 
 Este procedimiento permanece como una guía de preparación documental. G-SEC-2 continúa en `Review` y G-NORM-4R sigue bloqueado. No se abrió información privada, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salida externa.
 
-El gate documental `2026-08-27_Gate_Diseno_Propuesta_Hipotetica_Unica_GSEC2_4cP1_USM.md` v1.2 recibió su revisión humana independiente y está en `Review`; delimita una propuesta hipotética de una sola operación sin crearla. G-SEC-2.4c-P.2 y su formato vacío se diseñaron en `Draft`; hasta que reciban revisión humana independiente, la ficha pública, la tarjeta y todos sus marcadores permanecen vacíos.
+El gate documental `2026-08-27_Gate_Diseno_Propuesta_Hipotetica_Unica_GSEC2_4cP1_USM.md` v1.3 recibió su revisión humana independiente y está en `Review`; delimita una propuesta hipotética de una sola operación sin crearla. G-SEC-2.4c-P.2 y su formato vacío recibieron también su revisión humana y están en `Review`, sin perder ningún marcador vacío. La ficha pública, la tarjeta y todos sus marcadores permanecen vacíos hasta que un gate nuevo y autorizado permita otro diseño documental.
 
 ## Referencias
 

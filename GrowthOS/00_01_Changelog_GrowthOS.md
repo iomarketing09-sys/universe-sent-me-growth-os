@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.58
+**Versión:** 5.59
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.59.00] — 2026-08-27 (Fernando/Manus): revisión humana de G-SEC-2.4c-P.2 y del formato vacío confirmada.** Fernando confirmó el gate, el formato vacío, sus marcadores, límites fijos, separación documental y condiciones de detención. Ambos documentos pasan de `Draft` a `Review` sin incorporar referencia, finalidad, fecha, muestra, plataforma, métrica, vigencia, propuesta, tarjeta o consentimiento concretos. La revisión confirma solo la estructura de control; no crea una instancia, no completa la ficha, no solicita o registra consentimiento y no autoriza operación. Se alinearon el gate P.1, procedimiento, ficha, contrato y pendientes. G-SEC-2 continúa en `Review` y G-NORM-4R permanece bloqueado. No se abrió información privada, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA o salida externa. Cualquier continuación requerirá un gate documental y autorización nuevos.
 
 - **[5.58.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.4c-P.2 y formato vacío de propuesta hipotética diseñados.** Se crearon `2026-08-27_Gate_Formato_Vacio_Propuesta_Hipotetica_GSEC2_4cP2_USM.md` v1.0 y `2026-08-27_Formato_Vacio_Propuesta_Hipotetica_Unica_GSEC2_4cP2_USM.md` v1.0, ambos en `Draft`. Definen condiciones previas, controles de preservación del vacío, límites fijos, autorizaciones separadas, detención por `consent_scope_mismatch` y campos marcados `[PENDIENTE — no emitir]`. No contienen referencia, finalidad, fecha, muestra, plataforma, métrica, vigencia, propuesta, tarjeta o consentimiento concretos, ni autorizan una operación. Se alinearon procedimiento, ficha, contrato y pendientes. G-SEC-2 continúa en `Review` y G-NORM-4R permanece bloqueado. No se abrieron datos o rutas privadas, red, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA ni salidas externas. La siguiente acción permitida es revisar G-SEC-2.4c-P.2 y el formato vacío como diseño documental independiente.
 
