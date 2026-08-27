@@ -348,3 +348,9 @@ organization: "GrowthOS"
 - [x] Mantener la propuesta en estado documental `Draft`; no emitir tarjeta de consentimiento ni autorización operativa.
 - [x] Mantener bloqueados datos reales, red, OAuth/API, collectors, automatización, persistencia y G-NORM-4R.
 - [ ] Revisar la propuesta de forma humana independiente antes de considerar una tarjeta de consentimiento puntual.
+
+## G-SEC-2.4c — Revisión independiente de propuesta y diez controles — 2026-08-27
+
+- [x] Evaluar de forma documental los diez controles de `USM-GSEC2-4C-PREAL-20260827-01`; dictamen `scope_compatible_for_separate_human_request`.
+- [x] Cambiar la propuesta a `Review`; los diez controles son compatibles en el plano documental, con condiciones posteriores explícitas.
+- [x] Mantener sin emitir la tarjeta de consentimiento y sin autorizar datos reales, red, OAuth/API, collectors, persistencia o G-NORM-4R.

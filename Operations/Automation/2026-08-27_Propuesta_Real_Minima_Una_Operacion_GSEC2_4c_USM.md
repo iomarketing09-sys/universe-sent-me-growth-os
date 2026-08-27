@@ -1,10 +1,10 @@
 ---
 title: "Propuesta real mínima de una sola operación G-SEC-2.4c — Universe Sent Me"
 purpose: "Describir una única operación real hipotética y mínima para recibir métricas nativas no financieras, de forma manual, local y read-only, sin emitir consentimiento ni habilitar datos."
-status: Draft
+status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md"
@@ -28,13 +28,13 @@ organization: "Operations/Automation"
 
 Este documento convierte la referencia pública vacía de comparación en una **propuesta concreta todavía no emitida**. Su función es permitir una revisión humana del alcance antes de preparar una tarjeta de consentimiento puntual. No es consentimiento, no es una orden de ejecución, no es un permiso OAuth/API y no habilita collectors, red, datos reales, shadow ledger ni G-NORM-4R.
 
-El documento permanece en estado **Draft**. Ningún campo de consentimiento se completa con este documento y ninguna persona puede interpretarlo como autorización para iniciar una lectura.
+El documento permanece en estado **Review** después de la revisión humana independiente del alcance y de los diez controles. Ningún campo de consentimiento se completa con este documento y ninguna persona puede interpretarlo como autorización para iniciar una lectura.
 
-> **Regla de frontera:** diseñar el alcance no equivale a aprobar el tratamiento. La propuesta debe pasar una revisión independiente y una comparación completa antes de que pueda considerarse una tarjeta de consentimiento.
+> **Regla de frontera:** diseñar el alcance no equivale a aprobar el tratamiento. La propuesta debe conservar una tarjeta de consentimiento separada y una autorización independiente antes de que pueda considerarse una operación real.
 
 ## Identificación pública de la propuesta
 
-| Campo | Propuesta Draft | Límite
+| Campo | Propuesta revisada | Límite
 |---|---|---|
 | Referencia | `USM-GSEC2-4C-PREAL-20260827-01` | Identificador documental no secreto; no es un ID de cuenta ni de plataforma. |
 | Marca | `Universe Sent Me` | Se excluyen Bam in a Can, Firma Bordados, clientes y cuentas ajenas. |
@@ -82,22 +82,22 @@ El almacenamiento temporal y cualquier observación real quedarían sujetos a la
 
 ## Comparación preliminar contra los diez controles
 
-Esta tabla es un diseño inicial, no un dictamen de compatibilidad. La comparación formal solo puede completarse después de una revisión humana independiente.
+Esta tabla registra el dictamen documental de la revisión humana independiente. No es un PASS operativo ni sustituye los gates posteriores.
 
-| Control | Compromiso de esta propuesta | Estado Draft | Resultado que debe verificarse después |
+| Control | Compromiso de esta propuesta | Estado revisado | Condición posterior |
 |---|---|---|---|
-| Referencia | Identificador público único, sin secretos. | Declarado | `Compatible` |
-| Marca | Solo Universe Sent Me. | Declarado | `Compatible` |
-| Muestra | Máximo cuatro observaciones, una por plataforma. | Declarado | `Compatible` |
-| Métricas | Cuatro campos nativos no financieros definidos. | Declarado | `Compatible` |
-| Exclusiones | Sin contenido, personas, IDs expuestos, raw, evidencia o credenciales. | Declarado | `Compatible` |
-| Retención | Máximo 30 días, sin extensión, backup ni sincronización. | Propuesto | `Compatible` solo tras revisión de G-NORM-4R |
-| Método | Una operación manual local read-only. | Propuesto | `Compatible` solo tras gate operativo |
-| Egress | Ningún destino externo. | Declarado | `Compatible` |
-| Vigencia | Máximo 24 horas y revocable. | Propuesto | `Compatible` solo en tarjeta posterior |
-| Salida | Estado agregado y conteos seguros. | Declarado | `Compatible` solo tras validar implementación |
+| Referencia | Identificador público único, sin secretos. | Declarado | `Compatible` — diseño |
+| Marca | Solo Universe Sent Me. | Declarado | `Compatible` — diseño |
+| Muestra | Máximo cuatro observaciones, una por plataforma. | Declarado | `Compatible` — diseño |
+| Métricas | Cuatro campos nativos no financieros definidos. | Declarado | `Compatible` — diseño |
+| Exclusiones | Sin contenido, personas, IDs expuestos, raw, evidencia o credenciales. | Declarado | `Compatible` — diseño |
+| Retención | Máximo 30 días, sin extensión, backup ni sincronización. | Propuesto | `Compatible` — sujeto a G-NORM-4R |
+| Método | Una operación manual local read-only. | Propuesto | `Compatible` — sujeto a gate operativo |
+| Egress | Ningún destino externo. | Declarado | `Compatible` — diseño |
+| Vigencia | Máximo 24 horas y revocable. | Propuesto | `Compatible` — sujeto a tarjeta posterior |
+| Salida | Estado agregado y conteos seguros. | Declarado | `Compatible` — sujeto a validar implementación |
 
-Hasta que cada fila se revise como `Compatible`, el dictamen correcto es `consent_scope_mismatch` y no se debe completar una tarjeta.
+Las diez filas fueron revisadas como compatibles en el plano documental, con las condiciones explícitas indicadas para retención, método, vigencia y salida. Este dictamen no equivale a un PASS operativo: si en una etapa posterior no se puede cumplir cualquiera de esas condiciones, el resultado obligatorio será `consent_scope_mismatch` y no se completará una tarjeta.
 
 ## Condiciones de detención
 
@@ -107,15 +107,21 @@ También debe detenerse si la tarjeta de consentimiento no coincide exactamente 
 
 ## Qué no autoriza este documento
 
-Este Draft no autoriza recibir métricas, abrir archivos privados, leer tokens, inspeccionar cuentas, iniciar OAuth, llamar APIs, ejecutar collectors, revisar procesos, activar OmniRoute, crear cron, escribir el shadow ledger, guardar datos en GitHub o Drive, generar hojas derivadas, enviar información a IA ni modificar las políticas aprobadas.
+Este documento en `Review` no autoriza recibir métricas, abrir archivos privados, leer tokens, inspeccionar cuentas, iniciar OAuth, llamar APIs, ejecutar collectors, revisar procesos, activar OmniRoute, crear cron, escribir el shadow ledger, guardar datos en GitHub o Drive, generar hojas derivadas, enviar información a IA ni modificar las políticas aprobadas.
 
-Tampoco autoriza afirmar que la propuesta es compatible de forma definitiva. Solo una revisión humana independiente puede cambiarla de `Draft` a `Review`; solo una tarjeta posterior puede solicitar consentimiento; y solo gates posteriores pueden autorizar una operación real.
+El dictamen confirma compatibilidad documental para una solicitud humana separada, pero no compatibilidad operativa definitiva. La tarjeta posterior puede solicitar consentimiento solo dentro de su propio gate; únicamente gates posteriores pueden autorizar una operación real.
+
+## Registro de revisión humana independiente — 2026-08-27
+
+Fernando revisó la propuesta `USM-GSEC2-4C-PREAL-20260827-01` y sus diez controles de comparación. El dictamen documental es `scope_compatible_for_separate_human_request`: la finalidad, marca, muestra, métricas, exclusiones, egress y salida son compatibles con el diseño; retención, método y vigencia quedan expresamente sujetos a sus gates posteriores. No se detectaron ambigüedades que obliguen a bloquear la propuesta en esta fase.
+
+La revisión cambia el estado de `Draft` a `Review`. No completa fechas, cuentas, IDs, URLs, valores de métricas ni credenciales; no emite la tarjeta de consentimiento, no solicita aprobación para una operación, no abre datos y no autoriza collectors.
 
 ## Estado y siguiente acción permitida
 
-La propuesta se encuentra en `Draft`. La siguiente acción permitida es una **revisión humana independiente del alcance y de los diez controles**, sin emitir consentimiento. Después de esa revisión, el estado podría pasar a `Review` o bloquearse con `consent_scope_mismatch`.
+La propuesta se encuentra en `Review`. La siguiente acción permitida es preparar o revisar una tarjeta de consentimiento puntual separada, sin emitirla todavía, o detenerse si cambia el alcance. Antes de cualquier contacto con una plataforma deberán cumplirse los gates operativos y obtenerse consentimiento vigente para una única ventana.
 
-Si la propuesta pasa a `Review`, todavía será necesario completar una tarjeta de consentimiento puntual separada. G-SEC-2 permanece en `Review`, G-NORM-4R permanece bloqueado y no se habilita ninguna métrica real mediante este documento.
+G-SEC-2 permanece en `Review`, G-NORM-4R permanece bloqueado y no se habilita ninguna métrica real mediante este documento.
 
 ## Referencias
 

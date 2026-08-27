@@ -4,7 +4,7 @@ purpose: "Definir los controles separados que deben diseñarse, revisarse y apro
 status: Review
 created: 2026-08-25
 updated: 2026-08-27
-version: "5.2"
+version: "5.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
@@ -66,11 +66,11 @@ La migración LUKS, la restauración selectiva, la suite sintética, la inspecci
 
 El resultado esperado de este gate es un paquete de decisiones verificables, no una automatización: un registro de minimización, una política de retención, una especificación de operación read-only y una tarjeta de consentimiento granular. Solo cuando las cuatro piezas estén aprobadas y comprobadas en un gate posterior puede proponerse el mínimo siguiente paso técnico.
 
-## Propuesta real mínima en Draft
+## Propuesta real mínima en Review
 
-La propuesta `USM-GSEC2-4C-PREAL-20260827-01` quedó documentada en `2026-08-27_Propuesta_Real_Minima_Una_Operacion_GSEC2_4c_USM.md` v1.0 como un diseño concreto pero no emitido. Define una finalidad única, máximo cuatro observaciones no financieras, una métrica nativa por plataforma, una ventana cerrada pendiente de fijar en una tarjeta posterior, método manual local read-only, salida agregada segura y exclusiones estrictas. Su estado `Draft` no completa la ficha de consentimiento, no solicita aprobación y no autoriza acceso real.
+La propuesta `USM-GSEC2-4C-PREAL-20260827-01` quedó documentada en `2026-08-27_Propuesta_Real_Minima_Una_Operacion_GSEC2_4c_USM.md` v1.1 como un diseño concreto pero no emitido. Define una finalidad única, máximo cuatro observaciones no financieras, una métrica nativa por plataforma, una ventana cerrada pendiente de fijar en una tarjeta posterior, método manual local read-only, salida agregada segura y exclusiones estrictas. Su revisión humana independiente confirmó compatibilidad documental de sus diez controles y la elevó a `Review`; no completa la ficha de consentimiento, no solicita aprobación y no autoriza acceso real.
 
-La propuesta requiere revisión humana independiente de sus diez controles antes de poder pasar a `Review`. Si la revisión resulta compatible, todavía se necesitará una tarjeta de consentimiento puntual separada. G-NORM-4R, datos reales, red, OAuth/API y collectors permanecen bloqueados.
+La tarjeta de consentimiento puntual sigue siendo un gate separado y todavía no se ha emitido. G-NORM-4R, datos reales, red, OAuth/API y collectors permanecen bloqueados.
 
 ## Brechas vigentes antes de recibir métricas reales
 

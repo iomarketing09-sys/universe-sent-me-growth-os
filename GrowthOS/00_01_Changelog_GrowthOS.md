@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.92
+**Versión:** 5.93
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.93.00] — 2026-08-27 (Fernando/Manus): revisión humana independiente de la propuesta real mínima completada.** Fernando revisó `USM-GSEC2-4C-PREAL-20260827-01` y sus diez controles. El dictamen documental fue `scope_compatible_for_separate_human_request`, por lo que la propuesta `2026-08-27_Propuesta_Real_Minima_Una_Operacion_GSEC2_4c_USM.md` pasa de `Draft` a `Review` v1.1. Retención, método, vigencia y salida permanecen sujetos a gates posteriores. No se emitió consentimiento, no se abrieron datos, red, OAuth/API o collectors y G-NORM-4R continúa bloqueado.
 
 - **[5.92.00] — 2026-08-27 (Fernando/Manus): propuesta real mínima de una sola operación diseñada en Draft.** Se creó `2026-08-27_Propuesta_Real_Minima_Una_Operacion_GSEC2_4c_USM.md` v1.0 con referencia `USM-GSEC2-4C-PREAL-20260827-01`. Define una finalidad única, máximo cuatro observaciones no financieras, una métrica nativa por plataforma, ventana cerrada pendiente de fijarse en una tarjeta posterior, método manual local read-only, salida agregada segura y exclusiones estrictas. La propuesta no emite consentimiento, no autoriza acceso, no abre datos, red, OAuth/API o collectors y mantiene G-NORM-4R bloqueado.
 
