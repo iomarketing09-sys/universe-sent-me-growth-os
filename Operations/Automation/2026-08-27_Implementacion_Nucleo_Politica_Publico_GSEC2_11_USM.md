@@ -1,10 +1,10 @@
 ---
 title: "Implementación estática del núcleo de política público G-SEC-2.11 — Universe Sent Me"
 purpose: "Registrar la creación limitada del núcleo de política puro y de su prueba sintética no ejecutada, describiendo sus garantías y las acciones que siguen prohibidas."
-status: Draft
+status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Contrato_Artefacto_Codigo_Publico_Verificador_Minimo_GSEC2_11_USM.md"
@@ -59,6 +59,14 @@ Se efectuó una inspección textual de los dos archivos para detectar importacio
 
 > **Alcance del dictamen:** esta revisión confirma únicamente la ausencia de los patrones textuales revisados. No prueba el comportamiento en tiempo de ejecución ni autoriza importar, compilar, ejecutar o usar los archivos contra el sistema.
 
+## Registro de revisión humana estática
+
+Fernando autorizó la revisión humana estática de la implementación. Se confirmó que el núcleo se limita a lógica pura, usa entradas sintéticas y abstractas, devuelve una sola categoría agregada, conserva la precedencia fail-closed y no declara capacidades de sistema, red, archivos, datos, persistencia o ejecución dinámica.
+
+> **Resultado limitado:** esta implementación pasa de `Draft` a `Review`. La revisión se basó únicamente en lectura de código y pruebas declaradas; los archivos no se compilaron, importaron, ejecutaron ni probaron. El resultado no afirma nada sobre el sistema real.
+
+Para mantener la coherencia, este cambio actualiza el contrato de código, la especificación estática, G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2 y G-NORM-4R no cambian de estado.
+
 ## Prohibiciones que continúan vigentes
 
 La implementación no puede usarse para consultar servicios, procesos, collectors, red, puertos, Docker, Compose, OmniRoute, argumentos, rutas, variables de entorno, archivos privados, datos de plataformas, secretos, OAuth/API, discos, LUKS, medios externos, GitHub como destino de datos, Drive, Sheets, IA, cron, schedulers o automatizaciones.
@@ -67,9 +75,9 @@ No se permite compilar, importar, ejecutar, probar ni integrar estos archivos si
 
 ## Estado y siguiente acción permitida
 
-Esta implementación está en `Draft`. La siguiente acción permitida es una revisión humana independiente **estática** de los dos archivos, limitada a confirmar que preservan el contrato de lógica pura, las entradas sintéticas, la salida agregada y las prohibiciones. Esa revisión solo podría cambiar este documento a `Review`; no autorizaría compilar, importar, ejecutar, probar, registrar nombres reales ni observar el sistema.
+Esta implementación está en `Review`. No autoriza compilar, importar, ejecutar, probar, registrar nombres reales ni observar el sistema. Si surgiera una necesidad concreta, cualquier propuesta de prueba sintética ejecutada requerirá una autorización humana nueva, estrictamente limitada a entradas abstractas; dicha prueba no autorizará observación del sistema, nombres reales ni una integración.
 
-Para mantener coherencia, la creación se refleja en el contrato de código, la especificación estática, G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2 y G-NORM-4R no cambian de estado.
+Para mantener coherencia, el estado `Review` se refleja en el contrato de código, la especificación estática, G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2 y G-NORM-4R no cambian de estado.
 
 ## Referencias
 

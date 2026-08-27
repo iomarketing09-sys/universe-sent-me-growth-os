@@ -4,7 +4,7 @@ purpose: "Definir la arquitectura lógica, las interfaces conceptuales, las vali
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.2"
+version: "1.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Especificacion_Estatica_Verificador_Minimo_GSEC2_11_USM.md"
@@ -114,7 +114,7 @@ No cambia G-SEC-2 de `Review`, no inicia una fase operativa y no desbloquea G-NO
 
 ## Estado y siguiente acción permitida
 
-Este contrato está en `Review`. El núcleo de política público y su prueba sintética existen como implementación en `Draft`, sin nombres reales ni interfaz de ejecución. La siguiente acción permitida es una revisión humana estática de esa implementación; no autoriza compilar, importar, ejecutar, probar, registrar nombres reales ni analizar el sistema.
+Este contrato está en `Review`. El núcleo de política público y su prueba sintética existen como implementación `2026-08-27_Implementacion_Nucleo_Politica_Publico_GSEC2_11_USM.md` v1.2 en `Review`, sin nombres reales ni interfaz de ejecución. Cualquier propuesta de prueba sintética ejecutada requerirá una autorización humana nueva, no autorizará observar el sistema y deberá conservar estos límites.
 
 Para conservar coherencia, el estado `Review` se refleja en la especificación estática, G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2, G-SEC-2.8 y G-SEC-2.10 no requieren cambio de estado porque sus límites continúan vigentes.
 
