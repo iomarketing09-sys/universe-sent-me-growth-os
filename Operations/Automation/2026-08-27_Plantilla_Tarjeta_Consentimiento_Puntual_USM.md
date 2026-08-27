@@ -4,12 +4,14 @@ purpose: "Proporcionar una plantilla no operativa para solicitar, en el futuro, 
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.1"
+version: "1.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
+  - "Operations/Automation/2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md"
+  - "Operations/Automation/2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md"
   - "GrowthOS/todo.md"
 ---
 
@@ -77,7 +79,7 @@ Una tarjeta real aprobada deberá conservarse únicamente dentro del almacenamie
 
 Fernando confirmó la plantilla vacía y el procedimiento humano de solicitud. Confirma que la plantilla se mantiene vacía, que una tarjeta futura será puntual, limitada, revocable y sin salida externa, y que esta revisión no emite consentimiento ni habilita operación. No se introdujeron referencias de propuestas, fechas de vigencia, datos, tokens, rutas privadas o detalles de una operación.
 
-Esta plantilla está en `Review` y no requiere acción del usuario. El siguiente trabajo permitido es diseñar una ficha pública de propuesta mínima y una lista manual de comparación de alcance, que permitan verificar una solicitud futura sin llenar todavía una tarjeta ni solicitar consentimiento. Una revisión favorable no emite tarjeta, no solicita consentimiento y no abre G-NORM-4R.
+Esta plantilla está en `Review` y no requiere acción del usuario. La ficha pública de propuesta mínima y la lista manual de comparación de alcance están documentadas en `2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md` v1.0, en estado `Draft`. Permiten revisar una propuesta futura sin llenar todavía una tarjeta ni solicitar consentimiento. Una revisión favorable no emite tarjeta, no solicita consentimiento y no abre G-NORM-4R.
 
 ## Referencias
 

@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.46
+**Versión:** 5.47
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.47.00] — 2026-08-27 (Fernando/Manus): ficha pública y lista manual G-SEC-2.4c diseñadas, sin propuesta emitida.** Se creó `2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md` v1.0 como referencia vacía para describir una futura propuesta mínima y compararla en diez controles contra G-SEC-2: referencia, marca, muestra, métricas, exclusiones, retención, método, egress, vigencia/revocación y salida segura. Todos los campos permanecen pendientes; cualquier resultado no compatible produce `consent_scope_mismatch` sin abrir información privada ni solicitar consentimiento. El documento está en `Draft`, no contiene propuesta, tarjeta o consentimiento y no habilita G-NORM-4R, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos ni salidas externas.
 
 - **[5.46.00] — 2026-08-27 (Fernando/Manus): revisión documental G-SEC-2.4b confirmada, sin tarjeta emitida.** Fernando confirmó la plantilla vacía y el procedimiento de solicitud humana. El documento pasó de `Draft` a `Review`; permanece sin referencia de propuesta, muestra, ventana, aprobación o consentimiento real. La revisión establece que el siguiente diseño permitido es una ficha pública mínima y una lista manual de comparación de alcance, no una solicitud activa. No se pidieron ni registraron datos, tokens, configuración privada, consentimiento o autorización; no se ejecutaron collectors, OAuth/API, ledger, cron, Docker u OmniRoute, ni se habilitó salida externa o G-NORM-4R.
 
