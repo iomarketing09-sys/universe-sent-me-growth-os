@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-26
-**Versión:** 5.30
+**Versión:** 5.31
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.31.00] — 2026-08-26 (Fernando/Manus): exclusión definitiva del wrapper en inspección OmniRoute.** La corrección por PID no cubrió la invocación `bash` del propio script; se sustituyó por una exclusión del nombre exacto del archivo de inspección, sin filtrar procesos OmniRoute/Compose ajenos. La sintaxis validó correctamente y no se ejecutó Docker, OmniRoute, red, apertura de `.env` o cambio de puertos. La inspección pasiva autorizada se repetirá tras sincronizar el repositorio.
 
 - **[5.30.00] — 2026-08-26 (Fernando/Manus): falso positivo de inspección OmniRoute corregido sin activar servicios.** La primera ejecución pasiva confirmó el directorio restaurado y la ausencia de Docker/Compose, pero el patrón de `pgrep` coincidió con el propio wrapper y devolvió un bloqueo erróneo. Se modificó el detector para excluir su PID y se validó su sintaxis. No se instaló Docker, no se inició OmniRoute, no se abrió `.env`, no hubo red ni cambios de puerto. La inspección pasiva autorizada debe repetirse tras actualizar el repositorio.
 

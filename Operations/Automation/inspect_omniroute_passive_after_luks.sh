@@ -5,6 +5,7 @@ set -euo pipefail
 
 readonly OMNIROOT="${HOME}/omniroute-pilot"
 readonly OMNIPORT='20128'
+readonly SELF_SCRIPT="${0##*/}"
 
 usage() {
   cat <<'EOF'
@@ -65,7 +66,7 @@ fi
 
 echo '--- PROCESS AND PORT CHECK ---'
 PROCESS_MATCHES="$(pgrep -af 'omniroute|docker compose|docker-compose' || true)"
-PROCESS_MATCHES="$(printf '%s\n' "$PROCESS_MATCHES" | awk -v self="$$" '$1 != self && $0 !~ /pgrep -af/ { print }')"
+PROCESS_MATCHES="$(printf '%s\n' "$PROCESS_MATCHES" | awk -v self_script="$SELF_SCRIPT" '$0 !~ self_script && $0 !~ /pgrep -af/ { print }')"
 if [ -n "$PROCESS_MATCHES" ]; then
   echo 'STATUS=blocked_omniroute_or_compose_process_detected'
   printf '%s\n' "$PROCESS_MATCHES"
