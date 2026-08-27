@@ -4,7 +4,7 @@ purpose: "Proporcionar una plantilla no operativa para solicitar, en el futuro, 
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.4"
+version: "1.5"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -79,7 +79,7 @@ Una tarjeta real aprobada deberá conservarse únicamente dentro del almacenamie
 
 Fernando confirmó la plantilla vacía y el procedimiento humano de solicitud. Confirma que la plantilla se mantiene vacía, que una tarjeta futura será puntual, limitada, revocable y sin salida externa, y que esta revisión no emite consentimiento ni habilita operación. No se introdujeron referencias de propuestas, fechas de vigencia, datos, tokens, rutas privadas o detalles de una operación.
 
-Esta plantilla está en `Review` y no requiere acción del usuario. La ficha pública de propuesta mínima y la lista manual de comparación de alcance están documentadas en `2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md` v1.0, en estado `Draft`. G-SEC-2.5 prepara una revisión de integridad estática de ambos documentos y del contrato G-SEC-2, pero aún no se ejecuta. Ninguna revisión favorable emite tarjeta, solicita consentimiento o abre G-NORM-4R.
+Esta plantilla está en `Review` y no requiere acción del usuario. La ficha pública de propuesta mínima y la lista manual de comparación de alcance están documentadas en `2026-08-27_Ficha_Propuesta_Minima_Comparacion_Alcance_USM.md` v1.0, en estado `Draft`. G-SEC-2.5 ya pasó su revisión de integridad estática de ambos documentos y del contrato G-SEC-2, usando solo texto público. Ninguna revisión favorable emite tarjeta, solicita consentimiento o abre G-NORM-4R.
 
 ## Referencias
 

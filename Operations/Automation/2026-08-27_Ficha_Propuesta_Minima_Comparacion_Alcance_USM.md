@@ -4,7 +4,7 @@ purpose: "Proporcionar una referencia vacía para describir y comparar, en el fu
 status: Draft
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md"
@@ -80,7 +80,7 @@ El dictamen `consent_scope_mismatch` es obligatorio cuando falte un campo, se ex
 
 ## Estado y siguiente gate permitido
 
-Este documento está en `Draft` y no requiere respuesta ni datos del usuario. El siguiente trabajo permitido es una revisión humana de esta ficha y lista como diseño documental. Esa revisión no llena campos, no crea una propuesta futura, no solicita consentimiento y no abre G-NORM-4R.
+Este documento está en `Draft` y no requiere respuesta ni datos del usuario. G-SEC-2.5 validó estáticamente sus marcadores pendientes, enlaces y los diez controles de comparación frente a G-SEC-2 y la plantilla de tarjeta; el PASS no cambia este estado ni llena campos. El siguiente trabajo permitido es una revisión humana de esta ficha y lista como diseño documental. Esa revisión no crea una propuesta futura, no solicita consentimiento y no abre G-NORM-4R.
 
 ## Referencias
 

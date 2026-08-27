@@ -4,7 +4,7 @@ purpose: "Definir los controles separados que deben diseñarse, revisarse y apro
 status: Review
 created: 2026-08-25
 updated: 2026-08-27
-version: "3.2"
+version: "3.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
@@ -207,7 +207,7 @@ G-SEC-2.5 usa `fixtures/gsec2_template_static_integrity_expectations.json`, `val
 | Campos pendientes | Marcadores de no emisión/no solicitud/no comparación permanecen presentes. | No completa ni solicita campos. |
 | Enlaces y controles | Referencias mutuas y diez controles de comparación. | No abre rutas fuera del repositorio. |
 
-El wrapper solo ofrece `--plan`, `--preflight` y `--execute --confirm RUN_USM_GSEC2_TEMPLATE_STATIC_INTEGRITY`. El modo de planificación ya validó su sintaxis y no leyó documentos. El futuro preflight verificará los cuatro artefactos públicos y la ausencia de procesos de collectors/servicios; el modo de ejecución requerirá autorización separada, leerá texto público y emitirá únicamente `gsec2_template_static_integrity_passed` o `BLOCKED`. G-SEC-2.5 está diseñado y sin ejecutar: no lee rutas privadas o entorno, no abre sockets, no solicita ni concede consentimiento real y no habilita G-NORM-4R.
+El wrapper solo ofrece `--plan`, `--preflight` y `--execute --confirm RUN_USM_GSEC2_TEMPLATE_STATIC_INTEGRITY`. El modo de planificación validó su sintaxis y no leyó documentos. La ejecución autorizada confirmó los cuatro artefactos públicos y ausencia de procesos de collectors/servicios; el análisis devolvió `gsec2_template_static_integrity_passed` con marca USM, máximo de cuatro observaciones, 30 días, 24 horas y las diez filas de comparación. Una primera coincidencia textual de vigencia se corrigió en el fixture público, sin ampliar su lectura, y la repetición pasó. G-SEC-2.5 no leyó rutas privadas o entorno, no abrió sockets, no solicitó ni concedió consentimiento real y no habilita G-NORM-4R.
 
 ## Criterio de cierre de G-SEC-2 y siguiente gate posible
 
@@ -216,7 +216,7 @@ G-SEC-2 se considera **diseñado** cuando este documento y los documentos relaci
 | Estado | Resultado | Consecuencia |
 |---|---|---|
 | Draft | Diseño documentado, con G-SEC-2.3a sintético ya pasado pero sin revisión humana completa de los cuatro controles. | G-NORM-4R bloqueado. |
-| Review | Fernando confirmó los cuatro límites de diseño; G-SEC-2.1a, G-SEC-2.2a, G-SEC-2.3a y G-SEC-2.4a pasaron exclusivamente con fixtures ficticios. Sigue faltando una tarjeta puntual real, consentimiento humano vigente y revisión manual de alcance. | Solo se puede diseñar la plantilla y procedimiento de solicitud de tarjeta real, sin datos reales. |
+| Review | Fernando confirmó los cuatro límites de diseño; G-SEC-2.1a, G-SEC-2.2a, G-SEC-2.3a, G-SEC-2.4a y G-SEC-2.5 pasaron exclusivamente con fixtures o documentos públicos. Sigue faltando revisar la ficha de propuesta, una tarjeta puntual real y consentimiento humano vigente. | Solo se puede revisar la ficha y diseñar pasos documentales posteriores, sin datos reales. |
 | Active | Solo después de pruebas de control aprobadas y consentimiento puntual vigente. | Permite proponer, no ejecutar automáticamente, una única operación G-NORM-4R. |
 | Blocked | Cualquier ambigüedad, salida externa, datos no permitidos, retención indefinida o consentimiento vencido. | No se abre evidencia ni se ejecuta ningún collector. |
 

@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.48
+**Versión:** 5.49
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.49.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.5 pasó como integridad estática de plantillas públicas.** Tras autorización explícita, el preflight confirmó los cuatro artefactos públicos y ausencia de collectors/servicios. El primer análisis bloqueó solo por una variante textual de la frase de 24 horas; se corrigió la expectativa del fixture y la repetición autorizada devolvió `gsec2_template_static_integrity_passed`. Confirmó estado G-SEC-2/plantilla/ficha, marca Universe Sent Me, máximo cuatro observaciones, 30 días, 24 horas, marcadores pendientes, enlaces cruzados y diez controles de comparación. No se leyeron rutas privadas o entorno, no hubo red/sockets, consentimiento real, collectors, OAuth/API, ledger, evidencia, salidas, cron, Docker, OmniRoute ni G-NORM-4R.
 
 - **[5.48.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.5 diseñado como validación estática de integridad documental.** Se añadieron fixture de expectativas, validador Python y preflight públicos para comprobar, solo dentro del repositorio, los estados de G-SEC-2/plantilla/ficha, marca USM, límites de cuatro observaciones, 30 días y 24 horas, marcadores pendientes, enlaces cruzados y diez controles de comparación. El modo `--plan` validó la sintaxis del diseño sin leer documentos. La ejecución no está autorizada ni realizada y requiere una confirmación separada. Por diseño no lee rutas privadas ni entorno, no abre sockets, no solicita o concede consentimiento real, no invoca collectors, OAuth/API, servicios, cron, Docker, OmniRoute ni escribe ledger/evidencia/salidas. G-NORM-4R sigue bloqueado.
 
