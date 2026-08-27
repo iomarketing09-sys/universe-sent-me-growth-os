@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.83
+**Versión:** 5.84
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.84.00] — 2026-08-27 (Fernando/Manus): prueba sintética G-SEC-2.11 bloqueada de forma fail-closed por dependencia ausente.** Con autorización específica se intentó ejecutar únicamente los cinco casos abstractos de `test_policy_core_gsec211_synthetic.py`, con caché deshabilitada. La ejecución se detuvo antes de importar el núcleo o evaluar un caso porque `pytest` no está disponible localmente. No se crearon cachés, logs, evidencia ni resultados persistentes; no hubo acceso a sistema, red, datos, servicios, collectors o componentes reales. El estado es `synthetic_test_blocked_dependency_absent`; no se instalará una dependencia, no se creará runner alternativo ni se reintentará sin autorización humana nueva. G-SEC-2 continúa en `Review` y G-NORM-4R bloqueado.
 
 - **[5.83.00] — 2026-08-27 (Fernando/Manus): revisión humana estática de la implementación G-SEC-2.11 confirmada.** Se confirmó que `policy_core_gsec211.py` se limita a lógica pura y que `test_policy_core_gsec211_synthetic.py` declara solo entradas y resultados sintéticos. La implementación `2026-08-27_Implementacion_Nucleo_Politica_Publico_GSEC2_11_USM.md` pasa de `Draft` a `Review`. El dictamen valida exclusivamente lectura estática: no se compilaron, importaron, ejecutaron ni probaron archivos, no se registraron nombres reales y no se observó el sistema. Una prueba sintética ejecutada requeriría nueva autorización humana y seguiría sin permitir observación del equipo, datos, red o G-NORM-4R.
 

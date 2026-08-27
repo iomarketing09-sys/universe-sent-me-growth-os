@@ -4,7 +4,7 @@ purpose: "Registrar la creación limitada del núcleo de política puro y de su 
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.2"
+version: "1.3"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Contrato_Artefacto_Codigo_Publico_Verificador_Minimo_GSEC2_11_USM.md"
@@ -59,6 +59,20 @@ Se efectuó una inspección textual de los dos archivos para detectar importacio
 
 > **Alcance del dictamen:** esta revisión confirma únicamente la ausencia de los patrones textuales revisados. No prueba el comportamiento en tiempo de ejecución ni autoriza importar, compilar, ejecutar o usar los archivos contra el sistema.
 
+## Intento de prueba sintética y bloqueo seguro
+
+Con autorización específica para los cinco casos abstractos, se intentó ejecutar exclusivamente el archivo de prueba en memoria, con caché deshabilitada. La herramienta de pruebas requerida no está instalada en el entorno local, por lo que la ejecución se detuvo antes de importar el núcleo o evaluar cualquier caso sintético.
+
+| Elemento | Resultado |
+|---|---|
+| Herramienta solicitada | No disponible localmente (`pytest`). |
+| Importación del núcleo | No realizada. |
+| Compilación o evaluación de casos | No realizada. |
+| Archivos de caché, logs, evidencia o resultados persistentes | No creados por el intento bloqueado. |
+| Acceso a sistema, red, datos o componentes reales | No realizado. |
+
+> **Dictamen:** `synthetic_test_blocked_dependency_absent`. Este estado no es un fallo del núcleo ni una aprobación de su comportamiento. Es una detención fail-closed por dependencia ausente. No se instalará una dependencia, no se creará un runner alternativo y no se reintentará con otra herramienta sin una autorización humana nueva.
+
 ## Registro de revisión humana estática
 
 Fernando autorizó la revisión humana estática de la implementación. Se confirmó que el núcleo se limita a lógica pura, usa entradas sintéticas y abstractas, devuelve una sola categoría agregada, conserva la precedencia fail-closed y no declara capacidades de sistema, red, archivos, datos, persistencia o ejecución dinámica.
@@ -75,7 +89,7 @@ No se permite compilar, importar, ejecutar, probar ni integrar estos archivos si
 
 ## Estado y siguiente acción permitida
 
-Esta implementación está en `Review`. No autoriza compilar, importar, ejecutar, probar, registrar nombres reales ni observar el sistema. Si surgiera una necesidad concreta, cualquier propuesta de prueba sintética ejecutada requerirá una autorización humana nueva, estrictamente limitada a entradas abstractas; dicha prueba no autorizará observación del sistema, nombres reales ni una integración.
+Esta implementación está en `Review`. No autoriza compilar, importar, ejecutar, probar, registrar nombres reales ni observar el sistema. La prueba sintética autorizada quedó bloqueada por la ausencia local de `pytest`; cualquier propuesta de instalar una dependencia o crear un runner alternativo requerirá una autorización humana nueva, estrictamente limitada a entradas abstractas. Ninguna alternativa autorizará observación del sistema, nombres reales ni una integración.
 
 Para mantener coherencia, el estado `Review` se refleja en el contrato de código, la especificación estática, G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2 y G-NORM-4R no cambian de estado.
 
