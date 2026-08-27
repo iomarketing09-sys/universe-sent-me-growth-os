@@ -4,7 +4,7 @@ purpose: "Definir la estructura y los límites de un gate separado que, tras rev
 status: Draft
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Gate_Superficie_Unica_Ejecucion_Servicios_No_Ejecucion_GSEC2_9_USM.md"
@@ -81,6 +81,19 @@ La salida de una futura observación no puede contener PID, nombre de host, usua
 
 Ninguna categoría equivale a `PASS` técnico, certificación de seguridad, autorización de operación, consentimiento de datos reales o activación de G-NORM-4R.
 
+## Revisión documental de detención y salidas
+
+La revisión documental confirma que las categorías separan correctamente cuatro situaciones: ausencia observada dentro de una lista finita autorizada, presencia candidata de un nombre exacto, bloqueo o incompletitud del método, y una solicitud que excede el alcance. Para evitar que una salida positiva se interprete como una afirmación sobre todo el equipo, se aplicará la siguiente precedencia si una ejecución futura llegara a recibir autorización.
+
+| Orden | Regla de decisión | Categoría permitida | Acción obligatoria |
+|---|---|---|---|
+| 1 | La solicitud excede la lista registrada o requiere argumentos, rutas, red, datos, daemons o privilegios. | `scope_mismatch` | No iniciar ninguna consulta. |
+| 2 | Falta la autorización puntual, un prerequisito declarado o la consulta no puede finalizar dentro del método aprobado. | `observation_incomplete_or_blocked` | Detener sin reintento, ampliación ni investigación. |
+| 3 | Una consulta dirigida observa al menos un nombre exacto registrado. | `registered_execution_candidate_observed` | Detener sin atribuir causa, abrir detalles ni cambiar estado alguno. |
+| 4 | Todas las consultas dirigidas autorizadas terminan y ninguna observa un nombre registrado. | `registered_non_execution_observed` | Informar solo la categoría agregada, sin inferir el estado completo del sistema. |
+
+> **Dictamen documental:** las condiciones son coherentes con una detención fail-closed, siempre que los casos de los órdenes 1 a 3 prevalezcan sobre el orden 4. Esta revisión no cambia el estado `Draft`, no prueba el método y no afirma nada sobre el sistema real.
+
 ## Condiciones de detención fail-closed
 
 La ejecución futura deberá detenerse antes de observar nada, o interrumpirse sin reintento, si ocurre cualquiera de las condiciones siguientes.
@@ -93,6 +106,8 @@ La ejecución futura deberá detenerse antes de observar nada, o interrumpirse s
 | Solicitud de `sudo`, permisos adicionales, cambio de estado o instalación | Emitir `observation_incomplete_or_blocked`; no elevar privilegios. |
 | Resultado inesperado o parcialmente atribuido | Emitir `registered_execution_candidate_observed` o `observation_incomplete_or_blocked`; no investigar ni corregir. |
 | Ausencia de la autorización de ventana exacta | No ejecutar; conservar el estado `Review` o `Draft` aplicable. |
+
+La detención debe ocurrir antes de cualquier consulta cuando se conozca el exceso de alcance. Si un bloqueo aparece durante una consulta ya autorizada, se descarta su salida intermedia y se emite solo `observation_incomplete_or_blocked`, salvo que ya se haya observado un nombre exacto registrado; en ese caso se usa únicamente `registered_execution_candidate_observed`. Ningún caso permite continuar para recopilar detalles adicionales.
 
 ## Prohibiciones permanentes
 

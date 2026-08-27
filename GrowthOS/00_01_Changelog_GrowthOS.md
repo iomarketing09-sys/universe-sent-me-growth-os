@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.74
+**Versión:** 5.75
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.75.00] — 2026-08-27 (Fernando/Manus): revisión documental de detención y salidas de G-SEC-2.11.** Se revisaron únicamente las condiciones fail-closed y las categorías de salida agregada de `2026-08-27_Gate_Tecnico_Pasivo_Observacion_Real_Minima_GSEC2_11_USM.md`. La revisión fijó la precedencia: exceso de alcance → `scope_mismatch`; bloqueo, falta de autorización o incompletitud → `observation_incomplete_or_blocked`; nombre exacto registrado observado → `registered_execution_candidate_observed`; y solo una lista completa de consultas autorizadas sin coincidencias → `registered_non_execution_observed`. G-SEC-2.11 sigue en `Draft`; no se analizó el sistema, no se ejecutó un verificador y no se abrieron datos, red, collectors, servicios o G-NORM-4R.
 
 - **[5.74.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.11 diseñado como previo técnico mínimo a una observación real.** Se creó `2026-08-27_Gate_Tecnico_Pasivo_Observacion_Real_Minima_GSEC2_11_USM.md` v1.0 en `Draft`. El diseño exige nombres públicos, exactos y no sensibles para cualquier componente observable; no permite inventario de procesos, argumentos, rutas, entorno, red, puertos, sockets, Docker, Compose, OmniRoute, collectors, daemons, privilegios, persistencia o reintentos. Los collectors Python genéricos permanecen fuera de alcance hasta un diseño separado de wrapper no sensible. Una futura observación requerirá revisión del diseño, revisión del verificador y autorización humana de una sola ventana. G-SEC-2 continúa en `Review` y G-NORM-4R permanece bloqueado; no se ejecutó comprobación alguna.
 
