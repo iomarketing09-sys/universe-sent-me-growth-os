@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.76
+**Versión:** 5.77
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.77.00] — 2026-08-27 (Fernando/Manus): especificación estática del verificador mínimo G-SEC-2.11 diseñada.** Se creó `2026-08-27_Especificacion_Estatica_Verificador_Minimo_GSEC2_11_USM.md` v1.0 en `Draft`. El contrato deja el registro de nombres vacío por defecto, limita una futura consulta a entradas públicas, exactas y no sensibles, y prohíbe nombres genéricos, argumentos, rutas, red, puertos, daemons, privilegios, persistencia, reintentos y automatización. Define precondiciones, una sola pasada, cuatro categorías agregadas y detención fail-closed. No contiene código, no registró nombres reales, no observó servicios o collectors y no habilita G-NORM-4R. La siguiente acción permitida es una revisión humana del contrato estático.
 
 - **[5.76.00] — 2026-08-27 (Fernando/Manus): revisión humana de G-SEC-2.11 confirmada sin crear verificador.** Fernando confirmó la superficie mínima, los nombres registrables, las salidas agregadas y la detención fail-closed. El gate `2026-08-27_Gate_Tecnico_Pasivo_Observacion_Real_Minima_GSEC2_11_USM.md` pasa de `Draft` a `Review`. La confirmación valida exclusivamente el diseño y la precedencia fail-closed: no creó ni ejecutó un verificador, no observó servicios, collectors, procesos, red o datos, y no habilitó G-NORM-4R ni transición operativa. Si surge una necesidad concreta, primero se deberá diseñar un verificador público, mínimo y estático con autorización humana nueva; ese diseño tampoco autorizará ejecutarlo.
 
