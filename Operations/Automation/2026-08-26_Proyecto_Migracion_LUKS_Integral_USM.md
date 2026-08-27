@@ -4,7 +4,7 @@ purpose: "Definir los gates y la secuencia reversible para reinstalar Xubuntu co
 status: Active
 created: 2026-08-26
 updated: 2026-08-26
-version: "1.3"
+version: "1.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -130,6 +130,8 @@ La primera prueba candidata es `validate_synthetic_boundary_suite.py`, ejecutada
 | G-MIG-LUKS-1.8c | Revisar contratos y dependencias de collectors solo por código/configuración de ejemplo. | No ejecutar collectors, OAuth, API GET, escritura de evidencia, cron o Sheets. |
 
 El éxito de G-MIG-LUKS-1.8a no abre G-NORM-4R. Antes de cualquier observación real siguen siendo obligatorios la renovación de privacidad, retención, consentimiento granular y la decisión humana de permitir una operación real mínima.
+
+G-MIG-LUKS-1.8a se ejecutó tras autorización en Python 3.14.4. El preflight confirmó los fixtures, el repositorio y la ausencia de procesos OmniRoute, Docker Compose o collectors. El suite validó NORM-01 a NORM-12 y cinco protecciones del shadow ledger; reportó `synthetic_only`, `network_socket_blocked`, `temporary_ledger_only` y `no_canonical_write`. No instaló paquetes, no importó configuraciones privadas, no inició procesos, no accedió a red ni produjo datos reales. G-MIG-LUKS-1.8b queda como el siguiente subgate de diseño para revisar Docker/OmniRoute exclusivamente por presencia.
 
 ## Diseño de desbloqueo G-MIG-LUKS-1.5
 

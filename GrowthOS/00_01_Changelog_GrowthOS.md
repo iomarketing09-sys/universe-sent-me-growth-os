@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-26
-**Versión:** 5.27
+**Versión:** 5.28
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.28.00] — 2026-08-26 (Fernando/Manus): suite sintético post-LUKS ejecutado sin red ni datos reales.** Bajo autorización G-MIG-LUKS-1.8a, el preflight verificó Python 3.14.4, fixtures presentes y ausencia de procesos OmniRoute/Docker Compose/collectors. El suite validó NORM-01 a NORM-12 y cinco controles del shadow ledger, con sockets bloqueados, ledger temporal y ninguna escritura canónica. No se instalaron paquetes, no se leyeron configuraciones privadas, no se llamó ninguna API y no se iniciaron servicios. G-MIG-LUKS-1.8b queda pendiente para diseñar una inspección de presencia de Docker/OmniRoute; G-NORM-4R y datos reales siguen bloqueados.
 
 - **[5.27.00] — 2026-08-26 (Fernando/Manus): preflight sintético post-LUKS diseñado, sin ejecución.** Se inventariaron los validadores restaurados y se confirmó que el suite de frontera sintética usa fixtures, bloquea sockets y limita el shadow ledger a un directorio temporal. Se creó `preflight_usm_synthetic_after_luks.sh`, con modos `--plan`, `--preflight` y `--execute` confirmado. El preflight no instala paquetes, no lee configuraciones privadas, no llama APIs, no arranca OmniRoute/Docker, no habilita cron y no escribe un ledger canónico. G-MIG-LUKS-1.8a requiere autorización separada para ejecutar el suite fixture-only; collectors, OmniRoute y datos reales continúan bloqueados.
 
