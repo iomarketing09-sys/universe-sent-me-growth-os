@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-26
-**Versión:** 5.33
+**Versión:** 5.34
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.34.00] — 2026-08-26 (Fernando/Manus): G-MIG-LUKS-1.8c pasó como revisión estática sin integraciones.** El preflight confirmó únicamente artefactos públicos y el analizador AST/textual finalizó con `static_contract_passed`, cero fallos y `STATUS=collectors_static_review_complete_no_private_read_no_network`. Una primera regla demasiado rígida buscaba valores TikTok/YouTube dentro de collectors que solo consumen referencias de configuración; el commit `757c6ab` trasladó las comprobaciones al autorizador o ejemplo público donde dichos valores se declaran. No se importaron ni ejecutaron collectors, no se leyeron configuración privada, tokens, `.env` ni evidencia, no hubo red/OAuth/API, instalación de dependencias, escritura, cron, Docker u OmniRoute. G-NORM-4R y cualquier dato real continúan bloqueados hasta controles separados de privacidad, retención, operación read-only y consentimiento granular.
 
 - **[5.33.00] — 2026-08-26 (Fernando/Manus): revisión estática de collectors diseñada, sin integración.** Se crearon `preflight_collectors_static_after_luks.sh` y `validate_collectors_static_contract.py`. El diseño verifica siete artefactos públicos y analiza sus contratos con `ast.parse` y texto: scopes, variables locales declaradas, rutas de evidencia, dependencias y ausencia de verbos Meta de escritura. No importa ni ejecuta collectors, no abre configuración privada, tokens, evidencia o `.env`, no ejecuta OAuth/API, no instala paquetes, no escribe evidencia/canonical, no arranca servicios ni cron. G-MIG-LUKS-1.8c requiere autorización separada para ejecutar únicamente este análisis estático.
 

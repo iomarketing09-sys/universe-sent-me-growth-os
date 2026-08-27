@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-26
-version: "12.01"
+version: "12.02"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -215,7 +215,7 @@ organization: "GrowthOS"
 - [x] Ejecutar G-MIG-LUKS-1.7b: checksum validado antes y después; descifrado interactivo completó `STATUS=selective_restore_complete_repository_preserved`. No se modificó `Fernando` ni se restauró el clon GitHub anterior.
 - [ ] Validar G-MIG-LUKS-1.7b: comprobar presencia, propietarios y permisos de `bin` y las tres raíces privadas, ausencia de staging y repositorio GitHub preservado; no iniciar OmniRoute, collectors ni automatizaciones.
 - [x] Validar G-MIG-LUKS-1.7b: `bin`, las tres raíces privadas y `omniroute-pilot` existen con modo `0700` y propietario `universe-sent-me`; staging temporal ausente, repositorio GitHub canónico preservado en `e717b3d` y no se detectaron procesos OmniRoute/USM activos.
-- [ ] G-MIG-LUKS-1.8: reinstalar y probar herramientas locales exclusivamente con fixtures sintéticos/read-only; mantener OmniRoute detenido y no abrir collectors, shadow ledger, Sheets, Drive ni datos reales hasta aprobar gates posteriores.
+- [x] G-MIG-LUKS-1.8: revalidación posterior a LUKS completada mediante suite fixture-only, inspección pasiva OmniRoute y revisión estática de collectors. OmniRoute continúa detenido; no se abrieron collectors, shadow ledger persistente, Sheets, Drive ni datos reales. Siguen pendientes controles separados de privacidad, retención, operación read-only y consentimiento granular antes de G-NORM-4R.
 - [ ] Diseñar preflight G-MIG-LUKS-1.8: inventariar scripts/dependencias restaurados, definir instalaciones mínimas y pruebas sintéticas read-only, y validar que no existan procesos OmniRoute, collectors, cron o flujos de datos reales antes de una ejecución separada.
 - [x] Diseñar preflight G-MIG-LUKS-1.8: `preflight_usm_synthetic_after_luks.sh` diferencia `--plan`, `--preflight` y un `--execute` confirmado; solo permite el suite fixture-only con sockets bloqueados, ledger temporal y sin escrituras canónicas. OmniRoute, collectors y cron siguen excluidos.
 - [ ] Autorizar G-MIG-LUKS-1.8a: ejecutar el preflight y, si pasa, el suite sintético de normalización/shadow ledger con Python local; no instala paquetes, no abre red, no lee configuraciones privadas ni inicia servicios.
@@ -228,10 +228,10 @@ organization: "GrowthOS"
 - [ ] Repetir inspección pasiva G-MIG-LUKS-1.8b: publicar la corrección y volver a revisar metadatos, clientes, procesos y puerto 20128 sin instalar/iniciar componentes ni abrir configuraciones privadas.
 - [x] Repetir inspección pasiva G-MIG-LUKS-1.8b: directorio `~/omniroute-pilot` presente con modo `0700`; Docker/Compose ausentes, sin procesos OmniRoute/Compose y puerto 20128 no escuchando. No se inició servicio, se abrió `.env`, llamó red ni modificó configuración.
 - [x] Diseñar G-MIG-LUKS-1.8c: `preflight_collectors_static_after_luks.sh` y `validate_collectors_static_contract.py` revisan código, requisitos y ejemplo mediante texto/AST, sin importar collectors ni leer configuraciones privadas, tokens, evidencia o red.
-- [ ] Ejecutar revisión estática G-MIG-LUKS-1.8c: tras publicar el diseño, inspeccionar solo código, requisitos y `.example`; no abrir configuraciones reales, tokens, evidencia, OAuth, red, collectors ni cron.
-- [ ] Autorizar G-MIG-LUKS-1.8c: ejecutar preflight y analizador AST de contratos públicos; no instala paquetes ni activa collectors, servicios, OAuth, APIs, cron o datos reales.
+- [x] Ejecutar revisión estática G-MIG-LUKS-1.8c: tras publicar el diseño, se inspeccionaron solo código, requisitos y `.example`; no se abrieron configuraciones reales, tokens, evidencia, OAuth, red, collectors ni cron. Resultado final: `static_contract_passed` sin fallos.
+- [x] Autorizar G-MIG-LUKS-1.8c: Fernando autorizó y ejecutó el preflight y analizador AST de contratos públicos; no instaló paquetes ni activó collectors, servicios, OAuth, APIs, cron o datos reales.
 - [x] Autorizar G-MIG-LUKS-1.8c: Fernando aprobó ejecutar solo el preflight y el análisis AST/texto de contratos públicos, sin tokens, configuraciones privadas, evidencia, red, OAuth, collectors, cron, Docker u OmniRoute.
-- [ ] Corregir G-MIG-LUKS-1.8c: el analizador buscó valores TikTok/YouTube que se declaran en el autorizador o configuración pública, no en los collectors de lectura; ajustar las reglas y repetir el mismo análisis estático ya autorizado sin ejecutar integraciones.
+- [x] Corregir G-MIG-LUKS-1.8c: el analizador buscó inicialmente valores TikTok/YouTube que se declaran en el autorizador o configuración pública, no en los collectors de lectura. La corrección `757c6ab` ajustó esas reglas y la repetición autorizada pasó con `static_contract_passed`, sin ejecutar integraciones.
 - [x] Corregir recurrencia G-MIG-LUKS-1.8b: la exclusión por PID no cubrió la invocación `bash` que lanza el wrapper; la corrección excluye por nombre exacto el archivo de inspección, conserva los procesos OmniRoute/Compose ajenos y validó sintaxis.
 - [x] Diseñar desbloqueo G-MIG-LUKS-1.5: método propuesto `Erase disk` → `Encrypt with a passphrase`; preflight de respaldo, identidad por modelo/tamaño, aislamiento físico, frase local y última autorización específica documentados en el proyecto v0.8. No autoriza aún borrar disco.
 - [x] Autorizar G-MIG-LUKS-1.4g: Fernando aprobó verificar la página guiada de cifrado por frase sin instalación; prohíbe ingresar frase, continuar a resumen, crear particiones o modificar cualquier disco.

@@ -4,7 +4,7 @@ purpose: "Definir los gates y la secuencia reversible para reinstalar Xubuntu co
 status: Active
 created: 2026-08-26
 updated: 2026-08-26
-version: "1.9"
+version: "1.10"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -92,7 +92,7 @@ El nuevo usuario local debe conservar el nombre `universe-sent-me` salvo que Fer
 | E. Instalar | Arrancar desde USB, elegir cifrado en el instalador oficial y detenerse en el resumen antes de cualquier confirmación destructiva. | G-MIG-LUKS-1.5 aprobado por separado. |
 | F. Verificar LUKS | Confirmar cadena de bloques cifrada, arranque, red y actualización base. | G-MIG-LUKS-1.6 completado. |
 | G. Recuperar USM | Instalar `age`, restaurar solo las raíces autorizadas al sistema ya cifrado, comprobar scripts y mantener el backup externo intacto. | G-MIG-LUKS-1.7 aprobado. |
-| H. Retomar operación | Ejecutar pruebas sintéticas/read-only y revisar privacidad antes de abrir gates de datos reales. | G-MIG-LUKS-1.8 completado. |
+| H. Retomar operación | Ejecutar pruebas sintéticas/read-only y revisar privacidad antes de abrir gates de datos reales. | G-MIG-LUKS-1.8 completado; siguen pendientes controles humanos de privacidad, retención, operación read-only y consentimiento granular. |
 
 ## Requisitos antes de crear el medio de instalación
 
@@ -155,17 +155,23 @@ G-MIG-LUKS-1.8b pasó tras aplicar la corrección: `~/omniroute-pilot` sigue pre
 
 ### Diseño G-MIG-LUKS-1.8c — revisión estática de collectors
 
-La revisión estática usa `preflight_collectors_static_after_luks.sh` y `validate_collectors_static_contract.py`. El primero verifica la presencia de siete artefactos públicos y el segundo usa `ast.parse` y lectura de texto para revisar contratos, sin importar módulos de collectors. Por diseño, no lee `~/.config/usm-metrics`, `~/.local/share/usm-metrics`, variables de entorno, token alguno, `.env` ni evidencia.
+La revisión estática usa `preflight_collectors_static_after_luks.sh` y `validate_collectors_static_contract.py`. El primero verifica la presencia de siete artefactos públicos requeridos por el gate y el segundo usa `ast.parse` y lectura de texto para revisar esos contratos y el autorizador TikTok público, sin importar módulos de collectors. Por diseño, no lee `~/.config/usm-metrics`, `~/.local/share/usm-metrics`, variables de entorno, token alguno, `.env` ni evidencia.
 
 | Artefacto | Contrato revisado de manera estática | No se ejecuta |
 |---|---|---|
-| TikTok | Marca USM, variables locales de cliente, scopes `user.info.basic`/`video.list`, evidencia privada y POST limitado a OAuth/Display API. | PKCE, callback, refresh o `video.list`. |
-| YouTube | Scopes exactos de lectura/rendimiento/monetización y preservación de `not_available`. | OAuth, refresh, canal o Analytics API. |
+| TikTok | Collector: marca USM, referencia a configuración TikTok, token y llamadas Display API. Autorizador/configuración pública: PKCE, callback loopback, variables locales y scopes `user.info.basic`/`video.list`. | PKCE, callback, refresh o `video.list`. |
+| YouTube | Scopes exactos de lectura/rendimiento/monetización, referencia a directorio de evidencia configurado y preservación de `not_available`. | OAuth, refresh, canal o Analytics API. |
 | Facebook e Instagram | Variable temporal Meta, `requests.get` y ausencia estática de POST/PUT/PATCH/DELETE. | Token, Graph API, feed, media o evidencia. |
 | Meta probe | Contrato GET-only de validación de cuenta y ausencia de llamadas de escritura. | OAuth, conexión, página o cuenta Instagram. |
 | Requisitos y ejemplo | Dependencias públicas y topología de marca/rutas sin valores secretos. | Instalación de paquetes o copia a configuración privada. |
 
 El `--execute` del wrapper solo lanza el analizador AST con `PYTHONDONTWRITEBYTECODE=1` y `python3 -B`; no instala dependencias porque el análisis usa biblioteca estándar. G-MIG-LUKS-1.8c no habilita collectors, cron, evidencia real, Sheets, Drive, OmniRoute, shadow ledger persistente ni G-NORM-4R. Cualquier fallo estático bloquea el gate y se corrige primero en código público.
+
+La primera ejecución autorizada completó el preflight, pero el analizador devolvió `static_contract_blocked`. La causa fue una expectativa de ubicación incorrecta: buscaba los nombres de variables de TikTok y rutas de evidencia directamente en collectors que consumen referencias de configuración, aunque los valores se declaran en el autorizador TikTok y en `official_metrics_config.example.json`. No se trató de un acceso a datos privados ni de una ejecución de integración.
+
+La corrección pública publicada en el commit `757c6ab` alinea el análisis con el contrato real: el collector verifica sus referencias de configuración, el autorizador público verifica PKCE/callback/scopes y el ejemplo público verifica el directorio de evidencia, variables locales y scopes TikTok. La sintaxis y el análisis se validaron antes de publicar. Tras actualizar el clon LUKS, Fernando ejecutó de nuevo el preflight y el modo confirmado: obtuvo `STATUS=preflight_complete_static_only_no_private_read_no_network`, `status=static_contract_passed`, cero fallos y `STATUS=collectors_static_review_complete_no_private_read_no_network`.
+
+G-MIG-LUKS-1.8c queda completado exclusivamente como revisión estática. La totalidad de los collectors, OAuth, APIs, tokens, configuraciones privadas, evidencia real, instalación de dependencias, cron, Docker, OmniRoute, shadow ledger persistente y G-NORM-4R permanece bloqueada. El próximo trabajo, si se solicita, debe diseñar primero controles de privacidad, retención, operación read-only y consentimiento granular; no activa ninguna integración.
 
 ## Diseño de desbloqueo G-MIG-LUKS-1.5
 

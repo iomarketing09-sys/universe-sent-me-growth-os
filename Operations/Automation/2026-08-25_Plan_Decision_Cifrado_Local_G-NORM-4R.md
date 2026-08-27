@@ -4,7 +4,7 @@ purpose: "Preparar una decisión reversible y respaldada sobre el almacenamiento
 status: Draft
 created: 2026-08-25
 updated: 2026-08-26
-version: "1.30"
+version: "1.31"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -46,6 +46,10 @@ G-MIG-LUKS-1.8b se limita a diseñar una inspección pasiva de Docker y OmniRout
 La inspección G-MIG-LUKS-1.8b ya confirmó que OmniRoute está restaurado pero inactivo: no existe cliente Docker/Compose y no hay proceso o puerto local asociado. Esta condición preserva el aislamiento, pero no habilita reinstalar Docker, arrancar OmniRoute o procesar una fixture. El siguiente subgate solo puede inspeccionar contratos y dependencias de collectors por código/configuración de ejemplo; toda operación OAuth/API, evidencia real, ledger persistente o G-NORM-4R continúa bloqueada.
 
 G-MIG-LUKS-1.8c queda diseñado como análisis sintáctico de los contratos públicos de TikTok, YouTube, Facebook, Instagram y la sonda Meta. Revisará scopes, variables de entorno declaradas, requisitos, rutas privadas previstas y ausencia de verbos Meta de escritura, pero no importará o ejecutará collectors ni accederá a sus configuraciones reales. Incluso con resultado PASS, G-NORM-4R y toda operación OAuth/API, evidencia real, ledger persistente, OmniRoute o cron permanecen bloqueados.
+
+G-MIG-LUKS-1.8c ya pasó en el sistema restaurado bajo LUKS. El preflight confirmó únicamente los artefactos públicos y el análisis AST/textual devolvió `static_contract_passed` sin fallos. Una primera regla demasiado rígida se corrigió antes de la repetición: los nombres de variables TikTok, scopes y ruta de evidencia se verifican ahora en el autorizador o configuración pública donde se declaran, mientras los collectors se revisan por sus referencias de configuración y su contrato de lectura. La corrección publicada como `757c6ab` no amplió el alcance de lectura ni activó módulos, tokens, red/OAuth, evidencia, dependencias, schedulers o servicios.
+
+El PASS de G-MIG-LUKS-1.8c completa la revalidación técnica estática posterior a la migración, pero **no** autoriza G-NORM-4R. Antes de reconsiderar cualquier observación real deben diseñarse y aprobarse por separado los controles de privacidad, retención, operación read-only y consentimiento granular. El shadow ledger real, Drive, GitHub como destino de datos, Sheets, Docker y OmniRoute continúan fuera de alcance.
 
 > La protección requerida es cifrado de datos en reposo. No elimina por sí sola otros riesgos: un volumen montado queda disponible para la sesión activa, y el cifrado no reemplaza respaldo, permisos ni control de acceso.
 
