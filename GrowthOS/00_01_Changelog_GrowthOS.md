@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-26
-**Versión:** 5.34
+**Versión:** 5.35
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.35.00] — 2026-08-26 (Fernando/Manus): G-SEC-2 diseñado como control previo separado para datos reales.** Se actualizó el documento de consentimiento a v2.0 para definir cuatro subgates: privacidad/minimización, retención y disposición, operación estrictamente read-only y consentimiento granular por una sola operación. El diseño limita el posible piloto a Universe Sent Me, cuatro observaciones no financieras, no más de 30 días y sin salidas externas; exige una tarjeta de autorización con vigencia máxima de 24 horas y revocación antes del inicio. G-SEC-2 permanece `Draft`: no hubo lectura de datos privados, collectors, OAuth, red/API, dependencia nueva, ledger persistente, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos ni G-NORM-4R.
 
 - **[5.34.00] — 2026-08-26 (Fernando/Manus): G-MIG-LUKS-1.8c pasó como revisión estática sin integraciones.** El preflight confirmó únicamente artefactos públicos y el analizador AST/textual finalizó con `static_contract_passed`, cero fallos y `STATUS=collectors_static_review_complete_no_private_read_no_network`. Una primera regla demasiado rígida buscaba valores TikTok/YouTube dentro de collectors que solo consumen referencias de configuración; el commit `757c6ab` trasladó las comprobaciones al autorizador o ejemplo público donde dichos valores se declaran. No se importaron ni ejecutaron collectors, no se leyeron configuración privada, tokens, `.env` ni evidencia, no hubo red/OAuth/API, instalación de dependencias, escritura, cron, Docker u OmniRoute. G-NORM-4R y cualquier dato real continúan bloqueados hasta controles separados de privacidad, retención, operación read-only y consentimiento granular.
 

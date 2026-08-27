@@ -3,12 +3,14 @@ title: "Shadow ledger privado append-only de observaciones normalizadas — Univ
 purpose: "Definir el ledger privado de validación para comprobar idempotencia, supersedencia e integridad de observaciones normalizadas antes de cualquier ledger canónico o vista derivada."
 status: Review
 created: 2026-08-25
-updated: 2026-08-25
-version: "1.4"
+updated: 2026-08-26
+version: "1.5"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Esquema_Normalizacion_Determinista_Multicanal_USM.md"
   - "Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md"
+  - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
+  - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
   - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
   - "GrowthOS/todo.md"
 organization: "Operations/Automation"
@@ -82,7 +84,7 @@ Para G-NORM-4, la entrada debe llevar `synthetic = true`. El mecanismo de inserc
 
 ## Gates posteriores
 
-G-NORM-5 solo podrá considerarse después de una revisión humana del shadow ledger sintético y, si se propone una inserción real, tras documentar un consentimiento específico para datos privados, retención, cifrado de disco, reconstrucción y rollback local. Aun en ese momento, la fuente canónica, Google Sheets y OmniRoute permanecerán fuera hasta un gate independiente.
+G-NORM-5 solo podrá considerarse después de una revisión humana del shadow ledger sintético y, si se propone una inserción real, tras documentar y revisar G-SEC-2: privacidad/minimización, retención/disposición, operación estrictamente read-only y consentimiento granular. Aun en ese momento, la fuente canónica, Google Sheets y OmniRoute permanecerán fuera hasta un gate independiente.
 
 ## Demostración local confirmada
 
@@ -112,6 +114,12 @@ La revisión humana de la matriz confirmó que las pruebas iniciales cubrían es
 | Una `ledger_entry_key` solo puede aparecer una vez. | `ledger_entry_key_duplicate` | Detectar repetición exacta de un evento, incluso si también hay colisión de observación. |
 
 La matriz ahora ejecuta diez controles: nueve detecciones y la invariancia byte a byte. La regresión integrada de normalizador y shadow ledger siguió pasando. El dictamen es **suficiencia limitada para el contrato sintético actual**: el estado permanece `Review`; G-NORM-4R, cualquier inserción real, ledger persistente, Google Sheets, Drive, GitHub como ledger y OmniRoute continúan bloqueados. Estas pruebas no sustituyen el requisito independiente de almacenamiento local cifrado y consentimiento granular.
+
+## Dependencia G-SEC-2 diseñada
+
+El documento `2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md` v2.0 define G-SEC-2 como el conjunto de controles previos al piloto real. Establece cuatro subgates independientes: minimización de datos y salidas, retención máxima de 30 días con revisión humana, operación local estrictamente read-only y una tarjeta de consentimiento por operación con vigencia de 24 horas.
+
+El diseño no modifica este contrato ni habilita su escritor real. Antes de cualquier G-NORM-4R, los cuatro subgates deben pasar revisión humana y una prueba sintética específica de las barreras read-only. No se abrirán tokens, evidencia, collectors, API, cron, Docker, OmniRoute, Sheets, Drive, GitHub ni modelos como consecuencia de esta dependencia.
 
 ## Referencias
 

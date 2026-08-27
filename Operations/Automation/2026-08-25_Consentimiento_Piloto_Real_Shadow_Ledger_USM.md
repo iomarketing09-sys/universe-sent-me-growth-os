@@ -1,97 +1,153 @@
 ---
-title: "Consentimiento y controles del piloto real privado de shadow ledger — Universe Sent Me"
-purpose: "Proponer el alcance, retención, protección y rollback de una muestra real mínima en el shadow ledger privado antes de cualquier inserción de observaciones no sintéticas."
+title: "G-SEC-2 — Controles de privacidad, retención, operación read-only y consentimiento granular — Universe Sent Me"
+purpose: "Definir los controles separados que deben diseñarse, revisarse y aprobarse antes de considerar una única inserción real privada en el shadow ledger bajo G-NORM-4R."
 status: Draft
 created: 2026-08-25
-updated: 2026-08-25
-version: "1.4"
+updated: 2026-08-26
+version: "2.0"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
   - "Operations/Automation/2026-08-25_Esquema_Normalizacion_Determinista_Multicanal_USM.md"
   - "Operations/Automation/2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md"
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
+  - "Operations/Automation/2026-08-26_Proyecto_Migracion_LUKS_Integral_USM.md"
+  - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
   - "GrowthOS/todo.md"
 organization: "Operations/Automation"
 ---
 
-# Consentimiento y controles del piloto real privado de shadow ledger — Universe Sent Me
+# G-SEC-2 — Controles previos para un piloto real privado
 
-## Estado y propósito
+## Propósito, estado y límite
 
-Este documento propone los controles de un piloto de observaciones **reales pero privadas** en el shadow ledger local de Universe Sent Me. No otorga autorización por sí mismo: requiere confirmación explícita de Fernando sobre los controles de la sección 3. No habilita source of truth canónica, Google Sheets, GitHub, OmniRoute, cron, APIs de escritura, análisis por IA o uso de otras marcas.
+**G-SEC-2** es el gate de diseño que separa la seguridad técnica ya verificada bajo LUKS de cualquier tratamiento de métricas reales. Su finalidad es fijar qué datos mínimos podría tratar un piloto, durante cuánto tiempo, bajo qué modo de lectura y con qué autorización humana específica. Este documento está en estado **Draft**: no activa G-NORM-4R, no cambia scripts, no crea un ledger persistente y no autoriza llamadas de red.
 
-> **Principio:** el objetivo es comprobar integridad append-only e idempotencia con datos reales mínimos, no construir un dataset, evaluar contenido ni automatizar decisiones.
+> **Principio de decisión:** una confirmación de cifrado no es una autorización de tratamiento. Cada finalidad, categoría de dato, ventana temporal y salida posible requiere una autorización independiente y revocable.
 
-## Alcance técnico propuesto
+El marco se inspira en gestión de riesgos de privacidad, minimización de datos y limitación de almacenamiento. No constituye asesoría legal ni sustituye obligaciones aplicables a iO Marketing o Universe Sent Me. El marco de NIST es voluntario y orientado a gestionar riesgo de privacidad; la guía del ICO resume la minimización como datos adecuados, relevantes y limitados a lo necesario para una finalidad definida. [1] [2]
 
-| Dimensión | Propuesta de límite | Excluido de forma estricta |
+## Estado de partida y resultado esperado
+
+La migración LUKS, la restauración selectiva, la suite sintética, la inspección pasiva de OmniRoute y la revisión estática de collectors ya pasaron. Esos resultados solo confirman que el entorno puede permanecer aislado y que el código público tiene contratos revisados. **No confirman** que exista una base aprobada para retener observaciones reales ni permiten ejecutar ningún collector.
+
+| Elemento | Estado al diseñar G-SEC-2 | Qué cambia este documento |
 |---|---|---|
-| Marca y cuentas | Solo Universe Sent Me; cuentas ya validadas en TikTok, YouTube, Facebook e Instagram. | Bam in a Can, Firma Bordados, clientes, cuentas personales o ambiguas. |
-| Muestra | Máximo 4 observaciones: una métrica nativa no financiera por plataforma. | Lotes masivos, publicaciones completas, cohortes o datos de terceros. |
-| Métricas | TikTok `views_native`; YouTube `views_native` de periodo cerrado; Facebook `reactions_native`; Instagram `likes_native`. | Monetización, reach/impressions incompatibles, métricas derivadas, comentarios y texto. |
-| Contenido privado del ledger | ID nativo mínimo, fecha publicada, hora observada, métrica, valor, disponibilidad, fuente sanitizada y hash de evidencia. | Captions, títulos, URLs, paths, raw, tokens, handles, personas, importes financieros o respuestas de API. |
-| Ejecución | Un único comando local con confirmación interactiva de alcance. | Cron, ejecución silenciosa, procesos de fondo o automatización de reintento. |
+| Disco local LUKS | Validado. | Se mantiene como condición técnica, no como permiso de uso. |
+| Evidencia, tokens y configuración privados | Restaurados con permisos restrictivos. | Permanecen cerrados y no se inspeccionan. |
+| Collectors oficiales | Revisados de manera estática. | Siguen sin instalar dependencias ni ejecutarse. |
+| Shadow ledger | Contrato `Review`; pruebas solo sintéticas y temporales. | No se crea archivo persistente. |
+| G-NORM-4R | Bloqueado. | Solo podrá reconsiderarse tras aprobar y verificar los cuatro controles G-SEC-2. |
 
-La mezcla de plataformas no se agregará ni comparará: cada observación conserva su `platform`, `window_type` y `comparability_tier` original. El piloto no crea rankings, hipótesis, conclusiones editoriales ni vistas derivadas.
+El resultado esperado de este gate es un paquete de decisiones verificables, no una automatización: un registro de minimización, una política de retención, una especificación de operación read-only y una tarjeta de consentimiento granular. Solo cuando las cuatro piezas estén aprobadas y comprobadas en un gate posterior puede proponerse el mínimo siguiente paso técnico.
 
-## Protección, retención y recuperación propuestas
+## Clasificación de datos y frontera de salida
 
-| Control | Propuesta | Condición de bloqueo |
+Para evitar que una métrica aparentemente inocua se convierta en un conjunto de datos más amplio, G-SEC-2 divide los datos por necesidad operativa. La clasificación se aplica antes de abrir una configuración o ejecutar un collector.
+
+| Clase | Ejemplos | Permitido en un futuro piloto mínimo | Prohibido en todo el piloto G-NORM-4R |
+|---|---|---|---|
+| Credenciales | Tokens OAuth, secretos de cliente, claves, cookies, códigos de autorización. | Nunca en el ledger, documentación, salida de terminal ni herramientas externas. | Copiar, imprimir, subir, registrar o compartir. |
+| Evidencia fuente privada | Respuestas API, archivos raw, IDs completos, timestamps de origen y metadatos de plataforma. | Solo lectura local temporal para formar la observación aprobada, si un gate futuro lo permite. | GitHub, Drive, Sheets, OmniRoute, IA, navegador compartido, backups automáticos o salida de consola. |
+| Observación normalizada mínima | Plataforma, métrica nativa aprobada, ventana, disponibilidad, procedencia y el identificador minimizado exigido por el esquema. | Máximo una observación por plataforma; sin monetización ni contenido. | Captions, títulos, URLs, handles, nombres de personas, comentarios, audiencias, perfiles o rankings. |
+| Metadatos operativos no sensibles | Versión de contrato, resultado PASS/BLOCKED, fecha del gate y motivo de detención. | Pueden documentarse en GitHub si no contienen datos reales ni rutas privadas. | IDs, valores de métricas, hashes de evidencia, rutas, errores que revelen secretos o configuraciones. |
+
+La finalidad única propuesta es **probar la integridad append-only, idempotencia y retención limitada de cuatro observaciones mínimas**. No se permite analizar rendimiento, comparar redes, elaborar recomendaciones editoriales, medir audiencias, inferir personas ni entrenar o alimentar sistemas de IA. Recoger información “por si pudiera servir” queda fuera de la finalidad y de la minimización propuesta. [2]
+
+## Arquitectura de control G-SEC-2
+
+G-SEC-2 se divide en cuatro controles independientes. Un PASS de un control no permite omitir los demás. Cualquier resultado `BLOCKED`, información ambigua o cambio de alcance detiene el flujo y devuelve el trabajo a diseño, sin abrir datos reales.
+
+| Subgate | Pregunta que resuelve | Evidencia mínima no sensible | No autoriza |
+|---|---|---|---|
+| G-SEC-2.1 Privacidad y minimización | ¿La finalidad, categorías, cuentas y salidas están limitadas a lo estrictamente necesario? | Matriz de datos permitidos/prohibidos y revisión humana de finalidad. | Abrir evidencia, ejecutar collectors o crear ledger. |
+| G-SEC-2.2 Retención y disposición | ¿Cada categoría tiene plazo, disparador de revisión y método de disposición aprobado? | Calendario de retención y procedimiento de pausa/revisión sin datos reales. | Borrado automático, backups, archivado cloud o borrado de eventos existentes. |
+| G-SEC-2.3 Operación estrictamente read-only | ¿La ejecución futura tiene barreras concretas contra escritura, egress y ampliación de scopes? | Checklist técnico y prueba sintética de bloqueo de modos no permitidos. | OAuth, API, Docker, cron, OmniRoute, Sheets o cualquier salida externa. |
+| G-SEC-2.4 Consentimiento granular | ¿Fernando aprueba una sola operación, con alcance, vigencia y revocación explícitos? | Tarjeta de consentimiento completada solo cuando exista propuesta exacta. | Consentimiento permanente, lotes, métricas financieras o datos de otras marcas. |
+
+## G-SEC-2.1 — Privacidad y minimización
+
+El responsable de la futura ejecución debe declarar antes de tocar datos privados: finalidad única, plataforma, tipo de métrica, tipo de ventana, categoría de identificador indispensable y destino local. La revisión humana debe comprobar que cada campo responde a esa finalidad. Si un dato no es necesario para escribir la observación aprobada o comprobar el contrato, se excluye.
+
+| Control | Regla de diseño | Criterio de PASS | Condición de bloqueo |
+|---|---|---|---|
+| Separación de marca | Solo Universe Sent Me y las cuatro cuentas previamente validadas. | La propuesta nombra exclusivamente Universe Sent Me. | Cualquier referencia a Bam in a Can, Firma Bordados, clientes, cuentas personales o ambigüedad. |
+| Métrica mínima | Una métrica nativa no financiera por plataforma, conforme al esquema normalizado. | La tarjeta enumera solo las cuatro métricas aprobables. | Monetización, comentarios, perfiles, reach/impressions no comparables, texto o métricas derivadas. |
+| Identificador | Conservar solo el identificador minimizado que el esquema requiera para idempotencia; no se muestra ni se exporta. | Se justifica por `observation_key` y no se agregan campos de contenido. | ID completo en consola, GitHub, archivos de reporte o salida externa. |
+| Egress | No salen datos de observación, evidencia ni credenciales del directorio LUKS. | Destinos permitidos = almacenamiento local privado del piloto. | GitHub, Drive, Sheets, OmniRoute, IA, email, mensajería, navegador o sincronización. |
+| Observabilidad segura | Los resultados operativos se reducen a PASS/BLOCKED y conteos sin valores. | El diseño de salida no revela filas ni paths privados. | Logs con valores, IDs, títulos, URLs, hashes de evidencia o secretos. |
+
+La minimización debe revisarse antes de cada propuesta de ejecución y después de cualquier cambio en scripts, scopes, esquema o proveedores. La recomendación de revisar periódicamente lo conservado y eliminar lo innecesario se adopta como control operativo, no como afirmación de cumplimiento legal. [2]
+
+## G-SEC-2.2 — Retención, revisión y disposición
+
+La retención propuesta es **máximo 30 días desde cada captura** para evidencia fuente y observaciones del único piloto real. El plazo no comienza cuando se analiza un archivo ni se extiende automáticamente por una reejecución. Las credenciales no forman parte del piloto ni del ledger: conservan su ciclo de vida separado y nunca se incluyen en una revisión de retención de métricas.
+
+| Categoría | Finalidad permitida | Retención propuesta | Revisión y disposición futura |
+|---|---|---:|---|
+| Evidencia fuente privada | Verificar la procedencia de la observación mínima durante el piloto. | 30 días desde `captured_at_utc`. | Al vencimiento, bloquear uso nuevo y solicitar revisión humana para eliminación local aprobada; no se sincroniza ni respalda. |
+| Observación real del shadow ledger | Validar append-only, idempotencia y supersedencia del piloto. | 30 días desde `observed_at_utc`. | Al vencimiento, detener el piloto; una nueva cadena solo se crea bajo gate posterior. No se modifica una fila histórica. |
+| Metadatos de ejecución no sensibles | Explicar el estado de gates sin exponer datos. | Mientras el proyecto lo requiera. | Se revisan en changelog; no incluyen observaciones, IDs, valores ni rutas privadas. |
+| Credenciales y tokens | Autenticar una futura lectura oficial autorizada. | Fuera del alcance de G-NORM-4R. | No se inventaría ni se elimina por esta política; requiere control específico de credenciales. |
+
+La regla de 30 días es un límite de producto para reducir exposición, no una razón para conservar datos “por si acaso”. La guía del ICO indica que los plazos deben justificarse por la finalidad, revisarse y permitir eliminación o anonimización cuando ya no sean necesarios. [3]
+
+Para preservar el principio append-only, no habrá un proceso automático de borrado ni una edición silenciosa del JSONL. Al llegar a un vencimiento, el procedimiento diseñado es: **bloquear nuevas escrituras**, emitir únicamente un estado `retention_review_required`, revisar localmente la necesidad y solicitar una autorización humana separada para cualquier disposición. Esa futura autorización debe decidir entre eliminar el conjunto completo del piloto o mantenerlo temporalmente con justificación documentada; no puede reabrir ni reescribir eventos existentes. Este diseño no implementa el bloqueo, el reloj, la eliminación ni la revisión.
+
+## G-SEC-2.3 — Operación estrictamente read-only
+
+Una operación futura será read-only solo si todos sus límites técnicos y operativos son verdaderos a la vez. “Tener un token de lectura” no basta: el flujo completo debe impedir la publicación, la modificación, la programación y la salida de datos a otros destinos.
+
+| Capa | Regla obligatoria de la futura operación | Bloqueo inmediato |
 |---|---|---|
-| Ubicación | `~/.local/share/usm-metrics/shadow-ledger/normalized_metric_observations.shadow.jsonl`. | No se ejecuta si la ruta no tiene permisos `0700`/`0600`. |
-| Cifrado de disco | El usuario debe confirmar que el disco local de Xubuntu está cifrado antes de insertar datos reales. | Si no está cifrado o no se sabe, el piloto permanece sintético. |
-| Respaldo | No se habilita respaldo automático, sincronización cloud ni copia a Drive/GitHub. | Cualquier backup requiere un gate separado. |
-| Retención | Máximo 30 días desde la primera inserción real, seguido de revisión humana. | No hay borrado automático ni retención indefinida aprobada. |
-| Reconstrucción | Solo desde evidencia fuente local existente y el normalizador versionado; el proceso se documenta pero no se ejecuta de forma automática. | No se reconstruye si falta evidencia, hash o versión de normalizador. |
-| Rollback | No existe mutación o borrado automático. Se puede crear un nuevo ledger vacío después de archivar localmente el anterior bajo aprobación humana. | Ningún script elimina eventos históricos. |
+| Inicio | Solo ejecución manual, una vez, desde la sesión LUKS y después de consentimiento vigente. | Cron, servicio, Docker, OmniRoute, reintento automático o proceso en segundo plano. |
+| Proveedor | Solo endpoint oficial ya revisado y scopes mínimos de lectura definidos en el contrato. | Scope nuevo, cuenta no esperada, OAuth nuevo, permiso de escritura o endpoint no revisado. |
+| Método y contenido | TikTok/YouTube según contrato de lectura; Meta solamente GET; máximo la muestra aprobada. | Meta POST/PUT/PATCH/DELETE, publicación, comentario, mensaje, administración, anuncios o transferencia. |
+| Procesamiento | Normalización determinista local de la única métrica autorizada, sin IA y sin consultas adicionales. | Modelo, OmniRoute, clasificación editorial, ranking, inferencia de audiencia o enriquecimiento. |
+| Almacenamiento y salida | Solo directorio privado cifrado con permisos previstos; consola con estado seguro. | GitHub, Drive, Sheets, email, chat, copia externa, portapapeles, paths en logs o datos en pantalla compartida. |
+| Fallo | `BLOCKED`, detener, no reintentar y no ampliar permisos. | Sustituir ausencias por cero, usar una fuente alternativa, corregir datos reales in-place o continuar parcialmente. |
 
-## Confirmaciones requeridas para activar G-NORM-4R
+Antes de cualquier ejecución real, se deberá diseñar una prueba **sintética** que demuestre que los modos de escritura, egress y automatización se rechazan. Esa prueba no importará collectors, no leerá configuración privada ni abrirá sockets. La autorización para diseñarla y ejecutarla será un subgate nuevo, no parte de este documento.
 
-Fernando debe confirmar todas las siguientes condiciones antes de que exista un script de inserción real:
+## G-SEC-2.4 — Consentimiento granular, por operación y revocable
 
-1. Aprueba el límite de **cuatro observaciones reales**, una por plataforma y con las métricas indicadas.
-2. Confirma que Xubuntu usa cifrado de disco o que decide no continuar hasta activarlo.
-3. Aprueba retención máxima de **30 días**, sin respaldo automático ni sincronización cloud.
-4. Acepta que rollback significa detener el piloto y crear una nueva cadena de ledger bajo aprobación, no reescribir o borrar eventos existentes.
-5. Confirma que los datos permanecerán exclusivamente en Xubuntu y no se enviarán a GitHub, Sheets, OmniRoute, Drive ni herramientas de IA.
+El consentimiento propuesto no será una autorización general para “usar métricas”. Es una decisión puntual de Fernando sobre una única operación definida. Debe ser solicitado solo después de que G-SEC-2.1, 2.2 y 2.3 estén completos y de que exista una propuesta técnica exacta, revisable y sin secretos.
 
-Una vez confirmadas, se actualizará el estado a `Active` para el único propósito del piloto G-NORM-4R. La autorización será granular y no se extenderá a inserciones posteriores, volúmenes mayores, datos financieros o materialización canónica.
-
-## Verificación de cifrado y bloqueo actual
-
-El diagnóstico local del 25 de agosto de 2026 mostró la raíz de Xubuntu montada directamente desde `sda2` con `ext4`, sin capa `crypto_LUKS` ni dispositivo de tipo `crypt`. Por lo tanto, el cifrado de disco no está confirmado y G-NORM-4R queda **bloqueado**. La aprobación de los demás controles permanece documentada, pero no habilita una inserción real hasta resolver este requisito.
-
-| Alternativa | Alcance | Decisión requerida |
+| Campo de la tarjeta de consentimiento | Valor que debe completarse antes de aprobar | Regla |
 |---|---|---|
-| Continuar sintético | Mantener G-NORM-4 únicamente con fixtures y rutas temporales. | No requiere cambios de disco; es la opción activa. |
-| Migrar Xubuntu a cifrado de disco | Planificar respaldo, reinstalación o migración con LUKS y posterior restauración validada. | Proyecto local separado; puede afectar disponibilidad y requiere copia de seguridad previa. |
-| Volumen cifrado dedicado | Crear y validar un volumen local cifrado exclusivo para el shadow ledger, sin mover otros datos. | Requiere dispositivo/espacio dedicado y aprobación separada antes de formatear o cifrar. |
+| Referencia | Versión de contrato, fecha y subgates G-SEC-2 completados. | Si falta una referencia, no hay consentimiento válido. |
+| Alcance de marca | `Universe Sent Me` únicamente. | Prohíbe explícitamente Bam in a Can, Firma Bordados y terceros. |
+| Muestra | Máximo cuatro observaciones, una por plataforma. | Toda ampliación requiere una nueva tarjeta. |
+| Métricas | TikTok `views_native`; YouTube `views_native` de periodo cerrado; Facebook `reactions_native`; Instagram `likes_native`. | Sin monetización, comentarios, texto, URLs, audiencias ni métricas derivadas. |
+| Conservación | Máximo 30 días por evidencia/observación, sin backup ni sincronización. | No hay extensión automática. |
+| Operación | Una ejecución manual, read-only, sin salida externa. | Prohíbe cron, Docker, OmniRoute, Sheets, Drive, GitHub e IA. |
+| Vigencia | Una sola ejecución dentro de una ventana máxima de 24 horas. | Pasada la ventana, se requiere consentimiento nuevo. |
+| Revocación | Fernando puede revocar antes de iniciar o detener durante el preflight. | Revocar bloquea la ejecución; no causa borrado automático. |
+| Resultado esperado | Solo estado agregado de PASS/BLOCKED y conteos seguros. | No se reportan valores, filas, IDs, rutas ni evidencia. |
 
-No se ejecutará ninguna de estas alternativas automáticamente. Mientras el cifrado no sea confirmado, el escritor real permanece desactivado y el shadow ledger seguirá aceptando solo `synthetic = true`.
+La aprobación debe contener una frase inequívoca que nombre el gate, la muestra, el plazo, la prohibición de salidas y la vigencia. Una aprobación de diseño, una aprobación histórica de collectors o una aprobación del cifrado LUKS no sustituye esta tarjeta. Si la persona que opera percibe cualquier diferencia entre la tarjeta y el entorno real, debe detenerse sin abrir datos y registrar únicamente `consent_scope_mismatch`.
 
-El plan comparativo no ejecutable de respaldo, recuperación, verificación y gates se documenta en `2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md`. Su creación no autoriza cifrar, reformatear, montar, migrar ni insertar observaciones reales.
+## Criterio de cierre de G-SEC-2 y siguiente gate posible
 
-Fernando eligió la ruta de migración planificada a LUKS integral como preferencia arquitectónica. G-NORM-4R permanece bloqueado hasta completar el gate de respaldo y recuperación, realizar la migración bajo una autorización nueva y verificar el cifrado resultante.
+G-SEC-2 se considera **diseñado** cuando este documento y los documentos relacionados reflejen las mismas reglas. Se considera **revisado** solamente cuando Fernando confirme que entiende y acepta el diseño, sin que ello active datos reales. Un futuro G-SEC-2 de verificación requerirá demostrar los controles con fixtures sintéticos antes de solicitar el consentimiento granular de una operación real.
 
-## Evaluación de Drive y GitHub
-
-Ni GitHub ni Google Drive están autorizados como **ledger activo** para observaciones reales privadas. El ledger contiene identificadores nativos mínimos, tiempos de observación, valores de métricas y hashes; aunque no contenga tokens o raw, sigue siendo un conjunto privado que debe conservar garantías de append-only, control de acceso y retención limitada.
-
-| Destino | Decisión | Motivo operativo |
+| Estado | Resultado | Consecuencia |
 |---|---|---|
-| Repositorio GitHub | **Prohibido** como shadow ledger. | El historial de commits dificulta cumplir retención/eliminación; la exposición de metadata y el riesgo de configuración/acceso son incompatibles con el aislamiento requerido. GitHub conserva documentación y código, no observaciones reales. |
-| Google Drive | **No permitido** como ledger activo. | Versionado y permisos de Drive no garantizan append-only ni idempotencia. No debe recibir observaciones, evidencia, IDs, valores, hashes, tokens o datos financieros del piloto. |
-| Drive como backup cifrado de un volumen local protegido | **Posible solo en un gate futuro.** | Requeriría cifrado del archivo antes de salir de Xubuntu, llave exclusiva fuera de Drive, política de restauración y aprobación específica. No sustituye el almacenamiento local cifrado. |
+| Draft | Diseño documentado, sin revisión humana del contenido. | G-NORM-4R bloqueado. |
+| Review | Fernando revisó los límites y solicita preparar pruebas sintéticas de controles. | Solo se puede proponer el subgate sintético correspondiente. |
+| Active | Solo después de pruebas de control aprobadas y consentimiento puntual vigente. | Permite proponer, no ejecutar automáticamente, una única operación G-NORM-4R. |
+| Blocked | Cualquier ambigüedad, salida externa, datos no permitidos, retención indefinida o consentimiento vencido. | No se abre evidencia ni se ejecuta ningún collector. |
 
-La alternativa operativa más segura sigue siendo un volumen cifrado local dedicado. Solo después de validarlo se podría evaluar un respaldo cifrado externo como contingencia; nunca GitHub ni Drive como fuente activa del ledger.
-
-La capacidad disponible de Drive de iO Marketing permite considerar una contingencia futura, pero no modifica esta prohibición. El plan de cifrado v1.4 define G-BACKUP-DRIVE-0 a G-BACKUP-DRIVE-4: archivo cifrado localmente antes de subir, llave fuera de Drive, restauración probada y aprobación manual sin sincronización. No hay ninguna subida autorizada bajo el estado actual.
+Los documentos que requieren actualización conjunta son el contrato del shadow ledger, el plan de cifrado/G-NORM-4R, el proyecto de migración LUKS, la guía de APIs oficiales, `GrowthOS/todo.md` y el changelog. La actualización deberá registrar que G-SEC-2 está diseñado pero no aprobado para ejecutar datos reales.
 
 ## Referencias
 
-[1] [Shadow ledger privado append-only](2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md)
+[1] [NIST Privacy Framework](https://www.nist.gov/privacy-framework)
 
-[2] [Esquema determinista multicanal](2026-08-25_Esquema_Normalizacion_Determinista_Multicanal_USM.md)
+[2] [ICO — Principle (c): Data minimisation](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/data-protection-principles/a-guide-to-the-data-protection-principles/data-minimisation/)
 
-[3] [Guía del piloto local de APIs oficiales](2026-08-25_Guia_Piloto_Local_API_Oficial_Metricas_USM.md)
+[3] [ICO — Principle (e): Storage limitation](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/data-protection-principles/a-guide-to-the-data-protection-principles/storage-limitation/)
+
+[4] [Shadow ledger privado append-only](2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md)
+
+[5] [Plan comparativo de cifrado local para G-NORM-4R](2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md)

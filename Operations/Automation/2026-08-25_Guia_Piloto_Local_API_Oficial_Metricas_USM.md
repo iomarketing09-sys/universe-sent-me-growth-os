@@ -3,13 +3,14 @@ title: "Guía del piloto local con APIs oficiales de métricas — Universe Sent
 purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exponer secretos, sin escritura canónica y con monetización de YouTube cuando esté disponible."
 status: Draft
 created: 2026-08-25
-updated: 2026-08-25
-version: "3.4"
+updated: 2026-08-26
+version: "3.5"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
   - "Operations/Automation/2026-08-25_Textos_Publicos_Terminos_Privacidad_App_Metricas_USM.md"
   - "Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md"
+  - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
   - "GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md"
   - "GrowthOS/todo.md"
 organization: "Operations/Automation"
@@ -229,7 +230,7 @@ Estas capturas mezclan edades y formatos, y los contadores son de vida. Por lo t
 
 ## Estado del documento
 
-La guía es operativa pero no autoriza cron ni escrituras canónicas. Después de completar el consentimiento sandbox y las dos lecturas de prueba, deberá actualizarse junto con el documento de diseño, `GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md`, las pestañas derivadas de `USM Growth OS` y el changelog.
+La guía es operativa pero no autoriza cron ni escrituras canónicas. El diseño G-SEC-2 de privacidad, retención, operación read-only y consentimiento granular se registró como dependencia previa independiente para cualquier G-NORM-4R. Permanece en `Draft`: esta guía no permite volver a abrir configuraciones privadas, ejecutar collectors, crear un ledger persistente o mover datos a ningún destino externo.
 
 ## Referencias
 

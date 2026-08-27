@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-26
-version: "12.02"
+version: "12.04"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -216,6 +216,8 @@ organization: "GrowthOS"
 - [ ] Validar G-MIG-LUKS-1.7b: comprobar presencia, propietarios y permisos de `bin` y las tres raíces privadas, ausencia de staging y repositorio GitHub preservado; no iniciar OmniRoute, collectors ni automatizaciones.
 - [x] Validar G-MIG-LUKS-1.7b: `bin`, las tres raíces privadas y `omniroute-pilot` existen con modo `0700` y propietario `universe-sent-me`; staging temporal ausente, repositorio GitHub canónico preservado en `e717b3d` y no se detectaron procesos OmniRoute/USM activos.
 - [x] G-MIG-LUKS-1.8: revalidación posterior a LUKS completada mediante suite fixture-only, inspección pasiva OmniRoute y revisión estática de collectors. OmniRoute continúa detenido; no se abrieron collectors, shadow ledger persistente, Sheets, Drive ni datos reales. Siguen pendientes controles separados de privacidad, retención, operación read-only y consentimiento granular antes de G-NORM-4R.
+- [x] Diseñar G-SEC-2: controles separados de privacidad, retención, operación read-only y consentimiento granular para cualquier futuro G-NORM-4R; documentado en `2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md` v2.0. No autoriza collectors, OAuth, APIs, tokens, evidencia real, ledger persistente, Sheets, Drive, Docker, OmniRoute ni datos reales.
+- [ ] Revisar G-SEC-2: confirmar comprensión humana de minimización, retención de 30 días, disposición sin mutación, límites read-only y tarjeta de consentimiento por operación; el resultado permitido sigue siendo solo `Review`, sin pruebas ni datos reales.
 - [ ] Diseñar preflight G-MIG-LUKS-1.8: inventariar scripts/dependencias restaurados, definir instalaciones mínimas y pruebas sintéticas read-only, y validar que no existan procesos OmniRoute, collectors, cron o flujos de datos reales antes de una ejecución separada.
 - [x] Diseñar preflight G-MIG-LUKS-1.8: `preflight_usm_synthetic_after_luks.sh` diferencia `--plan`, `--preflight` y un `--execute` confirmado; solo permite el suite fixture-only con sockets bloqueados, ledger temporal y sin escrituras canónicas. OmniRoute, collectors y cron siguen excluidos.
 - [ ] Autorizar G-MIG-LUKS-1.8a: ejecutar el preflight y, si pasa, el suite sintético de normalización/shadow ledger con Python local; no instala paquetes, no abre red, no lee configuraciones privadas ni inicia servicios.
