@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.67
+**Versión:** 5.68
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.68.00] — 2026-08-27 (Fernando/Manus): G-SEC-2.8 diseñado como gate técnico pasivo sin ejecución.** Se confirmó la numeración siguiente disponible y se creó `2026-08-27_Gate_Tecnico_Pasivo_Preparacion_No_Ejecucion_GSEC2_8_USM.md` v1.0 en `Draft`. El gate define superficies futuras solo como diseño, un modelo `pending_no_check`, condiciones para un gate posterior, resultados documentales y prohibiciones de comandos, diagnósticos, red, rutas privadas, discos, LUKS, servicios, integraciones, ledger y archivos. No se ejecutó comprobación ni se declaró estado técnico real. Se actualizaron G-SEC-2.7, el contrato y los pendientes. G-SEC-2 continúa en `Review` y G-NORM-4R sigue bloqueado. La siguiente acción permitida es una revisión humana independiente de G-SEC-2.8.
 
 - **[5.67.00] — 2026-08-27 (Fernando/Manus): revisión humana de G-SEC-2.7 confirmada, sin iniciar fase operativa.** Fernando confirmó los prerrequisitos, resultados de decisión, autorizaciones separadas y prohibiciones. El gate `2026-08-27_Gate_Preparacion_Decision_Fase_Operativa_GSEC2_7_USM.md` pasa de `Draft` a `Review`. La revisión solo confirma el diseño de transición: no activa G-SEC-2, no inicia una fase operativa formal, no emite tarjeta, no solicita o registra consentimiento y no habilita datos, red, sistemas, collectors, OAuth/API, ledger, automatizaciones o servicios. Se alinearon el contrato G-SEC-2, el cierre P.5 y los pendientes. G-NORM-4R permanece bloqueado. Un paso posterior requerirá diseñar y autorizar un gate específico de control técnico pasivo.
 

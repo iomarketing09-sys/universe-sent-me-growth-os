@@ -4,9 +4,10 @@ purpose: "Definir prerrequisitos, resultados de decisión y autorizaciones separ
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.1"
+version: "1.2"
 author: "Manus AI"
 related_documents:
+  - "Operations/Automation/2026-08-27_Gate_Tecnico_Pasivo_Preparacion_No_Ejecucion_GSEC2_8_USM.md"
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
   - "Operations/Automation/2026-08-27_Gate_Cierre_Archivado_Ciclo_Preliminar_GSEC2_4cP5_USM.md"
   - "Operations/Automation/2026-08-27_Gate_Seguridad_Restriccion_Red_Formato_Vacio_GSEC2_4cP4_USM.md"
@@ -93,7 +94,7 @@ Fernando confirmó los prerrequisitos, resultados de decisión, autorizaciones s
 
 G-SEC-2 permanece en `Review` y G-NORM-4R sigue bloqueado. No se abrió información privada, red, rutas privadas, collectors, OAuth/API, ledger, automatizaciones, servicios, medios, discos, LUKS o integraciones.
 
-Una continuación requiere un gate y autorización nuevos para diseñar un control técnico pasivo de preparación. No se puede ejecutar una comprobación técnica, crear una propuesta, emitir tarjeta, solicitar consentimiento o habilitar G-NORM-4R.
+G-SEC-2.8 fue diseñado en `Draft` como `2026-08-27_Gate_Tecnico_Pasivo_Preparacion_No_Ejecucion_GSEC2_8_USM.md` v1.0 para definir controles técnicos pasivos sin ejecutar una comprobación. La siguiente acción permitida es revisar ese diseño; no se puede ejecutar una comprobación técnica, crear una propuesta, emitir tarjeta, solicitar consentimiento o habilitar G-NORM-4R.
 
 ## Referencias
 
