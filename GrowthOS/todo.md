@@ -4,7 +4,7 @@ purpose: "Consolidar pendientes exclusivos de GrowthOS y Universe Sent Me sin me
 status: Active
 created: 2026-08-25
 updated: 2026-08-27
-version: "12.72"
+version: "12.73"
 author: "Manus AI"
 related_documents:
   - "GrowthOS/00_01_Changelog_GrowthOS.md"
@@ -281,6 +281,10 @@ organization: "GrowthOS"
 - [x] Registrar la revisión humana estática del runner sintético estándar G-SEC-2.11: se documentó el cambio de `Draft` a `Review` sin importarlo, compilarlo, ejecutarlo, probarlo ni registrar nombres reales.
 - [x] Ejecutar una sola vez el runner sintético estándar G-SEC-2.11: la ejecución autorizada se bloqueó de forma fail-closed antes de importar o evaluar los cinco casos, ya que no existe una interfaz de invocación aprobada. No se usaron nombres reales, servicios, collectors, procesos, red, archivos de datos, persistencia ni análisis del sistema.
 - [ ] Resolver el bloqueo de invocación del runner G-SEC-2.11: diseñar una interfaz de invocación pública, mínima y no ejecutada para los cinco casos abstractos. No importar, ejecutar, modificar el runner ni crear un wrapper sin una autorización humana nueva.
+- [x] Diseñar la interfaz documental mínima de invocación G-SEC-2.11: se creó `2026-08-27_Interfaz_Invocacion_Sintetica_Minima_GSEC2_11_USM.md` v1.0 en `Draft`, limitada a una llamada sintética única y efímera, sin crear código, importar, compilar, ejecutar, registrar nombres reales ni analizar el sistema.
+- [x] Consolidar las brechas documentales y autorizaciones separadas que faltan antes de recibir métricas reales de USM: se añadió la matriz vigente a G-SEC-2 v5.1, sin activar collectors, OAuth/API, red, datos, automatización o G-NORM-4R.
+- [ ] Revisar la interfaz documental de invocación mínima G-SEC-2.11: confirmar conjunto cerrado, precondiciones, resultado único, límites y detención fail-closed; el único resultado permitido es `Review`, sin crear interfaz de código, importar ni ejecutar el runner.
+- [ ] Diseñar una propuesta real mínima de métricas USM solo cuando Fernando la solicite: finalidad única, hasta cuatro observaciones no financieras, proveedores, métricas nativas, ventana cerrada, retención de 30 días, salida local segura y exclusiones; no abrir datos, collectors, OAuth/API ni emitir tarjeta de consentimiento.
 - [x] Diseñar G-SEC-2.5: validación estática de integridad de las plantillas, referencias y límites públicos de consentimiento con fixture, validador y preflight públicos; no lee datos privados, no solicita consentimiento ni habilita G-NORM-4R u operación alguna.
 - [x] Autorizar G-SEC-2.5: Fernando autorizó ejecutar preflight y validación estática con `RUN_USM_GSEC2_TEMPLATE_STATIC_INTEGRITY`; solo lee documentos y fixture públicos del repositorio, no solicita consentimiento ni autoriza operación alguna.
 - [x] Corregir G-SEC-2.5: el primer análisis estático bloqueó solo por la variante textual `máxima de 24 horas` en la plantilla pública. La expectativa pública se corrigió y la repetición autorizada devolvió `gsec2_template_static_integrity_passed`, sin ampliar lectura, red ni operaciones.

@@ -4,7 +4,7 @@ purpose: "Registrar la creación limitada del núcleo de política puro y de su 
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.6"
+version: "1.7"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Contrato_Artefacto_Codigo_Publico_Verificador_Minimo_GSEC2_11_USM.md"
@@ -91,7 +91,7 @@ No se permite compilar, importar, ejecutar, probar ni integrar estos archivos si
 
 ## Estado y siguiente acción permitida
 
-Esta implementación está en `Review`. No autoriza compilar, importar, ejecutar, probar, registrar nombres reales ni observar el sistema. Ante la ausencia local de `pytest`, se creó y revisó el runner estándar `run_policy_core_gsec211_synthetic.py`, documentado en `2026-08-27_Runner_Sintetico_Estandar_GSEC2_11_USM.md` v1.3 en `Review`. Una solicitud de ejecución sintética quedó bloqueada antes de importar el runner porque no existe una interfaz de invocación aprobada. Diseñar esa interfaz exigirá autorización humana nueva y no autorizará observación del sistema, nombres reales ni una integración.
+Esta implementación está en `Review`. No autoriza compilar, importar, ejecutar, probar, registrar nombres reales ni observar el sistema. Ante la ausencia local de `pytest`, se creó y revisó el runner estándar `run_policy_core_gsec211_synthetic.py`, documentado en `2026-08-27_Runner_Sintetico_Estandar_GSEC2_11_USM.md` v1.4 en `Review`. La interfaz documental `2026-08-27_Interfaz_Invocacion_Sintetica_Minima_GSEC2_11_USM.md` v1.0 se diseñó en `Draft` para resolver el bloqueo de invocación sin crear código. Su revisión no autorizará observación del sistema, nombres reales ni una integración.
 
 Para mantener coherencia, el estado `Review` se refleja en el contrato de código, la especificación estática, G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2 y G-NORM-4R no cambian de estado.
 

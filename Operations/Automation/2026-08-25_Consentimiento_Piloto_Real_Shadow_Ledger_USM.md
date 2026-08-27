@@ -4,7 +4,7 @@ purpose: "Definir los controles separados que deben diseñarse, revisarse y apro
 status: Review
 created: 2026-08-25
 updated: 2026-08-27
-version: "5.0"
+version: "5.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
@@ -34,6 +34,7 @@ related_documents:
   - "Operations/Automation/2026-08-27_Gate_Tecnico_Pasivo_Preparacion_No_Ejecucion_GSEC2_8_USM.md"
   - "Operations/Automation/2026-08-27_Gate_Superficie_Unica_Ejecucion_Servicios_No_Ejecucion_GSEC2_9_USM.md"
   - "Operations/Automation/2026-08-27_Gate_Analisis_Documental_Superficie_Ejecucion_No_Ejecucion_GSEC2_10_USM.md"
+  - "Operations/Automation/2026-08-27_Interfaz_Invocacion_Sintetica_Minima_GSEC2_11_USM.md"
   - "Operations/Automation/preflight_gsec2_template_static_integrity.sh"
   - "Operations/Automation/validate_gsec2_template_static_integrity.py"
   - "Operations/Automation/2026-08-27_Revision_Final_Consolidacion_GSEC2_USM.md"
@@ -63,6 +64,22 @@ La migración LUKS, la restauración selectiva, la suite sintética, la inspecci
 | G-NORM-4R | Bloqueado. | Solo podrá reconsiderarse tras aprobar y verificar los cuatro controles G-SEC-2. |
 
 El resultado esperado de este gate es un paquete de decisiones verificables, no una automatización: un registro de minimización, una política de retención, una especificación de operación read-only y una tarjeta de consentimiento granular. Solo cuando las cuatro piezas estén aprobadas y comprobadas en un gate posterior puede proponerse el mínimo siguiente paso técnico.
+
+## Brechas vigentes antes de recibir métricas reales
+
+El cifrado LUKS, restauración selectiva y validaciones sintéticas son condiciones técnicas ya documentadas, pero no equivalen a permiso vigente para recibir datos. Las capturas históricas de TikTok, YouTube, Facebook e Instagram demuestran que existió lectura privada en un momento anterior; no son una autorización reutilizable ni un estado actual comprobado. Sin ejecutar diagnósticos ni abrir configuración, el estado canónico de preparación para una nueva recepción real es el siguiente.
+
+| Requisito separado | Estado documental actual | Qué falta antes de una nueva lectura real |
+|---|---|---|
+| Almacenamiento local cifrado | Condición técnica documentada como cumplida tras LUKS/LVM. | Mantener los límites de rutas privadas; no basta por sí solo para tratar datos. |
+| Contratos y collectors públicos | Revisados de forma estática. | Un gate operativo específico que delimite la lectura manual read-only por proveedor, sin ampliar scopes. |
+| Privacidad, minimización, retención y read-only | G-SEC-2 en `Review`; sus controles sintéticos/documentales no habilitan datos. | Diseñar y revisar una propuesta real mínima, de finalidad única, con cuatro observaciones máximas no financieras. |
+| Tarjeta de consentimiento | Plantilla pública vacía en `Review`; no es consentimiento. | Completar una tarjeta solo cuando exista propuesta exacta y obtener consentimiento puntual, revocable y vigente por una ejecución dentro de 24 horas. |
+| G-NORM-4R / ledger real | Bloqueado. | Gate separado que confirme consentimiento vigente, retención de 30 días, almacenamiento privado, salida local segura y operación manual. |
+| Servicios y collectors en el sistema | No se ha realizado una comprobación real bajo G-SEC-2.11. | Si esa observación se considerara necesaria, completar sus autorizaciones técnicas separadas; no es sustituida por el runner sintético. |
+| Automatización y destinos externos | Prohibidos. | Mantenerlos excluidos: no son requisito para la primera lectura manual y no deben activarse para obtener métricas. |
+
+> **Orden seguro:** propuesta real mínima → revisión humana de alcance → tarjeta de consentimiento puntual vigente → gate operativo read-only por una sola ejecución → preflight autorizado sin abrir datos → lectura manual oficial → resultado agregado seguro. Cualquier paso con datos reales necesita su autorización independiente y no se activa por las revisiones sintéticas G-SEC-2.11.
 
 ### Registro de revisión humana — 2026-08-26
 

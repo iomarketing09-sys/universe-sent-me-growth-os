@@ -4,7 +4,7 @@ purpose: "Registrar el diseño y creación no ejecutada de un runner de bibliote
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.3"
+version: "1.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Implementacion_Nucleo_Politica_Publico_GSEC2_11_USM.md"
@@ -12,6 +12,7 @@ related_documents:
   - "Operations/Automation/2026-08-27_Especificacion_Estatica_Verificador_Minimo_GSEC2_11_USM.md"
   - "Operations/Automation/policy_core_gsec211.py"
   - "Operations/Automation/run_policy_core_gsec211_synthetic.py"
+  - "Operations/Automation/2026-08-27_Interfaz_Invocacion_Sintetica_Minima_GSEC2_11_USM.md"
   - "GrowthOS/todo.md"
 organization: "Operations/Automation"
 ---
@@ -74,7 +75,7 @@ No se permiten nombres reales, datos, credenciales, rutas, variables de entorno,
 
 ## Estado y siguiente acción permitida
 
-El runner está en `Review`. No autoriza importarlo, compilarlo, ejecutarlo, probarlo, registrar nombres reales ni consultar el sistema. La solicitud de ejecución sintética quedó bloqueada por falta de una interfaz de invocación aprobada. El siguiente paso posible sería diseñar esa interfaz de forma mínima y pública, con autorización humana nueva; dicho diseño no permitiría crearla o usarla sin revisiones posteriores.
+El runner está en `Review`. No autoriza importarlo, compilarlo, ejecutarlo, probarlo, registrar nombres reales ni consultar el sistema. La solicitud de ejecución sintética quedó bloqueada por falta de una interfaz de invocación aprobada. Se diseñó en `Draft` la interfaz documental `2026-08-27_Interfaz_Invocacion_Sintetica_Minima_GSEC2_11_USM.md` v1.0; la siguiente acción permitida es revisarla. Su revisión no permitirá crearla ni usarla.
 
 Para mantener coherencia, el estado `Review` se refleja en la implementación, el contrato de código, la especificación estática, G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2 y G-NORM-4R no cambian de estado.
 

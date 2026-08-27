@@ -4,13 +4,14 @@ purpose: "Definir la estructura y los límites de un gate separado que, tras rev
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "2.0"
+version: "2.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Gate_Superficie_Unica_Ejecucion_Servicios_No_Ejecucion_GSEC2_9_USM.md"
   - "Operations/Automation/2026-08-27_Gate_Analisis_Documental_Superficie_Ejecucion_No_Ejecucion_GSEC2_10_USM.md"
   - "Operations/Automation/2026-08-27_Gate_Tecnico_Pasivo_Preparacion_No_Ejecucion_GSEC2_8_USM.md"
   - "Operations/Automation/2026-08-27_Especificacion_Estatica_Verificador_Minimo_GSEC2_11_USM.md"
+  - "Operations/Automation/2026-08-27_Interfaz_Invocacion_Sintetica_Minima_GSEC2_11_USM.md"
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
   - "GrowthOS/todo.md"
 organization: "Operations/Automation"
@@ -126,7 +127,7 @@ No permite automatización, vigilancia continua, programación, red, uso de puer
 
 ## Estado y siguiente acción permitida
 
-G-SEC-2.11 está en `Review`. No habilita un verificador, una observación del sistema, datos, red, servicios, collectors, automatizaciones, integraciones ni G-NORM-4R. La especificación pública v1.7, el contrato no ejecutable v1.5, la implementación limitada v1.5 y el runner estándar `2026-08-27_Runner_Sintetico_Estandar_GSEC2_11_USM.md` v1.2 están en `Review`. El runner declara cinco casos abstractos y no contiene una interfaz de consulta. Una prueba sintética ejecutada requerirá autorización humana nueva; no autoriza compilar, importar, ejecutar contra el sistema ni observarlo.
+G-SEC-2.11 está en `Review`. No habilita un verificador, una observación del sistema, datos, red, servicios, collectors, automatizaciones, integraciones ni G-NORM-4R. La especificación pública, el contrato no ejecutable, la implementación limitada y el runner estándar están en `Review`. La interfaz documental `2026-08-27_Interfaz_Invocacion_Sintetica_Minima_GSEC2_11_USM.md` v1.0 está en `Draft`, con conjunto sintético cerrado y salida efímera. La siguiente acción permitida es su revisión documental; no autoriza crear una interfaz de código, importar el runner ni ejecutarlo.
 
 Para preservar la coherencia, el estado `Review` se refleja en el pendiente operativo, el changelog central y el estado de siguiente acción de G-SEC-2.9. El contrato G-SEC-2 y G-SEC-2.10 no requieren cambio de estado porque sus límites continúan vigentes.
 
