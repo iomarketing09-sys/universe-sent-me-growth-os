@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-26
-**Versión:** 5.28
+**Versión:** 5.29
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.29.00] — 2026-08-26 (Fernando/Manus): inspección pasiva de Docker y OmniRoute diseñada, sin ejecución.** Se creó `inspect_omniroute_passive_after_luks.sh` para informar únicamente metadatos de directorio, nombres de artefactos, presencia/versiones de clientes Docker/Compose, procesos y escucha local en el puerto 20128. El wrapper no tiene modo de inicio, no instala Docker, no abre archivos `.env`, no llama APIs ni envía datos. G-MIG-LUKS-1.8b requiere una autorización separada para ejecutarlo; OmniRoute, Docker y toda entrada permanecen detenidos.
 
 - **[5.28.00] — 2026-08-26 (Fernando/Manus): suite sintético post-LUKS ejecutado sin red ni datos reales.** Bajo autorización G-MIG-LUKS-1.8a, el preflight verificó Python 3.14.4, fixtures presentes y ausencia de procesos OmniRoute/Docker Compose/collectors. El suite validó NORM-01 a NORM-12 y cinco controles del shadow ledger, con sockets bloqueados, ledger temporal y ninguna escritura canónica. No se instalaron paquetes, no se leyeron configuraciones privadas, no se llamó ninguna API y no se iniciaron servicios. G-MIG-LUKS-1.8b queda pendiente para diseñar una inspección de presencia de Docker/OmniRoute; G-NORM-4R y datos reales siguen bloqueados.
 

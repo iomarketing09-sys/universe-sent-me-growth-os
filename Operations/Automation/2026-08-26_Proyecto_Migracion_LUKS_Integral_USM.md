@@ -4,7 +4,7 @@ purpose: "Definir los gates y la secuencia reversible para reinstalar Xubuntu co
 status: Active
 created: 2026-08-26
 updated: 2026-08-26
-version: "1.4"
+version: "1.5"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Plan_Decision_Cifrado_Local_G-NORM-4R.md"
@@ -13,6 +13,7 @@ related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
   - "Operations/Automation/2026-08-26_Plan_B_rEFInd_Seleccion_USB_USM.md"
   - "Operations/Automation/preflight_usm_synthetic_after_luks.sh"
+  - "Operations/Automation/inspect_omniroute_passive_after_luks.sh"
   - "Operations/Automation/validate_synthetic_boundary_suite.py"
   - "GrowthOS/todo.md"
 organization: "Operations/Automation"
@@ -132,6 +133,19 @@ La primera prueba candidata es `validate_synthetic_boundary_suite.py`, ejecutada
 El éxito de G-MIG-LUKS-1.8a no abre G-NORM-4R. Antes de cualquier observación real siguen siendo obligatorios la renovación de privacidad, retención, consentimiento granular y la decisión humana de permitir una operación real mínima.
 
 G-MIG-LUKS-1.8a se ejecutó tras autorización en Python 3.14.4. El preflight confirmó los fixtures, el repositorio y la ausencia de procesos OmniRoute, Docker Compose o collectors. El suite validó NORM-01 a NORM-12 y cinco protecciones del shadow ledger; reportó `synthetic_only`, `network_socket_blocked`, `temporary_ledger_only` y `no_canonical_write`. No instaló paquetes, no importó configuraciones privadas, no inició procesos, no accedió a red ni produjo datos reales. G-MIG-LUKS-1.8b queda como el siguiente subgate de diseño para revisar Docker/OmniRoute exclusivamente por presencia.
+
+### Diseño G-MIG-LUKS-1.8b — inspección pasiva de Docker y OmniRoute
+
+El wrapper `inspect_omniroute_passive_after_luks.sh` no tiene modo de inicio ni instalación. Solo informa: existencia, propietario y modo del directorio `~/omniroute-pilot`; nombres de archivos esperados hasta dos niveles sin abrir su contenido; presencia/versiones de cliente Docker o Docker Compose; procesos con nombres de OmniRoute o Compose; y si el puerto local `127.0.0.1:20128` está en escucha. No llama a `docker info`, `docker compose up`, `docker start`, APIs, proveedores, servidores remotos ni archivos `.env`.
+
+| Resultado pasivo | Criterio | Significado |
+|---|---|---|
+| PASS de estructura | Directorio privado presente y se identifican solo nombres de artefactos Docker/configuración. | El entorno restaurado puede revisarse sin revelar secretos. |
+| Docker ausente | No se encuentra binario o plugin Docker. | Se documenta como dependencia pendiente; no se instala en este subgate. |
+| Servicio detectado | Proceso OmniRoute/Compose o escucha en `127.0.0.1:20128`. | Se detiene el gate y se investiga; no se envían entradas ni se modifica el estado. |
+| Sin servicio activo | No hay proceso ni puerto de OmniRoute en escucha. | Cumple el aislamiento requerido para el siguiente diseño. |
+
+G-MIG-LUKS-1.8b no prueba solicitudes, rutas, proveedores, fallback, API keys ni borradores. Eso requerirá un gate independiente con una fixture no sensible, consentimiento específico y un control previo del arranque de Docker.
 
 ## Diseño de desbloqueo G-MIG-LUKS-1.5
 
