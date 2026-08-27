@@ -4,7 +4,7 @@ purpose: "Definir los controles separados que deben diseñarse, revisarse y apro
 status: Review
 created: 2026-08-25
 updated: 2026-08-27
-version: "2.8"
+version: "2.9"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Shadow_Ledger_Privado_Append_Only_USM.md"
@@ -191,7 +191,7 @@ El wrapper `preflight_gsec2_granular_consent.sh` mantiene los modos `--plan`, `-
 
 La ejecución autorizada pasó con `STATUS=preflight_complete_gsec2_granular_consent_synthetic_only_no_network_no_private_read`, `gsec2_granular_consent_synthetic_passed` y `STATUS=gsec2_granular_consent_synthetic_complete_no_network_no_private_read_no_real_consent`. Permitió únicamente la tarjeta ficticia completa y rechazó las ocho variantes esperadas: referencia ausente, ampliación de alcance, métrica financiera, retención extendida, ejecución no read-only, egress externo, vigencia/no revocación inválida y datos/identificadores simulados. Reportó guardia de socket bloqueada, sin procesos de servicios o collectors.
 
-Este PASS valida únicamente la **plantilla ficticia**. La plantilla real vacía y el procedimiento de solicitud humana se documentan por separado en `2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md` v1.0. Ambos permanecen en `Draft`: no piden todavía datos, tokens o consentimiento y no autorizan una operación. G-NORM-4R continúa bloqueado hasta un gate separado que incorpore una tarjeta real completa, consentimiento humano vigente y validación manual del alcance técnico.
+Este PASS valida únicamente la **plantilla ficticia**. La plantilla real vacía y el procedimiento de solicitud humana se documentan por separado en `2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md` v1.1. Su revisión humana fue confirmada y el documento pasó a `Review`, sin pedir todavía datos, tokens o consentimiento y sin autorizar una operación. G-NORM-4R continúa bloqueado hasta un gate separado que incorpore una tarjeta real completa, consentimiento humano vigente y validación manual del alcance técnico.
 
 ## Criterio de cierre de G-SEC-2 y siguiente gate posible
 

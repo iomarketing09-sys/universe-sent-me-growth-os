@@ -4,8 +4,10 @@
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
 **Última actualización:** 2026-08-27
-**Versión:** 5.45
+**Versión:** 5.46
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.46.00] — 2026-08-27 (Fernando/Manus): revisión documental G-SEC-2.4b confirmada, sin tarjeta emitida.** Fernando confirmó la plantilla vacía y el procedimiento de solicitud humana. El documento pasó de `Draft` a `Review`; permanece sin referencia de propuesta, muestra, ventana, aprobación o consentimiento real. La revisión establece que el siguiente diseño permitido es una ficha pública mínima y una lista manual de comparación de alcance, no una solicitud activa. No se pidieron ni registraron datos, tokens, configuración privada, consentimiento o autorización; no se ejecutaron collectors, OAuth/API, ledger, cron, Docker u OmniRoute, ni se habilitó salida externa o G-NORM-4R.
 
 - **[5.45.00] — 2026-08-27 (Fernando/Manus): plantilla vacía y procedimiento humano G-SEC-2.4b diseñados, sin solicitud.** Se creó `2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md` v1.0 como referencia inmutable para una futura tarjeta de una sola operación. La plantilla exige referencia pública, USM únicamente, máximo cuatro observaciones y cuatro métricas no financieras, 30 días, operación manual read-only, sin egress, vigencia máxima de 24 horas, revocación y salida agregada segura. Sus campos permanecen `[PENDIENTE — no emitir]`; no pide, contiene, registra, verifica ni concede consentimiento real. El procedimiento define revisión de alcance, copia futura, solicitud humana, comprobación de vigencia y decisión posterior separada. No se abrieron datos, rutas privadas, tokens, collectors, OAuth/API, ledger, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos ni G-NORM-4R.
 

@@ -1,10 +1,10 @@
 ---
 title: "Plantilla vacía y procedimiento de solicitud — tarjeta de consentimiento puntual USM"
 purpose: "Proporcionar una plantilla no operativa para solicitar, en el futuro, consentimiento granular de una única operación manual y read-only, sin registrar consentimiento ni autorizar acciones actuales."
-status: Draft
+status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-25_Consentimiento_Piloto_Real_Shadow_Ledger_USM.md"
@@ -17,7 +17,7 @@ related_documents:
 
 ## Propósito y límite estricto
 
-Esta es una **plantilla en blanco** para una posible solicitud futura. No es una tarjeta emitida, no contiene consentimiento de Fernando, no autoriza G-NORM-4R y no debe completarse con secretos, tokens, rutas privadas, IDs de contenido, valores de métricas, evidencia ni datos personales. Su única función actual es estandarizar una futura conversación humana, si y solo si existe un gate separado que lo permita.
+Esta es una **plantilla en blanco** para una posible solicitud futura. No es una tarjeta emitida, no contiene consentimiento de Fernando, no autoriza G-NORM-4R y no debe completarse con secretos, tokens, rutas privadas, IDs de contenido, valores de métricas, evidencia ni datos personales. Su única función actual es estandarizar una futura conversación humana, si y solo si existe un gate separado que lo permita. La plantilla está en `Review`: Fernando confirmó que comprende su alcance, pero no emitió ni solicitó una tarjeta.
 
 > La presencia de esta plantilla no activa collectors, OAuth, API, shadow ledger persistente, cron, Docker, OmniRoute, Drive, Sheets, GitHub como destino de datos, IA ni salida externa.
 
@@ -73,7 +73,11 @@ Una tarjeta real aprobada deberá conservarse únicamente dentro del almacenamie
 
 ## Estado y siguiente gate permitido
 
-Esta plantilla está en `Draft` y no requiere acción del usuario. El único avance permitido es una revisión humana de la plantilla y del procedimiento como diseño documental. Una revisión favorable no emite tarjeta, no solicita consentimiento y no abre G-NORM-4R.
+### Registro de revisión humana — 2026-08-27
+
+Fernando confirmó la plantilla vacía y el procedimiento humano de solicitud. Confirma que la plantilla se mantiene vacía, que una tarjeta futura será puntual, limitada, revocable y sin salida externa, y que esta revisión no emite consentimiento ni habilita operación. No se introdujeron referencias de propuestas, fechas de vigencia, datos, tokens, rutas privadas o detalles de una operación.
+
+Esta plantilla está en `Review` y no requiere acción del usuario. El siguiente trabajo permitido es diseñar una ficha pública de propuesta mínima y una lista manual de comparación de alcance, que permitan verificar una solicitud futura sin llenar todavía una tarjeta ni solicitar consentimiento. Una revisión favorable no emite tarjeta, no solicita consentimiento y no abre G-NORM-4R.
 
 ## Referencias
 

@@ -4,7 +4,7 @@ purpose: "Preparar en Xubuntu los collectors locales de TikTok y YouTube sin exp
 status: Draft
 created: 2026-08-25
 updated: 2026-08-27
-version: "3.12"
+version: "3.13"
 author: "Manus AI"
 related_documents:
   - "Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md"
@@ -230,7 +230,7 @@ Estas capturas mezclan edades y formatos, y los contadores son de vida. Por lo t
 
 ## Estado del documento
 
-La guía es operativa pero no autoriza cron ni escrituras canónicas. El diseño G-SEC-2 de privacidad, retención, operación read-only y consentimiento granular se registró como dependencia previa independiente para cualquier G-NORM-4R. G-SEC-2 está en `Review` después de la confirmación humana de sus cuatro controles. Sus pruebas G-SEC-2.1a, G-SEC-2.2a, G-SEC-2.3a y G-SEC-2.4a pasaron exclusivamente con fixtures ficticios y sin red; la última no pidió, registró ni concedió consentimiento real. La plantilla vacía `2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md` v1.0 no es consentimiento ni solicitud activa. Esta guía no permite volver a abrir configuraciones privadas, ejecutar collectors, crear un ledger persistente o mover datos a ningún destino externo.
+La guía es operativa pero no autoriza cron ni escrituras canónicas. El diseño G-SEC-2 de privacidad, retención, operación read-only y consentimiento granular se registró como dependencia previa independiente para cualquier G-NORM-4R. G-SEC-2 está en `Review` después de la confirmación humana de sus cuatro controles. Sus pruebas G-SEC-2.1a, G-SEC-2.2a, G-SEC-2.3a y G-SEC-2.4a pasaron exclusivamente con fixtures ficticios y sin red; la última no pidió, registró ni concedió consentimiento real. La plantilla vacía `2026-08-27_Plantilla_Tarjeta_Consentimiento_Puntual_USM.md` v1.1 también está en `Review`, pero no es consentimiento ni solicitud activa. Esta guía no permite volver a abrir configuraciones privadas, ejecutar collectors, crear un ledger persistente o mover datos a ningún destino externo.
 
 ## Referencias
 
