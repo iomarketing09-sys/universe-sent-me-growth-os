@@ -1,10 +1,10 @@
 ---
 title: "Especificación estática del verificador mínimo G-SEC-2.11 — Universe Sent Me"
 purpose: "Definir, sin crear código ni ejecutar consultas, la interfaz pública, las precondiciones, el método lógico, las categorías agregadas y la detención fail-closed de un posible verificador local de una sola pasada para G-SEC-2.11."
-status: Draft
+status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.0"
+version: "1.1"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Gate_Tecnico_Pasivo_Observacion_Real_Minima_GSEC2_11_USM.md"
@@ -21,7 +21,15 @@ organization: "Operations/Automation"
 
 Esta especificación describe el comportamiento permitido de un **posible verificador local de una sola pasada** bajo G-SEC-2.11. Es únicamente un contrato de diseño público y estático: no contiene código, comandos ejecutables, nombres reales de procesos, rutas, credenciales, configuración ni resultados de sistema.
 
-> **Límite decisivo:** mientras esta especificación esté en `Draft`, no existe un verificador autorizado ni un registro de componentes aprobado. Por tanto, no hay una consulta técnica permitida ni una afirmación sobre los servicios o collectors reales de Universe Sent Me.
+> **Límite decisivo:** esta especificación está en `Review`, pero no existe un verificador autorizado ni un registro de componentes aprobado. Por tanto, no hay una consulta técnica permitida ni una afirmación sobre los servicios o collectors reales de Universe Sent Me.
+
+## Registro de revisión humana independiente
+
+Fernando confirmó el registro vacío por defecto, las entradas admisibles, las precondiciones, la una sola pasada, las salidas agregadas, la precedencia y la detención fail-closed. Como resultado, esta especificación pasa de `Draft` a `Review`.
+
+> **Alcance confirmado:** la revisión valida exclusivamente el contrato estático. No crea código, no registra nombres reales, no consulta servicios, collectors, procesos, red, puertos, datos, configuración o rutas privadas, y no habilita G-NORM-4R.
+
+Para mantener la coherencia, esta revisión actualiza G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2, G-SEC-2.8 y G-SEC-2.10 conservan sus estados y prohibiciones sin cambios.
 
 ## Entrada pública mínima y registro vacío por defecto
 
@@ -98,9 +106,9 @@ No crea archivos, scripts, logs, capturas, hashes, ledger, reportes, copias, cac
 
 ## Estado y siguiente acción permitida
 
-Esta especificación está en `Draft`. La siguiente acción permitida es una **revisión humana independiente del contrato estático**: entrada vacía por defecto, registro admisible, precondiciones, una sola pasada, categorías, precedencia y detención fail-closed. Esa revisión solo puede mover esta especificación a `Review`; no puede crear código, registrar nombres reales, observar el sistema, usar datos, abrir red ni habilitar G-NORM-4R.
+Esta especificación está en `Review`. No autoriza crear código, registrar nombres reales, observar el sistema, usar datos, abrir red ni habilitar G-NORM-4R. Si surge una necesidad concreta, un paso posterior tendría que solicitar por separado el diseño de un artefacto de código público; ese diseño requeriría otra revisión y no autorizaría ejecutarlo.
 
-Para conservar coherencia, este diseño actualiza G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2, G-SEC-2.8 y G-SEC-2.10 no requieren cambio de estado porque sus límites siguen sin alteración.
+Para conservar coherencia, el estado `Review` se refleja en G-SEC-2.11, G-SEC-2.9, el pendiente operativo y el changelog central. G-SEC-2, G-SEC-2.8 y G-SEC-2.10 no requieren cambio de estado porque sus límites siguen sin alteración.
 
 ## Referencias
 

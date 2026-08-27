@@ -4,7 +4,7 @@ purpose: "Definir la estructura y los límites de un gate separado que, tras rev
 status: Review
 created: 2026-08-27
 updated: 2026-08-27
-version: "1.3"
+version: "1.4"
 author: "Manus AI"
 related_documents:
   - "Operations/Automation/2026-08-27_Gate_Superficie_Unica_Ejecucion_Servicios_No_Ejecucion_GSEC2_9_USM.md"
@@ -126,7 +126,7 @@ No permite automatización, vigilancia continua, programación, red, uso de puer
 
 ## Estado y siguiente acción permitida
 
-G-SEC-2.11 está en `Review`. No habilita un verificador, una observación del sistema, datos, red, servicios, collectors, automatizaciones, integraciones ni G-NORM-4R. Se diseñó en `Draft` la especificación pública `2026-08-27_Especificacion_Estatica_Verificador_Minimo_GSEC2_11_USM.md` v1.0 para el posible verificador mínimo. La siguiente acción permitida es revisar ese contrato estático; su revisión no podrá crear código, registrar nombres reales ni ejecutar una observación del sistema.
+G-SEC-2.11 está en `Review`. No habilita un verificador, una observación del sistema, datos, red, servicios, collectors, automatizaciones, integraciones ni G-NORM-4R. La especificación pública `2026-08-27_Especificacion_Estatica_Verificador_Minimo_GSEC2_11_USM.md` v1.1 fue revisada y está en `Review`; no creó código ni registró nombres reales. Si surge una necesidad concreta, cualquier diseño de artefacto de código requerirá una autorización humana separada y no permitirá ejecutarlo contra el sistema.
 
 Para preservar la coherencia, el estado `Review` se refleja en el pendiente operativo, el changelog central y el estado de siguiente acción de G-SEC-2.9. El contrato G-SEC-2 y G-SEC-2.10 no requieren cambio de estado porque sus límites continúan vigentes.
 
