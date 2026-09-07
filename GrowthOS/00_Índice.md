@@ -3,8 +3,8 @@
 **Propósito:** Punto de entrada a toda la documentación operativa del Growth OS (calendario editorial, colas, automatizaciones, governance).
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-25
-**Versión:** 8.4
+**Última actualización:** 2026-09-06
+**Versión:** 8.5
 **Autor:** Manus AI
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
@@ -38,6 +38,7 @@
 | [Sistema de Dos Capas: Contenido vs. Canon](12_00_Sistema_Dos_Capas_Contenido_Canon.md) | Separa la capa libre de memes/reels (algoritmo, exploración) de la capa de canon (Biblia, decisiones permanentes). Define mecanismo de promoción deliberada de meme a canon. | Active |
 | [Pipeline de Publicación Local y Estándar CSV](13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md) | Documenta el script propio de Fernando, el estándar CSV y la Custom API de Meta configurada para Universe Sent Me. | Active |
 | [Fuente Maestra y Ledgers del Growth OS](14_00_Fuente_Maestra_y_Ledgers.md) | Define el inventario maestro, los ledgers, la distinción canon/reconciliación y la cadencia de reportes diarios; las ventanas 24/72 son una capa contractual opcional. | Active |
+| [Estado histórico de Universe 2026](15_00_Estado_Historico_Universe_2026.md) | Baseline de evidencia histórica, señales, hipótesis no concluyentes y vacíos que deben cubrir los experimentos de septiembre. | Active |
 | [Pipeline visual del Growth OS — PNG](USM_GrowthOS_Pipeline.png) | Mapa visual ejecutivo del flujo: estrategia, publicación real, medición, aprendizaje, retroalimentación y gobernanza. | Active |
 | [Pipeline visual del Growth OS — fuente Mermaid](USM_GrowthOS_Pipeline.mmd) | Fuente estructural editable del diagrama visual, alineada con la arquitectura de publicación y ledgers. | Active |
 | [Bridge de Integración Growth OS–Canon](Integracion_Growth_OS.md) | Caché condensado del canon, HypothesisBank y reglas de sincronización; v2.5.2 con HB-006 a HB-009 para briefs comparables, manteniendo separación del canon y sin autorizar generación. | Active |

@@ -3,9 +3,11 @@
 **Propósito:** Registro centralizado de hitos, integraciones, cambios estratégicos y actualizaciones de arquitectura. Este documento permite a los agentes (Manus, Claude, etc.) sincronizar contexto rápidamente sin re-leer todo el repositorio.
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
-**Última actualización:** 2026-08-27
-**Versión:** 5.96
+**Última actualización:** 2026-09-06
+**Versión:** 5.97
 **Autor:** Manus AI (CGO); entradas [1.1.1], [1.2.4]-[1.2.8], [1.2.10] añadidas por Claude; [1.2.9], [1.2.11], [1.2.12], [1.2.13], [1.2.14], [1.2.15], [1.2.16] añadidas por Manus
+
+- **[5.97.00] — 2026-09-06 (Manus/CGO):** Se incorporó `GrowthOS/15_00_Estado_Historico_Universe_2026.md` como baseline permanente del diagnóstico recibido. Consolida cobertura marzo–agosto, seis posts con métricas individuales, 30 días agregados de página, señales de horario, hipótesis históricas no concluyentes, vacíos de datos y el puente hacia `EXP-2026-09-WEEK1`. No modifica el canon ni los ledgers; el índice fue actualizado para que Codex lo encuentre como fuente contextual activa.
 
 - **[5.96.00] — 2026-08-27 (Fernando/Manus): aprobación puntual recibida únicamente para continuar al siguiente gate.** Fernando aprobó expresamente la tarjeta exacta `USM-CONSENT-20260827-01` dentro de la ventana `2026-08-28T00:00:00Z`–`2026-08-28T23:59:59Z`, limitada a las cuatro cuentas y métricas documentadas, sin egress, con retención máxima de 30 días y revocación posible. La decisión se clasifica como `approved_for_next_gate_only` e incluye la instrucción expresa **no ejecutar todavía**. No se ejecutó preflight, no se consultaron plataformas, no se abrieron tokens, no se inició OAuth/API ni collectors y G-NORM-4R continúa bloqueado.
 
