@@ -40,6 +40,7 @@
 | [Fuente Maestra y Ledgers del Growth OS](14_00_Fuente_Maestra_y_Ledgers.md) | Define el inventario maestro, los ledgers, la distinción canon/reconciliación y la cadencia de reportes diarios; las ventanas 24/72 son una capa contractual opcional. | Active |
 | [Estado histórico de Universe 2026](15_00_Estado_Historico_Universe_2026.md) | Baseline de evidencia histórica, señales, hipótesis no concluyentes y vacíos que deben cubrir los experimentos de septiembre. | Active |
 | [Contrato Codex–Growth OS: métricas](16_00_Contrato_Codex_Metricas.md) | Especificación mínima para implementar y probar la estructura de métricas antes de conectar fuentes reales. | Draft |
+| [Protocolo de primera captura real](17_00_Protocolo_Primera_Captura_Real.md) | Diseño de una lectura única, manual y de solo lectura para validar Codex con un post real. | Draft |
 | [Pipeline visual del Growth OS — PNG](USM_GrowthOS_Pipeline.png) | Mapa visual ejecutivo del flujo: estrategia, publicación real, medición, aprendizaje, retroalimentación y gobernanza. | Active |
 | [Pipeline visual del Growth OS — fuente Mermaid](USM_GrowthOS_Pipeline.mmd) | Fuente estructural editable del diagrama visual, alineada con la arquitectura de publicación y ledgers. | Active |
 | [Bridge de Integración Growth OS–Canon](Integracion_Growth_OS.md) | Caché condensado del canon, HypothesisBank y reglas de sincronización; v2.5.2 con HB-006 a HB-009 para briefs comparables, manteniendo separación del canon y sin autorizar generación. | Active |
