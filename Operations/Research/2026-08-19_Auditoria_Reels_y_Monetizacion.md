@@ -3,8 +3,8 @@ title: "Auditoría de Reels y monetización"
 purpose: "Separar el rendimiento histórico de Reels del experimento P0 de imágenes, verificar qué vías de monetización tienen evidencia real y establecer la cobertura documental del video corto en Instagram, Facebook, TikTok y YouTube."
 status: "Active"
 created: 2026-08-19
-updated: 2026-08-22
-version: "1.14"
+updated: 2026-09-09
+version: "1.15"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -131,6 +131,19 @@ En la pestaña **Etiquetas de seguimiento** solo fueron visibles dos filas: la e
 El resultado confirma activación mínima del tracking —el sistema registra clics—, pero todavía no evidencia conversión. La muestra es demasiado pequeña para declarar ganador a AFF-07 o evaluar el Reel comercialmente. El ledger actualizado conserva los cortes históricos, el corte por fecha, el corte de 7 días y la ausencia visible de la etiqueta del Reel sin inventar métricas.
 
 La extracción de Meta permanece separada: el post de página `1036844829507460_122153090559072582`, asociado al Reel `2210896633022235`, devolvió 1 reacción, 0 comentarios y `shares` no expuesto en el corte de las 05:07 UTC.
+
+## Actualización operativa — inicio de septiembre de 2026
+
+Entre el 31 de agosto y el 4 de septiembre no se registraron publicaciones. La actividad de septiembre comenzó el 5 de septiembre, cuando Fernando activó la monetización de contenido de Facebook y decidió publicar manualmente para mantener control editorial y operativo.
+
+| Fecha y hora local | Asset | Concepto | URL | Meta post ID | Estado de métricas |
+|---|---|---|---|---|---|
+| 2026-09-05 13:50 | `Reuse 06 Junio - 260714` | Historieta de Universe: “no eres débil por caer con una persona tóxica, eres un humano” / “un humano estúpido” | [Facebook](https://www.facebook.com/photo/?fbid=122160625695072582&set=a.122095282845072582) | `1036844829507460_122160625695072582` | Publicado; métricas todavía no registradas |
+| 2026-09-05 19:13 | `09 Sept 2608072` | Silvio sentado en el Crustáceo Cascarudo: “saldré de este bache emocional más chistoso o más insoportable” | [Facebook](https://www.facebook.com/photo?fbid=122160650109072582&set=a.122095282845072582) | `1036844829507460_122160650109072582` | Publicado; métricas todavía no registradas |
+
+La monetización acumulaba **USD 2.25** al momento del reporte. De ese total, **USD 1.48** se atribuyen a un solo post del 6 de septiembre con Wilfred y la frase “yo no finjo ser good vibes, todos saben que soy amable y culero cuando se ocupa”. Esta atribución se conserva como dato reportado por Fernando; todavía no se trata como análisis causal ni como valor validado por una extracción independiente.
+
+La pausa previa y la activación de monetización son variables de contexto. Las publicaciones de septiembre no deben compararse directamente con agosto sin marcar el cambio de régimen: calendario, publicación manual, monetización activa y posible diferencia de distribución.
 
 ## Referencias
 
