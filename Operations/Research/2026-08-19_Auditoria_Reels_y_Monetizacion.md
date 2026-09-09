@@ -4,7 +4,7 @@ purpose: "Separar el rendimiento histórico de Reels del experimento P0 de imág
 status: "Active"
 created: 2026-08-19
 updated: 2026-09-09
-version: "1.15"
+version: "1.16"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -144,6 +144,12 @@ Entre el 31 de agosto y el 4 de septiembre no se registraron publicaciones. La a
 La monetización acumulaba **USD 2.25** al momento del reporte. De ese total, **USD 1.48** se atribuyen a un solo post del 6 de septiembre con Wilfred y la frase “yo no finjo ser good vibes, todos saben que soy amable y culero cuando se ocupa”. Esta atribución se conserva como dato reportado por Fernando; todavía no se trata como análisis causal ni como valor validado por una extracción independiente.
 
 La pausa previa y la activación de monetización son variables de contexto. Las publicaciones de septiembre no deben compararse directamente con agosto sin marcar el cambio de régimen: calendario, publicación manual, monetización activa y posible diferencia de distribución.
+
+## Estado de instrumentación Codex — 2026-09-09
+
+La fase de monetización de `codex-universe` quedó verificada en GitHub mediante el commit `dbaded3`. La implementación añadió campos de monetización a los esquemas de experimento y publicación, separó el total acumulado de cuenta del ingreso atribuible a un post, añadió roles `test`/`control` y conservó los faltantes como `null`.
+
+El repositorio remoto contiene los fixtures sintéticos de las dos publicaciones del 5 de septiembre y **19/19 tests pasan**. El experimento `EXP-2026-09-WILFRED-MON-01` permanece correctamente en `insufficient_data` hasta reunir 3 publicaciones comparables de Wilfred y 3 controles. No se autoriza todavía captura recurrente, publicación automática ni atribución causal de ingresos.
 
 ## Referencias
 
