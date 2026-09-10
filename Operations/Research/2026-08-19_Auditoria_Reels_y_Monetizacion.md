@@ -4,7 +4,7 @@ purpose: "Separar el rendimiento histórico de Reels del experimento P0 de imág
 status: "Active"
 created: 2026-08-19
 updated: 2026-09-09
-version: "1.16"
+version: "1.17"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -150,6 +150,21 @@ La pausa previa y la activación de monetización son variables de contexto. Las
 La fase de monetización de `codex-universe` quedó verificada en GitHub mediante el commit `dbaded3`. La implementación añadió campos de monetización a los esquemas de experimento y publicación, separó el total acumulado de cuenta del ingreso atribuible a un post, añadió roles `test`/`control` y conservó los faltantes como `null`.
 
 El repositorio remoto contiene los fixtures sintéticos de las dos publicaciones del 5 de septiembre y **19/19 tests pasan**. El experimento `EXP-2026-09-WILFRED-MON-01` permanece correctamente en `insufficient_data` hasta reunir 3 publicaciones comparables de Wilfred y 3 controles. No se autoriza todavía captura recurrente, publicación automática ni atribución causal de ingresos.
+
+## Registro manual de publicaciones — 6 al 8 de septiembre de 2026
+
+Fernando reportó 21 publicaciones manuales adicionales en Facebook entre el 6 y el 8 de septiembre. Se registraron en `Operations/Research/2026-08-15_Publication_Log.csv` con métricas pendientes y sin inventar valores. La muestra contiene 3 publicaciones de Wilfred y 18 publicaciones no-Wilfred que pueden funcionar como controles editoriales iniciales, aunque todavía no son controles perfectamente balanceados por formato, hora o personaje.
+
+| Fecha | Publicaciones reportadas | Wilfred | No-Wilfred |
+|---|---:|---:|---:|
+| 6 septiembre | 7 | 1 | 6 |
+| 7 septiembre | 6 | 1 | 5 |
+| 8 septiembre | 8 | 1 | 7 |
+| **Total** | **21** | **3** | **18** |
+
+La hipótesis `H-WILFRED-MON-01` ya tiene sus 3 observaciones de Wilfred requeridas. Sin embargo, el veredicto permanece `insufficient_data` porque aún faltan métricas comparables de ingresos y debe definirse una selección de 3 controles comparables, no simplemente tomar todos los posts no-Wilfred. Los dos Reels de Fantasma se conservan como formato separado y no deben mezclarse automáticamente con memes de imagen.
+
+El post de Wilfred del 6 de septiembre mantiene el dato reportado de USD 1.48 como `user_reported`; las nuevas publicaciones no tienen ingresos atribuidos. La activación de monetización continúa siendo una variable de contexto, no una prueba de causalidad.
 
 ## Referencias
 
