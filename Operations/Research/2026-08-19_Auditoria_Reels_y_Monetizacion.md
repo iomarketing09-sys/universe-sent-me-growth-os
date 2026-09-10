@@ -4,7 +4,7 @@ purpose: "Separar el rendimiento histórico de Reels del experimento P0 de imág
 status: "Active"
 created: 2026-08-19
 updated: 2026-09-09
-version: "1.17"
+version: "1.18"
 author: "Manus AI (CGO)"
 related_documents:
   - "GrowthOS/07_00_Registro_Maestro_Reels.md"
@@ -165,6 +165,21 @@ Fernando reportó 21 publicaciones manuales adicionales en Facebook entre el 6 y
 La hipótesis `H-WILFRED-MON-01` ya tiene sus 3 observaciones de Wilfred requeridas. Sin embargo, el veredicto permanece `insufficient_data` porque aún faltan métricas comparables de ingresos y debe definirse una selección de 3 controles comparables, no simplemente tomar todos los posts no-Wilfred. Los dos Reels de Fantasma se conservan como formato separado y no deben mezclarse automáticamente con memes de imagen.
 
 El post de Wilfred del 6 de septiembre mantiene el dato reportado de USD 1.48 como `user_reported`; las nuevas publicaciones no tienen ingresos atribuidos. La activación de monetización continúa siendo una variable de contexto, no una prueba de causalidad.
+
+## Captura saneada del experimento — 2026-09-10
+
+La captura de seis publicaciones fue verificada en `codex-universe` mediante el commit `37ec3adb4f0c605d82cd7c92f9129a10b54c96b4`. El repositorio contiene exactamente seis snapshots agregados, **19/19 tests pasan** y no quedan URLs con tokens, datos de comentarios ni datos de reacciones crudos en los archivos versionados ni en el historial publicado.
+
+| Grupo | Posts | Reacciones | Comentarios | Shares |
+|---|---:|---:|---:|---:|
+| Wilfred | 3 | 3012, 800, 432 | 19, 8, 18 | `null` en snapshots saneados |
+| Controles | 3 | 240, 65, 51 | 7, 3, 2 | `null` en snapshots saneados |
+| **Media Wilfred** | 3 | **1,414.67** | **15.00** | No disponible |
+| **Media controles** | 3 | **118.67** | **4.00** | No disponible |
+
+En esta muestra descriptiva, Wilfred presenta aproximadamente **11.9 veces** más reacciones promedio y **3.75 veces** más comentarios promedio que los controles. Esto es una señal fuerte de rendimiento editorial, pero no es todavía un veredicto de monetización: no hay ingreso atribuido por publicación, los controles no están perfectamente balanceados y las ventanas son acumuladas/lifetime.
+
+El estado correcto de `H-WILFRED-MON-01` cambia de `insufficient_data` por volumen de publicaciones a **`awaiting_revenue_evidence`**. La hipótesis de engagement queda **supported_provisionally** solo para esta muestra; la hipótesis de ingreso permanece sin probar. No se deben asignar los USD 1.48 del reporte previo a estos seis posts.
 
 ## Referencias
 
