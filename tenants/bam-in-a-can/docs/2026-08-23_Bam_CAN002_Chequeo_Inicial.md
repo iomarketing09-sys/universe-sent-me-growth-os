@@ -1,0 +1,1 @@
+/home/universe-sent-me/universe-sent-me-growth-os/Operations/Research/2026-08-23_Bam_CAN002_Chequeo_Inicial.md

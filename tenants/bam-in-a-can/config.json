@@ -1,0 +1,23 @@
+{
+  "tenant_id": "bam-in-a-can",
+  "brand_name": "Bam in a Can",
+  "category": "ai_video_fiction",
+  "channels": {
+    "tiktok": {
+      "handle": "@bam_in_a_can",
+      "url": "https://www.tiktok.com/@bam_in_a_can"
+    },
+    "instagram": {
+      "handle": "@bam_in_a_can",
+      "url": "https://www.instagram.com/bam_in_a_can"
+    },
+    "youtube": {
+      "handle": "@Bam_in_a_can",
+      "channel_url": "https://www.youtube.com/@Bam_in_a_can"
+    }
+  },
+  "distribution_cadence": {
+    "timezone": "America/Chicago",
+    "primary_platforms": ["TikTok", "Instagram Reels", "YouTube Shorts"]
+  }
+}

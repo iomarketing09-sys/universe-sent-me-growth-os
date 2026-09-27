@@ -1,0 +1,1 @@
+/home/universe-sent-me/universe-sent-me-growth-os/Operations/Research/2026-08-25_Bam_CAN003_Corte_Inicial.md

@@ -1,0 +1,1 @@
+/home/universe-sent-me/universe-sent-me-growth-os/Operations/Research/2026-08-21_Bam_CAN001_Snapshot_Temprano.md
