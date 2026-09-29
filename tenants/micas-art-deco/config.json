@@ -1,0 +1,10 @@
+{
+  "tenant_id": "micas-art-deco",
+  "client_name": "Mica's Art & Deco",
+  "contact_channel": "Instagram DM / WhatsApp",
+  "excluded_categories": [],
+  "timezone": "America/Matamoros",
+  "utc_offset_hours": 5,
+  "assets_root": "MICAS/002 PRODUCTOS",
+  "created_at": "2026-09-29T06:30:00+00:00"
+}
