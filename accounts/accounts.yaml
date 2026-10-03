@@ -1,0 +1,19 @@
+# Manifesto de Cuentas Growth OS
+
+firma_bordados:
+  account_id: "firma_bordados"
+  nombre: "Firma Bordados"
+  ruta: "accounts/firma_bordados"
+  estado: "COPIED"
+  fuente_historica: "/home/universe-sent-me/new-growth-os"
+  fecha_incorporacion: "2026-08-30"
+  notas: "Cuenta inicial con datos de piezas, assets y documentación específica."
+
+universe_sent_me:
+  account_id: "universe_sent_me"
+  nombre: "Universe Sent Me"
+  ruta: "accounts/universe_sent_me"
+  estado: "COPIED"
+  fuente_historica: "/home/universe-sent-me/universe-sent-me-growth-os"
+  fecha_incorporacion: "2026-08-30"
+  notas: "Cuenta inicial con datos históricos de inventario y documentación operativa."

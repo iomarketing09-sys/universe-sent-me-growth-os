@@ -42,3 +42,6 @@ Thumbs.db
 *token*.json
 .tox/
 .vscode/
+
+dryrun_output.json
+AMBIGUEDAD_FASE2.txt

@@ -7,6 +7,22 @@ import pytest
 
 from growthos.config import Settings
 from growthos.storage.database import Database
+from growthos.core.enums import (
+    EstadoPieza,
+    Plataforma,
+    TipoContenido,
+    Categoria,
+    Prioridad,
+    DificultadProduccion,
+    Reutilizable,
+    BloqueadoCanon,
+    EstadoCanon,
+    EstadoProduccion,
+    EstadoPublicacion,
+    MotivoRevision,
+    ReconciliacionEstado,
+    ReconciliacionConfianza,
+)
 
 
 @pytest.fixture(scope="session")
@@ -34,31 +50,31 @@ def test_db(test_settings):
 
 @pytest.fixture
 def sample_piece_data():
-    """Sample piece data matching Content_Inventory.csv structure."""
+    """Sample piece data matching Content_Inventory.csv structure (already normalized)."""
     return {
         "ID_Pieza": "CNT-001",
         "Titulo": "Test Piece",
         "Personaje_Principal": "@char_USM_universe",
         "Personajes_Secundarios": "",
-        "Tipo_Contenido": "Reel / Meme adaptado",
-        "Plataforma": "Instagram, Facebook, TikTok",
+        "Tipo_Contenido": TipoContenido.REEL_MEME_ADAPTADO,
+        "Plataforma": Plataforma.MULTI,
         "Objetivo": "Test objective",
-        "Hipotesis": "",
-        "Estado": "Reutilizable (pendiente de revisión de continuidad)",
-        "Prioridad": "Alta",
-        "Dificultad_Produccion": "Baja (ya generado en Flow)",
-        "Reutilizable": "Sí",
+        "Hipotesis_ID": "",
+        "Estado": EstadoPieza.APROBADO,
+        "Prioridad": Prioridad.ALTA,
+        "Dificultad_Produccion": DificultadProduccion.BAJA,
+        "Es_Reutilizable": Reutilizable.SI,
         "Fecha_Ultima_Publicacion": "2026-07-29",
         "Fuente": "08_Production/Reels/Reel_001.md",
         "Formato": "9:16, ~9s, 3 shots",
-        "Categoria": "Humor / Meme",
-        "Bloqueado_Canon": "Sí — pendiente revisión de continuidad",
-        "Estado_Operacion_Normalizado": "Reuse_Candidate",
-        "Estado_Canon_Normalizado": "Canon_Clear_or_Unverified",
+        "Categoria": Categoria.HUMOR_MEME,
+        "Bloqueado_Canon": BloqueadoCanon.SI,
+        "Estado_Operacion_Normalizado": EstadoProduccion.NO_CONFIRMED_MATCH,
+        "Estado_Canon_Normalizado": EstadoCanon.CLEAR_UNVERIFIED,
         "Asset_Ref_Confirmado": "",
         "Asset_Ref_Candidato": "",
-        "Reconciliacion_Estado": "No_Confirmed_Match",
-        "Reconciliacion_Confianza": "None",
+        "Reconciliacion_Estado": ReconciliacionEstado.NO_CONFIRMED_MATCH,
+        "Reconciliacion_Confianza": ReconciliacionConfianza.NONE,
         "Reconciliacion_Fuente": "",
         "Reconciliacion_Nota": "Test note",
         "Registro_Relacionado": "",
@@ -69,11 +85,11 @@ def sample_piece_data():
         "Asset_Ref": "",
         "Asset_Filename": "",
         "Drive_ID": "",
-        "Estado_Canon": "Revision",
-        "Estado_Produccion": "Asset_Listo",
-        "Estado_Publicacion": "No_Publicada",
+        "Estado_Canon": EstadoCanon.REVISION,
+        "Estado_Produccion": EstadoProduccion.ASSET_LISTO,
+        "Estado_Publicacion": EstadoPublicacion.NO_PUBLICADA,
         "Ultima_Sincronizacion": "2026-08-15",
-        "Motivo_Revision_Normalizado": "Inventario_Reconciliacion_Pendiente",
+        "Motivo_Revision_Normalizado": MotivoRevision.INVENTARIO_RECONCILIACION_PENDIENTE,
         "Personaje_Principal_Normalizado": "Universe",
         "Personajes_Secundarios_Normalizados": "Ninguno",
         "Rol_Narrativo": "Protagonista",
@@ -99,9 +115,9 @@ def sample_pieces_csv(sample_piece_data):
         row2["ID_Pieza"] = "CNT-002"
         row2["Titulo"] = "Test Piece 2"
         row2["Personaje_Principal"] = "@char_USM_wilfred"
-        row2["Estado"] = "Pendiente de producción"
-        row2["Bloqueado_Canon"] = "No"
-        row2["Estado_Canon_Normalizado"] = "Canon_Clear_or_Unverified"
+        row2["Estado"] = EstadoPieza.PENDIENTE_PRODUCCION
+        row2["Bloqueado_Canon"] = BloqueadoCanon.NO
+        row2["Estado_Canon_Normalizado"] = EstadoCanon.CLEAR_UNVERIFIED
         row2["Motivo_Revision_Normalizado"] = ""
         writer.writerow(row2)
         yield Path(f.name)

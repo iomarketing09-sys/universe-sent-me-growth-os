@@ -9,6 +9,7 @@ from growthos.core.models import Piece, Publication
 from growthos.storage.database import Database
 from growthos.storage.repositories import PieceRepository, PublicationRepository
 from growthos.storage.csv_adapter import CSVAdapter
+from growthos.core.enums import EstadoPieza
 
 
 @pytest.fixture
@@ -50,7 +51,7 @@ def test_piece_repository_save_and_get(temp_db):
 
     piece = Piece(
         ID_Pieza="CNT-001",
-        Estado="Idea",
+        Estado=EstadoPieza.IDEA,
         Titulo="Test Piece",
         Personaje_Principal="@char_USM_universe",
         Plataforma="Facebook",
@@ -72,7 +73,7 @@ def test_piece_repository_get_all(temp_db):
     for i in range(3):
         piece = Piece(
             ID_Pieza=f"CNT-{i+1:04d}",
-            Estado="Idea",
+            Estado=EstadoPieza.IDEA,
             Titulo=f"Piece {i+1}",
         )
         repo.save(piece)
@@ -84,6 +85,15 @@ def test_piece_repository_get_all(temp_db):
 def test_publication_repository(temp_db):
     """Test PublicationRepository."""
     repo = PublicationRepository(temp_db)
+    piece_repo = PieceRepository(temp_db)
+
+    # First create a piece (FK requirement)
+    piece = Piece(
+        ID_Pieza="CNT-001",
+        Estado=EstadoPieza.IDEA,
+        Titulo="Test Piece",
+    )
+    piece_repo.save(piece)
 
     pub = Publication(
         ID_Pieza="CNT-001",
@@ -142,8 +152,8 @@ def test_csv_adapter_export_pieces(temp_db):
 
         repo = PieceRepository(temp_db)
         pieces = [
-            Piece(ID_Pieza="CNT-001", Estado="Idea", Titulo="Test 1"),
-            Piece(ID_Pieza="CNT-002", Estado="Aprobado", Titulo="Test 2"),
+            Piece(ID_Pieza="CNT-001", Estado=EstadoPieza.IDEA, Titulo="Test 1"),
+            Piece(ID_Pieza="CNT-002", Estado=EstadoPieza.APROBADO, Titulo="Test 2"),
         ]
 
         for p in pieces:
@@ -158,5 +168,5 @@ def test_csv_adapter_export_pieces(temp_db):
             rows = list(reader)
 
         assert len(rows) == 2
-        assert rows[0]["ID_Pieza"] == "CNT-001"
-        assert rows[1]["ID_Pieza"] == "CNT-002"
+        assert rows[0]["id"] == "CNT-001"
+        assert rows[1]["id"] == "CNT-002"

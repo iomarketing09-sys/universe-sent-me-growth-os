@@ -12,6 +12,8 @@ from growthos.core.enums import (
     EstadoCanon,
     BloqueadoCanon,
     Reutilizable,
+    EstadoProduccion,
+    MotivoRevision,
 )
 from growthos.core.models import Piece, Publication, Experiment, MetricsSnapshot, AssetAlias
 from growthos.core.validators import (
@@ -224,7 +226,7 @@ class TestValidators:
             Estado=EstadoPieza.DIFERIDO,
             Bloqueado_Canon=BloqueadoCanon.NO,
             Estado_Canon_Normalizado=EstadoCanon.DEFERRED_OPERATIONAL,
-            Motivo_Revision_Normalizado="Deferred_Operational",
+            Motivo_Revision_Normalizado=MotivoRevision.INVENTARIO_RECONCILIACION_PENDIENTE,
         )
         assert validate_canon_block(piece) is False
 

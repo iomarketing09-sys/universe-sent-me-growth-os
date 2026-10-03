@@ -1,0 +1,218 @@
+# Integración Growth OS ↔ Canon
+
+**Documento de sincronización entre el Growth OS (Manus) y la Biblia de Canon (Claude)**
+
+---
+
+| Campo | Valor |
+| :--- | :--- |
+| **Última sincronización** | 2026-08-23 |
+| **Fuente de canon** | Repo GitHub administrado por Claude: `iomarketing09-sys/universe-sent-me-1`, rama `main`, HEAD `1daaad5342c278909b78076a54d8b220fa51e023`. Ficha de sincronización recibida por Claude mediante clonación directa. |
+| **Estado del documento** | v2.5.7 — HypothesisBank ampliado con HB-006 a HB-009; auditoría Facebook actualizada con cierre temporal `Unavailable_No_Baseline`, insights Windsor L2 parciales y diseño E0/E24/E72 en Review; OmniRoute puede asistir cortes agregados y propuestas comunitarias como `Draft`, sin alterar fuentes canónicas ni publicar; no implica generación, calendario ni CNT |
+| **Artefactos de rendimiento relacionados** | `Operations/Research/2026-08-23_Reporte_Rendimiento_Engagement_Facebook.md`, `Operations/Research/2026-08-23_Facebook_Performance_Meta_API.json`, `Operations/Research/2026-08-23_Facebook_Performance_Summary.json`, `Operations/Research/2026-08-23_Facebook_Growth_Integration_Audit.json`, `Operations/Research/2026-08-23_Facebook_Post_Reconciliation.json`, `Operations/Research/2026-08-23_Facebook_24_72_Window_Closure.json`, `Operations/Research/2026-08-23_Facebook_24_72_and_Video_Insights_Summary.json`, `Operations/Research/2026-08-23_Facebook_Reels_Video_Insights.csv`, `Operations/Research/2026-08-23_Facebook_Windsor_Insights_Raw.json`, `Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md` |
+| **Propietario** | Manus (Manus AI) |
+| **Guardián de Canon** | Claude (vía repo GitHub) |
+| **Aprobador final** | Fernando |
+
+---
+
+## 1. Reglas de Diseño Activas (Caché de Canon)
+
+> Cada entrada incluye fecha de sincronización y fuente exacta (archivo + commit).
+> Si la fecha de sincronización es anterior a un commit del repo, el caché está desactualizado.
+
+### 1.1 Personajes — Primer Círculo
+
+| Personaje | ID Canon | Regla de Diseño (Resumen) | Fuente | Última sincronización |
+| :--- | :--- | :--- | :--- | :--- |
+| Universe | `@char_USM_universe` | La profundidad nunca debe aparecer antes que el humor. Conoce el mecanismo pero nunca entiende completamente el propósito ni tiene acceso total. No es orquestador del conflicto. Canon actualiza el color de pelaje a blanco/crema y añade un registro sarcástico/cortante permitido en memes y composiciones cinematográficas, siempre limitado por Anti-tono: se ríe con, no de, y no muestra desprecio hacia otro personaje o el público. | `02 Personajes/Primer Círculo/Universe/03 Reglas de diseño.md` | 2026-08-12 (commits `94aa9e8`, `e8b6f22`, `b52ea42`; HEAD `1daaad5`) |
+| Wilfred | `@char_USM_wilfred` | Guardián del bosque con barba blanca larga, gorro rojo, personalidad enfocada en sabiduría y humor seco. No moraliza explícitamente ni diagnostica a otros personajes. | `02 Personajes/Primer Círculo/Wilfred/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
+| Elara | `@char_USM_elara` | Lectora de cartas mágicas conectada con astrología y naturaleza. Rol diferenciado de Universe (no es tarotista principal — ese es Universe). | `02 Personajes/Primer Círculo/Elara/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
+| Ganso | `@char_USM_ganso` | *(Pendiente: consultar ficha canónica para regla de diseño activa)* | `02 Personajes/Primer Círculo/Ganso/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
+| Payaso / Silvio | `@char_USM_payaso` | Silvio es el nombre propio confirmado de El Payaso. El diseño corregido y su expresión aprobada quedaron registrados en canon; `#SilvioUSM` está autorizado. | `02 Personajes/Primer Círculo/Payaso/03 Reglas de diseño.md`, `GrowthOS/Canon_Contradictions_Report.md` | 2026-08-03 (canon commit `8e9fe9a`; constancia local `c9730ee6`) |
+
+### 1.2 Personajes — Segundo Círculo
+
+| Personaje | ID Canon | Nota | Fuente | Última sincronización |
+| :--- | :--- | :--- | :--- | :--- |
+| Hada (Kiri) | `@char_USM_hada` | Nombre propio confirmado: Kiri. Su territorio emocional es el asombro genuino. Su varita es un objeto personal canonizado como elemento visual/identitario; su función narrativa y relación con el lenguaje de Resonancia siguen abiertas. | `02 Personajes/Segundo Círculo/Hada/00 Resumen.md`, `01 Territorio emocional.md`, `03 Reglas de diseño.md` | 2026-08-04 (commits `f7bebca`, `990a69c`; HEAD `1daaad5`) |
+| Evan | `@char_USM_evan` | La relación de Evan con Elara y Kiri puede generar lecturas de cercanía o “chisme”, pero ninguna es romántica en canon. La ambigüedad queda abierta deliberadamente y no debe resolverse automáticamente. | `02 Personajes/Segundo Círculo/Evan/02 Relaciones.md` | 2026-08-12 (commit `1daaad5`) |
+| Kael | `@char_USM_kael` | Personaje canonizado del Segundo Círculo. Forma una pareja establecida con Maeve. **Alias visual/editorial: Chico de los Pantalones.** Su relación narrativa con Universe existe visualmente, pero aún no está definida. | `02 Personajes/Segundo Círculo/Kael/00 Resumen.md`, `01 Territorio emocional.md`, `02 Relaciones.md`, `03 Reglas de diseño.md` | 2026-08-11 (commit `a994354`) |
+| Maeve | `@char_USM_maeve` | Personaje canonizado del Segundo Círculo. **Alias visual/editorial: Chica del Suéter.** Forma una pareja establecida con Kael. Su relación narrativa con Universe existe visualmente, pero aún no está definida. | `02 Personajes/Segundo Círculo/Maeve/00 Resumen.md`, `01 Territorio emocional.md`, `02 Relaciones.md`, `03 Reglas de diseño.md` | 2026-08-11 (commit `a994354`) |
+| Fantasma | `@char_USM_fantasma` | Congelado emocionalmente en un instante que nunca cerró — no es incapacidad física. Puede actuar, pero no puede resolver esa identidad ni "salvar el día" de forma heroica y dramáticamente visible dentro de una misma pieza. La regla no cambió en el delta actual. | `02 Personajes/Segundo Círculo/Fantasma/01 Territorio emocional.md`, `03 Reglas de diseño.md` | 2026-08-02 (sin cambios desde antes de `939752c`; confirmado en HEAD `1daaad5`) |
+
+### 1.3 Lugares
+
+| Lugar | ID Canon | Nota | Fuente | Última sincronización |
+| :--- | :--- | :--- | :--- | :--- |
+| El Bosque | `@loc_USM_bosque` | Bosque Ancestral — territorio de Wilfred | `06 Lugares/El Bosque.md` | 2026-07-31 (commit `939752c`) |
+| Jardines Eternos | `@loc_USM_jardines` | *(Pendiente: consultar ficha)* | `06 Lugares/Jardines Eternos.md` | 2026-07-31 (commit `939752c`) |
+| La Plaza del Mercado | `@loc_USM_plaza` | *(Pendiente: consultar ficha)* | `06 Lugares/La Plaza del Mercado.md` | 2026-07-31 (commit `939752c`) |
+| Mar de Nubes | `@loc_USM_mar_nubes` | *(Pendiente: consultar ficha)* | `06 Lugares/Mar de Nubes.md` | 2026-07-31 (commit `939752c`) |
+| La Hoguera | `(ID pendiente; no asignar)` | Propuesta de lugar; no es canon y no debe tratarse como cerrado. | `06 Lugares/La Hoguera.md` | 2026-08-04 (commit `9dcf9d4`) |
+| La Ciudad | `(ID pendiente; no asignar)` | Propuesta parcial con dirección visual; no es canon y no debe tratarse como cerrado. | `06 Lugares/La Ciudad.md` | 2026-08-04 (commit `9dcf9d4`) |
+
+### 1.4 Reglas de Diseño de Historias
+
+| Regla | Descripción | Fuente | Última sincronización |
+| :--- | :--- | :--- | :--- |
+| Profundidad después del humor | La profundidad nunca debe aparecer antes que el humor. | `01 ADN/01.04 Anti-tono.md` | 2026-07-31 (commit `939752c`) |
+| Sin moralización explícita | Una historia no puede existir para ilustrar una lección. Ningún personaje puede diagnosticar a otro. La lección debe sentirse sin nombrarse. | `07 Historias/00 Estándar de Historias.md` | 2026-07-31 (commit `939752c`) |
+| Fantasma congelado emocionalmente | El Fantasma no puede resolver ni superar de forma dramática y visible su identidad congelada dentro de una misma pieza. No tiene restricción de movilidad física ni de acción. *(Corregido 2026-08-02 por Claude — "Fantasma inmovilizado" describía incapacidad física, que no existe en canon.)* | `02 Personajes/Segundo Círculo/Fantasma/01 Territorio emocional.md`, `03 Reglas de diseño.md` | 2026-08-02 (corrección) |
+| Universe limitado | Universe conoce el mecanismo pero nunca entiende completamente el propósito. No es orquestador de conflictos. | `02 Personajes/Primer Círculo/Universe/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
+
+### 1.5 Delta canónico posterior a 939752c
+
+La siguiente tabla resume únicamente los cambios confirmados por la ficha de sincronización de Claude hasta el HEAD `1daaad5`. Las propuestas permanecen separadas del canon.
+
+| Commit | Elemento | Estado y efecto vigente |
+|---|---|---|
+| `8e9fe9a` | Payaso / Silvio | `CANON v1.1`, cerrado. Silvio es el nombre propio; el diseño aprobado usa sonrisa ladeada cómplice y ceja levantada, no el payaso triste. |
+| `f7bebca`, `990a69c` | Hada / Kiri | `CANON v1.2`, cerrado. Kiri y su varita están confirmados como identidad visual; la función narrativa de la varita sigue abierta. |
+| `94aa9e8`, `e8b6f22`, `b52ea42` | Universe | Pelaje blanco/crema y registro sarcástico/cortante canonizados. El registro aplica a memes y composiciones cinematográficas, siempre limitado por Anti-tono. |
+| `9dcf9d4` | La Hoguera y La Ciudad | `Propuesta`; no son lugares canonizados y no deben tratarse como estados cerrados. No se asignan IDs canon en este bridge. |
+| `a994354` | Kael y Maeve | `CANON v1.0` cada uno; pareja establecida. La relación narrativa con Universe sigue abierta. |
+| `1daaad5` | Evan, Kiri y Elara | La cercanía que genera lecturas de “chisme” queda abierta y no es romance canon. No debe resolverse automáticamente. |
+| `aa948c5` | Excepción de Anti-tono en Reels | `PENDIENTE`, no canon. No modifica reglas activas ni IDs. |
+
+### 1.6 Contenido de Growth OS evaluado contra reglas canónicas
+
+`La Búsqueda del Frasco Olvidado` no es un documento del repositorio canónico; vive en el espacio de producción del Growth OS y debe evaluarse contra reglas que sí están cerradas en la Biblia.
+
+| Elemento | Estado vigente | Acción requerida |
+|---|---|---|
+| Capítulo 10 — Universe omnisciente | Pendiente canónico, desarrollo diferido | Si se retoma, revisar que Universe no revele que conocía todo el plan ni actúe como orquestador omnisciente. |
+| Capítulo 8 — moralización de Wilfred | Pendiente canónico, desarrollo diferido | Si se retoma, revisar diálogo y CTA para que la lección se sienta, no se nombre ni se diagnostique. |
+| Elara como tarotista | Diferenciación de producción pendiente, desarrollo diferido | Si se retoma, reasignar el ángulo hacia astrología y naturaleza; no duplicar el rol tarotista de Universe. |
+| Capítulo 7 — Fantasma | Relectura pendiente, desarrollo diferido | Si se retoma, revisar el texto directo para determinar si “salvar el día” resuelve visiblemente su identidad congelada. La regla canónica no cambió. |
+| Silvio / Contradicción #5 | Resuelto | No es un bloqueo vigente; tratar Silvio como canon cerrado. |
+
+Estos conflictos no representan cambios del canon remoto. Por decisión operativa de Fernando, `CNT-004` queda **diferido y fuera de desarrollo** por ahora. El inventario conserva `Estado_Canon=Revision`, `Canon_Review_Required` y `Motivo_Revision_Normalizado=Canon_Contradiccion_Sustantiva`; únicamente cambia el estado operativo a `Deferred_Operational` y el estado de producción a `Diferido`. Si el proyecto se retoma, requerirá la revisión del texto fuente y aprobación explícita de Fernando o Claude.
+
+---
+
+## 2. Calendario Editorial (Roadmap)
+
+> **Bloqueo operativo:** Ningún contenido puede publicarse automáticamente mientras `Estado` ≠ "Aprobado".
+> El cambio a "Aprobado" solo puede ser realizado por Fernando o Claude.
+> Manus no puede ejecutar una publicación con estado ≠ "Aprobado" ni con `Bloqueado_Canon == Sí`.
+
+> **v2.1:** La arquitectura del calendario sigue documentada en `GrowthOS/01_00_Arquitectura_Calendario_Escalable.md`; la operación vigente vive en `GrowthOS/01_01_Calendario_Semanal.md`, y Manus valida cada orden y utiliza la API de Graph de Meta para programar o publicar. Las guías de automatización heredadas se conservan únicamente como archivo histórico.
+
+| Semana | Día | Fecha | Plataforma | Formato | Personaje/Lugar | Hook/Título | Brief | ID Canon consultado | Estado Canon | Responsable aprobación | Fecha aprobación |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| W1 | Lun | 2026-08-04 | Instagram | Foto / Carrusel | `@char_USM_universe` | Tarot de hoy | Contenido evergreen reutilizable | CNT-006 | Reutilizado | Fernando | — |
+| W1 | Mar | 2026-08-05 | Instagram / TikTok | Reel | `@char_USM_universe` | Mi gato: tarotista | Reutilización de meme viral | CNT-001 | Pendiente de Producción | Manus / Fernando | — |
+| W1 | Mié | 2026-08-06 | Instagram / Facebook | Foto / Texto | `@char_USM_wilfred` | Frase filosófica (Principio 0) | Voz de Wilfred, bajo costo | CNT-024 | Pendiente de Producción | Manus | — |
+| W1 | Jue | 2026-08-07 | Instagram | Reel / Foto | `@char_USM_fantasma` | El instante suspendido | Activación del Fantasma | CNT-015 | Pendiente de Producción | Manus | — |
+| W1 | Vie | 2026-08-08 | Instagram | Carrusel / Foto | `@char_USM_elara` | Lectura de astros y naturaleza | Identidad diferenciada de Elara | CNT-008 | Pendiente de Producción | Manus | — |
+| W1 | Sáb | 2026-08-09 | Instagram / YouTube Shorts | Reel | `@char_USM_wilfred` | Wilfred reseña su propio peluche | Sección recurrente de afiliación | CNT-023 | Pendiente de Producción | Manus | — |
+| W1 | Dom | 2026-08-10 | Instagram | Reel | `@char_USM_wilfred` | Test A/B: Tono existencial vs humorístico | Validación de hipótesis Growth OS | CNT-025 | Pendiente de Aprobación | Fernando | — |
+
+**Regla de bloqueo:**
+- El campo `Estado` acepta solo estos valores: `Idea`, `Pendiente de Producción`, `En Producción`, `Pendiente Revisión Claude`, `Pendiente Aprobación Fernando`, `Aprobado`, `Programado`, `Publicado`, `En Análisis`, `Reutilizado`, `Archivado`, `Rechazado / Requiere Reescritura`.
+- Cuando el estado es `Aprobado`, el contenido pasa a la cola de programación de Manus, que prepara la orden para Graph API de Meta.
+- Cuando el estado es cualquier otro valor, **el Story Scheduler y cualquier automatización de publicación están bloqueados para esa fila**.
+- El campo `Bloqueado_Canon` (checkbox) bloquea forzosamente cualquier transición hacia `Programado` o `Publicado`.
+
+---
+
+## 3. HypothesisBank
+
+| ID | Hipótesis | Personaje/Lugar | Variable a testear | Formato | Métrica objetivo | Estado | Fecha creación | Fecha verificación | Resultado | Observaciones |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| HB-001 | Los videos de Wilfred con tono existencial retienen más que los de tono puramente humorístico | `@char_USM_wilfred` | Tono (existencial vs humorístico) | Reel | Retención % | Pendiente de aprobación | 2026-07-31 | — | — | Test A/B con 2 variantes. Pieza asociada: CNT-025. |
+| HB-002 | El contenido de tarot de Universe mantiene alta viralidad en formato Reel (transición Facebook → Instagram) | `@char_USM_universe` | Formato (Foto vs Reel) | Reel | Vistas / Interacciones | Pendiente | 2026-07-31 | — | — | Pieza asociada: CNT-001. |
+| HB-003 | La distribución de horarios ampliada —mañana, tarde y noche— mejora la interacción típica frente a la programación concentrada en pocas franjas, controlando por tipo de contenido y personaje | Facebook Page | Hora local y día de publicación | Foto/meme | Mediana de interacciones por publicación; shares/interacciones como señal secundaria | En prueba | 2026-08-14 | — | Señal preliminar: mediana 37 en 17 publicaciones del 10–14 ago frente a 26 en 33 publicaciones del 4–9 ago; no es concluyente por confusión de contenido, día y tamaño de muestra. | Asociada al ciclo `Operations/Research/2026-08-14_Ciclo_Aprendizaje_Horarios.md`. |
+| HB-004 | Una proporción elevada de memes reutilizados de mayo reduce el rendimiento mediano por fatiga o menor novedad, aunque el reuse de piezas top puede conservar valor cuando se limita | Facebook Page | Nueva vs Reuse_Top vs Reuse_NoTop | Foto/meme | Mediana de interacciones por publicación; shares/interacciones | En prueba | 2026-08-14 | — | En el calendario del 4–9 agosto se observan al menos 14 reuse sobre aproximadamente 32 publicaciones; varios días concentran tres reuse de cuatro slots principales. | Asociada al comparativo junio–julio–agosto. |
+| HB-005 | Mantener una frecuencia suficiente de publicaciones de calidad aumenta la superficie de descubrimiento y el rendimiento total diario entre seguidores y no seguidores | Facebook Page | Publicaciones por día | Foto/meme | Interacciones totales por día y mediana por publicación | En prueba | 2026-08-14 | — | En los primeros 14 días, la frecuencia pasó de 9.50 posts/día en junio a 6.71 en julio y 4.57 en agosto; agosto cae frente a julio en total diario y mediana, pero sigue sobre junio por publicación. | Asociada al comparativo junio–julio–agosto. |
+| HB-006 | Una microhistoria estricta de exactamente tres paneles con reencuadre romántico-absurdo y caption mínimo puede generar una señal de difusión distinta de las secuencias relacionales más amplias | Facebook Page | Estructura de tres paneles + tratamiento caption_minimo, controlando tema romántico y panel_count | Imagen estática | Shares; interacciones como secundaria | Pendiente de aprobación de generación | 2026-08-21 | — | Brief FUT-MICRO-005; propuesta preflight; no hay asset ni outcome. Mantener fuera de FAM-03 y no combinar con MICRO-SEQ-2P. | EXP-2026-08-COMP-GAPS-01; Cell_ID=MICRO-STRICT-3P. |
+| HB-007 | Una microhistoria estricta de exactamente tres paneles con conflicto social cotidiano no romántico y caption de refuerzo puede separar el efecto de reencuadre cotidiano del de conversación relacional | Facebook Page | Estructura de tres paneles + tratamiento caption_refuerzo, controlando conflicto social y panel_count | Imagen estática | Shares; interacciones y comentarios como secundarias | Pendiente de aprobación de generación | 2026-08-21 | — | Brief FUT-MICRO-006; propuesta preflight; no hay asset ni outcome. Mantener fuera de FAM-02/FAM-03 y no combinar con MICRO-SEQ-2P. | EXP-2026-08-COMP-GAPS-01; Cell_ID=MICRO-STRICT-3P. |
+| HB-008 | Una transformación visual de Universe con gafas y marcadores de identidad preservados permite estudiar el contraste antes/después sin atribuir automáticamente el rendimiento al personaje | Universe / Facebook Page | Transformación visual before_after + preservación de identidad | Imagen estática | Shares; interacciones y legibilidad de identidad como secundarias | Pendiente de aprobación de generación | 2026-08-21 | — | Brief FUT-TRANS-003; propuesta preflight; no hay asset ni outcome. Mantener separado de FAM-05 y HB-002; verificar gafas en ambos estados. | EXP-2026-08-COMP-GAPS-01; Cell_ID=TRANS-UNIVERSE. |
+| HB-009 | Un diálogo ácido interpersonal de dos voces con objetivo situacional seguro puede probar la función del remate sin mezclarla con ácido genérico o ataques a rasgos protegidos | Facebook Page | Diálogo interpersonal de dos voces + objetivo situacional seguro | Imagen estática | Shares; interacciones y comentarios como secundarias | Pendiente de aprobación de generación | 2026-08-21 | — | Brief FUT-ACID-003; propuesta preflight; no hay asset ni outcome. Mantener separado de FAM-04 y exigir Safety_Flag=No_coercion. | EXP-2026-08-COMP-GAPS-01; Cell_ID=ACID-DIALOGUE. |
+
+---
+
+## 4. ExperimentLog
+
+| ID Exp | Hipótesis ID | Contenido publicado | Personaje/Lugar | Formato | Fecha publicación | Plataforma | Vistas | Retención % | Interacciones | Estado Canon | Veredicto | Conclusión | Observaciones |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `EXP-2026-08-BASELINE-01` | HB-005 | Cohortes junio 1–14, julio 1–14 y agosto 1–14 | Facebook | Foto/meme | 2026-06-01 a 2026-08-14 | Cerrada | — | — | Veredicto consolidado: julio es la referencia principal; agosto cae frente a julio, pero supera a junio por pieza. |
+| `EXP-2026-08-BASELINE-02` | HB-003 | Cohortes 4–9 y 10–14 de agosto | Facebook | Foto/meme | 2026-08-04 a 2026-08-14 | Cerrada / señal preliminar | — | — | La mediana 37 frente a 26 es compatible con la ampliación horaria, pero no es causal por confusión de contenido y día. |
+| `EXP-2026-08-BASELINE-03` | HB-004 | Mix de reuse del 4–9 de agosto | Facebook | Foto/meme | 2026-08-04 a 2026-08-09 | Inconclusa | — | — | Se observaron al menos 14 reuse sobre aproximadamente 32 publicaciones; queda en prueba con Reuse_Top frente a Nueva. |
+| `EXP-2026-08-CAL-01` | HB-003 / HB-004 / HB-005 | Cohorte reciente Facebook evaluada en cierre | Facebook | Imagen/Video | 2026-08-15 a 2026-08-23 | Cierre_24_72_Unavailable_No_Baseline | — | 2,055 lifetime auxiliar | 33 candidatas; 27 elegibles —22 ventanas 24h y 20 de 72h—; HTTP 200 en las 27 lecturas y cero escrituras exactas. El total lifetime no es una métrica temporal. |
+
+---
+
+## 5. Arquitectura del Sistema Escalable
+
+> **Referencia completa:** Ver `GrowthOS/01_00_Arquitectura_Calendario_Escalable.md` para la definición completa de metadatos, estados y reglas de negocio.
+
+El sistema se compone de:
+
+1. **Fuente maestra de contenido:** `GrowthOS/Content_Inventory.csv` identifica una vez cada pieza creativa (`CNT-####`) y sus metadatos.
+2. **Ledgers append-only:** `Operations/Research/2026-08-15_Publication_Log.csv` registra una fila por publicación/plataforma y `Operations/Research/2026-08-15_ExperimentLog.csv` registra una fila por observación de hipótesis.
+3. **Colas y calendarios:** `Backlog`, `Reuse Queue`, `Production Queue`, `Approval Queue` y `Calendario Semanal` son vistas filtradas, no fuentes paralelas.
+4. **Flujo directo Manus + Graph API:** Manus valida estado, canon, asset, copy, plataforma y fecha; después crea la orden de publicación y registra el resultado.
+5. **Máquina de estados:** controla el flujo de cada pieza desde la idea hasta el archivo.
+6. **Registro post-publicación:** Manus consulta solo métricas nuevas, actualiza el `HypothesisBank` y agrega el resultado al `ExperimentLog`.
+
+### 5.1 Auditoría operativa de Facebook — 2026-08-23
+
+El reporte `Operations/Research/2026-08-23_Reporte_Rendimiento_Engagement_Facebook.md` confirma que la arquitectura está definida y que la identidad reciente está reconciliada: los 20 de 20 Page Post IDs recientes encuentran coincidencia en los ledgers de publicación y experimentos después de integrar tres Reels desde el inventario especializado y el registro maestro. La evidencia de reconciliación queda en `Operations/Research/2026-08-23_Facebook_Post_Reconciliation.json`.
+
+El cierre temporal se ejecutó sobre 33 candidatas de `EXP-2026-08-CAL-01`; 27 fueron elegibles, con 22 ventanas de 24h y 20 de 72h. Las 27 lecturas de Meta devolvieron HTTP 200, pero solo con totals lifetime actuales. Sin baseline E0 ni snapshot temporalmente acotado, el estado correcto es **`Unavailable_No_Baseline`** y se escribieron cero valores exactos en `Interacciones_24h` o `Interacciones_72h`. Los marcadores `24h_snapshot_unavailable` y `72h_snapshot_unavailable` preservan la trazabilidad sin presentar el total auxiliar de 2,055 como resultado temporal.
+
+Windsor.ai agregó insights nativos de `facebook_organic` para cuatro Reels con `Meta_Reel_ID`: reach/discovery único, plays, replays, watch promedio, duración, tiempo de reproducción y conteo de vistas orgánicas ≥95%. Todos permanecen como `lifetime_actual` y `L2_plus_watch_signals_partial`; no se elevan a L3 porque no hay tasa de retención de 3 segundos ni tasa de finalización comparable. MPM-001 conserva además la discrepancia entre Windsor y el snapshot previo de Business Suite, sin sobrescritura ni promedio.
+
+La próxima sincronización debe conservar el crosswalk 20/20, mantener los campos 24/72 vacíos mientras falte E0, y generar un veredicto explícito por hipótesis. La arquitectura para resolverlo ya está documentada en `Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md`: hook posterior a `is_published=true`, ledger separado, worker por `Target_At_UTC`, idempotencia y fallback para posts manuales. El diseño sigue en Review; este documento no autoriza por sí mismo una automatización recurrente, publicación, programación ni cambio de contenido.
+
+### 5.2 OmniRoute como asistente de borradores del Growth OS
+
+OmniRoute está aprobado únicamente como una capa local de **asistencia editorial y análisis cualitativo**. La configuración validada es el Combo `usm-groq-gemini-priority`, con `groq/openai/gpt-oss-20b` como ruta principal y `gemini/gemini-3.5-flash` como fallback. El proveedor, modelo, latencia, costo reportado y estado de respuesta son metadatos operativos; no son evidencia de rendimiento editorial ni reemplazan medición nativa de plataforma.
+
+| Uso permitido | Entrada permitida | Salida esperada | Destino humano |
+| :--- | :--- | :--- | :--- |
+| Ideación de una celda | Brief canónico aprobado, objetivo editorial y restricciones de formato | Variantes de ángulo, hook y tensión narrativa con estado `Draft` | Revisión de Fernando / Claude antes de CNT, calendario o producción |
+| Borrador de caption o guion | Personajes, reglas canónicas, duración, plataforma y tono aprobados | Copy o guion marcado `Draft` con riesgos y preguntas de revisión | Revisión humana antes de crear o modificar el brief oficial |
+| Revisión de coherencia | Borrador propio, reglas del canon y checklist de producción | Lista de posibles contradicciones, ambigüedades y faltantes | Corrección humana; OmniRoute no resuelve canon por sí solo |
+| Síntesis cualitativa | Resumen agregado, público o sintético de una observación ya documentada | Lecturas exploratorias y próximas preguntas, nunca veredictos causales | Analista humano; el `ExperimentLog` conserva solo evidencia validada |
+
+Queda prohibido enviar a OmniRoute tokens de Meta, API keys, PII, comentarios reales sin anonimizar, Windsor crudo, métricas canónicas no agregadas, documentos privados o identificadores de publicación. OmniRoute tampoco puede escribir en `Content_Inventory.csv`, `Publication_Log.csv`, `ExperimentLog.csv`, `HypothesisBank`, calendario, backlog, canon o cuentas sociales; toda salida queda fuera de esas fuentes hasta que una persona la revise y la incorpore manualmente bajo las reglas vigentes.
+
+El flujo obligatorio es: **brief aprobado o contexto sintético → OmniRoute → salida `Draft` → revisión humana/canon → documento o fila manualmente aprobada → producción/publicación con gates existentes**. El wrapper local documentado en `Operations/Production/omniroute-daily-wrapper.sh` se usa para invocaciones manuales; no existe autorización para automatizar publicaciones ni para exponer el gateway al navegador.
+
+### 5.3 Análisis asistido de métricas y propuestas comunitarias
+
+El documento `Operations/Production/2026-08-23_Diseno_Asistencia_Metricas_y_Respuestas_OmniRoute.md` formaliza dos extensiones permitidas: análisis narrativo de un corte **agregado, normalizado y limitado por fuente/ventana**, y hasta tres propuestas de respuesta sobre un contexto comunitario **anonimizado**. OmniRoute no recibe datos crudos de Windsor, identificadores de publicación, comentarios íntegros, perfiles, nombres, enlaces ni datos sensibles. Un modelo no calcula ni modifica las métricas canónicas, no clasifica una moderación definitivamente y no mueve un comentario a `Respondido`.
+
+La automatización admisible se detiene en preparar borradores o una cola `Pendiente_Fernando`. La publicación sigue usando el flujo con preflight anti-duplicado, aprobación humana explícita, verificación de autoría, relación padre-hijo, texto exacto y visibilidad. El nivel de bot que interpreta y responde por sí mismo queda prohibido.
+
+---
+
+## 6. Historial de Sincronización
+
+| Fecha | Acción | Fuente (commit) | Autor |
+| :--- | :--- | :--- | :--- |
+| 2026-07-31 | Creación del documento puente (v1.0) | Repo `iomarketing09-sys/universe-sent-me-1` (commit `cf2ac53`) | Manus |
+| 2026-07-31 | Implementación de arquitectura escalable (v2.0) | Repo `iomarketing09-sys/universe-sent-me-1` (commit `939752c`) | Manus |
+| 2026-08-03 | Resolución de Silvio y diseño corregido | Canon commit `8e9fe9a`, registrado en `Canon_Contradictions_Report.md` | Fernando vía Claude |
+| 2026-08-15 | Resincronización contra el HEAD canónico actual `1daaad5` | Ficha `canon_sync_fiche.md` proporcionada por Claude; consultada `2026-08-15T22:56:57Z` vía clonación directa | Manus |
+| 2026-08-15 | Corrección de alias visuales de Kael y Maeve | Aclaración de Fernando: Chico de los Pantalones = Kael; Chica del Suéter = Maeve | Manus |
+| 2026-08-23 | Cierre de ventanas 24/72 e integración de insights Windsor | 27 casos elegibles; cero escrituras exactas por ausencia de baseline; cuatro Reels en L2 parcial; commits locales del Growth OS pendientes de publicación al momento de esta edición | Manus |
+| 2026-08-23 | Protocolo de OmniRoute para borradores del Growth OS | Combo local Groq principal/Gemini fallback, outputs no canónicos, revisión humana obligatoria y prohibición de datos sensibles | Manus |
+
+---
+
+## 7. Reglas Operativas de Este Documento
+
+1. Este documento vive y se versiona en el repositorio Growth OS. Es un puente condensado; la fuente de verdad del canon sigue siendo el repo GitHub `iomarketing09-sys/universe-sent-me-1`.
+2. `GrowthOS/Content_Inventory.csv` es la fuente maestra de identidad de piezas; `Publication_Log.csv` y `ExperimentLog.csv` son ledgers append-only. Calendarios y colas no deben convertirse en fuentes paralelas.
+3. Cada regla aquí debe llevar fecha de sincronización y commit de referencia.
+4. El campo `Estado` en el Calendario Editorial es un **bloqueo operativo**, no una etiqueta. Manus no puede publicarlo si no dice literalmente "Aprobado".
+5. El cambio de estado a "Aprobado" solo lo puede hacer Fernando o Claude. Nunca Manus, nunca una regla automática.
+6. Antes de cada sesión de trabajo, Manus debe obtener de Claude una ficha o confirmación del HEAD actual del repositorio canónico. Si el HEAD cambia, este bridge debe marcarse desactualizado hasta resincronización.
+7. `iomarketing09-sys/universe-sent-me-1` es administrado por Claude. Manus no modifica ese repositorio ni convierte contenido de Growth OS en canon; cualquier cambio de nombre, diseño, regla narrativa o aprobación debe aclararse con Claude y, cuando corresponda, Fernando.
+8. La ficha recibida el 2026-08-15 confirma que `1daaad5342c278909b78076a54d8b220fa51e023` es el HEAD de `main`. Esta referencia es la autoridad de esta versión del bridge; si no existe una ficha nueva, no se deben inferir cambios posteriores.
+9. **Nueva (v2.0):** La arquitectura completa del calendario vive en `GrowthOS/` del repositorio. Este documento mantiene la vista condensada del Calendario Editorial y el HypothesisBank.
+10. **Nueva (v2.3):** Para ahorrar consultas y tokens, solo se consultan deltas de publicaciones y comentarios desde la última sincronización; no se vuelve a descargar toda la historia en cada sesión.
