@@ -1,0 +1,15 @@
+{
+  "tenant_id": "firma-bordados",
+  "client_name": "Firma Bordados",
+  "whatsapp_number": "878 788 0735",
+  "whatsapp_e164": "5218787880735",
+  "contact_channel": "WhatsApp",
+  "excluded_categories": [
+    "parches",
+    "gorras"
+  ],
+  "timezone": "America/Matamoros",
+  "utc_offset_hours": 5,
+  "assets_root": "Firma_Bordados - Drive/Firma Bordados",
+  "created_at": "2026-09-01T04:00:05.530407+00:00"
+}

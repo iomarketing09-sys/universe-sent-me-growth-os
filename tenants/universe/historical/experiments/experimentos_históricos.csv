@@ -1,0 +1,3 @@
+experiment_id,descripcion,fecha_asociada,fuente,estado
+EXP-2026-08-CAL-01,"Calendario agosto: pruebas de horarios y formatos (INFERIDA)","2026-08-24","cortes_diarios_agosto_2026.csv","Histórico"
+EXP-2026-08-COMP-GAPS-01,"Complementos / micro-historias para cubrir gaps de contenido (INFERIDA)","2026-08-24","cortes_diarios_agosto_2026.csv","Histórico"

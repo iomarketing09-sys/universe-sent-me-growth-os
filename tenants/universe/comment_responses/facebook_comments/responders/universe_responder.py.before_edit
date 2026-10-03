@@ -1,0 +1,449 @@
+# universe_responder.py
+"""
+Minimum implementation of the comment responder for Universe Sent Me.
+Follows the CONTRACT_COMMENT_RESPONSES.md and the Manual/Ejemplos.
+"""
+from __future__ import annotations
+from typing import Any, Dict, Optional
+import re
+import random
+
+
+class UniverseResponder:
+    def __init__(self) -> None:
+        # Simple keyword maps for classification (can be expanded)
+        self.humor_keywords = ["jaja", "ja ja", "😂", "lol", "risas", "crack", "divertido", "gracioso", "🤣", "jajaja"]
+        self.identification_keywords = ["me pasa", "soy yo", "literalmente yo", "ese soy yo", "idéntico", "lo soy", "igual", "también", "yo también", "a mí me"]
+        self.personal_experience_keywords = ["me pasó", "mi experiencia", "personal", "en mi caso", "a mí me sucedió"]
+        self.story_keywords = ["novio", "novia", "historia", "chisme", "cuentame", "algo pasó", "algo pasó"]
+        self.question_keywords = ["?", "cómo", "qué", "cuándo", "dónde", "por qué", "cuál", "será"]
+        self.affection_keywords = ["amo", "love", "te quiero", "adoro", "♥", "💖", "te amo", "me encanta"]
+        self.opinion_keywords = ["pienso", "creo", "opino", "parece", "me parece", "opinion", "creo que"]
+        self.disagreement_keywords = ["no", "no creo", "discrepo", "falso", "incorrecto", "estás equivocado", "pero", "sin embargo"]
+        self.troll_keywords = ["idiota", "estúpido", "molesto", "odio", "baste", "callate", "cállate", "basura", "peor", "peor aún"]
+        self.commercial_keywords = ["compro", "vendo", "precio", "cuánto cuesta", "dónde compro", "link", "promo", "descuento", "oferta"]
+        self.spam_keywords = ["http", ".com", "www", "follow me", "suscribete", "visita mi", "gana dinero", "bitcoin", "cripto"]
+        self.mention_pattern = "@"
+
+        # Optional cosmic flair phrases (used probabilistically)
+        self.cosmic_phrases = [
+            "El universo tomó nota de eso.",
+            "Los astros susurraron algo al respecto.",
+            "Una señal interestelar cruzó el feed.",
+            "El destino arquivó este momento bajo 'coincidencias cósmicas'.",
+            "Parece que el cosmos tuvo algo que decir.",
+            "Según mis cálculos intergalácticos, esto estaba escrito.",
+            "La energía del momento resonó en otra galaxia.",
+        ]
+
+        # Phrases that would make the response sound institutional, preachy, or unsafe
+        self.forbidden_phrases = [
+            "deberíamos", "debería", "deberías", "deberían",
+            "es importante que", "es necesario que", "hay que",
+            "tenemos que", "uno debe", "se debería",
+            "diagnosticar", "diagnóstico", "consejo", "aconsejar",
+            "terapia", "terapéutico", "lección", "moraleja",
+            "respecto a", "en cuanto a", " según estudios",
+            "según la ciencia", "demuestra que", "indica que",
+        ]
+
+    def _context_value(self, context: Dict[str, Any], *keys: str) -> str:
+        """Read canonical context while tolerating legacy fixture keys."""
+        for key in keys:
+            value = context.get(key)
+            if value:
+                return str(value)
+        return ""
+
+    def _classify_comment(self, comment: str) -> str:
+        comment_lower = comment.lower()
+        if any(k in comment_lower for k in self.spam_keywords):
+            return "spam"
+        if any(k in comment_lower for k in self.troll_keywords):
+            return "troll"
+        if any(k in comment_lower for k in self.commercial_keywords):
+            return "commercial_intent"
+        if any(k in comment_lower for k in self.question_keywords):
+            return "question"
+        if any(k in comment_lower for k in self.affection_keywords):
+            return "affection"
+        if any(k in comment_lower for k in self.opinion_keywords):
+            return "opinion"
+        if any(k in comment_lower for k in self.disagreement_keywords):
+            return "disagreement"
+        if any(k in comment_lower for k in self.identification_keywords):
+            return "identification"
+        if any(k in comment_lower for k in self.personal_experience_keywords):
+            return "personal_experience"
+        if any(k in comment_lower for k in self.story_keywords):
+            return "story_or_gossip"
+        if any(k in comment_lower for k in self.humor_keywords):
+            return "humor"
+        if self.mention_pattern in comment:
+            return "mention"
+        return "other"
+
+    def _intention_apparent(self, comment_type: str, comment: str) -> str:
+        intentions = {
+            "humor": "Está expresando humor o risa ante la publicación.",
+            "identification": "Se identifica con la situación o personaje de la publicación.",
+            "personal_experience": "Está compartiendo una experiencia personal relacionada.",
+            "story_or_gossip": "Está mencionando una historia personal o chisme relacionado.",
+            "question": "Está haciendo una pregunta legítima sobre la publicación o su contenido.",
+            "affection": "Está expresando afecto o cariño hacia la publicación o su contenido.",
+            "opinion": "Está expresando una opinión o punto de vista sobre la publicación.",
+            "disagreement": "Está expresando desacuerdo o una visión contraria.",
+            "troll": "Está intentando provocar o molestar (troll).",
+            "spam": "Está compartiendo contenido no solicitado o promocional.",
+            "commercial_intent": "Está mostrando intención comercial o de compra/venta.",
+            "mention": "Está mencionando a alguien en específico.",
+            "other": "Está compartiendo un comentario general o de reacción.",
+        }
+        return intentions.get(comment_type, "Está compartiendo un comentario.")
+
+    def _relation_to_meme(self, publication_context: Dict[str, Any], comment: str) -> str:
+        """Determine the relationship between comment and publication context by analyzing meme context."""
+        comment_lower = comment.lower()
+        
+        # Get context values
+        meme_text = self._context_value(publication_context, "meme_text")
+        caption = self._context_value(publication_context, "caption")
+        visual_context = self._context_value(publication_context, "visual_context")
+        character = self._context_value(publication_context, "character")
+        asset_ref = self._context_value(publication_context, "asset_ref")
+        
+        # Check for direct meme text references
+        if meme_text:
+            # Extract key phrases from meme text (words longer than 3 chars)
+            meme_words = [word.strip('.,!?¿¡""''()[]{}') for word in meme_text.lower().split() 
+                         if len(word.strip('.,!?¿¡""''()[]{}')) > 3]
+            # Check if any significant meme word appears in comment
+            if any(word in comment_lower for word in meme_words if len(word) > 4):
+                return "direct_meme_reference"
+        
+        # Check for caption references
+        if caption:
+            caption_words = [word.strip('.,!?¿¡""''()[]{}') for word in caption.lower().split() 
+                           if len(word.strip('.,!?¿¡""''()[]{}')) > 3]
+            if any(word in comment_lower for word in caption_words if len(word) > 4):
+                return "caption_reference"
+                
+        # Check for character references
+        if character and len(character.strip()) > 1:
+            character_lower = character.lower()
+            # Check for character name or nicknames
+            if character_lower in comment_lower or \
+               any(nick in comment_lower for nick in ["el", "la", "los", "las"] if character_lower.startswith(nick) and len(character_lower) > len(nick)+1):
+                return "character_reference"
+        
+        # Check for visual/context references
+        if visual_context:
+            visual_words = [word.strip('.,!?¿¡""''()[]{}') for word in visual_context.lower().split() 
+                          if len(word.strip('.,!?¿¡""''()[]{}')) > 3]
+            if any(word in comment_lower for word in visual_words if len(word) > 4):
+                return "visual_context_reference"
+                
+        # Check for personal identification with the situation
+        identification_phrases = ["me pasa", "soy yo", "me siento", "me identifica", "eso soy yo", 
+                                "me pasó", "me pasó a mí", "a mí me pasa", "me identifica con"]
+        if any(phrase in comment_lower for phrase in identification_phrases):
+            # If also mentions feeling/experience related to meme topic
+            if any(word in comment_lower for word in ["siento", "pasó", "me", "yo"]):
+                return "personal_identification"
+                
+        # Check for humor/extensions of the meme
+        humor_extensions = ["jaja", "ja ja", "😂", "lol", "risas", "crack", "divertido", "gracioso", "🤣", "jajaja", 
+                          "se parte", "parte el alma", "me mató", "me asesinó", "dead", "kill me"]
+        if any(ext in comment_lower for ext in humor_extensions):
+            return "humor_extension"
+            
+        # Check for story/gossip extensions
+        story_extensions = ["historia", "chisme", "novio", "novia", "ex", "pareja", "rola", 
+                          "algo pasó", "entonces", "y luego", "resultado"]
+        if any(ext in comment_lower for ext in story_extensions):
+            return "story_extension"
+            
+        # Check if it's a direct question about the content
+        question_indicators = ["qué", "cómo", "por qué", "cuándo", "dónde", "cuál", " quién", "cómo es", 
+                             "qué significa", "qué dice", "qué quiere decir"]
+        if any(indicator in comment_lower for indicator in question_indicators) and "?" in comment:
+            # Check if question relates to meme content
+            if meme_text and any(word in comment_lower for word in meme_text.lower().split() if len(word) > 4):
+                return "question_about_content"
+            elif caption and any(word in comment_lower for word in caption.lower().split() if len(word) > 4):
+                return "question_about_content"
+                
+        # Default to general reaction if we can't determine a specific relation
+        return "general_reaction"
+
+    def _decision(
+        self,
+        comment_type: str,
+        relation_to_meme: str,
+        intention: str,
+        publication_context: Dict[str, Any],
+    ) -> str:
+        if comment_type == "mention":
+            return "no_response"
+        if comment_type in ["spam", "troll", "commercial_intent"]:
+            return "no_response"
+        if comment_type == "question" and relation_to_meme == "question_about_content":
+            return "respond"
+        if comment_type == "question" and relation_to_meme != "question_about_content":
+            return "review"
+        if comment_type in ["humor", "identification", "personal_experience", "story_or_gossip", "affection"]:
+            return "respond"
+        if comment_type == "opinion":
+            return "respond"
+        if comment_type == "disagreement":
+            return "respond"
+        if comment_type == "other":
+            if relation_to_meme in ["direct_meme_reference", "character_reference", "caption_reference"]:
+                return "respond"
+            if relation_to_meme in ["topic_reference", "personal_identification", "humor_extension", "story_extension", "general_reaction"]:
+                return "review"
+            if relation_to_meme in ["unrelated", "unclear"]:
+                return "no_response"
+        return "no_response"
+
+    def _add_cosmic_optional(self, text: str) -> str:
+        """With 30% probability, append a random cosmic phrase."""
+        if random.random() < 0.3:
+            phrase = random.choice(self.cosmic_phrases)
+            return f"{text} {phrase}"
+        return text
+
+    def _passes_quality(self, text: str) -> bool:
+        """Check that the response does not contain forbidden phrases and sounds natural."""
+        lowered = text.lower()
+        for forbidden in self.forbidden_phrases:
+            if forbidden in lowered:
+                return False
+        # Additional quality checks
+        if len(text.strip()) < 3:
+            return False
+        # Should not be all caps unless very short
+        if len(text) > 10 and text.isupper():
+            return False
+        return True
+
+    def respond(self, publication_context: Dict[str, Any], comment: str) -> Dict[str, Any]:
+        """Main response generation method."""
+        comment_type = self._classify_comment(comment)
+        intention = self._intention_apparent(comment_type, comment)
+        relation_to_meme = self._relation_to_meme(publication_context, comment)
+        decision = self._decision(comment_type, relation_to_meme, intention, publication_context)
+
+        response_text = None
+        if decision == "respond":
+            # Generate a simple contextual response based on comment type and meme context
+            response_text = self._generate_base_response(comment_type, intention, relation_to_meme, publication_context)
+            if response_text and self._passes_quality(response_text):
+                response_text = self._add_cosmic_optional(response_text)
+            else:
+                response_text = None  # Fall back to no response if quality check fails
+
+        result: Dict[str, Any] = {
+            "publication_id": publication_context.get("publication_id"),
+            "comment": comment,
+            "comment_type": comment_type,
+            "apparent_intent": intention,
+            "relation_to_meme": relation_to_meme,
+            "decision": decision,
+            "response": response_text,
+            "risk_level": "low",
+        }
+        
+        # Set risk level and review reason based on decision
+        if decision == "review":
+            result["risk_level"] = "medium"
+            result["review_reason"] = "Requiere revisión humana debido a ambigüedad o posible riesgo."
+        elif decision == "respond":
+            result["risk_level"] = "low"
+        else:  # no_response
+            result["risk_level"] = "low"
+
+        return result
+
+    def _generate_base_response(self, comment_type: str, intention: str, relation_to_meme: str, publication_context: Dict[str, Any]) -> Optional[str]:
+        """Generate a base response based on comment type and context."""
+        # Get meme context for personalization
+        meme_text = self._context_value(publication_context, "meme_text")
+        caption = self._context_value(publication_context, "caption")
+        character = self._context_value(publication_context, "character")
+        
+        # Basic responses by type - these can be made more sophisticated
+        if comment_type == "humor":
+            responses = [
+                "Jaja, sí es bastante relatable 😂",
+                "La verdad me partió también",
+                "Es que es demasiado real",
+                "Sí, el universo tiene sentido del humor",
+                "JAJAJA me identifico totalmente"
+            ]
+            return random.choice(responses)
+            
+        elif comment_type == "identification":
+            responses = [
+                "¡Exacto! Nos pasa a más de uno",
+                "Te entiendo completamente",
+                "Estamos en el mismo barco",
+                "La solidarity es real",
+                "Sí, somos muchos los que hemos estado ahí"
+            ]
+            return random.choice(responses)
+            
+        elif comment_type == "personal_experience":
+            responses = [
+                "Gracias por compartir tu experiencia",
+                "Valoro mucho que hayas abierto tu corazón",
+                "Cada historia cuenta, la tuya importa",
+                "Gracias por confiar y compartir",
+                "Tu experiencia le da valor a esta conversación"
+            ]
+            return random.choice(responses)
+            
+        elif comment_type == "story_or_gossip":
+            responses = [
+                "Wow, qué historia más intensa",
+                "Gracias por confiar y compartir eso",
+                "Cada día aprendemos algo nuevo de las historias de otros",
+                "Gracias por ser parte de esta comunidad",
+                "Historias como la tuya nos hacen crecer"
+            ]
+            return random.choice(responses)
+            
+        elif comment_type == "affection":
+            responses = [
+                "¡Gracias! El amor siempre regresa 💖",
+                "Te quiero mucho también",
+                "Mutuo, siempre",
+                "El cariño es lo que mueve este universo",
+                "Gracias por existir y brindar tu luz"
+            ]
+            return random.choice(responses)
+            
+        elif comment_type == "opinion":
+            responses = [
+                "Punto válido, gracias por compartir tu perspectiva",
+                "Interesante forma de verlo",
+                "Gracias por enriquecer la conversación con tu visión",
+                "Cada opinión suma, gracias por la tuya",
+                "Respetamos tu punto de vista, gracias por compartirlo"
+            ]
+            return random.choice(responses)
+            
+        elif comment_type == "disagreement":
+            responses = [
+                "Gracias por tu perspectiva, aunque no esté de acuerdo",
+                "Entiendo tu punto, aunque lo veo diferente",
+                "Gracias por compartir tu visión, aporta al diálogo",
+                "Respetamos tu opinión, aunque tengamos diferencias",
+                "Gracias por participar, el desacuerdo también enriquece"
+            ]
+            return random.choice(responses)
+            
+        elif comment_type == "question" and relation_to_meme == "question_about_content":
+            # Try to answer based on meme context
+            if meme_text:
+                return f"Según el meme: '{meme_text}' - es una reflexión sobre cómo nos afectan ciertas situaciones."
+            elif caption:
+                return f"La publicación dice: '{caption}' - habla sobre precisamente eso que preguntas."
+            else:
+                return "Buena pregunta, trata sobre cómo ciertas situaciones nos impactan emocionalmente."
+                
+        elif comment_type == "other":
+            if relation_to_meme in ["direct_meme_reference", "character_reference", "caption_reference"]:
+                return "Exacto, le pegaste al tema central de la publicación."
+            elif relation_to_meme in ["humor_extension", "story_extension"]:
+                "Gracias por seguir la onda y agregar tu toque."
+            else:
+                return "Gracias por participar en la conversación."
+                
+        return None  # Default to no response if we can't generate something appropriate
+
+
+# Helper to parse fixture file (for tests)
+def parse_publication_contexts_real(md_path: str) -> list[dict]:
+    """
+    Very permissive parser for the fixture file.
+    Returns a list of dicts with keys matching the Publication Context schema.
+    Missing keys will be None.
+    """
+    with open(md_path, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+    contexts = []
+    current = {}
+    current_date = None  # to store date from lines like "dia 5 de Septiembre"
+    expected_keys = ["publication_id", "published_at", "asset_ref", "post_url", "character", "visual_context", "meme_text", "caption"]
+    for line in lines:
+        stripped = line.strip()
+        # Detect date lines: e.g., "dia 5 de Septiembre", "6 de septiembre", "7 DE SEPTIEMBRE"
+        if stripped.lower().startswith("dia ") or ("de septiembre" in stripped.lower()) or stripped.lower().endswith("de septiembre"):
+            # Extract date: we keep the whole line as date for simplicity
+            current_date = stripped
+            continue
+        # Detect start of a new entry: line with "hora:" or "Hora:"
+        if stripped.lower().startswith("hora:"):
+            # If we have accumulated a context, store it
+            if current:
+                # If we have a date, add it as published_at (we'll keep raw; could be parsed later)
+                if current_date:
+                    current.setdefault("published_at", current_date)
+                # Ensure all expected keys are present
+                for key in expected_keys:
+                    current.setdefault(key, None)
+                contexts.append(current)
+                # Start a new context
+                current = {}
+                # reset date? keep same date for subsequent entries same day
+            # Parse time from hora line
+            # format: "hora: 13:50" or "hora:19:13"
+            time_part = stripped.split(":", 1)[1].strip()
+            current["_hora"] = time_part
+            # We'll combine with date later if needed
+        # Parse known fields
+        if stripped.lower().startswith("asset:"):
+            current["asset_ref"] = stripped.split(":", 1)[1].strip()
+        elif stripped.lower().startswith("posturl:") or stripped.lower().startswith("posurl:"):
+            url = stripped.split(":", 1)[1].strip()
+            # Strip markdown link if present
+            if url.startswith("["):
+                # format [text](url)
+                match = re.search(r"\]\((http[^)]+)\)", url)
+                if match:
+                    url = match.group(1)
+            current["post_url"] = url
+            # Extract fbid and set publication_id
+            match = re.search(r'fbid=(\d+)', url)
+            if match:
+                current["publication_id"] = match.group(1)
+            else:
+                match = re.search(r'/reel/(\d+)', url)
+                if match:
+                    current["publication_id"] = match.group(1)
+        elif stripped.lower().startswith("meme:"):
+            meme = stripped.split(":", 1)[1].strip()
+            # Remove surrounding quotes if present
+            if meme.startswith('"') and meme.endswith('"'):
+                meme = meme[1:-1]
+            current["meme_text"] = meme
+        elif stripped.lower().startswith("caption:"):
+            caption = stripped.split(":", 1)[1].strip()
+            # Remove escape backslashes before #
+            caption = caption.replace("\\#", "#")
+            current["caption"] = caption
+        # character and visual_context are not directly in fixture; leave as None
+    if current:
+        # Add date if we have one
+        if current_date:
+            current.setdefault("published_at", current_date)
+        # Ensure all expected keys are present
+        for key in expected_keys:
+            current.setdefault(key, None)
+        contexts.append(current)
+    # Post-process: fill missing keys with None (already done, but ensure)
+    for c in contexts:
+        for key in expected_keys:
+            c.setdefault(key, None)
+    return contexts

@@ -1,0 +1,12 @@
+{
+  "tenant_id": "universe",
+  "client_name": "Universe Sent Me",
+  "whatsapp_number": "",
+  "whatsapp_e164": "",
+  "contact_channel": "Instagram DM",
+  "excluded_categories": [],
+  "timezone": "America/Matamoros",
+  "utc_offset_hours": 5,
+  "assets_root": "Universe sent me/USM",
+  "created_at": "2026-09-06T08:00:00.000000+00:00"
+}

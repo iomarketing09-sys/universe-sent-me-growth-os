@@ -1,0 +1,8 @@
+id,question,evidence_level,source,source_reference,date,status
+OQ-001,Does First Circle > Second Circle in engagement?,pending,cortes_diarios_agosto_2026.csv,/home/universe-sent-me/growth-os/tenants/universe/historical/publications/cortes_diarios_agosto_2026.csv,2026-08-24,pending
+OQ-002,Do Reels surpass Photos in retention?,uncertain,No source,No source,,uncertain
+OQ-003,What is the best hour by character for engagement?,uncertain,No source,No source,,uncertain
+OQ-004,What is the engagement rate (interactions/impressions) per post?,uncertain,No source,No source,,uncertain
+OQ-005,What are the E0/E24/E72 historical baselines?,uncertain,No source,No source,,uncertain
+OQ-006,What is the complete asset → publication → metric lineage for the 200 assets?,uncertain,No source,No source,,uncertain
+OQ-007,What are the CTR, clicks, saves, DMs, leads per post?,uncertain,No source,No source,,uncertain

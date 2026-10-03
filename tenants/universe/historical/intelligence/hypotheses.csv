@@ -1,0 +1,13 @@
+id,statement,evidence_level,source,source_reference,date,status
+HYP-003,Universe/humor absurdo generates more shares,inferred,cortes_diarios_agosto_2026.csv,/home/universe-sent-me/growth-os/tenants/universe/historical/publications/cortes_diarios_agosto_2026.csv,2026-08-24,inferred
+HYP-004,Hour 19:00/17:00 surpasses other hours in reach,probable,cortes_diarios_agosto_2026.csv,/home/universe-sent-me/growth-os/tenants/universe/historical/publications/cortes_diarios_agosto_2026.csv,2026-08-24,probable
+HYP-005,First Circle > Second Circle in engagement,pending,cortes_diarios_agosto_2026.csv,/home/universe-sent-me/growth-os/tenants/universe/historical/publications/cortes_diarios_agosto_2026.csv,2026-08-24,pending
+HYP-006,Micro-history romantic/absurd 3-panel generates engagement,inferred,cortes_diarios_agosto_2026.csv,/home/universe-sent-me/growth-os/tenants/universe/historical/publications/cortes_diarios_agosto_2026.csv,2026-08-24,inferred
+HYP-007,Micro-history quotidian 3-panel generates engagement,inferred,cortes_diarios_agosto_2026.csv,/home/universe-sent-me/growth-os/tenants/universe/historical/publications/cortes_diarios_agosto_2026.csv,2026-08-24,inferred
+HIST-CANDIDATE-001,Universe/humor absurdo generates more shares (alternative ID HB-008),inferred,Integracion_Growth_OS.md,/home/universe-sent-me/universe-sent-me-growth-os/GrowthOS/Integracion_Growth_OS.md,2026-08-23,candidate
+HIST-CANDIDATE-002,Reels surpass Photos in retention,inferred,Integracion_Growth_OS.md,/home/universe-sent-me/universe-sent-me-growth-os/GrowthOS/Integracion_Growth_OS.md,2026-08-23,candidate
+HIST-CANDIDATE-003,Hour 20:00 > 08:30 in nocturnal reach,inferred,Integracion_Growth_OS.md,/home/universe-sent-me/universe-sent-me-growth-os/GrowthOS/Integracion_Growth_OS.md,2026-08-23,candidate
+HIST-CANDIDATE-004,Minimalism increases shares,probable,2026-08-08_Reporte_Mensual_Junio_Julio_2026.md,/home/universe-sent-me/universe-sent-me-growth-os/Operations/Research/2026-08-08_Reporte_Mensual_Junio_Julio_2026.md,2026-08-08,probable
+HIST-CANDIDATE-005,Hour 11:00 and 21:00 have higher engagement,probable,rendimiento_horario_junio_2026.csv,/home/universe-sent-me/growth-os/tenants/universe/historical/metrics/rendimiento_horario_junio_2026.csv,2026-06,probable
+HIST-CANDIDATE-006,Kael/lore generates more shares than Universe/humor,inferred,cortes_diarios_agosto_2026.csv,/home/universe-sent-me/growth-os/tenants/universe/historical/publications/cortes_diarios_agosto_2026.csv,2026-08-24,inferred
+HIST-CANDIDATE-007,Micro-history 3-panel generates decent engagement,inferred,cortes_diarios_agosto_2026.csv,/home/universe-sent-me/growth-os/tenants/universe/historical/publications/cortes_diarios_agosto_2026.csv,2026-08-24,inferred

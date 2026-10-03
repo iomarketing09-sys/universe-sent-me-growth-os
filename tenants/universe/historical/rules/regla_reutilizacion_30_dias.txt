@@ -1,0 +1,20 @@
+REGLA DEL SISTEMA: Reutilización de contenido - Ventana de 30 días
+================================================================
+
+"Un meme no puede reutilizarse si fue publicado durante los últimos 30 días."
+
+APLICACIÓN:
+- Antes de seleccionar cualquier asset para nueva publicación, el proceso de selección DEBE:
+  1. Consultar el historial de publicaciones (historical/publications/) para verificar si ese asset ya apareció en una publicación histórica (usando asset_ref o asset_filename).
+  2. Si apareció, verificar la fecha de publicación (date_local / time_local).
+  3. Si (fecha_publicación + 30 días) > fecha_candidata_publicación → NO reutilizar el asset.
+  4. Si no apareció en el historial O pasó la ventana de 30 días → considerar el asset como disponible.
+
+LIMITACIONES ACTUALES:
+- Esta regla NO se ha aplicado retrospectivamente a todo el historial.
+- No existe un vínculo perfecto asset → publicación para todos los assets históricos.
+- La regla debe ser consultada manualmente por el proceso de selección de contenido.
+- No hay automatización implementada en esta fase.
+
+FECHA DE REGISTRO: 2026-09-06
+AUTORIDAD: Integración histórica del tenant universe (Growth OS multi-tenant)

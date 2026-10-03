@@ -1,0 +1,4 @@
+﻿hypothesis_id,descripcion,metrica_principal,criterio_exito,estado,fecha_creacion,fecha_cierre,observaciones_ids,veredicto_final
+HB-001,Posts de tipo 'Trabajo del día' (fotos reales) generan mayor engagement que posts corporativos,mediana_interacciones,Mediana > 25 interacciones por post en 7 días,Activa,2026-09-06,,OBS-C9D11C6E,
+HB-002,Horario 14:30 (hora de comida) supera a 08:30 y 20:00 en alcance,interacciones_totales,Promedio 14:30 > 20% vs otros horarios,Activa,2026-09-06,,,
+HB-003,Incluir WhatsApp en el caption aumenta DMs y leads,DMs,DMs > 2 por post con WhatsApp vs < 1 sin,Activa,2026-09-06,,,

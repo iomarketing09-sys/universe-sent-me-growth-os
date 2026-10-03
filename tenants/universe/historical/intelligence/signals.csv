@@ -1,0 +1,5 @@
+id,statement,evidence_level,source,source_reference,date,status
+SIGNAL-001,In the August 24 test, 19:00 and 17:00 showed higher interaction than other time slots.,probable,cortes_diarios_agosto_2026.csv,/home/universe-sent-me/growth-os/tenants/universe/historical/publications/cortes_diarios_agosto_2026.csv,2026-08-24,
+SIGNAL-002,Kael appears to generate more shares than Universe in the August 24 test.,probable,cortes_diarios_agosto_2026.csv,/home/universe-sent-me/growth-os/tenants/universe/historical/publications/cortes_diarios_agosto_2026.csv,2026-08-24,
+SIGNAL-003,Micro-history 3-panel format shows decent engagement (25-29 interactions).,probable,cortes_diarios_agosto_2026.csv,/home/universe-sent-me/growth-os/tenants/universe/historical/publications/cortes_diarios_agosto_2026.csv,2026-08-24,
+SIGNAL-004,June hourly performance shows strong interaction at 11:00 and 21:00 (average interactions per post ~245 and ~215).,probable,rendimiento_horario_junio_2026.csv,/home/universe-sent-me/growth-os/tenants/universe/historical/metrics/rendimiento_horario_junio_2026.csv,2026-06,

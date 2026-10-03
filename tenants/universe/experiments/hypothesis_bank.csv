@@ -1,0 +1,5 @@
+hypothesis_id,descripcion,metrica_principal,criterio_exito,estado,fecha_creacion,fecha_cierre,observaciones_ids,veredicto_final
+HB-UNI-001,Personajes Primer Círculo generan más engagement que Segundo Círculo,mediana_interacciones,Mediana Primer Círculo > Mediana Segundo Círculo en 7 días,Activa,2026-09-06,,,
+HB-UNI-002,Formato Reel (video) supera a PHOTO en retención,video_watch_time_pct,Completion rate > 50% en Reels vs PHOTO,Activa,2026-09-06,,,
+HB-UNI-003,Humor existencial/absurdo (Universe) genera más shares,shares_por_interaccion,Shares/interacción > 15% en posts Universe,Activa,2026-09-06,,,
+HB-UNI-004,Horario 20:00 supera a 08:30 en alcance nocturno,reach,Reach 20:00 > 20% vs 08:30 mismo personaje,Activa,2026-09-06,,,

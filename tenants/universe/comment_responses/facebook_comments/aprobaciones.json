@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-10-03T21:46:41.185895+00:00",
+  "lookback_hours": 48,
+  "total_pending": 1,
+  "instructions": "Cambia 'approved: true' en los comentarios que quieras publicar y edita el texto si deseas.",
+  "approvals": [
+    {
+      "comment_id": "122171836383072582_1129429636093527",
+      "author": "Usuario",
+      "comment_text": "Yo no, pero hacerle creer que le creía me resultaba entretenido.",
+      "character": "Silvio",
+      "approved_response": null,
+      "approved": false
+    }
+  ]
+}

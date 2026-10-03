@@ -1,0 +1,174 @@
+{
+  "version": "1.0",
+  "generated_from": [
+    "tenants/firma-bordados/assets/Firma Bordados / (root assets)",
+    "Google Drive sync (week 31 ago - 6 sep 2026)"
+  ],
+  "business_constraints": {
+    "excluded_categories": ["parches", "gorras"],
+    "whatsapp_contact": "878 788 0735",
+    "contact_channel": "WhatsApp"
+  },
+  "assets": [
+    {
+      "asset_ref": "lunes_detalle_uniforme",
+      "calendar_references": ["lunes_detalle_uniforme", "01_lunes_detalle_uniforme"],
+      "source_file_key": "01_lunes_detalle_uniforme.png",
+      "source_filename": "01_lunes_detalle_uniforme.png",
+      "source_path": null,
+      "description": "Detalle de uniforme - Lunes",
+      "evidence_source": "tenants/firma-bordados/assets/Firma Bordados /01_lunes_detalle_uniforme.png",
+      "confidence": "DETERMINISTIC"
+    },
+    {
+      "asset_ref": "img_wa_0003",
+      "calendar_references": ["IMG-20260821-WA0003.jpg"],
+      "source_file_key": "IMG-20260821-WA0003.jpg",
+      "source_filename": "IMG-20260821-WA0003.jpg",
+      "source_path": null,
+      "description": "Imagen WhatsApp 2026-08-21",
+      "evidence_source": "tenants/firma-bordados/assets/Firma Bordados /IMG-20260821-WA0003.jpg",
+      "confidence": "DETERMINISTIC"
+    },
+    {
+      "asset_ref": "calidad_logo_bordado",
+      "calendar_references": ["2026-08-25_calidad_logo_bordado", "calidad logo bordado"],
+      "source_file_key": "2026-08-25_calidad_logo_bordado.png",
+      "source_filename": "2026-08-25_calidad_logo_bordado.png",
+      "source_path": "Publicaciones Agosto/24 al 30 Agosto 2026/03 Creativos Ejecutivos/",
+      "description": "Calidad del logo bordado - 25 agosto",
+      "evidence_source": "tenants/firma-bordados/assets/Firma Bordados /Publicaciones Agosto/24 al 30 Agosto 2026/03 Creativos Ejecutivos/2026-08-25_calidad_logo_bordado.png",
+      "confidence": "DETERMINISTIC"
+    },
+    {
+      "asset_ref": "video_20_anos",
+      "calendar_references": ["20 años bordando en Piedras Negras", "VID-20260821-WA0002"],
+      "source_file_key": "VID-20260821-WA0002.mp4",
+      "source_filename": "VID-20260821-WA0002.mp4",
+      "source_path": null,
+      "description": "Video institucional 20 años",
+      "evidence_source": "tenants/firma-bordados/assets/Firma Bordados /VID-20260821-WA0002.mp4",
+      "confidence": "DETERMINISTIC"
+    },
+    {
+      "asset_ref": "miercoles_nombres_bordados",
+      "calendar_references": ["miércoles nombres bordados", "03_miercoles_nombres_bordados"],
+      "source_file_key": "03_miercoles_nombres_bordados.png",
+      "source_filename": "03_miercoles_nombres_bordados.png",
+      "source_path": null,
+      "description": "Nombres bordados - Miércoles",
+      "evidence_source": "tenants/firma-bordados/assets/Firma Bordados /03_miercoles_nombres_bordados.png",
+      "confidence": "DETERMINISTIC"
+    },
+    {
+      "asset_ref": "fb_img_1787256185059",
+      "calendar_references": ["FB_IMG_1787256185059"],
+      "source_file_key": "FB_IMG_1787256185059.jpg",
+      "source_filename": "FB_IMG_1787256185059.jpg",
+      "source_path": null,
+      "description": "Facebook image 1787256185059",
+      "evidence_source": "tenants/firma-bordados/assets/Firma Bordados /FB_IMG_1787256185059.jpg",
+      "confidence": "DETERMINISTIC"
+    },
+    {
+      "asset_ref": "jueves_que_personalizarias",
+      "calendar_references": ["jueves que personalizarias", "04_jueves_que_personalizarias"],
+      "source_file_key": "04_jueves_que_personalizarias.png",
+      "source_filename": "04_jueves_que_personalizarias.png",
+      "source_path": null,
+      "description": "¿Qué personalizarías? - Jueves",
+      "evidence_source": "tenants/firma-bordados/assets/Firma Bordados /04_jueves_que_personalizarias.png",
+      "confidence": "DETERMINISTIC"
+    },
+    {
+      "asset_ref": "iniciales_monogramas",
+      "calendar_references": ["2026-08-27_iniciales_monogramas", "iniciales monogramas"],
+      "source_file_key": "2026-08-27_iniciales_monogramas.png",
+      "source_filename": "2026-08-27_iniciales_monogramas.png",
+      "source_path": "Publicaciones Agosto/24 al 30 Agosto 2026/03 Creativos Ejecutivos/",
+      "description": "Iniciales y monogramas - 27 agosto",
+      "evidence_source": "tenants/firma-bordados/assets/Firma Bordados /Publicaciones Agosto/24 al 30 Agosto 2026/03 Creativos Ejecutivos/2026-08-27_iniciales_monogramas.png",
+      "confidence": "DETERMINISTIC"
+    },
+    {
+      "asset_ref": "fb_img_1787256197738",
+      "calendar_references": ["FB_IMG_1787256197738"],
+      "source_file_key": "FB_IMG_1787256197738.jpg",
+      "source_filename": "FB_IMG_1787256197738.jpg",
+      "source_path": null,
+      "description": "Facebook image 1787256197738",
+      "evidence_source": "tenants/firma-bordados/assets/Firma Bordados /FB_IMG_1787256197738.jpg",
+      "confidence": "DETERMINISTIC"
+    },
+    {
+      "asset_ref": "file_catalog_myo",
+      "calendar_references": ["file_000000001ca481fd88fd4c3d4fc21d8a", "catálogo MyO"],
+      "source_file_key": "file_000000001ca481fd88fd4c3d4fc21d8a.png",
+      "source_filename": "file_000000001ca481fd88fd4c3d4fc21d8a.png",
+      "source_path": null,
+      "description": "Catálogo MyO - imagen de Drive",
+      "evidence_source": "tenants/firma-bordados/assets/Firma Bordados /file_000000001ca481fd88fd4c3d4fc21d8a.png",
+      "confidence": "DETERMINISTIC"
+    },
+    {
+      "asset_ref": "fb_img_1787256206553",
+      "calendar_references": ["FB_IMG_1787256206553"],
+      "source_file_key": "FB_IMG_1787256206553.jpg",
+      "source_filename": "FB_IMG_1787256206553.jpg",
+      "source_path": null,
+      "description": "Facebook image 1787256206553",
+      "evidence_source": "tenants/firma-bordados/assets/Firma Bordados /FB_IMG_1787256206553.jpg",
+      "confidence": "DETERMINISTIC"
+    },
+    {
+      "asset_ref": "sabado_etiqueta_negocio_local",
+      "calendar_references": ["sábado etiqueta negocio local", "05_sabado_etiqueta_negocio_local"],
+      "source_file_key": "05_sabado_etiqueta_negocio_local.png",
+      "source_filename": "05_sabado_etiqueta_negocio_local.png",
+      "source_path": null,
+      "description": "Etiqueta negocio local - Sábado",
+      "evidence_source": "tenants/firma-bordados/assets/Firma Bordados /05_sabado_etiqueta_negocio_local.png",
+      "confidence": "DETERMINISTIC"
+    },
+    {
+      "asset_ref": "guia_pedido",
+      "calendar_references": ["2026-08-29_guia_pedido", "guía pedido"],
+      "source_file_key": "2026-08-29_guia_pedido.png",
+      "source_filename": "2026-08-29_guia_pedido.png",
+      "source_path": "Publicaciones Agosto/24 al 30 Agosto 2026/03 Creativos Ejecutivos/",
+      "description": "Guía de pedido - 29 agosto",
+      "evidence_source": "tenants/firma-bordados/assets/Firma Bordados /Publicaciones Agosto/24 al 30 Agosto 2026/03 Creativos Ejecutivos/2026-08-29_guia_pedido.png",
+      "confidence": "DETERMINISTIC"
+    },
+    {
+      "asset_ref": "fb_img_1787256161650",
+      "calendar_references": ["FB_IMG_1787256161650"],
+      "source_file_key": "FB_IMG_1787256161650.jpg",
+      "source_filename": "FB_IMG_1787256161650.jpg",
+      "source_path": null,
+      "description": "Facebook image 1787256161650",
+      "evidence_source": "tenants/firma-bordados/assets/Firma Bordados /FB_IMG_1787256161650.jpg",
+      "confidence": "DETERMINISTIC"
+    },
+    {
+      "asset_ref": "firma_bordados_reel",
+      "calendar_references": ["Firma_Bordados_1", "reel firma bordados"],
+      "source_file_key": "Firma_Bordados_1.mp4",
+      "source_filename": "Firma_Bordados_1.mp4",
+      "source_path": "Publicaciones Agosto/Reels/",
+      "description": "Reel institucional Firma Bordados",
+      "evidence_source": "tenants/firma-bordados/assets/Firma Bordados /Publicaciones Agosto/Reels/Firma_Bordados_1.mp4",
+      "confidence": "DETERMINISTIC"
+    },
+    {
+      "asset_ref": "domingo_agenda_pedido_v2",
+      "calendar_references": ["domingo agenda pedido v2 contacto", "06_domingo_agenda_pedido_v2_contacto"],
+      "source_file_key": "06_domingo_agenda_pedido_v2_contacto.png",
+      "source_filename": "06_domingo_agenda_pedido_v2_contacto.png",
+      "source_path": null,
+      "description": "Agenda pedido v2 con contacto - Domingo",
+      "evidence_source": "tenants/firma-bordados/assets/Firma Bordados /06_domingo_agenda_pedido_v2_contacto.png",
+      "confidence": "DETERMINISTIC"
+    }
+  ]
+}

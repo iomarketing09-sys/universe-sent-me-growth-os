@@ -1,0 +1,19 @@
+[Script Info]
+Title: Bam in a Can - CAN-008 Subtitles
+ScriptType: v4.00+
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+YCbCr Matrix: TV.601
+PlayResX: 1080
+PlayResY: 1920
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,52,&H00FFFFFF,&H000000FF,&H00000000,&H90000000,-1,0,0,0,100,100,0,0,3,3,0,2,60,60,340,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.60,0:00:02.80,Default,,0,0,0,,COLLECTION UNIT: CAN-008
+Dialogue: 0,0:00:03.00,0:00:06.80,Default,,0,0,0,,In 1925, certified radium water was sold as an elixir.
+Dialogue: 0,0:00:07.00,0:00:10.50,Default,,0,0,0,,One bottle per day... until your bones dissolved.
+Dialogue: 0,0:00:10.80,0:00:13.80,Default,,0,0,0,,Sealed for your protection. Do not drink the water.

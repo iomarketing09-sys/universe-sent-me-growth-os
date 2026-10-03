@@ -1,0 +1,3 @@
+id,statement,evidence_level,source,source_reference,date,status
+RULE-001,No piece may be reused if less than 30 days have passed since its last publication.,confirmed_descriptive,06_00_Reglas_Aprendizaje_Tendencias.md,/home/universe-sent-me/universe-sent-me-growth-os/GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md,2026-08-01,rule
+RULE-002,Never propose content whose temporalidad does not correspond with the current date.,confirmed_descriptive,06_00_Reglas_Aprendizaje_Tendencias.md,/home/universe-sent-me/universe-sent-me-growth-os/GrowthOS/06_00_Reglas_Aprendizaje_Tendencias.md,2026-08-01,rule

@@ -1,0 +1,6 @@
+hypothesis_id,descripcion,criterio_exito,estado,fuente
+HB-003,"Humor absurdo/Universe genera más shares (INFERIDA)","Shares/interacción > 15% (INFERIDO)","Histórico","cortes_diarios_agosto_2026.csv"
+HB-004,"Horario 19:00/17:00 supera a otros horarios en alcance (INFERIDA)","Reach en horarios pico > 20% vs horarios base (INFERIDO)","Histórico","cortes_diarios_agosto_2026.csv"
+HB-005,"Personajes Primer Círculo (Kael, Universe, Wilfred) generan más engagement (INFERIDA)","Mediana interacciones Primer Círculo > Segundo Círculo (INFERIDO)","Histórico","cortes_diarios_agosto_2026.csv"
+HB-006,"Micro-historias románticas/absurdasa (3 paneles) generan engagement (INFERIDA)","Completion rate / interacciones > umbral (INFERIDO)","Histórico","cortes_diarios_agosto_2026.csv"
+HB-007,"Micro-historias cotidianas (3 paneles) generan engagement (INFERIDA)","Completion rate / interacciones > umbral (INFERIDO)","Histórico","cortes_diarios_agosto_2026.csv"
