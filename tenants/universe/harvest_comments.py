@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """
 harvest_comments.py - Recolector Unificado On-Demand para Universe Sent Me.
+Monitoreo de salud instantáneo de OmniRoute y desacoplamiento seguro.
 """
 import os
 import sys
 import shutil
+import socket
 import subprocess
 from pathlib import Path
 
@@ -17,10 +19,29 @@ DRIVE_CANDIDATES = [
     Path("/home/universe-sent-me/GoogleDrive/Growth OS"),
 ]
 
+def check_omniroute(host: str = "127.0.0.1", port: int = 20128, timeout: float = 1.0) -> bool:
+    """Verifica si el puerto local de OmniRoute está activo vía handshake TCP."""
+    try:
+        with socket.create_connection((host, port), timeout=timeout):
+            return True
+    except Exception:
+        return False
+
 def main():
     print("=" * 70)
     print("📥 INICIANDO RECOLECCIÓN UNIFICADA DE COMENTARIOS (ON-DEMAND)")
     print("=" * 70)
+
+    # 0. Monitoreo de salud de OmniRoute
+    print("🤖 [0/4] Verificando estado del gateway OmniRoute (:20128)...")
+    if check_omniroute():
+        print("   ✅ OmniRoute ACTIVO en 127.0.0.1:20128")
+        print("   ➔ Las propuestas en voz de personaje se generarán automáticamente.")
+    else:
+        print("   ⚠️  [ALERTA] OmniRoute APAGADO en 127.0.0.1:20128")
+        print("   ℹ️  La recolección de Meta continuará sin interrupciones.")
+        print("   ➔ Las propuestas saldrán en 'null' para redactarse en Gemini chat.")
+        print("   💡 Tip: Para activar el generador local, ejecuta 'omniroute' en otra terminal.\n")
 
     # 1. Reconciliar contextos
     reconcile_script = TENANT_DIR / "reconcile_contexts.py"
@@ -47,7 +68,7 @@ def main():
     try:
         res = subprocess.run([sys.executable, str(main_script), "--dry-run", "--max-comments", "100"], cwd=str(COMM_DIR), capture_output=True, text=True)
         for line in res.stdout.splitlines():
-            if any(k in line for k in ["Total comentarios", "Descartados", "Requieren revision", "Propuestas", "RESUMEN", "seen"]):
+            if any(k in line for k in ["Total comentarios", "Descartados", "Requieren revision", "Propuestas", "RESUMEN", "seen", "OmniRoute", "Aviso"]):
                 print(f"   {line}")
     except Exception as e:
         print(f"❌ Error al ejecutar extracción: {e}")
