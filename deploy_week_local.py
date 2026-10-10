@@ -31,14 +31,14 @@ DRYRUN_PATH = GROWTH_ROOT / "dryrun_output.json"
 GOOGLE_DRIVE_ASSETS = Path("/home/universe-sent-me/GoogleDrive/01 - Firma Assets")
 
 # Google Doc ID del manifesto
-GOOGLE_DOC_ID = "1i3jrmwerVeKLHOE5hpLTaTiBWBvSasrYBPqEgByER0U"
+GOOGLE_DOC_ID = "1ici91OJUc5oJaRdUY6dn_Y53JNyYI0qUdy-u2syLbxM"
 GOOGLE_DOC_EXPORT_URL = f"https://docs.google.com/document/d/{GOOGLE_DOC_ID}/export?format=txt"
 
 # Zona horaria local (America/Matamoros = UTC-5)
 LOCAL_TZ = timezone(timedelta(hours=-5))
 
 # Slots ya programados (omitir)
-SKIP_SLOTS = {"firma-bordados-20260902-evening-13"}  # Slot #13
+SKIP_SLOTS = set()
 
 @dataclass
 class MetaResponse:
