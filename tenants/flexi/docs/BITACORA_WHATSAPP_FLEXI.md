@@ -95,8 +95,9 @@ sube después** del `deploy`, porque Cloudflare no permite secretos de un script
 ### Limpieza de restos del receptor local y del túnel (2026-10-16)
 
 Con el Worker en producción quedaron obsoletos los artefactos del respaldo local y del túnel efímero.
-**Ojo: nada de `tenants/flexi/` está versionado en git (0 archivos rastreados)**, así que las bajas son
-**irreversibles**; por eso se eliminó solo basura verificada.
+En ese momento **nada de `tenants/flexi/` estaba versionado en git (0 archivos rastreados)**, así que las bajas
+eran **irreversibles**; por eso se eliminó solo basura verificada. **Ese riesgo ya se cerró el mismo día con el
+commit `53851d0`** (ver más abajo).
 
 | Eliminado | Por qué | Nota |
 |---|---|---|
@@ -110,10 +111,22 @@ Con el Worker en producción quedaron obsoletos los artefactos del respaldo loca
 
 **Se conserva a propósito:** `whatsapp/webhook/server.py` (12 KB, respaldo para depurar sin dependencias),
 `/tmp/wrangler-config` y `/tmp/wrangler-logs` (los usa `deploy.sh`), y el resto de `/tmp` que es de sistema o de otros trabajos.
-**Pendiente de decisión del cliente:** retirar por completo `webhook/server.py` (ya no aporta), revisar
-`docs/Catálogo disponibles/` (copia con nombres del cliente) y `docs/Flexi monetizacion1/` (material de marzo),
-borrar `data/visual_assets_cache.backup_20261016.json` y, sobre todo, **versionar `tenants/flexi/`** para que
-las bajas dejen de ser irreversibles.
+
+### Versionado del tenant y archivo de material (2026-10-16, aprobado por el cliente)
+
+- ✅ **Commit `53851d0`** — `chore(flexi): versionar el tenant flexi`: **90 archivos / 39,645 líneas (~4 MB)**.
+  Desde aquí las bajas en `tenants/flexi/` dejan de ser irreversibles.
+- 🚫 **Excluido del versionado: `tenants/flexi/assets/` (~8.2 GB)** — 402 imágenes y PDF del cliente que viven en
+  Drive; regla añadida a `.gitignore`. El inventario derivado sí quedó en `data/` (`asset_manifest.json`,
+  `visual_assets_cache.json`, `catalogo_flexi_confirmado.csv`). Motivo: git no es el lugar para 8 GB de binarios.
+- **Sin secretos:** `.env` está ignorado (`tenants/*/.env`) y se verificó que ningún token entró al commit.
+- 📦 **Archivado (no borrado):** `docs/Catálogo disponibles/` (3 imágenes con nombres perdidos del cliente) y
+  `docs/Flexi monetizacion1/` (material de marzo 2026) se movieron a `docs/_archivo/` con un `README.md` que
+  explica qué es cada cosa y cómo revertirlo.
+- 🗑️ **Borrado:** `data/visual_assets_cache.backup_20261016.json` (snapshot pre-filtro de 323 entradas) por ser un
+  caché **regenerable** — los archivos que referencia siguen en `assets/` y en Drive; el vigente es
+  `data/visual_assets_cache.json` (75 entradas).
+- ⏳ Queda por decidir: retirar por completo `whatsapp/webhook/server.py` (hoy respaldo de depuración).
 
 ### Pendientes de WhatsApp
 - [x] Corregir formato `**` → `*` en respuestas de app (2026-10-16)

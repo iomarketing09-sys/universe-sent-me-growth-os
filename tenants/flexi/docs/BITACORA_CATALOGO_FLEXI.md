@@ -86,7 +86,8 @@
 1. La campaña OI26 (Flexi/Quirelli) **ya está copiada** en `assets/` → reprocesarla con visión sería redundante.
 2. **`Flexi Country` NO está en `assets/`** (0 coincidencias) → es material no integrado.
 3. La carpeta de **nombres perdidos** (`Catálogo disponibles/Productos /{Flexii,Quirellii}`) **NO está en `assets/`** y **no se cruza con la campaña** → es material nuevo, el único realmente por catalogar.
-4. Ya existe copia de 3 imágenes en `docs/Catálogo disponibles/` (IMG-20261012-WA0005/6/7).
+4. Ya existe copia de 3 imágenes en `docs/Catálogo disponibles/` (IMG-20261012-WA0005/6/7) — **movida el
+   2026-10-16 a `docs/_archivo/Catálogo disponibles/`** (ver `docs/_archivo/README.md`).
 
 **Cobertura del catálogo en `assets/`: solo 5 de 54 modelos** tienen carpeta
 (`142801, 142901, 143001, 143201, 306703`). Los otros 49 no tienen ningún asset.
