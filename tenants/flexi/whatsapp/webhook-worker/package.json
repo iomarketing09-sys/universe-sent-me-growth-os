@@ -1,0 +1,9 @@
+{
+  "name": "flexi-whatsapp-webhook",
+  "private": true,
+  "type": "module",
+  "description": "Receptor solo-escucha del webhook de WhatsApp para el tenant flexi (Cloudflare Worker + D1).",
+  "scripts": {
+    "test": "node test/smoke.mjs"
+  }
+}

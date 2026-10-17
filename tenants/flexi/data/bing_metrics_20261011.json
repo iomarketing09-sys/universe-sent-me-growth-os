@@ -1,0 +1,21 @@
+{
+  "site_url": "https://linktr.ee/flexipiedrasnegras",
+  "period_start": "2026-10-04",
+  "period_end": "2026-10-11",
+  "total_clicks": 0,
+  "total_impressions": 0,
+  "average_ctr": 0.0,
+  "average_position": 0.0,
+  "top_queries": [],
+  "indexed_pages": 0,
+  "crawl_errors": 0,
+  "raw_data": {
+    "source": "config.json",
+    "metrics_config": {
+      "clicks": 0,
+      "impressions": 0,
+      "ctr": 0.0,
+      "position": 0.0
+    }
+  }
+}

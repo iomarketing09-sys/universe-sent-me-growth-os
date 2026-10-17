@@ -1,0 +1,22 @@
+{
+  "place_id": "ChIJJWR9SOGLX4YRKGJp-YjEUZY",
+  "name": "Zapateria Flexi Piedras Negras",
+  "address": "Piedras Negras, Coahuila, México",
+  "phone": "+52 878 138 5284",
+  "website": "https://linktr.ee/flexipiedrasnegras",
+  "categories": [],
+  "hours": null,
+  "latitude": null,
+  "longitude": null,
+  "rating": 0.0,
+  "review_count": 0,
+  "photos_count": 0,
+  "verified": false,
+  "raw_data": {
+    "source": "config.json",
+    "gbp_config": {
+      "place_id": "ChIJJWR9SOGLX4YRKGJp-YjEUZY",
+      "website": "https://linktr.ee/flexipiedrasnegras"
+    }
+  }
+}

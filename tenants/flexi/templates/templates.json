@@ -1,0 +1,115 @@
+{
+  "bienvenida": {
+    "name": "bienvenida",
+    "category": "UTILITY",
+    "language": "es_MX",
+    "header": "¡Bienvenido a {{1}}!",
+    "header_type": "TEXT",
+    "body": "Hola {{2}}, gracias por contactar a {{1}}. Soy tu asistente virtual. ¿En qué te puedo ayudar hoy? 😊",
+    "footer": "Responde 'ayuda' para ver opciones",
+    "buttons": [
+      {"type": "QUICK_REPLY", "text": "Ver productos"},
+      {"type": "QUICK_REPLY", "text": "Hablar con humano"},
+      {"type": "QUICK_REPLY", "text": "Ubicación"}
+    ],
+    "status": "APPROVED",
+    "meta_template_id": "1419854380122296",
+    "variables": ["business_name", "customer_name"],
+    "created_at": "2026-10-16T14:36:00",
+    "approved_at": "2026-10-16T15:06:00"
+  },
+  "confirmacion_pedido": {
+    "name": "confirmacion_pedido",
+    "category": "UTILITY",
+    "language": "es_MX",
+    "header": "Pedido Confirmado",
+    "header_type": "TEXT",
+    "body": "Hola {{1}}, tu pedido #{{2}} ha sido confirmado.\n\n📦 Producto: {{3}}\n💰 Total: ${{4}}\n🚚 Envío: {{5}}\n\nLlegará en {{6}} días hábiles.",
+    "footer": "¿Dudas? Responde a este mensaje",
+    "buttons": [
+      {"type": "QUICK_REPLY", "text": "Rastrear pedido"},
+      {"type": "QUICK_REPLY", "text": "Contactar soporte"}
+    ],
+    "status": "APPROVED",
+    "meta_template_id": "2299930924141391",
+    "variables": ["customer_name", "order_id", "product", "total", "shipping", "days"],
+    "created_at": "2026-10-16T14:39:00",
+    "approved_at": "2026-10-16T15:06:00"
+  },
+  "recordatorio_carrito": {
+    "name": "recordatorio_carrito",
+    "category": "MARKETING",
+    "language": "es_MX",
+    "header": "Tu carrito te espera",
+    "header_type": "TEXT",
+    "body": "Hola {{1}}, dejaste {{2}} en tu carrito. ¿Te ayudamos a completar tu compra?\n\n✨ {{3}}\n💰 ${{4}}\n\nLa oferta vence en {{5}}, ¡no la dejes pasar!",
+    "footer": "Responde 'SI' para continuar",
+    "buttons": [
+      {"type": "QUICK_REPLY", "text": "Completar compra"},
+      {"type": "QUICK_REPLY", "text": "Ver otras opciones"},
+      {"type": "QUICK_REPLY", "text": "Eliminar carrito"}
+    ],
+    "status": "APPROVED",
+    "meta_template_id": "1143314561789158",
+    "variables": ["customer_name", "item_count", "product_name", "price", "time_left"],
+    "created_at": "2026-10-16T14:41:00",
+    "approved_at": "2026-10-16T15:06:00"
+  },
+  "oferta_especial": {
+    "name": "oferta_especial",
+    "category": "MARKETING",
+    "language": "es_MX",
+    "header": "Oferta Exclusiva para Ti",
+    "header_type": "TEXT",
+    "body": "Hola {{1}}, por ser cliente fiel tienes {{2}}% OFF en {{3}}.\n\n💰 Antes ${{4}}, ahora ${{5}}\n🚚 Envío GRATIS a {{6}}\n\nVálido hasta {{7}}, o hasta agotar existencias.",
+    "footer": "Responde 'QUIERO' para aprovechar",
+    "buttons": [
+      {"type": "QUICK_REPLY", "text": "Quiero mi descuento"},
+      {"type": "QUICK_REPLY", "text": "Ver catálogo"},
+      {"type": "QUICK_REPLY", "text": "No, gracias"}
+    ],
+    "status": "APPROVED",
+    "meta_template_id": "28964419769858511",
+    "variables": ["customer_name", "discount", "product", "old_price", "new_price", "location", "expiry"],
+    "created_at": "2026-10-16T14:41:00",
+    "approved_at": "2026-10-16T15:06:00"
+  },
+  "satisfaccion_postcompra": {
+    "name": "satisfaccion_postcompra",
+    "category": "UTILITY",
+    "language": "es_MX",
+    "header": "¿Cómo te fue?",
+    "header_type": "TEXT",
+    "body": "Hola {{1}}, ¿todo bien con tu {{2}}? Tu opinión nos ayuda a mejorar.\n\n⭐ Califica del 1 al 5.",
+    "footer": "Responde con 1-5 estrellas",
+    "buttons": [
+      {"type": "QUICK_REPLY", "text": "Excelente"},
+      {"type": "QUICK_REPLY", "text": "Muy bien"},
+      {"type": "QUICK_REPLY", "text": "Puede mejorar"}
+    ],
+    "status": "APPROVED",
+    "meta_template_id": "1114575207649407",
+    "variables": ["customer_name", "product", "rating_options"],
+    "created_at": "2026-10-16T14:39:00",
+    "approved_at": "2026-10-16T15:06:00"
+  },
+  "reenganche": {
+    "name": "reenganche",
+    "category": "MARKETING",
+    "language": "es_MX",
+    "header": "Te extrañamos",
+    "header_type": "TEXT",
+    "body": "Hola {{1}}, hace {{2}} días no sabemos de ti. ¿Todo bien?\n\nTenemos novedades en {{3}} que te pueden interesar:\n- {{4}}\n- {{5}}\n\nDescuento de bienvenida: {{6}}% 🎁",
+    "footer": "Responde 'HOLA' para ver novedades",
+    "buttons": [
+      {"type": "QUICK_REPLY", "text": "Ver novedades"},
+      {"type": "QUICK_REPLY", "text": "Mi descuento"},
+      {"type": "QUICK_REPLY", "text": "No molestar"}
+    ],
+    "status": "APPROVED",
+    "meta_template_id": "2168676927394126",
+    "variables": ["customer_name", "days_inactive", "category", "new_item_1", "new_item_2", "discount"],
+    "created_at": "2026-10-16T14:39:00",
+    "approved_at": "2026-10-16T15:06:00"
+  }
+}

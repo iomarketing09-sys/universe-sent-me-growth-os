@@ -1,0 +1,136 @@
+{
+  "tenant_id": "flexi",
+  "business_name": "Zapatería Flexi Piedras Negras",
+  "display_name": "Flexi Piedras Negras",
+  "description": "Distribuidor oficial Universe Sent Me. Calzado de calidad, comodidad y estilo para toda la familia. Atención personalizada en Piedras Negras, Coahuila.",
+  "category": "Retail",
+  "address": "Piedras Negras, Coahuila, México",
+  "email": "flexi.piedrasnegras@universesentme.com",
+  "website": "https://linktr.ee/flexipiedrasnegras",
+  "vertical": "E-commerce",
+  "phone_number_id": "1327098437161178",
+  "waba_id": "1087457280345914",
+  "waba_name": "Flexi Piedras Negras",
+  "template_namespace": "89ed08bd_a11b_4974_99c7_a878da60dd2d",
+  "api_status": {
+    "platform_type": "CLOUD_API",
+    "number_status": "CONNECTED",
+    "account_review_status": "APPROVED",
+    "code_verification_status": "NOT_VERIFIED",
+    "display_name_status": "NON_EXISTS",
+    "verified_at": "2026-10-16"
+  },
+  "verified_name": "Flexi Piedras Negras",
+  "brand_voice": {
+    "tone": "Profesional, confiable, experto en producto, cercano",
+    "style": "Calido pero experto. Hablamos como quien conoce el calzado y quiere que elijas bien.",
+    "greeting": "¡Hola! Bienvenido a Flexi Piedras Negras 👋",
+    "farewell": "¡Gracias por contactarnos! Estamos para servirte. 😊",
+    "emoji_usage": "Moderado - para cercanía, no exceso"
+  },
+  "operating_hours": {
+    "timezone": "America/Matamoros",
+    "schedule": {
+      "monday": {"open": "09:00", "close": "20:00"},
+      "tuesday": {"open": "09:00", "close": "20:00"},
+      "wednesday": {"open": "09:00", "close": "20:00"},
+      "thursday": {"open": "09:00", "close": "20:00"},
+      "friday": {"open": "09:00", "close": "20:00"},
+      "saturday": {"open": "10:00", "close": "19:00"},
+      "sunday": {"open": "11:00", "close": "17:00"}
+    },
+    "outside_hours_message": "¡Hola! Nuestro horario de atención es:\n📅 Lunes a Viernes: 9:00 AM - 8:00 PM\n📅 Sábado: 10:00 AM - 7:00 PM\n📅 Domingo: 11:00 AM - 5:00 PM\n\nTu mensaje es importante para nosotros. Te responderemos en cuanto abramos. 😊"
+  },
+  "quick_replies": [
+    {
+      "id": "qr_catalogo",
+      "title": "📦 Ver catálogo",
+      "payload": "CATALOGO"
+    },
+    {
+      "id": "qr_tallas",
+      "title": "📏 Guía de tallas",
+      "payload": "TALLAS"
+    },
+    {
+      "id": "qr_promos",
+      "title": "🎁 Promociones",
+      "payload": "PROMOS"
+    },
+    {
+      "id": "qr_comprar",
+      "title": "🛍️ Quiero comprar",
+      "payload": "COMPRAR"
+    },
+    {
+      "id": "qr_ubicacion",
+      "title": "📍 Ubicación",
+      "payload": "UBICACION"
+    },
+    {
+      "id": "qr_humano",
+      "title": "👤 Hablar con asesor",
+      "payload": "HUMANO"
+    }
+  ],
+  "persistent_menu": [
+    {
+      "type": "postback",
+      "title": "📦 Catálogo completo",
+      "payload": "MENU_CATALOGO"
+    },
+    {
+      "type": "postback",
+      "title": "📏 Guía de tallas",
+      "payload": "MENU_TALLAS"
+    },
+    {
+      "type": "postback",
+      "title": "🎁 Promociones vigentes",
+      "payload": "MENU_PROMOS"
+    },
+    {
+      "type": "postback",
+      "title": "📍 Nuestra tienda",
+      "payload": "MENU_UBICACION"
+    },
+    {
+      "type": "postback",
+      "title": "👤 Asesor personal",
+      "payload": "MENU_HUMANO"
+    }
+  ],
+  "ice_breakers": [
+    {
+      "question": "📦 Quiero ver el catálogo de zapatos",
+      "payload": "ICE_CATALOGO"
+    },
+    {
+      "question": "📏 Necesito ayuda con mi talla",
+      "payload": "ICE_TALLAS"
+    },
+    {
+      "question": "🎁 ¿Qué promociones tienen?",
+      "payload": "ICE_PROMOS"
+    },
+    {
+      "question": "📍 ¿Dónde está la tienda?",
+      "payload": "ICE_UBICACION"
+    }
+  ],
+  "webhook_url": "https://flexi-whatsapp-webhook.io-marketing-09.workers.dev/webhook",
+  "webhook_runtime": "cloudflare-worker",
+  "webhook_storage": "d1:flexi_whatsapp_obs",
+  "webhook_url_note": "URL estable (Worker desplegado 2026-10-16; callback de Meta apuntando aqui desde 2026-10-16, verificaciones_ok=1). Reemplaza al tunel efimero de trycloudflare, ya retirado.",
+  "webhook_verify_token": "",
+  "webhook_verify_token_ref": "tenants/flexi/.env:WHATSAPP_VERIFY_TOKEN (y secreto del Worker)",
+  "webhook_mode": "listen_only",
+  "webhook_metrics_endpoint": "/stats?token=<WHATSAPP_VERIFY_TOKEN>",
+  "webhook_local_fallback": "tenants/flexi/whatsapp/webhook/server.py (solo depuracion local; ya no es la ruta de produccion)",
+  "features": {
+    "catalog": true,
+    "flows": true,
+    "payments": false,
+    "multi_agent": true
+  }
+}

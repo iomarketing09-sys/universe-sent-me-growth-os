@@ -1,0 +1,264 @@
+{
+  "tenant_id": "flexi",
+  "source": "Cliente + Búsqueda web (flexi.com.mx, Walmart, MercadoLibre, distribuidores, La Marina, Sears)",
+  "fecha_actualizacion": "2026-10-14",
+  "total_modelos_unicos": 65,
+  "total_variantes_color": 83,
+  "hallazgo_importante": "Sub-marca QUIRELLI detectada en modelos 305101 y 88702 (y posiblemente 304402, 306703, 66517, 407801, 137002, 140601, 143302, 143201, 423201, 406401, 127202, 134806, 136806, 101912, 48301, 48303, 98304, 5807, 59305, 50816, 63201, 63202, 66514, 66525, 68714, 700803, 700804, 707205, 707902, 421501, 421503, 417606, 414404, 418502, 419501, 419502, 423803, 424202, 424601, 300801, 300808, 303302, 304202, 304401, 304704, 35802, 35902, 88701)",
+  "modelos_con_detalle_web": {
+    "117207": {
+      "nombre": "Sneaker Slip On",
+      "tipo": "Sneaker Slip On Mujer",
+      "tecnologia": "Recovery Form / Tamboreado",
+      "colores_oficiales": ["Blanco", "Negro", "Taupe", "Tan"],
+      "colores_cliente": ["Taupe", "Blanco", "Negro"],
+      "urls": {
+        "oficial_blanco": "https://www.flexi.com.mx/es/producto/7500421547526-sneaker-slip-on-flexi-para-mujer-con-acabado-tamboreado-estilo-117207-blanco",
+        "oficial_negro": "https://www.flexi.com.mx/es/c/Sneaker-Slip-On-Flexi-para-Mujer---Estilo-117207/p/7500421556191",
+        "oficial_taupe": "https://www.flexi.com.mx/es/producto/7500421719770-sneaker-slip-on-flexi-para-mujer-con-recovery-form-estilo-117207-taupe",
+        "walmart_negro": "https://www.walmart.com.mx/ip/sneaker-flexi-para-mujer-estilo-117207-negro/00750042155622",
+        "mercadolibre": "https://listado.mercadolibre.com.mx/flexi-117207"
+      },
+      "descripcion": "Sneaker slip on elaborado en piel con sello de comodidad y estilo Flexi. Acabado tamboreado (Blanco/Negro) o Recovery Form (Taupe).",
+      "genero": "Mujer",
+      "linea": "Casual/Confort",
+      "marca": "Flexi"
+    },
+    "142901": {
+      "nombre": "Slip On / Mocasín de Piel",
+      "tipo": "Mocasín/Slip On Mujer",
+      "tecnologia": "Walking Soft / Piel natural",
+      "colores_oficiales": ["Negro", "Oro"],
+      "colores_cliente": ["Oro", "Negro"],
+      "urls": {
+        "oficial_negro": "https://www.flexi.com.mx/es/producto/7500277153520-slip-on-de-piel-flexi-para-mujer-estilo-142901-negro",
+        "oficial_oro": "https://www.schu.mx/products/1390039948",
+        "baygam": "https://baygam.mx/products/zapato-piso-calzado-dama-flexi-142901",
+        "plazapar": "https://plazapar.com/collections/mujer-confort/products/mocasin-de-piel-142901",
+        "zapateriasmexico": "https://zapateriasmexico.com.mx/collections/flexi-mujer/products/zapatos-flexi-142901"
+      },
+      "descripcion": "Mocasín/Slip On de piel para mujer, mezcla perfecta de comodidad y estilo casual. Disponible tallas 22-27.",
+      "genero": "Mujer",
+      "linea": "Confort/Casual",
+      "marca": "Flexi"
+    },
+    "143001": {
+      "nombre": "Balerina Sport Ginny",
+      "tipo": "Balerina Sport Mujer",
+      "tecnologia": "Piel natural, ligereza",
+      "colores_oficiales": ["Plata", "Negro", "Oro"],
+      "colores_cliente": ["Oro", "Negro"],
+      "urls": {
+        "oficial_plata": "https://www.flexi.com.mx/es/producto/7500277159225-balerina-sport-flexi-para-mujer-estilo-143001-plata",
+        "oficial_negro": "https://www.flexi.com.mx/es/producto/7500277159119-balerina-sport-flexi-para-mujer-estilo-143001-negro",
+        "oficial_oro": "https://www.flexi.com.mx/es/producto/7500277158037-balerina-sport-flexi-para-mujer-estilo-143001-oro"
+      },
+      "descripcion": "Balerina de estilo casual (Ginny) diseñada para aportar comodidad con toque moderno. Piel natural, máxima suavidad, ligereza.",
+      "genero": "Mujer",
+      "linea": "Sport/Casual",
+      "marca": "Flexi"
+    },
+    "101905": {
+      "nombre": "Slip On Casual / Zapato Amelie",
+      "tipo": "Slip On Casual Mujer / Zapato Vestir",
+      "tecnologia": "Walking Soft / Inyección Directa / Piel flor entera",
+      "colores_oficiales": ["Negro", "Tan"],
+      "colores_cliente": ["Tan", "Negro"],
+      "urls": {
+        "oficial_negro": "https://www.flexi.com.mx/c/Slip-On-Casual-Flexi-para-Mujer---Estilo-101905/p/7500421453780",
+        "oficial_tan": "https://www.walmart.com.mx/ip/slip-on-flexi-para-mujer-estilo-101905-tan-flexi-101905/00750042145366",
+        "elborcegui": "https://www.elborcegui.com.mx/products/101905",
+        "mercadolibre": "https://listado.mercadolibre.com.mx/flexi-101905",
+        "simple_ripley": "https://simple.ripley.cl/zapato-mujer-amelie-101905tan-mpm00028186642"
+      },
+      "descripcion": "Slip on casual elaborado en piel con sistema Walking Soft. Construcción Inyección Directa que fusiona capellada con planta. Tacón 28mm, suela PU/ID.",
+      "genero": "Mujer",
+      "linea": "Casual/Vestir",
+      "marca": "Flexi"
+    },
+    "101908": {
+      "nombre": "Mocasín Con Herraje",
+      "tipo": "Mocasín Mujer",
+      "tecnologia": "Walking Soft / Piel",
+      "colores_oficiales": ["Café"],
+      "colores_cliente": ["Café", "Negro"],
+      "urls": {
+        "flexi_stock": "https://www.flexi.com.mx/es/stock-a/c/stock_a?currentPage=5"
+      },
+      "descripcion": "Mocasín con herraje para mujer con Walking Soft. Precio lista $1,149 MXN.",
+      "genero": "Mujer",
+      "linea": "Confort",
+      "marca": "Flexi"
+    },
+    "142801": {
+      "nombre": "Balerina Punta Cuadrada Isaura",
+      "tipo": "Balerina Mujer",
+      "tecnologia": "Piel natural",
+      "colores_oficiales": ["Negro"],
+      "colores_cliente": ["Beige", "Negro"],
+      "urls": {
+        "oficial_negro": "https://www.flexi.com.mx/es/producto/7500277141251-balerina-punta-cuadrada-flexi-para-mujer-estilo-142801-negro"
+      },
+      "descripcion": "Balerina de piel (Isaura) color negro, estilo semivestir cómodo y versátil. Punta cuadrada.",
+      "genero": "Mujer",
+      "linea": "Semivestir/Casual",
+      "marca": "Flexi"
+    },
+    "404801": {
+      "nombre": "Zapato Choclo / Casual Agujeta",
+      "tipo": "Zapato Caballero",
+      "tecnologia": "Walking Soft / Gel en talón / Piel",
+      "colores_oficiales": ["Negro", "Oporto"],
+      "colores_cliente": ["Oporto", "Negro"],
+      "urls": {
+        "oficial_negro": "https://www.flexi.com.mx/es/producto/7500421421970-zapato-choclo-flexi-para-hombre-con-sistema-walking-soft-estilo-404801-negro",
+        "oficial_oporto": "https://www.flexi.com.mx/es/c/Zapato-Choclo-Flexi-para-Hombre---Estilo-404801/p/1390018600",
+        "walmart_negro": "https://www.walmart.com.mx/ip/zapato-flexi-para-hombre-estilo-404801-negro/00750042145376",
+        "walmart_oporto": "https://www.walmart.com.mx/ip/zapato-flexi-para-hombre-estilo-404801-oporto-flexi-404801-oporto/00750042142549",
+        "mercadolibre": "https://articulo.mercadolibre.com.mx/MLM-804607819-zapato-flexi-para-hombre-estilo-404801-negro-_JM",
+        "sears": "https://www.sears.com.mx/producto/3939955/zapato-casual-agujeta-hombre-flexi-404801-negro"
+      },
+      "descripcion": "Zapato choclo/casual con agujetas para hombre. Sistema Walking Soft con huella de gel en talón. Línea confort para ritmo de vida actual.",
+      "genero": "Hombre",
+      "linea": "Confort/Caballero",
+      "marca": "Flexi"
+    },
+    "422906": {
+      "nombre": "Derby Vestir Casual Anderson",
+      "tipo": "Derby Vestir Casual Hombre",
+      "tecnologia": "Cápsula de Aire / Piel genuina",
+      "colores_oficiales": ["Tan"],
+      "colores_cliente": ["Tan", "Negro"],
+      "urls": {
+        "oficial_tan": "https://www.flexi.com.mx/es/producto/7500277063744-derby-vestir-casual-flexi-para-hombre-con-capsula-de-aire-estilo-422906-tan",
+        "mercadolibre_tan": "https://www.mercadolibre.com.mx/flexi-zapato-422906-tan-md1512786/up/MLMU3817802585",
+        "mercadolibre_tan2": "https://www.mercadolibre.com.mx/flexi-zapato-422906-tan-md1842807/up/MLMU4920158297",
+        "lamarina_cafe": "https://www.lamarina.com.mx/zapato-de-vestir-flexi-cafe-para-caballero-422906/p",
+        "sears_camel": "https://www.sears.com.mx/producto/3979007/zapato-casual-flexi-hombre-en-color-camel-422906",
+        "mercadolibre_negro": "https://articulo.mercadolibre.com.mx/MLM-4547897002-mocasin-flexi-para-hombre-estilo-422906-negro-_JM"
+      },
+      "descripcion": "Derby vestir casual (Anderson) para caballero, piel genuina, tecnología Cápsula de Aire. Elegancia y confort avanzado.",
+      "genero": "Hombre",
+      "linea": "Vestir Casual/Caballero",
+      "marca": "Flexi"
+    },
+    "423101": {
+      "nombre": "Derby Vestir Casual / Mocasín",
+      "tipo": "Derby/Mocasín Hombre",
+      "tecnologia": "100% Piel / Walking Soft",
+      "colores_oficiales": ["Cognac", "Negro", "Café"],
+      "colores_cliente": ["Cognac", "Negro"],
+      "urls": {
+        "oficial_cognac": "https://www.flexi.com.mx/es/producto/7500277041247-derby-vestir-casual-flexi-para-hombre-con-100%25-piel-estilo-423101-cognac",
+        "lamarina_negro": "https://www.lamarina.com.mx/zapato-casual-flexi-negro-para-caballero-423101/p",
+        "lamarina_cafe": "https://www.lamarina.com.mx/zapato-casual-flexi-cafe-para-caballero-423101/p",
+        "sears_negro": "https://www.sears.com.mx/producto/3941189/zapato-casual-agujeta-hombre-flexi-423101-negro",
+        "mercadolibre_negro": "https://articulo.mercadolibre.com.mx/MLM-4547806184-mocasin-flexi-para-hombre-estilo-423101-negro-_JM",
+        "plazapar": "https://plazapar.com/products/zapato-casual-de-piel-423101"
+      },
+      "descripcion": "Derby vestir casual / mocasín para hombre, 100% piel, ligereza y diseño versátil. Estilos derby y mocasín.",
+      "genero": "Hombre",
+      "linea": "Vestir Casual/Caballero",
+      "marca": "Flexi"
+    },
+    "305101": {
+      "nombre": "Sneaker Casual",
+      "tipo": "Sneaker Casual Mujer",
+      "tecnologia": "Vacuno / Plantilla Hexafoam (Quirelli)",
+      "colores_oficiales": ["Negro", "Tan"],
+      "colores_cliente": ["Negro", "Tan"],
+      "urls": {
+        "oficial_negro_quirelli": "https://www.flexi.com.mx/es/producto/7501378411229-sneaker-casual-quirelli-para-mujer-estilo-305101-negro",
+        "oficial_tan_quirelli": "https://www.flexi.com.mx/c/Sneaker-Casual-Quirelli-para-Mujer---Estilo-305101/p/1390037989",
+        "walmart_negro": "https://www.walmart.com.mx/ip/tenis-quirelli-para-mujer-estilo-305101-negro/00750137841119",
+        "walmart_tan": "https://www.walmart.com.mx/ip/tenis-quirelli-para-mujer-estilo-305101-tan/00750137842043",
+        "mercadolibre_negro": "https://articulo.mercadolibre.com.mx/MLM-3800034056-tenis-quirelli-para-mujer-estilo-305101-negro-_JM",
+        "mercadolibre_tan": "https://articulo.mercadolibre.com.mx/MLM-3800034056-tenis-quirelli-para-mujer-estilo-305101-tan-_JM"
+      },
+      "descripcion": "Sneaker casual (Quirelli) para mujer, elaborado en vacuno. Plantilla Hexafoam. Sello comodidad Quirelli.",
+      "genero": "Mujer",
+      "linea": "Sneaker/Casual",
+      "marca": "Quirelli (sub-marca Flexi)"
+    },
+    "88702": {
+      "nombre": "Mocasín Casual Hidalgo",
+      "tipo": "Mocasín Casual Hombre",
+      "tecnologia": "Planta Hexafoam (Quirelli)",
+      "colores_oficiales": ["Café", "Negro (Chile)"],
+      "colores_cliente": ["Negro", "Brandy"],
+      "urls": {
+        "oficial_cafe_quirelli": "https://www.flexi.com.mx/es/producto/7506212670657-mocasin-casual-quirelli-con-plantilla-hexafoam--para-hombre---estilo-88702-cafe",
+        "flexichile_negro": "https://www.flexishoes.cl/zapato-hombre-hidalgo-88702-negro/p"
+      },
+      "descripcion": "Mocasín casual (Hidalgo) para hombre con planta Hexafoam. Línea Quirelli.",
+      "genero": "Hombre",
+      "linea": "Casual/Confort",
+      "marca": "Quirelli (sub-marca Flexi)"
+    }
+  },
+  "modelos_pendientes_busqueda": [
+    "66517", "304402", "306703", "407801", "137002", "140601", 
+    "143302", "143201", "423201", "406401", "127202", "134806", 
+    "136804", "101912", "48301", "48303", "98304", "5807", 
+    "59305", "50816", "63201", "63202", "66514", "66525", 
+    "68714", "700803", "700804", "707205", "707902", "421501", 
+    "421503", "417606", "414404", "418502", "419501", "419502", 
+    "423803", "424202", "424601", "300801", "300808", "303302", 
+    "304202", "304401", "304704", "35802", "35902", "88701"
+  ],
+  "familias_principales": {
+    "400000+": {
+      "nombre": "Familia 4xxxxx - Caballero/Confort/Vestir",
+      "modelos": ["401001", "401301", "402112", "403019", "404801", "406401", "406412", "407801", "414404", "417606", "418502", "419501", "419502", "421501", "421503", "422906", "423101", "423201", "423803", "424202", "424601"],
+      "genero": "Principalmente Hombre",
+      "tecnologia_comun": "Walking Soft",
+      "marca": "Flexi"
+    },
+    "300000+": {
+      "nombre": "Familia 3xxxxx - Dama/Variados (Muchos Quirelli)",
+      "modelos": ["300801", "300808", "303302", "304202", "304401", "304402", "304704", "305101", "306703"],
+      "genero": "Principalmente Mujer",
+      "marca": "Posible Quirelli"
+    },
+    "100000+": {
+      "nombre": "Familia 1xxxxx - Dama Casual/Vestir (Flexi)",
+      "modelos": ["101905", "101908", "101912", "104523", "117207", "127202", "134806", "136804", "137002", "139601", "140601", "142303", "142801", "142901", "143001", "143201", "143302"],
+      "genero": "Mujer",
+      "marca": "Flexi"
+    },
+    "otros": {
+      "nombre": "Otras series",
+      "modelos": ["5807", "59305", "50816", "63201", "63202", "66514", "66517", "66525", "68714", "700803", "700804", "707205", "707902", "88701", "88702", "98304"],
+      "genero": "Mixto",
+      "marca": "Mixto Flexi/Quirelli"
+    }
+  },
+  "recomendaciones_contenido": {
+    "carruseles_multi_color": [
+      "117207 (3 colores)", "142901 (2 colores)", "143001 (2 colores)", 
+      "101905 (2 colores)", "101908 (2 colores)", "142801 (2 colores cliente)",
+      "404801 (2 colores)", "423101 (2-3 colores)", "422906 (2 colores)",
+      "305101 (2 colores - Quirelli)", "88702 (2 colores - Quirelli)", 
+      "66517 (2 colores)", "304402 (2 colores)", "306703 (2 colores)", "407801 (2 colores)"
+    ],
+    "modelos_con_urls_oficiales": ["117207", "142901", "143001", "101905", "101908", "142801", "404801", "422906", "423101", "305101", "88702"],
+    "por_marca": {
+      "Flexi": ["117207", "142901", "143001", "101905", "101908", "142801", "404801", "422906", "423101", "404801", "101912", "127202", "134806", "136804", "137002", "139601", "140601", "142303", "143201", "143302", "401001", "401301", "402112", "403019", "406401", "406412", "407801", "414404", "417606", "418502", "419501", "419502", "421501", "421503", "422906", "423101", "423201", "423803", "424202", "424601", "48301", "48303", "50816", "59305", "66514", "66517", "66525", "68714", "700803", "700804", "707205", "707902", "88701"],
+      "Quirelli": ["305101", "88702", "304402", "306703", "407801", "137002", "140601", "143302", "143201", "423201", "406401", "66517", "63201", "63202", "66514", "66525", "700803", "700804", "707205", "707902", "421501", "421503", "417606", "414404", "418502", "419501", "419502", "423803", "424202", "424601", "300801", "300808", "303302", "304202", "304401", "304704", "35802", "35902", "88701", "98304", "5807", "50816"]
+    },
+    "por_genero": {
+      "mujer": ["117207", "142901", "143001", "101905", "101908", "142801", "101912", "127202", "137002", "140601", "143302", "142303", "142801", "139601", "300801", "304402", "306703", "35802", "35902", "63201", "63202", "88701", "88702", "305101", "304402", "306703"],
+      "hombre": ["404801", "401001", "401301", "402112", "403019", "406401", "406412", "407801", "414404", "417606", "418502", "419501", "419502", "421501", "421503", "422906", "423101", "423201", "423803", "424202", "424601", "50816", "59305", "66514", "66517", "66525", "68714", "700803", "700804", "707205", "707902", "423101", "422906", "88702"]
+    },
+    "por_linea": {
+      "sneaker_slipon": ["117207", "305101"],
+      "mocasin_slipon": ["142901", "101905", "101908", "88702"],
+      "balerina": ["143001", "142801"],
+      "derby_vestir": ["422906", "423101"],
+      "zapato_caballero": ["404801", "401001", "401301", "402112", "403019", "406401", "406412", "407801", "414404", "417606", "418502", "419501", "419502", "421501", "421503", "422906", "423101", "423201", "423803", "424202", "424601"],
+      "casual_dama": ["101905", "101908", "101912", "117207", "127202", "134806", "136804", "137002", "139601", "140601", "142303", "142801", "142901", "143001", "143201", "143302"],
+      "escolar": ["402112"],
+      "botas": ["421501", "421503", "700803", "700804"]
+    }
+  }
+}

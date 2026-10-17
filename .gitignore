@@ -36,6 +36,8 @@ __pycache__/
 tenants/bam-in-a-can/.env
 tenants/bam-in-a-can/logs/*
 tenants/*/.env
+# Flexi: material de campana (imagenes/PDF, ~8 GB) vive en Drive; el inventario va en tenants/flexi/data/
+tenants/flexi/assets/
 tenants/micas-art-deco/.env
 # Test outputs
 Thumbs.db

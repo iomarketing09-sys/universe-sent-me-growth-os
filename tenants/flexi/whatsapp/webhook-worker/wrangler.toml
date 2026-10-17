@@ -1,0 +1,14 @@
+# Worker solo-escucha del webhook de WhatsApp — tenant `flexi`.
+name = "flexi-whatsapp-webhook"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+# D1 propio para no tocar el SQLite local de OmniRoute ni la VM.
+[[d1_databases]]
+binding = "DB"
+database_name = "flexi_whatsapp_obs"
+database_id = "0128328b-7c24-4c40-b4f8-c2720c080d5f"
+
+# El verify token NO va aquí: se sube como secreto con
+#   npx wrangler secret put WHATSAPP_VERIFY_TOKEN

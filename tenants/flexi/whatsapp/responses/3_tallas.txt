@@ -1,0 +1,20 @@
+=== RESPUESTA RÁPIDA: /tallas ===
+Atajo: /tallas
+
+📏 *La clave: medir bien para no fallar*
+
+Nuestros zapatos calzan *normal* (ni grande ni chico). Haz esto:
+1. Pie descalzo, talón contra la pared
+2. Mide en cm (punta más larga)
+3. Busca tu talla:
+• 23.0 cm → 36
+• 24.5 cm → 39
+• 26.0 cm → 42
+• 23.5 cm → 37
+• 25.0 cm → 40
+• 26.5 cm → 43
+• 24.0 cm → 38
+• 25.5 cm → 41
+• 27.0 cm → 44
+
+💡 *Tip de experto:* Si das entre dos tallas (ej. 24.2 cm), *pide la mayor*. El pie se hincha al caminar. ¿Tienes duda con algún modelo en específico?

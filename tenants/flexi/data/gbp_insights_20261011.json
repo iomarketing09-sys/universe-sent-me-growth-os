@@ -1,0 +1,21 @@
+{
+  "place_id": "PENDING_CLAIM",
+  "period_start": "2026-09-11",
+  "period_end": "2026-10-11",
+  "total_searches": 0,
+  "direct_searches": 0,
+  "discovery_searches": 0,
+  "branded_searches": 0,
+  "total_views": 0,
+  "views_search": 0,
+  "views_maps": 0,
+  "total_actions": 0,
+  "actions_website": 0,
+  "actions_phone": 0,
+  "actions_directions": 0,
+  "actions_other": 0,
+  "photo_views": 0,
+  "photo_quantity": 0,
+  "reviews_count": 0,
+  "reviews_rating": 0.0
+}
