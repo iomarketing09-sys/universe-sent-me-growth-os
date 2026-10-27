@@ -1,0 +1,83 @@
+{
+  "tenant_id": "flexi",
+  "brand": "Flexi",
+  "tagline": "Comodidad que camina contigo",
+  "season": {
+    "name": "Otoño / Invierno 2026",
+    "macrotendencia": "Luz y sombra",
+    "source": "GUIA_DE_TEMPORADA_FLEXI_OI26.pdf",
+    "concept": "Equilibrio entre luz y sombra: tonos profundos, neutros cálidos y acentos luminosos."
+  },
+  "logo": {
+    "primary": "assets/flexi/brand/otros/LOGO_FLEXI_ROJO.png",
+    "on_dark": "assets/flexi/brand/otros/LOGO_FLEXI_BLANCO.png",
+    "source": "material oficial del cliente"
+  },
+  "palette": [
+    {
+      "name": "Rojo Flexi",
+      "hex": "#D82232",
+      "pantone": "1797",
+      "role": "marca",
+      "hex_aproximado": false,
+      "source": "muestreado de LOGO_FLEXI_ROJO.png; Pantone según LOGO FLEXI PANTONE 1797.pdf"
+    },
+    {
+      "name": "Arena",
+      "hex": "#D8C3A5",
+      "role": "neutro cálido",
+      "hex_aproximado": true
+    },
+    {
+      "name": "Canela",
+      "hex": "#A9714B",
+      "role": "tierra",
+      "hex_aproximado": true
+    },
+    {
+      "name": "Café profundo",
+      "hex": "#4A2E26",
+      "role": "profundo",
+      "hex_aproximado": true
+    },
+    {
+      "name": "Vino",
+      "hex": "#6B1F2A",
+      "role": "profundo",
+      "hex_aproximado": true
+    },
+    {
+      "name": "Azul petróleo",
+      "hex": "#1F3F49",
+      "role": "profundo",
+      "hex_aproximado": true
+    },
+    {
+      "name": "Naranja quemado",
+      "hex": "#C1552E",
+      "role": "acento",
+      "hex_aproximado": true
+    },
+    {
+      "name": "Hueso",
+      "hex": "#F5F1E8",
+      "role": "fondo",
+      "hex_aproximado": true
+    }
+  ],
+  "typography": {
+    "status": "pendiente",
+    "note": "Confirmar con Final_BrandBook_FC (1).pdf o GUIA APLICACION LOGO FLEXI.pdf antes de generar arte final.",
+    "fallback": "sans-serif del sistema (Inter, Helvetica, Arial)"
+  },
+  "hashtags": ["#FlexiDistribuidor", "#UniverseSentMe", "#DistribuidorOficial"],
+  "rules": {
+    "solo_modelos_en_inventario": true,
+    "no_precio_en_arte": true,
+    "no_stock_en_arte": true,
+    "logo_obligatorio": true,
+    "max_imagenes_por_pieza": 5,
+    "no_mezclar_marcas_en_una_pieza": true,
+    "colores_aproximados_requieren_confirmacion": true
+  }
+}

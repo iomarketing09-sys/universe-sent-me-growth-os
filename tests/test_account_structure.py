@@ -46,7 +46,7 @@ def test_growth_os_structure():
     modules_dir = base / "modules"
     assert modules_dir.exists(), "Modules directory does not exist"
     assert (modules_dir / "identity" / "agents" / "brand_voice_agent").exists(), "brand_voice_agent should live in modules/identity"
-    assert (agents_dir / "copywriter_agent").exists(), "copywriter_agent does not exist in agents/"
+    assert (modules_dir / "creative" / "agents" / "copywriter_agent").exists(), "copywriter_agent should live in modules/creative"
 
     # Tests directory exists
     assert tests_dir.exists(), "Tests directory does not exist"

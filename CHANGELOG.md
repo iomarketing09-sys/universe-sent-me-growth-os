@@ -18,6 +18,13 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
   (`sync.py`), registro de tenants (`tenant_registry.py`) y el
   `brand_voice_agent` completo con sus 5 skills (tono, variantes A/B,
   cumplimiento Meta, investigación de competencia y análisis de voz de posts).
+- **Módulo `creative`** (`modules/creative/`): copy de campaña
+  (`agents/copywriter_agent/`), kit de marca por tenant (`brand_kit.py`) y
+  selector de imágenes reales del inventario (`image_selector.py`). Incluye
+  `README` con los comandos y las reglas de negocio.
+- **Kit de marca de Flexi** (`tenants/flexi/brand_kit.json`): temporada OI26
+  ("Luz y sombra"), rojo de marca `#D82232` muestreado del logo oficial
+  (Pantone 1797) y paleta de temporada marcada como aproximada hasta confirmar.
 - **`CHANGELOG.md`**: este archivo, para conservar contexto entre sesiones.
 
 ### Cambiado
@@ -31,6 +38,9 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 - `growth/sync.py` y `growth/tenant_registry.py` pasaron a `modules/identity/`
   con el mismo patrón de envoltorio. `agents/brand_voice_agent/` vive ahora en
   `modules/identity/agents/`.
+- `agents/copywriter_agent/` pasó a `modules/creative/agents/copywriter_agent/`
+  con envoltorios en la ruta anterior. El agente resuelve la raíz del repo y no
+  depende de `Path.cwd()`, así que funciona desde cualquier directorio.
 - `TenantRegistry` resuelve la raíz del proyecto buscando `modules/` y
   `tenants/` hacia arriba, así que ya no depende de la profundidad del archivo
   que lo contiene.
@@ -42,6 +52,11 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
   tenants.
 - `tests/test_sync.py` parcheaba el shim `growth.integrations.meta_graph` en
   lugar del módulo real `modules.social.meta_graph`.
+- `config.json` de Flexi apuntaba `asset_dir` de ARISHA (306703) a
+  `assets/flexi/...` cuando las fotos viven en `assets/quirelli/...`.
+- El selector de imágenes ya no cuenta como distintas las copias
+  `nombre (1).jpg` ni las variantes de mayúsculas en la extensión.
+- `pytest.ini` usa `--basetemp=.pytest_tmp` para no llenar la cuota de `/tmp`.
 
 ### Pendiente
 

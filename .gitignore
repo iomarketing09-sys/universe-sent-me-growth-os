@@ -54,3 +54,4 @@ AMBIGUEDAD_FASE2.txt
 # WhatsApp ingestion artifacts (sanitized but operational, never commit)
 tenants/*/whatsapp/reports/
 tenants/*/whatsapp/voice_proposals/
+.pytest_tmp/

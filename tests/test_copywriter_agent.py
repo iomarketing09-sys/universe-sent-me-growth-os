@@ -6,10 +6,10 @@ import json
 import shutil
 from pathlib import Path
 
-from agents.copywriter_agent.agent import CopywriterAgent
-from agents.copywriter_agent.skills.copy_validator import validate_variant
-from agents.copywriter_agent.skills.prompt_builder import build_messages
-from agents.copywriter_agent.skills.voice_loader import load_voice_profile
+from modules.creative.agents.copywriter_agent.agent import CopywriterAgent
+from modules.creative.agents.copywriter_agent.skills.copy_validator import validate_variant
+from modules.creative.agents.copywriter_agent.skills.prompt_builder import build_messages
+from modules.creative.agents.copywriter_agent.skills.voice_loader import load_voice_profile
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -114,7 +114,7 @@ def test_write_proposal_inside_campaign_copy_folder(tmp_path):
 
 
 def test_vendor_skills_have_provenance_and_no_scripts():
-    vendor = ROOT / "agents" / "copywriter_agent" / "skills" / "vendor"
+    vendor = ROOT / "modules" / "creative" / "agents" / "copywriter_agent" / "skills" / "vendor"
     for name in ("marketingskills-copywriting", "marketingskills-ad-creative"):
         folder = vendor / name
         assert (folder / "SKILL.md").is_file()
