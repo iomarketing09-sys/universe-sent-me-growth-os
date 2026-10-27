@@ -91,35 +91,36 @@ function localTime(timestamp) {
   }
 }
 
-function json(body, status = 200) {
-  return new Response(JSON.stringify(body), {
-    status,
-    headers: { "content-type": "application/json; charset=utf-8" },
-  });
-}
-
-/** Comparación sin cortocircuito por longitud (evita filtrar el token por timing). */
-function sameToken(a, b) {
-  const left = String(a || "");
-  const right = String(b || "");
-  if (!right || left.length !== right.length) return false;
-  let diff = 0;
-  for (let i = 0; i < left.length; i += 1) diff |= left.charCodeAt(i) ^ right.charCodeAt(i);
-  return diff === 0;
-}
-
+/** Extraer texto del mensaje (texto, botones, interacciones, etc.) */
 function textOf(message) {
-  const type = message.type || "desconocido";
-  if (type === "text") return (message.text || {}).body || "";
-  if (type === "interactive") {
-    const interactive = message.interactive || {};
-    return (interactive.button_reply || {}).title || (interactive.list_reply || {}).title || "";
-  }
-  if (type === "button") return (message.button || {}).text || "";
+  if (!message) return "";
+  if (message.text && message.text.body) return message.text.body;
+  if (message.caption) return message.caption;
+  const interactive = message.interactive || {};
+  return (interactive.button_reply || {}).title || (interactive.list_reply || {}).title || "";
+  if (message.type === "button") return (message.button || {}).text || "";
   return "";
 }
 
 const MEDIA_TYPES = new Set(["image", "audio", "video", "document", "sticker"]);
+
+/** Extraer datos de atribución de anuncio (referral) del mensaje */
+function extractReferral(message) {
+  if (!message || !message.referral) return null;
+  
+  const ref = message.referral;
+  return {
+    referral_source_url: ref.source_url || "",
+    referral_source_id: ref.source_id || "",
+    referral_source_type: ref.source_type || "",
+    referral_body: ref.body || "",
+    referral_headline: ref.headline || "",
+    referral_media_type: ref.media_type || "",
+    referral_image_url: ref.image_url || "",
+    referral_ctwa_clid: ref.ctwa_clid || "",
+    referral_welcome_message_text: (ref.welcome_message && ref.welcome_message.text) || ""
+  };
+}
 
 /** Convierte el payload de Meta en filas listas para D1 (no escribe nada). */
 async function buildRows(payload, now) {
@@ -137,6 +138,8 @@ async function buildRows(payload, now) {
         const waId = message.from || "";
         const [hash, last4] = await hashContact(waId);
         const text = textOf(message);
+        const referral = extractReferral(message);
+        
         rows.push({
           direction: "in",
           wa_ts: message.timestamp || "",
@@ -152,10 +155,20 @@ async function buildRows(payload, now) {
           contact_name: contacts[waId] || "",
           status: null,
           message_id: message.id || null,
+          // Atribución de anuncio
+          referral_source_url: referral?.referral_source_url || "",
+          referral_source_id: referral?.referral_source_id || "",
+          referral_source_type: referral?.referral_source_type || "",
+          referral_body: referral?.referral_body || "",
+          referral_headline: referral?.referral_headline || "",
+          referral_media_type: referral?.referral_media_type || "",
+          referral_image_url: referral?.referral_image_url || "",
+          referral_ctwa_clid: referral?.referral_ctwa_clid || "",
+          referral_welcome_message_text: referral?.referral_welcome_message_text || ""
         });
       }
 
-      // Coexistencia: mensajes que la sucursal manda desde la app del teléfono.
+      // Coexistencia: mensajes que la sucursal manda desde la app del teléfono (smb_message_echoes).
       for (const echo of value.smb_message_echoes || []) {
         const message = echo.message || echo;
         const waId = message.to || message.from || "";
@@ -176,6 +189,16 @@ async function buildRows(payload, now) {
           contact_name: "",
           status: null,
           message_id: message.id || null,
+          // Los echoes no tienen referral (son salientes)
+          referral_source_url: "",
+          referral_source_id: "",
+          referral_source_type: "",
+          referral_body: "",
+          referral_headline: "",
+          referral_media_type: "",
+          referral_image_url: "",
+          referral_ctwa_clid: "",
+          referral_welcome_message_text: ""
         });
       }
 
@@ -196,6 +219,15 @@ async function buildRows(payload, now) {
           contact_name: "",
           status: status.status || "",
           message_id: null,
+          referral_source_url: "",
+          referral_source_id: "",
+          referral_source_type: "",
+          referral_body: "",
+          referral_headline: "",
+          referral_media_type: "",
+          referral_image_url: "",
+          referral_ctwa_clid: "",
+          referral_welcome_message_text: ""
         });
       }
     }
@@ -206,14 +238,20 @@ async function buildRows(payload, now) {
 const INSERT_SQL = `INSERT OR IGNORE INTO events (
   received_at, direction, wa_ts, local_time, intent, type, text, text_len,
   has_media, is_reply_to_template, contact_hash, contact_last4, contact_name,
-  status, message_id
-) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+  status, message_id,
+  referral_source_url, referral_source_id, referral_source_type,
+  referral_body, referral_headline, referral_media_type, referral_image_url,
+  referral_ctwa_clid, referral_welcome_message_text
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
 function insertStatements(env, rows) {
   return rows.map((row) => env.DB.prepare(INSERT_SQL).bind(
     row.received_at, row.direction, row.wa_ts, row.local_time, row.intent, row.type,
     row.text, row.text_len, row.has_media, row.is_reply_to_template, row.contact_hash,
     row.contact_last4, row.contact_name, row.status, row.message_id,
+    row.referral_source_url, row.referral_source_id, row.referral_source_type,
+    row.referral_body, row.referral_headline, row.referral_media_type, row.referral_image_url,
+    row.referral_ctwa_clid, row.referral_welcome_message_text
   ));
 }
 
@@ -223,7 +261,6 @@ async function handleVerify(url, request, env, ctx) {
   const challenge = url.searchParams.get("hub.challenge") || "";
   const ok = mode === "subscribe" && sameToken(token, env.WHATSAPP_VERIFY_TOKEN);
 
-  // Nos faltó este registro la primera vez y el diagnóstico se volvió a ciegas.
   ctx.waitUntil(env.DB.prepare(
     `INSERT INTO verifications (received_at, mode, ok, challenge_len, user_agent, country)
      VALUES (?, ?, ?, ?, ?, ?)`,
@@ -246,7 +283,6 @@ async function handleEvent(request, env, ctx) {
     return json({ error: "json inválido" }, 400);
   }
 
-  // Meta reintenta si no recibe 200; respondemos siempre 200 y registramos aparte.
   const now = new Date().toISOString();
   ctx.waitUntil((async () => {
     try {
@@ -285,6 +321,21 @@ async function handleStats(url, env) {
     por_dia: byDay.results || [],
     verificaciones_ok: ((echoes.results || [])[0] || {}).n || 0,
   });
+}
+
+function json(body, status = 200) {
+  return new Response(JSON.stringify(body), {
+    status,
+    headers: { "content-type": "application/json; charset=utf-8" },
+  });
+}
+
+function sameToken(a, b) {
+  try {
+    return String(a || "").trim() === String(b || "").trim();
+  } catch {
+    return false;
+  }
 }
 
 export default {

@@ -10,7 +10,12 @@
       "name": "Venta_Directa_D2C",
       "type": "Trafico-CortoPlazo",
       "objective": "VENTA_PRODUCTO",
-      "metrics": ["outbound_clicks", "dm_compra", "checkout_start", "add_to_cart"],
+      "metrics": [
+        "outbound_clicks",
+        "dm_compra",
+        "checkout_start",
+        "add_to_cart"
+      ],
       "target_audience": "Consumidor final"
     }
   ],
@@ -62,14 +67,23 @@
   },
   "publishing_rules": {
     "require_audit": true,
-    "vanity_metrics_blocked": ["shares"],
+    "vanity_metrics_blocked": [
+      "shares"
+    ],
     "primary_kpi": "dm_distribucion",
-    "secondary_kpis": ["outbound_clicks", "form_submit"]
+    "secondary_kpis": [
+      "outbound_clicks",
+      "form_submit"
+    ]
   },
   "brand_guidelines": {
     "is_official_distributor": true,
     "brand_voice": "Profesional, confiable, experto en producto",
-    "approved_hashtags": ["#FlexiDistribuidor", "#UniverseSentMe", "#DistribuidorOficial"],
+    "approved_hashtags": [
+      "#FlexiDistribuidor",
+      "#UniverseSentMe",
+      "#DistribuidorOficial"
+    ],
     "content_pillars": [
       "Novedades de producto",
       "Beneficios para retailers",
@@ -77,6 +91,108 @@
       "Capacitación y soporte",
       "Lanzamientos exclusivos"
     ]
+  },
+  "ads": {
+    "ad_account_id": "act_965886593249554",
+    "ad_account_note": "Pendiente: cuenta publicitaria de Flexi (act_...) y usuario con Administrar campañas",
+    "currency": "MXN",
+    "approved_models": [
+      {
+        "code": "142801",
+        "name": "ISAURA",
+        "brand": "flexi",
+        "colors": [
+          "BEIGE",
+          "TAN"
+        ],
+        "asset_dir": "assets/flexi/campana_oi26/142801"
+      },
+      {
+        "code": "142901",
+        "name": "JOCELYN",
+        "brand": "flexi",
+        "colors": [
+          "TAN"
+        ],
+        "asset_dir": "assets/flexi/campana_oi26/142901"
+      },
+      {
+        "code": "143001",
+        "name": "GINNY",
+        "brand": "flexi",
+        "colors": [
+          "PLATA"
+        ],
+        "asset_dir": "assets/flexi/campana_oi26/143001"
+      },
+      {
+        "code": "143201",
+        "name": "LYDIA",
+        "brand": "flexi",
+        "colors": [
+          "TAN"
+        ],
+        "asset_dir": "assets/flexi/campana_oi26/143201"
+      },
+      {
+        "code": "306703",
+        "name": "ARISHA",
+        "brand": "quirelli",
+        "colors": [
+          "NEGRO"
+        ],
+        "asset_dir": "assets/flexi/campana_oi26/306703"
+      }
+    ],
+    "allowed_angles": [
+      "beneficio_directo",
+      "prueba_social"
+    ],
+    "forbidden_terms": [
+      "2x1",
+      "2×1",
+      "meses sin intereses",
+      "msi",
+      "envío gratis",
+      "envio gratis",
+      "15%",
+      "cumpleaños",
+      "descuento",
+      "oferta",
+      "promoción",
+      "promocion",
+      "precio",
+      "stock",
+      "disponible",
+      "apartado",
+      "garantizado",
+      "el mejor",
+      "los mejores",
+      "#1",
+      "número 1",
+      "cientos de clientes",
+      "clientes satisfechos"
+    ],
+    "claims_status": "rejected",
+    "claims_rejected": [
+      "2x1",
+      "meses sin intereses",
+      "envío gratis >$1200",
+      "15% de cumpleaños"
+    ],
+    "targeting": {
+      "city": "Piedras Negras",
+      "region": "Coahuila",
+      "country": "México",
+      "radius_km": 0,
+      "age_min": 28,
+      "age_max": 55,
+      "genders": [
+        "F"
+      ]
+    },
+    "ad_account_name": "Flexi",
+    "ad_account_status": 3
   },
   "created_at": "2026-10-10T00:00:00.000000+00:00"
 }

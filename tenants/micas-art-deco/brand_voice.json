@@ -1,0 +1,44 @@
+{
+  "tenant_id": "micas-art-deco",
+  "version": "1.0",
+  "updated": "2026-10-25T12:00:00.000000",
+  "sources": [],
+  "brand_identity": {
+    "name": "Mica's Art & Deco",
+    "tagline": "Arte y decoración para tu hogar",
+    "value_proposition": "Piezas únicas de arte y decoración artesanal",
+    "differentiators": [
+      "Diseños exclusivos",
+      "Hecho a mano",
+      "Materiales sustentables"
+    ]
+  },
+  "voice_attributes": {
+    "tone": "Cálido, inspirador, artístico",
+    "formality": "tú cercano",
+    "emoji_usage": "moderado",
+    "sentence_length": "media",
+    "perspective": "tú cercano"
+  },
+  "vocabulary": {
+    "preferred": ["arte", "decoración", "hecho a mano", "único", "inspirador"],
+    "avoid": ["masivo", "industrial", "genérico"],
+    "product_terms": []
+  },
+  "messaging_patterns": {
+    "opening": ["¡Hola! Bienvenido a Mica's Art & Deco 👋"],
+    "closing": ["¡Gracias por visitarnos! 😊"],
+    "cta_soft": ["¿Te ayudo a encontrar tu pieza ideal?"],
+    "cta_direct": ["Ver catálogo", "Hacer pedido"]
+  },
+  "channel_rules": {},
+  "compliance": {
+    "prohibited_claims": ["mejor del mercado", "garantizado 100%"]
+  },
+  "examples": {},
+  "sub_brands": {},
+  "published_copy_evidence": {},
+  "created_at": "2026-10-25T12:00:00.000000",
+  "approved_by": "",
+  "approval_date": ""
+}

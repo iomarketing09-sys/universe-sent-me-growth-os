@@ -1,0 +1,149 @@
+{
+  "tenant_id": "flexi",
+  "version": "2.0",
+  "updated": "2026-10-14T21:00:00.000000",
+  "sources": [
+    "Auditoria_Inicial_20261010.md",
+    "CATALOGO_FLEXI_CONTEXTO_20261014.md (Hallazgo Quirelli)"
+  ],
+  "brand_identity": {
+    "name": "Flexi",
+    "tagline": "Comodidad que camina contigo",
+    "value_proposition": "Distribuidor oficial Universe Sent Me - Calzado con tecnología de confort líder (Walking Soft, Inyección Directa, Cápsula de Aire, Recovery Form) + línea especializada Quirelli (Hexafoam)",
+    "differentiators": [
+      "Distribuidor oficial Universe Sent Me",
+      "Tecnologías propias: Walking Soft, Inyección Directa, Cápsula de Aire, Recovery Form",
+      "Sub-marca Quirelli con tecnología Hexafoam",
+      "Cobertura Dama + Caballero + Escolar",
+      "Presencia omnicanal: web, marketplaces, retail físico"
+    ]
+  },
+  "sub_brands": {
+    "Quirelli": {
+      "name": "Quirelli",
+      "tagline": "Confort avanzado, paso a paso",
+      "value_proposition": "Línea especializada en confort tecnológico (Hexafoam, Vacuno) para consumidor que prioriza bienestar",
+      "differentiators": [
+        "Plantilla Hexafoam exclusiva",
+        "Materiales vacuno premium",
+        "Diseño enfocado en confort diario",
+        "Sub-marca de Flexi con identidad propia"
+      ],
+      "target": "Consumidor final D2C que busca máximo confort tecnológico",
+      "models": ["305101", "88702", "304402", "306703", "407801", "66517", "137002", "140601", "143302", "143201", "423201", "406401", "63201", "63202", "66514", "66525", "68714", "700803", "700804", "707205", "707902", "421501", "421503", "417606", "414404", "418502", "419501", "419502", "423803", "424202", "424601", "300801", "300808", "303302", "304202", "304401", "304704", "35802", "35902", "88701", "98304", "5807", "50816"]
+    }
+  },
+  "voice_attributes": {
+    "tone": "Profesional, confiable, experto en producto",
+    "formality": "tú cercano",
+    "emoji_usage": "moderado",
+    "sentence_length": "media",
+    "perspective": "tú cercano"
+  },
+  "vocabulary": {
+    "preferred": [
+      "confort",
+      "tecnología",
+      "Walking Soft",
+      "Inyección Directa",
+      "Cápsula de Aire",
+      "Recovery Form",
+      "Hexafoam (Quirelli)",
+      "distribuidor oficial",
+      "piel genuina",
+      "vacuno",
+      "bienestar"
+    ],
+    "avoid": [
+      "mejor del mercado",
+      "garantizado 100%",
+      "mágico",
+      "milagroso"
+    ],
+    "product_terms": {
+      "Flexi": [
+        "Walking Soft",
+        "Inyección Directa",
+        "Cápsula de Aire",
+        "Recovery Form",
+        "Tamboreado"
+      ],
+      "Quirelli": [
+        "Hexafoam",
+        "Vacuno",
+        "Planta Hexafoam",
+        "Sneaker casual",
+        "Mocasín Hidalgo"
+      ]
+    }
+  },
+  "messaging_patterns": {
+    "opening": [
+      "¡Hola! Bienvenido a Flexi 👋",
+      "¡Hola! ¿Buscas confort Flexi o Quirelli? 👋"
+    ],
+    "closing": [
+      "¡Gracias por contactarnos! 😊",
+      "¡Que tengas un día muy cómodo! 😊"
+    ],
+    "cta_soft": [
+      "¿Te ayudo a encontrar tu modelo ideal?",
+      "¿Necesitas más info sobre tecnologías?",
+      "¿Flexi o Quirelli para ti?"
+    ],
+    "cta_direct": [
+      "Haz tu pedido",
+      "Agenda tu cita",
+      "Solicita catálogo distribuidor"
+    ]
+  },
+  "channel_rules": {
+    "whatsapp": {
+      "response_time_target_min": 15,
+      "use_catalog_sharing": true,
+      "distinguish_brand_in_reply": true
+    },
+    "meta_ads": {
+      "separate_campaigns_by_brand": true,
+      "flexi_keywords": ["Walking Soft", "Inyección Directa", "Cápsula de Aire", "distribuidor oficial"],
+      "quirelli_keywords": ["Hexafoam", "confort avanzado", "vacuno", "plantilla tecnológica"]
+    },
+    "organic_social": {
+      "flexi_content_pillars": [
+        "Tecnologías de confort (Walking Soft, Inyección Directa, etc.)",
+        "Novedades de producto Flexi",
+        "Casos de éxito retailers",
+        "Capacitación y soporte"
+      ],
+      "quirelli_content_pillars": [
+        "Tecnología Hexafoam explicada",
+        "Confort diario real",
+        "Diferenciación vs Flexi principal",
+        "Testimonios confort"
+      ],
+      "posting_ratio": "70% Flexi / 30% Quirelli"
+    }
+  },
+  "compliance": {
+    "prohibited_claims": [
+      "mejor del mercado",
+      "garantizado 100%",
+      "mágico",
+      "milagroso",
+      "cura dolores"
+    ],
+    "required_disclaimers": [
+      "Precios sujetos a cambio",
+      "Disponibilidad sujeta a stock",
+      "Colores pueden variar por pantalla"
+    ]
+  },
+  "examples": {
+    "good_flexi": "Descubre el zapato 404801 con Walking Soft y gel en talón: confort real para tu jornada laboral. ¿Negro u Oporto? 👞",
+    "good_quirelli": "Tu nuevo sneaker 305101 con plantilla Hexafoam: tecnología de confort que se siente en cada paso. Negro o Tan 👟",
+    "bad": "Los mejores zapatos del mercado, garantizados para curar tus dolores de pies 💯"
+  },
+  "created_at": "2026-10-14T01:56:49.596386",
+  "approved_by": "",
+  "approval_date": ""
+}

@@ -1,10 +1,11 @@
 {
   "tenant_id": "flexi",
   "version": "2.0",
-  "updated": "2026-10-14T21:00:00.000000",
+  "updated": "2026-10-25T11:54:24.064069",
   "sources": [
     "Auditoria_Inicial_20261010.md",
-    "CATALOGO_FLEXI_CONTEXTO_20261014.md (Hallazgo Quirelli)"
+    "CATALOGO_FLEXI_CONTEXTO_20261014.md (Hallazgo Quirelli)",
+    "meta_posts_20261011.json"
   ],
   "brand_identity": {
     "name": "Flexi",
@@ -17,21 +18,6 @@
       "Cobertura Dama + Caballero + Escolar",
       "Presencia omnicanal: web, marketplaces, retail físico"
     ]
-  },
-  "sub_brands": {
-    "Quirelli": {
-      "name": "Quirelli",
-      "tagline": "Confort avanzado, paso a paso",
-      "value_proposition": "Línea especializada en confort tecnológico (Hexafoam, Vacuno) para consumidor que prioriza bienestar",
-      "differentiators": [
-        "Plantilla Hexafoam exclusiva",
-        "Materiales vacuno premium",
-        "Diseño enfocado en confort diario",
-        "Sub-marca de Flexi con identidad propia"
-      ],
-      "target": "Consumidor final D2C que busca máximo confort tecnológico",
-      "models": ["305101", "88702", "304402", "306703", "407801", "66517", "137002", "140601", "143302", "143201", "423201", "406401", "63201", "63202", "66514", "66525", "68714", "700803", "700804", "707205", "707902", "421501", "421503", "417606", "414404", "418502", "419501", "419502", "423803", "424202", "424601", "300801", "300808", "303302", "304202", "304401", "304704", "35802", "35902", "88701", "98304", "5807", "50816"]
-    }
   },
   "voice_attributes": {
     "tone": "Profesional, confiable, experto en producto",
@@ -105,8 +91,18 @@
     },
     "meta_ads": {
       "separate_campaigns_by_brand": true,
-      "flexi_keywords": ["Walking Soft", "Inyección Directa", "Cápsula de Aire", "distribuidor oficial"],
-      "quirelli_keywords": ["Hexafoam", "confort avanzado", "vacuno", "plantilla tecnológica"]
+      "flexi_keywords": [
+        "Walking Soft",
+        "Inyección Directa",
+        "Cápsula de Aire",
+        "distribuidor oficial"
+      ],
+      "quirelli_keywords": [
+        "Hexafoam",
+        "confort avanzado",
+        "vacuno",
+        "plantilla tecnológica"
+      ]
     },
     "organic_social": {
       "flexi_content_pillars": [
@@ -125,6 +121,8 @@
     }
   },
   "compliance": {
+    "meta_templates_category": "UTILITY",
+    "language": "es_MX",
     "prohibited_claims": [
       "mejor del mercado",
       "garantizado 100%",
@@ -139,9 +137,202 @@
     ]
   },
   "examples": {
-    "good_flexi": "Descubre el zapato 404801 con Walking Soft y gel en talón: confort real para tu jornada laboral. ¿Negro u Oporto? 👞",
-    "good_quirelli": "Tu nuevo sneaker 305101 con plantilla Hexafoam: tecnología de confort que se siente en cada paso. Negro o Tan 👟",
+    "good": "",
     "bad": "Los mejores zapatos del mercado, garantizados para curar tus dolores de pies 💯"
+  },
+  "sub_brands": {
+    "Quirelli": {
+      "name": "Quirelli",
+      "tagline": "Confort avanzado, paso a paso",
+      "value_proposition": "Línea especializada en confort tecnológico (Hexafoam, Vacuno) para consumidor que prioriza bienestar",
+      "differentiators": [
+        "Plantilla Hexafoam exclusiva",
+        "Materiales vacuno premium",
+        "Diseño enfocado en confort diario",
+        "Sub-marca de Flexi con identidad propia"
+      ],
+      "target": "Consumidor final D2C que busca máximo confort tecnológico",
+      "models": [
+        "305101",
+        "88702",
+        "304402",
+        "306703",
+        "407801",
+        "66517",
+        "137002",
+        "140601",
+        "143302",
+        "143201",
+        "423201",
+        "406401",
+        "63201",
+        "63202",
+        "66514",
+        "66525",
+        "68714",
+        "700803",
+        "700804",
+        "707205",
+        "707902",
+        "421501",
+        "421503",
+        "417606",
+        "414404",
+        "418502",
+        "419501",
+        "419502",
+        "423803",
+        "424202",
+        "424601",
+        "300801",
+        "300808",
+        "303302",
+        "304202",
+        "304401",
+        "304704",
+        "35802",
+        "35902",
+        "88701",
+        "98304",
+        "5807",
+        "50816"
+      ]
+    }
+  },
+  "published_copy_evidence": {
+    "posts_analyzed": 20,
+    "sources": [
+      "meta_posts_20261011.json"
+    ],
+    "period": {
+      "from": "2026-10-06T20:15:41+0000",
+      "to": "2026-10-11T19:14:48+0000"
+    },
+    "length": {
+      "avg_chars": 203.6,
+      "median_chars": 186,
+      "p25_chars": 154,
+      "p75_chars": 227
+    },
+    "emoji": {
+      "posts_with_emoji": 19,
+      "ratio": 0.95,
+      "median_per_post": 2
+    },
+    "hashtags": {
+      "posts_with_hashtags": 20,
+      "ratio": 1.0,
+      "top": [
+        "#PiedrasNegras",
+        "#Flexi",
+        "#ComodidadEnMovimiento",
+        "#Quirelli",
+        "#NuevaTemporadaOI26",
+        "#FlexiCountry",
+        "#PiedeasNegras",
+        "#Tacones",
+        "#ModaMasculina",
+        "#ParaÉl"
+      ]
+    },
+    "openings": [
+      "Para las ocasiones que merecen algo especial tenemos a #Quirelli.",
+      "Tus pies también necesitan un descanso👣 Elige un calzado que combine estilo, comodidad y la sensación de sentirte bien a",
+      "Tu día comienza mejor cuando tus pies están cómodos 😌",
+      "Cada detalle pensando para tu comodidad👌🏻",
+      "¡Una bolsa nunca es solo una bolsa, es el detalle que completa tu estilo!👜",
+      "El estilo formal evoluciona."
+    ],
+    "closings": [
+      "Los tenemos en Zapatería Flexi #PiedrasNegras",
+      "Zapatería #Flexi #PiedrasNegras",
+      "Hoy domingo te esperamos en Zapatería #Flexi #PiedrasNegras de 12pm a 6pm 🕕",
+      "Disponibles en Zapatería #Flexi #PiedrasNegras"
+    ],
+    "second_person_openings_ratio": 0.4,
+    "recurring_words": [
+      "zapatería",
+      "estilo",
+      "flexi",
+      "calzado",
+      "comodidad",
+      "caminar",
+      "especial",
+      "tenemos",
+      "elige",
+      "sensación",
+      "bien",
+      "esperamos",
+      "detalle",
+      "encuentra",
+      "diseños"
+    ],
+    "recurring_phrases": [
+      "elige calzado",
+      "sentirte bien",
+      "bien caminar",
+      "estilo encuentra",
+      "mayor confort"
+    ],
+    "proper_nouns": [
+      "Flexi",
+      "Zapatería",
+      "PiedrasNegras",
+      "ComodidadEnMovimiento",
+      "Quirelli",
+      "NuevaTemporadaOI26",
+      "Tacones"
+    ],
+    "local_markers": [
+      "PiedrasNegras",
+      "Zapatería #Flexi",
+      "Zapatería Flexi"
+    ],
+    "observed_patterns": [
+      "20 posts: longitud mediana 186 caracteres (rango 120–465).",
+      "95% de los posts usan emojis (mediana 2 por post).",
+      "100% de los posts incluyen hashtags (mediana 2 por post).",
+      "8/20 hooks abren en segunda persona o hablan directamente de 'tu/tus/te'.",
+      "14/20 posts cierran con una invitación a descubrir, elegir, visitar o escribir.",
+      "4/20 posts usan exclamación y 2/20 usan pregunta.",
+      "Mediana de 3 frases por post; los hooks son cortos y sensoriales."
+    ],
+    "ad_translation": [
+      "Conserva la segunda persona, el hook sensorial y las frases cortas del copy orgánico.",
+      "Quita hashtags, direcciones y horarios: el anuncio debe invitar a escribir por WhatsApp.",
+      "No copies frases literales ni emojis; replica el ritmo y el vocabulario de la marca.",
+      "La calidez y cercanía del copy publicado deben notarse incluso en 125 caracteres."
+    ],
+    "signature_examples": [
+      {
+        "text": "Tus pies también necesitan un descanso👣 Elige un calzado que combine estilo, comodidad y la sensación de sentirte bien al caminar.\n\nZapatería #Flexi #PiedrasNegras\n#ComodidadEnMovimiento",
+        "created_time": "2026-10-11T18:30:44+0000",
+        "chars": 186,
+        "emojis": 1,
+        "why": "Hook y ritmo representativos del copy publicado."
+      },
+      {
+        "text": "Este fin de semana brilla con Flexi ✨\n\nHay una sensación especial cuando encuentras ese par que simplemente se siente bien al caminar 😌\n\nZapatería #Flexi #PiedrasNegras #ComodidadEnMovimiento",
+        "created_time": "2026-10-09T15:01:06+0000",
+        "chars": 191,
+        "emojis": 2,
+        "why": "Hook y ritmo representativos del copy publicado."
+      },
+      {
+        "text": "🍂 ¡Colores que enamoran, diseños que conquistan! Descubre las nuevas carteras Flexi de esta temporada y déjate cautivar por cada detalle. 🤎\n\nVen por tu favorita a Zapatería #Flexi #PiedrasNegras 📍",
+        "created_time": "2026-10-09T22:00:59+0000",
+        "chars": 196,
+        "emojis": 3,
+        "why": "Hook y ritmo representativos del copy publicado."
+      },
+      {
+        "text": "Tacones con actitud. Para mujeres que aman destacar 😎\n\nPara esos días en los que quieres verte elegante y segura 😉\n\nZapatería #Flexi #PiedrasNegras\n#NuevaTemporadaOI26 #Tacones",
+        "created_time": "2026-10-07T21:01:03+0000",
+        "chars": 176,
+        "emojis": 2,
+        "why": "Hook y ritmo representativos del copy publicado."
+      }
+    ]
   },
   "created_at": "2026-10-14T01:56:49.596386",
   "approved_by": "",
