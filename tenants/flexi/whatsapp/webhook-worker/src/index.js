@@ -168,9 +168,21 @@ async function buildRows(payload, now) {
         });
       }
 
-      // Coexistencia: mensajes que la sucursal manda desde la app del teléfono (smb_message_echoes).
-      for (const echo of value.smb_message_echoes || []) {
+      // Coexistencia: mensajes que la sucursal manda desde la app del teléfono.
+      // Meta usa `smb_message_echoes` en la doc, pero en producción llegan en
+      // `message_echoes` con el mensaje plano (sin wrapper `message`).
+      const echoes = [
+        ...(value.smb_message_echoes || []),
+        ...(value.message_echoes || []),
+      ];
+      const seenEchoes = new Set();
+      for (const echo of echoes) {
         const message = echo.message || echo;
+        const echoId = message.id || "";
+        if (echoId) {
+          if (seenEchoes.has(echoId)) continue;
+          seenEchoes.add(echoId);
+        }
         const waId = message.to || message.from || "";
         const [hash, last4] = await hashContact(waId);
         const text = textOf(message);

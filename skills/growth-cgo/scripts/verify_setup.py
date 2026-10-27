@@ -57,7 +57,7 @@ def check_agents():
     locations = {
         "brand_voice_agent": root / "modules" / "identity" / "agents" / "brand_voice_agent",
         "meta_ads_agent": root / "agents" / "meta_ads_agent",
-        "whatsapp_agent": root / "agents" / "whatsapp_agent",
+        "whatsapp_agent": root / "modules" / "communications" / "whatsapp",
         "copywriter_agent": root / "modules" / "creative" / "agents" / "copywriter_agent",
     }
 

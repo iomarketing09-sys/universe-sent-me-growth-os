@@ -15,7 +15,18 @@ CREATE TABLE IF NOT EXISTS events (
   contact_last4 TEXT,
   contact_name TEXT,
   status TEXT,
-  message_id TEXT
+  message_id TEXT,
+  -- Atribución de anuncios (click to WhatsApp). El worker ya las inserta;
+  -- en la base desplegada se agregaron con migrations/001_referral_columns.sql.
+  referral_source_url TEXT,
+  referral_source_id TEXT,
+  referral_source_type TEXT,
+  referral_body TEXT,
+  referral_headline TEXT,
+  referral_media_type TEXT,
+  referral_image_url TEXT,
+  referral_ctwa_clid TEXT,
+  referral_welcome_message_text TEXT
 );
 
 CREATE INDEX IF NOT EXISTS idx_events_received_at ON events(received_at);

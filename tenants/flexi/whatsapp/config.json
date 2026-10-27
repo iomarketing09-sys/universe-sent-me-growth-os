@@ -31,13 +31,34 @@
   "operating_hours": {
     "timezone": "America/Matamoros",
     "schedule": {
-      "monday": {"open": "09:00", "close": "20:00"},
-      "tuesday": {"open": "09:00", "close": "20:00"},
-      "wednesday": {"open": "09:00", "close": "20:00"},
-      "thursday": {"open": "09:00", "close": "20:00"},
-      "friday": {"open": "09:00", "close": "20:00"},
-      "saturday": {"open": "10:00", "close": "19:00"},
-      "sunday": {"open": "11:00", "close": "17:00"}
+      "monday": {
+        "open": "09:00",
+        "close": "20:00"
+      },
+      "tuesday": {
+        "open": "09:00",
+        "close": "20:00"
+      },
+      "wednesday": {
+        "open": "09:00",
+        "close": "20:00"
+      },
+      "thursday": {
+        "open": "09:00",
+        "close": "20:00"
+      },
+      "friday": {
+        "open": "09:00",
+        "close": "20:00"
+      },
+      "saturday": {
+        "open": "10:00",
+        "close": "19:00"
+      },
+      "sunday": {
+        "open": "11:00",
+        "close": "17:00"
+      }
     },
     "outside_hours_message": "¡Hola! Nuestro horario de atención es:\n📅 Lunes a Viernes: 9:00 AM - 8:00 PM\n📅 Sábado: 10:00 AM - 7:00 PM\n📅 Domingo: 11:00 AM - 5:00 PM\n\nTu mensaje es importante para nosotros. Te responderemos en cuanto abramos. 😊"
   },
@@ -122,8 +143,7 @@
   "webhook_runtime": "cloudflare-worker",
   "webhook_storage": "d1:flexi_whatsapp_obs",
   "webhook_url_note": "URL estable (Worker desplegado 2026-10-16; callback de Meta apuntando aqui desde 2026-10-16, verificaciones_ok=1). Reemplaza al tunel efimero de trycloudflare, ya retirado.",
-  "webhook_verify_token": "",
-  "webhook_verify_token_ref": "tenants/flexi/.env:WHATSAPP_VERIFY_TOKEN (y secreto del Worker)",
+  "webhook_verify_token_ref": "WHATSAPP_VERIFY_TOKEN en tenants/flexi/.env",
   "webhook_mode": "listen_only",
   "webhook_metrics_endpoint": "/stats?token=<WHATSAPP_VERIFY_TOKEN>",
   "webhook_local_fallback": "tenants/flexi/whatsapp/webhook/server.py (solo depuracion local; ya no es la ruta de produccion)",
@@ -132,5 +152,10 @@
     "flows": true,
     "payments": false,
     "multi_agent": true
+  },
+  "cloudflare": {
+    "account_id": "f3bf2309372ceb3d0fa04838d9c1ebef",
+    "d1_database_id": "0128328b-7c24-4c40-b4f8-c2720c080d5f",
+    "api_token_ref": "CF_API_TOKEN en growth-os/.env"
   }
 }

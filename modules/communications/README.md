@@ -1,0 +1,58 @@
+# Módulo `communications`
+
+Observación y medición de conversaciones. **Solo lectura**: no envía mensajes.
+
+## Estructura
+
+```
+modules/communications/
+└── whatsapp/
+    ├── agent.py             WhatsAppAgent (reporte completo por tenant)
+    ├── adapters.py          Adaptadores del sync multitenant
+    ├── graph.py             Graph API v26 (token de página, WABA, conversaciones)
+    ├── d1.py                Cliente D1 de solo lectura (API REST de Cloudflare)
+    ├── conversations.py     Resumen, profundidad y atribución a anuncios
+    ├── echo_diagnostics.py  Diagnóstico de ecos (respuestas desde el celular)
+    └── env.py               Lectura de credenciales sin exponerlas
+```
+
+`growth/integrations/whatsapp_adapters.py` y `whatsapp_graph.py` siguen
+funcionando como envoltorios de compatibilidad.
+
+## Comandos
+
+```bash
+# Reporte completo (sin Graph)
+python3 -m modules.communications.whatsapp.agent flexi
+
+# Solo métricas concretas
+python3 -m modules.communications.whatsapp.agent flexi --only depth
+python3 -m modules.communications.whatsapp.agent flexi --only campaigns
+python3 -m modules.communications.whatsapp.agent flexi --only echoes --graph
+
+# Diagnóstico de ecos suelto
+python3 -m modules.communications.whatsapp.echo_diagnostics flexi --output /tmp/ecos.json
+```
+
+## Fuentes de datos
+
+- **D1 del worker** (`flexi_whatsapp_obs`): tabla `events` (mensajes, estados,
+  atribución) y `raw_events` (payload crudo para depurar).
+- **Graph API**: apps suscritas al WABA y datos de cuenta.
+
+Credenciales: `CF_API_TOKEN` y `META_ACCESS_TOKEN` se leen del entorno o de
+`.env`. El módulo nunca las imprime. `account_id` y `d1_database_id` viven en
+`tenants/<id>/whatsapp/config.json`.
+
+## Seguridad
+
+- `d1.py` rechaza cualquier consulta que no sea `SELECT`/`WITH`/`PRAGMA`.
+- Los teléfonos nunca se guardan completos: el worker guarda hash + últimos 4.
+- El verify token del webhook ya no vive en `config.json`; solo su referencia a
+  `.env`.
+
+## Comentarios (siguiente fase)
+
+El módulo queda listo para añadir `comments/` (Facebook e Instagram) reusando
+`modules/social/meta_graph.py`. No implementado todavía para no mezclarlo con la
+ingesta de WhatsApp.

@@ -25,6 +25,10 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 - **Kit de marca de Flexi** (`tenants/flexi/brand_kit.json`): temporada OI26
   ("Luz y sombra"), rojo de marca `#D82232` muestreado del logo oficial
   (Pantone 1797) y paleta de temporada marcada como aproximada hasta confirmar.
+- **Módulo `communications`** (`modules/communications/`): WhatsApp de solo
+  lectura con `WhatsAppAgent`, cliente D1 real vía API de Cloudflare,
+  resumen de conversaciones, profundidad, atribución a anuncios y diagnóstico
+  de ecos. Incluye `README` con comandos.
 - **`CHANGELOG.md`**: este archivo, para conservar contexto entre sesiones.
 
 ### Cambiado
@@ -57,6 +61,15 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 - El selector de imágenes ya no cuenta como distintas las copias
   `nombre (1).jpg` ni las variantes de mayúsculas en la extensión.
 - `pytest.ini` usa `--basetemp=.pytest_tmp` para no llenar la cuota de `/tmp`.
+- `growth/integrations/whatsapp_adapters.py` y `whatsapp_graph.py` pasaron a
+  `modules/communications/whatsapp/` con envoltorios de compatibilidad.
+- El verify token del webhook dejó de estar hardcodeado en el adaptador y de
+  guardarse en `tenants/flexi/whatsapp/config.json`; se lee de `.env`.
+- El worker de WhatsApp ahora guarda los ecos que Meta manda en
+  `value.message_echoes` (antes solo leía `smb_message_echoes`, así que se
+  perdían). Requiere redesplegar el worker para tomar efecto.
+- `schema.sql` del worker incluye las columnas de `referral` y se agregó
+  `migrations/001_referral_columns.sql`.
 
 ### Pendiente
 

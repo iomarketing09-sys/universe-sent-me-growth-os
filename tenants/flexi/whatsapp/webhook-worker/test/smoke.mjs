@@ -75,6 +75,23 @@ check("eco desde la app", byDir.out_app[1] === "out_app");
 check("status registrado", byDir.status[1] === "status" && byDir.status[13] === "delivered");
 check("guarda payload crudo", captured.some(c => String(c.sql).includes("INSERT INTO raw_events")));
 
+console.log("== eco en formato de producción (message_echoes plano) ==");
+captured.length = 0;
+const prodPayload = {
+  object: "whatsapp_business_account",
+  entry: [{ id: "1087457280345914", changes: [{ field: "smb_message_echoes", value: {
+    messaging_product: "whatsapp",
+    metadata: { display_phone_number: "5218781385284", phone_number_id: "1327098437161178" },
+    contacts: [],
+    message_echoes: [{ from: "5218781385284", to: "5218781112233", id: "wamid.TEST3", timestamp: "1776000120", type: "text", text: { body: "Sí, sí tenemos" } }],
+  } }] }],
+};
+r = await call(new Request(`${base}/webhook`, { method: "POST", body: JSON.stringify(prodPayload) }));
+check("200 con message_echoes", r.status === 200);
+const prodInserts = captured.filter(c => String(c.sql).includes("INSERT OR IGNORE INTO events"));
+check("guarda el eco plano", prodInserts.length === 1 && prodInserts[0].args[1] === "out_app", `-> ${prodInserts.length}`);
+check("eco plano trae texto", String(prodInserts[0] && prodInserts[0].args[6]).includes("tenemos"));
+
 console.log("== otros casos ==");
 r = await call(new Request(`${base}/webhook`, { method: "POST", body: "{ no es json" }));
 check("400 con json inválido", r.status === 400);
