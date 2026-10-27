@@ -4,7 +4,7 @@ import sys
 from pathlib import Path
 
 from growth import sync
-from growth.integrations import meta_graph
+from modules.social import meta_graph
 
 
 def test_redact_sensitive_data_removes_keys_and_url_parameters():

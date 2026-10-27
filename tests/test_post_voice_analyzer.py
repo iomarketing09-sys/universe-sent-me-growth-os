@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from agents.brand_voice_agent.skills.post_voice_analyzer import analyze_posts, load_posts
+from modules.identity.agents.brand_voice_agent.skills.post_voice_analyzer import analyze_posts, load_posts
 
 
 def _write_posts(path: Path, posts):

@@ -5,4 +5,4 @@ Los módulos dependen de ``core`` (dominio y almacenamiento) y no entre sí, sal
 por el orquestador ``cgo``.
 """
 
-__all__ = ["social"]
+__all__ = ["identity", "social"]

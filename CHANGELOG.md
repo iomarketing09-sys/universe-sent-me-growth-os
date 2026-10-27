@@ -14,6 +14,10 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 - **Módulo `social`** (`modules/social/`): publicación en Instagram y Facebook,
   programación por calendario, registro de publicaciones y lectura de métricas
   orgánicas de Meta. Incluye 21 nombres en su API pública.
+- **Módulo `identity`** (`modules/identity/`): sincronización multitenant
+  (`sync.py`), registro de tenants (`tenant_registry.py`) y el
+  `brand_voice_agent` completo con sus 5 skills (tono, variantes A/B,
+  cumplimiento Meta, investigación de competencia y análisis de voz de posts).
 - **`CHANGELOG.md`**: este archivo, para conservar contexto entre sesiones.
 
 ### Cambiado
@@ -24,6 +28,20 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 - Los archivos originales en `growth/` se conservan como **envoltorios de
   compatibilidad** que reexportan desde el módulo nuevo. Ningún script ni test
   existente se rompió.
+- `growth/sync.py` y `growth/tenant_registry.py` pasaron a `modules/identity/`
+  con el mismo patrón de envoltorio. `agents/brand_voice_agent/` vive ahora en
+  `modules/identity/agents/`.
+- `TenantRegistry` resuelve la raíz del proyecto buscando `modules/` y
+  `tenants/` hacia arriba, así que ya no depende de la profundidad del archivo
+  que lo contiene.
+
+### Corregido
+
+- `scripts/sync_all.py --list` volvía a mostrar la tabla vacía tras el refactor
+  (el registro buscaba `tenants/` dentro de `modules/`). Vuelve a listar los 5
+  tenants.
+- `tests/test_sync.py` parcheaba el shim `growth.integrations.meta_graph` en
+  lugar del módulo real `modules.social.meta_graph`.
 
 ### Pendiente
 

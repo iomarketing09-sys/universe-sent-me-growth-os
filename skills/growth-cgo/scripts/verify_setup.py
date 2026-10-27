@@ -47,14 +47,24 @@ def check_tenants():
 
 
 def check_agents():
-    """Verifica agents disponibles"""
+    """Verifica agents disponibles.
+
+    Cada agente vive dentro del módulo que sirve; los que aún no tienen módulo
+    asignado siguen en ``agents/``.
+    """
     print("\n🔍 Verificando agents...")
-    agents_path = Path(__file__).resolve().parents[3] / "agents"
-    
-    expected = ["brand_voice_agent", "meta_ads_agent", "whatsapp_agent", "copywriter_agent"]
+    root = Path(__file__).resolve().parents[3]
+    locations = {
+        "brand_voice_agent": root / "modules" / "identity" / "agents" / "brand_voice_agent",
+        "meta_ads_agent": root / "agents" / "meta_ads_agent",
+        "whatsapp_agent": root / "agents" / "whatsapp_agent",
+        "copywriter_agent": root / "agents" / "copywriter_agent",
+    }
+
+    expected = list(locations)
     all_ok = True
     for agent in expected:
-        agent_path = agents_path / agent
+        agent_path = locations[agent]
         if agent_path.exists():
             has_agent_py = (agent_path / "agent.py").exists()
             if has_agent_py:
