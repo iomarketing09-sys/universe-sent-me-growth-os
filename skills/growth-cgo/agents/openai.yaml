@@ -1,0 +1,138 @@
+# Growth CGO - OpenAI Agent Metadata
+# Configuración para registro en Codex/OpenAI
+
+name: "growth-cgo"
+description: "Chief Growth Officer - Orquestador principal del Growth OS. Coordina daily pipeline, weekly calendar, tenant onboarding, cross-tenant reporting, canon sync, y meta publishing."
+
+version: "1.0.0"
+author: "iO Marketing"
+
+# Modelos disponibles via OmniRoute (todos gratuitos)
+models:
+  - gpt-oss-20b
+  - gpt-oss-120b
+  - llama-3.1-70b-versatile
+  - llama-3.1-8b-instant
+  - gemini-1.5-flash
+  - gemini-1.5-pro
+  - morph-v3-fast
+  - mixtral-8x7b
+  - nvidia-llama-3.1-nemotron-70b
+
+# Modos de invocación (7 modos operativos)
+invocation_modes:
+  - name: "DAILY_PIPELINE"
+    description: "Ejecuta pipeline diario multi-tenant (contenido → approve → publish)"
+    model: "gpt-oss-20b"
+    temperature: 0.3
+    max_tokens: 1500
+    sub_agents: ["content-writer", "calendar-planner", "brand-voice-agent"]
+    
+  - name: "WEEKLY_CALENDAR"
+    description: "Genera calendario semanal (solo native_digital/universe)"
+    model: "gpt-oss-120b"
+    temperature: 0.2
+    max_tokens: 2000
+    sub_agents: ["calendar-planner", "canon-validator"]
+    
+  - name: "TENANT_ONBOARDING"
+    description: "Onboarding de nuevos tenants (physical_cro o native_digital)"
+    model: "gpt-oss-120b"
+    temperature: 0.4
+    max_tokens: 3000
+    sub_agents: ["tenant-auditor", "brand-voice-agent"]
+    
+  - name: "CROSS_TENANT_REPORT"
+    description: "Reporte consolidado de métricas cross-tenant"
+    model: "gpt-oss-120b"
+    temperature: 0.3
+    max_tokens: 2500
+    sub_agents: ["metrics-collector"]
+    
+  - name: "CANON_SYNC"
+    description: "Sincroniza con canon repo (solo universe) - pre-check para Claude"
+    model: "gpt-oss-20b"
+    temperature: 0.1
+    max_tokens: 1000
+    sub_agents: ["canon-validator"]
+    
+  - name: "META_PUBLISHING"
+    description: "Coordina publicación en Meta (IG/FB) via meta-publisher"
+    model: "gpt-oss-120b"
+    temperature: 0.5
+    max_tokens: 2000
+    sub_agents: ["meta-ads-agent", "brand-voice-agent"]
+    
+  - name: "BRAND_COMPLIANCE"
+    description: "Validación brand voice en cualquier generación de copy"
+    model: "gpt-oss-20b"
+    temperature: 0.2
+    max_tokens: 800
+    sub_agents: ["brand-voice-agent"]
+
+# Configuración de herramientas
+tools:
+  - name: "sync_all"
+    description: "Sync unificado Meta + Google + Directories"
+    script: "scripts/sync_all.py"
+    
+  - name: "sync_google"
+    description: "Sync Google Business + Search Console + Bing"
+    script: "scripts/sync_google.py"
+    
+  - name: "sync_metrics"
+    description: "Consolida métricas cross-tenant"
+    script: "scripts/sync_metrics.py"
+    
+  - name: "revenue_tracker"
+    description: "CRM de deals + unit economics"
+    script: "tools/revenue_tracker.py"
+    
+  - name: "tenant_auditor"
+    description: "CRO audit para physical_cro"
+    script: "tools/tenant_auditor.py"
+    
+  - name: "verify_setup"
+    description: "Verifica entorno CGO completo"
+    script: "skills/growth-cgo/scripts/verify_setup.py"
+
+# Referencias de conocimiento
+knowledge_references:
+  - "references/governance.md"
+  - "references/canon_integration.md"
+  - "references/calendar_architecture.md"
+  - "references/core_models.md"
+
+# Configuración de tenant tracking
+tenant_tracking:
+  active_tenant_file: ".active_tenant"
+  tenants_dir: "tenants/"
+  config_file: "config.json"
+  brand_voice_file: "brand_voice.json"
+
+# Gates de control
+gates:
+  - name: "canon_approval"
+    track: "native_digital"
+    decider: "human_claude_fernando"
+    when: "before_scheduled_or_published"
+    
+  - name: "cro_audit_pass"
+    track: "physical_cro"
+    decider: "tenant_auditor_gpt_oss_120b"
+    when: "onboarding_and_pre_publish"
+    
+  - name: "meta_token_valid"
+    track: "both"
+    decider: "meta_publisher_api"
+    when: "each_publish"
+    
+  - name: "brand_compliance"
+    track: "both"
+    decider: "brand_voice_agent_gpt_oss_20b"
+    when: "each_piece_generated"
+    
+  - name: "lead_qualified"
+    track: "both"
+    decider: "whatsapp_agent_morph_v3"
+    when: "flow_step_2"
