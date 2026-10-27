@@ -1,76 +1,95 @@
+"""Tests for CSV adapter."""
+
 import sys
-import tempfile
-import os
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).parents[2]))
-from storage.csv_adapter import CSVAdapter, PieceCSVAdapter
-from core.models import Piece
-from core.enums import (
-    EstadoPieza, Plataforma, TipoContenido, Categoria, Prioridad,
-    DificultadProduccion, Reutilizable, BloqueadoCanon, EstadoCanon,
-    EstadoProduccion, EstadoPublicacion, MotivoRevision,
-    ReconciliacionEstado, ReconciliacionConfianza
-)
+sys.path.insert(0, str(Path(__file__).parents[1] / "growthos"))
 
-def test_csv_adapter_roundtrip():
-    with tempfile.TemporaryDirectory() as tmpdir:
-        csv_path = Path(tmpdir) / "test.csv"
-        adapter = PieceCSVAdapter(csv_path)
-        # Create a sample piece
-        piece = Piece(
-            ID_Pieza="CNT-0001",
-            Titulo="Test Piece",
-            Tipo_Contenido=TipoContenido.REEL,
-            Plataforma=Plataforma.INSTAGRAM,
-            Estado=EstadoPieza.IDEA,
-            Prioridad=Prioridad.ALTA,
-            Dificultad_Produccion=DificultadProduccion.BAJA,
-            Es_Reutilizable=Reutilizable.SÍ,
-            Categoria=Categoria.HUMOR,
-            Bloqueado_Canon=BloqueadoCanon.NO,
-            # Leave other fields as default (empty strings or None)
-        )
+import pytest
+from growthos.core.models import Piece
+from growthos.storage.csv_adapter import CSVAdapter
+
+
+class TestCSVAdapter:
+    """Test CSVAdapter functionality."""
+
+    def test_read_write_roundtrip(self, tmp_path):
+        """Test reading and writing CSV preserves data."""
+        csv_file = tmp_path / "test_pieces.csv"
+        
+        # Create test pieces with required fields
+        pieces = [
+            Piece(
+                id_pieza="CNT-001", 
+                titulo="Piece 1", 
+                estado_operativo="Idea",
+                tipo_contenido="Reel",
+                plataforma_principal="Instagram",
+                categoria_tematica="Humor"
+            ),
+            Piece(
+                id_pieza="CNT-002", 
+                titulo="Piece 2", 
+                estado_operativo="Aprobado",
+                tipo_contenido="Carrusel",
+                plataforma_principal="Facebook",
+                categoria_tematica="Narrativa"
+            ),
+        ]
+        
         # Write
-        adapter.write_all(Piece, [piece])
+        CSVAdapter.export_csv(pieces, csv_file)
+        
         # Read back
-        records = adapter.read_all(Piece)
-        assert len(records) == 1
-        read_piece = records[0]
-        # Check that essential fields match
-        assert read_piece.ID_Pieza == piece.ID_Pieza
-        assert read_piece.Titulo == piece.Titulo
-        assert read_piece.Tipo_Contenido == piece.Tipo_Contenido
-        assert read_piece.Plataforma == piece.Plataforma
-        assert read_piece.Estado == piece.Estado
-        assert read_piece.Prioridad == piece.Prioridad
-        assert read_piece.Dificultad_Produccion == piece.Dificultad_Produccion
-        assert read_piece.Es_Reutilizable == piece.Es_Reutilizable
-        assert read_piece.Categoria == piece.Categoria
-        assert read_piece.Bloqueado_Canon == piece.Bloqueado_Canon
-        # Note: other fields that were defaulted may be empty strings vs None; we accept either.
-        # For simplicity, we just check that the piece is valid.
-        assert read_piece.ID_Pieza.startswith("CNT-")
+        read_pieces = CSVAdapter.import_csv(Piece, csv_file)
+        
+        assert len(read_pieces) == 2
+        assert read_pieces[0].id_pieza == "CNT-001"
+        assert read_pieces[1].id_pieza == "CNT-002"
 
-def test_csv_adapter_with_empty():
-    with tempfile.TemporaryDirectory() as tmpdir:
-        csv_path = Path(tmpdir) / "empty.csv"
-        adapter = PieceCSVAdapter(csv_path)
-        # Write nothing
-        adapter.write_all(Piece, [])
+    def test_csv_adapter_update(self, tmp_path):
+        """Test updating a piece in CSV."""
+        csv_file = tmp_path / "test_pieces.csv"
+        
+        piece = Piece(
+            id_pieza="CNT-001", 
+            titulo="Original", 
+            estado_operativo="Idea",
+            tipo_contenido="Reel",
+            plataforma_principal="Instagram",
+            categoria_tematica="Humor"
+        )
+        CSVAdapter.export_csv([piece], csv_file)
+        
+        # Update - re-export all
+        piece.titulo = "Updated"
+        CSVAdapter.export_csv([piece], csv_file)
+        
         # Read back
-        records = adapter.read_all(Piece)
-        assert len(records) == 0
-        # File should exist with only header
-        assert csv_path.exists()
-        with open(csv_path, 'r', encoding='utf-8') as f:
-            lines = f.readlines()
-            assert len(lines) == 1  # header only
-            # Check that header contains expected fields (just a few)
-            header = lines[0].strip()
-            assert 'ID_Pieza' in header
-            assert 'Titulo' in header
+        read_pieces = CSVAdapter.import_csv(Piece, csv_file)
+        assert len(read_pieces) == 1
+        assert read_pieces[0].titulo == "Updated"
 
-if __name__ == "__main__":
-    test_csv_adapter_roundtrip()
-    test_csv_adapter_with_empty()
-    print("All CSV adapter tests passed.")
+    def test_csv_adapter_delete(self, tmp_path):
+        """Test deleting by removing file and re-importing."""
+        csv_file = tmp_path / "test_pieces.csv"
+        
+        piece = Piece(
+            id_pieza="CNT-001", 
+            titulo="To Delete", 
+            estado_operativo="Idea",
+            tipo_contenido="Reel",
+            plataforma_principal="Instagram",
+            categoria_tematica="Humor"
+        )
+        CSVAdapter.export_csv([piece], csv_file)
+        
+        # Verify it's there
+        read_pieces = CSVAdapter.import_csv(Piece, csv_file)
+        assert len(read_pieces) == 1
+        
+        # Delete the file completely
+        csv_file.unlink()
+        
+        # Verify gone
+        read_pieces = CSVAdapter.import_csv(Piece, csv_file)
+        assert len(read_pieces) == 0

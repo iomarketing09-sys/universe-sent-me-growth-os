@@ -50,11 +50,11 @@ def test_piece_repository_save_and_get(temp_db):
     repo = PieceRepository(temp_db)
 
     piece = Piece(
-        ID_Pieza="CNT-001",
-        Estado=EstadoPieza.IDEA,
-        Titulo="Test Piece",
-        Personaje_Principal="@char_USM_universe",
-        Plataforma="Facebook",
+        id_pieza="CNT-001",
+        estado_operativo=EstadoPieza.IDEA,
+        titulo="Test Piece",
+        personaje_principal="@char_USM_universe",
+        plataforma_principal="Facebook",
     )
 
     repo.save(piece)
@@ -62,8 +62,8 @@ def test_piece_repository_save_and_get(temp_db):
 
     retrieved = repo.get_by_id("CNT-001")
     assert retrieved is not None
-    assert retrieved.ID_Pieza == "CNT-001"
-    assert retrieved.Titulo == "Test Piece"
+    assert retrieved.id_pieza == "CNT-001"
+    assert retrieved.titulo == "Test Piece"
 
 
 def test_piece_repository_get_all(temp_db):
@@ -72,9 +72,9 @@ def test_piece_repository_get_all(temp_db):
 
     for i in range(3):
         piece = Piece(
-            ID_Pieza=f"CNT-{i+1:04d}",
-            Estado=EstadoPieza.IDEA,
-            Titulo=f"Piece {i+1}",
+            id_pieza=f"CNT-{i+1:04d}",
+            estado_operativo=EstadoPieza.IDEA,
+            titulo=f"Piece {i+1}",
         )
         repo.save(piece)
 
@@ -89,17 +89,17 @@ def test_publication_repository(temp_db):
 
     # First create a piece (FK requirement)
     piece = Piece(
-        ID_Pieza="CNT-001",
-        Estado=EstadoPieza.IDEA,
-        Titulo="Test Piece",
+        id_pieza="CNT-001",
+        estado_operativo=EstadoPieza.IDEA,
+        titulo="Test Piece",
     )
     piece_repo.save(piece)
 
     pub = Publication(
-        ID_Pieza="CNT-001",
-        Publicacion_ID="PUB-001",
-        Meta_Post_ID="123_456",
-        Plataforma="Facebook",
+        id_pieza="CNT-001",
+        publicacion_id="PUB-001",
+        meta_post_id="123_456",
+        plataforma="Facebook",
     )
 
     repo.save(pub)
@@ -107,7 +107,7 @@ def test_publication_repository(temp_db):
 
     retrieved = repo.get_by_meta_post_id("123_456")
     assert retrieved is not None
-    assert retrieved.Meta_Post_ID == "123_456"
+    assert retrieved.meta_post_id == "123_456"
 
 
 def test_csv_adapter_import_pieces():
@@ -119,16 +119,16 @@ def test_csv_adapter_import_pieces():
 
         test_data = [
             {
-                "ID_Pieza": "CNT-001",
-                "Titulo": "Test 1",
-                "Estado": "Aprobado",
-                "Personaje_Principal": "@char_USM_universe",
+                "id": "CNT-001",
+                "titulo": "Test 1",
+                "estado_operacion_normalizado": "Aprobado",
+                "personaje_principal": "@char_USM_universe",
             },
             {
-                "ID_Pieza": "CNT-002",
-                "Titulo": "Test 2",
-                "Estado": "Idea",
-                "Personaje_Principal": "@char_USM_wilfred",
+                "id": "CNT-002",
+                "titulo": "Test 2",
+                "estado_operacion_normalizado": "Idea",
+                "personaje_principal": "@char_USM_wilfred",
             },
         ]
 
@@ -139,8 +139,8 @@ def test_csv_adapter_import_pieces():
 
         pieces = CSVAdapter.import_csv(Piece, csv_path)
         assert len(pieces) == 2
-        assert pieces[0].ID_Pieza == "CNT-001"
-        assert pieces[1].ID_Pieza == "CNT-002"
+        assert pieces[0].id_pieza == "CNT-001"
+        assert pieces[1].id_pieza == "CNT-002"
 
 
 def test_csv_adapter_export_pieces(temp_db):
@@ -152,8 +152,8 @@ def test_csv_adapter_export_pieces(temp_db):
 
         repo = PieceRepository(temp_db)
         pieces = [
-            Piece(ID_Pieza="CNT-001", Estado=EstadoPieza.IDEA, Titulo="Test 1"),
-            Piece(ID_Pieza="CNT-002", Estado=EstadoPieza.APROBADO, Titulo="Test 2"),
+            Piece(id_pieza="CNT-001", estado_operativo=EstadoPieza.IDEA, titulo="Test 1"),
+            Piece(id_pieza="CNT-002", estado_operativo=EstadoPieza.APROBADO, titulo="Test 2"),
         ]
 
         for p in pieces:
@@ -168,5 +168,5 @@ def test_csv_adapter_export_pieces(temp_db):
             rows = list(reader)
 
         assert len(rows) == 2
-        assert rows[0]["id"] == "CNT-001"
-        assert rows[1]["id"] == "CNT-002"
+        assert rows[0]["id_pieza"] == "CNT-001"
+        assert rows[1]["id_pieza"] == "CNT-002"

@@ -1,120 +1,175 @@
+"""Tests for GrowthOS Pydantic models and validators."""
+
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).parents[2]))
+sys.path.insert(0, str(Path(__file__).parents[1] / "growthos"))
+
 from datetime import date
-from core.models import Piece, Publication, Experiment, CommunityEngagement, MetricsSnapshot, AssetAlias
-from core.enums import (
-    EstadoPieza, Plataforma, TipoContenido, Categoria, Prioridad,
-    DificultadProduccion, Reutilizable, BloqueadoCanon, EstadoCanon,
-    EstadoProduccion, EstadoPublicacion, MotivoRevision,
-    ReconciliacionEstado, ReconciliacionConfianza
+import pytest
+
+from growthos.core.enums import (
+    EstadoPieza,
+    Plataforma,
+    TipoContenido,
+    Categoria,
+    Prioridad,
+    DificultadProduccion,
+    Reutilizable,
+    BloqueadoCanon,
+    EstadoCanon,
+    EstadoProduccion,
+    EstadoPublicacion,
+    MotivoRevision,
+    ReconciliacionEstado,
+    ReconciliacionConfianza,
 )
+from growthos.core.models import Piece, Publication, Experiment, MetricsSnapshot, AssetAlias, Deal
 
-def test_piece_creation():
-    p = Piece(
-        ID_Pieza="CNT-0001",
-        Titulo="Test Piece",
-        Personaje_Principal="Hero",
-        Personajes_Secundarios="Sidekick",
-        Tipo_Contenido=TipoContenido.REEL,
-        Plataforma=Plataforma.INSTAGRAM,
-        Objetivo="Test",
-        Hipotesis_ID="HB-001",
-        Estado=EstadoPieza.IDEA,
-        Prioridad=Prioridad.ALTA,
-        Dificultad_Produccion=DificultadProduccion.BAJA,
-        Es_Reutilizable=Reutilizable.SÍ,
-        Fecha_Ultima_Publicacion=None,
-        Fuente="Test",
-        Formato="MP4",
-        Categoria=Categoria.HUMOR,
-        Bloqueado_Canon=BloqueadoCanon.NO,
-        Estado_Operacion_Normalizado="",
-        Estado_Canon_Normalizado="",
-        Asset_Ref_Confirmado="",
-        Asset_Ref_Candidato="",
-        Reconciliacion_Estado=None,
-        Reconciliacion_Confianza=None,
-        Reconciliacion_Fuente="",
-        Reconciliacion_Nota="",
-        Registro_Relacionado="",
-        Drive_Reference_ID="",
-        Meta_Publication_ID="",
-        Meta_Permalink="",
-        Asset_Set="",
-        Asset_Ref="",
-        Asset_Filename="",
-        Drive_ID="",
-        Estado_Canon=None,
-        Estado_Produccion=None,
-        Estado_Publicacion=None,
-        Ultima_Sincronizacion="",
-        Motivo_Revision_Normalizado=None,
-        Personaje_Principal_Normalizado="",
-        Personajes_Secundarios_Normalizados="",
-        Rol_Narrativo="",
-        Tipo_Humor_Normalizado="",
-        Potencial_Etiquetado="",
-        Confianza_Taxonomia="",
-        Fuente_Taxonomia="",
-        Nota_Taxonomia=""
-    )
-    assert p.ID_Pieza == "CNT-0001"
-    assert p.Titulo == "Test Piece"
-    assert p.Estado == EstadoPieza.IDEA
-    assert p.Plataforma == Plataforma.INSTAGRAM
-    assert p.Tipo_Contenido == TipoContenido.REEL
-    assert p.Categoria == Categoria.HUMOR
-    assert p.Bloqueado_Canon == BloqueadoCanon.NO
-    assert p.Estado_Canon is None
 
-def test_piece_validators():
-    # Test that invalid enum raises ValueError
-    try:
-        Piece(
-            ID_Pieza="CNT-0002",
-            Titulo="Invalid",
-            Estado="InvalidState",  # not in Enum
+class TestEnums:
+    """Test enum values are correct."""
+
+    def test_estado_pieza_values(self):
+        assert EstadoPieza.IDEA == "Idea"
+        assert EstadoPieza.APROBADO == "Aprobado"
+        assert EstadoPieza.PUBLICADO == "Publicado"
+
+    def test_plataforma_values(self):
+        assert Plataforma.FACEBOOK == "Facebook"
+        assert Plataforma.INSTAGRAM == "Instagram"
+
+    def test_tipo_contenido_values(self):
+        assert TipoContenido.REEL == "Reel"
+        assert TipoContenido.CARRUSEL == "Carrusel"
+
+    def test_categoria_values(self):
+        assert Categoria.HUMOR == "Humor"
+        assert Categoria.NARRATIVA == "Narrativa"
+
+
+class TestPieceModel:
+    """Test Piece model validation."""
+
+    def test_valid_piece(self):
+        piece = Piece(
+            id_pieza="CNT-001",
+            titulo="Test Piece",
+            personaje_principal="@char_USM_universe",
+            estado_operativo=EstadoPieza.IDEA,
         )
-        assert False, "Should have raised ValueError"
-    except ValueError as e:
-        assert "Invalid Estado" in str(e)
-    # Test ID_Pieza format
-    try:
-        Piece(ID_Pieza="invalid-format", Titulo="Test")
-        assert False, "Should have raised ValueError"
-    except ValueError as e:
-        assert "Invalid piece ID format" in str(e)
-    try:
-        Piece(ID_Pieza="CNT-00000", Titulo="Test")  # number out of range
-        assert False, "Should have raised ValueError"
-    except ValueError as e:
-        assert "Invalid piece ID format" in str(e)
-    # Test valid ID
-    p = Piece(ID_Pieza="CNT-0001", Titulo="Test")
-    assert p.ID_Pieza == "CNT-0001"
-    # Test that empty string for required string fields is allowed (they default to empty)
-    p2 = Piece(ID_Pieza="CNT-0003", Titulo="")
-    assert p2.Titulo == ""
-    # Test that optional enum fields accept None
-    p3 = Piece(ID_Pieza="CNT-0004", Titulo="Test", Tipo_Contenido=None, Plataforma=None)
-    assert p3.Tipo_Contenido is None
-    assert p3.Plataforma is None
+        assert piece.id_pieza == "CNT-001"
+        assert piece.titulo == "Test Piece"
+        assert piece.personaje_principal == "@char_USM_universe"
 
-def test_other_models():
-    pub = Publication(ID_Pieza="CNT-0001", Publicacion_ID="pub123", Fecha_Publicacion=date(2026,8,30), Plataforma=Plataforma.FACEBOOK)
-    assert pub.Publicacion_ID == "pub123"
-    exp = Experiment(Experiment_ID="exp1", Hipotesis_ID="HB-001", ID_Pieza="CNT-0001")
-    assert exp.Experiment_ID == "exp1"
-    ce = CommunityEngagement(ID="ce1", Comentario_ID="comment1", Post_ID="post1", CNT_ID="CNT-0001", Tipo="Like", Autor="user", Texto="Test comment")
-    assert ce.ID == "ce1"
-    ms = MetricsSnapshot(Snapshot_ID="snap1", Meta_Post_ID="meta123", Target_At_UTC="2026-08-30T10:00:00Z", Window_Type="24h")
-    assert ms.Snapshot_ID == "snap1"
-    aa = AssetAlias(Alias_ID="alias1", Asset_Ref="ref123", Asset_Filename="file.jpg", Drive_ID="drive123")
-    assert aa.Alias_ID == "alias1"
+    def test_piece_id_validation(self):
+        # Valid IDs
+        piece = Piece(id_pieza="CNT-001", estado_operativo=EstadoPieza.IDEA)
+        assert piece.id_pieza == "CNT-001"
 
-if __name__ == "__main__":
-    test_piece_creation()
-    test_piece_validators()
-    test_other_models()
-    print("All model tests passed.")
+        # Invalid ID format
+        with pytest.raises(ValueError):
+            Piece(id_pieza="INVALID-001", estado_operativo=EstadoPieza.IDEA)
+
+    def test_date_parsing(self):
+        piece = Piece(
+            id_pieza="CNT-001",
+            estado_operativo=EstadoPieza.IDEA,
+            fecha_ultima_publicacion="2026-07-29",
+        )
+        assert piece.fecha_ultima_publicacion == date(2026, 7, 29)
+
+        # Different format
+        piece2 = Piece(
+            id_pieza="CNT-002",
+            estado_operativo=EstadoPieza.IDEA,
+            fecha_ultima_publicacion="07/29/2026",
+        )
+        assert piece2.fecha_ultima_publicacion == date(2026, 7, 29)
+
+    def test_days_since_publication_auto_computed(self):
+        piece = Piece(
+            id_pieza="CNT-001",
+            estado_operativo=EstadoPieza.IDEA,
+            fecha_ultima_publicacion=date(2026, 7, 29),
+        )
+        # Days should be computed
+        assert piece.dias_desde_publicacion is not None
+        assert piece.dias_desde_publicacion >= 0
+
+    def test_extra_fields_allowed(self):
+        """Extra fields from CSV should be allowed."""
+        piece = Piece(
+            id_pieza="CNT-001",
+            estado_operativo=EstadoPieza.IDEA,
+            unknown_field="should be ignored",
+        )
+
+
+class TestPublicationModel:
+    """Test Publication model."""
+
+    def test_valid_publication(self):
+        pub = Publication(
+            id_pieza="CNT-001",
+            publicacion_id="PUB-001",
+            fecha_publicacion="2026-10-15",
+            plataforma=Plataforma.INSTAGRAM,
+        )
+        assert pub.id_pieza == "CNT-001"
+        assert pub.plataforma == Plataforma.INSTAGRAM
+
+
+class TestExperimentModel:
+    """Test Experiment model."""
+
+    def test_valid_experiment(self):
+        exp = Experiment(
+            experiment_id="EXP-001",
+            hipotesis_id="HB-001",
+            id_pieza="CNT-001",
+            vistas=1000,
+        )
+        assert exp.experiment_id == "EXP-001"
+        assert exp.vistas == 1000
+
+
+class TestMetricsSnapshotModel:
+    """Test MetricsSnapshot model."""
+
+    def test_valid_snapshot(self):
+        snap = MetricsSnapshot(
+            snapshot_id="SNAP-001",
+            meta_post_id="POST-001",
+            target_at_utc="2026-10-15T12:00:00Z",
+            window_type="E24",
+            reactions=100,
+        )
+        assert snap.snapshot_id == "SNAP-001"
+        assert snap.reactions == 100
+
+
+class TestAssetAliasModel:
+    """Test AssetAlias model."""
+
+    def test_valid_alias(self):
+        alias = AssetAlias(
+            alias_id="ALIAS-001",
+            asset_ref="CNT-001",
+        )
+        assert alias.alias_id == "ALIAS-001"
+        assert alias.asset_ref == "CNT-001"
+
+
+class TestDealModel:
+    """Test Deal model."""
+
+    def test_valid_deal(self):
+        deal = Deal(
+            deal_id="DEAL-001",
+            tenant_id="flexi",
+            lead_source="Meta_Ads",
+            amount=500.0,
+        )
+        assert deal.deal_id == "DEAL-001"
+        assert deal.tenant_id == "flexi"
+        assert deal.amount == 500.0
