@@ -38,6 +38,9 @@ tenants/bam-in-a-can/logs/*
 tenants/*/.env
 # Flexi: material de campana (imagenes/PDF, ~8 GB) vive en Drive; el inventario va en tenants/flexi/data/
 tenants/flexi/assets/
+# Flexi: assets de campana embebidos en tenants/flexi/ads (~553 MB, copias de assets/).
+# El manifiesto _assets_manifest.md referencia las rutas en Drive; no se versionan binarios.
+tenants/flexi/ads/**/Assets/
 tenants/micas-art-deco/.env
 # Test outputs
 Thumbs.db
@@ -47,3 +50,7 @@ Thumbs.db
 
 dryrun_output.json
 AMBIGUEDAD_FASE2.txt
+
+# WhatsApp ingestion artifacts (sanitized but operational, never commit)
+tenants/*/whatsapp/reports/
+tenants/*/whatsapp/voice_proposals/

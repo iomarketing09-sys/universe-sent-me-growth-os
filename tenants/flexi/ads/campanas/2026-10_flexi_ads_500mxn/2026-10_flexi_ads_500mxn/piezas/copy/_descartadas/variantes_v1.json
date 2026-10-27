@@ -1,0 +1,135 @@
+{
+  "tenant_id": "flexi",
+  "campaign_slug": "2026-10_flexi_ads_500mxn",
+  "generated_at": "2026-10-17",
+  "voice_profile": "/home/universe-sent-me/growth-os/tenants/flexi/brand_voice.json",
+  "voice_approved_by": "",
+  "skills": [
+    "marketingskills-copywriting",
+    "marketingskills-ad-creative"
+  ],
+  "model_requested": "groq/openai/gpt-oss-120b",
+  "model_used": "groq/openai/gpt-oss-20b",
+  "source": "omniroute:groq/openai/gpt-oss-20b",
+  "warnings": [
+    "El perfil de voz no tiene aprobación registrada (`approved_by` vacío).",
+    "El modelo principal no respondió; se usó `groq/openai/gpt-oss-20b`."
+  ],
+  "variants": [
+    {
+      "id": "v1",
+      "angle": "beneficio_directo",
+      "model_code": "142801",
+      "model_name": "ISAURA",
+      "brand": "flexi",
+      "headline": "Confort que sigue tu paso",
+      "primary_text": "Descubre la comodidad diaria con ISAURA. Escríbenos y te orientamos por WhatsApp.",
+      "description": "Distribuidor oficial local",
+      "cta": "SEND_MESSAGE",
+      "hypothesis": "Si el CTR supera 0.8 % y el costo por conversación es menor a 35 MXN, esta variante superará a la prueba social.",
+      "char_counts": {
+        "headline": 25,
+        "primary_text": 81,
+        "description": 26
+      }
+    },
+    {
+      "id": "v2",
+      "angle": "beneficio_directo",
+      "model_code": "143201",
+      "model_name": "LYDIA",
+      "brand": "flexi",
+      "headline": "Paso suave, día sin cansancio",
+      "primary_text": "Lydia brinda confort todo el día. Escríbenos y te ayudamos a elegir tu modelo ideal.",
+      "description": "Flexi, distribuidor oficial",
+      "cta": "SEND_MESSAGE",
+      "hypothesis": "Se espera que la tasa de clics sea al menos 0.9 % y genere más conversaciones que la variante v3.",
+      "char_counts": {
+        "headline": 29,
+        "primary_text": 84,
+        "description": 27
+      }
+    },
+    {
+      "id": "v3",
+      "angle": "prueba_social",
+      "model_code": "306703",
+      "model_name": "ARISHA",
+      "brand": "quirelli",
+      "headline": "Confianza de quien elige Quirelli",
+      "primary_text": "Somos distribuidor oficial de Quirelli. Escríbenos y conoce por qué profesionales usan ARISHA.",
+      "description": "Tecnología de confort Quirelli",
+      "cta": "SEND_MESSAGE",
+      "hypothesis": "Si la variante genera menos de 14 conversaciones en 7 días, el ángulo de prueba social no supera al beneficio directo.",
+      "char_counts": {
+        "headline": 33,
+        "primary_text": 94,
+        "description": 30
+      }
+    },
+    {
+      "id": "v4",
+      "angle": "prueba_social",
+      "model_code": "143001",
+      "model_name": "GINNY",
+      "brand": "flexi",
+      "headline": "Quirelli y Flexi, respaldo oficial",
+      "primary_text": "Como distribuidor oficial, te ofrecemos soporte de Ginny. Escríbenos y te contamos más.",
+      "description": "Calzado con respaldo oficial",
+      "cta": "SEND_MESSAGE",
+      "hypothesis": "Comparada con v1, si el costo por conversación supera 35 MXN, la prueba social será menos eficiente.",
+      "char_counts": {
+        "headline": 34,
+        "primary_text": 87,
+        "description": 28
+      }
+    }
+  ],
+  "validation": [
+    {
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "char_counts": {
+        "headline": 25,
+        "primary_text": 81,
+        "description": 26
+      },
+      "id": "v1"
+    },
+    {
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "char_counts": {
+        "headline": 29,
+        "primary_text": 84,
+        "description": 27
+      },
+      "id": "v2"
+    },
+    {
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "char_counts": {
+        "headline": 33,
+        "primary_text": 94,
+        "description": 30
+      },
+      "id": "v3"
+    },
+    {
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "char_counts": {
+        "headline": 34,
+        "primary_text": 87,
+        "description": 28
+      },
+      "id": "v4"
+    }
+  ],
+  "passed": true
+}

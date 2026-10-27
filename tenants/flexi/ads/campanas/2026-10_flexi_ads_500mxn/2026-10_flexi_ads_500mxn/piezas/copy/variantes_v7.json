@@ -1,0 +1,135 @@
+{
+  "tenant_id": "flexi",
+  "campaign_slug": "2026-10_flexi_ads_500mxn",
+  "generated_at": "2026-10-17",
+  "voice_profile": "/home/universe-sent-me/growth-os/tenants/flexi/brand_voice.json",
+  "voice_approved_by": "",
+  "skills": [
+    "marketingskills-copywriting",
+    "marketingskills-ad-creative"
+  ],
+  "model_requested": "groq/openai/gpt-oss-120b",
+  "model_used": "groq/openai/gpt-oss-20b",
+  "source": "omniroute:groq/openai/gpt-oss-20b",
+  "warnings": [
+    "El perfil de voz no tiene aprobación registrada (`approved_by` vacío).",
+    "El modelo principal no respondió; se usó `groq/openai/gpt-oss-20b`."
+  ],
+  "variants": [
+    {
+      "id": "v1",
+      "angle": "beneficio_directo",
+      "model_code": "142801",
+      "model_name": "ISAURA",
+      "brand": "flexi",
+      "headline": "Tus pasos suaves con ISAURA",
+      "primary_text": "Imagina caminar todo el día sin sentir presión. Escríbenos y te contamos más de este modelo Flexi, distribuidor oficial.",
+      "description": "Confort que acompaña",
+      "cta": "SEND_MESSAGE",
+      "hypothesis": "El ángulo de comodidad en 142801 superará en CTR al ángulo de confianza local en mujeres de 28 a 55 años de Piedras Negras.",
+      "char_counts": {
+        "headline": 27,
+        "primary_text": 120,
+        "description": 20
+      }
+    },
+    {
+      "id": "v2",
+      "angle": "beneficio_directo",
+      "model_code": "143201",
+      "model_name": "LYDIA",
+      "brand": "flexi",
+      "headline": "Comodidad diaria con LYDIA",
+      "primary_text": "En tu rutina matutina, siente lo ligero de LYDIA. Escríbenos y descubre cómo se siente el confort real.",
+      "description": "Paso sin esfuerzo",
+      "cta": "SEND_MESSAGE",
+      "hypothesis": "El ángulo de comodidad en 143201 superará en CTR al ángulo de confianza local en mujeres de 28 a 55 años de Piedras Negras.",
+      "char_counts": {
+        "headline": 26,
+        "primary_text": 103,
+        "description": 17
+      }
+    },
+    {
+      "id": "v3",
+      "angle": "prueba_social",
+      "model_code": "306703",
+      "model_name": "ARISHA",
+      "brand": "quirelli",
+      "headline": "Quirelli ARISHA, respaldo oficial",
+      "primary_text": "Como distribuidor oficial, te ofrecemos ARISHA para que vivas la comodidad que buscas. Escríbenos y te orientamos.",
+      "description": "Confort auténtico",
+      "cta": "SEND_MESSAGE",
+      "hypothesis": "La mención de distribuidor oficial en 306703 superará en tasa de conversación a una variante con CTA genérico en la misma audiencia.",
+      "char_counts": {
+        "headline": 33,
+        "primary_text": 114,
+        "description": 17
+      }
+    },
+    {
+      "id": "v4",
+      "angle": "prueba_social",
+      "model_code": "143001",
+      "model_name": "GINNY",
+      "brand": "flexi",
+      "headline": "Flexi GINNY, respaldo oficial",
+      "primary_text": "Nuestro estatus de distribuidor oficial respalda a GINNY para tu día a día. Escríbenos y conoce sus detalles.",
+      "description": "Tu aliado al caminar",
+      "cta": "SEND_MESSAGE",
+      "hypothesis": "La mención de distribuidor oficial en 143001 superará en tasa de conversación a una variante con CTA genérico en la misma audiencia.",
+      "char_counts": {
+        "headline": 29,
+        "primary_text": 109,
+        "description": 20
+      }
+    }
+  ],
+  "validation": [
+    {
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "char_counts": {
+        "headline": 27,
+        "primary_text": 120,
+        "description": 20
+      },
+      "id": "v1"
+    },
+    {
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "char_counts": {
+        "headline": 26,
+        "primary_text": 103,
+        "description": 17
+      },
+      "id": "v2"
+    },
+    {
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "char_counts": {
+        "headline": 33,
+        "primary_text": 114,
+        "description": 17
+      },
+      "id": "v3"
+    },
+    {
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "char_counts": {
+        "headline": 29,
+        "primary_text": 109,
+        "description": 20
+      },
+      "id": "v4"
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,114 @@
+{
+  "tenant_id": "flexi",
+  "campaign_slug": "2026-10_flexi_ads_500mxn",
+  "generated_at": "2026-10-25",
+  "voice_profile": "/home/universe-sent-me/growth-os/tenants/flexi/brand_voice.json",
+  "voice_approved_by": "",
+  "skills": [
+    "marketingskills-copywriting",
+    "marketingskills-ad-creative"
+  ],
+  "model_requested": "groq/openai/gpt-oss-120b",
+  "model_used": "fallback:offline",
+  "source": "fallback:offline",
+  "warnings": [
+    "Modo offline: usando copy de respaldo local."
+  ],
+  "variants": [
+    {
+      "id": "v1",
+      "angle": "beneficio_directo",
+      "model_code": "142801",
+      "model_name": "ISAURA",
+      "brand": "flexi",
+      "headline": "Comodidad para tu día",
+      "primary_text": "Conoce ISAURA de Flexi y siente el confort en cada paso. Escríbenos y te asesoramos.",
+      "description": "Asesoría en tienda",
+      "cta": "SEND_MESSAGE",
+      "hypothesis": "Control para 142801 beneficio_directo."
+    },
+    {
+      "id": "v2",
+      "angle": "prueba_social",
+      "model_code": "143201",
+      "model_name": "LYDIA",
+      "brand": "flexi",
+      "headline": "Flexi en Piedras Negras",
+      "primary_text": "LYDIA está en Flexi, distribuidor oficial en Piedras Negras. Escríbenos y te orientamos.",
+      "description": "Asesoría en tienda",
+      "cta": "SEND_MESSAGE",
+      "hypothesis": "Control para 143201 prueba_social."
+    },
+    {
+      "id": "v3",
+      "angle": "beneficio_directo",
+      "model_code": "306703",
+      "model_name": "ARISHA",
+      "brand": "quirelli",
+      "headline": "Confort Quirelli para ti",
+      "primary_text": "Conoce ARISHA de Quirelli y siente el confort en cada paso. Escríbenos y te asesoramos.",
+      "description": "Asesoría en tienda",
+      "cta": "SEND_MESSAGE",
+      "hypothesis": "Control para 306703 beneficio_directo."
+    },
+    {
+      "id": "v4",
+      "angle": "prueba_social",
+      "model_code": "143001",
+      "model_name": "GINNY",
+      "brand": "flexi",
+      "headline": "Flexi, distribuidor oficial",
+      "primary_text": "GINNY está en Flexi, distribuidor oficial en Piedras Negras. Escríbenos y te orientamos.",
+      "description": "Atención en tienda",
+      "cta": "SEND_MESSAGE",
+      "hypothesis": "Control para 143001 prueba_social."
+    }
+  ],
+  "validation": [
+    {
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "char_counts": {
+        "headline": 21,
+        "primary_text": 84,
+        "description": 18
+      },
+      "id": "v1"
+    },
+    {
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "char_counts": {
+        "headline": 23,
+        "primary_text": 88,
+        "description": 18
+      },
+      "id": "v2"
+    },
+    {
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "char_counts": {
+        "headline": 24,
+        "primary_text": 87,
+        "description": 18
+      },
+      "id": "v3"
+    },
+    {
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "char_counts": {
+        "headline": 27,
+        "primary_text": 88,
+        "description": 18
+      },
+      "id": "v4"
+    }
+  ],
+  "passed": true
+}
