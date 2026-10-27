@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "tenant_id": "flexi",
+  "generated_at": "2026-10-26T03:54:43.184911+00:00",
+  "mode": "local_evidence",
+  "external_requests": 0,
+  "external_writes": 0,
+  "sources": {
+    "meta": {
+      "status": "local_evidence",
+      "mode": "local_evidence",
+      "page_configured": true,
+      "instagram_configured": true,
+      "metrics": {
+        "status": "local_evidence",
+        "evidence": "tenants/flexi/data/meta_metrics_2026-10-04_to_2026-10-11.csv",
+        "rows": 1,
+        "period_start": "2026-10-04",
+        "period_end": "2026-10-11"
+      }
+    },
+    "google": {
+      "status": "live_success",
+      "mode": "live_google",
+      "services": {
+        "google_business": {
+          "status": "not_implemented",
+          "note": "Google Business Profile API requiere OAuth específico y configuración en GCP. Use GSC + Bing por ahora.",
+          "place_id": "ChIJJWR9SOGLX4YRKGJp-YjEUZY",
+          "configured": true
+        },
+        "search_console": {
+          "status": "not_configured",
+          "note": "No hay credenciales OAuth GSC (gsc_token.json)"
+        },
+        "bing": {
+          "status": "not_configured",
+          "note": "Falta BING_WEBMASTER_API_KEY en .env"
+        }
+      },
+      "summary": {
+        "total_clicks": 0,
+        "total_impressions": 0,
+        "avg_ctr": 0.0,
+        "avg_position": 0.0,
+        "indexed_pages": 0,
+        "crawl_errors": 0
+      }
+    },
+    "ads": {
+      "status": "local_evidence",
+      "mode": "local_evidence",
+      "ad_account_configured": true,
+      "live_metrics_available": false,
+      "campaigns": [
+        {
+          "campaign": "2026-10_flexi_ads_500mxn",
+          "state": "**G1 APROBADO — G2 pendiente de aprobación (propuesta v1 generada)**",
+          "evidence": "tenants/flexi/ads/campanas/2026-10_flexi_ads_500mxn/00_estado.md"
+        }
+      ]
+    },
+    "whatsapp": {
+      "status": "configured_observation",
+      "mode": "local_evidence",
+      "listen_only_worker_configured": true
+    },
+    "directories": {
+      "status": "configured_no_local_evidence",
+      "mode": "local_evidence",
+      "configured_sources": [
+        "facebook",
+        "google_maps",
+        "instagram"
+      ]
+    }
+  },
+  "summary": {
+    "local_evidence": 2,
+    "live_success": 1,
+    "configured_observation": 1,
+    "configured_no_local_evidence": 1
+  }
+}

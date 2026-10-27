@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "tenant_id": "flexi",
+  "generated_at": "2026-10-25T23:57:14.185541+00:00",
+  "mode": "local_evidence",
+  "external_requests": 0,
+  "external_writes": 0,
+  "sources": {
+    "meta": {
+      "status": "local_evidence",
+      "mode": "local_evidence",
+      "page_configured": true,
+      "instagram_configured": true,
+      "metrics": {
+        "status": "local_evidence",
+        "evidence": "tenants/flexi/data/meta_metrics_2026-10-04_to_2026-10-11.csv",
+        "rows": 1,
+        "period_start": "2026-10-04",
+        "period_end": "2026-10-11"
+      }
+    },
+    "google": {
+      "status": "local_evidence",
+      "mode": "local_evidence",
+      "services": {
+        "google_business": {
+          "status": "configured_no_local_evidence"
+        },
+        "search_console": {
+          "status": "local_evidence",
+          "evidence": "tenants/flexi/data/gsc_metrics_20261013.json",
+          "period_start": "2026-10-06",
+          "period_end": "2026-10-13",
+          "clicks": 0,
+          "impressions": 0
+        },
+        "bing": {
+          "status": "local_evidence",
+          "evidence": "tenants/flexi/data/bing_metrics_20261013.json",
+          "period_start": "2026-10-06",
+          "period_end": "2026-10-13",
+          "clicks": 0,
+          "impressions": 0
+        }
+      }
+    },
+    "ads": {
+      "status": "local_evidence",
+      "mode": "local_evidence",
+      "ad_account_configured": false,
+      "live_metrics_available": false,
+      "campaigns": [
+        {
+          "campaign": "2026-10_flexi_ads_500mxn",
+          "state": "**G1 APROBADO — G2 pendiente de aprobación (propuesta v1 generada)**",
+          "evidence": "tenants/flexi/ads/campanas/2026-10_flexi_ads_500mxn/00_estado.md"
+        }
+      ]
+    },
+    "whatsapp": {
+      "status": "configured_observation",
+      "mode": "local_evidence",
+      "listen_only_worker_configured": true,
+      "remote_events_fetched": false,
+      "crm_records": 37,
+      "crm_test_records": 33,
+      "crm_evidence": "tenants/flexi/crm/contacts.json"
+    },
+    "directories": {
+      "status": "configured_no_local_evidence",
+      "mode": "local_evidence",
+      "configured_sources": [
+        "facebook",
+        "google_maps",
+        "instagram"
+      ]
+    }
+  },
+  "summary": {
+    "local_evidence": 3,
+    "configured_observation": 1,
+    "configured_no_local_evidence": 1
+  }
+}

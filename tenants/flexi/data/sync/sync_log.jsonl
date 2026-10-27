@@ -1,0 +1,4 @@
+{"generated_at": "2026-10-25T23:57:14.185541+00:00", "tenant_id": "flexi", "mode": "local_evidence", "summary": {"local_evidence": 3, "configured_observation": 1, "configured_no_local_evidence": 1}}
+{"generated_at": "2026-10-26T03:54:43.184911+00:00", "tenant_id": "flexi", "mode": "local_evidence", "summary": {"local_evidence": 2, "live_success": 1, "configured_observation": 1, "configured_no_local_evidence": 1}}
+{"generated_at": "2026-10-26T03:56:19.838919+00:00", "tenant_id": "flexi", "mode": "local_evidence", "summary": {"live_success": 3, "success": 1, "configured_no_local_evidence": 1}}
+{"generated_at": "2026-10-27T02:30:49.812808+00:00", "tenant_id": "flexi", "mode": "local_evidence", "summary": {"live_success": 1, "local_evidence": 2, "configured_observation": 1, "configured_no_local_evidence": 1}}
