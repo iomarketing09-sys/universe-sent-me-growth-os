@@ -28,7 +28,7 @@
       },
       {
         "created_time": "2026-09-07T20:41:29+0000",
-        "message": "shhhh \ud83e\udd2b",
+        "message": "shhhh 🤫",
         "id": "122161373163072582_1380427816973556"
       }
     ],
@@ -51,7 +51,7 @@
         "before": "QVFIVFN0dkVLbkQwZAXZA2MFBzQ1F0Sm51eHYzQWVVVnhCT0VnZA2lscW80X2NYZAVZA3ZAUZAOQjZAiRldhYkhOTWRDT3Fhdm9LdndrXy1TaUpoSHBqVnR0V1Q1anZAB",
         "after": "QVFIVDhwQVpwNk1FVk55THpDbndZAWUgyMjFEQy1wUzZAaZAE1wakYzU25USWRHc3RPb2o5M0xPeGprbl9MdlZAabV9vX2NkTkJYY1NCV0hUdkVPOEhRMGtEd1N3"
       },
-      "next": "https://graph.facebook.com/v26.0/1036844829507460_122161373049072582/reactions?access_token=EAFzZAVyseuZAsBSSuS5FdHI9ZAxS0ZCFuQGBto1p7VvVKZA962nI0U5zKg9NnTqerbUQCeOs0QxxjRhIm8voWFeimUNQdd8ot40rfe5ID7GUFLTEVIZAhaUOZCgZAO61iSV9eNwpxqynrvigJG638mNGrcCOZCdITCgFihydykdAwOu8ooy5IZCIvqX0VxPNVxVypUsIWNODwjG5bljdSL5LlOSYzi&summary=true&limit=25&after=QVFIVDhwQVpwNk1FVk55THpDbndZAWUgyMjFEQy1wUzZAaZAE1wakYzU25USWRHc3RPb2o5M0xPeGprbl9MdlZAabV9vX2NkTkJYY1NCV0hUdkVPOEhRMGtEd1N3"
+      "next": "https://graph.facebook.com/v26.0/1036844829507460_122161373049072582/reactions?access_token=[REDACTED]&summary=true&limit=25&after=QVFIVDhwQVpwNk1FVk55THpDbndZAWUgyMjFEQy1wUzZAaZAE1wakYzU25USWRHc3RPb2o5M0xPeGprbl9MdlZAabV9vX2NkTkJYY1NCV0hUdkVPOEhRMGtEd1N3"
     },
     "summary": {
       "total_count": 65,

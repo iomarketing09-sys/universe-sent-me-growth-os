@@ -23,7 +23,7 @@
       },
       {
         "created_time": "2026-09-09T22:19:59+0000",
-        "message": "Definitivamente as\u00ed es mi vida jajajaja",
+        "message": "Definitivamente así es mi vida jajajaja",
         "id": "122160925833072582_1076095072048182"
       },
       {
@@ -33,7 +33,7 @@
       },
       {
         "created_time": "2026-09-06T23:48:48+0000",
-        "message": "La m\u00eda",
+        "message": "La mía",
         "id": "122160925833072582_1469122701940983"
       },
       {
@@ -71,7 +71,7 @@
         "before": "QVFIVGk2TFdBZAjhxeFd1RHM1SlIzOG0tNVlWbF9aQ01nMUlDQW1mb3dhVkNUdE56MnhWMy12bF9fa09CY20zUVRoUnNCQW9DSGROMWQ1anFlb25maVlUSnRB",
         "after": "QVFIVDdobHJGWmJOTThOWHlUMlRmUU51eTdUZAUh3cFRqdkpQT3prNVZAXWTVpQUR1RnI3QURfaDhLZAnp0SmRxZAlVzV1F4LUJ1TjhVd3FRbFJUYVZAMTkNsVm93"
       },
-      "next": "https://graph.facebook.com/v26.0/1036844829507460_122160925809072582/reactions?access_token=EAFzZAVyseuZAsBSSuS5FdHI9ZAxS0ZCFuQGBto1p7VvVKZA962nI0U5zKg9NnTqerbUQCeOs0QxxjRhIm8voWFeimUNQdd8ot40rfe5ID7GUFLTEVIZAhaUOZCgZAO61iSV9eNwpxqynrvigJG638mNGrcCOZCdITCgFihydykdAwOu8ooy5IZCIvqX0VxPNVxVypUsIWNODwjG5bljdSL5LlOSYzi&summary=true&limit=25&after=QVFIVDdobHJGWmJOTThOWHlUMlRmUU51eTdUZAUh3cFRqdkpQT3prNVZAXWTVpQUR1RnI3QURfaDhLZAnp0SmRxZAlVzV1F4LUJ1TjhVd3FRbFJUYVZAMTkNsVm93"
+      "next": "https://graph.facebook.com/v26.0/1036844829507460_122160925809072582/reactions?access_token=[REDACTED]&summary=true&limit=25&after=QVFIVDdobHJGWmJOTThOWHlUMlRmUU51eTdUZAUh3cFRqdkpQT3prNVZAXWTVpQUR1RnI3QURfaDhLZAnp0SmRxZAlVzV1F4LUJ1TjhVd3FRbFJUYVZAMTkNsVm93"
     },
     "summary": {
       "total_count": 240,

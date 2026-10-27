@@ -46,7 +46,7 @@
         "before": "QVFIVGhTbFRSTTVMTkJtaTRUZADZA4RHVKbUJhUTJWRnBjVXFpSENhSkdJLWNrclBTa2k1d0FDYlJSdDB4Q3dWdmkwM3hlbFkzV1VTdjl3SmtmYVBPV1dYeWFB",
         "after": "QVFIVGVVZAHBkNzdCbkZAYdURmblh0RjQxckhVeEQxTVBGdktqNHhwbHJ4X0pXNFd1MmtNVnNYeHdYa3RvZAlU1OTlaUnVJRnBCTnBRbWZAra0xuVzdWVnptQlln"
       },
-      "next": "https://graph.facebook.com/v26.0/1036844829507460_122161629063072582/reactions?access_token=EAFzZAVyseuZAsBSSuS5FdHI9ZAxS0ZCFuQGBto1p7VvVKZA962nI0U5zKg9NnTqerbUQCeOs0QxxjRhIm8voWFeimUNQdd8ot40rfe5ID7GUFLTEVIZAhaUOZCgZAO61iSV9eNwpxqynrvigJG638mNGrcCOZCdITCgFihydykdAwOu8ooy5IZCIvqX0VxPNVxVypUsIWNODwjG5bljdSL5LlOSYzi&summary=true&limit=25&after=QVFIVGVVZAHBkNzdCbkZAYdURmblh0RjQxckhVeEQxTVBGdktqNHhwbHJ4X0pXNFd1MmtNVnNYeHdYa3RvZAlU1OTlaUnVJRnBCTnBRbWZAra0xuVzdWVnptQlln"
+      "next": "https://graph.facebook.com/v26.0/1036844829507460_122161629063072582/reactions?access_token=[REDACTED]&summary=true&limit=25&after=QVFIVGVVZAHBkNzdCbkZAYdURmblh0RjQxckhVeEQxTVBGdktqNHhwbHJ4X0pXNFd1MmtNVnNYeHdYa3RvZAlU1OTlaUnVJRnBCTnBRbWZAra0xuVzdWVnptQlln"
     },
     "summary": {
       "total_count": 51,
