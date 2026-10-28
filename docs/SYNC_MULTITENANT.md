@@ -400,3 +400,43 @@ Durante la implementación del adaptador `growth/integrations/whatsapp_graph.py`
 4. Ejecutar una prueba controlada: recibir un mensaje y responder desde la app de la sucursal.
 5. Correr de nuevo el diagnóstico del worker D1; se espera al menos un evento saliente (`out`) y la clave `smb_message_echoes`.
 6. Hasta entonces, medir profundidad real de WhatsApp únicamente con los eventos guardados por el worker.
+
+---
+
+## Sync automático diario (systemd)
+
+`scripts/cron_sync.sh` es lo que ejecuta `growth-os-sync.service` a diario
+(`growth-os-sync.timer`, `OnCalendar=daily`, persistente y con hasta 30 min de
+retardo aleatorio). Carga el `.env`, sincroniza todos los tenants con datos en
+vivo de Meta, Ads, Google y WhatsApp, y deja:
+
+- `logs/sync/last.json`: snapshot completo de la última corrida.
+- `logs/sync/last.err`: salida de error (vacía si todo salió bien).
+- `logs/sync/history.log`: una línea de resumen por corrida.
+
+En el journal queda solo el resumen, no el JSON completo:
+
+```
+[2026-10-27 23:01:54] sync OK (5 tenants)
+  firma-bordados: sin configurar
+  ...
+  flexi: meta=live_success google=live_success ads=live_success whatsapp=success
+    ads 2026-10_flexi_ads_500mxn: gasto=$439.28 impresiones=12772 clics=999 conversaciones=79 costo/conv=$5.56
+    whatsapp D1: conversaciones=32 profundidad_prom=4.81 buckets={'1': 8, '2': 7, '3+': 17}
+```
+
+Reglas del script:
+
+- `timeout 900` para no dejar el servicio colgado si Meta o Google no responden.
+- Sale con código distinto de 0 si el sync falla, para que systemd lo marque `failed`.
+- Los tenants sin credenciales se reportan como `sin configurar` y **no** se les
+  crea `tenants/<id>/data/`.
+
+Verificación y operación:
+
+```bash
+bash scripts/cron_sync.sh                      # corrida manual
+systemctl status growth-os-sync.timer          # programación
+sudo systemctl start growth-os-sync.service    # forzar una corrida ahora
+journalctl -u growth-os-sync.service -n 40     # últimas líneas
+```

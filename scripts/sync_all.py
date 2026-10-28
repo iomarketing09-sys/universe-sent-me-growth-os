@@ -53,7 +53,14 @@ def main() -> None:
             results.append({"tenant_id": tenant_id, "snapshots_sanitized": updated})
             continue
         result = sync_tenant(tenant_id, registry=registry, args=args)
-        if not args.no_write:
+        sources = result.get("sources") or {}
+        unconfigured = bool(sources) and all(
+            (source or {}).get("status") == "not_configured" for source in sources.values()
+        )
+        if unconfigured:
+            # Evita crear tenants/<id>/data/ vacíos para clientes sin credenciales.
+            result["skipped_write"] = "tenant sin configuración"
+        elif not args.no_write:
             paths = write_snapshot(result, registry.tenants_dir / tenant_id)
             result["saved"] = {key: str(path) for key, path in paths.items()}
         results.append(result)

@@ -68,6 +68,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 - El worker de WhatsApp ahora guarda los ecos que Meta manda en
   `value.message_echoes` (antes solo leía `smb_message_echoes`, así que se
   perdían). Requiere redesplegar el worker para tomar efecto.
+- **`scripts/cron_sync.sh`**: script que faltaba y hacía fallar
+  `growth-os-sync.service` todos los días con `status=203/EXEC`. Sincroniza los 5
+  tenants con datos en vivo, deja `logs/sync/last.json` + `history.log` y sale
+  con código distinto de 0 si algo falla. Probado en manual: exit 0.
+- `scripts/sync_all.py` ya no escribe snapshots ni crea `tenants/<id>/data/`
+  para tenants sin credenciales (`skipped_write`).
 - `schema.sql` del worker incluye las columnas de `referral` y se agregó
   `migrations/001_referral_columns.sql`.
 - Worker `flexi-whatsapp-webhook` **redesplegado** (versión `6b367fc4`) con el

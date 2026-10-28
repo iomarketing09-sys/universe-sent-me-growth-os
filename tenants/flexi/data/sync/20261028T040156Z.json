@@ -1,0 +1,413 @@
+{
+  "schema_version": "1.0",
+  "tenant_id": "flexi",
+  "generated_at": "2026-10-28T04:01:56.221204+00:00",
+  "mode": "local_evidence",
+  "external_requests": 0,
+  "external_writes": 0,
+  "sources": {
+    "meta": {
+      "status": "live_success",
+      "mode": "live_meta",
+      "page_configured": true,
+      "instagram_configured": true,
+      "live_data": {
+        "status": "success",
+        "Instagram": {
+          "data": {
+            "data": [
+              {
+                "id": "18065860184792396",
+                "caption": "Llegaron más diseños para enamorarte esta temporada. 🍂 \n\nBotines que visten tus pasos de estilo y convierten cualquier outfit en una declaración de buen gusto😉\n\n#NuevaTemporadaOI26 en Zapatería #Flexi #PiedrasNegras #ComodidadEnMovimiento",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/866025206_122245852328372530_2268509868769611915_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=oUbuMESc5FkQ7kNvwESUqjs&_nc_oc=AdoL1xqKqE7-1uuzH9Ssr2_TTmZeJMxVUpJIKzSvT1W4PH_rbPAR8wYIT7HivjfJCBiVyBnvuJQXdIVOTc9VTI9G&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQRjvLIBvEE-ht33_PTFzYqIi6jo4e5wAGWytmfCX8TrBQ&oe=6AE74C5B",
+                "permalink": "https://www.instagram.com/p/DfAuFVTFPxp/",
+                "timestamp": "2026-10-27T20:30:36+0000"
+              },
+              {
+                "id": "18043572122835439",
+                "caption": "Esta temporada, deja que tus #botines  sean el toque estrella de tu outfit✨ \n\nDiseños perfectos para crear looks elegantes, modernos y llenos de personalidad. A veces, un solo detalle tiene el poder de cambiarlo todo. \n\nVen a descubrir los nuevos modelos a Zapatería #Flexi #PiedrasNegras",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/869276513_122245851932372530_7967219101440542894_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=yzpwXksp9UgQ7kNvwFFcwfW&_nc_oc=AdpputRoKm7HER-eEsxZA_BkksLAjvxmOcvS2C79gYaUo5vguWEGUUezQZPrl9Z76ffzZWBFh0FDpJyqK8WiwhS_&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQSUDZhTUiE1_nEkJu1F8vUj-1CanyNJbJCgePDMpZzl2g&oe=6AE759F3",
+                "permalink": "https://www.instagram.com/p/DfAer4Zj5Bk/",
+                "timestamp": "2026-10-27T18:16:03+0000"
+              },
+              {
+                "id": "18114576542122943",
+                "caption": "El otoño tiene su propio encanto, ¡y unas buenas botas son parte de la magia!👢\n\nDiseños que evocan elegancia, tonos que combinan con la temporada y estilos perfectos para lucir con abrigos, vestidos tejidos o tus jeans favoritos 🤎\n\nZapatería #Flexi #PiedrasNegras #NuevaTemporadaOI26 #ComodidadEnMovimiento #Botas",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "CAROUSEL_ALBUM",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/866046730_122245851362372530_6836709414390015451_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=gFCtZXJOE3IQ7kNvwGpWMoe&_nc_oc=AdrkQr_K-32R9ok8Bb_MQRMdq7BVzeeOj_20xRqHb0RonqcdVPkIWlkoJwOqkIh7zWM2yuRkrZ2c2Lu4AEEX4l_n&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQTVdcNj4cxcHch8aqxsoTDwPbyMs0JSE2mhNe1xpixdGQ&oe=6AE7361C",
+                "permalink": "https://www.instagram.com/p/DfAPOL4CkCW/",
+                "timestamp": "2026-10-27T16:00:55+0000"
+              },
+              {
+                "id": "18389305597230016",
+                "caption": "¡Llegaron más modelos de la #NuevaTemporadaOI 26! ✨ \n\nDiseños que enamoran, estilos que conquistan y ese toque de elegancia que transforma cualquier outfit 😉\nVen por tu par favorito a Zapatería #Flexi #PiedrasNegras\n\n#Botines #ComodidadEnMovimiento #Recomendación",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "CAROUSEL_ALBUM",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/866081437_122245850822372530_2442270688028352291_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=y9koBxTQd5QQ7kNvwGs_o0g&_nc_oc=AdoG5mwETKw6ts7Ru6LFB305VxtyQTWSn73Uxr3lyLWFnuj6qX2Q9vf24pU7tZSW6DiG0x8Fyylh8l251-LqI4XZ&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQQeIjGrzoFnyIM0SErmPH1sc494RfauIM36gBo-33AU7g&oe=6AE741DB",
+                "permalink": "https://www.instagram.com/p/DfAE6cHAd9v/",
+                "timestamp": "2026-10-27T14:30:51+0000"
+              },
+              {
+                "id": "18147212461599507",
+                "caption": "Un clásico indispensable en el guardarropa de todo caballero. Calidad que se nota, durabilidad que acompaña.\n\nCintos para caballero, disponibles en Zapatería #Flexi #PiedrasNegras",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "CAROUSEL_ALBUM",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/866609227_122245704452372530_2373107905020224875_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=F3IawkIyY9cQ7kNvwHBTwC4&_nc_oc=AdrBpNYaNY_CYge26Mne4TNFkDgRaHlwQUJZ3JXPjm-Wvc-BVUc4dF8A4knjIQ_pieBWYeTkaWXSpeREognBJeeW&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQR6AnhQj2j-s05J56oPa6Em1hFhBgwejNeI3BNKurHt0w&oe=6AE73042",
+                "permalink": "https://www.instagram.com/p/De-AJuFFX6b/",
+                "timestamp": "2026-10-26T19:10:46+0000"
+              },
+              {
+                "id": "17955881787268802",
+                "caption": "Comodidad que se siente en cada paso😌. Su diseño te invita a disfrutar de tus días con ligereza y estilo, porque tus pies merecen caminar cómodos mientras tú luces increíble 🤩 \n\nZapatería #Flexi #PiedrasNegras #ComodidadEnMovimiento",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/866609219_122245704056372530_9025126218270442129_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=C1kwx3JZfLQQ7kNvwEhGdjx&_nc_oc=AdoF2IAUQNJzIINLgangTG6GhJNCEUAFp1rrfRNMmkasNCLjY2Bd8GTzK2fGZHwfMA3MROynGPJUmsBC95h_19Pu&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQR15i8mVMxR3nXa-CgHfa4ONLIyz_Xms_o7M1gvvYDxBQ&oe=6AE75E0A",
+                "permalink": "https://www.instagram.com/p/De90oGAjYNV/",
+                "timestamp": "2026-10-26T17:30:03+0000"
+              },
+              {
+                "id": "18499567423097684",
+                "caption": "Un look casual, un toque de personalidad y este calzado que hace la diferencia 👍🏻\n\nBienvenidos a Zapatería #Flexi #PiedrasNegras📍",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "CAROUSEL_ALBUM",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/864284917_122245703546372530_7385396219210602887_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=Bh_C-HW7iXwQ7kNvwHkHFx1&_nc_oc=Adr5mxHkvM23z_aDCOV0DLxnCIZTnOaKYMq1jfKoFc44g4fNU9y2d7shPFfLX4yojzcbLE7A1BL02qHVbB1SW8nI&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQQBitcom4nBNGkcaPdOcYjsx_F7Z6pVSZFtQLbBcb9y4g&oe=6AE74398",
+                "permalink": "https://www.instagram.com/p/De9jkv7jHyT/",
+                "timestamp": "2026-10-26T15:01:03+0000"
+              },
+              {
+                "id": "18119393449763164",
+                "caption": "Estrenar unos zapatos que te encantan siempre se siente especial. Y cuando además encuentras comodidad en cada paso, sabes que elegiste el par indicado. ✨\n\n#Quirelli en Zapatería Flexi #PiedrasNegras",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/863323754_122245610246372530_6023630738723525795_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=JDKApBcdVlMQ7kNvwHIqUcK&_nc_oc=Ado9PuIf684A9W3JBomCKfhZiDe29-k6s5ZyIEk3aJKqIks3NwHIf2_RnufRoemxhSoJKKDfAlquzkg3IyzJ1guY&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQS3LKe9gJ2AQDTC__OLzVGGPfDY6d7XZc2EN7aid8wxHQ&oe=6AE737E2",
+                "permalink": "https://www.instagram.com/p/De7MeVEAeeI/",
+                "timestamp": "2026-10-25T17:00:43+0000"
+              },
+              {
+                "id": "18193394068409984",
+                "caption": "¡Una bolsa nunca es solo una bolsa, es el detalle que completa tu estilo!👜 \n\nEncuentra tu favorita en tamaño mediano y grande en Zapatería #Flexi #PiedrasNegras",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "CAROUSEL_ALBUM",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/861831568_122245477610372530_7832034183028644766_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=CtNa5iBYkDoQ7kNvwFIaFRE&_nc_oc=AdrIU037BmUiM27MqxZaxWQO7dzy8leUx2rbo36OLbV8ywh_99BSeRNpRzvD2Q4mGVB9SDT6LV2XNnQvSVIIXpLB&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQRolw-1VY6HjkFFFV3gvBuYm1RQysuQy5xDaBERjaH0sg&oe=6AE75EEA",
+                "permalink": "https://www.instagram.com/p/De5A0BMlOa_/",
+                "timestamp": "2026-10-24T20:40:20+0000"
+              },
+              {
+                "id": "18055911797655148",
+                "caption": "Tu día puede llevarte a cualquier lugar, y tus zapatos deben estar listos para acompañarte 👞\n\nDiseños casuales para caballero que combinan comodidad, practicidad y ese toque de estilo que hace la diferencia😉\n\nZapatería #Flexi #PiedrasNegras\n#MenShoes",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/860005687_122245477124372530_4594655373803102071_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=n7Dx3g07_ukQ7kNvwGj3dhv&_nc_oc=AdrbDsBeiUx_DX2cd796-fRggwvgbV9cJO0LUJWfK6frgxWkE02rhUovNSzEiMYub53azo1qkSZpoYMHi7bjzkWX&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQRW4rgxgnesEoR7ajzits_jTBV9Kc7Agixk9ygvCvq4mA&oe=6AE75128",
+                "permalink": "https://www.instagram.com/p/De4yBMCASha/",
+                "timestamp": "2026-10-24T18:31:04+0000"
+              },
+              {
+                "id": "18056441225798749",
+                "caption": "Sábado de shopping 🛍️ \nTe esperamos en Soriana Híper local 25 Piedras Negras 📍 \n\nLunes a sábado de 9am a 8pm y los domingos de 12 del mediodía a 6pm 🕕\n\nZapatería #Flexi #PiedrasNegras\n#ComodidadEnMovimiento",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/861914384_122245469096372530_2887145012029316867_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=FQS9dm2ehQMQ7kNvwFyLr1V&_nc_oc=AdrAyhbKjHpk_Bp6yX7jBx2BEcbs1qwIeQih8AChsQi5hbRmsnfTxCr9p2MHzsVK_73jLZ9liM280nYGyRt8My9W&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQRc7LGJEl82RjHhfnVEMpkCl0VK8pgPpLFE0QTSQdnISQ&oe=6AE759D4",
+                "permalink": "https://www.instagram.com/p/De4hkiioPam/",
+                "timestamp": "2026-10-24T16:07:21+0000"
+              },
+              {
+                "id": "18124888217474498",
+                "caption": "Cuando tus pies se sienten cómodos, cada paso parece más ligero y cada camino se disfruta un poco más 🙌🏻\n\nZapatería #Flexi #PiedrasNegras\n#ComodidadEnMovimiento #MisFlexi",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/862932140_122245270016372530_9183940579569501373_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=ke2pAlC6tM8Q7kNvwHSjMdO&_nc_oc=AdorjmJxs7HQagl2TfFksinkwREje1CLWTOFrZFyaCEPIUiOnVevhAmAg-IbsbHskmv57gf4I52RSdJFaaTMqo1w&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQSzgMWEFaJLMhomO61Pciu_2no8SQmzycfZTtvvvaj9Ew&oe=6AE73525",
+                "permalink": "https://www.instagram.com/p/De2UqdzgGtF/",
+                "timestamp": "2026-10-23T19:36:05+0000"
+              },
+              {
+                "id": "17959993527232565",
+                "caption": "Para una reunión importante, una celebración o un día de trabajo, elige un tacón que refleje tu estilo y te haga sentir lista para conquistar cualquier ocasión👠\n\n#Quirelli en Zapatería Flexi #PiedrasNegras",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "CAROUSEL_ALBUM",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/858599861_122245269374372530_8390787896659422027_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=EKrglHbwzOQQ7kNvwH0KJ36&_nc_oc=AdpLfwh7i35We6jxHto1L3p56Yi-TRj1ucG9j8XrLz_3w3GUPYljPrbEFa5WieiO2YkOqnIGLXQFahOVlTBlABuh&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQQgGt-d1uyopj1cDY7QimUgOBA8v3HG8lirgQSK4fp1qw&oe=6AE742F8",
+                "permalink": "https://www.instagram.com/p/De2EBpJnHS1/",
+                "timestamp": "2026-10-23T17:10:41+0000"
+              },
+              {
+                "id": "18021668255945136",
+                "caption": "Renueva tu estilo esta temporada con el calzado Quirelli para hombre🧔🏻 \n\nSu diseño aporta ese toque de carácter que transforma un look sencillo en uno lleno de personalidad👌🏻\n\nZapatería Flexi #PiedrasNegras\n#Quirelli",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "CAROUSEL_ALBUM",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/864158575_122245268816372530_8772425097792120029_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=aFojFe8CXdQQ7kNvwGsivex&_nc_oc=AdpG39_nqIe3SMMY1L4CH0NKVpYqJVAq7jAgWDy7KtFb7XO5SyOoKJTcvmso1ff3o402sd0NWK75eMqeMUYOWjfs&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQQND-iBnjOS4dwfDE_VSLYvD90K3Mril5QReAn37PLwjg&oe=6AE751E6",
+                "permalink": "https://www.instagram.com/p/De11O_2Djga/",
+                "timestamp": "2026-10-23T15:01:26+0000"
+              },
+              {
+                "id": "17921843691450124",
+                "caption": "Reuniones, jornadas de trabajo o una salida improvisada… ¡hay un calzado para cada plan! Elige comodidad, calidad y diseño para complementar tu estilo en cualquier ocasión.\n\nElige #Quirelli para caballero 🧔🏻 \nDisponible en Zapatería Flexi #PiedrasNegras📍",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/854409840_122245122944372530_8589556499348980226_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=ucifRsbIo_0Q7kNvwEmNpDR&_nc_oc=AdqK7rMFZdZtxhv7iZELn435nHeXZE_4gQdoQG3GnKJ7HUauzxir2vUNNUN9qRvtjo5JxXvk2eBaJ0NIbrTbxzRP&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQQldKSk6pUMMkhVrF2kZC5TNy7RdhU_XuI4T25T63RIUA&oe=6AE72CBB",
+                "permalink": "https://www.instagram.com/p/DezyqY-iJOC/",
+                "timestamp": "2026-10-22T20:00:30+0000"
+              },
+              {
+                "id": "17991201593865477",
+                "caption": "Diseños modernos, tonos que enamoran y combinaciones perfectas para complementar tus outfits de temporada 🍂 \n\nSu estilo versátil los convierte en el match ideal para lucir increíble, mientras disfrutas de la comodidad en cada paso. 🤩\n\nZapatería #Flexi #PiedraaNegras #Sneakers",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/855000666_122245122530372530_464911551176813435_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=nzpcZToV4jIQ7kNvwHQqKot&_nc_oc=AdqnL8NA80XP6O833rTptpGGqKFP3716M5L6DXIRfvLFc05AayaV7RqgU9zjvq_mRA9blXH2QilCVm_bXLfV0luI&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQSTHtRnLJ7nCz5Kj2docuJq7EuhBnK1FG9d3agmLNkytw&oe=6AE73E3E",
+                "permalink": "https://www.instagram.com/p/DezeCV7iZnN/",
+                "timestamp": "2026-10-22T17:00:16+0000"
+              },
+              {
+                "id": "17992022507856606",
+                "caption": "Comodidad que se nota, estilo que destaca 😉\n\nPara el hombre que busca verse bien sin renunciar al confort. Descubre nuestro calzado para caballero, con diseños modernos y versátiles que se adaptan a diferentes momentos de tu día👍🏻\n\nZapatería #Flexi #PiedrasNegras\n#TuRitmo #ComodidadEnMovimiento #MenShoes",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/859784966_122245121882372530_4138631760399046163_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=Ae4O4N0CXn4Q7kNvwETNy4w&_nc_oc=AdpUhZ8DLBb5Odfe8lp2z-fDPirDpoila-AFWmxjv5ROMv-1QHwTLWzyjoA-L5EtbLvEBFjauFNTiDOeMQPYz-xa&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQTVUs31a7cV21ZJGWXXH_MV_dHRra5bitalEQdht6S-Vw&oe=6AE73914",
+                "permalink": "https://www.instagram.com/p/DezQYsliaQZ/",
+                "timestamp": "2026-10-22T15:00:59+0000"
+              },
+              {
+                "id": "18135988393726082",
+                "caption": "Esta temporada, pisa fuerte y luce increíble. Encuentra las botas que van con tu estilo 🍂😎\n\nLas encuentras en Zapatería #Flexi #PiedrasNegras Soriana Híper local 25",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/843161603_122244987368372530_3654701291065864829_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=XeEZ65dte88Q7kNvwGRytAe&_nc_oc=AdpoprTosbv6w-A7tbaG6Pk8BVKkH9GMvfERfBm8vg4gtuoz5BMzoUB-IQyuFdAUVxMH-nS8UpOgxsXBEz85aNCc&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQSXl22hNDJevEt1f7f4631Mf8FhV-M08-pmxrJXDpaGCA&oe=6AE732E7",
+                "permalink": "https://www.instagram.com/p/DexRTUDIM7B/",
+                "timestamp": "2026-10-21T20:30:30+0000"
+              },
+              {
+                "id": "18099763649093910",
+                "caption": "Esta temporada, invierte en esos pequeños detalles que hacen especial tu día💖 \n\nCalzado para lucir hermosa, sentirte cómoda y disfrutar cada momento con confianza. ¡Visítanos en Zapatería #Flexi #PiedrasNegras y encuentra tu favorito!\n\n#NuevaTemporadaOI26 #ComodidadEnMovimiento",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/855000582_122244986648372530_7766448401957305640_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=21l36wkBGfQQ7kNvwFhE0hL&_nc_oc=AdoiS8xzNNZyXVjtzavGfdA4iGscvonDCfFK_k1VlpidxAtL7sCLxcTlAFsxtcRQtuD1T5O9Yl8uEvBrEJRIkEmq&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQTyGJ4PY1k3ID3tWsZpG946I6EM8d2-1MdN4_KkQBT4fQ&oe=6AE72D37",
+                "permalink": "https://www.instagram.com/p/Dew8uDIkTzV/",
+                "timestamp": "2026-10-21T17:30:39+0000"
+              },
+              {
+                "id": "17998624907826172",
+                "caption": "Que tu día avance al ritmo de tu comodidad😌 \n\nNuestro calzado para caballero combina diseños versátiles, estilo y confort, ideal para acompañarte en la oficina o en tus salidas casuales 🙂\n\nZapatería #Flexi #PiedrasNegras #MenShoes #ParaÉl #Comodidad",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/844826538_122244986204372530_4018859246014884958_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=tkECD7oIEXQQ7kNvwHq48Fl&_nc_oc=AdqbenqnsP4S4p5Y5p30kvROSm6RjsFscN85C3DWemWLYlevqXagUHGXkfokzETxaCfdvpWtO0GXdfSbNx3Z4_bw&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQQYcHQ7RDdPg8_un-Emg-g6IIT9G7aCCV1ig__pVlcIRw&oe=6AE72F3C",
+                "permalink": "https://www.instagram.com/p/DewriiZlAWb/",
+                "timestamp": "2026-10-21T15:00:31+0000"
+              },
+              {
+                "id": "18104795402208288",
+                "caption": "Tus pies también merecen un trato especial ✨ \n\nDescubre nuestros calcetines para pie sensible de dama(también tenemos para caballero). Suaves, cómodos y pensados para acompañarte durante todo el día 😌\n\nZapatería Flexi #PiedrasNegras",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "CAROUSEL_ALBUM",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/846567621_122244849782372530_9056352952907912353_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=QfsTKcJBDKgQ7kNvwEnkf6U&_nc_oc=AdqYyVnDyfTn9sJM7JTwd_biDxcReqrPNvzDVgiG1_J6xI0UJby4TM8m6Zd7InlKY3BQI1SDLpA4_1mmdVv3Hrno&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQR3XUJSQy5Tj1Orq98IIn_5qtSuPs7QuSzNDJolB7s1OQ&oe=6AE72FF5",
+                "permalink": "https://www.instagram.com/p/Deuv94-CdRh/",
+                "timestamp": "2026-10-20T21:00:44+0000"
+              },
+              {
+                "id": "18116123585023047",
+                "caption": "Un buen tacón puede transformar un outfit y acompañarte con elegancia en cada ocasión👠\n\nZapatería #Flexi #PiedrasNegras",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/849853828_122244849338372530_3086302160593361660_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=hcDNALQZ_kUQ7kNvwHsyWbS&_nc_oc=AdorUtSjOl7tJ_SoqsLe4wRfxFLPX9k75XR-OnSSRl8B0cCBvqeGzZPb175L2uhj8pFBOZDstX7KCkoEaWP6J60g&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQTrH9nJC_tQ8Ppvfe_aXS2WG0FSWnriy6egX1foB_L9Iw&oe=6AE750EB",
+                "permalink": "https://www.instagram.com/p/DeuiLnyjVpE/",
+                "timestamp": "2026-10-20T19:00:17+0000"
+              },
+              {
+                "id": "18113591369274631",
+                "caption": "Conoce nuestros diseños de la #NuevaTemporadaOI26 de Flexi y disfruta de opciones casuales, modernas y fáciles de combinar 🤩\n\nLos encuentras en Zapatería #Flexi #PiedrasNegras #ComodidadEnMovimiento",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/854568014_122244848876372530_8337819925705634915_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=v137D4sPuQsQ7kNvwHdp1TZ&_nc_oc=AdoGmcrEXMYvFc3MhlTIzLU1dgRKG7Lh6J_nJubKaKC_JRTJ6pqIINNp3dCdViCbGYAA28NSaDhlb-KKbMXekcwl&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQQeyitO_kKrpDkoAdyvhFReowUjfTeyW4ILaV8Xv-h_qg&oe=6AE75AB3",
+                "permalink": "https://www.instagram.com/p/DeuUdmFCDFy/",
+                "timestamp": "2026-10-20T17:00:25+0000"
+              },
+              {
+                "id": "18132470029689216",
+                "caption": "Cada paso cuenta cuando sabes a dónde vas 🚶🏻⛰️🌲\n\nLa elección perfecta para tu próxima aventura se encuentra aquí en Zapatería #Flexi #PiedrasNegras",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/843397771_122244848432372530_264723048110224986_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=frjV7_rt1JUQ7kNvwFGdnPk&_nc_oc=AdpTRiqWt8xM6Cmna30JkppNMcTUcG83hVqQADFh1jFpXsZoQEbsvK2d8dQRFdyyzgtMxjAQe87A9rAWsRNMDIXs&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQRiaXDHt8uz-M7V9Uxdryom3quHDl-hoWIzX1xD9KZ1Bg&oe=6AE74A46",
+                "permalink": "https://www.instagram.com/p/DeuGyP3iZQP/",
+                "timestamp": "2026-10-20T15:00:53+0000"
+              },
+              {
+                "id": "17918712483461043",
+                "caption": "Descubre nuestros diseños para caballero y encuentra ese par que querrás usar una y otra vez 👞\n\nZapatería #Flexi #PiedrasNegras",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/851041123_122244711734372530_2981025418638911225_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=_XgwvlXOfxkQ7kNvwFQD7KM&_nc_oc=AdqQUlvas35FZqVYLjBk_eM73xyygeJJTF3ALW8MOMxnSXmv9uk6_thOPdC44b6Lu2Z_sxkzwvjQP9wDvnmqnjuT&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=kip7cpIp_DJkYGq_TFWdtQ&oh=00_AQR55WNjgIfrzi95K02GDFQQKMFauR5vbdCe3kgf_6F7iw&oe=6AE74FFA",
+                "permalink": "https://www.instagram.com/p/Der_rGBmPJh/",
+                "timestamp": "2026-10-19T19:20:15+0000"
+              }
+            ],
+            "paging": {
+              "cursors": {
+                "before": "QVFIVG1Rb2FoY2dCR0VvREt4dXFnT245M3NsS3BabFFESEhlRFYtQnBCZAGh0N0FoUFRNV2pzU1RDY3pmRVVKSnhTb1kwU2tTSUsxVmp4cUctSXR0M2xFVkF3",
+                "after": "QVFIVEV6OHlBa0RscngxeE1xRXBkNGlTeG9LTUNRaU5fakM3MkxocktUR1M2MjlZAUXNsekJFaHFaVU9KemtmbHhvSUNwazVMdlBSajhpN2luc0J4a0FHc1RB"
+              },
+              "next": "https://graph.facebook.com/v26.0/17841467713484855/media?fields=id%2Cmedia_type%2Cthumbnail_url%2Cmedia_url%2Cpermalink%2Ccaption%2Ctimestamp%2Clike_count%2Ccomments_count&limit=25&order=relevance+desc&access_token=[REDACTED]&after=QVFIVEV6OHlBa0RscngxeE1xRXBkNGlTeG9LTUNRaU5fakM3MkxocktUR1M2MjlZAUXNsekJFaHFaVU9KemtmbHhvSUNwazVMdlBSajhpN2luc0J4a0FHc1RB"
+            }
+          },
+          "count": 25
+        },
+        "Facebook_Page": {
+          "id": "361528203707668",
+          "name": "Zapateria Flexi Piedras Negras",
+          "followers_count": 1340
+        },
+        "Messages_Viewer": {
+          "status": "blocked_read_only"
+        }
+      }
+    },
+    "google": {
+      "status": "live_success",
+      "mode": "live_google",
+      "services": {
+        "google_business": {
+          "status": "not_implemented",
+          "note": "Google Business Profile API requiere OAuth específico y configuración en GCP. Use GSC + Bing por ahora.",
+          "place_id": "ChIJJWR9SOGLX4YRKGJp-YjEUZY",
+          "configured": true
+        },
+        "search_console": {
+          "status": "not_configured",
+          "note": "No hay credenciales OAuth GSC (gsc_token.json)"
+        },
+        "bing": {
+          "status": "not_configured",
+          "note": "Falta BING_WEBMASTER_API_KEY en .env"
+        }
+      },
+      "summary": {
+        "total_clicks": 0,
+        "total_impressions": 0,
+        "avg_ctr": 0.0,
+        "avg_position": 0.0,
+        "indexed_pages": 0,
+        "crawl_errors": 0
+      }
+    },
+    "ads": {
+      "status": "live_success",
+      "mode": "live_ads",
+      "ad_account_configured": true,
+      "campaigns": [
+        {
+          "id": "120247452749050665",
+          "name": "2026-10_flexi_ads_500mxn",
+          "objective": "OUTCOME_TRAFFIC",
+          "status": "ACTIVE",
+          "spend": 439.28,
+          "impressions": 12772,
+          "clicks": 999,
+          "reach": 6653,
+          "frequency": 1.919735,
+          "ctr": 7.821798,
+          "cpm": 34.393987,
+          "cpc": 0.43972,
+          "conversations": 79,
+          "cost_per_conversation": 5.560506329113924,
+          "messaging_metrics": {
+            "conversations_started_7d": 79,
+            "messaging_first_reply": 79,
+            "total_messaging_connection": 91,
+            "messaging_user_depth_2": 0,
+            "messaging_user_depth_3": 0,
+            "welcome_message_views": 0,
+            "messaging_block": 0,
+            "messaging_conversation_replied_7d": 0
+          }
+        }
+      ],
+      "summary": {
+        "total_spend": 439.28,
+        "total_impressions": 12772,
+        "total_clicks": 999,
+        "total_conversations": 79
+      },
+      "local_campaigns": [
+        {
+          "campaign": "2026-10_flexi_ads_500mxn",
+          "state": "**G1 APROBADO — G2 pendiente de aprobación (propuesta v1 generada)**",
+          "evidence": "/home/universe-sent-me/growth-os/tenants/flexi/ads/campanas/2026-10_flexi_ads_500mxn/00_estado.md"
+        }
+      ]
+    },
+    "whatsapp": {
+      "status": "success",
+      "mode": "live_whatsapp",
+      "live_worker_configured": true,
+      "live_message_echoes": {
+        "outcome": "denied_by_config",
+        "note": "Worker no está desplegado",
+        "errors": [
+          "Webhook no suscrito a message_echoes por permisos JWT"
+        ]
+      },
+      "live_remote_contacts": {
+        "outcome": "success",
+        "note": "CSV local del worker detectado (wrangler.toml+messages.csv produce el resumen).",
+        "errors": [],
+        "stats": {
+          "directions": {
+            "in": 0,
+            "out": 0
+          },
+          "status_counts": {
+            "unknown": 0
+          },
+          "total_messages": 0
+        },
+        "last_sync_at": "2026-10-28T04:01:56.221123+00:00",
+        "waba_id": "0128328b-7c24-4c40-b4f8-c2720c080d5f",
+        "waba_db": "flexi_whatsapp_obs"
+      },
+      "contacts": {
+        "total": 37,
+        "test_records": 33
+      }
+    },
+    "directories": {
+      "status": "configured_no_local_evidence",
+      "mode": "local_evidence",
+      "configured_sources": [
+        "facebook",
+        "google_maps",
+        "instagram"
+      ]
+    }
+  },
+  "summary": {
+    "live_success": 3,
+    "success": 1,
+    "configured_no_local_evidence": 1
+  }
+}
