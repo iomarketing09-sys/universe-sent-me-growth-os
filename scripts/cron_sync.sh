@@ -29,6 +29,9 @@ ERR="$LOG_DIR/last.err"
 TMP="$(mktemp "$LOG_DIR/.last.XXXXXX")"
 
 TS="$(date '+%Y-%m-%d %H:%M:%S')"
+
+# Retención: los snapshots timestamped viven fuera de git y no crecen sin tope.
+find "$ROOT/tenants" -path "*/data/sync/*.json" -type f -mtime +90 -delete 2>/dev/null || true
 echo "[$TS] iniciando sync"
 
 # 900s de tope: si Meta o Google no responden, el servicio falla en vez de colgarse.

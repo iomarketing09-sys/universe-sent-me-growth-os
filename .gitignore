@@ -55,3 +55,7 @@ AMBIGUEDAD_FASE2.txt
 tenants/*/whatsapp/reports/
 tenants/*/whatsapp/voice_proposals/
 .pytest_tmp/
+
+# Snapshots diarios del sync: solo latest.json se versiona.
+tenants/*/data/sync/*.json
+!tenants/*/data/sync/latest.json

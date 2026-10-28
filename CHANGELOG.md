@@ -29,6 +29,14 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
   lectura con `WhatsAppAgent`, cliente D1 real vía API de Cloudflare,
   resumen de conversaciones, profundidad, atribución a anuncios y diagnóstico
   de ecos. Incluye `README` con comandos.
+- **Módulo `intelligence`** (`modules/intelligence/`): `metrics_snapshot`,
+  `historical_baseline`, `experiment_log`, `planner`, `audit` y
+  `ads_adapters` (Marketing API). API pública de 16 nombres y 6 envoltorios de
+  compatibilidad en `growth/`.
+- **`meta_ads_agent`** (`modules/intelligence/agents/meta_ads_agent/`): reporte
+  de campañas con gasto, CTR, CPC, conversaciones, costo por conversación y
+  modo `--offline` sobre el snapshot del sync. Es el último agente que faltaba:
+  `verify_setup` ya reporta **SETUP COMPLETO**.
 - **`CHANGELOG.md`**: este archivo, para conservar contexto entre sesiones.
 
 ### Cambiado
@@ -84,6 +92,14 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
   falta el verify token (conserva el secreto ya cargado).
 - `wrangler.toml` fija `preview_urls = false` para evitar URLs de preview
   accidentales.
+- **Aislamiento del baseline histórico**: `historical_baseline` apuntaba fijo a
+  `tenants/universe/historical`, así que cualquier tenant veía evidencia de
+  Universe. Ahora todas las funciones aceptan `tenant_id`/`base_path` y el
+  planner lo propaga. `tests/test_planner_historical.py` verifica que Flexi no
+  hereda evidencia de Universe.
+- **Política de snapshots**: solo `tenants/*/data/sync/latest.json` se versiona;
+  los timestamped quedan en disco (fuera de git) y el cron borra los de más de
+  90 días.
 - **Backfill de ecos** (`modules/communications/whatsapp/backfill.py`): recuperó
   21 respuestas humanas (15 de texto) que el bug había descartado entre el 24 y
   el 27 de octubre. Idempotente vía `INSERT OR IGNORE`.
