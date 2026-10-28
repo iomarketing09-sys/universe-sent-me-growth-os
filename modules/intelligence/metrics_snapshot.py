@@ -44,6 +44,38 @@ GRAPH_API_VERSION = "v26.0"
 GRAPH_BASE = f"https://graph.facebook.com/{GRAPH_API_VERSION}"
 
 
+_INT_FIELDS = {
+    'reactions', 'comments', 'shares',
+    'reaction_like', 'reaction_love', 'reaction_wow', 'reaction_haha',
+    'reaction_sorry', 'reaction_anger', 'reaction_care',
+    'reach', 'impressions', 'views', 'saved', 'total_interactions',
+    'engaged_users', 'clicks', 'video_views', 'video_watch_time',
+    'page_impressions', 'page_reach', 'page_engaged_users',
+    'attempts',
+}
+
+
+def _to_int(value: Any) -> int:
+    """Coacciona enteros de Meta (int, str, dict de valores) sin romper el snapshot."""
+    if isinstance(value, bool):
+        return int(value)
+    if isinstance(value, (int, float)):
+        return int(value)
+    if isinstance(value, str):
+        text = value.strip()
+        if not text:
+            return 0
+        try:
+            return int(float(text))
+        except ValueError:
+            return 0
+    if isinstance(value, dict):
+        for key in ('value', 'total_count', 'count'):
+            if key in value:
+                return _to_int(value[key])
+    return 0
+
+
 @dataclass
 class MetricsSnapshot:
     snapshot_id: str = ""
@@ -72,6 +104,9 @@ class MetricsSnapshot:
     # Post insights (cuando disponibles)
     reach: int = 0
     impressions: int = 0
+    views: int = 0
+    saved: int = 0
+    total_interactions: int = 0
     engaged_users: int = 0
     clicks: int = 0
     video_views: int = 0
@@ -86,6 +121,7 @@ class MetricsSnapshot:
     status: str = SnapshotStatus.PENDING.value
     error: str = ""
     insights_available: bool = False
+    attempts: int = 0
     
     # Metadata
     created_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat(timespec='seconds'))
@@ -97,6 +133,11 @@ class MetricsSnapshot:
     def from_dict(cls, d: Dict[str, Any]) -> 'MetricsSnapshot':
         valid_fields = {f.name for f in cls.__dataclass_fields__.values()}
         filtered = {k: v for k, v in d.items() if k in valid_fields}
+        for name in _INT_FIELDS:
+            if name in filtered:
+                filtered[name] = _to_int(filtered[name])
+        if 'insights_available' in filtered:
+            filtered['insights_available'] = str(filtered['insights_available']).strip().lower() in {'true', '1', 'yes'}
         return cls(**filtered)
 
 
@@ -106,9 +147,10 @@ SNAPSHOT_LOG_FIELDS = [
     'reactions', 'comments', 'shares',
     'reaction_like', 'reaction_love', 'reaction_wow', 'reaction_haha',
     'reaction_sorry', 'reaction_anger', 'reaction_care',
-    'reach', 'impressions', 'engaged_users', 'clicks', 'video_views', 'video_watch_time',
+    'reach', 'impressions', 'views', 'saved', 'total_interactions',
+    'engaged_users', 'clicks', 'video_views', 'video_watch_time',
     'page_impressions', 'page_reach', 'page_engaged_users',
-    'status', 'error', 'insights_available', 'created_at'
+    'status', 'error', 'insights_available', 'created_at', 'attempts'
 ]
 
 
@@ -116,27 +158,58 @@ def get_snapshot_log_path(tenant_id: str) -> Path:
     return Path(f'tenants/{tenant_id}/metrics_snapshot_log.csv')
 
 
+VALID_WINDOWS = {SnapshotWindow.E0.value, SnapshotWindow.E24.value, SnapshotWindow.E72.value}
+VALID_STATUSES = {status.value for status in SnapshotStatus}
+
+
+def _read_ledger_rows(path: Path) -> List[Dict[str, str]]:
+    with path.open('r', encoding='utf-8-sig', newline='') as f:
+        return list(csv.DictReader(f))
+
+
+def _ledger_has_foreign_rows(rows: List[Dict[str, str]]) -> bool:
+    for row in rows:
+        if row.get('window') not in VALID_WINDOWS:
+            return True
+        if row.get('status') not in VALID_STATUSES:
+            return True
+    return False
+
+
 def load_snapshot_log(tenant_id: str) -> List[MetricsSnapshot]:
     log_path = get_snapshot_log_path(tenant_id)
     if not log_path.exists():
         return []
-    
+
+    raw_rows = _read_ledger_rows(log_path)
+    if _ledger_has_foreign_rows(raw_rows):
+        print(
+            f"Warning: {log_path} tiene filas con esquema ajeno; "
+            "se ignoran y se conservarán en un respaldo al escribir."
+        )
+        return []
+
     snapshots = []
-    with log_path.open('r', encoding='utf-8-sig', newline='') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            try:
-                snap = MetricsSnapshot.from_dict(row)
-                snapshots.append(snap)
-            except Exception as e:
-                print(f"Warning: Error loading snapshot row: {e}")
+    for row in raw_rows:
+        try:
+            snap = MetricsSnapshot.from_dict(row)
+            snapshots.append(snap)
+        except Exception as e:
+            print(f"Warning: Error loading snapshot row: {e}")
     return snapshots
 
 
 def save_snapshot_log(tenant_id: str, snapshots: List[MetricsSnapshot]) -> None:
     log_path = get_snapshot_log_path(tenant_id)
     log_path.parent.mkdir(parents=True, exist_ok=True)
-    
+
+    if log_path.exists() and _ledger_has_foreign_rows(_read_ledger_rows(log_path)):
+        backup = log_path.with_name(
+            f"{log_path.stem}.legacy-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}.csv"
+        )
+        log_path.rename(backup)
+        print(f"Warning: ledger incompatible movido a {backup}")
+
     with log_path.open('w', encoding='utf-8-sig', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=SNAPSHOT_LOG_FIELDS)
         writer.writeheader()
@@ -163,7 +236,8 @@ def get_pending_snapshots(tenant_id: str, now: datetime = None) -> List[MetricsS
     all_snapshots = load_snapshot_log(tenant_id)
     pending = []
     for snap in all_snapshots:
-        if snap.status != SnapshotStatus.PENDING.value:
+        retryable_failure = snap.status == SnapshotStatus.FAILED.value and snap.attempts < 3
+        if snap.status != SnapshotStatus.PENDING.value and not retryable_failure:
             continue
         try:
             target = datetime.fromisoformat(snap.target_at_utc.replace('Z', '+00:00'))
@@ -239,25 +313,16 @@ def create_snapshot_for_publication(
     ig_id: str,
     window: str = SnapshotWindow.E0.value
 ) -> MetricsSnapshot:
-    pub_id = publication_row.get('publication_id', '')
+    pub_id = (publication_row.get('publication_id') or '').strip()
     platform = publication_row.get('platform', 'Facebook').split('/')[0]
-    pub_date = publication_row.get('date', '')
-    pub_time = publication_row.get('time', '')
-    
-    tz = ZoneInfo("America/Matamoros")
-    if window == SnapshotWindow.E0.value:
-        target = datetime.now(timezone.utc)
-    else:
-        dt_local = datetime.strptime(f"{pub_date} {pub_time}", "%Y-%m-%d %H:%M")
-        dt_local = dt_local.replace(tzinfo=tz)
-        dt_utc = dt_local.astimezone(timezone.utc)
-        
-        if window == SnapshotWindow.E24.value:
-            target = dt_utc + timedelta(hours=24)
-        elif window == SnapshotWindow.E72.value:
-            target = dt_utc + timedelta(hours=72)
-        else:
-            target = dt_utc
+    published = publication_target_utc(publication_row)
+    if published is None:
+        raise ValueError("La publicación no tiene fecha/hora válida para programar snapshots")
+
+    offsets = {SnapshotWindow.E0.value: 0, SnapshotWindow.E24.value: 24, SnapshotWindow.E72.value: 72}
+    if window not in offsets:
+        raise ValueError(f"Ventana no soportada: {window}")
+    target = published + timedelta(hours=offsets[window])
     
     snapshot = MetricsSnapshot(
         snapshot_id=f"SNAP-{uuid.uuid4().hex[:8].upper()}",
@@ -269,6 +334,99 @@ def create_snapshot_for_publication(
         status=SnapshotStatus.PENDING.value
     )
     return snapshot
+
+
+def _parse_local_datetime(value: Any) -> Optional[datetime]:
+    text = str(value or '').strip()
+    if not text:
+        return None
+    try:
+        parsed = datetime.fromisoformat(text.replace('Z', '+00:00'))
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=ZoneInfo("America/Matamoros"))
+    return parsed.astimezone(timezone.utc)
+
+
+def publication_target_utc(publication_row: Dict[str, str]) -> Optional[datetime]:
+    """Momento real de publicación de una fila del log.
+
+    Instagram registra ``published_at`` cuando el post ya salió. Facebook se
+    programa de forma nativa, así que su hora real es la del slot (date/time).
+    """
+    platform = (publication_row.get('platform') or '').lower()
+    published_at = _parse_local_datetime(publication_row.get('published_at'))
+
+    if 'instagram' in platform and published_at is not None:
+        return published_at
+
+    raw_date = str(publication_row.get('date') or '').strip()
+    raw_time = str(publication_row.get('time') or '').strip().split('-')[0].strip()
+    if raw_date and raw_time:
+        slot = _parse_local_datetime(f"{raw_date}T{raw_time}:00")
+        if slot is not None:
+            return slot
+    return published_at
+
+
+def get_publication_log_path(tenant_id: str) -> Path:
+    return Path(f'tenants/{tenant_id}/publication_log_week2.csv')
+
+
+def load_publication_log(tenant_id: str) -> List[Dict[str, str]]:
+    log_path = get_publication_log_path(tenant_id)
+    if not log_path.exists():
+        return []
+    with log_path.open('r', encoding='utf-8-sig', newline='') as f:
+        return list(csv.DictReader(f))
+
+
+def _is_real_meta_id(value: str) -> bool:
+    value = (value or '').strip()
+    if not value or value.startswith(('mock_', 'pub_')):
+        return False
+    return any(char.isdigit() for char in value)
+
+
+def ensure_snapshots_for_publications(
+    tenant_id: str,
+    since_days: int = 4,
+    now: Optional[datetime] = None,
+) -> List[MetricsSnapshot]:
+    """Crea E0/E24/E72 pendientes para publicaciones ya registradas.
+
+    Es idempotente: no duplica ventanas que ya existan para el mismo
+    ``publication_id``. Se puede llamar en cada ciclo de captura. Solo mira
+    publicaciones recientes para no llenar la cola con históricos.
+    """
+    if now is None:
+        now = datetime.now(timezone.utc)
+    existing = {(snap.publication_id, snap.window) for snap in load_snapshot_log(tenant_id)}
+    created: List[MetricsSnapshot] = []
+
+    for row in load_publication_log(tenant_id):
+        if (row.get('status') or '').strip().lower() not in {'published', 'scheduled'}:
+            continue
+        pub_id = (row.get('publication_id') or '').strip()
+        if not _is_real_meta_id(pub_id):
+            continue
+        try:
+            published = publication_target_utc(row)
+        except ValueError:
+            continue
+        if published is None:
+            continue
+        if published < now - timedelta(days=since_days):
+            continue
+        for window in (SnapshotWindow.E0.value, SnapshotWindow.E24.value, SnapshotWindow.E72.value):
+            if (pub_id, window) in existing:
+                continue
+            snapshot = create_snapshot_for_publication(tenant_id, row, '', '', window)
+            upsert_snapshot(tenant_id, snapshot)
+            existing.add((pub_id, window))
+            created.append(snapshot)
+    return created
 
 
 def schedule_all_windows_for_publication(
@@ -300,15 +458,9 @@ def capture_public_counts(page_token: str, post_id: str) -> Dict[str, int]:
     counts = {'reactions': 0, 'comments': 0, 'shares': 0}
     
     if 'error' not in result:
-        counts['reactions'] = result.get('reactions', {}).get('summary', {}).get('total_count', 0)
-        counts['comments'] = result.get('comments', {}).get('summary', {}).get('total_count', 0)
-        counts['shares'] = result.get('shares', {}).get('count', 0)
-        
-        # Reactions breakdown
-        reaction_types = ['LIKE', 'LOVE', 'WOW', 'HAHA', 'SORRY', 'ANGER', 'CARE']
-        for rt in reaction_types:
-            url = f'{GRAPH_BASE}/{endpoint}/reactions?type={rt}&limit=0&summary=true&access_token={page_token}'
-            # We'll skip individual type calls for rate limiting
+        counts['reactions'] = _to_int(result.get('reactions', {}).get('summary', {}).get('total_count', 0))
+        counts['comments'] = _to_int(result.get('comments', {}).get('summary', {}).get('total_count', 0))
+        counts['shares'] = _to_int(result.get('shares', {}).get('count', 0))
     
     return counts
 
@@ -335,24 +487,35 @@ def capture_reactions_breakdown(page_token: str, post_id: str) -> Dict[str, int]
 
 
 def capture_post_insights(page_token: str, post_id: str) -> Dict[str, Any]:
-    """Intenta capturar insights del post"""
-    insights = {}
+    """Captura insights del post de Facebook de una métrica a la vez.
+
+    Meta rechaza la llamada completa si una sola métrica no está disponible, por
+    eso se consultan por separado y las no disponibles se reportan en
+    ``_unavailable_metrics`` en lugar de perder el resto.
+    """
+    insights: Dict[str, Any] = {}
+    unavailable = []
     metrics_to_try = [
         ('post_reactions_by_type_total', 'lifetime'),
         ('post_clicks', 'lifetime'),
+        ('post_engaged_users', 'lifetime'),
+        ('post_impressions', 'lifetime'),
+        ('post_impressions_unique', 'lifetime'),
         ('post_video_views', 'lifetime'),
         ('post_video_avg_time_watched', 'lifetime'),
     ]
     
     for metric, period in metrics_to_try:
         result = api_get(page_token, f'{post_id}/insights', {'metric': metric, 'period': period})
-        if 'error' not in result:
-            data = result.get('data', [])
-            if data:
-                values = data[0].get('values', [])
-                if values:
-                    insights[metric] = values[0].get('value')
+        data = result.get('data', []) if 'error' not in result else []
+        values = data[0].get('values', []) if data else []
+        if values:
+            insights[metric] = values[0].get('value')
+        else:
+            unavailable.append(metric)
     
+    if unavailable:
+        insights['_unavailable_metrics'] = ','.join(unavailable)
     return insights
 
 
@@ -374,35 +537,38 @@ def capture_page_insights(page_token: str, page_id: str, since: int, until: int)
 
 
 def capture_instagram_insights(page_token: str, ig_media_id: str) -> Dict[str, Any]:
-    """Captura métricas de Instagram Media (post/reel)"""
-    insights = {}
-    # Métricas disponibles para Instagram Media
-    metrics = 'reach,impressions,engagement,saved,video_views,likes,comments,shares,replies'
-    result = api_get(page_token, f'{ig_media_id}/insights', {'metric': metrics})
+    """Captura métricas de Instagram Media (post/reel) métrica por métrica.
+
+    ``impressions`` y ``engagement`` ya no son válidas para media insights en
+    Graph v26; se usa ``views`` y ``total_interactions``. Cada métrica se pide
+    por separado para que una métrica retirada no invalide toda la captura.
+    """
+    insights: Dict[str, Any] = {}
+    unavailable = []
+    metrics = ['reach', 'views', 'total_interactions', 'saved', 'likes', 'comments', 'shares']
     
-    # Handle case where result might be a string (error message) or dict
-    if isinstance(result, dict) and 'error' not in result:
+    for metric in metrics:
+        result = api_get(page_token, f'{ig_media_id}/insights', {'metric': metric})
+        if not isinstance(result, dict):
+            unavailable.append(metric)
+            continue
+        if 'error' in result:
+            error_msg = str(result.get('error', ''))
+            error_code = str(result.get('code', ''))
+            if 'permission' in error_msg.lower() or error_code == '10':
+                insights['_permission_error'] = 'instagram_manage_insights required (App Review)'
+                return insights
+            unavailable.append(metric)
+            continue
         data = result.get('data', [])
-        for item in data:
-            metric = item.get('name')
-            values = item.get('values', [])
-            if values:
-                insights[metric] = values[0].get('value')
-    elif isinstance(result, dict):
-        # Has error key
-        error_msg = result.get('error', {}).get('message', '')
-        error_code = result.get('error', {}).get('code', '')
-        if 'permission' in error_msg.lower() or '10' in str(error_code):
-            insights['_permission_error'] = 'instagram_manage_insights required (App Review)'
+        values = data[0].get('values', []) if data else []
+        if values:
+            insights[metric] = values[0].get('value')
         else:
-            insights['_error'] = error_msg
-    elif isinstance(result, str):
-        # Result is a string error message
-        insights['_error'] = result
-        insights['_permission_error'] = 'Unknown error'
-    else:
-        insights['_error'] = 'Unexpected response type'
+            unavailable.append(metric)
     
+    if unavailable:
+        insights['_unavailable_metrics'] = ','.join(unavailable)
     return insights
 
 
@@ -438,6 +604,7 @@ def capture_instagram_account_insights(page_token: str, ig_user_id: str) -> Dict
 def capture_snapshot(tenant_id: str, snapshot: MetricsSnapshot, 
                      page_token: str, ig_id: str) -> MetricsSnapshot:
     """Ejecuta la captura completa para una snapshot"""
+    snapshot.attempts += 1
     snapshot.captured_at_utc = datetime.now(timezone.utc).isoformat(timespec='seconds')
     post_id = snapshot.publication_id
     
@@ -484,57 +651,68 @@ def capture_snapshot(tenant_id: str, snapshot: MetricsSnapshot,
         
         # 3. Post insights (Facebook posts)
         if snapshot.platform.lower() == 'facebook':
-            insights_result = api_get(page_token, f'{post_id}/insights', {
-                'metric': 'post_reactions_by_type_total,post_clicks,post_video_views',
-                'period': 'lifetime'
-            })
-            
-            if 'error' not in insights_result:
-                insights_captured = True
-                for item in insights_result.get('data', []):
-                    metric = item.get('name', '')
-                    values = item.get('values', [])
-                    if values:
-                        val = values[0].get('value')
-                        if metric == 'post_reactions_by_type_total' and isinstance(val, dict):
-                            for k, v in val.items():
-                                k_lower = k.lower()
-                                if 'like' in k_lower:
-                                    snapshot.reaction_like = v
-                                elif 'love' in k_lower:
-                                    snapshot.reaction_love = v
-                                elif 'wow' in k_lower:
-                                    snapshot.reaction_wow = v
-                                elif 'haha' in k_lower:
-                                    snapshot.reaction_haha = v
-                                elif 'sorry' in k_lower or 'sad' in k_lower:
-                                    snapshot.reaction_sorry = v
-                                elif 'anger' in k_lower or 'angry' in k_lower:
-                                    snapshot.reaction_anger = v
-                                elif 'care' in k_lower:
-                                    snapshot.reaction_care = v
-                        elif metric == 'post_clicks':
-                            snapshot.clicks = val
-                        elif metric == 'post_video_views':
-                            snapshot.video_views = val
+            insights = capture_post_insights(page_token, post_id)
+            for metric, val in insights.items():
+                if metric.startswith('_'):
+                    continue
+                if metric == 'post_reactions_by_type_total' and isinstance(val, dict):
+                    for k, v in val.items():
+                        k_lower = k.lower()
+                        if 'like' in k_lower:
+                            snapshot.reaction_like = _to_int(v)
+                        elif 'love' in k_lower:
+                            snapshot.reaction_love = _to_int(v)
+                        elif 'wow' in k_lower:
+                            snapshot.reaction_wow = _to_int(v)
+                        elif 'haha' in k_lower:
+                            snapshot.reaction_haha = _to_int(v)
+                        elif 'sorry' in k_lower or 'sad' in k_lower:
+                            snapshot.reaction_sorry = _to_int(v)
+                        elif 'anger' in k_lower or 'angry' in k_lower:
+                            snapshot.reaction_anger = _to_int(v)
+                        elif 'care' in k_lower:
+                            snapshot.reaction_care = _to_int(v)
+                elif metric == 'post_clicks':
+                    snapshot.clicks = _to_int(val)
+                elif metric == 'post_engaged_users':
+                    snapshot.engaged_users = _to_int(val)
+                elif metric == 'post_impressions':
+                    snapshot.impressions = _to_int(val)
+                elif metric == 'post_impressions_unique':
+                    snapshot.reach = _to_int(val)
+                elif metric == 'post_video_views':
+                    snapshot.video_views = _to_int(val)
+                elif metric == 'post_video_avg_time_watched':
+                    snapshot.video_watch_time = _to_int(val)
+            insights_captured = any(not key.startswith('_') for key in insights)
         
         # 4. Instagram Media Insights (posts/reels de Instagram)
         elif snapshot.platform.lower() == 'instagram' and ig_id:
-            # ig_id es el IG Business Account ID
-            # post_id debería ser el Instagram Media ID
+            # Conteos públicos de IG vienen como like_count/comments_count.
+            media = api_get(page_token, post_id, {'fields': 'like_count,comments_count,media_type'})
+            if isinstance(media, dict) and 'error' not in media:
+                snapshot.reactions = _to_int(media.get('like_count', 0))
+                snapshot.comments = _to_int(media.get('comments_count', 0))
+
             ig_insights = capture_instagram_insights(page_token, post_id)
-            if ig_insights and '_permission_error' not in ig_insights and '_error' not in ig_insights:
-                insights_captured = True
-                # Map Instagram metrics to snapshot fields
-                snapshot.reach = ig_insights.get('reach', 0)
-                snapshot.impressions = ig_insights.get('impressions', 0)
-                snapshot.engaged_users = ig_insights.get('engagement', 0)
-                snapshot.reactions = ig_insights.get('likes', 0)
-                snapshot.comments = ig_insights.get('comments', 0)
-                snapshot.shares = ig_insights.get('shares', 0)
-                snapshot.video_views = ig_insights.get('video_views', 0)
-                # Saved, replies are IG-specific
-                # Could add custom fields if needed
+            if ig_insights and '_permission_error' not in ig_insights:
+                insights_captured = any(not key.startswith('_') for key in ig_insights)
+                snapshot.reach = _to_int(ig_insights.get('reach', snapshot.reach))
+                snapshot.views = _to_int(ig_insights.get('views', snapshot.views))
+                snapshot.saved = _to_int(ig_insights.get('saved', snapshot.saved))
+                snapshot.total_interactions = _to_int(
+                    ig_insights.get('total_interactions', snapshot.total_interactions)
+                )
+                if 'likes' in ig_insights:
+                    snapshot.reactions = _to_int(ig_insights['likes'])
+                if 'comments' in ig_insights:
+                    snapshot.comments = _to_int(ig_insights['comments'])
+                if 'shares' in ig_insights:
+                    snapshot.shares = _to_int(ig_insights['shares'])
+                if '_unavailable_metrics' in ig_insights:
+                    snapshot.error = f"Insights no disponibles: {ig_insights['_unavailable_metrics']}"
+            elif ig_insights.get('_permission_error'):
+                snapshot.error = ig_insights['_permission_error']
         
         # 5. Instagram Account Insights (opcional, nivel cuenta)
         if ig_id and snapshot.window == 'E0':
@@ -547,7 +725,9 @@ def capture_snapshot(tenant_id: str, snapshot: MetricsSnapshot,
         
         snapshot.status = SnapshotStatus.CAPTURED.value
         snapshot.insights_available = insights_captured
-        snapshot.error = ""
+        if not insights_captured and not snapshot.error:
+            snapshot.status = SnapshotStatus.NO_DATA.value
+            snapshot.error = "Sin insights de Meta; solo conteos públicos"
         
     except Exception as e:
         snapshot.status = SnapshotStatus.FAILED.value
@@ -563,6 +743,8 @@ def run_capture_cycle(tenant_id: str) -> Dict[str, int]:
     
     if not user_token or not page_id:
         return {'error': 'Missing credentials', 'captured': 0, 'failed': 0}
+
+    scheduled = ensure_snapshots_for_publications(tenant_id)
     
     page_token = get_page_token(user_token, page_id)
     if not page_token:
@@ -572,7 +754,7 @@ def run_capture_cycle(tenant_id: str) -> Dict[str, int]:
     
     pending = get_pending_snapshots(tenant_id)
     
-    results = {'captured': 0, 'failed': 0, 'skipped': 0, 'no_data': 0}
+    results = {'scheduled': len(scheduled), 'captured': 0, 'failed': 0, 'skipped': 0, 'no_data': 0}
     
     for snap in pending:
         updated = capture_snapshot(tenant_id, snap, page_token, ig_id)
@@ -704,4 +886,7 @@ if __name__ == '__main__':
             print(f"Captura ({tenant}): {result}")
         
         elif cmd == 'schedule':
-            print("Schedule not implemented in CLI - use Python API")
+            created = ensure_snapshots_for_publications(tenant)
+            print(f"Snapshots programados ({tenant}): {len(created)}")
+            for snap in created:
+                print(f"  {snap.snapshot_id} | {snap.window} | {snap.target_at_utc} | {snap.publication_id}")

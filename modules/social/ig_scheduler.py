@@ -581,6 +581,7 @@ def main(argv=None):
     parser.add_argument('--daemon', action='store_true', help='Ejecutar como daemon continuo')
     parser.add_argument('--interval', type=int, default=30, help='Intervalo en daemon (segundos)')
     parser.add_argument('--dry-run', action='store_true', help='Solo mostrar qué se haría')
+    parser.add_argument('--skip-metrics', action='store_true', help='No capturar snapshots E0/E24/E72 en esta pasada')
     
     args = parser.parse_args(argv)
     
@@ -630,6 +631,16 @@ def main(argv=None):
         for tid, tr in results['by_tenant'].items():
             if tr['processed'] > 0:
                 logger.info(f"  [{tid}]: procesados={tr['processed']} publicados={tr['published']} fallidos={tr['failed']}")
+
+        if not args.skip_metrics:
+            from modules.intelligence.metrics_snapshot import run_capture_cycle
+
+            for tid in tenant_ids:
+                try:
+                    metrics = run_capture_cycle(tid)
+                    logger.info(f"📊 [{tid}] métricas: {metrics}")
+                except Exception as exc:  # la publicación nunca debe fallar por métricas
+                    logger.warning(f"📊 [{tid}] métricas no capturadas: {exc}")
 
 
 if __name__ == '__main__':

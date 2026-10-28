@@ -1,0 +1,4 @@
+﻿snapshot_id,publication_id,tenant_id,platform,window,target_at_utc,captured_at_utc,reactions,comments,shares,reaction_like,reaction_love,reaction_wow,reaction_haha,reaction_sorry,reaction_anger,reaction_care,reach,impressions,views,saved,total_interactions,engaged_users,clicks,video_views,video_watch_time,page_impressions,page_reach,page_engaged_users,status,error,insights_available,created_at
+SNAP-5C0F6F24,18129355670309228,flexi,Instagram,E0,2026-10-28T15:06:11+00:00,2026-10-28T15:59:26+00:00,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Captured,instagram_manage_insights required (App Review),False,2026-10-28T15:59:22+00:00
+SNAP-EA94C0AC,18129355670309228,flexi,Instagram,E24,2026-10-29T15:06:11+00:00,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Pending,,False,2026-10-28T15:59:22+00:00
+SNAP-A1C5EDE9,18129355670309228,flexi,Instagram,E72,2026-10-31T15:06:11+00:00,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Pending,,False,2026-10-28T15:59:22+00:00
