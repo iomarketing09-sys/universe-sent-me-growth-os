@@ -23,6 +23,7 @@ __all__ = [
     "validate_publications_csv",
     "capture_ads_insights",
     "MetaAdsAgent",
+    "audit_tenant",
 ]
 
 _EXPORTS = {
@@ -51,6 +52,7 @@ _EXPORTS = {
     "validate_publications_csv": ("modules.intelligence.audit", "validate_publications_csv"),
     "capture_ads_insights": ("modules.intelligence.ads_adapters", "capture_ads_insights"),
     "MetaAdsAgent": ("modules.intelligence.agents.meta_ads_agent", "MetaAdsAgent"),
+    "audit_tenant": ("modules.intelligence.agents.tenant_auditor", "audit_tenant"),
 }
 
 

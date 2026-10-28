@@ -68,24 +68,29 @@
 
 ## Comandos CLI
 
+El código vive en `modules/cgo`; este skill solo contiene las instrucciones.
+
 ```bash
 # Verificar setup
-python3 skills/growth-cgo/scripts/verify_setup.py
+python3 -m modules.cgo --mode verify_setup
 
 # Daily pipeline (CGO)
-python3 -m skills.growth_cgo --mode daily_pipeline --tenant flexi
+python3 -m modules.cgo --mode daily_pipeline --tenant flexi
 
 # Weekly calendar (solo universe)
-python3 -m skills.growth_cgo --mode weekly_calendar
+python3 -m modules.cgo --mode weekly_calendar --tenant universe
 
 # Tenant onboarding
-python3 -m skills.growth_cgo --mode tenant_onboarding --tenant new-tenant --type physical_cro
+python3 -m modules.cgo --mode tenant_onboarding --tenant flexi
 
 # Cross-tenant report
-python3 -m skills.growth_cgo --mode cross_tenant_report
+python3 -m modules.cgo --mode cross_tenant_report
 
 # Canon sync (pre-check)
-python3 -m skills.growth_cgo --mode canon_sync
+python3 -m modules.cgo --mode canon_sync --tenant universe
+
+# Publicación (dry-run por defecto)
+python3 -m modules.cgo --mode meta_publishing --tenant flexi --publish
 ```
 
 ---

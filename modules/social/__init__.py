@@ -29,6 +29,7 @@ from modules.social.meta_publisher import (
     load_dryrun_schedule,
     load_integration_env,
     load_meta_import_csv,
+    publish_schedule_from_dryrun,
 )
 from modules.social.publication_tracker import (
     REQUIRED_COLUMNS,
@@ -58,6 +59,7 @@ __all__ = [
     "parse_tenant_schedule",
     "pending_publications",
     "publish_pending",
+    "publish_schedule_from_dryrun",
     "query_instagram_media",
     "summary",
 ]

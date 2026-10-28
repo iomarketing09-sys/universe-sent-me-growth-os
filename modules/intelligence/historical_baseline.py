@@ -423,7 +423,7 @@ def get_historical_reuse_info(
         if not match:
             return None
         asset_num = match.group(0)
-        reuse_queue = load_reuse_queue()
+        reuse_queue = load_reuse_queue(tenant_id, base_path)
         for row in reuse_queue:
             if row.get('asset_ref') == asset_num:
                 return row

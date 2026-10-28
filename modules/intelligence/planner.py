@@ -124,7 +124,9 @@ class ScheduleItem:
         historical_evidence = None
         if asset_filename:
             try:
-                historical_evidence = historical_baseline.get_historical_reuse_info(asset_filename)
+                historical_evidence = historical_baseline.get_historical_reuse_info(
+                    asset_filename, tenant_id=tenant_id
+                )
             except Exception:
                 historical_evidence = None
         else:

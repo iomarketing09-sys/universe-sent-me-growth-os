@@ -1,0 +1,17 @@
+[Unit]
+Description=Growth OS Daily Sync
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/universe-sent-me/growth-os
+ExecStart=/home/universe-sent-me/growth-os/scripts/cron_sync.sh
+EnvironmentFile=/home/universe-sent-me/growth-os/.env
+User=universe-sent-me
+Group=universe-sent-me
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

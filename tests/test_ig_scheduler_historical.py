@@ -93,9 +93,9 @@ def test_activo_vacio_es_unknown(value):
 
 def test_consulta_la_cola_del_tenant_correcto():
     baseline = _baseline()
-    _scheduler("micas-art-deco", baseline)._check_historical_reuse(ASSET)
+    _scheduler("bam-in-a-can", baseline)._check_historical_reuse(ASSET)
 
-    baseline.load_reuse_queue.assert_called_once_with("micas-art-deco")
+    baseline.load_reuse_queue.assert_called_once_with("bam-in-a-can")
 
 
 def test_tenant_de_producto_no_usa_la_ventana_de_30_dias():

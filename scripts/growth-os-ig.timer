@@ -1,0 +1,11 @@
+[Unit]
+Description=Growth OS Instagram Scheduler (cada 15 minutos)
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=15min
+AccuracySec=1min
+Unit=growth-os-ig.service
+
+[Install]
+WantedBy=timers.target

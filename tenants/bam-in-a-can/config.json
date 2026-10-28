@@ -18,6 +18,14 @@
   },
   "distribution_cadence": {
     "timezone": "America/Chicago",
-    "primary_platforms": ["TikTok", "Instagram Reels", "YouTube Shorts"]
-  }
+    "primary_platforms": [
+      "TikTok",
+      "Instagram Reels",
+      "YouTube Shorts"
+    ]
+  },
+  "tenant_type": "native_digital",
+  "client_name": "Bam in a Can",
+  "timezone": "America/Matamoros",
+  "contact_channel": "Instagram DM"
 }

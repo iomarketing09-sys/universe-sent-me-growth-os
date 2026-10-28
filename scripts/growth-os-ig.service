@@ -1,0 +1,14 @@
+[Unit]
+Description=Growth OS Instagram Scheduler
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/universe-sent-me/growth-os
+ExecStart=/usr/bin/python3 -m modules.social.ig_scheduler
+EnvironmentFile=-/home/universe-sent-me/growth-os/.env
+User=universe-sent-me
+Group=universe-sent-me
+StandardOutput=journal
+StandardError=journal

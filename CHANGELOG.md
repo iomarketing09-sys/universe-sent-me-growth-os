@@ -11,6 +11,24 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 
 ### Añadido
 
+- **Módulo `cgo`** (`modules/cgo/`): orquestador con las 7 capacidades
+  (`daily_pipeline`, `weekly_calendar`, `tenant_onboarding`,
+  `cross_tenant_report`, `canon_sync`, `meta_publishing`, `verify_setup`), CLI
+  `python3 -m modules.cgo` y contrato único `CgoResult` (status, gates,
+  actions, artifacts, next_actions). Solo CGO importa a los demás módulos.
+- **`tenant_auditor`** (`modules/intelligence/agents/tenant_auditor/`): 9
+  checks locales (config, track, marca, assets, inventario, canales,
+  calendario, sync, histórico) sin red ni scraping. Exportado como
+  `intelligence.audit_tenant`.
+- **Tracks normalizados**: `universe` y `bam-in-a-can` →
+  `native_digital`; `flexi`, `micas-art-deco` y `firma-bordados` →
+  `physical_cro`. `flexi` y `bam-in-a-can` recibieron `client_name`,
+  `timezone` y `contact_channel`.
+- **Timer de Instagram** (`scripts/growth-os-ig.timer`): cada 15 minutos,
+  porque la API de IG no programa publicaciones. Incluye
+  `growth-os-ig.service`. No se instala solo; el README de `cgo` trae el
+  comando. También se restauraron los unit files del sync que se habían
+  perdido del repo.
 - **Guard de reuse en `social`** (`modules/social/ig_scheduler.py`): dos
   políticas explícitas. Los tenants de contenido usan una ventana de 30 días
   sobre su propio histórico; los de producto físico (`physical_cro`, `retail`,
@@ -65,6 +83,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 
 ### Corregido
 
+- `get_historical_reuse_info` aceptaba `tenant_id` pero leía siempre la cola
+  de `universe`; ahora usa la cola del tenant recibido.
+- `ScheduleItem.from_meta_import_row` no pasaba `tenant_id` al baseline, así
+  que el calendario de cualquier tenant recibía evidencia de `universe`.
+- `modules/social` no exportaba `publish_schedule_from_dryrun`, que CGO usa
+  para la ruta de Facebook.
 - Los 4 tests de `meta_publisher` fallaban por depender de `dryrun_output.json`
   en la raíz, un artefacto que está en `.gitignore` y se perdió. Ahora usan el
   fixture versionado `tests/fixtures/dryrun_firma_bordados.json` (20 slots:
