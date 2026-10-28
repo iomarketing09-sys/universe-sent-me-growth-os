@@ -6,7 +6,7 @@ Wants=network-online.target
 [Service]
 Type=oneshot
 WorkingDirectory=/home/universe-sent-me/growth-os
-ExecStart=/usr/bin/python3 -m modules.social.ig_scheduler
+ExecStart=/usr/bin/python3 /home/universe-sent-me/growth-os/scripts/run_ig_scheduler.py --all-tenants
 EnvironmentFile=-/home/universe-sent-me/growth-os/.env
 User=universe-sent-me
 Group=universe-sent-me

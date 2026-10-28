@@ -569,7 +569,7 @@ class IgScheduler:
 # CLI ENTRY POINT
 # ==============================================================================
 
-def main():
+def main(argv=None):
     import argparse
     import time
     
@@ -582,7 +582,7 @@ def main():
     parser.add_argument('--interval', type=int, default=30, help='Intervalo en daemon (segundos)')
     parser.add_argument('--dry-run', action='store_true', help='Solo mostrar qué se haría')
     
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     
     # Determinar tenants a procesar
     if args.tenant:
@@ -590,8 +590,11 @@ def main():
     elif args.all_tenants:
         tenant_ids = discover_tenants()
         if not tenant_ids:
-            logger.error("No se detectaron tenants con credenciales válidas")
-            sys.exit(1)
+            # Nada que publicar no es un error: el timer corre cada 15 min.
+            logger.warning(
+                "No hay tenants con credenciales IG; nada que publicar por ahora."
+            )
+            return 0
     else:
         parser.error("Debe especificar --tenant <id> o --all-tenants")
     

@@ -98,6 +98,14 @@ def test_consulta_la_cola_del_tenant_correcto():
     baseline.load_reuse_queue.assert_called_once_with("bam-in-a-can")
 
 
+def test_main_all_tenants_sin_credenciales_no_falla(monkeypatch):
+    import modules.social.ig_scheduler as scheduler
+
+    monkeypatch.setattr(scheduler, "discover_tenants", lambda: [])
+
+    assert scheduler.main(["--all-tenants"]) == 0
+
+
 def test_tenant_de_producto_no_usa_la_ventana_de_30_dias():
     baseline = MagicMock()
     report = _scheduler("flexi", baseline).historical_reuse_report(
