@@ -275,7 +275,7 @@ class MetaPublisher:
             # Verificar si se devolvió access_token
             if "access_token" in result:
                 new_token = result["access_token"]
-                logger.info(f"Token validado y obtenido: {new_token[:20]}...")
+                logger.info("Token de página obtenido correctamente.")
                 return new_token
             
             # Verificar si recibimos un error
