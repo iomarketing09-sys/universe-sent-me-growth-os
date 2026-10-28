@@ -11,6 +11,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 
 ### Añadido
 
+- **Guard de reuse en `social`** (`modules/social/ig_scheduler.py`): dos
+  políticas explícitas. Los tenants de contenido usan una ventana de 30 días
+  sobre su propio histórico; los de producto físico (`physical_cro`, `retail`,
+  `ecommerce_product`) reciben `NOT_APPLICABLE` y se apoyan en el inventario.
+  `run_once()` reporta `blocked` por tenant y `process_item()` no publica si el
+  activo está bloqueado. Documentado en `modules/social/README.md`.
 - **Módulo `social`** (`modules/social/`): publicación en Instagram y Facebook,
   programación por calendario, registro de publicaciones y lectura de métricas
   orgánicas de Meta. Incluye 21 nombres en su API pública.
@@ -59,6 +65,9 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 
 ### Corregido
 
+- El guard de reuse devolvía `UNKNOWN` cuando el baseline no tenía fila; ahora
+  distingue "activo en inventario sin fecha" de "sin historial" en el `reason`,
+  sin bloquear publicaciones por falta de datos.
 - `scripts/sync_all.py --list` volvía a mostrar la tabla vacía tras el refactor
   (el registro buscaba `tenants/` dentro de `modules/`). Vuelve a listar los 5
   tenants.
