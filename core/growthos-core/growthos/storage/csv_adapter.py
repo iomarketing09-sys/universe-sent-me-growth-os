@@ -85,6 +85,15 @@ class CSVAdapter:
     # Reverse mapping for export
     PIECE_FIELD_MAP_REVERSE = {v: k for k, v in PIECE_FIELD_MAP.items()}
 
+    # Column order for CANONICAL CSV (46 columns expected by tests)
+    # Matches PIECE_FIELD_MAP keys but with lowercase for consistency with CANONICAL
+    COLUMN_ORDER = {
+        Piece: list(PIECE_FIELD_MAP.keys()),
+    }
+
+    # CSV column to model field mapping for Piece (alias for tests)
+    CSV_TO_PIECE = PIECE_FIELD_MAP_REVERSE.copy()
+
     # Publication field mapping
     PUBLICATION_FIELD_MAP = {
         "id_pieza": "id_pieza",
