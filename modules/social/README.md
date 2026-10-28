@@ -65,6 +65,27 @@ real sigue pendiente como insumo de negocio.
 
 ## Uso
 
+### Host de imágenes para Instagram
+
+La API de Instagram exige una URL pública, no un archivo local. El publisher
+sube la imagen al host indicado por `IMAGE_HOST` en `tenants/<id>/.env`:
+
+| `IMAGE_HOST` | Requiere | Notas |
+| --- | --- | --- |
+| `imgbb` (default) | `IMGBB_API_KEY` | ImgBB puede bloquear redes con error 103 |
+| `catbox` | nada | `catbox.moe`, gratuito, sin cuenta |
+
+```bash
+# tenants/flexi/.env
+FB_PAGE_ID=...
+META_ACCESS_TOKEN=...
+IMAGE_HOST=catbox
+```
+
+Si `IMAGE_HOST` no se declara, se mantiene `imgbb` y se exige su key.
+
+## Uso
+
 ```bash
 # Una pasada para todos los tenants con calendario
 python3 -m modules.social.ig_scheduler

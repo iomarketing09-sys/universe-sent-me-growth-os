@@ -15,14 +15,28 @@ from typing import Optional, Tuple
 logger = logging.getLogger(__name__)
 
 
+IMAGE_HOSTS = {"imgbb", "catbox"}
+USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36"
+
+
 class IgPublisher:
     """Publicador de Instagram - encapsula todo el flujo de publicación"""
     
-    def __init__(self, page_token: str, ig_id: str, imgbb_key: str, asset_root: Path):
+    def __init__(
+        self,
+        page_token: str,
+        ig_id: str,
+        imgbb_key: str,
+        asset_root: Path,
+        image_host: str = "imgbb",
+    ):
         self.page_token = page_token
         self.ig_id = ig_id
         self.imgbb_key = imgbb_key
         self.asset_root = asset_root
+        self.image_host = (image_host or "imgbb").strip().lower()
+        if self.image_host not in IMAGE_HOSTS:
+            raise ValueError(f"IMAGE_HOST inválido: {self.image_host}")
     
     def find_asset(self, filename: str) -> Optional[Path]:
         # Use os.walk with followlinks=True to handle symlinks
@@ -60,6 +74,29 @@ class IgPublisher:
         url = r['data']['url']
         logger.info(f"✅ imgbb: {url}")
         return url
+
+    def upload_to_catbox(self, file_path: Path) -> str:
+        """Sube la imagen a catbox.moe y devuelve la URL pública."""
+        logger.info(f"Subiendo a catbox: {file_path.name}")
+        with open(file_path, "rb") as handle:
+            response = requests.post(
+                "https://catbox.moe/user/api.php",
+                data={"reqtype": "fileupload"},
+                files={"fileToUpload": (file_path.name, handle, "application/octet-stream")},
+                headers={"User-Agent": USER_AGENT},
+                timeout=60,
+            )
+        url = response.text.strip()
+        if response.status_code != 200 or not url.startswith("http"):
+            raise RuntimeError(f"Error catbox: {response.status_code} {url[:120]}")
+        logger.info(f"✅ catbox: {url}")
+        return url
+
+    def upload_image(self, file_path: Path) -> str:
+        """Sube la imagen al host configurado (imgbb o catbox)."""
+        if self.image_host == "catbox":
+            return self.upload_to_catbox(file_path)
+        return self.upload_to_imgbb(file_path)
     
     def create_media_container(self, image_url: str, caption: str) -> str:
         """Crea container de media en Instagram. Retorna creation_id."""
@@ -113,8 +150,8 @@ class IgPublisher:
         if not asset_file:
             raise FileNotFoundError(f"Asset no encontrado: {media_filename}")
         
-        # 2. Subir a imgbb
-        image_url = self.upload_to_imgbb(asset_file)
+        # 2. Subir al host configurado
+        image_url = self.upload_image(asset_file)
         
         # 3. Crear container
         creation_id = self.create_media_container(image_url, caption)
@@ -144,7 +181,13 @@ def load_tenant_credentials(tenant_id: str) -> dict:
                 k, v = line.split('=', 1)
                 creds[k.strip()] = v.strip()
     
-    required = ['FB_PAGE_ID', 'META_ACCESS_TOKEN', 'IMGBB_API_KEY']
+    host = str(creds.get('IMAGE_HOST') or 'imgbb').strip().lower()
+    if host not in IMAGE_HOSTS:
+        raise ValueError(f"IMAGE_HOST inválido: {host}")
+
+    required = ['FB_PAGE_ID', 'META_ACCESS_TOKEN']
+    if host == 'imgbb':
+        required.append('IMGBB_API_KEY')
     for r in required:
         if not creds.get(r):
             raise ValueError(f"Falta {r} en {env_path}")
@@ -174,6 +217,7 @@ def create_ig_publisher_for_tenant(tenant_id: str) -> IgPublisher:
     return IgPublisher(
         page_token=page_token,
         ig_id=ig_id,
-        imgbb_key=creds['IMGBB_API_KEY'],
-        asset_root=asset_root
+        imgbb_key=creds.get('IMGBB_API_KEY', ''),
+        asset_root=asset_root,
+        image_host=creds.get('IMAGE_HOST', 'imgbb'),
     )

@@ -83,6 +83,11 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 
 ### Corregido
 
+- **Host de imágenes configurable** en `social`: `IgPublisher` acepta
+  `IMAGE_HOST=imgbb|catbox`. ImgBB respondía `103 forbidden` desde esta red
+  con una key válida, así que `flexi` usa `catbox.moe` (gratis, sin cuenta).
+  `load_tenant_credentials` solo exige `IMGBB_API_KEY` cuando el host es
+  `imgbb`.
 - `get_historical_reuse_info` aceptaba `tenant_id` pero leía siempre la cola
   de `universe`; ahora usa la cola del tenant recibido.
 - `ScheduleItem.from_meta_import_row` no pasaba `tenant_id` al baseline, así
