@@ -65,6 +65,10 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 
 ### Corregido
 
+- Los 4 tests de `meta_publisher` fallaban por depender de `dryrun_output.json`
+  en la raíz, un artefacto que está en `.gitignore` y se perdió. Ahora usan el
+  fixture versionado `tests/fixtures/dryrun_firma_bordados.json` (20 slots:
+  17 media, 3 text). Suite: 172 passed, 15 failed (los heredados de modelo).
 - El guard de reuse devolvía `UNKNOWN` cuando el baseline no tenía fila; ahora
   distingue "activo en inventario sin fecha" de "sin historial" en el `reason`,
   sin bloquear publicaciones por falta de datos.

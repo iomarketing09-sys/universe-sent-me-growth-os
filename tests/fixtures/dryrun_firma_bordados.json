@@ -1,0 +1,185 @@
+{
+  "tenant_id": "firma-bordados",
+  "schedule": [
+    {
+      "slot_id": "FB-01",
+      "day": "domingo 2026-11-01",
+      "slot_type": "media",
+      "datetime_utc": "2026-11-01T15:00:00Z",
+      "asset_ref": "FB001",
+      "source_filename": "firma_bordados_01.jpg",
+      "description": "Bordado Firma 01"
+    },
+    {
+      "slot_id": "FB-02",
+      "day": "domingo 2026-11-01",
+      "slot_type": "media",
+      "datetime_utc": "2026-11-01T23:00:00Z",
+      "asset_ref": "FB002",
+      "source_filename": "firma_bordados_02.jpg",
+      "description": "Bordado Firma 02"
+    },
+    {
+      "slot_id": "FB-03",
+      "day": "lunes 2026-11-02",
+      "slot_type": "media",
+      "datetime_utc": "2026-11-02T15:00:00Z",
+      "asset_ref": "FB003",
+      "source_filename": "firma_bordados_03.jpg",
+      "description": "Bordado Firma 03"
+    },
+    {
+      "slot_id": "FB-04",
+      "day": "lunes 2026-11-02",
+      "slot_type": "media",
+      "datetime_utc": "2026-11-02T23:00:00Z",
+      "asset_ref": "FB004",
+      "source_filename": "firma_bordados_04.jpg",
+      "description": "Bordado Firma 04"
+    },
+    {
+      "slot_id": "FB-05",
+      "day": "martes 2026-11-03",
+      "slot_type": "media",
+      "datetime_utc": "2026-11-03T15:00:00Z",
+      "asset_ref": "FB005",
+      "source_filename": "firma_bordados_05.jpg",
+      "description": "Bordado Firma 05"
+    },
+    {
+      "slot_id": "FB-06",
+      "day": "martes 2026-11-03",
+      "slot_type": "text",
+      "datetime_utc": "2026-11-03T23:00:00Z",
+      "asset_ref": null,
+      "source_filename": null,
+      "description": "Texto de marca Firma Bordados"
+    },
+    {
+      "slot_id": "FB-07",
+      "day": "miercoles 2026-11-04",
+      "slot_type": "media",
+      "datetime_utc": "2026-11-04T15:00:00Z",
+      "asset_ref": "FB006",
+      "source_filename": "firma_bordados_06.jpg",
+      "description": "Bordado Firma 06"
+    },
+    {
+      "slot_id": "FB-08",
+      "day": "miercoles 2026-11-04",
+      "slot_type": "media",
+      "datetime_utc": "2026-11-04T23:00:00Z",
+      "asset_ref": "FB007",
+      "source_filename": "firma_bordados_07.jpg",
+      "description": "Bordado Firma 07"
+    },
+    {
+      "slot_id": "FB-09",
+      "day": "jueves 2026-11-05",
+      "slot_type": "media",
+      "datetime_utc": "2026-11-05T15:00:00Z",
+      "asset_ref": "FB008",
+      "source_filename": "firma_bordados_08.jpg",
+      "description": "Bordado Firma 08"
+    },
+    {
+      "slot_id": "FB-10",
+      "day": "jueves 2026-11-05",
+      "slot_type": "media",
+      "datetime_utc": "2026-11-05T23:00:00Z",
+      "asset_ref": "FB009",
+      "source_filename": "firma_bordados_09.jpg",
+      "description": "Bordado Firma 09"
+    },
+    {
+      "slot_id": "FB-11",
+      "day": "viernes 2026-11-06",
+      "slot_type": "media",
+      "datetime_utc": "2026-11-06T15:00:00Z",
+      "asset_ref": "FB010",
+      "source_filename": "firma_bordados_10.jpg",
+      "description": "Bordado Firma 10"
+    },
+    {
+      "slot_id": "FB-12",
+      "day": "viernes 2026-11-06",
+      "slot_type": "text",
+      "datetime_utc": "2026-11-06T23:00:00Z",
+      "asset_ref": null,
+      "source_filename": null,
+      "description": "Texto de marca Firma Bordados"
+    },
+    {
+      "slot_id": "FB-13",
+      "day": "sabado 2026-11-07",
+      "slot_type": "media",
+      "datetime_utc": "2026-11-07T15:00:00Z",
+      "asset_ref": "FB011",
+      "source_filename": "firma_bordados_11.jpg",
+      "description": "Bordado Firma 11"
+    },
+    {
+      "slot_id": "FB-14",
+      "day": "sabado 2026-11-07",
+      "slot_type": "media",
+      "datetime_utc": "2026-11-07T23:00:00Z",
+      "asset_ref": "FB012",
+      "source_filename": "firma_bordados_12.jpg",
+      "description": "Bordado Firma 12"
+    },
+    {
+      "slot_id": "FB-15",
+      "day": "domingo 2026-11-08",
+      "slot_type": "media",
+      "datetime_utc": "2026-11-08T15:00:00Z",
+      "asset_ref": "FB013",
+      "source_filename": "firma_bordados_13.jpg",
+      "description": "Bordado Firma 13"
+    },
+    {
+      "slot_id": "FB-16",
+      "day": "domingo 2026-11-08",
+      "slot_type": "media",
+      "datetime_utc": "2026-11-08T23:00:00Z",
+      "asset_ref": "FB014",
+      "source_filename": "firma_bordados_14.jpg",
+      "description": "Bordado Firma 14"
+    },
+    {
+      "slot_id": "FB-17",
+      "day": "lunes 2026-11-09",
+      "slot_type": "media",
+      "datetime_utc": "2026-11-09T15:00:00Z",
+      "asset_ref": "FB015",
+      "source_filename": "firma_bordados_15.jpg",
+      "description": "Bordado Firma 15"
+    },
+    {
+      "slot_id": "FB-18",
+      "day": "lunes 2026-11-09",
+      "slot_type": "text",
+      "datetime_utc": "2026-11-09T23:00:00Z",
+      "asset_ref": null,
+      "source_filename": null,
+      "description": "Texto de marca Firma Bordados"
+    },
+    {
+      "slot_id": "FB-19",
+      "day": "martes 2026-11-10",
+      "slot_type": "media",
+      "datetime_utc": "2026-11-10T15:00:00Z",
+      "asset_ref": "FB016",
+      "source_filename": "firma_bordados_16.jpg",
+      "description": "Bordado Firma 16"
+    },
+    {
+      "slot_id": "FB-20",
+      "day": "martes 2026-11-10",
+      "slot_type": "media",
+      "datetime_utc": "2026-11-10T23:00:00Z",
+      "asset_ref": "FB017",
+      "source_filename": "firma_bordados_17.jpg",
+      "description": "Bordado Firma 17"
+    }
+  ]
+}

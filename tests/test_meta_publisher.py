@@ -10,6 +10,8 @@ from unittest.mock import patch
 import pytest
 
 # Importar el módulo - las env vars ya están seteadas en conftest o se setean aquí
+DRYRUN_FIXTURE = Path(__file__).parent / "fixtures" / "dryrun_firma_bordados.json"
+
 from growth.meta_publisher import (
     MetaPublisher,
     MetaResponse,
@@ -225,7 +227,7 @@ class TestLoadDryrunSchedule:
     
     def test_load_dryrun_schedule(self):
         """Carga schedule desde dryrun_output.json."""
-        dryrun_path = Path(__file__).parent.parent / "dryrun_output.json"
+        dryrun_path = DRYRUN_FIXTURE
         schedule = load_dryrun_schedule(dryrun_path)
         
         assert isinstance(schedule, list)
@@ -238,7 +240,7 @@ class TestLoadDryrunSchedule:
     
     def test_schedule_counts(self):
         """Verifica conteo media vs text."""
-        dryrun_path = Path(__file__).parent.parent / "dryrun_output.json"
+        dryrun_path = DRYRUN_FIXTURE
         schedule = load_dryrun_schedule(dryrun_path)
         
         media = sum(1 for s in schedule if s["slot_type"] == "media")
@@ -285,7 +287,7 @@ class TestPublishScheduleFromDryrun:
     
     def test_publish_schedule_dry_run(self):
         """Publica schedule completo en dry-run."""
-        dryrun_path = Path(__file__).parent.parent / "dryrun_output.json"
+        dryrun_path = DRYRUN_FIXTURE
         tenant_root = Path(__file__).parent.parent / "tenants" / "firma-bordados"
         
         results = publish_schedule_from_dryrun(
@@ -302,7 +304,7 @@ class TestPublishScheduleFromDryrun:
     
     def test_publish_schedule_counts(self):
         """Verifica que se procesen todos los slots."""
-        dryrun_path = Path(__file__).parent.parent / "dryrun_output.json"
+        dryrun_path = DRYRUN_FIXTURE
         tenant_root = Path(__file__).parent.parent / "tenants" / "firma-bordados"
         
         results = publish_schedule_from_dryrun(
