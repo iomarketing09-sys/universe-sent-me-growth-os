@@ -13,6 +13,8 @@ modules/communications/
     ├── d1.py                Cliente D1 de solo lectura (API REST de Cloudflare)
     ├── conversations.py     Resumen, profundidad y atribución a anuncios
     ├── echo_diagnostics.py  Diagnóstico de ecos (respuestas desde el celular)
+    ├── backfill.py          Recupera ecos que el worker descartó
+    ├── d1_write.py          Escrituras puntuales (solo reparaciones)
     └── env.py               Lectura de credenciales sin exponerlas
 ```
 
@@ -32,7 +34,21 @@ python3 -m modules.communications.whatsapp.agent flexi --only echoes --graph
 
 # Diagnóstico de ecos suelto
 python3 -m modules.communications.whatsapp.echo_diagnostics flexi --output /tmp/ecos.json
+
+# Recuperar ecos que el worker no guardó (dry-run por defecto)
+python3 -m modules.communications.whatsapp.backfill flexi
+python3 -m modules.communications.whatsapp.backfill flexi --apply
 ```
+
+## Backfill de ecos
+
+El worker guarda **todos** los payloads en `raw_events`, aunque no sepa leerlos. Cuando se
+descubrió que Meta manda los ecos en `message_echoes` y el worker solo leía
+`smb_message_echoes`, quedaron 21 respuestas humanas sin registrar (25–27 oct 2026). El
+backfill relee esos payloads y las inserta con `INSERT OR IGNORE`, así que es idempotente:
+correrlo dos veces no duplica nada. El campo `received_at` es el del momento real de llegada
+a Meta; un eco trae un `timestamp` inválido (2017) y se conserva tal cual para no falsear el
+dato original.
 
 ## Fuentes de datos
 

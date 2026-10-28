@@ -136,3 +136,41 @@ def test_modulo_expone_whatsapp_agent():
     from modules.communications.whatsapp.agent import WhatsAppAgent
 
     assert WhatsAppAgent("flexi").tenant_id == "flexi"
+
+
+def test_backfill_construye_fila_out_app():
+    from modules.communications.whatsapp import backfill
+
+    message = {
+        "id": "wamid.TEST",
+        "to": "5218781112233",
+        "from": "5218781385284",
+        "timestamp": "1776000060",
+        "type": "text",
+        "text": {"body": "Sí, sí tenemos"},
+    }
+    row = backfill._row(message, "2026-10-27T20:00:00Z")
+    assert row is not None
+    assert row[1] == "out_app"
+    assert row[6] == "Sí, sí tenemos"
+    assert row[7] == len("Sí, sí tenemos")
+    assert row[11] == "2233"
+    assert len(row[10]) == 12
+    assert row[14] == "wamid.TEST"
+
+
+def test_backfill_ignora_mensajes_sin_id_o_destino():
+    from modules.communications.whatsapp import backfill
+
+    assert backfill._row({"to": "5218781112233"}, "2026-10-27T20:00:00Z") is None
+    assert backfill._row({"id": "wamid.X"}, "2026-10-27T20:00:00Z") is None
+
+
+def test_backfill_hash_es_estable():
+    from modules.communications.whatsapp import backfill
+
+    first = backfill._hash_contact("5218781112233")
+    second = backfill._hash_contact("5218781112233")
+    assert first == second
+    assert first[1] == "2233"
+    assert first[0] != backfill._hash_contact("5218781112234")[0]

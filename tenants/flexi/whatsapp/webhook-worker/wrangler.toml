@@ -3,6 +3,7 @@ name = "flexi-whatsapp-webhook"
 main = "src/index.js"
 compatibility_date = "2026-10-01"
 workers_dev = true
+preview_urls = false
 
 # D1 propio para no tocar el SQLite local de OmniRoute ni la VM.
 [[d1_databases]]

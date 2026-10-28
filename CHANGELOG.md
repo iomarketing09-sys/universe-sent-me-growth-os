@@ -70,6 +70,17 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
   perdían). Requiere redesplegar el worker para tomar efecto.
 - `schema.sql` del worker incluye las columnas de `referral` y se agregó
   `migrations/001_referral_columns.sql`.
+- Worker `flexi-whatsapp-webhook` **redesplegado** (versión `6b367fc4`) con el
+  soporte de `message_echoes`; verificado end-to-end con un eco sintético y
+  `/stats` sigue protegido por el secreto existente.
+- `deploy.sh` resuelve credenciales desde `tenants/flexi/.env` o `growth-os/.env`
+  (`CF_API_TOKEN`), toma el `account_id` de `whatsapp/config.json` y no falla si
+  falta el verify token (conserva el secreto ya cargado).
+- `wrangler.toml` fija `preview_urls = false` para evitar URLs de preview
+  accidentales.
+- **Backfill de ecos** (`modules/communications/whatsapp/backfill.py`): recuperó
+  21 respuestas humanas (15 de texto) que el bug había descartado entre el 24 y
+  el 27 de octubre. Idempotente vía `INSERT OR IGNORE`.
 
 ### Pendiente
 

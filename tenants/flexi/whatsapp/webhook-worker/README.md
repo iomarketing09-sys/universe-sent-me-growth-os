@@ -24,7 +24,9 @@ WhatsApp (Meta)  ──HTTPS──▶  Worker: /webhook  ──▶  D1 `flexi_wh
 
 - **Entrantes** (`direction = "in"`): mensaje del cliente, con `intent` clasificado.
 - **Ecos** (`direction = "out_app"`): lo que la sucursal contesta **desde la app del teléfono**
-  (coexistencia → `smb_message_echoes`). Sirve para medir tiempos de respuesta humana y copiar su tono.
+  (coexistencia). Meta los manda en `value.message_echoes` (mensaje plano); la doc oficial habla de
+  `smb_message_echoes`. El worker acepta **ambos formatos** desde 2026-10-27. Sirve para medir
+  tiempos de respuesta humana y copiar su tono.
 - **Estados** (`direction = "status"`): `sent` / `delivered` / `read`.
 - **Privacidad:** el teléfono se guarda como hash SHA-256 truncado + últimos 4 dígitos.
 
@@ -39,11 +41,14 @@ WhatsApp (Meta)  ──HTTPS──▶  Worker: /webhook  ──▶  D1 `flexi_wh
 
 ## Despliegue
 
-1. Pega las credenciales en `tenants/flexi/.env` (ignorado por git):
+1. Pega las credenciales en `tenants/flexi/.env` (ignorado por git). Si ese archivo no
+   existe, `deploy.sh` las busca en `growth-os/.env` (`CF_API_TOKEN` también sirve) y toma
+   el `account_id` de `../config.json`:
 
    ```
    CLOUDFLARE_ACCOUNT_ID=...
    CLOUDFLARE_API_TOKEN=...
+   WHATSAPP_VERIFY_TOKEN=...   # opcional: si falta, se conserva el secreto actual
    ```
 
    El token se crea en <https://dash.cloudflare.com/profile/api-tokens> → *Create Token* →
@@ -71,7 +76,9 @@ WhatsApp (Meta)  ──HTTPS──▶  Worker: /webhook  ──▶  D1 `flexi_wh
    ```
 
    El script verifica credenciales, crea la base D1, aplica `schema.sql`, sube el
-   `WHATSAPP_VERIFY_TOKEN` como **secreto** (nunca al repo) y despliega.
+   `WHATSAPP_VERIFY_TOKEN` como **secreto** (nunca al repo) y despliega. Los secretos
+   existentes sobreviven al despliegue: si no hay verify token en el entorno, el paso 5
+   se omite en lugar de fallar.
    La URL queda como `https://flexi-whatsapp-webhook.<subdominio>.workers.dev`.
 
 3. En Meta: *App Dashboard → WhatsApp → Configuration → Webhook* →
@@ -81,7 +88,7 @@ WhatsApp (Meta)  ──HTTPS──▶  Worker: /webhook  ──▶  D1 `flexi_wh
 
 ```bash
 cd tenants/flexi/whatsapp/webhook-worker
-npm test     # 36 comprobaciones: handshake, hashes, clasificación, casos borde
+npm test     # 39 comprobaciones: handshake, hashes, clasificación, ecos en ambos formatos
 ```
 
 Con la URL desplegada:
@@ -105,5 +112,6 @@ npx wrangler d1 execute flexi_whatsapp_obs --remote --file summary.sql
 | `src/index.js` | Worker completo (sin dependencias). |
 | `schema.sql` | Tablas + índices (incluye dedupe por `message_id`). |
 | `summary.sql` | Consultas del reporte. |
-| `deploy.sh` | Despliegue idempotente. |
+| `deploy.sh` | Despliegue idempotente (credenciales del tenant o de la raíz). |
+| `migrations/001_referral_columns.sql` | Columnas de atribución de anuncios, ya aplicadas. |
 | `test/smoke.mjs` | Pruebas locales con D1 simulado. |

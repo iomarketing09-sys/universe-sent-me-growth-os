@@ -1,16 +1,20 @@
 #!/usr/bin/env bash
 # Despliegue del receptor solo-escucha (Cloudflare Worker + D1) para el tenant `flexi`.
 #
-# Requiere en `tenants/flexi/.env` (archivo ignorado por git):
-#   CLOUDFLARE_ACCOUNT_ID=...
-#   CLOUDFLARE_API_TOKEN=...        (permisos: Workers Scripts:Edit, D1:Edit, Account Settings:Read)
-#   WHATSAPP_VERIFY_TOKEN=...       (mismo valor que se pega en Meta)
+# Credenciales (archivos ignorados por git). Se buscan primero en
+# `tenants/flexi/.env` y, si no están ahí, en `growth-os/.env`:
+#   CLOUDFLARE_ACCOUNT_ID=...       (si falta, se toma de whatsapp/config.json)
+#   CLOUDFLARE_API_TOKEN=... o CF_API_TOKEN=...
+#                                    (permisos: Workers Scripts:Edit, D1:Edit)
+#   WHATSAPP_VERIFY_TOKEN=...        (solo para crear/actualizar el secreto;
+#                                     si falta, el secreto existente se conserva)
 #
 # Uso:  bash deploy.sh
 set -euo pipefail
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ENV_FILE="$DIR/../../.env"
+TENANT_ENV="$DIR/../../.env"
+ROOT_ENV="$DIR/../../../../.env"
 DB_NAME="flexi_whatsapp_obs"
 
 export npm_config_cache="${npm_config_cache:-/tmp/npmcache}"
@@ -23,8 +27,8 @@ export WRANGLER_LOG_PATH=/tmp/wrangler-logs/wrangler.log
 mkdir -p "$XDG_CONFIG_HOME" "$(dirname "$WRANGLER_LOG_PATH")"
 WRANGLER="npx --yes wrangler@4"
 
-get_env() {
-  python3 - "$ENV_FILE" "$1" <<'PY'
+get_from() {
+  python3 - "$1" "$2" <<'PY'
 import sys
 from pathlib import Path
 path, key = Path(sys.argv[1]), sys.argv[2]
@@ -38,16 +42,33 @@ for line in path.read_text().splitlines():
 PY
 }
 
-export CLOUDFLARE_ACCOUNT_ID="$(get_env CLOUDFLARE_ACCOUNT_ID)"
+get_env() {
+  local value
+  value="$(get_from "$TENANT_ENV" "$1")"
+  if [ -z "$value" ]; then value="$(get_from "$ROOT_ENV" "$1")"; fi
+  printf '%s' "$value"
+}
+
 export CLOUDFLARE_API_TOKEN="$(get_env CLOUDFLARE_API_TOKEN)"
+if [ -z "${CLOUDFLARE_API_TOKEN:-}" ]; then
+  export CLOUDFLARE_API_TOKEN="$(get_env CF_API_TOKEN)"
+fi
+export CLOUDFLARE_ACCOUNT_ID="$(get_env CLOUDFLARE_ACCOUNT_ID)"
+if [ -z "${CLOUDFLARE_ACCOUNT_ID:-}" ]; then
+  CLOUDFLARE_ACCOUNT_ID="$(python3 - "$DIR/../config.json" <<'PY'
+import json, sys
+from pathlib import Path
+path = Path(sys.argv[1])
+print((json.loads(path.read_text()).get("cloudflare") or {}).get("account_id", "") if path.exists() else "")
+PY
+)"
+  export CLOUDFLARE_ACCOUNT_ID
+fi
 VERIFY_TOKEN="$(get_env WHATSAPP_VERIFY_TOKEN)"
 
 if [ -z "${CLOUDFLARE_ACCOUNT_ID:-}" ] || [ -z "${CLOUDFLARE_API_TOKEN:-}" ]; then
-  echo "ERROR: faltan CLOUDFLARE_ACCOUNT_ID o CLOUDFLARE_API_TOKEN en $ENV_FILE" >&2
-  exit 2
-fi
-if [ -z "${VERIFY_TOKEN:-}" ]; then
-  echo "ERROR: falta WHATSAPP_VERIFY_TOKEN en $ENV_FILE" >&2
+  echo "ERROR: faltan CLOUDFLARE_ACCOUNT_ID o CLOUDFLARE_API_TOKEN/CF_API_TOKEN" >&2
+  echo "       revisados: $TENANT_ENV y $ROOT_ENV" >&2
   exit 2
 fi
 
@@ -91,7 +112,11 @@ echo "== 4/5 despliegue =="
 $WRANGLER deploy
 
 echo "== 5/5 secreto del verify token =="
-printf '%s' "$VERIFY_TOKEN" | $WRANGLER secret put WHATSAPP_VERIFY_TOKEN
+if [ -n "${VERIFY_TOKEN:-}" ]; then
+  printf '%s' "$VERIFY_TOKEN" | $WRANGLER secret put WHATSAPP_VERIFY_TOKEN
+else
+  echo "  omitido: WHATSAPP_VERIFY_TOKEN no está en el entorno; se conserva el secreto actual."
+fi
 
 echo
 echo "Listo. URL del webhook: <la de arriba>/webhook"
