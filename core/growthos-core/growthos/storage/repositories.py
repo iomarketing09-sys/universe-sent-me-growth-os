@@ -10,6 +10,7 @@ from growthos.core.models import (
     CommunityEngagement,
     MetricsSnapshot,
     AssetAlias,
+    Deal,
 )
 from growthos.storage.database import Database
 
@@ -232,3 +233,45 @@ class AssetAliasRepository(BaseRepository):
     def get_all(self) -> List[AssetAlias]:
         rows = self.db.fetchall(f"SELECT * FROM {self.table_name}")
         return [self.model(**dict(r)) for r in rows]
+
+
+class DealRepository(BaseRepository):
+    """Repository for revenue deals."""
+
+    table_name = "deals"
+    model = Deal
+
+    def save(self, deal: Deal) -> None:
+        data = deal.model_dump()
+        columns = [key for key, value in data.items() if value is not None]
+        values = [data[key] for key in columns]
+        placeholders = ", ".join("?" * len(columns))
+        column_names = ", ".join(columns)
+        self.db.execute(
+            f"INSERT OR REPLACE INTO {self.table_name} ({column_names}) VALUES ({placeholders})",
+            tuple(values),
+        )
+
+    def get_by_id(self, deal_id: str) -> Optional[Deal]:
+        row = self.db.fetchone(
+            f"SELECT * FROM {self.table_name} WHERE deal_id = ?", (deal_id,)
+        )
+        return self.model(**dict(row)) if row else None
+
+    def get_all(self) -> List[Deal]:
+        rows = self.db.fetchall(f"SELECT * FROM {self.table_name}")
+        return [self.model(**dict(row)) for row in rows]
+
+    def get_by_tenant(self, tenant_id: str) -> List[Deal]:
+        rows = self.db.fetchall(
+            f"SELECT * FROM {self.table_name} WHERE tenant_id = ? ORDER BY created_at",
+            (tenant_id,),
+        )
+        return [self.model(**dict(row)) for row in rows]
+
+    def get_by_payment_status(self, payment_status: str) -> List[Deal]:
+        rows = self.db.fetchall(
+            f"SELECT * FROM {self.table_name} WHERE payment_status = ?",
+            (payment_status,),
+        )
+        return [self.model(**dict(row)) for row in rows]

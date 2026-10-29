@@ -59,3 +59,6 @@ tenants/*/whatsapp/voice_proposals/
 # Snapshots diarios del sync: solo latest.json se versiona.
 tenants/*/data/sync/*.json
 !tenants/*/data/sync/latest.json
+
+# Revenue deals contain customer PII; keep the ledger local.
+tenants/*/data/deals_*.csv

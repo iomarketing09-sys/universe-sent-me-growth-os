@@ -166,9 +166,12 @@ class LeadSource(str, Enum):
     ORGANIC = "Organic"
     META_ADS = "Meta_Ads"
     GOOGLE_ADS = "Google_Ads"
+    INSTAGRAM = "Instagram"
+    FACEBOOK = "Facebook"
     REFERRAL = "Referral"
     WHATSAPP = "WhatsApp"
     DIRECT = "Direct"
+    STORE = "Store"
 
 
 class DealStage(str, Enum):
@@ -178,6 +181,20 @@ class DealStage(str, Enum):
     NEGOTIATION = "Negotiation"
     CLOSED_WON = "Closed_Won"
     CLOSED_LOST = "Closed_Lost"
+
+
+class PaymentStatus(str, Enum):
+    """Estado de cobro de un deal.
+
+    ``amount_collected`` es el dinero realmente recibido. En ``anticipo`` es
+    el abono; en ``cobrado`` es el total liquidado. Así el reporte no suma dos
+    veces el mismo deal cuando pasa de anticipo a cobrado.
+    """
+
+    PENDIENTE = "pendiente"
+    ANTICIPO = "anticipo"
+    COBRADO = "cobrado"
+    CANCELADO = "cancelado"
 
 
 class FunnelLine(str, Enum):

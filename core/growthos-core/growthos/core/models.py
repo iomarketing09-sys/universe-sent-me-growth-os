@@ -22,6 +22,7 @@ from growthos.core.enums import (
     ReconciliacionConfianza,
     LeadSource,
     DealStage,
+    PaymentStatus,
     FunnelLine,
 )
 
@@ -273,11 +274,27 @@ class Deal(BaseModel):
     deal_stage: DealStage = Field(default=DealStage.NEW)
     funnel_line: Optional[FunnelLine] = Field(default=None)
     amount: Optional[float] = None
+    amount_collected: float = 0.0
+    payment_status: PaymentStatus = Field(default=PaymentStatus.PENDIENTE)
+    payment_method: str = ""
+    payment_date: Optional[date] = None
+    product_ref: str = ""
+    source_publication_id: str = ""
+    source_campaign_id: str = ""
+    source_conversation_id: str = ""
     currency: str = "MXN"
     contact_name: str = ""
     contact_phone: str = ""
     contact_email: str = ""
     notes: str = ""
+    lost_reason: str = ""
     created_at: Optional[date] = None
     updated_at: Optional[date] = None
     closed_at: Optional[date] = None
+
+    @field_validator("amount", "amount_collected")
+    @classmethod
+    def _non_negative_money(cls, value: Optional[float]) -> Optional[float]:
+        if value is not None and value < 0:
+            raise ValueError("Los montos del deal no pueden ser negativos.")
+        return value
