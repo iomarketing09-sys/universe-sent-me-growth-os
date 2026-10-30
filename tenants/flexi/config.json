@@ -102,8 +102,8 @@
         "name": "ISAURA",
         "brand": "flexi",
         "colors": [
-          "BEIGE",
-          "TAN"
+          "Beige",
+          "Negro"
         ],
         "asset_dir": "assets/flexi/campana_oi26/142801"
       },
@@ -112,7 +112,8 @@
         "name": "JOCELYN",
         "brand": "flexi",
         "colors": [
-          "TAN"
+          "Oro",
+          "Negro"
         ],
         "asset_dir": "assets/flexi/campana_oi26/142901"
       },
@@ -121,7 +122,8 @@
         "name": "GINNY",
         "brand": "flexi",
         "colors": [
-          "PLATA"
+          "Oro",
+          "Negro"
         ],
         "asset_dir": "assets/flexi/campana_oi26/143001"
       },
@@ -130,7 +132,7 @@
         "name": "LYDIA",
         "brand": "flexi",
         "colors": [
-          "TAN"
+          "Negro"
         ],
         "asset_dir": "assets/flexi/campana_oi26/143201"
       },
@@ -139,7 +141,8 @@
         "name": "ARISHA",
         "brand": "quirelli",
         "colors": [
-          "NEGRO"
+          "Nude",
+          "Negro"
         ],
         "asset_dir": "assets/quirelli/campana_oi26/306703"
       }
