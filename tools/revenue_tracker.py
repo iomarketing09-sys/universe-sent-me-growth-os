@@ -87,6 +87,7 @@ def main(argv: Optional[list[str]] = None) -> int:
     add.add_argument("--funnel-line", default=None, help="TOFU|MOFU|BOFU")
     add.add_argument("--payment-method", default="")
     add.add_argument("--payment-date", default=None, help="YYYY-MM-DD")
+    add.add_argument("--appointment-at", default=None, help="Fecha de montaje/cita: YYYY-MM-DD")
     add.add_argument("--publication-id", default="")
     add.add_argument("--campaign-id", default="")
     add.add_argument("--conversation-id", default="")
@@ -103,6 +104,7 @@ def main(argv: Optional[list[str]] = None) -> int:
     update.add_argument("--stage", default=None)
     update.add_argument("--payment-method", default=None)
     update.add_argument("--payment-date", default=None, help="YYYY-MM-DD")
+    update.add_argument("--appointment-at", default=None, help="Fecha de montaje/cita: YYYY-MM-DD")
     update.add_argument("--notes", default=None)
     update.add_argument("--lost-reason", default=None)
     update.add_argument("--source", default=None)
@@ -135,6 +137,7 @@ def main(argv: Optional[list[str]] = None) -> int:
                 funnel_line=args.funnel_line,
                 payment_method=args.payment_method,
                 payment_date=_date(args.payment_date),
+                appointment_at=_date(args.appointment_at),
                 publication_id=args.publication_id,
                 campaign_id=args.campaign_id,
                 conversation_id=args.conversation_id,
@@ -152,6 +155,7 @@ def main(argv: Optional[list[str]] = None) -> int:
                 stage=args.stage,
                 payment_method=args.payment_method,
                 payment_date=_date(args.payment_date),
+                appointment_at=_date(args.appointment_at),
                 notes=args.notes,
                 lost_reason=args.lost_reason,
                 source=args.source,

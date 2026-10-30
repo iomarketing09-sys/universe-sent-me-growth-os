@@ -51,6 +51,10 @@ STAGE_ALIASES = {
     "proposal": DealStage.PROPOSAL.value,
     "negociacion": DealStage.NEGOTIATION.value,
     "negotiation": DealStage.NEGOTIATION.value,
+    "cita": DealStage.APPOINTMENT_SCHEDULED.value,
+    "cita_agendada": DealStage.APPOINTMENT_SCHEDULED.value,
+    "appointment": DealStage.APPOINTMENT_SCHEDULED.value,
+    "appointment_scheduled": DealStage.APPOINTMENT_SCHEDULED.value,
     "ganado": DealStage.CLOSED_WON.value,
     "closed_won": DealStage.CLOSED_WON.value,
     "perdido": DealStage.CLOSED_LOST.value,
@@ -67,7 +71,7 @@ PAYMENT_ALIASES = {
     "cancelado": PaymentStatus.CANCELADO.value,
 }
 
-DATE_FIELDS = {"payment_date", "created_at", "updated_at", "closed_at"}
+DATE_FIELDS = {"payment_date", "appointment_at", "created_at", "updated_at", "closed_at"}
 
 
 def _project_root() -> Path:
@@ -217,6 +221,7 @@ class RevenueStore:
         funnel_line: Optional[str] = None,
         payment_method: str = "",
         payment_date: Optional[date] = None,
+        appointment_at: Optional[date] = None,
         publication_id: str = "",
         campaign_id: str = "",
         conversation_id: str = "",
@@ -264,6 +269,7 @@ class RevenueStore:
             payment_status=payment_status,
             payment_method=payment_method,
             payment_date=payment_date or (today if payment_status in REVENUE_STATUSES else None),
+            appointment_at=appointment_at,
             product_ref=product.strip(),
             source_publication_id=publication_id,
             source_campaign_id=campaign_id,
@@ -291,6 +297,7 @@ class RevenueStore:
         stage: Optional[str] = None,
         payment_method: Optional[str] = None,
         payment_date: Optional[date] = None,
+        appointment_at: Optional[date] = None,
         notes: Optional[str] = None,
         lost_reason: Optional[str] = None,
         source: Optional[str] = None,
@@ -324,6 +331,8 @@ class RevenueStore:
             deal.deal_stage = DealStage.CLOSED_LOST.value
         if payment_method is not None:
             deal.payment_method = payment_method
+        if appointment_at is not None:
+            deal.appointment_at = appointment_at
         if payment_date is not None:
             deal.payment_date = payment_date
         elif new_status in REVENUE_STATUSES and deal.payment_date is None:
@@ -364,6 +373,10 @@ def summarize_deals(deals: List[Deal], tenant_id: Optional[str] = None) -> Dict[
         "closed_won": 0,
         "closed_lost": 0,
         "paid_deals": 0,
+        "appointments_total": 0,
+        "appointments_upcoming": 0,
+        "appointments_past": 0,
+        "appointments_showed": 0,
     }
     by_status: Dict[str, Dict[str, Any]] = {}
     by_source: Dict[str, Dict[str, Any]] = {}
@@ -393,6 +406,15 @@ def summarize_deals(deals: List[Deal], tenant_id: Optional[str] = None) -> Dict[
         elif status == PaymentStatus.CANCELADO.value:
             totals["cancelled_total"] += quoted
 
+        if deal.appointment_at and status != PaymentStatus.CANCELADO.value:
+            totals["appointments_total"] += 1
+            if deal.appointment_at >= date.today():
+                totals["appointments_upcoming"] += 1
+            else:
+                totals["appointments_past"] += 1
+                if stage == DealStage.CLOSED_WON.value:
+                    totals["appointments_showed"] += 1
+
         if stage == DealStage.CLOSED_WON.value:
             totals["closed_won"] += 1
         elif stage == DealStage.CLOSED_LOST.value:
@@ -409,6 +431,11 @@ def summarize_deals(deals: List[Deal], tenant_id: Optional[str] = None) -> Dict[
         totals[key] = round(totals[key], 2)
     closed = totals["closed_won"] + totals["closed_lost"]
     totals["close_rate"] = round(totals["closed_won"] / closed, 4) if closed else 0.0
+    totals["show_rate"] = (
+        round(totals["appointments_showed"] / totals["appointments_past"], 4)
+        if totals["appointments_past"]
+        else 0.0
+    )
     totals["average_ticket"] = (
         round(totals["revenue_total"] / totals["paid_deals"], 2) if totals["paid_deals"] else 0.0
     )

@@ -179,6 +179,7 @@ class DealStage(str, Enum):
     QUALIFIED = "Qualified"
     PROPOSAL = "Proposal"
     NEGOTIATION = "Negotiation"
+    APPOINTMENT_SCHEDULED = "Appointment_Scheduled"
     CLOSED_WON = "Closed_Won"
     CLOSED_LOST = "Closed_Lost"
 

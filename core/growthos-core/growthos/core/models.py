@@ -278,6 +278,7 @@ class Deal(BaseModel):
     payment_status: PaymentStatus = Field(default=PaymentStatus.PENDIENTE)
     payment_method: str = ""
     payment_date: Optional[date] = None
+    appointment_at: Optional[date] = None
     product_ref: str = ""
     source_publication_id: str = ""
     source_campaign_id: str = ""

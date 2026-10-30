@@ -1,7 +1,7 @@
 """Revenue MVP: anticipo/cobrado, no double counting, tenant isolation."""
 
 import json
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 import pytest
@@ -159,3 +159,41 @@ def test_summarize_empty():
     assert report["deals"] == 0
     assert report["revenue_total"] == 0
     assert report["close_rate"] == 0
+
+
+def test_appointments_and_show_rate(tmp_path: Path):
+    _tenant(tmp_path, "micas-art-deco")
+    store = RevenueStore("micas-art-deco", base_path=tmp_path)
+
+    store.add(
+        client="Cliente futuro",
+        product="Pino de Autor",
+        quote=3400,
+        status="anticipo",
+        collected=1700,
+        appointment_at=date.today() + timedelta(days=10),
+        stage="cita",
+    )
+    store.add(
+        client="Cliente pasado",
+        product="Pino de Autor",
+        quote=2600,
+        status="cobrado",
+        collected=2600,
+        appointment_at=date.today() - timedelta(days=2),
+        stage="ganado",
+    )
+    store.add(
+        client="Cliente cancelado",
+        product="Pino de Autor",
+        quote=2600,
+        status="cancelado",
+        appointment_at=date.today() - timedelta(days=3),
+    )
+
+    report = store.report()
+    assert report["appointments_total"] == 2
+    assert report["appointments_upcoming"] == 1
+    assert report["appointments_past"] == 1
+    assert report["appointments_showed"] == 1
+    assert report["show_rate"] == 1.0

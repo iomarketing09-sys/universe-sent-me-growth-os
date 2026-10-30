@@ -69,7 +69,7 @@ total. No se suman el anticipo y el cobrado, para evitar doble conteo.
 | `deal_id` | `D-0001`, consecutivo por tenant. |
 | `tenant_id` | Aislamiento por tenant. |
 | `lead_source` | Instagram, Facebook, WhatsApp, Meta_Ads, referido, directo o tienda. |
-| `deal_stage` | New, Qualified, Proposal, Negotiation, Closed_Won, Closed_Lost. |
+| `deal_stage` | New, Qualified, Proposal, Negotiation, Appointment_Scheduled, Closed_Won, Closed_Lost. |
 | `funnel_line` | TOFU, MOFU o BOFU. |
 | `product_ref` | Obra, modelo o pack vendido. |
 | `amount` | Monto cotizado. |
@@ -77,9 +77,10 @@ total. No se suman el anticipo y el cobrado, para evitar doble conteo.
 | `payment_status` | Pendiente, anticipo, cobrado o cancelado. |
 | `payment_method` | Transferencia, efectivo, MercadoPago, etc. |
 | `payment_date` | Fecha del abono o cobro. |
+| `appointment_at` | Fecha de cita o montaje; base del show rate. |
 | `source_publication_id` | Post que originó el lead, si se conoce. |
 | `source_campaign_id` | Campaña de Meta Ads, si aplica. |
-| `source_conversation_id` | Conversación de WhatsApp, si se conoce. |
+| `source_conversation_id` | Conversación o DM (Facebook, Instagram, WhatsApp), si se conoce. |
 | `contact_name`, `contact_phone`, `contact_email` | Datos mínimos de contacto. |
 | `notes`, `lost_reason` | Contexto y motivo de pérdida. |
 
@@ -96,6 +97,18 @@ python3 tools/revenue_tracker.py add \
   --collected 250 \
   --source instagram \
   --payment-method transferencia
+
+# Agendar montaje/cita
+python3 tools/revenue_tracker.py add \
+  --tenant micas-art-deco \
+  --client "Ana" \
+  --product "Restyling Estándar" \
+  --quote 2100 \
+  --status anticipo \
+  --collected 1050 \
+  --stage cita \
+  --appointment-at 2026-11-17 \
+  --campaign-id pinos-2026
 
 # Pasar a cobrado; se reemplaza el monto, no se suma
 python3 tools/revenue_tracker.py update D-0001 \
@@ -121,7 +134,7 @@ El comando `report` devuelve:
 ## Roadmap
 
 1. ✅ MVP CSV + CLI con anticipo/cobrado.
-2. 🔄 Auto-registro desde WhatsApp con confirmación humana.
+2. 🔄 Auto-registro desde DM/WhatsApp con confirmación humana.
 3. 🔄 Atribución de CAC desde Meta Ads.
 4. 🔄 Reporte cross-tenant cuando Flexi defina su regla.
 5. 🔄 Ingesta de pagos (transferencia, efectivo, MercadoPago).
