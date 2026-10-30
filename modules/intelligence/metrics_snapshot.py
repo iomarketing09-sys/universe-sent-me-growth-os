@@ -7,10 +7,13 @@ Captura métricas de Meta Insights en ventanas específicas:
 - E24: 24 horas después
 - E72: 72 horas después
 
-Funciona con métricas disponibles:
+Funciona con métricas disponibles en Graph v26.0:
 - Public counts (reactions, comments, shares) - siempre disponibles
-- Post insights (post_reactions_by_type_total, post_clicks, post_video_views) - cuando aplica
-- Page insights - si la página tiene acceso
+- Post insights vigentes (post_reactions_by_type_total, post_clicks, post_video_views)
+- Page insights vigentes (page_post_engagements, page_views_total, etc.)
+
+Alcance e impresiones por publicación ya no existen en la API: se registran en
+``unavailable_metrics`` en lugar de guardar ceros que parezcan datos reales.
 """
 
 import csv
@@ -42,6 +45,34 @@ class SnapshotStatus(str, Enum):
 
 GRAPH_API_VERSION = "v26.0"
 GRAPH_BASE = f"https://graph.facebook.com/{GRAPH_API_VERSION}"
+
+# Métricas de post vigentes en Graph v26.0. Las de alcance e impresiones por
+# publicación (post_impressions, post_impressions_unique, post_engaged_users)
+# fueron retiradas y la API las rechaza como "no es una métrica válida".
+FACEBOOK_POST_INSIGHT_METRICS = [
+    ('post_reactions_by_type_total', 'lifetime'),
+    ('post_clicks', 'lifetime'),
+    ('post_video_views', 'lifetime'),
+    ('post_video_avg_time_watched', 'lifetime'),
+]
+
+# Métricas de página vigentes en v26.0. Son de página completa, no por post.
+FACEBOOK_PAGE_INSIGHT_METRICS = [
+    'page_post_engagements',
+    'page_daily_follows',
+    'page_views_total',
+    'page_video_views',
+    'page_actions_post_reactions_total',
+]
+
+RETIRED_METRICS = {
+    'post_impressions',
+    'post_impressions_unique',
+    'post_engaged_users',
+    'page_impressions',
+    'page_impressions_unique',
+    'page_engaged_users',
+}
 
 
 _INT_FIELDS = {
@@ -120,6 +151,7 @@ class MetricsSnapshot:
     # Estado
     status: str = SnapshotStatus.PENDING.value
     error: str = ""
+    unavailable_metrics: str = ""
     insights_available: bool = False
     attempts: int = 0
     
@@ -150,7 +182,8 @@ SNAPSHOT_LOG_FIELDS = [
     'reach', 'impressions', 'views', 'saved', 'total_interactions',
     'engaged_users', 'clicks', 'video_views', 'video_watch_time',
     'page_impressions', 'page_reach', 'page_engaged_users',
-    'status', 'error', 'insights_available', 'created_at', 'attempts'
+    'status', 'error', 'unavailable_metrics', 'insights_available',
+    'created_at', 'attempts'
 ]
 
 
@@ -486,53 +519,72 @@ def capture_reactions_breakdown(page_token: str, post_id: str) -> Dict[str, int]
     return breakdown
 
 
-def capture_post_insights(page_token: str, post_id: str) -> Dict[str, Any]:
-    """Captura insights del post de Facebook de una métrica a la vez.
+def _classify_insight_error(message: Any) -> str:
+    """Distingue métrica retirada, permiso faltante y error transitorio."""
+    text = str(message or "").lower()
+    if "valid insights metric" in text or "métrica válida" in text:
+        return "retired"
+    if "permission" in text or "permiso" in text or "estadísticas" in text:
+        return "permission"
+    return "unavailable"
 
-    Meta rechaza la llamada completa si una sola métrica no está disponible, por
-    eso se consultan por separado y las no disponibles se reportan en
-    ``_unavailable_metrics`` en lugar de perder el resto.
+
+def capture_post_insights(page_token: str, post_id: str) -> Dict[str, Any]:
+    """Captura insights de post de Facebook con las métricas vigentes en v26.0.
+
+    Las métricas de alcance e impresiones por publicación ya no existen en la
+    API. Se consultan por separado las que siguen vigentes y cada fallo se
+    clasifica para no confundir un cero real con un dato no disponible.
     """
     insights: Dict[str, Any] = {}
-    unavailable = []
-    metrics_to_try = [
-        ('post_reactions_by_type_total', 'lifetime'),
-        ('post_clicks', 'lifetime'),
-        ('post_engaged_users', 'lifetime'),
-        ('post_impressions', 'lifetime'),
-        ('post_impressions_unique', 'lifetime'),
-        ('post_video_views', 'lifetime'),
-        ('post_video_avg_time_watched', 'lifetime'),
-    ]
-    
-    for metric, period in metrics_to_try:
+    unavailable: List[str] = []
+    reasons: Dict[str, str] = {}
+
+    for metric, period in FACEBOOK_POST_INSIGHT_METRICS:
         result = api_get(page_token, f'{post_id}/insights', {'metric': metric, 'period': period})
-        data = result.get('data', []) if 'error' not in result else []
+        if isinstance(result, dict) and 'error' in result:
+            unavailable.append(metric)
+            reasons[metric] = _classify_insight_error(result.get('error'))
+            continue
+        data = result.get('data', []) if isinstance(result, dict) else []
         values = data[0].get('values', []) if data else []
         if values:
             insights[metric] = values[0].get('value')
         else:
             unavailable.append(metric)
-    
+            reasons[metric] = "no_data"
+
     if unavailable:
         insights['_unavailable_metrics'] = ','.join(unavailable)
+        insights['_unavailable_reasons'] = reasons
     return insights
 
 
 def capture_page_insights(page_token: str, page_id: str, since: int, until: int) -> Dict[str, Any]:
-    """Intenta capturar insights de página"""
-    insights = {}
-    metrics = ['page_impressions', 'page_impressions_unique', 'page_engaged_users']
-    for metric in metrics:
+    """Captura métricas de página vigentes en v26.0.
+
+    Son métricas de la página completa, no de una publicación concreta. No se
+    mezclan con los campos por post del snapshot.
+    """
+    insights: Dict[str, Any] = {}
+    unavailable: List[str] = []
+
+    for metric in FACEBOOK_PAGE_INSIGHT_METRICS:
         result = api_get(page_token, f'{page_id}/insights', {
             'metric': metric, 'period': 'day', 'since': since, 'until': until
         })
-        if 'error' not in result:
-            data = result.get('data', [])
-            if data:
-                values = data[0].get('values', [])
-                if values:
-                    insights[metric] = values[0].get('value')
+        if not isinstance(result, dict) or 'error' in result:
+            unavailable.append(metric)
+            continue
+        data = result.get('data', [])
+        values = data[0].get('values', []) if data else []
+        if values:
+            insights[metric] = values[0].get('value')
+        else:
+            unavailable.append(metric)
+
+    if unavailable:
+        insights['_unavailable_metrics'] = ','.join(unavailable)
     return insights
 
 
@@ -575,7 +627,7 @@ def capture_instagram_insights(page_token: str, ig_media_id: str) -> Dict[str, A
 def capture_instagram_account_insights(page_token: str, ig_user_id: str) -> Dict[str, Any]:
     """Captura métricas de cuenta Instagram (nivel cuenta)"""
     insights = {}
-    metrics = 'follower_count,impressions,reach,profile_views'
+    metrics = 'follower_count,reach,profile_views'
     result = api_get(page_token, f'{ig_user_id}/insights', {'metric': metrics, 'period': 'day'})
     
     if isinstance(result, dict) and 'error' not in result:
@@ -685,6 +737,12 @@ def capture_snapshot(tenant_id: str, snapshot: MetricsSnapshot,
                 elif metric == 'post_video_avg_time_watched':
                     snapshot.video_watch_time = _to_int(val)
             insights_captured = any(not key.startswith('_') for key in insights)
+            unavailable = insights.get('_unavailable_metrics', '')
+            if unavailable:
+                snapshot.unavailable_metrics = unavailable
+                reasons = insights.get('_unavailable_reasons', {}) or {}
+                detalle = ', '.join(f"{name}:{why}" for name, why in reasons.items())
+                snapshot.error = f"Insights no disponibles: {detalle or unavailable}"
         
         # 4. Instagram Media Insights (posts/reels de Instagram)
         elif snapshot.platform.lower() == 'instagram' and ig_id:
@@ -710,9 +768,11 @@ def capture_snapshot(tenant_id: str, snapshot: MetricsSnapshot,
                 if 'shares' in ig_insights:
                     snapshot.shares = _to_int(ig_insights['shares'])
                 if '_unavailable_metrics' in ig_insights:
-                    snapshot.error = f"Insights no disponibles: {ig_insights['_unavailable_metrics']}"
+                    snapshot.unavailable_metrics = ig_insights['_unavailable_metrics']
+                    snapshot.error = f"Insights no disponibles: {snapshot.unavailable_metrics}"
             elif ig_insights.get('_permission_error'):
                 snapshot.error = ig_insights['_permission_error']
+                snapshot.unavailable_metrics = 'reach,views,total_interactions,saved'
         
         # 5. Instagram Account Insights (opcional, nivel cuenta)
         if ig_id and snapshot.window == 'E0':
@@ -725,9 +785,10 @@ def capture_snapshot(tenant_id: str, snapshot: MetricsSnapshot,
         
         snapshot.status = SnapshotStatus.CAPTURED.value
         snapshot.insights_available = insights_captured
-        if not insights_captured and not snapshot.error:
+        if not insights_captured:
             snapshot.status = SnapshotStatus.NO_DATA.value
-            snapshot.error = "Sin insights de Meta; solo conteos públicos"
+            if not snapshot.error:
+                snapshot.error = "Sin insights de Meta; solo conteos públicos"
         
     except Exception as e:
         snapshot.status = SnapshotStatus.FAILED.value

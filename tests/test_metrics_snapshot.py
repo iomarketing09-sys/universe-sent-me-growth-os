@@ -75,14 +75,11 @@ def test_future_windows_are_not_due(tmp_path, monkeypatch):
     assert [snap.window for snap in ms.get_pending_snapshots("flexi", now=cutoff + timedelta(hours=24))] == ["E0", "E24"]
 
 
-def test_facebook_capture_includes_reach_and_impressions(monkeypatch, tmp_path):
+def test_facebook_capture_uses_vigentes_metrics(monkeypatch, tmp_path):
     monkeypatch.chdir(tmp_path)
     metrics = {
         "post_reactions_by_type_total": {"LIKE": 2, "LOVE": 1},
         "post_clicks": 7,
-        "post_engaged_users": 40,
-        "post_impressions": 1200,
-        "post_impressions_unique": 500,
     }
 
     def fake_api_get(token, endpoint, params=None):
@@ -106,9 +103,46 @@ def test_facebook_capture_includes_reach_and_impressions(monkeypatch, tmp_path):
 
     assert result.status == ms.SnapshotStatus.CAPTURED.value
     assert result.insights_available is True
-    assert (result.reach, result.impressions, result.engaged_users, result.clicks) == (500, 1200, 40, 7)
+    assert result.clicks == 7
     assert (result.reactions, result.comments, result.shares) == (3, 1, 2)
     assert (result.reaction_like, result.reaction_love) == (2, 1)
+    assert "post_video_views" in result.unavailable_metrics
+
+
+def test_facebook_capture_marks_retired_metrics(monkeypatch, tmp_path):
+    monkeypatch.chdir(tmp_path)
+
+    def fake_api_get(token, endpoint, params=None):
+        params = params or {}
+        if endpoint.endswith("/insights"):
+            return {"error": "The value must be a valid insights metric"}
+        if endpoint.endswith("/reactions"):
+            return {"data": []}
+        return {"reactions": {"summary": {"total_count": 0}}}
+
+    monkeypatch.setattr(ms, "api_get", fake_api_get)
+    snapshot = ms.MetricsSnapshot(publication_id="123_456", tenant_id="flexi", platform="Facebook", window="E0")
+    result = ms.capture_snapshot("flexi", snapshot, "token", "")
+
+    assert result.insights_available is False
+    assert result.reach == 0 and result.impressions == 0
+    assert "retired" in result.error
+    assert result.status == ms.SnapshotStatus.NO_DATA.value
+
+
+def test_page_insights_use_vigentes_metrics(monkeypatch):
+    calls = []
+
+    def fake_api_get(token, endpoint, params=None):
+        params = params or {}
+        calls.append(params["metric"])
+        return {"data": [{"name": params["metric"], "values": [{"value": 12}]}]}
+
+    monkeypatch.setattr(ms, "api_get", fake_api_get)
+    result = ms.capture_page_insights("token", "page", 0, 10)
+
+    assert calls == ms.FACEBOOK_PAGE_INSIGHT_METRICS
+    assert result["page_post_engagements"] == 12
 
 
 def test_instagram_capture_tolerates_unavailable_metric(monkeypatch, tmp_path):
