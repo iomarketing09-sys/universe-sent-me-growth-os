@@ -184,6 +184,26 @@ class DealStage(str, Enum):
     CLOSED_LOST = "Closed_Lost"
 
 
+class LeadIntent(str, Enum):
+    """Nivel de intención declarado en la conversación, sin inferencia automática."""
+
+    FRIO = "frio"
+    TIBIO = "tibio"
+    CALIENTE = "caliente"
+
+
+class LeadStatus(str, Enum):
+    """Etapa del lead. No implica venta ni cobro."""
+
+    NUEVO = "nuevo"
+    CONTACTADO = "contactado"
+    CALIFICADO = "calificado"
+    COTIZADO = "cotizado"
+    CITA_AGENDADA = "cita_agendada"
+    GANADO = "ganado"
+    PERDIDO = "perdido"
+
+
 class PaymentStatus(str, Enum):
     """Estado de cobro de un deal.
 

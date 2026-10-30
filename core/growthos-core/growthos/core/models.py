@@ -22,6 +22,8 @@ from growthos.core.enums import (
     ReconciliacionConfianza,
     LeadSource,
     DealStage,
+    LeadIntent,
+    LeadStatus,
     PaymentStatus,
     FunnelLine,
 )
@@ -299,3 +301,51 @@ class Deal(BaseModel):
         if value is not None and value < 0:
             raise ValueError("Los montos del deal no pueden ser negativos.")
         return value
+
+
+class Lead(BaseModel):
+    """Lead de una conversación. No implica venta ni cobro."""
+
+    model_config = ConfigDict(use_enum_values=True, validate_assignment=True, extra="allow")
+
+    lead_id: str
+    tenant_id: str
+    contact_name: str = ""
+    contact_phone: str = ""
+    contact_email: str = ""
+    lead_source: Optional[LeadSource] = None
+    intent: LeadIntent = Field(default=LeadIntent.FRIO)
+    status: LeadStatus = Field(default=LeadStatus.NUEVO)
+    product_interest: str = ""
+    budget_range: str = ""
+    source_publication_id: str = ""
+    source_campaign_id: str = ""
+    source_conversation_id: str = ""
+    notes: str = ""
+    lost_reason: str = ""
+    assigned_to: str = ""
+    created_at: Optional[date] = None
+    updated_at: Optional[date] = None
+    last_contact_at: Optional[date] = None
+    next_action_at: Optional[date] = None
+
+    @field_validator("contact_phone", "contact_email", "contact_name")
+    @classmethod
+    def _strip_contact(cls, value: str) -> str:
+        return (value or "").strip()
+
+    @model_validator(mode="after")
+    def _must_be_identifiable(self) -> "Lead":
+        has_contact = any(
+            (
+                self.contact_name,
+                self.contact_phone,
+                self.contact_email,
+                self.source_conversation_id,
+            )
+        )
+        if not has_contact:
+            raise ValueError(
+                "El lead necesita al menos nombre, teléfono, email o ID de conversación."
+            )
+        return self

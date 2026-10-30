@@ -62,3 +62,6 @@ tenants/*/data/sync/*.json
 
 # Revenue deals contain customer PII; keep the ledger local.
 tenants/*/data/deals_*.csv
+
+# Lead conversations contain customer PII; keep the ledger local.
+tenants/*/data/leads_*.csv
