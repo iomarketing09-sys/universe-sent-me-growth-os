@@ -91,6 +91,10 @@ Detalle completo en `meta_ids.json`.
 
 El ad set se recreó para cambiar el destino. Nuevo ID: `120247659400770665`.
 
+El `2026-10-30 23:18 -05` se reconcilió `campaign.json.published.adset_id` del
+ID anterior `120247658527640665` al ID activo `120247659400770665`. La lectura
+de Meta confirmó que el ad set pertenece a la campaña `120247658527630665`.
+
 | Campo | Spec | Estado |
 |---|---|---|
 | Destino | Solo WhatsApp | ✅ `WHATSAPP` |
@@ -105,6 +109,6 @@ Los textos y los cuatro creativos coinciden con el spec. Los anuncios están en 
 
 1. Confirmar en la UI que la edad quedó en 25–55 (la API aún muestra 18–65).
 2. Confirmar que el locale 23 sea español de México.
-3. Capturar el costo por conversación a las 48 h.
+3. Revisar el reporte automático de 48 h programado para `2026-11-01 16:36 CST` (48 horas reales desde el inicio).
 
 Configuración cerrada por decisión de Fernando el 2026-10-30.

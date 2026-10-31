@@ -3,8 +3,8 @@
 **Propósito:** Resumen de roles, permisos y flujo de trabajo para uso rápido de Manus. **Este no es el documento autoritativo.** El documento completo y vinculante vive en el repositorio de canon: `universe-sent-me-1/Studio/Studio_Governance.md`. En caso de conflicto entre este resumen y el documento completo, **el documento completo siempre gana.**
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-15
-**Versión:** 1.2
+**Última actualización:** 2026-10-30
+**Versión:** 1.4
 **Autor:** Manus AI (v1.0); actualización de encabezado por Claude (v1.1, 2026-08-03)
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `GrowthOS/01_00_Arquitectura_Calendario_Escalable.md`, `GrowthOS/09_00_Estandar_Documentacion_Interna.md`
 
@@ -91,7 +91,28 @@ El siguiente calendario establece la frecuencia y el alcance de las revisiones e
 
 ---
 
-## 7. Regla de Reutilización (30 Días)
+## 7. Regla de Medición de Campañas
+
+> Toda campaña de Meta Ads con `meta_ids.json` y fecha de inicio debe capturar
+> métricas por anuncio a las 24, 48 y 72 horas, cada 24 horas hasta su cierre y
+> un corte final dos horas después del cierre. La captura es automática e
+> idempotente; no depende de una ejecución manual.
+
+La automatización mide y genera un plan local `recommendation_only`. No pausa
+anuncios, no cambia presupuesto y no escribe en Meta. Como máximo propone
+pausar anuncios individuales; pausar un ad set o la campaña completa requiere
+una revisión humana explícita. Toda acción propuesta queda en estado `pending`
+hasta que Fernando/CGO la apruebe, y la ejecución futura debe vivir en una
+capacidad separada con auditoría. El detalle operativo vive en
+`docs/REGLA_METRICAS_CAMPANAS.md`.
+
+La captura puede reconciliar automáticamente los IDs publicados de
+`campaign.json` contra la realidad observada en Meta. Esa reconciliación solo
+modifica metadata local, deja historial del cambio y nunca ejecuta un `POST`.
+
+---
+
+## 8. Regla de Reutilización (30 Días)
 
 > Ninguna pieza puede ser reutilizada si han pasado menos de **30 días** desde su `Fecha_Ultima_Publicacion`. Esta regla protege contra la fatiga de audiencia y es ineludible.
 
@@ -99,7 +120,7 @@ Los campos `Fecha_Ultima_Publicacion` y `Dias_Desde_Publicacion` en el inventari
 
 ---
 
-## 8. Reglas de Documentación Permanente
+## 9. Reglas de Documentación Permanente
 
 1. **Todo conocimiento con valor permanente debe terminar documentado en un repositorio.**
 2. **Las conversaciones son temporales. Los documentos son permanentes.**
@@ -111,7 +132,7 @@ Los campos `Fecha_Ultima_Publicacion` y `Dias_Desde_Publicacion` en el inventari
 
 ---
 
-## 9. Gestión de Contradicciones de Canon
+## 10. Gestión de Contradicciones de Canon
 
 Cuando Claude detecta una contradicción durante una revisión diaria:
 
@@ -122,9 +143,11 @@ Cuando Claude detecta una contradicción durante una revisión diaria:
 
 ---
 
-## 10. Historial de Cambios
+## 11. Historial de Cambios
 
 | Fecha | Versión | Cambio | Autor |
 | :--- | :--- | :--- | :--- |
 | 2026-07-31 | 1.0 | Creación del documento de governance. Definición de roles, permisos, revisiones diarias y semanales. | Manus AI |
 | 2026-08-15 | 1.2 | Se retira la dependencia operativa de Make; el flujo vigente usa Manus, Meta Graph API y revisión con Claude/Fernando. | Manus AI |
+| 2026-10-30 | 1.3 | Se agrega la regla de captura automática E24/E48/E72/diaria/FINAL para campañas de Meta Ads. | CGO |
+| 2026-10-30 | 1.4 | Se agrega el plan de cambios por corte: recomendaciones por anuncio, sin escritura en Meta y con aprobación humana obligatoria. | CGO |

@@ -68,3 +68,8 @@ tenants/*/data/leads_*.csv
 
 # Originales pesados de campaña: se versionan solo los recortes finales.
 tenants/*/ads/campanas/*/piezas/Assets/
+
+# Cortes diarios de Ads: operativos, no se versionan.
+tenants/*/ads/insights/*.csv
+tenants/*/ads/insights/capture_state.json
+tenants/*/ads/insights/captures/

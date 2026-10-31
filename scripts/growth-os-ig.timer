@@ -1,5 +1,5 @@
 [Unit]
-Description=Growth OS Instagram Scheduler (cada 15 minutos)
+Description=Growth OS 15-minute worker (Instagram + Ads checkpoints)
 
 [Timer]
 OnBootSec=5min

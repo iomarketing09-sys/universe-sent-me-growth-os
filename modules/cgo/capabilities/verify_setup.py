@@ -46,6 +46,23 @@ def run(ctx: CgoContext, tenant_id: str = None) -> CgoResult:
     else:
         actions.append(action("timer", "skip", "Timer no visible desde este entorno"))
 
+    ads_worker = ctx.base_path / "scripts" / "run_ads_capture.py"
+    if ads_worker.is_file() and ads_worker.stat().st_mode & 0o111:
+        actions.append(action("ads_capture", "ok", "scripts/run_ads_capture.py ejecutable"))
+    else:
+        actions.append(action("ads_capture", "warn", "Falta el entrypoint de cortes de Ads"))
+
+    ads_timer = Path("/etc/systemd/system/growth-os-ads.timer")
+    ig_timer = Path("/etc/systemd/system/growth-os-ig.timer")
+    if ads_timer.is_file():
+        actions.append(action("ads_timer", "ok", "growth-os-ads.timer instalado"))
+    elif ig_timer.is_file():
+        actions.append(
+            action("ads_timer", "ok", "cortes de Ads activos vía growth-os-ig.timer (cada 15 min)")
+        )
+    else:
+        actions.append(action("ads_timer", "warn", "Sin timer periódico visible para cortes de Ads"))
+
     if any(item["status"] == "fail" for item in actions):
         status = "BLOCKED"
     else:

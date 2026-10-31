@@ -1,0 +1,17 @@
+[Unit]
+Description=Growth OS Ads Campaign Metrics
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/universe-sent-me/growth-os
+ExecStart=/usr/bin/python3 /home/universe-sent-me/growth-os/scripts/run_ads_capture.py --all-tenants
+EnvironmentFile=-/home/universe-sent-me/growth-os/.env
+User=universe-sent-me
+Group=universe-sent-me
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

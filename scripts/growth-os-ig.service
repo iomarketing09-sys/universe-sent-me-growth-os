@@ -1,5 +1,5 @@
 [Unit]
-Description=Growth OS Instagram Scheduler
+Description=Growth OS 15-minute worker (Instagram + Ads checkpoints)
 After=network-online.target
 Wants=network-online.target
 

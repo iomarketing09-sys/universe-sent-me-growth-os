@@ -11,6 +11,29 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 
 ### Añadido
 
+- **Ledger diario de Ads por anuncio** (`modules/intelligence/ads_ledger.py`):
+  conserva un corte diario idempotente por anuncio en
+  `tenants/<id>/ads/insights/`, ya que `latest.json` se sobrescribe en cada
+  sync. Incluye `tools/ads_report.py` para comparar gasto, CTR, conversaciones
+  y costo por conversación, con alertas por encima de un CPA configurable.
+  Rutas resueltas desde la raíz del repo y no desde el CWD.
+- **Captura automática de campañas** (`modules/intelligence/campaign_capture.py`):
+  descubre `meta_ids.json`, programa cortes E24/E48/E72, diarios hasta el cierre
+  y un `FINAL` dos horas después. Guarda JSON/Markdown por campaña, evita
+  duplicados con un estado idempotente y solo mide: nunca pausa ni cambia
+  presupuesto. El timer dedicado está en `scripts/growth-os-ads.*`; mientras se
+  instala, el timer de Instagram de 15 minutos ejecuta el mismo latido.
+- **Plan de cambios de campañas** (`modules/intelligence/campaign_optimizer.py`):
+  cada corte genera un plan `recommendation_only` por anuncio, con la política
+  `target_cpa=8 MXN`, pausa propuesta desde 72 h y aprobación humana
+  obligatoria. El plan nunca escribe en Meta, nunca pausa la campaña completa y
+  separa la hora programada del corte de la hora real de captura. Incluye
+  `tools/ads_plan.py` para regenerarlo sin red.
+- **Reconciliación local de IDs publicados** (`campaign_capture.py`): antes de
+  generar el plan, alinea `campaign.json.published` con los ad sets observados
+  en Meta o con `meta_ids.json`, deja auditoría en
+  `campaign.json.metadata_reconciliation` y bloquea la ejecución si hay varios
+  ad sets. No escribe en Meta.
 - **Módulo `cgo`** (`modules/cgo/`): orquestador con las 7 capacidades
   (`daily_pipeline`, `weekly_calendar`, `tenant_onboarding`,
   `cross_tenant_report`, `canon_sync`, `meta_publishing`, `verify_setup`), CLI
@@ -83,6 +106,9 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 
 ### Corregido
 
+- `pytest` sin argumentos sigue ahora la suite documentada en `tests/` y no la
+  colección recursiva de scripts operativos dentro de `tenants/`; `test_vision.py`
+  tampoco ejecuta ni termina el proceso durante la importación de pytest.
 - **Host de imágenes configurable** en `social`: `IgPublisher` acepta
   `IMAGE_HOST=imgbb|catbox`. ImgBB respondía `103 forbidden` desde esta red
   con una key válida, así que `flexi` usa `catbox.moe` (gratis, sin cuenta).

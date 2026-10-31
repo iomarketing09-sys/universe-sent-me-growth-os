@@ -89,3 +89,17 @@ sudo systemctl enable --now growth-os-ig.timer
 ```
 
 Comprobar: `systemctl list-timers growth-os-ig.timer`.
+
+El timer de Instagram también ejecuta cada 15 minutos la revisión de cortes de
+campañas. Los cortes E24/E48/E72/diarios/FINAL se guardan por anuncio y no
+modifican presupuesto ni estado. La regla completa está en
+`docs/REGLA_METRICAS_CAMPANAS.md`.
+
+Timer dedicado opcional para separar responsabilidades:
+
+```bash
+sudo cp scripts/growth-os-ads.service /etc/systemd/system/
+sudo cp scripts/growth-os-ads.timer /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable --now growth-os-ads.timer
+```

@@ -110,7 +110,20 @@
   ],
   "published": {
     "campaign_id": "120247658527630665",
-    "adset_id": "120247658527640665",
+    "adset_id": "120247659400770665",
     "budget_location": "campaign"
+  },
+  "metadata_reconciliation": {
+    "status": "reconciled",
+    "source": "meta_ids.json",
+    "reconciled_at": "2026-10-30T23:18:42.324921-05:00",
+    "meta_captured_at": "2026-10-30T19:40:00-05:00",
+    "changes": [
+      {
+        "field": "published.adset_id",
+        "previous": "120247658527640665",
+        "current": "120247659400770665"
+      }
+    ]
   }
 }

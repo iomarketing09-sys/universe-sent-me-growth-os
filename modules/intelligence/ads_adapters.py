@@ -57,6 +57,64 @@ def get_page_token(user_token: str, page_id: str) -> Optional[str]:
     except Exception:
         return None
 
+
+MESSAGING_ACTION_KEYS = (
+    "onsite_conversion.messaging_conversation_started_7d",
+    "messaging_conversation_started_7d",
+    "messaging_conversation_started",
+    "onsite_conversion.messaging_first_reply",
+    "onsite_conversion.total_messaging_connection",
+    "onsite_conversion.messaging_user_depth_2_message_send",
+    "onsite_conversion.messaging_user_depth_3_message_send",
+    "onsite_conversion.messaging_welcome_message_view",
+    "onsite_conversion.messaging_block",
+    "onsite_conversion.messaging_conversation_replied_7d",
+)
+
+
+def _messaging_actions(actions: Optional[List[Dict]]) -> Dict[str, int]:
+    """Agrupa las acciones de mensajería de un bloque de insights."""
+    totals = {key: 0 for key in MESSAGING_ACTION_KEYS}
+    for action in actions or []:
+        action_type = action.get("action_type", "")
+        try:
+            value = int(float(action.get("value", 0)))
+        except (TypeError, ValueError):
+            value = 0
+        for key in MESSAGING_ACTION_KEYS:
+            if action_type == key or key in action_type:
+                totals[key] += value
+    return totals
+
+
+def _started_conversations(totals: Dict[str, int]) -> int:
+    return (
+        totals.get("onsite_conversion.messaging_conversation_started_7d", 0)
+        or totals.get("messaging_conversation_started_7d", 0)
+        or totals.get("messaging_conversation_started", 0)
+    )
+
+
+def _metric_row(insight: Dict, name: str, campaign_id: str, campaign_name: str) -> Dict:
+    """Normaliza un bloque de insights de campaña o anuncio."""
+    spend = float(insight.get("spend", 0) or 0)
+    totals = _messaging_actions(insight.get("actions"))
+    conversations = _started_conversations(totals)
+    return {
+        "campaign_id": campaign_id,
+        "campaign_name": campaign_name,
+        "name": name,
+        "spend": round(spend, 2),
+        "impressions": int(float(insight.get("impressions", 0) or 0)),
+        "clicks": int(float(insight.get("clicks", 0) or 0)),
+        "reach": int(float(insight.get("reach", 0) or 0)),
+        "ctr": round(float(insight.get("ctr", 0) or 0), 2),
+        "cpc": round(float(insight.get("cpc", 0) or 0), 2),
+        "conversations": conversations,
+        "cost_per_conversation": round(spend / conversations, 2) if conversations else 0.0,
+        "messaging_metrics": totals,
+    }
+
 def capture_ads_insights(config: Dict) -> Dict:
     """
     Captura insights de campañas publicitarias usando Meta Marketing API.
@@ -122,6 +180,7 @@ def capture_ads_insights(config: Dict) -> Dict:
             # Query insights for this campaign
             insights_url, insights_params = _build_request(f"{campaign_id}/insights", {
                 "fields": "spend,impressions,clicks,reach,frequency,ctr,cpm,cpp,cpc,actions",
+                "date_preset": "maximum",
                 "limit": 100
             })
             
@@ -200,6 +259,29 @@ def capture_ads_insights(config: Dict) -> Dict:
                 result["summary"]["total_impressions"] += impressions
                 result["summary"]["total_clicks"] += clicks
                 result["summary"]["total_conversations"] += conversations
+
+            # Insights por anuncio (mismo nivel de detalle que Ads Manager)
+            ads_url, ads_params = _build_request(f"{campaign_id}/ads", {
+                "fields": "id,name,status,effective_status,adset_id,"
+                          "insights{spend,impressions,clicks,reach,ctr,cpc,actions}",
+                "date_preset": "maximum",
+                "limit": 100,
+            })
+            r3 = requests.get(ads_url, params=ads_params, timeout=30)
+            if r3.status_code >= 400:
+                continue
+
+            for ad in r3.json().get("data", []):
+                blocks = (ad.get("insights") or {}).get("data") or []
+                if not blocks:
+                    continue
+                row = _metric_row(blocks[0], ad.get("name", ""), campaign_id, campaign.get("name", ""))
+                row.update({
+                    "id": ad.get("id", ""),
+                    "adset_id": ad.get("adset_id", ""),
+                    "status": ad.get("effective_status", ad.get("status", "")),
+                })
+                result["ads"].append(row)
     
     except Exception as e:
         return {

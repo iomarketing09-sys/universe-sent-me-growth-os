@@ -1,0 +1,11 @@
+[Unit]
+Description=Growth OS Ads Campaign Metrics (E24/E48/E72/daily/final)
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=15min
+AccuracySec=1min
+Unit=growth-os-ads.service
+
+[Install]
+WantedBy=timers.target

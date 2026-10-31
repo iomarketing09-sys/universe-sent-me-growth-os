@@ -188,6 +188,7 @@ Make no participa en este flujo activo.
 Las reglas de acceso, roles y calendario de revisiones viven en `../Studio_Governance.md`:
 - **Revisiones diarias:** Todo contenido nuevo debe ser validado por Claude antes de entrar a producción.
 - **Revisiones semanales:** Sincronización del caché de canon, revisión del `HypothesisBank` y confirmación de reglas de bloqueo.
+- **Campañas de Ads:** Todo `meta_ids.json` con fecha de inicio dispara cortes automáticos E24/E48/E72/diarios/FINAL; ver `../docs/REGLA_METRICAS_CAMPANAS.md`.
 
 ---
 
@@ -199,3 +200,4 @@ Las reglas de acceso, roles y calendario de revisiones viven en `../Studio_Gover
 4. Ninguna pieza puede publicarse sin pasar por la máquina de estados completa.
 5. El campo `Bloqueado_Canon` es un bloqueo operativo, no una etiqueta informativa.
 6. **Regla de Reutilización (30 días):** Ninguna pieza puede ser reutilizada si han pasado menos de 30 días desde su `Fecha_Ultima_Publicacion`.
+7. **Regla de Métricas de Campañas:** Toda campaña de Ads debe capturar métricas por anuncio a las 24, 48 y 72 horas, cada 24 horas hasta el cierre y un corte final. Cada corte genera un plan `recommendation_only`; la automatización mide y recomienda, pero no cambia gasto ni estado. Pausar un ad set o la campaña requiere aprobación humana explícita.

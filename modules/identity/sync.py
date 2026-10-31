@@ -235,11 +235,22 @@ def collect_ads(tenant_path: Path, config: Dict[str, Any], live_ads: bool = Fals
             from growth.integrations.ads_adapters import capture_ads_insights
             live_result = capture_ads_insights(config)
             if live_result.get("status") == "success":
+                try:
+                    from modules.intelligence.ads_ledger import record_ad_insights
+
+                    record_ad_insights(
+                        tenant_path.name,
+                        live_result.get("ads") or [],
+                    )
+                except Exception:
+                    # El ledger nunca debe tumbar el sync.
+                    pass
                 return {
                     "status": "live_success",
                     "mode": "live_ads",
                     "ad_account_configured": account_configured,
                     "campaigns": live_result["campaigns"],
+                    "ads": live_result.get("ads", []),
                     "summary": live_result["summary"],
                     "local_campaigns": campaigns,
                 }

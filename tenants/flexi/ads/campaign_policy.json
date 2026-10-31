@@ -1,0 +1,10 @@
+{
+  "target_cpa_mxn": 8.0,
+  "pause_after_hours": 72,
+  "min_spend_for_decision_mxn": 60.0,
+  "min_conversations_for_decision": 3,
+  "scale_cpa_mxn": 5.6,
+  "min_conversations_to_scale": 5,
+  "min_impressions_for_ctr": 1000,
+  "min_ctr_percent": 1.0
+}
