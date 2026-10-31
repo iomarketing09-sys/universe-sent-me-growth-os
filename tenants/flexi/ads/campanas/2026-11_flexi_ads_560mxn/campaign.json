@@ -1,0 +1,116 @@
+{
+  "slug": "2026-11_flexi_ads_560mxn",
+  "tenant_id": "flexi",
+  "name": "Flexi OI26 — Continuación noviembre",
+  "objective": "OUTCOME_ENGAGEMENT",
+  "budget_mxn": 560,
+  "days": 6,
+  "start": "2026-10-30",
+  "end": "2026-11-05",
+  "status_on_create": "ACTIVE",
+  "ad_account_id": "act_965886593249554",
+  "page_id": "361528203707668",
+  "instagram_user_id": "17841467713484855",
+  "template_adset_id": "120247452749040665",
+  "destination": {
+    "type": "WHATSAPP",
+    "whatsapp_phone_number": "5218781385284"
+  },
+  "targeting": {
+    "geo_locations": {
+      "cities": [
+        {
+          "country": "MX",
+          "key": "1540469",
+          "name": "Piedras Negras",
+          "region": "Coahuila de Zaragoza",
+          "region_id": "2511",
+          "radius": 0,
+          "distance_unit": "kilometer"
+        }
+      ],
+      "location_types": [
+        "home"
+      ]
+    },
+    "age_min": 25,
+    "age_max": 55,
+    "genders": [
+      2
+    ],
+    "locales": [
+      6
+    ]
+  },
+  "optimization": {
+    "optimization_goal": "CONVERSATIONS",
+    "billing_event": "IMPRESSIONS",
+    "bid_strategy": "LOWEST_COST_WITHOUT_CAP",
+    "attribution_spec": [
+      {
+        "event_type": "CLICK_THROUGH",
+        "window_days": 7
+      }
+    ]
+  },
+  "approvals": {
+    "g1": "2026-10-16",
+    "g2": null,
+    "g3": null
+  },
+  "creatives": [
+    {
+      "key": "arisha",
+      "model": "306703",
+      "name": "ARISHA",
+      "brand": "Quirelli",
+      "color": "Nude",
+      "image": "assets/ad_arisha_306703.jpg",
+      "headline": "El zapato que combina con todo",
+      "primary_text": "ARISHA de Quirelli, en nude, pasa del trabajo a la tarde sin esfuerzo. Escríbenos y te asesoramos.",
+      "description": "Asesoría en tienda",
+      "cta": "WHATSAPP_MESSAGE"
+    },
+    {
+      "key": "lydia",
+      "model": "143201",
+      "name": "LYDIA",
+      "brand": "Flexi",
+      "color": "Negro",
+      "image": "assets/ad_lydia_143201.jpg",
+      "headline": "Comodidad para caminar sin prisa",
+      "primary_text": "LYDIA de Flexi, en negro, el básico que resuelve el día. Escríbenos y te orientamos.",
+      "description": "Asesoría en tienda",
+      "cta": "WHATSAPP_MESSAGE"
+    },
+    {
+      "key": "izadora",
+      "model": "142601",
+      "name": "IZADORA",
+      "brand": "Flexi",
+      "color": "Tan",
+      "image": "assets/ad_izadora_142601.jpg",
+      "headline": "La bota que le da otro aire a tu look",
+      "primary_text": "IZADORA en tan, va con jeans, falda y todo lo que ya tienes. Escríbenos y te asesoramos.",
+      "description": "Nueva llegada",
+      "cta": "WHATSAPP_MESSAGE"
+    },
+    {
+      "key": "amalia",
+      "model": "307001",
+      "name": "AMALIA",
+      "brand": "Quirelli",
+      "color": "Taupe",
+      "image": "assets/ad_amalia_307001.jpg",
+      "headline": "El botín que completa la temporada",
+      "primary_text": "AMALIA de Quirelli, en taupe, lista para tus planes de otoño. Escríbenos y te asesoramos.",
+      "description": "Nueva llegada",
+      "cta": "WHATSAPP_MESSAGE"
+    }
+  ],
+  "published": {
+    "campaign_id": "120247658527630665",
+    "adset_id": "120247658527640665",
+    "budget_location": "campaign"
+  }
+}

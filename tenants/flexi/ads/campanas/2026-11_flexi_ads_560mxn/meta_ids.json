@@ -1,0 +1,66 @@
+{
+  "captured_at": "2026-10-30T19:40:00-05:00",
+  "ad_account_id": "act_965886593249554",
+  "campaign": {
+    "id": "120247658527630665",
+    "name": "Flexi OI26 · WhatsApp · Piedras Negras",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "lifetime_budget": 56000,
+    "start_time": "2026-10-30T17:36:37-0500",
+    "stop_time": "2026-11-05T16:19:00-0600"
+  },
+  "adset": {
+    "id": "120247659400770665",
+    "name": "Flexi OI26 · WhatsApp · Piedras Negras",
+    "status": "ACTIVE",
+    "effective_status": "ACTIVE",
+    "optimization_goal": "CONVERSATIONS",
+    "destination_type": "WHATSAPP",
+    "budget_location": "campaign",
+    "age": "reportado por API: 18-65 (editado en UI el 2026-10-30 19:38, pendiente de confirmar)",
+    "geo": "Piedras Negras, sin radio",
+    "location_types": [
+      "frequently_in",
+      "home",
+      "recent"
+    ],
+    "locales": [
+      23
+    ],
+    "note": "Ad set recreado el 2026-10-30 para cambiar el destino a solo WhatsApp.",
+    "location_types_accepted": true
+  },
+  "ads": [
+    {
+      "name": "ARISHA - QUIRELLI",
+      "id": "120247659400780665",
+      "status": "PENDING_REVIEW"
+    },
+    {
+      "name": "LYDIA - FLEXI",
+      "id": "120247659400800665",
+      "status": "PENDING_REVIEW"
+    },
+    {
+      "name": "Izadora",
+      "id": "120247659400810665",
+      "status": "IN_PROCESS"
+    },
+    {
+      "name": "Amalia de Quirelli",
+      "id": "120247659400790665",
+      "status": "PENDING_REVIEW"
+    }
+  ],
+  "resolved": [
+    "Destino cambiado a solo WhatsApp",
+    "Radio ampliado eliminado: queda solo la ciudad",
+    "Filtro de idioma agregado (locale 23)"
+  ],
+  "remaining_discrepancies": [
+    "La API sigue reportando edad 18-65 aunque el ad set registra edición a las 19:38; confirmar en UI",
+    "Tipo de ubicación con \"pasan frecuentemente\" y \"estuvieron recientemente\": aceptado por decisión de Fernando",
+    "Confirmar que el locale 23 sea español de México"
+  ]
+}

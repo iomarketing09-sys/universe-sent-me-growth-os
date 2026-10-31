@@ -65,3 +65,6 @@ tenants/*/data/deals_*.csv
 
 # Lead conversations contain customer PII; keep the ledger local.
 tenants/*/data/leads_*.csv
+
+# Originales pesados de campaña: se versionan solo los recortes finales.
+tenants/*/ads/campanas/*/piezas/Assets/
