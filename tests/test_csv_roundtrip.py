@@ -60,7 +60,7 @@ def test_csv_roundtrip_with_real_inventory():
         # Import - only rows with valid enum values will be imported
         pieces = CSVAdapter.import_csv(Piece, inventory_path)
         assert len(pieces) > 0, "Should import at least one piece with valid enums"
-        imported_ids = [p.ID_Pieza for p in pieces]
+        imported_ids = [p.id_pieza for p in pieces]
 
         # Save to SQLite
         for piece in pieces:
@@ -90,7 +90,7 @@ def test_csv_roundtrip_with_real_inventory():
         from growthos.storage.csv_adapter import apply_normalizations
         normalized_orig_rows = []
         for row in orig_rows:
-            csv_id = row.get("id") or row.get("ID_Pieza") or ""
+            csv_id = row.get("id") or row.get("id_pieza") or ""
             norm_row = apply_normalizations(row, csv_id)
             normalized_orig_rows.append(norm_row)
         
@@ -277,8 +277,8 @@ def test_csv_import_handles_empty_values():
 
         pieces = CSVAdapter.import_csv(Piece, input_path)
         assert len(pieces) == 1
-        assert pieces[0].ID_Pieza == "CNT-001"
-        assert pieces[0].Estado == EstadoPieza.IDEA  # Enum value
+        assert pieces[0].id_pieza == "CNT-001"
+        assert pieces[0].estado_operativo == EstadoPieza.IDEA  # Enum value
 
         for piece in pieces:
             repo.save(piece)
@@ -310,7 +310,7 @@ def test_csv_duplicate_ids_detected():
             writer.writerows(test_data)
 
         pieces = CSVAdapter.import_csv(Piece, input_path)
-        dupes = [p.ID_Pieza for p in pieces]
+        dupes = [p.id_pieza for p in pieces]
         assert dupes.count("CNT-001") == 2  # Both imported (validation happens later)
 
         # Validator should detect

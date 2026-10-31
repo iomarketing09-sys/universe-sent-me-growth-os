@@ -230,46 +230,35 @@ class CSVAdapter:
             field_info = model_fields.get(key)
             if field_info is not None:
                 annotation = field_info.annotation
-                
-                # Handle Optional[Enum] - empty string should be None
-                if hasattr(annotation, '__origin__') and annotation.__origin__ is not None:
-                    # Check if it's Optional[Enum] or Union[Enum, None]
-                    args = getattr(annotation, '__args__', ())
-                    for arg in args:
-                        if isinstance(arg, type) and issubclass(arg, Enum):
-                            # It's an enum type
-                            try:
-                                cleaned[key] = arg(value)
-                                break
-                            except ValueError:
-                                cleaned[key] = None
-                                break
-                    else:
-                        cleaned[key] = value
-                    continue
-                
-                # Handle direct Enum
-                if isinstance(annotation, type) and issubclass(annotation, Enum):
+
+                # Unwrap Optional[T] and Union[T, None] so dates and enums are
+                # handled even when the field is nullable.
+                args = getattr(annotation, "__args__", ())
+                candidates = tuple(arg for arg in args if arg is not type(None))
+                if not candidates:
+                    candidates = (annotation,)
+
+                enum_type = next(
+                    (
+                        arg for arg in candidates
+                        if isinstance(arg, type) and issubclass(arg, Enum)
+                    ),
+                    None,
+                )
+                if enum_type is not None:
                     try:
-                        cleaned[key] = annotation(value)
-                        continue
+                        cleaned[key] = enum_type(value)
                     except ValueError:
                         cleaned[key] = None
-                        continue
-                
-                # Handle date
-                if annotation == date or (hasattr(annotation, '__origin__') and annotation.__origin__ is not None and date in getattr(annotation, '__args__', ())):
-                    if isinstance(value, str) and value:
-                        parsed = cls._parse_date(value)
-                        cleaned[key] = parsed
-                        continue
-                
-                # Handle datetime
-                if annotation == datetime or (hasattr(annotation, '__origin__') and annotation.__origin__ is not None and datetime in getattr(annotation, '__args__', ())):
-                    if isinstance(value, str) and value:
-                        parsed = cls._parse_datetime(value)
-                        cleaned[key] = parsed
-                        continue
+                    continue
+
+                if date in candidates and isinstance(value, str):
+                    cleaned[key] = cls._parse_date(value)
+                    continue
+
+                if datetime in candidates and isinstance(value, str):
+                    cleaned[key] = cls._parse_datetime(value)
+                    continue
             
             cleaned[key] = value
         
@@ -401,10 +390,101 @@ class CSVAdapter:
         original = Path(original_path)
         exported = Path(exported_path)
 
+        def clean_value(value: Any) -> Any:
+            if value is None:
+                return ""
+            if isinstance(value, Enum):
+                return value.value
+            if hasattr(value, "isoformat"):
+                return value.isoformat()
+            return value
+
+        def load_rows(path: Path) -> List[Dict[str, Any]]:
+            if not path.exists():
+                return []
+
+            with path.open(encoding="utf-8-sig", newline="") as f:
+                raw_rows = list(csv.DictReader(f))
+
+            normalized = []
+            for raw in raw_rows:
+                if not any(
+                    isinstance(value, str) and value.strip()
+                    for value in raw.values()
+                ):
+                    continue
+                mapped = cls._map_csv_to_model(raw, cls.PIECE_FIELD_MAP)
+                cleaned = cls._clean_row(mapped, Piece)
+                normalized.append({
+                    key: clean_value(value)
+                    for key, value in cleaned.items()
+                })
+            return normalized
+
+        original_rows = load_rows(original)
+        exported_rows = load_rows(exported)
+
         result = {
             "match": True,
-            "original_rows": 0,
-            "exported_rows": 0,
+            "original_rows": len(original_rows),
+            "exported_rows": len(exported_rows),
             "id_mismatch": [],
+            "field_mismatches": {},
+            "errors": [],
         }
+
+        if result["original_rows"] != result["exported_rows"]:
+            result["match"] = False
+            result["errors"].append(
+                "Row count mismatch: "
+                f"{result['original_rows']} original vs "
+                f"{result['exported_rows']} exported"
+            )
+
+        for row_number, (original_row, exported_row) in enumerate(
+            zip(original_rows, exported_rows), start=1
+        ):
+            original_id = original_row.get("id_pieza", "")
+            exported_id = exported_row.get("id_pieza", "")
+            if original_id != exported_id:
+                result["id_mismatch"].append({
+                    "row": row_number,
+                    "original": original_id,
+                    "exported": exported_id,
+                })
+                continue
+
+            common_fields = set(original_row) & set(exported_row)
+            for field in sorted(common_fields):
+                if field == "id_pieza":
+                    continue
+                original_value = original_row.get(field, "")
+                exported_value = exported_row.get(field, "")
+                if original_value != exported_value:
+                    result["field_mismatches"].setdefault(field, []).append({
+                        "row": row_number,
+                        "original": original_value,
+                        "exported": exported_value,
+                    })
+
+        if result["id_mismatch"] or result["field_mismatches"]:
+            result["match"] = False
+
         return result
+
+
+def apply_normalizations(row: Dict[str, str], csv_id: str = "") -> Dict[str, Any]:
+    """Return a normalized Piece row without mutating the source CSV.
+
+    The function uses the same column mapping and value cleaning as
+    :meth:`CSVAdapter.import_csv`, so round-trip comparisons can normalize
+    both sides consistently.
+    """
+    mapped = CSVAdapter._map_csv_to_model(row, CSVAdapter.PIECE_FIELD_MAP)
+    cleaned = CSVAdapter._clean_row(mapped, Piece)
+    if csv_id:
+        cleaned["id_pieza"] = csv_id
+    return cleaned
+
+
+__all__ = ["CSVAdapter", "apply_normalizations"]

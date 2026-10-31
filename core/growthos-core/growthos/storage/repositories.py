@@ -47,8 +47,16 @@ class PieceRepository(BaseRepository):
     def save(self, piece: Piece) -> None:
         """Save piece to database (insert or replace)."""
         data = piece.model_dump()
-        # Filter out None values for SQL compatibility
-        columns = [k for k, v in data.items() if v is not None]
+        # Keep only real table columns. Piece allows extra CSV fields, but
+        # SQLite must not receive columns that are not part of the schema.
+        table_columns = {
+            row["name"]
+            for row in self.db.fetchall(f"PRAGMA table_info({self.table_name})")
+        }
+        columns = [
+            k for k, v in data.items()
+            if v is not None and k in table_columns
+        ]
         values = [data[k] for k in columns]
 
         placeholders = ", ".join("?" * len(columns))

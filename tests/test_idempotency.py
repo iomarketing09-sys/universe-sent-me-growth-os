@@ -4,10 +4,12 @@ Tests de idempotencia básica: filas con publication_id se saltan.
 from pathlib import Path
 import csv
 import sys
+import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
+import growth.gate_and_publish as gate_module
 from growth.gate_and_publish import validate_and_publish
 from growth.publication_tracker import REQUIRED_COLUMNS
 
@@ -24,7 +26,24 @@ ASSET_PHOTO = "01_lunes_detalle_uniforme.png"
 ASSET_VIDEO = "VID-20260821-WA0002.mp4"
 
 
-def test_idempotent_skip_published(tmp_path):
+@pytest.fixture
+def asset_gate_ready(monkeypatch):
+    """These tests exercise idempotency with synthetic asset names."""
+    monkeypatch.setattr(
+        gate_module,
+        "audit_publications",
+        lambda *args, **kwargs: {
+            "success": True,
+            "total": 0,
+            "missing": 0,
+            "ambiguous": 0,
+            "problematic_rows": [],
+            "ready_for_publication": True,
+        },
+    )
+
+
+def test_idempotent_skip_published(tmp_path, asset_gate_ready):
     """Test A: Slot con publication_id existente → se salta, 0 llamadas a Meta."""
     csv_path = tmp_path / "pub_log.csv"
     
@@ -74,7 +93,7 @@ def test_idempotent_skip_published(tmp_path):
     assert rows[1]["publication_id"] != ""
 
 
-def test_idempotent_rerun_same_csv_no_duplicates(tmp_path):
+def test_idempotent_rerun_same_csv_no_duplicates(tmp_path, asset_gate_ready):
     """Test H: Ejecutar 2 veces el mismo CSV → segunda vez 0 publicaciones nuevas."""
     csv_path = tmp_path / "pub_log.csv"
     
@@ -132,7 +151,7 @@ def test_idempotent_rerun_same_csv_no_duplicates(tmp_path):
     assert rows[1]["publication_id"] == "META_POST_2"
 
 
-def test_idempotent_mixed_already_and_pending(tmp_path):
+def test_idempotent_mixed_already_and_pending(tmp_path, asset_gate_ready):
     """Test G: CSV con varios ya publicados + varios pendientes → solo procesa pendientes."""
     csv_path = tmp_path / "pub_log.csv"
     
