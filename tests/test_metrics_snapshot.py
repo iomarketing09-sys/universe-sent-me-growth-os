@@ -75,6 +75,16 @@ def test_future_windows_are_not_due(tmp_path, monkeypatch):
     assert [snap.window for snap in ms.get_pending_snapshots("flexi", now=cutoff + timedelta(hours=24))] == ["E0", "E24"]
 
 
+def test_stale_windows_are_not_created(tmp_path, monkeypatch):
+    _write_publication_log(tmp_path, [_ig_row()])
+    monkeypatch.chdir(tmp_path)
+
+    now = PUBLISHED_UTC + timedelta(hours=30)
+    created = ms.ensure_snapshots_for_publications("flexi", now=now)
+
+    assert [snap.window for snap in created] == ["E72"]
+
+
 def test_facebook_capture_uses_vigentes_metrics(monkeypatch, tmp_path):
     monkeypatch.chdir(tmp_path)
     metrics = {
@@ -175,3 +185,176 @@ def test_capture_public_counts_does_not_crash(monkeypatch):
         "shares": {"count": "1"},
     })
     assert ms.capture_public_counts("token", "123_456") == {"reactions": 5, "comments": 2, "shares": 1}
+
+
+def test_normalize_snapshot_log_migrates_mixed_rows(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    tenant = tmp_path / "tenants" / "universe"
+    metrics_dir = tenant / "metrics"
+    metrics_dir.mkdir(parents=True)
+    target = metrics_dir / "metrics_snapshot_log.csv"
+    log_path = tenant / "metrics_snapshot_log.csv"
+    log_path.symlink_to(Path("metrics/metrics_snapshot_log.csv"))
+
+    old_header = [
+        field for field in ms.SNAPSHOT_LOG_FIELDS
+        if field not in {"views", "saved", "total_interactions", "unavailable_metrics", "attempts"}
+    ]
+    canonical = {field: "" for field in old_header}
+    canonical.update({
+        "snapshot_id": "SNAP-CANONICAL",
+        "publication_id": "18105325243907452",
+        "tenant_id": "universe",
+        "platform": "Instagram",
+        "window": "E0",
+        "target_at_utc": "2026-09-06T08:37:40+00:00",
+        "captured_at_utc": "2026-09-06T08:42:02+00:00",
+        "status": "Captured",
+        "insights_available": "False",
+        "created_at": "2026-09-06T08:37:40+00:00",
+    })
+    legacy = [
+        "2026-09-21T00:04:30+00:00",
+        "1036844829507460_123",
+        "2026-09-19T00:00:01+0000",
+        "48.0",
+        "E48h",
+        "General",
+        "10",
+        "2",
+        "5",
+        "17",
+        "caption",
+        "https://www.facebook.com/example",
+    ]
+
+    with target.open("w", encoding="utf-8", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(old_header)
+        writer.writerow([canonical[field] for field in old_header])
+        writer.writerow(legacy)
+
+    result = ms.normalize_snapshot_log("universe")
+
+    assert result["canonical"] == 1
+    assert result["legacy"] == 1
+    assert result["skipped"] == 0
+    assert log_path.is_symlink()
+    assert Path(result["backup"]).name.startswith("metrics_snapshot_log.pre-normalize-")
+
+    snapshots = ms.load_snapshot_log("universe")
+    assert len(snapshots) == 2
+    migrated = next(snap for snap in snapshots if snap.publication_id.endswith("_123"))
+    assert migrated.platform == "Facebook"
+    assert migrated.window == "E48h"
+    assert migrated.status == ms.SnapshotStatus.CAPTURED.value
+    assert (migrated.reactions, migrated.comments, migrated.shares) == (10, 2, 5)
+    assert migrated.total_interactions == 17
+
+    assert ms.normalize_snapshot_log("universe")["changed"] == 0
+
+
+def test_lifetime_backfill_window_roundtrip(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    snapshot = ms.MetricsSnapshot(
+        snapshot_id="SNAP-BF-TEST",
+        publication_id="1036844829507460_123",
+        tenant_id="universe",
+        platform="Facebook",
+        window="LIFETIME_BACKFILL",
+        target_at_utc="2026-10-31T06:00:00+00:00",
+        captured_at_utc="2026-10-31T06:00:00+00:00",
+        reactions=10,
+        comments=2,
+        shares=3,
+        total_interactions=15,
+        status=ms.SnapshotStatus.CAPTURED.value,
+        insights_available=True,
+    )
+
+    ms.save_snapshot_log("universe", [snapshot])
+    loaded = ms.load_snapshot_log("universe")
+
+    assert len(loaded) == 1
+    assert loaded[0].window == "LIFETIME_BACKFILL"
+    assert loaded[0].total_interactions == 15
+
+
+def test_dedupe_snapshot_log_keeps_first_captured_window(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    base = {
+        "publication_id": "1036844829507460_123",
+        "tenant_id": "universe",
+        "platform": "Facebook",
+        "window": "E24",
+        "target_at_utc": "2026-09-21T00:06:02+00:00",
+        "reactions": 2,
+    }
+    snapshots = [
+        ms.MetricsSnapshot(
+            **base,
+            snapshot_id="SNAP-NO-DATA",
+            captured_at_utc="2026-09-21T00:04:00+00:00",
+            status=ms.SnapshotStatus.NO_DATA.value,
+        ),
+        ms.MetricsSnapshot(
+            **base,
+            snapshot_id="SNAP-CAPTURED-EARLY",
+            captured_at_utc="2026-09-21T00:08:00+00:00",
+            status=ms.SnapshotStatus.CAPTURED.value,
+        ),
+        ms.MetricsSnapshot(
+            **base,
+            snapshot_id="SNAP-CAPTURED-LATE",
+            captured_at_utc="2026-09-21T05:29:00+00:00",
+            status=ms.SnapshotStatus.CAPTURED.value,
+        ),
+        ms.MetricsSnapshot(
+            publication_id="",
+            tenant_id="universe",
+            platform="Facebook",
+            window="E24",
+            snapshot_id="SNAP-UNATTRIBUTED",
+            captured_at_utc="2026-09-21T00:09:00+00:00",
+            status=ms.SnapshotStatus.CAPTURED.value,
+        ),
+    ]
+    ms.save_snapshot_log("universe", snapshots)
+
+    result = ms.dedupe_snapshot_log("universe")
+
+    assert result["removed"] == 2
+    assert result["kept"] == 2
+    assert Path(result["backup"]).name.startswith("metrics_snapshot_log.pre-dedupe-")
+    loaded = ms.load_snapshot_log("universe")
+    assert {snap.snapshot_id for snap in loaded} == {"SNAP-CAPTURED-EARLY", "SNAP-UNATTRIBUTED"}
+    assert ms.dedupe_snapshot_log("universe")["changed"] == 0
+
+
+def test_dedupe_dry_run_does_not_write(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    snapshot = ms.MetricsSnapshot(
+        snapshot_id="SNAP-1",
+        publication_id="pub-1",
+        tenant_id="universe",
+        platform="Facebook",
+        window="E0",
+        captured_at_utc="2026-09-21T00:00:00+00:00",
+        status=ms.SnapshotStatus.CAPTURED.value,
+    )
+    duplicate = ms.MetricsSnapshot(
+        snapshot_id="SNAP-2",
+        publication_id="pub-1",
+        tenant_id="universe",
+        platform="Facebook",
+        window="E0",
+        captured_at_utc="2026-09-21T00:10:00+00:00",
+        status=ms.SnapshotStatus.CAPTURED.value,
+    )
+    ms.save_snapshot_log("universe", [snapshot, duplicate])
+
+    result = ms.dedupe_snapshot_log("universe", dry_run=True)
+
+    assert result["removed"] == 1
+    assert result["backup"] == ""
+    assert len(ms.load_snapshot_log("universe")) == 2

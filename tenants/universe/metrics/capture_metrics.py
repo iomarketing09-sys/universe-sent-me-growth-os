@@ -7,7 +7,7 @@ Ubicación: tenants/universe/metrics/
 
 import os
 import sys
-import csv
+import hashlib
 import json
 import requests
 from datetime import datetime, timezone
@@ -15,25 +15,54 @@ from pathlib import Path
 
 METRICS_DIR = Path(__file__).resolve().parent
 TENANT_DIR = METRICS_DIR.parent
+REPO_ROOT = Path(__file__).resolve().parents[3]
+
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from modules.intelligence.metrics_snapshot import (  # noqa: E402
+    MetricsSnapshot,
+    SnapshotStatus,
+    load_snapshot_log,
+    save_snapshot_log,
+)
 
 ENV_PATH = TENANT_DIR / ".env"
+ROOT_ENV_PATH = REPO_ROOT / ".env"
 CONTEXTS_PATH = TENANT_DIR / "publication_contexts.json"
 LOG_PATH = METRICS_DIR / "metrics_snapshot_log.csv"
 RAW_DIR = METRICS_DIR / "raw"
+TENANT_ID = TENANT_DIR.name
 
 def load_env():
     env = {}
-    if not ENV_PATH.exists():
-        print(f"❌ Error: No se encontró {ENV_PATH}")
-        sys.exit(1)
-    with open(ENV_PATH, "r", encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if line and not line.startswith("#") and "=" in line:
-                k, v = line.split("=", 1)
-                clean_k = k.replace("export ", "").strip()
-                env[clean_k] = v.strip().strip("'\"")
+    for path in (ROOT_ENV_PATH, ENV_PATH):
+        if not path.exists():
+            continue
+        with open(path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("#") and "=" in line:
+                    k, v = line.split("=", 1)
+                    clean_k = k.replace("export ", "").strip()
+                    env[clean_k] = v.strip().strip("'\"")
     return env
+
+
+def get_page_token(user_token, page_id):
+    if not user_token or not page_id:
+        return None
+    try:
+        response = requests.get(
+            f"https://graph.facebook.com/v26.0/{page_id}",
+            params={"fields": "access_token", "access_token": user_token},
+            timeout=20,
+        )
+        if response.status_code == 200:
+            return response.json().get("access_token") or user_token
+    except requests.RequestException:
+        pass
+    return user_token
 
 def get_snapshot_type(hours_alive):
     if hours_alive < 6:
@@ -48,14 +77,19 @@ def get_snapshot_type(hours_alive):
 def main():
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     env = load_env()
-    page_id = env.get("FB_PAGE_ID")
+    page_id = env.get("FB_PAGE_ID") or env.get("META_PAGE_ID")
     token = env.get("PAGE_ACCES_TOKEN") or env.get("PAGE_ACCESS_TOKEN") or env.get("META_ACCESS_TOKEN")
 
     if not page_id:
-        print("❌ Error: Falta FB_PAGE_ID en .env")
+        print("❌ Error: Falta FB_PAGE_ID en .env del tenant o en el .env global")
         sys.exit(1)
     if not token:
-        print("❌ Error: Falta PAGE_ACCES_TOKEN o META_ACCESS_TOKEN en .env")
+        print("❌ Error: Falta PAGE_ACCESS_TOKEN o META_ACCESS_TOKEN en .env")
+        sys.exit(1)
+
+    page_token = get_page_token(token, page_id)
+    if not page_token:
+        print("❌ Error: No se pudo obtener un token de página")
         sys.exit(1)
 
     contexts = {}
@@ -69,7 +103,7 @@ def main():
     print(f"📡 Conectando a Meta Graph API para Page ID: {page_id}...")
     url = f"https://graph.facebook.com/v21.0/{page_id}/posts"
     params = {
-        "access_token": token,
+        "access_token": page_token,
         "fields": "id,message,created_time,permalink_url,reactions.summary(true),comments.summary(true),shares",
         "limit": 25
     }
@@ -89,7 +123,7 @@ def main():
     with open(raw_file, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
-    rows_to_save = []
+    snapshots_to_save = []
     summary_table = []
 
     for post in data:
@@ -110,6 +144,26 @@ def main():
         caption = post.get("message", "").replace("\n", " ")[:38]
         permalink = post.get("permalink_url", "")
 
+        snapshot_id = "SNAP-" + hashlib.sha1(
+            f"{TENANT_ID}|{post_id}|{snapshot_window}".encode("utf-8")
+        ).hexdigest()[:12].upper()
+        snapshots_to_save.append(MetricsSnapshot(
+            snapshot_id=snapshot_id,
+            publication_id=post_id,
+            tenant_id=TENANT_ID,
+            platform="Facebook",
+            window=snapshot_window,
+            target_at_utc=now_iso,
+            captured_at_utc=now_iso,
+            reactions=reactions,
+            comments=comments,
+            shares=shares,
+            total_interactions=total_interactions,
+            status=SnapshotStatus.CAPTURED.value,
+            insights_available=False,
+            created_at=now_iso,
+        ))
+
         record = {
             "captured_at": now_iso,
             "post_id": post_id,
@@ -124,21 +178,15 @@ def main():
             "caption_preview": caption,
             "permalink": permalink
         }
-        rows_to_save.append(record)
         summary_table.append(record)
 
-    file_exists = LOG_PATH.exists()
-    fields = [
-        "captured_at", "post_id", "created_time", "hours_alive", "snapshot_window",
-        "character", "reactions", "comments", "shares", "total_interactions",
-        "caption_preview", "permalink"
-    ]
-
-    with open(LOG_PATH, "a" if file_exists else "w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fields)
-        if not file_exists:
-            writer.writeheader()
-        writer.writerows(rows_to_save)
+    existing = {snapshot.snapshot_id: snapshot for snapshot in load_snapshot_log(TENANT_ID)}
+    for snapshot in snapshots_to_save:
+        existing[snapshot.snapshot_id] = snapshot
+    save_snapshot_log(
+        TENANT_ID,
+        sorted(existing.values(), key=lambda snapshot: (snapshot.captured_at_utc, snapshot.snapshot_id)),
+    )
 
     summary_table.sort(key=lambda x: x["total_interactions"], reverse=True)
     print("\n" + "=" * 80)

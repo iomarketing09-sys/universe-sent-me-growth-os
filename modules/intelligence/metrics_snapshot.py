@@ -17,7 +17,10 @@ Alcance e impresiones por publicación ya no existen en la API: se registran en
 """
 
 import csv
+import hashlib
 import os
+import re
+import shutil
 import time
 import uuid
 import requests
@@ -186,6 +189,14 @@ SNAPSHOT_LOG_FIELDS = [
     'created_at', 'attempts'
 ]
 
+LEGACY_SNAPSHOT_FIELDS = [
+    'captured_at', 'post_id', 'created_time', 'hours_alive', 'snapshot_window',
+    'character', 'reactions', 'comments', 'shares', 'total_interactions',
+    'caption_preview', 'permalink',
+]
+
+LEGACY_WINDOW_PATTERN = re.compile(r'^E\d+h$')
+
 
 def get_snapshot_log_path(tenant_id: str) -> Path:
     return Path(f'tenants/{tenant_id}/metrics_snapshot_log.csv')
@@ -195,6 +206,16 @@ VALID_WINDOWS = {SnapshotWindow.E0.value, SnapshotWindow.E24.value, SnapshotWind
 VALID_STATUSES = {status.value for status in SnapshotStatus}
 
 
+def _is_valid_window(window: str) -> bool:
+    """Acepta ventanas oficiales y ventanas legacy tipo ``E48h``."""
+    value = (window or '').strip()
+    return (
+        value in VALID_WINDOWS
+        or value in {'LIFETIME', 'LIFETIME_BACKFILL'}
+        or bool(LEGACY_WINDOW_PATTERN.fullmatch(value))
+    )
+
+
 def _read_ledger_rows(path: Path) -> List[Dict[str, str]]:
     with path.open('r', encoding='utf-8-sig', newline='') as f:
         return list(csv.DictReader(f))
@@ -202,7 +223,7 @@ def _read_ledger_rows(path: Path) -> List[Dict[str, str]]:
 
 def _ledger_has_foreign_rows(rows: List[Dict[str, str]]) -> bool:
     for row in rows:
-        if row.get('window') not in VALID_WINDOWS:
+        if not _is_valid_window(row.get('window', '')):
             return True
         if row.get('status') not in VALID_STATUSES:
             return True
@@ -232,22 +253,279 @@ def load_snapshot_log(tenant_id: str) -> List[MetricsSnapshot]:
     return snapshots
 
 
+def _parse_snapshot_datetime(value: str) -> Optional[datetime]:
+    text = str(value or '').strip()
+    if not text:
+        return None
+    try:
+        parsed = datetime.fromisoformat(text.replace('Z', '+00:00'))
+    except ValueError:
+        try:
+            parsed = datetime.strptime(text, '%Y-%m-%dT%H:%M:%S%z')
+        except ValueError:
+            return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
+
+
+def _legacy_snapshot_id(tenant_id: str, row: Dict[str, str]) -> str:
+    key = '|'.join([
+        tenant_id,
+        row.get('post_id', ''),
+        row.get('created_time', ''),
+        row.get('captured_at', ''),
+    ])
+    return f"SNAP-{hashlib.sha1(key.encode('utf-8')).hexdigest()[:12].upper()}"
+
+
+def _legacy_row_to_snapshot(tenant_id: str, row: List[str]) -> MetricsSnapshot:
+    data = dict(zip(LEGACY_SNAPSHOT_FIELDS, row[:len(LEGACY_SNAPSHOT_FIELDS)]))
+    created = _parse_snapshot_datetime(data.get('created_time', ''))
+    captured = _parse_snapshot_datetime(data.get('captured_at', ''))
+    try:
+        hours_alive = float(data.get('hours_alive') or 0)
+    except ValueError:
+        hours_alive = 0.0
+
+    target = captured
+    if created is not None:
+        target = created + timedelta(hours=hours_alive)
+
+    reactions = _to_int(data.get('reactions'))
+    comments = _to_int(data.get('comments'))
+    shares = _to_int(data.get('shares'))
+    total_interactions = _to_int(data.get('total_interactions'))
+    if total_interactions == 0 and (reactions or comments or shares):
+        total_interactions = reactions + comments + shares
+
+    captured_iso = captured.isoformat(timespec='seconds') if captured else data.get('captured_at', '')
+    target_iso = target.isoformat(timespec='seconds') if target else captured_iso
+
+    return MetricsSnapshot(
+        snapshot_id=_legacy_snapshot_id(tenant_id, data),
+        publication_id=data.get('post_id', ''),
+        tenant_id=tenant_id,
+        platform='Facebook',
+        window=data.get('snapshot_window') or SnapshotWindow.E0.value,
+        target_at_utc=target_iso,
+        captured_at_utc=captured_iso,
+        reactions=reactions,
+        comments=comments,
+        shares=shares,
+        total_interactions=total_interactions,
+        status=SnapshotStatus.CAPTURED.value,
+        insights_available=False,
+        created_at=captured_iso,
+    )
+
+
+def normalize_snapshot_log(tenant_id: str, backup: bool = True) -> Dict[str, Any]:
+    """Migra filas legacy/parciales al esquema canónico actual.
+
+    El log histórico de ``universe`` mezcló el esquema compacto de
+    ``capture_metrics.py`` con el esquema de ``MetricsSnapshot``. Esta función
+    conserva ambas fuentes, crea IDs deterministas para las filas legacy y
+    reescribe el archivo de forma idempotente.
+    """
+    log_path = get_snapshot_log_path(tenant_id)
+    if not log_path.exists():
+        return {'changed': 0, 'canonical': 0, 'legacy': 0, 'skipped': 0, 'backup': ''}
+
+    real_path = log_path.resolve()
+    with real_path.open('r', encoding='utf-8-sig', newline='') as f:
+        rows = list(csv.reader(f))
+
+    if not rows:
+        return {'changed': 0, 'canonical': 0, 'legacy': 0, 'skipped': 0, 'backup': ''}
+
+    header = rows[0]
+    data_rows = [row for row in rows[1:] if any(cell.strip() for cell in row)]
+    already_canonical = (
+        header == SNAPSHOT_LOG_FIELDS
+        and all(len(row) == len(header) for row in data_rows)
+    )
+    if already_canonical:
+        return {'changed': 0, 'canonical': len(data_rows), 'legacy': 0, 'skipped': 0, 'backup': ''}
+
+    canonical_count = 0
+    legacy_count = 0
+    skipped = 0
+    snapshots: Dict[str, MetricsSnapshot] = {}
+
+    for row in data_rows:
+        try:
+            if len(row) == len(LEGACY_SNAPSHOT_FIELDS) and not (
+                header == SNAPSHOT_LOG_FIELDS and len(header) == len(row)
+            ):
+                snap = _legacy_row_to_snapshot(tenant_id, row)
+                legacy_count += 1
+            elif len(row) == len(header) and 'snapshot_id' in header and 'publication_id' in header:
+                snap = MetricsSnapshot.from_dict(dict(zip(header, row)))
+                canonical_count += 1
+            else:
+                skipped += 1
+                continue
+        except Exception:
+            skipped += 1
+            continue
+
+        if not snap.snapshot_id:
+            snap.snapshot_id = f"SNAP-{uuid.uuid4().hex[:12].upper()}"
+        snapshots[snap.snapshot_id] = snap
+
+    ordered = sorted(
+        snapshots.values(),
+        key=lambda snap: (snap.captured_at_utc, snap.snapshot_id),
+    )
+
+    backup_path = ''
+    if backup:
+        suffix = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
+        target = real_path.with_name(f'{real_path.stem}.pre-normalize-{suffix}.csv.bak')
+        shutil.copy2(real_path, target)
+        backup_path = str(target)
+
+    temp_path = real_path.with_name(f'.{real_path.name}.normalize.tmp')
+    with temp_path.open('w', encoding='utf-8-sig', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=SNAPSHOT_LOG_FIELDS, lineterminator='\n')
+        writer.writeheader()
+        for snap in ordered:
+            writer.writerow(snap.to_dict())
+    os.replace(temp_path, real_path)
+
+    loaded = load_snapshot_log(tenant_id)
+    if len(loaded) != len(ordered):
+        raise RuntimeError(
+            f'Normalización incompleta: se esperaban {len(ordered)} filas y se cargaron {len(loaded)}'
+        )
+
+    return {
+        'changed': len(ordered),
+        'canonical': canonical_count,
+        'legacy': legacy_count,
+        'skipped': skipped,
+        'backup': backup_path,
+    }
+
+
 def save_snapshot_log(tenant_id: str, snapshots: List[MetricsSnapshot]) -> None:
     log_path = get_snapshot_log_path(tenant_id)
     log_path.parent.mkdir(parents=True, exist_ok=True)
+    real_path = log_path.resolve()
 
     if log_path.exists() and _ledger_has_foreign_rows(_read_ledger_rows(log_path)):
-        backup = log_path.with_name(
-            f"{log_path.stem}.legacy-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}.csv"
+        backup = real_path.with_name(
+            f"{real_path.stem}.legacy-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}.csv.bak"
         )
-        log_path.rename(backup)
-        print(f"Warning: ledger incompatible movido a {backup}")
+        shutil.copy2(real_path, backup)
+        print(f"Warning: ledger incompatible respaldado en {backup}")
 
-    with log_path.open('w', encoding='utf-8-sig', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=SNAPSHOT_LOG_FIELDS)
+    with real_path.open('w', encoding='utf-8-sig', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=SNAPSHOT_LOG_FIELDS, lineterminator='\n')
         writer.writeheader()
         for snap in snapshots:
             writer.writerow(snap.to_dict())
+
+
+def _dedupe_rank(snapshot: MetricsSnapshot):
+    """Prefiere una captura válida y, entre varias, la primera medición."""
+    status_rank = {
+        SnapshotStatus.CAPTURED.value: 0,
+        SnapshotStatus.NO_DATA.value: 1,
+        SnapshotStatus.FAILED.value: 2,
+        SnapshotStatus.PENDING.value: 3,
+    }.get(snapshot.status, 4)
+    captured = _parse_snapshot_datetime(snapshot.captured_at_utc)
+    captured_key = captured or datetime.max.replace(tzinfo=timezone.utc)
+    return (status_rank, captured_key, snapshot.snapshot_id)
+
+
+def dedupe_snapshot_log(
+    tenant_id: str,
+    backup: bool = True,
+    dry_run: bool = False,
+) -> Dict[str, Any]:
+    """Conserva una sola fila por ``platform + publication_id + window``.
+
+    El ledger histórico acumuló recapturas de la misma ventana porque el
+    script anterior recalculaba ``target_at_utc`` en cada pasada. La fila
+    canónica es la primera captura válida: se prefieren ``Captured`` sobre
+    ``No_Data``/``Failed``/``Pending`` y, a igualdad de estado, la captura más
+    antigua. Las filas sin ``publication_id`` se dejan intactas porque no se
+    pueden atribuir con seguridad.
+    """
+    log_path = get_snapshot_log_path(tenant_id)
+    if not log_path.exists():
+        return {'changed': 0, 'kept': 0, 'removed': 0, 'groups': 0, 'backup': ''}
+
+    snapshots = load_snapshot_log(tenant_id)
+    groups: Dict[tuple, List[MetricsSnapshot]] = {}
+    kept: List[MetricsSnapshot] = []
+
+    for snapshot in snapshots:
+        publication_id = (snapshot.publication_id or '').strip()
+        window = (snapshot.window or '').strip()
+        if not publication_id or not window:
+            kept.append(snapshot)
+            continue
+        key = ((snapshot.platform or '').strip(), publication_id, window)
+        groups.setdefault(key, []).append(snapshot)
+
+    removed = 0
+    for group in groups.values():
+        group.sort(key=_dedupe_rank)
+        kept.append(group[0])
+        removed += len(group) - 1
+
+    kept.sort(key=lambda snap: (snap.captured_at_utc, snap.snapshot_id))
+    if removed == 0:
+        return {
+            'changed': 0,
+            'kept': len(kept),
+            'removed': 0,
+            'groups': len(groups),
+            'backup': '',
+        }
+    if dry_run:
+        return {
+            'changed': removed,
+            'kept': len(kept),
+            'removed': removed,
+            'groups': len(groups),
+            'backup': '',
+            'dry_run': True,
+        }
+
+    real_path = log_path.resolve()
+    backup_path = ''
+    if backup:
+        suffix = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
+        target = real_path.with_name(f'{real_path.stem}.pre-dedupe-{suffix}.csv.bak')
+        shutil.copy2(real_path, target)
+        backup_path = str(target)
+
+    temp_path = real_path.with_name(f'.{real_path.name}.dedupe.tmp')
+    with temp_path.open('w', encoding='utf-8-sig', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=SNAPSHOT_LOG_FIELDS, lineterminator='\n')
+        writer.writeheader()
+        for snap in kept:
+            writer.writerow(snap.to_dict())
+    os.replace(temp_path, real_path)
+
+    loaded = load_snapshot_log(tenant_id)
+    if len(loaded) != len(kept):
+        raise RuntimeError(
+            f'Deduplicación incompleta: se esperaban {len(kept)} filas y se cargaron {len(loaded)}'
+        )
+
+    return {
+        'changed': removed,
+        'kept': len(kept),
+        'removed': removed,
+        'groups': len(groups),
+        'backup': backup_path,
+    }
 
 
 def upsert_snapshot(tenant_id: str, snapshot: MetricsSnapshot) -> MetricsSnapshot:
@@ -286,17 +564,21 @@ def get_pending_snapshots(tenant_id: str, now: datetime = None) -> List[MetricsS
 # ==============================================================================
 
 def load_tenant_env(tenant_id: str) -> Dict[str, str]:
-    env_path = Path(f'tenants/{tenant_id}/.env')
-    if not env_path.exists():
-        return {}
-    
-    env = {}
-    with open(env_path) as f:
-        for line in f:
-            line = line.strip()
-            if line and '=' in line and not line.startswith('#'):
-                k, v = line.split('=', 1)
-                env[k.strip()] = v.strip()
+    """Carga credenciales del tenant y usa el ``.env`` raíz como fallback.
+
+    El tenant puede sobrescribir cualquier valor, pero no está obligado a
+    duplicar el token global cuando comparte la misma cuenta de Meta.
+    """
+    env: Dict[str, str] = {}
+    for env_path in (Path('.env'), Path(f'tenants/{tenant_id}/.env')):
+        if not env_path.exists():
+            continue
+        with open(env_path, encoding='utf-8') as f:
+            for line in f:
+                line = line.strip()
+                if line and '=' in line and not line.startswith('#'):
+                    k, v = line.split('=', 1)
+                    env[k.replace('export ', '').strip()] = v.strip().strip("'\"")
     return env
 
 
@@ -426,12 +708,15 @@ def ensure_snapshots_for_publications(
     tenant_id: str,
     since_days: int = 4,
     now: Optional[datetime] = None,
+    max_lateness_hours: float = 2.0,
 ) -> List[MetricsSnapshot]:
     """Crea E0/E24/E72 pendientes para publicaciones ya registradas.
 
     Es idempotente: no duplica ventanas que ya existan para el mismo
     ``publication_id``. Se puede llamar en cada ciclo de captura. Solo mira
-    publicaciones recientes para no llenar la cola con históricos.
+    publicaciones recientes para no llenar la cola con históricos. Si una
+    ventana ya venció hace más de ``max_lateness_hours``, se omite: capturarla
+    después produciría un dato actual etiquetado falsamente como E0/E24/E72.
     """
     if now is None:
         now = datetime.now(timezone.utc)
@@ -452,8 +737,16 @@ def ensure_snapshots_for_publications(
             continue
         if published < now - timedelta(days=since_days):
             continue
-        for window in (SnapshotWindow.E0.value, SnapshotWindow.E24.value, SnapshotWindow.E72.value):
+        offsets = {
+            SnapshotWindow.E0.value: 0,
+            SnapshotWindow.E24.value: 24,
+            SnapshotWindow.E72.value: 72,
+        }
+        for window, offset_hours in offsets.items():
             if (pub_id, window) in existing:
+                continue
+            target = published + timedelta(hours=offset_hours)
+            if target < now - timedelta(hours=max_lateness_hours):
                 continue
             snapshot = create_snapshot_for_publication(tenant_id, row, '', '', window)
             upsert_snapshot(tenant_id, snapshot)
@@ -906,8 +1199,8 @@ if __name__ == '__main__':
     import sys
     
     if len(sys.argv) < 2:
-        print("Uso: python -m growth.metrics_snapshot <tenant_id|--all-tenants> <comando>")
-        print("Comandos: schedule, capture, validate, list")
+        print("Uso: python3 -m modules.intelligence.metrics_snapshot <tenant_id|--all-tenants> <comando>")
+        print("Comandos: schedule, capture, validate, list, normalize, dedupe")
         sys.exit(1)
     
     if sys.argv[1] == '--all-tenants':
@@ -919,7 +1212,7 @@ if __name__ == '__main__':
         tenant_ids = [sys.argv[1]]
     
     if len(sys.argv) < 3:
-        print("Comando requerido: schedule, capture, validate, list")
+        print("Comando requerido: schedule, capture, validate, list, normalize, dedupe")
         sys.exit(1)
     
     cmd = sys.argv[2]
@@ -931,6 +1224,14 @@ if __name__ == '__main__':
             print(f"Snapshots ({tenant}): {len(snaps)}")
             for s in snaps[-10:]:
                 print(f"  {s.snapshot_id} | {s.window} | {s.status} | {s.publication_id[:20]}... | insights={s.insights_available}")
+
+        elif cmd == 'normalize':
+            result = normalize_snapshot_log(tenant)
+            print(f"Normalización ({tenant}): {result}")
+
+        elif cmd == 'dedupe':
+            result = dedupe_snapshot_log(tenant, dry_run='--dry-run' in sys.argv[3:])
+            print(f"Deduplicación ({tenant}): {result}")
         
         elif cmd == 'validate':
             result = validate_snapshot_ledger(tenant)
