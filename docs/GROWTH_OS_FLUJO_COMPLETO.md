@@ -95,7 +95,7 @@ growth-os/
 ├── skills/                      # Codex skills
 │   └── growth-cgo/              # Chief Growth Officer agent (✅ primary)
 │       ├── SKILL.md             # Complete operational instructions
-│       ├── agents/openai.yaml   # UI metadata & 7 invocation modes
+│       ├── agents/openai.yaml   # UI metadata & 8 invocation modes
 │       ├── scripts/verify_setup.py
 │       └── references/          # governance.md, canon_integration.md, calendar_architecture.md, core_models.md
 ├── tenants/                     # Multi-tenant configurations (6 active)
@@ -143,6 +143,7 @@ growth-os/
 - **Core package**: Models, enums, CSV storage, repositories — all tests pass
 - **Brand Voice Agent**: Copywriting functional
 - **Meta Ads Agent**: Planner + creatives + budget ready
+- **Monetization Agent**: Ledger, umbral y conciliación read-only; integrado al CGO
 - **WhatsApp Agent**: 5-step conversion + persistent CRM (fixed)
 - **Model Router (OmniRoute)**: 9 free models (Groq, NVIDIA, Cloudflare, Gemini, Morph)
 

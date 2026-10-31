@@ -11,6 +11,35 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 
 ### Añadido
 
+- **Monetization Lite** (`modules/intelligence/monetization.py`): separa
+  señales diarias por post, periodos estimados/aprobados y payouts confirmados.
+  Solo reconoce ingreso en payouts `paid`; el resto queda como pipeline o señal.
+  Incluye ledger CSV idempotente por tenant, importación de JSON históricos,
+  agregado diario de cuenta separado de los posts, reporte
+  diario/semanal/mensual y CLI en `tools/monetization_report.py`. El reporte
+  muestra el umbral de payout configurable por tenant, el saldo pendiente y
+  cuánto falta para liberarlo.
+- **Monetization Agent y capacidad CGO** (`modules/intelligence/agents/monetization_agent/`
+  y `modules/cgo/capabilities/monetization_report.py`): agente read-only que
+  resume periodos, payouts, umbral y conciliación app/API/publicaciones. Se
+  integra en `daily_pipeline`, se expone como `monetization_report` y agrega
+  sincronización diaria en `scripts/run_monetization_sync.py`. El timer
+  `scripts/growth-os-monetization.timer` no se instala solo. Aprobar periodos y
+  registrar payouts sigue requiriendo confirmación humana.
+- **Ledger de métricas normalizado y backfill lifetime**
+  (`modules/intelligence/metrics_snapshot.py`): `normalize` migra filas legacy
+  al esquema canónico con respaldo previo, respeta symlinks y es idempotente.
+  Acepta ventanas `E<h>h` históricas y `LIFETIME_BACKFILL`, y evita programar
+  ventanas vencidas hace más de 2 horas. `tenants/universe/metrics/backfill_lifetime.py`
+  guarda el acumulado actual de posts históricos sin disfrazarlo de E0/E24/E72.
+  Incluye `dedupe`, que conserva una sola captura por
+  `plataforma + publication_id + ventana`, prefiere la primera captura válida y
+  respalda el ledger antes de escribir.
+- **Sincronización del publication log de Universe**
+  (`tenants/universe/metrics/sync_publication_log.py`): descubre posts de
+  Facebook e Instagram, los fusiona por `publication_id` sin duplicar y los
+  escribe en `publication_log_week2.csv`. El timer de 15 minutos lo ejecuta
+  antes de la captura de métricas.
 - **Ledger diario de Ads por anuncio** (`modules/intelligence/ads_ledger.py`):
   conserva un corte diario idempotente por anuncio en
   `tenants/<id>/ads/insights/`, ya que `latest.json` se sobrescribe en cada
@@ -106,6 +135,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 
 ### Corregido
 
+- **Extractor legacy de señales de monetización**: `fetch_meta_monetization.py`
+  solo leía el `.env` del tenant, ignoraba `META_ACCESS_TOKEN` del entorno y
+  descartaba el código de salida de `main()`, así que `--fetch-signals` podía
+  reportar `ok` sin capturar nada. Ahora resuelve el Page Access Token desde
+  `META_ACCESS_TOKEN`, falla con código distinto de cero si Meta rechaza la
+  consulta y propaga el resultado al sincronizador.
 - `pytest` sin argumentos sigue ahora la suite documentada en `tests/` y no la
   colección recursiva de scripts operativos dentro de `tenants/`; `test_vision.py`
   tampoco ejecuta ni termina el proceso durante la importación de pytest.

@@ -2,9 +2,9 @@
 # Configuración para registro en Codex/OpenAI
 
 name: "growth-cgo"
-description: "Chief Growth Officer - Orquestador principal del Growth OS. Coordina daily pipeline, weekly calendar, tenant onboarding, cross-tenant reporting, canon sync, y meta publishing."
+description: "Chief Growth Officer - Orquestador principal del Growth OS. Coordina daily pipeline, weekly calendar, tenant onboarding, cross-tenant reporting, monetización, canon sync y meta publishing."
 
-version: "1.0.0"
+version: "1.1.0"
 author: "iO Marketing"
 
 # Modelos disponibles via OmniRoute (todos gratuitos)
@@ -19,7 +19,7 @@ models:
   - mixtral-8x7b
   - nvidia-llama-3.1-nemotron-70b
 
-# Modos de invocación (7 modos operativos)
+# Modos de invocación (8 modos operativos)
 invocation_modes:
   - name: "DAILY_PIPELINE"
     description: "Ejecuta pipeline diario multi-tenant (contenido → approve → publish)"
@@ -48,6 +48,13 @@ invocation_modes:
     temperature: 0.3
     max_tokens: 2500
     sub_agents: ["metrics-collector"]
+
+  - name: "MONETIZATION_REPORT"
+    description: "Ledger, umbral, payouts y conciliación de monetización (read-only)"
+    model: "gpt-oss-120b"
+    temperature: 0.2
+    max_tokens: 2000
+    sub_agents: ["monetization-agent"]
     
   - name: "CANON_SYNC"
     description: "Sincroniza con canon repo (solo universe) - pre-check para Claude"
@@ -91,6 +98,10 @@ tools:
   - name: "tenant_auditor"
     description: "CRO audit para physical_cro"
     script: "tools/tenant_auditor.py"
+
+  - name: "monetization_report"
+    description: "Ledger, umbral y conciliación de monetización"
+    script: "scripts/run_monetization_sync.py"
     
   - name: "verify_setup"
     description: "Verifica entorno CGO completo"
@@ -136,3 +147,8 @@ gates:
     track: "both"
     decider: "whatsapp_agent_morph_v3"
     when: "flow_step_2"
+
+  - name: "payout_approval"
+    track: "both"
+    decider: "human_operator"
+    when: "before_period_approved_or_payout_recorded"

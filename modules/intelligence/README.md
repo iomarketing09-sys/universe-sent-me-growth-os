@@ -7,7 +7,7 @@ sobre las fuentes externas: no crea, edita ni pausa anuncios.
 
 ```
 modules/intelligence/
-├── __init__.py            API pública (27 nombres)
+├── __init__.py            API pública (33 nombres)
 ├── metrics_snapshot.py    Snapshots E0/E24/E72 de publicaciones
 ├── historical_baseline.py Baseline histórico por tenant
 ├── experiment_log.py      Observaciones e hipótesis por tenant
@@ -18,8 +18,12 @@ modules/intelligence/
 ├── ads_reporting.py       Reporte JSON/texto/Markdown por anuncio
 ├── campaign_capture.py    Checkpoints E24/E48/E72/diarios/FINAL
 ├── campaign_optimizer.py  Plan de cambios por anuncio (solo recomendación)
+├── monetization.py        Señales, periodos, payouts y umbral por tenant
+├── revenue.py             Deals y cobranza de tenants de producto
 └── agents/
-    └── meta_ads_agent/    Resultados de campañas y KPIs
+    ├── meta_ads_agent/    Resultados de campañas y KPIs
+    ├── monetization_agent/ Monetización, umbral y conciliación read-only
+    └── tenant_auditor/    Auditoría local de onboarding
 ```
 
 Los archivos en `growth/` (`metrics_snapshot`, `historical_baseline`,
@@ -39,6 +43,24 @@ python3 -m modules.intelligence.agents.meta_ads_agent.agent flexi --offline
 
 Devuelve por campaña: gasto, impresiones, clics, alcance, CTR, CPC, CPM,
 conversaciones, **costo por conversación** y clics por conversación.
+
+## Monetization Agent
+
+Lee el ledger de Monetization Lite, resume el umbral de payout y cruza la
+evidencia de app, API de página y suma por publicación. Es **solo lectura**:
+no aprueba periodos, no registra payouts ni escribe en Meta.
+
+```bash
+python3 -m modules.intelligence.agents.monetization_agent.agent universe
+python3 -m modules.intelligence.agents.monetization_agent.agent universe \
+  --since 2026-10-01 --until 2026-10-31 --full
+python3 -m modules.cgo --mode monetization_report --tenant universe --json
+```
+
+La captura y actualización local se ejecutan con
+`scripts/run_monetization_sync.py`. El timer dedicado está en
+`scripts/growth-os-monetization.timer`; mientras no se instale, el reporte se
+puede consultar manualmente o desde `daily_pipeline`.
 
 ## Rendimiento por anuncio
 
@@ -110,9 +132,12 @@ pasada y este programa E0/E24/E72 para las publicaciones recientes del
 `publication_log_week2.csv` (idempotente por `publication_id` + ventana).
 
 ```bash
-python3 -m growth.metrics_snapshot flexi schedule   # crea ventanas pendientes
-python3 -m growth.metrics_snapshot flexi capture    # captura las que ya vencieron
-python3 -m growth.metrics_snapshot flexi validate
+python3 -m modules.intelligence.metrics_snapshot flexi schedule   # crea ventanas pendientes
+python3 -m modules.intelligence.metrics_snapshot flexi capture    # captura las que ya vencieron
+python3 -m modules.intelligence.metrics_snapshot flexi validate
+python3 -m modules.intelligence.metrics_snapshot flexi normalize  # migra filas legacy
+python3 -m modules.intelligence.metrics_snapshot flexi dedupe --dry-run
+python3 -m modules.intelligence.metrics_snapshot flexi dedupe    # una fila por plataforma+post+ventana
 ```
 
 Facebook aporta `post_impressions` (impresiones), `post_impressions_unique`
@@ -120,6 +145,29 @@ Facebook aporta `post_impressions` (impresiones), `post_impressions_unique`
 `views`, `total_interactions`, `saved`, likes, comentarios y shares. Las
 métricas se piden una por una para que una métrica no disponible no invalide
 toda la captura.
+
+El ledger de Universe convivió con filas del esquema viejo
+(`captured_at,post_id,created_time,...`). `normalize` las convierte al esquema
+canónico, conserva una copia `.pre-normalize-*.csv.bak`, respeta symlinks y es
+idempotente. Las ventanas legacy tipo `E48h` se conservan; no se reinterpretan
+como E0/E24/E72. Las capturas posteriores de un post histórico se guardan como
+`LIFETIME_BACKFILL` para no etiquetar un acumulado actual como si fuera el dato
+de la ventana original.
+
+`dedupe` limpia las recapturas históricas de la misma ventana. Conserva la
+primera captura válida (`Captured` antes que `No_Data`/`Failed`/`Pending`) y
+deja un respaldo `.pre-dedupe-*.csv.bak`. Las filas sin `publication_id` no se
+tocan.
+
+Solo se programan ventanas que vencen dentro de las próximas 2 horas; una
+captura tardía se omite en vez de guardar un dato actual con etiqueta falsa.
+
+Para reconstruir el historial y mantener el publication log al día:
+
+```bash
+python3 tenants/universe/metrics/sync_publication_log.py --dry-run
+python3 tenants/universe/metrics/backfill_lifetime.py --dry-run
+```
 
 **Permiso pendiente:** `instagram_manage_insights` (App Review) es necesario
 para reach/views de Instagram. Sin él, el snapshot guarda los conteos públicos

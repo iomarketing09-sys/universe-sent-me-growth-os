@@ -25,6 +25,7 @@ modules/cgo/
 | `weekly_calendar` | Slots futuros del calendario (solo native) | intelligence |
 | `tenant_onboarding` | Auditoría local del tenant | intelligence |
 | `cross_tenant_report` | Totales de todos los tenants | intelligence |
+| `monetization_report` | Ledger, umbral y conciliación de monetización | intelligence |
 | `canon_sync` | Pre-check del repo canon (solo native) | identity |
 | `meta_publishing` | Coordina IG/FB | social |
 | `verify_setup` | Salud del entorno | todos |
@@ -63,12 +64,29 @@ Sin `--publish` todo es dry-run y no se llama a ningún publisher.
 ```bash
 python3 -m modules.cgo --mode daily_pipeline --tenant flexi
 python3 -m modules.cgo --mode cross_tenant_report
+python3 -m modules.cgo --mode monetization_report --tenant universe --json
 python3 -m modules.cgo --mode verify_setup --json
 python3 -m modules.cgo --mode tenant_onboarding --tenant flexi
 python3 -m modules.cgo --mode meta_publishing --tenant flexi
 python3 -m modules.cgo --mode meta_publishing --tenant flexi --publish
 python3 -m modules.cgo --mode weekly_calendar --tenant universe
 python3 -m modules.cgo --mode canon_sync --tenant universe
+```
+
+## Monetización
+
+`monetization_report` es local y **read-only**: lee periodos, payouts, umbral y
+evidencia de conciliación. No captura dinero, no aprueba periodos y no registra
+payouts. La captura diaria se hace con
+`scripts/run_monetization_sync.py`; las unidades
+`scripts/growth-os-monetization.{service,timer}` no se instalan solas.
+
+```bash
+python3 scripts/run_monetization_sync.py --all --json
+sudo cp scripts/growth-os-monetization.service /etc/systemd/system/
+sudo cp scripts/growth-os-monetization.timer /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable --now growth-os-monetization.timer
 ```
 
 Flags: `--tenant`, `--all`, `--json`, `--strict`, `--publish`.

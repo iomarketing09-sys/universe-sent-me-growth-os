@@ -1,6 +1,6 @@
 # Growth CGO Skill - Chief Growth Officer
 
-**Descripción**: Orquestador principal del Growth OS. Coordina daily pipeline, weekly calendar, tenant onboarding, cross-tenant reporting, canon sync, y meta publishing.
+**Descripción**: Orquestador principal del Growth OS. Coordina daily pipeline, weekly calendar, tenant onboarding, cross-tenant reporting, monetización, canon sync y meta publishing.
 
 ---
 
@@ -12,6 +12,7 @@
 | `weekly_calendar` | Genera calendario semanal (solo native_digital/universe) |
 | `tenant_onboarding` | Onboarding de nuevos tenants (physical_cro o native_digital) |
 | `cross_tenant_report` | Reporte consolidado de métricas cross-tenant |
+| `monetization_report` | Ledger, umbral y conciliación de monetización (read-only) |
 | `canon_sync` | Sincroniza con canon repo (solo universe) |
 | `meta_publishing` | Coordina publicación en Meta (IG/FB) via meta-publisher |
 | `verify_setup` | Verifica entorno CGO completo |
@@ -26,6 +27,7 @@
 | `WEEKLY_CALENDAR` | GPT-OSS 120B | 0.2 | 2000 | Calendario semanal (native_digital) |
 | `TENANT_ONBOARDING` | GPT-OSS 120B | 0.4 | 3000 | Onboarding physical_cro + audit |
 | `CROSS_TENANT_REPORT` | GPT-OSS 120B | 0.3 | 2500 | Métricas consolidadas |
+| `MONETIZATION_REPORT` | GPT-OSS 120B | 0.2 | 2000 | Monetización, umbral y conciliación |
 | `CANON_SYNC` | GPT-OSS 20B | 0.1 | 1000 | Pre-check canon (Claude valida) |
 | `META_PUBLISHING` | GPT-OSS 120B | 0.5 | 2000 | Publicación IG/FB |
 | `BRAND_COMPLIANCE` | GPT-OSS 20B | 0.2 | 800 | Validación brand voice |
@@ -42,6 +44,7 @@
 | `meta-ads-agent` | Meta publishing | Campañas + creativas |
 | `brand-voice-agent` | Cualquier generación copy | Validación voice |
 | `tenant-auditor` | Tenant onboarding | CRO audit (physical_cro) |
+| `monetization-agent` | Monetization report | Umbral, payouts y conciliación read-only |
 
 ---
 
@@ -63,6 +66,7 @@
 | Meta Token Valid | Ambos | meta-publisher | Cada publish |
 | Brand Compliance | Ambos | Brand Voice Agent | Cada pieza generada |
 | Lead Qualified | Ambos | WhatsApp Agent | Paso 2 flujo |
+| Payout Approval | Ambos | Operador / humano | Antes de `approved`, `paid` o alta de payout |
 
 ---
 
