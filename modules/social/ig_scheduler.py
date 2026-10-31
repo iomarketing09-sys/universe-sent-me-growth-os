@@ -150,7 +150,7 @@ def is_already_published(log_rows: List[Dict], item: ScheduleItem) -> bool:
             row.get('time') == item.time_str and
             row.get('asset_filename') == item.media_filename and
             row.get('platform') == 'Instagram' and
-            row.get('publication_id', '').strip()):
+            (row.get('publication_id', '').strip() or row.get('status') == 'skipped')):
             return True
     return False
 

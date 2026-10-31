@@ -6,6 +6,7 @@ Usado por ig_scheduler.py multi-tenant
 
 import os
 import base64
+import tempfile
 import requests
 import time
 import logging
@@ -76,8 +77,30 @@ class IgPublisher:
         return url
 
     def upload_to_catbox(self, file_path: Path) -> str:
-        """Sube la imagen a catbox.moe y devuelve la URL pública."""
+        """Sube la imagen a catbox.moe y devuelve una URL con contenido real.
+
+        Catbox deduplica por hash. Si ya tiene una copia corrupta de 0 bytes,
+        devuelve esa misma URL rota en cada intento. Por eso se verifica que la
+        URL sirva bytes y, si no, se re-codifica la imagen para cambiar el hash.
+        """
         logger.info(f"Subiendo a catbox: {file_path.name}")
+        url = self._catbox_upload(file_path)
+        if self._url_has_content(url):
+            logger.info(f"✅ catbox: {url}")
+            return url
+
+        logger.warning(f"catbox devolvió un archivo vacío para {url}; re-codificando")
+        reencoded = self._reencode(file_path)
+        try:
+            url = self._catbox_upload(reencoded)
+            if not self._url_has_content(url):
+                raise RuntimeError(f"catbox sigue devolviendo un archivo vacío: {url}")
+            logger.info(f"✅ catbox (re-codificado): {url}")
+            return url
+        finally:
+            reencoded.unlink(missing_ok=True)
+
+    def _catbox_upload(self, file_path: Path) -> str:
         with open(file_path, "rb") as handle:
             response = requests.post(
                 "https://catbox.moe/user/api.php",
@@ -89,8 +112,37 @@ class IgPublisher:
         url = response.text.strip()
         if response.status_code != 200 or not url.startswith("http"):
             raise RuntimeError(f"Error catbox: {response.status_code} {url[:120]}")
-        logger.info(f"✅ catbox: {url}")
         return url
+
+    @staticmethod
+    def _url_has_content(url: str) -> bool:
+        try:
+            response = requests.get(
+                url, timeout=30, stream=True, headers={"User-Agent": USER_AGENT}
+            )
+            if response.status_code != 200:
+                return False
+            length = response.headers.get("Content-Length")
+            if length is not None:
+                return int(length) > 0
+            return bool(next(response.iter_content(1024), b""))
+        except (requests.RequestException, ValueError):
+            return False
+
+    @staticmethod
+    def _reencode(file_path: Path) -> Path:
+        from PIL import Image
+
+        handle = tempfile.NamedTemporaryFile(
+            prefix="ig_upload_", suffix=".jpg", delete=False
+        )
+        handle.close()
+        target = Path(handle.name)
+        with Image.open(file_path) as image:
+            image.convert("RGB").save(
+                target, "JPEG", quality=92, optimize=True, progressive=True
+            )
+        return target
 
     def upload_image(self, file_path: Path) -> str:
         """Sube la imagen al host configurado (imgbb o catbox)."""
