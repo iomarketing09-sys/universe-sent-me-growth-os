@@ -73,3 +73,6 @@ tenants/*/ads/campanas/*/piezas/Assets/
 tenants/*/ads/insights/*.csv
 tenants/*/ads/insights/capture_state.json
 tenants/*/ads/insights/captures/
+
+# Catálogo Flexi: repositorio independiente, no se versiona desde growth-os.
+flexi-catalogo-oi26/
