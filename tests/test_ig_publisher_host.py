@@ -39,6 +39,7 @@ def test_catbox_devuelve_url(tmp_path, monkeypatch):
         return FakeResponse(200, "https://files.catbox.moe/abc.png")
 
     monkeypatch.setattr(ig_publisher.requests, "post", fake_post)
+    monkeypatch.setattr(publisher, "_url_has_content", lambda url: True)
 
     assert publisher.upload_image(asset) == "https://files.catbox.moe/abc.png"
     assert calls == ["https://catbox.moe/user/api.php"]
