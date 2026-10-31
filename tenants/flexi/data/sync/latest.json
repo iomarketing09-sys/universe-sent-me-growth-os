@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "tenant_id": "flexi",
-  "generated_at": "2026-10-28T05:05:15.851869+00:00",
+  "generated_at": "2026-10-31T05:07:44.203419+00:00",
   "mode": "local_evidence",
   "external_requests": 0,
   "external_writes": 0,
@@ -17,12 +17,132 @@
           "data": {
             "data": [
               {
+                "id": "18098706548540493",
+                "caption": "Un nuevo par, un nuevo encanto y muchas formas de lucir espectacular 😎 \n\nVen a Zapatería #Flexi #PiedrasNegras a conocer nuestra colección otoño-invierno y encuentra esos zapatos que no querrás dejar de usar.😌",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/879349104_122246300918372530_6004416921667486711_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=PDCHV2q3lSsQ7kNvwHA0tSI&_nc_oc=Adrpp3KFFr0yo_-nhne0L338KK8UHDcFScXXOo37e0STr0c7aafVRSWJuCg0yQKjApf3Gp7MVYcj1fvFurQ5W8e9&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQQDKW8M7DKrO1WodpZufON9VoiTjXKltG3vnWZgLRzQBg&oe=6AEB65CE",
+                "permalink": "https://www.instagram.com/p/DfIchTZEqfW/",
+                "timestamp": "2026-10-30T20:31:07+0000"
+              },
+              {
+                "id": "18200412685381659",
+                "caption": "¡Que tus pasos anuncien que llegó una nueva temporada! Estrena botines y deja que tu estilo haga lo suyo 😉\n\n#NuevaTemporadaOI26 en Zapatería #Flexi #PiedrasNegras #Botines #ComodidadEnMovimiento",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/870306399_122246300516372530_1910599211281354961_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=VaeNdNnOR7wQ7kNvwG-yRVh&_nc_oc=AdqJxK3TBO3Q4VrPFejOL1QVoGC2Gt5IPLsIWredRGHMI2goI6wSm-OUqATExVHODwZ6oUYxA8ugRmbASO4oyZ9a&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQS6hWe_Mw1lnlWAnlPPFULQ5JWnRSDR4WpeLjUH8Ib7Dg&oe=6AEB3083",
+                "permalink": "https://www.instagram.com/p/DfISHbrFJvH/",
+                "timestamp": "2026-10-30T19:00:09+0000"
+              },
+              {
+                "id": "18504432970096893",
+                "caption": "Un gustito para ti, un nuevo estilo para lucir y toda una temporada para disfrutarlos 😍\n\nConoce lo nuevo de la #NuevaTemporadaOI26 que llegó a Zapatería #Flexi #PiedrasNegras \n¡Ven por tus favoritos!",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/867595911_122246300060372530_261146475871187870_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=EytVWGqJDvYQ7kNvwGp-nUm&_nc_oc=AdqtGoqY4UU57VrfdeXEQClH0fAfq6NSo1aRFgjo4kgMfrOEB9bWrG4sFWXPK4_PL3VOYzk96QW2L0Bij2pQ7HmM&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQQJuCGtPU3_crILbQHFXQBMh0dUtH4Un3jCrT5v-nMPyg&oe=6AEB5965",
+                "permalink": "https://www.instagram.com/p/DfIA8IUiYfj/",
+                "timestamp": "2026-10-30T16:30:03+0000"
+              },
+              {
+                "id": "17912844681490040",
+                "caption": "Atrévete a crear combinaciones modernas, juega con las tendencias de esta temporada y descubre cómo el calzado perfecto puede transformar por completo tu look 😉\n\n#Quirelli en Zapatería Flexi #PiedrasNegras. Soriana Híper local 25 📍",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/867487715_122246142392372530_1862454184783008826_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=p8htya_yKwQQ7kNvwFHYBo5&_nc_oc=AdrDyKTgF_-UJGkEig2hGvhIG5wyilGhnTJFbq9r9QDeGgx1BBAKEoSwkAfh_6Xndl42euUdvNnEzKr5Nu8MypIV&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQRQHkLEixl1qh__wkWm2cLQLYK5nR1UYiipHL3mFgWVJA&oe=6AEB5876",
+                "permalink": "https://www.instagram.com/p/DfF1ZvpDsou/",
+                "timestamp": "2026-10-29T20:10:46+0000"
+              },
+              {
+                "id": "18091947797228386",
+                "caption": "Los botines #Quirelli son ese toque de elegancia que transforma tu look y hace que cada paso destaque con personalidad 😎 \n\nEsta temporada, no te conformes con lucir bien, atrévete a deslumbrar🤩\n\nNuevos en Zapatería Flexi #PiedrasNegras",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/867595925_122246142038372530_835498009288416073_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=LfIPVPrDBYcQ7kNvwG_rlol&_nc_oc=AdrTgHAwbzDmuKtKyoNkyj0Sm1ru8WNm_pMNOWqKFEr4_nGqlMrZiGBcNlhEBAZL31cH6cqHvgtHCTkIMA8qQA0N&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQS-M7fAMNlt8oXvDyt9DALn8g_ojGKFSxDm9Pjgi8Dk4A&oe=6AEB643C",
+                "permalink": "https://www.instagram.com/p/DfFtZWrk1Bq/",
+                "timestamp": "2026-10-29T19:00:48+0000"
+              },
+              {
+                "id": "18144685495611509",
+                "caption": "¡Que tus pasos hablen de estilo y tus #botas cuenten una historia de elegancia!😁 \n\nDescubre lo nuevo de Quirelli y dale a tus looks ese toque que roba miradas, conquista el otoño y convierte cualquier camino en una pasarela 👀\n\n¡Esta temporada, atrévete a caminar con estilo propio! #Quirelli en Zapatería Flexi #PiedrasNegras",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/871084952_122246141564372530_4887793057837747179_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=Msg4lFh54yMQ7kNvwGBfOWl&_nc_oc=Adp0XTcajSvgRUbr2ZY_J3mcEz2-1z-YoZ9CSUXfZsEWciW2gItgVFbG5I3s4gAJswxxP8rcJTwzT9AGLeDEqLkK&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQT7iPA2lK6QuoMT7WE-yCWpaGT4-7HEbbQsxSDv-Nc-VA&oe=6AEB5AAB",
+                "permalink": "https://www.instagram.com/p/DfFfpmBEqfC/",
+                "timestamp": "2026-10-29T17:00:41+0000"
+              },
+              {
+                "id": "17990883060116541",
+                "caption": "Llegó la bota que le da otro aire a tus looks de otoño 🤎 En tan, va con jeans, falda y todo lo que ya tienes. ¿Ya la viste? Zapatería #Flexi #PiedrasNegras #NuevaTemporadaOI26\n\nModelo: 142601",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t51.82787-15/870830235_17959047219257117_6935122296398105680_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=63JRc9svAEYQ7kNvwESESVb&_nc_oc=AdoSaBD8ngwTqtstnl5BwvKydHkUpDh0iqets35IDEhCRq-sMcrGRGcD7TyZ_-iKxcvxPVO5FCX1wozYEgzZkdtz&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQQ6ECnoayof3BSq8cVC0x2sw9FS9Xxz6ecxODh2kqLxNQ&oe=6AEB34F3",
+                "permalink": "https://www.instagram.com/p/DfFSv8OoN96/",
+                "timestamp": "2026-10-29T15:08:06+0000"
+              },
+              {
+                "id": "17910863607565382",
+                "caption": "Dale un toque de encanto otoñal a cada paso 👍🏻\n\nBotines con diseños que enamoran, ideales para recorrer la ciudad, disfrutar una caminata al aire libre o vivir tus planes favoritos con estilo y comodidad.\n\n¡Looks que siguen tu ritmo!\n#NuevaTemporadaOI26 Zapatería #Flexi #PiedrasNegras",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/866143768_122246005370372530_2243566173642884964_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=_mXWaCC0_5QQ7kNvwHOGt-o&_nc_oc=AdrBlTMU64-BaBtMWFTuL7R0z2dmIwRIJ_nh9rUfKpDBjzGAW95nk_OvnfSwvgjuSav0cjhAInHSX-qpX1qoBhGT&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQRmFgp67TMpwBs24Y8j5dmkU_Hah2ig895shi9tGjflFg&oe=6AEB4EA2",
+                "permalink": "https://www.instagram.com/p/DfDWWcSj5Ih/",
+                "timestamp": "2026-10-28T21:00:57+0000"
+              },
+              {
+                "id": "17917338279538016",
+                "caption": "Un diseño que enamora, un color que cautiva y la comodidad que distingue a Flexi 😉\n\n¡Luce lo mejor de nuestra colección y camina con estilo en cada ocasión!\n\n#NuevaTemporadaOI26 Zapatería #Flexi #PiedrasNegras",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/867852665_122246004848372530_2598884204881839401_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=ozj03Q_XnfcQ7kNvwHLgwuK&_nc_oc=AdqUH97qlA33jxDs1B5NsuNXLG17IiWuWPqFRXypVIgPKBwdY8IFHwRZiL58XXlRS3prY-zUQyJQfODQoYTyVRl4&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQSfFmZltpD0kXBr1LUhXYWgx6AnyTEIT93gc_UN4x3N1g&oe=6AEB5B89",
+                "permalink": "https://www.instagram.com/p/DfDIk8IEpwB/",
+                "timestamp": "2026-10-28T19:00:36+0000"
+              },
+              {
+                "id": "18179879887435433",
+                "caption": "Hay ocasiones que merecen un look extraordinario👌🏻 \n\nLos botines #Quirelli ponen el toque de distinción que transforma cada paso en pura elegancia. ¡Haz de cada evento tu mejor pasarela!🤎\n\nZapatería Flexi #PiedrasNegras #EstiloQUIRELLI",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/867618957_122246004500372530_6920793734947272482_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=NBv3bYLZllAQ7kNvwHi9o0X&_nc_oc=Adpn4GM4-rcniA0VOhuDp0qJ_gf353cwsUtpa2oMbtIpCc1UFIyAIgcqalljlW8u-gusSGLtQiicfSDIfBi4gbhW&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQRJQDgIOgWaYcYdXqjj401tFxQB-VnIcIFKMJMQEobMKQ&oe=6AEB6636",
+                "permalink": "https://www.instagram.com/p/DfCz-FICC0D/",
+                "timestamp": "2026-10-28T16:00:33+0000"
+              },
+              {
+                "id": "18129355670309228",
+                "caption": "Hay días que piden caminar sin prisa. 👟\n\nISAURA: una silueta limpia que pasa del trabajo a la tarde sin pedir permiso.\n\nConfort Flexi desde el primer paso, para esas jornadas que no se detienen.\n\n¿Flexi o Quirelli para ti? Escríbenos y te ayudamos a encontrar tu modelo.\n\n#Flexi #ComodidadQueCaminaContigo #PiedrasNegras #Calzado",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t51.82787-15/867806629_17958859737257117_4695643925936016019_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=pEgQLad9y4EQ7kNvwGjVY1e&_nc_oc=AdqYLAcNe3fxsKHIoPU10CJO4YQy7kVSifBjrKgQ4ep8MhYDXE35rjTwnyDvIDeY37lu7snwzeC_7UacbXpl5uK9&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQTAMUf_jvpuMZI5PxO5nteBG2pAXaWMrVpvLUloCql4Fw&oe=6AEB4788",
+                "permalink": "https://www.instagram.com/p/DfCtumVn_3K/",
+                "timestamp": "2026-10-28T15:06:08+0000"
+              },
+              {
+                "id": "18081093731377604",
+                "caption": "Looks que siguen tu ritmo 🙌🏻\n\nEsta temporada, dale a tus pasos ese toque otoñal que enamora: botas que marcan el estilo y una bolsa que complementa cada detalle 👢👜\n\n#Botas nuevas en Zapatería #Flexi #PiedrasNegras",
+                "comments_count": 0,
+                "like_count": 0,
+                "media_type": "IMAGE",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/869832068_122246003828372530_4646217005019728423_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=apXazmP1CCIQ7kNvwFExtvf&_nc_oc=AdqZeHfyt2z1uKAG1C61NZH54no0XyCGLutWZ1wsb9vlM95AzNp5_P5Yw99DcQ1wXc2a4qq1_9_z7ZRRvBgTpWbP&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQTRwP5aS4KXMyoKOtDc17SCm6ZJjHrpQ50TtrFWun32vg&oe=6AEB5963",
+                "permalink": "https://www.instagram.com/p/DfCtGvBCF6W/",
+                "timestamp": "2026-10-28T15:00:34+0000"
+              },
+              {
                 "id": "18065860184792396",
                 "caption": "Llegaron más diseños para enamorarte esta temporada. 🍂 \n\nBotines que visten tus pasos de estilo y convierten cualquier outfit en una declaración de buen gusto😉\n\n#NuevaTemporadaOI26 en Zapatería #Flexi #PiedrasNegras #ComodidadEnMovimiento",
                 "comments_count": 0,
                 "like_count": 0,
                 "media_type": "IMAGE",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/866025206_122245852328372530_2268509868769611915_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=oUbuMESc5FkQ7kNvwESUqjs&_nc_oc=AdoL1xqKqE7-1uuzH9Ssr2_TTmZeJMxVUpJIKzSvT1W4PH_rbPAR8wYIT7HivjfJCBiVyBnvuJQXdIVOTc9VTI9G&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQSvKg2W9IjHBsk4ozHnO8qC05pzdLZIgoQbuWK1FjTSYA&oe=6AE74C5B",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/866025206_122245852328372530_2268509868769611915_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=8RkDJHoITJQQ7kNvwE9Vd_7&_nc_oc=AdpoZG0-jtDVz--NEhuWrHNE6Swag9tZA3blpJW1fAMM_tjAz_zJyZ_7Ed6XvgI05rdxXfChB4KFp1n2h_PaWOLB&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQSfe0RFxA2CGaHK0iB-CVy40EJjBzvDMoHdi65PNPd1lg&oe=6AEB40DB",
                 "permalink": "https://www.instagram.com/p/DfAuFVTFPxp/",
                 "timestamp": "2026-10-27T20:30:36+0000"
               },
@@ -32,7 +152,7 @@
                 "comments_count": 0,
                 "like_count": 0,
                 "media_type": "IMAGE",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/869276513_122245851932372530_7967219101440542894_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=yzpwXksp9UgQ7kNvwFFcwfW&_nc_oc=AdpputRoKm7HER-eEsxZA_BkksLAjvxmOcvS2C79gYaUo5vguWEGUUezQZPrl9Z76ffzZWBFh0FDpJyqK8WiwhS_&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQQN8qBdnUSuhGU2lPmTf-E6H9o0yx0unJS2AAnMWW19nw&oe=6AE759F3",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/869276513_122245851932372530_7967219101440542894_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=CgYqz9TzpfgQ7kNvwEwNTZP&_nc_oc=AdrpYuBrvAlr7_B3PDtHOuB7ym5H-O_1UIKjg_ibHQbuGB-tj9P9IZaCvlzJTk9gK-iLUULiw0nfqXoxYQb8FObv&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQSFkuy8Mz71oXdB38UoXBNKjsaU79aPWegQUT2NGUa7vA&oe=6AEB4E73",
                 "permalink": "https://www.instagram.com/p/DfAer4Zj5Bk/",
                 "timestamp": "2026-10-27T18:16:03+0000"
               },
@@ -42,7 +162,7 @@
                 "comments_count": 0,
                 "like_count": 0,
                 "media_type": "CAROUSEL_ALBUM",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/866046730_122245851362372530_6836709414390015451_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=gFCtZXJOE3IQ7kNvwGpWMoe&_nc_oc=AdrkQr_K-32R9ok8Bb_MQRMdq7BVzeeOj_20xRqHb0RonqcdVPkIWlkoJwOqkIh7zWM2yuRkrZ2c2Lu4AEEX4l_n&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQRqQ50aaShswrExMclTse-9bnVRjdqrD6gMl9sRIx3Zyw&oe=6AE76E5C",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/866046730_122245851362372530_6836709414390015451_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=4ZxBZztwnv4Q7kNvwESiu3D&_nc_oc=AdoT9a9nOBf7ey3N1ArE1Ue3w-V1_t4GfFkHJc64CB_QOHw8ZTjHUo-utdhE25Ld9nFlfg6hBEcA1atv1jXdFBRX&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQTJpiWRgJazwAr_x7lEB6k4uLXARPqrNq62piLA-y-Z_w&oe=6AEB62DC",
                 "permalink": "https://www.instagram.com/p/DfAPOL4CkCW/",
                 "timestamp": "2026-10-27T16:00:55+0000"
               },
@@ -52,7 +172,7 @@
                 "comments_count": 0,
                 "like_count": 0,
                 "media_type": "CAROUSEL_ALBUM",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/866081437_122245850822372530_2442270688028352291_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=y9koBxTQd5QQ7kNvwGs_o0g&_nc_oc=AdoG5mwETKw6ts7Ru6LFB305VxtyQTWSn73Uxr3lyLWFnuj6qX2Q9vf24pU7tZSW6DiG0x8Fyylh8l251-LqI4XZ&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQQuOYozQ4-93QPwba1_y4f8AYbWJ3hiT6jzgQNqmdvfcg&oe=6AE741DB",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/866081437_122245850822372530_2442270688028352291_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=P_UdAXzR2c0Q7kNvwEcPDBR&_nc_oc=AdpIDWmdR2hesc2rzIlYUPeTmoYB0fgN6L8u46MsNBydzU-m2-GoyhpfEFFHWxrVpk4iy95lkSgX_PKoipNczZx2&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQQZKUIw7uv_5KJR7t8LXYuXpso0A3Agn-HglArAeFbSXQ&oe=6AEB365B",
                 "permalink": "https://www.instagram.com/p/DfAE6cHAd9v/",
                 "timestamp": "2026-10-27T14:30:51+0000"
               },
@@ -62,7 +182,7 @@
                 "comments_count": 0,
                 "like_count": 0,
                 "media_type": "CAROUSEL_ALBUM",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/866609227_122245704452372530_2373107905020224875_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=F3IawkIyY9cQ7kNvwHBTwC4&_nc_oc=AdrBpNYaNY_CYge26Mne4TNFkDgRaHlwQUJZ3JXPjm-Wvc-BVUc4dF8A4knjIQ_pieBWYeTkaWXSpeREognBJeeW&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQQ-yOyyIGbWkr1C3jp6U5XQNI6C-YZTRSmA6-vpvKTcdA&oe=6AE76882",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/866609227_122245704452372530_2373107905020224875_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=jq0Gprv8BkYQ7kNvwHQLTn-&_nc_oc=Adre6lswbUOXfIeN1dR_8rl2J2NTJxFG-cC26CUhQQid02u2UPOuijJGCAlZwlP-iYHFFRjFFSaNsLaYxMODJXS0&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQRel42W5wJg87xyB_aaWBQ6Vb51oG1Uf4HRIgYFHwjllg&oe=6AEB5D02",
                 "permalink": "https://www.instagram.com/p/De-AJuFFX6b/",
                 "timestamp": "2026-10-26T19:10:46+0000"
               },
@@ -72,7 +192,7 @@
                 "comments_count": 0,
                 "like_count": 0,
                 "media_type": "IMAGE",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/866609219_122245704056372530_9025126218270442129_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=C1kwx3JZfLQQ7kNvwEhGdjx&_nc_oc=AdoF2IAUQNJzIINLgangTG6GhJNCEUAFp1rrfRNMmkasNCLjY2Bd8GTzK2fGZHwfMA3MROynGPJUmsBC95h_19Pu&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQQ7KsEq6ntX-fJRMBiVroF2LARDCcBHLPm5C6yJjggwIA&oe=6AE75E0A",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/866609219_122245704056372530_9025126218270442129_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=UXaixwyO200Q7kNvwFPX1L7&_nc_oc=AdohvEZS2klRVZUNn8L-rOPx0nUZ9KAU-0lP_zAv_wxKF0SVpGGKBcOvFU2QQp_rdKHxth2crh45ZWbvdzUxuib8&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQTgL0UMNJACfS6p_64pTgdaIscpM_m2GKKI7ezlakCB2g&oe=6AEB528A",
                 "permalink": "https://www.instagram.com/p/De90oGAjYNV/",
                 "timestamp": "2026-10-26T17:30:03+0000"
               },
@@ -82,7 +202,7 @@
                 "comments_count": 0,
                 "like_count": 0,
                 "media_type": "CAROUSEL_ALBUM",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/864284917_122245703546372530_7385396219210602887_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=Bh_C-HW7iXwQ7kNvwHkHFx1&_nc_oc=Adr5mxHkvM23z_aDCOV0DLxnCIZTnOaKYMq1jfKoFc44g4fNU9y2d7shPFfLX4yojzcbLE7A1BL02qHVbB1SW8nI&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQRysF65TwsF8xEgPqmvjZ0HXr9iUMgNsxYwE2ZZ4zK1ug&oe=6AE74398",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/864284917_122245703546372530_7385396219210602887_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=AC_rNhBu8nsQ7kNvwEF_dPN&_nc_oc=Adp5jYPGQ8uit6QE0WBfw0E3c53wvc6MMZULiFZ7MLPhgxiGFgxARp_Bmjk6mjXEPKChII6__Y2oCe_8KSPliymI&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQRDaOMoQmxvLpqH4K3n47vWXIaLMFQ4uPEXKC_xZ09C7Q&oe=6AEB3818",
                 "permalink": "https://www.instagram.com/p/De9jkv7jHyT/",
                 "timestamp": "2026-10-26T15:01:03+0000"
               },
@@ -92,7 +212,7 @@
                 "comments_count": 0,
                 "like_count": 0,
                 "media_type": "IMAGE",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/863323754_122245610246372530_6023630738723525795_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=JDKApBcdVlMQ7kNvwHIqUcK&_nc_oc=Ado9PuIf684A9W3JBomCKfhZiDe29-k6s5ZyIEk3aJKqIks3NwHIf2_RnufRoemxhSoJKKDfAlquzkg3IyzJ1guY&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQSkjDBOXtBJQR2U4yvl-UEhwrhkMWmE1MToUKGOhjVfNA&oe=6AE77022",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/863323754_122245610246372530_6023630738723525795_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=VcDMyHwK13YQ7kNvwGOCTcD&_nc_oc=AdrE-r2sBgMG10IlhiwRUDTikJGLrR9nhqvhRZU_ZMV_DBZEeUb89a6KQHDMMUc8rLi0vJQhLm_BzzarhYCdGnev&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQT7vIWTD_X4ZtKg-hO5BTRHvPmjE0k5jSjtwMT6nDiong&oe=6AEB64A2",
                 "permalink": "https://www.instagram.com/p/De7MeVEAeeI/",
                 "timestamp": "2026-10-25T17:00:43+0000"
               },
@@ -102,7 +222,7 @@
                 "comments_count": 0,
                 "like_count": 0,
                 "media_type": "CAROUSEL_ALBUM",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/861831568_122245477610372530_7832034183028644766_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=CtNa5iBYkDoQ7kNvwFIaFRE&_nc_oc=AdrIU037BmUiM27MqxZaxWQO7dzy8leUx2rbo36OLbV8ywh_99BSeRNpRzvD2Q4mGVB9SDT6LV2XNnQvSVIIXpLB&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQQ9bx7LQWms57sIZdV_j_h-in6NpKJpffXD0muq36Qj5A&oe=6AE75EEA",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/861831568_122245477610372530_7832034183028644766_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=1_5-0g9jSR8Q7kNvwHnwuc-&_nc_oc=Adpw2jmM5nyGy1uMqk4wt1A1ULKkba2khXW9xRBL-VSeX_QvcisG9ZNRNGrfjWQY9yqVdy3G3K1z854QXgr4RZLz&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQT-L2AYGR3bAdxQ-AP-1eVVfGYbwyD1k2NWYP9m3BMZ1w&oe=6AEB536A",
                 "permalink": "https://www.instagram.com/p/De5A0BMlOa_/",
                 "timestamp": "2026-10-24T20:40:20+0000"
               },
@@ -112,7 +232,7 @@
                 "comments_count": 0,
                 "like_count": 0,
                 "media_type": "IMAGE",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/860005687_122245477124372530_4594655373803102071_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=n7Dx3g07_ukQ7kNvwGj3dhv&_nc_oc=AdrbDsBeiUx_DX2cd796-fRggwvgbV9cJO0LUJWfK6frgxWkE02rhUovNSzEiMYub53azo1qkSZpoYMHi7bjzkWX&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQQf7LO3UX5JoItNhzgfXRt0pF4SSkVSH-QL7EGYadczgA&oe=6AE75128",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/860005687_122245477124372530_4594655373803102071_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=UcbPSYvCkqwQ7kNvwFCj4WE&_nc_oc=AdroN5xp1NyTYwMUMTRlKz0HFboa6SazLZLlXDq6CNzppASwZm29APIHmNmrwEkJBJvSwOxex-klaWyyuzACqgs1&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQR4qCx2uFWPn9VSx-WF1rHj32_sGxVKwhyobuBc7fcS2Q&oe=6AEB45A8",
                 "permalink": "https://www.instagram.com/p/De4yBMCASha/",
                 "timestamp": "2026-10-24T18:31:04+0000"
               },
@@ -122,7 +242,7 @@
                 "comments_count": 0,
                 "like_count": 0,
                 "media_type": "IMAGE",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/861914384_122245469096372530_2887145012029316867_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=FQS9dm2ehQMQ7kNvwFyLr1V&_nc_oc=AdrAyhbKjHpk_Bp6yX7jBx2BEcbs1qwIeQih8AChsQi5hbRmsnfTxCr9p2MHzsVK_73jLZ9liM280nYGyRt8My9W&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQTeuHi8NPutLAEquk09fJ9Wkm1KKI-AkMu36-Fx1ZbmAg&oe=6AE759D4",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/861914384_122245469096372530_2887145012029316867_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=9AH0ZYVIe9sQ7kNvwEadPsc&_nc_oc=AdqDDd-RfS-szTti25RCcEWTlx_-pzpMBi6IHUTlq3uuSrriyqxyDh9wlIhOGm50QuoATr13y96W-8tI5MD8Vc24&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQRa5XjKvozJQuzgVGJN7yOvYp4VBfv1mzqsO8t4DwLs1w&oe=6AEB4E54",
                 "permalink": "https://www.instagram.com/p/De4hkiioPam/",
                 "timestamp": "2026-10-24T16:07:21+0000"
               },
@@ -132,7 +252,7 @@
                 "comments_count": 0,
                 "like_count": 0,
                 "media_type": "IMAGE",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/862932140_122245270016372530_9183940579569501373_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=ke2pAlC6tM8Q7kNvwHSjMdO&_nc_oc=AdorjmJxs7HQagl2TfFksinkwREje1CLWTOFrZFyaCEPIUiOnVevhAmAg-IbsbHskmv57gf4I52RSdJFaaTMqo1w&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQQBfyMQjWIug5SwoqWYPeadkxEbn-GO33vWIfegCSKSyw&oe=6AE76D65",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/862932140_122245270016372530_9183940579569501373_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=Fnbfj3Xen34Q7kNvwG57Z4A&_nc_oc=AdqrFRaasHu0n1AKhSBWtG1Y0wCoVq_xxgSmgaOJeGH33vFu5Dv2-M6mByZSUuBuerRbAu7kZL65qak9gcslGJTt&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQSdxR62DBvyUIlwth8OJYfSsMliEraPl2ENrJzwnOJm_Q&oe=6AEB61E5",
                 "permalink": "https://www.instagram.com/p/De2UqdzgGtF/",
                 "timestamp": "2026-10-23T19:36:05+0000"
               },
@@ -142,137 +262,17 @@
                 "comments_count": 0,
                 "like_count": 0,
                 "media_type": "CAROUSEL_ALBUM",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/858599861_122245269374372530_8390787896659422027_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=EKrglHbwzOQQ7kNvwH0KJ36&_nc_oc=AdpLfwh7i35We6jxHto1L3p56Yi-TRj1ucG9j8XrLz_3w3GUPYljPrbEFa5WieiO2YkOqnIGLXQFahOVlTBlABuh&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQSahMB0tY7i4I6KzONZmu4GmoyLYmmbN627jIp03ISHEw&oe=6AE742F8",
+                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/858599861_122245269374372530_8390787896659422027_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=FT54X6zkOTIQ7kNvwF_Ijtn&_nc_oc=AdprMypNNpHG88DQvOZZX0cwF_nwpRT0k0DrFpTzmyiaWsfuqAw9BqQfvsH59MGuTW7ryXO72v2Lf3hK9f6IWyUI&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=IUAnRIH2eq7kaJtXnk8b5g&oh=00_AQSj7ZnBXhh98UWgqW49Ak3dlrXNCzkczO6OK67bKsCmKQ&oe=6AEB3778",
                 "permalink": "https://www.instagram.com/p/De2EBpJnHS1/",
                 "timestamp": "2026-10-23T17:10:41+0000"
-              },
-              {
-                "id": "18021668255945136",
-                "caption": "Renueva tu estilo esta temporada con el calzado Quirelli para hombre🧔🏻 \n\nSu diseño aporta ese toque de carácter que transforma un look sencillo en uno lleno de personalidad👌🏻\n\nZapatería Flexi #PiedrasNegras\n#Quirelli",
-                "comments_count": 0,
-                "like_count": 0,
-                "media_type": "CAROUSEL_ALBUM",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/864158575_122245268816372530_8772425097792120029_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=aFojFe8CXdQQ7kNvwGsivex&_nc_oc=AdpG39_nqIe3SMMY1L4CH0NKVpYqJVAq7jAgWDy7KtFb7XO5SyOoKJTcvmso1ff3o402sd0NWK75eMqeMUYOWjfs&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQQ9ewFBKby2goyVh0pzq_f9fEXD_6dVcmlN-OMOvNZghQ&oe=6AE751E6",
-                "permalink": "https://www.instagram.com/p/De11O_2Djga/",
-                "timestamp": "2026-10-23T15:01:26+0000"
-              },
-              {
-                "id": "17921843691450124",
-                "caption": "Reuniones, jornadas de trabajo o una salida improvisada… ¡hay un calzado para cada plan! Elige comodidad, calidad y diseño para complementar tu estilo en cualquier ocasión.\n\nElige #Quirelli para caballero 🧔🏻 \nDisponible en Zapatería Flexi #PiedrasNegras📍",
-                "comments_count": 0,
-                "like_count": 0,
-                "media_type": "IMAGE",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/854409840_122245122944372530_8589556499348980226_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=ucifRsbIo_0Q7kNvwEmNpDR&_nc_oc=AdqK7rMFZdZtxhv7iZELn435nHeXZE_4gQdoQG3GnKJ7HUauzxir2vUNNUN9qRvtjo5JxXvk2eBaJ0NIbrTbxzRP&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQSu64wkufKvodv8BXU8_qTJP87-NK7beugkd95OG2xO2A&oe=6AE764FB",
-                "permalink": "https://www.instagram.com/p/DezyqY-iJOC/",
-                "timestamp": "2026-10-22T20:00:30+0000"
-              },
-              {
-                "id": "17991201593865477",
-                "caption": "Diseños modernos, tonos que enamoran y combinaciones perfectas para complementar tus outfits de temporada 🍂 \n\nSu estilo versátil los convierte en el match ideal para lucir increíble, mientras disfrutas de la comodidad en cada paso. 🤩\n\nZapatería #Flexi #PiedraaNegras #Sneakers",
-                "comments_count": 0,
-                "like_count": 0,
-                "media_type": "IMAGE",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/855000666_122245122530372530_464911551176813435_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=nzpcZToV4jIQ7kNvwHQqKot&_nc_oc=AdqnL8NA80XP6O833rTptpGGqKFP3716M5L6DXIRfvLFc05AayaV7RqgU9zjvq_mRA9blXH2QilCVm_bXLfV0luI&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQSeQ7BbouUpDjmAVWuPhbYiXEexwlaSNcokIE5Ik6vHkA&oe=6AE73E3E",
-                "permalink": "https://www.instagram.com/p/DezeCV7iZnN/",
-                "timestamp": "2026-10-22T17:00:16+0000"
-              },
-              {
-                "id": "17992022507856606",
-                "caption": "Comodidad que se nota, estilo que destaca 😉\n\nPara el hombre que busca verse bien sin renunciar al confort. Descubre nuestro calzado para caballero, con diseños modernos y versátiles que se adaptan a diferentes momentos de tu día👍🏻\n\nZapatería #Flexi #PiedrasNegras\n#TuRitmo #ComodidadEnMovimiento #MenShoes",
-                "comments_count": 0,
-                "like_count": 0,
-                "media_type": "IMAGE",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/859784966_122245121882372530_4138631760399046163_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=Ae4O4N0CXn4Q7kNvwETNy4w&_nc_oc=AdpUhZ8DLBb5Odfe8lp2z-fDPirDpoila-AFWmxjv5ROMv-1QHwTLWzyjoA-L5EtbLvEBFjauFNTiDOeMQPYz-xa&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQSue_Mauasbl7pR-eWQ7TxyZPmhHTAOp-ZXKF4osbNO2A&oe=6AE73914",
-                "permalink": "https://www.instagram.com/p/DezQYsliaQZ/",
-                "timestamp": "2026-10-22T15:00:59+0000"
-              },
-              {
-                "id": "18135988393726082",
-                "caption": "Esta temporada, pisa fuerte y luce increíble. Encuentra las botas que van con tu estilo 🍂😎\n\nLas encuentras en Zapatería #Flexi #PiedrasNegras Soriana Híper local 25",
-                "comments_count": 0,
-                "like_count": 0,
-                "media_type": "IMAGE",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/843161603_122244987368372530_3654701291065864829_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=XeEZ65dte88Q7kNvwGRytAe&_nc_oc=AdpoprTosbv6w-A7tbaG6Pk8BVKkH9GMvfERfBm8vg4gtuoz5BMzoUB-IQyuFdAUVxMH-nS8UpOgxsXBEz85aNCc&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQSiTP9Sy_gxr1HbNTgpzITbtKkRcORbiHWQA8f5zY9ycg&oe=6AE76B27",
-                "permalink": "https://www.instagram.com/p/DexRTUDIM7B/",
-                "timestamp": "2026-10-21T20:30:30+0000"
-              },
-              {
-                "id": "18099763649093910",
-                "caption": "Esta temporada, invierte en esos pequeños detalles que hacen especial tu día💖 \n\nCalzado para lucir hermosa, sentirte cómoda y disfrutar cada momento con confianza. ¡Visítanos en Zapatería #Flexi #PiedrasNegras y encuentra tu favorito!\n\n#NuevaTemporadaOI26 #ComodidadEnMovimiento",
-                "comments_count": 0,
-                "like_count": 0,
-                "media_type": "IMAGE",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/855000582_122244986648372530_7766448401957305640_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=21l36wkBGfQQ7kNvwFhE0hL&_nc_oc=AdoiS8xzNNZyXVjtzavGfdA4iGscvonDCfFK_k1VlpidxAtL7sCLxcTlAFsxtcRQtuD1T5O9Yl8uEvBrEJRIkEmq&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQRCgKKeBdKxiGxte-flnx5tcO-lr_lW-lV_jSj7Yx9rLg&oe=6AE76577",
-                "permalink": "https://www.instagram.com/p/Dew8uDIkTzV/",
-                "timestamp": "2026-10-21T17:30:39+0000"
-              },
-              {
-                "id": "17998624907826172",
-                "caption": "Que tu día avance al ritmo de tu comodidad😌 \n\nNuestro calzado para caballero combina diseños versátiles, estilo y confort, ideal para acompañarte en la oficina o en tus salidas casuales 🙂\n\nZapatería #Flexi #PiedrasNegras #MenShoes #ParaÉl #Comodidad",
-                "comments_count": 0,
-                "like_count": 0,
-                "media_type": "IMAGE",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/844826538_122244986204372530_4018859246014884958_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=tkECD7oIEXQQ7kNvwHq48Fl&_nc_oc=AdqbenqnsP4S4p5Y5p30kvROSm6RjsFscN85C3DWemWLYlevqXagUHGXkfokzETxaCfdvpWtO0GXdfSbNx3Z4_bw&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQS_SqMsJ8zIroOwllugWUl8d7opC4xCKu08v70jvIUPlA&oe=6AE7677C",
-                "permalink": "https://www.instagram.com/p/DewriiZlAWb/",
-                "timestamp": "2026-10-21T15:00:31+0000"
-              },
-              {
-                "id": "18104795402208288",
-                "caption": "Tus pies también merecen un trato especial ✨ \n\nDescubre nuestros calcetines para pie sensible de dama(también tenemos para caballero). Suaves, cómodos y pensados para acompañarte durante todo el día 😌\n\nZapatería Flexi #PiedrasNegras",
-                "comments_count": 0,
-                "like_count": 0,
-                "media_type": "CAROUSEL_ALBUM",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/846567621_122244849782372530_9056352952907912353_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=QfsTKcJBDKgQ7kNvwEnkf6U&_nc_oc=AdqYyVnDyfTn9sJM7JTwd_biDxcReqrPNvzDVgiG1_J6xI0UJby4TM8m6Zd7InlKY3BQI1SDLpA4_1mmdVv3Hrno&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQRPr3a7cy7Wv5WY8oMgzIKQt-KFANYk1_78gFepp9tlnA&oe=6AE76835",
-                "permalink": "https://www.instagram.com/p/Deuv94-CdRh/",
-                "timestamp": "2026-10-20T21:00:44+0000"
-              },
-              {
-                "id": "18116123585023047",
-                "caption": "Un buen tacón puede transformar un outfit y acompañarte con elegancia en cada ocasión👠\n\nZapatería #Flexi #PiedrasNegras",
-                "comments_count": 0,
-                "like_count": 0,
-                "media_type": "IMAGE",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/849853828_122244849338372530_3086302160593361660_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=hcDNALQZ_kUQ7kNvwHsyWbS&_nc_oc=AdorUtSjOl7tJ_SoqsLe4wRfxFLPX9k75XR-OnSSRl8B0cCBvqeGzZPb175L2uhj8pFBOZDstX7KCkoEaWP6J60g&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQSgkzn0tuKlsNOldTsLLW1WLRIeg6vqtc4t7xIW9eEsjQ&oe=6AE750EB",
-                "permalink": "https://www.instagram.com/p/DeuiLnyjVpE/",
-                "timestamp": "2026-10-20T19:00:17+0000"
-              },
-              {
-                "id": "18113591369274631",
-                "caption": "Conoce nuestros diseños de la #NuevaTemporadaOI26 de Flexi y disfruta de opciones casuales, modernas y fáciles de combinar 🤩\n\nLos encuentras en Zapatería #Flexi #PiedrasNegras #ComodidadEnMovimiento",
-                "comments_count": 0,
-                "like_count": 0,
-                "media_type": "IMAGE",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/854568014_122244848876372530_8337819925705634915_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=v137D4sPuQsQ7kNvwHdp1TZ&_nc_oc=AdoGmcrEXMYvFc3MhlTIzLU1dgRKG7Lh6J_nJubKaKC_JRTJ6pqIINNp3dCdViCbGYAA28NSaDhlb-KKbMXekcwl&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQQHWQOwKEoBtV0bRqFXRsQVlemrNcbzAazDJQ4Kwp3XVg&oe=6AE75AB3",
-                "permalink": "https://www.instagram.com/p/DeuUdmFCDFy/",
-                "timestamp": "2026-10-20T17:00:25+0000"
-              },
-              {
-                "id": "18132470029689216",
-                "caption": "Cada paso cuenta cuando sabes a dónde vas 🚶🏻⛰️🌲\n\nLa elección perfecta para tu próxima aventura se encuentra aquí en Zapatería #Flexi #PiedrasNegras",
-                "comments_count": 0,
-                "like_count": 0,
-                "media_type": "IMAGE",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/843397771_122244848432372530_264723048110224986_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=frjV7_rt1JUQ7kNvwFGdnPk&_nc_oc=AdpTRiqWt8xM6Cmna30JkppNMcTUcG83hVqQADFh1jFpXsZoQEbsvK2d8dQRFdyyzgtMxjAQe87A9rAWsRNMDIXs&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQS4ZpF8Q6GMagHLaodrxYzbEWDKRlUMlvWHWnLOvnOCPQ&oe=6AE74A46",
-                "permalink": "https://www.instagram.com/p/DeuGyP3iZQP/",
-                "timestamp": "2026-10-20T15:00:53+0000"
-              },
-              {
-                "id": "17918712483461043",
-                "caption": "Descubre nuestros diseños para caballero y encuentra ese par que querrás usar una y otra vez 👞\n\nZapatería #Flexi #PiedrasNegras",
-                "comments_count": 0,
-                "like_count": 0,
-                "media_type": "IMAGE",
-                "media_url": "https://scontent.cdninstagram.com/v/t39.30808-6/851041123_122244711734372530_2981025418638911225_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=_XgwvlXOfxkQ7kNvwFQD7KM&_nc_oc=AdqQUlvas35FZqVYLjBk_eM73xyygeJJTF3ALW8MOMxnSXmv9uk6_thOPdC44b6Lu2Z_sxkzwvjQP9wDvnmqnjuT&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&edm=AFF3FJ0EAAAA&_nc_gid=aQn6vcDAoOE5ENJxbfXX_w&oh=00_AQQrIgO4TgE1m1HslfnSUy82Ti-pcBpD9QoQCmUZsxFlxg&oe=6AE74FFA",
-                "permalink": "https://www.instagram.com/p/Der_rGBmPJh/",
-                "timestamp": "2026-10-19T19:20:15+0000"
               }
             ],
             "paging": {
               "cursors": {
-                "before": "QVFIVG1Rb2FoY2dCR0VvREt4dXFnT245M3NsS3BabFFESEhlRFYtQnBCZAGh0N0FoUFRNV2pzU1RDY3pmRVVKSnhTb1kwU2tTSUsxVmp4cUctSXR0M2xFVkF3",
-                "after": "QVFIVEV6OHlBa0RscngxeE1xRXBkNGlTeG9LTUNRaU5fakM3MkxocktUR1M2MjlZAUXNsekJFaHFaVU9KemtmbHhvSUNwazVMdlBSajhpN2luc0J4a0FHc1RB"
+                "before": "QVFIVHB6WnhxeGRjMTZA2ME92UU1weThvc0pXVmJUaWxNTlliRmxadktSSDNZAc3RZAc1FtckFyQThsOWFsMDhhNkpVcF9yb0JVYi14cUlaN1o0ZAXhRMi1nYlNn",
+                "after": "QVFIVGI5MUxLYXJsX2ZA4SXkzNFR6TW91MGR1ZAzQxYml0ay1pUm82dFVaWmhlRTBBa2pyWjJsaXhURDQzWXV3MWlNUUFzS2xUMnNOaENYM3dNS2xZAVE1KZA2Rn"
               },
-              "next": "https://graph.facebook.com/v26.0/17841467713484855/media?fields=id%2Cmedia_type%2Cthumbnail_url%2Cmedia_url%2Cpermalink%2Ccaption%2Ctimestamp%2Clike_count%2Ccomments_count&limit=25&order=relevance+desc&access_token=[REDACTED]&after=QVFIVEV6OHlBa0RscngxeE1xRXBkNGlTeG9LTUNRaU5fakM3MkxocktUR1M2MjlZAUXNsekJFaHFaVU9KemtmbHhvSUNwazVMdlBSajhpN2luc0J4a0FHc1RB"
+              "next": "https://graph.facebook.com/v26.0/17841467713484855/media?fields=id%2Cmedia_type%2Cthumbnail_url%2Cmedia_url%2Cpermalink%2Ccaption%2Ctimestamp%2Clike_count%2Ccomments_count&limit=25&order=relevance+desc&access_token=[REDACTED]&after=QVFIVGI5MUxLYXJsX2ZA4SXkzNFR6TW91MGR1ZAzQxYml0ay1pUm82dFVaWmhlRTBBa2pyWjJsaXhURDQzWXV3MWlNUUFzS2xUMnNOaENYM3dNS2xZAVE1KZA2Rn"
             }
           },
           "count": 25
@@ -280,7 +280,7 @@
         "Facebook_Page": {
           "id": "361528203707668",
           "name": "Zapateria Flexi Piedras Negras",
-          "followers_count": 1340
+          "followers_count": 1342
         },
         "Messages_Viewer": {
           "status": "blocked_read_only"
@@ -321,10 +321,36 @@
       "ad_account_configured": true,
       "campaigns": [
         {
+          "id": "120247658527630665",
+          "name": "Flexi OI26 · WhatsApp · Piedras Negras - Editado",
+          "objective": "OUTCOME_ENGAGEMENT",
+          "status": "ACTIVE",
+          "spend": 19.4,
+          "impressions": 1012,
+          "clicks": 75,
+          "reach": 869,
+          "frequency": 1.164557,
+          "ctr": 7.411067,
+          "cpm": 19.16996,
+          "cpc": 0.258667,
+          "conversations": 6,
+          "cost_per_conversation": 3.233333333333333,
+          "messaging_metrics": {
+            "conversations_started_7d": 6,
+            "messaging_first_reply": 5,
+            "total_messaging_connection": 6,
+            "messaging_user_depth_2": 0,
+            "messaging_user_depth_3": 0,
+            "welcome_message_views": 0,
+            "messaging_block": 0,
+            "messaging_conversation_replied_7d": 0
+          }
+        },
+        {
           "id": "120247452749050665",
           "name": "2026-10_flexi_ads_500mxn",
           "objective": "OUTCOME_TRAFFIC",
-          "status": "ACTIVE",
+          "status": "PAUSED",
           "spend": 439.28,
           "impressions": 12772,
           "clicks": 999,
@@ -347,17 +373,248 @@
           }
         }
       ],
+      "ads": [
+        {
+          "campaign_id": "120247658527630665",
+          "campaign_name": "Flexi OI26 · WhatsApp · Piedras Negras - Editado",
+          "name": "Amalia de Quirelli",
+          "spend": 2.35,
+          "impressions": 129,
+          "clicks": 10,
+          "reach": 122,
+          "ctr": 7.75,
+          "cpc": 0.23,
+          "conversations": 0,
+          "cost_per_conversation": 0.0,
+          "messaging_metrics": {
+            "onsite_conversion.messaging_conversation_started_7d": 0,
+            "messaging_conversation_started_7d": 0,
+            "messaging_conversation_started": 0,
+            "onsite_conversion.messaging_first_reply": 0,
+            "onsite_conversion.total_messaging_connection": 0,
+            "onsite_conversion.messaging_user_depth_2_message_send": 0,
+            "onsite_conversion.messaging_user_depth_3_message_send": 0,
+            "onsite_conversion.messaging_welcome_message_view": 0,
+            "onsite_conversion.messaging_block": 0,
+            "onsite_conversion.messaging_conversation_replied_7d": 0
+          },
+          "id": "120247659400790665",
+          "adset_id": "120247659400770665",
+          "status": "ACTIVE"
+        },
+        {
+          "campaign_id": "120247658527630665",
+          "campaign_name": "Flexi OI26 · WhatsApp · Piedras Negras - Editado",
+          "name": "ARISHA - QUIRELLI",
+          "spend": 0.29,
+          "impressions": 6,
+          "clicks": 1,
+          "reach": 6,
+          "ctr": 16.67,
+          "cpc": 0.29,
+          "conversations": 0,
+          "cost_per_conversation": 0.0,
+          "messaging_metrics": {
+            "onsite_conversion.messaging_conversation_started_7d": 0,
+            "messaging_conversation_started_7d": 0,
+            "messaging_conversation_started": 0,
+            "onsite_conversion.messaging_first_reply": 0,
+            "onsite_conversion.total_messaging_connection": 0,
+            "onsite_conversion.messaging_user_depth_2_message_send": 0,
+            "onsite_conversion.messaging_user_depth_3_message_send": 0,
+            "onsite_conversion.messaging_welcome_message_view": 0,
+            "onsite_conversion.messaging_block": 0,
+            "onsite_conversion.messaging_conversation_replied_7d": 0
+          },
+          "id": "120247659400780665",
+          "adset_id": "120247659400770665",
+          "status": "ACTIVE"
+        },
+        {
+          "campaign_id": "120247658527630665",
+          "campaign_name": "Flexi OI26 · WhatsApp · Piedras Negras - Editado",
+          "name": "Izadora",
+          "spend": 13.14,
+          "impressions": 689,
+          "clicks": 52,
+          "reach": 630,
+          "ctr": 7.55,
+          "cpc": 0.25,
+          "conversations": 5,
+          "cost_per_conversation": 2.63,
+          "messaging_metrics": {
+            "onsite_conversion.messaging_conversation_started_7d": 5,
+            "messaging_conversation_started_7d": 5,
+            "messaging_conversation_started": 5,
+            "onsite_conversion.messaging_first_reply": 5,
+            "onsite_conversion.total_messaging_connection": 5,
+            "onsite_conversion.messaging_user_depth_2_message_send": 1,
+            "onsite_conversion.messaging_user_depth_3_message_send": 0,
+            "onsite_conversion.messaging_welcome_message_view": 0,
+            "onsite_conversion.messaging_block": 0,
+            "onsite_conversion.messaging_conversation_replied_7d": 0
+          },
+          "id": "120247659400810665",
+          "adset_id": "120247659400770665",
+          "status": "ACTIVE"
+        },
+        {
+          "campaign_id": "120247658527630665",
+          "campaign_name": "Flexi OI26 · WhatsApp · Piedras Negras - Editado",
+          "name": "LYDIA - FLEXI",
+          "spend": 0.01,
+          "impressions": 2,
+          "clicks": 0,
+          "reach": 2,
+          "ctr": 0.0,
+          "cpc": 0.0,
+          "conversations": 0,
+          "cost_per_conversation": 0.0,
+          "messaging_metrics": {
+            "onsite_conversion.messaging_conversation_started_7d": 0,
+            "messaging_conversation_started_7d": 0,
+            "messaging_conversation_started": 0,
+            "onsite_conversion.messaging_first_reply": 0,
+            "onsite_conversion.total_messaging_connection": 0,
+            "onsite_conversion.messaging_user_depth_2_message_send": 0,
+            "onsite_conversion.messaging_user_depth_3_message_send": 0,
+            "onsite_conversion.messaging_welcome_message_view": 0,
+            "onsite_conversion.messaging_block": 0,
+            "onsite_conversion.messaging_conversation_replied_7d": 0
+          },
+          "id": "120247659400800665",
+          "adset_id": "120247659400770665",
+          "status": "ACTIVE"
+        },
+        {
+          "campaign_id": "120247452749050665",
+          "campaign_name": "2026-10_flexi_ads_500mxn",
+          "name": "LYDIA - FLEXI",
+          "spend": 77.03,
+          "impressions": 1516,
+          "clicks": 155,
+          "reach": 1011,
+          "ctr": 10.22,
+          "cpc": 0.5,
+          "conversations": 17,
+          "cost_per_conversation": 4.53,
+          "messaging_metrics": {
+            "onsite_conversion.messaging_conversation_started_7d": 17,
+            "messaging_conversation_started_7d": 17,
+            "messaging_conversation_started": 17,
+            "onsite_conversion.messaging_first_reply": 17,
+            "onsite_conversion.total_messaging_connection": 18,
+            "onsite_conversion.messaging_user_depth_2_message_send": 9,
+            "onsite_conversion.messaging_user_depth_3_message_send": 3,
+            "onsite_conversion.messaging_welcome_message_view": 20,
+            "onsite_conversion.messaging_block": 0,
+            "onsite_conversion.messaging_conversation_replied_7d": 6
+          },
+          "id": "120247453536340665",
+          "adset_id": "120247452749040665",
+          "status": "CAMPAIGN_PAUSED"
+        },
+        {
+          "campaign_id": "120247452749050665",
+          "campaign_name": "2026-10_flexi_ads_500mxn",
+          "name": "ISSAURA - FLEXI",
+          "spend": 221.65,
+          "impressions": 6790,
+          "clicks": 400,
+          "reach": 4542,
+          "ctr": 5.89,
+          "cpc": 0.55,
+          "conversations": 30,
+          "cost_per_conversation": 7.39,
+          "messaging_metrics": {
+            "onsite_conversion.messaging_conversation_started_7d": 30,
+            "messaging_conversation_started_7d": 30,
+            "messaging_conversation_started": 30,
+            "onsite_conversion.messaging_first_reply": 30,
+            "onsite_conversion.total_messaging_connection": 41,
+            "onsite_conversion.messaging_user_depth_2_message_send": 28,
+            "onsite_conversion.messaging_user_depth_3_message_send": 9,
+            "onsite_conversion.messaging_welcome_message_view": 48,
+            "onsite_conversion.messaging_block": 0,
+            "onsite_conversion.messaging_conversation_replied_7d": 11
+          },
+          "id": "120247453493720665",
+          "adset_id": "120247452749040665",
+          "status": "CAMPAIGN_PAUSED"
+        },
+        {
+          "campaign_id": "120247452749050665",
+          "campaign_name": "2026-10_flexi_ads_500mxn",
+          "name": "ARISHA - QUIRELLI",
+          "spend": 137.16,
+          "impressions": 4423,
+          "clicks": 440,
+          "reach": 3158,
+          "ctr": 9.95,
+          "cpc": 0.31,
+          "conversations": 32,
+          "cost_per_conversation": 4.29,
+          "messaging_metrics": {
+            "onsite_conversion.messaging_conversation_started_7d": 32,
+            "messaging_conversation_started_7d": 32,
+            "messaging_conversation_started": 32,
+            "onsite_conversion.messaging_first_reply": 32,
+            "onsite_conversion.total_messaging_connection": 33,
+            "onsite_conversion.messaging_user_depth_2_message_send": 14,
+            "onsite_conversion.messaging_user_depth_3_message_send": 5,
+            "onsite_conversion.messaging_welcome_message_view": 56,
+            "onsite_conversion.messaging_block": 1,
+            "onsite_conversion.messaging_conversation_replied_7d": 10
+          },
+          "id": "120247453536330665",
+          "adset_id": "120247452749040665",
+          "status": "CAMPAIGN_PAUSED"
+        },
+        {
+          "campaign_id": "120247452749050665",
+          "campaign_name": "2026-10_flexi_ads_500mxn",
+          "name": "Arisha Quirelli",
+          "spend": 3.44,
+          "impressions": 43,
+          "clicks": 4,
+          "reach": 39,
+          "ctr": 9.3,
+          "cpc": 0.86,
+          "conversations": 1,
+          "cost_per_conversation": 3.44,
+          "messaging_metrics": {
+            "onsite_conversion.messaging_conversation_started_7d": 1,
+            "messaging_conversation_started_7d": 1,
+            "messaging_conversation_started": 1,
+            "onsite_conversion.messaging_first_reply": 1,
+            "onsite_conversion.total_messaging_connection": 1,
+            "onsite_conversion.messaging_user_depth_2_message_send": 1,
+            "onsite_conversion.messaging_user_depth_3_message_send": 0,
+            "onsite_conversion.messaging_welcome_message_view": 2,
+            "onsite_conversion.messaging_block": 0,
+            "onsite_conversion.messaging_conversation_replied_7d": 0
+          },
+          "id": "120247452749030665",
+          "adset_id": "120247452749040665",
+          "status": "CAMPAIGN_PAUSED"
+        }
+      ],
       "summary": {
-        "total_spend": 439.28,
-        "total_impressions": 12772,
-        "total_clicks": 999,
-        "total_conversations": 80
+        "total_spend": 458.67999999999995,
+        "total_impressions": 13784,
+        "total_clicks": 1074,
+        "total_conversations": 86
       },
       "local_campaigns": [
         {
           "campaign": "2026-10_flexi_ads_500mxn",
           "state": "**G1 APROBADO — G2 pendiente de aprobación (propuesta v1 generada)**",
           "evidence": "/home/universe-sent-me/growth-os/tenants/flexi/ads/campanas/2026-10_flexi_ads_500mxn/00_estado.md"
+        },
+        {
+          "campaign": "2026-11_flexi_ads_560mxn",
+          "state": "**ACTIVA en Meta desde 2026-10-30 17:36 CDT**",
+          "evidence": "/home/universe-sent-me/growth-os/tenants/flexi/ads/campanas/2026-11_flexi_ads_560mxn/00_estado.md"
         }
       ]
     },
@@ -386,7 +643,7 @@
           },
           "total_messages": 0
         },
-        "last_sync_at": "2026-10-28T05:05:15.851780+00:00",
+        "last_sync_at": "2026-10-31T05:07:44.203340+00:00",
         "waba_id": "0128328b-7c24-4c40-b4f8-c2720c080d5f",
         "waba_db": "flexi_whatsapp_obs"
       },
