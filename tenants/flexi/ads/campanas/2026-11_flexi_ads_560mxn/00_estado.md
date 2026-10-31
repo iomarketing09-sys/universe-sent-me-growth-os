@@ -60,6 +60,8 @@ Un solo ad set con los cuatro anuncios y 560 MXN lifetime. Meta reparte el presu
 - Piedras Negras, Coahuila. Personas que viven en la ciudad, sin radio ampliado.
 - Mujeres, 25 a 55 años.
 - Idioma español.
+- Horario: lunes a sábado de 9:00 a 20:00 y domingo de 12:00 a 18:00,
+  zona `America/Chicago`.
 - Segmentación detallada: ninguna.
 - Ubicaciones automáticas de Meta.
 - Destino: solo WhatsApp (+52 878 138 5284).
@@ -100,15 +102,19 @@ de Meta confirmó que el ad set pertenece a la campaña `120247658527630665`.
 | Destino | Solo WhatsApp | ✅ `WHATSAPP` |
 | Radio | Solo Piedras Negras | ✅ Sin radio |
 | Idioma | Español | ✅ Locale 23 |
-| Edad | 25–55 | ⚠️ Editada en UI; la API aún reporta 18–65 |
+| Edad | 25–55 | ✅ `age_range` 25–55; `age_min`/`age_max` quedan en 18/65 por Advantage+ Audience |
+| Horario | Lun–sáb 9:00–20:00; dom 12:00–18:00 | ✅ `adset_schedule` activo, zona `America/Chicago` |
 | Tipo de ubicación | Solo residentes | Aceptado tal cual: incluye “pasan frecuentemente” y “estuvieron recientemente” |
 
-Los textos y los cuatro creativos coinciden con el spec. Los anuncios están en revisión (`PENDING_REVIEW` / `IN_PROCESS`).
+Los textos y los cuatro creativos coinciden con el spec. Tras las correcciones,
+el ad set y los cuatro anuncios quedaron activos.
+
+Verificación vía Marketing API del `2026-10-31`: el ad set y los cuatro anuncios
+están `ACTIVE` / `ACTIVE`; ya no aparecen en revisión. El locale 23 corresponde
+a “Español” en la búsqueda de segmentación de Meta.
 
 ## Pendiente
 
-1. Confirmar en la UI que la edad quedó en 25–55 (la API aún muestra 18–65).
-2. Confirmar que el locale 23 sea español de México.
-3. Revisar el reporte automático de 48 h programado para `2026-11-01 16:36 CST` (48 horas reales desde el inicio).
+1. Revisar el reporte automático de 48 h programado para `2026-11-01 16:36 CST` (48 horas de calendario desde el inicio; la entrega se pausa fuera del horario configurado).
 
 Configuración cerrada por decisión de Fernando el 2026-10-30.

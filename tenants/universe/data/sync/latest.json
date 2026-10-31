@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "tenant_id": "universe",
+  "generated_at": "2026-10-31T06:57:29.593797+00:00",
+  "mode": "local_evidence",
+  "external_requests": 0,
+  "external_writes": 0,
+  "sources": {
+    "meta": {
+      "status": "configured_no_local_evidence",
+      "mode": "local_evidence",
+      "page_configured": true,
+      "instagram_configured": true
+    },
+    "google": {
+      "status": "not_configured",
+      "mode": "local_evidence"
+    },
+    "ads": {
+      "status": "not_configured",
+      "mode": "local_evidence",
+      "ad_account_configured": false,
+      "live_metrics_available": false,
+      "campaigns": []
+    },
+    "whatsapp": {
+      "status": "not_configured",
+      "mode": "local_evidence"
+    },
+    "directories": {
+      "status": "not_configured",
+      "mode": "local_evidence"
+    }
+  },
+  "summary": {
+    "configured_no_local_evidence": 1,
+    "not_configured": 4
+  }
+}
