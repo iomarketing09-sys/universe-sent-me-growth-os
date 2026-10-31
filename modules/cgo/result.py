@@ -27,6 +27,8 @@ class CgoContext:
     dry_run: bool = True
     strict: bool = False
     publish: bool = False
+    since: Optional[str] = None
+    until: Optional[str] = None
 
     @property
     def tenants_dir(self) -> Path:

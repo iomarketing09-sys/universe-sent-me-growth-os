@@ -33,7 +33,13 @@ __all__ = [
     "render_plan_markdown",
     "load_campaign_policy",
     "MetaAdsAgent",
+    "MonetizationAgent",
     "audit_tenant",
+    "MonetizationSignal",
+    "MonetizationPeriod",
+    "Payout",
+    "MonetizationStore",
+    "summarize_monetization",
 ]
 
 _EXPORTS = {
@@ -78,7 +84,16 @@ _EXPORTS = {
     ),
     "load_campaign_policy": ("modules.intelligence.campaign_optimizer", "load_policy"),
     "MetaAdsAgent": ("modules.intelligence.agents.meta_ads_agent", "MetaAdsAgent"),
+    "MonetizationAgent": (
+        "modules.intelligence.agents.monetization_agent",
+        "MonetizationAgent",
+    ),
     "audit_tenant": ("modules.intelligence.agents.tenant_auditor", "audit_tenant"),
+    "MonetizationSignal": ("modules.intelligence.monetization", "MonetizationSignal"),
+    "MonetizationPeriod": ("modules.intelligence.monetization", "MonetizationPeriod"),
+    "Payout": ("modules.intelligence.monetization", "Payout"),
+    "MonetizationStore": ("modules.intelligence.monetization", "MonetizationStore"),
+    "summarize_monetization": ("modules.intelligence.monetization", "summarize_monetization"),
 }
 
 

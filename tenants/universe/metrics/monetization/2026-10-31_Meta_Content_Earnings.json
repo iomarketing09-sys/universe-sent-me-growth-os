@@ -1,0 +1,234 @@
+{
+  "tenant_id": "universe",
+  "page_id": "1036844829507460",
+  "business_id": "2294927867461766",
+  "metric": "content_monetization_earnings",
+  "source": "meta_graph_api",
+  "mode": "read_only",
+  "generated_at": "2026-10-31T18:55:25+00:00",
+  "period_start": "2026-10-01",
+  "period_end": "2026-10-31",
+  "currency": "USD",
+  "days": [
+    {
+      "date": "2026-10-01",
+      "content_monetization_micro_amount": 18000000,
+      "content_monetization_usd": 0.18,
+      "approximate_earnings_usd": 0.18,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-02",
+      "content_monetization_micro_amount": 15000000,
+      "content_monetization_usd": 0.15,
+      "approximate_earnings_usd": 0.15,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-03",
+      "content_monetization_micro_amount": 10000000,
+      "content_monetization_usd": 0.1,
+      "approximate_earnings_usd": 0.1,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-04",
+      "content_monetization_micro_amount": 13000000,
+      "content_monetization_usd": 0.13,
+      "approximate_earnings_usd": 0.23,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-05",
+      "content_monetization_micro_amount": 9000000,
+      "content_monetization_usd": 0.09,
+      "approximate_earnings_usd": 0.09,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-06",
+      "content_monetization_micro_amount": 14000000,
+      "content_monetization_usd": 0.14,
+      "approximate_earnings_usd": 0.14,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-07",
+      "content_monetization_micro_amount": 7000000,
+      "content_monetization_usd": 0.07,
+      "approximate_earnings_usd": 0.07,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-08",
+      "content_monetization_micro_amount": 6000000,
+      "content_monetization_usd": 0.06,
+      "approximate_earnings_usd": 0.06,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-09",
+      "content_monetization_micro_amount": 5000000,
+      "content_monetization_usd": 0.05,
+      "approximate_earnings_usd": 0.05,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-10",
+      "content_monetization_micro_amount": 4000000,
+      "content_monetization_usd": 0.04,
+      "approximate_earnings_usd": 0.04,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-11",
+      "content_monetization_micro_amount": 6000000,
+      "content_monetization_usd": 0.06,
+      "approximate_earnings_usd": 0.06,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-12",
+      "content_monetization_micro_amount": 19000000,
+      "content_monetization_usd": 0.19,
+      "approximate_earnings_usd": 0.19,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-13",
+      "content_monetization_micro_amount": 11000000,
+      "content_monetization_usd": 0.11,
+      "approximate_earnings_usd": 0.11,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-14",
+      "content_monetization_micro_amount": 6000000,
+      "content_monetization_usd": 0.06,
+      "approximate_earnings_usd": 0.06,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-15",
+      "content_monetization_micro_amount": 3000000,
+      "content_monetization_usd": 0.03,
+      "approximate_earnings_usd": 0.03,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-16",
+      "content_monetization_micro_amount": 3000000,
+      "content_monetization_usd": 0.03,
+      "approximate_earnings_usd": 0.03,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-17",
+      "content_monetization_micro_amount": 3000000,
+      "content_monetization_usd": 0.03,
+      "approximate_earnings_usd": 0.03,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-18",
+      "content_monetization_micro_amount": 4000000,
+      "content_monetization_usd": 0.04,
+      "approximate_earnings_usd": 0.04,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-19",
+      "content_monetization_micro_amount": 2000000,
+      "content_monetization_usd": 0.02,
+      "approximate_earnings_usd": 0.02,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-20",
+      "content_monetization_micro_amount": 13000000,
+      "content_monetization_usd": 0.13,
+      "approximate_earnings_usd": 0.13,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-21",
+      "content_monetization_micro_amount": 10000000,
+      "content_monetization_usd": 0.1,
+      "approximate_earnings_usd": 0.1,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-22",
+      "content_monetization_micro_amount": 14000000,
+      "content_monetization_usd": 0.14,
+      "approximate_earnings_usd": 0.14,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-23",
+      "content_monetization_micro_amount": 5000000,
+      "content_monetization_usd": 0.05,
+      "approximate_earnings_usd": 0.05,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-24",
+      "content_monetization_micro_amount": 5000000,
+      "content_monetization_usd": 0.05,
+      "approximate_earnings_usd": 0.05,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-25",
+      "content_monetization_micro_amount": 12000000,
+      "content_monetization_usd": 0.12,
+      "approximate_earnings_usd": 0.12,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-26",
+      "content_monetization_micro_amount": 8000000,
+      "content_monetization_usd": 0.08,
+      "approximate_earnings_usd": 0.08,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-27",
+      "content_monetization_micro_amount": 6000000,
+      "content_monetization_usd": 0.06,
+      "approximate_earnings_usd": 0.06,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-28",
+      "content_monetization_micro_amount": 10000000,
+      "content_monetization_usd": 0.1,
+      "approximate_earnings_usd": 0.1,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-29",
+      "content_monetization_micro_amount": 10000000,
+      "content_monetization_usd": 0.1,
+      "approximate_earnings_usd": 0.1,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-30",
+      "content_monetization_micro_amount": 20000000,
+      "content_monetization_usd": 0.2,
+      "approximate_earnings_usd": 0.2,
+      "currency": "USD"
+    },
+    {
+      "date": "2026-10-31",
+      "content_monetization_micro_amount": 132000000,
+      "content_monetization_usd": 1.32,
+      "approximate_earnings_usd": 1.32,
+      "currency": "USD"
+    }
+  ],
+  "total_content_monetization_usd": 4.03,
+  "total_approximate_earnings_usd": 4.13,
+  "note": "content_monetization_earnings se normaliza desde microAmount; monetization_approximate_earnings se conserva en USD. No incluye necesariamente bonus u otros ajustes de la app."
+}

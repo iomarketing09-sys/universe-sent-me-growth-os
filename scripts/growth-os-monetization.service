@@ -1,0 +1,18 @@
+[Unit]
+Description=Growth OS Monetization Sync
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+TimeoutStartSec=10min
+WorkingDirectory=/home/universe-sent-me/growth-os
+ExecStart=/usr/bin/python3 /home/universe-sent-me/growth-os/scripts/run_monetization_sync.py --all --fetch-signals --json
+EnvironmentFile=-/home/universe-sent-me/growth-os/.env
+User=universe-sent-me
+Group=universe-sent-me
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

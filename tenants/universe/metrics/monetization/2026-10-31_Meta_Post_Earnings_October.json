@@ -1,0 +1,94 @@
+{
+  "tenant_id": "universe",
+  "page_id": "1036844829507460",
+  "source": "meta_graph_api_post_insights",
+  "mode": "read_only",
+  "generated_at": "2026-10-31T16:56:40+00:00",
+  "period_start": "2026-10-01",
+  "period_end": "2026-10-31",
+  "currency": "USD",
+  "posts_scanned": 1425,
+  "oldest_post_created_at": "2026-03-11T02:07:04+00:00",
+  "posts_with_earnings": 37,
+  "post_level_content_earnings_micro_amount": 129267207,
+  "post_level_content_earnings_usd": 1.29,
+  "page_level_content_earnings_usd": 4.03,
+  "page_level_approximate_earnings_usd": 4.13,
+  "app_reported_earnings_usd": 4.74,
+  "page_vs_post_level_difference_usd": 2.74,
+  "app_vs_page_content_difference_usd": 0.71,
+  "by_created_month": {
+    "2026-03": {
+      "micro_amount": 175,
+      "usd": 0.0
+    },
+    "2026-05": {
+      "micro_amount": 3479,
+      "usd": 0.0
+    },
+    "2026-06": {
+      "micro_amount": 87,
+      "usd": 0.0
+    },
+    "2026-07": {
+      "micro_amount": 2066990,
+      "usd": 0.02
+    },
+    "2026-08": {
+      "micro_amount": 92,
+      "usd": 0.0
+    },
+    "2026-09": {
+      "micro_amount": 2075774,
+      "usd": 0.02
+    },
+    "2026-10": {
+      "micro_amount": 125120610,
+      "usd": 1.25
+    }
+  },
+  "top_posts": [
+    {
+      "post_id": "1036844829507460_122178951921072582",
+      "created_time": "2026-10-27T14:57:03+00:00",
+      "monthly_micro_amount": 116000000,
+      "monthly_usd": 1.16
+    },
+    {
+      "post_id": "1036844829507460_122179119159072582",
+      "created_time": "2026-10-28T18:25:18+00:00",
+      "monthly_micro_amount": 7000000,
+      "monthly_usd": 0.07
+    },
+    {
+      "post_id": "1036844829507460_122170618857072582",
+      "created_time": "2026-09-30T21:30:01+00:00",
+      "monthly_micro_amount": 2000000,
+      "monthly_usd": 0.02
+    },
+    {
+      "post_id": "1036844829507460_122140003413072582",
+      "created_time": "2026-07-19T04:00:10+00:00",
+      "monthly_micro_amount": 2000000,
+      "monthly_usd": 0.02
+    },
+    {
+      "post_id": "1036844829507460_122179246437072582",
+      "created_time": "2026-10-30T00:00:44+00:00",
+      "monthly_micro_amount": 1000000,
+      "monthly_usd": 0.01
+    },
+    {
+      "post_id": "1036844829507460_122175744207072582",
+      "created_time": "2026-10-11T16:29:44+00:00",
+      "monthly_micro_amount": 1000000,
+      "monthly_usd": 0.01
+    }
+  ],
+  "limitations": [
+    "La suma por publicación es un mínimo: una publicación del 26 de abril devolvió permisos insuficientes en insights.",
+    "La diferencia entre el total de página y la suma por publicación no queda atribuida por la API.",
+    "El desglose por publicación no sustituye un statement ni confirma un payout."
+  ],
+  "conclusion": "El contenido anterior a octubre sí siguió generando ingreso, pero solo unos 0.04 USD visibles en julio y septiembre. No explica por sí solo la diferencia de 0.71 USD entre la app y content_monetization_earnings."
+}

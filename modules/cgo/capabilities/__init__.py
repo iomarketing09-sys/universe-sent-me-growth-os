@@ -5,6 +5,7 @@ from modules.cgo.capabilities import (
     cross_tenant_report,
     daily_pipeline,
     meta_publishing,
+    monetization_report,
     tenant_onboarding,
     verify_setup,
     weekly_calendar,
@@ -17,6 +18,7 @@ CAPABILITIES = {
     "cross_tenant_report": cross_tenant_report.run,
     "canon_sync": canon_sync.run,
     "meta_publishing": meta_publishing.run,
+    "monetization_report": monetization_report.run,
     "verify_setup": verify_setup.run,
 }
 

@@ -16,6 +16,7 @@ import urllib.error
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 TENANT_DIR = SCRIPT_DIR.parent
+REPO_ROOT = SCRIPT_DIR.parents[2]
 ENV_PATH = TENANT_DIR / ".env"
 OUTPUT_DIR = SCRIPT_DIR / "monetization"
 CSV_LOG = SCRIPT_DIR / "meta_monetization_log.csv"
@@ -23,13 +24,16 @@ DRIVE_DIR = Path("/home/universe-sent-me/GoogleDrive/Growth OS")
 
 def load_env():
     creds = {}
-    if ENV_PATH.exists():
-        with open(ENV_PATH, "r", encoding="utf-8") as f:
+    for path in (ENV_PATH, REPO_ROOT / ".env"):
+        if not path.exists():
+            continue
+        with open(path, "r", encoding="utf-8") as f:
             for line in f:
                 line = line.strip()
                 if line and not line.startswith("#") and "=" in line:
                     k, v = line.split("=", 1)
                     creds[k.strip()] = v.strip().strip("'\"")
+    creds.update({key: value for key, value in os.environ.items() if value})
     return creds
 
 def api_get(endpoint, params):
@@ -48,6 +52,19 @@ def api_get(endpoint, params):
     except Exception as e:
         return {"error": {"message": str(e)}}
 
+
+def page_access_token(user_token, page_id):
+    payload = api_get("me/accounts", {
+        "fields": "id,name,access_token",
+        "access_token": user_token,
+    })
+    if payload.get("error"):
+        raise RuntimeError(payload["error"].get("message", "Error al obtener Page Access Token"))
+    for page in payload.get("data", []):
+        if str(page.get("id")) == str(page_id) and page.get("access_token"):
+            return str(page["access_token"])
+    raise RuntimeError(f"El token no tiene acceso a la página {page_id}")
+
 def main():
     print("\n" + "=" * 60)
     print("💰 EXTRACTOR DE MONETIZACIÓN Y SEÑALES META")
@@ -58,7 +75,15 @@ def main():
     page_id = creds.get("FB_PAGE_ID", "1036844829507460")
 
     if not token:
-        print("❌ Error: No se encontró PAGE_ACCESS_TOKEN en .env")
+        user_token = creds.get("META_ACCESS_TOKEN")
+        if user_token:
+            try:
+                token = page_access_token(user_token, page_id)
+            except RuntimeError as exc:
+                print(f"❌ Error: {exc}")
+                return 1
+    if not token:
+        print("❌ Error: falta PAGE_ACCESS_TOKEN o META_ACCESS_TOKEN en el entorno o .env")
         return 1
 
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
@@ -70,6 +95,9 @@ def main():
         "fields": "id,name,business,is_eligible_for_branded_content",
         "access_token": token
     })
+    if page_info.get("error"):
+        print(f"❌ Error consultando la página: {page_info['error'].get('message', 'desconocido')}")
+        return 2
 
     business_data = page_info.get("business", {})
     business_id = creds.get("UNIVERSE_ACCOUNT_ID", "2294927867461766")
@@ -83,6 +111,9 @@ def main():
         "limit": 30,
         "access_token": token
     })
+    if posts_data.get("error"):
+        print(f"❌ Error consultando publicaciones: {posts_data['error'].get('message', 'desconocido')}")
+        return 2
 
     posts = posts_data.get("data", [])
     total_bonus_interactions = 0
@@ -142,13 +173,20 @@ def main():
         json.dump(evidence, f, indent=2, ensure_ascii=False)
     print(f"💾 Evidencia guardada en: {evidence_file}")
 
-    # 4. Actualizar Ledger CSV de Monetización
-    csv_exists = CSV_LOG.exists()
-    with open(CSV_LOG, "a", encoding="utf-8", newline="") as f:
+    # 4. Actualizar Ledger CSV de Monetización (una fila por fecha)
+    new_row = [today, "Facebook Page", business_id, len(posts), total_reactions, total_comments, total_shares, total_bonus_interactions]
+    header = ["Fecha", "Plataforma", "Business_ID", "Posts_Analizados", "Reacciones", "Comentarios", "Shares", "Interacciones_Bonus_Elegibles"]
+    existing = []
+    if CSV_LOG.exists():
+        with open(CSV_LOG, "r", encoding="utf-8", newline="") as f:
+            existing = [row for row in csv.reader(f) if row and row[0] != today]
+    if existing and existing[0][0] == "Fecha":
+        header = existing.pop(0)
+    with open(CSV_LOG, "w", encoding="utf-8", newline="") as f:
         writer = csv.writer(f)
-        if not csv_exists:
-            writer.writerow(["Fecha", "Plataforma", "Business_ID", "Posts_Analizados", "Reacciones", "Comentarios", "Shares", "Interacciones_Bonus_Elegibles"])
-        writer.writerow([today, "Facebook Page", business_id, len(posts), total_reactions, total_comments, total_shares, total_bonus_interactions])
+        writer.writerow(header)
+        writer.writerows(existing)
+        writer.writerow(new_row)
 
     print(f"📊 Ledger local actualizado: {CSV_LOG}")
 
@@ -164,4 +202,4 @@ def main():
     return 0
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

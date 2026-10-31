@@ -35,6 +35,8 @@ def test_capacidades_por_track():
     assert capability_allowed("weekly_calendar", NATIVE_DIGITAL)
     assert not capability_allowed("weekly_calendar", PHYSICAL_CRO)
     assert capability_allowed("daily_pipeline", PHYSICAL_CRO)
+    assert capability_allowed("monetization_report", NATIVE_DIGITAL)
+    assert capability_allowed("monetization_report", PHYSICAL_CRO)
 
 
 # ------------------------------------------------------------- daily pipeline
@@ -45,6 +47,7 @@ def test_daily_pipeline_ok(tmp_path):
     kinds = {item["kind"] for item in result.actions}
     assert {"snapshot", "schedule", "publication_log", "ads"} <= kinds
     assert result.data["schedule_rows"] == 3
+    assert result.data["ads"]["campaigns"] == 1
 
 
 def test_daily_pipeline_sin_calendario_es_partial(tmp_path):

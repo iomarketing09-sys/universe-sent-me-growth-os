@@ -1,0 +1,13 @@
+[Unit]
+Description=Daily Growth OS Monetization Sync
+
+[Timer]
+OnBootSec=30min
+OnCalendar=*-*-* 02:15:00
+Persistent=true
+RandomizedDelaySec=15m
+AccuracySec=1min
+Unit=growth-os-monetization.service
+
+[Install]
+WantedBy=timers.target

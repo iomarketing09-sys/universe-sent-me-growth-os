@@ -61,6 +61,34 @@ def run(ctx: CgoContext, tenant_id: str) -> CgoResult:
         actions.append(action("ads", "skip", f"Sin datos locales de ads: {type(exc).__name__}"))
         ads_data = {}
 
+    monetization_data = {}
+    try:
+        from modules.intelligence import MonetizationAgent
+
+        monetization = MonetizationAgent(tenant_id, base_path=str(ctx.base_path)).summary(
+            since=ctx.since, until=ctx.until
+        )
+        if monetization.get("configured"):
+            monetization_data = monetization
+            threshold = (monetization.get("money") or {}).get("payout_threshold") or {}
+            state = "warn" if monetization.get("warnings") else "ok"
+            detail = (
+                f"pipeline ${float((monetization.get('money') or {}).get('pipeline_net') or 0):,.2f} | "
+                f"faltan ${float(threshold.get('remaining') or 0):,.2f} para el umbral"
+                if threshold
+                else "Ledger de monetización disponible."
+            )
+            actions.append(
+                action("monetization", state, detail)
+            )
+            next_actions.extend((monetization.get("next_actions") or [])[:2])
+        else:
+            actions.append(action("monetization", "skip", "Sin datos de monetización."))
+    except Exception as exc:
+        actions.append(
+            action("monetization", "skip", f"Sin ledger legible: {type(exc).__name__}")
+        )
+
     track = tenant_track(tenant_id, ctx.base_path)
     if track == PHYSICAL_CRO:
         actions.append(
@@ -87,5 +115,6 @@ def run(ctx: CgoContext, tenant_id: str) -> CgoResult:
             "published_rows": published,
             "snapshot_age_days": age,
             "ads": ads_data,
+            "monetization": monetization_data,
         },
     )

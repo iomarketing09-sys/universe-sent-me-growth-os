@@ -18,6 +18,7 @@ CAPABILITIES_BY_TRACK = {
         "cross_tenant_report",
         "canon_sync",
         "meta_publishing",
+        "monetization_report",
         "verify_setup",
     },
     PHYSICAL_CRO: {
@@ -25,6 +26,7 @@ CAPABILITIES_BY_TRACK = {
         "tenant_onboarding",
         "cross_tenant_report",
         "meta_publishing",
+        "monetization_report",
         "verify_setup",
     },
 }

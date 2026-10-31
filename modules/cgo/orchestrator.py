@@ -18,7 +18,7 @@ def project_root() -> Path:
 
 
 class CgoOrchestrator:
-    """Punto único de entrada para las 7 capacidades del Growth OS."""
+    """Punto único de entrada para las 8 capacidades del Growth OS."""
 
     def __init__(
         self,
@@ -26,12 +26,16 @@ class CgoOrchestrator:
         dry_run: bool = True,
         strict: bool = False,
         publish: bool = False,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
     ):
         self.ctx = CgoContext(
             base_path=Path(base_path) if base_path else project_root(),
             dry_run=dry_run,
             strict=strict,
             publish=publish,
+            since=since,
+            until=until,
         )
 
     @property

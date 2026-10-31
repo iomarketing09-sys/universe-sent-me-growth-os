@@ -33,6 +33,8 @@ def main(argv: Optional[List[str]] = None) -> int:
     parser.add_argument("--all", action="store_true", help="todos los tenants")
     parser.add_argument("--json", action="store_true", help="salida JSON")
     parser.add_argument("--strict", action="store_true", help="UNKNOWN bloquea")
+    parser.add_argument("--since", default=None, help="Fecha inicial YYYY-MM-DD")
+    parser.add_argument("--until", default=None, help="Fecha final YYYY-MM-DD")
     parser.add_argument(
         "--publish",
         action="store_true",
@@ -44,6 +46,8 @@ def main(argv: Optional[List[str]] = None) -> int:
         dry_run=not args.publish,
         strict=args.strict,
         publish=args.publish,
+        since=args.since,
+        until=args.until,
     )
     tenant = None if args.all else args.tenant
 
