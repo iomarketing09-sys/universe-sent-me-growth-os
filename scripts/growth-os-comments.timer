@@ -1,0 +1,13 @@
+[Unit]
+Description=Hourly Growth OS Comments Harvest (proposals only)
+
+[Timer]
+OnBootSec=10min
+OnCalendar=*-*-* 08..22:00:00
+Persistent=true
+RandomizedDelaySec=5m
+AccuracySec=1min
+Unit=growth-os-comments.service
+
+[Install]
+WantedBy=timers.target
