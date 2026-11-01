@@ -14,8 +14,8 @@ Somos tu distribuidor oficial de Universe Sent Me. Llevamos años ayudando a gen
 
 ¿En qué te ayudo hoy?
 
-1️⃣ Ver catálogo con precios y tallas
-2️⃣ Saber qué talla pedir (te explico cómo medir)
+1️⃣ Ver catálogo
+2️⃣ Precios y tallas de la campaña
 3️⃣ Promociones de esta semana
 4️⃣ Ubicación y horarios de la tienda
 5️⃣ Hablar directo con un asesor
@@ -55,26 +55,77 @@ Te respondemos en cuanto abramos. Mientras, puedes ver catálogo y precios aquí
 
 Tenemos desde casual y deportivo hasta botas y formales. ¿Buscas algo para algún uso en especial? (trabajo, día a día, evento, caminata)
 
+Si buscas uno de los modelos de la campaña, escribe /precios para ver el precio final y /tallas para la existencia exacta.
+
 
 📏  ATAJO: /tallas
 ──────────────────
-📏 *La clave: medir bien para no fallar*
+📏 *Tallas disponibles por modelo*
+Existencia actual en sucursal (actualizada al 31 oct 2026):
 
-Nuestros zapatos calzan *normal* (ni grande ni chico). Haz esto:
-1. Pie descalzo, talón contra la pared
-2. Mide en cm (punta más larga)
-3. Busca tu talla:
-• 23.0 cm → 36
-• 24.5 cm → 39
-• 26.0 cm → 42
-• 23.5 cm → 37
-• 25.0 cm → 40
-• 26.5 cm → 43
-• 24.0 cm → 38
-• 25.5 cm → 41
-• 27.0 cm → 44
+*ARISHA 306703 · Nude*
+• Talla 23 (36): 1 par
+• Talla 24 (38): 3 pares
+• Talla 25 (40): 2 pares
+• Talla 26 (42): 2 pares
 
-💡 *Tip de experto:* Si das entre dos tallas (ej. 24.2 cm), *pide la mayor*. El pie se hincha al caminar. ¿Tienes duda con algún modelo en específico?
+*LYDIA 143201 · Negro*
+• Talla 23 (36): 1 par
+• Talla 23.5 (37): 1 par
+• Talla 24 (38): 1 par
+• Talla 24.5 (39): 1 par
+• Talla 25 (40): 1 par
+• Talla 25.5 (41): 1 par
+
+*IZADORA 142601 · Tan*
+• Talla 23 (36): 1 par
+• Talla 23.5 (37): 1 par
+• Talla 24 (38): 1 par
+• Talla 25 (40): 1 par
+• Talla 25.5 (41): 1 par
+• Talla 26 (42): 1 par
+
+*AMALIA 307001 · Black*
+• Talla 23 (36): 1 par
+• Talla 24 (38): 2 pares
+• Talla 24.5 (39): 1 par
+• Talla 25 (40): 2 pares
+• Talla 26 (42): 1 par
+
+*AMALIA 307001 · Negro*
+• Talla 23 (36): 1 par
+• Talla 24 (38): 1 par
+• Talla 24.5 (39): 1 par
+• Talla 25 (40): 1 par
+• Talla 26 (42): 1 par
+
+*AMALIA 307001 · Taupe*
+• Talla 23 (36): 1 par
+• Talla 24 (38): 2 pares
+• Talla 24.5 (39): 1 par
+• Talla 25 (40): 2 pares
+• Talla 26 (42): 1 par
+
+Los números entre paréntesis son la referencia de talla EU.
+📐 Mide tu pie en cm (talón a punta). Si quedas entre dos tallas, pide la mayor.
+
+La existencia puede cambiar durante el día. Si vienes por una talla específica, confírmala antes de pasar. ¿Te ayudo a elegir tu talla?
+
+
+💰  ATAJO: /precios
+──────────────────
+💰 *Precios finales de la campaña*
+Vigentes al 31 oct 2026:
+
+*ARISHA 306703 · Nude* — $1,899
+*LYDIA 143201 · Negro* — $1,099
+*IZADORA 142601 · Tan* — $1,999
+*AMALIA 307001 · Black* — $2,199
+*AMALIA 307001 · Negro* — $2,599
+*AMALIA 307001 · Taupe* — $2,199
+
+Son 4 modelos en 6 variantes. Precios finales en MXN.
+Para revisar la existencia exacta por talla, escribe /tallas.
 
 
 🎁  ATAJO: /promos
@@ -93,9 +144,9 @@ Las promos cambian semanalmente. ¿Te interesa alguna o buscas algo en particula
 ──────────────────
 ¡Qué bien! Vamos paso a paso para que sea rápido y seguro:
 
-1️⃣ Elige en el catálogo: linktr.ee/flexipiedrasnegras
+1️⃣ Revisa /precios y /tallas (o el catálogo: linktr.ee/flexipiedrasnegras)
 2️⃣ Dime: modelo + color + talla + cantidad
-3️⃣ Te confirmo stock, precio final y formas de pago
+3️⃣ Te confirmo la existencia y formas de pago
 4️⃣ Pagas: transferencia / tarjeta (link seguro) / efectivo en tienda
 5️⃣ Te enviamos a casa o pasas a recoger 📦
 
@@ -193,13 +244,14 @@ Mientras, si quieres adelanto: ¿qué modelo te interesa o qué duda tienes?
 ☐ Perfil de negocio completo (7 campos)
 ☐ Mensaje de bienvenida ACTIVO + texto copiado arriba
 ☐ Mensaje de ausencia ACTIVO + texto copiado arriba
-☐ 6 respuestas rápidas creadas (/catalogo, /tallas, /promos, /comprar, /ubicacion, /humano)
+☐ 7 respuestas rápidas creadas (/catalogo, /tallas, /precios, /promos, /comprar, /ubicacion, /humano)
 ☐ 4 Ice breakers configurados
 ☐ 5 opciones de menú persistente
 ☐ 8 etiquetas creadas con colores
 ☐ Probado con otro celular: escribes "Hola" → llega bienvenida
 ☐ Probado: tocas "📦 Ver catálogo" → llega respuesta /catalogo
-☐ Probado: escribes "/tallas" → llega guía de tallas
+☐ Probado: escribes "/tallas" → llega disponibilidad por modelo
+☐ Probado: escribes "/precios" → llega precio final por variante
 ☐ Número conectado en Meta Business Suite (lo hacemos nosotros)
 ☐ Verificación de negocio Meta iniciada (1-2 semanas)
 ☐ 4 plantillas Meta enviadas a revisión (lo hacemos nosotros)
@@ -209,5 +261,5 @@ Mientras, si quieres adelanto: ¿qué modelo te interesa o qué duda tienes?
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Archivo generado: /tenants/flexi/whatsapp/RESPUESTAS_WHATSAPP_FLEXI_COMPLETO.txt
-Fecha: 11 octubre 2026
-Versión: 1.0 – Voz Flexi validada
+Fecha: 31 octubre 2026
+Versión: 1.1 – Precios y tallas de campaña actualizados

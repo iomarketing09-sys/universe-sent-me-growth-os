@@ -1,0 +1,15 @@
+=== RESPUESTA RÁPIDA: /precios ===
+Atajo: /precios
+
+💰 *Precios finales de la campaña*
+Vigentes al 31 oct 2026:
+
+*ARISHA 306703 · Nude* — $1,899
+*LYDIA 143201 · Negro* — $1,099
+*IZADORA 142601 · Tan* — $1,999
+*AMALIA 307001 · Black* — $2,199
+*AMALIA 307001 · Negro* — $2,599
+*AMALIA 307001 · Taupe* — $2,199
+
+Son 4 modelos en 6 variantes. Precios finales en MXN.
+Para revisar la existencia exacta por talla, escribe /tallas.

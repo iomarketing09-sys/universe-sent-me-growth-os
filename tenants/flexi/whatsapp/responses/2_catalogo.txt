@@ -7,3 +7,4 @@ Atajo: /catalogo
 
 Tenemos desde casual y deportivo hasta botas y formales. ¿Buscas algo para algún uso en especial? (trabajo, día a día, evento, caminata)
 
+Si buscas uno de los modelos de la campaña, escribe /precios para ver el precio final y /tallas para la existencia exacta.

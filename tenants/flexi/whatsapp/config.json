@@ -74,6 +74,11 @@
       "payload": "TALLAS"
     },
     {
+      "id": "qr_precios",
+      "title": "💰 Precios de la campaña",
+      "payload": "PRECIOS"
+    },
+    {
       "id": "qr_promos",
       "title": "🎁 Promociones",
       "payload": "PROMOS"

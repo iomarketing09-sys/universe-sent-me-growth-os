@@ -66,11 +66,11 @@ Ve a: **⋮ → Herramientas de negocio → Mensajes automáticos**
 > 
 > ¿En qué te puedo ayudar hoy?
 > 
-> 📦 Ver catálogo completo
-> 📏 Guía de tallas
-> 🎁 Promociones vigentes
-> 📍 Ubicación de la tienda
-> 👤 Hablar con un asesor
+> 1️⃣ Ver catálogo
+> 2️⃣ Precios y tallas de la campaña
+> 3️⃣ Promociones vigentes
+> 4️⃣ Ubicación y horarios
+> 5️⃣ Hablar con un asesor
 > 
 > Solo responde con el número o toca una opción 👇
 > ```
@@ -102,16 +102,17 @@ Ve a: **⋮ → Herramientas de negocio → Mensajes automáticos**
 
 ---
 
-### 4.3 Respuestas rápidas (CREAR 6)
+### 4.3 Respuestas rápidas (CREAR 7)
 
 Toca **Respuestas rápidas** → **+ (agregar)** → Crea estas **EXACTAMENTE**:
 
 | Atajo | Mensaje |
 |-------|---------|
-| `/catalogo` | `¡Claro! Aquí tienes nuestro catálogo completo 👟\n\n🔗 linktr.ee/flexipiedrasnegras\n\nEncuentras: modelos, colores, precios, tallas disponibles y fotos reales. ¿Buscas algo en especial? (casual, formal, deportivo, botas)` |
-| `/tallas` | `📏 **Guía de tallas Flexi**\n\nNuestros zapatos suelen calzar **normal**. Te recomendamos:\n\n1. Mide tu pie en cm (talón a punta)\n2. Compara con nuestra tabla:\n• 23 cm = 36\n• 23.5 cm = 37\n• 24 cm = 38\n• 24.5 cm = 39\n• 25 cm = 40\n• 25.5 cm = 41\n• 26 cm = 42\n• 26.5 cm = 43\n• 27 cm = 44\n\n💡 **Tip:** Si estás entre tallas, elige la mayor. ¿Necesitas ayuda con un modelo específico?` |
+| `/catalogo` | `¡Claro! Aquí tienes nuestro catálogo completo 👟\n\n🔗 linktr.ee/flexipiedrasnegras\n\nEncuentras: modelos, colores, precios, tallas disponibles y fotos reales. ¿Buscas algo en especial? (casual, formal, deportivo, botas)\n\nSi buscas uno de los modelos de la campaña, escribe /precios para ver el precio final y /tallas para la existencia exacta.` |
+| `/tallas` | `📏 *Tallas disponibles por modelo*\nExistencia actual en sucursal (actualizada al 31 oct 2026):\n\n*ARISHA 306703 · Nude*\n• Talla 23 (36): 1 par\n• Talla 24 (38): 3 pares\n• Talla 25 (40): 2 pares\n• Talla 26 (42): 2 pares\n\n*LYDIA 143201 · Negro*\n• Talla 23 (36): 1 par\n• Talla 23.5 (37): 1 par\n• Talla 24 (38): 1 par\n• Talla 24.5 (39): 1 par\n• Talla 25 (40): 1 par\n• Talla 25.5 (41): 1 par\n\n*IZADORA 142601 · Tan*\n• Talla 23 (36): 1 par\n• Talla 23.5 (37): 1 par\n• Talla 24 (38): 1 par\n• Talla 25 (40): 1 par\n• Talla 25.5 (41): 1 par\n• Talla 26 (42): 1 par\n\n*AMALIA 307001 · Black*\n• Talla 23 (36): 1 par\n• Talla 24 (38): 2 pares\n• Talla 24.5 (39): 1 par\n• Talla 25 (40): 2 pares\n• Talla 26 (42): 1 par\n\n*AMALIA 307001 · Negro*\n• Talla 23 (36): 1 par\n• Talla 24 (38): 1 par\n• Talla 24.5 (39): 1 par\n• Talla 25 (40): 1 par\n• Talla 26 (42): 1 par\n\n*AMALIA 307001 · Taupe*\n• Talla 23 (36): 1 par\n• Talla 24 (38): 2 pares\n• Talla 24.5 (39): 1 par\n• Talla 25 (40): 2 pares\n• Talla 26 (42): 1 par\n\nLos números entre paréntesis son la referencia de talla EU.\n📐 Mide tu pie en cm (talón a punta). Si quedas entre dos tallas, pide la mayor.\n\nLa existencia puede cambiar durante el día. Si vienes por una talla específica, confírmala antes de pasar. ¿Te ayudo a elegir tu talla?` |
+| `/precios` | `💰 *Precios finales de la campaña*\nVigentes al 31 oct 2026:\n\n*ARISHA 306703 · Nude* — $1,899\n*LYDIA 143201 · Negro* — $1,099\n*IZADORA 142601 · Tan* — $1,999\n*AMALIA 307001 · Black* — $2,199\n*AMALIA 307001 · Negro* — $2,599\n*AMALIA 307001 · Taupe* — $2,199\n\nSon 4 modelos en 6 variantes. Precios finales en MXN.\nPara revisar la existencia exacta por talla, escribe /tallas.` |
 | `/promos` | `🎁 **Promociones vigentes esta semana:**\n\n✨ **2x1 en modelos seleccionados** (ver catálogo)\n💳 **3 y 6 meses sin intereses** con tarjetas participantes\n🚚 **Envío gratis** en compras > $1,200 MXN\n🎂 **Descuento cumpleaños** 15% (regístrate en tienda)\n\n¿Te interesa alguna? Cuéntame qué buscas y te ayudo a elegir 😊` |
-| `/comprar` | `¡Perfecto! Para que tu compra sea rápida y segura:\n\n1️⃣ Elige tu(s) modelo(s) en el catálogo: linktr.ee/flexipiedrasnegras\n2️⃣ Dime: **modelo, color, talla y cantidad**\n3️⃣ Te confirmo stock, precio final y formas de pago\n4️⃣ Pagas por transferencia / tarjeta / efectivo en tienda\n5️⃣ Te enviamos o pasas a recoger 📦\n\n¿Qué modelo te gustaría?` |
+| `/comprar` | `¡Perfecto! Para que tu compra sea rápida y segura:\n\n1️⃣ Revisa /precios y /tallas (o el catálogo: linktr.ee/flexipiedrasnegras)\n2️⃣ Dime: *modelo, color, talla y cantidad*\n3️⃣ Te confirmo la existencia y formas de pago\n4️⃣ Pagas por transferencia / tarjeta / efectivo en tienda\n5️⃣ Te enviamos o pasas a recoger 📦\n\n¿Qué modelo te gustaría?` |
 | `/ubicacion` | `📍 **Nuestra tienda física:**\n\nZapatería Flexi Piedras Negras\n📍 Centro, Piedras Negras, Coahuila\n🕐 Lun-Vie 9-20 | Sáb 10-19 | Dom 11-17\n📞 +52 878 138 5284\n\n💡 **Ventaja de venir:** Pruebas tallas, sientes la calidad, te asesoramos personalizado. ¡Te esperamos! 😊` |
 | `/humano` | `¡Por supuesto! Te conecto con un asesor 👤\n\nUn momento por favor... (tiempo promedio de respuesta: < 10 min en horario laboral)\n\nMientras, ¿hay algo en lo que yo pueda ayudarte? (catálogo, tallas, promos)` |
 
@@ -182,14 +183,15 @@ Crea estas **4 plantillas** (categoría: **UTILITY**):
 |--------|-----------|-------------------|
 | 1. Mensaje inicial | Escribe "Hola" al número | Llega mensaje de bienvenida con opciones |
 | 2. Respuesta rápida | Toca "📦 Ver catálogo" o escribe `/catalogo` | Llega catálogo con link |
-| 3. Guía tallas | Escribe `/tallas` | Llega tabla de tallas |
-| 4. Promos | Escribe `/promos` | Llega lista de promos vigentes |
-| 5. Comprar | Escribe `/comprar` | Llega flujo de compra |
-| 6. Ubicación | Escribe `/ubicacion` | Llega dirección y horarios |
-| 7. Humano | Escribe `/humano` | Llega mensaje de derivación |
-| 8. Fuera de horario | Escribe en domingo 10 PM | Llega mensaje de ausencia |
-| 9. Etiquetas | Abre chat → ⋮ → Etiquetar → "🔥 Lead Nuevo" | Etiqueta se aplica y se ve en lista |
-| 10. Perfil público | Abre info del contacto en WhatsApp | Se ve nombre, descripción, horario, web, email |
+| 3. Tallas | Escribe `/tallas` | Llega disponibilidad actual por modelo y talla |
+| 4. Precios | Escribe `/precios` | Llega precio final por variante |
+| 5. Promos | Escribe `/promos` | Llega lista de promos vigentes |
+| 6. Comprar | Escribe `/comprar` | Llega flujo de compra |
+| 7. Ubicación | Escribe `/ubicacion` | Llega dirección y horarios |
+| 8. Humano | Escribe `/humano` | Llega mensaje de derivación |
+| 9. Fuera de horario | Escribe en domingo 10 PM | Llega mensaje de ausencia |
+| 10. Etiquetas | Abre chat → ⋮ → Etiquetar → "🔥 Lead Nuevo" | Etiqueta se aplica y se ve en lista |
+| 11. Perfil público | Abre info del contacto en WhatsApp | Se ve nombre, descripción, horario, web, email |
 
 ---
 
@@ -258,7 +260,7 @@ Si se atoran en algún paso:
 - [ ] Perfil completo: nombre, descripción, dirección, email, web, horario
 - [ ] **Mensaje de bienvenida** activo con opciones claras
 - [ ] **Mensaje de ausencia** activo con horarios
-- [ ] **6 respuestas rápidas** creadas (`/catalogo`, `/tallas`, `/promos`, `/comprar`, `/ubicacion`, `/humano`)
+- [ ] **7 respuestas rápidas** creadas (`/catalogo`, `/tallas`, `/precios`, `/promos`, `/comprar`, `/ubicacion`, `/humano`)
 - [ ] **8 etiquetas** creadas y equipo sabe usarlas
 - [ ] Número conectado en Meta Business Suite (admin lo hace)
 - [ ] Verificación de negocio Meta iniciada (1-2 sem)
@@ -273,4 +275,4 @@ Si se atoran en algún paso:
 ---
 
 *Documento generado para Flexi Piedras Negras – Growth OS Implementation*  
-*Versión: 1.0 | Fecha: 11 octubre 2026*
+*Versión: 1.1 | Fecha: 31 octubre 2026*
