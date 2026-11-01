@@ -5,21 +5,30 @@
       "character": "Universe",
       "original_comment": "Eso es mentira, porque yo soy inútil y aún así insisten en usarme 🥹🤣",
       "approved": true,
-      "approved_response": "El truco es la incompetencia estratégica: si lo haces mal a la primera, no te vuelven a pedir nada 🐾🧠"
+      "approved_response": "El truco es la incompetencia estratégica: si lo haces mal a la primera, no te vuelven a pedir nada 🐾🧠",
+      "published": true,
+      "published_at": "2026-09-20T22:53:09+0000",
+      "reply_id": "122167022571072582_939155208779375"
     },
     {
       "comment_id": "122167035939072582_28342433772088645",
       "character": "Universe",
       "original_comment": "Por no comer nada 🤣🤣🤣🤣",
       "approved": true,
-      "approved_response": "Café en ayunas y voluntad de vivir: la dieta oficial del universo ☕💀"
+      "approved_response": "Café en ayunas y voluntad de vivir: la dieta oficial del universo ☕💀",
+      "published": true,
+      "published_at": "2026-09-20T22:53:30+0000",
+      "reply_id": "122167035939072582_1082205154708081"
     },
     {
       "comment_id": "122167036521072582_2257560918372147",
       "character": "Universe",
       "original_comment": "Que significa cucharear🤔",
       "approved": true,
-      "approved_response": "Empezó como comer sopa y terminó en evento canónico 🥄👀"
+      "approved_response": "Empezó como comer sopa y terminó en evento canónico 🥄👀",
+      "published": true,
+      "published_at": "2026-09-20T22:54:25+0000",
+      "reply_id": "122167036521072582_1084438793994068"
     }
   ]
 }

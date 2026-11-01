@@ -1,16 +1,226 @@
 {
-  "generated_at": "2026-10-08T00:45:10.499076+00:00",
-  "lookback_hours": 48,
-  "total_pending": 1,
+  "generated_at": "2026-11-01T00:35:23.902638+00:00",
+  "lookback_hours": 168,
+  "reviewed_at": "2026-11-01T01:05:00+00:00",
+  "total_pending": 27,
+  "total_approved": 19,
   "instructions": "Cambia 'approved: true' en los comentarios que quieras publicar y edita el texto si deseas.",
   "approvals": [
     {
-      "comment_id": "122173561389072582_1629976815202966",
+      "comment_id": "122178969753072582_29380191911586069",
       "author": "Usuario",
-      "comment_text": "Culero ,pero es la verdad 😂😂😂😂",
-      "character": "Universe",
-      "approved_response": null,
+      "comment_text": "Déjate llevar 🤙al final , nada importa 😉",
+      "character": "Existencial",
+      "approved_response": "Así que la vida es un chiste y yo sin micrófono.",
       "approved": false
+    },
+    {
+      "comment_id": "122178969753072582_1085200497843584",
+      "author": "Usuario",
+      "comment_text": "La malda hahahaha",
+      "character": "Existencial",
+      "approved_response": "Malda, el nuevo destino turístico del desinterés.",
+      "approved": false
+    },
+    {
+      "comment_id": "122178969993072582_2266068400917333",
+      "author": "Usuario",
+      "comment_text": "Mientras ea gata y peluda. Jalo",
+      "character": "Universe",
+      "approved_response": "Que se prepare el gato con GPS y pulsera rastreadora.",
+      "approved": false
+    },
+    {
+      "comment_id": "122178969993072582_1564775568740468",
+      "author": "Usuario",
+      "comment_text": "No lo creo jajaja",
+      "character": "Universe",
+      "approved_response": "No lo creas, pero llevo tres vidas buscándote.",
+      "approved": true
+    },
+    {
+      "comment_id": "122179119159072582_2485177135224257",
+      "author": "Usuario",
+      "comment_text": "El sabelo-todo",
+      "character": "Universe",
+      "approved_response": "Primer síntoma detectado.",
+      "approved": true
+    },
+    {
+      "comment_id": "122179127565072582_1801683471159788",
+      "author": "Usuario",
+      "comment_text": "Caracter ☠️🔥",
+      "character": "Chipitillo",
+      "approved_response": "Carácter inaceptable, como debe ser.",
+      "approved": true
+    },
+    {
+      "comment_id": "122179136481072582_1612884310305050",
+      "author": "Usuario",
+      "comment_text": "Que poético!",
+      "character": "Kiri+Evan",
+      "approved_response": "Poético y con receta.",
+      "approved": true
+    },
+    {
+      "comment_id": "122179136481072582_3005336423153135",
+      "author": "Usuario",
+      "comment_text": "Voy hacer un cuarto oscuro , para que igual que los ciegos .. dar palos de luz ( como cuando van caminando)",
+      "character": "Kiri+Evan",
+      "approved_response": "Perfecto para tropezar con estilo.",
+      "approved": false
+    },
+    {
+      "comment_id": "122179119159072582_1818091765861687",
+      "author": "Usuario",
+      "comment_text": "Déjalo ser , 😅🤣",
+      "character": "Universe",
+      "approved_response": "Déjalo: el diagnóstico se pone solo.",
+      "approved": true
+    },
+    {
+      "comment_id": "122179102479072582_28962793316682101",
+      "author": "Usuario",
+      "comment_text": "El universo:\nNo que venías muy lion",
+      "character": "Wilfred",
+      "approved_response": "El tercer ojo vio tu 'muy lion' y se arrepintió.",
+      "approved": true
+    },
+    {
+      "comment_id": "122179210755072582_1826285845058020",
+      "author": "Usuario",
+      "comment_text": "Nooooo 😂😂😂😂",
+      "character": "Universe",
+      "approved_response": "Noooo, el celibato no era parte del plan.",
+      "approved": true
+    },
+    {
+      "comment_id": "122179246437072582_1822645942409315",
+      "author": "Usuario",
+      "comment_text": "Hay la verdad es q si, chales",
+      "character": "Existencial",
+      "approved_response": "Fingir que estás bien: el deporte nacional.",
+      "approved": true
+    },
+    {
+      "comment_id": "122179326723072582_1032084503248534",
+      "author": "Usuario",
+      "comment_text": "Caracter 🙃👏",
+      "character": "Wilfred",
+      "approved_response": "Carácter: ni tanto ni tan poquito.",
+      "approved": true
+    },
+    {
+      "comment_id": "122179119159072582_1505910438041149",
+      "author": "Usuario",
+      "comment_text": "Y si😆",
+      "character": "Universe",
+      "approved_response": "Sí, y con el orgullo bien puesto.",
+      "approved": true
+    },
+    {
+      "comment_id": "122179381683072582_1111590048280653",
+      "author": "Usuario",
+      "comment_text": "Apoco si? Siempre has sentido algo por mi?",
+      "character": "Elara+Fantasma",
+      "approved_response": "Claro, como sentir hambre por una ensalada.",
+      "approved": false
+    },
+    {
+      "comment_id": "122179119159072582_1755600252174758",
+      "author": "Usuario",
+      "comment_text": "Conozco",
+      "character": "Universe",
+      "approved_response": "Sí, ése es el síntoma.",
+      "approved": true
+    },
+    {
+      "comment_id": "122179352091072582_987847484376550",
+      "author": "Usuario",
+      "comment_text": "Me urge una platica de esas",
+      "character": "Evan",
+      "approved_response": "Agenda llena: cero temas normales, cupo limitado.",
+      "approved": true
+    },
+    {
+      "comment_id": "122179119159072582_1812115769823895",
+      "author": "Usuario",
+      "comment_text": "La neta  !!!.😊😉",
+      "character": "Universe",
+      "approved_response": "La neta, el diagnóstico se hace solo.",
+      "approved": true
+    },
+    {
+      "comment_id": "122179472907072582_1847808849729830",
+      "author": "Códigos Leonora",
+      "comment_text": "O por las cosas que miro en páginas raras....",
+      "character": "Maeve",
+      "approved_response": "Páginas raras: patrocinadoras oficiales de mi gasto.",
+      "approved": true
+    },
+    {
+      "comment_id": "122179119159072582_1867023127657043",
+      "author": "Usuario",
+      "comment_text": "Me decía mi padrino AA",
+      "character": "Universe",
+      "approved_response": "Claro, y tu padrino AA también es el de Netflix y el café.",
+      "approved": false
+    },
+    {
+      "comment_id": "122179119159072582_1416029886906865",
+      "author": "Usuario",
+      "comment_text": "Real 😂😂😂",
+      "character": "Universe",
+      "approved_response": "Tan real que ya me siento chingón otra vez.",
+      "approved": true
+    },
+    {
+      "comment_id": "122179119159072582_1147551727808107",
+      "author": "Usuario",
+      "comment_text": "Ha caaraaayy🫠🤭",
+      "character": "Universe",
+      "approved_response": "Cara de 'yo nunca dije eso'.",
+      "approved": true
+    },
+    {
+      "comment_id": "122179119159072582_2046814046014798",
+      "author": "Usuario",
+      "comment_text": "Exactly 👏",
+      "character": "Universe",
+      "approved_response": "Exacto: síntoma confirmado.",
+      "approved": true
+    },
+    {
+      "comment_id": "122179119159072582_1682499686726725",
+      "author": "Usuario",
+      "comment_text": "Mmmtama......si es , si es !!!",
+      "character": "Universe",
+      "approved_response": "Claro que sí, campeón del misterio.",
+      "approved": false
+    },
+    {
+      "comment_id": "122179119159072582_1672690888202146",
+      "author": "Usuario",
+      "comment_text": "De mi cuñado y mi marido no van a estar hablando 😂",
+      "character": "Universe",
+      "approved_response": "Dos diagnósticos en una sola casa.",
+      "approved": true
+    },
+    {
+      "comment_id": "122179487679072582_1099501746311805",
+      "author": "Usuario",
+      "comment_text": "Uff 🔥",
+      "character": "Universe",
+      "approved_response": "Claro, y yo soy el jefe de memes aquí.",
+      "approved": false
+    },
+    {
+      "comment_id": "122179119159072582_1436333617965220",
+      "author": "Usuario",
+      "comment_text": "Todo lo pueden",
+      "character": "Universe",
+      "approved_response": "Menos aceptar que ya son el síntoma.",
+      "approved": true
     }
   ]
 }
