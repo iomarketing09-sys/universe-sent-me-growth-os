@@ -18,7 +18,7 @@ def project_root() -> Path:
 
 
 class CgoOrchestrator:
-    """Punto único de entrada para las 8 capacidades del Growth OS."""
+    """Punto único de entrada para las capacidades del Growth OS."""
 
     def __init__(
         self,

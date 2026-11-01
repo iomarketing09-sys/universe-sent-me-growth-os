@@ -2,6 +2,7 @@
 
 from modules.cgo.capabilities import (
     canon_sync,
+    comments_review,
     cross_tenant_report,
     daily_pipeline,
     meta_publishing,
@@ -20,6 +21,7 @@ CAPABILITIES = {
     "meta_publishing": meta_publishing.run,
     "monetization_report": monetization_report.run,
     "verify_setup": verify_setup.run,
+    "comments_review": comments_review.run,
 }
 
 ALL_TENANTS = {"cross_tenant_report", "verify_setup"}

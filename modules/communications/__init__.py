@@ -1,7 +1,7 @@
-"""Módulo communications: WhatsApp y (próximamente) comentarios.
+"""Módulo communications: WhatsApp y comentarios.
 
-Solo lectura: este módulo observa y mide conversaciones. Enviar mensajes vive en
-el worker del tenant y queda fuera del alcance del módulo por ahora.
+WhatsApp es solo lectura. Los comentarios de Facebook permiten captura y
+publicación únicamente de respuestas aprobadas explícitamente.
 """
 
 from __future__ import annotations

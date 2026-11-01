@@ -70,20 +70,22 @@ def main():
         for line in res.stdout.splitlines():
             if any(k in line for k in ["Total comentarios", "Descartados", "Requieren revision", "Propuestas", "RESUMEN", "seen", "OmniRoute", "Aviso"]):
                 print(f"   {line}")
+        if res.returncode != 0:
+            detail = res.stderr.strip() or res.stdout.strip()
+            print(f"   ❌ La extracción falló (código {res.returncode}).")
+            if detail:
+                print(f"   {detail.splitlines()[-1]}")
+            return res.returncode
     except Exception as e:
         print(f"❌ Error al ejecutar extracción: {e}")
         return 1
 
-    # 3. Generar plantilla aprobaciones.json
-    print("\n📝 [3/4] Generando plantilla estructurada de aprobaciones...")
-    try:
-        subprocess.run([sys.executable, str(main_script), "--create-template", str(APROBACIONES_LOCAL)], cwd=str(COMM_DIR), capture_output=True, text=True)
-        if APROBACIONES_LOCAL.exists():
-            print(f"   ✅ Plantilla local generada: {APROBACIONES_LOCAL.name}")
-        else:
-            print("   ⚠️ No se encontró el archivo aprobaciones.json generado.")
-    except Exception as e:
-        print(f"   ⚠️ Error al generar plantilla: {e}")
+    # 3. Validar plantilla aprobaciones.json generada por main.py
+    print("\n📝 [3/4] Validando plantilla estructurada de aprobaciones...")
+    if APROBACIONES_LOCAL.exists():
+        print(f"   ✅ Plantilla local disponible: {APROBACIONES_LOCAL.name}")
+    else:
+        print("   ⚠️ No se encontró aprobaciones.json; revisa la salida de la extracción.")
 
     # 4. Sincronizar a Google Drive
     print("\n☁️ [4/4] Sincronizando con Google Drive (Cloud SSOT)...")
@@ -96,8 +98,11 @@ def main():
     if drive_dest and APROBACIONES_LOCAL.exists():
         target_file = drive_dest / "aprobaciones.json"
         try:
-            shutil.copy2(APROBACIONES_LOCAL, target_file)
-            print(f"   🚀 Sincronizado con éxito en: {target_file}")
+            if target_file.exists() and target_file.stat().st_mtime > APROBACIONES_LOCAL.stat().st_mtime:
+                print("   📌 Drive tiene una versión más reciente; no se sobrescribió.")
+            else:
+                shutil.copy2(APROBACIONES_LOCAL, target_file)
+                print(f"   🚀 Sincronizado con éxito en: {target_file}")
         except Exception as e:
             print(f"   ⚠️ Error al copiar a Drive: {e}")
     else:

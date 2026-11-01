@@ -37,6 +37,8 @@ def test_capacidades_por_track():
     assert capability_allowed("daily_pipeline", PHYSICAL_CRO)
     assert capability_allowed("monetization_report", NATIVE_DIGITAL)
     assert capability_allowed("monetization_report", PHYSICAL_CRO)
+    assert capability_allowed("comments_review", NATIVE_DIGITAL)
+    assert not capability_allowed("comments_review", PHYSICAL_CRO)
 
 
 # ------------------------------------------------------------- daily pipeline

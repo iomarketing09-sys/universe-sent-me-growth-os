@@ -22,6 +22,8 @@ from modules.cgo.tracks import UNKNOWN, capability_allowed, load_config, tenant_
 TOKEN_KEYS = (
     "META_ACCESS_TOKEN",
     "META_PAGE_TOKEN",
+    "PAGE_ACCESS_TOKEN",
+    "PAGE_ACCES_TOKEN",
     "IG_ACCESS_TOKEN",
     "FB_ACCESS_TOKEN",
     "WHATSAPP_TOKEN",

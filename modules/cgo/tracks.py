@@ -17,6 +17,7 @@ CAPABILITIES_BY_TRACK = {
         "tenant_onboarding",
         "cross_tenant_report",
         "canon_sync",
+        "comments_review",
         "meta_publishing",
         "monetization_report",
         "verify_setup",

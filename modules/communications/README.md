@@ -1,11 +1,19 @@
 # Módulo `communications`
 
-Observación y medición de conversaciones. **Solo lectura**: no envía mensajes.
+Observación y medición de conversaciones. WhatsApp es **solo lectura**; los
+comentarios de Facebook tienen una puerta de publicación explícita para
+respuestas aprobadas.
 
 ## Estructura
 
 ```
 modules/communications/
+├── comments/
+│   ├── facebook.py        captura, propuestas y publicador aprobado
+│   ├── log.py             esquema y migración de comments_log.csv
+│   ├── paths.py           rutas explícitas por tenant (sin escrituras)
+│   ├── responder.py       UniverseResponder canónico
+│   └── review.py          fachada local inbox_snapshot/review_comments
 └── whatsapp/
     ├── agent.py             WhatsAppAgent (reporte completo por tenant)
     ├── adapters.py          Adaptadores del sync multitenant
@@ -67,8 +75,33 @@ Credenciales: `CF_API_TOKEN` y `META_ACCESS_TOKEN` se leen del entorno o de
 - El verify token del webhook ya no vive en `config.json`; solo su referencia a
   `.env`.
 
-## Comentarios (siguiente fase)
+## Comentarios de Facebook
 
-El módulo queda listo para añadir `comments/` (Facebook e Instagram) reusando
-`modules/social/meta_graph.py`. No implementado todavía para no mezclarlo con la
-ingesta de WhatsApp.
+La implementación canónica vive en `modules/communications/comments/`. Los
+comandos históricos de Universe siguen funcionando como envoltorios:
+
+```bash
+python3 tenants/universe/harvest_comments.py
+python3 tenants/universe/publish_comments.py
+```
+
+Los datos históricos **no se movieron** en esta fase:
+
+- `tenants/<tenant>/comment_responses/facebook_comments/aprobaciones.json`
+- `tenants/<tenant>/comment_responses/facebook_comments/data/comments_log.csv`
+
+Revisión local, sin red ni POST:
+
+```bash
+python3 -m modules.cgo --mode comments_review --tenant universe
+```
+
+Publicación real de las entradas con `approved: true` y `approved_response`:
+
+```bash
+python3 -m modules.cgo --mode comments_review --tenant universe --publish
+```
+
+El gate `token` solo se exige con `--publish`. Sin él, la capacidad únicamente
+resume aprobaciones y log local. Antes de cada POST se consulta Meta para no
+duplicar una respuesta existente.

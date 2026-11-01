@@ -28,6 +28,7 @@ modules/cgo/
 | `monetization_report` | Ledger, umbral y conciliación de monetización | intelligence |
 | `canon_sync` | Pre-check del repo canon (solo native) | identity |
 | `meta_publishing` | Coordina IG/FB | social |
+| `comments_review` | Bandeja local y publicación aprobada de comentarios | communications |
 | `verify_setup` | Salud del entorno | todos |
 
 `native_digital`: `universe`, `bam-in-a-can`.
@@ -35,7 +36,7 @@ modules/cgo/
 
 ## Capabilities por track
 
-- `weekly_calendar` y `canon_sync` solo aplican a `native_digital`.
+- `weekly_calendar`, `canon_sync` y `comments_review` solo aplican a `native_digital`.
 - El resto aplica a ambos.
 
 Si `tenant_type` falta o es inválido, el track es `unknown` y la capacidad
@@ -71,7 +72,20 @@ python3 -m modules.cgo --mode meta_publishing --tenant flexi
 python3 -m modules.cgo --mode meta_publishing --tenant flexi --publish
 python3 -m modules.cgo --mode weekly_calendar --tenant universe
 python3 -m modules.cgo --mode canon_sync --tenant universe
+python3 -m modules.cgo --mode comments_review --tenant universe
+python3 -m modules.cgo --mode comments_review --tenant universe --publish
 ```
+
+## Comentarios
+
+`comments_review` delega en `modules/communications/comments/`. Sin `--publish`
+solo lee `aprobaciones.json` y `comments_log.csv`: no llama a Meta ni escribe
+archivos. Con `--publish`, el gate `token` es obligatorio y solo se envían
+entradas con `approved: true`, `approved_response` y sin `published`/`reply_id`.
+Cada POST se precede por una consulta a Meta para evitar respuestas duplicadas.
+
+Los datos siguen en la ruta histórica del tenant durante esta fase:
+`tenants/<tenant>/comment_responses/facebook_comments/`.
 
 ## Monetización
 

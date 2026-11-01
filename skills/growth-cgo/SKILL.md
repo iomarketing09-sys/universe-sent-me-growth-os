@@ -1,6 +1,6 @@
 # Growth CGO Skill - Chief Growth Officer
 
-**Descripción**: Orquestador principal del Growth OS. Coordina daily pipeline, weekly calendar, tenant onboarding, cross-tenant reporting, monetización, canon sync y meta publishing.
+**Descripción**: Orquestador principal del Growth OS. Coordina daily pipeline, weekly calendar, tenant onboarding, cross-tenant reporting, monetización, canon sync, meta publishing y revisión de comentarios.
 
 ---
 
@@ -15,6 +15,7 @@
 | `monetization_report` | Ledger, umbral y conciliación de monetización (read-only) |
 | `canon_sync` | Sincroniza con canon repo (solo universe) |
 | `meta_publishing` | Coordina publicación en Meta (IG/FB) via meta-publisher |
+| `comments_review` | Revisa comentarios locales y publica solo respuestas aprobadas (native_digital) |
 | `verify_setup` | Verifica entorno CGO completo |
 
 ---
@@ -30,6 +31,7 @@
 | `MONETIZATION_REPORT` | GPT-OSS 120B | 0.2 | 2000 | Monetización, umbral y conciliación |
 | `CANON_SYNC` | GPT-OSS 20B | 0.1 | 1000 | Pre-check canon (Claude valida) |
 | `META_PUBLISHING` | GPT-OSS 120B | 0.5 | 2000 | Publicación IG/FB |
+| `COMMENTS_REVIEW` | GPT-OSS 20B | 0.2 | 1200 | Bandeja y respuestas aprobadas |
 | `BRAND_COMPLIANCE` | GPT-OSS 20B | 0.2 | 800 | Validación brand voice |
 
 ---
@@ -95,6 +97,12 @@ python3 -m modules.cgo --mode canon_sync --tenant universe
 
 # Publicación (dry-run por defecto)
 python3 -m modules.cgo --mode meta_publishing --tenant flexi --publish
+
+# Comentarios: solo lectura local
+python3 -m modules.cgo --mode comments_review --tenant universe
+
+# Comentarios: publicar únicamente approved: true
+python3 -m modules.cgo --mode comments_review --tenant universe --publish
 ```
 
 ---

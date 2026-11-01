@@ -22,17 +22,25 @@ def main():
     print("🚀 INICIANDO PUBLICACIÓN EN VIVO DE RESPUESTAS APROBADAS")
     print("=" * 70)
 
-    # 1. Sincronizar desde Google Drive si existe versión aprobada en la nube
-    for cand in DRIVE_CANDIDATES:
+    drive_file = None
+    for cand in dict.fromkeys(DRIVE_CANDIDATES):
         if cand.exists() and cand.is_dir():
-            drive_file = cand / "aprobaciones.json"
-            if drive_file.exists():
-                try:
-                    shutil.copy2(drive_file, APROBACIONES_LOCAL)
-                    print("📥 Sincronizada la última versión de aprobaciones.json desde Google Drive.")
-                except Exception as e:
-                    print(f"   ⚠️ Aviso al sincronizar desde Drive: {e}")
+            candidate_file = cand / "aprobaciones.json"
+            if candidate_file.exists():
+                drive_file = candidate_file
                 break
+
+    if drive_file and (
+        not APROBACIONES_LOCAL.exists()
+        or drive_file.stat().st_mtime > APROBACIONES_LOCAL.stat().st_mtime
+    ):
+        try:
+            shutil.copy2(drive_file, APROBACIONES_LOCAL)
+            print("📥 aprobaciones.json de Drive es más reciente; se usará esa versión.")
+        except Exception as e:
+            print(f"   ⚠️ Aviso al sincronizar desde Drive: {e}")
+    elif drive_file:
+        print("📌 Se usará la versión local de aprobaciones.json, que es más reciente que Drive.")
 
     if not APROBACIONES_LOCAL.exists():
         print(f"❌ Error: No se encontró {APROBACIONES_LOCAL}")
@@ -63,6 +71,12 @@ def main():
     ]
     print("📡 Despachando respuestas aprobadas a Meta Graph API...\n")
     res = subprocess.run(cmd, cwd=str(COMM_DIR))
+    if res.returncode == 0 and drive_file:
+        try:
+            shutil.copy2(APROBACIONES_LOCAL, drive_file)
+            print("☁️ Estado de publicación sincronizado de vuelta a Google Drive.")
+        except Exception as e:
+            print(f"   ⚠️ No se pudo sincronizar el estado a Drive: {e}")
     return res.returncode
 
 if __name__ == "__main__":
