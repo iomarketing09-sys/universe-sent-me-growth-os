@@ -7,17 +7,19 @@ from pathlib import Path
 import requests
 
 TENANT_DIR = Path(__file__).resolve().parent
-ENV_PATH = TENANT_DIR / ".env"
+ENV_CANDIDATES = [TENANT_DIR / ".env", TENANT_DIR.parents[1] / ".env"]
 CONTEXTS_PATH = TENANT_DIR / "publication_contexts.json"
 
-# Cargar credenciales desde .env
 env_vars = {}
-with open(ENV_PATH, "r", encoding="utf-8") as f:
-    for line in f:
-        line = line.strip()
-        if line and not line.startswith("#") and "=" in line:
-            k, v = line.split("=", 1)
-            env_vars[k.strip()] = v.strip().strip("'\"")
+for env_path in ENV_CANDIDATES:
+    if not env_path.exists():
+        continue
+    with open(env_path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                k, v = line.split("=", 1)
+                env_vars.setdefault(k.strip(), v.strip().strip("'\""))
 
 PAGE_ID = env_vars.get("FB_PAGE_ID")
 TOKEN = env_vars.get("PAGE_ACCES_TOKEN") or env_vars.get("PAGE_ACCESS_TOKEN") or env_vars.get("META_ACCESS_TOKEN")
