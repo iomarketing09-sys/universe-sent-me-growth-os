@@ -27,6 +27,9 @@ class CgoContext:
     dry_run: bool = True
     strict: bool = False
     publish: bool = False
+    comments_batch_size: int = 5
+    comments_batch_pause_seconds: int = 900
+    comments_approvals_file: Optional[Path] = None
     since: Optional[str] = None
     until: Optional[str] = None
 

@@ -73,8 +73,6 @@ COMMERCIAL_PHRASES = (
     "promo",
     "envío",
     "envio",
-    "garantía",
-    "garantia",
     "financiamiento",
     "mensaje directo",
     "whatsapp",
@@ -86,6 +84,51 @@ AI_DISCLAIMER_PHRASES = (
     "inteligencia artificial",
     "no tengo acceso",
     "lo siento",
+)
+
+SEXUAL_DOUBLE_SENSE_PHRASES = (
+    "palos",
+    "regalar palos",
+    "dar palos",
+    "palos de luz",
+    "coger",
+    "sexo",
+    "sexual",
+    "caliente",
+    "excitado",
+    "excitada",
+    "ven aquí",
+    "ven aqui",
+)
+
+INTIMACY_PHRASES = (
+    "mi amor",
+    "te amo",
+    "me gustas",
+    "mi corazón",
+    "mi corazon",
+    "hackeaste el corazón",
+    "hackeaste el corazon",
+    "sentimientos por ti",
+    "celoso",
+    "celosa",
+    "enamorado",
+    "enamorada",
+    "enamorarse",
+    "beso",
+    "abrazo",
+)
+
+BRAND_SLOGAN_PHRASES = (
+    "gobierna",
+    "empoderada",
+    "empoderado",
+    "reina",
+    "jefa",
+    "líder",
+    "lider",
+    "manifiesta",
+    "abundancia",
 )
 
 LOW_SIGNAL_WORDS = {
@@ -173,11 +216,24 @@ def is_low_signal(comment: object) -> bool:
         return True
     if re.fullmatch(r"(ja|je|ji|jo|ha|he|hi|ho|lol|xd|lmao)+", clean):
         return True
+    if re.fullmatch(r"no+", clean):
+        return True
+    if clean in {"caracter", "carácter", "personaje"} and re.search(r"[☠💀🔥]", value):
+        return True
     if clean in LOW_SIGNAL_WORDS:
         return True
     if value.startswith("@"):
         return True
     return False
+
+
+def comment_risk_flags(comment: object) -> tuple[str, ...]:
+    """Marca comentarios que no deben pasarse al modelo ni responderse."""
+    lowered = str(comment or "").casefold()
+    flags: list[str] = []
+    if _contains_any(lowered, SEXUAL_DOUBLE_SENSE_PHRASES):
+        flags.append("sexual_double_sense")
+    return tuple(flags)
 
 
 def check_response(
@@ -233,6 +289,15 @@ def check_response(
     if _contains_any(lowered, AI_DISCLAIMER_PHRASES):
         flags.append("ai_disclaimer")
         reasons.append("No debe sonar como asistente ni justificarse.")
+    if _contains_any(lowered, SEXUAL_DOUBLE_SENSE_PHRASES):
+        flags.append("sexual_double_sense")
+        reasons.append("No debe contener albur ni doble sentido sexual.")
+    if _contains_any(lowered, INTIMACY_PHRASES):
+        flags.append("intimacy")
+        reasons.append("No debe sugerir intimidad o sentimientos reales.")
+    if _contains_any(lowered, BRAND_SLOGAN_PHRASES):
+        flags.append("brand_slogan")
+        reasons.append("No debe sonar a eslogan de empoderamiento o marca.")
 
     unique_flags = tuple(dict.fromkeys(flags))
     return QualityDecision(

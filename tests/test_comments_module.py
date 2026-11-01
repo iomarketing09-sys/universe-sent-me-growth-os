@@ -46,6 +46,7 @@ def test_inbox_snapshot_classifies_without_writing(tmp_path):
             {"comment_id": "done", "approved": True, "approved_response": "Hecha", "reply_id": "r1"},
             {"comment_id": "skipped", "approved": False, "approved_response": "No va"},
             {"comment_id": "invalid", "approved": True, "approved_response": ""},
+            {"comment_id": "discarded", "approved": False, "approved_response": "No", "discarded": True},
         ],
     )
     write_comment_log(
@@ -61,11 +62,13 @@ def test_inbox_snapshot_classifies_without_writing(tmp_path):
 
     assert snapshot["configured"] is True
     assert snapshot["approvals"] == {
-        "total": 4,
+        "total": 5,
         "approved": 3,
         "approved_pending": 1,
         "approved_without_response": 1,
-        "not_approved": 1,
+        "not_approved": 2,
+        "discarded": 1,
+        "review_pending": 1,
         "published": 1,
         "errors": 0,
         "pending_comment_ids": ["pending"],
@@ -110,9 +113,13 @@ def test_comments_review_publish_requires_token(tmp_path, monkeypatch):
 
     monkeypatch.setattr(gates, "has_token", lambda ctx, tenant_id: False)
 
-    result = CgoOrchestrator(base_path=str(tmp_path), dry_run=False, publish=True).run_one(
-        "comments_review", "digital"
-    )
+    result = CgoOrchestrator(
+        base_path=str(tmp_path),
+        dry_run=False,
+        publish=True,
+        comments_batch_size=3,
+        comments_batch_pause_seconds=60,
+    ).run_one("comments_review", "digital")
 
     assert result.status == "BLOCKED"
     assert any(gate.name == "token" and gate.state == "FAIL" for gate in result.gates)
@@ -138,18 +145,88 @@ def test_comments_review_publish_calls_module_with_tenant_paths(tmp_path, monkey
 
     monkeypatch.setattr(comments, "publish_approved", fake_publish)
 
-    result = CgoOrchestrator(base_path=str(tmp_path), dry_run=False, publish=True).run_one(
-        "comments_review", "digital"
-    )
+    result = CgoOrchestrator(
+        base_path=str(tmp_path),
+        dry_run=False,
+        publish=True,
+        comments_batch_size=3,
+        comments_batch_pause_seconds=60,
+    ).run_one("comments_review", "digital")
 
     assert result.status == "OK", result.to_dict()
     assert calls == [
         (
             str(paths.approvals_file),
             str(paths.comments_log_file),
-            {"tenant_id": "digital", "base_path": tmp_path},
+            {
+                "tenant_id": "digital",
+                "base_path": tmp_path,
+                "batch_size": 3,
+                "batch_pause_seconds": 60,
+            },
         )
     ]
+
+
+def test_comments_review_uses_alternative_approvals_queue(tmp_path):
+    make_tenant(tmp_path, "digital", track="native_digital")
+    paths = CommentPaths.for_tenant("digital", tmp_path)
+    _write_approvals(
+        paths.approvals_file,
+        [{"comment_id": "main", "approved": True, "approved_response": "Principal"}],
+    )
+    alternative = paths.storage_dir / "aprobaciones_nuevas_8.json"
+    _write_approvals(
+        alternative,
+        [
+            {"comment_id": "new-approved", "approved": True, "approved_response": "Nueva"},
+            {"comment_id": "new-pending", "approved": False, "approved_response": "Pendiente"},
+        ],
+    )
+
+    result = CgoOrchestrator(
+        base_path=str(tmp_path),
+        comments_approvals_file=(
+            "tenants/digital/comment_responses/facebook_comments/aprobaciones_nuevas_8.json"
+        ),
+    ).run_one("comments_review", "digital")
+
+    assert result.status == "OK", result.to_dict()
+    assert result.data["approvals_file"] == str(alternative)
+    assert result.data["approvals"]["total"] == 2
+    assert result.data["approvals"]["approved_pending"] == 1
+    assert result.data["approvals"]["not_approved"] == 1
+    assert all(str(alternative) in item for item in result.next_actions)
+    assert "--comments-approvals-file" in result.next_actions[1]
+
+
+def test_comments_review_cli_parses_alternative_queue(monkeypatch):
+    import modules.cgo.__main__ as cli
+
+    captured = {}
+
+    class FakeOrchestrator:
+        def __init__(self, **kwargs):
+            captured.update(kwargs)
+
+        def run(self, mode, tenant_id=None):
+            return []
+
+    monkeypatch.setattr(cli, "CgoOrchestrator", FakeOrchestrator)
+
+    code = cli.main(
+        [
+            "--mode",
+            "comments_review",
+            "--tenant",
+            "digital",
+            "--comments-approvals-file",
+            "aprobaciones_nuevas_8.json",
+        ]
+    )
+
+    assert code == 0
+    assert captured["comments_approvals_file"] == Path("aprobaciones_nuevas_8.json")
 
 
 def test_comments_review_is_native_only(tmp_path):

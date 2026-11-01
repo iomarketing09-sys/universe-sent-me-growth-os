@@ -16,6 +16,7 @@ Features:
 import argparse
 import json
 import os
+import time
 import urllib.error
 import urllib.request
 import urllib.parse
@@ -96,6 +97,9 @@ class CommentProcessor:
         tenant_id: str = "universe",
         base_path: Optional[Path] = None,
         storage_dir: Optional[Path] = None,
+        response_agent: bool = False,
+        agent_model: Optional[str] = None,
+        agent: Optional[Any] = None,
     ):
         self.dry_run = dry_run
         self.hours = hours
@@ -105,7 +109,10 @@ class CommentProcessor:
         self.paths = CommentPaths.for_tenant(tenant_id, base_path, storage_dir)
         self.base_path = self.paths.base_path
         self.tenant_config = load_tenant_config(tenant_id, self.base_path)
-        self.responder = UniverseResponder()
+        self.responder = UniverseResponder(tenant_id=tenant_id, base_path=self.base_path)
+        self.response_agent = bool(response_agent or agent is not None)
+        self.agent_model = agent_model
+        self.agent = agent
         self.publication_contexts = []
         self.page_token = None
         self.page_id = self._get_page_id()
@@ -191,6 +198,106 @@ class CommentProcessor:
                 return True
         return False
 
+    def _load_delegated_comment_ids(self) -> set[str]:
+        """IDs ya movidos a otra cola de aprobación, para no duplicarlos."""
+        delegated: set[str] = set()
+        batch_files = sorted(self.base_dir.glob("aprobaciones_*.json"))
+        for path in [self.aprobaciones_file, *batch_files]:
+            is_master = path.name == self.aprobaciones_file.name
+            try:
+                payload = json.loads(path.read_text(encoding="utf-8"))
+            except (OSError, json.JSONDecodeError):
+                continue
+            items = payload.get("approvals") if isinstance(payload, dict) else None
+            if not isinstance(items, list):
+                continue
+            for item in items:
+                if not isinstance(item, dict):
+                    continue
+                delegated_to = bool(item.get("delegated_to"))
+                if is_master:
+                    if not delegated_to:
+                        continue
+                else:
+                    approved_pending = (
+                        item.get("approved") is True
+                        and item.get("published") is not True
+                        and not str(item.get("reply_id") or "").strip()
+                    )
+                    if not (delegated_to or approved_pending):
+                        continue
+                comment_id = str(item.get("comment_id") or "").strip()
+                if comment_id:
+                    delegated.add(comment_id)
+        return delegated
+
+    def _get_response_agent(self):
+        if self.agent is None:
+            from modules.communications.agent import CommunicationsAgent
+
+            self.agent = CommunicationsAgent(
+                self.tenant_id,
+                base_path=self.base_path,
+                storage_dir=self.paths.storage_dir,
+                model=self.agent_model,
+            )
+        return self.agent
+
+    @staticmethod
+    def _agent_result_to_responder(result: Dict[str, Any]) -> Dict[str, Any]:
+        """Adapta la salida estructurada del agente al contrato histórico."""
+        needs_response = bool(result.get("needs_response"))
+        if not needs_response:
+            decision = "no_response"
+        elif result.get("decision") == "suggest":
+            decision = "respond"
+        else:
+            decision = "review"
+
+        response = result.get("response") if decision == "respond" else None
+        reason = str(result.get("reason") or "").strip()
+        metadata = {
+            "name": "communications_agent",
+            "model": result.get("model"),
+            "intent": result.get("intent"),
+            "confidence": result.get("confidence"),
+            "quality_ok": result.get("quality_ok"),
+            "policy_flags": result.get("policy_flags") or [],
+            "usage": result.get("usage") or {},
+        }
+        return {
+            "comment_type": result.get("intent") or "other",
+            "apparent_intent": reason,
+            "relation_to_meme": "",
+            "decision": decision,
+            "response": response,
+            "risk_level": result.get("risk") or "low",
+            "review_reason": reason if decision == "review" else "",
+            "quality_ok": result.get("quality_ok"),
+            "quality": result.get("quality"),
+            "agent_metadata": metadata,
+        }
+
+    def _respond_to_comment(
+        self,
+        publication_context: Dict[str, Any],
+        comment: str,
+    ) -> Dict[str, Any]:
+        if not self.response_agent:
+            return self.responder.respond(publication_context, comment)
+        try:
+            result = self._get_response_agent().suggest(comment, publication_context)
+            return self._agent_result_to_responder(result)
+        except Exception as exc:
+            print(f"⚠️ Agente de Comunicaciones no disponible; usando fallback: {type(exc).__name__}")
+            fallback = self.responder.respond(publication_context, comment)
+            fallback["agent_metadata"] = {
+                "name": "legacy_responder",
+                "fallback": True,
+                "error_type": type(exc).__name__,
+            }
+            return fallback
+
     def _log_comment(
         self,
         comment: Dict[str, Any],
@@ -242,6 +349,9 @@ class CommentProcessor:
             )
 
         self._load_publication_contexts()
+        delegated_comment_ids = self._load_delegated_comment_ids()
+        if self.response_agent:
+            print("🧠 Generador de propuestas: CommunicationsAgent (solo sugerencias).")
         cutoff_dt = datetime.now(timezone.utc) - timedelta(hours=self.hours)
 
         print(f"\nConsultando publicaciones y comentarios de las últimas {self.hours} horas...")
@@ -263,6 +373,7 @@ class CommentProcessor:
 
         total_comments = 0
         already_replied_count = 0
+        delegated_count = 0
         low_signal_count = 0
         pending_candidates = []
         processed_count = 0
@@ -300,8 +411,21 @@ class CommentProcessor:
                     )
                     continue
 
+                if str(c.get("id", "")) in delegated_comment_ids:
+                    delegated_count += 1
+                    self._log_comment(
+                        c,
+                        {
+                            "decision": "delegated",
+                            "comment_type": "delegated",
+                            "filter_reason": "delegated_to_batch",
+                        },
+                        publish_status="discarded",
+                    )
+                    continue
+
                 # 2. Procesar con el responder
-                res = self.responder.respond(publication_context=pctx, comment=comment_text)
+                res = self._respond_to_comment(pctx, comment_text)
                 decision = res.get("decision", "no_response")
                 comment_type = res.get("comment_type", "")
 
@@ -323,7 +447,8 @@ class CommentProcessor:
                     "proposed_response": res.get("response", ""),
                     "decision": decision,
                     "risk_level": res.get("risk_level", "low"),
-                    "review_reason": res.get("review_reason", "")
+                    "review_reason": res.get("review_reason", ""),
+                    "agent_metadata": res.get("agent_metadata"),
                 })
                 self._log_comment(c, res, publish_status="pending_approval")
 
@@ -339,6 +464,7 @@ class CommentProcessor:
         print(f"  • Posts activos analizados: {len(recent_posts)}")
         print(f"  • Total comentarios recibidos: {total_comments}")
         print(f"    - 🟢 Ya respondidos (por ti o por bot): {already_replied_count}")
+        print(f"    - 🔁 Delegados a otra cola: {delegated_count}")
         print(f"    - ⚪ Descartados por baja señal (emojis/risas): {low_signal_count}")
         print(f"    - 🟡 PENDIENTES DE ATENCIÓN (Alta señal sin respuesta): {len(pending_candidates)}")
         print("=" * 80)
@@ -364,14 +490,21 @@ class CommentProcessor:
             print(f"    ✨ Propuesta de {char}: \"{item['proposed_response']}\"")
             print("-" * 80)
 
-            approvals_list.append({
+            approval = {
                 "comment_id": item["comment_id"],
                 "author": item["author"],
                 "comment_text": item["comment_text"],
                 "character": char,
                 "approved_response": item["proposed_response"],
                 "approved": False  # Tú decides ponerle True
-            })
+            }
+            if item.get("agent_metadata"):
+                approval["agent"] = item["agent_metadata"]
+            if item.get("review_reason"):
+                approval["review_reason"] = item["review_reason"]
+            if item.get("risk_level") and item["risk_level"] != "low":
+                approval["risk_level"] = item["risk_level"]
+            approvals_list.append(approval)
 
         existing_payload = None
         if self.aprobaciones_file.exists():
@@ -434,9 +567,16 @@ def publish_approved(
     *,
     tenant_id: str = "universe",
     base_path: Optional[Path] = None,
+    batch_size: Optional[int] = None,
+    batch_pause_seconds: int = 0,
 ) -> int:
-    """Publica respuestas aprobadas sin repetir las que ya existen en Meta."""
+    """Publica respuestas aprobadas en tandas y sin repetir las existentes."""
     import requests
+
+    if batch_size is not None and batch_size < 1:
+        raise ValueError("batch_size debe ser mayor que cero o None")
+    if batch_pause_seconds < 0:
+        raise ValueError("batch_pause_seconds no puede ser negativo")
 
     paths = CommentPaths.for_tenant(tenant_id, base_path)
     config = load_tenant_config(tenant_id, paths.base_path)
@@ -482,6 +622,12 @@ def publish_approved(
 
     print("=" * 80)
     print(f"🚀 PUBLICANDO {len(to_publish)} RESPUESTAS EN META GRAPH API")
+    if batch_size:
+        batches = (len(to_publish) + batch_size - 1) // batch_size
+        print(
+            f"   Tandas: {batches} · máximo {batch_size} por tanda · "
+            f"pausa {batch_pause_seconds}s"
+        )
     print("=" * 80)
 
     if not to_publish:
@@ -493,6 +639,18 @@ def publish_approved(
     failure_count = 0
 
     for index, item in enumerate(to_publish, 1):
+        if (
+            batch_size
+            and index > 1
+            and (index - 1) % batch_size == 0
+            and batch_pause_seconds > 0
+        ):
+            print(
+                f"⏸️ Pausa de {batch_pause_seconds}s antes de la tanda "
+                f"{(index - 1) // batch_size + 1}..."
+            )
+            time.sleep(batch_pause_seconds)
+
         comment_id = str(item.get("comment_id", "")).strip()
         reply_text = str(item.get("approved_response", "")).strip()
         character = item.get("character", "Universe")
@@ -627,9 +785,27 @@ def main(argv: Optional[List[str]] = None) -> int:
     parser.add_argument("--hours", type=int, default=48, help="Ventana de tiempo en horas a revisar (por defecto 48)")
     parser.add_argument("--max-comments", type=int, default=200, help="Máximo de comentarios a procesar por corrida")
     parser.add_argument("--publish-approved", metavar="FILE", help="Publica las respuestas aprobadas desde JSON")
+    parser.add_argument(
+        "--batch-size",
+        type=int,
+        default=5,
+        help="Máximo de respuestas por tanda al publicar aprobadas (default: 5)",
+    )
+    parser.add_argument(
+        "--batch-pause-seconds",
+        type=int,
+        default=900,
+        help="Pausa entre tandas al publicar aprobadas (default: 900s)",
+    )
     parser.add_argument("--tenant-id", default="universe", help="Tenant dueño de los comentarios")
     parser.add_argument("--base-path", type=Path, default=None, help="Raíz del repositorio")
     parser.add_argument("--storage-dir", type=Path, default=None, help="Directorio de datos de comentarios")
+    parser.add_argument(
+        "--agent",
+        action="store_true",
+        help="Genera propuestas con CommunicationsAgent (solo sugerencias, nunca publica)",
+    )
+    parser.add_argument("--agent-model", default=None, help="Modelo de OmniRoute para el agente")
 
     args = parser.parse_args(argv)
 
@@ -641,6 +817,8 @@ def main(argv: Optional[List[str]] = None) -> int:
             args.publish_approved,
             tenant_id=args.tenant_id,
             base_path=args.base_path,
+            batch_size=args.batch_size,
+            batch_pause_seconds=args.batch_pause_seconds,
         )
 
     processor = CommentProcessor(
@@ -650,6 +828,8 @@ def main(argv: Optional[List[str]] = None) -> int:
         tenant_id=args.tenant_id,
         base_path=args.base_path,
         storage_dir=args.storage_dir,
+        response_agent=args.agent,
+        agent_model=args.agent_model,
     )
     return processor.run()
 

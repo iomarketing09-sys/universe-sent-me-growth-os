@@ -83,6 +83,27 @@ solo lee `aprobaciones.json` y `comments_log.csv`: no llama a Meta ni escribe
 archivos. Con `--publish`, el gate `token` es obligatorio y solo se envían
 entradas con `approved: true`, `approved_response` y sin `published`/`reply_id`.
 Cada POST se precede por una consulta a Meta para evitar respuestas duplicadas.
+Por defecto publica en tandas de máximo 5 respuestas con 900 segundos de pausa;
+se ajusta con `--comments-batch-size` y `--comments-batch-pause-seconds`.
+
+Para revisar o publicar una cola separada sin tocar la principal, agrega
+`--comments-approvals-file <ruta-al-json>` al mismo comando. Sin esa bandera,
+`comments_review` sigue usando `aprobaciones.json`.
+
+Para ejecutar la publicación aprobada en segundo plano, sin depender de una
+terminal o del chat, usa el worker de systemd:
+
+```bash
+bash scripts/install_comments_publisher.sh
+systemctl list-timers growth-os-comments-publish.timer --no-pager
+journalctl -u growth-os-comments-publish.service -f
+```
+
+El worker procesa `aprobaciones.json` y los lotes con `kind: batch`; ignora la
+vista de revisión `kind: review_queue`. Usa un candado exclusivo para impedir
+dos publicadores simultáneos y mantiene tandas de 5 respuestas con 900s de
+pausa. Se puede forzar una corrida inmediata con
+`sudo systemctl start --no-block growth-os-comments-publish.service`.
 
 Los datos siguen en la ruta histórica del tenant durante esta fase:
 `tenants/<tenant>/comment_responses/facebook_comments/`.

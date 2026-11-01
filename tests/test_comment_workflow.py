@@ -230,3 +230,47 @@ def test_publish_approved_skips_reply_found_in_meta(tmp_path, monkeypatch):
     saved = json.loads(approval_path.read_text(encoding="utf-8"))
     assert saved["approvals"][0]["reply_id"] == "reply_existing"
     assert read_comment_log(log_path)[-1]["publish_status"] == "already_published"
+
+
+def test_publish_approved_respeta_tandas_y_pausa(tmp_path, monkeypatch):
+    approval_path = tmp_path / "aprobaciones.json"
+    log_path = tmp_path / "comments_log.csv"
+    approval_path.write_text(
+        json.dumps(
+            {
+                "approvals": [
+                    {
+                        "comment_id": f"comment_{index}",
+                        "approved": True,
+                        "approved_response": f"Respuesta {index}",
+                    }
+                    for index in range(1, 8)
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    calls = []
+    sleeps = []
+
+    def fake_post(url, data=None, files=None, timeout=None):
+        calls.append(data)
+        return FakeResponse({"id": f"reply_{len(calls)}"})
+
+    monkeypatch.setenv("PAGE_ACCESS_TOKEN", "test-token")
+    monkeypatch.setenv("FB_PAGE_ID", "page_1")
+    monkeypatch.setattr(comments_main, "_existing_page_reply", lambda *args: (True, None, ""))
+    monkeypatch.setattr("requests.post", fake_post)
+    monkeypatch.setattr(comments_main.time, "sleep", lambda seconds: sleeps.append(seconds))
+
+    result = comments_main.publish_approved(
+        str(approval_path),
+        str(log_path),
+        batch_size=5,
+        batch_pause_seconds=900,
+    )
+
+    assert result == 0
+    assert len(calls) == 7
+    assert sleeps == [900]

@@ -3,6 +3,7 @@
 harvest_comments.py - Recolector Unificado On-Demand para Universe Sent Me.
 Monitoreo de salud instantáneo de OmniRoute y desacoplamiento seguro.
 """
+import argparse
 import os
 import sys
 import shutil
@@ -27,7 +28,28 @@ def check_omniroute(host: str = "127.0.0.1", port: int = 20128, timeout: float =
     except Exception:
         return False
 
-def main():
+
+def sync_approval_files(local_dir: Path, drive_dest: Path) -> list[Path]:
+    """Copia las colas locales a Drive respetando la versión más reciente."""
+    synced = []
+    for local_file in sorted(local_dir.glob("aprobaciones*.json")):
+        target_file = drive_dest / local_file.name
+        if target_file.exists() and target_file.stat().st_mtime > local_file.stat().st_mtime:
+            print(f"   📌 Drive tiene una versión más reciente de {local_file.name}; no se sobrescribió.")
+            continue
+        shutil.copy2(local_file, target_file)
+        synced.append(target_file)
+        print(f"   🚀 Sincronizado: {target_file}")
+    return synced
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description="Recolector de comentarios de Universe")
+    parser.add_argument("--agent", action="store_true", help="Usar CommunicationsAgent en modo sugerencia")
+    parser.add_argument("--agent-model", default=None, help="Modelo de OmniRoute para el agente")
+    parser.add_argument("--hours", type=int, default=48, help="Ventana de tiempo en horas")
+    parser.add_argument("--max-comments", type=int, default=100, help="Máximo de comentarios")
+    args = parser.parse_args(argv)
+
     print("=" * 70)
     print("📥 INICIANDO RECOLECCIÓN UNIFICADA DE COMENTARIOS (ON-DEMAND)")
     print("=" * 70)
@@ -64,9 +86,22 @@ def main():
         print(f"❌ Error: No se encontró main.py en {COMM_DIR}")
         return 1
 
-    print("\n🔍 [2/4] Extrayendo comentarios activos (últimas 48h, modo seguro)...")
+    print(f"\n🔍 [2/4] Extrayendo comentarios activos (últimas {args.hours}h, modo seguro)...")
     try:
-        res = subprocess.run([sys.executable, str(main_script), "--dry-run", "--max-comments", "100"], cwd=str(COMM_DIR), capture_output=True, text=True)
+        command = [
+            sys.executable,
+            str(main_script),
+            "--dry-run",
+            "--hours",
+            str(max(1, args.hours)),
+            "--max-comments",
+            str(max(1, args.max_comments)),
+        ]
+        if args.agent:
+            command.append("--agent")
+        if args.agent_model:
+            command.extend(["--agent-model", args.agent_model])
+        res = subprocess.run(command, cwd=str(COMM_DIR), capture_output=True, text=True)
         for line in res.stdout.splitlines():
             if any(k in line for k in ["Total comentarios", "Descartados", "Requieren revision", "Propuestas", "RESUMEN", "seen", "OmniRoute", "Aviso"]):
                 print(f"   {line}")
@@ -96,13 +131,8 @@ def main():
             break
 
     if drive_dest and APROBACIONES_LOCAL.exists():
-        target_file = drive_dest / "aprobaciones.json"
         try:
-            if target_file.exists() and target_file.stat().st_mtime > APROBACIONES_LOCAL.stat().st_mtime:
-                print("   📌 Drive tiene una versión más reciente; no se sobrescribió.")
-            else:
-                shutil.copy2(APROBACIONES_LOCAL, target_file)
-                print(f"   🚀 Sincronizado con éxito en: {target_file}")
+            sync_approval_files(COMM_DIR, drive_dest)
         except Exception as e:
             print(f"   ⚠️ Error al copiar a Drive: {e}")
     else:

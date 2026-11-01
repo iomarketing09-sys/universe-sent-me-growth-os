@@ -3,14 +3,16 @@
 from __future__ import annotations
 
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 import pytest
 
-from modules.communications.agent import CommunicationsAgent
+from modules.communications.agent import CommunicationsAgent, _context_hints
+from modules.communications.comments import facebook as comments_facebook
 from modules.communications.comments.responder import UniverseResponder
 from modules.communications.llm import ChatResult, OmniRouteClient, OmniRouteError, extract_json
-from modules.communications.policy import check_response, is_low_signal
+from modules.communications.policy import check_response, comment_risk_flags, is_low_signal
 
 
 class FakeResponse:
@@ -42,6 +44,16 @@ class FakeClient:
         )
 
 
+class FakeAgent:
+    def __init__(self, result):
+        self.result = result
+        self.calls = []
+
+    def suggest(self, comment, publication_context):
+        self.calls.append((comment, publication_context))
+        return dict(self.result)
+
+
 def _agent_result(**overrides):
     payload = {
         "intent": "humor",
@@ -66,6 +78,10 @@ def test_policy_acepta_remate_corto_y_rechaza_riesgos():
     assert "url" in check_response("Mira https://example.com").flags
     assert "forbidden_phrase" in check_response("El diagnóstico se hace solo.").flags
     assert check_response("Te aprecio mucho.").ok
+    assert check_response("No es garantía de nada.").ok
+    assert "brand_slogan" in check_response("Chipitillo no complace, gobierna.").flags
+    assert "sexual_double_sense" in check_response("Perfecto, luz y palos en la oscuridad.").flags
+    assert "intimacy" in check_response("Desde que me hackeaste el corazón.").flags
 
 
 def test_baja_senal_se_detecta_sin_llamar_al_modelo(tmp_path):
@@ -73,12 +89,178 @@ def test_baja_senal_se_detecta_sin_llamar_al_modelo(tmp_path):
     agent = CommunicationsAgent("universe", base_path=tmp_path, client=client)
 
     assert is_low_signal("Uff 🔥")
+    assert is_low_signal("Nooooo 😂😂😂😂")
+    assert is_low_signal("Caracter ☠️🔥")
+    assert not is_low_signal("Caracter 🙃👏")
     result = agent.suggest("Uff 🔥", {"character": "Universe"})
+    empty = agent.suggest("", {"character": "Universe"})
 
     assert client.calls == []
     assert result["decision"] == "no_response"
     assert result["needs_response"] is False
     assert result["model"] == "deterministic"
+    assert empty["decision"] == "no_response"
+
+
+def test_albur_se_bloquea_sin_llamar_al_modelo(tmp_path):
+    client = FakeClient([])
+    agent = CommunicationsAgent("universe", base_path=tmp_path, client=client)
+    comment = "Voy hacer un cuarto oscuro para dar palos de luz"
+
+    assert "sexual_double_sense" in comment_risk_flags(comment)
+    result = agent.suggest(comment, {"character": "Kiri+Evan"})
+
+    assert client.calls == []
+    assert result["decision"] == "no_response"
+    assert result["risk"] == "high"
+    assert result["policy_flags"] == ["sexual_double_sense"]
+
+
+def test_chiste_literal_del_asset_fuerza_revision_sin_alterar_borrador(tmp_path):
+    draft = "Poético y con hambre, la combinación perfecta para Kiri+Evan."
+    client = FakeClient([_agent_result(draft=draft)])
+    agent = CommunicationsAgent("universe", base_path=tmp_path, client=client)
+
+    result = agent.suggest(
+        "Que poético!",
+        {
+            "character": "Kiri+Evan",
+            "asset_ref": "260716 - Kiri +Evan - Te voy a comer.png",
+            "meme_text": "😏🫣 Te voy a cuidar #UniverseSentMe",
+        },
+    )
+
+    assert result["decision"] == "review"
+    assert result["response"] is None
+    assert result["draft"] == draft
+    assert "literal_asset_joke" in result["policy_flags"]
+
+
+def test_borrador_generico_que_ignora_el_meme_fuerza_revision(tmp_path):
+    client = FakeClient([_agent_result(draft="¿Urgente? ¿Y para qué? ¿Para complicarte más?")])
+    agent = CommunicationsAgent("universe", base_path=tmp_path, client=client)
+
+    result = agent.suggest(
+        "Me urge una platica de esas",
+        {
+            "character": "Evan",
+            "asset_ref": "260511 - Evan.png",
+            "meme_text": "🫣🫣 pues es que también... ¿Que es una plática normal?",
+        },
+    )
+
+    assert result["decision"] == "review"
+    assert result["response"] is None
+    assert "context_mismatch" in result["policy_flags"]
+
+
+def test_borrador_que_ignora_la_broma_de_gasto_fuerza_revision(tmp_path):
+    client = FakeClient([_agent_result(draft="Claro, el centro comercial online nunca duerme.")])
+    agent = CommunicationsAgent("universe", base_path=tmp_path, client=client)
+
+    result = agent.suggest(
+        "O por las cosas que miro en páginas raras....",
+        {
+            "character": "Maeve",
+            "asset_ref": "260721 - Maeve - Si supieras cuanto gasto.png",
+            "caption": "#MaeveUSM #humor #gastos",
+        },
+    )
+
+    assert result["decision"] == "review"
+    assert "context_mismatch" in result["policy_flags"]
+
+
+def test_borrador_de_gasto_con_remate_cotidiano_pasa(tmp_path):
+    client = FakeClient([_agent_result(draft="Lo raro sale barato, o eso decimos para dormir.")])
+    agent = CommunicationsAgent("universe", base_path=tmp_path, client=client)
+
+    result = agent.suggest(
+        "O por las cosas que miro en páginas raras....",
+        {
+            "character": "Maeve",
+            "asset_ref": "260721 - Maeve - Si supieras cuanto gasto.png",
+            "caption": "#MaeveUSM #humor #gastos",
+        },
+    )
+
+    assert result["decision"] == "suggest"
+    assert result["context_flags"] == []
+
+
+def test_borrador_familiar_que_ignora_el_remate_del_meme_fuerza_revision(tmp_path):
+    client = FakeClient([_agent_result(draft="Claro, hablar de ellos es deporte extremo sin medalla.")])
+    agent = CommunicationsAgent("universe", base_path=tmp_path, client=client)
+
+    result = agent.suggest(
+        "De mi cuñado y mi marido no van a estar hablando 😂",
+        {
+            "character": "Universe",
+            "asset_ref": "260626 - Universe.png",
+            "meme_text": "El primer síntoma de estar p3ndjo es sentirse muy chingón.",
+        },
+    )
+
+    assert result["decision"] == "review"
+    assert result["response"] is None
+    assert "context_mismatch" in result["policy_flags"]
+
+
+def test_agente_reescribe_una_vez_si_el_borrador_incumple_politica(tmp_path):
+    client = FakeClient(
+        [
+            _agent_result(draft="Ahí tienes el diagnóstico: dos especialistas en sentirse chingones."),
+            _agent_result(draft="Ese síntoma ya es tradición familiar."),
+        ]
+    )
+    agent = CommunicationsAgent("universe", base_path=tmp_path, client=client)
+
+    result = agent.suggest(
+        "De mi cuñado y mi marido no van a estar hablando 😂",
+        {
+            "character": "Universe",
+            "asset_ref": "260626 - Universe.png",
+            "meme_text": "El primer síntoma de estar p3ndjo es sentirse muy chingón.",
+        },
+    )
+
+    assert result["decision"] == "suggest"
+    assert result["attempts"] == 2
+    assert result["repair"]["attempted"] is True
+    assert "diagnóstico" not in result["draft"].casefold()
+    assert len(client.calls) == 2
+
+
+def test_bandera_del_modelo_impide_sugerir(tmp_path):
+    client = FakeClient([_agent_result(policy_flags=["possible_troll"])])
+    agent = CommunicationsAgent("universe", base_path=tmp_path, client=client)
+
+    result = agent.suggest("No lo creo jajaja", {"character": "Universe"})
+
+    assert result["decision"] == "review"
+    assert result["response"] is None
+    assert "model_policy_flag" in result["policy_flags"]
+
+
+def test_senales_contextuales_no_mezclan_bromas():
+    ghost_context = {
+        "asset_ref": "260715 - Elara+Fantasma - no te mueres.png",
+        "meme_text": "🤷‍♂️✨ #ElaraUSM",
+    }
+    personal_hints = _context_hints("Apoco si? Siempre has sentido algo por mi?", ghost_context)
+    family_hints = _context_hints(
+        "De mi cuñado y mi marido no van a estar hablando 😂",
+        {
+            "asset_ref": "260626 - Universe.png",
+            "meme_text": "El primer síntoma de estar p3ndjo es sentirse muy chingón.",
+        },
+    )
+
+    assert "El remate del asset" not in personal_hints
+    assert "evasiva seca" in personal_hints
+    assert "ellos son así" in family_hints
+    assert "No inventes" in family_hints
+    assert "sentirse muy chingón" in family_hints
 
 
 def test_extract_json_tolera_cercas_y_texto_extra():
@@ -140,6 +322,7 @@ def test_agente_no_envia_ids_ni_autor_al_modelo(tmp_path):
         {
             "publication_id": "post-secreto-123",
             "character": "Universe",
+            "asset_ref": "260626 - Universe.png",
             "meme_text": "Te voy a encontrar",
             "caption": "Ups",
         },
@@ -148,6 +331,7 @@ def test_agente_no_envia_ids_ni_autor_al_modelo(tmp_path):
     serialized = json.dumps(client.calls[0]["messages"], ensure_ascii=False)
     assert "post-secreto-123" not in serialized
     assert "comment_id" not in serialized
+    assert "260626 - Universe.png" in serialized
     assert result["decision"] == "suggest"
     assert result["response"] == "Primer síntoma detectado."
     assert result["publishable"] is True
@@ -262,3 +446,125 @@ def test_shadow_compara_con_aprobacion_sin_escribir_aprobaciones(tmp_path):
     assert report["records"][0]["reference"]["quality"]["ok"] is True
     assert all("post_1" not in call["messages"][1]["content"] for call in client.calls)
     assert all("author" not in json.dumps(call["messages"]) for call in client.calls)
+
+
+def test_processor_con_agente_genera_aprobacion_false_sin_publicar(tmp_path, monkeypatch):
+    agent = FakeAgent(
+        {
+            "intent": "humor",
+            "risk": "low",
+            "needs_response": True,
+            "character": "Universe",
+            "draft": "Primer síntoma detectado.",
+            "confidence": 0.9,
+            "policy_flags": [],
+            "reason": "Señal suficiente.",
+            "quality_ok": True,
+            "quality": {"ok": True, "flags": []},
+            "decision": "suggest",
+            "response": "Primer síntoma detectado.",
+            "publishable": True,
+            "model": "openai/gpt-4.1-mini",
+            "usage": {"total_tokens": 100},
+            "latency_ms": 50,
+        }
+    )
+    processor = comments_facebook.CommentProcessor(
+        dry_run=True,
+        hours=48,
+        max_comments=1,
+        tenant_id="universe",
+        base_path=tmp_path,
+        response_agent=True,
+        agent=agent,
+    )
+    now = datetime.now(timezone.utc).isoformat()
+    processor._load_environment = lambda: None
+    processor._get_page_id = lambda: "page_1"
+    processor._get_explicit_page_token = lambda: "token"
+    processor._load_publication_contexts = lambda: None
+    processor.page_id = "page_1"
+    processor.publication_contexts = [
+        {
+            "publication_id": "post_1",
+            "character": "Universe",
+            "meme_text": "Te voy a encontrar",
+        }
+    ]
+
+    def fake_get(endpoint, params):
+        if endpoint == "page_1/posts":
+            return {"data": [{"id": "post_1", "created_time": now}]}
+        if endpoint == "post_1/comments":
+            return {
+                "data": [
+                    {
+                        "id": "comment_1",
+                        "message": "No lo creo jajaja",
+                        "created_time": now,
+                        "from": {"id": "user_1", "name": "Usuario"},
+                        "comments": {"data": []},
+                    }
+                ]
+            }
+        return None
+
+    processor._make_get_request = fake_get
+    monkeypatch.setattr(
+        comments_facebook,
+        "append_comment_log",
+        lambda *args, **kwargs: None,
+    )
+    monkeypatch.setattr("requests.post", lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError("no publicar")))
+
+    assert processor.run() == 0
+
+    payload = json.loads(processor.aprobaciones_file.read_text(encoding="utf-8"))
+    approval = payload["approvals"][0]
+    assert approval["approved"] is False
+    assert approval["approved_response"] == "Primer síntoma detectado."
+    assert approval["agent"]["name"] == "communications_agent"
+    assert approval["agent"]["model"] == "openai/gpt-4.1-mini"
+    assert len(agent.calls) == 1
+
+
+def test_processor_usa_fallback_si_el_agente_falla(tmp_path):
+    class FailingAgent:
+        def suggest(self, comment, publication_context):
+            raise RuntimeError("sin modelo")
+
+    processor = comments_facebook.CommentProcessor(
+        tenant_id="universe",
+        base_path=tmp_path,
+        response_agent=True,
+        agent=FailingAgent(),
+    )
+    processor.responder.respond = lambda context, comment: {
+        "comment_type": "humor",
+        "decision": "respond",
+        "response": "Respuesta legacy.",
+        "risk_level": "low",
+    }
+
+    result = processor._respond_to_comment({"character": "Universe"}, "Comentario")
+
+    assert result["response"] == "Respuesta legacy."
+    assert result["agent_metadata"]["fallback"] is True
+    assert result["agent_metadata"]["error_type"] == "RuntimeError"
+
+
+def test_cli_de_comentarios_activa_agente_por_flag(monkeypatch):
+    captured = {}
+
+    class FakeProcessor:
+        def __init__(self, **kwargs):
+            captured.update(kwargs)
+
+        def run(self):
+            return 0
+
+    monkeypatch.setattr(comments_facebook, "CommentProcessor", FakeProcessor)
+
+    assert comments_facebook.main(["--agent", "--agent-model", "openai/gpt-4.1-mini"]) == 0
+    assert captured["response_agent"] is True
+    assert captured["agent_model"] == "openai/gpt-4.1-mini"

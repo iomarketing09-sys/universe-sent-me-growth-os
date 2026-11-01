@@ -59,10 +59,29 @@ latencia, uso de tokens, errores y la comparación entre `needs_response` y la
 aprobación humana de referencia. Por defecto se guarda en
 `tenants/<tenant>/comment_responses/facebook_comments/reports/`.
 
+Para revisar propuestas en un formato legible, genera Markdown y CSV a partir
+del JSON de aprobaciones o del reporte sombra:
+
+```bash
+python3 -m modules.communications.review_report \
+  --input tenants/universe/comment_responses/facebook_comments/reports/agent_pilot_20261101T0200Z.json
+```
+
+Los archivos se guardan junto al JSON, dentro de `reports/`. El Markdown incluye
+comentario, propuesta, estado y alertas; el CSV se puede abrir directamente en
+hoja de cálculo.
+
 Reglas de seguridad:
 
 - Un borrador con cualquier bandera de calidad queda en `decision: review` y
   `response: null`.
+- El meme y el copy mandan sobre el nombre del archivo. Los desajustes de
+  contexto, los chistes literales del asset y las escenas inventadas también
+  fuerzan revisión.
+- El humor es ácido: se dirige a la situación, la pose o el remate del meme,
+  nunca a la dignidad de una persona. Se sigue el juego, no se humilla.
+- Si el primer borrador falla política o contexto, el agente hace una segunda
+  pasada con el motivo del rechazo. Si vuelve a fallar, queda en revisión.
 - Precio, stock, tallas, enlaces, claims comerciales y frases corporativas no
   se proponen.
 - Solo se envía texto público y contexto creativo al modelo; nunca IDs de
@@ -141,12 +160,40 @@ El agente de comunicaciones se puede ejecutar antes de esa revisión para
 contrastar sus propuestas con las aprobaciones existentes. El análisis sombra
 es read-only y no requiere token de Meta.
 
+Para generar las propuestas de la captura con el agente (opt-in), usa
+`--agent`. Las propuestas se guardan con `approved: false`; el publicador sigue
+siendo el único que puede enviar algo a Meta, y solo con aprobación explícita:
+
+```bash
+python3 tenants/universe/comment_responses/facebook_comments/main.py \
+  --dry-run --agent --max-comments 10
+
+python3 tenants/universe/harvest_comments.py --agent
+```
+
+Si el agente no responde, el flujo cae automáticamente al responder anterior y
+deja `agent.fallback: true` en la propuesta para que se pueda auditar.
+
 Publicación real de las entradas con `approved: true` y `approved_response`:
 
 ```bash
-python3 -m modules.cgo --mode comments_review --tenant universe --publish
+python3 -m modules.cgo --mode comments_review --tenant universe --publish \
+  --comments-batch-size 5 --comments-batch-pause-seconds 900
+```
+
+Si las propuestas se separaron en otra cola, indica el archivo explícitamente;
+así se revisa y publica esa cola sin mezclarla con `aprobaciones.json`:
+
+```bash
+python3 -m modules.cgo --mode comments_review --tenant universe \
+  --comments-approvals-file tenants/universe/comment_responses/facebook_comments/aprobaciones_nuevas_8.json
 ```
 
 El gate `token` solo se exige con `--publish`. Sin él, la capacidad únicamente
 resume aprobaciones y log local. Antes de cada POST se consulta Meta para no
 duplicar una respuesta existente.
+
+La captura y generación de propuestas puede automatizarse sin publicar con
+`scripts/run_comments_harvest.py`. El timer `growth-os-comments.timer` corre
+cada hora entre 08:00 y 22:00 y reconstruye `aprobaciones_nuevas.json` y
+`reports/nuevas_pendientes.md`; la publicación sigue siendo manual.

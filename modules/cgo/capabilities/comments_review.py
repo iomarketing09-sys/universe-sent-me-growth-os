@@ -34,7 +34,11 @@ def run(ctx: CgoContext, tenant_id: str) -> CgoResult:
     try:
         from modules.communications.comments import inbox_snapshot, publish_approved
 
-        before = inbox_snapshot(tenant_id, base_path=ctx.base_path)
+        before = inbox_snapshot(
+            tenant_id,
+            base_path=ctx.base_path,
+            approvals_file=ctx.comments_approvals_file,
+        )
     except Exception as exc:
         gates.append(GateResult("comments", GATE_FAIL, f"No se pudo leer la bandeja: {type(exc).__name__}"))
         return CgoResult(
@@ -47,12 +51,15 @@ def run(ctx: CgoContext, tenant_id: str) -> CgoResult:
         )
 
     approvals = before["approvals"]
+    is_review_view = before.get("kind") == "review_queue"
+    review_source = before.get("source") or before["approvals_file"]
     actions: List[Dict[str, Any]] = [
         action(
             "comments:review",
             "ok",
             f"{approvals['total']} revisados: {approvals['approved']} aprobados, "
-            f"{approvals['not_approved']} sin aprobar",
+            f"{approvals['review_pending']} por revisar, "
+            f"{approvals['discarded']} descartados",
         ),
         action(
             "comments:pending",
@@ -67,6 +74,14 @@ def run(ctx: CgoContext, tenant_id: str) -> CgoResult:
             f"{before['comments_log']['already_published']} ya existentes",
         ),
     ]
+    if approvals["review_pending"]:
+        actions.append(
+            action(
+                "comments:review_pending",
+                "ok",
+                f"{approvals['review_pending']} propuestas nuevas por revisar",
+            )
+        )
     if approvals["errors"]:
         actions.append(
             action(
@@ -104,7 +119,31 @@ def run(ctx: CgoContext, tenant_id: str) -> CgoResult:
         )
 
     should_publish = bool(ctx.publish and not ctx.dry_run)
+    if should_publish and is_review_view:
+        gates.append(
+            GateResult(
+                "comments",
+                GATE_FAIL,
+                "La vista de revisión es de solo lectura; aprueba en la cola fuente.",
+            )
+        )
+        return CgoResult(
+            capability="comments_review",
+            tenant_id=tenant_id,
+            status="BLOCKED",
+            dry_run=False,
+            gates=gates,
+            actions=actions,
+            reason="La vista de revisión es de solo lectura y no se publica directamente.",
+            data=before,
+        )
     if not should_publish:
+        review_target = review_source if is_review_view else before["approvals_file"]
+        publish_command = (
+            f"python3 -m modules.cgo --mode comments_review --tenant {tenant_id} --publish"
+        )
+        if ctx.comments_approvals_file is not None:
+            publish_command += f" --comments-approvals-file {review_target}"
         return CgoResult(
             capability="comments_review",
             tenant_id=tenant_id,
@@ -114,9 +153,8 @@ def run(ctx: CgoContext, tenant_id: str) -> CgoResult:
             actions=actions,
             artifacts=[before["approvals_file"], before["comments_log_file"]],
             next_actions=[
-                "Revisar aprobaciones.json y marcar approved: true solo en respuestas autorizadas.",
-                "Publicar con: python3 -m modules.cgo --mode comments_review "
-                f"--tenant {tenant_id} --publish",
+                f"Revisar {review_target} y marcar approved: true solo en respuestas autorizadas.",
+                f"Publicar con: {publish_command}",
             ],
             data=before,
         )
@@ -142,9 +180,15 @@ def run(ctx: CgoContext, tenant_id: str) -> CgoResult:
             before["comments_log_file"],
             tenant_id=tenant_id,
             base_path=ctx.base_path,
+            batch_size=ctx.comments_batch_size,
+            batch_pause_seconds=ctx.comments_batch_pause_seconds,
         )
 
-    after = inbox_snapshot(tenant_id, base_path=ctx.base_path)
+    after = inbox_snapshot(
+        tenant_id,
+        base_path=ctx.base_path,
+        approvals_file=ctx.comments_approvals_file,
+    )
     published_now = max(0, after["approvals"]["published"] - before["approvals"]["published"])
     actions.append(
         action(
@@ -165,6 +209,8 @@ def run(ctx: CgoContext, tenant_id: str) -> CgoResult:
         gates=gates,
         actions=actions,
         artifacts=[before["approvals_file"], before["comments_log_file"]],
-        next_actions=["Revisar last_error en aprobaciones.json si quedaron pendientes."],
+        next_actions=[
+            f"Revisar last_error en {before['approvals_file']} si quedaron pendientes."
+        ],
         data={"before": before, "after": after, "publish_returncode": result_code},
     )

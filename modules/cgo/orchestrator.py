@@ -26,14 +26,28 @@ class CgoOrchestrator:
         dry_run: bool = True,
         strict: bool = False,
         publish: bool = False,
+        comments_batch_size: int = 5,
+        comments_batch_pause_seconds: int = 900,
+        comments_approvals_file: Optional[Path] = None,
         since: Optional[str] = None,
         until: Optional[str] = None,
     ):
+        if comments_batch_size < 1:
+            raise ValueError("comments_batch_size debe ser mayor que cero")
+        if comments_batch_pause_seconds < 0:
+            raise ValueError("comments_batch_pause_seconds no puede ser negativo")
+        root = Path(base_path) if base_path else project_root()
+        approvals_path = Path(comments_approvals_file) if comments_approvals_file else None
+        if approvals_path is not None and not approvals_path.is_absolute():
+            approvals_path = root / approvals_path
         self.ctx = CgoContext(
-            base_path=Path(base_path) if base_path else project_root(),
+            base_path=root,
             dry_run=dry_run,
             strict=strict,
             publish=publish,
+            comments_batch_size=comments_batch_size,
+            comments_batch_pause_seconds=comments_batch_pause_seconds,
+            comments_approvals_file=approvals_path,
             since=since,
             until=until,
         )

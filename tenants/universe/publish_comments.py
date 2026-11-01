@@ -69,6 +69,7 @@ def main():
         "--publish-approved",
         str(APROBACIONES_LOCAL)
     ]
+    cmd.extend(sys.argv[1:])
     print("📡 Despachando respuestas aprobadas a Meta Graph API...\n")
     res = subprocess.run(cmd, cwd=str(COMM_DIR))
     if res.returncode == 0 and drive_file:

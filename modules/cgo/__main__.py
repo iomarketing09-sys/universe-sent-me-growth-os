@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from pathlib import Path
 from typing import List, Optional
 
 from modules.cgo.orchestrator import CgoOrchestrator
@@ -40,12 +41,33 @@ def main(argv: Optional[List[str]] = None) -> int:
         action="store_true",
         help="publica de verdad (por defecto solo dry-run)",
     )
+    parser.add_argument(
+        "--comments-batch-size",
+        type=int,
+        default=5,
+        help="máximo de respuestas por tanda en comments_review (default: 5)",
+    )
+    parser.add_argument(
+        "--comments-batch-pause-seconds",
+        type=int,
+        default=900,
+        help="pausa entre tandas de comments_review (default: 900s)",
+    )
+    parser.add_argument(
+        "--comments-approvals-file",
+        type=Path,
+        default=None,
+        help="cola alternativa de aprobaciones para comments_review",
+    )
     args = parser.parse_args(argv)
 
     orchestrator = CgoOrchestrator(
         dry_run=not args.publish,
         strict=args.strict,
         publish=args.publish,
+        comments_batch_size=args.comments_batch_size,
+        comments_batch_pause_seconds=args.comments_batch_pause_seconds,
+        comments_approvals_file=args.comments_approvals_file,
         since=args.since,
         until=args.until,
     )

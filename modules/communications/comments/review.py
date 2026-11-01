@@ -44,6 +44,15 @@ def _approval_stats(items: list[Dict[str, Any]]) -> Dict[str, Any]:
         and item.get("published") is not True
         and not str(item.get("reply_id") or "").strip()
     ]
+    discarded = [item for item in items if item.get("discarded") is True]
+    review_pending = [
+        item
+        for item in items
+        if item.get("approved") is not True
+        and item.get("discarded") is not True
+        and item.get("published") is not True
+        and not str(item.get("reply_id") or "").strip()
+    ]
     errors = [item for item in items if str(item.get("last_error") or "").strip()]
     return {
         "total": len(items),
@@ -51,6 +60,8 @@ def _approval_stats(items: list[Dict[str, Any]]) -> Dict[str, Any]:
         "approved_pending": len(pending),
         "approved_without_response": len(approved_without_response),
         "not_approved": len(items) - len(approved),
+        "discarded": len(discarded),
+        "review_pending": len(review_pending),
         "published": len(published),
         "errors": len(errors),
         "pending_comment_ids": [str(item.get("comment_id") or "") for item in pending],
@@ -72,10 +83,12 @@ def inbox_snapshot(
     tenant_id: str,
     base_path: Optional[Path] = None,
     storage_dir: Optional[Path] = None,
+    approvals_file: Optional[Path] = None,
 ) -> Dict[str, Any]:
     """Resume aprobaciones y log local sin red ni escrituras."""
     paths = CommentPaths.for_tenant(tenant_id, base_path, storage_dir)
-    payload = load_approvals(paths.approvals_file)
+    approval_path = Path(approvals_file) if approvals_file else paths.approvals_file
+    payload = load_approvals(approval_path)
     approvals = [] if payload is None else payload.get("approvals") or []
     if not isinstance(approvals, list):
         raise ValueError("'approvals' debe ser una lista")
@@ -85,7 +98,9 @@ def inbox_snapshot(
         "tenant_id": tenant_id,
         "configured": payload is not None,
         "storage_dir": str(paths.storage_dir),
-        "approvals_file": str(paths.approvals_file),
+        "approvals_file": str(approval_path),
+        "kind": None if payload is None else payload.get("kind"),
+        "source": None if payload is None else payload.get("source"),
         "comments_log_file": str(paths.comments_log_file),
         "generated_at": None if payload is None else payload.get("generated_at"),
         "reviewed_at": None if payload is None else payload.get("reviewed_at"),
@@ -99,6 +114,7 @@ def review_comments(
     tenant_id: str,
     base_path: Optional[Path] = None,
     storage_dir: Optional[Path] = None,
+    approvals_file: Optional[Path] = None,
 ) -> Dict[str, Any]:
     """Alias de fachada para la revisión local de comentarios."""
-    return inbox_snapshot(tenant_id, base_path, storage_dir)
+    return inbox_snapshot(tenant_id, base_path, storage_dir, approvals_file)
