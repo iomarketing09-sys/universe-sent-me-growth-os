@@ -54,6 +54,7 @@ AMBIGUEDAD_FASE2.txt
 # WhatsApp ingestion artifacts (sanitized but operational, never commit)
 tenants/*/whatsapp/reports/
 tenants/*/whatsapp/voice_proposals/
+tenants/*/comment_responses/facebook_comments/reports/
 .pytest_tmp/
 
 # Snapshots diarios del sync: solo latest.json se versiona.

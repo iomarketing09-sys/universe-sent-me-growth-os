@@ -4,6 +4,23 @@ La implementación canónica vive en `modules/communications/comments/`. Los
 archivos `main.py`, `comment_log.py` y `responders/universe_responder.py` de esta
 carpeta son envoltorios de compatibilidad. Las rutas de datos no cambiaron.
 
+## Análisis sombra (read-only)
+
+Antes de publicar se puede contrastar la bandeja actual contra el nuevo Agente
+de Comunicaciones. Este comando no llama a Meta, no escribe
+`aprobaciones.json` y no publica nada:
+
+```bash
+python3 -m modules.communications.agent --tenant universe --shadow
+```
+
+El reporte queda en `reports/communications_shadow_<timestamp>.json` dentro de
+esta carpeta y no se versiona. Para una prueba corta:
+
+```bash
+python3 -m modules.communications.agent --tenant universe --shadow --limit 5
+```
+
 ## Flujo seguro
 
 1. Recolectar y generar propuestas en modo lectura:

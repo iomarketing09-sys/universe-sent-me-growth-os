@@ -4,13 +4,28 @@ La lógica vive en el módulo de comunicaciones. El archivo histórico del tenan
 se conserva como envoltorio de compatibilidad.
 """
 from __future__ import annotations
+from pathlib import Path
 from typing import Any, Dict, Optional
 import re
 import random
 
+from modules.communications.llm import DEFAULT_MODEL, OmniRouteClient, OmniRouteError
+from modules.communications.policy import check_response, is_low_signal, normalize_response
+
 
 class UniverseResponder:
-    def __init__(self) -> None:
+    def __init__(
+        self,
+        *,
+        tenant_id: str = "universe",
+        base_path: Optional[Path] = None,
+        client: Optional[OmniRouteClient] = None,
+        model: Optional[str] = None,
+    ) -> None:
+        self.tenant_id = tenant_id
+        self.base_path = base_path
+        self.client = client
+        self.model = model or DEFAULT_MODEL
         # Keyword lists for safety filtering (keep these)
         self.spam_keywords = ["http", ".com", "www", "follow me", "suscribete", "visita mi", "gana dinero", "bitcoin", "cripto"]
         self.troll_keywords = ["idiota", "estúpido", "molesto", "odio", "baste", "callate", "cállate", "basura", "peor", "peor aún"]
@@ -277,80 +292,23 @@ class UniverseResponder:
         return text
 
     def _passes_quality(self, text: str) -> bool:
-        """Check that the response does not contain forbidden phrases and sounds natural."""
-        lowered = text.lower()
-        for forbidden in self.forbidden_phrases:
-            if forbidden in lowered:
-                return False
-        # Additional quality checks
-        if len(text.strip()) < 3:
-            return False
-        # Should not be all caps unless very short
-        if len(text) > 10 and text.isupper():
-            return False
-        return True
+        """Valida tono, longitud y ausencia de claims antes de publicar."""
+        return check_response(
+            text,
+            extra_forbidden=self.forbidden_phrases,
+        ).ok
 
 
     def _is_low_signal(self, comment: str) -> bool:
         """Detecta comentarios mínimos, risas solas, emojis o monosílabos (Regla Gris)."""
-        import re
-        if not comment:
-            return True
-        clean = re.sub(r'[^\w\s]', '', comment).strip().lower()
-        if len(clean) < 3:
-            return True
-        # Solo risas
-        if re.fullmatch(r'(ja|je|ji|jo|ha|he|hi|ho|lol|xd|lmao)+', clean):
-            return True
-        # Monosílabos y acuerdos vacíos
-        low_words = {
-            "exacto", "si", "sí", "no", "total", "cierto", "tal cual",
-            "literal", "amén", "amen", "de acuerdo", "así es", "asi es",
-            "confirmo", "x2", "x3", "omg", "wow", "uy", "ay", "sep", "nop", "bien"
-        }
-        if clean in low_words:
-            return True
-        if comment.strip().startswith("@"):
-            return True
-        return False
+        return is_low_signal(comment)
 
     def _generate_omniroute_response(self, publication_context: Dict[str, Any], comment: str, is_review: bool = False) -> Optional[str]:
-        """Genera una respuesta en personaje usando OmniRoute y Llama 3.2 Vision."""
-        import os
-        import json
-        import requests
-        from pathlib import Path
-
-        base_url = os.getenv("OPENAI_BASE_URL", "http://localhost:20128/v1")
-        model = os.getenv("OMNIROUTE_MODEL", "openai/gpt-4.1-mini")
-        api_key = os.getenv("OPENAI_API_KEY") or os.getenv("OMNIROUTE_API_KEY") or ""
-
-        if not api_key:
-            for parent_dir in [Path(__file__).resolve().parents[3], Path(__file__).resolve().parents[4]]:
-                env_file = parent_dir / ".env"
-                if env_file.exists():
-                    with open(env_file, "r", encoding="utf-8") as f:
-                        for line in f:
-                            if "=" in line and not line.startswith("#"):
-                                k, v = line.split("=", 1)
-                                if k.strip() in ("OPENAI_API_KEY", "OMNIROUTE_API_KEY"):
-                                    api_key = v.strip().strip("'").strip('"')
-                                    break
-                if api_key:
-                    break
-
-        if not api_key:
-            omniroute_config = Path.home() / ".omniroute" / "config.json"
-            if omniroute_config.exists():
-                try:
-                    contexts = json.loads(omniroute_config.read_text(encoding="utf-8")).get("contexts", {})
-                    api_key = (
-                        contexts.get("universe", {}).get("apiKey")
-                        or contexts.get("default", {}).get("apiKey")
-                        or ""
-                    )
-                except (OSError, json.JSONDecodeError):
-                    api_key = ""
+        """Genera una respuesta en personaje con el cliente OmniRoute compartido."""
+        client = self.client or OmniRouteClient(
+            tenant_id=self.tenant_id,
+            base_path=self.base_path,
+        )
 
         character = self._context_value(publication_context, "character") or "Universe"
         meme_text = self._context_value(publication_context, "meme_text") or ""
@@ -376,29 +334,27 @@ class UniverseResponder:
         else:
             user_prompt += "Remata el chiste con humor en una sola frase corta y directa:\n"
 
-        payload = {
-            "model": model,
-            "messages": [
-                {"role": "system", "content": sys_prompt},
-                {"role": "user", "content": user_prompt}
-            ],
-            "max_tokens": 50,
-            "temperature": 0.7,
-            "stream": False
-        }
-
-        headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
         try:
-            r = requests.post(f"{base_url}/chat/completions", headers=headers, json=payload, timeout=30)
-            if r.status_code == 200:
-                resp = r.json()["choices"][0]["message"]["content"].strip()
-                resp = resp.strip("'").strip('"').strip()
-                return resp if resp.lower() not in {"", "none", "null"} else None
-            error = r.json().get("error", {}).get("message", r.text[:200])
-            print(f"Aviso de OmniRoute ({r.status_code}): {error}")
-        except Exception as e:
-            print(f"Aviso de OmniRoute en respuesta: {e}")
-        return None
+            result = client.chat(
+                [
+                    {"role": "system", "content": sys_prompt},
+                    {"role": "user", "content": user_prompt},
+                ],
+                model=self.model,
+                max_tokens=80,
+                temperature=0.7,
+            )
+        except OmniRouteError as exc:
+            print(f"Aviso de OmniRoute en respuesta: {exc}")
+            return None
+        except Exception as exc:
+            print(f"Aviso de OmniRoute en respuesta: {type(exc).__name__}")
+            return None
+
+        response = normalize_response(result.content)
+        if response.casefold() in {"", "none", "null"}:
+            return None
+        return response
 
     def respond(self, publication_context: Dict[str, Any], comment: str) -> Dict[str, Any]:
         """Main response generation method."""
@@ -411,7 +367,9 @@ class UniverseResponder:
                 "relation_to_meme": "general_reaction",
                 "decision": "no_response",
                 "response": None,
-                "risk_level": "low"
+                "risk_level": "low",
+                "quality_ok": True,
+                "quality": None,
             }
 
         raw_type = self._classify_comment(comment)
@@ -425,9 +383,20 @@ class UniverseResponder:
         decision = self._decision(comment_type, relation_to_meme)
 
         response_text = None
+        quality = None
         if decision in ("respond", "review"):
             is_rev = (decision == "review")
             response_text = self._generate_omniroute_response(publication_context, comment, is_review=is_rev)
+            if response_text:
+                quality = check_response(
+                    response_text,
+                    extra_forbidden=self.forbidden_phrases,
+                )
+                if not quality.ok:
+                    response_text = None
+                    decision = "review"
+            else:
+                decision = "review"
 
         result: Dict[str, Any] = {
             "publication_id": publication_context.get("publication_id"),
@@ -438,12 +407,24 @@ class UniverseResponder:
             "decision": decision,
             "response": response_text,
             "risk_level": "low",
+            "quality_ok": quality.ok if quality is not None else response_text is None and decision == "no_response",
+            "quality": quality.to_dict() if quality is not None else None,
         }
 
         # Set risk level and review reason based on decision
         if decision == "review":
             result["risk_level"] = "medium"
-            result["review_reason"] = "Requiere revisión humana debido a ambigüedad o posible riesgo."
+            if quality is not None and not quality.ok:
+                result["review_reason"] = (
+                    "Borrador bloqueado por política de calidad: "
+                    + quality.reason
+                )
+            elif response_text is None:
+                result["review_reason"] = (
+                    "No se pudo generar un borrador válido; requiere revisión humana."
+                )
+            else:
+                result["review_reason"] = "Requiere revisión humana debido a ambigüedad o posible riesgo."
         elif decision == "respond":
             result["risk_level"] = "low"
         else:  # no_response

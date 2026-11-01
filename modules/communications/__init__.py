@@ -7,6 +7,9 @@ publicación únicamente de respuestas aprobadas explícitamente.
 from __future__ import annotations
 
 __all__ = [
+    "CommunicationsAgent",
+    "OmniRouteClient",
+    "check_response",
     "WhatsAppAgent",
     "collect_whatsapp_live",
     "collect_remote_contacts",
@@ -17,6 +20,9 @@ __all__ = [
 ]
 
 _EXPORTS = {
+    "CommunicationsAgent": ("modules.communications.agent", "CommunicationsAgent"),
+    "OmniRouteClient": ("modules.communications.llm", "OmniRouteClient"),
+    "check_response": ("modules.communications.policy", "check_response"),
     "WhatsAppAgent": ("modules.communications.whatsapp.agent", "WhatsAppAgent"),
     "collect_whatsapp_live": (
         "modules.communications.whatsapp.adapters",

@@ -8,6 +8,9 @@ respuestas aprobadas.
 
 ```
 modules/communications/
+├── agent.py               CommunicationsAgent (sugerencia y análisis sombra)
+├── llm.py                 cliente OmniRoute compartido (chat/JSON)
+├── policy.py              gate de calidad y voz de marca
 ├── comments/
 │   ├── facebook.py        captura, propuestas y publicador aprobado
 │   ├── log.py             esquema y migración de comments_log.csv
@@ -28,6 +31,44 @@ modules/communications/
 
 `growth/integrations/whatsapp_adapters.py` y `whatsapp_graph.py` siguen
 funcionando como envoltorios de compatibilidad.
+
+## Agente de Comunicaciones
+
+`CommunicationsAgent` trabaja en modo `suggest`: clasifica el comentario,
+propone un remate y aplica la política local. Nunca publica, nunca cambia
+`aprobaciones.json` y nunca sustituye la aprobación humana. Facebook y WhatsApp
+son canales; el agente es la capa compartida de criterio y voz.
+
+El modelo por defecto es `openai/gpt-4.1-mini` vía OmniRoute. Las credenciales
+se resuelven en este orden: variables de entorno, `.env` del repo/tenant y
+finalmente el contexto de `~/.omniroute/config.json`. Ninguna credencial se
+imprime.
+
+Análisis sombra de los comentarios existentes (sin Meta y sin escribir
+aprobaciones):
+
+```bash
+python3 -m modules.communications.agent --tenant universe --shadow
+python3 -m modules.communications.agent --tenant universe --shadow --limit 5
+python3 -m modules.communications.agent --tenant universe --shadow \
+  --report /tmp/communications_shadow.json --json
+```
+
+El reporte incluye la clasificación, el borrador, el resultado de política,
+latencia, uso de tokens, errores y la comparación entre `needs_response` y la
+aprobación humana de referencia. Por defecto se guarda en
+`tenants/<tenant>/comment_responses/facebook_comments/reports/`.
+
+Reglas de seguridad:
+
+- Un borrador con cualquier bandera de calidad queda en `decision: review` y
+  `response: null`.
+- Precio, stock, tallas, enlaces, claims comerciales y frases corporativas no
+  se proponen.
+- Solo se envía texto público y contexto creativo al modelo; nunca IDs de
+  autor, `comment_id` ni datos personales.
+- `approved: true` y la publicación explícita siguen siendo gates humanos
+  separados.
 
 ## Comandos
 
@@ -95,6 +136,10 @@ Revisión local, sin red ni POST:
 ```bash
 python3 -m modules.cgo --mode comments_review --tenant universe
 ```
+
+El agente de comunicaciones se puede ejecutar antes de esa revisión para
+contrastar sus propuestas con las aprobaciones existentes. El análisis sombra
+es read-only y no requiere token de Meta.
 
 Publicación real de las entradas con `approved: true` y `approved_response`:
 
