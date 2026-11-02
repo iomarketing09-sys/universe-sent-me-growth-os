@@ -1,16 +1,16 @@
 {
   "tenant_id": "flexi",
   "source": "Cliente - Lista modelos oficiales disponibles + nuevas llegadas 2026-10-28",
-  "fecha_actualizacion": "2026-10-30",
+  "fecha_actualizacion": "2026-11-01",
   "total_modelos_unicos": 76,
-  "total_variantes_color": 94,
+  "total_variantes_color": 95,
   "modelos_por_color": {
     "Negro": 57,
     "Blanco": 5,
     "Tan": 5,
     "Oro": 4,
     "Beige": 2,
-    "Café": 2,
+    "Café": 3,
     "Chocolate": 2,
     "Nude": 2,
     "Taupe": 2,
@@ -93,6 +93,10 @@
     "66517": [
       "Negro",
       "Marrón"
+    ],
+    "700803": [
+      "Negro",
+      "Café"
     ],
     "88702": [
       "Negro",
@@ -569,6 +573,11 @@
       "numero": 94,
       "modelo": "37830",
       "color": "Negro"
+    },
+    {
+      "numero": 95,
+      "modelo": "700803",
+      "color": "Café"
     }
   ]
 }
