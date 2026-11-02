@@ -1,0 +1,104 @@
+{
+  "generated_at": "2026-11-02T01:04:05.105174+00:00",
+  "source": "/home/universe-sent-me/growth-os/tenants/universe/comment_responses/facebook_comments/aprobaciones.json",
+  "kind": "review_queue",
+  "total_pending": 4,
+  "total_approved": 0,
+  "instructions": "Vista de propuestas nuevas sin aprobar. Revisar en chat; marcar approved: true en aprobaciones.json solo después de aprobar.",
+  "approvals": [
+    {
+      "comment_id": "122179516269072582_1648213373441631",
+      "author": "Usuario",
+      "comment_text": "Universe Sent Me Sigue en pie la prueba ??😳🤣😂🤣😂🤣😂",
+      "character": "Kael",
+      "approved_response": "Claro, la prueba sigue, pero el cuerpo hace spoilers y no avisa.",
+      "approved": false,
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "humor",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 1926,
+          "completion_tokens": 71,
+          "total_tokens": 1997,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "comment_id": "122179640145072582_4093977530733237",
+      "author": "Usuario",
+      "comment_text": "si mi pecado es ser npc, arránquenme la vida  ..†",
+      "character": "Universe",
+      "approved_response": "Tranquilo, que ser NPC es el plot twist más triste del juego.",
+      "approved": false,
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "humor",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 1901,
+          "completion_tokens": 78,
+          "total_tokens": 1979,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "review_reason": "No se pudo generar un borrador válido; requiere revisión humana.",
+      "risk_level": "medium"
+    },
+    {
+      "comment_id": "122179649391072582_945793328357426",
+      "author": "Usuario",
+      "comment_text": "Ojalá se pudiera viajar a varios mundos en un día,y poder olvidarse de lo negativo, da igual!!espérame voy contigo y qué fluya la magia 🪄",
+      "character": "Universe",
+      "approved_response": "Claro, y de paso que el GPS no se pierda en el multiverso, ¿no?",
+      "approved": false,
+      "agent": {
+        "name": "legacy_responder",
+        "fallback": true,
+        "error_type": "OmniRouteError"
+      },
+      "review_reason": "No se pudo generar un borrador válido; requiere revisión humana.",
+      "risk_level": "medium"
+    },
+    {
+      "comment_id": "122179640145072582_1644080840426111",
+      "author": "Usuario",
+      "comment_text": "Por ejemplo",
+      "character": "Universe",
+      "approved_response": "Por ejemplo, la nada también es una opción válida.",
+      "approved": false,
+      "agent": {
+        "name": "legacy_responder",
+        "fallback": true,
+        "error_type": "OmniRouteError"
+      },
+      "review_reason": "No se pudo generar un borrador válido; requiere revisión humana.",
+      "risk_level": "medium"
+    }
+  ]
+}

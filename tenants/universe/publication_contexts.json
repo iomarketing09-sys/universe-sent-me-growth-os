@@ -1873,8 +1873,8 @@
     "asset_ref": "260626 - Universe.png",
     "character": "Universe",
     "series": "Universe",
-    "meme_text": "😎✨ #UniverseSentMe #humor #chingon",
-    "visual_context": "Asset con personaje en el nombre.",
+    "meme_text": "El primer síntoma de estar p3ndjo es sentirse muy chingón.",
+    "visual_context": "Universe como gato gris con lentes redondos, popote y camisa floreada sobre nubes.",
     "caption": "😎✨ #UniverseSentMe #humor #chingon",
     "published_at": "2026-10-28T18:25:18+00:00",
     "context_source": "context_backfill_review_2026-10-31",
@@ -1885,8 +1885,8 @@
     "asset_ref": "260626 - Universe.png",
     "character": "Universe",
     "series": "Universe",
-    "meme_text": "😎✨ #UniverseSentMe #humor #chingon",
-    "visual_context": "Asset con personaje en el nombre.",
+    "meme_text": "El primer síntoma de estar p3ndjo es sentirse muy chingón.",
+    "visual_context": "Universe como gato gris con lentes redondos, popote y camisa floreada sobre nubes.",
     "caption": "😎✨ #UniverseSentMe #humor #chingon",
     "published_at": "2026-10-28T18:25:18+00:00",
     "context_source": "context_backfill_review_2026-10-31",
@@ -2953,11 +2953,11 @@
     "asset_ref": "260721 - Maeve - Si supieras cuanto gasto.png",
     "character": "Maeve",
     "series": "Maeve",
-    "meme_text": "🤭🤭✨  #MaeveUSM #humor #UniverseSentMe #meme #gastos",
-    "visual_context": "Asset renombrado por el cliente; contexto confirmado.",
+    "meme_text": "Si supieras cuánto gasto.",
+    "visual_context": "Sin descripción visual confirmada; el texto se tomó del nombre del asset.",
     "caption": "🤭🤭✨  #MaeveUSM #humor #UniverseSentMe #meme #gastos",
     "published_at": "2026-10-31T16:59:00+00:00",
-    "context_source": "context_backfill_review_2026-10-31",
+    "context_source": "manual_review_2026-11-01",
     "review_priority": "ok"
   },
   "122179472907072582": {
@@ -2965,11 +2965,11 @@
     "asset_ref": "260721 - Maeve - Si supieras cuanto gasto.png",
     "character": "Maeve",
     "series": "Maeve",
-    "meme_text": "🤭🤭✨  #MaeveUSM #humor #UniverseSentMe #meme #gastos",
-    "visual_context": "Asset renombrado por el cliente; contexto confirmado.",
+    "meme_text": "Si supieras cuánto gasto.",
+    "visual_context": "Sin descripción visual confirmada; el texto se tomó del nombre del asset.",
     "caption": "🤭🤭✨  #MaeveUSM #humor #UniverseSentMe #meme #gastos",
     "published_at": "2026-10-31T16:59:00+00:00",
-    "context_source": "context_backfill_review_2026-10-31",
+    "context_source": "manual_review_2026-11-01",
     "review_priority": "ok"
   },
   "1036844829507460_122173626879072582": {
@@ -3450,6 +3450,30 @@
     "caption": "🎧🎪✨ Enamorarse de la idea de alguien mie",
     "published_at": "2026-10-01T20:06:41+0000",
     "context_source": "context_backfill_review_2026-10-31",
+    "review_priority": "ok"
+  },
+  "1036844829507460_122179516269072582": {
+    "publication_id": "1036844829507460_122179516269072582",
+    "asset_ref": "Kael",
+    "character": "Kael",
+    "series": "Kael",
+    "meme_text": "Te invito a mi casa a ver cómo reacciona mi cuerpo a tus estímulos.",
+    "visual_context": "Personaje Kael; contexto confirmado por revisión humana.",
+    "caption": "",
+    "published_at": null,
+    "context_source": "manual_review_2026-11-01",
+    "review_priority": "ok"
+  },
+  "1036844829507460_122179593561072582": {
+    "publication_id": "1036844829507460_122179593561072582",
+    "asset_ref": "Sin asset confirmado",
+    "character": "Evan",
+    "series": "Evan",
+    "meme_text": "¿Cómo no va a ser para mí? Barájale bien, bruja.",
+    "visual_context": "Evan pidiendo que una bruja le baraje bien las cartas.",
+    "caption": "Cómo no va a ser para mí?  Barajeale bien!! 😒😠  Jaja aquí se conocieron ellos do",
+    "published_at": "2026-11-01T15:35:47+00:00",
+    "context_source": "manual_review_2026-11-01",
     "review_priority": "ok"
   }
 }

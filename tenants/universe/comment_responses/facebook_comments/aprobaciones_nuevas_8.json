@@ -1,0 +1,227 @@
+{
+  "kind": "batch",
+  "generated_at": "2026-11-01T04:00:00+00:00",
+  "source": "tenants/universe/comment_responses/facebook_comments/reports/agent_recheck12.json",
+  "reviewed_at": "2026-11-01T03:51:17+00:00",
+  "total_pending": 8,
+  "total_approved": 8,
+  "instructions": "Propuestas nuevas separadas para revisión humana. Cambia 'approved: true' solo después de revisar; edita el texto si hace falta. Sin aprobación no se publica nada.",
+  "approvals": [
+    {
+      "comment_id": "122179136481072582_1612884310305050",
+      "author": "Usuario",
+      "comment_text": "Que poético!",
+      "character": "Kiri+Evan",
+      "approved_response": "Poético, sí, como un gato con guantes de boxeo.",
+      "approved": true,
+      "published": true,
+      "agent": {
+        "decision": "suggest",
+        "intent": "humor",
+        "risk": "low",
+        "confidence": 0.9,
+        "policy_flags": [],
+        "quality": {
+          "ok": true,
+          "flags": [],
+          "reason": "Cumple la política de respuesta.",
+          "characters": 47,
+          "max_chars": 90
+        },
+        "model": "openai/gpt-4.1-mini",
+        "reason": "El comentario valora el meme como poético; se responde con humor ácido sobre el tono del meme."
+      },
+      "published_at": "2026-11-01T05:45:24.519202+00:00",
+      "reply_id": "122179136481072582_1121999246872468"
+    },
+    {
+      "comment_id": "122179246437072582_1822645942409315",
+      "author": "Usuario",
+      "comment_text": "Hay la verdad es q si, chales",
+      "character": "Existencial",
+      "approved_response": "Claro, fingir bien es un arte que pocos dominan sin arruinar la función.",
+      "approved": true,
+      "published": true,
+      "agent": {
+        "decision": "suggest",
+        "intent": "other",
+        "risk": "low",
+        "confidence": 0.9,
+        "policy_flags": [],
+        "quality": {
+          "ok": true,
+          "flags": [],
+          "reason": "Cumple la política de respuesta.",
+          "characters": 72,
+          "max_chars": 90
+        },
+        "model": "openai/gpt-4.1-mini",
+        "reason": "El comentario reconoce la verdad del meme, se responde con un remate irónico sobre fingir estar bien."
+      },
+      "published_at": "2026-11-01T05:45:29.478755+00:00",
+      "reply_id": "122179246437072582_1127580786656692"
+    },
+    {
+      "comment_id": "122179326723072582_1032084503248534",
+      "author": "Usuario",
+      "comment_text": "Caracter 🙃👏",
+      "character": "Wilfred",
+      "approved_response": "Wilfred aplaudiendo tu nivel de profundidad, o al menos eso intenta.",
+      "approved": true,
+      "published": true,
+      "agent": {
+        "decision": "suggest",
+        "intent": "other",
+        "risk": "low",
+        "confidence": 0.9,
+        "policy_flags": [],
+        "quality": {
+          "ok": true,
+          "flags": [],
+          "reason": "Cumple la política de respuesta.",
+          "characters": 68,
+          "max_chars": 90
+        },
+        "model": "openai/gpt-4.1-mini",
+        "reason": "El comentario es un aplauso sarcástico que se puede responder con un remate seco y en tono irónico, siguiendo la voz de Wilfred."
+      },
+      "published_at": "2026-11-01T05:45:43.769008+00:00",
+      "reply_id": "122179326723072582_1632247595037077"
+    },
+    {
+      "comment_id": "122179381683072582_1111590048280653",
+      "author": "Usuario",
+      "comment_text": "Apoco si? Siempre has sentido algo por mi?",
+      "character": "Elara+Fantasma",
+      "approved_response": "Si hubiera sentido algo, ya lo habría dicho, no soy adivino.",
+      "approved": true,
+      "published": true,
+      "agent": {
+        "decision": "suggest",
+        "intent": "other",
+        "risk": "low",
+        "confidence": 0.9,
+        "policy_flags": [],
+        "quality": {
+          "ok": true,
+          "flags": [],
+          "reason": "Cumple la política de respuesta.",
+          "characters": 60,
+          "max_chars": 90
+        },
+        "model": "openai/gpt-4.1-mini",
+        "reason": "El comentario es personal y pregunta por sentimientos; se responde con evasiva seca en personaje."
+      },
+      "published_at": "2026-11-01T05:45:48.299277+00:00",
+      "reply_id": "122179381683072582_2153279908608736"
+    },
+    {
+      "comment_id": "122179352091072582_987847484376550",
+      "author": "Usuario",
+      "comment_text": "Me urge una platica de esas",
+      "character": "Evan",
+      "approved_response": "Claro, una plática normal es el unicornio de las conversaciones.",
+      "approved": true,
+      "published": true,
+      "agent": {
+        "decision": "suggest",
+        "intent": "humor",
+        "risk": "low",
+        "confidence": 0.9,
+        "policy_flags": [],
+        "quality": {
+          "ok": true,
+          "flags": [],
+          "reason": "Cumple la política de respuesta.",
+          "characters": 64,
+          "max_chars": 90
+        },
+        "model": "openai/gpt-4.1-mini",
+        "reason": "El comentario pide una plática normal, el meme bromea con que no existen."
+      },
+      "published_at": "2026-11-01T05:45:52.903010+00:00",
+      "reply_id": "122179352091072582_2542823456241849"
+    },
+    {
+      "comment_id": "122179472907072582_1847808849729830",
+      "author": "Códigos Leonora",
+      "comment_text": "O por las cosas que miro en páginas raras....",
+      "character": "Maeve",
+      "approved_response": "Claro, las páginas raras son el paraíso del gasto sin remordimientos.",
+      "approved": true,
+      "published": true,
+      "agent": {
+        "decision": "suggest",
+        "intent": "humor",
+        "risk": "low",
+        "confidence": 0.95,
+        "policy_flags": [],
+        "quality": {
+          "ok": true,
+          "flags": [],
+          "reason": "Cumple la política de respuesta.",
+          "characters": 69,
+          "max_chars": 90
+        },
+        "model": "openai/gpt-4.1-mini",
+        "reason": "El comentario sigue la broma del gasto en páginas raras, se responde con ironía conectando con el remate del meme."
+      },
+      "published_at": "2026-11-01T06:00:55.817052+00:00",
+      "reply_id": "122179472907072582_1441767240813406"
+    },
+    {
+      "comment_id": "122179119159072582_1672690888202146",
+      "author": "Usuario",
+      "comment_text": "De mi cuñado y mi marido no van a estar hablando 😂",
+      "character": "Universe",
+      "approved_response": "Ya el meme los puso en la lista VIP del club de los que se sienten muy chingones.",
+      "approved": true,
+      "published": true,
+      "agent": {
+        "decision": "suggest",
+        "intent": "humor",
+        "risk": "low",
+        "confidence": 0.9,
+        "policy_flags": [],
+        "quality": {
+          "ok": true,
+          "flags": [],
+          "reason": "Cumple la política de respuesta.",
+          "characters": 81,
+          "max_chars": 90
+        },
+        "model": "openai/gpt-4.1-mini",
+        "reason": "El comentario menciona a familiares que encajan con el remate del meme, se responde con complicidad y sarcasmo sobre sentirse muy chingón."
+      },
+      "published_at": "2026-11-01T06:00:58.884098+00:00",
+      "reply_id": "122179119159072582_1639502514516680"
+    },
+    {
+      "comment_id": "122179381683072582_2138550423716440",
+      "author": "Usuario",
+      "comment_text": "No coopera🤷🏻🤣",
+      "character": "Elara+Fantasma",
+      "approved_response": "No coopera, pero ahí sigue, ni muerto ni colaborando.",
+      "approved": true,
+      "published": true,
+      "agent": {
+        "decision": "suggest",
+        "intent": "humor",
+        "risk": "low",
+        "confidence": 0.9,
+        "policy_flags": [],
+        "quality": {
+          "ok": true,
+          "flags": [],
+          "reason": "Cumple la política de respuesta.",
+          "characters": 53,
+          "max_chars": 90
+        },
+        "model": "openai/gpt-4.1-mini",
+        "reason": "El comentario sigue la broma del meme sobre la persona que no coopera pero no muere."
+      },
+      "published_at": "2026-11-01T06:01:01.906126+00:00",
+      "reply_id": "122179381683072582_1482639513783873"
+    }
+  ]
+}
