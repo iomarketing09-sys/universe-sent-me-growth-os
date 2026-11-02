@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "mode": "recommendation_only",
+  "execution_allowed": false,
+  "approval_required": true,
+  "writes_to_meta": false,
+  "execution_blocked": false,
+  "execution_blockers": [],
+  "tenant_id": "flexi",
+  "campaign_id": "120247658527630665",
+  "campaign_slug": "2026-11_flexi_ads_560mxn",
+  "campaign_name": "Flexi OI26 · WhatsApp · Piedras Negras",
+  "checkpoint": "E48",
+  "generated_at": "2026-11-01T16:47:33.256608-06:00",
+  "elapsed_hours": 48.0,
+  "capture_elapsed_hours": 48.18,
+  "scheduled_for": "2026-11-01T16:36:37-06:00",
+  "policy": {
+    "target_cpa_mxn": 8.0,
+    "pause_after_hours": 72,
+    "min_spend_for_decision_mxn": 60.0,
+    "min_conversations_for_decision": 3,
+    "scale_cpa_mxn": 5.6,
+    "min_conversations_to_scale": 5,
+    "min_impressions_for_ctr": 1000,
+    "min_ctr_percent": 1.0
+  },
+  "metadata_reconciliation": {
+    "status": "ok",
+    "source": "meta_api_ads",
+    "checked_at": "2026-11-01T16:47:33.256608-06:00",
+    "changes": [],
+    "execution_blocked": false,
+    "execution_blockers": [],
+    "campaign_json_artifact": null,
+    "meta_captured_at": "2026-10-30T19:40:00-05:00",
+    "canonical": {
+      "campaign_id": "120247658527630665",
+      "adset_id": "120247659400770665"
+    }
+  },
+  "summary": {
+    "campaign_recommendation": "Mantener la campaña y revisar capacidad/margen antes de considerar escala.",
+    "counts": {
+      "pause_ad": 0,
+      "watch": 0,
+      "scale_candidate": 1,
+      "rotate_creative": 0,
+      "keep": 3
+    },
+    "total_spend_mxn": 117.18,
+    "total_conversations": 19,
+    "blended_cost_per_conversation_mxn": 6.17
+  },
+  "actions": [
+    {
+      "target_type": "ad",
+      "target_id": "120247659400810665",
+      "target_name": "Izadora",
+      "evidence": {
+        "spend_mxn": 96.74,
+        "impressions": 4247,
+        "clicks": 289,
+        "ctr_percent": 6.8,
+        "conversations": 18,
+        "cost_per_conversation_mxn": 5.37
+      },
+      "approval_required": true,
+      "status": "proposed",
+      "writes_to_meta": false,
+      "action": "scale_candidate",
+      "priority": "medium",
+      "reason": "CPA por debajo del umbral de escala con muestra suficiente.",
+      "preconditions": [
+        "Revisión humana de capacidad y margen",
+        "No aumentar presupuesto automáticamente"
+      ]
+    },
+    {
+      "target_type": "ad",
+      "target_id": "120247659400790665",
+      "target_name": "Amalia de Quirelli",
+      "evidence": {
+        "spend_mxn": 17.45,
+        "impressions": 718,
+        "clicks": 47,
+        "ctr_percent": 6.55,
+        "conversations": 1,
+        "cost_per_conversation_mxn": 17.45
+      },
+      "approval_required": true,
+      "status": "proposed",
+      "writes_to_meta": false,
+      "action": "keep",
+      "priority": "low",
+      "reason": "Sin señal suficiente para proponer un cambio.",
+      "preconditions": [
+        "Mantener y seguir midiendo"
+      ]
+    },
+    {
+      "target_type": "ad",
+      "target_id": "120247659400780665",
+      "target_name": "ARISHA - QUIRELLI",
+      "evidence": {
+        "spend_mxn": 2.77,
+        "impressions": 96,
+        "clicks": 5,
+        "ctr_percent": 5.21,
+        "conversations": 0,
+        "cost_per_conversation_mxn": 0.0
+      },
+      "approval_required": true,
+      "status": "proposed",
+      "writes_to_meta": false,
+      "action": "keep",
+      "priority": "low",
+      "reason": "Sin señal suficiente para proponer un cambio.",
+      "preconditions": [
+        "Mantener y seguir midiendo"
+      ]
+    },
+    {
+      "target_type": "ad",
+      "target_id": "120247659400800665",
+      "target_name": "LYDIA - FLEXI",
+      "evidence": {
+        "spend_mxn": 0.22,
+        "impressions": 12,
+        "clicks": 1,
+        "ctr_percent": 8.33,
+        "conversations": 0,
+        "cost_per_conversation_mxn": 0.0
+      },
+      "approval_required": true,
+      "status": "proposed",
+      "writes_to_meta": false,
+      "action": "keep",
+      "priority": "low",
+      "reason": "Sin señal suficiente para proponer un cambio.",
+      "preconditions": [
+        "Mantener y seguir midiendo"
+      ]
+    }
+  ],
+  "warnings": [],
+  "approval": {
+    "status": "pending",
+    "approver_role": "Fernando / CGO",
+    "note": "El plan no puede ejecutarse por sí mismo."
+  },
+  "next_steps": [
+    "Revisar este plan con CGO/Fernando",
+    "No ejecutar ninguna acción desde el plan",
+    "Si se aprueba, crear un plan de ejecución separado con auditoría"
+  ]
+}
