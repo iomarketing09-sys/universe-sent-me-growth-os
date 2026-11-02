@@ -1,3 +1,12 @@
+---
+name: growth-cgo
+description: "Opera el Growth OS multi-tenant: pipeline diario, calendario semanal, onboarding, reportes, monetización, canon sync, publicación en Meta y revisión de comentarios, con reglas dual-track y gates de aprobación. Usar para ejecutar o auditar workflows CGO en growth-os."
+metadata:
+  short-description: "Orquestador CGO del Growth OS multi-tenant"
+  version: "1.1.0"
+  author: "iO Marketing"
+---
+
 # Growth CGO Skill - Chief Growth Officer
 
 **Descripción**: Orquestador principal del Growth OS. Coordina daily pipeline, weekly calendar, tenant onboarding, cross-tenant reporting, monetización, canon sync, meta publishing y revisión de comentarios.
@@ -75,6 +84,7 @@
 ## Comandos CLI
 
 El código vive en `modules/cgo`; este skill solo contiene las instrucciones.
+Todos los comandos se ejecutan desde la raíz del repo `growth-os`.
 
 ```bash
 # Verificar setup

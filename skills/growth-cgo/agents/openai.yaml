@@ -7,6 +7,14 @@ description: "Chief Growth Officer - Orquestador principal del Growth OS. Coordi
 version: "1.1.0"
 author: "iO Marketing"
 
+interface:
+  display_name: "Growth CGO"
+  short_description: "Orquesta workflows multi-tenant del Growth OS"
+  default_prompt: "Usa $growth-cgo para revisar el estado operativo y ejecutar el workflow CGO adecuado."
+
+policy:
+  allow_implicit_invocation: true
+
 # Modelos disponibles via OmniRoute (todos gratuitos)
 models:
   - gpt-oss-20b
