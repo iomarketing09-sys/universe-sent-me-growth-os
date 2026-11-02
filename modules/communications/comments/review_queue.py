@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, Optional
 
-from modules.communications.comments.log import write_json_atomic
+from modules.communications.comments.log import read_comment_log, write_json_atomic
 from modules.communications.comments.paths import CommentPaths
 from modules.communications.comments.review import load_approvals
 from modules.communications.review_report import generate_review_files
@@ -19,7 +19,24 @@ def _is_review_candidate(item: Dict[str, Any]) -> bool:
         return False
     if item.get("discarded") is True:
         return False
+    if item.get("publish_status") in {"already_replied", "published", "already_published"}:
+        return False
+    if item.get("decision") in {"already_replied", "already_published"}:
+        return False
     return True
+
+
+def _answered_comment_ids(comments_log_file: Path) -> set[str]:
+    latest: Dict[str, str] = {}
+    for row in read_comment_log(comments_log_file):
+        comment_id = str(row.get("comment_id") or "").strip()
+        if comment_id:
+            latest[comment_id] = str(row.get("publish_status") or "").strip()
+    return {
+        comment_id
+        for comment_id, status in latest.items()
+        if status in {"already_replied", "published", "already_published"}
+    }
 
 
 def build_new_proposals_queue(
@@ -45,10 +62,13 @@ def build_new_proposals_queue(
     if not isinstance(source_items, list):
         raise ValueError("'approvals' debe ser una lista")
 
+    answered = _answered_comment_ids(paths.comments_log_file)
     candidates = [
         dict(item)
         for item in source_items
-        if isinstance(item, dict) and _is_review_candidate(item)
+        if isinstance(item, dict)
+        and _is_review_candidate(item)
+        and str(item.get("comment_id") or "").strip() not in answered
     ]
     output_path = (
         Path(output_file)

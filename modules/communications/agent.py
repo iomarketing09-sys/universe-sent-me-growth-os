@@ -199,7 +199,22 @@ def _context_hints(comment: str, context: Dict[str, str]) -> str:
         if "platica" in comment_lower or "plática" in comment_lower:
             hints.append("Aterriza en la broma de que las pláticas normales no existen.")
     if "cuanto gasto" in creative or "#gastos" in creative:
-        hints.append("La broma es el gasto de Maeve; conecta con gastar o con las páginas raras.")
+        hints.append(
+            "La broma es el gasto de Maeve. Conecta con gastar desde una lógica espiritual o "
+            "cósmica de alguien que se justifica con el universo; no conviertas la respuesta en "
+            "un ataque a la cartera ni al bolsillo del comentarista."
+        )
+    if "reacciona mi cuerpo" in creative and "prueba" in comment_lower:
+        hints.append(
+            "La broma es la invitación pícara de Kael a ver cómo reacciona su cuerpo. Mantén "
+            "el coqueteo con suspenso y seguridad; no hables de cansancio, rechazo ni de dejar "
+            "la prueba a medias."
+        )
+    if ("barájale" in creative or "barajeale" in creative) and "evan" in creative:
+        hints.append(
+            "El meme es Evan insistiendo en que la bruja le baraje las cartas. Sigue el juego "
+            "de la terquedad y la insistencia, sin burlarte del comentarista."
+        )
     if "no te mueres" in asset and ("coopera" in comment_lower or "crush" in comment_lower):
         hints.append("El remate del asset es que la persona no coopera, pero tampoco se muere.")
     if "cuñado" in comment_lower and "marido" in comment_lower:

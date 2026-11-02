@@ -19,9 +19,16 @@ CSV_FIELDS = [
     "comment_id",
     "autor",
     "personaje",
+    "contexto_personaje",
+    "contexto_asset",
+    "contexto_meme",
+    "contexto_visual",
+    "contexto_caption",
+    "contexto_publicado",
     "comentario",
     "respuesta_propuesta",
     "estado",
+    "ya_respondido",
     "calidad",
     "alertas",
     "motivo_revision",
@@ -29,12 +36,81 @@ CSV_FIELDS = [
     "publicado",
 ]
 
+ANSWERED_STATUSES = {"already_replied", "published", "already_published"}
+
 
 def _text(value: Any) -> str:
     return str(value or "").strip()
 
 
-def _approval_item(item: Dict[str, Any], index: int) -> Dict[str, Any]:
+def _find_context_file(source: Path) -> Optional[Path]:
+    current = source.parent
+    for _ in range(5):
+        candidate = current / "publication_contexts.json"
+        if candidate.is_file():
+            return candidate
+        if current.parent == current:
+            break
+        current = current.parent
+    return None
+
+
+def load_publication_contexts(source: Path) -> Dict[str, Dict[str, Any]]:
+    path = _find_context_file(source)
+    if path is None:
+        return {}
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    values = payload.values() if isinstance(payload, dict) else payload
+    index: Dict[str, Dict[str, Any]] = {}
+    for context in values:
+        if not isinstance(context, dict):
+            continue
+        publication_id = _text(context.get("publication_id"))
+        if not publication_id:
+            continue
+        index[publication_id] = context
+        index.setdefault(publication_id.rsplit("_", 1)[-1], context)
+    return index
+
+
+def load_comment_statuses(source: Path) -> Dict[str, str]:
+    candidates = [source.parent / "data" / "comments_log.csv", source.parent / "comments_log.csv"]
+    path = next((candidate for candidate in candidates if candidate.is_file()), None)
+    if path is None:
+        return {}
+    statuses: Dict[str, str] = {}
+    try:
+        with path.open("r", encoding="utf-8-sig", newline="") as handle:
+            for row in csv.DictReader(handle):
+                comment_id = _text(row.get("comment_id"))
+                if comment_id:
+                    statuses[comment_id] = _text(row.get("publish_status"))
+    except OSError:
+        return {}
+    return statuses
+
+
+def _context_fields(context: Dict[str, Any]) -> Dict[str, str]:
+    return {
+        "contexto_personaje": _text(context.get("character")),
+        "contexto_asset": _text(context.get("asset_ref")),
+        "contexto_meme": _text(context.get("meme_text")),
+        "contexto_visual": _text(context.get("visual_context")),
+        "contexto_caption": _text(context.get("caption")),
+        "contexto_publicado": _text(context.get("published_at")),
+    }
+
+
+def _approval_item(
+    item: Dict[str, Any],
+    index: int,
+    *,
+    context: Optional[Dict[str, Any]] = None,
+    log_status: str = "",
+) -> Dict[str, Any]:
     agent = item.get("agent") if isinstance(item.get("agent"), dict) else {}
     response = _text(item.get("approved_response") or item.get("response"))
     quality = check_response(response) if response else None
@@ -42,8 +118,11 @@ def _approval_item(item: Dict[str, Any], index: int) -> Dict[str, Any]:
     if quality:
         flags.extend(quality.flags)
     flags = list(dict.fromkeys(flags))
+    already_answered = log_status in ANSWERED_STATUSES
     if item.get("published") or item.get("reply_id"):
         status = "publicada"
+    elif already_answered:
+        status = "ya respondido"
     elif item.get("approved") is True:
         status = "aprobada"
     elif response:
@@ -51,7 +130,7 @@ def _approval_item(item: Dict[str, Any], index: int) -> Dict[str, Any]:
     else:
         status = "sin respuesta propuesta"
 
-    return {
+    result = {
         "numero": index,
         "comment_id": _text(item.get("comment_id")),
         "autor": _text(item.get("author")),
@@ -59,6 +138,7 @@ def _approval_item(item: Dict[str, Any], index: int) -> Dict[str, Any]:
         "comentario": _text(item.get("comment_text") or item.get("original_comment")),
         "respuesta_propuesta": response,
         "estado": status,
+        "ya_respondido": already_answered,
         "calidad_ok": quality.ok if quality else False,
         "calidad": "OK" if quality and quality.ok else "REVISAR",
         "alertas": ", ".join(flags),
@@ -66,9 +146,17 @@ def _approval_item(item: Dict[str, Any], index: int) -> Dict[str, Any]:
         "modelo": _text(agent.get("model")),
         "publicado": bool(item.get("published") or item.get("reply_id")),
     }
+    result.update(_context_fields(context or {}))
+    return result
 
 
-def _shadow_item(record: Dict[str, Any], index: int) -> Dict[str, Any]:
+def _shadow_item(
+    record: Dict[str, Any],
+    index: int,
+    *,
+    context: Optional[Dict[str, Any]] = None,
+    log_status: str = "",
+) -> Dict[str, Any]:
     agent = record.get("agent") if isinstance(record.get("agent"), dict) else {}
     reference = record.get("reference") if isinstance(record.get("reference"), dict) else {}
     item = {
@@ -80,7 +168,7 @@ def _shadow_item(record: Dict[str, Any], index: int) -> Dict[str, Any]:
         "review_reason": agent.get("reason") if agent.get("decision") == "review" else "",
         "agent": agent,
     }
-    return _approval_item(item, index)
+    return _approval_item(item, index, context=context, log_status=log_status)
 
 
 def _item_decision(item: Dict[str, Any]) -> str:
@@ -92,6 +180,8 @@ def load_review_items(
     path: Path,
     *,
     only_decision: Optional[str] = None,
+    contexts: Optional[Dict[str, Dict[str, Any]]] = None,
+    log_statuses: Optional[Dict[str, str]] = None,
 ) -> List[Dict[str, Any]]:
     payload = json.loads(path.read_text(encoding="utf-8"))
     if isinstance(payload, list):
@@ -106,12 +196,26 @@ def load_review_items(
     else:
         raise ValueError("El archivo no contiene 'approvals' ni 'records'")
 
+    if contexts is None:
+        contexts = load_publication_contexts(path)
+    if log_statuses is None:
+        log_statuses = load_comment_statuses(path)
+
     items = []
     for item in source:
         if isinstance(item, dict):
             if only_decision and _item_decision(item) != only_decision.casefold():
                 continue
-            items.append(converter(item, len(items) + 1))
+            comment_id = _text(item.get("comment_id"))
+            post_id = comment_id.rsplit("_", 1)[0] if "_" in comment_id else comment_id
+            items.append(
+                converter(
+                    item,
+                    len(items) + 1,
+                    context=contexts.get(post_id, {}),
+                    log_status=log_statuses.get(comment_id, ""),
+                )
+            )
     return items
 
 
@@ -159,6 +263,22 @@ def render_markdown(
             lines.append(f"- **Alertas:** {item['alertas']}")
         if item["motivo_revision"]:
             lines.append(f"- **Motivo:** {item['motivo_revision']}")
+
+        context_rows = [
+            ("Personaje", item.get("contexto_personaje")),
+            ("Asset", item.get("contexto_asset")),
+            ("Texto del meme", item.get("contexto_meme")),
+            ("Visual", item.get("contexto_visual")),
+            ("Caption", item.get("contexto_caption")),
+            ("Publicado", item.get("contexto_publicado")),
+        ]
+        context_rows = [(label, value) for label, value in context_rows if value]
+        lines.extend(["", "**Contexto del meme**", ""])
+        if context_rows:
+            lines.extend(f"- **{label}:** {value}" for label, value in context_rows)
+        else:
+            lines.append("- **Contexto:** sin contexto registrado")
+
         lines.extend(
             [
                 "",
@@ -169,12 +289,12 @@ def render_markdown(
                 "**Respuesta propuesta**",
                 "",
                 _quote_block(item["respuesta_propuesta"], "(sin respuesta propuesta)"),
-                "",
-                "- [ ] Revisada",
-                "- [ ] Aprobada para publicar",
-                "",
             ]
         )
+        if item["estado"] in {"ya respondido", "publicada"}:
+            lines.extend(["", f"- [x] {item['estado'].capitalize()}", ""])
+        else:
+            lines.extend(["", "- [ ] Revisada", "- [ ] Aprobada para publicar", ""])
     return "\n".join(lines).rstrip() + "\n"
 
 
