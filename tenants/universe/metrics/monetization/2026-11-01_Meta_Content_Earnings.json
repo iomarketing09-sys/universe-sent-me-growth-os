@@ -1,0 +1,24 @@
+{
+  "tenant_id": "universe",
+  "page_id": "1036844829507460",
+  "business_id": "2294927867461766",
+  "metric": "content_monetization_earnings",
+  "source": "meta_graph_api",
+  "mode": "read_only",
+  "generated_at": "2026-11-01T20:12:44+00:00",
+  "period_start": "2026-11-01",
+  "period_end": "2026-11-01",
+  "currency": "USD",
+  "days": [
+    {
+      "date": "2026-11-01",
+      "content_monetization_micro_amount": 117000000,
+      "content_monetization_usd": 1.17,
+      "approximate_earnings_usd": 1.17,
+      "currency": "USD"
+    }
+  ],
+  "total_content_monetization_usd": 1.17,
+  "total_approximate_earnings_usd": 1.17,
+  "note": "content_monetization_earnings se normaliza desde microAmount; monetization_approximate_earnings se conserva en USD. No incluye necesariamente bonus u otros ajustes de la app."
+}
