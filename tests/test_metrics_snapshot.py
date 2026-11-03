@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import csv
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 from modules.intelligence import metrics_snapshot as ms
@@ -358,3 +358,29 @@ def test_dedupe_dry_run_does_not_write(tmp_path, monkeypatch):
     assert result["removed"] == 1
     assert result["backup"] == ""
     assert len(ms.load_snapshot_log("universe")) == 2
+
+
+def test_page_insights_daily_uses_local_day(monkeypatch):
+    def fake_api_get(token, endpoint, params=None):
+        return {"data": [{"name": params["metric"], "values": [
+            {"end_time": "2026-10-26T07:00:00+0000", "value": 10},
+            {"end_time": "2026-10-27T07:00:00+0000", "value": 4},
+        ]}]}
+
+    monkeypatch.setattr(ms, "api_get", fake_api_get)
+    rows = ms.capture_page_insights_daily("token", "page", date(2026, 10, 25), date(2026, 10, 26))
+
+    assert [row["date"] for row in rows] == ["2026-10-25", "2026-10-26"]
+    assert rows[0]["page_post_engagements"] == 10
+    assert rows[1]["page_post_engagements"] == 4
+
+
+def test_save_page_metrics_upserts_by_date(monkeypatch, tmp_path):
+    monkeypatch.chdir(tmp_path)
+    ms.save_page_metrics("flexi", [{"date": "2026-10-25", "page_views_total": 10}])
+    ms.save_page_metrics("flexi", [{"date": "2026-10-25", "page_views_total": 12}])
+
+    rows = ms.load_page_metrics("flexi")
+
+    assert len(rows) == 1
+    assert rows[0]["page_views_total"] == "12"

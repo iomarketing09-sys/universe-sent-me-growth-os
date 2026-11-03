@@ -53,27 +53,32 @@ def _run_ads_capture() -> int:
         return 1
 
 
-def _run_universe_metrics() -> int:
+def _run_all_metrics() -> int:
+    """Captura métricas de todos los tenants conectados, no solo universe."""
+    from modules.intelligence.metrics_snapshot import run_all_tenants_cycle
+
+    code = 0
     try:
-        from modules.intelligence.metrics_snapshot import run_capture_cycle
         from tenants.universe.metrics.sync_publication_log import sync_publication_log
 
-        sync_code = sync_publication_log()
-        if sync_code != 0:
-            return sync_code
-        result = run_capture_cycle("universe")
-        if result.get("error"):
-            print(f"[metrics] universe: {result['error']}", file=sys.stderr)
-            return 1
-        print(f"[metrics] universe: {result}")
-        return 0
+        code = sync_publication_log() or 0
     except Exception as exc:
-        print(f"[metrics] universe error: {type(exc).__name__}: {exc}", file=sys.stderr)
-        return 1
+        print(f"[metrics] universe sync: {type(exc).__name__}: {exc}", file=sys.stderr)
+        code = 1
+
+    results = run_all_tenants_cycle(Path("."))
+    failures = 0
+    for tenant_id, result in results.items():
+        if result.get("error"):
+            print(f"[metrics] {tenant_id}: {result['error']}", file=sys.stderr)
+            failures += 1
+        else:
+            print(f"[metrics] {tenant_id}: {result}")
+    return code or (1 if failures else 0)
 
 
 if __name__ == "__main__":
     capture_code = _run_ads_capture()
-    metrics_code = _run_universe_metrics()
+    metrics_code = _run_all_metrics()
     scheduler_code = main() or 0
     raise SystemExit(scheduler_code or capture_code or metrics_code)

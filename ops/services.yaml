@@ -44,6 +44,8 @@ services:
     schedule: "cada 15 minutos"
     severity: high
     max_age_minutes: 45
+    output_glob: "logs/intelligence/last.json"
+    output_max_age_minutes: 45
     runbook: "docs/OPERACION_COMPARTIDA.md#instagram"
 
   - id: sync

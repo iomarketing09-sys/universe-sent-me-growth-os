@@ -11,6 +11,35 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 
 ### Añadido
 
+- **Conexión de Facebook al ciclo de métricas**: `meta_publisher` registra cada
+  publicación nativa de Facebook en `publication_log_week2.csv` con su
+  `post_id`, y `run_capture_cycle()` ya no está fijo a `universe`: recorre todos
+  los tenants con log y credenciales. Nuevo `page_metrics_daily.csv` con las
+  métricas diarias de página (`page_post_engagements`, `page_views_total`,
+  `page_video_views`, reacciones y seguidores). El reporte semanal lee el
+  orgánico del ledger y solo consulta Meta cuando no hay capturas por
+  publicación.
+- **Reporte unificado de campaña** (`modules/intelligence/campaign_report.py`):
+  cruza la última captura de Meta con las conversaciones atribuidas de WhatsApp
+  por `ad_id` y emite `reporte_cliente.md`, `reporte_interno.md` y
+  `reporte_cliente.html` (plantilla A4 autocontenida, `report_template.py`).
+- **Reporte semanal de cliente** (`modules/intelligence/weekly_report.py`):
+  ventana domingo–sábado con comparativo contra la semana anterior, resultados
+  por canal (Facebook orgánico y pauta, Instagram orgánico y pauta, otros
+  espacios), máximo tres recomendaciones y salidas `.md`/`.html` en
+  `tenants/<id>/reports/semanal/`. La pauta se desglosa con
+  `publisher_platform`; `--refresh-meta` actualiza un caché local y el resto de
+  las ejecuciones no dependen de la red.
+- **Ejecutor de planes de Ads** (`modules/intelligence/change_plan_executor.py`):
+  aplica acciones aprobadas de `campaign_optimizer` con dry-run por defecto,
+  lista blanca (`pause_ad`), verificación de `status` y auditoría append-only en
+  `tenants/<id>/ads/insights/actions.jsonl`. `keep`/`watch` se ignoran.
+- **Estabilización de Social (Fase 1)** (`modules/social/publish_state.py`,
+  `modules/social/preflight.py`): estado idempotente por slot y tenant, backoff
+  exponencial, máximo de intentos, dead-letter append-only y liberación manual.
+  El scheduler aísla fallos por tenant y valida credenciales, host, formato,
+  asset, peso y dimensiones antes de publicar. CLIs:
+  `scripts/social_preflight.py` y `scripts/social_publish_state.py`.
 - **Monetization Lite** (`modules/intelligence/monetization.py`): separa
   señales diarias por post, periodos estimados/aprobados y payouts confirmados.
   Solo reconoce ingreso en payouts `paid`; el resto queda como pipeline o señal.

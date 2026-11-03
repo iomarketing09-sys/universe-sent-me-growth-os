@@ -1,7 +1,8 @@
 # Módulo `intelligence`
 
-Métricas, histórico, experimentos, planificación y auditoría. **Solo lectura**
-sobre las fuentes externas: no crea, edita ni pausa anuncios.
+Métricas, histórico, experimentos, planificación y auditoría. **Solo lectura por
+defecto**: la única escritura en Meta es `change_plan_executor.py`, explícita,
+limitada a `pause_ad` y auditada.
 
 ## Estructura
 
@@ -18,6 +19,8 @@ modules/intelligence/
 ├── ads_reporting.py       Reporte JSON/texto/Markdown por anuncio
 ├── campaign_capture.py    Checkpoints E24/E48/E72/diarios/FINAL
 ├── campaign_optimizer.py  Plan de cambios por anuncio (solo recomendación)
+├── change_plan_executor.py Aplica planes aprobados con verificación
+├── campaign_report.py     Reporte unificado: Meta + WhatsApp, cliente e interno
 ├── monetization.py        Señales, periodos, payouts y umbral por tenant
 ├── revenue.py             Deals y cobranza de tenants de producto
 └── agents/
@@ -126,10 +129,16 @@ sobrescribirse por tenant en `tenants/<id>/ads/campaign_policy.json`.
 ## Snapshots E0/E24/E72
 
 `metrics_snapshot.py` captura y persiste un snapshot por ventana en
-`tenants/<id>/metrics_snapshot_log.csv`. Ya no depende de que alguien lo
-invoque a mano: el timer de Instagram llama a `run_capture_cycle()` en cada
-pasada y este programa E0/E24/E72 para las publicaciones recientes del
-`publication_log_week2.csv` (idempotente por `publication_id` + ventana).
+`tenants/<id>/metrics_snapshot_log.csv`. El timer de Instagram llama a
+`run_capture_cycle()` cada 15 minutos para **todos** los tenants con
+`publication_log_week2.csv` y `.env`; programa E0/E24/E72 para las
+publicaciones recientes (idempotente por `publication_id` + ventana). El mismo
+ciclo guarda las métricas diarias de página en
+`tenants/<id>/page_metrics_daily.csv`.
+
+Las publicaciones de Facebook se registran en el `publication_log_week2.csv`
+desde `meta_publisher.publish_schedule_from_dryrun()` con su `post_id`; sin esa
+fila el snapshot de Facebook no existe.
 
 ```bash
 python3 -m modules.intelligence.metrics_snapshot flexi schedule   # crea ventanas pendientes
@@ -140,9 +149,12 @@ python3 -m modules.intelligence.metrics_snapshot flexi dedupe --dry-run
 python3 -m modules.intelligence.metrics_snapshot flexi dedupe    # una fila por plataforma+post+ventana
 ```
 
-Facebook aporta `post_impressions` (impresiones), `post_impressions_unique`
-(alcance), `post_engaged_users`, clics y video. Instagram aporta `reach`,
-`views`, `total_interactions`, `saved`, likes, comentarios y shares. Las
+Facebook aporta reacciones, comentarios, shares, clics y video por publicación;
+`post_impressions` y `post_impressions_unique` ya no existen en la API. A nivel
+página se capturan `page_post_engagements`, `page_views_total`,
+`page_video_views`, `page_actions_post_reactions_total` y `page_daily_follows`.
+Instagram aporta `reach`, `views`, `total_interactions`, `saved`, likes,
+comentarios y shares cuando el token tiene `instagram_manage_insights`. Las
 métricas se piden una por una para que una métrica no disponible no invalide
 toda la captura.
 
@@ -190,3 +202,65 @@ get_historical_reuse_info("123456 - Kael.png", tenant_id="flexi")
 
 `DEFAULT_TENANT = "universe"` conserva el comportamiento anterior para scripts
 viejos, pero el planner ya propaga el tenant en cada slot.
+
+## Aplicar un plan de cambios
+
+`campaign_optimizer` recomienda; `change_plan_executor` aplica solo lo aprobado.
+Dry-run por defecto, `pause_ad` como única acción automatizada, verificación de
+`status` y rastro en `tenants/<id>/ads/insights/actions.jsonl`.
+
+```bash
+# Ver qué haría con el último corte
+python3 -m modules.intelligence.change_plan_executor \
+  --tenant flexi \
+  --capture tenants/flexi/ads/insights/captures/2026-11_flexi_ads_560mxn/E72.json
+
+# Aplicar (una sola acción o todas las pausables)
+python3 -m modules.intelligence.change_plan_executor --tenant flexi \
+  --capture .../E72.json --apply --only 120247659400790665
+```
+
+`keep` y `watch` se ignoran; `scale_candidate` y `rotate_creative` se reportan
+como no automatizadas.
+
+## Reporte unificado de campaña
+
+Une las dos fuentes por `ad_id`: la última captura de Meta y las conversaciones
+atribuidas de WhatsApp. Genera dos salidas del mismo dato, sin edición manual:
+
+```bash
+python3 -m modules.intelligence.campaign_report \
+  --tenant flexi --campaign 2026-11_flexi_ads_560mxn [--checkpoint FINAL]
+```
+
+- `reporte_cliente.md`: una página, sin jerga ni IDs.
+- `reporte_interno.md`: ad_ids, estados, checkpoints y discrepancias.
+- `reporte_cliente.html`: plantilla A4 imprimible (guardar como PDF desde el navegador).
+
+Los anuncios con menos del 10% de las conversaciones no se declaran eficientes:
+su costo todavía no es concluyente.
+
+## Reporte semanal
+
+`weekly_report.py` cierra la ventana domingo–sábado y la compara con la semana
+anterior. Una página: resultados por canal, qué se hizo, qué se aprendió, hasta
+tres recomendaciones y qué se necesita del cliente.
+
+```bash
+python3 -m modules.intelligence.weekly_report --tenant flexi [--reference 2026-11-03]
+python3 -m modules.intelligence.weekly_report --tenant flexi --refresh-meta
+```
+
+Salidas en `tenants/<id>/reports/semanal/` (`.md` y `.html` A4). Solo cuentan
+como publicadas las piezas con estado `published` o `scheduled`; las omitidas se
+excluyen. La tabla separa Facebook orgánico, Facebook pauta, Instagram orgánico,
+Instagram pauta y otros espacios de Meta. La pauta se desglosa con
+`publisher_platform`. El orgánico sale del ledger local (`metrics_snapshot_log`
++ `page_metrics_daily`); solo si no hay capturas por publicación cae a la
+consulta directa de Meta. La pauta sigue consultando Meta y cachea el resultado.
+
+`--refresh-meta` consulta Meta y guarda un caché local en
+`tenants/<id>/ads/insights/captures/weekly_meta_<inicio>_<fin>.json`. Sin ese
+flag, el reporte se regenera desde el caché y no hace llamadas de red. Meta ya
+no expone alcance e impresiones orgánicas de Facebook; Instagram requiere
+`instagram_manage_insights` para alcance e interacciones completas.

@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.DEBUG)
 
 from pathlib import Path
-from typing import Dict, Any, List, Mapping, Optional, Union
+from typing import Dict, Any, List, Mapping, Optional, Sequence, Union
 import json
 import os
 import argparse
@@ -19,6 +19,7 @@ import requests
 from datetime import datetime, timezone
 from dataclasses import dataclass
 import csv
+from zoneinfo import ZoneInfo
 
 from modules.config.env import META_ENV_KEYS, load_env_values, parse_env_file
 
@@ -503,6 +504,80 @@ class MetaPublisher:
         with open(image_path, "rb") as f:
             files = {"source": (image_path.name, f, "image/jpeg")}
             return self._make_request(f"{self.page_id}/photos", payload, files)
+
+    def publish_album(
+        self,
+        image_paths: Sequence[Union[str, Path]],
+        caption: str,
+        scheduled_publish_time: Union[str, int],
+    ) -> MetaResponse:
+        """
+        Publica un álbum de varias imágenes en un solo post de Facebook.
+
+        Meta no expone un endpoint de carrusel para páginas: el patrón soportado
+        es subir cada foto sin publicar y después crear un post de feed que las
+        adjunte.
+
+        1. POST /{PAGE_ID}/photos con published=false, temporary=false
+        2. POST /{PAGE_ID}/feed con attached_media[i] y published=false
+
+        Parámetros:
+            image_paths: entre 2 y 10 imágenes, en el orden de aparición
+            caption: texto del post
+            scheduled_publish_time: ISO UTC o timestamp UNIX
+        """
+        if isinstance(scheduled_publish_time, str):
+            scheduled_ts = self._build_scheduled_time(scheduled_publish_time)
+        else:
+            scheduled_ts = scheduled_publish_time
+
+        paths = [Path(image_path) for image_path in image_paths]
+        if not 2 <= len(paths) <= 10:
+            return MetaResponse(
+                success=False,
+                error=f"Un álbum requiere entre 2 y 10 imágenes; recibidas {len(paths)}",
+            )
+
+        missing = [str(path) for path in paths if not path.exists()]
+        if missing and not self.dry_run:
+            return MetaResponse(
+                success=False,
+                error=f"Archivos no encontrados: {', '.join(missing)}",
+            )
+
+        if self.dry_run:
+            return self._mock_response("album")
+
+        photo_ids: List[str] = []
+        for path in paths:
+            with open(path, "rb") as f:
+                files = {"source": (path.name, f, "image/jpeg")}
+                uploaded = self._make_request(
+                    f"{self.page_id}/photos",
+                    {"published": "false", "temporary": "false"},
+                    files,
+                )
+            if not uploaded.success or not uploaded.post_id:
+                return MetaResponse(
+                    success=False,
+                    error=f"No se pudo subir {path.name}: {uploaded.error}",
+                    raw_response={"photo_ids": photo_ids},
+                )
+            photo_ids.append(uploaded.post_id)
+
+        payload = {
+            "message": caption,
+            "published": "false",
+            "scheduled_publish_time": str(scheduled_ts),
+            "unpublished_content_type": "SCHEDULED",
+        }
+        for index, photo_id in enumerate(photo_ids):
+            payload[f"attached_media[{index}]"] = json.dumps({"media_fbid": photo_id})
+
+        result = self._make_request(f"{self.page_id}/feed", payload)
+        if isinstance(result.raw_response, dict):
+            result.raw_response.setdefault("photo_ids", photo_ids)
+        return result
     
     def publish_video(
         self,
@@ -611,6 +686,144 @@ def find_asset_recursive(tenant_root: Path, filename: str) -> Optional[Path]:
     return None
 
 
+def _logged_facebook_slots(tenant_root: Path) -> set[tuple[str, str]]:
+    """Lee los logs de publicación del tenant y devuelve (fecha, hora) ya usados en Facebook."""
+    logged: set[tuple[str, str]] = set()
+    for log_path in sorted(tenant_root.glob("publication_log*.csv")):
+        try:
+            with log_path.open(encoding="utf-8-sig", newline="") as handle:
+                for row in csv.DictReader(handle):
+                    if (row.get("platform") or "").strip().lower() != "facebook":
+                        continue
+                    status = (row.get("status") or "").strip().lower()
+                    if status not in {"scheduled", "published"}:
+                        continue
+                    logged.add(
+                        ((row.get("date") or "").strip(), (row.get("time") or "").strip())
+                    )
+        except (OSError, csv.Error, UnicodeDecodeError) as exc:
+            logger.warning(f"No se pudo leer {log_path}: {exc}")
+    return logged
+
+
+def publish_meta_import_slots(
+    meta_import_path: Union[str, Path],
+    tenant_root: Union[str, Path],
+    since: Optional[str] = None,
+    until: Optional[str] = None,
+    dry_run: Optional[bool] = None,
+    environment: Optional[Mapping[str, str]] = None,
+    skip_logged: bool = True,
+) -> List[MetaResponse]:
+    """
+    Programa en Facebook solo los slots de ``meta_import.csv`` en un rango de fechas.
+
+    A diferencia de ``publish_schedule_from_dryrun`` (que publica todo el
+    calendario y puede duplicar), esta función es selectiva e idempotente:
+    omite los slots ya registrados como ``scheduled``/``published`` en los
+    ``publication_log*.csv`` del tenant.
+
+    ``Post Type`` se despacha así: ``PHOTO`` → foto, ``CAROUSEL`` → álbum,
+    ``REEL``/``VIDEO`` → video, ``TEXT`` → post de texto.
+    """
+    tenant_root = Path(tenant_root)
+    publisher = MetaPublisher(dry_run=dry_run, environment=environment)
+    logged = _logged_facebook_slots(tenant_root)
+    results: List[MetaResponse] = []
+
+    with Path(meta_import_path).open(encoding="utf-8-sig", newline="") as handle:
+        rows = list(csv.DictReader(handle))
+
+    for row in rows:
+        date = (row.get("Date (YYYY-MM-DD)") or "").strip()
+        time_str = (row.get("Time (HH:MM, 24h)") or "").strip()
+        if not date or not time_str:
+            continue
+        if since and date < since:
+            continue
+        if until and date > until:
+            continue
+        if skip_logged and (date, time_str) in logged:
+            results.append(
+                MetaResponse(
+                    success=True,
+                    status="skipped",
+                    raw_response={"skipped": True, "reason": f"{date} {time_str} ya registrado"},
+                )
+            )
+            continue
+
+        try:
+            zone = ZoneInfo((row.get("Timezone") or "America/Matamoros").strip())
+            local_dt = datetime.fromisoformat(f"{date}T{time_str}").replace(tzinfo=zone)
+        except (ValueError, KeyError) as exc:
+            results.append(
+                MetaResponse(success=False, error=f"Slot {date} {time_str} inválido: {exc}")
+            )
+            continue
+
+        scheduled_utc = local_dt.astimezone(timezone.utc).isoformat()
+        assets = [
+            name.strip()
+            for name in (row.get("Media URL") or "").split("|")
+            if name.strip()
+        ]
+        post_type = (row.get("Post Type") or "").strip().upper()
+        caption = (row.get("Caption") or "").strip()
+
+        if not assets:
+            results.append(MetaResponse(success=False, error=f"Slot {date} sin assets"))
+            continue
+
+        paths: List[Optional[Path]] = [find_asset_recursive(tenant_root, name) for name in assets]
+        missing = [name for name, path in zip(assets, paths) if path is None]
+        if missing and not publisher.dry_run:
+            results.append(
+                MetaResponse(
+                    success=False,
+                    error=f"Assets no encontrados en {tenant_root}: {', '.join(missing)}",
+                )
+            )
+            continue
+
+        try:
+            if post_type == "CAROUSEL":
+                result = publisher.publish_album(
+                    image_paths=[path or name for name, path in zip(assets, paths)],
+                    caption=caption,
+                    scheduled_publish_time=scheduled_utc,
+                )
+            elif post_type in {"REEL", "VIDEO"}:
+                result = publisher.publish_video(
+                    video_path=paths[0] or assets[0],
+                    description=caption,
+                    scheduled_publish_time=scheduled_utc,
+                    title=Path(assets[0]).stem,
+                )
+            elif post_type == "TEXT":
+                result = publisher.publish_text(
+                    message=caption,
+                    scheduled_publish_time=scheduled_utc,
+                    link=(row.get("Link URL") or "").strip() or None,
+                )
+            else:
+                result = publisher.publish_photo(
+                    image_path=paths[0] or assets[0],
+                    caption=caption,
+                    scheduled_publish_time=scheduled_utc,
+                )
+        except Exception as exc:  # noqa: BLE001 - se reporta por slot
+            result = MetaResponse(success=False, error=f"{date} {time_str}: {exc}")
+
+        if result.raw_response is None:
+            result.raw_response = {}
+        result.raw_response.setdefault("slot", f"{date} {time_str}")
+        result.raw_response.setdefault("post_type", post_type)
+        results.append(result)
+
+    return results
+
+
 def resolve_asset_path(slot: Dict[str, Any], tenant_root: Path, meta_import: Optional[Dict[str, Dict]] = None) -> Optional[Path]:
     """
     Resuelve la ruta absoluta del asset para un slot.
@@ -694,6 +907,69 @@ def get_slot_meta_data(slot: Dict[str, Any], meta_import: Dict[str, Dict]) -> Di
         "link_url": slot.get("whatsapp_e164") and f"https://wa.me/{slot['whatsapp_e164']}",
         "post_type": "TEXT_ONLY" if not source_filename else "PHOTO",
     }
+
+
+PUBLICATION_LOG_FIELDS = [
+    "date", "time", "platform", "piece", "asset_filename",
+    "status", "publication_id", "published_at", "reach",
+    "interactions", "DMs", "leads",
+]
+
+
+def _tenant_timezone(tenant_root: Path) -> ZoneInfo:
+    try:
+        config = json.loads((Path(tenant_root) / "config.json").read_text(encoding="utf-8"))
+        return ZoneInfo(str(config.get("timezone") or "America/Matamoros"))
+    except Exception:
+        return ZoneInfo("America/Matamoros")
+
+
+def record_scheduled_publication(
+    tenant_root: Path,
+    slot: Mapping[str, Any],
+    result: "MetaResponse",
+) -> None:
+    """Registra la publicación nativa de Facebook en el log de intelligence."""
+    if not result.success or not result.post_id or str(result.post_id).startswith("mock_"):
+        return
+    try:
+        moment = datetime.fromisoformat(str(slot.get("datetime_utc")).replace("Z", "+00:00"))
+    except ValueError:
+        return
+    local = moment.astimezone(_tenant_timezone(Path(tenant_root)))
+    row = {
+        "date": local.date().isoformat(),
+        "time": local.strftime("%H:%M"),
+        "platform": "Facebook",
+        "piece": str(slot.get("description") or slot.get("asset_ref") or "").strip(),
+        "asset_filename": str(slot.get("source_filename") or ""),
+        "status": result.status or "scheduled",
+        "publication_id": str(result.post_id),
+        "published_at": "",
+        "reach": "",
+        "interactions": "",
+        "DMs": "",
+        "leads": "",
+    }
+    log_path = Path(tenant_root) / "publication_log_week2.csv"
+    rows: List[Dict[str, str]] = []
+    if log_path.exists():
+        with log_path.open("r", encoding="utf-8-sig", newline="") as handle:
+            rows = list(csv.DictReader(handle))
+    for existing in rows:
+        if (
+            existing.get("platform") == row["platform"]
+            and existing.get("date") == row["date"]
+            and existing.get("time") == row["time"]
+            and existing.get("asset_filename") == row["asset_filename"]
+        ):
+            return
+    rows.append(row)
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    with log_path.open("w", encoding="utf-8-sig", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=PUBLICATION_LOG_FIELDS)
+        writer.writeheader()
+        writer.writerows(rows)
 
 
 def publish_schedule_from_dryrun(
@@ -790,6 +1066,8 @@ def publish_schedule_from_dryrun(
             )
         
         results.append(result)
+        if result.success and not publisher.dry_run:
+            record_scheduled_publication(tenant_root, slot, result)
     
     return results
 

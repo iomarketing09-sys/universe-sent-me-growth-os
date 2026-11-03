@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Reporte semanal · 2026-10-25 a 2026-10-31</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: "DejaVu Sans", "Segoe UI", system-ui, sans-serif;
+    color: #1B2029; background: #FBF7EF; font-size: 10.5pt; line-height: 1.5;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .sheet { max-width: 180mm; margin: 0 auto; }
+  header { display: flex; justify-content: space-between; align-items: flex-start;
+            border-bottom: 2px solid #1B2029; padding-bottom: 8px; }
+  .brand { font-family: "DejaVu Serif", Georgia, serif; font-size: 15pt;
+            letter-spacing: .18em; text-transform: uppercase; }
+  .brand span { color: #D66E12; }
+  .meta { text-align: right; font-size: 8.5pt; color: #5B564C; line-height: 1.7; }
+  .hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 10mm;
+           padding: 12mm 0 10mm; align-items: end; }
+  .hero h1 { font-family: "DejaVu Serif", Georgia, serif; font-size: 25pt;
+              font-weight: normal; line-height: 1.15; margin: 0 0 6px; }
+  .hero p { margin: 0; color: #5B564C; max-width: 36ch; }
+  .figure { border-left: 3px solid #D66E12; padding-left: 6mm; }
+  .figure .n { font-family: "DejaVu Serif", Georgia, serif; font-size: 52pt;
+                line-height: .95; color: #D66E12; }
+  .figure .l { font-size: 9pt; color: #5B564C; }
+  .delta { font-size: 9pt; color: #8F4209; margin-top: 2mm; }
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr);
+           border-top: 1px solid #DCD3C2; border-bottom: 1px solid #DCD3C2; }
+  .kpi { padding: 4mm 0 4mm 4mm; border-left: 1px solid #DCD3C2; }
+  .kpi:first-child { border-left: 0; padding-left: 0; }
+  .kpi .v { font-family: "DejaVu Serif", Georgia, serif; font-size: 16pt; }
+  .kpi .k { font-size: 8.3pt; color: #5B564C; }
+  section { padding-top: 6mm; }
+  h2 { font-family: "DejaVu Serif", Georgia, serif; font-size: 13pt; font-weight: normal;
+        margin: 0 0 4mm; padding-bottom: 2mm; border-bottom: 1px solid #DCD3C2; }
+  ul { margin: 0; padding-left: 5mm; }
+  li { margin-bottom: 2.5mm; }
+  li span { color: #5B564C; font-size: 8.6pt; margin-right: 3mm; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 9mm; }
+  table.metrics { width: 100%; border-collapse: collapse; font-size: 7.8pt; }
+  table.metrics th { color: #5B564C; font-size: 7.4pt; font-weight: normal;
+                      text-align: right; padding: 1.8mm 1.2mm; border-bottom: 1px solid #DCD3C2; }
+  table.metrics td { text-align: right; padding: 2mm 1.2mm; border-bottom: 1px solid #DCD3C2; }
+  table.metrics th:first-child, table.metrics td.channel { text-align: left; padding-left: 0; }
+  table.metrics td.channel { font-weight: 600; }
+  .note { color: #5B564C; font-size: 7.4pt; line-height: 1.35; margin: 1.5mm 0 0; }
+  .callout { background: #FDE9C4; border-left: 3px solid #D66E12; padding: 4mm 5mm; }
+  .callout p { margin: 0; }
+  footer { margin-top: 12mm; padding-top: 3mm; border-top: 1px solid #DCD3C2;
+            display: flex; justify-content: space-between; font-size: 8pt; color: #5B564C; }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div class="brand">Flexi<span>.</span></div>
+    <div class="meta">
+      Reporte semanal<br>
+      2026-10-25 — 2026-10-31
+    </div>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>La semana en<br>conversaciones</h1>
+      <p>Lo que pasó, lo que aprendimos y lo que sigue. Una página, sin ruido.</p>
+    </div>
+    <div class="figure">
+      <div class="n">22</div>
+      <div class="l">personas escribieron</div>
+      <div class="delta">-8 vs. semana anterior (30)</div>
+    </div>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="v">3</div><div class="k">piezas en calendario</div></div>
+    <div class="kpi"><div class="v">12</div><div class="k">conversaciones de 3+ mensajes</div></div>
+    <div class="kpi"><div class="v">$120.87</div><div class="k">inversión en pauta</div></div>
+    <div class="kpi"><div class="v">30</div><div class="k">conversaciones la semana previa</div></div>
+  </div>
+
+  <section>
+    <h2>Resultados por canal</h2>
+    <table class="metrics">
+      <thead>
+        <tr><th>Canal</th><th>Alcance</th><th>Impresiones</th><th>Interacciones</th><th>Clics</th><th>Inversión</th><th>Conversaciones</th><th>Costo/conv</th></tr>
+      </thead>
+      <tbody><tr><td class="channel">Facebook orgánico</td><td>—</td><td>—</td><td>430</td><td>19</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td class="channel">Facebook pauta</td><td>3,376</td><td>5,045</td><td>—</td><td>354</td><td>$116.85</td><td>20</td><td>$5.84</td></tr>
+<tr><td class="channel">Instagram orgánico</td><td>—</td><td>—</td><td>0</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td class="channel">Instagram pauta</td><td>17</td><td>25</td><td>—</td><td>0</td><td>$0.69</td><td>0</td><td>—</td></tr>
+<tr><td class="channel">Otros espacios</td><td>179</td><td>192</td><td>—</td><td>0</td><td>$3.33</td><td>0</td><td>—</td></tr></tbody>
+    </table>
+    <p class="note">«—» significa que Meta no expone esa métrica; no es un cero. Las métricas orgánicas cubren toda la actividad de la cuenta en la semana, no solo el calendario.</p><p class="note">Meta ya no expone alcance e impresiones orgánicas de Facebook. Interacciones = actividad de la página; clics = clics en publicaciones.</p><p class="note">Pauta desglosada por ubicación en Meta.</p><p class="note">Ledger local. Likes y comentarios públicos; alcance e impresiones solo si las capturas incluyen insights.</p>
+    <p class="note">Facebook orgánico: 26 publicaciones · 371 vistas de página · 45 vistas de video · 34 reacciones · 18 seguidores nuevos · 19 clics en publicaciones.</p><p class="note">Instagram orgánico: 3 publicaciones · 0 likes · 0 comentarios.</p>
+  </section>
+
+  <section class="two">
+    <div>
+      <h2>Qué se hizo</h2>
+      <ul><li><span>2026-10-28</span> Instagram · Hay días que piden caminar sin prisa. 👟</li>
+<li><span>2026-10-29</span> Instagram · Llegó la bota que le da otro aire a tus looks de otoño 🤎</li>
+<li><span>2026-10-31</span> Instagram · Llegó el botín que completa la temporada 🖤</li></ul>
+    </div>
+    <div>
+      <h2>Lo que aprendimos</h2>
+      <ul><li>12 de 22 conversaciones llegaron a 3 o más mensajes.</li>
+<li>La semana anterior cerró con 30 conversaciones.</li>
+<li>Facebook aportó 20 de 20 conversaciones de pauta; Instagram aportó 0.</li>
+<li>Facebook orgánico registró 430 interacciones de página.</li></ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Recomendaciones</h2>
+    <ul><li>Concentrar la pauta en Facebook: aportó 20 de 20 conversaciones de la semana.</li>
+<li>Mantener a Izadora como creativo principal: trajo 16 conversaciones.</li>
+<li>Comparar la caída contra la semana previa antes de cambiar la segmentación.</li></ul>
+  </section>
+
+  <section>
+    <h2>Qué necesito de ti</h2>
+    <div class="callout">
+      <p>Aprobar el plan de la siguiente semana y enviar los assets pendientes antes del miércoles.</p>
+    </div>
+  </section>
+
+  <footer>
+    <span>Flexi · Piedras Negras</span>
+    <span>Generado el 2026-11-03</span>
+  </footer>
+</div>
+</body>
+</html>

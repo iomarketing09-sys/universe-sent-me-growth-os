@@ -18,6 +18,7 @@ Alcance e impresiones por publicación ya no existen en la API: se registran en
 
 import csv
 import hashlib
+import json
 import os
 import re
 import shutil
@@ -25,7 +26,7 @@ import time
 import uuid
 import requests
 from pathlib import Path
-from datetime import datetime, timezone, timedelta
+from datetime import date, datetime, timezone, timedelta
 from typing import Dict, List, Optional, Any
 from dataclasses import dataclass, field, asdict
 from enum import Enum
@@ -881,6 +882,95 @@ def capture_page_insights(page_token: str, page_id: str, since: int, until: int)
     return insights
 
 
+PAGE_METRICS_FIELDS = [
+    "date",
+    *FACEBOOK_PAGE_INSIGHT_METRICS,
+    "unavailable_metrics",
+    "captured_at_utc",
+]
+
+
+def get_page_metrics_path(tenant_id: str, base_path: Optional[Path] = None) -> Path:
+    root = Path(base_path) if base_path else Path(".")
+    return root / "tenants" / tenant_id / "page_metrics_daily.csv"
+
+
+def load_page_metrics(tenant_id: str, base_path: Optional[Path] = None) -> List[Dict[str, str]]:
+    path = get_page_metrics_path(tenant_id, base_path=base_path)
+    if not path.exists():
+        return []
+    with path.open("r", encoding="utf-8-sig", newline="") as handle:
+        return list(csv.DictReader(handle))
+
+
+def save_page_metrics(
+    tenant_id: str,
+    rows: List[Dict[str, Any]],
+    base_path: Optional[Path] = None,
+) -> Path:
+    """Upsert por fecha de las métricas diarias de la página."""
+    path = get_page_metrics_path(tenant_id, base_path=base_path)
+    merged = {row.get("date"): dict(row) for row in load_page_metrics(tenant_id, base_path=base_path)}
+    captured_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    for row in rows:
+        day = str(row.get("date") or "").strip()
+        if not day:
+            continue
+        merged[day] = {field: row.get(field, "") for field in PAGE_METRICS_FIELDS}
+        merged[day]["date"] = day
+        merged[day]["captured_at_utc"] = captured_at
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8-sig", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=PAGE_METRICS_FIELDS)
+        writer.writeheader()
+        for day in sorted(merged):
+            writer.writerow(merged[day])
+    return path
+
+
+def capture_page_insights_daily(
+    page_token: str,
+    page_id: str,
+    since: date,
+    until: date,
+) -> List[Dict[str, Any]]:
+    """Una fila por día con las métricas vigentes de la página."""
+    by_day: Dict[str, Dict[str, int]] = {}
+    unavailable: List[str] = []
+    for metric in FACEBOOK_PAGE_INSIGHT_METRICS:
+        result = api_get(page_token, f"{page_id}/insights", {
+            "metric": metric,
+            "period": "day",
+            "since": since.isoformat(),
+            "until": until.isoformat(),
+        })
+        if not isinstance(result, dict) or "error" in result:
+            unavailable.append(metric)
+            continue
+        for series in result.get("data") or []:
+            for point in series.get("values") or []:
+                raw = str(point.get("end_time") or "").strip()
+                try:
+                    moment = datetime.fromisoformat(raw)
+                except ValueError:
+                    continue
+                day = (moment - timedelta(days=1)).date().isoformat()
+                if not day:
+                    continue
+                value = point.get("value")
+                if isinstance(value, dict):
+                    value = sum(int(part or 0) for part in value.values())
+                by_day.setdefault(day, {})[metric] = int(value or 0)
+    rows = []
+    for day in sorted(by_day):
+        row: Dict[str, Any] = {"date": day}
+        for metric in FACEBOOK_PAGE_INSIGHT_METRICS:
+            row[metric] = by_day[day].get(metric, 0)
+        row["unavailable_metrics"] = ",".join(unavailable)
+        rows.append(row)
+    return rows
+
+
 def capture_instagram_insights(page_token: str, ig_media_id: str) -> Dict[str, Any]:
     """Captura métricas de Instagram Media (post/reel) métrica por métrica.
 
@@ -1124,7 +1214,74 @@ def run_capture_cycle(tenant_id: str) -> Dict[str, int]:
             results['skipped'] += 1
         
         time.sleep(1)
-    
+
+    # Las métricas de página son diarias: basta refrescarlas cada 3 horas
+    # aunque el ciclo de publicaciones corra cada 15 minutos.
+    last_capture = max(
+        (row.get("captured_at_utc") or "" for row in load_page_metrics(tenant_id)),
+        default="",
+    )
+    refresh_page = True
+    if last_capture:
+        try:
+            age = datetime.now(timezone.utc) - datetime.fromisoformat(last_capture)
+            refresh_page = age >= timedelta(hours=3)
+        except ValueError:
+            pass
+    if refresh_page:
+        try:
+            today = datetime.now(timezone.utc).date()
+            page_rows = capture_page_insights_daily(
+                page_token, page_id, today - timedelta(days=3), today
+            )
+            if page_rows:
+                save_page_metrics(tenant_id, page_rows)
+                results["page_days"] = len(page_rows)
+        except Exception as exc:  # noqa: BLE001
+            results["page_metrics_error"] = str(exc)
+
+    return results
+
+
+def connected_tenants(base_path: Optional[Path] = None) -> List[str]:
+    """Tenants con log de publicaciones y credenciales propias."""
+    root = Path(base_path) if base_path else Path(".")
+    tenants_dir = root / "tenants"
+    if not tenants_dir.is_dir():
+        return []
+    tenants = []
+    for tenant_dir in sorted(tenants_dir.iterdir()):
+        if not tenant_dir.is_dir():
+            continue
+        if not (tenant_dir / "publication_log_week2.csv").exists():
+            continue
+        if not (tenant_dir / ".env").exists():
+            continue
+        tenants.append(tenant_dir.name)
+    return tenants
+
+
+def run_all_tenants_cycle(base_path: Optional[Path] = None) -> Dict[str, Dict[str, Any]]:
+    """Ciclo completo de intelligence con latido para el watchdog.
+
+    Debe ejecutarse con el directorio de trabajo en la raíz del repo: las rutas
+    del ledger son relativas a ``tenants/<id>/``.
+    """
+    root = Path(base_path) if base_path else Path(".")
+    results: Dict[str, Dict[str, Any]] = {}
+    for tenant_id in connected_tenants(root):
+        try:
+            results[tenant_id] = run_capture_cycle(tenant_id)
+        except Exception as exc:  # noqa: BLE001
+            results[tenant_id] = {"error": f"{type(exc).__name__}: {exc}"}
+    heartbeat = {
+        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "tenants": results,
+        "failed": [tenant for tenant, result in results.items() if result.get("error")],
+    }
+    path = root / "logs" / "intelligence" / "last.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(heartbeat, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return results
 
 

@@ -1,0 +1,11 @@
+[Unit]
+Description=Run Growth OS Intelligence Metrics Cycle every 30 minutes
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=30min
+AccuracySec=1min
+Unit=growth-os-intelligence.service
+
+[Install]
+WantedBy=timers.target
