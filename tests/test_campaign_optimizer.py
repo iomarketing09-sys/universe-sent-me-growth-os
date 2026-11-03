@@ -94,6 +94,14 @@ def test_markdown_deja_claro_que_no_hay_ejecucion():
     assert "No se pausa la campaña completa" in text
 
 
+def test_plan_declara_alcance_ad_level():
+    result = plan(bad_ad(), 72)
+
+    assert result["reporting_scope"]["level"] == "ad"
+    assert "ad set legado" in result["reporting_scope"]["description"]
+    assert "Alcance de los totales" in render_plan_markdown(result)
+
+
 def test_metadata_inconsistente_bloquea_ejecucion_pero_no_medicion():
     result = build_change_plan(
         report(bad_ad()),

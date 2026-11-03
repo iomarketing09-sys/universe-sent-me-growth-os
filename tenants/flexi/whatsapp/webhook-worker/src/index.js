@@ -96,10 +96,9 @@ function textOf(message) {
   if (!message) return "";
   if (message.text && message.text.body) return message.text.body;
   if (message.caption) return message.caption;
+  if (message.type === "button") return (message.button || {}).text || "";
   const interactive = message.interactive || {};
   return (interactive.button_reply || {}).title || (interactive.list_reply || {}).title || "";
-  if (message.type === "button") return (message.button || {}).text || "";
-  return "";
 }
 
 const MEDIA_TYPES = new Set(["image", "audio", "video", "document", "sticker"]);
@@ -286,7 +285,7 @@ async function handleVerify(url, request, env, ctx) {
   return new Response("forbidden", { status: 403 });
 }
 
-async function handleEvent(request, env, ctx) {
+async function handleEvent(request, env) {
   const raw = await request.text();
   if (!env.META_APP_SECRET) {
     console.error("META_APP_SECRET no configurado; POST /webhook rechazado");
@@ -304,20 +303,50 @@ async function handleEvent(request, env, ctx) {
   }
 
   const now = new Date().toISOString();
-  ctx.waitUntil((async () => {
-    try {
-      const rows = await buildRows(payload, now);
-      const statements = insertStatements(env, rows);
-      statements.push(env.DB.prepare(
-        "INSERT INTO raw_events (received_at, payload) VALUES (?, ?)",
-      ).bind(now, raw));
-      await env.DB.batch(statements);
-    } catch (error) {
-      console.error("error registrando evento", error && error.message);
-    }
-  })());
-
+  try {
+    const rows = await buildRows(payload, now);
+    const statements = insertStatements(env, rows);
+    statements.push(env.DB.prepare(
+      "INSERT INTO raw_events (received_at, payload) VALUES (?, ?)",
+    ).bind(now, raw));
+    await env.DB.batch(statements);
+  } catch (error) {
+    console.error("error registrando evento", error && error.message);
+    return json({ error: "no se pudo registrar el evento" }, 500);
+  }
   return json({ received: true });
+}
+
+async function handleHealth(env) {
+  const checks = {
+    d1: "ok",
+    meta_app_secret: env.META_APP_SECRET ? "configured" : "missing",
+    verify_token: env.WHATSAPP_VERIFY_TOKEN ? "configured" : "missing",
+  };
+  let lastEventAt = null;
+  try {
+    const row = await env.DB.prepare(
+      "SELECT MAX(received_at) AS last_event_at FROM events",
+    ).first();
+    lastEventAt = row && row.last_event_at ? row.last_event_at : null;
+  } catch (error) {
+    checks.d1 = "error";
+    console.error("health: D1 no disponible", error && error.message);
+  }
+
+  const healthy =
+    checks.d1 === "ok" &&
+    checks.meta_app_secret === "configured" &&
+    checks.verify_token === "configured";
+  return json({
+    status: healthy ? "ok" : "degraded",
+    service: "flexi-whatsapp-webhook",
+    runtime: "cloudflare-worker",
+    storage: "d1",
+    listen_only: true,
+    checks,
+    last_event_at: lastEventAt,
+  }, healthy ? 200 : 503);
 }
 
 async function handleStats(url, env) {
@@ -395,21 +424,13 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname.replace(/\/+$/, "") || "/";
 
-    if (path === "/health" || path === "/") {
-      return json({
-        status: "ok",
-        service: "flexi-whatsapp-webhook",
-        runtime: "cloudflare-worker",
-        storage: "d1",
-        listen_only: true,
-      });
-    }
+    if (path === "/health" || path === "/") return handleHealth(env);
     if (path === "/stats") return handleStats(url, env);
     if (path === "/webhook") {
       if (request.method === "GET" || request.method === "HEAD") {
         return handleVerify(url, request, env, ctx);
       }
-      if (request.method === "POST") return handleEvent(request, env, ctx);
+      if (request.method === "POST") return handleEvent(request, env);
       return json({ error: "método no permitido" }, 405);
     }
     return new Response("not found", { status: 404 });

@@ -36,10 +36,20 @@ WhatsApp (Meta)  ──HTTPS──▶  Worker: /webhook  ──▶  D1 `flexi_wh
 
 | Método | Ruta | Qué hace |
 |---|---|---|
-| GET | `/health` | Liveness. Devuelve `listen_only: true`. |
+| GET | `/health` | Salud real: consulta D1 y comprueba que los secretos estén configurados. Devuelve `200` si todo está bien; `503` si está degradado. |
 | GET | `/webhook` | Handshake de Meta (`hub.mode`, `hub.verify_token`, `hub.challenge`). |
-| POST | `/webhook` | Valida `X-Hub-Signature-256` y guarda el evento. Firma ausente/incorrecta: `401`; secreto no configurado: `503`; evento válido: `200`. |
+| POST | `/webhook` | Valida `X-Hub-Signature-256` y guarda el evento. Firma ausente/incorrecta: `401`; secreto no configurado: `503`; escritura confirmada: `200`; fallo de D1: `500` para que Meta reintente. |
 | GET | `/stats?token=<verify_token>` | Conteos agregados para el reporte. |
+
+## Salud para el monitor externo
+
+`/health` es el único endpoint público de lectura que debe usar el monitor
+externo. No devuelve teléfonos, textos ni tokens; solo estado, checks y el
+último `received_at` registrado en D1.
+
+El monitor externo se configura desde `ops/external_monitors.yaml` y alerta al
+grupo `Growth OS Ops`. No reemplaza al watchdog interno: el monitor mide
+disponibilidad y el watchdog mide workflows.
 
 ## Despliegue
 

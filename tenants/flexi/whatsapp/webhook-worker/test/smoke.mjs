@@ -7,7 +7,15 @@ const env = {
   META_APP_SECRET: "secreto-de-prueba-456",
   DB: {
     prepare(sql) {
-      return { bind: (...args) => ({ sql, args, run: async () => captured.push({ sql, args }) }) };
+      return {
+        bind: (...args) => ({ sql, args, run: async () => captured.push({ sql, args }) }),
+        first: async () => {
+          if (String(sql).includes("MAX(received_at)")) {
+            return { last_event_at: "2026-11-03T01:28:33.225Z" };
+          }
+          return { ok: 1 };
+        },
+      };
     },
     async batch(stmts) {
       for (const s of stmts) { if (s.sql) captured.push({ sql: s.sql, args: s.args }); }
@@ -48,7 +56,21 @@ const check = (name, cond, extra = "") => {
 console.log("== health ==");
 let r = await call(new Request(`${base}/health`));
 check("200", r.status === 200);
-check("listen_only", (await r.json()).listen_only === true);
+let health = await r.json();
+check("listen_only", health.listen_only === true);
+check("D1 consultado", health.checks && health.checks.d1 === "ok");
+check("último evento visible", health.last_event_at === "2026-11-03T01:28:33.225Z");
+r = await call(new Request(`${base}/health`), { ...env, META_APP_SECRET: "" });
+check("503 sin META_APP_SECRET", r.status === 503);
+const d1DownEnv = {
+  ...env,
+  DB: {
+    ...env.DB,
+    prepare: () => ({ first: async () => { throw new Error("d1 down"); } }),
+  },
+};
+r = await call(new Request(`${base}/health`), d1DownEnv);
+check("503 si D1 falla", r.status === 503);
 
 console.log("== verificación correcta ==");
 r = await call(new Request(`${base}/webhook?hub.mode=subscribe&hub.verify_token=token-de-prueba-123&hub.challenge=CH-999`));
@@ -95,6 +117,12 @@ check("401 si el cuerpo cambia después de firmar", r.status === 401);
 captured.length = 0;
 r = await post(rawPayload);
 check("200", r.status === 200);
+const writeDownEnv = {
+  ...env,
+  DB: { ...env.DB, batch: async () => { throw new Error("write down"); } },
+};
+r = await post(rawPayload, { requestEnv: writeDownEnv });
+check("500 si D1 falla al escribir", r.status === 500);
 const inserts = captured.filter(c => String(c.sql).includes("INSERT OR IGNORE INTO events"));
 check("3 filas (in + out_app + status)", inserts.length === 3, `-> ${inserts.length}`);
 const byDir = {}; inserts.forEach(i => byDir[i.args[1]] = i.args);
@@ -148,5 +176,13 @@ for (const [texto, esperado] of casos) {
   const last = captured.filter(c => String(c.sql).includes("INSERT OR IGNORE INTO events")).pop();
   check(`"${texto}" -> ${esperado}`, last.args[4] === esperado, `-> ${last.args[4]}`);
 }
+
+console.log("== botones ==");
+captured.length = 0;
+await post({ entry: [{ changes: [{ value: { messages: [{
+  from: "1", id: "btn-1", timestamp: "1", type: "button", button: { text: "Sí, quiero" },
+}] } }] }] });
+const buttonRow = captured.find(c => String(c.sql).includes("INSERT OR IGNORE INTO events"));
+check("guarda texto de botón", buttonRow && buttonRow.args[6] === "Sí, quiero", `-> ${buttonRow && buttonRow.args[6]}`);
 console.log(`\nRESULTADO: ${pass} OK / ${fail} fallas`);
 process.exit(fail ? 1 : 0);

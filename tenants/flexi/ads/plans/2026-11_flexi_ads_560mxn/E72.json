@@ -52,6 +52,10 @@
     "total_conversations": 25,
     "blended_cost_per_conversation_mxn": 7.19
   },
+  "reporting_scope": {
+    "level": "ad",
+    "description": "Los totales suman únicamente los 4 anuncios devueltos por Meta; el total de campaña incluye un ad set legado (~$2.86 y 1 conversación al corte) que no aparece en este plan."
+  },
   "actions": [
     {
       "target_type": "ad",

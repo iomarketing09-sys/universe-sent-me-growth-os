@@ -58,6 +58,60 @@ sistema se recupera se envía un aviso de recuperación y se limpia el estado.
 timer de Instagram ejecuta el latido de Ads; por eso el servicio vigilado es
 `instagram`.
 
+## Monitor externo
+
+El monitor externo es un **sensor del NOC**, no un edificio nuevo. Cubre lo que
+el watchdog interno no puede ver: que el host y el webhook sigan alcanzables
+desde fuera aunque el propio host haya dejado de ejecutar el watchdog.
+
+La configuración versionada vive en `ops/external_monitors.yaml`.
+
+| Check | Tipo | Qué mide | Owner funcional |
+| :--- | :--- | :--- | :--- |
+| `host-heartbeat` | Heartbeat | El host envía un latido cada 5 minutos | Operations |
+| `whatsapp-webhook` | HTTP | `/health` del worker y acceso a D1 | Communications |
+
+### Ownership
+
+| Rol | Responsable | Alcance |
+| :--- | :--- | :--- |
+| Accountable | Fernando | Recibe alertas, aprueba severidad y tiene break-glass |
+| Operador técnico | CGO | Crea checks, rota credenciales y mantiene runbooks |
+| Owner funcional | Operations | Interpreta la alerta y ejecuta el runbook |
+
+La cuenta del proveedor debe ser de operaciones, no personal. Las credenciales
+se guardan fuera de Git; Fernando conserva acceso de recuperación. Administrar
+el monitor no otorga autoridad para silenciar alertas, cambiar campañas ni
+aprobar payouts.
+
+### Activación
+
+1. Crear la cuenta o espacio de monitoreo y el grupo `Growth OS Ops`.
+2. Crear el monitor heartbeat y copiar su URL a
+   `EXTERNAL_MONITOR_HEARTBEAT_URL` en el `.env` raíz.
+3. Crear el monitor HTTP apuntando a
+   `https://flexi-whatsapp-webhook.io-marketing-09.workers.dev/health`.
+4. Configurar ambos checks para alertar al grupo de Telegram.
+5. Reinstalar el servicio para tomar el ciclo con heartbeat:
+   `bash scripts/install_ops_health.sh`.
+6. Probar sin enviar (`python3 scripts/ping_external_monitor.py --dry-run`),
+   enviar un latido real y confirmar que el panel lo registra.
+
+El heartbeat solo se envía después de ejecutar el watchdog. Si el host está
+caído, no hay latido y el proveedor alerta. Si el watchdog reporta un problema
+de negocio, el latido sí se envía: el monitor externo mide liveness, no salud
+de workflows.
+
+### Reglas
+
+- El monitor solo hace lecturas HTTP; no tiene permisos sobre Meta, Cloudflare,
+  campañas ni payouts.
+- No se comparten URLs de heartbeat, `/stats` ni tokens. El status page para un
+  tenant debe mostrar solo su edificio y ningún dato interno.
+- Un check por superficie: host, worker y, si crece la operación, un check por
+  tenant. Un solo check agregado oculta qué edificio falló.
+- El monitor externo complementa al watchdog; no lo reemplaza.
+
 ### Chequeo de trabajo pendiente
 
 El watchdog también evalúa `comments-review-backlog`. No es un timer: lee la
@@ -184,9 +238,11 @@ sudo systemctl disable --now growth-os-health.timer
 
 ## Límites de esta primera versión
 
-- El watchdog corre en el mismo host que los servicios. Si el host completo se
-  apaga, no puede alertar por sí solo; la siguiente fase es un monitor externo.
+- El watchdog interno corre en el mismo host que los servicios. El monitor
+  externo cubre esa caída, pero requiere crear la cuenta y cargar la URL del
+  heartbeat; hasta entonces el host sigue siendo un punto único de fallo.
 - Telegram es el único canal. Si Telegram falla, el error queda en el journal,
   pero no hay ruta secundaria.
-- La revisión de `whatsapp-webhook` como endpoint HTTP externo queda para la
-  siguiente iteración; hoy su seguridad HMAC ya está validada.
+- La revisión de `whatsapp-webhook` ya tiene `/health` real y configuración en
+  `ops/external_monitors.yaml`; falta crear el monitor en el proveedor y cargar
+  el heartbeat. La seguridad HMAC sigue validada.

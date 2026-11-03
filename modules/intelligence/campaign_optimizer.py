@@ -28,6 +28,15 @@ DEFAULT_POLICY = {
     "min_ctr_percent": 1.0,
 }
 
+REPORTING_SCOPE = {
+    "level": "ad",
+    "description": (
+        "Los totales suman únicamente los anuncios devueltos por Meta; "
+        "un ad set legado sin anuncios activos puede aparecer en el total de "
+        "campaña, pero no en este plan."
+    ),
+}
+
 
 def load_policy(tenant_dir: Optional[Path] = None) -> Dict:
     """Carga ``ads/campaign_policy.json`` y completa los valores faltantes."""
@@ -289,6 +298,7 @@ def build_change_plan(
                 "blended_cost_per_conversation", 0.0
             ),
         },
+        "reporting_scope": dict(REPORTING_SCOPE),
         "actions": actions,
         "warnings": warnings,
         "approval": {
@@ -310,6 +320,7 @@ def build_change_plan(
 
 def render_plan_markdown(plan: Dict) -> str:
     counts = plan["summary"]["counts"]
+    scope = plan.get("reporting_scope") or {}
     lines = [
         f"# Plan de cambios {plan['checkpoint']} — {plan['campaign_slug']}",
         "",
@@ -323,6 +334,7 @@ def render_plan_markdown(plan: Dict) -> str:
         f"- **Gasto:** ${plan['summary']['total_spend_mxn']:,.2f} MXN",
         f"- **Conversaciones:** {plan['summary']['total_conversations']}",
         f"- **CPA mezclado:** ${plan['summary']['blended_cost_per_conversation_mxn']:,.2f} MXN",
+        f"- **Alcance de los totales:** {scope.get('description', 'No declarado')}",
         "",
         "| Anuncio | Acción propuesta | Prioridad | CPA | Conversaciones | Motivo |",
         "| --- | --- | --- | ---: | ---: | --- |",
