@@ -288,6 +288,14 @@ async function handleVerify(url, request, env, ctx) {
 
 async function handleEvent(request, env, ctx) {
   const raw = await request.text();
+  if (!env.META_APP_SECRET) {
+    console.error("META_APP_SECRET no configurado; POST /webhook rechazado");
+    return json({ error: "webhook no configurado" }, 503);
+  }
+  if (!(await validSignature(raw, request.headers.get("x-hub-signature-256"), env.META_APP_SECRET))) {
+    return json({ error: "firma inválida" }, 401);
+  }
+
   let payload;
   try {
     payload = JSON.parse(raw);
@@ -345,6 +353,38 @@ function json(body, status = 200) {
 function sameToken(a, b) {
   try {
     return String(a || "").trim() === String(b || "").trim();
+  } catch {
+    return false;
+  }
+}
+
+/** Valida `X-Hub-Signature-256` contra el cuerpo crudo, tal como lo exige Meta. */
+async function validSignature(rawBody, header, secret) {
+  if (!secret || !header) return false;
+  const value = String(header).trim();
+  if (!value.toLowerCase().startsWith("sha256=")) return false;
+  const hex = value.slice(7);
+  if (!/^[0-9a-f]{64}$/i.test(hex)) return false;
+
+  const signature = new Uint8Array(32);
+  for (let i = 0; i < signature.length; i++) {
+    signature[i] = parseInt(hex.slice(i * 2, i * 2 + 2), 16);
+  }
+
+  try {
+    const key = await crypto.subtle.importKey(
+      "raw",
+      new TextEncoder().encode(secret),
+      { name: "HMAC", hash: "SHA-256" },
+      false,
+      ["verify"],
+    );
+    return await crypto.subtle.verify(
+      "HMAC",
+      key,
+      signature,
+      new TextEncoder().encode(rawBody),
+    );
   } catch {
     return false;
   }

@@ -29,6 +29,8 @@ WhatsApp (Meta)  ──HTTPS──▶  Worker: /webhook  ──▶  D1 `flexi_wh
   tiempos de respuesta humana y copiar su tono.
 - **Estados** (`direction = "status"`): `sent` / `delivered` / `read`.
 - **Privacidad:** el teléfono se guarda como hash SHA-256 truncado + últimos 4 dígitos.
+- **Autenticidad:** todo `POST /webhook` debe traer `X-Hub-Signature-256` válido, calculado por
+  Meta con `META_APP_SECRET` sobre el cuerpo crudo. Sin firma válida no se parsea ni se escribe en D1.
 
 ## Endpoints
 
@@ -36,20 +38,29 @@ WhatsApp (Meta)  ──HTTPS──▶  Worker: /webhook  ──▶  D1 `flexi_wh
 |---|---|---|
 | GET | `/health` | Liveness. Devuelve `listen_only: true`. |
 | GET | `/webhook` | Handshake de Meta (`hub.mode`, `hub.verify_token`, `hub.challenge`). |
-| POST | `/webhook` | Guarda el evento. Siempre responde 200 (si no, Meta reintenta y duplica). |
+| POST | `/webhook` | Valida `X-Hub-Signature-256` y guarda el evento. Firma ausente/incorrecta: `401`; secreto no configurado: `503`; evento válido: `200`. |
 | GET | `/stats?token=<verify_token>` | Conteos agregados para el reporte. |
 
 ## Despliegue
 
-1. Pega las credenciales en `tenants/flexi/.env` (ignorado por git). Si ese archivo no
-   existe, `deploy.sh` las busca en `growth-os/.env` (`CF_API_TOKEN` también sirve) y toma
-   el `account_id` de `../config.json`:
+1. `META_APP_SECRET` es un secreto **de la app completa**, no del tenant. Colócalo en
+   `growth-os/.env` (ignorado por git), junto a las demás credenciales de administración.
+   Las credenciales de despliegue pueden vivir en `tenants/flexi/.env`; si faltan ahí,
+   `deploy.sh` las busca en `growth-os/.env` (`CF_API_TOKEN` también sirve) y toma el
+   `account_id` de `../config.json`:
 
    ```
+   # growth-os/.env (recomendado para el App Secret)
+   META_APP_SECRET=...
+
+   # tenants/flexi/.env
    CLOUDFLARE_ACCOUNT_ID=...
    CLOUDFLARE_API_TOKEN=...
    WHATSAPP_VERIFY_TOKEN=...   # opcional: si falta, se conserva el secreto actual
    ```
+
+   El App Secret se obtiene en **App Dashboard → Settings → Basic → App Secret**. No debe
+   duplicarse en cada tenant: el despliegue lo busca primero en `growth-os/.env`.
 
    El token se crea en <https://dash.cloudflare.com/profile/api-tokens> → *Create Token* →
    plantilla **Edit Cloudflare Workers** (que ya incluye `Workers Scripts: Edit`), y añade
@@ -75,10 +86,12 @@ WhatsApp (Meta)  ──HTTPS──▶  Worker: /webhook  ──▶  D1 `flexi_wh
    bash deploy.sh
    ```
 
-   El script verifica credenciales, crea la base D1, aplica `schema.sql`, sube el
-   `WHATSAPP_VERIFY_TOKEN` como **secreto** (nunca al repo) y despliega. Los secretos
-   existentes sobreviven al despliegue: si no hay verify token en el entorno, el paso 5
-   se omite en lugar de fallar.
+   El script verifica credenciales, crea la base D1, aplica `schema.sql`, despliega y sube
+   `WHATSAPP_VERIFY_TOKEN` y `META_APP_SECRET` como **secretos** (nunca al repo). Si falta
+   `META_APP_SECRET`, aborta antes de desplegar para no dejar el webhook fail-closed.
+   Los secretos existentes sobreviven al despliegue: si no hay verify token en el entorno,
+   el paso 5 se omite en lugar de fallar. Meta reintenta los eventos que reciban `503`
+   durante la ventana breve entre el despliegue y la carga del App Secret.
    La URL queda como `https://flexi-whatsapp-webhook.<subdominio>.workers.dev`.
 
 3. En Meta: *App Dashboard → WhatsApp → Configuration → Webhook* →
@@ -88,8 +101,16 @@ WhatsApp (Meta)  ──HTTPS──▶  Worker: /webhook  ──▶  D1 `flexi_wh
 
 ```bash
 cd tenants/flexi/whatsapp/webhook-worker
-npm test     # 39 comprobaciones: handshake, hashes, clasificación, ecos en ambos formatos
+npm test     # 47 comprobaciones: handshake, firma HMAC, hashes, clasificación y ecos
 ```
+
+## Seguridad del webhook
+
+- `META_APP_SECRET` se configura como secreto del Worker; nunca se escribe en `wrangler.toml` ni en el repo.
+- El Worker calcula HMAC-SHA256 sobre los bytes crudos y usa `crypto.subtle.verify` para comparar la firma.
+- Sin `META_APP_SECRET`, el endpoint responde `503` y no escribe en D1.
+- Con firma ausente, malformada o incorrecta, responde `401` y no escribe en D1.
+- Un cuerpo alterado después de firmar también se rechaza.
 
 Con la URL desplegada:
 

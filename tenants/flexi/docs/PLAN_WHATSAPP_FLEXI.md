@@ -80,8 +80,9 @@ URL cambiaba en cada arranque, así que no sirve para una ventana de 2 semanas.
    (`{app_id}|{app_secret}`). Opciones contempladas:
    - **A (recomendada):** pegar la URL y el verify token en *App Dashboard → WhatsApp → Configuration →
      Webhook*, y suscribir el campo `messages`. Cero secretos compartidos por chat.
-   - **B:** agregar `META_APP_SECRET` a `.env` y lo configuro por API; además habilitaría la
-     validación de firma `X-Hub-Signature-256` de los webhooks entrantes (endurecimiento pendiente).
+   - **B (completada 2026-11-01):** validación de firma `X-Hub-Signature-256` desplegada
+     con `META_APP_SECRET` en `growth-os/.env` y como secreto del Worker (versión
+     `8a71331e-373e-4f66-8b95-f24e037774f4`; pruebas `47/47`).
 3. ✅ **Durabilidad resuelta (2026-10-16):** el receptor de producción es un **Cloudflare Worker + D1**
    (`tenants/flexi/whatsapp/webhook-worker/`), con URL estable
    `https://flexi-whatsapp-webhook.io-marketing-09.workers.dev/webhook`. No depende de esta sesión ni de
@@ -95,13 +96,13 @@ URL cambiaba en cada arranque, así que no sirve para una ventana de 2 semanas.
 | Dato | Valor |
 |---|---|
 | URL del webhook | `https://flexi-whatsapp-webhook.io-marketing-09.workers.dev/webhook` |
-| Verify token | `WHATSAPP_VERIFY_TOKEN` en `tenants/flexi/.env` y como **secreto** del Worker |
+| Secretos del Worker | `WHATSAPP_VERIFY_TOKEN` y `META_APP_SECRET` como **secretos**; el App Secret se toma de `growth-os/.env` |
 | Base de datos | D1 `flexi_whatsapp_obs` (`0128328b-7c24-4c40-b4f8-c2720c080d5f`) |
 | Tablas | `events` (mensajes/ecos/estados), `raw_events`, `verifications` |
 | Métricas | `GET /stats?token=<verify_token>` |
 | Reporte | `npx wrangler d1 execute flexi_whatsapp_obs --remote --file summary.sql` |
 | Despliegue | `bash deploy.sh` (idempotente) |
-| Pruebas | `npm test` → 36/36 |
+| Pruebas | `npm test` → 47/47 |
 
 Garantía: el Worker **no hace ninguna llamada saliente a Meta**; no puede responder ni enviar.
 Los teléfonos se guardan hasheados (SHA-256 truncado + últimos 4 dígitos).

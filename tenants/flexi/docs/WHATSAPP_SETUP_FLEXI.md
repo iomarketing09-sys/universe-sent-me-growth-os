@@ -89,13 +89,13 @@ Sometidas vía `POST /1087457280345914/message_templates` (`language: es_MX`):
 
 Plan relacionado: `PLAN_WHATSAPP_FLEXI.md`.
 
-- ✅ **Receptor de producción:** **Cloudflare Worker + D1** en `https://flexi-whatsapp-webhook.io-marketing-09.workers.dev/webhook` (base `flexi_whatsapp_obs`), desplegado el 2026-10-16. Código en `tenants/flexi/whatsapp/webhook-worker/` (`GET /health`, `GET /webhook`, `POST /webhook`, `GET /stats?token=…`); pruebas `npm test` → 36/36.
+- ✅ **Receptor de producción:** **Cloudflare Worker + D1** en `https://flexi-whatsapp-webhook.io-marketing-09.workers.dev/webhook` (base `flexi_whatsapp_obs`), desplegado inicialmente el 2026-10-16 y endurecido el 2026-11-01 (versión `8a71331e-373e-4f66-8b95-f24e037774f4`). Código en `tenants/flexi/whatsapp/webhook-worker/` (`GET /health`, `GET /webhook`, `POST /webhook`, `GET /stats?token=…`); pruebas `npm test` → 47/47.
 - ✅ **Callback URL de Meta apuntando al Worker** (2026-10-16): `/stats` ya reporta `verificaciones_ok: 1` y el campo `messages` está suscrito → los eventos se entregan.
 - **No envía nada:** el Worker no contiene ninguna llamada saliente a Meta (`listen_only: true`). Los teléfonos se guardan **hasheados** (SHA-256 truncado + últimos 4 dígitos).
 - **Datos:** tablas `events` (campo `intent` por mensaje; los envíos de la sucursal desde la app entran como `direction="out_app"`), `raw_events` y `verifications`. Métricas: `GET /stats?token=<verify_token>`; reporte de la ventana: `summary.sql`.
 - La app "Universe Publicaciones" quedó **suscrita al WABA** ✅ (`POST /{WABA_ID}/subscribed_apps` → `success: true`).
 - 🧰 **Respaldo local (solo depuración):** `tenants/flexi/whatsapp/webhook/server.py` (sin dependencias) escucha en `127.0.0.1:8787`. Ya **no** es la ruta de producción y no debe exponerse con túneles efímeros; el túnel de `trycloudflare` se **retiró el 2026-10-16** (junto con sus restos en `/tmp`).
-- ⏳ Endurecimiento pendiente: validar la firma `X-Hub-Signature-256` (requiere `META_APP_SECRET`) y aceptar `HEAD`/`OPTIONS` por si el validador de Meta los usa.
+- ✅ **Firma validada en producción:** todo `POST /webhook` exige `X-Hub-Signature-256`; `META_APP_SECRET` está en `growth-os/.env` (ignorado por git) y como secreto del Worker. Sin firma responde `401`; sin secreto, `503`; no escribe en D1 en ninguno de esos casos.
 
 ## 3. Hallazgos
 

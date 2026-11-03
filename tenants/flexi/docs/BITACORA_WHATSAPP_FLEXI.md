@@ -56,7 +56,13 @@
   - Probado local y por URL pública: challenge ✅, POST simulado ✅ (clasificó `horario` y registró el eco de la app como `out_app`).
   - App "Universe Publicaciones" **suscrita al WABA** ✅.
   - ✅ **Callback URL verificado por Meta** (16:20, challenge `346360553`, HTTP 200) + campo `messages` suscrito → los eventos ya se entregan.
-  - ⏳ Endurecer: validar `X-Hub-Signature-256` (requiere `META_APP_SECRET`) y aceptar `HEAD`/`OPTIONS`.
+  - ✅ Validación `X-Hub-Signature-256` **desplegada en producción el 2026-11-01**
+    (versión `8a71331e-373e-4f66-8b95-f24e037774f4`; pruebas `47/47`). `META_APP_SECRET`
+    vive en `growth-os/.env` (ignorado por git) y como secreto del Worker. El endpoint
+    rechaza POST sin firma con `401` y sin secreto con `503`, sin escribir en D1.
+  - ✅ Verificación en vivo: firma ausente → `401`; firma válida con JSON inválido → `400`.
+    D1 quedó sin cambios (`raw_events` 702 → 702, `events` 695 → 695); no se insertó un
+    evento válido de prueba para no contaminar producción.
   - ✅ Resuelto: el receptor de producción es un **Cloudflare Worker con URL fija** (ver sección siguiente). El túnel `trycloudflare` del respaldo local es **efímero** y sus procesos **mueren al cerrar la sesión del agente**, por eso `webhook/server.py` quedó solo como respaldo.
 
 ### Migración a Cloudflare Worker — COMPLETADA ✅ (2026-10-16)
@@ -66,7 +72,7 @@ Se eligió **Cloudflare Worker + D1**: costo $0 permanente, URL fija y sin servi
 
 | Paso | Estado |
 |---|---|
-| Worker escrito y probado (`webhook-worker/`, 36/36 pruebas) | ✅ |
+| Worker escrito y probado (`webhook-worker/`, 47/47 pruebas) | ✅ |
 | Base D1 `flexi_whatsapp_obs` (`0128328b-7c24-4c40-b4f8-c2720c080d5f`) | ✅ |
 | Esquema aplicado (`events`, `raw_events`, `verifications` + 5 índices, con dedupe por `message_id`) | ✅ |
 | Publicar el Worker | ✅ `https://flexi-whatsapp-webhook.io-marketing-09.workers.dev` |

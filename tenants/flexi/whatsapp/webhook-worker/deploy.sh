@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 # Despliegue del receptor solo-escucha (Cloudflare Worker + D1) para el tenant `flexi`.
 #
-# Credenciales (archivos ignorados por git). Se buscan primero en
-# `tenants/flexi/.env` y, si no están ahí, en `growth-os/.env`:
+# Credenciales (archivos ignorados por git). Las credenciales de despliegue del
+# tenant se buscan primero en `tenants/flexi/.env` y, si no están ahí, en
+# `growth-os/.env`. `META_APP_SECRET` es app-wide y se busca primero en la raíz:
 #   CLOUDFLARE_ACCOUNT_ID=...       (si falta, se toma de whatsapp/config.json)
 #   CLOUDFLARE_API_TOKEN=... o CF_API_TOKEN=...
 #                                    (permisos: Workers Scripts:Edit, D1:Edit)
 #   WHATSAPP_VERIFY_TOKEN=...        (solo para crear/actualizar el secreto;
 #                                     si falta, el secreto existente se conserva)
+#   META_APP_SECRET=...              (obligatorio: valida X-Hub-Signature-256)
 #
 # Uso:  bash deploy.sh
 set -euo pipefail
@@ -17,13 +19,12 @@ TENANT_ENV="$DIR/../../.env"
 ROOT_ENV="$DIR/../../../../.env"
 DB_NAME="flexi_whatsapp_obs"
 
-export npm_config_cache="${npm_config_cache:-/tmp/npmcache}"
+export npm_config_cache="${npm_config_cache:-$DIR/.wrangler/npm-cache}"
 export npm_config_update_notifier=false
 export WRANGLER_SEND_METRICS=false
-# wrangler escribe estado y logs en $XDG_CONFIG_HOME/.wrangler. En este entorno XDG_CONFIG_HOME
-# ya viene definida y no es escribible dentro del sandbox, así que la forzamos a /tmp.
-export XDG_CONFIG_HOME=/tmp/wrangler-config
-export WRANGLER_LOG_PATH=/tmp/wrangler-logs/wrangler.log
+# Mantiene estado y logs dentro del repo (ignorados por git), sin depender de /tmp.
+export XDG_CONFIG_HOME="$DIR/.wrangler/config"
+export WRANGLER_LOG_PATH="$DIR/.wrangler/logs/wrangler.log"
 mkdir -p "$XDG_CONFIG_HOME" "$(dirname "$WRANGLER_LOG_PATH")"
 WRANGLER="npx --yes wrangler@4"
 
@@ -65,6 +66,8 @@ PY
   export CLOUDFLARE_ACCOUNT_ID
 fi
 VERIFY_TOKEN="$(get_env WHATSAPP_VERIFY_TOKEN)"
+APP_SECRET="$(get_from "$ROOT_ENV" META_APP_SECRET)"
+if [ -z "$APP_SECRET" ]; then APP_SECRET="$(get_from "$TENANT_ENV" META_APP_SECRET)"; fi
 
 if [ -z "${CLOUDFLARE_ACCOUNT_ID:-}" ] || [ -z "${CLOUDFLARE_API_TOKEN:-}" ]; then
   echo "ERROR: faltan CLOUDFLARE_ACCOUNT_ID o CLOUDFLARE_API_TOKEN/CF_API_TOKEN" >&2
@@ -74,10 +77,16 @@ fi
 
 cd "$DIR"
 
-echo "== 1/5 comprobando credenciales =="
+echo "== 1/6 comprobando credenciales =="
 $WRANGLER whoami
 
-echo "== 2/5 base D1 =="
+if [ -z "${APP_SECRET:-}" ]; then
+  echo "ERROR: falta META_APP_SECRET en growth-os/.env (recomendado) o tenants/flexi/.env" >&2
+  echo "       el Worker exige firma HMAC y no se desplegará sin ese secreto." >&2
+  exit 4
+fi
+
+echo "== 2/6 base D1 =="
 DB_ID="$($WRANGLER d1 list --json 2>/dev/null | python3 -c "
 import json, sys
 try:
@@ -103,20 +112,23 @@ path = Path("wrangler.toml")
 path.write_text(re.sub(r'database_id\s*=\s*"[^"]*"', f'database_id = "{sys.argv[1]}"', path.read_text(), count=1))
 PY
 
-echo "== 3/5 esquema =="
+echo "== 3/6 esquema =="
 $WRANGLER d1 execute "$DB_NAME" --remote --yes --file=schema.sql
 
-echo "== 4/5 despliegue =="
+echo "== 4/6 despliegue =="
 # El secreto se sube DESPUÉS: Cloudflare no permite crear secretos de un script
 # que todavía no existe ("No access to the specified resource").
 $WRANGLER deploy
 
-echo "== 5/5 secreto del verify token =="
+echo "== 5/6 secreto del verify token =="
 if [ -n "${VERIFY_TOKEN:-}" ]; then
   printf '%s' "$VERIFY_TOKEN" | $WRANGLER secret put WHATSAPP_VERIFY_TOKEN
 else
   echo "  omitido: WHATSAPP_VERIFY_TOKEN no está en el entorno; se conserva el secreto actual."
 fi
+
+echo "== 6/6 secreto de firma =="
+printf '%s' "$APP_SECRET" | $WRANGLER secret put META_APP_SECRET
 
 echo
 echo "Listo. URL del webhook: <la de arriba>/webhook"

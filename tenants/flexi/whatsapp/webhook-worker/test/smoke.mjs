@@ -1,8 +1,10 @@
 import worker from "../src/index.js";
+import { createHmac } from "node:crypto";
 
 const captured = [];
 const env = {
   WHATSAPP_VERIFY_TOKEN: "token-de-prueba-123",
+  META_APP_SECRET: "secreto-de-prueba-456",
   DB: {
     prepare(sql) {
       return { bind: (...args) => ({ sql, args, run: async () => captured.push({ sql, args }) }) };
@@ -19,10 +21,21 @@ const env = {
 const pending = [];
 const ctx = { waitUntil: (p) => pending.push(p) };
 
-async function call(req) {
-  const res = await worker.fetch(req, env, ctx);
+async function call(req, requestEnv = env) {
+  const res = await worker.fetch(req, requestEnv, ctx);
   await Promise.allSettled(pending.splice(0));
   return res;
+}
+
+function signatureFor(raw, secret = env.META_APP_SECRET) {
+  return `sha256=${createHmac("sha256", secret).update(raw).digest("hex")}`;
+}
+
+async function post(body, { signature, requestEnv } = {}) {
+  const raw = typeof body === "string" ? body : JSON.stringify(body);
+  const headers = new Headers();
+  if (signature !== null) headers.set("x-hub-signature-256", signature ?? signatureFor(raw));
+  return call(new Request(`${base}/webhook`, { method: "POST", headers, body: raw }), requestEnv);
 }
 
 const base = "https://flexi-whatsapp-webhook.example.workers.dev"; // host ficticio: no se hace red
@@ -61,7 +74,26 @@ const payload = {
     statuses: [{ id: "wamid.TEST1", status: "delivered", timestamp: "1776000090", recipient_id: "5218781112233" }],
   } }] }],
 };
-r = await call(new Request(`${base}/webhook`, { method: "POST", body: JSON.stringify(payload) }));
+
+console.log("== firma HMAC ==");
+const rawPayload = JSON.stringify(payload);
+captured.length = 0;
+r = await post(rawPayload, { signature: null });
+check("401 sin firma", r.status === 401);
+check("sin firma no escribe en D1", captured.length === 0);
+r = await post(rawPayload, { signature: "sha256=" + "0".repeat(64) });
+check("401 con firma inválida", r.status === 401);
+check("firma inválida no escribe en D1", captured.length === 0);
+r = await post(rawPayload, { signature: signatureFor(rawPayload, "secreto-equivocado") });
+check("401 con secreto equivocado", r.status === 401);
+r = await post(rawPayload, { signature: signatureFor(rawPayload), requestEnv: { ...env, META_APP_SECRET: "" } });
+check("503 sin META_APP_SECRET", r.status === 503);
+check("sin secreto no escribe en D1", captured.length === 0);
+r = await post(rawPayload + " ", { signature: signatureFor(rawPayload) });
+check("401 si el cuerpo cambia después de firmar", r.status === 401);
+
+captured.length = 0;
+r = await post(rawPayload);
 check("200", r.status === 200);
 const inserts = captured.filter(c => String(c.sql).includes("INSERT OR IGNORE INTO events"));
 check("3 filas (in + out_app + status)", inserts.length === 3, `-> ${inserts.length}`);
@@ -86,14 +118,14 @@ const prodPayload = {
     message_echoes: [{ from: "5218781385284", to: "5218781112233", id: "wamid.TEST3", timestamp: "1776000120", type: "text", text: { body: "Sí, sí tenemos" } }],
   } }] }],
 };
-r = await call(new Request(`${base}/webhook`, { method: "POST", body: JSON.stringify(prodPayload) }));
+r = await post(prodPayload);
 check("200 con message_echoes", r.status === 200);
 const prodInserts = captured.filter(c => String(c.sql).includes("INSERT OR IGNORE INTO events"));
 check("guarda el eco plano", prodInserts.length === 1 && prodInserts[0].args[1] === "out_app", `-> ${prodInserts.length}`);
 check("eco plano trae texto", String(prodInserts[0] && prodInserts[0].args[6]).includes("tenemos"));
 
 console.log("== otros casos ==");
-r = await call(new Request(`${base}/webhook`, { method: "POST", body: "{ no es json" }));
+r = await post("{ no es json");
 check("400 con json inválido", r.status === 400);
 r = await call(new Request(`${base}/stats`));
 check("403 en /stats sin token", r.status === 403);
@@ -112,7 +144,7 @@ const casos = [["dónde están ubicados?", "ubicacion"], ["¿cuánto cuesta?", "
                ["sí hay de la negra en 26?", "disponibilidad"], ["cuánto mide mi pie?", "talla"]];
 for (const [texto, esperado] of casos) {
   const pl = { entry: [{ changes: [{ value: { messages: [{ from: "1", id: "x" + texto, timestamp: "1", type: "text", text: { body: texto } }] } }] }] };
-  await call(new Request(`${base}/webhook`, { method: "POST", body: JSON.stringify(pl) }));
+  await post(pl);
   const last = captured.filter(c => String(c.sql).includes("INSERT OR IGNORE INTO events")).pop();
   check(`"${texto}" -> ${esperado}`, last.args[4] === esperado, `-> ${last.args[4]}`);
 }
