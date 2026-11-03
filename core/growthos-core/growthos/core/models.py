@@ -98,6 +98,7 @@ class Piece(BaseModel):
     confianza_taxonomia: Optional[str] = Field(default=None)
     fuente_taxonomia: Optional[str] = Field(default=None)
     nota_taxonomia: Optional[str] = Field(default=None)
+    es_historico: Optional[bool] = Field(default=None)
 
     @field_validator("id_pieza")
     @classmethod

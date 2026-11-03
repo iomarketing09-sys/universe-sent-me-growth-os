@@ -43,6 +43,7 @@ class TipoContenido(str, Enum):
     REEL_MEME_ADAPTADO = "Reel / Meme adaptado"
     REEL_SECCION_RECURRENTE = "Reel / Sección recurrente"
     MINI_HISTORIA_SERIALIZADA = "Mini-historia serializada"
+    TRAILER_TEASER = "Trailer / Teaser"
 
 
 class Categoria(str, Enum):
@@ -122,6 +123,7 @@ class EstadoProduccion(str, Enum):
     PRODUCTION_PENDING = "Production_Pending"
     RESOLVED_PRODUCTION_SET = "Resolved_Production_Set"
     NO_CONFIRMED_MATCH = "No_Confirmed_Match"
+    DEFERRED_OPERATIONAL = "Deferred_Operational"
 
 
 class EstadoPublicacion(str, Enum):

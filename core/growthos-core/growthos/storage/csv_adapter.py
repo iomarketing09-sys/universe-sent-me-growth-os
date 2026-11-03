@@ -31,8 +31,9 @@ T = TypeVar("T", bound=BaseModel)
 class CSVAdapter:
     """Adapter for reading/writing CSV files with Pydantic models."""
 
-    # CSV column name to model field name mapping for Piece
-    # Uses normalized state columns (not free-text "estado")
+    # Canonical CSV column name to model field name mapping for Piece.
+    # Canonical exports use snake_case; legacy source headers are accepted as
+    # case-insensitive aliases during import.
     PIECE_FIELD_MAP = {
         "id": "id_pieza",
         "titulo": "titulo",
@@ -42,7 +43,7 @@ class CSVAdapter:
         "plataforma": "plataforma_principal",
         "objetivo": "objetivo",
         "hipotesis": "hipotesis_id",
-        # Don't map free-text "estado" - use normalized columns instead
+        "estado": "estado",
         "estado_operacion_normalizado": "estado_operacion_normalizado",
         "prioridad": "prioridad",
         "dificultad_produccion": "dificultad_produccion",
@@ -64,14 +65,14 @@ class CSVAdapter:
         "meta_publication_id": "meta_publication_id",
         "meta_permalink": "meta_permalink",
         "asset_set": "asset_set",
-        "Asset_Ref": "asset_ref",
-        "Asset_Filename": "asset_filename",
-        "Drive_ID": "drive_id",
-        "Estado_Canon": "estado_canon",
-        "Estado_Produccion": "estado_produccion",
-        "Estado_Publicacion": "estado_publicacion",
-        "Ultima_Sincronizacion": "ultima_sincronizacion",
-        "Motivo_Revision_Normalizado": "motivo_revision_normalizado",
+        "asset_ref": "asset_ref",
+        "asset_filename": "asset_filename",
+        "drive_id": "drive_id",
+        "estado_canon": "estado_canon",
+        "estado_produccion": "estado_produccion",
+        "estado_publicacion": "estado_publicacion",
+        "ultima_sincronizacion": "ultima_sincronizacion",
+        "motivo_revision_normalizado": "motivo_revision_normalizado",
         "personaje_principal_normalizado": "personaje_principal_normalizado",
         "personajes_secundarios_normalizados": "personajes_secundarios_normalizados",
         "rol_narrativo": "rol_narrativo",
@@ -80,13 +81,13 @@ class CSVAdapter:
         "confianza_taxonomia": "confianza_taxonomia",
         "fuente_taxonomia": "fuente_taxonomia",
         "nota_taxonomia": "nota_taxonomia",
+        "es_historico": "es_historico",
     }
 
     # Reverse mapping for export
     PIECE_FIELD_MAP_REVERSE = {v: k for k, v in PIECE_FIELD_MAP.items()}
 
-    # Column order for CANONICAL CSV (46 columns expected by tests)
-    # Matches PIECE_FIELD_MAP keys but with lowercase for consistency with CANONICAL
+    # Canonical CSV contract: 47 snake_case columns.
     COLUMN_ORDER = {
         Piece: list(PIECE_FIELD_MAP.keys()),
     }
@@ -140,9 +141,10 @@ class CSVAdapter:
     @classmethod
     def _map_csv_to_model(cls, row: Dict[str, str], field_map: Dict[str, str]) -> Dict[str, Any]:
         """Map CSV column names to model field names."""
+        casefold_map = {key.casefold(): model_key for key, model_key in field_map.items()}
         mapped = {}
         for csv_key, value in row.items():
-            model_key = field_map.get(csv_key)
+            model_key = field_map.get(csv_key) or casefold_map.get(csv_key.casefold())
             if model_key:
                 mapped[model_key] = value
             else:
@@ -322,32 +324,36 @@ class CSVAdapter:
                     writer.writerow(list(cls.PIECE_FIELD_MAP.keys()))
             return
 
-        # Use model's field order from first instance
         first = models[0]
-        fieldnames = list(first.model_dump().keys())
-
-        # Map model field names back to CSV column names
         if model_type == Piece:
-            csv_fieldnames = [cls.PIECE_FIELD_MAP_REVERSE.get(f, f) for f in fieldnames]
+            csv_fieldnames = list(cls.COLUMN_ORDER[Piece])
+            rows = []
+            for model in models:
+                dumped = model.model_dump()
+                rows.append({
+                    csv_name: cls._csv_value(dumped.get(model_name))
+                    for csv_name, model_name in cls.PIECE_FIELD_MAP.items()
+                })
         else:
-            csv_fieldnames = fieldnames
+            csv_fieldnames = list(first.model_dump().keys())
+            rows = [model.model_dump() for model in models]
 
         with path.open("w", encoding="utf-8", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=csv_fieldnames, extrasaction="ignore")
             writer.writeheader()
-            for model in models:
-                row = model.model_dump()
-                # Map model field names to CSV column names
-                if model_type == Piece:
-                    csv_row = {cls.PIECE_FIELD_MAP_REVERSE.get(k, k): v for k, v in row.items()}
-                else:
-                    csv_row = row
-                for key, value in csv_row.items():
-                    if hasattr(value, "isoformat"):
-                        csv_row[key] = value.isoformat()
-                    elif value is None:
-                        csv_row[key] = ""
-                writer.writerow(csv_row)
+            for row in rows:
+                writer.writerow({key: cls._csv_value(value) for key, value in row.items()})
+
+    @staticmethod
+    def _csv_value(value: Any) -> Any:
+        """Convert model values to CSV-safe values."""
+        if value is None:
+            return ""
+        if isinstance(value, Enum):
+            return value.value
+        if hasattr(value, "isoformat"):
+            return value.isoformat()
+        return value
 
     @classmethod
     def export_piece_csv(cls, pieces: List[Piece], path: Path) -> None:

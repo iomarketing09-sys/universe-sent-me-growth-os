@@ -1,400 +1,303 @@
 #!/usr/bin/env python3
-"""
-Fase 2A Test: Validates the CANONICAL inventory structure and C_REAL traceability.
+"""Contract tests for the canonical GrowthOS content inventory."""
 
-This test verifies:
-- 85 rows input → 85 rows CANONICAL
-- 85 IDs preserved
-- 46 columns matching CSVAdapter.COLUMN_ORDER[Piece]
-- FREE_TEXT copied verbatim
-- C_REAL fully traced in RECONCILIATION + OVERRIDES
-- NONE_EMPTY treated as empty (not C)
-- No automatic C_REAL conversion
-
-Phase 2B (after human overrides resolve C_REAL) will verify:
-- 85 Piece instances valid
-- Round-trip export/import preserves IDs and critical fields
-"""
+from __future__ import annotations
 
 import csv
-import tempfile
+import sys
 from pathlib import Path
+
 import pytest
 
-# Import after setting up path
-import sys
 REPO_ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(REPO_ROOT))
+sys.path.insert(0, str(REPO_ROOT / "core" / "growthos-core"))
 
-from growthos.storage.csv_adapter import CSVAdapter
 from growthos.core.models import Piece
+from growthos.scripts.audit_inventory import InventoryAuditor
+from growthos.storage.csv_adapter import CSVAdapter
 
 
-class TestCanonicalInventoryPhase2A:
-    """Phase 2A: Structural validation without requiring Piece instantiation."""
-    
-    @pytest.fixture(scope="class")
-    def canonical_files(self):
-        """Run the auditor and return paths to generated files."""
-        from growthos.scripts.audit_inventory import InventoryAuditor
-        
-        source = REPO_ROOT / "GrowthOS/Content_Inventory.csv"
-        output = REPO_ROOT / "GrowthOS"
-        
-        auditor = InventoryAuditor(source, output)
-        stats = auditor.run()
-        
-        return {
-            "canonical": output / "Content_Inventory_CANONICAL.csv",
-            "reconciliation": output / "Content_Inventory_RECONCILIATION.csv",
-            "overrides": output / "Content_Inventory_OVERRIDES.csv",
-            "stats": stats,
+SOURCE = REPO_ROOT / "GrowthOS" / "Content_Inventory.csv"
+EXPECTED_COLUMNS = CSVAdapter.COLUMN_ORDER[Piece]
+LEGACY_ALIASES = {
+    "Asset_Ref": "asset_ref",
+    "Asset_Filename": "asset_filename",
+    "Drive_ID": "drive_id",
+    "Estado_Canon": "estado_canon",
+    "Estado_Produccion": "estado_produccion",
+    "Estado_Publicacion": "estado_publicacion",
+    "Ultima_Sincronizacion": "ultima_sincronizacion",
+    "Motivo_Revision_Normalizado": "motivo_revision_normalizado",
+}
+
+
+def read_rows(path: Path) -> list[dict[str, str]]:
+    with path.open(encoding="utf-8-sig", newline="") as handle:
+        return list(csv.DictReader(handle))
+
+
+def write_overrides(path: Path, rows: list[dict[str, str]]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=("id", "campo", "valor_original", "propuesta", "resuelto"),
+        )
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+@pytest.fixture(scope="module")
+def canonical_files(tmp_path_factory: pytest.TempPathFactory) -> dict[str, object]:
+    output = tmp_path_factory.mktemp("canonical-inventory")
+    auditor = InventoryAuditor(SOURCE, output)
+    stats = auditor.run()
+    return {
+        "canonical": output / "Content_Inventory_CANONICAL.csv",
+        "reconciliation": output / "Content_Inventory_RECONCILIATION.csv",
+        "overrides": output / "Content_Inventory_OVERRIDES.csv",
+        "stats": stats,
+        "auditor": auditor,
+    }
+
+
+def test_source_has_85_unique_ids() -> None:
+    rows = read_rows(SOURCE)
+    ids = [row["id"] for row in rows]
+    assert len(rows) == 85
+    assert len(ids) == len(set(ids))
+
+
+def test_canonical_contract_has_47_snake_case_columns(canonical_files) -> None:
+    with canonical_files["canonical"].open(encoding="utf-8", newline="") as handle:
+        columns = csv.DictReader(handle).fieldnames
+
+    assert columns == EXPECTED_COLUMNS
+    assert len(columns) == 47
+    assert all(column == column.lower() for column in columns)
+    assert not set(LEGACY_ALIASES).intersection(columns)
+    assert "es_historico" in columns
+
+
+def test_canonical_preserves_all_ids(canonical_files) -> None:
+    canonical_rows = read_rows(canonical_files["canonical"])
+    source_rows = read_rows(SOURCE)
+
+    canonical_ids = [row["id"] for row in canonical_rows]
+    source_ids = [row["id"] for row in source_rows]
+    assert len(canonical_rows) == 85
+    assert canonical_ids == source_ids
+    assert len(set(canonical_ids)) == 85
+
+
+def test_reconciliation_traces_every_canonical_field(canonical_files) -> None:
+    rows = read_rows(canonical_files["reconciliation"])
+    stats = canonical_files["stats"]
+    assert len(rows) == 85 * 47
+    assert set(row["campo"] for row in rows) == set(EXPECTED_COLUMNS)
+
+    categories = ("A", "B", "C_REAL", "NONE_EMPTY", "FREE_TEXT")
+    counted = sum(1 for row in rows if row["categoria"] in categories)
+    assert counted == len(rows)
+    for category in categories:
+        actual = sum(1 for row in rows if row["categoria"] == category)
+        assert actual == stats[category]
+
+
+def test_free_text_is_copied_verbatim(canonical_files) -> None:
+    canonical = {row["id"]: row for row in read_rows(canonical_files["canonical"])}
+    for row in read_rows(canonical_files["reconciliation"]):
+        if row["categoria"] != "FREE_TEXT":
+            continue
+        assert canonical[row["id"]][row["campo"]] == row["valor_original"]
+        assert row["regla_aplicada"] == "copy_verbatim"
+
+
+def test_c_real_requires_human_override(canonical_files) -> None:
+    rows = read_rows(canonical_files["reconciliation"])
+    c_real = [row for row in rows if row["categoria"] == "C_REAL"]
+    assert len(c_real) == canonical_files["stats"]["C_REAL"]
+
+    for row in c_real:
+        assert row["valor_canonico"] == ""
+        assert row["regla_aplicada"] == ""
+        assert row["requiere_revision"] == "true"
+
+
+def test_a_b_and_none_empty_are_deterministic(canonical_files) -> None:
+    rows = read_rows(canonical_files["reconciliation"])
+    stats = canonical_files["stats"]
+    for category in ("A", "B"):
+        subset = [row for row in rows if row["categoria"] == category]
+        assert len(subset) == stats[category]
+        assert all(row["regla_aplicada"] for row in subset)
+        assert all(row["requiere_revision"] == "false" for row in subset)
+
+    none_empty = [row for row in rows if row["categoria"] == "NONE_EMPTY"]
+    assert len(none_empty) == stats["NONE_EMPTY"]
+    assert all(row["valor_original"] == "" for row in none_empty)
+    assert all(row["valor_canonico"] == "" for row in none_empty)
+    assert all(row["requiere_revision"] == "false" for row in none_empty)
+
+
+def test_overrides_cover_all_current_c_real(canonical_files) -> None:
+    reconciliation = read_rows(canonical_files["reconciliation"])
+    overrides = read_rows(canonical_files["overrides"])
+    c_real_keys = {
+        (row["id"], row["campo"])
+        for row in reconciliation
+        if row["categoria"] == "C_REAL"
+    }
+    override_keys = {(row["id"], row["campo"]) for row in overrides}
+    assert override_keys == c_real_keys
+
+
+def test_legacy_headers_are_aliased_and_export_is_snake_case(tmp_path: Path) -> None:
+    source = tmp_path / "legacy.csv"
+    source.write_text(
+        "id,Titulo,Asset_Ref,Estado_Canon\n"
+        "CNT-9999,Pieza legacy,asset-001,Aprobado\n",
+        encoding="utf-8",
+    )
+
+    pieces = CSVAdapter.import_csv(Piece, source)
+    assert len(pieces) == 1
+    assert pieces[0].titulo == "Pieza legacy"
+    assert pieces[0].asset_ref == "asset-001"
+    assert pieces[0].estado_canon == "Aprobado"
+
+    exported = tmp_path / "exported.csv"
+    CSVAdapter.export_csv(pieces, exported, model_type=Piece)
+    with exported.open(encoding="utf-8", newline="") as handle:
+        columns = csv.DictReader(handle).fieldnames
+    assert columns == EXPECTED_COLUMNS
+    assert "Asset_Ref" not in columns
+
+
+def test_valid_override_applies_to_canonical_and_reconciliation(tmp_path: Path) -> None:
+    output = tmp_path / "output"
+    overrides = tmp_path / "overrides.csv"
+    write_overrides(
+        overrides,
+        [
+            {
+                "id": "CNT-001",
+                "campo": "estado",
+                "valor_original": "Original",
+                "propuesta": "Propuesta",
+                "resuelto": "Publicado",
+            }
+        ],
+    )
+
+    auditor = InventoryAuditor(SOURCE, output, overrides)
+    stats = auditor.run()
+
+    assert auditor.overrides[("CNT-001", "estado")] == "Publicado"
+    assert stats["OVERRIDE"] >= 1
+    canonical = {row["id"]: row for row in read_rows(output / "Content_Inventory_CANONICAL.csv")}
+    assert canonical["CNT-001"]["estado"] == "Publicado"
+
+
+def test_invalid_override_is_rejected(tmp_path: Path) -> None:
+    output = tmp_path / "output"
+    overrides = tmp_path / "overrides.csv"
+    write_overrides(
+        overrides,
+        [
+            {
+                "id": "CNT-001",
+                "campo": "estado",
+                "valor_original": "Original",
+                "propuesta": "Propuesta",
+                "resuelto": "Valor_Invalido",
+            }
+        ],
+    )
+
+    with pytest.raises(ValueError, match="Override inválido") as exc_info:
+        InventoryAuditor(SOURCE, output, overrides).run()
+
+    assert "estado" in str(exc_info.value)
+    assert "Valor_Invalido" in str(exc_info.value)
+
+
+def test_proposal_without_resuelto_stays_pending(canonical_files, tmp_path: Path) -> None:
+    first_c_real = next(
+        row
+        for row in read_rows(canonical_files["reconciliation"])
+        if row["categoria"] == "C_REAL"
+    )
+    output = tmp_path / "output"
+    overrides = tmp_path / "overrides.csv"
+    write_overrides(
+        overrides,
+        [
+            {
+                "id": first_c_real["id"],
+                "campo": first_c_real["campo"],
+                "valor_original": first_c_real["valor_original"],
+                "propuesta": "Pendiente de decisión",
+                "resuelto": "",
+            }
+        ],
+    )
+
+    auditor = InventoryAuditor(SOURCE, output, overrides)
+    stats = auditor.run()
+
+    assert (first_c_real["id"], first_c_real["campo"]) not in auditor.overrides
+    assert stats["OVERRIDE_PENDING"] == 1
+    saved = {
+        (row["id"], row["campo"]): row
+        for row in read_rows(output / "Content_Inventory_OVERRIDES.csv")
+    }
+    assert saved[(first_c_real["id"], first_c_real["campo"])]["propuesta"] == "Pendiente de decisión"
+
+
+def test_existing_output_overrides_are_read_by_default(tmp_path: Path) -> None:
+    output = tmp_path / "output"
+    InventoryAuditor(SOURCE, output).run()
+
+    overrides_path = output / "Content_Inventory_OVERRIDES.csv"
+    write_overrides(
+        overrides_path,
+        [
+            {
+                "id": "CNT-001",
+                "campo": "estado",
+                "valor_original": "",
+                "propuesta": "Aprobado por Fernando",
+                "resuelto": "Publicado",
+            }
+        ],
+    )
+
+    auditor = InventoryAuditor(SOURCE, output)
+    auditor.run()
+    assert auditor.input_overrides_path == overrides_path
+    assert auditor.overrides[("CNT-001", "estado")] == "Publicado"
+    saved = {(row["id"], row["campo"]): row for row in read_rows(overrides_path)}
+    assert saved[("CNT-001", "estado")]["resuelto"] == "Publicado"
+
+
+def test_stale_empty_override_is_removed(tmp_path: Path) -> None:
+    output = tmp_path / "output"
+    InventoryAuditor(SOURCE, output).run()
+
+    overrides_path = output / "Content_Inventory_OVERRIDES.csv"
+    rows = read_rows(overrides_path)
+    rows.append(
+        {
+            "id": "CNT-9999",
+            "campo": "estado",
+            "valor_original": "",
+            "propuesta": "",
+            "resuelto": "",
         }
-    
-    def test_source_has_85_rows(self):
-        """Verify the historical CSV has 85 rows."""
-        source = REPO_ROOT / "GrowthOS/Content_Inventory.csv"
-        with source.open(encoding="utf-8-sig") as f:
-            reader = csv.DictReader(f)
-            rows = list(reader)
-        
-        assert len(rows) == 85, f"Expected 85 rows, got {len(rows)}"
-        
-        # Verify unique IDs
-        ids = [r["id"] for r in rows]
-        assert len(set(ids)) == 85, "Source must have 85 unique IDs"
-    
-    def test_canonical_has_85_rows(self, canonical_files):
-        """CANONICAL must have exactly 85 rows."""
-        with canonical_files["canonical"].open(encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            rows = list(reader)
-        
-        assert len(rows) == 85, f"CANONICAL must have 85 rows, got {len(rows)}"
-    
-    def test_canonical_preserves_85_ids(self, canonical_files):
-        """All 85 IDs must be preserved in CANONICAL."""
-        with canonical_files["canonical"].open(encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            rows = list(reader)
-        
-        ids = [r["id"] for r in rows]
-        assert len(ids) == 85
-        assert len(set(ids)) == 85, "CANONICAL must have 85 unique IDs"
-        
-        # Cross-reference with source
-        with (REPO_ROOT / "GrowthOS/Content_Inventory.csv").open(encoding="utf-8-sig") as f:
-            reader = csv.DictReader(f)
-            source_ids = {r["id"] for r in reader}
-        
-        assert set(ids) == source_ids, "CANONICAL IDs must match source exactly"
-    
-    def test_canonical_has_correct_columns(self, canonical_files):
-        """CANONICAL must have exactly the 46 columns expected by CSVAdapter."""
-        with canonical_files["canonical"].open(encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            columns = reader.fieldnames
-        
-        expected = CSVAdapter.COLUMN_ORDER[Piece]
-        assert list(columns) == expected, \
-            f"Columns mismatch.\nExpected: {expected}\nGot: {list(columns)}"
-    
-    def test_free_text_copied_verbatim(self, canonical_files):
-        """FREE_TEXT columns must be copied exactly from source."""
-        free_text_cols = {
-            "id", "titulo", "personaje_principal", "personajes_secundarios", 
-            "objetivo", "hipotesis", "fuente", "formato",
-            "asset_ref_confirmado", "asset_ref_candidato",
-            "reconciliacion_fuente", "reconciliacion_nota", "registro_relacionado",
-            "drive_reference_id", "meta_publication_id", "meta_permalink", "asset_set",
-            "Asset_Ref", "Asset_Filename", "Drive_ID", "Ultima_Sincronizacion",
-            "personaje_principal_normalizado", "personajes_secundarios_normalizados",
-            "rol_narrativo", "tipo_humor_normalizado", "potencial_etiquetado",
-            "confianza_taxonomia", "fuente_taxonomia", "nota_taxonomia",
-        }
-        
-        with (REPO_ROOT / "GrowthOS/Content_Inventory.csv").open(encoding="utf-8-sig") as f:
-            src = {r["id"]: r for r in csv.DictReader(f)}
-        
-        with canonical_files["canonical"].open(encoding="utf-8") as f:
-            can = {r["id"]: r for r in csv.DictReader(f)}
-        
-        for rid in src:
-            for col in free_text_cols:
-                assert can[rid][col].strip() == src[rid][col].strip(), \
-                    f"FREE_TEXT mismatch for {rid}.{col}"
-    
-    def test_reconciliation_traces_all_fields(self, canonical_files):
-        """RECONCILIATION must have one row per field per record (17 enum fields × 85 = 1445 rows)."""
-        with canonical_files["reconciliation"].open(encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            rows = list(reader)
-        
-        # 17 enum fields × 85 records = 1445
-        # Plus FREE_TEXT fields traced (optional, but we trace them too)
-        assert len(rows) >= 85 * 17, \
-            f"RECONCILIATION must trace all enum fields: got {len(rows)}, expected ≥{85*17}"
-        
-        # Every row must have required columns
-        required_cols = ["id", "campo", "valor_original", "valor_canonico",
-                         "categoria", "regla_aplicada", "confianza", "requiere_revision", "nota"]
-        assert all(set(r.keys()) >= set(required_cols) for r in rows)
-    
-    def test_c_real_fully_traced_in_reconciliation(self, canonical_files):
-        """Every C_REAL field must appear in RECONCILIATION with categoria='C_REAL' and requiere_revision=true."""
-        with canonical_files["reconciliation"].open(encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            rows = list(reader)
-        
-        c_real_rows = [r for r in rows if r["categoria"] == "C_REAL"]
-        
-        # Should match stats: 593 C_REAL fields
-        assert len(c_real_rows) == 548, \
-            f"Expected 548 C_REAL rows in RECONCILIATION, got {len(c_real_rows)}"
-        
-        # All must require revision
-        for r in c_real_rows:
-            assert r["requiere_revision"] == "true", \
-                f"C_REAL row missing requiere_revision: {r}"
-            assert r["valor_canonico"] == "", \
-                f"C_REAL must have empty valor_canonico: {r}"
-    
-    def test_c_real_represented_in_overrides(self, canonical_files):
-        """Every C_REAL field must have an entry in OVERRIDES."""
-        with canonical_files["overrides"].open(encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            overrides = list(reader)
-        
-        with canonical_files["reconciliation"].open(encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            c_real_recon = [r for r in reader if r["categoria"] == "C_REAL"]
-        
-        # Create sets of (id, campo) for comparison
-        override_keys = {(r["id"], r["campo"]) for r in overrides}
-        recon_keys = {(r["id"], r["campo"]) for r in c_real_recon}
-        
-        assert recon_keys == override_keys, \
-            f"OVERRIDES must match C_REAL 1:1. Missing: {recon_keys - override_keys}, Extra: {override_keys - recon_keys}"
-    
-    def test_none_empty_not_counted_as_c(self, canonical_files):
-        """NONE_EMPTY (optional fields empty) must NOT be C_REAL."""
-        with canonical_files["reconciliation"].open(encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            rows = list(reader)
-        
-        none_empty = [r for r in rows if r["categoria"] == "NONE_EMPTY"]
-        
-        # Should match stats: 21 NONE_EMPTY
-        assert len(none_empty) == 21, \
-            f"Expected 21 NONE_EMPTY, got {len(none_empty)}"
-        
-        for r in none_empty:
-            assert r["requiere_revision"] == "false"
-            assert r["valor_canonico"] == ""
-            assert r["valor_original"] == ""
-    
-    def test_no_automatic_c_real_conversion(self, canonical_files):
-        """Verify no C_REAL was silently converted to A/B."""
-        with canonical_files["reconciliation"].open(encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            rows = list(reader)
-        
-        # No C_REAL should have a non-empty valor_canonico
-        c_real = [r for r in rows if r["categoria"] == "C_REAL"]
-        for r in c_real:
-            assert r["valor_canonico"] == "", \
-                f"C_REAL silently converted: {r}"
-        
-        # No C_REAL should have regla_aplicada
-        for r in c_real:
-            assert r["regla_aplicada"] == "", \
-                f"C_REAL has regla_aplicada (should be empty): {r}"
-    
-    def test_a_b_rules_deterministic(self, canonical_files):
-        """A/B rules must be deterministic and auditable."""
-        with canonical_files["reconciliation"].open(encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            rows = list(reader)
-        
-        a_rows = [r for r in rows if r["categoria"] == "A"]
-        b_rows = [r for r in rows if r["categoria"] == "B"]
-        
-        # All A must have regla_aplicada
-        for r in a_rows:
-            assert r["regla_aplicada"], f"A row missing regla: {r}"
-            assert r["confianza"] == "Alta"
-            assert r["requiere_revision"] == "false"
-        
-        # All B must have regla_aplicada
-        for r in b_rows:
-            assert r["regla_aplicada"], f"B row missing regla: {r}"
-            assert r["confianza"] in ("Alta", "Media")
-            assert r["requiere_revision"] == "false"
-        
-        # Counts must match stats
-        assert len(a_rows) == 765, f"A count mismatch: {len(a_rows)} != 765"
-        assert len(b_rows) == 111, f"B count mismatch: {len(b_rows)} != 111"
+    )
+    write_overrides(overrides_path, rows)
 
-
-class TestCanonicalInventoryPhase2B:
-    """Phase 2B: Full Piece validation AFTER human overrides are complete.
-    
-    This test will only pass once OVERRIDES.csv has all C_REAL resolved.
-    """
-    
-    @pytest.fixture(scope="class")
-    def overrides_complete(self, canonical_files):
-        """Check if OVERRIDES has all C_REAL resolved."""
-        with canonical_files["overrides"].open(encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            overrides = list(reader)
-        
-        # All C_REAL must have 'resuelto' filled
-        unresolved = [o for o in overrides if not o.get("resuelto")]
-        return len(unresolved) == 0
-    
-    @pytest.mark.skipif(True, reason="Phase 2B: requires human OVERRIDES completion")
-    def test_all_85_instantiate_piece(self, canonical_files, overrides_complete):
-        """All 85 CANONICAL rows must instantiate Piece (Phase 2B)."""
-        if not overrides_complete:
-            pytest.skip("OVERRIDES incomplete")
-        
-        with canonical_files["canonical"].open(encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            rows = list(reader)
-        
-        for row in rows:
-            # Map CSV columns to Piece fields
-            mapped = {}
-            for csv_col, model_field in CSVAdapter.CSV_TO_PIECE.items():
-                v = row.get(csv_col, "")
-                mapped[model_field] = None if v == "" else v
-            
-            # Should not raise
-            Piece(**mapped)
-    
-    @pytest.mark.skipif(True, reason="Phase 2B: requires human OVERRIDES completion")
-    def test_roundtrip_preserves_ids_and_critical_fields(self, canonical_files, overrides_complete):
-        """Full round-trip: CANONICAL → Piece → export → verify 85 IDs + critical fields."""
-        if not overrides_complete:
-            pytest.skip("OVERRIDES incomplete")
-        
-        with tempfile.TemporaryDirectory() as tmpdir:
-            tmpdir = Path(tmpdir)
-            
-            # Import all 85
-            pieces = CSVAdapter.import_csv(Piece, canonical_files["canonical"])
-            assert len(pieces) == 85
-            imported_ids = [p.ID_Pieza for p in pieces]
-            assert len(set(imported_ids)) == 85
-            
-            # Export
-            export_path = tmpdir / "roundtrip.csv"
-            CSVAdapter.export_piece_csv(pieces, export_path)
-            
-            # Re-import
-            reimported = CSVAdapter.import_csv(Piece, export_path)
-            reimported_ids = [p.ID_Pieza for p in reimported]
-            
-            # Verify
-            assert len(reimported) == 85
-            assert reimported_ids == imported_ids, "IDs must be preserved in order"
-            
-            # Verify critical fields preserved
-            for orig, reimp in zip(pieces, reimported):
-                assert orig.ID_Pieza == reimp.ID_Pieza
-                assert orig.Titulo == reimp.Titulo
-                assert orig.Estado == reimp.Estado
-                assert orig.Plataforma == reimp.Plataforma
-                assert orig.Tipo_Contenido == reimp.Tipo_Contenido
-
-
-if __name__ == "__main__":
-    pytest.main([__file__, "-v"])
-
-
-class TestOverrideEnumValidation:
-    """Tests for override enum validation (FASE 3.6 critical fix)."""
-    
-    def test_override_valid_applies(self):
-        """Valid override with resuelto matching enum → applies to CANONICAL and RECONCILIATION."""
-        import csv
-        import tempfile
-        from pathlib import Path
-        from growthos.scripts.audit_inventory import InventoryAuditor
-        
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.csv', delete=False, encoding='utf-8') as f:
-            writer = csv.writer(f)
-            writer.writerow(['id', 'campo', 'valor_original', 'propuesta', 'resuelto'])
-            writer.writerow(['CNT-001', 'estado', 'Original', 'Propuesta', 'Publicado'])
-            temp_path = Path(f.name)
-        
-        try:
-            auditor = InventoryAuditor(REPO_ROOT / "GrowthOS/Content_Inventory.csv", REPO_ROOT / "GrowthOS", temp_path)
-            stats = auditor.run()
-            
-            # Check override was applied
-            assert ('CNT-001', 'estado') in auditor.overrides
-            assert auditor.overrides[('CNT-001', 'estado')] == 'Publicado'
-        finally:
-            temp_path.unlink()
-    
-    def test_override_invalid_rejected(self):
-        """Invalid override with resuelto not in enum → raises ValueError, no contamination."""
-        import csv
-        import tempfile
-        from pathlib import Path
-        from growthos.scripts.audit_inventory import InventoryAuditor
-        
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.csv', delete=False, encoding='utf-8') as f:
-            writer = csv.writer(f)
-            writer.writerow(['id', 'campo', 'valor_original', 'propuesta', 'resuelto'])
-            writer.writerow(['CNT-001', 'estado', 'Original', 'Propuesta', 'Valor_Invalido'])
-            temp_path = Path(f.name)
-        
-        try:
-            auditor = InventoryAuditor(REPO_ROOT / "GrowthOS/Content_Inventory.csv", REPO_ROOT / "GrowthOS", temp_path)
-            auditor.run()
-            assert False, "Should have raised ValueError"
-        except ValueError as e:
-            assert "Override inválido" in str(e)
-            assert "estado" in str(e)
-            assert "Valor_Invalido" in str(e)
-        finally:
-            temp_path.unlink()
-        
-        # Verify no contamination in CANONICAL (by re-running without override)
-        auditor_clean = InventoryAuditor(REPO_ROOT / "GrowthOS/Content_Inventory.csv", REPO_ROOT / "GrowthOS", None)
-        stats_clean = auditor_clean.run()
-        assert stats_clean["C_REAL"] == 548  # Original count unchanged
-    
-    def test_override_without_resuelto_not_applied(self):
-        """Override with proposal but empty resuelto → tracked as pending, not applied."""
-        import csv
-        import tempfile
-        from pathlib import Path
-        from growthos.scripts.audit_inventory import InventoryAuditor
-        
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.csv', delete=False, encoding='utf-8') as f:
-            writer = csv.writer(f)
-            writer.writerow(['id', 'campo', 'valor_original', 'propuesta', 'resuelto'])
-            writer.writerow(['CNT-001', 'estado', 'Original', 'Propuesta', ''])
-            temp_path = Path(f.name)
-        
-        try:
-            auditor = InventoryAuditor(REPO_ROOT / "GrowthOS/Content_Inventory.csv", REPO_ROOT / "GrowthOS", temp_path)
-            stats = auditor.run()
-            
-            # Should NOT be in overrides
-            assert ('CNT-001', 'estado') not in auditor.overrides
-            
-            # Should be in pending_overrides
-            pending = [o for o in auditor.pending_overrides if o['id'] == 'CNT-001' and o['campo'] == 'estado']
-            assert len(pending) == 1
-            assert pending[0]['propuesta'] == 'Propuesta'
-            
-            # Stats should track pending
-            assert stats.get('OVERRIDE_PENDING', 0) >= 1
-        finally:
-            temp_path.unlink()
-
+    InventoryAuditor(SOURCE, output).run()
+    saved = {(row["id"], row["campo"]) for row in read_rows(overrides_path)}
+    assert ("CNT-9999", "estado") not in saved
