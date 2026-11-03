@@ -1,0 +1,11 @@
+[Unit]
+Description=Run Growth OS Shared Operations Healthcheck every 5 minutes
+
+[Timer]
+OnBootSec=3min
+OnUnitActiveSec=5min
+AccuracySec=30s
+Unit=growth-os-health.service
+
+[Install]
+WantedBy=timers.target

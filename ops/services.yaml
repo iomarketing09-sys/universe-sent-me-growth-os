@@ -1,0 +1,86 @@
+version: 1
+
+ownership:
+  accountable: Fernando
+  operator: CGO
+  operator_identity: "Codex"
+  canon_authority: Fernando
+  note: "Manus ya no forma parte de Growth OS. Fernando absorbe la autoridad de canon."
+
+alert_channel:
+  type: telegram
+  scope: private
+  note: "Por ahora solo Fernando recibe las alertas."
+
+services:
+  - id: comments-harvest
+    name: "Harvest de comentarios"
+    building: communications
+    functional_owner: communications
+    timer: growth-os-comments.timer
+    service: growth-os-comments.service
+    schedule: "cada hora, 08:00-22:00 America/Matamoros"
+    severity: high
+    next_elapse_grace_minutes: 15
+    runbook: "docs/OPERACION_COMPARTIDA.md#comments-harvest"
+
+  - id: comments-publish
+    name: "Publicador de comentarios aprobados"
+    building: communications
+    functional_owner: communications
+    timer: growth-os-comments-publish.timer
+    service: growth-os-comments-publish.service
+    schedule: "cada 15 minutos"
+    severity: critical
+    max_age_minutes: 45
+    runbook: "docs/OPERACION_COMPARTIDA.md#comments-publish"
+
+  - id: instagram
+    name: "Scheduler de Instagram y latido de Ads"
+    building: growth
+    functional_owner: growth
+    timer: growth-os-ig.timer
+    service: growth-os-ig.service
+    schedule: "cada 15 minutos"
+    severity: high
+    max_age_minutes: 45
+    runbook: "docs/OPERACION_COMPARTIDA.md#instagram"
+
+  - id: sync
+    name: "Sync diario multitenant"
+    building: data
+    functional_owner: data
+    timer: growth-os-sync.timer
+    service: growth-os-sync.service
+    schedule: "diario, con retardo aleatorio de hasta 30 minutos"
+    severity: medium
+    next_elapse_grace_minutes: 60
+    output_glob: "logs/sync/last.json"
+    output_max_age_minutes: 1560
+    runbook: "docs/OPERACION_COMPARTIDA.md#sync"
+
+  - id: monetization
+    name: "Sync de monetización"
+    building: monetization
+    functional_owner: monetization
+    timer: growth-os-monetization.timer
+    service: growth-os-monetization.service
+    schedule: "diario, 02:15 America/Matamoros"
+    severity: medium
+    next_elapse_grace_minutes: 60
+    output_glob: "tenants/universe/metrics/monetization/*_Meta_Content_Earnings.json"
+    output_max_age_minutes: 1560
+    runbook: "docs/OPERACION_COMPARTIDA.md#monetization"
+
+workflows:
+  - id: comments-review-backlog
+    name: "Backlog de revisión de comentarios"
+    building: communications
+    functional_owner: communications
+    severity: high
+    kind: comments_backlog
+    tenant: universe
+    max_pending: 5
+    max_age_minutes: 240
+    max_approved_pending: 0
+    runbook: "docs/OPERACION_COMPARTIDA.md#comments-backlog"
