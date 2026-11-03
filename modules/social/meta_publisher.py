@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.DEBUG)
 
 from pathlib import Path
-from typing import Dict, Any, List, Optional, Union
+from typing import Dict, Any, List, Mapping, Optional, Union
 import json
 import os
 import argparse
@@ -20,84 +20,63 @@ from datetime import datetime, timezone
 from dataclasses import dataclass
 import csv
 
+from modules.config.env import META_ENV_KEYS, load_env_values, parse_env_file
+
 
 # ==============================================================================
 # CARGA AUTOMÁTICA DE CREDENCIALES DESDE .ENV
 # ==============================================================================
 
 ENV_SEARCH_PATHS = [
-    # Tenant .env específico
-    "tenants/firma-bordados/.env",
-    # .env local del proyecto
     ".env",
+    "tenants/firma-bordados/.env",
 ]
 
 DEFAULT_ENV_NAME = ".env"
 
 
+def _project_root() -> Path:
+    current = Path(__file__).resolve().parent
+    for candidate in (current, *current.parents):
+        if (candidate / "modules").is_dir() and (candidate / "tenants").is_dir():
+            return candidate
+    return Path.cwd().resolve()
+
+
+def _meta_env_files(project_root: Optional[str] = None) -> tuple[Path, ...]:
+    root = Path(project_root).resolve() if project_root else _project_root()
+    return tuple(root / relative for relative in ENV_SEARCH_PATHS)
+
+
 def load_env_file(env_path: str, project_root: Optional[str] = None) -> bool:
-    """
-    Carga variables de entorno desde un archivo .env y las establece en os.environ.
-    
-    Args:
-        env_path: Ruta relativa o absoluta al archivo .env
-        project_root: Directorio raíz del proyecto (para paths relativos)
-    
-    Returns:
-        True si se cargó exitosamente, False en caso contrario
-    """
-    # Convertir a Path
+    """Valida y lee un archivo .env sin modificar ``os.environ``."""
     env_file = Path(env_path)
-    
-    # Si es ruta relativa y hay project_root, usarlo como base
+
     if not env_file.is_absolute() and project_root:
         env_file = Path(project_root) / env_path
-    
+
     if not env_file.exists():
         logger.debug(f"Env file not found: {env_file}")
         return False
-    
+
     try:
-        with open(env_file, "r", encoding="utf-8") as f:
-            for line in f:
-                line = line.strip()
-                # Saltar líneas vacías y comentarios
-                if not line or line.startswith("#"):
-                    continue
-                # Saltar líneas sin igual
-                if "=" not in line:
-                    continue
-                
-                # Dividir el nombre de la variable y el valor
-                key, value = line.split("=", 1)
-                key = key.strip()
-                value = value.strip()
-                
-                # Detectar y reemplazar variables de entorno en el valor
-                import re
-                value = re.sub(r'\{\{(.*?)\}\}', lambda m: os.environ.get(m.group(1), ''), value)
-                value = re.sub(r'\$(\w+)', lambda m: os.environ.get(m.group(1), ''), value)
-                
-                # Establecer en os.environ
-                os.environ[key] = value
-                
+        parse_env_file(env_file)
         logger.debug(f"Loaded env variables from: {env_file}")
         return True
-        
     except Exception as e:
         logger.warning(f"Failed to load env file {env_file}: {e}")
         return False
 
 
-def load_integration_env(project_root: Optional[str] = None) -> bool:
+def load_integration_env(project_root: Optional[str] = None) -> Dict[str, str]:
     """
-    Carga las credenciales de Meta para despliegues remotos.
+    Resuelve las credenciales Meta para despliegues remotos.
     
     Busca en orden:
-    1. tenants/firma-bordados/.env (prioridad para tenant específico)
-    2. .env (variables de configuración general)
+    1. .env (variables de configuración general)
+    2. tenants/firma-bordados/.env (prioridad para tenant específico)
     
-    Establece las siguientes variables en os.environ:
+    Devuelve las siguientes variables sin modificar ``os.environ``:
     - FB_PAGE_ID
     - META_ACCESS_TOKEN
     - META_PAGE_ID (opcional, puede usarse como alternativa a FB_PAGE_ID)
@@ -106,41 +85,19 @@ def load_integration_env(project_root: Optional[str] = None) -> bool:
     - META_API_VERSION
     
     Args:
-        project_root: Directorio raíz del proyecto (default: directorio actual)
+        project_root: Directorio raíz del proyecto (default: raíz detectada del repo)
     
     Returns:
-        True si se cargó al menos un archivo .env válido, False en caso contrario
+        Valores Meta resueltos.
     """
-    loaded = False
-    
-    # Buscar en tenant/firma-bordados/.env primero
-    if load_env_file("tenants/firma-bordados/.env", project_root):
-        loaded = True
-    
-    # Intentar cargar .env local (por si existe)
-    if not loaded and load_env_file(".env", project_root):
-        loaded = True
-    
-    # Si no se encontraron archivos, intentar buscar en directorios superiores
-    if not loaded:
-        current = Path.cwd()
-        for parent in [current, current.parent, current.parent.parent]:
-            for env_path in ENV_SEARCH_PATHS:
-                env_file = parent / env_path
-                if env_file.exists():
-                    if load_env_file(str(env_file), str(parent)):
-                        loaded = True
-                        break
-            if loaded:
-                break
-    
-    # Si no se cargó nada, levantar advertencia
-    if not loaded:
-        logger.debug("No .env files found for Meta credentials")
+    env_files = _meta_env_files(project_root)
+    values = load_env_values(env_files, keys=META_ENV_KEYS)
+    found = sum(1 for env_file in env_files if env_file.is_file())
+    if found:
+        logger.debug(f"Loaded Meta credentials from {found} env file(s)")
     else:
-        logger.debug(f"Loaded Meta credentials from {loaded} env file(s)")
-    
-    return loaded
+        logger.debug("No .env files found for Meta credentials")
+    return values
 
 
 # NO cargar automáticamente al importar - dejar que el caller decida
@@ -190,6 +147,7 @@ class MetaPublisher:
         access_token: Optional[str] = None,
         dry_run: Optional[bool] = None,
         api_version: Optional[str] = None,
+        environment: Optional[Mapping[str, str]] = None,
     ):
         """
         Inicializa el publicador de Meta.
@@ -204,31 +162,47 @@ class MetaPublisher:
             access_token: Access token (usa META_PAGE_ACCESS_TOKEN o META_ACCESS_TOKEN si no se proporciona)
             dry_run: Forzar modo dry-run (usa META_DRY_RUN si no se proporciona)
             api_version: Versión de la API de Meta (usa META_API_VERSION si no se proporciona)
+            environment: Valores Meta ya resueltos, sin leer ni mutar el entorno global
         """
-        # Prioridad de page_id: parámetro > META_PAGE_ID > FB_PAGE_ID
-        self.page_id = (page_id or 
-                       os.getenv("META_PAGE_ID") or 
-                       os.getenv("FB_PAGE_ID"))
-        
-        # Prioridad de access_token: parámetro > META_PAGE_ACCESS_TOKEN > META_ACCESS_TOKEN
-        self.access_token = (access_token or 
-                            os.getenv("META_PAGE_ACCESS_TOKEN") or 
-                            os.getenv("META_ACCESS_TOKEN"))
-        
-        # Determinar modo dry-run - default True para seguridad
-        dry_run_str = os.getenv("META_DRY_RUN", "true").lower() in ("true", "1", "yes", "on")
+        meta_env = (
+            dict(environment)
+            if environment is not None
+            else load_env_values((), keys=META_ENV_KEYS)
+        )
+        self.meta_env = meta_env
+
+        self.page_id = (
+            page_id
+            or meta_env.get("META_PAGE_ID")
+            or meta_env.get("FB_PAGE_ID")
+        )
+        self.access_token = (
+            access_token
+            or meta_env.get("META_PAGE_ACCESS_TOKEN")
+            or meta_env.get("META_ACCESS_TOKEN")
+        )
+        dry_run_str = meta_env.get("META_DRY_RUN", "true").lower() in (
+            "true",
+            "1",
+            "yes",
+            "on",
+        )
         self.dry_run = dry_run if dry_run is not None else dry_run_str
-        
-        self.api_version = api_version or os.environ.get("META_API_VERSION", "v20.0")
+        self.api_version = api_version or meta_env.get("META_API_VERSION", "v20.0")
         self.base_url = f"https://graph.facebook.com/{self.api_version}"
         
-        # Validar que tenemos credenciales en modo real
         if not self.dry_run and (not self.page_id or not self.access_token):
-            page_id_source = os.getenv("META_PAGE_ID") or os.getenv("FB_PAGE_ID") or "no especificado"
-            access_token_source = os.getenv("META_PAGE_ACCESS_TOKEN") or os.getenv("META_ACCESS_TOKEN") or "no especificado"
+            page_id_configured = bool(
+                meta_env.get("META_PAGE_ID") or meta_env.get("FB_PAGE_ID")
+            )
+            token_configured = bool(
+                meta_env.get("META_PAGE_ACCESS_TOKEN")
+                or meta_env.get("META_ACCESS_TOKEN")
+            )
             raise ValueError(
-                f"Modo real requiere credenciales. Page ID: {page_id_source}, "
-                f"Access Token: {access_token_source}. "
+                "Modo real requiere credenciales. "
+                f"Page ID configurado: {page_id_configured}, "
+                f"Access Token configurado: {token_configured}. "
                 "Configura META_PAGE_ID/FB_PAGE_ID y META_ACCESS_TOKEN/META_PAGE_ACCESS_TOKEN en .env, "
                 "o pasa los parámetros al constructor."
             )
@@ -342,7 +316,7 @@ class MetaPublisher:
                 "grant_type": "fb_exchange_token",
                 "fb_exchange_token": self.access_token,
                 "client_id": self.page_id,  # Llama a tu ID de app
-                "client_secret": os.getenv("META_APP_SECRET", ""),  # Se puede no requerir para conversiones de page
+                "client_secret": self.meta_env.get("META_APP_SECRET", ""),
                 "access_token": self.access_token,  # Original token válido
             }
             
@@ -371,7 +345,7 @@ class MetaPublisher:
             
             if "access_token" in result:
                 new_token = result["access_token"]
-                print(f"✓ Token convertido exitosamente: {new_token[:20]}...")
+                print("✓ Token convertido exitosamente.")
                 return new_token
             else:
                 logger.error("Respuesta inesperada del endpoint de exchange:", result)
@@ -729,6 +703,7 @@ def publish_schedule_from_dryrun(
     page_id: Optional[str] = None,
     access_token: Optional[str] = None,
     dry_run: Optional[bool] = None,
+    environment: Optional[Mapping[str, str]] = None,
 ) -> List[MetaResponse]:
     """
     Publica todo el schedule desde dryrun_output.json usando copys oficiales de meta_import.csv.
@@ -740,6 +715,7 @@ def publish_schedule_from_dryrun(
         page_id: Page ID (opcional, usa env var)
         access_token: Access token (opcional, usa env var)
         dry_run: Forzar modo dry-run (opcional, usa env var)
+        environment: Valores Meta ya resueltos (opcional)
     
     Returns:
         Lista de MetaResponse por cada slot publicado
@@ -756,6 +732,7 @@ def publish_schedule_from_dryrun(
         page_id=page_id,
         access_token=access_token,
         dry_run=dry_run,
+        environment=environment,
     )
     
     results = []
@@ -826,6 +803,7 @@ def publish_single_slot(
     access_token: Optional[str] = None,
     dry_run: Optional[bool] = None,
     caption_override: Optional[str] = None,
+    environment: Optional[Mapping[str, str]] = None,
 ) -> MetaResponse:
     """
     Publica un único slot específico desde dryrun_output.json usando copys de meta_import.csv.
@@ -839,6 +817,7 @@ def publish_single_slot(
         access_token: Access token (opcional, usa env var)
         dry_run: Forzar modo dry-run (opcional, usa env var)
         caption_override: Caption personalizado (opcional)
+        environment: Valores Meta ya resueltos (opcional)
     
     Returns:
         MetaResponse del slot publicado
@@ -864,6 +843,7 @@ def publish_single_slot(
         page_id=page_id,
         access_token=access_token,
         dry_run=dry_run,
+        environment=environment,
     )
     
     slot_type = slot["slot_type"]
@@ -990,8 +970,7 @@ def _main():
     if args.dry_run is not None:
         dry_run = args.dry_run.lower() == "true"
     
-    # Cargar .env ANTES de usar variables de entorno
-    load_integration_env()
+    environment = load_integration_env()
     
     # Obtener page_id y access_token desde env vars o argumentos
     page_id = args.page_id or None
@@ -1010,7 +989,12 @@ def _main():
         print(f"Dry-run path: {args.dryrun_path}")
         print(f"Tenant root: {args.tenant_root}")
         print(f"Meta import: {args.meta_import}")
-        print(f"Dry-run mode: {dry_run if dry_run is not None else (os.getenv('META_DRY_RUN', 'true').lower() == 'true')}")
+        effective_dry_run = (
+            dry_run
+            if dry_run is not None
+            else environment.get("META_DRY_RUN", "true").lower() == "true"
+        )
+        print(f"Dry-run mode: {effective_dry_run}")
         
         result = publish_single_slot(
             dryrun_path=args.dryrun_path,
@@ -1021,6 +1005,7 @@ def _main():
             access_token=access_token,
             dry_run=dry_run,
             caption_override=args.caption_override,
+            environment=environment,
         )
         
         print(f"\nResultado: {result}")
@@ -1038,7 +1023,12 @@ def _main():
         print(f"Dry-run path: {args.dryrun_path}")
         print(f"Tenant root: {args.tenant_root}")
         print(f"Meta import: {args.meta_import}")
-        print(f"Dry-run mode: {dry_run if dry_run is not None else (os.getenv('META_DRY_RUN', 'true').lower() == 'true')}")
+        effective_dry_run = (
+            dry_run
+            if dry_run is not None
+            else environment.get("META_DRY_RUN", "true").lower() == "true"
+        )
+        print(f"Dry-run mode: {effective_dry_run}")
         
         results = publish_schedule_from_dryrun(
             dryrun_path=args.dryrun_path,
@@ -1047,6 +1037,7 @@ def _main():
             page_id=page_id,
             access_token=access_token,
             dry_run=dry_run,
+            environment=environment,
         )
         
         print(f"\n{'='*60}")
@@ -1069,14 +1060,17 @@ def _main():
     
     else:
         # Demo dry-run (comportamiento original)
-        print(f"META_DRY_RUN: {META_DRY_RUN}")
-        page_id_env = os.getenv("META_PAGE_ID") or os.getenv("FB_PAGE_ID")
-        access_token_env = os.getenv("META_ACCESS_TOKEN") or os.getenv("META_PAGE_ACCESS_TOKEN")
+        print(f"META_DRY_RUN: {environment.get('META_DRY_RUN', 'true')}")
+        page_id_env = environment.get("META_PAGE_ID") or environment.get("FB_PAGE_ID")
+        access_token_env = environment.get("META_ACCESS_TOKEN") or environment.get("META_PAGE_ACCESS_TOKEN")
         print(f"FB_PAGE_ID: {page_id_env if page_id_env else 'NO CONFIGURADO'}")
-        print(f"META_ACCESS_TOKEN: {access_token_env if access_token_env else 'NO CONFIGURADO'}")
-        print(f"META_API_VERSION: {META_API_VERSION}")
+        print(
+            "META_ACCESS_TOKEN: "
+            f"{'CONFIGURADO' if access_token_env else 'NO CONFIGURADO'}"
+        )
+        print(f"META_API_VERSION: {environment.get('META_API_VERSION', 'v20.0')}")
         
-        publisher = MetaPublisher(dry_run=True)
+        publisher = MetaPublisher(dry_run=True, environment=environment)
         
         # Test text
         result = publisher.publish_text(

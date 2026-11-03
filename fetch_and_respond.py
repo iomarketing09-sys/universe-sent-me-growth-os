@@ -6,27 +6,38 @@ process them with UniverseResponder, and output proposed responses for review.
 import os
 import sys
 import re
+from pathlib import Path
 
 # Add the project root to sys.path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from growth.meta_publisher import load_integration_env
+from modules.config.env import META_ENV_KEYS, load_env_values
 from growth.metrics_snapshot import get_page_token, api_get
 from tenants.universe.comment_responses.universe_responder import UniverseResponder
 from tenants.universe.comment_responses.parse_real_pubs import parse_publication_contexts_real
 
+ROOT = Path(__file__).resolve().parent
+
+
 def load_env():
-    """Load integration environment from tenant's .env."""
-    tenant_env = "tenants/universe/.env"
-    if os.path.exists(tenant_env):
-        with open(tenant_env, "r") as f:
-            for line in f:
-                line = line.strip()
-                if line and not line.startswith("#") and "=" in line:
-                    key, value = line.split("=", 1)
-                    os.environ[key.strip()] = value.strip()
-    # Also load integration env (which loads .env and tenant .env)
-    load_integration_env()
+    """Resolve root, tenant and process Meta credentials without side effects."""
+    values = load_env_values(
+        (ROOT / ".env", ROOT / "tenants" / "universe" / ".env"),
+        keys=META_ENV_KEYS,
+    )
+    user_token = values.get("META_ACCESS_TOKEN")
+    page_id = (
+        values.get("FB_PAGE_ID")
+        or values.get("META_PAGE_ID")
+        or os.environ.get("PAGE_ID")
+    )
+    if not user_token:
+        print("Error: META_ACCESS_TOKEN environment variable not set.")
+        sys.exit(1)
+    if not page_id:
+        print("Error: FB_PAGE_ID, META_PAGE_ID or PAGE_ID environment variable not set.")
+        sys.exit(1)
+    return user_token, page_id
 
 def get_post_id_from_url(url):
     """Extract post ID from a Facebook post URL."""
@@ -62,15 +73,7 @@ def find_context_by_post_id(contexts, post_id):
     return None
 
 def main():
-    load_env()
-    user_token = os.environ.get("META_ACCESS_TOKEN")
-    if not user_token:
-        print("Error: META_ACCESS_TOKEN environment variable not set.")
-        sys.exit(1)
-    page_id = os.environ.get("FB_PAGE_ID") or os.environ.get("PAGE_ID")
-    if not page_id:
-        print("Error: FB_PAGE_ID or PAGE_ID environment variable not set.")
-        sys.exit(1)
+    user_token, page_id = load_env()
     
     # Get page access token
     page_token = get_page_token(user_token, page_id)

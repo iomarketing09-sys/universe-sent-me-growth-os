@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import pytest
+
 from modules.social import meta_publisher
 
 TOKEN = "SECRETO1234567890ABCDEF"
@@ -29,3 +31,14 @@ def test_get_page_token_no_expone_token(monkeypatch):
     text = " ".join(messages)
     assert TOKEN[:20] not in text
     assert "Token de página obtenido correctamente." in text
+
+
+def test_real_mode_error_no_expone_token():
+    with pytest.raises(ValueError) as exc_info:
+        meta_publisher.MetaPublisher(
+            page_id="",
+            dry_run=False,
+            environment={"META_ACCESS_TOKEN": TOKEN},
+        )
+
+    assert TOKEN not in str(exc_info.value)

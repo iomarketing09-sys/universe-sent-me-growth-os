@@ -14,16 +14,25 @@ from tenants.universe.comment_responses.universe_responder import UniverseRespon
 from tenants.universe.comment_responses.parse_real_pubs import parse_publication_contexts_real
 
 def load_env():
-    """Load integration environment (Meta credentials)."""
-    if not load_integration_env():
-        print("Warning: Could not load integration environment. Checking for META_ACCESS_TOKEN and PAGE_ID in os.environ.")
-    # Ensure we have the necessary variables
-    if not os.environ.get("META_ACCESS_TOKEN"):
+    """Resolve Meta credentials without mutating ``os.environ``."""
+    values = load_integration_env()
+    if not values:
+        print("Warning: Could not load integration environment. Checking process environment.")
+
+    user_token = values.get("META_ACCESS_TOKEN") or os.environ.get("META_ACCESS_TOKEN")
+    page_id = (
+        values.get("PAGE_ID")
+        or values.get("FB_PAGE_ID")
+        or values.get("META_PAGE_ID")
+        or os.environ.get("PAGE_ID")
+    )
+    if not user_token:
         print("Error: META_ACCESS_TOKEN environment variable not set.")
         sys.exit(1)
-    if not os.environ.get("PAGE_ID"):
-        print("Error: PAGE_ID environment variable not set.")
+    if not page_id:
+        print("Error: FB_PAGE_ID, META_PAGE_ID or PAGE_ID environment variable not set.")
         sys.exit(1)
+    return user_token, page_id
 
 def get_post_id_from_url(url):
     """Extract post ID from a Facebook post URL."""
@@ -57,9 +66,7 @@ def find_context_by_post_id(contexts, post_id):
     return None
 
 def main():
-    load_env()
-    user_token = os.environ["META_ACCESS_TOKEN"]
-    page_id = os.environ["PAGE_ID"]
+    user_token, page_id = load_env()
     
     # Get page access token
     page_token = get_page_token(user_token, page_id)

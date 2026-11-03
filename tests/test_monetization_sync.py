@@ -3,10 +3,11 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 from modules.intelligence.monetization import MonetizationStore
-from scripts.run_monetization_sync import eligible_tenants, sync_tenant
+from scripts.run_monetization_sync import _child_env, eligible_tenants, sync_tenant
 from tests.tenant_factory import make_tenant
 
 
@@ -81,3 +82,24 @@ def test_eligible_tenants_only_includes_monetization_tenants(tmp_path):
     make_tenant(tmp_path, "flexi", track="physical_cro")
 
     assert eligible_tenants(tmp_path) == ["universe"]
+
+
+def test_child_env_uses_root_tenant_process_precedence(tmp_path, monkeypatch):
+    tenant = tmp_path / "tenants" / "universe"
+    tenant.mkdir(parents=True)
+    (tmp_path / ".env").write_text(
+        "FB_PAGE_ID=root-page\nMETA_ACCESS_TOKEN=root-token\n",
+        encoding="utf-8",
+    )
+    (tenant / ".env").write_text(
+        "FB_PAGE_ID=tenant-page\nMETA_ACCESS_TOKEN=tenant-token\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setenv("META_ACCESS_TOKEN", "process-token")
+    before = dict(os.environ)
+
+    env = _child_env(tmp_path, "universe")
+
+    assert env["FB_PAGE_ID"] == "tenant-page"
+    assert env["META_ACCESS_TOKEN"] == "process-token"
+    assert dict(os.environ) == before

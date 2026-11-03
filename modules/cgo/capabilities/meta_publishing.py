@@ -14,6 +14,16 @@ from modules.cgo.gates import gate_config, gate_token, gate_track
 from modules.cgo.result import CgoContext, CgoResult, action, status_from
 
 
+def _meta_environment(ctx: CgoContext, tenant_id: str) -> dict:
+    """Resuelve credenciales Meta del repo y del tenant sin tocar os.environ."""
+    from modules.config.env import META_ENV_KEYS, load_env_values
+
+    return load_env_values(
+        (ctx.base_path / ".env", ctx.tenant_path(tenant_id) / ".env"),
+        keys=META_ENV_KEYS,
+    )
+
+
 def _publish_instagram(ctx: CgoContext, tenant_id: str) -> dict:
     if Path.cwd().resolve() != Path(ctx.base_path).resolve():
         return {"error": "Ejecutar desde la raíz del repo para publicar en Instagram."}
@@ -33,6 +43,7 @@ def _publish_facebook(ctx: CgoContext, tenant_id: str) -> dict:
         dryrun_path=dryrun,
         tenant_root=ctx.tenant_path(tenant_id),
         dry_run=False,
+        environment=_meta_environment(ctx, tenant_id),
     )
     return {
         "total": len(responses),

@@ -126,6 +126,36 @@ def test_meta_publishing_publica_con_token(tmp_path, monkeypatch):
     assert result.artifacts == ["publication_log:tienda"]
 
 
+def test_publish_facebook_carga_env_del_tenant(tmp_path, monkeypatch):
+    import modules.cgo.capabilities.meta_publishing as publishing
+    import modules.social as social
+
+    tenant = make_tenant(tmp_path, "tienda", track="physical_cro")
+    (tenant / "dryrun_output.json").write_text(
+        json.dumps({"tenant_id": "tienda", "schedule": []}),
+        encoding="utf-8",
+    )
+    (tenant / ".env").write_text(
+        "FB_PAGE_ID=123\nMETA_ACCESS_TOKEN=token-de-prueba\n",
+        encoding="utf-8",
+    )
+
+    captured = {}
+
+    def fake_publish(**kwargs):
+        captured.update(kwargs)
+        return []
+
+    monkeypatch.setattr(social, "publish_schedule_from_dryrun", fake_publish)
+
+    context = ctx(base_path=str(tmp_path), dry_run=False, publish=True).ctx
+    result = publishing._publish_facebook(context, "tienda")
+
+    assert result == {"total": 0, "ok": 0, "failed": 0}
+    assert captured["environment"]["FB_PAGE_ID"] == "123"
+    assert captured["environment"]["META_ACCESS_TOKEN"] == "token-de-prueba"
+
+
 # ---------------------------------------------------------------- canon sync
 def test_canon_sync_no_configurado(tmp_path):
     make_tenant(tmp_path, "digital", track="native_digital")

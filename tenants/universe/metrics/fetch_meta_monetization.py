@@ -8,6 +8,7 @@ import os
 import json
 import csv
 import shutil
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 import urllib.request
@@ -22,19 +23,18 @@ OUTPUT_DIR = SCRIPT_DIR / "monetization"
 CSV_LOG = SCRIPT_DIR / "meta_monetization_log.csv"
 DRIVE_DIR = Path("/home/universe-sent-me/GoogleDrive/Growth OS")
 
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from modules.config.env import META_ENV_KEYS, load_env_values
+
+
 def load_env():
-    creds = {}
-    for path in (ENV_PATH, REPO_ROOT / ".env"):
-        if not path.exists():
-            continue
-        with open(path, "r", encoding="utf-8") as f:
-            for line in f:
-                line = line.strip()
-                if line and not line.startswith("#") and "=" in line:
-                    k, v = line.split("=", 1)
-                    creds[k.strip()] = v.strip().strip("'\"")
-    creds.update({key: value for key, value in os.environ.items() if value})
-    return creds
+    return load_env_values(
+        (REPO_ROOT / ".env", ENV_PATH),
+        environ=os.environ,
+        keys=META_ENV_KEYS,
+    )
 
 def api_get(endpoint, params):
     base_url = "https://graph.facebook.com/v20.0"

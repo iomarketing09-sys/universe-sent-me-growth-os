@@ -20,26 +20,18 @@ from typing import Any, Dict, List, Optional
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
+from modules.config.env import load_env_values
 from modules.intelligence import MonetizationAgent
 
 
-def _load_env(path: Path) -> Dict[str, str]:
-    values: Dict[str, str] = {}
-    if not path.is_file():
-        return values
-    for line in path.read_text(encoding="utf-8", errors="ignore").splitlines():
-        line = line.strip()
-        if line and not line.startswith("#") and "=" in line:
-            key, value = line.split("=", 1)
-            values[key.strip()] = value.strip().strip("'\"")
-    return values
-
-
 def _child_env(base_path: Path, tenant_id: str) -> Dict[str, str]:
-    env = os.environ.copy()
-    env.update(_load_env(base_path / ".env"))
-    env.update(_load_env(base_path / "tenants" / tenant_id / ".env"))
-    return env
+    return load_env_values(
+        (
+            base_path / ".env",
+            base_path / "tenants" / tenant_id / ".env",
+        ),
+        environ=os.environ,
+    )
 
 
 def _run_script(script: Path, args: List[str], env: Dict[str, str]) -> Dict[str, Any]:

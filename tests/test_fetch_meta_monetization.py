@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 import importlib.util
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -18,7 +19,10 @@ SPEC.loader.exec_module(fetch)
 def test_load_env_merges_root_env_and_environment(tmp_path, monkeypatch):
     tenant_env = tmp_path / "tenant.env"
     root_env = tmp_path / ".env"
-    tenant_env.write_text("PAGE_ACCESS_TOKEN=tenant\n", encoding="utf-8")
+    tenant_env.write_text(
+        "PAGE_ACCESS_TOKEN=tenant\nFB_PAGE_ID=tenant-page\n",
+        encoding="utf-8",
+    )
     root_env.write_text(
         "FB_PAGE_ID=page-from-file\nMETA_ACCESS_TOKEN=file-token\n",
         encoding="utf-8",
@@ -26,12 +30,14 @@ def test_load_env_merges_root_env_and_environment(tmp_path, monkeypatch):
     monkeypatch.setattr(fetch, "ENV_PATH", tenant_env)
     monkeypatch.setattr(fetch, "REPO_ROOT", tmp_path)
     monkeypatch.setenv("META_ACCESS_TOKEN", "env-token")
+    before = dict(os.environ)
 
     values = fetch.load_env()
 
     assert values["PAGE_ACCESS_TOKEN"] == "tenant"
-    assert values["FB_PAGE_ID"] == "page-from-file"
+    assert values["FB_PAGE_ID"] == "tenant-page"
     assert values["META_ACCESS_TOKEN"] == "env-token"
+    assert dict(os.environ) == before
 
 
 def test_main_returns_error_without_token(monkeypatch, capsys):
