@@ -1,7 +1,8 @@
 # Growth OS - Flujo Completo y Estado por Componente
 
 **Fecha:** 15 Octubre 2026  
-**Versión:** 2.0 (Corregido: Canon solo para tenant universe)  
+**Última revisión de gobernanza:** 2 Noviembre 2026
+**Versión:** 2.1 (Gobernanza actualizada; canon solo para tenant universe)
 **Estado General:** 🟢 Núcleo Operativo | 🟡 Datos Reales Parciales | 🔴 Bloqueantes Externos
 
 ---
@@ -76,7 +77,7 @@ growth-os/
 │   │   ├── google_business.py   # GBP + GSC + Bing unified (fallback config.json)
 │   │   └── directory_scraper.py # Web directories + Meta API fallback
 │   ├── scripts/                 # Utility scripts
-│   ├── tests/                   # Core package test suite (9/9 passing)
+│   ├── tests/                   # Core package test suite (26/26 passing)
 │   └── data/                    # CSV data files (account-scoped)
 ├── GrowthOS/                    # Operational docs & queues (🟢 active)
 │   ├── 00_01_Changelog_GrowthOS.md
@@ -86,7 +87,7 @@ growth-os/
 │   ├── 01_02_Content_Backlog.md             # Backlog v3.2 (updated 2026-08-23)
 │   ├── 01_03_Reuse_Queue.md
 │   ├── 01_04_Production_Queue.md            # Pipeline with Meta-verified assets
-│   ├── 01_05_Approval_Queue.md              # Bottleneck: pending Claude/Fernando
+│   ├── 01_05_Approval_Queue.md              # Bottleneck: pending Fernando
 │   ├── Integracion_Growth_OS.md             # Canon bridge (last sync 2026-08-23, commit 1daaad5)
 │   ├── Canon_Contradictions_Report.md
 │   ├── Content_Inventory.csv                # Master identity source
@@ -132,7 +133,7 @@ growth-os/
 └── .env.example                 # Template
 ```
 
-**Key Principle**: This repo (`universe-sent-me-growth-os`) = **operational workspace** (CGO read/write). Canon repo (`universe-sent-me-1`) = **read-only** for CGO; Claude guards it. Bridge: `GrowthOS/Integracion_Growth_OS.md`.
+**Key Principle**: This repo (`universe-sent-me-growth-os`) = **operational workspace** (CGO read/write). Canon repo (`universe-sent-me-1`) = **read-only** for CGO; Fernando guards it as the sole canon authority. Bridge: `GrowthOS/Integracion_Growth_OS.md`.
 
 ---
 

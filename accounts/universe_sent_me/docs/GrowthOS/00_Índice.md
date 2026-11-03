@@ -1,14 +1,16 @@
 # Growth OS — Índice de Documentos
 
 **Propósito:** Punto de entrada a toda la documentación operativa del Growth OS (calendario editorial, colas, automatizaciones, governance).
-**Estado:** Active
+**Estado:** Snapshot histórico / no operativo
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-25
-**Versión:** 8.4
-**Autor:** Manus AI
+**Última actualización:** 2026-11-02
+**Versión:** 8.5 (Marcado como snapshot histórico)
+**Autor:** Manus AI (original histórico); CGO (marcado de snapshot)
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
 
 ---
+
+> **Aviso:** este directorio es una copia histórica del account `universe_sent_me`. No es fuente de verdad ni debe usarse para operar Growth OS. La documentación vigente vive en `GrowthOS/` en la raíz del repositorio.
 
 ## Documentación del Growth OS
 

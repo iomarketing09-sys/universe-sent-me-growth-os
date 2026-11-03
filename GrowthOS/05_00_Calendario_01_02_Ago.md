@@ -1,14 +1,16 @@
 # Calendario de Publicaciones: Sábado 1 y Domingo 2 de Agosto
 
 **Propósito:** Plan operativo de publicaciones para el fin de semana (1 y 2 de agosto), aplicando la estrategia CGO, las reglas de temporalidad y priorizando el aprendizaje y la diversidad.
-**Estado:** Active
+**Estado:** Superseded / histórico
 **Fecha de creación:** 2026-08-01
-**Última actualización:** 2026-08-01
-**Versión:** 3.1 (Ajuste de Reels diarios)
-**Autor:** Manus AI (CGO)
+**Última actualización:** 2026-11-02
+**Versión:** 3.2 (Marcado como histórico)
+**Autor:** Manus AI (original histórico); CGO (actualización vigente)
 **Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `Operations/Memories/reuse_queue_mayo_2026.csv`, `06_00_Reglas_Aprendizaje_Tendencias.md`
 
 ---
+
+> **Nota histórica:** este calendario corresponde al fin de semana del 1 y 2 de agosto de 2026. Se conserva como evidencia y no debe usarse como cola operativa vigente.
 
 ## Sábado 1 de Agosto (Hoy)
 

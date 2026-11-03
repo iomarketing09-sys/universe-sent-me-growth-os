@@ -1,7 +1,7 @@
 ---
-estado: Aprobado
-version: "1.2"
-ultima_revision: 2026-08-10
+estado: Superseded
+version: "1.3"
+ultima_revision: 2026-11-02
 dependencias:
   - GrowthOS/01_00_Arquitectura_Calendario_Escalable.md
   - GrowthOS/08_00_Metricas_Baseline_Plataformas.md
@@ -11,12 +11,14 @@ dependencias:
 # Calendario 10–16 de Agosto 2026 — Nuevo formato: menos reuse, más contenido nuevo
 
 **Propósito:** Documentar el calendario semanal 10-16 agosto y el cambio de estrategia decidido por Fernando: reducir la proporción de memes reutilizados, usar solo los "top" ya validados con datos, y dejar más espacio para contenido nuevo (14 memes nuevos de personajes del elenco extendido: Maeve, Kael, Silvio, Evan, Kiri, Elara, Universe). Reels diarios se mantienen pero quedan como TBD (Fernando define el contenido cada día).
-**Estado:** Aprobado
+**Estado:** Superseded / histórico
 **Fecha de creación:** 2026-08-10
-**Última actualización:** 2026-08-10
-**Versión:** 1.0
-**Autor:** Claude, con dirección de Fernando
+**Última actualización:** 2026-11-02
+**Versión:** 1.3 (Marcado como histórico)
+**Autor:** Claude (original histórico), con dirección de Fernando; CGO (actualización vigente)
 **Documentos relacionados:** `08_00_Metricas_Baseline_Plataformas.md` (fuente de los "top reuse"), `Operations/Research/2026-08-08_Reporte_Mensual_Junio_Julio_2026.md` (fuente del análisis horario/día), `01_00_Arquitectura_Calendario_Escalable.md` (reglas de asignación dinámica)
+
+> **Nota histórica:** este calendario corresponde a la semana del 10 al 16 de agosto de 2026. Se conserva como evidencia y no debe usarse como cola operativa vigente.
 
 ---
 

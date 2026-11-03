@@ -3,9 +3,9 @@
 **Propósito:** Sistema de hashtags de marca con firma `USM` para uso consistente en Facebook e Instagram. Reemplaza la elección ad-hoc de hashtags por un roster fijo y versionado, evitando errores de tipeo (ver caso "LoresUSM") y usos de nombres no aprobados en canon (ver caso "Maeve").
 **Estado:** Active
 **Fecha de creación:** 2026-08-03
-**Última actualización:** 2026-08-15
-**Versión:** 1.1
-**Autor:** Claude (a solicitud de Fernando, 2026-08-03)
+**Última actualización:** 2026-11-02
+**Versión:** 1.2
+**Autor:** Claude (original histórico, a solicitud de Fernando, 2026-08-03); CGO (actualización vigente)
 **Documentos relacionados:** `06_00_Reglas_Aprendizaje_Tendencias.md` (Sección 6), `Canon_Contradictions_Report.md`, `Integracion_Growth_OS.md`
 
 ---
@@ -14,7 +14,7 @@
 
 `[Nombre o Concepto]` + `USM`, en PascalCase, sin espacios ni guiones. Ejemplo: `KiriUSM`, `MomentosUSM`, `WilfredUSM`, `MemesUSM`.
 
-**Regla de canon (no negociable):** un hashtag de personaje solo puede usar un nombre confirmado en la Biblia canónica. Antes de crear un hashtag de personaje nuevo, verificar en `Universe Sent Me - Biblia/02 Personajes/` o preguntar a Claude/Fernando. Nunca inventar un nombre para generar el hashtag — así se originó el caso "Maeve".
+**Regla de canon (no negociable):** un hashtag de personaje solo puede usar un nombre confirmado en la Biblia canónica. Antes de crear un hashtag de personaje nuevo, verificar en `Universe Sent Me - Biblia/02 Personajes/` o preguntar a Fernando, única autoridad de canon. Nunca inventar un nombre para generar el hashtag — así se originó el caso "Maeve".
 
 ---
 
@@ -74,4 +74,4 @@ Este roster se actualiza cuando:
 - Se aprueba un lugar o concepto nuevo en canon.
 - Se detecta un typo o uso incorrecto ya publicado (documentar en `Canon_Contradictions_Report.md` y corregir aquí).
 
-Manus no debe crear hashtags de personaje fuera de este roster sin antes verificarlo contra el canon.
+El CGO no debe crear hashtags de personaje fuera de este roster sin antes verificarlo contra el canon y obtener confirmación de Fernando.

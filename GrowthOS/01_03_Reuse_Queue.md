@@ -5,7 +5,7 @@
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-14
 **Versión:** 1.5
-**Autor:** Manus AI
+**Autor:** Manus AI (original histórico); CGO (actualización vigente)
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_02_Content_Backlog.md`
 
 ---
@@ -73,7 +73,7 @@ El doble sentido y la sexualización son atributos editoriales válidos para est
 
 La carpeta `My Drive/Universe sent me/USM/Humor existencial` funciona como **entrada operativa de memes nuevos**. Un meme permanece en la raíz mientras está pendiente de selección, aprobación, programación o publicación.
 
-Después de publicar una pieza, Manus debe conservar su nombre y referencia, registrar el `ID_Meta`, la fecha y hora real de publicación, la plataforma, el estado y las métricas iniciales; después debe mover el archivo a la carpeta mensual correspondiente, por ejemplo `Humor existencial/08 Agosto`.
+Después de publicar una pieza, el CGO debe conservar su nombre y referencia, registrar el `ID_Meta`, la fecha y hora real de publicación, la plataforma, el estado y las métricas iniciales; después debe mover el archivo a la carpeta mensual correspondiente, por ejemplo `Humor existencial/08 Agosto`.
 
 La raíz representa contenido pendiente. Las carpetas mensuales representan historial de publicación. Las carpetas mensuales no deben usarse como evidencia suficiente de rendimiento: el registro de Meta y el ranking de publicaciones tienen prioridad para recuperar fecha, interacciones y elegibilidad de reuse.
 
@@ -105,4 +105,4 @@ El movimiento mensual es un paso posterior a la confirmación de publicación, n
 
 2. **Regla de Antigüedad (30 días):** Ninguna pieza puede ser reutilizada si han pasado menos de 30 días desde su `Fecha_Ultima_Publicacion`.
 3. **Bloqueo Canon:** Ninguna pieza en esta cola puede ser reutilizada si su campo `Bloqueado_Canon` es `Sí`.
-4. **Validación directa de Manus:** Manus debe filtrar esta cola (`Es_Reutilizable == Sí` Y `Dias_Desde_Publicacion` >= 30) antes de llenar los días vacíos del calendario semanal. La selección no publica automáticamente: cada pieza debe conservar aprobación, bloqueo de canon y trazabilidad.
+4. **Validación directa del CGO:** el CGO debe filtrar esta cola (`Es_Reutilizable == Sí` Y `Dias_Desde_Publicacion` >= 30) antes de llenar los días vacíos del calendario semanal. La selección no publica automáticamente: cada pieza debe conservar aprobación, bloqueo de canon y trazabilidad.

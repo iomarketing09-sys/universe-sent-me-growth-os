@@ -6,7 +6,7 @@
 **Fecha de creación:** 2026-09-06  
 **Última actualización:** 2026-09-06  
 **Versión:** 1.0  
-**Autor:** Manus AI (CGO)  
+**Autor:** Manus AI (original histórico); CGO (actualización vigente)
 **Documentos relacionados:** [Índice del Growth OS](00_Índice.md), [Fuente maestra y ledgers](14_00_Fuente_Maestra_y_Ledgers.md), [Reglas de aprendizaje](06_00_Reglas_Aprendizaje_Tendencias.md), [Integración Growth OS–Canon](Integracion_Growth_OS.md), [Studio Governance](../Studio_Governance.md)  
 **Organización:** `GrowthOS/`
 

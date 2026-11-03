@@ -1,5 +1,10 @@
 # Estado Growth OS - 13 Octubre 2026
 
+> **Snapshot histórico.** Este documento conserva el estado observado el 13 de
+> octubre de 2026. No es el estado actual de la ciudad ni un tablero de
+> operación. Para servicios, alertas y ownership, consultar
+> `docs/OPERACION_COMPARTIDA.md` y `ops/services.yaml`.
+
 ## Snapshot Actual
 
 ### ✅ Operativo (Green)

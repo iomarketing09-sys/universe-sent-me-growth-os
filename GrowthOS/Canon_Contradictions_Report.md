@@ -123,5 +123,5 @@ Se han identificado **5 contradicciones de canon** en la mini-historia "La Búsq
 
 > Ninguna automatización de publicación (Story Scheduler, Meme-to-Reel Factory, etc.) puede dispararse para esta mini-historia hasta que:
 > 1. Las contradicciones de canon sean corregidas por Fernando.
-> 2. Fernando o Claude cambien el estado a "Aprobado" en el Calendario Editorial del Growth OS.
+> 2. Fernando cambie el estado a "Aprobado" en el Calendario Editorial del Growth OS.
 > 3. Se pruebe el flujo de aprobación del puente con este caso como primera prueba real.

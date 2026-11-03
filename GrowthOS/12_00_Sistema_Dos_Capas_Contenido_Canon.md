@@ -4,8 +4,9 @@
 **Estado:** Aprobado
 **Fecha de creación:** 2026-08-10
 **Última actualización:** 2026-08-15
-**Versión:** 1.5
-**Autor:** Claude, formalizando dirección estratégica de Fernando
+**Última actualización:** 2026-11-02
+**Versión:** 1.6
+**Autor:** Claude (original), formalizando dirección estratégica de Fernando; CGO (actualización vigente)
 **Documentos relacionados:** `03_00_Sistema_Generacion_Memes.md` (pipeline técnico de producción), `Canon_Contradictions_Report.md` (histórico de fricciones que motivaron este sistema), `Operations/Research/2026-08-15_Community_Engagement_Log.md` (ledger cualitativo), `Operations/Memories/mayo_2026_top_posts_metaBS.md` (evidencia original que originó esta discusión)
 
 ---
@@ -45,7 +46,7 @@ Todo lo demás — tono, actitud, explicitud, humor, lenguaje, registro emociona
 
 **Quién decide:** Fernando, siempre. No hay promoción automática por métricas.
 
-**Rol de Claude:** alertar activamente cuando un patrón cruce un umbral observable en los datos, para que Fernando tenga la información a tiempo de decidir — no decidir en su lugar.
+**Rol del CGO:** alertar activamente cuando un patrón cruce un umbral observable en los datos, para que Fernando tenga la información a tiempo de decidir — no decidir en su lugar.
 
 ### 4.1 Qué cuenta como "patrón" a vigilar
 
@@ -53,24 +54,24 @@ Todo lo demás — tono, actitud, explicitud, humor, lenguaje, registro emociona
 - Esas piezas, en conjunto, muestran rendimiento consistente por encima de la mediana del personaje o de la cuenta (no un solo pico aislado — un pico único es una pieza afortunada, no un patrón).
 - El patrón no ha sido ya registrado como rasgo permanente en la ficha del personaje.
 
-### 4.2 Qué hace Claude cuando detecta esto
+### 4.2 Qué hace el CGO cuando detecta esto
 
 Alerta explícitamente a Fernando, con formato consistente:
 
 > 🔔 **Candidato a promoción de canon:** [personaje] — [descripción del patrón]. Apareció en [N] piezas entre [fechas], con [métrica de rendimiento]. ¿Lo revisamos para posible ficha permanente, o lo dejamos como recurso libre de Capa 1?
 
-Claude no escribe la ficha de canon ni la propone redactada de antemano — solo señala el patrón y espera la decisión de Fernando sobre si vale la pena convertirlo en rasgo permanente.
+El CGO no modifica la ficha de canon: señala el patrón, reúne evidencia y espera la decisión de Fernando sobre si vale la pena convertirlo en rasgo permanente.
 
 ### 4.3 Qué pasa si Fernando aprueba la promoción
 
 1. Fernando confirma explícitamente qué del patrón se vuelve permanente (puede ser solo una parte del meme, no toda la pieza).
-2. Claude redacta la actualización de canon correspondiente (nueva Regla de Diseño, o ajuste a una existente) y la somete a la misma disciplina de commits ya establecida (unidad lógica única, nunca mezclada con cambios administrativos).
+2. Fernando redacta y aprueba la actualización de canon correspondiente (nueva Regla de Diseño, o ajuste a una existente). El CGO puede preparar un borrador, pero no escribe el repositorio de canon.
 3. Se hace commit + push al repo `universe-sent-me-1` con el mensaje describiendo el patrón de origen y la evidencia que lo sustenta.
 4. El registro incluye una referencia a las piezas de Capa 1 que originaron la promoción, para trazabilidad.
 
 ### 4.4 Qué pasa si Fernando decide NO promoverlo
 
-Se queda como recurso libre de Capa 1 — se puede seguir usando en memes indefinidamente sin que eso implique una obligación futura de mantenerlo. Claude no vuelve a alertar sobre el mismo patrón exacto salvo que Fernando lo pida, para no generar ruido repetido.
+Se queda como recurso libre de Capa 1 — se puede seguir usando en memes indefinidamente sin que eso implique una obligación futura de mantenerlo. El CGO no vuelve a alertar sobre el mismo patrón exacto salvo que Fernando lo pida, para no generar ruido repetido.
 
 ### 4.5 Log de promociones
 

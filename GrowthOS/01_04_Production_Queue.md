@@ -5,7 +5,7 @@
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-22
 **Versión:** 2.0
-**Autor:** Manus AI
+**Autor:** Manus AI (original histórico); CGO (actualización vigente)
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_02_Content_Backlog.md`, `../Operations/Production/2026-08-22_Briefs_Cadence_Memes_Seed_Adaptations.md`, `../Operations/Research/2026-08-22_Drive_Memes_Seed_Inventory.csv`
 
 ---
@@ -44,12 +44,12 @@ Se incorporaron **38 memes nuevos** directamente desde la raíz operativa `My Dr
 
 ---
 
-## Pipeline de Producción (Manus / Graph API)
+## Pipeline de Producción (CGO / Graph API)
 
 Para escalar la producción, el flujo vigente debe seguir estos pasos:
 
 1. **Selección:** Se toma la pieza de mayor prioridad de esta cola.
-2. **Generación (Manus/Flow/Higgsfield):** Se generan los assets visuales (shots, imágenes).
-3. **Revisión Canon (Claude/Manus):** Se verifica que no existan contradicciones con las reglas de diseño.
+2. **Generación (CGO/Flow/Higgsfield):** Se generan los assets visuales (shots, imágenes).
+3. **Revisión Canon (CGO prepara, Fernando decide):** Se verifica que no existan contradicciones con las reglas de diseño.
 4. **Aprobación (Fernando):** Se aprueba el asset final.
-5. **Transición:** El estado cambia a `Aprobado`; Manus prepara la orden de publicación, valida plataforma, asset, copy y horario, y utiliza Graph API de Meta cuando Fernando autoriza la ejecución.
+5. **Transición:** El estado cambia a `Aprobado`; el CGO prepara la orden de publicación, valida plataforma, asset, copy y horario, y utiliza Graph API de Meta cuando Fernando autoriza la ejecución.

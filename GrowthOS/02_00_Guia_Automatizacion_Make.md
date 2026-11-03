@@ -10,7 +10,7 @@
 
 ---
 
-> **Aviso de estado (2026-08-14):** Make queda retirado de la estrategia operativa de Universe Sent Me. Este documento se conserva como referencia histórica de la arquitectura propuesta, pero no debe usarse para programar, publicar, bloquear canon ni analizar publicaciones. El flujo vigente utiliza la API de Graph de Meta y ejecución directa de Manus. La programación y publicación requieren validación previa de cada pieza y confirmación explícita de Fernando cuando corresponda.
+> **Aviso de estado (2026-08-14; actualizado 2026-11-02):** Make queda retirado de la estrategia operativa de Universe Sent Me. Este documento se conserva como referencia histórica de la arquitectura propuesta, pero no debe usarse para programar, publicar, bloquear canon ni analizar publicaciones. El flujo vigente es operado por el CGO mediante la API de Graph de Meta. La programación y publicación requieren validación previa de cada pieza y confirmación explícita de Fernando.
 
 ## 1. Estructura de la Base de Datos (Google Sheets / Airtable)
 
@@ -61,7 +61,7 @@ Make debe disparar flujos basándose en cambios en el campo `Estado`. Para evita
 | `Idea` | `Pendiente de Producción` | Ninguna. |
 | `Pendiente de Producción` | `En Producción` | Ninguna. |
 | `Pendiente de Producción` | `Reutilizado` | Enviar a cola de programación rápida. |
-| `En Producción` | `Pendiente Revisión Claude` | Notificar a Manus/Claude para validación de canon. |
+| `En Producción` | `Pendiente Revisión Claude` | Estado legado. Notificar al CGO para validación operativa; la decisión de canon corresponde a Fernando. |
 | `Pendiente Revisión Claude` | `Pendiente Aprobación Fernando` | Notificar a Fernando (Telegram/Email). |
 | `Pendiente Aprobación Fernando` | `Aprobado` | Enviar a cola de programación (`Scheduled`). |
 | `Pendiente Aprobación Fernando` | `Rechazado / Requiere Reescritura` | Notificar a Fernando con los motivos. |

@@ -1,5 +1,10 @@
 # Pendientes Growth OS - 12 Octubre 2026
 
+> **Snapshot histórico.** Esta lista refleja el 12 de octubre de 2026 y contiene
+> tareas que ya fueron implementadas o reemplazadas. No debe usarse como backlog
+> operativo vigente. El estado actual de servicios vive en `ops/services.yaml` y
+> `docs/OPERACION_COMPARTIDA.md`.
+
 ## Action Items Prioritizados
 
 ### 🔴 Críticos (Bloquean publicación)

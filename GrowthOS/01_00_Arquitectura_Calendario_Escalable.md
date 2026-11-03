@@ -1,18 +1,18 @@
 # Arquitectura del Calendario Escalable (1,000+ piezas)
 
-**Propósito:** Definir la arquitectura de metadatos y flujos operativos para gestionar más de 1,000 piezas de contenido, permitiendo filtrado, priorización y publicación controlada mediante Manus y la API de Graph de Meta.
+**Propósito:** Definir la arquitectura de metadatos y flujos operativos para gestionar más de 1,000 piezas de contenido, permitiendo filtrado, priorización y publicación controlada mediante el CGO y la API de Graph de Meta.
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-22
-**Versión:** 1.4
-**Autor:** Manus AI
+**Última actualización:** 2026-11-02
+**Versión:** 1.5
+**Autor:** Manus AI (original); CGO (actualización vigente)
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`; `Universe Sent Me - Biblia/07 Historias/00 Estándar de Historias.md` (repositorio separado, solo lectura: `iomarketing09-sys/universe-sent-me-1`)
 
 ---
 
 ## 1. Sistema de Metadatos Estandarizado
 
-Para escalar a 1,000+ piezas, cada idea debe existir como una fila independiente en un sistema relacional o inventario estructurado. La ejecución vigente usa Manus + Meta Graph API: Manus lee la fuente aprobada, valida los bloqueos y utiliza la API de Graph de Meta para programar o publicar en Facebook e Instagram. El estándar de historias de la Biblia (`07 Historias/00 Estándar de Historias.md`) provee la base narrativa, pero el Growth OS requiere metadatos operativos.
+Para escalar a 1,000+ piezas, cada idea debe existir como una fila independiente en un sistema relacional o inventario estructurado. La ejecución vigente usa CGO (Codex) + Meta Graph API: el CGO lee la fuente aprobada, valida los bloqueos y utiliza la API de Graph de Meta para programar o publicar en Facebook e Instagram cuando Fernando autoriza la publicación. El estándar de historias de la Biblia (`07 Historias/00 Estándar de Historias.md`) provee la base narrativa, pero el Growth OS requiere metadatos operativos.
 
 ### Campos Obligatorios (ID Únicos)
 
@@ -48,13 +48,13 @@ Para escalar a 1,000+ piezas, cada idea debe existir como una fila independiente
 | `Fecha_Ultima_Publicacion` | Fecha de la última vez que se publicó | `YYYY-MM-DD` o vacío |
 | `Dias_Desde_Publicacion` | Días transcurridos desde la última publicación | Entero (calculado) |
 
-> **Nota operativa:** La fuente de identidad es `GrowthOS/Content_Inventory.csv`. Antes de programar, Manus debe convertir cada fila aprobada a una orden de publicación y registrarla en `Operations/Research/2026-08-15_Publication_Log.csv`. El calendario Markdown/CSV es una vista de selección, no una segunda fuente maestra. Después de publicar, las métricas y el veredicto se registran en `Operations/Research/2026-08-15_ExperimentLog.csv`.
+> **Nota operativa:** La fuente de identidad es `GrowthOS/Content_Inventory.csv`. Antes de programar, el CGO debe convertir cada fila aprobada a una orden de publicación y registrarla en `Operations/Research/2026-08-15_Publication_Log.csv`. El calendario Markdown/CSV es una vista de selección, no una segunda fuente maestra. Después de publicar, las métricas y el veredicto se registran en `Operations/Research/2026-08-15_ExperimentLog.csv`.
 
 ---
 
 ## 2. Máquina de Estados Operativos
 
-Este sistema reemplaza el flujo lineal original por una máquina de estados finita que Manus ejecuta mediante validaciones explícitas y llamadas controladas a la API de Graph de Meta. No se asume que un cambio de estado publique automáticamente: la publicación requiere que la pieza esté aprobada, que el asset sea accesible y que la llamada sea confirmada cuando implique escritura.
+Este sistema reemplaza el flujo lineal original por una máquina de estados finita que el CGO ejecuta mediante validaciones explícitas y llamadas controladas a la API de Graph de Meta. No se asume que un cambio de estado publique automáticamente: la publicación requiere que la pieza esté aprobada, que el asset sea accesible y que la llamada sea confirmada cuando implique escritura.
 
 ### Diagrama de Flujo
 
@@ -65,7 +65,7 @@ graph TD
     C -- Sí --> D[Cola de Reutilización]
     C -- No --> E[En Producción]
     D --> F[Reutilizado / Archivado]
-    E --> G[Pendiente Revisión Claude]
+    E --> G[Pendiente Revisión Canon]
     G --> H[Pendiente Aprobación Fernando]
     H --> I[Aprobado]
     H --> J[Rechazado / Requiere Reescritura]
@@ -81,15 +81,15 @@ graph TD
     style H fill:#f9f,stroke:#333,stroke-width:2px
 ```
 
-### Transiciones Permitidas para Manus y Graph API
+### Transiciones Permitidas para el CGO y Graph API
 
-> Las transiciones heredadas quedan fuera del flujo vigente; las transiciones actuales se ejecutan mediante validación explícita de Manus y registro de resultados de Meta.
+> Las transiciones heredadas quedan fuera del flujo vigente; las transiciones actuales se ejecutan mediante validación explícita del CGO y registro de resultados de Meta. El estado legado `Pendiente Revisión Claude` se conserva por compatibilidad, pero la decisión de canon corresponde a Fernando.
 
-Para evitar errores en la ejecución, Manus solo debe permitir las siguientes transiciones de estado y registrar el resultado de cada llamada a Meta:
+Para evitar errores en la ejecución, el CGO solo debe permitir las siguientes transiciones de estado y registrar el resultado de cada llamada a Meta:
 
 1. `Idea` → `Pendiente de Producción`
 2. `Pendiente de Producción` → `En Producción` (o `Reutilizado`)
-3. `En Producción` → `Pendiente Revisión Claude`
+3. `En Producción` → `Pendiente Revisión Claude` (estado legado)
 4. `Pendiente Revisión Claude` → `Pendiente Aprobación Fernando`
 5. `Pendiente Aprobación Fernando` → `Aprobado`
 6. `Pendiente Aprobación Fernando` → `Rechazado / Requiere Reescritura`
@@ -139,20 +139,20 @@ El calendario de 7 días debe proyectar los siguientes campos para la operación
 
 ---
 
-## 4. Integración vigente con Manus y Graph API
+## 4. Integración vigente con el CGO y Graph API
 
-Para que este sistema sea escalable y trazable, Manus leerá la fuente editorial aprobada usando la estructura de metadatos anterior, validará canon, assets, fecha y plataforma, y ejecutará Graph API de Meta. Las automatizaciones heredadas quedan fuera de este flujo; la ruta vigente es Manus + Meta Graph API.
+Para que este sistema sea escalable y trazable, el CGO leerá la fuente editorial aprobada usando la estructura de metadatos anterior, validará assets, fecha y plataforma, preparará la evidencia de canon y ejecutará Graph API de Meta solo con autorización de Fernando. Las automatizaciones heredadas quedan fuera de este flujo.
 
 ### Flujo vigente de publicación
 
 1. **Validación y preparación:**
-   - *Trigger:* Solicitud explícita de Fernando o revisión programada por Manus.
+   - *Trigger:* Solicitud explícita de Fernando o revisión programada por el CGO.
    - *Acción:* Validar `Estado == Aprobado`, `Bloqueado_Canon == No`, asset disponible, caption, plataforma y fecha/hora.
 
 2. **Programación o publicación mediante Graph API:**
    - *Trigger:* Orden de publicación aprobada.
    - *Acción Facebook:* usar el endpoint de Page Feed con `published=false` y `scheduled_publish_time` cuando la fecha esté dentro de la ventana permitida por Meta.
-   - *Acción Instagram:* crear el contenedor de media y publicarlo mediante los endpoints de Instagram Content Publishing; cuando no exista programación nativa equivalente, Manus ejecutará la llamada en el momento planificado.
+   - *Acción Instagram:* crear el contenedor de media y publicarlo mediante los endpoints de Instagram Content Publishing; cuando no exista programación nativa equivalente, el CGO ejecutará la llamada en el momento planificado.
    - *Acción:* registrar ID devuelto, timestamp, permalink o error y actualizar el estado de la pieza.
 
 3. **Registro post-publicación:**
@@ -162,4 +162,4 @@ Para que este sistema sea escalable y trazable, Manus leerá la fuente editorial
 
 ### Procesos heredados
 
-Los procesos históricos de automatización se conservan únicamente en su documento archivado y no forman parte de esta arquitectura activa. El flujo vigente está definido en las secciones anteriores: validación explícita de Manus, aprobación de Fernando/Claude, publicación mediante Meta Graph API y registro en los ledgers maestros.
+Los procesos históricos de automatización se conservan únicamente en su documento archivado y no forman parte de esta arquitectura activa. El flujo vigente está definido en las secciones anteriores: validación operativa del CGO, aprobación de canon y publicación de Fernando, publicación mediante Meta Graph API y registro en los ledgers maestros.

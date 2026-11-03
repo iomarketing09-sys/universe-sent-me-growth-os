@@ -3,9 +3,9 @@
 **Propósito:** Definir los criterios de decisión para la programación, reutilización, análisis y creación de contenido en Universe Sent Me.
 **Estado:** Active
 **Fecha de creación:** 2026-08-01
-**Última actualización:** 2026-08-25
-**Versión:** 3.33
-**Autor:** Manus AI (CGO); Sección 6 añadida por Claude
+**Última actualización:** 2026-11-02
+**Versión:** 3.34
+**Autor:** Manus AI (original histórico); CGO (actualización vigente); Sección 6 añadida históricamente por Claude
 **Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `03_00_Sistema_Generacion_Memes.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-19_Piloto_Esfuerzo_y_Experimentacion.md`, `../Operations/Production/2026-08-19_Diseno_Experimento_Reels_v2.md`, `../Operations/Production/2026-08-19_Brief_Pieza01_DobleCheck_Universe_Flow.md`, `../Operations/Research/2026-08-19_Auditoria_Reels_Fernando_GPT.md`, `../Operations/Research/2026-08-19_Corte_Multicanal_28D_1600.md`, `../Operations/Research/2026-08-19_Comparacion_Snapshots_28D.md`, `../Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`, `../Operations/Research/2026-08-21_Julio_Expansion_Lote01_Analysis.md`, `../Operations/Research/2026-08-21_Expansion_Celdas_Comparables_Post_Julio_Lote01.json`, `../Operations/Research/2026-08-21_Junio_Priority_Queue_Visual_Findings.md`, `../Operations/Research/2026-08-21_Junio_57_Unmatched_Visual_Findings.md`, `../Operations/Production/2026-08-21_Diseno_Casos_Comparables_Brechas.md`, `../Operations/Research/2026-08-21_Paquete_Revision_Humana_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Briefs_Comparables_Revision_Humana.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Audit.csv`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Analysis.md`, `../Operations/Research/2026-08-21_Junio_Approved_Character_Caption_Manual_Findings.md`, `../Operations/Research/2026-08-21_Junio_Caption_Reclassification_Impact.md`, `../Operations/Research/2026-08-21_Validacion_Cruzada_Hipotesis_Briefs_Comparables.md`, `../Operations/Research/2026-08-21_Simulacion_Impacto_Solapamientos_Comparables.md`, `../Operations/Research/2026-08-15_Community_Engagement_Log.md`, `../Operations/Research/2026-08-15_Auditoria_Comentarios_Facebook.md`, `../Operations/Research/2026-08-24_Facebook_Expanded_Audit_Reply_Proposals.md`
 
 ---
@@ -191,12 +191,12 @@ El corte renovado confirmó a Facebook como la mayor señal de interacción por 
 
 | Prioridad | Acción | Evidencia y dependencia | Responsable | Criterio de cierre |
 |---|---|---|---|---|
-| P0 | Aplicar la plantilla analítica a cada Reel nuevo antes de publicarlo. | Sin `Concept_ID`, campaña, experimento, hipótesis y IDs nativos no se puede atribuir aprendizaje por pieza. | Fernando aporta datos de producción; Manus valida y registra. | 100% de las publicaciones nuevas con los 12 campos mínimos. |
-| P0 | Ejecutar un corte fresco en 7 días y forzar una lectura de Facebook con `data_fetched_at` nuevo. | Facebook respondió desde caché; aún no existe una tendencia temporal comparable. | Manus. | Dos extracciones con fechas distintas y delta explícito por publicación. |
-| P1 | Mantener la cascada de Reels con mismo `Concept_ID` y `Primary_Asset_ID` en Instagram, TikTok y YouTube cuando sea pertinente. | Hay 17 cascadas verificadas, pero la cobertura debe medirse por cohorte, no suponerse. | Fernando aprueba publicación; Manus reconcilia IDs. | Cada adaptación conserva sus IDs, horas y estado de cascada. |
-| P1 | Medir cada lote nuevo a 24/72 h y cerrar su `ExperimentLog`. | Los snapshots lifetime no sustituyen ventanas temporales. | Manus. | Cada pieza madura tiene fuente, ventana, métricas y veredicto de hipótesis. |
-| P2 | Ingresar exports que permanezcan en el celular a Drive con sus metadatos. | Sin `Drive_ID` y asset fuente se debilita la trazabilidad de futuras cascadas. | Fernando sube exports; Manus inventaría. | `Asset_Ingest_Status=En_Drive` o `Pendiente_celular` explícito por asset. |
-| P2 | Probar hipótesis abiertas con celdas comparables, no declarar ganadores todavía. | Microhistoria, transformación y humor ácido siguen con muestras pequeñas o heterogéneas. | CGO/Manus prepara diseño; Fernando aprueba. | Mínimo tres casos codificados por celda y veredicto documentado. |
+| P0 | Aplicar la plantilla analítica a cada Reel nuevo antes de publicarlo. | Sin `Concept_ID`, campaña, experimento, hipótesis y IDs nativos no se puede atribuir aprendizaje por pieza. | Fernando aporta datos de producción; CGO valida y registra. | 100% de las publicaciones nuevas con los 12 campos mínimos. |
+| P0 | Ejecutar un corte fresco en 7 días y forzar una lectura de Facebook con `data_fetched_at` nuevo. | Facebook respondió desde caché; aún no existe una tendencia temporal comparable. | CGO. | Dos extracciones con fechas distintas y delta explícito por publicación. |
+| P1 | Mantener la cascada de Reels con mismo `Concept_ID` y `Primary_Asset_ID` en Instagram, TikTok y YouTube cuando sea pertinente. | Hay 17 cascadas verificadas, pero la cobertura debe medirse por cohorte, no suponerse. | Fernando aprueba publicación; CGO reconcilia IDs. | Cada adaptación conserva sus IDs, horas y estado de cascada. |
+| P1 | Medir cada lote nuevo a 24/72 h y cerrar su `ExperimentLog`. | Los snapshots lifetime no sustituyen ventanas temporales. | CGO. | Cada pieza madura tiene fuente, ventana, métricas y veredicto de hipótesis. |
+| P2 | Ingresar exports que permanezcan en el celular a Drive con sus metadatos. | Sin `Drive_ID` y asset fuente se debilita la trazabilidad de futuras cascadas. | Fernando sube exports; CGO inventaría. | `Asset_Ingest_Status=En_Drive` o `Pendiente_celular` explícito por asset. |
+| P2 | Probar hipótesis abiertas con celdas comparables, no declarar ganadores todavía. | Microhistoria, transformación y humor ácido siguen con muestras pequeñas o heterogéneas. | CGO prepara diseño; Fernando aprueba. | Mínimo tres casos codificados por celda y veredicto documentado. |
 
 > **Decisión de ejecución:** el próximo lote debe priorizar calidad de instrumentación, cascada verificable y maduración de métricas. No se recomienda cambiar la cadencia general ni canonizar un formato ganador a partir del delta corto observado.
 
@@ -291,9 +291,9 @@ Se recomienda reservar una parte de P1 para replicar la estructura de **gancho c
 
 No convertir en regla cerrada que los captions de un emoji, los posts de las 19:00, el humor sexual o los fondos fantásticos sean ganadores por sí mismos. Las señales actuales son hipótesis respaldadas por outliers y cohortes pequeñas. El criterio de cierre será la repetición del patrón en al menos tres casos codificados y comparables.
 
-## 17. Paquete de revisión para Claude — 2026-08-20
+## 17. Paquete de revisión histórica para Claude — 2026-08-20
 
-Las hipótesis de taxonomía, estructura narrativa y humor están integradas en `Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`, con la respuesta completa archivada en `Operations/Research/2026-08-20_Respuesta_Claude_Hipotesis_Taxonomia_Humor.md`. Claude confirmó que TAX-01 puede fijarse como regla de proceso, clasificó HUM-01 como contradicha por evidencia cuando se trata del humor ácido como categoría amplia y mantuvo el resto como hipótesis, señales editoriales o celdas experimentales. Las hipótesis integradas pueden alimentar la taxonomía, el diseño de experimentos y briefs creativos acotados, pero no modifican Biblia, canon, calendario, inventario protegido ni cola automática de reuse sin aprobación explícita.
+Las hipótesis de taxonomía, estructura narrativa y humor están integradas en `Operations/Research/2026-08-20_Revision_Claude_Hipotesis_Taxonomia_Humor.md`, con la respuesta completa archivada en `Operations/Research/2026-08-20_Respuesta_Claude_Hipotesis_Taxonomia_Humor.md`. La revisión histórica confirmó que TAX-01 puede fijarse como regla de proceso, clasificó HUM-01 como contradicha por evidencia cuando se trata del humor ácido como categoría amplia y mantuvo el resto como hipótesis, señales editoriales o celdas experimentales. Las hipótesis integradas pueden alimentar la taxonomía, el diseño de experimentos y briefs creativos acotados, pero no modifican Biblia, canon, calendario, inventario protegido ni cola automática de reuse sin aprobación explícita de Fernando.
 
 Para toda futura transformación visual de Universe, el registro debe incluir `preserva_gafas_universe` y `preserva_marcadores_identidad`. Si alguno vale `No`, el caso requiere revisión canónica antes de interpretarse como resultado de rendimiento.
 

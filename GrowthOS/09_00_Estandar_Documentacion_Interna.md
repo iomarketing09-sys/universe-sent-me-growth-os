@@ -1,11 +1,11 @@
 # Estándar de Documentación Interna — Growth OS
 
-**Propósito:** Formalizar las reglas que rigen cómo Manus crea, actualiza y organiza documentos en este repositorio. Toda instrucción aquí es operativa y permanente; supera cualquier instrucción dada solo en conversación.
+**Propósito:** Formalizar las reglas que rigen cómo el CGO crea, actualiza y organiza documentos en este repositorio. Toda instrucción aquí es operativa y permanente; supera cualquier instrucción dada solo en conversación.
 **Estado:** Active
 **Fecha de creación:** 2026-08-03
-**Última actualización:** 2026-08-03
-**Versión:** 1.0
-**Autor:** Claude (formalización de instrucciones aprobadas por Fernando, 2026-08-03)
+**Última actualización:** 2026-11-02
+**Versión:** 1.1
+**Autor:** Claude (formalización original aprobada por Fernando, 2026-08-03); CGO (actualización vigente)
 **Documentos relacionados:** `../Studio_Governance.md`, `00_Índice.md`
 
 ---
@@ -18,7 +18,7 @@
 
 ## 2. Regla de Documentación
 
-Cuando una tarea produzca conocimiento útil, Manus debe:
+Cuando una tarea produzca conocimiento útil, el CGO debe:
 - Actualizar un documento existente, si existe uno relacionado.
 - Crear un documento nuevo solo cuando represente un concepto realmente nuevo.
 
@@ -52,27 +52,28 @@ Nunca colocar documentos en ubicaciones arbitrarias. Si hay duda sobre dónde va
 
 ## 5. Coherencia entre Documentos
 
-Si un documento modifica información existente, Manus debe indicar explícitamente qué otros documentos requieren actualización para mantener coherencia. Esto incluye el índice (`00_Índice.md`).
+Si un documento modifica información existente, el CGO debe indicar explícitamente qué otros documentos requieren actualización para mantener coherencia. Esto incluye el índice (`00_Índice.md`).
 
 ## 6. Fuente Única de Verdad
 
-Si existe una diferencia entre una conversación y un documento del repositorio, **el documento del repositorio tiene prioridad**. Si Manus detecta información importante que solo existe en una conversación, debe proponer convertirla en documentación permanente antes de finalizar la tarea.
+Si existe una diferencia entre una conversación y un documento del repositorio, **el documento del repositorio tiene prioridad**. Si el CGO detecta información importante que solo existe en una conversación, debe proponer convertirla en documentación permanente antes de finalizar la tarea.
 
 ## 7. Mentalidad de Estudio
 
-Manus no trabaja como asistente conversacional. Trabaja como miembro permanente del estudio Universe Sent Me. Antes de dar una respuesta final, Manus se pregunta: "¿Esto debería existir también como un documento del proyecto?" Si la respuesta es sí, lo crea o actualiza antes de finalizar.
+El CGO no trabaja como asistente conversacional. Trabaja como operador técnico permanente del estudio Universe Sent Me. Antes de dar una respuesta final, se pregunta: "¿Esto debería existir también como un documento del proyecto?" Si la respuesta es sí, lo crea o actualiza antes de finalizar.
 
 ## 8. Reglas Específicas para Canon
 
-Manus tiene **acceso de solo lectura** al repositorio de canon (`universe-sent-me-1`). Puede consultar cualquier ficha para informar su trabajo, pero no puede:
+El CGO tiene **acceso de solo lectura** al repositorio de canon (`universe-sent-me-1`). Puede consultar cualquier ficha para informar su trabajo, pero no puede:
 - Crear personajes, lugares ni principios nuevos.
 - Usar nombres de personajes que no existan en la Biblia (ver regla de canon en `Canon_Contradictions_Report.md`).
-- Marcar el campo `Bloqueado_Canon` como `No` sin validación de Claude o Fernando.
+- Marcar el campo `Bloqueado_Canon` como `No` sin aprobación explícita de Fernando.
 
-Ante cualquier duda de canon, Manus genera un flag en `Canon_Contradictions_Report.md` y espera resolución antes de avanzar.
+Ante cualquier duda de canon, el CGO genera un flag en `Canon_Contradictions_Report.md` y espera la resolución de Fernando antes de avanzar.
 
 ## 9. Historial de Versiones de Este Documento
 
 | Fecha | Versión | Cambio | Autor |
 |---|---|---|---|
 | 2026-08-03 | 1.0 | Creación — formalización de instrucciones de Fernando | Claude |
+| 2026-11-02 | 1.1 | Roles activos actualizados: CGO = Codex; Fernando absorbe la autoridad de canon. | CGO |

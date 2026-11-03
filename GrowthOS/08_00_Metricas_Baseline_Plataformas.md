@@ -5,7 +5,7 @@
 **Fecha de creación:** 2026-08-03
 **Última actualización:** 2026-08-19
 **Versión:** 2.1
-**Autor:** Claude (Guardián de Canon, extracción directa vía Windsor.ai MCP)
+**Autor:** Claude (extracción histórica vía Windsor.ai MCP); CGO (mantenimiento vigente)
 **Documentos relacionados:** `07_00_Registro_Maestro_Reels.md`, `06_00_Reglas_Aprendizaje_Tendencias.md`, `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Research/Historical_Performance_Snapshot.csv`, `../Operations/Research/Historical_Performance_Individuals.csv`, `../Operations/Research/2026-08-15_Publication_Log.csv`, `../Operations/Research/2026-08-15_ExperimentLog.csv`, `../Operations/Research/2026-08-16_P2_Comunidad_Delta_01.json`, `../Operations/Research/2026-08-16_P2_Baseline_Preparacion_01.json`, `../Operations/Research/2026-08-17_Metricas_24_72_Extraccion_02.json`, `../Operations/Research/2026-08-17_Investigacion_Ventanas_Temporales_Meta.md`, `../Operations/Research/2026-08-19_Social_Performance_28D_Normalizado.json`, `../Operations/Research/2026-08-19_Retorno_Engagement_Esfuerzo_28D.json`
 
 > **Metodología:** Este documento conserva snapshots históricos y cortes reproducibles. El corte multicanal más reciente fue extraído desde Windsor.ai el 2026-08-19 para el período 22 de julio–18 de agosto de 2026. Cuentas: Facebook Page `1036844829507460`, Instagram `17841462696378190`, TikTok `Universe Sent Me` (`_000bYPIECRpRjubuhKmzaeo3iFDirTBYXPP`) y YouTube `Universe Sent Me` (`UCBNbmSB3QG73ef7EqN2Ew1A`, conectado en Windsor como account `27679`). Los snapshots históricos anteriores no se sobrescriben; cada fila conserva fuente, fecha de extracción y ventana.

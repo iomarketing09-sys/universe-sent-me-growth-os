@@ -1,17 +1,18 @@
 # Integración Growth OS ↔ Canon
 
-**Documento de sincronización entre el Growth OS (Manus) y la Biblia de Canon (Claude)**
+**Documento de sincronización entre el Growth OS (CGO) y la Biblia de Canon (Fernando)**
 
 ---
 
 | Campo | Valor |
 | :--- | :--- |
 | **Última sincronización** | 2026-08-23 |
-| **Fuente de canon** | Repo GitHub administrado por Claude: `iomarketing09-sys/universe-sent-me-1`, rama `main`, HEAD `1daaad5342c278909b78076a54d8b220fa51e023`. Ficha de sincronización recibida por Claude mediante clonación directa. |
-| **Estado del documento** | v2.5.7 — HypothesisBank ampliado con HB-006 a HB-009; auditoría Facebook actualizada con cierre temporal `Unavailable_No_Baseline`, insights Windsor L2 parciales y diseño E0/E24/E72 en Review; OmniRoute puede asistir cortes agregados y propuestas comunitarias como `Draft`, sin alterar fuentes canónicas ni publicar; no implica generación, calendario ni CNT |
+| **Última revisión de gobernanza** | 2026-11-02 |
+| **Fuente de canon** | Repo GitHub administrado por Fernando: `iomarketing09-sys/universe-sent-me-1`, rama `main`, HEAD histórico `1daaad5342c278909b78076a54d8b220fa51e023`, verificado en la última ficha de sincronización. Cualquier HEAD posterior debe confirmarse antes de asumir cambios de canon. |
+| **Estado del documento** | v2.6.0 — roles actualizados: CGO (Codex) opera el Growth OS y Fernando es la única autoridad de canon y aprobación final; Manus y Claude no tienen roles activos. Se conserva el HypothesisBank HB-006 a HB-009, el cierre `Unavailable_No_Baseline` y el protocolo OmniRoute como `Draft`, sin autorización de publicación |
 | **Artefactos de rendimiento relacionados** | `Operations/Research/2026-08-23_Reporte_Rendimiento_Engagement_Facebook.md`, `Operations/Research/2026-08-23_Facebook_Performance_Meta_API.json`, `Operations/Research/2026-08-23_Facebook_Performance_Summary.json`, `Operations/Research/2026-08-23_Facebook_Growth_Integration_Audit.json`, `Operations/Research/2026-08-23_Facebook_Post_Reconciliation.json`, `Operations/Research/2026-08-23_Facebook_24_72_Window_Closure.json`, `Operations/Research/2026-08-23_Facebook_24_72_and_Video_Insights_Summary.json`, `Operations/Research/2026-08-23_Facebook_Reels_Video_Insights.csv`, `Operations/Research/2026-08-23_Facebook_Windsor_Insights_Raw.json`, `Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md` |
-| **Propietario** | Manus (Manus AI) |
-| **Guardián de Canon** | Claude (vía repo GitHub) |
+| **Propietario operativo** | CGO (Codex) |
+| **Autoridad de canon** | Fernando |
 | **Aprobador final** | Fernando |
 
 ---
@@ -58,12 +59,12 @@
 | :--- | :--- | :--- | :--- |
 | Profundidad después del humor | La profundidad nunca debe aparecer antes que el humor. | `01 ADN/01.04 Anti-tono.md` | 2026-07-31 (commit `939752c`) |
 | Sin moralización explícita | Una historia no puede existir para ilustrar una lección. Ningún personaje puede diagnosticar a otro. La lección debe sentirse sin nombrarse. | `07 Historias/00 Estándar de Historias.md` | 2026-07-31 (commit `939752c`) |
-| Fantasma congelado emocionalmente | El Fantasma no puede resolver ni superar de forma dramática y visible su identidad congelada dentro de una misma pieza. No tiene restricción de movilidad física ni de acción. *(Corregido 2026-08-02 por Claude — "Fantasma inmovilizado" describía incapacidad física, que no existe en canon.)* | `02 Personajes/Segundo Círculo/Fantasma/01 Territorio emocional.md`, `03 Reglas de diseño.md` | 2026-08-02 (corrección) |
+| Fantasma congelado emocionalmente | El Fantasma no puede resolver ni superar de forma dramática y visible su identidad congelada dentro de una misma pieza. No tiene restricción de movilidad física ni de acción. *(Corrección histórica del 2026-08-02; "Fantasma inmovilizado" describía incapacidad física, que no existe en canon.)* | `02 Personajes/Segundo Círculo/Fantasma/01 Territorio emocional.md`, `03 Reglas de diseño.md` | 2026-08-02 (corrección) |
 | Universe limitado | Universe conoce el mecanismo pero nunca entiende completamente el propósito. No es orquestador de conflictos. | `02 Personajes/Primer Círculo/Universe/03 Reglas de diseño.md` | 2026-07-31 (commit `939752c`) |
 
 ### 1.5 Delta canónico posterior a 939752c
 
-La siguiente tabla resume únicamente los cambios confirmados por la ficha de sincronización de Claude hasta el HEAD `1daaad5`. Las propuestas permanecen separadas del canon.
+La siguiente tabla resume únicamente los cambios confirmados por la ficha histórica de sincronización hasta el HEAD `1daaad5`. Las propuestas permanecen separadas del canon y cualquier cambio nuevo requiere confirmación de Fernando.
 
 | Commit | Elemento | Estado y efecto vigente |
 |---|---|---|
@@ -87,31 +88,31 @@ La siguiente tabla resume únicamente los cambios confirmados por la ficha de si
 | Capítulo 7 — Fantasma | Relectura pendiente, desarrollo diferido | Si se retoma, revisar el texto directo para determinar si “salvar el día” resuelve visiblemente su identidad congelada. La regla canónica no cambió. |
 | Silvio / Contradicción #5 | Resuelto | No es un bloqueo vigente; tratar Silvio como canon cerrado. |
 
-Estos conflictos no representan cambios del canon remoto. Por decisión operativa de Fernando, `CNT-004` queda **diferido y fuera de desarrollo** por ahora. El inventario conserva `Estado_Canon=Revision`, `Canon_Review_Required` y `Motivo_Revision_Normalizado=Canon_Contradiccion_Sustantiva`; únicamente cambia el estado operativo a `Deferred_Operational` y el estado de producción a `Diferido`. Si el proyecto se retoma, requerirá la revisión del texto fuente y aprobación explícita de Fernando o Claude.
+Estos conflictos no representan cambios del canon remoto. Por decisión operativa de Fernando, `CNT-004` queda **diferido y fuera de desarrollo** por ahora. El inventario conserva `Estado_Canon=Revision`, `Canon_Review_Required` y `Motivo_Revision_Normalizado=Canon_Contradiccion_Sustantiva`; únicamente cambia el estado operativo a `Deferred_Operational` y el estado de producción a `Diferido`. Si el proyecto se retoma, requerirá la revisión del texto fuente y aprobación explícita de Fernando.
 
 ---
 
 ## 2. Calendario Editorial (Roadmap)
 
 > **Bloqueo operativo:** Ningún contenido puede publicarse automáticamente mientras `Estado` ≠ "Aprobado".
-> El cambio a "Aprobado" solo puede ser realizado por Fernando o Claude.
-> Manus no puede ejecutar una publicación con estado ≠ "Aprobado" ni con `Bloqueado_Canon == Sí`.
+> El cambio a "Aprobado" solo puede ser realizado por Fernando.
+> El CGO no puede ejecutar una publicación con estado ≠ "Aprobado", con `Bloqueado_Canon == Sí` o sin instrucción explícita de publicación.
 
-> **v2.1:** La arquitectura del calendario sigue documentada en `GrowthOS/01_00_Arquitectura_Calendario_Escalable.md`; la operación vigente vive en `GrowthOS/01_01_Calendario_Semanal.md`, y Manus valida cada orden y utiliza la API de Graph de Meta para programar o publicar. Las guías de automatización heredadas se conservan únicamente como archivo histórico.
+> **v2.2:** La arquitectura del calendario sigue documentada en `GrowthOS/01_00_Arquitectura_Calendario_Escalable.md`; la operación vigente vive en `GrowthOS/01_01_Calendario_Semanal.md`. El CGO valida cada orden y prepara la ejecución mediante Graph API de Meta; publicar requiere aprobación explícita de Fernando y el preflight correspondiente. Las guías de automatización heredadas se conservan únicamente como archivo histórico.
 
 | Semana | Día | Fecha | Plataforma | Formato | Personaje/Lugar | Hook/Título | Brief | ID Canon consultado | Estado Canon | Responsable aprobación | Fecha aprobación |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | W1 | Lun | 2026-08-04 | Instagram | Foto / Carrusel | `@char_USM_universe` | Tarot de hoy | Contenido evergreen reutilizable | CNT-006 | Reutilizado | Fernando | — |
-| W1 | Mar | 2026-08-05 | Instagram / TikTok | Reel | `@char_USM_universe` | Mi gato: tarotista | Reutilización de meme viral | CNT-001 | Pendiente de Producción | Manus / Fernando | — |
-| W1 | Mié | 2026-08-06 | Instagram / Facebook | Foto / Texto | `@char_USM_wilfred` | Frase filosófica (Principio 0) | Voz de Wilfred, bajo costo | CNT-024 | Pendiente de Producción | Manus | — |
-| W1 | Jue | 2026-08-07 | Instagram | Reel / Foto | `@char_USM_fantasma` | El instante suspendido | Activación del Fantasma | CNT-015 | Pendiente de Producción | Manus | — |
-| W1 | Vie | 2026-08-08 | Instagram | Carrusel / Foto | `@char_USM_elara` | Lectura de astros y naturaleza | Identidad diferenciada de Elara | CNT-008 | Pendiente de Producción | Manus | — |
-| W1 | Sáb | 2026-08-09 | Instagram / YouTube Shorts | Reel | `@char_USM_wilfred` | Wilfred reseña su propio peluche | Sección recurrente de afiliación | CNT-023 | Pendiente de Producción | Manus | — |
+| W1 | Mar | 2026-08-05 | Instagram / TikTok | Reel | `@char_USM_universe` | Mi gato: tarotista | Reutilización de meme viral | CNT-001 | Pendiente de Producción | Fernando | — |
+| W1 | Mié | 2026-08-06 | Instagram / Facebook | Foto / Texto | `@char_USM_wilfred` | Frase filosófica (Principio 0) | Voz de Wilfred, bajo costo | CNT-024 | Pendiente de Producción | Fernando | — |
+| W1 | Jue | 2026-08-07 | Instagram | Reel / Foto | `@char_USM_fantasma` | El instante suspendido | Activación del Fantasma | CNT-015 | Pendiente de Producción | Fernando | — |
+| W1 | Vie | 2026-08-08 | Instagram | Carrusel / Foto | `@char_USM_elara` | Lectura de astros y naturaleza | Identidad diferenciada de Elara | CNT-008 | Pendiente de Producción | Fernando | — |
+| W1 | Sáb | 2026-08-09 | Instagram / YouTube Shorts | Reel | `@char_USM_wilfred` | Wilfred reseña su propio peluche | Sección recurrente de afiliación | CNT-023 | Pendiente de Producción | Fernando | — |
 | W1 | Dom | 2026-08-10 | Instagram | Reel | `@char_USM_wilfred` | Test A/B: Tono existencial vs humorístico | Validación de hipótesis Growth OS | CNT-025 | Pendiente de Aprobación | Fernando | — |
 
 **Regla de bloqueo:**
-- El campo `Estado` acepta solo estos valores: `Idea`, `Pendiente de Producción`, `En Producción`, `Pendiente Revisión Claude`, `Pendiente Aprobación Fernando`, `Aprobado`, `Programado`, `Publicado`, `En Análisis`, `Reutilizado`, `Archivado`, `Rechazado / Requiere Reescritura`.
-- Cuando el estado es `Aprobado`, el contenido pasa a la cola de programación de Manus, que prepara la orden para Graph API de Meta.
+- El campo `Estado` acepta solo estos valores: `Idea`, `Pendiente de Producción`, `En Producción`, `Pendiente Revisión CGO`, `Pendiente Aprobación Fernando`, `Aprobado`, `Programado`, `Publicado`, `En Análisis`, `Reutilizado`, `Archivado`, `Rechazado / Requiere Reescritura`.
+- Cuando el estado es `Aprobado` y Fernando autoriza la publicación, el contenido pasa a la cola de programación del CGO, que prepara la orden para Graph API de Meta.
 - Cuando el estado es cualquier otro valor, **el Story Scheduler y cualquier automatización de publicación están bloqueados para esa fila**.
 - El campo `Bloqueado_Canon` (checkbox) bloquea forzosamente cualquier transición hacia `Programado` o `Publicado`.
 
@@ -153,9 +154,9 @@ El sistema se compone de:
 1. **Fuente maestra de contenido:** `GrowthOS/Content_Inventory.csv` identifica una vez cada pieza creativa (`CNT-####`) y sus metadatos.
 2. **Ledgers append-only:** `Operations/Research/2026-08-15_Publication_Log.csv` registra una fila por publicación/plataforma y `Operations/Research/2026-08-15_ExperimentLog.csv` registra una fila por observación de hipótesis.
 3. **Colas y calendarios:** `Backlog`, `Reuse Queue`, `Production Queue`, `Approval Queue` y `Calendario Semanal` son vistas filtradas, no fuentes paralelas.
-4. **Flujo directo Manus + Graph API:** Manus valida estado, canon, asset, copy, plataforma y fecha; después crea la orden de publicación y registra el resultado.
+4. **Flujo CGO + Graph API:** el CGO valida estado, canon, asset, copy, plataforma y fecha, y prepara la orden de publicación. La ejecución requiere autorización explícita de Fernando y el preflight correspondiente; después se registra el resultado.
 5. **Máquina de estados:** controla el flujo de cada pieza desde la idea hasta el archivo.
-6. **Registro post-publicación:** Manus consulta solo métricas nuevas, actualiza el `HypothesisBank` y agrega el resultado al `ExperimentLog`.
+6. **Registro post-publicación:** el CGO consulta solo métricas nuevas, actualiza el `HypothesisBank` y agrega el resultado al `ExperimentLog`.
 
 ### 5.1 Auditoría operativa de Facebook — 2026-08-23
 
@@ -173,7 +174,7 @@ OmniRoute está aprobado únicamente como una capa local de **asistencia editori
 
 | Uso permitido | Entrada permitida | Salida esperada | Destino humano |
 | :--- | :--- | :--- | :--- |
-| Ideación de una celda | Brief canónico aprobado, objetivo editorial y restricciones de formato | Variantes de ángulo, hook y tensión narrativa con estado `Draft` | Revisión de Fernando / Claude antes de CNT, calendario o producción |
+| Ideación de una celda | Brief canónico aprobado, objetivo editorial y restricciones de formato | Variantes de ángulo, hook y tensión narrativa con estado `Draft` | Revisión de Fernando antes de CNT, calendario o producción |
 | Borrador de caption o guion | Personajes, reglas canónicas, duración, plataforma y tono aprobados | Copy o guion marcado `Draft` con riesgos y preguntas de revisión | Revisión humana antes de crear o modificar el brief oficial |
 | Revisión de coherencia | Borrador propio, reglas del canon y checklist de producción | Lista de posibles contradicciones, ambigüedades y faltantes | Corrección humana; OmniRoute no resuelve canon por sí solo |
 | Síntesis cualitativa | Resumen agregado, público o sintético de una observación ya documentada | Lecturas exploratorias y próximas preguntas, nunca veredictos causales | Analista humano; el `ExperimentLog` conserva solo evidencia validada |
@@ -209,10 +210,10 @@ La automatización admisible se detiene en preparar borradores o una cola `Pendi
 1. Este documento vive y se versiona en el repositorio Growth OS. Es un puente condensado; la fuente de verdad del canon sigue siendo el repo GitHub `iomarketing09-sys/universe-sent-me-1`.
 2. `GrowthOS/Content_Inventory.csv` es la fuente maestra de identidad de piezas; `Publication_Log.csv` y `ExperimentLog.csv` son ledgers append-only. Calendarios y colas no deben convertirse en fuentes paralelas.
 3. Cada regla aquí debe llevar fecha de sincronización y commit de referencia.
-4. El campo `Estado` en el Calendario Editorial es un **bloqueo operativo**, no una etiqueta. Manus no puede publicarlo si no dice literalmente "Aprobado".
-5. El cambio de estado a "Aprobado" solo lo puede hacer Fernando o Claude. Nunca Manus, nunca una regla automática.
-6. Antes de cada sesión de trabajo, Manus debe obtener de Claude una ficha o confirmación del HEAD actual del repositorio canónico. Si el HEAD cambia, este bridge debe marcarse desactualizado hasta resincronización.
-7. `iomarketing09-sys/universe-sent-me-1` es administrado por Claude. Manus no modifica ese repositorio ni convierte contenido de Growth OS en canon; cualquier cambio de nombre, diseño, regla narrativa o aprobación debe aclararse con Claude y, cuando corresponda, Fernando.
+4. El campo `Estado` en el Calendario Editorial es un **bloqueo operativo**, no una etiqueta. El CGO no puede publicarlo si no dice literalmente "Aprobado" y si Fernando no autorizó la publicación.
+5. El cambio de estado a "Aprobado" solo lo puede hacer Fernando. Nunca el CGO, un owner funcional o una regla automática.
+6. Antes de cada sesión de trabajo, el CGO verifica el HEAD actual del repositorio canónico. Si el HEAD cambia, este bridge debe marcarse desactualizado hasta que Fernando confirme la ficha o el cambio de canon.
+7. `iomarketing09-sys/universe-sent-me-1` es administrado por Fernando. El CGO lo consulta en modo lectura y no convierte contenido de Growth OS en canon; cualquier cambio de nombre, diseño, regla narrativa o aprobación debe confirmarse con Fernando.
 8. La ficha recibida el 2026-08-15 confirma que `1daaad5342c278909b78076a54d8b220fa51e023` es el HEAD de `main`. Esta referencia es la autoridad de esta versión del bridge; si no existe una ficha nueva, no se deben inferir cambios posteriores.
 9. **Nueva (v2.0):** La arquitectura completa del calendario vive en `GrowthOS/` del repositorio. Este documento mantiene la vista condensada del Calendario Editorial y el HypothesisBank.
 10. **Nueva (v2.3):** Para ahorrar consultas y tokens, solo se consultan deltas de publicaciones y comentarios desde la última sincronización; no se vuelve a descargar toda la historia en cada sesión.

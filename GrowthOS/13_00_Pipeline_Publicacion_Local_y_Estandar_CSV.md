@@ -1,7 +1,7 @@
 ---
 estado: Active
 version: "1.53"
-ultima_revision: 2026-08-25
+ultima_revision: 2026-11-02
 dependencias:
   - GrowthOS/01_00_Arquitectura_Calendario_Escalable.md
   - GrowthOS/14_00_Fuente_Maestra_y_Ledgers.md
@@ -15,9 +15,9 @@ dependencias:
 **Propósito:** Documentar el pipeline de publicación real que usa Fernando (script propio en PyCharm, con Gemini, publicando vía Meta Graph API) y establecer el estándar de exportación CSV que cualquier calendario de Growth OS debe producir para poder alimentarlo directamente, sin reformateo manual.
 **Estado:** Active
 **Fecha de creación:** 2026-08-12
-**Última actualización:** 2026-08-25
-**Versión:** 1.53
-**Autor:** Claude, documentando información provista por Fernando; actualización de Manus AI
+**Última actualización:** 2026-11-02
+**Versión:** 1.54
+**Autor:** Claude (original), documentando información provista por Fernando; CGO (actualización vigente)
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `05_03_Calendario_10_16_Agosto.md` (y calendarios futuros), `Operations/Research/2026-08-15_Publication_Log.csv`, `Operations/Research/2026-08-15_ExperimentLog.csv`, `GrowthOS/00_01_Changelog_GrowthOS.md`, `GrowthOS/00_Índice.md`, `Operations/Automation/2026-08-23_Diseno_Captura_Baseline_E0_E24_E72.md`, `Operations/Research/2026-08-24_Growth_Connectivity_Audit_Evidence.json`, `Operations/Research/2026-08-25_Instagram_Route_Smoke_Test.json`, `Operations/Research/2026-08-25_Metrics_Snapshot_Ledger_Activation_Evidence.json`, `Operations/Automation/record_metrics_snapshot.py`, `Operations/Automation/validate_metrics_snapshot_ledger.py`, `Operations/Research/Metrics_Snapshot_Log.csv`, `Operations/Research/2026-08-25_Pipeline_Post_P0_Review_Evidence.json`, `Operations/Research/2026-08-25_Revision_Pipeline_Publicacion_Post_P0.md`
 
 ---
@@ -56,16 +56,16 @@ Fernando ya tiene un **script funcional en PyCharm, usando la API de Gemini, que
 **Nota importante:** el pipeline es **multi-marca** — Fernando lo usa para más de un proyecto (se vieron ejemplos de "Quirelli" y "Flexi", que no son Universe Sent Me). Esto significa que cualquier CSV generado para USM debe usar `Marca` = `Universe Sent Me` (o el valor exacto que Fernando ya usa para esa cuenta — no confirmado todavía) para que el script lo dirija a la cuenta correcta.
 
 **Estado actual del pipeline:**
-- **Ruta operativa:** Manus + Meta Graph API. Las guías de automatización heredadas no forman parte del flujo vigente.
-- **Facebook Graph API:** programación real validada el 2026-08-15. El token de entorno se comporta como User Access Token; Manus deriva en memoria el Page Access Token mediante `/me/accounts`, selecciona la Página real `1036844829507460` y usa `/page_id/photos` para carga temporal seguida de `/page_id/feed` con `attached_media[0]`, `published=false`, `scheduled_publish_time` y `unpublished_content_type=SCHEDULED`. La primera prueba programó 9 posts correctamente y devolvió `is_published=false` en la verificación posterior.
+- **Ruta operativa:** CGO + Meta Graph API. Las guías de automatización heredadas no forman parte del flujo vigente.
+- **Facebook Graph API:** programación real validada el 2026-08-15. El token de entorno se comporta como User Access Token; el CGO deriva en memoria el Page Access Token mediante `/me/accounts`, selecciona la Página real `1036844829507460` y usa `/page_id/photos` para carga temporal seguida de `/page_id/feed` con `attached_media[0]`, `published=false`, `scheduled_publish_time` y `unpublished_content_type=SCHEDULED`. La primera prueba programó 9 posts correctamente y devolvió `is_published=false` en la verificación posterior.
 - **Instagram Graph API:** auditoría directa completada el 2026-08-15. `@universe_sent_me_0326` (`17841462696378190`) responde HTTP 200, la Página está vinculada, `instagram_basic` e `instagram_content_publish` están concedidos, la Página devuelve `CREATE_CONTENT`/`MANAGE`, la lectura de media funciona y la cuota consultada está en `0/100` contenedores en 24 horas. La publicación inmediata de 260583 fue validada y luego eliminada manualmente; la programación nativa con `scheduled_publish_time` devolvió `User must be on whitelist`.
-- **Ejecución:** Manus prepara, valida y ejecuta las órdenes de publicación mediante Graph API. En Facebook se usa la programación nativa de Page Feed. En Instagram se crea un contenedor en `/{ig_id}/media`, se verifica su estado y se publica mediante `/{ig_id}/media_publish`; cuando se requiera ejecución futura, este flujo se dispara mediante una tarea controlada en la hora `America/Mexico_City`. La tarea temporal del 15–16 quedó pausada después de la campaña, conserva el cron documentado, no tiene intervalo residual y mantiene solo Meta Graph API adjunta. El runner aplicó una ventana de 8 minutos y excluyó `260583` por `ELIMINADA_MANUALMENTE`. Las imágenes de campaña se alojaron una sola vez en URLs temporales; cada despertar reutilizó la URL preparada y no volvió a descargar, copiar ni subir archivos de Drive.
-- **Token:** el conector contiene actualmente un token de usuario de larga duración. Manus deriva en memoria el Page Access Token de Universe Sent Me para llamadas de Página. Si el token expira o se revoca, la programación y lectura quedan bloqueadas hasta reemplazarlo.
+- **Ejecución:** el CGO prepara, valida y ejecuta las órdenes de publicación mediante Graph API, solo después de la autorización de Fernando. En Facebook se usa la programación nativa de Page Feed. En Instagram se crea un contenedor en `/{ig_id}/media`, se verifica su estado y se publica mediante `/{ig_id}/media_publish`; cuando se requiera ejecución futura, este flujo se dispara mediante una tarea controlada en la hora `America/Mexico_City`. La tarea temporal del 15–16 quedó pausada después de la campaña, conserva el cron documentado, no tiene intervalo residual y mantiene solo Meta Graph API adjunta. El runner aplicó una ventana de 8 minutos y excluyó `260583` por `ELIMINADA_MANUALMENTE`. Las imágenes de campaña se alojaron una sola vez en URLs temporales; cada despertar reutilizó la URL preparada y no volvió a descargar, copiar ni subir archivos de Drive.
+- **Token:** la credencial vigente se resuelve desde el `.env` del repositorio o del tenant. El CGO deriva en memoria el Page Access Token de Universe Sent Me para llamadas de Página. Si el token expira o se revoca, la programación y lectura quedan bloqueadas hasta reemplazarlo.
 - **Ruta de imagen:** el archivo usa **dos columnas separadas** — `Archivo` (solo filename) y `Ruta_Completa` (ruta local absoluta). Un calendario de Growth OS que quiera ser exportable a este formato necesita poder producir ambas, y la ruta completa depende de la carpeta real donde Fernando tiene cada asset (que varía por mes/proyecto, como ya se vio con las carpetas `05 Mayo`, `flexi/Quirelli`, etc.).
 
 ## 3. Archivado posterior a la publicación
 
-La carpeta `My Drive/Universe sent me/USM/Humor existencial` es la entrada de memes nuevos. El archivo permanece en la raíz durante la preparación, aprobación y programación. Después de confirmar la publicación real mediante el ID de Meta, Manus registra `ID_Meta`, fecha y hora, plataforma, estado y métricas iniciales, y mueve el archivo a `Humor existencial/[Mes]`, conservando exactamente su nombre y número de referencia. En esa misma confirmación debe dispararse el evento de baseline E0: consultar `created_time` e `is_published`, leer los contadores actuales del objeto y registrar una fila `baseline_e0` en el ledger de snapshots. La hora planeada o la creación de una programación no constituyen E0.
+La carpeta `My Drive/Universe sent me/USM/Humor existencial` es la entrada de memes nuevos. El archivo permanece en la raíz durante la preparación, aprobación y programación. Después de confirmar la publicación real mediante el ID de Meta, el CGO registra `ID_Meta`, fecha y hora, plataforma, estado y métricas iniciales, y mueve el archivo a `Humor existencial/[Mes]`, conservando exactamente su nombre y número de referencia. En esa misma confirmación debe dispararse el evento de baseline E0: consultar `created_time` e `is_published`, leer los contadores actuales del objeto y registrar una fila `baseline_e0` en el ledger de snapshots. La hora planeada o la creación de una programación no constituyen E0.
 
 Si la publicación falla o queda pendiente, el archivo no se mueve: permanece en la raíz con el estado correspondiente. Si una pieza se reutiliza en otro mes, se registra una nueva fila de publicación y el archivo se mueve a la carpeta del mes de la nueva publicación sin eliminar el historial anterior.
 
@@ -85,13 +85,13 @@ Para minimizar consumo de tokens, la extracción post-publicación debe consulta
 
 ## 5. Implicación directa para Growth OS
 
-**A partir de este documento, cualquier calendario que se entregue como "listo para publicar" (no solo como tabla de planeación) debe poder exportarse a esta estructura de 8 columnas** — no basta con la tabla en markdown que se ha usado hasta ahora en los calendarios semanales (`05_02`, `05_03`, etc.). La tabla markdown sigue siendo útil para revisión y aprobación entre Fernando y Claude/Manus, pero el entregable final operativo es este formato.
+**A partir de este documento, cualquier calendario que se entregue como "listo para publicar" (no solo como tabla de planeación) debe poder exportarse a esta estructura de 8 columnas** — no basta con la tabla en markdown que se ha usado hasta ahora en los calendarios semanales (`05_02`, `05_03`, etc.). La tabla markdown sigue siendo útil para revisión y aprobación entre Fernando y el CGO, pero el entregable final operativo es este formato.
 
 **Regla práctica:** el valor de `Archivo` usado en cualquier calendario (ej. al referenciar un post de reuse por su código `260579.png`) debe coincidir exactamente con el nombre real del archivo tal como existe en la carpeta local de Fernando — nunca inventar o asumir un nombre distinto. La `Ruta_Completa` correspondiente debe confirmarse con Fernando o inferirse de la convención de carpetas ya vista (`Universe sent me/USM/Humor existencial/[Mes]/`), nunca asumirse a ciegas. Cuando el archivo no se ha visto directamente (solo se conoce su descripción), el CSV no debe generarse hasta confirmar el nombre exacto con Fernando.
 
-## 5. Custom API de Meta configurada en Manus
+## 5. Histórico: Custom API de Meta configurada en Manus (retirada)
 
-El 2026-08-14 se creó y activó el conector **Universe Sent Me Meta API**, una Custom API REST para Facebook e Instagram de Universe Sent Me. El valor entregado para el conector se comporta como un **Facebook User Access Token**: `GET /me` devuelve `Fernando Gdlr`, y `/me/accounts` permite obtener el Page Access Token de Universe Sent Me. Aunque la variable configurada se llama `META_PAGE_ACCESS_TOKEN`, su valor actual es el token de usuario; no debe asumirse que sirve directamente para todas las operaciones de la página. El secreto se almacena en el entorno seguro de Manus; no forma parte de este repositorio ni debe copiarse a documentos, commits, capturas o mensajes públicos.
+El 2026-08-14 se creó un conector **Universe Sent Me Meta API** en Manus. Esa ruta es histórica y no forma parte de la operación vigente: Manus ya no pertenece a Growth OS. Las credenciales activas viven en `.env` y nunca deben copiarse a documentos, commits, capturas o mensajes públicos. La referencia se conserva solo para explicar la evidencia y el formato del token.
 
 | Elemento | Configuración |
 |---|---|

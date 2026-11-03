@@ -1,11 +1,11 @@
 # Approval Queue
 
-**Propósito:** Lista de contenido que únicamente espera revisión de Claude (validación de canon) o aprobación de Fernando (revisión narrativa/estratégica) antes de poder ser programado.
+**Propósito:** Lista de contenido que espera revisión de canon y aprobación final de Fernando antes de poder ser programado.
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-08-16
-**Versión:** 1.4
-**Autor:** Manus AI
+**Última actualización:** 2026-11-02
+**Versión:** 1.5
+**Autor:** Manus AI (original); CGO (actualización vigente)
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_02_Content_Backlog.md`
 
 ---
@@ -14,7 +14,7 @@
 
 Este es el cuello de botella operativo del calendario. Ninguna pieza en esta cola puede ser publicada hasta que su estado cambie a `Aprobado`. CNT-004 se conserva como referencia de revisión futura, pero queda fuera de la cola activa por decisión operativa.
 
-### Pendiente de Revisión de Canon (Claude / Manus)
+### Pendiente de Revisión de Canon (CGO prepara / Fernando decide)
 
 | ID_Pieza | Título | Personaje Principal | Motivo de Revisión | Acción Requerida |
 | :--- | :--- | :--- | :--- | :--- |
@@ -35,6 +35,6 @@ Este es el cuello de botella operativo del calendario. Ninguna pieza en esta col
 
 ## Reglas de Desbloqueo
 
-1. **Revisión Canon:** Una vez que Claude/Manus confirme que no hay contradicciones, el estado debe cambiar a `Pendiente Aprobación Fernando`.
+1. **Revisión Canon:** El CGO prepara la evidencia y Fernando confirma que no hay contradicciones; entonces el estado cambia a `Pendiente Aprobación Fernando`.
 2. **Aprobación Fernando:** Solo Fernando puede cambiar el estado a `Aprobado`.
-3. **Notificación y registro:** Manus registra el cambio y notifica a Fernando por el canal operativo acordado cuando una pieza pase de `En Producción` a `Pendiente Aprobación Fernando`; este flujo no tiene automatización activa.
+3. **Notificación y registro:** El CGO registra el cambio y notifica a Fernando por el canal operativo acordado cuando una pieza pase de `En Producción` a `Pendiente Aprobación Fernando`; este flujo no tiene automatización activa para aprobar.

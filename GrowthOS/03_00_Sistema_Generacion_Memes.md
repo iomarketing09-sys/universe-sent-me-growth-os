@@ -5,7 +5,7 @@
 **Fecha de creación:** 2026-08-01
 **Última actualización:** 2026-08-15
 **Versión:** 2.3
-**Autor:** Manus AI
+**Autor:** Manus AI (original histórico); CGO (actualización vigente)
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_03_Reuse_Queue.md`, `13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md`, `Integracion_Growth_OS.md`
 
 ---
@@ -21,7 +21,7 @@ Toda la gestión de memes ocurre en Drive. Esta carpeta sirve como bandeja de en
 -   **Ubicación:** `Universe Sent Me > USM > Meme_Proposals`
 -   **Estructura:**
     -   `Proposed/`: Memes de referencia subidos por Fernando para su revisión.
-    -   `Generated_By_Gemini/`: Contiene las imágenes procesadas y adaptadas al canon por Manus tras ser aprobadas.
+    -   `Generated_By_Gemini/`: Contiene las imágenes procesadas y adaptadas con aprobación de Fernando.
     -   `Processed_Log/`: Contiene los metadatos JSON de cada meme procesado.
 
 ---
@@ -32,20 +32,20 @@ El ciclo de vida de un meme sigue estos pasos:
 
 1.  **Propuesta:** Fernando sube una imagen de referencia a la carpeta `Proposed` en Drive.
 2.  **Revisión y Aprobación:** Fernando revisa los memes propuestos en Drive.
-3. **Procesamiento y Clasificación (Manus):**
-    -   Manus detecta la imagen en la carpeta `Proposed` de Drive.
+3. **Procesamiento y Clasificación (CGO):**
+    -   El CGO detecta la imagen en la carpeta `Proposed` de Drive.
     -   Se utiliza Vision (Gemini) para clasificar el meme (personaje, tema, texto, emoción).
-    -   Manus registra los metadatos en `Processed_Log` (JSON) y en el inventario local.
+    -   El CGO registra los metadatos en `Processed_Log` (JSON) y en el inventario local.
 4. **Generación Final (Flow / Nano Banana):**
     -   Para garantizar la máxima consistencia visual de los personajes (Canon Guarding), el usuario realiza la generación final en **Flow** utilizando los modelos **Nano Banana 2** o **Nano Banana Pro**.
-    -   Manus actúa como el gestor de metadatos y estratega de programación, sugiriendo los mejores slots en el calendario.
+    -   El CGO actúa como gestor de metadatos y estratega de programación, sugiriendo los mejores slots en el calendario.
 5.  **Ingreso al Growth OS:** La pieza se registra en la base de datos central (Google Sheets) con estado `Idea` o `Pendiente de Producción`.
 
 ---
 
 ## 3. Automatización Programada
 
-El sistema cuenta con una tarea programada en Manus que se ejecuta **diariamente a las 9:00 AM (America/Matamoros)**:
+El sistema contaba con una tarea programada en Manus. Esa automatización es **histórica y no está activa** en Growth OS; se conserva como referencia hasta que el CGO migre una tarea equivalente:
 
 > **Revisión diaria de memes en Drive**
 > 1. Revisa la carpeta `Proposed` en Google Drive
@@ -100,6 +100,6 @@ Los memes ya publicados (como el archivo de mayo) entran directamente en la `Reu
 
 -   **Pipeline vigente de publicación:** `GrowthOS/13_00_Pipeline_Publicacion_Local_y_Estandar_CSV.md` y `GrowthOS/Integracion_Growth_OS.md`
 -   **Cola de Reutilización:** `GrowthOS/01_03_Reuse_Queue.md`
--   **Script de Generación:** `usm_meme_generator.py` (en el entorno de Manus)
--   **Script de Procesamiento Drive:** `usm_meme_drive_processor.py` (en el entorno de Manus)
+-   **Script de Generación:** `usm_meme_generator.py` (histórico, entorno de Manus; no versionado aquí)
+-   **Script de Procesamiento Drive:** `usm_meme_drive_processor.py` (histórico, entorno de Manus; no versionado aquí)
 -   **Banco de memes adaptados (modo Adaptado):** `../Operations/Production/CNT028_Memes_Adaptados_Drive_Frase_Intacta.md`

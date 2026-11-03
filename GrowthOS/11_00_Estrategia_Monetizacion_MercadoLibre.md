@@ -3,9 +3,9 @@
 **Propósito:** Definir el marco operativo para capitalizar la afiliación de Mercado Libre a través de contenido narrativo y la sección recurrente "¿Qué me llegó?".
 **Estado:** Active
 **Fecha de creación:** 2026-08-05
-**Última actualización:** 2026-08-22
-**Versión:** 1.8
-**Autor:** Manus AI (CGO)
+**Última actualización:** 2026-11-02
+**Versión:** 1.9
+**Autor:** Manus AI (original histórico); CGO (actualización vigente)
 **Documentos relacionados:** `01_02_Content_Backlog.md`, `07_00_Registro_Maestro_Reels.md`, `08_00_Metricas_Baseline_Plataformas.md`, `Operations/Production/2026-08-19_Playbook_Tracking_Afiliados_MercadoLibre.md`, `Operations/Production/12_00_Catalogo_Productos_MercadoLibre.md`, `Operations/Production/2026-08-20_Segunda_Capa_Afiliados_Posts_Ganadores.md`, `Operations/Research/Affiliate_Link_Ledger.csv`, `Operations/Research/Affiliate_Metrics_Snapshots.csv`, `Operations/Research/2026-08-19_Auditoria_Reels_y_Monetizacion.md`
 
 ---
@@ -28,7 +28,7 @@ Transformaremos el unboxing tradicional en una pieza de **Story-Commerce** utili
 
 ### A. Facebook Reels (Canal Principal)
 - **Gancho:** El paquete de Mercado Libre apareciendo en un entorno fantástico.
-- **CTA:** "Link en el primer comentario" o "Escribe INFO para enviarte el link". La gestión se realizará mediante el flujo de Manus y Meta Graph API cuando los permisos lo permitan.
+- **CTA:** "Link en el primer comentario" o "Escribe INFO para enviarte el link". La gestión la realiza el CGO mediante Meta Graph API cuando los permisos lo permitan; toda publicación requiere autorización explícita de Fernando.
 - **Monetización:** Comisión por venta + Bonos por visualizaciones (si aplica).
 
 ### B. Mercado Libre Clips
@@ -138,3 +138,4 @@ La próxima revisión debe ser un corte de métricas y producir una de tres deci
 | 2026-08-20 | 1.6 | Se añade la segunda capa de monetización para posts ganadores, con campaña independiente, máximo tres candidatos iniciales y filtro de encaje editorial. | Manus AI (CGO) |
 | 2026-08-20 | 1.7 | Se activa manualmente la primera ola de Capa 2 en `2608029` y `CNT-034 / 260539`, con dos productos nativos confirmados y tracking separado. | Manus AI (CGO) |
 | 2026-08-22 | 1.8 | Revisión CGO: se pausa la expansión hasta conciliar la cartera activa; se separan carriles editoriales/comerciales y se priorizan superficies clicables y verificables. | Manus AI (CGO) |
+| 2026-11-02 | 1.9 | Se actualiza el responsable operativo al CGO; Fernando conserva la aprobación final y la autoridad de canon. | CGO |

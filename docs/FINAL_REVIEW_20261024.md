@@ -2,7 +2,13 @@
 
 **Fecha:** 24 Octubre 2026  
 **Versión:** 1.0  
-**Estado:** 🟡 En Progreso
+**Estado:** Histórico / superseded
+
+> **Snapshot histórico.** Este documento describe el estado del 24 de octubre de
+> 2026 y no debe usarse como tablero operativo vigente. En particular, las líneas
+> base de monitoring, alertas y SLA ya fueron reemplazadas por
+> `docs/OPERACION_COMPARTIDA.md` y `ops/services.yaml`. Se conserva como registro
+> de la revisión original.
 
 ---
 

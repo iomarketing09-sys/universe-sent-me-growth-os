@@ -3,10 +3,15 @@
 **Propósito:** Punto de entrada a toda la documentación operativa del Growth OS (calendario editorial, colas, automatizaciones, governance).
 **Estado:** Active
 **Fecha de creación:** 2026-07-31
-**Última actualización:** 2026-09-08
-**Versión:** 8.6
-**Autor:** Manus AI
+**Última actualización:** 2026-11-02
+**Versión:** 8.7
+**Autor:** Manus AI (original); CGO (actualización vigente)
 **Documentos relacionados:** `GrowthOS/Integracion_Growth_OS.md`, `../Studio_Governance.md`
+
+> **Vigencia de roles (2026-11-02):** el CGO es **Codex** y Fernando es el
+> accountable final y la única autoridad de canon. Las menciones a Manus y
+> Claude en documentos anteriores se conservan como atribución o evidencia
+> histórica, no como roles activos.
 
 ---
 
@@ -19,7 +24,7 @@
 | [Calendario Editorial Semanal (W01)](01_01_Calendario_Semanal.md) | Tablero operativo de los próximos 7 días. | Active |
 | [Formato del Calendario Semanal (CGO v3.0)](04_00_Formato_Calendario_Semanal_CGO.md) | Plantilla oficial por día de la semana, validada con datos de mayo 2026. | Active |
 | [Calendario Oficial 4–9 de Agosto](05_02_Calendario_04_09_Agosto.md) | Calendario de la semana 4-9 agosto, aplicando la plantilla CGO v3.0. Declarado oficial por Fernando (2026-08-03). | Superseded |
-| [Calendario 10–16 de Agosto](05_03_Calendario_10_16_Agosto.md) | Nueva semana: menos reuse (solo piezas top validadas), más contenido nuevo, horarios basados en datos reales de mediana horaria/diaria. | Active |
+| [Calendario 10–16 de Agosto](05_03_Calendario_10_16_Agosto.md) | Nueva semana: menos reuse (solo piezas top validadas), más contenido nuevo, horarios basados en datos reales de mediana horaria/diaria. | Superseded |
 | [Content Backlog](01_02_Content_Backlog.md) | Lista maestra ordenada por prioridad. | Active |
 | [Reuse Queue](01_03_Reuse_Queue.md) | Contenido con potencial de reutilización (regla 30 días). | Active |
 | [Production Queue](01_04_Production_Queue.md) | Contenido que requiere producción nueva. | Active |
@@ -31,7 +36,7 @@
 | [Auditoría Higgsfield Grant](../Operations/Research/2026-08-02_Auditoria_Higgsfield_Grant.md) | Análisis estratégico para la candidatura del Filmmaker Grant. | Review |
 | [Reporte Mensual Junio-Julio 2026](../Operations/Research/2026-08-08_Reporte_Mensual_Junio_Julio_2026.md) | Cierra el vacío de datos entre mayo y el análisis de 28 días de agosto. 61 días vía Windsor.ai, top días y posts por mes. | Active |
 | [Métricas Baseline — FB & IG](08_00_Metricas_Baseline_Plataformas.md) | Datos reales de Windsor.ai: top 10 FB, tabla Reels, tabla IG, insights de canal. Actualizar cada domingo. | Active |
-| [Estándar de Documentación Interna](09_00_Estandar_Documentacion_Interna.md) | Reglas permanentes para que Manus cree y actualice documentos en este repositorio. | Active |
+| [Estándar de Documentación Interna](09_00_Estandar_Documentacion_Interna.md) | Reglas permanentes para que el CGO cree y actualice documentos en este repositorio. | Active |
 | [Kit de Hashtags USM](10_00_Kit_de_Hashtags_USM.md) | Roster fijo de hashtags de marca (personaje, lugar, concepto) con firma USM. Evita typos y nombres no aprobados. | Active |
 | [Estrategia Monetización Mercado Libre](11_00_Estrategia_Monetizacion_MercadoLibre.md) | Marco operativo para capitalizar la afiliación de Mercado Libre. | Active |
 | [Auditoría Monetización Afiliados Mercado Libre](../Operations/Research/2026-08-22_Auditoria_Monetizacion_Afiliados_MercadoLibre.md) | Estado, brechas y plan para aumentar los clics del piloto afiliado. | Review |
@@ -173,11 +178,11 @@
 
 La semana analítica y operativa comienza el **domingo** y termina el **sábado**. Esta convención organiza los reportes y el aprendizaje; no reescribe los cortes mensuales ni mezcla denominadores de Facebook, Reels, Instagram o afiliados.
 
-1. **Domingo:** Inicia el nuevo ciclo. Manus prepara el borrador del calendario a partir de las colas de `Aprobado` y `Reutilizado`; Claude revisa el caché de canon y Manus actualiza `Integracion_Growth_OS.md` si hay cambios.
+1. **Domingo:** Inicia el nuevo ciclo. El CGO prepara el borrador del calendario a partir de las colas de `Aprobado` y `Reutilizado`, verifica el caché de canon y actualiza `Integracion_Growth_OS.md` cuando Fernando aprueba un cambio.
 2. **Lunes:** Fernando revisa y aprueba el calendario semanal. Comienza la producción de la `Production Queue`.
-3. **Martes a viernes:** Manus valida assets, copys, estados y horarios; Fernando confirma las órdenes de publicación cuando corresponda.
+3. **Martes a viernes:** El CGO valida assets, copys, estados y horarios; Fernando confirma las órdenes de publicación cuando corresponda.
 4. **Sábado:** Última jornada del ciclo, verificación de IDs devueltos por Meta y preparación del cierre general después del último slot, idealmente a partir de las 22:15–22:30 en `America/Matamoros`.
-5. **Cierre del sábado:** Manus consolida los reportes diarios de domingo a sábado, actualiza el `HypothesisBank` con cautela y registra el aprendizaje semanal. Las piezas recién publicadas se marcan como exposición inmadura; no se fuerzan ventanas 24/72 horas.
+5. **Cierre del sábado:** El CGO consolida los reportes diarios de domingo a sábado, actualiza el `HypothesisBank` con cautela y registra el aprendizaje semanal. Las piezas recién publicadas se marcan como exposición inmadura; no se fuerzan ventanas 24/72 horas.
 
 Make no participa en este flujo activo.
 
@@ -186,7 +191,7 @@ Make no participa en este flujo activo.
 ## Governance y Revisiones
 
 Las reglas de acceso, roles y calendario de revisiones viven en `../Studio_Governance.md`:
-- **Revisiones diarias:** Todo contenido nuevo debe ser validado por Claude antes de entrar a producción.
+- **Revisiones diarias:** Todo contenido nuevo debe ser validado por Fernando antes de entrar a producción.
 - **Revisiones semanales:** Sincronización del caché de canon, revisión del `HypothesisBank` y confirmación de reglas de bloqueo.
 - **Campañas de Ads:** Todo `meta_ids.json` con fecha de inicio dispara cortes automáticos E24/E48/E72/diarios/FINAL; ver `../docs/REGLA_METRICAS_CAMPANAS.md`.
 

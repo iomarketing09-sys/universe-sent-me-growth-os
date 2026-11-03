@@ -5,7 +5,7 @@
 **Fecha de creación:** 2026-07-31
 **Última actualización:** 2026-08-23
 **Versión:** 3.2
-**Autor:** Manus AI
+**Autor:** Manus AI (original histórico); CGO (actualización vigente)
 **Documentos relacionados:** `01_00_Arquitectura_Calendario_Escalable.md`, `01_01_Calendario_Semanal.md`, `07_00_Registro_Maestro_Reels.md`, `14_00_Fuente_Maestra_y_Ledgers.md`, `../Operations/Production/2026-08-20_Exploracion_Videoclip_Musical_Desamor.md`
 
 ---
@@ -43,7 +43,7 @@
 | CNT-005 | HB-001: Wilfred existencial vs humorístico | @char_USM_wilfred | Reel (2 variantes) | Pendiente de aprobación | Sí (Fernando) |
 | CNT-025 | Experimentos Growth OS — tests A/B | Variable | Reel (parejas) | Pendiente de aprobación | Sí (Fernando) |
 
-\* **CNT-015 (2026-08-02, corrección de Claude):** estaba marcado "Sí (inmovilidad)" por una lectura incorrecta del canon del Fantasma, propagada en varios documentos de Growth OS. El canon real no dice que sea físicamente inmóvil — dice que está emocionalmente congelado en un instante no resuelto, y que se aferra por lógica de supervivencia interna (`02 Personajes/Segundo Círculo/Fantasma/01 Territorio emocional.md`, `03 Reglas de diseño.md`). No hay bloqueo de canon para contenido contemplativo con este personaje; sí sigue aplicando la regla general de no mostrar su máscara cayendo por completo ni una resolución dramática y visible de su identidad dentro de una misma pieza.
+\* **CNT-015 (2026-08-02, corrección histórica):** estaba marcado "Sí (inmovilidad)" por una lectura incorrecta del canon del Fantasma, propagada en varios documentos de Growth OS. El canon real no dice que sea físicamente inmóvil — dice que está emocionalmente congelado en un instante no resuelto, y que se aferra por lógica de supervivencia interna (`02 Personajes/Segundo Círculo/Fantasma/01 Territorio emocional.md`, `03 Reglas de diseño.md`). No hay bloqueo de canon para contenido contemplativo con este personaje; sí sigue aplicando la regla general de no mostrar su máscara cayendo por completo ni una resolución dramática y visible de su identidad dentro de una misma pieza.
 
 ### Prioridad Baja (Ideas en Desarrollo / Personajes Secundarios)
 

@@ -1,14 +1,14 @@
 # Calendario Oficial de Publicaciones: 4–9 de Agosto
 
 **Propósito:** Calendario operativo de la semana, aplicando la plantilla ya aprobada en `04_00_Formato_Calendario_Semanal_CGO.md` (Lunes–Domingo), la Reuse Queue de mayo, y el Kit de Hashtags USM. Declarado por Fernando como calendario oficial para el resto de la semana (2026-08-03).
-**Estado:** Active
+**Estado:** Superseded / histórico
 **Fecha de creación:** 2026-08-04
-**Última actualización:** 2026-08-07
-**Versión:** 1.3
-**Autor:** Claude (a solicitud de Fernando)
+**Última actualización:** 2026-11-02
+**Versión:** 1.4
+**Autor:** Claude (original histórico, a solicitud de Fernando); CGO (actualización vigente)
 **Documentos relacionados:** `04_00_Formato_Calendario_Semanal_CGO.md`, `01_02_Content_Backlog.md`, `01_03_Reuse_Queue.md`, `08_00_Metricas_Baseline_Plataformas.md`, `10_00_Kit_de_Hashtags_USM.md`
 
-> **Nota de fuente:** las piezas marcadas "Reuse Queue" referencian el `filename` exacto de `Operations/Memories/reuse_queue_mayo_2026.csv`. Claude solo tiene el texto truncado del CSV, no la imagen — Manus/Fernando deben confirmar visualmente antes de publicar. Ninguna de estas piezas ha sido republicada en los últimos 30 días (regla de antigüedad respetada).
+> **Nota histórica:** este calendario corresponde a la semana del 4 al 9 de agosto de 2026 y se conserva como evidencia. Las piezas marcadas "Reuse Queue" referencian el `filename` exacto de `Operations/Memories/reuse_queue_mayo_2026.csv`. La verificación visual descrita se hizo con la información disponible entonces; cualquier reutilización futura requiere confirmación visual del CGO y aprobación explícita de Fernando.
 
 ---
 
@@ -108,5 +108,4 @@ No hay Reel listo para cascada hoy (TikTok/YT sin publicación) — el slot de l
 
 1. ~~Domingo sin Reel~~ → **Domingo cierra con Reel**, mismo tratamiento que el 2 de agosto.
 2. **Debut de Maeve en solitario el sábado** → aprobado, se mantiene como estaba propuesto.
-3. Ninguna pieza de Reuse Queue fue verificada visualmente por Claude — Manus debe confirmar antes de programar.
-3. Ninguna de las piezas de Reuse Queue fue verificada visualmente por Claude (solo el texto truncado del CSV) — Manus debe confirmar antes de programar.
+3. En el cierre histórico, ninguna pieza de Reuse Queue fue verificada visualmente con la imagen completa; solo se contaba con el texto truncado del CSV. Cualquier reutilización futura requiere confirmación visual del CGO antes de programar.
