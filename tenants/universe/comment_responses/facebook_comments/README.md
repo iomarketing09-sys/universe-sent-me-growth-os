@@ -83,6 +83,11 @@ de comentarios y genera propuestas, pero **nunca publica**. La ejecución deja:
 - `aprobaciones_nuevas.json` como vista de solo lectura con lo aún no aprobado.
 - `reports/nuevas_pendientes.md` y `.csv` para revisar en chat.
 
+La única cola publicable es `aprobaciones.json`. Un lote nuevo que requiera
+publicación debe llamarse `aprobaciones_publish_*.json` y declarar
+`kind: publish_batch`; cualquier otro archivo se ignora. Los lotes cerrados y
+las versiones viejas viven en `archive/` y no se leen por el worker.
+
 La publicación sigue siendo una decisión humana: solo se envían las respuestas
 marcadas con `approved: true`. Un worker de systemd puede procesar esas
 aprobaciones en segundo plano, sin depender de que el chat o la terminal sigan
@@ -98,9 +103,8 @@ bash scripts/install_comments_timer.sh
 
 `growth-os-comments-publish.timer` despierta cada 15 minutos al worker, que
 publica únicamente respuestas ya aprobadas. No captura comentarios, no aprueba
-nada y no procesa `aprobaciones_nuevas.json` porque esa vista es de solo
-lectura. El worker usa un candado exclusivo y tandas de 5 respuestas con 15
-minutos de pausa.
+nada y no procesa vistas de revisión ni lotes cerrados. El worker usa un
+candado exclusivo y tandas de 5 respuestas con 15 minutos de pausa.
 
 ```bash
 bash scripts/install_comments_publisher.sh
@@ -124,11 +128,11 @@ No se recomienda cron para este flujo: systemd evita ejecuciones simultáneas
 del mismo servicio, conserva el estado en `journalctl` y permite limitar el
 tiempo de ejecución.
 
-Para revisar una cola separada de propuestas nuevas sin tocar la principal:
+Para revisar una vista de propuestas nuevas sin tocar la principal:
 
 ```bash
 python3 -m modules.cgo --mode comments_review --tenant universe \
-  --comments-approvals-file tenants/universe/comment_responses/facebook_comments/aprobaciones_nuevas_8.json
+  --comments-approvals-file tenants/universe/comment_responses/facebook_comments/aprobaciones_nuevas.json
 ```
 
 ## Protecciones
@@ -137,11 +141,22 @@ python3 -m modules.cgo --mode comments_review --tenant universe \
 - Antes de responder, el publicador consulta si la página ya tiene una respuesta en Meta.
 - Cada respuesta enviada se guarda con `published`, `published_at` y `reply_id`; repetir el comando no la duplica.
 - Las aprobaciones existentes se conservan al refrescar propuestas.
-- Entre local y Drive se usa el archivo con fecha de modificación más reciente; una versión vieja nunca sobrescribe la revisión actual.
-- El worker de publicación toma de Drive cualquier cola más reciente antes de publicar y sincroniza el resultado al terminar.
+- La cola local es la fuente de verdad; Drive solo recibe un backup de una vía y nunca sobrescribe la revisión local.
+- El worker publica desde la maestra y sincroniza el resultado al terminar.
 - `data/comments_log.csv` usa un esquema único de 18 columnas y conserva las filas históricas.
 
 ## Diagnóstico
+
+Para reconciliar la maestra con un lote cerrado o reconstruir `first_seen_at`
+sin publicar nada:
+
+```bash
+python3 scripts/reconcile_comments_state.py --tenant universe \
+  --source tenants/universe/comment_responses/facebook_comments/archive/closed_batches/aprobaciones_nuevas_8.json
+```
+
+Sin `--apply` solo muestra el plan. Para descartar casos concretos se usa
+`--discard COMMENT_ID "motivo"`; el script nunca publica ni aprueba.
 
 ```bash
 python3 tenants/universe/comment_responses/facebook_comments/main.py \

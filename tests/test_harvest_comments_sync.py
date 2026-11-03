@@ -15,7 +15,7 @@ def _load_harvest_module():
     return module
 
 
-def test_sync_approval_files_copia_colas_y_respeta_la_mas_reciente(tmp_path):
+def test_sync_approval_files_copia_colas_y_local_siempre_gana(tmp_path):
     module = _load_harvest_module()
     local = tmp_path / "local"
     drive = tmp_path / "drive"
@@ -34,13 +34,13 @@ def test_sync_approval_files_copia_colas_y_respeta_la_mas_reciente(tmp_path):
 
     synced = module.sync_approval_files(local, drive)
 
-    assert drive_master.read_text(encoding="utf-8") == "master-drive-mas-nueva"
+    assert drive_master.read_text(encoding="utf-8") == "master-local"
     assert (drive / "aprobaciones_nuevas_8.json").read_text(encoding="utf-8") == "batch-local"
     assert drive / "aprobaciones_nuevas_8.json" in synced
-    assert drive_master not in synced
+    assert drive_master in synced
 
 
-def test_sync_approval_files_sobrescribe_si_la_local_es_mas_nueva(tmp_path):
+def test_sync_approval_files_sobrescribe_siempre(tmp_path):
     module = _load_harvest_module()
     local = tmp_path / "local"
     drive = tmp_path / "drive"

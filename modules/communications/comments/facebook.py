@@ -32,37 +32,36 @@ from modules.communications.comments.log import (
 )
 from modules.communications.comments.paths import CommentPaths, load_tenant_config
 from modules.communications.comments.responder import UniverseResponder
+from modules.config.env import META_ENV_KEYS, load_env_values, parse_env_file
 
 
-def load_env_file(path: Path, override: bool = False) -> None:
-    if not path.exists():
-        return
-    with path.open("r", encoding="utf-8") as handle:
-        for line in handle:
-            line = line.strip()
-            if not line or line.startswith("#") or "=" not in line:
-                continue
-            key, value = line.split("=", 1)
-            key = key.strip()
-            value = value.strip().strip("'").strip('"')
-            if override or key not in os.environ:
-                os.environ[key] = value
+def load_env_file(path: Path, override: bool = False) -> Dict[str, str]:
+    """Lee un archivo Meta sin modificar ``os.environ``."""
+    del override
+    return {
+        key: value
+        for key, value in parse_env_file(path).items()
+        if key in META_ENV_KEYS
+    }
 
 
 def load_environment(
     base_path: Optional[Path] = None,
     tenant_id: str = "universe",
-) -> None:
+) -> Dict[str, str]:
     paths = CommentPaths.for_tenant(tenant_id, base_path)
-    for env_file in paths.env_files:
-        load_env_file(env_file)
+    return load_env_values(paths.env_files, keys=META_ENV_KEYS)
 
 
-def resolve_page_token(user_token: Optional[str], page_id: str) -> Optional[str]:
+def resolve_page_token(
+    user_token: Optional[str],
+    page_id: str,
+    version: Optional[str] = None,
+) -> Optional[str]:
     if not user_token or not page_id:
         return user_token
 
-    version = os.getenv("META_GRAPH_VERSION", "v26.0")
+    version = version or os.getenv("META_GRAPH_VERSION", "v26.0")
     query = urllib.parse.urlencode(
         {
             "fields": "id,name,access_token",
@@ -114,6 +113,7 @@ class CommentProcessor:
         self.agent_model = agent_model
         self.agent = agent
         self.publication_contexts = []
+        self._environment: Dict[str, str] = {}
         self.page_token = None
         self.page_id = self._get_page_id()
         self.page_name = str(
@@ -127,20 +127,26 @@ class CommentProcessor:
 
     def _load_environment(self):
         """Load tenant and repository environment files."""
-        load_environment(self.base_path, self.tenant_id)
+        self._environment = load_environment(self.base_path, self.tenant_id)
 
     def _get_page_id(self) -> Optional[str]:
         configured = str((self.tenant_config.get("meta") or {}).get("page_id") or "")
-        return os.environ.get("FB_PAGE_ID") or configured or None
+        return self._environment.get("FB_PAGE_ID") or configured or None
 
     def _get_graph_version(self) -> str:
-        return os.environ.get("META_GRAPH_VERSION", "v26.0")
+        return self._environment.get("META_GRAPH_VERSION", "v26.0")
 
     def _get_meta_token(self) -> Optional[str]:
-        return os.environ.get("PAGE_ACCESS_TOKEN") or os.environ.get("META_ACCESS_TOKEN") or os.environ.get("PAGE_ACCES_TOKEN")
+        return (
+            self._environment.get("PAGE_ACCESS_TOKEN")
+            or self._environment.get("META_ACCESS_TOKEN")
+            or self._environment.get("PAGE_ACCES_TOKEN")
+        )
 
     def _get_explicit_page_token(self) -> Optional[str]:
-        return os.environ.get("PAGE_ACCESS_TOKEN") or os.environ.get("PAGE_ACCES_TOKEN")
+        return self._environment.get("PAGE_ACCESS_TOKEN") or self._environment.get(
+            "PAGE_ACCES_TOKEN"
+        )
 
     def _make_get_request(self, endpoint: str, params: Dict) -> Optional[Dict]:
         if not self.page_token:
@@ -247,7 +253,9 @@ class CommentProcessor:
     def _agent_result_to_responder(result: Dict[str, Any]) -> Dict[str, Any]:
         """Adapta la salida estructurada del agente al contrato histórico."""
         needs_response = bool(result.get("needs_response"))
-        if not needs_response:
+        if result.get("decision") == "review":
+            decision = "review"
+        elif not needs_response:
             decision = "no_response"
         elif result.get("decision") == "suggest":
             decision = "respond"
@@ -336,6 +344,7 @@ class CommentProcessor:
         self.page_token = self._get_explicit_page_token() or resolve_page_token(
             self._get_meta_token(),
             self.page_id,
+            self._get_graph_version(),
         )
         if not self.page_token:
             print("❌ Error: No se encontró token en .env")
@@ -496,7 +505,9 @@ class CommentProcessor:
                 "comment_text": item["comment_text"],
                 "character": char,
                 "approved_response": item["proposed_response"],
-                "approved": False  # Tú decides ponerle True
+                "approved": False,  # Tú decides ponerle True
+                "comment_created_at": item.get("created_time") or "",
+                "first_seen_at": datetime.now(timezone.utc).isoformat(),
             }
             if item.get("agent_metadata"):
                 approval["agent"] = item["agent_metadata"]
@@ -535,10 +546,11 @@ def _existing_page_reply(
     token: str,
     page_id: str,
     page_name: str = "Universe Sent Me",
+    version: Optional[str] = None,
 ) -> Tuple[bool, Optional[Dict[str, Any]], str]:
     import requests
 
-    version = os.getenv("META_GRAPH_VERSION", "v26.0")
+    version = version or os.getenv("META_GRAPH_VERSION", "v26.0")
     url = f"https://graph.facebook.com/{version}/{comment_id}/comments"
     params = {
         "fields": "id,from,message,created_time",
@@ -580,17 +592,21 @@ def publish_approved(
 
     paths = CommentPaths.for_tenant(tenant_id, base_path)
     config = load_tenant_config(tenant_id, paths.base_path)
-    load_environment(paths.base_path, tenant_id)
-    page_id = os.getenv("FB_PAGE_ID") or str((config.get("meta") or {}).get("page_id") or "")
+    environment = load_environment(paths.base_path, tenant_id)
+    page_id = environment.get("FB_PAGE_ID") or str((config.get("meta") or {}).get("page_id") or "")
     page_name = str(
         (config.get("meta") or {}).get("page_name")
         or config.get("client_name")
         or "Universe Sent Me"
     )
     token = (
-        os.getenv("PAGE_ACCESS_TOKEN")
-        or os.getenv("PAGE_ACCES_TOKEN")
-        or resolve_page_token(os.getenv("META_ACCESS_TOKEN"), page_id)
+        environment.get("PAGE_ACCESS_TOKEN")
+        or environment.get("PAGE_ACCES_TOKEN")
+        or resolve_page_token(
+            environment.get("META_ACCESS_TOKEN"),
+            page_id,
+            environment.get("META_GRAPH_VERSION"),
+        )
     )
     if not token:
         print("❌ Error: No se encontró PAGE_ACCESS_TOKEN en .env")
@@ -634,7 +650,7 @@ def publish_approved(
         print("⚠️ No hay comentarios nuevos marcados con 'approved: true'.")
         return 0
 
-    version = os.getenv("META_GRAPH_VERSION", "v26.0")
+    version = environment.get("META_GRAPH_VERSION", "v26.0")
     success_count = 0
     failure_count = 0
 
@@ -665,7 +681,7 @@ def publish_approved(
             continue
 
         checked, existing_reply, check_error = _existing_page_reply(
-            comment_id, token, page_id, page_name
+            comment_id, token, page_id, page_name, version
         )
         if not checked:
             print(f"    ❌ No se pudo verificar si ya existe respuesta: {check_error}")

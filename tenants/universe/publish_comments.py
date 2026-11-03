@@ -30,17 +30,8 @@ def main():
                 drive_file = candidate_file
                 break
 
-    if drive_file and (
-        not APROBACIONES_LOCAL.exists()
-        or drive_file.stat().st_mtime > APROBACIONES_LOCAL.stat().st_mtime
-    ):
-        try:
-            shutil.copy2(drive_file, APROBACIONES_LOCAL)
-            print("📥 aprobaciones.json de Drive es más reciente; se usará esa versión.")
-        except Exception as e:
-            print(f"   ⚠️ Aviso al sincronizar desde Drive: {e}")
-    elif drive_file:
-        print("📌 Se usará la versión local de aprobaciones.json, que es más reciente que Drive.")
+    if drive_file:
+        print("📌 La cola local es la fuente de verdad; Drive solo se actualizará al final.")
 
     if not APROBACIONES_LOCAL.exists():
         print(f"❌ Error: No se encontró {APROBACIONES_LOCAL}")

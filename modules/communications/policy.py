@@ -99,6 +99,16 @@ SEXUAL_DOUBLE_SENSE_PHRASES = (
     "excitada",
     "ven aquí",
     "ven aqui",
+    "mamacita",
+    "mamacito",
+    "desnudo",
+    "desnuda",
+    "🫦",
+    "👅",
+    "🍆",
+    "🍑",
+    "💦",
+    "🥵",
 )
 
 INTIMACY_PHRASES = (
@@ -228,7 +238,7 @@ def is_low_signal(comment: object) -> bool:
 
 
 def comment_risk_flags(comment: object) -> tuple[str, ...]:
-    """Marca comentarios que no deben pasarse al modelo ni responderse."""
+    """Marca comentarios para revisión humana sin respuesta automática."""
     lowered = str(comment or "").casefold()
     flags: list[str] = []
     if _contains_any(lowered, SEXUAL_DOUBLE_SENSE_PHRASES):

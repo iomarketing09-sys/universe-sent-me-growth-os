@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 from modules.communications.comments import CommentPaths
@@ -22,16 +23,25 @@ def test_queue_candidates_incluye_principal_y_lotes_pero_no_vista_revision(tmp_p
     make_tenant(tmp_path, "digital", track="native_digital")
     paths = CommentPaths.for_tenant("digital", tmp_path)
     _write_queue(paths.approvals_file, [])
-    _write_queue(paths.storage_dir / "aprobaciones_lote.json", [])
+    _write_queue(
+        paths.storage_dir / "aprobaciones_publish_lote.json",
+        [],
+        kind="publish_batch",
+    )
     _write_queue(
         paths.storage_dir / "aprobaciones_nuevas.json",
         [],
         kind="review_queue",
     )
+    _write_queue(
+        paths.storage_dir / "aprobaciones_nuevas_8.json",
+        [],
+        kind="batch",
+    )
 
     names = [path.name for path in worker.queue_candidates(paths)]
 
-    assert names == ["aprobaciones.json", "aprobaciones_lote.json"]
+    assert names == ["aprobaciones.json", "aprobaciones_publish_lote.json"]
 
 
 def test_pending_approvals_exige_aprobacion_texto_y_no_publicado():
@@ -69,8 +79,13 @@ def test_worker_publica_solo_colas_con_pendientes(tmp_path, monkeypatch):
         [{"comment_id": "ok", "approved": True, "approved_response": "Hola"}],
     )
     _write_queue(
-        paths.storage_dir / "aprobaciones_nuevas_8.json",
+        paths.storage_dir / "aprobaciones_publish_8.json",
         [{"comment_id": "batch", "approved": True, "approved_response": "Lote"}],
+        kind="publish_batch",
+    )
+    _write_queue(
+        paths.storage_dir / "aprobaciones_nuevas_8.json",
+        [{"comment_id": "viejo", "approved": True, "approved_response": "Viejo"}],
         kind="batch",
     )
     _write_queue(
@@ -97,7 +112,7 @@ def test_worker_publica_solo_colas_con_pendientes(tmp_path, monkeypatch):
     )
 
     assert code == 0
-    assert calls == ["aprobaciones.json", "aprobaciones_nuevas_8.json"]
+    assert calls == ["aprobaciones.json", "aprobaciones_publish_8.json"]
 
 
 def test_candado_impide_dos_publicadores(tmp_path):
@@ -108,3 +123,21 @@ def test_candado_impide_dos_publicadores(tmp_path):
         assert worker.acquire_lock(lock_path) is None
     finally:
         first.close()
+
+
+def test_sync_to_drive_es_de_una_via(tmp_path):
+    storage = tmp_path / "storage"
+    storage.mkdir()
+    local = storage / "aprobaciones.json"
+    local.write_text("local", encoding="utf-8")
+
+    drive = tmp_path / "drive"
+    drive.mkdir()
+    remote = drive / "aprobaciones.json"
+    remote.write_text("remoto", encoding="utf-8")
+    future = local.stat().st_mtime + 3600
+    os.utime(remote, (future, future))
+
+    worker.sync_to_drive(storage, drive)
+
+    assert remote.read_text(encoding="utf-8") == "local"

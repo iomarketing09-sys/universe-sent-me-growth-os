@@ -2,8 +2,11 @@
 """Publica respuestas de comentarios ya aprobadas, fuera del chat.
 
 El worker no captura comentarios, no genera propuestas y no cambia
-``approved``. Solo procesa colas con respuestas aprobadas y pendientes. El
-candado evita que dos ejecuciones (timer + manual) publiquen a la vez.
+``approved``. Solo procesa la cola maestra y lotes de publicación explícitos.
+El candado evita que dos ejecuciones (timer + manual) publiquen a la vez.
+
+La copia en Drive es un backup de una sola vía: la cola local es la fuente de
+verdad y nunca se sobrescribe desde Drive.
 """
 
 from __future__ import annotations
@@ -59,13 +62,16 @@ def pending_approvals(payload: Optional[Dict[str, Any]]) -> List[Dict[str, Any]]
 
 
 def queue_candidates(paths: CommentPaths) -> List[Path]:
-    """Devuelve la cola principal y lotes de publicación, sin vistas de revisión."""
+    """Devuelve solo la cola maestra y lotes publicables explícitos.
+
+    Las vistas de revisión y los lotes cerrados nunca se publican. Los lotes
+    publicables deben llamarse ``aprobaciones_publish_*.json`` y declarar
+    ``kind: publish_batch``; así un archivo viejo no se ejecuta por accidente.
+    """
     candidates: List[Path] = [paths.approvals_file]
-    for path in sorted(paths.storage_dir.glob("aprobaciones*.json")):
-        if path == paths.approvals_file:
-            continue
+    for path in sorted(paths.storage_dir.glob("aprobaciones_publish_*.json")):
         payload = load_queue(path)
-        if payload is None or payload.get("kind") in READ_ONLY_KINDS:
+        if payload is None or payload.get("kind") != "publish_batch":
             continue
         candidates.append(path)
     return candidates
@@ -78,31 +84,12 @@ def drive_directory() -> Optional[Path]:
     return None
 
 
-def pull_newest_from_drive(files: List[Path], drive_dir: Optional[Path]) -> None:
-    if drive_dir is None:
-        return
-    for local in files:
-        remote = drive_dir / local.name
-        try:
-            if remote.is_file() and (
-                not local.is_file() or remote.stat().st_mtime > local.stat().st_mtime
-            ):
-                local.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copy2(remote, local)
-                print(f"📥 {local.name}: versión más reciente tomada de Drive.")
-        except OSError as exc:
-            print(f"⚠️ No se pudo leer {remote}: {exc}")
-
-
 def sync_to_drive(storage_dir: Path, drive_dir: Optional[Path]) -> None:
     if drive_dir is None:
         return
     for local in sorted(storage_dir.glob("aprobaciones*.json")):
         remote = drive_dir / local.name
         try:
-            if remote.is_file() and remote.stat().st_mtime > local.stat().st_mtime:
-                print(f"📌 Drive conserva una versión más reciente de {local.name}.")
-                continue
             shutil.copy2(local, remote)
             print(f"☁️ Sincronizado: {local.name}")
         except OSError as exc:
@@ -194,8 +181,6 @@ def main(argv: Optional[List[str]] = None) -> int:
     try:
         drive_dir = None if args.no_drive_sync or args.dry_run else drive_directory()
         candidates = queue_candidates(paths)
-        if not args.dry_run:
-            pull_newest_from_drive(candidates, drive_dir)
 
         failures = 0
         published_queues = 0

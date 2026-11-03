@@ -290,7 +290,7 @@ class CommunicationsAgent:
             "Trabajas en modo sugerencia: propones, nunca publicas ni apruebas.\n"
             "Responde únicamente con un objeto JSON válido, sin Markdown ni texto extra.\n"
             "Esquema exacto:\n"
-            '{"intent":"question|humor|identification|opinion|disagreement|affection|'
+            '{"intent":"question|humor|identification|opinion|disagreement|affection|sexual|'
             'spam|troll|commercial|mention|low_signal|other",'
             '"risk":"low|medium|high","needs_response":true,"character":"Universe",'
             '"draft":"Respuesta propuesta o null","confidence":0.0,'
@@ -307,8 +307,9 @@ class CommunicationsAgent:
             "- No des consejo médico, legal, financiero ni terapéutico.\n"
             "- No uses 'diagnóstico', 'diagnosticar' ni lenguaje clínico, ni siquiera como "
             "metáfora; el meme puede decir 'síntoma' sin convertirlo en consulta médica.\n"
-            "- Si el comentario es spam, troll, mención, insulto, albur, doble sentido sexual o "
-            "sexualiza a un personaje, usa needs_response=false y draft=null.\n"
+            "- Si el comentario es spam, troll, mención o insulto, usa needs_response=false y draft=null.\n"
+            "- Si el comentario contiene albur, doble sentido sexual o sexualiza a un personaje, "
+            "usa intent=sexual, risk=high, needs_response=false y draft=null. Queda para revisión humana.\n"
             "- Si es solo un eco o reacción mínima sin un giro propio, usa needs_response=false y draft=null. "
             "Ejemplos claros: 'Nooooo 😂😂😂😂', 'Uff 🔥', 'Caracter ☠️🔥'.\n"
             "- No confundas una reacción con un giro: si el comentario añade burla, duda o sarcasmo claro, "
@@ -402,6 +403,7 @@ class CommunicationsAgent:
         character = context.get("character") or _text(payload.get("character")) or "Universe"
         draft = normalize_response(payload.get("draft"))
         model_flags = _string_list(payload.get("policy_flags"))
+        human_review = intent == "sexual" or "sexual_double_sense" in model_flags
 
         quality = check_response(draft, max_chars=self.max_chars)
         context_flags: List[str] = []
@@ -417,7 +419,10 @@ class CommunicationsAgent:
             policy_flags.append("model_policy_flag")
         policy_flags = list(dict.fromkeys(policy_flags))
 
-        if not needs_response:
+        if human_review:
+            decision = "review"
+            public_draft = None
+        elif not needs_response:
             decision = "no_response"
             public_draft = None
         elif quality.ok and not policy_flags and risk != "high":
@@ -430,7 +435,9 @@ class CommunicationsAgent:
         reason = _text(payload.get("reason"))
         if decision == "review":
             reason = " ".join(
-                part for part in (reason, quality.reason, *context_reasons) if part
+                part
+                for part in (reason, None if human_review else quality.reason, *context_reasons)
+                if part
             ).strip()
 
         return {
@@ -486,15 +493,15 @@ class CommunicationsAgent:
             return {
                 "intent": "other",
                 "risk": "high",
-                "needs_response": False,
+                "needs_response": True,
                 "character": context["character"],
                 "draft": None,
                 "confidence": 1.0,
                 "policy_flags": list(risk_flags),
-                "reason": "El comentario contiene albur o doble sentido sexual; no se responde.",
-                "quality_ok": True,
+                "reason": "El comentario contiene contenido sexual o doble sentido; requiere revisión humana.",
+                "quality_ok": False,
                 "quality": None,
-                "decision": "no_response",
+                "decision": "review",
                 "response": None,
                 "publishable": False,
                 "approval_required": True,

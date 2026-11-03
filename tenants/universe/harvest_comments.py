@@ -30,13 +30,10 @@ def check_omniroute(host: str = "127.0.0.1", port: int = 20128, timeout: float =
 
 
 def sync_approval_files(local_dir: Path, drive_dest: Path) -> list[Path]:
-    """Copia las colas locales a Drive respetando la versión más reciente."""
+    """Copia las colas locales a Drive; la cola local siempre es la fuente."""
     synced = []
     for local_file in sorted(local_dir.glob("aprobaciones*.json")):
         target_file = drive_dest / local_file.name
-        if target_file.exists() and target_file.stat().st_mtime > local_file.stat().st_mtime:
-            print(f"   📌 Drive tiene una versión más reciente de {local_file.name}; no se sobrescribió.")
-            continue
         shutil.copy2(local_file, target_file)
         synced.append(target_file)
         print(f"   🚀 Sincronizado: {target_file}")

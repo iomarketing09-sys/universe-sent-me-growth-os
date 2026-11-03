@@ -102,7 +102,7 @@ def test_baja_senal_se_detecta_sin_llamar_al_modelo(tmp_path):
     assert empty["decision"] == "no_response"
 
 
-def test_albur_se_bloquea_sin_llamar_al_modelo(tmp_path):
+def test_albur_se_envia_a_revision_sin_llamar_al_modelo(tmp_path):
     client = FakeClient([])
     agent = CommunicationsAgent("universe", base_path=tmp_path, client=client)
     comment = "Voy hacer un cuarto oscuro para dar palos de luz"
@@ -111,9 +111,65 @@ def test_albur_se_bloquea_sin_llamar_al_modelo(tmp_path):
     result = agent.suggest(comment, {"character": "Kiri+Evan"})
 
     assert client.calls == []
-    assert result["decision"] == "no_response"
+    assert result["decision"] == "review"
     assert result["risk"] == "high"
     assert result["policy_flags"] == ["sexual_double_sense"]
+    assert result["needs_response"] is True
+    assert result["response"] is None
+    assert "revisión humana" in result["reason"]
+
+
+def test_contenido_sexual_detectado_por_emoji_queda_en_revision(tmp_path):
+    client = FakeClient([])
+    agent = CommunicationsAgent("universe", base_path=tmp_path, client=client)
+    comment = "Osea si , Pero la entrada eres tu , mamacita 😈🫦👅"
+
+    result = agent.suggest(comment, {"character": "Universe"})
+
+    assert client.calls == []
+    assert result["decision"] == "review"
+    assert result["risk"] == "high"
+    assert "sexual_double_sense" in result["policy_flags"]
+
+
+def test_modelo_que_marca_contenido_sexual_queda_en_revision(tmp_path):
+    client = FakeClient(
+        [
+            _agent_result(
+                intent="sexual",
+                risk="high",
+                needs_response=False,
+                draft=None,
+                reason="Contenido sexual explícito.",
+            )
+        ]
+    )
+    agent = CommunicationsAgent("universe", base_path=tmp_path, client=client)
+
+    result = agent.suggest("Quiero más de eso contigo", {"character": "Universe"})
+
+    assert result["decision"] == "review"
+    assert result["risk"] == "high"
+    assert result["needs_response"] is False
+    assert result["publishable"] is False
+
+
+def test_adapter_conserva_revision_sin_respuesta_automatica():
+    result = comments_facebook.CommentProcessor._agent_result_to_responder(
+        {
+            "intent": "sexual",
+            "risk": "high",
+            "needs_response": False,
+            "decision": "review",
+            "response": None,
+            "reason": "Contenido sexual explícito.",
+        }
+    )
+
+    assert result["decision"] == "review"
+    assert result["response"] is None
+    assert result["review_reason"] == "Contenido sexual explícito."
+    assert result["risk_level"] == "high"
 
 
 def test_chiste_literal_del_asset_fuerza_revision_sin_alterar_borrador(tmp_path):

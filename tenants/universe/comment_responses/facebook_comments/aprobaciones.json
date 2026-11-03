@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-02T01:04:03.668243+00:00",
+  "generated_at": "2026-11-03T00:01:38.063122+00:00",
   "lookback_hours": 48,
-  "total_pending": 13,
+  "total_pending": 12,
   "instructions": "Cambia 'approved: true' en los comentarios que quieras publicar y edita el texto si deseas.",
   "approvals": [
     {
@@ -13,7 +13,8 @@
       "approved": true,
       "published": true,
       "published_at": "2026-11-01T05:13:42.102468+00:00",
-      "reply_id": "122178969753072582_3064496083890048"
+      "reply_id": "122178969753072582_3064496083890048",
+      "first_seen_at": "2026-11-01T00:28:40.171795+00:00"
     },
     {
       "comment_id": "122178969753072582_1085200497843584",
@@ -22,7 +23,10 @@
       "character": "Existencial",
       "approved_response": "Malda, el nuevo destino turístico del desinterés.",
       "approved": false,
-      "discarded": true
+      "discarded": true,
+      "first_seen_at": "2026-11-01T00:28:40.213806+00:00",
+      "discard_reason": "Comentario ambiguo con typo; sin señal suficiente para una respuesta en personaje.",
+      "discarded_at": "2026-11-02T23:56:29.163306+00:00"
     },
     {
       "comment_id": "122178969993072582_2266068400917333",
@@ -33,7 +37,8 @@
       "approved": true,
       "published": true,
       "published_at": "2026-11-01T05:13:47.294842+00:00",
-      "reply_id": "122178969993072582_1273825981594050"
+      "reply_id": "122178969993072582_1273825981594050",
+      "first_seen_at": "2026-11-01T00:28:39.434047+00:00"
     },
     {
       "comment_id": "122178969993072582_1564775568740468",
@@ -44,7 +49,8 @@
       "approved": true,
       "published": true,
       "published_at": "2026-11-01T05:13:51.564228+00:00",
-      "reply_id": "122178969993072582_1705146557614390"
+      "reply_id": "122178969993072582_1705146557614390",
+      "first_seen_at": "2026-11-01T00:28:39.396128+00:00"
     },
     {
       "comment_id": "122179119159072582_2485177135224257",
@@ -55,7 +61,8 @@
       "approved": true,
       "published": true,
       "published_at": "2026-11-01T05:13:55.300698+00:00",
-      "reply_id": "122179119159072582_3180051855669276"
+      "reply_id": "122179119159072582_3180051855669276",
+      "first_seen_at": "2026-11-01T00:28:36.565824+00:00"
     },
     {
       "comment_id": "122179127565072582_1801683471159788",
@@ -66,7 +73,8 @@
       "approved": true,
       "published": true,
       "published_at": "2026-11-01T05:13:58.834095+00:00",
-      "reply_id": "122179127565072582_1097722006209188"
+      "reply_id": "122179127565072582_1097722006209188",
+      "first_seen_at": "2026-11-01T00:28:35.808785+00:00"
     },
     {
       "comment_id": "122179136481072582_3005336423153135",
@@ -75,7 +83,10 @@
       "character": "Kiri+Evan",
       "approved_response": "Perfecto para tropezar con estilo.",
       "approved": false,
-      "discarded": true
+      "discarded": true,
+      "first_seen_at": "2026-11-01T00:28:35.325352+00:00",
+      "discard_reason": "Contenido con doble sentido sexual; fuera de la política de respuesta.",
+      "discarded_at": "2026-11-02T23:56:29.163306+00:00"
     },
     {
       "comment_id": "122179119159072582_1818091765861687",
@@ -86,7 +97,8 @@
       "approved": true,
       "published": true,
       "published_at": "2026-11-01T05:29:13.383371+00:00",
-      "reply_id": "122179119159072582_39794583950157507"
+      "reply_id": "122179119159072582_39794583950157507",
+      "first_seen_at": "2026-11-01T00:28:36.527475+00:00"
     },
     {
       "comment_id": "122179102479072582_28962793316682101",
@@ -97,7 +109,8 @@
       "approved": true,
       "published": true,
       "published_at": "2026-11-01T05:29:16.916393+00:00",
-      "reply_id": "122179102479072582_1462846369245373"
+      "reply_id": "122179102479072582_1462846369245373",
+      "first_seen_at": "2026-11-01T00:28:37.904839+00:00"
     },
     {
       "comment_id": "122179210755072582_1826285845058020",
@@ -108,7 +121,8 @@
       "approved": true,
       "published": true,
       "published_at": "2026-11-01T05:29:20.347833+00:00",
-      "reply_id": "122179210755072582_2361049784731446"
+      "reply_id": "122179210755072582_2361049784731446",
+      "first_seen_at": "2026-11-01T00:28:33.612914+00:00"
     },
     {
       "comment_id": "122179119159072582_1505910438041149",
@@ -119,7 +133,8 @@
       "approved": true,
       "published": true,
       "published_at": "2026-11-01T05:29:23.913083+00:00",
-      "reply_id": "122179119159072582_1444375074471710"
+      "reply_id": "122179119159072582_1444375074471710",
+      "first_seen_at": "2026-11-01T00:28:36.663787+00:00"
     },
     {
       "comment_id": "122179119159072582_1755600252174758",
@@ -130,7 +145,8 @@
       "approved": true,
       "published": true,
       "published_at": "2026-11-01T05:29:27.360058+00:00",
-      "reply_id": "122179119159072582_1128762136306505"
+      "reply_id": "122179119159072582_1128762136306505",
+      "first_seen_at": "2026-11-01T00:28:36.701358+00:00"
     },
     {
       "comment_id": "122179119159072582_1812115769823895",
@@ -141,7 +157,8 @@
       "approved": true,
       "published": true,
       "published_at": "2026-11-01T05:29:47+0000",
-      "reply_id": "122179119159072582_2005730760120720"
+      "reply_id": "122179119159072582_2005730760120720",
+      "first_seen_at": "2026-11-01T00:28:36.481420+00:00"
     },
     {
       "comment_id": "122179119159072582_1867023127657043",
@@ -152,7 +169,8 @@
       "approved": true,
       "published": true,
       "published_at": "2026-11-01T05:29:51+0000",
-      "reply_id": "122179119159072582_1394578632759091"
+      "reply_id": "122179119159072582_1394578632759091",
+      "first_seen_at": "2026-11-01T00:28:36.443804+00:00"
     },
     {
       "comment_id": "122179119159072582_1416029886906865",
@@ -163,7 +181,8 @@
       "approved": true,
       "published": true,
       "published_at": "2026-11-01T05:29:54+0000",
-      "reply_id": "122179119159072582_1157938843394948"
+      "reply_id": "122179119159072582_1157938843394948",
+      "first_seen_at": "2026-11-01T00:28:36.823340+00:00"
     },
     {
       "comment_id": "122179119159072582_1147551727808107",
@@ -174,7 +193,8 @@
       "approved": true,
       "published": true,
       "published_at": "2026-11-01T05:29:57+0000",
-      "reply_id": "122179119159072582_1666430591882041"
+      "reply_id": "122179119159072582_1666430591882041",
+      "first_seen_at": "2026-11-01T00:28:36.404275+00:00"
     },
     {
       "comment_id": "122179119159072582_2046814046014798",
@@ -185,7 +205,8 @@
       "approved": true,
       "published": true,
       "published_at": "2026-11-01T05:30:01+0000",
-      "reply_id": "122179119159072582_978011688187840"
+      "reply_id": "122179119159072582_978011688187840",
+      "first_seen_at": "2026-11-01T00:28:36.785192+00:00"
     },
     {
       "comment_id": "122179119159072582_1682499686726725",
@@ -196,7 +217,8 @@
       "approved": true,
       "published": true,
       "published_at": "2026-11-01T05:45:07+0000",
-      "reply_id": "122179119159072582_2212589899615354"
+      "reply_id": "122179119159072582_2212589899615354",
+      "first_seen_at": "2026-11-01T00:28:36.625446+00:00"
     },
     {
       "comment_id": "122179487679072582_1099501746311805",
@@ -205,7 +227,10 @@
       "character": "Universe",
       "approved_response": "Claro, y yo soy el jefe de memes aquí.",
       "approved": false,
-      "discarded": true
+      "discarded": true,
+      "first_seen_at": "2026-11-01T00:28:24.151355+00:00",
+      "discard_reason": "Reacción de baja señal con emoji; no hay conversación que responder.",
+      "discarded_at": "2026-11-02T23:56:29.163306+00:00"
     },
     {
       "comment_id": "122179119159072582_1436333617965220",
@@ -216,16 +241,16 @@
       "approved": true,
       "published": true,
       "published_at": "2026-11-01T05:45:13+0000",
-      "reply_id": "122179119159072582_1552364246698911"
+      "reply_id": "122179119159072582_1552364246698911",
+      "first_seen_at": "2026-11-01T00:28:36.748167+00:00"
     },
     {
       "comment_id": "122179326723072582_1032084503248534",
       "author": "Usuario",
       "comment_text": "Caracter 🙃👏",
       "character": "Wilfred",
-      "approved_response": "Wilfred aplaudiendo la paz interior como quien aplaude un milagro.",
-      "approved": false,
-      "discarded": true,
+      "approved_response": "Wilfred aplaudiendo tu nivel de profundidad, o al menos eso intenta.",
+      "approved": true,
       "delegated_to": "aprobaciones_nuevas_8.json",
       "agent": {
         "name": "communications_agent",
@@ -249,16 +274,21 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "published": true,
+      "published_at": "2026-11-01T05:45:43.769008+00:00",
+      "reply_id": "122179326723072582_1632247595037077",
+      "reconciled_from": "aprobaciones_nuevas_8.json",
+      "reconciled_at": "2026-11-02T23:55:49.878348+00:00",
+      "first_seen_at": "2026-11-01T00:28:31.778850+00:00"
     },
     {
       "comment_id": "122179381683072582_1111590048280653",
       "author": "Usuario",
       "comment_text": "Apoco si? Siempre has sentido algo por mi?",
       "character": "Elara+Fantasma",
-      "approved_response": "¿Sentir? Yo solo existo para complicar, no para sentir.",
-      "approved": false,
-      "discarded": true,
+      "approved_response": "Si hubiera sentido algo, ya lo habría dicho, no soy adivino.",
+      "approved": true,
       "delegated_to": "aprobaciones_nuevas_8.json",
       "agent": {
         "name": "communications_agent",
@@ -282,7 +312,13 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "published": true,
+      "published_at": "2026-11-01T05:45:48.299277+00:00",
+      "reply_id": "122179381683072582_2153279908608736",
+      "reconciled_from": "aprobaciones_nuevas_8.json",
+      "reconciled_at": "2026-11-02T23:55:49.878348+00:00",
+      "first_seen_at": "2026-11-01T00:28:29.202995+00:00"
     },
     {
       "comment_id": "122179352091072582_987847484376550",
@@ -290,8 +326,7 @@
       "comment_text": "Me urge una platica de esas",
       "character": "Evan",
       "approved_response": "Claro, una plática normal es el unicornio de las conversaciones.",
-      "approved": false,
-      "discarded": true,
+      "approved": true,
       "delegated_to": "aprobaciones_nuevas_8.json",
       "agent": {
         "name": "communications_agent",
@@ -315,16 +350,21 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "published": true,
+      "published_at": "2026-11-01T05:45:52.903010+00:00",
+      "reply_id": "122179352091072582_2542823456241849",
+      "reconciled_from": "aprobaciones_nuevas_8.json",
+      "reconciled_at": "2026-11-02T23:55:49.878348+00:00",
+      "first_seen_at": "2026-11-01T00:28:30.203811+00:00"
     },
     {
       "comment_id": "122179472907072582_1847808849729830",
       "author": "Códigos Leonora",
       "comment_text": "O por las cosas que miro en páginas raras....",
       "character": "Maeve",
-      "approved_response": "Claro, porque las páginas raras son la verdadera fuente de gastos, no Maeve.",
-      "approved": false,
-      "discarded": true,
+      "approved_response": "Claro, las páginas raras son el paraíso del gasto sin remordimientos.",
+      "approved": true,
       "delegated_to": "aprobaciones_nuevas_8.json",
       "agent": {
         "name": "communications_agent",
@@ -348,17 +388,21 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "published": true,
+      "published_at": "2026-11-01T06:00:55.817052+00:00",
+      "reply_id": "122179472907072582_1441767240813406",
+      "reconciled_from": "aprobaciones_nuevas_8.json",
+      "reconciled_at": "2026-11-02T23:55:49.878348+00:00",
+      "first_seen_at": "2026-11-01T00:28:27.844772+00:00"
     },
     {
       "comment_id": "122179381683072582_2138550423716440",
       "author": "Usuario",
       "comment_text": "No coopera🤷🏻🤣",
       "character": "Elara+Fantasma",
-      "approved_response": "No ayuda, pero por suerte sigue respirando, que es más de lo que esperaba.",
-      "approved": false,
-      "discarded": true,
-      "delegated_to": "aprobaciones_nuevas_8.json",
+      "approved_response": "No coopera, pero ahí sigue, ni muerto ni colaborando.",
+      "approved": true,
       "agent": {
         "name": "communications_agent",
         "model": "openai/gpt-4.1-mini",
@@ -381,7 +425,11 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "published": true,
+      "published_at": "2026-11-01T06:00:59+0000",
+      "reply_id": "122179381683072582_1482639513783873",
+      "first_seen_at": "2026-11-01T04:07:23.347278+00:00"
     },
     {
       "comment_id": "122179516269072582_1438602430998743",
@@ -415,7 +463,8 @@
       },
       "published": true,
       "published_at": "2026-11-01T05:45:17+0000",
-      "reply_id": "122179516269072582_2219727132089692"
+      "reply_id": "122179516269072582_2219727132089692",
+      "first_seen_at": "2026-11-01T04:07:09.391019+00:00"
     },
     {
       "comment_id": "122179472907072582_28970744202586492",
@@ -450,15 +499,16 @@
       "review_reason": "Responde con ironía al comentario que duda del gasto, conectando con la broma del meme sobre cuánto gasta Maeve. Cumple la política de respuesta. No conecta con la broma de cuánto gasta Maeve.",
       "published": true,
       "published_at": "2026-11-01T19:17:42.385734+00:00",
-      "reply_id": "122179472907072582_2247629715798012"
+      "reply_id": "122179472907072582_2247629715798012",
+      "first_seen_at": "2026-11-01T16:06:37.864088+00:00"
     },
     {
       "comment_id": "122179516269072582_1648213373441631",
       "author": "Usuario",
       "comment_text": "Universe Sent Me Sigue en pie la prueba ??😳🤣😂🤣😂🤣😂",
       "character": "Kael",
-      "approved_response": "Claro, la prueba sigue, pero el cuerpo hace spoilers y no avisa.",
-      "approved": false,
+      "approved_response": "La prueba sigue. Mi cuerpo ya está mandando spoilers. 😏",
+      "approved": true,
       "agent": {
         "name": "communications_agent",
         "model": "openai/gpt-4.1-mini",
@@ -481,26 +531,32 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "published": true,
+      "published_at": "2026-11-02T02:54:44.532951+00:00",
+      "reply_id": "122179516269072582_28931641129832538",
+      "first_seen_at": "2026-11-01T16:06:31.730878+00:00"
     },
     {
       "comment_id": "122179593561072582_1799932724606139",
       "author": "Usuario",
       "comment_text": "Universe Sent Me wowww wowww xq tan impulsivo ,te tiro yo las cartas😉😉😉.....",
       "character": "Universe",
-      "approved_response": "Claro, las cartas son lo mío, pero no siempre acierto... ni quiero.",
-      "approved": false,
+      "approved_response": "Claro, porque las cartas siempre escuchan consejos de fans impacientes.",
+      "approved": true,
       "agent": {
         "name": "communications_agent",
         "model": "openai/gpt-4.1-mini",
-        "intent": "other",
+        "intent": "humor",
         "confidence": 0.9,
         "quality_ok": true,
         "policy_flags": [],
+        "decision": "suggest",
+        "reason": "El comentario bromea con la impulsividad de Evan y ofrece tirar las cartas, lo que conecta con el remate del meme sobre barajar bien.",
         "usage": {
-          "prompt_tokens": 1907,
-          "completion_tokens": 74,
-          "total_tokens": 1981,
+          "prompt_tokens": 2009,
+          "completion_tokens": 81,
+          "total_tokens": 2090,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0
@@ -512,7 +568,12 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "approved_at": "2026-11-02T06:27:29.851713+00:00",
+      "published": true,
+      "published_at": "2026-11-01T17:06:53+0000",
+      "reply_id": "122179593561072582_1131631532742120",
+      "first_seen_at": "2026-11-01T16:06:27.671933+00:00"
     },
     {
       "comment_id": "122179593561072582_30029152840022051",
@@ -546,15 +607,16 @@
       },
       "published": true,
       "published_at": "2026-11-01T19:17:50.528609+00:00",
-      "reply_id": "122179593561072582_1666458455037591"
+      "reply_id": "122179593561072582_1666458455037591",
+      "first_seen_at": "2026-11-01T18:04:24.011402+00:00"
     },
     {
       "comment_id": "122179640145072582_4093977530733237",
       "author": "Usuario",
       "comment_text": "si mi pecado es ser npc, arránquenme la vida  ..†",
-      "character": "Universe",
-      "approved_response": "Tranquilo, que ser NPC es el plot twist más triste del juego.",
-      "approved": false,
+      "character": "Wilfred",
+      "approved_response": "Ser NPC es solo el tutorial para conseguir una conciencia.",
+      "approved": true,
       "agent": {
         "name": "communications_agent",
         "model": "openai/gpt-4.1-mini",
@@ -579,37 +641,738 @@
         }
       },
       "review_reason": "No se pudo generar un borrador válido; requiere revisión humana.",
-      "risk_level": "medium"
+      "risk_level": "medium",
+      "published": true,
+      "published_at": "2026-11-02T02:54:48.771169+00:00",
+      "reply_id": "122179640145072582_2225329981737223",
+      "first_seen_at": "2026-11-01T23:03:32.287903+00:00"
     },
     {
       "comment_id": "122179649391072582_945793328357426",
       "author": "Usuario",
       "comment_text": "Ojalá se pudiera viajar a varios mundos en un día,y poder olvidarse de lo negativo, da igual!!espérame voy contigo y qué fluya la magia 🪄",
       "character": "Universe",
-      "approved_response": "Claro, y de paso que el GPS no se pierda en el multiverso, ¿no?",
-      "approved": false,
+      "approved_response": "Acepto. Gatita con lentes: primer destino, un mundo sin lo negativo. ✨",
+      "approved": true,
       "agent": {
         "name": "legacy_responder",
         "fallback": true,
         "error_type": "OmniRouteError"
       },
       "review_reason": "No se pudo generar un borrador válido; requiere revisión humana.",
-      "risk_level": "medium"
+      "risk_level": "medium",
+      "published": true,
+      "published_at": "2026-11-02T02:54:52.207211+00:00",
+      "reply_id": "122179649391072582_1681246406858064",
+      "first_seen_at": "2026-11-02T00:02:04.417458+00:00"
     },
     {
       "comment_id": "122179640145072582_1644080840426111",
       "author": "Usuario",
       "comment_text": "Por ejemplo",
-      "character": "Universe",
+      "character": "Wilfred",
       "approved_response": "Por ejemplo, la nada también es una opción válida.",
       "approved": false,
+      "discarded": true,
       "agent": {
         "name": "legacy_responder",
         "fallback": true,
         "error_type": "OmniRouteError"
       },
       "review_reason": "No se pudo generar un borrador válido; requiere revisión humana.",
-      "risk_level": "medium"
+      "risk_level": "medium",
+      "first_seen_at": "2026-11-02T00:02:05.058248+00:00",
+      "discard_reason": "Comentario incompleto sin borrador válido; contexto insuficiente.",
+      "discarded_at": "2026-11-02T23:56:29.163306+00:00",
+      "comment_created_at": "2026-11-01T23:58:07+0000"
+    },
+    {
+      "comment_id": "122179662765072582_1780111989961628",
+      "author": "Usuario",
+      "comment_text": "Se han visto casos, pero solo los gatos dicen, \"miau\".. jaja pero en todo caso el gato siempre te acompaña.",
+      "character": "Universe",
+      "approved_response": "El gato siempre te acompaña; el detalle es cuando empiezas a hablar bajito para que no te escuche.",
+      "approved": true,
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "humor",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 1966,
+          "completion_tokens": 79,
+          "total_tokens": 2045,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "published": true,
+      "published_at": "2026-11-02T04:10:29.993805+00:00",
+      "reply_id": "122179662765072582_1423245386122767",
+      "first_seen_at": "2026-11-02T03:04:47.870931+00:00"
+    },
+    {
+      "comment_id": "122179608195072582_2202224250705320",
+      "author": "Usuario",
+      "comment_text": "Si, mochense",
+      "character": "Universe",
+      "approved_response": "Claro, mochense, que compartir es vivir... o morir en el intento.",
+      "approved": true,
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "humor",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "decision": "suggest",
+        "reason": "El comentario sigue el juego del meme sobre no ser egoísta con las nalgas, se puede responder con humor seco y sarcástico.",
+        "usage": {
+          "prompt_tokens": 2006,
+          "completion_tokens": 81,
+          "total_tokens": 2087,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "approved_at": "2026-11-02T06:27:29.851713+00:00",
+      "published": true,
+      "published_at": "2026-11-02T06:27:40.027865+00:00",
+      "reply_id": "122179608195072582_1125597139849013",
+      "first_seen_at": "2026-11-02T04:01:23.526022+00:00"
+    },
+    {
+      "comment_id": "122179662765072582_28816266691399920",
+      "author": "Usuario",
+      "comment_text": "Chiapas 🥶",
+      "character": "Universe",
+      "approved_response": "Chiapas congelado, pero el drama siempre calienta el ambiente.",
+      "approved": false,
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "other",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 1943,
+          "completion_tokens": 70,
+          "total_tokens": 2013,
+          "prompt_tokens_details": {
+            "cached_tokens": 1792,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "discarded": true,
+      "discarded_at": "2026-11-02T06:27:29.851713+00:00",
+      "discard_reason": "Fuera de contexto; respuesta no aprobada.",
+      "first_seen_at": "2026-11-02T04:01:14.043666+00:00",
+      "comment_created_at": "2026-11-02T03:13:06+0000"
+    },
+    {
+      "comment_id": "122179593561072582_1168252769103843",
+      "author": "Usuario",
+      "comment_text": "Creo que lo de , estupida , está de más , Pero pues cada quien , yo no más digo ,🤣😂",
+      "character": "Evan",
+      "approved_response": "Claro, porque la sutileza es el fuerte de Evan, ¿no?",
+      "approved": true,
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "opinion",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "decision": "suggest",
+        "reason": "El comentario critica el uso de un insulto en el meme, la respuesta usa sarcasmo para seguir la broma del meme sin confrontar directamente.",
+        "usage": {
+          "prompt_tokens": 2011,
+          "completion_tokens": 82,
+          "total_tokens": 2093,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "approved_at": "2026-11-02T06:27:29.851713+00:00",
+      "published": true,
+      "published_at": "2026-11-02T06:27:52.871788+00:00",
+      "reply_id": "122179593561072582_1121074484014926",
+      "first_seen_at": "2026-11-02T04:01:27.170809+00:00"
+    },
+    {
+      "comment_id": "122179608195072582_1590565003097550",
+      "author": "Usuario",
+      "comment_text": "Duro, pues! 😅💪",
+      "character": "Universe",
+      "approved_response": "Claro, compartir es vivir... hasta con las nalgas. No tan egoísta.",
+      "approved": true,
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "humor",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "decision": "suggest",
+        "reason": "El comentario reacciona al humor del meme con entusiasmo y emojis, se puede responder con un remate sarcástico que siga la broma.",
+        "usage": {
+          "prompt_tokens": 2011,
+          "completion_tokens": 84,
+          "total_tokens": 2095,
+          "prompt_tokens_details": {
+            "cached_tokens": 1920,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "approved_at": "2026-11-02T06:27:29.851713+00:00",
+      "published": true,
+      "published_at": "2026-11-02T06:28:01.277948+00:00",
+      "reply_id": "122179608195072582_1576709917558293",
+      "first_seen_at": "2026-11-02T04:01:24.984753+00:00"
+    },
+    {
+      "comment_id": "122179608195072582_2552835861810167",
+      "author": "Usuario",
+      "comment_text": "Como dicen: si se las han de comer los gusanos,  que mejor se las coman los humanos",
+      "character": "Universe",
+      "approved_response": "Claro, al menos los humanos no piden permiso ni dejan reseñas.",
+      "approved": true,
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "humor",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "decision": "suggest",
+        "reason": "El comentario sigue la broma del meme con un giro humorístico sobre quién 'se come' las nalgas.",
+        "usage": {
+          "prompt_tokens": 2024,
+          "completion_tokens": 74,
+          "total_tokens": 2098,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "approved_at": "2026-11-02T06:27:29.851713+00:00",
+      "published": true,
+      "published_at": "2026-11-02T06:28:05.239005+00:00",
+      "reply_id": "122179608195072582_2435584500583756",
+      "first_seen_at": "2026-11-02T04:01:21.362584+00:00"
+    },
+    {
+      "comment_id": "122179686819072582_1408151904639570",
+      "author": "Usuario",
+      "comment_text": "Quien?",
+      "character": "Universe",
+      "approved_response": "El mundo espera, pero parece que nadie se apunta.",
+      "approved": true,
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "humor",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "decision": "suggest",
+        "reason": "El comentario pregunta 'Quien?' frente al meme que implica una urgencia global por un beso, se responde con ironía al no haber voluntarios.",
+        "usage": {
+          "prompt_tokens": 1994,
+          "completion_tokens": 77,
+          "total_tokens": 2071,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "approved_at": "2026-11-02T06:27:29.851713+00:00",
+      "published": true,
+      "published_at": "2026-11-02T06:28:09.122926+00:00",
+      "reply_id": "122179686819072582_1765532261759940",
+      "first_seen_at": "2026-11-02T04:01:11.645795+00:00"
+    },
+    {
+      "comment_id": "122179662765072582_2237767733434389",
+      "author": "Usuario",
+      "comment_text": "Da miedito si te contesta",
+      "character": "Universe",
+      "approved_response": "Peor: te contesta con argumentos.",
+      "approved": true,
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "humor",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 2039,
+          "completion_tokens": 70,
+          "total_tokens": 2109,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "approved_at": "2026-11-02T21:53:30+00:00",
+      "published": true,
+      "published_at": "2026-11-02T21:53:55.280286+00:00",
+      "reply_id": "122179662765072582_1705306447677122",
+      "first_seen_at": "2026-11-02T14:03:17.436190+00:00"
+    },
+    {
+      "comment_id": "122179467687072582_1139536535496525",
+      "author": "Universe Sent Me",
+      "comment_text": "Universe Sent Me",
+      "character": "Evan",
+      "approved_response": "Doble tortilla, doble protección. Que no se rompa ni el antojo.",
+      "approved": false,
+      "discarded": true,
+      "discard_reason": "Mención de la propia página; sin chiste que responder.",
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "other",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 2001,
+          "completion_tokens": 78,
+          "total_tokens": 2079,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "first_seen_at": "2026-11-01T00:28:28.411461+00:00"
+    },
+    {
+      "comment_id": "122179662765072582_2237068026852926",
+      "author": "Usuario",
+      "comment_text": "Mis gatos.me sacan del hoyo depresivo ❤️",
+      "character": "Universe",
+      "approved_response": "Y ni te mandan factura por escucharte.",
+      "approved": true,
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "affection",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 2042,
+          "completion_tokens": 75,
+          "total_tokens": 2117,
+          "prompt_tokens_details": {
+            "cached_tokens": 1920,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "approved_at": "2026-11-02T21:53:30+00:00",
+      "published": true,
+      "published_at": "2026-11-02T21:54:04.074014+00:00",
+      "reply_id": "122179662765072582_1477849320929691",
+      "first_seen_at": "2026-11-02T15:04:41.222641+00:00"
+    },
+    {
+      "comment_id": "122179805529072582_4112907552177309",
+      "author": "Usuario",
+      "comment_text": "Es el fracaso quien ilumina al éxito",
+      "character": "Universe",
+      "approved_response": "Y el fracaso cobra la luz aparte.",
+      "approved": true,
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "opinion",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 1946,
+          "completion_tokens": 73,
+          "total_tokens": 2019,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "approved_at": "2026-11-02T21:53:30+00:00",
+      "published": true,
+      "published_at": "2026-11-02T21:54:07.476355+00:00",
+      "reply_id": "122179805529072582_1597491354966590",
+      "first_seen_at": "2026-11-02T18:02:13.178931+00:00"
+    },
+    {
+      "comment_id": "122179649391072582_1174335995151068",
+      "author": "Usuario",
+      "comment_text": "Yegnni Ol 🥹",
+      "character": "Universe",
+      "approved_response": "Claro, porque ser gatita es la solución a todo, ¿no?",
+      "approved": false,
+      "discarded": true,
+      "discard_reason": "Posible etiqueta de usuario; no se responde.",
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "humor",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 2001,
+          "completion_tokens": 75,
+          "total_tokens": 2076,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "first_seen_at": "2026-11-02T18:02:31.952023+00:00",
+      "comment_created_at": "2026-11-02T17:07:43+0000"
+    },
+    {
+      "comment_id": "122179811133072582_1130824239672054",
+      "author": "Usuario",
+      "comment_text": "Lo regalado no se devuelve",
+      "character": "Universe",
+      "approved_response": "Claro, porque lo regalado es el karma disfrazado de deuda eterna.",
+      "approved": false,
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "humor",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 1944,
+          "completion_tokens": 79,
+          "total_tokens": 2023,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "first_seen_at": "2026-11-02T18:02:09.796475+00:00",
+      "discarded": true,
+      "discard_reason": "Contexto ambiguo; sin señal suficiente para una respuesta en personaje.",
+      "discarded_at": "2026-11-02T23:55:49.878348+00:00"
+    },
+    {
+      "comment_id": "122179805529072582_2595379314220112",
+      "author": "Usuario",
+      "comment_text": "La experiencia hace al mai😬🙃",
+      "character": "Universe",
+      "approved_response": "Claro, y el mai viene con manual de instrucciones que nadie lee.",
+      "approved": false,
+      "discarded": true,
+      "discard_reason": "Contexto ambiguo; no hay interpretación segura.",
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "other",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 1947,
+          "completion_tokens": 75,
+          "total_tokens": 2022,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "first_seen_at": "2026-11-02T18:02:15.480932+00:00",
+      "comment_created_at": "2026-11-02T17:58:29+0000"
+    },
+    {
+      "comment_id": "122179686819072582_1290270153241863",
+      "author": "Usuario",
+      "comment_text": "Experta total 😁",
+      "character": "Universe",
+      "approved_response": "Y el mundo aquí sigue en pie.",
+      "approved": true,
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "humor",
+        "confidence": 0.9,
+        "quality_ok": false,
+        "policy_flags": [
+          "forbidden_phrase"
+        ],
+        "usage": {
+          "prompt_tokens": 4106,
+          "completion_tokens": 130,
+          "total_tokens": 4236,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "review_reason": "Responde con ironía a la pose de experto sin implicar intimidad. Incluye una frase prohibida por la guía de voz.",
+      "approved_at": "2026-11-02T21:53:30+00:00",
+      "published": true,
+      "published_at": "2026-11-02T21:54:10.428400+00:00",
+      "reply_id": "122179686819072582_1642139630665041",
+      "first_seen_at": "2026-11-02T18:02:22.113875+00:00"
+    },
+    {
+      "comment_id": "122179805529072582_1654824946113613",
+      "author": "Usuario",
+      "comment_text": "Como bien debe ser...👍🎉",
+      "character": "Universe",
+      "approved_response": "Claro, porque el estándar es no sorprenderse nunca.",
+      "approved": false,
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "other",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 1946,
+          "completion_tokens": 65,
+          "total_tokens": 2011,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "first_seen_at": "2026-11-02T20:03:50.668807+00:00",
+      "discarded": true,
+      "discard_reason": "Reacción de baja señal con emoji; no hay conversación que responder.",
+      "discarded_at": "2026-11-02T23:55:49.878348+00:00"
+    },
+    {
+      "comment_id": "122179662765072582_1472117101465448",
+      "author": "Usuario",
+      "comment_text": "Vane Oviedo vamos por la esquizofrenia 😂😂😂",
+      "character": "Universe",
+      "approved_response": "Claro, que el gato te conteste es el nuevo nivel de conversación. 😂",
+      "approved": false,
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "humor",
+        "confidence": 0.95,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 2045,
+          "completion_tokens": 79,
+          "total_tokens": 2124,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "first_seen_at": "2026-11-02T22:03:54.120692+00:00",
+      "discarded": true,
+      "discard_reason": "Posible etiqueta a Vane Oviedo; se descarta por mención.",
+      "discarded_at": "2026-11-02T23:55:49.878348+00:00",
+      "comment_created_at": "2026-11-02T21:24:04+0000"
+    },
+    {
+      "comment_id": "122179136481072582_1612884310305050",
+      "approved": true,
+      "approved_response": "Poético, sí, como un gato con guantes de boxeo.",
+      "published": true,
+      "published_at": "2026-11-01T05:45:24.519202+00:00",
+      "reply_id": "122179136481072582_1121999246872468",
+      "reconciled_from": "aprobaciones_nuevas_8.json",
+      "reconciled_at": "2026-11-02T23:55:49.878348+00:00",
+      "first_seen_at": "2026-11-01T00:28:35.281626+00:00"
+    },
+    {
+      "comment_id": "122179246437072582_1822645942409315",
+      "approved": true,
+      "approved_response": "Claro, fingir bien es un arte que pocos dominan sin arruinar la función.",
+      "published": true,
+      "published_at": "2026-11-01T05:45:29.478755+00:00",
+      "reply_id": "122179246437072582_1127580786656692",
+      "reconciled_from": "aprobaciones_nuevas_8.json",
+      "reconciled_at": "2026-11-02T23:55:49.878348+00:00",
+      "first_seen_at": "2026-11-01T00:28:32.430234+00:00"
+    },
+    {
+      "comment_id": "122179119159072582_1672690888202146",
+      "approved": true,
+      "approved_response": "Ya el meme los puso en la lista VIP del club de los que se sienten muy chingones.",
+      "published": true,
+      "published_at": "2026-11-01T06:00:58.884098+00:00",
+      "reply_id": "122179119159072582_1639502514516680",
+      "reconciled_from": "aprobaciones_nuevas_8.json",
+      "reconciled_at": "2026-11-02T23:55:49.878348+00:00",
+      "first_seen_at": "2026-11-01T00:28:36.366505+00:00"
+    },
+    {
+      "comment_id": "122179870935072582_2133805607219650",
+      "author": "Usuario",
+      "comment_text": "Osea si , Pero la entrada eres tu , mamacita 😈🫦👅",
+      "character": "Universe",
+      "approved_response": "La entrada soy yo y la salida es un misterio, mamacita.",
+      "approved": false,
+      "comment_created_at": "2026-11-02T23:53:00+0000",
+      "first_seen_at": "2026-11-03T00:01:38.040362+00:00",
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "other",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 1958,
+          "completion_tokens": 70,
+          "total_tokens": 2028,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "discarded": true,
+      "discard_reason": "Contenido sexual explícito; descarte por instrucción de revisión humana.",
+      "discarded_at": "2026-11-03T00:09:30.781163+00:00"
     }
-  ]
+  ],
+  "last_reconciled_at": "2026-11-03T00:09:30.781163+00:00"
 }
