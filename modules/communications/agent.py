@@ -321,6 +321,8 @@ class CommunicationsAgent:
             "Nada de 'gobierna', 'reina', 'jefa' o 'empoderada'.\n"
             "- Evita frases genéricas de revista o motivación. La respuesta debe aterrizar en el meme, "
             "el nombre del asset o el remate visual.\n"
+            "- Prohibido abrir con 'Claro', 'Claro, porque', 'Es que', 'La verdad', 'Bueno', "
+            "'Pues', 'Mira' o 'Básicamente'. Empieza directo en la imagen, el remate o el personaje.\n"
             "- El MEME y el COPY mandan sobre el nombre del archivo. Si el asset y el meme difieren, "
             "responde al chiste visible, nunca al nombre técnico.\n"
             "- Interpreta el asset y el comentario juntos, no por palabras aisladas. Si el asset dice "
@@ -343,6 +345,7 @@ class CommunicationsAgent:
             f"MEME: {context.get('meme_text') or '(sin texto)'}\n"
             f"CONTEXTO VISUAL: {context.get('visual_context') or '(sin descripción)'}\n"
             f"COPY: {context.get('caption') or '(sin copy)'}\n"
+            f"ARRANQUES YA USADOS (no los repitas): {self._recent_openers() or '(ninguno)'}\n"
             "SEÑALES DE CONTEXTO:\n"
             f"{_context_hints(comment, context)}\n"
             f"COMENTARIO PÚBLICO: {_text(comment)}"
@@ -351,6 +354,24 @@ class CommunicationsAgent:
             {"role": "system", "content": system},
             {"role": "user", "content": user},
         ]
+
+    def _recent_openers(self, limit: int = 8) -> str:
+        """Devuelve los arranques ya usados para que el modelo no los repita."""
+        try:
+            payload = json.loads(self.paths.approvals_file.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            return ""
+        items = [
+            item
+            for item in (payload.get("approvals") or [])
+            if isinstance(item, dict) and str(item.get("approved_response") or "").strip()
+        ]
+        openers: List[str] = []
+        for item in items[-limit:]:
+            first = str(item["approved_response"]).strip().split()[0].strip(",.¡!¿?\"'«»“”")
+            if first and first not in openers:
+                openers.append(first)
+        return ", ".join(openers)
 
     def _repair_messages(
         self,
@@ -362,6 +383,8 @@ class CommunicationsAgent:
         messages = self._messages(comment, context)
         flags = ", ".join(rejected.get("policy_flags") or []) or "incumplimiento de política"
         reason = _text(rejected.get("reason")) or "La propuesta fue rechazada."
+        if "formulaic_opener" in (rejected.get("policy_flags") or []):
+            reason += " Empieza con otra palabra: no uses 'Claro', 'Es que' ni 'La verdad'."
         messages.append(
             {
                 "role": "assistant",

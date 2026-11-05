@@ -68,7 +68,17 @@ def _approval_stats(items: list[Dict[str, Any]]) -> Dict[str, Any]:
     }
 
 
-def _log_stats(rows: list[Dict[str, str]]) -> Dict[str, int]:
+def _log_stats(rows: list[Dict[str, str]]) -> Dict[str, Any]:
+    latest: Dict[str, Dict[str, str]] = {}
+    for row in rows:
+        comment_id = str(row.get("comment_id") or "")
+        if comment_id:
+            latest[comment_id] = row
+    missing_meme = [
+        comment_id
+        for comment_id, row in latest.items()
+        if row.get("publish_status") == "sin_contexto"
+    ]
     return {
         "rows": len(rows),
         "pending_approval": sum(row.get("publish_status") == "pending_approval" for row in rows),
@@ -76,6 +86,8 @@ def _log_stats(rows: list[Dict[str, str]]) -> Dict[str, int]:
         "already_published": sum(row.get("publish_status") == "already_published" for row in rows),
         "discarded": sum(row.get("publish_status") == "discarded" for row in rows),
         "already_replied": sum(row.get("publish_status") == "already_replied" for row in rows),
+        "sin_contexto": len(missing_meme),
+        "sin_contexto_comment_ids": missing_meme,
     }
 
 

@@ -14,6 +14,22 @@ from typing import Iterable
 
 DEFAULT_MAX_CHARS = 90
 
+FORMULAIC_OPENERS = (
+    "claro",
+    "es que",
+    "la verdad",
+    "bueno",
+    "pues",
+    "mira",
+    "básicamente",
+    "basicamente",
+)
+
+_OPENER_PATTERN = re.compile(
+    r"^(?:" + "|".join(re.escape(item) for item in FORMULAIC_OPENERS) + r")\b",
+    re.IGNORECASE,
+)
+
 FORBIDDEN_PHRASES = (
     "deberíamos",
     "debería",
@@ -308,6 +324,12 @@ def check_response(
     if _contains_any(lowered, BRAND_SLOGAN_PHRASES):
         flags.append("brand_slogan")
         reasons.append("No debe sonar a eslogan de empoderamiento o marca.")
+    opener_candidate = value.lstrip(" \t\"'«“¡!¿?")
+    if _OPENER_PATTERN.match(opener_candidate):
+        flags.append("formulaic_opener")
+        reasons.append(
+            "No debe empezar con muletillas tipo 'Claro', 'Es que' o 'La verdad'."
+        )
 
     unique_flags = tuple(dict.fromkeys(flags))
     return QualityDecision(

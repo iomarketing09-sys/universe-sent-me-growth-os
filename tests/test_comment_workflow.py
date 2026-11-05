@@ -145,6 +145,54 @@ def test_merge_approvals_drops_stale_blank_items():
     assert [item["comment_id"] for item in merged["approvals"]] == ["stale_edited"]
 
 
+def test_merge_approvals_actualiza_borrador_no_aprobado():
+    existing = {
+        "approvals": [
+            {
+                "comment_id": "c1",
+                "approved": False,
+                "approved_response": "Claro, porque viejo.",
+                "first_seen_at": "2026-10-01T00:00:00+00:00",
+                "discarded": True,
+            }
+        ]
+    }
+    generated = [
+        {
+            "comment_id": "c1",
+            "approved": False,
+            "approved_response": "Borrador nuevo sin muletilla.",
+            "first_seen_at": "2026-11-04T00:00:00+00:00",
+        }
+    ]
+
+    merged = merge_approval_payload(existing, generated)
+    item = merged["approvals"][0]
+
+    assert item["approved_response"] == "Borrador nuevo sin muletilla."
+    assert item["first_seen_at"] == "2026-10-01T00:00:00+00:00"
+    assert item["discarded"] is True
+
+
+def test_merge_approvals_no_toca_respuesta_aprobada_ni_publicada():
+    existing = {
+        "approvals": [
+            {"comment_id": "ok", "approved": True, "approved_response": "Aprobada"},
+            {"comment_id": "pub", "published": True, "approved_response": "Publicada"},
+        ]
+    }
+    generated = [
+        {"comment_id": "ok", "approved_response": "Otra"},
+        {"comment_id": "pub", "approved_response": "Otra"},
+    ]
+
+    merged = merge_approval_payload(existing, generated)
+    by_id = {item["comment_id"]: item for item in merged["approvals"]}
+
+    assert by_id["ok"]["approved_response"] == "Aprobada"
+    assert by_id["pub"]["approved_response"] == "Publicada"
+
+
 class FakeResponse:
     def __init__(self, payload, status_code=200):
         self.payload = payload

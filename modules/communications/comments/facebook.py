@@ -14,6 +14,7 @@ Features:
 - Modo dry-run y modo live seguro
 """
 import argparse
+import csv
 import json
 import os
 import time
@@ -31,7 +32,11 @@ from modules.communications.comments.log import (
     write_json_atomic,
 )
 from modules.communications.comments.paths import CommentPaths, load_tenant_config
-from modules.communications.comments.responder import UniverseResponder
+from modules.communications.comments.responder import (
+    UniverseResponder,
+    lacks_meme_context,
+    requires_meme_context,
+)
 from modules.config.env import META_ENV_KEYS, load_env_values, parse_env_file
 
 
@@ -204,6 +209,72 @@ class CommentProcessor:
                 return True
         return False
 
+    def _register_missing_contexts(self, posts: List[Dict[str, Any]]) -> int:
+        """Abre una fila vacía en el CSV de dictado para posts sin chiste.
+
+        Solo aplica a tenants que declaran ``comments.requires_meme_context``.
+        No escribe el JSON: el chiste entra por el CSV y el import explícito.
+        """
+        if not requires_meme_context(self.tenant_id, self.base_path):
+            return 0
+        csv_path = (
+            self.paths.tenant_dir / "metrics" / "publication_contexts_review.csv"
+        )
+        rows: List[Dict[str, str]] = []
+        if csv_path.is_file():
+            with csv_path.open(encoding="utf-8-sig", newline="") as handle:
+                rows = list(csv.DictReader(handle))
+        known = {str(row.get("id") or "").strip() for row in rows}
+        known.update(
+            str(ctx.get("publication_id") or "").strip()
+            for ctx in self.publication_contexts
+        )
+
+        added = 0
+        for post in posts:
+            post_id = str(post.get("id") or "").strip()
+            if not post_id or post_id in known:
+                continue
+            if str(self._find_context(post_id).get("meme_text") or "").strip():
+                continue
+            message = " ".join(str(post.get("message") or "").split())
+            character = ""
+            for tag in message.split():
+                if tag.startswith("#") and tag.endswith("USM") and len(tag) > 4:
+                    character = tag[1:-3]
+                    break
+            rows.append(
+                {
+                    "id": post_id,
+                    "copy": message,
+                    "personaje": character,
+                    "meme_text": "",
+                    "asset_ref": "",
+                    "status": "",
+                }
+            )
+            known.add(post_id)
+            added += 1
+
+        if not added:
+            return 0
+        csv_path.parent.mkdir(parents=True, exist_ok=True)
+        with csv_path.open("w", encoding="utf-8-sig", newline="") as handle:
+            writer = csv.DictWriter(
+                handle,
+                fieldnames=[
+                    "id",
+                    "copy",
+                    "personaje",
+                    "meme_text",
+                    "asset_ref",
+                    "status",
+                ],
+            )
+            writer.writeheader()
+            writer.writerows(rows)
+        return added
+
     def _load_delegated_comment_ids(self) -> set[str]:
         """IDs ya movidos a otra cola de aprobación, para no duplicarlos."""
         delegated: set[str] = set()
@@ -291,6 +362,18 @@ class CommentProcessor:
         publication_context: Dict[str, Any],
         comment: str,
     ) -> Dict[str, Any]:
+        if lacks_meme_context(self.tenant_id, self.base_path, publication_context):
+            return {
+                "publication_id": publication_context.get("publication_id"),
+                "comment": comment,
+                "comment_type": "sin_contexto",
+                "apparent_intent": "Falta el chiste del meme",
+                "relation_to_meme": "unclear",
+                "decision": "sin_contexto",
+                "response": None,
+                "risk_level": "low",
+                "review_reason": "Falta meme_text para responder con contexto",
+            }
         if not self.response_agent:
             return self.responder.respond(publication_context, comment)
         try:
@@ -380,10 +463,15 @@ class CommentProcessor:
                 if p_dt >= cutoff_dt:
                     recent_posts.append(p)
 
+        opened = self._register_missing_contexts(recent_posts)
+        if opened:
+            print(f"📝 Filas de dictado abiertas: {opened} (falta meme_text)")
+
         total_comments = 0
         already_replied_count = 0
         delegated_count = 0
         low_signal_count = 0
+        missing_context_count = 0
         pending_candidates = []
         processed_count = 0
 
@@ -444,6 +532,12 @@ class CommentProcessor:
                     self._log_comment(c, res, publish_status="discarded")
                     continue
 
+                # 3b. Falta el chiste del meme: no se propone respuesta
+                if decision == "sin_contexto":
+                    missing_context_count += 1
+                    self._log_comment(c, res, publish_status="sin_contexto")
+                    continue
+
                 # 4. Es un comentario de alta señal pendiente de respuesta
                 pending_candidates.append({
                     "comment_id": c["id"],
@@ -475,6 +569,7 @@ class CommentProcessor:
         print(f"    - 🟢 Ya respondidos (por ti o por bot): {already_replied_count}")
         print(f"    - 🔁 Delegados a otra cola: {delegated_count}")
         print(f"    - ⚪ Descartados por baja señal (emojis/risas): {low_signal_count}")
+        print(f"    - 🏳️ Sin chiste (falta meme_text): {missing_context_count}")
         print(f"    - 🟡 PENDIENTES DE ATENCIÓN (Alta señal sin respuesta): {len(pending_candidates)}")
         print("=" * 80)
 

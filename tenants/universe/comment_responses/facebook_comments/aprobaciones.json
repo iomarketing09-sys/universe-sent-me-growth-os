@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-03T00:01:38.063122+00:00",
+  "generated_at": "2026-11-05T18:02:55.417067+00:00",
   "lookback_hours": 48,
-  "total_pending": 12,
+  "total_pending": 14,
   "instructions": "Cambia 'approved: true' en los comentarios que quieras publicar y edita el texto si deseas.",
   "approvals": [
     {
@@ -793,7 +793,9 @@
       "discarded_at": "2026-11-02T06:27:29.851713+00:00",
       "discard_reason": "Fuera de contexto; respuesta no aprobada.",
       "first_seen_at": "2026-11-02T04:01:14.043666+00:00",
-      "comment_created_at": "2026-11-02T03:13:06+0000"
+      "comment_created_at": "2026-11-02T03:13:06+0000",
+      "review_reason": "No se pudo generar un borrador válido; requiere revisión humana.",
+      "risk_level": "medium"
     },
     {
       "comment_id": "122179593561072582_1168252769103843",
@@ -1192,7 +1194,9 @@
         }
       },
       "first_seen_at": "2026-11-02T18:02:15.480932+00:00",
-      "comment_created_at": "2026-11-02T17:58:29+0000"
+      "comment_created_at": "2026-11-02T17:58:29+0000",
+      "review_reason": "No se pudo generar un borrador válido; requiere revisión humana.",
+      "risk_level": "medium"
     },
     {
       "comment_id": "122179686819072582_1290270153241863",
@@ -1338,14 +1342,52 @@
       "first_seen_at": "2026-11-01T00:28:36.366505+00:00"
     },
     {
-      "comment_id": "122179870935072582_2133805607219650",
+      "comment_id": "122179860687072582_1059102753809076",
       "author": "Usuario",
-      "comment_text": "Osea si , Pero la entrada eres tu , mamacita 😈🫦👅",
+      "comment_text": "nahhhhh.... es mejor ir directo al grano... y pues que es lo peor que puede pasar? que te diga que no y después? nada... 👍😉🎉Celebras la victoria de haber destronado la incertidumbre del pensamiento... y si te dice que si... celebras más 🎉🎉🎉🎉😉👍😋",
       "character": "Universe",
-      "approved_response": "La entrada soy yo y la salida es un misterio, mamacita.",
-      "approved": false,
-      "comment_created_at": "2026-11-02T23:53:00+0000",
-      "first_seen_at": "2026-11-03T00:01:38.040362+00:00",
+      "approved_response": "Pspsps es el nuevo pickup line con garantía de 0% efectividad.",
+      "approved": true,
+      "comment_created_at": "2026-11-03T01:09:00+0000",
+      "first_seen_at": "2026-11-03T02:02:57.638096+00:00",
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "opinion",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 2038,
+          "completion_tokens": 78,
+          "total_tokens": 2116,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "approved_at": "2026-11-03T03:49:31.690649+00:00",
+      "published": true,
+      "published_at": "2026-11-03T03:12:15+0000",
+      "reply_id": "122179860687072582_1117728971245624"
+    },
+    {
+      "comment_id": "122179860687072582_1165621839328865",
+      "author": "Usuario",
+      "comment_text": "Seguro sí, házlo!",
+      "character": "Universe",
+      "approved_response": "Claro, porque nada dice 'seguro' como un impulso sin plan.",
+      "approved": true,
+      "approved_at": "2026-11-03T15:58:15+00:00",
+      "comment_created_at": "2026-11-03T03:07:45+0000",
+      "first_seen_at": "2026-11-03T04:03:35.432896+00:00",
       "agent": {
         "name": "communications_agent",
         "model": "openai/gpt-4.1-mini",
@@ -1354,9 +1396,270 @@
         "quality_ok": true,
         "policy_flags": [],
         "usage": {
-          "prompt_tokens": 1958,
-          "completion_tokens": 70,
-          "total_tokens": 2028,
+          "prompt_tokens": 1974,
+          "completion_tokens": 71,
+          "total_tokens": 2045,
+          "prompt_tokens_details": {
+            "cached_tokens": 1792,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "review_reason": "No se pudo generar un borrador válido; requiere revisión humana.",
+      "risk_level": "medium",
+      "published": true,
+      "published_at": "2026-11-03T15:58:32.322383+00:00",
+      "reply_id": "122179860687072582_1627197688890574"
+    },
+    {
+      "comment_id": "122179911213072582_4678024875766647",
+      "author": "Usuario",
+      "comment_text": "YA LO DICE SHAKIRA, HAY QUE FACTURAR!! 🤣🤣🤣",
+      "character": "Universe",
+      "approved_response": "Claro, que no se diga que no seguimos la sabiduría pop del día.",
+      "approved": false,
+      "publish_status": "already_replied",
+      "decision": "already_replied",
+      "published": true,
+      "manual_reply": true,
+      "resolved_at": "2026-11-03T15:58:15+00:00",
+      "comment_created_at": "2026-11-03T05:38:03+0000",
+      "first_seen_at": "2026-11-03T15:22:32.034980+00:00",
+      "agent": {
+        "name": "legacy_responder",
+        "fallback": true,
+        "error_type": "OmniRouteError"
+      },
+      "review_reason": "No se pudo generar un borrador válido; requiere revisión humana.",
+      "risk_level": "medium"
+    },
+    {
+      "comment_id": "122179640145072582_1015078921623481",
+      "author": "Usuario",
+      "comment_text": "La conciencia es que ????",
+      "character": "Wilfred",
+      "approved_response": "La conciencia es el WiFi del alma, sin señal no hay conexión.",
+      "approved": true,
+      "approved_at": "2026-11-03T15:58:15+00:00",
+      "comment_created_at": "2026-11-03T14:58:05+0000",
+      "first_seen_at": "2026-11-03T15:22:32.034999+00:00",
+      "agent": {
+        "name": "legacy_responder",
+        "fallback": true,
+        "error_type": "OmniRouteError"
+      },
+      "review_reason": "No se pudo generar un borrador válido; requiere revisión humana.",
+      "risk_level": "medium",
+      "published": true,
+      "published_at": "2026-11-03T15:58:36.689136+00:00",
+      "reply_id": "122179640145072582_1062519850144128"
+    },
+    {
+      "comment_id": "122180019429072582_1479389844089621",
+      "author": "Usuario",
+      "comment_text": "Así casual que se vaya por un hoyo hahaha",
+      "character": "Universe",
+      "approved_response": "Nada como un hoyo para cerrar capítulos con estilo, ¿no?",
+      "approved": true,
+      "comment_created_at": "2026-11-03T19:32:17+0000",
+      "first_seen_at": "2026-11-03T20:04:11.165551+00:00",
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "humor",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 1977,
+          "completion_tokens": 77,
+          "total_tokens": 2054,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "published": true,
+      "published_at": "2026-11-04T17:54:37.548596+00:00",
+      "reply_id": "122180019429072582_1640504157768973"
+    },
+    {
+      "comment_id": "122180023869072582_1813561103247500",
+      "author": "Usuario",
+      "comment_text": "Más me canso yo hahaha",
+      "character": "Universe",
+      "approved_response": "Ese es el verdadero cardio, sudar sin moverse.",
+      "approved": true,
+      "comment_created_at": "2026-11-03T19:32:40+0000",
+      "first_seen_at": "2026-11-03T20:04:11.165568+00:00",
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "humor",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 1973,
+          "completion_tokens": 66,
+          "total_tokens": 2039,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "published": true,
+      "published_at": "2026-11-04T17:54:40.458883+00:00",
+      "reply_id": "122180023869072582_1009570132186292"
+    },
+    {
+      "comment_id": "122179860687072582_988863007598138",
+      "author": "Usuario",
+      "comment_text": "Jajaja nunca me hizo caso. \nInténtalo, tal vez si tengas éxito",
+      "character": "Universe",
+      "approved_response": "Si pspsps funcionara, ya seríamos todos influencers de crushes.",
+      "approved": true,
+      "comment_created_at": "2026-11-03T20:10:03+0000",
+      "first_seen_at": "2026-11-03T21:04:40.781761+00:00",
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "humor",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 1985,
+          "completion_tokens": 76,
+          "total_tokens": 2061,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "published": true,
+      "published_at": "2026-11-04T17:54:43.264148+00:00",
+      "reply_id": "122179860687072582_1732124318567991"
+    },
+    {
+      "comment_id": "122180023869072582_2208195216744461",
+      "author": "Usuario",
+      "comment_text": "Universe Sent Me  Otro Round Siiiiiii🔥🔥😳🤣😂🤣😂🤣😂🤣😂.....",
+      "character": "Universe",
+      "approved_response": "¿Otro round? Maeve no sabe de descansos, solo de dejar huella.",
+      "approved": true,
+      "comment_created_at": "2026-11-03T22:34:19+0000",
+      "first_seen_at": "2026-11-03T23:05:18.404616+00:00",
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "other",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 1989,
+          "completion_tokens": 79,
+          "total_tokens": 2068,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "published": true,
+      "published_at": "2026-11-04T17:54:51.219538+00:00",
+      "reply_id": "122180023869072582_1430349808715320"
+    },
+    {
+      "comment_id": "122180019429072582_1702178591250760",
+      "author": "Usuario",
+      "comment_text": "Depende. Pones en una balanza los contras y los pros y si pesan más los contras pues SÍ FUE UNA PERDIDA DE TIEMPO.",
+      "character": "Universe",
+      "approved_response": "Balanza rota, pero oye, al menos hubo felicidad momentánea.",
+      "approved": true,
+      "comment_created_at": "2026-11-04T02:05:56+0000",
+      "first_seen_at": "2026-11-04T03:00:34.966464+00:00",
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "other",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 2003,
+          "completion_tokens": 77,
+          "total_tokens": 2080,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "published": true,
+      "published_at": "2026-11-04T17:54:53.983497+00:00",
+      "reply_id": "122180019429072582_1609084816937459"
+    },
+    {
+      "comment_id": "122179886019072582_3859164244239935",
+      "author": "Usuario",
+      "comment_text": "Laura Uribe",
+      "character": "Universe",
+      "approved_response": "Con intención o sin ella, el imbecilato no se salva.",
+      "approved": false,
+      "comment_created_at": "2026-11-03T00:46:40+0000",
+      "first_seen_at": "2026-11-04T17:35:29.507954+00:00",
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "humor",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 2112,
+          "completion_tokens": 67,
+          "total_tokens": 2179,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0
@@ -1370,9 +1673,187 @@
         }
       },
       "discarded": true,
-      "discard_reason": "Contenido sexual explícito; descarte por instrucción de revisión humana.",
-      "discarded_at": "2026-11-03T00:09:30.781163+00:00"
+      "discard_reason": "nombre de persona, fuera de contexto"
+    },
+    {
+      "comment_id": "122180013555072582_1139388955443063",
+      "author": "Usuario",
+      "comment_text": "Cotorreen🤣😂🤙",
+      "character": "Universe",
+      "approved_response": "Si los planetas se cotorrean, tú solo observa y aprende.",
+      "approved": false,
+      "comment_created_at": "2026-11-03T16:13:55+0000",
+      "first_seen_at": "2026-11-04T21:00:39.066670+00:00",
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "other",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 2118,
+          "completion_tokens": 75,
+          "total_tokens": 2193,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "discarded": true,
+      "discarded_at": "2026-11-04T21:19:35.250700+00:00",
+      "discard_reason": "no aprobada por el operador"
+    },
+    {
+      "comment_id": "122180162529072582_1097533246672973",
+      "author": "Usuario",
+      "comment_text": "Con que salgan para las croquetas no hay pierde hahahah",
+      "character": "Universe",
+      "approved_response": "Croquetas, el verdadero motor de la productividad laboral.",
+      "approved": true,
+      "comment_created_at": "2026-11-04T22:37:13+0000",
+      "first_seen_at": "2026-11-05T01:03:35.889472+00:00",
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "humor",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 2107,
+          "completion_tokens": 69,
+          "total_tokens": 2176,
+          "prompt_tokens_details": {
+            "cached_tokens": 1792,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "approved_at": "2026-11-05T01:14:34.032954+00:00",
+      "published": true,
+      "published_at": "2026-11-05T01:21:45.584632+00:00",
+      "reply_id": "122180162529072582_1177589848026272"
+    },
+    {
+      "comment_id": "122180162529072582_2152468755639704",
+      "author": "Usuario",
+      "comment_text": "Carajote 😎",
+      "character": "Universe",
+      "approved_response": "Renunciar con estilo, eso es nivel.",
+      "approved": true,
+      "comment_created_at": "2026-11-04T23:14:47+0000",
+      "first_seen_at": "2026-11-05T01:03:35.889518+00:00",
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "humor",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 2099,
+          "completion_tokens": 76,
+          "total_tokens": 2175,
+          "prompt_tokens_details": {
+            "cached_tokens": 1920,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "approved_at": "2026-11-05T01:14:34.032954+00:00",
+      "published": true,
+      "published_at": "2026-11-05T01:22:01.490289+00:00",
+      "reply_id": "122180162529072582_1389240983020231"
+    },
+    {
+      "comment_id": "122180153655072582_946784918285066",
+      "author": "Usuario",
+      "comment_text": "Qué lindos son los mininos !!, claro que sí curan los amo gatitos!!",
+      "character": "Maeve",
+      "approved_response": "Nada como un arañazo gatuno para curar el alma y marcar la piel.",
+      "approved": true,
+      "comment_created_at": "2026-11-05T00:26:37+0000",
+      "first_seen_at": "2026-11-05T01:03:35.889542+00:00",
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "other",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 4389,
+          "completion_tokens": 160,
+          "total_tokens": 4549,
+          "prompt_tokens_details": {
+            "cached_tokens": 1792,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "approved_at": "2026-11-05T01:14:47.545760+00:00",
+      "published": true,
+      "published_at": "2026-11-05T01:22:07.527382+00:00",
+      "reply_id": "122180153655072582_1528809309269261"
+    },
+    {
+      "comment_id": "122180162529072582_4646951918962188",
+      "author": "Usuario",
+      "comment_text": "Tizdel Jose te extraño mucho hijo de tu puta madre 🥺",
+      "character": "Universe",
+      "approved_response": "Extrañar a ese hijo de puta es un deporte extremo, ¿no?",
+      "approved": false,
+      "comment_created_at": "2026-11-05T13:01:08+0000",
+      "first_seen_at": "2026-11-05T14:04:20.314193+00:00",
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "humor",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 2107,
+          "completion_tokens": 83,
+          "total_tokens": 2190,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
     }
-  ],
-  "last_reconciled_at": "2026-11-03T00:09:30.781163+00:00"
+  ]
 }

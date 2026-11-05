@@ -10,7 +10,27 @@ import re
 import random
 
 from modules.communications.llm import DEFAULT_MODEL, OmniRouteClient, OmniRouteError
+from modules.communications.comments.paths import load_tenant_config
 from modules.communications.policy import check_response, is_low_signal, normalize_response
+
+
+def requires_meme_context(tenant_id: str, base_path: Optional[Path] = None) -> bool:
+    """True si el tenant declara que sus comentarios dependen del chiste."""
+    config = load_tenant_config(tenant_id, base_path)
+    comments = config.get("comments") or {}
+    return bool(comments.get("requires_meme_context"))
+
+
+def lacks_meme_context(
+    tenant_id: str,
+    base_path: Optional[Path],
+    publication_context: Optional[Dict[str, Any]],
+) -> bool:
+    """True si el tenant necesita el chiste y la publicación no lo tiene."""
+    if not requires_meme_context(tenant_id, base_path):
+        return False
+    meme_text = str((publication_context or {}).get("meme_text") or "").strip()
+    return not meme_text
 
 
 class UniverseResponder:
@@ -381,6 +401,23 @@ class UniverseResponder:
             comment_type = raw_type
         intention = self._intention_apparent(comment_type, comment, relation_to_meme)
         decision = self._decision(comment_type, relation_to_meme)
+
+        if decision in ("respond", "review") and lacks_meme_context(
+            self.tenant_id, self.base_path, publication_context
+        ):
+            return {
+                "publication_id": publication_context.get("publication_id"),
+                "comment": comment,
+                "comment_type": comment_type,
+                "apparent_intent": intention,
+                "relation_to_meme": relation_to_meme,
+                "decision": "sin_contexto",
+                "response": None,
+                "risk_level": "low",
+                "quality_ok": False,
+                "quality": None,
+                "review_reason": "Falta meme_text para responder con contexto",
+            }
 
         response_text = None
         quality = None

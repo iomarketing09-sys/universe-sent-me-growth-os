@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T00:01:39.034792+00:00",
+  "generated_at": "2026-11-05T18:02:57.187592+00:00",
   "source": "/home/universe-sent-me/growth-os/tenants/universe/comment_responses/facebook_comments/aprobaciones.json",
   "kind": "review_queue",
   "total_pending": 1,
@@ -7,25 +7,25 @@
   "instructions": "Vista de propuestas nuevas sin aprobar. Revisar en chat; marcar approved: true en aprobaciones.json solo después de aprobar.",
   "approvals": [
     {
-      "comment_id": "122179870935072582_2133805607219650",
+      "comment_id": "122180162529072582_4646951918962188",
       "author": "Usuario",
-      "comment_text": "Osea si , Pero la entrada eres tu , mamacita 😈🫦👅",
+      "comment_text": "Tizdel Jose te extraño mucho hijo de tu puta madre 🥺",
       "character": "Universe",
-      "approved_response": "La entrada soy yo y la salida es un misterio, mamacita.",
+      "approved_response": "Extrañar a ese hijo de puta es un deporte extremo, ¿no?",
       "approved": false,
-      "comment_created_at": "2026-11-02T23:53:00+0000",
-      "first_seen_at": "2026-11-03T00:01:38.040362+00:00",
+      "comment_created_at": "2026-11-05T13:01:08+0000",
+      "first_seen_at": "2026-11-05T14:04:20.314193+00:00",
       "agent": {
         "name": "communications_agent",
         "model": "openai/gpt-4.1-mini",
-        "intent": "other",
+        "intent": "humor",
         "confidence": 0.9,
         "quality_ok": true,
         "policy_flags": [],
         "usage": {
-          "prompt_tokens": 1958,
-          "completion_tokens": 70,
-          "total_tokens": 2028,
+          "prompt_tokens": 2107,
+          "completion_tokens": 83,
+          "total_tokens": 2190,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0

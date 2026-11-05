@@ -74,6 +74,50 @@ def test_policy_acepta_remate_corto_y_rechaza_riesgos():
     assert not check_response("").ok
     assert "too_long" in check_response("x" * 91).flags
     assert "corporate_phrase" in check_response("Gracias por comentar, saludos.").flags
+
+
+def test_policy_bloquea_arranque_formulaico():
+    decision = check_response("Claro, porque el drama siempre cobra entrada.")
+    assert not decision.ok
+    assert "formulaic_opener" in decision.flags
+    assert check_response("El drama cobra entrada y no acepta tarjeta.").ok
+    assert check_response("Claramente no era el plan.").ok
+
+
+def test_harvest_abre_fila_de_dictado_solo_si_el_tenant_lo_requiere(tmp_path):
+    tenant = tmp_path / "tenants" / "universe"
+    (tenant / "metrics").mkdir(parents=True)
+    (tenant / "config.json").write_text(
+        json.dumps({"comments": {"requires_meme_context": True}}), encoding="utf-8"
+    )
+    processor = comments_facebook.CommentProcessor("universe", base_path=tmp_path)
+    processor._load_publication_contexts()
+    posts = [
+        {
+            "id": "1036844829507460_999",
+            "message": "🧪 prueba #ElaraUSM #humor",
+            "created_time": "2026-11-04T00:00:00+0000",
+        }
+    ]
+
+    assert processor._register_missing_contexts(posts) == 1
+    assert processor._register_missing_contexts(posts) == 0
+    rows = (tenant / "metrics" / "publication_contexts_review.csv").read_text(
+        encoding="utf-8-sig"
+    )
+    assert "1036844829507460_999" in rows
+    assert "Elara" in rows
+
+
+def test_harvest_no_abre_filas_si_el_tenant_no_requiere_chiste(tmp_path):
+    tenant = tmp_path / "tenants" / "flexi"
+    tenant.mkdir(parents=True)
+    (tenant / "config.json").write_text(json.dumps({}), encoding="utf-8")
+    processor = comments_facebook.CommentProcessor("flexi", base_path=tmp_path)
+    processor._load_publication_contexts()
+
+    assert processor._register_missing_contexts([{"id": "p1", "message": "hola"}]) == 0
+    assert not (tenant / "metrics" / "publication_contexts_review.csv").exists()
     assert "commercial_claim" in check_response("El precio es $1,899 y hay tallas.").flags
     assert "url" in check_response("Mira https://example.com").flags
     assert "forbidden_phrase" in check_response("El diagnóstico se hace solo.").flags
@@ -416,12 +460,41 @@ def test_responder_bloquea_generacion_fuera_de_politica():
     responder._is_low_signal = lambda comment: False
     responder._generate_omniroute_response = lambda *args, **kwargs: "El precio es $1,899."
 
-    result = responder.respond({"publication_id": "p1", "character": "Universe"}, "Me encanta")
+    result = responder.respond(
+        {
+            "publication_id": "p1",
+            "character": "Universe",
+            "meme_text": "El precio de la dignidad",
+        },
+        "Me encanta",
+    )
 
     assert result["decision"] == "review"
     assert result["response"] is None
     assert result["quality_ok"] is False
     assert "commercial_claim" in result["quality"]["flags"]
+
+
+def test_responder_no_genera_sin_chiste_si_el_tenant_lo_requiere(tmp_path):
+    config_dir = tmp_path / "tenants" / "universe"
+    config_dir.mkdir(parents=True)
+    (config_dir / "config.json").write_text(
+        json.dumps({"comments": {"requires_meme_context": True}}),
+        encoding="utf-8",
+    )
+    responder = UniverseResponder(base_path=tmp_path)
+    responder._classify_comment = lambda comment: "humor"
+    responder._relation_to_meme = lambda context, comment: "direct_meme_reference"
+    responder._decision = lambda comment_type, relation: "respond"
+    responder._is_low_signal = lambda comment: False
+    called = []
+    responder._generate_omniroute_response = lambda *a, **k: called.append(1) or "respuesta"
+
+    result = responder.respond({"publication_id": "p1", "character": "Universe"}, "jajaja")
+
+    assert result["decision"] == "sin_contexto"
+    assert result["response"] is None
+    assert called == []
 
 
 def test_shadow_compara_con_aprobacion_sin_escribir_aprobaciones(tmp_path):

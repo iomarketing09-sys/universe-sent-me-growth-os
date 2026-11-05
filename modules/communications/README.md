@@ -44,6 +44,25 @@ se resuelven en este orden: variables de entorno, `.env` del repo/tenant y
 finalmente el contexto de `~/.omniroute/config.json`. Ninguna credencial se
 imprime.
 
+### Contexto del meme (solo tenants que lo declaran)
+
+Un tenant cuyo comentario depende del chiste de la imagen declara en su
+`config.json`:
+
+```json
+"comments": { "requires_meme_context": true }
+```
+
+Con esa bandera, si la publicación no tiene `meme_text` en
+`publication_contexts.json`, el respondedor **no genera propuesta**: devuelve
+`decision: sin_contexto` y el comentario queda en el log con
+`publish_status: sin_contexto`. `inbox_snapshot` lo expone como
+`sin_contexto` con la lista de `comment_ids`, que es la bandera de huecos a
+llenar.
+
+Sin la bandera (Flexi, Micas, Firma) el comportamiento no cambia: el copy y la
+conversación son suficientes.
+
 Análisis sombra de los comentarios existentes (sin Meta y sin escribir
 aprobaciones):
 

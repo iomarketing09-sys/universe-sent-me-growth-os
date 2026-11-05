@@ -205,12 +205,27 @@ def merge_approval_payload(
                 continue
         combined = dict(item)
         if replacement:
+            refresh = not combined.get("approved") and not combined.get("published")
+            preserve = {
+                "approved",
+                "published",
+                "reply_id",
+                "published_at",
+                "discarded",
+                "discard_reason",
+                "first_seen_at",
+                "comment_created_at",
+            }
             for key, value in replacement.items():
-                if key not in combined or _is_blank(combined.get(key)):
+                if key in preserve:
+                    continue
+                if refresh:
+                    if key == "approved_response":
+                        combined[key] = value or ""
+                    elif not _is_blank(value):
+                        combined[key] = value
+                elif key not in combined or _is_blank(combined.get(key)):
                     combined[key] = value
-            if not combined.get("published"):
-                if _is_blank(combined.get("approved_response")):
-                    combined["approved_response"] = replacement.get("approved_response")
         merged.append(combined)
         used_ids.add(comment_id)
 
