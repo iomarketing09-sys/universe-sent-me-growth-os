@@ -924,6 +924,26 @@ def _tenant_timezone(tenant_root: Path) -> ZoneInfo:
         return ZoneInfo("America/Matamoros")
 
 
+def _store_publication_context(
+    tenant_root: Path,
+    slot: Mapping[str, Any],
+    result: "MetaResponse",
+    published_at: str,
+) -> None:
+    try:
+        from modules.intelligence.publication_context import record_publication
+
+        record_publication(
+            Path(tenant_root),
+            post_id=str(result.post_id),
+            asset_filename=str(slot.get("source_filename") or ""),
+            caption=str(slot.get("description") or slot.get("caption") or ""),
+            published_at=published_at,
+        )
+    except Exception as exc:  # noqa: BLE001 - no romper la publicación
+        logger.warning("No se pudo guardar contexto de publicación: %s", exc)
+
+
 def record_scheduled_publication(
     tenant_root: Path,
     slot: Mapping[str, Any],
@@ -956,20 +976,24 @@ def record_scheduled_publication(
     if log_path.exists():
         with log_path.open("r", encoding="utf-8-sig", newline="") as handle:
             rows = list(csv.DictReader(handle))
-    for existing in rows:
-        if (
+    already_logged = any(
+        (
             existing.get("platform") == row["platform"]
             and existing.get("date") == row["date"]
             and existing.get("time") == row["time"]
             and existing.get("asset_filename") == row["asset_filename"]
-        ):
-            return
-    rows.append(row)
-    log_path.parent.mkdir(parents=True, exist_ok=True)
-    with log_path.open("w", encoding="utf-8-sig", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=PUBLICATION_LOG_FIELDS)
-        writer.writeheader()
-        writer.writerows(rows)
+        )
+        for existing in rows
+    )
+    if not already_logged:
+        rows.append(row)
+        log_path.parent.mkdir(parents=True, exist_ok=True)
+        with log_path.open("w", encoding="utf-8-sig", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=PUBLICATION_LOG_FIELDS)
+            writer.writeheader()
+            writer.writerows(rows)
+
+    _store_publication_context(tenant_root, slot, result, local.isoformat())
 
 
 def publish_schedule_from_dryrun(
@@ -1170,7 +1194,14 @@ def publish_single_slot(
             success=False,
             error=f"Error procesando slot {slot_id}: {e}",
         )
-    
+
+    if result.success and not publisher.dry_run:
+        record_scheduled_publication(
+            tenant_root,
+            {**slot, "description": caption},
+            result,
+        )
+
     return result
 
 

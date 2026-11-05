@@ -33,6 +33,22 @@ Los archivos en `growth/` (`metrics_snapshot`, `historical_baseline`,
 `experiment_log`, `planner`, `audit`, `integrations/ads_adapters`) quedaron como
 envoltorios de compatibilidad y siguen aceptando `python -m growth.<nombre>`.
 
+## Contexto de publicación
+
+`publication_context.py` es el único escritor de
+`tenants/<id>/publication_contexts.json`. Los publicadores lo llaman después de
+una publicación real; `tenants/universe/context_manager.py` delega en el mismo
+módulo para no mantener dos implementaciones.
+
+- Es idempotente por `publication_id` y actualiza alias corto/largo del mismo
+  post sin sobrescribir `visual_context` ya capturado.
+- Deriva `character` y `meme_text` del nombre del asset y usa
+  `assets_meme_text.csv` como respaldo. No abre ni renderiza imágenes.
+- Si el log ya tenía la publicación pero faltaba el contexto, una nueva llamada
+  lo repara.
+- Los errores de escritura no bloquean la publicación: se registran como
+  warning para que el flujo de publicación siga siendo la operación principal.
+
 ## Meta Ads Agent
 
 ```bash

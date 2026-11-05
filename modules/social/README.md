@@ -63,6 +63,27 @@ sucursal ya cargó), no un inventario completo. Un `NOT_IN_INVENTORY` significa
 "no lo tengo declarado", no "no existe en sucursal". Para Flexi el inventario
 real sigue pendiente como insumo de negocio.
 
+## Contexto de publicación
+
+Toda publicación real escribe su contexto en
+`tenants/<id>/publication_contexts.json` mediante
+`modules.intelligence.publication_context.record_publication()`. Ese JSON es la
+fuente única para análisis y respuestas a comentarios; no se mantiene un ledger
+paralelo.
+
+- `IgScheduler.process_item()` lo escribe después del publish real de
+  Instagram.
+- `record_scheduled_publication()` lo escribe para Facebook, tanto en el lote
+  como en `publish_single_slot()`.
+- Es idempotente por `publication_id`. Si el post ya tiene alias corto y largo,
+  actualiza ambos y conserva `visual_context` y demás campos ricos existentes.
+- Si la fila ya está en `publication_log_week2.csv` pero falta el contexto,
+  vuelve a intentar la escritura para repararlo sin duplicar el log.
+- `character` y `meme_text` se derivan del nombre del asset; si falta el chiste,
+  se usa `assets_meme_text.csv`. El escritor nunca abre imágenes.
+- Un fallo al guardar contexto se registra como warning y no revierte ni bloquea
+  la publicación.
+
 ## Uso
 
 ### Host de imágenes para Instagram

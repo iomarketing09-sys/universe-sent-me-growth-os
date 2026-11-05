@@ -464,6 +464,24 @@ class IgScheduler:
 
         try:
             post_id = publisher.publish(item.media_filename, item.caption)
+            try:
+                from modules.intelligence.publication_context import record_publication
+
+                record_publication(
+                    Path(getattr(self, "base_path", project_root()))
+                    / "tenants"
+                    / item.tenant_id,
+                    post_id=str(post_id),
+                    asset_filename=item.media_filename,
+                    caption=item.caption,
+                    published_at=item.datetime_utc.isoformat(),
+                )
+            except Exception as exc:  # noqa: BLE001 - no romper la publicación
+                logger.warning(
+                    "[%s] No se pudo guardar contexto de publicación: %s",
+                    item.tenant_id,
+                    exc,
+                )
             return post_id
         except Exception as e:
             logger.error(f"[{item.tenant_id}] Error publicando: {e}")

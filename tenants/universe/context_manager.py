@@ -9,21 +9,24 @@ import requests
 
 GROWTH_ROOT = Path(__file__).resolve().parent
 CONTEXTS_FILE = GROWTH_ROOT / "publication_contexts.json"
+REPO_ROOT = GROWTH_ROOT.parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from modules.intelligence.publication_context import (  # noqa: E402
+    load_contexts as _load_contexts,
+    record_publication as _record_publication,
+    save_contexts as _save_contexts,
+)
+
 BASE_URL = os.getenv("OPENAI_BASE_URL", "http://localhost:20128/v1")
 MODEL = os.getenv("VISION_MODEL", "nvidia/meta/llama-3.2-11b-vision-instruct")
 
 def load_contexts() -> Dict[str, Any]:
-    if CONTEXTS_FILE.exists():
-        try:
-            with open(CONTEXTS_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
-        except Exception as e:
-            print(f"Aviso al leer {CONTEXTS_FILE}: {e}")
-    return {}
+    return _load_contexts(GROWTH_ROOT)
 
 def save_contexts(contexts: Dict[str, Any]):
-    with open(CONTEXTS_FILE, "w", encoding="utf-8") as f:
-        json.dump(contexts, f, ensure_ascii=False, indent=2)
+    _save_contexts(GROWTH_ROOT, contexts)
 
 def extract_visual_context(image_path: Path, api_key: Optional[str] = None) -> Dict[str, str]:
     if not api_key:
@@ -83,21 +86,19 @@ def record_publication(
     published_at: str,
     visual_info: Optional[Dict[str, str]] = None
 ):
-    contexts = load_contexts()
-    if not visual_info:
-        visual_info = {"character": "", "meme_text": "", "visual_context": ""}
-
-    contexts[post_id] = {
-        "publication_id": post_id,
-        "asset_ref": asset_name,
-        "character": visual_info.get("character", ""),
-        "meme_text": visual_info.get("meme_text", ""),
-        "visual_context": visual_info.get("visual_context", ""),
-        "caption": caption,
-        "published_at": published_at
-    }
-    save_contexts(contexts)
+    visual_info = visual_info or {}
+    merged = _record_publication(
+        GROWTH_ROOT,
+        post_id=post_id,
+        asset_filename=asset_name,
+        caption=caption,
+        published_at=published_at,
+        character=str(visual_info.get("character") or ""),
+        meme_text=str(visual_info.get("meme_text") or ""),
+        visual_context=str(visual_info.get("visual_context") or ""),
+    )
     print(f"✅ Contexto acumulado guardado para post ID: {post_id}")
+    return merged
 
 if __name__ == "__main__":
     print("Módulo context_manager listo.")

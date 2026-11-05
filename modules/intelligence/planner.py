@@ -12,6 +12,7 @@ from typing import Dict, Any, List, Optional
 from dataclasses import dataclass, field, asdict
 from datetime import datetime, timezone
 import json
+import re
 import modules.intelligence.historical_baseline as historical_baseline
 
 
@@ -22,6 +23,53 @@ TIME_TO_SLOT = {
     "19:30": "evening",
     "20:00": "evening",
 }
+
+
+CANON_CHARACTERS = (
+    "Universe",
+    "Wilfred",
+    "Elara",
+    "Ganso",
+    "Payaso",
+    "Kiri",
+    "Evan",
+    "Fantasma",
+    "Kael",
+    "Maeve",
+    "Silvio",
+    "Chipitillo",
+)
+
+
+def parse_asset_filename(name: str) -> Dict[str, Any]:
+    """Extrae código, personajes y chiste de ``<código> - <personajes> - <texto>``."""
+    stem = Path(str(name)).stem
+    parts = [part.strip() for part in stem.split(" - ")]
+    code = parts[0].strip() if parts and parts[0].strip().isdigit() else ""
+    rest = parts[1:] if code else parts
+    characters: List[str] = []
+    if rest:
+        for token in str(rest[0]).replace(",", "+").split("+"):
+            token = token.strip()
+            if not token:
+                continue
+            normalized = token if token in CANON_CHARACTERS else ""
+            if not normalized and token.lower() in {"el ganso", "ganso"}:
+                normalized = "Ganso"
+            if normalized:
+                characters.append(normalized)
+        rest = rest[1:]
+    meme_text = " - ".join(rest).strip()
+    # Ruido del nombre: fechas al final "(10-jun-26)" y códigos internos "CNT018".
+    meme_text = re.sub(r"\s*\([^)]*\d[^)]*\)\s*$", "", meme_text).strip()
+    if re.fullmatch(r"CNT\d+", meme_text, re.IGNORECASE):
+        meme_text = ""
+    # Sin código numérico el nombre es sólo personaje + etiqueta del archivo
+    # ("Fantasma - MardeNubes 1"): no es un chiste, se resuelve por visión.
+    if not code and len(meme_text) < 15:
+        meme_text = ""
+    return {"code": code, "characters": characters, "meme_text": meme_text}
+
 
 def build_slot_id(tenant_id: str, date_str: str, time_str: str) -> str:
     """Construye slot_id consistente: tenant-YYYYMMDD-slotname-NN"""
