@@ -1,0 +1,19 @@
+name = "growth-os-external-monitor"
+main = "src/index.js"
+compatibility_date = "2026-11-02"
+compatibility_flags = ["global_fetch_strictly_public"]
+workers_dev = true
+preview_urls = false
+
+[triggers]
+crons = ["*/5 * * * *"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "growth_os_external_monitor"
+database_id = "67521ef6-481c-4630-ac60-a83a149841d9"
+
+[vars]
+WHATSAPP_HEALTH_URL = "https://flexi-whatsapp-webhook.io-marketing-09.workers.dev/health"
+HEARTBEAT_TIMEOUT_SECONDS = "600"
+WEBHOOK_FAILURE_THRESHOLD = "2"

@@ -8,8 +8,16 @@ ownership:
 
 alert_channel:
   type: telegram
-  target: "Growth OS Ops"
-  note: "Grupo compartido Fernando + CGO. Los tenants solo reciben su status page filtrado."
+  target: "Telegram privado de Fernando (interino)"
+  note: "Por ahora solo Fernando recibe alertas. El grupo Growth OS Ops se incorporará cuando exista."
+
+provider:
+  name: "Cloudflare Workers"
+  worker: "growth-os-external-monitor"
+  storage: "D1 growth_os_external_monitor"
+  schedule: "*/5 * * * *"
+  base_url: "https://growth-os-external-monitor.io-marketing-09.workers.dev"
+  note: "Worker externo al host. Usa global_fetch_strictly_public para validar la ruta pública del webhook."
 
 monitors:
   - id: host-heartbeat

@@ -48,7 +48,14 @@ def ping(url: str, *, timeout: int = 10, opener: Optional[Opener] = None) -> int
     """Hace un GET al heartbeat y devuelve el HTTP status."""
     if not url:
         raise HeartbeatError("Falta EXTERNAL_MONITOR_HEARTBEAT_URL")
-    request = urllib.request.Request(url, method="GET")
+    request = urllib.request.Request(
+        url,
+        method="GET",
+        headers={
+            "Accept": "application/json",
+            "User-Agent": "GrowthOS-ExternalMonitor/1.0",
+        },
+    )
     try:
         if opener is None:
             with urllib.request.urlopen(request, timeout=timeout) as response:

@@ -71,6 +71,9 @@ tenants/*/data/leads_*.csv
 # Monetization signals and payouts are operational/financial data; keep local.
 tenants/*/data/monetization/*.csv
 
+# Estado operativo de publicación Social: local, no se versiona.
+tenants/*/data/social/
+
 # Originales pesados de campaña: se versionan solo los recortes finales.
 tenants/*/ads/campanas/*/piezas/Assets/
 
@@ -81,3 +84,28 @@ tenants/*/ads/insights/captures/
 
 # Catálogo Flexi: repositorio independiente, no se versiona desde growth-os.
 flexi-catalogo-oi26/
+
+# Playwright local (no versionar binarios ni navegadores).
+.venv-playwright/
+.cache/
+
+# Cachés locales de Wrangler / Cloudflare.
+.wrangler/
+**/.wrangler/
+node_modules/
+
+# Capturas y acciones operativas de Ads: se regeneran desde Meta.
+tenants/*/ads/insights/
+
+# Binarios generados de campaña; los finales se versionan a mano si aplica.
+tenants/micas-art-deco/assets/2026-*.jpg
+tenants/micas-art-deco/assets/stories/
+tenants/*/content/**/Assets/
+
+# Symlinks de inventario local que apuntan fuera del repo.
+tenants/universe/assets/Assets Nuevos
+tenants/universe/assets/Publicado (Reuse)
+
+# Logs de sesión y locks locales.
+codex-session-*.md
+.~lock.*#

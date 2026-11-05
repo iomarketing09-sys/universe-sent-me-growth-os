@@ -29,6 +29,8 @@ def test_ping_acepta_200():
     def opener(request, timeout):
         assert request.method == "GET"
         assert timeout == 10
+        assert request.get_header("User-agent") == "GrowthOS-ExternalMonitor/1.0"
+        assert request.get_header("Accept") == "application/json"
         return Response()
 
     assert ping("https://monitor.example/heartbeat/abc", opener=opener) == 200

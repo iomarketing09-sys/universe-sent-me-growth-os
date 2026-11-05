@@ -5,6 +5,7 @@ Wants=network-online.target
 
 [Service]
 Type=oneshot
+TimeoutStartSec=10min
 WorkingDirectory=/home/universe-sent-me/growth-os
 ExecStart=/usr/bin/python3 /home/universe-sent-me/growth-os/scripts/run_ads_capture.py --all-tenants
 EnvironmentFile=-/home/universe-sent-me/growth-os/.env
