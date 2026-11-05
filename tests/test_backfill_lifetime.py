@@ -17,6 +17,12 @@ def test_build_backfill_snapshot_marks_lifetime_window(monkeypatch):
         return {
             "post_clicks": 7,
             "post_reactions_by_type_total": {"LIKE": 6, "LOVE": 4},
+            "post_video_views": 120,
+            "post_video_views_organic": 100,
+            "post_video_avg_time_watched": 6000,
+            "post_video_view_time": 600000,
+            "post_video_complete_views_organic": 55,
+            "post_video_length": 15000,
             "_unavailable_metrics": "post_video_views",
             "_unavailable_reasons": {"post_video_views": "retired"},
         }
@@ -35,6 +41,11 @@ def test_build_backfill_snapshot_marks_lifetime_window(monkeypatch):
     assert snapshot.total_interactions == 15
     assert (snapshot.reaction_like, snapshot.reaction_love) == (6, 4)
     assert snapshot.clicks == 7
+    assert snapshot.video_views == 120
+    assert snapshot.video_views_organic == 100
+    assert snapshot.video_complete_views == 55
+    assert snapshot.video_length == 15000
+    assert snapshot.video_completion_rate == 0.55
     assert snapshot.insights_available is True
     assert snapshot.unavailable_metrics == "post_video_views,post_video_views:retired"
     assert snapshot.status == bf.SnapshotStatus.CAPTURED.value

@@ -150,7 +150,11 @@ def build_backfill_snapshot(page_token: str, post_id: str, now_iso: str) -> Metr
         total_interactions=reactions + comments + shares,
         clicks=as_int(insights.get("post_clicks", 0)),
         video_views=as_int(insights.get("post_video_views", 0)),
+        video_views_organic=as_int(insights.get("post_video_views_organic", 0)),
         video_watch_time=as_int(insights.get("post_video_avg_time_watched", 0)),
+        video_view_time=as_int(insights.get("post_video_view_time", 0)),
+        video_complete_views=as_int(insights.get("post_video_complete_views_organic", 0)),
+        video_length=as_int(insights.get("post_video_length", 0)),
         status=SnapshotStatus.CAPTURED.value,
         unavailable_metrics=unavailable_text,
         insights_available=insights_available,
@@ -164,6 +168,12 @@ def build_backfill_snapshot(page_token: str, post_id: str, now_iso: str) -> Metr
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--limit", type=int, default=None, help="Máximo de posts a procesar")
+    parser.add_argument(
+        "--post-id",
+        action="append",
+        default=None,
+        help="Refrescar solo este post (se puede repetir)",
+    )
     parser.add_argument("--dry-run", action="store_true", help="Consultar Meta sin escribir el ledger")
     args = parser.parse_args()
 
@@ -180,7 +190,11 @@ def main() -> int:
         return 1
 
     existing = {snap.snapshot_id: snap for snap in load_snapshot_log(TENANT_ID)}
-    post_ids = facebook_post_ids(existing.values())
+    post_ids = (
+        list(dict.fromkeys(args.post_id))
+        if args.post_id
+        else facebook_post_ids(existing.values())
+    )
     if args.limit is not None:
         post_ids = post_ids[:args.limit]
 

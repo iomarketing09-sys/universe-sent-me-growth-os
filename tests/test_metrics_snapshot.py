@@ -140,6 +140,50 @@ def test_facebook_capture_marks_retired_metrics(monkeypatch, tmp_path):
     assert result.status == ms.SnapshotStatus.NO_DATA.value
 
 
+def test_facebook_capture_guarda_retencion_de_video(monkeypatch, tmp_path):
+    monkeypatch.chdir(tmp_path)
+    metrics = {
+        "post_video_views": 120,
+        "post_video_views_organic": 100,
+        "post_video_avg_time_watched": 6000,
+        "post_video_view_time": 600000,
+        "post_video_complete_views_organic": 55,
+        "post_video_length": 15000,
+    }
+
+    def fake_api_get(token, endpoint, params=None):
+        params = params or {}
+        if endpoint.endswith("/insights"):
+            value = metrics.get(params.get("metric"))
+            if value is None:
+                return {"error": "The value must be a valid insights metric"}
+            return {"data": [{"name": params["metric"], "values": [{"value": value}]}]}
+        if endpoint.endswith("/reactions"):
+            return {"data": []}
+        return {"reactions": {"summary": {"total_count": 0}}}
+
+    monkeypatch.setattr(ms, "api_get", fake_api_get)
+    snapshot = ms.MetricsSnapshot(
+        publication_id="123_456", tenant_id="flexi", platform="Facebook", window="E0"
+    )
+
+    result = ms.capture_snapshot("flexi", snapshot, "token", "")
+
+    assert result.video_views == 120
+    assert result.video_views_organic == 100
+    assert result.video_complete_views == 55
+    assert result.video_length == 15000
+    assert result.video_completion_rate == 0.55
+    assert result.video_average_watch_share == 0.4
+
+
+def test_video_metrics_no_convierten_ausencia_en_cero():
+    snapshot = ms.MetricsSnapshot(platform="Facebook")
+
+    assert snapshot.video_completion_rate is None
+    assert snapshot.video_average_watch_share is None
+
+
 def test_page_insights_use_vigentes_metrics(monkeypatch):
     calls = []
 

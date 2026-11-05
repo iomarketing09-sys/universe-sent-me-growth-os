@@ -57,7 +57,11 @@ FACEBOOK_POST_INSIGHT_METRICS = [
     ('post_reactions_by_type_total', 'lifetime'),
     ('post_clicks', 'lifetime'),
     ('post_video_views', 'lifetime'),
+    ('post_video_views_organic', 'lifetime'),
     ('post_video_avg_time_watched', 'lifetime'),
+    ('post_video_view_time', 'lifetime'),
+    ('post_video_complete_views_organic', 'lifetime'),
+    ('post_video_length', 'lifetime'),
 ]
 
 # Métricas de página vigentes en v26.0. Son de página completa, no por post.
@@ -85,6 +89,8 @@ _INT_FIELDS = {
     'reaction_sorry', 'reaction_anger', 'reaction_care',
     'reach', 'impressions', 'views', 'saved', 'total_interactions',
     'engaged_users', 'clicks', 'video_views', 'video_watch_time',
+    'video_views_organic', 'video_view_time', 'video_complete_views',
+    'video_length',
     'page_impressions', 'page_reach', 'page_engaged_users',
     'attempts',
 }
@@ -145,7 +151,11 @@ class MetricsSnapshot:
     engaged_users: int = 0
     clicks: int = 0
     video_views: int = 0
-    video_watch_time: int = 0
+    video_watch_time: int = 0  # promedio visto por reproducción, en milisegundos
+    video_views_organic: int = 0
+    video_view_time: int = 0  # tiempo total visto, en milisegundos
+    video_complete_views: int = 0  # reproducciones completas orgánicas
+    video_length: int = 0  # duración reportada por Meta, en milisegundos
     
     # Page insights (cuando disponibles)
     page_impressions: int = 0
@@ -164,6 +174,27 @@ class MetricsSnapshot:
     
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
+
+    @property
+    def video_completion_rate(self) -> Optional[float]:
+        """Proporción de reproducciones orgánicas que llegaron al final.
+
+        Meta entrega ``post_video_complete_views_organic`` como conteo, no como
+        porcentaje. Se usa el denominador orgánico cuando existe y, si no, el
+        total de reproducciones. Un video sin reproducciones devuelve ``None``
+        para no confundir ausencia de datos con 0%.
+        """
+        views = self.video_views_organic or self.video_views
+        if views <= 0:
+            return None
+        return self.video_complete_views / views
+
+    @property
+    def video_average_watch_share(self) -> Optional[float]:
+        """Duración media vista como proporción de la duración del video."""
+        if self.video_length <= 0 or self.video_watch_time < 0:
+            return None
+        return self.video_watch_time / self.video_length
     
     @classmethod
     def from_dict(cls, d: Dict[str, Any]) -> 'MetricsSnapshot':
@@ -185,6 +216,8 @@ SNAPSHOT_LOG_FIELDS = [
     'reaction_sorry', 'reaction_anger', 'reaction_care',
     'reach', 'impressions', 'views', 'saved', 'total_interactions',
     'engaged_users', 'clicks', 'video_views', 'video_watch_time',
+    'video_views_organic', 'video_view_time', 'video_complete_views',
+    'video_length',
     'page_impressions', 'page_reach', 'page_engaged_users',
     'status', 'error', 'unavailable_metrics', 'insights_available',
     'created_at', 'attempts'
@@ -1117,8 +1150,16 @@ def capture_snapshot(tenant_id: str, snapshot: MetricsSnapshot,
                     snapshot.reach = _to_int(val)
                 elif metric == 'post_video_views':
                     snapshot.video_views = _to_int(val)
+                elif metric == 'post_video_views_organic':
+                    snapshot.video_views_organic = _to_int(val)
                 elif metric == 'post_video_avg_time_watched':
                     snapshot.video_watch_time = _to_int(val)
+                elif metric == 'post_video_view_time':
+                    snapshot.video_view_time = _to_int(val)
+                elif metric == 'post_video_complete_views_organic':
+                    snapshot.video_complete_views = _to_int(val)
+                elif metric == 'post_video_length':
+                    snapshot.video_length = _to_int(val)
             insights_captured = any(not key.startswith('_') for key in insights)
             unavailable = insights.get('_unavailable_metrics', '')
             if unavailable:

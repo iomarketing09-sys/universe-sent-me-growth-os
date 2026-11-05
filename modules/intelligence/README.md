@@ -185,6 +185,38 @@ python3 tenants/universe/metrics/backfill_lifetime.py --dry-run
 para reach/views de Instagram. Sin él, el snapshot guarda los conteos públicos
 y deja el error en la columna `error`; no falla la captura.
 
+### Cobertura de medición
+
+`measurement_coverage.py` responde qué métricas tienen muestras reales y qué
+hipótesis todavía no pueden evaluarse. No emite veredictos ni rellena huecos:
+
+```bash
+python3 -m modules.intelligence.measurement_coverage universe
+python3 -m modules.intelligence.measurement_coverage universe --json
+```
+
+- Un contador en `0` en el ledger significa ausencia de captura, no un cero
+  observado. Las proporciones derivadas devuelven `None` cuando no tienen
+  denominador y sí aceptan `0.0` como dato real.
+- Varios snapshots de la misma publicación cuentan una sola vez. El resumen usa
+  su último valor con dato para no sobrerrepresentar publicaciones recapturadas.
+- `count` = conteo absoluto; `ratio` = proporción entre 0 y 1 (no porcentaje).
+
+En Facebook, Graph v26 retiró reach/impresiones por publicación. Para video sí
+expone `post_video_views`, `post_video_views_organic`,
+`post_video_avg_time_watched` (ms por reproducción), `post_video_view_time`
+(ms totales), `post_video_complete_views_organic` y `post_video_length` (ms).
+De ahí salen `video_completion_rate` (completaciones / reproducciones
+orgánicas) y `video_average_watch_share` (tiempo medio visto / duración).
+Instagram sigue bloqueado para reach/views hasta aprobar
+`instagram_manage_insights`.
+
+Estado verificado en Universe el 2026-11-05: 284 snapshots y 102
+publicaciones; HB-002 con 2 publicaciones de video y mediana de completación
+`0.1795`, todavía insuficiente para un veredicto; HB-004 en `no_samples` por
+falta de reach. El vínculo de esas piezas con HB-002 requiere decisión de CGO:
+no se asignó una hipótesis a posteriori.
+
 Nota: Meta reporta `conversations_started_7d` pero **no** la profundidad 2/3 en
 esta cuenta. La profundidad real se mide con `modules/communications`.
 
