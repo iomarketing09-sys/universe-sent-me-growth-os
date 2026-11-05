@@ -29,7 +29,14 @@ from modules.social.meta_publisher import (
     load_dryrun_schedule,
     load_integration_env,
     load_meta_import_csv,
+    publish_meta_import_slots,
     publish_schedule_from_dryrun,
+)
+from modules.social.preflight import PreflightResult, preflight_items, preflight_tenant
+from modules.social.publish_state import (
+    PublishJob,
+    PublishJobStore,
+    job_key as publish_job_key,
 )
 from modules.social.publication_tracker import (
     REQUIRED_COLUMNS,
@@ -44,6 +51,9 @@ __all__ = [
     "IgScheduler",
     "MetaPublisher",
     "MetaResponse",
+    "PreflightResult",
+    "PublishJob",
+    "PublishJobStore",
     "REQUIRED_COLUMNS",
     "ScheduleItem",
     "capture_organic",
@@ -58,6 +68,10 @@ __all__ = [
     "load_tenant_credentials",
     "parse_tenant_schedule",
     "pending_publications",
+    "preflight_items",
+    "preflight_tenant",
+    "publish_job_key",
+    "publish_meta_import_slots",
     "publish_pending",
     "publish_schedule_from_dryrun",
     "query_instagram_media",

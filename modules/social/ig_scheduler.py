@@ -21,7 +21,15 @@ from typing import Any, Dict, List, Optional, Tuple
 from modules.social.ig_publisher import (
     IgPublisher,
     create_ig_publisher_for_tenant,
-    load_tenant_credentials
+)
+from modules.social.preflight import preflight_tenant
+from modules.social.publish_state import (
+    DEFAULT_BASE_DELAY_SECONDS,
+    DEFAULT_MAX_ATTEMPTS,
+    PublishJobStore,
+    STATUS_DEAD,
+    job_key as publish_job_key,
+    utc_now,
 )
 
 # Setup logging
@@ -96,6 +104,8 @@ class ScheduleItem:
     post_type: str
     datetime_local: datetime
     datetime_utc: datetime
+    hypothesis_id: str = ""
+    experiment_id: str = ""
     
     @property
     def unique_key(self) -> str:
@@ -109,16 +119,18 @@ class ScheduleItem:
 LOG_FIELDS = [
     'date', 'time', 'platform', 'piece', 'asset_filename',
     'status', 'publication_id', 'published_at', 'reach',
-    'interactions', 'DMs', 'leads'
+    'interactions', 'DMs', 'leads', 'hypothesis_id', 'experiment_id'
 ]
 
-def get_log_path(tenant_id: str) -> Path:
+def get_log_path(tenant_id: str, base_path: Optional[Path] = None) -> Path:
     """Ruta del log para un tenant"""
-    return Path(f'tenants/{tenant_id}/publication_log_week2.csv')
+    root = Path(base_path) if base_path else Path(".")
+    return root / "tenants" / tenant_id / "publication_log_week2.csv"
 
-def get_schedule_path(tenant_id: str) -> Path:
+def get_schedule_path(tenant_id: str, base_path: Optional[Path] = None) -> Path:
     """Ruta del schedule para un tenant (busca el más reciente)"""
-    tenant_dir = Path(f'tenants/{tenant_id}')
+    root = Path(base_path) if base_path else Path(".")
+    tenant_dir = root / "tenants" / tenant_id
     # Buscar meta_import*.csv o future_schedule.csv
     for pattern in ['meta_import*.csv', 'future_schedule.csv']:
         matches = list(tenant_dir.glob(pattern))
@@ -127,8 +139,8 @@ def get_schedule_path(tenant_id: str) -> Path:
     return None
 
 
-def load_publication_log(tenant_id: str) -> List[Dict[str, str]]:
-    log_path = get_log_path(tenant_id)
+def load_publication_log(tenant_id: str, base_path: Optional[Path] = None) -> List[Dict[str, str]]:
+    log_path = get_log_path(tenant_id, base_path=base_path)
     if not log_path.exists():
         return []
     with log_path.open('r', encoding='utf-8-sig', newline='') as f:
@@ -136,8 +148,13 @@ def load_publication_log(tenant_id: str) -> List[Dict[str, str]]:
         return list(reader)
 
 
-def save_publication_log(tenant_id: str, rows: List[Dict[str, str]]) -> None:
-    log_path = get_log_path(tenant_id)
+def save_publication_log(
+    tenant_id: str,
+    rows: List[Dict[str, str]],
+    base_path: Optional[Path] = None,
+) -> None:
+    log_path = get_log_path(tenant_id, base_path=base_path)
+    log_path.parent.mkdir(parents=True, exist_ok=True)
     with log_path.open('w', encoding='utf-8-sig', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=LOG_FIELDS)
         writer.writeheader()
@@ -169,7 +186,9 @@ def add_publication_record(log_rows: List[Dict], item: ScheduleItem, post_id: st
         'reach': '',
         'interactions': '',
         'DMs': '',
-        'leads': ''
+        'leads': '',
+        'hypothesis_id': item.hypothesis_id,
+        'experiment_id': item.experiment_id,
     }
     log_rows.append(new_row)
 
@@ -178,8 +197,8 @@ def add_publication_record(log_rows: List[Dict], item: ScheduleItem, post_id: st
 # SCHEDULE PARSING
 # ==============================================================================
 
-def parse_tenant_schedule(tenant_id: str) -> List[ScheduleItem]:
-    schedule_path = get_schedule_path(tenant_id)
+def parse_tenant_schedule(tenant_id: str, base_path: Optional[Path] = None) -> List[ScheduleItem]:
+    schedule_path = get_schedule_path(tenant_id, base_path=base_path)
     if not schedule_path:
         logger.warning(f"No schedule encontrado para {tenant_id}")
         return []
@@ -196,6 +215,8 @@ def parse_tenant_schedule(tenant_id: str) -> List[ScheduleItem]:
             caption = row.get('Caption', '').strip()
             hashtags = row.get('Hashtags', '').strip()
             post_type = row.get('Post Type', '').strip()
+            hypothesis_id = row.get('Hypothesis ID', '').strip()
+            experiment_id = row.get('Experiment ID', '').strip()
             
             if not all([date_str, time_str, media]):
                 continue
@@ -220,17 +241,20 @@ def parse_tenant_schedule(tenant_id: str) -> List[ScheduleItem]:
                 caption=full_caption,
                 post_type=post_type,
                 datetime_local=dt_local,
-                datetime_utc=dt_utc
+                datetime_utc=dt_utc,
+                hypothesis_id=hypothesis_id,
+                experiment_id=experiment_id,
             ))
     
     items.sort(key=lambda x: x.datetime_utc)
     return items
 
 
-def discover_tenants() -> List[str]:
+def discover_tenants(base_path: Optional[Path] = None) -> List[str]:
     """Descubre tenants que tienen configuración para Instagram"""
     tenants = []
-    tenants_dir = Path('tenants')
+    root = Path(base_path) if base_path else Path(".")
+    tenants_dir = root / "tenants"
     if not tenants_dir.exists():
         return []
     
@@ -255,38 +279,91 @@ def discover_tenants() -> List[str]:
 class IgScheduler:
     """Scheduler multi-tenant para Instagram"""
     
-    def __init__(self, tenant_ids: List[str], historical_baseline=None):
+    def __init__(
+        self,
+        tenant_ids: List[str],
+        historical_baseline=None,
+        *,
+        base_path: Optional[Path] = None,
+        max_attempts: int = DEFAULT_MAX_ATTEMPTS,
+        base_delay_seconds: int = DEFAULT_BASE_DELAY_SECONDS,
+        clock=None,
+    ):
         self.tenant_ids = tenant_ids
         self._historical_baseline = historical_baseline
+        self.base_path = Path(base_path).resolve() if base_path else project_root()
+        self.max_attempts = max_attempts
+        self.base_delay_seconds = base_delay_seconds
+        self.clock = clock or utc_now
         self.publishers: Dict[str, IgPublisher] = {}
         self.all_items: List[ScheduleItem] = []
         self.logs: Dict[str, List[Dict]] = {}
+        self.state_stores: Dict[str, PublishJobStore] = {}
+        self.tenant_errors: Dict[str, str] = {}
+        self.last_outcomes: Dict[str, Dict[str, Any]] = {}
+        self.persist_state = True
         
         # Inicializar publishers y cargar schedules
         for tenant_id in tenant_ids:
+            self.state_stores[tenant_id] = self._make_state_store(tenant_id)
             try:
-                self.publishers[tenant_id] = create_ig_publisher_for_tenant(tenant_id)
+                self.publishers[tenant_id] = create_ig_publisher_for_tenant(
+                    tenant_id, base_path=self.base_path
+                )
                 logger.info(f"[{tenant_id}] Publisher OK - IG ID: {self.publishers[tenant_id].ig_id}")
             except Exception as e:
+                self.tenant_errors[tenant_id] = str(e)
                 logger.error(f"[{tenant_id}] Error inicializando publisher: {e}")
-                continue
             
             # Cargar schedule
-            items = parse_tenant_schedule(tenant_id)
+            items = parse_tenant_schedule(tenant_id, base_path=self.base_path)
             self.all_items.extend(items)
             logger.info(f"[{tenant_id}] Items en schedule: {len(items)}")
             
             # Cargar log
-            self.logs[tenant_id] = load_publication_log(tenant_id)
+            self.logs[tenant_id] = load_publication_log(tenant_id, base_path=self.base_path)
             logger.info(f"[{tenant_id}] Items en log: {len(self.logs[tenant_id])}")
         
         logger.info(f"Total items multi-tenant: {len(self.all_items)}")
+
+    def _make_state_store(self, tenant_id: str) -> PublishJobStore:
+        return PublishJobStore(
+            self.base_path,
+            tenant_id,
+            max_attempts=self.max_attempts,
+            base_delay_seconds=self.base_delay_seconds,
+            clock=self.clock,
+        )
+
+    def _state_store(self, tenant_id: str) -> PublishJobStore:
+        """Store perezoso para tests que construyen el scheduler con ``__new__``."""
+        stores = getattr(self, "state_stores", None)
+        if stores is None:
+            stores = {}
+            self.state_stores = stores
+        if tenant_id not in stores:
+            if not hasattr(self, "base_path"):
+                self.base_path = project_root()
+            if not hasattr(self, "max_attempts"):
+                self.max_attempts = DEFAULT_MAX_ATTEMPTS
+            if not hasattr(self, "base_delay_seconds"):
+                self.base_delay_seconds = DEFAULT_BASE_DELAY_SECONDS
+            if not hasattr(self, "clock"):
+                self.clock = utc_now
+            stores[tenant_id] = self._make_state_store(tenant_id)
+            if not hasattr(self, "persist_state"):
+                self.persist_state = False
+        return stores[tenant_id]
     
     def get_pending_items(self) -> List[ScheduleItem]:
         pending = []
         for item in self.all_items:
             log_rows = self.logs.get(item.tenant_id, [])
             if not is_already_published(log_rows, item):
+                store = self._state_store(item.tenant_id)
+                job = store.get(publish_job_key(item.tenant_id, item))
+                if job is not None and job.is_terminal:
+                    continue
                 pending.append(item)
         return pending
     
@@ -446,13 +523,31 @@ class IgScheduler:
         """Compatibilidad: solo el dictamen, sin el detalle."""
         return self.historical_reuse_report(asset_filename, tenant_id=tenant_id)["status"]
 
+    def _remember_outcome(self, item: ScheduleItem, status: str, **extra: Any) -> None:
+        outcomes = getattr(self, "last_outcomes", None)
+        if outcomes is None:
+            outcomes = {}
+            self.last_outcomes = outcomes
+        outcomes[item.unique_key] = {"status": status, **extra}
+
+    def _record_blocked(self, item: ScheduleItem, reason: str) -> None:
+        if getattr(self, "persist_state", False):
+            self._state_store(item.tenant_id).mark_blocked(
+                publish_job_key(item.tenant_id, item), item, reason
+            )
+        self._remember_outcome(item, "blocked", error=reason)
+
     def process_item(self, item: ScheduleItem) -> Optional[str]:
         logger.info(f"\n{'='*60}")
         logger.info(f"[{item.tenant_id}] Procesando: {item.date_str} {item.time_str} - {item.media_filename}")
         
         publisher = self.publishers.get(item.tenant_id)
         if not publisher:
-            logger.error(f"[{item.tenant_id}] No hay publisher configurado")
+            reason = getattr(self, "tenant_errors", {}).get(
+                item.tenant_id, "No hay publisher configurado"
+            )
+            logger.error(f"[{item.tenant_id}] No hay publisher configurado: {reason}")
+            self._record_blocked(item, reason)
             return None
         
         reuse = self.historical_reuse_report(item.media_filename, tenant_id=item.tenant_id)
@@ -460,6 +555,18 @@ class IgScheduler:
             logger.warning(
                 f"[{item.tenant_id}] No se publica {item.media_filename}: {reuse['reason']}"
             )
+            self._record_blocked(item, reuse["reason"])
+            return None
+
+        preflight = preflight_tenant(
+            item.tenant_id,
+            item=item,
+            base_path=getattr(self, "base_path", project_root()),
+        )
+        if not preflight.ok:
+            reason = "; ".join(preflight.issues)
+            logger.warning(f"[{item.tenant_id}] Preflight bloqueó {item.media_filename}: {reason}")
+            self._record_blocked(item, reason)
             return None
 
         try:
@@ -482,9 +589,25 @@ class IgScheduler:
                     item.tenant_id,
                     exc,
                 )
+            if getattr(self, "persist_state", False):
+                self._state_store(item.tenant_id).record_success(
+                    publish_job_key(item.tenant_id, item), item, post_id
+                )
+            self._remember_outcome(item, "published", publication_id=post_id)
             return post_id
         except Exception as e:
-            logger.error(f"[{item.tenant_id}] Error publicando: {e}")
+            if getattr(self, "persist_state", False):
+                job = self._state_store(item.tenant_id).record_failure(
+                    publish_job_key(item.tenant_id, item), item, e
+                )
+                max_attempts = self._state_store(item.tenant_id).max_attempts
+                logger.error(
+                    f"[{item.tenant_id}] Error publicando (intento {job.attempts}/{max_attempts}): "
+                    f"{job.last_error} | siguiente={job.next_attempt_at or 'dead-letter'}"
+                )
+            else:
+                logger.error(f"[{item.tenant_id}] Error publicando: {e}")
+            self._remember_outcome(item, "failed", error=str(e))
             return None
     
     def run_once(self) -> Dict[str, any]:
@@ -498,7 +621,9 @@ class IgScheduler:
             'published': 0,
             'failed': 0,
             'skipped_future': 0,
+            'skipped_backoff': 0,
             'blocked': 0,
+            'dead_letter': 0,
             'by_tenant': {}
         }
         
@@ -507,7 +632,8 @@ class IgScheduler:
             if tenant_id not in results['by_tenant']:
                 results['by_tenant'][tenant_id] = {
                     'processed': 0, 'published': 0, 'failed': 0,
-                    'skipped_future': 0, 'blocked': 0
+                    'skipped_future': 0, 'skipped_backoff': 0, 'blocked': 0,
+                    'dead_letter': 0
                 }
             
             # Verificar si ya es hora
@@ -515,6 +641,18 @@ class IgScheduler:
                 logger.info(f"⏭️  [{tenant_id}] Saltando (futuro): {item.date_str} {item.time_str}")
                 results['skipped_future'] += 1
                 results['by_tenant'][tenant_id]['skipped_future'] += 1
+                continue
+
+            store = self._state_store(tenant_id)
+            key = publish_job_key(tenant_id, item)
+            if not store.is_due(key, now):
+                job = store.get(key)
+                logger.info(
+                    f"⏳ [{tenant_id}] Backoff activo para {item.media_filename}; "
+                    f"reintento {job.next_attempt_at if job else 'pendiente'}"
+                )
+                results['skipped_backoff'] += 1
+                results['by_tenant'][tenant_id]['skipped_backoff'] += 1
                 continue
             
             results['processed'] += 1
@@ -534,8 +672,17 @@ class IgScheduler:
                 results['published'] += 1
                 results['by_tenant'][tenant_id]['published'] += 1
             else:
-                results['failed'] += 1
-                results['by_tenant'][tenant_id]['failed'] += 1
+                outcome = getattr(self, "last_outcomes", {}).get(item.unique_key, {})
+                job = store.get(key)
+                if outcome.get("status") == "blocked":
+                    results['blocked'] += 1
+                    results['by_tenant'][tenant_id]['blocked'] += 1
+                else:
+                    results['failed'] += 1
+                    results['by_tenant'][tenant_id]['failed'] += 1
+                if job is not None and job.status == STATUS_DEAD:
+                    results['dead_letter'] += 1
+                    results['by_tenant'][tenant_id]['dead_letter'] += 1
         
         self._reuse_cache = {}
 
@@ -543,7 +690,9 @@ class IgScheduler:
         for tenant_id, log_rows in self.logs.items():
             tenant_results = results['by_tenant'].get(tenant_id, {})
             if tenant_results.get('published', 0) > 0:
-                save_publication_log(tenant_id, log_rows)
+                save_publication_log(
+                    tenant_id, log_rows, base_path=getattr(self, "base_path", None)
+                )
                 logger.info(f"📝 [{tenant_id}] Log actualizado")
         
         return results

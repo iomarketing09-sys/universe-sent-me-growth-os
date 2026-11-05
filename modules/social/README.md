@@ -20,6 +20,37 @@ La publicación está desactivada por defecto. `MetaPublisher` arranca en
 `dry_run=True` y `IgScheduler` solo publica lo que ya está en la fecha/hora del
 calendario del tenant.
 
+## Estabilización de publicación
+
+`IgScheduler` mantiene un estado por tenant en
+`tenants/<id>/data/social/publish_state.json`. Cada slot tiene una clave
+idempotente (`instagram|tenant|fecha|hora|asset`) y registra intentos, último
+error, próximo reintento y estado terminal.
+
+Los errores transitorios usan backoff exponencial: 15, 30, 60, 120 y 240
+minutos. Después de 5 intentos el job pasa a `dead` y se agrega a
+`tenants/<id>/data/social/dead_letter.jsonl`. Un error permanente de preflight
+queda en `blocked` y no se reintenta hasta liberarlo manualmente.
+
+```bash
+# Preflight local de todos los slots del tenant
+python3 scripts/social_preflight.py --tenant flexi
+
+# Validar también permisos de publicación contra Meta
+python3 scripts/social_preflight.py --tenant flexi --remote
+
+# Ver estado, reintentos y cuarentena
+python3 scripts/social_publish_state.py --tenant flexi
+
+# Liberar jobs después de corregir asset, formato o credenciales
+python3 scripts/social_publish_state.py --tenant flexi --release-dead
+python3 scripts/social_publish_state.py --tenant flexi --release-blocked
+```
+
+El preflight valida credenciales, `IMAGE_HOST`, formato soportado, existencia
+del asset, peso, formato de imagen y relación de aspecto de feed. `catbox` queda
+bloqueado para producción; los tenants actuales usan `imgbb`.
+
 ## Guard de reuse: dos políticas
 
 `IgScheduler.historical_reuse_report(asset, tenant_id=...)` decide si un activo
@@ -62,6 +93,47 @@ publicarse. En su lugar se consulta `config.ads.approved_models`:
 sucursal ya cargó), no un inventario completo. Un `NOT_IN_INVENTORY` significa
 "no lo tengo declarado", no "no existe en sucursal". Para Flexi el inventario
 real sigue pendiente como insumo de negocio.
+
+## Facebook: álbum multi-imagen (carrusel)
+
+Facebook no tiene endpoint de carrusel para páginas: el equivalente es un álbum.
+`MetaPublisher.publish_album()` es la ruta oficial; no armar el flujo a mano.
+
+```python
+from modules.social import MetaPublisher
+
+publisher = MetaPublisher(page_id=PAGE_ID, access_token=PAGE_TOKEN, dry_run=False)
+result = publisher.publish_album(
+    image_paths=["01.jpg", "02.jpg", "03.jpg"],          # 2 a 10, en orden
+    caption="Texto del post",
+    scheduled_publish_time="2026-11-04T16:00:00+00:00",  # siempre UTC
+)
+```
+
+- Paso 1: sube cada foto a `/{PAGE_ID}/photos` con `published=false` y
+  `temporary=false`, para que no expire a las 24 h.
+- Paso 2: crea el post en `/{PAGE_ID}/feed` con `attached_media[i]`,
+  `published=false` y `unpublished_content_type=SCHEDULED`.
+- `result.raw_response["photo_ids"]` devuelve los IDs subidos.
+- Verificación: `GET /{post_id}?fields=is_published,scheduled_publish_time`.
+- En `dry_run` valida el conteo (2–10) y devuelve `mock_album_*` sin red.
+
+### Programar un slot del calendario (solo Facebook)
+
+`publish_meta_import_slots()` lee `meta_import.csv`, filtra por fecha y
+despacha `PHOTO`, `CAROUSEL`, `REEL`/`VIDEO` y `TEXT`. Omite los slots ya
+registrados como `scheduled`/`published` en `publication_log*.csv`, así que
+repetir el comando no duplica.
+
+Con `--since`/`--until` el modo toca **solo Facebook**, porque Instagram no
+programa por API: sus slots los publica el cron de `ig_scheduler` al vencer la
+hora.
+
+```bash
+# Solo los slots del 4 de noviembre
+python3 -m modules.cgo --mode meta_publishing --tenant micas-art-deco \
+  --publish --since 2026-11-04 --until 2026-11-04
+```
 
 ## Contexto de publicación
 

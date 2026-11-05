@@ -649,6 +649,8 @@ def load_meta_import_csv(meta_import_path: Union[str, Path]) -> Dict[str, Dict[s
                     "time": row.get("Time (HH:MM, 24h)", "").strip(),
                     "timezone": row.get("Timezone", "America/Matamoros").strip(),
                     "first_comment": row.get("First Comment", "").strip(),
+                    "hypothesis_id": row.get("Hypothesis ID", "").strip(),
+                    "experiment_id": row.get("Experiment ID", "").strip(),
                 }
             # Para TEXT_ONLY, usar Date + Time como clave
             else:
@@ -662,6 +664,8 @@ def load_meta_import_csv(meta_import_path: Union[str, Path]) -> Dict[str, Dict[s
                     "time": row.get("Time (HH:MM, 24h)", "").strip(),
                     "timezone": row.get("Timezone", "America/Matamoros").strip(),
                     "first_comment": row.get("First Comment", "").strip(),
+                    "hypothesis_id": row.get("Hypothesis ID", "").strip(),
+                    "experiment_id": row.get("Experiment ID", "").strip(),
                 }
     return result
 
@@ -674,7 +678,7 @@ def find_asset_recursive(tenant_root: Path, filename: str) -> Optional[Path]:
     # Primero buscar en assets/ (estructura real)
     assets_dir = tenant_root / "assets"
     if assets_dir.exists():
-        for root, dirs, files in os.walk(assets_dir):
+        for root, dirs, files in os.walk(assets_dir, followlinks=True):
             if filename in files:
                 return Path(root) / filename
     
@@ -819,6 +823,19 @@ def publish_meta_import_slots(
             result.raw_response = {}
         result.raw_response.setdefault("slot", f"{date} {time_str}")
         result.raw_response.setdefault("post_type", post_type)
+        if result.success:
+            record_scheduled_publication(
+                tenant_root,
+                {
+                    "datetime_utc": scheduled_utc,
+                    "description": caption,
+                    "source_filename": assets[0],
+                    "asset_ref": assets[0],
+                    "hypothesis_id": (row.get("Hypothesis ID") or "").strip(),
+                    "experiment_id": (row.get("Experiment ID") or "").strip(),
+                },
+                result,
+            )
         results.append(result)
 
     return results
@@ -878,6 +895,15 @@ def resolve_asset_path(slot: Dict[str, Any], tenant_root: Path, meta_import: Opt
     return tenant_root / source_filename
 
 
+def compose_caption(meta_data: Dict[str, Any]) -> str:
+    """Caption final con hashtags. Instagram los agrega aparte; Facebook no."""
+    caption = (meta_data.get("caption") or "").strip()
+    tags = (meta_data.get("hashtags") or "").strip()
+    if tags and tags not in caption:
+        return f"{caption}\n\n{tags}" if caption else tags
+    return caption
+
+
 def get_slot_meta_data(slot: Dict[str, Any], meta_import: Dict[str, Dict]) -> Dict[str, Any]:
     """
     Obtiene los datos oficiales del slot desde meta_import.csv.
@@ -906,13 +932,15 @@ def get_slot_meta_data(slot: Dict[str, Any], meta_import: Dict[str, Dict]) -> Di
         "hashtags": "",
         "link_url": slot.get("whatsapp_e164") and f"https://wa.me/{slot['whatsapp_e164']}",
         "post_type": "TEXT_ONLY" if not source_filename else "PHOTO",
+        "hypothesis_id": slot.get("hypothesis_id", ""),
+        "experiment_id": slot.get("experiment_id", ""),
     }
 
 
 PUBLICATION_LOG_FIELDS = [
     "date", "time", "platform", "piece", "asset_filename",
     "status", "publication_id", "published_at", "reach",
-    "interactions", "DMs", "leads",
+    "interactions", "DMs", "leads", "hypothesis_id", "experiment_id",
 ]
 
 
@@ -970,6 +998,8 @@ def record_scheduled_publication(
         "interactions": "",
         "DMs": "",
         "leads": "",
+        "hypothesis_id": str(slot.get("hypothesis_id") or ""),
+        "experiment_id": str(slot.get("experiment_id") or ""),
     }
     log_path = Path(tenant_root) / "publication_log_week2.csv"
     rows: List[Dict[str, str]] = []
@@ -1045,7 +1075,7 @@ def publish_schedule_from_dryrun(
         
         # Obtener datos oficiales de meta_import.csv
         meta_data = get_slot_meta_data(slot, meta_import)
-        caption = meta_data.get("caption", slot.get("description", ""))
+        caption = compose_caption(meta_data) or slot.get("description", "")
         link = meta_data.get("link_url", "")
         
         try:
@@ -1091,7 +1121,15 @@ def publish_schedule_from_dryrun(
         
         results.append(result)
         if result.success and not publisher.dry_run:
-            record_scheduled_publication(tenant_root, slot, result)
+            record_scheduled_publication(
+                tenant_root,
+                {
+                    **slot,
+                    "hypothesis_id": meta_data.get("hypothesis_id", ""),
+                    "experiment_id": meta_data.get("experiment_id", ""),
+                },
+                result,
+            )
     
     return results
 
@@ -1155,7 +1193,7 @@ def publish_single_slot(
     
     # Obtener datos oficiales
     meta_data = get_slot_meta_data(slot, meta_import)
-    caption = caption_override or meta_data.get("caption", slot.get("description", ""))
+    caption = caption_override or compose_caption(meta_data) or slot.get("description", "")
     link = meta_data.get("link_url", "")
     
     try:
@@ -1198,7 +1236,12 @@ def publish_single_slot(
     if result.success and not publisher.dry_run:
         record_scheduled_publication(
             tenant_root,
-            {**slot, "description": caption},
+            {
+                **slot,
+                "description": caption,
+                "hypothesis_id": meta_data.get("hypothesis_id", ""),
+                "experiment_id": meta_data.get("experiment_id", ""),
+            },
             result,
         )
 

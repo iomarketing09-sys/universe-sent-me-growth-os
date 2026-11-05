@@ -11,7 +11,7 @@ import requests
 import time
 import logging
 from pathlib import Path
-from typing import Optional, Tuple
+from typing import List, Optional, Tuple
 
 logger = logging.getLogger(__name__)
 
@@ -166,6 +166,44 @@ class IgPublisher:
         creation_id = r['id']
         logger.info(f"Container creado: {creation_id}")
         return creation_id
+
+    def create_carousel_item(self, image_url: str) -> str:
+        """Crea un elemento de carrusel (sin caption). Retorna creation_id."""
+        url = f'https://graph.facebook.com/v19.0/{self.ig_id}/media'
+        payload = {
+            'image_url': image_url,
+            'is_carousel_item': 'true',
+            'access_token': self.page_token,
+        }
+        r = requests.post(url, data=payload, timeout=60).json()
+
+        if 'id' not in r:
+            raise RuntimeError(f"Error creando elemento de carrusel: {r}")
+
+        creation_id = r['id']
+        logger.info(f"Elemento de carrusel creado: {creation_id}")
+        return creation_id
+
+    def create_carousel_container(self, children: List[str], caption: str) -> str:
+        """Crea el container padre del carrusel. Retorna creation_id."""
+        if not children:
+            raise ValueError("El carrusel necesita al menos un elemento")
+
+        url = f'https://graph.facebook.com/v19.0/{self.ig_id}/media'
+        payload = {
+            'media_type': 'CAROUSEL',
+            'children': ','.join(children),
+            'caption': caption,
+            'access_token': self.page_token,
+        }
+        r = requests.post(url, data=payload, timeout=60).json()
+
+        if 'id' not in r:
+            raise RuntimeError(f"Error creando container de carrusel: {r}")
+
+        creation_id = r['id']
+        logger.info(f"Container de carrusel creado: {creation_id}")
+        return creation_id
     
     def wait_for_container_ready(self, creation_id: str, max_wait: int = 60) -> bool:
         """Espera a que el container esté listo (status: Finished)"""
@@ -197,6 +235,10 @@ class IgPublisher:
     
     def publish(self, media_filename: str, caption: str) -> str:
         """Flujo completo de publicación. Retorna post_id."""
+        filenames = [name.strip() for name in media_filename.split('|') if name.strip()]
+        if len(filenames) > 1:
+            return self.publish_carousel(filenames, caption)
+
         # 1. Encontrar asset
         asset_file = self.find_asset(media_filename)
         if not asset_file:
@@ -216,12 +258,33 @@ class IgPublisher:
         
         return post_id
 
+    def publish_carousel(self, media_filenames: List[str], caption: str) -> str:
+        """Publica un carrusel de imágenes. Retorna post_id."""
+        if len(media_filenames) < 2:
+            raise ValueError("Un carrusel necesita al menos dos imágenes")
+        if len(media_filenames) > 20:
+            raise ValueError("Un carrusel admite como máximo 20 imágenes")
 
-def load_tenant_credentials(tenant_id: str) -> dict:
-    """Carga credenciales desde tenants/<tenant_id>/.env"""
-    from pathlib import Path
-    
-    env_path = Path(f'tenants/{tenant_id}/.env')
+        children = []
+        for filename in media_filenames:
+            asset_file = self.find_asset(filename)
+            if not asset_file:
+                raise FileNotFoundError(f"Asset no encontrado: {filename}")
+
+            image_url = self.upload_image(asset_file)
+            creation_id = self.create_carousel_item(image_url)
+            self.wait_for_container_ready(creation_id)
+            children.append(creation_id)
+
+        carousel_id = self.create_carousel_container(children, caption)
+        self.wait_for_container_ready(carousel_id)
+        return self.publish_media_container(carousel_id)
+
+
+def load_tenant_credentials(tenant_id: str, base_path: Optional[Path] = None) -> dict:
+    """Carga credenciales desde tenants/<tenant_id>/.env."""
+    root = Path(base_path) if base_path else Path(".")
+    env_path = root / "tenants" / tenant_id / ".env"
     if not env_path.exists():
         raise FileNotFoundError(f"No existe .env para tenant: {tenant_id}")
     
@@ -260,11 +323,12 @@ def get_meta_tokens(access_token: str, page_id: str) -> Tuple[str, str]:
     return page_token, ig_id
 
 
-def create_ig_publisher_for_tenant(tenant_id: str) -> IgPublisher:
+def create_ig_publisher_for_tenant(tenant_id: str, base_path: Optional[Path] = None) -> IgPublisher:
     """Factory: crea IgPublisher configurado para un tenant"""
-    creds = load_tenant_credentials(tenant_id)
+    root = Path(base_path) if base_path else Path(".")
+    creds = load_tenant_credentials(tenant_id, base_path=root)
     page_token, ig_id = get_meta_tokens(creds['META_ACCESS_TOKEN'], creds['FB_PAGE_ID'])
-    asset_root = Path(f'tenants/{tenant_id}/assets')
+    asset_root = root / "tenants" / tenant_id / "assets"
     
     return IgPublisher(
         page_token=page_token,

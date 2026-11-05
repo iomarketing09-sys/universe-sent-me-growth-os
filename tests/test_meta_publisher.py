@@ -3,6 +3,7 @@ Tests unitarios para growth/meta_publisher.py
 """
 import os
 import json
+import csv
 from pathlib import Path
 from datetime import datetime, timezone
 from unittest.mock import patch
@@ -16,9 +17,11 @@ from growth.meta_publisher import (
     MetaPublisher,
     MetaResponse,
     load_dryrun_schedule,
+    publish_meta_import_slots,
     resolve_asset_path,
     publish_schedule_from_dryrun,
 )
+from modules.social.meta_publisher import record_scheduled_publication
 
 
 class TestMetaPublisherInit:
@@ -194,8 +197,185 @@ class TestPublishPhoto:
         assert "no encontrado" in result.error.lower()
 
 
+class TestPublishAlbum:
+    """Tests de publicación de álbum multi-imagen."""
+
+    def test_publish_album_dry_run(self):
+        """Álbum en dry-run no toca la red y devuelve estado scheduled."""
+        publisher = MetaPublisher(dry_run=True)
+        result = publisher.publish_album(
+            image_paths=["/fake/01.jpg", "/fake/02.jpg", "/fake/03.jpg"],
+            caption="Test caption",
+            scheduled_publish_time="2026-11-04T16:00:00+00:00",
+        )
+
+        assert isinstance(result, MetaResponse)
+        assert result.success is True
+        assert result.status == "scheduled"
+        assert result.post_id.startswith("mock_album_")
+
+    def test_publish_album_requires_two_images(self):
+        """Un álbum con menos de dos imágenes se rechaza."""
+        publisher = MetaPublisher(dry_run=True)
+        result = publisher.publish_album(
+            image_paths=["/fake/01.jpg"],
+            caption="Test",
+            scheduled_publish_time="2026-11-04T16:00:00+00:00",
+        )
+
+        assert result.success is False
+        assert "2 y 10" in result.error
+
+    def test_publish_album_rejects_more_than_ten(self):
+        """Meta admite como máximo diez imágenes por álbum."""
+        publisher = MetaPublisher(dry_run=True)
+        result = publisher.publish_album(
+            image_paths=[f"/fake/{i:02d}.jpg" for i in range(11)],
+            caption="Test",
+            scheduled_publish_time="2026-11-04T16:00:00+00:00",
+        )
+
+        assert result.success is False
+        assert "2 y 10" in result.error
+
+    def test_publish_album_missing_files_real_mode(self):
+        """Falla antes de llamar a Meta si un asset no existe."""
+        publisher = MetaPublisher(
+            page_id="page_123",
+            access_token="token_456",
+            dry_run=False,
+        )
+        result = publisher.publish_album(
+            image_paths=["/nonexistent/01.jpg", "/nonexistent/02.jpg"],
+            caption="Test",
+            scheduled_publish_time="2026-11-04T16:00:00+00:00",
+        )
+
+        assert result.success is False
+        assert "no encontrados" in result.error.lower()
+
+
 class TestPublishVideo:
     """Tests de publicación de video."""
+
+
+class TestPublishMetaImportSlots:
+    """Programación selectiva de Facebook desde meta_import.csv."""
+
+    HEADER = [
+        "Date (YYYY-MM-DD)",
+        "Time (HH:MM, 24h)",
+        "Timezone",
+        "Post Type",
+        "Media URL",
+        "Caption",
+        "Link URL",
+        "Hashtags",
+        "Location",
+        "First Comment",
+    ]
+
+    def _tenant(self, tmp_path, rows):
+        import csv as _csv
+
+        tenant = tmp_path / "tenant"
+        (tenant / "assets").mkdir(parents=True)
+        for name in ("01.jpg", "02.jpg", "03.jpg"):
+            (tenant / "assets" / name).write_bytes(b"fake")
+        with (tenant / "meta_import.csv").open("w", encoding="utf-8", newline="") as handle:
+            writer = _csv.writer(handle)
+            writer.writerow(self.HEADER)
+            writer.writerows(rows)
+        return tenant
+
+    def test_filters_range_and_dispatches_by_post_type(self, tmp_path):
+        tenant = self._tenant(
+            tmp_path,
+            [
+                ["2026-11-04", "10:00", "America/Matamoros", "CAROUSEL", "01.jpg|02.jpg", "Car", "", "", "", ""],
+                ["2026-11-06", "10:00", "America/Matamoros", "PHOTO", "03.jpg", "Foto", "", "", "", ""],
+            ],
+        )
+        results = publish_meta_import_slots(
+            meta_import_path=tenant / "meta_import.csv",
+            tenant_root=tenant,
+            since="2026-11-04",
+            until="2026-11-04",
+            dry_run=True,
+            environment={},
+        )
+
+        assert len(results) == 1
+        assert results[0].success is True
+        assert results[0].post_id.startswith("mock_album_")
+        assert results[0].raw_response["post_type"] == "CAROUSEL"
+
+    def test_skips_slots_already_logged(self, tmp_path):
+        tenant = self._tenant(
+            tmp_path,
+            [
+                ["2026-11-04", "10:00", "America/Matamoros", "CAROUSEL", "01.jpg|02.jpg", "Car", "", "", "", ""],
+            ],
+        )
+        (tenant / "publication_log_week2.csv").write_text(
+            "date,time,platform,piece,asset_filename,status,publication_id,published_at,reach,interactions,DMs,leads\n"
+            "2026-11-04,10:00,Facebook,Car,01.jpg|02.jpg,scheduled,123,,,,\n",
+            encoding="utf-8",
+        )
+
+        results = publish_meta_import_slots(
+            meta_import_path=tenant / "meta_import.csv",
+            tenant_root=tenant,
+            since="2026-11-04",
+            until="2026-11-04",
+            dry_run=True,
+            environment={},
+        )
+
+        assert len(results) == 1
+        assert results[0].status == "skipped"
+        assert results[0].post_id is None
+
+    def test_reports_missing_assets_in_real_mode(self, tmp_path):
+        tenant = self._tenant(
+            tmp_path,
+            [
+                ["2026-11-04", "10:00", "America/Matamoros", "CAROUSEL", "01.jpg|nope.jpg", "Car", "", "", "", ""],
+            ],
+        )
+        results = publish_meta_import_slots(
+            meta_import_path=tenant / "meta_import.csv",
+            tenant_root=tenant,
+            since="2026-11-04",
+            until="2026-11-04",
+            dry_run=False,
+            environment={"FB_PAGE_ID": "page_1", "META_ACCESS_TOKEN": "token_1"},
+        )
+
+        assert len(results) == 1
+        assert results[0].success is False
+        assert "no encontrados" in results[0].error.lower()
+
+    def test_record_scheduled_publication_lleva_ids_de_experimento(self, tmp_path):
+        tenant = tmp_path / "tenant"
+        tenant.mkdir()
+        record_scheduled_publication(
+            tenant,
+            {
+                "datetime_utc": "2026-11-05T15:00:00+00:00",
+                "description": "Prueba",
+                "source_filename": "01.jpg",
+                "asset_ref": "01",
+                "hypothesis_id": "HB-UNI-003",
+                "experiment_id": "EXP-2026-11-HB-UNI-003-T",
+            },
+            MetaResponse(success=True, status="scheduled", post_id="123"),
+        )
+
+        with (tenant / "publication_log_week2.csv").open(encoding="utf-8-sig", newline="") as handle:
+            row = next(csv.DictReader(handle))
+        assert row["hypothesis_id"] == "HB-UNI-003"
+        assert row["experiment_id"] == "EXP-2026-11-HB-UNI-003-T"
     
     def test_publish_video_dry_run(self):
         """Publicación de video en dry-run."""
@@ -369,3 +549,12 @@ class TestPayloadStructure:
 
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
+
+
+def test_compose_caption_appends_hashtags_once():
+    from modules.social.meta_publisher import compose_caption
+
+    meta = {"caption": "Texto corto.", "hashtags": "#WilfredUSM #UniverseSentMe"}
+    assert compose_caption(meta) == "Texto corto.\n\n#WilfredUSM #UniverseSentMe"
+    meta["caption"] = "Texto corto. #WilfredUSM #UniverseSentMe"
+    assert compose_caption(meta) == "Texto corto. #WilfredUSM #UniverseSentMe"

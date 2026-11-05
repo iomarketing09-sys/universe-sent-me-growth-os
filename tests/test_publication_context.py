@@ -6,6 +6,7 @@ import csv
 import json
 from datetime import datetime, timezone
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import MagicMock
 
 from modules.intelligence import publication_context
@@ -105,7 +106,7 @@ def test_record_publication_usa_transcripcion_si_el_nombre_no_trae_chiste(tmp_pa
     assert result["meme_text"] == "Silencio reconfortante"
 
 
-def test_ig_scheduler_escribe_contexto_al_publicar(tmp_path):
+def test_ig_scheduler_escribe_contexto_al_publicar(tmp_path, monkeypatch):
     tenant = _tenant(tmp_path)
     scheduler = IgScheduler.__new__(IgScheduler)
     scheduler.base_path = tmp_path
@@ -118,6 +119,11 @@ def test_ig_scheduler_escribe_contexto_al_publicar(tmp_path):
         "status": REUSE_NOT_APPLICABLE,
         "reason": "",
     }
+    monkeypatch.setattr(
+        ig_scheduler,
+        "preflight_tenant",
+        lambda *args, **kwargs: SimpleNamespace(ok=True, issues=[]),
+    )
     item = ScheduleItem(
         tenant_id="universe",
         date_str="2026-11-05",

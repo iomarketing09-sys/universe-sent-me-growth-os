@@ -19,6 +19,7 @@ from modules.social.ig_scheduler import (
     REUSE_UNKNOWN,
     IgScheduler,
     ScheduleItem,
+    add_publication_record,
 )
 
 ASSET = "123456 - Kael - Test.png"
@@ -147,3 +148,24 @@ def test_process_item_no_publica_si_esta_bloqueado():
 
     assert scheduler.process_item(item) is None
     publisher.publish.assert_not_called()
+
+
+def test_add_publication_record_lleva_ids_de_experimento():
+    item = ScheduleItem(
+        tenant_id="universe",
+        date_str="2026-11-05",
+        time_str="19:00",
+        media_filename=ASSET,
+        caption="Hola",
+        post_type="photo",
+        datetime_local=datetime.now(timezone.utc),
+        datetime_utc=datetime.now(timezone.utc),
+        hypothesis_id="HB-UNI-003",
+        experiment_id="EXP-2026-11-HB-UNI-003-T",
+    )
+    rows = []
+
+    add_publication_record(rows, item, "123")
+
+    assert rows[0]["hypothesis_id"] == "HB-UNI-003"
+    assert rows[0]["experiment_id"] == "EXP-2026-11-HB-UNI-003-T"
