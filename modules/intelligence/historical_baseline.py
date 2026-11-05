@@ -405,6 +405,195 @@ if __name__ == "__main__":
             f"int={pub['interactions']} shares={pub['shares']}"
         )
 
+def _window_rank(window: str) -> int:
+    """Ordena ventanas: LIFETIME_BACKFILL > E<n>h > resto."""
+    text = str(window or "").strip().upper()
+    if text.startswith("LIFETIME"):
+        return 10**6
+    if text.startswith("E"):
+        digits = "".join(char for char in text[1:] if char.isdigit())
+        if digits:
+            return int(digits)
+    return -1
+
+
+def _int_or_zero(value: Any) -> int:
+    try:
+        return int(float(str(value).strip() or 0))
+    except (TypeError, ValueError):
+        return 0
+
+
+def _character_index(
+    tenant_id: str, base_path: Optional[Path] = None
+) -> Dict[str, str]:
+    """Mapea publication_id -> personaje desde publication_contexts.json."""
+    path = (
+        (Path(base_path) if base_path else _project_root())
+        / "tenants"
+        / tenant_id
+        / "publication_contexts.json"
+    )
+    if not path.is_file():
+        return {}
+    import json
+
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    index: Dict[str, str] = {}
+    for key, value in (payload or {}).items():
+        if not isinstance(value, dict):
+            continue
+        publication_id = str(value.get("publication_id") or key).strip()
+        character = str(value.get("character") or "").strip()
+        for identifier in {publication_id, publication_id.split("_")[-1], key}:
+            if identifier and character:
+                index.setdefault(identifier, character)
+    return index
+
+
+def _hour_index(tenant_id: str, base_path: Optional[Path] = None) -> Dict[str, str]:
+    """Mapea publication_id -> hora local desde publication_log*.csv."""
+    tenant_dir = (Path(base_path) if base_path else _project_root()) / "tenants" / tenant_id
+    index: Dict[str, str] = {}
+    for path in sorted(tenant_dir.glob("publication_log*.csv")):
+        for row in _read_csv(path):
+            publication_id = str(row.get("publication_id") or "").strip()
+            time_text = str(row.get("time") or "").strip()
+            if publication_id and time_text:
+                index.setdefault(publication_id, time_text[:5])
+    return index
+
+
+def _hour_band(time_text: str) -> str:
+    """Agrupa HH:MM en bandas para que la hora tenga muestra suficiente."""
+    digits = "".join(char for char in str(time_text or "")[:5] if char.isdigit())
+    if len(digits) < 2:
+        return ""
+    hour = int(digits[:2])
+    if 6 <= hour < 12:
+        return "06-11"
+    if 12 <= hour < 17:
+        return "12-16"
+    if 17 <= hour < 22:
+        return "17-21"
+    return "22-05"
+
+
+def rank_publications(
+    tenant_id: str = DEFAULT_TENANT,
+    base_path: Optional[Path] = None,
+    *,
+    window: Optional[str] = None,
+    days: int = 120,
+) -> Dict[str, Any]:
+    """Ranking de publicaciones, personajes y horas con las métricas capturadas.
+
+    Usa ``metrics/metrics_snapshot_log.csv`` (la medición más completa por
+    publicación salvo que se pida ``window``), el personaje del contexto y la
+    hora del log de publicaciones. No inventa alcance: si ``reach`` es 0 se
+    reporta en ``notes`` y el ranking se basa en interacciones y compartidos.
+    """
+    from datetime import datetime, timedelta, timezone
+
+    tenant_dir = (Path(base_path) if base_path else _project_root()) / "tenants" / tenant_id
+    rows = _read_csv(tenant_dir / "metrics" / "metrics_snapshot_log.csv")
+    characters = _character_index(tenant_id, base_path)
+    hours = _hour_index(tenant_id, base_path)
+    cutoff = datetime.now(timezone.utc) - timedelta(days=max(1, days))
+
+    best: Dict[str, Dict[str, str]] = {}
+    for row in rows:
+        publication_id = str(row.get("publication_id") or "").strip()
+        if not publication_id or str(row.get("status") or "") != "Captured":
+            continue
+        target = str(row.get("target_at_utc") or "")
+        try:
+            target_at = datetime.fromisoformat(target.replace("Z", "+00:00"))
+        except ValueError:
+            target_at = None
+        if target_at and target_at < cutoff:
+            continue
+        if window and str(row.get("window") or "") != window:
+            continue
+        current = best.get(publication_id)
+        if current is None or _window_rank(row.get("window", "")) > _window_rank(
+            current.get("window", "")
+        ):
+            best[publication_id] = row
+
+    entries: List[Dict[str, Any]] = []
+    for publication_id, row in best.items():
+        interactions = _int_or_zero(row.get("total_interactions"))
+        shares = _int_or_zero(row.get("shares"))
+        saved = _int_or_zero(row.get("saved"))
+        comments = _int_or_zero(row.get("comments"))
+        entry = {
+            "publication_id": publication_id,
+            "character": characters.get(publication_id) or characters.get(publication_id.split("_")[-1]) or "Desconocido",
+            "hour": hours.get(publication_id) or "",
+            "hour_band": _hour_band(hours.get(publication_id, "")),
+            "platform": str(row.get("platform") or ""),
+            "window": str(row.get("window") or ""),
+            "interactions": interactions,
+            "shares": shares,
+            "saved": saved,
+            "comments": comments,
+            "score": interactions + shares + saved,
+        }
+        entries.append(entry)
+
+    def _aggregate(key: str) -> List[Dict[str, Any]]:
+        buckets: Dict[str, List[Dict[str, Any]]] = {}
+        for entry in entries:
+            value = str(entry.get(key) or "").strip()
+            if not value:
+                continue
+            buckets.setdefault(value, []).append(entry)
+        result = []
+        for value, group in buckets.items():
+            scores = sorted(item["score"] for item in group)
+            middle = len(scores) // 2
+            median = (
+                scores[middle]
+                if len(scores) % 2
+                else round((scores[middle - 1] + scores[middle]) / 2, 1)
+            )
+            result.append(
+                {
+                    key: value,
+                    "publications": len(group),
+                    "avg_score": round(sum(scores) / len(scores), 1),
+                    "median_score": median,
+                    "best": max(scores),
+                }
+            )
+        result.sort(key=lambda item: (-item["avg_score"], -item["publications"]))
+        return result
+
+    notes: List[str] = []
+    if not entries:
+        notes.append("Sin snapshots capturados en el rango pedido.")
+    if entries and not any(entry["hour"] for entry in entries):
+        notes.append("Sin hora de publicación en publication_log; no se puede rankear por hora.")
+    if entries and len(entries) < 10:
+        notes.append(f"Muestra pequeña: {len(entries)} publicaciones.")
+
+    return {
+        "tenant_id": tenant_id,
+        "days": days,
+        "window": window or "best_available",
+        "publications": len(entries),
+        "by_character": _aggregate("character"),
+        "by_hour": _aggregate("hour"),
+        "by_hour_band": _aggregate("hour_band"),
+        "top": sorted(entries, key=lambda item: -item["score"])[:10],
+        "notes": notes,
+    }
+
+
 def get_historical_reuse_info(
     asset_filename: str,
     tenant_id: str = DEFAULT_TENANT,

@@ -12,6 +12,7 @@ modules/intelligence/
 ├── metrics_snapshot.py    Snapshots E0/E24/E72 de publicaciones
 ├── historical_baseline.py Baseline histórico por tenant
 ├── experiment_log.py      Observaciones e hipótesis por tenant
+├── publication_context.py Contexto canónico de cada publicación
 ├── planner.py             Construcción de calendario desde dryrun/meta_import
 ├── audit.py               Auditoría de CSV de publicaciones vs activos
 ├── ads_adapters.py        Meta Marketing API (capture_ads_insights)
@@ -32,6 +33,76 @@ modules/intelligence/
 Los archivos en `growth/` (`metrics_snapshot`, `historical_baseline`,
 `experiment_log`, `planner`, `audit`, `integrations/ads_adapters`) quedaron como
 envoltorios de compatibilidad y siguen aceptando `python -m growth.<nombre>`.
+
+## Planificador → calendario
+
+`Planner.write_meta_import()` valida y escribe el `meta_import.csv` del tenant.
+La mezcla es por `(fecha, hora)`: correr el plan dos veces actualiza el slot, no
+lo duplica. Si un slot es inválido no escribe nada y devuelve todos los errores.
+
+```bash
+python3 scripts/plan_to_meta_import.py --tenant universe --plan plan.csv
+python3 scripts/plan_to_meta_import.py --tenant universe --plan plan.csv --dry-run
+python3 -m modules.cgo --mode weekly_calendar --tenant universe
+```
+
+El plan usa las mismas columnas del calendario y admite el encabezado
+`Time (HH:MM, 24h)` sin comillas.
+
+### Ranking histórico para decidir contenido
+
+`historical_baseline.rank_publications()` lee los snapshots capturados, el
+personaje de `publication_contexts.json` y la hora de `publication_log*.csv`.
+Por publicación usa la ventana más completa (`LIFETIME_BACKFILL` > `E72` > ...).
+
+```bash
+python3 scripts/rank_content.py --tenant universe
+python3 scripts/rank_content.py --tenant universe --days 60 --json
+```
+
+El puntaje es `interacciones + compartidos + guardados`: **no usa alcance**,
+porque `reach` sigue en 0 por permisos. Con muestras chicas manda la mediana.
+
+### Propuesta de la semana
+
+`planner.propose_week()` combina el inventario de `Assets Nuevos`, el ranking
+histórico y el canon de personajes. Elige la banda horaria con mejor **mediana**
+y rota personajes sin repetir asset. No publica.
+
+```bash
+python3 scripts/propose_week.py --tenant universe --start 2026-11-05 --days 3
+python3 scripts/propose_week.py --tenant universe --start 2026-11-05 --days 3 --write
+```
+
+`--write` deja la propuesta en `tenants/<id>/plan_contenido.csv`; el paso
+siguiente es `plan_to_meta_import.py`, que la convierte en calendario.
+
+## Experiment Log
+
+`experiment_log.py` mantiene una fila por publicación en
+`tenants/<id>/experiment_log.csv`, identificada por `meta_id`. No es un sistema
+aparte: se alimenta del ledger de snapshots.
+
+- `run_capture_cycle()` llama a `sync_observation()` en cada E0/E24/E72
+  capturado o `No_Data`; también actualiza el total con ventanas históricas.
+- Es idempotente: repetir una ventana actualiza el máximo, no duplica la fila.
+- `interacciones_24h` y `interacciones_72h` solo se llenan con esas ventanas.
+  `LIFETIME_BACKFILL` y ventanas `E<h>h` históricas alimentan únicamente
+  `interacciones_totales`.
+- `meta_import.csv` acepta las columnas opcionales `Hypothesis ID` y
+  `Experiment ID`; los publicadores las copian a `publication_log_week2.csv` y
+  `run_capture_cycle()` las escribe en la observación.
+- El banco canónico es `tenants/<id>/experiments/hypothesis_bank.csv`. Si el
+  tenant aún tiene `tenants/<id>/hypothesis_bank.csv`, se respeta como legado.
+- Para enlazar o cerrar manualmente una observación:
+
+```bash
+python3 -m modules.intelligence.experiment_log universe link <meta_id> HB-UNI-003
+python3 -m modules.intelligence.experiment_log universe close <meta_id> \
+  --veredicto "L1 senal" --conclusion "..." --proxima-accion "..."
+```
+
+- No genera veredicto, conclusión ni próxima acción: eso lo decide el operador.
 
 ## Contexto de publicación
 

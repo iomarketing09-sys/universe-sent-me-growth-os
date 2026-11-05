@@ -118,6 +118,8 @@ class ChangePlanExecutor:
 
     def apply(self, plan: Dict[str, Any]) -> List[ActionOutcome]:
         outcomes: List[ActionOutcome] = []
+        approval = plan.get("approval") or {}
+        approved_targets = approval.get("targets")
         for item in plan.get("actions") or []:
             target_id = str(item.get("target_id") or "")
             target_name = str(item.get("target_name") or "")
@@ -125,6 +127,13 @@ class ChangePlanExecutor:
 
             if not target_id:
                 outcomes.append(ActionOutcome(target_id, target_name, action, "invalid", "sin target_id"))
+                continue
+            if approval and approval.get("status") != "approved":
+                outcomes.append(
+                    ActionOutcome(target_id, target_name, action, "not_approved", "plan sin aprobación")
+                )
+                continue
+            if approved_targets is not None and target_id not in approved_targets:
                 continue
             if self.only is not None and target_id not in self.only:
                 continue

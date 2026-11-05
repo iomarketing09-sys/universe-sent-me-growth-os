@@ -12,8 +12,13 @@ import requests
 
 
 DEFAULT_BASE_URL = "http://localhost:20128/v1"
-DEFAULT_MODEL = "groq/openai/gpt-oss-120b"
-FALLBACK_MODELS = ("groq/openai/gpt-oss-20b", "gemini/gemini-3.5-flash")
+# Copy: Sonnet como principal, Gemini Flash de respaldo, gpt-oss como último recurso.
+# Verificado contra el catálogo vivo de OmniRoute el 2026-11-05.
+DEFAULT_MODEL = "kiro/claude-sonnet-4.5"
+FALLBACK_MODELS = (
+    "agy/gemini-3.8-flash-medium",
+    "groq/openai/gpt-oss-120b",
+)
 
 
 class OmniRouteError(RuntimeError):

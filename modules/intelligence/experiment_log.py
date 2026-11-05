@@ -116,14 +116,15 @@ EXPERIMENT_LOG_FIELDS = [
 ]
 
 
-def get_experiment_log_path(tenant_id: str) -> Path:
+def get_experiment_log_path(tenant_id: str, base_path: Optional[Path] = None) -> Path:
     """Ruta del experiment log para un tenant"""
-    return Path(f'tenants/{tenant_id}/experiment_log.csv')
+    root = Path(base_path) if base_path else Path('.')
+    return root / 'tenants' / tenant_id / 'experiment_log.csv'
 
 
-def load_experiment_log(tenant_id: str) -> List[Observacion]:
+def load_experiment_log(tenant_id: str, base_path: Optional[Path] = None) -> List[Observacion]:
     """Carga todo el experiment log"""
-    log_path = get_experiment_log_path(tenant_id)
+    log_path = get_experiment_log_path(tenant_id, base_path)
     if not log_path.exists():
         return []
     
@@ -140,9 +141,13 @@ def load_experiment_log(tenant_id: str) -> List[Observacion]:
     return observations
 
 
-def save_experiment_log(tenant_id: str, observations: List[Observacion]) -> None:
+def save_experiment_log(
+    tenant_id: str,
+    observations: List[Observacion],
+    base_path: Optional[Path] = None,
+) -> None:
     """Guarda todo el experiment log (append-only safe)"""
-    log_path = get_experiment_log_path(tenant_id)
+    log_path = get_experiment_log_path(tenant_id, base_path)
     
     # Ensure directory exists
     log_path.parent.mkdir(parents=True, exist_ok=True)
@@ -154,36 +159,152 @@ def save_experiment_log(tenant_id: str, observations: List[Observacion]) -> None
             writer.writerow(obs.to_dict())
 
 
-def append_observation(tenant_id: str, obs: Observacion) -> Observacion:
+def append_observation(
+    tenant_id: str,
+    obs: Observacion,
+    base_path: Optional[Path] = None,
+) -> Observacion:
     """Agrega una observación nueva (append-only)"""
-    observations = load_experiment_log(tenant_id)
+    observations = load_experiment_log(tenant_id, base_path)
     observations.append(obs)
-    save_experiment_log(tenant_id, observations)
+    save_experiment_log(tenant_id, observations, base_path)
     return obs
 
 
-def get_observations_for_piece(tenant_id: str, contenido_ref: str) -> List[Observacion]:
+def sync_observation(
+    tenant_id: str,
+    *,
+    meta_id: str,
+    plataforma: str = "",
+    contenido_referencia: str = "",
+    fecha: str = "",
+    slot: str = "",
+    hypothesis_id: str = "",
+    experiment_id: str = "",
+    formato: str = "",
+    tipo_contenido: str = "",
+    window: str = "",
+    interacciones: int = 0,
+    base_path: Optional[Path] = None,
+) -> Optional[Observacion]:
+    """Crea o actualiza la observación de una pieza a partir de sus métricas.
+
+    Es idempotente por ``meta_id``: cada publicación tiene una sola fila que se
+    va completando con las ventanas E24/E72. No cierra la observación: el
+    veredicto sigue siendo una decisión humana.
+    """
+    if not meta_id:
+        return None
+    hypothesis_id = str(hypothesis_id or "").strip()
+    experiment_id = str(experiment_id or "").strip()
+    observations = load_experiment_log(tenant_id, base_path)
+    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    target = next((obs for obs in observations if obs.meta_id == meta_id), None)
+    if target is None:
+        month = (fecha or datetime.now().strftime("%Y-%m-%d"))[:7]
+        target = Observacion(
+            experiment_id=experiment_id or f"EXP-{month}-AUTO",
+            hypothesis_id=hypothesis_id,
+            nivel=NivelExperimento.PIEZA.value,
+            fecha_inicio=fecha,
+            contenido_referencia=contenido_referencia,
+            plataforma=plataforma,
+            formato=formato,
+            tipo_contenido=tipo_contenido,
+            slot_planeado=slot,
+            meta_id=meta_id,
+            estado_publicacion=EstadoPublicacion.PUBLICADA.value,
+            fuente="metrics_snapshot",
+            created_at=now,
+            updated_at=now,
+        )
+        observations.append(target)
+    else:
+        if contenido_referencia and not target.contenido_referencia:
+            target.contenido_referencia = contenido_referencia
+        if slot and not target.slot_planeado:
+            target.slot_planeado = slot
+        if fecha and not target.fecha_inicio:
+            target.fecha_inicio = fecha
+        if hypothesis_id and not target.hypothesis_id:
+            target.hypothesis_id = hypothesis_id
+        if experiment_id and (
+            not target.experiment_id or target.experiment_id.endswith("-AUTO")
+        ):
+            target.experiment_id = experiment_id
+        if formato and not target.formato:
+            target.formato = formato
+        if tipo_contenido and not target.tipo_contenido:
+            target.tipo_contenido = tipo_contenido
+        target.estado_publicacion = EstadoPublicacion.PUBLICADA.value
+
+    value = int(interacciones or 0)
+    if window == "E24":
+        target.interacciones_24h = max(int(target.interacciones_24h or 0), value)
+    elif window == "E72":
+        target.interacciones_72h = max(int(target.interacciones_72h or 0), value)
+    target.interacciones_totales = max(int(target.interacciones_totales or 0), value)
+    target.updated_at = now
+    save_experiment_log(tenant_id, observations, base_path)
+    if target.hypothesis_id:
+        link_observation_to_hypothesis(
+            tenant_id,
+            target.hypothesis_id,
+            target.observacion_id,
+            base_path=base_path,
+        )
+    return target
+
+
+def get_observations_for_piece(
+    tenant_id: str,
+    contenido_ref: str,
+    base_path: Optional[Path] = None,
+) -> List[Observacion]:
     """Obtiene todas las observaciones para una pieza/contenido específico"""
-    all_obs = load_experiment_log(tenant_id)
+    all_obs = load_experiment_log(tenant_id, base_path)
     return [obs for obs in all_obs if obs.contenido_referencia == contenido_ref]
 
 
-def get_observations_for_hypothesis(tenant_id: str, hypothesis_id: str) -> List[Observacion]:
+def get_observations_for_hypothesis(
+    tenant_id: str,
+    hypothesis_id: str,
+    base_path: Optional[Path] = None,
+) -> List[Observacion]:
     """Obtiene observaciones para una hipótesis"""
-    all_obs = load_experiment_log(tenant_id)
+    all_obs = load_experiment_log(tenant_id, base_path)
     return [obs for obs in all_obs if obs.hypothesis_id == hypothesis_id]
 
 
-def update_observation(tenant_id: str, observacion_id: str, **updates) -> Optional[Observacion]:
+def get_observation_by_meta_id(
+    tenant_id: str,
+    meta_id: str,
+    base_path: Optional[Path] = None,
+) -> Optional[Observacion]:
+    """Busca una observación por el ID nativo de Meta."""
+    if not meta_id:
+        return None
+    return next(
+        (obs for obs in load_experiment_log(tenant_id, base_path) if obs.meta_id == meta_id),
+        None,
+    )
+
+
+def update_observation(
+    tenant_id: str,
+    observacion_id: str,
+    base_path: Optional[Path] = None,
+    **updates,
+) -> Optional[Observacion]:
     """Actualiza una observación existente"""
-    observations = load_experiment_log(tenant_id)
+    observations = load_experiment_log(tenant_id, base_path)
     for obs in observations:
         if obs.observacion_id == observacion_id:
             for key, value in updates.items():
                 if hasattr(obs, key):
                     setattr(obs, key, value)
             obs.updated_at = datetime.now(timezone.utc).isoformat(timespec='seconds')
-            save_experiment_log(tenant_id, observations)
+            save_experiment_log(tenant_id, observations, base_path)
             return obs
     return None
 
@@ -191,9 +312,11 @@ def update_observation(tenant_id: str, observacion_id: str, **updates) -> Option
 def close_observation(tenant_id: str, observacion_id: str, 
                       veredicto: str, conclusion: str, proxima_accion: str,
                       interacciones_totales: int = 0, mediana_interacciones: float = 0.0,
-                      interacciones_24h: int = 0, interacciones_72h: int = 0) -> Optional[Observacion]:
+                      interacciones_24h: int = 0, interacciones_72h: int = 0,
+                      base_path: Optional[Path] = None) -> Optional[Observacion]:
     """Cierra una observación con veredicto final y métricas"""
     return update_observation(tenant_id, observacion_id,
+        base_path=base_path,
         veredicto=veredicto,
         conclusion=conclusion,
         proxima_accion=proxima_accion,
@@ -203,6 +326,28 @@ def close_observation(tenant_id: str, observacion_id: str,
         mediana_interacciones=mediana_interacciones,
         interacciones_24h=interacciones_24h,
         interacciones_72h=interacciones_72h
+    )
+
+
+def close_observation_by_meta_id(
+    tenant_id: str,
+    meta_id: str,
+    veredicto: str,
+    conclusion: str,
+    proxima_accion: str,
+    base_path: Optional[Path] = None,
+) -> Optional[Observacion]:
+    """Cierra una observación usando el ID nativo de Meta."""
+    observation = get_observation_by_meta_id(tenant_id, meta_id, base_path)
+    if observation is None:
+        return None
+    return close_observation(
+        tenant_id,
+        observation.observacion_id,
+        veredicto=veredicto,
+        conclusion=conclusion,
+        proxima_accion=proxima_accion,
+        base_path=base_path,
     )
 
 
@@ -227,8 +372,25 @@ class Hipotesis:
         return asdict(self)
 
 
-def get_hypothesis_bank_path(tenant_id: str) -> Path:
-    return Path(f'tenants/{tenant_id}/hypothesis_bank.csv')
+def get_hypothesis_bank_path(
+    tenant_id: str,
+    base_path: Optional[Path] = None,
+) -> Path:
+    """Ruta canónica del banco, con compatibilidad para ledgers legados.
+
+    El lugar canónico es ``tenants/<tenant>/experiments/hypothesis_bank.csv``.
+    Algunos tenants antiguos lo tienen en la raíz del tenant; se respeta si el
+    archivo canónico todavía no existe.
+    """
+    root = Path(base_path) if base_path else Path('.')
+    tenant_dir = root / 'tenants' / tenant_id
+    preferred = tenant_dir / 'experiments' / 'hypothesis_bank.csv'
+    legacy = tenant_dir / 'hypothesis_bank.csv'
+    if preferred.exists():
+        return preferred
+    if legacy.exists():
+        return legacy
+    return preferred
 
 
 HYPOTHESIS_FIELDS = [
@@ -237,8 +399,11 @@ HYPOTHESIS_FIELDS = [
 ]
 
 
-def load_hypothesis_bank(tenant_id: str) -> List[Hipotesis]:
-    path = get_hypothesis_bank_path(tenant_id)
+def load_hypothesis_bank(
+    tenant_id: str,
+    base_path: Optional[Path] = None,
+) -> List[Hipotesis]:
+    path = get_hypothesis_bank_path(tenant_id, base_path)
     if not path.exists():
         return []
     hypotheses = []
@@ -254,8 +419,12 @@ def load_hypothesis_bank(tenant_id: str) -> List[Hipotesis]:
     return hypotheses
 
 
-def save_hypothesis_bank(tenant_id: str, hypotheses: List[Hipotesis]) -> None:
-    path = get_hypothesis_bank_path(tenant_id)
+def save_hypothesis_bank(
+    tenant_id: str,
+    hypotheses: List[Hipotesis],
+    base_path: Optional[Path] = None,
+) -> None:
+    path = get_hypothesis_bank_path(tenant_id, base_path)
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open('w', encoding='utf-8-sig', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=HYPOTHESIS_FIELDS)
@@ -266,28 +435,68 @@ def save_hypothesis_bank(tenant_id: str, hypotheses: List[Hipotesis]) -> None:
             writer.writerow(d)
 
 
-def add_hypothesis(tenant_id: str, hypothesis: Hipotesis) -> Hipotesis:
-    hypotheses = load_hypothesis_bank(tenant_id)
+def add_hypothesis(
+    tenant_id: str,
+    hypothesis: Hipotesis,
+    base_path: Optional[Path] = None,
+) -> Hipotesis:
+    hypotheses = load_hypothesis_bank(tenant_id, base_path)
     hypotheses.append(hypothesis)
-    save_hypothesis_bank(tenant_id, hypotheses)
+    save_hypothesis_bank(tenant_id, hypotheses, base_path)
     return hypothesis
 
 
-def get_hypothesis(tenant_id: str, hypothesis_id: str) -> Optional[Hipotesis]:
-    for h in load_hypothesis_bank(tenant_id):
+def get_hypothesis(
+    tenant_id: str,
+    hypothesis_id: str,
+    base_path: Optional[Path] = None,
+) -> Optional[Hipotesis]:
+    for h in load_hypothesis_bank(tenant_id, base_path):
         if h.hypothesis_id == hypothesis_id:
             return h
     return None
 
 
-def link_observation_to_hypothesis(tenant_id: str, hypothesis_id: str, observacion_id: str) -> None:
-    """Vincula una observación a una hipótesis"""
-    hypotheses = load_hypothesis_bank(tenant_id)
-    for h in hypotheses:
-        if h.hypothesis_id == hypothesis_id:
-            if observacion_id not in h.observaciones_ids:
-                h.observaciones_ids.append(observacion_id)
-    save_hypothesis_bank(tenant_id, hypotheses)
+def link_observation_to_hypothesis(
+    tenant_id: str,
+    hypothesis_id: str,
+    observacion_id: str,
+    base_path: Optional[Path] = None,
+) -> bool:
+    """Vincula una observación a una hipótesis en ambos sentidos.
+
+    Devuelve ``False`` si la observación o la hipótesis no existen; no crea un
+    banco vacío para una hipótesis desconocida.
+    """
+    observations = load_experiment_log(tenant_id, base_path)
+    observation = next(
+        (obs for obs in observations if obs.observacion_id == observacion_id),
+        None,
+    )
+    if observation is None:
+        return False
+
+    hypotheses = load_hypothesis_bank(tenant_id, base_path)
+    hypothesis = next(
+        (h for h in hypotheses if h.hypothesis_id == hypothesis_id),
+        None,
+    )
+    if hypothesis is None:
+        return False
+
+    changed = False
+    if observation.hypothesis_id != hypothesis_id:
+        observation.hypothesis_id = hypothesis_id
+        observation.updated_at = datetime.now(timezone.utc).isoformat(timespec='seconds')
+        changed = True
+    if observacion_id not in hypothesis.observaciones_ids:
+        hypothesis.observaciones_ids.append(observacion_id)
+        changed = True
+
+    if changed:
+        save_experiment_log(tenant_id, observations, base_path)
+        save_hypothesis_bank(tenant_id, hypotheses, base_path)
+    return True
 
 
 # ==============================================================================
@@ -307,6 +516,8 @@ def create_observation_from_publication(
     now = datetime.now()
     fecha_hoy = now.strftime('%Y-%m-%d')
     hora_ahora = now.strftime('%H:%M')
+    hypothesis_id = hypothesis_id or str(publication_row.get('hypothesis_id') or '')
+    experiment_id = experiment_id or str(publication_row.get('experiment_id') or '')
     
     obs = Observacion(
         experiment_id=experiment_id or f"EXP-{fecha_hoy}-{publication_row.get('tenant_id', 'FB')[:2].upper()}",
@@ -329,40 +540,95 @@ def create_observation_from_publication(
 
 
 # ==============================================================================
-# CLI PARA TESTING
+# CLI
 # ==============================================================================
 
 if __name__ == '__main__':
-    import sys
-    
-    if len(sys.argv) < 2:
-        print("Uso: python -m growth.experiment_log <tenant_id> [comando]")
-        print("Comandos: list, add-hypothesis, show-hypothesis")
-        sys.exit(1)
-    
-    tenant = sys.argv[1]
-    
-    if len(sys.argv) == 2 or sys.argv[2] == 'list':
-        obs = load_experiment_log(tenant)
-        print(f"Experiment Log ({tenant}): {len(obs)} observaciones")
-        for o in obs[-5:]:
-            print(f"  {o.observacion_id} | {o.contenido_referencia} | {o.veredicto or 'en curso'}")
-    
-    elif sys.argv[2] == 'add-hypothesis':
-        h = Hipotesis(
-            hypothesis_id=f"HB-{len(load_hypothesis_bank(tenant))+1:03d}",
-            descripcion=input("Descripción: "),
-            metrica_principal=input("Métrica principal: "),
-            criterio_exito=input("Criterio de éxito: ")
-        )
-        add_hypothesis(tenant, h)
-        print(f"Hipótesis agregada: {h.hypothesis_id}")
-    
-    elif sys.argv[2] == 'show-hypothesis':
-        h = get_hypothesis(tenant, sys.argv[3])
-        if h:
-            print(f"{h.hypothesis_id}: {h.descripcion}")
-            print(f"  Estado: {h.estado}")
-            print(f"  Observaciones: {h.observaciones_ids}")
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Experiment log y hypothesis bank")
+    parser.add_argument("tenant")
+    parser.add_argument("--base-path", type=Path, default=Path("."))
+    subparsers = parser.add_subparsers(dest="command")
+
+    subparsers.add_parser("list")
+
+    show_parser = subparsers.add_parser("show-hypothesis")
+    show_parser.add_argument("hypothesis_id")
+
+    link_parser = subparsers.add_parser("link")
+    link_parser.add_argument("meta_id")
+    link_parser.add_argument("hypothesis_id")
+
+    close_parser = subparsers.add_parser("close")
+    close_parser.add_argument("meta_id")
+    close_parser.add_argument("--veredicto", required=True)
+    close_parser.add_argument("--conclusion", required=True)
+    close_parser.add_argument("--proxima-accion", default="")
+
+    add_parser = subparsers.add_parser("add-hypothesis")
+    add_parser.add_argument("--descripcion", default="")
+    add_parser.add_argument("--metrica", default="")
+    add_parser.add_argument("--criterio", default="")
+
+    args = parser.parse_args()
+    tenant = args.tenant
+    base_path = args.base_path
+
+    if args.command in (None, "list"):
+        observations = load_experiment_log(tenant, base_path)
+        print(f"Experiment Log ({tenant}): {len(observations)} observaciones")
+        for observation in observations[-10:]:
+            print(
+                f"  {observation.observacion_id} | {observation.meta_id} | "
+                f"{observation.hypothesis_id or '-'} | {observation.veredicto or 'en curso'}"
+            )
+
+    elif args.command == "show-hypothesis":
+        hypothesis = get_hypothesis(tenant, args.hypothesis_id, base_path)
+        if hypothesis:
+            print(f"{hypothesis.hypothesis_id}: {hypothesis.descripcion}")
+            print(f"  Estado: {hypothesis.estado}")
+            print(f"  Observaciones: {hypothesis.observaciones_ids}")
         else:
             print("No encontrada")
+
+    elif args.command == "link":
+        observation = get_observation_by_meta_id(tenant, args.meta_id, base_path)
+        if observation is None:
+            print("Observación no encontrada")
+            raise SystemExit(1)
+        linked = link_observation_to_hypothesis(
+            tenant,
+            args.hypothesis_id,
+            observation.observacion_id,
+            base_path,
+        )
+        if not linked:
+            print("Hipótesis no encontrada")
+            raise SystemExit(1)
+        print(f"Vinculada {observation.observacion_id} -> {args.hypothesis_id}")
+
+    elif args.command == "close":
+        observation = close_observation_by_meta_id(
+            tenant,
+            args.meta_id,
+            veredicto=args.veredicto,
+            conclusion=args.conclusion,
+            proxima_accion=args.proxima_accion,
+            base_path=base_path,
+        )
+        if observation is None:
+            print("Observación no encontrada")
+            raise SystemExit(1)
+        print(f"Cerrada {observation.observacion_id}: {observation.veredicto}")
+
+    elif args.command == "add-hypothesis":
+        hypothesis = Hipotesis(
+            hypothesis_id=f"HB-{len(load_hypothesis_bank(tenant, base_path)) + 1:03d}",
+            descripcion=args.descripcion or input("Descripción: "),
+            metrica_principal=args.metrica or input("Métrica principal: "),
+            criterio_exito=args.criterio or input("Criterio de éxito: "),
+        )
+        add_hypothesis(tenant, hypothesis, base_path)
+        print(f"Hipótesis agregada: {hypothesis.hypothesis_id}")

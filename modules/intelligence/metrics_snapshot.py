@@ -1239,8 +1239,12 @@ def run_capture_cycle(tenant_id: str) -> Dict[str, int]:
     
     pending = get_pending_snapshots(tenant_id)
     
-    results = {'scheduled': len(scheduled), 'captured': 0, 'failed': 0, 'skipped': 0, 'no_data': 0}
-    
+    results = {'scheduled': len(scheduled), 'captured': 0, 'failed': 0, 'skipped': 0, 'no_data': 0, 'observations': 0}
+    rows_by_id = {
+        (row.get('publication_id') or '').strip(): row
+        for row in load_publication_log(tenant_id)
+    }
+
     for snap in pending:
         updated = capture_snapshot(tenant_id, snap, page_token, ig_id)
         upsert_snapshot(tenant_id, updated)
@@ -1253,6 +1257,32 @@ def run_capture_cycle(tenant_id: str) -> Dict[str, int]:
             results['no_data'] += 1
         else:
             results['skipped'] += 1
+
+        if updated.status in (SnapshotStatus.CAPTURED.value, SnapshotStatus.NO_DATA.value):
+            row = rows_by_id.get(updated.publication_id, {})
+            try:
+                from modules.intelligence.experiment_log import sync_observation
+
+                sync_observation(
+                    tenant_id,
+                    meta_id=updated.publication_id,
+                    plataforma=(row.get('platform') or updated.platform),
+                    contenido_referencia=(
+                        row.get('piece') or row.get('asset_filename') or ''
+                    ),
+                    fecha=(row.get('date') or ''),
+                    slot=(row.get('time') or ''),
+                    hypothesis_id=(row.get('hypothesis_id') or '').strip(),
+                    experiment_id=(row.get('experiment_id') or '').strip(),
+                    window=updated.window,
+                    interacciones=max(
+                        updated.total_interactions,
+                        updated.reactions + updated.comments + updated.shares,
+                    ),
+                )
+                results['observations'] += 1
+            except Exception as exc:  # noqa: BLE001 - no romper la captura
+                results['observations_error'] = str(exc)
         
         time.sleep(1)
 
@@ -1284,21 +1314,51 @@ def run_capture_cycle(tenant_id: str) -> Dict[str, int]:
     return results
 
 
+def _read_env_value(path: Path, key: str) -> str:
+    if not path.is_file():
+        return ""
+    for line in path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        name, value = line.split("=", 1)
+        if name.replace("export ", "").strip() == key:
+            return value.strip().strip("'\"")
+    return ""
+
+
+def _tenant_page_id(tenant_dir: Path) -> str:
+    try:
+        config = json.loads((tenant_dir / "config.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return ""
+    return str((config.get("meta") or {}).get("page_id") or "")
+
+
 def connected_tenants(base_path: Optional[Path] = None) -> List[str]:
-    """Tenants con log de publicaciones y credenciales propias."""
+    """Tenants con log de publicaciones y credenciales resolubles.
+
+    Un tenant con ``.env`` propio siempre califica. Si no lo tiene, solo
+    califica cuando su ``meta.page_id`` coincide con el ``FB_PAGE_ID`` del
+    ``.env`` raíz: así el fallback global no captura métricas de otra página
+    dentro del tenant equivocado.
+    """
     root = Path(base_path) if base_path else Path(".")
     tenants_dir = root / "tenants"
     if not tenants_dir.is_dir():
         return []
+    root_page_id = _read_env_value(root / ".env", "FB_PAGE_ID")
     tenants = []
     for tenant_dir in sorted(tenants_dir.iterdir()):
         if not tenant_dir.is_dir():
             continue
         if not (tenant_dir / "publication_log_week2.csv").exists():
             continue
-        if not (tenant_dir / ".env").exists():
+        if (tenant_dir / ".env").exists():
+            tenants.append(tenant_dir.name)
             continue
-        tenants.append(tenant_dir.name)
+        if root_page_id and _tenant_page_id(tenant_dir) == root_page_id:
+            tenants.append(tenant_dir.name)
     return tenants
 
 

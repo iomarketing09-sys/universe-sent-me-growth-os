@@ -245,6 +245,15 @@ def _ledger_organic_week(
     if instagram_rows:
         likes = _total(instagram_rows, "reactions")
         comments = _total(instagram_rows, "comments")
+        note = (
+            "Ledger local. Likes y comentarios públicos; alcance e impresiones "
+            "solo si las capturas incluyen insights."
+        )
+        if likes + comments == 0:
+            note = (
+                "Meta reporta 0 likes y 0 comentarios en las capturas del periodo. "
+                "Alcance e impresiones requieren instagram_manage_insights."
+            )
         instagram = {
             "reach": _total(instagram_rows, "reach") or None,
             "impressions": _total(instagram_rows, "impressions") or None,
@@ -252,10 +261,7 @@ def _ledger_organic_week(
             "clicks": None,
             "pieces": len(instagram_rows),
             "status": "partial",
-            "note": (
-                "Ledger local. Likes y comentarios públicos; alcance e impresiones "
-                "solo si las capturas incluyen insights."
-            ),
+            "note": note,
             "extra": {"likes": likes, "comments": comments},
         }
     return {"facebook_organic": facebook, "instagram_organic": instagram}
@@ -447,6 +453,18 @@ def _fetch_instagram_organic(
             media.append(item)
     likes = sum(int(item.get("like_count") or 0) for item in media)
     comments = sum(int(item.get("comments_count") or 0) for item in media)
+    if not media:
+        note = "Sin publicaciones de Instagram en el periodo."
+    elif likes + comments == 0:
+        note = (
+            "Meta reporta 0 likes y 0 comentarios en las publicaciones del periodo. "
+            "Alcance e impresiones requieren instagram_manage_insights."
+        )
+    else:
+        note = (
+            "Alcance e impresiones de Instagram requieren instagram_manage_insights. "
+            "Likes y comentarios se leen con los permisos actuales."
+        )
     return {
         "reach": None,
         "impressions": None,
@@ -454,10 +472,7 @@ def _fetch_instagram_organic(
         "clicks": None,
         "pieces": len(media),
         "status": "partial",
-        "note": (
-            "Alcance e impresiones de Instagram requieren instagram_manage_insights. "
-            "Likes y comentarios se leen con los permisos actuales."
-        ),
+        "note": note,
         "extra": {"likes": likes, "comments": comments},
     }
 
@@ -832,7 +847,12 @@ def _organic_activity(data: Dict[str, Any]) -> List[str]:
         lines.append("Facebook orgánico: " + " · ".join(parts) + ".")
     extra = instagram.get("extra") or {}
     if instagram.get("status") not in (None, "unavailable"):
-        parts = [f"{int(instagram.get('pieces') or 0):,} publicaciones"]
+        pieces_count = int(instagram.get("pieces") or 0)
+        parts = [
+            "sin publicaciones"
+            if pieces_count == 0
+            else f"{pieces_count:,} publicaciones"
+        ]
         if extra.get("likes") is not None:
             parts.append(f"{int(extra['likes']):,} likes")
         if extra.get("comments") is not None:
