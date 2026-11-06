@@ -138,3 +138,51 @@ def test_filtra_solo_propuestas_sugeridas(tmp_path):
 
     assert len(items) == 1
     assert items[0]["comment_id"] == "c1"
+
+
+def test_reporte_marca_descartados_y_permite_filtrarlos(tmp_path):
+    source = tmp_path / "aprobaciones.json"
+    source.write_text(
+        json.dumps(
+            {
+                "approvals": [
+                    {
+                        "comment_id": "descartado",
+                        "author": "Usuario",
+                        "comment_text": "Comentario descartado",
+                        "approved_response": "Borrador viejo",
+                        "approved": False,
+                        "discarded": True,
+                        "discard_reason": "contenido sexual",
+                        "discarded_at": "2026-11-02T23:56:29+00:00",
+                    },
+                    {
+                        "comment_id": "pendiente",
+                        "author": "Usuario",
+                        "comment_text": "Comentario pendiente",
+                        "approved_response": "Borrador nuevo",
+                        "approved": False,
+                    },
+                ]
+            },
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+
+    result = generate_review_files(
+        source,
+        markdown_path=tmp_path / "descartados.md",
+        csv_path=tmp_path / "descartados.csv",
+        only_status="descartada",
+    )
+
+    assert result["items"] == 1
+    markdown = (tmp_path / "descartados.md").read_text(encoding="utf-8")
+    assert "**Estado:** descartada" in markdown
+    assert "Motivo de descarte:** contenido sexual" in markdown
+    assert "Comentario pendiente" not in markdown
+    with (tmp_path / "descartados.csv").open(encoding="utf-8-sig", newline="") as handle:
+        rows = list(csv.DictReader(handle))
+    assert rows[0]["descartado"] == "True"
+    assert rows[0]["motivo_descarte"] == "contenido sexual"

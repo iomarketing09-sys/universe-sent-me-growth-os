@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-05T18:02:55.417067+00:00",
-  "lookback_hours": 48,
-  "total_pending": 14,
+  "generated_at": "2026-11-06T17:06:29.382667+00:00",
+  "lookback_hours": 120,
+  "total_pending": 6,
   "instructions": "Cambia 'approved: true' en los comentarios que quieras publicar y edita el texto si deseas.",
   "approvals": [
     {
@@ -1827,7 +1827,7 @@
       "author": "Usuario",
       "comment_text": "Tizdel Jose te extraño mucho hijo de tu puta madre 🥺",
       "character": "Universe",
-      "approved_response": "Extrañar a ese hijo de puta es un deporte extremo, ¿no?",
+      "approved_response": "Extrañar es renunciar al orgullo, pero sin renunciar al meme.",
       "approved": false,
       "comment_created_at": "2026-11-05T13:01:08+0000",
       "first_seen_at": "2026-11-05T14:04:20.314193+00:00",
@@ -1840,8 +1840,186 @@
         "policy_flags": [],
         "usage": {
           "prompt_tokens": 2107,
-          "completion_tokens": 83,
-          "total_tokens": 2190,
+          "completion_tokens": 80,
+          "total_tokens": 2187,
+          "prompt_tokens_details": {
+            "cached_tokens": 1792,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "comment_id": "122180141655072582_1647792466800770",
+      "author": "Usuario",
+      "comment_text": "Uff ,te la sabes 👏👌",
+      "character": "Universe",
+      "approved_response": "En mis sueños hasta el alquiler del amor lo cobro puntual.",
+      "approved": false,
+      "comment_created_at": "2026-11-05T19:14:27+0000",
+      "first_seen_at": "2026-11-05T20:01:21.059795+00:00",
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "humor",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 4339,
+          "completion_tokens": 145,
+          "total_tokens": 4484,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "review_reason": "No se pudo generar un borrador válido; requiere revisión humana.",
+      "risk_level": "medium"
+    },
+    {
+      "comment_id": "122179870935072582_2133805607219650",
+      "comment_text": "Osea si , Pero la entrada eres tu , mamacita 😈🫦👅",
+      "comment_created_at": "2026-11-02T23:53:00+0000",
+      "first_seen_at": "2026-11-05T01:08:54.973156+00:00",
+      "tombstoned_from": "comments_log",
+      "approved": false,
+      "discarded": true,
+      "discard_reason": "contenido sexual explícito; descartado por el operador",
+      "discarded_at": "2026-11-06T15:52:09.735504+00:00"
+    },
+    {
+      "comment_id": "122180166741072582_1120171697459623",
+      "author": "Usuario",
+      "comment_text": "Ni la una  ni la otra, pura realidad 🤪",
+      "character": "Silvio",
+      "approved_response": "Pura realidad: ni velorio ni debilidad, solo vitaminas con actitud.",
+      "approved": false,
+      "comment_created_at": "2026-11-05T17:27:27+0000",
+      "first_seen_at": "2026-11-06T17:05:27.316756+00:00",
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "humor",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 2109,
+          "completion_tokens": 75,
+          "total_tokens": 2184,
+          "prompt_tokens_details": {
+            "cached_tokens": 1792,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "comment_id": "122180220693072582_1602148907887102",
+      "author": "ale balandrano ",
+      "comment_text": "Ni uno ni otro sino todo lo contrario ...a que caray mente tan lúcida,",
+      "character": "Evan+Elara",
+      "approved_response": "Lúcida como un meme que no entiende ni su propio chiste.",
+      "approved": false,
+      "comment_created_at": "2026-11-06T00:00:23+0000",
+      "first_seen_at": "2026-11-06T17:05:27.316781+00:00",
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "opinion",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 2110,
+          "completion_tokens": 69,
+          "total_tokens": 2179,
+          "prompt_tokens_details": {
+            "cached_tokens": 1792,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "comment_id": "122180220843072582_1660688448725364",
+      "author": "Usuario",
+      "comment_text": "Soy",
+      "character": "Evan",
+      "approved_response": "Soy la barrera invisible que detiene hasta el tráfico, Evan.",
+      "approved": false,
+      "comment_created_at": "2026-11-06T14:09:59+0000",
+      "first_seen_at": "2026-11-06T17:05:27.316800+00:00",
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "other",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 2077,
+          "completion_tokens": 78,
+          "total_tokens": 2155,
+          "prompt_tokens_details": {
+            "cached_tokens": 1920,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "comment_id": "122179860687072582_2708681692863366",
+      "author": "Usuario",
+      "comment_text": "Lo estas haciendo mal  bro, es qsqsqsqsqs",
+      "character": "Universe",
+      "approved_response": "Si qsqsqsqsqs fuera el truco, ya serías influencer del amor.",
+      "approved": false,
+      "comment_created_at": "2026-11-05T03:03:08+0000",
+      "first_seen_at": "2026-11-06T17:06:29.381161+00:00",
+      "agent": {
+        "name": "communications_agent",
+        "model": "openai/gpt-4.1-mini",
+        "intent": "humor",
+        "confidence": 0.9,
+        "quality_ok": true,
+        "policy_flags": [],
+        "usage": {
+          "prompt_tokens": 2100,
+          "completion_tokens": 78,
+          "total_tokens": 2178,
           "prompt_tokens_details": {
             "cached_tokens": 0,
             "audio_tokens": 0

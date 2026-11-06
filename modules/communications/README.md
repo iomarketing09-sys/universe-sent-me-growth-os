@@ -60,6 +60,18 @@ Con esa bandera, si la publicación no tiene `meme_text` en
 `sin_contexto` con la lista de `comment_ids`, que es la bandera de huecos a
 llenar.
 
+Para reconstruir huecos que sí tienen fuente local (ledger, CSV de dictado o
+nombre del asset), usa el importador canónico antes de volver a cosechar:
+
+```bash
+python3 scripts/import_meme_context.py --tenant universe --backfill-missing --dry-run
+python3 scripts/import_meme_context.py --tenant universe --backfill-missing
+```
+
+Es idempotente, no inventa chistes sin fuente y escribe únicamente mediante
+`record_publication`. `tenants/universe/reconcile_contexts.py` delega en este
+mismo importador; ya no lee `.env` ni escribe el JSON por su cuenta.
+
 Sin la bandera (Flexi, Micas, Firma) el comportamiento no cambia: el copy y la
 conversación son suficientes.
 
@@ -216,3 +228,46 @@ La captura y generación de propuestas puede automatizarse sin publicar con
 `scripts/run_comments_harvest.py`. El timer `growth-os-comments.timer` corre
 cada hora entre 08:00 y 22:00 y reconstruye `aprobaciones_nuevas.json` y
 `reports/nuevas_pendientes.md`; la publicación sigue siendo manual.
+
+La cola local es la única fuente de verdad. Ni el harvest ni el publicador
+copian automáticamente a Google Drive; si se necesita un respaldo, se hace
+fuera de este flujo para no reintroducir colas duplicadas.
+
+### Ciclo de vida de una decisión
+
+`aprobaciones.json` es la fuente de verdad. La captura vuelve a leer la ventana
+de 48 h en cada corrida, pero **no vuelve a proponer** un comentario que ya
+tenga una decisión en la maestra:
+
+- `discarded: true` es un tombstone: se conserva aunque no tenga
+  `approved_response` y no se borra en la siguiente captura.
+- `approved: true`, `published: true` o `reply_id` también se respetan.
+- Un comentario sin decisión sigue refrescando su borrador.
+
+Para descartar un caso, incluso si ya salió de la ventana y no está en la
+maestra, se usa el log como fuente para crear el tombstone:
+
+```bash
+python3 scripts/reconcile_comments_state.py --tenant universe \
+  --discard <comment_id> "<motivo>" --apply
+```
+
+`--source` ya no es obligatorio: el comando sirve solo para descartar. Al
+aplicar, se agrega una fila `discarded` a `comments_log.csv`; el log es
+append-only y la última fila es el estado de auditoría.
+
+Vistas disponibles en `reports/`:
+
+| Archivo | Contenido |
+|---|---|
+| `nuevas_pendientes.md` | solo propuestas nuevas, sin descartes |
+| `descartados.md` | solo comentarios descartados, con motivo y fecha |
+| `pendientes_cola_principal.md` | todas las entradas de la maestra con su estado |
+
+```bash
+python3 -m modules.communications.review_report \
+  --input tenants/universe/comment_responses/facebook_comments/aprobaciones.json \
+  --only-status descartada \
+  --markdown tenants/universe/comment_responses/facebook_comments/reports/descartados.md \
+  --csv tenants/universe/comment_responses/facebook_comments/reports/descartados.csv
+```

@@ -12,7 +12,7 @@ Leer este archivo y revisar el estado real antes de actuar:
 ```text
 Lee docs/HANDOFF_2026-11-02_1840_COMMENTS_REVIEW.md y continúa desde ahí.
 No publiques, apruebes ni descartes comentarios sin instrucción humana explícita.
-No commitees assets. La cola local es la fuente de verdad; Drive es solo backup.
+No commitees assets. La cola local es la única fuente de verdad.
 ```
 
 ## Estado operativo
@@ -33,7 +33,7 @@ Cola maestra:
 - La regla vigente es que el contenido sexual **no se descarta automáticamente**: se marca para revisión humana y no se responde solo.
 - La detección determinista cubre palabras y emojis sexuales; el agente también puede clasificar `intent=sexual`.
 - El publicador solo lee `aprobaciones.json` y lotes explícitos `aprobaciones_publish_*.json` con `kind: publish_batch`.
-- Drive es backup de una sola vía; nunca sobrescribe la cola local.
+- No hay copia automática a Drive; el flujo no escribe fuera de la cola local.
 - Los lotes cerrados y respaldos legacy están en `tenants/universe/comment_responses/facebook_comments/archive/`.
 - La copia vieja de Drive quedó archivada en `GoogleDrive/Growth OS/archive/closed_batches/aprobaciones_nuevas_8.json`.
 
@@ -85,7 +85,7 @@ No incluir en ningún commit los assets de Micas ni archivos con extensiones de 
 
 ```bash
 python3 -m modules.cgo --mode comments_review --tenant universe
-python3 scripts/run_comments_publish.py --tenant universe --dry-run --no-drive-sync
+python3 scripts/run_comments_publish.py --tenant universe --dry-run
 python3 scripts/run_ops_health.py --json
 git status --short
 git diff --cached --name-status
@@ -95,7 +95,7 @@ git diff --cached --name-status
 
 - No publicar, aprobar ni descartar sin instrucción humana explícita.
 - No publicar desde vistas de revisión ni lotes cerrados.
-- No hacer que Drive sobrescriba la cola local.
+- No reintroducir copias automáticas a Drive ni a otra ruta.
 - No automatizar el descarte de contenido sexual; enviarlo a revisión humana.
 - No commitear assets.
 - Revisar `git diff --cached --name-status` antes de cada commit.

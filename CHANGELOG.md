@@ -164,6 +164,13 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 
 ### Corregido
 
+- **Backfill de contexto de comentarios Universe**:
+  `scripts/import_meme_context.py --backfill-missing` reconstruye
+  `meme_text` desde el historial de comentarios, el ledger de publicaciones, el
+  CSV de dictado y el nombre del asset. Escribe solo por
+  `record_publication`, es idempotente y no inventa chistes sin fuente.
+  `tenants/universe/reconcile_contexts.py` ahora delega en ese importador en
+  lugar de leer `.env`, consultar Meta y reescribir el JSON directamente.
 - **Extractor legacy de señales de monetización**: `fetch_meta_monetization.py`
   solo leía el `.env` del tenant, ignoraba `META_ACCESS_TOKEN` del entorno y
   descartaba el código de salida de `main()`, así que `--fetch-signals` podía
@@ -235,6 +242,20 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 - **Backfill de ecos** (`modules/communications/whatsapp/backfill.py`): recuperó
   21 respuestas humanas (15 de texto) que el bug había descartado entre el 24 y
   el 27 de octubre. Idempotente vía `INSERT OR IGNORE`.
+
+### Corregido
+
+- **Descartes de comentarios persistentes** (`modules/communications/comments/`):
+  un comentario con `discarded: true` ya no se pierde cuando no tiene
+  `approved_response`; la captura horaria no vuelve a proponer comentarios con
+  decisión previa; el descarte puede crear un tombstone desde
+  `comments_log.csv` aunque el comentario ya haya salido de la ventana de 48 h;
+  y `review_report` marca `descartada`, filtra con `--only-status` y ya no
+  cuenta descartes en `total_pending`.
+- **Sin copia automática a Drive en comentarios**: el harvest, el worker de
+  publicación y el publicador legacy dejaron de sincronizar colas a Google
+  Drive. La cola local es la única fuente de verdad, así que ya no aparece el
+  error de `Read-only file system` ni se generan colas duplicadas.
 
 ### Pendiente
 

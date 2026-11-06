@@ -1,9 +1,8 @@
-"""Tests de la sincronización local -> Google Drive del harvest."""
+"""Tests del harvest sin sincronización automática a Google Drive."""
 
 from __future__ import annotations
 
 import importlib.util
-import os
 from pathlib import Path
 
 
@@ -12,49 +11,42 @@ def _load_harvest_module():
     spec = importlib.util.spec_from_file_location("harvest_comments_sync_test", path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
-    return module
+    return module, path
 
 
-def test_sync_approval_files_copia_colas_y_local_siempre_gana(tmp_path):
-    module = _load_harvest_module()
-    local = tmp_path / "local"
-    drive = tmp_path / "drive"
-    local.mkdir()
-    drive.mkdir()
+def test_harvest_ya_no_expone_copia_a_drive():
+    module, path = _load_harvest_module()
 
-    master = local / "aprobaciones.json"
-    batch = local / "aprobaciones_nuevas_8.json"
-    master.write_text("master-local", encoding="utf-8")
-    batch.write_text("batch-local", encoding="utf-8")
-
-    drive_master = drive / "aprobaciones.json"
-    drive_master.write_text("master-drive-mas-nueva", encoding="utf-8")
-    os.utime(master, (100, 100))
-    os.utime(drive_master, (200, 200))
-
-    synced = module.sync_approval_files(local, drive)
-
-    assert drive_master.read_text(encoding="utf-8") == "master-local"
-    assert (drive / "aprobaciones_nuevas_8.json").read_text(encoding="utf-8") == "batch-local"
-    assert drive / "aprobaciones_nuevas_8.json" in synced
-    assert drive_master in synced
+    assert not hasattr(module, "sync_approval_files")
+    assert not hasattr(module, "DRIVE_CANDIDATES")
+    source = path.read_text(encoding="utf-8")
+    assert "GoogleDrive" not in source
+    assert "shutil.copy2" not in source
 
 
-def test_sync_approval_files_sobrescribe_siempre(tmp_path):
-    module = _load_harvest_module()
-    local = tmp_path / "local"
-    drive = tmp_path / "drive"
-    local.mkdir()
-    drive.mkdir()
+def test_harvest_termina_sin_escribir_fuera_de_la_cola_local(tmp_path, monkeypatch, capsys):
+    module, _ = _load_harvest_module()
+    tenant_dir = tmp_path / "universe"
+    comm_dir = tenant_dir / "comment_responses" / "facebook_comments"
+    comm_dir.mkdir(parents=True)
+    approvals = comm_dir / "aprobaciones.json"
+    approvals.write_text('{"approvals": []}', encoding="utf-8")
+    (comm_dir / "main.py").write_text(
+        "import sys\n"
+        "print('Total comentarios: 0')\n"
+        "print('Descartados: 0')\n"
+        "sys.exit(0)\n",
+        encoding="utf-8",
+    )
 
-    master = local / "aprobaciones.json"
-    master.write_text("master-local-nueva", encoding="utf-8")
-    drive_master = drive / "aprobaciones.json"
-    drive_master.write_text("master-drive-vieja", encoding="utf-8")
-    os.utime(drive_master, (100, 100))
-    os.utime(master, (200, 200))
+    monkeypatch.setattr(module, "TENANT_DIR", tenant_dir)
+    monkeypatch.setattr(module, "COMM_DIR", comm_dir)
+    monkeypatch.setattr(module, "APROBACIONES_LOCAL", approvals)
+    monkeypatch.setattr(module, "check_omniroute", lambda: False)
 
-    synced = module.sync_approval_files(local, drive)
+    code = module.main(["--hours", "1", "--max-comments", "1"])
+    output = capsys.readouterr().out
 
-    assert drive_master.read_text(encoding="utf-8") == "master-local-nueva"
-    assert drive_master in synced
+    assert code == 0
+    assert "RECOLECCIÓN COMPLETADA" in output
+    assert sorted(path.name for path in tmp_path.iterdir()) == ["universe"]

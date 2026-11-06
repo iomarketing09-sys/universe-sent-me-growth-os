@@ -173,6 +173,28 @@ def test_processor_detecta_ids_delegados_y_evita_duplicarlos(tmp_path):
     }
 
 
+def test_processor_respeta_decisiones_previas(tmp_path):
+    make_tenant(tmp_path, "digital", track="native_digital")
+    paths = CommentPaths.for_tenant("digital", tmp_path)
+    _write_approvals(
+        paths.approvals_file,
+        [
+            {"comment_id": "descartado", "discarded": True},
+            {"comment_id": "aprobado", "approved": True, "approved_response": "Va."},
+            {"comment_id": "publicado", "published": True, "reply_id": "r1"},
+            {"comment_id": "pendiente", "approved": False},
+        ],
+    )
+
+    processor = CommentProcessor(tenant_id="digital", base_path=tmp_path)
+
+    assert processor._load_decided_comment_ids() == {
+        "descartado": "discarded",
+        "aprobado": "approved",
+        "publicado": "published",
+    }
+
+
 def test_cgo_no_publica_la_vista_de_revision(tmp_path, monkeypatch):
     make_tenant(tmp_path, "digital", track="native_digital")
     paths = CommentPaths.for_tenant("digital", tmp_path)

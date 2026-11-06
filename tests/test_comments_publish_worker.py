@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import json
-import os
 from pathlib import Path
 
 from modules.communications.comments import CommentPaths
@@ -107,7 +106,6 @@ def test_worker_publica_solo_colas_con_pendientes(tmp_path, monkeypatch):
             "digital",
             "--base-path",
             str(tmp_path),
-            "--no-drive-sync",
         ]
     )
 
@@ -125,19 +123,7 @@ def test_candado_impide_dos_publicadores(tmp_path):
         first.close()
 
 
-def test_sync_to_drive_es_de_una_via(tmp_path):
-    storage = tmp_path / "storage"
-    storage.mkdir()
-    local = storage / "aprobaciones.json"
-    local.write_text("local", encoding="utf-8")
-
-    drive = tmp_path / "drive"
-    drive.mkdir()
-    remote = drive / "aprobaciones.json"
-    remote.write_text("remoto", encoding="utf-8")
-    future = local.stat().st_mtime + 3600
-    os.utime(remote, (future, future))
-
-    worker.sync_to_drive(storage, drive)
-
-    assert remote.read_text(encoding="utf-8") == "local"
+def test_worker_ya_no_expone_sincronizacion_a_drive():
+    assert not hasattr(worker, "sync_to_drive")
+    assert not hasattr(worker, "drive_directory")
+    assert not hasattr(worker, "DRIVE_CANDIDATES")

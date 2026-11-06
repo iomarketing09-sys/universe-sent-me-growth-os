@@ -124,6 +124,34 @@ def test_merge_approvals_preserves_approved_items():
     assert merged["total_pending"] == 2
 
 
+def test_merge_approvals_conserva_descarte_sin_respuesta():
+    existing = {
+        "approvals": [
+            {
+                "comment_id": "descartado",
+                "approved": False,
+                "approved_response": "",
+                "discarded": True,
+                "discard_reason": "contenido sexual",
+            }
+        ]
+    }
+    generated = [
+        {
+            "comment_id": "descartado",
+            "approved": False,
+            "approved_response": "",
+        }
+    ]
+
+    merged = merge_approval_payload(existing, generated)
+
+    item = merged["approvals"][0]
+    assert item["discarded"] is True
+    assert item["discard_reason"] == "contenido sexual"
+    assert merged["total_pending"] == 0
+
+
 def test_merge_approvals_drops_stale_blank_items():
     existing = {
         "approvals": [

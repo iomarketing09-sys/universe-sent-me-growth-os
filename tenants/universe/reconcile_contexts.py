@@ -1,124 +1,32 @@
 #!/usr/bin/env python3
-import os
-import glob
-import csv
-import json
+"""Completa contextos faltantes usando el importador canónico."""
+
+from __future__ import annotations
+
+import sys
 from pathlib import Path
-import requests
 
-TENANT_DIR = Path(__file__).resolve().parent
-ENV_CANDIDATES = [TENANT_DIR / ".env", TENANT_DIR.parents[1] / ".env"]
-CONTEXTS_PATH = TENANT_DIR / "publication_contexts.json"
 
-env_vars = {}
-for env_path in ENV_CANDIDATES:
-    if not env_path.exists():
-        continue
-    with open(env_path, "r", encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if line and not line.startswith("#") and "=" in line:
-                k, v = line.split("=", 1)
-                env_vars.setdefault(k.strip(), v.strip().strip("'\""))
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
-PAGE_ID = env_vars.get("FB_PAGE_ID")
-TOKEN = env_vars.get("PAGE_ACCES_TOKEN") or env_vars.get("PAGE_ACCESS_TOKEN") or env_vars.get("META_ACCESS_TOKEN")
+from scripts.import_meme_context import backfill_rows, import_backfill  # noqa: E402
 
-if not PAGE_ID or not TOKEN:
-    print("❌ Error: no se encontraron credenciales en .env")
-    exit(1)
 
-# 1. Cargar catálogo de los CSVs diarios
-csv_catalog = []
-for csv_file in sorted(glob.glob(str(TENANT_DIR / "imports" / "meta_import_*.csv")) + glob.glob(str(TENANT_DIR / "meta_import_*.csv"))):
-    try:
-        with open(csv_file, "r", encoding="utf-8-sig") as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                caption = row.get("Caption", "").strip()
-                asset = row.get("Media URL", "").strip()
-                if not caption or not asset:
-                    continue
-                
-                clean_name = asset.replace(".jpeg", "").replace(".jpg", "").replace(".png", "")
-                clean_parts = clean_name.split(" - ")
-                
-                if len(clean_parts) >= 3:
-                    clean_parts.pop(0)  # Remueve el ID numérico
-                    character = clean_parts.pop(0).strip()
-                    concept = " - ".join(clean_parts).strip()
-                elif len(clean_parts) == 2:
-                    clean_parts.pop(0)
-                    character = clean_parts.pop(0).strip()
-                    concept = clean_name
-                else:
-                    character = "Universe"
-                    concept = clean_name
+def main() -> int:
+    rows = backfill_rows("universe", ROOT)
+    ready = [row for row in rows if str(row.get("meme_text") or "").strip()]
+    unresolved = [row for row in rows if not str(row.get("meme_text") or "").strip()]
+    imported = import_backfill("universe", ROOT)
+    print(f"Contextos reconstruidos: {imported}")
+    for row in unresolved:
+        print(
+            "Pendiente de dictado: "
+            f"{row.get('publication_id')} (sin asset o meme_text)"
+        )
+    return 0 if imported == len(ready) else 1
 
-                csv_catalog.append({
-                    "caption": caption,
-                    "asset": asset,
-                    "character": character,
-                    "concept": concept
-                })
-    except Exception as e:
-        print(f"Aviso leyendo {csv_file}: {e}")
 
-print(f"📋 Cargadas {len(csv_catalog)} publicaciones desde archivos meta_import_*.csv")
-
-# 2. Consultar posts recientes de Meta Graph API
-url = f"https://graph.facebook.com/v19.0/{PAGE_ID}/posts"
-params = {"fields": "id,message,created_time", "limit": 50, "access_token": TOKEN}
-try:
-    res = requests.get(url, params=params, timeout=30).json()
-except Exception as e:
-    print(f"❌ Error al consultar Meta Graph API: {e}")
-    exit(1)
-
-posts = res.get("data", [])
-print(f"📡 Obtenidos {len(posts)} posts recientes desde Meta Graph API")
-
-# 3. Cargar acumulador actual
-contexts = {}
-if CONTEXTS_PATH.exists():
-    try:
-        with open(CONTEXTS_PATH, "r", encoding="utf-8") as f:
-            contexts = json.load(f)
-    except Exception:
-        contexts = {}
-
-# 4. Vincular por coincidencia de caption
-matches = 0
-for post in posts:
-    post_id = post.get("id")
-    fb_msg = post.get("message", "")
-    created_time = post.get("created_time")
-    
-    if not fb_msg:
-        continue
-        
-    for item in csv_catalog:
-        # Coincidencia si el caption del CSV está en el mensaje de Facebook o coincide en los primeros 25 caracteres
-        cap_clean = item["caption"].strip()
-        if cap_clean in fb_msg or fb_msg.strip().startswith(cap_clean[:25]):
-            entry = {
-                "publication_id": post_id,
-                "asset_ref": item["asset"],
-                "character": item["character"],
-                "meme_text": item["concept"],
-                "visual_context": f"{item['character']} en {item['concept']}",
-                "caption": fb_msg,
-                "published_at": created_time
-            }
-            contexts[post_id] = entry
-            short_id = post_id.split("_")[-1]
-            contexts[short_id] = entry
-            matches += 1
-            print(f"  ✅ Post vinculado: {post_id} -> {item['character']} ({item['asset']})")
-            break
-
-with open(CONTEXTS_PATH, "w", encoding="utf-8") as f:
-    json.dump(contexts, f, ensure_ascii=False, indent=2)
-
-print(f"\n🎉 Total vinculados en esta ejecución: {matches}")
-print(f"💾 Total registros en {CONTEXTS_PATH.name}: {len(contexts)}")
+if __name__ == "__main__":
+    raise SystemExit(main())

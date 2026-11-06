@@ -28,6 +28,9 @@ CSV_FIELDS = [
     "comentario",
     "respuesta_propuesta",
     "estado",
+    "descartado",
+    "motivo_descarte",
+    "descartado_en",
     "ya_respondido",
     "calidad",
     "alertas",
@@ -119,7 +122,9 @@ def _approval_item(
         flags.extend(quality.flags)
     flags = list(dict.fromkeys(flags))
     already_answered = log_status in ANSWERED_STATUSES
-    if item.get("published") or item.get("reply_id"):
+    if item.get("discarded") is True:
+        status = "descartada"
+    elif item.get("published") or item.get("reply_id"):
         status = "publicada"
     elif already_answered:
         status = "ya respondido"
@@ -138,6 +143,9 @@ def _approval_item(
         "comentario": _text(item.get("comment_text") or item.get("original_comment")),
         "respuesta_propuesta": response,
         "estado": status,
+        "descartado": bool(item.get("discarded")),
+        "motivo_descarte": _text(item.get("discard_reason")),
+        "descartado_en": _text(item.get("discarded_at")),
         "ya_respondido": already_answered,
         "calidad_ok": quality.ok if quality else False,
         "calidad": "OK" if quality and quality.ok else "REVISAR",
@@ -263,6 +271,11 @@ def render_markdown(
             lines.append(f"- **Alertas:** {item['alertas']}")
         if item["motivo_revision"]:
             lines.append(f"- **Motivo:** {item['motivo_revision']}")
+        if item.get("descartado"):
+            reason = item.get("motivo_descarte") or "(sin motivo registrado)"
+            lines.append(f"- **Motivo de descarte:** {reason}")
+            if item.get("descartado_en"):
+                lines.append(f"- **Descartado en:** {item['descartado_en']}")
 
         context_rows = [
             ("Personaje", item.get("contexto_personaje")),
@@ -344,9 +357,14 @@ def generate_review_files(
     markdown_path: Optional[Path] = None,
     csv_path: Optional[Path] = None,
     only_decision: Optional[str] = None,
+    only_status: Optional[str] = None,
 ) -> Dict[str, Any]:
     source = Path(source)
     items = load_review_items(source, only_decision=only_decision)
+    if only_status:
+        items = [item for item in items if item["estado"] == only_status.casefold()]
+    for index, item in enumerate(items, 1):
+        item["numero"] = index
     default_markdown, default_csv = default_output_paths(source)
     markdown_path = Path(markdown_path) if markdown_path else default_markdown
     csv_path = Path(csv_path) if csv_path else default_csv
@@ -375,6 +393,11 @@ def main(argv: Optional[List[str]] = None) -> int:
         action="store_true",
         help="incluye solo registros cuya decisión sea suggest",
     )
+    parser.add_argument(
+        "--only-status",
+        default=None,
+        help="filtra por estado, por ejemplo: descartada",
+    )
     args = parser.parse_args(argv)
     try:
         result = generate_review_files(
@@ -382,6 +405,7 @@ def main(argv: Optional[List[str]] = None) -> int:
             markdown_path=args.markdown,
             csv_path=args.csv,
             only_decision="suggest" if args.only_suggested else None,
+            only_status=args.only_status,
         )
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print(f"❌ No se pudo generar la revisión: {type(exc).__name__}: {exc}")

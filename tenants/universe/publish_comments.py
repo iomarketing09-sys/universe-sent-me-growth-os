@@ -4,7 +4,6 @@ publish_comments.py - Publicador Unificado de Respuestas en Vivo para Universe S
 """
 import os
 import sys
-import shutil
 import subprocess
 from pathlib import Path
 
@@ -12,26 +11,10 @@ TENANT_DIR = Path(__file__).resolve().parent
 COMM_DIR = TENANT_DIR / "comment_responses" / "facebook_comments"
 APROBACIONES_LOCAL = COMM_DIR / "aprobaciones.json"
 
-DRIVE_CANDIDATES = [
-    Path(os.path.expanduser("~/GoogleDrive/Growth OS")),
-    Path("/home/universe-sent-me/GoogleDrive/Growth OS"),
-]
-
 def main():
     print("=" * 70)
     print("🚀 INICIANDO PUBLICACIÓN EN VIVO DE RESPUESTAS APROBADAS")
     print("=" * 70)
-
-    drive_file = None
-    for cand in dict.fromkeys(DRIVE_CANDIDATES):
-        if cand.exists() and cand.is_dir():
-            candidate_file = cand / "aprobaciones.json"
-            if candidate_file.exists():
-                drive_file = candidate_file
-                break
-
-    if drive_file:
-        print("📌 La cola local es la fuente de verdad; Drive solo se actualizará al final.")
 
     if not APROBACIONES_LOCAL.exists():
         print(f"❌ Error: No se encontró {APROBACIONES_LOCAL}")
@@ -63,12 +46,6 @@ def main():
     cmd.extend(sys.argv[1:])
     print("📡 Despachando respuestas aprobadas a Meta Graph API...\n")
     res = subprocess.run(cmd, cwd=str(COMM_DIR))
-    if res.returncode == 0 and drive_file:
-        try:
-            shutil.copy2(APROBACIONES_LOCAL, drive_file)
-            print("☁️ Estado de publicación sincronizado de vuelta a Google Drive.")
-        except Exception as e:
-            print(f"   ⚠️ No se pudo sincronizar el estado a Drive: {e}")
     return res.returncode
 
 if __name__ == "__main__":

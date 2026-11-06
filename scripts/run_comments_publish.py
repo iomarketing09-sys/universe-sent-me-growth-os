@@ -3,10 +3,8 @@
 
 El worker no captura comentarios, no genera propuestas y no cambia
 ``approved``. Solo procesa la cola maestra y lotes de publicación explícitos.
-El candado evita que dos ejecuciones (timer + manual) publiquen a la vez.
-
-La copia en Drive es un backup de una sola vía: la cola local es la fuente de
-verdad y nunca se sobrescribe desde Drive.
+El candado evita que dos ejecuciones (timer + manual) publiquen a la vez. La
+cola local es la única fuente de verdad: no se copia a Drive ni a otra ruta.
 """
 
 from __future__ import annotations
@@ -15,7 +13,6 @@ import argparse
 import fcntl
 import json
 import os
-import shutil
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional, TextIO
@@ -30,10 +27,6 @@ from modules.cgo.result import BLOCKED, ERROR
 from modules.communications.comments.paths import CommentPaths
 
 
-DRIVE_CANDIDATES = (
-    Path(os.path.expanduser("~/GoogleDrive/Growth OS")),
-    Path("/home/universe-sent-me/GoogleDrive/Growth OS"),
-)
 READ_ONLY_KINDS = {"review_queue"}
 
 
@@ -75,25 +68,6 @@ def queue_candidates(paths: CommentPaths) -> List[Path]:
             continue
         candidates.append(path)
     return candidates
-
-
-def drive_directory() -> Optional[Path]:
-    for candidate in DRIVE_CANDIDATES:
-        if candidate.is_dir():
-            return candidate
-    return None
-
-
-def sync_to_drive(storage_dir: Path, drive_dir: Optional[Path]) -> None:
-    if drive_dir is None:
-        return
-    for local in sorted(storage_dir.glob("aprobaciones*.json")):
-        remote = drive_dir / local.name
-        try:
-            shutil.copy2(local, remote)
-            print(f"☁️ Sincronizado: {local.name}")
-        except OSError as exc:
-            print(f"⚠️ No se pudo sincronizar {local.name}: {exc}")
 
 
 def acquire_lock(path: Path) -> Optional[TextIO]:
@@ -152,7 +126,6 @@ def build_parser() -> argparse.ArgumentParser:
         default=None,
         help="Candado exclusivo; por defecto vive en la carpeta de comentarios.",
     )
-    parser.add_argument("--no-drive-sync", action="store_true")
     parser.add_argument(
         "--dry-run",
         action="store_true",
@@ -179,7 +152,6 @@ def main(argv: Optional[List[str]] = None) -> int:
         return 0
 
     try:
-        drive_dir = None if args.no_drive_sync or args.dry_run else drive_directory()
         candidates = queue_candidates(paths)
 
         failures = 0
@@ -208,8 +180,6 @@ def main(argv: Optional[List[str]] = None) -> int:
             print(f"Dry-run: {published_queues} cola(s) con trabajo pendiente.")
         elif published_queues == 0:
             print("Sin respuestas aprobadas pendientes.")
-        else:
-            sync_to_drive(paths.storage_dir, drive_dir)
         return 1 if failures else 0
     finally:
         lock.close()

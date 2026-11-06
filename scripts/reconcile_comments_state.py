@@ -24,7 +24,11 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from modules.communications.comments.log import read_comment_log, write_json_atomic
+from modules.communications.comments.log import (
+    append_comment_log,
+    read_comment_log,
+    write_json_atomic,
+)
 from modules.communications.comments.paths import CommentPaths
 
 
@@ -76,6 +80,26 @@ def _log_indexes(log_path: Path) -> Tuple[Dict[str, Dict[str, str]], Dict[str, s
         elif timestamp is not None:
             entry.setdefault("published_at", timestamp.isoformat())
     return published, first_seen
+
+
+def _latest_log_rows(log_path: Path) -> Dict[str, Dict[str, str]]:
+    latest: Dict[str, Dict[str, str]] = {}
+    for row in read_comment_log(log_path):
+        comment_id = _text(row.get("comment_id"))
+        if comment_id:
+            latest[comment_id] = dict(row)
+    return latest
+
+
+def _pending_count(items: Iterable[Dict[str, Any]]) -> int:
+    return sum(
+        1
+        for item in items
+        if isinstance(item, dict)
+        and item.get("published") is not True
+        and not _text(item.get("reply_id"))
+        and item.get("discarded") is not True
+    )
 
 
 def _clear_discard(item: Dict[str, Any]) -> None:
@@ -181,6 +205,7 @@ def apply_discards(
     decisions: Iterable[Tuple[str, str]],
     *,
     now: str,
+    log_rows: Optional[Dict[str, Dict[str, Any]]] = None,
 ) -> Tuple[List[Dict[str, str]], List[Dict[str, str]]]:
     by_id = {
         _text(item.get("comment_id")): item
@@ -192,13 +217,26 @@ def apply_discards(
     for comment_id, reason in decisions:
         comment_id = _text(comment_id)
         reason = _text(reason)
-        item = by_id.get(comment_id)
-        if item is None:
-            errors.append({"comment_id": comment_id, "reason": "no existe en la maestra"})
-            continue
         if not reason:
             errors.append({"comment_id": comment_id, "reason": "falta el motivo"})
             continue
+        item = by_id.get(comment_id)
+        if item is None:
+            source = (log_rows or {}).get(comment_id)
+            if not source:
+                errors.append(
+                    {"comment_id": comment_id, "reason": "no existe en la maestra"}
+                )
+                continue
+            item = {
+                "comment_id": comment_id,
+                "comment_text": _text(source.get("comment_text")),
+                "comment_created_at": _text(source.get("created_time")),
+                "first_seen_at": _text(source.get("timestamp")),
+                "tombstoned_from": "comments_log",
+            }
+            master["approvals"].append(item)
+            by_id[comment_id] = item
         if item.get("published") is True or _text(item.get("reply_id")):
             errors.append({"comment_id": comment_id, "reason": "ya está publicado"})
             continue
@@ -251,9 +289,6 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     base_path = Path(args.base_path).resolve()
     paths = CommentPaths.for_tenant(args.tenant, base_path)
     sources = [Path(path) for path in (args.source or [])]
-    if not sources:
-        print("ERROR: indica al menos un --source con el lote cerrado.")
-        return 2
     missing = [str(path) for path in sources if not path.is_file()]
     if missing:
         print("ERROR: no existen: " + ", ".join(missing))
@@ -261,13 +296,19 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     master = _load_queue(paths.approvals_file)
     published_index, first_seen_index = _log_indexes(paths.comments_log_file)
+    latest_log_rows = _latest_log_rows(paths.comments_log_file)
     now = datetime.now(timezone.utc).isoformat()
 
-    reconciled, skipped = reconcile_published(
-        master, sources, published_index, now=now
-    )
+    if sources:
+        reconciled, skipped = reconcile_published(
+            master, sources, published_index, now=now
+        )
+    else:
+        reconciled, skipped = [], []
     backfilled = backfill_first_seen(master, first_seen_index)
-    discarded, discard_errors = apply_discards(master, args.discard, now=now)
+    discarded, discard_errors = apply_discards(
+        master, args.discard, now=now, log_rows=latest_log_rows
+    )
 
     print(f"Cola: {paths.approvals_file}")
     print(f"Publicados reconciliados: {len(reconciled)}")
@@ -291,7 +332,27 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         return 0
 
     master["last_reconciled_at"] = now
+    master["total_pending"] = _pending_count(master["approvals"])
     write_json_atomic(paths.approvals_file, master)
+    by_id = {
+        _text(item.get("comment_id")): item
+        for item in master["approvals"]
+        if isinstance(item, dict)
+    }
+    for change in discarded:
+        item = by_id.get(change["comment_id"], {})
+        append_comment_log(
+            paths.comments_log_file,
+            {
+                "timestamp": now,
+                "comment_id": change["comment_id"],
+                "comment_text": _text(item.get("comment_text")),
+                "created_time": _text(item.get("comment_created_at")),
+                "decision": "discarded",
+                "publish_status": "discarded",
+                "filter_reason": change["reason"],
+            },
+        )
     print("✅ Cola maestra actualizada.")
     return 0
 

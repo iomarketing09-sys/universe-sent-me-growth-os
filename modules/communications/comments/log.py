@@ -197,7 +197,8 @@ def merge_approval_payload(
         replacement = generated_by_id.get(comment_id)
         if replacement is None:
             keep_existing = (
-                item.get("approved")
+                item.get("discarded")
+                or item.get("approved")
                 or item.get("published")
                 or not _is_blank(item.get("approved_response"))
             )
@@ -236,7 +237,13 @@ def merge_approval_payload(
         merged.append(dict(item))
         used_ids.add(comment_id)
 
-    pending = sum(1 for item in merged if not item.get("published") and not item.get("reply_id"))
+    pending = sum(
+        1
+        for item in merged
+        if not item.get("published")
+        and not item.get("reply_id")
+        and not item.get("discarded")
+    )
     return {
         "generated_at": generated_at or datetime.now(timezone.utc).isoformat(),
         "lookback_hours": lookback_hours,

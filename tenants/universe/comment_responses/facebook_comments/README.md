@@ -141,8 +141,8 @@ python3 -m modules.cgo --mode comments_review --tenant universe \
 - Antes de responder, el publicador consulta si la página ya tiene una respuesta en Meta.
 - Cada respuesta enviada se guarda con `published`, `published_at` y `reply_id`; repetir el comando no la duplica.
 - Las aprobaciones existentes se conservan al refrescar propuestas.
-- La cola local es la fuente de verdad; Drive solo recibe un backup de una vía y nunca sobrescribe la revisión local.
-- El worker publica desde la maestra y sincroniza el resultado al terminar.
+- La cola local es la única fuente de verdad; no hay copia automática a Drive.
+- El worker publica desde la maestra y escribe el resultado en la misma cola local.
 - `data/comments_log.csv` usa un esquema único de 18 columnas y conserva las filas históricas.
 
 ## Diagnóstico

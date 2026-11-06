@@ -308,6 +308,32 @@ class CommentProcessor:
                     delegated.add(comment_id)
         return delegated
 
+    def _load_decided_comment_ids(self) -> Dict[str, str]:
+        """Comentarios ya decididos por el operador, para no volver a proponerlos."""
+        if not self.aprobaciones_file.is_file():
+            return {}
+        try:
+            payload = json.loads(self.aprobaciones_file.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            return {}
+        items = payload.get("approvals") if isinstance(payload, dict) else None
+        if not isinstance(items, list):
+            return {}
+        decided: Dict[str, str] = {}
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            comment_id = str(item.get("comment_id") or "").strip()
+            if not comment_id:
+                continue
+            if item.get("discarded") is True:
+                decided[comment_id] = "discarded"
+            elif item.get("published") is True or str(item.get("reply_id") or "").strip():
+                decided[comment_id] = "published"
+            elif item.get("approved") is True:
+                decided[comment_id] = "approved"
+        return decided
+
     def _get_response_agent(self):
         if self.agent is None:
             from modules.communications.agent import CommunicationsAgent
@@ -442,6 +468,7 @@ class CommentProcessor:
 
         self._load_publication_contexts()
         delegated_comment_ids = self._load_delegated_comment_ids()
+        decided_comment_ids = self._load_decided_comment_ids()
         if self.response_agent:
             print("🧠 Generador de propuestas: CommunicationsAgent (solo sugerencias).")
         cutoff_dt = datetime.now(timezone.utc) - timedelta(hours=self.hours)
@@ -470,6 +497,7 @@ class CommentProcessor:
         total_comments = 0
         already_replied_count = 0
         delegated_count = 0
+        decided_count = 0
         low_signal_count = 0
         missing_context_count = 0
         pending_candidates = []
@@ -498,7 +526,12 @@ class CommentProcessor:
                 author_name = c.get("from", {}).get("name", "Usuario")
                 comment_dt_str = c.get("created_time", "")
 
-                # 1. ¿Ya lo respondió la página?
+                # 1. ¿Ya lo decidió el operador? No se vuelve a proponer.
+                if str(c.get("id", "")) in decided_comment_ids:
+                    decided_count += 1
+                    continue
+
+                # 2. ¿Ya lo respondió la página?
                 if self._check_already_replied(c):
                     already_replied_count += 1
                     self._log_comment(
@@ -521,24 +554,24 @@ class CommentProcessor:
                     )
                     continue
 
-                # 2. Procesar con el responder
+                # 3. Procesar con el responder
                 res = self._respond_to_comment(pctx, comment_text)
                 decision = res.get("decision", "no_response")
                 comment_type = res.get("comment_type", "")
 
-                # 3. ¿Es baja señal (emojis, risas, menciones)?
+                # 4. ¿Es baja señal (emojis, risas, menciones)?
                 if decision == "no_response" or comment_type == "baja_señal":
                     low_signal_count += 1
                     self._log_comment(c, res, publish_status="discarded")
                     continue
 
-                # 3b. Falta el chiste del meme: no se propone respuesta
+                # 4b. Falta el chiste del meme: no se propone respuesta
                 if decision == "sin_contexto":
                     missing_context_count += 1
                     self._log_comment(c, res, publish_status="sin_contexto")
                     continue
 
-                # 4. Es un comentario de alta señal pendiente de respuesta
+                # 5. Es un comentario de alta señal pendiente de respuesta
                 pending_candidates.append({
                     "comment_id": c["id"],
                     "post_id": post_id,
@@ -568,6 +601,7 @@ class CommentProcessor:
         print(f"  • Total comentarios recibidos: {total_comments}")
         print(f"    - 🟢 Ya respondidos (por ti o por bot): {already_replied_count}")
         print(f"    - 🔁 Delegados a otra cola: {delegated_count}")
+        print(f"    - 🧷 Decisiones previas respetadas: {decided_count}")
         print(f"    - ⚪ Descartados por baja señal (emojis/risas): {low_signal_count}")
         print(f"    - 🏳️ Sin chiste (falta meme_text): {missing_context_count}")
         print(f"    - 🟡 PENDIENTES DE ATENCIÓN (Alta señal sin respuesta): {len(pending_candidates)}")
