@@ -20,6 +20,7 @@ from modules.social.ig_publisher import (
 )
 
 SUPPORTED_FEED_TYPES = {"", "PHOTO", "IMAGE", "CAROUSEL"}
+SUPPORTED_STORY_TYPES = {"STORY", "STORIES"}
 MAX_CAROUSEL_ITEMS = 20
 SUPPORTED_FORMATS = {"JPEG", "PNG"}
 MIN_ASPECT_RATIO = 4 / 5
@@ -57,7 +58,7 @@ def _find_asset(asset_root: Path, filename: str) -> Optional[Path]:
     return None
 
 
-def _check_image(path: Path, result: PreflightResult) -> None:
+def _check_image(path: Path, result: PreflightResult, *, check_feed_aspect: bool = True) -> None:
     size = path.stat().st_size
     if size <= 0:
         result.add("asset:size", "fail", f"{path.name} está vacío")
@@ -102,6 +103,9 @@ def _check_image(path: Path, result: PreflightResult) -> None:
 
     result.add("asset:dimensions", "ok", f"{path.name}: {width}x{height}")
 
+    if not check_feed_aspect:
+        return
+
     ratio = width / height if height else 0
     if not (MIN_ASPECT_RATIO <= ratio <= MAX_ASPECT_RATIO):
         result.add(
@@ -117,9 +121,14 @@ def _check_remote_permissions(tenant_id: str, creds: Dict[str, str], result: Pre
     try:
         import requests
 
-        page_token, ig_id = get_meta_tokens(creds["META_ACCESS_TOKEN"], creds["FB_PAGE_ID"])
+        api_version = creds.get("META_API_VERSION", "v27.0")
+        page_token, ig_id = get_meta_tokens(
+            creds["META_ACCESS_TOKEN"], creds["FB_PAGE_ID"], api_version=api_version
+        )
+        if not api_version.startswith("v"):
+            api_version = f"v{api_version}"
         response = requests.get(
-            f"https://graph.facebook.com/v19.0/{ig_id}/content_publishing_limit",
+            f"https://graph.facebook.com/{api_version}/{ig_id}/content_publishing_limit",
             params={"fields": "quota_usage,quota_total", "access_token": page_token},
             timeout=20,
         )
@@ -171,11 +180,11 @@ def preflight_tenant(
 
     if item is not None:
         post_type = str(getattr(item, "post_type", "") or "").strip().upper()
-        if post_type not in SUPPORTED_FEED_TYPES:
+        if post_type not in SUPPORTED_FEED_TYPES and post_type not in SUPPORTED_STORY_TYPES:
             result.add(
                 "format",
                 "fail",
-                f"Post Type {post_type} no soportado por el publisher actual (Fase 3)",
+                f"Post Type {post_type} no soportado por el publisher actual",
             )
         else:
             result.add("format", "ok", post_type or "PHOTO")
@@ -199,7 +208,27 @@ def preflight_tenant(
                     result.add("asset", "fail", f"Asset no encontrado: {filename}")
                     continue
                 result.add("asset", "ok", str(asset_path))
-                _check_image(asset_path, result)
+                _check_image(
+                    asset_path,
+                    result,
+                    check_feed_aspect=post_type not in SUPPORTED_STORY_TYPES,
+                )
+                if post_type in SUPPORTED_STORY_TYPES:
+                    try:
+                        from PIL import Image
+                        with Image.open(asset_path) as story_image:
+                            width, height = story_image.size
+                        ratio = width / height if height else 0
+                        if not (0.5625 <= ratio <= 0.8):
+                            result.add(
+                                "story:aspect",
+                                "fail",
+                                f"{filename}: relación {ratio:.3f}; Story requiere formato vertical 9:16 a 4:5",
+                            )
+                        else:
+                            result.add("story:aspect", "ok", f"{filename}: {width}x{height}")
+                    except Exception as exc:
+                        result.add("story:aspect", "fail", f"No se pudo validar formato Story: {exc}")
 
     if check_remote:
         _check_remote_permissions(tenant_id, creds, result)

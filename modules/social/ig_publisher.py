@@ -30,12 +30,16 @@ class IgPublisher:
         imgbb_key: str,
         asset_root: Path,
         image_host: str = "imgbb",
+        api_version: str = "v27.0",
     ):
         self.page_token = page_token
         self.ig_id = ig_id
         self.imgbb_key = imgbb_key
         self.asset_root = asset_root
         self.image_host = (image_host or "imgbb").strip().lower()
+        self.api_version = str(api_version or "v27.0").strip()
+        if not self.api_version.startswith("v"):
+            self.api_version = f"v{self.api_version}"
         if self.image_host not in IMAGE_HOSTS:
             raise ValueError(f"IMAGE_HOST inválido: {self.image_host}")
     
@@ -152,7 +156,7 @@ class IgPublisher:
     
     def create_media_container(self, image_url: str, caption: str) -> str:
         """Crea container de media en Instagram. Retorna creation_id."""
-        url = f'https://graph.facebook.com/v19.0/{self.ig_id}/media'
+        url = f'https://graph.facebook.com/{self.api_version}/{self.ig_id}/media'
         payload = {
             'image_url': image_url,
             'caption': caption,
@@ -169,7 +173,7 @@ class IgPublisher:
 
     def create_carousel_item(self, image_url: str) -> str:
         """Crea un elemento de carrusel (sin caption). Retorna creation_id."""
-        url = f'https://graph.facebook.com/v19.0/{self.ig_id}/media'
+        url = f'https://graph.facebook.com/{self.api_version}/{self.ig_id}/media'
         payload = {
             'image_url': image_url,
             'is_carousel_item': 'true',
@@ -189,7 +193,7 @@ class IgPublisher:
         if not children:
             raise ValueError("El carrusel necesita al menos un elemento")
 
-        url = f'https://graph.facebook.com/v19.0/{self.ig_id}/media'
+        url = f'https://graph.facebook.com/{self.api_version}/{self.ig_id}/media'
         payload = {
             'media_type': 'CAROUSEL',
             'children': ','.join(children),
@@ -207,7 +211,7 @@ class IgPublisher:
     
     def wait_for_container_ready(self, creation_id: str, max_wait: int = 60) -> bool:
         """Espera a que el container esté listo (status: Finished)"""
-        url = f'https://graph.facebook.com/v19.0/{creation_id}?fields=id,status&access_token={self.page_token}'
+        url = f'https://graph.facebook.com/{self.api_version}/{creation_id}?fields=id,status&access_token={self.page_token}'
         
         for i in range(max_wait // 5):
             time.sleep(5)
@@ -223,7 +227,7 @@ class IgPublisher:
     
     def publish_media_container(self, creation_id: str) -> str:
         """Publica el container inmediatamente. Retorna post_id."""
-        url = f'https://graph.facebook.com/v19.0/{self.ig_id}/media_publish'
+        url = f'https://graph.facebook.com/{self.api_version}/{self.ig_id}/media_publish'
         r = requests.post(url, data={'creation_id': creation_id, 'access_token': self.page_token}, timeout=60).json()
         
         if 'id' not in r:
@@ -233,6 +237,35 @@ class IgPublisher:
         logger.info(f"✅ Publicado en Instagram: {post_id}")
         return post_id
     
+    def create_story_container(self, image_url: str) -> str:
+        """Crea un contenedor de Instagram Story (imagen)."""
+        url = f"https://graph.facebook.com/{self.api_version}/{self.ig_id}/media"
+        response = requests.post(
+            url,
+            data={
+                "media_type": "STORIES",
+                "image_url": image_url,
+                "access_token": self.page_token,
+            },
+            timeout=60,
+        )
+        payload = response.json()
+        if response.status_code >= 400 or "id" not in payload:
+            raise RuntimeError(f"Error creando Instagram Story: {payload}")
+        return str(payload["id"])
+
+    def publish_story(self, media_filename: str) -> str:
+        """Publica inmediatamente una Story de imagen en Instagram."""
+        if "|" in media_filename:
+            raise ValueError("Instagram Stories admite un solo archivo por slot")
+        asset_file = self.find_asset(media_filename)
+        if not asset_file:
+            raise FileNotFoundError(f"Asset no encontrado: {media_filename}")
+        image_url = self.upload_image(asset_file)
+        creation_id = self.create_story_container(image_url)
+        self.wait_for_container_ready(creation_id)
+        return self.publish_media_container(creation_id)
+
     def publish(self, media_filename: str, caption: str) -> str:
         """Flujo completo de publicación. Retorna post_id."""
         filenames = [name.strip() for name in media_filename.split('|') if name.strip()]
@@ -310,9 +343,12 @@ def load_tenant_credentials(tenant_id: str, base_path: Optional[Path] = None) ->
     return creds
 
 
-def get_meta_tokens(access_token: str, page_id: str) -> Tuple[str, str]:
-    """Obtiene page_token e IG Business ID"""
-    url = f'https://graph.facebook.com/v19.0/{page_id}?fields=access_token,instagram_business_account&access_token={access_token}'
+def get_meta_tokens(access_token: str, page_id: str, api_version: str = "v27.0") -> Tuple[str, str]:
+    """Obtiene page_token e IG Business ID."""
+    version = str(api_version or "v27.0").strip()
+    if not version.startswith("v"):
+        version = f"v{version}"
+    url = f'https://graph.facebook.com/{version}/{page_id}?fields=access_token,instagram_business_account&access_token={access_token}'
     r = requests.get(url, timeout=30).json()
     page_token = r.get('access_token')
     ig_id = r.get('instagram_business_account', {}).get('id')
@@ -327,7 +363,10 @@ def create_ig_publisher_for_tenant(tenant_id: str, base_path: Optional[Path] = N
     """Factory: crea IgPublisher configurado para un tenant"""
     root = Path(base_path) if base_path else Path(".")
     creds = load_tenant_credentials(tenant_id, base_path=root)
-    page_token, ig_id = get_meta_tokens(creds['META_ACCESS_TOKEN'], creds['FB_PAGE_ID'])
+    api_version = creds.get("META_API_VERSION", "v27.0")
+    page_token, ig_id = get_meta_tokens(
+        creds["META_ACCESS_TOKEN"], creds["FB_PAGE_ID"], api_version=api_version
+    )
     asset_root = root / "tenants" / tenant_id / "assets"
     
     return IgPublisher(
@@ -336,4 +375,5 @@ def create_ig_publisher_for_tenant(tenant_id: str, base_path: Optional[Path] = N
         imgbb_key=creds.get('IMGBB_API_KEY', ''),
         asset_root=asset_root,
         image_host=creds.get('IMAGE_HOST', 'imgbb'),
+        api_version=api_version,
     )

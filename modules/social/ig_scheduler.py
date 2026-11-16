@@ -570,7 +570,10 @@ class IgScheduler:
             return None
 
         try:
-            post_id = publisher.publish(item.media_filename, item.caption)
+            if str(item.post_type or "").strip().upper() in {"STORY", "STORIES"}:
+                post_id = publisher.publish_story(item.media_filename)
+            else:
+                post_id = publisher.publish(item.media_filename, item.caption)
             try:
                 from modules.intelligence.publication_context import record_publication
 

@@ -64,15 +64,18 @@ def redact_error(message: Any) -> str:
 
 def job_key(tenant_id: str, item: Any, platform: str = "Instagram") -> str:
     """Clave estable para un slot. No incluye el caption."""
-    return "|".join(
-        [
-            str(platform).strip().lower(),
-            str(tenant_id).strip(),
-            str(getattr(item, "date_str", "")).strip(),
-            str(getattr(item, "time_str", "")).strip(),
-            str(getattr(item, "media_filename", "")).strip(),
-        ]
-    )
+    parts = [
+        str(platform).strip().lower(),
+        str(tenant_id).strip(),
+        str(getattr(item, "date_str", "")).strip(),
+        str(getattr(item, "time_str", "")).strip(),
+        str(getattr(item, "media_filename", "")).strip(),
+    ]
+    post_type = str(getattr(item, "post_type", "") or "").strip().upper()
+    # Mantener intactas las claves históricas de Feed y separar Stories.
+    if post_type in {"STORY", "STORIES"}:
+        parts.append("story")
+    return "|".join(parts)
 
 
 @dataclass
