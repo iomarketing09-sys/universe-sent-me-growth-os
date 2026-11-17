@@ -350,3 +350,43 @@ def test_publish_approved_respeta_tandas_y_pausa(tmp_path, monkeypatch):
     assert result == 0
     assert len(calls) == 7
     assert sleeps == [900]
+
+
+def test_publish_approved_sends_explicitly_approved_sticker_without_text(tmp_path, monkeypatch):
+    sticker_name = "toma este corazon.jpeg"
+    sticker_dir = tmp_path / "tenants" / "universe" / "assets" / "stickers"
+    sticker_dir.mkdir(parents=True)
+    sticker_path = sticker_dir / sticker_name
+    sticker_path.write_bytes(b"fake-image")
+    approval_path = tmp_path / "aprobaciones.json"
+    log_path = tmp_path / "comments_log.csv"
+    approval_path.write_text(
+        json.dumps({"approvals": [{
+            "comment_id": "comment_sticker_1",
+            "approved": True,
+            "approved_response": "",
+            "approved_sticker": sticker_name,
+        }]}),
+        encoding="utf-8",
+    )
+
+    calls = []
+
+    def fake_post(url, data=None, files=None, timeout=None):
+        calls.append({"url": url, "data": data, "files": files})
+        assert files["source"].read() == b"fake-image"
+        return FakeResponse({"id": "reply_sticker_1"})
+
+    monkeypatch.setenv("PAGE_ACCESS_TOKEN", "test-token")
+    monkeypatch.setenv("FB_PAGE_ID", "page_1")
+    monkeypatch.setattr(comments_main, "_existing_page_reply", lambda *args: (True, None, ""))
+    monkeypatch.setattr("requests.post", fake_post)
+
+    assert comments_main.publish_approved(
+        str(approval_path), str(log_path), base_path=tmp_path
+    ) == 0
+    assert len(calls) == 1
+    assert calls[0]["data"] == {"access_token": "test-token"}
+    saved = json.loads(approval_path.read_text(encoding="utf-8"))
+    assert saved["approvals"][0]["published"] is True
+    assert saved["approvals"][0]["reply_id"] == "reply_sticker_1"

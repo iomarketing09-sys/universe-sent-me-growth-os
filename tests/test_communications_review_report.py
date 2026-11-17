@@ -21,6 +21,11 @@ def test_genera_markdown_y_csv_desde_aprobaciones(tmp_path):
                         "comment_text": "No lo creo jajaja",
                         "character": "Universe",
                         "approved_response": "No lo creas.",
+                        "sticker_suggestion": {
+                            "filename": "no hay meme, solo te amo.jpeg",
+                            "requires_human_approval": True,
+                            "publication_authorized": False,
+                        },
                         "approved": False,
                         "agent": {
                             "model": "openai/gpt-4.1-mini",
@@ -58,12 +63,15 @@ def test_genera_markdown_y_csv_desde_aprobaciones(tmp_path):
     markdown = markdown_path.read_text(encoding="utf-8")
     assert "No lo creo jajaja" in markdown
     assert "No lo creas." in markdown
+    assert "no hay meme, solo te amo.jpeg" in markdown
+    assert "approved_sticker" in markdown
     assert "[ ] Aprobada para publicar" in markdown
     assert "commercial_claim" in markdown
     with csv_path.open("r", encoding="utf-8-sig", newline="") as handle:
         rows = list(csv.DictReader(handle))
     assert len(rows) == 2
     assert rows[0]["respuesta_propuesta"] == "No lo creas."
+    assert rows[0]["imagen_sugerida"] == "no hay meme, solo te amo.jpeg"
     assert rows[1]["calidad"] == "REVISAR"
 
 

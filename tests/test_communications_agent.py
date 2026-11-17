@@ -132,11 +132,13 @@ def test_baja_senal_se_detecta_sin_llamar_al_modelo(tmp_path):
     client = FakeClient([])
     agent = CommunicationsAgent("universe", base_path=tmp_path, client=client)
 
-    assert is_low_signal("Uff 🔥")
-    assert is_low_signal("Nooooo 😂😂😂😂")
-    assert is_low_signal("Caracter ☠️🔥")
-    assert not is_low_signal("Caracter 🙃👏")
-    result = agent.suggest("Uff 🔥", {"character": "Universe"})
+    assert is_low_signal("😂😂😂")
+    assert is_low_signal("jajaja")
+    assert is_low_signal("❤️")
+    assert not is_low_signal("Uff 🔥")
+    assert not is_low_signal("Nooooo 😂😂😂😂")
+    assert not is_low_signal("Caracter ☠️🔥")
+    result = agent.suggest("😂😂😂", {"character": "Universe"})
     empty = agent.suggest("", {"character": "Universe"})
 
     assert client.calls == []
@@ -450,6 +452,11 @@ def test_agente_bloquea_borrador_que_falla_politica(tmp_path):
     assert result["response"] is None
     assert result["publishable"] is False
     assert "commercial_claim" in result["policy_flags"]
+
+
+def test_responder_usa_deepseek_flash_de_omniroute_por_defecto():
+    responder = UniverseResponder()
+    assert responder.model == "ds/deepseek-flash"
 
 
 def test_responder_bloquea_generacion_fuera_de_politica():

@@ -222,7 +222,8 @@ def merge_approval_payload(
                     continue
                 if refresh:
                     if key == "approved_response":
-                        combined[key] = value or ""
+                        if not _is_blank(value) or _is_blank(combined.get(key)):
+                            combined[key] = value or ""
                     elif not _is_blank(value):
                         combined[key] = value
                 elif key not in combined or _is_blank(combined.get(key)):
