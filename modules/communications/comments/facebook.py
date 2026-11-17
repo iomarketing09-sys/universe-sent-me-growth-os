@@ -7,7 +7,7 @@ módulo no lee credenciales, no crea directorios y no publica nada.
 Features:
 - Lookback window por horas (--hours, por defecto 48h)
 - Detección automática de respuestas de la página (manuales o de bot)
-- Filtro de baja señal determinista (emojis, risas, menciones)
+- Descarte de baja señal (vacíos, emojis aislados y risas); etiquetas y marca se registran aparte
 - Dashboard ejecutivo de cobertura en tiempo real
 - Lista de pendientes ordenada cronológicamente (anti-rezagados)
 - Generación automática de plantilla de aprobación
@@ -32,12 +32,18 @@ from modules.communications.comments.log import (
     write_json_atomic,
 )
 from modules.communications.comments.paths import CommentPaths, load_tenant_config
+from modules.communications.policy import comment_signal
 from modules.communications.comments.responder import (
     UniverseResponder,
     lacks_meme_context,
     requires_meme_context,
 )
 from modules.config.env import META_ENV_KEYS, load_env_values, parse_env_file
+from modules.intelligence.publication_context_source import (
+    context_matches,
+    load_external_contexts,
+    source_path as publication_context_source_path,
+)
 
 
 def load_env_file(path: Path, override: bool = False) -> Dict[str, str]:
@@ -173,7 +179,11 @@ class CommentProcessor:
             return None
 
     def _load_publication_contexts(self):
-        self.publication_contexts = []
+        # El CSV editorial se consulta primero: si existe una coincidencia
+        # exacta, sus descripciones completas prevalecen sobre el JSON legado.
+        self.publication_contexts = load_external_contexts(
+            publication_context_source_path(self.tenant_id)
+        )
         json_path = self.paths.publication_contexts_file
         if json_path.exists():
             try:
@@ -186,11 +196,11 @@ class CommentProcessor:
             except Exception:
                 pass
 
-    def _find_context(self, post_id: str) -> Dict[str, Any]:
-        clean_id = post_id.split("_")[-1]
+    def _find_context(
+        self, post_id: str, permalink_url: str = ""
+    ) -> Dict[str, Any]:
         for ctx in self.publication_contexts:
-            pub_id = str(ctx.get("publication_id", ""))
-            if post_id in pub_id or clean_id in pub_id:
+            if context_matches(ctx, post_id, permalink_url):
                 return ctx
         return {
             "publication_id": post_id,
@@ -235,7 +245,11 @@ class CommentProcessor:
             post_id = str(post.get("id") or "").strip()
             if not post_id or post_id in known:
                 continue
-            if str(self._find_context(post_id).get("meme_text") or "").strip():
+            if str(
+                self._find_context(
+                    post_id, str(post.get("permalink_url") or "")
+                ).get("meme_text") or ""
+            ).strip():
                 continue
             message = " ".join(str(post.get("message") or "").split())
             character = ""
@@ -388,6 +402,11 @@ class CommentProcessor:
         publication_context: Dict[str, Any],
         comment: str,
     ) -> Dict[str, Any]:
+        signal = comment_signal(comment, self.page_name)
+        if signal == "low_signal":
+            return self.responder.respond(publication_context, comment)
+        if signal in {"tagged_mention", "brand_mention", "risky_brand_mention"}:
+            return self.responder.respond(publication_context, comment)
         if lacks_meme_context(self.tenant_id, self.base_path, publication_context):
             return {
                 "publication_id": publication_context.get("publication_id"),
@@ -476,7 +495,7 @@ class CommentProcessor:
         print(f"\nConsultando publicaciones y comentarios de las últimas {self.hours} horas...")
         posts_resp = self._make_get_request(
             f"{self.page_id}/posts",
-            {"limit": 25, "fields": "id,created_time,message"}
+            {"limit": 25, "fields": "id,created_time,message,permalink_url"}
         )
         if not posts_resp or "data" not in posts_resp:
             print("❌ Error al obtener posts de la página.")
@@ -499,6 +518,8 @@ class CommentProcessor:
         delegated_count = 0
         decided_count = 0
         low_signal_count = 0
+        ignored_mention_count = 0
+        brand_signal_count = 0
         missing_context_count = 0
         pending_candidates = []
         processed_count = 0
@@ -507,7 +528,7 @@ class CommentProcessor:
             if processed_count >= self.max_comments:
                 break
             post_id = p["id"]
-            pctx = self._find_context(post_id)
+            pctx = self._find_context(post_id, str(p.get("permalink_url") or ""))
 
             # Pedimos sub-comentarios para detectar si la página ya contestó
             comm_resp = self._make_get_request(
@@ -559,7 +580,15 @@ class CommentProcessor:
                 decision = res.get("decision", "no_response")
                 comment_type = res.get("comment_type", "")
 
-                # 4. ¿Es baja señal (emojis, risas, menciones)?
+                # 4. Descartes reales, etiquetas y señales de marca se registran por separado.
+                if decision == "brand_signal":
+                    brand_signal_count += 1
+                    self._log_comment(c, res, publish_status="brand_signal")
+                    continue
+                if decision == "ignore_mention":
+                    ignored_mention_count += 1
+                    self._log_comment(c, res, publish_status="ignored_mention")
+                    continue
                 if decision == "no_response" or comment_type == "baja_señal":
                     low_signal_count += 1
                     self._log_comment(c, res, publish_status="discarded")
@@ -585,6 +614,7 @@ class CommentProcessor:
                     "risk_level": res.get("risk_level", "low"),
                     "review_reason": res.get("review_reason", ""),
                     "agent_metadata": res.get("agent_metadata"),
+                    "sticker_suggestion": res.get("sticker_suggestion"),
                 })
                 self._log_comment(c, res, publish_status="pending_approval")
 
@@ -602,7 +632,9 @@ class CommentProcessor:
         print(f"    - 🟢 Ya respondidos (por ti o por bot): {already_replied_count}")
         print(f"    - 🔁 Delegados a otra cola: {delegated_count}")
         print(f"    - 🧷 Decisiones previas respetadas: {decided_count}")
-        print(f"    - ⚪ Descartados por baja señal (emojis/risas): {low_signal_count}")
+        print(f"    - ⚪ Descartados por baja señal (vacíos/emojis/risas): {low_signal_count}")
+        print(f"    - 🏷️ Etiquetas ignoradas: {ignored_mention_count}")
+        print(f"    - 🔎 Señales de marca registradas: {brand_signal_count}")
         print(f"    - 🏳️ Sin chiste (falta meme_text): {missing_context_count}")
         print(f"    - 🟡 PENDIENTES DE ATENCIÓN (Alta señal sin respuesta): {len(pending_candidates)}")
         print("=" * 80)
@@ -640,6 +672,11 @@ class CommentProcessor:
             }
             if item.get("agent_metadata"):
                 approval["agent"] = item["agent_metadata"]
+            if item.get("sticker_suggestion"):
+                approval["sticker_suggestion"] = item["sticker_suggestion"]
+                approval["approved_sticker"] = ""  # Debe seleccionarse expresamente al aprobar.
+                print(f"    🎨 Imagen sugerida: {item['sticker_suggestion']['filename']}")
+                print("       Para responder solo con la imagen, copia el nombre en approved_sticker.")
             if item.get("review_reason"):
                 approval["review_reason"] = item["review_reason"]
             if item.get("risk_level") and item["risk_level"] != "low":
@@ -760,7 +797,7 @@ def publish_approved(
         item
         for item in approvals
         if item.get("approved", False)
-        and item.get("approved_response")
+        and (item.get("approved_response") or item.get("approved_sticker"))
         and not item.get("published")
         and not item.get("reply_id")
     ]
@@ -798,6 +835,15 @@ def publish_approved(
 
         comment_id = str(item.get("comment_id", "")).strip()
         reply_text = str(item.get("approved_response", "")).strip()
+        approved_sticker = str(item.get("approved_sticker") or "").strip()
+        if approved_sticker:
+            # El campo solo se utiliza dentro de la cola ya aprobada. Se acepta
+            # un nombre simple, nunca rutas absolutas ni traversal.
+            if Path(approved_sticker).name != approved_sticker or approved_sticker in {".", ".."}:
+                print("    ❌ Nombre de imagen aprobado inválido.")
+                failure_count += 1
+                continue
+            reply_text = f"[STICKER:{approved_sticker}]"
         character = item.get("character", "Universe")
 
         print(f"[{index}/{len(to_publish)}] Publicando respuesta de {character}...")

@@ -27,6 +27,11 @@ CSV_FIELDS = [
     "contexto_publicado",
     "comentario",
     "respuesta_propuesta",
+    "imagen_sugerida",
+    "intencion_imagen",
+    "tono_imagen",
+    "contexto_compatible_imagen",
+    "evitar_contexto_imagen",
     "estado",
     "descartado",
     "motivo_descarte",
@@ -122,6 +127,7 @@ def _approval_item(
         flags.extend(quality.flags)
     flags = list(dict.fromkeys(flags))
     already_answered = log_status in ANSWERED_STATUSES
+    sticker = item.get("sticker_suggestion") if isinstance(item.get("sticker_suggestion"), dict) else {}
     if item.get("discarded") is True:
         status = "descartada"
     elif item.get("published") or item.get("reply_id"):
@@ -142,6 +148,11 @@ def _approval_item(
         "personaje": _text(item.get("character")) or "Universe",
         "comentario": _text(item.get("comment_text") or item.get("original_comment")),
         "respuesta_propuesta": response,
+        "imagen_sugerida": _text(sticker.get("filename")),
+        "intencion_imagen": _text(sticker.get("intent")),
+        "tono_imagen": _text(sticker.get("tone")),
+        "contexto_compatible_imagen": "; ".join(sticker.get("compatible_context") or []),
+        "evitar_contexto_imagen": "; ".join(sticker.get("avoid_context") or []),
         "estado": status,
         "descartado": bool(item.get("discarded")),
         "motivo_descarte": _text(item.get("discard_reason")),
@@ -304,6 +315,16 @@ def render_markdown(
                 _quote_block(item["respuesta_propuesta"], "(sin respuesta propuesta)"),
             ]
         )
+        if item.get("imagen_sugerida"):
+            lines.extend([
+                "",
+                f"**Imagen sugerida (requiere aprobación):** `{item['imagen_sugerida']}`",
+                f"- **Intención:** {item.get('intencion_imagen') or 'No definida'}",
+                f"- **Tono:** {item.get('tono_imagen') or 'No definido'}",
+                f"- **Contexto compatible:** {item.get('contexto_compatible_imagen') or 'No especificado'}",
+                f"- **Evitar en:** {item.get('evitar_contexto_imagen') or 'No especificado'}",
+                "Para usarla en lugar del texto, copia ese nombre en `approved_sticker` y aprueba el comentario. La sugerencia no autoriza la publicación.",
+            ])
         if item["estado"] in {"ya respondido", "publicada"}:
             lines.extend(["", f"- [x] {item['estado'].capitalize()}", ""])
         else:

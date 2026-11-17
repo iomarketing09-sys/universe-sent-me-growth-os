@@ -1,0 +1,768 @@
+{
+  "schema_version": 1,
+  "tenant_id": "universe",
+  "source_directory": "/home/universe-sent-me/GoogleDrive/Universe sent me/Respuestas",
+  "read_only_source": true,
+  "publication_requires_human_approval": true,
+  "total": 42,
+  "classified": 12,
+  "unclassified": 30,
+  "items": [
+    {
+      "filename": "desde aqui vere como te maltratan.jpeg",
+      "label": "desde aqui vere como te maltratan",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 651290
+    },
+    {
+      "filename": "Diganle que si esta enfermito.jpeg",
+      "label": "Diganle que si esta enfermito",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": true,
+      "available": true,
+      "size_bytes": 948355
+    },
+    {
+      "filename": "Duermete otro rato.jpeg",
+      "label": "Comentario que no aporta",
+      "category": "silencing_humor",
+      "intent": "Bromear cuando alguien reconoce que no tiene nada útil que aportar o insiste en comentar sin contenido.",
+      "tone": "sarcástico y directo",
+      "triggers": [
+        "si no tienes nada que poner",
+        "no pongas nada",
+        "mejor no comentes",
+        "no tienes nada que aportar",
+        "duermete otro rato"
+      ],
+      "compatible_context": [
+        "comentarios vacíos reconocidos como broma",
+        "intervenciones fuera de tema sin contenido"
+      ],
+      "avoid_context": [
+        "cansancio real",
+        "insomnio",
+        "salud",
+        "tristeza",
+        "vulnerabilidad"
+      ],
+      "classified": true,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 689932
+    },
+    {
+      "filename": "el para que cosa de quien.jpeg",
+      "label": "el para que cosa de quien",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 646432
+    },
+    {
+      "filename": "Eso que tiene de raro.jpeg",
+      "label": "Eso que tiene de raro",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 747476
+    },
+    {
+      "filename": "Este no es tu muro y no somos tus amigos.jpeg",
+      "label": "Este no es tu muro y no somos tus amigos",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": true,
+      "available": true,
+      "size_bytes": 2166787
+    },
+    {
+      "filename": "FB_IMG_1684342788281.jpg",
+      "label": "FB_IMG_1684342788281",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 31643
+    },
+    {
+      "filename": "FB_IMG_1702416061552.jpg",
+      "label": "FB_IMG_1702416061552",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 71380
+    },
+    {
+      "filename": "FB_IMG_1704680408686.jpg",
+      "label": "FB_IMG_1704680408686",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 22145
+    },
+    {
+      "filename": "FB_IMG_1717131166522.jpg",
+      "label": "FB_IMG_1717131166522",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 19807
+    },
+    {
+      "filename": "FB_IMG_1717131295232.jpg",
+      "label": "FB_IMG_1717131295232",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 22989
+    },
+    {
+      "filename": "FB_IMG_1719726027355.jpg",
+      "label": "FB_IMG_1719726027355",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 11399
+    },
+    {
+      "filename": "FB_IMG_1722143713838.jpg",
+      "label": "FB_IMG_1722143713838",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 34124
+    },
+    {
+      "filename": "FB_IMG_1722447969789.jpg",
+      "label": "FB_IMG_1722447969789",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 34014
+    },
+    {
+      "filename": "FB_IMG_1722658614941.jpg",
+      "label": "FB_IMG_1722658614941",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 50508
+    },
+    {
+      "filename": "FB_IMG_1723093681484.jpg",
+      "label": "FB_IMG_1723093681484",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 84673
+    },
+    {
+      "filename": "FB_IMG_1725145049716.jpg",
+      "label": "FB_IMG_1725145049716",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 68627
+    },
+    {
+      "filename": "FB_IMG_1727073547014.jpg",
+      "label": "FB_IMG_1727073547014",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 51912
+    },
+    {
+      "filename": "FB_IMG_1787008699447.jpg",
+      "label": "FB_IMG_1787008699447",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 14385
+    },
+    {
+      "filename": "FB_IMG_1787008713089.jpg",
+      "label": "FB_IMG_1787008713089",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 28467
+    },
+    {
+      "filename": "FB_IMG_1787008719532.jpg",
+      "label": "FB_IMG_1787008719532",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 61146
+    },
+    {
+      "filename": "IMG_20230531_233442.jpg",
+      "label": "IMG_20230531_233442",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 59109
+    },
+    {
+      "filename": "IMG_20230601_003023.jpg",
+      "label": "IMG_20230601_003023",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 69965
+    },
+    {
+      "filename": "IMG_20250414_191132_385.jpg",
+      "label": "IMG_20250414_191132_385",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 42604
+    },
+    {
+      "filename": "IMG_20250414_191206_752.jpg",
+      "label": "IMG_20250414_191206_752",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 60989
+    },
+    {
+      "filename": "IMG_20260219_025948_828.jpg",
+      "label": "IMG_20260219_025948_828",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 35230
+    },
+    {
+      "filename": "jaja jaja.jpeg",
+      "label": "Risa compartida",
+      "category": "shared_laughter",
+      "intent": "Acompañar una broma que ambas partes encuentran graciosa.",
+      "tone": "alegre y cómplice",
+      "triggers": [
+        "me estoy riendo",
+        "me hizo reir",
+        "nos dio mucha risa",
+        "no puedo parar de reir",
+        "jajaja"
+      ],
+      "compatible_context": [
+        "bromas compartidas",
+        "comentarios claramente humorísticos"
+      ],
+      "avoid_context": [
+        "burla hacia una persona",
+        "sarcasmo hostil",
+        "comentarios de una sola risa sin contexto"
+      ],
+      "classified": true,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 3212648
+    },
+    {
+      "filename": "Me encorazona.jpeg",
+      "label": "Reacción afectuosa",
+      "category": "affection",
+      "intent": "Expresar ternura, simpatía o que algo tocó emocionalmente.",
+      "tone": "tierno con humor",
+      "triggers": [
+        "me encorazona",
+        "me dio ternura",
+        "que bonito detalle",
+        "me llego al corazon"
+      ],
+      "compatible_context": [
+        "gestos tiernos",
+        "historias emotivas",
+        "muestras de cariño"
+      ],
+      "avoid_context": [
+        "coqueteo no correspondido",
+        "duelo",
+        "situaciones delicadas"
+      ],
+      "classified": true,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 502384
+    },
+    {
+      "filename": "money.jpeg",
+      "label": "Dinero / interés económico",
+      "category": "money",
+      "intent": "Reaccionar a una conversación explícita sobre dinero, pagos o billetes.",
+      "tone": "humorístico",
+      "triggers": [
+        "hablando de dinero",
+        "no tengo dinero",
+        "me falta dinero",
+        "me pagas",
+        "cuanto me vas a pagar",
+        "puro dinero",
+        "billetes"
+      ],
+      "compatible_context": [
+        "pagos",
+        "deudas tratadas en tono ligero",
+        "dinero y ganancias"
+      ],
+      "avoid_context": [
+        "dificultad económica real",
+        "desempleo",
+        "emergencia",
+        "solicitud de ayuda"
+      ],
+      "classified": true,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 742740
+    },
+    {
+      "filename": "mujeres.jpeg",
+      "label": "mujeres",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 660233
+    },
+    {
+      "filename": "no hay meme, solo te amo.jpeg",
+      "label": "Afecto espontáneo",
+      "category": "affection",
+      "intent": "Responder a una expresión genuina de cariño.",
+      "tone": "afectuoso",
+      "triggers": [
+        "te amo",
+        "te quiero",
+        "te mando amor",
+        "solo queria decirte que te quiero"
+      ],
+      "compatible_context": [
+        "declaraciones de cariño",
+        "mensajes afectuosos"
+      ],
+      "avoid_context": [
+        "sarcasmo",
+        "conflicto",
+        "burla"
+      ],
+      "classified": true,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 728566
+    },
+    {
+      "filename": "ok respeto tu desicion equivocada.jpeg",
+      "label": "Desacuerdo irónico",
+      "category": "ironic_disagreement",
+      "intent": "Expresar desacuerdo de forma irónica sin convertirlo en ataque personal.",
+      "tone": "irónico",
+      "triggers": [
+        "respeto tu decision",
+        "decision equivocada",
+        "aunque no estoy de acuerdo",
+        "esa decision no tiene sentido"
+      ],
+      "compatible_context": [
+        "opiniones opuestas en tono ligero",
+        "decisiones debatidas entre conocidos"
+      ],
+      "avoid_context": [
+        "decisiones médicas",
+        "problemas personales graves",
+        "ataques o humillaciones"
+      ],
+      "classified": true,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 414387
+    },
+    {
+      "filename": "Pastillas para esquizofrenia.jpeg",
+      "label": "Pastillas para esquizofrenia",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": true,
+      "available": true,
+      "size_bytes": 515657
+    },
+    {
+      "filename": "payaso.jpeg",
+      "label": "Ridículo / autoironía",
+      "category": "self_deprecating_humor",
+      "intent": "Representar que uno mismo hizo el ridículo o que una situación resultó absurda.",
+      "tone": "autoirónico",
+      "triggers": [
+        "hice el ridiculo",
+        "quede como payaso",
+        "me siento payaso",
+        "que payasada",
+        "estoy haciendo el ridiculo"
+      ],
+      "compatible_context": [
+        "anécdotas propias",
+        "errores contados con humor",
+        "situaciones absurdas"
+      ],
+      "avoid_context": [
+        "insultar a un usuario",
+        "acoso",
+        "humillación",
+        "salud mental"
+      ],
+      "classified": true,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 475498
+    },
+    {
+      "filename": "pero cuenta que no somos adivinos.jpeg",
+      "label": "Pedir contexto",
+      "category": "clarification",
+      "intent": "Pedir que alguien explique una historia o comentario que dejó información importante fuera.",
+      "tone": "humorístico y directo",
+      "triggers": [
+        "no somos adivinos",
+        "cuenta bien el chisme",
+        "explica el contexto",
+        "pero explicate",
+        "y que paso despues"
+      ],
+      "compatible_context": [
+        "historias incompletas",
+        "anécdotas sin contexto",
+        "chismes contados a medias"
+      ],
+      "avoid_context": [
+        "trauma",
+        "duelo",
+        "situaciones sensibles",
+        "preguntas genuinas de ayuda"
+      ],
+      "classified": true,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 731920
+    },
+    {
+      "filename": "pinche desicion toda estupida.jpeg",
+      "label": "pinche desicion toda estupida",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": true,
+      "available": true,
+      "size_bytes": 375107
+    },
+    {
+      "filename": "Screenshot_2025-03-16-18-58-55-50_1c337646f29875672b5a61192b9010f9.jpg",
+      "label": "Screenshot_2025-03-16-18-58-55-50_1c337646f29875672b5a61192b9010f9",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 195716
+    },
+    {
+      "filename": "toma este corazon.jpeg",
+      "label": "Gesto de cariño",
+      "category": "affection",
+      "intent": "Devolver un gesto afectuoso o enviar un corazón.",
+      "tone": "afectuoso",
+      "triggers": [
+        "te mando un corazon",
+        "toma un corazon",
+        "te envio un corazon",
+        "va un corazon"
+      ],
+      "compatible_context": [
+        "agradecimientos afectuosos",
+        "intercambio de corazones"
+      ],
+      "avoid_context": [
+        "sarcasmo",
+        "discusión"
+      ],
+      "classified": true,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 1975424
+    },
+    {
+      "filename": "toma, para que borres la cuenta.jpeg",
+      "label": "toma, para que borres la cuenta",
+      "category": "unclassified",
+      "intent": "",
+      "tone": "",
+      "triggers": [],
+      "compatible_context": [],
+      "avoid_context": [],
+      "classified": false,
+      "human_review_only": true,
+      "available": true,
+      "size_bytes": 565315
+    },
+    {
+      "filename": "Universe - Mira te llama tu mama.jpeg",
+      "label": "Retirada humorística",
+      "category": "playful_exit",
+      "intent": "Bromear para sugerir que alguien se retire de una conversación o situación, solo cuando existe confianza.",
+      "tone": "burlesco y juguetón",
+      "triggers": [
+        "te llama tu mama",
+        "tu mama te llama",
+        "ya retirate",
+        "mejor vete",
+        "corre de aqui"
+      ],
+      "compatible_context": [
+        "bromas entre conocidos",
+        "despedidas juguetonas",
+        "situaciones absurdas"
+      ],
+      "avoid_context": [
+        "expulsar seriamente a alguien",
+        "conflicto",
+        "acoso",
+        "persona vulnerable"
+      ],
+      "classified": true,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 451441
+    },
+    {
+      "filename": "y la perra seguia y seguia.jpeg",
+      "label": "Insistencia",
+      "category": "persistence",
+      "intent": "Señalar en tono de broma que alguien repite algo o no deja de insistir.",
+      "tone": "humorístico e irónico",
+      "triggers": [
+        "seguia y seguia",
+        "no deja de insistir",
+        "sigue y sigue",
+        "otra vez con lo mismo",
+        "no se cansa de repetir"
+      ],
+      "compatible_context": [
+        "repetición de una broma",
+        "insistencia ligera",
+        "historias reiterativas"
+      ],
+      "avoid_context": [
+        "acoso",
+        "hostigamiento",
+        "denuncias",
+        "situaciones de riesgo"
+      ],
+      "classified": true,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 517957
+    },
+    {
+      "filename": "Yo por dentro.jpeg",
+      "label": "Caos interior / identificación",
+      "category": "inner_state",
+      "intent": "Mostrar que por dentro se experimenta una reacción intensa distinta de la apariencia exterior.",
+      "tone": "identificable y humorístico",
+      "triggers": [
+        "asi estoy por dentro",
+        "por dentro estoy gritando",
+        "por dentro soy un caos",
+        "por dentro me siento",
+        "mi mente por dentro"
+      ],
+      "compatible_context": [
+        "reacciones internas exageradas",
+        "nervios",
+        "caos emocional expresado con humor"
+      ],
+      "avoid_context": [
+        "crisis emocional",
+        "ataque de pánico real",
+        "duelo",
+        "solicitud de apoyo"
+      ],
+      "classified": true,
+      "human_review_only": false,
+      "available": true,
+      "size_bytes": 709917
+    }
+  ]
+}

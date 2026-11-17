@@ -157,33 +157,6 @@ BRAND_SLOGAN_PHRASES = (
     "abundancia",
 )
 
-LOW_SIGNAL_WORDS = {
-    "exacto",
-    "si",
-    "sí",
-    "no",
-    "total",
-    "cierto",
-    "tal cual",
-    "literal",
-    "amén",
-    "amen",
-    "de acuerdo",
-    "así es",
-    "asi es",
-    "confirmo",
-    "x2",
-    "x3",
-    "omg",
-    "wow",
-    "uy",
-    "ay",
-    "sep",
-    "nop",
-    "bien",
-    "uff",
-    "ufff",
-}
 
 
 @dataclass(frozen=True)
@@ -233,24 +206,48 @@ def _contains_any(lowered: str, phrases: Iterable[str]) -> bool:
 
 
 def is_low_signal(comment: object) -> bool:
-    """Detecta reacciones mínimas que no requieren una respuesta."""
+    """Descarta solo contenido vacío, emojis aislados y risas sin contenido."""
     value = str(comment or "").strip()
     if not value:
         return True
+    # Keep letters and numbers; punctuation/emoji-only reactions become empty.
     clean = re.sub(r"[^\w\s]", "", value).strip().casefold()
-    if len(clean) < 3:
+    if not clean:
         return True
-    if re.fullmatch(r"(ja|je|ji|jo|ha|he|hi|ho|lol|xd|lmao)+", clean):
-        return True
-    if re.fullmatch(r"no+", clean):
-        return True
-    if clean in {"caracter", "carácter", "personaje"} and re.search(r"[☠💀🔥]", value):
-        return True
-    if clean in LOW_SIGNAL_WORDS:
-        return True
-    if value.startswith("@"):
+    if re.fullmatch(r"(?:ja|je|ji|jo|ha|he|hi|ho|lol|xd|lmao)+", clean):
         return True
     return False
+
+
+def comment_signal(comment: object, page_name: str = "Universe Sent Me") -> str:
+    """Clasifica señales deterministas antes de cualquier agente generativo."""
+    value = str(comment or "").strip()
+    if is_low_signal(value):
+        return "low_signal"
+    lowered = value.casefold()
+    page = str(page_name or "").strip().casefold()
+    # A question mark is conclusive. Without punctuation, require a recognizable
+    # interrogative construction; a phrase such as "Que diablos haha" is not
+    # enough to classify a comment as a question.
+    question_without_punctuation = re.compile(
+        r"^(?:qué|que|cómo|como|cuándo|cuando|dónde|donde|por qué|por que|cuál|cual)\s+"
+        r"(?:es|son|significa|dice|pasó|paso|hago|puedo|quieres|quiero|opinas|piensas|te parece|se hace|funciona|cuesta)\b",
+        re.IGNORECASE,
+    )
+    if "?" in value or "¿" in value or question_without_punctuation.search(value):
+        return "question"
+    # Brand references embedded in sexualized/spam content are not clean brand
+    # signals. Hold them for human review instead of inflating brand metrics.
+    if page and page in lowered:
+        sexual_pattern = re.compile(r"(?i)(?<!\w)(?:s[€e]x[¥y]?|sex[¥y]?|ric+a+|ric+o+)(?!\w)")
+        if _contains_any(lowered, SEXUAL_DOUBLE_SENSE_PHRASES) or sexual_pattern.search(value):
+            return "risky_brand_mention"
+        if _contains_any(lowered, ("http", "www", "follow me", "gana dinero", "bitcoin", "cripto")):
+            return "risky_brand_mention"
+        return "brand_mention"
+    if "@" in value:
+        return "tagged_mention"
+    return ""
 
 
 def comment_risk_flags(comment: object) -> tuple[str, ...]:

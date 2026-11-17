@@ -9,9 +9,14 @@ from typing import Any, Dict, Optional
 import re
 import random
 
-from modules.communications.llm import DEFAULT_MODEL, OmniRouteClient, OmniRouteError
+from modules.communications.llm import OmniRouteClient, OmniRouteError
 from modules.communications.comments.paths import load_tenant_config
-from modules.communications.policy import check_response, is_low_signal, normalize_response
+from modules.communications.policy import check_response, comment_signal, is_low_signal, normalize_response
+from modules.communications.comments.sticker_library import suggest_sticker
+
+# Use the connected DeepSeek Flash route for comment drafting only.
+# Keep this scoped to comments; the global model default remains unchanged.
+DEFAULT_COMMENT_MODEL = "ds/deepseek-flash"
 
 
 def requires_meme_context(tenant_id: str, base_path: Optional[Path] = None) -> bool:
@@ -45,7 +50,7 @@ class UniverseResponder:
         self.tenant_id = tenant_id
         self.base_path = base_path
         self.client = client
-        self.model = model or DEFAULT_MODEL
+        self.model = model or DEFAULT_COMMENT_MODEL
         # Keyword lists for safety filtering (keep these)
         self.spam_keywords = ["http", ".com", "www", "follow me", "suscribete", "visita mi", "gana dinero", "bitcoin", "cripto"]
         self.troll_keywords = ["idiota", "estúpido", "molesto", "odio", "baste", "callate", "cállate", "basura", "peor", "peor aún"]
@@ -96,8 +101,13 @@ class UniverseResponder:
     def _classify_comment(self, comment: str) -> str:
         """Coarse classification using only safety/neutral signals."""
         comment_lower = comment.lower()
-        if self.mention_pattern in comment:
+        signal = comment_signal(comment)
+        if signal == "brand_mention":
+            return "brand_mention"
+        if signal == "tagged_mention":
             return "mention"
+        if signal == "question":
+            return "question"
         # Check for person name pattern (two or more capitalized words)
         # Pattern for sequences of capitalized words (allowing for accents and ñ)
         import re
@@ -277,7 +287,9 @@ class UniverseResponder:
     ) -> str:
         """Make decision based on coarse type and refined relation."""
         if comment_type == "mention":
-            return "no_response"
+            return "ignore_mention"
+        if comment_type == "brand_mention":
+            return "brand_signal"
         if comment_type in ["spam", "troll", "commercial_intent"]:
             return "no_response"
         if comment_type == "question":
@@ -361,7 +373,9 @@ class UniverseResponder:
                     {"role": "user", "content": user_prompt},
                 ],
                 model=self.model,
-                max_tokens=80,
+                # DeepSeek Flash may spend part of its completion budget on reasoning.
+                # Leave enough room for a short visible reply after that budget.
+                max_tokens=500,
                 temperature=0.7,
             )
         except OmniRouteError as exc:
@@ -378,6 +392,7 @@ class UniverseResponder:
 
     def respond(self, publication_context: Dict[str, Any], comment: str) -> Dict[str, Any]:
         """Main response generation method."""
+        signal = comment_signal(comment)
         if self._is_low_signal(comment):
             return {
                 "publication_id": publication_context.get("publication_id"),
@@ -386,6 +401,35 @@ class UniverseResponder:
                 "apparent_intent": "Reacción mínima, risa o baja señal (Gris)",
                 "relation_to_meme": "general_reaction",
                 "decision": "no_response",
+                "response": None,
+                "risk_level": "low",
+                "quality_ok": True,
+                "quality": None,
+            }
+        if signal == "risky_brand_mention":
+            return {
+                "publication_id": publication_context.get("publication_id"),
+                "comment": comment,
+                "comment_type": "brand_mention_risky",
+                "apparent_intent": "Mención de marca mezclada con contenido potencialmente sexualizado o promocional; requiere revisión humana.",
+                "relation_to_meme": "general_reaction",
+                "decision": "review",
+                "response": None,
+                "risk_level": "high",
+                "quality_ok": False,
+                "quality": None,
+                "review_reason": "No contabilizar como señal de marca sin revisión humana.",
+            }
+        if signal in {"tagged_mention", "brand_mention"}:
+            comment_type = "mention" if signal == "tagged_mention" else "brand_mention"
+            decision = "ignore_mention" if signal == "tagged_mention" else "brand_signal"
+            return {
+                "publication_id": publication_context.get("publication_id"),
+                "comment": comment,
+                "comment_type": comment_type,
+                "apparent_intent": "Etiqueta a otra persona; no requiere respuesta." if signal == "tagged_mention" else "Mención directa de la marca; registrar señal.",
+                "relation_to_meme": "general_reaction",
+                "decision": decision,
                 "response": None,
                 "risk_level": "low",
                 "quality_ok": True,
@@ -446,6 +490,10 @@ class UniverseResponder:
             "risk_level": "low",
             "quality_ok": quality.ok if quality is not None else response_text is None and decision == "no_response",
             "quality": quality.to_dict() if quality is not None else None,
+            "sticker_suggestion": (
+                suggest_sticker(comment, publication_context)
+                if self.tenant_id == "universe" else None
+            ),
         }
 
         # Set risk level and review reason based on decision

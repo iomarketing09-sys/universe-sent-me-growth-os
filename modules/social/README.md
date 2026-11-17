@@ -94,6 +94,27 @@ sucursal ya cargó), no un inventario completo. Un `NOT_IN_INVENTORY` significa
 "no lo tengo declarado", no "no existe en sucursal". Para Flexi el inventario
 real sigue pendiente como insumo de negocio.
 
+## Instagram Stories (imagen)
+
+El calendario de Instagram admite Post Type=STORY (o STORIES) para publicar
+una imagen como Story cuando vence el slot. El scheduler reutiliza el mismo
+flujo multi-tenant, preflight, guard de reuse, estado persistente, reintentos y
+registro de publicación. La imagen debe ser vertical, en rango 9:16 a 4:5.
+El publisher usa media_type=STORIES para crear el contenedor y después lo
+publica con /{ig-user-id}/media_publish.
+
+Ejemplo de fila en meta_import.csv:
+
+| Media URL | Caption | Post Type | Date (YYYY-MM-DD) | Time (HH:MM, 24h) |
+| --- | --- | --- | --- | --- |
+| story.jpg | (no se usa en Stories) | STORY | 2026-11-20 | 19:30 |
+
+Esta primera versión automatiza Stories de imagen para Instagram. Stories de
+video y publicación de Stories de Facebook quedan fuera de alcance hasta
+validar sus requisitos y endpoints oficiales específicos. La programación se
+ejecuta desde el cron de Growth OS al llegar la hora del slot; no es una
+programación nativa anticipada en Meta.
+
 ## Facebook: álbum multi-imagen (carrusel)
 
 Facebook no tiene endpoint de carrusel para páginas: el equivalente es un álbum.

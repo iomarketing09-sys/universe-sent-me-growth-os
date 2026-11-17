@@ -1,0 +1,33 @@
+﻿comment_id,comment_created_time,comment_text,previous_publish_status,previous_decision,new_signal,risk_flags,context_status,publication_character,publication_text,publication_caption,publication_visual_context,shadow_action,human_approval_required
+122181553359072582_1433008185168217,2026-11-16T23:22:27+0000,,discarded,no_response,low_signal,,not_in_annotation_sample,,,,,discard_low_signal,not_applicable
+122181550167072582_970508135781207,2026-11-16T22:08:35+0000,Estado civil: Es complicado.,already_replied,already_replied,meaningful_text,,unmatched,,,,,skip_already_replied,not_applicable
+122181534507072582_1461760766084925,2026-11-17T00:02:08+0000,@seguidores Universe Sent Me,discarded,no_response,brand_mention,,unmatched,,,,,record_brand_signal,not_applicable
+122181531171072582_1806830877261835,2026-11-16T16:26:39+0000,Universe Sent Me @seguidores,discarded,no_response,brand_mention,,unmatched,,,,,record_brand_signal,not_applicable
+122181531171072582_2713902612402211,2026-11-16T17:26:18+0000,Universe Sent Me 🖤€r€S S€x¥  KA€£🖤~,discarded,no_response,risky_brand_mention,,unmatched,,,,,hold_risky_brand_mention,yes
+122181531171072582_1159409590027925,2026-11-16T16:44:59+0000,,discarded,no_response,low_signal,,not_in_annotation_sample,,,,,discard_low_signal,not_applicable
+122181487719072582_3261180067421742,2026-11-16T04:02:05+0000,@fansdestacados Universe Sent Me,discarded,no_response,brand_mention,,unmatched,,,,,record_brand_signal,not_applicable
+122181482799072582_1154321417150232,2026-11-16T02:35:52+0000,@seguidores @fansdestacados Universe Sent Me,discarded,no_response,brand_mention,,unmatched,,,,,record_brand_signal,not_applicable
+122181482799072582_2205688256964560,2026-11-16T16:14:19+0000,Cierto,discarded,no_response,meaningful_text,,unmatched,,,,,hold_for_missing_context,not_applicable
+122181479583072582_1419693653680588,2026-11-16T01:49:14+0000,@fansdestacados,discarded,no_response,tagged_mention,,unmatched,,,,,ignore_user_tag,not_applicable
+122181473721072582_2092188294750676,2026-11-15T23:23:38+0000,,discarded,no_response,low_signal,,not_in_annotation_sample,,,,,discard_low_signal,not_applicable
+122181470205072582_2641183946335340,2026-11-16T21:15:47+0000,Consecuencias superadas,already_replied,already_replied,meaningful_text,,unmatched,,,,,skip_already_replied,not_applicable
+122181470205072582_1469659155341984,2026-11-16T19:38:52+0000,Deja de estar robando post,already_replied,already_replied,meaningful_text,,unmatched,,,,,skip_already_replied,not_applicable
+122181470205072582_998271926074479,2026-11-16T17:31:13+0000,Así mero,already_replied,already_replied,meaningful_text,,unmatched,,,,,skip_already_replied,not_applicable
+122181470205072582_1121643794103679,2026-11-16T01:25:48+0000,No hagan caso 🤣,already_replied,already_replied,meaningful_text,,unmatched,,,,,skip_already_replied,not_applicable
+122181461757072582_1451842403681239,2026-11-15T19:35:37+0000,@seguidores,discarded,no_response,tagged_mention,,unmatched,,,,,ignore_user_tag,not_applicable
+122181461757072582_4257756054361170,2026-11-15T20:21:48+0000,"Universe Sent Me 🍭Claro, ricaa,ricaaaa🍭~",already_replied,already_replied,risky_brand_mention,,unmatched,,,,,skip_already_replied,not_applicable
+122181461757072582_1651322623154624,2026-11-15T20:13:18+0000,Si,discarded,no_response,meaningful_text,,unmatched,,,,,hold_for_missing_context,not_applicable
+122181461757072582_1476271157784786,2026-11-15T19:39:29+0000,Kael ovulando 🌀,already_replied,already_replied,meaningful_text,,unmatched,,,,,skip_already_replied,not_applicable
+122181461757072582_1013755471021474,2026-11-16T05:18:49+0000,,discarded,no_response,low_signal,,not_in_annotation_sample,,,,,discard_low_signal,not_applicable
+122181453357072582_1652262303309685,2026-11-15T18:21:30+0000,@seguidores,discarded,no_response,tagged_mention,,unmatched,,,,,ignore_user_tag,not_applicable
+122181453357072582_1160791796388155,2026-11-15T17:28:51+0000,,discarded,no_response,low_signal,,not_in_annotation_sample,,,,,discard_low_signal,not_applicable
+122181448587072582_987846890605023,2026-11-15T16:07:06+0000,@seguidores,discarded,no_response,tagged_mention,,unmatched,,,,,ignore_user_tag,not_applicable
+122181448587072582_1092524573621385,2026-11-16T12:57:32+0000,Real,already_replied,already_replied,meaningful_text,,unmatched,,,,,skip_already_replied,not_applicable
+122181448587072582_1500918911906395,2026-11-15T18:30:30+0000,Así namas 🔥😂,already_replied,already_replied,meaningful_text,,unmatched,,,,,skip_already_replied,not_applicable
+122181448587072582_1159345729965300,2026-11-15T16:57:45+0000,Universe Sent Me Así es Reciprocidad 🔮~,already_replied,already_replied,brand_mention,,unmatched,,,,,skip_already_replied,not_applicable
+122181448587072582_2434157773655559,2026-11-15T16:07:59+0000,😂 la Netflix,already_replied,already_replied,meaningful_text,,unmatched,,,,,skip_already_replied,not_applicable
+122181448587072582_1434312019771479,2026-11-15T16:22:08+0000,,discarded,no_response,low_signal,,not_in_annotation_sample,,,,,discard_low_signal,not_applicable
+122181402033072582_4609678579361563,2026-11-15T01:16:52+0000,@seguidores Universe Sent Me,discarded,no_response,brand_mention,,confirmed_by_exact_post_id,Evan,"Hoy toca sábado de casita, pero mañana ufff, domingo de casita también.",Hoy sábado de casita... 😌 mañana domingo de casita también #EvanUSM #humor #meme #UniverseSentMe #sabado,Evan en la cama leyendo; sábado de casita,record_brand_signal,not_applicable
+122181531171072582_1723626089330137,2026-11-17T00:11:57+0000,Que Diablos haha,discarded,no_response,meaningful_text,,not_in_annotation_sample,,,,,hold_for_missing_context,not_applicable
+122181470205072582_2104852696937437,2026-11-17T00:35:09+0000,El mero chaye Angelica Alvarado jajaja,discarded,no_response,meaningful_text,,not_in_annotation_sample,,,,,hold_for_missing_context,not_applicable
+122181470205072582_4606035306343500,2026-11-17T00:58:11+0000,Tu tienes cáncer. Porque no tienes alma.,pending_approval,review,meaningful_text,,not_in_annotation_sample,,,,,hold_for_missing_context,not_applicable

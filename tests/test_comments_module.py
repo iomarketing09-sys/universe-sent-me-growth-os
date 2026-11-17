@@ -8,7 +8,7 @@ from pathlib import Path
 
 from modules.cgo import CgoOrchestrator
 from modules.communications.comments import CommentPaths, inbox_snapshot
-from modules.communications.comments.log import write_comment_log
+from modules.communications.comments.log import merge_approval_payload, write_comment_log
 from tests.tenant_factory import make_tenant
 
 
@@ -261,3 +261,29 @@ def test_legacy_tenant_entrypoints_reexport_canonical_module():
 
     assert entrypoints[0].read_text(encoding="utf-8").count("def main(") == 0
     assert entrypoints[2].read_text(encoding="utf-8").count("class UniverseResponder") == 0
+
+
+def test_merge_preserves_manual_draft_when_generated_response_is_blank():
+    existing = {
+        "approvals": [
+            {
+                "comment_id": "comment-1",
+                "approved": False,
+                "published": False,
+                "approved_response": "Respuesta manual revisada.",
+            }
+        ]
+    }
+    generated = [
+        {
+            "comment_id": "comment-1",
+            "approved": False,
+            "published": False,
+            "approved_response": "",
+            "comment_text": "Comentario original",
+        }
+    ]
+
+    merged = merge_approval_payload(existing, generated)
+
+    assert merged["approvals"][0]["approved_response"] == "Respuesta manual revisada."
